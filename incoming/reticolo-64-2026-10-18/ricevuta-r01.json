@@ -1,0 +1,99 @@
+{
+  "master_precedente": "e1d4aa59f169e2f7d18a59483c80e212c506db2f",
+  "nuovi_raster": 1,
+  "nuove_tessere_candidate": 5,
+  "modifica_dati_biologici": false,
+  "import_runtime": false,
+  "righe": [
+    {
+      "target": "assets/traits/aereus-gambo-fase-giovane.webp",
+      "file": "incoming/icone/fasi-reticolo-pallido-r01.png",
+      "cella": 0,
+      "source_sha256": "4ba599da5d62df47432869270979ca0698c738a8b40525fc846d069f4936b078",
+      "output_sha256": "97ad7b7db89c5b7c3d3102a8f11cef06b878faa98102eee61fb3910636e17252",
+      "replaces_output_sha256": "ef5abf3035ec67af2a0ad99de23e18e541e9ce99966bb81ae2a7be8a5b50430a",
+      "replaces_source": "incoming/icone/fasi-37-r01.png",
+      "replaces_cella": 2,
+      "stage_source": "https://it.wikipedia.org/wiki/Boletus_aereus",
+      "bbox": [
+        66,
+        40,
+        350,
+        380
+      ],
+      "stato": "revisione agente superata; attende controllo indipendente"
+    },
+    {
+      "target": "assets/traits/aereus-gambo-fase-adulto.webp",
+      "file": "incoming/icone/fasi-reticolo-pallido-r01.png",
+      "cella": 1,
+      "source_sha256": "4ba599da5d62df47432869270979ca0698c738a8b40525fc846d069f4936b078",
+      "output_sha256": "d4a1a152a93a812323eb5cf05e984d67fc8403457d228fdc376b658eba9acc0f",
+      "replaces_output_sha256": "4e0ea330d611ea3eab8144158d3b806561d02abf81b35ee0c3b1a2f7c00a7a95",
+      "replaces_source": "incoming/icone/fasi-37-r01.png",
+      "replaces_cella": 5,
+      "stage_source": "https://it.wikipedia.org/wiki/Boletus_aereus",
+      "bbox": [
+        462,
+        38,
+        790,
+        382
+      ],
+      "stato": "revisione agente superata; attende controllo indipendente"
+    },
+    {
+      "target": "assets/traits/aereus-gambo-fase-maturo.webp",
+      "file": "incoming/icone/fasi-reticolo-pallido-r01.png",
+      "cella": 2,
+      "source_sha256": "4ba599da5d62df47432869270979ca0698c738a8b40525fc846d069f4936b078",
+      "output_sha256": "759ddf63ac8d4f56340d0ac927a1f4922401f2852bb01aefab1776d2e36ec72d",
+      "replaces_output_sha256": "6a096eb332d9c29d5e480132b1d507b24b573f4629d7caceea7d744fb3b0dceb",
+      "replaces_source": "incoming/icone/fasi-37-r01.png",
+      "replaces_cella": 8,
+      "stage_source": "https://it.wikipedia.org/wiki/Boletus_aereus",
+      "bbox": [
+        874,
+        76,
+        1214,
+        344
+      ],
+      "stato": "revisione agente superata; attende controllo indipendente"
+    },
+    {
+      "target": "assets/traits/edulis-gambo-fase-giovane.webp",
+      "file": "incoming/icone/fasi-reticolo-pallido-r01.png",
+      "cella": 3,
+      "source_sha256": "4ba599da5d62df47432869270979ca0698c738a8b40525fc846d069f4936b078",
+      "output_sha256": "5387c4f40fd94bc12f02392e5ae3748086b545490a590cc675945165ce608044",
+      "replaces_output_sha256": "bb449c1836d368bd96d44d795497fa1bbe596aa535c9fe3fbbe557409e5e6e5d",
+      "replaces_source": "incoming/icone/fasi-39-r01.png",
+      "replaces_cella": 2,
+      "stage_source": "https://it.wikipedia.org/wiki/Boletus_edulis",
+      "bbox": [
+        68,
+        456,
+        350,
+        798
+      ],
+      "stato": "revisione agente superata; attende controllo indipendente"
+    },
+    {
+      "target": "assets/traits/edulis-gambo-fase-adulto.webp",
+      "file": "incoming/icone/fasi-reticolo-pallido-r01.png",
+      "cella": 4,
+      "source_sha256": "4ba599da5d62df47432869270979ca0698c738a8b40525fc846d069f4936b078",
+      "output_sha256": "3ecdb5ead5dacf8c83f8f17f00e6431b3ae6f7d16a0f0e6578b57c97c81d91c9",
+      "replaces_output_sha256": "27f9394ef23e65d4cc09bb3faa123d9553ea40d3566d3f7e186ba428e473091f",
+      "replaces_source": "incoming/icone/fasi-39-r01.png",
+      "replaces_cella": 5,
+      "stage_source": "https://it.wikipedia.org/wiki/Boletus_edulis",
+      "bbox": [
+        456,
+        468,
+        798,
+        788
+      ],
+      "stato": "revisione agente superata; attende controllo indipendente"
+    }
+  ]
+}

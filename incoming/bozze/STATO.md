@@ -120,3 +120,5 @@
 | incoming/icone/fasi-45-r01.png | Fasi crescita, 6 tessere selezionate | pronta da integrare | Revisione piena/64px in produzione-fasi-2026-10-18/revisione-fasi-45.md; hash e339aac6ca47541572b7b5975b6573dd16bed328e9acbf13945370311b809baf; solo celle 3,4,5,6,7,8; controllo indipendente coordinatore prima import. |
 
 | incoming/icone/fasi-pleurotus-r02.png | Fasi crescita, 2 tessere selezionate | pronta da integrare | Revisione piena/64px in produzione-fasi-2026-10-18/revisione-fasi-pleurotus.md; hash 5fbfb23ff3bece9bb1fa545582410f418d575c6a77a7d2bb1f33e491ed4d7b82; solo celle 0,1; controllo indipendente coordinatore prima import. |
+
+| incoming/icone/fasi-reticolo-pallido-r01.png | Cinque interi aereus/edulis: migliora leggibilità reticolo pallido | da revisionare | Candidato separato in reticolo-64-2026-10-18/manifest-candidato-r01.json; revisione agente fullsize/64 superata, controllo indipendente pendente. Non presente nel manifest operativo; nessun import. |

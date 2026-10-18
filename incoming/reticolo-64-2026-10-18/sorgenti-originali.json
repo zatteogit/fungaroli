@@ -1,0 +1,57 @@
+[
+  {
+    "target": "assets/traits/aereus-gambo-fase-giovane.webp",
+    "file": "incoming/icone/fasi-37-r01.png",
+    "cella": 2,
+    "source_sha256": "9fc5d8d57a36c38301f692ba2571acb4e4b91ca5c9d855399fa690b88232ae07",
+    "output_sha256": "ef5abf3035ec67af2a0ad99de23e18e541e9ce99966bb81ae2a7be8a5b50430a",
+    "stage_source": "https://it.wikipedia.org/wiki/Boletus_aereus",
+    "review": "incoming/produzione-fasi-2026-10-18/revisione-fasi-37.md",
+    "recuperato": false,
+    "stato": "revisione agente superata; attende coordinatore"
+  },
+  {
+    "target": "assets/traits/aereus-gambo-fase-adulto.webp",
+    "file": "incoming/icone/fasi-37-r01.png",
+    "cella": 5,
+    "source_sha256": "9fc5d8d57a36c38301f692ba2571acb4e4b91ca5c9d855399fa690b88232ae07",
+    "output_sha256": "4e0ea330d611ea3eab8144158d3b806561d02abf81b35ee0c3b1a2f7c00a7a95",
+    "stage_source": "https://it.wikipedia.org/wiki/Boletus_aereus",
+    "review": "incoming/produzione-fasi-2026-10-18/revisione-fasi-37.md",
+    "recuperato": false,
+    "stato": "revisione agente superata; attende coordinatore"
+  },
+  {
+    "target": "assets/traits/aereus-gambo-fase-maturo.webp",
+    "file": "incoming/icone/fasi-37-r01.png",
+    "cella": 8,
+    "source_sha256": "9fc5d8d57a36c38301f692ba2571acb4e4b91ca5c9d855399fa690b88232ae07",
+    "output_sha256": "6a096eb332d9c29d5e480132b1d507b24b573f4629d7caceea7d744fb3b0dceb",
+    "stage_source": "https://it.wikipedia.org/wiki/Boletus_aereus",
+    "review": "incoming/produzione-fasi-2026-10-18/revisione-fasi-37.md",
+    "recuperato": false,
+    "stato": "revisione agente superata; attende coordinatore"
+  },
+  {
+    "target": "assets/traits/edulis-gambo-fase-giovane.webp",
+    "file": "incoming/icone/fasi-39-r01.png",
+    "cella": 2,
+    "source_sha256": "5fa37fe906bacc46e62657e31e7bea28cb0cf4136abab4aa05fae9aeb8251375",
+    "output_sha256": "bb449c1836d368bd96d44d795497fa1bbe596aa535c9fe3fbbe557409e5e6e5d",
+    "stage_source": "https://it.wikipedia.org/wiki/Boletus_edulis",
+    "review": "incoming/produzione-fasi-2026-10-18/revisione-fasi-39.md",
+    "recuperato": false,
+    "stato": "revisione agente superata; attende coordinatore"
+  },
+  {
+    "target": "assets/traits/edulis-gambo-fase-adulto.webp",
+    "file": "incoming/icone/fasi-39-r01.png",
+    "cella": 5,
+    "source_sha256": "5fa37fe906bacc46e62657e31e7bea28cb0cf4136abab4aa05fae9aeb8251375",
+    "output_sha256": "27f9394ef23e65d4cc09bb3faa123d9553ea40d3566d3f7e186ba428e473091f",
+    "stage_source": "https://it.wikipedia.org/wiki/Boletus_edulis",
+    "review": "incoming/produzione-fasi-2026-10-18/revisione-fasi-39.md",
+    "recuperato": false,
+    "stato": "revisione agente superata; attende coordinatore"
+  }
+]
