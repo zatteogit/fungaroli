@@ -23,6 +23,7 @@ export function load() {
     recTrees: read('data/recognize-trees.json'),
     treeIcons: read('data/tree-trait-icons.json'),
     plantIcons: has('data/plant-trait-icons.json') ? read('data/plant-trait-icons.json') : null,
+    animals: has('data/animals.json') ? read('data/animals.json').items : [],
     plants: read('data/plants.json').plants,
     recPlants: read('data/recognize-plants.json'),
     media: read('data/media.json'),
@@ -131,6 +132,12 @@ export function missing(d = load()) {
   for (const [k, q] of TREE_KEYS(d.recPlants.schema)) for (const v of q.values) {
     need('piante-valori');
     if (!has(`assets/plant-traits/${k}-${v.id}.webp`) || !list(d.plantIcons?.values?.[k]).includes(v.id)) add('piante-valori', `${k}-${v.id}`);
+  }
+  // Solo le schede animali pubblicabili richiedono media; le bozze restano fuori.
+  for (const animal of d.animals || []) if (animal.publicationStatus === 'ready') {
+    need('animali-foto');
+    if (!animal.photos?.length) add('animali-foto', animal.id, 'nessuna foto');
+    for (const ph of animal.photos || []) photo(ph);
   }
   // piante: foto con miniatura, ritaglio e crediti
   for (const [id, p] of Object.entries(d.plants)) {

@@ -68,7 +68,7 @@ const fonts = `<style>${read('css/fonts.css').replace(/url\(([^)]+)\)/g,(_,src)=
 const body = html.match(/<body>([\s\S]*)<\/body>/)[1]
   .replace(/<script[\s\S]*?<\/script>/g, '')
   .replace('Mappe © OpenStreetMap, OpenTopoMap (CC-BY-SA). ', '');
-const extra = Object.fromEntries(Object.entries({ botanicalModels:'botanical-models',plants:'plants',glossary:'glossary',glossaryMedia:'media-glossary',guides:'guides',contentCopy:'ui-copy',edibleCatalog: 'edible-catalog', legal: 'legal', traits: 'species-traits', trees: 'trees', infographics: 'infografiche', preparation: 'preparation', trailheads: 'trailheads', challenges: 'challenges' }).map(([k,f]) => [k, readOpt('data/' + f + '.json')]));
+const extra = Object.fromEntries(Object.entries({ animals:'animals',botanicalModels:'botanical-models',plants:'plants',glossary:'glossary',glossaryMedia:'media-glossary',guides:'guides',contentCopy:'ui-copy',edibleCatalog: 'edible-catalog', legal: 'legal', traits: 'species-traits', trees: 'trees', infographics: 'infografiche', preparation: 'preparation', trailheads: 'trailheads', challenges: 'challenges' }).map(([k,f]) => [k, readOpt('data/' + f + '.json')]));
 for(const p of Object.values(extra.plants?.plants||{}))for(const m of p.photos||[])collect(m);
 for(const row of Object.values(extra.glossaryMedia?.terms||{}))for(const m of row.illustrations||[])put(m.file);
 for(const g of extra.guides?.guides||[])put(g.image?.file);
@@ -81,6 +81,7 @@ ${fonts}
 <style>
 ${leafletCss}
 ${read('css/style.css')}
+${read('css/animals.css')}
 body { padding-inline: 0; }
 </style>
 ${body.trim()}

@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="utf-8">
-  <meta name="app-version" content="fungaroli-shell-v212">
+  <meta name="app-version" content="fungaroli-shell-v213">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
   <link rel="preload" href="data/crop-points.json" as="fetch" crossorigin>
   <meta name="theme-color" content="#f7f4ea" media="(prefers-color-scheme: light)">
@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="css/fronda.css">
   <link rel="stylesheet" href="css/species-pages.css">
   <link rel="stylesheet" href="css/content-ui.css">
+  <link rel="stylesheet" href="css/animals.css">
   <link rel="stylesheet" href="css/map-experience.css">
   <link rel="stylesheet" href="css/notebook.css">
   <script>try{var t=localStorage.getItem('fungaroli:theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
@@ -160,6 +161,12 @@
       <aside class="story-invite story-blue catalog-invite"><div><h2>Guarda più vicino.</h2><p>Caratteri, parole e piccoli dettagli del bosco.</p><a class="btn primary" href="#/impara">Scopri le nostre guide <span aria-hidden="true">→</span></a></div><figure class="story-photo"><a href="#/pianta/ginestra-odorosa" aria-label="Ginestra odorosa: apri la scheda"><img src="assets/plants/ginestra-odorosa-1.webp" alt="" loading="lazy" decoding="async"></a></figure></aside>
       <div id="plant-grid" class="species-grid"></div>
     </section>
+    <section class="view" data-view="animali" hidden aria-labelledby="animals-h">
+      <div class="view-head"><div><p class="kicker" data-catalog-count="animali" hidden></p><h1 id="animals-h" class="view-title">Animali</h1><p class="view-sub">Impollinatori, incontri e vita lungo il sentiero.</p></div></div>
+      <nav class="seg-nav" data-scopri-nav aria-label="Sezioni di Scopri"></nav>
+      <div id="animal-grid"></div>
+    </section>
+    <section class="view" data-view="animale" hidden><div id="animal-detail"></div></section>
     <section class="view view-hero" data-view="pianta" hidden><div id="plant-detail" class="sp-page"></div></section>
     <section class="view" data-view="riconosci" hidden aria-labelledby="id-h">
       <div class="view-head"><div><h1 id="id-h" class="view-title" data-recognize-title>Funghi</h1>

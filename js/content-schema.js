@@ -6,6 +6,7 @@ export const CONTENT_RESOURCES = [
   {id:'species-id',title:'Schede delle specie modellate',group:'Specie',collections:['species'],required:['species']},
   {id:'botanical-models',title:'Modelli di erbe e frutti',group:'Modelli',collections:['models'],required:['models']},
   {id:'plants',title:'Piante e fiori',group:'Bosco',collections:['plants'],required:['plants']},
+  {id:'animals',title:'Animali',group:'Bosco',collections:['items'],required:['version','reviewedOn','sources','items']},
   {id:'trees',title:'Alberi',group:'Bosco',collections:['trees'],required:['trees']},
   {id:'guides',title:'Articoli e taccuini',group:'Redazione',collections:['guides'],required:['guides']},
   {id:'glossary',title:'Glossario e legenda',group:'Scopri',collections:['terms'],required:['terms']},
@@ -26,6 +27,7 @@ export const CONTENT_RESOURCES = [
 export const resourceOf = id => CONTENT_RESOURCES.find(r => r.id === id);
 export const CONTENT_TEMPLATES = {
   'botanical-models':{plantId:'',enabled:false,phase:'young_leaves',phaseLabel:'Foglie giovani',phaseMonths:null,calendarOrigin:'hypothesis',calendarNote:'',elevationRange:null,elevationNote:'',landscapeAffinity:{},landscapeSaturation:0.45,observationDays:14,habitatNote:'',methodNote:'Pesi e affinità sono ipotesi di ordinamento, non parametri biologici calibrati.',sources:[],parameterOrigin:'editorial_hypothesis'},
+  animals:{id:'',name:'',latin:'',rank:'editorial_group',groupLabel:'',paths:[],summary:'',observe:[],habitat:[],behavior:[],ecology:[],cautions:[],sourceIds:[],photos:[],knownGaps:[],publicationStatus:'draft'},
   plants:{name:'',latin:'',category:'Erbe',aliases:[],habitat:'',recognize:[],foodUse:{status:'da verificare',parts:'',caution:''},flowerMonths:[],phaseNote:'',lookalikes:[],sources:[],photos:[]},
   guides:{id:'',category:'',title:'',excerpt:'',body:''},
   glossary:{id:'',term:'',category:'Bosco',contexts:null,aliases:[],definition:'',observe:'',related:[],sources:[]},

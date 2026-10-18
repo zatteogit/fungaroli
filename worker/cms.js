@@ -21,7 +21,7 @@ async function json(req) {
 
 // Documenti che un deploy aggiorna dal repository finché nessun autore li ha toccati (seed o ultima
 // scrittura di una release). Ognuno deve passare validateContent: un errore qui ferma init() e lo snapshot.
-export const REPOSITORY_REFRESHED=['ui-copy','plants','trees','media','media-trees','media-zones','species-id','species-traits','edible-catalog','preparation','glossary','guides','legal','media-glossary','trails','zones','infografiche'];
+export const REPOSITORY_REFRESHED=['ui-copy','plants','animals','trees','media','media-trees','media-zones','species-id','species-traits','edible-catalog','preparation','glossary','guides','legal','media-glossary','trails','zones','infografiche'];
 
 async function init(env,origin) {
   const db=env.CMS_DB;
@@ -34,7 +34,7 @@ async function init(env,origin) {
       const res=await env.ASSETS.fetch(new Request(new URL(`/data/${r.id}.json`,origin)));
       if(!res.ok) failure(`Dati iniziali mancanti: ${r.title}.`,503);
       const data=await res.json();
-      const value=['guides','legal','glossary','plants','botanical-models'].includes(r.id)?validateContent(r.id,data).value:data;
+      const value=['guides','legal','glossary','plants','animals','botanical-models'].includes(r.id)?validateContent(r.id,data).value:data;
       return {id:r.id,payload:JSON.stringify(value)};
     }));
     if(seeds.length) await db.batch([

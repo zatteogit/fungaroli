@@ -4,11 +4,12 @@
 // - meteo Open-Meteo: gestito dall'app con data di acquisizione e limite d'età
 // - mappe: dalla cache se gia' viste, con un limite di tessere
 // - diario (/api/): mai in cache
-const SHELL = 'fungaroli-shell-v212';
+const SHELL = 'fungaroli-shell-v213';
 const RUNTIME = 'fungaroli-runtime-v1';
 const TILES = 'fungaroli-tiles-v1';
 const MAX_TILES = 1500;
 const PRECACHE = [
+  'js/animals.js', 'css/animals.css', 'data/animals.json',
   'js/outing-intent.js', 'js/planning-time.js', 'js/base-location.js', 'js/travel-model.js',
   'js/legal-access.js', 'js/legal-notice.js', 'js/navigation-context.js', 'js/focus.js', 'js/modal-scroll.js', 'js/modal-flow.js', 'js/compare-picker.js', 'js/entity-sheet.js', 'js/entity-accordions.js', 'js/content-ui.js', 'js/ambilight.js', 'js/ui-icons.js', 'js/map-experience.js',
   'assets/ui/chevron-right.svg', 'assets/ui/alert-triangle.svg', 'assets/ui/map.svg', 'assets/ui/leaf.svg', 'assets/ui/notebook.svg',
