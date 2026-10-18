@@ -1,6 +1,7 @@
+import {matchSpecies} from './species-search.js';
 // Scelta esplicita di due specie del catalogo: non crea nuove relazioni di sosia.
 const esc = value => String(value ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const normalize = value => String(value || '').normalize('NFD').replace(/\p{M}/gu,'').toLocaleLowerCase('it');
+
 const name = t => t.name || t.latin;
 const image = (t,photo,asset,full=false) => { const p=photo(t); return p?`<img data-src="${esc(asset(full?(p.file||p.thumb):(p.thumb||p.file)))}" alt="" loading="lazy" decoding="async">`:'<span class="cmp-picker-placeholder" aria-hidden="true">?</span>'; };
 
@@ -11,7 +12,7 @@ export function openComparePicker({taxa,photo,asset,title='Scegli un fungo',curr
   const dialog=document.createElement('dialog');dialog.className='cmp-chooser cmp-finder';
   dialog.setAttribute('aria-label',heading);
   dialog.innerHTML=`<header class="cmp-chooser-head"><h2>${esc(heading)}</h2><button type="button" data-finder-close aria-label="Chiudi">×</button></header>
-    <label class="cmp-finder-search"><span>Cerca nel catalogo</span><input type="search" placeholder="Nome comune o scientifico" autocomplete="off"></label>
+    <label class="cmp-finder-search"><span>Cerca nel catalogo</span><input type="search" placeholder="Nome o carattere, es. verde" autocomplete="off"></label>
     ${related.length?`<div class="cmp-finder-scopes" role="group" aria-label="Specie da mostrare"><button type="button" data-scope="related" aria-pressed="true">Sosia documentati · ${related.length}</button><button type="button" data-scope="all" aria-pressed="false">Tutti i funghi</button></div>`:''}
     <p class="cmp-finder-count" role="status"></p><div class="cmp-finder-results"></div>`;
   document.body.append(dialog);
@@ -19,10 +20,11 @@ export function openComparePicker({taxa,photo,asset,title='Scegli un fungo',curr
   let scope=related.length?'related':'all';
   const input=dialog.querySelector('input');
   const paint=()=>{
-    const q=normalize(input.value.trim());
-    const items=taxa.filter(t=>t.key!==exclude && (scope==='all'||relatedKeys.has(t.key)) && normalize(`${name(t)} ${t.latin||''}`).includes(q));
-    dialog.querySelector('.cmp-finder-count').textContent=`${items.length} specie${scope==='related'?' · dalle relazioni documentate':' · intero catalogo'}`;
-    dialog.querySelector('.cmp-finder-results').innerHTML=items.length?items.map(t=>`<button type="button" class="cmp-finder-item" data-choose="${esc(t.key)}" aria-pressed="${t.key===current}">${image(t,photo,asset)}<span><b>${esc(name(t))}</b><i>${esc(t.latin||'')}</i><small${['mortale','tossico'].includes(t.toxicity)?' class="cmp-finder-risk"':''}>${esc(t.tox_label||t.toxicity||'')}${relatedKeys.has(t.key)?' · sosia documentato':''}</small></span>${t.key===current?'<span aria-hidden="true">✓</span>':''}</button>`).join(''):'<p class="cmp-picker-empty">Nessuna specie corrisponde. Prova un altro nome o passa a tutti i funghi.</p>';
+    const q=input.value.trim();
+    const pool=taxa.filter(t=>t.key!==exclude && (scope==='all'||relatedKeys.has(t.key)));
+    const result=matchSpecies(pool,q),items=result.items;
+    dialog.querySelector('.cmp-finder-count').textContent=`${items.length} specie${result.byTraits?' · suggerimenti per caratteri':scope==='related'?' · dalle relazioni documentate':' · intero catalogo'}`;
+    dialog.querySelector('.cmp-finder-results').innerHTML=items.length?items.map(t=>`<button type="button" class="cmp-finder-item" data-choose="${esc(t.key)}" aria-pressed="${t.key===current}">${image(t,photo,asset)}<span><b>${esc(name(t))}</b><i>${esc(t.latin||'')}</i>${result.byTraits?`<small class="search-feature-reason">${esc(result.reasons.get(t))}</small>`:''}<small${['mortale','tossico'].includes(t.toxicity)?' class="cmp-finder-risk"':''}>${esc(t.tox_label||t.toxicity||'')}${relatedKeys.has(t.key)?' · sosia documentato':''}</small></span>${t.key===current?'<span aria-hidden="true">✓</span>':''}</button>`).join(''):'<p class="cmp-picker-empty">Nessuna specie corrisponde. Prova un altro nome o passa a tutti i funghi.</p>';
   };
   input.addEventListener('input',paint);
   dialog.addEventListener('click',event=>{

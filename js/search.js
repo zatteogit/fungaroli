@@ -1,3 +1,4 @@
+import {matchSpecies} from './species-search.js';
 // Cerca: un solo campo per tutto. Zone, funghi, velenosi e sosia, alberi, sentieri, pagine e regole.
 // Le voci arrivano da app.js gia' pronte (titolo, sottotitolo, testo in cui cercare, link o azione, miniatura).
 
@@ -53,9 +54,7 @@ export function hitsByKind(q, exclude = []) {
   const words = norm(q).split(/\s+/).filter(Boolean);
   if (!words.length) return [];
   const n = {};
-  // qui solo corrispondenze a inizio parola: «more» non deve contare «morchella»
-  const starts = words.map((w) => new RegExp(`(^|[^a-z0-9])${w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`));
-  for (const it of ITEMS) if (!exclude.includes(it.kind) && starts.every((re) => re.test(it._h))) n[it.kind] = (n[it.kind] || 0) + 1;
+  for(const {it} of searchHits(q))if(!exclude.includes(it.kind))n[it.kind]=(n[it.kind]||0)+1;
   return ORDER.filter((k) => n[k]).map((k) => [k, KINDS[k], n[k]]);
 }
 
@@ -69,6 +68,20 @@ function score(it, words) {
     else s += 1;
   }
   return s + (it.boost || 0);
+}
+
+const SPECIES_KINDS=new Set(['fungo','velenoso','pianta','albero']);
+function searchHits(q, selectedScope='') {
+  const words=norm(q).split(/\s+/).filter(Boolean);
+  const pool=ITEMS.map((it,i)=>({it,i})).filter(({it})=>!selectedScope||it.kind===selectedScope);
+  const species=matchSpecies(pool.filter(({it})=>SPECIES_KINDS.has(it.kind)),q,{
+    names:({it})=>it.searchNames || [it.title,it.sub,it.hay].join(' '),
+    features:({it})=>it.features || [],
+  });
+  return [
+    ...pool.filter(({it})=>!SPECIES_KINDS.has(it.kind)).map(h=>({...h,s:score(h.it,words)})).filter(h=>h.s>0),
+    ...species.items.map(h=>({...h,s:score(h.it,words)||1,byTraits:species.byTraits,reason:species.reasons.get(h)})),
+  ];
 }
 
 function mark(text, words) {
@@ -137,16 +150,15 @@ function render(q) {
       <p class="small muted sr-hint">Cerca per nome, nome latino o dialettale, comune, numero del sentiero, tipo di bosco.</p>`;
     return;
   }
-  const hits = ITEMS.map((it, i) => ({ it, i, s: score(it, words) })).filter((h) => h.s > 0 && (!scope || h.it.kind === scope))
-    .map((h) => (prio.includes(h.it.kind) ? { ...h, s: h.s + 3 - prio.indexOf(h.it.kind) } : h));
+  const hits = searchHits(q,scope).map(h=>prio.includes(h.it.kind)?{...h,s:h.s+3-prio.indexOf(h.it.kind)}:h);
   if (!hits.length) { box.innerHTML = `<p class="sr-empty">Nessun risultato per <b>${esc(q)}</b>.<br><span class="small muted">Se hai un fungo in mano, prova <a href="#/riconosci" data-close>Impara a riconoscere</a>.</span></p>`; box.querySelector('[data-close]')?.addEventListener('click', () => dlg.close()); return; }
   const groups = ORDER.map((k) => [k, hits.filter((h) => h.it.kind === k).sort((a, b) => b.s - a.s).slice(0, scope ? 30 : k === 'velenoso' || k === 'sentiero' ? 5 : 6)]).filter(([, l]) => l.length);
   // il gruppo col risultato migliore va in cima
   groups.sort((a, b) => Number(prio.includes(b[0])) - Number(prio.includes(a[0])) || b[1][0].s - a[1][0].s);
-  box.innerHTML = groups.map(([k, l]) => `<section class="sr-group"><p class="sr-h">${KINDS[k]}</p><ul>${l.map(({ it, i }) => `
+  box.innerHTML = groups.map(([k, l]) => `<section class="sr-group"><p class="sr-h">${KINDS[k]}${l.every(h=>h.byTraits)?' · suggerimenti per caratteri':''}</p><ul>${l.map(({ it, i, reason }) => `
     <li><button type="button" class="sr-item" role="option" data-i="${i}" aria-selected="false">
       <span class="sr-img">${it.img || ''}</span>
-      <span class="sr-txt"><b>${mark(it.title, words)}</b>${it.sub ? `<small>${mark(it.sub, words)}</small>` : ''}</span>
+      <span class="sr-txt"><b>${mark(it.title, words)}</b>${it.sub ? `<small>${mark(it.sub, words)}</small>` : ''}${reason?`<small class="search-feature-reason">${mark(reason,words)}</small>`:''}</span>
       ${it.badge ? `<span class="sr-badge ${esc(it.badgeCls || '')}">${esc(it.badge)}</span>` : ''}
     </button></li>`).join('')}</ul></section>`).join('');
 }

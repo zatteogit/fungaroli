@@ -476,3 +476,5 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 .cmp-pair-nav .cmp-sosia-count[hidden],
 .cmp-pair-nav.is-stuck .cmp-sosia-count { display:none; }
 .cmp-pair-nav:not(.is-stuck) .cmp-pair-menu:has(.cmp-sosia-count:not([hidden])) [data-current-lookalike] { display:none; }
+
+.search-feature-reason { display:block; margin-top:4px; color:var(--text-2); font:400 12px/1.5 var(--font-body); }
