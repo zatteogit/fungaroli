@@ -1,0 +1,23 @@
+{
+  "source": "incoming/lotto-botanico-01-2026-10-18/originali/fragolina-portamento-r01.png",
+  "sourceHash": "3b4bff312b512f67db9d2f098560479cf37f23113f8183ddc7a0e442adec27f4",
+  "asset": "incoming/lotto-botanico-01-2026-10-18/approvati/fragolina-portamento-rosetta.webp",
+  "assetHash": "fc70456703527e5c6d9759daa6bd19f3c4140dfbc07808c1180861577d611f5f",
+  "alphaThreshold": 16,
+  "sourceBbox": [
+    24,
+    79,
+    1344,
+    1080
+  ],
+  "bbox": [
+    8,
+    21,
+    120,
+    106
+  ],
+  "size": [
+    128,
+    128
+  ]
+}

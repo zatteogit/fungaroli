@@ -1,0 +1,359 @@
+{
+  "date": "2026-10-18",
+  "generationMethod": "image_gen raster, then review, then eventual SVG",
+  "approvedByAgent": [
+    {
+      "species": "fragolina",
+      "latin": "Fragaria vesca L. subsp. vesca",
+      "fields": [
+        {
+          "key": "growth_form",
+          "value": "erba"
+        },
+        {
+          "key": "leaf_arrangement",
+          "value": "rosetta_basale"
+        }
+      ],
+      "status": "raster revisionato agente; revisione indipendente coordinatore in attesa",
+      "asset": "incoming/lotto-botanico-01-2026-10-18/approvati/fragolina-portamento-rosetta.webp",
+      "assetHash": "fc70456703527e5c6d9759daa6bd19f3c4140dfbc07808c1180861577d611f5f",
+      "master": "incoming/lotto-botanico-01-2026-10-18/originali/fragolina-portamento-r01.png",
+      "masterHash": "3b4bff312b512f67db9d2f098560479cf37f23113f8183ddc7a0e442adec27f4",
+      "prompt": "lot1_fragolina_r01_prompt.txt",
+      "source": {
+        "title": "Università di Trieste · Portale della Flora di Roma",
+        "url": "https://dryades.units.it/Roma/index.php?id=2073&procedure=taxon_page"
+      },
+      "referencePhoto": {
+        "file": "assets/plants/fragolina-3.webp",
+        "thumb": "assets/plants/fragolina-3-t.webp",
+        "alt": "Fragolina di bosco: fotografia della specie",
+        "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+        "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "page": "https://dryades.units.it/Roma/index.php?id=2073&procedure=taxon_page",
+        "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG2745JPG1701878169.jpg",
+        "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di Trieste, Civico Orto botanico, TS, Friuli Venezia Giulia, Italia · 07/04/2023 · Distributed under CC BY-SA 4.0 license."
+      },
+      "referencePhotoHash": "7ee48c51196b912b1730560a174483a5b30b126331656c86bf79ff9e65ddf3c4",
+      "license": "CC BY-SA 4.0",
+      "review": "REVISIONE.md",
+      "preview": [
+        "preview/fragolina-128-64.png",
+        "preview/fragolina-ui-light-390.png",
+        "preview/fragolina-ui-dark-390.png"
+      ],
+      "vectorStatus": "da inviare dopo approvazione indipendente"
+    }
+  ],
+  "blocked": [
+    {
+      "species": "finocchietto",
+      "key": "growth_form",
+      "value": "erba",
+      "status": "da documentare",
+      "reason": "Manca vista pianta intera",
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora di Roma",
+          "url": "https://dryades.units.it/Roma/index.php?id=3527&procedure=taxon_page"
+        },
+        {
+          "title": "Portale della Flora d'Italia · Anethum foeniculum L. (Foeniculum vulgare Mill. come sinonimo)",
+          "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=9820"
+        },
+        {
+          "title": "POWO · Kew: Foeniculum vulgare Mill. come nome accettato a livello mondiale",
+          "url": "https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:842680-1"
+        },
+        {
+          "title": "Thermal time (growing degree days) effects on phenology, yield and quality attributes of fennel",
+          "url": "https://epubs.icar.org.in/index.php/IJSS/article/view/175975"
+        },
+        {
+          "title": "CNR · Mondo vegetale del Lazio e non solo (2021), pp. 135 e 138-139: finocchietto e ferula",
+          "url": "https://www.cnr.it/sites/default/files/public/media/attivita/editoria/Mondo%20vegetale%20del%20Lazio%20e%20non%20solo_22_NOV-2021.pdf"
+        },
+        {
+          "title": "POWO · Kew: Ferula communis L.",
+          "url": "https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:842235-1"
+        }
+      ],
+      "photosInspected": [
+        {
+          "file": "assets/plants/finocchietto-1.webp",
+          "thumb": "assets/plants/finocchietto-1-t.webp",
+          "alt": "Finocchietto selvatico: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=3527&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG0376JPG1598000751.jpg",
+          "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di Trieste, Monte Valerio, TS, Friuli Venezia Giulia, Italia · 20/08/2020 · Distributed under CC BY-SA 4.0 license."
+        },
+        {
+          "file": "assets/plants/finocchietto-2.webp",
+          "thumb": "assets/plants/finocchietto-2-t.webp",
+          "alt": "Finocchietto selvatico: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=3527&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB15133.jpg",
+          "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di Trieste, Monte Valerio, nei pressi degli istituti universitari. , FVG, Italia · 9/9/04 0.00.00 · Distributed under CC BY-SA 4.0 license."
+        },
+        {
+          "file": "assets/plants/finocchietto-3.webp",
+          "thumb": "assets/plants/finocchietto-3-t.webp",
+          "alt": "Finocchietto selvatico: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=3527&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TS246634.jpg",
+          "sourceCaption": "© Dipartimento di Scienze della Vita, Università di Trieste · Andrea Moro · Comune di Bologna, Orto Botanico dell'Università di Bologna, Emilia-Romagna, Italia · 22/07/2019 · Distributed under CC BY-SA 4.0 license."
+        }
+      ],
+      "networkStatus": "Dryades: tunnel proxy403Forbidden"
+    },
+    {
+      "species": "finocchietto",
+      "key": "leaf_type",
+      "value": "molto_divisa_fine",
+      "status": "da documentare",
+      "reason": "Manca riferimento foglia",
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora di Roma",
+          "url": "https://dryades.units.it/Roma/index.php?id=3527&procedure=taxon_page"
+        },
+        {
+          "title": "Portale della Flora d'Italia · Anethum foeniculum L. (Foeniculum vulgare Mill. come sinonimo)",
+          "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=9820"
+        },
+        {
+          "title": "POWO · Kew: Foeniculum vulgare Mill. come nome accettato a livello mondiale",
+          "url": "https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:842680-1"
+        },
+        {
+          "title": "Thermal time (growing degree days) effects on phenology, yield and quality attributes of fennel",
+          "url": "https://epubs.icar.org.in/index.php/IJSS/article/view/175975"
+        },
+        {
+          "title": "CNR · Mondo vegetale del Lazio e non solo (2021), pp. 135 e 138-139: finocchietto e ferula",
+          "url": "https://www.cnr.it/sites/default/files/public/media/attivita/editoria/Mondo%20vegetale%20del%20Lazio%20e%20non%20solo_22_NOV-2021.pdf"
+        },
+        {
+          "title": "POWO · Kew: Ferula communis L.",
+          "url": "https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:842235-1"
+        }
+      ],
+      "photosInspected": [
+        {
+          "file": "assets/plants/finocchietto-1.webp",
+          "thumb": "assets/plants/finocchietto-1-t.webp",
+          "alt": "Finocchietto selvatico: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=3527&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG0376JPG1598000751.jpg",
+          "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di Trieste, Monte Valerio, TS, Friuli Venezia Giulia, Italia · 20/08/2020 · Distributed under CC BY-SA 4.0 license."
+        },
+        {
+          "file": "assets/plants/finocchietto-2.webp",
+          "thumb": "assets/plants/finocchietto-2-t.webp",
+          "alt": "Finocchietto selvatico: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=3527&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB15133.jpg",
+          "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di Trieste, Monte Valerio, nei pressi degli istituti universitari. , FVG, Italia · 9/9/04 0.00.00 · Distributed under CC BY-SA 4.0 license."
+        },
+        {
+          "file": "assets/plants/finocchietto-3.webp",
+          "thumb": "assets/plants/finocchietto-3-t.webp",
+          "alt": "Finocchietto selvatico: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=3527&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TS246634.jpg",
+          "sourceCaption": "© Dipartimento di Scienze della Vita, Università di Trieste · Andrea Moro · Comune di Bologna, Orto Botanico dell'Università di Bologna, Emilia-Romagna, Italia · 22/07/2019 · Distributed under CC BY-SA 4.0 license."
+        }
+      ],
+      "networkStatus": "Dryades: tunnel proxy403Forbidden"
+    },
+    {
+      "species": "finocchietto",
+      "key": "fruit_type",
+      "value": "secco_piccolo",
+      "status": "da documentare",
+      "reason": "Foto esistenti mostrano frutti verdi, non secchi maturi",
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora di Roma",
+          "url": "https://dryades.units.it/Roma/index.php?id=3527&procedure=taxon_page"
+        },
+        {
+          "title": "Portale della Flora d'Italia · Anethum foeniculum L. (Foeniculum vulgare Mill. come sinonimo)",
+          "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=9820"
+        },
+        {
+          "title": "POWO · Kew: Foeniculum vulgare Mill. come nome accettato a livello mondiale",
+          "url": "https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:842680-1"
+        },
+        {
+          "title": "Thermal time (growing degree days) effects on phenology, yield and quality attributes of fennel",
+          "url": "https://epubs.icar.org.in/index.php/IJSS/article/view/175975"
+        },
+        {
+          "title": "CNR · Mondo vegetale del Lazio e non solo (2021), pp. 135 e 138-139: finocchietto e ferula",
+          "url": "https://www.cnr.it/sites/default/files/public/media/attivita/editoria/Mondo%20vegetale%20del%20Lazio%20e%20non%20solo_22_NOV-2021.pdf"
+        },
+        {
+          "title": "POWO · Kew: Ferula communis L.",
+          "url": "https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:842235-1"
+        }
+      ],
+      "photosInspected": [
+        {
+          "file": "assets/plants/finocchietto-1.webp",
+          "thumb": "assets/plants/finocchietto-1-t.webp",
+          "alt": "Finocchietto selvatico: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=3527&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG0376JPG1598000751.jpg",
+          "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di Trieste, Monte Valerio, TS, Friuli Venezia Giulia, Italia · 20/08/2020 · Distributed under CC BY-SA 4.0 license."
+        },
+        {
+          "file": "assets/plants/finocchietto-2.webp",
+          "thumb": "assets/plants/finocchietto-2-t.webp",
+          "alt": "Finocchietto selvatico: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=3527&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB15133.jpg",
+          "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di Trieste, Monte Valerio, nei pressi degli istituti universitari. , FVG, Italia · 9/9/04 0.00.00 · Distributed under CC BY-SA 4.0 license."
+        },
+        {
+          "file": "assets/plants/finocchietto-3.webp",
+          "thumb": "assets/plants/finocchietto-3-t.webp",
+          "alt": "Finocchietto selvatico: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=3527&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TS246634.jpg",
+          "sourceCaption": "© Dipartimento di Scienze della Vita, Università di Trieste · Andrea Moro · Comune di Bologna, Orto Botanico dell'Università di Bologna, Emilia-Romagna, Italia · 22/07/2019 · Distributed under CC BY-SA 4.0 license."
+        }
+      ],
+      "networkStatus": "Dryades: tunnel proxy403Forbidden"
+    },
+    {
+      "species": "rosa-canina",
+      "key": "leaf_type",
+      "value": "composta",
+      "status": "da documentare",
+      "reason": "Manca foto con foglia completa, numero foglioline non deducibile dal dato composta",
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora di Roma",
+          "url": "https://dryades.units.it/Roma/index.php?id=1972&procedure=taxon_page"
+        },
+        {
+          "title": "Phenological and Pomological Characteristics of Rosa canina L. Species Cultivated and Naturally Distributed in Amasya Province",
+          "url": "https://dergipark.org.tr/tr/pub/bsagriculture/article/1356222"
+        },
+        {
+          "title": "Changes in Pomological and Physical Parameters in Rosehips during Ripening",
+          "url": "https://www.mdpi.com/2223-7747/12/6/1314"
+        },
+        {
+          "title": "Frost decreases content of sugars, ascorbic acid and some quercetin glycosides but stimulates selected carotenes in Rosa canina hips",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/25768262/"
+        }
+      ],
+      "photosInspected": [
+        {
+          "file": "assets/plants/rosa-canina-1.webp",
+          "thumb": "assets/plants/rosa-canina-1-t.webp",
+          "alt": "Rosa canina: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=1972&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB30255jpg1669722706.jpg",
+          "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di San Dorligo della Valle, nei pressi della chiesetta di San Lorenzo, TS, Friuli Venezia Giulia, Italia · 27/09/2005 · Distributed under CC BY-SA 4.0 license."
+        },
+        {
+          "file": "assets/plants/rosa-canina-2.webp",
+          "thumb": "assets/plants/rosa-canina-2-t.webp",
+          "alt": "Rosa canina: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=1972&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG7810JPG1716373277.jpg",
+          "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di Serle, vallecola ombreggiata lungo la strada per Castello, BS, Lombardia, Italia · 19/05/2024 · Distributed under CC BY-SA 4.0 license."
+        },
+        {
+          "file": "assets/plants/rosa-canina-3.webp",
+          "thumb": "assets/plants/rosa-canina-3-t.webp",
+          "alt": "Rosa canina: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=1972&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB30249jpg1669722697.jpg",
+          "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di San Dorligo della Valle, nei pressi della chiesetta di San Lorenzo, TS, Friuli Venezia Giulia, Italia · 27/09/2005 · Distributed under CC BY-SA 4.0 license."
+        }
+      ],
+      "networkStatus": "Dryades: tunnel proxy403Forbidden"
+    }
+  ],
+  "reuseCandidates": [
+    {
+      "species": "rosa-canina",
+      "key": "flower_shape",
+      "value": "cinque_petali",
+      "src": "assets/plant-traits/flower_shape-cinque_petali.webp",
+      "sha256": "e3953128aafe76420d9f2ba38109c7670a38dc260156b33e4a1c9008f8070a6a",
+      "source": {
+        "title": "Università di Trieste · Portale della Flora di Roma",
+        "url": "https://dryades.units.it/Roma/index.php?id=1972&procedure=taxon_page"
+      },
+      "photo": {
+        "file": "assets/plants/rosa-canina-2.webp",
+        "thumb": "assets/plants/rosa-canina-2-t.webp",
+        "alt": "Rosa canina: fotografia della specie",
+        "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+        "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "page": "https://dryades.units.it/Roma/index.php?id=1972&procedure=taxon_page",
+        "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG7810JPG1716373277.jpg",
+        "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di Serle, vallecola ombreggiata lungo la strada per Castello, BS, Lombardia, Italia · 19/05/2024 · Distributed under CC BY-SA 4.0 license."
+      },
+      "status": "revisione agente favorevole limitata allo schema cinque petali; coordinatore in attesa"
+    }
+  ]
+}
