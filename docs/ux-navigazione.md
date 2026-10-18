@@ -107,4 +107,4 @@ pagina. Sul desktop restano navigazione e testata estese.
 
 Scopri usa un libro aperto come icona: rappresenta cataloghi, caratteri e guide di
 funghi, piante e alberi. La foglia è riservata ai contenuti botanici; il Taccuino
-resta un quaderno chiuso, la Mappa una carta ripiegata.
+usa una stilo con pennino per richiamare la scrittura, la Mappa una carta ripiegata.
