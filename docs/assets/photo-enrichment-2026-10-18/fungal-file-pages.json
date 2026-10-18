@@ -1,0 +1,55 @@
+{
+  "batchcomplete": "",
+  "query": {
+    "pages": {
+      "57543702": {
+        "pageid": 57543702,
+        "ns": 6,
+        "title": "File:2008-10-19 Boletus satanas Lenz 223261.jpg",
+        "revisions": [
+          {
+            "slots": {
+              "main": {
+                "contentmodel": "wikitext",
+                "contentformat": "text/x-wiki",
+                "*": "== {{int:filedesc}} ==\n{{Information\n|Description='''''Boletus satanas''''' Lenz\n\nImage location: Yenisarbademli, Turkey\n\n<div>\n<span>\nRecognized by sight\n</span>\n</div>\n{{MushroomObserverMoreInfo|95920}}\n|Source={{MushroomObserver|223261}}\n|Date=2008-10-19\n|Author={{MushroomObserverUser|1=2660|2=Murselin Guney (Beyrek)}}\n|Permission=\n|other_versions=\n}}\n{{Location dec|37.707|31.3866|source:mushroom_observer}}\n\n=={{int:license-header}}==\n{{cc-by-sa-3.0}}\n{{LicenseReview|site=https://mushroomobserver.org/image/show_image/223261|user=Dyolf77|date=2017-03-31}}\n\n[[Category:Rubroboletus satanas]]\n[[Category:Boletales in Turkey]]\n[[Category:Yenişarbademli]]\n[[Category:Nature of Isparta Province]]\n[[Category:Turkey photographs taken on 2002-01-03]]"
+              }
+            }
+          }
+        ]
+      },
+      "57035353": {
+        "pageid": 57035353,
+        "ns": 6,
+        "title": "File:2011-12-01 Omphalotus olearius (DC.) Singer 212577.jpg",
+        "revisions": [
+          {
+            "slots": {
+              "main": {
+                "contentmodel": "wikitext",
+                "contentformat": "text/x-wiki",
+                "*": "== {{int:filedesc}} ==\n{{Information\n|Description='''''Omphalotus olearius''''' (DC.) Singer\n\nImage location: Bainem, Algiers, Algeria\n\nWas growing on Olea europea. Emitting fluorescent / glows in dark.\n\n<div>\n<span>\nRecognized by sight\n</span>\n</div>\n<div>\n<span>\nUsed references\n</span>\n</div>\n{{MushroomObserverMoreInfo|92644}}\n|Source={{MushroomObserver|212577}}\n|Date=2011-12-01\n|Author={{MushroomObserverUser|1=3928|2=Souhila Aouali}}\n|Permission=\n|other_versions=\n}}\n{{Location dec|36.7934|3.0115|source:mushroom_observer}}\n\n== {{int:license-header}} ==\n{{cc-by-sa-3.0}}\n{{LicenseReview|site={{MushroomObserverLink|212577}}|user=Daphne Lantier|date=2017-03-12}}\n\n[[Category:Fungi of Algeria in December]]\n[[Category:Omphalotus olearius]]\n[[Category:Omphalotaceae in Algeria]]"
+              }
+            }
+          }
+        ]
+      },
+      "31550895": {
+        "pageid": 31550895,
+        "ns": 6,
+        "title": "File:Amanita phalloides (3).JPG",
+        "revisions": [
+          {
+            "slots": {
+              "main": {
+                "contentmodel": "wikitext",
+                "contentformat": "text/x-wiki",
+                "*": "== {{int:filedesc}} ==\n{{Information\n|Description={{Supported by Wikimedia Deutschland}}\n\n|Source=Bilderspende von Thomas Pruß in Kooperation mit dem [[:de:Wikipedia:WikiProjekt Pilze|WikiProjekt Pilze]] und dem [[:de:Wikipedia:Bilderschatz|Förderprogramm Bilderschatz]]\n|Date=2007-10-09 15:57:18\n|Author=Thomas Pruß\n|Permission=\n|other_versions=\n}}\n\n== {{int:license-header}} ==\n{{Thomas Pruß cc-by-sa}}\n\n[[Category:Amanita phalloides]]\n[[Category:Taken with Nikon D70]]"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1289,6 +1289,22 @@
           "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di Trieste, Giardino pubblico Muzio de' Tommasini, TS, Friuli Venezia Giulia, Italia · 14/03/2024 · Distributed under CC BY-SA 4.0 license.",
           "source": "Università di Trieste · Dryades",
           "file_hd": "assets/trees/agrifoglio-3.webp"
+        },
+        {
+          "file": "assets/trees/agrifoglio-fiori.webp",
+          "file_hd": "assets/trees/agrifoglio-fiori-hd.webp",
+          "thumb": "assets/trees/agrifoglio-fiori-t.webp",
+          "source": "Wikimedia Commons",
+          "page": "https://commons.wikimedia.org/wiki/File:Ilex_aquifolium_(flowers).jpg",
+          "author": "© Hans Hillewaert",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "attribution": "© Hans Hillewaert · Wikimedia Commons · CC BY-SA 4.0",
+          "alt": "Ilex aquifolium — Fiori e foglie",
+          "caption": "Fiori e foglie; attribuzione © Hans Hillewaert mantenuta.",
+          "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/3/32/Ilex_aquifolium_%28flowers%29.jpg",
+          "sha256Original": "6bf979b3539688b01825c605281b988ab72488d2def974990f969bc52e7d84e7",
+          "changes": "Orientamento EXIF, ridimensionamento, compressione WebP; miniatura ritagliata."
         }
       ]
     },

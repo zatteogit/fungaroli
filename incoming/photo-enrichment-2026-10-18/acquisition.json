@@ -3,8 +3,308 @@
   "results": [
     {
       "id": "aestivalis-commons9",
+      "status": "downloaded_pending_visual_review",
+      "original": "incoming/photo-enrichment-2026-10-18/originals/aestivalis-commons9.jpg",
+      "sha256": "3fb6b21104cc9a08e2ec8c67eec4ef74e334acd14558f303cbd01879aaa6a3d6",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Boletus_aestivalis_9.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "František ŠARŽÍK",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Boletus_aestivalis_9.jpg",
+      "source_size": [
+        872,
+        590
+      ]
+    },
+    {
+      "id": "aestivalis-commons-solo",
+      "status": "downloaded_pending_visual_review",
+      "original": "incoming/photo-enrichment-2026-10-18/originals/aestivalis-commons-solo.jpg",
+      "sha256": "846e3c8cfd49cf43b81639f25adeff4c0f3e1c89c7fa16e9bd09c24f2364a78a",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Boletus_aestivalis_solo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "Milan Chytrý",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Boletus_aestivalis_solo.jpg",
+      "source_size": [
+        1494,
+        1727
+      ]
+    },
+    {
+      "id": "nuda-commons109950721",
+      "status": "downloaded_pending_visual_review",
+      "original": "incoming/photo-enrichment-2026-10-18/originals/nuda-commons109950721.jpg",
+      "sha256": "62a93b69132af3598de3267f1f96200839c532d62585e28faa9aa50b65ea50d0",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Lepista_nuda_109950721.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "Елена Патерикина",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Lepista_nuda_109950721.jpg",
+      "source_size": [
+        2048,
+        1152
+      ]
+    },
+    {
+      "id": "nuda-villa-ada",
+      "status": "downloaded_pending_visual_review",
+      "original": "incoming/photo-enrichment-2026-10-18/originals/nuda-villa-ada.jpg",
+      "sha256": "d321fd662c86247affa13ce87e46c09906e17db32fdd068dbea77d80694bdf7b",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Fungo_Lepista_nuda.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "Albarubescens",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Fungo_Lepista_nuda.jpg",
+      "source_size": [
+        3935,
+        2914
+      ]
+    },
+    {
+      "id": "bucaneve-habitat",
+      "status": "downloaded_pending_visual_review",
+      "original": "incoming/photo-enrichment-2026-10-18/originals/bucaneve-habitat.jpg",
+      "sha256": "e0bc79e2c66000691aecb6bd8e014156b7ce8485d61ebd4b2f024e956c6952c4",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Galanthus_nivalis_sl40.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "Stefan.lefnaer",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Galanthus_nivalis_sl40.jpg",
+      "source_size": [
+        4128,
+        3096
+      ]
+    },
+    {
+      "id": "phalloides-pruss",
+      "status": "downloaded_pending_visual_review",
+      "original": "incoming/photo-enrichment-2026-10-18/originals/phalloides-pruss.jpg",
+      "sha256": "505f85b61e0230fc80dcbc612d8d2e79079f5acd3fd5f353103c52527fc4abfc",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/97/Amanita_phalloides_%283%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "Thomas Pruß",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Amanita_phalloides_(3).JPG",
+      "source_size": [
+        2000,
+        3008
+      ]
+    },
+    {
+      "id": "virosa-commons10099268",
+      "status": "downloaded_pending_visual_review",
+      "original": "incoming/photo-enrichment-2026-10-18/originals/virosa-commons10099268.jpg",
+      "sha256": "28d1d54e0ffd58b34623919ac40eb34b1ee2ab2d2414ab64159e74942d4d40bd",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Amanita_virosa_10099268.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "Maxim Shashkov",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Amanita_virosa_10099268.jpg",
+      "source_size": [
+        1536,
+        2048
+      ]
+    },
+    {
+      "id": "aristolochia-habitus",
+      "status": "downloaded_pending_visual_review",
+      "original": "incoming/photo-enrichment-2026-10-18/originals/aristolochia-habitus.jpg",
+      "sha256": "814008a548d9acd7341afd012b495aab7ed4a14d24cb33bab2259029b81a5e62",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Aristolochia_clematitis_sl11.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "Stefan.lefnaer",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Aristolochia_clematitis_sl11.jpg",
+      "source_size": [
+        3096,
+        4128
+      ]
+    },
+    {
+      "id": "hepatica-ledro",
+      "status": "downloaded_pending_visual_review",
+      "original": "incoming/photo-enrichment-2026-10-18/originals/hepatica-ledro.jpg",
+      "sha256": "190e9ac3e6d3371f0e25db183f6518ffeb6b53486bde195cc8d76849d6199503",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Hepatica_nobilis_2_RF.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "Robert Flogaus-Faust",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Hepatica_nobilis_2_RF.jpg",
+      "source_size": [
+        2732,
+        2384
+      ]
+    },
+    {
+      "id": "tancia-paesaggio",
+      "status": "downloaded_pending_visual_review",
+      "original": "incoming/photo-enrichment-2026-10-18/originals/tancia-paesaggio.jpg",
+      "sha256": "842ba8f2f38338161d41f942fd6292bf34815322d1490e5d0463046851b14bbd",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/f/f0/View_from_Monte_Tancia%2C_Sabina_Hills%2C_Italy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "Christoph Strässler",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "page": "https://commons.wikimedia.org/wiki/File:View_from_Monte_Tancia,_Sabina_Hills,_Italy.jpg",
+      "source_size": [
+        8256,
+        4644
+      ]
+    },
+    {
+      "id": "acero-montpellier-fiori",
+      "status": "downloaded_pending_visual_review",
+      "original": "incoming/photo-enrichment-2026-10-18/originals/acero-montpellier-fiori.jpg",
+      "sha256": "53510ce031fc9666aaf87de59e126b2efe7f92c5bf9b6a42d783224d7987942d",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/92/Acer_monspessulanum_4_RF.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "Robert Flogaus-Faust",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Acer_monspessulanum_4_RF.jpg",
+      "source_size": [
+        2385,
+        1833
+      ]
+    },
+    {
+      "id": "agrifoglio-fiori",
+      "status": "downloaded_pending_visual_review",
+      "original": "incoming/photo-enrichment-2026-10-18/originals/agrifoglio-fiori.jpg",
+      "sha256": "6bf979b3539688b01825c605281b988ab72488d2def974990f969bc52e7d84e7",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Ilex_aquifolium_%28flowers%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "Hans Hillewaert",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Ilex_aquifolium_(flowers).jpg",
+      "source_size": [
+        2818,
+        3759
+      ]
+    },
+    {
+      "id": "aestivalis-anro1",
+      "status": "downloaded_pending_visual_review",
+      "original": "incoming/photo-enrichment-2026-10-18/originals/aestivalis-anro1.jpg",
+      "sha256": "d1a647e61283155a422844b16d79085791417770ebbed1aff18f0309d445c350",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/20200611Boletus_reticulatus1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "AnRo0002",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "page": "https://commons.wikimedia.org/wiki/File:20200611Boletus_reticulatus1.jpg",
+      "source_size": [
+        2500,
+        1875
+      ]
+    },
+    {
+      "id": "aestivalis-anro3",
+      "status": "downloaded_pending_visual_review",
+      "original": "incoming/photo-enrichment-2026-10-18/originals/aestivalis-anro3.jpg",
+      "sha256": "c8b0eb222fadc8190899f80e4d760e7bb12bc82c8ed5ecf08c923305df3af153",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/4a/20200611Boletus_reticulatus3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "AnRo0002",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "page": "https://commons.wikimedia.org/wiki/File:20200611Boletus_reticulatus3.jpg",
+      "source_size": [
+        2750,
+        2063
+      ]
+    },
+    {
+      "id": "nuda-wilson",
+      "status": "downloaded_pending_visual_review",
+      "original": "incoming/photo-enrichment-2026-10-18/originals/nuda-wilson.jpg",
+      "sha256": "779566965b46899fd557898010b6782ed61ed44660c04b67ec68c0d41adbbfb1",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/f/f1/2002-12-28_Clitocybe_nuda_%28Fr.%29_H.E._Bigelow_%26_A.H._Sm_289.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "This image was created by user Nathan Wilson (nathan) at Mushroom Observer, a source for mycological images.You can contact this user here.",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:2002-12-28_Clitocybe_nuda_(Fr.)_H.E._Bigelow_%26_A.H._Sm_289.jpg",
+      "source_size": [
+        1600,
+        1200
+      ]
+    },
+    {
+      "id": "felleus-226780",
+      "status": "downloaded_pending_visual_review",
+      "original": "incoming/photo-enrichment-2026-10-18/originals/felleus-226780.jpg",
+      "sha256": "46a3b67573aa1e8d839e6e5b707b3f2f06dac755499ce657b7ce8e0914d28f53",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/f/fe/2012-06-09_Tylopilus_felleus_%28Bull.%29_P._Karst_226780.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "This image was created by user Christine Braaten (wintersbefore) at Mushroom Observer, a source for mycological images.You can contact this user here.",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:2012-06-09_Tylopilus_felleus_(Bull.)_P._Karst_226780.jpg",
+      "source_size": [
+        3312,
+        2384
+      ]
+    },
+    {
+      "id": "satanas-223261",
+      "status": "downloaded_pending_visual_review",
+      "original": "incoming/photo-enrichment-2026-10-18/originals/satanas-223261.jpg",
+      "sha256": "fe58fbd3faac700f0e1a2dcc35f0f1371e390951ccc081280d2bfb040326c417",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/2008-10-19_Boletus_satanas_Lenz_223261.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "This image was created by user Murselin Guney (Beyrek) at Mushroom Observer, a source for mycological images.You can contact this user here.",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:2008-10-19_Boletus_satanas_Lenz_223261.jpg",
+      "source_size": [
+        2080,
+        1544
+      ]
+    },
+    {
+      "id": "verna-commons3",
+      "status": "downloaded_pending_visual_review",
+      "original": "incoming/photo-enrichment-2026-10-18/originals/verna-commons3.jpg",
+      "sha256": "f9ddab0605fbada07d24936cf90f9a51f05726e47d4bd5a75a417d7e0c32cfb7",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/1/16/Amanita_verna_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "Sinisa Radic",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Amanita_verna_3.jpg",
+      "source_size": [
+        657,
+        489
+      ]
+    },
+    {
+      "id": "virosa-commons03",
       "status": "not_downloaded",
-      "error": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>"
+      "error": "ValueError: Metadati della fonte cambiati/incompleti: revisione necessaria"
+    },
+    {
+      "id": "phalloides-zalas02",
+      "status": "downloaded_pending_visual_review",
+      "original": "incoming/photo-enrichment-2026-10-18/originals/phalloides-zalas02.jpg",
+      "sha256": "29c5433103869ec00665a4000958dea397a84c8a7e66e6a3cee22989e05db1b0",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/6/63/02_Amanita_phalloides_in_Zalas%2C_Poland.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "Krzysztof Ślusarczyk (upload by Marek Ślusarczyk)",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:02_Amanita_phalloides_in_Zalas,_Poland.jpg",
+      "source_size": [
+        2288,
+        1712
+      ]
+    },
+    {
+      "id": "olearius-212577",
+      "status": "downloaded_pending_visual_review",
+      "original": "incoming/photo-enrichment-2026-10-18/originals/olearius-212577.jpg",
+      "sha256": "03fff1f8a1641654460b77080750de970e310071482df4f22c6ad0fbad2d6071",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/2011-12-01_Omphalotus_olearius_%28DC.%29_Singer_212577.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "This image was created by user Souhila Aouali at Mushroom Observer, a source for mycological images.You can contact this user here.",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:2011-12-01_Omphalotus_olearius_(DC.)_Singer_212577.jpg",
+      "source_size": [
+        552,
+        414
+      ]
     }
   ]
 }

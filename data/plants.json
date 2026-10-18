@@ -2715,6 +2715,22 @@
           "page": "https://dryades.units.it/Roma/index.php?id=333&procedure=taxon_page",
           "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG2497JPG1589467262.jpg",
           "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di Trieste, Salita di Contovello, a valle dell'abitato di Contovello, TS, Friuli Venezia Giulia, Italia · 08/05/2020 · Distributed under CC BY-SA 4.0 license."
+        },
+        {
+          "file": "assets/plants/aristolochia-habitus.webp",
+          "file_hd": "assets/plants/aristolochia-habitus-hd.webp",
+          "thumb": "assets/plants/aristolochia-habitus-t.webp",
+          "source": "Wikimedia Commons",
+          "page": "https://commons.wikimedia.org/wiki/File:Aristolochia_clematitis_sl11.jpg",
+          "author": "Stefan.lefnaer",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "attribution": "Stefan.lefnaer · Wikimedia Commons · CC BY-SA 4.0",
+          "alt": "Aristolochia clematitis — Portamento e foglie",
+          "caption": "Portamento e foglie; non dettaglio del fiore.",
+          "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Aristolochia_clematitis_sl11.jpg",
+          "sha256Original": "814008a548d9acd7341afd012b495aab7ed4a14d24cb33bab2259029b81a5e62",
+          "changes": "Orientamento EXIF, ridimensionamento, compressione WebP; miniatura ritagliata."
         }
       ]
     },
@@ -4236,6 +4252,22 @@
           "page": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=6989",
           "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG1494JPG1710259685.jpg",
           "sourceCaption": "Andrea Moro · © Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Distributed under CC-BY-SA 4.0 license. · Comune di Trieste, Opicina / Opčine, dolina lungo la strada per Monrupino / Repentabor (TS), Friuli Venezia Giulia, Italia · 12/03/2024"
+        },
+        {
+          "file": "assets/plants/bucaneve-habitat.webp",
+          "file_hd": "assets/plants/bucaneve-habitat-hd.webp",
+          "thumb": "assets/plants/bucaneve-habitat-t.webp",
+          "source": "Wikimedia Commons",
+          "page": "https://commons.wikimedia.org/wiki/File:Galanthus_nivalis_sl40.jpg",
+          "author": "Stefan.lefnaer",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "attribution": "Stefan.lefnaer · Wikimedia Commons · CC BY-SA 4.0",
+          "alt": "Galanthus nivalis — Habitat con fioritura nel bosco",
+          "caption": "Habitat con fioritura nel bosco; non è una fotografia di dettaglio né del Reatino.",
+          "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Galanthus_nivalis_sl40.jpg",
+          "sha256Original": "e0bc79e2c66000691aecb6bd8e014156b7ce8485d61ebd4b2f024e956c6952c4",
+          "changes": "Orientamento EXIF, ridimensionamento, compressione WebP; miniatura ritagliata."
         }
       ]
     },
@@ -4325,6 +4357,22 @@
           "page": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=1054",
           "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG5042JPG1684750772.jpg",
           "sourceCaption": "Andrea Moro · © Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Distributed under CC-BY-SA 4.0 license. · Comune di Serle, Monte San Bartolomeo (BS), Lombardia, Italia · 11/04/2023"
+        },
+        {
+          "file": "assets/plants/hepatica-ledro.webp",
+          "file_hd": "assets/plants/hepatica-ledro-hd.webp",
+          "thumb": "assets/plants/hepatica-ledro-t.webp",
+          "source": "Wikimedia Commons",
+          "page": "https://commons.wikimedia.org/wiki/File:Hepatica_nobilis_2_RF.jpg",
+          "author": "Robert Flogaus-Faust",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "attribution": "Robert Flogaus-Faust · Wikimedia Commons · CC BY 4.0",
+          "alt": "Hepatica nobilis — Fiori nel loro ambiente",
+          "caption": "Fiori nel loro ambiente; provenienza italiana dalla descrizione della fonte.",
+          "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Hepatica_nobilis_2_RF.jpg",
+          "sha256Original": "190e9ac3e6d3371f0e25db183f6518ffeb6b53486bde195cc8d76849d6199503",
+          "changes": "Orientamento EXIF, ridimensionamento, compressione WebP; miniatura ritagliata."
         }
       ]
     },

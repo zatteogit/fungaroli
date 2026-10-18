@@ -1,0 +1,1068 @@
+{
+  "date": "2026-10-18",
+  "base_commit": "aaade0c394647a015a9225950b965a7b82dd614e",
+  "photos": [
+    {
+      "id": "aestivalis-commons9",
+      "group": "species",
+      "key": "aestivalis",
+      "before": 1,
+      "after": 2,
+      "original": "incoming/photo-enrichment-2026-10-18/originals/aestivalis-commons9.jpg",
+      "sha256_original": "3fb6b21104cc9a08e2ec8c67eec4ef74e334acd14558f303cbd01879aaa6a3d6",
+      "files": [
+        {
+          "file": "assets/species/aestivalis-commons9.webp",
+          "sha256": "500cf8070c8ab4fc7684a6e09f0d84953d87116de276fc4896891bd35133d434",
+          "bytes": 29512,
+          "size": [
+            560,
+            379
+          ]
+        },
+        {
+          "file": "assets/species/aestivalis-commons9-hd.webp",
+          "sha256": "737c47e29b2a2c21d9f4cfc5dda47184f2dd286f21f0bdbe473ced74ffa3a8ae",
+          "bytes": 64280,
+          "size": [
+            872,
+            590
+          ]
+        },
+        {
+          "file": "assets/species/aestivalis-commons9-t.webp",
+          "sha256": "e22d27469751a2320e5499a8c29e3946a25115dde10f32df91d5d68e1dad0aee",
+          "bytes": 4406,
+          "size": [
+            160,
+            160
+          ]
+        }
+      ],
+      "author": "František ŠARŽÍK",
+      "page": "https://commons.wikimedia.org/wiki/File:Boletus_aestivalis_9.jpg",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.55
+        ],
+        "riquadro": [
+          0.04,
+          0.1,
+          0.97,
+          0.94
+        ],
+        "dubbio": false,
+        "nota": "Gruppo in vista laterale: cappelli, pori e gambi; i formati stretti mostrano un sottoinsieme del gruppo.",
+        "reviewed_on": "2026-10-18"
+      }
+    },
+    {
+      "id": "aestivalis-commons-solo",
+      "group": "species",
+      "key": "aestivalis",
+      "before": 2,
+      "after": 3,
+      "original": "incoming/photo-enrichment-2026-10-18/originals/aestivalis-commons-solo.jpg",
+      "sha256_original": "846e3c8cfd49cf43b81639f25adeff4c0f3e1c89c7fa16e9bd09c24f2364a78a",
+      "files": [
+        {
+          "file": "assets/species/aestivalis-commons-solo.webp",
+          "sha256": "23d4cf9f96d6f0f7d5cc90d8af63f8bb88c2e4db8f7ede4f73ca2e1fff790675",
+          "bytes": 49438,
+          "size": [
+            484,
+            560
+          ]
+        },
+        {
+          "file": "assets/species/aestivalis-commons-solo-hd.webp",
+          "sha256": "8932fa705ee55d9b550a229ab0ba9a00db0596d1eea1c11127046c4595c36063",
+          "bytes": 191570,
+          "size": [
+            1384,
+            1600
+          ]
+        },
+        {
+          "file": "assets/species/aestivalis-commons-solo-t.webp",
+          "sha256": "8a4b76bc10ac5b3c706a626f6f3d250d461dae3a4ff2cc295e7ba77733d8d4ab",
+          "bytes": 5852,
+          "size": [
+            160,
+            160
+          ]
+        }
+      ],
+      "author": "Milan Chytrý",
+      "page": "https://commons.wikimedia.org/wiki/File:Boletus_aestivalis_solo.jpg",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.55
+        ],
+        "riquadro": [
+          0.06,
+          0.02,
+          0.97,
+          0.99
+        ],
+        "dubbio": false,
+        "nota": "Vista dal basso con pori e gambo reticolato; base entro la foto.",
+        "reviewed_on": "2026-10-18"
+      }
+    },
+    {
+      "id": "nuda-commons109950721",
+      "group": "species",
+      "key": "nuda",
+      "before": 1,
+      "after": 2,
+      "original": "incoming/photo-enrichment-2026-10-18/originals/nuda-commons109950721.jpg",
+      "sha256_original": "62a93b69132af3598de3267f1f96200839c532d62585e28faa9aa50b65ea50d0",
+      "files": [
+        {
+          "file": "assets/species/nuda-commons109950721.webp",
+          "sha256": "9755173dd9b4dc663b53f58da13f14194fec1abc5b51ef47fc51715e1c2c945c",
+          "bytes": 24732,
+          "size": [
+            560,
+            315
+          ]
+        },
+        {
+          "file": "assets/species/nuda-commons109950721-hd.webp",
+          "sha256": "edc18f544f59b2fc241f1f1ce0baf468ac6dac5717f538d32fd49258956fb15c",
+          "bytes": 107966,
+          "size": [
+            1600,
+            900
+          ]
+        },
+        {
+          "file": "assets/species/nuda-commons109950721-t.webp",
+          "sha256": "4a546fc50348d92907435d8f7efad798ff7f29baa3faff7289b473ea21f6f0cd",
+          "bytes": 4386,
+          "size": [
+            160,
+            160
+          ]
+        }
+      ],
+      "author": "Елена Патерикина",
+      "page": "https://commons.wikimedia.org/wiki/File:Lepista_nuda_109950721.jpg",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.62,
+          0.58
+        ],
+        "riquadro": [
+          0.04,
+          0.04,
+          0.97,
+          0.96
+        ],
+        "dubbio": false,
+        "nota": "Vista dall’alto dei cappelli; nessuna fase assegnata.",
+        "reviewed_on": "2026-10-18"
+      }
+    },
+    {
+      "id": "nuda-villa-ada",
+      "group": "species",
+      "key": "nuda",
+      "before": 2,
+      "after": 3,
+      "original": "incoming/photo-enrichment-2026-10-18/originals/nuda-villa-ada.jpg",
+      "sha256_original": "d321fd662c86247affa13ce87e46c09906e17db32fdd068dbea77d80694bdf7b",
+      "files": [
+        {
+          "file": "assets/species/nuda-villa-ada.webp",
+          "sha256": "6b80d2f669148e7876f06455b847a83075f88ac12ba89bad6ea8abb693449458",
+          "bytes": 12812,
+          "size": [
+            560,
+            415
+          ]
+        },
+        {
+          "file": "assets/species/nuda-villa-ada-hd.webp",
+          "sha256": "2a6c8edf3a139fdb95860c4969bf06b58dc3143db472e0f3fe1507ac0270f3f8",
+          "bytes": 98200,
+          "size": [
+            1600,
+            1185
+          ]
+        },
+        {
+          "file": "assets/species/nuda-villa-ada-t.webp",
+          "sha256": "4eb001450042e89896dc8311d4be539941bd9a1605b419b1e881c807871abdef",
+          "bytes": 2488,
+          "size": [
+            160,
+            160
+          ]
+        }
+      ],
+      "author": "Albarubescens",
+      "page": "https://commons.wikimedia.org/wiki/File:Fungo_Lepista_nuda.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.48,
+          0.48
+        ],
+        "riquadro": [
+          0.2,
+          0.03,
+          0.84,
+          0.96
+        ],
+        "dubbio": false,
+        "nota": "Cappello e parte del gambo; la base non è documentata in questa inquadratura.",
+        "reviewed_on": "2026-10-18"
+      }
+    },
+    {
+      "id": "bucaneve-habitat",
+      "group": "plants",
+      "key": "bucaneve",
+      "before": 2,
+      "after": 3,
+      "original": "incoming/photo-enrichment-2026-10-18/originals/bucaneve-habitat.jpg",
+      "sha256_original": "e0bc79e2c66000691aecb6bd8e014156b7ce8485d61ebd4b2f024e956c6952c4",
+      "files": [
+        {
+          "file": "assets/plants/bucaneve-habitat.webp",
+          "sha256": "5f6178c09dbd95818b15285f13b6cb7db784ab0225a26795d851931a3d760b6b",
+          "bytes": 57352,
+          "size": [
+            459,
+            344
+          ]
+        },
+        {
+          "file": "assets/plants/bucaneve-habitat-hd.webp",
+          "sha256": "b2ffff5495e0d02478c7bdb6825c4c9022a10e2a5f90cca8302bf5d5927ea84d",
+          "bytes": 189392,
+          "size": [
+            859,
+            644
+          ]
+        },
+        {
+          "file": "assets/plants/bucaneve-habitat-t.webp",
+          "sha256": "dbd5a840d37c8cfe88dd85f90385531765b2b5479a02ede7a77e4f771dee7762",
+          "bytes": 10456,
+          "size": [
+            160,
+            160
+          ]
+        }
+      ],
+      "author": "Stefan.lefnaer",
+      "page": "https://commons.wikimedia.org/wiki/File:Galanthus_nivalis_sl40.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.52,
+          0.68
+        ],
+        "riquadro": [
+          0.04,
+          0.4,
+          0.97,
+          0.99
+        ],
+        "dubbio": false,
+        "nota": "Habitat con fioritura nel bosco; non è una fotografia di dettaglio né del Reatino.",
+        "reviewed_on": "2026-10-18"
+      }
+    },
+    {
+      "id": "phalloides-pruss",
+      "group": "lookalikes",
+      "key": "Amanita phalloides",
+      "before": 1,
+      "after": 2,
+      "original": "incoming/photo-enrichment-2026-10-18/originals/phalloides-pruss.jpg",
+      "sha256_original": "505f85b61e0230fc80dcbc612d8d2e79079f5acd3fd5f353103c52527fc4abfc",
+      "files": [
+        {
+          "file": "assets/species/phalloides-pruss.webp",
+          "sha256": "4322c8fd5674f74478ce77e9fdc60ec487089102bd44c29339cf760eefb97776",
+          "bytes": 41778,
+          "size": [
+            372,
+            560
+          ]
+        },
+        {
+          "file": "assets/species/phalloides-pruss-hd.webp",
+          "sha256": "7a0bd573c9bda9ff0a3d6b2803e1dee3a265d6ba304d1806946b71868c108a42",
+          "bytes": 187986,
+          "size": [
+            1064,
+            1600
+          ]
+        },
+        {
+          "file": "assets/species/phalloides-pruss-t.webp",
+          "sha256": "1fd56e172af119ae145587f8ed4dd43b45d7520cc83bbf790add992b9cd12d52",
+          "bytes": 6092,
+          "size": [
+            160,
+            160
+          ]
+        }
+      ],
+      "author": "Thomas Pruß",
+      "page": "https://commons.wikimedia.org/wiki/File:Amanita_phalloides_(3).JPG",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.52,
+          0.59
+        ],
+        "riquadro": [
+          0.07,
+          0.23,
+          0.92,
+          0.98
+        ],
+        "dubbio": false,
+        "nota": "Due esemplari: cappello, gambo, anello e base visibili, senza assegnare fasi.",
+        "reviewed_on": "2026-10-18"
+      }
+    },
+    {
+      "id": "virosa-commons10099268",
+      "group": "lookalikes",
+      "key": "Amanita virosa",
+      "before": 1,
+      "after": 2,
+      "original": "incoming/photo-enrichment-2026-10-18/originals/virosa-commons10099268.jpg",
+      "sha256_original": "28d1d54e0ffd58b34623919ac40eb34b1ee2ab2d2414ab64159e74942d4d40bd",
+      "files": [
+        {
+          "file": "assets/species/virosa-commons10099268.webp",
+          "sha256": "a3dd83eb30875af33436f6e4a2d689ea83e2298c06914afbca3d81ef0e4a4d62",
+          "bytes": 53072,
+          "size": [
+            420,
+            560
+          ]
+        },
+        {
+          "file": "assets/species/virosa-commons10099268-hd.webp",
+          "sha256": "878ce9353e7459d59d0ed5336a3fc5e80a2d44ced8dc667f584b6636d1b70d13",
+          "bytes": 204738,
+          "size": [
+            1200,
+            1600
+          ]
+        },
+        {
+          "file": "assets/species/virosa-commons10099268-t.webp",
+          "sha256": "93ae63c8bc45a126ce6cdd0f97a854255525e6511dc1a2b1879bdce4ab4dc8f9",
+          "bytes": 6508,
+          "size": [
+            160,
+            160
+          ]
+        }
+      ],
+      "author": "Maxim Shashkov",
+      "page": "https://commons.wikimedia.org/wiki/File:Amanita_virosa_10099268.jpg",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.4
+        ],
+        "riquadro": [
+          0.25,
+          0.25,
+          0.75,
+          0.67
+        ],
+        "dubbio": false,
+        "nota": "Esemplare sul suolo del bosco; base parzialmente nascosta, nessuna affermazione sul carattere della volva.",
+        "reviewed_on": "2026-10-18"
+      }
+    },
+    {
+      "id": "aristolochia-habitus",
+      "group": "plants",
+      "key": "aristolochia",
+      "before": 2,
+      "after": 3,
+      "original": "incoming/photo-enrichment-2026-10-18/originals/aristolochia-habitus.jpg",
+      "sha256_original": "814008a548d9acd7341afd012b495aab7ed4a14d24cb33bab2259029b81a5e62",
+      "files": [
+        {
+          "file": "assets/plants/aristolochia-habitus.webp",
+          "sha256": "95b56d10e79453e8cd2d7365a694d0f0cb58333e8631d61eda145de6589a1668",
+          "bytes": 64228,
+          "size": [
+            420,
+            560
+          ]
+        },
+        {
+          "file": "assets/plants/aristolochia-habitus-hd.webp",
+          "sha256": "25d14f68d049c3b62c498ee401f6915a22106a4ab5f34db92c31851f7d9bc2a6",
+          "bytes": 218868,
+          "size": [
+            1200,
+            1600
+          ]
+        },
+        {
+          "file": "assets/plants/aristolochia-habitus-t.webp",
+          "sha256": "c5d8e48b71d70554cb0d39fdec19adc5b9d34d12ac9a1de246f1f2f6a3bacdee",
+          "bytes": 9846,
+          "size": [
+            160,
+            160
+          ]
+        }
+      ],
+      "author": "Stefan.lefnaer",
+      "page": "https://commons.wikimedia.org/wiki/File:Aristolochia_clematitis_sl11.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.5
+        ],
+        "riquadro": [
+          0.22,
+          0.02,
+          0.79,
+          0.98
+        ],
+        "dubbio": false,
+        "nota": "Portamento e foglie; non dettaglio del fiore.",
+        "reviewed_on": "2026-10-18"
+      }
+    },
+    {
+      "id": "hepatica-ledro",
+      "group": "plants",
+      "key": "erba-trinita",
+      "before": 2,
+      "after": 3,
+      "original": "incoming/photo-enrichment-2026-10-18/originals/hepatica-ledro.jpg",
+      "sha256_original": "190e9ac3e6d3371f0e25db183f6518ffeb6b53486bde195cc8d76849d6199503",
+      "files": [
+        {
+          "file": "assets/plants/hepatica-ledro.webp",
+          "sha256": "f0460614b5ff89593e272fe2ace8918bba83b7885a028db66686a8e0b79e66b8",
+          "bytes": 62124,
+          "size": [
+            560,
+            489
+          ]
+        },
+        {
+          "file": "assets/plants/hepatica-ledro-hd.webp",
+          "sha256": "ba7150f01ff42fabc95edd9758cd204485aee711c6dd60fed024a1c243878ad9",
+          "bytes": 214668,
+          "size": [
+            1600,
+            1396
+          ]
+        },
+        {
+          "file": "assets/plants/hepatica-ledro-t.webp",
+          "sha256": "d381e8a5dfe8854cc2ac0c0fe2ba69e57737c66126f23eb65563e591e6581f85",
+          "bytes": 7532,
+          "size": [
+            160,
+            160
+          ]
+        }
+      ],
+      "author": "Robert Flogaus-Faust",
+      "page": "https://commons.wikimedia.org/wiki/File:Hepatica_nobilis_2_RF.jpg",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.52,
+          0.48
+        ],
+        "riquadro": [
+          0.05,
+          0.04,
+          0.97,
+          0.96
+        ],
+        "dubbio": false,
+        "nota": "Fiori nel loro ambiente; provenienza italiana dalla descrizione della fonte.",
+        "reviewed_on": "2026-10-18"
+      }
+    },
+    {
+      "id": "agrifoglio-fiori",
+      "group": "trees",
+      "key": "agrifoglio",
+      "before": 3,
+      "after": 4,
+      "original": "incoming/photo-enrichment-2026-10-18/originals/agrifoglio-fiori.jpg",
+      "sha256_original": "6bf979b3539688b01825c605281b988ab72488d2def974990f969bc52e7d84e7",
+      "files": [
+        {
+          "file": "assets/trees/agrifoglio-fiori.webp",
+          "sha256": "12325af24b000766b796699f573bd84fb0dbcf17ae1f8fa34391681558c7029f",
+          "bytes": 28770,
+          "size": [
+            420,
+            560
+          ]
+        },
+        {
+          "file": "assets/trees/agrifoglio-fiori-hd.webp",
+          "sha256": "97d3bff87fa93d493077b5b01c3506fa00416d444550454a72f4ecf08a058030",
+          "bytes": 106680,
+          "size": [
+            1199,
+            1600
+          ]
+        },
+        {
+          "file": "assets/trees/agrifoglio-fiori-t.webp",
+          "sha256": "f03011067c7f410a078b19cf428e28ec8fa1c5b28f3abdad06e32af06981331b",
+          "bytes": 6136,
+          "size": [
+            160,
+            160
+          ]
+        }
+      ],
+      "author": "© Hans Hillewaert",
+      "page": "https://commons.wikimedia.org/wiki/File:Ilex_aquifolium_(flowers).jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.49,
+          0.53
+        ],
+        "riquadro": [
+          0.15,
+          0.1,
+          0.85,
+          0.93
+        ],
+        "dubbio": false,
+        "nota": "Fiori e foglie; attribuzione © Hans Hillewaert mantenuta.",
+        "reviewed_on": "2026-10-18"
+      }
+    },
+    {
+      "id": "aestivalis-anro1",
+      "group": "species",
+      "key": "aestivalis",
+      "before": 3,
+      "after": 4,
+      "original": "incoming/photo-enrichment-2026-10-18/originals/aestivalis-anro1.jpg",
+      "sha256_original": "d1a647e61283155a422844b16d79085791417770ebbed1aff18f0309d445c350",
+      "files": [
+        {
+          "file": "assets/species/aestivalis-anro1.webp",
+          "sha256": "28dd2d2edf8f639a1f03f26d130329af2fdf2cd093c21e7f405dfcab4f5ab4bf",
+          "bytes": 33664,
+          "size": [
+            560,
+            420
+          ]
+        },
+        {
+          "file": "assets/species/aestivalis-anro1-hd.webp",
+          "sha256": "8fa21353d30d8594f0ad28cef4cc82e8f1026968497ffc16bf372f287abb882a",
+          "bytes": 151114,
+          "size": [
+            1600,
+            1200
+          ]
+        },
+        {
+          "file": "assets/species/aestivalis-anro1-t.webp",
+          "sha256": "e733e3bb43fea06ecae1e4d0df5370edc4f9a9371467db812450a5d78f869ca1",
+          "bytes": 5046,
+          "size": [
+            160,
+            160
+          ]
+        }
+      ],
+      "author": "AnRo0002",
+      "page": "https://commons.wikimedia.org/wiki/File:20200611Boletus_reticulatus1.jpg",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.52
+        ],
+        "riquadro": [
+          0.15,
+          0.07,
+          0.88,
+          0.93
+        ],
+        "dubbio": false,
+        "nota": "Vista dall’alto del cappello; fotografia distinta da quella dal basso dello stesso autore.",
+        "reviewed_on": "2026-10-18"
+      }
+    },
+    {
+      "id": "aestivalis-anro3",
+      "group": "species",
+      "key": "aestivalis",
+      "before": 4,
+      "after": 5,
+      "original": "incoming/photo-enrichment-2026-10-18/originals/aestivalis-anro3.jpg",
+      "sha256_original": "c8b0eb222fadc8190899f80e4d760e7bb12bc82c8ed5ecf08c923305df3af153",
+      "files": [
+        {
+          "file": "assets/species/aestivalis-anro3.webp",
+          "sha256": "6aea6607b75fa8cd17b77acadf05d18ae350923cba8dcd880842ae4003de6dde",
+          "bytes": 30130,
+          "size": [
+            560,
+            420
+          ]
+        },
+        {
+          "file": "assets/species/aestivalis-anro3-hd.webp",
+          "sha256": "d4aac1cbf0d36b0dbfd8f6927a6df5635e09f5bb77ce11e21e4a6e7d1a1ae45c",
+          "bytes": 135848,
+          "size": [
+            1600,
+            1200
+          ]
+        },
+        {
+          "file": "assets/species/aestivalis-anro3-t.webp",
+          "sha256": "3a4232fa896a8ed8a6ec7c9054a62d33bae900f90e0375dfdedb6c1519602c9e",
+          "bytes": 5034,
+          "size": [
+            160,
+            160
+          ]
+        }
+      ],
+      "author": "AnRo0002",
+      "page": "https://commons.wikimedia.org/wiki/File:20200611Boletus_reticulatus3.jpg",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.52,
+          0.53
+        ],
+        "riquadro": [
+          0.08,
+          0.04,
+          0.99,
+          0.97
+        ],
+        "dubbio": false,
+        "nota": "Vista dal basso: pori e gambo; complementare alla vista del cappello, nessuno stadio dichiarato.",
+        "reviewed_on": "2026-10-18"
+      }
+    },
+    {
+      "id": "nuda-wilson",
+      "group": "species",
+      "key": "nuda",
+      "before": 3,
+      "after": 4,
+      "original": "incoming/photo-enrichment-2026-10-18/originals/nuda-wilson.jpg",
+      "sha256_original": "779566965b46899fd557898010b6782ed61ed44660c04b67ec68c0d41adbbfb1",
+      "files": [
+        {
+          "file": "assets/species/nuda-wilson.webp",
+          "sha256": "6c7f1f1f45f59d89b98156e9c13fa80328cff26b04533568f13d6d27afb857a0",
+          "bytes": 33430,
+          "size": [
+            560,
+            420
+          ]
+        },
+        {
+          "file": "assets/species/nuda-wilson-hd.webp",
+          "sha256": "7041d207fa481780ceb7e5a9201df2ab2c8b5cdbd5b015803351df76dc2d2030",
+          "bytes": 145340,
+          "size": [
+            1600,
+            1200
+          ]
+        },
+        {
+          "file": "assets/species/nuda-wilson-t.webp",
+          "sha256": "95ceef4d8434be6d44aeafc9c682743cc577c3f98f3780a9af9b2a2fae1adfbf",
+          "bytes": 5010,
+          "size": [
+            160,
+            160
+          ]
+        }
+      ],
+      "author": "Nathan Wilson (nathan)",
+      "page": "https://commons.wikimedia.org/wiki/File:2002-12-28_Clitocybe_nuda_(Fr.)_H.E._Bigelow_%26_A.H._Sm_289.jpg",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.49,
+          0.54
+        ],
+        "riquadro": [
+          0.14,
+          0.07,
+          0.97,
+          0.94
+        ],
+        "dubbio": false,
+        "nota": "Cappello e lamelle dell’esemplare rovesciato visibili; nessuna fase o località italiana attribuita.",
+        "reviewed_on": "2026-10-18"
+      }
+    },
+    {
+      "id": "felleus-226780",
+      "group": "lookalikes",
+      "key": "Tylopilus felleus",
+      "before": 1,
+      "after": 2,
+      "original": "incoming/photo-enrichment-2026-10-18/originals/felleus-226780.jpg",
+      "sha256_original": "46a3b67573aa1e8d839e6e5b707b3f2f06dac755499ce657b7ce8e0914d28f53",
+      "files": [
+        {
+          "file": "assets/species/felleus-226780.webp",
+          "sha256": "d6377b536790d4e32ecbf1c7fcfe08a884eba48d6c8b09071e61aa1dd8101887",
+          "bytes": 16190,
+          "size": [
+            560,
+            403
+          ]
+        },
+        {
+          "file": "assets/species/felleus-226780-hd.webp",
+          "sha256": "34855f39c16f9089eb3ba6a69b17a2ed71581eae8502d5bc47702a8a1308503e",
+          "bytes": 77908,
+          "size": [
+            1600,
+            1152
+          ]
+        },
+        {
+          "file": "assets/species/felleus-226780-t.webp",
+          "sha256": "043c1fc41dc8146a9824353d0cf76ef7b2e849c6805487461fbbb92a6eef7017",
+          "bytes": 2692,
+          "size": [
+            160,
+            160
+          ]
+        }
+      ],
+      "author": "Christine Braaten (wintersbefore)",
+      "page": "https://commons.wikimedia.org/wiki/File:2012-06-09_Tylopilus_felleus_(Bull.)_P._Karst_226780.jpg",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.5
+        ],
+        "riquadro": [
+          0,
+          0.02,
+          1,
+          0.98
+        ],
+        "dubbio": false,
+        "nota": "Dettaglio ravvicinato dell’imenoforo; non presentato come esemplare intero.",
+        "reviewed_on": "2026-10-18"
+      }
+    },
+    {
+      "id": "satanas-223261",
+      "group": "lookalikes",
+      "key": "Rubroboletus satanas",
+      "before": 1,
+      "after": 2,
+      "original": "incoming/photo-enrichment-2026-10-18/originals/satanas-223261.jpg",
+      "sha256_original": "fe58fbd3faac700f0e1a2dcc35f0f1371e390951ccc081280d2bfb040326c417",
+      "files": [
+        {
+          "file": "assets/species/satanas-223261.webp",
+          "sha256": "6ffa9acd0273a5ea1078dd1914d130524e25185870a2254712214bec36b1faed",
+          "bytes": 47372,
+          "size": [
+            560,
+            416
+          ]
+        },
+        {
+          "file": "assets/species/satanas-223261-hd.webp",
+          "sha256": "21d0e449f8907adaf5a5746c028cf3f6c856c01430e862a2f2af6e348a047ab6",
+          "bytes": 212270,
+          "size": [
+            1600,
+            1188
+          ]
+        },
+        {
+          "file": "assets/species/satanas-223261-t.webp",
+          "sha256": "aaa8edcb6b08604222aa71a92988d2e003b0c2b11ef6245cbee81d27383618cb",
+          "bytes": 5870,
+          "size": [
+            160,
+            160
+          ]
+        }
+      ],
+      "author": "Murselin Guney (Beyrek)",
+      "page": "https://commons.wikimedia.org/wiki/File:2008-10-19_Boletus_satanas_Lenz_223261.jpg",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.51,
+          0.56
+        ],
+        "riquadro": [
+          0.08,
+          0.04,
+          0.99,
+          0.98
+        ],
+        "dubbio": false,
+        "nota": "Pori e gambo in vista dal basso; non si deduce una fase dalla fotografia.",
+        "reviewed_on": "2026-10-18"
+      }
+    },
+    {
+      "id": "verna-commons3",
+      "group": "lookalikes",
+      "key": "Amanita verna",
+      "before": 1,
+      "after": 2,
+      "original": "incoming/photo-enrichment-2026-10-18/originals/verna-commons3.jpg",
+      "sha256_original": "f9ddab0605fbada07d24936cf90f9a51f05726e47d4bd5a75a417d7e0c32cfb7",
+      "files": [
+        {
+          "file": "assets/species/verna-commons3.webp",
+          "sha256": "b8f5fa269dd3ba81525499acc9d8e33d41ddca9bd6074db56a23121e68e2faa3",
+          "bytes": 28036,
+          "size": [
+            560,
+            417
+          ]
+        },
+        {
+          "file": "assets/species/verna-commons3-hd.webp",
+          "sha256": "f3e09bd67319350a7ea8600111f8c85770aff81360e520d5191e0302495476cb",
+          "bytes": 44230,
+          "size": [
+            657,
+            489
+          ]
+        },
+        {
+          "file": "assets/species/verna-commons3-t.webp",
+          "sha256": "c5f8531194990e75e1427c6abb9eebcd0408706ed27a9bf00a74858a7428af80",
+          "bytes": 4176,
+          "size": [
+            160,
+            160
+          ]
+        }
+      ],
+      "author": "Sinisa Radic",
+      "page": "https://commons.wikimedia.org/wiki/File:Amanita_verna_3.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.54
+        ],
+        "riquadro": [
+          0.07,
+          0.04,
+          0.96,
+          0.96
+        ],
+        "dubbio": false,
+        "nota": "Esemplari interi con base; dominante cromatica originale conservata, nessuna correzione del colore.",
+        "reviewed_on": "2026-10-18"
+      }
+    },
+    {
+      "id": "phalloides-zalas02",
+      "group": "lookalikes",
+      "key": "Amanita phalloides",
+      "before": 2,
+      "after": 3,
+      "original": "incoming/photo-enrichment-2026-10-18/originals/phalloides-zalas02.jpg",
+      "sha256_original": "29c5433103869ec00665a4000958dea397a84c8a7e66e6a3cee22989e05db1b0",
+      "files": [
+        {
+          "file": "assets/species/phalloides-zalas02.webp",
+          "sha256": "23f7117d5f6e586836d319bc7438e5282f170445b367a6af96c37c99cfb8c7cb",
+          "bytes": 48508,
+          "size": [
+            560,
+            419
+          ]
+        },
+        {
+          "file": "assets/species/phalloides-zalas02-hd.webp",
+          "sha256": "99eaad6b7df3113c224c9f05805d28b8285211e1834d163d467a6decc7dc3c58",
+          "bytes": 208324,
+          "size": [
+            1600,
+            1197
+          ]
+        },
+        {
+          "file": "assets/species/phalloides-zalas02-t.webp",
+          "sha256": "f8d88db5cdcfc65f1c3c0d3f4781c6cb3913104afdea97672a596d8a45d23afe",
+          "bytes": 6846,
+          "size": [
+            160,
+            160
+          ]
+        }
+      ],
+      "author": "Krzysztof Ślusarczyk (upload by Marek Ślusarczyk)",
+      "page": "https://commons.wikimedia.org/wiki/File:02_Amanita_phalloides_in_Zalas,_Poland.jpg",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+      "review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.52,
+          0.56
+        ],
+        "riquadro": [
+          0.12,
+          0.18,
+          0.86,
+          0.98
+        ],
+        "dubbio": false,
+        "nota": "Esemplare intero con base nel suolo; fonte europea documentata.",
+        "reviewed_on": "2026-10-18"
+      }
+    },
+    {
+      "id": "olearius-212577",
+      "group": "lookalikes",
+      "key": "Omphalotus olearius",
+      "before": 1,
+      "after": 2,
+      "original": "incoming/photo-enrichment-2026-10-18/originals/olearius-212577.jpg",
+      "sha256_original": "03fff1f8a1641654460b77080750de970e310071482df4f22c6ad0fbad2d6071",
+      "files": [
+        {
+          "file": "assets/species/olearius-212577.webp",
+          "sha256": "2639a8a056112b718d77ac93ba3f7221bd2ac3a32289a6961153fa02f21e8569",
+          "bytes": 50338,
+          "size": [
+            552,
+            414
+          ]
+        },
+        {
+          "file": "assets/species/olearius-212577-hd.webp",
+          "sha256": "a34a8f524930967910fe6db5777d07ccdd7a67c88114ea41100ae7fdb2cc177b",
+          "bytes": 54634,
+          "size": [
+            552,
+            414
+          ]
+        },
+        {
+          "file": "assets/species/olearius-212577-t.webp",
+          "sha256": "e2273751b13bb4c936721e20a60f087739bc292830328c5941faca363be5f68d",
+          "bytes": 7688,
+          "size": [
+            160,
+            160
+          ]
+        }
+      ],
+      "author": "Souhila Aouali",
+      "page": "https://commons.wikimedia.org/wiki/File:2011-12-01_Omphalotus_olearius_(DC.)_Singer_212577.jpg",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.51,
+          0.52
+        ],
+        "riquadro": [
+          0.07,
+          0.04,
+          0.96,
+          0.96
+        ],
+        "dubbio": false,
+        "nota": "Vista dall’alto del gruppo; non dettaglio delle lamelle.",
+        "reviewed_on": "2026-10-18"
+      }
+    }
+  ]
+}

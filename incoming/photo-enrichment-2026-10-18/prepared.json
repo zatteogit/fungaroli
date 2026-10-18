@@ -1,3 +1,832 @@
 {
-  "photos": []
+  "photos": [
+    {
+      "id": "aestivalis-commons9",
+      "status": "integrated",
+      "original": "incoming/photo-enrichment-2026-10-18/originals/aestivalis-commons9.jpg",
+      "sha256": "3fb6b21104cc9a08e2ec8c67eec4ef74e334acd14558f303cbd01879aaa6a3d6",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Boletus_aestivalis_9.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "František ŠARŽÍK",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Boletus_aestivalis_9.jpg",
+      "source_size": [
+        872,
+        590
+      ],
+      "file": "assets/species/aestivalis-commons9.webp",
+      "file_hd": "assets/species/aestivalis-commons9-hd.webp",
+      "thumb": "assets/species/aestivalis-commons9-t.webp",
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.641
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      },
+      "attribution": "František ŠARŽÍK · Wikimedia Commons · CC BY 3.0",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP; miniatura ritagliata."
+    },
+    {
+      "id": "aestivalis-commons-solo",
+      "status": "integrated",
+      "original": "incoming/photo-enrichment-2026-10-18/originals/aestivalis-commons-solo.jpg",
+      "sha256": "846e3c8cfd49cf43b81639f25adeff4c0f3e1c89c7fa16e9bd09c24f2364a78a",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Boletus_aestivalis_solo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "Milan Chytrý",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Boletus_aestivalis_solo.jpg",
+      "source_size": [
+        1494,
+        1727
+      ],
+      "file": "assets/species/aestivalis-commons-solo.webp",
+      "file_hd": "assets/species/aestivalis-commons-solo-hd.webp",
+      "thumb": "assets/species/aestivalis-commons-solo-t.webp",
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.662
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.601,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.58
+        ],
+        "4:3": [
+          0.5,
+          0.642
+        ],
+        "1:1": [
+          0.5,
+          0.871
+        ]
+      },
+      "attribution": "Milan Chytrý · Wikimedia Commons · CC BY 4.0",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP; miniatura ritagliata."
+    },
+    {
+      "id": "nuda-commons109950721",
+      "status": "integrated",
+      "original": "incoming/photo-enrichment-2026-10-18/originals/nuda-commons109950721.jpg",
+      "sha256": "62a93b69132af3598de3267f1f96200839c532d62585e28faa9aa50b65ea50d0",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Lepista_nuda_109950721.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "Елена Патерикина",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Lepista_nuda_109950721.jpg",
+      "source_size": [
+        2048,
+        1152
+      ],
+      "file": "assets/species/nuda-commons109950721.webp",
+      "file_hd": "assets/species/nuda-commons109950721-hd.webp",
+      "thumb": "assets/species/nuda-commons109950721-t.webp",
+      "crop_points": {
+        "5:4": [
+          0.904,
+          0.5
+        ],
+        "3:4": [
+          0.708,
+          0.5
+        ],
+        "4:5": [
+          0.718,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.86
+        ],
+        "4:3": [
+          0.98,
+          0.5
+        ],
+        "1:1": [
+          0.774,
+          0.5
+        ]
+      },
+      "attribution": "Елена Патерикина · Wikimedia Commons · CC BY 4.0",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP; miniatura ritagliata."
+    },
+    {
+      "id": "nuda-villa-ada",
+      "status": "integrated",
+      "original": "incoming/photo-enrichment-2026-10-18/originals/nuda-villa-ada.jpg",
+      "sha256": "d321fd662c86247affa13ce87e46c09906e17db32fdd068dbea77d80694bdf7b",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Fungo_Lepista_nuda.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "Albarubescens",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Fungo_Lepista_nuda.jpg",
+      "source_size": [
+        3935,
+        2914
+      ],
+      "file": "assets/species/nuda-villa-ada.webp",
+      "file_hd": "assets/species/nuda-villa-ada-hd.webp",
+      "thumb": "assets/species/nuda-villa-ada-t.webp",
+      "crop_points": {
+        "5:4": [
+          0.231,
+          0.5
+        ],
+        "3:4": [
+          0.455,
+          0.5
+        ],
+        "4:5": [
+          0.451,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.451
+        ],
+        "4:3": [
+          0.0,
+          0.5
+        ],
+        "1:1": [
+          0.423,
+          0.5
+        ]
+      },
+      "attribution": "Albarubescens · Wikimedia Commons · CC BY-SA 4.0",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP; miniatura ritagliata."
+    },
+    {
+      "id": "bucaneve-habitat",
+      "status": "integrated",
+      "original": "incoming/photo-enrichment-2026-10-18/originals/bucaneve-habitat.jpg",
+      "sha256": "e0bc79e2c66000691aecb6bd8e014156b7ce8485d61ebd4b2f024e956c6952c4",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Galanthus_nivalis_sl40.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "Stefan.lefnaer",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Galanthus_nivalis_sl40.jpg",
+      "source_size": [
+        4128,
+        3096
+      ],
+      "file": "assets/plants/bucaneve-habitat.webp",
+      "file_hd": "assets/plants/bucaneve-habitat-hd.webp",
+      "thumb": "assets/plants/bucaneve-habitat-t.webp",
+      "crop_points": {
+        "5:4": [
+          0.64,
+          0.5
+        ],
+        "3:4": [
+          0.546,
+          0.5
+        ],
+        "4:5": [
+          0.55,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.932
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.58,
+          0.5
+        ]
+      },
+      "attribution": "Stefan.lefnaer · Wikimedia Commons · CC BY-SA 4.0",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP; miniatura ritagliata."
+    },
+    {
+      "id": "phalloides-pruss",
+      "status": "integrated",
+      "original": "incoming/photo-enrichment-2026-10-18/originals/phalloides-pruss.jpg",
+      "sha256": "505f85b61e0230fc80dcbc612d8d2e79079f5acd3fd5f353103c52527fc4abfc",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/97/Amanita_phalloides_%283%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "Thomas Pruß",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Amanita_phalloides_(3).JPG",
+      "source_size": [
+        2000,
+        3008
+      ],
+      "file": "assets/species/phalloides-pruss.webp",
+      "file_hd": "assets/species/phalloides-pruss-hd.webp",
+      "thumb": "assets/species/phalloides-pruss-t.webp",
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.692
+        ],
+        "3:4": [
+          0.5,
+          1.0
+        ],
+        "4:5": [
+          0.5,
+          1.0
+        ],
+        "16:7": [
+          0.5,
+          0.627
+        ],
+        "4:3": [
+          0.5,
+          0.68
+        ],
+        "1:1": [
+          0.5,
+          0.769
+        ]
+      },
+      "attribution": "Thomas Pruß · Wikimedia Commons · CC BY-SA 3.0",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP; miniatura ritagliata."
+    },
+    {
+      "id": "virosa-commons10099268",
+      "status": "integrated",
+      "original": "incoming/photo-enrichment-2026-10-18/originals/virosa-commons10099268.jpg",
+      "sha256": "28d1d54e0ffd58b34623919ac40eb34b1ee2ab2d2414ab64159e74942d4d40bd",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Amanita_virosa_10099268.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "Maxim Shashkov",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Amanita_virosa_10099268.jpg",
+      "source_size": [
+        1536,
+        2048
+      ],
+      "file": "assets/species/virosa-commons10099268.webp",
+      "file_hd": "assets/species/virosa-commons10099268-hd.webp",
+      "thumb": "assets/species/virosa-commons10099268-t.webp",
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.25
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.0
+        ],
+        "16:7": [
+          0.5,
+          0.351
+        ],
+        "4:3": [
+          0.5,
+          0.271
+        ],
+        "1:1": [
+          0.5,
+          0.1
+        ]
+      },
+      "attribution": "Maxim Shashkov · Wikimedia Commons · CC BY 4.0",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP; miniatura ritagliata."
+    },
+    {
+      "id": "aristolochia-habitus",
+      "status": "integrated",
+      "original": "incoming/photo-enrichment-2026-10-18/originals/aristolochia-habitus.jpg",
+      "sha256": "814008a548d9acd7341afd012b495aab7ed4a14d24cb33bab2259029b81a5e62",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Aristolochia_clematitis_sl11.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "Stefan.lefnaer",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Aristolochia_clematitis_sl11.jpg",
+      "source_size": [
+        3096,
+        4128
+      ],
+      "file": "assets/plants/aristolochia-habitus.webp",
+      "file_hd": "assets/plants/aristolochia-habitus-hd.webp",
+      "thumb": "assets/plants/aristolochia-habitus-t.webp",
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.5
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      },
+      "attribution": "Stefan.lefnaer · Wikimedia Commons · CC BY-SA 4.0",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP; miniatura ritagliata."
+    },
+    {
+      "id": "hepatica-ledro",
+      "status": "integrated",
+      "original": "incoming/photo-enrichment-2026-10-18/originals/hepatica-ledro.jpg",
+      "sha256": "190e9ac3e6d3371f0e25db183f6518ffeb6b53486bde195cc8d76849d6199503",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Hepatica_nobilis_2_RF.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "Robert Flogaus-Faust",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Hepatica_nobilis_2_RF.jpg",
+      "source_size": [
+        2732,
+        2384
+      ],
+      "file": "assets/plants/hepatica-ledro.webp",
+      "file_hd": "assets/plants/hepatica-ledro-hd.webp",
+      "thumb": "assets/plants/hepatica-ledro-t.webp",
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.26
+        ],
+        "3:4": [
+          0.558,
+          0.5
+        ],
+        "4:5": [
+          0.566,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.46
+        ],
+        "4:3": [
+          0.5,
+          0.358
+        ],
+        "1:1": [
+          0.657,
+          0.5
+        ]
+      },
+      "attribution": "Robert Flogaus-Faust · Wikimedia Commons · CC BY 4.0",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP; miniatura ritagliata."
+    },
+    {
+      "id": "agrifoglio-fiori",
+      "status": "integrated",
+      "original": "incoming/photo-enrichment-2026-10-18/originals/agrifoglio-fiori.jpg",
+      "sha256": "6bf979b3539688b01825c605281b988ab72488d2def974990f969bc52e7d84e7",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Ilex_aquifolium_%28flowers%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "© Hans Hillewaert",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Ilex_aquifolium_(flowers).jpg",
+      "source_size": [
+        2818,
+        3759
+      ],
+      "file": "assets/trees/agrifoglio-fiori.webp",
+      "file_hd": "assets/trees/agrifoglio-fiori-hd.webp",
+      "thumb": "assets/trees/agrifoglio-fiori-t.webp",
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.575
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.977
+        ],
+        "16:7": [
+          0.5,
+          0.545
+        ],
+        "4:3": [
+          0.5,
+          0.569
+        ],
+        "1:1": [
+          0.5,
+          0.62
+        ]
+      },
+      "attribution": "© Hans Hillewaert · Wikimedia Commons · CC BY-SA 4.0",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP; miniatura ritagliata."
+    },
+    {
+      "id": "aestivalis-anro1",
+      "status": "integrated",
+      "original": "incoming/photo-enrichment-2026-10-18/originals/aestivalis-anro1.jpg",
+      "sha256": "d1a647e61283155a422844b16d79085791417770ebbed1aff18f0309d445c350",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/20200611Boletus_reticulatus1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "AnRo0002",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "page": "https://commons.wikimedia.org/wiki/File:20200611Boletus_reticulatus1.jpg",
+      "source_size": [
+        2500,
+        1875
+      ],
+      "file": "assets/species/aestivalis-anro1.webp",
+      "file_hd": "assets/species/aestivalis-anro1-hd.webp",
+      "thumb": "assets/species/aestivalis-anro1-t.webp",
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.548
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.52,
+          0.5
+        ]
+      },
+      "attribution": "AnRo0002 · Wikimedia Commons · CC0",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP; miniatura ritagliata."
+    },
+    {
+      "id": "aestivalis-anro3",
+      "status": "integrated",
+      "original": "incoming/photo-enrichment-2026-10-18/originals/aestivalis-anro3.jpg",
+      "sha256": "c8b0eb222fadc8190899f80e4d760e7bb12bc82c8ed5ecf08c923305df3af153",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/4a/20200611Boletus_reticulatus3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "AnRo0002",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "page": "https://commons.wikimedia.org/wiki/File:20200611Boletus_reticulatus3.jpg",
+      "source_size": [
+        2750,
+        2063
+      ],
+      "file": "assets/species/aestivalis-anro3.webp",
+      "file_hd": "assets/species/aestivalis-anro3-hd.webp",
+      "thumb": "assets/species/aestivalis-anro3-t.webp",
+      "crop_points": {
+        "5:4": [
+          0.839,
+          0.5
+        ],
+        "3:4": [
+          0.546,
+          0.5
+        ],
+        "4:5": [
+          0.55,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.572
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.58,
+          0.5
+        ]
+      },
+      "attribution": "AnRo0002 · Wikimedia Commons · CC0",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP; miniatura ritagliata."
+    },
+    {
+      "id": "nuda-wilson",
+      "status": "integrated",
+      "original": "incoming/photo-enrichment-2026-10-18/originals/nuda-wilson.jpg",
+      "sha256": "779566965b46899fd557898010b6782ed61ed44660c04b67ec68c0d41adbbfb1",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/f/f1/2002-12-28_Clitocybe_nuda_%28Fr.%29_H.E._Bigelow_%26_A.H._Sm_289.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "Nathan Wilson (nathan)",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:2002-12-28_Clitocybe_nuda_(Fr.)_H.E._Bigelow_%26_A.H._Sm_289.jpg",
+      "source_size": [
+        1600,
+        1200
+      ],
+      "file": "assets/species/nuda-wilson.webp",
+      "file_hd": "assets/species/nuda-wilson-hd.webp",
+      "thumb": "assets/species/nuda-wilson-t.webp",
+      "crop_points": {
+        "5:4": [
+          0.52,
+          0.5
+        ],
+        "3:4": [
+          0.477,
+          0.5
+        ],
+        "4:5": [
+          0.475,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.596
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.46,
+          0.5
+        ]
+      },
+      "attribution": "Nathan Wilson (nathan) · Wikimedia Commons · CC BY-SA 3.0",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP; miniatura ritagliata."
+    },
+    {
+      "id": "felleus-226780",
+      "status": "integrated",
+      "original": "incoming/photo-enrichment-2026-10-18/originals/felleus-226780.jpg",
+      "sha256": "46a3b67573aa1e8d839e6e5b707b3f2f06dac755499ce657b7ce8e0914d28f53",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/f/fe/2012-06-09_Tylopilus_felleus_%28Bull.%29_P._Karst_226780.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "Christine Braaten (wintersbefore)",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:2012-06-09_Tylopilus_felleus_(Bull.)_P._Karst_226780.jpg",
+      "source_size": [
+        3312,
+        2384
+      ],
+      "file": "assets/species/felleus-226780.webp",
+      "file_hd": "assets/species/felleus-226780-hd.webp",
+      "thumb": "assets/species/felleus-226780-t.webp",
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.5
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      },
+      "attribution": "Christine Braaten (wintersbefore) · Wikimedia Commons · CC BY-SA 3.0",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP; miniatura ritagliata."
+    },
+    {
+      "id": "satanas-223261",
+      "status": "integrated",
+      "original": "incoming/photo-enrichment-2026-10-18/originals/satanas-223261.jpg",
+      "sha256": "fe58fbd3faac700f0e1a2dcc35f0f1371e390951ccc081280d2bfb040326c417",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/2008-10-19_Boletus_satanas_Lenz_223261.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "Murselin Guney (Beyrek)",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:2008-10-19_Boletus_satanas_Lenz_223261.jpg",
+      "source_size": [
+        2080,
+        1544
+      ],
+      "file": "assets/species/satanas-223261.webp",
+      "file_hd": "assets/species/satanas-223261-hd.webp",
+      "thumb": "assets/species/satanas-223261-t.webp",
+      "crop_points": {
+        "5:4": [
+          0.861,
+          0.5
+        ],
+        "3:4": [
+          0.523,
+          0.5
+        ],
+        "4:5": [
+          0.525,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.646
+        ],
+        "4:3": [
+          1.0,
+          0.5
+        ],
+        "1:1": [
+          0.539,
+          0.5
+        ]
+      },
+      "attribution": "Murselin Guney (Beyrek) · Wikimedia Commons · CC BY-SA 3.0",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP; miniatura ritagliata."
+    },
+    {
+      "id": "verna-commons3",
+      "status": "integrated",
+      "original": "incoming/photo-enrichment-2026-10-18/originals/verna-commons3.jpg",
+      "sha256": "f9ddab0605fbada07d24936cf90f9a51f05726e47d4bd5a75a417d7e0c32cfb7",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/1/16/Amanita_verna_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "Sinisa Radic",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Amanita_verna_3.jpg",
+      "source_size": [
+        657,
+        489
+      ],
+      "file": "assets/species/verna-commons3.webp",
+      "file_hd": "assets/species/verna-commons3-hd.webp",
+      "thumb": "assets/species/verna-commons3-t.webp",
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.597
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      },
+      "attribution": "Sinisa Radic · Wikimedia Commons · CC BY-SA 4.0",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP; miniatura ritagliata."
+    },
+    {
+      "id": "phalloides-zalas02",
+      "status": "integrated",
+      "original": "incoming/photo-enrichment-2026-10-18/originals/phalloides-zalas02.jpg",
+      "sha256": "29c5433103869ec00665a4000958dea397a84c8a7e66e6a3cee22989e05db1b0",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/6/63/02_Amanita_phalloides_in_Zalas%2C_Poland.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "Krzysztof Ślusarczyk (upload by Marek Ślusarczyk)",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:02_Amanita_phalloides_in_Zalas,_Poland.jpg",
+      "source_size": [
+        2288,
+        1712
+      ],
+      "file": "assets/species/phalloides-zalas02.webp",
+      "file_hd": "assets/species/phalloides-zalas02-hd.webp",
+      "thumb": "assets/species/phalloides-zalas02-t.webp",
+      "crop_points": {
+        "5:4": [
+          0.809,
+          0.5
+        ],
+        "3:4": [
+          0.546,
+          0.5
+        ],
+        "4:5": [
+          0.55,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.644
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.477,
+          0.5
+        ]
+      },
+      "attribution": "Krzysztof Ślusarczyk (upload by Marek Ślusarczyk) · Wikimedia Commons · CC BY 3.0",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP; miniatura ritagliata."
+    },
+    {
+      "id": "olearius-212577",
+      "status": "integrated",
+      "original": "incoming/photo-enrichment-2026-10-18/originals/olearius-212577.jpg",
+      "sha256": "03fff1f8a1641654460b77080750de970e310071482df4f22c6ad0fbad2d6071",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/2011-12-01_Omphalotus_olearius_%28DC.%29_Singer_212577.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "Souhila Aouali",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:2011-12-01_Omphalotus_olearius_(DC.)_Singer_212577.jpg",
+      "source_size": [
+        552,
+        414
+      ],
+      "file": "assets/species/olearius-212577.webp",
+      "file_hd": "assets/species/olearius-212577-hd.webp",
+      "thumb": "assets/species/olearius-212577-t.webp",
+      "crop_points": {
+        "5:4": [
+          0.66,
+          0.5
+        ],
+        "3:4": [
+          0.523,
+          0.5
+        ],
+        "4:5": [
+          0.525,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.548
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.54,
+          0.5
+        ]
+      },
+      "attribution": "Souhila Aouali · Wikimedia Commons · CC BY-SA 3.0",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP; miniatura ritagliata."
+    }
+  ]
 }

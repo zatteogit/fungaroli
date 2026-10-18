@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-13",
+ "generated": "2026-10-18",
  "note": "Foto reali con autore e licenza. Le foto iNaturalist sono 'research grade': identificazione confermata da piu' utenti, non da un micologo ufficiale.",
  "species": {
   "edulis": {
@@ -202,7 +202,72 @@
     "license": "CC BY-SA 3.0",
     "thumb": "assets/species/aestivalis-ref-t.webp"
    },
-   "inat": [],
+   "inat": [
+    {
+     "file": "assets/species/aestivalis-commons9.webp",
+     "file_hd": "assets/species/aestivalis-commons9-hd.webp",
+     "thumb": "assets/species/aestivalis-commons9-t.webp",
+     "source": "Wikimedia Commons",
+     "page": "https://commons.wikimedia.org/wiki/File:Boletus_aestivalis_9.jpg",
+     "author": "František ŠARŽÍK",
+     "license": "CC BY 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+     "attribution": "František ŠARŽÍK · Wikimedia Commons · CC BY 3.0",
+     "alt": "Boletus aestivalis — Gruppo in vista laterale: cappelli, pori e gambi",
+     "caption": "Gruppo in vista laterale: cappelli, pori e gambi; i formati stretti mostrano un sottoinsieme del gruppo.",
+     "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Boletus_aestivalis_9.jpg",
+     "sha256Original": "3fb6b21104cc9a08e2ec8c67eec4ef74e334acd14558f303cbd01879aaa6a3d6",
+     "changes": "Orientamento EXIF, ridimensionamento, compressione WebP; miniatura ritagliata."
+    },
+    {
+     "file": "assets/species/aestivalis-commons-solo.webp",
+     "file_hd": "assets/species/aestivalis-commons-solo-hd.webp",
+     "thumb": "assets/species/aestivalis-commons-solo-t.webp",
+     "source": "Wikimedia Commons",
+     "page": "https://commons.wikimedia.org/wiki/File:Boletus_aestivalis_solo.jpg",
+     "author": "Milan Chytrý",
+     "license": "CC BY 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+     "attribution": "Milan Chytrý · Wikimedia Commons · CC BY 4.0",
+     "alt": "Boletus aestivalis — Vista dal basso con pori e gambo reticolato",
+     "caption": "Vista dal basso con pori e gambo reticolato; base entro la foto.",
+     "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Boletus_aestivalis_solo.jpg",
+     "sha256Original": "846e3c8cfd49cf43b81639f25adeff4c0f3e1c89c7fa16e9bd09c24f2364a78a",
+     "changes": "Orientamento EXIF, ridimensionamento, compressione WebP; miniatura ritagliata."
+    },
+    {
+     "file": "assets/species/aestivalis-anro1.webp",
+     "file_hd": "assets/species/aestivalis-anro1-hd.webp",
+     "thumb": "assets/species/aestivalis-anro1-t.webp",
+     "source": "Wikimedia Commons",
+     "page": "https://commons.wikimedia.org/wiki/File:20200611Boletus_reticulatus1.jpg",
+     "author": "AnRo0002",
+     "license": "CC0",
+     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+     "attribution": "AnRo0002 · Wikimedia Commons · CC0",
+     "alt": "Boletus aestivalis — Vista dall’alto del cappello",
+     "caption": "Vista dall’alto del cappello; fotografia distinta da quella dal basso dello stesso autore.",
+     "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/c/c7/20200611Boletus_reticulatus1.jpg",
+     "sha256Original": "d1a647e61283155a422844b16d79085791417770ebbed1aff18f0309d445c350",
+     "changes": "Orientamento EXIF, ridimensionamento, compressione WebP; miniatura ritagliata."
+    },
+    {
+     "file": "assets/species/aestivalis-anro3.webp",
+     "file_hd": "assets/species/aestivalis-anro3-hd.webp",
+     "thumb": "assets/species/aestivalis-anro3-t.webp",
+     "source": "Wikimedia Commons",
+     "page": "https://commons.wikimedia.org/wiki/File:20200611Boletus_reticulatus3.jpg",
+     "author": "AnRo0002",
+     "license": "CC0",
+     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+     "attribution": "AnRo0002 · Wikimedia Commons · CC0",
+     "alt": "Boletus aestivalis — Vista dal basso: pori e gambo",
+     "caption": "Vista dal basso: pori e gambo; complementare alla vista del cappello, nessuno stadio dichiarato.",
+     "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/4/4a/20200611Boletus_reticulatus3.jpg",
+     "sha256Original": "c8b0eb222fadc8190899f80e4d760e7bb12bc82c8ed5ecf08c923305df3af153",
+     "changes": "Orientamento EXIF, ridimensionamento, compressione WebP; miniatura ritagliata."
+    }
+   ],
    "gbif": {
     "taxonKey": 5954988,
     "total": 9,
@@ -884,7 +949,56 @@
     "file_hd": "assets/species/nuda-ref-hd.webp",
     "thumb": "assets/species/nuda-ref-t.webp"
    },
-   "inat": [],
+   "inat": [
+    {
+     "file": "assets/species/nuda-commons109950721.webp",
+     "file_hd": "assets/species/nuda-commons109950721-hd.webp",
+     "thumb": "assets/species/nuda-commons109950721-t.webp",
+     "source": "Wikimedia Commons",
+     "page": "https://commons.wikimedia.org/wiki/File:Lepista_nuda_109950721.jpg",
+     "author": "Елена Патерикина",
+     "license": "CC BY 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+     "attribution": "Елена Патерикина · Wikimedia Commons · CC BY 4.0",
+     "alt": "Lepista nuda — Vista dall’alto dei cappelli",
+     "caption": "Vista dall’alto dei cappelli; nessuna fase assegnata.",
+     "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Lepista_nuda_109950721.jpg",
+     "sha256Original": "62a93b69132af3598de3267f1f96200839c532d62585e28faa9aa50b65ea50d0",
+     "changes": "Orientamento EXIF, ridimensionamento, compressione WebP; miniatura ritagliata."
+    },
+    {
+     "file": "assets/species/nuda-villa-ada.webp",
+     "file_hd": "assets/species/nuda-villa-ada-hd.webp",
+     "thumb": "assets/species/nuda-villa-ada-t.webp",
+     "source": "Wikimedia Commons",
+     "page": "https://commons.wikimedia.org/wiki/File:Fungo_Lepista_nuda.jpg",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+     "attribution": "Albarubescens · Wikimedia Commons · CC BY-SA 4.0",
+     "alt": "Lepista nuda — Cappello e parte del gambo",
+     "caption": "Cappello e parte del gambo; la base non è documentata in questa inquadratura.",
+     "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Fungo_Lepista_nuda.jpg",
+     "sha256Original": "d321fd662c86247affa13ce87e46c09906e17db32fdd068dbea77d80694bdf7b",
+     "changes": "Orientamento EXIF, ridimensionamento, compressione WebP; miniatura ritagliata."
+    },
+    {
+     "file": "assets/species/nuda-wilson.webp",
+     "file_hd": "assets/species/nuda-wilson-hd.webp",
+     "thumb": "assets/species/nuda-wilson-t.webp",
+     "source": "Wikimedia Commons",
+     "page": "https://commons.wikimedia.org/wiki/File:2002-12-28_Clitocybe_nuda_(Fr.)_H.E._Bigelow_%26_A.H._Sm_289.jpg",
+     "author": "Nathan Wilson (nathan)",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+     "attribution": "Nathan Wilson (nathan) · Wikimedia Commons · CC BY-SA 3.0",
+     "alt": "Lepista nuda — Cappello e lamelle dell’esemplare rovesciato visibili",
+     "caption": "Cappello e lamelle dell’esemplare rovesciato visibili; nessuna fase o località italiana attribuita.",
+     "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/f/f1/2002-12-28_Clitocybe_nuda_%28Fr.%29_H.E._Bigelow_%26_A.H._Sm_289.jpg",
+     "sha256Original": "779566965b46899fd557898010b6782ed61ed44660c04b67ec68c0d41adbbfb1",
+     "changes": "Orientamento EXIF, ridimensionamento, compressione WebP; miniatura ritagliata."
+    }
+   ],
    "gbif": {
     "taxonKey": 5242048,
     "total": 47,
@@ -1854,6 +1968,22 @@
      "date": "2026-07-04",
      "file_hd": "assets/species/tylopilus-felleus-inat1-hd.webp",
      "thumb": "assets/species/tylopilus-felleus-inat1-t.webp"
+    },
+    {
+     "file": "assets/species/felleus-226780.webp",
+     "file_hd": "assets/species/felleus-226780-hd.webp",
+     "thumb": "assets/species/felleus-226780-t.webp",
+     "source": "Wikimedia Commons",
+     "page": "https://commons.wikimedia.org/wiki/File:2012-06-09_Tylopilus_felleus_(Bull.)_P._Karst_226780.jpg",
+     "author": "Christine Braaten (wintersbefore)",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+     "attribution": "Christine Braaten (wintersbefore) · Wikimedia Commons · CC BY-SA 3.0",
+     "alt": "Tylopilus felleus — Dettaglio ravvicinato dell’imenoforo",
+     "caption": "Dettaglio ravvicinato dell’imenoforo; non presentato come esemplare intero.",
+     "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/f/fe/2012-06-09_Tylopilus_felleus_%28Bull.%29_P._Karst_226780.jpg",
+     "sha256Original": "46a3b67573aa1e8d839e6e5b707b3f2f06dac755499ce657b7ce8e0914d28f53",
+     "changes": "Orientamento EXIF, ridimensionamento, compressione WebP; miniatura ritagliata."
     }
    ]
   },
@@ -1871,6 +2001,22 @@
      "date": "2026-09-19",
      "file_hd": "assets/species/rubroboletus-satanas-inat1-hd.webp",
      "thumb": "assets/species/rubroboletus-satanas-inat1-t.webp"
+    },
+    {
+     "file": "assets/species/satanas-223261.webp",
+     "file_hd": "assets/species/satanas-223261-hd.webp",
+     "thumb": "assets/species/satanas-223261-t.webp",
+     "source": "Wikimedia Commons",
+     "page": "https://commons.wikimedia.org/wiki/File:2008-10-19_Boletus_satanas_Lenz_223261.jpg",
+     "author": "Murselin Guney (Beyrek)",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+     "attribution": "Murselin Guney (Beyrek) · Wikimedia Commons · CC BY-SA 3.0",
+     "alt": "Rubroboletus satanas — Pori e gambo in vista dal basso",
+     "caption": "Pori e gambo in vista dal basso; non si deduce una fase dalla fotografia.",
+     "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/b/b0/2008-10-19_Boletus_satanas_Lenz_223261.jpg",
+     "sha256Original": "fe58fbd3faac700f0e1a2dcc35f0f1371e390951ccc081280d2bfb040326c417",
+     "changes": "Orientamento EXIF, ridimensionamento, compressione WebP; miniatura ritagliata."
     }
    ]
   },
@@ -1952,6 +2098,38 @@
      "date": "2022-10-01",
      "file_hd": "assets/species/amanita-phalloides-inat1-hd.webp",
      "thumb": "assets/species/amanita-phalloides-inat1-t.webp"
+    },
+    {
+     "file": "assets/species/phalloides-pruss.webp",
+     "file_hd": "assets/species/phalloides-pruss-hd.webp",
+     "thumb": "assets/species/phalloides-pruss-t.webp",
+     "source": "Wikimedia Commons",
+     "page": "https://commons.wikimedia.org/wiki/File:Amanita_phalloides_(3).JPG",
+     "author": "Thomas Pruß",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "attribution": "Thomas Pruß · Wikimedia Commons · CC BY-SA 3.0",
+     "alt": "Amanita phalloides — Due esemplari: cappello, gambo, anello e base visibili, senza assegnare fasi.",
+     "caption": "Due esemplari: cappello, gambo, anello e base visibili, senza assegnare fasi.",
+     "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/9/97/Amanita_phalloides_%283%29.JPG",
+     "sha256Original": "505f85b61e0230fc80dcbc612d8d2e79079f5acd3fd5f353103c52527fc4abfc",
+     "changes": "Orientamento EXIF, ridimensionamento, compressione WebP; miniatura ritagliata."
+    },
+    {
+     "file": "assets/species/phalloides-zalas02.webp",
+     "file_hd": "assets/species/phalloides-zalas02-hd.webp",
+     "thumb": "assets/species/phalloides-zalas02-t.webp",
+     "source": "Wikimedia Commons",
+     "page": "https://commons.wikimedia.org/wiki/File:02_Amanita_phalloides_in_Zalas,_Poland.jpg",
+     "author": "Krzysztof Ślusarczyk (upload by Marek Ślusarczyk)",
+     "license": "CC BY 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+     "attribution": "Krzysztof Ślusarczyk (upload by Marek Ślusarczyk) · Wikimedia Commons · CC BY 3.0",
+     "alt": "Amanita phalloides — Esemplare intero con base nel suolo",
+     "caption": "Esemplare intero con base nel suolo; fonte europea documentata.",
+     "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/6/63/02_Amanita_phalloides_in_Zalas%2C_Poland.jpg",
+     "sha256Original": "29c5433103869ec00665a4000958dea397a84c8a7e66e6a3cee22989e05db1b0",
+     "changes": "Orientamento EXIF, ridimensionamento, compressione WebP; miniatura ritagliata."
     }
    ]
   },
@@ -1969,6 +2147,22 @@
      "date": "2020-05-31",
      "file_hd": "assets/species/amanita-verna-inat1-hd.webp",
      "thumb": "assets/species/amanita-verna-inat1-t.webp"
+    },
+    {
+     "file": "assets/species/verna-commons3.webp",
+     "file_hd": "assets/species/verna-commons3-hd.webp",
+     "thumb": "assets/species/verna-commons3-t.webp",
+     "source": "Wikimedia Commons",
+     "page": "https://commons.wikimedia.org/wiki/File:Amanita_verna_3.jpg",
+     "author": "Sinisa Radic",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "attribution": "Sinisa Radic · Wikimedia Commons · CC BY-SA 4.0",
+     "alt": "Amanita verna — Esemplari interi con base",
+     "caption": "Esemplari interi con base; dominante cromatica originale conservata, nessuna correzione del colore.",
+     "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/1/16/Amanita_verna_3.jpg",
+     "sha256Original": "f9ddab0605fbada07d24936cf90f9a51f05726e47d4bd5a75a417d7e0c32cfb7",
+     "changes": "Orientamento EXIF, ridimensionamento, compressione WebP; miniatura ritagliata."
     }
    ]
   },
@@ -1986,6 +2180,22 @@
      "date": "2024-09-08",
      "file_hd": "assets/species/amanita-virosa-inat1-hd.webp",
      "thumb": "assets/species/amanita-virosa-inat1-t.webp"
+    },
+    {
+     "file": "assets/species/virosa-commons10099268.webp",
+     "file_hd": "assets/species/virosa-commons10099268-hd.webp",
+     "thumb": "assets/species/virosa-commons10099268-t.webp",
+     "source": "Wikimedia Commons",
+     "page": "https://commons.wikimedia.org/wiki/File:Amanita_virosa_10099268.jpg",
+     "author": "Maxim Shashkov",
+     "license": "CC BY 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+     "attribution": "Maxim Shashkov · Wikimedia Commons · CC BY 4.0",
+     "alt": "Amanita virosa — Esemplare sul suolo del bosco",
+     "caption": "Esemplare sul suolo del bosco; base parzialmente nascosta, nessuna affermazione sul carattere della volva.",
+     "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Amanita_virosa_10099268.jpg",
+     "sha256Original": "28d1d54e0ffd58b34623919ac40eb34b1ee2ab2d2414ab64159e74942d4d40bd",
+     "changes": "Orientamento EXIF, ridimensionamento, compressione WebP; miniatura ritagliata."
     }
    ]
   },
@@ -2037,6 +2247,22 @@
      "date": "2021-11-03",
      "file_hd": "assets/species/omphalotus-olearius-inat1-hd.webp",
      "thumb": "assets/species/omphalotus-olearius-inat1-t.webp"
+    },
+    {
+     "file": "assets/species/olearius-212577.webp",
+     "file_hd": "assets/species/olearius-212577-hd.webp",
+     "thumb": "assets/species/olearius-212577-t.webp",
+     "source": "Wikimedia Commons",
+     "page": "https://commons.wikimedia.org/wiki/File:2011-12-01_Omphalotus_olearius_(DC.)_Singer_212577.jpg",
+     "author": "Souhila Aouali",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+     "attribution": "Souhila Aouali · Wikimedia Commons · CC BY-SA 3.0",
+     "alt": "Omphalotus olearius — Vista dall’alto del gruppo",
+     "caption": "Vista dall’alto del gruppo; non dettaglio delle lamelle.",
+     "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/d/d0/2011-12-01_Omphalotus_olearius_%28DC.%29_Singer_212577.jpg",
+     "sha256Original": "03fff1f8a1641654460b77080750de970e310071482df4f22c6ad0fbad2d6071",
+     "changes": "Orientamento EXIF, ridimensionamento, compressione WebP; miniatura ritagliata."
     }
    ]
   },
