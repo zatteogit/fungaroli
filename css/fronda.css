@@ -1061,3 +1061,11 @@ button.cover-index:focus-visible { outline:3px solid var(--focus); outline-offse
 .glossary-heading-mark { display:inline-grid; place-items:center; width:13px; height:13px; flex:0 0 13px; border:1px solid var(--muted); border-radius:50%; color:var(--muted); font:600 9px/1 var(--font-body); }
 .glossary-link:not(.glossary-heading),.trait-strip .ts-v .glossary-link:not(.glossary-heading) { text-decoration:underline dotted; text-decoration-thickness:1px; text-underline-offset:.2em; box-shadow:none; }
 @media(hover:hover) { .glossary-heading:hover .glossary-heading-mark { color:var(--link); border-color:var(--link); } }
+
+/* Scopri: sfumatura soltanto sul lato con altri elementi da scorrere. */
+.rail-host > .seg-nav {
+  -webkit-mask-image:linear-gradient(to right, transparent, var(--text) min(28px,var(--rail-fade-start)), var(--text) calc(100% - min(28px,var(--rail-fade-end))), transparent);
+  mask-image:linear-gradient(to right, transparent, var(--text) min(28px,var(--rail-fade-start)), var(--text) calc(100% - min(28px,var(--rail-fade-end))), transparent);
+}
+.rail-host:has(> .seg-nav) > .rail-prev { left:4px; }
+.rail-host:has(> .seg-nav) > .rail-next { right:4px; }
