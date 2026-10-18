@@ -19,3 +19,11 @@ Sono adattamenti illustrativi generati con AI, non nuove fotografie documentali 
 `generated:true`, derivazione e autore/licenza della fotografia originale devono restare nel manifest e nell’informazione sulle immagini. Le attribuzioni dichiarate sono Skylimitless / CC BY-SA4.0 per Cittareale e Johan Haggi / CC BY-SA2.0 per Terminillo ovest, già registrate nel catalogo. Non vengono certificate nuove licenze per fotografie non acquisite. Nessun file runtime o dataset viene modificato con questo checkpoint di revisione.
 
 Nessun test automatico o browser, come richiesto dall’utente; controlli visivi e hash soltanto. Nebbia, pioggia e neve dedicata non ancora osservate in questo checkpoint: rimangono escluse finché non riceveranno una revisione esplicita.
+
+## Revisione finale: trentadue derivazioni approvate
+
+Dopo il primo checkpoint, osservati singolarmente a piena risoluzione anche gli otto master nebbia, gli otto pioggia e i due neve, insieme alle sei rispettive tavole. La ricevuta finale sostituisce il perimetro parziale: **32 master e64derivati WebP**, con hash registrati e confrontati con il manifest finale del produttore. Nessuno scarto nel lotto geografico; nessuna estensione dell’approvazione ad altre immagini.
+
+La nebbia abbassa il contrasto con velature traslucide, lasciando leggibili piste, ghiaioni e rocce; non cambia i crinali né introduce nuovi oggetti. La pioggia aggiunge un cielo coperto e striature senza creare corsi d’acqua, laghi, alluvioni o nuovi sentieri. La neve dedicata aggiunge fiocchi e copertura superiore discontinua; non trasforma prati in ghiacciai, non elimina gli affioramenti e mantiene riconoscibile l’edificio del Terminilletto. Le masse boscate di Cittareale rimangono nelle fasce originali. Sono scenari illustrativi: intensità della precipitazione e distribuzione della neve non sono dati meteorologici osservati o misure del manto.
+
+La dichiarazione precedente di varianti ancora escluse vale solo per il primo checkpoint; ora tutte le combinazioni esplicitamente elencate nella ricevuta JSON sono state osservate e approvate con i medesimi limiti. Nessuna suite/browser eseguita.
