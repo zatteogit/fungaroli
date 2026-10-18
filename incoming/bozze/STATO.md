@@ -83,3 +83,10 @@
 | `incoming/icone/confronto-forme-2026-10-18-02-r01.png` | da rivedere | Bloccata per Tylopilus crema+piano ocra e ancora convesso. Amanita/Morchella selezionate separatamente nelle celle approvate; Tylopilus sostituito dalla r03. |
 | `incoming/icone/confronto-forme-2026-10-18-02-r01-celle-approvate.png` | pronta da integrare | Copia integra della sorgente r01, selezionate SOLO celle0/1 Amanita e6/7 Morchella. Celle3/4 Tylopilus NON approvate né importate. |
 | `incoming/icone/tylopilus-crema-piano-2026-10-18-r03.png` | pronta da integrare | Tylopilus crema+piano corretto: due corone spianate, pori rosa, gambo clavato con reticolo bruno grossolano, senza anello/volva. Review indipendente e64px superate. |
+
+## Recupero fasi 18/10/2026
+
+| incoming/icone/fasi-31.png | Fasi recuperate, revisione anatomica attuale documentata | pronta da integrare | Hash e celle in produzione-fasi-2026-10-18/ricevuta-recupero.json; revisione a risoluzione piena e64px; import subordinato a controllo indipendente del coordinatore. |
+| incoming/icone/fasi-32.png | Fasi recuperate, revisione anatomica attuale documentata | pronta da integrare | Hash e celle in produzione-fasi-2026-10-18/ricevuta-recupero.json; revisione a risoluzione piena e64px; import subordinato a controllo indipendente del coordinatore. |
+| incoming/icone/fasi-33.png | Fasi recuperate, revisione anatomica attuale documentata | pronta da integrare | Hash e celle in produzione-fasi-2026-10-18/ricevuta-recupero.json; revisione a risoluzione piena e64px; import subordinato a controllo indipendente del coordinatore. |
+| incoming/icone/fasi-34.png | Fasi recuperate, revisione anatomica attuale documentata | pronta da integrare | Hash e celle in produzione-fasi-2026-10-18/ricevuta-recupero.json; revisione a risoluzione piena e64px; import subordinato a controllo indipendente del coordinatore. |

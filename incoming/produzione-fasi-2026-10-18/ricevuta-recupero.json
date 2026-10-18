@@ -1,0 +1,457 @@
+{
+  "commit_sorgente": "caa6f6833a7942ba6c6d5050c7cbe7255c98e7f8",
+  "recuperate": 30,
+  "nuove_generazioni": 0,
+  "righe": [
+    {
+      "target": "assets/traits/agaricus-arvensis-cappello-fase-adulto.webp",
+      "file": "incoming/icone/fasi-31.png",
+      "cella": 0,
+      "sha256": "ea357178648388b5e6fcb2cfdad10058cb7a4a07747d4f24e5848b2401c4f4de",
+      "crop": "incoming/produzione-fasi-2026-10-18/ritagli-recupero/agaricus-arvensis-cappello-fase-adulto.png",
+      "bbox": [
+        64,
+        176,
+        354,
+        242
+      ],
+      "source": "https://www.first-nature.com/fungi/agaricus-arvensis.php",
+      "stato": "raster revisionato, attende controllo indipendente coordinatore"
+    },
+    {
+      "target": "assets/traits/agaricus-arvensis-sotto-fase-adulto.webp",
+      "file": "incoming/icone/fasi-31.png",
+      "cella": 1,
+      "sha256": "ea357178648388b5e6fcb2cfdad10058cb7a4a07747d4f24e5848b2401c4f4de",
+      "crop": "incoming/produzione-fasi-2026-10-18/ritagli-recupero/agaricus-arvensis-sotto-fase-adulto.png",
+      "bbox": [
+        482,
+        72,
+        772,
+        344
+      ],
+      "source": "https://www.first-nature.com/fungi/agaricus-arvensis.php",
+      "stato": "raster revisionato, attende controllo indipendente coordinatore"
+    },
+    {
+      "target": "assets/traits/agaricus-arvensis-gambo-fase-adulto.webp",
+      "file": "incoming/icone/fasi-31.png",
+      "cella": 2,
+      "sha256": "ea357178648388b5e6fcb2cfdad10058cb7a4a07747d4f24e5848b2401c4f4de",
+      "crop": "incoming/produzione-fasi-2026-10-18/ritagli-recupero/agaricus-arvensis-gambo-fase-adulto.png",
+      "bbox": [
+        900,
+        124,
+        1190,
+        294
+      ],
+      "source": "https://www.first-nature.com/fungi/agaricus-arvensis.php",
+      "stato": "raster revisionato, attende controllo indipendente coordinatore"
+    },
+    {
+      "target": "assets/traits/agaricus-bisporus-cappello-fase-giovane.webp",
+      "file": "incoming/icone/fasi-31.png",
+      "cella": 3,
+      "sha256": "ea357178648388b5e6fcb2cfdad10058cb7a4a07747d4f24e5848b2401c4f4de",
+      "crop": "incoming/produzione-fasi-2026-10-18/ritagli-recupero/agaricus-bisporus-cappello-fase-giovane.png",
+      "bbox": [
+        64,
+        554,
+        354,
+        698
+      ],
+      "source": "https://www.first-nature.com/fungi/agaricus-bisporus.php",
+      "stato": "raster revisionato, attende controllo indipendente coordinatore"
+    },
+    {
+      "target": "assets/traits/agaricus-bisporus-sotto-fase-giovane.webp",
+      "file": "incoming/icone/fasi-31.png",
+      "cella": 4,
+      "sha256": "ea357178648388b5e6fcb2cfdad10058cb7a4a07747d4f24e5848b2401c4f4de",
+      "crop": "incoming/produzione-fasi-2026-10-18/ritagli-recupero/agaricus-bisporus-sotto-fase-giovane.png",
+      "bbox": [
+        482,
+        490,
+        772,
+        764
+      ],
+      "source": "https://www.first-nature.com/fungi/agaricus-bisporus.php",
+      "stato": "raster revisionato, attende controllo indipendente coordinatore"
+    },
+    {
+      "target": "assets/traits/agaricus-bisporus-gambo-fase-giovane.webp",
+      "file": "incoming/icone/fasi-31.png",
+      "cella": 5,
+      "sha256": "ea357178648388b5e6fcb2cfdad10058cb7a4a07747d4f24e5848b2401c4f4de",
+      "crop": "incoming/produzione-fasi-2026-10-18/ritagli-recupero/agaricus-bisporus-gambo-fase-giovane.png",
+      "bbox": [
+        904,
+        482,
+        1184,
+        772
+      ],
+      "source": "https://www.first-nature.com/fungi/agaricus-bisporus.php",
+      "stato": "raster revisionato, attende controllo indipendente coordinatore"
+    },
+    {
+      "target": "assets/traits/agaricus-bisporus-cappello-fase-adulto.webp",
+      "file": "incoming/icone/fasi-31.png",
+      "cella": 6,
+      "sha256": "ea357178648388b5e6fcb2cfdad10058cb7a4a07747d4f24e5848b2401c4f4de",
+      "crop": "incoming/produzione-fasi-2026-10-18/ritagli-recupero/agaricus-bisporus-cappello-fase-adulto.png",
+      "bbox": [
+        64,
+        1012,
+        354,
+        1076
+      ],
+      "source": "https://www.first-nature.com/fungi/agaricus-bisporus.php",
+      "stato": "raster revisionato, attende controllo indipendente coordinatore"
+    },
+    {
+      "target": "assets/traits/agaricus-bisporus-sotto-fase-adulto.webp",
+      "file": "incoming/icone/fasi-31.png",
+      "cella": 7,
+      "sha256": "ea357178648388b5e6fcb2cfdad10058cb7a4a07747d4f24e5848b2401c4f4de",
+      "crop": "incoming/produzione-fasi-2026-10-18/ritagli-recupero/agaricus-bisporus-sotto-fase-adulto.png",
+      "bbox": [
+        482,
+        908,
+        772,
+        1182
+      ],
+      "source": "https://www.first-nature.com/fungi/agaricus-bisporus.php",
+      "stato": "raster revisionato, attende controllo indipendente coordinatore"
+    },
+    {
+      "target": "assets/traits/agaricus-bisporus-gambo-fase-adulto.webp",
+      "file": "incoming/icone/fasi-31.png",
+      "cella": 8,
+      "sha256": "ea357178648388b5e6fcb2cfdad10058cb7a4a07747d4f24e5848b2401c4f4de",
+      "crop": "incoming/produzione-fasi-2026-10-18/ritagli-recupero/agaricus-bisporus-gambo-fase-adulto.png",
+      "bbox": [
+        900,
+        958,
+        1190,
+        1130
+      ],
+      "source": "https://www.first-nature.com/fungi/agaricus-bisporus.php",
+      "stato": "raster revisionato, attende controllo indipendente coordinatore"
+    },
+    {
+      "target": "assets/traits/agaricus-sylvicola-cappello-fase-giovane.webp",
+      "file": "incoming/icone/fasi-32.png",
+      "cella": 0,
+      "sha256": "514a218f46ffdac9287425861c019d8139aad69e2ff539435c25b1a6025036f8",
+      "crop": "incoming/produzione-fasi-2026-10-18/ritagli-recupero/agaricus-sylvicola-cappello-fase-giovane.png",
+      "bbox": [
+        68,
+        118,
+        350,
+        300
+      ],
+      "source": "https://www.first-nature.com/fungi/agaricus-sylvicola.php",
+      "stato": "raster revisionato, attende controllo indipendente coordinatore"
+    },
+    {
+      "target": "assets/traits/agaricus-sylvicola-sotto-fase-giovane.webp",
+      "file": "incoming/icone/fasi-32.png",
+      "cella": 1,
+      "sha256": "514a218f46ffdac9287425861c019d8139aad69e2ff539435c25b1a6025036f8",
+      "crop": "incoming/produzione-fasi-2026-10-18/ritagli-recupero/agaricus-sylvicola-sotto-fase-giovane.png",
+      "bbox": [
+        482,
+        66,
+        772,
+        352
+      ],
+      "source": "https://www.first-nature.com/fungi/agaricus-sylvicola.php",
+      "stato": "raster revisionato, attende controllo indipendente coordinatore"
+    },
+    {
+      "target": "assets/traits/agaricus-sylvicola-gambo-fase-giovane.webp",
+      "file": "incoming/icone/fasi-32.png",
+      "cella": 2,
+      "sha256": "514a218f46ffdac9287425861c019d8139aad69e2ff539435c25b1a6025036f8",
+      "crop": "incoming/produzione-fasi-2026-10-18/ritagli-recupero/agaricus-sylvicola-gambo-fase-giovane.png",
+      "bbox": [
+        908,
+        64,
+        1180,
+        354
+      ],
+      "source": "https://www.first-nature.com/fungi/agaricus-sylvicola.php",
+      "stato": "raster revisionato, attende controllo indipendente coordinatore"
+    },
+    {
+      "target": "assets/traits/agaricus-sylvicola-cappello-fase-adulto.webp",
+      "file": "incoming/icone/fasi-32.png",
+      "cella": 3,
+      "sha256": "514a218f46ffdac9287425861c019d8139aad69e2ff539435c25b1a6025036f8",
+      "crop": "incoming/produzione-fasi-2026-10-18/ritagli-recupero/agaricus-sylvicola-cappello-fase-adulto.png",
+      "bbox": [
+        64,
+        562,
+        354,
+        690
+      ],
+      "source": "https://www.first-nature.com/fungi/agaricus-sylvicola.php",
+      "stato": "raster revisionato, attende controllo indipendente coordinatore"
+    },
+    {
+      "target": "assets/traits/agaricus-sylvicola-sotto-fase-adulto.webp",
+      "file": "incoming/icone/fasi-32.png",
+      "cella": 4,
+      "sha256": "514a218f46ffdac9287425861c019d8139aad69e2ff539435c25b1a6025036f8",
+      "crop": "incoming/produzione-fasi-2026-10-18/ritagli-recupero/agaricus-sylvicola-sotto-fase-adulto.png",
+      "bbox": [
+        482,
+        486,
+        772,
+        768
+      ],
+      "source": "https://www.first-nature.com/fungi/agaricus-sylvicola.php",
+      "stato": "raster revisionato, attende controllo indipendente coordinatore"
+    },
+    {
+      "target": "assets/traits/agaricus-sylvicola-gambo-fase-adulto.webp",
+      "file": "incoming/icone/fasi-32.png",
+      "cella": 5,
+      "sha256": "514a218f46ffdac9287425861c019d8139aad69e2ff539435c25b1a6025036f8",
+      "crop": "incoming/produzione-fasi-2026-10-18/ritagli-recupero/agaricus-sylvicola-gambo-fase-adulto.png",
+      "bbox": [
+        900,
+        490,
+        1190,
+        762
+      ],
+      "source": "https://www.first-nature.com/fungi/agaricus-sylvicola.php",
+      "stato": "raster revisionato, attende controllo indipendente coordinatore"
+    },
+    {
+      "target": "assets/traits/agaricus-sylvicola-cappello-fase-maturo.webp",
+      "file": "incoming/icone/fasi-32.png",
+      "cella": 6,
+      "sha256": "514a218f46ffdac9287425861c019d8139aad69e2ff539435c25b1a6025036f8",
+      "crop": "incoming/produzione-fasi-2026-10-18/ritagli-recupero/agaricus-sylvicola-cappello-fase-maturo.png",
+      "bbox": [
+        64,
+        1008,
+        354,
+        1080
+      ],
+      "source": "https://www.first-nature.com/fungi/agaricus-sylvicola.php",
+      "stato": "raster revisionato, attende controllo indipendente coordinatore"
+    },
+    {
+      "target": "assets/traits/agaricus-sylvicola-sotto-fase-maturo.webp",
+      "file": "incoming/icone/fasi-32.png",
+      "cella": 7,
+      "sha256": "514a218f46ffdac9287425861c019d8139aad69e2ff539435c25b1a6025036f8",
+      "crop": "incoming/produzione-fasi-2026-10-18/ritagli-recupero/agaricus-sylvicola-sotto-fase-maturo.png",
+      "bbox": [
+        482,
+        902,
+        772,
+        1186
+      ],
+      "source": "https://www.first-nature.com/fungi/agaricus-sylvicola.php",
+      "stato": "raster revisionato, attende controllo indipendente coordinatore"
+    },
+    {
+      "target": "assets/traits/agaricus-sylvicola-gambo-fase-maturo.webp",
+      "file": "incoming/icone/fasi-32.png",
+      "cella": 8,
+      "sha256": "514a218f46ffdac9287425861c019d8139aad69e2ff539435c25b1a6025036f8",
+      "crop": "incoming/produzione-fasi-2026-10-18/ritagli-recupero/agaricus-sylvicola-gambo-fase-maturo.png",
+      "bbox": [
+        900,
+        948,
+        1190,
+        1142
+      ],
+      "source": "https://www.first-nature.com/fungi/agaricus-sylvicola.php",
+      "stato": "raster revisionato, attende controllo indipendente coordinatore"
+    },
+    {
+      "target": "assets/traits/agaricus-xanthodermus-cappello-fase-giovane.webp",
+      "file": "incoming/icone/fasi-33.png",
+      "cella": 0,
+      "sha256": "885c6c170d3245c88144f5f9a465f7ceaa15963215b6fee36aafa35c8aa9ee1b",
+      "crop": "incoming/produzione-fasi-2026-10-18/ritagli-recupero/agaricus-xanthodermus-cappello-fase-giovane.png",
+      "bbox": [
+        64,
+        132,
+        354,
+        284
+      ],
+      "source": "https://www.first-nature.com/fungi/agaricus-xanthodermus.php",
+      "stato": "raster revisionato, attende controllo indipendente coordinatore"
+    },
+    {
+      "target": "assets/traits/agaricus-xanthodermus-sotto-fase-giovane.webp",
+      "file": "incoming/icone/fasi-33.png",
+      "cella": 1,
+      "sha256": "885c6c170d3245c88144f5f9a465f7ceaa15963215b6fee36aafa35c8aa9ee1b",
+      "crop": "incoming/produzione-fasi-2026-10-18/ritagli-recupero/agaricus-xanthodermus-sotto-fase-giovane.png",
+      "bbox": [
+        482,
+        66,
+        772,
+        352
+      ],
+      "source": "https://www.first-nature.com/fungi/agaricus-xanthodermus.php",
+      "stato": "raster revisionato, attende controllo indipendente coordinatore"
+    },
+    {
+      "target": "assets/traits/agaricus-xanthodermus-gambo-fase-giovane.webp",
+      "file": "incoming/icone/fasi-33.png",
+      "cella": 2,
+      "sha256": "885c6c170d3245c88144f5f9a465f7ceaa15963215b6fee36aafa35c8aa9ee1b",
+      "crop": "incoming/produzione-fasi-2026-10-18/ritagli-recupero/agaricus-xanthodermus-gambo-fase-giovane.png",
+      "bbox": [
+        900,
+        64,
+        1190,
+        354
+      ],
+      "source": "https://www.first-nature.com/fungi/agaricus-xanthodermus.php",
+      "stato": "raster revisionato, attende controllo indipendente coordinatore"
+    },
+    {
+      "target": "assets/traits/agaricus-xanthodermus-cappello-fase-adulto.webp",
+      "file": "incoming/icone/fasi-33.png",
+      "cella": 3,
+      "sha256": "885c6c170d3245c88144f5f9a465f7ceaa15963215b6fee36aafa35c8aa9ee1b",
+      "crop": "incoming/produzione-fasi-2026-10-18/ritagli-recupero/agaricus-xanthodermus-cappello-fase-adulto.png",
+      "bbox": [
+        64,
+        556,
+        354,
+        696
+      ],
+      "source": "https://www.first-nature.com/fungi/agaricus-xanthodermus.php",
+      "stato": "raster revisionato, attende controllo indipendente coordinatore"
+    },
+    {
+      "target": "assets/traits/agaricus-xanthodermus-sotto-fase-adulto.webp",
+      "file": "incoming/icone/fasi-33.png",
+      "cella": 4,
+      "sha256": "885c6c170d3245c88144f5f9a465f7ceaa15963215b6fee36aafa35c8aa9ee1b",
+      "crop": "incoming/produzione-fasi-2026-10-18/ritagli-recupero/agaricus-xanthodermus-sotto-fase-adulto.png",
+      "bbox": [
+        482,
+        484,
+        772,
+        768
+      ],
+      "source": "https://www.first-nature.com/fungi/agaricus-xanthodermus.php",
+      "stato": "raster revisionato, attende controllo indipendente coordinatore"
+    },
+    {
+      "target": "assets/traits/agaricus-xanthodermus-gambo-fase-adulto.webp",
+      "file": "incoming/icone/fasi-33.png",
+      "cella": 5,
+      "sha256": "885c6c170d3245c88144f5f9a465f7ceaa15963215b6fee36aafa35c8aa9ee1b",
+      "crop": "incoming/produzione-fasi-2026-10-18/ritagli-recupero/agaricus-xanthodermus-gambo-fase-adulto.png",
+      "bbox": [
+        900,
+        488,
+        1190,
+        766
+      ],
+      "source": "https://www.first-nature.com/fungi/agaricus-xanthodermus.php",
+      "stato": "raster revisionato, attende controllo indipendente coordinatore"
+    },
+    {
+      "target": "assets/traits/entoloma-sinuatum-cappello-fase-giovane.webp",
+      "file": "incoming/icone/fasi-33.png",
+      "cella": 6,
+      "sha256": "885c6c170d3245c88144f5f9a465f7ceaa15963215b6fee36aafa35c8aa9ee1b",
+      "crop": "incoming/produzione-fasi-2026-10-18/ritagli-recupero/entoloma-sinuatum-cappello-fase-giovane.png",
+      "bbox": [
+        64,
+        974,
+        354,
+        1114
+      ],
+      "source": "https://www.first-nature.com/fungi/entoloma-sinuatum.php",
+      "stato": "raster revisionato, attende controllo indipendente coordinatore"
+    },
+    {
+      "target": "assets/traits/entoloma-sinuatum-sotto-fase-giovane.webp",
+      "file": "incoming/icone/fasi-33.png",
+      "cella": 7,
+      "sha256": "885c6c170d3245c88144f5f9a465f7ceaa15963215b6fee36aafa35c8aa9ee1b",
+      "crop": "incoming/produzione-fasi-2026-10-18/ritagli-recupero/entoloma-sinuatum-sotto-fase-giovane.png",
+      "bbox": [
+        482,
+        902,
+        772,
+        1186
+      ],
+      "source": "https://www.first-nature.com/fungi/entoloma-sinuatum.php",
+      "stato": "raster revisionato, attende controllo indipendente coordinatore"
+    },
+    {
+      "target": "assets/traits/entoloma-sinuatum-gambo-fase-giovane.webp",
+      "file": "incoming/icone/fasi-33.png",
+      "cella": 8,
+      "sha256": "885c6c170d3245c88144f5f9a465f7ceaa15963215b6fee36aafa35c8aa9ee1b",
+      "crop": "incoming/produzione-fasi-2026-10-18/ritagli-recupero/entoloma-sinuatum-gambo-fase-giovane.png",
+      "bbox": [
+        900,
+        902,
+        1190,
+        1188
+      ],
+      "source": "https://www.first-nature.com/fungi/entoloma-sinuatum.php",
+      "stato": "raster revisionato, attende controllo indipendente coordinatore"
+    },
+    {
+      "target": "assets/traits/entoloma-sinuatum-cappello-fase-adulto.webp",
+      "file": "incoming/icone/fasi-34.png",
+      "cella": 0,
+      "sha256": "335d76d45f68891cdfb1403403623f5832d15ee6055514501f3f011903a9bfe4",
+      "crop": "incoming/produzione-fasi-2026-10-18/ritagli-recupero/entoloma-sinuatum-cappello-fase-adulto.png",
+      "bbox": [
+        64,
+        164,
+        354,
+        252
+      ],
+      "source": "https://www.first-nature.com/fungi/entoloma-sinuatum.php",
+      "stato": "raster revisionato, attende controllo indipendente coordinatore"
+    },
+    {
+      "target": "assets/traits/entoloma-sinuatum-sotto-fase-adulto.webp",
+      "file": "incoming/icone/fasi-34.png",
+      "cella": 1,
+      "sha256": "335d76d45f68891cdfb1403403623f5832d15ee6055514501f3f011903a9bfe4",
+      "crop": "incoming/produzione-fasi-2026-10-18/ritagli-recupero/entoloma-sinuatum-sotto-fase-adulto.png",
+      "bbox": [
+        482,
+        68,
+        772,
+        348
+      ],
+      "source": "https://www.first-nature.com/fungi/entoloma-sinuatum.php",
+      "stato": "raster revisionato, attende controllo indipendente coordinatore"
+    },
+    {
+      "target": "assets/traits/entoloma-sinuatum-gambo-fase-adulto.webp",
+      "file": "incoming/icone/fasi-34.png",
+      "cella": 2,
+      "sha256": "335d76d45f68891cdfb1403403623f5832d15ee6055514501f3f011903a9bfe4",
+      "crop": "incoming/produzione-fasi-2026-10-18/ritagli-recupero/entoloma-sinuatum-gambo-fase-adulto.png",
+      "bbox": [
+        900,
+        92,
+        1190,
+        324
+      ],
+      "source": "https://www.first-nature.com/fungi/entoloma-sinuatum.php",
+      "stato": "raster revisionato, attende controllo indipendente coordinatore"
+    }
+  ]
+}
