@@ -1,0 +1,124 @@
+{
+  "date": "2026-10-18",
+  "method": "raster → revisione → eventuale SVG",
+  "approvedByAgent": [
+    {
+      "master": "incoming/lotto-botanico-02-2026-10-18/originali/sambuco-infiorescenza-r00.png",
+      "masterHash": "8ae38cfec9f729ef0829aae4c32454db57fe73af8b67d92349d85ae4ecf79fb3",
+      "asset": "incoming/lotto-botanico-02-2026-10-18/approvati/sambuco-infiorescenza.webp",
+      "assetHash": "2be9e94af12e7c073bdb1e1cc5f34d56192d38538b37dae873d72e62b9eeb8c3",
+      "size": [
+        128,
+        128
+      ],
+      "alphaThreshold": 16,
+      "bbox": [
+        8,
+        14,
+        120,
+        113
+      ],
+      "species": "sambuco",
+      "latin": "Sambucus nigra L.",
+      "key": "flower_shape",
+      "value": "ombrella",
+      "source": {
+        "title": "Università di Trieste · Portale della Flora di Roma",
+        "url": "https://dryades.units.it/Roma/index.php?id=5142&procedure=taxon_page"
+      },
+      "referencePhoto": {
+        "file": "assets/plants/sambuco-1.webp",
+        "thumb": "assets/plants/sambuco-1-t.webp",
+        "alt": "Sambuco nero: fotografia della specie",
+        "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+        "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "page": "https://dryades.units.it/Roma/index.php?id=5142&procedure=taxon_page",
+        "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG2832JPG1713360741.jpg",
+        "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di Trieste, Monte Valerio , TS, Friuli Venezia Giulia, Italia · 17/04/2020 · Distributed under CC BY-SA 4.0 license."
+      },
+      "referencePhotoHash": "b0222a20d7693bbaa32017b93e18246a7e2cf3bbcbee56fb0e852ae31b96f5f8",
+      "status": "raster revisionato agente; revisione indipendente coordinatore in attesa",
+      "review": "BRIEF-E-REVISIONE.md",
+      "prompt": "prompt.json",
+      "vectorStatus": "non avviato",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "master": "incoming/lotto-botanico-02-2026-10-18/originali/ebbio-foglia-r00.png",
+      "masterHash": "58373244cfc195c6a1c7a34c048509b7c8a04b71fec3d07bd1d74ac2fac1a420",
+      "asset": "incoming/lotto-botanico-02-2026-10-18/approvati/ebbio-foglia.webp",
+      "assetHash": "e72c0f69823c01a4709c82d8fe40ee5b7bf0c26da5d0d4de2d147a16b44f926c",
+      "size": [
+        128,
+        128
+      ],
+      "alphaThreshold": 16,
+      "bbox": [
+        15,
+        8,
+        112,
+        120
+      ],
+      "species": "ebbio",
+      "latin": "Sambucus ebulus L.",
+      "key": "leaf_type",
+      "value": "composta",
+      "source": {
+        "title": "Università di Trieste · Portale della Flora di Roma",
+        "url": "https://dryades.units.it/Roma/index.php?id=5141&procedure=taxon_page"
+      },
+      "referencePhoto": {
+        "file": "assets/plants/ebbio-3.webp",
+        "thumb": "assets/plants/ebbio-3-t.webp",
+        "alt": "Ebbio: fotografia della specie",
+        "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+        "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "page": "https://dryades.units.it/Roma/index.php?id=5141&procedure=taxon_page",
+        "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG0675JPG1708093837.jpg",
+        "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di Duino Aurisina / Devin-Nabrežina, località San Pelagio / Šempolaj, prato ai margini della strada per Slivia, TS, Friuli Venezia Giulia, Italia · 09/07/2023 · Distributed under CC BY-SA 4.0 license."
+      },
+      "referencePhotoHash": "47eebb3c1502fb5126d0ab24fb796c3ade0659a4211ec56a8ab24599964d16ae",
+      "status": "raster revisionato agente; revisione indipendente coordinatore in attesa",
+      "review": "BRIEF-E-REVISIONE.md",
+      "prompt": "prompt.json",
+      "vectorStatus": "non avviato",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "notApproved": [
+    "scartati/sambuco-portamento-r00.png",
+    "da-correggere/sambuco-portamento-r01.png",
+    "scartati/ebbio-portamento-r00.png",
+    "scartati/ebbio-portamento-r01.png"
+  ],
+  "blocked": [
+    {
+      "species": "sambuco",
+      "key": "fruit_type",
+      "value": "carnoso",
+      "reason": "Manca foto frutti maturi neri"
+    },
+    {
+      "species": "ebbio",
+      "key": "fruit_type",
+      "value": "carnoso",
+      "reason": "Manca foto frutti maturi neri"
+    },
+    {
+      "species": "sambuco",
+      "key": "leaf_type",
+      "value": "composta",
+      "reason": "Foglie complete non sufficientemente visibili nei riferimenti locali"
+    },
+    {
+      "species": "ebbio",
+      "key": "flower_shape",
+      "value": "ombrella",
+      "reason": "Dettaglio locale soprattutto boccioli, manca infiorescenza aperta completa"
+    }
+  ]
+}
