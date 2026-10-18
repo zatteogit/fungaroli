@@ -496,3 +496,40 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 @media(max-width:359px) {
   .sub-nav.recognize-entry > .btn.ghost { font-size:12px; }
 }
+
+/* Tavola dei caratteri: un disegno principale, poi dettagli con spazio di lettura. */
+.fungus-page .trait-strip:not(.growth-gallery) { grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+.fungus-page .trait-strip > .ts-card { grid-column:span 1; padding:16px; gap:10px; border:1px solid var(--hair); border-radius:20px; }
+.fungus-page .trait-strip > li.ts-card-cap { grid-column:1 / -1; display:grid; grid-template-columns:minmax(88px,.8fr) minmax(0,1.2fr); column-gap:18px; row-gap:8px; }
+.fungus-page .ts-card > .ts-k { font:650 13px/1.4 var(--font-body); color:var(--text); }
+.fungus-page .ts-card > .ts-v { font:400 16px/1.5 var(--font-body); overflow-wrap:normal; }
+.fungus-page .ts-card > .ts-sub { color:var(--muted); font:400 13px/1.5 var(--font-body); overflow-wrap:normal; }
+.fungus-page .ts-card > .ts-art { height:82px; margin:0; justify-content:center; }
+.fungus-page .ts-card .ts-art > .ts-ill { width:80px; height:80px; }
+.fungus-page .ts-card .ts-art > svg.ta { max-height:76px; height:76px; max-width:100%; width:auto; }
+.fungus-page .ts-card-cap > .ts-k { grid-column:1 / -1; }
+.fungus-page .ts-card-cap > .ts-art { grid-column:1; grid-row:2 / span 2; height:112px; width:100%; border-radius:14px; background:var(--bg); }
+.fungus-page .ts-card-cap .ts-art > .ts-ill { width:104px; height:104px; max-width:100%; }
+.fungus-page .ts-card-cap > .ts-v { grid-column:2; grid-row:2; align-self:end; }
+.fungus-page .ts-card-cap > .ts-sub { grid-column:2; grid-row:3; align-self:start; }
+.ts-controls { display:grid; gap:12px; width:100%; min-width:0; }
+.ts-variant-group { display:grid; gap:6px; min-width:0; }
+.ts-control-label { font:500 12px/1.4 var(--font-body); color:var(--muted); }
+.fungus-page .ts-card-cap > .ts-controls { grid-column:1 / -1; margin-top:8px; padding-top:14px; border-top:1px solid var(--hair); }
+.fungus-page .ts-controls :is(.ts-chip,.ts-form) { min-height:44px; padding:8px 12px; font-size:13px; border-radius:12px; }
+.fungus-page .ts-controls .ts-note { margin:0; font-size:12px; line-height:1.5; }
+.ts-facts { display:grid; gap:7px; width:100%; }
+.ts-fact { display:flex; flex-wrap:wrap; align-items:baseline; gap:2px 6px; font:400 13px/1.45 var(--font-body); }
+.ts-fact > span { color:var(--muted); }
+.ts-fact > b { font-weight:600; }
+@media(min-width:600px) {
+  .fungus-page .trait-strip > li.ts-card-cap { grid-template-columns:140px minmax(0,1fr); }
+  .fungus-page .ts-card-cap > .ts-art { height:136px; }
+  .fungus-page .ts-card-cap .ts-art > .ts-ill { width:128px; height:128px; }
+  .fungus-page .ts-card-cap > .ts-controls { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .fungus-page .ts-controls .ts-note { grid-column:1 / -1; }
+}
+@media(min-width:1000px) {
+  .fungus-page .trait-strip:not(.growth-gallery) { grid-template-columns:repeat(4,minmax(0,1fr)); }
+  .fungus-page .trait-strip > .ts-card { padding:14px; }
+}

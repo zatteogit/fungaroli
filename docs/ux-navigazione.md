@@ -108,3 +108,14 @@ pagina. Sul desktop restano navigazione e testata estese.
 Scopri usa un libro aperto come icona: rappresenta cataloghi, caratteri e guide di
 funghi, piante e alberi. La foglia è riservata ai contenuti botanici; il Taccuino
 usa una stilo con pennino per richiamare la scrittura, la Mappa una carta ripiegata.
+
+### Tavola illustrata dei caratteri dei funghi
+
+Nella panoramica il cappello occupa una card larga: titolo, illustrazione e dati,
+poi selettori di colore e forma distinti. Le altre parti hanno due colonne su
+telefono/tablet e quattro sul desktop, con titolo prima del disegno, corpo di
+16 px e note subordinate. Le card usano bordi leggeri; il colore pieno segnala
+solo la variante selezionata. Anello, volva e reticolo si leggono in righe
+presente/assente esclusivamente quando il relativo dato è booleano documentato.
+Le fasi di crescita mantengono la propria galleria. Non si forzano altezze fisse
+né si omettono alternative per far entrare il contenuto.
