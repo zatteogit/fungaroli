@@ -114,3 +114,9 @@
 | incoming/icone/fasi-cibarius-r02.png | Fasi crescita, 2 tessere selezionate | pronta da integrare | Revisione piena/64px in produzione-fasi-2026-10-18/revisione-fasi-cibarius.md; hash 8ed27af0febd017ad5e7238eed12e23d8d59c0cf4f07d1db26f3cd0955469f84; solo celle 0,1; controllo indipendente coordinatore prima import. |
 
 | incoming/icone/fasi-43-r01.png | Fasi crescita, 3 tessere selezionate | pronta da integrare | Revisione piena/64px in produzione-fasi-2026-10-18/revisione-fasi-43.md; hash 8c09da12568d4f23cf9f76f20b2666437c1fd4263d8c3f4af97f95a755f62321; solo celle 0,3,6; controllo indipendente coordinatore prima import. |
+
+| incoming/icone/fasi-44-r01.png | Fasi crescita, 6 tessere selezionate | pronta da integrare | Revisione piena/64px in produzione-fasi-2026-10-18/revisione-fasi-44.md; hash 9ac6c6e248f6f2338603ca36aeb92d89ce317054fbd77a43dbd959013304db60; solo celle 0,1,3,4,6,7; controllo indipendente coordinatore prima import. |
+
+| incoming/icone/fasi-45-r01.png | Fasi crescita, 6 tessere selezionate | pronta da integrare | Revisione piena/64px in produzione-fasi-2026-10-18/revisione-fasi-45.md; hash e339aac6ca47541572b7b5975b6573dd16bed328e9acbf13945370311b809baf; solo celle 3,4,5,6,7,8; controllo indipendente coordinatore prima import. |
+
+| incoming/icone/fasi-pleurotus-r02.png | Fasi crescita, 2 tessere selezionate | pronta da integrare | Revisione piena/64px in produzione-fasi-2026-10-18/revisione-fasi-pleurotus.md; hash 5fbfb23ff3bece9bb1fa545582410f418d575c6a77a7d2bb1f33e491ed4d7b82; solo celle 0,1; controllo indipendente coordinatore prima import. |

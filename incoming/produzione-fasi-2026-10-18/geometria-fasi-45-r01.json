@@ -1,0 +1,114 @@
+{
+  "file": "incoming/icone/fasi-45-r01.png",
+  "sha256": "e339aac6ca47541572b7b5975b6573dd16bed328e9acbf13945370311b809baf",
+  "size": [
+    1254,
+    1254
+  ],
+  "celle": [
+    {
+      "soggetto": "pleurotus-ostreatus",
+      "fase": "adulto",
+      "tessera": "cappello",
+      "cella": 0,
+      "bbox": [
+        38,
+        138,
+        420,
+        342
+      ],
+      "source": "https://www.first-nature.com/fungi/pleurotus-ostreatus.php"
+    },
+    {
+      "soggetto": "pleurotus-ostreatus",
+      "fase": "adulto",
+      "tessera": "gambo",
+      "cella": 1,
+      "bbox": [
+        444,
+        80,
+        836,
+        374
+      ],
+      "source": "https://www.first-nature.com/fungi/pleurotus-ostreatus.php"
+    },
+    {
+      "soggetto": "terreum",
+      "fase": "giovane",
+      "tessera": "cappello",
+      "cella": 3,
+      "bbox": [
+        64,
+        538,
+        390,
+        740
+      ],
+      "source": "https://www.first-nature.com/fungi/tricholoma-terreum.php"
+    },
+    {
+      "soggetto": "terreum",
+      "fase": "giovane",
+      "tessera": "sotto",
+      "cella": 4,
+      "bbox": [
+        488,
+        494,
+        768,
+        770
+      ],
+      "source": "https://www.first-nature.com/fungi/tricholoma-terreum.php"
+    },
+    {
+      "soggetto": "terreum",
+      "fase": "giovane",
+      "tessera": "gambo",
+      "cella": 5,
+      "bbox": [
+        880,
+        458,
+        1180,
+        794
+      ],
+      "source": "https://www.first-nature.com/fungi/tricholoma-terreum.php"
+    },
+    {
+      "soggetto": "terreum",
+      "fase": "adulto",
+      "tessera": "cappello",
+      "cella": 6,
+      "bbox": [
+        34,
+        958,
+        438,
+        1110
+      ],
+      "source": "https://www.first-nature.com/fungi/tricholoma-terreum.php"
+    },
+    {
+      "soggetto": "terreum",
+      "fase": "adulto",
+      "tessera": "sotto",
+      "cella": 7,
+      "bbox": [
+        488,
+        900,
+        764,
+        1172
+      ],
+      "source": "https://www.first-nature.com/fungi/tricholoma-terreum.php"
+    },
+    {
+      "soggetto": "terreum",
+      "fase": "adulto",
+      "tessera": "gambo",
+      "cella": 8,
+      "bbox": [
+        838,
+        888,
+        1226,
+        1190
+      ],
+      "source": "https://www.first-nature.com/fungi/tricholoma-terreum.php"
+    }
+  ]
+}

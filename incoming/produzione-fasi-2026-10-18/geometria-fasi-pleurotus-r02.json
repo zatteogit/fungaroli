@@ -1,0 +1,36 @@
+{
+  "file": "incoming/icone/fasi-pleurotus-r02.png",
+  "sha256": "5fbfb23ff3bece9bb1fa545582410f418d575c6a77a7d2bb1f33e491ed4d7b82",
+  "size": [
+    1254,
+    1254
+  ],
+  "celle": [
+    {
+      "soggetto": "pleurotus-ostreatus",
+      "fase": "adulto",
+      "tessera": "cappello",
+      "cella": 0,
+      "bbox": [
+        32,
+        174,
+        420,
+        364
+      ],
+      "source": "https://www.first-nature.com/fungi/pleurotus-ostreatus.php"
+    },
+    {
+      "soggetto": "pleurotus-ostreatus",
+      "fase": "adulto",
+      "tessera": "gambo",
+      "cella": 1,
+      "bbox": [
+        456,
+        134,
+        810,
+        392
+      ],
+      "source": "https://www.first-nature.com/fungi/pleurotus-ostreatus.php"
+    }
+  ]
+}

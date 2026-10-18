@@ -1,0 +1,236 @@
+[
+  {
+    "soggetto": "aereus",
+    "file": "assets/species/aereus-inat1-hd.webp",
+    "sha256": "5d61ab06099e723c92046f7453b7ad2e61e7e41c6780d79ebfe60bd5466413f6",
+    "nota": "Foto già nel catalogo: fonti/licenze preesistenti, nessuna nuova acquisizione. Non ogni foto mostra tutte le età."
+  },
+  {
+    "soggetto": "aereus",
+    "file": "assets/species/aereus-inat2-hd.webp",
+    "sha256": "a4d21be188613c21ba7cce5f1b32be4ae0e3eca2be45ad103a4989550d45a98d",
+    "nota": "Foto già nel catalogo: fonti/licenze preesistenti, nessuna nuova acquisizione. Non ogni foto mostra tutte le età."
+  },
+  {
+    "soggetto": "aereus",
+    "file": "assets/species/aereus-inat3-hd.webp",
+    "sha256": "a57dd79b92040bb132005f6b5c45265e3512c97340cec96e52d5543afd5d3722",
+    "nota": "Foto già nel catalogo: fonti/licenze preesistenti, nessuna nuova acquisizione. Non ogni foto mostra tutte le età."
+  },
+  {
+    "soggetto": "aestivalis",
+    "file": "assets/species/aestivalis-ref-t.webp",
+    "sha256": "14789172c934fe7c7c6fc572d59654cd51034f2435ec901ee54a56e5af749f93",
+    "nota": "Foto già nel catalogo: fonti/licenze preesistenti, nessuna nuova acquisizione. Non ogni foto mostra tutte le età."
+  },
+  {
+    "soggetto": "aestivalis",
+    "file": "assets/species/aestivalis-ref.webp",
+    "sha256": "cf422e9963620012bb9366e545f18a09ecf7fcf0ac4b56c9071698739dc033c2",
+    "nota": "Foto già nel catalogo: fonti/licenze preesistenti, nessuna nuova acquisizione. Non ogni foto mostra tutte le età."
+  },
+  {
+    "soggetto": "agaricus-arvensis",
+    "file": "assets/species/agaricus-arvensis-inat1-hd.webp",
+    "sha256": "1c284e3f5ccd785a6636e7b2e8da0f6094af7455263fbe72713cab7366a799ac",
+    "nota": "Foto già nel catalogo: fonti/licenze preesistenti, nessuna nuova acquisizione. Non ogni foto mostra tutte le età."
+  },
+  {
+    "soggetto": "agaricus-arvensis",
+    "file": "assets/species/agaricus-arvensis-ref-hd.webp",
+    "sha256": "0744bf7e4422d2bba6ac48459545a66d8fcc64700fc4f7582203020236cad90f",
+    "nota": "Foto già nel catalogo: fonti/licenze preesistenti, nessuna nuova acquisizione. Non ogni foto mostra tutte le età."
+  },
+  {
+    "soggetto": "agaricus-bisporus",
+    "file": "assets/species/agaricus-bisporus-inat1-hd.webp",
+    "sha256": "a77624490253fa4a398241f60ce676799b64be330d901282227e5633eb2d2696",
+    "nota": "Foto già nel catalogo: fonti/licenze preesistenti, nessuna nuova acquisizione. Non ogni foto mostra tutte le età."
+  },
+  {
+    "soggetto": "agaricus-bisporus",
+    "file": "assets/species/agaricus-bisporus-ref-hd.webp",
+    "sha256": "5e3c6a5be33b32499ab237cb5c788f09d2ebde1b6e028271d069a4e370dd9c57",
+    "nota": "Foto già nel catalogo: fonti/licenze preesistenti, nessuna nuova acquisizione. Non ogni foto mostra tutte le età."
+  },
+  {
+    "soggetto": "agaricus-sylvicola",
+    "file": "assets/species/agaricus-sylvicola-inat1-hd.webp",
+    "sha256": "b2d48ca075a241085b790a424e2847271297d9af81ce668a10c729764ced51e1",
+    "nota": "Foto già nel catalogo: fonti/licenze preesistenti, nessuna nuova acquisizione. Non ogni foto mostra tutte le età."
+  },
+  {
+    "soggetto": "agaricus-sylvicola",
+    "file": "assets/species/agaricus-sylvicola-ref-hd.webp",
+    "sha256": "52cf9e4ecf4678f8cf9904b4a40b8ea1b0836fba614a3db2e87cdc99382d2888",
+    "nota": "Foto già nel catalogo: fonti/licenze preesistenti, nessuna nuova acquisizione. Non ogni foto mostra tutte le età."
+  },
+  {
+    "soggetto": "agaricus-xanthodermus",
+    "file": "assets/species/agaricus-xanthodermus-inat1-hd.webp",
+    "sha256": "87ed48e286c8f611e110a1ef1e379197ba9e4e8cffd5f662503f6270471dd276",
+    "nota": "Foto già nel catalogo: fonti/licenze preesistenti, nessuna nuova acquisizione. Non ogni foto mostra tutte le età."
+  },
+  {
+    "soggetto": "cibarius",
+    "file": "assets/species/cibarius-inat1-hd.webp",
+    "sha256": "118f755c4aaddc27d5b176773c8d953eda6fa76b1ec3b90dd4f13ad2cd1f0dfd",
+    "nota": "Foto già nel catalogo: fonti/licenze preesistenti, nessuna nuova acquisizione. Non ogni foto mostra tutte le età."
+  },
+  {
+    "soggetto": "cibarius",
+    "file": "assets/species/cibarius-inat2-hd.webp",
+    "sha256": "c2eacc8f07bdd6ee904907f91f0289faef1b89c072dc1049346879000e34f7a0",
+    "nota": "Foto già nel catalogo: fonti/licenze preesistenti, nessuna nuova acquisizione. Non ogni foto mostra tutte le età."
+  },
+  {
+    "soggetto": "cibarius",
+    "file": "assets/species/cibarius-inat3-hd.webp",
+    "sha256": "2d8465bc799d7d65fd010202a0d17aab045b016ae6c114f3068ab1c0b21e478d",
+    "nota": "Foto già nel catalogo: fonti/licenze preesistenti, nessuna nuova acquisizione. Non ogni foto mostra tutte le età."
+  },
+  {
+    "soggetto": "cibarius",
+    "file": "assets/species/cibarius-ref-hd.webp",
+    "sha256": "c5d9f1b4aadafd3f678036aefe141a07aadbaf00f092adc7cfde7664c3f5d103",
+    "nota": "Foto già nel catalogo: fonti/licenze preesistenti, nessuna nuova acquisizione. Non ogni foto mostra tutte le età."
+  },
+  {
+    "soggetto": "coprinus-comatus",
+    "file": "assets/species/coprinus-comatus-inat1-hd.webp",
+    "sha256": "8f737fe175f6d419cb9e25067ff36ac63a03623daefd86c1bc406bec5aef7728",
+    "nota": "Foto già nel catalogo: fonti/licenze preesistenti, nessuna nuova acquisizione. Non ogni foto mostra tutte le età."
+  },
+  {
+    "soggetto": "coprinus-comatus",
+    "file": "assets/species/coprinus-comatus-ref-hd.webp",
+    "sha256": "ceb34766066727e670c8c4aef664861fb46f374caf7c915b8d0f866d9676658f",
+    "nota": "Foto già nel catalogo: fonti/licenze preesistenti, nessuna nuova acquisizione. Non ogni foto mostra tutte le età."
+  },
+  {
+    "soggetto": "cyclocybe-aegerita",
+    "file": "assets/species/cyclocybe-aegerita-inat1-hd.webp",
+    "sha256": "e5f29fbaacf096ad9cfc6246c0bf7806bb38ec535fac72b99fffb133dc073431",
+    "nota": "Foto già nel catalogo: fonti/licenze preesistenti, nessuna nuova acquisizione. Non ogni foto mostra tutte le età."
+  },
+  {
+    "soggetto": "cyclocybe-aegerita",
+    "file": "assets/species/cyclocybe-aegerita-ref-hd.webp",
+    "sha256": "3f5907308aad5c7cdb68c0d801890d978520bff228a7cd85aa46926c74ebe96a",
+    "nota": "Foto già nel catalogo: fonti/licenze preesistenti, nessuna nuova acquisizione. Non ogni foto mostra tutte le età."
+  },
+  {
+    "soggetto": "edulis",
+    "file": "assets/species/edulis-inat1-hd.webp",
+    "sha256": "9eb132019f99c98400fd333edbfeb737ee66a35b86f8eed2475d69ea0d46a076",
+    "nota": "Foto già nel catalogo: fonti/licenze preesistenti, nessuna nuova acquisizione. Non ogni foto mostra tutte le età."
+  },
+  {
+    "soggetto": "edulis",
+    "file": "assets/species/edulis-inat2-hd.webp",
+    "sha256": "3a5593ba10ab5315fd8ad379f7a82db4c70a596b3cedaa4c30fe2f3102aef63d",
+    "nota": "Foto già nel catalogo: fonti/licenze preesistenti, nessuna nuova acquisizione. Non ogni foto mostra tutte le età."
+  },
+  {
+    "soggetto": "edulis",
+    "file": "assets/species/edulis-inat3-hd.webp",
+    "sha256": "0f990ec548553ca554459ef0b28b6621da6c498248e7dfbe45bd1b0ad658ad80",
+    "nota": "Foto già nel catalogo: fonti/licenze preesistenti, nessuna nuova acquisizione. Non ogni foto mostra tutte le età."
+  },
+  {
+    "soggetto": "edulis",
+    "file": "assets/species/edulis-ref-hd.webp",
+    "sha256": "be92cba559e46ecd55216684717aa426591d7b31794c29ec50a475675a671d43",
+    "nota": "Foto già nel catalogo: fonti/licenze preesistenti, nessuna nuova acquisizione. Non ogni foto mostra tutte le età."
+  },
+  {
+    "soggetto": "entoloma-sinuatum",
+    "file": "assets/species/entoloma-sinuatum-inat1-hd.webp",
+    "sha256": "256963b03234191e74569592189dc8996d289345cef42f73b6f5f870c9092e87",
+    "nota": "Foto già nel catalogo: fonti/licenze preesistenti, nessuna nuova acquisizione. Non ogni foto mostra tutte le età."
+  },
+  {
+    "soggetto": "hypholoma-fasciculare",
+    "file": "assets/species/hypholoma-fasciculare-inat1-hd.webp",
+    "sha256": "afe7a08a231384009944ed2e530047c45d5318853dd80a33c8952e4ab524ae11",
+    "nota": "Foto già nel catalogo: fonti/licenze preesistenti, nessuna nuova acquisizione. Non ogni foto mostra tutte le età."
+  },
+  {
+    "soggetto": "mellea",
+    "file": "assets/species/mellea-inat1-hd.webp",
+    "sha256": "57ee3e446f16b8c3750df4805e586da1623fac88e51fe341f79aaa517bfda7f1",
+    "nota": "Foto già nel catalogo: fonti/licenze preesistenti, nessuna nuova acquisizione. Non ogni foto mostra tutte le età."
+  },
+  {
+    "soggetto": "mellea",
+    "file": "assets/species/mellea-inat2-hd.webp",
+    "sha256": "d2e6f81fa7cc970aa99ae5aea5b0332627b998a425e0e40257e6ebc1d5c3e52b",
+    "nota": "Foto già nel catalogo: fonti/licenze preesistenti, nessuna nuova acquisizione. Non ogni foto mostra tutte le età."
+  },
+  {
+    "soggetto": "mellea",
+    "file": "assets/species/mellea-inat3-hd.webp",
+    "sha256": "7e7f8ecc15ad49e483e480f5ea3ba1b8a2be407a59e5c8eb704085934cbe6f5b",
+    "nota": "Foto già nel catalogo: fonti/licenze preesistenti, nessuna nuova acquisizione. Non ogni foto mostra tutte le età."
+  },
+  {
+    "soggetto": "mellea",
+    "file": "assets/species/mellea-ref-hd.webp",
+    "sha256": "e092d698397a12f6d2a1e1eae5a3868fcebc7943efe3f2a53701d78a99817ce7",
+    "nota": "Foto già nel catalogo: fonti/licenze preesistenti, nessuna nuova acquisizione. Non ogni foto mostra tutte le età."
+  },
+  {
+    "soggetto": "pinophilus",
+    "file": "assets/species/pinophilus-inat1-hd.webp",
+    "sha256": "6d8c8faf16af04f95b584386b7393ab41ec054e1d930d554342fe10e7c27a55e",
+    "nota": "Foto già nel catalogo: fonti/licenze preesistenti, nessuna nuova acquisizione. Non ogni foto mostra tutte le età."
+  },
+  {
+    "soggetto": "pleurotus-ostreatus",
+    "file": "assets/species/pleurotus-ostreatus-inat1-hd.webp",
+    "sha256": "b729e8d54e373cff2865105fe6aef70b547c299f4cd6dead4a38294264095da7",
+    "nota": "Foto già nel catalogo: fonti/licenze preesistenti, nessuna nuova acquisizione. Non ogni foto mostra tutte le età."
+  },
+  {
+    "soggetto": "pleurotus-ostreatus",
+    "file": "assets/species/pleurotus-ostreatus-ref-hd.webp",
+    "sha256": "52a1253e169ff11bfa17862cd0c4951be142f3106ba819045b83abe58a4ab1de",
+    "nota": "Foto già nel catalogo: fonti/licenze preesistenti, nessuna nuova acquisizione. Non ogni foto mostra tutte le età."
+  },
+  {
+    "soggetto": "rubroboletus-satanas",
+    "file": "assets/species/rubroboletus-satanas-inat1-hd.webp",
+    "sha256": "96f1155a766767e519ebf3990a96dbe9b5417d21fe1be35a0b90c5d89e57a88e",
+    "nota": "Foto già nel catalogo: fonti/licenze preesistenti, nessuna nuova acquisizione. Non ogni foto mostra tutte le età."
+  },
+  {
+    "soggetto": "terreum",
+    "file": "assets/species/terreum-inat1-hd.webp",
+    "sha256": "0efd1bf98114e16e4148722aa2e345aa72f036f2522f0ec42d60247bf46120ba",
+    "nota": "Foto già nel catalogo: fonti/licenze preesistenti, nessuna nuova acquisizione. Non ogni foto mostra tutte le età."
+  },
+  {
+    "soggetto": "terreum",
+    "file": "assets/species/terreum-inat2-hd.webp",
+    "sha256": "2c7d5d1613e47cb6b228fe176fb723785b91b106f2ca7ee7b7b8267b9c800fda",
+    "nota": "Foto già nel catalogo: fonti/licenze preesistenti, nessuna nuova acquisizione. Non ogni foto mostra tutte le età."
+  },
+  {
+    "soggetto": "terreum",
+    "file": "assets/species/terreum-inat3-hd.webp",
+    "sha256": "eb15a7f2a16af7abcdce07f80706b2781a2b2ca7c68a863c9db631a14413bf3f",
+    "nota": "Foto già nel catalogo: fonti/licenze preesistenti, nessuna nuova acquisizione. Non ogni foto mostra tutte le età."
+  },
+  {
+    "soggetto": "terreum",
+    "file": "assets/species/terreum-ref-hd.webp",
+    "sha256": "b691eb9c8634f1d47f2221a12260699e601072e24a6c20cd0bfe4e34274578bc",
+    "nota": "Foto già nel catalogo: fonti/licenze preesistenti, nessuna nuova acquisizione. Non ogni foto mostra tutte le età."
+  },
+  {
+    "soggetto": "tylopilus-felleus",
+    "file": "assets/species/tylopilus-felleus-inat1-hd.webp",
+    "sha256": "5cecad3d8b83757a7bb46e47ccc0cfe97d012a546fb45675eb03e0271bac6ed5",
+    "nota": "Foto già nel catalogo: fonti/licenze preesistenti, nessuna nuova acquisizione. Non ogni foto mostra tutte le età."
+  }
+]

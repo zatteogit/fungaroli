@@ -1,0 +1,88 @@
+{
+  "file": "incoming/icone/fasi-44-r01.png",
+  "sha256": "9ac6c6e248f6f2338603ca36aeb92d89ce317054fbd77a43dbd959013304db60",
+  "size": [
+    1254,
+    1254
+  ],
+  "celle": [
+    {
+      "soggetto": "mellea",
+      "fase": "giovane",
+      "tessera": "cappello",
+      "cella": 0,
+      "bbox": [
+        48,
+        144,
+        416,
+        330
+      ],
+      "source": "https://www.first-nature.com/fungi/armillaria-mellea.php"
+    },
+    {
+      "soggetto": "mellea",
+      "fase": "giovane",
+      "tessera": "gambo",
+      "cella": 1,
+      "bbox": [
+        470,
+        36,
+        804,
+        396
+      ],
+      "source": "https://www.first-nature.com/fungi/armillaria-mellea.php"
+    },
+    {
+      "soggetto": "mellea",
+      "fase": "adulto",
+      "tessera": "cappello",
+      "cella": 3,
+      "bbox": [
+        36,
+        546,
+        426,
+        708
+      ],
+      "source": "https://www.first-nature.com/fungi/armillaria-mellea.php"
+    },
+    {
+      "soggetto": "mellea",
+      "fase": "adulto",
+      "tessera": "gambo",
+      "cella": 4,
+      "bbox": [
+        432,
+        464,
+        840,
+        816
+      ],
+      "source": "https://www.first-nature.com/fungi/armillaria-mellea.php"
+    },
+    {
+      "soggetto": "pleurotus-ostreatus",
+      "fase": "giovane",
+      "tessera": "cappello",
+      "cella": 6,
+      "bbox": [
+        40,
+        948,
+        414,
+        1132
+      ],
+      "source": "https://www.first-nature.com/fungi/pleurotus-ostreatus.php"
+    },
+    {
+      "soggetto": "pleurotus-ostreatus",
+      "fase": "giovane",
+      "tessera": "gambo",
+      "cella": 7,
+      "bbox": [
+        442,
+        880,
+        832,
+        1192
+      ],
+      "source": "https://www.first-nature.com/fungi/pleurotus-ostreatus.php"
+    }
+  ]
+}

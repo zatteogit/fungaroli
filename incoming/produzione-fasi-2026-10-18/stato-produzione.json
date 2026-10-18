@@ -1,11 +1,10 @@
 {
   "recuperate_revisionate": 30,
-  "nuove_revisionate": 59,
-  "nuove_da_generare_o_revisionare": 14,
-  "scarti_esclusi": 4,
-  "in_generazione": [
-    "fasi44",
-    "fasi45"
-  ],
-  "nota": "Zero import app, revisione indipendente coordinatore pendente."
+  "nuove_revisionate": 73,
+  "nuove_da_generare": 0,
+  "raster_nuovi_prodotti_inclusi_scarti": 79,
+  "scarti_esclusi": 6,
+  "chiamate_image_gen_concluse": 14,
+  "importate_da_questo_agente": 0,
+  "nota": "103candidate: controllo indipendente e import del coordinatore ancora necessari."
 }

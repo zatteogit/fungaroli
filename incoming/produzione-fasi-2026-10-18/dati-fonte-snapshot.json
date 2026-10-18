@@ -1,0 +1,2479 @@
+{
+  "aereus": {
+    "base": {
+      "colore": "nero",
+      "forma": "convesso"
+    },
+    "traits": {
+      "hymenophore": [
+        "pori"
+      ],
+      "hymenophore_color": [
+        "bianco",
+        "crema",
+        "giallo",
+        "verde"
+      ],
+      "cap_color": [
+        "bruno",
+        "nero"
+      ],
+      "cap_shape": [
+        "emisferico",
+        "convesso",
+        "piano"
+      ],
+      "cap_size": [
+        "medio",
+        "grande"
+      ],
+      "stem_ring": false,
+      "stem_volva": false,
+      "stem_reticulum": true,
+      "flesh_change": [
+        "nessuno"
+      ],
+      "smell": [
+        "gradevole"
+      ],
+      "habitat": [
+        "latifoglie"
+      ],
+      "growth": [
+        "singolo",
+        "gregario"
+      ],
+      "season": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "spore_print": [
+        "verde-oliva",
+        "bruno"
+      ],
+      "cap_veil": false,
+      "latex": false,
+      "flesh_texture": [
+        "soda"
+      ],
+      "cap_surface": [
+        "vellutata/feltrata",
+        "liscia",
+        "asciutta"
+      ],
+      "gill_attachment": null,
+      "stem_base": [
+        "normale",
+        "bulbosa"
+      ]
+    },
+    "stages": [
+      {
+        "id": "giovane",
+        "label": "Giovane",
+        "desc": "Cappello emisferico. Tubuli e pori bianchi.",
+        "cap_shape": "emisferico",
+        "hymenophore_color": [
+          "bianco"
+        ],
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "source": "https://it.wikipedia.org/wiki/Boletus_aereus"
+      },
+      {
+        "id": "adulto",
+        "label": "Adulto",
+        "desc": "Cappello convesso. Pori giallastri.",
+        "cap_shape": "convesso",
+        "hymenophore_color": [
+          "giallo"
+        ],
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "source": "https://it.wikipedia.org/wiki/Boletus_aereus"
+      },
+      {
+        "id": "maturo",
+        "label": "Maturo",
+        "desc": "Cappello aperto e spianato; i pori formano una spugna giallo sporco.",
+        "cap_shape": "piano",
+        "hymenophore_color": [
+          "giallo"
+        ],
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "source": "https://it.wikipedia.org/wiki/Boletus_aereus"
+      }
+    ],
+    "traits_notes": "Sporata bruno-olivastra in massa. Cuticola vellutata/pubescente poi liscia, finemente screpolata o granulosa; nessuna fonte la dice viscida (asciutta). Carne dura/molto soda, piu' soda di B. edulis. Gambo 'ingrossato bulboso alla base poi cilindrico' (it.wiki), botte/clava (First Nature) -> 'bulbosa' e 'normale'.",
+    "sources": [
+      {
+        "title": "Boletus aereus, Wikipedia (it)",
+        "url": "https://it.wikipedia.org/wiki/Boletus_aereus"
+      },
+      {
+        "title": "La risorsa FUNGO in Alta Valle del Vara (SSSA Pisa, Gruppo Micologico Lucchese), scheda Boletus aereus",
+        "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbf2-709e-e053-3705fe0a83fd/96_vqr_Funghi.pdf"
+      },
+      {
+        "title": "Forum Funghi Italiani, Boletus aereus",
+        "url": "https://www.funghiitaliani.it/topic/15312-boletus-aereus-bull-fr-1789/page/3/"
+      },
+      {
+        "title": "L.R. Lazio 5 agosto 1998 n. 32, testo coordinato vigente (Consiglio regionale del Lazio)",
+        "url": "https://www.consiglio.regione.lazio.it/consiglio-regionale/?vw=leggiregionalidettaglio&id=8275&sv=vigente"
+      },
+      {
+        "title": "La risorsa FUNGO in Alta Valle del Vara (SSSA Pisa, Gruppo Micologico Lucchese), scheda Boletus luridus e boleti a pori rossi",
+        "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbe9-709e-e053-3705fe0a83fd/104_vqr_Funghi.pdf"
+      },
+      {
+        "title": "AUSL Valle d'Aosta, Ispettorato micologico: Raccolta e consumo dei funghi in sicurezza (opuscolo 2026)",
+        "url": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
+      },
+      {
+        "title": "Wikidata Q757127",
+        "url": "https://www.wikidata.org/wiki/Q757127"
+      },
+      {
+        "title": "Boletus aereus - First Nature",
+        "url": "https://www.first-nature.com/fungi/boletus-aereus.php"
+      }
+    ]
+  },
+  "aestivalis": {
+    "base": {
+      "colore": "bruno",
+      "forma": "convesso"
+    },
+    "traits": {
+      "hymenophore": [
+        "pori"
+      ],
+      "hymenophore_color": [
+        "bianco",
+        "crema",
+        "giallo",
+        "verde"
+      ],
+      "cap_color": [
+        "bruno",
+        "crema"
+      ],
+      "cap_shape": [
+        "emisferico",
+        "convesso"
+      ],
+      "cap_size": [
+        "piccolo",
+        "medio",
+        "grande"
+      ],
+      "stem_ring": false,
+      "stem_volva": false,
+      "stem_reticulum": true,
+      "flesh_change": [
+        "nessuno"
+      ],
+      "smell": [
+        "gradevole"
+      ],
+      "habitat": [
+        "latifoglie"
+      ],
+      "growth": [
+        "singolo",
+        "gregario"
+      ],
+      "season": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "spore_print": [
+        "verde-oliva",
+        "bruno"
+      ],
+      "cap_veil": false,
+      "latex": false,
+      "flesh_texture": [
+        "soda"
+      ],
+      "cap_surface": [
+        "asciutta",
+        "vellutata/feltrata"
+      ],
+      "gill_attachment": null,
+      "stem_base": [
+        "normale",
+        "bulbosa"
+      ]
+    },
+    "stages": [
+      {
+        "id": "giovane",
+        "label": "Giovane",
+        "desc": "Cappello tondeggiante, poi emisferico. Pori bianchi.",
+        "cap_shape": "emisferico",
+        "hymenophore_color": [
+          "bianco"
+        ],
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "source": "https://it.wikipedia.org/wiki/Boletus_aestivalis"
+      },
+      {
+        "id": "adulto",
+        "label": "Adulto",
+        "desc": "Cappello quasi appiattito, raramente disteso del tutto. Pori giallini.",
+        "cap_shape": "convesso",
+        "hymenophore_color": [
+          "giallo"
+        ],
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "source": "https://it.wikipedia.org/wiki/Boletus_aestivalis"
+      },
+      {
+        "id": "maturo",
+        "label": "Maturo",
+        "desc": "Pori giallo-verdastri.",
+        "hymenophore_color": [
+          "giallo",
+          "verde"
+        ],
+        "tiles": [
+          "sotto"
+        ],
+        "source": "https://it.wikipedia.org/wiki/Boletus_aestivalis"
+      }
+    ],
+    "traits_notes": "Sporata scura olivastra / 'olivaceous snuff-brown'. Cuticola asciutta, opaca, vellutata, che si screpola facilmente (carattere tipico, citato anche da ER). Carne meno soda di B. edulis/aereus ('abbastanza morbida' per it.wiki): unico valore di vocabolario plausibile 'soda'. Gambo cilindrico ingrossato alla base / a botte -> 'normale' e 'bulbosa'. Dimensione: aggiunto 'piccolo' (16/10): la scheda dà 4–20 cm (Wikipedia it, Boletus reticulatus: «4–20 cm»).",
+    "sources": [
+      {
+        "title": "Boletus aestivalis, Wikipedia (it)",
+        "url": "https://it.wikipedia.org/wiki/Boletus_aestivalis"
+      },
+      {
+        "title": "I porcini, Rivista di Agraria (2006)",
+        "url": "https://www.rivistadiagraria.org/articoli/anno-2006/i-porcini/?print=pdf"
+      },
+      {
+        "title": "L.R. Lazio 5 agosto 1998 n. 32, testo coordinato vigente (Consiglio regionale del Lazio)",
+        "url": "https://www.consiglio.regione.lazio.it/consiglio-regionale/?vw=leggiregionalidettaglio&id=8275&sv=vigente"
+      },
+      {
+        "title": "La risorsa FUNGO in Alta Valle del Vara (SSSA Pisa, Gruppo Micologico Lucchese), scheda Boletus luridus e boleti a pori rossi",
+        "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbe9-709e-e053-3705fe0a83fd/104_vqr_Funghi.pdf"
+      },
+      {
+        "title": "Tylopilus felleus, Wikipedia",
+        "url": "https://it.wikipedia.org/wiki/Tylopilus_felleus"
+      },
+      {
+        "title": "Wikidata Q26203726",
+        "url": "https://www.wikidata.org/wiki/Q26203726"
+      },
+      {
+        "title": "Boletus reticulatus - First Nature",
+        "url": "https://www.first-nature.com/fungi/boletus-reticulatus.php"
+      },
+      {
+        "title": "Regione Emilia-Romagna - Funghi commestibili (scheda)",
+        "url": "https://ambiente.regione.emilia-romagna.it/it/parchi-natura2000/sistema-regionale/funghi-sottobosco-tartufi/funghi-allegati/funghi-commestibili/@@download/file"
+      }
+    ]
+  },
+  "agaricus-arvensis": {
+    "base": {
+      "colore": "crema",
+      "forma": "convesso"
+    },
+    "traits": {
+      "hymenophore": [
+        "lamelle"
+      ],
+      "hymenophore_color": [
+        "rosa",
+        "bruno"
+      ],
+      "cap_color": [
+        "bianco",
+        "crema",
+        "giallo"
+      ],
+      "cap_shape": [
+        "emisferico",
+        "convesso",
+        "piano"
+      ],
+      "cap_size": [
+        "medio",
+        "grande"
+      ],
+      "cap_surface": [
+        "liscia",
+        "squamosa"
+      ],
+      "cap_veil": false,
+      "stem_ring": true,
+      "stem_volva": false,
+      "stem_reticulum": false,
+      "stem_base": [
+        "normale",
+        "bulbosa"
+      ],
+      "flesh_change": [
+        "nessuno",
+        "giallo"
+      ],
+      "flesh_texture": [
+        "soda"
+      ],
+      "smell": [
+        "anice"
+      ],
+      "latex": false,
+      "gill_attachment": [
+        "libere"
+      ],
+      "growth": [
+        "gregario"
+      ],
+      "habitat": [
+        "prati/radure"
+      ],
+      "season": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "spore_print": [
+        "bruno-violaceo",
+        "bruno"
+      ]
+    },
+    "stages": [
+      {
+        "id": "giovane",
+        "label": "Giovane",
+        "desc": "Cappello quasi sferico. Lamelle rosa pallido.",
+        "cap_shape": "emisferico",
+        "hymenophore_color": [
+          "rosa"
+        ],
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "source": "https://www.first-nature.com/fungi/agaricus-arvensis.php"
+      },
+      {
+        "id": "adulto",
+        "label": "Adulto",
+        "desc": "Cappello aperto fino a piano o quasi. Lamelle brune.",
+        "cap_shape": "piano",
+        "hymenophore_color": [
+          "bruno"
+        ],
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "source": "https://www.first-nature.com/fungi/agaricus-arvensis.php"
+      }
+    ],
+    "traits_notes": " Frequenza dei colori (trait_freq) dalle fonti: giallo: «The cap turns yellowish where bruised, and old caps often take on a yellow-brown tinge» (First Nature).",
+    "sources": [
+      {
+        "title": "First Nature — Agaricus arvensis",
+        "url": "https://www.first-nature.com/fungi/agaricus-arvensis.php"
+      },
+      {
+        "title": "Wikipedia (it) — Agaricus arvensis (fonte secondaria)",
+        "url": "https://it.wikipedia.org/wiki/Agaricus_arvensis"
+      },
+      {
+        "title": "Species Fungorum — Agaricus arvensis (nome corrente)",
+        "url": "https://www.speciesfungorum.org/Names/NamesRecord.asp?RecordID=325880"
+      },
+      {
+        "title": "First Nature — Agaricus xanthodermus",
+        "url": "https://www.first-nature.com/fungi/agaricus-xanthodermus.php"
+      }
+    ]
+  },
+  "agaricus-bisporus": {
+    "base": {
+      "colore": "bruno",
+      "forma": "convesso"
+    },
+    "traits": {
+      "hymenophore": [
+        "lamelle"
+      ],
+      "hymenophore_color": [
+        "rosa",
+        "bruno"
+      ],
+      "cap_color": [
+        "bruno",
+        "bianco"
+      ],
+      "cap_shape": [
+        "emisferico",
+        "convesso",
+        "piano"
+      ],
+      "cap_size": [
+        "medio"
+      ],
+      "cap_surface": null,
+      "cap_veil": false,
+      "stem_ring": true,
+      "stem_volva": false,
+      "stem_reticulum": false,
+      "stem_base": null,
+      "flesh_change": null,
+      "flesh_texture": null,
+      "smell": [
+        "gradevole"
+      ],
+      "latex": false,
+      "gill_attachment": [
+        "libere"
+      ],
+      "growth": [
+        "gregario"
+      ],
+      "habitat": [
+        "prati/radure"
+      ],
+      "season": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "spore_print": [
+        "bruno"
+      ]
+    },
+    "stages": [
+      {
+        "id": "giovane",
+        "label": "Giovane",
+        "desc": "Cappello emisferico. Lamelle rosa.",
+        "cap_shape": "emisferico",
+        "hymenophore_color": [
+          "rosa"
+        ],
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "source": "https://www.first-nature.com/fungi/agaricus-bisporus.php"
+      },
+      {
+        "id": "adulto",
+        "label": "Adulto",
+        "desc": "Cappello convesso, poi appiattito. Lamelle bruno cioccolato.",
+        "cap_shape": "piano",
+        "hymenophore_color": [
+          "bruno"
+        ],
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "source": "https://www.first-nature.com/fungi/agaricus-bisporus.php"
+      }
+    ],
+    "traits_notes": null,
+    "sources": [
+      {
+        "title": "First Nature — Agaricus bisporus",
+        "url": "https://www.first-nature.com/fungi/agaricus-bisporus.php"
+      },
+      {
+        "title": "Wikipedia (it) — Agaricus bisporus (fonte secondaria)",
+        "url": "https://it.wikipedia.org/wiki/Agaricus_bisporus"
+      },
+      {
+        "title": "Species Fungorum — Agaricus bisporus (nome corrente)",
+        "url": "https://www.speciesfungorum.org/Names/NamesRecord.asp?RecordID=531546"
+      },
+      {
+        "title": "ASL Oristano, Ispettorato micologico — Attenzione ai sosia: Agaricus xanthodermus",
+        "url": "https://asl5oristano.it/wp-content/uploads/2024/09/AGARICUS-XANTHODERMUS.pdf"
+      }
+    ]
+  },
+  "agaricus-sylvicola": {
+    "base": {
+      "colore": "crema",
+      "forma": "convesso"
+    },
+    "traits": {
+      "hymenophore": [
+        "lamelle"
+      ],
+      "hymenophore_color": [
+        "bianco",
+        "grigio",
+        "rosa",
+        "bruno"
+      ],
+      "cap_color": [
+        "bianco",
+        "crema",
+        "giallo"
+      ],
+      "cap_shape": [
+        "emisferico",
+        "convesso",
+        "piano"
+      ],
+      "cap_size": [
+        "medio",
+        "grande"
+      ],
+      "cap_surface": null,
+      "cap_veil": false,
+      "stem_ring": true,
+      "stem_volva": false,
+      "stem_reticulum": false,
+      "stem_base": [
+        "bulbosa"
+      ],
+      "flesh_change": null,
+      "flesh_texture": null,
+      "smell": [
+        "anice"
+      ],
+      "latex": false,
+      "gill_attachment": [
+        "libere"
+      ],
+      "growth": [
+        "singolo",
+        "gregario"
+      ],
+      "habitat": [
+        "latifoglie",
+        "conifere"
+      ],
+      "season": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        1,
+        2
+      ],
+      "spore_print": [
+        "bruno"
+      ]
+    },
+    "stages": [
+      {
+        "id": "giovane",
+        "label": "Giovane",
+        "desc": "Cappello quasi sferico. Lamelle bianche.",
+        "cap_shape": "emisferico",
+        "hymenophore_color": [
+          "bianco"
+        ],
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "source": "https://www.first-nature.com/fungi/agaricus-sylvicola.php"
+      },
+      {
+        "id": "adulto",
+        "label": "Adulto",
+        "desc": "Cappello convesso. Lamelle grigio-rosa.",
+        "cap_shape": "convesso",
+        "hymenophore_color": [
+          "grigio",
+          "rosa"
+        ],
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "source": "https://www.first-nature.com/fungi/agaricus-sylvicola.php"
+      },
+      {
+        "id": "maturo",
+        "label": "Maturo",
+        "desc": "Cappello del tutto appiattito. Lamelle bruno cioccolato.",
+        "cap_shape": "piano",
+        "hymenophore_color": [
+          "bruno"
+        ],
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "source": "https://www.first-nature.com/fungi/agaricus-sylvicola.php"
+      }
+    ],
+    "traits_notes": null,
+    "sources": [
+      {
+        "title": "First Nature — Agaricus sylvicola",
+        "url": "https://www.first-nature.com/fungi/agaricus-sylvicola.php"
+      },
+      {
+        "title": "Wikipedia (it) — Agaricus silvicola (fonte secondaria)",
+        "url": "https://it.wikipedia.org/wiki/Agaricus_silvicola"
+      },
+      {
+        "title": "Species Fungorum — Agaricus sylvicola (nome corrente)",
+        "url": "https://www.speciesfungorum.org/Names/NamesRecord.asp?RecordID=546340"
+      },
+      {
+        "title": "First Nature — Agaricus xanthodermus",
+        "url": "https://www.first-nature.com/fungi/agaricus-xanthodermus.php"
+      },
+      {
+        "title": "First Nature — Amanita phalloides (confronto con Agaricus)",
+        "url": "https://www.first-nature.com/fungi/amanita-phalloides.php"
+      },
+      {
+        "title": "First Nature — Amanita virosa (confronto con Agaricus)",
+        "url": "https://www.first-nature.com/fungi/amanita-virosa.php"
+      },
+      {
+        "title": "Agaricus xanthodermus, Wikipedia (en)",
+        "url": "https://en.wikipedia.org/wiki/Agaricus_xanthodermus"
+      },
+      {
+        "title": "MycoDB, Agaricus sylvicola (scheda)",
+        "url": "https://www.mycodb.fr/fiche.php?genre=Agaricus&espece=sylvicola"
+      }
+    ]
+  },
+  "agaricus-xanthodermus": {
+    "base": {
+      "colore": "bianco",
+      "forma": "convesso"
+    },
+    "traits": {
+      "hymenophore": [
+        "lamelle"
+      ],
+      "hymenophore_color": [
+        "bianco",
+        "rosa",
+        "grigio",
+        "bruno",
+        "nero"
+      ],
+      "cap_color": [
+        "bianco",
+        "crema",
+        "grigio",
+        "bruno",
+        "giallo"
+      ],
+      "cap_shape": [
+        "emisferico",
+        "convesso",
+        "piano"
+      ],
+      "cap_size": [
+        "medio",
+        "grande"
+      ],
+      "stem_ring": true,
+      "stem_volva": false,
+      "stem_reticulum": false,
+      "flesh_change": [
+        "giallo",
+        "bruno"
+      ],
+      "smell": [
+        "sgradevole",
+        "nessuno"
+      ],
+      "habitat": [
+        "prati/radure",
+        "latifoglie",
+        "conifere"
+      ],
+      "growth": [
+        "gregario",
+        "singolo"
+      ],
+      "season": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "spore_print": [
+        "bruno"
+      ],
+      "cap_veil": false,
+      "latex": false,
+      "flesh_texture": null,
+      "cap_surface": [
+        "liscia",
+        "asciutta",
+        "squamosa"
+      ],
+      "gill_attachment": [
+        "libere"
+      ],
+      "stem_base": [
+        "bulbosa"
+      ]
+    },
+    "stages": [
+      {
+        "id": "giovane",
+        "label": "Giovane",
+        "desc": "Cappello globoso, spesso con la cima piatta. Lamelle biancastre che presto diventano rosa.",
+        "cap_shape": "emisferico",
+        "hymenophore_color": [
+          "bianco",
+          "rosa"
+        ],
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "source": "https://www.first-nature.com/fungi/agaricus-xanthodermus.php"
+      },
+      {
+        "id": "adulto",
+        "label": "Adulto",
+        "desc": "Cappello largamente convesso, senza margine arrotolato. Lamelle grigio-brune.",
+        "cap_shape": "convesso",
+        "hymenophore_color": [
+          "grigio",
+          "bruno"
+        ],
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "source": "https://www.first-nature.com/fungi/agaricus-xanthodermus.php"
+      }
+    ],
+    "traits_notes": "TOSSICO, valori larghi. Nome italiano descrittivo: le fonti consultate non riportano un nome volgare consolidato. Cappello 5-15 cm (en.wiki, First Nature; 6-12 ASL Oristano), bianco poi grigiastro o con centro bruno chiaro, giallo dove sfregato: giallo incluso perché l'utente può vederlo. Lamelle libere bianche, rosate, grigio-brune, bruno nerastre (ASL, First Nature). Anello ampio, base bulbosa (First Nature, en.wiki, ASL). Carne gialla al taglio soprattutto alla base, poi bruna (en.wiki, First Nature). Odore di fenolo/inchiostro, a volte debole (it.wiki): incluso 'nessuno'. Sporata bruno scura. Prati, parchi, siepi e boschi (en.wiki, it.wiki): habitat largo. Stagione giugno-ottobre in Gran Bretagna (First Nature) e autunno (it.wiki): incluso novembre. flesh_texture non documentata nelle fonti lette.",
+    "sources": [
+      {
+        "title": "ASL Oristano, Ispettorato micologico — Attenzione ai sosia: Agaricus xanthodermus",
+        "url": "https://asl5oristano.it/wp-content/uploads/2024/09/AGARICUS-XANTHODERMUS.pdf"
+      },
+      {
+        "title": "Agaricus xanthodermus, Wikipedia (it)",
+        "url": "https://it.wikipedia.org/wiki/Agaricus_xanthodermus"
+      },
+      {
+        "title": "Agaricus xanthodermus, Wikipedia (en)",
+        "url": "https://en.wikipedia.org/wiki/Agaricus_xanthodermus"
+      },
+      {
+        "title": "First Nature — Agaricus xanthodermus",
+        "url": "https://www.first-nature.com/fungi/agaricus-xanthodermus.php"
+      },
+      {
+        "title": "GBIF — Agaricus xanthodermus Genev. (nome accettato)",
+        "url": "https://www.gbif.org/species/5243412"
+      }
+    ]
+  },
+  "cibarius": {
+    "base": {
+      "colore": "giallo",
+      "forma": "imbuto"
+    },
+    "traits": {
+      "hymenophore": [
+        "pliche"
+      ],
+      "hymenophore_color": [
+        "giallo",
+        "arancio"
+      ],
+      "cap_color": [
+        "giallo",
+        "arancio"
+      ],
+      "cap_shape": [
+        "convesso",
+        "imbuto"
+      ],
+      "cap_size": [
+        "piccolo",
+        "medio"
+      ],
+      "stem_ring": false,
+      "stem_volva": false,
+      "stem_reticulum": false,
+      "flesh_change": [
+        "nessuno"
+      ],
+      "smell": [
+        "gradevole"
+      ],
+      "habitat": [
+        "latifoglie",
+        "conifere"
+      ],
+      "growth": [
+        "gregario"
+      ],
+      "season": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "spore_print": [
+        "bianco",
+        "crema",
+        "giallo",
+        "rosa"
+      ],
+      "cap_veil": false,
+      "latex": false,
+      "flesh_texture": [
+        "soda",
+        "fibrosa"
+      ],
+      "cap_surface": [
+        "liscia",
+        "asciutta"
+      ],
+      "gill_attachment": [
+        "decorrenti"
+      ],
+      "stem_base": [
+        "assottigliata",
+        "normale"
+      ]
+    },
+    "stages": [
+      {
+        "id": "giovane",
+        "label": "Giovane",
+        "desc": "Cappello convesso.",
+        "cap_shape": "convesso",
+        "tiles": [
+          "cappello",
+          "gambo"
+        ],
+        "source": "https://it.wikipedia.org/wiki/Cantharellus_cibarius"
+      },
+      {
+        "id": "adulto",
+        "label": "Adulto",
+        "desc": "Cappello piano e avvallato, a imbuto.",
+        "cap_shape": "imbuto",
+        "tiles": [
+          "cappello",
+          "gambo"
+        ],
+        "source": "https://it.wikipedia.org/wiki/Cantharellus_cibarius"
+      }
+    ],
+    "traits_notes": "Sporata variabile: gialla/giallastra (it/en wiki), 'giallo pallido-bianco crema, talvolta con sfumatura rosata' (First Nature) -> tutti e quattro. Cuticola liscia, pruinosa, asciutta (it.wiki, NCR Fungi). Pliche (pseudolamelle) molto decorrenti. Carne soda e compatta, fibrosa nel gambo (ER, it.wiki). Gambo attenuato/assottigliato in basso (ER, it.wiki), a volte corto e cilindrico.",
+    "sources": [
+      {
+        "title": "Cantharellus cibarius, Wikipedia (it)",
+        "url": "https://it.wikipedia.org/wiki/Cantharellus_cibarius"
+      },
+      {
+        "title": "La risorsa FUNGO in Alta Valle del Vara (SSSA Pisa, Gruppo Micologico Lucchese), scheda Cantharellus cibarius",
+        "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bba4-709e-e053-3705fe0a83fd/116_vqr_Funghi.pdf"
+      },
+      {
+        "title": "ASL Oristano, Ispettorato micologico: Attenzione ai sosia, Omphalotus olearius",
+        "url": "https://asl5oristano.it/wp-content/uploads/2024/09/OMPHALOTUS-OLEARIUS.pdf"
+      },
+      {
+        "title": "Fungo dell'olivo, turisti intossicati a Pontremoli (GoNews, 2020)",
+        "url": "https://www.gonews.it/2020/08/31/fungo-olivo-intossicati-pontremoli/amp/"
+      },
+      {
+        "title": "Mallozzi A., Nomi volgari e dialettali di alcuni funghi nell'Italia centrale (2011)",
+        "url": "https://www.diacronia.ro/indexing/details/V1473/pdf"
+      },
+      {
+        "title": "Cortinarius orellanus, Wikipedia",
+        "url": "https://it.wikipedia.org/wiki/Cortinarius_orellanus"
+      },
+      {
+        "title": "Wikidata Q188749",
+        "url": "https://www.wikidata.org/wiki/Q188749"
+      },
+      {
+        "title": "Cantharellus cibarius - Wikipedia en",
+        "url": "https://en.wikipedia.org/wiki/Cantharellus_cibarius"
+      },
+      {
+        "title": "Cantharellus cibarius - First Nature",
+        "url": "https://www.first-nature.com/fungi/cantharellus-cibarius.php"
+      },
+      {
+        "title": "Cantharellus cibarius - NCR Fungi (Univ. Arkansas)",
+        "url": "https://ncrfungi.uark.edu/species/7_cantharellusCibarius/cantharellusCibarius.html"
+      },
+      {
+        "title": "Regione Emilia-Romagna - Funghi commestibili (scheda)",
+        "url": "https://ambiente.regione.emilia-romagna.it/it/parchi-natura2000/sistema-regionale/funghi-sottobosco-tartufi/funghi-allegati/funghi-commestibili/@@download/file"
+      }
+    ]
+  },
+  "coprinus-comatus": {
+    "base": {
+      "colore": "bianco",
+      "forma": "conico"
+    },
+    "traits": {
+      "hymenophore": [
+        "lamelle"
+      ],
+      "hymenophore_color": [
+        "bianco",
+        "rosa",
+        "nero"
+      ],
+      "cap_color": [
+        "bianco",
+        "bruno",
+        "nero"
+      ],
+      "cap_shape": [
+        "conico"
+      ],
+      "cap_size": [
+        "piccolo",
+        "medio"
+      ],
+      "cap_surface": [
+        "squamosa"
+      ],
+      "cap_veil": null,
+      "stem_ring": true,
+      "stem_volva": false,
+      "stem_reticulum": false,
+      "stem_base": [
+        "normale"
+      ],
+      "flesh_change": null,
+      "flesh_texture": null,
+      "smell": [
+        "gradevole",
+        "nessuno"
+      ],
+      "latex": false,
+      "gill_attachment": [
+        "libere"
+      ],
+      "growth": [
+        "singolo",
+        "gregario"
+      ],
+      "habitat": [
+        "prati/radure"
+      ],
+      "season": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "spore_print": [
+        "nero"
+      ]
+    },
+    "stages": [
+      {
+        "id": "giovane",
+        "label": "Giovane",
+        "desc": "Esce dal terreno come un cilindro bianco: il cappello copre quasi tutto il gambo. Lamelle bianche.",
+        "cap_shape": "conico",
+        "hymenophore_color": [
+          "bianco"
+        ],
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "source": "https://en.wikipedia.org/wiki/Coprinus_comatus"
+      },
+      {
+        "id": "maturo",
+        "label": "Maturo",
+        "desc": "Il cappello si apre a campana allungata; le lamelle diventano rosa.",
+        "cap_shape": "conico",
+        "hymenophore_color": [
+          "rosa"
+        ],
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "source": "https://www.first-nature.com/fungi/coprinus-comatus.php"
+      },
+      {
+        "id": "sciolto",
+        "label": "Si scioglie",
+        "desc": "Le lamelle diventano nere e si sciolgono dal margine in un liquido scuro; l’anello si macchia di nero e scivola in basso.",
+        "cap_shape": "conico",
+        "hymenophore_color": [
+          "nero"
+        ],
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "source": "https://www.first-nature.com/fungi/coprinus-comatus.php"
+      }
+    ],
+    "traits_notes": "Anello presente, mobile e spesso scivolato verso la base: «has a loose ring near the bottom» (en.wikipedia), «Mobile, membranoso, esile e fugace» (it.wikipedia), «it soon becomes movable and often falls down to the base of the stem» (first-nature).",
+    "sources": [
+      {
+        "title": "First Nature — Coprinus comatus",
+        "url": "https://www.first-nature.com/fungi/coprinus-comatus.php"
+      },
+      {
+        "title": "Wikipedia (it) — Coprinus comatus (fonte secondaria)",
+        "url": "https://it.wikipedia.org/wiki/Coprinus_comatus"
+      },
+      {
+        "title": "Species Fungorum — Coprinus comatus (nome corrente)",
+        "url": "https://www.speciesfungorum.org/Names/NamesRecord.asp?RecordID=148667"
+      },
+      {
+        "title": "Coprinus comatus, Wikipedia (en)",
+        "url": "https://en.wikipedia.org/wiki/Coprinus_comatus"
+      }
+    ]
+  },
+  "cyclocybe-aegerita": {
+    "base": {
+      "colore": "bruno",
+      "forma": "convesso"
+    },
+    "traits": {
+      "hymenophore": [
+        "lamelle"
+      ],
+      "hymenophore_color": [
+        "crema",
+        "grigio",
+        "bruno"
+      ],
+      "cap_color": [
+        "crema",
+        "bruno"
+      ],
+      "cap_shape": [
+        "emisferico",
+        "convesso",
+        "piano"
+      ],
+      "cap_size": [
+        "piccolo",
+        "medio"
+      ],
+      "cap_surface": null,
+      "cap_veil": false,
+      "stem_ring": true,
+      "stem_volva": false,
+      "stem_reticulum": false,
+      "stem_base": null,
+      "flesh_change": [
+        "nessuno"
+      ],
+      "flesh_texture": [
+        "fibrosa"
+      ],
+      "smell": [
+        "gradevole"
+      ],
+      "latex": false,
+      "gill_attachment": [
+        "adnate",
+        "decorrenti"
+      ],
+      "growth": [
+        "cespitoso"
+      ],
+      "habitat": [
+        "ceppaie/legno",
+        "latifoglie"
+      ],
+      "season": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "spore_print": [
+        "bruno"
+      ]
+    },
+    "stages": [
+      {
+        "id": "giovane",
+        "label": "Giovane",
+        "desc": "Cappello emisferico. Lamelle crema.",
+        "cap_shape": "emisferico",
+        "hymenophore_color": [
+          "crema"
+        ],
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "source": "https://www.first-nature.com/fungi/cyclocybe-cylindracea.php"
+      },
+      {
+        "id": "adulto",
+        "label": "Adulto",
+        "desc": "Cappello largamente convesso o piano, margine ondulato, più scuro con l’età. Lamelle grigio-brune, poi brune.",
+        "cap_shape": "piano",
+        "hymenophore_color": [
+          "grigio",
+          "bruno"
+        ],
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "source": "https://www.first-nature.com/fungi/cyclocybe-cylindracea.php"
+      }
+    ],
+    "traits_notes": null,
+    "sources": [
+      {
+        "title": "First Nature — Cyclocybe cylindracea",
+        "url": "https://www.first-nature.com/fungi/cyclocybe-cylindracea.php"
+      },
+      {
+        "title": "Wikipedia (it) — Cyclocybe aegerita (fonte secondaria)",
+        "url": "https://it.wikipedia.org/wiki/Cyclocybe_aegerita"
+      },
+      {
+        "title": "MycoDB — Cyclocybe cylindracea",
+        "url": "https://www.mycodb.fr/fiche.php?genre=Cyclocybe&espece=cylindracea"
+      },
+      {
+        "title": "Species Fungorum — Cyclocybe cylindracea (nome corrente)",
+        "url": "https://www.speciesfungorum.org/Names/NamesRecord.asp?RecordID=550605"
+      },
+      {
+        "title": "Wikipedia (it) — Galerina marginata (fonte secondaria)",
+        "url": "https://it.wikipedia.org/wiki/Galerina_marginata"
+      },
+      {
+        "title": "Wikipedia (it) — Hypholoma fasciculare (fonte secondaria)",
+        "url": "https://it.wikipedia.org/wiki/Hypholoma_fasciculare"
+      }
+    ]
+  },
+  "edulis": {
+    "base": {
+      "colore": "bruno",
+      "forma": "convesso"
+    },
+    "traits": {
+      "hymenophore": [
+        "pori"
+      ],
+      "hymenophore_color": [
+        "bianco",
+        "crema",
+        "giallo",
+        "verde"
+      ],
+      "cap_color": [
+        "bruno",
+        "crema"
+      ],
+      "cap_shape": [
+        "emisferico",
+        "convesso"
+      ],
+      "cap_size": [
+        "medio",
+        "grande"
+      ],
+      "stem_ring": false,
+      "stem_volva": false,
+      "stem_reticulum": true,
+      "flesh_change": [
+        "nessuno"
+      ],
+      "smell": [
+        "gradevole"
+      ],
+      "habitat": [
+        "latifoglie",
+        "conifere"
+      ],
+      "growth": [
+        "singolo",
+        "gregario"
+      ],
+      "season": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "spore_print": [
+        "verde-oliva",
+        "bruno"
+      ],
+      "cap_veil": false,
+      "latex": false,
+      "flesh_texture": [
+        "soda"
+      ],
+      "cap_surface": [
+        "liscia",
+        "asciutta",
+        "viscida"
+      ],
+      "gill_attachment": null,
+      "stem_base": [
+        "normale",
+        "bulbosa"
+      ]
+    },
+    "stages": [
+      {
+        "id": "giovane",
+        "label": "Giovane",
+        "desc": "Cappello emisferico, a volte piccolo rispetto al gambo. Tubuli bianchi.",
+        "cap_shape": "emisferico",
+        "hymenophore_color": [
+          "bianco"
+        ],
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "source": "https://it.wikipedia.org/wiki/Boletus_edulis"
+      },
+      {
+        "id": "adulto",
+        "label": "Adulto",
+        "desc": "Cappello piano-convesso. Tubuli giallastri.",
+        "cap_shape": "convesso",
+        "hymenophore_color": [
+          "giallo"
+        ],
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "source": "https://it.wikipedia.org/wiki/Boletus_edulis"
+      },
+      {
+        "id": "maturo",
+        "label": "Maturo",
+        "desc": "Tubuli verdastri.",
+        "hymenophore_color": [
+          "verde"
+        ],
+        "tiles": [
+          "sotto"
+        ],
+        "source": "https://it.wikipedia.org/wiki/Boletus_edulis"
+      }
+    ],
+    "traits_notes": "Sporata bruno-olivastra in massa (tutte le fonti) -> verde-oliva; aggiunto 'bruno' per larghezza. Cuticola liscia o rugosa, brillante/asciutta col secco, vischiosa e lucida con tempo umido. Velo nudo (assente). Carne soda nei giovani, floscia/spugnosa nei vecchi. Gambo clavato/ventricoso, 'ingrossato alla base' (ER): non e' un bulbo netto, quindi messi sia 'normale' sia 'bulbosa'. Frequenza dei colori (trait_freq) dalle fonti: bruno: «The colour is generally reddish-brown, sometimes with a paler margin» (Wikipedia en).",
+    "sources": [
+      {
+        "title": "Boletus edulis, Wikipedia (it)",
+        "url": "https://it.wikipedia.org/wiki/Boletus_edulis"
+      },
+      {
+        "title": "I porcini, Rivista di Agraria (2006)",
+        "url": "https://www.rivistadiagraria.org/articoli/anno-2006/i-porcini/?print=pdf"
+      },
+      {
+        "title": "L.R. Lazio 5 agosto 1998 n. 32, testo coordinato vigente (Consiglio regionale del Lazio)",
+        "url": "https://www.consiglio.regione.lazio.it/consiglio-regionale/?vw=leggiregionalidettaglio&id=8275&sv=vigente"
+      },
+      {
+        "title": "Mallozzi A., Nomi volgari e dialettali di alcuni funghi nell'Italia centrale (2011)",
+        "url": "https://www.diacronia.ro/indexing/details/V1473/pdf"
+      },
+      {
+        "title": "La risorsa FUNGO in Alta Valle del Vara (SSSA Pisa, Gruppo Micologico Lucchese), scheda Boletus luridus e boleti a pori rossi",
+        "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbe9-709e-e053-3705fe0a83fd/104_vqr_Funghi.pdf"
+      },
+      {
+        "title": "Tylopilus felleus, Wikipedia",
+        "url": "https://it.wikipedia.org/wiki/Tylopilus_felleus"
+      },
+      {
+        "title": "AUSL Valle d'Aosta, Ispettorato micologico: Raccolta e consumo dei funghi in sicurezza (opuscolo 2026)",
+        "url": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
+      },
+      {
+        "title": "Wikidata Q19740",
+        "url": "https://www.wikidata.org/wiki/Q19740"
+      },
+      {
+        "title": "Boletus edulis - First Nature",
+        "url": "https://www.first-nature.com/fungi/boletus-edulis.php"
+      },
+      {
+        "title": "Regione Emilia-Romagna - Funghi commestibili (scheda)",
+        "url": "https://ambiente.regione.emilia-romagna.it/it/parchi-natura2000/sistema-regionale/funghi-sottobosco-tartufi/funghi-allegati/funghi-commestibili/@@download/file"
+      },
+      {
+        "title": "Wikipedia en - Boletus edulis",
+        "url": "https://en.wikipedia.org/wiki/Boletus_edulis"
+      }
+    ]
+  },
+  "entoloma-sinuatum": {
+    "base": {
+      "colore": "grigio",
+      "forma": "convesso"
+    },
+    "traits": {
+      "hymenophore": [
+        "lamelle"
+      ],
+      "hymenophore_color": [
+        "giallo",
+        "rosa"
+      ],
+      "cap_color": [
+        "grigio",
+        "crema",
+        "bianco"
+      ],
+      "cap_shape": [
+        "convesso",
+        "piano",
+        "conico"
+      ],
+      "cap_size": [
+        "medio",
+        "grande"
+      ],
+      "stem_ring": false,
+      "stem_volva": false,
+      "stem_reticulum": false,
+      "flesh_change": [
+        "nessuno"
+      ],
+      "smell": [
+        "farina"
+      ],
+      "habitat": [
+        "latifoglie"
+      ],
+      "growth": [
+        "singolo",
+        "gregario"
+      ],
+      "season": [
+        8,
+        9,
+        10
+      ],
+      "spore_print": [
+        "rosa",
+        "bruno"
+      ],
+      "cap_veil": false,
+      "latex": false,
+      "flesh_texture": [
+        "soda",
+        "fibrosa"
+      ],
+      "cap_surface": [
+        "asciutta",
+        "viscida",
+        "liscia",
+        "squamosa"
+      ],
+      "gill_attachment": [
+        "smarginate",
+        "adnate",
+        "libere"
+      ],
+      "stem_base": [
+        "normale",
+        "bulbosa"
+      ]
+    },
+    "stages": [
+      {
+        "id": "giovane",
+        "label": "Giovane",
+        "desc": "Cappello conico. Lamelle bianco-giallastre.",
+        "cap_shape": "conico",
+        "hymenophore_color": [
+          "giallo"
+        ],
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "source": "https://www.first-nature.com/fungi/entoloma-sinuatum.php"
+      },
+      {
+        "id": "adulto",
+        "label": "Adulto",
+        "desc": "Cappello da convesso a piano, con un umbone ottuso. Lamelle rosate.",
+        "cap_shape": "piano",
+        "hymenophore_color": [
+          "rosa"
+        ],
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "source": "https://www.first-nature.com/fungi/entoloma-sinuatum.php"
+      }
+    ],
+    "traits_notes": "TOSSICO, quindi valori larghi. Sporata rosa-salmone (Wikipedia IT, First Nature), ma il testo di Wikipedia EN dice 'reddish-brown': aggiungo bruno. Cappello fibroso per fibrille innate (Wikipedia IT) e un po' vischioso da giovane (First Nature): metto asciutta, viscida e liscia, più squamosa per prudenza, nel caso le fibrille vengano lette come fibrille in rilievo. Velo nudo, nessun anello. Lamelle sinuate o smarginate, quasi libere (EN), adnate nell'infobox (IT, EN). Gambo cilindrico, a volte bulboso alla base (EN, First Nature). Carne soda ('firme', scheda di Madrid, che ho visto solo nel riassunto della ricerca perché il PDF dà 404). Ho aggiunto 'fibrosa' per prudenza, nessuna fonte la dice. Forma conica aggiunta il 15/10: «conical then convex to plane» (First Nature).",
+    "sources": [
+      {
+        "title": "Entoloma sinuatum, Wikipedia (it)",
+        "url": "https://it.wikipedia.org/wiki/Entoloma_sinuatum"
+      },
+      {
+        "title": "Wikidata Q1424216 (Entoloma sinuatum)",
+        "url": "https://www.wikidata.org/wiki/Q1424216"
+      },
+      {
+        "title": "Wikipedia EN - Entoloma sinuatum",
+        "url": "https://en.wikipedia.org/wiki/Entoloma_sinuatum"
+      },
+      {
+        "title": "First Nature - Entoloma sinuatum",
+        "url": "https://www.first-nature.com/fungi/entoloma-sinuatum.php"
+      },
+      {
+        "title": "Comunidad de Madrid - scheda Entoloma sinuatum/nidorosum/rhodopolium",
+        "url": "https://www.comunidad.madrid/sites/default/files/doc/sanidad/sali/d_entoloma_sinuatum_entoloma_nidorosum_y_entoloma_rhodopolium.pdf"
+      }
+    ]
+  },
+  "hypholoma-fasciculare": {
+    "base": {
+      "colore": "giallo",
+      "forma": "convesso"
+    },
+    "traits": {
+      "hymenophore": [
+        "lamelle"
+      ],
+      "hymenophore_color": [
+        "giallo",
+        "verde",
+        "bruno",
+        "nero"
+      ],
+      "cap_color": [
+        "giallo",
+        "arancio"
+      ],
+      "cap_shape": [
+        "convesso",
+        "piano"
+      ],
+      "cap_size": [
+        "piccolo",
+        "medio"
+      ],
+      "stem_ring": false,
+      "stem_volva": false,
+      "stem_reticulum": false,
+      "flesh_change": [
+        "nessuno"
+      ],
+      "smell": [
+        "nessuno"
+      ],
+      "habitat": [
+        "ceppaie/legno",
+        "latifoglie",
+        "conifere"
+      ],
+      "growth": [
+        "cespitoso"
+      ],
+      "season": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "spore_print": [
+        "bruno-violaceo",
+        "nero"
+      ],
+      "cap_veil": null,
+      "latex": false,
+      "flesh_texture": [
+        "fibrosa",
+        "elastica/coriacea",
+        "soda"
+      ],
+      "cap_surface": [
+        "liscia",
+        "asciutta"
+      ],
+      "gill_attachment": [
+        "adnate",
+        "smarginate"
+      ],
+      "stem_base": [
+        "normale",
+        "assottigliata"
+      ]
+    },
+    "stages": [
+      {
+        "id": "giovane",
+        "label": "Giovane",
+        "desc": "Lamelle giallo zolfo.",
+        "hymenophore_color": [
+          "giallo"
+        ],
+        "tiles": [
+          "sotto"
+        ],
+        "source": "https://www.first-nature.com/fungi/hypholoma-fasciculare.php"
+      },
+      {
+        "id": "adulto",
+        "label": "Adulto",
+        "desc": "Lamelle verde oliva.",
+        "hymenophore_color": [
+          "verde"
+        ],
+        "tiles": [
+          "sotto"
+        ],
+        "source": "https://www.first-nature.com/fungi/hypholoma-fasciculare.php"
+      },
+      {
+        "id": "maturo",
+        "label": "Maturo",
+        "desc": "Lamelle che anneriscono man mano che le spore maturano.",
+        "hymenophore_color": [
+          "nero"
+        ],
+        "tiles": [
+          "sotto"
+        ],
+        "source": "https://www.first-nature.com/fungi/hypholoma-fasciculare.php"
+      }
+    ],
+    "traits_notes": "Sporata bruno-porpora / viola-nerastra (it.wiki) -> bruno-violaceo + nero. Cappello liscio e asciutto (MushroomExpert 'bald; dry'). Resti di cortina (fibrille scure) spesso al margine del cappello (First Nature, MushroomExpert), ma non sempre visibili -> cap_veil=null. Lamelle adnate; MushroomExpert 'attached or pulling away' -> aggiunto smarginate per prudenza. Gambo cilindrico, uguale o assottigliato verso la base, cespitoso. Gambo elastico (it.wiki), carne del cappello 'quite firm' (First Nature) -> fibrosa/elastica/soda.",
+    "sources": [
+      {
+        "title": "Hypholoma fasciculare, Wikipedia (it)",
+        "url": "https://it.wikipedia.org/wiki/Hypholoma_fasciculare"
+      },
+      {
+        "title": "AMER, report uscita micologica Altopiano di Rascino (2018)",
+        "url": "https://www.ameronlus.it/blog/2018/11/10/report-uscita-micologica-altopiano-di-rascino/"
+      },
+      {
+        "title": "Wikidata Q752507 (Hypholoma fasciculare)",
+        "url": "https://www.wikidata.org/wiki/Q752507"
+      },
+      {
+        "title": "Wikipedia en - Hypholoma fasciculare",
+        "url": "https://en.wikipedia.org/wiki/Hypholoma_fasciculare"
+      },
+      {
+        "title": "MushroomExpert - Hypholoma fasciculare",
+        "url": "https://www.mushroomexpert.com/hypholoma_fasciculare.html"
+      },
+      {
+        "title": "First Nature - Hypholoma fasciculare",
+        "url": "https://www.first-nature.com/fungi/hypholoma-fasciculare.php"
+      }
+    ]
+  },
+  "mellea": {
+    "base": {
+      "colore": "giallo",
+      "forma": "convesso"
+    },
+    "traits": {
+      "hymenophore": [
+        "lamelle"
+      ],
+      "hymenophore_color": [
+        "bianco",
+        "crema",
+        "bruno"
+      ],
+      "cap_color": [
+        "giallo",
+        "bruno"
+      ],
+      "cap_shape": [
+        "convesso",
+        "piano"
+      ],
+      "cap_size": [
+        "piccolo",
+        "medio"
+      ],
+      "stem_ring": true,
+      "stem_volva": false,
+      "stem_reticulum": false,
+      "flesh_change": [
+        "nessuno"
+      ],
+      "smell": [
+        "gradevole"
+      ],
+      "habitat": [
+        "ceppaie/legno",
+        "latifoglie"
+      ],
+      "growth": [
+        "cespitoso"
+      ],
+      "season": [
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "spore_print": [
+        "bianco",
+        "crema"
+      ],
+      "cap_veil": false,
+      "latex": false,
+      "flesh_texture": [
+        "fibrosa",
+        "elastica/coriacea"
+      ],
+      "cap_surface": [
+        "squamosa",
+        "liscia",
+        "asciutta",
+        "viscida"
+      ],
+      "gill_attachment": [
+        "adnate",
+        "decorrenti"
+      ],
+      "stem_base": [
+        "assottigliata",
+        "normale",
+        "bulbosa"
+      ]
+    },
+    "stages": [
+      {
+        "id": "giovane",
+        "label": "Giovane",
+        "desc": "Cappello molto convesso, coperto di squamette fini, soprattutto al centro.",
+        "cap_shape": "convesso",
+        "tiles": [
+          "cappello",
+          "gambo"
+        ],
+        "source": "https://www.first-nature.com/fungi/armillaria-mellea.php"
+      },
+      {
+        "id": "adulto",
+        "label": "Adulto",
+        "desc": "Cappello appiattito, spesso con il margine ondulato e striato; le squamette possono non vedersi più.",
+        "cap_shape": "piano",
+        "tiles": [
+          "cappello",
+          "gambo"
+        ],
+        "source": "https://www.first-nature.com/fungi/armillaria-mellea.php"
+      }
+    ],
+    "traits_notes": "Sporata bianca (it/en wiki, MushroomExpert), bianco crema molto pallido (FN). Cappello con squamette brune fitte al centro che spariscono con l'eta' (parte della cuticola, non velo asportabile -> cap_veil false); asciutta o leggermente vischiosa/appiccicosa col bagnato (MushroomExpert, en.wiki). Lamelle adnate o leggermente decorrenti. Base del gambo: assottigliata e fusa nel cespo (en.wiki, MushroomExpert), ma 'bulboso alla base' (ER) e 'ingrossato' (it.wiki) -> tutti i valori. Carne del gambo tenace, fibrosa, coriaceo-fibrosa.",
+    "sources": [
+      {
+        "title": "Armillaria mellea, Wikipedia (it)",
+        "url": "https://it.wikipedia.org/wiki/Armillaria_mellea"
+      },
+      {
+        "title": "La risorsa FUNGO in Alta Valle del Vara (SSSA Pisa, Gruppo Micologico Lucchese), scheda Armillaria mellea",
+        "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbf8-709e-e053-3705fe0a83fd/92_vqr_Funghi.pdf"
+      },
+      {
+        "title": "ASL Biella, poster 'Non consumare i chiodini crudi' (2025)",
+        "url": "https://aslbi.piemonte.it/wp-content/uploads/2025/08/Poster-NON-CONSUMARE-I-CHIODINI-CRUDI.pdf"
+      },
+      {
+        "title": "Galerina marginata, Wikipedia (it)",
+        "url": "https://it.wikipedia.org/wiki/Galerina_marginata"
+      },
+      {
+        "title": "Mallozzi A., Nomi volgari e dialettali di alcuni funghi nell'Italia centrale (2011)",
+        "url": "https://www.diacronia.ro/indexing/details/V1473/pdf"
+      },
+      {
+        "title": "L.R. Lazio 32/1998, art. 3 c. 2 bis: chiodino senza taglia minima (testo coordinato vigente, Consiglio regionale del Lazio)",
+        "url": "https://www.consiglio.regione.lazio.it/consiglio-regionale/?vw=leggiregionalidettaglio&id=8275&sv=vigente"
+      },
+      {
+        "title": "AUSL Valle d'Aosta, Ispettorato micologico: Raccolta e consumo dei funghi in sicurezza (opuscolo 2026)",
+        "url": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
+      },
+      {
+        "title": "Andar per funghi, Alta Valle del Velino",
+        "url": "https://www.altavalledelvelino.com/natura-e-ambiente/bosco-e-dintorni/252-andar-per-funghi.html"
+      },
+      {
+        "title": "Wikidata Q473745",
+        "url": "https://www.wikidata.org/wiki/Q473745"
+      },
+      {
+        "title": "Armillaria mellea - Wikipedia en",
+        "url": "https://en.wikipedia.org/wiki/Armillaria_mellea"
+      },
+      {
+        "title": "Armillaria mellea - First Nature",
+        "url": "https://www.first-nature.com/fungi/armillaria-mellea.php"
+      },
+      {
+        "title": "Armillaria mellea - MushroomExpert",
+        "url": "https://www.mushroomexpert.com/armillaria_mellea.html"
+      },
+      {
+        "title": "Regione Emilia-Romagna - Funghi commestibili (scheda)",
+        "url": "https://ambiente.regione.emilia-romagna.it/it/parchi-natura2000/sistema-regionale/funghi-sottobosco-tartufi/funghi-allegati/funghi-commestibili/@@download/file"
+      }
+    ]
+  },
+  "pinophilus": {
+    "base": {
+      "colore": "rosso",
+      "forma": "convesso"
+    },
+    "traits": {
+      "hymenophore": [
+        "pori"
+      ],
+      "hymenophore_color": [
+        "bianco",
+        "crema",
+        "giallo",
+        "verde"
+      ],
+      "cap_color": [
+        "rosso",
+        "bruno"
+      ],
+      "cap_shape": [
+        "emisferico",
+        "convesso"
+      ],
+      "cap_size": [
+        "medio",
+        "grande"
+      ],
+      "stem_ring": false,
+      "stem_volva": false,
+      "stem_reticulum": true,
+      "flesh_change": [
+        "nessuno"
+      ],
+      "smell": [
+        "gradevole"
+      ],
+      "habitat": [
+        "conifere",
+        "latifoglie"
+      ],
+      "growth": [
+        "singolo",
+        "gregario"
+      ],
+      "season": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "spore_print": [
+        "verde-oliva",
+        "bruno"
+      ],
+      "cap_veil": false,
+      "latex": false,
+      "flesh_texture": [
+        "soda"
+      ],
+      "cap_surface": [
+        "liscia",
+        "asciutta",
+        "viscida",
+        "vellutata/feltrata"
+      ],
+      "gill_attachment": null,
+      "stem_base": [
+        "normale",
+        "bulbosa"
+      ]
+    },
+    "stages": [
+      {
+        "id": "giovane",
+        "label": "Giovane",
+        "desc": "Pori bianchi.",
+        "hymenophore_color": [
+          "bianco"
+        ],
+        "tiles": [
+          "sotto"
+        ],
+        "source": "https://it.wikipedia.org/wiki/Boletus_pinophilus"
+      },
+      {
+        "id": "adulto",
+        "label": "Adulto",
+        "desc": "Pori gialli od olivastri.",
+        "hymenophore_color": [
+          "giallo",
+          "verde"
+        ],
+        "tiles": [
+          "sotto"
+        ],
+        "source": "https://it.wikipedia.org/wiki/Boletus_pinophilus"
+      }
+    ],
+    "traits_notes": "Sporata olivastra o bruno tabacco in massa -> verde-oliva + bruno. Cuticola prima untuosa e liscia poi leggermente vellutata (it.wiki); asciutta o leggermente untuosa, viscida col bagnato (First Nature). Gambo spesso panciuto/clavato: base ingrossata ma non bulbo netto -> 'normale' e 'bulbosa'. Consistenza della carne non esplicitata dalle fonti per questa specie: 'soda' per analogia di gruppo con B. edulis (ER cita B. pinicola nello stesso gruppo).",
+    "sources": [
+      {
+        "title": "Boletus pinophilus, Wikipedia (it)",
+        "url": "https://it.wikipedia.org/wiki/Boletus_pinophilus"
+      },
+      {
+        "title": "I porcini, Rivista di Agraria (2006)",
+        "url": "https://www.rivistadiagraria.org/articoli/anno-2006/i-porcini/?print=pdf"
+      },
+      {
+        "title": "L.R. Lazio 5 agosto 1998 n. 32, testo coordinato vigente (Consiglio regionale del Lazio)",
+        "url": "https://www.consiglio.regione.lazio.it/consiglio-regionale/?vw=leggiregionalidettaglio&id=8275&sv=vigente"
+      },
+      {
+        "title": "La risorsa FUNGO in Alta Valle del Vara (SSSA Pisa, Gruppo Micologico Lucchese), scheda Boletus luridus e boleti a pori rossi",
+        "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbe9-709e-e053-3705fe0a83fd/104_vqr_Funghi.pdf"
+      },
+      {
+        "title": "Neoboletus luridiformis, Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Neoboletus_luridiformis"
+      },
+      {
+        "title": "AUSL Valle d'Aosta, Ispettorato micologico: Raccolta e consumo dei funghi in sicurezza (opuscolo 2026)",
+        "url": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
+      },
+      {
+        "title": "Wikidata Q1415435",
+        "url": "https://www.wikidata.org/wiki/Q1415435"
+      },
+      {
+        "title": "Boletus pinophilus - First Nature",
+        "url": "https://www.first-nature.com/fungi/boletus-pinophilus.php"
+      }
+    ]
+  },
+  "pleurotus-ostreatus": {
+    "base": {
+      "colore": "grigio",
+      "forma": "convesso"
+    },
+    "traits": {
+      "hymenophore": [
+        "lamelle"
+      ],
+      "hymenophore_color": [
+        "bianco",
+        "crema"
+      ],
+      "cap_color": [
+        "bianco",
+        "crema",
+        "bruno",
+        "grigio"
+      ],
+      "cap_shape": [
+        "convesso",
+        "imbuto"
+      ],
+      "cap_size": [
+        "medio",
+        "grande"
+      ],
+      "cap_surface": null,
+      "cap_veil": false,
+      "stem_ring": false,
+      "stem_volva": false,
+      "stem_reticulum": false,
+      "stem_base": [
+        "assottigliata"
+      ],
+      "flesh_change": null,
+      "flesh_texture": null,
+      "smell": [
+        "gradevole"
+      ],
+      "latex": false,
+      "gill_attachment": [
+        "decorrenti"
+      ],
+      "growth": [
+        "gregario",
+        "cespitoso"
+      ],
+      "habitat": [
+        "ceppaie/legno",
+        "latifoglie"
+      ],
+      "season": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        1,
+        2
+      ],
+      "spore_print": [
+        "bianco"
+      ]
+    },
+    "stages": [
+      {
+        "id": "giovane",
+        "label": "Giovane",
+        "desc": "Cappello convesso.",
+        "cap_shape": "convesso",
+        "tiles": [
+          "cappello",
+          "gambo"
+        ],
+        "source": "https://www.first-nature.com/fungi/pleurotus-ostreatus.php"
+      },
+      {
+        "id": "adulto",
+        "label": "Adulto",
+        "desc": "Cappello depresso al centro, con il margine ondulato.",
+        "cap_shape": "imbuto",
+        "tiles": [
+          "cappello",
+          "gambo"
+        ],
+        "source": "https://www.first-nature.com/fungi/pleurotus-ostreatus.php"
+      }
+    ],
+    "traits_notes": null,
+    "sources": [
+      {
+        "title": "First Nature — Pleurotus ostreatus",
+        "url": "https://www.first-nature.com/fungi/pleurotus-ostreatus.php"
+      },
+      {
+        "title": "Wikipedia (it) — Pleurotus ostreatus (fonte secondaria)",
+        "url": "https://it.wikipedia.org/wiki/Pleurotus_ostreatus"
+      },
+      {
+        "title": "MycoDB — Pleurotus ostreatus",
+        "url": "https://www.mycodb.fr/fiche.php?genre=Pleurotus&espece=ostreatus"
+      },
+      {
+        "title": "Species Fungorum — Pleurotus ostreatus (nome corrente)",
+        "url": "https://www.speciesfungorum.org/Names/NamesRecord.asp?RecordID=174220"
+      }
+    ]
+  },
+  "rubroboletus-satanas": {
+    "base": {
+      "colore": "crema",
+      "forma": "convesso"
+    },
+    "traits": {
+      "hymenophore": [
+        "pori"
+      ],
+      "hymenophore_color": [
+        "giallo",
+        "arancio",
+        "rosso"
+      ],
+      "cap_color": [
+        "bianco",
+        "grigio",
+        "crema"
+      ],
+      "cap_shape": [
+        "emisferico",
+        "convesso"
+      ],
+      "cap_size": [
+        "medio",
+        "grande"
+      ],
+      "stem_ring": false,
+      "stem_volva": false,
+      "stem_reticulum": true,
+      "flesh_change": [
+        "blu"
+      ],
+      "smell": [
+        "sgradevole",
+        "nessuno"
+      ],
+      "habitat": [
+        "latifoglie"
+      ],
+      "growth": [
+        "singolo"
+      ],
+      "season": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "spore_print": [
+        "verde-oliva",
+        "bruno"
+      ],
+      "cap_veil": false,
+      "latex": false,
+      "flesh_texture": [
+        "soda"
+      ],
+      "cap_surface": [
+        "vellutata/feltrata",
+        "asciutta",
+        "liscia",
+        "viscida"
+      ],
+      "gill_attachment": null,
+      "stem_base": [
+        "bulbosa",
+        "normale"
+      ]
+    },
+    "stages": [
+      {
+        "id": "giovane",
+        "label": "Giovane",
+        "desc": "Cappello arrotondato, a cupola. Pori giallastri negli esemplari molto giovani.",
+        "cap_shape": "emisferico",
+        "hymenophore_color": [
+          "giallo"
+        ],
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "source": "https://www.first-nature.com/fungi/rubroboletus-satanas.php"
+      },
+      {
+        "id": "adulto",
+        "label": "Adulto",
+        "desc": "Cappello che può diventare irregolare e lobato. Pori arancio, poi rossi.",
+        "cap_shape": "convesso",
+        "hymenophore_color": [
+          "arancio",
+          "rosso"
+        ],
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "source": "https://www.first-nature.com/fungi/rubroboletus-satanas.php"
+      }
+    ],
+    "traits_notes": "TOSSICO, valori larghi. Sporata bruno-oliva/verde-oliva (aggiunto anche bruno). Cappello vellutato da giovane, poi glabro e liscio con screpolature; en.wiki: 'often slightly viscid in wet weather' -> incluse tutte. Gambo tozzo, ovale-globoso, ingrossato/bulboso alla base; aggiunto 'normale' per prudenza (esemplari adulti piu' cilindrici). Carne soda e compatta (it.wiki), spugnosa con l'eta' (en.wiki). Pori gialli aggiunti il 15/10: «yellowish in very young fruitbodies» (First Nature).",
+    "sources": [
+      {
+        "title": "Rubroboletus satanas, Wikipedia (it)",
+        "url": "https://it.wikipedia.org/wiki/Rubroboletus_satanas"
+      },
+      {
+        "title": "La risorsa FUNGO in Alta Valle del Vara (SSSA Pisa, Gruppo Micologico Lucchese), scheda Boletus luridus e boleti a pori rossi",
+        "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbe9-709e-e053-3705fe0a83fd/104_vqr_Funghi.pdf"
+      },
+      {
+        "title": "Wikidata Q26203731 (Rubroboletus satanas)",
+        "url": "https://www.wikidata.org/wiki/Q26203731"
+      },
+      {
+        "title": "Rubroboletus satanas - Wikipedia en",
+        "url": "https://en.wikipedia.org/wiki/Rubroboletus_satanas"
+      },
+      {
+        "title": "Rubroboletus satanas - first-nature.com",
+        "url": "https://www.first-nature.com/fungi/rubroboletus-satanas.php"
+      }
+    ]
+  },
+  "terreum": {
+    "base": {
+      "colore": "grigio",
+      "forma": "conico"
+    },
+    "traits": {
+      "hymenophore": [
+        "lamelle"
+      ],
+      "hymenophore_color": [
+        "bianco",
+        "grigio"
+      ],
+      "cap_color": [
+        "grigio",
+        "bruno"
+      ],
+      "cap_shape": [
+        "conico",
+        "convesso",
+        "piano"
+      ],
+      "cap_size": [
+        "piccolo",
+        "medio"
+      ],
+      "stem_ring": null,
+      "stem_volva": false,
+      "stem_reticulum": false,
+      "flesh_change": [
+        "nessuno"
+      ],
+      "smell": [
+        "nessuno"
+      ],
+      "habitat": [
+        "conifere"
+      ],
+      "growth": [
+        "gregario"
+      ],
+      "season": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "spore_print": [
+        "bianco",
+        "crema"
+      ],
+      "cap_veil": false,
+      "latex": false,
+      "flesh_texture": [
+        "fibrosa"
+      ],
+      "cap_surface": [
+        "asciutta",
+        "squamosa",
+        "vellutata/feltrata"
+      ],
+      "gill_attachment": [
+        "smarginate",
+        "adnate"
+      ],
+      "stem_base": [
+        "normale"
+      ]
+    },
+    "stages": [
+      {
+        "id": "giovane",
+        "label": "Giovane",
+        "desc": "Cappello conico. Lamelle bianche.",
+        "cap_shape": "conico",
+        "hymenophore_color": [
+          "bianco"
+        ],
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "source": "https://www.first-nature.com/fungi/tricholoma-terreum.php"
+      },
+      {
+        "id": "adulto",
+        "label": "Adulto",
+        "desc": "Cappello quasi piatto con un piccolo umbone. Lamelle grigie, spesso con toni gialli.",
+        "cap_shape": "piano",
+        "hymenophore_color": [
+          "grigio"
+        ],
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "source": "https://www.first-nature.com/fungi/tricholoma-terreum.php"
+      }
+    ],
+    "traits_notes": "Sporata bianca (en.wiki infobox: bianco-crema). Cappello asciutto, fibrilloso-feltrato ('slightly downy', first-nature) fino a finemente squamoso. Nessun resto di velo sul cappello; esiste una cortina effimera nei giovanissimi (mushroomexpert) che resta sul gambo/margine -> cap_veil false. Lamelle smarginate (it.wiki, mushroomexpert) o adnate/annesse (en.wiki). Gambo cilindrico/uguale. Carne sottile e fragile: nessuna fonte forte dice esplicitamente 'fibrosa'; scelta 'fibrosa' (gambo fibrilloso, tipico di Tricholoma, citato come 'often fibrous' solo da fonti secondarie). Dubbio moderato su flesh_texture.",
+    "sources": [
+      {
+        "title": "Tricholoma terreum, Wikipedia (it)",
+        "url": "https://it.wikipedia.org/wiki/Tricholoma_terreum"
+      },
+      {
+        "title": "No Evidence Was Found for Terreolides... in Tricholoma terreum, Molecules 2024",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11052463/"
+      },
+      {
+        "title": "Mallozzi A., Nomi volgari e dialettali di alcuni funghi nell'Italia centrale (2011)",
+        "url": "https://www.diacronia.ro/indexing/details/V1473/pdf"
+      },
+      {
+        "title": "AMER, report uscita micologica Altopiano di Rascino (2018)",
+        "url": "https://www.ameronlus.it/blog/2018/11/10/report-uscita-micologica-altopiano-di-rascino/"
+      },
+      {
+        "title": "Comunidad de Madrid, ficha Tricholoma pardinum",
+        "url": "https://comunidad.madrid/sites/default/files/doc/sanidad/sali/d_tricholoma_pardinum.pdf"
+      },
+      {
+        "title": "Wikidata Q27266",
+        "url": "https://www.wikidata.org/wiki/Q27266"
+      },
+      {
+        "title": "Tricholoma terreum - Wikipedia en",
+        "url": "https://en.wikipedia.org/wiki/Tricholoma_terreum"
+      },
+      {
+        "title": "Tricholoma terreum - first-nature.com",
+        "url": "https://www.first-nature.com/fungi/tricholoma-terreum.php"
+      },
+      {
+        "title": "Tricholoma terreum - MushroomExpert",
+        "url": "https://www.mushroomexpert.com/tricholoma_terreum.html"
+      }
+    ]
+  },
+  "tylopilus-felleus": {
+    "base": {
+      "colore": "crema",
+      "forma": "convesso"
+    },
+    "traits": {
+      "hymenophore": [
+        "pori"
+      ],
+      "hymenophore_color": [
+        "bianco",
+        "rosa"
+      ],
+      "cap_color": [
+        "bruno",
+        "crema"
+      ],
+      "cap_shape": [
+        "emisferico",
+        "convesso",
+        "piano"
+      ],
+      "cap_size": [
+        "medio",
+        "grande"
+      ],
+      "stem_ring": false,
+      "stem_volva": false,
+      "stem_reticulum": true,
+      "flesh_change": [
+        "nessuno"
+      ],
+      "smell": [
+        "nessuno"
+      ],
+      "habitat": [
+        "conifere",
+        "latifoglie"
+      ],
+      "growth": [
+        "singolo",
+        "gregario"
+      ],
+      "season": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "spore_print": [
+        "rosa",
+        "bruno"
+      ],
+      "cap_veil": false,
+      "latex": false,
+      "flesh_texture": [
+        "soda"
+      ],
+      "cap_surface": [
+        "asciutta",
+        "vellutata/feltrata",
+        "liscia"
+      ],
+      "gill_attachment": null,
+      "stem_base": [
+        "bulbosa",
+        "normale"
+      ]
+    },
+    "stages": [
+      {
+        "id": "giovane",
+        "label": "Giovane",
+        "desc": "Cappello emisferico. Tubuli e pori bianchi.",
+        "cap_shape": "emisferico",
+        "hymenophore_color": [
+          "bianco"
+        ],
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "source": "https://it.wikipedia.org/wiki/Tylopilus_felleus"
+      },
+      {
+        "id": "adulto",
+        "label": "Adulto",
+        "desc": "Cappello spianato. Pori rosati.",
+        "cap_shape": "piano",
+        "hymenophore_color": [
+          "rosa"
+        ],
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "source": "https://it.wikipedia.org/wiki/Tylopilus_felleus"
+      }
+    ],
+    "traits_notes": "Sporata rosa-bruna ('clay-pink', 'brownish pink', 'rosate in massa') -> rosa + bruno. Cappello asciutto, leggermente vellutato da giovane, poi liscio e opaco; nessuna fonte lo dice viscido. Gambo ingrossato alla base, a volte obeso/clavato, con reticolo bruno marcato. Carne: 'soda' e' il valore piu' vicino nel vocabolario, ma en.wiki e mushroomexpert la dicono piu' tenera/morbida degli altri boleti e spugnosa con l'eta'. Forma piana aggiunta il 15/10: «dapprima emisferico, poi spianato» (it.wiki).",
+    "sources": [
+      {
+        "title": "Tylopilus felleus, Wikipedia (it)",
+        "url": "https://it.wikipedia.org/wiki/Tylopilus_felleus"
+      },
+      {
+        "title": "Wikidata Q633503 (Tylopilus felleus)",
+        "url": "https://www.wikidata.org/wiki/Q633503"
+      },
+      {
+        "title": "Tylopilus felleus - Wikipedia en",
+        "url": "https://en.wikipedia.org/wiki/Tylopilus_felleus"
+      },
+      {
+        "title": "Tylopilus felleus - first-nature.com",
+        "url": "https://www.first-nature.com/fungi/tylopilus-felleus.php"
+      },
+      {
+        "title": "Tylopilus felleus - MushroomExpert",
+        "url": "https://www.mushroomexpert.com/tylopilus_felleus.html"
+      }
+    ]
+  }
+}

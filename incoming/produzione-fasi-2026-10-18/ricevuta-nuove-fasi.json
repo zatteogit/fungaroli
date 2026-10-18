@@ -471,7 +471,119 @@
       "target": "assets/traits/hypholoma-fasciculare-sotto-fase-maturo.webp",
       "source": "https://www.first-nature.com/fungi/hypholoma-fasciculare.php",
       "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-44-r01.png",
+      "cella": 0,
+      "sha256": "9ac6c6e248f6f2338603ca36aeb92d89ce317054fbd77a43dbd959013304db60",
+      "target": "assets/traits/mellea-cappello-fase-giovane.webp",
+      "source": "https://www.first-nature.com/fungi/armillaria-mellea.php",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-44-r01.png",
+      "cella": 1,
+      "sha256": "9ac6c6e248f6f2338603ca36aeb92d89ce317054fbd77a43dbd959013304db60",
+      "target": "assets/traits/mellea-gambo-fase-giovane.webp",
+      "source": "https://www.first-nature.com/fungi/armillaria-mellea.php",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-44-r01.png",
+      "cella": 3,
+      "sha256": "9ac6c6e248f6f2338603ca36aeb92d89ce317054fbd77a43dbd959013304db60",
+      "target": "assets/traits/mellea-cappello-fase-adulto.webp",
+      "source": "https://www.first-nature.com/fungi/armillaria-mellea.php",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-44-r01.png",
+      "cella": 4,
+      "sha256": "9ac6c6e248f6f2338603ca36aeb92d89ce317054fbd77a43dbd959013304db60",
+      "target": "assets/traits/mellea-gambo-fase-adulto.webp",
+      "source": "https://www.first-nature.com/fungi/armillaria-mellea.php",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-44-r01.png",
+      "cella": 6,
+      "sha256": "9ac6c6e248f6f2338603ca36aeb92d89ce317054fbd77a43dbd959013304db60",
+      "target": "assets/traits/pleurotus-ostreatus-cappello-fase-giovane.webp",
+      "source": "https://www.first-nature.com/fungi/pleurotus-ostreatus.php",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-44-r01.png",
+      "cella": 7,
+      "sha256": "9ac6c6e248f6f2338603ca36aeb92d89ce317054fbd77a43dbd959013304db60",
+      "target": "assets/traits/pleurotus-ostreatus-gambo-fase-giovane.webp",
+      "source": "https://www.first-nature.com/fungi/pleurotus-ostreatus.php",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-45-r01.png",
+      "cella": 3,
+      "sha256": "e339aac6ca47541572b7b5975b6573dd16bed328e9acbf13945370311b809baf",
+      "target": "assets/traits/terreum-cappello-fase-giovane.webp",
+      "source": "https://www.first-nature.com/fungi/tricholoma-terreum.php",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-45-r01.png",
+      "cella": 4,
+      "sha256": "e339aac6ca47541572b7b5975b6573dd16bed328e9acbf13945370311b809baf",
+      "target": "assets/traits/terreum-sotto-fase-giovane.webp",
+      "source": "https://www.first-nature.com/fungi/tricholoma-terreum.php",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-45-r01.png",
+      "cella": 5,
+      "sha256": "e339aac6ca47541572b7b5975b6573dd16bed328e9acbf13945370311b809baf",
+      "target": "assets/traits/terreum-gambo-fase-giovane.webp",
+      "source": "https://www.first-nature.com/fungi/tricholoma-terreum.php",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-45-r01.png",
+      "cella": 6,
+      "sha256": "e339aac6ca47541572b7b5975b6573dd16bed328e9acbf13945370311b809baf",
+      "target": "assets/traits/terreum-cappello-fase-adulto.webp",
+      "source": "https://www.first-nature.com/fungi/tricholoma-terreum.php",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-45-r01.png",
+      "cella": 7,
+      "sha256": "e339aac6ca47541572b7b5975b6573dd16bed328e9acbf13945370311b809baf",
+      "target": "assets/traits/terreum-sotto-fase-adulto.webp",
+      "source": "https://www.first-nature.com/fungi/tricholoma-terreum.php",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-45-r01.png",
+      "cella": 8,
+      "sha256": "e339aac6ca47541572b7b5975b6573dd16bed328e9acbf13945370311b809baf",
+      "target": "assets/traits/terreum-gambo-fase-adulto.webp",
+      "source": "https://www.first-nature.com/fungi/tricholoma-terreum.php",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-pleurotus-r02.png",
+      "cella": 0,
+      "sha256": "5fbfb23ff3bece9bb1fa545582410f418d575c6a77a7d2bb1f33e491ed4d7b82",
+      "target": "assets/traits/pleurotus-ostreatus-cappello-fase-adulto.webp",
+      "source": "https://www.first-nature.com/fungi/pleurotus-ostreatus.php",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-pleurotus-r02.png",
+      "cella": 1,
+      "sha256": "5fbfb23ff3bece9bb1fa545582410f418d575c6a77a7d2bb1f33e491ed4d7b82",
+      "target": "assets/traits/pleurotus-ostreatus-gambo-fase-adulto.webp",
+      "source": "https://www.first-nature.com/fungi/pleurotus-ostreatus.php",
+      "stato": "raster revisionato; attende controllo indipendente"
     }
   ],
-  "nuove_tessere_revisionate": 59
+  "nuove_tessere_revisionate": 73
 }
