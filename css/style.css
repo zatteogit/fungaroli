@@ -1300,6 +1300,12 @@ html.is-offline #updated { color: var(--warn-ink); font-weight: 600; }
 .search-scopes { padding: 8px var(--gutter) 0; margin: 0; border-bottom: 1px solid var(--hair); padding-bottom: 10px; background: var(--bg); }
 .search-dlg[open] { grid-template-rows:auto auto minmax(0, 1fr); }
 .search-dlg > :is(.search-top,.search-scopes,.search-res) { width:100%; max-width:900px; min-width:0; box-sizing:border-box; margin-inline:auto; }
+
+/* Safari nel browser sovrappone la barra indirizzi e gli accessori della tastiera.
+   Spazio di scorrimento finale: anche l’ultima voce può salire sopra quei comandi. */
+html.is-ios:not(.is-standalone) .search-res { padding-bottom:calc(96px + env(safe-area-inset-bottom, 0px)); scroll-padding-bottom:calc(96px + env(safe-area-inset-bottom, 0px)); }
+html.is-ios.kb-open:not(.is-standalone) .search-res { -webkit-mask-image:linear-gradient(to bottom, black calc(100% - 20px), transparent); mask-image:linear-gradient(to bottom, black calc(100% - 20px), transparent); }
+
 @media (prefers-reduced-motion: no-preference) { .tab-search { transition: transform .5s var(--spring); } .tab-search:active { transform: scale(.9); transition-duration: .1s; } }
 .search-fake { min-height: 50px; }
 .id-filter { box-shadow: none; background: var(--surface-2); }
