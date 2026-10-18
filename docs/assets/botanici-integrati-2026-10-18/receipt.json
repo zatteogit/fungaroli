@@ -1,0 +1,276 @@
+{
+  "date": "2026-10-18",
+  "rasterFiles": 5,
+  "newSpeciesBindings": 7,
+  "automatedTestsRun": false,
+  "entries": [
+    {
+      "species": "fragolina",
+      "latin": "Fragaria vesca L. subsp. vesca",
+      "fields": [
+        {
+          "key": "growth_form",
+          "value": "erba"
+        },
+        {
+          "key": "leaf_arrangement",
+          "value": "rosetta_basale"
+        }
+      ],
+      "status": "raster revisionato agente; revisione indipendente coordinatore in attesa",
+      "asset": "incoming/lotto-botanico-01-2026-10-18/approvati/fragolina-portamento-rosetta.webp",
+      "assetHash": "fc70456703527e5c6d9759daa6bd19f3c4140dfbc07808c1180861577d611f5f",
+      "master": "incoming/lotto-botanico-01-2026-10-18/originali/fragolina-portamento-r01.png",
+      "masterHash": "3b4bff312b512f67db9d2f098560479cf37f23113f8183ddc7a0e442adec27f4",
+      "prompt": "lot1_fragolina_r01_prompt.txt",
+      "source": {
+        "title": "Università di Trieste · Portale della Flora di Roma",
+        "url": "https://dryades.units.it/Roma/index.php?id=2073&procedure=taxon_page"
+      },
+      "referencePhoto": {
+        "file": "assets/plants/fragolina-3.webp",
+        "thumb": "assets/plants/fragolina-3-t.webp",
+        "alt": "Fragolina di bosco: fotografia della specie",
+        "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+        "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "page": "https://dryades.units.it/Roma/index.php?id=2073&procedure=taxon_page",
+        "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG2745JPG1701878169.jpg",
+        "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di Trieste, Civico Orto botanico, TS, Friuli Venezia Giulia, Italia · 07/04/2023 · Distributed under CC BY-SA 4.0 license."
+      },
+      "referencePhotoHash": "7ee48c51196b912b1730560a174483a5b30b126331656c86bf79ff9e65ddf3c4",
+      "license": "CC BY-SA 4.0",
+      "review": "REVISIONE.md",
+      "preview": [
+        "preview/fragolina-128-64.png",
+        "preview/fragolina-ui-light-390.png",
+        "preview/fragolina-ui-dark-390.png"
+      ],
+      "vectorStatus": "da inviare dopo approvazione indipendente",
+      "destination": "assets/plant-traits/fragolina-growth_form-erba.webp",
+      "preservedMaster": "docs/assets/botanici-integrati-2026-10-18/masters/fragolina-portamento-r01.png",
+      "independentReview": "approved with scope limitations"
+    },
+    {
+      "master": "incoming/lotto-botanico-02-2026-10-18/originali/sambuco-infiorescenza-r00.png",
+      "masterHash": "8ae38cfec9f729ef0829aae4c32454db57fe73af8b67d92349d85ae4ecf79fb3",
+      "asset": "incoming/lotto-botanico-02-2026-10-18/approvati/sambuco-infiorescenza.webp",
+      "assetHash": "2be9e94af12e7c073bdb1e1cc5f34d56192d38538b37dae873d72e62b9eeb8c3",
+      "size": [
+        128,
+        128
+      ],
+      "alphaThreshold": 16,
+      "bbox": [
+        8,
+        14,
+        120,
+        113
+      ],
+      "species": "sambuco",
+      "latin": "Sambucus nigra L.",
+      "key": "flower_shape",
+      "value": "ombrella",
+      "source": {
+        "title": "Università di Trieste · Portale della Flora di Roma",
+        "url": "https://dryades.units.it/Roma/index.php?id=5142&procedure=taxon_page"
+      },
+      "referencePhoto": {
+        "file": "assets/plants/sambuco-1.webp",
+        "thumb": "assets/plants/sambuco-1-t.webp",
+        "alt": "Sambuco nero: fotografia della specie",
+        "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+        "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "page": "https://dryades.units.it/Roma/index.php?id=5142&procedure=taxon_page",
+        "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG2832JPG1713360741.jpg",
+        "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di Trieste, Monte Valerio , TS, Friuli Venezia Giulia, Italia · 17/04/2020 · Distributed under CC BY-SA 4.0 license."
+      },
+      "referencePhotoHash": "b0222a20d7693bbaa32017b93e18246a7e2cf3bbcbee56fb0e852ae31b96f5f8",
+      "status": "raster revisionato agente; revisione indipendente coordinatore in attesa",
+      "review": "BRIEF-E-REVISIONE.md",
+      "prompt": "prompt.json",
+      "vectorStatus": "non avviato",
+      "license": "CC BY-SA 4.0",
+      "destination": "assets/plant-traits/sambuco-flower_shape-ombrella.webp",
+      "preservedMaster": "docs/assets/botanici-integrati-2026-10-18/masters/sambuco-infiorescenza-r00.png",
+      "independentReview": "approved with scope limitations"
+    },
+    {
+      "master": "incoming/lotto-botanico-02-2026-10-18/originali/ebbio-foglia-r00.png",
+      "masterHash": "58373244cfc195c6a1c7a34c048509b7c8a04b71fec3d07bd1d74ac2fac1a420",
+      "asset": "incoming/lotto-botanico-02-2026-10-18/approvati/ebbio-foglia.webp",
+      "assetHash": "e72c0f69823c01a4709c82d8fe40ee5b7bf0c26da5d0d4de2d147a16b44f926c",
+      "size": [
+        128,
+        128
+      ],
+      "alphaThreshold": 16,
+      "bbox": [
+        15,
+        8,
+        112,
+        120
+      ],
+      "species": "ebbio",
+      "latin": "Sambucus ebulus L.",
+      "key": "leaf_type",
+      "value": "composta",
+      "source": {
+        "title": "Università di Trieste · Portale della Flora di Roma",
+        "url": "https://dryades.units.it/Roma/index.php?id=5141&procedure=taxon_page"
+      },
+      "referencePhoto": {
+        "file": "assets/plants/ebbio-3.webp",
+        "thumb": "assets/plants/ebbio-3-t.webp",
+        "alt": "Ebbio: fotografia della specie",
+        "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+        "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "page": "https://dryades.units.it/Roma/index.php?id=5141&procedure=taxon_page",
+        "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG0675JPG1708093837.jpg",
+        "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di Duino Aurisina / Devin-Nabrežina, località San Pelagio / Šempolaj, prato ai margini della strada per Slivia, TS, Friuli Venezia Giulia, Italia · 09/07/2023 · Distributed under CC BY-SA 4.0 license."
+      },
+      "referencePhotoHash": "47eebb3c1502fb5126d0ab24fb796c3ade0659a4211ec56a8ab24599964d16ae",
+      "status": "raster revisionato agente; revisione indipendente coordinatore in attesa",
+      "review": "BRIEF-E-REVISIONE.md",
+      "prompt": "prompt.json",
+      "vectorStatus": "non avviato",
+      "license": "CC BY-SA 4.0",
+      "destination": "assets/plant-traits/ebbio-leaf_type-composta.webp",
+      "preservedMaster": "docs/assets/botanici-integrati-2026-10-18/masters/ebbio-foglia-r00.png",
+      "independentReview": "approved with scope limitations"
+    },
+    {
+      "master": "incoming/lotto-botanico-03-2026-10-18/originali/ebbio-portamento-r02.png",
+      "masterHash": "3d88ade508444dc3e222ce616c3ed10b846465cac1afb079d9e87fc11695ddf2",
+      "asset": "incoming/lotto-botanico-03-2026-10-18/approvati/ebbio-portamento-r02.webp",
+      "assetHash": "b2f9e1a82766f800ab307ac07638da53e02f2eee21dcec9288c41ef332b000b4",
+      "size": [
+        128,
+        128
+      ],
+      "alphaThreshold": 16,
+      "bbox": [
+        22,
+        8,
+        106,
+        120
+      ],
+      "species": "ebbio",
+      "latin": "Sambucus ebulus L.",
+      "key": "growth_form",
+      "value": "erba",
+      "status": "raster revisionato agente, coordinatore in attesa",
+      "source": {
+        "title": "Università di Trieste · Portale della Flora di Roma",
+        "url": "https://dryades.units.it/Roma/index.php?id=5141&procedure=taxon_page"
+      },
+      "referencePhoto": {
+        "file": "assets/plants/ebbio-1.webp",
+        "thumb": "assets/plants/ebbio-1-t.webp",
+        "alt": "Ebbio: fotografia della specie",
+        "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+        "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "page": "https://dryades.units.it/Roma/index.php?id=5141&procedure=taxon_page",
+        "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG0669JPG1708091905.jpg",
+        "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di Duino Aurisina / Devin-Nabrežina, località San Pelagio / Šempolaj, prato ai margini della strada per Slivia, TS, Friuli Venezia Giulia, Italia · 09/07/2023 · Distributed under CC BY-SA 4.0 license."
+      },
+      "referencePhotoHash": "8f532c598d8ea2489020efa9ecccd67b41d7345624e64defcd21b1770d2b4468",
+      "review": "REVISIONE.md",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "vectorStatus": "non avviato",
+      "reviewSizes": [
+        128,
+        64
+      ],
+      "reviewBackgrounds": [
+        "chiaro",
+        "scuro"
+      ],
+      "destination": "assets/plant-traits/ebbio-growth_form-erba.webp",
+      "preservedMaster": "docs/assets/botanici-integrati-2026-10-18/masters/ebbio-portamento-r02.png",
+      "independentReview": "approved with scope limitations"
+    },
+    {
+      "master": "incoming/lotto-botanico-03-2026-10-18/originali/rosa-canina-foglia-r00.png",
+      "masterHash": "1d6d0c00f47bc8c152825493fd85ecdfab1b1fa548343be9c8c3542210cfba64",
+      "asset": "incoming/lotto-botanico-03-2026-10-18/approvati/rosa-canina-foglia-r00.webp",
+      "assetHash": "5bc837260e111bcf25b3d037fec0ee166fd44f7fc4846497915455a7c1dcb3df",
+      "size": [
+        128,
+        128
+      ],
+      "alphaThreshold": 16,
+      "bbox": [
+        25,
+        8,
+        103,
+        120
+      ],
+      "species": "rosa-canina",
+      "latin": "Rosa canina L.",
+      "key": "leaf_type",
+      "value": "composta",
+      "status": "raster revisionato agente, coordinatore in attesa",
+      "source": {
+        "title": "Università di Trieste · Portale della Flora di Roma",
+        "url": "https://dryades.units.it/Roma/index.php?id=1972&procedure=taxon_page"
+      },
+      "referencePhoto": {
+        "file": "assets/plants/rosa-canina-2.webp",
+        "thumb": "assets/plants/rosa-canina-2-t.webp",
+        "alt": "Rosa canina: fotografia della specie",
+        "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+        "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "page": "https://dryades.units.it/Roma/index.php?id=1972&procedure=taxon_page",
+        "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG7810JPG1716373277.jpg",
+        "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di Serle, vallecola ombreggiata lungo la strada per Castello, BS, Lombardia, Italia · 19/05/2024 · Distributed under CC BY-SA 4.0 license."
+      },
+      "referencePhotoHash": "7481252f8f8ce1e8ccdaccf71734fc48750d23e0e22a950284d195bae5395846",
+      "review": "REVISIONE.md",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "vectorStatus": "non avviato",
+      "reviewSizes": [
+        128,
+        64
+      ],
+      "reviewBackgrounds": [
+        "chiaro",
+        "scuro"
+      ],
+      "additionalProductionSources": [
+        {
+          "title": "Parco regionale Castelli Romani · Rosa canina",
+          "url": "https://www.parcocastelliromani.it/s/content/92003020580/1658828918.182",
+          "verified": "letta via connettore web 2026-10-18",
+          "scope": "architettura imparipennata, 5/7 foglioline ovali dentate"
+        },
+        {
+          "title": "Regione Sardegna · SardegnaForeste · Rosa canina",
+          "url": "https://www.sardegnaforeste.it/flora/rosa-canina",
+          "verified": "letta via connettore web 2026-10-18",
+          "scope": "5–7 foglioline ovali/ellittiche dentellate"
+        }
+      ],
+      "destination": "assets/plant-traits/rosa-canina-leaf_type-composta.webp",
+      "preservedMaster": "docs/assets/botanici-integrati-2026-10-18/masters/rosa-canina-foglia-r00.png",
+      "independentReview": "approved with scope limitations"
+    }
+  ],
+  "rejected": {
+    "species": "sambuco",
+    "key": "growth_form",
+    "master": "sambuco-portamento-r02.png",
+    "reason": "Gruppi periferici trifogliati/a ventaglio non chiaramente pennati. Distinzione legnoso/erbaceo utile ma non compensa anatomia involontaria ambigua."
+  }
+}

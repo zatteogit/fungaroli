@@ -1,0 +1,249 @@
+{
+  "id": "virescens-violetto-cappello",
+  "domain": "fungal",
+  "name": "Russule del gruppo virescens/cyanoxantha · violetto · cappello",
+  "species": "virescens",
+  "field": "cap_color",
+  "value": "violetto",
+  "tile": "cappello",
+  "source": {
+    "master": "master.png",
+    "master_sha256": "680fa52705c98c5e56e316a7cfa9d1ddb1a0bab951cf830a96a68fc7864f7a3a",
+    "cell": 3,
+    "crop_bbox": [
+      38,
+      562,
+      408,
+      738
+    ],
+    "crop_resized_size": [
+      370,
+      176
+    ],
+    "padding": 8,
+    "crop_sha256": "37784b101ef610612bd2ebedf176fe8218c5dbc594982b02f9312892bcb59427",
+    "original_path": "/workspace/fronda-image-production/incoming/icone/virescens-colore-liscio-2026-10-18-r03.png"
+  },
+  "raster_review": {
+    "status": "passed-independent-species-raster-review",
+    "reviewer": "vector_production (independent of raster_production author)",
+    "scope": "Independent direct three-sheet review completed before SVG: pink/purple smooth cyanoxantha alternatives; pale lamellae and stem, no ring, volva or reticulum. Schematic aggregate, not organism identification.",
+    "record": "raster-review.md",
+    "record_sha256": "0388f443018218b24f16a664e4630fb8e764124754c11ceffb0957894f1675f2",
+    "master_sha256": "680fa52705c98c5e56e316a7cfa9d1ddb1a0bab951cf830a96a68fc7864f7a3a"
+  },
+  "provenance": {
+    "raster_manifest_row": {
+      "file": "incoming/icone/virescens-colore-liscio-2026-10-18-r03.png",
+      "tipo": "illustrazione",
+      "soggetto": "virescens",
+      "tessera": "cappello",
+      "cella": 3,
+      "variante": "colore:violetto",
+      "base": {
+        "colore": "verde",
+        "forma": "convesso"
+      },
+      "modello": "image_gen (modello integrato, identificatore non esposto)",
+      "prompt": "Use case: precise-object-edit. Edit ONLY the gill surfaces on the TWO LEFT isolated caps in this transparent Fronda sheet. They currently look brown/tan. For Russula cyanoxantha alternatives they MUST match pale CREAM-WHITE gills of whole mushrooms in column2, e.g mainfill #f7ebd3 and gentle gilllines #e3cfa3. No brown, dark brown or chocolate gills. Preserve all pink/violet smooth cap surfaces, shape and cream stems EXACTLY, no mosaic, ring, volva or new features. Preserve entire transparent canvas1254x1254, invisible3x3grid, cells0,1,3,4 and blank bottomrow/rightcolumn. This is a correction of wrong underside color transferred from a style reference, not a new variant. Match gillpalette within each row.",
+      "autore": "Fronda/Fungaroli",
+      "licenza": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it"
+    },
+    "documented_traits": {
+      "latin": "Russula virescens; Russula cyanoxantha",
+      "name": "Colombina verde",
+      "edible_id": "virescens",
+      "toxicity": "commestibile",
+      "traits": {
+        "hymenophore": [
+          "lamelle"
+        ],
+        "hymenophore_color": [
+          "bianco",
+          "crema"
+        ],
+        "cap_color": [
+          "verde",
+          "violetto",
+          "grigio",
+          "rosa"
+        ],
+        "cap_shape": [
+          "emisferico",
+          "convesso",
+          "imbuto"
+        ],
+        "cap_size": [
+          "medio",
+          "grande"
+        ],
+        "stem_ring": false,
+        "stem_volva": false,
+        "stem_reticulum": false,
+        "flesh_change": [
+          "nessuno"
+        ],
+        "smell": [
+          "nessuno"
+        ],
+        "habitat": [
+          "latifoglie"
+        ],
+        "growth": [
+          "singolo",
+          "gregario"
+        ],
+        "season": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "spore_print": [
+          "bianco",
+          "crema"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": [
+          "gessosa",
+          "soda"
+        ],
+        "cap_surface": [
+          "asciutta",
+          "vellutata/feltrata",
+          "viscida",
+          "liscia",
+          "squamosa"
+        ],
+        "gill_attachment": [
+          "libere",
+          "adnate",
+          "decorrenti"
+        ],
+        "stem_base": [
+          "assottigliata",
+          "normale"
+        ]
+      },
+      "field_rules": [
+        {
+          "text": "La tignosa verdognola (Amanita phalloides) può avere cappello verde e lamelle bianche. Anello e volva possono essere nascosti o danneggiati: la loro apparente assenza non esclude il rischio.",
+          "kind": "sosia",
+          "title": "Tignosa verdognola a cappello verde",
+          "severity": "critico",
+          "source": "https://www.ufficiostampa.provincia.tn.it/Comunicati/FUNGHI-ATTENZIONE-ALLE-INTOSSICAZIONI"
+        },
+        {
+          "text": "La rottura del gambo descritta come simile al gesso è un carattere delle russule, non una prova di commestibilità.",
+          "kind": "caratteri",
+          "title": "Gambo gessoso non è una prova",
+          "severity": "importante",
+          "source": "https://it.wikipedia.org/wiki/Amanita_phalloides"
+        },
+        {
+          "text": "Lamelle o sporata gialle compaiono in altre russule. Il sapore riportato nelle fonti non va verificato assaggiando un fungo sconosciuto.",
+          "kind": "caratteri",
+          "title": "Lamelle gialle in altre russule",
+          "severity": "importante",
+          "source": "https://iris.santannapisa.it/retrieve/dd9e0b31-bba2-709e-e053-3705fe0a83fd/208_vqr_Funghi.pdf"
+        },
+        {
+          "text": "Taglia minima del cappello nel Lazio: 4 cm per il verdone (Russula virescens) e 3 cm per la colombina maggiore, R. cyanoxantha (L.R. 32/1998, art. 3 c. 2). È un limite di raccolta, non un criterio di commestibilità.",
+          "kind": "regole",
+          "title": "Verdone da 4 cm, R. cyanoxantha da 3 cm",
+          "severity": "importante",
+          "source": "https://www.consiglio.regione.lazio.it/consiglio-regionale/?vw=leggiregionalidettaglio&id=8275&sv=vigente"
+        }
+      ],
+      "check_before_picking": [
+        "Nessuna volva alla base, quando la base è completa",
+        "Nessun anello sul gambo",
+        "Gambo bianco che si spezza come un gesso",
+        "Lamelle bianche o crema, non gialle",
+        "R. virescens: cuticola verde screpolata a placche"
+      ],
+      "sources": [
+        {
+          "title": "La risorsa FUNGO in Alta Valle del Vara (SSSA Pisa, Gruppo Micologico Lucchese), scheda Russula virescens",
+          "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bba2-709e-e053-3705fe0a83fd/208_vqr_Funghi.pdf"
+        },
+        {
+          "title": "La risorsa FUNGO in Alta Valle del Vara, scheda Russula cyanoxantha",
+          "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bba0-709e-e053-3705fe0a83fd/198_vqr_Funghi.pdf"
+        },
+        {
+          "title": "Russula virescens, Wikipedia (it)",
+          "url": "https://it.wikipedia.org/wiki/Russula_virescens"
+        },
+        {
+          "title": "Russula cyanoxantha, Wikipedia (en)",
+          "url": "https://en.wikipedia.org/wiki/Russula_cyanoxantha"
+        },
+        {
+          "title": "Provincia di Trento, Funghi: attenzione alle intossicazioni (Centro antiveleni di Pavia)",
+          "url": "https://www.ufficiostampa.provincia.tn.it/Comunicati/FUNGHI-ATTENZIONE-ALLE-INTOSSICAZIONI"
+        },
+        {
+          "title": "L.R. Lazio 5 agosto 1998 n. 32, testo coordinato vigente (Consiglio regionale del Lazio)",
+          "url": "https://www.consiglio.regione.lazio.it/consiglio-regionale/?vw=leggiregionalidettaglio&id=8275&sv=vigente"
+        },
+        {
+          "title": "Amanita phalloides, Wikipedia (it)",
+          "url": "https://it.wikipedia.org/wiki/Amanita_phalloides"
+        },
+        {
+          "title": "Wikidata Q677341 / Q246696",
+          "url": "https://www.wikidata.org/wiki/Q677341"
+        },
+        {
+          "title": "Russula virescens - First Nature",
+          "url": "https://www.first-nature.com/fungi/russula-virescens.php"
+        },
+        {
+          "title": "Russula cyanoxantha - Wikipedia it",
+          "url": "https://it.wikipedia.org/wiki/Russula_cyanoxantha"
+        },
+        {
+          "title": "Russula cyanoxantha - First Nature",
+          "url": "https://www.first-nature.com/fungi/russula-cyanoxantha.php"
+        }
+      ],
+      "where_to_look": {
+        "summary": "Nei boschi di latifoglie dai castagneti collinari alle faggete del Terminillo, abbondante nelle estati piovose.",
+        "tips": [
+          "Cercala sotto castagno, cerro, roverella e faggio.",
+          "Esce presto, da giugno, e abbonda nelle estati piovose.",
+          "Negli stessi boschi cresce l'Amanita phalloides: ogni verde va controllato alla base."
+        ],
+        "trees": [
+          "castagno",
+          "cerro",
+          "roverella",
+          "faggio"
+        ],
+        "source": "https://iris.santannapisa.it/retrieve/dd9e0b31-bba2-709e-e053-3705fe0a83fd/208_vqr_Funghi.pdf"
+      },
+      "trees": [
+        "castagno",
+        "cerro",
+        "roverella",
+        "faggio"
+      ],
+      "traits_notes": "Gruppo (unione) R. virescens + R. cyanoxantha. Sporata: virescens bianco-crema/crema, cyanoxantha bianca. Cuticola: virescens asciutta, opaca, vellutata, rotta in areole poligonali (aggiunto 'squamosa' perche' le areole possono sembrare squame), untuosa da umida (FN); cyanoxantha umida/lucida col bagnato, untuosa, rugosa -> viscida+liscia. Lamelle: libere/poco aderenti (virescens), annesse (adnexed) o appena decorrenti (cyanoxantha); in cyanoxantha le lamelle sono lardacee/elastiche e non si sbriciolano, ma la carne del gambo resta fragile (sferocisti) -> gessosa + soda. Gambo cilindrico, attenuato alla base (virescens), a volte fusiforme. Dimensione: aggiunto 'grande' (16/10): la scheda dà 5–15 cm (Wikipedia it, Russula virescens)."
+    },
+    "data_source": "data/species-traits.json",
+    "traits_sha256": "a2149f75008184cb691c4935d6967706c36069392106f68d7fa20d4e6eee5d18"
+  },
+  "trace_sha256": "b97abe36821c64cd46ea1238e5892438aad77bc8eb807a6b8eb39f3699fcf667",
+  "trace_settings": {
+    "palette_colors": "source RGB; no prequantization",
+    "alpha_threshold": 220,
+    "vtracer": "0.6.15",
+    "filter_speckle": 4,
+    "color_precision": 6,
+    "layer_difference": 12
+  }
+}

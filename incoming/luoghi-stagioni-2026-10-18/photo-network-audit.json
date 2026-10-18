@@ -1,0 +1,93 @@
+{
+  "date": "2026-10-18",
+  "policy_observed": "restricted; enforced secondo environment_status, observations_current=true",
+  "commons_allowed": false,
+  "upload_allowed": false,
+  "inaturalist_allowed": false,
+  "action": "Nessun tentativo di bypass, route diretta o riscrittura hostname. Non ritentati download negati esplicitamente dalla configurazione; precedente CONNECT403 confermato dai report acquisizione locali.",
+  "local_photo_audit": "Nessuna fotografia animale pertinente con provenienza completa trovata nelle worktree locali; presenti soltanto candidature non acquisite. I file botanici flower_shape-farfalla non raffigurano animali e non sono riusati.",
+  "candidate_count": 8,
+  "candidates": [
+    {
+      "id": "animals-ape-da-miele-candidate1",
+      "target_key": "ape-da-miele",
+      "photo_taxon": "Apis mellifera",
+      "author": "Cody Hough",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "page": "https://commons.wikimedia.org/wiki/File:Apis_mellifera.jpg",
+      "status": "candidate_not_acquired"
+    },
+    {
+      "id": "animals-bombi-candidate1",
+      "target_key": "bombi",
+      "photo_taxon": "Bombus terrestris",
+      "author": "T137",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombus_terrestris_%281%29.jpg",
+      "status": "candidate_not_acquired"
+    },
+    {
+      "id": "animals-sirfidi-candidate1",
+      "target_key": "sirfidi",
+      "photo_taxon": "Syrphus ribesii",
+      "author": "Rude",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "page": "https://commons.wikimedia.org/wiki/File:Syrphus_ribesii_SLO.jpg",
+      "status": "candidate_not_acquired"
+    },
+    {
+      "id": "animals-farfalle-diurne-candidate1",
+      "target_key": "farfalle-diurne",
+      "photo_taxon": "Papilio machaon",
+      "author": "Jean-Pol GRANDMONT",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "page": "https://commons.wikimedia.org/wiki/File:Papilio_Machaon_JPG1a.jpg",
+      "status": "candidate_not_acquired"
+    },
+    {
+      "id": "animals-calabrone-europeo-candidate1",
+      "target_key": "calabrone-europeo",
+      "photo_taxon": "Vespa crabro",
+      "author": "Andrea Bonifazi",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "page": "https://commons.wikimedia.org/wiki/File:Vespa_crabro_%28%22European_hornet%22%29.jpg",
+      "status": "candidate_not_acquired"
+    },
+    {
+      "id": "animals-zecche-candidate1",
+      "target_key": "zecche",
+      "photo_taxon": "Ixodes ricinus",
+      "author": "W.alter",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "page": "https://commons.wikimedia.org/wiki/File:Ixodes_ricinus_on_dry_grass.jpg",
+      "status": "candidate_not_acquired"
+    },
+    {
+      "id": "animals-cinghiale-candidate1",
+      "target_key": "cinghiale",
+      "photo_taxon": "Sus scrofa",
+      "author": "Bramans",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "page": "https://commons.wikimedia.org/wiki/File:Wild_boar_%28Sus_scrofa%29.jpg",
+      "status": "candidate_not_acquired"
+    },
+    {
+      "id": "animals-lupo-candidate1",
+      "target_key": "lupo",
+      "photo_taxon": "Canis lupus",
+      "author": "Guido Mastrobono",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+      "page": "https://commons.wikimedia.org/wiki/File:Lupo_Appenninico.jpg",
+      "status": "candidate_not_acquired"
+    }
+  ],
+  "landscape_inventory": "Originali reali delle due zone presenti; nessuna precedente variante di stagione/meteo trovata nelle18worktree locali; nuove elaborazioni da originali locali."
+}

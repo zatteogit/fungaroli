@@ -1,0 +1,91 @@
+{
+  "id": "finocchietto-ombrella",
+  "name": "Finocchietto · ombrella",
+  "species": "finocchietto",
+  "field": "flower_shape",
+  "value": "ombrella",
+  "source": {
+    "master": "master.png",
+    "master_sha256": "bca5e65ab082c4d3f0561348e07626cda9c3eb27a7b5a62d25e57415b7e1cae7",
+    "crop_bbox": [
+      239,
+      145,
+      1297,
+      896
+    ],
+    "crop_resized_size": [
+      640,
+      454
+    ],
+    "padding": 8,
+    "crop_sha256": "48b3309d8005a45c144aae763ce2f6b1b025a4193886b79fe0f1247affc7ceb4",
+    "original_path": "/workspace/fronda-plant-corrections/incoming/correzioni-piante-2026-10-18/originali/finocchietto-ombrella.png"
+  },
+  "raster_review": {
+    "reviewer": "illustration_corrections",
+    "scope": "independent editorial species-specific raster review; original source and 64px thumbnails; not botanical certification",
+    "record": "raster-review.md",
+    "master_sha256": "bca5e65ab082c4d3f0561348e07626cda9c3eb27a7b5a62d25e57415b7e1cae7",
+    "status": "passed-independent-species-raster-review",
+    "record_sha256": "b80d7d851c16ddb7768e92d5fe96ee142d2ef0d4a60dcb8d0fdadeb3ce420948"
+  },
+  "provenance": {
+    "species": "finocchietto",
+    "latin": "Anethum foeniculum L.",
+    "key": "flower_shape",
+    "value": "ombrella",
+    "asset": {
+      "file": "incoming/correzioni-piante-2026-10-18/approvati/finocchietto-ombrella.webp",
+      "source": "incoming/correzioni-piante-2026-10-18/originali/finocchietto-ombrella.png",
+      "sourceSha256": "bca5e65ab082c4d3f0561348e07626cda9c3eb27a7b5a62d25e57415b7e1cae7",
+      "sha256": "8ed16ff1b655c5dac1008fecdff6333944126d0ea661461cb824fcd0f64677fa",
+      "bbox": [
+        8,
+        24,
+        120,
+        104
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "alphaThreshold": 16,
+      "reviewedAtSizes": [
+        128,
+        64
+      ]
+    },
+    "source": {
+      "title": "Università di Trieste · Portale della Flora di Roma",
+      "url": "https://dryades.units.it/Roma/index.php?id=3527&procedure=taxon_page"
+    },
+    "photoReference": {
+      "file": "assets/plants/finocchietto-1.webp",
+      "thumb": "assets/plants/finocchietto-1-t.webp",
+      "alt": "Finocchietto selvatico: fotografia della specie",
+      "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+      "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "page": "https://dryades.units.it/Roma/index.php?id=3527&procedure=taxon_page",
+      "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG0376JPG1598000751.jpg",
+      "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di Trieste, Monte Valerio, TS, Friuli Venezia Giulia, Italia · 20/08/2020 · Distributed under CC BY-SA 4.0 license."
+    },
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "model": "image_gen",
+    "method": "raster prima del vettore",
+    "status": "revisione editoriale visiva limitata, non certificazione",
+    "review": "REVISIONE.md",
+    "vectorStatus": "non avviato"
+  },
+  "trace_sha256": "05717e0f4276042b265a9ff7c42276621744ff5580716699453a8735945622f0",
+  "trace_settings": {
+    "palette_colors": "source RGB; no prequantization",
+    "alpha_threshold": 220,
+    "vtracer": "0.6.15",
+    "filter_speckle": 4,
+    "color_precision": 6,
+    "layer_difference": 12
+  }
+}
