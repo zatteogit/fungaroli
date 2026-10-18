@@ -6,9 +6,11 @@ const image = (t,photo,asset,full=false) => { const p=photo(t); return p?`<img d
 
 export function openComparePicker({taxa,photo,asset,title='Scegli un fungo',current='',exclude='',related=[],onSelect}) {
   const origin=document.activeElement, initialHash=location.hash;
+  const reference=taxa.find(t=>t.key===exclude);
+  const heading=reference?`${name(reference)} vs…`:title;
   const dialog=document.createElement('dialog');dialog.className='cmp-chooser cmp-finder';
-  dialog.setAttribute('aria-label',title);
-  dialog.innerHTML=`<header class="cmp-chooser-head"><h2>${esc(title)}</h2><button type="button" data-finder-close aria-label="Chiudi">×</button></header>
+  dialog.setAttribute('aria-label',heading);
+  dialog.innerHTML=`<header class="cmp-chooser-head"><h2>${esc(heading)}</h2><button type="button" data-finder-close aria-label="Chiudi">×</button></header>
     <label class="cmp-finder-search"><span>Cerca nel catalogo</span><input type="search" placeholder="Nome comune o scientifico" autocomplete="off"></label>
     ${related.length?`<div class="cmp-finder-scopes" role="group" aria-label="Specie da mostrare"><button type="button" data-scope="related" aria-pressed="true">Sosia documentati · ${related.length}</button><button type="button" data-scope="all" aria-pressed="false">Tutti i funghi</button></div>`:''}
     <p class="cmp-finder-count" role="status"></p><div class="cmp-finder-results"></div>`;
@@ -49,7 +51,7 @@ export function mountCompareStart(box,{taxa,photo,asset,related,left='',right=''
       <aside class="cmp-start-note"><b>Confrontare per osservare meglio</b><p>Vedrai differenze e somiglianze nei caratteri documentati per entrambe le specie. Il confronto non identifica un esemplare né ne certifica la commestibilità.</p></aside>`;
     box.querySelectorAll('[data-pick-side]').forEach(button=>button.onclick=()=>{
       const side=button.dataset.pickSide;
-      openComparePicker({taxa,photo,asset,title:side==='left'?'Scegli il fungo di riferimento':'Confronta con…',current:(side==='left'?a:b)?.key,exclude:(side==='left'?b:a)?.key,related:side==='right'&&a?related(a):[],onSelect:t=>{
+      openComparePicker({taxa,photo,asset,title:side==='left'?'Scegli il fungo di riferimento':'Confronta con…',current:(side==='left'?a:b)?.key,exclude:(side==='left'?b:a)?.key,related:(side==='right'?a:b)?related(side==='right'?a:b):[],onSelect:t=>{
         if(side==='left')a=t;else b=t;paint();box.querySelector(`[data-pick-side="${side}"]`).focus({preventScroll:true});
       }});
     });
