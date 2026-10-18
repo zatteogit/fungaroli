@@ -985,14 +985,12 @@ function renderCompare(box, ref, pick) {
 
   const syncCompareHeader = () => {
     if (!gallery.getClientRects().length) return;
-    const appbarHidden = matchMedia('(max-width:899px)').matches && document.documentElement.classList.contains('header-away');
     const appbar = document.querySelector('.appbar');
-    const safeTop = parseFloat(appbar && getComputedStyle(appbar).paddingTop) || 0;
     const viewportTop = window.visualViewport?.offsetTop || 0;
-    const contentTop = viewportTop + safeTop;
-    const top = viewportTop + (appbarHidden ? safeTop : appbar?.offsetHeight || 0);
-    // La soglia non cambia quando l'header principale si nasconde o riappare.
-    // Scendendo, i nomi restano nell'area visibile anche sotto la safe area iOS.
+    const top = viewportTop + (appbar?.offsetHeight || 0);
+    const contentTop = top;
+    // Nel confronto il back e le azioni restano visibili: i nomi si fissano
+    // subito sotto, quando le intestazioni delle colonne superano la barra.
     header.style.setProperty('--cmp-header-top', `${top}px`);
     const columns = slides[cur]?.querySelector('.cmp-panel:not([hidden]) .cmp-column-head') || slides[cur]?.querySelector('.cmp-kind-tabs');
     const rect = header.getBoundingClientRect();

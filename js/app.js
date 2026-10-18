@@ -494,7 +494,7 @@ function revealHeader() {
 }
 function updateHeaderScroll() {
   const y = Math.max(0, scrollY);
-  if (!mobileHeader.matches || y < 64 || document.body.dataset.page === 'mappa' || document.querySelector('.appbar :focus-visible')) {
+  if (!mobileHeader.matches || y < 64 || document.body.dataset.page === 'mappa' || document.querySelector('.appbar[data-context="comparison"]') || document.querySelector('.appbar :focus-visible')) {
     revealHeader();
     return;
   }
