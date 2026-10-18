@@ -2409,7 +2409,7 @@ html.entity-open { overflow: hidden; }
 .botanical-factors p { margin:8px 0; }
 .botanical-factors small { color:var(--muted); }
 
-@media(max-width:359px) { .appbar { gap:6px; } .appbar .brand-logo { height:26px; } .appbar-actions .icon-btn { width:36px; } }
+@media(max-width:359px) { .appbar { gap:6px; } .appbar .brand-logo { height:26px; } }
 .botanical-personalize { display:flex; gap:10px; align-items:flex-start; margin-top:18px; }
 .botanical-personalize input { margin-top:4px; flex:none; }
 
@@ -3430,3 +3430,9 @@ details.context-note { margin: 12px 0 16px; padding: 0; border: 0; border-radius
 .pref-icon { display: inline-flex; width: 15px; height: 15px; flex: none; }
 .pref-icon svg { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
 .chip.pref[aria-pressed="true"] .pref-icon { display: none; }
+
+/* Area tattile costante anche negli header più stretti; il simbolo resta discreto. */
+.appbar-actions .icon-btn { width:44px; min-width:44px; height:44px; min-height:44px; flex:none; padding:0; touch-action:manipulation; }
+.appbar-actions .theme-btn { border-radius:8px; }
+.appbar-actions .icon-btn:focus-visible { outline:2px solid var(--link); outline-offset:2px; }
+@media(prefers-reduced-motion:reduce) { .theme-btn svg { transition:none; } .theme-btn.spin svg { transform:none; } }
