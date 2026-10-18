@@ -1,0 +1,296 @@
+[
+  {
+    "file": "incoming/icone/confronto-forme-2026-10-18-01.png",
+    "sha256": "6a04e9d5c15091db875312b280e7054e7c2858497f6b69d7705a9e46a38c98dc",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        468,
+        80,
+        786,
+        412
+      ],
+      "0": [
+        64,
+        144,
+        406,
+        338
+      ],
+      "4": [
+        444,
+        482,
+        808,
+        780
+      ],
+      "3": [
+        46,
+        536,
+        424,
+        672
+      ],
+      "7": [
+        452,
+        836,
+        802,
+        1178
+      ],
+      "6": [
+        72,
+        918,
+        418,
+        1098
+      ]
+    },
+    "state": "da rivedere",
+    "review": "Lamelle del cortinario crema anziché brune. Superata da -r01."
+  },
+  {
+    "file": "incoming/icone/confronto-forme-2026-10-18-01-r01.png",
+    "sha256": "36bf67201b4bb171171a38ceada5bbcd18e1b0e44a55c1184045f3b192c7ed10",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        468,
+        80,
+        786,
+        412
+      ],
+      "0": [
+        64,
+        142,
+        406,
+        340
+      ],
+      "4": [
+        444,
+        482,
+        808,
+        780
+      ],
+      "3": [
+        46,
+        536,
+        424,
+        672
+      ],
+      "7": [
+        450,
+        836,
+        802,
+        1180
+      ],
+      "6": [
+        74,
+        920,
+        418,
+        1098
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Lamelle brune corrette, nessun anello/volva; forme e palette verificate."
+  },
+  {
+    "file": "incoming/icone/confronto-forme-2026-10-18-02.png",
+    "sha256": "e175d7b5c928efde222a5cebf8a2765ae0eeb451d7202a30dca2f2cdeb4ed3bf",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        462,
+        56,
+        796,
+        412
+      ],
+      "0": [
+        44,
+        158,
+        428,
+        308
+      ],
+      "4": [
+        460,
+        460,
+        796,
+        806
+      ],
+      "3": [
+        48,
+        534,
+        422,
+        712
+      ],
+      "7": [
+        500,
+        860,
+        752,
+        1208
+      ],
+      "6": [
+        90,
+        920,
+        380,
+        1132
+      ]
+    },
+    "state": "da rivedere",
+    "review": "Spugnola ancora appuntita. Superata da -r01."
+  },
+  {
+    "file": "incoming/icone/confronto-forme-2026-10-18-02-r01.png",
+    "sha256": "295e025829b3a260e5f15dfc2dae67e281ac56d273b9bc8c854c94980213e605",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        460,
+        56,
+        798,
+        412
+      ],
+      "0": [
+        42,
+        158,
+        428,
+        308
+      ],
+      "4": [
+        458,
+        460,
+        798,
+        808
+      ],
+      "3": [
+        48,
+        532,
+        422,
+        714
+      ],
+      "7": [
+        476,
+        900,
+        780,
+        1210
+      ],
+      "6": [
+        78,
+        934,
+        400,
+        1122
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Spugnola emisferica corretta; volva/anello amanita e reticolo boleto preservati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-01.png",
+    "sha256": "14ca3aaf70cabb8771885f76338f155b016043d7b438b4093007826e927cdfc7",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        496,
+        66,
+        758,
+        402
+      ],
+      "0": [
+        88,
+        136,
+        380,
+        300
+      ],
+      "4": [
+        454,
+        496,
+        800,
+        784
+      ],
+      "3": [
+        54,
+        572,
+        416,
+        680
+      ],
+      "7": [
+        484,
+        844,
+        764,
+        1190
+      ],
+      "6": [
+        84,
+        912,
+        382,
+        1102
+      ]
+    },
+    "state": "da rivedere",
+    "review": "Bruno del cortinario troppo aranciato. Superata da -r01."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-01-r01.png",
+    "sha256": "dba1e3ee68d7e60a272b0c0e779bf4a890f88c8d0503213bce906d1510e9b81a",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        496,
+        66,
+        760,
+        404
+      ],
+      "0": [
+        88,
+        136,
+        380,
+        302
+      ],
+      "4": [
+        454,
+        496,
+        800,
+        786
+      ],
+      "3": [
+        54,
+        572,
+        416,
+        680
+      ],
+      "7": [
+        484,
+        844,
+        766,
+        1190
+      ],
+      "6": [
+        82,
+        914,
+        382,
+        1104
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Bruno corretto; riferimenti crema emisferico/piano verificati, anello e volva preservati."
+  }
+]

@@ -1,0 +1,614 @@
+[
+  {
+    "file": "incoming/icone/confronto-forme-2026-10-18-01.png",
+    "tipo": "illustrazione",
+    "soggetto": "lepiota-brunneoincarnata",
+    "tessera": "cappello",
+    "cella": 0,
+    "variante": "forma:emisferico",
+    "base": {
+      "colore": "rosa",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Create one production sprite sheet using the five attached APPROVED Fronda icons as exact style and morphology references, ordered as Lepiota cap, Lepiota whole, Cortinarius cap, Cortinarius whole, Entoloma whole; derive the Entoloma cap-alone sprite directly from its whole-mushroom reference. Square canvas, transparent background, strict invisible 3x3 grid. Draw only six sprites: row 1 cells 0 and 1; row 2 cells 3 and 4; row 3 cells 6 and 7. Cells 2,5,8 are completely transparent. First column cap alone in side view; second column whole mushroom. Center each drawing in its cell, at least 18% clear margin on all four sides, no artwork touching adjacent cells. Preserve scale, thick dark-brown outlines, flat warm colors and simple highlights from the approved references. NO text, labels, grid lines, soil, shadows or extra features. Row 1 Lepiota brunneoincarnata: change ONLY the cap shape to hemispherical, a rounded half-dome, base cap color pink with the same brown-pink scales and short banded stem as references. Preserve the stem; do not add ring or volva (ring not documented, volva absent). Row 2 Cortinarius rubellus: change ONLY cap shape from pointed-conical to flat (piano); no cone or central pointed peak, cap horizontally spread. Same orange cap, cream stem, brown gills as reference; NO ring, volva or reticulum. Row 3 Entoloma sinuatum: change ONLY cap shape to conical (conico), a broad triangular profile with a central apex. Same gray cap, pink gills and stout pale stem as reference; NO ring, volva or reticulum. This is a schematic depiction of documented cap-shape alternatives, not a new identification portrait. Each whole mushroom must have the EXACT same new cap profile and cap color as the cap-alone sprite beside it.",
+    "autore": "Fronda/Fungaroli",
+    "licenza": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it"
+  },
+  {
+    "file": "incoming/icone/confronto-forme-2026-10-18-01.png",
+    "tipo": "illustrazione",
+    "soggetto": "lepiota-brunneoincarnata",
+    "tessera": "gambo",
+    "cella": 1,
+    "variante": "forma:emisferico",
+    "base": {
+      "colore": "rosa",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Create one production sprite sheet using the five attached APPROVED Fronda icons as exact style and morphology references, ordered as Lepiota cap, Lepiota whole, Cortinarius cap, Cortinarius whole, Entoloma whole; derive the Entoloma cap-alone sprite directly from its whole-mushroom reference. Square canvas, transparent background, strict invisible 3x3 grid. Draw only six sprites: row 1 cells 0 and 1; row 2 cells 3 and 4; row 3 cells 6 and 7. Cells 2,5,8 are completely transparent. First column cap alone in side view; second column whole mushroom. Center each drawing in its cell, at least 18% clear margin on all four sides, no artwork touching adjacent cells. Preserve scale, thick dark-brown outlines, flat warm colors and simple highlights from the approved references. NO text, labels, grid lines, soil, shadows or extra features. Row 1 Lepiota brunneoincarnata: change ONLY the cap shape to hemispherical, a rounded half-dome, base cap color pink with the same brown-pink scales and short banded stem as references. Preserve the stem; do not add ring or volva (ring not documented, volva absent). Row 2 Cortinarius rubellus: change ONLY cap shape from pointed-conical to flat (piano); no cone or central pointed peak, cap horizontally spread. Same orange cap, cream stem, brown gills as reference; NO ring, volva or reticulum. Row 3 Entoloma sinuatum: change ONLY cap shape to conical (conico), a broad triangular profile with a central apex. Same gray cap, pink gills and stout pale stem as reference; NO ring, volva or reticulum. This is a schematic depiction of documented cap-shape alternatives, not a new identification portrait. Each whole mushroom must have the EXACT same new cap profile and cap color as the cap-alone sprite beside it.",
+    "autore": "Fronda/Fungaroli",
+    "licenza": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it"
+  },
+  {
+    "file": "incoming/icone/confronto-forme-2026-10-18-01.png",
+    "tipo": "illustrazione",
+    "soggetto": "cortinarius-rubellus",
+    "tessera": "cappello",
+    "cella": 3,
+    "variante": "forma:piano",
+    "base": {
+      "colore": "arancio",
+      "forma": "conico"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Create one production sprite sheet using the five attached APPROVED Fronda icons as exact style and morphology references, ordered as Lepiota cap, Lepiota whole, Cortinarius cap, Cortinarius whole, Entoloma whole; derive the Entoloma cap-alone sprite directly from its whole-mushroom reference. Square canvas, transparent background, strict invisible 3x3 grid. Draw only six sprites: row 1 cells 0 and 1; row 2 cells 3 and 4; row 3 cells 6 and 7. Cells 2,5,8 are completely transparent. First column cap alone in side view; second column whole mushroom. Center each drawing in its cell, at least 18% clear margin on all four sides, no artwork touching adjacent cells. Preserve scale, thick dark-brown outlines, flat warm colors and simple highlights from the approved references. NO text, labels, grid lines, soil, shadows or extra features. Row 1 Lepiota brunneoincarnata: change ONLY the cap shape to hemispherical, a rounded half-dome, base cap color pink with the same brown-pink scales and short banded stem as references. Preserve the stem; do not add ring or volva (ring not documented, volva absent). Row 2 Cortinarius rubellus: change ONLY cap shape from pointed-conical to flat (piano); no cone or central pointed peak, cap horizontally spread. Same orange cap, cream stem, brown gills as reference; NO ring, volva or reticulum. Row 3 Entoloma sinuatum: change ONLY cap shape to conical (conico), a broad triangular profile with a central apex. Same gray cap, pink gills and stout pale stem as reference; NO ring, volva or reticulum. This is a schematic depiction of documented cap-shape alternatives, not a new identification portrait. Each whole mushroom must have the EXACT same new cap profile and cap color as the cap-alone sprite beside it.",
+    "autore": "Fronda/Fungaroli",
+    "licenza": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it"
+  },
+  {
+    "file": "incoming/icone/confronto-forme-2026-10-18-01.png",
+    "tipo": "illustrazione",
+    "soggetto": "cortinarius-rubellus",
+    "tessera": "gambo",
+    "cella": 4,
+    "variante": "forma:piano",
+    "base": {
+      "colore": "arancio",
+      "forma": "conico"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Create one production sprite sheet using the five attached APPROVED Fronda icons as exact style and morphology references, ordered as Lepiota cap, Lepiota whole, Cortinarius cap, Cortinarius whole, Entoloma whole; derive the Entoloma cap-alone sprite directly from its whole-mushroom reference. Square canvas, transparent background, strict invisible 3x3 grid. Draw only six sprites: row 1 cells 0 and 1; row 2 cells 3 and 4; row 3 cells 6 and 7. Cells 2,5,8 are completely transparent. First column cap alone in side view; second column whole mushroom. Center each drawing in its cell, at least 18% clear margin on all four sides, no artwork touching adjacent cells. Preserve scale, thick dark-brown outlines, flat warm colors and simple highlights from the approved references. NO text, labels, grid lines, soil, shadows or extra features. Row 1 Lepiota brunneoincarnata: change ONLY the cap shape to hemispherical, a rounded half-dome, base cap color pink with the same brown-pink scales and short banded stem as references. Preserve the stem; do not add ring or volva (ring not documented, volva absent). Row 2 Cortinarius rubellus: change ONLY cap shape from pointed-conical to flat (piano); no cone or central pointed peak, cap horizontally spread. Same orange cap, cream stem, brown gills as reference; NO ring, volva or reticulum. Row 3 Entoloma sinuatum: change ONLY cap shape to conical (conico), a broad triangular profile with a central apex. Same gray cap, pink gills and stout pale stem as reference; NO ring, volva or reticulum. This is a schematic depiction of documented cap-shape alternatives, not a new identification portrait. Each whole mushroom must have the EXACT same new cap profile and cap color as the cap-alone sprite beside it.",
+    "autore": "Fronda/Fungaroli",
+    "licenza": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it"
+  },
+  {
+    "file": "incoming/icone/confronto-forme-2026-10-18-01.png",
+    "tipo": "illustrazione",
+    "soggetto": "entoloma-sinuatum",
+    "tessera": "cappello",
+    "cella": 6,
+    "variante": "forma:conico",
+    "base": {
+      "colore": "grigio",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Create one production sprite sheet using the five attached APPROVED Fronda icons as exact style and morphology references, ordered as Lepiota cap, Lepiota whole, Cortinarius cap, Cortinarius whole, Entoloma whole; derive the Entoloma cap-alone sprite directly from its whole-mushroom reference. Square canvas, transparent background, strict invisible 3x3 grid. Draw only six sprites: row 1 cells 0 and 1; row 2 cells 3 and 4; row 3 cells 6 and 7. Cells 2,5,8 are completely transparent. First column cap alone in side view; second column whole mushroom. Center each drawing in its cell, at least 18% clear margin on all four sides, no artwork touching adjacent cells. Preserve scale, thick dark-brown outlines, flat warm colors and simple highlights from the approved references. NO text, labels, grid lines, soil, shadows or extra features. Row 1 Lepiota brunneoincarnata: change ONLY the cap shape to hemispherical, a rounded half-dome, base cap color pink with the same brown-pink scales and short banded stem as references. Preserve the stem; do not add ring or volva (ring not documented, volva absent). Row 2 Cortinarius rubellus: change ONLY cap shape from pointed-conical to flat (piano); no cone or central pointed peak, cap horizontally spread. Same orange cap, cream stem, brown gills as reference; NO ring, volva or reticulum. Row 3 Entoloma sinuatum: change ONLY cap shape to conical (conico), a broad triangular profile with a central apex. Same gray cap, pink gills and stout pale stem as reference; NO ring, volva or reticulum. This is a schematic depiction of documented cap-shape alternatives, not a new identification portrait. Each whole mushroom must have the EXACT same new cap profile and cap color as the cap-alone sprite beside it.",
+    "autore": "Fronda/Fungaroli",
+    "licenza": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it"
+  },
+  {
+    "file": "incoming/icone/confronto-forme-2026-10-18-01.png",
+    "tipo": "illustrazione",
+    "soggetto": "entoloma-sinuatum",
+    "tessera": "gambo",
+    "cella": 7,
+    "variante": "forma:conico",
+    "base": {
+      "colore": "grigio",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Create one production sprite sheet using the five attached APPROVED Fronda icons as exact style and morphology references, ordered as Lepiota cap, Lepiota whole, Cortinarius cap, Cortinarius whole, Entoloma whole; derive the Entoloma cap-alone sprite directly from its whole-mushroom reference. Square canvas, transparent background, strict invisible 3x3 grid. Draw only six sprites: row 1 cells 0 and 1; row 2 cells 3 and 4; row 3 cells 6 and 7. Cells 2,5,8 are completely transparent. First column cap alone in side view; second column whole mushroom. Center each drawing in its cell, at least 18% clear margin on all four sides, no artwork touching adjacent cells. Preserve scale, thick dark-brown outlines, flat warm colors and simple highlights from the approved references. NO text, labels, grid lines, soil, shadows or extra features. Row 1 Lepiota brunneoincarnata: change ONLY the cap shape to hemispherical, a rounded half-dome, base cap color pink with the same brown-pink scales and short banded stem as references. Preserve the stem; do not add ring or volva (ring not documented, volva absent). Row 2 Cortinarius rubellus: change ONLY cap shape from pointed-conical to flat (piano); no cone or central pointed peak, cap horizontally spread. Same orange cap, cream stem, brown gills as reference; NO ring, volva or reticulum. Row 3 Entoloma sinuatum: change ONLY cap shape to conical (conico), a broad triangular profile with a central apex. Same gray cap, pink gills and stout pale stem as reference; NO ring, volva or reticulum. This is a schematic depiction of documented cap-shape alternatives, not a new identification portrait. Each whole mushroom must have the EXACT same new cap profile and cap color as the cap-alone sprite beside it.",
+    "autore": "Fronda/Fungaroli",
+    "licenza": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it"
+  },
+  {
+    "file": "incoming/icone/confronto-forme-2026-10-18-01-r01.png",
+    "tipo": "illustrazione",
+    "soggetto": "lepiota-brunneoincarnata",
+    "tessera": "cappello",
+    "cella": 0,
+    "variante": "forma:emisferico",
+    "base": {
+      "colore": "rosa",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Edit only the visible GILLS underneath the orange whole mushroom in the MIDDLE row, MIDDLE column of this Fronda sprite sheet (Cortinarius rubellus). Its gills must be brown / rusty brown, NOT cream or white: use the documented bruno alternative. Keep the cap flat and orange and keep the pale stem, with NO ring, volva or reticulum. Preserve all other pixels, all other five drawings and all positions, proportions, contours and transparent cells exactly. Do not alter the top or bottom rows. No text, shadows or added features. True transparent background.",
+    "autore": "Fronda/Fungaroli",
+    "licenza": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it"
+  },
+  {
+    "file": "incoming/icone/confronto-forme-2026-10-18-01-r01.png",
+    "tipo": "illustrazione",
+    "soggetto": "lepiota-brunneoincarnata",
+    "tessera": "gambo",
+    "cella": 1,
+    "variante": "forma:emisferico",
+    "base": {
+      "colore": "rosa",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Edit only the visible GILLS underneath the orange whole mushroom in the MIDDLE row, MIDDLE column of this Fronda sprite sheet (Cortinarius rubellus). Its gills must be brown / rusty brown, NOT cream or white: use the documented bruno alternative. Keep the cap flat and orange and keep the pale stem, with NO ring, volva or reticulum. Preserve all other pixels, all other five drawings and all positions, proportions, contours and transparent cells exactly. Do not alter the top or bottom rows. No text, shadows or added features. True transparent background.",
+    "autore": "Fronda/Fungaroli",
+    "licenza": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it"
+  },
+  {
+    "file": "incoming/icone/confronto-forme-2026-10-18-01-r01.png",
+    "tipo": "illustrazione",
+    "soggetto": "cortinarius-rubellus",
+    "tessera": "cappello",
+    "cella": 3,
+    "variante": "forma:piano",
+    "base": {
+      "colore": "arancio",
+      "forma": "conico"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Edit only the visible GILLS underneath the orange whole mushroom in the MIDDLE row, MIDDLE column of this Fronda sprite sheet (Cortinarius rubellus). Its gills must be brown / rusty brown, NOT cream or white: use the documented bruno alternative. Keep the cap flat and orange and keep the pale stem, with NO ring, volva or reticulum. Preserve all other pixels, all other five drawings and all positions, proportions, contours and transparent cells exactly. Do not alter the top or bottom rows. No text, shadows or added features. True transparent background.",
+    "autore": "Fronda/Fungaroli",
+    "licenza": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it"
+  },
+  {
+    "file": "incoming/icone/confronto-forme-2026-10-18-01-r01.png",
+    "tipo": "illustrazione",
+    "soggetto": "cortinarius-rubellus",
+    "tessera": "gambo",
+    "cella": 4,
+    "variante": "forma:piano",
+    "base": {
+      "colore": "arancio",
+      "forma": "conico"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Edit only the visible GILLS underneath the orange whole mushroom in the MIDDLE row, MIDDLE column of this Fronda sprite sheet (Cortinarius rubellus). Its gills must be brown / rusty brown, NOT cream or white: use the documented bruno alternative. Keep the cap flat and orange and keep the pale stem, with NO ring, volva or reticulum. Preserve all other pixels, all other five drawings and all positions, proportions, contours and transparent cells exactly. Do not alter the top or bottom rows. No text, shadows or added features. True transparent background.",
+    "autore": "Fronda/Fungaroli",
+    "licenza": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it"
+  },
+  {
+    "file": "incoming/icone/confronto-forme-2026-10-18-01-r01.png",
+    "tipo": "illustrazione",
+    "soggetto": "entoloma-sinuatum",
+    "tessera": "cappello",
+    "cella": 6,
+    "variante": "forma:conico",
+    "base": {
+      "colore": "grigio",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Edit only the visible GILLS underneath the orange whole mushroom in the MIDDLE row, MIDDLE column of this Fronda sprite sheet (Cortinarius rubellus). Its gills must be brown / rusty brown, NOT cream or white: use the documented bruno alternative. Keep the cap flat and orange and keep the pale stem, with NO ring, volva or reticulum. Preserve all other pixels, all other five drawings and all positions, proportions, contours and transparent cells exactly. Do not alter the top or bottom rows. No text, shadows or added features. True transparent background.",
+    "autore": "Fronda/Fungaroli",
+    "licenza": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it"
+  },
+  {
+    "file": "incoming/icone/confronto-forme-2026-10-18-01-r01.png",
+    "tipo": "illustrazione",
+    "soggetto": "entoloma-sinuatum",
+    "tessera": "gambo",
+    "cella": 7,
+    "variante": "forma:conico",
+    "base": {
+      "colore": "grigio",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Edit only the visible GILLS underneath the orange whole mushroom in the MIDDLE row, MIDDLE column of this Fronda sprite sheet (Cortinarius rubellus). Its gills must be brown / rusty brown, NOT cream or white: use the documented bruno alternative. Keep the cap flat and orange and keep the pale stem, with NO ring, volva or reticulum. Preserve all other pixels, all other five drawings and all positions, proportions, contours and transparent cells exactly. Do not alter the top or bottom rows. No text, shadows or added features. True transparent background.",
+    "autore": "Fronda/Fungaroli",
+    "licenza": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it"
+  },
+  {
+    "file": "incoming/icone/confronto-forme-2026-10-18-02.png",
+    "tipo": "illustrazione",
+    "soggetto": "amanita-virosa",
+    "tessera": "cappello",
+    "cella": 0,
+    "variante": "forma:piano",
+    "base": {
+      "colore": "bianco",
+      "forma": "conico"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Produce a second Fronda mushroom sprite sheet using the THREE attached APPROVED whole-mushroom icons as the exact style and anatomical references, in their input order. Square 1254x1254 canvas, genuine transparent background, invisible equal 3x3 grid. Only cells 0,1,3,4,6,7 contain art; cells 2,5,8 completely transparent. For each row: left cell cap alone in side view, middle cell whole mushroom with IDENTICAL cap profile and coloration. Center everything with at least 15% clear margins; do not let any drawing cross a cell. Thick continuous dark brown outline, flat warm colors, simple highlights and light texture like the references. No labels, writing, grid lines, environment, shadow, extra specimens. Row 1 Amanita virosa: WHITE FLAT cap (piano), almost horizontal crown, no conical apex. Preserve the approved white stem, delicate ring, bulbous base inside a white sack-like volva. Do NOT remove the ring or volva. White gills; preserve smooth cap, no new warts. Row 2 Tylopilus felleus: CREAM FLAT cap (piano), horizontally extended not domed; pale pink pores below. Preserve stout stem and prominent coarse DARK-BROWN reticulum exactly as reference. No ring or volva. Row 3 Morchella esculenta: YELLOW HEMISPHERICAL cap (emisferico): a short, broadly rounded half-globe honeycomb cap, not tall, conical or pointed. Deep polygonal honeycomb pits and clear connected raised ridges, never brain-like folds. Whole mushroom: same short rounded honeycomb cap with its lower edge attached to a cream stem, as in the reference; no ring or volva. Do not introduce a cutaway or additional sections. Only documented shape alternatives change; all other traits remain as in the approved originals.",
+    "autore": "Fronda/Fungaroli",
+    "licenza": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it"
+  },
+  {
+    "file": "incoming/icone/confronto-forme-2026-10-18-02.png",
+    "tipo": "illustrazione",
+    "soggetto": "amanita-virosa",
+    "tessera": "gambo",
+    "cella": 1,
+    "variante": "forma:piano",
+    "base": {
+      "colore": "bianco",
+      "forma": "conico"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Produce a second Fronda mushroom sprite sheet using the THREE attached APPROVED whole-mushroom icons as the exact style and anatomical references, in their input order. Square 1254x1254 canvas, genuine transparent background, invisible equal 3x3 grid. Only cells 0,1,3,4,6,7 contain art; cells 2,5,8 completely transparent. For each row: left cell cap alone in side view, middle cell whole mushroom with IDENTICAL cap profile and coloration. Center everything with at least 15% clear margins; do not let any drawing cross a cell. Thick continuous dark brown outline, flat warm colors, simple highlights and light texture like the references. No labels, writing, grid lines, environment, shadow, extra specimens. Row 1 Amanita virosa: WHITE FLAT cap (piano), almost horizontal crown, no conical apex. Preserve the approved white stem, delicate ring, bulbous base inside a white sack-like volva. Do NOT remove the ring or volva. White gills; preserve smooth cap, no new warts. Row 2 Tylopilus felleus: CREAM FLAT cap (piano), horizontally extended not domed; pale pink pores below. Preserve stout stem and prominent coarse DARK-BROWN reticulum exactly as reference. No ring or volva. Row 3 Morchella esculenta: YELLOW HEMISPHERICAL cap (emisferico): a short, broadly rounded half-globe honeycomb cap, not tall, conical or pointed. Deep polygonal honeycomb pits and clear connected raised ridges, never brain-like folds. Whole mushroom: same short rounded honeycomb cap with its lower edge attached to a cream stem, as in the reference; no ring or volva. Do not introduce a cutaway or additional sections. Only documented shape alternatives change; all other traits remain as in the approved originals.",
+    "autore": "Fronda/Fungaroli",
+    "licenza": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it"
+  },
+  {
+    "file": "incoming/icone/confronto-forme-2026-10-18-02.png",
+    "tipo": "illustrazione",
+    "soggetto": "tylopilus-felleus",
+    "tessera": "cappello",
+    "cella": 3,
+    "variante": "forma:piano",
+    "base": {
+      "colore": "crema",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Produce a second Fronda mushroom sprite sheet using the THREE attached APPROVED whole-mushroom icons as the exact style and anatomical references, in their input order. Square 1254x1254 canvas, genuine transparent background, invisible equal 3x3 grid. Only cells 0,1,3,4,6,7 contain art; cells 2,5,8 completely transparent. For each row: left cell cap alone in side view, middle cell whole mushroom with IDENTICAL cap profile and coloration. Center everything with at least 15% clear margins; do not let any drawing cross a cell. Thick continuous dark brown outline, flat warm colors, simple highlights and light texture like the references. No labels, writing, grid lines, environment, shadow, extra specimens. Row 1 Amanita virosa: WHITE FLAT cap (piano), almost horizontal crown, no conical apex. Preserve the approved white stem, delicate ring, bulbous base inside a white sack-like volva. Do NOT remove the ring or volva. White gills; preserve smooth cap, no new warts. Row 2 Tylopilus felleus: CREAM FLAT cap (piano), horizontally extended not domed; pale pink pores below. Preserve stout stem and prominent coarse DARK-BROWN reticulum exactly as reference. No ring or volva. Row 3 Morchella esculenta: YELLOW HEMISPHERICAL cap (emisferico): a short, broadly rounded half-globe honeycomb cap, not tall, conical or pointed. Deep polygonal honeycomb pits and clear connected raised ridges, never brain-like folds. Whole mushroom: same short rounded honeycomb cap with its lower edge attached to a cream stem, as in the reference; no ring or volva. Do not introduce a cutaway or additional sections. Only documented shape alternatives change; all other traits remain as in the approved originals.",
+    "autore": "Fronda/Fungaroli",
+    "licenza": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it"
+  },
+  {
+    "file": "incoming/icone/confronto-forme-2026-10-18-02.png",
+    "tipo": "illustrazione",
+    "soggetto": "tylopilus-felleus",
+    "tessera": "gambo",
+    "cella": 4,
+    "variante": "forma:piano",
+    "base": {
+      "colore": "crema",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Produce a second Fronda mushroom sprite sheet using the THREE attached APPROVED whole-mushroom icons as the exact style and anatomical references, in their input order. Square 1254x1254 canvas, genuine transparent background, invisible equal 3x3 grid. Only cells 0,1,3,4,6,7 contain art; cells 2,5,8 completely transparent. For each row: left cell cap alone in side view, middle cell whole mushroom with IDENTICAL cap profile and coloration. Center everything with at least 15% clear margins; do not let any drawing cross a cell. Thick continuous dark brown outline, flat warm colors, simple highlights and light texture like the references. No labels, writing, grid lines, environment, shadow, extra specimens. Row 1 Amanita virosa: WHITE FLAT cap (piano), almost horizontal crown, no conical apex. Preserve the approved white stem, delicate ring, bulbous base inside a white sack-like volva. Do NOT remove the ring or volva. White gills; preserve smooth cap, no new warts. Row 2 Tylopilus felleus: CREAM FLAT cap (piano), horizontally extended not domed; pale pink pores below. Preserve stout stem and prominent coarse DARK-BROWN reticulum exactly as reference. No ring or volva. Row 3 Morchella esculenta: YELLOW HEMISPHERICAL cap (emisferico): a short, broadly rounded half-globe honeycomb cap, not tall, conical or pointed. Deep polygonal honeycomb pits and clear connected raised ridges, never brain-like folds. Whole mushroom: same short rounded honeycomb cap with its lower edge attached to a cream stem, as in the reference; no ring or volva. Do not introduce a cutaway or additional sections. Only documented shape alternatives change; all other traits remain as in the approved originals.",
+    "autore": "Fronda/Fungaroli",
+    "licenza": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it"
+  },
+  {
+    "file": "incoming/icone/confronto-forme-2026-10-18-02.png",
+    "tipo": "illustrazione",
+    "soggetto": "morchella-esculenta",
+    "tessera": "cappello",
+    "cella": 6,
+    "variante": "forma:emisferico",
+    "base": {
+      "colore": "giallo",
+      "forma": "conico"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Produce a second Fronda mushroom sprite sheet using the THREE attached APPROVED whole-mushroom icons as the exact style and anatomical references, in their input order. Square 1254x1254 canvas, genuine transparent background, invisible equal 3x3 grid. Only cells 0,1,3,4,6,7 contain art; cells 2,5,8 completely transparent. For each row: left cell cap alone in side view, middle cell whole mushroom with IDENTICAL cap profile and coloration. Center everything with at least 15% clear margins; do not let any drawing cross a cell. Thick continuous dark brown outline, flat warm colors, simple highlights and light texture like the references. No labels, writing, grid lines, environment, shadow, extra specimens. Row 1 Amanita virosa: WHITE FLAT cap (piano), almost horizontal crown, no conical apex. Preserve the approved white stem, delicate ring, bulbous base inside a white sack-like volva. Do NOT remove the ring or volva. White gills; preserve smooth cap, no new warts. Row 2 Tylopilus felleus: CREAM FLAT cap (piano), horizontally extended not domed; pale pink pores below. Preserve stout stem and prominent coarse DARK-BROWN reticulum exactly as reference. No ring or volva. Row 3 Morchella esculenta: YELLOW HEMISPHERICAL cap (emisferico): a short, broadly rounded half-globe honeycomb cap, not tall, conical or pointed. Deep polygonal honeycomb pits and clear connected raised ridges, never brain-like folds. Whole mushroom: same short rounded honeycomb cap with its lower edge attached to a cream stem, as in the reference; no ring or volva. Do not introduce a cutaway or additional sections. Only documented shape alternatives change; all other traits remain as in the approved originals.",
+    "autore": "Fronda/Fungaroli",
+    "licenza": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it"
+  },
+  {
+    "file": "incoming/icone/confronto-forme-2026-10-18-02.png",
+    "tipo": "illustrazione",
+    "soggetto": "morchella-esculenta",
+    "tessera": "gambo",
+    "cella": 7,
+    "variante": "forma:emisferico",
+    "base": {
+      "colore": "giallo",
+      "forma": "conico"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Produce a second Fronda mushroom sprite sheet using the THREE attached APPROVED whole-mushroom icons as the exact style and anatomical references, in their input order. Square 1254x1254 canvas, genuine transparent background, invisible equal 3x3 grid. Only cells 0,1,3,4,6,7 contain art; cells 2,5,8 completely transparent. For each row: left cell cap alone in side view, middle cell whole mushroom with IDENTICAL cap profile and coloration. Center everything with at least 15% clear margins; do not let any drawing cross a cell. Thick continuous dark brown outline, flat warm colors, simple highlights and light texture like the references. No labels, writing, grid lines, environment, shadow, extra specimens. Row 1 Amanita virosa: WHITE FLAT cap (piano), almost horizontal crown, no conical apex. Preserve the approved white stem, delicate ring, bulbous base inside a white sack-like volva. Do NOT remove the ring or volva. White gills; preserve smooth cap, no new warts. Row 2 Tylopilus felleus: CREAM FLAT cap (piano), horizontally extended not domed; pale pink pores below. Preserve stout stem and prominent coarse DARK-BROWN reticulum exactly as reference. No ring or volva. Row 3 Morchella esculenta: YELLOW HEMISPHERICAL cap (emisferico): a short, broadly rounded half-globe honeycomb cap, not tall, conical or pointed. Deep polygonal honeycomb pits and clear connected raised ridges, never brain-like folds. Whole mushroom: same short rounded honeycomb cap with its lower edge attached to a cream stem, as in the reference; no ring or volva. Do not introduce a cutaway or additional sections. Only documented shape alternatives change; all other traits remain as in the approved originals.",
+    "autore": "Fronda/Fungaroli",
+    "licenza": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it"
+  },
+  {
+    "file": "incoming/icone/confronto-forme-2026-10-18-02-r01.png",
+    "tipo": "illustrazione",
+    "soggetto": "amanita-virosa",
+    "tessera": "cappello",
+    "cella": 0,
+    "variante": "forma:piano",
+    "base": {
+      "colore": "bianco",
+      "forma": "conico"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Edit the attached approved-style Fronda sprite sheet, preserving the top two rows exactly, including their color, position, ring, volva, stem reticulum and outlines. Only correct BOTH yellow morel caps in the bottom row: their required documented shape is HEMISPHERICAL (a half globe), not conical. The top silhouette must be a smoothly rounded semicircle with no pointed or narrowed apex: cap WIDTH approximately TWICE its HEIGHT. Make these yellow honeycomb caps shorter and wider than in the input while retaining irregular polygonal pits and raised connected ridges, never brain folds. Bottom-left is cap alone; bottom-middle is whole Morchella esculenta with the same squat semicircular cap attached at its lower margin to the existing cream stem. Preserve stem details and shape, no ring/volva, no cutaway. Keep the same thick brown outline and approved warm flat colors. Preserve all six occupied cell positions and the transparent third column, true alpha, no labels, no extra shapes. Maintain clear margins.",
+    "autore": "Fronda/Fungaroli",
+    "licenza": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it"
+  },
+  {
+    "file": "incoming/icone/confronto-forme-2026-10-18-02-r01.png",
+    "tipo": "illustrazione",
+    "soggetto": "amanita-virosa",
+    "tessera": "gambo",
+    "cella": 1,
+    "variante": "forma:piano",
+    "base": {
+      "colore": "bianco",
+      "forma": "conico"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Edit the attached approved-style Fronda sprite sheet, preserving the top two rows exactly, including their color, position, ring, volva, stem reticulum and outlines. Only correct BOTH yellow morel caps in the bottom row: their required documented shape is HEMISPHERICAL (a half globe), not conical. The top silhouette must be a smoothly rounded semicircle with no pointed or narrowed apex: cap WIDTH approximately TWICE its HEIGHT. Make these yellow honeycomb caps shorter and wider than in the input while retaining irregular polygonal pits and raised connected ridges, never brain folds. Bottom-left is cap alone; bottom-middle is whole Morchella esculenta with the same squat semicircular cap attached at its lower margin to the existing cream stem. Preserve stem details and shape, no ring/volva, no cutaway. Keep the same thick brown outline and approved warm flat colors. Preserve all six occupied cell positions and the transparent third column, true alpha, no labels, no extra shapes. Maintain clear margins.",
+    "autore": "Fronda/Fungaroli",
+    "licenza": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it"
+  },
+  {
+    "file": "incoming/icone/confronto-forme-2026-10-18-02-r01.png",
+    "tipo": "illustrazione",
+    "soggetto": "tylopilus-felleus",
+    "tessera": "cappello",
+    "cella": 3,
+    "variante": "forma:piano",
+    "base": {
+      "colore": "crema",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Edit the attached approved-style Fronda sprite sheet, preserving the top two rows exactly, including their color, position, ring, volva, stem reticulum and outlines. Only correct BOTH yellow morel caps in the bottom row: their required documented shape is HEMISPHERICAL (a half globe), not conical. The top silhouette must be a smoothly rounded semicircle with no pointed or narrowed apex: cap WIDTH approximately TWICE its HEIGHT. Make these yellow honeycomb caps shorter and wider than in the input while retaining irregular polygonal pits and raised connected ridges, never brain folds. Bottom-left is cap alone; bottom-middle is whole Morchella esculenta with the same squat semicircular cap attached at its lower margin to the existing cream stem. Preserve stem details and shape, no ring/volva, no cutaway. Keep the same thick brown outline and approved warm flat colors. Preserve all six occupied cell positions and the transparent third column, true alpha, no labels, no extra shapes. Maintain clear margins.",
+    "autore": "Fronda/Fungaroli",
+    "licenza": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it"
+  },
+  {
+    "file": "incoming/icone/confronto-forme-2026-10-18-02-r01.png",
+    "tipo": "illustrazione",
+    "soggetto": "tylopilus-felleus",
+    "tessera": "gambo",
+    "cella": 4,
+    "variante": "forma:piano",
+    "base": {
+      "colore": "crema",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Edit the attached approved-style Fronda sprite sheet, preserving the top two rows exactly, including their color, position, ring, volva, stem reticulum and outlines. Only correct BOTH yellow morel caps in the bottom row: their required documented shape is HEMISPHERICAL (a half globe), not conical. The top silhouette must be a smoothly rounded semicircle with no pointed or narrowed apex: cap WIDTH approximately TWICE its HEIGHT. Make these yellow honeycomb caps shorter and wider than in the input while retaining irregular polygonal pits and raised connected ridges, never brain folds. Bottom-left is cap alone; bottom-middle is whole Morchella esculenta with the same squat semicircular cap attached at its lower margin to the existing cream stem. Preserve stem details and shape, no ring/volva, no cutaway. Keep the same thick brown outline and approved warm flat colors. Preserve all six occupied cell positions and the transparent third column, true alpha, no labels, no extra shapes. Maintain clear margins.",
+    "autore": "Fronda/Fungaroli",
+    "licenza": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it"
+  },
+  {
+    "file": "incoming/icone/confronto-forme-2026-10-18-02-r01.png",
+    "tipo": "illustrazione",
+    "soggetto": "morchella-esculenta",
+    "tessera": "cappello",
+    "cella": 6,
+    "variante": "forma:emisferico",
+    "base": {
+      "colore": "giallo",
+      "forma": "conico"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Edit the attached approved-style Fronda sprite sheet, preserving the top two rows exactly, including their color, position, ring, volva, stem reticulum and outlines. Only correct BOTH yellow morel caps in the bottom row: their required documented shape is HEMISPHERICAL (a half globe), not conical. The top silhouette must be a smoothly rounded semicircle with no pointed or narrowed apex: cap WIDTH approximately TWICE its HEIGHT. Make these yellow honeycomb caps shorter and wider than in the input while retaining irregular polygonal pits and raised connected ridges, never brain folds. Bottom-left is cap alone; bottom-middle is whole Morchella esculenta with the same squat semicircular cap attached at its lower margin to the existing cream stem. Preserve stem details and shape, no ring/volva, no cutaway. Keep the same thick brown outline and approved warm flat colors. Preserve all six occupied cell positions and the transparent third column, true alpha, no labels, no extra shapes. Maintain clear margins.",
+    "autore": "Fronda/Fungaroli",
+    "licenza": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it"
+  },
+  {
+    "file": "incoming/icone/confronto-forme-2026-10-18-02-r01.png",
+    "tipo": "illustrazione",
+    "soggetto": "morchella-esculenta",
+    "tessera": "gambo",
+    "cella": 7,
+    "variante": "forma:emisferico",
+    "base": {
+      "colore": "giallo",
+      "forma": "conico"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Edit the attached approved-style Fronda sprite sheet, preserving the top two rows exactly, including their color, position, ring, volva, stem reticulum and outlines. Only correct BOTH yellow morel caps in the bottom row: their required documented shape is HEMISPHERICAL (a half globe), not conical. The top silhouette must be a smoothly rounded semicircle with no pointed or narrowed apex: cap WIDTH approximately TWICE its HEIGHT. Make these yellow honeycomb caps shorter and wider than in the input while retaining irregular polygonal pits and raised connected ridges, never brain folds. Bottom-left is cap alone; bottom-middle is whole Morchella esculenta with the same squat semicircular cap attached at its lower margin to the existing cream stem. Preserve stem details and shape, no ring/volva, no cutaway. Keep the same thick brown outline and approved warm flat colors. Preserve all six occupied cell positions and the transparent third column, true alpha, no labels, no extra shapes. Maintain clear margins.",
+    "autore": "Fronda/Fungaroli",
+    "licenza": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it"
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-01.png",
+    "tipo": "illustrazione",
+    "soggetto": "amanita-verna",
+    "tessera": "cappello",
+    "cella": 0,
+    "variante": "colore:crema+forma:emisferico",
+    "base": {
+      "colore": "bianco",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Produce a Fronda production sprite sheet using the attached approved species icons as exact style and morphology references. Square 1254x1254, transparent alpha, invisible 3x3 grid. Each row: left cell cap-alone side view, middle cell whole mushroom with exactly the same cap; right cell empty transparent. Occupied cells [0, 1, 3, 4, 6, 7]. At least 15% margin within every cell; no outlines touching another cell or canvas edge. Exact approved flat warm palette, thick dark-brown contours, light simple highlights. NO text, environment or shadows. Change ONLY the documented cap color and cap shape; retain gills/pores, stem, ring, volva, reticulum and proportions of the species. Null traits are unknown: do not invent visible features. Color applies to the cap, never automatically to the stem. Shape terms: emisferico=rounded half-globe, width about 2x crown height; conico=clear cone/apex; convesso=rounded shallow dome; piano=flat horizontally spread low crown; imbuto=depressed funnel; ombrellato=umbrella with central umbo. ROW 1, Tignosa di primavera (Amanita verna, key amanita-verna): cap color crema, cap shape emisferico. Preserve all other anatomy from the matching reference. DOCUMENTED TRAITS: {\"hymenophore\": [\"lamelle\"], \"hymenophore_color\": [\"bianco\"], \"cap_color\": [\"bianco\", \"crema\"], \"cap_shape\": [\"emisferico\", \"convesso\", \"piano\"], \"cap_size\": [\"medio\"], \"stem_ring\": true, \"stem_volva\": true, \"stem_reticulum\": false, \"flesh_change\": [\"nessuno\"], \"smell\": [\"nessuno\"], \"habitat\": [\"latifoglie\"], \"growth\": [\"singolo\", \"gregario\"], \"season\": [3, 4, 5, 6, 7], \"spore_print\": [\"bianco\"], \"cap_veil\": null, \"latex\": false, \"flesh_texture\": [\"fibrosa\", \"soda\"], \"cap_surface\": [\"liscia\", \"viscida\", \"asciutta\"], \"gill_attachment\": [\"libere\"], \"stem_base\": [\"bulbosa\", \"normale\"]}\nROW 2, Tignosa di primavera (Amanita verna, key amanita-verna): cap color crema, cap shape piano. Preserve all other anatomy from the matching reference. DOCUMENTED TRAITS: {\"hymenophore\": [\"lamelle\"], \"hymenophore_color\": [\"bianco\"], \"cap_color\": [\"bianco\", \"crema\"], \"cap_shape\": [\"emisferico\", \"convesso\", \"piano\"], \"cap_size\": [\"medio\"], \"stem_ring\": true, \"stem_volva\": true, \"stem_reticulum\": false, \"flesh_change\": [\"nessuno\"], \"smell\": [\"nessuno\"], \"habitat\": [\"latifoglie\"], \"growth\": [\"singolo\", \"gregario\"], \"season\": [3, 4, 5, 6, 7], \"spore_print\": [\"bianco\"], \"cap_veil\": null, \"latex\": false, \"flesh_texture\": [\"fibrosa\", \"soda\"], \"cap_surface\": [\"liscia\", \"viscida\", \"asciutta\"], \"gill_attachment\": [\"libere\"], \"stem_base\": [\"bulbosa\", \"normale\"]}\nROW 3, Cortinario orellano (Cortinarius orellanus, key cortinarius-orellanus): cap color bruno, cap shape conico. Preserve all other anatomy from the matching reference. DOCUMENTED TRAITS: {\"hymenophore\": [\"lamelle\"], \"hymenophore_color\": [\"giallo\", \"arancio\", \"rosso\", \"bruno\"], \"cap_color\": [\"arancio\", \"bruno\", \"rosso\"], \"cap_shape\": [\"convesso\", \"piano\", \"conico\"], \"cap_size\": [\"piccolo\", \"medio\"], \"stem_ring\": false, \"stem_volva\": false, \"stem_reticulum\": false, \"flesh_change\": [\"nessuno\"], \"smell\": [\"rapa/terroso\", \"nessuno\"], \"habitat\": [\"latifoglie\"], \"growth\": [\"singolo\", \"gregario\"], \"season\": [8, 9, 10], \"spore_print\": [\"ruggine\", \"ocra\", \"bruno\"], \"cap_veil\": null, \"latex\": false, \"flesh_texture\": [\"fibrosa\", \"soda\"], \"cap_surface\": [\"asciutta\", \"squamosa\", \"vellutata/feltrata\", \"liscia\"], \"gill_attachment\": [\"adnate\", \"smarginate\"], \"stem_base\": [\"assottigliata\", \"normale\"]}",
+    "autore": "Fronda/Fungaroli",
+    "licenza": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it"
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-01.png",
+    "tipo": "illustrazione",
+    "soggetto": "amanita-verna",
+    "tessera": "gambo",
+    "cella": 1,
+    "variante": "colore:crema+forma:emisferico",
+    "base": {
+      "colore": "bianco",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Produce a Fronda production sprite sheet using the attached approved species icons as exact style and morphology references. Square 1254x1254, transparent alpha, invisible 3x3 grid. Each row: left cell cap-alone side view, middle cell whole mushroom with exactly the same cap; right cell empty transparent. Occupied cells [0, 1, 3, 4, 6, 7]. At least 15% margin within every cell; no outlines touching another cell or canvas edge. Exact approved flat warm palette, thick dark-brown contours, light simple highlights. NO text, environment or shadows. Change ONLY the documented cap color and cap shape; retain gills/pores, stem, ring, volva, reticulum and proportions of the species. Null traits are unknown: do not invent visible features. Color applies to the cap, never automatically to the stem. Shape terms: emisferico=rounded half-globe, width about 2x crown height; conico=clear cone/apex; convesso=rounded shallow dome; piano=flat horizontally spread low crown; imbuto=depressed funnel; ombrellato=umbrella with central umbo. ROW 1, Tignosa di primavera (Amanita verna, key amanita-verna): cap color crema, cap shape emisferico. Preserve all other anatomy from the matching reference. DOCUMENTED TRAITS: {\"hymenophore\": [\"lamelle\"], \"hymenophore_color\": [\"bianco\"], \"cap_color\": [\"bianco\", \"crema\"], \"cap_shape\": [\"emisferico\", \"convesso\", \"piano\"], \"cap_size\": [\"medio\"], \"stem_ring\": true, \"stem_volva\": true, \"stem_reticulum\": false, \"flesh_change\": [\"nessuno\"], \"smell\": [\"nessuno\"], \"habitat\": [\"latifoglie\"], \"growth\": [\"singolo\", \"gregario\"], \"season\": [3, 4, 5, 6, 7], \"spore_print\": [\"bianco\"], \"cap_veil\": null, \"latex\": false, \"flesh_texture\": [\"fibrosa\", \"soda\"], \"cap_surface\": [\"liscia\", \"viscida\", \"asciutta\"], \"gill_attachment\": [\"libere\"], \"stem_base\": [\"bulbosa\", \"normale\"]}\nROW 2, Tignosa di primavera (Amanita verna, key amanita-verna): cap color crema, cap shape piano. Preserve all other anatomy from the matching reference. DOCUMENTED TRAITS: {\"hymenophore\": [\"lamelle\"], \"hymenophore_color\": [\"bianco\"], \"cap_color\": [\"bianco\", \"crema\"], \"cap_shape\": [\"emisferico\", \"convesso\", \"piano\"], \"cap_size\": [\"medio\"], \"stem_ring\": true, \"stem_volva\": true, \"stem_reticulum\": false, \"flesh_change\": [\"nessuno\"], \"smell\": [\"nessuno\"], \"habitat\": [\"latifoglie\"], \"growth\": [\"singolo\", \"gregario\"], \"season\": [3, 4, 5, 6, 7], \"spore_print\": [\"bianco\"], \"cap_veil\": null, \"latex\": false, \"flesh_texture\": [\"fibrosa\", \"soda\"], \"cap_surface\": [\"liscia\", \"viscida\", \"asciutta\"], \"gill_attachment\": [\"libere\"], \"stem_base\": [\"bulbosa\", \"normale\"]}\nROW 3, Cortinario orellano (Cortinarius orellanus, key cortinarius-orellanus): cap color bruno, cap shape conico. Preserve all other anatomy from the matching reference. DOCUMENTED TRAITS: {\"hymenophore\": [\"lamelle\"], \"hymenophore_color\": [\"giallo\", \"arancio\", \"rosso\", \"bruno\"], \"cap_color\": [\"arancio\", \"bruno\", \"rosso\"], \"cap_shape\": [\"convesso\", \"piano\", \"conico\"], \"cap_size\": [\"piccolo\", \"medio\"], \"stem_ring\": false, \"stem_volva\": false, \"stem_reticulum\": false, \"flesh_change\": [\"nessuno\"], \"smell\": [\"rapa/terroso\", \"nessuno\"], \"habitat\": [\"latifoglie\"], \"growth\": [\"singolo\", \"gregario\"], \"season\": [8, 9, 10], \"spore_print\": [\"ruggine\", \"ocra\", \"bruno\"], \"cap_veil\": null, \"latex\": false, \"flesh_texture\": [\"fibrosa\", \"soda\"], \"cap_surface\": [\"asciutta\", \"squamosa\", \"vellutata/feltrata\", \"liscia\"], \"gill_attachment\": [\"adnate\", \"smarginate\"], \"stem_base\": [\"assottigliata\", \"normale\"]}",
+    "autore": "Fronda/Fungaroli",
+    "licenza": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it"
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-01.png",
+    "tipo": "illustrazione",
+    "soggetto": "amanita-verna",
+    "tessera": "cappello",
+    "cella": 3,
+    "variante": "colore:crema+forma:piano",
+    "base": {
+      "colore": "bianco",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Produce a Fronda production sprite sheet using the attached approved species icons as exact style and morphology references. Square 1254x1254, transparent alpha, invisible 3x3 grid. Each row: left cell cap-alone side view, middle cell whole mushroom with exactly the same cap; right cell empty transparent. Occupied cells [0, 1, 3, 4, 6, 7]. At least 15% margin within every cell; no outlines touching another cell or canvas edge. Exact approved flat warm palette, thick dark-brown contours, light simple highlights. NO text, environment or shadows. Change ONLY the documented cap color and cap shape; retain gills/pores, stem, ring, volva, reticulum and proportions of the species. Null traits are unknown: do not invent visible features. Color applies to the cap, never automatically to the stem. Shape terms: emisferico=rounded half-globe, width about 2x crown height; conico=clear cone/apex; convesso=rounded shallow dome; piano=flat horizontally spread low crown; imbuto=depressed funnel; ombrellato=umbrella with central umbo. ROW 1, Tignosa di primavera (Amanita verna, key amanita-verna): cap color crema, cap shape emisferico. Preserve all other anatomy from the matching reference. DOCUMENTED TRAITS: {\"hymenophore\": [\"lamelle\"], \"hymenophore_color\": [\"bianco\"], \"cap_color\": [\"bianco\", \"crema\"], \"cap_shape\": [\"emisferico\", \"convesso\", \"piano\"], \"cap_size\": [\"medio\"], \"stem_ring\": true, \"stem_volva\": true, \"stem_reticulum\": false, \"flesh_change\": [\"nessuno\"], \"smell\": [\"nessuno\"], \"habitat\": [\"latifoglie\"], \"growth\": [\"singolo\", \"gregario\"], \"season\": [3, 4, 5, 6, 7], \"spore_print\": [\"bianco\"], \"cap_veil\": null, \"latex\": false, \"flesh_texture\": [\"fibrosa\", \"soda\"], \"cap_surface\": [\"liscia\", \"viscida\", \"asciutta\"], \"gill_attachment\": [\"libere\"], \"stem_base\": [\"bulbosa\", \"normale\"]}\nROW 2, Tignosa di primavera (Amanita verna, key amanita-verna): cap color crema, cap shape piano. Preserve all other anatomy from the matching reference. DOCUMENTED TRAITS: {\"hymenophore\": [\"lamelle\"], \"hymenophore_color\": [\"bianco\"], \"cap_color\": [\"bianco\", \"crema\"], \"cap_shape\": [\"emisferico\", \"convesso\", \"piano\"], \"cap_size\": [\"medio\"], \"stem_ring\": true, \"stem_volva\": true, \"stem_reticulum\": false, \"flesh_change\": [\"nessuno\"], \"smell\": [\"nessuno\"], \"habitat\": [\"latifoglie\"], \"growth\": [\"singolo\", \"gregario\"], \"season\": [3, 4, 5, 6, 7], \"spore_print\": [\"bianco\"], \"cap_veil\": null, \"latex\": false, \"flesh_texture\": [\"fibrosa\", \"soda\"], \"cap_surface\": [\"liscia\", \"viscida\", \"asciutta\"], \"gill_attachment\": [\"libere\"], \"stem_base\": [\"bulbosa\", \"normale\"]}\nROW 3, Cortinario orellano (Cortinarius orellanus, key cortinarius-orellanus): cap color bruno, cap shape conico. Preserve all other anatomy from the matching reference. DOCUMENTED TRAITS: {\"hymenophore\": [\"lamelle\"], \"hymenophore_color\": [\"giallo\", \"arancio\", \"rosso\", \"bruno\"], \"cap_color\": [\"arancio\", \"bruno\", \"rosso\"], \"cap_shape\": [\"convesso\", \"piano\", \"conico\"], \"cap_size\": [\"piccolo\", \"medio\"], \"stem_ring\": false, \"stem_volva\": false, \"stem_reticulum\": false, \"flesh_change\": [\"nessuno\"], \"smell\": [\"rapa/terroso\", \"nessuno\"], \"habitat\": [\"latifoglie\"], \"growth\": [\"singolo\", \"gregario\"], \"season\": [8, 9, 10], \"spore_print\": [\"ruggine\", \"ocra\", \"bruno\"], \"cap_veil\": null, \"latex\": false, \"flesh_texture\": [\"fibrosa\", \"soda\"], \"cap_surface\": [\"asciutta\", \"squamosa\", \"vellutata/feltrata\", \"liscia\"], \"gill_attachment\": [\"adnate\", \"smarginate\"], \"stem_base\": [\"assottigliata\", \"normale\"]}",
+    "autore": "Fronda/Fungaroli",
+    "licenza": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it"
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-01.png",
+    "tipo": "illustrazione",
+    "soggetto": "amanita-verna",
+    "tessera": "gambo",
+    "cella": 4,
+    "variante": "colore:crema+forma:piano",
+    "base": {
+      "colore": "bianco",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Produce a Fronda production sprite sheet using the attached approved species icons as exact style and morphology references. Square 1254x1254, transparent alpha, invisible 3x3 grid. Each row: left cell cap-alone side view, middle cell whole mushroom with exactly the same cap; right cell empty transparent. Occupied cells [0, 1, 3, 4, 6, 7]. At least 15% margin within every cell; no outlines touching another cell or canvas edge. Exact approved flat warm palette, thick dark-brown contours, light simple highlights. NO text, environment or shadows. Change ONLY the documented cap color and cap shape; retain gills/pores, stem, ring, volva, reticulum and proportions of the species. Null traits are unknown: do not invent visible features. Color applies to the cap, never automatically to the stem. Shape terms: emisferico=rounded half-globe, width about 2x crown height; conico=clear cone/apex; convesso=rounded shallow dome; piano=flat horizontally spread low crown; imbuto=depressed funnel; ombrellato=umbrella with central umbo. ROW 1, Tignosa di primavera (Amanita verna, key amanita-verna): cap color crema, cap shape emisferico. Preserve all other anatomy from the matching reference. DOCUMENTED TRAITS: {\"hymenophore\": [\"lamelle\"], \"hymenophore_color\": [\"bianco\"], \"cap_color\": [\"bianco\", \"crema\"], \"cap_shape\": [\"emisferico\", \"convesso\", \"piano\"], \"cap_size\": [\"medio\"], \"stem_ring\": true, \"stem_volva\": true, \"stem_reticulum\": false, \"flesh_change\": [\"nessuno\"], \"smell\": [\"nessuno\"], \"habitat\": [\"latifoglie\"], \"growth\": [\"singolo\", \"gregario\"], \"season\": [3, 4, 5, 6, 7], \"spore_print\": [\"bianco\"], \"cap_veil\": null, \"latex\": false, \"flesh_texture\": [\"fibrosa\", \"soda\"], \"cap_surface\": [\"liscia\", \"viscida\", \"asciutta\"], \"gill_attachment\": [\"libere\"], \"stem_base\": [\"bulbosa\", \"normale\"]}\nROW 2, Tignosa di primavera (Amanita verna, key amanita-verna): cap color crema, cap shape piano. Preserve all other anatomy from the matching reference. DOCUMENTED TRAITS: {\"hymenophore\": [\"lamelle\"], \"hymenophore_color\": [\"bianco\"], \"cap_color\": [\"bianco\", \"crema\"], \"cap_shape\": [\"emisferico\", \"convesso\", \"piano\"], \"cap_size\": [\"medio\"], \"stem_ring\": true, \"stem_volva\": true, \"stem_reticulum\": false, \"flesh_change\": [\"nessuno\"], \"smell\": [\"nessuno\"], \"habitat\": [\"latifoglie\"], \"growth\": [\"singolo\", \"gregario\"], \"season\": [3, 4, 5, 6, 7], \"spore_print\": [\"bianco\"], \"cap_veil\": null, \"latex\": false, \"flesh_texture\": [\"fibrosa\", \"soda\"], \"cap_surface\": [\"liscia\", \"viscida\", \"asciutta\"], \"gill_attachment\": [\"libere\"], \"stem_base\": [\"bulbosa\", \"normale\"]}\nROW 3, Cortinario orellano (Cortinarius orellanus, key cortinarius-orellanus): cap color bruno, cap shape conico. Preserve all other anatomy from the matching reference. DOCUMENTED TRAITS: {\"hymenophore\": [\"lamelle\"], \"hymenophore_color\": [\"giallo\", \"arancio\", \"rosso\", \"bruno\"], \"cap_color\": [\"arancio\", \"bruno\", \"rosso\"], \"cap_shape\": [\"convesso\", \"piano\", \"conico\"], \"cap_size\": [\"piccolo\", \"medio\"], \"stem_ring\": false, \"stem_volva\": false, \"stem_reticulum\": false, \"flesh_change\": [\"nessuno\"], \"smell\": [\"rapa/terroso\", \"nessuno\"], \"habitat\": [\"latifoglie\"], \"growth\": [\"singolo\", \"gregario\"], \"season\": [8, 9, 10], \"spore_print\": [\"ruggine\", \"ocra\", \"bruno\"], \"cap_veil\": null, \"latex\": false, \"flesh_texture\": [\"fibrosa\", \"soda\"], \"cap_surface\": [\"asciutta\", \"squamosa\", \"vellutata/feltrata\", \"liscia\"], \"gill_attachment\": [\"adnate\", \"smarginate\"], \"stem_base\": [\"assottigliata\", \"normale\"]}",
+    "autore": "Fronda/Fungaroli",
+    "licenza": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it"
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-01.png",
+    "tipo": "illustrazione",
+    "soggetto": "cortinarius-orellanus",
+    "tessera": "cappello",
+    "cella": 6,
+    "variante": "colore:bruno+forma:conico",
+    "base": {
+      "colore": "arancio",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Produce a Fronda production sprite sheet using the attached approved species icons as exact style and morphology references. Square 1254x1254, transparent alpha, invisible 3x3 grid. Each row: left cell cap-alone side view, middle cell whole mushroom with exactly the same cap; right cell empty transparent. Occupied cells [0, 1, 3, 4, 6, 7]. At least 15% margin within every cell; no outlines touching another cell or canvas edge. Exact approved flat warm palette, thick dark-brown contours, light simple highlights. NO text, environment or shadows. Change ONLY the documented cap color and cap shape; retain gills/pores, stem, ring, volva, reticulum and proportions of the species. Null traits are unknown: do not invent visible features. Color applies to the cap, never automatically to the stem. Shape terms: emisferico=rounded half-globe, width about 2x crown height; conico=clear cone/apex; convesso=rounded shallow dome; piano=flat horizontally spread low crown; imbuto=depressed funnel; ombrellato=umbrella with central umbo. ROW 1, Tignosa di primavera (Amanita verna, key amanita-verna): cap color crema, cap shape emisferico. Preserve all other anatomy from the matching reference. DOCUMENTED TRAITS: {\"hymenophore\": [\"lamelle\"], \"hymenophore_color\": [\"bianco\"], \"cap_color\": [\"bianco\", \"crema\"], \"cap_shape\": [\"emisferico\", \"convesso\", \"piano\"], \"cap_size\": [\"medio\"], \"stem_ring\": true, \"stem_volva\": true, \"stem_reticulum\": false, \"flesh_change\": [\"nessuno\"], \"smell\": [\"nessuno\"], \"habitat\": [\"latifoglie\"], \"growth\": [\"singolo\", \"gregario\"], \"season\": [3, 4, 5, 6, 7], \"spore_print\": [\"bianco\"], \"cap_veil\": null, \"latex\": false, \"flesh_texture\": [\"fibrosa\", \"soda\"], \"cap_surface\": [\"liscia\", \"viscida\", \"asciutta\"], \"gill_attachment\": [\"libere\"], \"stem_base\": [\"bulbosa\", \"normale\"]}\nROW 2, Tignosa di primavera (Amanita verna, key amanita-verna): cap color crema, cap shape piano. Preserve all other anatomy from the matching reference. DOCUMENTED TRAITS: {\"hymenophore\": [\"lamelle\"], \"hymenophore_color\": [\"bianco\"], \"cap_color\": [\"bianco\", \"crema\"], \"cap_shape\": [\"emisferico\", \"convesso\", \"piano\"], \"cap_size\": [\"medio\"], \"stem_ring\": true, \"stem_volva\": true, \"stem_reticulum\": false, \"flesh_change\": [\"nessuno\"], \"smell\": [\"nessuno\"], \"habitat\": [\"latifoglie\"], \"growth\": [\"singolo\", \"gregario\"], \"season\": [3, 4, 5, 6, 7], \"spore_print\": [\"bianco\"], \"cap_veil\": null, \"latex\": false, \"flesh_texture\": [\"fibrosa\", \"soda\"], \"cap_surface\": [\"liscia\", \"viscida\", \"asciutta\"], \"gill_attachment\": [\"libere\"], \"stem_base\": [\"bulbosa\", \"normale\"]}\nROW 3, Cortinario orellano (Cortinarius orellanus, key cortinarius-orellanus): cap color bruno, cap shape conico. Preserve all other anatomy from the matching reference. DOCUMENTED TRAITS: {\"hymenophore\": [\"lamelle\"], \"hymenophore_color\": [\"giallo\", \"arancio\", \"rosso\", \"bruno\"], \"cap_color\": [\"arancio\", \"bruno\", \"rosso\"], \"cap_shape\": [\"convesso\", \"piano\", \"conico\"], \"cap_size\": [\"piccolo\", \"medio\"], \"stem_ring\": false, \"stem_volva\": false, \"stem_reticulum\": false, \"flesh_change\": [\"nessuno\"], \"smell\": [\"rapa/terroso\", \"nessuno\"], \"habitat\": [\"latifoglie\"], \"growth\": [\"singolo\", \"gregario\"], \"season\": [8, 9, 10], \"spore_print\": [\"ruggine\", \"ocra\", \"bruno\"], \"cap_veil\": null, \"latex\": false, \"flesh_texture\": [\"fibrosa\", \"soda\"], \"cap_surface\": [\"asciutta\", \"squamosa\", \"vellutata/feltrata\", \"liscia\"], \"gill_attachment\": [\"adnate\", \"smarginate\"], \"stem_base\": [\"assottigliata\", \"normale\"]}",
+    "autore": "Fronda/Fungaroli",
+    "licenza": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it"
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-01.png",
+    "tipo": "illustrazione",
+    "soggetto": "cortinarius-orellanus",
+    "tessera": "gambo",
+    "cella": 7,
+    "variante": "colore:bruno+forma:conico",
+    "base": {
+      "colore": "arancio",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Produce a Fronda production sprite sheet using the attached approved species icons as exact style and morphology references. Square 1254x1254, transparent alpha, invisible 3x3 grid. Each row: left cell cap-alone side view, middle cell whole mushroom with exactly the same cap; right cell empty transparent. Occupied cells [0, 1, 3, 4, 6, 7]. At least 15% margin within every cell; no outlines touching another cell or canvas edge. Exact approved flat warm palette, thick dark-brown contours, light simple highlights. NO text, environment or shadows. Change ONLY the documented cap color and cap shape; retain gills/pores, stem, ring, volva, reticulum and proportions of the species. Null traits are unknown: do not invent visible features. Color applies to the cap, never automatically to the stem. Shape terms: emisferico=rounded half-globe, width about 2x crown height; conico=clear cone/apex; convesso=rounded shallow dome; piano=flat horizontally spread low crown; imbuto=depressed funnel; ombrellato=umbrella with central umbo. ROW 1, Tignosa di primavera (Amanita verna, key amanita-verna): cap color crema, cap shape emisferico. Preserve all other anatomy from the matching reference. DOCUMENTED TRAITS: {\"hymenophore\": [\"lamelle\"], \"hymenophore_color\": [\"bianco\"], \"cap_color\": [\"bianco\", \"crema\"], \"cap_shape\": [\"emisferico\", \"convesso\", \"piano\"], \"cap_size\": [\"medio\"], \"stem_ring\": true, \"stem_volva\": true, \"stem_reticulum\": false, \"flesh_change\": [\"nessuno\"], \"smell\": [\"nessuno\"], \"habitat\": [\"latifoglie\"], \"growth\": [\"singolo\", \"gregario\"], \"season\": [3, 4, 5, 6, 7], \"spore_print\": [\"bianco\"], \"cap_veil\": null, \"latex\": false, \"flesh_texture\": [\"fibrosa\", \"soda\"], \"cap_surface\": [\"liscia\", \"viscida\", \"asciutta\"], \"gill_attachment\": [\"libere\"], \"stem_base\": [\"bulbosa\", \"normale\"]}\nROW 2, Tignosa di primavera (Amanita verna, key amanita-verna): cap color crema, cap shape piano. Preserve all other anatomy from the matching reference. DOCUMENTED TRAITS: {\"hymenophore\": [\"lamelle\"], \"hymenophore_color\": [\"bianco\"], \"cap_color\": [\"bianco\", \"crema\"], \"cap_shape\": [\"emisferico\", \"convesso\", \"piano\"], \"cap_size\": [\"medio\"], \"stem_ring\": true, \"stem_volva\": true, \"stem_reticulum\": false, \"flesh_change\": [\"nessuno\"], \"smell\": [\"nessuno\"], \"habitat\": [\"latifoglie\"], \"growth\": [\"singolo\", \"gregario\"], \"season\": [3, 4, 5, 6, 7], \"spore_print\": [\"bianco\"], \"cap_veil\": null, \"latex\": false, \"flesh_texture\": [\"fibrosa\", \"soda\"], \"cap_surface\": [\"liscia\", \"viscida\", \"asciutta\"], \"gill_attachment\": [\"libere\"], \"stem_base\": [\"bulbosa\", \"normale\"]}\nROW 3, Cortinario orellano (Cortinarius orellanus, key cortinarius-orellanus): cap color bruno, cap shape conico. Preserve all other anatomy from the matching reference. DOCUMENTED TRAITS: {\"hymenophore\": [\"lamelle\"], \"hymenophore_color\": [\"giallo\", \"arancio\", \"rosso\", \"bruno\"], \"cap_color\": [\"arancio\", \"bruno\", \"rosso\"], \"cap_shape\": [\"convesso\", \"piano\", \"conico\"], \"cap_size\": [\"piccolo\", \"medio\"], \"stem_ring\": false, \"stem_volva\": false, \"stem_reticulum\": false, \"flesh_change\": [\"nessuno\"], \"smell\": [\"rapa/terroso\", \"nessuno\"], \"habitat\": [\"latifoglie\"], \"growth\": [\"singolo\", \"gregario\"], \"season\": [8, 9, 10], \"spore_print\": [\"ruggine\", \"ocra\", \"bruno\"], \"cap_veil\": null, \"latex\": false, \"flesh_texture\": [\"fibrosa\", \"soda\"], \"cap_surface\": [\"asciutta\", \"squamosa\", \"vellutata/feltrata\", \"liscia\"], \"gill_attachment\": [\"adnate\", \"smarginate\"], \"stem_base\": [\"assottigliata\", \"normale\"]}",
+    "autore": "Fronda/Fungaroli",
+    "licenza": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it"
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-01-r01.png",
+    "tipo": "illustrazione",
+    "soggetto": "amanita-verna",
+    "tessera": "cappello",
+    "cella": 0,
+    "variante": "colore:crema+forma:emisferico",
+    "base": {
+      "colore": "bianco",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Edit ONLY the two CAP surfaces in the BOTTOM row of this Fronda sprite sheet. They are the documented BRUNO color variant of Cortinarius orellanus, and must be a clearly muted DARK BROWN (#8e5f36 midtone, #6b4528 shadow), not orange, copper or rust-orange. Preserve the sharp conical silhouette, dark-brown outlines, highlights, brown gills and pale stem, and no ring or volva. The isolated cap and whole-mushroom cap must use the same brown palette. Do not recolor the stem or gills. Preserve the upper TWO ROWS exactly, including cream caps, rings and white sack-like volvas. Preserve transparent background, six sprites and their positions, empty third column, no labels or new features.",
+    "autore": "Fronda/Fungaroli",
+    "licenza": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it"
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-01-r01.png",
+    "tipo": "illustrazione",
+    "soggetto": "amanita-verna",
+    "tessera": "gambo",
+    "cella": 1,
+    "variante": "colore:crema+forma:emisferico",
+    "base": {
+      "colore": "bianco",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Edit ONLY the two CAP surfaces in the BOTTOM row of this Fronda sprite sheet. They are the documented BRUNO color variant of Cortinarius orellanus, and must be a clearly muted DARK BROWN (#8e5f36 midtone, #6b4528 shadow), not orange, copper or rust-orange. Preserve the sharp conical silhouette, dark-brown outlines, highlights, brown gills and pale stem, and no ring or volva. The isolated cap and whole-mushroom cap must use the same brown palette. Do not recolor the stem or gills. Preserve the upper TWO ROWS exactly, including cream caps, rings and white sack-like volvas. Preserve transparent background, six sprites and their positions, empty third column, no labels or new features.",
+    "autore": "Fronda/Fungaroli",
+    "licenza": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it"
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-01-r01.png",
+    "tipo": "illustrazione",
+    "soggetto": "amanita-verna",
+    "tessera": "cappello",
+    "cella": 3,
+    "variante": "colore:crema+forma:piano",
+    "base": {
+      "colore": "bianco",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Edit ONLY the two CAP surfaces in the BOTTOM row of this Fronda sprite sheet. They are the documented BRUNO color variant of Cortinarius orellanus, and must be a clearly muted DARK BROWN (#8e5f36 midtone, #6b4528 shadow), not orange, copper or rust-orange. Preserve the sharp conical silhouette, dark-brown outlines, highlights, brown gills and pale stem, and no ring or volva. The isolated cap and whole-mushroom cap must use the same brown palette. Do not recolor the stem or gills. Preserve the upper TWO ROWS exactly, including cream caps, rings and white sack-like volvas. Preserve transparent background, six sprites and their positions, empty third column, no labels or new features.",
+    "autore": "Fronda/Fungaroli",
+    "licenza": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it"
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-01-r01.png",
+    "tipo": "illustrazione",
+    "soggetto": "amanita-verna",
+    "tessera": "gambo",
+    "cella": 4,
+    "variante": "colore:crema+forma:piano",
+    "base": {
+      "colore": "bianco",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Edit ONLY the two CAP surfaces in the BOTTOM row of this Fronda sprite sheet. They are the documented BRUNO color variant of Cortinarius orellanus, and must be a clearly muted DARK BROWN (#8e5f36 midtone, #6b4528 shadow), not orange, copper or rust-orange. Preserve the sharp conical silhouette, dark-brown outlines, highlights, brown gills and pale stem, and no ring or volva. The isolated cap and whole-mushroom cap must use the same brown palette. Do not recolor the stem or gills. Preserve the upper TWO ROWS exactly, including cream caps, rings and white sack-like volvas. Preserve transparent background, six sprites and their positions, empty third column, no labels or new features.",
+    "autore": "Fronda/Fungaroli",
+    "licenza": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it"
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-01-r01.png",
+    "tipo": "illustrazione",
+    "soggetto": "cortinarius-orellanus",
+    "tessera": "cappello",
+    "cella": 6,
+    "variante": "colore:bruno+forma:conico",
+    "base": {
+      "colore": "arancio",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Edit ONLY the two CAP surfaces in the BOTTOM row of this Fronda sprite sheet. They are the documented BRUNO color variant of Cortinarius orellanus, and must be a clearly muted DARK BROWN (#8e5f36 midtone, #6b4528 shadow), not orange, copper or rust-orange. Preserve the sharp conical silhouette, dark-brown outlines, highlights, brown gills and pale stem, and no ring or volva. The isolated cap and whole-mushroom cap must use the same brown palette. Do not recolor the stem or gills. Preserve the upper TWO ROWS exactly, including cream caps, rings and white sack-like volvas. Preserve transparent background, six sprites and their positions, empty third column, no labels or new features.",
+    "autore": "Fronda/Fungaroli",
+    "licenza": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it"
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-01-r01.png",
+    "tipo": "illustrazione",
+    "soggetto": "cortinarius-orellanus",
+    "tessera": "gambo",
+    "cella": 7,
+    "variante": "colore:bruno+forma:conico",
+    "base": {
+      "colore": "arancio",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Edit ONLY the two CAP surfaces in the BOTTOM row of this Fronda sprite sheet. They are the documented BRUNO color variant of Cortinarius orellanus, and must be a clearly muted DARK BROWN (#8e5f36 midtone, #6b4528 shadow), not orange, copper or rust-orange. Preserve the sharp conical silhouette, dark-brown outlines, highlights, brown gills and pale stem, and no ring or volva. The isolated cap and whole-mushroom cap must use the same brown palette. Do not recolor the stem or gills. Preserve the upper TWO ROWS exactly, including cream caps, rings and white sack-like volvas. Preserve transparent background, six sprites and their positions, empty third column, no labels or new features.",
+    "autore": "Fronda/Fungaroli",
+    "licenza": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it"
+  }
+]
