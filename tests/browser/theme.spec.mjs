@@ -8,7 +8,7 @@ async function start(browser,{mode='auto',system='light',width=390,blocked=false
   localStorage.setItem('fungaroli:install-later',String(Date.now()));
   if(blocked){const set=Storage.prototype.setItem;Storage.prototype.setItem=function(k,v){if(k==='fungaroli:theme')throw new DOMException('Storage blocked','SecurityError');return set.call(this,k,v);};}
  },blocked);
- await page.goto('/');await expect(page.locator('#theme-btn svg')).toBeVisible();return{context,page,button:page.locator('#theme-btn')};
+ await page.goto('/');await expect(page.locator('body')).not.toHaveAttribute('data-legal-pending','');await expect(page.locator('#theme-btn svg')).toBeVisible();return{context,page,button:page.locator('#theme-btn')};
 }
 for(const system of ['light','dark'])for(const mode of ['light','dark','auto'])test(`tema: ${mode}, dispositivo ${system}, primo tap cambia aspetto e completa il ciclo`,async({browser})=>{
  const {context,page,button}=await start(browser,{mode,system});

@@ -3,7 +3,7 @@ import {preparePage} from '../../tools/visual-audit.mjs';
 for(const width of [320,390])for(const route of ['/#/scopri','/'])test(`titolo sticky stabile, soglia con margine e ritorno a ${width}px ${route}`,async({browser})=>{
  const context=await browser.newContext({viewport:{width,height:740},hasTouch:true,serviceWorkers:'block',reducedMotion:'no-preference'}),page=await preparePage(context);
  await page.addInitScript(()=>localStorage.setItem('fungaroli:install-later',String(Date.now())));
- await page.goto(route);await expect(page.locator('.view:not([hidden]) .view-title')).toHaveText(route==='/'?'Dove andare':'Funghi');await page.evaluate(()=>document.fonts.ready);await page.locator('.view:not([hidden])').evaluate(async el=>{await Promise.all(el.getAnimations().map(a=>a.finished.catch(()=>{})));});
+ await page.goto(route);await expect(page.locator('body')).not.toHaveAttribute('data-legal-pending','');await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');await expect(page.locator('.view:not([hidden]) .view-title')).toHaveText(route==='/'?'Dove andare':'Funghi');await page.evaluate(()=>document.fonts.ready);await page.locator('.view:not([hidden])').evaluate(async el=>{await Promise.all(el.getAnimations().map(a=>a.finished.catch(()=>{})));});
  const boundary=await page.locator('.view:not([hidden]) .view-title').evaluate(h=>h.getBoundingClientRect().bottom+scrollY-document.querySelector('.appbar').offsetHeight);
  const root=page.locator('html'),bar=page.locator('.appbar');
  await page.evaluate(y=>scrollTo(0,y),boundary+8);await expect(root).toHaveClass(/title-in-bar/);

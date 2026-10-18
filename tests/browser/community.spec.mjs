@@ -20,7 +20,7 @@ async function setup(page,{gust=8}={}) {
   });
   await page.addInitScript(() => localStorage.setItem('fungaroli:legal-accepted', '42026-10-16'));
   const errors=[]; page.on('pageerror', (e) => errors.push(e.message));
-  await page.goto('/');
+  await page.goto('/');await expect(page.locator('body')).not.toHaveAttribute('data-legal-pending','');
   await expect(page.locator('#editorial')).toBeHidden();
   await page.goto('/#/guide');await expect(page.locator('#editorial a')).toHaveCount(3);
   await page.goto('/');await expect(page.locator('#hero .cover-link')).toBeVisible();
