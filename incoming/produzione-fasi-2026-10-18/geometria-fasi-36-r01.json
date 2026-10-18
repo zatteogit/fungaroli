@@ -1,0 +1,88 @@
+{
+  "file": "incoming/icone/fasi-36-r01.png",
+  "sha256": "310bea48d2ac28f040007f16cf462f18c3cf1b4f9de10ff9a75315e0c44ca180",
+  "size": [
+    1254,
+    1254
+  ],
+  "celle": [
+    {
+      "soggetto": "tylopilus-felleus",
+      "fase": "giovane",
+      "tessera": "cappello",
+      "cella": 0,
+      "bbox": [
+        58,
+        176,
+        408,
+        330
+      ],
+      "source": "https://it.wikipedia.org/wiki/Tylopilus_felleus"
+    },
+    {
+      "soggetto": "tylopilus-felleus",
+      "fase": "giovane",
+      "tessera": "sotto",
+      "cella": 1,
+      "bbox": [
+        468,
+        80,
+        786,
+        386
+      ],
+      "source": "https://it.wikipedia.org/wiki/Tylopilus_felleus"
+    },
+    {
+      "soggetto": "tylopilus-felleus",
+      "fase": "giovane",
+      "tessera": "gambo",
+      "cella": 2,
+      "bbox": [
+        870,
+        78,
+        1190,
+        440
+      ],
+      "source": "https://it.wikipedia.org/wiki/Tylopilus_felleus"
+    },
+    {
+      "soggetto": "tylopilus-felleus",
+      "fase": "adulto",
+      "tessera": "cappello",
+      "cella": 3,
+      "bbox": [
+        38,
+        628,
+        422,
+        724
+      ],
+      "source": "https://it.wikipedia.org/wiki/Tylopilus_felleus"
+    },
+    {
+      "soggetto": "tylopilus-felleus",
+      "fase": "adulto",
+      "tessera": "sotto",
+      "cella": 4,
+      "bbox": [
+        452,
+        532,
+        798,
+        812
+      ],
+      "source": "https://it.wikipedia.org/wiki/Tylopilus_felleus"
+    },
+    {
+      "soggetto": "tylopilus-felleus",
+      "fase": "adulto",
+      "tessera": "gambo",
+      "cella": 5,
+      "bbox": [
+        838,
+        550,
+        1224,
+        842
+      ],
+      "source": "https://it.wikipedia.org/wiki/Tylopilus_felleus"
+    }
+  ]
+}

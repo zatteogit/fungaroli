@@ -90,3 +90,9 @@
 | incoming/icone/fasi-32.png | Fasi recuperate, revisione anatomica attuale documentata | pronta da integrare | Hash e celle in produzione-fasi-2026-10-18/ricevuta-recupero.json; revisione a risoluzione piena e64px; import subordinato a controllo indipendente del coordinatore. |
 | incoming/icone/fasi-33.png | Fasi recuperate, revisione anatomica attuale documentata | pronta da integrare | Hash e celle in produzione-fasi-2026-10-18/ricevuta-recupero.json; revisione a risoluzione piena e64px; import subordinato a controllo indipendente del coordinatore. |
 | incoming/icone/fasi-34.png | Fasi recuperate, revisione anatomica attuale documentata | pronta da integrare | Hash e celle in produzione-fasi-2026-10-18/ricevuta-recupero.json; revisione a risoluzione piena e64px; import subordinato a controllo indipendente del coordinatore. |
+
+| incoming/icone/fasi-35-r01.png | Fasi crescita, 6 tessere selezionate | pronta da integrare | Revisione piena/64px in produzione-fasi-2026-10-18/revisione-fasi-35.md; hash 9b8454f2b22e1895fca1a3cc88f790a2796295b75ccbc0f485133d0a704c6a4f; solo celle 0,1,2,3,4,5; controllo indipendente coordinatore prima import. |
+
+| incoming/icone/fasi-36-r01.png | Fasi crescita, 4 tessere selezionate | pronta da integrare | Revisione piena/64px in produzione-fasi-2026-10-18/revisione-fasi-36.md; hash 310bea48d2ac28f040007f16cf462f18c3cf1b4f9de10ff9a75315e0c44ca180; solo celle 0,2,3,5; controllo indipendente coordinatore prima import. |
+
+| incoming/icone/fasi-36-r02.png | Fasi crescita, 2 tessere selezionate | pronta da integrare | Revisione piena/64px in produzione-fasi-2026-10-18/revisione-fasi-36.md; hash ce3fd387d4fd14c36c0a28102afabc41458ff386a49c4f434947215b28d1c3d7; solo celle 0,6; controllo indipendente coordinatore prima import. |

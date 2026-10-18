@@ -1,0 +1,7 @@
+# Fasi35 — Rubroboletus satanas
+
+Raster generato ora con image_gen, modello specifico non esposto. Fonte: stages in species-traits.json, https://www.first-nature.com/fungi/rubroboletus-satanas.php; traits_notes per gambo corto/ovale-bulboso e reticolo. Foto locale satanas-inat1-hd.webp confrontata come contesto anatomico adulto; non documenta da sola tutte le età. Base approvata usata per stile e parti invarianti; prompt effettivo conservato. Originale tool: /workspace/generated_images/exec-7c08faed-6a32-4328-af09-611ed09dd22f.png.
+
+Visionate tavola1254px e controllo64-fasi-35-r01.png. Tutte le6celle mostrano cappello crema; giovane emisferico, adulto convesso basso leggermente lobato; cap isolato e intero coerenti per riga. Pori giovani gialli, adulti arancio-rossi, distinti piccoli fori anziché lamelle. Reticolo rosso sul gambo tozzo ingrossato, base giallo chiaro: nessun reticolo bruno trasferito dal fiele. Nessun anello, volva, verruche, blu o radici. A64px colore dei pori e sagome restano leggibili.
+
+Limiti: la rete è regolarizzata, il numero dei pori simbolico; non comunica dimensioni o quantità misurabili. Le zone chiare/scure sul cappello sono ombreggiatura, non squame. L'adulto mostra una possibilità documentata di lobatura, non un carattere obbligatorio. Esito agente:6tessere candidate pronte, con verifica geometrica e hash nella ricevuta. Richiesta revisione indipendente del coordinatore prima import; nessun dato biologico cambiato.

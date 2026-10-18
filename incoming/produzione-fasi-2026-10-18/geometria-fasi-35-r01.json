@@ -1,0 +1,88 @@
+{
+  "file": "incoming/icone/fasi-35-r01.png",
+  "sha256": "9b8454f2b22e1895fca1a3cc88f790a2796295b75ccbc0f485133d0a704c6a4f",
+  "size": [
+    1254,
+    1254
+  ],
+  "celle": [
+    {
+      "soggetto": "rubroboletus-satanas",
+      "fase": "giovane",
+      "tessera": "cappello",
+      "cella": 0,
+      "bbox": [
+        74,
+        176,
+        398,
+        344
+      ],
+      "source": "https://www.first-nature.com/fungi/rubroboletus-satanas.php"
+    },
+    {
+      "soggetto": "rubroboletus-satanas",
+      "fase": "giovane",
+      "tessera": "sotto",
+      "cella": 1,
+      "bbox": [
+        472,
+        94,
+        782,
+        400
+      ],
+      "source": "https://www.first-nature.com/fungi/rubroboletus-satanas.php"
+    },
+    {
+      "soggetto": "rubroboletus-satanas",
+      "fase": "giovane",
+      "tessera": "gambo",
+      "cella": 2,
+      "bbox": [
+        880,
+        86,
+        1162,
+        410
+      ],
+      "source": "https://www.first-nature.com/fungi/rubroboletus-satanas.php"
+    },
+    {
+      "soggetto": "rubroboletus-satanas",
+      "fase": "adulto",
+      "tessera": "cappello",
+      "cella": 3,
+      "bbox": [
+        38,
+        594,
+        428,
+        742
+      ],
+      "source": "https://www.first-nature.com/fungi/rubroboletus-satanas.php"
+    },
+    {
+      "soggetto": "rubroboletus-satanas",
+      "fase": "adulto",
+      "tessera": "sotto",
+      "cella": 4,
+      "bbox": [
+        470,
+        508,
+        784,
+        820
+      ],
+      "source": "https://www.first-nature.com/fungi/rubroboletus-satanas.php"
+    },
+    {
+      "soggetto": "rubroboletus-satanas",
+      "fase": "adulto",
+      "tessera": "gambo",
+      "cella": 5,
+      "bbox": [
+        828,
+        526,
+        1214,
+        860
+      ],
+      "source": "https://www.first-nature.com/fungi/rubroboletus-satanas.php"
+    }
+  ]
+}

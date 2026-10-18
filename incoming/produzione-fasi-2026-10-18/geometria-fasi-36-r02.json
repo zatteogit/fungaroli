@@ -1,0 +1,36 @@
+{
+  "file": "incoming/icone/fasi-36-r02.png",
+  "sha256": "ce3fd387d4fd14c36c0a28102afabc41458ff386a49c4f434947215b28d1c3d7",
+  "size": [
+    1254,
+    1254
+  ],
+  "celle": [
+    {
+      "soggetto": "tylopilus-felleus",
+      "fase": "giovane",
+      "tessera": "sotto",
+      "cella": 0,
+      "bbox": [
+        76,
+        80,
+        500,
+        502
+      ],
+      "source": "https://it.wikipedia.org/wiki/Tylopilus_felleus"
+    },
+    {
+      "soggetto": "tylopilus-felleus",
+      "fase": "adulto",
+      "tessera": "sotto",
+      "cella": 6,
+      "bbox": [
+        74,
+        700,
+        500,
+        1124
+      ],
+      "source": "https://it.wikipedia.org/wiki/Tylopilus_felleus"
+    }
+  ]
+}

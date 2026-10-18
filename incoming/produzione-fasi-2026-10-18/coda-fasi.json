@@ -1,0 +1,2952 @@
+[
+  {
+    "id": 35,
+    "stato": "raster revisionato, attende controllo indipendente",
+    "righe": [
+      {
+        "soggetto": "rubroboletus-satanas",
+        "fase": "giovane",
+        "stage": {
+          "id": "giovane",
+          "label": "Giovane",
+          "desc": "Cappello arrotondato, a cupola. Pori giallastri negli esemplari molto giovani.",
+          "cap_shape": "emisferico",
+          "hymenophore_color": [
+            "giallo"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/rubroboletus-satanas.php"
+        },
+        "traits": {
+          "hymenophore": [
+            "pori"
+          ],
+          "hymenophore_color": [
+            "giallo",
+            "arancio",
+            "rosso"
+          ],
+          "cap_color": [
+            "bianco",
+            "grigio",
+            "crema"
+          ],
+          "cap_shape": [
+            "emisferico",
+            "convesso"
+          ],
+          "cap_size": [
+            "medio",
+            "grande"
+          ],
+          "stem_ring": false,
+          "stem_volva": false,
+          "stem_reticulum": true,
+          "flesh_change": [
+            "blu"
+          ],
+          "smell": [
+            "sgradevole",
+            "nessuno"
+          ],
+          "habitat": [
+            "latifoglie"
+          ],
+          "growth": [
+            "singolo"
+          ],
+          "season": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "spore_print": [
+            "verde-oliva",
+            "bruno"
+          ],
+          "cap_veil": false,
+          "latex": false,
+          "flesh_texture": [
+            "soda"
+          ],
+          "cap_surface": [
+            "vellutata/feltrata",
+            "asciutta",
+            "liscia",
+            "viscida"
+          ],
+          "gill_attachment": null,
+          "stem_base": [
+            "bulbosa",
+            "normale"
+          ]
+        },
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "celle": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "soggetto": "rubroboletus-satanas",
+        "fase": "adulto",
+        "stage": {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Cappello che può diventare irregolare e lobato. Pori arancio, poi rossi.",
+          "cap_shape": "convesso",
+          "hymenophore_color": [
+            "arancio",
+            "rosso"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/rubroboletus-satanas.php"
+        },
+        "traits": {
+          "hymenophore": [
+            "pori"
+          ],
+          "hymenophore_color": [
+            "giallo",
+            "arancio",
+            "rosso"
+          ],
+          "cap_color": [
+            "bianco",
+            "grigio",
+            "crema"
+          ],
+          "cap_shape": [
+            "emisferico",
+            "convesso"
+          ],
+          "cap_size": [
+            "medio",
+            "grande"
+          ],
+          "stem_ring": false,
+          "stem_volva": false,
+          "stem_reticulum": true,
+          "flesh_change": [
+            "blu"
+          ],
+          "smell": [
+            "sgradevole",
+            "nessuno"
+          ],
+          "habitat": [
+            "latifoglie"
+          ],
+          "growth": [
+            "singolo"
+          ],
+          "season": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "spore_print": [
+            "verde-oliva",
+            "bruno"
+          ],
+          "cap_veil": false,
+          "latex": false,
+          "flesh_texture": [
+            "soda"
+          ],
+          "cap_surface": [
+            "vellutata/feltrata",
+            "asciutta",
+            "liscia",
+            "viscida"
+          ],
+          "gill_attachment": null,
+          "stem_base": [
+            "bulbosa",
+            "normale"
+          ]
+        },
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "celle": [
+          3,
+          4,
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "stato": "raster revisionato, attende controllo indipendente",
+    "righe": [
+      {
+        "soggetto": "tylopilus-felleus",
+        "fase": "giovane",
+        "stage": {
+          "id": "giovane",
+          "label": "Giovane",
+          "desc": "Cappello emisferico. Tubuli e pori bianchi.",
+          "cap_shape": "emisferico",
+          "hymenophore_color": [
+            "bianco"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://it.wikipedia.org/wiki/Tylopilus_felleus"
+        },
+        "traits": {
+          "hymenophore": [
+            "pori"
+          ],
+          "hymenophore_color": [
+            "bianco",
+            "rosa"
+          ],
+          "cap_color": [
+            "bruno",
+            "crema"
+          ],
+          "cap_shape": [
+            "emisferico",
+            "convesso",
+            "piano"
+          ],
+          "cap_size": [
+            "medio",
+            "grande"
+          ],
+          "stem_ring": false,
+          "stem_volva": false,
+          "stem_reticulum": true,
+          "flesh_change": [
+            "nessuno"
+          ],
+          "smell": [
+            "nessuno"
+          ],
+          "habitat": [
+            "conifere",
+            "latifoglie"
+          ],
+          "growth": [
+            "singolo",
+            "gregario"
+          ],
+          "season": [
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "spore_print": [
+            "rosa",
+            "bruno"
+          ],
+          "cap_veil": false,
+          "latex": false,
+          "flesh_texture": [
+            "soda"
+          ],
+          "cap_surface": [
+            "asciutta",
+            "vellutata/feltrata",
+            "liscia"
+          ],
+          "gill_attachment": null,
+          "stem_base": [
+            "bulbosa",
+            "normale"
+          ]
+        },
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "celle": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "soggetto": "tylopilus-felleus",
+        "fase": "adulto",
+        "stage": {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Cappello spianato. Pori rosati.",
+          "cap_shape": "piano",
+          "hymenophore_color": [
+            "rosa"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://it.wikipedia.org/wiki/Tylopilus_felleus"
+        },
+        "traits": {
+          "hymenophore": [
+            "pori"
+          ],
+          "hymenophore_color": [
+            "bianco",
+            "rosa"
+          ],
+          "cap_color": [
+            "bruno",
+            "crema"
+          ],
+          "cap_shape": [
+            "emisferico",
+            "convesso",
+            "piano"
+          ],
+          "cap_size": [
+            "medio",
+            "grande"
+          ],
+          "stem_ring": false,
+          "stem_volva": false,
+          "stem_reticulum": true,
+          "flesh_change": [
+            "nessuno"
+          ],
+          "smell": [
+            "nessuno"
+          ],
+          "habitat": [
+            "conifere",
+            "latifoglie"
+          ],
+          "growth": [
+            "singolo",
+            "gregario"
+          ],
+          "season": [
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "spore_print": [
+            "rosa",
+            "bruno"
+          ],
+          "cap_veil": false,
+          "latex": false,
+          "flesh_texture": [
+            "soda"
+          ],
+          "cap_surface": [
+            "asciutta",
+            "vellutata/feltrata",
+            "liscia"
+          ],
+          "gill_attachment": null,
+          "stem_base": [
+            "bulbosa",
+            "normale"
+          ]
+        },
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "celle": [
+          3,
+          4,
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "stato": "da generare",
+    "righe": [
+      {
+        "soggetto": "aereus",
+        "fase": "giovane",
+        "stage": {
+          "id": "giovane",
+          "label": "Giovane",
+          "desc": "Cappello emisferico. Tubuli e pori bianchi.",
+          "cap_shape": "emisferico",
+          "hymenophore_color": [
+            "bianco"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://it.wikipedia.org/wiki/Boletus_aereus"
+        },
+        "traits": {
+          "hymenophore": [
+            "pori"
+          ],
+          "hymenophore_color": [
+            "bianco",
+            "crema",
+            "giallo",
+            "verde"
+          ],
+          "cap_color": [
+            "bruno",
+            "nero"
+          ],
+          "cap_shape": [
+            "emisferico",
+            "convesso",
+            "piano"
+          ],
+          "cap_size": [
+            "medio",
+            "grande"
+          ],
+          "stem_ring": false,
+          "stem_volva": false,
+          "stem_reticulum": true,
+          "flesh_change": [
+            "nessuno"
+          ],
+          "smell": [
+            "gradevole"
+          ],
+          "habitat": [
+            "latifoglie"
+          ],
+          "growth": [
+            "singolo",
+            "gregario"
+          ],
+          "season": [
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "spore_print": [
+            "verde-oliva",
+            "bruno"
+          ],
+          "cap_veil": false,
+          "latex": false,
+          "flesh_texture": [
+            "soda"
+          ],
+          "cap_surface": [
+            "vellutata/feltrata",
+            "liscia",
+            "asciutta"
+          ],
+          "gill_attachment": null,
+          "stem_base": [
+            "normale",
+            "bulbosa"
+          ]
+        },
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "celle": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "soggetto": "aereus",
+        "fase": "adulto",
+        "stage": {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Cappello convesso. Pori giallastri.",
+          "cap_shape": "convesso",
+          "hymenophore_color": [
+            "giallo"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://it.wikipedia.org/wiki/Boletus_aereus"
+        },
+        "traits": {
+          "hymenophore": [
+            "pori"
+          ],
+          "hymenophore_color": [
+            "bianco",
+            "crema",
+            "giallo",
+            "verde"
+          ],
+          "cap_color": [
+            "bruno",
+            "nero"
+          ],
+          "cap_shape": [
+            "emisferico",
+            "convesso",
+            "piano"
+          ],
+          "cap_size": [
+            "medio",
+            "grande"
+          ],
+          "stem_ring": false,
+          "stem_volva": false,
+          "stem_reticulum": true,
+          "flesh_change": [
+            "nessuno"
+          ],
+          "smell": [
+            "gradevole"
+          ],
+          "habitat": [
+            "latifoglie"
+          ],
+          "growth": [
+            "singolo",
+            "gregario"
+          ],
+          "season": [
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "spore_print": [
+            "verde-oliva",
+            "bruno"
+          ],
+          "cap_veil": false,
+          "latex": false,
+          "flesh_texture": [
+            "soda"
+          ],
+          "cap_surface": [
+            "vellutata/feltrata",
+            "liscia",
+            "asciutta"
+          ],
+          "gill_attachment": null,
+          "stem_base": [
+            "normale",
+            "bulbosa"
+          ]
+        },
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "celle": [
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "soggetto": "aereus",
+        "fase": "maturo",
+        "stage": {
+          "id": "maturo",
+          "label": "Maturo",
+          "desc": "Cappello aperto e spianato; i pori formano una spugna giallo sporco.",
+          "cap_shape": "piano",
+          "hymenophore_color": [
+            "giallo"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://it.wikipedia.org/wiki/Boletus_aereus"
+        },
+        "traits": {
+          "hymenophore": [
+            "pori"
+          ],
+          "hymenophore_color": [
+            "bianco",
+            "crema",
+            "giallo",
+            "verde"
+          ],
+          "cap_color": [
+            "bruno",
+            "nero"
+          ],
+          "cap_shape": [
+            "emisferico",
+            "convesso",
+            "piano"
+          ],
+          "cap_size": [
+            "medio",
+            "grande"
+          ],
+          "stem_ring": false,
+          "stem_volva": false,
+          "stem_reticulum": true,
+          "flesh_change": [
+            "nessuno"
+          ],
+          "smell": [
+            "gradevole"
+          ],
+          "habitat": [
+            "latifoglie"
+          ],
+          "growth": [
+            "singolo",
+            "gregario"
+          ],
+          "season": [
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "spore_print": [
+            "verde-oliva",
+            "bruno"
+          ],
+          "cap_veil": false,
+          "latex": false,
+          "flesh_texture": [
+            "soda"
+          ],
+          "cap_surface": [
+            "vellutata/feltrata",
+            "liscia",
+            "asciutta"
+          ],
+          "gill_attachment": null,
+          "stem_base": [
+            "normale",
+            "bulbosa"
+          ]
+        },
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "celle": [
+          6,
+          7,
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "stato": "da generare",
+    "righe": [
+      {
+        "soggetto": "aestivalis",
+        "fase": "giovane",
+        "stage": {
+          "id": "giovane",
+          "label": "Giovane",
+          "desc": "Cappello tondeggiante, poi emisferico. Pori bianchi.",
+          "cap_shape": "emisferico",
+          "hymenophore_color": [
+            "bianco"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://it.wikipedia.org/wiki/Boletus_aestivalis"
+        },
+        "traits": {
+          "hymenophore": [
+            "pori"
+          ],
+          "hymenophore_color": [
+            "bianco",
+            "crema",
+            "giallo",
+            "verde"
+          ],
+          "cap_color": [
+            "bruno",
+            "crema"
+          ],
+          "cap_shape": [
+            "emisferico",
+            "convesso"
+          ],
+          "cap_size": [
+            "piccolo",
+            "medio",
+            "grande"
+          ],
+          "stem_ring": false,
+          "stem_volva": false,
+          "stem_reticulum": true,
+          "flesh_change": [
+            "nessuno"
+          ],
+          "smell": [
+            "gradevole"
+          ],
+          "habitat": [
+            "latifoglie"
+          ],
+          "growth": [
+            "singolo",
+            "gregario"
+          ],
+          "season": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "spore_print": [
+            "verde-oliva",
+            "bruno"
+          ],
+          "cap_veil": false,
+          "latex": false,
+          "flesh_texture": [
+            "soda"
+          ],
+          "cap_surface": [
+            "asciutta",
+            "vellutata/feltrata"
+          ],
+          "gill_attachment": null,
+          "stem_base": [
+            "normale",
+            "bulbosa"
+          ]
+        },
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "celle": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "soggetto": "aestivalis",
+        "fase": "adulto",
+        "stage": {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Cappello quasi appiattito, raramente disteso del tutto. Pori giallini.",
+          "cap_shape": "convesso",
+          "hymenophore_color": [
+            "giallo"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://it.wikipedia.org/wiki/Boletus_aestivalis"
+        },
+        "traits": {
+          "hymenophore": [
+            "pori"
+          ],
+          "hymenophore_color": [
+            "bianco",
+            "crema",
+            "giallo",
+            "verde"
+          ],
+          "cap_color": [
+            "bruno",
+            "crema"
+          ],
+          "cap_shape": [
+            "emisferico",
+            "convesso"
+          ],
+          "cap_size": [
+            "piccolo",
+            "medio",
+            "grande"
+          ],
+          "stem_ring": false,
+          "stem_volva": false,
+          "stem_reticulum": true,
+          "flesh_change": [
+            "nessuno"
+          ],
+          "smell": [
+            "gradevole"
+          ],
+          "habitat": [
+            "latifoglie"
+          ],
+          "growth": [
+            "singolo",
+            "gregario"
+          ],
+          "season": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "spore_print": [
+            "verde-oliva",
+            "bruno"
+          ],
+          "cap_veil": false,
+          "latex": false,
+          "flesh_texture": [
+            "soda"
+          ],
+          "cap_surface": [
+            "asciutta",
+            "vellutata/feltrata"
+          ],
+          "gill_attachment": null,
+          "stem_base": [
+            "normale",
+            "bulbosa"
+          ]
+        },
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "celle": [
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "soggetto": "aestivalis",
+        "fase": "maturo",
+        "stage": {
+          "id": "maturo",
+          "label": "Maturo",
+          "desc": "Pori giallo-verdastri.",
+          "hymenophore_color": [
+            "giallo",
+            "verde"
+          ],
+          "tiles": [
+            "sotto"
+          ],
+          "source": "https://it.wikipedia.org/wiki/Boletus_aestivalis"
+        },
+        "traits": {
+          "hymenophore": [
+            "pori"
+          ],
+          "hymenophore_color": [
+            "bianco",
+            "crema",
+            "giallo",
+            "verde"
+          ],
+          "cap_color": [
+            "bruno",
+            "crema"
+          ],
+          "cap_shape": [
+            "emisferico",
+            "convesso"
+          ],
+          "cap_size": [
+            "piccolo",
+            "medio",
+            "grande"
+          ],
+          "stem_ring": false,
+          "stem_volva": false,
+          "stem_reticulum": true,
+          "flesh_change": [
+            "nessuno"
+          ],
+          "smell": [
+            "gradevole"
+          ],
+          "habitat": [
+            "latifoglie"
+          ],
+          "growth": [
+            "singolo",
+            "gregario"
+          ],
+          "season": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "spore_print": [
+            "verde-oliva",
+            "bruno"
+          ],
+          "cap_veil": false,
+          "latex": false,
+          "flesh_texture": [
+            "soda"
+          ],
+          "cap_surface": [
+            "asciutta",
+            "vellutata/feltrata"
+          ],
+          "gill_attachment": null,
+          "stem_base": [
+            "normale",
+            "bulbosa"
+          ]
+        },
+        "tiles": [
+          "sotto"
+        ],
+        "celle": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "stato": "da generare",
+    "righe": [
+      {
+        "soggetto": "edulis",
+        "fase": "giovane",
+        "stage": {
+          "id": "giovane",
+          "label": "Giovane",
+          "desc": "Cappello emisferico, a volte piccolo rispetto al gambo. Tubuli bianchi.",
+          "cap_shape": "emisferico",
+          "hymenophore_color": [
+            "bianco"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://it.wikipedia.org/wiki/Boletus_edulis"
+        },
+        "traits": {
+          "hymenophore": [
+            "pori"
+          ],
+          "hymenophore_color": [
+            "bianco",
+            "crema",
+            "giallo",
+            "verde"
+          ],
+          "cap_color": [
+            "bruno",
+            "crema"
+          ],
+          "cap_shape": [
+            "emisferico",
+            "convesso"
+          ],
+          "cap_size": [
+            "medio",
+            "grande"
+          ],
+          "stem_ring": false,
+          "stem_volva": false,
+          "stem_reticulum": true,
+          "flesh_change": [
+            "nessuno"
+          ],
+          "smell": [
+            "gradevole"
+          ],
+          "habitat": [
+            "latifoglie",
+            "conifere"
+          ],
+          "growth": [
+            "singolo",
+            "gregario"
+          ],
+          "season": [
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "spore_print": [
+            "verde-oliva",
+            "bruno"
+          ],
+          "cap_veil": false,
+          "latex": false,
+          "flesh_texture": [
+            "soda"
+          ],
+          "cap_surface": [
+            "liscia",
+            "asciutta",
+            "viscida"
+          ],
+          "gill_attachment": null,
+          "stem_base": [
+            "normale",
+            "bulbosa"
+          ]
+        },
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "celle": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "soggetto": "edulis",
+        "fase": "adulto",
+        "stage": {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Cappello piano-convesso. Tubuli giallastri.",
+          "cap_shape": "convesso",
+          "hymenophore_color": [
+            "giallo"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://it.wikipedia.org/wiki/Boletus_edulis"
+        },
+        "traits": {
+          "hymenophore": [
+            "pori"
+          ],
+          "hymenophore_color": [
+            "bianco",
+            "crema",
+            "giallo",
+            "verde"
+          ],
+          "cap_color": [
+            "bruno",
+            "crema"
+          ],
+          "cap_shape": [
+            "emisferico",
+            "convesso"
+          ],
+          "cap_size": [
+            "medio",
+            "grande"
+          ],
+          "stem_ring": false,
+          "stem_volva": false,
+          "stem_reticulum": true,
+          "flesh_change": [
+            "nessuno"
+          ],
+          "smell": [
+            "gradevole"
+          ],
+          "habitat": [
+            "latifoglie",
+            "conifere"
+          ],
+          "growth": [
+            "singolo",
+            "gregario"
+          ],
+          "season": [
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "spore_print": [
+            "verde-oliva",
+            "bruno"
+          ],
+          "cap_veil": false,
+          "latex": false,
+          "flesh_texture": [
+            "soda"
+          ],
+          "cap_surface": [
+            "liscia",
+            "asciutta",
+            "viscida"
+          ],
+          "gill_attachment": null,
+          "stem_base": [
+            "normale",
+            "bulbosa"
+          ]
+        },
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "celle": [
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "soggetto": "edulis",
+        "fase": "maturo",
+        "stage": {
+          "id": "maturo",
+          "label": "Maturo",
+          "desc": "Tubuli verdastri.",
+          "hymenophore_color": [
+            "verde"
+          ],
+          "tiles": [
+            "sotto"
+          ],
+          "source": "https://it.wikipedia.org/wiki/Boletus_edulis"
+        },
+        "traits": {
+          "hymenophore": [
+            "pori"
+          ],
+          "hymenophore_color": [
+            "bianco",
+            "crema",
+            "giallo",
+            "verde"
+          ],
+          "cap_color": [
+            "bruno",
+            "crema"
+          ],
+          "cap_shape": [
+            "emisferico",
+            "convesso"
+          ],
+          "cap_size": [
+            "medio",
+            "grande"
+          ],
+          "stem_ring": false,
+          "stem_volva": false,
+          "stem_reticulum": true,
+          "flesh_change": [
+            "nessuno"
+          ],
+          "smell": [
+            "gradevole"
+          ],
+          "habitat": [
+            "latifoglie",
+            "conifere"
+          ],
+          "growth": [
+            "singolo",
+            "gregario"
+          ],
+          "season": [
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "spore_print": [
+            "verde-oliva",
+            "bruno"
+          ],
+          "cap_veil": false,
+          "latex": false,
+          "flesh_texture": [
+            "soda"
+          ],
+          "cap_surface": [
+            "liscia",
+            "asciutta",
+            "viscida"
+          ],
+          "gill_attachment": null,
+          "stem_base": [
+            "normale",
+            "bulbosa"
+          ]
+        },
+        "tiles": [
+          "sotto"
+        ],
+        "celle": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "stato": "da generare",
+    "righe": [
+      {
+        "soggetto": "pinophilus",
+        "fase": "giovane",
+        "stage": {
+          "id": "giovane",
+          "label": "Giovane",
+          "desc": "Pori bianchi.",
+          "hymenophore_color": [
+            "bianco"
+          ],
+          "tiles": [
+            "sotto"
+          ],
+          "source": "https://it.wikipedia.org/wiki/Boletus_pinophilus"
+        },
+        "traits": {
+          "hymenophore": [
+            "pori"
+          ],
+          "hymenophore_color": [
+            "bianco",
+            "crema",
+            "giallo",
+            "verde"
+          ],
+          "cap_color": [
+            "rosso",
+            "bruno"
+          ],
+          "cap_shape": [
+            "emisferico",
+            "convesso"
+          ],
+          "cap_size": [
+            "medio",
+            "grande"
+          ],
+          "stem_ring": false,
+          "stem_volva": false,
+          "stem_reticulum": true,
+          "flesh_change": [
+            "nessuno"
+          ],
+          "smell": [
+            "gradevole"
+          ],
+          "habitat": [
+            "conifere",
+            "latifoglie"
+          ],
+          "growth": [
+            "singolo",
+            "gregario"
+          ],
+          "season": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "spore_print": [
+            "verde-oliva",
+            "bruno"
+          ],
+          "cap_veil": false,
+          "latex": false,
+          "flesh_texture": [
+            "soda"
+          ],
+          "cap_surface": [
+            "liscia",
+            "asciutta",
+            "viscida",
+            "vellutata/feltrata"
+          ],
+          "gill_attachment": null,
+          "stem_base": [
+            "normale",
+            "bulbosa"
+          ]
+        },
+        "tiles": [
+          "sotto"
+        ],
+        "celle": [
+          0
+        ]
+      },
+      {
+        "soggetto": "pinophilus",
+        "fase": "adulto",
+        "stage": {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Pori gialli od olivastri.",
+          "hymenophore_color": [
+            "giallo",
+            "verde"
+          ],
+          "tiles": [
+            "sotto"
+          ],
+          "source": "https://it.wikipedia.org/wiki/Boletus_pinophilus"
+        },
+        "traits": {
+          "hymenophore": [
+            "pori"
+          ],
+          "hymenophore_color": [
+            "bianco",
+            "crema",
+            "giallo",
+            "verde"
+          ],
+          "cap_color": [
+            "rosso",
+            "bruno"
+          ],
+          "cap_shape": [
+            "emisferico",
+            "convesso"
+          ],
+          "cap_size": [
+            "medio",
+            "grande"
+          ],
+          "stem_ring": false,
+          "stem_volva": false,
+          "stem_reticulum": true,
+          "flesh_change": [
+            "nessuno"
+          ],
+          "smell": [
+            "gradevole"
+          ],
+          "habitat": [
+            "conifere",
+            "latifoglie"
+          ],
+          "growth": [
+            "singolo",
+            "gregario"
+          ],
+          "season": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "spore_print": [
+            "verde-oliva",
+            "bruno"
+          ],
+          "cap_veil": false,
+          "latex": false,
+          "flesh_texture": [
+            "soda"
+          ],
+          "cap_surface": [
+            "liscia",
+            "asciutta",
+            "viscida",
+            "vellutata/feltrata"
+          ],
+          "gill_attachment": null,
+          "stem_base": [
+            "normale",
+            "bulbosa"
+          ]
+        },
+        "tiles": [
+          "sotto"
+        ],
+        "celle": [
+          3
+        ]
+      },
+      {
+        "soggetto": "cibarius",
+        "fase": "giovane",
+        "stage": {
+          "id": "giovane",
+          "label": "Giovane",
+          "desc": "Cappello convesso.",
+          "cap_shape": "convesso",
+          "tiles": [
+            "cappello",
+            "gambo"
+          ],
+          "source": "https://it.wikipedia.org/wiki/Cantharellus_cibarius"
+        },
+        "traits": {
+          "hymenophore": [
+            "pliche"
+          ],
+          "hymenophore_color": [
+            "giallo",
+            "arancio"
+          ],
+          "cap_color": [
+            "giallo",
+            "arancio"
+          ],
+          "cap_shape": [
+            "convesso",
+            "imbuto"
+          ],
+          "cap_size": [
+            "piccolo",
+            "medio"
+          ],
+          "stem_ring": false,
+          "stem_volva": false,
+          "stem_reticulum": false,
+          "flesh_change": [
+            "nessuno"
+          ],
+          "smell": [
+            "gradevole"
+          ],
+          "habitat": [
+            "latifoglie",
+            "conifere"
+          ],
+          "growth": [
+            "gregario"
+          ],
+          "season": [
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "spore_print": [
+            "bianco",
+            "crema",
+            "giallo",
+            "rosa"
+          ],
+          "cap_veil": false,
+          "latex": false,
+          "flesh_texture": [
+            "soda",
+            "fibrosa"
+          ],
+          "cap_surface": [
+            "liscia",
+            "asciutta"
+          ],
+          "gill_attachment": [
+            "decorrenti"
+          ],
+          "stem_base": [
+            "assottigliata",
+            "normale"
+          ]
+        },
+        "tiles": [
+          "cappello",
+          "gambo"
+        ],
+        "celle": [
+          6,
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "stato": "da generare",
+    "righe": [
+      {
+        "soggetto": "cibarius",
+        "fase": "adulto",
+        "stage": {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Cappello piano e avvallato, a imbuto.",
+          "cap_shape": "imbuto",
+          "tiles": [
+            "cappello",
+            "gambo"
+          ],
+          "source": "https://it.wikipedia.org/wiki/Cantharellus_cibarius"
+        },
+        "traits": {
+          "hymenophore": [
+            "pliche"
+          ],
+          "hymenophore_color": [
+            "giallo",
+            "arancio"
+          ],
+          "cap_color": [
+            "giallo",
+            "arancio"
+          ],
+          "cap_shape": [
+            "convesso",
+            "imbuto"
+          ],
+          "cap_size": [
+            "piccolo",
+            "medio"
+          ],
+          "stem_ring": false,
+          "stem_volva": false,
+          "stem_reticulum": false,
+          "flesh_change": [
+            "nessuno"
+          ],
+          "smell": [
+            "gradevole"
+          ],
+          "habitat": [
+            "latifoglie",
+            "conifere"
+          ],
+          "growth": [
+            "gregario"
+          ],
+          "season": [
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "spore_print": [
+            "bianco",
+            "crema",
+            "giallo",
+            "rosa"
+          ],
+          "cap_veil": false,
+          "latex": false,
+          "flesh_texture": [
+            "soda",
+            "fibrosa"
+          ],
+          "cap_surface": [
+            "liscia",
+            "asciutta"
+          ],
+          "gill_attachment": [
+            "decorrenti"
+          ],
+          "stem_base": [
+            "assottigliata",
+            "normale"
+          ]
+        },
+        "tiles": [
+          "cappello",
+          "gambo"
+        ],
+        "celle": [
+          0,
+          1
+        ]
+      },
+      {
+        "soggetto": "coprinus-comatus",
+        "fase": "giovane",
+        "stage": {
+          "id": "giovane",
+          "label": "Giovane",
+          "desc": "Esce dal terreno come un cilindro bianco: il cappello copre quasi tutto il gambo. Lamelle bianche.",
+          "cap_shape": "conico",
+          "hymenophore_color": [
+            "bianco"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://en.wikipedia.org/wiki/Coprinus_comatus"
+        },
+        "traits": {
+          "hymenophore": [
+            "lamelle"
+          ],
+          "hymenophore_color": [
+            "bianco",
+            "rosa",
+            "nero"
+          ],
+          "cap_color": [
+            "bianco",
+            "bruno",
+            "nero"
+          ],
+          "cap_shape": [
+            "conico"
+          ],
+          "cap_size": [
+            "piccolo",
+            "medio"
+          ],
+          "cap_surface": [
+            "squamosa"
+          ],
+          "cap_veil": null,
+          "stem_ring": true,
+          "stem_volva": false,
+          "stem_reticulum": false,
+          "stem_base": [
+            "normale"
+          ],
+          "flesh_change": null,
+          "flesh_texture": null,
+          "smell": [
+            "gradevole",
+            "nessuno"
+          ],
+          "latex": false,
+          "gill_attachment": [
+            "libere"
+          ],
+          "growth": [
+            "singolo",
+            "gregario"
+          ],
+          "habitat": [
+            "prati/radure"
+          ],
+          "season": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "spore_print": [
+            "nero"
+          ]
+        },
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "celle": [
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "soggetto": "coprinus-comatus",
+        "fase": "maturo",
+        "stage": {
+          "id": "maturo",
+          "label": "Maturo",
+          "desc": "Il cappello si apre a campana allungata; le lamelle diventano rosa.",
+          "cap_shape": "conico",
+          "hymenophore_color": [
+            "rosa"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/coprinus-comatus.php"
+        },
+        "traits": {
+          "hymenophore": [
+            "lamelle"
+          ],
+          "hymenophore_color": [
+            "bianco",
+            "rosa",
+            "nero"
+          ],
+          "cap_color": [
+            "bianco",
+            "bruno",
+            "nero"
+          ],
+          "cap_shape": [
+            "conico"
+          ],
+          "cap_size": [
+            "piccolo",
+            "medio"
+          ],
+          "cap_surface": [
+            "squamosa"
+          ],
+          "cap_veil": null,
+          "stem_ring": true,
+          "stem_volva": false,
+          "stem_reticulum": false,
+          "stem_base": [
+            "normale"
+          ],
+          "flesh_change": null,
+          "flesh_texture": null,
+          "smell": [
+            "gradevole",
+            "nessuno"
+          ],
+          "latex": false,
+          "gill_attachment": [
+            "libere"
+          ],
+          "growth": [
+            "singolo",
+            "gregario"
+          ],
+          "habitat": [
+            "prati/radure"
+          ],
+          "season": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "spore_print": [
+            "nero"
+          ]
+        },
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "celle": [
+          6,
+          7,
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "stato": "da generare",
+    "righe": [
+      {
+        "soggetto": "coprinus-comatus",
+        "fase": "sciolto",
+        "stage": {
+          "id": "sciolto",
+          "label": "Si scioglie",
+          "desc": "Le lamelle diventano nere e si sciolgono dal margine in un liquido scuro; l’anello si macchia di nero e scivola in basso.",
+          "cap_shape": "conico",
+          "hymenophore_color": [
+            "nero"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/coprinus-comatus.php"
+        },
+        "traits": {
+          "hymenophore": [
+            "lamelle"
+          ],
+          "hymenophore_color": [
+            "bianco",
+            "rosa",
+            "nero"
+          ],
+          "cap_color": [
+            "bianco",
+            "bruno",
+            "nero"
+          ],
+          "cap_shape": [
+            "conico"
+          ],
+          "cap_size": [
+            "piccolo",
+            "medio"
+          ],
+          "cap_surface": [
+            "squamosa"
+          ],
+          "cap_veil": null,
+          "stem_ring": true,
+          "stem_volva": false,
+          "stem_reticulum": false,
+          "stem_base": [
+            "normale"
+          ],
+          "flesh_change": null,
+          "flesh_texture": null,
+          "smell": [
+            "gradevole",
+            "nessuno"
+          ],
+          "latex": false,
+          "gill_attachment": [
+            "libere"
+          ],
+          "growth": [
+            "singolo",
+            "gregario"
+          ],
+          "habitat": [
+            "prati/radure"
+          ],
+          "season": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "spore_print": [
+            "nero"
+          ]
+        },
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "celle": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "soggetto": "cyclocybe-aegerita",
+        "fase": "giovane",
+        "stage": {
+          "id": "giovane",
+          "label": "Giovane",
+          "desc": "Cappello emisferico. Lamelle crema.",
+          "cap_shape": "emisferico",
+          "hymenophore_color": [
+            "crema"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/cyclocybe-cylindracea.php"
+        },
+        "traits": {
+          "hymenophore": [
+            "lamelle"
+          ],
+          "hymenophore_color": [
+            "crema",
+            "grigio",
+            "bruno"
+          ],
+          "cap_color": [
+            "crema",
+            "bruno"
+          ],
+          "cap_shape": [
+            "emisferico",
+            "convesso",
+            "piano"
+          ],
+          "cap_size": [
+            "piccolo",
+            "medio"
+          ],
+          "cap_surface": null,
+          "cap_veil": false,
+          "stem_ring": true,
+          "stem_volva": false,
+          "stem_reticulum": false,
+          "stem_base": null,
+          "flesh_change": [
+            "nessuno"
+          ],
+          "flesh_texture": [
+            "fibrosa"
+          ],
+          "smell": [
+            "gradevole"
+          ],
+          "latex": false,
+          "gill_attachment": [
+            "adnate",
+            "decorrenti"
+          ],
+          "growth": [
+            "cespitoso"
+          ],
+          "habitat": [
+            "ceppaie/legno",
+            "latifoglie"
+          ],
+          "season": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "spore_print": [
+            "bruno"
+          ]
+        },
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "celle": [
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "soggetto": "cyclocybe-aegerita",
+        "fase": "adulto",
+        "stage": {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Cappello largamente convesso o piano, margine ondulato, più scuro con l’età. Lamelle grigio-brune, poi brune.",
+          "cap_shape": "piano",
+          "hymenophore_color": [
+            "grigio",
+            "bruno"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/cyclocybe-cylindracea.php"
+        },
+        "traits": {
+          "hymenophore": [
+            "lamelle"
+          ],
+          "hymenophore_color": [
+            "crema",
+            "grigio",
+            "bruno"
+          ],
+          "cap_color": [
+            "crema",
+            "bruno"
+          ],
+          "cap_shape": [
+            "emisferico",
+            "convesso",
+            "piano"
+          ],
+          "cap_size": [
+            "piccolo",
+            "medio"
+          ],
+          "cap_surface": null,
+          "cap_veil": false,
+          "stem_ring": true,
+          "stem_volva": false,
+          "stem_reticulum": false,
+          "stem_base": null,
+          "flesh_change": [
+            "nessuno"
+          ],
+          "flesh_texture": [
+            "fibrosa"
+          ],
+          "smell": [
+            "gradevole"
+          ],
+          "latex": false,
+          "gill_attachment": [
+            "adnate",
+            "decorrenti"
+          ],
+          "growth": [
+            "cespitoso"
+          ],
+          "habitat": [
+            "ceppaie/legno",
+            "latifoglie"
+          ],
+          "season": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "spore_print": [
+            "bruno"
+          ]
+        },
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "celle": [
+          6,
+          7,
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "stato": "da generare",
+    "righe": [
+      {
+        "soggetto": "hypholoma-fasciculare",
+        "fase": "giovane",
+        "stage": {
+          "id": "giovane",
+          "label": "Giovane",
+          "desc": "Lamelle giallo zolfo.",
+          "hymenophore_color": [
+            "giallo"
+          ],
+          "tiles": [
+            "sotto"
+          ],
+          "source": "https://www.first-nature.com/fungi/hypholoma-fasciculare.php"
+        },
+        "traits": {
+          "hymenophore": [
+            "lamelle"
+          ],
+          "hymenophore_color": [
+            "giallo",
+            "verde",
+            "bruno",
+            "nero"
+          ],
+          "cap_color": [
+            "giallo",
+            "arancio"
+          ],
+          "cap_shape": [
+            "convesso",
+            "piano"
+          ],
+          "cap_size": [
+            "piccolo",
+            "medio"
+          ],
+          "stem_ring": false,
+          "stem_volva": false,
+          "stem_reticulum": false,
+          "flesh_change": [
+            "nessuno"
+          ],
+          "smell": [
+            "nessuno"
+          ],
+          "habitat": [
+            "ceppaie/legno",
+            "latifoglie",
+            "conifere"
+          ],
+          "growth": [
+            "cespitoso"
+          ],
+          "season": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "spore_print": [
+            "bruno-violaceo",
+            "nero"
+          ],
+          "cap_veil": null,
+          "latex": false,
+          "flesh_texture": [
+            "fibrosa",
+            "elastica/coriacea",
+            "soda"
+          ],
+          "cap_surface": [
+            "liscia",
+            "asciutta"
+          ],
+          "gill_attachment": [
+            "adnate",
+            "smarginate"
+          ],
+          "stem_base": [
+            "normale",
+            "assottigliata"
+          ]
+        },
+        "tiles": [
+          "sotto"
+        ],
+        "celle": [
+          0
+        ]
+      },
+      {
+        "soggetto": "hypholoma-fasciculare",
+        "fase": "adulto",
+        "stage": {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Lamelle verde oliva.",
+          "hymenophore_color": [
+            "verde"
+          ],
+          "tiles": [
+            "sotto"
+          ],
+          "source": "https://www.first-nature.com/fungi/hypholoma-fasciculare.php"
+        },
+        "traits": {
+          "hymenophore": [
+            "lamelle"
+          ],
+          "hymenophore_color": [
+            "giallo",
+            "verde",
+            "bruno",
+            "nero"
+          ],
+          "cap_color": [
+            "giallo",
+            "arancio"
+          ],
+          "cap_shape": [
+            "convesso",
+            "piano"
+          ],
+          "cap_size": [
+            "piccolo",
+            "medio"
+          ],
+          "stem_ring": false,
+          "stem_volva": false,
+          "stem_reticulum": false,
+          "flesh_change": [
+            "nessuno"
+          ],
+          "smell": [
+            "nessuno"
+          ],
+          "habitat": [
+            "ceppaie/legno",
+            "latifoglie",
+            "conifere"
+          ],
+          "growth": [
+            "cespitoso"
+          ],
+          "season": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "spore_print": [
+            "bruno-violaceo",
+            "nero"
+          ],
+          "cap_veil": null,
+          "latex": false,
+          "flesh_texture": [
+            "fibrosa",
+            "elastica/coriacea",
+            "soda"
+          ],
+          "cap_surface": [
+            "liscia",
+            "asciutta"
+          ],
+          "gill_attachment": [
+            "adnate",
+            "smarginate"
+          ],
+          "stem_base": [
+            "normale",
+            "assottigliata"
+          ]
+        },
+        "tiles": [
+          "sotto"
+        ],
+        "celle": [
+          3
+        ]
+      },
+      {
+        "soggetto": "hypholoma-fasciculare",
+        "fase": "maturo",
+        "stage": {
+          "id": "maturo",
+          "label": "Maturo",
+          "desc": "Lamelle che anneriscono man mano che le spore maturano.",
+          "hymenophore_color": [
+            "nero"
+          ],
+          "tiles": [
+            "sotto"
+          ],
+          "source": "https://www.first-nature.com/fungi/hypholoma-fasciculare.php"
+        },
+        "traits": {
+          "hymenophore": [
+            "lamelle"
+          ],
+          "hymenophore_color": [
+            "giallo",
+            "verde",
+            "bruno",
+            "nero"
+          ],
+          "cap_color": [
+            "giallo",
+            "arancio"
+          ],
+          "cap_shape": [
+            "convesso",
+            "piano"
+          ],
+          "cap_size": [
+            "piccolo",
+            "medio"
+          ],
+          "stem_ring": false,
+          "stem_volva": false,
+          "stem_reticulum": false,
+          "flesh_change": [
+            "nessuno"
+          ],
+          "smell": [
+            "nessuno"
+          ],
+          "habitat": [
+            "ceppaie/legno",
+            "latifoglie",
+            "conifere"
+          ],
+          "growth": [
+            "cespitoso"
+          ],
+          "season": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "spore_print": [
+            "bruno-violaceo",
+            "nero"
+          ],
+          "cap_veil": null,
+          "latex": false,
+          "flesh_texture": [
+            "fibrosa",
+            "elastica/coriacea",
+            "soda"
+          ],
+          "cap_surface": [
+            "liscia",
+            "asciutta"
+          ],
+          "gill_attachment": [
+            "adnate",
+            "smarginate"
+          ],
+          "stem_base": [
+            "normale",
+            "assottigliata"
+          ]
+        },
+        "tiles": [
+          "sotto"
+        ],
+        "celle": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "stato": "da generare",
+    "righe": [
+      {
+        "soggetto": "mellea",
+        "fase": "giovane",
+        "stage": {
+          "id": "giovane",
+          "label": "Giovane",
+          "desc": "Cappello molto convesso, coperto di squamette fini, soprattutto al centro.",
+          "cap_shape": "convesso",
+          "tiles": [
+            "cappello",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/armillaria-mellea.php"
+        },
+        "traits": {
+          "hymenophore": [
+            "lamelle"
+          ],
+          "hymenophore_color": [
+            "bianco",
+            "crema",
+            "bruno"
+          ],
+          "cap_color": [
+            "giallo",
+            "bruno"
+          ],
+          "cap_shape": [
+            "convesso",
+            "piano"
+          ],
+          "cap_size": [
+            "piccolo",
+            "medio"
+          ],
+          "stem_ring": true,
+          "stem_volva": false,
+          "stem_reticulum": false,
+          "flesh_change": [
+            "nessuno"
+          ],
+          "smell": [
+            "gradevole"
+          ],
+          "habitat": [
+            "ceppaie/legno",
+            "latifoglie"
+          ],
+          "growth": [
+            "cespitoso"
+          ],
+          "season": [
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "spore_print": [
+            "bianco",
+            "crema"
+          ],
+          "cap_veil": false,
+          "latex": false,
+          "flesh_texture": [
+            "fibrosa",
+            "elastica/coriacea"
+          ],
+          "cap_surface": [
+            "squamosa",
+            "liscia",
+            "asciutta",
+            "viscida"
+          ],
+          "gill_attachment": [
+            "adnate",
+            "decorrenti"
+          ],
+          "stem_base": [
+            "assottigliata",
+            "normale",
+            "bulbosa"
+          ]
+        },
+        "tiles": [
+          "cappello",
+          "gambo"
+        ],
+        "celle": [
+          0,
+          1
+        ]
+      },
+      {
+        "soggetto": "mellea",
+        "fase": "adulto",
+        "stage": {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Cappello appiattito, spesso con il margine ondulato e striato; le squamette possono non vedersi più.",
+          "cap_shape": "piano",
+          "tiles": [
+            "cappello",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/armillaria-mellea.php"
+        },
+        "traits": {
+          "hymenophore": [
+            "lamelle"
+          ],
+          "hymenophore_color": [
+            "bianco",
+            "crema",
+            "bruno"
+          ],
+          "cap_color": [
+            "giallo",
+            "bruno"
+          ],
+          "cap_shape": [
+            "convesso",
+            "piano"
+          ],
+          "cap_size": [
+            "piccolo",
+            "medio"
+          ],
+          "stem_ring": true,
+          "stem_volva": false,
+          "stem_reticulum": false,
+          "flesh_change": [
+            "nessuno"
+          ],
+          "smell": [
+            "gradevole"
+          ],
+          "habitat": [
+            "ceppaie/legno",
+            "latifoglie"
+          ],
+          "growth": [
+            "cespitoso"
+          ],
+          "season": [
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "spore_print": [
+            "bianco",
+            "crema"
+          ],
+          "cap_veil": false,
+          "latex": false,
+          "flesh_texture": [
+            "fibrosa",
+            "elastica/coriacea"
+          ],
+          "cap_surface": [
+            "squamosa",
+            "liscia",
+            "asciutta",
+            "viscida"
+          ],
+          "gill_attachment": [
+            "adnate",
+            "decorrenti"
+          ],
+          "stem_base": [
+            "assottigliata",
+            "normale",
+            "bulbosa"
+          ]
+        },
+        "tiles": [
+          "cappello",
+          "gambo"
+        ],
+        "celle": [
+          3,
+          4
+        ]
+      },
+      {
+        "soggetto": "pleurotus-ostreatus",
+        "fase": "giovane",
+        "stage": {
+          "id": "giovane",
+          "label": "Giovane",
+          "desc": "Cappello convesso.",
+          "cap_shape": "convesso",
+          "tiles": [
+            "cappello",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/pleurotus-ostreatus.php"
+        },
+        "traits": {
+          "hymenophore": [
+            "lamelle"
+          ],
+          "hymenophore_color": [
+            "bianco",
+            "crema"
+          ],
+          "cap_color": [
+            "bianco",
+            "crema",
+            "bruno",
+            "grigio"
+          ],
+          "cap_shape": [
+            "convesso",
+            "imbuto"
+          ],
+          "cap_size": [
+            "medio",
+            "grande"
+          ],
+          "cap_surface": null,
+          "cap_veil": false,
+          "stem_ring": false,
+          "stem_volva": false,
+          "stem_reticulum": false,
+          "stem_base": [
+            "assottigliata"
+          ],
+          "flesh_change": null,
+          "flesh_texture": null,
+          "smell": [
+            "gradevole"
+          ],
+          "latex": false,
+          "gill_attachment": [
+            "decorrenti"
+          ],
+          "growth": [
+            "gregario",
+            "cespitoso"
+          ],
+          "habitat": [
+            "ceppaie/legno",
+            "latifoglie"
+          ],
+          "season": [
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            1,
+            2
+          ],
+          "spore_print": [
+            "bianco"
+          ]
+        },
+        "tiles": [
+          "cappello",
+          "gambo"
+        ],
+        "celle": [
+          6,
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "stato": "da generare",
+    "righe": [
+      {
+        "soggetto": "pleurotus-ostreatus",
+        "fase": "adulto",
+        "stage": {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Cappello depresso al centro, con il margine ondulato.",
+          "cap_shape": "imbuto",
+          "tiles": [
+            "cappello",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/pleurotus-ostreatus.php"
+        },
+        "traits": {
+          "hymenophore": [
+            "lamelle"
+          ],
+          "hymenophore_color": [
+            "bianco",
+            "crema"
+          ],
+          "cap_color": [
+            "bianco",
+            "crema",
+            "bruno",
+            "grigio"
+          ],
+          "cap_shape": [
+            "convesso",
+            "imbuto"
+          ],
+          "cap_size": [
+            "medio",
+            "grande"
+          ],
+          "cap_surface": null,
+          "cap_veil": false,
+          "stem_ring": false,
+          "stem_volva": false,
+          "stem_reticulum": false,
+          "stem_base": [
+            "assottigliata"
+          ],
+          "flesh_change": null,
+          "flesh_texture": null,
+          "smell": [
+            "gradevole"
+          ],
+          "latex": false,
+          "gill_attachment": [
+            "decorrenti"
+          ],
+          "growth": [
+            "gregario",
+            "cespitoso"
+          ],
+          "habitat": [
+            "ceppaie/legno",
+            "latifoglie"
+          ],
+          "season": [
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            1,
+            2
+          ],
+          "spore_print": [
+            "bianco"
+          ]
+        },
+        "tiles": [
+          "cappello",
+          "gambo"
+        ],
+        "celle": [
+          0,
+          1
+        ]
+      },
+      {
+        "soggetto": "terreum",
+        "fase": "giovane",
+        "stage": {
+          "id": "giovane",
+          "label": "Giovane",
+          "desc": "Cappello conico. Lamelle bianche.",
+          "cap_shape": "conico",
+          "hymenophore_color": [
+            "bianco"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/tricholoma-terreum.php"
+        },
+        "traits": {
+          "hymenophore": [
+            "lamelle"
+          ],
+          "hymenophore_color": [
+            "bianco",
+            "grigio"
+          ],
+          "cap_color": [
+            "grigio",
+            "bruno"
+          ],
+          "cap_shape": [
+            "conico",
+            "convesso",
+            "piano"
+          ],
+          "cap_size": [
+            "piccolo",
+            "medio"
+          ],
+          "stem_ring": null,
+          "stem_volva": false,
+          "stem_reticulum": false,
+          "flesh_change": [
+            "nessuno"
+          ],
+          "smell": [
+            "nessuno"
+          ],
+          "habitat": [
+            "conifere"
+          ],
+          "growth": [
+            "gregario"
+          ],
+          "season": [
+            9,
+            10,
+            11,
+            12
+          ],
+          "spore_print": [
+            "bianco",
+            "crema"
+          ],
+          "cap_veil": false,
+          "latex": false,
+          "flesh_texture": [
+            "fibrosa"
+          ],
+          "cap_surface": [
+            "asciutta",
+            "squamosa",
+            "vellutata/feltrata"
+          ],
+          "gill_attachment": [
+            "smarginate",
+            "adnate"
+          ],
+          "stem_base": [
+            "normale"
+          ]
+        },
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "celle": [
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "soggetto": "terreum",
+        "fase": "adulto",
+        "stage": {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Cappello quasi piatto con un piccolo umbone. Lamelle grigie, spesso con toni gialli.",
+          "cap_shape": "piano",
+          "hymenophore_color": [
+            "grigio"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/tricholoma-terreum.php"
+        },
+        "traits": {
+          "hymenophore": [
+            "lamelle"
+          ],
+          "hymenophore_color": [
+            "bianco",
+            "grigio"
+          ],
+          "cap_color": [
+            "grigio",
+            "bruno"
+          ],
+          "cap_shape": [
+            "conico",
+            "convesso",
+            "piano"
+          ],
+          "cap_size": [
+            "piccolo",
+            "medio"
+          ],
+          "stem_ring": null,
+          "stem_volva": false,
+          "stem_reticulum": false,
+          "flesh_change": [
+            "nessuno"
+          ],
+          "smell": [
+            "nessuno"
+          ],
+          "habitat": [
+            "conifere"
+          ],
+          "growth": [
+            "gregario"
+          ],
+          "season": [
+            9,
+            10,
+            11,
+            12
+          ],
+          "spore_print": [
+            "bianco",
+            "crema"
+          ],
+          "cap_veil": false,
+          "latex": false,
+          "flesh_texture": [
+            "fibrosa"
+          ],
+          "cap_surface": [
+            "asciutta",
+            "squamosa",
+            "vellutata/feltrata"
+          ],
+          "gill_attachment": [
+            "smarginate",
+            "adnate"
+          ],
+          "stem_base": [
+            "normale"
+          ]
+        },
+        "tiles": [
+          "cappello",
+          "sotto",
+          "gambo"
+        ],
+        "celle": [
+          6,
+          7,
+          8
+        ]
+      }
+    ]
+  }
+]
