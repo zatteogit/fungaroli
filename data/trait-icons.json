@@ -20,6 +20,14 @@
    "base": {
     "colore": "nero",
     "forma": "convesso"
+   },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "emisferico",
+     "convesso",
+     "piano"
+    ]
    }
   },
   "aestivalis": {
@@ -33,6 +41,13 @@
    "base": {
     "colore": "bruno",
     "forma": "convesso"
+   },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "emisferico",
+     "convesso"
+    ]
    }
   },
   "agaricus-arvensis": {
@@ -50,6 +65,14 @@
    "base": {
     "colore": "crema",
     "forma": "convesso"
+   },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "emisferico",
+     "convesso",
+     "piano"
+    ]
    }
   },
   "agaricus-bisporus": {
@@ -63,6 +86,14 @@
    "base": {
     "colore": "bruno",
     "forma": "convesso"
+   },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "emisferico",
+     "convesso",
+     "piano"
+    ]
    }
   },
   "agaricus-campestris": {
@@ -81,6 +112,14 @@
    "base": {
     "colore": "bianco",
     "forma": "convesso"
+   },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "emisferico",
+     "convesso",
+     "piano"
+    ]
    }
   },
   "agaricus-sylvicola": {
@@ -95,6 +134,14 @@
    "base": {
     "colore": "crema",
     "forma": "convesso"
+   },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "emisferico",
+     "convesso",
+     "piano"
+    ]
    }
   },
   "agaricus-xanthodermus": {
@@ -111,6 +158,14 @@
    "base": {
     "colore": "bianco",
     "forma": "convesso"
+   },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "emisferico",
+     "convesso",
+     "piano"
+    ]
    }
   },
   "amanita-crocea": {
@@ -129,6 +184,14 @@
    "base": {
     "colore": "arancio",
     "forma": "convesso"
+   },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "emisferico",
+     "convesso",
+     "piano"
+    ]
    }
   },
   "amanita-muscaria": {
@@ -148,6 +211,14 @@
    "base": {
     "colore": "rosso",
     "forma": "convesso"
+   },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "emisferico",
+     "convesso",
+     "piano"
+    ]
    }
   },
   "amanita-pantherina": {
@@ -166,6 +237,15 @@
    "base": {
     "colore": "bruno",
     "forma": "convesso"
+   },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "conico",
+     "emisferico",
+     "convesso",
+     "piano"
+    ]
    }
   },
   "amanita-phalloides": {
@@ -222,6 +302,14 @@
    "base": {
     "colore": "rosa",
     "forma": "convesso"
+   },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "emisferico",
+     "convesso",
+     "piano"
+    ]
    }
   },
   "amanita-verna": {
@@ -239,6 +327,14 @@
    "base": {
     "colore": "bianco",
     "forma": "convesso"
+   },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "emisferico",
+     "convesso",
+     "piano"
+    ]
    }
   },
   "amanita-virosa": {
@@ -251,6 +347,14 @@
    "base": {
     "colore": "bianco",
     "forma": "conico"
+   },
+   "shapes": {
+    "drawn": "conico",
+    "values": [
+     "conico",
+     "emisferico",
+     "convesso"
+    ]
    }
   },
   "armillaria-tabescens": {
@@ -291,6 +395,14 @@
    "base": {
     "colore": "arancio",
     "forma": "convesso"
+   },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "emisferico",
+     "convesso",
+     "piano"
+    ]
    }
   },
   "caloboletus-calopus": {
@@ -392,6 +504,14 @@
    "base": {
     "colore": "crema",
     "forma": "ombrellato"
+   },
+   "shapes": {
+    "drawn": "ombrellato",
+    "values": [
+     "ombrellato",
+     "emisferico",
+     "convesso"
+    ]
    }
   },
   "chlorophyllum-venenatum": {
@@ -425,6 +545,13 @@
    "base": {
     "colore": "giallo",
     "forma": "imbuto"
+   },
+   "shapes": {
+    "drawn": "imbuto",
+    "values": [
+     "convesso",
+     "imbuto"
+    ]
    }
   },
   "clitocybe-rivulosa": {
@@ -493,6 +620,14 @@
    "base": {
     "colore": "arancio",
     "forma": "convesso"
+   },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "convesso",
+     "piano",
+     "conico"
+    ]
    }
   },
   "cortinarius-rubellus": {
@@ -511,6 +646,13 @@
    "base": {
     "colore": "arancio",
     "forma": "conico"
+   },
+   "shapes": {
+    "drawn": "conico",
+    "values": [
+     "conico",
+     "convesso"
+    ]
    }
   },
   "cortinarius-traganus": {
@@ -591,6 +733,14 @@
    "base": {
     "colore": "bruno",
     "forma": "convesso"
+   },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "emisferico",
+     "convesso",
+     "piano"
+    ]
    }
   },
   "edulis": {
@@ -604,6 +754,13 @@
    "base": {
     "colore": "bruno",
     "forma": "convesso"
+   },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "emisferico",
+     "convesso"
+    ]
    }
   },
   "entoloma-sinuatum": {
@@ -618,6 +775,13 @@
    "base": {
     "colore": "grigio",
     "forma": "convesso"
+   },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "convesso",
+     "piano"
+    ]
    }
   },
   "fistulina-hepatica": {
@@ -807,6 +971,13 @@
    "base": {
     "colore": "giallo",
     "forma": "convesso"
+   },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "convesso",
+     "piano"
+    ]
    }
   },
   "imleria-badia": {
@@ -925,6 +1096,14 @@
    "base": {
     "colore": "rosa",
     "forma": "convesso"
+   },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "convesso",
+     "piano",
+     "ombrellato"
+    ]
    }
   },
   "lepiota-cristata": {
@@ -942,6 +1121,14 @@
    "base": {
     "colore": "bianco",
     "forma": "ombrellato"
+   },
+   "shapes": {
+    "drawn": "ombrellato",
+    "values": [
+     "convesso",
+     "piano",
+     "ombrellato"
+    ]
    }
   },
   "lepiota-subincarnata": {
@@ -997,6 +1184,13 @@
    "base": {
     "colore": "giallo",
     "forma": "convesso"
+   },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "convesso",
+     "piano"
+    ]
    }
   },
   "morchella-elata": {
@@ -1142,6 +1336,13 @@
    "base": {
     "colore": "rosso",
     "forma": "convesso"
+   },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "emisferico",
+     "convesso"
+    ]
    }
   },
   "pleurotus-cornucopiae": {
@@ -1192,6 +1393,13 @@
    "base": {
     "colore": "grigio",
     "forma": "convesso"
+   },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "convesso",
+     "imbuto"
+    ]
    }
   },
   "procera": {
@@ -1209,6 +1417,13 @@
    "base": {
     "colore": "crema",
     "forma": "ombrellato"
+   },
+   "shapes": {
+    "drawn": "ombrellato",
+    "values": [
+     "ombrellato",
+     "emisferico"
+    ]
    }
   },
   "pseudocraterellus-undulatus": {
@@ -1265,6 +1480,13 @@
    "base": {
     "colore": "crema",
     "forma": "convesso"
+   },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "emisferico",
+     "convesso"
+    ]
    }
   },
   "russula-aeruginea": {
@@ -1428,6 +1650,14 @@
    "base": {
     "colore": "grigio",
     "forma": "conico"
+   },
+   "shapes": {
+    "drawn": "conico",
+    "values": [
+     "conico",
+     "convesso",
+     "piano"
+    ]
    }
   },
   "tricholoma-equestre": {
@@ -1539,6 +1769,13 @@
    "base": {
     "colore": "crema",
     "forma": "convesso"
+   },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "emisferico",
+     "convesso"
+    ]
    }
   },
   "urnula-craterium": {

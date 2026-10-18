@@ -430,9 +430,6 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 .cmp-start-vs { position:absolute; z-index:1; inset:0 0 auto; aspect-ratio:2; display:grid; place-items:center; pointer-events:none; }
 .cmp-start-vs i { display:grid; place-items:center; width:46px; height:46px; border-radius:50%; background:var(--on-photo); color:var(--story-ink); box-shadow:0 2px 8px color-mix(in srgb,var(--scrim) 12%,transparent); font:italic 600 23px/1 var(--font-display); }
 .cmp-start-empty { color:var(--link); background:var(--surface-2); font:400 38px/1 var(--font-body); }
-.cmp-start-actions { display:flex; flex-wrap:wrap; justify-content:center; gap:12px; margin:20px 0; }
-.cmp-start-actions .btn { min-height:48px; font-size:14px; }
-.cmp-start-actions button:disabled { opacity:.55; cursor:default; }
 .cmp-start-context { max-width:65ch; margin:20px auto; text-align:center; color:var(--text-2); font:400 14px/1.6 var(--font-body); }
 .cmp-start-note { max-width:65ch; padding:20px; margin:28px auto; border-radius:16px; background:var(--surface-2); font:400 15px/1.65 var(--font-body); }
 .cmp-start-note b { font-weight:650; }
@@ -470,7 +467,6 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 
 /* La coppia si sceglie sempre nei due menu, anche quando non sono sosia. */
 .cmp-edge-arrows[hidden] { display:none; }
-.fungus-compare .cmp-related-badge { display:table; margin:16px 0; padding:6px 10px; border-radius:999px; background:var(--surface-2); color:var(--link); font:600 12px/1.5 var(--font-body); }
 
 /* Sopra le foto conta i sosia; nella barra scorsa identifica la coppia corrente. */
 .cmp-pair-nav .cmp-sosia-count[hidden],
@@ -483,3 +479,7 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 @media(prefers-reduced-motion:no-preference) {
   .cmp-pair-nav.is-stuck .cmp-nav-content { transition:top .22s var(--ease-out); }
 }
+
+/* La forma selezionata è già illustrata sopra i controlli: evita una seconda
+   serie di miniature, che mescolerebbe i simboli storici alle nuove varianti. */
+.fungus-compare .cmp-cell:has(.cmp-part-art:not(:empty)) .cmp-shape-art { display:none; }

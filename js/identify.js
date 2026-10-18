@@ -221,6 +221,7 @@ function updateComparisonVariant(control, gallery) {
   const key = control.dataset.cmpVariantKey, record = ICONS?.[key] || {}, t = TAXA.find(t=>t.key===key);
   if (!t) return;
   const chosen = comparisonVariantState(key);
+  chosen.userSelected=true;
   chosen[control.dataset.cmpVariant] = control.value;
   const c0 = record.colors?.drawn || record.base?.colore, f0 = record.shapes?.drawn || record.base?.forma;
   const c = chosen.color, f = chosen.shape;
@@ -233,7 +234,7 @@ function updateComparisonVariant(control, gallery) {
   const controls = [...gallery.querySelectorAll('[data-cmp-controls]')].filter(el=>el.dataset.cmpControls===key);
   for (const group of controls) {
     group.querySelectorAll('[data-cmp-variant]').forEach(button=>button.setAttribute('aria-pressed',String(button.value===chosen[button.dataset.cmpVariant])));
-    group.querySelector('.cmp-variant-status').textContent = '';
+    group.querySelector('.cmp-variant-status').textContent = missing?'Forma illustrata nel colore di base: la combinazione selezionata non è ancora disponibile.':'';
   }
   gallery.querySelectorAll('[data-cmp-ill-key]').forEach(slot=>{
     const part = slot.dataset.cmpIllPart;
@@ -246,7 +247,7 @@ function updateComparisonVariant(control, gallery) {
     slot.dataset.variantWanted='';
     const colorAvailable = !c || c===c0 || record.colors?.values?.includes(c);
     const shapeAvailable = !f || f===f0 || record.shapes?.values?.includes(f);
-    if (!ICONS?.[key] || !colorAvailable || !shapeAvailable || missing) {
+    if (!ICONS?.[key] || !colorAvailable || !shapeAvailable) {
       if (part==='cappello') slot.innerHTML=capArt([f || [].concat(t.traits?.cap_shape || [])[0]],[c || [].concat(t.traits?.cap_color || [])[0]],t.traits?.cap_veil===true);
       for (const group of controls) group.querySelector('.cmp-variant-status').textContent='Variante mostrata con un disegno schematico.';
       return;
@@ -269,16 +270,22 @@ function updateComparisonVariant(control, gallery) {
   });
 }
 function refreshComparisonParts() {
+  // Se il catalogo arriva dopo il primo disegno, aggiorna le anteprime provvisorie.
+  for(const [key,chosen] of comparisonVariants)if(!chosen.userSelected)comparisonVariants.delete(key);
   document.querySelectorAll('[data-cmp-controls]').forEach(slot=>{
-    if (slot.firstElementChild) return;
     const t = TAXA.find(t=>t.key===slot.dataset.cmpControls);
     if (t) slot.innerHTML = comparisonControls(t,slot.dataset.cmpTrait);
   });
   document.querySelectorAll('[data-cmp-ill-key]').forEach(slot => {
-    if (slot.querySelector('img') || slot.dataset.variantWanted!==undefined || slot.querySelector('svg')&&!slot.dataset.cmpIllValue) return;
-    const image = comparisonIllustration(slot.dataset.cmpIllKey, slot.dataset.cmpIllPart, slot.dataset.cmpIllValue);
+    if (slot.dataset.variantWanted!==undefined || slot.dataset.cmpIllPart==='sotto'&&slot.querySelector('svg')) return;
+    const shape=slot.dataset.cmpIllValue || (slot.closest('[data-trait]')?.dataset.trait==='cap_shape'?comparisonVariantState(slot.dataset.cmpIllKey).shape:undefined);
+    const image = comparisonIllustration(slot.dataset.cmpIllKey, slot.dataset.cmpIllPart, shape);
     if (image) slot.innerHTML = image;
   });
+  for(const [key,chosen] of comparisonVariants)if(chosen.userSelected){
+    const control=[...document.querySelectorAll('[data-cmp-variant-key][aria-pressed="true"]')].find(b=>b.dataset.cmpVariantKey===key&&b.dataset.cmpVariant!=='underColor');
+    if(control)updateComparisonVariant(control,control.closest('.cmp-track'));
+  }
 }
 // varianti del cappello (colori e forme descritti dalle fonti): cambiano insieme le tessere Cappello e Gambo.
 // Colore e forma non si combinano: scegliere un colore riporta la forma a quella del disegno, e viceversa.
@@ -892,7 +899,6 @@ function renderCompare(box, ref, pick) {
   const list = selected && !documentedKeys.has(selected.key) ? [...documented,selected] : documented;
   if (!list.length) { location.hash=`#/confronta/${encodeURIComponent(ref.key)}`; return; }
   const heading = () => 'Confronta';
-  const editHref = t => `#/confronta/${encodeURIComponent(ref.key)}/${encodeURIComponent(t.key)}`;
   const pic = (t, small = false) => { const ph = photoOf(t); return ph ? `<img data-src="${ASSET(small ? ph.thumb || ph.file : ph.file)}" alt="" loading="lazy" decoding="async">` : '<span class="look-ph">senza foto</span>'; };
   const toxCls = (t) => `tox-${String(t.toxicity || '').replace(/\s/g, '-')}`;
   const nameBtn = (t) => `<button type="button" data-taxon="${esc(t.key)}">${esc(t.name || t.latin)}</button>`; // nel confronto: anteprima, per tutti
@@ -911,7 +917,6 @@ function renderCompare(box, ref, pick) {
           <div class="cmp-name">${nameBtn(x)}${x.name !== x.latin ? `<i>${esc(x.latin)}</i>` : ''}</div></div>`).join('')}
         <span class="cmp-vs" aria-hidden="true">vs</span>
       </div>
-      ${documentedKeys.has(t.key)?`<p class="cmp-related-badge">Sosia documentati${documented.length>1?` · ${documented.findIndex(x=>x.key===t.key)+1} di ${documented.length}`:' nel catalogo'}</p>`:''}
       ${how ? `<p class="cmp-how" data-glossary="Funghi"><b>Differenze descritte.</b> ${esc(how)}</p>` : ''}
       <div class="cmp-kind-tabs" role="tablist" aria-label="Caratteri da confrontare">${groups.map(g=>`<button type="button" role="tab" id="cmp-${esc(t.key)}-tab-${g.kind}" data-cmp-group="${g.kind}" aria-controls="cmp-${esc(t.key)}-panel-${g.kind}" aria-selected="${g.kind==='diff'}" tabindex="${g.kind==='diff'?0:-1}">${g.label}</button>`).join('')}</div>
       <p class="cmp-illustration-note">Disegni schematici generati con AI: mostrano un esempio. Leggi tutte le varianti elencate e confronta con le foto.</p>
@@ -939,7 +944,7 @@ function renderCompare(box, ref, pick) {
   const mark = (i) => {
     box.querySelector('.cmp-title').textContent=heading(list[i]);
     const headerAction=document.querySelector('[data-appbar-action]');
-    if(headerAction) headerAction.href=editHref(list[i]);
+    if(headerAction) headerAction.href='#/confronta';
     const arrows=box.querySelector('.cmp-edge-arrows');
     if(arrows)arrows.hidden=documented.length<2&&documentedKeys.has(list[i].key);
     box.querySelector('.cmp-sosia-count').hidden=!(documented.length>1&&documentedKeys.has(list[i].key));
