@@ -1004,14 +1004,15 @@ button.cover-index:focus-visible { outline:3px solid var(--focus); outline-offse
   :root body .appbar:not(:has(.appbar-back:not([hidden]))) .appbar-title { transform:none; }
 }
 :root body .appbar[data-context="comparison"] .appbar-title { transform:none; }
-/* Schede: il titolo occupa lo spazio reale tra Indietro e le azioni.
-   Nella barra compatta basta la freccia; il nome della destinazione resta nell'aria-label. */
+/* Schede durante lo scroll: titolo centrato nello schermo, senza comandi globali.
+   Due margini uguali riservano la freccia e mantengono centrati anche i nomi lunghi. */
 @media(max-width:899px) {
   :root.title-in-bar body .appbar[data-context="default"]:has(.appbar-back:not([hidden])) { gap:8px; }
   :root.title-in-bar body .appbar[data-context="default"] .appbar-back:not([hidden]) { flex:0 0 44px; width:44px; max-width:44px; padding:0; justify-content:center; }
   :root.title-in-bar body .appbar[data-context="default"] .appbar-back span { display:none; }
-  :root.title-in-bar body .appbar[data-context="default"]:has(.appbar-back:not([hidden])) .appbar-title { position:static; flex:1 1 0; min-width:0; max-width:none; transform:none; text-align:left; }
-  :root.title-in-bar body .appbar[data-context="default"] .appbar-actions { flex:none; }
+  :root.title-in-bar body .appbar[data-context="default"] .appbar-title { display:block; position:absolute; left:calc(var(--gutter) + 52px); right:calc(var(--gutter) + 52px); min-width:0; max-width:none; transform:none; text-align:center; }
+  :root.title-in-bar body .appbar[data-context="default"] .appbar-actions { display:none; }
+  :root.title-in-bar body .appbar[data-context="default"] :is(.brand,.brand-place) { visibility:hidden; pointer-events:none; }
   :root body .appbar .profile-entry { width:44px; min-width:44px; height:44px; min-height:44px; padding:0; justify-content:center; flex:none; }
 }
 @media(prefers-reduced-motion:reduce) {
