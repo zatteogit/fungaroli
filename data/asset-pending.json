@@ -66,9 +66,7 @@
     "assets/species/tree-tasso-inat2.webp (ritaglio)",
     "assets/species/tree-tasso-inat3.webp (ritaglio)",
     "assets/species/tree-tasso-inat4.webp (ritaglio)",
-    "assets/species/tree-tasso-inat5.webp (ritaglio)",
-    "assets/zones/cittareale.webp (ritaglio)",
-    "assets/zones/terminillo-ovest.webp (ritaglio)"
+    "assets/species/tree-tasso-inat5.webp (ritaglio)"
    ]
   },
   {
@@ -446,44 +444,6 @@
     "virescens:cap_shape:convesso",
     "virescens:cap_shape:emisferico",
     "virescens:cap_shape:imbuto"
-   ]
-  },
-  {
-   "categoria": "luoghi-copertine",
-   "motivo": "Foto reali trovate il 15/10 (D7): copertine di stagione e meteo da produrre sul ramo gpt/immagini, docs/handoff-immagini-mancanti.md, punto 6.",
-   "voci": [
-    "cittareale:autunno-nebbia",
-    "cittareale:autunno-nuvoloso",
-    "cittareale:autunno-pioggia",
-    "cittareale:autunno-sereno",
-    "cittareale:estate-nebbia",
-    "cittareale:estate-nuvoloso",
-    "cittareale:estate-pioggia",
-    "cittareale:inverno-nebbia",
-    "cittareale:inverno-neve",
-    "cittareale:inverno-nuvoloso",
-    "cittareale:inverno-pioggia",
-    "cittareale:inverno-sereno",
-    "cittareale:primavera-nebbia",
-    "cittareale:primavera-nuvoloso",
-    "cittareale:primavera-pioggia",
-    "cittareale:primavera-sereno",
-    "terminillo-ovest:autunno-nebbia",
-    "terminillo-ovest:autunno-nuvoloso",
-    "terminillo-ovest:autunno-pioggia",
-    "terminillo-ovest:autunno-sereno",
-    "terminillo-ovest:estate-nebbia",
-    "terminillo-ovest:estate-nuvoloso",
-    "terminillo-ovest:estate-pioggia",
-    "terminillo-ovest:inverno-nebbia",
-    "terminillo-ovest:inverno-neve",
-    "terminillo-ovest:inverno-nuvoloso",
-    "terminillo-ovest:inverno-pioggia",
-    "terminillo-ovest:inverno-sereno",
-    "terminillo-ovest:primavera-nebbia",
-    "terminillo-ovest:primavera-nuvoloso",
-    "terminillo-ovest:primavera-pioggia",
-    "terminillo-ovest:primavera-sereno"
    ]
   },
   {
