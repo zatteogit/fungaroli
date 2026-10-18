@@ -1,3 +1,4 @@
+import {notebookGlyph} from './ui-icons.js';
 import {openModal} from './modal-flow.js';
 import {renderNotebook, notebookRoute, notebookTitle} from './notebook-view.js';
 import {notebookDemo} from './notebook-demo.js';
@@ -177,7 +178,7 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
   const sortEntries = () => entries.sort((a, b) => String(b.date||'').localeCompare(String(a.date||'')) || String(b.savedAt||'').localeCompare(String(a.savedAt||'')));
   const noteDialog=document.createElement('dialog');noteDialog.className='wiz notebook-dialog';noteDialog.setAttribute('aria-label','Appunto privato');document.body.append(noteDialog);
   const savedNotice=document.createElement('div');savedNotice.className='app-toast';savedNotice.setAttribute('role','status');document.body.append(savedNotice);let noticeTimer;
-  document.addEventListener('fungaroli:note-saved',()=>{clearTimeout(noticeTimer);(noteOrigin?.closest('dialog[open]')||document.body).append(savedNotice);savedNotice.innerHTML='Salvato nel taccuino <a href="#/diario" class="link-btn">Apri →</a>';savedNotice.classList.add('on');noticeTimer=setTimeout(()=>savedNotice.classList.remove('on'),5000);});
+  document.addEventListener('fungaroli:note-saved',()=>{clearTimeout(noticeTimer);(noteOrigin?.closest('dialog[open]')||document.body).append(savedNotice);savedNotice.innerHTML=`Salvato nel taccuino <a href="#/diario" class="link-btn">${notebookGlyph}Apri →</a>`;savedNotice.classList.add('on');noticeTimer=setTimeout(()=>savedNotice.classList.remove('on'),5000);});
   let noteOrigin=null;
   noteDialog.addEventListener('close',()=>{noteControls.forEach(c=>c.destroy());noteControls=[];noteOrigin?.isConnected&&noteOrigin.focus({preventScroll:true});});
   addEventListener('hashchange',()=>{if(noteDialog.open)noteDialog.close();});

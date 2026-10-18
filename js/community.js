@@ -1,3 +1,4 @@
+import {notebookGlyph} from './ui-icons.js';
 import {openModal} from './modal-flow.js';
 import { SPECIES } from './species.js';
 import { todayISO } from './weather.js';
@@ -229,7 +230,7 @@ export async function openQuickReport(zoneId = '', speciesId = '') {
       reportControls.forEach(c=>c.destroy());reportControls=[];
       const zone=zones.find(z=>z.id===data.get('zone')),species=speciesCatalog.find(s=>s.id===data.get('species'));
       reportDialog.querySelector('.report-intro').remove();
-      form.innerHTML=`<div class="report-done"><span class="report-done-mark" aria-hidden="true">✓</span><h3>Osservazione salvata</h3><p><b>${esc(species.name)}</b> · ${esc(zone.title||zone.name)}<br>${esc(new Date(data.get('day')+'T12:00:00').toLocaleDateString('it-IT',{day:'numeric',month:'long'}))}</p><p role="status" class="report-status" data-status>È nel tuo taccuino e nei conteggi collettivi.</p><a class="btn primary" href="#/diario">Apri il taccuino →</a><button class="btn ghost" type="button" data-close>Chiudi</button></div>`;
+      form.innerHTML=`<div class="report-done"><span class="report-done-mark" aria-hidden="true">✓</span><h3>Osservazione salvata</h3><p><b>${esc(species.name)}</b> · ${esc(zone.title||zone.name)}<br>${esc(new Date(data.get('day')+'T12:00:00').toLocaleDateString('it-IT',{day:'numeric',month:'long'}))}</p><p role="status" class="report-status" data-status>È nel tuo taccuino e nei conteggi collettivi.</p><a class="btn primary" href="#/diario">${notebookGlyph}<span>Apri il taccuino →</span></a><button class="btn ghost" type="button" data-close>Chiudi</button></div>`;
       form.querySelector('[data-close]').onclick=dismiss;
       reportDialog.scrollTop=0;form.querySelector('a').focus({preventScroll:true});
     } catch(err) {status.textContent=err.message;}
