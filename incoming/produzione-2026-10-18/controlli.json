@@ -2497,5 +2497,250 @@
     },
     "state": "pronta da integrare",
     "review": "Sylvicola bianco/giallo piani con lamelle brune e anello; caesarea gialla emisferica con lamelle/gambo/anello gialli e volva bianca a sacco. Nessun reticolo o verruche aggiunte. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-47.png",
+    "sha256": "1caf51186d155bfbe2d052014f09ef5fc8991c59607e196e3d5438f373be7db1",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        494,
+        42,
+        758,
+        400
+      ],
+      "0": [
+        70,
+        126,
+        368,
+        304
+      ],
+      "4": [
+        454,
+        496,
+        800,
+        804
+      ],
+      "3": [
+        46,
+        554,
+        392,
+        674
+      ],
+      "7": [
+        450,
+        882,
+        804,
+        1196
+      ],
+      "6": [
+        44,
+        944,
+        394,
+        1066
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Caesarea rossa emisferica e gialla/rossa piane, lamelle/gambo/anello gialli e volva bianca invariati; niente verruche/reticolo. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-48.png",
+    "sha256": "3843fad56962dd7add6fe796b2f5d16c4f4fed7a2affce4649c7a7de547afa67",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        466,
+        88,
+        786,
+        416
+      ],
+      "0": [
+        60,
+        148,
+        402,
+        344
+      ],
+      "4": [
+        456,
+        530,
+        796,
+        786
+      ],
+      "3": [
+        54,
+        558,
+        412,
+        678
+      ],
+      "7": [
+        458,
+        852,
+        796,
+        1184
+      ],
+      "6": [
+        50,
+        892,
+        424,
+        1070
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Calocybe crema emisferico/piano con lamelle fitte crema; finferlo arancio convesso con pieghe grosse decorrenti e gambo giallo. Nessun anello/volva/reticolo. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-49.png",
+    "sha256": "753232a8243113daca71c693acc0964a2217675dd687bd2bd7b0ce789070cec9",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        498,
+        68,
+        838,
+        400
+      ],
+      "0": [
+        82,
+        146,
+        418,
+        324
+      ],
+      "4": [
+        498,
+        458,
+        838,
+        790
+      ],
+      "3": [
+        82,
+        538,
+        418,
+        716
+      ],
+      "7": [
+        512,
+        844,
+        800,
+        1194
+      ],
+      "6": [
+        92,
+        914,
+        410,
+        1096
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Craterellus bruno/nero a imbuto con pieghe grosse e gambo grigio; edulis crema emisferico con pori gialli e reticolo pallido superiore. Nessun anello/volva aggiunto. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-50.png",
+    "sha256": "abaade4b868178f27a9751bb05ddd5fac5a5e3396581bb0b44065ad754bfd164",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        450,
+        80,
+        804,
+        386
+      ],
+      "0": [
+        48,
+        142,
+        408,
+        306
+      ],
+      "4": [
+        444,
+        502,
+        822,
+        798
+      ],
+      "3": [
+        40,
+        558,
+        422,
+        696
+      ],
+      "7": [
+        458,
+        870,
+        804,
+        1208
+      ],
+      "6": [
+        46,
+        928,
+        408,
+        1100
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Hydnum bruno imbuto/piano con aculei crema; Hygrophorus bruno ombrellato con umbone, lamelle crema e macchie del gambo preservate. Nessun anello/volva/reticolo. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-51.png",
+    "sha256": "abb96114106cd828276c7a84213292f3d066529a8b535e3bf01b937146b736dc",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        452,
+        92,
+        800,
+        422
+      ],
+      "0": [
+        48,
+        124,
+        430,
+        296
+      ],
+      "4": [
+        450,
+        522,
+        804,
+        794
+      ],
+      "3": [
+        48,
+        554,
+        430,
+        668
+      ],
+      "7": [
+        450,
+        904,
+        804,
+        1178
+      ],
+      "6": [
+        48,
+        944,
+        430,
+        1058
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Hygrophorus grigio ombrellato con umbone distinto da bruno/grigio piani, lamelle crema e gambo macchiato preservati, senza anello/volva/reticolo. Alpha e sei celle verificati."
   }
 ]
