@@ -139,3 +139,9 @@ La revisione UI mantiene frecce delle card in SVG monocromatico a 18 px (nessuna
 dipendenza da glifi del font), font display del sistema e token semantici
 `--warn-ink` / `--warn-bg` per le cautele. I richiami numerati delle fonti hanno
 area interattiva minima 24 × 24 px, mantenendo la citazione nella riga di lettura.
+
+## Presentazione provvisoria · 18 ottobre
+
+Su richiesta del proprietario la sezione è indicata come «Sezione in costruzione» finché il catalogo non avrà contenuti e immagini sufficienti. Le prime otto schede pubblicate restano consultabili; nessuna soglia numerica di completezza viene inventata e il segnale non sparisce automaticamente. Griglia e riquadro introduttivo riusano i componenti delle altre sezioni di Scopri. Le descrizioni complete restano nelle schede, mentre le tessere mostrano nome, gruppo e nome scientifico. Il binario comune delle sezioni sfuma soltanto sui margini con altro contenuto, su mouse e tocco.
+
+Revisione del diff; test automatici non eseguiti per richiesta del proprietario. Safari reale non verificato.
