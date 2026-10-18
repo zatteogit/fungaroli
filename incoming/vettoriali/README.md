@@ -1,5 +1,7 @@
 # Studio SVG a livelli · 18 ottobre 2026
 
+**Checkpoint attuale:** due SVG di Porcino di fiele ottenuti da raster corretto r03, con revisione indipendente prima e dopo la conversione. Parti indipendenti senza clip o bitmap, dettagli ispezionabili e coda con blocco delle fonti non revisionate. Vedi [AVANZAMENTO.md](AVANZAMENTO.md) e apri `inspector-v2.html`. **Il testo seguente documenta esclusivamente il primo prototipo storico**, non ancora sottoposto alla successiva revisione indipendente per specie.
+
 **Pronto come prototipo tecnico, fuori dall’app.** Un solo soggetto: Tignosa di primavera (`amanita-verna`), variante crema + emisferico. Nessuna integrazione negli asset pubblicati e nessuna conversione in serie ancora approvata.
 
 ## Cosa contiene
