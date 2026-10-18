@@ -68,19 +68,34 @@ export const loadKeyData = load;
 let TREE_ICONS = null, PLANT_ICONS = null;
 const loadIcons = path => fetch(path).then(r=>r.ok?r.json():null).then(d=>d?.values||null).catch(()=>null);
 export const loadTreeIcons = () => (TREE_ICONS ||= loadIcons('data/tree-trait-icons.json'));
-export const loadPlantIcons = () => (PLANT_ICONS ||= loadIcons('data/plant-trait-icons.json'));
+export const loadPlantArtwork = () => (PLANT_ICONS ||= fetch('data/plant-trait-icons.json').then(r=>r.ok?r.json():null).catch(()=>null));
+export const loadPlantIcons = () => loadPlantArtwork().then(d=>d?.values||null);
 const iconSrc = (icons, k, v, mode = 'alberi') => icons?.[k]?.includes(v) ? `assets/${mode==='piante'?'plant':'tree'}-traits/${k}-${v}.webp` : '';
 const ill = (src, size, cls = 'ts-ill') => `<img class="${cls}" src="${esc(src)}" alt="" width="${size}" height="${size}" loading="lazy" decoding="async">`;
+// Il colore non deve suggerire la forma di una bacca o di un fiore estranei alla specie.
+const PLANT_SWATCHES = {
+  fruit_color: {rosso:'#cb2735',arancio:'#e58c32',rosa:'#d88d9f',nero:'#252d38',blu_metallico:'#467692',bruno:'#886344'},
+  flower_color: {bianco:'#f4efda',giallo:'#edcc35',arancio_rosso:'linear-gradient(90deg,#e58c32 50%,#cb2735 50%)',rosa:'#d88d9f',viola_blu:'linear-gradient(90deg,#955f9e 33%,#baa0c9 33% 66%,#81abd0 66%)',verdastro:'linear-gradient(90deg,#899267 50%,#886344 50%)'}
+};
+// Queste categorie includono anatomie diverse: l'esempio della chiave non è
+// automaticamente una raffigurazione valida per ogni specie della categoria.
+const plantNeedsSpeciesReview = (k,v) => k === 'fruit_type' || k === 'flower_shape' || (k === 'leaf_type' && v === 'composta');
 // tessere dei caratteri per le schede di piante e alberi: stessi caratteri del percorso guidato, con le loro etichette.
 // I segni particolari stanno in una riga a parte; i valori non verificati (null) non compaiono.
-// Con `icons` (alberi e piante) ogni tessera mostra il disegno del valore sopra il testo: con due o più valori, i primi due
-// affiancati in piccolo e il testo completo sotto. Un valore senza icona resta solo testo.
-export function traitTilesHtml(data, traits, icons = null, mode = 'alberi') {
+// Con più valori si mostrano i primi due disegni disponibili e il testo completo.
+// Nelle piante le anatomie ambigue richiedono una revisione per specie, i colori sono campioni.
+export function traitTilesHtml(data, traits, icons = null, mode = 'alberi', speciesArt = {}) {
   if (!data || !traits) return '';
   const tiles = Object.entries(data.schema).filter(([k, q]) => k !== 'special' && q.ask !== false && traits[k] != null && [].concat(traits[k]).length)
     .map(([k, q]) => {
-      const vals = [].concat(traits[k]), srcs = vals.map((v) => iconSrc(icons, k, v, mode)).filter(Boolean).slice(0, 2);
-      const art = srcs.length ? `<span class="ts-art${srcs.length > 1 ? ' ts-art-2' : ''}" aria-hidden="true">${srcs.map((s) => ill(s, srcs.length > 1 ? 44 : 64)).join('')}</span>` : '';
+      const vals = [].concat(traits[k]);
+      const swatches = mode === 'piante' && icons && PLANT_SWATCHES[k];
+      const srcs = vals.map(v => {
+        if (mode !== 'piante') return iconSrc(icons,k,v,mode);
+        if (!icons || swatches) return '';
+        return speciesArt?.[k]?.[v]?.src || (plantNeedsSpeciesReview(k,v) ? '' : iconSrc(icons,k,v,mode));
+      }).filter(Boolean).slice(0,2);
+      const art = swatches ? `<span class="ts-art" aria-hidden="true">${vals.filter(v=>swatches[v]).map(v=>`<span class="ts-color" style="background:${swatches[v]}"></span>`).join('')}</span>` : srcs.length ? `<span class="ts-art${srcs.length > 1 ? ' ts-art-2' : ''}" aria-hidden="true">${srcs.map((s) => ill(s, srcs.length > 1 ? 44 : 64)).join('')}</span>` : '';
       return `<li>${art}<span class="ts-k" data-no-glossary>${esc(q.short)}</span><span class="ts-v">${vals.map((v, i) => termHtml(q, v, i > 0)).join(' o ')}</span></li>`;
     });
   const special = data.schema.special && [].concat(traits.special || []).map((v) => label(data.schema.special, v));

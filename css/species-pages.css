@@ -554,3 +554,4 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 [data-plant-traits] .ts-k { font:500 12px/1.4 var(--font-body); letter-spacing:0; text-transform:none; }
 [data-plant-traits] .ts-v { font:500 15px/1.5 var(--font-body); }
 @media(min-width:760px) { [data-plant-traits] .trait-strip { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+[data-plant-traits] .ts-color { width:32px; height:32px; border-radius:50%; border:1px solid #716d61; flex:none; }

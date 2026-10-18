@@ -1,5 +1,5 @@
 {
- "note": "Icone dei caratteri delle piante disegnate con AI (image_gen) a partire dallo schema dei caratteri di data/recognize-plants.json, verificate per l’integrazione nel progetto, senza opere di terzi. Una icona per valore, non per specie: non sono foto e non servono a identificare.",
+ "note": "Schemi dei valori botanici generati con AI (image_gen) dai dati di recognize-plants.json. Le icone generiche sono esempi della categoria per la chiave guidata, non ritratti delle specie. Nelle schede forme dei fiori, tipi dei frutti e foglie composte richiedono una revisione registrata in species; i colori sono campioni cromatici. Fonti, riferimenti fotografici e limiti delle correzioni: docs/assets/fragolina-2026-10-18/README.md.",
  "author": "Fronda/Fungaroli, rivista dal progetto",
  "license": "CC BY-SA 4.0",
  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it",
@@ -127,5 +127,31 @@
   "leaf_type-molto_divisa_fine": 4,
   "leaf_type-molto_divisa_larga": 4,
   "leaf_type-semplice": 4
+ },
+ "species": {
+  "fragolina": {
+   "fruit_type": {
+    "falso_frutto": {
+     "src": "assets/plant-traits/fragolina-fruit_type-falso_frutto.webp",
+     "source": "https://dryades.units.it/Roma/index.php?id=2073&procedure=taxon_page",
+     "referencePhoto": "assets/plants/fragolina-1.webp",
+     "review": "Frutto intero con acheni sulla superficie, ricettacolo rosso conico, calice e peduncolo. Confrontato con la foto della specie, non con la sola categoria falso frutto."
+    }
+   },
+   "leaf_type": {
+    "composta": {
+     "src": "assets/plant-traits/fragolina-leaf_type-composta.webp",
+     "source": "https://dryades.units.it/Roma/index.php?id=2073&procedure=taxon_page",
+     "review": "Tre foglioline distinte con margini dentati. Confronto con tutte le foto della specie e verifica a 64 px; non è la foglia pennata generica."
+    }
+   },
+   "flower_shape": {
+    "cinque_petali": {
+     "src": "assets/plant-traits/flower_shape-cinque_petali.webp",
+     "source": "https://dryades.units.it/Roma/index.php?id=2073&procedure=taxon_page",
+     "review": "Cinque petali bianco-crema e centro giallo coerenti con foto e testo della fragolina; schema di dettaglio, non ritratto integrale della pianta."
+    }
+   }
+  }
  }
 }
