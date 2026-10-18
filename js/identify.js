@@ -930,7 +930,7 @@ function renderCompare(box, ref, pick) {
   box.innerHTML = `
     <h1 class="sec-title cmp-title">${esc(heading(list[start]))}</h1>
     <div class="cmp-gallery" role="group" aria-roledescription="carosello" aria-label="Confronti con ${esc(ref.name || ref.latin)}">
-    <div class="cmp-pair-nav" role="group" aria-label="Specie a confronto"><div class="cmp-nav-content"><button type="button" class="cmp-pair-menu" data-change-master aria-haspopup="dialog" aria-label="Scegli il fungo di riferimento: ${esc(ref.name||ref.latin)}"><span>${esc(ref.name||ref.latin)}</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><i class="cmp-nav-vs" aria-hidden="true">vs</i><button type="button" class="cmp-pair-menu" data-change-lookalike aria-haspopup="dialog" aria-label="Confronta con: ${esc(list[start].name||list[start].latin)}"><span data-current-lookalike>${esc(list[start].name||list[start].latin)}</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button></div></div>
+    <div class="cmp-pair-nav" role="group" aria-label="Specie a confronto"><div class="cmp-nav-content"><button type="button" class="cmp-pair-menu" data-change-master aria-haspopup="dialog" aria-label="Scegli il fungo di riferimento: ${esc(ref.name||ref.latin)}"><span>${esc(ref.name||ref.latin)}</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><i class="cmp-nav-vs" aria-hidden="true">vs</i><button type="button" class="cmp-pair-menu" data-change-lookalike aria-haspopup="dialog" aria-label="Confronta con: ${esc(list[start].name||list[start].latin)}"><span class="cmp-sosia-count"${documented.length>1&&documentedKeys.has(list[start].key)?'':' hidden'}>${documented.length} sosia</span><span data-current-lookalike>${esc(list[start].name||list[start].latin)}</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button></div></div>
     ${documented.length?`<div class="cmp-edge-arrows"${documented.length===1&&documentedKeys.has(list[start].key)?' hidden':''}><button type="button" data-cmp-step="-1" aria-label="Sosia precedente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button><button type="button" data-cmp-step="1" aria-label="Sosia successivo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button></div>`:''}
     <div class="cmp-track">${list.map(slide).join('')}</div><p class="sr-only" data-cmp-announcement role="status" aria-atomic="true"></p></div>
     <p><a class="btn primary" href="#/confronta">Scegli un nuovo confronto</a></p>`;
@@ -946,6 +946,7 @@ function renderCompare(box, ref, pick) {
     if(headerAction) headerAction.href=editHref(list[i]);
     const arrows=box.querySelector('.cmp-edge-arrows');
     if(arrows)arrows.hidden=documented.length<2&&documentedKeys.has(list[i].key);
+    box.querySelector('.cmp-sosia-count').hidden=!(documented.length>1&&documentedKeys.has(list[i].key));
     const currentName = box.querySelector('[data-current-lookalike]');
     if (currentName) {
       currentName.textContent = list[i].name || list[i].latin;
