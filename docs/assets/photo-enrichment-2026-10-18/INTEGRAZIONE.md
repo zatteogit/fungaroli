@@ -45,3 +45,7 @@ Prima del rilascio lo snapshot pubblico mostrava ancora una foto per `aestivalis
 ## Lavoro successivo
 
 Restano 23 record principali con due foto e 45 sosia con una foto: cercare viste complementari, prima nei sosia ancora poveri, poi nelle altre schede. Restano 10 piante con due foto e 18 schede Animali senza foto. Le candidature animali e i blocchi tassonomici documentati non sono consegne acquisite. Non rifare le fasi fungine, raster botanici, copertine o SVG già adottati dalla PR133.
+
+## Rilascio del lotto
+
+PR135 unita nel commit `df8628e`. Le istruzioni generiche per saltare la CI hanno omesso anche Workers Builds; il sito è rimasto a v225. Credenziale Wrangler locale scaduta, nessuna modifica delle credenziali o delle protezioni. Per il seguito si usa il trailer GitHub `skip-checks: true`, documentato per omettere le suite Actions senza modificare il workflow. Si chiarisce anche la provenienza nel campo storico `inat` di media.json. Shell/meta v227. La pubblicazione effettiva viene verificata separatamente: un merge da solo non la dimostra.
