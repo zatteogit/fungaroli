@@ -136,3 +136,36 @@ Il riquadro Attenzione conserva una sola cornice esterna. Titolo, comando di ape
 Nelle tessere dei funghi il titolo tecnico apre il glossario tramite un link senza sottolineatura, accompagnato da un piccolo «?» decorativo: è cliccabile l’intero titolo, con altezza minima 44 px. I termini nei contenuti restano collegamenti con sottolineatura puntinata; il titolo non consuma l’unica occorrenza automatica collegabile del termine nel testo. Il primo esempio comprende Cappello, imenoforo, Gambo, Viraggio e Sporata e le voci Anello/Volva/Reticolo nei dati del gambo.
 
 La tessera Sporata mostra tutti i colori documentati del deposito come campioni cromatici etichettati, senza selezione, senza inventare una forma dell’impronta e senza mostrare soltanto il primo valore. Anche nel confronto ogni colore usa un campione, accanto al testo esistente. Si riusa la tavolozza UI preesistente; i campioni sono indicativi. Il diagramma del foglio resta nel percorso didattico per caratteri, dove il metodo è spiegato. Il glossario Sporata conserva la definizione e la precisazione sulla distinzione dal colore di lamelle/pori e sulla commestibilità, con la fonte esistente.
+
+
+### Ritorno lungo il percorso effettivo (decisione del 18/10)
+
+Nel percorso nota del Taccuino → scheda contestuale → luogo, Indietro torna alla
+scheda modale e poi alla nota. Vale sia per la freccia dell’app sia per Indietro
+del browser; Avanti ripercorre gli stessi passaggi. La gerarchia (per esempio
+luogo → Uscite) rimane il ripiego per una pagina aperta direttamente. Il nome
+accanto alla freccia descrive la destinazione reale, anche attraversando sezioni.
+La direzione visiva della transizione non determina più la cronologia.
+
+Le schede contestuali aperte da una pagina o da un’altra scheda aggiungono un
+passo alla cronologia senza cambiare URL. Indietro/Escape risalgono di un passo;
+la X chiude l’intero percorso delle schede e torna alla pagina di partenza.
+Aprire un luogo chiude la scheda; tornare dal luogo riattiva il suo DOM originale,
+con dettagli aperti, selettori e scroll conservati. Rientrando nella nota il focus
+torna al collegamento di origine, distinguendo eventuali link con lo stesso URL.
+«Apri come pagina» crea una destinazione esplicita: Indietro torna alla scheda.
+
+Il registro `js/navigation-context.js` tiene DOM e titoli soltanto in memoria;
+`history.state` contiene riferimenti casuali di sessione, senza note o dati di
+profilo. Si conservano i DOM delle 16 visite contestuali più recenti; più indietro
+la scheda viene ricostruita dai renderer correnti, senza garanzia dei controlli
+precedenti. Reload e cambio account non ripristinano questi contenuti privati.
+Moduli di annotazione, glossario e visori continuano a usare il coordinatore
+modale: conservano il proprio ritorno interno, ma non diventano tutti nuove
+voci della cronologia browser. Una scheda aperta da una modale generica resta
+nel suo percorso interno. Un solo dialog modale rimane visibile.
+
+Verifiche browser dedicate: nota/scheda/Valle di Malito a 320 e 390 px, Indietro
+app e browser, Avanti, identità del DOM, accordion e posizione, focus, schede
+concatenate, X, link diretto e ricostruzione dopo l’evizione del DOM. Restano da
+verificare sul dispositivo fisico i gesti di navigazione di Safari.

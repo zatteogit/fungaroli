@@ -137,7 +137,8 @@ for(const width of [320,1280]) test(`schede contestuali complete, ritorno e navi
   const sheet=page.locator('#entity-sheet'),panel=page.locator(width<700?'#learning-sheet':'#learning-popover');
   await expect(sheet).toBeVisible();await expect(sheet.locator('h1')).toBeVisible();
   await expect(sheet.locator('summary', {hasText:'Foglia, corteccia, frutto'})).toBeVisible();
-  expect(await page.evaluate(()=>({hash:location.hash,scroll:scrollY,history:history.length}))).toEqual(before);
+  expect(await page.evaluate(()=>({hash:location.hash,scroll:scrollY}))).toEqual({hash:before.hash,scroll:before.scroll});
+  expect(await page.evaluate(()=>history.length)).toBeGreaterThan(before.history);
   expect(await sheet.evaluate(el=>{const r=el.getBoundingClientRect();return r.left>=0&&r.right<=innerWidth&&r.top>=0&&r.bottom<=innerHeight;})).toBe(true);
   await page.evaluate(()=>document.fonts.ready);
   await page.screenshot({path:`/tmp/fungaroli-contextual-tree-${width}.png`});
@@ -161,7 +162,7 @@ for(const width of [320,1280]) test(`schede contestuali complete, ritorno e navi
   expect(await sheet.evaluate(el=>el.scrollTop)).toBeCloseTo(treeScroll,0);
   await sheet.locator('[data-entity-close]').click();await expect(sheet).toBeHidden();await expect(tree).toBeFocused();
   await expect(page.locator('.walk-focus')).toHaveAttribute('open','');
-  expect(await page.evaluate(()=>({hash:location.hash,scroll:scrollY,history:history.length}))).toEqual(before);
+  expect(await page.evaluate(()=>({hash:location.hash,scroll:scrollY}))).toEqual({hash:before.hash,scroll:before.scroll});
   // Ridimensionare non chiude la scheda; aprire come pagina è una scelta esplicita.
   await tree.click();await page.setViewportSize({width:width===320?768:600,height:900});await expect(sheet).toBeVisible();
   await sheet.locator('[data-entity-page]').click();await expect(sheet).toBeHidden();
@@ -177,7 +178,7 @@ for(const width of [320,1280]) test(`schede contestuali complete, ritorno e navi
   await sheet.locator('[data-entity-back]').click();
   await sheet.locator('.tree-fungi a[href="#/specie/mellea"]').click();
   await sheet.locator('[data-jump-k]').click();await expect(sheet.locator('.kitchen')).toBeInViewport();
-  await page.keyboard.press('Escape');await expect(relatedTree).toBeFocused();
+  await page.keyboard.press('Escape');await expect(sheet).toBeVisible();await page.keyboard.press('Escape');await expect(relatedTree).toBeFocused();
   // I risultati di Riconosci aprono la scheda completa, mantenendo i caratteri scelti.
   await page.goto('/#/riconosci');await page.locator('#identify [data-mode="all"]').click();
   const candidate=page.locator('#identify [data-taxon]').first();await candidate.click();

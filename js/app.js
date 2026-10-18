@@ -1,3 +1,4 @@
+import {rememberNavigationContext,recordNavigationPage,restoreNavigationContext,contextualBackTitle,returningNavigation,restoredNavigationScroll,backNavigation} from './navigation-context.js';
 import {openModal} from './modal-flow.js';
 import {speciesFeatures} from './species-search.js';
 import './modal-scroll.js';
@@ -367,7 +368,7 @@ function initShell() {
     if (tab && tab.getAttribute('href') === (location.hash || '#/')) { e.preventDefault(); scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' }); return; }
     if (!e.target.closest('[data-back]')) return;
     // indietro vero se la pagina precedente e' nell'app, altrimenti la pagina "madre"
-    if (navStack.length > 1) history.back(); else location.hash = parentOf(prev);
+    if (!backNavigation()) location.hash = parentOf(prev);
   });
   renderFilterSummary();
 }
@@ -531,7 +532,6 @@ addEventListener('resize',scheduleHeader,{passive:true});
 globalThis.visualViewport?.addEventListener('resize',scheduleHeader,{passive:true});
 
 // tasto indietro in alto a sinistra: freccia + nome della pagina a cui torni
-const navStack = [];
 const TITLES = { piante:'Piante e fiori', uscite: 'Uscite', mappa: 'Mappa', specie: 'Funghi', alberi: 'Alberi', riconosci: 'Riconosci', impara: 'Guide', glossario: 'Glossario', 'guide-list': 'Approfondimenti', sfide: 'Sfide', diario: 'Taccuino', info: 'Regole e metodo', metodo: 'Come funziona' };
 function titleOf(r) {
   if (!r) return '';
@@ -607,16 +607,9 @@ function updateHeaderActions(r) {
 }
 function updateBack(r, nav) {
   updateHeaderActions(r);
-  if (nav === 'pop') { while (navStack.length && navStack[navStack.length - 1].hash !== r.hash) navStack.pop(); }
-  if (navStack[navStack.length - 1]?.hash !== r.hash) {
-    if (nav === 'left' || nav === 'right' || navStack.length && navStack[navStack.length - 1].tab !== r.tab && !navStack[navStack.length - 1].level) navStack.length = 0; // cambio di scheda dalla radice di un'altra: si riparte
-    // tra pagine sorelle dello stesso livello si sostituisce: «indietro» porta al genitore, non alla sorella
-    if (nav === 'none' && navStack.length && levelOf(r) > 0) navStack.pop();
-    navStack.push({ hash: r.hash, title: titleOf(r), tab: r.tab, level: levelOf(r) });
-  }
   const deep = levelOf(r) > 0;
   // stesso «indietro» in due posti: nella barra su telefono, sopra il titolo della pagina su desktop (la barra tiene le sezioni)
-  const back = navStack.length > 1 ? navStack[navStack.length - 2].title : PARENT_TITLE(r);
+  const back = contextualBackTitle() || PARENT_TITLE(r);
   for (const b of document.querySelectorAll('.appbar-back, .page-back')) {
     b.hidden = !deep;
     b.querySelector('span').textContent = back || 'Indietro';
@@ -628,18 +621,21 @@ function updateBack(r, nav) {
   if (brand) brand.hidden = r.view !== 'uscite';
 }
 
+addEventListener('fronda:navigation-context',()=>{if(prev)updateBack(prev,'none');});
+
 function route() {
   // un ridisegno del meteo in sospeso (in home aspetta fino a 6 s) non deve cadere sulla pagina nuova: questa si disegna gia' con i dati aggiornati
   if (weatherPaintTimer) { clearTimeout(weatherPaintTimer.handle); weatherPaintTimer = null; }
   const r = parseRoute();
   r.tab = { impara: 'specie', piante:'specie', pianta:'specie', zona: 'uscite', glossario: 'specie', 'specie-dettaglio': 'specie', alberi: 'specie', albero: 'specie', riconosci: 'specie', info: '', metodo: '', guide: 'specie', 'guide-list': 'specie', sfide: 'specie', fungo: 'specie', commestibile: 'specie' }[r.view] ?? r.view;
   r.hash = location.hash || '#/';
-  const nav = navKind(prev, r), back = prev?.hash || '';
+  const nav = returningNavigation()?'pop':navKind(prev,r), back = prev?.hash || '';
+  rememberNavigationContext();
   if (prev) scrollMem.set(prev.hash, scrollY);
   prev = r;
   const user = performance.now() - userNavAt < 1500 && (userNavTo === 'back' || userNavTo === r.hash);
   userNavAt = -1e9;
-  navigate(() => { muteLive(); routeNow(r, nav); updateBack(r, nav); watchTitle(); document.title = pageTitle(r); focusPage(nav, back, user); }, { nav, back });
+  navigate(() => { muteLive(); recordNavigationPage(titleOf(r)); routeNow(r, nav); updateBack(r, nav); watchTitle(); document.title = pageTitle(r); focusPage(nav, back, user); restoreNavigationContext(); }, { nav, back });
 }
 
 // Le regioni live (#hero, #detail) annunciano gli aggiornamenti del meteo dentro la pagina. Cambiando pagina il
@@ -741,8 +737,8 @@ function routeNow(r, nav) {
   // Avviene dentro l'aggiornamento della transizione: la pagina nuova entra già nella posizione giusta.
   if (r.view !== 'mappa') {
     // Il glossario riparte dall’inizio; un termine esplicito resta una destinazione precisa.
-    const keep = r.view !== 'glossario' && (nav === 'pop' || nav === 'left' || nav === 'right');
-    scrollTo({ top: keep ? (scrollMem.get(r.hash) || 0) : 0, behavior: 'instant' });
+    const keep = r.view !== 'glossario' && (restoredNavigationScroll() !== undefined || nav === 'pop' || nav === 'left' || nav === 'right');
+    scrollTo({ top: keep ? (restoredNavigationScroll() ?? scrollMem.get(r.hash) ?? 0) : 0, behavior: 'instant' });
     if (r.view === 'glossario' && r.termId) document.getElementById(`glossary-term-${r.termId}`)?.scrollIntoView({ block: 'center', behavior: 'instant' });
   }
 }
