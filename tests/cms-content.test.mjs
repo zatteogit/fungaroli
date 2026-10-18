@@ -124,3 +124,17 @@ test('lo snapshot risponde 304 anche all’ETag debole che il browser rimanda do
   }
   assert.equal((await get({ 'if-none-match': 'W/"vecchia"' })).status, 200);
 });
+
+test('animal catalog is seeded in snapshots, refreshed only when untouched, and preserves an author draft',async()=>{
+ const sql=new DatabaseSync(':memory:');
+ const initial=await publishedContent(env(sql),ORIGIN);
+ assert.equal(initial.resources.animals.items.filter(i=>i.publicationStatus==='ready').length,8);
+ const changed=JSON.parse(read('animals'));changed.items[0].summary+=' Aggiornamento.';
+ const updated=await publishedContent(env(sql,{animals:JSON.stringify(changed)}),ORIGIN);
+ assert.deepEqual(updated.resources.animals,changed);
+ const draft=structuredClone(changed);draft.items[0].summary='Bozza autore';
+ sql.prepare("UPDATE cms_documents SET version=version+1,draft=?,updated_by='autore' WHERE id='animals'").run(JSON.stringify(draft));
+ const preserved=await publishedContent(env(sql),ORIGIN);
+ assert.deepEqual(preserved.resources.animals,changed);
+ assert.equal(JSON.parse(sql.prepare("SELECT draft FROM cms_documents WHERE id='animals'").get().draft).items[0].summary,'Bozza autore');
+});

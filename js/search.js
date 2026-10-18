@@ -7,20 +7,20 @@ const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<
 const norm = (s) => String(s ?? '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/['’]/g, ' ');
 
 const KINDS = {
-  pianta:'Piante e fiori', zona: 'Zone', fungo: 'Funghi', velenoso: 'Velenosi e sosia', albero: 'Alberi', sentiero: 'Sentieri', termine: 'Glossario', pagina: 'Pagine e regole',
+  animale:'Animali', pianta:'Piante e fiori', zona: 'Zone', fungo: 'Funghi', velenoso: 'Velenosi e sosia', albero: 'Alberi', sentiero: 'Sentieri', termine: 'Glossario', pagina: 'Pagine e regole',
 };
 const ORDER = Object.keys(KINDS);
 const SUGGEST = ['Terminillo', 'Porcino', 'More', 'Ortica', 'Faggio', 'Emergenza', 'Fragolina', 'Castagno'];
 const RECENT_KEY = 'fungaroli:search-recent';
 
 // la sezione in cui sei decide cosa viene prima (la ricerca resta su tutto)
-const PRIORITY = {
+const PRIORITY = { animali:['animale'], animale:['animale'],
   piante:['pianta'],pianta:['pianta'],glossario: ['termine'],
   fungo: ['velenoso', 'fungo'], commestibile: ['fungo', 'velenoso'],
   specie: ['fungo', 'velenoso'], 'specie-dettaglio': ['fungo', 'velenoso'], riconosci: ['velenoso', 'fungo'],
   alberi: ['albero'], albero: ['albero'], uscite: ['zona', 'sentiero'], zona: ['sentiero', 'zona'], mappa: ['zona', 'sentiero'], diario: ['zona', 'fungo'], info: ['pagina'], impara: ['pagina', 'termine'], 'guide-list': ['pagina'], guide: ['pagina'], metodo: ['pagina'], sfide: ['pagina'],
 };
-const PLACEHOLDER = {
+const PLACEHOLDER = { animali:'Cerca animali, nomi e caratteri…', animale:'Cerca animali, nomi e caratteri…',
   piante:'Cerca piante, erbe e frutti…',pianta:'Cerca piante, erbe e frutti…',glossario: 'Cerca una parola del glossario…',
   specie: 'Cerca funghi, sosia, alberi, zone…', 'specie-dettaglio': 'Cerca funghi, sosia, alberi, zone…', riconosci: 'Cerca velenosi, sosia, funghi…',
   alberi: 'Cerca alberi, funghi, zone…', albero: 'Cerca alberi, funghi, zone…', mappa: 'Cerca zone, sentieri, funghi…',
@@ -71,7 +71,7 @@ function score(it, words) {
   return s + (it.boost || 0);
 }
 
-const SPECIES_KINDS=new Set(['fungo','velenoso','pianta','albero']);
+const SPECIES_KINDS=new Set(['fungo','velenoso','pianta','albero','animale']);
 function searchHits(q, selectedScope='') {
   const words=norm(q).split(/\s+/).filter(Boolean);
   const pool=ITEMS.map((it,i)=>({it,i})).filter(({it})=>!selectedScope||it.kind===selectedScope);

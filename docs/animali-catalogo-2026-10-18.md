@@ -100,3 +100,26 @@ La pagina RER contiene anche suggerimenti per distruzione di nidi e pronto socco
 ## Verifiche
 
 JSON parsabile; 12 ID unici; 42 claim con fonti esistenti incluse nei riferimenti della scheda; ranghi e percorsi nel vocabolario concordato; nessuna foto o URL immagine privo di licenza; 8 ready e 4 draft. `git diff --check` eseguito. Nessun file dell’interfaccia modificato in questo ramo.
+
+
+## Integrazione app · shell 213
+
+Catalogo `#/animali` in Scopri e schede `#/animale/<id>`. Otto voci pubblicabili,
+quattro bozze non ricercabili e non apribili direttamente. Percorsi editoriali,
+fonti numerate per frase, cautele aperte e navigazione indietro condivisa. Non ci
+sono CTA Taccuino perché il relativo backend non supporta ancora animali.
+I termini zoologici non vengono collegati automaticamente al glossario micologico.
+
+Risorsa CMS `animals`: schema, validazione delle claim/fonti, seed e snapshot,
+aggiornamento del repository che protegge bozze e contenuti degli autori. Ogni
+modifica richiede revisione. Risorse/module/CSS precache e versione app allineate.
+
+Rapporto asset: `animali-foto` **8 richiesti, 8 mancanti, 8 elencati, 0 non
+elencati**. Nessuna immagine sostitutiva generata. Le pendenze di immagini
+preesistenti restano invariate, nessuna nuova incoerenza.
+
+Verifiche mirate: 25 test Node su contenuti, CMS e asset; 7 scenari browser su
+catalogo, rail di cinque sezioni, filtri, dettaglio/fonti/back, bozze escluse e
+ricerca per nomi/caratteri a 320/390/768 px nei temi chiaro e scuro. Dry-run
+Wrangler completato con configurazione locale in `/tmp`. Nessun deploy o merge
+eseguito da questo ramo. Safari reale non disponibile per verifica fisica.

@@ -197,3 +197,19 @@ attraverso il comando di annotazione. Le condizioni già salvate nei taccuini
 restano leggibili. Il percorso esistente di annotazione non viene modificato.
 
 L’avviso iniziale presenta Fronda come esperimento personale, usato esclusivamente per provare e migliorare il prototipo. Cookie policy e privacy si consultano nello stesso pannello; un solo pulsante conferma la lettura. Prima della conferma l’interfaccia resta inerte, anche cambiando hash o chiudendo il dialog. Versione, impronta e data vengono conservate sul dispositivo e, con un profilo, registrate sul server; le vecchie date sconosciute non vengono inventate. Il tutorial di installazione è successivo e facoltativo; la sua chiusura non revoca la conferma. Nella PWA si riusa la ricevuta solo se disponibile. Dettagli, limiti e migrazione in [accettazione-condizioni.md](accettazione-condizioni.md).
+
+### Animali · 18 ottobre 2026
+
+Matteo ha autorizzato l’implementazione del primo catalogo dopo lo studio dedicato.
+Scopri aggiunge Animali tra Alberi e Guide; la riga di cinque sezioni scorre
+orizzontalmente, senza restringere i nomi a 320 px. La navbar resta invariata.
+Il catalogo distingue tre percorsi editoriali: Sui fiori, Bosco e sentiero,
+Convivere con prudenza. Quest’ultimo non è una classe di pericolosità dell’animale.
+
+Le otto schede iniziali espongono dati brevi e fonti per frase. Le cautele presenti
+sono aperte, le sezioni prive di dati non vengono create. Una scheda di gruppo si
+distingue da quella di una specie. Nessuna identificazione, previsione di presenza,
+indice o nuova osservazione nel Taccuino: il backend non gestisce ancora animali.
+Le quattro bozze restano escluse anche dalla ricerca globale e dall’URL diretto.
+Nella ricerca precedono i nomi; in assenza di risultati per nome si suggeriscono
+caratteri documentati con il relativo motivo.

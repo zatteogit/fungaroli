@@ -95,6 +95,30 @@ export function validateContent(id, data, previous) {
     const seen=new Set();
     for (const t of rows) { if (!t || !idPattern.test(t.id) || seen.has(t.id)) err('Gli identificativi devono essere unici e stabili, con lettere minuscole, numeri e trattini.'); seen.add(t.id); }
   };
+  if(id==='animals'){
+    if(value.version!==1||!/^\d{4}-\d{2}-\d{2}$/.test(value.reviewedOn||'')||!Array.isArray(value.items)||!Array.isArray(value.sources))err('Catalogo animali non valido.');
+    const sourceIds=new Set();
+    for(const source of value.sources){
+      if(!source||typeof source.id!=='string'||!source.id||sourceIds.has(source.id)||typeof source.title!=='string'||!source.title.trim()||typeof source.publisher!=='string'||!source.publisher.trim()||!/^https:\/\/[^\s"'<>]+$/.test(source.url||'')||!/^\d{4}-\d{2}-\d{2}$/.test(source.checkedOn||''))err('Ogni fonte animale richiede ID unico, titolo, editore, URL HTTPS e data.');
+      sourceIds.add(source.id);
+    }
+    checkIds(value.items);
+    const keys=['id','name','latin','rank','groupLabel','paths','summary','observe','habitat','behavior','ecology','cautions','sourceIds','photos','knownGaps','publicationStatus'];
+    for(const animal of value.items){
+      if(Object.keys(animal).some(key=>!keys.includes(key)))err('Campo animale non previsto.');
+      if(typeof animal.name!=='string'||!animal.name.trim()||typeof animal.latin!=='string'||!['species','genus','family','editorial_group'].includes(animal.rank)||animal.rank!=='editorial_group'&&!animal.latin.trim()||typeof animal.groupLabel!=='string'||!animal.groupLabel.trim()||typeof animal.summary!=='string'||!animal.summary.trim()||!['ready','draft'].includes(animal.publicationStatus))err('Nome, rango e stato animale non validi.');
+      if(!Array.isArray(animal.paths)||!animal.paths.length||new Set(animal.paths).size!==animal.paths.length||animal.paths.some(path=>!['flowers','trail','care'].includes(path)))err('Percorsi animali non validi.');
+      if(!Array.isArray(animal.sourceIds)||!animal.sourceIds.length||animal.sourceIds.some(id=>!sourceIds.has(id)))err('Fonti della scheda animale non valide.');
+      for(const field of ['observe','habitat','behavior','ecology','cautions']){
+        if(!Array.isArray(animal[field]))err('I fatti animali devono essere elenchi.');
+        for(const claim of animal[field])if(!claim||Object.keys(claim).some(key=>!['text','sourceIds'].includes(key))||typeof claim.text!=='string'||!claim.text.trim()||!Array.isArray(claim.sourceIds)||!claim.sourceIds.length||claim.sourceIds.some(id=>!animal.sourceIds.includes(id)))err('Ogni fatto animale richiede testo e fonti della scheda.');
+      }
+      if(animal.publicationStatus==='ready'&&!['observe','habitat','behavior','ecology','cautions'].some(key=>animal[key].length))err('Una scheda animale pubblicabile richiede fatti documentati.');
+      if(!Array.isArray(animal.knownGaps)||animal.knownGaps.some(gap=>typeof gap!=='string')||!Array.isArray(animal.photos))err('Limiti e fotografie animali non validi.');
+      for(const photo of animal.photos)if(!photo||!photo.file||!photo.page||!photo.author||!photo.license||!photo.licenseUrl||photo.generated===true)err('Le fotografie animali richiedono file, fonte, autore e licenza: niente foto generate.');
+    }
+    needsReview=!previous||!same(value,previous);
+  }
   if (id === 'species-traits' || id === 'edible-catalog') {
     const key=id==='species-traits'?'taxa':'species';
     if (id === 'species-traits' ? !value.taxa || Array.isArray(value.taxa) : !Array.isArray(value.species)) err('Elenco delle specie non valido.');
