@@ -1,5 +1,10 @@
 [
   {
+    "key": "terminillo-autunno",
+    "path": "masters/terminillo-ovest-autunno-sereno.png",
+    "prompt": "Edit the supplied REAL landscape photograph into an AUTUMN seasonal illustrative derivative for an Italian outdoor app. Preserve EXACTLY the original camera position, crop, perspective, mountain skyline, summit tiny building, rock outcrops, zigzag footpaths, gravel track and slope geometry. Do not add or remove landforms, trees, buildings, people or animals. Change only grass/vegetation from summer green to restrained dry autumn ochre and brown, retain patches of green; keep exposed limestone unchanged. Bright clear blue sky, calm daylight (sereno). This is an illustrative seasonal adaptation, NOT a current weather observation. Natural photographic texture, original 3:2 landscape ratio, high resolution, no text, no logos, no borders. The source shows a mostly treeless grassy summit: do not invent deciduous trees or orange forest."
+  },
+  {
     "key": "terminillo-primavera",
     "prompt": "Edit the supplied REAL landscape photograph into a SPRING seasonal illustrative derivative for an Italian outdoor app. Preserve EXACTLY the original camera position, crop, perspective, mountain skyline, ALL summit shapes, rock outcrops, scree, paths and slope geometry. No additional landforms, trees, buildings, people or animals. Change only vegetation, light and ground covering as follows: grass changes from summer dull green to fresh restrained spring green; patches of pale limestone remain bare. No flowers or snow blanket. Bright clear blue sky with a few small fair weather clouds. This is an illustrative seasonal adaptation, NOT a current weather observation. Natural photographic texture, original 3:2 landscape ratio, high resolution, no text/logos/borders.",
     "path": "/workspace/generated_images/exec-61965935-8e85-406b-93f5-6b37cc252521.png"

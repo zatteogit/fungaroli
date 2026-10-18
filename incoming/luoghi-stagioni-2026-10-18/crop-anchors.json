@@ -1,0 +1,30 @@
+{
+  "terminillo-ovest": {
+    "punto": [
+      0.52,
+      0.53
+    ],
+    "riquadro": [
+      0.28,
+      0.35,
+      0.8,
+      0.81
+    ],
+    "dubbio": false,
+    "nota": "Cono del Terminilletto e tracce sul pendio; camera invariata. In16:7prioritàcrinale e sentieri, rinuncia al cielo."
+  },
+  "cittareale": {
+    "punto": [
+      0.68,
+      0.46
+    ],
+    "riquadro": [
+      0.44,
+      0.28,
+      0.91,
+      0.72
+    ],
+    "dubbio": false,
+    "nota": "Crinali rocciosi e ghiaione del Monte Pozzoni; priorità parete centrale, versante e bosco sottostante."
+  }
+}
