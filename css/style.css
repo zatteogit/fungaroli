@@ -1423,6 +1423,18 @@ html.is-offline #updated { color: var(--warn-ink); font-weight: 600; }
 html.modal-scroll-locked { overflow:hidden; overscroll-behavior:none; }
 html { scrollbar-gutter: stable; }
 dialog { overscroll-behavior: contain; }
+/* Safari riduce il visual viewport con la tastiera senza ridurre il layout viewport. */
+html.modal-viewport-constrained :is(.wiz,.sheet-dlg,.community-dialog,.cmp-chooser,.cms-dialog)[open]:modal {
+  position:fixed;
+  inset-block-start:calc(var(--modal-visible-top) + 12px);
+  inset-block-end:calc(100% - var(--modal-visible-top) - var(--modal-visible-height) + 12px);
+  margin-block:auto;
+  block-size:fit-content;
+  max-block-size:calc(var(--modal-visible-height) - 24px);
+  min-block-size:0;
+  box-sizing:border-box;
+  overflow-y:auto;
+}
 
 /* pannello del velenoso: anteprima che si trascina su per aprire la scheda completa */
 .tx-handle { position: absolute; top: 0; left: 0; right: 0; height: 26px; z-index: 3; display: grid; place-items: center; touch-action: none; }
