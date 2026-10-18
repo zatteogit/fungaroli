@@ -1,0 +1,247 @@
+{
+  "ce26-animali-donnola-07bd1f0b": {
+    "approved": false,
+    "nota": "Soggetto minuscolo e bianco nella neve, corpo nascosto; nitidezza/lettura insufficienti alla UI."
+  },
+  "ce26-animali-moscardino-81ca37a0": {
+    "approved": false,
+    "nota": "Animale quasi interamente occluso dai licheni nel tronco: manca una figura leggibile."
+  },
+  "ce26-animali-lepre-italica-ff74b397": {
+    "approved": false,
+    "nota": "Esemplare morto sulla strada: materiale inadatto alla scheda fotografica di animale vivo."
+  },
+  "ce26-animali-martora-6e3edfc8": {
+    "approved": true,
+    "attribution_approved": true,
+    "punto": [
+      0.51,
+      0.5
+    ],
+    "riquadro": [
+      0.13,
+      0.16,
+      0.74,
+      0.82
+    ],
+    "alt": "Martora (Martes martes) su un ramo.",
+    "caption": "Martora (Martes martes), Drenthe, Paesi Bassi.",
+    "nota": "Figura leggibile, pelo e muso nitidi; testa rivolta verso osservatore. Non si attribuisce una fase biologica."
+  },
+  "ce26-animali-faina-d1817718": {
+    "approved": true,
+    "attribution_approved": true,
+    "punto": [
+      0.52,
+      0.52
+    ],
+    "riquadro": [
+      0.2,
+      0.12,
+      0.88,
+      0.96
+    ],
+    "alt": "Faina (Martes foina), muso e pettorina chiara.",
+    "caption": "Faina (Martes foina), Drenthe, Paesi Bassi.",
+    "nota": "Soggetto nitido, pettorina e muso leggibili, sfondo naturale."
+  },
+  "ce26-animali-quercino-d68a0b4b": {
+    "approved": true,
+    "attribution_approved": true,
+    "punto": [
+      0.44,
+      0.52
+    ],
+    "riquadro": [
+      0.18,
+      0.19,
+      0.67,
+      0.88
+    ],
+    "alt": "Quercino (Eliomys quercinus), dettaglio del muso fra il legno.",
+    "caption": "Quercino (Eliomys quercinus), dettaglio del muso nel tronco; Spagna.",
+    "nota": "Dettaglio nitido: mascherina, orecchie e muso leggibili; il corpo è nel tronco e non viene dichiarato intero."
+  },
+  "ce26-animali-gatto-selvatico-86de54cd": {
+    "approved": true,
+    "attribution_approved": true,
+    "punto": [
+      0.5,
+      0.24
+    ],
+    "riquadro": [
+      0.34,
+      0.1,
+      0.79,
+      0.39
+    ],
+    "alt": "Gatto selvatico (Felis silvestris), corpo e coda ad anelli.",
+    "caption": "Gatto selvatico (Felis silvestris), vista del corpo e della coda.",
+    "nota": "Figura intera nitida nel visore; crop di anteprima centrati su capo e spalle per conservare gli occhi. Coda visibile nella vista completa."
+  },
+  "ce26-animali-aquila-reale-54b5f76e": {
+    "approved": true,
+    "attribution_approved": true,
+    "punto": [
+      0.53,
+      0.48
+    ],
+    "riquadro": [
+      0.06,
+      0.06,
+      0.94,
+      0.85
+    ],
+    "alt": "Aquila reale (Aquila chrysaetos) in volo.",
+    "caption": "Aquila reale (Aquila chrysaetos) in volo a La Cañada, Ávila, Spagna.",
+    "nota": "Ali e testa nitide; contorno completo. Nessuna età o sesso dedotti."
+  },
+  "ce26-animali-ape-legnaiola-42a9dee1": {
+    "approved": true,
+    "attribution_approved": true,
+    "punto": [
+      0.43,
+      0.52
+    ],
+    "riquadro": [
+      0.16,
+      0.32,
+      0.7,
+      0.78
+    ],
+    "alt": "Ape legnaiola (Xylocopa violacea) su fiori gialli.",
+    "caption": "Ape legnaiola (Xylocopa violacea), visita ai fiori.",
+    "nota": "Dettaglio macro nitido su fiore, corpo e ali visibili; la specie è attestata dalla fonte, nessuna determinazione visiva autonoma."
+  },
+  "ce26-animali-macaone-4145dd98": {
+    "approved": false,
+    "attribution_approved": true,
+    "punto": [
+      0.5,
+      0.49
+    ],
+    "riquadro": [
+      0.4,
+      0.11,
+      0.64,
+      0.87
+    ],
+    "alt": "Bruco di macaone (Papilio machaon), vista dorsale.",
+    "caption": "Bruco di macaone (Papilio machaon), vista dorsale; Keila, Estonia.",
+    "nota": "Foto originale nitidissima e fase attestata, ma nei formati5:4/4:3/16:7 e nella thumb il corpo è tagliato e sparisce la testa: scartata per crop UI, da sostituire con una larva orizzontale."
+  },
+  "ce26-animali-martora-47e8a403": {
+    "approved": false,
+    "nota": "Seconda martora della stessa scena, quasi identica e senza carattere aggiuntivo abbastanza utile."
+  },
+  "ce26-animali-faina-8adf7b53": {
+    "approved": true,
+    "attribution_approved": true,
+    "punto": [
+      0.58,
+      0.51
+    ],
+    "riquadro": [
+      0.4,
+      0.19,
+      0.78,
+      0.88
+    ],
+    "alt": "Faina (Martes foina) fra il legno, pettorina in vista.",
+    "caption": "Faina (Martes foina), altra postura con pettorina chiara; Drenthe, Paesi Bassi.",
+    "nota": "Vista frontale complementare alla laterale, corpo nitido in ambiente; stessa scena ma differenza informativa evidente."
+  },
+  "ce26-animali-moscardino-d1d4335d": {
+    "approved": false,
+    "nota": "A1200px muso e mantello risultano morbidi, corpo e coda parzialmente occlusi dalla vegetazione: non soddisfa selezione severa."
+  },
+  "ce26-animali-quercino-3f400567": {
+    "approved": false,
+    "nota": "Solo parte del muso è visibile nella fessura; vista più occlusa e meno informativa rispetto al primo quercino nitido."
+  },
+  "ce26-animali-gatto-selvatico-6ada9d16": {
+    "approved": true,
+    "attribution_approved": true,
+    "punto": [
+      0.53,
+      0.42
+    ],
+    "riquadro": [
+      0.21,
+      0.1,
+      0.89,
+      0.75
+    ],
+    "alt": "Gatto selvatico (Felis silvestris), dettaglio del capo.",
+    "caption": "Gatto selvatico (Felis silvestris), dettaglio del capo nel parco faunistico Wisentgehege Springe, Germania; in cattività.",
+    "nota": "Dettaglio del muso molto nitido complementare alla prima figura intera; cattività esplicita nella fonte."
+  },
+  "ce26-animali-lepre-italica-6787d92c": {
+    "approved": true,
+    "attribution_approved": true,
+    "punto": [
+      0.51,
+      0.49
+    ],
+    "riquadro": [
+      0.12,
+      0.03,
+      0.86,
+      0.94
+    ],
+    "alt": "Lepre italica (Lepus corsicanus), corpo e orecchie in vista.",
+    "caption": "Lepre italica (Lepus corsicanus), fotografata in Francia secondo la fonte.",
+    "nota": "Animale vivo intero e nitido; terreno sassoso ma soggetto ben separato. Taxon esatto della fonte, nessuna presenza appenninica dedotta."
+  },
+  "ce26-animali-aquila-reale-a297774a": {
+    "approved": true,
+    "attribution_approved": true,
+    "punto": [
+      0.66,
+      0.5
+    ],
+    "riquadro": [
+      0.4,
+      0.18,
+      0.98,
+      0.86
+    ],
+    "alt": "Aquila reale (Aquila chrysaetos), dettaglio del capo.",
+    "caption": "Aquila reale (Aquila chrysaetos), parco faunistico Wisentgehege Springe, Germania; in cattività.",
+    "nota": "Macro nitida di capo, becco e piumaggio, complementare alla sagoma in volo. Cattività esplicita."
+  },
+  "ce26-animali-ape-legnaiola-6d48b8d6": {
+    "approved": true,
+    "attribution_approved": true,
+    "punto": [
+      0.52,
+      0.53
+    ],
+    "riquadro": [
+      0.18,
+      0.18,
+      0.84,
+      0.86
+    ],
+    "alt": "Ape legnaiola (Xylocopa violacea), dettaglio su lavanda.",
+    "caption": "Ape legnaiola (Xylocopa violacea) su lavanda a Oppède, Francia.",
+    "nota": "Vista ravvicinata complementare delle ali e del capo, sfondo sfocato; nessuna fase o sesso dedotti."
+  },
+  "ce26-animali-donnola-19d75882": {
+    "approved": true,
+    "attribution_approved": true,
+    "punto": [
+      0.65,
+      0.29
+    ],
+    "riquadro": [
+      0.56,
+      0.12,
+      0.9,
+      0.46
+    ],
+    "alt": "Donnola (Mustela nivalis), corpo e gola chiara.",
+    "caption": "Donnola (Mustela nivalis), British Wildlife Centre, Inghilterra; in cattività.",
+    "nota": "Corpo e testa leggibili su sfondo scuro; immagine della fonte con contrasto marcato, nessuna correzione creativa applicata. Cattività esplicita."
+  }
+}

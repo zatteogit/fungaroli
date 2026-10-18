@@ -1,0 +1,298 @@
+{
+  "bugola": {
+    "9": [
+      [
+        0.5,
+        0.48
+      ],
+      [
+        0.28,
+        0.08,
+        0.74,
+        0.9
+      ],
+      "Fusto fiorito e disposizione dei fiori",
+      "Portamento del fusto fiorito, con gruppi sovrapposti di corolle blu."
+    ],
+    "13": [
+      [
+        0.55,
+        0.49
+      ],
+      [
+        0.2,
+        0.12,
+        0.9,
+        0.9
+      ],
+      "Dettaglio della foglia",
+      "Foglia della bugola: superficie e margine in dettaglio."
+    ],
+    "22": [
+      [
+        0.5,
+        0.5
+      ],
+      [
+        0.08,
+        0.18,
+        0.95,
+        0.85
+      ],
+      "Stolone e foglie",
+      "Vista ravvicinata del tratto strisciante e delle foglie della bugola."
+    ]
+  },
+  "acetosella": {
+    "0": [
+      [
+        0.48,
+        0.5
+      ],
+      [
+        0.04,
+        0.04,
+        0.96,
+        0.96
+      ],
+      "Dettaglio dei fiori",
+      "Fiori di acetosella: venature delle corolle e parte centrale ben visibili."
+    ],
+    "8": [
+      [
+        0.5,
+        0.5
+      ],
+      [
+        0.12,
+        0.08,
+        0.92,
+        0.94
+      ],
+      "Portamento e foglie nel sottobosco",
+      "Acetosella nel sottobosco: foglie trifogliate e disposizione della pianta."
+    ]
+  },
+  "geranio-robertiano": {
+    "40": [
+      [
+        0.48,
+        0.43
+      ],
+      [
+        0.28,
+        0.14,
+        0.72,
+        0.68
+      ],
+      "Dettaglio del fiore",
+      "Fiore di geranio robertiano su sfondo sfocato."
+    ],
+    "56": [
+      [
+        0.5,
+        0.5
+      ],
+      [
+        0.08,
+        0.15,
+        0.94,
+        0.86
+      ],
+      "Foglia e sue divisioni",
+      "Foglia del geranio robertiano: lobi e divisioni della lamina in dettaglio."
+    ],
+    "80": [
+      [
+        0.49,
+        0.5
+      ],
+      [
+        0.35,
+        0.04,
+        0.65,
+        0.96
+      ],
+      "Peli sul fusto",
+      "Macro del fusto del geranio robertiano, con i peli illuminati di lato."
+    ]
+  },
+  "sanicola": {
+    "5": [
+      [
+        0.5,
+        0.42
+      ],
+      [
+        0.05,
+        0.16,
+        0.97,
+        0.74
+      ],
+      "Ombrellette fiorali",
+      "Ombrellette di sanicola, isolate contro lo sfondo del cielo."
+    ],
+    "3": [
+      [
+        0.5,
+        0.47
+      ],
+      [
+        0.08,
+        0.04,
+        0.94,
+        0.93
+      ],
+      "Foglia basale",
+      "Foglia di sanicola: divisioni palmate, lobi e denti in vista dall’alto."
+    ]
+  },
+  "viola-silvestre": {
+    "17": [
+      [
+        0.5,
+        0.43
+      ],
+      [
+        0.12,
+        0.03,
+        0.9,
+        0.83
+      ],
+      "Fiore visto di fronte",
+      "Fiore di viola silvestre: corolla e parte centrale viste di fronte."
+    ],
+    "50": [
+      [
+        0.5,
+        0.5
+      ],
+      [
+        0.05,
+        0.04,
+        0.95,
+        0.94
+      ],
+      "Fiore laterale e sperone",
+      "Fiore di viola silvestre di lato: lo sperone è visibile dietro la corolla."
+    ],
+    "44": [
+      [
+        0.53,
+        0.5
+      ],
+      [
+        0.18,
+        0.08,
+        0.91,
+        0.89
+      ],
+      "Foglia e base della lamina",
+      "Foglia della viola silvestre: forma della lamina, base e nervature in vista ravvicinata."
+    ]
+  },
+  "pervinca-minore": {
+    "60": [
+      [
+        0.55,
+        0.5
+      ],
+      [
+        0.18,
+        0.2,
+        0.89,
+        0.85
+      ],
+      "Dettaglio frontale della corolla",
+      "Fiore di pervinca minore visto di fronte, con i cinque lobi della corolla."
+    ],
+    "30": [
+      [
+        0.45,
+        0.23
+      ],
+      [
+        0.12,
+        0.03,
+        0.86,
+        0.42
+      ],
+      "Fusto fiorito, di lato",
+      "Pervinca minore di lato: fiore, lungo peduncolo e foglie."
+    ]
+  },
+  "cariofillata": {
+    "11": [
+      [
+        0.51,
+        0.46
+      ],
+      [
+        0.22,
+        0.15,
+        0.84,
+        0.81
+      ],
+      "Fiore visto di fronte",
+      "Fiore di cariofillata comune: cinque petali gialli e centro in dettaglio."
+    ],
+    "0": [
+      [
+        0.5,
+        0.5
+      ],
+      [
+        0.04,
+        0.03,
+        0.96,
+        0.96
+      ],
+      "Foglia basale e segmento terminale",
+      "Foglia di cariofillata comune: segmenti laterali e ampia divisione terminale."
+    ]
+  },
+  "stellina-odorosa": {
+    "5": [
+      [
+        0.55,
+        0.48
+      ],
+      [
+        0.31,
+        0.18,
+        0.78,
+        0.76
+      ],
+      "Macro dei fiori",
+      "Fiori di stellina odorosa: corolle bianche isolate sullo sfondo sfocato."
+    ],
+    "6": [
+      [
+        0.5,
+        0.5
+      ],
+      [
+        0.03,
+        0.06,
+        0.97,
+        0.94
+      ],
+      "Verticillo fogliare",
+      "Foglie di stellina odorosa disposte intorno al fusto, viste dall’alto."
+    ],
+    "4": [
+      [
+        0.5,
+        0.23
+      ],
+      [
+        0.18,
+        0.03,
+        0.81,
+        0.44
+      ],
+      "Portamento del fusto e verticilli",
+      "Fusto di stellina odorosa nel sottobosco, con verticilli fogliari e fiori."
+    ]
+  }
+}

@@ -1,0 +1,2861 @@
+{
+  "continue": {
+    "clcontinue": "94502595|Papilio_machaon_(caterpillar)",
+    "continue": "||imageinfo"
+  },
+  "query": {
+    "pages": {
+      "94502580": {
+        "pageid": 94502580,
+        "ns": 6,
+        "title": "File:DSCN6224 Papilio machaon.jpg",
+        "index": 24,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3691927,
+            "width": 4608,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/99/DSCN6224_Papilio_machaon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:DSCN6224_Papilio_machaon.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=94502580",
+            "sha1": "3eb15b18a46287667d1a4454235f0bb09e98c3f6",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-09-27 20:24:41",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "DSCN6224 Papilio machaon",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Self-published work|Papilio machaon (caterpillar)|Projekat Nije štetočina sve što gmiže",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Caterpillar",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-09-27 12:12:32",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Danilo.penic&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Danilo.penic (page does not exist)\">Danilo.penic</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Papilio machaon (caterpillar)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Projekat Nije štetočina sve što gmiže"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "94502584": {
+        "pageid": 94502584,
+        "ns": 6,
+        "title": "File:DSCN6227 Papilio machaon.jpg",
+        "index": 23,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3674233,
+            "width": 4608,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/46/DSCN6227_Papilio_machaon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:DSCN6227_Papilio_machaon.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=94502584",
+            "sha1": "27ee8b56251ac1dc5c32cf3e6706883909b08f3d",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-09-27 20:24:45",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "DSCN6227 Papilio machaon",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Self-published work|Papilio machaon (caterpillar)|Projekat Nije štetočina sve što gmiže",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Caterpillar",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-09-27 12:13:50",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Danilo.penic&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Danilo.penic (page does not exist)\">Danilo.penic</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Papilio machaon (caterpillar)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Projekat Nije štetočina sve što gmiže"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "94502585": {
+        "pageid": 94502585,
+        "ns": 6,
+        "title": "File:DSCN6228 Papilio machaon.jpg",
+        "index": 13,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3778363,
+            "width": 4608,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/65/DSCN6228_Papilio_machaon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:DSCN6228_Papilio_machaon.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=94502585",
+            "sha1": "dab4bd2afb2af72209f4abf87874348f26b5b690",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-09-27 20:24:45",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "DSCN6228 Papilio machaon",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Self-published work|Papilio machaon (caterpillar)|Projekat Nije štetočina sve što gmiže",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Caterpillar",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-09-27 12:14:53",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Danilo.penic&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Danilo.penic (page does not exist)\">Danilo.penic</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Papilio machaon (caterpillar)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Projekat Nije štetočina sve što gmiže"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "94502587": {
+        "pageid": 94502587,
+        "ns": 6,
+        "title": "File:DSCN6229 Papilio machaon.jpg",
+        "index": 17,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3651057,
+            "width": 3456,
+            "height": 4608,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/46/DSCN6229_Papilio_machaon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:DSCN6229_Papilio_machaon.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=94502587",
+            "sha1": "bb35d424cc82f2032fc77d93cc62f1a887030d48",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-09-27 20:24:48",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "DSCN6229 Papilio machaon",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Self-published work|Papilio machaon (caterpillar)|Projekat Nije štetočina sve što gmiže",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Caterpillar",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-09-27 12:15:18",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Danilo.penic&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Danilo.penic (page does not exist)\">Danilo.penic</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Papilio machaon (caterpillar)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Projekat Nije štetočina sve što gmiže"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "94502590": {
+        "pageid": 94502590,
+        "ns": 6,
+        "title": "File:DSCN6231 Papilio machaon.jpg",
+        "index": 11,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3480546,
+            "width": 4608,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/04/DSCN6231_Papilio_machaon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:DSCN6231_Papilio_machaon.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=94502590",
+            "sha1": "cb7c96d184ce9ee2635231577286d342a3946ac1",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-09-27 20:24:49",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "DSCN6231 Papilio machaon",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Self-published work|Papilio machaon (caterpillar)|Projekat Nije štetočina sve što gmiže",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Caterpillar",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-09-27 12:15:36",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Danilo.penic&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Danilo.penic (page does not exist)\">Danilo.penic</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Papilio machaon (caterpillar)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Projekat Nije štetočina sve što gmiže"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "94502593": {
+        "pageid": 94502593,
+        "ns": 6,
+        "title": "File:DSCN6233 Papilio machaon.jpg",
+        "index": 16,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3409733,
+            "width": 4608,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/DSCN6233_Papilio_machaon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:DSCN6233_Papilio_machaon.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=94502593",
+            "sha1": "71233131c02e27ae47358ea404de9612a0af901c",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-09-27 20:24:53",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "DSCN6233 Papilio machaon",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Self-published work|Papilio machaon (caterpillar)|Projekat Nije štetočina sve što gmiže",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Caterpillar",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-09-27 12:17:19",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Danilo.penic&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Danilo.penic (page does not exist)\">Danilo.penic</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Papilio machaon (caterpillar)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Projekat Nije štetočina sve što gmiže"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "94502594": {
+        "pageid": 94502594,
+        "ns": 6,
+        "title": "File:DSCN6234 Papilio machaon.jpg",
+        "index": 20,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3622780,
+            "width": 4608,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/30/DSCN6234_Papilio_machaon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:DSCN6234_Papilio_machaon.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=94502594",
+            "sha1": "750c41396185de98089c7e89bf0b0e34c363543b",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-09-27 20:24:53",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "DSCN6234 Papilio machaon",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Self-published work|Papilio machaon (caterpillar)|Projekat Nije štetočina sve što gmiže",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Caterpillar",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-09-27 12:19:24",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Danilo.penic&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Danilo.penic (page does not exist)\">Danilo.penic</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Papilio machaon (caterpillar)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Projekat Nije štetočina sve što gmiže"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "94502595": {
+        "pageid": 94502595,
+        "ns": 6,
+        "title": "File:DSCN6235 Papilio machaon.jpg",
+        "index": 19,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3246288,
+            "width": 4608,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/DSCN6235_Papilio_machaon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:DSCN6235_Papilio_machaon.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=94502595",
+            "sha1": "01ee83d5e8cd3ad395f1eca6f2100d7a4de6c0fb",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-09-27 20:24:56",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "DSCN6235 Papilio machaon",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Self-published work|Papilio machaon (caterpillar)|Projekat Nije štetočina sve što gmiže",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Caterpillar",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-09-27 12:19:52",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Danilo.penic&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Danilo.penic (page does not exist)\">Danilo.penic</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          }
+        ]
+      },
+      "94502596": {
+        "pageid": 94502596,
+        "ns": 6,
+        "title": "File:DSCN6236 Papilio machaon.jpg",
+        "index": 21,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3455394,
+            "width": 4608,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e4/DSCN6236_Papilio_machaon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:DSCN6236_Papilio_machaon.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=94502596",
+            "sha1": "2dce16123d4b064ad909783ceb3cdcb5ee9ffcb1",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-09-27 20:24:57",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "DSCN6236 Papilio machaon",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Self-published work|Papilio machaon (caterpillar)|Projekat Nije štetočina sve što gmiže",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Caterpillar",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-09-27 12:17:51",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Danilo.penic&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Danilo.penic (page does not exist)\">Danilo.penic</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "94502597": {
+        "pageid": 94502597,
+        "ns": 6,
+        "title": "File:DSCN6237 Papilio machaon.jpg",
+        "index": 15,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3641791,
+            "width": 4608,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/DSCN6237_Papilio_machaon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:DSCN6237_Papilio_machaon.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=94502597",
+            "sha1": "16900c142537e269e963ec5fe88165e937269a1a",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-09-27 20:24:58",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "DSCN6237 Papilio machaon",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Self-published work|Papilio machaon (caterpillar)|Projekat Nije štetočina sve što gmiže",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Caterpillar",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-09-27 12:17:55",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Danilo.penic&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Danilo.penic (page does not exist)\">Danilo.penic</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "94502599": {
+        "pageid": 94502599,
+        "ns": 6,
+        "title": "File:DSCN6238 Papilio machaon.jpg",
+        "index": 14,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3451388,
+            "width": 4608,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/22/DSCN6238_Papilio_machaon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:DSCN6238_Papilio_machaon.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=94502599",
+            "sha1": "631e9f22e611724ce148238ca0ea87fee47089ef",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-09-27 20:24:59",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "DSCN6238 Papilio machaon",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Self-published work|Papilio machaon (caterpillar)|Projekat Nije štetočina sve što gmiže",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Caterpillar",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-09-27 12:18:02",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Danilo.penic&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Danilo.penic (page does not exist)\">Danilo.penic</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "94502601": {
+        "pageid": 94502601,
+        "ns": 6,
+        "title": "File:DSCN6239 Papilio machaon.jpg",
+        "index": 12,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3391754,
+            "width": 4608,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/a8/DSCN6239_Papilio_machaon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:DSCN6239_Papilio_machaon.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=94502601",
+            "sha1": "ecd6cef62aa36b6ad172ecb109424ed1ca163868",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-09-27 20:25:01",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "DSCN6239 Papilio machaon",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Self-published work|Papilio machaon (caterpillar)|Projekat Nije štetočina sve što gmiže",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Caterpillar",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-09-27 12:18:13",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Danilo.penic&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Danilo.penic (page does not exist)\">Danilo.penic</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "94502602": {
+        "pageid": 94502602,
+        "ns": 6,
+        "title": "File:DSCN6240 Papilio machaon.jpg",
+        "index": 18,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3306232,
+            "width": 4608,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/18/DSCN6240_Papilio_machaon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:DSCN6240_Papilio_machaon.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=94502602",
+            "sha1": "3409242ca9683197f658fa52359c451716b36cd2",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-09-27 20:25:01",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "DSCN6240 Papilio machaon",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Self-published work|Papilio machaon (caterpillar)|Projekat Nije štetočina sve što gmiže",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Caterpillar",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-09-27 12:16:07",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Danilo.penic&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Danilo.penic (page does not exist)\">Danilo.penic</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "94502603": {
+        "pageid": 94502603,
+        "ns": 6,
+        "title": "File:DSCN6241 Papilio machaon.jpg",
+        "index": 22,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3352283,
+            "width": 4608,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/96/DSCN6241_Papilio_machaon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:DSCN6241_Papilio_machaon.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=94502603",
+            "sha1": "2f37d2c9b60567a6c0f5346fd3259d0979837bf5",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-09-27 20:25:03",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "DSCN6241 Papilio machaon",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Self-published work|Papilio machaon (caterpillar)|Projekat Nije štetočina sve što gmiže",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Caterpillar",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-09-27 12:16:10",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Danilo.penic&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Danilo.penic (page does not exist)\">Danilo.penic</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "114880443": {
+        "pageid": 114880443,
+        "ns": 6,
+        "title": "File:Larva Papilio machaon Shumarovo 03.08.2021.jpg",
+        "index": 5,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3416604,
+            "width": 4160,
+            "height": 3120,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/01/Larva_Papilio_machaon_Shumarovo_03.08.2021.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Larva_Papilio_machaon_Shumarovo_03.08.2021.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=114880443",
+            "sha1": "edac8d5d89ddcbbef2c28c8d50dd09ca818d5bd1",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-02-01 15:40:53",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Larva Papilio machaon Shumarovo 03.08.2021",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Mglinsky District|Self-published work|Papilio machaon (caterpillar)|Files with coordinates missing SDC location of creation|Taken with Huawei Honor 9A",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "53.112300",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "32.914200",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Larva of Common yellow swallowtail (Papilio machaon)\nPhoto was taken in August 3, 2021. Place - Shumarovo, Mglinsky District, Bryansk Oblast, Russia.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-08-03 18:55:57",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:DakotaSteini\" title=\"User:DakotaSteini\">DakotaSteini</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "5288670": {
+        "pageid": 5288670,
+        "ns": 6,
+        "title": "File:Papilio Machaon caterpillar.JPG",
+        "index": 4,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 6335427,
+            "width": 2592,
+            "height": 3872,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Papilio_Machaon_caterpillar.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Papilio_Machaon_caterpillar.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=5288670",
+            "sha1": "594d63bee5cc1ea2be92daabfcf243c9f5bb64a8",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2008-11-26 20:33:15",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Papilio Machaon caterpillar",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "GFDL|Taken with Samsung GX10|CC-BY-SA-3.0,2.5,2.0,1.0|License migration redundant|Self-published work|Papilio machaon (caterpillar)|Files with derivative versions|Featured pictures of Calvados|Featured pictures of caterpillars|Featured pictures of Papilio machaon",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality|featured",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Caterpillar <i><a href=\"//commons.wikimedia.org/wiki/Papilio_machaon\" title=\"Papilio machaon\">Papilio machaon</a></i> taken in Normandie.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2008-09-05",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Entomolo\" title=\"User:Entomolo\">hamon jp</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0,2.5,2.0,1.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Featured pictures of Calvados"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Featured pictures of Papilio machaon"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Featured pictures of caterpillars"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Featured pictures on Wikimedia Commons"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with derivative versions"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Papilio machaon (caterpillar)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of Calvados"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of Papilio machaon"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Samsung GX10"
+          }
+        ]
+      },
+      "80955091": {
+        "pageid": 80955091,
+        "ns": 6,
+        "title": "File:Papilio machaon Ulia 01.jpg",
+        "index": 8,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1297628,
+            "width": 3264,
+            "height": 1836,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/69/Papilio_machaon_Ulia_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Papilio_machaon_Ulia_01.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=80955091",
+            "sha1": "473b2818ddd29d845fa8fa2c207b0c3b41096efc",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2019-08-01 22:18:41",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Papilio machaon Ulia 01",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Uliako Mintegietako parkea|Self-published work|Papilionidae of Spain|Caterpillars of Spain|Files with coordinates missing SDC location of creation|Papilio machaon caterpillars on Foeniculum vulgare|Lepidoptera of Basque Country|Papilio machaon machaon",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "43.322210",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-1.952990",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Caterpillars of the Macaón butterfly eating fennel in the park of the Nurseries of Ulia.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2019-07-26 15:48:55",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Ksarasola\" title=\"User:Ksarasola\">Ksarasola</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Caterpillars of Spain"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lepidoptera of Basque Country"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Papilio machaon caterpillars on Foeniculum vulgare"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Papilio machaon machaon"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Papilionidae of Spain"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uliako Mintegietako parkea"
+          }
+        ]
+      },
+      "80955090": {
+        "pageid": 80955090,
+        "ns": 6,
+        "title": "File:Papilio machaon Ulia 02.jpg",
+        "index": 10,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 930672,
+            "width": 1704,
+            "height": 802,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/60/Papilio_machaon_Ulia_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Papilio_machaon_Ulia_02.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=80955090",
+            "sha1": "a96756eb629b32ec9a1e5813f7bb44db395f191c",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2019-08-01 22:18:41",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Papilio machaon Ulia 02",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Uliako Mintegietako parkea|Self-published work|Papilionidae of Spain|Caterpillars of Spain|Files with coordinates missing SDC location of creation|Raindrops|Papilio machaon caterpillars on Foeniculum vulgare|Lepidoptera of Basque Country|Papilio machaon machaon",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "43.322210",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-1.952990",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Caterpillars of the Macaón butterfly eating fennel and with raindrops, in the park of the Nurseries of Ulia.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2019-07-26 15:48:55",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Ksarasola\" title=\"User:Ksarasola\">Ksarasola</a>, Nekane Aramendia Rebolledo",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Caterpillars of Spain"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lepidoptera of Basque Country"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Papilio machaon caterpillars on Foeniculum vulgare"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Papilio machaon machaon"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Papilionidae of Spain"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Raindrops"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uliako Mintegietako parkea"
+          }
+        ]
+      },
+      "80955089": {
+        "pageid": 80955089,
+        "ns": 6,
+        "title": "File:Papilio machaon Ulia 03.jpg",
+        "index": 9,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 216974,
+            "width": 555,
+            "height": 620,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Papilio_machaon_Ulia_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Papilio_machaon_Ulia_03.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=80955089",
+            "sha1": "1b02eee4563f59c047054ed48f69d10c99cb9ba2",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2019-08-01 22:18:41",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Papilio machaon Ulia 03",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Uliako Mintegietako parkea|Self-published work|Papilionidae of Spain|Caterpillars of Spain|Files with coordinates missing SDC location of creation|Papilio machaon caterpillars on Foeniculum vulgare|Lepidoptera of Basque Country|Papilio machaon machaon",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "43.322210",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-1.952990",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Caterpillars of the Macaón butterfly eating fennel in the park of the Nurseries of Ulia.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2019-07-26 15:48:55",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Ksarasola\" title=\"User:Ksarasola\">Ksarasola</a>, Nekane Aramendia Rebolledo",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Caterpillars of Spain"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lepidoptera of Basque Country"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Papilio machaon caterpillars on Foeniculum vulgare"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Papilio machaon machaon"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Papilionidae of Spain"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uliako Mintegietako parkea"
+          }
+        ]
+      },
+      "110653649": {
+        "pageid": 110653649,
+        "ns": 6,
+        "title": "File:Papilio machaon caterpillar (bottom view) - Keila.jpg",
+        "index": 25,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 13852668,
+            "width": 4000,
+            "height": 6000,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/04/Papilio_machaon_caterpillar_%28bottom_view%29_-_Keila.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Papilio_machaon_caterpillar_(bottom_view)_-_Keila.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=110653649",
+            "sha1": "9b681959ef6c929dbc312f357b75c795ff45bd51",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-10-10 17:46:23",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Papilio machaon caterpillar (bottom view) - Keila",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Self-published work|Nature of Keila|Papilio machaon (caterpillar)|Caterpillars of Estonia|Featured pictures by iifar|Featured pictures of Keila|Papilionidae of Estonia|Nature of Estonia in August|Insects with plants|Files with coordinates missing SDC location of creation|Estonia photographs taken on 2021-08-11|Featured pictures of Papilio machaon|Featured pictures of animals in Estonia|Uploads by iifar|Focus stacking images of caterpillars|Focus stacked image",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "featured",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "59.317705",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "24.413472",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Artist": {
+                "value": "<div class=\"fn value\">\n<a href=\"//commons.wikimedia.org/wiki/User:Iifar\" title=\"User:Iifar\">Ivar Leidus</a></div>",
+                "source": "commons-desc-page"
+              },
+              "ImageDescription": {
+                "value": "Old world swallowtail caterpillar, length 4 cm",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "11 August 2021, 20:37",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "I, the copyright holder of this work, hereby publish it under the following license:",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "110653646": {
+        "pageid": 110653646,
+        "ns": 6,
+        "title": "File:Papilio machaon caterpillar (top view) - Keila.jpg",
+        "index": 2,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 11812214,
+            "width": 4000,
+            "height": 6000,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Papilio_machaon_caterpillar_%28top_view%29_-_Keila.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Papilio_machaon_caterpillar_(top_view)_-_Keila.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=110653646",
+            "sha1": "ae5280045e9a16c3134c10bc2130c6a62d268399",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-10-10 17:46:53",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Papilio machaon caterpillar (top view) - Keila",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Self-published work|Nature of Keila|Papilio machaon (caterpillar)|Caterpillars of Estonia|Featured pictures by iifar|Featured pictures of Keila|Papilionidae of Estonia|Nature of Estonia in August|Insects with plants|Files with coordinates missing SDC location of creation|Estonia photographs taken on 2021-08-11|Featured pictures of Papilio machaon|Featured pictures of animals in Estonia|Uploads by iifar|Focus stacking images of caterpillars|Focus stacked image",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "featured",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "59.317705",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "24.413472",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Artist": {
+                "value": "<div class=\"fn value\">\n<a href=\"//commons.wikimedia.org/wiki/User:Iifar\" title=\"User:Iifar\">Ivar Leidus</a></div>",
+                "source": "commons-desc-page"
+              },
+              "ImageDescription": {
+                "value": "Old world swallowtail caterpillar, length 4 cm",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "11 August 2021, 20:32",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "I, the copyright holder of this work, hereby publish it under the following license:",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "121572029": {
+        "pageid": 121572029,
+        "ns": 6,
+        "title": "File:Papilio machaon caterpillar - Bruco di farfalla a coda di rondine o macaone.jpg",
+        "index": 6,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 328529,
+            "width": 1560,
+            "height": 2080,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Papilio_machaon_caterpillar_-_Bruco_di_farfalla_a_coda_di_rondine_o_macaone.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Papilio_machaon_caterpillar_-_Bruco_di_farfalla_a_coda_di_rondine_o_macaone.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=121572029",
+            "sha1": "eef5c89bfb14cdd69d3f4e5f4f7668eaad6dac4d",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-08-10 07:53:27",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Papilio machaon caterpillar - Bruco di farfalla a coda di rondine o macaone",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Self-published work|Papilio machaon (caterpillar)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Old World swallowtail caterpillar",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-08-10",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:SWT666\" title=\"User:SWT666\">SWT666</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "3992794": {
+        "pageid": 3992794,
+        "ns": 6,
+        "title": "File:Papilio machaon caterpillar by Nemos.jpg",
+        "index": 3,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 205024,
+            "width": 1562,
+            "height": 1188,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/00/Papilio_machaon_caterpillar_by_Nemos.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Papilio_machaon_caterpillar_by_Nemos.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=3992794",
+            "sha1": "bc7f03755e11844942523d05b56841c496d22d53",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2008-05-04 20:14:28",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Papilio machaon caterpillar by Nemos",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "PD Old|Papilio machaon (caterpillar)|Papilio machaon illustrations|Extracted images|CC-PD-Mark|Papilio machaon (pupae)|PD-old missing SDC copyright status|Illustrations of caterpillars|Lepidoptera pupae illustrations",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i><a href=\"//commons.wikimedia.org/wiki/Papilio_machaon\" title=\"Papilio machaon\">Papilio machaon</a></i> caterpillar and larva",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This image has been <b>extracted</b> from another file",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Dr. F. Nemos",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-PD-Mark"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Extracted images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Illustrations of caterpillars"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lepidoptera pupae illustrations"
+          },
+          {
+            "ns": 14,
+            "title": "Category:PD-old missing SDC copyright status"
+          },
+          {
+            "ns": 14,
+            "title": "Category:PD Old"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Papilio machaon (caterpillar)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Papilio machaon (pupae)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Papilio machaon illustrations"
+          }
+        ]
+      },
+      "40684470": {
+        "pageid": 40684470,
+        "ns": 6,
+        "title": "File:Papilio machaon larva.jpg",
+        "index": 1,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 4055914,
+            "width": 3250,
+            "height": 2187,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Papilio_machaon_larva.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Papilio_machaon_larva.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=40684470",
+            "sha1": "47970dc08acd76298b11c01b9b6c162cfab5b453",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-06-02 19:55:01",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Papilio machaon larva",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Featured pictures of Turkey|Coleoptera of Turkey|Unidentified Coleoptera of Turkey|Caterpillars of Turkey|Self-published work|Papilio machaon (caterpillar)|Featured pictures on Wikipedia, Persian|Featured pictures on Wikipedia, Turkish|Butterflies images by Zcebeci|Files with coordinates missing SDC location of creation|Featured pictures of caterpillars|Featured pictures of Papilio machaon|Papilionidae of Çukurova University|Insects of Adana Province",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality|featured",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "37.049705",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "35.364891",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "A larva of Old World Swallowtail (<i>Papilio machaon</i>). Balcalı, Adana - Turkey.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2015-05-26 17:27:13",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Zcebeci\" title=\"User:Zcebeci\">Zeynel Cebeci</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Butterflies images by Zcebeci"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Caterpillars of Turkey"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Coleoptera of Turkey"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Featured pictures of Papilio machaon"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Featured pictures of Turkey"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Featured pictures of caterpillars"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Featured pictures on Wikimedia Commons"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Featured pictures on Wikipedia, Persian"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Featured pictures on Wikipedia, Turkish"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Insects of Adana Province"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Papilio machaon (caterpillar)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Papilionidae of Çukurova University"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images missing SDC depicts"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of Papilio machaon"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of Turkey"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Unidentified Coleoptera of Turkey"
+          }
+        ]
+      },
+      "171287639": {
+        "pageid": 171287639,
+        "ns": 6,
+        "title": "File:Schwalbenschwanz (Papilio machaon) Raupe-20250724-RM-101941.jpg",
+        "index": 7,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 4575458,
+            "width": 3886,
+            "height": 5182,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Schwalbenschwanz_%28Papilio_machaon%29_Raupe-20250724-RM-101941.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Schwalbenschwanz_(Papilio_machaon)_Raupe-20250724-RM-101941.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=171287639",
+            "sha1": "00437509233767f0c4156474b59254796c618960",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2025-08-01 22:25:06",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Schwalbenschwanz (Papilio machaon) Raupe-20250724-RM-101941",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Anethum graveolens|Papilio machaon (caterpillar)|Featured pictures by Ermell|Uploaded with LrMediaWiki|Photographs by Ermell|Bavaria photographs taken on 2025-06-24|Images by User:Ermell taken in 2025|Taken with OM System OM-1|Featured pictures of insects by Ermell|Taken with OM System 90 mm F3.5 ED Macro IS Pro|Focus stacked image",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality|featured",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Swallowtail butterfly (Papilio machaon) on a dill plant. Focus stack consisting of 3 images.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2025-07-24",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Reinhold Möller <a href=\"//commons.wikimedia.org/wiki/User:Ermell\" title=\"User:Ermell\">Ermell</a>",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "<table class=\"toccolours\" style=\"width:100%; margin-top:10px;\" cellpadding=\"2\">\n\n<tbody><tr class=\"plainlinks\">\n<td><span typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/File:Twemoji_1f4f7.svg\" class=\"mw-file-description\"><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Twemoji_1f4f7.svg/40px-Twemoji_1f4f7.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"25\" height=\"25\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Twemoji_1f4f7.svg/60px-Twemoji_1f4f7.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"512\" data-file-height=\"512\"></a></span>  <a href=\"https://upload.wikimedia.org/wikipedia/commons/3/3e/Schwalbenschwanz_%28Papilio_machaon%29_Raupe-20250724-RM-101941.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=api&amp;utm_content=original\" class=\"internal\" title=\"Schwalbenschwanz (Papilio machaon) Raupe-20250724-RM-101941.jpg\">This Photo</a> was taken by <i><b><a href=\"//commons.wikimedia.org/wiki/User:Ermell\" title=\"User:Ermell\">Reinhold Möller</a></b></i>.  <span typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/File:Twemoji_1f468.svg\" class=\"mw-file-description\"><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Twemoji_1f468.svg/40px-Twemoji_1f468.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"25\" height=\"25\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Twemoji_1f468.svg/60px-Twemoji_1f468.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"512\" data-file-height=\"512\"></a></span>\n</td>\n<td align=\"right\">Feel free to use my photos, but please mention me as the author and send me a  <a class=\"external text\" data-mw-original-href=\"http://commons.wikimedia.org/w/index.php?title=User_talk:Ermell&amp;action=edit&amp;section=new\" href=\"https://commons.wikimedia.org/w/index.php?title=User_talk:Ermell&amp;action=edit&amp;section=new\">message</a>. <span typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/File:Crystal_128_mail.png\" class=\"mw-file-description\"><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Crystal_128_mail.png/40px-Crystal_128_mail.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"25\" height=\"25\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Crystal_128_mail.png/60px-Crystal_128_mail.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"128\" data-file-height=\"128\"></a></span>\n</td></tr></tbody></table>\n<div style=\"clear:both; border:2px solid #00cc00; background-color:#f7f7f7; margin-top:6px;\">\n<table><tbody><tr><td style=\"padding:4px;\"><span typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/File:Telif_inceleme.png\" class=\"mw-file-description\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/a/a5/Telif_inceleme.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail_unscaled\" decoding=\"async\" loading=\"lazy\" width=\"64\" height=\"64\" class=\"mw-file-element\" data-file-width=\"110\" data-file-height=\"110\"></a></span>\n</td><td style=\"padding:4px;\"><div style=\"margin-top:0.5em;\">This image is <b>not <a href=\"https://en.wikipedia.org/wiki/Public_domain\" class=\"extiw\" title=\"en:Public domain\">public domain</a></b>. Please respect the copyright protection. It may only be used according to the rules mentioned here. This specifically <b>excludes use in social media</b>, if applicable terms of the licenses listed here not appropriate.</div>\n</td></tr></tbody></table>\n<table><tbody><tr><td style=\"padding:4px;\"><span typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/File:Upload-problem2.svg\" class=\"mw-file-description\"><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Upload-problem2.svg/120px-Upload-problem2.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"64\" height=\"57\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Upload-problem2.svg/250px-Upload-problem2.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"159\" data-file-height=\"142\"></a></span>\n</td><td style=\"padding:4px;\"><div style=\"margin-top:0.5em;\">Please do not upload an updated image here without consultation with the Author. The author would like to make corrections only at his own source. This ensures that the changes are preserved.<br>Please if you think that any changes should be required, please inform the author.<br>Otherwise you can upload a new image with a new name. Please use one of the templates <a href=\"//commons.wikimedia.org/wiki/Template:Derived_from\" title=\"Template:Derived from\">derivative</a> or <a href=\"//commons.wikimedia.org/wiki/Template:Extracted_from\" title=\"Template:Extracted from\">extract</a>.</div>\n</td></tr></tbody></table></div>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

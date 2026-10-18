@@ -1,0 +1,54 @@
+[
+  {
+    "target_key": "macaone",
+    "photo": {
+      "file": "assets/animals/pe2-natura-farfalle-diurne-52e89a72.webp",
+      "file_hd": "assets/animals/pe2-natura-farfalle-diurne-52e89a72-hd.webp",
+      "thumb": "assets/animals/pe2-natura-farfalle-diurne-52e89a72-t.webp",
+      "page": "https://commons.wikimedia.org/wiki/File:Papilio_machaon_-_Swallowtail_1.jpg",
+      "author": "Zeynel Cebeci",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "attribution": "Zeynel Cebeci · Wikimedia Commons · CC BY-SA 3.0",
+      "alt": "Macaone (Papilio machaon), vista laterale.",
+      "caption": "Macaone (Papilio machaon), vista laterale.",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP e miniatura ritagliata; nessuna correzione cromatica. EXIF/XMP rimossi. Conversione ICC da Adobe RGB (1998) a sRGB prima della rimozione del profilo.",
+      "source": "Wikimedia Commons",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Papilio_machaon_-_Swallowtail_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sha256Original": "ac3decfed8d67ab1fbd79ec235681c9c5f3fb08134ffebfaeab0261b8e41201d",
+      "photo_taxon": "Papilio machaon"
+    },
+    "status": "reuse-existing-not-new-acquisition",
+    "role": "Riuso verificato visivamente: vista laterale. Fonte e licenza invariate, nessun nuovo file.",
+    "visual_review": {
+      "approved": true,
+      "note": "Visto il WebP realmente integrato; prima foto laterale nitida, seconda vista complementare delle ali aperte."
+    }
+  },
+  {
+    "target_key": "macaone",
+    "photo": {
+      "file": "assets/animals/pe2-natura-farfalle-diurne-3afc37e0.webp",
+      "file_hd": "assets/animals/pe2-natura-farfalle-diurne-3afc37e0-hd.webp",
+      "thumb": "assets/animals/pe2-natura-farfalle-diurne-3afc37e0-t.webp",
+      "page": "https://commons.wikimedia.org/wiki/File:Schwalbenschwanz,_Papilio_machaon.jpg",
+      "author": "Feel free to use my photos, but please mention me as the author and if you want send me a  message. or (rufre@lenz-nenning.at)",
+      "license": "CC BY-SA 3.0 at",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/at/deed.en",
+      "attribution": "Feel free to use my photos, but please mention me as the author and if you want send me a  message. or (rufre@lenz-nenning.at) · Wikimedia Commons · CC BY-SA 3.0 at",
+      "alt": "Macaone (Papilio machaon), ali parzialmente aperte sulla roccia.",
+      "caption": "Macaone (Papilio machaon), ali parzialmente aperte sulla roccia.",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP e miniatura ritagliata; nessuna correzione cromatica. EXIF/XMP rimossi.",
+      "source": "Wikimedia Commons",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Schwalbenschwanz%2C_Papilio_machaon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sha256Original": "a1a20f8880d71d8d431bcf2aaabdca2216d2a6c33c3573eec516fea337269328",
+      "photo_taxon": "Papilio machaon"
+    },
+    "status": "reuse-existing-not-new-acquisition",
+    "role": "Riuso verificato visivamente: ali parzialmente aperte sulla roccia. Fonte e licenza invariate, nessun nuovo file.",
+    "visual_review": {
+      "approved": true,
+      "note": "Visto il WebP realmente integrato; prima foto laterale nitida, seconda vista complementare delle ali aperte."
+    }
+  }
+]

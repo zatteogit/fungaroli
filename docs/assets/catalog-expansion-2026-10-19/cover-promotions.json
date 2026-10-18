@@ -1,0 +1,61 @@
+[
+  {
+    "target": "pinophilus",
+    "previous": "assets/species/pinophilus-ref.webp",
+    "file": "assets/species/pe2-main-pinophilus-01.webp"
+  },
+  {
+    "target": "Sarcodon imbricatus",
+    "previous": "assets/species/sarcodon-imbricatus-inat1.webp",
+    "file": "assets/species/pe2-sosia-sarcodon-imbricatus-4bafdc3.webp"
+  },
+  {
+    "target": "amanita-rubescens",
+    "previous": "assets/species/amanita-rubescens-ref.webp",
+    "file": "assets/species/pe2-main-amanita-rubescens-q02.webp"
+  },
+  {
+    "target": "craterellus-lutescens",
+    "previous": "assets/species/craterellus-lutescens-ref.webp",
+    "file": "assets/species/pe2-main-craterellus-lutescens-03.webp"
+  },
+  {
+    "target": "morchella-esculenta",
+    "previous": "assets/species/morchella-esculenta-ref.webp",
+    "file": "assets/species/pe2-main-morchella-esculenta-q01.webp"
+  },
+  {
+    "target": "pleurotus-cornucopiae",
+    "previous": "assets/species/pleurotus-cornucopiae-ref.webp",
+    "file": "assets/species/pe2-main-pleurotus-cornucopiae-q02.webp"
+  },
+  {
+    "target": "pleurotus-eryngii",
+    "previous": "assets/species/pleurotus-eryngii-inat1.webp",
+    "file": "assets/species/pe2-main-pleurotus-eryngii-inat02.webp"
+  },
+  {
+    "target": "Rubroboletus satanas",
+    "previous": null,
+    "file": "assets/species/ce1-replace-satanas-1.webp",
+    "new_acquisition": true
+  },
+  {
+    "target": "virescens",
+    "previous": "assets/species/virescens-ref.webp",
+    "file": "assets/species/ce1-replace-virescens-2.webp",
+    "new_acquisition": true
+  },
+  {
+    "target": "Tylopilus felleus",
+    "previous": null,
+    "file": "assets/species/ce1-replace-felleus-extra19.webp",
+    "new_acquisition": true
+  },
+  {
+    "target": "aereus",
+    "previous": null,
+    "file": "assets/species/ce1-replace-aereus-15.webp",
+    "new_acquisition": true
+  }
+]

@@ -812,7 +812,7 @@ export function renderTaxonView(box, t, { photos = null, habitatText = '', extra
     <div class="pbody">
       ${ph.length > 1 ? `<div class="sp-strip">${ph.slice(1, 6).map((p, k) => `<button type="button" class="zoomable" data-photo="${k + 1}" aria-label="Foto ${k + 2}: ingrandisci"><img data-src="${ASSET(p.file)}" alt="" loading="lazy" decoding="async"></button>`).join('')}</div>` : ''}
       ${t.field_rules?.length ? attentionBox(t.field_rules) + (t.caution ? `<p class="id-why" data-glossary><b>Cautele della specie:</b> ${esc(t.caution)}</p>` : '') : attentionBox(t.caution ? [{ text: t.caution, severity: 'importante' }] : [])}
-      ${t.traits && Object.keys(t.traits).some((k) => k !== 'season') ? `<h3>Caratteri da confrontare</h3>${growthTraits(null, t)}` : '<p class="notice">Caratteri di confronto in preparazione.</p>'}
+      ${t.traits && Object.keys(t.traits).some((k) => k !== 'season') ? `<h3>Caratteri da confrontare</h3>${growthTraits(null, t)}` : t.check_before_picking?.length ? '' : '<p class="notice">Caratteri di confronto in preparazione.</p>'}
       ${compareCta(null, t)}
       ${t.check_before_picking?.length ? `<details class="sec character-details"><summary>Cosa controllare da vicino</summary><div class="sec-body"><ol class="keys" data-glossary>${t.check_before_picking.map((x) => `<li><span class="key-text">${esc(x)}</span></li>`).join('')}</ol></div></details>` : ''}
       ${look.length ? `<h3>${lookTitle}</h3><ul class="tx-look">${look.map(({ id, o }) => { const op = photoOf(o); return `<li>
@@ -825,7 +825,7 @@ export function renderTaxonView(box, t, { photos = null, habitatText = '', extra
         // se la sezione c'è già (sosia del modello), le schede si aggiungono sotto lo stesso titolo
         return ds.length ? `${look.length ? '' : `<h3>${lookTitle}</h3>`}<ul class="tx-look${look.length ? ' tx-look-more' : ''}">${ds.map((o) => { const op = photoOf(o); return `<li><a class="tx-look-main" data-entity href="#/fungo/${esc(o.key)}">${op ? `<img data-src="${ASSET(op.thumb || op.file)}" alt="" loading="lazy" decoding="async">` : ''}<span><b>${esc(o.name || o.latin)}</b><i>${esc(o.latin)}</i><small class="tx-c tox-${esc((o.toxicity || '').replace(/\s/g, '-'))}"><span class="tox">${esc(o.tox_label || o.toxicity || '')}</span></small></span></a><a class="tx-cmp-btn" href="#/riconosci/confronta/${esc(t.key)}/${esc(o.key)}" aria-label="Confronta con ${esc(o.name || o.latin)}, carattere per carattere">Confronta</a></li>`; }).join('')}</ul>` : '';
       })()}
-      ${speciesHabitat({habitat:habitat.length ? habitat : habitatText, trees:t.trees||[], months:t.traits?.season||months})}
+      ${speciesHabitat({habitat:habitat.length ? habitat : habitatText || t.habitat || '', trees:t.trees||[], months:t.traits?.season?.length ? t.traits.season : t.season_text || months})}
       ${extra}
       ${speciesSafetyNote()}
       ${t.sources?.length || ph.length ? `<details class="sec"><summary>Fonti e fotografie</summary><div class="sec-body">${sourceRows(t.sources)}${ph.length ? `<p class="src-h">Fotografie</p>${photoRows(ph)}` : ''}</div></details>` : ''}

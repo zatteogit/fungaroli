@@ -1,0 +1,47 @@
+{
+  "status": "frozen",
+  "approved_photos": 5,
+  "webp_files": 15,
+  "by_taxon": {
+    "Rubroboletus satanas": 1,
+    "Russula virescens": 1,
+    "Tylopilus felleus": 2,
+    "Boletus aereus": 1
+  },
+  "candidates_reviewed": 36,
+  "rejected_candidates": 31,
+  "commons_sha1_verified": 5,
+  "icc_profiles": [
+    {
+      "id": "ce1-replace-satanas-1",
+      "profile": "IEC 61966-2.1 Default RGB colour space - sRGB",
+      "converted": false
+    },
+    {
+      "id": "ce1-replace-virescens-2",
+      "profile": null,
+      "converted": false
+    },
+    {
+      "id": "ce1-replace-felleus-extra19",
+      "profile": null,
+      "converted": false
+    },
+    {
+      "id": "ce1-replace-felleus-extra20",
+      "profile": null,
+      "converted": false
+    },
+    {
+      "id": "ce1-replace-aereus-15",
+      "profile": null,
+      "converted": false
+    }
+  ],
+  "active_downloads": 0,
+  "http_403_429": 0,
+  "retry_after": null,
+  "manifest_sha256": "e24c1ba913d433e6c08726d56a475c4c1c5330afeced23f3ccccfe9a919bbead",
+  "tests": "Nessuna suite o dry-run",
+  "scope": "Solo incoming/catalog-expansion-2026-10-19/replacements/"
+}

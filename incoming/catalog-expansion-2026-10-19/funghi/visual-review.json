@@ -1,0 +1,454 @@
+{
+  "ce-funghi-amanita-citrina-1144171": {
+    "approved": false,
+    "attribution_approved": true,
+    "rejected": true,
+    "punto": [
+      0.5,
+      0.5
+    ],
+    "riquadro": [
+      0.01,
+      0.01,
+      0.99,
+      0.99
+    ],
+    "nota": "Contrasto duro, base poco leggibile; attribuzione automatica assunta e alternativa europea più informativa."
+  },
+  "ce-funghi-paxillus-involutus-16097960": {
+    "approved": true,
+    "attribution_approved": true,
+    "punto": [
+      0.52,
+      0.55
+    ],
+    "riquadro": [
+      0.08,
+      0.25,
+      0.94,
+      0.85
+    ],
+    "nota": "Originale, colore, qualità e sei formati controllati visivamente. Nei formati stretti/largamente orizzontali è mostrato un particolare; il visore conserva la foto intera.",
+    "caption": "Due esemplari sul terreno, uno capovolto con lamelle e base esposte.",
+    "alt": "Paxillus involutus. Due esemplari sul terreno, uno capovolto con lamelle e base esposte.",
+    "role_observed": "intero e imenoforo"
+  },
+  "ce-funghi-coprinopsis-atramentaria-35546872": {
+    "approved": true,
+    "attribution_approved": true,
+    "punto": [
+      0.58,
+      0.42
+    ],
+    "riquadro": [
+      0.28,
+      0.03,
+      0.94,
+      0.82
+    ],
+    "nota": "Originale, colore, qualità e sei formati controllati visivamente. Nei formati stretti/largamente orizzontali è mostrato un particolare; il visore conserva la foto intera.",
+    "caption": "Cappello grigio solcato, con bordo scuro che si sfalda.",
+    "alt": "Coprinopsis atramentaria. Cappello grigio solcato, con bordo scuro che si sfalda.",
+    "role_observed": "dettaglio cappello e margine"
+  },
+  "ce-funghi-clitocybe-nebularis-99481471": {
+    "approved": false,
+    "attribution_approved": true,
+    "rejected": true,
+    "punto": [
+      0.5,
+      0.5
+    ],
+    "riquadro": [
+      0.01,
+      0.01,
+      0.99,
+      0.99
+    ],
+    "nota": "Soggetti deteriorati e molto bruniti; badge Commons non compensa i limiti della rappresentazione."
+  },
+  "ce-funghi-russula-emetica-404973": {
+    "approved": true,
+    "attribution_approved": true,
+    "punto": [
+      0.5,
+      0.6
+    ],
+    "riquadro": [
+      0.34,
+      0.42,
+      0.65,
+      0.9
+    ],
+    "nota": "Originale, colore, qualità e sei formati controllati visivamente. Nei formati stretti/largamente orizzontali è mostrato un particolare; il visore conserva la foto intera.",
+    "caption": "Cappello rosso e gambo bianco fra muschio e aghi.",
+    "alt": "Russula emetica. Cappello rosso e gambo bianco fra muschio e aghi.",
+    "role_observed": "intero in ambiente"
+  },
+  "ce-funghi-lycoperdon-perlatum-84478911": {
+    "approved": true,
+    "attribution_approved": true,
+    "punto": [
+      0.5,
+      0.3
+    ],
+    "riquadro": [
+      0.16,
+      0.02,
+      0.88,
+      0.67
+    ],
+    "nota": "Originale, colore, qualità e sei formati controllati visivamente. Nei formati stretti/largamente orizzontali è mostrato un particolare; il visore conserva la foto intera.",
+    "caption": "Corpo fruttifero chiaro con aculei conici nitidamente visibili.",
+    "alt": "Lycoperdon perlatum. Corpo fruttifero chiaro con aculei conici nitidamente visibili.",
+    "role_observed": "intero e superficie ad aculei"
+  },
+  "ce-funghi-auricularia-auricula-judae-145517351": {
+    "approved": true,
+    "attribution_approved": true,
+    "punto": [
+      0.47,
+      0.49
+    ],
+    "riquadro": [
+      0.03,
+      0.13,
+      0.91,
+      0.94
+    ],
+    "nota": "Originale, colore, qualità e sei formati controllati visivamente. Nei formati stretti/largamente orizzontali è mostrato un particolare; il visore conserva la foto intera.",
+    "caption": "Corpi gelatinosi bruno-rossastri osservati da vicino sul legno.",
+    "alt": "Auricularia auricula-judae. Corpi gelatinosi bruno-rossastri osservati da vicino sul legno.",
+    "role_observed": "superfici e attacco al legno"
+  },
+  "ce-funghi-fomes-fomentarius-79262934": {
+    "approved": true,
+    "attribution_approved": true,
+    "punto": [
+      0.62,
+      0.5
+    ],
+    "riquadro": [
+      0.31,
+      0.05,
+      0.98,
+      0.84
+    ],
+    "nota": "Originale, colore, qualità e sei formati controllati visivamente. Nei formati stretti/largamente orizzontali è mostrato un particolare; il visore conserva la foto intera.",
+    "caption": "Corpo legnoso a mensola sul tronco, con zone concentriche.",
+    "alt": "Fomes fomentarius. Corpo legnoso a mensola sul tronco, con zone concentriche.",
+    "role_observed": "portamento e tronco"
+  },
+  "ce-funghi-trametes-versicolor-132597918": {
+    "approved": true,
+    "attribution_approved": true,
+    "punto": [
+      0.52,
+      0.56
+    ],
+    "riquadro": [
+      0.04,
+      0.18,
+      0.98,
+      0.95
+    ],
+    "nota": "Originale, colore, qualità e sei formati controllati visivamente. Nei formati stretti/largamente orizzontali è mostrato un particolare; il visore conserva la foto intera.",
+    "caption": "Gruppo di cappelli sottili con fasce concentriche sul legno.",
+    "alt": "Trametes versicolor. Gruppo di cappelli sottili con fasce concentriche sul legno.",
+    "role_observed": "intero e disposizione sul substrato"
+  },
+  "ce-funghi-hygrophorus-russula-84179972": {
+    "approved": false,
+    "attribution_approved": true,
+    "rejected": true,
+    "punto": [
+      0.5,
+      0.5
+    ],
+    "riquadro": [
+      0.01,
+      0.01,
+      0.99,
+      0.99
+    ],
+    "nota": "Esemplari danneggiati e parzialmente occlusi fra foglie; caratteri poco leggibili."
+  },
+  "ce-funghi-lactarius-sanguifluus-95428903": {
+    "approved": true,
+    "attribution_approved": true,
+    "punto": [
+      0.51,
+      0.5
+    ],
+    "riquadro": [
+      0.17,
+      0.12,
+      0.8,
+      0.9
+    ],
+    "nota": "Originale, colore, qualità e sei formati controllati visivamente. Nei formati stretti/largamente orizzontali è mostrato un particolare; il visore conserva la foto intera.",
+    "caption": "Superficie inferiore del cappello, con lamelle rosa-vinose e gambo reciso.",
+    "alt": "Lactarius sanguifluus. Superficie inferiore del cappello, con lamelle rosa-vinose e gambo reciso.",
+    "role_observed": "imenoforo ravvicinato"
+  },
+  "ce-funghi-russula-vesca-121831228": {
+    "approved": true,
+    "attribution_approved": true,
+    "punto": [
+      0.51,
+      0.35
+    ],
+    "riquadro": [
+      0.08,
+      0.03,
+      0.93,
+      0.67
+    ],
+    "nota": "Originale, colore, qualità e sei formati controllati visivamente. Nei formati stretti/largamente orizzontali è mostrato un particolare; il visore conserva la foto intera.",
+    "caption": "Margine del cappello e lamelle chiare visibili in un esemplare tenuto in mano.",
+    "alt": "Russula vesca. Margine del cappello e lamelle chiare visibili in un esemplare tenuto in mano.",
+    "role_observed": "margine della cuticola e lamelle"
+  },
+  "ce-funghi-amanita-citrina-35484839": {
+    "approved": true,
+    "attribution_approved": true,
+    "punto": [
+      0.5,
+      0.4
+    ],
+    "riquadro": [
+      0.2,
+      0.25,
+      0.8,
+      0.59
+    ],
+    "nota": "Originale, colore, qualità e sei formati controllati visivamente. Nei formati stretti/largamente orizzontali è mostrato un particolare; il visore conserva la foto intera.",
+    "caption": "Esemplare intero con cappello chiaro, anello pendente e base bulbosa.",
+    "alt": "Amanita citrina. Esemplare intero con cappello chiaro, anello pendente e base bulbosa.",
+    "role_observed": "intero, anello e base"
+  },
+  "ce-funghi-paxillus-involutus-4558768": {
+    "approved": true,
+    "attribution_approved": true,
+    "punto": [
+      0.51,
+      0.49
+    ],
+    "riquadro": [
+      0.04,
+      0.13,
+      0.97,
+      0.9
+    ],
+    "nota": "Originale, colore, qualità e sei formati controllati visivamente. Nei formati stretti/largamente orizzontali è mostrato un particolare; il visore conserva la foto intera.",
+    "caption": "Due esemplari ripresi di lato, con margine arrotolato e lamelle decorrenti.",
+    "alt": "Paxillus involutus. Due esemplari ripresi di lato, con margine arrotolato e lamelle decorrenti.",
+    "role_observed": "dettaglio laterale delle lamelle"
+  },
+  "ce-funghi-coprinopsis-atramentaria-22502531": {
+    "approved": true,
+    "attribution_approved": true,
+    "punto": [
+      0.51,
+      0.49
+    ],
+    "riquadro": [
+      0.28,
+      0.02,
+      0.7,
+      0.99
+    ],
+    "nota": "Originale, colore, qualità e sei formati controllati visivamente. Nei formati stretti/largamente orizzontali è mostrato un particolare; il visore conserva la foto intera.",
+    "caption": "Cappello ovoidale grigio e gambo bianco osservati sul terreno.",
+    "alt": "Coprinopsis atramentaria. Cappello ovoidale grigio e gambo bianco osservati sul terreno.",
+    "role_observed": "intero e forma del cappello"
+  },
+  "ce-funghi-clitocybe-nebularis-84242752": {
+    "approved": true,
+    "attribution_approved": true,
+    "punto": [
+      0.49,
+      0.47
+    ],
+    "riquadro": [
+      0.04,
+      0.07,
+      0.96,
+      0.96
+    ],
+    "nota": "Originale, colore, qualità e sei formati controllati visivamente. Nei formati stretti/largamente orizzontali è mostrato un particolare; il visore conserva la foto intera.",
+    "caption": "Cappello grigiastro e gambo fra foglie cadute di faggio.",
+    "alt": "Clitocybe nebularis. Cappello grigiastro e gambo fra foglie cadute di faggio.",
+    "role_observed": "intero e contesto del substrato"
+  },
+  "ce-funghi-russula-emetica-63737437": {
+    "approved": false,
+    "attribution_approved": true,
+    "rejected": true,
+    "punto": [
+      0.5,
+      0.5
+    ],
+    "riquadro": [
+      0.01,
+      0.01,
+      0.99,
+      0.99
+    ],
+    "nota": "Resa cromatica fortemente magenta e troppo satura; preferita alternativa rossa con contesto europeo."
+  },
+  "ce-funghi-lycoperdon-perlatum-372210": {
+    "approved": false,
+    "attribution_approved": true,
+    "rejected": true,
+    "punto": [
+      0.5,
+      0.5
+    ],
+    "riquadro": [
+      0.01,
+      0.01,
+      0.99,
+      0.99
+    ],
+    "nota": "Stessa vista di portamento della migliore84478911, meno nitida e meno pulita; ridondante."
+  },
+  "ce-funghi-auricularia-auricula-judae-124675179": {
+    "approved": true,
+    "attribution_approved": true,
+    "punto": [
+      0.5,
+      0.43
+    ],
+    "riquadro": [
+      0.03,
+      0.1,
+      0.94,
+      0.69
+    ],
+    "nota": "Originale, colore, qualità e sei formati controllati visivamente. Nei formati stretti/largamente orizzontali è mostrato un particolare; il visore conserva la foto intera.",
+    "caption": "Corpi gelatinosi a orecchio ripresi di lato su un ramo.",
+    "alt": "Auricularia auricula-judae. Corpi gelatinosi a orecchio ripresi di lato su un ramo.",
+    "role_observed": "profili e superfici opposte"
+  },
+  "ce-funghi-fomes-fomentarius-129874400": {
+    "approved": false,
+    "attribution_approved": true,
+    "rejected": true,
+    "punto": [
+      0.5,
+      0.5
+    ],
+    "riquadro": [
+      0.01,
+      0.01,
+      0.99,
+      0.99
+    ],
+    "nota": "Grandangolo marcato, prospettiva molto deformata e parte del fotografo sul bordo; qualità insufficiente rispetto all’alternativa."
+  },
+  "ce-funghi-trametes-versicolor-3891548": {
+    "approved": true,
+    "attribution_approved": true,
+    "punto": [
+      0.5,
+      0.5
+    ],
+    "riquadro": [
+      0.01,
+      0.01,
+      0.99,
+      0.99
+    ],
+    "nota": "Originale, colore, qualità e sei formati controllati visivamente. Nei formati stretti/largamente orizzontali è mostrato un particolare; il visore conserva la foto intera.",
+    "caption": "Dettaglio delle fasce concentriche e dei margini chiari dei cappelli sovrapposti.",
+    "alt": "Trametes versicolor. Dettaglio delle fasce concentriche e dei margini chiari dei cappelli sovrapposti.",
+    "role_observed": "dettaglio delle fasce e margini"
+  },
+  "ce-funghi-hygrophorus-russula-93766111": {
+    "approved": true,
+    "attribution_approved": true,
+    "punto": [
+      0.6,
+      0.52
+    ],
+    "riquadro": [
+      0.08,
+      0.12,
+      0.98,
+      0.97
+    ],
+    "nota": "Originale, colore, qualità e sei formati controllati visivamente. Nei formati stretti/largamente orizzontali è mostrato un particolare; il visore conserva la foto intera.",
+    "caption": "Lamelle chiare con punteggiature vinose, accanto ai cappelli.",
+    "alt": "Hygrophorus russula. Lamelle chiare con punteggiature vinose, accanto ai cappelli.",
+    "role_observed": "lamelle e colorazioni vinose"
+  },
+  "ce-funghi-lactarius-sanguifluus-95428891": {
+    "approved": false,
+    "attribution_approved": true,
+    "rejected": true,
+    "punto": [
+      0.5,
+      0.5
+    ],
+    "riquadro": [
+      0.01,
+      0.01,
+      0.99,
+      0.99
+    ],
+    "nota": "Stesso evento e soggetto della95428903, inquadratura più lontana; lamelle meno leggibili e nessun particolare aggiunto."
+  },
+  "ce-funghi-russula-vesca-156995528": {
+    "approved": false,
+    "attribution_approved": true,
+    "rejected": true,
+    "punto": [
+      0.5,
+      0.5
+    ],
+    "riquadro": [
+      0.01,
+      0.01,
+      0.99,
+      0.99
+    ],
+    "nota": "Cappelli coperti da terriccio e detriti, caratteri poco leggibili; sfondo confuso. Alternativa di dettaglio più informativa."
+  },
+  "ce-funghi-amanita-citrina-63054929": {
+    "approved": true,
+    "attribution_approved": true,
+    "punto": [
+      0.5,
+      0.34
+    ],
+    "riquadro": [
+      0.13,
+      0.04,
+      0.83,
+      0.66
+    ],
+    "nota": "Originale, colore, qualità e sei formati controllati visivamente. Nei formati stretti/largamente orizzontali è mostrato un particolare; il visore conserva la foto intera.",
+    "caption": "Esemplare giovane dichiarato dalla fonte, con resti del velo sul cappello chiaro.",
+    "alt": "Amanita citrina. Esemplare giovane dichiarato dalla fonte, con resti del velo sul cappello chiaro.",
+    "role_observed": "fase giovane attestata: dettaglio del velo sul cappello"
+  },
+  "ce-funghi-clitocybe-nebularis-53537315": {
+    "approved": true,
+    "attribution_approved": true,
+    "punto": [
+      0.3,
+      0.76
+    ],
+    "riquadro": [
+      0.01,
+      0.56,
+      0.6,
+      0.99
+    ],
+    "nota": "Originale, colore, qualità e sei formati controllati visivamente. Nei formati stretti/largamente orizzontali è mostrato un particolare; il visore conserva la foto intera.",
+    "caption": "Esemplari giovani dichiarati dalla fonte; uno capovolto mostra le lamelle chiare.",
+    "alt": "Clitocybe nebularis. Esemplari giovani dichiarati dalla fonte; uno capovolto mostra le lamelle chiare.",
+    "role_observed": "fase giovane attestata e imenoforo"
+  }
+}

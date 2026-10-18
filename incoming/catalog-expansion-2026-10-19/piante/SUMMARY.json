@@ -1,0 +1,33 @@
+{
+  "status": "frozen",
+  "records": 8,
+  "approved_photos": 20,
+  "preview_candidates": 94,
+  "not_selected_previews": 74,
+  "originals_acquired": 21,
+  "originals_rejected": 1,
+  "webp_files": 60,
+  "by_species": {
+    "bugola": 3,
+    "acetosella": 2,
+    "geranio-robertiano": 3,
+    "sanicola": 2,
+    "viola-silvestre": 3,
+    "pervinca-minore": 2,
+    "cariofillata": 2,
+    "stellina-odorosa": 3
+  },
+  "source": "Università di Trieste · Dryades",
+  "text_sources": [
+    "Dryades / Università di Trieste",
+    "FloraWeb / Bundesamt für Naturschutz",
+    "Plants of the World Online / Royal Botanic Gardens, Kew"
+  ],
+  "originals_with_icc": 0,
+  "icc_converted": 0,
+  "source_checksum_note": "SHA-1 e SHA-256 calcolati localmente; nessun checksum remoto disponibile su Dryades.",
+  "tests": "Nessuna suite o dry-run",
+  "active_processes": 0,
+  "manifest_sha256": "03d080ff6399cecd763257a864bbee31fed98a79ddade3fd5ab5bd19fb21aaed",
+  "proposals_sha256": "8e70cbce71edc156a3f383e01736f858ce985ef615100d248d2a6de82c6c4997"
+}

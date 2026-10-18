@@ -1,0 +1,473 @@
+{
+  "current_taxa_count": 88,
+  "current_taxa": [
+    {
+      "id": "edulis",
+      "latin": "Boletus edulis",
+      "synonyms": []
+    },
+    {
+      "id": "pinophilus",
+      "latin": "Boletus pinophilus",
+      "synonyms": []
+    },
+    {
+      "id": "aereus",
+      "latin": "Boletus aereus",
+      "synonyms": []
+    },
+    {
+      "id": "aestivalis",
+      "latin": "Boletus reticulatus",
+      "synonyms": []
+    },
+    {
+      "id": "caesarea",
+      "latin": "Amanita caesarea",
+      "synonyms": []
+    },
+    {
+      "id": "cibarius",
+      "latin": "Cantharellus cibarius",
+      "synonyms": []
+    },
+    {
+      "id": "cornucopioides",
+      "latin": "Craterellus cornucopioides",
+      "synonyms": []
+    },
+    {
+      "id": "repandum",
+      "latin": "Hydnum repandum",
+      "synonyms": []
+    },
+    {
+      "id": "procera",
+      "latin": "Macrolepiota procera",
+      "synonyms": []
+    },
+    {
+      "id": "mellea",
+      "latin": "Armillaria mellea",
+      "synonyms": []
+    },
+    {
+      "id": "virescens",
+      "latin": "Russula virescens; Russula cyanoxantha",
+      "synonyms": []
+    },
+    {
+      "id": "suillus",
+      "latin": "Suillus luteus; Suillus granulatus; Suillus collinitus",
+      "synonyms": []
+    },
+    {
+      "id": "terreum",
+      "latin": "Tricholoma terreum",
+      "synonyms": []
+    },
+    {
+      "id": "nuda",
+      "latin": "Lepista nuda",
+      "synonyms": []
+    },
+    {
+      "id": "tylopilus-felleus",
+      "latin": "Tylopilus felleus",
+      "synonyms": []
+    },
+    {
+      "id": "rubroboletus-satanas",
+      "latin": "Rubroboletus satanas",
+      "synonyms": []
+    },
+    {
+      "id": "caloboletus-calopus",
+      "latin": "Caloboletus calopus",
+      "synonyms": []
+    },
+    {
+      "id": "caloboletus-radicans",
+      "latin": "Caloboletus radicans",
+      "synonyms": []
+    },
+    {
+      "id": "neoboletus-luridiformis",
+      "latin": "Neoboletus luridiformis",
+      "synonyms": []
+    },
+    {
+      "id": "imleria-badia",
+      "latin": "Imleria badia",
+      "synonyms": []
+    },
+    {
+      "id": "amanita-phalloides",
+      "latin": "Amanita phalloides",
+      "synonyms": []
+    },
+    {
+      "id": "amanita-verna",
+      "latin": "Amanita verna",
+      "synonyms": []
+    },
+    {
+      "id": "amanita-virosa",
+      "latin": "Amanita virosa",
+      "synonyms": []
+    },
+    {
+      "id": "amanita-muscaria",
+      "latin": "Amanita muscaria",
+      "synonyms": []
+    },
+    {
+      "id": "amanita-crocea",
+      "latin": "Amanita crocea",
+      "synonyms": []
+    },
+    {
+      "id": "omphalotus-olearius",
+      "latin": "Omphalotus olearius",
+      "synonyms": []
+    },
+    {
+      "id": "hygrophoropsis-aurantiaca",
+      "latin": "Hygrophoropsis aurantiaca",
+      "synonyms": []
+    },
+    {
+      "id": "cortinarius-orellanus",
+      "latin": "Cortinarius orellanus",
+      "synonyms": []
+    },
+    {
+      "id": "craterellus-cinereus",
+      "latin": "Craterellus cinereus",
+      "synonyms": []
+    },
+    {
+      "id": "pseudocraterellus-undulatus",
+      "latin": "Pseudocraterellus undulatus",
+      "synonyms": []
+    },
+    {
+      "id": "urnula-craterium",
+      "latin": "Urnula craterium",
+      "synonyms": []
+    },
+    {
+      "id": "hydnum-rufescens",
+      "latin": "Hydnum rufescens",
+      "synonyms": []
+    },
+    {
+      "id": "sarcodon-imbricatus",
+      "latin": "Sarcodon imbricatus",
+      "synonyms": []
+    },
+    {
+      "id": "sarcodon-scabrosus",
+      "latin": "Sarcodon scabrosus",
+      "synonyms": []
+    },
+    {
+      "id": "hydnellum-peckii",
+      "latin": "Hydnellum peckii",
+      "synonyms": []
+    },
+    {
+      "id": "lepiota-brunneoincarnata",
+      "latin": "Lepiota brunneoincarnata",
+      "synonyms": []
+    },
+    {
+      "id": "lepiota-subincarnata",
+      "latin": "Lepiota subincarnata",
+      "synonyms": []
+    },
+    {
+      "id": "lepiota-cristata",
+      "latin": "Lepiota cristata",
+      "synonyms": []
+    },
+    {
+      "id": "chlorophyllum-rhacodes",
+      "latin": "Chlorophyllum rhacodes",
+      "synonyms": []
+    },
+    {
+      "id": "chlorophyllum-venenatum",
+      "latin": "Chlorophyllum venenatum",
+      "synonyms": []
+    },
+    {
+      "id": "galerina-marginata",
+      "latin": "Galerina marginata",
+      "synonyms": []
+    },
+    {
+      "id": "hypholoma-fasciculare",
+      "latin": "Hypholoma fasciculare",
+      "synonyms": []
+    },
+    {
+      "id": "cortinarius-rubellus",
+      "latin": "Cortinarius rubellus",
+      "synonyms": []
+    },
+    {
+      "id": "gymnopilus-junonius",
+      "latin": "Gymnopilus junonius",
+      "synonyms": []
+    },
+    {
+      "id": "pholiota-squarrosa",
+      "latin": "Pholiota squarrosa",
+      "synonyms": []
+    },
+    {
+      "id": "armillaria-tabescens",
+      "latin": "Desarmillaria tabescens",
+      "synonyms": []
+    },
+    {
+      "id": "russula-heterophylla",
+      "latin": "Russula heterophylla",
+      "synonyms": []
+    },
+    {
+      "id": "russula-olivacea",
+      "latin": "Russula olivacea",
+      "synonyms": []
+    },
+    {
+      "id": "russula-aeruginea",
+      "latin": "Russula aeruginea",
+      "synonyms": []
+    },
+    {
+      "id": "chalciporus-piperatus",
+      "latin": "Chalciporus piperatus",
+      "synonyms": []
+    },
+    {
+      "id": "suillus-bovinus",
+      "latin": "Suillus bovinus",
+      "synonyms": []
+    },
+    {
+      "id": "tricholoma-pardinum",
+      "latin": "Tricholoma pardinum",
+      "synonyms": []
+    },
+    {
+      "id": "tricholoma-virgatum",
+      "latin": "Tricholoma virgatum",
+      "synonyms": []
+    },
+    {
+      "id": "tricholoma-sciodes",
+      "latin": "Tricholoma sciodes",
+      "synonyms": []
+    },
+    {
+      "id": "entoloma-sinuatum",
+      "latin": "Entoloma sinuatum",
+      "synonyms": []
+    },
+    {
+      "id": "inocybe",
+      "latin": "Inocybe spp.",
+      "synonyms": []
+    },
+    {
+      "id": "cortinarius-traganus",
+      "latin": "Cortinarius traganus",
+      "synonyms": []
+    },
+    {
+      "id": "cortinarius-violaceus",
+      "latin": "Cortinarius violaceus",
+      "synonyms": []
+    },
+    {
+      "id": "inocybe-lilacina",
+      "latin": "Inocybe lilacina",
+      "synonyms": []
+    },
+    {
+      "id": "mycena-pura",
+      "latin": "Mycena pura",
+      "synonyms": []
+    },
+    {
+      "id": "laccaria-amethystina",
+      "latin": "Laccaria amethystina",
+      "synonyms": []
+    },
+    {
+      "id": "agaricus-campestris",
+      "latin": "Agaricus campestris",
+      "synonyms": []
+    },
+    {
+      "id": "agaricus-arvensis",
+      "latin": "Agaricus arvensis",
+      "synonyms": []
+    },
+    {
+      "id": "agaricus-bisporus",
+      "latin": "Agaricus bisporus",
+      "synonyms": []
+    },
+    {
+      "id": "agaricus-sylvicola",
+      "latin": "Agaricus sylvicola",
+      "synonyms": []
+    },
+    {
+      "id": "cyclocybe-aegerita",
+      "latin": "Cyclocybe cylindracea (= Cyclocybe aegerita)",
+      "synonyms": []
+    },
+    {
+      "id": "pleurotus-ostreatus",
+      "latin": "Pleurotus ostreatus",
+      "synonyms": []
+    },
+    {
+      "id": "pleurotus-eryngii",
+      "latin": "Pleurotus eryngii",
+      "synonyms": []
+    },
+    {
+      "id": "pleurotus-cornucopiae",
+      "latin": "Pleurotus cornucopiae",
+      "synonyms": []
+    },
+    {
+      "id": "morchella-esculenta",
+      "latin": "Morchella esculenta s.l.",
+      "synonyms": []
+    },
+    {
+      "id": "morchella-elata",
+      "latin": "Morchella elata s.l.",
+      "synonyms": []
+    },
+    {
+      "id": "calocybe-gambosa",
+      "latin": "Calocybe gambosa",
+      "synonyms": []
+    },
+    {
+      "id": "marasmius-oreades",
+      "latin": "Marasmius oreades",
+      "synonyms": []
+    },
+    {
+      "id": "craterellus-lutescens",
+      "latin": "Craterellus lutescens",
+      "synonyms": []
+    },
+    {
+      "id": "lactarius-deliciosus",
+      "latin": "Lactarius deliciosus",
+      "synonyms": []
+    },
+    {
+      "id": "lactarius-deterrimus",
+      "latin": "Lactarius deterrimus",
+      "synonyms": []
+    },
+    {
+      "id": "hygrophorus-marzuolus",
+      "latin": "Hygrophorus marzuolus",
+      "synonyms": []
+    },
+    {
+      "id": "hygrophorus-latitabundus",
+      "latin": "Hygrophorus latitabundus",
+      "synonyms": []
+    },
+    {
+      "id": "tricholoma-portentosum",
+      "latin": "Tricholoma portentosum",
+      "synonyms": []
+    },
+    {
+      "id": "coprinus-comatus",
+      "latin": "Coprinus comatus",
+      "synonyms": []
+    },
+    {
+      "id": "fistulina-hepatica",
+      "latin": "Fistulina hepatica",
+      "synonyms": []
+    },
+    {
+      "id": "amanita-rubescens",
+      "latin": "Amanita rubescens",
+      "synonyms": []
+    },
+    {
+      "id": "russula-aurea",
+      "latin": "Russula aurea",
+      "synonyms": []
+    },
+    {
+      "id": "agaricus-xanthodermus",
+      "latin": "Agaricus xanthodermus",
+      "synonyms": []
+    },
+    {
+      "id": "gyromitra-esculenta",
+      "latin": "Gyromitra esculenta",
+      "synonyms": []
+    },
+    {
+      "id": "amanita-pantherina",
+      "latin": "Amanita pantherina",
+      "synonyms": []
+    },
+    {
+      "id": "tricholoma-equestre",
+      "latin": "Tricholoma equestre s.l.",
+      "synonyms": []
+    },
+    {
+      "id": "clitocybe-rivulosa",
+      "latin": "Clitocybe rivulosa (= Clitocybe dealbata)",
+      "synonyms": []
+    }
+  ],
+  "edible_count": 22,
+  "media_groups": {
+    "species": 36,
+    "lookalikes": 51
+  },
+  "aggregates_checked": [
+    "Russula virescens; Russula cyanoxantha",
+    "Suillus luteus; Suillus granulatus; Suillus collinitus",
+    "Morchella elata s.l.",
+    "Morchella esculenta s.l.",
+    "Inocybe spp."
+  ],
+  "new_taxa": [
+    "Amanita citrina",
+    "Paxillus involutus",
+    "Coprinopsis atramentaria",
+    "Clitocybe nebularis",
+    "Russula emetica",
+    "Lycoperdon perlatum",
+    "Auricularia auricula-judae",
+    "Fomes fomentarius",
+    "Trametes versicolor",
+    "Hygrophorus russula",
+    "Lactarius sanguifluus",
+    "Russula vesca"
+  ],
+  "duplicates": [],
+  "note": "Confronto dei nomi esatti e delle aggregazioni; sinonimi crosswalk in claim-evidence, non normalizzazione automatica di segnalazioni."
+}

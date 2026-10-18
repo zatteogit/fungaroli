@@ -1,0 +1,967 @@
+{
+  "photos": [
+    {
+      "id": "ce26-animali-martora-6e3edfc8",
+      "target_group": "animals",
+      "target_key": "martora",
+      "latin": "Martes martes",
+      "source_title": "File:European pine marten (Martes martes) Drenthe 2.jpg",
+      "source_description": "European pine marten ( Martes martes ), Drenthe, Netherlands",
+      "source_categories": "Martes martes|Photographs by Charlesjsharp|Self-published work|Featured pictures of Mustelidae|Featured pictures by Charlesjsharp|Animals of Drenthe|Files with Assessments template missing SDC Commons quality assessment|Mustelidae of the Netherlands|Files with coordinates missing SDC location of creation (52° N, 6° E)|Featured pictures of animals in the Netherlands|Featured pictures on English Wikipedia by Charlesjsharp|Featured pictures of mammals by Charlesjsharp|Featured pictures by Charlesjsharp/Netherlands|Focus stacked image",
+      "page": "https://commons.wikimedia.org/wiki/File:European_pine_marten_(Martes_martes)_Drenthe_2.jpg",
+      "author": "Charles J. Sharp",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_requested": "",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/3/37/European_pine_marten_%28Martes_martes%29_Drenthe_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "originalURL": "https://upload.wikimedia.org/wikipedia/commons/3/37/European_pine_marten_%28Martes_martes%29_Drenthe_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "8d8566f6d2dc44fa33774760453e8c764b5153fe",
+      "original": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/catalog-expansion-2026-10-19/animali/originals/ce26-animali-martora-6e3edfc8.jpg",
+      "width": 6238,
+      "height": 4158,
+      "size": 16042691,
+      "role": "Figura intera: postura e mantello; confrontare la leggibilità della pettorina.",
+      "metadata_score": 6,
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.51,
+          0.5
+        ],
+        "riquadro": [
+          0.13,
+          0.16,
+          0.74,
+          0.82
+        ],
+        "nota": "Figura leggibile, pelo e muso nitidi; testa rivolta verso osservatore. Non si attribuisce una fase biologica. Visti tutti i sei ritagli e la miniatura reale; le anteprime orizzontali possono mostrare il dettaglio del capo, mentre il visore conserva la vista completa.",
+        "six_crops_approved": true,
+        "thumbnail_approved": true
+      },
+      "metadata_file": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/catalog-expansion-2026-10-19/animali/metadata/martora.json",
+      "selection_status": "metadata-verified; original visual review pending",
+      "attribution": "Charles J. Sharp · Wikimedia Commons · CC BY-SA 4.0",
+      "alt": "Martora (Martes martes) su un ramo.",
+      "caption": "Martora (Martes martes), Drenthe, Paesi Bassi.",
+      "changes": "Conversione ICC del profilo sorgente in sRGB per preservare la resa cromatica sul Web; orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessun ritocco creativo. Miniatura centrata sul soggetto con il punto di ritaglio revisionato.",
+      "source_color_profile": "Adobe RGB (1998)",
+      "color_profile_normalized": "sRGB",
+      "sha256_original": "82294eed65920abfdb1e85611a6bc5f05d30f5b3c13c0e410f91f97a4376ddd7",
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/animali/derived/ce26-animali-martora-6e3edfc8.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/animali/derived/ce26-animali-martora-6e3edfc8-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/animali/derived/ce26-animali-martora-6e3edfc8-t.webp"
+      },
+      "crop_points": {
+        "5:4": [
+          0.56,
+          0.5
+        ],
+        "3:4": [
+          0.52,
+          0.5
+        ],
+        "4:5": [
+          0.521,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.5
+        ],
+        "4:3": [
+          0.59,
+          0.5
+        ],
+        "1:1": [
+          0.39,
+          0.5
+        ]
+      },
+      "photo_taxon": "Martes martes"
+    },
+    {
+      "id": "ce26-animali-faina-d1817718",
+      "target_group": "animals",
+      "target_key": "faina",
+      "latin": "Martes foina",
+      "source_title": "File:Stone marten (Martes foina) Drenthe.jpg",
+      "source_description": "Stone marten ( Martes foina ), Drenthe, Netherlands",
+      "source_categories": "Martes foina|Photographs by Charlesjsharp|Self-published work|Animals of Drenthe|Mustelidae of the Netherlands|Files with coordinates missing SDC location of creation (52° N, 6° E)|Focus stacked image",
+      "page": "https://commons.wikimedia.org/wiki/File:Stone_marten_(Martes_foina)_Drenthe.jpg",
+      "author": "Charles J. Sharp",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_requested": "",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/4/46/Stone_marten_%28Martes_foina%29_Drenthe.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "originalURL": "https://upload.wikimedia.org/wikipedia/commons/4/46/Stone_marten_%28Martes_foina%29_Drenthe.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "81f6bd70ea8a1755fce0cb0290c8f8019012aeeb",
+      "original": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/catalog-expansion-2026-10-19/animali/originals/ce26-animali-faina-d1817718.jpg",
+      "width": 3339,
+      "height": 2226,
+      "size": 5064782,
+      "role": "Figura intera per corpo, coda e pettorina bianca.",
+      "metadata_score": 2,
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.52,
+          0.52
+        ],
+        "riquadro": [
+          0.2,
+          0.12,
+          0.88,
+          0.96
+        ],
+        "nota": "Soggetto nitido, pettorina e muso leggibili, sfondo naturale. Visti tutti i sei ritagli e la miniatura reale; le anteprime orizzontali possono mostrare il dettaglio del capo, mentre il visore conserva la vista completa.",
+        "six_crops_approved": true,
+        "thumbnail_approved": true
+      },
+      "metadata_file": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/catalog-expansion-2026-10-19/animali/metadata/faina.json",
+      "selection_status": "metadata-verified; original visual review pending",
+      "attribution": "Charles J. Sharp · Wikimedia Commons · CC BY-SA 4.0",
+      "alt": "Faina (Martes foina), muso e pettorina chiara.",
+      "caption": "Faina (Martes foina), Drenthe, Paesi Bassi.",
+      "changes": "Conversione ICC del profilo sorgente in sRGB per preservare la resa cromatica sul Web; orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessun ritocco creativo. Miniatura centrata sul soggetto con il punto di ritaglio revisionato.",
+      "source_color_profile": "Adobe RGB (1998)",
+      "color_profile_normalized": "sRGB",
+      "sha256_original": "e069527bc19c4f2a46dbd55e3614dc80054ba2efdc673e5a111bced9ea5a4ee3",
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/animali/derived/ce26-animali-faina-d1817718.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/animali/derived/ce26-animali-faina-d1817718-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/animali/derived/ce26-animali-faina-d1817718-t.webp"
+      },
+      "crop_points": {
+        "5:4": [
+          0.62,
+          0.5
+        ],
+        "3:4": [
+          0.54,
+          0.5
+        ],
+        "4:5": [
+          0.543,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.558
+        ],
+        "4:3": [
+          0.68,
+          0.5
+        ],
+        "1:1": [
+          0.56,
+          0.5
+        ]
+      },
+      "photo_taxon": "Martes foina"
+    },
+    {
+      "id": "ce26-animali-quercino-d68a0b4b",
+      "target_group": "animals",
+      "target_key": "quercino",
+      "latin": "Eliomys quercinus",
+      "source_title": "File:Eliomys quercinus 168698377.jpg",
+      "source_description": "European Garden Dormouse ( Eliomys quercinus )",
+      "source_categories": "Eliomys quercinus|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|Spain photographs taken on 2021-11-09|Media from GBIF",
+      "page": "https://commons.wikimedia.org/wiki/File:Eliomys_quercinus_168698377.jpg",
+      "author": "Jan Ebr",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "attribution_requested": "",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Eliomys_quercinus_168698377.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "originalURL": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Eliomys_quercinus_168698377.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "389a5e219c13da7e53302a863f6c68091a0d2311",
+      "original": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/catalog-expansion-2026-10-19/animali/originals/ce26-animali-quercino-d68a0b4b.jpg",
+      "width": 2048,
+      "height": 1589,
+      "size": 1948774,
+      "role": "Figura intera; verificare nitidezza e soggetto visibile.",
+      "metadata_score": 2,
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.44,
+          0.52
+        ],
+        "riquadro": [
+          0.18,
+          0.19,
+          0.67,
+          0.88
+        ],
+        "nota": "Dettaglio nitido: mascherina, orecchie e muso leggibili; il corpo è nel tronco e non viene dichiarato intero. Visti tutti i sei ritagli e la miniatura reale; le anteprime orizzontali possono mostrare il dettaglio del capo, mentre il visore conserva la vista completa.",
+        "six_crops_approved": true,
+        "thumbnail_approved": true
+      },
+      "metadata_file": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/catalog-expansion-2026-10-19/animali/metadata/quercino.json",
+      "selection_status": "metadata-verified; original visual review pending",
+      "attribution": "Jan Ebr · Wikimedia Commons · CC BY 4.0",
+      "alt": "Quercino (Eliomys quercinus), dettaglio del muso fra il legno.",
+      "caption": "Quercino (Eliomys quercinus), dettaglio del muso nel tronco; Spagna.",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP e miniatura quadrata centrata. EXIF/XMP rimossi; nessun ritocco creativo. Miniatura centrata sul soggetto con il punto di ritaglio revisionato.",
+      "source_color_profile": null,
+      "sha256_original": "121196aa9d7445fd2d4642590268b74b90b7b052cf593feb677674eb604881e7",
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/animali/derived/ce26-animali-quercino-d68a0b4b.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/animali/derived/ce26-animali-quercino-d68a0b4b-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/animali/derived/ce26-animali-quercino-d68a0b4b-t.webp"
+      },
+      "crop_points": {
+        "5:4": [
+          0.0,
+          0.5
+        ],
+        "3:4": [
+          0.356,
+          0.5
+        ],
+        "4:5": [
+          0.342,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.546
+        ],
+        "4:3": [
+          0.5,
+          1.0
+        ],
+        "1:1": [
+          0.232,
+          0.5
+        ]
+      },
+      "photo_taxon": "Eliomys quercinus"
+    },
+    {
+      "id": "ce26-animali-gatto-selvatico-86de54cd",
+      "target_group": "animals",
+      "target_key": "gatto-selvatico",
+      "latin": "Felis silvestris",
+      "source_title": "File:Felis silvestris silvestris Luc Viatour.jpg",
+      "source_description": "A European Wildcat ( Felis silvestris silvestris )",
+      "source_categories": "Taken with Nikon D4|Self-published work|Featured pictures on Wikipedia, English|Images with extracted images|Featured pictures on Wikipedia, Persian|Featured pictures on Wikipedia, Spanish|Cats looking at viewer|Featured pictures of Felis silvestris|Files with coordinates missing SDC location of creation (50° N, 5° E)|Featured pictures of animals in Belgium|Sitting Felis silvestris|Felis silvestris silvestris in Domaine des grottes de Han",
+      "page": "https://commons.wikimedia.org/wiki/File:Felis_silvestris_silvestris_Luc_Viatour.jpg",
+      "author": "Lviatour",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "attribution_requested": "",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Felis_silvestris_silvestris_Luc_Viatour.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "originalURL": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Felis_silvestris_silvestris_Luc_Viatour.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "750c0bcb14cad7dd12d699d976b7fc013f88c165",
+      "original": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/catalog-expansion-2026-10-19/animali/originals/ce26-animali-gatto-selvatico-86de54cd.jpg",
+      "width": 2723,
+      "height": 4085,
+      "size": 7708501,
+      "role": "Soggetto intero: mantello e coda; fotografia in cattività da dichiarare se attestata nella pagina.",
+      "metadata_score": 6,
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.24
+        ],
+        "riquadro": [
+          0.34,
+          0.1,
+          0.79,
+          0.39
+        ],
+        "nota": "Figura intera nitida nel visore; crop di anteprima centrati su capo e spalle per conservare gli occhi. Coda visibile nella vista completa. Visti tutti i sei ritagli e la miniatura reale; le anteprime orizzontali possono mostrare il dettaglio del capo, mentre il visore conserva la vista completa.",
+        "six_crops_approved": true,
+        "thumbnail_approved": true
+      },
+      "metadata_file": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/catalog-expansion-2026-10-19/animali/metadata/gatto-selvatico.json",
+      "selection_status": "metadata-verified; original visual review pending",
+      "attribution": "Lviatour · Wikimedia Commons · CC BY-SA 3.0",
+      "alt": "Gatto selvatico (Felis silvestris), corpo e coda ad anelli.",
+      "caption": "Gatto selvatico (Felis silvestris), vista del corpo e della coda.",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP e miniatura quadrata centrata. EXIF/XMP rimossi; nessun ritocco creativo. Miniatura centrata sul soggetto con il punto di ritaglio revisionato.",
+      "source_color_profile": "IEC 61966-2.1 Default RGB colour space - sRGB",
+      "sha256_original": "420447ea8bb6380b03d6e6c6f94c33647dcf7c12de06b1bc39dbcc5af1a5e446",
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/animali/derived/ce26-animali-gatto-selvatico-86de54cd.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/animali/derived/ce26-animali-gatto-selvatico-86de54cd-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/animali/derived/ce26-animali-gatto-selvatico-86de54cd-t.webp"
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.0
+        ],
+        "3:4": [
+          0.5,
+          0.0
+        ],
+        "4:5": [
+          0.5,
+          0.0
+        ],
+        "16:7": [
+          0.5,
+          0.139
+        ],
+        "4:3": [
+          0.5,
+          0.0
+        ],
+        "1:1": [
+          0.5,
+          0.0
+        ]
+      },
+      "photo_taxon": "Felis silvestris"
+    },
+    {
+      "id": "ce26-animali-aquila-reale-54b5f76e",
+      "target_group": "animals",
+      "target_key": "aquila-reale",
+      "latin": "Aquila chrysaetos",
+      "source_title": "File:Aquila chrysaetos La Canada 2012-01-14.jpg",
+      "source_description": "Flying golden eagle, La Cañada, Avila, Spain",
+      "source_categories": "Taken with Canon EOS-1D Mark IV|Self-published work|Birds of Castile and León|Aquila chrysaetos in flight|January 2012 in the province of Ávila|Photographs taken on 2012-01-14|Accipitriformes of Spain|Files with coordinates missing SDC location of creation",
+      "page": "https://commons.wikimedia.org/wiki/File:Aquila_chrysaetos_La_Canada_2012-01-14.jpg",
+      "author": "Juan Lacruz",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "attribution_requested": "",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/7/72/Aquila_chrysaetos_La_Canada_2012-01-14.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "originalURL": "https://upload.wikimedia.org/wikipedia/commons/7/72/Aquila_chrysaetos_La_Canada_2012-01-14.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "8fe777d6d68cf293d44e1039fb1155db95ec17ad",
+      "original": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/catalog-expansion-2026-10-19/animali/originals/ce26-animali-aquila-reale-54b5f76e.jpg",
+      "width": 2695,
+      "height": 2695,
+      "size": 3965376,
+      "role": "Volo: sagoma e ali leggibili su sfondo uniforme, se i byte confermano sufficiente dettaglio.",
+      "metadata_score": 2,
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.53,
+          0.48
+        ],
+        "riquadro": [
+          0.06,
+          0.06,
+          0.94,
+          0.85
+        ],
+        "nota": "Ali e testa nitide; contorno completo. Nessuna età o sesso dedotti. Visti tutti i sei ritagli e la miniatura reale; le anteprime orizzontali possono mostrare il dettaglio del capo, mentre il visore conserva la vista completa.",
+        "six_crops_approved": true,
+        "thumbnail_approved": true
+      },
+      "metadata_file": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/catalog-expansion-2026-10-19/animali/metadata/aquila-reale.json",
+      "selection_status": "metadata-verified; original visual review pending",
+      "attribution": "Juan Lacruz · Wikimedia Commons · CC BY-SA 3.0",
+      "alt": "Aquila reale (Aquila chrysaetos) in volo.",
+      "caption": "Aquila reale (Aquila chrysaetos) in volo a La Cañada, Ávila, Spagna.",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP e miniatura quadrata centrata. EXIF/XMP rimossi; nessun ritocco creativo. Miniatura centrata sul soggetto con il punto di ritaglio revisionato.",
+      "source_color_profile": null,
+      "sha256_original": "af83465be922b86b54a54979cc020d67518019a859053b434b409c7ce021ea52",
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/animali/derived/ce26-animali-aquila-reale-54b5f76e.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/animali/derived/ce26-animali-aquila-reale-54b5f76e-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/animali/derived/ce26-animali-aquila-reale-54b5f76e-t.webp"
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.3
+        ],
+        "3:4": [
+          0.62,
+          0.5
+        ],
+        "4:5": [
+          0.65,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.464
+        ],
+        "4:3": [
+          0.5,
+          0.42
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      },
+      "photo_taxon": "Aquila chrysaetos"
+    },
+    {
+      "id": "ce26-animali-ape-legnaiola-42a9dee1",
+      "target_group": "animals",
+      "target_key": "ape-legnaiola",
+      "latin": "Xylocopa violacea",
+      "source_title": "File:Holzbiene (Xylocopa violacea) Raps5233395-PSD.jpg",
+      "source_description": "Blue wooden bee on rapeseed",
+      "source_categories": "Germany photographs taken on 2019-05-23|Taken with Olympus E-M1 Mark II|Taken with Olympus M.Zuiko Digital ED 60mm f/2.8 Macro|FFH-Gebiet Regnitz, Stocksee und Sandgebiete von Neuses bis Hallstadt|Self-published work|Uploaded with LrMediaWiki|Photographs by Ermell|May 2019 Bavaria photographs|Files with coordinates missing SDC location of creation (49° N, 10° E)|Xylocopa violacea on flowers|Insects on Brassica napus flowers|Xylocopa on Brassicales flowers|Images by User:Ermell taken in 2019",
+      "page": "https://commons.wikimedia.org/wiki/File:Holzbiene_(Xylocopa_violacea)_Raps5233395-PSD.jpg",
+      "author": "Ermell",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_requested": "Reinhold Möller",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/0/04/Holzbiene_%28Xylocopa_violacea%29_Raps5233395-PSD.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "originalURL": "https://upload.wikimedia.org/wikipedia/commons/0/04/Holzbiene_%28Xylocopa_violacea%29_Raps5233395-PSD.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "ba57515b393161cd4b7e11dce60b138435d576f3",
+      "original": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/catalog-expansion-2026-10-19/animali/originals/ce26-animali-ape-legnaiola-42a9dee1.jpg",
+      "width": 2634,
+      "height": 2662,
+      "size": 2964142,
+      "role": "Su fiore: corpo, ali e visita floreale, con luce/colore fedeli.",
+      "metadata_score": 2,
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.43,
+          0.52
+        ],
+        "riquadro": [
+          0.16,
+          0.32,
+          0.7,
+          0.78
+        ],
+        "nota": "Dettaglio macro nitido su fiore, corpo e ali visibili; la specie è attestata dalla fonte, nessuna determinazione visiva autonoma. Visti tutti i sei ritagli e la miniatura reale; le anteprime orizzontali possono mostrare il dettaglio del capo, mentre il visore conserva la vista completa.",
+        "six_crops_approved": true,
+        "thumbnail_approved": true
+      },
+      "metadata_file": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/catalog-expansion-2026-10-19/animali/metadata/ape-legnaiola.json",
+      "selection_status": "metadata-verified; original visual review pending",
+      "attribution": "Reinhold Möller",
+      "alt": "Ape legnaiola (Xylocopa violacea) su fiori gialli.",
+      "caption": "Ape legnaiola (Xylocopa violacea), visita ai fiori.",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP e miniatura quadrata centrata. EXIF/XMP rimossi; nessun ritocco creativo. Miniatura centrata sul soggetto con il punto di ritaglio revisionato.",
+      "source_color_profile": "IEC 61966-2.1 Default RGB colour space - sRGB",
+      "sha256_original": "143a9dd663e5558ed0c86acea9ab0650fbe9f2765888fd6a1c2982e955bdf000",
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/animali/derived/ce26-animali-ape-legnaiola-42a9dee1.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/animali/derived/ce26-animali-ape-legnaiola-42a9dee1-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/animali/derived/ce26-animali-ape-legnaiola-42a9dee1-t.webp"
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.596
+        ],
+        "3:4": [
+          0.211,
+          0.5
+        ],
+        "4:5": [
+          0.134,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.535
+        ],
+        "4:3": [
+          0.5,
+          0.578
+        ],
+        "1:1": [
+          0.5,
+          1.0
+        ]
+      },
+      "photo_taxon": "Xylocopa violacea"
+    },
+    {
+      "id": "ce26-animali-faina-8adf7b53",
+      "target_group": "animals",
+      "target_key": "faina",
+      "latin": "Martes foina",
+      "source_title": "File:Stone marten (Martes foina) Drenthe 2.jpg",
+      "source_description": "Stone marten ( Martes foina ), Drenthe, Netherlands",
+      "source_categories": "Martes foina|Photographs by Charlesjsharp|Self-published work|Animals of Drenthe|Mustelidae of the Netherlands|Files with coordinates missing SDC location of creation (52° N, 6° E)",
+      "page": "https://commons.wikimedia.org/wiki/File:Stone_marten_(Martes_foina)_Drenthe_2.jpg",
+      "author": "Charles J. Sharp",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_requested": "",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/8/89/Stone_marten_%28Martes_foina%29_Drenthe_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "originalURL": "https://upload.wikimedia.org/wikipedia/commons/8/89/Stone_marten_%28Martes_foina%29_Drenthe_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "8605d23ef4713ba8376b571a37b0a749bbb031ee",
+      "original": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/catalog-expansion-2026-10-19/animali/originals/ce26-animali-faina-8adf7b53.jpg",
+      "width": 5532,
+      "height": 3688,
+      "size": 12013126,
+      "role": "Vista complementare della gola; non adottare se quasi identica alla prima.",
+      "metadata_score": 2,
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.58,
+          0.51
+        ],
+        "riquadro": [
+          0.4,
+          0.19,
+          0.78,
+          0.88
+        ],
+        "nota": "Vista frontale complementare alla laterale, corpo nitido in ambiente; stessa scena ma differenza informativa evidente. Visti tutti i sei ritagli e la miniatura reale; le anteprime orizzontali possono mostrare il dettaglio del capo, mentre il visore conserva la vista completa.",
+        "six_crops_approved": true,
+        "thumbnail_approved": true
+      },
+      "metadata_file": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/catalog-expansion-2026-10-19/animali/metadata/faina.json",
+      "selection_status": "metadata-verified; original visual review pending",
+      "attribution": "Charles J. Sharp · Wikimedia Commons · CC BY-SA 4.0",
+      "alt": "Faina (Martes foina) fra il legno, pettorina in vista.",
+      "caption": "Faina (Martes foina), altra postura con pettorina chiara; Drenthe, Paesi Bassi.",
+      "changes": "Conversione ICC del profilo sorgente in sRGB per preservare la resa cromatica sul Web; orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessun ritocco creativo. Miniatura centrata sul soggetto con il punto di ritaglio revisionato.",
+      "source_color_profile": "Adobe RGB (1998)",
+      "color_profile_normalized": "sRGB",
+      "sha256_original": "c7c65f96ebd221cc66d5ed41ab9168c1bb742820f95d4af02a5ca7a2ae9c594f",
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/animali/derived/ce26-animali-faina-8adf7b53.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/animali/derived/ce26-animali-faina-8adf7b53-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/animali/derived/ce26-animali-faina-8adf7b53-t.webp"
+      },
+      "crop_points": {
+        "5:4": [
+          0.98,
+          0.5
+        ],
+        "3:4": [
+          0.66,
+          0.5
+        ],
+        "4:5": [
+          0.671,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.529
+        ],
+        "4:3": [
+          1.0,
+          0.5
+        ],
+        "1:1": [
+          0.74,
+          0.5
+        ]
+      },
+      "photo_taxon": "Martes foina"
+    },
+    {
+      "id": "ce26-animali-gatto-selvatico-6ada9d16",
+      "target_group": "animals",
+      "target_key": "gatto-selvatico",
+      "latin": "Felis silvestris",
+      "source_title": "File:Felis silvestris silvestris.jpg",
+      "source_description": "European Wildcat in the Wisentgehege Springe game park, near Springe , Hanover , Germany",
+      "source_categories": "Taken with Nikon D300|Self-published work|Featured pictures on Wikipedia, English|Files with derivative versions|Featured pictures on Wikipedia, Vietnamese|Cats looking at viewer|Featured pictures of Felis silvestris|Featured pictures by Michael Gäbler|Files with coordinates missing SDC location of creation (52° N, 9° E)|Featured pictures on Wikipedia, Arabic|Assessment tagged pages marked as POTY candidates|Photographs by Michael Gäbler|Felis silvestris in snow|Featured pictures of Springe|Felis silvestris heads|Felis silvestris silvestris in Wisentgehege Springe",
+      "page": "https://commons.wikimedia.org/wiki/File:Felis_silvestris_silvestris.jpg",
+      "author": "Michael Gäbler",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+      "attribution_requested": "Michael Gäbler",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Felis_silvestris_silvestris.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "originalURL": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Felis_silvestris_silvestris.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "dd8d3d46399704963275809a0bbd243d8a494b2c",
+      "original": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/catalog-expansion-2026-10-19/animali/originals/ce26-animali-gatto-selvatico-6ada9d16.jpg",
+      "width": 1496,
+      "height": 1729,
+      "size": 1659050,
+      "role": "Altra vista in parco faunistico: coda e postura, non prova di presenza spontanea.",
+      "metadata_score": 5,
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.53,
+          0.42
+        ],
+        "riquadro": [
+          0.21,
+          0.1,
+          0.89,
+          0.75
+        ],
+        "nota": "Dettaglio del muso molto nitido complementare alla prima figura intera; cattività esplicita nella fonte. Visti tutti i sei ritagli e la miniatura reale; le anteprime orizzontali possono mostrare il dettaglio del capo, mentre il visore conserva la vista completa.",
+        "six_crops_approved": true,
+        "thumbnail_approved": true
+      },
+      "metadata_file": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/catalog-expansion-2026-10-19/animali/metadata/gatto-selvatico.json",
+      "selection_status": "metadata-verified; original visual review pending",
+      "attribution": "Michael Gäbler",
+      "alt": "Gatto selvatico (Felis silvestris), dettaglio del capo.",
+      "caption": "Gatto selvatico (Felis silvestris), dettaglio del capo nel parco faunistico Wisentgehege Springe, Germania; in cattività.",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP e miniatura quadrata centrata. EXIF/XMP rimossi; nessun ritocco creativo. Miniatura centrata sul soggetto con il punto di ritaglio revisionato.",
+      "source_color_profile": "IEC 61966-2.1 Default RGB colour space - sRGB",
+      "photo_taxon": "Felis silvestris",
+      "sha256_original": "d2d11dbeb0bc43343ac4addde30bb0520c321414e6764e7dee384da05baad224",
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/animali/derived/ce26-animali-gatto-selvatico-6ada9d16.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/animali/derived/ce26-animali-gatto-selvatico-6ada9d16-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/animali/derived/ce26-animali-gatto-selvatico-6ada9d16-t.webp"
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.24
+        ],
+        "3:4": [
+          0.725,
+          0.5
+        ],
+        "4:5": [
+          0.898,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.371
+        ],
+        "4:3": [
+          0.5,
+          0.272
+        ],
+        "1:1": [
+          0.5,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "ce26-animali-lepre-italica-6787d92c",
+      "target_group": "animals",
+      "target_key": "lepre-italica",
+      "latin": "Lepus corsicanus",
+      "source_title": "File:Lepus corsicanus.jpg",
+      "source_description": "Apennine Hare ( Lepus corsicanus ) in France",
+      "source_categories": "Lepus corsicanus|Extracted images|Media from iNaturalist|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|Media from GBIF",
+      "page": "https://commons.wikimedia.org/wiki/File:Lepus_corsicanus.jpg",
+      "author": "Thomas Galewski",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "attribution_requested": "",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Lepus_corsicanus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "originalURL": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Lepus_corsicanus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "e518a228554d3346322d8736652edf07b90f4aa7",
+      "original": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/catalog-expansion-2026-10-19/animali/originals/ce26-animali-lepre-italica-6787d92c.jpg",
+      "width": 1101,
+      "height": 831,
+      "size": 518163,
+      "role": "Osservazione indipendente francese/Corsica: verifica soggetto intero e leggibilità; non spacciarla per Appennino.",
+      "metadata_score": 2,
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.51,
+          0.49
+        ],
+        "riquadro": [
+          0.12,
+          0.03,
+          0.86,
+          0.94
+        ],
+        "nota": "Animale vivo intero e nitido; terreno sassoso ma soggetto ben separato. Taxon esatto della fonte, nessuna presenza appenninica dedotta. Visti tutti i sei ritagli e la miniatura reale; le anteprime orizzontali possono mostrare il dettaglio del capo, mentre il visore conserva la vista completa.",
+        "six_crops_approved": true,
+        "thumbnail_approved": true
+      },
+      "metadata_file": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/catalog-expansion-2026-10-19/animali/metadata/lepre-italica.json",
+      "selection_status": "metadata-verified; original visual review pending",
+      "attribution": "Thomas Galewski · Wikimedia Commons · CC BY 4.0",
+      "alt": "Lepre italica (Lepus corsicanus), corpo e orecchie in vista.",
+      "caption": "Lepre italica (Lepus corsicanus), fotografata in Francia secondo la fonte.",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP e miniatura quadrata centrata. EXIF/XMP rimossi; nessun ritocco creativo. Miniatura centrata sul soggetto con il punto di ritaglio revisionato.",
+      "source_color_profile": null,
+      "photo_taxon": "Lepus corsicanus",
+      "sha256_original": "5727910f3d535617051a08295fdf4a373b9aeb2ca1bba339d4b94c0d760dec59",
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/animali/derived/ce26-animali-lepre-italica-6787d92c.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/animali/derived/ce26-animali-lepre-italica-6787d92c-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/animali/derived/ce26-animali-lepre-italica-6787d92c-t.webp"
+      },
+      "crop_points": {
+        "5:4": [
+          0.677,
+          0.5
+        ],
+        "3:4": [
+          0.523,
+          0.5
+        ],
+        "4:5": [
+          0.525,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.476
+        ],
+        "4:3": [
+          0.5,
+          0.0
+        ],
+        "1:1": [
+          0.489,
+          0.5
+        ]
+      }
+    },
+    {
+      "id": "ce26-animali-aquila-reale-a297774a",
+      "target_group": "animals",
+      "target_key": "aquila-reale",
+      "latin": "Aquila chrysaetos",
+      "source_title": "File:Aquila chrysaetos (Linnaeus 1758).jpg",
+      "source_description": "Golden Eagle in the Wisentgehege Springe game park near Springe , Hanover , Germany",
+      "source_categories": "Taken with Nikon D300|Taken with AF-S Micro Nikkor 60mm f/2.8G ED|Self-published work|Aves heads in right lateral aspect|Featured pictures by Michael Gäbler|Files with coordinates missing SDC location of creation (52° N, 9° E)|Photographs by Michael Gäbler|Aquila chrysaetos heads|Birds in Wisentgehege Springe|Featured pictures of Springe",
+      "page": "https://commons.wikimedia.org/wiki/File:Aquila_chrysaetos_(Linnaeus_1758).jpg",
+      "author": "Michael Gäbler",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+      "attribution_requested": "Michael Gäbler",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/8/88/Aquila_chrysaetos_%28Linnaeus_1758%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "originalURL": "https://upload.wikimedia.org/wikipedia/commons/8/88/Aquila_chrysaetos_%28Linnaeus_1758%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "4a3cdf121c48563015861a52440827e16ab4a9a6",
+      "original": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/catalog-expansion-2026-10-19/animali/originals/ce26-animali-aquila-reale-a297774a.jpg",
+      "width": 3260,
+      "height": 2300,
+      "size": 7031137,
+      "role": "Posata in parco faunistico: dettaglio complementare alla sagoma in volo; dichiarare cattività.",
+      "metadata_score": 5,
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.66,
+          0.5
+        ],
+        "riquadro": [
+          0.4,
+          0.18,
+          0.98,
+          0.86
+        ],
+        "nota": "Macro nitida di capo, becco e piumaggio, complementare alla sagoma in volo. Cattività esplicita. Visti tutti i sei ritagli e la miniatura reale; le anteprime orizzontali possono mostrare il dettaglio del capo, mentre il visore conserva la vista completa.",
+        "six_crops_approved": true,
+        "thumbnail_approved": true
+      },
+      "metadata_file": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/catalog-expansion-2026-10-19/animali/metadata/aquila-reale.json",
+      "selection_status": "metadata-verified; original visual review pending",
+      "attribution": "Michael Gäbler",
+      "alt": "Aquila reale (Aquila chrysaetos), dettaglio del capo.",
+      "caption": "Aquila reale (Aquila chrysaetos), parco faunistico Wisentgehege Springe, Germania; in cattività.",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP e miniatura quadrata centrata. EXIF/XMP rimossi; nessun ritocco creativo. Miniatura centrata sul soggetto con il punto di ritaglio revisionato.",
+      "source_color_profile": null,
+      "photo_taxon": "Aquila chrysaetos",
+      "sha256_original": "7e8149bec2a2a39e8353bfaff117688d22bc9304317229ebd7500445eacf688f",
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/animali/derived/ce26-animali-aquila-reale-a297774a.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/animali/derived/ce26-animali-aquila-reale-a297774a-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/animali/derived/ce26-animali-aquila-reale-a297774a-t.webp"
+      },
+      "crop_points": {
+        "5:4": [
+          1.0,
+          0.5
+        ],
+        "3:4": [
+          0.84,
+          0.5
+        ],
+        "4:5": [
+          0.867,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.5
+        ],
+        "4:3": [
+          1.0,
+          0.5
+        ],
+        "1:1": [
+          1.0,
+          0.5
+        ]
+      }
+    },
+    {
+      "id": "ce26-animali-ape-legnaiola-6d48b8d6",
+      "target_group": "animals",
+      "target_key": "ape-legnaiola",
+      "latin": "Xylocopa violacea",
+      "source_title": "File:Xylocopa violacea Luberon 01.jpg",
+      "source_description": "A violet carpenter bee ( Xylocopa violacea ) in a lavender bush ( lavandula angustifolia ). Oppède, France.",
+      "source_categories": "Self-published work|Hymenoptera of Provence-Alpes-Côte d'Azur|Files with coordinates missing SDC location of creation|Xylocopa violacea on Lavandula flowers",
+      "page": "https://commons.wikimedia.org/wiki/File:Xylocopa_violacea_Luberon_01.jpg",
+      "author": "Sputniktilt",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_requested": "",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/8/82/Xylocopa_violacea_Luberon_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "originalURL": "https://upload.wikimedia.org/wikipedia/commons/8/82/Xylocopa_violacea_Luberon_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "e97c14eebe113754b07119982683477568b39f6c",
+      "original": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/catalog-expansion-2026-10-19/animali/originals/ce26-animali-ape-legnaiola-6d48b8d6.jpg",
+      "width": 2217,
+      "height": 1663,
+      "size": 2997763,
+      "role": "Secondo angolo su lavanda: ali e apparato boccale solo se aggiungono un dettaglio netto.",
+      "metadata_score": 2,
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.52,
+          0.53
+        ],
+        "riquadro": [
+          0.18,
+          0.18,
+          0.84,
+          0.86
+        ],
+        "nota": "Vista ravvicinata complementare delle ali e del capo, sfondo sfocato; nessuna fase o sesso dedotti. Visti tutti i sei ritagli e la miniatura reale; le anteprime orizzontali possono mostrare il dettaglio del capo, mentre il visore conserva la vista completa.",
+        "six_crops_approved": true,
+        "thumbnail_approved": true
+      },
+      "metadata_file": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/catalog-expansion-2026-10-19/animali/metadata/ape-legnaiola.json",
+      "selection_status": "metadata-verified; original visual review pending",
+      "attribution": "Sputniktilt · Wikimedia Commons · CC BY-SA 4.0",
+      "alt": "Ape legnaiola (Xylocopa violacea), dettaglio su lavanda.",
+      "caption": "Ape legnaiola (Xylocopa violacea) su lavanda a Oppède, Francia.",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP e miniatura quadrata centrata. EXIF/XMP rimossi; nessun ritocco creativo. Miniatura centrata sul soggetto con il punto di ritaglio revisionato.",
+      "source_color_profile": "IEC 61966-2.1 Default RGB colour space - sRGB",
+      "photo_taxon": "Xylocopa violacea",
+      "sha256_original": "8d9d65cfa2348dcdf2a67dad1e792439930c59756989ca26aabb05d72a07d03c",
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/animali/derived/ce26-animali-ape-legnaiola-6d48b8d6.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/animali/derived/ce26-animali-ape-legnaiola-6d48b8d6-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/animali/derived/ce26-animali-ape-legnaiola-6d48b8d6-t.webp"
+      },
+      "crop_points": {
+        "5:4": [
+          0.821,
+          0.5
+        ],
+        "3:4": [
+          0.546,
+          0.5
+        ],
+        "4:5": [
+          0.55,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.572
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.58,
+          0.5
+        ]
+      }
+    },
+    {
+      "id": "ce26-animali-donnola-19d75882",
+      "target_group": "animals",
+      "target_key": "donnola",
+      "latin": "Mustela nivalis",
+      "source_title": "File:Mustela nivalis -British Wildlife Centre-4.jpg",
+      "source_description": "Least Weasel ( Mustela nivalis ) at the British Wildlife Centre, Surrey, England - photograph taken Sunday 17. August 2008.",
+      "source_categories": "Images with extracted images|Flickr images uploaded by Flickr upload bot|Mustela nivalis in the British Wildlife Centre",
+      "page": "https://commons.wikimedia.org/wiki/File:Mustela_nivalis_-British_Wildlife_Centre-4.jpg",
+      "author": "Keven Law",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "attribution_requested": "",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Mustela_nivalis_-British_Wildlife_Centre-4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "originalURL": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Mustela_nivalis_-British_Wildlife_Centre-4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "54bc6b46757ac9dd105ba6db831ca1aeb4b69296",
+      "original": "incoming/catalog-expansion-2026-10-19/animali/originals/ce26-animali-donnola-19d75882.jpg",
+      "width": 1676,
+      "height": 1432,
+      "size": 407459,
+      "role": "Figura intera in centro faunistico: potenziale vista nitida complementare, da dichiarare in cattività.",
+      "selection_status": "metadata-verified; original visual review pending",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.65,
+          0.29
+        ],
+        "riquadro": [
+          0.56,
+          0.12,
+          0.9,
+          0.46
+        ],
+        "nota": "Corpo e testa leggibili su sfondo scuro; immagine della fonte con contrasto marcato, nessuna correzione creativa applicata. Cattività esplicita. Visti tutti i sei ritagli e la miniatura reale; le anteprime orizzontali possono mostrare il dettaglio del capo, mentre il visore conserva la vista completa.",
+        "six_crops_approved": true,
+        "thumbnail_approved": true
+      },
+      "metadata_file": "incoming/catalog-expansion-2026-10-19/animali/metadata/donnola-extra.json",
+      "attribution": "Keven Law · Wikimedia Commons · CC BY-SA 2.0",
+      "alt": "Donnola (Mustela nivalis), corpo e gola chiara.",
+      "caption": "Donnola (Mustela nivalis), British Wildlife Centre, Inghilterra; in cattività.",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP e miniatura quadrata centrata. EXIF/XMP rimossi; nessun ritocco creativo. Miniatura centrata sul soggetto con il punto di ritaglio revisionato.",
+      "source_color_profile": null,
+      "photo_taxon": "Mustela nivalis",
+      "sha256_original": "f30aa8c00692ecc427bbcc9cb1cd162433a2bee93a4b12ab74d1b4e0d0df16f3",
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/animali/derived/ce26-animali-donnola-19d75882.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/animali/derived/ce26-animali-donnola-19d75882-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/animali/derived/ce26-animali-donnola-19d75882-t.webp"
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.0
+        ],
+        "3:4": [
+          0.918,
+          0.5
+        ],
+        "4:5": [
+          0.974,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.07
+        ],
+        "4:3": [
+          0.5,
+          0.0
+        ],
+        "1:1": [
+          1.0,
+          0.5
+        ]
+      }
+    }
+  ],
+  "source_manifest": "incoming/catalog-expansion-2026-10-19/animali/manifest.json"
+}

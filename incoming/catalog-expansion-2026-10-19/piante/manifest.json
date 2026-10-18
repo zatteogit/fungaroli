@@ -1,0 +1,1594 @@
+{
+  "photos": [
+    {
+      "id": "ce1-piante-bugola-9",
+      "target_group": "plants",
+      "target_key": "bugola",
+      "latin": "Ajuga reptans L.",
+      "photo_taxon": "Ajuga reptans L.",
+      "source": "Università di Trieste · Dryades",
+      "source_title": "Ajuga reptans L. · IMG3472JPG1684762498.jpg",
+      "source_description": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Serle, nei pressi della frazione Cocca, BS, Lombardia, Italia 11/04/2023 Distributed under CC BY-SA 4.0 license.",
+      "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Serle, nei pressi della frazione Cocca, BS, Lombardia, Italia 11/04/2023 Distributed under CC BY-SA 4.0 license.",
+      "page": "https://dryades.units.it/casentinesi/index.php?id=4414&procedure=taxon_page",
+      "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG3472JPG1684762498.jpg",
+      "source_taxon": "Ajuga reptans L.",
+      "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · CC BY-SA 4.0",
+      "original": "incoming/catalog-expansion-2026-10-19/piante/originals/ce1-piante-bugola-9.jpg",
+      "sha256_original": "3766f5d6af7075ba5df1a9d6e30cd8f4d8793909947c143f20b313ead9ae4b28",
+      "source_sha1": "0b9510f939a74dd1660502af44a6fec0930e71ac",
+      "sha1_basis": "computed_from_downloaded_original; no upstream checksum supplied by Dryades",
+      "source_metadata": "incoming/catalog-expansion-2026-10-19/piante/sources/bugola-dryades.html",
+      "alt": "Ajuga reptans L.: fusto fiorito e disposizione dei fiori.",
+      "caption": "Portamento del fusto fiorito, con gruppi sovrapposti di corolle blu.",
+      "photographic_role": "Fusto fiorito e disposizione dei fiori",
+      "changes": "Orientamento EXIF, conversione ICC a sRGB ove necessaria, ridimensionamento e compressione WebP; miniatura ritagliata. Profili ICC, EXIF e XMP rimossi dagli export.",
+      "source_icc_profile": null,
+      "color_conversion": false,
+      "export_color_space": "Assumed sRGB; source has no ICC profile",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.48
+        ],
+        "riquadro": [
+          0.28,
+          0.08,
+          0.74,
+          0.9
+        ],
+        "nota": "Originale e sei ritagli esaminati. Nitidezza, composizione e dettaglio complementare approvati il 19 ottobre 2026. I formati larghi mostrano una parte del soggetto quando la figura completa non entra; la foto completa resta nel visore."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.455
+        ],
+        "3:4": [
+          0.5,
+          0.209
+        ],
+        "4:5": [
+          0.5,
+          0.342
+        ],
+        "16:7": [
+          0.5,
+          0.471
+        ],
+        "4:3": [
+          0.5,
+          0.458
+        ],
+        "1:1": [
+          0.5,
+          0.434
+        ]
+      },
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-bugola-9.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-bugola-9-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-bugola-9-t.webp"
+      },
+      "source_metadata_sha256": "b9edcba3ac7ea57533d654f2433b35a352b4e327bdccfe4a920c4be0893a9433",
+      "source_rights_note": "CC BY-SA 4.0 riferita alla singola fotografia, non al testo della scheda.",
+      "source_categories": []
+    },
+    {
+      "id": "ce1-piante-bugola-13",
+      "target_group": "plants",
+      "target_key": "bugola",
+      "latin": "Ajuga reptans L.",
+      "photo_taxon": "Ajuga reptans L.",
+      "source": "Università di Trieste · Dryades",
+      "source_title": "Ajuga reptans L. · IMG9899JPG1584710466.jpg",
+      "source_description": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trieste, Campus Universitario, TS, Friuli Venezia Giulia, Italia 17/03/2020 Distributed under CC BY-SA 4.0 license.",
+      "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trieste, Campus Universitario, TS, Friuli Venezia Giulia, Italia 17/03/2020 Distributed under CC BY-SA 4.0 license.",
+      "page": "https://dryades.units.it/casentinesi/index.php?id=4414&procedure=taxon_page",
+      "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG9899JPG1584710466.jpg",
+      "source_taxon": "Ajuga reptans L.",
+      "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · CC BY-SA 4.0",
+      "original": "incoming/catalog-expansion-2026-10-19/piante/originals/ce1-piante-bugola-13.jpg",
+      "sha256_original": "aaba7186422632f35faf9cfcde7e63a3275c93bbde8d9390add28080af48783e",
+      "source_sha1": "e871d9c4b0cbb9fe70f12a8f57eb03edb7e92bc2",
+      "sha1_basis": "computed_from_downloaded_original; no upstream checksum supplied by Dryades",
+      "source_metadata": "incoming/catalog-expansion-2026-10-19/piante/sources/bugola-dryades.html",
+      "alt": "Ajuga reptans L.: dettaglio della foglia.",
+      "caption": "Foglia della bugola: superficie e margine in dettaglio.",
+      "photographic_role": "Dettaglio della foglia",
+      "changes": "Orientamento EXIF, conversione ICC a sRGB ove necessaria, ridimensionamento e compressione WebP; miniatura ritagliata. Profili ICC, EXIF e XMP rimossi dagli export.",
+      "source_icc_profile": null,
+      "color_conversion": false,
+      "export_color_space": "Assumed sRGB; source has no ICC profile",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.55,
+          0.49
+        ],
+        "riquadro": [
+          0.2,
+          0.12,
+          0.9,
+          0.9
+        ],
+        "nota": "Originale e sei ritagli esaminati. Nitidezza, composizione e dettaglio complementare approvati il 19 ottobre 2026. I formati larghi mostrano una parte del soggetto quando la figura completa non entra; la foto completa resta nel visore."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.343
+        ],
+        "3:4": [
+          0.639,
+          0.5
+        ],
+        "4:5": [
+          0.658,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.48
+        ],
+        "4:3": [
+          0.5,
+          0.418
+        ],
+        "1:1": [
+          0.844,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-bugola-13.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-bugola-13-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-bugola-13-t.webp"
+      },
+      "source_metadata_sha256": "b9edcba3ac7ea57533d654f2433b35a352b4e327bdccfe4a920c4be0893a9433",
+      "source_rights_note": "CC BY-SA 4.0 riferita alla singola fotografia, non al testo della scheda.",
+      "source_categories": []
+    },
+    {
+      "id": "ce1-piante-bugola-22",
+      "target_group": "plants",
+      "target_key": "bugola",
+      "latin": "Ajuga reptans L.",
+      "photo_taxon": "Ajuga reptans L.",
+      "source": "Università di Trieste · Dryades",
+      "source_title": "Ajuga reptans L. · IMG3239JPG1585642955.jpg",
+      "source_description": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trieste, Campus Universitario, TS, Friuli Venezia Giulia, Italia 30/03/2020 Distributed under CC BY-SA 4.0 license.",
+      "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trieste, Campus Universitario, TS, Friuli Venezia Giulia, Italia 30/03/2020 Distributed under CC BY-SA 4.0 license.",
+      "page": "https://dryades.units.it/casentinesi/index.php?id=4414&procedure=taxon_page",
+      "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG3239JPG1585642955.jpg",
+      "source_taxon": "Ajuga reptans L.",
+      "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · CC BY-SA 4.0",
+      "original": "incoming/catalog-expansion-2026-10-19/piante/originals/ce1-piante-bugola-22.jpg",
+      "sha256_original": "aab99305c570c1a3262cfc674ae8fdbe70dfd85192090e0821402e6ef1972fb3",
+      "source_sha1": "ab30409eac6ea8d1e60a9e2bb7c397b957cee9d9",
+      "sha1_basis": "computed_from_downloaded_original; no upstream checksum supplied by Dryades",
+      "source_metadata": "incoming/catalog-expansion-2026-10-19/piante/sources/bugola-dryades.html",
+      "alt": "Ajuga reptans L.: stolone e foglie.",
+      "caption": "Vista ravvicinata del tratto strisciante e delle foglie della bugola.",
+      "photographic_role": "Stolone e foglie",
+      "changes": "Orientamento EXIF, conversione ICC a sRGB ove necessaria, ridimensionamento e compressione WebP; miniatura ritagliata. Profili ICC, EXIF e XMP rimossi dagli export.",
+      "source_icc_profile": null,
+      "color_conversion": false,
+      "export_color_space": "Assumed sRGB; source has no ICC profile",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.5
+        ],
+        "riquadro": [
+          0.08,
+          0.18,
+          0.95,
+          0.85
+        ],
+        "nota": "Originale e sei ritagli esaminati. Nitidezza, composizione e dettaglio complementare approvati il 19 ottobre 2026. I formati larghi mostrano una parte del soggetto quando la figura completa non entra; la foto completa resta nel visore."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.5
+        ],
+        "4:3": [
+          0.55,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-bugola-22.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-bugola-22-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-bugola-22-t.webp"
+      },
+      "source_metadata_sha256": "b9edcba3ac7ea57533d654f2433b35a352b4e327bdccfe4a920c4be0893a9433",
+      "source_rights_note": "CC BY-SA 4.0 riferita alla singola fotografia, non al testo della scheda.",
+      "source_categories": []
+    },
+    {
+      "id": "ce1-piante-acetosella-0",
+      "target_group": "plants",
+      "target_key": "acetosella",
+      "latin": "Oxalis acetosella L.",
+      "photo_taxon": "Oxalis acetosella L.",
+      "source": "Università di Trieste · Dryades",
+      "source_title": "Oxalis acetosella L. · TS241647.jpg",
+      "source_description": "© Dipartimento di Scienze della Vita, Università di Trieste Andrea Moro Comune di Serle, Cariadeghe, Lombardia, Italia 22/04/2019 Distributed under CC BY-SA 4.0 license.",
+      "sourceCaption": "© Dipartimento di Scienze della Vita, Università di Trieste Andrea Moro Comune di Serle, Cariadeghe, Lombardia, Italia 22/04/2019 Distributed under CC BY-SA 4.0 license.",
+      "page": "https://dryades.units.it/casentinesi/index.php?id=2799&procedure=taxon_page",
+      "sourceImage": "https://dryades.units.it/dryades/plants/foto/TS241647.jpg",
+      "source_taxon": "Oxalis acetosella L.",
+      "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · CC BY-SA 4.0",
+      "original": "incoming/catalog-expansion-2026-10-19/piante/originals/ce1-piante-acetosella-0.jpg",
+      "sha256_original": "21afbcb91c87255ea5abe9c990fb761852db31467a5142f8a8fd57561ceb06f4",
+      "source_sha1": "cae37e563735baeda5b4158c035a5a9d9b7783b3",
+      "sha1_basis": "computed_from_downloaded_original; no upstream checksum supplied by Dryades",
+      "source_metadata": "incoming/catalog-expansion-2026-10-19/piante/sources/acetosella-dryades.html",
+      "alt": "Oxalis acetosella L.: dettaglio dei fiori.",
+      "caption": "Fiori di acetosella: venature delle corolle e parte centrale ben visibili.",
+      "photographic_role": "Dettaglio dei fiori",
+      "changes": "Orientamento EXIF, conversione ICC a sRGB ove necessaria, ridimensionamento e compressione WebP; miniatura ritagliata. Profili ICC, EXIF e XMP rimossi dagli export.",
+      "source_icc_profile": null,
+      "color_conversion": false,
+      "export_color_space": "Assumed sRGB; source has no ICC profile",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.48,
+          0.5
+        ],
+        "riquadro": [
+          0.04,
+          0.04,
+          0.96,
+          0.96
+        ],
+        "nota": "Originale e sei ritagli esaminati. Nitidezza, composizione e dettaglio complementare approvati il 19 ottobre 2026. I formati larghi mostrano una parte del soggetto quando la figura completa non entra; la foto completa resta nel visore."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.413,
+          0.5
+        ],
+        "4:5": [
+          0.388,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.5
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-acetosella-0.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-acetosella-0-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-acetosella-0-t.webp"
+      },
+      "source_metadata_sha256": "eb096e035f9986dbc0908c9ab805f5e6a753e88132889b048e4063893f3269ab",
+      "source_rights_note": "CC BY-SA 4.0 riferita alla singola fotografia, non al testo della scheda.",
+      "source_categories": []
+    },
+    {
+      "id": "ce1-piante-acetosella-8",
+      "target_group": "plants",
+      "target_key": "acetosella",
+      "latin": "Oxalis acetosella L.",
+      "photo_taxon": "Oxalis acetosella L.",
+      "source": "Università di Trieste · Dryades",
+      "source_title": "Oxalis acetosella L. · TS175193.jpg",
+      "source_description": "© Dipartimento di Scienze della Vita, Università di Trieste Andrea Moro Comune di Serle, località Cariadeghe, Lombardia, Italia 07/04/2015 Distributed under CC BY-SA 4.0 license.",
+      "sourceCaption": "© Dipartimento di Scienze della Vita, Università di Trieste Andrea Moro Comune di Serle, località Cariadeghe, Lombardia, Italia 07/04/2015 Distributed under CC BY-SA 4.0 license.",
+      "page": "https://dryades.units.it/casentinesi/index.php?id=2799&procedure=taxon_page",
+      "sourceImage": "https://dryades.units.it/dryades/plants/foto/TS175193.jpg",
+      "source_taxon": "Oxalis acetosella L.",
+      "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · CC BY-SA 4.0",
+      "original": "incoming/catalog-expansion-2026-10-19/piante/originals/ce1-piante-acetosella-8.jpg",
+      "sha256_original": "fc5a566a7eb913bcbb2cc73a254ddcc4fa79484e46d1b99542e8b32817ba3da3",
+      "source_sha1": "218a98263bd7214194e9e4f4ed7b0c0cbd3f0f46",
+      "sha1_basis": "computed_from_downloaded_original; no upstream checksum supplied by Dryades",
+      "source_metadata": "incoming/catalog-expansion-2026-10-19/piante/sources/acetosella-dryades.html",
+      "alt": "Oxalis acetosella L.: portamento e foglie nel sottobosco.",
+      "caption": "Acetosella nel sottobosco: foglie trifogliate e disposizione della pianta.",
+      "photographic_role": "Portamento e foglie nel sottobosco",
+      "changes": "Orientamento EXIF, conversione ICC a sRGB ove necessaria, ridimensionamento e compressione WebP; miniatura ritagliata. Profili ICC, EXIF e XMP rimossi dagli export.",
+      "source_icc_profile": null,
+      "color_conversion": false,
+      "export_color_space": "Assumed sRGB; source has no ICC profile",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.5
+        ],
+        "riquadro": [
+          0.12,
+          0.08,
+          0.92,
+          0.94
+        ],
+        "nota": "Originale e sei ritagli esaminati. Nitidezza, composizione e dettaglio complementare approvati il 19 ottobre 2026. I formati larghi mostrano una parte del soggetto quando la figura completa non entra; la foto completa resta nel visore."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.5
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-acetosella-8.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-acetosella-8-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-acetosella-8-t.webp"
+      },
+      "source_metadata_sha256": "eb096e035f9986dbc0908c9ab805f5e6a753e88132889b048e4063893f3269ab",
+      "source_rights_note": "CC BY-SA 4.0 riferita alla singola fotografia, non al testo della scheda.",
+      "source_categories": []
+    },
+    {
+      "id": "ce1-piante-geranio-robertiano-40",
+      "target_group": "plants",
+      "target_key": "geranio-robertiano",
+      "latin": "Geranium robertianum L.",
+      "photo_taxon": "Geranium robertianum L.",
+      "source": "Università di Trieste · Dryades",
+      "source_title": "Geranium robertianum L. · IMG4071JPG1686152125.jpg",
+      "source_description": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Serle, località Calamor, castagneto, BS, Lombardia, Italia 12/04/2023 Distributed under CC BY-SA 4.0 license.",
+      "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Serle, località Calamor, castagneto, BS, Lombardia, Italia 12/04/2023 Distributed under CC BY-SA 4.0 license.",
+      "page": "https://dryades.units.it/casentinesi/index.php?id=2831&procedure=taxon_page",
+      "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG4071JPG1686152125.jpg",
+      "source_taxon": "Geranium robertianum L.",
+      "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · CC BY-SA 4.0",
+      "original": "incoming/catalog-expansion-2026-10-19/piante/originals/ce1-piante-geranio-robertiano-40.jpg",
+      "sha256_original": "b4515db88340a0035ffd09139a8093558e30bdafad2195d8e0b4b33f41d449b6",
+      "source_sha1": "15041811c4ddaacc71d3fe4d9f234f3f7d224a5c",
+      "sha1_basis": "computed_from_downloaded_original; no upstream checksum supplied by Dryades",
+      "source_metadata": "incoming/catalog-expansion-2026-10-19/piante/sources/geranio-robertiano-dryades.html",
+      "alt": "Geranium robertianum L.: dettaglio del fiore.",
+      "caption": "Fiore di geranio robertiano su sfondo sfocato.",
+      "photographic_role": "Dettaglio del fiore",
+      "changes": "Orientamento EXIF, conversione ICC a sRGB ove necessaria, ridimensionamento e compressione WebP; miniatura ritagliata. Profili ICC, EXIF e XMP rimossi dagli export.",
+      "source_icc_profile": null,
+      "color_conversion": false,
+      "export_color_space": "Assumed sRGB; source has no ICC profile",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.48,
+          0.43
+        ],
+        "riquadro": [
+          0.28,
+          0.14,
+          0.72,
+          0.68
+        ],
+        "nota": "Originale e sei ritagli esaminati. Nitidezza, composizione e dettaglio complementare approvati il 19 ottobre 2026. I formati larghi mostrano una parte del soggetto quando la figura completa non entra; la foto completa resta nel visore."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.0
+        ],
+        "3:4": [
+          0.448,
+          0.5
+        ],
+        "4:5": [
+          0.442,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.349
+        ],
+        "4:3": [
+          0.5,
+          0.0
+        ],
+        "1:1": [
+          0.391,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-geranio-robertiano-40.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-geranio-robertiano-40-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-geranio-robertiano-40-t.webp"
+      },
+      "source_metadata_sha256": "6a9a56635a237037a3ce381b7350e2e7648f8d75c1fd8e57f329807db4cae315",
+      "source_rights_note": "CC BY-SA 4.0 riferita alla singola fotografia, non al testo della scheda.",
+      "source_categories": []
+    },
+    {
+      "id": "ce1-piante-geranio-robertiano-56",
+      "target_group": "plants",
+      "target_key": "geranio-robertiano",
+      "latin": "Geranium robertianum L.",
+      "photo_taxon": "Geranium robertianum L.",
+      "source": "Università di Trieste · Dryades",
+      "source_title": "Geranium robertianum L. · TS188066.jpg",
+      "source_description": "© Dipartimento di Scienze della Vita, Università di Trieste Andrea Moro Comune di Trieste, Civico Orto Botanico, Friuli Venezia Giulia, Italia 16/05/2016 Distributed under CC BY-SA 4.0 license.",
+      "sourceCaption": "© Dipartimento di Scienze della Vita, Università di Trieste Andrea Moro Comune di Trieste, Civico Orto Botanico, Friuli Venezia Giulia, Italia 16/05/2016 Distributed under CC BY-SA 4.0 license.",
+      "page": "https://dryades.units.it/casentinesi/index.php?id=2831&procedure=taxon_page",
+      "sourceImage": "https://dryades.units.it/dryades/plants/foto/TS188066.jpg",
+      "source_taxon": "Geranium robertianum L.",
+      "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · CC BY-SA 4.0",
+      "original": "incoming/catalog-expansion-2026-10-19/piante/originals/ce1-piante-geranio-robertiano-56.jpg",
+      "sha256_original": "fb9437abee38c87cbfea043d0d95011b534a9b38cce51af60387763e6a99555c",
+      "source_sha1": "7a1f1f0f7eb3e04bdf958ab7daff16db7c6cd414",
+      "sha1_basis": "computed_from_downloaded_original; no upstream checksum supplied by Dryades",
+      "source_metadata": "incoming/catalog-expansion-2026-10-19/piante/sources/geranio-robertiano-dryades.html",
+      "alt": "Geranium robertianum L.: foglia e sue divisioni.",
+      "caption": "Foglia del geranio robertiano: lobi e divisioni della lamina in dettaglio.",
+      "photographic_role": "Foglia e sue divisioni",
+      "changes": "Orientamento EXIF, conversione ICC a sRGB ove necessaria, ridimensionamento e compressione WebP; miniatura ritagliata. Profili ICC, EXIF e XMP rimossi dagli export.",
+      "source_icc_profile": null,
+      "color_conversion": false,
+      "export_color_space": "Assumed sRGB; source has no ICC profile",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.5
+        ],
+        "riquadro": [
+          0.08,
+          0.15,
+          0.94,
+          0.86
+        ],
+        "nota": "Originale e sei ritagli esaminati. Nitidezza, composizione e dettaglio complementare approvati il 19 ottobre 2026. I formati larghi mostrano una parte del soggetto quando la figura completa non entra; la foto completa resta nel visore."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.5
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-geranio-robertiano-56.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-geranio-robertiano-56-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-geranio-robertiano-56-t.webp"
+      },
+      "source_metadata_sha256": "6a9a56635a237037a3ce381b7350e2e7648f8d75c1fd8e57f329807db4cae315",
+      "source_rights_note": "CC BY-SA 4.0 riferita alla singola fotografia, non al testo della scheda.",
+      "source_categories": []
+    },
+    {
+      "id": "ce1-piante-geranio-robertiano-80",
+      "target_group": "plants",
+      "target_key": "geranio-robertiano",
+      "latin": "Geranium robertianum L.",
+      "photo_taxon": "Geranium robertianum L.",
+      "source": "Università di Trieste · Dryades",
+      "source_title": "Geranium robertianum L. · IMG0938JPG1584975615.jpg",
+      "source_description": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trieste, Campus Universitario, TS, Friuli Venezia Giulia, Italia 20/03/2020 Distributed under CC BY-SA 4.0 license.",
+      "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trieste, Campus Universitario, TS, Friuli Venezia Giulia, Italia 20/03/2020 Distributed under CC BY-SA 4.0 license.",
+      "page": "https://dryades.units.it/casentinesi/index.php?id=2831&procedure=taxon_page",
+      "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG0938JPG1584975615.jpg",
+      "source_taxon": "Geranium robertianum L.",
+      "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · CC BY-SA 4.0",
+      "original": "incoming/catalog-expansion-2026-10-19/piante/originals/ce1-piante-geranio-robertiano-80.jpg",
+      "sha256_original": "52c029468b6daca5883e8e2617aa5354a05953dd4b54011de721b51e5cbc0058",
+      "source_sha1": "9802ce23a468f053e3ffe856ffa281584cb8201e",
+      "sha1_basis": "computed_from_downloaded_original; no upstream checksum supplied by Dryades",
+      "source_metadata": "incoming/catalog-expansion-2026-10-19/piante/sources/geranio-robertiano-dryades.html",
+      "alt": "Geranium robertianum L.: peli sul fusto.",
+      "caption": "Macro del fusto del geranio robertiano, con i peli illuminati di lato.",
+      "photographic_role": "Peli sul fusto",
+      "changes": "Orientamento EXIF, conversione ICC a sRGB ove necessaria, ridimensionamento e compressione WebP; miniatura ritagliata. Profili ICC, EXIF e XMP rimossi dagli export.",
+      "source_icc_profile": null,
+      "color_conversion": false,
+      "export_color_space": "Assumed sRGB; source has no ICC profile",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.49,
+          0.5
+        ],
+        "riquadro": [
+          0.35,
+          0.04,
+          0.65,
+          0.96
+        ],
+        "nota": "Originale e sei ritagli esaminati. Nitidezza, composizione e dettaglio complementare approvati il 19 ottobre 2026. I formati larghi mostrano una parte del soggetto quando la figura completa non entra; la foto completa resta nel visore."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.078,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.5
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-geranio-robertiano-80.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-geranio-robertiano-80-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-geranio-robertiano-80-t.webp"
+      },
+      "source_metadata_sha256": "6a9a56635a237037a3ce381b7350e2e7648f8d75c1fd8e57f329807db4cae315",
+      "source_rights_note": "CC BY-SA 4.0 riferita alla singola fotografia, non al testo della scheda.",
+      "source_categories": []
+    },
+    {
+      "id": "ce1-piante-sanicola-5",
+      "target_group": "plants",
+      "target_key": "sanicola",
+      "latin": "Sanicula europaea L.",
+      "photo_taxon": "Sanicula europaea L.",
+      "source": "Università di Trieste · Dryades",
+      "source_title": "Sanicula europaea L. · TSB35595.jpg",
+      "source_description": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trento, pendici boscose del Monte Bondone., Trentino Alto- Adige, Italia 12/06/2006 Distributed under CC BY-SA 4.0 license.",
+      "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trento, pendici boscose del Monte Bondone., Trentino Alto- Adige, Italia 12/06/2006 Distributed under CC BY-SA 4.0 license.",
+      "page": "https://dryades.units.it/casentinesi/index.php?id=3411&procedure=taxon_page",
+      "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB35595.jpg",
+      "source_taxon": "Sanicula europaea L.",
+      "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · CC BY-SA 4.0",
+      "original": "incoming/catalog-expansion-2026-10-19/piante/originals/ce1-piante-sanicola-5.jpg",
+      "sha256_original": "7dfda3e8d3a1925e8767a4c7a7673d9d830d1d0069c9c492b2f6cafcee53b7f0",
+      "source_sha1": "fb779ab2180bbd8ac18c3fef35d5785076b0c889",
+      "sha1_basis": "computed_from_downloaded_original; no upstream checksum supplied by Dryades",
+      "source_metadata": "incoming/catalog-expansion-2026-10-19/piante/sources/sanicola-dryades.html",
+      "alt": "Sanicula europaea L.: ombrellette fiorali.",
+      "caption": "Ombrellette di sanicola, isolate contro lo sfondo del cielo.",
+      "photographic_role": "Ombrellette fiorali",
+      "changes": "Orientamento EXIF, conversione ICC a sRGB ove necessaria, ridimensionamento e compressione WebP; miniatura ritagliata. Profili ICC, EXIF e XMP rimossi dagli export.",
+      "source_icc_profile": null,
+      "color_conversion": false,
+      "export_color_space": "Assumed sRGB; source has no ICC profile",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.42
+        ],
+        "riquadro": [
+          0.05,
+          0.16,
+          0.97,
+          0.74
+        ],
+        "nota": "Originale e sei ritagli esaminati. Nitidezza, composizione e dettaglio complementare approvati il 19 ottobre 2026. I formati larghi mostrano una parte del soggetto quando la figura completa non entra; la foto completa resta nel visore."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.121
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.359
+        ],
+        "4:3": [
+          0.5,
+          0.193
+        ],
+        "1:1": [
+          0.5,
+          0.0
+        ]
+      },
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-sanicola-5.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-sanicola-5-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-sanicola-5-t.webp"
+      },
+      "source_metadata_sha256": "872214be3b5fe37a5ffb109da17bdf8881ba5cdb74287fc05bebfd25614b748c",
+      "source_rights_note": "CC BY-SA 4.0 riferita alla singola fotografia, non al testo della scheda.",
+      "source_categories": []
+    },
+    {
+      "id": "ce1-piante-sanicola-3",
+      "target_group": "plants",
+      "target_key": "sanicola",
+      "latin": "Sanicula europaea L.",
+      "photo_taxon": "Sanicula europaea L.",
+      "source": "Università di Trieste · Dryades",
+      "source_title": "Sanicula europaea L. · TS179743.jpg",
+      "source_description": "© Dipartimento di Scienze della Vita, Università di Trieste Andrea Moro Villaco / Villach, Alpengarten Villacher Alpe, Carinzia / Kärnten, Austria / Österreich 18/06/2015 Distributed under CC BY-SA 4.0 license.",
+      "sourceCaption": "© Dipartimento di Scienze della Vita, Università di Trieste Andrea Moro Villaco / Villach, Alpengarten Villacher Alpe, Carinzia / Kärnten, Austria / Österreich 18/06/2015 Distributed under CC BY-SA 4.0 license.",
+      "page": "https://dryades.units.it/casentinesi/index.php?id=3411&procedure=taxon_page",
+      "sourceImage": "https://dryades.units.it/dryades/plants/foto/TS179743.jpg",
+      "source_taxon": "Sanicula europaea L.",
+      "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · CC BY-SA 4.0",
+      "original": "incoming/catalog-expansion-2026-10-19/piante/originals/ce1-piante-sanicola-3.jpg",
+      "sha256_original": "10af074a6681c73f061fd28891129703f267c038849f55d2f7ede4178f9b4748",
+      "source_sha1": "5f3899944aca82b3d715067f36206d25f7e1b489",
+      "sha1_basis": "computed_from_downloaded_original; no upstream checksum supplied by Dryades",
+      "source_metadata": "incoming/catalog-expansion-2026-10-19/piante/sources/sanicola-dryades.html",
+      "alt": "Sanicula europaea L.: foglia basale.",
+      "caption": "Foglia di sanicola: divisioni palmate, lobi e denti in vista dall’alto.",
+      "photographic_role": "Foglia basale",
+      "changes": "Orientamento EXIF, conversione ICC a sRGB ove necessaria, ridimensionamento e compressione WebP; miniatura ritagliata. Profili ICC, EXIF e XMP rimossi dagli export.",
+      "source_icc_profile": null,
+      "color_conversion": false,
+      "export_color_space": "Assumed sRGB; source has no ICC profile",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.47
+        ],
+        "riquadro": [
+          0.08,
+          0.04,
+          0.94,
+          0.93
+        ],
+        "nota": "Originale e sei ritagli esaminati. Nitidezza, composizione e dettaglio complementare approvati il 19 ottobre 2026. I formati larghi mostrano una parte del soggetto quando la figura completa non entra; la foto completa resta nel visore."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.104
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.439
+        ],
+        "4:3": [
+          0.5,
+          0.275
+        ],
+        "1:1": [
+          0.554,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-sanicola-3.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-sanicola-3-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-sanicola-3-t.webp"
+      },
+      "source_metadata_sha256": "872214be3b5fe37a5ffb109da17bdf8881ba5cdb74287fc05bebfd25614b748c",
+      "source_rights_note": "CC BY-SA 4.0 riferita alla singola fotografia, non al testo della scheda.",
+      "source_categories": []
+    },
+    {
+      "id": "ce1-piante-viola-silvestre-17",
+      "target_group": "plants",
+      "target_key": "viola-silvestre",
+      "latin": "Viola reichenbachiana Jord. ex Boreau",
+      "photo_taxon": "Viola reichenbachiana Jord. ex Boreau",
+      "source": "Università di Trieste · Dryades",
+      "source_title": "Viola reichenbachiana Jord. ex Boreau · IMG8484JPG1586444513.jpg",
+      "source_description": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trieste, Campus Universitario, TS, Friuli Venezia Giulia, Italia 08/04/2020 Distributed under CC BY-SA 4.0 license.",
+      "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trieste, Campus Universitario, TS, Friuli Venezia Giulia, Italia 08/04/2020 Distributed under CC BY-SA 4.0 license.",
+      "page": "https://dryades.units.it/casentinesi/index.php?id=3172&procedure=taxon_page",
+      "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG8484JPG1586444513.jpg",
+      "source_taxon": "Viola reichenbachiana Jord. ex Boreau",
+      "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · CC BY-SA 4.0",
+      "original": "incoming/catalog-expansion-2026-10-19/piante/originals/ce1-piante-viola-silvestre-17.jpg",
+      "sha256_original": "912515ad561b6253a34b7692eba3a541d82ab9a22308b4d64cddf47a74de5b28",
+      "source_sha1": "a9aab295153aff19deecf15ece7899d92dc5d32b",
+      "sha1_basis": "computed_from_downloaded_original; no upstream checksum supplied by Dryades",
+      "source_metadata": "incoming/catalog-expansion-2026-10-19/piante/sources/viola-silvestre-dryades.html",
+      "alt": "Viola reichenbachiana Jord. ex Boreau: fiore visto di fronte.",
+      "caption": "Fiore di viola silvestre: corolla e parte centrale viste di fronte.",
+      "photographic_role": "Fiore visto di fronte",
+      "changes": "Orientamento EXIF, conversione ICC a sRGB ove necessaria, ridimensionamento e compressione WebP; miniatura ritagliata. Profili ICC, EXIF e XMP rimossi dagli export.",
+      "source_icc_profile": null,
+      "color_conversion": false,
+      "export_color_space": "Assumed sRGB; source has no ICC profile",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.43
+        ],
+        "riquadro": [
+          0.12,
+          0.03,
+          0.9,
+          0.83
+        ],
+        "nota": "Originale e sei ritagli esaminati. Nitidezza, composizione e dettaglio complementare approvati il 19 ottobre 2026. I formati larghi mostrano una parte del soggetto quando la figura completa non entra; la foto completa resta nel visore."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.147
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.504,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.375
+        ],
+        "4:3": [
+          0.5,
+          0.218
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-viola-silvestre-17.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-viola-silvestre-17-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-viola-silvestre-17-t.webp"
+      },
+      "source_metadata_sha256": "6860258a33c2bbdb9469540c1b2099de4b1abc2ca072fa8a284a0d259b4cfce0",
+      "source_rights_note": "CC BY-SA 4.0 riferita alla singola fotografia, non al testo della scheda.",
+      "source_categories": []
+    },
+    {
+      "id": "ce1-piante-viola-silvestre-50",
+      "target_group": "plants",
+      "target_key": "viola-silvestre",
+      "latin": "Viola reichenbachiana Jord. ex Boreau",
+      "photo_taxon": "Viola reichenbachiana Jord. ex Boreau",
+      "source": "Università di Trieste · Dryades",
+      "source_title": "Viola reichenbachiana Jord. ex Boreau · IMG8578JPG1586444584.jpg",
+      "source_description": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trieste, Campus Universitario, TS, Friuli Venezia Giulia, Italia 08/04/2020 Distributed under CC BY-SA 4.0 license.",
+      "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trieste, Campus Universitario, TS, Friuli Venezia Giulia, Italia 08/04/2020 Distributed under CC BY-SA 4.0 license.",
+      "page": "https://dryades.units.it/casentinesi/index.php?id=3172&procedure=taxon_page",
+      "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG8578JPG1586444584.jpg",
+      "source_taxon": "Viola reichenbachiana Jord. ex Boreau",
+      "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · CC BY-SA 4.0",
+      "original": "incoming/catalog-expansion-2026-10-19/piante/originals/ce1-piante-viola-silvestre-50.jpg",
+      "sha256_original": "9519803db8c20ee7f6f2e246895e78eb87a762f6428b0c72f5af14fe7d72d99d",
+      "source_sha1": "eaa457486f0707dbb0edb67c6da9cf3018e4ef19",
+      "sha1_basis": "computed_from_downloaded_original; no upstream checksum supplied by Dryades",
+      "source_metadata": "incoming/catalog-expansion-2026-10-19/piante/sources/viola-silvestre-dryades.html",
+      "alt": "Viola reichenbachiana Jord. ex Boreau: fiore laterale e sperone.",
+      "caption": "Fiore di viola silvestre di lato: lo sperone è visibile dietro la corolla.",
+      "photographic_role": "Fiore laterale e sperone",
+      "changes": "Orientamento EXIF, conversione ICC a sRGB ove necessaria, ridimensionamento e compressione WebP; miniatura ritagliata. Profili ICC, EXIF e XMP rimossi dagli export.",
+      "source_icc_profile": null,
+      "color_conversion": false,
+      "export_color_space": "Assumed sRGB; source has no ICC profile",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.5
+        ],
+        "riquadro": [
+          0.05,
+          0.04,
+          0.95,
+          0.94
+        ],
+        "nota": "Originale e sei ritagli esaminati. Nitidezza, composizione e dettaglio complementare approvati il 19 ottobre 2026. I formati larghi mostrano una parte del soggetto quando la figura completa non entra; la foto completa resta nel visore."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.5
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-viola-silvestre-50.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-viola-silvestre-50-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-viola-silvestre-50-t.webp"
+      },
+      "source_metadata_sha256": "6860258a33c2bbdb9469540c1b2099de4b1abc2ca072fa8a284a0d259b4cfce0",
+      "source_rights_note": "CC BY-SA 4.0 riferita alla singola fotografia, non al testo della scheda.",
+      "source_categories": []
+    },
+    {
+      "id": "ce1-piante-viola-silvestre-44",
+      "target_group": "plants",
+      "target_key": "viola-silvestre",
+      "latin": "Viola reichenbachiana Jord. ex Boreau",
+      "photo_taxon": "Viola reichenbachiana Jord. ex Boreau",
+      "source": "Università di Trieste · Dryades",
+      "source_title": "Viola reichenbachiana Jord. ex Boreau · IMG8491JPG1586444521.jpg",
+      "source_description": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trieste, Campus Universitario, TS, Friuli Venezia Giulia, Italia 08/04/2020 Distributed under CC BY-SA 4.0 license.",
+      "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trieste, Campus Universitario, TS, Friuli Venezia Giulia, Italia 08/04/2020 Distributed under CC BY-SA 4.0 license.",
+      "page": "https://dryades.units.it/casentinesi/index.php?id=3172&procedure=taxon_page",
+      "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG8491JPG1586444521.jpg",
+      "source_taxon": "Viola reichenbachiana Jord. ex Boreau",
+      "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · CC BY-SA 4.0",
+      "original": "incoming/catalog-expansion-2026-10-19/piante/originals/ce1-piante-viola-silvestre-44.jpg",
+      "sha256_original": "c5c261abd18bcd9c4fab59dadb57f1e5036078d27c6cc628e84abf53af647923",
+      "source_sha1": "bb2dd3d2bcefc97c0e1fc3a8b1ca222ecd438118",
+      "sha1_basis": "computed_from_downloaded_original; no upstream checksum supplied by Dryades",
+      "source_metadata": "incoming/catalog-expansion-2026-10-19/piante/sources/viola-silvestre-dryades.html",
+      "alt": "Viola reichenbachiana Jord. ex Boreau: foglia e base della lamina.",
+      "caption": "Foglia della viola silvestre: forma della lamina, base e nervature in vista ravvicinata.",
+      "photographic_role": "Foglia e base della lamina",
+      "changes": "Orientamento EXIF, conversione ICC a sRGB ove necessaria, ridimensionamento e compressione WebP; miniatura ritagliata. Profili ICC, EXIF e XMP rimossi dagli export.",
+      "source_icc_profile": null,
+      "color_conversion": false,
+      "export_color_space": "Assumed sRGB; source has no ICC profile",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.53,
+          0.5
+        ],
+        "riquadro": [
+          0.18,
+          0.08,
+          0.91,
+          0.89
+        ],
+        "nota": "Originale e sei ritagli esaminati. Nitidezza, composizione e dettaglio complementare approvati il 19 ottobre 2026. I formati larghi mostrano una parte del soggetto quando la figura completa non entra; la foto completa resta nel visore."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.497
+        ],
+        "3:4": [
+          0.605,
+          0.5
+        ],
+        "4:5": [
+          0.626,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.5
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          1.0,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-viola-silvestre-44.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-viola-silvestre-44-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-viola-silvestre-44-t.webp"
+      },
+      "source_metadata_sha256": "6860258a33c2bbdb9469540c1b2099de4b1abc2ca072fa8a284a0d259b4cfce0",
+      "source_rights_note": "CC BY-SA 4.0 riferita alla singola fotografia, non al testo della scheda.",
+      "source_categories": []
+    },
+    {
+      "id": "ce1-piante-pervinca-minore-60",
+      "target_group": "plants",
+      "target_key": "pervinca-minore",
+      "latin": "Vinca minor L.",
+      "photo_taxon": "Vinca minor L.",
+      "source": "Università di Trieste · Dryades",
+      "source_title": "Vinca minor L. · TS155855jpg1660230819.jpg",
+      "source_description": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trieste, Monte Valerio, TS, Friuli Venezia Giulia, Italia 24/02/2012 Distributed under CC BY-SA 4.0 license.",
+      "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trieste, Monte Valerio, TS, Friuli Venezia Giulia, Italia 24/02/2012 Distributed under CC BY-SA 4.0 license.",
+      "page": "https://dryades.units.it/casentinesi/index.php?id=4069&procedure=taxon_page",
+      "sourceImage": "https://dryades.units.it/dryades/plants/foto/TS155855jpg1660230819.jpg",
+      "source_taxon": "Vinca minor L.",
+      "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · CC BY-SA 4.0",
+      "original": "incoming/catalog-expansion-2026-10-19/piante/originals/ce1-piante-pervinca-minore-60.jpg",
+      "sha256_original": "0ba7095f6f436b5457e6456505fda91ee8aa30444279c913721a0d547765ee74",
+      "source_sha1": "8449bcab5c0a1b1ec6aec9f5832e084afa119c38",
+      "sha1_basis": "computed_from_downloaded_original; no upstream checksum supplied by Dryades",
+      "source_metadata": "incoming/catalog-expansion-2026-10-19/piante/sources/pervinca-minore-dryades.html",
+      "alt": "Vinca minor L.: dettaglio frontale della corolla.",
+      "caption": "Fiore di pervinca minore visto di fronte, con i cinque lobi della corolla.",
+      "photographic_role": "Dettaglio frontale della corolla",
+      "changes": "Orientamento EXIF, conversione ICC a sRGB ove necessaria, ridimensionamento e compressione WebP; miniatura ritagliata. Profili ICC, EXIF e XMP rimossi dagli export.",
+      "source_icc_profile": null,
+      "color_conversion": false,
+      "export_color_space": "Assumed sRGB; source has no ICC profile",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.55,
+          0.5
+        ],
+        "riquadro": [
+          0.18,
+          0.2,
+          0.89,
+          0.85
+        ],
+        "nota": "Originale e sei ritagli esaminati. Nitidezza, composizione e dettaglio complementare approvati il 19 ottobre 2026. I formati larghi mostrano una parte del soggetto quando la figura completa non entra; la foto completa resta nel visore."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.635,
+          0.5
+        ],
+        "4:5": [
+          0.652,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.5
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.809,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-pervinca-minore-60.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-pervinca-minore-60-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-pervinca-minore-60-t.webp"
+      },
+      "source_metadata_sha256": "3dafdf9ead2e80ce9b4e3e6be75b240fc6782b19d5d1fe3f1626475c280be2fa",
+      "source_rights_note": "CC BY-SA 4.0 riferita alla singola fotografia, non al testo della scheda.",
+      "source_categories": []
+    },
+    {
+      "id": "ce1-piante-pervinca-minore-30",
+      "target_group": "plants",
+      "target_key": "pervinca-minore",
+      "latin": "Vinca minor L.",
+      "photo_taxon": "Vinca minor L.",
+      "source": "Università di Trieste · Dryades",
+      "source_title": "Vinca minor L. · TS216102.jpg",
+      "source_description": "© Dipartimento di Scienze della Vita, Università di Trieste Andrea Moro Comune di Trieste, Civico Orto Botanico, Friuli Venezia Giulia, Italia 08/03/2018 Distributed under CC BY-SA 4.0 license.",
+      "sourceCaption": "© Dipartimento di Scienze della Vita, Università di Trieste Andrea Moro Comune di Trieste, Civico Orto Botanico, Friuli Venezia Giulia, Italia 08/03/2018 Distributed under CC BY-SA 4.0 license.",
+      "page": "https://dryades.units.it/casentinesi/index.php?id=4069&procedure=taxon_page",
+      "sourceImage": "https://dryades.units.it/dryades/plants/foto/TS216102.jpg",
+      "source_taxon": "Vinca minor L.",
+      "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · CC BY-SA 4.0",
+      "original": "incoming/catalog-expansion-2026-10-19/piante/originals/ce1-piante-pervinca-minore-30.jpg",
+      "sha256_original": "90ba21bede8b9b68bbb2e2fd8a1e8b16374a2ed4a32ffdad80a2a6f0993f4754",
+      "source_sha1": "5f0e3f649fc24621e594a1d3d02a965edb5498ef",
+      "sha1_basis": "computed_from_downloaded_original; no upstream checksum supplied by Dryades",
+      "source_metadata": "incoming/catalog-expansion-2026-10-19/piante/sources/pervinca-minore-dryades.html",
+      "alt": "Vinca minor L.: fusto fiorito, di lato.",
+      "caption": "Pervinca minore di lato: fiore, lungo peduncolo e foglie.",
+      "photographic_role": "Fusto fiorito, di lato",
+      "changes": "Orientamento EXIF, conversione ICC a sRGB ove necessaria, ridimensionamento e compressione WebP; miniatura ritagliata. Profili ICC, EXIF e XMP rimossi dagli export.",
+      "source_icc_profile": null,
+      "color_conversion": false,
+      "export_color_space": "Assumed sRGB; source has no ICC profile",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.45,
+          0.23
+        ],
+        "riquadro": [
+          0.12,
+          0.03,
+          0.86,
+          0.42
+        ],
+        "nota": "Originale e sei ritagli esaminati. Nitidezza, composizione e dettaglio complementare approvati il 19 ottobre 2026. I formati larghi mostrano una parte del soggetto quando la figura completa non entra; la foto completa resta nel visore."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.0
+        ],
+        "3:4": [
+          0.131,
+          0.5
+        ],
+        "4:5": [
+          0.0,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.065
+        ],
+        "4:3": [
+          0.5,
+          0.0
+        ],
+        "1:1": [
+          0.5,
+          0.0
+        ]
+      },
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-pervinca-minore-30.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-pervinca-minore-30-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-pervinca-minore-30-t.webp"
+      },
+      "source_metadata_sha256": "3dafdf9ead2e80ce9b4e3e6be75b240fc6782b19d5d1fe3f1626475c280be2fa",
+      "source_rights_note": "CC BY-SA 4.0 riferita alla singola fotografia, non al testo della scheda.",
+      "source_categories": []
+    },
+    {
+      "id": "ce1-piante-cariofillata-11",
+      "target_group": "plants",
+      "target_key": "cariofillata",
+      "latin": "Geum urbanum L.",
+      "photo_taxon": "Geum urbanum L.",
+      "source": "Università di Trieste · Dryades",
+      "source_title": "Geum urbanum L. · IMG3978JPG1589802445.jpg",
+      "source_description": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trieste, giardino di Villa Engelmann, TS, Friuli Venezia Giulia, Italia 05/05/2020 Distributed under CC BY-SA 4.0 license.",
+      "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trieste, giardino di Villa Engelmann, TS, Friuli Venezia Giulia, Italia 05/05/2020 Distributed under CC BY-SA 4.0 license.",
+      "page": "https://dryades.units.it/casentinesi/index.php?id=2015&procedure=taxon_page",
+      "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG3978JPG1589802445.jpg",
+      "source_taxon": "Geum urbanum L.",
+      "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · CC BY-SA 4.0",
+      "original": "incoming/catalog-expansion-2026-10-19/piante/originals/ce1-piante-cariofillata-11.jpg",
+      "sha256_original": "474300f315e70d37f78796ddbfe50f4a682da7feb34b18b20daceb0884e3e593",
+      "source_sha1": "1db597c6c05c39547b15ed88cacf9463c5a76f7e",
+      "sha1_basis": "computed_from_downloaded_original; no upstream checksum supplied by Dryades",
+      "source_metadata": "incoming/catalog-expansion-2026-10-19/piante/sources/cariofillata-dryades.html",
+      "alt": "Geum urbanum L.: fiore visto di fronte.",
+      "caption": "Fiore di cariofillata comune: cinque petali gialli e centro in dettaglio.",
+      "photographic_role": "Fiore visto di fronte",
+      "changes": "Orientamento EXIF, conversione ICC a sRGB ove necessaria, ridimensionamento e compressione WebP; miniatura ritagliata. Profili ICC, EXIF e XMP rimossi dagli export.",
+      "source_icc_profile": null,
+      "color_conversion": false,
+      "export_color_space": "Assumed sRGB; source has no ICC profile",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.51,
+          0.46
+        ],
+        "riquadro": [
+          0.22,
+          0.15,
+          0.84,
+          0.81
+        ],
+        "nota": "Originale e sei ritagli esaminati. Nitidezza, composizione e dettaglio complementare approvati il 19 ottobre 2026. I formati larghi mostrano una parte del soggetto quando la figura completa non entra; la foto completa resta nel visore."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.269
+        ],
+        "3:4": [
+          0.536,
+          0.5
+        ],
+        "4:5": [
+          0.544,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.427
+        ],
+        "4:3": [
+          0.5,
+          0.322
+        ],
+        "1:1": [
+          0.809,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-cariofillata-11.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-cariofillata-11-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-cariofillata-11-t.webp"
+      },
+      "source_metadata_sha256": "84310489bde1ae6af98f0986f7413587fd6d50d632d5f0d19a80e0d271490842",
+      "source_rights_note": "CC BY-SA 4.0 riferita alla singola fotografia, non al testo della scheda.",
+      "source_categories": []
+    },
+    {
+      "id": "ce1-piante-cariofillata-0",
+      "target_group": "plants",
+      "target_key": "cariofillata",
+      "latin": "Geum urbanum L.",
+      "photo_taxon": "Geum urbanum L.",
+      "source": "Università di Trieste · Dryades",
+      "source_title": "Geum urbanum L. · IMG4739JPG1588146945.jpg",
+      "source_description": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trieste, Roseto di San Giovanni, TS, Friuli Venezia Giulia, Italia 24/04/2020 Distributed under CC BY-SA 4.0 license.",
+      "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trieste, Roseto di San Giovanni, TS, Friuli Venezia Giulia, Italia 24/04/2020 Distributed under CC BY-SA 4.0 license.",
+      "page": "https://dryades.units.it/casentinesi/index.php?id=2015&procedure=taxon_page",
+      "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG4739JPG1588146945.jpg",
+      "source_taxon": "Geum urbanum L.",
+      "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · CC BY-SA 4.0",
+      "original": "incoming/catalog-expansion-2026-10-19/piante/originals/ce1-piante-cariofillata-0.jpg",
+      "sha256_original": "667a62060793d15d02e2daefca8799c9e14a712bef5b8d29dbe07bebcc9cc6ab",
+      "source_sha1": "73345a3066055ba2ba737a6e71cd9205327ae71d",
+      "sha1_basis": "computed_from_downloaded_original; no upstream checksum supplied by Dryades",
+      "source_metadata": "incoming/catalog-expansion-2026-10-19/piante/sources/cariofillata-dryades.html",
+      "alt": "Geum urbanum L.: foglia basale e segmento terminale.",
+      "caption": "Foglia di cariofillata comune: segmenti laterali e ampia divisione terminale.",
+      "photographic_role": "Foglia basale e segmento terminale",
+      "changes": "Orientamento EXIF, conversione ICC a sRGB ove necessaria, ridimensionamento e compressione WebP; miniatura ritagliata. Profili ICC, EXIF e XMP rimossi dagli export.",
+      "source_icc_profile": null,
+      "color_conversion": false,
+      "export_color_space": "Assumed sRGB; source has no ICC profile",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.5
+        ],
+        "riquadro": [
+          0.04,
+          0.03,
+          0.96,
+          0.96
+        ],
+        "nota": "Originale e sei ritagli esaminati. Nitidezza, composizione e dettaglio complementare approvati il 19 ottobre 2026. I formati larghi mostrano una parte del soggetto quando la figura completa non entra; la foto completa resta nel visore."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.5
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-cariofillata-0.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-cariofillata-0-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-cariofillata-0-t.webp"
+      },
+      "source_metadata_sha256": "84310489bde1ae6af98f0986f7413587fd6d50d632d5f0d19a80e0d271490842",
+      "source_rights_note": "CC BY-SA 4.0 riferita alla singola fotografia, non al testo della scheda.",
+      "source_categories": []
+    },
+    {
+      "id": "ce1-piante-stellina-odorosa-5",
+      "target_group": "plants",
+      "target_key": "stellina-odorosa",
+      "latin": "Galium odoratum (L.) Scop.",
+      "photo_taxon": "Galium odoratum (L.) Scop.",
+      "source": "Università di Trieste · Dryades",
+      "source_title": "Galium odoratum (L.) Scop. · TSB23303.jpg",
+      "source_description": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Paularo, area boschiva esposta a Sud-Est ai margini dell'abitato., FVG, Italia 22/5/05 0.00.00 Distributed under CC BY-SA 4.0 license.",
+      "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Paularo, area boschiva esposta a Sud-Est ai margini dell'abitato., FVG, Italia 22/5/05 0.00.00 Distributed under CC BY-SA 4.0 license.",
+      "page": "https://dryades.units.it/casentinesi/index.php?id=4119&procedure=taxon_page",
+      "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB23303.jpg",
+      "source_taxon": "Galium odoratum (L.) Scop.",
+      "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · CC BY-SA 4.0",
+      "original": "incoming/catalog-expansion-2026-10-19/piante/originals/ce1-piante-stellina-odorosa-5.jpg",
+      "sha256_original": "6272b717ea1acacd98addf238514d69917e3cc5a3fa7dfd5ddbb11ca6e07b099",
+      "source_sha1": "0c02ed031e54e59c1e25a2bae60391f8acb1f872",
+      "sha1_basis": "computed_from_downloaded_original; no upstream checksum supplied by Dryades",
+      "source_metadata": "incoming/catalog-expansion-2026-10-19/piante/sources/stellina-odorosa-dryades.html",
+      "alt": "Galium odoratum (L.) Scop.: macro dei fiori.",
+      "caption": "Fiori di stellina odorosa: corolle bianche isolate sullo sfondo sfocato.",
+      "photographic_role": "Macro dei fiori",
+      "changes": "Orientamento EXIF, conversione ICC a sRGB ove necessaria, ridimensionamento e compressione WebP; miniatura ritagliata. Profili ICC, EXIF e XMP rimossi dagli export.",
+      "source_icc_profile": null,
+      "color_conversion": false,
+      "export_color_space": "Assumed sRGB; source has no ICC profile",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.55,
+          0.48
+        ],
+        "riquadro": [
+          0.31,
+          0.18,
+          0.78,
+          0.76
+        ],
+        "nota": "Originale e sei ritagli esaminati. Nitidezza, composizione e dettaglio complementare approvati il 19 ottobre 2026. I formati larghi mostrano una parte del soggetto quando la figura completa non entra; la foto completa resta nel visore."
+      },
+      "crop_points": {
+        "5:4": [
+          1.0,
+          0.5
+        ],
+        "3:4": [
+          0.611,
+          0.5
+        ],
+        "4:5": [
+          0.62,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.448
+        ],
+        "4:3": [
+          1.0,
+          0.5
+        ],
+        "1:1": [
+          0.686,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-stellina-odorosa-5.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-stellina-odorosa-5-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-stellina-odorosa-5-t.webp"
+      },
+      "source_metadata_sha256": "ffab07009b591bd122049487f0289c0cb5f1e5053a10584656c38f29a012a002",
+      "source_rights_note": "CC BY-SA 4.0 riferita alla singola fotografia, non al testo della scheda.",
+      "source_categories": []
+    },
+    {
+      "id": "ce1-piante-stellina-odorosa-6",
+      "target_group": "plants",
+      "target_key": "stellina-odorosa",
+      "latin": "Galium odoratum (L.) Scop.",
+      "photo_taxon": "Galium odoratum (L.) Scop.",
+      "source": "Università di Trieste · Dryades",
+      "source_title": "Galium odoratum (L.) Scop. · TSB35554.jpg",
+      "source_description": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trento, pendici del Monte Bondone., Trentino Alto- Adige, Italia 12/06/2006 Distributed under CC BY-SA 4.0 license.",
+      "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trento, pendici del Monte Bondone., Trentino Alto- Adige, Italia 12/06/2006 Distributed under CC BY-SA 4.0 license.",
+      "page": "https://dryades.units.it/casentinesi/index.php?id=4119&procedure=taxon_page",
+      "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB35554.jpg",
+      "source_taxon": "Galium odoratum (L.) Scop.",
+      "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · CC BY-SA 4.0",
+      "original": "incoming/catalog-expansion-2026-10-19/piante/originals/ce1-piante-stellina-odorosa-6.jpg",
+      "sha256_original": "7bb93ebb24383344137a0533206d1a0d227a75adf6d6e8fc4e721041c3bee232",
+      "source_sha1": "5c85debdf800acbfdd2ec61bd8f6399df85ba479",
+      "sha1_basis": "computed_from_downloaded_original; no upstream checksum supplied by Dryades",
+      "source_metadata": "incoming/catalog-expansion-2026-10-19/piante/sources/stellina-odorosa-dryades.html",
+      "alt": "Galium odoratum (L.) Scop.: verticillo fogliare.",
+      "caption": "Foglie di stellina odorosa disposte intorno al fusto, viste dall’alto.",
+      "photographic_role": "Verticillo fogliare",
+      "changes": "Orientamento EXIF, conversione ICC a sRGB ove necessaria, ridimensionamento e compressione WebP; miniatura ritagliata. Profili ICC, EXIF e XMP rimossi dagli export.",
+      "source_icc_profile": null,
+      "color_conversion": false,
+      "export_color_space": "Assumed sRGB; source has no ICC profile",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.5
+        ],
+        "riquadro": [
+          0.03,
+          0.06,
+          0.97,
+          0.94
+        ],
+        "nota": "Originale e sei ritagli esaminati. Nitidezza, composizione e dettaglio complementare approvati il 19 ottobre 2026. I formati larghi mostrano una parte del soggetto quando la figura completa non entra; la foto completa resta nel visore."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.5
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-stellina-odorosa-6.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-stellina-odorosa-6-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-stellina-odorosa-6-t.webp"
+      },
+      "source_metadata_sha256": "ffab07009b591bd122049487f0289c0cb5f1e5053a10584656c38f29a012a002",
+      "source_rights_note": "CC BY-SA 4.0 riferita alla singola fotografia, non al testo della scheda.",
+      "source_categories": []
+    },
+    {
+      "id": "ce1-piante-stellina-odorosa-4",
+      "target_group": "plants",
+      "target_key": "stellina-odorosa",
+      "latin": "Galium odoratum (L.) Scop.",
+      "photo_taxon": "Galium odoratum (L.) Scop.",
+      "source": "Università di Trieste · Dryades",
+      "source_title": "Galium odoratum (L.) Scop. · TSB23301.jpg",
+      "source_description": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Paularo, area boschiva esposta a Sud-Est ai margini dell'abitato., FVG, Italia 22/5/05 0.00.00 Distributed under CC BY-SA 4.0 license.",
+      "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Paularo, area boschiva esposta a Sud-Est ai margini dell'abitato., FVG, Italia 22/5/05 0.00.00 Distributed under CC BY-SA 4.0 license.",
+      "page": "https://dryades.units.it/casentinesi/index.php?id=4119&procedure=taxon_page",
+      "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB23301.jpg",
+      "source_taxon": "Galium odoratum (L.) Scop.",
+      "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · CC BY-SA 4.0",
+      "original": "incoming/catalog-expansion-2026-10-19/piante/originals/ce1-piante-stellina-odorosa-4.jpg",
+      "sha256_original": "67a81c789537596ecea1a11ff5629b51a7bde91e8885ff0e7d42b66654555dab",
+      "source_sha1": "91747fd60331fade34af0a5f2c2bb2dc499363f5",
+      "sha1_basis": "computed_from_downloaded_original; no upstream checksum supplied by Dryades",
+      "source_metadata": "incoming/catalog-expansion-2026-10-19/piante/sources/stellina-odorosa-dryades.html",
+      "alt": "Galium odoratum (L.) Scop.: portamento del fusto e verticilli.",
+      "caption": "Fusto di stellina odorosa nel sottobosco, con verticilli fogliari e fiori.",
+      "photographic_role": "Portamento del fusto e verticilli",
+      "changes": "Orientamento EXIF, conversione ICC a sRGB ove necessaria, ridimensionamento e compressione WebP; miniatura ritagliata. Profili ICC, EXIF e XMP rimossi dagli export.",
+      "source_icc_profile": null,
+      "color_conversion": false,
+      "export_color_space": "Assumed sRGB; source has no ICC profile",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.23
+        ],
+        "riquadro": [
+          0.18,
+          0.03,
+          0.81,
+          0.44
+        ],
+        "nota": "Originale e sei ritagli esaminati. Nitidezza, composizione e dettaglio complementare approvati il 19 ottobre 2026. I formati larghi mostrano una parte del soggetto quando la figura completa non entra; la foto completa resta nel visore."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.0
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.0
+        ],
+        "4:3": [
+          0.5,
+          0.0
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-stellina-odorosa-4.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-stellina-odorosa-4-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-stellina-odorosa-4-t.webp"
+      },
+      "source_metadata_sha256": "ffab07009b591bd122049487f0289c0cb5f1e5053a10584656c38f29a012a002",
+      "source_rights_note": "CC BY-SA 4.0 riferita alla singola fotografia, non al testo della scheda.",
+      "source_categories": []
+    }
+  ],
+  "version": 1,
+  "frozen": "2026-10-19",
+  "rejected": [
+    {
+      "id": "ce1-piante-sanicola-14",
+      "original": "incoming/catalog-expansion-2026-10-19/piante/originals/ce1-piante-sanicola-14.jpg",
+      "reason": "Particolare isolato senza foglie o fiori: pur attribuito a Sanicula europaea dalla pagina, non aggiunge una fase esplicitamente descritta dalla didascalia. Preferita la coppia nitida fiore–foglia, più utile per i caratteri documentati. Nessuna attribuzione alternativa proposta."
+    }
+  ],
+  "no_active_downloads": true
+}

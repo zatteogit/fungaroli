@@ -1,0 +1,1898 @@
+{
+  "photos": [
+    {
+      "id": "ce-funghi-paxillus-involutus-16097960",
+      "target_key": "paxillus-involutus",
+      "latin": "Paxillus involutus",
+      "source": "Wikimedia Commons",
+      "source_title": "File:Kahler-Krempling-Paxillus-involutus.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Kahler-Krempling-Paxillus-involutus.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Kahler-Krempling-Paxillus-involutus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Kahler-Krempling-Paxillus-involutus.jpg/960px-Kahler-Krempling-Paxillus-involutus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "commons_sha1": "ac72374085516d1acbfa19c5404d1609a0c27233",
+      "width": 3000,
+      "height": 2128,
+      "size": 5337769,
+      "author": "Holger Krisp",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+      "attribution_required_text": "",
+      "source_description": "Brown Roll-Rim, Common Roll-Rim or Poison Pax   Paxillus involutus  , Family: Paxillaceae, Location: Germany, Ulm, Eggingen",
+      "source_categories": [
+        "CC-BY-3.0",
+        "Files with coordinates missing SDC location of creation (48° N, 9° E)",
+        "Fungi in Ulm",
+        "Nature of Eggingen (Ulm)",
+        "Paxillaceae in Germany",
+        "Paxillus involutus",
+        "Quality images",
+        "Quality images of Boletales",
+        "Quality images of fungi in Germany",
+        "Self-published work",
+        "Taken with Canon EOS 500D"
+      ],
+      "visual_review": {
+        "approved": false,
+        "attribution_approved": true,
+        "punto": [
+          0.52,
+          0.55
+        ],
+        "riquadro": [
+          0.08,
+          0.25,
+          0.94,
+          0.85
+        ],
+        "nota": "Originale visto; ritagli da controllare. Nei formati molto larghi il portamento può essere parziale; il visore conserva la foto intera.",
+        "caption": "Due esemplari sul terreno, uno capovolto con lamelle e base esposte.",
+        "alt": "Paxillus involutus. Due esemplari sul terreno, uno capovolto con lamelle e base esposte.",
+        "role_observed": "intero e imenoforo"
+      },
+      "role_proposed": "intero leggibile; scegliere vista complementare di imenoforo/base solo se realmente presente dopo visione",
+      "growth_stage": null,
+      "stage_reason": "nessuna fase assegnata da nomefile o intuizione",
+      "download_status": "metadata_only; upload.wikimedia.org non richiesto",
+      "role_required": "Intero con margine involuto; verificare dettaglio e fedeltà cromatica.",
+      "role_observed": null,
+      "selection_reason": "Provenienza europea attestata nel testo/categorie, nome esatto attestato in descrizione o categoria tassonomica; immagine ancora da vedere.",
+      "taxon_attestation": {
+        "expected": "Paxillus involutus",
+        "description": "Brown Roll-Rim, Common Roll-Rim or Poison Pax   Paxillus involutus  , Family: Paxillaceae, Location: Germany, Ulm, Eggingen",
+        "categories": [
+          "Paxillus involutus"
+        ]
+      },
+      "original": "incoming/catalog-expansion-2026-10-19/funghi/originals/ce-funghi-paxillus-involutus-16097960.jpg",
+      "source_artist": "Holger Krisp",
+      "sha256_original": "951ee57b6108a3377c5a054606d214e40b2cfa6c2777dbeb94794a8163c2cad8",
+      "crop_points": {
+        "5:4": [
+          0.676,
+          0.5
+        ],
+        "3:4": [
+          0.543,
+          0.5
+        ],
+        "4:5": [
+          0.546,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.63
+        ],
+        "4:3": [
+          0.869,
+          0.5
+        ],
+        "1:1": [
+          0.569,
+          0.5
+        ]
+      },
+      "target_group": "lookalikes",
+      "color_management": "ICC sRGB IEC61966-2.1 convertito a sRGB prima della rimozione del profilo",
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-paxillus-involutus-16097960.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-paxillus-involutus-16097960-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-paxillus-involutus-16097960-t.webp"
+      },
+      "attribution": "Holger Krisp / Wikimedia Commons / CC BY 3.0",
+      "caption": "Due esemplari sul terreno, uno capovolto con lamelle e base esposte.",
+      "alt": "Paxillus involutus. Due esemplari sul terreno, uno capovolto con lamelle e base esposte.",
+      "changes": "Orientamento EXIF, ICC sRGB IEC61966-2.1 convertito a sRGB prima della rimozione del profilo; ridimensionamento e WebP, miniatura quadrata centrale. EXIF/XMP/ICC rimossi dopo conversione. Nessuna generazione o ritocco."
+    },
+    {
+      "id": "ce-funghi-coprinopsis-atramentaria-35546872",
+      "target_key": "coprinopsis-atramentaria",
+      "latin": "Coprinopsis atramentaria",
+      "source": "Wikimedia Commons",
+      "source_title": "File:Coprinopsis atramentaria (15024157500).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Coprinopsis_atramentaria_(15024157500).jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/4/42/Coprinopsis_atramentaria_%2815024157500%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Coprinopsis_atramentaria_%2815024157500%29.jpg/960px-Coprinopsis_atramentaria_%2815024157500%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "commons_sha1": "42e4f154a00ce3c6a7462f427412b5026689cc3f",
+      "width": 4000,
+      "height": 3000,
+      "size": 3935831,
+      "author": "Donald Hobern",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "attribution_required_text": "",
+      "source_description": "Coprinopsis atramentaria  (Bull.) Redhead, Vilgalys & Moncalvo (2001), Utterslev Mose, Søborg, Denmark, 11 September 2014",
+      "source_categories": [
+        "CC-BY-2.0",
+        "Coprinopsis atramentaria",
+        "Coprinopsis in Denmark",
+        "Denmark photographs taken on 2014-09-11",
+        "Files with coordinates missing SDC location of creation",
+        "Flickr images reviewed by FlickreviewR",
+        "Fungi of Denmark in September",
+        "Fungi of Utterslev Mose",
+        "Photographs by Donald Hobern",
+        "Taken with Canon PowerShot SX50 HS"
+      ],
+      "visual_review": {
+        "approved": false,
+        "attribution_approved": true,
+        "punto": [
+          0.58,
+          0.42
+        ],
+        "riquadro": [
+          0.28,
+          0.03,
+          0.94,
+          0.82
+        ],
+        "nota": "Originale visto; ritagli da controllare. Nei formati molto larghi il portamento può essere parziale; il visore conserva la foto intera.",
+        "caption": "Cappello grigio solcato, con bordo scuro che si sfalda.",
+        "alt": "Coprinopsis atramentaria. Cappello grigio solcato, con bordo scuro che si sfalda.",
+        "role_observed": "dettaglio cappello e margine"
+      },
+      "role_proposed": "intero leggibile; scegliere vista complementare di imenoforo/base solo se realmente presente dopo visione",
+      "growth_stage": null,
+      "stage_reason": "nessuna fase assegnata da nomefile o intuizione",
+      "download_status": "metadata_only; upload.wikimedia.org non richiesto",
+      "role_required": "Cespo e forma del cappello; verificare sfondo e integrità.",
+      "role_observed": null,
+      "selection_reason": "Provenienza europea attestata nel testo/categorie, nome esatto attestato in descrizione o categoria tassonomica; immagine ancora da vedere.",
+      "taxon_attestation": {
+        "expected": "Coprinopsis atramentaria",
+        "description": "Coprinopsis atramentaria  (Bull.) Redhead, Vilgalys & Moncalvo (2001), Utterslev Mose, Søborg, Denmark, 11 September 2014",
+        "categories": [
+          "Coprinopsis atramentaria"
+        ]
+      },
+      "original": "incoming/catalog-expansion-2026-10-19/funghi/originals/ce-funghi-coprinopsis-atramentaria-35546872.jpg",
+      "source_artist": "Donald Hobern  from Copenhagen, Denmark",
+      "sha256_original": "e61f93e4dcab01f1f822ae3ff0b2a1d94a97ad965d600c700aee5d9b02fe3e15",
+      "crop_points": {
+        "5:4": [
+          1.0,
+          0.5
+        ],
+        "3:4": [
+          0.683,
+          0.5
+        ],
+        "4:5": [
+          0.7,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.308
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.82,
+          0.5
+        ]
+      },
+      "target_group": "lookalikes",
+      "color_management": "nessun profilo incorporato; nessuna correzione cromatica applicata",
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-coprinopsis-atramentaria-35546872.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-coprinopsis-atramentaria-35546872-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-coprinopsis-atramentaria-35546872-t.webp"
+      },
+      "attribution": "Donald Hobern / Wikimedia Commons / CC BY 2.0",
+      "caption": "Cappello grigio solcato, con bordo scuro che si sfalda.",
+      "alt": "Coprinopsis atramentaria. Cappello grigio solcato, con bordo scuro che si sfalda.",
+      "changes": "Orientamento EXIF, nessun profilo incorporato; nessuna correzione cromatica applicata; ridimensionamento e WebP, miniatura quadrata centrale. EXIF/XMP/ICC rimossi dopo conversione. Nessuna generazione o ritocco."
+    },
+    {
+      "id": "ce-funghi-russula-emetica-404973",
+      "target_key": "russula-emetica",
+      "latin": "Russula emetica",
+      "source": "Wikimedia Commons",
+      "source_title": "File:Russula emetica1.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Russula_emetica1.JPG",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/0/05/Russula_emetica1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Russula_emetica1.JPG/960px-Russula_emetica1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "commons_sha1": "679580ae9099e3395999a8308f35fff3d0507f45",
+      "width": 2048,
+      "height": 1536,
+      "size": 971577,
+      "author": "Piotr J",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "attribution_required_text": "",
+      "source_description": "Russula emetica . Photo taken in Wdzydze Kiszewskie,  Poland .",
+      "source_categories": [
+        "CC-BY-SA-2.5",
+        "CC-BY-SA-3.0-migrated",
+        "Featured pictures on Wikipedia, Polish",
+        "Files with Assessments template missing SDC Commons no value quality assessment",
+        "GFDL",
+        "License migration redundant",
+        "Russula emetica",
+        "Russula emetica in Poland",
+        "Self-published work",
+        "Wikiszkoła - Las"
+      ],
+      "visual_review": {
+        "approved": false,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.6
+        ],
+        "riquadro": [
+          0.34,
+          0.42,
+          0.65,
+          0.9
+        ],
+        "nota": "Originale visto; ritagli da controllare. Nei formati molto larghi il portamento può essere parziale; il visore conserva la foto intera.",
+        "caption": "Cappello rosso e gambo bianco fra muschio e aghi.",
+        "alt": "Russula emetica. Cappello rosso e gambo bianco fra muschio e aghi.",
+        "role_observed": "intero in ambiente"
+      },
+      "role_proposed": "intero leggibile; scegliere vista complementare di imenoforo/base solo se realmente presente dopo visione",
+      "growth_stage": null,
+      "stage_reason": "nessuna fase assegnata da nomefile o intuizione",
+      "download_status": "metadata_only; upload.wikimedia.org non richiesto",
+      "role_required": "Intero europeo con cappello e gambo; controllare bene esposizione del rosso.",
+      "role_observed": null,
+      "selection_reason": "Provenienza europea attestata nel testo/categorie, nome esatto attestato in descrizione o categoria tassonomica; immagine ancora da vedere.",
+      "taxon_attestation": {
+        "expected": "Russula emetica",
+        "description": "Russula emetica . Photo taken in Wdzydze Kiszewskie,  Poland .",
+        "categories": [
+          "Russula emetica",
+          "Russula emetica in Poland"
+        ]
+      },
+      "original": "incoming/catalog-expansion-2026-10-19/funghi/originals/ce-funghi-russula-emetica-404973.jpg",
+      "source_artist": "Piotr J",
+      "sha256_original": "256f357dafb0d60c87f6105ddebbe008adc6f4d01729cf0fb37dbb013df4a467",
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.76
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      },
+      "target_group": "lookalikes",
+      "color_management": "nessun profilo incorporato; nessuna correzione cromatica applicata",
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-russula-emetica-404973.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-russula-emetica-404973-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-russula-emetica-404973-t.webp"
+      },
+      "attribution": "Piotr J / Wikimedia Commons / CC BY-SA 3.0",
+      "caption": "Cappello rosso e gambo bianco fra muschio e aghi.",
+      "alt": "Russula emetica. Cappello rosso e gambo bianco fra muschio e aghi.",
+      "changes": "Orientamento EXIF, nessun profilo incorporato; nessuna correzione cromatica applicata; ridimensionamento e WebP, miniatura quadrata centrale. EXIF/XMP/ICC rimossi dopo conversione. Nessuna generazione o ritocco."
+    },
+    {
+      "id": "ce-funghi-lycoperdon-perlatum-84478911",
+      "target_key": "lycoperdon-perlatum",
+      "latin": "Lycoperdon perlatum",
+      "source": "Wikimedia Commons",
+      "source_title": "File:Flaschen-Stäubling (Lycoperdon perlatum, syn. L. gemmatum)-RM-20191014-01.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Flaschen-St%C3%A4ubling_(Lycoperdon_perlatum,_syn._L._gemmatum)-RM-20191014-01.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/2/26/Flaschen-St%C3%A4ubling_%28Lycoperdon_perlatum%2C_syn._L._gemmatum%29-RM-20191014-01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Flaschen-St%C3%A4ubling_%28Lycoperdon_perlatum%2C_syn._L._gemmatum%29-RM-20191014-01.jpg/960px-Flaschen-St%C3%A4ubling_%28Lycoperdon_perlatum%2C_syn._L._gemmatum%29-RM-20191014-01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "commons_sha1": "34c60e7be44b645f014675230ccfab9a5905ac20",
+      "width": 3886,
+      "height": 5182,
+      "size": 6196525,
+      "author": "Ermell",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_required_text": "Reinhold Möller",
+      "source_description": "common puffball (Lycoperdon perlatum, syn. L. gemmatum).Focus stack of 16 images.",
+      "source_categories": [
+        "Bavaria photographs taken on 2019-10-14",
+        "CC-BY-SA-4.0",
+        "FFH-Gebiet Bruderwald mit Naturwaldreservat Wolfsruhe",
+        "Featured pictures by Ermell",
+        "Featured pictures of Bavaria",
+        "Featured pictures of fungi",
+        "Featured pictures of mushrooms by Ermell",
+        "Featured pictures on Wikimedia Commons",
+        "Files with coordinates missing SDC location of creation (49° N, 10° E)",
+        "Focus stacked image",
+        "Focus stacking images by Ermell",
+        "Focus stacking images of mushrooms",
+        "Fungi in October",
+        "Fungi of Upper Franconia",
+        "Images by User:Ermell taken in 2019",
+        "Lycoperdon perlatum",
+        "Photographs by Ermell",
+        "Quality images",
+        "Quality images by Ermell",
+        "Quality images of Bavaria",
+        "Quality images of Lycoperdon",
+        "Quality images of mushrooms by Ermell",
+        "Self-published work",
+        "Taken with Olympus E-M1 Mark II",
+        "Taken with Olympus M.Zuiko Digital ED 60mm f/2.8 Macro",
+        "Uploaded with LrMediaWiki"
+      ],
+      "visual_review": {
+        "approved": false,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.49
+        ],
+        "riquadro": [
+          0.16,
+          0.03,
+          0.88,
+          0.96
+        ],
+        "nota": "Originale visto; ritagli da controllare. Nei formati molto larghi il portamento può essere parziale; il visore conserva la foto intera.",
+        "caption": "Corpo fruttifero chiaro con aculei conici nitidamente visibili.",
+        "alt": "Lycoperdon perlatum. Corpo fruttifero chiaro con aculei conici nitidamente visibili.",
+        "role_observed": "intero e superficie ad aculei"
+      },
+      "role_proposed": "intero leggibile; scegliere vista complementare di imenoforo/base solo se realmente presente dopo visione",
+      "growth_stage": null,
+      "stage_reason": "nessuna fase assegnata da nomefile o intuizione",
+      "download_status": "metadata_only; upload.wikimedia.org non richiesto",
+      "role_required": "Focus stack dichiarato: privilegiare aculei conici leggibili a scala UI.",
+      "role_observed": null,
+      "selection_reason": "Provenienza europea attestata nel testo/categorie, nome esatto attestato in descrizione o categoria tassonomica; immagine ancora da vedere.",
+      "taxon_attestation": {
+        "expected": "Lycoperdon perlatum",
+        "description": "common puffball (Lycoperdon perlatum, syn. L. gemmatum).Focus stack of 16 images.",
+        "categories": [
+          "Lycoperdon perlatum"
+        ]
+      },
+      "original": "incoming/catalog-expansion-2026-10-19/funghi/originals/ce-funghi-lycoperdon-perlatum-84478911.jpg",
+      "source_artist": "Ermell",
+      "sha256_original": "ff342d38c7b82371c518e415f150ac00ca294ee0bb6c001b67c034790fc6139a",
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.475
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.361
+        ],
+        "16:7": [
+          0.5,
+          0.485
+        ],
+        "4:3": [
+          0.5,
+          0.477
+        ],
+        "1:1": [
+          0.5,
+          0.46
+        ]
+      },
+      "target_group": "lookalikes",
+      "color_management": "ICC sRGB IEC61966-2.1 convertito a sRGB prima della rimozione del profilo",
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-lycoperdon-perlatum-84478911.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-lycoperdon-perlatum-84478911-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-lycoperdon-perlatum-84478911-t.webp"
+      },
+      "attribution": "Reinhold Möller / Wikimedia Commons / CC BY-SA 4.0",
+      "caption": "Corpo fruttifero chiaro con aculei conici nitidamente visibili.",
+      "alt": "Lycoperdon perlatum. Corpo fruttifero chiaro con aculei conici nitidamente visibili.",
+      "changes": "Orientamento EXIF, ICC sRGB IEC61966-2.1 convertito a sRGB prima della rimozione del profilo; ridimensionamento e WebP, miniatura quadrata centrale. EXIF/XMP/ICC rimossi dopo conversione. Nessuna generazione o ritocco."
+    },
+    {
+      "id": "ce-funghi-auricularia-auricula-judae-145517351",
+      "target_key": "auricularia-auricula-judae",
+      "latin": "Auricularia auricula-judae",
+      "source": "Wikimedia Commons",
+      "source_title": "File:Echt judasoor (Auricularia auricula-judae) op een stam van een vlier. 15-02-2024. (actm.) 15-02-2024. (actm.).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Echt_judasoor_(Auricularia_auricula-judae)_op_een_stam_van_een_vlier._15-02-2024._(actm.)_15-02-2024._(actm.).jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/8/84/Echt_judasoor_%28Auricularia_auricula-judae%29_op_een_stam_van_een_vlier._15-02-2024._%28actm.%29_15-02-2024._%28actm.%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Echt_judasoor_%28Auricularia_auricula-judae%29_op_een_stam_van_een_vlier._15-02-2024._%28actm.%29_15-02-2024._%28actm.%29.jpg/960px-Echt_judasoor_%28Auricularia_auricula-judae%29_op_een_stam_van_een_vlier._15-02-2024._%28actm.%29_15-02-2024._%28actm.%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "commons_sha1": "ec604895b0ff94a998911bd33a41182ad69f27d6",
+      "width": 4868,
+      "height": 3244,
+      "size": 17167501,
+      "author": "Agnes Monkelbaan",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_required_text": "",
+      "source_description": "A rain-soaked jelly ear (  Auricularia auricula-judae  ), family  Auriculariaceae , on a stem of a  Sambucus . Focus stack of 20 photos.",
+      "source_categories": [
+        "2024 in De Fryske Marren",
+        "Auricularia auricula-judae",
+        "Auricularia in Friesland",
+        "Bokeh photographs of fungi",
+        "CC-BY-SA-4.0",
+        "Close-up photographs of mushrooms",
+        "Diseases and disorders of Sambucus nigra",
+        "Featured Images by Agnes Monkelbaan",
+        "Featured pictures of fungi in the Netherlands",
+        "Featured pictures of the Netherlands by User:Agnes Monkelbaan",
+        "Featured pictures on Wikimedia Commons",
+        "Files with coordinates missing SDC location of creation (52° N, 5° E)",
+        "Focus stacked image",
+        "Focus stacking images by User:Agnes Monkelbaan",
+        "Focus stacking images of mushrooms",
+        "Fungi of De Famberhorst",
+        "Fungi of Friesland in February",
+        "Images with annotations",
+        "Netherlands photographs taken on 2024-02-15",
+        "POTD Notification by Agnes Monkelbaan",
+        "Pictures of the day (2024)",
+        "Quality images",
+        "Quality images by Agnes Monkelbaan",
+        "Quality images of Auriculariales",
+        "Quality images of fungi in the Netherlands",
+        "Quality images of mushrooms",
+        "Sambucus",
+        "Sambucus nigra (bark)",
+        "Self-published work"
+      ],
+      "visual_review": {
+        "approved": false,
+        "attribution_approved": true,
+        "punto": [
+          0.47,
+          0.49
+        ],
+        "riquadro": [
+          0.03,
+          0.13,
+          0.91,
+          0.94
+        ],
+        "nota": "Originale visto; ritagli da controllare. Nei formati molto larghi il portamento può essere parziale; il visore conserva la foto intera.",
+        "caption": "Corpi gelatinosi bruno-rossastri osservati da vicino sul legno.",
+        "alt": "Auricularia auricula-judae. Corpi gelatinosi bruno-rossastri osservati da vicino sul legno.",
+        "role_observed": "superfici e attacco al legno"
+      },
+      "role_proposed": "intero leggibile; scegliere vista complementare di imenoforo/base solo se realmente presente dopo visione",
+      "growth_stage": null,
+      "stage_reason": "nessuna fase assegnata da nomefile o intuizione",
+      "download_status": "metadata_only; upload.wikimedia.org non richiesto",
+      "role_required": "Focus stack su Sambucus: verificare venature e superficie del corpo fruttifero.",
+      "role_observed": null,
+      "selection_reason": "Provenienza europea attestata nel testo/categorie, nome esatto attestato in descrizione o categoria tassonomica; immagine ancora da vedere.",
+      "taxon_attestation": {
+        "expected": "Auricularia auricula-judae",
+        "description": "A rain-soaked jelly ear (  Auricularia auricula-judae  ), family  Auriculariaceae , on a stem of a  Sambucus . Focus stack of 20 photos.",
+        "categories": [
+          "Auricularia auricula-judae"
+        ]
+      },
+      "original": "incoming/catalog-expansion-2026-10-19/funghi/originals/ce-funghi-auricularia-auricula-judae-145517351.jpg",
+      "source_artist": "Agnes Monkelbaan",
+      "sha256_original": "e3ce870ad2ef702b2b2cc8ce4474763040af27c9b12526f4fe39ba5afc1668e0",
+      "crop_points": {
+        "5:4": [
+          0.32,
+          0.5
+        ],
+        "3:4": [
+          0.44,
+          0.5
+        ],
+        "4:5": [
+          0.436,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.471
+        ],
+        "4:3": [
+          0.231,
+          0.5
+        ],
+        "1:1": [
+          0.41,
+          0.5
+        ]
+      },
+      "target_group": "lookalikes",
+      "color_management": "ICC sRGB IEC61966-2.1 convertito a sRGB prima della rimozione del profilo",
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-auricularia-auricula-judae-145517351.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-auricularia-auricula-judae-145517351-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-auricularia-auricula-judae-145517351-t.webp"
+      },
+      "attribution": "Agnes Monkelbaan / Wikimedia Commons / CC BY-SA 4.0",
+      "caption": "Corpi gelatinosi bruno-rossastri osservati da vicino sul legno.",
+      "alt": "Auricularia auricula-judae. Corpi gelatinosi bruno-rossastri osservati da vicino sul legno.",
+      "changes": "Orientamento EXIF, ICC sRGB IEC61966-2.1 convertito a sRGB prima della rimozione del profilo; ridimensionamento e WebP, miniatura quadrata centrale. EXIF/XMP/ICC rimossi dopo conversione. Nessuna generazione o ritocco."
+    },
+    {
+      "id": "ce-funghi-fomes-fomentarius-79262934",
+      "target_key": "fomes-fomentarius",
+      "latin": "Fomes fomentarius",
+      "source": "Wikimedia Commons",
+      "source_title": "File:Zunderschwamm, Schwarzacher Hochwald.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Zunderschwamm,_Schwarzacher_Hochwald.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Zunderschwamm%2C_Schwarzacher_Hochwald.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Zunderschwamm%2C_Schwarzacher_Hochwald.jpg/960px-Zunderschwamm%2C_Schwarzacher_Hochwald.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "commons_sha1": "47c6d702ae52bde264279fb1778bdbc74028b202",
+      "width": 4000,
+      "height": 3000,
+      "size": 3288116,
+      "author": "Rosa-Maria Rinkl",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_required_text": "",
+      "source_description": "Der Zunderschwamm kommt im Bayerischen Wald sehr häufig vor. An diesem Baumstamm waren mehre Exemplare sichtbar.",
+      "source_categories": [
+        "CC-BY-SA-4.0",
+        "Fomes fomentarius in Germany",
+        "Fungi in May",
+        "Fungi of Landkreis Straubing-Bogen",
+        "Images from Wiki Loves Earth 2019",
+        "Images from Wiki Loves Earth 2019, DE-BY",
+        "Images from Wiki Loves Earth 2019 in Germany",
+        "Images from Wiki Loves Earth missing SDC location of creation",
+        "Landschaftsschutzgebiet Bayerischer Wald",
+        "Self-published work",
+        "Uploaded via Campaign:wle-de-by"
+      ],
+      "visual_review": {
+        "approved": false,
+        "attribution_approved": true,
+        "punto": [
+          0.62,
+          0.5
+        ],
+        "riquadro": [
+          0.31,
+          0.05,
+          0.98,
+          0.84
+        ],
+        "nota": "Originale visto; ritagli da controllare. Nei formati molto larghi il portamento può essere parziale; il visore conserva la foto intera.",
+        "caption": "Corpo legnoso a mensola sul tronco, con zone concentriche.",
+        "alt": "Fomes fomentarius. Corpo legnoso a mensola sul tronco, con zone concentriche.",
+        "role_observed": "portamento e tronco"
+      },
+      "role_proposed": "intero leggibile; scegliere vista complementare di imenoforo/base solo se realmente presente dopo visione",
+      "growth_stage": null,
+      "stage_reason": "nessuna fase assegnata da nomefile o intuizione",
+      "download_status": "metadata_only; upload.wikimedia.org non richiesto",
+      "role_required": "Portamento sul tronco; non accettare gruppi troppo lontani.",
+      "role_observed": null,
+      "selection_reason": "Provenienza europea attestata nel testo/categorie, nome esatto attestato in descrizione o categoria tassonomica; immagine ancora da vedere.",
+      "taxon_attestation": {
+        "expected": "Fomes fomentarius",
+        "description": "Der Zunderschwamm kommt im Bayerischen Wald sehr häufig vor. An diesem Baumstamm waren mehre Exemplare sichtbar.",
+        "categories": [
+          "Fomes fomentarius in Germany"
+        ]
+      },
+      "original": "incoming/catalog-expansion-2026-10-19/funghi/originals/ce-funghi-fomes-fomentarius-79262934.jpg",
+      "source_artist": "Rosa-Maria Rinkl",
+      "sha256_original": "a5bce7d720c8edb41e8b4d1c689d2cdba469ddf81e656baaa2656d8c0013ffac",
+      "crop_points": {
+        "5:4": [
+          1.0,
+          0.5
+        ],
+        "3:4": [
+          0.774,
+          0.5
+        ],
+        "4:5": [
+          0.8,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.5
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.98,
+          0.5
+        ]
+      },
+      "target_group": "lookalikes",
+      "color_management": "nessun profilo incorporato; nessuna correzione cromatica applicata",
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-fomes-fomentarius-79262934.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-fomes-fomentarius-79262934-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-fomes-fomentarius-79262934-t.webp"
+      },
+      "attribution": "Rosa-Maria Rinkl / Wikimedia Commons / CC BY-SA 4.0",
+      "caption": "Corpo legnoso a mensola sul tronco, con zone concentriche.",
+      "alt": "Fomes fomentarius. Corpo legnoso a mensola sul tronco, con zone concentriche.",
+      "changes": "Orientamento EXIF, nessun profilo incorporato; nessuna correzione cromatica applicata; ridimensionamento e WebP, miniatura quadrata centrale. EXIF/XMP/ICC rimossi dopo conversione. Nessuna generazione o ritocco."
+    },
+    {
+      "id": "ce-funghi-trametes-versicolor-132597918",
+      "target_key": "trametes-versicolor",
+      "latin": "Trametes versicolor",
+      "source": "Wikimedia Commons",
+      "source_title": "File:Schmetterlings-Tramete auf Moos.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Schmetterlings-Tramete_auf_Moos.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/4/42/Schmetterlings-Tramete_auf_Moos.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Schmetterlings-Tramete_auf_Moos.jpg/960px-Schmetterlings-Tramete_auf_Moos.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "commons_sha1": "e99a095a3d314b9bab494491e19596e99a4c66ce",
+      "width": 6000,
+      "height": 4000,
+      "size": 1863520,
+      "author": "Lord Protector Otto",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_required_text": "",
+      "source_description": "Schmetterlings-Tramete (Trametes versicolor, Syn.: Coriolus versicolor) auf Moos im Landschaftsschutzgebiet \"Augsburg – Westliche Wälder\" zwischen Waldberg und Mickhausen",
+      "source_categories": [
+        "CC-BY-SA-4.0",
+        "Images from Wiki Loves Earth 2023",
+        "Images from Wiki Loves Earth 2023, DE detail",
+        "Images from Wiki Loves Earth 2023 in Germany",
+        "Images from Wiki Loves Earth missing SDC location of creation",
+        "Landschaftsschutzgebiet Augsburg - Westliche Wälder",
+        "Self-published work",
+        "Trametes versicolor",
+        "Uploaded via Campaign:wle-de"
+      ],
+      "visual_review": {
+        "approved": false,
+        "attribution_approved": true,
+        "punto": [
+          0.52,
+          0.56
+        ],
+        "riquadro": [
+          0.04,
+          0.18,
+          0.98,
+          0.95
+        ],
+        "nota": "Originale visto; ritagli da controllare. Nei formati molto larghi il portamento può essere parziale; il visore conserva la foto intera.",
+        "caption": "Gruppo di cappelli sottili con fasce concentriche sul legno.",
+        "alt": "Trametes versicolor. Gruppo di cappelli sottili con fasce concentriche sul legno.",
+        "role_observed": "intero e disposizione sul substrato"
+      },
+      "role_proposed": "intero leggibile; scegliere vista complementare di imenoforo/base solo se realmente presente dopo visione",
+      "growth_stage": null,
+      "stage_reason": "nessuna fase assegnata da nomefile o intuizione",
+      "download_status": "metadata_only; upload.wikimedia.org non richiesto",
+      "role_required": "Cappelli a fasce concentriche, contorni nitidi e colore fedele.",
+      "role_observed": null,
+      "selection_reason": "Provenienza europea attestata nel testo/categorie, nome esatto attestato in descrizione o categoria tassonomica; immagine ancora da vedere.",
+      "taxon_attestation": {
+        "expected": "Trametes versicolor",
+        "description": "Schmetterlings-Tramete (Trametes versicolor, Syn.: Coriolus versicolor) auf Moos im Landschaftsschutzgebiet \"Augsburg – Westliche Wälder\" zwischen Waldberg und Mickhausen",
+        "categories": [
+          "Trametes versicolor"
+        ]
+      },
+      "original": "incoming/catalog-expansion-2026-10-19/funghi/originals/ce-funghi-trametes-versicolor-132597918.jpg",
+      "source_artist": "Lord Protector Otto",
+      "sha256_original": "6a099731fbfdc78d3416960bd216a7cda70598eca7d8e05d728f74bafa9752df",
+      "crop_points": {
+        "5:4": [
+          0.62,
+          0.5
+        ],
+        "3:4": [
+          0.54,
+          0.5
+        ],
+        "4:5": [
+          0.543,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.675
+        ],
+        "4:3": [
+          0.68,
+          0.5
+        ],
+        "1:1": [
+          0.56,
+          0.5
+        ]
+      },
+      "target_group": "lookalikes",
+      "color_management": "nessun profilo incorporato; nessuna correzione cromatica applicata",
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-trametes-versicolor-132597918.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-trametes-versicolor-132597918-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-trametes-versicolor-132597918-t.webp"
+      },
+      "attribution": "Lord Protector Otto / Wikimedia Commons / CC BY-SA 4.0",
+      "caption": "Gruppo di cappelli sottili con fasce concentriche sul legno.",
+      "alt": "Trametes versicolor. Gruppo di cappelli sottili con fasce concentriche sul legno.",
+      "changes": "Orientamento EXIF, nessun profilo incorporato; nessuna correzione cromatica applicata; ridimensionamento e WebP, miniatura quadrata centrale. EXIF/XMP/ICC rimossi dopo conversione. Nessuna generazione o ritocco."
+    },
+    {
+      "id": "ce-funghi-lactarius-sanguifluus-95428903",
+      "target_key": "lactarius-sanguifluus",
+      "latin": "Lactarius sanguifluus",
+      "source": "Wikimedia Commons",
+      "source_title": "File:Lactarius sanguifluus 25906288.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Lactarius_sanguifluus_25906288.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Lactarius_sanguifluus_25906288.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Lactarius_sanguifluus_25906288.jpg/960px-Lactarius_sanguifluus_25906288.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "commons_sha1": "205db1862cc62a37829220ada6686ed8d7e3f181",
+      "width": 2048,
+      "height": 1365,
+      "size": 1602446,
+      "author": "Fabien Piednoir",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_required_text": "",
+      "source_description": "Lactarius sanguifluus",
+      "source_categories": [
+        "CC-BY-SA-4.0",
+        "Files with coordinates missing SDC location of creation",
+        "Fungi in September",
+        "INaturalist images reviewed by iNaturalistReviewBot",
+        "Lactarius in France",
+        "Lactarius sanguifluus",
+        "Media from iNaturalist",
+        "Provence-Alpes-Côte d'Azur photographs taken on 2018-09-30",
+        "Uploaded with iNaturalist2Commons"
+      ],
+      "visual_review": {
+        "approved": false,
+        "attribution_approved": true,
+        "punto": [
+          0.51,
+          0.5
+        ],
+        "riquadro": [
+          0.17,
+          0.12,
+          0.8,
+          0.9
+        ],
+        "nota": "Originale visto; ritagli da controllare. Nei formati molto larghi il portamento può essere parziale; il visore conserva la foto intera.",
+        "caption": "Superficie inferiore del cappello, con lamelle rosa-vinose e gambo reciso.",
+        "alt": "Lactarius sanguifluus. Superficie inferiore del cappello, con lamelle rosa-vinose e gambo reciso.",
+        "role_observed": "imenoforo ravvicinato"
+      },
+      "role_proposed": "intero leggibile; scegliere vista complementare di imenoforo/base solo se realmente presente dopo visione",
+      "growth_stage": null,
+      "stage_reason": "nessuna fase assegnata da nomefile o intuizione",
+      "download_status": "metadata_only; upload.wikimedia.org non richiesto",
+      "role_required": "Intero e lamelle; stesso evento francese documentato.",
+      "role_observed": null,
+      "selection_reason": "Provenienza europea attestata nel testo/categorie, nome esatto attestato in descrizione o categoria tassonomica; immagine ancora da vedere.",
+      "taxon_attestation": {
+        "expected": "Lactarius sanguifluus",
+        "description": "Lactarius sanguifluus",
+        "categories": [
+          "Lactarius sanguifluus"
+        ]
+      },
+      "original": "incoming/catalog-expansion-2026-10-19/funghi/originals/ce-funghi-lactarius-sanguifluus-95428903.jpg",
+      "source_artist": "Fabien Piednoir",
+      "sha256_original": "e3bad962274dc389cfbc9f90825a56eea2995b89cc904af0f696b732fb7def0e",
+      "crop_points": {
+        "5:4": [
+          0.56,
+          0.5
+        ],
+        "3:4": [
+          0.52,
+          0.5
+        ],
+        "4:5": [
+          0.521,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.5
+        ],
+        "4:3": [
+          0.59,
+          0.5
+        ],
+        "1:1": [
+          0.51,
+          0.5
+        ]
+      },
+      "target_group": "lookalikes",
+      "color_management": "nessun profilo incorporato; nessuna correzione cromatica applicata",
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-lactarius-sanguifluus-95428903.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-lactarius-sanguifluus-95428903-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-lactarius-sanguifluus-95428903-t.webp"
+      },
+      "attribution": "Fabien Piednoir / Wikimedia Commons / CC BY-SA 4.0",
+      "caption": "Superficie inferiore del cappello, con lamelle rosa-vinose e gambo reciso.",
+      "alt": "Lactarius sanguifluus. Superficie inferiore del cappello, con lamelle rosa-vinose e gambo reciso.",
+      "changes": "Orientamento EXIF, nessun profilo incorporato; nessuna correzione cromatica applicata; ridimensionamento e WebP, miniatura quadrata centrale. EXIF/XMP/ICC rimossi dopo conversione. Nessuna generazione o ritocco."
+    },
+    {
+      "id": "ce-funghi-russula-vesca-121831228",
+      "target_key": "russula-vesca",
+      "latin": "Russula vesca",
+      "source": "Wikimedia Commons",
+      "source_title": "File:Bare-toothed Russula (Russula vesca) in Tychy (Paprocany), Silesian Voivodeship, Poland, August 2022.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bare-toothed_Russula_(Russula_vesca)_in_Tychy_(Paprocany),_Silesian_Voivodeship,_Poland,_August_2022.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Bare-toothed_Russula_%28Russula_vesca%29_in_Tychy_%28Paprocany%29%2C_Silesian_Voivodeship%2C_Poland%2C_August_2022.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Bare-toothed_Russula_%28Russula_vesca%29_in_Tychy_%28Paprocany%29%2C_Silesian_Voivodeship%2C_Poland%2C_August_2022.jpg/960px-Bare-toothed_Russula_%28Russula_vesca%29_in_Tychy_%28Paprocany%29%2C_Silesian_Voivodeship%2C_Poland%2C_August_2022.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "commons_sha1": "e98bd293b4004041b66d2a8c904b5c802725ce2b",
+      "width": 3000,
+      "height": 3000,
+      "size": 695764,
+      "author": "MichalPL",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_required_text": "",
+      "source_description": "Bare-toothed Russula (Russula vesca) in Tychy (Paprocany), Silesian Voivodeship, Poland, August 2022",
+      "source_categories": [
+        "CC-BY-SA-4.0",
+        "Russula vesca",
+        "Self-published work"
+      ],
+      "visual_review": {
+        "approved": false,
+        "attribution_approved": true,
+        "punto": [
+          0.51,
+          0.35
+        ],
+        "riquadro": [
+          0.08,
+          0.03,
+          0.93,
+          0.67
+        ],
+        "nota": "Originale visto; ritagli da controllare. Nei formati molto larghi il portamento può essere parziale; il visore conserva la foto intera.",
+        "caption": "Margine del cappello e lamelle chiare visibili in un esemplare tenuto in mano.",
+        "alt": "Russula vesca. Margine del cappello e lamelle chiare visibili in un esemplare tenuto in mano.",
+        "role_observed": "margine della cuticola e lamelle"
+      },
+      "role_proposed": "intero leggibile; scegliere vista complementare di imenoforo/base solo se realmente presente dopo visione",
+      "growth_stage": null,
+      "stage_reason": "nessuna fase assegnata da nomefile o intuizione",
+      "download_status": "metadata_only; upload.wikimedia.org non richiesto",
+      "role_required": "Intero e margine della cuticola; controllare nitidezza del carattere.",
+      "role_observed": null,
+      "selection_reason": "Provenienza europea attestata nel testo/categorie, nome esatto attestato in descrizione o categoria tassonomica; immagine ancora da vedere.",
+      "taxon_attestation": {
+        "expected": "Russula vesca",
+        "description": "Bare-toothed Russula (Russula vesca) in Tychy (Paprocany), Silesian Voivodeship, Poland, August 2022",
+        "categories": [
+          "Russula vesca"
+        ]
+      },
+      "original": "incoming/catalog-expansion-2026-10-19/funghi/originals/ce-funghi-russula-vesca-121831228.jpg",
+      "source_artist": "MichalPL",
+      "sha256_original": "5b8c6e08d248fde0bdf95f6501d2d5af40b4f4d12993fa9317490cc1c98320f1",
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.0
+        ],
+        "3:4": [
+          0.54,
+          0.5
+        ],
+        "4:5": [
+          0.55,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.233
+        ],
+        "4:3": [
+          0.5,
+          0.0
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      },
+      "target_group": "lookalikes",
+      "color_management": "nessun profilo incorporato; nessuna correzione cromatica applicata",
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-russula-vesca-121831228.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-russula-vesca-121831228-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-russula-vesca-121831228-t.webp"
+      },
+      "attribution": "MichalPL / Wikimedia Commons / CC BY-SA 4.0",
+      "caption": "Margine del cappello e lamelle chiare visibili in un esemplare tenuto in mano.",
+      "alt": "Russula vesca. Margine del cappello e lamelle chiare visibili in un esemplare tenuto in mano.",
+      "changes": "Orientamento EXIF, nessun profilo incorporato; nessuna correzione cromatica applicata; ridimensionamento e WebP, miniatura quadrata centrale. EXIF/XMP/ICC rimossi dopo conversione. Nessuna generazione o ritocco."
+    },
+    {
+      "id": "ce-funghi-amanita-citrina-35484839",
+      "target_key": "amanita-citrina",
+      "latin": "Amanita citrina",
+      "source": "Wikimedia Commons",
+      "source_title": "File:Amanita citrina à Carling.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Amanita_citrina_%C3%A0_Carling.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/2/24/Amanita_citrina_%C3%A0_Carling.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Amanita_citrina_%C3%A0_Carling.jpg/960px-Amanita_citrina_%C3%A0_Carling.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "commons_sha1": "bb3013966b986ad26bb81dc35fed20446a0fc594",
+      "width": 2757,
+      "height": 4135,
+      "size": 7553860,
+      "author": "Jean-Marc Pascolo",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_required_text": "",
+      "source_description": "Amanita citrina (amanite citrine), forêt du Rondheidgen, Carling (Moselle)",
+      "source_categories": [
+        "Amanita citrina",
+        "Amanita in France",
+        "CC-BY-SA-4.0",
+        "Carling",
+        "Fungi in September",
+        "Self-published work",
+        "Taken with Nikon Coolpix L330"
+      ],
+      "visual_review": {
+        "approved": false,
+        "attribution_approved": true,
+        "punto": [
+          0.52,
+          0.55
+        ],
+        "riquadro": [
+          0.2,
+          0.26,
+          0.78,
+          0.98
+        ],
+        "nota": "Originale visto; ritagli da controllare. Nei formati molto larghi il portamento può essere parziale; il visore conserva la foto intera.",
+        "caption": "Esemplare intero con cappello chiaro, anello pendente e base bulbosa.",
+        "alt": "Amanita citrina. Esemplare intero con cappello chiaro, anello pendente e base bulbosa.",
+        "role_observed": "intero, anello e base"
+      },
+      "role_proposed": "intero leggibile; scegliere vista complementare di imenoforo/base solo se realmente presente dopo visione",
+      "growth_stage": null,
+      "stage_reason": "nessuna fase assegnata da nomefile o intuizione",
+      "download_status": "metadata_only; upload.wikimedia.org non richiesto",
+      "role_required": "Vista complementare lamelle/anello/base: mantenere solo se mostra un particolare aggiuntivo.",
+      "role_observed": null,
+      "selection_reason": "Provenienza europea attestata nel testo/categorie, nome esatto attestato in descrizione o categoria tassonomica; immagine ancora da vedere.",
+      "taxon_attestation": {
+        "expected": "Amanita citrina",
+        "description": "Amanita citrina (amanite citrine), forêt du Rondheidgen, Carling (Moselle)",
+        "categories": [
+          "Amanita citrina"
+        ]
+      },
+      "original": "incoming/catalog-expansion-2026-10-19/funghi/originals/ce-funghi-amanita-citrina-35484839.jpg",
+      "source_artist": "Jean-Marc Pascolo",
+      "sha256_original": "599436db1ab85f6d9ad595850f0f34bfe582b3fc6806ff012f7b348dee86ad6b",
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.607
+        ],
+        "3:4": [
+          0.5,
+          0.95
+        ],
+        "4:5": [
+          0.5,
+          0.88
+        ],
+        "16:7": [
+          0.5,
+          0.571
+        ],
+        "4:3": [
+          0.5,
+          0.6
+        ],
+        "1:1": [
+          0.5,
+          0.65
+        ]
+      },
+      "target_group": "lookalikes",
+      "color_management": "ICC sRGB IEC61966-2.1 convertito a sRGB prima della rimozione del profilo",
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-amanita-citrina-35484839.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-amanita-citrina-35484839-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-amanita-citrina-35484839-t.webp"
+      },
+      "attribution": "Jean-Marc Pascolo / Wikimedia Commons / CC BY-SA 4.0",
+      "caption": "Esemplare intero con cappello chiaro, anello pendente e base bulbosa.",
+      "alt": "Amanita citrina. Esemplare intero con cappello chiaro, anello pendente e base bulbosa.",
+      "changes": "Orientamento EXIF, ICC sRGB IEC61966-2.1 convertito a sRGB prima della rimozione del profilo; ridimensionamento e WebP, miniatura quadrata centrale. EXIF/XMP/ICC rimossi dopo conversione. Nessuna generazione o ritocco."
+    },
+    {
+      "id": "ce-funghi-paxillus-involutus-4558768",
+      "target_key": "paxillus-involutus",
+      "latin": "Paxillus involutus",
+      "source": "Wikimedia Commons",
+      "source_title": "File:Čechratka podvinutá 1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:%C4%8Cechratka_podvinut%C3%A1_1.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/a/a1/%C4%8Cechratka_podvinut%C3%A1_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/%C4%8Cechratka_podvinut%C3%A1_1.jpg/960px-%C4%8Cechratka_podvinut%C3%A1_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "commons_sha1": "38b0f9c3713b1d4e08d2133ae44ca827d8e03d9b",
+      "width": 2500,
+      "height": 1635,
+      "size": 2947347,
+      "author": "Karelj",
+      "license": "Public domain",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-self",
+      "attribution_required_text": "",
+      "source_description": "Paxillus involutus , found in South Bohemia,  Czech Republic",
+      "source_categories": [
+        "PD-self",
+        "Paxillaceae in the Czech Republic",
+        "Paxillus involutus",
+        "Self-published work"
+      ],
+      "visual_review": {
+        "approved": false,
+        "attribution_approved": true,
+        "punto": [
+          0.51,
+          0.49
+        ],
+        "riquadro": [
+          0.04,
+          0.13,
+          0.97,
+          0.9
+        ],
+        "nota": "Originale visto; ritagli da controllare. Nei formati molto larghi il portamento può essere parziale; il visore conserva la foto intera.",
+        "caption": "Due esemplari ripresi di lato, con margine arrotolato e lamelle decorrenti.",
+        "alt": "Paxillus involutus. Due esemplari ripresi di lato, con margine arrotolato e lamelle decorrenti.",
+        "role_observed": "dettaglio laterale delle lamelle"
+      },
+      "role_proposed": "intero leggibile; scegliere vista complementare di imenoforo/base solo se realmente presente dopo visione",
+      "growth_stage": null,
+      "stage_reason": "nessuna fase assegnata da nomefile o intuizione",
+      "download_status": "metadata_only; upload.wikimedia.org non richiesto",
+      "role_required": "Vista inferiore con lamelle decorrenti; scartare se ripete solo il cappello.",
+      "role_observed": null,
+      "selection_reason": "Provenienza europea attestata nel testo/categorie, nome esatto attestato in descrizione o categoria tassonomica; immagine ancora da vedere.",
+      "taxon_attestation": {
+        "expected": "Paxillus involutus",
+        "description": "Paxillus involutus , found in South Bohemia,  Czech Republic",
+        "categories": [
+          "Paxillus involutus"
+        ]
+      },
+      "original": "incoming/catalog-expansion-2026-10-19/funghi/originals/ce-funghi-paxillus-involutus-4558768.jpg",
+      "license_note": "Pubblico dominio per dichiarazione PD-self della pagina, non trasformato in CC0.",
+      "source_artist": "Karelj",
+      "sha256_original": "705478ee4e51224ff2b4bbb22aa869f71ae9aff1e9e31fb91bc2db63082072fb",
+      "crop_points": {
+        "5:4": [
+          0.555,
+          0.5
+        ],
+        "3:4": [
+          0.52,
+          0.5
+        ],
+        "4:5": [
+          0.521,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.47
+        ],
+        "4:3": [
+          0.578,
+          0.5
+        ],
+        "1:1": [
+          0.529,
+          0.5
+        ]
+      },
+      "target_group": "lookalikes",
+      "color_management": "ICC sRGB IEC61966-2.1 convertito a sRGB prima della rimozione del profilo",
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-paxillus-involutus-4558768.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-paxillus-involutus-4558768-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-paxillus-involutus-4558768-t.webp"
+      },
+      "attribution": "Karelj / Wikimedia Commons / Public domain",
+      "caption": "Due esemplari ripresi di lato, con margine arrotolato e lamelle decorrenti.",
+      "alt": "Paxillus involutus. Due esemplari ripresi di lato, con margine arrotolato e lamelle decorrenti.",
+      "changes": "Orientamento EXIF, ICC sRGB IEC61966-2.1 convertito a sRGB prima della rimozione del profilo; ridimensionamento e WebP, miniatura quadrata centrale. EXIF/XMP/ICC rimossi dopo conversione. Nessuna generazione o ritocco."
+    },
+    {
+      "id": "ce-funghi-coprinopsis-atramentaria-22502531",
+      "target_key": "coprinopsis-atramentaria",
+      "latin": "Coprinopsis atramentaria",
+      "source": "Wikimedia Commons",
+      "source_title": "File:Faltentintling Coprinus atramentariu.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Faltentintling_Coprinus_atramentariu.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/1/14/Faltentintling_Coprinus_atramentariu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Faltentintling_Coprinus_atramentariu.jpg/960px-Faltentintling_Coprinus_atramentariu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "commons_sha1": "3fed3723856570e216c23138bb60151579517675",
+      "width": 3000,
+      "height": 2088,
+      "size": 6067438,
+      "author": "Holger Krisp",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+      "attribution_required_text": "",
+      "source_description": "Common Ink Cap or Inky Cap,   Coprinus atramentarius   syn.  Coprinopsis atramentaria , Family: Coprinaceae, Location: Germany, Ringingen",
+      "source_categories": [
+        "CC-BY-3.0",
+        "Coprinopsis atramentaria",
+        "Files with coordinates missing SDC location of creation (48° N, 9° E)",
+        "Quality images",
+        "Quality images of Agaricales",
+        "Quality images of fungi in Germany",
+        "Self-published work",
+        "Taken with Canon EOS 500D"
+      ],
+      "visual_review": {
+        "approved": false,
+        "attribution_approved": true,
+        "punto": [
+          0.51,
+          0.49
+        ],
+        "riquadro": [
+          0.28,
+          0.02,
+          0.7,
+          0.99
+        ],
+        "nota": "Originale visto; ritagli da controllare. Nei formati molto larghi il portamento può essere parziale; il visore conserva la foto intera.",
+        "caption": "Cappello ovoidale grigio e gambo bianco osservati sul terreno.",
+        "alt": "Coprinopsis atramentaria. Cappello ovoidale grigio e gambo bianco osservati sul terreno.",
+        "role_observed": "intero e forma del cappello"
+      },
+      "role_proposed": "intero leggibile; scegliere vista complementare di imenoforo/base solo se realmente presente dopo visione",
+      "growth_stage": null,
+      "stage_reason": "nessuna fase assegnata da nomefile o intuizione",
+      "download_status": "metadata_only; upload.wikimedia.org non richiesto",
+      "role_required": "Dettaglio lamelle scure/deliquescenti se visibile; nessuna fase aggiunta in assenza di attestazione.",
+      "role_observed": null,
+      "selection_reason": "Provenienza europea attestata nel testo/categorie, nome esatto attestato in descrizione o categoria tassonomica; immagine ancora da vedere.",
+      "taxon_attestation": {
+        "expected": "Coprinopsis atramentaria",
+        "description": "Common Ink Cap or Inky Cap,   Coprinus atramentarius   syn.  Coprinopsis atramentaria , Family: Coprinaceae, Location: Germany, Ringingen",
+        "categories": [
+          "Coprinopsis atramentaria"
+        ]
+      },
+      "original": "incoming/catalog-expansion-2026-10-19/funghi/originals/ce-funghi-coprinopsis-atramentaria-22502531.jpg",
+      "source_artist": "Holger Krisp",
+      "sha256_original": "974ab8104950eabe81cbaf3cd334e0d3f98074484461455fd7a16c3a9f3a5100",
+      "crop_points": {
+        "5:4": [
+          0.577,
+          0.5
+        ],
+        "3:4": [
+          0.521,
+          0.5
+        ],
+        "4:5": [
+          0.523,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.473
+        ],
+        "4:3": [
+          0.639,
+          0.5
+        ],
+        "1:1": [
+          0.533,
+          0.5
+        ]
+      },
+      "target_group": "lookalikes",
+      "color_management": "ICC sRGB IEC61966-2.1 convertito a sRGB prima della rimozione del profilo",
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-coprinopsis-atramentaria-22502531.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-coprinopsis-atramentaria-22502531-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-coprinopsis-atramentaria-22502531-t.webp"
+      },
+      "attribution": "Holger Krisp / Wikimedia Commons / CC BY 3.0",
+      "caption": "Cappello ovoidale grigio e gambo bianco osservati sul terreno.",
+      "alt": "Coprinopsis atramentaria. Cappello ovoidale grigio e gambo bianco osservati sul terreno.",
+      "changes": "Orientamento EXIF, ICC sRGB IEC61966-2.1 convertito a sRGB prima della rimozione del profilo; ridimensionamento e WebP, miniatura quadrata centrale. EXIF/XMP/ICC rimossi dopo conversione. Nessuna generazione o ritocco."
+    },
+    {
+      "id": "ce-funghi-clitocybe-nebularis-84242752",
+      "target_key": "clitocybe-nebularis",
+      "latin": "Clitocybe nebularis",
+      "source": "Wikimedia Commons",
+      "source_title": "File:Nevelzwam (nebularis) tussen afgevallen beukenblad (d.j.b.) 01.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Nevelzwam_(nebularis)_tussen_afgevallen_beukenblad_(d.j.b.)_01.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/5/54/Nevelzwam_%28nebularis%29_tussen_afgevallen_beukenblad_%28d.j.b.%29_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Nevelzwam_%28nebularis%29_tussen_afgevallen_beukenblad_%28d.j.b.%29_01.jpg/960px-Nevelzwam_%28nebularis%29_tussen_afgevallen_beukenblad_%28d.j.b.%29_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "commons_sha1": "3c4b5f371e1f4b39fb4dc4af5a4e9bfb60c742fa",
+      "width": 5184,
+      "height": 3456,
+      "size": 15380503,
+      "author": "Dominicus Johannes Bergsma",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_required_text": "",
+      "source_description": "( Clitocybe nebularis )  between fallen beech leaves (wetted by morning mist).",
+      "source_categories": [
+        "CC-BY-SA-4.0",
+        "Clitocybe nebularis Nebelkappe",
+        "Clitocybe nebularis in Friesland",
+        "Fagus sylvatica leaves in autumn",
+        "Fallen leaves",
+        "Featured Images by Famberhorst",
+        "Featured pictures of fungi in the Netherlands",
+        "Featured pictures of the Netherlands by User:Famberhorst",
+        "Featured pictures on Wikimedia Commons",
+        "Featured pictures on Wikipedia, English",
+        "Fungi of De Famberhorst",
+        "Fungi of Friesland in November",
+        "Netherlands photographs taken on 2019-11-20",
+        "Orange leaves",
+        "Quality images",
+        "Quality images by Famberhorst",
+        "Quality images of fungi in the Netherlands",
+        "Self-published work"
+      ],
+      "visual_review": {
+        "approved": false,
+        "attribution_approved": true,
+        "punto": [
+          0.49,
+          0.47
+        ],
+        "riquadro": [
+          0.04,
+          0.07,
+          0.96,
+          0.96
+        ],
+        "nota": "Originale visto; ritagli da controllare. Nei formati molto larghi il portamento può essere parziale; il visore conserva la foto intera.",
+        "caption": "Cappello grigiastro e gambo fra foglie cadute di faggio.",
+        "alt": "Clitocybe nebularis. Cappello grigiastro e gambo fra foglie cadute di faggio.",
+        "role_observed": "intero e contesto del substrato"
+      },
+      "role_proposed": "intero leggibile; scegliere vista complementare di imenoforo/base solo se realmente presente dopo visione",
+      "growth_stage": null,
+      "stage_reason": "nessuna fase assegnata da nomefile o intuizione",
+      "download_status": "metadata_only; upload.wikimedia.org non richiesto",
+      "role_required": "Habitat fra foglie di faggio documentato; tenere solo se soggetto e lamelle sono leggibili e complementari.",
+      "role_observed": null,
+      "selection_reason": "Provenienza europea attestata nel testo/categorie, nome esatto attestato in descrizione o categoria tassonomica; immagine ancora da vedere.",
+      "taxon_attestation": {
+        "expected": "Clitocybe nebularis",
+        "description": "( Clitocybe nebularis )  between fallen beech leaves (wetted by morning mist).",
+        "categories": [
+          "Clitocybe nebularis Nebelkappe",
+          "Clitocybe nebularis in Friesland"
+        ]
+      },
+      "original": "incoming/catalog-expansion-2026-10-19/funghi/originals/ce-funghi-clitocybe-nebularis-84242752.jpg",
+      "source_artist": "Dominicus Johannes Bergsma",
+      "sha256_original": "afdb641014c2d7200efc838c8464bc4ea802e7200a5cdb170749d440c87ff71c",
+      "crop_points": {
+        "5:4": [
+          0.44,
+          0.5
+        ],
+        "3:4": [
+          0.48,
+          0.5
+        ],
+        "4:5": [
+          0.479,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.413
+        ],
+        "4:3": [
+          0.41,
+          0.5
+        ],
+        "1:1": [
+          0.47,
+          0.5
+        ]
+      },
+      "target_group": "lookalikes",
+      "color_management": "ICC sRGB IEC61966-2.1 convertito a sRGB prima della rimozione del profilo",
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-clitocybe-nebularis-84242752.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-clitocybe-nebularis-84242752-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-clitocybe-nebularis-84242752-t.webp"
+      },
+      "attribution": "Dominicus Johannes Bergsma / Wikimedia Commons / CC BY-SA 4.0",
+      "caption": "Cappello grigiastro e gambo fra foglie cadute di faggio.",
+      "alt": "Clitocybe nebularis. Cappello grigiastro e gambo fra foglie cadute di faggio.",
+      "changes": "Orientamento EXIF, ICC sRGB IEC61966-2.1 convertito a sRGB prima della rimozione del profilo; ridimensionamento e WebP, miniatura quadrata centrale. EXIF/XMP/ICC rimossi dopo conversione. Nessuna generazione o ritocco."
+    },
+    {
+      "id": "ce-funghi-auricularia-auricula-judae-124675179",
+      "target_key": "auricularia-auricula-judae",
+      "latin": "Auricularia auricula-judae",
+      "source": "Wikimedia Commons",
+      "source_title": "File:Jelly Ear, Auricularia auricula-judae, UK 2.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Jelly_Ear,_Auricularia_auricula-judae,_UK_2.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/2/21/Jelly_Ear%2C_Auricularia_auricula-judae%2C_UK_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Jelly_Ear%2C_Auricularia_auricula-judae%2C_UK_2.jpg/960px-Jelly_Ear%2C_Auricularia_auricula-judae%2C_UK_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "commons_sha1": "adee35615a88f62635208a744c284a472307fccf",
+      "width": 5760,
+      "height": 3840,
+      "size": 10833960,
+      "author": "Stu's Images",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution_required_text": "Stu's Images",
+      "source_description": "Auricularia auricula-judae , Jelly Ear, taken in  Enfield ,  UK",
+      "source_categories": [
+        "Auricularia auricula-judae",
+        "CC-BY-SA-4.0",
+        "Featured pictures on Wikimedia Commons",
+        "Featured pictures on Wikipedia, English",
+        "Files with coordinates missing SDC location of creation (51° N, 1° W)",
+        "Quality images",
+        "Self-published work"
+      ],
+      "visual_review": {
+        "approved": false,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.43
+        ],
+        "riquadro": [
+          0.03,
+          0.1,
+          0.94,
+          0.69
+        ],
+        "nota": "Originale visto; ritagli da controllare. Nei formati molto larghi il portamento può essere parziale; il visore conserva la foto intera.",
+        "caption": "Corpi gelatinosi a orecchio ripresi di lato su un ramo.",
+        "alt": "Auricularia auricula-judae. Corpi gelatinosi a orecchio ripresi di lato su un ramo.",
+        "role_observed": "profili e superfici opposte"
+      },
+      "role_proposed": "intero leggibile; scegliere vista complementare di imenoforo/base solo se realmente presente dopo visione",
+      "growth_stage": null,
+      "stage_reason": "nessuna fase assegnata da nomefile o intuizione",
+      "download_status": "metadata_only; upload.wikimedia.org non richiesto",
+      "role_required": "Vista complementare della superficie opposta/attacco al legno, se realmente visibile.",
+      "role_observed": null,
+      "selection_reason": "Provenienza europea attestata nel testo/categorie, nome esatto attestato in descrizione o categoria tassonomica; immagine ancora da vedere.",
+      "taxon_attestation": {
+        "expected": "Auricularia auricula-judae",
+        "description": "Auricularia auricula-judae , Jelly Ear, taken in  Enfield ,  UK",
+        "categories": [
+          "Auricularia auricula-judae"
+        ]
+      },
+      "original": "incoming/catalog-expansion-2026-10-19/funghi/originals/ce-funghi-auricularia-auricula-judae-124675179.jpg",
+      "source_artist": "Stu's Images",
+      "sha256_original": "a0abad0faf70c227eb084855115434a8c707705f6e47afc5af445738f63b5010",
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.291
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      },
+      "target_group": "lookalikes",
+      "color_management": "nessun profilo incorporato; nessuna correzione cromatica applicata",
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-auricularia-auricula-judae-124675179.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-auricularia-auricula-judae-124675179-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-auricularia-auricula-judae-124675179-t.webp"
+      },
+      "attribution": "Stu's Images / Wikimedia Commons / CC BY-SA 4.0",
+      "caption": "Corpi gelatinosi a orecchio ripresi di lato su un ramo.",
+      "alt": "Auricularia auricula-judae. Corpi gelatinosi a orecchio ripresi di lato su un ramo.",
+      "changes": "Orientamento EXIF, nessun profilo incorporato; nessuna correzione cromatica applicata; ridimensionamento e WebP, miniatura quadrata centrale. EXIF/XMP/ICC rimossi dopo conversione. Nessuna generazione o ritocco."
+    },
+    {
+      "id": "ce-funghi-trametes-versicolor-3891548",
+      "target_key": "trametes-versicolor",
+      "latin": "Trametes versicolor",
+      "source": "Wikimedia Commons",
+      "source_title": "File:Schmetterlingstramete Trametes versicolor 004.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Schmetterlingstramete_Trametes_versicolor_004.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/5/56/Schmetterlingstramete_Trametes_versicolor_004.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Schmetterlingstramete_Trametes_versicolor_004.jpg/960px-Schmetterlingstramete_Trametes_versicolor_004.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "commons_sha1": "950764737af1de4c3256664581d0967712a5cf5c",
+      "width": 2000,
+      "height": 1500,
+      "size": 1044269,
+      "author": "OhWeh",
+      "license": "CC BY-SA 2.5",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+      "attribution_required_text": "",
+      "source_description": "Trametes versicolor  Schmetterlingstramete Picture taken in Bavaria/Germany",
+      "source_categories": [
+        "CC-BY-SA-2.5",
+        "Taken with Olympus E-3",
+        "Trametes versicolor"
+      ],
+      "visual_review": {
+        "approved": false,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.5
+        ],
+        "riquadro": [
+          0.01,
+          0.01,
+          0.99,
+          0.99
+        ],
+        "nota": "Originale visto; ritagli da controllare. Nei formati molto larghi il portamento può essere parziale; il visore conserva la foto intera.",
+        "caption": "Dettaglio delle fasce concentriche e dei margini chiari dei cappelli sovrapposti.",
+        "alt": "Trametes versicolor. Dettaglio delle fasce concentriche e dei margini chiari dei cappelli sovrapposti.",
+        "role_observed": "dettaglio delle fasce e margini"
+      },
+      "role_proposed": "intero leggibile; scegliere vista complementare di imenoforo/base solo se realmente presente dopo visione",
+      "growth_stage": null,
+      "stage_reason": "nessuna fase assegnata da nomefile o intuizione",
+      "download_status": "metadata_only; upload.wikimedia.org non richiesto",
+      "role_required": "Superficie inferiore poroide se presente; non approvare seconda foto soltanto per risoluzione.",
+      "role_observed": null,
+      "selection_reason": "Provenienza europea attestata nel testo/categorie, nome esatto attestato in descrizione o categoria tassonomica; immagine ancora da vedere.",
+      "taxon_attestation": {
+        "expected": "Trametes versicolor",
+        "description": "Trametes versicolor  Schmetterlingstramete Picture taken in Bavaria/Germany",
+        "categories": [
+          "Trametes versicolor"
+        ]
+      },
+      "original": "incoming/catalog-expansion-2026-10-19/funghi/originals/ce-funghi-trametes-versicolor-3891548.jpg",
+      "source_artist": "OhWeh",
+      "sha256_original": "b006055c304e3d5cd456857bd2f2eb7501b818c316d45da20cc59144d2928206",
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.5
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      },
+      "target_group": "lookalikes",
+      "color_management": "ICC Adobe RGB (1998) convertito a sRGB prima della rimozione del profilo",
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-trametes-versicolor-3891548.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-trametes-versicolor-3891548-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-trametes-versicolor-3891548-t.webp"
+      },
+      "attribution": "OhWeh / Wikimedia Commons / CC BY-SA 2.5",
+      "caption": "Dettaglio delle fasce concentriche e dei margini chiari dei cappelli sovrapposti.",
+      "alt": "Trametes versicolor. Dettaglio delle fasce concentriche e dei margini chiari dei cappelli sovrapposti.",
+      "changes": "Orientamento EXIF, ICC Adobe RGB (1998) convertito a sRGB prima della rimozione del profilo; ridimensionamento e WebP, miniatura quadrata centrale. EXIF/XMP/ICC rimossi dopo conversione. Nessuna generazione o ritocco."
+    },
+    {
+      "id": "ce-funghi-hygrophorus-russula-93766111",
+      "target_key": "hygrophorus-russula",
+      "latin": "Hygrophorus russula",
+      "source": "Wikimedia Commons",
+      "source_title": "File:Hygrophorus russula (Schaeff.) Kauffman. (15707688639).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Hygrophorus_russula_(Schaeff.)_Kauffman._(15707688639).jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/d/da/Hygrophorus_russula_%28Schaeff.%29_Kauffman._%2815707688639%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Hygrophorus_russula_%28Schaeff.%29_Kauffman._%2815707688639%29.jpg/960px-Hygrophorus_russula_%28Schaeff.%29_Kauffman._%2815707688639%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "commons_sha1": "592702c0371f2df5c58ac0b11d6fc2294da5d1bb",
+      "width": 2048,
+      "height": 1536,
+      "size": 338811,
+      "author": "GLJIVARSKO DRUSTVO NIS",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "attribution_required_text": "",
+      "source_description": "Hygrophorus russula (Schaeff.) Kauffman.",
+      "source_categories": [
+        "CC-BY-2.0",
+        "Flickr images reviewed by FlickreviewR 2",
+        "Fungi in November",
+        "Hygrophoraceae in Serbia",
+        "Hygrophorus russula"
+      ],
+      "visual_review": {
+        "approved": false,
+        "attribution_approved": true,
+        "punto": [
+          0.6,
+          0.52
+        ],
+        "riquadro": [
+          0.08,
+          0.12,
+          0.98,
+          0.97
+        ],
+        "nota": "Originale visto; ritagli da controllare. Nei formati molto larghi il portamento può essere parziale; il visore conserva la foto intera.",
+        "caption": "Lamelle chiare con punteggiature vinose, accanto ai cappelli.",
+        "alt": "Hygrophorus russula. Lamelle chiare con punteggiature vinose, accanto ai cappelli.",
+        "role_observed": "lamelle e colorazioni vinose"
+      },
+      "role_proposed": "intero leggibile; scegliere vista complementare di imenoforo/base solo se realmente presente dopo visione",
+      "growth_stage": null,
+      "stage_reason": "nessuna fase assegnata da nomefile o intuizione",
+      "download_status": "metadata_only; upload.wikimedia.org non richiesto",
+      "role_required": "Lamelle macchiate di vinoso se presenti; non mantenere un altro cappello simile.",
+      "role_observed": null,
+      "selection_reason": "Provenienza europea attestata nel testo/categorie, nome esatto attestato in descrizione o categoria tassonomica; immagine ancora da vedere.",
+      "taxon_attestation": {
+        "expected": "Hygrophorus russula",
+        "description": "Hygrophorus russula (Schaeff.) Kauffman.",
+        "categories": [
+          "Hygrophorus russula"
+        ]
+      },
+      "original": "incoming/catalog-expansion-2026-10-19/funghi/originals/ce-funghi-hygrophorus-russula-93766111.jpg",
+      "source_artist": "GLJIVARSKO DRUSTVO NIS  from Serbia",
+      "sha256_original": "97f919fc25582a4d2341aed33981f2187dd80082b9afdf4701e2e3339b90342f",
+      "crop_points": {
+        "5:4": [
+          1.0,
+          0.5
+        ],
+        "3:4": [
+          0.729,
+          0.5
+        ],
+        "4:5": [
+          0.75,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.548
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.9,
+          0.5
+        ]
+      },
+      "target_group": "lookalikes",
+      "color_management": "ICC sRGB IEC61966-2-1 black scaled convertito a sRGB prima della rimozione del profilo",
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-hygrophorus-russula-93766111.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-hygrophorus-russula-93766111-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-hygrophorus-russula-93766111-t.webp"
+      },
+      "attribution": "GLJIVARSKO DRUSTVO NIS / Wikimedia Commons / CC BY 2.0",
+      "caption": "Lamelle chiare con punteggiature vinose, accanto ai cappelli.",
+      "alt": "Hygrophorus russula. Lamelle chiare con punteggiature vinose, accanto ai cappelli.",
+      "changes": "Orientamento EXIF, ICC sRGB IEC61966-2-1 black scaled convertito a sRGB prima della rimozione del profilo; ridimensionamento e WebP, miniatura quadrata centrale. EXIF/XMP/ICC rimossi dopo conversione. Nessuna generazione o ritocco."
+    },
+    {
+      "id": "ce-funghi-amanita-citrina-63054929",
+      "target_key": "amanita-citrina",
+      "latin": "Amanita citrina",
+      "source": "Wikimedia Commons",
+      "source_title": "File:Young Amanita citrina.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Young_Amanita_citrina.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/9/95/Young_Amanita_citrina.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Young_Amanita_citrina.jpg/960px-Young_Amanita_citrina.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "commons_sha1": "60d4c031ec204df6ac16096e27ee528ed5a75bfd",
+      "width": 2528,
+      "height": 2832,
+      "size": 1019425,
+      "author": "Daniel Eriksson",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "attribution_required_text": "",
+      "source_description": "A young fruiting body of Amanita citrina. Photographed on  Ekerön  (Q10480605)  , Sweden in October 2017.",
+      "source_categories": [
+        "Amanita citrina",
+        "CC-BY-4.0",
+        "Fungi in October",
+        "Self-published work"
+      ],
+      "visual_review": {
+        "approved": false,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.45
+        ],
+        "riquadro": [
+          0.13,
+          0.1,
+          0.83,
+          0.96
+        ],
+        "nota": "Originale visto; fase giovane esplicitamente dichiarata nella descrizione della fonte. Ritagli da controllare.",
+        "caption": "Esemplare giovane dichiarato dalla fonte, con resti del velo sul cappello chiaro.",
+        "alt": "Amanita citrina. Esemplare giovane dichiarato dalla fonte, con resti del velo sul cappello chiaro.",
+        "role_observed": "fase giovane attestata: dettaglio del velo sul cappello"
+      },
+      "role_proposed": "intero leggibile; scegliere vista complementare di imenoforo/base solo se realmente presente dopo visione",
+      "growth_stage": "giovane",
+      "stage_reason": "Descrizione del singolo file: A young fruiting body of Amanita citrina. Photographed on  Ekerön  (Q10480605)  , Sweden in October 2017.",
+      "download_status": "metadata_only; upload.wikimedia.org non richiesto",
+      "role_required": "Sviluppo giovane esplicitamente dichiarato dalla descrizione; verificare visibilità e differenza dalle altre.",
+      "role_observed": null,
+      "selection_reason": "Provenienza europea attestata nel testo/categorie, nome esatto attestato in descrizione o categoria tassonomica; immagine ancora da vedere.",
+      "taxon_attestation": {
+        "expected": "Amanita citrina",
+        "description": "A young fruiting body of Amanita citrina. Photographed on  Ekerön  (Q10480605)  , Sweden in October 2017.",
+        "categories": [
+          "Amanita citrina"
+        ]
+      },
+      "original": "incoming/catalog-expansion-2026-10-19/funghi/originals/ce-funghi-amanita-citrina-63054929.jpg",
+      "source_artist": "Daniel Eriksson",
+      "sha256_original": "7b163cc80233a05086f1fbba633e9b71e18338a9a394bc74147b17159307721c",
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.325
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.418
+        ],
+        "4:3": [
+          0.5,
+          0.349
+        ],
+        "1:1": [
+          0.5,
+          0.627
+        ]
+      },
+      "target_group": "lookalikes",
+      "color_management": "nessun profilo incorporato; nessuna correzione cromatica applicata",
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-amanita-citrina-63054929.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-amanita-citrina-63054929-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-amanita-citrina-63054929-t.webp"
+      },
+      "attribution": "Daniel Eriksson / Wikimedia Commons / CC BY 4.0",
+      "caption": "Esemplare giovane dichiarato dalla fonte, con resti del velo sul cappello chiaro.",
+      "alt": "Amanita citrina. Esemplare giovane dichiarato dalla fonte, con resti del velo sul cappello chiaro.",
+      "changes": "Orientamento EXIF, nessun profilo incorporato; nessuna correzione cromatica applicata; ridimensionamento e WebP, miniatura quadrata centrale. EXIF/XMP/ICC rimossi dopo conversione. Nessuna generazione o ritocco."
+    },
+    {
+      "id": "ce-funghi-clitocybe-nebularis-53537315",
+      "target_key": "clitocybe-nebularis",
+      "latin": "Clitocybe nebularis",
+      "source": "Wikimedia Commons",
+      "source_title": "File:Clitocybe nebularis 161114w.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Clitocybe_nebularis_161114w.JPG",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/5/58/Clitocybe_nebularis_161114w.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "preview_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Clitocybe_nebularis_161114w.JPG/960px-Clitocybe_nebularis_161114w.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "commons_sha1": "5e2de68221f5275b77474ca80df0441ab532c054",
+      "width": 1568,
+      "height": 1568,
+      "size": 606272,
+      "author": "Strobilomyces",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "attribution_required_text": "",
+      "source_description": "Young  Clitocybe nebularis  in a forest near Saulx-les-Chartreux, France.",
+      "source_categories": [
+        "CC-BY-SA-3.0",
+        "Clitocybe nebularis",
+        "Files with coordinates missing SDC location of creation (48° N, 2° E)",
+        "France photographs taken on 2016-11-14",
+        "Fungi in November",
+        "GFDL",
+        "License migration redundant",
+        "Self-published work"
+      ],
+      "visual_review": {
+        "approved": false,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.5
+        ],
+        "riquadro": [
+          0.05,
+          0.08,
+          0.88,
+          0.95
+        ],
+        "nota": "Originale visto; fase giovane esplicitamente dichiarata nella descrizione della fonte. Ritagli da controllare.",
+        "caption": "Esemplari giovani dichiarati dalla fonte; uno capovolto mostra le lamelle chiare.",
+        "alt": "Clitocybe nebularis. Esemplari giovani dichiarati dalla fonte; uno capovolto mostra le lamelle chiare.",
+        "role_observed": "fase giovane attestata e imenoforo"
+      },
+      "role_proposed": "intero leggibile; scegliere vista complementare di imenoforo/base solo se realmente presente dopo visione",
+      "growth_stage": "giovane",
+      "stage_reason": "Descrizione del singolo file: Young  Clitocybe nebularis  in a forest near Saulx-les-Chartreux, France.",
+      "download_status": "metadata_only; upload.wikimedia.org non richiesto",
+      "role_required": "Sviluppo giovane dichiarato nella descrizione; non dedotto dalla sola forma.",
+      "role_observed": null,
+      "selection_reason": "Provenienza europea attestata nel testo/categorie, nome esatto attestato in descrizione o categoria tassonomica; immagine ancora da vedere.",
+      "taxon_attestation": {
+        "expected": "Clitocybe nebularis",
+        "description": "Young  Clitocybe nebularis  in a forest near Saulx-les-Chartreux, France.",
+        "categories": [
+          "Clitocybe nebularis"
+        ]
+      },
+      "original": "incoming/catalog-expansion-2026-10-19/funghi/originals/ce-funghi-clitocybe-nebularis-53537315.jpg",
+      "source_artist": "Strobilomyces",
+      "sha256_original": "f36a6c403709916731c07f65dfd19fef2e3ed9837ef82fdda6d37755c480bf02",
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.5
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      },
+      "target_group": "lookalikes",
+      "color_management": "nessun profilo incorporato; nessuna correzione cromatica applicata",
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-clitocybe-nebularis-53537315.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-clitocybe-nebularis-53537315-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-clitocybe-nebularis-53537315-t.webp"
+      },
+      "attribution": "Strobilomyces / Wikimedia Commons / CC BY-SA 3.0",
+      "caption": "Esemplari giovani dichiarati dalla fonte; uno capovolto mostra le lamelle chiare.",
+      "alt": "Clitocybe nebularis. Esemplari giovani dichiarati dalla fonte; uno capovolto mostra le lamelle chiare.",
+      "changes": "Orientamento EXIF, nessun profilo incorporato; nessuna correzione cromatica applicata; ridimensionamento e WebP, miniatura quadrata centrale. EXIF/XMP/ICC rimossi dopo conversione. Nessuna generazione o ritocco."
+    }
+  ],
+  "rejected": [
+    {
+      "id": "ce-funghi-amanita-citrina-1144171",
+      "reason": "Contrasto duro, base poco leggibile; attribuzione automatica assunta e alternativa europea più informativa."
+    },
+    {
+      "id": "ce-funghi-clitocybe-nebularis-99481471",
+      "reason": "Soggetti deteriorati e molto bruniti; badge Commons non compensa i limiti della rappresentazione."
+    },
+    {
+      "id": "ce-funghi-hygrophorus-russula-84179972",
+      "reason": "Esemplari danneggiati e parzialmente occlusi fra foglie; caratteri poco leggibili."
+    },
+    {
+      "id": "ce-funghi-russula-emetica-63737437",
+      "reason": "Resa cromatica fortemente magenta e troppo satura; preferita alternativa rossa con contesto europeo."
+    },
+    {
+      "id": "ce-funghi-lycoperdon-perlatum-372210",
+      "reason": "Stessa vista di portamento della migliore84478911, meno nitida e meno pulita; ridondante."
+    },
+    {
+      "id": "ce-funghi-fomes-fomentarius-129874400",
+      "reason": "Grandangolo marcato, prospettiva molto deformata e parte del fotografo sul bordo; qualità insufficiente rispetto all’alternativa."
+    },
+    {
+      "id": "ce-funghi-lactarius-sanguifluus-95428891",
+      "reason": "Stesso evento e soggetto della95428903, inquadratura più lontana; lamelle meno leggibili e nessun particolare aggiunto."
+    },
+    {
+      "id": "ce-funghi-russula-vesca-156995528",
+      "reason": "Cappelli coperti da terriccio e detriti, caratteri poco leggibili; sfondo confuso. Alternativa di dettaglio più informativa."
+    }
+  ],
+  "note": "Solo candidati: importare esclusivamente approved=true e attribution_approved=true dopo revisione reale. target_group proposto lookalikes per schede didattiche senza modello."
+}

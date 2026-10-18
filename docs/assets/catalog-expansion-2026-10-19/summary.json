@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-19",
+  "new_cards": {
+    "fungi": 12,
+    "plants": 8,
+    "animals": 9
+  },
+  "new_photos": 55,
+  "reused_photos": 2,
+  "excluded_old_photos": 69,
+  "export_hashes_verified": 165,
+  "test_suites_run": false,
+  "facts_sources": [
+    "Regione Campania",
+    "Regione Piemonte",
+    "Università di Trieste / Dryades",
+    "BfN / FloraWeb",
+    "Kew",
+    "PNALM",
+    "Forestas",
+    "Parco Bosco delle Querce"
+  ],
+  "manual_browser": [
+    "Lycoperdon perlatum: foto e caratteri, habitat, periodo letterale",
+    "Viola reichenbachiana: laterale con sperone nel visore e crediti",
+    "Martes martes: galleria e riferimenti puntuali delle affermazioni"
+  ]
+}

@@ -204,6 +204,79 @@
       "url": "https://www.parcoabruzzo.it/fauna.schede.dettaglio.php?id=308",
       "publisher": "Parco Nazionale d’Abruzzo, Lazio e Molise",
       "checkedOn": "2026-10-18"
+    },
+    {
+      "id": "CE26-PNALM-MARTORA",
+      "title": "Martora · scheda fauna",
+      "url": "https://www.parcoabruzzo.it/fauna.schede.dettaglio.php?id=317",
+      "publisher": "Parco Nazionale d’Abruzzo, Lazio e Molise",
+      "checkedOn": "2026-10-19",
+      "receiptSha256": "0f9fb3353903ab6ce5dfdf8d7c9af7b2c353dfb974b2fccb4baea25544db1fad"
+    },
+    {
+      "id": "CE26-PNALM-FAINA",
+      "title": "Faina · scheda fauna",
+      "url": "https://www.parcoabruzzo.it/fauna.schede.dettaglio.php?id=325",
+      "publisher": "Parco Nazionale d’Abruzzo, Lazio e Molise",
+      "checkedOn": "2026-10-19",
+      "receiptSha256": "42b08748e028e3c90773d1182ad39eb6005049f9f655a5e29aee9572d96e47d8"
+    },
+    {
+      "id": "CE26-PNALM-DONNOLA",
+      "title": "Donnola · scheda fauna",
+      "url": "https://www.parcoabruzzo.it/fauna.schede.dettaglio.php?id=326",
+      "publisher": "Parco Nazionale d’Abruzzo, Lazio e Molise",
+      "checkedOn": "2026-10-19",
+      "receiptSha256": "bf7c405d877d4da33e17dd3d1a2bf601091aad68899b351553b6b7595ea761e5"
+    },
+    {
+      "id": "CE26-PNALM-QUERCINO",
+      "title": "Quercino · scheda fauna",
+      "url": "https://www.parcoabruzzo.it/fauna.schede.dettaglio.php?id=306",
+      "publisher": "Parco Nazionale d’Abruzzo, Lazio e Molise",
+      "checkedOn": "2026-10-19",
+      "receiptSha256": "ba2289807bea18d0509edaaef60952b32e84a18aee780e3fe8b7ddb701d49ecd"
+    },
+    {
+      "id": "CE26-PNALM-GATTO-SELVATICO",
+      "title": "Gatto selvatico · scheda fauna",
+      "url": "https://www.parcoabruzzo.it/fauna.schede.dettaglio.php?id=303",
+      "publisher": "Parco Nazionale d’Abruzzo, Lazio e Molise",
+      "checkedOn": "2026-10-19",
+      "receiptSha256": "83a26728b1bc11c5a65ab9a007a1d3b3300edec6116a3be7585f67fef0827bc7"
+    },
+    {
+      "id": "CE26-PNALM-LEPRE-ITALICA",
+      "title": "Lepre italica · scheda fauna",
+      "url": "https://www.parcoabruzzo.it/fauna.schede.dettaglio.php?id=304",
+      "publisher": "Parco Nazionale d’Abruzzo, Lazio e Molise",
+      "checkedOn": "2026-10-19",
+      "receiptSha256": "3923713e895b0158c110cf3dc5ae76ff684b4ac5f1c040001f9dccaf3280f6a0"
+    },
+    {
+      "id": "CE26-PNALM-AQUILA-REALE",
+      "title": "Aquila reale · scheda fauna",
+      "url": "https://www.parcoabruzzo.it/fauna.schede.dettaglio.php?id=253",
+      "publisher": "Parco Nazionale d’Abruzzo, Lazio e Molise",
+      "checkedOn": "2026-10-19",
+      "receiptSha256": "5b10efa5a99b10e13e269e670de4c5a40616d4d0fb6035adf919e33cbc5221e9"
+    },
+    {
+      "id": "CE26-FORESTAS-XYLO",
+      "title": "Ape Legnaiola",
+      "url": "https://www.sardegnaforeste.it/fauna/ape-legnaiola",
+      "publisher": "Regione Autonoma della Sardegna · Agenzia Forestas",
+      "checkedOn": "2026-10-19",
+      "receiptSha256": "d2de6d7621bccc3ed518750e8a47809ee028faef765129015d1b8a5e355058d0"
+    },
+    {
+      "id": "CE26-BDQ-MACAONE",
+      "title": "Le farfalle del Bosco delle Querce · Macaone",
+      "url": "https://boscodellequerce.it/wp-content/uploads/2022/07/Volume-scaricabile_Farfalle-1.pdf",
+      "publisher": "Parco Naturale Regionale Bosco delle Querce · Comune di Seveso / Fondazione Lombardia per l’Ambiente / ERSAF",
+      "checkedOn": "2026-10-19",
+      "receiptSha256": "3e4223ab801c40ff1b20e859ca4a65a68940dc6ab8eee37e67873abfc0e80021",
+      "locator": "Macaone: pagine stampate 14–15, pagine PDF15–16 (indici14–15), rese viste."
     }
   ],
   "items": [
@@ -2236,6 +2309,725 @@
         "Descrizione non diagnostica; nessuna chiave di identificazione certa."
       ],
       "publicationStatus": "ready"
+    },
+    {
+      "id": "martora",
+      "name": "Martora",
+      "latin": "Martes martes",
+      "rank": "species",
+      "groupLabel": "Mammiferi",
+      "paths": [
+        "trail"
+      ],
+      "summary": "Un piccolo carnivoro legato ai boschi, con una macchia chiara sulla gola.",
+      "cautions": [],
+      "sourceIds": [
+        "CE26-PNALM-MARTORA"
+      ],
+      "photos": [
+        {
+          "file": "assets/animals/ce26-animali-martora-6e3edfc8.webp",
+          "file_hd": "assets/animals/ce26-animali-martora-6e3edfc8-hd.webp",
+          "thumb": "assets/animals/ce26-animali-martora-6e3edfc8-t.webp",
+          "page": "https://commons.wikimedia.org/wiki/File:European_pine_marten_(Martes_martes)_Drenthe_2.jpg",
+          "author": "Charles J. Sharp",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "attribution": "Charles J. Sharp · Wikimedia Commons · CC BY-SA 4.0",
+          "alt": "Martora (Martes martes) su un ramo.",
+          "caption": "Martora (Martes martes), Drenthe, Paesi Bassi.",
+          "changes": "Conversione ICC del profilo sorgente in sRGB per preservare la resa cromatica sul Web; orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessun ritocco creativo. Miniatura centrata sul soggetto con il punto di ritaglio revisionato.",
+          "source": "Wikimedia Commons",
+          "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/3/37/European_pine_marten_%28Martes_martes%29_Drenthe_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sha256Original": "82294eed65920abfdb1e85611a6bc5f05d30f5b3c13c0e410f91f97a4376ddd7",
+          "photo_taxon": "Martes martes"
+        }
+      ],
+      "knownGaps": [
+        "Le fonti non attestano una presenza attuale nel Reatino o nel sentiero selezionato.",
+        "Descrizione divulgativa: non costituisce una chiave di determinazione."
+      ],
+      "publicationStatus": "ready",
+      "observe": [
+        {
+          "text": "Il mantello bruno scuro contrasta con la macchia sulla gola e sul petto, spesso giallastra.",
+          "sourceIds": [
+            "CE26-PNALM-MARTORA"
+          ]
+        }
+      ],
+      "habitat": [
+        {
+          "text": "Frequenta boschi di conifere, latifoglie e misti, con preferenza per foreste estese ad alto fusto.",
+          "sourceIds": [
+            "CE26-PNALM-MARTORA"
+          ]
+        }
+      ],
+      "behavior": [
+        {
+          "text": "Conduce vita solitaria e difende il proprio territorio.",
+          "sourceIds": [
+            "CE26-PNALM-MARTORA"
+          ]
+        }
+      ],
+      "ecology": [
+        {
+          "text": "La dieta comprende piccoli mammiferi, uccelli e uova, rettili, invertebrati e frutta.",
+          "sourceIds": [
+            "CE26-PNALM-MARTORA"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "faina",
+      "name": "Faina",
+      "latin": "Martes foina",
+      "rank": "species",
+      "groupLabel": "Mammiferi",
+      "paths": [
+        "trail"
+      ],
+      "summary": "Un mustelide notturno che frequenta boschi e ambienti rurali.",
+      "cautions": [],
+      "sourceIds": [
+        "CE26-PNALM-FAINA"
+      ],
+      "photos": [
+        {
+          "file": "assets/animals/ce26-animali-faina-d1817718.webp",
+          "file_hd": "assets/animals/ce26-animali-faina-d1817718-hd.webp",
+          "thumb": "assets/animals/ce26-animali-faina-d1817718-t.webp",
+          "page": "https://commons.wikimedia.org/wiki/File:Stone_marten_(Martes_foina)_Drenthe.jpg",
+          "author": "Charles J. Sharp",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "attribution": "Charles J. Sharp · Wikimedia Commons · CC BY-SA 4.0",
+          "alt": "Faina (Martes foina), muso e pettorina chiara.",
+          "caption": "Faina (Martes foina), Drenthe, Paesi Bassi.",
+          "changes": "Conversione ICC del profilo sorgente in sRGB per preservare la resa cromatica sul Web; orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessun ritocco creativo. Miniatura centrata sul soggetto con il punto di ritaglio revisionato.",
+          "source": "Wikimedia Commons",
+          "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/4/46/Stone_marten_%28Martes_foina%29_Drenthe.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sha256Original": "e069527bc19c4f2a46dbd55e3614dc80054ba2efdc673e5a111bced9ea5a4ee3",
+          "photo_taxon": "Martes foina"
+        },
+        {
+          "file": "assets/animals/ce26-animali-faina-8adf7b53.webp",
+          "file_hd": "assets/animals/ce26-animali-faina-8adf7b53-hd.webp",
+          "thumb": "assets/animals/ce26-animali-faina-8adf7b53-t.webp",
+          "page": "https://commons.wikimedia.org/wiki/File:Stone_marten_(Martes_foina)_Drenthe_2.jpg",
+          "author": "Charles J. Sharp",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "attribution": "Charles J. Sharp · Wikimedia Commons · CC BY-SA 4.0",
+          "alt": "Faina (Martes foina) fra il legno, pettorina in vista.",
+          "caption": "Faina (Martes foina), altra postura con pettorina chiara; Drenthe, Paesi Bassi.",
+          "changes": "Conversione ICC del profilo sorgente in sRGB per preservare la resa cromatica sul Web; orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessun ritocco creativo. Miniatura centrata sul soggetto con il punto di ritaglio revisionato.",
+          "source": "Wikimedia Commons",
+          "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/8/89/Stone_marten_%28Martes_foina%29_Drenthe_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sha256Original": "c7c65f96ebd221cc66d5ed41ab9168c1bb742820f95d4af02a5ca7a2ae9c594f",
+          "photo_taxon": "Martes foina"
+        }
+      ],
+      "knownGaps": [
+        "Le fonti non attestano una presenza attuale nel Reatino o nel sentiero selezionato.",
+        "Descrizione divulgativa: non costituisce una chiave di determinazione."
+      ],
+      "publicationStatus": "ready",
+      "observe": [
+        {
+          "text": "Ha pelo marroncino e una macchia generalmente bianca dal collo verso il ventre.",
+          "sourceIds": [
+            "CE26-PNALM-FAINA"
+          ]
+        }
+      ],
+      "habitat": [
+        {
+          "text": "Vive in boschi, cespuglieti e ambienti rurali, anche presso gli abitati.",
+          "sourceIds": [
+            "CE26-PNALM-FAINA"
+          ]
+        }
+      ],
+      "behavior": [
+        {
+          "text": "È attiva soprattutto di notte; di giorno usa cavità e altri rifugi, comprese cataste di legna.",
+          "sourceIds": [
+            "CE26-PNALM-FAINA"
+          ]
+        }
+      ],
+      "ecology": [
+        {
+          "text": "Mangia piccoli vertebrati e insetti, ma anche frutta e bacche.",
+          "sourceIds": [
+            "CE26-PNALM-FAINA"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "donnola",
+      "name": "Donnola",
+      "latin": "Mustela nivalis",
+      "rank": "species",
+      "groupLabel": "Mammiferi",
+      "paths": [
+        "trail"
+      ],
+      "summary": "Corpo snello e coda corta per un piccolo predatore di ambienti diversi.",
+      "cautions": [],
+      "sourceIds": [
+        "CE26-PNALM-DONNOLA"
+      ],
+      "photos": [
+        {
+          "file": "assets/animals/ce26-animali-donnola-19d75882.webp",
+          "file_hd": "assets/animals/ce26-animali-donnola-19d75882-hd.webp",
+          "thumb": "assets/animals/ce26-animali-donnola-19d75882-t.webp",
+          "page": "https://commons.wikimedia.org/wiki/File:Mustela_nivalis_-British_Wildlife_Centre-4.jpg",
+          "author": "Keven Law",
+          "license": "CC BY-SA 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+          "attribution": "Keven Law · Wikimedia Commons · CC BY-SA 2.0",
+          "alt": "Donnola (Mustela nivalis), corpo e gola chiara.",
+          "caption": "Donnola (Mustela nivalis), British Wildlife Centre, Inghilterra; in cattività.",
+          "changes": "Orientamento EXIF, ridimensionamento, compressione WebP e miniatura quadrata centrata. EXIF/XMP rimossi; nessun ritocco creativo. Miniatura centrata sul soggetto con il punto di ritaglio revisionato.",
+          "source": "Wikimedia Commons",
+          "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Mustela_nivalis_-British_Wildlife_Centre-4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sha256Original": "f30aa8c00692ecc427bbcc9cb1cd162433a2bee93a4b12ab74d1b4e0d0df16f3",
+          "photo_taxon": "Mustela nivalis"
+        }
+      ],
+      "knownGaps": [
+        "Le fonti non attestano una presenza attuale nel Reatino o nel sentiero selezionato.",
+        "Descrizione divulgativa: non costituisce una chiave di determinazione."
+      ],
+      "publicationStatus": "ready",
+      "observe": [
+        {
+          "text": "Il corpo è slanciato, con pelo corto fulvo sul dorso e chiaro sul ventre; la coda è relativamente corta.",
+          "sourceIds": [
+            "CE26-PNALM-DONNOLA"
+          ]
+        }
+      ],
+      "habitat": [
+        {
+          "text": "Frequenta boschi, cespuglieti, coltivi e praterie, anche in montagna.",
+          "sourceIds": [
+            "CE26-PNALM-DONNOLA"
+          ]
+        }
+      ],
+      "behavior": [
+        {
+          "text": "È agile nella corsa e nell’arrampicata e sa nuotare.",
+          "sourceIds": [
+            "CE26-PNALM-DONNOLA"
+          ]
+        }
+      ],
+      "ecology": [
+        {
+          "text": "Preda piccoli mammiferi e uccelli e può integrare la dieta con altri vertebrati e insetti.",
+          "sourceIds": [
+            "CE26-PNALM-DONNOLA"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quercino",
+      "name": "Quercino",
+      "latin": "Eliomys quercinus",
+      "rank": "species",
+      "groupLabel": "Mammiferi",
+      "paths": [
+        "trail"
+      ],
+      "summary": "Un ghiro che usa anche il terreno e include molti alimenti animali nella dieta.",
+      "cautions": [],
+      "sourceIds": [
+        "CE26-PNALM-QUERCINO"
+      ],
+      "photos": [
+        {
+          "file": "assets/animals/ce26-animali-quercino-d68a0b4b.webp",
+          "file_hd": "assets/animals/ce26-animali-quercino-d68a0b4b-hd.webp",
+          "thumb": "assets/animals/ce26-animali-quercino-d68a0b4b-t.webp",
+          "page": "https://commons.wikimedia.org/wiki/File:Eliomys_quercinus_168698377.jpg",
+          "author": "Jan Ebr",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+          "attribution": "Jan Ebr · Wikimedia Commons · CC BY 4.0",
+          "alt": "Quercino (Eliomys quercinus), dettaglio del muso fra il legno.",
+          "caption": "Quercino (Eliomys quercinus), dettaglio del muso nel tronco; Spagna.",
+          "changes": "Orientamento EXIF, ridimensionamento, compressione WebP e miniatura quadrata centrata. EXIF/XMP rimossi; nessun ritocco creativo. Miniatura centrata sul soggetto con il punto di ritaglio revisionato.",
+          "source": "Wikimedia Commons",
+          "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Eliomys_quercinus_168698377.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sha256Original": "121196aa9d7445fd2d4642590268b74b90b7b052cf593feb677674eb604881e7",
+          "photo_taxon": "Eliomys quercinus"
+        }
+      ],
+      "knownGaps": [
+        "Le fonti non attestano una presenza attuale nel Reatino o nel sentiero selezionato.",
+        "Descrizione divulgativa: non costituisce una chiave di determinazione."
+      ],
+      "publicationStatus": "ready",
+      "observe": [
+        {
+          "text": "Il corpo misura circa 10–17 centimetri, cui si aggiunge una coda di 9–12 centimetri.",
+          "sourceIds": [
+            "CE26-PNALM-QUERCINO"
+          ]
+        }
+      ],
+      "habitat": [
+        {
+          "text": "Occupa ambienti forestali diversi, dalle formazioni mediterranee ai boschi di conifere.",
+          "sourceIds": [
+            "CE26-PNALM-QUERCINO"
+          ]
+        }
+      ],
+      "behavior": [
+        {
+          "text": "Tra i ghiri è relativamente più legato al suolo e meno alla vita sugli alberi.",
+          "sourceIds": [
+            "CE26-PNALM-QUERCINO"
+          ]
+        }
+      ],
+      "ecology": [
+        {
+          "text": "Mangia insetti adulti e larve, lumache e uova, oltre a frutti e noci.",
+          "sourceIds": [
+            "CE26-PNALM-QUERCINO"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gatto-selvatico",
+      "name": "Gatto selvatico",
+      "latin": "Felis silvestris",
+      "rank": "species",
+      "groupLabel": "Mammiferi",
+      "paths": [
+        "trail"
+      ],
+      "summary": "Un felino schivo legato agli habitat forestali, attivo soprattutto al crepuscolo e di notte.",
+      "cautions": [],
+      "sourceIds": [
+        "CE26-PNALM-GATTO-SELVATICO"
+      ],
+      "photos": [
+        {
+          "file": "assets/animals/ce26-animali-gatto-selvatico-86de54cd.webp",
+          "file_hd": "assets/animals/ce26-animali-gatto-selvatico-86de54cd-hd.webp",
+          "thumb": "assets/animals/ce26-animali-gatto-selvatico-86de54cd-t.webp",
+          "page": "https://commons.wikimedia.org/wiki/File:Felis_silvestris_silvestris_Luc_Viatour.jpg",
+          "author": "Lviatour",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "attribution": "Lviatour · Wikimedia Commons · CC BY-SA 3.0",
+          "alt": "Gatto selvatico (Felis silvestris), corpo e coda ad anelli.",
+          "caption": "Gatto selvatico (Felis silvestris), vista del corpo e della coda.",
+          "changes": "Orientamento EXIF, ridimensionamento, compressione WebP e miniatura quadrata centrata. EXIF/XMP rimossi; nessun ritocco creativo. Miniatura centrata sul soggetto con il punto di ritaglio revisionato.",
+          "source": "Wikimedia Commons",
+          "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Felis_silvestris_silvestris_Luc_Viatour.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sha256Original": "420447ea8bb6380b03d6e6c6f94c33647dcf7c12de06b1bc39dbcc5af1a5e446",
+          "photo_taxon": "Felis silvestris"
+        },
+        {
+          "file": "assets/animals/ce26-animali-gatto-selvatico-6ada9d16.webp",
+          "file_hd": "assets/animals/ce26-animali-gatto-selvatico-6ada9d16-hd.webp",
+          "thumb": "assets/animals/ce26-animali-gatto-selvatico-6ada9d16-t.webp",
+          "page": "https://commons.wikimedia.org/wiki/File:Felis_silvestris_silvestris.jpg",
+          "author": "Michael Gäbler",
+          "license": "CC BY 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+          "attribution": "Michael Gäbler",
+          "alt": "Gatto selvatico (Felis silvestris), dettaglio del capo.",
+          "caption": "Gatto selvatico (Felis silvestris), dettaglio del capo nel parco faunistico Wisentgehege Springe, Germania; in cattività.",
+          "changes": "Orientamento EXIF, ridimensionamento, compressione WebP e miniatura quadrata centrata. EXIF/XMP rimossi; nessun ritocco creativo. Miniatura centrata sul soggetto con il punto di ritaglio revisionato.",
+          "source": "Wikimedia Commons",
+          "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Felis_silvestris_silvestris.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sha256Original": "d2d11dbeb0bc43343ac4addde30bb0520c321414e6764e7dee384da05baad224",
+          "photo_taxon": "Felis silvestris"
+        }
+      ],
+      "knownGaps": [
+        "Le fonti non attestano una presenza attuale nel Reatino o nel sentiero selezionato.",
+        "Descrizione divulgativa: non costituisce una chiave di determinazione."
+      ],
+      "publicationStatus": "ready",
+      "observe": [
+        {
+          "text": "La coda folta ha anelli scuri e un apice nero, con estremità tronca.",
+          "sourceIds": [
+            "CE26-PNALM-GATTO-SELVATICO"
+          ]
+        }
+      ],
+      "habitat": [
+        {
+          "text": "È legato agli ambienti forestali, in particolare ai boschi di latifoglie.",
+          "sourceIds": [
+            "CE26-PNALM-GATTO-SELVATICO"
+          ]
+        }
+      ],
+      "behavior": [
+        {
+          "text": "È soprattutto crepuscolare e notturno; di giorno resta nascosto in cavità, tane o anfratti.",
+          "sourceIds": [
+            "CE26-PNALM-GATTO-SELVATICO"
+          ]
+        }
+      ],
+      "ecology": [
+        {
+          "text": "Caccia soprattutto roditori e altri piccoli mammiferi, integrando la dieta anche con uccelli e invertebrati.",
+          "sourceIds": [
+            "CE26-PNALM-GATTO-SELVATICO"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lepre-italica",
+      "name": "Lepre italica",
+      "latin": "Lepus corsicanus",
+      "rank": "species",
+      "groupLabel": "Mammiferi",
+      "paths": [
+        "trail"
+      ],
+      "summary": "Una lepre di paesaggi a mosaico, tra zone aperte, cespuglieti e boschi.",
+      "cautions": [],
+      "sourceIds": [
+        "CE26-PNALM-LEPRE-ITALICA"
+      ],
+      "photos": [
+        {
+          "file": "assets/animals/ce26-animali-lepre-italica-6787d92c.webp",
+          "file_hd": "assets/animals/ce26-animali-lepre-italica-6787d92c-hd.webp",
+          "thumb": "assets/animals/ce26-animali-lepre-italica-6787d92c-t.webp",
+          "page": "https://commons.wikimedia.org/wiki/File:Lepus_corsicanus.jpg",
+          "author": "Thomas Galewski",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+          "attribution": "Thomas Galewski · Wikimedia Commons · CC BY 4.0",
+          "alt": "Lepre italica (Lepus corsicanus), corpo e orecchie in vista.",
+          "caption": "Lepre italica (Lepus corsicanus), fotografata in Francia secondo la fonte.",
+          "changes": "Orientamento EXIF, ridimensionamento, compressione WebP e miniatura quadrata centrata. EXIF/XMP rimossi; nessun ritocco creativo. Miniatura centrata sul soggetto con il punto di ritaglio revisionato.",
+          "source": "Wikimedia Commons",
+          "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Lepus_corsicanus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sha256Original": "5727910f3d535617051a08295fdf4a373b9aeb2ca1bba339d4b94c0d760dec59",
+          "photo_taxon": "Lepus corsicanus"
+        }
+      ],
+      "knownGaps": [
+        "Le fonti non attestano una presenza attuale nel Reatino o nel sentiero selezionato.",
+        "Descrizione divulgativa: non costituisce una chiave di determinazione."
+      ],
+      "publicationStatus": "ready",
+      "observe": [
+        {
+          "text": "Ha orecchie grandi e zampe posteriori sviluppate; è molto simile alla lepre europea.",
+          "sourceIds": [
+            "CE26-PNALM-LEPRE-ITALICA"
+          ]
+        }
+      ],
+      "habitat": [
+        {
+          "text": "Frequenta paesaggi con radure, praterie, cespuglieti e boschi di latifoglie alternati.",
+          "sourceIds": [
+            "CE26-PNALM-LEPRE-ITALICA"
+          ]
+        }
+      ],
+      "behavior": [
+        {
+          "text": "Ha abitudini notturne e di giorno si ripara nel folto della vegetazione.",
+          "sourceIds": [
+            "CE26-PNALM-LEPRE-ITALICA"
+          ]
+        }
+      ],
+      "ecology": [
+        {
+          "text": "La dieta è erbivora e comprende diverse piante erbacee; in inverno aumenta il consumo di gemme e cortecce.",
+          "sourceIds": [
+            "CE26-PNALM-LEPRE-ITALICA"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aquila-reale",
+      "name": "Aquila reale",
+      "latin": "Aquila chrysaetos",
+      "rank": "species",
+      "groupLabel": "Uccelli",
+      "paths": [
+        "trail"
+      ],
+      "summary": "Un grande rapace montano che si nutre di prede e anche di carcasse.",
+      "cautions": [],
+      "sourceIds": [
+        "CE26-PNALM-AQUILA-REALE"
+      ],
+      "photos": [
+        {
+          "file": "assets/animals/ce26-animali-aquila-reale-54b5f76e.webp",
+          "file_hd": "assets/animals/ce26-animali-aquila-reale-54b5f76e-hd.webp",
+          "thumb": "assets/animals/ce26-animali-aquila-reale-54b5f76e-t.webp",
+          "page": "https://commons.wikimedia.org/wiki/File:Aquila_chrysaetos_La_Canada_2012-01-14.jpg",
+          "author": "Juan Lacruz",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "attribution": "Juan Lacruz · Wikimedia Commons · CC BY-SA 3.0",
+          "alt": "Aquila reale (Aquila chrysaetos) in volo.",
+          "caption": "Aquila reale (Aquila chrysaetos) in volo a La Cañada, Ávila, Spagna.",
+          "changes": "Orientamento EXIF, ridimensionamento, compressione WebP e miniatura quadrata centrata. EXIF/XMP rimossi; nessun ritocco creativo. Miniatura centrata sul soggetto con il punto di ritaglio revisionato.",
+          "source": "Wikimedia Commons",
+          "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/7/72/Aquila_chrysaetos_La_Canada_2012-01-14.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sha256Original": "af83465be922b86b54a54979cc020d67518019a859053b434b409c7ce021ea52",
+          "photo_taxon": "Aquila chrysaetos"
+        },
+        {
+          "file": "assets/animals/ce26-animali-aquila-reale-a297774a.webp",
+          "file_hd": "assets/animals/ce26-animali-aquila-reale-a297774a-hd.webp",
+          "thumb": "assets/animals/ce26-animali-aquila-reale-a297774a-t.webp",
+          "page": "https://commons.wikimedia.org/wiki/File:Aquila_chrysaetos_(Linnaeus_1758).jpg",
+          "author": "Michael Gäbler",
+          "license": "CC BY 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+          "attribution": "Michael Gäbler",
+          "alt": "Aquila reale (Aquila chrysaetos), dettaglio del capo.",
+          "caption": "Aquila reale (Aquila chrysaetos), parco faunistico Wisentgehege Springe, Germania; in cattività.",
+          "changes": "Orientamento EXIF, ridimensionamento, compressione WebP e miniatura quadrata centrata. EXIF/XMP rimossi; nessun ritocco creativo. Miniatura centrata sul soggetto con il punto di ritaglio revisionato.",
+          "source": "Wikimedia Commons",
+          "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/8/88/Aquila_chrysaetos_%28Linnaeus_1758%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sha256Original": "7e8149bec2a2a39e8353bfaff117688d22bc9304317229ebd7500445eacf688f",
+          "photo_taxon": "Aquila chrysaetos"
+        }
+      ],
+      "knownGaps": [
+        "Le fonti non attestano una presenza attuale nel Reatino o nel sentiero selezionato.",
+        "Descrizione divulgativa: non costituisce una chiave di determinazione."
+      ],
+      "publicationStatus": "ready",
+      "observe": [
+        {
+          "text": "La femmina è più grande del maschio.",
+          "sourceIds": [
+            "CE26-PNALM-AQUILA-REALE"
+          ]
+        }
+      ],
+      "habitat": [
+        {
+          "text": "È associata alle creste montane elevate e poco accessibili.",
+          "sourceIds": [
+            "CE26-PNALM-AQUILA-REALE"
+          ]
+        }
+      ],
+      "behavior": [],
+      "ecology": [
+        {
+          "text": "Cattura piccoli mammiferi e uccelli e consuma anche resti di animali morti.",
+          "sourceIds": [
+            "CE26-PNALM-AQUILA-REALE"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ape-legnaiola",
+      "name": "Ape legnaiola",
+      "latin": "Xylocopa violacea",
+      "rank": "species",
+      "groupLabel": "Insetti",
+      "paths": [
+        "flowers",
+        "trail"
+      ],
+      "summary": "Una grande ape solitaria che scava il nido nel legno.",
+      "cautions": [],
+      "sourceIds": [
+        "CE26-FORESTAS-XYLO"
+      ],
+      "photos": [
+        {
+          "file": "assets/animals/ce26-animali-ape-legnaiola-42a9dee1.webp",
+          "file_hd": "assets/animals/ce26-animali-ape-legnaiola-42a9dee1-hd.webp",
+          "thumb": "assets/animals/ce26-animali-ape-legnaiola-42a9dee1-t.webp",
+          "page": "https://commons.wikimedia.org/wiki/File:Holzbiene_(Xylocopa_violacea)_Raps5233395-PSD.jpg",
+          "author": "Ermell",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "attribution": "Reinhold Möller",
+          "alt": "Ape legnaiola (Xylocopa violacea) su fiori gialli.",
+          "caption": "Ape legnaiola (Xylocopa violacea), visita ai fiori.",
+          "changes": "Orientamento EXIF, ridimensionamento, compressione WebP e miniatura quadrata centrata. EXIF/XMP rimossi; nessun ritocco creativo. Miniatura centrata sul soggetto con il punto di ritaglio revisionato.",
+          "source": "Wikimedia Commons",
+          "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/0/04/Holzbiene_%28Xylocopa_violacea%29_Raps5233395-PSD.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sha256Original": "143a9dd663e5558ed0c86acea9ab0650fbe9f2765888fd6a1c2982e955bdf000",
+          "photo_taxon": "Xylocopa violacea"
+        },
+        {
+          "file": "assets/animals/ce26-animali-ape-legnaiola-6d48b8d6.webp",
+          "file_hd": "assets/animals/ce26-animali-ape-legnaiola-6d48b8d6-hd.webp",
+          "thumb": "assets/animals/ce26-animali-ape-legnaiola-6d48b8d6-t.webp",
+          "page": "https://commons.wikimedia.org/wiki/File:Xylocopa_violacea_Luberon_01.jpg",
+          "author": "Sputniktilt",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "attribution": "Sputniktilt · Wikimedia Commons · CC BY-SA 4.0",
+          "alt": "Ape legnaiola (Xylocopa violacea), dettaglio su lavanda.",
+          "caption": "Ape legnaiola (Xylocopa violacea) su lavanda a Oppède, Francia.",
+          "changes": "Orientamento EXIF, ridimensionamento, compressione WebP e miniatura quadrata centrata. EXIF/XMP rimossi; nessun ritocco creativo. Miniatura centrata sul soggetto con il punto di ritaglio revisionato.",
+          "source": "Wikimedia Commons",
+          "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/8/82/Xylocopa_violacea_Luberon_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sha256Original": "8d9d65cfa2348dcdf2a67dad1e792439930c59756989ca26aabb05d72a07d03c",
+          "photo_taxon": "Xylocopa violacea"
+        }
+      ],
+      "knownGaps": [
+        "Le fonti non attestano una presenza attuale nel Reatino o nel sentiero selezionato.",
+        "Descrizione divulgativa: non costituisce una chiave di determinazione."
+      ],
+      "publicationStatus": "ready",
+      "observe": [
+        {
+          "text": "Il corpo è nero e peloso, con riflessi violacei particolarmente evidenti sulle ali.",
+          "sourceIds": [
+            "CE26-FORESTAS-XYLO"
+          ]
+        }
+      ],
+      "habitat": [
+        {
+          "text": "Visita prati, giardini e cespugli fioriti, anche ai margini dei boschi.",
+          "sourceIds": [
+            "CE26-FORESTAS-XYLO"
+          ]
+        }
+      ],
+      "behavior": [
+        {
+          "text": "Scava nel legno morbido o deperiente gallerie destinate alle cellette del nido.",
+          "sourceIds": [
+            "CE26-FORESTAS-XYLO"
+          ]
+        }
+      ],
+      "ecology": [
+        {
+          "text": "La femmina lascia polline nelle cellette come riserva alimentare per la prole.",
+          "sourceIds": [
+            "CE26-FORESTAS-XYLO"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "macaone",
+      "name": "Macaone",
+      "latin": "Papilio machaon",
+      "rank": "species",
+      "groupLabel": "Insetti",
+      "paths": [
+        "flowers",
+        "trail"
+      ],
+      "summary": "Una farfalla di prati e radure, con un legame tra bruchi e piante nutrici.",
+      "cautions": [],
+      "sourceIds": [
+        "CE26-BDQ-MACAONE"
+      ],
+      "photos": [
+        {
+          "file": "assets/animals/pe2-natura-farfalle-diurne-52e89a72.webp",
+          "file_hd": "assets/animals/pe2-natura-farfalle-diurne-52e89a72-hd.webp",
+          "thumb": "assets/animals/pe2-natura-farfalle-diurne-52e89a72-t.webp",
+          "page": "https://commons.wikimedia.org/wiki/File:Papilio_machaon_-_Swallowtail_1.jpg",
+          "author": "Zeynel Cebeci",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "attribution": "Zeynel Cebeci · Wikimedia Commons · CC BY-SA 3.0",
+          "alt": "Macaone (Papilio machaon), vista laterale.",
+          "caption": "Macaone (Papilio machaon), vista laterale.",
+          "changes": "Orientamento EXIF, ridimensionamento, compressione WebP e miniatura ritagliata; nessuna correzione cromatica. EXIF/XMP rimossi. Conversione ICC da Adobe RGB (1998) a sRGB prima della rimozione del profilo.",
+          "source": "Wikimedia Commons",
+          "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Papilio_machaon_-_Swallowtail_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sha256Original": "ac3decfed8d67ab1fbd79ec235681c9c5f3fb08134ffebfaeab0261b8e41201d",
+          "photo_taxon": "Papilio machaon"
+        },
+        {
+          "file": "assets/animals/pe2-natura-farfalle-diurne-3afc37e0.webp",
+          "file_hd": "assets/animals/pe2-natura-farfalle-diurne-3afc37e0-hd.webp",
+          "thumb": "assets/animals/pe2-natura-farfalle-diurne-3afc37e0-t.webp",
+          "page": "https://commons.wikimedia.org/wiki/File:Schwalbenschwanz,_Papilio_machaon.jpg",
+          "author": "Feel free to use my photos, but please mention me as the author and if you want send me a  message. or (rufre@lenz-nenning.at)",
+          "license": "CC BY-SA 3.0 at",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/at/deed.en",
+          "attribution": "Feel free to use my photos, but please mention me as the author and if you want send me a  message. or (rufre@lenz-nenning.at) · Wikimedia Commons · CC BY-SA 3.0 at",
+          "alt": "Macaone (Papilio machaon), ali parzialmente aperte sulla roccia.",
+          "caption": "Macaone (Papilio machaon), ali parzialmente aperte sulla roccia.",
+          "changes": "Orientamento EXIF, ridimensionamento, compressione WebP e miniatura ritagliata; nessuna correzione cromatica. EXIF/XMP rimossi.",
+          "source": "Wikimedia Commons",
+          "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Schwalbenschwanz%2C_Papilio_machaon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sha256Original": "a1a20f8880d71d8d431bcf2aaabdca2216d2a6c33c3573eec516fea337269328",
+          "photo_taxon": "Papilio machaon"
+        }
+      ],
+      "knownGaps": [
+        "Le fonti non attestano una presenza attuale nel Reatino o nel sentiero selezionato.",
+        "Descrizione divulgativa: non costituisce una chiave di determinazione."
+      ],
+      "publicationStatus": "ready",
+      "observe": [
+        {
+          "text": "Le ali hanno fondo giallo e disegni neri; quelle posteriori portano macchie rosse e squame blu.",
+          "sourceIds": [
+            "CE26-BDQ-MACAONE"
+          ]
+        }
+      ],
+      "habitat": [
+        {
+          "text": "Frequenta prati fioriti, radure soleggiate e giardini dove crescono le piante nutrici delle larve.",
+          "sourceIds": [
+            "CE26-BDQ-MACAONE"
+          ]
+        }
+      ],
+      "behavior": [
+        {
+          "text": "I maschi possono contendersi il territorio con inseguimenti e confronti in volo.",
+          "sourceIds": [
+            "CE26-BDQ-MACAONE"
+          ]
+        }
+      ],
+      "ecology": [
+        {
+          "text": "Le piante nutrici dei bruchi comprendono carota selvatica, finocchio e altre ombrellifere.",
+          "sourceIds": [
+            "CE26-BDQ-MACAONE"
+          ]
+        }
+      ]
     }
   ]
 }

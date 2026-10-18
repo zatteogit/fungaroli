@@ -1,0 +1,1368 @@
+{
+  "batchcomplete": "",
+  "continue": {
+    "gsroffset": 8,
+    "continue": "gsroffset||"
+  },
+  "query": {
+    "pages": {
+      "113104727": {
+        "pageid": 113104727,
+        "ns": 6,
+        "title": "File:Apioperdon pyriforme 171436705.jpg",
+        "index": 5,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1105841,
+            "width": 2048,
+            "height": 1536,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Apioperdon_pyriforme_171436705.jpg/960px-Apioperdon_pyriforme_171436705.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 640,
+            "thumbheight": 480,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Apioperdon_pyriforme_171436705.jpg/1280px-Apioperdon_pyriforme_171436705.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Apioperdon_pyriforme_171436705.jpg/960px-Apioperdon_pyriforme_171436705.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 480,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Apioperdon_pyriforme_171436705.jpg/1280px-Apioperdon_pyriforme_171436705.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/af/Apioperdon_pyriforme_171436705.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Apioperdon_pyriforme_171436705.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=113104727",
+            "sha1": "16c8e67924f1b8075e28cc92eda1e05f58785715",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-12-06 06:44:34",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Apioperdon pyriforme 171436705",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Apioperdon pyriforme|Media from iNaturalist|Fungi of Denmark in December|Denmark photographs taken on 2021-12-05|INaturalist images reviewed by iNaturalistReviewBot|Lycoperdaceae in Denmark|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "55.372642",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "10.212222",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Pear-shaped puffball (<i>Apioperdon pyriforme</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-12-05",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/171436705\">https://www.inaturalist.org/photos/171436705</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/1245806\">jonesor</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Apioperdon pyriforme"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Denmark photographs taken on 2021-12-05"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Denmark in December"
+          },
+          {
+            "ns": 14,
+            "title": "Category:INaturalist images reviewed by iNaturalistReviewBot"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lycoperdaceae in Denmark"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from iNaturalist"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded with iNaturalist2Commons"
+          }
+        ]
+      },
+      "84478911": {
+        "pageid": 84478911,
+        "ns": 6,
+        "title": "File:Flaschen-Stäubling (Lycoperdon perlatum, syn. L. gemmatum)-RM-20191014-01.jpg",
+        "index": 2,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 6196525,
+            "width": 3886,
+            "height": 5182,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Flaschen-St%C3%A4ubling_%28Lycoperdon_perlatum%2C_syn._L._gemmatum%29-RM-20191014-01.jpg/960px-Flaschen-St%C3%A4ubling_%28Lycoperdon_perlatum%2C_syn._L._gemmatum%29-RM-20191014-01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 640,
+            "thumbheight": 853,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Flaschen-St%C3%A4ubling_%28Lycoperdon_perlatum%2C_syn._L._gemmatum%29-RM-20191014-01.jpg/1280px-Flaschen-St%C3%A4ubling_%28Lycoperdon_perlatum%2C_syn._L._gemmatum%29-RM-20191014-01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Flaschen-St%C3%A4ubling_%28Lycoperdon_perlatum%2C_syn._L._gemmatum%29-RM-20191014-01.jpg/960px-Flaschen-St%C3%A4ubling_%28Lycoperdon_perlatum%2C_syn._L._gemmatum%29-RM-20191014-01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 853,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Flaschen-St%C3%A4ubling_%28Lycoperdon_perlatum%2C_syn._L._gemmatum%29-RM-20191014-01.jpg/1280px-Flaschen-St%C3%A4ubling_%28Lycoperdon_perlatum%2C_syn._L._gemmatum%29-RM-20191014-01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/26/Flaschen-St%C3%A4ubling_%28Lycoperdon_perlatum%2C_syn._L._gemmatum%29-RM-20191014-01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Flaschen-St%C3%A4ubling_(Lycoperdon_perlatum,_syn._L._gemmatum)-RM-20191014-01.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=84478911",
+            "sha1": "34c60e7be44b645f014675230ccfab9a5905ac20",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2019-11-29 22:54:58",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Flaschen-Stäubling (Lycoperdon perlatum, syn. L. gemmatum)-RM-20191014-01",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Lycoperdon perlatum|Taken with Olympus E-M1 Mark II|Taken with Olympus M.Zuiko Digital ED 60mm f/2.8 Macro|FFH-Gebiet Bruderwald mit Naturwaldreservat Wolfsruhe|Self-published work|Featured pictures of fungi|Featured pictures of Bavaria|Fungi in October|Featured pictures by Ermell|Uploaded with LrMediaWiki|Photographs by Ermell|Fungi of Upper Franconia|Bavaria photographs taken on 2019-10-14|Files with coordinates missing SDC location of creation (49° N, 10° E)|Focus stacking images of mushrooms|Focus stacking images by Ermell|Images by User:Ermell taken in 2019|Featured pictures of mushrooms by Ermell|Focus stacked image",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality|featured",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "49.858157",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "10.897078",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "common puffball (Lycoperdon perlatum, syn. L. gemmatum).Focus stack of 16 images.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2019-10-14 15:56:24",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"mw:WikiLink\" href=\"https://commons.wikimedia.org/wiki/User:Ermell\" title=\"User:Ermell\">Ermell</a>",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "<table class=\"toccolours\" style=\"width:100%; margin-top:10px;\" cellpadding=\"2\">\n<tbody><tr class=\"plainlinks\">\n<td><span typeof=\"mw:File\"><a href=\"https://commons.wikimedia.org/wiki/File:Twemoji_1f4f7.svg\" class=\"mw-file-description\"><img resource=\"https://commons.wikimedia.org/wiki/File:Twemoji_1f4f7.svg\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Twemoji_1f4f7.svg/40px-Twemoji_1f4f7.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Twemoji_1f4f7.svg/60px-Twemoji_1f4f7.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"512\" data-file-height=\"512\" data-file-type=\"drawing\" height=\"25\" width=\"25\" class=\"mw-file-element\"></a></span>  <a rel=\"mw:MediaLink\" href=\"https://upload.wikimedia.org/wikipedia/commons/2/26/Flaschen-St%C3%A4ubling_%28Lycoperdon_perlatum%2C_syn._L._gemmatum%29-RM-20191014-01.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=api&amp;utm_content=original\" resource=\"./Media:Flaschen-Stäubling_(Lycoperdon_perlatum,_syn._L._gemmatum)-RM-20191014-01.jpg\" title=\"Flaschen-Stäubling (Lycoperdon perlatum, syn. L. gemmatum)-RM-20191014-01.jpg\">This Photo</a> was taken by <i><b><a rel=\"mw:WikiLink\" href=\"https://commons.wikimedia.org/wiki/User:Ermell\" title=\"User:Ermell\">Reinhold Möller</a></b></i>.  <span typeof=\"mw:File\"><a href=\"https://commons.wikimedia.org/wiki/File:Twemoji_1f468.svg\" class=\"mw-file-description\"><img resource=\"https://commons.wikimedia.org/wiki/File:Twemoji_1f468.svg\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Twemoji_1f468.svg/40px-Twemoji_1f468.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Twemoji_1f468.svg/60px-Twemoji_1f468.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"512\" data-file-height=\"512\" data-file-type=\"drawing\" height=\"25\" width=\"25\" class=\"mw-file-element\"></a></span></td>\n<td align=\"right\">Feel free to use my photos, but please mention me as the author and send me a  <a rel=\"mw:ExtLink\" href=\"https://commons.wikimedia.org/w/index.php?title=User_talk:Ermell&amp;action=edit&amp;section=new\" class=\"external text\" data-mw-original-href=\"http://commons.wikimedia.org/w/index.php?title=User_talk:Ermell&amp;action=edit&amp;section=new\">message</a>. <span typeof=\"mw:File\"><a href=\"https://commons.wikimedia.org/wiki/File:Crystal_128_mail.png\" class=\"mw-file-description\"><img resource=\"https://commons.wikimedia.org/wiki/File:Crystal_128_mail.png\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Crystal_128_mail.png/40px-Crystal_128_mail.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Crystal_128_mail.png/60px-Crystal_128_mail.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"128\" data-file-height=\"128\" data-file-type=\"bitmap\" height=\"25\" width=\"25\" class=\"mw-file-element\"></a></span></td></tr>\n</tbody></table>\n<span class=\"mw-empty-elt\"><link rel=\"mw:PageProp/Category\" href=\"./Category:Photographs_by_Ermell\"></span>\n<div style=\"clear:both; border:2px solid #00cc00; background-color:#f7f7f7; margin-top:6px;\">\n<table><tbody><tr><td style=\"padding:4px;\"><span typeof=\"mw:File\"><a href=\"https://commons.wikimedia.org/wiki/File:Telif_inceleme.png\" class=\"mw-file-description\"><img resource=\"https://commons.wikimedia.org/wiki/File:Telif_inceleme.png\" src=\"https://upload.wikimedia.org/wikipedia/commons/a/a5/Telif_inceleme.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail_unscaled\" decoding=\"async\" loading=\"lazy\" data-file-width=\"110\" data-file-height=\"110\" data-file-type=\"bitmap\" height=\"64\" width=\"64\" class=\"mw-file-element\"></a></span>\n</td><td style=\"padding:4px;\"><div style=\"margin-top:0.5em;\">This image is <b>not <a rel=\"mw:WikiLink/Interwiki\" href=\"https://en.wikipedia.org/wiki/Public%20domain\" title=\"en:Public domain\" class=\"extiw\">public domain</a></b>. Please respect the copyright protection. It may only be used according to the rules mentioned here. This specifically <b>excludes use in social media</b>, if applicable terms of the licenses listed here not appropriate.</div>\n</td></tr></tbody></table>\n<table><tbody><tr><td style=\"padding:4px;\"><span typeof=\"mw:File\"><a href=\"https://commons.wikimedia.org/wiki/File:Upload-problem2.svg\" class=\"mw-file-description\"><img resource=\"https://commons.wikimedia.org/wiki/File:Upload-problem2.svg\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Upload-problem2.svg/120px-Upload-problem2.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Upload-problem2.svg/250px-Upload-problem2.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"159\" data-file-height=\"142\" data-file-type=\"drawing\" height=\"57\" width=\"64\" class=\"mw-file-element\"></a></span>\n</td><td style=\"padding:4px;\"><div style=\"margin-top:0.5em;\">Please do not upload an updated image here without consultation with the Author. The author would like to make corrections only at his own source. This ensures that the changes are preserved.<br>Please if you think that any changes should be required, please inform the author.<br>Otherwise you can upload a new image with a new name. Please use one of the templates <a rel=\"mw:WikiLink\" href=\"https://commons.wikimedia.org/wiki/Template:Derived_from\" title=\"Template:Derived from\">derivative</a> or <a rel=\"mw:WikiLink\" href=\"https://commons.wikimedia.org/wiki/Template:Extracted_from\" title=\"Template:Extracted from\">extract</a>.</div>\n</td></tr></tbody></table></div>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Attribution": {
+                "value": "<a rel=\"mw:WikiLink\" href=\"https://commons.wikimedia.org/wiki/User:Ermell\" title=\"User:Ermell\">Reinhold Möller</a>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Bavaria photographs taken on 2019-10-14"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:FFH-Gebiet Bruderwald mit Naturwaldreservat Wolfsruhe"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Featured pictures by Ermell"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Featured pictures of Bavaria"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Featured pictures of fungi"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Featured pictures of mushrooms by Ermell"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Featured pictures on Wikimedia Commons"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation (49° N, 10° E)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Focus stacked image"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Focus stacking images by Ermell"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Focus stacking images of mushrooms"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in October"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Upper Franconia"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images by User:Ermell taken in 2019"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lycoperdon perlatum"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by Ermell"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images by Ermell"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of Bavaria"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of Lycoperdon"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of mushrooms by Ermell"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Olympus E-M1 Mark II"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Olympus M.Zuiko Digital ED 60mm f/2.8 Macro"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded with LrMediaWiki"
+          }
+        ]
+      },
+      "160583152": {
+        "pageid": 160583152,
+        "ns": 6,
+        "title": "File:Lycoperdon perlatum (Cortland County, New-York, USA).jpg",
+        "index": 7,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1450351,
+            "width": 1479,
+            "height": 1479,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Lycoperdon_perlatum_%28Cortland_County%2C_New-York%2C_USA%29.jpg/960px-Lycoperdon_perlatum_%28Cortland_County%2C_New-York%2C_USA%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 640,
+            "thumbheight": 640,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Lycoperdon_perlatum_%28Cortland_County%2C_New-York%2C_USA%29.jpg/1280px-Lycoperdon_perlatum_%28Cortland_County%2C_New-York%2C_USA%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Lycoperdon_perlatum_%28Cortland_County%2C_New-York%2C_USA%29.jpg/960px-Lycoperdon_perlatum_%28Cortland_County%2C_New-York%2C_USA%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 640,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Lycoperdon_perlatum_%28Cortland_County%2C_New-York%2C_USA%29.jpg/1280px-Lycoperdon_perlatum_%28Cortland_County%2C_New-York%2C_USA%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Lycoperdon_perlatum_%28Cortland_County%2C_New-York%2C_USA%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Lycoperdon_perlatum_(Cortland_County,_New-York,_USA).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=160583152",
+            "sha1": "212de531c9661a89a2dfe26d9d480c4000f15b6e",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2025-02-25 17:25:28",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Lycoperdon perlatum (Cortland County, New-York, USA)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Lycoperdon perlatum|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|Media from GBIF|INaturalist images missing SDC depicts",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "42.556152",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-76.251792",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Lycoperdon perlatum</i> in Lime Hollow Nature Center, Cortland County, New-York, USA",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-09-30",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/234559257\">https://www.inaturalist.org/photos/234559257</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/larry216\">Larry Jensen</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:INaturalist images missing SDC depicts"
+          },
+          {
+            "ns": 14,
+            "title": "Category:INaturalist images reviewed by iNaturalistReviewBot"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lycoperdon perlatum"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from GBIF"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from iNaturalist"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded with iNaturalist2Commons"
+          }
+        ]
+      },
+      "97416756": {
+        "pageid": 97416756,
+        "ns": 6,
+        "title": "File:Lycoperdon perlatum 103480348.jpg",
+        "index": 6,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1154857,
+            "width": 1536,
+            "height": 2048,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Lycoperdon_perlatum_103480348.jpg/960px-Lycoperdon_perlatum_103480348.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 640,
+            "thumbheight": 853,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Lycoperdon_perlatum_103480348.jpg/1280px-Lycoperdon_perlatum_103480348.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Lycoperdon_perlatum_103480348.jpg/960px-Lycoperdon_perlatum_103480348.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 853,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Lycoperdon_perlatum_103480348.jpg/1280px-Lycoperdon_perlatum_103480348.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/44/Lycoperdon_perlatum_103480348.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Lycoperdon_perlatum_103480348.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=97416756",
+            "sha1": "a8dad19fad9527bfcb4816f563ca54e1c48997d4",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-12-09 21:30:39",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Lycoperdon perlatum 103480348",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Lycoperdon perlatum|Luxembourg photographs taken on 2020-11-07|Fungi of Luxembourg|Agaricomycetes in Luxembourg|Media from iNaturalist|Fungi in November|INaturalist images reviewed by iNaturalistReviewBot|Uploaded with iNaturalist2Commons|Files with coordinates missing SDC location of creation (49° N, 6° E)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "49.547772",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "6.087147",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "common puffball (<i>Lycoperdon perlatum</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-11-07",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/103480348\">https://www.inaturalist.org/photos/103480348</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/1662251\">Lucille Schmitz</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Agaricomycetes in Luxembourg"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation (49° N, 6° E)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in November"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Luxembourg"
+          },
+          {
+            "ns": 14,
+            "title": "Category:INaturalist images reviewed by iNaturalistReviewBot"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Luxembourg photographs taken on 2020-11-07"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lycoperdon perlatum"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from iNaturalist"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded with iNaturalist2Commons"
+          }
+        ]
+      },
+      "113104954": {
+        "pageid": 113104954,
+        "ns": 6,
+        "title": "File:Lycoperdon perlatum 162873245.jpg",
+        "index": 8,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1304626,
+            "width": 1848,
+            "height": 2048,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Lycoperdon_perlatum_162873245.jpg/960px-Lycoperdon_perlatum_162873245.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 640,
+            "thumbheight": 709,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Lycoperdon_perlatum_162873245.jpg/1280px-Lycoperdon_perlatum_162873245.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Lycoperdon_perlatum_162873245.jpg/960px-Lycoperdon_perlatum_162873245.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 709,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Lycoperdon_perlatum_162873245.jpg/1280px-Lycoperdon_perlatum_162873245.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Lycoperdon_perlatum_162873245.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Lycoperdon_perlatum_162873245.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=113104954",
+            "sha1": "ae2a9567c9b552c1a3fad8fcb79705267e9619d7",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-12-06 06:55:53",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Lycoperdon perlatum 162873245",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Lycoperdon perlatum|Media from iNaturalist|Fungi in October|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|United States photographs taken on 2021-10-10|Lycoperdon in the United States",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "42.674981",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-78.377390",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "common puffball (<i>Lycoperdon perlatum</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-10-10",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/162873245\">https://www.inaturalist.org/photos/162873245</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/1054849\">Jay Burney</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in October"
+          },
+          {
+            "ns": 14,
+            "title": "Category:INaturalist images reviewed by iNaturalistReviewBot"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lycoperdon in the United States"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lycoperdon perlatum"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from iNaturalist"
+          },
+          {
+            "ns": 14,
+            "title": "Category:United States photographs taken on 2021-10-10"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded with iNaturalist2Commons"
+          }
+        ]
+      },
+      "134144505": {
+        "pageid": 134144505,
+        "ns": 6,
+        "title": "File:Lycoperdon perlatum 297981670.jpg",
+        "index": 3,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1068202,
+            "width": 1536,
+            "height": 2048,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Lycoperdon_perlatum_297981670.jpg/960px-Lycoperdon_perlatum_297981670.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 640,
+            "thumbheight": 853,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Lycoperdon_perlatum_297981670.jpg/1280px-Lycoperdon_perlatum_297981670.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Lycoperdon_perlatum_297981670.jpg/960px-Lycoperdon_perlatum_297981670.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 853,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Lycoperdon_perlatum_297981670.jpg/1280px-Lycoperdon_perlatum_297981670.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Lycoperdon_perlatum_297981670.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Lycoperdon_perlatum_297981670.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=134144505",
+            "sha1": "a50566f2d1b27112834eaed8acb8ed1de4a08022",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-07-08 19:33:46",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Lycoperdon perlatum 297981670",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Lycoperdon perlatum|CC-Zero|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Agaricales in Alaska|Uploaded with iNaturalist2Commons|Lycoperdon in the United States|United States photographs taken on 2023-07-07|Fungi of Alaska in July",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "58.388537",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-134.625590",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "common puffball (<i>Lycoperdon perlatum</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2023-07-07",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/297981670\">https://www.inaturalist.org/photos/297981670</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/1210028\">pynklynx</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Agaricales in Alaska"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Alaska in July"
+          },
+          {
+            "ns": 14,
+            "title": "Category:INaturalist images reviewed by iNaturalistReviewBot"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lycoperdon in the United States"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lycoperdon perlatum"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from iNaturalist"
+          },
+          {
+            "ns": 14,
+            "title": "Category:United States photographs taken on 2023-07-07"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded with iNaturalist2Commons"
+          }
+        ]
+      },
+      "95738649": {
+        "pageid": 95738649,
+        "ns": 6,
+        "title": "File:Lycoperdon perlatum 97777217.jpg",
+        "index": 4,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 977043,
+            "width": 1536,
+            "height": 2048,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Lycoperdon_perlatum_97777217.jpg/960px-Lycoperdon_perlatum_97777217.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 640,
+            "thumbheight": 853,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Lycoperdon_perlatum_97777217.jpg/1280px-Lycoperdon_perlatum_97777217.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Lycoperdon_perlatum_97777217.jpg/960px-Lycoperdon_perlatum_97777217.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 853,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Lycoperdon_perlatum_97777217.jpg/1280px-Lycoperdon_perlatum_97777217.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/40/Lycoperdon_perlatum_97777217.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Lycoperdon_perlatum_97777217.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=95738649",
+            "sha1": "dca7f1884e90d39c9dab54f0dbbe14e0306f97fd",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-11-02 11:27:14",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Lycoperdon perlatum 97777217",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Lycoperdon perlatum|CC-Zero|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Agaricales in Michigan|Uploaded with iNaturalist2Commons|United States photographs taken on 2020-09-27|Lycoperdon in the United States|Fungi of Michigan in September",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "42.338461",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-83.429194",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "common puffball (<i>Lycoperdon perlatum</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-09-27",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/97777217\">https://www.inaturalist.org/photos/97777217</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/1673632\">megachile</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Agaricales in Michigan"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Michigan in September"
+          },
+          {
+            "ns": 14,
+            "title": "Category:INaturalist images reviewed by iNaturalistReviewBot"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lycoperdon in the United States"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lycoperdon perlatum"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from iNaturalist"
+          },
+          {
+            "ns": 14,
+            "title": "Category:United States photographs taken on 2020-09-27"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded with iNaturalist2Commons"
+          }
+        ]
+      },
+      "372210": {
+        "pageid": 372210,
+        "ns": 6,
+        "title": "File:Single lycoperdon perlatum.jpg",
+        "index": 1,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 549727,
+            "width": 1444,
+            "height": 1874,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Single_lycoperdon_perlatum.jpg/960px-Single_lycoperdon_perlatum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 640,
+            "thumbheight": 831,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Single_lycoperdon_perlatum.jpg/1280px-Single_lycoperdon_perlatum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Single_lycoperdon_perlatum.jpg/960px-Single_lycoperdon_perlatum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 831,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Single_lycoperdon_perlatum.jpg/1280px-Single_lycoperdon_perlatum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/35/Single_lycoperdon_perlatum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Single_lycoperdon_perlatum.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=372210",
+            "sha1": "632a8e13e6ce588722144a5e522558680ee6f5a8",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2006-05-22 17:56:13",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Single lycoperdon perlatum",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Lycoperdon perlatum|GFDL|License migration redundant|Self-published work|Featured pictures on Wikipedia, Turkish|Featured pictures taken with compact digital camera",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "featured|potd|poty",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Lycoperdon perlatum, found in a mixed forest on sandy ground north Dorsten, Germany.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2005-10-14 14:12:34",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Daniel Ullrich, <a href=\"//commons.wikimedia.org/wiki/User:Threedots\" title=\"User:Threedots\">Threedots</a>",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "released in the GFDL and CC-by-sa-2.0-de by Daniel Ullrich, <a href=\"//commons.wikimedia.org/wiki/User:Threedots\" title=\"User:Threedots\">Threedots</a>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/licenses/by-sa/3.0/",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-2.0-DE"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0-migrated"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Featured pictures on Wikimedia Commons"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Featured pictures on Wikipedia, Turkish"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Featured pictures taken with compact digital camera"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lycoperdon perlatum"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Pictures of the Year (2006)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Pictures of the Year (candidate)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Pictures of the day (2006)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      }
+    }
+  },
+  "limits": {
+    "categories": 500
+  }
+}

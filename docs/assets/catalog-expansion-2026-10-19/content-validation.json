@@ -1,0 +1,34 @@
+[
+  {
+    "id": "species-traits",
+    "keys": [
+      "value",
+      "needsReview"
+    ],
+    "needsReview": true
+  },
+  {
+    "id": "media",
+    "keys": [
+      "value",
+      "needsReview"
+    ],
+    "needsReview": false
+  },
+  {
+    "id": "plants",
+    "keys": [
+      "value",
+      "needsReview"
+    ],
+    "needsReview": true
+  },
+  {
+    "id": "animals",
+    "keys": [
+      "value",
+      "needsReview"
+    ],
+    "needsReview": true
+  }
+]
