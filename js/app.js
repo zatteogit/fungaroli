@@ -1086,12 +1086,12 @@ function weatherWork(text,busy=false,done=false){
   box.hidden=!text;box.classList.toggle('busy',busy);box.classList.toggle('done',done);box.querySelector('.weather-work-label').textContent=text||'';
   if(done)weatherWorkTimer=setTimeout(()=>{box.hidden=true;box.classList.remove('done');},3000);
 }
-// la nota sul meteo (vecchio, parziale) sta sotto la riga del meteo in home; nelle altre viste resta in cima
+// In home la nota breve condivide la riga del meteo; la mappa ha il suo approfondimento.
 let staleHome=null;
 function placeStale(view){
-  const box=$('#stale'),line=document.querySelector('.view[data-view="uscite"] .view-sub');if(!box||!line)return;
+  const box=$('#stale'),line=document.querySelector('.view[data-view="uscite"] .home-weather-status');if(!box||!line)return;
   staleHome??={parent:box.parentElement,next:box.nextSibling};
-  if(view==='uscite'){if(box.previousElementSibling!==line)line.after(box);}
+  if(view==='uscite'){if(box.parentElement!==line)line.append(box);}
   else if(view==='mappa'){ const target=$('#map-weather-detail'); if(target&&box.parentElement!==target)target.append(box); }
   else if(box.parentElement!==staleHome.parent)staleHome.parent.insertBefore(box,staleHome.next);
 }
@@ -1101,12 +1101,13 @@ function weatherStamp(w,busy=weatherBusy,done=false){
   if(!w||!Number.isFinite(w.fetchedAt?.getTime()))return;
   const sameDay=todayISO(w.fetchedAt)===todayISO();
   const when=w.fetchedAt.toLocaleString('it-IT',sameDay?{hour:'2-digit',minute:'2-digit'}:{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});
-  $('#updated').textContent=busy?WX_BUSY:`${done?WX_DONE:w.cached||w.offline?'Dati meteo salvati':'Dati meteo'} · ${when}`;
+  $('#updated').textContent=busy?WX_BUSY:`${done?'Meteo aggiornato':w.cached||w.offline?'Meteo salvato':'Meteo'} · ${when}`;
   $('#refresh').classList.toggle('is-done',!!done);
   $('#refresh').setAttribute('aria-busy',String(busy));
   $('#refresh').title='Meteo acquisito '+w.fetchedAt.toLocaleString('it-IT')+'. Tocca per aggiornarlo.';
   $('#stale').hidden=!w.stale&&!w.missingZones?.length;
-  $('#stale').textContent=w.missingZones?.length?`Meteo disponibile per ${weatherZones.length-w.missingZones.length} ${weatherZones.length-w.missingZones.length===1?'zona':'zone'} su ${weatherZones.length}. Le altre non vengono valutate. `:busy?'Dati salvati; aggiornamento in corso.':'Dati meteo da aggiornare. Oltre 24 ore l’indice dei funghi non viene calcolato.';
+  $('#stale').textContent=w.missingZones?.length?`Meteo parziale: ${weatherZones.length-w.missingZones.length}/${weatherZones.length} zone. `:busy?'Aggiornamento…':'Meteo da aggiornare. ';
+  $('#stale').title=w.missingZones?.length?'Le zone senza meteo non vengono valutate.':'Oltre 24 ore l’indice dei funghi non viene calcolato.';
   if(!$('#stale').hidden&&!busy){const retry=document.createElement('button');retry.type='button';retry.className='link-btn';retry.textContent='Riprova';retry.onclick=()=>refreshWeather(true);$('#stale').append(retry);}
 }
 // nel dettaglio della zona: età del meteo e copia salvata senza rete (in home lo dice la riga sotto il titolo)
@@ -1527,20 +1528,26 @@ function dayChips(box, selected, onPick, { withAll = false } = {}) {
 
 // Un riscontro anche su iOS, dove le View Transitions sono disattivate.
 const dateFeedbackAnimations = new WeakMap();
+let dateFeedbackRevision=0;
 function dateChangeFeedback(calendar, content = '') {
+  const revision=++dateFeedbackRevision;
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  const selected = document.querySelector(calendar);
-  const animate = (el, frames, duration) => {
-    if (!el || !el.getClientRects().length) return;
-    dateFeedbackAnimations.get(el)?.cancel();
-    dateFeedbackAnimations.set(el, el.animate(frames, {duration, easing:'ease-out'}));
-  };
-  animate(selected, [{transform:'scale(.97)'},{transform:'scale(1.025)',offset:.5},{transform:'scale(1)'}], 240);
-  if (content) document.querySelectorAll(content).forEach(el => animate(el, [{opacity:.4,transform:'translateY(4px)'},{opacity:1,transform:'translateY(0)'}], 220));
+  // Il nuovo DOM deve essere visibile prima del riscontro, anche senza snapshot su iOS.
+  requestAnimationFrame(()=>{
+    if(revision!==dateFeedbackRevision)return;
+    const animate = (el, frames, duration) => {
+      if (!el?.isConnected || !el.getClientRects().length) return;
+      dateFeedbackAnimations.get(el)?.cancel();
+      dateFeedbackAnimations.set(el, el.animate(frames, {duration, easing:'ease-out'}));
+    };
+    const selected=document.querySelector(calendar);
+    animate(selected, [{transform:'scale(.95)',backgroundColor:'var(--surface-2)'},{transform:'scale(1.025)',offset:.45},{transform:'scale(1)'}], 380);
+    if(content)document.querySelectorAll(content).forEach(el=>animate(el,[{opacity:.45,transform:'translateY(6px)'},{opacity:1,transform:'translateY(0)'}],320));
+  });
 }
 
 function renderDays() {
-  dayChips($('#days'), state.homeDay, (o) => { homeDateManual = true; if (o === state.homeDay) return; soft(() => { state.homeDay = o; checkSavedSeason(); renderAll(); dateChangeFeedback('#days [aria-selected="true"]', '#hero .cover-body, #hero .cover-index'); }); }, { withAll: true });
+  dayChips($('#days'), state.homeDay, (o) => { homeDateManual = true; if (o === state.homeDay) return; state.homeDay = o; checkSavedSeason(); renderAll(); $('#days [aria-selected="true"]')?.focus({preventScroll:true}); dateChangeFeedback('#days [aria-selected="true"]', '#hero'); }, { withAll: true });
 }
 
 function combosList() {
