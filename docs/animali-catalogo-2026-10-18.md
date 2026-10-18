@@ -123,3 +123,19 @@ catalogo, rail di cinque sezioni, filtri, dettaglio/fonti/back, bozze escluse e
 ricerca per nomi/caratteri a 320/390/768 px nei temi chiaro e scuro. Dry-run
 Wrangler completato con configurazione locale in `/tmp`. Nessun deploy o merge
 eseguito da questo ramo. Safari reale non disponibile per verifica fisica.
+
+
+## Valutazione indipendente del coordinatore · 18 ottobre 2026
+
+Il coordinatore ha letto indipendentemente ISS-Z, ISS-P, RER-V, UNIBO-G,
+UNIBO-B, BCT-B, APAM-F, MAD-F, LAZ-C, LAZ-L e PNALM-L e ha riscontrato
+coerenza tra le fonti e le claim selezionate per il catalogo. Questa verifica
+riguarda i contenuti presenti, non certifica una determinazione zoologica o un
+protocollo sanitario. Nessun calendario, dato di frequenza o presenza sul
+sentiero è trasferito dai contesti delle fonti. Le quattro bozze restano escluse
+da catalogo, ricerca e apertura diretta.
+
+La revisione UI mantiene frecce delle card in SVG monocromatico a 18 px (nessuna
+dipendenza da glifi del font), font display del sistema e token semantici
+`--warn-ink` / `--warn-bg` per le cautele. I richiami numerati delle fonti hanno
+area interattiva minima 24 × 24 px, mantenendo la citazione nella riga di lettura.
