@@ -404,10 +404,10 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 .fungus-compare .cmp-variant-status { display:block; margin-top:8px; color:var(--text-2); font:400 12px/1.5 var(--font-body); }
 .fungus-compare .cmp-variant-status:empty { display:none; }
 @supports(grid-template-rows:subgrid) {
-  .fungus-compare .cmp-row[data-trait="cap_color"]:has(.cmp-variant-fields) > .cmp-cell { display:grid; grid-template-rows:subgrid; grid-row:span 3; row-gap:0; }
-  .fungus-compare .cmp-row[data-trait="cap_color"]:has(.cmp-variant-fields) > .cmp-cell > .cmp-part-art { grid-row:1; }
-  .fungus-compare .cmp-row[data-trait="cap_color"]:has(.cmp-variant-fields) > .cmp-cell > .cmp-variant-controls { grid-row:2; }
-  .fungus-compare .cmp-row[data-trait="cap_color"]:has(.cmp-variant-fields) > .cmp-cell > .cmp-vals { grid-row:3; align-self:start; }
+  .fungus-compare .cmp-row:is([data-trait="cap_color"],[data-trait="cap_shape"],[data-trait="hymenophore_color"]):has(.cmp-variant-fields) > .cmp-cell { display:grid; grid-template-rows:subgrid; grid-row:span 3; row-gap:0; }
+  .fungus-compare .cmp-row:is([data-trait="cap_color"],[data-trait="cap_shape"],[data-trait="hymenophore_color"]):has(.cmp-variant-fields) > .cmp-cell > .cmp-part-art { grid-row:1; }
+  .fungus-compare .cmp-row:is([data-trait="cap_color"],[data-trait="cap_shape"],[data-trait="hymenophore_color"]):has(.cmp-variant-fields) > .cmp-cell > .cmp-variant-controls { grid-row:2; }
+  .fungus-compare .cmp-row:is([data-trait="cap_color"],[data-trait="cap_shape"],[data-trait="hymenophore_color"]):has(.cmp-variant-fields) > .cmp-cell > .cmp-vals { grid-row:3; align-self:start; }
 }
 
 .fungus-compare .cmp-variant-fields .ts-dots { min-width:0; flex-wrap:wrap; }

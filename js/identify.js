@@ -202,26 +202,23 @@ function comparisonIllustration(key, part, shape) {
 const comparisonVariants = new Map();
 function comparisonVariantState(key) {
   if (!comparisonVariants.has(key)) {
-    const record = ICONS?.[key];
-    comparisonVariants.set(key, {color:record?.colors?.drawn || record?.base?.colore, shape:record?.shapes?.drawn || record?.base?.forma});
+    const record = ICONS?.[key], traits = TAXA.find(t=>t.key===key)?.traits || {};
+    comparisonVariants.set(key, {color:record?.colors?.drawn || record?.base?.colore || [].concat(traits.cap_color || [])[0], shape:record?.shapes?.drawn || record?.base?.forma || [].concat(traits.cap_shape || [])[0], underColor:[].concat(traits.hymenophore_color || [])[0]});
   }
   return comparisonVariants.get(key);
 }
-function comparisonControls(t, preview=false) {
-  const record = ICONS?.[t.key];
-  if (!record) return '';
+function comparisonControls(t, trait='cap_color') {
   const chosen = comparisonVariantState(t.key);
-  const fields = [['color','colors','cap_color','Colore'],['shape','shapes','cap_shape','Forma']].map(([key,field,trait,label]) => {
-    const values = (record[field]?.values || []).filter(v => [].concat(t.traits?.[trait] || []).includes(v));
-    if (values.length < 2) return '';
-    return `<div class="ts-dots${key==='shape'?' ts-forms':''}" role="group" aria-label="${label} del disegno: ${esc(t.name||t.latin)}">${values.map(v=>`<button type="button" class="${key==='color'?'ts-dot ts-chip':'ts-form'}"${key==='color'?` style="--c:${esc(COLORS[v]?.[1] || 'var(--muted)')}"`:''} data-cmp-variant="${key}" data-cmp-variant-key="${esc(t.key)}" value="${esc(v)}" aria-pressed="${chosen[key]===v}">${esc(optLabel(QK(trait),v))}</button>`).join('')}</div>`;
-  }).join('');
-  if (!fields) return '';
-  return `${preview?`<span class="cmp-part-art" data-cmp-ill-key="${esc(t.key)}" data-cmp-ill-part="cappello" aria-hidden="true">${comparisonIllustration(t.key,'cappello')}</span>`:''}<div class="cmp-variant-fields">${fields}</div><span class="cmp-variant-status" role="status"></span>`;
+  const [key,label] = {cap_color:['color','Colore del cappello'],cap_shape:['shape','Forma del cappello'],hymenophore_color:['underColor','Colore sotto il cappello']}[trait];
+  const values = [].concat(t.traits?.[trait] || []);
+  if (values.length < 2) return '';
+  if (!values.includes(chosen[key])) chosen[key]=values[0];
+  const fields = `<div class="ts-dots${key==='shape'?' ts-forms':''}" role="group" aria-label="${label}: ${esc(t.name||t.latin)}">${values.map(v=>`<button type="button" class="${key==='shape'?'ts-form':'ts-dot ts-chip'}"${key!=='shape'?` style="--c:${esc(COLORS[v]?.[1] || 'var(--muted)')}"`:''} data-cmp-variant="${key}" data-cmp-variant-key="${esc(t.key)}" value="${esc(v)}" aria-pressed="${chosen[key]===v}">${esc(optLabel(QK(trait),v))}</button>`).join('')}</div>`;
+  return `<div class="cmp-variant-fields">${fields}</div><span class="cmp-variant-status" role="status"></span>`;
 }
 function updateComparisonVariant(control, gallery) {
-  const key = control.dataset.cmpVariantKey, record = ICONS?.[key];
-  if (!record) return;
+  const key = control.dataset.cmpVariantKey, record = ICONS?.[key] || {}, t = TAXA.find(t=>t.key===key);
+  if (!t) return;
   const chosen = comparisonVariantState(key);
   chosen[control.dataset.cmpVariant] = control.value;
   const c0 = record.colors?.drawn || record.base?.colore, f0 = record.shapes?.drawn || record.base?.forma;
@@ -235,11 +232,25 @@ function updateComparisonVariant(control, gallery) {
   const controls = [...gallery.querySelectorAll('[data-cmp-controls]')].filter(el=>el.dataset.cmpControls===key);
   for (const group of controls) {
     group.querySelectorAll('[data-cmp-variant]').forEach(button=>button.setAttribute('aria-pressed',String(button.value===chosen[button.dataset.cmpVariant])));
-    group.querySelector('.cmp-variant-status').textContent = missing ? 'Questa combinazione non è disegnata: la forma è mostrata nel colore di base.' : '';
+    group.querySelector('.cmp-variant-status').textContent = '';
   }
   gallery.querySelectorAll('[data-cmp-ill-key]').forEach(slot=>{
     const part = slot.dataset.cmpIllPart;
-    if (slot.dataset.cmpIllKey!==key || slot.dataset.cmpIllValue || !['cappello','gambo'].includes(part)) return;
+    if (slot.dataset.cmpIllKey!==key || slot.dataset.cmpIllValue) return;
+    if (part==='sotto') {
+      if (control.dataset.cmpVariant==='underColor') { slot.dataset.variantWanted='schematic'; slot.innerHTML=hymArt([].concat(t.traits?.hymenophore || [])[0],[chosen.underColor]); }
+      return;
+    }
+    if (!['cappello','gambo'].includes(part) || control.dataset.cmpVariant==='underColor') return;
+    slot.dataset.variantWanted='';
+    const colorAvailable = !c || c===c0 || record.colors?.values?.includes(c);
+    const shapeAvailable = !f || f===f0 || record.shapes?.values?.includes(f);
+    if (!ICONS?.[key] || !colorAvailable || !shapeAvailable || missing) {
+      if (part==='cappello') slot.innerHTML=capArt([f || [].concat(t.traits?.cap_shape || [])[0]],[c || [].concat(t.traits?.cap_color || [])[0]],t.traits?.cap_veil===true);
+      for (const group of controls) group.querySelector('.cmp-variant-status').textContent='Variante mostrata con un disegno schematico.';
+      return;
+    }
+    if (!slot.querySelector('img')) slot.innerHTML=illus(key,part);
     const image = slot.querySelector('img');
     if (!image) return;
     const url = ASSET(`assets/traits/${key}-${part}${suffix}.webp`);
@@ -260,10 +271,10 @@ function refreshComparisonParts() {
   document.querySelectorAll('[data-cmp-controls]').forEach(slot=>{
     if (slot.firstElementChild) return;
     const t = TAXA.find(t=>t.key===slot.dataset.cmpControls);
-    if (t) slot.innerHTML = comparisonControls(t,slot.dataset.cmpPreview==='1');
+    if (t) slot.innerHTML = comparisonControls(t,slot.dataset.cmpTrait);
   });
   document.querySelectorAll('[data-cmp-ill-key]').forEach(slot => {
-    if (slot.querySelector('img')) return;
+    if (slot.querySelector('img') || slot.dataset.variantWanted!==undefined || slot.querySelector('svg')&&!slot.dataset.cmpIllValue) return;
     const image = comparisonIllustration(slot.dataset.cmpIllKey, slot.dataset.cmpIllPart, slot.dataset.cmpIllValue);
     if (image) slot.innerHTML = image;
   });
@@ -847,7 +858,6 @@ const CMP = [
   { key: 'season', k: 'Stagione', info: true },
 ];
 function cmpRows(ref, t) {
-  const hasColorRow = ref.traits?.cap_color?.length && t.traits?.cap_color?.length;
   return CMP.map((r) => {
     const a = r.get ? r.get(ref) : ref.traits?.[r.key], b = r.get ? r.get(t) : t.traits?.[r.key];
     if (a == null || b == null || (Array.isArray(a) && !a.length) || (Array.isArray(b) && !b.length)) return null;
@@ -861,10 +871,10 @@ function cmpRows(ref, t) {
     // I valori comuni precedono gli altri, nello stesso ordine sui due lati.
     const say = (v) => (r.bool ? withOut(r.key, v) : r.say ? r.say(v) : String(v));
     const value = (v, who, common) => `<li class="cmp-option"><span class="cmp-v ${common ? 'common' : 'own'}"><span class="cmp-relation" aria-hidden="true">${common?'=':'≠'}</span>${CMP_PARTS[r.key] && ['cap_color','hymenophore_color'].includes(r.key) && COLORS[v] ? `<i class="cmp-color-dot" style="--cmp-color:${esc(COLORS[v][1])}" aria-hidden="true"></i>` : ''}${r.art ? `<span class="cmp-v-art${r.key==='cap_shape'?' cmp-shape-art':''}"${r.key==='cap_shape'?` data-cmp-ill-key="${esc(who.key)}" data-cmp-ill-part="cappello" data-cmp-ill-value="${esc(v)}"`:''} aria-hidden="true">${r.key==='cap_shape' && comparisonIllustration(who.key,'cappello',v) || r.art([v], who) || ''}</span>` : ''}<span class="cmp-value-text">${esc(say(v))}</span><span class="sr-only">${common ? ', in comune' : ', valore diverso nel confronto'}</span></span></li>`;
-    const illustration = who => CMP_PARTS[r.key] ? `<span class="cmp-part-art" data-cmp-ill-key="${esc(who.key)}" data-cmp-ill-part="${CMP_PARTS[r.key]}" aria-hidden="true">${ICONS?.[who.key] ? illus(who.key,CMP_PARTS[r.key]) : ''}</span>` : '';
+    const illustration = who => r.key==='cap_shape' ? `<span class="cmp-part-art" data-cmp-ill-key="${esc(who.key)}" data-cmp-ill-part="cappello" aria-hidden="true">${comparisonIllustration(who.key,'cappello',comparisonVariantState(who.key).shape) || capArt([comparisonVariantState(who.key).shape],[comparisonVariantState(who.key).color],who.traits?.cap_veil===true)}</span>` : CMP_PARTS[r.key] ? `<span class="cmp-part-art" data-cmp-ill-key="${esc(who.key)}" data-cmp-ill-part="${CMP_PARTS[r.key]}" aria-hidden="true">${r.key==='hymenophore_color' && [].concat(who.traits?.hymenophore_color || []).length>1 ? hymArt([].concat(who.traits?.hymenophore || [])[0],[comparisonVariantState(who.key).underColor]) : ICONS?.[who.key] ? illus(who.key,CMP_PARTS[r.key]) : ''}</span>` : '';
     const cell = (X, Y, who) => r.key === 'season'
       ? `<div class="cmp-cell" role="group" aria-label="${esc(who.name||who.latin)}"><span>${esc(txt(X))}</span></div>`
-      : `<div class="cmp-cell${['hymenophore','stem_ring','stem_volva','stem_reticulum','stem_base','gill_attachment','cap_size'].includes(r.key)?' cmp-cell-miniature':''}" role="group" aria-label="${esc(who.name||who.latin)}">${r.label ? `<span class="cmp-k">${esc(r.label(who))}</span>` : ''}${illustration(who)}${r.key==='cap_color'||r.key==='cap_shape'&&!hasColorRow?`<div class="cmp-variant-controls" data-cmp-controls="${esc(who.key)}" data-cmp-preview="${r.key==='cap_shape'?'1':'0'}">${comparisonControls(who,r.key==='cap_shape')}</div>`:''}<ul class="cmp-vals">${[...A.filter((v) => Y.includes(v) && X.includes(v)), ...X.filter((v) => !Y.includes(v))].map(v => value(v, who, !differentStructure && Y.includes(v))).join('')}</ul></div>`;
+      : `<div class="cmp-cell${['hymenophore','stem_ring','stem_volva','stem_reticulum','stem_base','gill_attachment','cap_size'].includes(r.key)?' cmp-cell-miniature':''}" role="group" aria-label="${esc(who.name||who.latin)}">${r.label ? `<span class="cmp-k">${esc(r.label(who))}</span>` : ''}${illustration(who)}${['cap_color','cap_shape','hymenophore_color'].includes(r.key)?`<div class="cmp-variant-controls" data-cmp-controls="${esc(who.key)}" data-cmp-trait="${r.key}">${comparisonControls(who,r.key)}</div>`:''}<ul class="cmp-vals">${[...A.filter((v) => Y.includes(v) && X.includes(v)), ...X.filter((v) => !Y.includes(v))].map(v => value(v, who, !differentStructure && Y.includes(v))).join('')}</ul></div>`;
     return { kind, info:!!r.info, k: r.k, html: `<li class="cmp-row ${kind}" data-trait="${r.key}">${r.label ? '' : `<span class="cmp-k">${esc(r.k)}</span>`}${cell(A, B, ref)}${cell(B, A, t)}</li>` };
   }).filter(Boolean);
 }
