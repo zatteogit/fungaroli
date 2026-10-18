@@ -1839,12 +1839,19 @@ html.theme-swap, html.theme-swap *, html.theme-swap *::before, html.theme-swap *
 @keyframes toast-countdown { from { transform: scaleX(1); } to { transform: scaleX(0); } }
 @media (prefers-reduced-motion: reduce) { .app-toast .toast-timer { animation-timing-function: steps(9, end); } }
 /* ===== Invito a installare: a tutto schermo sul telefono, finestra centrata su desktop ===== */
-.install-invite { width: 100vw; max-width: none; height: 100dvh; max-height: none; margin: 0; padding: 0; border: 0; color: #f7f4ea; overflow: auto;
+.install-invite { position: fixed; inset: auto; top: var(--iv-top, 0px); left: var(--iv-left, 0px); width: var(--iv-width, 100vw); max-width: none;
+  height: var(--iv-height, 100dvh); max-height: none; margin: 0; padding: 0; border: 0; color: #f7f4ea; overflow: hidden;
   background: radial-gradient(120% 70% at 50% 0%, #2d4a33 0%, #16261b 55%, #0f1a12 100%); }
 .install-invite::backdrop { background: rgb(0 0 0 / .6); }
-.install-invite[open] { animation: iv-in .35s var(--ease-out, ease) both; }
-@keyframes iv-in { from { opacity: 0; transform: translateY(24px); } }
-.iv-in { min-height: 100%; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; gap: 16px; padding: calc(28px + env(safe-area-inset-top)) 22px calc(22px + env(safe-area-inset-bottom)); max-width: 460px; margin: 0 auto; text-align: center; }
+.install-invite[open] { display: grid; grid-template-rows: auto minmax(0, 1fr); animation: iv-in .2s ease both; }
+@keyframes iv-in { from { opacity: 0; } }
+.iv-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: calc(8px + env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) 8px max(20px, env(safe-area-inset-left, 0px)); }
+.iv-toolbar > span { font-size: 14px; font-weight: 600; }
+.iv-close { flex: none; display: grid; place-items: center; width: 44px; height: 44px; padding: 10px; border: 1px solid rgb(255 255 255 / .25); border-radius: 50%; background: rgb(255 255 255 / .1); color: inherit; cursor: pointer; }
+.iv-close svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+.iv-close:focus-visible, .iv-later:focus-visible { outline: 3px solid #9be34c; outline-offset: 3px; }
+.iv-scroll { min-height: 0; overflow: auto; overscroll-behavior: contain; scroll-padding: 16px; }
+.iv-in { box-sizing: border-box; display: flex; flex-direction: column; align-items: center; gap: 16px; padding: 8px max(22px, env(safe-area-inset-right, 0px)) calc(24px + env(safe-area-inset-bottom, 0px)) max(22px, env(safe-area-inset-left, 0px)); max-width: 500px; margin: 0 auto; text-align: center; }
 .iv-icon { border-radius: 22px; box-shadow: 0 10px 30px rgb(0 0 0 / .4); margin-top: 8px; }
 .install-invite h2 { font-family: var(--font-display); font-size: 30px; line-height: 1.1; margin: 0; letter-spacing: -0.01em; }
 .iv-why { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; font-size: 15px; text-align: left; }
@@ -1863,20 +1870,25 @@ html.theme-swap, html.theme-swap *, html.theme-swap *::before, html.theme-swap *
 .iv-ic svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .iv-note { margin: 12px 0 0; font-size: 13px; opacity: .8; }
 .iv-copy { margin-top: 12px; width: 100%; }
-.iv-later { margin-top: auto; padding: 10px; border: 0; background: none; color: inherit; font: inherit; font-size: 13.5px; opacity: .6; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.iv-later { margin-top: 0; min-height: 44px; padding: 10px; border: 0; background: none; color: inherit; font: inherit; font-size: 14px; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
 .iv-later:hover { opacity: .9; }
-/* freccia che indica dove sta il primo bottone nella barra del browser */
-.iv-point { position: fixed; z-index: 2; width: 44px; height: 44px; color: #9be34c; pointer-events: none; animation: iv-bob 1.2s ease-in-out infinite; filter: drop-shadow(0 2px 6px rgb(0 0 0 / .5)); }
-.iv-point svg { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
-.iv-down { left: calc(50% - 22px); bottom: calc(6px + env(safe-area-inset-bottom)); }
-.iv-up { left: calc(50% - 22px); top: calc(2px + env(safe-area-inset-top)); transform: rotate(180deg); animation-name: iv-bob-up; }
-@keyframes iv-bob { 50% { transform: translateY(8px); } }
-@keyframes iv-bob-up { 0%, 100% { transform: rotate(180deg); } 50% { transform: rotate(180deg) translateY(8px); } }
-@media (prefers-reduced-motion: reduce) { .install-invite[open], .iv-point { animation: none; } }
-@media (min-width: 761px) {
-  .install-invite { width: min(520px, calc(100vw - 48px)); height: fit-content; max-height: calc(100vh - 48px); margin: auto; border-radius: 28px; box-shadow: var(--shadow-2); }
-  .iv-in { min-height: 0; padding: 32px 28px 20px; }
-  .iv-point { display: none; }
+@media (prefers-reduced-motion: reduce) { .install-invite[open] { animation: none; } }
+@media (min-width: 761px) and (min-height: 600px) {
+  .install-invite { top: calc(var(--iv-top, 0px) + 24px); left: calc(var(--iv-left, 0px) + (var(--iv-width, 100vw) - min(560px, var(--iv-width, 100vw) - 48px)) / 2);
+    width: min(560px, calc(var(--iv-width, 100vw) - 48px)); height: auto; max-height: calc(var(--iv-height, 100dvh) - 48px); border-radius: 28px; box-shadow: var(--shadow-2); }
+  .iv-toolbar { padding: 12px 20px 4px; }
+}
+@media (max-height: 700px) {
+  .iv-in { gap: 14px; }
+  .iv-icon { width: 56px; height: 56px; border-radius: 16px; margin-top: 0; }
+  .install-invite h2 { font-size: 26px; }
+}
+@media (orientation: landscape) and (max-height: 599px) and (min-width: 640px) {
+  .iv-in { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); max-width: 940px; align-items: start; text-align: left; }
+  .iv-icon { display: none; }
+  .iv-in h2, .iv-why, .iv-go { grid-column: 1; }
+  .iv-how { grid-column: 2; grid-row: 1 / span 4; }
+  .iv-later { grid-column: 1 / -1; justify-self: center; }
 }
 .install-invite h2:focus { outline: none; }
 .lg-cells { flex-basis: 100%; display: flex; gap: 8px; align-items: flex-start; font-size: 12.5px; color: var(--muted); }
@@ -1945,9 +1957,6 @@ html.theme-swap, html.theme-swap *, html.theme-swap *::before, html.theme-swap *
 .mtt-f { margin: 8px 0 0; padding-top: 8px; border-top: 1px solid var(--hair); font-size: 12px; color: var(--muted); }
 .leaflet-cells-pane, .leaflet-cells-pane canvas { pointer-events: none !important; }
 .cell-hi { pointer-events: none; filter: drop-shadow(0 1px 3px rgb(0 0 0 / .45)); }
-/* spazio per la freccia dell'invito: non deve coprire il link in fondo ne' l'icona in alto */
-.install-invite:has(.iv-down) .iv-in { padding-bottom: calc(64px + env(safe-area-inset-bottom)); }
-.install-invite:has(.iv-up) .iv-in { padding-top: calc(60px + env(safe-area-inset-top)); }
 /* ===== Mappa su telefono: tutto lo spazio alla carta ===== */
 .chip-day { display: none; }
 .tabbar { transition: transform .3s cubic-bezier(.2, .8, .2, 1), opacity .2s; }

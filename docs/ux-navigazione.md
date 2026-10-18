@@ -94,3 +94,29 @@ Al primo ingresso si inquadrano le zone compatibili con i filtri, comprese le lo
 L’indice `#/diario` mostra card sintetiche con data, luogo, due righe di testo e pochi dati strutturati. Ogni card apre una pagina `#/diario/pagina/<id>`: testo completo, scheda collegata, dati di campo e azioni. Modifica, copia, eliminazione e condivisione stanno nel dettaglio. Il ritorno conserva ricerca e filtro. Le fotografie di catalogo sono dichiarate come tali e rimandano alla scheda con i crediti.
 
 “Diario di prova” apre `#/diario/esempio`, con 14 pagine fittizie e dettagli navigabili. Gli esempi restano esclusivamente nel renderer: non vengono scritti nello storage, esportati, passati alla personalizzazione o inviati alla community. Nel dettaglio reale, quando l’osservazione è condivisibile, uno switch mostra il consenso alla condivisione con community Fronda; il testo resta privato.
+
+### Testata della home durante lo scroll
+
+Su telefono e tablet, quando «Dove andare» supera la barra superiore, il titolo
+compatto e il comando Filtri sostituiscono logo e azioni generali. La barra resta
+visibile in entrambe le direzioni di scroll, come nelle viste operative; non si
+aggiunge un secondo blocco sticky con calendario e preferenze. Tornando sopra il
+titolo riappare la testata iniziale. Il conteggio e il pannello dei filtri sono
+condivisi e la chiusura restituisce il focus al comando visibile senza spostare la
+pagina. Sul desktop restano navigazione e testata estese.
+
+Scopri usa un libro aperto come icona: rappresenta cataloghi, caratteri e guide di
+funghi, piante e alberi. La foglia è riservata ai contenuti botanici; il Taccuino
+usa una stilo con pennino per richiamare la scrittura, la Mappa una carta ripiegata.
+
+### Tavola illustrata dei caratteri dei funghi
+
+La panoramica usa una griglia di sette unità: cappello largo quattro, dettagli
+larghi tre. Il cappello si incastra con sotto-cappello e gambo impilati; al taglio
+e sporata completano una coppia di larghezze differenti. Le altezze dipendono dai
+contenuti, senza tagliare testi o varianti, né cambiare l’ordine di lettura del DOM.
+Bordi leggeri, illustrazione principale più grande e selettori distinti; il colore
+pieno segnala la variante selezionata. Anello, volva e reticolo si leggono in righe
+presente/assente esclusivamente quando il relativo dato è booleano documentato.
+Le fasi di crescita mantengono la propria galleria. Benchmark e motivazioni in
+[griglia-caratteri-2026-10-18.md](griglia-caratteri-2026-10-18.md).

@@ -316,7 +316,7 @@ document.addEventListener('click', (e) => {
     });
   }
   const li = strip.querySelector('li:has(.ts-dots)'); let note = li?.querySelector('.ts-note');
-  if (li && missing && !note) { note = document.createElement('span'); note.className = 'ts-note'; li.querySelector('.ts-dots').after(note); }
+  if (li && missing && !note) { note = document.createElement('span'); note.className = 'ts-note'; (li.querySelector('.ts-controls') || li).append(note); }
   if (note) { note.hidden = !missing; note.textContent = missing ? 'Colore non ancora disegnato per questa forma' : ''; }
 });
 let CITES = {};
@@ -516,7 +516,7 @@ function diffs(ref, t) {
 export function traitStrip(edibleId, t = refOf(edibleId)) {
   if (!t) return '';
   const tr = t.traits || {};
-  const tile = (art, k, v, sub = '', extra = '') => `<li><span class="ts-art" aria-hidden="true">${art}</span>${extra}<span class="ts-k" data-no-glossary>${esc(k)}</span><span class="ts-v">${esc(v)}</span>${sub ? `<span class="ts-sub">${esc(sub)}</span>` : ''}</li>`;
+  const tile = (art, k, v, sub = '', extra = '', kind = '', facts = '') => `<li class="ts-card${kind ? ` ts-card-${kind}` : ''}"><span class="ts-k" data-no-glossary>${esc(k)}</span><span class="ts-art" aria-hidden="true">${art}</span>${v || facts ? `<span class="ts-v">${facts || esc(v)}</span>` : ''}${sub ? `<span class="ts-sub">${esc(sub)}</span>` : ''}${extra ? `<span class="ts-controls">${extra}</span>` : ''}</li>`;
   const out = [];
   const one = (q, v) => optLabel(q, v);
   const Q = (k) => QUESTIONS.find((q) => q.key === k);
@@ -524,20 +524,22 @@ export function traitStrip(edibleId, t = refOf(edibleId)) {
   const pick = (field, q, label, dot) => {
     const g = ic?.[field];
     if (!g || g.values.length < 2) return '';
-    return `<span class="ts-dots${dot ? '' : ' ts-forms'}" role="group" aria-label="${label}">${g.values.map((v) => {
-      const name = esc(one(Q(q), v));
+    return `<span class="ts-variant-group"><span class="ts-control-label">${dot?'Colore':'Forma'}</span><span class="ts-dots${dot ? '' : ' ts-forms'}" role="group" aria-label="${label}">${g.values.map((v) => {
+      const name = esc(one(Q(q), v)), frequency=t.trait_freq?.[q]?.[v];
       // pillola con il colore e il suo nome: su telefono un pallino da solo è un bersaglio troppo piccolo e muto
-      return `<button type="button" class="${dot ? 'ts-dot ts-chip' : 'ts-form'}"${dot ? ` style="--c:${COLORS[v]?.[1] || '#999'}"` : ''} aria-pressed="${v === g.drawn}" data-ill-key="${esc(t.key)}" data-ill-v="${esc(v)}" data-ill-drawn="${esc(g.drawn)}">${name}</button>`;
-    }).join('')}</span>`;
+      return `<button type="button" class="${dot ? 'ts-dot ts-chip' : 'ts-form'}"${dot ? ` style="--c:${COLORS[v]?.[1] || '#999'}"` : ''} aria-pressed="${v === g.drawn}" data-ill-key="${esc(t.key)}" data-ill-v="${esc(v)}" data-ill-drawn="${esc(g.drawn)}">${dot ? `<span class="ts-choice-label">${name}${frequency ? `<small>${esc(frequency)}</small>` : ''}</span>` : name}</button>`;
+    }).join('')}</span></span>`;
   };
   const dots = pick('colors', 'cap_color', 'Colori del cappello descritti dalle fonti', true) + pick('shapes', 'cap_shape', 'Forme del cappello descritte dalle fonti', false);
+  // Un selettore completo espone già valori e frequenze: evita la stessa lista due volte.
+  const covered = (field,key) => ic?.[field]?.values?.length > 1 && [].concat(tr[key] || []).every(v=>ic[field].values.includes(v));
   // cappello: la sua forma, nei suoi colori, con le verruche se ci sono; sotto forma e diametro
   if (tr.cap_color || tr.cap_shape) {
     const shapes = [].concat(tr.cap_shape || ['convesso']), cols = [].concat(tr.cap_color || ['bruno']);
     // con la frequenza dalle fonti: «rosso (di solito), arancio (a volte) o giallo (di rado)»
     const freq = (field, q, v) => { const w = t.trait_freq?.[field]?.[v]; return one(q, v) + (w ? ` (${w})` : ''); };
-    out.push(tile(ic ? illus(t.key, 'cappello') : capArt(shapes, cols, tr.cap_veil === true), 'Cappello', orList([].concat(tr.cap_color || []).map((v) => freq('cap_color', Q('cap_color'), v))) || '',
-      [orList([].concat(tr.cap_shape || []).slice(0, 2).map((v) => optLabel(Q('cap_shape'), v))), sizeTxt(tr.cap_size)].filter(Boolean).join(' · '), dots));
+    out.push(tile(ic ? illus(t.key, 'cappello') : capArt(shapes, cols, tr.cap_veil === true), 'Cappello', covered('colors','cap_color') ? '' : orList([].concat(tr.cap_color || []).map((v) => freq('cap_color', Q('cap_color'), v))) || '',
+      [covered('shapes','cap_shape') ? '' : orList([].concat(tr.cap_shape || []).map((v) => optLabel(Q('cap_shape'), v))), tr.cap_size?.length ? `Diametro ${sizeTxt(tr.cap_size)}` : ''].filter(Boolean).join(' · '), dots, 'cap'));
   }
   // sotto il cappello e il suo colore in una sola tessera: "Lamelle · bianche o crema"
   if (tr.hymenophore || tr.hymenophore_color) {
@@ -546,18 +548,19 @@ export function traitStrip(edibleId, t = refOf(edibleId)) {
     const g = { lamelle: 'fp', pliche: 'fp', pori: 'mp', aculei: 'mp' }[h] || 'ms';
     const cols = [].concat(tr.hymenophore_color || []);
     const art = ic ? illus(t.key, 'sotto') : hymArt(h, cols);
-    out.push(tile(art, k, cols.length ? orList(cols.map((c) => agree(c, g))) : (h === 'liscio' ? 'liscio' : '')));
+    out.push(tile(art, k, cols.length ? orList(cols.map((c) => agree(c, g))) : (h === 'liscio' ? 'liscio' : ''), '', '', 'hymenophore'));
   }
   // gambo: anello, volva, reticolo e base nello stesso disegno
   if (tr.stem_ring != null || tr.stem_volva != null || tr.stem_reticulum != null || tr.stem_base?.length) {
     const base = [].concat(tr.stem_base || ['normale'])[0];
     const bits = [tr.stem_ring === true ? 'con anello' : tr.stem_ring === false ? 'senza anello' : 'anello variabile',
       tr.stem_volva === true ? 'con volva' : tr.stem_volva === false ? 'senza volva' : null, tr.stem_reticulum === true ? 'con reticolo' : null].filter(Boolean);
+    const facts=[['Anello',tr.stem_ring],['Volva',tr.stem_volva],['Reticolo',tr.stem_reticulum]].filter(([,v])=>typeof v==='boolean').map(([label,value])=>`<span class="ts-fact"><span>${label}</span><b>${value?'presente':'assente'}</b></span>`).join('');
     out.push(tile(ic ? illus(t.key, 'gambo') : stemArt2(base, tr.stem_ring, tr.stem_volva, tr.stem_reticulum, [].concat(tr.cap_color || [])[0], [].concat(tr.cap_shape || [])[0]), 'Gambo', bits.join(', '),
-      tr.stem_base?.length ? `base ${orList(tr.stem_base.map((v) => optLabel(Q('stem_base'), v)))}` : ''));
+      tr.stem_base?.length ? `Base ${orList(tr.stem_base.map((v) => optLabel(Q('stem_base'), v)))}` : '', '', 'stem', facts ? `<span class="ts-facts">${facts}</span>` : ''));
   }
-  if (tr.flesh_change) { const f = [].concat(tr.flesh_change); out.push(tile(fleshArt(f), 'Al taglio', orList(f.map(fleshSay)))); }
-  if (tr.spore_print?.length) out.push(tile(sporeArt(tr.spore_print[0]), 'Sporata', orList(tr.spore_print.map((v) => Q('spore_print').labels?.[v] || agree(v, 'fs')))));
+  if (tr.flesh_change) { const f = [].concat(tr.flesh_change); out.push(tile(fleshArt(f), 'Al taglio', orList(f.map(fleshSay)), '', '', 'flesh')); }
+  if (tr.spore_print?.length) out.push(tile(sporeArt(tr.spore_print[0]), 'Sporata', orList(tr.spore_print.map((v) => Q('spore_print').labels?.[v] || agree(v, 'fs'))), '', '', 'spores'));
   // le tessere di cappello, sotto e gambo sono disegni AI (assets/traits): detto una volta, sotto la fila
   const ai = out.some((h) => h.includes('class="ts-ill"')) ? '<p class="small muted ts-ai">Disegni schematici fatti con AI, non foto: confronta con le foto e con il testo.</p>' : '';
   return `<ul class="trait-strip" aria-label="Caratteri principali">${out.join('')}</ul>${ai}`;

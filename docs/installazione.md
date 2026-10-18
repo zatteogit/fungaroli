@@ -3,7 +3,7 @@
 Verificato il 12/10/2026. Il codice è in `js/install.js` (`platform()` e `guide()`).
 
 ## Come si riconosce il caso
-- **Safari su iPhone/iPad 26 e successivi congela la versione di iOS nel user agent a `18_x`** (WebKit bug 298473). La versione vera si legge da `Version/NN`: 27 → iOS 27, 26 → iOS 26, ≤18 → vecchio flusso.
+- **Safari su iPhone/iPad 26 e successivi congela la versione di iOS nel user agent a `18_x`** (WebKit bug 298473). Per scegliere il flusso delle istruzioni usiamo la versione di Safari in `Version/NN`: 27 → menu della pagina, 26 → Altro, ≤18 → Condividi. Non la mostriamo come versione certa di iOS.
 - Chrome (`CriOS`), Firefox (`FxiOS`) ed Edge (`EdgiOS`) su iOS riportano la versione vera.
 - iPad con Safari si presenta come Mac: `Macintosh` + `maxTouchPoints > 1`.
 - Browser interni alle app (Instagram, Facebook, TikTok, LinkedIn, WebView Android `; wv)`, o iOS senza `Safari/`): da lì non si installa, si apre nel browser.
@@ -29,7 +29,7 @@ Verificato il 12/10/2026. Il codice è in `js/install.js` (`platform()` e `guide
 A tutto schermo sul telefono (finestra su desktop) dopo l'avviso iniziale, a ogni nuova sessione finché l'app non è installata, al massimo una volta ogni 20 ore dopo "Lo faccio dopo". Il banner in home e la sezione in Info restano.
 
 ## Da ricontrollare a ogni nuova versione di iOS/Chrome
-Posizione del primo bottone (la freccia nell'invito), nomi delle voci di menu, default di "Apri come app web".
+Nomi e disponibilità dei controlli, varianti della barra, default di "Apri come app web".
 
 
 ## Barra di stato iOS e sfocatura dell’header (18 ottobre 2026)
@@ -51,3 +51,31 @@ in tema chiaro e scuro. Se la sessione installata conserva la configurazione vec
 chiuderla completamente e riaprirla. Non rimuovere l’app o cancellare i dati locali
 per questa verifica. L’eliminazione del filtro nativo non è verificabile con Chromium
 né con la sola emulazione del viewport iPhone.
+
+## Invito adattivo al browser (18 ottobre 2026)
+
+- La X è nella testata del dialog, fuori dal contenuto scorrevole. Il link di
+  chiusura resta anche in fondo; entrambi registrano lo stesso rinvio.
+- Altezza, larghezza e posizione seguono `visualViewport` (resize e scroll), con
+  `100dvh` come fallback. Gli inset di sicurezza restano forniti dal browser.
+  Le barre aperte riducono lo spazio: le istruzioni scorrono internamente e la
+  chiusura resta raggiungibile. Non vengono usate altezze per modello di telefono.
+- In orizzontale, sotto 600 px di altezza e da 640 px di larghezza, introduzione
+  e passi sono affiancati. Su desktop il dialog è contenuto; con zoom o finestra
+  bassa torna a occupare lo spazio disponibile. Il testo non viene rimpicciolito
+  per far entrare tutto in una sola schermata.
+- Le frecce rivolte alle barre native sono state rimosse: JavaScript non conosce
+  la posizione scelta dall’utente per la barra di Safari. Le istruzioni descrivono
+  il controllo e offrono la scorciatoia quando Condividi è già visibile.
+- Nei flussi Safari 26/27 Condividi è un passo separato con icona. Il titolo
+  distingue iPhone/iPad senza presentare `Version/NN` come versione certa di iOS:
+  resta una discriminante del flusso Safari, non un rilevamento affidabile del sistema.
+- Chrome, Firefox, Edge e Opera su iOS vengono riconosciuti prima dell’euristica
+  WebView senza `Safari/`. Il prompt nativo Android resta prioritario, quando
+  disponibile. Standalone, fullscreen e minimal-ui non propongono l’installazione.
+
+Verifiche mirate: chiusura superiore/inferiore, Escape, scroll, passaggio
+verticale/orizzontale, viewport 320–1280 px e area visiva spostata/ridotta;
+riconoscimento browser iOS. L’emulazione Chromium verifica layout e percorsi,
+non disegna le barre native: confermare su Safari reale con barre aperte/chiuse,
+iPad, testo ingrandito e prompt di installazione effettivo.
