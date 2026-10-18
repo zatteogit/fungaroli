@@ -1941,7 +1941,57 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
    "season": "estate",
    "weather": "sereno",
-   "thumb": "assets/zones/terminillo-ovest-t.webp"
+   "thumb": "assets/zones/terminillo-ovest-t.webp",
+   "variants": [
+    {
+     "source": "Wikimedia Commons",
+     "author": "Johan Haggi",
+     "license": "CC BY-SA 2.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+     "page": "https://commons.wikimedia.org/wiki/File%3AMonte_Terminilletto_%2814936512892%29.jpg",
+     "season": "primavera",
+     "weather": "sereno",
+     "file": "assets/zones/var/terminillo-ovest-primavera-sereno.webp",
+     "file_hd": "assets/zones/var/terminillo-ovest-primavera-sereno-hd.webp",
+     "size": [
+      1536,
+      1024
+     ],
+     "generated": true
+    },
+    {
+     "source": "Wikimedia Commons",
+     "author": "Johan Haggi",
+     "license": "CC BY-SA 2.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+     "page": "https://commons.wikimedia.org/wiki/File%3AMonte_Terminilletto_%2814936512892%29.jpg",
+     "season": "autunno",
+     "weather": "sereno",
+     "file": "assets/zones/var/terminillo-ovest-autunno-sereno.webp",
+     "file_hd": "assets/zones/var/terminillo-ovest-autunno-sereno-hd.webp",
+     "size": [
+      1536,
+      1024
+     ],
+     "generated": true
+    },
+    {
+     "source": "Wikimedia Commons",
+     "author": "Johan Haggi",
+     "license": "CC BY-SA 2.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+     "page": "https://commons.wikimedia.org/wiki/File%3AMonte_Terminilletto_%2814936512892%29.jpg",
+     "season": "inverno",
+     "weather": "sereno",
+     "file": "assets/zones/var/terminillo-ovest-inverno-sereno.webp",
+     "file_hd": "assets/zones/var/terminillo-ovest-inverno-sereno-hd.webp",
+     "size": [
+      1540,
+      1021
+     ],
+     "generated": true
+    }
+   ]
   },
   "cittareale": {
    "file": "assets/zones/cittareale.webp",
@@ -1957,7 +2007,57 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "thumb": "assets/zones/cittareale-t.webp",
    "season": "estate",
-   "weather": "sereno"
+   "weather": "sereno",
+   "variants": [
+    {
+     "source": "Wikimedia Commons",
+     "author": "Skylimitless",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File%3AMonte_Pozzoni_%28Cittareale-Rieti%29.jpg",
+     "season": "primavera",
+     "weather": "sereno",
+     "file": "assets/zones/var/cittareale-primavera-sereno.webp",
+     "file_hd": "assets/zones/var/cittareale-primavera-sereno-hd.webp",
+     "size": [
+      1536,
+      1024
+     ],
+     "generated": true
+    },
+    {
+     "source": "Wikimedia Commons",
+     "author": "Skylimitless",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File%3AMonte_Pozzoni_%28Cittareale-Rieti%29.jpg",
+     "season": "autunno",
+     "weather": "sereno",
+     "file": "assets/zones/var/cittareale-autunno-sereno.webp",
+     "file_hd": "assets/zones/var/cittareale-autunno-sereno-hd.webp",
+     "size": [
+      1536,
+      1024
+     ],
+     "generated": true
+    },
+    {
+     "source": "Wikimedia Commons",
+     "author": "Skylimitless",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File%3AMonte_Pozzoni_%28Cittareale-Rieti%29.jpg",
+     "season": "inverno",
+     "weather": "sereno",
+     "file": "assets/zones/var/cittareale-inverno-sereno.webp",
+     "file_hd": "assets/zones/var/cittareale-inverno-sereno-hd.webp",
+     "size": [
+      1536,
+      1024
+     ],
+     "generated": true
+    }
+   ]
   }
  }
 }

@@ -1,0 +1,27 @@
+[
+  {
+    "key": "terminillo-primavera",
+    "prompt": "Edit the supplied REAL landscape photograph into a SPRING seasonal illustrative derivative for an Italian outdoor app. Preserve EXACTLY the original camera position, crop, perspective, mountain skyline, ALL summit shapes, rock outcrops, scree, paths and slope geometry. No additional landforms, trees, buildings, people or animals. Change only vegetation, light and ground covering as follows: grass changes from summer dull green to fresh restrained spring green; patches of pale limestone remain bare. No flowers or snow blanket. Bright clear blue sky with a few small fair weather clouds. This is an illustrative seasonal adaptation, NOT a current weather observation. Natural photographic texture, original 3:2 landscape ratio, high resolution, no text/logos/borders.",
+    "path": "/workspace/generated_images/exec-61965935-8e85-406b-93f5-6b37cc252521.png"
+  },
+  {
+    "key": "terminillo-inverno",
+    "prompt": "Edit the supplied REAL landscape photograph into a WINTER seasonal illustrative derivative for an Italian outdoor app. Preserve EXACTLY the original camera position, crop, perspective, mountain skyline, ALL summit shapes, rock outcrops, scree, paths and slope geometry. No additional landforms, trees, buildings, people or animals. Change only vegetation, light and ground covering as follows: dormant ochre-brown grass, cold clear blue sky, only a light patchy snow cover on upper slopes and summit because this is high terrain. Keep every visible rock outcrop, zigzag path, summit building and track. No solid fictional glacier. No trees. This is an illustrative seasonal adaptation, NOT a current weather observation. Natural photographic texture, original 3:2 landscape ratio, high resolution, no text/logos/borders.",
+    "path": "/workspace/generated_images/exec-42235f85-8ca4-4d57-88c0-29fd84e44e48.png"
+  },
+  {
+    "key": "cittareale-autunno",
+    "prompt": "Edit the supplied REAL landscape photograph into a AUTUMN seasonal illustrative derivative for an Italian outdoor app. Preserve EXACTLY the original camera position, crop, perspective, mountain skyline, ALL summit shapes, rock outcrops, scree, paths and slope geometry. No additional landforms, trees, buildings, people or animals. Change only vegetation, light and ground covering as follows: dry golden ochre grass on upper slopes, existing lower deciduous woodland turns muted yellow/rust, preserve small evergreen patches green. Clear bright calm sky. Do not add any forest where source is bare grass or rock. This is an illustrative seasonal adaptation, NOT a current weather observation. Natural photographic texture, original 3:2 landscape ratio, high resolution, no text/logos/borders.",
+    "path": "/workspace/generated_images/exec-b42e8b51-f3cb-44f4-bdd8-8b260a7d6a9f.png"
+  },
+  {
+    "key": "cittareale-primavera",
+    "prompt": "Edit the supplied REAL landscape photograph into a SPRING seasonal illustrative derivative for an Italian outdoor app. Preserve EXACTLY the original camera position, crop, perspective, mountain skyline, ALL summit shapes, rock outcrops, scree, paths and slope geometry. No additional landforms, trees, buildings, people or animals. Change only vegetation, light and ground covering as follows: fresh green grass and restrained pale green leaves ONLY on already existing woodland. Keep rocky crags, gullies and limestone scree completely exposed. Clear bright calm sky. This is an illustrative seasonal adaptation, NOT a current weather observation. Natural photographic texture, original 3:2 landscape ratio, high resolution, no text/logos/borders.",
+    "path": "/workspace/generated_images/exec-ac7c5da0-9a21-43c3-acb4-6f559832227c.png"
+  },
+  {
+    "key": "cittareale-inverno",
+    "prompt": "Edit the supplied REAL landscape photograph into a WINTER seasonal illustrative derivative for an Italian outdoor app. Preserve EXACTLY the original camera position, crop, perspective, mountain skyline, ALL summit shapes, rock outcrops, scree, paths and slope geometry. No additional landforms, trees, buildings, people or animals. Change only vegetation, light and ground covering as follows: brown dormant grass and leafless existing deciduous woodland, evergreen patches retain green. Light patchy snow only on upper ridge and highest slopes; lower foreground valley and woods remain largely uncovered. Cold clear calm blue sky. Keep rock crags and scree visible. This is an illustrative seasonal adaptation, NOT a current weather observation. Natural photographic texture, original 3:2 landscape ratio, high resolution, no text/logos/borders.",
+    "path": "/workspace/generated_images/exec-4460076a-cf8f-4327-9973-80f9f0666989.png"
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "key": "terminillo-ovest-primavera-nuvoloso",
+    "z": "terminillo-ovest",
+    "s": "primavera",
+    "w": "nuvoloso",
+    "path": "/workspace/generated_images/exec-1e0d2a2a-c698-43d7-b4fb-6264c490d1ee.png",
+    "prompt": "Edit this exact landscape photo ONLY for overcast cloudy weather in the same primavera season. Preserve EXACT crop, camera, skyline, mountain geometry, all rocky outcrops, tracks, buildings and all vegetation placement. Replace blue sky with a soft continuous pale-grey cloud ceiling, soft diffuse daylight, reduced harsh shadows. Keep all mountains clearly visible. Retain seasonal grass and woodland colors from reference; do not add rain, fog or additional snow. This is an illustrative seasonal/weather derivative, not a current observation. Photographic texture, landscape 3:2 ratio, no text/logos/borders/new objects."
+  },
+  {
+    "key": "terminillo-ovest-estate-nuvoloso",
+    "z": "terminillo-ovest",
+    "s": "estate",
+    "w": "nuvoloso",
+    "path": "/workspace/generated_images/exec-f79b80b6-0952-4b09-a3e1-887615851a36.png",
+    "prompt": "Edit this exact landscape photo ONLY for overcast cloudy weather in the same estate season. Preserve EXACT crop, camera, skyline, mountain geometry, all rocky outcrops, tracks, buildings and all vegetation placement. Replace blue sky with a soft continuous pale-grey cloud ceiling, soft diffuse daylight, reduced harsh shadows. Keep all mountains clearly visible. Retain seasonal grass and woodland colors from reference; do not add rain, fog or additional snow. This is an illustrative seasonal/weather derivative, not a current observation. Photographic texture, landscape 3:2 ratio, no text/logos/borders/new objects."
+  },
+  {
+    "key": "terminillo-ovest-autunno-nuvoloso",
+    "z": "terminillo-ovest",
+    "s": "autunno",
+    "w": "nuvoloso",
+    "path": "/workspace/generated_images/exec-92efff6a-778f-49da-a447-2039a909ddf7.png",
+    "prompt": "Edit this exact landscape photo ONLY for overcast cloudy weather in the same autunno season. Preserve EXACT crop, camera, skyline, mountain geometry, all rocky outcrops, tracks, buildings and all vegetation placement. Replace blue sky with a soft continuous pale-grey cloud ceiling, soft diffuse daylight, reduced harsh shadows. Keep all mountains clearly visible. Retain seasonal grass and woodland colors from reference; do not add rain, fog or additional snow. This is an illustrative seasonal/weather derivative, not a current observation. Photographic texture, landscape 3:2 ratio, no text/logos/borders/new objects."
+  },
+  {
+    "key": "terminillo-ovest-inverno-nuvoloso",
+    "z": "terminillo-ovest",
+    "s": "inverno",
+    "w": "nuvoloso",
+    "path": "/workspace/generated_images/exec-caab8a46-399e-4137-9d92-167f185d3fcc.png",
+    "prompt": "Edit this exact landscape photo ONLY for overcast cloudy weather in the same inverno season. Preserve EXACT crop, camera, skyline, mountain geometry, all rocky outcrops, tracks, buildings and all vegetation placement. Replace blue sky with a soft continuous pale-grey cloud ceiling, soft diffuse daylight, reduced harsh shadows. Keep all mountains clearly visible. Retain seasonal grass and woodland colors from reference; do not add rain, fog or additional snow. This is an illustrative seasonal/weather derivative, not a current observation. Photographic texture, landscape 3:2 ratio, no text/logos/borders/new objects."
+  },
+  {
+    "key": "cittareale-primavera-nuvoloso",
+    "z": "cittareale",
+    "s": "primavera",
+    "w": "nuvoloso",
+    "path": "/workspace/generated_images/exec-1e1667cd-4c37-434e-a4c0-79ad7bb2597f.png",
+    "prompt": "Edit this exact landscape photo ONLY for overcast cloudy weather in the same primavera season. Preserve EXACT crop, camera, skyline, mountain geometry, all rocky outcrops, tracks, buildings and all vegetation placement. Replace blue sky with a soft continuous pale-grey cloud ceiling, soft diffuse daylight, reduced harsh shadows. Keep all mountains clearly visible. Retain seasonal grass and woodland colors from reference; do not add rain, fog or additional snow. This is an illustrative seasonal/weather derivative, not a current observation. Photographic texture, landscape 3:2 ratio, no text/logos/borders/new objects."
+  },
+  {
+    "key": "cittareale-estate-nuvoloso",
+    "z": "cittareale",
+    "s": "estate",
+    "w": "nuvoloso",
+    "path": "/workspace/generated_images/exec-b8d8178a-fb14-4ae5-8714-68ab513f4618.png",
+    "prompt": "Edit this exact landscape photo ONLY for overcast cloudy weather in the same estate season. Preserve EXACT crop, camera, skyline, mountain geometry, all rocky outcrops, tracks, buildings and all vegetation placement. Replace blue sky with a soft continuous pale-grey cloud ceiling, soft diffuse daylight, reduced harsh shadows. Keep all mountains clearly visible. Retain seasonal grass and woodland colors from reference; do not add rain, fog or additional snow. This is an illustrative seasonal/weather derivative, not a current observation. Photographic texture, landscape 3:2 ratio, no text/logos/borders/new objects."
+  },
+  {
+    "key": "cittareale-autunno-nuvoloso",
+    "z": "cittareale",
+    "s": "autunno",
+    "w": "nuvoloso",
+    "path": "/workspace/generated_images/exec-e5a4fb76-b438-40fe-a4df-f22f01657bd1.png",
+    "prompt": "Edit this exact landscape photo ONLY for overcast cloudy weather in the same autunno season. Preserve EXACT crop, camera, skyline, mountain geometry, all rocky outcrops, tracks, buildings and all vegetation placement. Replace blue sky with a soft continuous pale-grey cloud ceiling, soft diffuse daylight, reduced harsh shadows. Keep all mountains clearly visible. Retain seasonal grass and woodland colors from reference; do not add rain, fog or additional snow. This is an illustrative seasonal/weather derivative, not a current observation. Photographic texture, landscape 3:2 ratio, no text/logos/borders/new objects."
+  },
+  {
+    "key": "cittareale-inverno-nuvoloso",
+    "z": "cittareale",
+    "s": "inverno",
+    "w": "nuvoloso",
+    "path": "/workspace/generated_images/exec-b08f1d98-53d2-4bae-814f-84e4d01dcbe8.png",
+    "prompt": "Edit this exact landscape photo ONLY for overcast cloudy weather in the same inverno season. Preserve EXACT crop, camera, skyline, mountain geometry, all rocky outcrops, tracks, buildings and all vegetation placement. Replace blue sky with a soft continuous pale-grey cloud ceiling, soft diffuse daylight, reduced harsh shadows. Keep all mountains clearly visible. Retain seasonal grass and woodland colors from reference; do not add rain, fog or additional snow. This is an illustrative seasonal/weather derivative, not a current observation. Photographic texture, landscape 3:2 ratio, no text/logos/borders/new objects."
+  }
+]
