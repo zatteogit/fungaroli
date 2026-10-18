@@ -2,26 +2,28 @@
   "date": "2026-10-18",
   "summary": {
     "species": {
-      "1": 2,
       "2": 23,
       "3": 1,
-      "4": 10
+      "4": 11,
+      "5": 1
     },
     "lookalikes": {
-      "1": 51
+      "1": 45,
+      "2": 5,
+      "3": 1
     },
     "unillustrated_taxa": {
       "0": 1
     },
     "plants": {
-      "2": 13,
-      "3": 53,
+      "2": 10,
+      "3": 56,
       "4": 2,
       "5": 2
     },
     "trees": {
-      "3": 20,
-      "4": 11,
+      "3": 19,
+      "4": 12,
       "5": 8
     },
     "zones": {
@@ -255,42 +257,6 @@
       "missing_license_url": 0,
       "files": [
         "assets/species/amanita-pantherina-inat1.webp"
-      ]
-    },
-    {
-      "catalog": "media.json",
-      "group": "lookalikes",
-      "key": "Amanita phalloides",
-      "latin": "Amanita phalloides",
-      "photos": 1,
-      "existing_files": 1,
-      "missing_license_url": 1,
-      "files": [
-        "assets/species/amanita-phalloides-inat1.webp"
-      ]
-    },
-    {
-      "catalog": "media.json",
-      "group": "lookalikes",
-      "key": "Amanita verna",
-      "latin": "Amanita verna",
-      "photos": 1,
-      "existing_files": 1,
-      "missing_license_url": 1,
-      "files": [
-        "assets/species/amanita-verna-inat1.webp"
-      ]
-    },
-    {
-      "catalog": "media.json",
-      "group": "lookalikes",
-      "key": "Amanita virosa",
-      "latin": "Amanita virosa",
-      "photos": 1,
-      "existing_files": 1,
-      "missing_license_url": 1,
-      "files": [
-        "assets/species/amanita-virosa-inat1.webp"
       ]
     },
     {
@@ -632,18 +598,6 @@
     {
       "catalog": "media.json",
       "group": "lookalikes",
-      "key": "Omphalotus olearius",
-      "latin": "Omphalotus olearius",
-      "photos": 1,
-      "existing_files": 1,
-      "missing_license_url": 1,
-      "files": [
-        "assets/species/omphalotus-olearius-inat1.webp"
-      ]
-    },
-    {
-      "catalog": "media.json",
-      "group": "lookalikes",
       "key": "Pholiota squarrosa",
       "latin": "Pholiota squarrosa",
       "photos": 1,
@@ -663,18 +617,6 @@
       "missing_license_url": 1,
       "files": [
         "assets/species/pseudocraterellus-undulatus-ref.webp"
-      ]
-    },
-    {
-      "catalog": "media.json",
-      "group": "lookalikes",
-      "key": "Rubroboletus satanas",
-      "latin": "Rubroboletus satanas",
-      "photos": 1,
-      "existing_files": 1,
-      "missing_license_url": 1,
-      "files": [
-        "assets/species/rubroboletus-satanas-inat1.webp"
       ]
     },
     {
@@ -800,18 +742,6 @@
     {
       "catalog": "media.json",
       "group": "lookalikes",
-      "key": "Tylopilus felleus",
-      "latin": "Tylopilus felleus",
-      "photos": 1,
-      "existing_files": 1,
-      "missing_license_url": 1,
-      "files": [
-        "assets/species/tylopilus-felleus-inat1.webp"
-      ]
-    },
-    {
-      "catalog": "media.json",
-      "group": "lookalikes",
       "key": "Urnula craterium",
       "latin": "Urnula craterium",
       "photos": 1,
@@ -823,26 +753,67 @@
     },
     {
       "catalog": "media.json",
-      "group": "species",
-      "key": "aestivalis",
-      "latin": "Boletus aestivalis",
-      "photos": 1,
-      "existing_files": 1,
+      "group": "lookalikes",
+      "key": "Amanita verna",
+      "latin": "Amanita verna",
+      "photos": 2,
+      "existing_files": 2,
       "missing_license_url": 1,
       "files": [
-        "assets/species/aestivalis-ref.webp"
+        "assets/species/amanita-verna-inat1.webp",
+        "assets/species/verna-commons3.webp"
       ]
     },
     {
       "catalog": "media.json",
-      "group": "species",
-      "key": "nuda",
-      "latin": "Lepista nuda",
-      "photos": 1,
-      "existing_files": 1,
+      "group": "lookalikes",
+      "key": "Amanita virosa",
+      "latin": "Amanita virosa",
+      "photos": 2,
+      "existing_files": 2,
       "missing_license_url": 1,
       "files": [
-        "assets/species/nuda-ref.webp"
+        "assets/species/amanita-virosa-inat1.webp",
+        "assets/species/virosa-commons10099268.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Omphalotus olearius",
+      "latin": "Omphalotus olearius",
+      "photos": 2,
+      "existing_files": 2,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/omphalotus-olearius-inat1.webp",
+        "assets/species/olearius-212577.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Rubroboletus satanas",
+      "latin": "Rubroboletus satanas",
+      "photos": 2,
+      "existing_files": 2,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/rubroboletus-satanas-inat1.webp",
+        "assets/species/satanas-223261.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Tylopilus felleus",
+      "latin": "Tylopilus felleus",
+      "photos": 2,
+      "existing_files": 2,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/tylopilus-felleus-inat1.webp",
+        "assets/species/felleus-226780.webp"
       ]
     },
     {
@@ -1147,32 +1118,6 @@
     {
       "catalog": "plants.json",
       "group": "plants",
-      "key": "aristolochia",
-      "latin": "Aristolochia clematitis L.",
-      "photos": 2,
-      "existing_files": 2,
-      "missing_license_url": 0,
-      "files": [
-        "assets/plants/aristolochia-1.webp",
-        "assets/plants/aristolochia-2.webp"
-      ]
-    },
-    {
-      "catalog": "plants.json",
-      "group": "plants",
-      "key": "bucaneve",
-      "latin": "Galanthus nivalis L.",
-      "photos": 2,
-      "existing_files": 2,
-      "missing_license_url": 0,
-      "files": [
-        "assets/plants/bucaneve-1.webp",
-        "assets/plants/bucaneve-2.webp"
-      ]
-    },
-    {
-      "catalog": "plants.json",
-      "group": "plants",
       "key": "cefalantera-maggiore",
       "latin": "Cephalanthera longifolia (L.) Fritsch",
       "photos": 2,
@@ -1194,19 +1139,6 @@
       "files": [
         "assets/plants/digitale-gialla-1.webp",
         "assets/plants/digitale-gialla-3.webp"
-      ]
-    },
-    {
-      "catalog": "plants.json",
-      "group": "plants",
-      "key": "erba-trinita",
-      "latin": "Hepatica nobilis Schreb.",
-      "photos": 2,
-      "existing_files": 2,
-      "missing_license_url": 0,
-      "files": [
-        "assets/plants/erba-trinita-1.webp",
-        "assets/plants/erba-trinita-2.webp"
       ]
     },
     {
@@ -1353,20 +1285,6 @@
         "assets/trees/acero-di-montpellier-1.webp",
         "assets/trees/acero-di-montpellier-2.webp",
         "assets/trees/acero-di-montpellier-3.webp"
-      ]
-    },
-    {
-      "catalog": "media-trees.json",
-      "group": "trees",
-      "key": "agrifoglio",
-      "latin": "Ilex aquifolium L.",
-      "photos": 3,
-      "existing_files": 3,
-      "missing_license_url": 0,
-      "files": [
-        "assets/trees/agrifoglio-1.webp",
-        "assets/trees/agrifoglio-2.webp",
-        "assets/trees/agrifoglio-3.webp"
       ]
     },
     {
@@ -1595,6 +1513,20 @@
     },
     {
       "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Amanita phalloides",
+      "latin": "Amanita phalloides",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/amanita-phalloides-inat1.webp",
+        "assets/species/phalloides-pruss.webp",
+        "assets/species/phalloides-zalas02.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
       "group": "species",
       "key": "suillus",
       "latin": "Suillus luteus",
@@ -1652,6 +1584,20 @@
     {
       "catalog": "plants.json",
       "group": "plants",
+      "key": "aristolochia",
+      "latin": "Aristolochia clematitis L.",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/aristolochia-1.webp",
+        "assets/plants/aristolochia-2.webp",
+        "assets/plants/aristolochia-habitus.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
       "key": "asfodelo",
       "latin": "Asphodelus ramosus L. subsp. ramosus",
       "photos": 3,
@@ -1703,6 +1649,20 @@
         "assets/plants/borragine-1.webp",
         "assets/plants/borragine-2.webp",
         "assets/plants/borragine-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "bucaneve",
+      "latin": "Galanthus nivalis L.",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/bucaneve-1.webp",
+        "assets/plants/bucaneve-2.webp",
+        "assets/plants/bucaneve-habitat.webp"
       ]
     },
     {
@@ -1885,6 +1845,20 @@
         "assets/plants/elleboro-1.webp",
         "assets/plants/elleboro-2.webp",
         "assets/plants/elleboro-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "erba-trinita",
+      "latin": "Hepatica nobilis Schreb.",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/erba-trinita-1.webp",
+        "assets/plants/erba-trinita-2.webp",
+        "assets/plants/hepatica-ledro.webp"
       ]
     },
     {
@@ -2367,6 +2341,21 @@
     {
       "catalog": "media-trees.json",
       "group": "trees",
+      "key": "agrifoglio",
+      "latin": "Ilex aquifolium L.",
+      "photos": 4,
+      "existing_files": 4,
+      "missing_license_url": 0,
+      "files": [
+        "assets/trees/agrifoglio-1.webp",
+        "assets/trees/agrifoglio-2.webp",
+        "assets/trees/agrifoglio-3.webp",
+        "assets/trees/agrifoglio-fiori.webp"
+      ]
+    },
+    {
+      "catalog": "media-trees.json",
+      "group": "trees",
       "key": "castagno",
       "latin": "Castanea sativa",
       "photos": 4,
@@ -2607,6 +2596,21 @@
     {
       "catalog": "media.json",
       "group": "species",
+      "key": "nuda",
+      "latin": "Lepista nuda",
+      "photos": 4,
+      "existing_files": 4,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/nuda-ref.webp",
+        "assets/species/nuda-commons109950721.webp",
+        "assets/species/nuda-villa-ada.webp",
+        "assets/species/nuda-wilson.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "species",
       "key": "procera",
       "latin": "Macrolepiota procera",
       "photos": 4,
@@ -2820,6 +2824,22 @@
         "assets/species/tree-tasso-inat3.webp",
         "assets/species/tree-tasso-inat4.webp",
         "assets/species/tree-tasso-inat5.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "species",
+      "key": "aestivalis",
+      "latin": "Boletus aestivalis",
+      "photos": 5,
+      "existing_files": 5,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/aestivalis-ref.webp",
+        "assets/species/aestivalis-commons9.webp",
+        "assets/species/aestivalis-commons-solo.webp",
+        "assets/species/aestivalis-anro1.webp",
+        "assets/species/aestivalis-anro3.webp"
       ]
     },
     {

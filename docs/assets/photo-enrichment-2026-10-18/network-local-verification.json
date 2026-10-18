@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-18",
+  "executor": "macOS locale, sessione Codex desktop",
+  "previous_cloud_policy": "Non verificata né modificata; nessun ambiente cloud associato a questa esecuzione.",
+  "commons.wikimedia.org": {
+    "api": "GET riuscito con User-Agent Fronda/PhotoEnrichment; metadati correnti conservati"
+  },
+  "upload.wikimedia.org": {
+    "originals_downloaded": 20,
+    "sha1_verified_against_api": 20
+  },
+  "configuration_changed": false,
+  "bypasses_used": false,
+  "note": "Il successo dei download prova l’accesso effettivo da questo Mac; non attesta un cambiamento della policy del precedente container."
+}

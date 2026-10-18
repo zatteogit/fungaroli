@@ -1,0 +1,149 @@
+{
+  "photos": [
+    {
+      "id": "aestivalis-commons9",
+      "nearest_existing_dhash": {
+        "file": "assets/species/aestivalis-ref.webp",
+        "distance": 33
+      },
+      "decision": "Fotografia distinta verificata visivamente; hash e URL distinti."
+    },
+    {
+      "id": "aestivalis-commons-solo",
+      "nearest_existing_dhash": {
+        "file": "assets/species/aestivalis-commons9.webp",
+        "distance": 26
+      },
+      "decision": "Fotografia distinta verificata visivamente; hash e URL distinti."
+    },
+    {
+      "id": "nuda-commons109950721",
+      "nearest_existing_dhash": {
+        "file": "assets/species/nuda-ref.webp",
+        "distance": 36
+      },
+      "decision": "Fotografia distinta verificata visivamente; hash e URL distinti."
+    },
+    {
+      "id": "nuda-villa-ada",
+      "nearest_existing_dhash": {
+        "file": "assets/species/nuda-commons109950721.webp",
+        "distance": 26
+      },
+      "decision": "Fotografia distinta verificata visivamente; hash e URL distinti."
+    },
+    {
+      "id": "bucaneve-habitat",
+      "nearest_existing_dhash": {
+        "file": "assets/plants/bucaneve-1.webp",
+        "distance": 33
+      },
+      "decision": "Fotografia distinta verificata visivamente; hash e URL distinti."
+    },
+    {
+      "id": "phalloides-pruss",
+      "nearest_existing_dhash": {
+        "file": "assets/species/amanita-phalloides-inat1.webp",
+        "distance": 29
+      },
+      "decision": "Fotografia distinta verificata visivamente; hash e URL distinti."
+    },
+    {
+      "id": "virosa-commons10099268",
+      "nearest_existing_dhash": {
+        "file": "assets/species/amanita-virosa-inat1.webp",
+        "distance": 32
+      },
+      "decision": "Fotografia distinta verificata visivamente; hash e URL distinti."
+    },
+    {
+      "id": "aristolochia-habitus",
+      "nearest_existing_dhash": {
+        "file": "assets/plants/aristolochia-2.webp",
+        "distance": 27
+      },
+      "decision": "Fotografia distinta verificata visivamente; hash e URL distinti."
+    },
+    {
+      "id": "hepatica-ledro",
+      "nearest_existing_dhash": {
+        "file": "assets/plants/erba-trinita-2.webp",
+        "distance": 33
+      },
+      "decision": "Fotografia distinta verificata visivamente; hash e URL distinti."
+    },
+    {
+      "id": "agrifoglio-fiori",
+      "nearest_existing_dhash": {
+        "file": "assets/trees/agrifoglio-1.webp",
+        "distance": 28
+      },
+      "decision": "Fotografia distinta verificata visivamente; hash e URL distinti."
+    },
+    {
+      "id": "aestivalis-anro1",
+      "nearest_existing_dhash": {
+        "file": "assets/species/aestivalis-commons-solo.webp",
+        "distance": 27
+      },
+      "decision": "Fotografia distinta verificata visivamente; hash e URL distinti."
+    },
+    {
+      "id": "aestivalis-anro3",
+      "nearest_existing_dhash": {
+        "file": "assets/species/aestivalis-commons9.webp",
+        "distance": 35
+      },
+      "decision": "Fotografia distinta verificata visivamente; hash e URL distinti."
+    },
+    {
+      "id": "nuda-wilson",
+      "nearest_existing_dhash": {
+        "file": "assets/species/nuda-ref.webp",
+        "distance": 23
+      },
+      "decision": "Fotografia distinta verificata visivamente; hash e URL distinti."
+    },
+    {
+      "id": "felleus-226780",
+      "nearest_existing_dhash": {
+        "file": "assets/species/tylopilus-felleus-inat1.webp",
+        "distance": 31
+      },
+      "decision": "Fotografia distinta verificata visivamente; hash e URL distinti."
+    },
+    {
+      "id": "satanas-223261",
+      "nearest_existing_dhash": {
+        "file": "assets/species/rubroboletus-satanas-inat1.webp",
+        "distance": 26
+      },
+      "decision": "Fotografia distinta verificata visivamente; hash e URL distinti."
+    },
+    {
+      "id": "verna-commons3",
+      "nearest_existing_dhash": {
+        "file": "assets/species/amanita-verna-inat1.webp",
+        "distance": 41
+      },
+      "decision": "Fotografia distinta verificata visivamente; hash e URL distinti."
+    },
+    {
+      "id": "phalloides-zalas02",
+      "nearest_existing_dhash": {
+        "file": "assets/species/amanita-phalloides-inat1.webp",
+        "distance": 28
+      },
+      "decision": "Fotografia distinta verificata visivamente; hash e URL distinti."
+    },
+    {
+      "id": "olearius-212577",
+      "nearest_existing_dhash": {
+        "file": "assets/species/omphalotus-olearius-inat1.webp",
+        "distance": 36
+      },
+      "decision": "Fotografia distinta verificata visivamente; hash e URL distinti."
+    }
+  ],
+  "note": "dHash è un aiuto; i ritagli della stessa foto non sono nuove fotografie. Revisione visiva eseguita anche sulle viste complementari AnRo0002."
+}
