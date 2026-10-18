@@ -1,0 +1,2912 @@
+{
+  "continue": {
+    "clcontinue": "148383812|Media_from_GBIF",
+    "continue": "||imageinfo"
+  },
+  "query": {
+    "pages": {
+      "122270577": {
+        "pageid": 122270577,
+        "ns": 6,
+        "title": "File:De-Südlicher Ackerling.ogg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 21047,
+            "width": 0,
+            "height": 0,
+            "duration": 2.05,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f7/De-S%C3%BCdlicher_Ackerling.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:De-S%C3%BCdlicher_Ackerling.ogg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=122270577",
+            "sha1": "619898337dcd81f68dd16382bf0a01f3f9c4b9d4",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-08-23 16:36:13",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "De-Südlicher Ackerling",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Cyclocybe cylindracea|German pronunciation of nouns|Supported by Wikimedia Deutschland|Created with Audacity|Audio files made by jeuwre|Audio files made using a Rode NT-USB (supported by Wikimedia Deutschland)|German pronunciation of words relating to mushrooms",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "pronunciation recording",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-08-13",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Jeuwre\" title=\"User:Jeuwre\">Jeuwre</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Audio files made by jeuwre"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Audio files made using a Rode NT-USB (supported by Wikimedia Deutschland)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Created with Audacity"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Cyclocybe cylindracea"
+          },
+          {
+            "ns": 14,
+            "title": "Category:German pronunciation of nouns"
+          },
+          {
+            "ns": 14,
+            "title": "Category:German pronunciation of words relating to mushrooms"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Supported by Wikimedia Deutschland"
+          }
+        ]
+      },
+      "51731283": {
+        "pageid": 51731283,
+        "ns": 6,
+        "title": "File:2006-11-17 Cyclocybe cylindracea (DC.) Vizzini & Angelini 9927.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 212959,
+            "width": 1280,
+            "height": 960,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/59/2006-11-17_Cyclocybe_cylindracea_%28DC.%29_Vizzini_%26_Angelini_9927.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:2006-11-17_Cyclocybe_cylindracea_(DC.)_Vizzini_%26_Angelini_9927.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=51731283",
+            "sha1": "7b814aca841b83f6ad99b09b604123e4b9d5a38f",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2016-09-25 15:24:51",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "2006-11-17 Cyclocybe cylindracea (DC.) Vizzini & Angelini 9927",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Cyclocybe cylindracea|Lorestan Province|Images from Mushroom Observer|Files from external sources with reviewed licenses|Files with coordinates missing SDC location of creation|Agaricales in Iran",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "33.570000",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "48.445000",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "For more information about this, see the <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_observation/5849\">observation page</a> at Mushroom Observer.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2006-11-17",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This image is <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/image/show_image/9927\">Image Number 9927</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "This image was created by user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_user/314\">Abolfazl Arab Joshaghani (amanita4000)</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.<br>You can contact this user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/ask_user_question/314\">here</a>.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Agaricales in Iran"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Cyclocybe cylindracea"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files from external sources with reviewed licenses"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images from Mushroom Observer"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lorestan Province"
+          }
+        ]
+      },
+      "57528019": {
+        "pageid": 57528019,
+        "ns": 6,
+        "title": "File:2009-02-23 Cyclocybe cylindracea (DC.) Vizzini & Angelini 37274.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 693238,
+            "width": 2048,
+            "height": 1536,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/4f/2009-02-23_Cyclocybe_cylindracea_%28DC.%29_Vizzini_%26_Angelini_37274.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:2009-02-23_Cyclocybe_cylindracea_(DC.)_Vizzini_%26_Angelini_37274.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=57528019",
+            "sha1": "6cee565e7e551f9570d4fd891265d0fe548bfa52",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-03-29 19:48:56",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "2009-02-23 Cyclocybe cylindracea (DC.) Vizzini & Angelini 37274",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Cyclocybe cylindracea|Images from Mushroom Observer|Files from external sources with reviewed licenses|Agaricales in Turkey|Files with coordinates missing SDC location of creation",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "38.769800",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "26.020200",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "For more information about this, see the <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_observation/18769\">observation page</a> at Mushroom Observer.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2009-02-23",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This image is <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/image/show_image/37274\">Image Number 37274</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "This image was created by user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_user/374\">Adnan Sınar (mushroomaniac)</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.<br>You can contact this user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/ask_user_question/374\">here</a>.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Agaricales in Turkey"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Cyclocybe cylindracea"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files from external sources with reviewed licenses"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images from Mushroom Observer"
+          }
+        ]
+      },
+      "99387915": {
+        "pageid": 99387915,
+        "ns": 6,
+        "title": "File:Cyclocybe cylindracea 1302550.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1147376,
+            "width": 2064,
+            "height": 1376,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/55/Cyclocybe_cylindracea_1302550.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Cyclocybe_cylindracea_1302550.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=99387915",
+            "sha1": "b9287ed8de61403904a3c46a920d07878805829f",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-01-29 15:01:38",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Cyclocybe cylindracea 1302550",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Cyclocybe cylindracea|Images from Mushroom Observer|Files from external sources with reviewed licenses|Files with coordinates missing SDC location of creation (48° N, 2° E)|Nature of Verrières-le-Buisson",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "48.746800",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "2.266100",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "For more information about this, see the <a rel=\"mw:ExtLink nofollow\" href=\"https://mushroomobserver.org/observer/show_observation/445839\" class=\"external text\">observation page</a> at Mushroom Observer.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-10-19",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This image is <a rel=\"mw:ExtLink nofollow\" href=\"https://mushroomobserver.org/image/show_image/1302550\" class=\"external text\">Image Number 1302550</a> at <a rel=\"mw:ExtLink nofollow\" href=\"https://mushroomobserver.org\" class=\"external text\">Mushroom Observer</a>, a source for mycological images.",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "This image was created by user <a rel=\"mw:ExtLink nofollow\" href=\"https://mushroomobserver.org/observer/show_user/236\" class=\"external text\">Richard Daniel (RichardDaniel)</a> at <a rel=\"mw:ExtLink nofollow\" href=\"https://mushroomobserver.org\" class=\"external text\">Mushroom Observer</a>, a source for mycological images.<br>You can contact this user <a rel=\"mw:ExtLink nofollow\" href=\"https://mushroomobserver.org/observer/ask_user_question/236\" class=\"external text\">here</a>.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Cyclocybe cylindracea"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files from external sources with reviewed licenses"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation (48° N, 2° E)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images from Mushroom Observer"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Nature of Verrières-le-Buisson"
+          }
+        ]
+      },
+      "148383812": {
+        "pageid": 148383812,
+        "ns": 6,
+        "title": "File:Cyclocybe cylindracea 342295878.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 998753,
+            "width": 2048,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Cyclocybe_cylindracea_342295878.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Cyclocybe_cylindracea_342295878.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=148383812",
+            "sha1": "e5886244bdf07b4285270c6a4a81add56877643a",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2024-05-15 17:06:21",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Cyclocybe cylindracea 342295878",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Cyclocybe cylindracea|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|Media from GBIF",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "45.886513",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "13.900114",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Poplar Fieldcap (<i>Cyclocybe cylindracea</i>) in Slovenia",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2023-11-07",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/342295878\">https://www.inaturalist.org/photos/342295878</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/3522968\">Matej Frančeškin</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Cyclocybe cylindracea"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:INaturalist images reviewed by iNaturalistReviewBot"
+          }
+        ]
+      },
+      "148383870": {
+        "pageid": 148383870,
+        "ns": 6,
+        "title": "File:Cyclocybe cylindracea 342295929.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1448293,
+            "width": 2048,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/83/Cyclocybe_cylindracea_342295929.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Cyclocybe_cylindracea_342295929.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=148383870",
+            "sha1": "2a162019ac3a460a18eaa370adaccf7f71d8faf7",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2024-05-15 17:08:27",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Cyclocybe cylindracea 342295929",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Cyclocybe cylindracea|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|Media from GBIF",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "45.886513",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "13.900114",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Poplar Fieldcap (<i>Cyclocybe cylindracea</i>) in Slovenia",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2023-11-07",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/342295929\">https://www.inaturalist.org/photos/342295929</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/3522968\">Matej Frančeškin</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "148383838": {
+        "pageid": 148383838,
+        "ns": 6,
+        "title": "File:Cyclocybe cylindracea 342295932.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1215775,
+            "width": 2048,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/04/Cyclocybe_cylindracea_342295932.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Cyclocybe_cylindracea_342295932.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=148383838",
+            "sha1": "74982af2c26e6df05a0a1a83bef4e7bda9f85af0",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2024-05-15 17:07:14",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Cyclocybe cylindracea 342295932",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Cyclocybe cylindracea|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|Media from GBIF",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "45.886513",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "13.900114",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Poplar Fieldcap (<i>Cyclocybe cylindracea</i>) in Slovenia",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2023-11-07",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/342295932\">https://www.inaturalist.org/photos/342295932</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/3522968\">Matej Frančeškin</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "148383892": {
+        "pageid": 148383892,
+        "ns": 6,
+        "title": "File:Cyclocybe cylindracea 358269575.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1947698,
+            "width": 2048,
+            "height": 1536,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/65/Cyclocybe_cylindracea_358269575.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Cyclocybe_cylindracea_358269575.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=148383892",
+            "sha1": "d3ed9d6fcbc6cd5c52f5b34f0f0f5c141f13bf1a",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2024-05-15 17:09:35",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Cyclocybe cylindracea 358269575",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Cyclocybe cylindracea|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "45.887467",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "13.912088",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Poplar Fieldcap (<i>Cyclocybe cylindracea</i>) in Slovenia",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2024-03-17",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/358269575\">https://www.inaturalist.org/photos/358269575</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/3522968\">Matej Frančeškin</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "148383930": {
+        "pageid": 148383930,
+        "ns": 6,
+        "title": "File:Cyclocybe cylindracea 365025098.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3090847,
+            "width": 2048,
+            "height": 1536,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/da/Cyclocybe_cylindracea_365025098.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Cyclocybe_cylindracea_365025098.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=148383930",
+            "sha1": "3b538e5346f1d0f90fc3cb7373b513c8865e0bcf",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2024-05-15 17:11:32",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Cyclocybe cylindracea 365025098",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Cyclocybe cylindracea|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|Media from GBIF",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "45.887360",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "13.903517",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Poplar Fieldcap (<i>Cyclocybe cylindracea</i>) in Slovenia",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2024-04-10",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/365025098\">https://www.inaturalist.org/photos/365025098</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/3522968\">Matej Frančeškin</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "148383917": {
+        "pageid": 148383917,
+        "ns": 6,
+        "title": "File:Cyclocybe cylindracea 381453539.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1625812,
+            "width": 1792,
+            "height": 1374,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Cyclocybe_cylindracea_381453539.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Cyclocybe_cylindracea_381453539.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=148383917",
+            "sha1": "fbb5da91381f86d99ca3cd0daeff70802a167fb9",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2024-05-15 17:10:45",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Cyclocybe cylindracea 381453539",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Cyclocybe cylindracea|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|Media from GBIF",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "45.887360",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "13.903517",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Poplar Fieldcap (<i>Cyclocybe cylindracea</i>) in Slovenia",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2024-04-10",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/381453539\">https://www.inaturalist.org/photos/381453539</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/3522968\">Matej Frančeškin</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "74723242": {
+        "pageid": 74723242,
+        "ns": 6,
+        "title": "File:Cyclocybe cylindracea.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 411892,
+            "width": 960,
+            "height": 687,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Cyclocybe_cylindracea.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Cyclocybe_cylindracea.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=74723242",
+            "sha1": "19b4cf5c0ecac894d8967d4d21dc8cf4cdfaff0a",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-11-28 11:59:42",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Cyclocybe cylindracea",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Cyclocybe cylindracea|Divlji Viki Parkovi 2018|Fungi in June|Agaricales in Serbia",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Fotografije gljive slikana u Nišu",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2018-06-19 15:35:58",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "Srđan Lazarević",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Srđan Lazarević",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Agaricales in Serbia"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Cyclocybe cylindracea"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Divlji Viki Parkovi 2018"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in June"
+          }
+        ]
+      },
+      "124340792": {
+        "pageid": 124340792,
+        "ns": 6,
+        "title": "File:Een afbeelding van een groep populierleemhoeden, aangetroffen op dood hout van een populier in natuurgebied bourgoyen-ossenmeersen (Oost-Vlaanderen) (2022).jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2285494,
+            "width": 4032,
+            "height": 3024,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Een_afbeelding_van_een_groep_populierleemhoeden%2C_aangetroffen_op_dood_hout_van_een_populier_in_natuurgebied_bourgoyen-ossenmeersen_%28Oost-Vlaanderen%29_%282022%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Een_afbeelding_van_een_groep_populierleemhoeden,_aangetroffen_op_dood_hout_van_een_populier_in_natuurgebied_bourgoyen-ossenmeersen_(Oost-Vlaanderen)_(2022).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=124340792",
+            "sha1": "0c4b53964f7d9bba261b37c9e2ad1b153750ecaf",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-10-18 16:16:54",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Een afbeelding van een groep populierleemhoeden, aangetroffen op dood hout van een populier in natuurgebied bourgoyen-ossenmeersen (Oost-Vlaanderen) (2022)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Cyclocybe cylindracea|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Een afbeelding van een groep populierleemhoeden, aangetroffen op dood hout van een populier in natuurgebied bourgoyen-ossenmeersen (Oost-Vlaanderen) (2022)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-10-05",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Maandh123&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Maandh123 (page does not exist)\">Maandh123</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Cyclocybe cylindracea"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "43358166": {
+        "pageid": 43358166,
+        "ns": 6,
+        "title": "File:Illustrations of British Fungi (Hymenomycetes), to serve as an atlas to the \"Handbook of British Fungi\" (Pl. 383) (8723379912).jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 387427,
+            "width": 1634,
+            "height": 2579,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Illustrations_of_British_Fungi_%28Hymenomycetes%29%2C_to_serve_as_an_atlas_to_the_%22Handbook_of_British_Fungi%22_%28Pl._383%29_%288723379912%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Illustrations_of_British_Fungi_(Hymenomycetes),_to_serve_as_an_atlas_to_the_%22Handbook_of_British_Fungi%22_(Pl._383)_(8723379912).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=43358166",
+            "sha1": "dd5bc3247a1cedbd0470fc6999975838a69f1bf6",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-09-18 04:51:52",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Illustrations of British Fungi (Hymenomycetes), to serve as an atlas to the \"Handbook of British Fungi\" (Pl. 383) (8723379912)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Cyclocybe cylindracea|Illustrations of British Fungi (Hymenomycetes), to serve as an atlas to the \"Handbook of British Fungi\"|PD-old-70-expired|Photos uploaded from Flickr by Fæ using a script|PD-scan (PD-old-70-expired)|Files from the Biodiversity Heritage Library|CC-PD-Mark|Files from the Biodiversity Heritage Library (released as Attribution-NonCommercial-ShareAlike)|PD-old missing SDC copyright status|Biodiversity Heritage Library maintenance missing collection|Strophariaceae botanical illustrations",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<p>^ ^ o <br>\nAGARICUS (PHOLIOTA) PUDICUS Fries, <br>\n</p>\non Elder stamps^ near Canterbury.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "between 1881 and 1891<div style=\"display: none;\">date QS:P,+1850-00-00T00:00:00Z/7,P1319,+1881-00-00T00:00:00Z/9,P1326,+1891-00-00T00:00:00Z/9</div>",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.flickr.com/photos/biodivlibrary/8723379912\">https://www.flickr.com/photos/biodivlibrary/8723379912</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Cooke, M. C.; Cooke, Mordecai Cubitt",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Biodiversity Heritage Library maintenance missing collection"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-PD-Mark"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Cyclocybe cylindracea"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files from the Biodiversity Heritage Library"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files from the Biodiversity Heritage Library (released as Attribution-NonCommercial-ShareAlike)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Illustrations of British Fungi (Hymenomycetes), to serve as an atlas to the \"Handbook of British Fungi\""
+          },
+          {
+            "ns": 14,
+            "title": "Category:PD-old-70-expired"
+          },
+          {
+            "ns": 14,
+            "title": "Category:PD-old missing SDC copyright status"
+          },
+          {
+            "ns": 14,
+            "title": "Category:PD-scan (PD-old-70-expired)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photos uploaded from Flickr by Fæ using a script"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Strophariaceae botanical illustrations"
+          }
+        ]
+      },
+      "43358164": {
+        "pageid": 43358164,
+        "ns": 6,
+        "title": "File:Illustrations of British Fungi (Hymenomycetes), to serve as an atlas to the \"Handbook of British Fungi\" (Pl. 384) (8723380266).jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 351772,
+            "width": 1634,
+            "height": 2579,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/54/Illustrations_of_British_Fungi_%28Hymenomycetes%29%2C_to_serve_as_an_atlas_to_the_%22Handbook_of_British_Fungi%22_%28Pl._384%29_%288723380266%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Illustrations_of_British_Fungi_(Hymenomycetes),_to_serve_as_an_atlas_to_the_%22Handbook_of_British_Fungi%22_(Pl._384)_(8723380266).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=43358164",
+            "sha1": "29f0ca8e87583459145ef0b6e9b5b6fa83dfcc96",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-09-18 04:51:40",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Illustrations of British Fungi (Hymenomycetes), to serve as an atlas to the \"Handbook of British Fungi\" (Pl. 384) (8723380266)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Cyclocybe cylindracea|Illustrations of British Fungi (Hymenomycetes), to serve as an atlas to the \"Handbook of British Fungi\"|PD-old-70-expired|Photos uploaded from Flickr by Fæ using a script|PD-scan (PD-old-70-expired)|Files from the Biodiversity Heritage Library|CC-PD-Mark|Files from the Biodiversity Heritage Library (released as Attribution-NonCommercial-ShareAlike)|PD-old missing SDC copyright status|Biodiversity Heritage Library maintenance missing collection|Strophariaceae botanical illustrations",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<p>\"iH- <br>\nAGARlCUS(PHOUOTA/ lEOCHROMUS. ' --U'. <br>\n</p>\nOH Elm -stump Kitfhgate. July, liit.2.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "between 1881 and 1891<div style=\"display: none;\">date QS:P,+1850-00-00T00:00:00Z/7,P1319,+1881-00-00T00:00:00Z/9,P1326,+1891-00-00T00:00:00Z/9</div>",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.flickr.com/photos/biodivlibrary/8723380266\">https://www.flickr.com/photos/biodivlibrary/8723380266</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Cooke, M. C.; Cooke, Mordecai Cubitt",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Biodiversity Heritage Library maintenance missing collection"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-PD-Mark"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Cyclocybe cylindracea"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files from the Biodiversity Heritage Library"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files from the Biodiversity Heritage Library (released as Attribution-NonCommercial-ShareAlike)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Illustrations of British Fungi (Hymenomycetes), to serve as an atlas to the \"Handbook of British Fungi\""
+          },
+          {
+            "ns": 14,
+            "title": "Category:PD-old-70-expired"
+          },
+          {
+            "ns": 14,
+            "title": "Category:PD-old missing SDC copyright status"
+          },
+          {
+            "ns": 14,
+            "title": "Category:PD-scan (PD-old-70-expired)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photos uploaded from Flickr by Fæ using a script"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Strophariaceae botanical illustrations"
+          }
+        ]
+      },
+      "43358162": {
+        "pageid": 43358162,
+        "ns": 6,
+        "title": "File:Illustrations of British Fungi (Hymenomycetes), to serve as an atlas to the \"Handbook of British Fungi\" (Pl. 385) (8722260965).jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 349256,
+            "width": 1634,
+            "height": 2579,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Illustrations_of_British_Fungi_%28Hymenomycetes%29%2C_to_serve_as_an_atlas_to_the_%22Handbook_of_British_Fungi%22_%28Pl._385%29_%288722260965%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Illustrations_of_British_Fungi_(Hymenomycetes),_to_serve_as_an_atlas_to_the_%22Handbook_of_British_Fungi%22_(Pl._385)_(8722260965).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=43358162",
+            "sha1": "cc386a0e2cba7de08638695a430c9bb7c8c77f11",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-09-18 04:51:28",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Illustrations of British Fungi (Hymenomycetes), to serve as an atlas to the \"Handbook of British Fungi\" (Pl. 385) (8722260965)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Cyclocybe cylindracea|Illustrations of British Fungi (Hymenomycetes), to serve as an atlas to the \"Handbook of British Fungi\"|PD-old-70-expired|Photos uploaded from Flickr by Fæ using a script|PD-scan (PD-old-70-expired)|Files from the Biodiversity Heritage Library|CC-PD-Mark|Files from the Biodiversity Heritage Library (released as Attribution-NonCommercial-ShareAlike)|PD-old missing SDC copyright status|Biodiversity Heritage Library maintenance missing collection|Strophariaceae botanical illustrations",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<p>5 » <br>\nAGARICUS (PHOUOTA) CAPISTRATUS. Cooke. <br>\n</p>\non stumps. Highgaie. Aug , 1862.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "between 1881 and 1891<div style=\"display: none;\">date QS:P,+1850-00-00T00:00:00Z/7,P1319,+1881-00-00T00:00:00Z/9,P1326,+1891-00-00T00:00:00Z/9</div>",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.flickr.com/photos/biodivlibrary/8722260965\">https://www.flickr.com/photos/biodivlibrary/8722260965</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Cooke, M. C.; Cooke, Mordecai Cubitt",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Biodiversity Heritage Library maintenance missing collection"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-PD-Mark"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Cyclocybe cylindracea"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files from the Biodiversity Heritage Library"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files from the Biodiversity Heritage Library (released as Attribution-NonCommercial-ShareAlike)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Illustrations of British Fungi (Hymenomycetes), to serve as an atlas to the \"Handbook of British Fungi\""
+          },
+          {
+            "ns": 14,
+            "title": "Category:PD-old-70-expired"
+          },
+          {
+            "ns": 14,
+            "title": "Category:PD-old missing SDC copyright status"
+          },
+          {
+            "ns": 14,
+            "title": "Category:PD-scan (PD-old-70-expired)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photos uploaded from Flickr by Fæ using a script"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Strophariaceae botanical illustrations"
+          }
+        ]
+      },
+      "160849176": {
+        "pageid": 160849176,
+        "ns": 6,
+        "title": "File:Lõuna-põldseen.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 350101,
+            "width": 2000,
+            "height": 1762,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/60/L%C3%B5una-p%C3%B5ldseen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:L%C3%B5una-p%C3%B5ldseen.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=160849176",
+            "sha1": "f5442321db067642fade3258d7119bbd828ea962",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2025-02-28 17:22:42",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Lõuna-põldseen",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Cyclocybe cylindracea|Bergamo|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Lõuna-põldseen",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2025-02-28",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Svencapoeira\" title=\"User:Svencapoeira\">Svencapoeira</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "199532818": {
+        "pageid": 199532818,
+        "ns": 6,
+        "title": "File:Node-Véran - Pholiota cylindracea - 1.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1505315,
+            "width": 2681,
+            "height": 4162,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Node-V%C3%A9ran_-_Pholiota_cylindracea_-_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Node-V%C3%A9ran_-_Pholiota_cylindracea_-_1.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=199532818",
+            "sha1": "8bf86b303f6d6f022fe10ff6e802ae123024947a",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2026-09-15 13:20:37",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Node-Véran - Pholiota cylindracea - 1",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Cyclocybe cylindracea|Author died more than 70 years ago public domain images|Illustrations of fungi|PD US expired|CC-PD-Mark|19th-century watercolor paintings in France|19th-century watercolor paintings from France|Toussaint-François Node-Véran",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Aquarelle de Node-Véran, Pholiote du peuplier, récolté par Alire Raffeneau-Delile le 24 octobre 1825 à Lavérune (Hérault). Crédits photo :MPU - Montpellier, MPU, UM, Marty &amp; Loup - 2020.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "1825",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://science.mnhn.fr/institution/um/collection/mpu/item/mpu1378310\">https://science.mnhn.fr/institution/um/collection/mpu/item/mpu1378310</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<bdi><a href=\"https://www.wikidata.org/wiki/Q3535634\" class=\"extiw\" title=\"d:Q3535634\"><span title=\"French painter (1773-1852)\">Toussaint-François Node-Véran</span></a></bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "199532817": {
+        "pageid": 199532817,
+        "ns": 6,
+        "title": "File:Node-Véran - Pholiota cylindracea - 2.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1379269,
+            "width": 2773,
+            "height": 4162,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Node-V%C3%A9ran_-_Pholiota_cylindracea_-_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Node-V%C3%A9ran_-_Pholiota_cylindracea_-_2.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=199532817",
+            "sha1": "950c7be84851b72c3cf4b76b5179a2bb4e43c53e",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2026-09-15 13:20:36",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Node-Véran - Pholiota cylindracea - 2",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Cyclocybe cylindracea|Author died more than 70 years ago public domain images|Illustrations of fungi|PD US expired|CC-PD-Mark|19th-century watercolor paintings in France|19th-century watercolor paintings from France|PD-old missing SDC copyright status|PD-US missing SDC copyright status|Toussaint-François Node-Véran",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Aquarelle de Node-Véran, Pholiote du peuplier, récolté par Alire Raffeneau-Delile le 24 octobre 1825 à Lavérune (Hérault). Crédits photo :MPU - Montpellier, MPU, UM, Marty &amp; Loup - 2020.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "1825",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://science.mnhn.fr/institution/um/collection/mpu/item/mpu1378310\">https://science.mnhn.fr/institution/um/collection/mpu/item/mpu1378310</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<bdi><a href=\"https://www.wikidata.org/wiki/Q3535634\" class=\"extiw\" title=\"d:Q3535634\"><span title=\"French painter (1773-1852)\">Toussaint-François Node-Véran</span></a></bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "199533033": {
+        "pageid": 199533033,
+        "ns": 6,
+        "title": "File:Node-Véran - Pholiota cylindracea - 3 (cropped).jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1232852,
+            "width": 2610,
+            "height": 3364,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/35/Node-V%C3%A9ran_-_Pholiota_cylindracea_-_3_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Node-V%C3%A9ran_-_Pholiota_cylindracea_-_3_(cropped).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=199533033",
+            "sha1": "a3a44defb5d2029b8185f4e181e45b99c2fd68b6",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2026-09-15 13:24:31",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Node-Véran - Pholiota cylindracea - 3 (cropped)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Cyclocybe cylindracea|Author died more than 70 years ago public domain images|Extracted images|Illustrations of fungi|PD US expired|CC-PD-Mark|19th-century watercolor paintings in France|19th-century watercolor paintings from France|PD-old missing SDC copyright status|PD-US missing SDC copyright status|Toussaint-François Node-Véran",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Aquarelle de Node-Véran, Pholiote du peuplier, récolté par Alire Raffeneau-Delile le 24 octobre 1825 à Lavérune (Hérault). Crédits photo :MPU - Montpellier, MPU, UM, Marty &amp; Loup - 2020.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "1825",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://science.mnhn.fr/institution/um/collection/mpu/item/mpu1378310\">https://science.mnhn.fr/institution/um/collection/mpu/item/mpu1378310</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<bdi><a href=\"https://www.wikidata.org/wiki/Q3535634\" class=\"extiw\" title=\"d:Q3535634\"><span title=\"French painter (1773-1852)\">Toussaint-François Node-Véran</span></a></bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "199532809": {
+        "pageid": 199532809,
+        "ns": 6,
+        "title": "File:Node-Véran - Pholiota cylindracea - 3.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1426783,
+            "width": 2610,
+            "height": 3868,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/30/Node-V%C3%A9ran_-_Pholiota_cylindracea_-_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Node-V%C3%A9ran_-_Pholiota_cylindracea_-_3.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=199532809",
+            "sha1": "64e83b188b7382e255be2a115723a06dc05d16b5",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2026-09-15 13:20:28",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Node-Véran - Pholiota cylindracea - 3",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Cyclocybe cylindracea|Author died more than 70 years ago public domain images|Images with extracted images|Illustrations of fungi|PD US expired|CC-PD-Mark|19th-century watercolor paintings in France|19th-century watercolor paintings from France|PD-old missing SDC copyright status|PD-US missing SDC copyright status|Toussaint-François Node-Véran",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Aquarelle de Node-Véran, Pholiote du peuplier, récolté par Alire Raffeneau-Delile le 24 octobre 1825 à Lavérune (Hérault). Crédits photo :MPU - Montpellier, MPU, UM, Marty &amp; Loup - 2020.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "1825",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://science.mnhn.fr/institution/um/collection/mpu/item/mpu1378310\">https://science.mnhn.fr/institution/um/collection/mpu/item/mpu1378310</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<bdi><a href=\"https://www.wikidata.org/wiki/Q3535634\" class=\"extiw\" title=\"d:Q3535634\"><span title=\"French painter (1773-1852)\">Toussaint-François Node-Véran</span></a></bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "199532810": {
+        "pageid": 199532810,
+        "ns": 6,
+        "title": "File:Node-Véran - Pholiota cylindracea - 4.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1285884,
+            "width": 2851,
+            "height": 4312,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Node-V%C3%A9ran_-_Pholiota_cylindracea_-_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Node-V%C3%A9ran_-_Pholiota_cylindracea_-_4.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=199532810",
+            "sha1": "f564359554e22d8ca3e72d63e1e523e1c40461d8",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2026-09-15 13:20:29",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Node-Véran - Pholiota cylindracea - 4",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Cyclocybe cylindracea|Author died more than 70 years ago public domain images|Illustrations of fungi|PD US expired|CC-PD-Mark|19th-century watercolor paintings in France|19th-century watercolor paintings from France|PD-old missing SDC copyright status|PD-US missing SDC copyright status|Toussaint-François Node-Véran",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Aquarelle de Node-Véran, Pholiote du peuplier, récolté par Alire Raffeneau-Delile le 24 octobre 1825 à Lavérune (Hérault). Crédits photo :MPU - Montpellier, MPU, UM, Marty &amp; Loup - 2020.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "1825",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://science.mnhn.fr/institution/um/collection/mpu/item/mpu1378310\">https://science.mnhn.fr/institution/um/collection/mpu/item/mpu1378310</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<bdi><a href=\"https://www.wikidata.org/wiki/Q3535634\" class=\"extiw\" title=\"d:Q3535634\"><span title=\"French painter (1773-1852)\">Toussaint-François Node-Véran</span></a></bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "199532808": {
+        "pageid": 199532808,
+        "ns": 6,
+        "title": "File:Node-Véran - Pholiota cylindracea - 5.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1700144,
+            "width": 2649,
+            "height": 4162,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Node-V%C3%A9ran_-_Pholiota_cylindracea_-_5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Node-V%C3%A9ran_-_Pholiota_cylindracea_-_5.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=199532808",
+            "sha1": "e50a166a0058b5c9c62def834fd84706455e4e16",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2026-09-15 13:20:28",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Node-Véran - Pholiota cylindracea - 5",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Cyclocybe cylindracea|Author died more than 70 years ago public domain images|Illustrations of fungi|PD US expired|CC-PD-Mark|19th-century watercolor paintings in France|19th-century watercolor paintings from France|PD-old missing SDC copyright status|PD-US missing SDC copyright status|Toussaint-François Node-Véran",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Aquarelle de Node-Véran, Pholiote du peuplier, récolté par Alire Raffeneau-Delile le 24 octobre 1825 à Lavérune (Hérault). Crédits photo :MPU - Montpellier, MPU, UM, Marty &amp; Loup - 2020.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "1825",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://science.mnhn.fr/institution/um/collection/mpu/item/mpu1378310\">https://science.mnhn.fr/institution/um/collection/mpu/item/mpu1378310</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<bdi><a href=\"https://www.wikidata.org/wiki/Q3535634\" class=\"extiw\" title=\"d:Q3535634\"><span title=\"French painter (1773-1852)\">Toussaint-François Node-Véran</span></a></bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "63755722": {
+        "pageid": 63755722,
+        "ns": 6,
+        "title": "File:Poplar Fieldcap ( Cyclocybe cylindracea) (35665739712).jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1807070,
+            "width": 3007,
+            "height": 2162,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Poplar_Fieldcap_%28_Cyclocybe_cylindracea%29_%2835665739712%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Poplar_Fieldcap_(_Cyclocybe_cylindracea)_(35665739712).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=63755722",
+            "sha1": "12c661eba42d9ec50b1a32a312dea5ef09540248",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-10-31 00:41:29",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Poplar Fieldcap ( Cyclocybe cylindracea) (35665739712)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Cyclocybe cylindracea|Flickr images reviewed by FlickreviewR 2|Photographs by gailhampshire",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Christchurch Meadows, Oxford. SP517054",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-06-03 14:16",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/gails_pictures/35665739712/\">Poplar Fieldcap ( Cyclocybe cylindracea)</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/43272765@N04\">gailhampshire</a> from Cradley, Malvern, U.K",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-2.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Cyclocybe cylindracea"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images reviewed by FlickreviewR 2"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by gailhampshire"
+          }
+        ]
+      },
+      "63755583": {
+        "pageid": 63755583,
+        "ns": 6,
+        "title": "File:Poplar Fieldcap (Cyclocybe cylindracea) (35207347644).jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2478551,
+            "width": 4608,
+            "height": 3072,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Poplar_Fieldcap_%28Cyclocybe_cylindracea%29_%2835207347644%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Poplar_Fieldcap_(Cyclocybe_cylindracea)_(35207347644).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=63755583",
+            "sha1": "6bd7e58053f4e38979c31bae9ecff8005922db2d",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-10-31 00:35:06",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Poplar Fieldcap (Cyclocybe cylindracea) (35207347644)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Cyclocybe cylindracea|Fungi of Worcestershire|Fungi in July|Strophariaceae in the United Kingdom|United Kingdom photographs taken on 2017-07-13|Flickr images reviewed by FlickreviewR 2|Photographs by gailhampshire",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Castlemorton Common, Malvern, Worcs. SO783397",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-07-13 11:46",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/gails_pictures/35207347644/\">Poplar Fieldcap (Cyclocybe cylindracea)</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/43272765@N04\">gailhampshire</a> from Cradley, Malvern, U.K",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-2.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Cyclocybe cylindracea"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images reviewed by FlickreviewR 2"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in July"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Worcestershire"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by gailhampshire"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Strophariaceae in the United Kingdom"
+          },
+          {
+            "ns": 14,
+            "title": "Category:United Kingdom photographs taken on 2017-07-13"
+          }
+        ]
+      },
+      "63755612": {
+        "pageid": 63755612,
+        "ns": 6,
+        "title": "File:Poplar Fieldcap (Cyclocybe cylindracea) (35657559250).jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2824787,
+            "width": 3303,
+            "height": 2769,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Poplar_Fieldcap_%28Cyclocybe_cylindracea%29_%2835657559250%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Poplar_Fieldcap_(Cyclocybe_cylindracea)_(35657559250).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=63755612",
+            "sha1": "ee2414803a6413c0564df19810071276f1bd4f62",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-10-31 00:36:13",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Poplar Fieldcap (Cyclocybe cylindracea) (35657559250)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Cyclocybe cylindracea|Fungi of Worcestershire|Fungi in July|Strophariaceae in the United Kingdom|United Kingdom photographs taken on 2017-07-13|Flickr images reviewed by FlickreviewR 2|Photographs by gailhampshire",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Castlemorton Common, Malvern, Worcs. SO783397",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-07-13 11:44",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/gails_pictures/35657559250/\">Poplar Fieldcap (Cyclocybe cylindracea)</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/43272765@N04\">gailhampshire</a> from Cradley, Malvern, U.K",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-2.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Cyclocybe cylindracea"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images reviewed by FlickreviewR 2"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in July"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Worcestershire"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by gailhampshire"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Strophariaceae in the United Kingdom"
+          },
+          {
+            "ns": 14,
+            "title": "Category:United Kingdom photographs taken on 2017-07-13"
+          }
+        ]
+      },
+      "63755611": {
+        "pageid": 63755611,
+        "ns": 6,
+        "title": "File:Poplar Fieldcap (Cyclocybe cylindracea) (35876017402).jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1887526,
+            "width": 2991,
+            "height": 2657,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Poplar_Fieldcap_%28Cyclocybe_cylindracea%29_%2835876017402%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Poplar_Fieldcap_(Cyclocybe_cylindracea)_(35876017402).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=63755611",
+            "sha1": "07dedae9d44059a015acbc59af89455d5573481d",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-10-31 00:36:13",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Poplar Fieldcap (Cyclocybe cylindracea) (35876017402)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Cyclocybe cylindracea|Fungi of Worcestershire|Fungi in July|Strophariaceae in the United Kingdom|United Kingdom photographs taken on 2017-07-13|Flickr images reviewed by FlickreviewR 2|Photographs by gailhampshire",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Castlemorton Common, Malvern, Worcs. SO783397",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-07-13 11:45",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/gails_pictures/35876017402/\">Poplar Fieldcap (Cyclocybe cylindracea)</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/43272765@N04\">gailhampshire</a> from Cradley, Malvern, U.K",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-2.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Cyclocybe cylindracea"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images reviewed by FlickreviewR 2"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in July"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Worcestershire"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by gailhampshire"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Strophariaceae in the United Kingdom"
+          },
+          {
+            "ns": 14,
+            "title": "Category:United Kingdom photographs taken on 2017-07-13"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -646,7 +646,7 @@ export function sourceRows(sources) {
 export function photoRows(photos) {
   const list = (photos || []).filter((p) => p && (p.author || p.page));
   return list.length ? `<ul class="src-rows src-photos">${list.map((p) => {
-    const label = [p.author || 'Autore non indicato', p.license].filter(Boolean).join(' · ');
+    const label = [p.attribution_required_text || p.author || 'Autore non indicato', p.license].filter(Boolean).join(' · ');
     const sub = [p.prefix, p.source || 'Fotografia originale'].filter(Boolean).join(' · ');
     const lic = p.licenseUrl ? `<a class="src-lic" href="${esc(p.licenseUrl)}" target="_blank" rel="noopener" aria-label="Testo della licenza ${esc(p.license || '')}">Licenza</a>` : '';
     return p.page ? srcRow(p.page, label, sub, lic) : `<li class="src-row"><span class="src-a"><span class="src-tx"><b>${esc(label)}</b><small>${esc(sub)}</small></span></span>${lic}</li>`;
@@ -831,7 +831,7 @@ export function renderTaxonView(box, t, { photos = null, habitatText = '', extra
       ${t.sources?.length || ph.length ? `<details class="sec"><summary>Fonti e fotografie</summary><div class="sec-body">${sourceRows(t.sources)}${ph.length ? `<p class="src-h">Fotografie</p>${photoRows(ph)}` : ''}</div></details>` : ''}
     </div>`;
   enhanceEntityAccordions(box);
-  const lb = ph.map((p) => ({ src: ASSET(p.file_hd || p.file), alt: t.name, caption: captionHtml({ title: `<span class="tox">${toxL}</span> ${esc(t.name || '')} <i>${esc(t.latin)}</i>`, credit: `Foto: ${esc(p.author || '')}${p.license ? `, ${p.licenseUrl ? `<a href="${esc(p.licenseUrl)}" target="_blank" rel="noopener">${esc(p.license)}</a>` : esc(p.license)}` : ''}${p.page ? ` · <a href="${esc(p.page)}" target="_blank" rel="noopener">${esc(p.source || 'Fotografia originale')}</a>` : ''}` }) }));
+  const lb = ph.map((p) => ({ src: ASSET(p.file_hd || p.file), alt: p.alt || t.name, caption: captionHtml({ title: `<span class="tox">${toxL}</span> ${esc(t.name || '')} <i>${esc(t.latin)}</i>`, text: esc(p.caption || ''), credit: `Foto: ${esc(p.attribution_required_text || p.author || '')}${p.license ? `, ${p.licenseUrl ? `<a href="${esc(p.licenseUrl)}" target="_blank" rel="noopener">${esc(p.license)}</a>` : esc(p.license)}` : ''}${p.page ? ` · <a href="${esc(p.page)}" target="_blank" rel="noopener">${esc(p.source || 'Fotografia originale')}</a>` : ''}` }) }));
   box.querySelectorAll('[data-photo]').forEach((b) => b.addEventListener('click', () => openLightbox(lb, +b.dataset.photo)));
 }
 export function compareCta(edibleId, taxon = null) {
@@ -1143,7 +1143,7 @@ function renderCompare(box, ref, pick) {
   requestAnimationFrame(fit);
   box.querySelectorAll('[data-taxon]').forEach((b) => b.addEventListener('click', () => openTaxon(b.dataset.taxon)));
   const all = [ref, ...list].map((t) => ({ t, ph: photoOf(t) })).filter((y) => y.ph);
-  const lb = all.map(({ t, ph }) => ({ key: t.key, src: ASSET(ph.file_hd || ph.file), alt: t.name, caption: captionHtml({ title: `<span class="tox">${esc(t.tox_label || t.toxicity)}</span> ${esc(t.name || '')} <i>${esc(t.latin)}</i>`, text: '', credit: `Foto: ${esc(ph.author)}, ${esc(ph.license)}` }) }));
+  const lb = all.map(({ t, ph }) => ({ key: t.key, src: ASSET(ph.file_hd || ph.file), alt: t.name, caption: captionHtml({ title: `<span class="tox">${esc(t.tox_label || t.toxicity)}</span> ${esc(t.name || '')} <i>${esc(t.latin)}</i>`, text: '', credit: `Foto: ${esc(ph.attribution_required_text || ph.author)}, ${esc(ph.license)}` }) }));
   box.querySelectorAll('[data-photo]').forEach((b) => b.addEventListener('click', () => { const i = lb.findIndex((y) => y.key === b.dataset.photo); if (i >= 0) openLightbox(lb, i); }));
 }
 
@@ -1291,7 +1291,7 @@ export function renderIdentify(box) {
   box.querySelectorAll('[data-clear]').forEach((b) => b.addEventListener('click', () => { delete state.ans[b.dataset.clear]; if (b.dataset.clear === 'hymenophore') delete state.ans.hymenophore_color; state.editing = ''; rerenderSoft(); }));
   box.querySelectorAll('[data-skip]').forEach((b) => b.addEventListener('click', () => answer(b.dataset.skip, null)));
   const items = list.slice(0, 40).map((c) => ({ c, ph: photoOf(c.t) })).filter((y) => y.ph);
-  const lb = items.map(({ c, ph }) => ({ key: c.t.key, src: ASSET(ph.file_hd || ph.file), alt: c.t.name, caption: captionHtml({ title: `<span class="tox">${esc(c.t.tox_label || c.t.toxicity)}</span> ${esc(c.t.name || '')} <i>${esc(c.t.latin)}</i>`, text: esc((c.t.check_before_picking || []).join(' · ')), credit: `Foto: ${esc(ph.author)}, ${esc(ph.license)}` }) }));
+  const lb = items.map(({ c, ph }) => ({ key: c.t.key, src: ASSET(ph.file_hd || ph.file), alt: c.t.name, caption: captionHtml({ title: `<span class="tox">${esc(c.t.tox_label || c.t.toxicity)}</span> ${esc(c.t.name || '')} <i>${esc(c.t.latin)}</i>`, text: esc((c.t.check_before_picking || []).join(' · ')), credit: `Foto: ${esc(ph.attribution_required_text || ph.author)}, ${esc(ph.license)}` }) }));
   box.querySelectorAll('[data-taxon]').forEach((b) => b.addEventListener('click', () => openTaxon(b.dataset.taxon,{answers:!!b.closest('.id-card')})));
   box.querySelectorAll('[data-photo]').forEach((b) => b.addEventListener('click', () => { const i = lb.findIndex((y) => y.key === b.dataset.photo); if (i >= 0) openLightbox(lb, i); }));
 }

@@ -40,10 +40,10 @@ export function thumb(id, size = 36) {
 export const speciesPhotos = id => [MEDIA?.species?.[id]?.ref,...(MEDIA?.species?.[id]?.inat||[])].filter((p,i,a)=>p&&a.findIndex(x=>x?.file===p.file)===i);
 export const speciesPhoto = (id) => MEDIA?.species?.[id]?.ref || MEDIA?.species?.[id]?.inat?.[0] || null;
 
-const creditText = (m) => m ? `Foto: ${esc(m.author)}${m.license ? `, ${esc(m.license)}` : ''} · <a href="${esc(m.page)}" target="_blank" rel="noopener">${esc(m.source)}</a>` : '';
+const creditText = (m) => m ? `Foto: ${esc(m.attribution_required_text || m.author)}${m.license ? `, ${esc(m.license)}` : ''} · <a href="${esc(m.page)}" target="_blank" rel="noopener">${esc(m.source)}</a>` : '';
 // crediti dell'infografica: licenza con il link, segno «da rivedere» se c'è
 const infoCredit = (m) => [esc(m.credit || ''), m.license ? (/^https:\/\//.test(m.licenseUrl || '') ? `<a href="${esc(m.licenseUrl)}" target="_blank" rel="noopener">${esc(m.license)}</a>` : esc(m.license)) : '', m.review ? esc(m.review) : ''].filter(Boolean).join(' · ');
-const credit = (m) => m ? `<span class="credit">Foto: ${esc(m.author)}${m.license ? `, ${esc(m.license)}` : ''} · <a href="${esc(m.page)}" target="_blank" rel="noopener">${esc(m.source)}</a></span>` : '';
+const credit = (m) => m ? `<span class="credit">Foto: ${esc(m.attribution_required_text || m.author)}${m.license ? `, ${esc(m.license)}` : ''} · <a href="${esc(m.page)}" target="_blank" rel="noopener">${esc(m.source)}</a></span>` : '';
 
 function phenology(id) {
   const sp = SPECIES.find((s) => s.id === id);
@@ -245,7 +245,7 @@ export function renderSpeciesDetail(body, id) {
     }
   });
   // foto della specie: visore con zoom e swipe tra tutte le foto
-  const gallery = photos.map((p) => ({ src: hd(p), alt: sp.name, caption: captionHtml({ title: esc(d.name || sp.name), text: esc([p.place, p.date].filter(Boolean).join(' · ')), credit: creditText(p) }) }));
+  const gallery = photos.map((p) => ({ src: hd(p), alt: p.alt || sp.name, caption: captionHtml({ title: esc(d.name || sp.name), text: esc([p.caption, p.place, p.date].filter(Boolean).join(' · ')), credit: creditText(p) }) }));
   body.querySelectorAll('[data-photo]').forEach((b) => b.addEventListener('click', () => openLightbox(gallery, +b.dataset.photo)));
   body.querySelectorAll('[data-info]').forEach((b) => b.addEventListener('click', () => openLightbox([{ src: ASSET(INFO[id].file), alt: `Infografica ${sp.name}`, caption: captionHtml({ title: `Infografica · ${esc(sp.name)}`, credit: infoCredit(INFO[id]) }) }])));
   // sosia: foto grande con pericolosita' e differenza da guardare

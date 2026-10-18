@@ -1,0 +1,4481 @@
+{
+  "continue": {
+    "clcontinue": "63553310|Files_with_coordinates_missing_SDC_location_of_creation_(51°_N,_7°_E)",
+    "continue": "||imageinfo"
+  },
+  "query": {
+    "pages": {
+      "63552862": {
+        "pageid": 63552862,
+        "ns": 6,
+        "title": "File:Botanical Garden Gothenburg and Anggårdsbergen 13.08.2017 Bitter Beech Bolete - Caloboletus calopus (37321275956).jpg",
+        "index": 31,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 6311180,
+            "width": 3456,
+            "height": 5184,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/02/Botanical_Garden_Gothenburg_and_Angg%C3%A5rdsbergen_13.08.2017_Bitter_Beech_Bolete_-_Caloboletus_calopus_%2837321275956%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Botanical_Garden_Gothenburg_and_Angg%C3%A5rdsbergen_13.08.2017_Bitter_Beech_Bolete_-_Caloboletus_calopus_(37321275956).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=63552862",
+            "sha1": "dfe44eb479e39bbaef37bf7fc8acf633b050e79c",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-10-23 19:52:29",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Botanical Garden Gothenburg and Anggårdsbergen 13.08.2017 Bitter Beech Bolete - Caloboletus calopus (37321275956)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Caloboletus calopus|Flickr images reviewed by FlickreviewR|Sweden photographs taken on 2017-08-13|Fungi in August|Boletaceae in Sweden|Fungi of Västra Götaland County|Files with coordinates missing SDC location of creation|Photographs by Björn Sothmann",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "57.675399",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "11.957561",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bitter Beech Bolete - Caloboletus calopus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-08-13 15:17",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/40948266@N04/37321275956/\">Bitter Beech Bolete - Caloboletus calopus</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/40948266@N04\">Björn S...</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Boletaceae in Sweden"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-2.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Caloboletus calopus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images reviewed by FlickreviewR"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in August"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Västra Götaland County"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by Björn Sothmann"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Sweden photographs taken on 2017-08-13"
+          }
+        ]
+      },
+      "149699490": {
+        "pageid": 149699490,
+        "ns": 6,
+        "title": "File:Botanical Garden Gothenburg and Anggårdsbergen 13.08.2017 Bitter Beech Bolete - Caloboletus calopus (37321275956) cropped.jpg",
+        "index": 36,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1666967,
+            "width": 3456,
+            "height": 3536,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/50/Botanical_Garden_Gothenburg_and_Angg%C3%A5rdsbergen_13.08.2017_Bitter_Beech_Bolete_-_Caloboletus_calopus_%2837321275956%29_cropped.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Botanical_Garden_Gothenburg_and_Angg%C3%A5rdsbergen_13.08.2017_Bitter_Beech_Bolete_-_Caloboletus_calopus_(37321275956)_cropped.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=149699490",
+            "sha1": "d86536e8b905bfdddbb4492442a5ac576ae04114",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2024-06-25 11:44:55",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Botanical Garden Gothenburg and Anggårdsbergen 13.08.2017 Bitter Beech Bolete - Caloboletus calopus (37321275956) cropped",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Caloboletus calopus|Files with coordinates missing SDC location of creation",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "57.675399",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "11.957562",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Caloboletus calopus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-08-13 15:17:51",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "Cropped from <a class=\"external free\" href=\"https://fr.wikipedia.org/wiki/Fichier:Botanical_Garden_Gothenburg_and_Angg%C3%A5rdsbergen_13.08.2017_Bitter_Beech_Bolete_-_Caloboletus_calopus_(37321275956).jpg\">https://fr.wikipedia.org/wiki/Fichier:Botanical_Garden_Gothenburg_and_Angg%C3%A5rdsbergen_13.08.2017_Bitter_Beech_Bolete_-_Caloboletus_calopus_(37321275956).jpg</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Björn S...",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.5",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.5",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.5",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.5",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "63552878": {
+        "pageid": 63552878,
+        "ns": 6,
+        "title": "File:Botanical Garden Gothenburg and Anggårdsbergen 13.08.2017 Bitter Beech Bolete - Caloboletus calopus (37321277276).jpg",
+        "index": 13,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 6303501,
+            "width": 3456,
+            "height": 5184,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Botanical_Garden_Gothenburg_and_Angg%C3%A5rdsbergen_13.08.2017_Bitter_Beech_Bolete_-_Caloboletus_calopus_%2837321277276%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Botanical_Garden_Gothenburg_and_Angg%C3%A5rdsbergen_13.08.2017_Bitter_Beech_Bolete_-_Caloboletus_calopus_(37321277276).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=63552878",
+            "sha1": "58afd619dcf17bf8ad820be3dab6a0762a4e182f",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-10-23 19:52:51",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Botanical Garden Gothenburg and Anggårdsbergen 13.08.2017 Bitter Beech Bolete - Caloboletus calopus (37321277276)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Caloboletus calopus|Flickr images reviewed by FlickreviewR|Sweden photographs taken on 2017-08-13|Fungi in August|Boletaceae in Sweden|Fungi of Västra Götaland County|Files with coordinates missing SDC location of creation|Photographs by Björn Sothmann",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "57.675399",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "11.957561",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bitter Beech Bolete - Caloboletus calopus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-08-13 15:17",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/40948266@N04/37321277276/\">Bitter Beech Bolete - Caloboletus calopus</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/40948266@N04\">Björn S...</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Boletaceae in Sweden"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-2.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Caloboletus calopus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images reviewed by FlickreviewR"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in August"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Västra Götaland County"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by Björn Sothmann"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Sweden photographs taken on 2017-08-13"
+          }
+        ]
+      },
+      "63552885": {
+        "pageid": 63552885,
+        "ns": 6,
+        "title": "File:Botanical Garden Gothenburg and Anggårdsbergen 13.08.2017 Bitter Beech Bolete - Caloboletus calopus (37321278126).jpg",
+        "index": 28,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 6119217,
+            "width": 3456,
+            "height": 5184,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Botanical_Garden_Gothenburg_and_Angg%C3%A5rdsbergen_13.08.2017_Bitter_Beech_Bolete_-_Caloboletus_calopus_%2837321278126%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Botanical_Garden_Gothenburg_and_Angg%C3%A5rdsbergen_13.08.2017_Bitter_Beech_Bolete_-_Caloboletus_calopus_(37321278126).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=63552885",
+            "sha1": "9cd5ca89c70d4cc64889e90929bc7c958c378359",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-10-23 19:53:11",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Botanical Garden Gothenburg and Anggårdsbergen 13.08.2017 Bitter Beech Bolete - Caloboletus calopus (37321278126)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Caloboletus calopus|Flickr images reviewed by FlickreviewR|Sweden photographs taken on 2017-08-13|Fungi in August|Boletaceae in Sweden|Fungi of Västra Götaland County|Files with coordinates missing SDC location of creation|Photographs by Björn Sothmann",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "57.675399",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "11.957561",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bitter Beech Bolete - Caloboletus calopus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-08-13 15:17",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/40948266@N04/37321278126/\">Bitter Beech Bolete - Caloboletus calopus</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/40948266@N04\">Björn S...</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Boletaceae in Sweden"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-2.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Caloboletus calopus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images reviewed by FlickreviewR"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in August"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Västra Götaland County"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by Björn Sothmann"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Sweden photographs taken on 2017-08-13"
+          }
+        ]
+      },
+      "63552880": {
+        "pageid": 63552880,
+        "ns": 6,
+        "title": "File:Botanical Garden Gothenburg and Anggårdsbergen 13.08.2017 Bitter Beech Bolete - Caloboletus calopus (37321279256).jpg",
+        "index": 25,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 6196896,
+            "width": 3456,
+            "height": 5184,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Botanical_Garden_Gothenburg_and_Angg%C3%A5rdsbergen_13.08.2017_Bitter_Beech_Bolete_-_Caloboletus_calopus_%2837321279256%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Botanical_Garden_Gothenburg_and_Angg%C3%A5rdsbergen_13.08.2017_Bitter_Beech_Bolete_-_Caloboletus_calopus_(37321279256).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=63552880",
+            "sha1": "7b597874144d129a5ca1b9328259612f94781cdf",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-10-23 19:52:59",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Botanical Garden Gothenburg and Anggårdsbergen 13.08.2017 Bitter Beech Bolete - Caloboletus calopus (37321279256)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Caloboletus calopus|Flickr images reviewed by FlickreviewR|Sweden photographs taken on 2017-08-13|Fungi in August|Boletaceae in Sweden|Fungi of Västra Götaland County|Files with coordinates missing SDC location of creation|Photographs by Björn Sothmann",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "57.675399",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "11.957561",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bitter Beech Bolete - Caloboletus calopus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-08-13 15:17",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/40948266@N04/37321279256/\">Bitter Beech Bolete - Caloboletus calopus</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/40948266@N04\">Björn S...</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Boletaceae in Sweden"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-2.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Caloboletus calopus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images reviewed by FlickreviewR"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in August"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Västra Götaland County"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by Björn Sothmann"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Sweden photographs taken on 2017-08-13"
+          }
+        ]
+      },
+      "161999507": {
+        "pageid": 161999507,
+        "ns": 6,
+        "title": "File:Botanical Garden Gothenburg and Anggårdsbergen 13.08.2017 Bitter Beech Bolete - Caloboletus calopus (37321279256) cropped.jpg",
+        "index": 18,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1301704,
+            "width": 3340,
+            "height": 3079,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Botanical_Garden_Gothenburg_and_Angg%C3%A5rdsbergen_13.08.2017_Bitter_Beech_Bolete_-_Caloboletus_calopus_%2837321279256%29_cropped.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Botanical_Garden_Gothenburg_and_Angg%C3%A5rdsbergen_13.08.2017_Bitter_Beech_Bolete_-_Caloboletus_calopus_(37321279256)_cropped.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=161999507",
+            "sha1": "cbb15f0083866ca66d0c72f4a375f8dc4d86ac34",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2025-03-14 08:18:31",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Botanical Garden Gothenburg and Anggårdsbergen 13.08.2017 Bitter Beech Bolete - Caloboletus calopus (37321279256) cropped",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Caloboletus calopus|Files with coordinates missing SDC location of creation",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "57.675399",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "11.957562",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Caloboletus calopus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "13 August 2017, 15:17",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "cropped from <a class=\"external free\" href=\"https://fr.wikipedia.org/wiki/Fichier:Botanical_Garden_Gothenburg_and_Angg%C3%A5rdsbergen_13.08.2017_Bitter_Beech_Bolete_-_Caloboletus_calopus_(37321279256).jpg\">https://fr.wikipedia.org/wiki/Fichier:Botanical_Garden_Gothenburg_and_Angg%C3%A5rdsbergen_13.08.2017_Bitter_Beech_Bolete_-_Caloboletus_calopus_(37321279256).jpg</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Björn S...",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.5",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.5",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.5",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.5",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "63552889": {
+        "pageid": 63552889,
+        "ns": 6,
+        "title": "File:Botanical Garden Gothenburg and Anggårdsbergen 13.08.2017 Bitter Beech Bolete - Caloboletus calopus (37339638382).jpg",
+        "index": 3,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 4623231,
+            "width": 3456,
+            "height": 5184,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/65/Botanical_Garden_Gothenburg_and_Angg%C3%A5rdsbergen_13.08.2017_Bitter_Beech_Bolete_-_Caloboletus_calopus_%2837339638382%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Botanical_Garden_Gothenburg_and_Angg%C3%A5rdsbergen_13.08.2017_Bitter_Beech_Bolete_-_Caloboletus_calopus_(37339638382).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=63552889",
+            "sha1": "3f62d6b80f79d241bdb95e57c9b286344b7d3b98",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-10-23 19:53:23",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Botanical Garden Gothenburg and Anggårdsbergen 13.08.2017 Bitter Beech Bolete - Caloboletus calopus (37339638382)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Caloboletus calopus|Flickr images reviewed by FlickreviewR|Sweden photographs taken on 2017-08-13|Fungi in August|Boletaceae in Sweden|Fungi of Västra Götaland County|Files with coordinates missing SDC location of creation|Photographs by Björn Sothmann",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "57.675399",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "11.957561",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bitter Beech Bolete - Caloboletus calopus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-08-13 15:19",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/40948266@N04/37339638382/\">Bitter Beech Bolete - Caloboletus calopus</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/40948266@N04\">Björn S...</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Boletaceae in Sweden"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-2.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Caloboletus calopus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images reviewed by FlickreviewR"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in August"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Västra Götaland County"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by Björn Sothmann"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Sweden photographs taken on 2017-08-13"
+          }
+        ]
+      },
+      "63552871": {
+        "pageid": 63552871,
+        "ns": 6,
+        "title": "File:Botanical Garden Gothenburg and Anggårdsbergen 13.08.2017 Bitter Beech Bolete - Caloboletus calopus (37339639122).jpg",
+        "index": 23,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 5813422,
+            "width": 5184,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Botanical_Garden_Gothenburg_and_Angg%C3%A5rdsbergen_13.08.2017_Bitter_Beech_Bolete_-_Caloboletus_calopus_%2837339639122%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Botanical_Garden_Gothenburg_and_Angg%C3%A5rdsbergen_13.08.2017_Bitter_Beech_Bolete_-_Caloboletus_calopus_(37339639122).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=63552871",
+            "sha1": "7937bc3f772ca8ed8e352d49b719d92de747a7f7",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-10-23 19:52:45",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Botanical Garden Gothenburg and Anggårdsbergen 13.08.2017 Bitter Beech Bolete - Caloboletus calopus (37339639122)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Caloboletus calopus|Flickr images reviewed by FlickreviewR|Sweden photographs taken on 2017-08-13|Fungi in August|Boletaceae in Sweden|Fungi of Västra Götaland County|Files with coordinates missing SDC location of creation|Photographs by Björn Sothmann",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "57.675399",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "11.957561",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bitter Beech Bolete - Caloboletus calopus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-08-13 15:18",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/40948266@N04/37339639122/\">Bitter Beech Bolete - Caloboletus calopus</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/40948266@N04\">Björn S...</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Boletaceae in Sweden"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-2.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Caloboletus calopus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images reviewed by FlickreviewR"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in August"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Västra Götaland County"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by Björn Sothmann"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Sweden photographs taken on 2017-08-13"
+          }
+        ]
+      },
+      "63552869": {
+        "pageid": 63552869,
+        "ns": 6,
+        "title": "File:Botanical Garden Gothenburg and Anggårdsbergen 13.08.2017 Bitter Beech Bolete - Caloboletus calopus (37339640862).jpg",
+        "index": 39,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 6768593,
+            "width": 5184,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Botanical_Garden_Gothenburg_and_Angg%C3%A5rdsbergen_13.08.2017_Bitter_Beech_Bolete_-_Caloboletus_calopus_%2837339640862%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Botanical_Garden_Gothenburg_and_Angg%C3%A5rdsbergen_13.08.2017_Bitter_Beech_Bolete_-_Caloboletus_calopus_(37339640862).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=63552869",
+            "sha1": "d08e144b6523a49c2d19ef0ad13f21e25d467424",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-10-23 19:52:41",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Botanical Garden Gothenburg and Anggårdsbergen 13.08.2017 Bitter Beech Bolete - Caloboletus calopus (37339640862)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Caloboletus calopus|Flickr images reviewed by FlickreviewR|Sweden photographs taken on 2017-08-13|Fungi in August|Boletaceae in Sweden|Fungi of Västra Götaland County|Files with coordinates missing SDC location of creation|Photographs by Björn Sothmann",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "57.675399",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "11.957561",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bitter Beech Bolete - Caloboletus calopus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-08-13 15:18",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/40948266@N04/37339640862/\">Bitter Beech Bolete - Caloboletus calopus</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/40948266@N04\">Björn S...</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Boletaceae in Sweden"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-2.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Caloboletus calopus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images reviewed by FlickreviewR"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in August"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Västra Götaland County"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by Björn Sothmann"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Sweden photographs taken on 2017-08-13"
+          }
+        ]
+      },
+      "63552873": {
+        "pageid": 63552873,
+        "ns": 6,
+        "title": "File:Botanical Garden Gothenburg and Anggårdsbergen 13.08.2017 Bitter Beech Bolete - Caloboletus calopus (37369490141).jpg",
+        "index": 7,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 5993736,
+            "width": 5184,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/21/Botanical_Garden_Gothenburg_and_Angg%C3%A5rdsbergen_13.08.2017_Bitter_Beech_Bolete_-_Caloboletus_calopus_%2837369490141%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Botanical_Garden_Gothenburg_and_Angg%C3%A5rdsbergen_13.08.2017_Bitter_Beech_Bolete_-_Caloboletus_calopus_(37369490141).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=63552873",
+            "sha1": "7dbbb3640ea709b78e7aaab30c03346b4b38de40",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-10-23 19:52:47",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Botanical Garden Gothenburg and Anggårdsbergen 13.08.2017 Bitter Beech Bolete - Caloboletus calopus (37369490141)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Caloboletus calopus|Flickr images reviewed by FlickreviewR|Sweden photographs taken on 2017-08-13|Fungi in August|Boletaceae in Sweden|Fungi of Västra Götaland County|Files with coordinates missing SDC location of creation|Photographs by Björn Sothmann",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "57.675399",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "11.957561",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bitter Beech Bolete - Caloboletus calopus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-08-13 15:18",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/40948266@N04/37369490141/\">Bitter Beech Bolete - Caloboletus calopus</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/40948266@N04\">Björn S...</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Boletaceae in Sweden"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-2.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Caloboletus calopus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images reviewed by FlickreviewR"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in August"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Västra Götaland County"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by Björn Sothmann"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Sweden photographs taken on 2017-08-13"
+          }
+        ]
+      },
+      "79629944": {
+        "pageid": 79629944,
+        "ns": 6,
+        "title": "File:Caloboletus calopus.jpg",
+        "index": 33,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3080948,
+            "width": 3968,
+            "height": 2976,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Caloboletus_calopus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Caloboletus_calopus.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=79629944",
+            "sha1": "1075436a87f32c77a656e01ad8826a74accc955c",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2019-06-11 17:28:31",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Caloboletus calopus",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Caloboletus calopus|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Fruiting body of Caloboletus caolpus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2019-06-08 10:14:41",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Jadf88&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Jadf88 (page does not exist)\">Tomasz Sobczak</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "63639756": {
+        "pageid": 63639756,
+        "ns": 6,
+        "title": "File:Caloboletus calopus (23682345118).jpg",
+        "index": 9,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 6544201,
+            "width": 5184,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/42/Caloboletus_calopus_%2823682345118%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Caloboletus_calopus_(23682345118).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=63639756",
+            "sha1": "3f555df221a0f31eca26125a8bea6d5efeb58a7f",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-10-27 00:19:54",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Caloboletus calopus (23682345118)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Caloboletus calopus|Flickr images reviewed by FlickreviewR|Boletaceae in Märkischer Kreis|North Rhine-Westphalia photographs taken on 2017-08-27|Fungi of Lüdenscheid|Boletales in Märkischer Kreis in August|Files with coordinates missing SDC location of creation (51° N, 7° E)|Photographs by Björn Sothmann",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.246622",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "7.664366",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bitter Beech Bolete - Caloboletus calopus<br>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-08-27 15:19",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/40948266@N04/23682345118/\">Bitter Beech Bolete - Caloboletus calopus</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/40948266@N04\">Björn S...</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "63553322": {
+        "pageid": 63553322,
+        "ns": 6,
+        "title": "File:Caloboletus calopus (36510339114).jpg",
+        "index": 8,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 6248065,
+            "width": 5184,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Caloboletus_calopus_%2836510339114%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Caloboletus_calopus_(36510339114).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=63553322",
+            "sha1": "9d51a2316c3445d928f68cf9773da5bb5e60f444",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-10-23 20:06:17",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Caloboletus calopus (36510339114)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Caloboletus calopus|Flickr images reviewed by FlickreviewR|North Rhine-Westphalia photographs taken on 2017-08-06|Boletales in Oberbergischer Kreis in August|Boletaceae in Lindlar|Files with coordinates missing SDC location of creation (51° N, 7° E)|Photographs by Björn Sothmann",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.026286",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "7.281630",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bitter Beech Bolete - Caloboletus calopus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-08-06 14:06",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/40948266@N04/36510339114/\">Bitter Beech Bolete - Caloboletus calopus</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/40948266@N04\">Björn S...</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "63553310": {
+        "pageid": 63553310,
+        "ns": 6,
+        "title": "File:Caloboletus calopus (36512513984).jpg",
+        "index": 32,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 6710921,
+            "width": 3456,
+            "height": 5184,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Caloboletus_calopus_%2836512513984%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Caloboletus_calopus_(36512513984).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=63553310",
+            "sha1": "a744e48bf6860870dd20aa3f8f2f59342ad09e61",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-10-23 20:05:54",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Caloboletus calopus (36512513984)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Caloboletus calopus|Flickr images reviewed by FlickreviewR|North Rhine-Westphalia photographs taken on 2017-08-06|Boletales in Oberbergischer Kreis in August|Boletaceae in Lindlar|Files with coordinates missing SDC location of creation (51° N, 7° E)|Photographs by Björn Sothmann",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.026286",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "7.281630",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bitter Beech Bolete - Caloboletus calopus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-08-06 14:07",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/40948266@N04/36512513984/\">Bitter Beech Bolete - Caloboletus calopus</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/40948266@N04\">Björn S...</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Boletaceae in Lindlar"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Boletales in Oberbergischer Kreis in August"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-2.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Caloboletus calopus"
+          }
+        ]
+      },
+      "63553342": {
+        "pageid": 63553342,
+        "ns": 6,
+        "title": "File:Caloboletus calopus (37220117191).jpg",
+        "index": 21,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 6250260,
+            "width": 5184,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/95/Caloboletus_calopus_%2837220117191%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Caloboletus_calopus_(37220117191).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=63553342",
+            "sha1": "2936ed941a560a6e0b0172d492ef5f68e07b6317",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-10-23 20:07:02",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Caloboletus calopus (37220117191)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Caloboletus calopus|Flickr images reviewed by FlickreviewR|North Rhine-Westphalia photographs taken on 2017-08-06|Boletales in Oberbergischer Kreis in August|Boletaceae in Lindlar|Files with coordinates missing SDC location of creation (51° N, 7° E)|Photographs by Björn Sothmann",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.026286",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "7.281630",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bitter Beech Bolete - Caloboletus calopus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-08-06 14:06",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/40948266@N04/37220117191/\">Bitter Beech Bolete - Caloboletus calopus</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/40948266@N04\">Björn S...</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "63553311": {
+        "pageid": 63553311,
+        "ns": 6,
+        "title": "File:Caloboletus calopus (37222186491).jpg",
+        "index": 5,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 5507564,
+            "width": 5184,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/de/Caloboletus_calopus_%2837222186491%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Caloboletus_calopus_(37222186491).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=63553311",
+            "sha1": "55bc6e4979e80782731eb4a833e5144b62b7dec1",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-10-23 20:05:55",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Caloboletus calopus (37222186491)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Caloboletus calopus|Flickr images reviewed by FlickreviewR|North Rhine-Westphalia photographs taken on 2017-08-06|Boletales in Oberbergischer Kreis in August|Boletaceae in Lindlar|Files with coordinates missing SDC location of creation (51° N, 7° E)|Photographs by Björn Sothmann",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.026286",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "7.281630",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bitter Beech Bolete - Caloboletus calopus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-08-06 14:06",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/40948266@N04/37222186491/\">Bitter Beech Bolete - Caloboletus calopus</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/40948266@N04\">Björn S...</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "37909368": {
+        "pageid": 37909368,
+        "ns": 6,
+        "title": "File:Caloboletus calopus (cropped).JPG",
+        "index": 26,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 4833737,
+            "width": 2539,
+            "height": 1731,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/70/Caloboletus_calopus_%28cropped%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Caloboletus_calopus_(cropped).JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=37909368",
+            "sha1": "6f272839df52e45cad5295f94edd1f524427422e",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-01-18 08:00:37",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Caloboletus calopus (cropped)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Caloboletus calopus|Self-published work|Extracted images|Files with coordinates missing SDC location of creation",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "47.547189",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "10.058069",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bitter Beech Bolete or Scarlet-Stemmed Bolete, <i><a href=\"//commons.wikimedia.org/wiki/Boletus_calopus\" class=\"mw-redirect\" title=\"Boletus calopus\">Boletus calopus</a></i>, Family: Boletaceae, Location: Germany, Oberstaufen",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2014-08-28",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Holleday\" title=\"User:Holleday\">H. Krisp</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Caloboletus calopus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Extracted images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "50655620": {
+        "pageid": 50655620,
+        "ns": 6,
+        "title": "File:Caloboletus calopus - Flickr - Dick Culbert.jpg",
+        "index": 17,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 245358,
+            "width": 1211,
+            "height": 550,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Caloboletus_calopus_-_Flickr_-_Dick_Culbert.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Caloboletus_calopus_-_Flickr_-_Dick_Culbert.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=50655620",
+            "sha1": "7a765fe8ca1c469611a9f4f69567ef7109ac1ef9",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2016-08-13 19:12:20",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Caloboletus calopus - Flickr - Dick Culbert",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Caloboletus calopus|Flickr images reviewed by FlickreviewR|Photographs by Dick Culbert|Files uploaded by Josve05a (Dick Culbert)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "A widespread species and one of those known as Bitter Bolete.  Photo from Mt. Elphinstone, British Columbia.  x",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2015-12-05 21:15",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/92252798@N07/23849688851/\">Caloboletus calopus</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/92252798@N07\">Dick Culbert</a> from Gibsons, B.C., Canada",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-2.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Caloboletus calopus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files uploaded by Josve05a (Dick Culbert)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images reviewed by FlickreviewR"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by Dick Culbert"
+          }
+        ]
+      },
+      "152635820": {
+        "pageid": 152635820,
+        "ns": 6,
+        "title": "File:Caloboletus calopus 314633662.jpg",
+        "index": 24,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 878647,
+            "width": 2048,
+            "height": 1365,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Caloboletus_calopus_314633662.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Caloboletus_calopus_314633662.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=152635820",
+            "sha1": "dca89132bd23be1ac41d3dd08b77f688abb5dc67",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2024-09-14 20:56:58",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Caloboletus calopus 314633662",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Caloboletus calopus|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Uploaded with iNaturalist2Commons|Media from GBIF|Files with coordinates missing SDC location of creation (50° N, 6° E)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "50.159150",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "6.649866",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bitter Beech Bolete (<i>Caloboletus calopus</i>) basidia",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2023-08-24",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/314633662\">https://www.inaturalist.org/photos/314633662</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/1032700\">bjoerns</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "152635019": {
+        "pageid": 152635019,
+        "ns": 6,
+        "title": "File:Caloboletus calopus 428138070.jpg",
+        "index": 20,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 36725777,
+            "width": 9472,
+            "height": 6314,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Caloboletus_calopus_428138070.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Caloboletus_calopus_428138070.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=152635019",
+            "sha1": "948f5c30c1576d48352340f2c127688a6b38cc47",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2024-09-20 21:52:55",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Caloboletus calopus 428138070",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Caloboletus calopus|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "45.820266",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "14.472575",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bitter Beech Bolete (<i>Caloboletus calopus</i>) in Slovenia",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2024-09-07",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/428138070\">https://www.inaturalist.org/photos/428138070</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/3522968\">Matej Frančeškin</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "175113107": {
+        "pageid": 175113107,
+        "ns": 6,
+        "title": "File:Caloboletus calopus 545903288.jpg",
+        "index": 4,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 54666204,
+            "width": 9461,
+            "height": 6307,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Caloboletus_calopus_545903288.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Caloboletus_calopus_545903288.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=175113107",
+            "sha1": "64894b766ce8d3f598fd0942e3da60d6dfde5e3a",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2025-09-15 18:05:25",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Caloboletus calopus 545903288",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Caloboletus calopus|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "45.822530",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "14.475948",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bitter Beech Bolete (<i>Caloboletus calopus</i>) in Slovenia",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2025-08-01",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/545903288\">https://www.inaturalist.org/photos/545903288</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/3522968\">Matej Frančeškin</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "151180140": {
+        "pageid": 151180140,
+        "ns": 6,
+        "title": "File:Caloboletus calopus 6.jpg",
+        "index": 35,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2149018,
+            "width": 3024,
+            "height": 4032,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Caloboletus_calopus_6.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Caloboletus_calopus_6.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=151180140",
+            "sha1": "1b4252f691e95b2a6229f509b5d4ca297462f847",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2024-08-05 06:01:47",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Caloboletus calopus 6",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Caloboletus calopus|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Caloboletus calopus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2024-08-04",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Jose_Angel_Urquia_Goitia&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Jose Angel Urquia Goitia (page does not exist)\">Jose Angel Urquia Goitia</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "151180180": {
+        "pageid": 151180180,
+        "ns": 6,
+        "title": "File:Caloboletus calopus 7.jpg",
+        "index": 11,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2686202,
+            "width": 3024,
+            "height": 4032,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Caloboletus_calopus_7.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Caloboletus_calopus_7.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=151180180",
+            "sha1": "e1fceb69e58248c4c6fb41674e0ce7c8126669cc",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2024-08-05 06:03:09",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Caloboletus calopus 7",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Caloboletus calopus|Self-published work|Files with coordinates missing SDC location of creation",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "42.968875",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-2.433356",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Caloboletus calopus 7",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2024-08-04",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Jose_Angel_Urquia_Goitia&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Jose Angel Urquia Goitia (page does not exist)\">Jose Angel Urquia Goitia</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "151180223": {
+        "pageid": 151180223,
+        "ns": 6,
+        "title": "File:Caloboletus calopus 8.jpg",
+        "index": 2,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2845478,
+            "width": 3024,
+            "height": 4032,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/41/Caloboletus_calopus_8.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Caloboletus_calopus_8.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=151180223",
+            "sha1": "bb9c132d95b8752f3c5bb0c3d0e141aab426bf55",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2024-08-05 06:04:25",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Caloboletus calopus 8",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Caloboletus calopus|Self-published work|Files with coordinates missing SDC location of creation",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "42.968917",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-2.433308",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Caloboletus calopus 8",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2024-08-04",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Jose_Angel_Urquia_Goitia&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Jose Angel Urquia Goitia (page does not exist)\">Jose Angel Urquia Goitia</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "81591698": {
+        "pageid": 81591698,
+        "ns": 6,
+        "title": "File:Caloboletus calopus LE 01.jpg",
+        "index": 16,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 4455701,
+            "width": 4608,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Caloboletus_calopus_LE_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Caloboletus_calopus_LE_01.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=81591698",
+            "sha1": "dd1a4545b01d3ee5c340bc9eb4c3da414918fe9a",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2019-08-25 00:41:23",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Caloboletus calopus LE 01",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Caloboletus calopus|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Owocnik z widocznym hymenoforem i powierzchnią trzonu",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2019-08-06 12:31:31",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:LukeEmski&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:LukeEmski (page does not exist)\">LukeEmski</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "81591697": {
+        "pageid": 81591697,
+        "ns": 6,
+        "title": "File:Caloboletus calopus LE 02.jpg",
+        "index": 19,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 4497719,
+            "width": 4608,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Caloboletus_calopus_LE_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Caloboletus_calopus_LE_02.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=81591697",
+            "sha1": "bc8507f009c7d5a7c7d2bbdeb709980a455313e6",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2019-08-25 00:41:22",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Caloboletus calopus LE 02",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Caloboletus calopus|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Owocnik z widoczną siateczką na trzonie",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2019-08-06 12:31:17",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:LukeEmski&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:LukeEmski (page does not exist)\">LukeEmski</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "35329668": {
+        "pageid": 35329668,
+        "ns": 6,
+        "title": "File:Caloboletus calopus a1 (4).jpg",
+        "index": 14,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3562293,
+            "width": 2892,
+            "height": 2169,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Caloboletus_calopus_a1_%284%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Caloboletus_calopus_a1_(4).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=35329668",
+            "sha1": "f9118ebbe080261be30ad7dae9399243c50ac128",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2014-09-13 01:40:20",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Caloboletus calopus a1 (4)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Caloboletus calopus|Self-published work|Fungi in September|Boletaceae in Poland|Fungi of Kamionna (Beskid Wyspowy)|Boletales in Lesser Poland Voivodeship",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Boletus calopus</i> (location: Poland, Beskid Wyspowy, Kamionna)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2014-09-13 03:39:06",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Jerzy Opioła",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Boletaceae in Poland"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Boletales in Lesser Poland Voivodeship"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Caloboletus calopus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in September"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Kamionna (Beskid Wyspowy)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "161999174": {
+        "pageid": 161999174,
+        "ns": 6,
+        "title": "File:Caloboletus calopus a1 (4) cropped.jpg",
+        "index": 10,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 537465,
+            "width": 1902,
+            "height": 1889,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/77/Caloboletus_calopus_a1_%284%29_cropped.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Caloboletus_calopus_a1_(4)_cropped.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=161999174",
+            "sha1": "13a33c06a37d6f12533ebf4af5544356e3e4108d",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2025-03-14 08:14:47",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Caloboletus calopus a1 (4) cropped",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Caloboletus calopus",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Caloboletus calopus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "13 September 2014, 03:39:06",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "cropped from <a class=\"external free\" href=\"https://fr.wikipedia.org/wiki/Fichier:Caloboletus_calopus_a1_(4).jpg\">https://fr.wikipedia.org/wiki/Fichier:Caloboletus_calopus_a1_(4).jpg</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Jerzy Opioła",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "35343422": {
+        "pageid": 35343422,
+        "ns": 6,
+        "title": "File:Caloboletus calopus a4.jpg",
+        "index": 27,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3761624,
+            "width": 2838,
+            "height": 2430,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/38/Caloboletus_calopus_a4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Caloboletus_calopus_a4.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=35343422",
+            "sha1": "09262b57088790bd8b197312700aee960a60b01d",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2014-09-13 17:34:40",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Caloboletus calopus a4",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Caloboletus calopus|Self-published work|Fungi in September|Boletaceae in Poland|Fungi of Kamionna (Beskid Wyspowy)|Boletales in Lesser Poland Voivodeship",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Boletus calopus</i> (location: Poland, Kamionna (województwo małopolskie))",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2014-09-13 19:33:34",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Paweł Opioła",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Boletaceae in Poland"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Boletales in Lesser Poland Voivodeship"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Caloboletus calopus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in September"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Kamionna (Beskid Wyspowy)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "161997544": {
+        "pageid": 161997544,
+        "ns": 6,
+        "title": "File:Caloboletus calopus collected.jpg",
+        "index": 12,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 583933,
+            "width": 1600,
+            "height": 1200,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Caloboletus_calopus_collected.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Caloboletus_calopus_collected.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=161997544",
+            "sha1": "10f5ebcd808864f11cb6c45e9f7a2ca2957fce39",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2025-03-14 07:49:54",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Caloboletus calopus collected",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Caloboletus calopus",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Caloboletus calopus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2019-09-12",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.gbif.org/fr/occurrence/2627317668\">https://www.gbif.org/fr/occurrence/2627317668</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Jan Sørensen",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "161997443": {
+        "pageid": 161997443,
+        "ns": 6,
+        "title": "File:Caloboletus calopus collection.jpg",
+        "index": 29,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 515138,
+            "width": 1600,
+            "height": 1101,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/61/Caloboletus_calopus_collection.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Caloboletus_calopus_collection.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=161997443",
+            "sha1": "ddef2a616924dda0dcb267a98e25ad18356c8d52",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2025-03-14 07:47:50",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Caloboletus calopus collection",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Caloboletus calopus",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Caloboletus calopus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2018-08-07",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "cropped from <a rel=\"nofollow\" class=\"external free\" href=\"https://www.gbif.org/fr/occurrence/1899681367\">https://www.gbif.org/fr/occurrence/1899681367</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Per Marstad",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "161997780": {
+        "pageid": 161997780,
+        "ns": 6,
+        "title": "File:Caloboletus calopus collection 2.jpg",
+        "index": 30,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 372568,
+            "width": 1024,
+            "height": 683,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Caloboletus_calopus_collection_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Caloboletus_calopus_collection_2.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=161997780",
+            "sha1": "e02087ba6666e54f2a502eb191df281e128ffa93",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2025-03-14 07:54:27",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Caloboletus calopus collection 2",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Caloboletus calopus",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Caloboletus calopus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2006-08-31 00:00",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.gbif.org/fr/occurrence/5024251584\">https://www.gbif.org/fr/occurrence/5024251584</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Joachim Ehrich",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "161997913": {
+        "pageid": 161997913,
+        "ns": 6,
+        "title": "File:Caloboletus calopus collection 3.jpg",
+        "index": 1,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 260025,
+            "width": 1227,
+            "height": 900,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Caloboletus_calopus_collection_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Caloboletus_calopus_collection_3.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=161997913",
+            "sha1": "045f409395f22e3bd2100ad51cbf6690cdeaf182",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2025-03-14 07:56:01",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Caloboletus calopus collection 3",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Caloboletus calopus",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Caloboletus calopus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-08-01",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "cropped from <a rel=\"nofollow\" class=\"external free\" href=\"https://www.gbif.org/fr/occurrence/2822948398\">https://www.gbif.org/fr/occurrence/2822948398</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Per Marstad",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "161997546": {
+        "pageid": 161997546,
+        "ns": 6,
+        "title": "File:Caloboletus calopus cut.jpg",
+        "index": 15,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 590051,
+            "width": 1600,
+            "height": 1200,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/68/Caloboletus_calopus_cut.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Caloboletus_calopus_cut.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=161997546",
+            "sha1": "ae9c6f582e77f5f90c2ec8f193d2ea097531258c",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2025-03-14 07:49:54",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Caloboletus calopus cut",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Caloboletus calopus",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Caloboletus calopus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2019-09-12",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.gbif.org/fr/occurrence/2627317668\">https://www.gbif.org/fr/occurrence/2627317668</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Jan Sørensen",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "161997910": {
+        "pageid": 161997910,
+        "ns": 6,
+        "title": "File:Caloboletus calopus reticulum.jpg",
+        "index": 34,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 576291,
+            "width": 1600,
+            "height": 900,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Caloboletus_calopus_reticulum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Caloboletus_calopus_reticulum.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=161997910",
+            "sha1": "73f8ee4f64387ba2da5a3045f8998953e273d08d",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2025-03-14 07:56:01",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Caloboletus calopus reticulum",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Caloboletus calopus",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Caloboletus calopus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-08-01",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "cropped from <a rel=\"nofollow\" class=\"external free\" href=\"https://www.gbif.org/fr/occurrence/2822948398\">https://www.gbif.org/fr/occurrence/2822948398</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Per Marstad",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "161997658": {
+        "pageid": 161997658,
+        "ns": 6,
+        "title": "File:Caloboletus calopus young collection.jpg",
+        "index": 6,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 500562,
+            "width": 1600,
+            "height": 1054,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Caloboletus_calopus_young_collection.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Caloboletus_calopus_young_collection.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=161997658",
+            "sha1": "aa914b1cc71d725fb82aa23151ee810ecaa0eaca",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2025-03-14 07:52:17",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Caloboletus calopus young collection",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Caloboletus calopus",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Caloboletus calopus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2019-07-03",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.gbif.org/fr/occurrence/2323319136\">https://www.gbif.org/fr/occurrence/2323319136</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Per Marstad",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "63554123": {
+        "pageid": 63554123,
+        "ns": 6,
+        "title": "File:Offermannsheide 27.07.2017 Bitter Beech Bolete - Caloboletus calopus (36933673422).jpg",
+        "index": 22,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 6654559,
+            "width": 5184,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Offermannsheide_27.07.2017_Bitter_Beech_Bolete_-_Caloboletus_calopus_%2836933673422%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Offermannsheide_27.07.2017_Bitter_Beech_Bolete_-_Caloboletus_calopus_(36933673422).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=63554123",
+            "sha1": "9d9ca3f63e290d9c87da602271eb529fb97ae2c2",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-10-23 20:40:49",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Offermannsheide 27.07.2017 Bitter Beech Bolete - Caloboletus calopus (36933673422)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Caloboletus calopus|Germany photographs taken on 2017-07-27|Flickr images reviewed by FlickreviewR|Files with coordinates missing SDC location of creation (51° N, 7° E)|Photographs by Björn Sothmann",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.002566",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "7.263808",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bitter Beech Bolete - Caloboletus calopus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-07-27 16:15",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/40948266@N04/36933673422/\">Bitter Beech Bolete - Caloboletus calopus</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/40948266@N04\">Björn S...</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "63554147": {
+        "pageid": 63554147,
+        "ns": 6,
+        "title": "File:Offermannsheide 27.07.2017 Bitter Beech Bolete - Caloboletus calopus (36933677372).jpg",
+        "index": 40,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 6651118,
+            "width": 5184,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/03/Offermannsheide_27.07.2017_Bitter_Beech_Bolete_-_Caloboletus_calopus_%2836933677372%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Offermannsheide_27.07.2017_Bitter_Beech_Bolete_-_Caloboletus_calopus_(36933677372).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=63554147",
+            "sha1": "96794337ff5da26593222faf7e8dfd4152fcb107",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-10-23 20:41:41",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Offermannsheide 27.07.2017 Bitter Beech Bolete - Caloboletus calopus (36933677372)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Caloboletus calopus|Germany photographs taken on 2017-07-27|Flickr images reviewed by FlickreviewR|Files with coordinates missing SDC location of creation (51° N, 7° E)|Photographs by Björn Sothmann",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.002566",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "7.263808",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bitter Beech Bolete - Caloboletus calopus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-07-27 16:15",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/40948266@N04/36933677372/\">Bitter Beech Bolete - Caloboletus calopus</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/40948266@N04\">Björn S...</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "63554126": {
+        "pageid": 63554126,
+        "ns": 6,
+        "title": "File:Offermannsheide 27.07.2017 Bitter Beech Bolete - Caloboletus calopus (36933681392).jpg",
+        "index": 37,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 7122619,
+            "width": 5184,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Offermannsheide_27.07.2017_Bitter_Beech_Bolete_-_Caloboletus_calopus_%2836933681392%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Offermannsheide_27.07.2017_Bitter_Beech_Bolete_-_Caloboletus_calopus_(36933681392).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=63554126",
+            "sha1": "7b0711206324d32792c4f4947d65bdb0016ecb34",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-10-23 20:40:57",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Offermannsheide 27.07.2017 Bitter Beech Bolete - Caloboletus calopus (36933681392)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Caloboletus calopus|Germany photographs taken on 2017-07-27|Flickr images reviewed by FlickreviewR|Files with coordinates missing SDC location of creation (51° N, 7° E)|Photographs by Björn Sothmann",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.002566",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "7.263808",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bitter Beech Bolete - Caloboletus calopus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-07-27 16:14",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/40948266@N04/36933681392/\">Bitter Beech Bolete - Caloboletus calopus</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/40948266@N04\">Björn S...</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "63554145": {
+        "pageid": 63554145,
+        "ns": 6,
+        "title": "File:Offermannsheide 27.07.2017 Bitter Beech Bolete - Caloboletus calopus (36933685322).jpg",
+        "index": 38,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 7120934,
+            "width": 5184,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/48/Offermannsheide_27.07.2017_Bitter_Beech_Bolete_-_Caloboletus_calopus_%2836933685322%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Offermannsheide_27.07.2017_Bitter_Beech_Bolete_-_Caloboletus_calopus_(36933685322).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=63554145",
+            "sha1": "2fa7885e65da2c123e2389ac58f634210c428aa8",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-10-23 20:41:35",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Offermannsheide 27.07.2017 Bitter Beech Bolete - Caloboletus calopus (36933685322)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Caloboletus calopus|Germany photographs taken on 2017-07-27|Flickr images reviewed by FlickreviewR|Files with coordinates missing SDC location of creation (51° N, 7° E)|Photographs by Björn Sothmann",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.002566",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "7.263808",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bitter Beech Bolete - Caloboletus calopus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-07-27 16:14",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/40948266@N04/36933685322/\">Bitter Beech Bolete - Caloboletus calopus</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/40948266@N04\">Björn S...</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

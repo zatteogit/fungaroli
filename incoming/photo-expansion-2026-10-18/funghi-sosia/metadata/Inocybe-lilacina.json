@@ -1,0 +1,4137 @@
+{
+  "continue": {
+    "clcontinue": "118400059|United_Kingdom_photographs_taken_on_2021-09-24",
+    "continue": "||imageinfo"
+  },
+  "query": {
+    "pages": {
+      "16668094": {
+        "pageid": 16668094,
+        "ns": 6,
+        "title": "File:Inocybe lilacina, Kitsap Co..jpg",
+        "index": 7,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 189512,
+            "width": 596,
+            "height": 736,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Inocybe_lilacina%2C_Kitsap_Co..jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Inocybe_lilacina,_Kitsap_Co..jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=16668094",
+            "sha1": "61707edd51e831ea19f6c3ba36a26130f5bdcf2b",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-09-24 13:34:40",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Inocybe lilacina, Kitsap Co.",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Inocybe geophylla var. lilacina|Images from Mushroom Observer|Files from external sources with reviewed licenses|Inocybe in Washington (state)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Inocybe lilacina from Banner Forest, Kitsap County, Washington, USA\n<p>Conifer duff. Growing single.\n</p>\nMy first thought was Cortinarius just due to the coloring. Folks on another forum suggested Inocybe geophylla var. lilacina, which seemed like a good match (if you ignore their typical season.)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2010-05-24",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This image is <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/image/show_image/86726\">Image Number 86726</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "This image was created by user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_user/1255\">Peter Santerre</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.<br>You can contact this user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/ask_user_question/1255\">here</a>.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files from external sources with reviewed licenses"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images from Mushroom Observer"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Inocybe geophylla var. lilacina"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Inocybe in Washington (state)"
+          }
+        ]
+      },
+      "16668501": {
+        "pageid": 16668501,
+        "ns": 6,
+        "title": "File:Inocybe lilacina, Lebanon.jpg",
+        "index": 17,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1328916,
+            "width": 2064,
+            "height": 1536,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Inocybe_lilacina%2C_Lebanon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Inocybe_lilacina,_Lebanon.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=16668501",
+            "sha1": "d4440732e1b8aa66fe3c793aa317b346e0d95722",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-09-24 14:05:20",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Inocybe lilacina, Lebanon",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Inocybe geophylla var. lilacina|Images from Mushroom Observer|Files from external sources with reviewed licenses|Inocybe in Oregon",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Inocybe lilacina from Lebanon, Oregon, USA",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2010-11-01",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This image is <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/image/show_image/117627\">Image Number 117627</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "This image was created by user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_user/2617\">Britney (Riverdweller)</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.<br>You can contact this user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/ask_user_question/2617\">here</a>.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files from external sources with reviewed licenses"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images from Mushroom Observer"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Inocybe geophylla var. lilacina"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Inocybe in Oregon"
+          }
+        ]
+      },
+      "16668553": {
+        "pageid": 16668553,
+        "ns": 6,
+        "title": "File:Inocybe lilacina, Mendocino.jpg",
+        "index": 15,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2875517,
+            "width": 3456,
+            "height": 2592,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Inocybe_lilacina%2C_Mendocino.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Inocybe_lilacina,_Mendocino.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=16668553",
+            "sha1": "9dca2f38014960e2b031f72b4025f5fed02d5cd6",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-09-24 14:10:30",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Inocybe lilacina, Mendocino",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Inocybe geophylla var. lilacina|Taken with Canon PowerShot SX110 IS|Images from Mushroom Observer|Files from external sources with reviewed licenses|Fungi of California in January|Inocybe in California",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Inocybe lilacina from Mendocino, California, USA\nfound in mixed conifer forest ~3 miles inland",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2011-01-24",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This image is <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/image/show_image/132565\">Image Number 132565</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "This image was created by user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_user/746\">Ryane Snow (snowman)</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.<br>You can contact this user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/ask_user_question/746\">here</a>.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files from external sources with reviewed licenses"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of California in January"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images from Mushroom Observer"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Inocybe geophylla var. lilacina"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Inocybe in California"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Canon PowerShot SX110 IS"
+          }
+        ]
+      },
+      "61916753": {
+        "pageid": 61916753,
+        "ns": 6,
+        "title": "File:Inocybe lilacina (32212769233).jpg",
+        "index": 13,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 411348,
+            "width": 884,
+            "height": 735,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/49/Inocybe_lilacina_%2832212769233%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Inocybe_lilacina_(32212769233).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=61916753",
+            "sha1": "3c2147c16bffd616a0ce8fa50846b0c2421d6ddb",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-08-25 02:52:49",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Inocybe lilacina (32212769233)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Inocybe geophylla var. lilacina|Flickr images reviewed by FlickreviewR|Photographs by Dick Culbert",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Slimy with a bluish grey cap.  Also known as I. geophylla var. lilacea.  The range includes northern Europe and North America.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2014-10-31 01:23",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/92252798@N07/32212769233/\">Inocybe lilacina</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/92252798@N07\">Dick Culbert</a> from Gibsons, B.C., Canada",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-2.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images reviewed by FlickreviewR"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Inocybe geophylla var. lilacina"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by Dick Culbert"
+          }
+        ]
+      },
+      "118400005": {
+        "pageid": 118400005,
+        "ns": 6,
+        "title": "File:Inocybe lilacina 154032100.jpg",
+        "index": 28,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1551562,
+            "width": 2048,
+            "height": 1152,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/81/Inocybe_lilacina_154032100.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Inocybe_lilacina_154032100.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=118400005",
+            "sha1": "fd7619a8b424b7e700e8b639d466db249cf75f86",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-05-28 04:35:51",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Inocybe lilacina 154032100",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Inocybe geophylla var. lilacina|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Inocybaceae in Mexico|Uploaded with iNaturalist2Commons|Mexico photographs taken on 2021-08-29|Fungi of Mexico in August|Photographs by Alan Rockefeller",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "16.930646",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-96.908975",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Lilac Fibrecap (<i>Inocybe lilacina</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-08-29",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/154032100\">https://www.inaturalist.org/photos/154032100</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/25945\">Alan Rockefeller</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Mexico in August"
+          },
+          {
+            "ns": 14,
+            "title": "Category:INaturalist images reviewed by iNaturalistReviewBot"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Inocybaceae in Mexico"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Inocybe geophylla var. lilacina"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from iNaturalist"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mexico photographs taken on 2021-08-29"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by Alan Rockefeller"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded with iNaturalist2Commons"
+          }
+        ]
+      },
+      "118399969": {
+        "pageid": 118399969,
+        "ns": 6,
+        "title": "File:Inocybe lilacina 154032140.jpg",
+        "index": 19,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1457742,
+            "width": 2048,
+            "height": 1152,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/25/Inocybe_lilacina_154032140.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Inocybe_lilacina_154032140.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=118399969",
+            "sha1": "cabdb1814dc9dad595344432d64045030ad729de",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-05-28 04:32:43",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Inocybe lilacina 154032140",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Inocybe geophylla var. lilacina|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Inocybaceae in Mexico|Uploaded with iNaturalist2Commons|Mexico photographs taken on 2021-08-29|Fungi of Mexico in August|Photographs by Alan Rockefeller",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "16.930646",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-96.908975",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Lilac Fibrecap (<i>Inocybe lilacina</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-08-29",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/154032140\">https://www.inaturalist.org/photos/154032140</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/25945\">Alan Rockefeller</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Mexico in August"
+          },
+          {
+            "ns": 14,
+            "title": "Category:INaturalist images reviewed by iNaturalistReviewBot"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Inocybaceae in Mexico"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Inocybe geophylla var. lilacina"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from iNaturalist"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mexico photographs taken on 2021-08-29"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by Alan Rockefeller"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded with iNaturalist2Commons"
+          }
+        ]
+      },
+      "118399995": {
+        "pageid": 118399995,
+        "ns": 6,
+        "title": "File:Inocybe lilacina 155312781.jpg",
+        "index": 8,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1545421,
+            "width": 1536,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Inocybe_lilacina_155312781.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Inocybe_lilacina_155312781.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=118399995",
+            "sha1": "0441f252f1449abaa61ec5a680be367f44fe8e17",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-05-28 04:35:02",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Inocybe lilacina 155312781",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Inocybe geophylla var. lilacina|Media from iNaturalist|Fungi in September|INaturalist images reviewed by iNaturalistReviewBot|Inocybaceae in Russia|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|Tula Oblast photographs taken on 2021-09-05",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "54.220367",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "37.720966",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Lilac Fibrecap (<i>Inocybe lilacina</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-09-05",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/155312781\">https://www.inaturalist.org/photos/155312781</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/2523156\">Татьяна Максимова</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in September"
+          },
+          {
+            "ns": 14,
+            "title": "Category:INaturalist images reviewed by iNaturalistReviewBot"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Inocybaceae in Russia"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Inocybe geophylla var. lilacina"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from iNaturalist"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Tula Oblast photographs taken on 2021-09-05"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded with iNaturalist2Commons"
+          }
+        ]
+      },
+      "118400048": {
+        "pageid": 118400048,
+        "ns": 6,
+        "title": "File:Inocybe lilacina 159384968.jpg",
+        "index": 4,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1613627,
+            "width": 1536,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Inocybe_lilacina_159384968.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Inocybe_lilacina_159384968.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=118400048",
+            "sha1": "663561c2f43c0dd6ddd2eb00e75d71444fae1ec9",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-05-28 04:38:18",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Inocybe lilacina 159384968",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Inocybe geophylla var. lilacina|Media from iNaturalist|Fungi in September|INaturalist images reviewed by iNaturalistReviewBot|Inocybaceae in the United Kingdom|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|United Kingdom photographs taken on 2021-09-24",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "56.076440",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-4.560605",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Lilac Fibrecap (<i>Inocybe lilacina</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-09-24",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/159384968\">https://www.inaturalist.org/photos/159384968</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/4364642\">eiriee</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in September"
+          },
+          {
+            "ns": 14,
+            "title": "Category:INaturalist images reviewed by iNaturalistReviewBot"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Inocybaceae in the United Kingdom"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Inocybe geophylla var. lilacina"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from iNaturalist"
+          },
+          {
+            "ns": 14,
+            "title": "Category:United Kingdom photographs taken on 2021-09-24"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded with iNaturalist2Commons"
+          }
+        ]
+      },
+      "118400059": {
+        "pageid": 118400059,
+        "ns": 6,
+        "title": "File:Inocybe lilacina 159387330.jpg",
+        "index": 36,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2074244,
+            "width": 1536,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Inocybe_lilacina_159387330.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Inocybe_lilacina_159387330.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=118400059",
+            "sha1": "941ac20ff4f1da76647cc39dc9ff7e949af4de33",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-05-28 04:38:33",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Inocybe lilacina 159387330",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Inocybe geophylla var. lilacina|Media from iNaturalist|Fungi in September|INaturalist images reviewed by iNaturalistReviewBot|Inocybaceae in the United Kingdom|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|United Kingdom photographs taken on 2021-09-24",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "56.076440",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-4.560605",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Lilac Fibrecap (<i>Inocybe lilacina</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-09-24",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/159387330\">https://www.inaturalist.org/photos/159387330</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/4364642\">eiriee</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in September"
+          },
+          {
+            "ns": 14,
+            "title": "Category:INaturalist images reviewed by iNaturalistReviewBot"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Inocybaceae in the United Kingdom"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Inocybe geophylla var. lilacina"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from iNaturalist"
+          }
+        ]
+      },
+      "118947354": {
+        "pageid": 118947354,
+        "ns": 6,
+        "title": "File:Inocybe lilacina 159387345.jpg",
+        "index": 9,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1861328,
+            "width": 2048,
+            "height": 1536,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Inocybe_lilacina_159387345.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Inocybe_lilacina_159387345.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=118947354",
+            "sha1": "e0d7da55b1fdaa6ac98280d9b56fca095aa6dcd5",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-06-07 08:33:40",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Inocybe lilacina 159387345",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Inocybe geophylla var. lilacina|Fungi of Scotland|Media from iNaturalist|Fungi in September|INaturalist images reviewed by iNaturalistReviewBot|Inocybaceae in the United Kingdom|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|United Kingdom photographs taken on 2021-09-24",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "56.076440",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-4.560605",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Lilac Fibrecap (<i>Inocybe lilacina</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-09-24",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/159387345\">https://www.inaturalist.org/photos/159387345</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/4364642\">eiriee</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "118947334": {
+        "pageid": 118947334,
+        "ns": 6,
+        "title": "File:Inocybe lilacina 159387384.jpg",
+        "index": 5,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1514766,
+            "width": 2048,
+            "height": 1536,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Inocybe_lilacina_159387384.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Inocybe_lilacina_159387384.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=118947334",
+            "sha1": "fcb852a0be040655d360e45d99d8f6834aadecca",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-06-07 08:33:29",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Inocybe lilacina 159387384",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Inocybe geophylla var. lilacina|Fungi of Scotland|Media from iNaturalist|Fungi in September|INaturalist images reviewed by iNaturalistReviewBot|Inocybaceae in the United Kingdom|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|United Kingdom photographs taken on 2021-09-24",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "56.076440",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-4.560605",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Lilac Fibrecap (<i>Inocybe lilacina</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-09-24",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/159387384\">https://www.inaturalist.org/photos/159387384</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/4364642\">eiriee</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "118539047": {
+        "pageid": 118539047,
+        "ns": 6,
+        "title": "File:Inocybe lilacina 161383472.jpg",
+        "index": 27,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1633214,
+            "width": 1536,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/22/Inocybe_lilacina_161383472.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Inocybe_lilacina_161383472.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=118539047",
+            "sha1": "90f40abbe20b14ea1096e4bb906953173ed3e927",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-06-01 09:41:11",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Inocybe lilacina 161383472",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Inocybe geophylla var. lilacina|Media from iNaturalist|Fungi in October|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Agaricales in the United States|Uploaded with iNaturalist2Commons|United States photographs taken on 2021-10-03",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "42.563376",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-71.439525",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Lilac Fibrecap (<i>Inocybe lilacina</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-10-03",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/161383472\">https://www.inaturalist.org/photos/161383472</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/384718\">Mike Mulqueen</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "124196948": {
+        "pageid": 124196948,
+        "ns": 6,
+        "title": "File:Inocybe lilacina 235374515.jpg",
+        "index": 18,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2233834,
+            "width": 2048,
+            "height": 2031,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Inocybe_lilacina_235374515.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Inocybe_lilacina_235374515.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=124196948",
+            "sha1": "692729a2c6eaa781ebfe0b00489aaf919b9a6570",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-10-14 21:50:34",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Inocybe lilacina 235374515",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Inocybe geophylla var. lilacina|Media from iNaturalist|Fungi in October|INaturalist images reviewed by iNaturalistReviewBot|Inocybaceae in France|Uploaded with iNaturalist2Commons|Île-de-France photographs taken on 2022-10-06|Files with coordinates missing SDC location of creation (48° N, 2° E)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "48.711389",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "2.197778",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Lilac Fibrecap (<i>Inocybe lilacina</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-10-06",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/235374515\">https://www.inaturalist.org/photos/235374515</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/1794233\">bogsuckers</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "124196950": {
+        "pageid": 124196950,
+        "ns": 6,
+        "title": "File:Inocybe lilacina 235374555.jpg",
+        "index": 35,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1889465,
+            "width": 1847,
+            "height": 1823,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/93/Inocybe_lilacina_235374555.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Inocybe_lilacina_235374555.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=124196950",
+            "sha1": "365fdc8097dfee783470eabe89b3afae29c2d2e5",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-10-14 21:50:44",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Inocybe lilacina 235374555",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Inocybe geophylla var. lilacina|Media from iNaturalist|Fungi in October|INaturalist images reviewed by iNaturalistReviewBot|Inocybaceae in France|Uploaded with iNaturalist2Commons|Île-de-France photographs taken on 2022-10-06|Files with coordinates missing SDC location of creation (48° N, 2° E)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "48.711389",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "2.197778",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Lilac Fibrecap (<i>Inocybe lilacina</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-10-06",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/235374555\">https://www.inaturalist.org/photos/235374555</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/1794233\">bogsuckers</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "124196954": {
+        "pageid": 124196954,
+        "ns": 6,
+        "title": "File:Inocybe lilacina 235374593.jpg",
+        "index": 32,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2395654,
+            "width": 2048,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/02/Inocybe_lilacina_235374593.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Inocybe_lilacina_235374593.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=124196954",
+            "sha1": "efdfa9bc2392a429fc627f21aaf17adb1f5d518e",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-10-14 21:51:10",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Inocybe lilacina 235374593",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Inocybe geophylla var. lilacina|Media from iNaturalist|Fungi in October|INaturalist images reviewed by iNaturalistReviewBot|Inocybaceae in France|Uploaded with iNaturalist2Commons|Île-de-France photographs taken on 2022-10-06|Files with coordinates missing SDC location of creation (48° N, 2° E)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "48.711389",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "2.197778",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Lilac Fibrecap (<i>Inocybe lilacina</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-10-06",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/235374593\">https://www.inaturalist.org/photos/235374593</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/1794233\">bogsuckers</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "124196960": {
+        "pageid": 124196960,
+        "ns": 6,
+        "title": "File:Inocybe lilacina 235374638.jpg",
+        "index": 31,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3570523,
+            "width": 2048,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/15/Inocybe_lilacina_235374638.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Inocybe_lilacina_235374638.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=124196960",
+            "sha1": "3ea31d809986a9a4d3a43aed3b849d35cc06043b",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-10-14 21:51:22",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Inocybe lilacina 235374638",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Inocybe geophylla var. lilacina|Media from iNaturalist|Fungi in October|INaturalist images reviewed by iNaturalistReviewBot|Inocybaceae in France|Uploaded with iNaturalist2Commons|Île-de-France photographs taken on 2022-10-06|Files with coordinates missing SDC location of creation (48° N, 2° E)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "48.711389",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "2.197778",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Lilac Fibrecap (<i>Inocybe lilacina</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-10-06",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/235374638\">https://www.inaturalist.org/photos/235374638</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/1794233\">bogsuckers</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "124196944": {
+        "pageid": 124196944,
+        "ns": 6,
+        "title": "File:Inocybe lilacina 236368817.jpg",
+        "index": 11,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 933546,
+            "width": 2048,
+            "height": 1639,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/73/Inocybe_lilacina_236368817.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Inocybe_lilacina_236368817.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=124196944",
+            "sha1": "0e28bbceae70cbb4af06b8f5b4aac8e2e8933f1c",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-10-14 21:50:21",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Inocybe lilacina 236368817",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Inocybe geophylla var. lilacina|Media from iNaturalist|Fungi in October|INaturalist images reviewed by iNaturalistReviewBot|Inocybaceae in the United Kingdom|Uploaded with iNaturalist2Commons|United Kingdom photographs taken on 2022-10-10|Files with coordinates missing SDC location of creation (51° N, 4° W)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.520290",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-3.245171",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Lilac Fibrecap (<i>Inocybe lilacina</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-10-10",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/236368817\">https://www.inaturalist.org/photos/236368817</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/708000\">Frank Sengpiel</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "22295949": {
+        "pageid": 22295949,
+        "ns": 6,
+        "title": "File:Inocybe lilacina 265529.jpg",
+        "index": 3,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3011060,
+            "width": 2304,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Inocybe_lilacina_265529.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Inocybe_lilacina_265529.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=22295949",
+            "sha1": "8167814b16f86f36631690981c5a56b94032148e",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2012-10-23 05:40:33",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Inocybe lilacina 265529",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Inocybe geophylla var. lilacina|Taken with Canon EOS 60D|Images from Mushroom Observer|Files from external sources with reviewed licenses|Inocybaceae in Mexico|Fungi of Mexico in September|Photographs by Alan Rockefeller",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Fruit bodies of the agaric fungus <i>Inocybe lilacina</i> (Peck) Kauffman. Photographed in Ajusco, Mexico, Mexico. \"Notes: Under Abies religiosa.\"",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2012-09-24",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This image is <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/image/show_image/425024\">Image Number 425024</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_user/123\">Alan Rockefeller</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files from external sources with reviewed licenses"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Mexico in September"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images from Mushroom Observer"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Inocybaceae in Mexico"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Inocybe geophylla var. lilacina"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by Alan Rockefeller"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Canon EOS 60D"
+          }
+        ]
+      },
+      "135837781": {
+        "pageid": 135837781,
+        "ns": 6,
+        "title": "File:Inocybe lilacina 298835912.jpg",
+        "index": 12,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1336736,
+            "width": 2048,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Inocybe_lilacina_298835912.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Inocybe_lilacina_298835912.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=135837781",
+            "sha1": "ba721952a5e5fea5c785609d5e3797256e3717ba",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-08-11 22:07:00",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Inocybe lilacina 298835912",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Inocybe geophylla var. lilacina|CC-Zero|Media from iNaturalist|Fungi in October|INaturalist images reviewed by iNaturalistReviewBot|Inocybaceae in the United Kingdom|Uploaded with iNaturalist2Commons|United Kingdom photographs taken on 2022-10-07|Media from GBIF|Agaricales in England|Files with coordinates missing SDC location of creation (50° N, 4° W)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "50.886398",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-3.445408",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Lilac Fibrecap (<i>Inocybe lilacina</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-10-07",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/298835912\">https://www.inaturalist.org/photos/298835912</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/7041628\">johnbodleyscott</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "136221555": {
+        "pageid": 136221555,
+        "ns": 6,
+        "title": "File:Inocybe lilacina 309606333.jpg",
+        "index": 30,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1844047,
+            "width": 1536,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/06/Inocybe_lilacina_309606333.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Inocybe_lilacina_309606333.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=136221555",
+            "sha1": "29529bd09774d91245318facd8d6a4c78da74ecb",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-08-20 06:38:39",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Inocybe lilacina 309606333",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Inocybe geophylla var. lilacina|Media from iNaturalist|Russia photographs taken on 2023-08-12|Fungi in August|INaturalist images reviewed by iNaturalistReviewBot|Inocybaceae in Russia|Fungi of Nizhny Novgorod Oblast|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "56.257053",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "44.017406",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Lilac Fibrecap (<i>Inocybe lilacina</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2023-08-12",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/309606333\">https://www.inaturalist.org/photos/309606333</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/1518217\">Михаил Языков</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "137621571": {
+        "pageid": 137621571,
+        "ns": 6,
+        "title": "File:Inocybe lilacina 316497965.jpg",
+        "index": 10,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 99964,
+            "width": 456,
+            "height": 608,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/89/Inocybe_lilacina_316497965.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Inocybe_lilacina_316497965.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=137621571",
+            "sha1": "6ab82fb67abd29daf68922e434be7eeb96094851",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-09-15 06:42:42",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Inocybe lilacina 316497965",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Inocybe geophylla var. lilacina|CC-Zero|Media from iNaturalist|Mexico photographs taken on 2023-09-02|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|Fungi of Mexico in September|Inocybe geophylla in Mexico",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "19.279709",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-99.696979",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Lilac Fibrecap (<i>Inocybe lilacina</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2023-09-02",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/316497965\">https://www.inaturalist.org/photos/316497965</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/7347239\">lot</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "137621580": {
+        "pageid": 137621580,
+        "ns": 6,
+        "title": "File:Inocybe lilacina 316497985.jpg",
+        "index": 14,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 67896,
+            "width": 450,
+            "height": 600,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Inocybe_lilacina_316497985.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Inocybe_lilacina_316497985.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=137621580",
+            "sha1": "164e4540da1f06a7525816cff3975460c689f21a",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-09-15 06:42:52",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Inocybe lilacina 316497985",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Inocybe geophylla var. lilacina|CC-Zero|Media from iNaturalist|Mexico photographs taken on 2023-09-02|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|Fungi of Mexico in September|Inocybe geophylla in Mexico",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "19.279709",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-99.696979",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Lilac Fibrecap (<i>Inocybe lilacina</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2023-09-02",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/316497985\">https://www.inaturalist.org/photos/316497985</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/7347239\">lot</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "137621583": {
+        "pageid": 137621583,
+        "ns": 6,
+        "title": "File:Inocybe lilacina 316498002.jpg",
+        "index": 22,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 36792,
+            "width": 411,
+            "height": 548,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Inocybe_lilacina_316498002.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Inocybe_lilacina_316498002.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=137621583",
+            "sha1": "71b08f8db396900c3ac2a518de5a24f6937530a3",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-09-15 06:43:00",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Inocybe lilacina 316498002",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Inocybe geophylla var. lilacina|CC-Zero|Media from iNaturalist|Mexico photographs taken on 2023-09-02|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|Fungi of Mexico in September|Inocybe geophylla in Mexico",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "19.279709",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-99.696979",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Lilac Fibrecap (<i>Inocybe lilacina</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2023-09-02",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/316498002\">https://www.inaturalist.org/photos/316498002</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/7347239\">lot</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "139120676": {
+        "pageid": 139120676,
+        "ns": 6,
+        "title": "File:Inocybe lilacina 323264040.jpg",
+        "index": 20,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2152186,
+            "width": 2048,
+            "height": 1531,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Inocybe_lilacina_323264040.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Inocybe_lilacina_323264040.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=139120676",
+            "sha1": "84eef20b1b7d201d158ea6efcf7138e653b26f8a",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-10-18 10:23:39",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Inocybe lilacina 323264040",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Inocybe geophylla var. lilacina|Media from iNaturalist|Fungi in September|INaturalist images reviewed by iNaturalistReviewBot|Inocybaceae in Russia|Fungi of Perm Krai|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|Perm Krai photographs taken on 2023-09-27",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "58.004234",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "56.295892",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Lilac Fibrecap (<i>Inocybe lilacina</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2023-09-27",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/323264040\">https://www.inaturalist.org/photos/323264040</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/5271755\">Ирина Хохрякова</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "139120678": {
+        "pageid": 139120678,
+        "ns": 6,
+        "title": "File:Inocybe lilacina 323264048.jpg",
+        "index": 29,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2180456,
+            "width": 2048,
+            "height": 1531,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Inocybe_lilacina_323264048.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Inocybe_lilacina_323264048.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=139120678",
+            "sha1": "e3432a0a8f70d3a0925be5a4ecf2576dce470ff6",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-10-18 10:23:49",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Inocybe lilacina 323264048",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Inocybe geophylla var. lilacina|Media from iNaturalist|Fungi in September|INaturalist images reviewed by iNaturalistReviewBot|Inocybaceae in Russia|Fungi of Perm Krai|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|Perm Krai photographs taken on 2023-09-27",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "58.004234",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "56.295892",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Lilac Fibrecap (<i>Inocybe lilacina</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2023-09-27",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/323264048\">https://www.inaturalist.org/photos/323264048</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/5271755\">Ирина Хохрякова</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "139120657": {
+        "pageid": 139120657,
+        "ns": 6,
+        "title": "File:Inocybe lilacina 324795067.jpg",
+        "index": 16,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1415844,
+            "width": 1361,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/68/Inocybe_lilacina_324795067.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Inocybe_lilacina_324795067.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=139120657",
+            "sha1": "645ba49d0b472bd4e5f52bcac2b85906b7b22b53",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-10-18 10:22:34",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Inocybe lilacina 324795067",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Inocybe geophylla var. lilacina|Media from iNaturalist|Perm Krai photographs taken on 2023-10-02|Fungi in October|INaturalist images reviewed by iNaturalistReviewBot|Inocybaceae in Russia|Fungi of Perm Krai|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "58.003617",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "56.296393",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Lilac Fibrecap (<i>Inocybe lilacina</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2023-10-02",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/324795067\">https://www.inaturalist.org/photos/324795067</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/5271755\">Ирина Хохрякова</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "139120660": {
+        "pageid": 139120660,
+        "ns": 6,
+        "title": "File:Inocybe lilacina 324795104.jpg",
+        "index": 33,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1530350,
+            "width": 2048,
+            "height": 1361,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Inocybe_lilacina_324795104.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Inocybe_lilacina_324795104.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=139120660",
+            "sha1": "19aeda66097d9794f4dcf469494d2f0dbfdfab8e",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-10-18 10:22:51",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Inocybe lilacina 324795104",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Inocybe geophylla var. lilacina|Media from iNaturalist|Perm Krai photographs taken on 2023-10-02|Fungi in October|INaturalist images reviewed by iNaturalistReviewBot|Inocybaceae in Russia|Fungi of Perm Krai|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "58.003617",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "56.296393",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Lilac Fibrecap (<i>Inocybe lilacina</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2023-10-02",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/324795104\">https://www.inaturalist.org/photos/324795104</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/5271755\">Ирина Хохрякова</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "139120663": {
+        "pageid": 139120663,
+        "ns": 6,
+        "title": "File:Inocybe lilacina 324795132.jpg",
+        "index": 21,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1739916,
+            "width": 2048,
+            "height": 1361,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/02/Inocybe_lilacina_324795132.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Inocybe_lilacina_324795132.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=139120663",
+            "sha1": "1d80baca08cbb43cbadf28a2389718acc7f03c0f",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-10-18 10:22:59",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Inocybe lilacina 324795132",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Inocybe geophylla var. lilacina|Media from iNaturalist|Perm Krai photographs taken on 2023-10-02|Fungi in October|INaturalist images reviewed by iNaturalistReviewBot|Inocybaceae in Russia|Fungi of Perm Krai|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "58.003617",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "56.296393",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Lilac Fibrecap (<i>Inocybe lilacina</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2023-10-02",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/324795132\">https://www.inaturalist.org/photos/324795132</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/5271755\">Ирина Хохрякова</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "139120655": {
+        "pageid": 139120655,
+        "ns": 6,
+        "title": "File:Inocybe lilacina 325163031.jpg",
+        "index": 1,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1424893,
+            "width": 2048,
+            "height": 1365,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Inocybe_lilacina_325163031.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Inocybe_lilacina_325163031.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=139120655",
+            "sha1": "d5ed9b97d21d408e9dd2df04e34270719e014f00",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-10-18 10:22:26",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Inocybe lilacina 325163031",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Inocybe geophylla var. lilacina|United States photographs taken on 2023-10-03|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Agaricales in Ohio|Uploaded with iNaturalist2Commons|Inocybe in the United States|Fungi of Ohio in October",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "41.330848",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-81.406311",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Lilac Fibrecap (<i>Inocybe lilacina</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2023-10-03",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/325163031\">https://www.inaturalist.org/photos/325163031</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/1164145\">Sarah Culliton</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "139120659": {
+        "pageid": 139120659,
+        "ns": 6,
+        "title": "File:Inocybe lilacina 325164892.jpg",
+        "index": 34,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1293287,
+            "width": 2048,
+            "height": 1365,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Inocybe_lilacina_325164892.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Inocybe_lilacina_325164892.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=139120659",
+            "sha1": "785231f2b054ddead6bbbdfd30dcd15779ad08f4",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-10-18 10:22:42",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Inocybe lilacina 325164892",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Inocybe geophylla var. lilacina|United States photographs taken on 2023-10-03|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Agaricales in Ohio|Uploaded with iNaturalist2Commons|Inocybe in the United States|Fungi of Ohio in October",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "41.330848",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-81.406311",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Lilac Fibrecap (<i>Inocybe lilacina</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2023-10-03",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/325164892\">https://www.inaturalist.org/photos/325164892</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/1164145\">Sarah Culliton</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "201512558": {
+        "pageid": 201512558,
+        "ns": 6,
+        "title": "File:Inocybe lilacina 728192365.jpg",
+        "index": 24,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2472400,
+            "width": 2048,
+            "height": 1536,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Inocybe_lilacina_728192365.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Inocybe_lilacina_728192365.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=201512558",
+            "sha1": "82498bf604ced239c5016206d9d25822d5600fac",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2026-10-11 07:05:01",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Inocybe lilacina 728192365",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Inocybe geophylla var. lilacina|CC-Zero|Creative Commons CC0 1.0 Universal Public Domain Dedication missing SDC copyright license|Media from iNaturalist|Pages with local camera coordinates and missing SDC coordinates|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|Media from GBIF|INaturalist images missing SDC depicts",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "41.147219",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-74.293975",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Lilac Fibrecap (<i>Inocybe lilacina</i>) in the United States",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2026-09-03",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/728192365\">https://www.inaturalist.org/photos/728192365</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/712654\">Sigrid Jakob</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "201512549": {
+        "pageid": 201512549,
+        "ns": 6,
+        "title": "File:Inocybe lilacina 741614638.jpg",
+        "index": 26,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 262892,
+            "width": 1350,
+            "height": 1080,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/43/Inocybe_lilacina_741614638.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Inocybe_lilacina_741614638.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=201512549",
+            "sha1": "7e0282a4d9915dd0dccfdbdbf433418e56d18718",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2026-10-11 07:04:37",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Inocybe lilacina 741614638",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Inocybe geophylla var. lilacina|Media from iNaturalist|Creative Commons Attribution 4.0 missing SDC copyright license|Creative Commons Attribution missing SDC copyright status|Pages with local camera coordinates and missing SDC coordinates|INaturalist images reviewed by iNaturalistReviewBot|Uploaded with iNaturalist2Commons|INaturalist images missing SDC depicts|Files with coordinates missing SDC location of creation (50° N, 4° E)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "50.747503",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "4.649838",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Lilac Fibrecap (<i>Inocybe lilacina</i>) in Belgium",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2026-09-27",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/741614638\">https://www.inaturalist.org/photos/741614638</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/5823227\">Daniel Ghyselinck</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "22264888": {
+        "pageid": 22264888,
+        "ns": 6,
+        "title": "File:Inocybe lilacina Podkomorské lesy.jpg",
+        "index": 25,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1575472,
+            "width": 1500,
+            "height": 1752,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Inocybe_lilacina_Podkomorsk%C3%A9_lesy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Inocybe_lilacina_Podkomorsk%C3%A9_lesy.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=22264888",
+            "sha1": "ec5f6d32bc55ee21f1869f92d9e51fea8e4d9518",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2012-10-22 02:24:51",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Inocybe lilacina Podkomorské lesy",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Inocybaceae in the Czech Republic|Inocybe geophylla var. lilacina|Taken with Sony DSC-W125|Self-published work|Fungi in September|Fungi of Podkomorské lesy",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Houba z Podkomorských lesů, Česká republika, jižní Morava",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2012-09-23 13:39:16",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Dendrofil\" title=\"User:Dendrofil\">Dendrofil</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in September"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Podkomorské lesy"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Inocybaceae in the Czech Republic"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Inocybe geophylla var. lilacina"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Sony DSC-W125"
+          }
+        ]
+      },
+      "16668368": {
+        "pageid": 16668368,
+        "ns": 6,
+        "title": "File:Inocybe lilacina cystide apex.jpg",
+        "index": 2,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 709728,
+            "width": 1989,
+            "height": 1540,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Inocybe_lilacina_cystide_apex.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Inocybe_lilacina_cystide_apex.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=16668368",
+            "sha1": "6cef778d00e5814ad8769fe43d9544da7f104a62",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-09-24 13:55:01",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Inocybe lilacina cystide apex",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Taken with Nikon Coolpix S7c|Images from Mushroom Observer|Files from external sources with reviewed licenses|Inocybe in the United States|Microscopic images of Inocybe geophylla var. lilacina",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Mikroskopic image of a cheilocystidium of Inocybe lilacina from Diamond and Crater Lake, Oregon, USA showing the metuloid ending\n<p>Spores and gill edge photos mounted in KOH.\n</p>\nSpores ~ 9 X 5.5 microns",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2010-10-20",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This image is <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/image/show_image/113925\">Image Number 113925</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "This image was created by user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_user/9\">Ron Pastorino (Ronpast)</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.<br>You can contact this user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/ask_user_question/9\">here</a>.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files from external sources with reviewed licenses"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images from Mushroom Observer"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Inocybe in the United States"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Microscopic images of Inocybe geophylla var. lilacina"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Nikon Coolpix S7c"
+          }
+        ]
+      },
+      "16668210": {
+        "pageid": 16668210,
+        "ns": 6,
+        "title": "File:Inocybe lilacina pleurocystidia.jpg",
+        "index": 23,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 476712,
+            "width": 1744,
+            "height": 792,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Inocybe_lilacina_pleurocystidia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Inocybe_lilacina_pleurocystidia.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=16668210",
+            "sha1": "8ea0b1a332ec9260239ecab867288ef1678e811f",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-09-24 13:42:05",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Inocybe lilacina pleurocystidia",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Taken with Sony DSC-S950|Images from Mushroom Observer|Files from external sources with reviewed licenses|Inocybe in the United States|Microscopic images of Inocybe geophylla var. lilacina",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Mikroskopic image of pleurocystidia of Inocybe lilacina from  Orinda, California, USA\nGrowing under Cedrus deodora in a garden in partial shade, pines and oaks nearby.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2009-12-16",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This image is <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/image/show_image/70052\">Image Number 70052</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "This image was created by user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_user/919\">Richard Sullivan (enchplant)</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.<br>You can contact this user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/ask_user_question/919\">here</a>.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files from external sources with reviewed licenses"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images from Mushroom Observer"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Inocybe in the United States"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Microscopic images of Inocybe geophylla var. lilacina"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Sony DSC-S950"
+          }
+        ]
+      },
+      "16668283": {
+        "pageid": 16668283,
+        "ns": 6,
+        "title": "File:Inocybe lilacina spores.jpg",
+        "index": 6,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1307385,
+            "width": 2595,
+            "height": 2005,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Inocybe_lilacina_spores.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Inocybe_lilacina_spores.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=16668283",
+            "sha1": "198dbd7c44c6d2b9edc3fabcfd445435372d36c4",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-09-24 13:47:30",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Inocybe lilacina spores",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Taken with Nikon Coolpix S7c|Images from Mushroom Observer|Files from external sources with reviewed licenses|Inocybe in the United States|Microscopic images of Inocybe spores|Microscopic images of Inocybe geophylla var. lilacina",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Mikroskopic image of spores of Inocybe lilacina from Diamond and Crater Lake, Oregon, USA\n<p>Spores and gill edge photos mounted in KOH.\n</p>\nSpores ~ 9 X 5.5 microns",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2010-10-20",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This image is <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/image/show_image/113924\">Image Number 113924</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "This image was created by user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_user/9\">Ron Pastorino (Ronpast)</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.<br>You can contact this user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/ask_user_question/9\">here</a>.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files from external sources with reviewed licenses"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images from Mushroom Observer"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Inocybe in the United States"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Microscopic images of Inocybe geophylla var. lilacina"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Microscopic images of Inocybe spores"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Nikon Coolpix S7c"
+          }
+        ]
+      }
+    }
+  }
+}

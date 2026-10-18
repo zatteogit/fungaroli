@@ -1,0 +1,4160 @@
+{
+  "continue": {
+    "clcontinue": "42235578|Flickr_images_reviewed_by_FlickreviewR",
+    "continue": "||imageinfo"
+  },
+  "query": {
+    "pages": {
+      "113639197": {
+        "pageid": 113639197,
+        "ns": 6,
+        "title": "File:De-Goldstieliger Pfifferling.ogg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 27257,
+            "width": 0,
+            "height": 0,
+            "duration": 2.69,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/ee/De-Goldstieliger_Pfifferling.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:De-Goldstieliger_Pfifferling.ogg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=113639197",
+            "sha1": "876b826bf6177f079880e42934acda6d717a1a79",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-12-25 09:16:57",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "De-Goldstieliger Pfifferling",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Craterellus lutescens|German pronunciation of nouns|Supported by Wikimedia Deutschland|Created with Audacity|Audio files made by jeuwre|Audio files made using a Rode NT-USB (supported by Wikimedia Deutschland)|German pronunciation of words relating to mushrooms",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "pronunciation recording",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-12-25",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Jeuwre\" title=\"User:Jeuwre\">Jeuwre</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "42235578": {
+        "pageid": 42235578,
+        "ns": 6,
+        "title": "File:\"Yellow-footed Chanterelle\", Cantharellus xanthopus (10247558596).jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 4464250,
+            "width": 3872,
+            "height": 2592,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/22/%22Yellow-footed_Chanterelle%22%2C_Cantharellus_xanthopus_%2810247558596%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:%22Yellow-footed_Chanterelle%22,_Cantharellus_xanthopus_(10247558596).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=42235578",
+            "sha1": "09861ae990b268ba19686af60a7d630386684a85",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-08-10 17:47:19",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "\"Yellow-footed Chanterelle\", Cantharellus xanthopus (10247558596)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Craterellus lutescens|Flickr images reviewed by FlickreviewR|Fungi of British Columbia|Fungi in October|Photographs by Scott Darbey|Alberni|Flickr images missing SDC published in",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "\"Yellow-footed Chanterelle\", Cantharellus xanthopus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2013-10-10 21:57",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/scott_darbey/10247558596/\">\"Yellow-footed Chanterelle\", Cantharellus xanthopus</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/78129892@N05\">Scott Darbey</a> from Canada",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Alberni"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-2.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Craterellus lutescens"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images missing SDC published in"
+          }
+        ]
+      },
+      "12762498": {
+        "pageid": 12762498,
+        "ns": 6,
+        "title": "File:2007-11-10 Craterellus lutescens 2.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1066296,
+            "width": 2500,
+            "height": 1900,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/2007-11-10_Craterellus_lutescens_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:2007-11-10_Craterellus_lutescens_2.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=12762498",
+            "sha1": "83b2de7ff1e9641d7ba74a71a2694885ea33ad05",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-01-21 05:26:35",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "2007-11-10 Craterellus lutescens 2",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Craterellus lutescens|Self-published work|Cantharellales in Bavaria in November|Photographs by Andreas Kunze|Cantharellaceae in Landkreis Donau-Ries|Bavaria photographs taken on 2007-11-10|Fungi of Mertinger Forst",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Hymenophor of an older Golden Chanterelle (<i>Craterellus lutescens</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "Taken on 10 November 2007",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Ak_ccm&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Ak ccm (page does not exist)\">Andreas Kunze</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Bavaria photographs taken on 2007-11-10"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Cantharellaceae in Landkreis Donau-Ries"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Cantharellales in Bavaria in November"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Craterellus lutescens"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Mertinger Forst"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by Andreas Kunze"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "12762452": {
+        "pageid": 12762452,
+        "ns": 6,
+        "title": "File:2007-11-10 Craterellus lutescens.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1519804,
+            "width": 2500,
+            "height": 1900,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/af/2007-11-10_Craterellus_lutescens.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:2007-11-10_Craterellus_lutescens.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=12762452",
+            "sha1": "380a269b11b13be33b1f294c9f37c6a39774b26a",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-01-21 05:09:57",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "2007-11-10 Craterellus lutescens",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Craterellus lutescens|Self-published work|Cantharellales in Bavaria in November|Photographs by Andreas Kunze|Cantharellaceae in Landkreis Donau-Ries|Bavaria photographs taken on 2007-11-10|Fungi of Mertinger Forst",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Golden Chanterelle (<i>Craterellus lutescens</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "Taken on 10 November 2007",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Ak_ccm&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Ak ccm (page does not exist)\">Andreas Kunze</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Bavaria photographs taken on 2007-11-10"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Cantharellaceae in Landkreis Donau-Ries"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Cantharellales in Bavaria in November"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Craterellus lutescens"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Mertinger Forst"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by Andreas Kunze"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "57527051": {
+        "pageid": 57527051,
+        "ns": 6,
+        "title": "File:2009-01-11 Craterellus lutescens var. crocatus Sacc 34386.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 628569,
+            "width": 2048,
+            "height": 1536,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/2009-01-11_Craterellus_lutescens_var._crocatus_Sacc_34386.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:2009-01-11_Craterellus_lutescens_var._crocatus_Sacc_34386.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=57527051",
+            "sha1": "9c0dda0e9efe88111d6f58bedae78325f3b6e5b6",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-03-29 19:11:05",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "2009-01-11 Craterellus lutescens var. crocatus Sacc 34386",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Craterellus lutescens|Nature of Istanbul|Images from Mushroom Observer|Files from external sources with reviewed licenses|Cantharellales in Turkey|Files with coordinates missing SDC location of creation",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "40.945000",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "29.220000",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "For more information about this, see the <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_observation/16228\">observation page</a> at Mushroom Observer.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2009-01-11",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This image is <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/image/show_image/34386\">Image Number 34386</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "This image was created by user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_user/1000\">Chukchi (Chukchi)</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.<br>You can contact this user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/ask_user_question/1000\">here</a>.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "15303879": {
+        "pageid": 15303879,
+        "ns": 6,
+        "title": "File:2010-09-20 Craterellus lutescens 55341 1.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 144015,
+            "width": 960,
+            "height": 757,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/50/2010-09-20_Craterellus_lutescens_55341_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:2010-09-20_Craterellus_lutescens_55341_1.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=15303879",
+            "sha1": "495fcac0edf129fbbc28d32eefda73b969fbee62",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-05-25 18:59:47",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "2010-09-20 Craterellus lutescens 55341 1",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Craterellus lutescens|Images from Mushroom Observer|Files from external sources with reviewed licenses|Cantharellaceae in Sweden",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "For more information about this, see the <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_observation/55341\">observation page</a> at Mushroom Observer.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2010-09-20",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This image is <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/image/show_image/111532\">Image Number 111532</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "This image was created by user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_user/442\">Irene Andersson (irenea)</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.<br>You can contact this user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/ask_user_question/442\">here</a>.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Cantharellaceae in Sweden"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Craterellus lutescens"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files from external sources with reviewed licenses"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images from Mushroom Observer"
+          }
+        ]
+      },
+      "15303975": {
+        "pageid": 15303975,
+        "ns": 6,
+        "title": "File:2010-09-20 Craterellus lutescens 55341 2 mod.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 463668,
+            "width": 1000,
+            "height": 770,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/2010-09-20_Craterellus_lutescens_55341_2_mod.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:2010-09-20_Craterellus_lutescens_55341_2_mod.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=15303975",
+            "sha1": "5be7f044b058d0176bc2ad9b77253520e8fbd68f",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-05-25 19:08:44",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "2010-09-20 Craterellus lutescens 55341 2 mod",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Craterellus lutescens|Retouched pictures|Self-published work|Uploaded with derivativeFX|Cantharellaceae in Sweden",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "For more information about this, see the <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_observation/55341\">observation page</a> at Mushroom Observer.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2011-05-25 19:08",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<ul><li><a href=\"//commons.wikimedia.org/wiki/File:2010-09-20_Craterellus_lutescens_55341_2.jpg\" title=\"File:2010-09-20 Craterellus lutescens 55341 2.jpg\">2010-09-20_Craterellus_lutescens_55341_2.jpg</a></li></ul>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "This image was created by user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_user/442\">Irene Andersson (irenea)</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.<br>You can contact this user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/ask_user_question/442\">here</a>.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Cantharellaceae in Sweden"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Craterellus lutescens"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Retouched pictures"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded with derivativeFX"
+          }
+        ]
+      },
+      "15303895": {
+        "pageid": 15303895,
+        "ns": 6,
+        "title": "File:2010-09-20 Craterellus lutescens 55341 2.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 152674,
+            "width": 1131,
+            "height": 876,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/be/2010-09-20_Craterellus_lutescens_55341_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:2010-09-20_Craterellus_lutescens_55341_2.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=15303895",
+            "sha1": "33e1130ef53a266af86076e54f190a0c28a52e83",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-05-25 19:01:13",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "2010-09-20 Craterellus lutescens 55341 2",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Craterellus lutescens|Images from Mushroom Observer|Files from external sources with reviewed licenses|Files with derivative versions|Cantharellaceae in Sweden",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "For more information about this, see the <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_observation/55341\">observation page</a> at Mushroom Observer.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2010-09-20",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This image is <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/image/show_image/135629\">Image Number 135629</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "This image was created by user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_user/442\">Irene Andersson (irenea)</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.<br>You can contact this user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/ask_user_question/442\">here</a>.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Cantharellaceae in Sweden"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Craterellus lutescens"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files from external sources with reviewed licenses"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with derivative versions"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images from Mushroom Observer"
+          }
+        ]
+      },
+      "57152451": {
+        "pageid": 57152451,
+        "ns": 6,
+        "title": "File:2016-09-15 Craterellus lutescens Fr. (Fr.) 692587.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3300948,
+            "width": 3359,
+            "height": 4411,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/2016-09-15_Craterellus_lutescens_Fr._%28Fr.%29_692587.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:2016-09-15_Craterellus_lutescens_Fr._(Fr.)_692587.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=57152451",
+            "sha1": "b9cc8ebe2c79c25fd55a4b208635eb31960f057a",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-03-16 22:18:51",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "2016-09-15 Craterellus lutescens Fr. (Fr.) 692587",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Craterellus lutescens|Images from Mushroom Observer|Files from external sources with reviewed licenses|Cantharellales in Kazakhstan|Files with coordinates missing SDC location of creation|Fungi of Kazakhstan in September",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "53.029100",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "70.174600",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "For more information about this, see the <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_observation/262711\">observation page</a> at Mushroom Observer.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2016-09-15",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This image is <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/image/show_image/692587\">Image Number 692587</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "This image was created by user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_user/5334\">Igor (Igor_Yevdokimov)</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.<br>You can contact this user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/ask_user_question/5334\">here</a>.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "41591345": {
+        "pageid": 41591345,
+        "ns": 6,
+        "title": "File:Annual report of the Regents\" (1890-1903) (18745350174).jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1179913,
+            "width": 2276,
+            "height": 2926,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Annual_report_of_the_Regents%22_%281890-1903%29_%2818745350174%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Annual_report_of_the_Regents%22_(1890-1903)_(18745350174).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=41591345",
+            "sha1": "c0fb81556c5d5f8e33b70ff5e8dc76451974e6de",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-07-14 20:46:01",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Annual report of the Regents\" (1890-1903) (18745350174)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Craterellus tubaeformis|Craterellus lutescens|Hygrocybe cantharellus|Photos uploaded from Flickr by Fæ using a script|Flickr images reviewed by trusted users|Files from Internet Archive Book Images Flickr stream|Files from Flickr's 'The Commons'|Annual report of the Regents (1895)|Internet Archive document annualreportre02newy",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<b>Title</b>: Annual report of the Regents<br>\n<p><b>Identifier</b>: annualreportre02newy<br>\n<b>Year</b>: <a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/search/?tags=bookyear1890-1903\">1890-1903</a> (<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/search/?tags=bookdecade1890\">1890s</a>)<br>\n<b>Authors</b>: <a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/search/?tags=bookauthorNew_York_State_Museum\">New York State Museum</a>; <a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/search/?tags=bookauthorUniversity_of_the_State_of_New_York_Board_of_Regents\">University of the State of New York. Board of Regents</a><br>\n<b>Subjects</b>: <a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/search/?tags=booksubjectNew_York_State_Museum\">New York State Museum</a>; <a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/search/?tags=booksubjectScience_New_York_State_\">Science -- New York (State)</a>; <a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/search/?tags=booksubjectPlants_New_York_State_\">Plants -- New York (State)</a>; <a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/search/?tags=booksubjectAnimals_New_York_State_\">Animals -- New York (State)</a><br>\n<b>Publisher</b>: <a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/search/?tags=bookpublisherAlbany_N_Y_University_of_the_State_of_New_York\">Albany, N. Y. : University of the State of New York</a><br>\n<b>Contributing Library</b>: <a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/search/?tags=bookcontributorNew_York_Botanical_Garden_LuEsther_T_Mertz_Library\">New York Botanical Garden, LuEsther T. Mertz Library</a><br>\n<b>Digitizing Sponsor</b>: <a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/search/?tags=booksponsorThe_LuEsther_T_Mertz_Library_the_New_York_Botanical_Garden\">The LuEsther T Mertz Library, the New York Botanical Garden</a><br>\n<br>\n<b>View Book Page</b>: <a rel=\"nofollow\" class=\"external text\" href=\"https://archive.org/stream/annualreportre02newy/#page/n258/mode/1up\">Book Viewer</a><br>\n<b>About This Book</b>: <a rel=\"nofollow\" class=\"external text\" href=\"https://archive.org/details/annualreportre02newy\">Catalog Entry</a><br>\n<b>View All Images</b>: <a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/search/?tags=bookidannualreportre02newy\">All Images From Book</a><br>\nClick here to <a rel=\"nofollow\" class=\"external text\" href=\"https://archive.org/stream/annualreportre02newy/#page/n258/mode/1up\"><b>view book online</b></a> to see this illustration in context in a browseable online version of this book.<br>\n<br>\n<b>Text Appearing Before Image: </b><br>\n<b>N. Y. State Mus. Mem,4 EDIBLE FUNGS Plate 56</b><br>\n<b>Text Appearing After Image: </b><br>\n<b>CH PECK, del C. FAUSEL, LITH. Fig. 1 to 8 CANTHARELLUSLUTESCENS Fr YELLOWISH CHANTARELLE ES Et LtON, ST*T\"E PRINTER Fig. 9 to 16 CANTHARELLUS INFUNDIBULIFORMIS (Scop.) Fn. FUNNELFORM CHANTARELLE Fig. 17 to 21 CRATERELLUS CANTHARELLUS Scmw. CHANTARELLE CRATERELLUS</b><br>\n<br>\n<b>Note About Images</b><br>\n</p>\n<b>Please note that these images are extracted from scanned page images that may have been digitally enhanced for readability - coloration and appearance of these illustrations may not perfectly resemble the original work.</b>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2015-07-02 18:51:03",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.flickr.com/photos/internetarchivebookimages/18745350174/\">https://www.flickr.com/photos/internetarchivebookimages/18745350174/</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/126377022@N07\">Internet Archive Book Images</a>",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "At the time of upload, the image license was automatically confirmed using the Flickr <a href=\"https://en.wikipedia.org/wiki/API\" class=\"extiw\" title=\"en:API\">API</a>. For more information see <a href=\"//commons.wikimedia.org/wiki/User:F%C3%A6/Flickr_API_detail\" title=\"User:Fæ/Flickr API detail\">Flickr API detail</a>.",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "No restrictions",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "No known copyright restrictions",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://www.flickr.com/commons/usage/",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Annual report of the Regents (1895)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Craterellus lutescens"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Craterellus tubaeformis"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files from Flickr's 'The Commons'"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files from Internet Archive Book Images Flickr stream"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images reviewed by trusted users"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Hygrocybe cantharellus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Internet Archive document annualreportre02newy"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photos uploaded from Flickr by Fæ using a script"
+          }
+        ]
+      },
+      "60976351": {
+        "pageid": 60976351,
+        "ns": 6,
+        "title": "File:Bresadola - Craterellus lutescens.png",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1401297,
+            "width": 1300,
+            "height": 1840,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Bresadola_-_Craterellus_lutescens.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Bresadola_-_Craterellus_lutescens.png",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=60976351",
+            "sha1": "2cacac5b7ef8a2135d7bc9f210f35307296ba07e",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-07-13 08:48:02",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Bresadola - Craterellus lutescens",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Craterellus lutescens|Author died more than 80 years ago public domain images|CC-PD-Mark|Iconographia Mycologica, vol. I-XXVI|PD-old missing SDC copyright status|Cantharellales botanical illustrations",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/Giacomo_Bresadola\" class=\"mw-redirect\" title=\"Giacomo Bresadola\">Giacomo Bresadola</a>: <a href=\"//commons.wikimedia.org/wiki/Craterellus_lutescens\" title=\"Craterellus lutescens\">Cantharellus lutescens</a> (1929)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "1929",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/Giacomo_Bresadola\" class=\"mw-redirect\" title=\"Giacomo Bresadola\">Giacomo Bresadola</a>: „Iconographia Mycologica, vol. X, Editura Società Botanica Italiana, Milano 1929, tab. 481",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/Giacomo_Bresadola\" class=\"mw-redirect\" title=\"Giacomo Bresadola\">Giacomo Bresadola</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "69272600": {
+        "pageid": 69272600,
+        "ns": 6,
+        "title": "File:Camagroc (15400688769).jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 849144,
+            "width": 1920,
+            "height": 1080,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/24/Camagroc_%2815400688769%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Camagroc_(15400688769).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=69272600",
+            "sha1": "637f0945e836adfbcc5ec6977bb3899748e1c2e2",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-05-19 13:37:05",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Camagroc (15400688769)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Craterellus lutescens|Files uploaded by OceanAtoll|Flickr images reviewed by FlickreviewR 2|Photographs by Jorge Franganillo",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Camagroc",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2014-10-18 11:16",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/franganillo/15400688769/\">Camagroc</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/46191841@N00\">Jorge Franganillo</a> from Barcelona, Spain",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "69272599": {
+        "pageid": 69272599,
+        "ns": 6,
+        "title": "File:Camagroc (15401703740).jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 640320,
+            "width": 1620,
+            "height": 1080,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Camagroc_%2815401703740%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Camagroc_(15401703740).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=69272599",
+            "sha1": "20a6f6a3a52dadf9e26cff471fc1e2fab1240687",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-05-19 13:37:04",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Camagroc (15401703740)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Craterellus lutescens|Files uploaded by OceanAtoll|Flickr images reviewed by FlickreviewR 2|Photographs by Jorge Franganillo",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Camagroc",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2014-10-18 10:53",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/franganillo/15401703740/\">Camagroc</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/46191841@N00\">Jorge Franganillo</a> from Barcelona, Spain",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "63769755": {
+        "pageid": 63769755,
+        "ns": 6,
+        "title": "File:Camagroc 2017 A.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2785860,
+            "width": 4608,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Camagroc_2017_A.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Camagroc_2017_A.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=63769755",
+            "sha1": "b5c3993a651d186209a8249f9d8dee111b781030",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-10-31 15:56:00",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Camagroc 2017 A",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Craterellus lutescens|CC-Zero|Self-published work|Taken by Fructibus with Samsung Galaxy A5 (2017)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Yellow Foot mushroom. Price: 17.90 Euro / kg",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-10-31 09:46:28",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Fructibus\" title=\"User:Fructibus\">Fructibus</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "63929178": {
+        "pageid": 63929178,
+        "ns": 6,
+        "title": "File:Camagroc 2017 B.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2247923,
+            "width": 4608,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/16/Camagroc_2017_B.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Camagroc_2017_B.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=63929178",
+            "sha1": "5a9856ea771ade6bc078afd92473b9262f396217",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-11-07 23:26:15",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Camagroc 2017 B",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Craterellus lutescens|CC-Zero|Self-published work|Taken by Fructibus with Samsung Galaxy A5 (2017)|Thin plastic trays",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Camagroc",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-11-01 11:01:54",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Fructibus\" title=\"User:Fructibus\">Fructibus</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "63929382": {
+        "pageid": 63929382,
+        "ns": 6,
+        "title": "File:Camagroc 2017 C.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2271213,
+            "width": 3456,
+            "height": 4608,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/20/Camagroc_2017_C.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Camagroc_2017_C.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=63929382",
+            "sha1": "cda836ca58a1e87a582e07f1606cc6e5c4122ac3",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-11-07 23:42:09",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Camagroc 2017 C",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Craterellus lutescens|CC-Zero|Self-published work|Taken by Fructibus with Samsung Galaxy A5 (2017)|Foam trays",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Camagroc",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-11-01 10:57:14",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Fructibus\" title=\"User:Fructibus\">Fructibus</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "73797466": {
+        "pageid": 73797466,
+        "ns": 6,
+        "title": "File:Camagrocs a la festa del bolet de Cal Rosal 2018.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2616000,
+            "width": 2976,
+            "height": 3968,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Camagrocs_a_la_festa_del_bolet_de_Cal_Rosal_2018.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Camagrocs_a_la_festa_del_bolet_de_Cal_Rosal_2018.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=73797466",
+            "sha1": "971e1c5b1afd8bed333ce76be2981539ba8a106a",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-10-22 14:35:51",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Camagrocs a la festa del bolet de Cal Rosal 2018",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Craterellus lutescens|Self-published work|Uploaded with Mobile/Android|Uploaded with Mobile/Android (Nov 2017-Aug 2019)|Files with coordinates missing SDC location of creation|Cantharellaceae in Catalonia",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "42.071114",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "1.869784",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Camagrocs a la festa del bolet de Cal Rosal 2018",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Pitxiquin\" title=\"User:Pitxiquin\">Pitxiquin</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "23477007": {
+        "pageid": 23477007,
+        "ns": 6,
+        "title": "File:Cantharellus aurora Eestis.JPG",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1456875,
+            "width": 2816,
+            "height": 1880,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/05/Cantharellus_aurora_Eestis.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Cantharellus_aurora_Eestis.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=23477007",
+            "sha1": "558b10895f68b96b13c9c46c079c8eefc3f21481",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2012-12-31 15:10:39",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Cantharellus aurora Eestis",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Craterellus lutescens|Taken with Canon Digital IXUS 230 HS|Orkjärv Nature Reserve|Self-published work|Cantharellaceae in Estonia|Fungi of Estonia in September|Images from HELP 2012",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Kollakad kukeseened Orkjärve LKAl",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2012-09-22 14:36:22",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Marko.Eesti\" title=\"User:Marko.Eesti\">Marko Vainu</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Cantharellaceae in Estonia"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Craterellus lutescens"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Estonia in September"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images from HELP 2012"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Orkjärv Nature Reserve"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Canon Digital IXUS 230 HS"
+          }
+        ]
+      },
+      "86461898": {
+        "pageid": 86461898,
+        "ns": 6,
+        "title": "File:Cantharellus aurora Maljen, Serbia.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 118959,
+            "width": 720,
+            "height": 540,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Cantharellus_aurora_Maljen%2C_Serbia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Cantharellus_aurora_Maljen,_Serbia.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=86461898",
+            "sha1": "b65218d73599ff45123ccf19c3019f0694099549",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-01-31 09:50:32",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Cantharellus aurora Maljen, Serbia",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Craterellus lutescens|Self-published work|Files with coordinates missing SDC location of creation|Projekat Viki Senior 2020",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "44.118539",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "19.935840",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Cantharellus aurora on mountin Maljen, Serbia",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2011-11-11",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Prirodnjak&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Prirodnjak (page does not exist)\">Prirodnjak</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "12386126": {
+        "pageid": 12386126,
+        "ns": 6,
+        "title": "File:Cantharellus aurora.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 765109,
+            "width": 1024,
+            "height": 1022,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Cantharellus_aurora.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Cantharellus_aurora.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=12386126",
+            "sha1": "ddacea4e174285f0f0bbaa61dd5a4c78dbf368b0",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2010-12-20 16:23:10",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Cantharellus aurora",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Craterellus lutescens|Flickr images reviewed by FlickreviewR",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Craterellus lutescens</i> syn. <i>Cantharellus aurora</i>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2009-08-23",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.flickr.com/photos/agder/3850171910/\">https://www.flickr.com/photos/agder/3850171910/</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "dr_relling",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-2.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Craterellus lutescens"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images reviewed by FlickreviewR"
+          }
+        ]
+      },
+      "12804171": {
+        "pageid": 12804171,
+        "ns": 6,
+        "title": "File:Cantharellus lutescens 02682.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 354865,
+            "width": 1024,
+            "height": 768,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Cantharellus_lutescens_02682.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Cantharellus_lutescens_02682.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=12804171",
+            "sha1": "3ba6c9abd5e6a536b3e373f04d8a8cc6314c8194",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-01-25 13:29:16",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Cantharellus lutescens 02682",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Craterellus lutescens|Self-published work|PD-self",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Cantharellus lutescens in its environment",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2002-09-14",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Pollice&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Pollice (page does not exist)\">Pollice</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Craterellus lutescens"
+          },
+          {
+            "ns": 14,
+            "title": "Category:PD-self"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "23223597": {
+        "pageid": 23223597,
+        "ns": 6,
+        "title": "File:Cantharellus lutescens euskal herrian 1.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3897916,
+            "width": 2752,
+            "height": 3669,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/de/Cantharellus_lutescens_euskal_herrian_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Cantharellus_lutescens_euskal_herrian_1.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=23223597",
+            "sha1": "10679846c56271b4274d92b5495b9be357da5757",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2012-12-16 19:46:47",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Cantharellus lutescens euskal herrian 1",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Craterellus lutescens|Taken with Sony DSC-W320|Self-published work|Fungi of the Basque Autonomous Community|Picked mushrooms|Fungi in November",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Saltsa-perretxiko horia, Araban bildua",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2012-11-24 12:45:45",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Assar\" title=\"User:Assar\">Assar</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Craterellus lutescens"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in November"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of the Basque Autonomous Community"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Picked mushrooms"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Sony DSC-W320"
+          }
+        ]
+      },
+      "23223598": {
+        "pageid": 23223598,
+        "ns": 6,
+        "title": "File:Cantharellus lutescens euskal herrian 2.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1769692,
+            "width": 2000,
+            "height": 1500,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Cantharellus_lutescens_euskal_herrian_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Cantharellus_lutescens_euskal_herrian_2.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=23223598",
+            "sha1": "e905ea18d42d0eac7b6de29da03442c4d2696040",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2012-12-16 19:46:46",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Cantharellus lutescens euskal herrian 2",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Craterellus lutescens|Taken with Sony DSC-W320|Self-published work|Fungi of the Basque Autonomous Community|Fungi in November",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Saltsa-perretxiko horia, Araban bildua",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2012-11-24 10:59:05",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Assar\" title=\"User:Assar\">Assar</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Craterellus lutescens"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in November"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of the Basque Autonomous Community"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Sony DSC-W320"
+          }
+        ]
+      },
+      "1090435": {
+        "pageid": 1090435,
+        "ns": 6,
+        "title": "File:Cantharellus lutescens.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 858896,
+            "width": 1360,
+            "height": 1020,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Cantharellus_lutescens.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Cantharellus_lutescens.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=1090435",
+            "sha1": "c5d555ea84fc467461d5dee192e851e335abb769",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2006-08-25 18:38:01",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Cantharellus lutescens",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Craterellus lutescens|GFDL|License migration redundant|Self-published work|Fungi of Mallorca|Fungi in October",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Picornell de càrritx (<i>Cantharellus lutescens</i>), <a href=\"//commons.wikimedia.org/wiki/Mallorca\" title=\"Mallorca\">Mallorca</a>.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2005-10-29",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Paucabot\" title=\"User:Paucabot\">Pau Cabot</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/licenses/by-sa/3.0/",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0-migrated"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Craterellus lutescens"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in October"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Mallorca"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "83128399": {
+        "pageid": 83128399,
+        "ns": 6,
+        "title": "File:Cantharellus lutescens.Trompeta amarilla.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 305856,
+            "width": 2801,
+            "height": 1567,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/19/Cantharellus_lutescens.Trompeta_amarilla.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Cantharellus_lutescens.Trompeta_amarilla.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=83128399",
+            "sha1": "e4909067ed2e6233d056c08fdd9d4976dabe76e7",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2019-10-16 09:59:06",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Cantharellus lutescens.Trompeta amarilla",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Craterellus lutescens|Self-published work|Cantharellales botanical illustrations|Illustrations by Scientific Illustration master students at the University of the Basque Country in the year 2019",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Hongo comestible que crece en los bosques de pinos. Nombre común : trompeta amarilla.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2019-06-21 10:13:27",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:MarinaRuizGranada&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:MarinaRuizGranada (page does not exist)\">MarinaRuizGranada</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "182171927": {
+        "pageid": 182171927,
+        "ns": 6,
+        "title": "File:Craterellus lutescens 01.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1149706,
+            "width": 2048,
+            "height": 1654,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Craterellus_lutescens_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Craterellus_lutescens_01.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=182171927",
+            "sha1": "98583c777a8c94e988d3bd8d124f9556b9f6d1d5",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2026-01-21 10:26:03",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Craterellus lutescens 01",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Craterellus lutescens|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|INaturalist images missing SDC depicts",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Craterellus lutescens",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "18 déc. 2025 · 18:35 CET",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/observations/331214655\">https://www.inaturalist.org/observations/331214655</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Lucian Clanet",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "182172072": {
+        "pageid": 182172072,
+        "ns": 6,
+        "title": "File:Craterellus lutescens 097cbd5f-d72a-446f-9022-1cd6db6dee40.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 597176,
+            "width": 1600,
+            "height": 1200,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/64/Craterellus_lutescens_097cbd5f-d72a-446f-9022-1cd6db6dee40.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Craterellus_lutescens_097cbd5f-d72a-446f-9022-1cd6db6dee40.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=182172072",
+            "sha1": "3bd18fde2fab95772dfa9aa7d6bcba99373e005a",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2026-01-21 10:29:44",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Craterellus lutescens 097cbd5f-d72a-446f-9022-1cd6db6dee40",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Craterellus lutescens",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Craterellus lutescens",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2023-08-26",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.gbif.org/occurrence/4416034516\">https://www.gbif.org/occurrence/4416034516</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Svein Olav B. Drangeid",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "182172036": {
+        "pageid": 182172036,
+        "ns": 6,
+        "title": "File:Craterellus lutescens 53939980682 8193bfcc4b b.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 154492,
+            "width": 654,
+            "height": 844,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Craterellus_lutescens_53939980682_8193bfcc4b_b.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Craterellus_lutescens_53939980682_8193bfcc4b_b.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=182172036",
+            "sha1": "9c0fc7c70b5e8cfdc4a8320a3a38e7415e1ecbd5",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2026-01-21 10:28:53",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Craterellus lutescens 53939980682 8193bfcc4b b",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Craterellus lutescens",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Craterellus lutescens",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2024-08-22 00:00",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "cropped from <a rel=\"nofollow\" class=\"external free\" href=\"https://www.gbif.org/occurrence/5018882249\">https://www.gbif.org/occurrence/5018882249</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Rita Lüder",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "182172136": {
+        "pageid": 182172136,
+        "ns": 6,
+        "title": "File:Craterellus lutescens 91d8c0ea-cb6c-49db-91ad-bfafbe7122ec.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 533543,
+            "width": 1600,
+            "height": 1093,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Craterellus_lutescens_91d8c0ea-cb6c-49db-91ad-bfafbe7122ec.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Craterellus_lutescens_91d8c0ea-cb6c-49db-91ad-bfafbe7122ec.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=182172136",
+            "sha1": "ec05d11c637100e7086bb37cb0dfcafc3a477d6a",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2026-01-21 10:31:37",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Craterellus lutescens 91d8c0ea-cb6c-49db-91ad-bfafbe7122ec",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Craterellus lutescens",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Craterellus lutescens",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-08-24",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "cropped from <a rel=\"nofollow\" class=\"external free\" href=\"https://www.gbif.org/occurrence/3897546676\">https://www.gbif.org/occurrence/3897546676</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Perry Gunnar Larsen",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "182171971": {
+        "pageid": 182171971,
+        "ns": 6,
+        "title": "File:Craterellus lutescens collection.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 303657,
+            "width": 1067,
+            "height": 800,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Craterellus_lutescens_collection.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Craterellus_lutescens_collection.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=182171971",
+            "sha1": "50239a65f2e65bb3b816e6342f5f10a4fc831cbc",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2026-01-21 10:27:15",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Craterellus lutescens collection",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Craterellus lutescens|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Media from GBIF|INaturalist images missing SDC depicts",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Craterellus lutescens",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "27 nov. 2024 · 18:17 CET",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/observations/253304946\">https://www.inaturalist.org/observations/253304946</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "mycobel",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "201178736": {
+        "pageid": 201178736,
+        "ns": 6,
+        "title": "File:Craterellus lutescens vs Craterellus tubaeformis side by side.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 838571,
+            "width": 1902,
+            "height": 2882,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Craterellus_lutescens_vs_Craterellus_tubaeformis_side_by_side.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Craterellus_lutescens_vs_Craterellus_tubaeformis_side_by_side.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=201178736",
+            "sha1": "0c745c275e4ca99f142edfa8dd036c645d9326bb",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2026-10-06 19:20:38",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Craterellus lutescens vs Craterellus tubaeformis side by side",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Craterellus tubaeformis|Craterellus lutescens|Self-published work|Creative Commons Attribution 4.0 missing SDC copyright license|Creative Commons Attribution missing SDC copyright status|Self-published work missing SDC copyright license",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Side by side comparison of related fungi species Craterellus lutescens and Craterellus tubaeformis, demonstrating differences in cap surface and hymenium (September 21, 2026, near Ramsau bei Berchtesgaden, Germany)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2026-09-21",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Alex_Ex\" title=\"User:Alex Ex\">Alex Ex</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "171120369": {
+        "pageid": 171120369,
+        "ns": 6,
+        "title": "File:Craterellus lutescens.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 244596,
+            "width": 1028,
+            "height": 735,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/18/Craterellus_lutescens.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Craterellus_lutescens.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=171120369",
+            "sha1": "f4a4d56faedb6029505d3aa53bbee31e7e7cd9ab",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2025-07-31 07:59:12",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Craterellus lutescens",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Craterellus lutescens|Media from iNaturalist|INaturalist images reviewed by trusted reviewers|Media from GBIF|INaturalist images missing SDC depicts",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Craterellus lutescens",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "31 oct. 2024 · 18:13 CET",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "cropped from <a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/observations/249905648\">https://www.inaturalist.org/observations/249905648</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "mycobel",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "90470329": {
+        "pageid": 90470329,
+        "ns": 6,
+        "title": "File:De-Starkriechender Pfifferling.ogg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 29937,
+            "width": 0,
+            "height": 0,
+            "duration": 2.93,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c9/De-Starkriechender_Pfifferling.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:De-Starkriechender_Pfifferling.ogg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=90470329",
+            "sha1": "cb5419cea138b24264cf0f68ccb85b725d35e064",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-05-19 23:44:07",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "De-Starkriechender Pfifferling",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Craterellus lutescens|Uploaded with VicuñaUploader|German pronunciation of nouns|Supported by Wikimedia Deutschland|Created with Audacity|Audio files made by jeuwre|Audio files made using a Rode NT-USB (supported by Wikimedia Deutschland)|German pronunciation of words relating to mushrooms",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Pronunciation recording of German noun \"Starkriechender Pfifferling\", IPA: /ˈʃtaʁkˌʁiːçn̩dɐ ˈp͡fɪfɐlɪŋ/. Male voice, recorded by native German speaker from Berlin, Germany.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-05-19",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>, recorded with <a href=\"//commons.wikimedia.org/wiki/Category:R%C3%B8de_NT-USB\" title=\"Category:Røde NT-USB\">Røde NT-USB</a> and <a href=\"https://en.wikipedia.org/wiki/Audacity_(audio_editor)\" class=\"extiw\" title=\"w:Audacity (audio editor)\">Audacity</a>, converted with <a href=\"https://en.wikipedia.org/wiki/SoX\" class=\"extiw\" title=\"w:SoX\">SoX (Sound eXchange audio editing software)</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Jeuwre\" title=\"User:Jeuwre\">Jeuwre</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "21009453": {
+        "pageid": 21009453,
+        "ns": 6,
+        "title": "File:Gul trumpet.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 762023,
+            "width": 2048,
+            "height": 1536,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Gul_trumpet.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gul_trumpet.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=21009453",
+            "sha1": "93eaca3c7ffd84ae31c8180d393ca1feac830ecd",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2012-09-01 21:41:01",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Gul trumpet",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Craterellus lutescens|Self-published work|Taken with Samsung GT-I9100",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Mushroom",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2012-09-01",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Anders16000&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Anders16000 (page does not exist)\">Anders16000</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Craterellus lutescens"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Samsung GT-I9100"
+          }
+        ]
+      },
+      "43094703": {
+        "pageid": 43094703,
+        "ns": 6,
+        "title": "File:Icones Farlowianae (Pl. 97) (8488409947).jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 530610,
+            "width": 2035,
+            "height": 2651,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Icones_Farlowianae_%28Pl._97%29_%288488409947%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Icones_Farlowianae_(Pl._97)_(8488409947).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=43094703",
+            "sha1": "dde9700cfe5d4090826eaa182119362555780827",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-09-11 01:13:45",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Icones Farlowianae (Pl. 97) (8488409947)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Craterellus lutescens|Photos uploaded from Flickr by Fæ using a script|Flickr images reviewed by FlickreviewR|Files from the Biodiversity Heritage Library|Biodiversity Heritage Library maintenance missing collection|Cantharellales botanical illustrations|Icones Farlowianae",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "«c£p».",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "1929",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.flickr.com/photos/biodivlibrary/8488409947\">https://www.flickr.com/photos/biodivlibrary/8488409947</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Burt, E. A.; Farlow, W. G.; Harvard University.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "7747759": {
+        "pageid": 7747759,
+        "ns": 6,
+        "title": "File:Knallkul trumpetsvamp.png",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 848524,
+            "width": 800,
+            "height": 522,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Knallkul_trumpetsvamp.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Knallkul_trumpetsvamp.png",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=7747759",
+            "sha1": "7638954c6879fd92300e7427d6571d4dff119cae",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2009-09-06 15:57:53",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Knallkul trumpetsvamp",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Craterellus lutescens|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Rare, Yellow Mushroom",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2009-09-06",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Anders16000&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Anders16000 (page does not exist)\">Anders Thulin</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Craterellus lutescens"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "152149883": {
+        "pageid": 152149883,
+        "ns": 6,
+        "title": "File:Kollakas torbikseen.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 520843,
+            "width": 1567,
+            "height": 1581,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Kollakas_torbikseen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Kollakas_torbikseen.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=152149883",
+            "sha1": "56cb727a996119576617231f1d5f1adb2761adf9",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2024-09-03 06:42:34",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Kollakas torbikseen",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Craterellus lutescens|Self-published work|Fungi in Järvselja Nature Reserve",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Kollakas torbikseen",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2024-09-03",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Svencapoeira\" title=\"User:Svencapoeira\">Svencapoeira</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "170026008": {
+        "pageid": 170026008,
+        "ns": 6,
+        "title": "File:Kollakas torbikseen1.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1668582,
+            "width": 3553,
+            "height": 2970,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Kollakas_torbikseen1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Kollakas_torbikseen1.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=170026008",
+            "sha1": "be5ea7073bb4c65e34eb542206ca93893a599522",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2025-07-15 07:08:08",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Kollakas torbikseen1",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Craterellus lutescens|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Kollakas torbikseen",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2024-09-30",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Svencapoeira\" title=\"User:Svencapoeira\">Svencapoeira</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "197320451": {
+        "pageid": 197320451,
+        "ns": 6,
+        "title": "File:Kollakas torbikseen2.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 832695,
+            "width": 2620,
+            "height": 2318,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Kollakas_torbikseen2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Kollakas_torbikseen2.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=197320451",
+            "sha1": "56598a944b47d4b8242d85ad210ca0b332181e58",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2026-08-12 19:34:04",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Kollakas torbikseen2",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Craterellus lutescens|Soomaa National Park|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Kollakas torbikseen",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2026-08-12",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Svencapoeira\" title=\"User:Svencapoeira\">Svencapoeira</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "11428226": {
+        "pageid": 11428226,
+        "ns": 6,
+        "title": "File:Pannbiff med tillbehör.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1781119,
+            "width": 2764,
+            "height": 2073,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Pannbiff_med_tillbeh%C3%B6r.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Pannbiff_med_tillbeh%C3%B6r.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=11428226",
+            "sha1": "05b476445fe3e8a8bcc34fa32d17b89d10aa72b9",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2010-09-09 11:49:04",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Pannbiff med tillbehör",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Craterellus lutescens|Mushroom-based food|GFDL|Taken with Canon Digital IXUS 850 IS|Beef-based food|License migration redundant|Self-published work|Images by Ankara|Meals in Sweden|Lingonberry jam in Sweden|Pannbiff|Beans as a side dish",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Pannbiff med potatis, vaxbönor, råröda lingon och rödgul trumpetsvamp.",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Ankara\" title=\"User:Ankara\">Ankara</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Beans as a side dish"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Beef-based food"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Craterellus lutescens"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images by Ankara"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lingonberry jam in Sweden"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Meals in Sweden"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mushroom-based food"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Pannbiff"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Canon Digital IXUS 850 IS"
+          }
+        ]
+      }
+    }
+  }
+}

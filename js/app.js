@@ -289,7 +289,7 @@ async function init() {
   renderSpeciesGrid();
   await applyLegal();
   initTrees({ trees: trj, media: mj, assetUrl: embedded ? (f) => embedded.assets?.[f] || '' : (f) => f, zones, habitat, thumb });
-  initAnimals(embedded?.animals||await load('animals'));
+  initAnimals(embedded?.animals||await load('animals'),embedded?(f)=>embedded.assets?.[f]||'':(f)=>f);
   const plantData=embedded?.plants||await load('plants');plantModels=botanicalModels(embedded?.botanicalModels||await load('botanical-models'),plantData);
   if(state.plantIds!==null){state.plantIds=new Set([...state.plantIds].filter(id=>plantModels.some(p=>p.id===id)));if(!state.plantIds.size)state.plantIds=null;}
   initPlants(plantData,embedded?(f)=>embedded.assets?.[f]||'':(f)=>f,id=>plantModels.find(m=>m.plantId===id));

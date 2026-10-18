@@ -1,0 +1,3494 @@
+{
+  "photos": [
+    {
+      "target_key": "Pholiota squarrosa",
+      "score": 12,
+      "author": "Jean-Pol GRANDMONT",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Pholiota_squarrosa_JPG3.jpg",
+      "size": 2220436,
+      "queue_index": 21,
+      "editorial_precheck": "Taxon confermato dalla descrizione/categorie del singolo file; file candidati dubbi, cf/aff, microscopici, modelli e derivati scartati. Revisione dei byte ancora necessaria.",
+      "id": "pe2-sosia-pholiota-squarrosa-1f5572a",
+      "target_group": "lookalikes",
+      "latin": "Pholiota squarrosa",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Pholiota_squarrosa_JPG3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "1a8acb93c3eea56b52fbbdd11831ed1289b3d004",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-pholiota-squarrosa-1f5572a.jpg",
+      "source_title": "File:Pholiota squarrosa JPG3.jpg",
+      "source_description": "Shaggy scalycap  (  Pholiota squarrosa  ), Havré, Belgium",
+      "source_categories": [
+        "Category:Belgium photographs taken on 2005-11-10",
+        "Category:CC-BY-3.0",
+        "Category:CC-BY-SA-3.0",
+        "Category:Fungi in November",
+        "Category:GFDL",
+        "Category:License migration redundant",
+        "Category:Pholiota in Belgium",
+        "Category:Pholiota squarrosa",
+        "Category:Photographs by Jean-Pol GRANDMONT",
+        "Category:Quality Images by Jean-Pol GRANDMONT",
+        "Category:Quality images",
+        "Category:Quality images missing SDC depicts",
+        "Category:Quality images of fungi in Belgium",
+        "Category:Self-published work",
+        "Category:Taken with Canon PowerShot G2",
+        "Category:Uploaded by Jean-Pol GRANDMONT"
+      ],
+      "attribution": "Jean-Pol GRANDMONT · CC BY 3.0 · Wikimedia Commons",
+      "alt": "Pholiota squarrosa, vista dall’alto dei cappelli.",
+      "caption": "Vista dall’alto dei cappelli.",
+      "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.52,
+          0.5
+        ],
+        "riquadro": [
+          0.17000000000000004,
+          0.2,
+          0.87,
+          0.8
+        ],
+        "nota": "Originale osservato su unreviewed-batch04; elementi esposti descritti senza dedurre fasi biologiche o caratteri nascosti."
+      },
+      "sha256_original": "4541a11be158facf4097ae6b170ccc00c6a0199b16f96fd29ad81df7119b4c13",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-pholiota-squarrosa-1f5572a.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-pholiota-squarrosa-1f5572a-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-pholiota-squarrosa-1f5572a-t.webp"
+      },
+      "width": 1919,
+      "height": 1439,
+      "crop_points": {
+        "5:4": [
+          0.819,
+          0.5
+        ],
+        "3:4": [
+          0.546,
+          0.5
+        ],
+        "4:5": [
+          0.55,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.5
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.58,
+          0.5
+        ]
+      }
+    },
+    {
+      "target_key": "Armillaria tabescens",
+      "score": 12,
+      "author": "No machine-readable author provided.  Archenzo  assumed (based on copyright claims).",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Armillaria_tabescens.jpg",
+      "size": 81124,
+      "queue_index": 22,
+      "editorial_precheck": "Taxon confermato dalla descrizione/categorie del singolo file; file candidati dubbi, cf/aff, microscopici, modelli e derivati scartati. Revisione dei byte ancora necessaria.",
+      "id": "pe2-sosia-armillaria-tabescens-72be0c6",
+      "target_group": "lookalikes",
+      "latin": "Armillaria tabescens",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/6/69/Armillaria_tabescens.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "0ac04f07c3c5bfcc1c4e4f1ac58bf3dd7317468e",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-armillaria-tabescens-72be0c6.jpg",
+      "source_title": "File:Armillaria tabescens.jpg",
+      "source_description": "Armillaria tabescens   \nSynonym:  Clitocybe tabescens   \nPiacenza's mountains  (Italy) - September 2007\n \n  by  Archenzo",
+      "source_categories": [
+        "Category:Armillaria tabescens",
+        "Category:Assumed own work",
+        "Category:CC-BY-3.0",
+        "Category:Files with no machine-readable source",
+        "Category:Fungi of Emilia-Romagna",
+        "Category:GFDL",
+        "Category:License migration redundant",
+        "Category:Self-published work"
+      ],
+      "attribution": "No machine-readable author provided.  Archenzo  assumed (based on copyright claims). · CC BY 3.0 · Wikimedia Commons",
+      "alt": "Armillaria tabescens, gruppo nella lettiera.",
+      "caption": "Gruppo nella lettiera.",
+      "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.48,
+          0.45
+        ],
+        "riquadro": [
+          0.13,
+          0.15000000000000002,
+          0.83,
+          0.75
+        ],
+        "nota": "Originale osservato su unreviewed-batch04; elementi esposti descritti senza dedurre fasi biologiche o caratteri nascosti."
+      },
+      "sha256_original": "078436b47b8048707992d0070a02cb555f70fdefa60df9f64b95f5fa640339d1",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-armillaria-tabescens-72be0c6.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-armillaria-tabescens-72be0c6-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-armillaria-tabescens-72be0c6-t.webp"
+      },
+      "width": 1260,
+      "height": 985,
+      "crop_points": {
+        "5:4": [
+          0.0,
+          0.5
+        ],
+        "3:4": [
+          0.452,
+          0.5
+        ],
+        "4:5": [
+          0.447,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.386
+        ],
+        "4:3": [
+          0.5,
+          0.0
+        ],
+        "1:1": [
+          0.408,
+          0.5
+        ]
+      }
+    },
+    {
+      "target_key": "Russula heterophylla",
+      "score": 12,
+      "author": "User:Strobilomyces",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "page": "https://commons.wikimedia.org/wiki/File:Russula_heterophylla_060820w.jpg",
+      "size": 535924,
+      "queue_index": 23,
+      "editorial_precheck": "Taxon confermato dalla descrizione/categorie del singolo file; file candidati dubbi, cf/aff, microscopici, modelli e derivati scartati. Revisione dei byte ancora necessaria.",
+      "id": "pe2-sosia-russula-heterophylla-ccff72b",
+      "target_group": "lookalikes",
+      "latin": "Russula heterophylla",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/3/39/Russula_heterophylla_060820w.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "e41d973ea018a04d7a391ca998b77aae17b9027d",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-russula-heterophylla-ccff72b.jpg",
+      "source_title": "File:Russula heterophylla 060820w.jpg",
+      "source_description": "Russula heterophylla  in a wood near Rambouillet, France.",
+      "source_categories": [
+        "Category:CC-BY-SA-2.5,2.0,1.0",
+        "Category:CC-BY-SA-3.0-migrated",
+        "Category:GFDL",
+        "Category:License migration redundant",
+        "Category:Russula heterophylla",
+        "Category:Self-published work",
+        "Category:Taken with Canon EOS 350D"
+      ],
+      "attribution": "User:Strobilomyces · CC BY-SA 3.0 · Wikimedia Commons",
+      "alt": "Russula heterophylla, cappello e lamelle esposti.",
+      "caption": "Cappello e lamelle esposti.",
+      "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.55,
+          0.47
+        ],
+        "riquadro": [
+          0.20000000000000007,
+          0.16999999999999998,
+          0.9,
+          0.77
+        ],
+        "nota": "Originale osservato su unreviewed-batch04; elementi esposti descritti senza dedurre fasi biologiche o caratteri nascosti."
+      },
+      "sha256_original": "8b2981a216caea1488faabbb67f1196659d338890cfab0540948fd2dc610d0b6",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-russula-heterophylla-ccff72b.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-russula-heterophylla-ccff72b-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-russula-heterophylla-ccff72b-t.webp"
+      },
+      "width": 1728,
+      "height": 1152,
+      "crop_points": {
+        "5:4": [
+          0.8,
+          0.5
+        ],
+        "3:4": [
+          0.6,
+          0.5
+        ],
+        "4:5": [
+          0.607,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.413
+        ],
+        "4:3": [
+          0.95,
+          0.5
+        ],
+        "1:1": [
+          0.65,
+          0.5
+        ]
+      }
+    },
+    {
+      "target_key": "Russula aeruginea",
+      "score": 12,
+      "author": "This image was created by user  Irene Andersson (irenea)  at  Mushroom Observer , a source for mycological images. You can contact this user  here .",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:2005-08-18_Russula_aeruginea_14354.jpg",
+      "size": 222552,
+      "queue_index": 25,
+      "editorial_precheck": "Taxon confermato dalla descrizione/categorie del singolo file; file candidati dubbi, cf/aff, microscopici, modelli e derivati scartati. Revisione dei byte ancora necessaria.",
+      "id": "pe2-sosia-russula-aeruginea-a596adc",
+      "target_group": "lookalikes",
+      "latin": "Russula aeruginea",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/5/51/2005-08-18_Russula_aeruginea_14354.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "afb862b4a29021fdbbf3ea60581913d2700be07b",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-russula-aeruginea-a596adc.jpg",
+      "source_title": "File:2005-08-18 Russula aeruginea 14354.jpg",
+      "source_description": "For more information about this, see the  observation page  at Mushroom Observer.",
+      "source_categories": [
+        "Category:CC-BY-SA-3.0",
+        "Category:Files from external sources with reviewed licenses",
+        "Category:Files with derivative versions",
+        "Category:Fungi of Sweden in August",
+        "Category:Images from Mushroom Observer",
+        "Category:Russula aeruginea",
+        "Category:Russulales in Sweden"
+      ],
+      "attribution": "This image was created by user  Irene Andersson (irenea)  at  Mushroom Observer , a source for mycological images. You can contact this user  here . · CC BY-SA 3.0 · Wikimedia Commons",
+      "alt": "Russula aeruginea, cappelli e lamelle esposti.",
+      "caption": "Cappelli e lamelle esposti.",
+      "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.53,
+          0.5
+        ],
+        "riquadro": [
+          0.18000000000000005,
+          0.2,
+          0.88,
+          0.8
+        ],
+        "nota": "Originale osservato su unreviewed-batch04; elementi esposti descritti senza dedurre fasi biologiche o caratteri nascosti."
+      },
+      "sha256_original": "2875514d184fbec8b2b7469c6270bff68c9660bf1253297486ac02c622188550",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-russula-aeruginea-a596adc.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-russula-aeruginea-a596adc-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-russula-aeruginea-a596adc-t.webp"
+      },
+      "width": 1403,
+      "height": 793,
+      "crop_points": {
+        "5:4": [
+          0.602,
+          0.5
+        ],
+        "3:4": [
+          0.552,
+          0.5
+        ],
+        "4:5": [
+          0.555,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.5
+        ],
+        "4:3": [
+          0.622,
+          0.5
+        ],
+        "1:1": [
+          0.569,
+          0.5
+        ]
+      }
+    },
+    {
+      "target_key": "Chalciporus piperatus",
+      "score": 12,
+      "author": "This image was created by user  {{{2}}}  at  Mushroom Observer , a source for mycological images. You can contact this user  here .",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:2006-09-10_Chalciporus_piperatus_26645.jpg",
+      "size": 245892,
+      "queue_index": 26,
+      "editorial_precheck": "Taxon confermato dalla descrizione/categorie del singolo file; file candidati dubbi, cf/aff, microscopici, modelli e derivati scartati. Revisione dei byte ancora necessaria.",
+      "id": "pe2-sosia-chalciporus-piperatus-d4b4126",
+      "target_group": "lookalikes",
+      "latin": "Chalciporus piperatus",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/b/bd/2006-09-10_Chalciporus_piperatus_26645.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "f0067d9eaf2274b3653d1a944f1e3f38354cd44f",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-chalciporus-piperatus-d4b4126.jpg",
+      "source_title": "File:2006-09-10 Chalciporus piperatus 26645.jpg",
+      "source_description": "For more information about this, see the  observation page  at Mushroom Observer.",
+      "source_categories": [
+        "Category:Boletaceae in Sweden",
+        "Category:CC-BY-SA-3.0",
+        "Category:Chalciporus piperatus",
+        "Category:Files from external sources with reviewed licenses",
+        "Category:Images from Mushroom Observer"
+      ],
+      "attribution": "This image was created by user  {{{2}}}  at  Mushroom Observer , a source for mycological images. You can contact this user  here . · CC BY-SA 3.0 · Wikimedia Commons",
+      "alt": "Chalciporus piperatus, cappelli, pori e gambi esposti.",
+      "caption": "Cappelli, pori e gambi esposti.",
+      "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.54
+        ],
+        "riquadro": [
+          0.15000000000000002,
+          0.24000000000000005,
+          0.85,
+          0.8400000000000001
+        ],
+        "nota": "Originale osservato su unreviewed-batch04; elementi esposti descritti senza dedurre fasi biologiche o caratteri nascosti."
+      },
+      "sha256_original": "52d6ce82a59aa085b581da2bf8fe4a137446415cb81a5a439efba9f8fdb7557a",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-chalciporus-piperatus-d4b4126.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-chalciporus-piperatus-d4b4126-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-chalciporus-piperatus-d4b4126-t.webp"
+      },
+      "width": 1810,
+      "height": 856,
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          1.0
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      }
+    },
+    {
+      "target_key": "Suillus bovinus",
+      "score": 12,
+      "author": "Achim Lammerts (Syntaxys)",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:2025-10-15_D500-1045_Achim-Lammerts_Suillus-bovinus.jpg",
+      "size": 11970004,
+      "queue_index": 27,
+      "editorial_precheck": "Taxon confermato dalla descrizione/categorie del singolo file; file candidati dubbi, cf/aff, microscopici, modelli e derivati scartati. Revisione dei byte ancora necessaria.",
+      "id": "pe2-sosia-suillus-bovinus-1a2c6d9",
+      "target_group": "lookalikes",
+      "latin": "Suillus bovinus",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/8/84/2025-10-15_D500-1045_Achim-Lammerts_Suillus-bovinus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "04c8a469c665abc0e7d4e364c49d52cf9fc02d3a",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-suillus-bovinus-1a2c6d9.jpg",
+      "source_title": "File:2025-10-15 D500-1045 Achim-Lammerts Suillus-bovinus.jpg",
+      "source_description": ".mw-parser-output .messagebox{margin:4px 0;width:auto;border-collapse:collapse;border:2px solid var(--border-color-progressive,#6485d1);background-color:var(--background-color-neutral-subtle,#fbfcff);color:var(--color-base,#202122);box-sizing:border-box;border-inline-start-width:8px}.mw-parser-output .messagebox.mbox-small{font-size:88%;line-height:1.25em}.mw-parser-output .mbox-warning,.mw-parser-output .mbox-speedy{border:2px solid var(--border-color-error,#b22222);background:var(--background-color-error-subtle,#ffdbdb);border-inline-start-width:8px}.mw-parser-output .mbox-serious,.mw-parser-output .mbox-delete,.mw-parser-output .mbox-stop{border:2px solid var(--border-color-error,#b22222);border-inline-start-width:8px}.mw-parser-output .mbox-issue,.mw-parser-output .mbox-content{border:2px solid #f28500;background:var(--background-color-warning-subtle,#ffe);border-inline-start-width:8px}.mw-parser-output .mbox-query,.mw-parser-output .mbox-style{border:2px solid #f4c430;background:var(--background-color-warning-subtle,#ffe);border-inline-start-width:8px}.mw-parser-output .mbox-shit{border:2px solid #960;border-inline-start-width:8px}.mw-parser-output .mbox-license{border:2px solid #88a;border-inline-start-width:initial}.mw-parser-output .mbox-legal{border:2px solid var(--border-color-notice,#666);background:var(--background-color-base,#fff);border-inline-start-width:8px}.mw-parser-output .mbox-honor{border:2px solid #ca3;background:var(--background-color-warning-subtle,#fcf4db);border-inline-start-width:8px}.mw-parser-output .mbox-growth{border:2px solid #8d4;background:var(--background-color-success-subtle,#d5fdf4);border-inline-start-width:8px}.mw-parser-output .mbox-move{border:2px solid #93c;border-inline-start-width:8px}.mw-parser-output .mbox-protection,.mw-parser-output .mbox-message{border:2px solid var(--border-color-base,#aaa);border-inline-start-width:8px}.mw-parser-output .messagebox .mbox-text{border:none;padding:0.25em 0.9em;width:100%}.mw-parser-output .messagebox .mbox-image{border:none;padding-top:2px;padding-bottom:2px;padding-inline-start:0.9em;padding-inline-end:0;text-align:center}.mw-parser-output .messagebox .mbox-imageright{border:none;padding-top:2px;padding-bottom:2px;padding-inline-start:0;padding-inline-end:0.9em;text-align:center}.mw-parser-output .messagebox .mbox-empty-cell{border:none;padding:0;width:1px}.mw-parser-output .messagebox .mbox-invalid-type{text-align:center}@media(min-width:720px){.mw-parser-output .messagebox{margin:4px 10%}.mw-parser-output .messagebox.mbox-small{clear:right;float:right;margin:4px 0 4px 1em;width:238px}}body.skin--responsive .mw-parser-output table.messagebox img{max-width:none!important}             Wikidata  has  entry Suillus bovinus  (Q1165762)   with data related to this item.    \n    Place:    Jockgrim district ,  District Germersheim ,   Rhineland-Palatinate  ,   Germany   \n  Location:   near  Rheinzabern  \n  Image Description:   A small cluster of Jersey cow mushrooms  (Suillus bovinus) ; location: mixed forest near Jockgrim; diameter up to 8 cm; height up to 12 cm. \n \n       This  image was created with   Helicon Focus  .",
+      "source_categories": [],
+      "attribution": "© Achim Lammerts (Syntaxys) / Wikimedia Commons · CC BY-SA 4.0",
+      "alt": "Suillus bovinus, esemplari nel muschio.",
+      "caption": "Esemplari nel muschio.",
+      "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.5
+        ],
+        "riquadro": [
+          0.15000000000000002,
+          0.2,
+          0.85,
+          0.8
+        ],
+        "nota": "Originale osservato su unreviewed-batch04; elementi esposti descritti senza dedurre fasi biologiche o caratteri nascosti."
+      },
+      "attribution_required_text": "© Achim Lammerts (Syntaxys) / Wikimedia Commons",
+      "sha256_original": "8da45b81b12e7ea50cb703b7e4c8732583d8759f6b7adaa37bb1b6afa668df8a",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-suillus-bovinus-1a2c6d9.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-suillus-bovinus-1a2c6d9-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-suillus-bovinus-1a2c6d9-t.webp"
+      },
+      "width": 5566,
+      "height": 3710,
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.5
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      }
+    },
+    {
+      "target_key": "Tricholoma virgatum",
+      "score": 12,
+      "author": "Jerzy Opioła",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Tricholoma_virgatum_a1_(3).JPG",
+      "size": 4613274,
+      "queue_index": 28,
+      "editorial_precheck": "Taxon confermato dalla descrizione/categorie del singolo file; file candidati dubbi, cf/aff, microscopici, modelli e derivati scartati. Revisione dei byte ancora necessaria.",
+      "id": "pe2-sosia-tricholoma-virgatum-c544cb1",
+      "target_group": "lookalikes",
+      "latin": "Tricholoma virgatum",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/6/64/Tricholoma_virgatum_a1_%283%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "5f20012331e16b87a592582e8a299e07284f590f",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-tricholoma-virgatum-c544cb1.jpg",
+      "source_title": "File:Tricholoma virgatum a1 (3).JPG",
+      "source_description": "Tricholoma virgatum  (location: Poland, Rajbrot)",
+      "source_categories": [
+        "Category:CC-BY-SA-4.0",
+        "Category:Fungi in January",
+        "Category:Fungi of Rajbrot",
+        "Category:Self-published work",
+        "Category:Tricholoma in Lesser Poland Voivodeship",
+        "Category:Tricholoma virgatum"
+      ],
+      "attribution": "Jerzy Opioła · CC BY-SA 4.0 · Wikimedia Commons",
+      "alt": "Tricholoma virgatum, cappelli e gambi nel sottobosco.",
+      "caption": "Cappelli e gambi nel sottobosco.",
+      "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.52,
+          0.49
+        ],
+        "riquadro": [
+          0.17000000000000004,
+          0.19,
+          0.87,
+          0.79
+        ],
+        "nota": "Originale osservato su unreviewed-batch04; elementi esposti descritti senza dedurre fasi biologiche o caratteri nascosti."
+      },
+      "sha256_original": "17d51cc52f4cdc87a60dbe618803b928902218ac4503591aa3e24ea588632c47",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-tricholoma-virgatum-c544cb1.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-tricholoma-virgatum-c544cb1-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-tricholoma-virgatum-c544cb1-t.webp"
+      },
+      "width": 3241,
+      "height": 2431,
+      "crop_points": {
+        "5:4": [
+          0.82,
+          0.5
+        ],
+        "3:4": [
+          0.546,
+          0.5
+        ],
+        "4:5": [
+          0.55,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.476
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.58,
+          0.5
+        ]
+      }
+    },
+    {
+      "target_key": "Tricholoma sciodes",
+      "score": 12,
+      "author": "Adrien BENOIT à la GUILLAUME",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Tricholoma_sciodes_(Haute-Loire,_France)_01.jpg",
+      "size": 1391095,
+      "queue_index": 29,
+      "editorial_precheck": "Taxon confermato dalla descrizione/categorie del singolo file; file candidati dubbi, cf/aff, microscopici, modelli e derivati scartati. Revisione dei byte ancora necessaria.",
+      "id": "pe2-sosia-tricholoma-sciodes-4cca704",
+      "target_group": "lookalikes",
+      "latin": "Tricholoma sciodes",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/3/37/Tricholoma_sciodes_%28Haute-Loire%2C_France%29_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "474b56952ddd4bdb5b8d6a67f4b3749ce253f577",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-tricholoma-sciodes-4cca704.jpg",
+      "source_title": "File:Tricholoma sciodes (Haute-Loire, France) 01.jpg",
+      "source_description": "Tricholoma sciodes  (Persoon) C. Martín, 1919 photographed under a big Beech ( Fagus sylvatica ) in a silver Fir ( Abies alba ) and Beech forest in Haute-Loire (France)",
+      "source_categories": [
+        "Category:CC-BY-SA-4.0",
+        "Category:Images by User:Abalg",
+        "Category:Self-published work",
+        "Category:Tricholoma sciodes"
+      ],
+      "attribution": "Adrien BENOIT à la GUILLAUME · CC BY-SA 4.0 · Wikimedia Commons",
+      "alt": "Tricholoma sciodes, cappelli, lamelle e gambi esposti.",
+      "caption": "Cappelli, lamelle e gambi esposti.",
+      "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.5
+        ],
+        "riquadro": [
+          0.15000000000000002,
+          0.2,
+          0.85,
+          0.8
+        ],
+        "nota": "Originale osservato su unreviewed-batch04; elementi esposti descritti senza dedurre fasi biologiche o caratteri nascosti."
+      },
+      "sha256_original": "e1a1f8d4573a5b8a615cf54c7c3ddd0cd47e5834b2d9493caa2046acef0dc3de",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-tricholoma-sciodes-4cca704.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-tricholoma-sciodes-4cca704-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-tricholoma-sciodes-4cca704-t.webp"
+      },
+      "width": 3200,
+      "height": 2400,
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.5
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      }
+    },
+    {
+      "target_key": "Entoloma sinuatum",
+      "score": 12,
+      "author": "This image was created by user  zaca  at  Mushroom Observer , a source for mycological images. You can contact this user  here .",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:2013-11-02_Entoloma_sinuatum_(Bull.)_P._Kumm_393808.jpg",
+      "size": 1757784,
+      "queue_index": 30,
+      "editorial_precheck": "Taxon confermato dalla descrizione/categorie del singolo file; file candidati dubbi, cf/aff, microscopici, modelli e derivati scartati. Revisione dei byte ancora necessaria.",
+      "id": "pe2-sosia-entoloma-sinuatum-24fcc44",
+      "target_group": "lookalikes",
+      "latin": "Entoloma sinuatum",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/6/6c/2013-11-02_Entoloma_sinuatum_%28Bull.%29_P._Kumm_393808.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "f021e9be433e6691236fdd013e0059924c7ee4fb",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-entoloma-sinuatum-24fcc44.jpg",
+      "source_title": "File:2013-11-02 Entoloma sinuatum (Bull.) P. Kumm 393808.jpg",
+      "source_description": "For more information about this, see the  observation page  at Mushroom Observer.",
+      "source_categories": [
+        "Category:CC-BY-SA-3.0",
+        "Category:Entoloma in Portugal",
+        "Category:Entoloma sinuatum",
+        "Category:Files from external sources with reviewed licenses",
+        "Category:Fungi in November",
+        "Category:Images from Mushroom Observer"
+      ],
+      "attribution": "This image was created by user  zaca  at  Mushroom Observer , a source for mycological images. You can contact this user  here . · CC BY-SA 3.0 · Wikimedia Commons",
+      "alt": "Entoloma sinuatum, particolare delle lamelle.",
+      "caption": "Particolare delle lamelle.",
+      "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.42
+        ],
+        "riquadro": [
+          0.15000000000000002,
+          0.12,
+          0.85,
+          0.72
+        ],
+        "nota": "Originale osservato su unreviewed-batch04; elementi esposti descritti senza dedurre fasi biologiche o caratteri nascosti."
+      },
+      "sha256_original": "306773cb1cc58fe047e01817805048991ab9351dbf73dd871d64e9d6309b8cd4",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-entoloma-sinuatum-24fcc44.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-entoloma-sinuatum-24fcc44-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-entoloma-sinuatum-24fcc44-t.webp"
+      },
+      "width": 3303,
+      "height": 2478,
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.308
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      }
+    },
+    {
+      "target_key": "Cortinarius traganus",
+      "score": 12,
+      "author": "This image was created by user  Irene Andersson (irenea)  at  Mushroom Observer , a source for mycological images. You can contact this user  here .",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:2007-09-04_Cortinarius_traganus_(Fr.)_Fr_39616.jpg",
+      "size": 309902,
+      "queue_index": 31,
+      "editorial_precheck": "Taxon confermato dalla descrizione/categorie del singolo file; file candidati dubbi, cf/aff, microscopici, modelli e derivati scartati. Revisione dei byte ancora necessaria.",
+      "id": "pe2-sosia-cortinarius-traganus-97d4004",
+      "target_group": "lookalikes",
+      "latin": "Cortinarius traganus",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/f/f0/2007-09-04_Cortinarius_traganus_%28Fr.%29_Fr_39616.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "b05c3bb6b6af9c192d4a3ce625852994ba9dd54e",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-cortinarius-traganus-97d4004.jpg",
+      "source_title": "File:2007-09-04 Cortinarius traganus (Fr.) Fr 39616.jpg",
+      "source_description": "For more information about this, see the  observation page  at Mushroom Observer.",
+      "source_categories": [
+        "Category:CC-BY-SA-3.0",
+        "Category:Cortinariaceae in Sweden",
+        "Category:Cortinarius traganus",
+        "Category:Cross sections of fungi",
+        "Category:Files from external sources with reviewed licenses",
+        "Category:Images from Mushroom Observer"
+      ],
+      "attribution": "This image was created by user  Irene Andersson (irenea)  at  Mushroom Observer , a source for mycological images. You can contact this user  here . · CC BY-SA 3.0 · Wikimedia Commons",
+      "alt": "Cortinarius traganus, cappelli, lamelle e gambi esposti.",
+      "caption": "Cappelli, lamelle e gambi esposti.",
+      "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.52,
+          0.48
+        ],
+        "riquadro": [
+          0.17000000000000004,
+          0.18,
+          0.87,
+          0.78
+        ],
+        "nota": "Originale osservato su unreviewed-batch04; elementi esposti descritti senza dedurre fasi biologiche o caratteri nascosti."
+      },
+      "sha256_original": "2cb9fa645c1b8673e0b7e1c0d23515cd5c41b8ad77bff41d34237c66274ef308",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-cortinarius-traganus-97d4004.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-cortinarius-traganus-97d4004-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-cortinarius-traganus-97d4004-t.webp"
+      },
+      "width": 1289,
+      "height": 932,
+      "crop_points": {
+        "5:4": [
+          0.708,
+          0.5
+        ],
+        "3:4": [
+          0.544,
+          0.5
+        ],
+        "4:5": [
+          0.547,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.449
+        ],
+        "4:3": [
+          1.0,
+          0.5
+        ],
+        "1:1": [
+          0.572,
+          0.5
+        ]
+      }
+    },
+    {
+      "target_key": "Cortinarius violaceus",
+      "score": 12,
+      "author": "Andreas Kunze",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:2008-08-30_Cortinarius_violaceus_1a.jpg",
+      "size": 1801572,
+      "queue_index": 32,
+      "editorial_precheck": "Taxon confermato dalla descrizione/categorie del singolo file; file candidati dubbi, cf/aff, microscopici, modelli e derivati scartati. Revisione dei byte ancora necessaria.",
+      "id": "pe2-sosia-cortinarius-violaceus-9289cd2",
+      "target_group": "lookalikes",
+      "latin": "Cortinarius violaceus",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/9/91/2008-08-30_Cortinarius_violaceus_1a.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "75d52f831dd8618806d6357bbf855ee47c94a060",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-cortinarius-violaceus-9289cd2.jpg",
+      "source_title": "File:2008-08-30 Cortinarius violaceus 1a.jpg",
+      "source_description": "Violet Webcap ( Cortinarius violaceus )",
+      "source_categories": [
+        "Category:Agaricales in Bavaria in August",
+        "Category:Bavaria photographs taken on 2008-08-30",
+        "Category:CC-BY-SA-3.0",
+        "Category:Cortinarius in Upper Bavaria",
+        "Category:Cortinarius violaceus",
+        "Category:Cortinarius violaceus in Germany",
+        "Category:Photographs by Andreas Kunze",
+        "Category:Self-published work"
+      ],
+      "attribution": "Andreas Kunze · CC BY-SA 3.0 · Wikimedia Commons",
+      "alt": "Cortinarius violaceus, cappello e lamelle esposti.",
+      "caption": "Cappello e lamelle esposti.",
+      "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.51,
+          0.28
+        ],
+        "riquadro": [
+          0.3,
+          0.08,
+          0.8,
+          0.46
+        ],
+        "nota": "Originale osservato su unreviewed-batch04; elementi esposti descritti senza dedurre fasi biologiche o caratteri nascosti."
+      },
+      "sha256_original": "8ff6048ad155ed4e65082b0080c087465f9535d58126563be3fcb26c8c281725",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-cortinarius-violaceus-9289cd2.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-cortinarius-violaceus-9289cd2-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-cortinarius-violaceus-9289cd2-t.webp"
+      },
+      "width": 1870,
+      "height": 2300,
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.0
+        ],
+        "3:4": [
+          0.629,
+          0.5
+        ],
+        "4:5": [
+          1.0,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.159
+        ],
+        "4:3": [
+          0.5,
+          0.0
+        ],
+        "1:1": [
+          0.5,
+          0.0
+        ]
+      }
+    },
+    {
+      "target_key": "Mycena pura",
+      "score": 12,
+      "author": "Syrio",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Mycena_pura_Trentino_02.jpg",
+      "size": 4338174,
+      "queue_index": 33,
+      "editorial_precheck": "Taxon confermato dalla descrizione/categorie del singolo file; file candidati dubbi, cf/aff, microscopici, modelli e derivati scartati. Revisione dei byte ancora necessaria.",
+      "id": "pe2-sosia-mycena-pura-8f6e35f",
+      "target_group": "lookalikes",
+      "latin": "Mycena pura",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/4/46/Mycena_pura_Trentino_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "c855e1160ec21ef29bf09f0ae0d33fe9429d1d8a",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-mycena-pura-8f6e35f.jpg",
+      "source_title": "File:Mycena pura Trentino 02.jpg",
+      "source_description": "Mycena pura  photographed on the path leading to the lake of Tovel (Trentino, Italy)",
+      "source_categories": [],
+      "attribution": "Syrio · CC BY-SA 4.0 · Wikimedia Commons",
+      "alt": "Mycena pura, esemplare nella lettiera.",
+      "caption": "Esemplare nella lettiera.",
+      "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.49,
+          0.45
+        ],
+        "riquadro": [
+          0.14,
+          0.15000000000000002,
+          0.84,
+          0.75
+        ],
+        "nota": "Originale osservato su unreviewed-batch04; elementi esposti descritti senza dedurre fasi biologiche o caratteri nascosti."
+      },
+      "sha256_original": "29c17e9c5f98696dc19d8a76daebedabb1b4895609321033cf2650e4c5d753c7",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-mycena-pura-8f6e35f.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-mycena-pura-8f6e35f-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-mycena-pura-8f6e35f-t.webp"
+      },
+      "width": 3514,
+      "height": 2636,
+      "crop_points": {
+        "5:4": [
+          0.34,
+          0.5
+        ],
+        "3:4": [
+          0.477,
+          0.5
+        ],
+        "4:5": [
+          0.475,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.38
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.46,
+          0.5
+        ]
+      }
+    },
+    {
+      "target_key": "Laccaria amethystina",
+      "score": 12,
+      "author": "Norbert Nagel",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Amethyst_Deceiver_-_Laccaria_amethystea_-_Violetter_Lacktrichterling_-_Laccaria_amethystina_-_01.jpg",
+      "size": 6429318,
+      "queue_index": 34,
+      "editorial_precheck": "Taxon confermato dalla descrizione/categorie del singolo file; file candidati dubbi, cf/aff, microscopici, modelli e derivati scartati. Revisione dei byte ancora necessaria.",
+      "id": "pe2-sosia-laccaria-amethystina-f9a3281",
+      "target_group": "lookalikes",
+      "latin": "Laccaria amethystina",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/8/82/Amethyst_Deceiver_-_Laccaria_amethystea_-_Violetter_Lacktrichterling_-_Laccaria_amethystina_-_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "2c1ce8fbd6022d1c995df16a986a386da1e9c370",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-laccaria-amethystina-f9a3281.jpg",
+      "source_title": "File:Amethyst Deceiver - Laccaria amethystea - Violetter Lacktrichterling - Laccaria amethystina - 01.jpg",
+      "source_description": "Amethyst Deceiver   Laccaria amethystina   or   Laccaria amethystea  , Family:  Hydnangiaceae , found in the nature reserve Orbquelle near the town Bad Orb, Germany.",
+      "source_categories": [
+        "Category:CC-BY-SA-3.0",
+        "Category:Files with coordinates missing SDC location of creation (50° N, 9° E)",
+        "Category:Fungi in September",
+        "Category:Fungi of Hesse",
+        "Category:Germany photographs taken on 2012-09-29",
+        "Category:Laccaria amethystina",
+        "Category:Orb (Kinzig)",
+        "Category:Quality images",
+        "Category:Quality images by NorbertNagel",
+        "Category:Quality images missing SDC depicts",
+        "Category:Quality images of fungi in Germany",
+        "Category:Self-published work",
+        "Category:Taken with Nikon D7000"
+      ],
+      "attribution": "Norbert Nagel · CC BY-SA 3.0 · Wikimedia Commons",
+      "alt": "Laccaria amethystina, esemplare nel sottobosco.",
+      "caption": "Esemplare nel sottobosco.",
+      "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.51,
+          0.31
+        ],
+        "riquadro": [
+          0.31,
+          0.12,
+          0.72,
+          0.45
+        ],
+        "nota": "Originale osservato su unreviewed-batch04; elementi esposti descritti senza dedurre fasi biologiche o caratteri nascosti."
+      },
+      "sha256_original": "9f3636d25e88746d92d901972c2bc4b9cfb096db2eca6e3b36e7fbcf55cb792b",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-laccaria-amethystina-f9a3281.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-laccaria-amethystina-f9a3281-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-laccaria-amethystina-f9a3281-t.webp"
+      },
+      "width": 4000,
+      "height": 3117,
+      "crop_points": {
+        "5:4": [
+          0.886,
+          0.5
+        ],
+        "3:4": [
+          0.524,
+          0.5
+        ],
+        "4:5": [
+          0.527,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.067
+        ],
+        "4:3": [
+          0.5,
+          0.0
+        ],
+        "1:1": [
+          0.545,
+          0.5
+        ]
+      }
+    },
+    {
+      "id": "pe2-sosia-mycena-pura-inat-10951579",
+      "target_group": "lookalikes",
+      "target_key": "Mycena pura",
+      "latin": "Mycena pura",
+      "page": "https://www.inaturalist.org/observations/8256744",
+      "source": "iNaturalist (research grade)",
+      "observation_id": 8256744,
+      "photo_id": 10951579,
+      "taxon_id": 63473,
+      "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/10951579/original.jpeg",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-mycena-pura-inat-10951579.jpeg",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "author": "Kostas Zontanos",
+      "attribution": "(c) Kostas Zontanos, some rights reserved (CC BY)",
+      "source_description": null,
+      "place_guess": "Δυτική Μακεδονία, Ελλάδα",
+      "location": "40.6356933528,21.3759613037",
+      "quality_grade": "research",
+      "identifications_count": 1,
+      "observed_on": "2016-09-04",
+      "editorial_precheck": "Nome scientifico esatto nella risposta API; osservazione research grade nell’area europea. Stato comunitario, non determinazione di un micologo ufficiale. Licenza della singola foto verificata. Non scaricata.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.52,
+          0.33
+        ],
+        "riquadro": [
+          0.3,
+          0.03,
+          0.81,
+          0.63
+        ],
+        "nota": "Originale osservato su unreviewed-batch04; elementi esposti descritti senza dedurre fasi biologiche o caratteri nascosti. Tinta fredda della fotografia conservata senza correzione; non usata come campione cromatico."
+      },
+      "source_width": 2048,
+      "source_height": 1977,
+      "photo_attribution_original": "(c) Kostas Zontanos, some rights reserved (CC BY)",
+      "source_metadata": "incoming/photo-expansion-2026-10-18/funghi-sosia/inat-metadata/Mycena-pura.json",
+      "commons_sha1": null,
+      "source_title": "iNaturalist photo 10951579",
+      "source_categories": [],
+      "alt": "Mycena pura, vista dall’alto dei cappelli.",
+      "caption": "Vista dall’alto dei cappelli.",
+      "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+      "sha256_original": "415a48ba53e47ee5fc743e641277de4c7dd61c034a372209da7cffa5623d6cae",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-mycena-pura-inat-10951579.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-mycena-pura-inat-10951579-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-mycena-pura-inat-10951579-t.webp"
+      },
+      "width": 2048,
+      "height": 1977,
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.0
+        ],
+        "3:4": [
+          0.572,
+          0.5
+        ],
+        "4:5": [
+          0.588,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.189
+        ],
+        "4:3": [
+          0.5,
+          0.0
+        ],
+        "1:1": [
+          1.0,
+          0.5
+        ]
+      }
+    },
+    {
+      "id": "pe2-sosia-tricholoma-virgatum-inat-322237302",
+      "target_group": "lookalikes",
+      "target_key": "Tricholoma virgatum",
+      "latin": "Tricholoma virgatum",
+      "page": "https://www.inaturalist.org/observations/184590711",
+      "source": "iNaturalist (research grade)",
+      "observation_id": 184590711,
+      "photo_id": 322237302,
+      "taxon_id": 118206,
+      "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/322237302/original.jpg",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-tricholoma-virgatum-inat-322237302.jpg",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "author": "wkee4ager",
+      "attribution": "(c) wkee4ager, some rights reserved (CC BY)",
+      "source_description": "",
+      "place_guess": "Nesbyen, 30, NO",
+      "location": "60.662075,9.0342971667",
+      "quality_grade": "research",
+      "identifications_count": 1,
+      "observed_on": "2023-09-23",
+      "editorial_precheck": "Nome scientifico esatto nella risposta API; osservazione research grade nell’area europea. Stato comunitario, non determinazione di un micologo ufficiale. Licenza della singola foto verificata. Non scaricata.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.42
+        ],
+        "riquadro": [
+          0.15000000000000002,
+          0.12,
+          0.85,
+          0.72
+        ],
+        "nota": "Originale osservato su unreviewed-batch04; elementi esposti descritti senza dedurre fasi biologiche o caratteri nascosti."
+      },
+      "source_width": 2048,
+      "source_height": 1536,
+      "photo_attribution_original": "(c) wkee4ager, some rights reserved (CC BY)",
+      "source_metadata": "incoming/photo-expansion-2026-10-18/funghi-sosia/inat-metadata/Tricholoma-virgatum.json",
+      "commons_sha1": null,
+      "source_title": "iNaturalist photo 322237302",
+      "source_categories": [],
+      "alt": "Tricholoma virgatum, esemplare nel sottobosco.",
+      "caption": "Esemplare nel sottobosco.",
+      "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+      "sha256_original": "a16b954cb1fa35c8db86e7c1308b72be958a09fe1a6d0119bbec1d0cad129331",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-tricholoma-virgatum-inat-322237302.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-tricholoma-virgatum-inat-322237302-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-tricholoma-virgatum-inat-322237302-t.webp"
+      },
+      "width": 2048,
+      "height": 1536,
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.308
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      }
+    },
+    {
+      "id": "pe2-sosia-cortinarius-orellanus-inat-139699317",
+      "target_group": "lookalikes",
+      "target_key": "Cortinarius orellanus",
+      "latin": "Cortinarius orellanus",
+      "page": "https://www.inaturalist.org/observations/84954351",
+      "source": "iNaturalist (research grade)",
+      "observation_id": 84954351,
+      "photo_id": 139699317,
+      "taxon_id": 337849,
+      "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/139699317/original.jpeg",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-cortinarius-orellanus-inat-139699317.jpeg",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "author": "Jose Castro",
+      "attribution": "(c) Jose Castro, some rights reserved (CC BY)",
+      "source_description": "",
+      "place_guess": "Lugo, ES-GA, ES",
+      "location": "43.002189817,-7.4958854474",
+      "quality_grade": "research",
+      "identifications_count": 1,
+      "observed_on": "2007-06-24",
+      "editorial_precheck": "Nome scientifico esatto nella risposta API; osservazione research grade nell’area europea. Stato comunitario, non determinazione di un micologo ufficiale. Licenza della singola foto verificata. Non scaricata.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.47
+        ],
+        "riquadro": [
+          0.15000000000000002,
+          0.16999999999999998,
+          0.85,
+          0.77
+        ],
+        "nota": "Originale osservato su unreviewed-batch04; elementi esposti descritti senza dedurre fasi biologiche o caratteri nascosti."
+      },
+      "source_width": 2048,
+      "source_height": 1536,
+      "photo_attribution_original": "(c) Jose Castro, some rights reserved (CC BY)",
+      "source_metadata": "incoming/photo-expansion-2026-10-18/funghi-sosia/inat-metadata/Cortinarius-orellanus.json",
+      "commons_sha1": null,
+      "source_title": "iNaturalist photo 139699317",
+      "source_categories": [],
+      "alt": "Cortinarius orellanus, cappelli e lamelle esposti.",
+      "caption": "Cappelli e lamelle esposti.",
+      "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+      "sha256_original": "087969a82589b3e05811d0a1227474b6a5556a5eb845898c8c19917e9a76bb7c",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-cortinarius-orellanus-inat-139699317.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-cortinarius-orellanus-inat-139699317-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-cortinarius-orellanus-inat-139699317-t.webp"
+      },
+      "width": 2048,
+      "height": 1536,
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.428
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      }
+    },
+    {
+      "id": "pe2-sosia-russula-heterophylla-inat-116426430",
+      "target_group": "lookalikes",
+      "target_key": "Russula heterophylla",
+      "latin": "Russula heterophylla",
+      "page": "https://www.inaturalist.org/observations/71502951",
+      "source": "iNaturalist (research grade)",
+      "observation_id": 71502951,
+      "photo_id": 116426430,
+      "taxon_id": 203806,
+      "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/116426430/original.jpeg",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-russula-heterophylla-inat-116426430.jpeg",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "author": "Lazar Popović",
+      "attribution": "(c) Lazar Popović, some rights reserved (CC BY)",
+      "source_description": null,
+      "place_guess": "Растиште, Србија",
+      "location": "43.9468982585,19.3618758023",
+      "quality_grade": "research",
+      "identifications_count": 2,
+      "observed_on": "2020-07-29",
+      "editorial_precheck": "Nome scientifico esatto nella risposta API; osservazione research grade nell’area europea. Stato comunitario, non determinazione di un micologo ufficiale. Licenza della singola foto verificata. Non scaricata.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.51,
+          0.43
+        ],
+        "riquadro": [
+          0.16000000000000003,
+          0.13,
+          0.86,
+          0.73
+        ],
+        "nota": "Originale osservato su unreviewed-batch04; elementi esposti descritti senza dedurre fasi biologiche o caratteri nascosti."
+      },
+      "source_width": 1500,
+      "source_height": 1000,
+      "photo_attribution_original": "(c) Lazar Popović, some rights reserved (CC BY)",
+      "source_metadata": "incoming/photo-expansion-2026-10-18/funghi-sosia/inat-metadata/Russula-heterophylla.json",
+      "commons_sha1": null,
+      "source_title": "iNaturalist photo 116426430",
+      "source_categories": [],
+      "alt": "Russula heterophylla, cappello nel sottobosco.",
+      "caption": "Cappello nel sottobosco.",
+      "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+      "sha256_original": "03335c92f1addfab487df4a4db1db3dbc3728304f5a281a4580a36a98100322b",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-russula-heterophylla-inat-116426430.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-russula-heterophylla-inat-116426430-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-russula-heterophylla-inat-116426430-t.webp"
+      },
+      "width": 1500,
+      "height": 1000,
+      "crop_points": {
+        "5:4": [
+          0.56,
+          0.5
+        ],
+        "3:4": [
+          0.52,
+          0.5
+        ],
+        "4:5": [
+          0.521,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.296
+        ],
+        "4:3": [
+          0.59,
+          0.5
+        ],
+        "1:1": [
+          0.53,
+          0.5
+        ]
+      }
+    },
+    {
+      "id": "pe2-sosia-russula-aeruginea-inat-368890252",
+      "target_group": "lookalikes",
+      "target_key": "Russula aeruginea",
+      "latin": "Russula aeruginea",
+      "page": "https://www.inaturalist.org/observations/208489810",
+      "source": "iNaturalist (research grade)",
+      "observation_id": 208489810,
+      "photo_id": 368890252,
+      "taxon_id": 122333,
+      "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/368890252/original.jpg",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-russula-aeruginea-inat-368890252.jpg",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "author": "Matej Frančeškin",
+      "attribution": "(c) Matej Frančeškin, some rights reserved (CC BY)",
+      "source_description": null,
+      "place_guess": "5000 Rožna Dolina, Slovenija",
+      "location": "45.9527211378,13.6824021561",
+      "quality_grade": "research",
+      "identifications_count": 2,
+      "observed_on": "2023-09-30",
+      "editorial_precheck": "Nome scientifico esatto nella risposta API; osservazione research grade nell’area europea. Stato comunitario, non determinazione di un micologo ufficiale. Licenza della singola foto verificata. Non scaricata.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.47
+        ],
+        "riquadro": [
+          0.15000000000000002,
+          0.16999999999999998,
+          0.85,
+          0.77
+        ],
+        "nota": "Originale osservato su unreviewed-batch04; elementi esposti descritti senza dedurre fasi biologiche o caratteri nascosti."
+      },
+      "source_width": 2048,
+      "source_height": 2048,
+      "photo_attribution_original": "(c) Matej Frančeškin, some rights reserved (CC BY)",
+      "source_metadata": "incoming/photo-expansion-2026-10-18/funghi-sosia/inat-metadata/Russula-aeruginea.json",
+      "commons_sha1": null,
+      "source_title": "iNaturalist photo 368890252",
+      "source_categories": [],
+      "alt": "Russula aeruginea, vista dall’alto del cappello.",
+      "caption": "Vista dall’alto del cappello.",
+      "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+      "sha256_original": "3c6cb23cec38024986d991aaed0a1d5fbf3fe6daa1fafb41c0842047758ecabd",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-russula-aeruginea-inat-368890252.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-russula-aeruginea-inat-368890252-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-russula-aeruginea-inat-368890252-t.webp"
+      },
+      "width": 2048,
+      "height": 2048,
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.35
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.447
+        ],
+        "4:3": [
+          0.5,
+          0.38
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      }
+    },
+    {
+      "id": "pe2-sosia-hydnellum-peckii-inat-110612066",
+      "target_group": "lookalikes",
+      "target_key": "Hydnellum peckii",
+      "latin": "Hydnellum peckii",
+      "page": "https://www.inaturalist.org/observations/68330164",
+      "source": "iNaturalist (research grade)",
+      "observation_id": 68330164,
+      "photo_id": 110612066,
+      "taxon_id": 154949,
+      "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/110612066/original.jpg",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-hydnellum-peckii-inat-110612066.jpg",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "author": "Morten Ross",
+      "attribution": "(c) Morten Ross, some rights reserved (CC BY)",
+      "source_description": null,
+      "place_guess": "Nordre Follo, Norway",
+      "location": "59.8214583333,10.7565583333",
+      "quality_grade": "research",
+      "identifications_count": 4,
+      "observed_on": "2017-09-08",
+      "editorial_precheck": "Nome scientifico esatto nella risposta API; osservazione research grade nell’area europea. Stato comunitario, non determinazione di un micologo ufficiale. Licenza della singola foto verificata. Non scaricata.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.56,
+          0.49
+        ],
+        "riquadro": [
+          0.21000000000000008,
+          0.19,
+          0.91,
+          0.79
+        ],
+        "nota": "Originale osservato su unreviewed-batch04; elementi esposti descritti senza dedurre fasi biologiche o caratteri nascosti."
+      },
+      "source_width": 1200,
+      "source_height": 1514,
+      "photo_attribution_original": "(c) Morten Ross, some rights reserved (CC BY)",
+      "source_metadata": "incoming/photo-expansion-2026-10-18/funghi-sosia/inat-metadata/Hydnellum-peckii.json",
+      "commons_sha1": null,
+      "source_title": "iNaturalist photo 110612066",
+      "source_categories": [],
+      "alt": "Hydnellum peckii, particolare ravvicinato dell’esemplare.",
+      "caption": "Particolare ravvicinato dell’esemplare.",
+      "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+      "sha256_original": "500bfdc29b8bce3f59642b92674461ae5b0594d43b25ad7512e01feb8ad12ab2",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-hydnellum-peckii-inat-110612066.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-hydnellum-peckii-inat-110612066-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-hydnellum-peckii-inat-110612066-t.webp"
+      },
+      "width": 1200,
+      "height": 1514,
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.473
+        ],
+        "3:4": [
+          1.0,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.0
+        ],
+        "16:7": [
+          0.5,
+          0.485
+        ],
+        "4:3": [
+          0.5,
+          0.475
+        ],
+        "1:1": [
+          0.5,
+          0.452
+        ]
+      }
+    },
+    {
+      "id": "pe2-sosia-tricholoma-equestre-inat-320790488",
+      "target_group": "lookalikes",
+      "target_key": "Tricholoma equestre",
+      "latin": "Tricholoma equestre",
+      "page": "https://www.inaturalist.org/observations/183837798",
+      "source": "iNaturalist (research grade)",
+      "observation_id": 183837798,
+      "photo_id": 320790488,
+      "taxon_id": 118215,
+      "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/320790488/original.jpeg",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-tricholoma-equestre-inat-320790488.jpeg",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "author": "no rights reserved",
+      "attribution": "no rights reserved",
+      "source_description": null,
+      "place_guess": "Laakso, Helsinki, Suomi",
+      "location": "60.1938895093,24.9124160036",
+      "quality_grade": "research",
+      "identifications_count": 2,
+      "observed_on": "2023-09-18",
+      "editorial_precheck": "Nome scientifico esatto nella risposta API; osservazione research grade nell’area europea. Stato comunitario, non determinazione di un micologo ufficiale. Licenza della singola foto verificata. Non scaricata.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.45
+        ],
+        "riquadro": [
+          0.15000000000000002,
+          0.15000000000000002,
+          0.85,
+          0.75
+        ],
+        "nota": "Originale osservato su unreviewed-batch04; elementi esposti descritti senza dedurre fasi biologiche o caratteri nascosti."
+      },
+      "source_width": 2048,
+      "source_height": 1152,
+      "photo_attribution_original": "no rights reserved",
+      "source_metadata": "incoming/photo-expansion-2026-10-18/funghi-sosia/inat-metadata/Tricholoma-equestre.json",
+      "commons_sha1": null,
+      "source_title": "iNaturalist photo 320790488",
+      "source_categories": [],
+      "alt": "Tricholoma equestre, cappello e gambo nel sottobosco.",
+      "caption": "Cappello e gambo nel sottobosco.",
+      "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+      "sha256_original": "c2f8a5e0e674ed7ceb720ba6c3dd29410edc02f76d211e5f233541b38f7a6f9b",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-tricholoma-equestre-inat-320790488.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-tricholoma-equestre-inat-320790488-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-tricholoma-equestre-inat-320790488-t.webp"
+      },
+      "width": 2048,
+      "height": 1152,
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.275
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      }
+    },
+    {
+      "id": "pe2-sosia-craterellus-cinereus-inat-29157267",
+      "target_group": "lookalikes",
+      "target_key": "Craterellus cinereus",
+      "latin": "Craterellus cinereus",
+      "page": "https://www.inaturalist.org/observations/19012858",
+      "source": "iNaturalist (research grade)",
+      "observation_id": 19012858,
+      "photo_id": 29157267,
+      "taxon_id": 350509,
+      "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/29157267/original.jpeg",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-craterellus-cinereus-inat-29157267.jpeg",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "author": "Davide Puddu",
+      "attribution": "(c) Davide Puddu, some rights reserved (CC BY)",
+      "source_description": null,
+      "place_guess": "Provincia dell'Ogliastra, Italia",
+      "location": "39.9404407543,9.4967916276",
+      "quality_grade": "research",
+      "identifications_count": 3,
+      "observed_on": "2015-11-18",
+      "editorial_precheck": "Nome scientifico esatto nella risposta API; osservazione research grade nell’area europea. Stato comunitario, non determinazione di un micologo ufficiale. Licenza della singola foto verificata. Non scaricata.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.54
+        ],
+        "riquadro": [
+          0.15000000000000002,
+          0.24000000000000005,
+          0.85,
+          0.8400000000000001
+        ],
+        "nota": "Originale osservato su unreviewed-batch04; elementi esposti descritti senza dedurre fasi biologiche o caratteri nascosti."
+      },
+      "source_width": 2048,
+      "source_height": 1536,
+      "photo_attribution_original": "(c) Davide Puddu, some rights reserved (CC BY)",
+      "source_metadata": "incoming/photo-expansion-2026-10-18/funghi-sosia/inat-metadata/Craterellus-cinereus.json",
+      "commons_sha1": null,
+      "source_title": "iNaturalist photo 29157267",
+      "source_categories": [],
+      "alt": "Craterellus cinereus, esemplari nel muschio.",
+      "caption": "Esemplari nel muschio.",
+      "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+      "sha256_original": "96621f54968f9ed1440c9f87a4e911343e966681b4ccfca8282bc6a5c53e5598",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-craterellus-cinereus-inat-29157267.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-craterellus-cinereus-inat-29157267-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-craterellus-cinereus-inat-29157267-t.webp"
+      },
+      "width": 2048,
+      "height": 1536,
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.596
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      }
+    },
+    {
+      "id": "pe2-sosia-tricholoma-pardinum-inat-241935355",
+      "target_group": "lookalikes",
+      "target_key": "Tricholoma pardinum",
+      "latin": "Tricholoma pardinum",
+      "page": "https://www.inaturalist.org/observations/141248461",
+      "source": "iNaturalist (research grade)",
+      "observation_id": 141248461,
+      "photo_id": 241935355,
+      "taxon_id": 335206,
+      "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/241935355/original.jpg",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-tricholoma-pardinum-inat-241935355.jpg",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "author": "MichellePrice_CJBG",
+      "attribution": "(c) MichellePrice_CJBG, some rights reserved (CC BY)",
+      "source_description": "",
+      "place_guess": "Parc Jura Vaudois, Arzier-Le Muids, VD, CH",
+      "location": "46.4540091125,6.1967697492",
+      "quality_grade": "research",
+      "identifications_count": 2,
+      "observed_on": "2022-11-05",
+      "editorial_precheck": "Nome scientifico esatto nella risposta API; osservazione research grade nell’area europea. Stato comunitario, non determinazione di un micologo ufficiale. Licenza della singola foto verificata. Non scaricata.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.46
+        ],
+        "riquadro": [
+          0.15000000000000002,
+          0.16000000000000003,
+          0.85,
+          0.76
+        ],
+        "nota": "Originale osservato su unreviewed-batch04; elementi esposti descritti senza dedurre fasi biologiche o caratteri nascosti."
+      },
+      "source_width": 2048,
+      "source_height": 1536,
+      "photo_attribution_original": "(c) MichellePrice_CJBG, some rights reserved (CC BY)",
+      "source_metadata": "incoming/photo-expansion-2026-10-18/funghi-sosia/inat-metadata/Tricholoma-pardinum.json",
+      "commons_sha1": null,
+      "source_title": "iNaturalist photo 241935355",
+      "source_categories": [],
+      "alt": "Tricholoma pardinum, cappello e lamelle esposti.",
+      "caption": "Cappello e lamelle esposti.",
+      "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+      "sha256_original": "0b594ba937ece76b4bb6456d4f53bdad0cdeb0d81a41da20db0e993ab2f6d2da",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-tricholoma-pardinum-inat-241935355.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-tricholoma-pardinum-inat-241935355-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-tricholoma-pardinum-inat-241935355-t.webp"
+      },
+      "width": 2048,
+      "height": 1536,
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.404
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      }
+    },
+    {
+      "id": "pe2-sosia-laccaria-amethystina-inat-307803163",
+      "target_group": "lookalikes",
+      "target_key": "Laccaria amethystina",
+      "latin": "Laccaria amethystina",
+      "page": "https://www.inaturalist.org/observations/177002776",
+      "source": "iNaturalist (research grade)",
+      "observation_id": 177002776,
+      "photo_id": 307803163,
+      "taxon_id": 55899,
+      "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/307803163/original.jpeg",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-laccaria-amethystina-inat-307803163.jpeg",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "author": "J Castillo",
+      "attribution": "(c) J Castillo, some rights reserved (CC BY)",
+      "source_description": null,
+      "place_guess": "Priddy, Wells BA5 3AS, UK",
+      "location": "51.2627916667,-2.6408972222",
+      "quality_grade": "research",
+      "identifications_count": 2,
+      "observed_on": "2023-08-06",
+      "editorial_precheck": "Nome scientifico esatto nella risposta API; osservazione research grade nell’area europea. Stato comunitario, non determinazione di un micologo ufficiale. Licenza della singola foto verificata. Non scaricata.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.51,
+          0.36
+        ],
+        "riquadro": [
+          0.16000000000000003,
+          0.06,
+          0.86,
+          0.6599999999999999
+        ],
+        "nota": "Originale osservato su unreviewed-batch04; elementi esposti descritti senza dedurre fasi biologiche o caratteri nascosti."
+      },
+      "source_width": 1444,
+      "source_height": 2048,
+      "photo_attribution_original": "(c) J Castillo, some rights reserved (CC BY)",
+      "source_metadata": "incoming/photo-expansion-2026-10-18/funghi-sosia/inat-metadata/Laccaria-amethystina.json",
+      "commons_sha1": null,
+      "source_title": "iNaturalist photo 307803163",
+      "source_categories": [],
+      "alt": "Laccaria amethystina, particolare delle lamelle.",
+      "caption": "Particolare delle lamelle.",
+      "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+      "sha256_original": "0bc8f1ca1c36983b7b1fbcc753e4e8a8456c87f93b624150a85bf51afe51f28f",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-laccaria-amethystina-inat-307803163.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-laccaria-amethystina-inat-307803163-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-laccaria-amethystina-inat-307803163-t.webp"
+      },
+      "width": 1444,
+      "height": 2048,
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.179
+        ],
+        "3:4": [
+          0.5,
+          0.0
+        ],
+        "4:5": [
+          0.5,
+          0.0
+        ],
+        "16:7": [
+          0.5,
+          0.298
+        ],
+        "4:3": [
+          0.5,
+          0.203
+        ],
+        "1:1": [
+          0.5,
+          0.025
+        ]
+      }
+    },
+    {
+      "id": "pe2-sosia-hypholoma-fasciculare-inat-595482754",
+      "target_group": "lookalikes",
+      "target_key": "Hypholoma fasciculare",
+      "latin": "Hypholoma fasciculare",
+      "page": "https://www.inaturalist.org/observations/328600463",
+      "source": "iNaturalist (research grade)",
+      "observation_id": 328600463,
+      "photo_id": 595482754,
+      "taxon_id": 48767,
+      "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/595482754/original.jpg",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-hypholoma-fasciculare-inat-595482754.jpg",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "author": "Daniel Stow",
+      "attribution": "(c) Daniel Stow, some rights reserved (CC BY)",
+      "source_description": "",
+      "place_guess": "London, England, GB",
+      "location": "51.4152416667,0.0921111667",
+      "quality_grade": "research",
+      "identifications_count": 1,
+      "observed_on": "2025-11-27",
+      "editorial_precheck": "Nome scientifico esatto nella risposta API; osservazione research grade nell’area europea. Stato comunitario, non determinazione di un micologo ufficiale. Licenza della singola foto verificata. Non scaricata.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.43,
+          0.4
+        ],
+        "riquadro": [
+          0.23,
+          0.25,
+          0.63,
+          0.5
+        ],
+        "nota": "Originale osservato su unreviewed-batch04; elementi esposti descritti senza dedurre fasi biologiche o caratteri nascosti. Soggetti piccoli; punto sui funghi della parte superiore, senza trasformare o riscalare separatamente il soggetto."
+      },
+      "source_width": 1536,
+      "source_height": 2048,
+      "photo_attribution_original": "(c) Daniel Stow, some rights reserved (CC BY)",
+      "source_metadata": "incoming/photo-expansion-2026-10-18/funghi-sosia/inat-metadata/Hypholoma-fasciculare.json",
+      "commons_sha1": null,
+      "source_title": "iNaturalist photo 595482754",
+      "source_categories": [],
+      "alt": "Hypholoma fasciculare, esemplari sul legno.",
+      "caption": "Esemplari sul legno.",
+      "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+      "sha256_original": "becaa74ccb92bebb66c87d2e6777ccd42d200584c34062e4a47ddc61d7541acf",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-hypholoma-fasciculare-inat-595482754.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-hypholoma-fasciculare-inat-595482754-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-hypholoma-fasciculare-inat-595482754-t.webp"
+      },
+      "width": 1536,
+      "height": 2048,
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.25
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.0
+        ],
+        "16:7": [
+          0.5,
+          0.351
+        ],
+        "4:3": [
+          0.5,
+          0.271
+        ],
+        "1:1": [
+          0.5,
+          0.1
+        ]
+      }
+    },
+    {
+      "id": "pe2-sosia-chlorophyllum-rhacodes-inat-235045234",
+      "target_group": "lookalikes",
+      "target_key": "Chlorophyllum rhacodes",
+      "latin": "Chlorophyllum rhacodes",
+      "page": "https://www.inaturalist.org/observations/137603729",
+      "source": "iNaturalist (research grade)",
+      "observation_id": 137603729,
+      "photo_id": 235045234,
+      "taxon_id": 56535,
+      "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/235045234/original.jpg",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-chlorophyllum-rhacodes-inat-235045234.jpg",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "author": "no rights reserved",
+      "attribution": "no rights reserved",
+      "source_description": null,
+      "place_guess": "Stanmore, UK",
+      "location": "51.6294777778,-0.325175",
+      "quality_grade": "research",
+      "identifications_count": 1,
+      "observed_on": "2022-10-04",
+      "editorial_precheck": "Nome scientifico esatto nella risposta API; osservazione research grade nell’area europea. Stato comunitario, non determinazione di un micologo ufficiale. Licenza della singola foto verificata. Non scaricata.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.51,
+          0.44
+        ],
+        "riquadro": [
+          0.16000000000000003,
+          0.14,
+          0.86,
+          0.74
+        ],
+        "nota": "Originale osservato su unreviewed-batch04; elementi esposti descritti senza dedurre fasi biologiche o caratteri nascosti."
+      },
+      "source_width": 2048,
+      "source_height": 1536,
+      "photo_attribution_original": "no rights reserved",
+      "source_metadata": "incoming/photo-expansion-2026-10-18/funghi-sosia/inat-metadata/Chlorophyllum-rhacodes.json",
+      "commons_sha1": null,
+      "source_title": "iNaturalist photo 235045234",
+      "source_categories": [],
+      "alt": "Chlorophyllum rhacodes, vista dall’alto dei cappelli.",
+      "caption": "Vista dall’alto dei cappelli.",
+      "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+      "sha256_original": "b926272499f630bfd14231448c27e20b85b593eb141a8d7e80a7b487f5913215",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-chlorophyllum-rhacodes-inat-235045234.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-chlorophyllum-rhacodes-inat-235045234-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-chlorophyllum-rhacodes-inat-235045234-t.webp"
+      },
+      "width": 2048,
+      "height": 1536,
+      "crop_points": {
+        "5:4": [
+          0.66,
+          0.5
+        ],
+        "3:4": [
+          0.523,
+          0.5
+        ],
+        "4:5": [
+          0.525,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.356
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.54,
+          0.5
+        ]
+      }
+    },
+    {
+      "id": "pe2-sosia-caloboletus-calopus-inat-524886055",
+      "target_group": "lookalikes",
+      "target_key": "Caloboletus calopus",
+      "latin": "Caloboletus calopus",
+      "page": "https://www.inaturalist.org/observations/291715415",
+      "source": "iNaturalist (research grade)",
+      "observation_id": 291715415,
+      "photo_id": 524886055,
+      "taxon_id": 701434,
+      "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/524886055/original.jpg",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-caloboletus-calopus-inat-524886055.jpg",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "author": "Jose Castro",
+      "attribution": "(c) Jose Castro, some rights reserved (CC BY)",
+      "source_description": null,
+      "place_guess": "Lugo, ES-GA, ES",
+      "location": "42.956558379,-7.4806239733",
+      "quality_grade": "research",
+      "identifications_count": 4,
+      "observed_on": "2025-06-22",
+      "editorial_precheck": "Nome scientifico esatto nella risposta API; osservazione research grade nell’area europea. Stato comunitario, non determinazione di un micologo ufficiale. Licenza della singola foto verificata. Non scaricata.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.52,
+          0.45
+        ],
+        "riquadro": [
+          0.17000000000000004,
+          0.15000000000000002,
+          0.87,
+          0.75
+        ],
+        "nota": "Originale osservato su unreviewed-batch04; elementi esposti descritti senza dedurre fasi biologiche o caratteri nascosti."
+      },
+      "source_width": 1538,
+      "source_height": 2048,
+      "photo_attribution_original": "(c) Jose Castro, some rights reserved (CC BY)",
+      "source_metadata": "incoming/photo-expansion-2026-10-18/funghi-sosia/inat-metadata/Caloboletus-calopus.json",
+      "commons_sha1": null,
+      "source_title": "iNaturalist photo 524886055",
+      "source_categories": [],
+      "alt": "Caloboletus calopus, cappello e gambo esposti.",
+      "caption": "Cappello e gambo esposti.",
+      "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+      "sha256_original": "77e29e1845765aa0fce0b4658aa8dcaa0732996e126c1e01f527040ddadcad08",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-caloboletus-calopus-inat-524886055.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-caloboletus-calopus-inat-524886055-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-caloboletus-calopus-inat-524886055-t.webp"
+      },
+      "width": 1538,
+      "height": 2048,
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.375
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.0
+        ],
+        "16:7": [
+          0.5,
+          0.426
+        ],
+        "4:3": [
+          0.5,
+          0.386
+        ],
+        "1:1": [
+          0.5,
+          0.299
+        ]
+      }
+    },
+    {
+      "id": "pe2-sosia-lepiota-subincarnata-inat-437569793",
+      "target_group": "lookalikes",
+      "target_key": "Lepiota subincarnata",
+      "latin": "Lepiota subincarnata",
+      "page": "https://www.inaturalist.org/observations/245232698",
+      "source": "iNaturalist (research grade)",
+      "observation_id": 245232698,
+      "photo_id": 437569793,
+      "taxon_id": 382931,
+      "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/437569793/original.jpg",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-lepiota-subincarnata-inat-437569793.jpg",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "author": "Michel Langeveld",
+      "attribution": "(c) Michel Langeveld, some rights reserved (CC BY)",
+      "source_description": null,
+      "place_guess": "Noordwijkerhout, Nederland",
+      "location": "52.2444361111,4.47425",
+      "quality_grade": "research",
+      "identifications_count": 1,
+      "observed_on": "2024-10-02",
+      "editorial_precheck": "Nome scientifico esatto nella risposta API; osservazione research grade nell’area europea. Stato comunitario, non determinazione di un micologo ufficiale. Licenza della singola foto verificata. Non scaricata.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.49
+        ],
+        "riquadro": [
+          0.15000000000000002,
+          0.19,
+          0.85,
+          0.79
+        ],
+        "nota": "Originale osservato su unreviewed-batch04; elementi esposti descritti senza dedurre fasi biologiche o caratteri nascosti."
+      },
+      "source_width": 2048,
+      "source_height": 1152,
+      "photo_attribution_original": "(c) Michel Langeveld, some rights reserved (CC BY)",
+      "source_metadata": "incoming/photo-expansion-2026-10-18/funghi-sosia/inat-metadata/Lepiota-subincarnata.json",
+      "commons_sha1": null,
+      "source_title": "iNaturalist photo 437569793",
+      "source_categories": [],
+      "alt": "Lepiota subincarnata, particolare delle lamelle.",
+      "caption": "Particolare delle lamelle.",
+      "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+      "sha256_original": "92e8d8ce8b90c1b13711e1040aa4f71c061730bd078be83f363f7a65c36180a9",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-lepiota-subincarnata-inat-437569793.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-lepiota-subincarnata-inat-437569793-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-lepiota-subincarnata-inat-437569793-t.webp"
+      },
+      "width": 2048,
+      "height": 1152,
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.455
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      }
+    },
+    {
+      "id": "pe2-sosia-hygrophoropsis-aurantiaca-inat-307121285",
+      "target_group": "lookalikes",
+      "target_key": "Hygrophoropsis aurantiaca",
+      "latin": "Hygrophoropsis aurantiaca",
+      "page": "https://www.inaturalist.org/observations/176640067",
+      "source": "iNaturalist (research grade)",
+      "observation_id": 176640067,
+      "photo_id": 307121285,
+      "taxon_id": 63538,
+      "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/307121285/original.jpg",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-hygrophoropsis-aurantiaca-inat-307121285.jpg",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "author": "Teemu Kurppa",
+      "attribution": "(c) Teemu Kurppa, some rights reserved (CC BY)",
+      "source_description": "",
+      "place_guess": "KORKEE, Helsinki, 18, FI",
+      "location": "60.1817133333,24.9862533333",
+      "quality_grade": "research",
+      "identifications_count": 2,
+      "observed_on": "2023-08-04",
+      "editorial_precheck": "Nome scientifico esatto nella risposta API; osservazione research grade nell’area europea. Stato comunitario, non determinazione di un micologo ufficiale. Licenza della singola foto verificata. Non scaricata.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.45
+        ],
+        "riquadro": [
+          0.15000000000000002,
+          0.15000000000000002,
+          0.85,
+          0.75
+        ],
+        "nota": "Originale osservato su unreviewed-batch04; elementi esposti descritti senza dedurre fasi biologiche o caratteri nascosti."
+      },
+      "source_width": 1536,
+      "source_height": 2048,
+      "photo_attribution_original": "(c) Teemu Kurppa, some rights reserved (CC BY)",
+      "source_metadata": "incoming/photo-expansion-2026-10-18/funghi-sosia/inat-metadata/Hygrophoropsis-aurantiaca.json",
+      "commons_sha1": null,
+      "source_title": "iNaturalist photo 307121285",
+      "source_categories": [],
+      "alt": "Hygrophoropsis aurantiaca, vista dall’alto dei cappelli.",
+      "caption": "Vista dall’alto dei cappelli.",
+      "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+      "sha256_original": "c1081926d46a563acaa0f1542440b2ece59acf89902ecd9c7d340add013f98e8",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-hygrophoropsis-aurantiaca-inat-307121285.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-hygrophoropsis-aurantiaca-inat-307121285-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-hygrophoropsis-aurantiaca-inat-307121285-t.webp"
+      },
+      "width": 1536,
+      "height": 2048,
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.375
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.0
+        ],
+        "16:7": [
+          0.5,
+          0.426
+        ],
+        "4:3": [
+          0.5,
+          0.386
+        ],
+        "1:1": [
+          0.5,
+          0.3
+        ]
+      }
+    },
+    {
+      "id": "pe2-sosia-agaricus-xanthodermus-inat-533951128",
+      "target_group": "lookalikes",
+      "target_key": "Agaricus xanthodermus",
+      "latin": "Agaricus xanthodermus",
+      "page": "https://www.inaturalist.org/observations/296534076",
+      "source": "iNaturalist (research grade)",
+      "observation_id": 296534076,
+      "photo_id": 533951128,
+      "taxon_id": 118394,
+      "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/533951128/original.jpg",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-agaricus-xanthodermus-inat-533951128.jpg",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "author": "Johan Adler",
+      "attribution": "(c) Johan Adler, some rights reserved (CC BY)",
+      "source_description": null,
+      "place_guess": "Folkungabron, 611 34 Nyköping, Sverige",
+      "location": "58.7515,17.0126583333",
+      "quality_grade": "research",
+      "identifications_count": 1,
+      "observed_on": "2025-07-09",
+      "editorial_precheck": "Nome scientifico esatto nella risposta API; osservazione research grade nell’area europea. Stato comunitario, non determinazione di un micologo ufficiale. Licenza della singola foto verificata. Non scaricata.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.51,
+          0.46
+        ],
+        "riquadro": [
+          0.16000000000000003,
+          0.16000000000000003,
+          0.86,
+          0.76
+        ],
+        "nota": "Originale osservato su unreviewed-batch04; elementi esposti descritti senza dedurre fasi biologiche o caratteri nascosti."
+      },
+      "source_width": 2048,
+      "source_height": 1536,
+      "photo_attribution_original": "(c) Johan Adler, some rights reserved (CC BY)",
+      "source_metadata": "incoming/photo-expansion-2026-10-18/funghi-sosia/inat-metadata/Agaricus-xanthodermus.json",
+      "commons_sha1": null,
+      "source_title": "iNaturalist photo 533951128",
+      "source_categories": [],
+      "alt": "Agaricus xanthodermus, lamelle, anello e gambo esposti.",
+      "caption": "Lamelle, anello e gambo esposti.",
+      "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+      "sha256_original": "33bea7ed458b9e51b2bca39ea0246741780add6b42c53b4b7249b149b419e1df",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-agaricus-xanthodermus-inat-533951128.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-agaricus-xanthodermus-inat-533951128-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-agaricus-xanthodermus-inat-533951128-t.webp"
+      },
+      "width": 2048,
+      "height": 1536,
+      "crop_points": {
+        "5:4": [
+          0.66,
+          0.5
+        ],
+        "3:4": [
+          0.523,
+          0.5
+        ],
+        "4:5": [
+          0.525,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.404
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.54,
+          0.5
+        ]
+      }
+    },
+    {
+      "id": "pe2-sosia-imleria-badia-inat-169437935",
+      "target_group": "lookalikes",
+      "target_key": "Imleria badia",
+      "latin": "Imleria badia",
+      "page": "https://www.inaturalist.org/observations/101452089",
+      "source": "iNaturalist (research grade)",
+      "observation_id": 101452089,
+      "photo_id": 169437935,
+      "taxon_id": 510854,
+      "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/169437935/original.jpg",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-imleria-badia-inat-169437935.jpg",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "author": "A. Johann",
+      "attribution": "(c) A. Johann, some rights reserved (CC BY)",
+      "source_description": "",
+      "place_guess": "L396, Kerzenheim, Rheinland-Pfalz, DE",
+      "location": "49.5712996965,8.0054639247",
+      "quality_grade": "research",
+      "identifications_count": 1,
+      "observed_on": "2021-11-19",
+      "editorial_precheck": "Nome scientifico esatto nella risposta API; osservazione research grade nell’area europea. Stato comunitario, non determinazione di un micologo ufficiale. Licenza della singola foto verificata. Non scaricata.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.6
+        ],
+        "riquadro": [
+          0.15000000000000002,
+          0.3,
+          0.85,
+          0.8999999999999999
+        ],
+        "nota": "Originale osservato su unreviewed-batch04; elementi esposti descritti senza dedurre fasi biologiche o caratteri nascosti. Parti interne visibili; non dedotta la causa dell’apertura né una reazione cromatica."
+      },
+      "source_width": 1536,
+      "source_height": 2048,
+      "photo_attribution_original": "(c) A. Johann, some rights reserved (CC BY)",
+      "source_metadata": "incoming/photo-expansion-2026-10-18/funghi-sosia/inat-metadata/Imleria-badia.json",
+      "commons_sha1": null,
+      "source_title": "iNaturalist photo 169437935",
+      "source_categories": [],
+      "alt": "Imleria badia, parte interna esposta.",
+      "caption": "Parte interna esposta.",
+      "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+      "sha256_original": "2b4b243314306ee96149c8b056570d668b7acd6641b7aa06f0a70ed42526cbcf",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-imleria-badia-inat-169437935.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-imleria-badia-inat-169437935-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-imleria-badia-inat-169437935-t.webp"
+      },
+      "width": 1536,
+      "height": 2048,
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.75
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          1.0
+        ],
+        "16:7": [
+          0.5,
+          0.649
+        ],
+        "4:3": [
+          0.5,
+          0.729
+        ],
+        "1:1": [
+          0.5,
+          0.9
+        ]
+      }
+    },
+    {
+      "id": "pe2-sosia-pholiota-squarrosa-inat-335689983",
+      "target_group": "lookalikes",
+      "target_key": "Pholiota squarrosa",
+      "latin": "Pholiota squarrosa",
+      "page": "https://www.inaturalist.org/observations/191362663",
+      "source": "iNaturalist (research grade)",
+      "observation_id": 191362663,
+      "photo_id": 335689983,
+      "taxon_id": 153445,
+      "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/335689983/original.jpg",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-pholiota-squarrosa-inat-335689983.jpg",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "author": "no rights reserved",
+      "attribution": "no rights reserved",
+      "source_description": "",
+      "place_guess": "Richmond upon Thames, London, England, GB",
+      "location": "51.4572944745,-0.2781549378",
+      "quality_grade": "research",
+      "identifications_count": 1,
+      "observed_on": "2023-11-18",
+      "editorial_precheck": "Nome scientifico esatto nella risposta API; osservazione research grade nell’area europea. Stato comunitario, non determinazione di un micologo ufficiale. Licenza della singola foto verificata. Non scaricata.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.52,
+          0.35
+        ],
+        "riquadro": [
+          0.17000000000000004,
+          0.04999999999999999,
+          0.87,
+          0.6499999999999999
+        ],
+        "nota": "Originale osservato su unreviewed-batch04; elementi esposti descritti senza dedurre fasi biologiche o caratteri nascosti."
+      },
+      "source_width": 1536,
+      "source_height": 2048,
+      "photo_attribution_original": "no rights reserved",
+      "source_metadata": "incoming/photo-expansion-2026-10-18/funghi-sosia/inat-metadata/Pholiota-squarrosa.json",
+      "commons_sha1": null,
+      "source_title": "iNaturalist photo 335689983",
+      "source_categories": [],
+      "alt": "Pholiota squarrosa, lamelle e gambo esposti.",
+      "caption": "Lamelle e gambo esposti.",
+      "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+      "sha256_original": "ba7df0a2ed61e2f9efc6fb772915ce35dcf654201d362455c518fe87965ece64",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-pholiota-squarrosa-inat-335689983.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-pholiota-squarrosa-inat-335689983-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-pholiota-squarrosa-inat-335689983-t.webp"
+      },
+      "width": 1536,
+      "height": 2048,
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.125
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.0
+        ],
+        "16:7": [
+          0.5,
+          0.277
+        ],
+        "4:3": [
+          0.5,
+          0.157
+        ],
+        "1:1": [
+          0.5,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "pe2-sosia-cortinarius-rubellus-inat-315854468",
+      "target_group": "lookalikes",
+      "target_key": "Cortinarius rubellus",
+      "latin": "Cortinarius rubellus",
+      "page": "https://www.inaturalist.org/observations/181247642",
+      "source": "iNaturalist (research grade)",
+      "observation_id": 181247642,
+      "photo_id": 315854468,
+      "taxon_id": 500053,
+      "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/315854468/original.jpg",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-cortinarius-rubellus-inat-315854468.jpg",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "author": "wkee4ager",
+      "attribution": "(c) wkee4ager, some rights reserved (CC BY)",
+      "source_description": "",
+      "place_guess": "Gjerdrum, 30, NO",
+      "location": "60.1082611667,10.953925",
+      "quality_grade": "research",
+      "identifications_count": 1,
+      "observed_on": "2023-09-01",
+      "editorial_precheck": "Nome scientifico esatto nella risposta API; osservazione research grade nell’area europea. Stato comunitario, non determinazione di un micologo ufficiale. Licenza della singola foto verificata. Non scaricata.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.49,
+          0.5
+        ],
+        "riquadro": [
+          0.14,
+          0.2,
+          0.84,
+          0.8
+        ],
+        "nota": "Originale osservato su unreviewed-batch04; elementi esposti descritti senza dedurre fasi biologiche o caratteri nascosti."
+      },
+      "source_width": 1536,
+      "source_height": 2048,
+      "photo_attribution_original": "(c) wkee4ager, some rights reserved (CC BY)",
+      "source_metadata": "incoming/photo-expansion-2026-10-18/funghi-sosia/inat-metadata/Cortinarius-rubellus.json",
+      "commons_sha1": null,
+      "source_title": "iNaturalist photo 315854468",
+      "source_categories": [],
+      "alt": "Cortinarius rubellus, lamelle e gambo esposti.",
+      "caption": "Lamelle e gambo esposti.",
+      "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+      "sha256_original": "2dd0663b1a785faab4fb3d64cec9f9c6c1109a755d46eed3839ae9b1513fce57",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-cortinarius-rubellus-inat-315854468.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-cortinarius-rubellus-inat-315854468-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-cortinarius-rubellus-inat-315854468-t.webp"
+      },
+      "width": 1536,
+      "height": 2048,
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.5
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      }
+    },
+    {
+      "id": "pe2-sosia-amanita-pantherina-inat-165670038",
+      "target_group": "lookalikes",
+      "target_key": "Amanita pantherina",
+      "latin": "Amanita pantherina",
+      "page": "https://www.inaturalist.org/observations/99389943",
+      "source": "iNaturalist (research grade)",
+      "observation_id": 99389943,
+      "photo_id": 165670038,
+      "taxon_id": 48418,
+      "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/165670038/original.jpg",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-amanita-pantherina-inat-165670038.jpg",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "author": "Donald Davesne",
+      "attribution": "(c) Donald Davesne, some rights reserved (CC BY)",
+      "source_description": "Last 2 pictures: comparison with Amanita rubescens.",
+      "place_guess": "78120 Clairefontaine-en-Yvelines, France",
+      "location": "48.6049094692,1.8942198189",
+      "quality_grade": "research",
+      "identifications_count": 2,
+      "observed_on": "2021-10-23",
+      "editorial_precheck": "Nome scientifico esatto nella risposta API; osservazione research grade nell’area europea. Stato comunitario, non determinazione di un micologo ufficiale. Licenza della singola foto verificata. Non scaricata.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.56,
+          0.48
+        ],
+        "riquadro": [
+          0.21000000000000008,
+          0.18,
+          0.91,
+          0.78
+        ],
+        "nota": "Originale osservato su unreviewed-batch04; elementi esposti descritti senza dedurre fasi biologiche o caratteri nascosti."
+      },
+      "source_width": 2048,
+      "source_height": 1362,
+      "photo_attribution_original": "(c) Donald Davesne, some rights reserved (CC BY)",
+      "source_metadata": "incoming/photo-expansion-2026-10-18/funghi-sosia/inat-metadata/Amanita-pantherina.json",
+      "commons_sha1": null,
+      "source_title": "iNaturalist photo 165670038",
+      "source_categories": [],
+      "alt": "Amanita pantherina, lamelle, anello e gambo esposti.",
+      "caption": "Lamelle, anello e gambo esposti.",
+      "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+      "sha256_original": "4bbc4bab8f3002518bf036ee2474879fc627fa458b071ec912afcc54f8d7ef5f",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-amanita-pantherina-inat-165670038.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-amanita-pantherina-inat-165670038-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-amanita-pantherina-inat-165670038-t.webp"
+      },
+      "width": 2048,
+      "height": 1362,
+      "crop_points": {
+        "5:4": [
+          0.856,
+          0.5
+        ],
+        "3:4": [
+          0.62,
+          0.5
+        ],
+        "4:5": [
+          0.628,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.442
+        ],
+        "4:3": [
+          1.0,
+          0.5
+        ],
+        "1:1": [
+          0.679,
+          0.5
+        ]
+      }
+    },
+    {
+      "id": "pe2-sosia-hydnum-rufescens-inat-315157836",
+      "target_group": "lookalikes",
+      "target_key": "Hydnum rufescens",
+      "latin": "Hydnum rufescens",
+      "page": "https://www.inaturalist.org/observations/180880095",
+      "source": "iNaturalist (research grade)",
+      "observation_id": 180880095,
+      "photo_id": 315157836,
+      "taxon_id": 340866,
+      "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/315157836/original.jpg",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-hydnum-rufescens-inat-315157836.jpg",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "author": "wkee4ager",
+      "attribution": "(c) wkee4ager, some rights reserved (CC BY)",
+      "source_description": "",
+      "place_guess": "Vindheim, Harstad, 54, NO",
+      "location": "68.7764283333,16.51307",
+      "quality_grade": "research",
+      "identifications_count": 1,
+      "observed_on": "2021-09-05",
+      "editorial_precheck": "Nome scientifico esatto nella risposta API; osservazione research grade nell’area europea. Stato comunitario, non determinazione di un micologo ufficiale. Licenza della singola foto verificata. Non scaricata.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.46
+        ],
+        "riquadro": [
+          0.15000000000000002,
+          0.16000000000000003,
+          0.85,
+          0.76
+        ],
+        "nota": "Originale osservato su unreviewed-batch04; elementi esposti descritti senza dedurre fasi biologiche o caratteri nascosti."
+      },
+      "source_width": 1536,
+      "source_height": 2048,
+      "photo_attribution_original": "(c) wkee4ager, some rights reserved (CC BY)",
+      "source_metadata": "incoming/photo-expansion-2026-10-18/funghi-sosia/inat-metadata/Hydnum-rufescens.json",
+      "commons_sha1": null,
+      "source_title": "iNaturalist photo 315157836",
+      "source_categories": [],
+      "alt": "Hydnum rufescens, vista dall’alto dei cappelli.",
+      "caption": "Vista dall’alto dei cappelli.",
+      "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+      "sha256_original": "76051e95e222e2b0e4593aa278216ecdd229a493478f82ae2942b8e75eca78d0",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-hydnum-rufescens-inat-315157836.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-hydnum-rufescens-inat-315157836-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-hydnum-rufescens-inat-315157836-t.webp"
+      },
+      "width": 1536,
+      "height": 2048,
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.4
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.0
+        ],
+        "16:7": [
+          0.5,
+          0.44
+        ],
+        "4:3": [
+          0.5,
+          0.409
+        ],
+        "1:1": [
+          0.5,
+          0.34
+        ]
+      }
+    },
+    {
+      "id": "pe2-sosia-tricholoma-sciodes-inat-238126814",
+      "target_group": "lookalikes",
+      "target_key": "Tricholoma sciodes",
+      "latin": "Tricholoma sciodes",
+      "page": "https://www.inaturalist.org/observations/139244900",
+      "source": "iNaturalist (research grade)",
+      "observation_id": 139244900,
+      "photo_id": 238126814,
+      "taxon_id": 806590,
+      "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/238126814/original.jpeg",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-tricholoma-sciodes-inat-238126814.jpeg",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "author": "no rights reserved",
+      "attribution": "no rights reserved",
+      "source_description": null,
+      "place_guess": "Corrour Estate, Corrour PH30 4AA, UK",
+      "location": "56.7920470467,-4.6019655839",
+      "quality_grade": "research",
+      "identifications_count": 1,
+      "observed_on": "2022-10-18",
+      "editorial_precheck": "Nome scientifico esatto nella risposta API; osservazione research grade nell’area europea. Stato comunitario, non determinazione di un micologo ufficiale. Licenza della singola foto verificata. Non scaricata.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.51,
+          0.49
+        ],
+        "riquadro": [
+          0.16000000000000003,
+          0.19,
+          0.86,
+          0.79
+        ],
+        "nota": "Originale osservato su unreviewed-batch04; elementi esposti descritti senza dedurre fasi biologiche o caratteri nascosti."
+      },
+      "source_width": 2048,
+      "source_height": 1536,
+      "photo_attribution_original": "no rights reserved",
+      "source_metadata": "incoming/photo-expansion-2026-10-18/funghi-sosia/inat-metadata/Tricholoma-sciodes.json",
+      "commons_sha1": null,
+      "source_title": "iNaturalist photo 238126814",
+      "source_categories": [],
+      "alt": "Tricholoma sciodes, cappelli, lamelle e gambo esposti.",
+      "caption": "Cappelli, lamelle e gambo esposti.",
+      "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+      "sha256_original": "65d626dd9915bff2012c2939b1274a790f5d611eec306ed9ccab225fe3597902",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-tricholoma-sciodes-inat-238126814.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-tricholoma-sciodes-inat-238126814-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-tricholoma-sciodes-inat-238126814-t.webp"
+      },
+      "width": 2048,
+      "height": 1536,
+      "crop_points": {
+        "5:4": [
+          0.66,
+          0.5
+        ],
+        "3:4": [
+          0.523,
+          0.5
+        ],
+        "4:5": [
+          0.525,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.476
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.54,
+          0.5
+        ]
+      }
+    },
+    {
+      "id": "pe2-sosia-cortinarius-violaceus-inat-312582142",
+      "target_group": "lookalikes",
+      "target_key": "Cortinarius violaceus",
+      "latin": "Cortinarius violaceus",
+      "page": "https://www.inaturalist.org/observations/179535016",
+      "source": "iNaturalist (research grade)",
+      "observation_id": 179535016,
+      "photo_id": 312582142,
+      "taxon_id": 124344,
+      "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/312582142/original.jpeg",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-cortinarius-violaceus-inat-312582142.jpeg",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "author": "Mikko Heikkinen",
+      "attribution": "(c) Mikko Heikkinen, some rights reserved (CC BY)",
+      "source_description": "With Picea abies",
+      "place_guess": "02340 Espoo, Suomi",
+      "location": "60.1856346111,24.6583747778",
+      "quality_grade": "research",
+      "identifications_count": 1,
+      "observed_on": "2023-08-21",
+      "editorial_precheck": "Nome scientifico esatto nella risposta API; osservazione research grade nell’area europea. Stato comunitario, non determinazione di un micologo ufficiale. Licenza della singola foto verificata. Non scaricata.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.53,
+          0.52
+        ],
+        "riquadro": [
+          0.18000000000000005,
+          0.22000000000000003,
+          0.88,
+          0.8200000000000001
+        ],
+        "nota": "Originale osservato su unreviewed-batch04; elementi esposti descritti senza dedurre fasi biologiche o caratteri nascosti."
+      },
+      "source_width": 944,
+      "source_height": 2048,
+      "photo_attribution_original": "(c) Mikko Heikkinen, some rights reserved (CC BY)",
+      "source_metadata": "incoming/photo-expansion-2026-10-18/funghi-sosia/inat-metadata/Cortinarius-violaceus.json",
+      "commons_sha1": null,
+      "source_title": "iNaturalist photo 312582142",
+      "source_categories": [],
+      "alt": "Cortinarius violaceus, lamelle e gambi esposti.",
+      "caption": "Lamelle e gambi esposti.",
+      "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+      "sha256_original": "9db0de8598175756a94c7c22d07e1dc262f7e3213ab5853eb522b17996495980",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-cortinarius-violaceus-inat-312582142.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-cortinarius-violaceus-inat-312582142-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-sosia/derived/pe2-sosia-cortinarius-violaceus-inat-312582142-t.webp"
+      },
+      "width": 944,
+      "height": 2048,
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.532
+        ],
+        "3:4": [
+          0.5,
+          0.552
+        ],
+        "4:5": [
+          0.5,
+          0.547
+        ],
+        "16:7": [
+          0.5,
+          0.525
+        ],
+        "4:3": [
+          0.5,
+          0.531
+        ],
+        "1:1": [
+          0.5,
+          0.537
+        ]
+      }
+    },
+    {
+      "target_group": "animals",
+      "target_key": "bombi",
+      "latin": "Bombus",
+      "photo_taxon": "Bombus terrestris",
+      "source_title": "File:Bombus terrestris - Tilia cordata - Keila-crop.jpg",
+      "source_description": "Large earth bumblebee queen (Bombus terrestris) on the flowers of small-leaved lime (Tilia cordata). Keila, Northwestern Estonia.",
+      "source_categories": [
+        "Category:Bombus terrestris on flowers",
+        "Category:Bombus terrestris queen",
+        "Category:CC-BY-SA-4.0",
+        "Category:Insects on Tilia cordata flowers",
+        "Category:Nature of Keila"
+      ],
+      "page": "https://commons.wikimedia.org/wiki/File:Bombus_terrestris_-_Tilia_cordata_-_Keila-crop.jpg",
+      "author": "Ivar Leidus",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Bombus_terrestris_-_Tilia_cordata_-_Keila-crop.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "805373f9c89d9be2d64573830e454870582a3a20",
+      "size": 4846911,
+      "id": "pe2-natura-bombi-805373f9",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-bombi-805373f9.jpg",
+      "sha256_original": "cd9f6d8d8d21a559f363749a092926bb88c97c37661b460622a19b334595ca57",
+      "index": 4,
+      "source": "Wikimedia Commons",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-bombi-805373f9.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-bombi-805373f9-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-bombi-805373f9-t.webp"
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.325
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.0
+        ],
+        "16:7": [
+          0.5,
+          0.396
+        ],
+        "4:3": [
+          0.5,
+          0.34
+        ],
+        "1:1": [
+          0.5,
+          0.219
+        ]
+      },
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.58,
+          0.43
+        ],
+        "riquadro": [
+          0.27,
+          0.12,
+          0.97,
+          0.88
+        ],
+        "nota": "Originale e fonte Commons esaminati; foto complementare al primo esemplare, specie esempio dichiarata per il gruppo. Nessuna presenza locale dedotta."
+      },
+      "caption": "Esempio di bombo: Bombus terrestris su fiori di tiglio. La foto rappresenta questa specie, non tutto il genere Bombus.",
+      "alt": "Bombus terrestris su fiori di tiglio; esempio di bombo.",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP e miniatura ritagliata; nessuna correzione cromatica. EXIF/XMP rimossi.",
+      "attribution": "Ivar Leidus · Wikimedia Commons · CC BY-SA 4.0",
+      "attribution_required_text": "",
+      "attribution_required_html": "",
+      "source_metadata": "incoming/photo-expansion-2026-10-18/natura/commons-extmetadata.json"
+    },
+    {
+      "target_group": "animals",
+      "target_key": "zecche",
+      "latin": "Ixodida",
+      "photo_taxon": "Ixodes ricinus",
+      "source_title": "File:Ixodes ricinus on dry grass.jpg",
+      "source_description": "Castor bean tick (Ixodes ricinus) female from Hochholz-Kapellenbruch, Germany at 3.5.2021",
+      "source_categories": [],
+      "page": "https://commons.wikimedia.org/wiki/File:Ixodes_ricinus_on_dry_grass.jpg",
+      "author": "W.alter",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Ixodes_ricinus_on_dry_grass.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "d8f91ccbd72badcd99db8492e12e59c1184d05c1",
+      "size": 1852837,
+      "id": "pe2-natura-zecche-d8f91ccb",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-zecche-d8f91ccb.jpg",
+      "sha256_original": "c5237d6919983747716e753d2af6a0b2cde2647d047e284ef61e02549f7771b8",
+      "index": 15,
+      "source": "Wikimedia Commons",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-zecche-d8f91ccb.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-zecche-d8f91ccb-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-zecche-d8f91ccb-t.webp"
+      },
+      "crop_points": {
+        "5:4": [
+          0.819,
+          0.5
+        ],
+        "3:4": [
+          0.546,
+          0.5
+        ],
+        "4:5": [
+          0.6,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.884
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.58,
+          0.5
+        ]
+      },
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.52,
+          0.66
+        ],
+        "riquadro": [
+          0.25,
+          0.47,
+          0.84,
+          0.84
+        ],
+        "nota": "Originale e fonte Commons esaminati; foto complementare al primo esemplare, specie esempio dichiarata per il gruppo. Nessuna presenza locale dedotta."
+      },
+      "caption": "Esempio di zecca: Ixodes ricinus, vista dall’alto su erba secca. La foto rappresenta questa specie, non tutto il gruppo Ixodida.",
+      "alt": "Ixodes ricinus visto dall’alto su erba secca; esempio di zecca.",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP e miniatura ritagliata; nessuna correzione cromatica. EXIF/XMP rimossi.",
+      "attribution": "W.alter · Wikimedia Commons · CC BY-SA 4.0",
+      "attribution_required_text": "",
+      "attribution_required_html": "",
+      "source_metadata": "incoming/photo-expansion-2026-10-18/natura/commons-extmetadata.json"
+    },
+    {
+      "target_group": "trees",
+      "target_key": "ciliegio",
+      "latin": "Prunus avium",
+      "photo_taxon": "Prunus avium",
+      "source_title": "File:Prunus avium fruit.jpg",
+      "source_description": "Wild Cherry Prunus avium fruit; Northumberland, UK",
+      "source_categories": [],
+      "page": "https://commons.wikimedia.org/wiki/File:Prunus_avium_fruit.jpg",
+      "author": "MPF",
+      "license": "CC BY 2.5",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/4/49/Prunus_avium_fruit.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "7bfdad7d62a67bcbb554e44aa22306bc5119418e",
+      "size": 2977992,
+      "id": "pe2-natura-ciliegio-7bfdad7d",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-ciliegio-7bfdad7d.jpg",
+      "sha256_original": "80d9eb1e491b13d311594b9fd9706f6151af58388e0022681ece43a5f315f5ae",
+      "index": 74,
+      "source": "Wikimedia Commons",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-ciliegio-7bfdad7d.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-ciliegio-7bfdad7d-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-ciliegio-7bfdad7d-t.webp"
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.942
+        ],
+        "3:4": [
+          0.703,
+          0.5
+        ],
+        "4:5": [
+          0.755,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.659
+        ],
+        "4:3": [
+          0.5,
+          0.855
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      },
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.55,
+          0.59
+        ],
+        "riquadro": [
+          0.05,
+          0.05,
+          0.95,
+          0.98
+        ],
+        "nota": "Originale e fonte Commons esaminati; taxon alla specie, autore e licenza verificati. Per Aesculus la fonte dichiara focus stacking di15scatti: immagine fotografica reale, non generazione AI. Nessuna provenienza locale dedotta."
+      },
+      "caption": "Ramo con frutti · Prunus avium (L.) L.",
+      "alt": "Prunus avium: ramo con frutti.",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP e miniatura ritagliata; nessuna correzione cromatica. EXIF/XMP rimossi.",
+      "attribution": "MPF · Wikimedia Commons · CC BY 2.5",
+      "attribution_required_text": "",
+      "attribution_required_html": "",
+      "source_metadata": "incoming/photo-expansion-2026-10-18/natura/commons-extmetadata.json"
+    },
+    {
+      "target_group": "trees",
+      "target_key": "ippocastano",
+      "latin": "Aesculus hippocastanum",
+      "photo_taxon": "Aesculus hippocastanum",
+      "source_title": "File:Gebarsten bolster van een paardenkastanje (Aesculus) 13-10-2022 (d.j.b.) 02.jpg",
+      "source_description": "Cracked skin of a Horse-chestnut Aesculus hippocastanum conker. Focus stack of 15 photos.",
+      "source_categories": [],
+      "page": "https://commons.wikimedia.org/wiki/File:Gebarsten_bolster_van_een_paardenkastanje_(Aesculus)_13-10-2022_(d.j.b.)_02.jpg",
+      "author": "Dominicus Johannes Bergsma",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Gebarsten_bolster_van_een_paardenkastanje_%28Aesculus%29_13-10-2022_%28d.j.b.%29_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "737fc7381dec9bd1c5d744f4a8c04c67cd5bf69b",
+      "size": 14853954,
+      "id": "pe2-natura-ippocastano-737fc738",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-ippocastano-737fc738.jpg",
+      "sha256_original": "2d4ca8b787fe3bc95113086ad2d6bd66f790eb844d3938ae676351fff3630515",
+      "index": 82,
+      "source": "Wikimedia Commons",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-ippocastano-737fc738.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-ippocastano-737fc738-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-ippocastano-737fc738-t.webp"
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.6,
+          0.5
+        ],
+        "4:5": [
+          0.611,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.61
+        ],
+        "4:3": [
+          0.5,
+          1.0
+        ],
+        "1:1": [
+          0.7,
+          0.5
+        ]
+      },
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.54,
+          0.55
+        ],
+        "riquadro": [
+          0.1,
+          0.2,
+          0.98,
+          0.96
+        ],
+        "nota": "Originale e fonte Commons esaminati; taxon alla specie, autore e licenza verificati. Per Aesculus la fonte dichiara focus stacking di15scatti: immagine fotografica reale, non generazione AI. Nessuna provenienza locale dedotta."
+      },
+      "caption": "Frutto aperto con seme · Aesculus hippocastanum.",
+      "alt": "Aesculus hippocastanum: frutto aperto con seme.",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP e miniatura ritagliata; nessuna correzione cromatica. EXIF/XMP rimossi.",
+      "attribution": "Dominicus Johannes Bergsma · Wikimedia Commons · CC BY-SA 4.0",
+      "attribution_required_text": "",
+      "attribution_required_html": "",
+      "source_metadata": "incoming/photo-expansion-2026-10-18/natura/commons-extmetadata.json"
+    },
+    {
+      "target_group": "trees",
+      "target_key": "noce",
+      "latin": "Juglans regia",
+      "photo_taxon": "Juglans regia",
+      "source_title": "File:2026-03-07 D500-2006 Achim-Lammerts Juglans-regia.jpg",
+      "source_description": "A solitary, leafless Walnut tree (Juglans regia) standing on a green field.",
+      "source_categories": [],
+      "page": "https://commons.wikimedia.org/wiki/File:2026-03-07_D500-2006_Achim-Lammerts_Juglans-regia.jpg",
+      "author": "Achim Lammerts (Syntaxys)",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/f/f5/2026-03-07_D500-2006_Achim-Lammerts_Juglans-regia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "e994fe97155709e5298cdc8ccc66d73902edb727",
+      "size": 13883230,
+      "id": "pe2-natura-noce-e994fe97",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-noce-e994fe97.jpg",
+      "sha256_original": "8b6a6e60b4c478eacdc5436770845709e0dc3c760c05db27853f5fa1e730c6d8",
+      "index": 76,
+      "source": "Wikimedia Commons",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-noce-e994fe97.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-noce-e994fe97-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-noce-e994fe97-t.webp"
+      },
+      "crop_points": {
+        "5:4": [
+          1.0,
+          0.5
+        ],
+        "3:4": [
+          1.0,
+          0.5
+        ],
+        "4:5": [
+          1.0,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.645
+        ],
+        "4:3": [
+          1.0,
+          0.5
+        ],
+        "1:1": [
+          1.0,
+          0.5
+        ]
+      },
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.8,
+          0.55
+        ],
+        "riquadro": [
+          0.59,
+          0.13,
+          0.99,
+          0.81
+        ],
+        "nota": "Originale e fonte Commons esaminati; taxon alla specie, autore e licenza verificati. Per Aesculus la fonte dichiara focus stacking di15scatti: immagine fotografica reale, non generazione AI. Nessuna provenienza locale dedotta."
+      },
+      "caption": "Albero senza foglie nel paesaggio · Juglans regia L.",
+      "alt": "Juglans regia: albero senza foglie nel paesaggio.",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP e miniatura ritagliata; nessuna correzione cromatica. EXIF/XMP rimossi.",
+      "attribution": "© Achim Lammerts (Syntaxys) / Wikimedia Commons · CC BY-SA 4.0",
+      "attribution_required_text": "© Achim Lammerts (Syntaxys) / Wikimedia Commons",
+      "attribution_required_html": "© Achim Lammerts (Syntaxys) / Wikimedia Commons",
+      "source_metadata": "incoming/photo-expansion-2026-10-18/natura/commons-extmetadata.json"
+    },
+    {
+      "target_group": "trees",
+      "target_key": "olmo montano",
+      "latin": "Ulmus glabra",
+      "photo_taxon": "Ulmus glabra",
+      "source_title": "File:Ulmus glabra flowers - Keila.jpg",
+      "source_description": "Flowers (Ø 3–4 mm) of wych elm",
+      "source_categories": [
+        "Category:CC-BY-SA-4.0",
+        "Category:Estonia photographs taken on 2021-04-29",
+        "Category:Featured pictures by iifar",
+        "Category:Featured pictures of Keila",
+        "Category:Featured pictures of Rosales",
+        "Category:Featured pictures of plants in Estonia",
+        "Category:Featured pictures on Wikimedia Commons",
+        "Category:Files with coordinates missing SDC location of creation",
+        "Category:Flowers of Estonia"
+      ],
+      "page": "https://commons.wikimedia.org/wiki/File:Ulmus_glabra_flowers_-_Keila.jpg",
+      "author": "Ivar Leidus",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Ulmus_glabra_flowers_-_Keila.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "ddb434ae08d04c0905e67215706a5b8db357336f",
+      "size": 11589989,
+      "id": "pe2-natura-olmo-montano-ddb434ae",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-olmo-montano-ddb434ae.jpg",
+      "sha256_original": "b379b08484cb3a5bf294a8198e2e87d558f8873363563bc1106c113a80252b25",
+      "index": 80,
+      "source": "Wikimedia Commons",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-olmo-montano-ddb434ae.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-olmo-montano-ddb434ae-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-olmo-montano-ddb434ae-t.webp"
+      },
+      "crop_points": {
+        "5:4": [
+          1.0,
+          0.5
+        ],
+        "3:4": [
+          0.82,
+          0.5
+        ],
+        "4:5": [
+          0.843,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.296
+        ],
+        "4:3": [
+          1.0,
+          0.5
+        ],
+        "1:1": [
+          0.98,
+          0.5
+        ]
+      },
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.66,
+          0.43
+        ],
+        "riquadro": [
+          0.33,
+          0.03,
+          0.98,
+          0.86
+        ],
+        "nota": "Originale e fonte Commons esaminati; taxon alla specie, autore e licenza verificati. Per Aesculus la fonte dichiara focus stacking di15scatti: immagine fotografica reale, non generazione AI. Nessuna provenienza locale dedotta."
+      },
+      "caption": "Particolare dei fiori · Ulmus glabra Huds.",
+      "alt": "Ulmus glabra: particolare dei fiori.",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP e miniatura ritagliata; nessuna correzione cromatica. EXIF/XMP rimossi.",
+      "attribution": "Ivar Leidus · Wikimedia Commons · CC BY-SA 4.0",
+      "attribution_required_text": "",
+      "attribution_required_html": "",
+      "source_metadata": "incoming/photo-expansion-2026-10-18/natura/commons-extmetadata.json"
+    },
+    {
+      "target_group": "trees",
+      "target_key": "robinia",
+      "latin": "Robinia pseudoacacia",
+      "photo_taxon": "Robinia pseudoacacia",
+      "source_title": "File:Korina 2011-05-20 Robinia pseudoacacia 3.jpg",
+      "source_description": "Gewöhnliche Robinie (Robinia pseudoacacia)",
+      "source_categories": [],
+      "page": "https://commons.wikimedia.org/wiki/File:Korina_2011-05-20_Robinia_pseudoacacia_3.jpg",
+      "author": "Annabell Hormann / korina.info",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Korina_2011-05-20_Robinia_pseudoacacia_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "33d48d18907c5a54961a08ab6d9060f64dff772d",
+      "size": 1913965,
+      "id": "pe2-natura-robinia-33d48d18",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-robinia-33d48d18.jpg",
+      "sha256_original": "031d42a2b1cb4b8d9dea0a376af1fed61851ffc2a6101c25ffada048148a0f71",
+      "index": 78,
+      "source": "Wikimedia Commons",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-robinia-33d48d18.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-robinia-33d48d18-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-robinia-33d48d18-t.webp"
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.4
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.0
+        ],
+        "16:7": [
+          0.5,
+          0.44
+        ],
+        "4:3": [
+          0.5,
+          0.409
+        ],
+        "1:1": [
+          0.5,
+          0.34
+        ]
+      },
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.54,
+          0.46
+        ],
+        "riquadro": [
+          0.05,
+          0.03,
+          0.97,
+          0.98
+        ],
+        "nota": "Originale e fonte Commons esaminati; taxon alla specie, autore e licenza verificati. Per Aesculus la fonte dichiara focus stacking di15scatti: immagine fotografica reale, non generazione AI. Nessuna provenienza locale dedotta."
+      },
+      "caption": "Albero in fiore · Robinia pseudoacacia L.",
+      "alt": "Robinia pseudoacacia: albero in fiore.",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP e miniatura ritagliata; nessuna correzione cromatica. EXIF/XMP rimossi.",
+      "attribution": "Annabell Hormann, korina.info – CC-BY-SA-4.0 · CC BY-SA 4.0",
+      "attribution_required_text": "Annabell Hormann, korina.info – CC-BY-SA-4.0",
+      "attribution_required_html": "Annabell Hormann, <a rel=\"nofollow\" class=\"external text\" href=\"https://korina.info\">korina.info</a> – CC-BY-SA-4.0",
+      "source_metadata": "incoming/photo-expansion-2026-10-18/natura/commons-extmetadata.json"
+    }
+  ]
+}

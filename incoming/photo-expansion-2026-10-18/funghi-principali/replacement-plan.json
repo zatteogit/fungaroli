@@ -1,0 +1,63 @@
+{
+  "photos": [
+    {
+      "id": "pe2-main-marasmius-oreades-r01",
+      "target_group": "species",
+      "target_key": "marasmius-oreades",
+      "latin": "Marasmius oreades",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-marasmius-oreades-r01.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Marasme_des_Or%C3%A9ades_dans_l%27Ain_en_mai_2021_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "781df97097062e38f3e6cae20931cd1f115c70e6",
+      "source_title": "File:Marasme des Oréades dans l'Ain en mai 2021 (2).jpg",
+      "source_description": "Marasme des Oréades dans l'Ain en mai 2021.",
+      "source_categories": [
+        "Marasmius oreades",
+        "CC-Zero",
+        "Photographs by Benoît Prieur",
+        "Self-published work",
+        "Images of Saint-Maurice-de-Beynost by Benoît Prieur",
+        "May 2021 in Ain",
+        "Files with coordinates missing SDC location of creation",
+        "Fungi of Ain",
+        "2021 in Saint-Maurice-de-Beynost",
+        "2021 images by Benoît Prieur",
+        "Auvergne-Rhône-Alpes photographs taken on 2021-05-12",
+        "Uploaded with PyCommonist",
+        "28 rue des Andrés (Saint-Maurice-de-Beynost) - exterior"
+      ],
+      "page": "https://commons.wikimedia.org/wiki/File:Marasme_des_Or%C3%A9ades_dans_l%27Ain_en_mai_2021_(2).jpg",
+      "author": "Benoît Prieur",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    {
+      "id": "pe2-main-marasmius-oreades-r02",
+      "target_group": "species",
+      "target_key": "marasmius-oreades",
+      "latin": "Marasmius oreades",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-marasmius-oreades-r02.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Marasme_des_Or%C3%A9ades_dans_l%27Ain_en_mai_2021.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "afc2206948897cd3dc01b8a3851e61e6c1b00dc0",
+      "source_title": "File:Marasme des Oréades dans l'Ain en mai 2021.jpg",
+      "source_description": "Marasme des Oréades dans l'Ain en mai 2021.",
+      "source_categories": [
+        "Marasmius oreades",
+        "CC-Zero",
+        "Photographs by Benoît Prieur",
+        "Self-published work",
+        "Images of Saint-Maurice-de-Beynost by Benoît Prieur",
+        "May 2021 in Ain",
+        "Fungi of Ain",
+        "2021 in Saint-Maurice-de-Beynost",
+        "2021 images by Benoît Prieur",
+        "Auvergne-Rhône-Alpes photographs taken on 2021-05-12",
+        "Uploaded with PyCommonist",
+        "28 rue des Andrés (Saint-Maurice-de-Beynost) - exterior"
+      ],
+      "page": "https://commons.wikimedia.org/wiki/File:Marasme_des_Or%C3%A9ades_dans_l%27Ain_en_mai_2021.jpg",
+      "author": "Benoît Prieur",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    }
+  ]
+}

@@ -1,0 +1,4507 @@
+{
+  "continue": {
+    "clcontinue": "61487540|Chlorophyllum_rhacodes",
+    "continue": "||imageinfo"
+  },
+  "query": {
+    "pages": {
+      "155529444": {
+        "pageid": 155529444,
+        "ns": 6,
+        "title": "File:A shaggy parasol mushroom (Chlorophyllum rhacodes) - geograph.org.uk - 7003645.jpg",
+        "index": 34,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 336957,
+            "width": 1091,
+            "height": 1200,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/21/A_shaggy_parasol_mushroom_%28Chlorophyllum_rhacodes%29_-_geograph.org.uk_-_7003645.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:A_shaggy_parasol_mushroom_(Chlorophyllum_rhacodes)_-_geograph.org.uk_-_7003645.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=155529444",
+            "sha1": "92dfaac0fc8a1da0cc31526372e2d73a4a2bad2a",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2024-11-22 07:41:32",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "A shaggy parasol mushroom (Chlorophyllum rhacodes) - geograph.org.uk - 7003645",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Images from Geograph Britain and Ireland|Earlston (civil parish)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "55.611011",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-2.667337",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "A shaggy parasol mushroom (Chlorophyllum rhacodes) <span class=\"mw-valign-text-top noprint\" typeof=\"mw:File/Frameless\"><a href=\"//commons.wikimedia.org/wiki/File:A_shaggy_parasol_mushroom_(Chlorophyllum_rhacodes)_-_geograph.org.uk_-_7003645.jpg#ooui-php-4\" title=\"Edit this at Structured Data on Commons\"><img alt=\"Edit this at Structured Data on Commons\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"10\" height=\"10\" class=\"mw-file-element\" data-file-width=\"20\" data-file-height=\"20\"></a></span>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-10-27",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.geograph.org.uk/photo/7003645\">Geograph Britain and Ireland</a> <span class=\"mw-valign-text-top noprint\" typeof=\"mw:File/Frameless\"><a href=\"//commons.wikimedia.org/wiki/File:A_shaggy_parasol_mushroom_(Chlorophyllum_rhacodes)_-_geograph.org.uk_-_7003645.jpg#P7482\" title=\"Edit this at Structured Data on Commons\"><img alt=\"Edit this at Structured Data on Commons\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"10\" height=\"10\" class=\"mw-file-element\" data-file-width=\"20\" data-file-height=\"20\"></a></span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.geograph.org.uk/profile/6638\">Walter Baxter</a> <span class=\"mw-valign-text-top noprint\" typeof=\"mw:File/Frameless\"><a href=\"//commons.wikimedia.org/wiki/File:A_shaggy_parasol_mushroom_(Chlorophyllum_rhacodes)_-_geograph.org.uk_-_7003645.jpg#P170\" title=\"Edit this at Structured Data on Commons\"><img alt=\"Edit this at Structured Data on Commons\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"10\" height=\"10\" class=\"mw-file-element\" data-file-width=\"20\" data-file-height=\"20\"></a></span>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Attribution": {
+                "value": "<i>A shaggy parasol mushroom (Chlorophyllum rhacodes)</i> by Walter Baxter",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "30581079": {
+        "pageid": 30581079,
+        "ns": 6,
+        "title": "File:Chlorophyllum olivieri Safran-Riesenschirmpilz.jpg",
+        "index": 9,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 4514640,
+            "width": 3000,
+            "height": 2000,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/79/Chlorophyllum_olivieri_Safran-Riesenschirmpilz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Chlorophyllum_olivieri_Safran-Riesenschirmpilz.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=30581079",
+            "sha1": "1f096a75b5dfdd039c61eb7b41ab169f66de6f2a",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2014-01-11 21:33:12",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Chlorophyllum olivieri Safran-Riesenschirmpilz",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Chlorophyllum olivieri|Taken with Canon EOS 500D|Self-published work|Agaricales in Baden-Württemberg in October|Agaricaceae in Baden-Württemberg|Baden-Württemberg photographs taken on 2013-10-10|Files with coordinates missing SDC location of creation (48° N, 9° E)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "48.352000",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "9.817850",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Shaggy Parasol, <i><a href=\"//commons.wikimedia.org/w/index.php?title=Chlorophyllum_olivieri&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"Chlorophyllum olivieri (page does not exist)\">Chlorophyllum olivieri</a></i>, Family: Agaricaceae, Location: Germany, Erbach, Ringingen",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2013-10-10",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Holleday\" title=\"User:Holleday\">Holger Krisp</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Agaricaceae in Baden-Württemberg"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Agaricales in Baden-Württemberg in October"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Baden-Württemberg photographs taken on 2013-10-10"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Chlorophyllum olivieri"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation (48° N, 9° E)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of Baden-Württemberg"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of nature in Baden-Württemberg"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Canon EOS 500D"
+          }
+        ]
+      },
+      "71723555": {
+        "pageid": 71723555,
+        "ns": 6,
+        "title": "File:Chlorophyllum rhacodes (Vittadini) Vellinga 183361.jpg",
+        "index": 37,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1291879,
+            "width": 3049,
+            "height": 2283,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/df/Chlorophyllum_rhacodes_%28Vittadini%29_Vellinga_183361.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Chlorophyllum_rhacodes_(Vittadini)_Vellinga_183361.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=71723555",
+            "sha1": "c29edd5224498b213110f2fd800ac048ad7afc43",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-08-18 13:05:58",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Chlorophyllum rhacodes (Vittadini) Vellinga 183361",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Chlorophyllum rhacodes|Images from Mushroom Observer|Files from external sources with reviewed licenses|November 2011 in Portugal|Fungi in November|Photographs taken on 2011-11-19|Agaricaceae in Portugal|Fungi of Lourinhã",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "For more information about this, see the <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_observation/82817\">observation page</a> at Mushroom Observer.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2011-11-19",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This image is <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/image/show_image/183361\">Image Number 183361</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "This image was created by user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_user/2250\">zaca</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.<br>You can contact this user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/ask_user_question/2250\">here</a>.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "71723523": {
+        "pageid": 71723523,
+        "ns": 6,
+        "title": "File:Chlorophyllum rhacodes (Vittadini) Vellinga 183363.jpg",
+        "index": 38,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1863353,
+            "width": 3648,
+            "height": 2736,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/02/Chlorophyllum_rhacodes_%28Vittadini%29_Vellinga_183363.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Chlorophyllum_rhacodes_(Vittadini)_Vellinga_183363.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=71723523",
+            "sha1": "fcaa504129f43791c62af6231752ece99811875b",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-08-18 13:03:57",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Chlorophyllum rhacodes (Vittadini) Vellinga 183363",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Chlorophyllum rhacodes|Images from Mushroom Observer|Files from external sources with reviewed licenses|November 2011 in Portugal|Fungi in November|Photographs taken on 2011-11-19|Agaricaceae in Portugal|Fungi of Lourinhã",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "For more information about this, see the <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_observation/82817\">observation page</a> at Mushroom Observer.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2011-11-19",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This image is <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/image/show_image/183363\">Image Number 183363</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "This image was created by user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_user/2250\">zaca</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.<br>You can contact this user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/ask_user_question/2250\">here</a>.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "8322750": {
+        "pageid": 8322750,
+        "ns": 6,
+        "title": "File:Chlorophyllum rhacodes - 20091030.jpg",
+        "index": 29,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1705054,
+            "width": 2177,
+            "height": 2967,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Chlorophyllum_rhacodes_-_20091030.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Chlorophyllum_rhacodes_-_20091030.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=8322750",
+            "sha1": "25c8f4ca6a1f9f527a144279c1e616f3765404a4",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2009-11-02 06:36:18",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Chlorophyllum rhacodes - 20091030",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Chlorophyllum rhacodes|GFDL|Taken with Panasonic Lumix DMC-FZ18|CC-BY-SA-3.0,2.5,2.0,1.0|License migration redundant|Self-published work|Fungi in October",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "The <a href=\"https://en.wikipedia.org/wiki/shaggy_parasol\" class=\"extiw\" title=\"w:shaggy parasol\">shaggy parasol</a> mushroom (<i>Chlorophyllum rhacodes</i>).",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2009-10-30 14:36",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>.",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Rasbak\" title=\"User:Rasbak\">Rasbak</a>.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0,2.5,2.0,1.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Chlorophyllum rhacodes"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in October"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Panasonic Lumix DMC-FZ18"
+          }
+        ]
+      },
+      "52830777": {
+        "pageid": 52830777,
+        "ns": 6,
+        "title": "File:Chlorophyllum rhacodes - Flickr - S. rae.jpg",
+        "index": 20,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2179931,
+            "width": 2836,
+            "height": 2188,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/24/Chlorophyllum_rhacodes_-_Flickr_-_S._rae.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Chlorophyllum_rhacodes_-_Flickr_-_S._rae.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=52830777",
+            "sha1": "73d6ccd7f276cd901e129c6a51d16fc4afdcdff8",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2016-11-05 11:21:01",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Chlorophyllum rhacodes - Flickr - S. rae",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Chlorophyllum rhacodes|Flickr images reviewed by FlickreviewR|United Kingdom photographs taken on 2011-07-31|Photographs by S. Rae|Agaricales in July|Chlorophyllum in East Lothian|Files with coordinates missing SDC location of creation (55° N, 3° W)|Files uploaded by Josve05a (S. Rae)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "55.864860",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-2.855029",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<p>Thanks to conall.. and joe with a camera for the id.\n</p>\nChurch Wood, Humbie, East Lothian, Scotland.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2011-07-31 10:29",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/35142635@N05/5997033113/\">Macrolepiota rhacodes</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/35142635@N05\">S. Rae</a> from Scotland, UK",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Agaricales in July"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-2.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Chlorophyllum in East Lothian"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Chlorophyllum rhacodes"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files uploaded by Josve05a (S. Rae)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation (55° N, 3° W)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images reviewed by FlickreviewR"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by S. Rae"
+          },
+          {
+            "ns": 14,
+            "title": "Category:United Kingdom photographs taken on 2011-07-31"
+          }
+        ]
+      },
+      "182411190": {
+        "pageid": 182411190,
+        "ns": 6,
+        "title": "File:Chlorophyllum rhacodes - Shaggy Parasol (51524909573).jpg",
+        "index": 27,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2625861,
+            "width": 5821,
+            "height": 3881,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Chlorophyllum_rhacodes_-_Shaggy_Parasol_%2851524909573%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Chlorophyllum_rhacodes_-_Shaggy_Parasol_(51524909573).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=182411190",
+            "sha1": "86fa4b2c8b22392cb62f9a7fa8935f07487deb92",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2026-01-25 12:11:34",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Chlorophyllum rhacodes - Shaggy Parasol (51524909573)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Chlorophyllum rhacodes|Flickr images reviewed by FlickreviewR 2|Flickr images missing SDC published in|Photographs by Lukas Large",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Chlorophyllum rhacodes - Shaggy Parasol",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-09-25 13:19",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/lukaslarge/51524909573/\">Chlorophyllum rhacodes - Shaggy Parasol</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/99278910@N00\">Lukas Large</a> from Stourbridge, United Kingdom",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "197981249": {
+        "pageid": 197981249,
+        "ns": 6,
+        "title": "File:Chlorophyllum rhacodes - Shaggy Parasol mushroom - geograph.org.uk - 8366963.jpg",
+        "index": 11,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 865866,
+            "width": 1600,
+            "height": 1599,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Chlorophyllum_rhacodes_-_Shaggy_Parasol_mushroom_-_geograph.org.uk_-_8366963.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Chlorophyllum_rhacodes_-_Shaggy_Parasol_mushroom_-_geograph.org.uk_-_8366963.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=197981249",
+            "sha1": "ffb41eb92433fe620ba49de8e2187e929824202f",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2026-08-22 00:35:53",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Chlorophyllum rhacodes - Shaggy Parasol mushroom - geograph.org.uk - 8366963",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Images from Geograph Britain and Ireland|Rosemarkie (civil parish)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "57.645178",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-4.049456",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Chlorophyllum rhacodes - Shaggy Parasol mushroom <span class=\"mw-valign-text-top noprint\" typeof=\"mw:File/Frameless\"><a href=\"//commons.wikimedia.org/wiki/File:Chlorophyllum_rhacodes_-_Shaggy_Parasol_mushroom_-_geograph.org.uk_-_8366963.jpg#ooui-php-4\" title=\"Edit this at Structured Data on Commons\"><img alt=\"Edit this at Structured Data on Commons\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"10\" height=\"10\" class=\"mw-file-element\" data-file-width=\"20\" data-file-height=\"20\"></a></span>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2026-07-17",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.geograph.org.uk/photo/8366963\">Geograph Britain and Ireland</a> <span class=\"mw-valign-text-top noprint\" typeof=\"mw:File/Frameless\"><a href=\"//commons.wikimedia.org/wiki/File:Chlorophyllum_rhacodes_-_Shaggy_Parasol_mushroom_-_geograph.org.uk_-_8366963.jpg#P7482\" title=\"Edit this at Structured Data on Commons\"><img alt=\"Edit this at Structured Data on Commons\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"10\" height=\"10\" class=\"mw-file-element\" data-file-width=\"20\" data-file-height=\"20\"></a></span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.geograph.org.uk/profile/9616\">Julian Paren</a> <span class=\"mw-valign-text-top noprint\" typeof=\"mw:File/Frameless\"><a href=\"//commons.wikimedia.org/wiki/File:Chlorophyllum_rhacodes_-_Shaggy_Parasol_mushroom_-_geograph.org.uk_-_8366963.jpg#P170\" title=\"Edit this at Structured Data on Commons\"><img alt=\"Edit this at Structured Data on Commons\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"10\" height=\"10\" class=\"mw-file-element\" data-file-width=\"20\" data-file-height=\"20\"></a></span>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Attribution": {
+                "value": "<i>Chlorophyllum rhacodes - Shaggy Parasol mushroom</i> by Julian Paren",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "61487537": {
+        "pageid": 61487537,
+        "ns": 6,
+        "title": "File:Chlorophyllum rhacodes 1.jpg",
+        "index": 30,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 4413321,
+            "width": 4896,
+            "height": 3672,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Chlorophyllum_rhacodes_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Chlorophyllum_rhacodes_1.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=61487537",
+            "sha1": "ad3e648b8a389927046d6e3245591c66f7737d8b",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-08-04 22:48:15",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Chlorophyllum rhacodes 1",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Chlorophyllum rhacodes|Self-published work|Fungi in May|Agaricaceae in Serbia|Jestive ili ne upoznajmo ih sve",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "The Shaggy parasol is the common name for three closely related species of mushroom, Chlorophyllum rhacodes (or rachodes), C. olivieri and C. brunneum, found in North America, Europe and Southern Africa (the latter species is also found in Australia",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-05-21 17:26:00",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:JovanaKoturov&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:JovanaKoturov (page does not exist)\">JovanaKoturov</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Agaricaceae in Serbia"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Chlorophyllum rhacodes"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in May"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Jestive ili ne upoznajmo ih sve"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "95803747": {
+        "pageid": 95803747,
+        "ns": 6,
+        "title": "File:Chlorophyllum rhacodes 101849940.jpg",
+        "index": 22,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1413074,
+            "width": 1365,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Chlorophyllum_rhacodes_101849940.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Chlorophyllum_rhacodes_101849940.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=95803747",
+            "sha1": "83ce49d2af7ac1f2cae2b144a8a6be3525c0596a",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-11-04 16:53:30",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Chlorophyllum rhacodes 101849940",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Chlorophyllum rhacodes|Media from iNaturalist|Fungi in October|INaturalist images reviewed by iNaturalistReviewBot|Agaricales in Romania|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|Romania photographs taken on 2020-10-23",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "46.829457",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "23.553535",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Shaggy Parasol (<i>Chlorophyllum rhacodes</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-10-23",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/101849940\">https://www.inaturalist.org/photos/101849940</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/297496\">Conrad Altmann</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "176896737": {
+        "pageid": 176896737,
+        "ns": 6,
+        "title": "File:Chlorophyllum rhacodes 11.2023.jpg",
+        "index": 14,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 908565,
+            "width": 2112,
+            "height": 4608,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/15/Chlorophyllum_rhacodes_11.2023.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Chlorophyllum_rhacodes_11.2023.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=176896737",
+            "sha1": "af43746f506a9e1ed037e04578cdb2bb3683c5b2",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2025-10-17 16:20:55",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Chlorophyllum rhacodes 11.2023",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Chlorophyllum rhacodes|Self-published work|Files with coordinates missing SDC location of creation (50° N, 4° E)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "50.360771",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "4.614419",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "La Lépiote déguenillée ou Coulemelle rougissante, caractérisée par un chapeau couvert d'écailles laineuses et recourbées.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2023-11-11 14:12:31",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:DidierFy&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:DidierFy (page does not exist)\">DidierFy</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "61487536": {
+        "pageid": 61487536,
+        "ns": 6,
+        "title": "File:Chlorophyllum rhacodes 2.jpg",
+        "index": 39,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3759446,
+            "width": 4896,
+            "height": 3672,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Chlorophyllum_rhacodes_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Chlorophyllum_rhacodes_2.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=61487536",
+            "sha1": "d337f217eec6bad6bbb6c5e52701352052d2d9d1",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-08-04 22:48:15",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Chlorophyllum rhacodes 2",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Chlorophyllum rhacodes|Self-published work|Fungi in May|Agaricaceae in Serbia|Jestive ili ne upoznajmo ih sve",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Chlorophyllum (formerly Macrolepiota) rhacodes, the Shaggy Parasol, is a fairly common mushroom found mainly in or beside woods and hedges.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-05-21 17:26:00",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:JovanaKoturov&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:JovanaKoturov (page does not exist)\">JovanaKoturov</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Agaricaceae in Serbia"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Chlorophyllum rhacodes"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in May"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Jestive ili ne upoznajmo ih sve"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "7751441": {
+        "pageid": 7751441,
+        "ns": 6,
+        "title": "File:Chlorophyllum rhacodes 2009-09-06.jpg",
+        "index": 21,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3096591,
+            "width": 2112,
+            "height": 2816,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/50/Chlorophyllum_rhacodes_2009-09-06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Chlorophyllum_rhacodes_2009-09-06.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=7751441",
+            "sha1": "7a3ed9a2511b8ed7b7e6e56483c2f3b6a65edba2",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2009-09-07 00:35:20",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Chlorophyllum rhacodes 2009-09-06",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Chlorophyllum rhacodes|Taken with Olympus SP-500UZ|Self-published work|PD-self|Fungi in September",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i><a href=\"//commons.wikimedia.org/wiki/Chlorophyllum_rhacodes\" title=\"Chlorophyllum rhacodes\">Chlorophyllum rhacodes</a></i> taken in Kelowna, BC Canada",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2009-09-06",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Accuruss\" title=\"User:Accuruss\">Accuruss</a>",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "yes, this is mine not published anywhere else",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Chlorophyllum rhacodes"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in September"
+          },
+          {
+            "ns": 14,
+            "title": "Category:PD-self"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Olympus SP-500UZ"
+          }
+        ]
+      },
+      "61487540": {
+        "pageid": 61487540,
+        "ns": 6,
+        "title": "File:Chlorophyllum rhacodes 4.jpg",
+        "index": 31,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 4336874,
+            "width": 4896,
+            "height": 3672,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Chlorophyllum_rhacodes_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Chlorophyllum_rhacodes_4.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=61487540",
+            "sha1": "533ff645fb543137d8be48d35530e3577cfedf32",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-08-04 22:48:17",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Chlorophyllum rhacodes 4",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Chlorophyllum rhacodes|Self-published work|Fungi in May|Agaricaceae in Serbia|Jestive ili ne upoznajmo ih sve",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "The Shaggy parasol is the common name for three closely related species of mushroom, Chlorophyllum rhacodes (or rachodes), C. olivieri and C. brunneum, found in North America, Europe and Southern Africa (the latter species is also found in Australia",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-05-21 17:26:00",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:JovanaKoturov&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:JovanaKoturov (page does not exist)\">JovanaKoturov</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Agaricaceae in Serbia"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          }
+        ]
+      },
+      "61487541": {
+        "pageid": 61487541,
+        "ns": 6,
+        "title": "File:Chlorophyllum rhacodes 5.jpg",
+        "index": 36,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 4078727,
+            "width": 4896,
+            "height": 3672,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Chlorophyllum_rhacodes_5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Chlorophyllum_rhacodes_5.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=61487541",
+            "sha1": "275edcc059261f54870f3c80023d6307e87c2f29",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-08-04 22:48:17",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Chlorophyllum rhacodes 5",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Chlorophyllum rhacodes|Self-published work|Fungi in May|Agaricaceae in Serbia|Jestive ili ne upoznajmo ih sve",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "The Shaggy parasol is the common name for three closely related species of mushroom, Chlorophyllum rhacodes (or rachodes), C. olivieri and C. brunneum, found in North America, Europe and Southern Africa (the latter species is also found in Australia",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-05-21 17:26:00",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:JovanaKoturov&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:JovanaKoturov (page does not exist)\">JovanaKoturov</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "61487542": {
+        "pageid": 61487542,
+        "ns": 6,
+        "title": "File:Chlorophyllum rhacodes 6.jpg",
+        "index": 25,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 4194562,
+            "width": 4896,
+            "height": 3672,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Chlorophyllum_rhacodes_6.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Chlorophyllum_rhacodes_6.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=61487542",
+            "sha1": "dafd2c9c5593d7e099fc0b8523e37d67d73fd169",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-08-04 22:48:18",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Chlorophyllum rhacodes 6",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Chlorophyllum rhacodes|Self-published work|Fungi in May|Agaricaceae in Serbia|Jestive ili ne upoznajmo ih sve",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "The Shaggy parasol is the common name for three closely related species of mushroom, Chlorophyllum rhacodes (or rachodes), C. olivieri and C. brunneum, found in North America, Europe and Southern Africa (the latter species is also found in Australia",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-05-21 17:26:00",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:JovanaKoturov&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:JovanaKoturov (page does not exist)\">JovanaKoturov</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "95803823": {
+        "pageid": 95803823,
+        "ns": 6,
+        "title": "File:Chlorophyllum rhacodes 79233349.jpg",
+        "index": 16,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 964629,
+            "width": 2048,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Chlorophyllum_rhacodes_79233349.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Chlorophyllum_rhacodes_79233349.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=95803823",
+            "sha1": "882a5e91022003f1fb99d3c69249c980fb6d6bc2",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-11-04 16:58:00",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Chlorophyllum rhacodes 79233349",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Chlorophyllum rhacodes|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|United States photographs taken on 2014-06-16|Agaricales in New Jersey|Uploaded with iNaturalist2Commons|Agaricaceae in the United States|Fungi of New Jersey in June",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "40.849250",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-74.700500",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Shaggy Parasol (<i>Chlorophyllum rhacodes</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2014-06-16",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/79233349\">https://www.inaturalist.org/photos/79233349</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/450051\">mebro</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "142015364": {
+        "pageid": 142015364,
+        "ns": 6,
+        "title": "File:Chlorophyllum rhacodes 8.jpg",
+        "index": 12,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2204432,
+            "width": 3024,
+            "height": 4032,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/81/Chlorophyllum_rhacodes_8.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Chlorophyllum_rhacodes_8.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=142015364",
+            "sha1": "49266d053122e35e1db2b537ae4135922f107953",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-12-11 08:31:33",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Chlorophyllum rhacodes 8",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Chlorophyllum rhacodes|Self-published work|Files with coordinates missing SDC location of creation",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "43.031442",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-2.401000",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Chlorophyllum rhacodes 8",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2023-12-10",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Jose_Angel_Urquia_Goitia&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Jose Angel Urquia Goitia (page does not exist)\">Jose Angel Urquia Goitia</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "95803820": {
+        "pageid": 95803820,
+        "ns": 6,
+        "title": "File:Chlorophyllum rhacodes 80615957.jpg",
+        "index": 26,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 853448,
+            "width": 2048,
+            "height": 1152,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/69/Chlorophyllum_rhacodes_80615957.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Chlorophyllum_rhacodes_80615957.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=95803820",
+            "sha1": "004cca113822ab52c463c73f9c9284a506508569",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-11-04 16:57:40",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Chlorophyllum rhacodes 80615957",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Chlorophyllum rhacodes|Media from iNaturalist|Fungi in June|INaturalist images reviewed by iNaturalistReviewBot|Agaricaceae in France|Files with coordinates missing SDC location of creation|Fungi of Auvergne-Rhône-Alpes|Uploaded with iNaturalist2Commons|Auvergne-Rhône-Alpes photographs taken on 2020-06-24",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "45.964081",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "4.661460",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Shaggy Parasol (<i>Chlorophyllum rhacodes</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-06-24",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/80615957\">https://www.inaturalist.org/photos/80615957</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/2143764\">Julien Lepage</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "95803812": {
+        "pageid": 95803812,
+        "ns": 6,
+        "title": "File:Chlorophyllum rhacodes 84032562.jpg",
+        "index": 18,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1361161,
+            "width": 2048,
+            "height": 1580,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Chlorophyllum_rhacodes_84032562.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Chlorophyllum_rhacodes_84032562.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=95803812",
+            "sha1": "7c2f16d7f6e486f659c9ef3fb605ad338f432b80",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-11-04 16:57:16",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Chlorophyllum rhacodes 84032562",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Chlorophyllum rhacodes|Fungi of Scotland|Media from iNaturalist|Fungi in July|INaturalist images reviewed by iNaturalistReviewBot|United Kingdom photographs taken on 2011-07-31|Uploaded with iNaturalist2Commons|Chlorophyllum in the United Kingdom|Files with coordinates missing SDC location of creation (55° N, 3° W)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "55.864860",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-2.855029",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Shaggy Parasol (<i>Chlorophyllum rhacodes</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2011-07-31",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/84032562\">https://www.inaturalist.org/photos/84032562</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/3916\">Sandy Rae</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "95803765": {
+        "pageid": 95803765,
+        "ns": 6,
+        "title": "File:Chlorophyllum rhacodes 99844093.jpg",
+        "index": 35,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 700594,
+            "width": 2048,
+            "height": 1365,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/71/Chlorophyllum_rhacodes_99844093.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Chlorophyllum_rhacodes_99844093.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=95803765",
+            "sha1": "79b93874087e3b267c02f05f69be535e60154a79",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-11-04 16:54:41",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Chlorophyllum rhacodes 99844093",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Chlorophyllum rhacodes|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Netherlands photographs taken on 2020-10-11|Fungi of Noordwijk, South Holland|Uploaded with iNaturalist2Commons|Fungi of South Holland in October|Chlorophyllum in South Holland|Photographs by Rudolphous of Nature (Netherlands)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "52.267790",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "4.463221",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Shaggy Parasol (<i>Chlorophyllum rhacodes</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-10-11",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/99844093\">https://www.inaturalist.org/photos/99844093</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/3599717\">Michel Langeveld</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "148706128": {
+        "pageid": 148706128,
+        "ns": 6,
+        "title": "File:Chlorophyllum rhacodes Czubajnik czerwieniejący 2021-08-21 Ślęża 01.jpg",
+        "index": 24,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1650676,
+            "width": 2904,
+            "height": 3872,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Chlorophyllum_rhacodes_Czubajnik_czerwieniej%C4%85cy_2021-08-21_%C5%9Al%C4%99%C5%BCa_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Chlorophyllum_rhacodes_Czubajnik_czerwieniej%C4%85cy_2021-08-21_%C5%9Al%C4%99%C5%BCa_01.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=148706128",
+            "sha1": "05c3ab2ce41ed3fb8782eeaeb74f747da9e8e246",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2024-05-25 10:59:12",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Chlorophyllum rhacodes Czubajnik czerwieniejący 2021-08-21 Ślęża 01",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Chlorophyllum rhacodes|Self-published work|Chlorophyllum rhacodes in Poland|Fungi by Agnieszka Kwiecień",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Shaggy parasol (<i><a href=\"//commons.wikimedia.org/wiki/Chlorophyllum_rhacodes\" title=\"Chlorophyllum rhacodes\">Chlorophyllum rhacodes</a></i>) in Mount Ślęża nature reserve, SW Poland.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-08-21",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Nova\" title=\"User:Nova\">Agnieszka Kwiecień, Nova</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "148706127": {
+        "pageid": 148706127,
+        "ns": 6,
+        "title": "File:Chlorophyllum rhacodes Czubajnik czerwieniejący 2021-08-21 Ślęża 02.jpg",
+        "index": 28,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1102223,
+            "width": 2543,
+            "height": 3391,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Chlorophyllum_rhacodes_Czubajnik_czerwieniej%C4%85cy_2021-08-21_%C5%9Al%C4%99%C5%BCa_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Chlorophyllum_rhacodes_Czubajnik_czerwieniej%C4%85cy_2021-08-21_%C5%9Al%C4%99%C5%BCa_02.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=148706127",
+            "sha1": "e3bce942131a5f5d941488fb83aab13cee5ff512",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2024-05-25 10:59:12",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Chlorophyllum rhacodes Czubajnik czerwieniejący 2021-08-21 Ślęża 02",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Chlorophyllum rhacodes|Self-published work|Chlorophyllum rhacodes in Poland|Fungi by Agnieszka Kwiecień",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Shaggy parasol (<i><a href=\"//commons.wikimedia.org/wiki/Chlorophyllum_rhacodes\" title=\"Chlorophyllum rhacodes\">Chlorophyllum rhacodes</a></i>) in Mount Ślęża nature reserve, SW Poland.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-08-21",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Nova\" title=\"User:Nova\">Agnieszka Kwiecień, Nova</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "3364124": {
+        "pageid": 3364124,
+        "ns": 6,
+        "title": "File:Chlorophyllum rhacodes East Bohemia.jpg",
+        "index": 40,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 928659,
+            "width": 1000,
+            "height": 1320,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Chlorophyllum_rhacodes_East_Bohemia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Chlorophyllum_rhacodes_East_Bohemia.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=3364124",
+            "sha1": "38cafbe24173fb6c7d7a40b8118d61ed26718ca6",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2008-01-09 22:51:03",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Chlorophyllum rhacodes East Bohemia",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Chlorophyllum rhacodes|GFDL|Files with no machine-readable source|License migration completed|Self-published work|Assumed own work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<p><i><a href=\"//commons.wikimedia.org/wiki/Chlorophyllum_rhacodes\" title=\"Chlorophyllum rhacodes\">Chlorophyllum rhacodes</a></i>, East Bohemia, Europe\nBedla vysoká, východní Čechy\nPhoto September 2007\n</p>\nAuthor= <a href=\"//commons.wikimedia.org/wiki/User:Karelj\" title=\"User:Karelj\">Karelj</a>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "9 January 2008 (original upload date)",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "No machine-readable source provided. Own work assumed (based on copyright claims).",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "No machine-readable author provided. <a href=\"//commons.wikimedia.org/wiki/User:Karelj\" title=\"User:Karelj\">Karelj</a> assumed (based on copyright claims).",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/licenses/by-sa/3.0/",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Assumed own work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0-migrated"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Chlorophyllum rhacodes"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with no machine-readable source"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration completed"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "74197626": {
+        "pageid": 74197626,
+        "ns": 6,
+        "title": "File:Chlorophyllum rhacodes Kiev2.jpg",
+        "index": 32,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3066807,
+            "width": 4000,
+            "height": 3000,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/20/Chlorophyllum_rhacodes_Kiev2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Chlorophyllum_rhacodes_Kiev2.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=74197626",
+            "sha1": "951c2c6b616aa075dab9a6fc51a340ab9f3fbf8e",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-11-07 01:11:33",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Chlorophyllum rhacodes Kiev2",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Chlorophyllum rhacodes|CC-Zero|Self-published work|Fungi of Ukraine in October|Fungi of Kyiv|Agaricaceae in Ukraine|Files with coordinates missing SDC location of creation|Ukraine photographs taken on 2018-10-20",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "50.489568",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "30.357523",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Chlorophyllum rhacodes</i> in the forest near Novobilychi, Kiev, Ukraine",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2018-10-20 09:22:48",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"mw:WikiLink\" href=\"https://commons.wikimedia.org/wiki/User:%D0%90%D0%B8%D0%BC%D0%B0%D0%B8%D0%BD%D0%B0_%D1%85%D0%B8%D0%BA%D0%B0%D1%80%D0%B8\" title=\"User:Аимаина хикари\">Аимаина хикари</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "74197625": {
+        "pageid": 74197625,
+        "ns": 6,
+        "title": "File:Chlorophyllum rhacodes Kiev3.jpg",
+        "index": 15,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2816704,
+            "width": 4000,
+            "height": 3000,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Chlorophyllum_rhacodes_Kiev3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Chlorophyllum_rhacodes_Kiev3.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=74197625",
+            "sha1": "664fd34f92d90c366aea0788c45882a5290f3201",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-11-07 01:11:33",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Chlorophyllum rhacodes Kiev3",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Chlorophyllum rhacodes|CC-Zero|Self-published work|Fungi of Ukraine in October|Fungi of Kyiv|Agaricaceae in Ukraine|Files with coordinates missing SDC location of creation|Ukraine photographs taken on 2018-10-20",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "50.489568",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "30.357523",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Chlorophyllum rhacodes</i> in the forest near Novobilychi, Kiev, Ukraine",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2018-10-20 09:23:05",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:%D0%90%D0%B8%D0%BC%D0%B0%D0%B8%D0%BD%D0%B0_%D1%85%D0%B8%D0%BA%D0%B0%D1%80%D0%B8\" title=\"User:Аимаина хикари\">Аимаина хикари</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "2784926": {
+        "pageid": 2784926,
+        "ns": 6,
+        "title": "File:Chlorophyllum rhacodes LC0093-2.jpg",
+        "index": 23,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1474355,
+            "width": 1240,
+            "height": 1860,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Chlorophyllum_rhacodes_LC0093-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Chlorophyllum_rhacodes_LC0093-2.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=2784926",
+            "sha1": "2c2cd2d56e2c4d587d06d330deef0f079fb2b60e",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2007-09-20 20:38:33",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Chlorophyllum rhacodes LC0093-2",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Chlorophyllum rhacodes|Taken with Olympus E-500|Self-published work|Fungi in August",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<a href=\"https://en.wikipedia.org/wiki/Shaggy_parasol\" class=\"extiw\" title=\"en:Shaggy parasol\">Shaggy parasol</a> (<i><a href=\"//commons.wikimedia.org/wiki/Chlorophyllum_rhacodes\" title=\"Chlorophyllum rhacodes\">Chlorophyllum rhacodes</a></i>), Burkhardtsdorf, Germany",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2007-08-15",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:LC-de\" title=\"User:LC-de\">Jörg Hempel</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Chlorophyllum rhacodes"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in August"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Olympus E-500"
+          }
+        ]
+      },
+      "2605691": {
+        "pageid": 2605691,
+        "ns": 6,
+        "title": "File:Chlorophyllum rhacodes LC0093.jpg",
+        "index": 3,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2330281,
+            "width": 1500,
+            "height": 2105,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/26/Chlorophyllum_rhacodes_LC0093.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Chlorophyllum_rhacodes_LC0093.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=2605691",
+            "sha1": "e8b0ae9d17e206725a583c98ac71b6b5ea0c5fdc",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2007-08-22 18:02:41",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Chlorophyllum rhacodes LC0093",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Chlorophyllum rhacodes|Taken with Olympus E-500|Self-published work|Featured pictures on Wikipedia, English|Featured pictures on Wikipedia, German|Featured pictures of Saxony|Files with coordinates missing SDC location of creation|Agaricaceae in Saxony|Saxony photographs taken on 2007-08-15|Agaricales in Saxony in August|Fungi of Burkhardtsdorf|By LC-de|Featured pictures by User:LC-de",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality|featured",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "50.714139",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "12.939917",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<a href=\"https://en.wikipedia.org/wiki/Shaggy_parasol\" class=\"extiw\" title=\"en:Shaggy parasol\">Shaggy parasol</a> (<i><a href=\"//commons.wikimedia.org/wiki/Chlorophyllum_rhacodes\" title=\"Chlorophyllum rhacodes\">Chlorophyllum rhacodes</a></i>), Burkhardtsdorf, Germany",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2007-08-15",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:LC-de\" title=\"User:LC-de\">Jörg Hempel</a>",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:LC-de\" title=\"User:LC-de\">Jörg Hempel</a>, the copyright holder of this work, hereby publishes it under the following license:",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0 de",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0 de",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Attribution": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:LC-de\" title=\"User:LC-de\">Jörg Hempel</a>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0/de/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0-de",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Agaricaceae in Saxony"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Agaricales in Saxony in August"
+          },
+          {
+            "ns": 14,
+            "title": "Category:By LC-de"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-2.0-DE"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Chlorophyllum rhacodes"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Featured pictures by User:LC-de"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Featured pictures of Saxony"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Featured pictures on Wikimedia Commons"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Featured pictures on Wikipedia, English"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Featured pictures on Wikipedia, German"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Burkhardtsdorf"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of Agaricales"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of fungi in Germany"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of nature in Saxony"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Saxony photographs taken on 2007-08-15"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Olympus E-500"
+          }
+        ]
+      },
+      "45425859": {
+        "pageid": 45425859,
+        "ns": 6,
+        "title": "File:Knolparasolzwam. (Chlorophyllum rhacodes) 01.jpg",
+        "index": 6,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 6895273,
+            "width": 3370,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Knolparasolzwam._%28Chlorophyllum_rhacodes%29_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Knolparasolzwam._(Chlorophyllum_rhacodes)_01.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=45425859",
+            "sha1": "4b55600506485243dcad90fcdbbef2e672a991e4",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-12-04 19:01:08",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Knolparasolzwam. (Chlorophyllum rhacodes) 01",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Chlorophyllum rhacodes|Self-published work|Netherlands photographs taken on 2015-09-25|Chlorophyllum in the Netherlands|Fungi of Friesland in September|Fungi of Tuinreservaat Jonkervallei",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "52.967450",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "5.784500",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Knolparasolzwam. (<i>Chlorophyllum rhacodes</i>).",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2015-09-25 14:31:34",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Agnes_Monkelbaan\" title=\"User:Agnes Monkelbaan\">Agnes Monkelbaan</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Chlorophyllum in the Netherlands"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Chlorophyllum rhacodes"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Friesland in September"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Tuinreservaat Jonkervallei"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Netherlands photographs taken on 2015-09-25"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images by Agnes Monkelbaan"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "45425861": {
+        "pageid": 45425861,
+        "ns": 6,
+        "title": "File:Knolparasolzwam. (Chlorophyllum rhacodes) 02.jpg",
+        "index": 5,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 12944297,
+            "width": 5184,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/af/Knolparasolzwam._%28Chlorophyllum_rhacodes%29_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Knolparasolzwam._(Chlorophyllum_rhacodes)_02.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=45425861",
+            "sha1": "4a5b6473fcdd64a993315268e3df4dfaece651f5",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-12-04 19:01:09",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Knolparasolzwam. (Chlorophyllum rhacodes) 02",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Chlorophyllum rhacodes|Self-published work|Netherlands photographs taken on 2015-09-25|Chlorophyllum in the Netherlands|Fungi of Friesland in September|Fungi of Tuinreservaat Jonkervallei",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "52.967450",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "5.784500",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Knolparasolzwam. (<i>Chlorophyllum rhacodes</i>).",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2015-09-25 14:34:07",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Agnes_Monkelbaan\" title=\"User:Agnes Monkelbaan\">Agnes Monkelbaan</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Chlorophyllum in the Netherlands"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Chlorophyllum rhacodes"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Friesland in September"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Tuinreservaat Jonkervallei"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Netherlands photographs taken on 2015-09-25"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images by Agnes Monkelbaan"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "83287506": {
+        "pageid": 83287506,
+        "ns": 6,
+        "title": "File:Knolparasolzwam (Chlorophyllum rhacodes) (d.j.b.) 01.jpg",
+        "index": 8,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 4871123,
+            "width": 2487,
+            "height": 2487,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Knolparasolzwam_%28Chlorophyllum_rhacodes%29_%28d.j.b.%29_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Knolparasolzwam_(Chlorophyllum_rhacodes)_(d.j.b.)_01.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=83287506",
+            "sha1": "afc21c70626900ad0e43d6d15677692399b1f5f9",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2019-10-22 16:45:38",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Knolparasolzwam (Chlorophyllum rhacodes) (d.j.b.) 01",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Chlorophyllum rhacodes|Self-published work|Netherlands photographs taken on 2019-10-20|Chlorophyllum in the Netherlands|Fungi of Friesland in October|Fungi of De Famberhorst",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "52.969900",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "5.785300",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<a href=\"https://en.wikipedia.org/wiki/Shaggy_parasol\" class=\"extiw\" title=\"en:Shaggy parasol\"><i>Chlorophyllum rhacodes</i></a>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2019-10-20 09:25:19",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Famberhorst\" title=\"User:Famberhorst\">Dominicus Johannes Bergsma</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "83287507": {
+        "pageid": 83287507,
+        "ns": 6,
+        "title": "File:Knolparasolzwam (Chlorophyllum rhacodes) (d.j.b.) 02.jpg",
+        "index": 7,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 6659781,
+            "width": 3247,
+            "height": 3014,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Knolparasolzwam_%28Chlorophyllum_rhacodes%29_%28d.j.b.%29_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Knolparasolzwam_(Chlorophyllum_rhacodes)_(d.j.b.)_02.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=83287507",
+            "sha1": "61507f299b64f25ee3a7141441ae0a11eab729d4",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2019-10-22 16:45:38",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Knolparasolzwam (Chlorophyllum rhacodes) (d.j.b.) 02",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Chlorophyllum rhacodes|Self-published work|Netherlands photographs taken on 2019-10-20|Chlorophyllum in the Netherlands|Fungi of Friesland in October|Fungi of De Famberhorst",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "52.969900",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "5.785300",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<a href=\"https://en.wikipedia.org/wiki/Shaggy_parasol\" class=\"extiw\" title=\"en:Shaggy parasol\"><i>Chlorophyllum rhacodes</i></a>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2019-10-20 09:28:21",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Famberhorst\" title=\"User:Famberhorst\">Dominicus Johannes Bergsma</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "83287508": {
+        "pageid": 83287508,
+        "ns": 6,
+        "title": "File:Knolparasolzwam (Chlorophyllum rhacodes) (d.j.b.) 03.jpg",
+        "index": 4,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 9775823,
+            "width": 4608,
+            "height": 2880,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/60/Knolparasolzwam_%28Chlorophyllum_rhacodes%29_%28d.j.b.%29_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Knolparasolzwam_(Chlorophyllum_rhacodes)_(d.j.b.)_03.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=83287508",
+            "sha1": "fca2b400670063541436e3a171a4d157e085b113",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2019-10-22 16:45:38",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Knolparasolzwam (Chlorophyllum rhacodes) (d.j.b.) 03",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Chlorophyllum rhacodes|Self-published work|Netherlands photographs taken on 2019-10-20|Chlorophyllum in the Netherlands|Fungi of Friesland in October|Fungi of De Famberhorst",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "52.969900",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "5.785300",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<a href=\"https://en.wikipedia.org/wiki/Shaggy_parasol\" class=\"extiw\" title=\"en:Shaggy parasol\"><i>Chlorophyllum rhacodes</i></a>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2019-10-20 09:38:41",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Famberhorst\" title=\"User:Famberhorst\">Dominicus Johannes Bergsma</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "98043073": {
+        "pageid": 98043073,
+        "ns": 6,
+        "title": "File:Knolparasolzwam (Chlorophyllum rhacodes) 06-11-2020 (actm.) 01.jpg",
+        "index": 2,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 15936999,
+            "width": 4305,
+            "height": 3240,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/21/Knolparasolzwam_%28Chlorophyllum_rhacodes%29_06-11-2020_%28actm.%29_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Knolparasolzwam_(Chlorophyllum_rhacodes)_06-11-2020_(actm.)_01.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=98043073",
+            "sha1": "d88b398d2255cc9a474b0214795aa1b997a19b4a",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-12-25 06:22:30",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Knolparasolzwam (Chlorophyllum rhacodes) 06-11-2020 (actm.) 01",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Chlorophyllum rhacodes|Self-published work|Close-up photographs of mushrooms|Fallen leaves|Featured Images by Agnes Monkelbaan|Created with Helicon Focus|Netherlands photographs taken on 2020-11-06|2020 in De Fryske Marren|Quality photographs of bokeh|Bokeh photographs of fungi|Bokeh photographs of the Netherlands|Fungi of Friesland in November|Chlorophyllum in Friesland|Focus stacking images by User:Agnes Monkelbaan|Focus stacking images of mushrooms|Fungi of De Famberhorst|Featured pictures of the Netherlands by User:Agnes Monkelbaan|Focus stacked image|Featured pictures of fungi in the Netherlands",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality|featured|valued",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "52.969900",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "5.785300",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<a href=\"https://en.wikipedia.org/wiki/Shaggy_parasol\" class=\"extiw\" title=\"en:Shaggy parasol\">Shaggy parasol (<i>Chlorophyllum rhacodes</i>)</a>. Focus stack of 20 photos.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-11-06 14:25:49",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Agnes_Monkelbaan\" title=\"User:Agnes Monkelbaan\">Agnes Monkelbaan</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "98043074": {
+        "pageid": 98043074,
+        "ns": 6,
+        "title": "File:Knolparasolzwam (Chlorophyllum rhacodes) 06-11-2020 (actm.) 02.jpg",
+        "index": 10,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 15234171,
+            "width": 4175,
+            "height": 3340,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/63/Knolparasolzwam_%28Chlorophyllum_rhacodes%29_06-11-2020_%28actm.%29_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Knolparasolzwam_(Chlorophyllum_rhacodes)_06-11-2020_(actm.)_02.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=98043074",
+            "sha1": "0fa2f4bb3b0ff6e453bfb21894b56d4150b12f78",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-12-25 06:22:30",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Knolparasolzwam (Chlorophyllum rhacodes) 06-11-2020 (actm.) 02",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Chlorophyllum rhacodes|Self-published work|Close-up photographs of mushrooms|Created with Helicon Focus|Netherlands photographs taken on 2020-11-06|2020 in De Fryske Marren|Fungi of Friesland in November|Chlorophyllum in Friesland|Focus stacking images by User:Agnes Monkelbaan|Focus stacking images of mushrooms|Fungi of De Famberhorst",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "52.969900",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "5.785300",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<a href=\"https://en.wikipedia.org/wiki/Shaggy_parasol\" class=\"extiw\" title=\"en:Shaggy parasol\">Shaggy parasol (<i>Chlorophyllum rhacodes</i>)</a>. Focus stack of 20 photos.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-11-06 14:29:10",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Agnes_Monkelbaan\" title=\"User:Agnes Monkelbaan\">Agnes Monkelbaan</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "95573196": {
+        "pageid": 95573196,
+        "ns": 6,
+        "title": "File:Knolparasolzwam (Chlorophyllum rhacodes) 26-10-2020 (d.j.b.).jpg",
+        "index": 1,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 9512636,
+            "width": 4936,
+            "height": 3291,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/38/Knolparasolzwam_%28Chlorophyllum_rhacodes%29_26-10-2020_%28d.j.b.%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Knolparasolzwam_(Chlorophyllum_rhacodes)_26-10-2020_(d.j.b.).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=95573196",
+            "sha1": "9a58c47e83e3f8bb02891508251295a209caef59",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-10-31 16:20:03",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Knolparasolzwam (Chlorophyllum rhacodes) 26-10-2020 (d.j.b.)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Chlorophyllum rhacodes|Self-published work|Close-up photographs of mushrooms|Featured Images by Famberhorst|Created with Helicon Focus|Netherlands photographs taken on 2020-10-26|2020 in De Fryske Marren|Fungi of Friesland in October|Focus stacking images by User:Famberhorst|Focus stacking images of mushrooms|Fungi of De Famberhorst|Featured pictures of the Netherlands by User:Famberhorst|Focus stacked image|Featured pictures of fungi in the Netherlands",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality|featured|valued",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "52.969900",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "5.785300",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<a href=\"https://en.wikipedia.org/wiki/Shaggy_parasol\" class=\"extiw\" title=\"en:Shaggy parasol\">Shaggy parasol (<i>Chlorophyllum rhacodes</i>)</a>. Focus stack of 15 photos.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-10-26 10:11:00",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Famberhorst\" title=\"User:Famberhorst\">Dominicus Johannes Bergsma</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "22014551": {
+        "pageid": 22014551,
+        "ns": 6,
+        "title": "File:Kumulatka obszarpana (Chlorophyllum rhacodes).jpg",
+        "index": 13,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1249407,
+            "width": 2560,
+            "height": 1920,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/52/Kumulatka_obszarpana_%28Chlorophyllum_rhacodes%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Kumulatka_obszarpana_(Chlorophyllum_rhacodes).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=22014551",
+            "sha1": "94b7805d0d666df83206d0208e97c18f85a7d990",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2012-10-11 11:02:31",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Kumulatka obszarpana (Chlorophyllum rhacodes)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Chlorophyllum rhacodes|Self-published work|Fungi in October|Chlorophyllum rhacodes in Poland",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Kumulatka obszarpana (Chlorophyllum rhacodes (Vittad.) Vellinga) – grzyb z rodziny pieczarkowatych. We wcześniejszych klasyfikacjach gatunek ten zaliczany był m.in. do rodzaju Macrolepiota jako czubajka czerwieniejąca (Macrolepiota rhacodes).",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2012-10-10 12:05:28",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Jckowal\" title=\"User:Jckowal\">Jckowal</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Chlorophyllum rhacodes"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Chlorophyllum rhacodes in Poland"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in October"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "75304554": {
+        "pageid": 75304554,
+        "ns": 6,
+        "title": "File:Shaggy Parasol (Chlorophyllum rhacodes) (4933553658).jpg",
+        "index": 17,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 999846,
+            "width": 1736,
+            "height": 2316,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/18/Shaggy_Parasol_%28Chlorophyllum_rhacodes%29_%284933553658%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Shaggy_Parasol_(Chlorophyllum_rhacodes)_(4933553658).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=75304554",
+            "sha1": "72c72432526e1238b456bafa49048851ca5eaecc",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-12-25 05:02:43",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Shaggy Parasol (Chlorophyllum rhacodes) (4933553658)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Chlorophyllum rhacodes|Fungi in August|United Kingdom photographs taken on 2010-08-21|Flickr images reviewed by FlickreviewR 2|Fungi of Stevenage|Chlorophyllum in the United Kingdom|Photos of fungi by User:AnemoneProjectors|Files with coordinates missing SDC location of creation (51° N, 1° W)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.914403",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-0.180997",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Shaggy Parasol (<i>Chlorophyllum rhacodes</i>), near Hampson Park, Stevenage, 21 August 2010.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2010-08-21 17:29",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/anemoneprojectors/4933553658/\">Shaggy Parasol (Chlorophyllum rhacodes)</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:AnemoneProjectors\" title=\"User:AnemoneProjectors\">AnemoneProjectors</a> (<a href=\"//commons.wikimedia.org/wiki/User_talk:AnemoneProjectors\" title=\"User talk:AnemoneProjectors\"><span class=\"signature-talk\">talk</span></a>)",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "155526272": {
+        "pageid": 155526272,
+        "ns": 6,
+        "title": "File:Shaggy parasol mushrooms (Chlorophyllum rhacodes) - geograph.org.uk - 7003324.jpg",
+        "index": 33,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 439873,
+            "width": 1200,
+            "height": 800,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Shaggy_parasol_mushrooms_%28Chlorophyllum_rhacodes%29_-_geograph.org.uk_-_7003324.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Shaggy_parasol_mushrooms_(Chlorophyllum_rhacodes)_-_geograph.org.uk_-_7003324.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=155526272",
+            "sha1": "aa5ce9e539c6c482894e7a8e5782c99afd5e5955",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2024-11-22 06:33:03",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Shaggy parasol mushrooms (Chlorophyllum rhacodes) - geograph.org.uk - 7003324",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Mordington|Images from Geograph Britain and Ireland",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "55.827919",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-2.054567",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Shaggy parasol mushrooms (Chlorophyllum rhacodes) <span class=\"mw-valign-text-top noprint\" typeof=\"mw:File/Frameless\"><a href=\"//commons.wikimedia.org/wiki/File:Shaggy_parasol_mushrooms_(Chlorophyllum_rhacodes)_-_geograph.org.uk_-_7003324.jpg#ooui-php-4\" title=\"Edit this at Structured Data on Commons\"><img alt=\"Edit this at Structured Data on Commons\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"10\" height=\"10\" class=\"mw-file-element\" data-file-width=\"20\" data-file-height=\"20\"></a></span>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-10-25",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.geograph.org.uk/photo/7003324\">Geograph Britain and Ireland</a> <span class=\"mw-valign-text-top noprint\" typeof=\"mw:File/Frameless\"><a href=\"//commons.wikimedia.org/wiki/File:Shaggy_parasol_mushrooms_(Chlorophyllum_rhacodes)_-_geograph.org.uk_-_7003324.jpg#P7482\" title=\"Edit this at Structured Data on Commons\"><img alt=\"Edit this at Structured Data on Commons\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"10\" height=\"10\" class=\"mw-file-element\" data-file-width=\"20\" data-file-height=\"20\"></a></span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.geograph.org.uk/profile/6638\">Walter Baxter</a> <span class=\"mw-valign-text-top noprint\" typeof=\"mw:File/Frameless\"><a href=\"//commons.wikimedia.org/wiki/File:Shaggy_parasol_mushrooms_(Chlorophyllum_rhacodes)_-_geograph.org.uk_-_7003324.jpg#P170\" title=\"Edit this at Structured Data on Commons\"><img alt=\"Edit this at Structured Data on Commons\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"10\" height=\"10\" class=\"mw-file-element\" data-file-width=\"20\" data-file-height=\"20\"></a></span>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Attribution": {
+                "value": "<i>Shaggy parasol mushrooms (Chlorophyllum rhacodes)</i> by Walter Baxter",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "158359106": {
+        "pageid": 158359106,
+        "ns": 6,
+        "title": "File:Şemsiye mantarı (Chlorophyllum rhacodes).jpg",
+        "index": 19,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1999715,
+            "width": 2691,
+            "height": 3400,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/%C5%9Eemsiye_mantar%C4%B1_%28Chlorophyllum_rhacodes%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:%C5%9Eemsiye_mantar%C4%B1_(Chlorophyllum_rhacodes).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=158359106",
+            "sha1": "275eb4b05be8f95adf588c37d668fee46d1d0d6b",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2025-01-22 04:39:48",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Şemsiye mantarı (Chlorophyllum rhacodes)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Chlorophyllum rhacodes|Uploads using Flickypedia|Files with coordinates missing SDC location of creation",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.081581",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "17.028350",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Shaggy parasol <span class=\"mw-valign-text-top noprint\" typeof=\"mw:File/Frameless\"><a href=\"//commons.wikimedia.org/wiki/File:%C5%9Eemsiye_mantar%C4%B1_(Chlorophyllum_rhacodes).jpg#ooui-php-4\" title=\"Edit this at Structured Data on Commons\"><img alt=\"Edit this at Structured Data on Commons\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"10\" height=\"10\" class=\"mw-file-element\" data-file-width=\"20\" data-file-height=\"20\"></a></span>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2024-09-26",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/hedera_baltica/54275013968/\">Flickr</a> <span class=\"mw-valign-text-top noprint\" typeof=\"mw:File/Frameless\"><a href=\"//commons.wikimedia.org/wiki/File:%C5%9Eemsiye_mantar%C4%B1_(Chlorophyllum_rhacodes).jpg#P7482\" title=\"Edit this at Structured Data on Commons\"><img alt=\"Edit this at Structured Data on Commons\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"10\" height=\"10\" class=\"mw-file-element\" data-file-width=\"20\" data-file-height=\"20\"></a></span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/hedera_baltica/\">hedera.baltica</a> <span class=\"mw-valign-text-top noprint\" typeof=\"mw:File/Frameless\"><a href=\"//commons.wikimedia.org/wiki/File:%C5%9Eemsiye_mantar%C4%B1_(Chlorophyllum_rhacodes).jpg#P170\" title=\"Edit this at Structured Data on Commons\"><img alt=\"Edit this at Structured Data on Commons\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"10\" height=\"10\" class=\"mw-file-element\" data-file-width=\"20\" data-file-height=\"20\"></a></span>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

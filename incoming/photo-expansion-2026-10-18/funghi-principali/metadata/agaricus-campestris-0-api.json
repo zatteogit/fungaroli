@@ -1,0 +1,4406 @@
+{
+  "continue": {
+    "clcontinue": "97693509|Photographs_by_Hans-Günter_Wagner",
+    "continue": "||imageinfo"
+  },
+  "query": {
+    "pages": {
+      "116378836": {
+        "pageid": 116378836,
+        "ns": 6,
+        "title": "File:De-Wiesenchampignon.ogg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 25479,
+            "width": 0,
+            "height": 0,
+            "duration": 2.24,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/52/De-Wiesenchampignon.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:De-Wiesenchampignon.ogg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=116378836",
+            "sha1": "b20cbb782652fcfd601a449ac63cde383a80502f",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-03-24 11:36:39",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "De-Wiesenchampignon",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Agaricus campestris|German pronunciation of nouns|Supported by Wikimedia Deutschland|Created with Audacity|Audio files made by jeuwre|Audio files made using a Rode NT-USB (supported by Wikimedia Deutschland)|German pronunciation of words relating to mushrooms",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "pronunciation recording",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-03-24",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Jeuwre\" title=\"User:Jeuwre\">Jeuwre</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "12725711": {
+        "pageid": 12725711,
+        "ns": 6,
+        "title": "File:2010-08-07 Agaricus campestris cropped.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1091499,
+            "width": 2000,
+            "height": 1500,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/2010-08-07_Agaricus_campestris_cropped.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:2010-08-07_Agaricus_campestris_cropped.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=12725711",
+            "sha1": "ab3777f952f37960bf02b7e0106a1d346d4ce902",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-01-17 13:23:55",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "2010-08-07 Agaricus campestris cropped",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Agaricus campestris|Self-published work|Photographs by Andreas Kunze|Fungi in Südliche Fröttmaninger Heide",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Field Mushroom (<i><a href=\"//commons.wikimedia.org/wiki/Agaricus_campestris\" title=\"Agaricus campestris\">Agaricus campestris</a></i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2010-08-07",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Ak_ccm&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Ak ccm (page does not exist)\">Andreas Kunze</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Agaricus campestris"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in Südliche Fröttmaninger Heide"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by Andreas Kunze"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "12725897": {
+        "pageid": 12725897,
+        "ns": 6,
+        "title": "File:2010-08-07 Agaricus campestris gills.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1437723,
+            "width": 2496,
+            "height": 1896,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/fc/2010-08-07_Agaricus_campestris_gills.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:2010-08-07_Agaricus_campestris_gills.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=12725897",
+            "sha1": "1cae5756f620a88f3aaab5db3cd9275c806ed7b8",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2012-03-08 22:15:44",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "2010-08-07 Agaricus campestris gills",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Agaricus campestris|Self-published work|Fungi in Südliche Fröttmaninger Heide",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Field Mushroom (<i>Agaricus campestris</i>), crop of the Gills",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Ak_ccm&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Ak ccm (page does not exist)\">Ak ccm</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Agaricus campestris"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in Südliche Fröttmaninger Heide"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "12725428": {
+        "pageid": 12725428,
+        "ns": 6,
+        "title": "File:2010-08-07 Agaricus campestris.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1920328,
+            "width": 2500,
+            "height": 1900,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/38/2010-08-07_Agaricus_campestris.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:2010-08-07_Agaricus_campestris.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=12725428",
+            "sha1": "d91fb996159217a8916a639939b34302238959bd",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-01-17 13:02:24",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "2010-08-07 Agaricus campestris",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Agaricus campestris|Self-published work|Photographs by Andreas Kunze|Fungi in Südliche Fröttmaninger Heide",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Field Mushroom (<i>Agaricus campestris</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2010-08-07",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Ak_ccm&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Ak ccm (page does not exist)\">Andreas Kunze</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Agaricus campestris"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in Südliche Fröttmaninger Heide"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by Andreas Kunze"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "20200449": {
+        "pageid": 20200449,
+        "ns": 6,
+        "title": "File:2012-02-13 Agaricus campestris L 199587 crop.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1571849,
+            "width": 2000,
+            "height": 1350,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/2012-02-13_Agaricus_campestris_L_199587_crop.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:2012-02-13_Agaricus_campestris_L_199587_crop.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=20200449",
+            "sha1": "c09a9cf9226f0919030a0a7826594fe0d1c0b961",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2012-07-09 13:41:37",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "2012-02-13 Agaricus campestris L 199587 crop",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Agaricus campestris|Retouched pictures|Self-published work|Derivative versions|Uploaded with derivativeFX",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "For more information about this, see the <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_observation/87762\">observation page</a> at Mushroom Observer.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2012-07-09 13:38",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This file was derived from:  <a href=\"//commons.wikimedia.org/wiki/File:2012-02-13_Agaricus_campestris_L_199587.jpg\" title=\"File:2012-02-13 Agaricus campestris L 199587.jpg\">2012-02-13 Agaricus campestris L 199587.jpg</a>: <span typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/File:2012-02-13_Agaricus_campestris_L_199587.jpg\" class=\"mw-file-description\"><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/2012-02-13_Agaricus_campestris_L_199587.jpg/60px-2012-02-13_Agaricus_campestris_L_199587.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"50\" height=\"34\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/2012-02-13_Agaricus_campestris_L_199587.jpg/120px-2012-02-13_Agaricus_campestris_L_199587.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"2566\" data-file-height=\"1745\"></a></span><br>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "This image was created by user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_user/2750\">Byrain</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.<br>You can contact this user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/ask_user_question/2750\">here</a>.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Agaricus campestris"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Derivative versions"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Retouched pictures"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded with derivativeFX"
+          }
+        ]
+      },
+      "18383588": {
+        "pageid": 18383588,
+        "ns": 6,
+        "title": "File:2012-02-13 Agaricus campestris L 199587.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1390458,
+            "width": 2566,
+            "height": 1745,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/95/2012-02-13_Agaricus_campestris_L_199587.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:2012-02-13_Agaricus_campestris_L_199587.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=18383588",
+            "sha1": "72c1bad46e1e903cc6820711c519645880b412b0",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2012-02-14 20:16:48",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "2012-02-13 Agaricus campestris L 199587",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Agaricus campestris|Images from Mushroom Observer|Files from external sources with reviewed licenses|Files with derivative versions|Fungi of Yolo County, California|United States photographs taken on 2012-02-13|Agaricus in the United States|Fungi of California in February|Nature of Davis, California",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "For more information about this, see the <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_observation/87762\">observation page</a> at Mushroom Observer.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2012-02-13",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This image is <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/image/show_image/199587\">Image Number 199587</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "This image was created by user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_user/2750\">Byrain</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.<br>You can contact this user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/ask_user_question/2750\">here</a>.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Agaricus campestris"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Agaricus in the United States"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files from external sources with reviewed licenses"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with derivative versions"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of California in February"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Yolo County, California"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images from Mushroom Observer"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Nature of Davis, California"
+          },
+          {
+            "ns": 14,
+            "title": "Category:United States photographs taken on 2012-02-13"
+          }
+        ]
+      },
+      "18383593": {
+        "pageid": 18383593,
+        "ns": 6,
+        "title": "File:2012-02-13 Agaricus campestris L 199588.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1490402,
+            "width": 2498,
+            "height": 1907,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/06/2012-02-13_Agaricus_campestris_L_199588.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:2012-02-13_Agaricus_campestris_L_199588.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=18383593",
+            "sha1": "47dc1fb9b842f84437c9e0c2ef07787fc70b859f",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2012-02-14 20:18:03",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "2012-02-13 Agaricus campestris L 199588",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Agaricus campestris|Images from Mushroom Observer|Files from external sources with reviewed licenses|Files with coordinates missing SDC location of creation|Fungi of Yolo County, California|United States photographs taken on 2012-02-13|Agaricus in the United States|Fungi of California in February|Nature of Davis, California",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "38.556850",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-121.735000",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "For more information about this, see the <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_observation/87762\">observation page</a> at Mushroom Observer.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2012-02-13",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This image is <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/image/show_image/199588\">Image Number 199588</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "This image was created by user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_user/2750\">Byrain</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.<br>You can contact this user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/ask_user_question/2750\">here</a>.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Agaricus campestris"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Agaricus in the United States"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files from external sources with reviewed licenses"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of California in February"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Yolo County, California"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images from Mushroom Observer"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Nature of Davis, California"
+          },
+          {
+            "ns": 14,
+            "title": "Category:United States photographs taken on 2012-02-13"
+          }
+        ]
+      },
+      "20253852": {
+        "pageid": 20253852,
+        "ns": 6,
+        "title": "File:2012-07-11 Agaricus campestris group 236668.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 433504,
+            "width": 2718,
+            "height": 2087,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/11/2012-07-11_Agaricus_campestris_group_236668.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:2012-07-11_Agaricus_campestris_group_236668.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=20253852",
+            "sha1": "e09be8005a9e4bd951e98fe82e55094cce5c2589",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2012-07-13 20:02:08",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "2012-07-11 Agaricus campestris group 236668",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Agaricus campestris|Images from Mushroom Observer|Files from external sources with reviewed licenses",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i><b>Agaricus campestris</b></i> group",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2012-07-11",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This image is <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/image/show_image/236668\">Image Number 236668</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "This image was created by user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_user/3746\">Christine Braaten (wintersbefore)</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.<br>You can contact this user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/ask_user_question/3746\">here</a>.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Agaricus campestris"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files from external sources with reviewed licenses"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images from Mushroom Observer"
+          }
+        ]
+      },
+      "32359261": {
+        "pageid": 32359261,
+        "ns": 6,
+        "title": "File:2012-10-03 Agaricus campestris.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1994159,
+            "width": 2500,
+            "height": 1800,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/84/2012-10-03_Agaricus_campestris.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:2012-10-03_Agaricus_campestris.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=32359261",
+            "sha1": "0a8926ceecb94a61fc3f425592dc048fa9ffd749",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2014-04-24 14:13:23",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "2012-10-03 Agaricus campestris",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Agaricus campestris|Self-published work|Photographs by Andreas Kunze|Bavaria photographs taken on 2014-04-24|Agaricaceae in Landkreis Donau-Ries|Agaricales in Bavaria in April|Fungi of Mertinger Forst",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Field Mushroom (<i>Agaricus campestris</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "Taken on 24 April 2014, 16:10:38",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Ak_ccm&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Ak ccm (page does not exist)\">Andreas Kunze</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Agaricaceae in Landkreis Donau-Ries"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Agaricales in Bavaria in April"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Agaricus campestris"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Bavaria photographs taken on 2014-04-24"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Mertinger Forst"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by Andreas Kunze"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "68868253": {
+        "pageid": 68868253,
+        "ns": 6,
+        "title": "File:A agaricus campestris.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3130529,
+            "width": 4320,
+            "height": 3240,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/A_agaricus_campestris.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:A_agaricus_campestris.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=68868253",
+            "sha1": "185a1e2e12963192e7c890ecde6d02a2d915238f",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-05-07 10:12:58",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "A agaricus campestris",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Agaricus campestris|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Found on the grass land in Chitwan , Nepal. Consist of mild taste fruty smell, bruses redissh when mature, annulus at the stipe. Edible n medecinal mushroom.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2018-05-06 14:26:03",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Chiranjivisubedi&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Chiranjivisubedi (page does not exist)\">Chiranjivisubedi</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Agaricus campestris"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "171733512": {
+        "pageid": 171733512,
+        "ns": 6,
+        "title": "File:A. campestris Field Mushroom.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3206995,
+            "width": 3072,
+            "height": 4080,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/A._campestris_Field_Mushroom.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:A._campestris_Field_Mushroom.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=171733512",
+            "sha1": "3f5a05fed1ffa579c04cbed94d53e92fb63b460d",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2025-08-06 02:37:06",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "A. campestris Field Mushroom",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Agaricus campestris|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "located in an open field in Bradford, PA. USA .Isolated .",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2025-08-05 17:57:18",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:D.S._Soriano\" title=\"User:D.S. Soriano\">D.S. Soriano</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "31470606": {
+        "pageid": 31470606,
+        "ns": 6,
+        "title": "File:A. campestris.JPG",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1016395,
+            "width": 2048,
+            "height": 1536,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/fb/A._campestris.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:A._campestris.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=31470606",
+            "sha1": "54c2238e0cde273fd1ad511d0ac19d5dbfb2e006",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2014-03-06 10:54:10",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "A. campestris",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Agaricus campestris|Taken with Nikon Coolpix 995|Self-published work|Items with VRTS permission confirmed|Photographs by Thomas Pruß",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "A. campestris",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2003-09-07 17:38:00",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "Bilderspende von Thomas Pruß in Kooperation mit dem <a href=\"https://de.wikipedia.org/wiki/Wikipedia:WikiProjekt_Pilze\" class=\"extiw\" title=\"de:Wikipedia:WikiProjekt Pilze\">WikiProjekt Pilze</a> und dem <a href=\"https://de.wikipedia.org/wiki/Wikipedia:Bilderschatz\" class=\"extiw\" title=\"de:Wikipedia:Bilderschatz\">Förderprogramm Bilderschatz</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Thomas Pruß",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Attribution": {
+                "value": "Thomas Pruß",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Agaricus campestris"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Items with VRTS permission confirmed"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by Thomas Pruß"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Nikon Coolpix 995"
+          }
+        ]
+      },
+      "97693509": {
+        "pageid": 97693509,
+        "ns": 6,
+        "title": "File:Agaricus campestris (48647010296).jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 4456448,
+            "width": 6000,
+            "height": 4000,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/97/Agaricus_campestris_%2848647010296%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Agaricus_campestris_(48647010296).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=97693509",
+            "sha1": "1efff364121bb5c64a6b24d2111a186e276cae57",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-12-17 09:38:32",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Agaricus campestris (48647010296)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Agaricus campestris|Fungi in October|Flickr images reviewed by FlickreviewR 2|Photographs by Hans-Günter Wagner",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Agaricus campestris",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2018-10-12 16:20",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/145400091@N04/48647010296/\">Agaricus campestris</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/145400091@N04\">Dr. Hans-Günter Wagner</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Agaricus campestris"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-2.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images reviewed by FlickreviewR 2"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in October"
+          }
+        ]
+      },
+      "97693756": {
+        "pageid": 97693756,
+        "ns": 6,
+        "title": "File:Agaricus campestris (49147948397).jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 6641638,
+            "width": 4896,
+            "height": 3672,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Agaricus_campestris_%2849147948397%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Agaricus_campestris_(49147948397).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=97693756",
+            "sha1": "3466543f350f6fc8a591aeeeca615f45fd89c7c4",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-12-17 09:42:10",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Agaricus campestris (49147948397)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Agaricus campestris|Fungi in October|Flickr images reviewed by FlickreviewR 2|Photographs by Hans-Günter Wagner",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Agaricus campestris",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2019-10-11 16:03",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/145400091@N04/49147948397/\">Agaricus campestris</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/145400091@N04\">Dr. Hans-Günter Wagner</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "58061011": {
+        "pageid": 58061011,
+        "ns": 6,
+        "title": "File:Agaricus campestris (Field- or Meadow Mushroom, D= Wiesenegerling or Wiesen-Champignon, NL= Gewone weidechampignon) near Steenderen - panoramio.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1888360,
+            "width": 3646,
+            "height": 5663,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Agaricus_campestris_%28Field-_or_Meadow_Mushroom%2C_D%3D_Wiesenegerling_or_Wiesen-Champignon%2C_NL%3D_Gewone_weidechampignon%29_near_Steenderen_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Agaricus_campestris_(Field-_or_Meadow_Mushroom,_D%3D_Wiesenegerling_or_Wiesen-Champignon,_NL%3D_Gewone_weidechampignon)_near_Steenderen_-_panoramio.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=58061011",
+            "sha1": "337e8a54eb17bd83daeb7dfe294fd93eb525a486",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-04-16 01:20:59",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Agaricus campestris (Field- or Meadow Mushroom, D= Wiesenegerling or Wiesen-Champignon, NL= Gewone weidechampignon) near Steenderen - panoramio",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Agaricus campestris|Steenderen|Panoramio files uploaded by Panoramio upload bot|Panoramio images reviewed by trusted users|Photos from Panoramio|Agaricus in the Netherlands|Netherlands photographs taken on 2014-08-23|Files with coordinates missing SDC location of creation (52° N, 6° E)|Fungi of Bronckhorst|Fungi of Gelderland in August|Photographs by Henk Monster",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "52.069272",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "6.179638",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Agaricus campestris (Field- or Meadow Mushroom, D= Wiesenegerling or Wiesen-Champignon, NL= Gewone weidechampignon) near Steenderen",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "Taken on 23 August 2014",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://web.archive.org/web/20161031105809/http://www.panoramio.com/photo/110851133\">https://web.archive.org/web/20161031105809/http://www.panoramio.com/photo/110851133</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://web.archive.org/web/20161031105810/http://www.panoramio.com/user/1100550?with_photo_id=110851133\">Henk Monster</a>",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "<div class=\"responsive-license-cc layouttemplate licensetpl\" dir=\"ltr\" lang=\"en\"><div class=\"rlicense-icons\"><span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"w:en:Creative Commons\"><img alt=\"w:en:Creative Commons\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/CC_some_rights_reserved.svg/120px-CC_some_rights_reserved.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"90\" height=\"36\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/CC_some_rights_reserved.svg/250px-CC_some_rights_reserved.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"744\" data-file-height=\"300\"></span></span><br>\n<span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"attribution\"><img alt=\"attribution\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Cc-by_new_white.svg/40px-Cc-by_new_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"24\" height=\"24\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Cc-by_new_white.svg/60px-Cc-by_new_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"64\" data-file-height=\"64\"></span></span></div><div class=\"rlicense-text\"><div class=\"rlicense-declaration\">This file is licensed under the <a href=\"https://en.wikipedia.org/wiki/en:Creative_Commons\" class=\"extiw\" title=\"w:en:Creative Commons\">Creative Commons</a> <a href=\"//creativecommons.org/licenses/by/3.0/deed.en\" class=\"extiw\" title=\"creativecommons:by/3.0/deed.en\">Attribution 3.0 Unported</a> license.</div><div class=\"rlicense-attr\" style=\"font-weight: bold;\">Attribution: <div style=\"display:inline;font-size:larger;\" class=\"licensetpl_attr\">Henk Monster</div></div><div class=\"rlicense-desc\" style=\"text-align:start;\" dir=\"ltr\" lang=\"en\">\n<dl><dd>You are free:\n<ul><li><b>to share</b> – to copy, distribute and transmit the work</li>\n<li><b>to remix</b> – to adapt the work</li></ul></dd>\n<dd>Under the following conditions:\n<ul><li><b>attribution</b> – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.</li></ul></dd></dl>\n</div><span class=\"licensetpl_link\" style=\"display:none;\">https://creativecommons.org/licenses/by/3.0</span><span class=\"licensetpl_short\" style=\"display:none;\">CC BY 3.0 </span><span class=\"licensetpl_long\" style=\"display:none;\">Creative Commons Attribution 3.0 </span><span class=\"licensetpl_link_req\" style=\"display:none;\">true</span><span class=\"licensetpl_attr_req\" style=\"display:none;\">true</span></div></div>\n<style data-mw-deduplicate=\"TemplateStyles:r901585720\">.mw-parser-output .panoramioreview{width:100%;margin:0.5em 0;background-color:var(--background-color-warning-subtle,#fffff0);padding:5px;border:1px solid var(--border-color-warning,#aa8);color:inherit}.mw-parser-output .panoramioreview-failed{background-color:var(--background-color-error-subtle,#fcc);color:inherit}.mw-parser-output .panoramioreview-passed{background-color:var(--background-color-success-subtle,#efe);color:inherit}</style>\n<table class=\"panoramioreview panoramioreview-passed\" lang=\"en\" dir=\"ltr\">\n\n<tbody><tr>\n<td><span typeof=\"mw:File\"><span><img alt=\"\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Checked_copyright_icon.svg/60px-Checked_copyright_icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"50\" height=\"48\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Checked_copyright_icon.svg/120px-Checked_copyright_icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"160\" data-file-height=\"153\"></span></span>\n</td>\n<td>This image, which was originally posted to <b><span lang=\"en\" dir=\"ltr\"><a href=\"https://en.wikipedia.org/wiki/Panoramio\" class=\"extiw\" title=\"en:Panoramio\">Panoramio</a></span></b>, was automatically reviewed on 16 April 2017 by <b><a href=\"//commons.wikimedia.org/wiki/User:Panoramio_upload_bot\" title=\"User:Panoramio upload bot\">Panoramio upload bot</a></b>, who confirmed that it was available on Panoramio under the above license on that date.\n</td>\n<td><span typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/File:Star_and_ring.svg\" class=\"mw-file-description\"><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Star_and_ring.svg/60px-Star_and_ring.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"50\" height=\"50\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Star_and_ring.svg/120px-Star_and_ring.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"75\" data-file-height=\"75\"></a></span>\n</td></tr></tbody></table>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Attribution": {
+                "value": "Henk Monster",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Agaricus campestris"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Agaricus in the Netherlands"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation (52° N, 6° E)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Bronckhorst"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Gelderland in August"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Netherlands photographs taken on 2014-08-23"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Panoramio files uploaded by Panoramio upload bot"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Panoramio images reviewed by trusted users"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by Henk Monster"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photos from Panoramio"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Steenderen"
+          }
+        ]
+      },
+      "95220933": {
+        "pageid": 95220933,
+        "ns": 6,
+        "title": "File:Agaricus campestris (meadow mushroom).jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3271904,
+            "width": 3596,
+            "height": 2648,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/80/Agaricus_campestris_%28meadow_mushroom%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Agaricus_campestris_(meadow_mushroom).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=95220933",
+            "sha1": "099aebadc6ef12d208f569e06d7468f3cb2eef17",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-10-19 14:09:03",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Agaricus campestris (meadow mushroom)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Agaricus campestris|Fungi in October|Flickr images reviewed by FlickreviewR 2",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Agaricus campestris Linnaeus, 1753 - meadow mushroom. (public display, Denver Museum of Nature &amp; Science, Denver, Colorado, USA)\n<p>Fungi are multicellular, non-photosynthesizing eucaryotes that are not capable of spontaneous movement.  They feed on nutrients derived from organic matter in dead and decaying plants, such as wood, or in soil, or from living organisms.  Those that feed on decaying wood or dead plant matter in soil are called saprotrophic fungi.  Those that feed on living organisms are called parasitic fungi.  Those that colonize a plant's roots and derive nutrients from (but not harming) the host plant are called mycorrhizal fungi.  \n</p><p>Info. from signage at the Denver Museum: \"One of the most common wild mushrooms in the world, this saprotrophic mushroom grows in open spaces such as city parks and country meadows.  It fruits from May to October and usually appears in the same location every year.\"\n</p><p>Classification: Fungi, Basidiomycota, Agaricomycetes, Agaricales, Agaricaeae\n</p>\n<hr>\n<p>See a description of the meadow mushroom at:\n</p>\nen.wikipedia.org/wiki/Agaricus_campestris",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2013-10-26 15:13:57",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.flickr.com/photos/47445767@N05/22559693268/\">https://www.flickr.com/photos/47445767@N05/22559693268/</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "James St. John",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Agaricus campestris"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-2.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images reviewed by FlickreviewR 2"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in October"
+          }
+        ]
+      },
+      "50655559": {
+        "pageid": 50655559,
+        "ns": 6,
+        "title": "File:Agaricus campestris - Flickr - Dick Culbert.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 642415,
+            "width": 1100,
+            "height": 1042,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Agaricus_campestris_-_Flickr_-_Dick_Culbert.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Agaricus_campestris_-_Flickr_-_Dick_Culbert.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=50655559",
+            "sha1": "6b560d1ada8e7bb5198ab6a994c9176f1074615f",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2016-08-13 19:08:20",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Agaricus campestris - Flickr - Dick Culbert",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Agaricus campestris|Taken with Sony DSC-H9|Flickr images reviewed by FlickreviewR|Photographs by Dick Culbert|Files uploaded by Josve05a (Dick Culbert)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "The worldly Field Mushroom has very dark spores, but when young exhibits pink gills. It has appeared in the central valley of Chile.   Edible",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2008-07-31 00:26",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/92252798@N07/23379425354/\">Agaricus campestris</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/92252798@N07\">Dick Culbert</a> from Gibsons, B.C., Canada",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Agaricus campestris"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-2.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files uploaded by Josve05a (Dick Culbert)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images reviewed by FlickreviewR"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by Dick Culbert"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Sony DSC-H9"
+          }
+        ]
+      },
+      "509862": {
+        "pageid": 509862,
+        "ns": 6,
+        "title": "File:Agaricus campestris 051011A.JPG",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 757791,
+            "width": 1728,
+            "height": 1152,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/34/Agaricus_campestris_051011A.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Agaricus_campestris_051011A.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=509862",
+            "sha1": "881d46aec0f0d77d557de794a8711079b9202872",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2006-01-12 20:42:03",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Agaricus campestris 051011A",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Agaricus campestris|GFDL|Taken with Canon EOS 350D|License migration redundant|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Agaricus campestris</i> in a French garden near Paris.  Identification note: Spores 7×4.5 microns.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2005-10-11",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Strobilomyces\" title=\"User:Strobilomyces\">Strobilomyces</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Agaricus campestris"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Canon EOS 350D"
+          }
+        ]
+      },
+      "49524219": {
+        "pageid": 49524219,
+        "ns": 6,
+        "title": "File:Agaricus campestris 1.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2901610,
+            "width": 5184,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/04/Agaricus_campestris_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Agaricus_campestris_1.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=49524219",
+            "sha1": "193ef29da107db33b388ff93361b0c7467623dc1",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2016-06-17 13:28:48",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Agaricus campestris 1",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Agaricus campestris|Self-published work|Files uploaded by Beko",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Agaricus campestris",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2016-06-16 07:48:36",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Beko\" title=\"User:Beko\">Beko</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Agaricus campestris"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files uploaded by Beko"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "99363960": {
+        "pageid": 99363960,
+        "ns": 6,
+        "title": "File:Agaricus campestris 1293054.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 793694,
+            "width": 2020,
+            "height": 1347,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/22/Agaricus_campestris_1293054.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Agaricus_campestris_1293054.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=99363960",
+            "sha1": "3b56b191536e32621b7854994ccf9ea8fca15dc6",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-01-28 18:27:28",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Agaricus campestris 1293054",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Agaricus campestris|Images from Mushroom Observer|Files from external sources with reviewed licenses|Files with coordinates missing SDC location of creation (48° N, 2° E)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "48.729600",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "2.272000",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "For more information about this, see the <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_observation/442933\">observation page</a> at Mushroom Observer.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-10-10",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This image is <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/image/show_image/1293054\">Image Number 1293054</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "This image was created by user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_user/236\">Richard Daniel (RichardDaniel)</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.<br>You can contact this user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/ask_user_question/236\">here</a>.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "140474392": {
+        "pageid": 140474392,
+        "ns": 6,
+        "title": "File:Agaricus campestris 2.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1772785,
+            "width": 2745,
+            "height": 3660,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Agaricus_campestris_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Agaricus_campestris_2.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=140474392",
+            "sha1": "c01594f28075a970105dbb674239cc354ca23d89",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-11-09 11:50:50",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Agaricus campestris 2",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Agaricus campestris|Self-published work|Files with coordinates missing SDC location of creation",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "43.043858",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-2.427661",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Agaricus campestris 2",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2023-11-09",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Jose_Angel_Urquia_Goitia&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Jose Angel Urquia Goitia (page does not exist)\">Jose Angel Urquia Goitia</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "135919483": {
+        "pageid": 135919483,
+        "ns": 6,
+        "title": "File:Agaricus campestris 20230813 101640.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 10006097,
+            "width": 5664,
+            "height": 4248,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Agaricus_campestris_20230813_101640.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Agaricus_campestris_20230813_101640.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=135919483",
+            "sha1": "d78e36c132910cb71b7858152901e5d3dfbf2a99",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-08-14 09:24:13",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Agaricus campestris 20230813 101640",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Agaricus campestris|CC-Zero",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Agaricus campestris",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2023-08-13",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:01x07x2022000\" title=\"User:01x07x2022000\">01x07x2022000</a>",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "<table style=\"width:100%; clear:both; text-align:center; margin:0.5em auto; background-color:var(--background-color-neutral-subtle, #f8f9fa); border:var(--border-subtle, 2px solid #c8ccd1); padding: 0; border-spacing: 8px; color:var(--color-base, #202122);\" dir=\"ltr\" class=\"layouttemplate licensetpl\" lang=\"en\">\n<tbody><tr>\n<td style=\"width:90px;\" rowspan=\"2\"><span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"Creative Commons\"><img alt=\"Creative Commons\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Cc.logo.circle.svg/40px-Cc.logo.circle.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"28\" height=\"28\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Cc.logo.circle.svg/60px-Cc.logo.circle.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"64\" data-file-height=\"64\"></span></span> <span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"CC-Zero\"><img alt=\"CC-Zero\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Cc-zero.svg/40px-Cc-zero.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"28\" height=\"28\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Cc-zero.svg/60px-Cc-zero.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"64\" data-file-height=\"64\"></span></span>\n</td>\n<td>This file is made available under the <a href=\"https://en.wikipedia.org/wiki/en:Creative_Commons\" class=\"extiw\" title=\"w:en:Creative Commons\">Creative Commons</a> <a href=\"https://creativecommons.org/publicdomain/zero/1.0/deed.en\" class=\"extiw\" title=\"ccorg:publicdomain/zero/1.0/deed.en\">CC0 1.0 Universal Public Domain Dedication</a>.\n</td></tr>\n<tr style=\"text-align:left;\">\n<td>The person who associated a work with this deed has dedicated the work to the <a href=\"https://en.wikipedia.org/wiki/en:public_domain\" class=\"extiw\" title=\"w:en:public domain\">public domain</a> by waiving all of their rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law. You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission.\n<p><span class=\"licensetpl_link\" style=\"display:none;\">http://creativecommons.org/publicdomain/zero/1.0/deed.en</span><span class=\"licensetpl_short\" style=\"display:none;\">CC0</span><span class=\"licensetpl_long\" style=\"display:none;\">Creative Commons Zero, Public Domain Dedication</span><span class=\"licensetpl_link_req\" style=\"display:none;\">false</span><span class=\"licensetpl_attr_req\" style=\"display:none;\">false</span>\n</p>\n</td></tr></tbody></table>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "135919510": {
+        "pageid": 135919510,
+        "ns": 6,
+        "title": "File:Agaricus campestris 20230813 101650.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 14418828,
+            "width": 5664,
+            "height": 4248,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/da/Agaricus_campestris_20230813_101650.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Agaricus_campestris_20230813_101650.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=135919510",
+            "sha1": "c2a29f6f1e492be2dbd7d68dad924900cb9d7d99",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-08-14 09:24:43",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Agaricus campestris 20230813 101650",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Agaricus campestris|CC-Zero",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Agaricus campestris",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2023-08-13",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:01x07x2022000\" title=\"User:01x07x2022000\">01x07x2022000</a>",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "<table style=\"width:100%; clear:both; text-align:center; margin:0.5em auto; background-color:var(--background-color-neutral-subtle, #f8f9fa); border:var(--border-subtle, 2px solid #c8ccd1); padding: 0; border-spacing: 8px; color:var(--color-base, #202122);\" dir=\"ltr\" class=\"layouttemplate licensetpl\" lang=\"en\">\n<tbody><tr>\n<td style=\"width:90px;\" rowspan=\"2\"><span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"Creative Commons\"><img alt=\"Creative Commons\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Cc.logo.circle.svg/40px-Cc.logo.circle.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"28\" height=\"28\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Cc.logo.circle.svg/60px-Cc.logo.circle.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"64\" data-file-height=\"64\"></span></span> <span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"CC-Zero\"><img alt=\"CC-Zero\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Cc-zero.svg/40px-Cc-zero.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"28\" height=\"28\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Cc-zero.svg/60px-Cc-zero.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"64\" data-file-height=\"64\"></span></span>\n</td>\n<td>This file is made available under the <a href=\"https://en.wikipedia.org/wiki/en:Creative_Commons\" class=\"extiw\" title=\"w:en:Creative Commons\">Creative Commons</a> <a href=\"https://creativecommons.org/publicdomain/zero/1.0/deed.en\" class=\"extiw\" title=\"ccorg:publicdomain/zero/1.0/deed.en\">CC0 1.0 Universal Public Domain Dedication</a>.\n</td></tr>\n<tr style=\"text-align:left;\">\n<td>The person who associated a work with this deed has dedicated the work to the <a href=\"https://en.wikipedia.org/wiki/en:public_domain\" class=\"extiw\" title=\"w:en:public domain\">public domain</a> by waiving all of their rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law. You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission.\n<p><span class=\"licensetpl_link\" style=\"display:none;\">http://creativecommons.org/publicdomain/zero/1.0/deed.en</span><span class=\"licensetpl_short\" style=\"display:none;\">CC0</span><span class=\"licensetpl_long\" style=\"display:none;\">Creative Commons Zero, Public Domain Dedication</span><span class=\"licensetpl_link_req\" style=\"display:none;\">false</span><span class=\"licensetpl_attr_req\" style=\"display:none;\">false</span>\n</p>\n</td></tr></tbody></table>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "123858192": {
+        "pageid": 123858192,
+        "ns": 6,
+        "title": "File:Agaricus campestris 209643141.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2054959,
+            "width": 1536,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Agaricus_campestris_209643141.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Agaricus_campestris_209643141.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=123858192",
+            "sha1": "fc4c118e6b3556dd91ef6f573ec77709d5f6f2a4",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-10-06 19:39:15",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Agaricus campestris 209643141",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Agaricus campestris|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Agaricaceae in Mexico|Uploaded with iNaturalist2Commons|Mexico photographs taken on 2022-06-27|Fungi of Mexico in June",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "19.303775",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-99.210044",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Meadow Mushroom (<i>Agaricus campestris</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-06-27",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/209643141\">https://www.inaturalist.org/photos/209643141</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/4185036\">Jordi Martínez Martínez</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "123858197": {
+        "pageid": 123858197,
+        "ns": 6,
+        "title": "File:Agaricus campestris 209643176.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1772148,
+            "width": 1536,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Agaricus_campestris_209643176.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Agaricus_campestris_209643176.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=123858197",
+            "sha1": "18a24210f494c5f2862d828f4452e19d09c51362",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-10-06 19:39:27",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Agaricus campestris 209643176",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Agaricus campestris|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Agaricaceae in Mexico|Uploaded with iNaturalist2Commons|Mexico photographs taken on 2022-06-27|Fungi of Mexico in June",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "19.303775",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-99.210044",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Meadow Mushroom (<i>Agaricus campestris</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-06-27",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/209643176\">https://www.inaturalist.org/photos/209643176</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/4185036\">Jordi Martínez Martínez</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "123858188": {
+        "pageid": 123858188,
+        "ns": 6,
+        "title": "File:Agaricus campestris 209682916.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1548199,
+            "width": 2048,
+            "height": 1536,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Agaricus_campestris_209682916.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Agaricus_campestris_209682916.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=123858188",
+            "sha1": "5bd666eeb6b97f347b787debd0c8d0f5b8cebaf9",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-10-06 19:39:03",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Agaricus campestris 209682916",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Agaricus campestris|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Agaricaceae in Mexico|Uploaded with iNaturalist2Commons|Mexico photographs taken on 2022-06-27|Fungi of Mexico in June",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "19.993313",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-100.755358",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Meadow Mushroom (<i>Agaricus campestris</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-06-27",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/209682916\">https://www.inaturalist.org/photos/209682916</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/26667\">Oscar Alejandro Morales Juárez</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "123858180": {
+        "pageid": 123858180,
+        "ns": 6,
+        "title": "File:Agaricus campestris 209683069.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1684653,
+            "width": 2048,
+            "height": 1536,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/28/Agaricus_campestris_209683069.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Agaricus_campestris_209683069.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=123858180",
+            "sha1": "163bded44c7a709df3141b311bc10db4f6c41ba3",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-10-06 19:38:46",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Agaricus campestris 209683069",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Agaricus campestris|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Agaricaceae in Mexico|Uploaded with iNaturalist2Commons|Mexico photographs taken on 2022-06-27|Fungi of Mexico in June",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "19.993287",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-100.755450",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Meadow Mushroom (<i>Agaricus campestris</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-06-27",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/209683069\">https://www.inaturalist.org/photos/209683069</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/26667\">Oscar Alejandro Morales Juárez</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "123857490": {
+        "pageid": 123857490,
+        "ns": 6,
+        "title": "File:Agaricus campestris 226499564.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1153683,
+            "width": 1536,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Agaricus_campestris_226499564.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Agaricus_campestris_226499564.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=123857490",
+            "sha1": "a83a0d3ed4bc51e6d6f548d440ba5bb52c22f00d",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-10-06 19:03:32",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Agaricus campestris 226499564",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Agaricus campestris|Media from iNaturalist|United States photographs taken on 2022-08-30|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|Fungi of New York (state) in August|Agaricus in New York (state)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "43.066006",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-77.444533",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Meadow Mushroom (<i>Agaricus campestris</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-08-30",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/226499564\">https://www.inaturalist.org/photos/226499564</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/5193363\">Rick Farwell</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "123857485": {
+        "pageid": 123857485,
+        "ns": 6,
+        "title": "File:Agaricus campestris 226499595.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1061756,
+            "width": 1536,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Agaricus_campestris_226499595.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Agaricus_campestris_226499595.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=123857485",
+            "sha1": "bcbf7d5cf5b2da0719caf4abf0309951a6ff5dc6",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-10-06 19:03:20",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Agaricus campestris 226499595",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Agaricus campestris|Media from iNaturalist|United States photographs taken on 2022-08-30|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|Fungi of New York (state) in August|Agaricus in New York (state)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "43.066006",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-77.444533",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Meadow Mushroom (<i>Agaricus campestris</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-08-30",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/226499595\">https://www.inaturalist.org/photos/226499595</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/5193363\">Rick Farwell</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "123857481": {
+        "pageid": 123857481,
+        "ns": 6,
+        "title": "File:Agaricus campestris 226499626.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1483613,
+            "width": 2048,
+            "height": 1536,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Agaricus_campestris_226499626.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Agaricus_campestris_226499626.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=123857481",
+            "sha1": "80a51b5d4ef5dccc862be99524218f172634280e",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-10-06 19:03:08",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Agaricus campestris 226499626",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Agaricus campestris|Media from iNaturalist|United States photographs taken on 2022-08-30|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|Fungi of New York (state) in August|Agaricus in New York (state)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "43.066006",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-77.444533",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Meadow Mushroom (<i>Agaricus campestris</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-08-30",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/226499626\">https://www.inaturalist.org/photos/226499626</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/5193363\">Rick Farwell</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "123857441": {
+        "pageid": 123857441,
+        "ns": 6,
+        "title": "File:Agaricus campestris 234933305.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 530719,
+            "width": 2048,
+            "height": 1357,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/77/Agaricus_campestris_234933305.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Agaricus_campestris_234933305.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=123857441",
+            "sha1": "325e4bd393280ed1f04419fe8556d687ef3d1b4c",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-10-06 19:01:20",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Agaricus campestris 234933305",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Agaricus campestris|Media from iNaturalist|Austria photographs taken on 2022-10-03|Fungi in October|INaturalist images reviewed by iNaturalistReviewBot|Agaricaceae in Austria|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "47.270735",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "14.771833",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Meadow Mushroom (<i>Agaricus campestris</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-10-03",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/234933305\">https://www.inaturalist.org/photos/234933305</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/2883343\">E. A.</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "123857438": {
+        "pageid": 123857438,
+        "ns": 6,
+        "title": "File:Agaricus campestris 234933466.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 441890,
+            "width": 2048,
+            "height": 1357,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Agaricus_campestris_234933466.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Agaricus_campestris_234933466.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=123857438",
+            "sha1": "eec020b7e0121270c354f62e2fbfb9798b4656e4",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-10-06 19:01:08",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Agaricus campestris 234933466",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Agaricus campestris|Media from iNaturalist|Austria photographs taken on 2022-10-03|Fungi in October|INaturalist images reviewed by iNaturalistReviewBot|Agaricaceae in Austria|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "47.270735",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "14.771833",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Meadow Mushroom (<i>Agaricus campestris</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-10-03",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/234933466\">https://www.inaturalist.org/photos/234933466</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/2883343\">E. A.</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "123857435": {
+        "pageid": 123857435,
+        "ns": 6,
+        "title": "File:Agaricus campestris 234933604.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 478180,
+            "width": 1357,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/43/Agaricus_campestris_234933604.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Agaricus_campestris_234933604.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=123857435",
+            "sha1": "9e5cabfa1e6f8a88037e47084170db21213e806e",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-10-06 19:00:56",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Agaricus campestris 234933604",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Agaricus campestris|Media from iNaturalist|Austria photographs taken on 2022-10-03|Fungi in October|INaturalist images reviewed by iNaturalistReviewBot|Agaricaceae in Austria|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "47.270735",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "14.771833",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Meadow Mushroom (<i>Agaricus campestris</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-10-03",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/234933604\">https://www.inaturalist.org/photos/234933604</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/2883343\">E. A.</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "138470893": {
+        "pageid": 138470893,
+        "ns": 6,
+        "title": "File:Agaricus campestris 247540418.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1122415,
+            "width": 2048,
+            "height": 1536,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Agaricus_campestris_247540418.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Agaricus_campestris_247540418.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=138470893",
+            "sha1": "41317523f7e190ac1fb2d2a7b37623be55ce6d0a",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-10-04 14:27:15",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Agaricus campestris 247540418",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Agaricus campestris|CC-Zero|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|United States photographs taken on 2022-12-12|Media from GBIF|Fungi of California in December|Agaricus in California",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "37.532775",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-122.239312",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Meadow Mushroom (<i>Agaricus campestris</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-12-12",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/247540418\">https://www.inaturalist.org/photos/247540418</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/1065672\">ahaislip</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "15939116": {
+        "pageid": 15939116,
+        "ns": 6,
+        "title": "File:Agaricus campestris 255.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 126576,
+            "width": 1064,
+            "height": 1086,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Agaricus_campestris_255.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Agaricus_campestris_255.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=15939116",
+            "sha1": "8d57c70f6e5911ac456978014c9c46a8d4f78353",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-07-29 17:09:34",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Agaricus campestris 255",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Agaricus campestris|Taken with Canon EOS 350D",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "fungi",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2005-10-11",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a class=\"external free\" data-mw-original-href=\"http://upload.wikimedia.org/wikipedia/commons/3/34/Agaricus_campestris_051011A.JPG\" href=\"https://upload.wikimedia.org/wikipedia/commons/3/34/Agaricus_campestris_051011A.JPG\">http://upload.wikimedia.org/wikipedia/commons/3/34/Agaricus_campestris_051011A.JPG</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Strobilomyces",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Agaricus campestris"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Canon EOS 350D"
+          }
+        ]
+      },
+      "138470878": {
+        "pageid": 138470878,
+        "ns": 6,
+        "title": "File:Agaricus campestris 262699791.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 838147,
+            "width": 1536,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Agaricus_campestris_262699791.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Agaricus_campestris_262699791.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=138470878",
+            "sha1": "a8baccb2b281c94a6500ace1b88f2d6c095aff45",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-10-04 14:26:58",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Agaricus campestris 262699791",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Agaricus campestris|CC-Zero|Fungi of Argentina|Media from iNaturalist|Argentina photographs taken on 2023-03-24|Fungi in March|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|Media from GBIF",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "-32.895047",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-60.956225",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Meadow Mushroom (<i>Agaricus campestris</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2023-03-24",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/262699791\">https://www.inaturalist.org/photos/262699791</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/5825420\">Julia Ariadna</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "138470870": {
+        "pageid": 138470870,
+        "ns": 6,
+        "title": "File:Agaricus campestris 262699833.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 937263,
+            "width": 1536,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Agaricus_campestris_262699833.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Agaricus_campestris_262699833.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=138470870",
+            "sha1": "a3131d3d47c103b7aaac5583a00a1337c930cdb6",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-10-04 14:26:49",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Agaricus campestris 262699833",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Agaricus campestris|CC-Zero|Fungi of Argentina|Media from iNaturalist|Argentina photographs taken on 2023-03-24|Fungi in March|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|Media from GBIF",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "-32.895047",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-60.956225",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Meadow Mushroom (<i>Agaricus campestris</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2023-03-24",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/262699833\">https://www.inaturalist.org/photos/262699833</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/5825420\">Julia Ariadna</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "138470883": {
+        "pageid": 138470883,
+        "ns": 6,
+        "title": "File:Agaricus campestris 262699900.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 923181,
+            "width": 1536,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Agaricus_campestris_262699900.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Agaricus_campestris_262699900.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=138470883",
+            "sha1": "3e8e0a7ebea91275c18a254a4a482a44ded9b766",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-10-04 14:27:06",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Agaricus campestris 262699900",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Agaricus campestris|CC-Zero|Fungi of Argentina|Media from iNaturalist|Argentina photographs taken on 2023-03-24|Fungi in March|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|Media from GBIF",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "-32.895047",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-60.956225",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Meadow Mushroom (<i>Agaricus campestris</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2023-03-24",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/262699900\">https://www.inaturalist.org/photos/262699900</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/5825420\">Julia Ariadna</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "138470863": {
+        "pageid": 138470863,
+        "ns": 6,
+        "title": "File:Agaricus campestris 262699918.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 748680,
+            "width": 1536,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Agaricus_campestris_262699918.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Agaricus_campestris_262699918.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=138470863",
+            "sha1": "edee54d6ad89cbf0cd30bc763b57c22b3fcb614a",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-10-04 14:26:41",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Agaricus campestris 262699918",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Agaricus campestris|CC-Zero|Fungi of Argentina|Media from iNaturalist|Argentina photographs taken on 2023-03-24|Fungi in March|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|Media from GBIF",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "-32.895047",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-60.956225",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Meadow Mushroom (<i>Agaricus campestris</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2023-03-24",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/262699918\">https://www.inaturalist.org/photos/262699918</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/5825420\">Julia Ariadna</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "138470856": {
+        "pageid": 138470856,
+        "ns": 6,
+        "title": "File:Agaricus campestris 263077736.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1353826,
+            "width": 1536,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Agaricus_campestris_263077736.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Agaricus_campestris_263077736.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=138470856",
+            "sha1": "1233182196ab8ab98d7738763d9f361bb84607d8",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-10-04 14:26:32",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Agaricus campestris 263077736",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Agaricus campestris|CC-Zero|Fungi of Argentina|Media from iNaturalist|Argentina photographs taken on 2023-03-25|Fungi in March|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|Media from GBIF",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "-33.176422",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-60.666602",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Meadow Mushroom (<i>Agaricus campestris</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2023-03-25",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/263077736\">https://www.inaturalist.org/photos/263077736</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/5825420\">Julia Ariadna</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

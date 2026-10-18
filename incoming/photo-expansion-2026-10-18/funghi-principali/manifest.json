@@ -1,0 +1,4131 @@
+{
+  "photos": [
+    {
+      "id": "pe2-main-agaricus-arvensis-01",
+      "target_group": "species",
+      "target_key": "agaricus-arvensis",
+      "latin": "Agaricus arvensis",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-agaricus-arvensis-01.jpg",
+      "sha256_original": "ebb620697992e26f51d60a7802c43c77636d92643d6f9d48ed622810df023746",
+      "commons_sha1": "c8efd6ba9fc827175e7b01ed17efd9637fcb38e8",
+      "source_title": "File:Agaricus arvensis 2.jpg",
+      "source_description": "Erdőszéli csiperke  (Agaricus arvensis)  Ehető!",
+      "source_categories": [
+        "Category:Agaricus arvensis",
+        "Category:CC-BY-2.0",
+        "Category:Flickr images reviewed by File Upload Bot (Magnus Manske)",
+        "Category:Photographs by Ian Sutton",
+        "Agaricus arvensis",
+        "Taken with Sony DSLR-A350",
+        "Flickr images reviewed by File Upload Bot (Magnus Manske)",
+        "Uploaded by user Berichard",
+        "Photographs by Ian Sutton"
+      ],
+      "page": "https://commons.wikimedia.org/wiki/File:Agaricus_arvensis_2.jpg",
+      "author": "Ian Sutton  from Collinsville and Oberon, Australia",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Agaricus_arvensis_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "source_attribution": "Ian Sutton  from Collinsville and Oberon, Australia",
+      "attribution": "Ian Sutton  from Collinsville and Oberon, Australia / Wikimedia Commons / CC BY 2.0",
+      "alt": "Agaricus arvensis. Cappello e lamelle osservati di lato.",
+      "caption": "Cappello e lamelle osservati di lato.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.48
+        ],
+        "riquadro": [
+          0.01,
+          0.18,
+          0.99,
+          0.97
+        ],
+        "nota": "Vista ravvicinata del cappello chiaro e delle lamelle scure; base fuori campo. I ritagli stretti possono escludere parti; la foto intera resta nel visore. Confrontata con tutte le foto già collegate alla scheda."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.442
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-agaricus-arvensis-01.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-agaricus-arvensis-01-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-agaricus-arvensis-01-t.webp"
+      },
+      "source": "Wikimedia Commons",
+      "attribution_required_text": "",
+      "colour_management": {
+        "source_icc_name": null,
+        "converted_to_srgb": false,
+        "untagged_assumed_srgb": true
+      }
+    },
+    {
+      "id": "pe2-main-agaricus-campestris-01",
+      "target_group": "species",
+      "target_key": "agaricus-campestris",
+      "latin": "Agaricus campestris",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-agaricus-campestris-01.jpg",
+      "sha256_original": "9f86521c8ba723a63f46bd49647143689ef82990991d580509c6a8c53b8bf0d9",
+      "commons_sha1": "54c2238e0cde273fd1ad511d0ac19d5dbfb2e006",
+      "source_title": "File:A. campestris.JPG",
+      "source_description": "A. campestris",
+      "source_categories": [
+        "Category:Agaricus campestris",
+        "Category:CC-BY-SA-3.0",
+        "Category:Items with VRTS permission confirmed",
+        "Category:Photographs by Thomas Pruß",
+        "Category:Self-published work",
+        "Category:Taken with Nikon Coolpix 995",
+        "Agaricus campestris",
+        "Taken with Nikon Coolpix 995",
+        "Self-published work",
+        "Items with VRTS permission confirmed",
+        "Photographs by Thomas Pruß"
+      ],
+      "page": "https://commons.wikimedia.org/wiki/File:A._campestris.JPG",
+      "author": "Thomas Pruß",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/f/fb/A._campestris.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "source_attribution": "Thomas Pruß",
+      "attribution": "Thomas Pruß / Wikimedia Commons / CC BY-SA 3.0",
+      "alt": "Agaricus campestris. Tre esemplari sulla erba, con cappelli e superficie lamellare visibili.",
+      "caption": "Tre esemplari sulla erba, con cappelli e superficie lamellare visibili.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.5
+        ],
+        "riquadro": [
+          0.04,
+          0.05,
+          0.97,
+          0.97
+        ],
+        "nota": "Vista del gruppo o del singolo esemplare; nessuna fase biologica attribuita. I ritagli stretti possono escludere parti; la foto intera resta nel visore. Confrontata con tutte le foto già collegate alla scheda."
+      },
+      "crop_points": {
+        "5:4": [
+          0.52,
+          0.5
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.5
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-agaricus-campestris-01.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-agaricus-campestris-01-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-agaricus-campestris-01-t.webp"
+      },
+      "source": "Wikimedia Commons",
+      "attribution_required_text": "Thomas Pruß",
+      "colour_management": {
+        "source_icc_name": null,
+        "converted_to_srgb": false,
+        "untagged_assumed_srgb": true
+      }
+    },
+    {
+      "id": "pe2-main-agaricus-campestris-03",
+      "target_group": "species",
+      "target_key": "agaricus-campestris",
+      "latin": "Agaricus campestris",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-agaricus-campestris-03.jpg",
+      "sha256_original": "d4e29abbacac69a4d93d1a4939736314c06b865c7ea065fbdd3251f4b6a68c4c",
+      "commons_sha1": "193ef29da107db33b388ff93361b0c7467623dc1",
+      "source_title": "File:Agaricus campestris 1.jpg",
+      "source_description": "Agaricus campestris",
+      "source_categories": [
+        "Category:Agaricus campestris",
+        "Category:CC-BY-SA-4.0",
+        "Category:Files uploaded by Beko",
+        "Category:Self-published work",
+        "Agaricus campestris",
+        "Self-published work",
+        "Files uploaded by Beko"
+      ],
+      "page": "https://commons.wikimedia.org/wiki/File:Agaricus_campestris_1.jpg",
+      "author": "Beko",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/0/04/Agaricus_campestris_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "source_attribution": "Beko",
+      "attribution": "Beko / Wikimedia Commons / CC BY-SA 4.0",
+      "alt": "Agaricus campestris. Cappello chiaro e parte del gambo sul terreno.",
+      "caption": "Cappello chiaro e parte del gambo sul terreno.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.52
+        ],
+        "riquadro": [
+          0.1,
+          0.05,
+          0.95,
+          0.93
+        ],
+        "nota": "Vista del gruppo o del singolo esemplare; nessuna fase biologica attribuita. I ritagli stretti possono escludere parti; la foto intera resta nel visore. Confrontata con tutte le foto già collegate alla scheda."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.558
+        ],
+        "4:3": [
+          0.55,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-agaricus-campestris-03.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-agaricus-campestris-03-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-agaricus-campestris-03-t.webp"
+      },
+      "source": "Wikimedia Commons",
+      "attribution_required_text": "",
+      "colour_management": {
+        "source_icc_name": null,
+        "converted_to_srgb": false,
+        "untagged_assumed_srgb": true
+      }
+    },
+    {
+      "id": "pe2-main-calocybe-gambosa-04",
+      "target_group": "species",
+      "target_key": "calocybe-gambosa",
+      "latin": "Calocybe gambosa",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-calocybe-gambosa-04.jpg",
+      "sha256_original": "2c0e173435767a8bffa02153128ffc720cf20ceb08a82ec129616635cd5896ac",
+      "commons_sha1": "760154cd695eec47e0500db1f674ffb1d18227c5",
+      "source_title": "File:Calocybe gambosa 080420wb.jpg",
+      "source_description": "Calocybe gambosa  (=  Tricholoma gambosum ), St. George's  mushroom, in a park near Massy, France.",
+      "source_categories": [
+        "Category:CC-BY-SA-4.0,3.0,2.5,2.0,1.0",
+        "Category:Calocybe gambosa",
+        "Category:Files with coordinates missing SDC location of creation (48° N, 2° E)",
+        "Category:France photographs taken on 2008-04-20",
+        "Category:Fungi of Essonne",
+        "Category:GFDL",
+        "Category:License migration redundant",
+        "Category:Quality images",
+        "Category:Quality images missing SDC creator",
+        "Category:Quality images of Essonne",
+        "Category:Quality images of fungi in France",
+        "Category:Self-published work",
+        "Fungi of Essonne",
+        "Calocybe gambosa",
+        "GFDL",
+        "License migration redundant",
+        "CC-BY-SA-4.0,3.0,2.5,2.0,1.0",
+        "Self-published work",
+        "France photographs taken on 2008-04-20",
+        "Files with coordinates missing SDC location of creation (48° N, 2° E)"
+      ],
+      "page": "https://commons.wikimedia.org/wiki/File:Calocybe_gambosa_080420wb.jpg",
+      "author": "Strobilomyces",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/9/93/Calocybe_gambosa_080420wb.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "source_attribution": "User:Strobilomyces",
+      "attribution": "Strobilomyces / Wikimedia Commons / CC BY-SA 4.0",
+      "alt": "Calocybe gambosa. Esemplari disposti sull’erba, con cappelli e lamelle visibili.",
+      "caption": "Esemplari disposti sull’erba, con cappelli e lamelle visibili.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.54
+        ],
+        "riquadro": [
+          0.02,
+          0.18,
+          0.99,
+          0.93
+        ],
+        "nota": "Gruppo ripreso da vicino; mostra anche gambi e basi dei due esemplari laterali. I ritagli stretti possono escludere parti; la foto intera resta nel visore. Confrontata con tutte le foto già collegate alla scheda."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.773
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-calocybe-gambosa-04.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-calocybe-gambosa-04-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-calocybe-gambosa-04-t.webp"
+      },
+      "source": "Wikimedia Commons",
+      "attribution_required_text": "",
+      "colour_management": {
+        "source_icc_name": null,
+        "converted_to_srgb": false,
+        "untagged_assumed_srgb": true
+      }
+    },
+    {
+      "id": "pe2-main-craterellus-lutescens-03",
+      "target_group": "species",
+      "target_key": "craterellus-lutescens",
+      "latin": "Craterellus lutescens",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-craterellus-lutescens-03.jpg",
+      "sha256_original": "f682c1374e28063f119fa42eb6cc571cd7286e2ff8f7aab1a204f1e8f65648b1",
+      "commons_sha1": "f4a4d56faedb6029505d3aa53bbee31e7e7cd9ab",
+      "source_title": "File:Craterellus lutescens.jpg",
+      "source_description": "Craterellus lutescens",
+      "source_categories": [
+        "Craterellus lutescens",
+        "Media from iNaturalist",
+        "INaturalist images reviewed by trusted reviewers",
+        "Media from GBIF",
+        "INaturalist images missing SDC depicts"
+      ],
+      "page": "https://commons.wikimedia.org/wiki/File:Craterellus_lutescens.jpg",
+      "author": "mycobel",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/1/18/Craterellus_lutescens.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "source_attribution": "mycobel",
+      "attribution": "mycobel / Wikimedia Commons / CC BY 4.0",
+      "alt": "Craterellus lutescens. Gruppo nel bosco con cappelli e gambi visibili.",
+      "caption": "Gruppo nel bosco con cappelli e gambi visibili.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.53
+        ],
+        "riquadro": [
+          0.02,
+          0.08,
+          0.96,
+          0.95
+        ],
+        "nota": "Veduta ravvicinata del gruppo, con superfici inferiori visibili su alcuni esemplari. I ritagli stretti possono escludere parti; la foto intera resta nel visore. Confrontata con tutte le foto già collegate alla scheda."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.577
+        ],
+        "4:3": [
+          0.428,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-craterellus-lutescens-03.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-craterellus-lutescens-03-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-craterellus-lutescens-03-t.webp"
+      },
+      "source": "Wikimedia Commons",
+      "attribution_required_text": "",
+      "colour_management": {
+        "source_icc_name": null,
+        "converted_to_srgb": false,
+        "untagged_assumed_srgb": true
+      }
+    },
+    {
+      "id": "pe2-main-hygrophorus-marzuolus-01",
+      "target_group": "species",
+      "target_key": "hygrophorus-marzuolus",
+      "latin": "Hygrophorus marzuolus",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-hygrophorus-marzuolus-01.jpg",
+      "sha256_original": "734205b9d26496a3785fdd1b8f48780424eb484b0a683dde38ab93709e61a4c3",
+      "commons_sha1": "e197f1b21e06795b7bde823fa842f641a0368387",
+      "source_title": "File:Marçot1.JPG",
+      "source_description": "Bolet Hygrophorus Marzuolus, Marçot",
+      "source_categories": [
+        "Category:CC-BY-SA-3.0",
+        "Category:Hygrophorus marzuolus",
+        "Category:Images with watermarks",
+        "Category:Self-published work",
+        "Hygrophorus marzuolus",
+        "Images with watermarks",
+        "Self-published work"
+      ],
+      "page": "https://commons.wikimedia.org/wiki/File:Mar%C3%A7ot1.JPG",
+      "author": "Alschumi",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Mar%C3%A7ot1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "source_attribution": "Alschumi",
+      "attribution": "Alschumi / Wikimedia Commons / CC BY-SA 3.0",
+      "alt": "Hygrophorus marzuolus. Cappelli e lamelle osservati sul terreno del bosco.",
+      "caption": "Cappelli e lamelle osservati sul terreno del bosco.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.52,
+          0.55
+        ],
+        "riquadro": [
+          0.08,
+          0.13,
+          0.91,
+          0.99
+        ],
+        "nota": "Un esemplare rovesciato mostra le lamelle; gli altri sono parzialmente coperti dalle foglie. I ritagli stretti possono escludere parti; la foto intera resta nel visore. Confrontata con tutte le foto già collegate alla scheda."
+      },
+      "crop_points": {
+        "5:4": [
+          0.82,
+          0.5
+        ],
+        "3:4": [
+          0.546,
+          0.5
+        ],
+        "4:5": [
+          0.55,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.62
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.58,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-hygrophorus-marzuolus-01.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-hygrophorus-marzuolus-01-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-hygrophorus-marzuolus-01-t.webp"
+      },
+      "source": "Wikimedia Commons",
+      "attribution_required_text": "",
+      "colour_management": {
+        "source_icc_name": null,
+        "converted_to_srgb": false,
+        "untagged_assumed_srgb": true
+      }
+    },
+    {
+      "id": "pe2-main-pinophilus-01",
+      "target_group": "species",
+      "target_key": "pinophilus",
+      "latin": "Boletus pinophilus",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-pinophilus-01.jpg",
+      "sha256_original": "61306e4a7bc051b95d4ff7e9fc6a6cbf462d7c85bbf70f34f07303a593f605ef",
+      "commons_sha1": "dd5f76e76058c372e313b0f1bbd066b032893b67",
+      "source_title": "File:Boletus pinophilus 0.jpg",
+      "source_description": "Boletus pinophilus",
+      "source_categories": [
+        "Boletus pinophilus",
+        "CC-Zero"
+      ],
+      "page": "https://commons.wikimedia.org/wiki/File:Boletus_pinophilus_0.jpg",
+      "author": "czech_mushrooms",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/b/be/Boletus_pinophilus_0.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "source_attribution": "czech_mushrooms",
+      "attribution": "czech_mushrooms / Wikimedia Commons / CC0",
+      "alt": "Boletus pinophilus. Cappello e gambo osservati da vicino.",
+      "caption": "Cappello e gambo osservati da vicino.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.51,
+          0.58
+        ],
+        "riquadro": [
+          0.12,
+          0.11,
+          0.91,
+          0.98
+        ],
+        "nota": "Veduta dell’esemplare o gruppo; nessuna fase biologica attribuita. I ritagli stretti possono escludere parti; la foto intera resta nel visore. Confrontata con tutte le foto già collegate alla scheda."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.924
+        ],
+        "3:4": [
+          0.538,
+          0.5
+        ],
+        "4:5": [
+          0.547,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.644
+        ],
+        "4:3": [
+          0.5,
+          0.834
+        ],
+        "1:1": [
+          1.0,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-pinophilus-01.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-pinophilus-01-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-pinophilus-01-t.webp"
+      },
+      "source": "Wikimedia Commons",
+      "attribution_required_text": "",
+      "colour_management": {
+        "source_icc_name": "Display P3",
+        "converted_to_srgb": true,
+        "untagged_assumed_srgb": false
+      }
+    },
+    {
+      "id": "pe2-main-pinophilus-03",
+      "target_group": "species",
+      "target_key": "pinophilus",
+      "latin": "Boletus pinophilus",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-pinophilus-03.jpg",
+      "sha256_original": "f27973ef4b6bc994f19790f40399383781c7c166e7a60390340d2c92cb4d3f69",
+      "commons_sha1": "175a25efaf55a51afbf8369bdba8e56735d14c8c",
+      "source_title": "File:Boletus pinophilus 4.jpg",
+      "source_description": "Boletus pinophilus",
+      "source_categories": [
+        "Category:Boletus pinophilus",
+        "Category:CC-BY-4.0",
+        "Category:INaturalist images reviewed by iNaturalistReviewBot",
+        "Category:Media from GBIF",
+        "Category:Media from iNaturalist",
+        "Boletus pinophilus",
+        "Media from iNaturalist",
+        "INaturalist images reviewed by iNaturalistReviewBot",
+        "Media from GBIF"
+      ],
+      "page": "https://commons.wikimedia.org/wiki/File:Boletus_pinophilus_4.jpg",
+      "author": "valentin_kosterin",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Boletus_pinophilus_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "source_attribution": "valentin_kosterin",
+      "attribution": "valentin_kosterin / Wikimedia Commons / CC BY 4.0",
+      "alt": "Boletus pinophilus. Cappello e gambo osservati da vicino.",
+      "caption": "Cappello e gambo osservati da vicino.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.51
+        ],
+        "riquadro": [
+          0.1,
+          0.07,
+          0.89,
+          0.94
+        ],
+        "nota": "Veduta dell’esemplare o gruppo; nessuna fase biologica attribuita. I ritagli stretti possono escludere parti; la foto intera resta nel visore. Confrontata con tutte le foto già collegate alla scheda."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.527
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          1.0
+        ],
+        "16:7": [
+          0.5,
+          0.515
+        ],
+        "4:3": [
+          0.5,
+          0.524
+        ],
+        "1:1": [
+          0.5,
+          0.547
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-pinophilus-03.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-pinophilus-03-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-pinophilus-03-t.webp"
+      },
+      "source": "Wikimedia Commons",
+      "attribution_required_text": "",
+      "colour_management": {
+        "source_icc_name": null,
+        "converted_to_srgb": false,
+        "untagged_assumed_srgb": true
+      }
+    },
+    {
+      "id": "pe2-main-pinophilus-04",
+      "target_group": "species",
+      "target_key": "pinophilus",
+      "latin": "Boletus pinophilus",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-pinophilus-04.jpg",
+      "sha256_original": "7e3533de29c0ff41c5196a66e192f04c221aba4be81c536224ddcd10b2735e28",
+      "commons_sha1": "efe7f07b9538cd246925f50c92381d5e3be444ae",
+      "source_title": "File:Boletus pinophilus 5.jpg",
+      "source_description": "Boletus pinophilus",
+      "source_categories": [
+        "Category:Boletus pinophilus",
+        "Category:CC-BY-4.0",
+        "Category:INaturalist images reviewed by iNaturalistReviewBot",
+        "Category:Media from GBIF",
+        "Category:Media from iNaturalist",
+        "Boletus pinophilus",
+        "Media from iNaturalist",
+        "INaturalist images reviewed by iNaturalistReviewBot",
+        "Media from GBIF"
+      ],
+      "page": "https://commons.wikimedia.org/wiki/File:Boletus_pinophilus_5.jpg",
+      "author": "dmitry_kulakov",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Boletus_pinophilus_5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "source_attribution": "dmitry_kulakov",
+      "attribution": "dmitry_kulakov / Wikimedia Commons / CC BY 4.0",
+      "alt": "Boletus pinophilus. Gruppo di esemplari disposti sul terreno.",
+      "caption": "Gruppo di esemplari disposti sul terreno.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.53,
+          0.55
+        ],
+        "riquadro": [
+          0.04,
+          0.1,
+          0.99,
+          0.98
+        ],
+        "nota": "Veduta dell’esemplare o gruppo; nessuna fase biologica attribuita. I ritagli stretti possono escludere parti; la foto intera resta nel visore. Confrontata con tutte le foto già collegate alla scheda."
+      },
+      "crop_points": {
+        "5:4": [
+          0.815,
+          0.5
+        ],
+        "3:4": [
+          0.566,
+          0.5
+        ],
+        "4:5": [
+          0.571,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.626
+        ],
+        "4:3": [
+          1.0,
+          0.5
+        ],
+        "1:1": [
+          0.609,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-pinophilus-04.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-pinophilus-04-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-pinophilus-04-t.webp"
+      },
+      "source": "Wikimedia Commons",
+      "attribution_required_text": "",
+      "colour_management": {
+        "source_icc_name": null,
+        "converted_to_srgb": false,
+        "untagged_assumed_srgb": true
+      }
+    },
+    {
+      "id": "pe2-main-suillus-03",
+      "target_group": "species",
+      "target_key": "suillus",
+      "latin": "Suillus luteus",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-suillus-03.jpg",
+      "sha256_original": "3faedddcb7742ffbe3f9277ea9eb4210a267e9804e93c2b80f68b199fe830e8d",
+      "commons_sha1": "f5a9e9df403870733f7b8c0c7a588d622f00afe0",
+      "source_title": "File:Suillus luteus (23973320728).jpg",
+      "source_description": "Slippery Jack - Suillus luteus",
+      "source_categories": [
+        "Suillus luteus",
+        "Flickr images reviewed by FlickreviewR",
+        "Suillaceae in Solingen",
+        "Fungi of Solingen in September",
+        "Solingen photographs taken on 2017-09-23",
+        "Files with coordinates missing SDC location of creation (51° N, 6° E)",
+        "Photographs by Björn Sothmann",
+        "Fungi of Waldfriedhof Hermann-Löns-Weg (Solingen)"
+      ],
+      "page": "https://commons.wikimedia.org/wiki/File:Suillus_luteus_(23973320728).jpg",
+      "author": "Björn S...",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/3/32/Suillus_luteus_%2823973320728%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "source_attribution": "Björn S...",
+      "attribution": "Björn S... / Wikimedia Commons / CC BY-SA 2.0",
+      "alt": "Suillus luteus. Superficie poroide e parte superiore del gambo osservate da vicino.",
+      "caption": "Superficie poroide e parte superiore del gambo osservate da vicino.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.51,
+          0.52
+        ],
+        "riquadro": [
+          0.01,
+          0.01,
+          0.99,
+          0.99
+        ],
+        "nota": "Vista complementare di cappello o pori; nessun carattere non visibile attribuito. I ritagli stretti possono escludere parti; la foto intera resta nel visore. Confrontata con tutte le foto già collegate alla scheda."
+      },
+      "crop_points": {
+        "5:4": [
+          0.56,
+          0.5
+        ],
+        "3:4": [
+          0.52,
+          0.5
+        ],
+        "4:5": [
+          0.521,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.558
+        ],
+        "4:3": [
+          0.59,
+          0.5
+        ],
+        "1:1": [
+          0.53,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-suillus-03.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-suillus-03-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-suillus-03-t.webp"
+      },
+      "source": "Wikimedia Commons",
+      "attribution_required_text": "",
+      "colour_management": {
+        "source_icc_name": null,
+        "converted_to_srgb": false,
+        "untagged_assumed_srgb": true
+      }
+    },
+    {
+      "id": "pe2-main-suillus-04",
+      "target_group": "species",
+      "target_key": "suillus",
+      "latin": "Suillus luteus",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-suillus-04.jpg",
+      "sha256_original": "3fc0a5715f4ccb8067bfcb85b5bbafeba51163fee4c9a1111a0a410003dfa348",
+      "commons_sha1": "07c12a3c6c5200b15103f9d72d4704b5a33e27cf",
+      "source_title": "File:Suillus luteus (23973332568).jpg",
+      "source_description": "Slippery Jack - Suillus luteus",
+      "source_categories": [
+        "Suillus luteus",
+        "Flickr images reviewed by FlickreviewR",
+        "Suillaceae in Solingen",
+        "Fungi of Solingen in September",
+        "Solingen photographs taken on 2017-09-23",
+        "Files with coordinates missing SDC location of creation (51° N, 6° E)",
+        "Photographs by Björn Sothmann",
+        "Fungi of Waldfriedhof Hermann-Löns-Weg (Solingen)"
+      ],
+      "page": "https://commons.wikimedia.org/wiki/File:Suillus_luteus_(23973332568).jpg",
+      "author": "Björn S...",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/6/62/Suillus_luteus_%2823973332568%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "source_attribution": "Björn S...",
+      "attribution": "Björn S... / Wikimedia Commons / CC BY-SA 2.0",
+      "alt": "Suillus luteus. Gruppo sul terreno, con cappelli e gambi visibili.",
+      "caption": "Gruppo sul terreno, con cappelli e gambi visibili.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.49,
+          0.5
+        ],
+        "riquadro": [
+          0.11,
+          0.08,
+          0.95,
+          0.99
+        ],
+        "nota": "Vista complementare di cappello o pori; nessun carattere non visibile attribuito. I ritagli stretti possono escludere parti; la foto intera resta nel visore. Confrontata con tutte le foto già collegate alla scheda."
+      },
+      "crop_points": {
+        "5:4": [
+          0.44,
+          0.5
+        ],
+        "3:4": [
+          0.48,
+          0.5
+        ],
+        "4:5": [
+          0.479,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.5
+        ],
+        "4:3": [
+          0.55,
+          0.5
+        ],
+        "1:1": [
+          0.47,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-suillus-04.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-suillus-04-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-suillus-04-t.webp"
+      },
+      "source": "Wikimedia Commons",
+      "attribution_required_text": "",
+      "colour_management": {
+        "source_icc_name": null,
+        "converted_to_srgb": false,
+        "untagged_assumed_srgb": true
+      }
+    },
+    {
+      "id": "pe2-main-agaricus-bisporus-q01",
+      "target_group": "species",
+      "target_key": "agaricus-bisporus",
+      "latin": "Agaricus bisporus",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-agaricus-bisporus-q01.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Aed%C5%A1ampinjon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "2a73d4755142fa034e8e89741d7ec691989ca988",
+      "source_title": "File:Aedšampinjon.jpg",
+      "source_description": "aedšampinjon",
+      "source_categories": [
+        "Agaricus bisporus",
+        "Self-published work"
+      ],
+      "page": "https://commons.wikimedia.org/wiki/File:Aed%C5%A1ampinjon.jpg",
+      "author": "Svencapoeira",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sha256_original": "4423810fcedd20cf8404424d339e3a5e59aa0515ae3e65d17eafe52aab38286a",
+      "source": "Wikimedia Commons",
+      "colour_management": {
+        "source_icc_name": null,
+        "converted_to_srgb": false,
+        "untagged_assumed_srgb": true
+      },
+      "attribution": "Svencapoeira / Wikimedia Commons / CC BY-SA 4.0",
+      "alt": "Agaricus bisporus. Esemplare rovesciato con lamelle, gambo e base visibili.",
+      "caption": "Esemplare rovesciato con lamelle, gambo e base visibili.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.53,
+          0.54
+        ],
+        "riquadro": [
+          0.28,
+          0.01,
+          0.77,
+          0.96
+        ],
+        "nota": "Esemplare rovesciato con lamelle, gambo e base visibili. Vista completa e sei ritagli controllati; i formati stretti possono escludere parti. Nessuna fase biologica dedotta; nessun giudizio di commestibilità."
+      },
+      "crop_points": {
+        "5:4": [
+          0.571,
+          0.5
+        ],
+        "3:4": [
+          0.546,
+          0.5
+        ],
+        "4:5": [
+          0.548,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          1.0
+        ],
+        "4:3": [
+          0.578,
+          0.5
+        ],
+        "1:1": [
+          0.556,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-agaricus-bisporus-q01.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-agaricus-bisporus-q01-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-agaricus-bisporus-q01-t.webp"
+      },
+      "attribution_required_text": ""
+    },
+    {
+      "id": "pe2-main-agaricus-sylvicola-q01",
+      "target_group": "species",
+      "target_key": "agaricus-sylvicola",
+      "latin": "Agaricus sylvicola",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-agaricus-sylvicola-q01.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/0/09/Agaricus_essettei_170926w.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "cbc53a571ac10fe218c321eabc07f45cb5c1d5d3",
+      "source_title": "File:Agaricus essettei 170926w.JPG",
+      "source_description": "Agaricus sylvicola  (=  A. essettei ) in a park near la Ville du Bois, France.",
+      "source_categories": [
+        "Agaricus silvicola",
+        "GFDL",
+        "License migration redundant",
+        "Self-published work",
+        "Fungi in September",
+        "Agaricaceae in France",
+        "Île-de-France photographs taken on 2017-09-26",
+        "Files with coordinates missing SDC location of creation (48° N, 2° E)"
+      ],
+      "page": "https://commons.wikimedia.org/wiki/File:Agaricus_essettei_170926w.JPG",
+      "author": "Strobilomyces",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sha256_original": "d27d17782a0fb2f568064b46346c21dee3ce1dad9ce4a055ffa1c8f6c2f122d8",
+      "source": "Wikimedia Commons",
+      "colour_management": {
+        "source_icc_name": null,
+        "converted_to_srgb": false,
+        "untagged_assumed_srgb": true
+      },
+      "attribution": "Strobilomyces / Wikimedia Commons / CC BY-SA 4.0",
+      "alt": "Agaricus sylvicola. Cappello e superficie lamellare di due esemplari nel bosco.",
+      "caption": "Cappello e superficie lamellare di due esemplari nel bosco.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.54
+        ],
+        "riquadro": [
+          0.06,
+          0.15,
+          0.93,
+          0.99
+        ],
+        "nota": "Cappello e superficie lamellare di due esemplari nel bosco. Vista completa e sei ritagli controllati; i formati stretti possono escludere parti. Nessuna fase biologica dedotta; nessun giudizio di commestibilità."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.616
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-agaricus-sylvicola-q01.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-agaricus-sylvicola-q01-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-agaricus-sylvicola-q01-t.webp"
+      },
+      "attribution_required_text": ""
+    },
+    {
+      "id": "pe2-main-agaricus-sylvicola-inat01",
+      "target_group": "species",
+      "target_key": "agaricus-sylvicola",
+      "latin": "Agaricus sylvicola",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-agaricus-sylvicola-inat01.jpeg",
+      "sha256_original": "d5e2fbd6166d4c9dc6772255d567d76ffc1f330da75ac2d1b77aaa62c346a18d",
+      "commons_sha1": null,
+      "source_sha1": null,
+      "source": "iNaturalist",
+      "source_title": "iNaturalist observation 9885678, photo 13551524",
+      "source_description": "Agaricus sylvicola; research grade; 09090 Morgongiori OR, Italia",
+      "source_categories": [
+        "Agaricus sylvicola",
+        "research grade",
+        "Italy"
+      ],
+      "page": "https://www.inaturalist.org/observations/9885678",
+      "author": "Davide Puddu",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/13551524/original.jpeg",
+      "source_attribution": "(c) Davide Puddu, some rights reserved (CC BY)",
+      "observationID": 9885678,
+      "photoID": 13551524,
+      "quality_grade": "research",
+      "source_taxon": "Agaricus sylvicola",
+      "photo_license_code": "cc-by",
+      "source_location": "09090 Morgongiori OR, Italia",
+      "source_api": "https://api.inaturalist.org/v1/observations/9885678",
+      "source_html_status": "www.inaturalist.org photo page unavailable: HTTP403; official API used",
+      "colour_management": {
+        "source_icc_name": null,
+        "converted_to_srgb": false,
+        "untagged_assumed_srgb": true
+      },
+      "attribution": "(c) Davide Puddu, some rights reserved (CC BY)",
+      "alt": "Agaricus sylvicola. Due esemplari sul terreno, con cappello e lamelle visibili.",
+      "caption": "Due esemplari sul terreno, con cappello e lamelle visibili.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.53
+        ],
+        "riquadro": [
+          0.02,
+          0.12,
+          0.98,
+          0.9
+        ],
+        "nota": "Due esemplari sul terreno, con cappello e lamelle visibili. Vista completa e sei ritagli controllati; i formati stretti possono escludere parti. Nessuna fase biologica dedotta; nessun giudizio di commestibilità."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.572
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-agaricus-sylvicola-inat01.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-agaricus-sylvicola-inat01-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-agaricus-sylvicola-inat01-t.webp"
+      }
+    },
+    {
+      "id": "pe2-main-agaricus-sylvicola-inat02",
+      "target_group": "species",
+      "target_key": "agaricus-sylvicola",
+      "latin": "Agaricus sylvicola",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-agaricus-sylvicola-inat02.jpg",
+      "sha256_original": "114bb48450f05596bd3dabdc5b2d42c5ba730eba58b26d4f64d04f6eb7ccdb09",
+      "commons_sha1": null,
+      "source_sha1": null,
+      "source": "iNaturalist",
+      "source_title": "iNaturalist observation 63304870, photo 101575975",
+      "source_description": "Agaricus sylvicola; research grade; Via Spilamberto, San Donato Milanese, Lombardia, IT",
+      "source_categories": [
+        "Agaricus sylvicola",
+        "research grade",
+        "Italy"
+      ],
+      "page": "https://www.inaturalist.org/observations/63304870",
+      "author": "pavlaki1968",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/101575975/original.jpg",
+      "source_attribution": "(c) pavlaki1968, some rights reserved (CC BY)",
+      "observationID": 63304870,
+      "photoID": 101575975,
+      "quality_grade": "research",
+      "source_taxon": "Agaricus sylvicola",
+      "photo_license_code": "cc-by",
+      "source_location": "Via Spilamberto, San Donato Milanese, Lombardia, IT",
+      "source_api": "https://api.inaturalist.org/v1/observations/63304870",
+      "source_html_status": "www.inaturalist.org photo page unavailable: HTTP403; official API used",
+      "colour_management": {
+        "source_icc_name": "Display P3",
+        "converted_to_srgb": true,
+        "untagged_assumed_srgb": false
+      },
+      "attribution": "(c) pavlaki1968, some rights reserved (CC BY)",
+      "alt": "Agaricus sylvicola. Cappelli chiari osservati dall’alto fra erba e foglie.",
+      "caption": "Cappelli chiari osservati dall’alto fra erba e foglie.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.49
+        ],
+        "riquadro": [
+          0.03,
+          0.06,
+          0.98,
+          0.97
+        ],
+        "nota": "Cappelli chiari osservati dall’alto fra erba e foglie. Vista completa e sei ritagli controllati; i formati stretti possono escludere parti. Nessuna fase biologica dedotta; nessun giudizio di commestibilità."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.468
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.484
+        ],
+        "4:3": [
+          0.5,
+          0.472
+        ],
+        "1:1": [
+          0.5,
+          0.429
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-agaricus-sylvicola-inat02.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-agaricus-sylvicola-inat02-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-agaricus-sylvicola-inat02-t.webp"
+      }
+    },
+    {
+      "id": "pe2-main-cyclocybe-aegerita-inat01",
+      "target_group": "species",
+      "target_key": "cyclocybe-aegerita",
+      "latin": "Cyclocybe cylindracea (= Cyclocybe aegerita)",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-cyclocybe-aegerita-inat01.jpg",
+      "sha256_original": "4b83c937cc236a746b57b77af4abe013376c1c8cdbec270403785a08dbf39774",
+      "commons_sha1": null,
+      "source_sha1": null,
+      "source": "iNaturalist",
+      "source_title": "iNaturalist observation 340970164, photo 620605249",
+      "source_description": "Cyclocybe cylindracea; research grade; 1^ Via Esino, 60126 Torrette AN, Italia",
+      "source_categories": [
+        "Cyclocybe cylindracea",
+        "research grade",
+        "Italy"
+      ],
+      "page": "https://www.inaturalist.org/observations/340970164",
+      "author": "Gianni Del Bufalo bygdb",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/620605249/original.jpg",
+      "source_attribution": "(c) Gianni Del Bufalo bygdb, some rights reserved (CC BY)",
+      "observationID": 340970164,
+      "photoID": 620605249,
+      "quality_grade": "research",
+      "source_taxon": "Cyclocybe cylindracea",
+      "photo_license_code": "cc-by",
+      "source_location": "1^ Via Esino, 60126 Torrette AN, Italia",
+      "source_api": "https://api.inaturalist.org/v1/observations/340970164",
+      "source_html_status": "www.inaturalist.org photo page unavailable: HTTP403; official API used",
+      "colour_management": {
+        "source_icc_name": "sRGB",
+        "converted_to_srgb": true,
+        "untagged_assumed_srgb": false
+      },
+      "attribution": "(c) Gianni Del Bufalo bygdb, some rights reserved (CC BY)",
+      "alt": "Cyclocybe cylindracea (= Cyclocybe aegerita). Cappelli di un gruppo osservati dall’alto sul legno.",
+      "caption": "Cappelli di un gruppo osservati dall’alto sul legno.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.51,
+          0.52
+        ],
+        "riquadro": [
+          0.01,
+          0.05,
+          0.97,
+          0.96
+        ],
+        "nota": "Cappelli di un gruppo osservati dall’alto sul legno. Vista completa e sei ritagli controllati; i formati stretti possono escludere parti. Nessuna fase biologica dedotta; nessun giudizio di commestibilità."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.538
+        ],
+        "3:4": [
+          0.5,
+          0.598
+        ],
+        "4:5": [
+          0.5,
+          0.579
+        ],
+        "16:7": [
+          0.5,
+          0.527
+        ],
+        "4:3": [
+          0.5,
+          0.536
+        ],
+        "1:1": [
+          0.5,
+          0.55
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-cyclocybe-aegerita-inat01.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-cyclocybe-aegerita-inat01-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-cyclocybe-aegerita-inat01-t.webp"
+      }
+    },
+    {
+      "id": "pe2-main-lactarius-deliciosus-inat01",
+      "target_group": "species",
+      "target_key": "lactarius-deliciosus",
+      "latin": "Lactarius deliciosus",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-lactarius-deliciosus-inat01.jpg",
+      "sha256_original": "b3255c215824cc075d3b7efda0412a3ad53bd2da8bf081f4e7178db40cdd826f",
+      "commons_sha1": null,
+      "source_sha1": null,
+      "source": "iNaturalist",
+      "source_title": "iNaturalist observation 58816751, photo 93932312",
+      "source_description": "Lactarius deliciosus; research grade; Sestola, Emilia–Romagna, IT",
+      "source_categories": [
+        "Lactarius deliciosus",
+        "research grade",
+        "Italy"
+      ],
+      "page": "https://www.inaturalist.org/observations/58816751",
+      "author": "Stephanie G. Williams",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/93932312/original.jpg",
+      "source_attribution": "(c) Stephanie G. Williams, some rights reserved (CC BY)",
+      "observationID": 58816751,
+      "photoID": 93932312,
+      "quality_grade": "research",
+      "source_taxon": "Lactarius deliciosus",
+      "photo_license_code": "cc-by",
+      "source_location": "Sestola, Emilia–Romagna, IT",
+      "source_api": "https://api.inaturalist.org/v1/observations/58816751",
+      "source_html_status": "www.inaturalist.org photo page unavailable: HTTP403; official API used",
+      "colour_management": {
+        "source_icc_name": "Display P3",
+        "converted_to_srgb": true,
+        "untagged_assumed_srgb": false
+      },
+      "attribution": "(c) Stephanie G. Williams, some rights reserved (CC BY)",
+      "alt": "Lactarius deliciosus. Cappello aranciato osservato dall’alto.",
+      "caption": "Cappello aranciato osservato dall’alto.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.49,
+          0.5
+        ],
+        "riquadro": [
+          0.01,
+          0.06,
+          0.96,
+          0.98
+        ],
+        "nota": "Cappello aranciato osservato dall’alto. Vista completa e sei ritagli controllati; i formati stretti possono escludere parti. Nessuna fase biologica dedotta; nessun giudizio di commestibilità."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.68
+        ],
+        "16:7": [
+          0.5,
+          0.5
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-lactarius-deliciosus-inat01.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-lactarius-deliciosus-inat01-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-lactarius-deliciosus-inat01-t.webp"
+      }
+    },
+    {
+      "id": "pe2-main-lactarius-deliciosus-inat02",
+      "target_group": "species",
+      "target_key": "lactarius-deliciosus",
+      "latin": "Lactarius deliciosus",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-lactarius-deliciosus-inat02.jpeg",
+      "sha256_original": "6eeaea9344870a2d8f378792b1cd4d2ee92e4ee544abb843709ee17fd8f52a3a",
+      "commons_sha1": null,
+      "source_sha1": null,
+      "source": "iNaturalist",
+      "source_title": "iNaturalist observation 252876464, photo 452727592",
+      "source_description": "Lactarius deliciosus; research grade; Macerata, Marche, IT",
+      "source_categories": [
+        "Lactarius deliciosus",
+        "research grade",
+        "Italy"
+      ],
+      "page": "https://www.inaturalist.org/observations/252876464",
+      "author": "Manuela Fiorini",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/452727592/original.jpeg",
+      "source_attribution": "(c) Manuela Fiorini, some rights reserved (CC BY)",
+      "observationID": 252876464,
+      "photoID": 452727592,
+      "quality_grade": "research",
+      "source_taxon": "Lactarius deliciosus",
+      "photo_license_code": "cc-by",
+      "source_location": "Macerata, Marche, IT",
+      "source_api": "https://api.inaturalist.org/v1/observations/252876464",
+      "source_html_status": "www.inaturalist.org photo page unavailable: HTTP403; official API used",
+      "colour_management": {
+        "source_icc_name": "Display P3",
+        "converted_to_srgb": true,
+        "untagged_assumed_srgb": false
+      },
+      "attribution": "(c) Manuela Fiorini, some rights reserved (CC BY)",
+      "alt": "Lactarius deliciosus. Esemplare di lato con lamelle e gambo visibili.",
+      "caption": "Esemplare di lato con lamelle e gambo visibili.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.54,
+          0.51
+        ],
+        "riquadro": [
+          0.04,
+          0.05,
+          0.98,
+          0.96
+        ],
+        "nota": "Esemplare di lato con lamelle e gambo visibili. Vista completa e sei ritagli controllati; i formati stretti possono escludere parti. Nessuna fase biologica dedotta; nessun giudizio di commestibilità."
+      },
+      "crop_points": {
+        "5:4": [
+          1.0,
+          0.5
+        ],
+        "3:4": [
+          0.591,
+          0.5
+        ],
+        "4:5": [
+          0.6,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.524
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.66,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-lactarius-deliciosus-inat02.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-lactarius-deliciosus-inat02-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-lactarius-deliciosus-inat02-t.webp"
+      }
+    },
+    {
+      "id": "pe2-main-pleurotus-eryngii-inat01",
+      "target_group": "species",
+      "target_key": "pleurotus-eryngii",
+      "latin": "Pleurotus eryngii",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-pleurotus-eryngii-inat01.jpeg",
+      "sha256_original": "8c71bc8ac4984868d5d3cc469c82d6c19a0ff0490e27c215a9b7665bd2f5fa38",
+      "commons_sha1": null,
+      "source_sha1": null,
+      "source": "iNaturalist",
+      "source_title": "iNaturalist observation 4853530, photo 5891040",
+      "source_description": "Pleurotus eryngii; research grade; Provincia di Matera, Italia",
+      "source_categories": [
+        "Pleurotus eryngii",
+        "research grade",
+        "Italy"
+      ],
+      "page": "https://www.inaturalist.org/observations/4853530",
+      "author": "Autore non indicato (CC0); caricata da Francesco Cecere",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/5891040/original.jpeg",
+      "source_attribution": "no rights reserved",
+      "observationID": 4853530,
+      "photoID": 5891040,
+      "quality_grade": "research",
+      "source_taxon": "Pleurotus eryngii",
+      "photo_license_code": "cc0",
+      "source_location": "Provincia di Matera, Italia",
+      "source_api": "https://api.inaturalist.org/v1/observations/4853530",
+      "source_html_status": "www.inaturalist.org photo page unavailable: HTTP403; official API used",
+      "author_note": "Attribution della singola foto: no rights reserved; nome del caricatore ricavato dalla osservazione ufficiale, non attribuito come autore certo.",
+      "colour_management": {
+        "source_icc_name": null,
+        "converted_to_srgb": false,
+        "untagged_assumed_srgb": true
+      },
+      "attribution": "Autore non indicato (CC0); caricata da Francesco Cecere / iNaturalist / CC0",
+      "alt": "Pleurotus eryngii. Cappello e lamelle di esemplari sostenuti nella mano.",
+      "caption": "Cappello e lamelle di esemplari sostenuti nella mano.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.52,
+          0.5
+        ],
+        "riquadro": [
+          0.02,
+          0.04,
+          0.99,
+          0.95
+        ],
+        "nota": "Cappello e lamelle di esemplari sostenuti nella mano. Vista completa e sei ritagli controllati; i formati stretti possono escludere parti. Nessuna fase biologica dedotta; nessun giudizio di commestibilità."
+      },
+      "crop_points": {
+        "5:4": [
+          0.82,
+          0.5
+        ],
+        "3:4": [
+          0.546,
+          0.5
+        ],
+        "4:5": [
+          0.55,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.5
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.58,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-pleurotus-eryngii-inat01.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-pleurotus-eryngii-inat01-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-pleurotus-eryngii-inat01-t.webp"
+      }
+    },
+    {
+      "id": "pe2-main-pleurotus-eryngii-inat02",
+      "target_group": "species",
+      "target_key": "pleurotus-eryngii",
+      "latin": "Pleurotus eryngii",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-pleurotus-eryngii-inat02.jpeg",
+      "sha256_original": "7639e655d8e41b3e186c19445392e75c43ed175201cd37807a7949aae8817a37",
+      "commons_sha1": null,
+      "source_sha1": null,
+      "source": "iNaturalist",
+      "source_title": "iNaturalist observation 19154567, photo 29410378",
+      "source_description": "Pleurotus eryngii; research grade; Strada Statale 131 Carlo Felice, 08015 Macomer NU, Italia",
+      "source_categories": [
+        "Pleurotus eryngii",
+        "research grade",
+        "Italy"
+      ],
+      "page": "https://www.inaturalist.org/observations/19154567",
+      "author": "Davide Puddu",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/29410378/original.jpeg",
+      "source_attribution": "(c) Davide Puddu, some rights reserved (CC BY)",
+      "observationID": 19154567,
+      "photoID": 29410378,
+      "quality_grade": "research",
+      "source_taxon": "Pleurotus eryngii",
+      "photo_license_code": "cc-by",
+      "source_location": "Strada Statale 131 Carlo Felice, 08015 Macomer NU, Italia",
+      "source_api": "https://api.inaturalist.org/v1/observations/19154567",
+      "source_html_status": "www.inaturalist.org photo page unavailable: HTTP403; official API used",
+      "colour_management": {
+        "source_icc_name": null,
+        "converted_to_srgb": false,
+        "untagged_assumed_srgb": true
+      },
+      "attribution": "(c) Davide Puddu, some rights reserved (CC BY)",
+      "alt": "Pleurotus eryngii. Cappello, lamelle e base di esemplari sul terreno.",
+      "caption": "Cappello, lamelle e base di esemplari sul terreno.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.52,
+          0.54
+        ],
+        "riquadro": [
+          0.02,
+          0.22,
+          0.98,
+          0.95
+        ],
+        "nota": "Cappello, lamelle e base di esemplari sul terreno. Vista completa e sei ritagli controllati; i formati stretti possono escludere parti. Nessuna fase biologica dedotta; nessun giudizio di commestibilità."
+      },
+      "crop_points": {
+        "5:4": [
+          0.82,
+          0.5
+        ],
+        "3:4": [
+          0.546,
+          0.5
+        ],
+        "4:5": [
+          0.55,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.596
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.58,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-pleurotus-eryngii-inat02.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-pleurotus-eryngii-inat02-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-pleurotus-eryngii-inat02-t.webp"
+      }
+    },
+    {
+      "id": "pe2-main-pleurotus-ostreatus-inat01",
+      "target_group": "species",
+      "target_key": "pleurotus-ostreatus",
+      "latin": "Pleurotus ostreatus",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-pleurotus-ostreatus-inat01.jpg",
+      "sha256_original": "bf5a82e040575e1ce0097a536d7dc19c4a3eeeab4d2bfe7bfc666e5f84ca09c3",
+      "commons_sha1": null,
+      "source_sha1": null,
+      "source": "iNaturalist",
+      "source_title": "iNaturalist observation 198558610, photo 349995583",
+      "source_description": "Pleurotus ostreatus; research grade; Riserva Naturale dell'Abbadia di Fiastra, Urbisaglia, Marche, IT",
+      "source_categories": [
+        "Pleurotus ostreatus",
+        "research grade",
+        "Italy"
+      ],
+      "page": "https://www.inaturalist.org/observations/198558610",
+      "author": "Manuela Fiorini",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/349995583/original.jpg",
+      "source_attribution": "(c) Manuela Fiorini, some rights reserved (CC BY)",
+      "observationID": 198558610,
+      "photoID": 349995583,
+      "quality_grade": "research",
+      "source_taxon": "Pleurotus ostreatus",
+      "photo_license_code": "cc-by",
+      "source_location": "Riserva Naturale dell'Abbadia di Fiastra, Urbisaglia, Marche, IT",
+      "source_api": "https://api.inaturalist.org/v1/observations/198558610",
+      "source_html_status": "www.inaturalist.org photo page unavailable: HTTP403; official API used",
+      "colour_management": {
+        "source_icc_name": "Display P3",
+        "converted_to_srgb": true,
+        "untagged_assumed_srgb": false
+      },
+      "attribution": "(c) Manuela Fiorini, some rights reserved (CC BY)",
+      "alt": "Pleurotus ostreatus. Gruppo sul legno con superficie lamellare visibile.",
+      "caption": "Gruppo sul legno con superficie lamellare visibile.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.51
+        ],
+        "riquadro": [
+          0.01,
+          0.01,
+          0.99,
+          0.99
+        ],
+        "nota": "Gruppo sul legno con superficie lamellare visibile. Vista completa e sei ritagli controllati; i formati stretti possono escludere parti. Nessuna fase biologica dedotta; nessun giudizio di commestibilità."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.524
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-pleurotus-ostreatus-inat01.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-pleurotus-ostreatus-inat01-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-pleurotus-ostreatus-inat01-t.webp"
+      }
+    },
+    {
+      "id": "pe2-main-pleurotus-ostreatus-inat02",
+      "target_group": "species",
+      "target_key": "pleurotus-ostreatus",
+      "latin": "Pleurotus ostreatus",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-pleurotus-ostreatus-inat02.jpeg",
+      "sha256_original": "8af0638881163d2c9e50ce31d13b4769cda5addb608d4f7f3e930515c4cde997",
+      "commons_sha1": null,
+      "source_sha1": null,
+      "source": "iNaturalist",
+      "source_title": "iNaturalist observation 19154666, photo 29410567",
+      "source_description": "Pleurotus ostreatus; research grade; Cagliari, Sardegna, IT",
+      "source_categories": [
+        "Pleurotus ostreatus",
+        "research grade",
+        "Italy"
+      ],
+      "page": "https://www.inaturalist.org/observations/19154666",
+      "author": "Davide Puddu",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/29410567/original.jpeg",
+      "source_attribution": "(c) Davide Puddu, some rights reserved (CC BY)",
+      "observationID": 19154666,
+      "photoID": 29410567,
+      "quality_grade": "research",
+      "source_taxon": "Pleurotus ostreatus",
+      "photo_license_code": "cc-by",
+      "source_location": "Cagliari, Sardegna, IT",
+      "source_api": "https://api.inaturalist.org/v1/observations/19154666",
+      "source_html_status": "www.inaturalist.org photo page unavailable: HTTP403; official API used",
+      "colour_management": {
+        "source_icc_name": null,
+        "converted_to_srgb": false,
+        "untagged_assumed_srgb": true
+      },
+      "attribution": "(c) Davide Puddu, some rights reserved (CC BY)",
+      "alt": "Pleurotus ostreatus. Cappelli sovrapposti e lamelle sul tronco.",
+      "caption": "Cappelli sovrapposti e lamelle sul tronco.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.54,
+          0.53
+        ],
+        "riquadro": [
+          0.11,
+          0.11,
+          0.91,
+          0.95
+        ],
+        "nota": "Cappelli sovrapposti e lamelle sul tronco. Vista completa e sei ritagli controllati; i formati stretti possono escludere parti. Nessuna fase biologica dedotta; nessun giudizio di commestibilità."
+      },
+      "crop_points": {
+        "5:4": [
+          1.0,
+          0.5
+        ],
+        "3:4": [
+          0.591,
+          0.5
+        ],
+        "4:5": [
+          0.6,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.572
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.66,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-pleurotus-ostreatus-inat02.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-pleurotus-ostreatus-inat02-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-pleurotus-ostreatus-inat02-t.webp"
+      }
+    },
+    {
+      "id": "pe2-main-amanita-rubescens-q01",
+      "target_group": "species",
+      "target_key": "amanita-rubescens",
+      "latin": "Amanita rubescens",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-amanita-rubescens-q01.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/4/43/Amanita_-_Flickr_-_S._Rae_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "75c293c4248182ea0267f1ff20e2d40b761e4fb2",
+      "source_title": "File:Amanita - Flickr - S. Rae (1).jpg",
+      "source_description": "Penmanshiel Wood, Berwickshire, Scotland",
+      "source_categories": [
+        "Amanita rubescens",
+        "Flickr images reviewed by FlickreviewR",
+        "Fungi of the Scottish Borders",
+        "Fungi in September",
+        "United Kingdom photographs taken on 2014-09-21",
+        "Photographs by S. Rae",
+        "Amanita rubescens in the United Kingdom",
+        "Files uploaded by Josve05a (S. Rae)"
+      ],
+      "page": "https://commons.wikimedia.org/wiki/File:Amanita_-_Flickr_-_S._Rae_(1).jpg",
+      "author": "S. Rae  from Scotland, UK",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "sha256_original": "3d320a8fe0f9d57ed24a506975d2eee91a280a1d8028f67a31df03498e098cd1",
+      "source": "Wikimedia Commons",
+      "colour_management": {
+        "source_icc_name": null,
+        "converted_to_srgb": false,
+        "untagged_assumed_srgb": true
+      },
+      "attribution": "S. Rae  from Scotland, UK / Wikimedia Commons / CC BY 2.0",
+      "alt": "Amanita rubescens. Dettaglio della superficie del cappello.",
+      "caption": "Dettaglio della superficie del cappello.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.49
+        ],
+        "riquadro": [
+          0.03,
+          0.02,
+          0.96,
+          0.96
+        ],
+        "nota": "Dettaglio della superficie del cappello. Vista completa e sei ritagli controllati; i formati stretti possono escludere parti. Nessuna fase biologica dedotta; nessun giudizio di commestibilità."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.318
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.479
+        ],
+        "4:3": [
+          0.5,
+          0.412
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-amanita-rubescens-q01.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-amanita-rubescens-q01-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-amanita-rubescens-q01-t.webp"
+      },
+      "attribution_required_text": ""
+    },
+    {
+      "id": "pe2-main-fistulina-hepatica-q01",
+      "target_group": "species",
+      "target_key": "fistulina-hepatica",
+      "latin": "Fistulina hepatica",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-fistulina-hepatica-q01.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/d/da/2008-05-30_Fistulina_hepatica_%28Schaeff.%29_With_13737.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "e2d24773726f3f337f34be86d81e84d97b162fd9",
+      "source_title": "File:2008-05-30 Fistulina hepatica (Schaeff.) With 13737.jpg",
+      "source_description": "Fistulina hepatica   (Schaeff.) With.",
+      "source_categories": [
+        "Fistulina hepatica",
+        "Images from Mushroom Observer",
+        "Files from external sources with reviewed licenses",
+        "Files with derivative versions",
+        "Fungi in May"
+      ],
+      "page": "https://commons.wikimedia.org/wiki/File:2008-05-30_Fistulina_hepatica_(Schaeff.)_With_13737.jpg",
+      "author": "Copyright ©2008 Ian Dodd",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sha256_original": "9f861c6c2113956baffe7f141a131a2a30d32221bd4655d3e49d14b7702756b6",
+      "source": "Wikimedia Commons",
+      "source_attribution": "This image was created by user  Copyright ©2008 Ian Dodd  at  Mushroom Observer , a source for mycological images. You can contact this user  here .",
+      "colour_management": {
+        "source_icc_name": null,
+        "converted_to_srgb": false,
+        "untagged_assumed_srgb": true
+      },
+      "attribution": "Copyright ©2008 Ian Dodd / Wikimedia Commons / CC BY-SA 3.0",
+      "alt": "Fistulina hepatica. Dettaglio di un piccolo corpo fruttifero sul legno.",
+      "caption": "Dettaglio di un piccolo corpo fruttifero sul legno.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.51,
+          0.52
+        ],
+        "riquadro": [
+          0.14,
+          0.1,
+          0.88,
+          0.96
+        ],
+        "nota": "Dettaglio di un piccolo corpo fruttifero sul legno. Vista completa e sei ritagli controllati; i formati stretti possono escludere parti. Nessuna fase biologica dedotta; nessun giudizio di commestibilità."
+      },
+      "crop_points": {
+        "5:4": [
+          0.594,
+          0.5
+        ],
+        "3:4": [
+          0.522,
+          0.5
+        ],
+        "4:5": [
+          0.523,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.552
+        ],
+        "4:3": [
+          0.712,
+          0.5
+        ],
+        "1:1": [
+          0.535,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-fistulina-hepatica-q01.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-fistulina-hepatica-q01-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-fistulina-hepatica-q01-t.webp"
+      },
+      "attribution_required_text": ""
+    },
+    {
+      "id": "pe2-main-hygrophorus-latitabundus-q01",
+      "target_group": "species",
+      "target_key": "hygrophorus-latitabundus",
+      "latin": "Hygrophorus latitabundus",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-hygrophorus-latitabundus-q01.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Gro%C3%9Fe_Kiefern-Schneckling_Hygrophorus_latitabundus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "87d6b338c682118be743e9ca197974241e168182",
+      "source_title": "File:Große Kiefern-Schneckling Hygrophorus latitabundus.jpg",
+      "source_description": "Hygrophorus latitabundus  , Location: Germany, Ehingen. Thanks to C. Fischer / Mycological study group Ulm for showing.",
+      "source_categories": [
+        "Hygrophorus latitabundus",
+        "Self-published work",
+        "Files with coordinates missing SDC location of creation (48° N, 9° E)"
+      ],
+      "page": "https://commons.wikimedia.org/wiki/File:Gro%C3%9Fe_Kiefern-Schneckling_Hygrophorus_latitabundus.jpg",
+      "author": "Holger Krisp",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "sha256_original": "7c20201307dab23ae9bb242a419860706216d3f0561f2a5504108dfbe8fdb824",
+      "source": "Wikimedia Commons",
+      "colour_management": {
+        "source_icc_name": "sRGB - GIMP",
+        "converted_to_srgb": true,
+        "untagged_assumed_srgb": false
+      },
+      "attribution": "Holger Krisp / Wikimedia Commons / CC BY 4.0",
+      "alt": "Hygrophorus latitabundus. Esemplari sul terreno con gambi e lamelle visibili.",
+      "caption": "Esemplari sul terreno con gambi e lamelle visibili.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.53,
+          0.51
+        ],
+        "riquadro": [
+          0.04,
+          0.03,
+          0.96,
+          0.99
+        ],
+        "nota": "Esemplari sul terreno con gambi e lamelle visibili. Vista completa e sei ritagli controllati; i formati stretti possono escludere parti. Nessuna fase biologica dedotta; nessun giudizio di commestibilità."
+      },
+      "crop_points": {
+        "5:4": [
+          0.68,
+          0.5
+        ],
+        "3:4": [
+          0.56,
+          0.5
+        ],
+        "4:5": [
+          0.564,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.529
+        ],
+        "4:3": [
+          0.77,
+          0.5
+        ],
+        "1:1": [
+          0.59,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-hygrophorus-latitabundus-q01.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-hygrophorus-latitabundus-q01-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-hygrophorus-latitabundus-q01-t.webp"
+      },
+      "attribution_required_text": ""
+    },
+    {
+      "id": "pe2-main-lactarius-deterrimus-inat02",
+      "target_group": "species",
+      "target_key": "lactarius-deterrimus",
+      "latin": "Lactarius deterrimus",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-lactarius-deterrimus-inat02.jpg",
+      "sha256_original": "3fa69efcb407b018e74105986660485f8097d1e6d48db660c8694f50031205dc",
+      "commons_sha1": null,
+      "source_sha1": null,
+      "source": "iNaturalist",
+      "source_title": "iNaturalist observation 405562465, photo 744956638",
+      "source_description": "Lactarius deterrimus; research grade; Localita'Sèn Pelegrin, Moena, Trentino-Alto Adige, IT",
+      "source_categories": [
+        "Lactarius deterrimus",
+        "research grade",
+        "Italy"
+      ],
+      "page": "https://www.inaturalist.org/observations/405562465",
+      "author": "Manuela Fiorini",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/744956638/original.jpg",
+      "source_attribution": "(c) Manuela Fiorini, some rights reserved (CC BY)",
+      "observationID": 405562465,
+      "photoID": 744956638,
+      "quality_grade": "research",
+      "source_taxon": "Lactarius deterrimus",
+      "photo_license_code": "cc-by",
+      "source_location": "Localita'Sèn Pelegrin, Moena, Trentino-Alto Adige, IT",
+      "source_api": "https://api.inaturalist.org/v1/observations/405562465",
+      "source_html_status": "www.inaturalist.org photo page unavailable: HTTP403; official API used",
+      "colour_management": {
+        "source_icc_name": null,
+        "converted_to_srgb": false,
+        "untagged_assumed_srgb": true
+      },
+      "attribution": "(c) Manuela Fiorini, some rights reserved (CC BY)",
+      "alt": "Lactarius deterrimus. Cappello osservato dall'alto fra erba e aghi.",
+      "caption": "Cappello osservato dall'alto fra erba e aghi.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.51
+        ],
+        "riquadro": [
+          0.01,
+          0.01,
+          0.99,
+          0.99
+        ],
+        "nota": "Cappello osservato dall'alto fra erba e aghi. Vista completa e sei ritagli controllati; i formati stretti possono escludere parti. Nessuna fase biologica dedotta; nessun giudizio di commestibilità."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.524
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-lactarius-deterrimus-inat02.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-lactarius-deterrimus-inat02-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-lactarius-deterrimus-inat02-t.webp"
+      }
+    },
+    {
+      "id": "pe2-main-tricholoma-portentosum-inat01",
+      "target_group": "species",
+      "target_key": "tricholoma-portentosum",
+      "latin": "Tricholoma portentosum",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-tricholoma-portentosum-inat01.jpeg",
+      "sha256_original": "69c1b2e371a8a2e34a9194b1400fd67d2a4b2f2259b7b47e6b284649b0af8491",
+      "commons_sha1": null,
+      "source_sha1": null,
+      "source": "iNaturalist",
+      "source_title": "iNaturalist observation 19012860, photo 29157275",
+      "source_description": "Tricholoma portentosum; research grade; Provincia dell'Ogliastra, Italia",
+      "source_categories": [
+        "Tricholoma portentosum",
+        "research grade",
+        "Italy"
+      ],
+      "page": "https://www.inaturalist.org/observations/19012860",
+      "author": "Davide Puddu",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/29157275/original.jpeg",
+      "source_attribution": "(c) Davide Puddu, some rights reserved (CC BY)",
+      "observationID": 19012860,
+      "photoID": 29157275,
+      "quality_grade": "research",
+      "source_taxon": "Tricholoma portentosum",
+      "photo_license_code": "cc-by",
+      "source_location": "Provincia dell'Ogliastra, Italia",
+      "source_api": "https://api.inaturalist.org/v1/observations/19012860",
+      "source_html_status": "www.inaturalist.org photo page unavailable: HTTP403; official API used",
+      "colour_management": {
+        "source_icc_name": null,
+        "converted_to_srgb": false,
+        "untagged_assumed_srgb": true
+      },
+      "attribution": "(c) Davide Puddu, some rights reserved (CC BY)",
+      "alt": "Tricholoma portentosum. Cappello, lamelle e gambo di due esemplari sul terreno.",
+      "caption": "Cappello, lamelle e gambo di due esemplari sul terreno.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.49,
+          0.52
+        ],
+        "riquadro": [
+          0.1,
+          0.09,
+          0.9,
+          0.84
+        ],
+        "nota": "Cappello, lamelle e gambo di due esemplari sul terreno. Vista completa e sei ritagli controllati; i formati stretti possono escludere parti. Nessuna fase biologica dedotta; nessun giudizio di commestibilità."
+      },
+      "crop_points": {
+        "5:4": [
+          0.34,
+          0.5
+        ],
+        "3:4": [
+          0.477,
+          0.5
+        ],
+        "4:5": [
+          0.475,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.548
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.46,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-tricholoma-portentosum-inat01.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-tricholoma-portentosum-inat01-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-tricholoma-portentosum-inat01-t.webp"
+      }
+    },
+    {
+      "id": "pe2-main-coprinus-comatus-inat01",
+      "target_group": "species",
+      "target_key": "coprinus-comatus",
+      "latin": "Coprinus comatus",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-coprinus-comatus-inat01.jpg",
+      "sha256_original": "028206edc77637ce36c2b686011c9ccf930f9388efb01474dc7907a8d7ffefe8",
+      "commons_sha1": null,
+      "source_sha1": null,
+      "source": "iNaturalist",
+      "source_title": "iNaturalist observation 322601282, photo 583624865",
+      "source_description": "Coprinus comatus; research grade; Villa Vannucchi",
+      "source_categories": [
+        "Coprinus comatus",
+        "research grade",
+        "Italy"
+      ],
+      "page": "https://www.inaturalist.org/observations/322601282",
+      "author": "Autore non indicato (CC0); caricata da Annalisa P",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/583624865/original.jpg",
+      "source_attribution": "no rights reserved",
+      "observationID": 322601282,
+      "photoID": 583624865,
+      "quality_grade": "research",
+      "source_taxon": "Coprinus comatus",
+      "photo_license_code": "cc0",
+      "source_location": "Villa Vannucchi",
+      "source_api": "https://api.inaturalist.org/v1/observations/322601282",
+      "source_html_status": "www.inaturalist.org photo page unavailable: HTTP403; official API used",
+      "author_note": "Attribution della singola foto: no rights reserved; nome del caricatore ricavato dalla osservazione ufficiale, non attribuito come autore certo.",
+      "colour_management": {
+        "source_icc_name": "sRGB",
+        "converted_to_srgb": true,
+        "untagged_assumed_srgb": false
+      },
+      "attribution": "Autore non indicato (CC0); caricata da Annalisa P / iNaturalist / CC0",
+      "alt": "Coprinus comatus. Esemplare con cappello aperto osservato dall'alto.",
+      "caption": "Esemplare con cappello aperto osservato dall'alto.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.49,
+          0.5
+        ],
+        "riquadro": [
+          0.17,
+          0.07,
+          0.85,
+          0.99
+        ],
+        "nota": "Esemplare con cappello aperto osservato dall'alto. Vista completa e sei ritagli controllati; i formati stretti possono escludere parti. Nessuna fase biologica dedotta; nessun giudizio di commestibilità."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.46,
+          0.5
+        ],
+        "4:5": [
+          0.45,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.5
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-coprinus-comatus-inat01.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-coprinus-comatus-inat01-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-coprinus-comatus-inat01-t.webp"
+      }
+    },
+    {
+      "id": "pe2-main-coprinus-comatus-inat02",
+      "target_group": "species",
+      "target_key": "coprinus-comatus",
+      "latin": "Coprinus comatus",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-coprinus-comatus-inat02.jpeg",
+      "sha256_original": "a987cb8b6369d7836843b2e5ce1a924a870c21df2fe2d463b98e160f8a798ad2",
+      "commons_sha1": null,
+      "source_sha1": null,
+      "source": "iNaturalist",
+      "source_title": "iNaturalist observation 252585513, photo 452189797",
+      "source_description": "Coprinus comatus; research grade; 60126 Torrette AN, Italia",
+      "source_categories": [
+        "Coprinus comatus",
+        "research grade",
+        "Italy"
+      ],
+      "page": "https://www.inaturalist.org/observations/252585513",
+      "author": "Gianni Del Bufalo bygdb",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/452189797/original.jpeg",
+      "source_attribution": "(c) Gianni Del Bufalo bygdb, some rights reserved (CC BY)",
+      "observationID": 252585513,
+      "photoID": 452189797,
+      "quality_grade": "research",
+      "source_taxon": "Coprinus comatus",
+      "photo_license_code": "cc-by",
+      "source_location": "60126 Torrette AN, Italia",
+      "source_api": "https://api.inaturalist.org/v1/observations/252585513",
+      "source_html_status": "www.inaturalist.org photo page unavailable: HTTP403; official API used",
+      "colour_management": {
+        "source_icc_name": null,
+        "converted_to_srgb": false,
+        "untagged_assumed_srgb": true
+      },
+      "attribution": "(c) Gianni Del Bufalo bygdb, some rights reserved (CC BY)",
+      "alt": "Coprinus comatus. Dettaglio laterale del cappello e della sua superficie.",
+      "caption": "Dettaglio laterale del cappello e della sua superficie.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.5
+        ],
+        "riquadro": [
+          0.13,
+          0.03,
+          0.91,
+          0.98
+        ],
+        "nota": "Dettaglio laterale del cappello e della sua superficie. Vista completa e sei ritagli controllati; i formati stretti possono escludere parti. Nessuna fase biologica dedotta; nessun giudizio di commestibilità."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.5
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-coprinus-comatus-inat02.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-coprinus-comatus-inat02-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-coprinus-comatus-inat02-t.webp"
+      }
+    },
+    {
+      "id": "pe2-main-fistulina-hepatica-inat02",
+      "target_group": "species",
+      "target_key": "fistulina-hepatica",
+      "latin": "Fistulina hepatica",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-fistulina-hepatica-inat02.jpg",
+      "sha256_original": "2e7703ddf4f06f04b9f2a23c1b8b6b9c41c4576e8292dcea5857ea6beb26e305",
+      "commons_sha1": null,
+      "source_sha1": null,
+      "source": "iNaturalist",
+      "source_title": "iNaturalist observation 9368068, photo 12720100",
+      "source_description": "Fistulina hepatica; research grade; 08032 Desulo NU, Italia",
+      "source_categories": [
+        "Fistulina hepatica",
+        "research grade",
+        "Italy"
+      ],
+      "page": "https://www.inaturalist.org/observations/9368068",
+      "author": "Davide Puddu",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/12720100/original.jpg",
+      "source_attribution": "(c) Davide Puddu, some rights reserved (CC BY)",
+      "observationID": 9368068,
+      "photoID": 12720100,
+      "quality_grade": "research",
+      "source_taxon": "Fistulina hepatica",
+      "photo_license_code": "cc-by",
+      "source_location": "08032 Desulo NU, Italia",
+      "source_api": "https://api.inaturalist.org/v1/observations/9368068",
+      "source_html_status": "www.inaturalist.org photo page unavailable: HTTP403; official API used",
+      "colour_management": {
+        "source_icc_name": "IEC 61966-2.1 Default RGB colour space - sRGB",
+        "converted_to_srgb": true,
+        "untagged_assumed_srgb": false
+      },
+      "attribution": "(c) Davide Puddu, some rights reserved (CC BY)",
+      "alt": "Fistulina hepatica. Corpo fruttifero sul tronco e sezione visibile.",
+      "caption": "Corpo fruttifero sul tronco e sezione visibile.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.51,
+          0.55
+        ],
+        "riquadro": [
+          0.01,
+          0.15,
+          0.99,
+          0.98
+        ],
+        "nota": "Corpo fruttifero sul tronco e sezione visibile. Vista completa e sei ritagli controllati; i formati stretti possono escludere parti. Nessuna fase biologica dedotta; nessun giudizio di commestibilità."
+      },
+      "crop_points": {
+        "5:4": [
+          0.56,
+          0.5
+        ],
+        "3:4": [
+          0.52,
+          0.5
+        ],
+        "4:5": [
+          0.521,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.646
+        ],
+        "4:3": [
+          0.59,
+          0.5
+        ],
+        "1:1": [
+          0.53,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-fistulina-hepatica-inat02.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-fistulina-hepatica-inat02-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-fistulina-hepatica-inat02-t.webp"
+      }
+    },
+    {
+      "id": "pe2-main-amanita-rubescens-inat02",
+      "target_group": "species",
+      "target_key": "amanita-rubescens",
+      "latin": "Amanita rubescens",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-amanita-rubescens-inat02.jpeg",
+      "sha256_original": "c35e1f6b989577055702c25b9ece7e06cbae6a2e21f3addcf1d9b161b7ff7194",
+      "commons_sha1": null,
+      "source_sha1": null,
+      "source": "iNaturalist",
+      "source_title": "iNaturalist observation 240743933, photo 428957853",
+      "source_description": "Amanita rubescens; research grade; Moena, Trentino-Alto Adige, IT",
+      "source_categories": [
+        "Amanita rubescens",
+        "research grade",
+        "Italy"
+      ],
+      "page": "https://www.inaturalist.org/observations/240743933",
+      "author": "Manuela Fiorini",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/428957853/original.jpeg",
+      "source_attribution": "(c) Manuela Fiorini, some rights reserved (CC BY)",
+      "observationID": 240743933,
+      "photoID": 428957853,
+      "quality_grade": "research",
+      "source_taxon": "Amanita rubescens",
+      "photo_license_code": "cc-by",
+      "source_location": "Moena, Trentino-Alto Adige, IT",
+      "source_api": "https://api.inaturalist.org/v1/observations/240743933",
+      "source_html_status": "www.inaturalist.org photo page unavailable: HTTP403; official API used",
+      "colour_management": {
+        "source_icc_name": "Display P3",
+        "converted_to_srgb": true,
+        "untagged_assumed_srgb": false
+      },
+      "attribution": "(c) Manuela Fiorini, some rights reserved (CC BY)",
+      "alt": "Amanita rubescens. Cappello osservato dall'alto fra fili d'erba.",
+      "caption": "Cappello osservato dall'alto fra fili d'erba.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.5
+        ],
+        "riquadro": [
+          0.01,
+          0.01,
+          0.99,
+          0.99
+        ],
+        "nota": "Cappello osservato dall'alto fra fili d'erba. Vista completa e sei ritagli controllati; i formati stretti possono escludere parti. Nessuna fase biologica dedotta; nessun giudizio di commestibilità."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.5
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-amanita-rubescens-inat02.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-amanita-rubescens-inat02-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-amanita-rubescens-inat02-t.webp"
+      }
+    },
+    {
+      "id": "pe2-main-russula-aurea-inat02",
+      "target_group": "species",
+      "target_key": "russula-aurea",
+      "latin": "Russula aurea",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-russula-aurea-inat02.jpg",
+      "sha256_original": "9670eea79d4cdb0b7b191f2b57fb666979e8b5628be5050e1e26e827a8abfd34",
+      "commons_sha1": null,
+      "source_sha1": null,
+      "source": "iNaturalist",
+      "source_title": "iNaturalist observation 194059642, photo 341013023",
+      "source_description": "Russula aurea; research grade; Marche, IT",
+      "source_categories": [
+        "Russula aurea",
+        "research grade",
+        "Italy"
+      ],
+      "page": "https://www.inaturalist.org/observations/194059642",
+      "author": "Manuela Fiorini",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/341013023/original.jpg",
+      "source_attribution": "(c) Manuela Fiorini, some rights reserved (CC BY)",
+      "observationID": 194059642,
+      "photoID": 341013023,
+      "quality_grade": "research",
+      "source_taxon": "Russula aurea",
+      "photo_license_code": "cc-by",
+      "source_location": "Marche, IT",
+      "source_api": "https://api.inaturalist.org/v1/observations/194059642",
+      "source_html_status": "www.inaturalist.org photo page unavailable: HTTP403; official API used",
+      "colour_management": {
+        "source_icc_name": null,
+        "converted_to_srgb": false,
+        "untagged_assumed_srgb": true
+      },
+      "attribution": "(c) Manuela Fiorini, some rights reserved (CC BY)",
+      "alt": "Russula aurea. Lamelle gialle e gambo osservati da vicino.",
+      "caption": "Lamelle gialle e gambo osservati da vicino.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.51,
+          0.5
+        ],
+        "riquadro": [
+          0.01,
+          0.01,
+          0.99,
+          0.99
+        ],
+        "nota": "Lamelle gialle e gambo osservati da vicino. Vista completa e sei ritagli controllati; i formati stretti possono escludere parti. Nessuna fase biologica dedotta; nessun giudizio di commestibilità."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.536,
+          0.5
+        ],
+        "4:5": [
+          0.544,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.5
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.777,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-russula-aurea-inat02.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-russula-aurea-inat02-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-russula-aurea-inat02-t.webp"
+      }
+    },
+    {
+      "id": "pe2-main-lactarius-deterrimus-q01",
+      "target_group": "species",
+      "target_key": "lactarius-deterrimus",
+      "latin": "Lactarius deterrimus",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-lactarius-deterrimus-q01.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/3/35/2011-07-31_Lactarius_deterrimus_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "a49d2e571c217db886fb2d353f5f9dfb64b1d67a",
+      "source_title": "File:2011-07-31 Lactarius deterrimus 3.jpg",
+      "source_description": "False Saffron Milkcap ( Lactarius deterrimus )",
+      "source_categories": [
+        "Lactarius deterrimus",
+        "Self-published work",
+        "Photographs by Andreas Kunze",
+        "Bavaria photographs taken on 2011-07-31",
+        "Lactarius in Landkreis Donau-Ries",
+        "Russulales in Bavaria in July",
+        "Fungi of Mertinger Forst"
+      ],
+      "page": "https://commons.wikimedia.org/wiki/File:2011-07-31_Lactarius_deterrimus_3.jpg",
+      "author": "Andreas Kunze",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sha256_original": "f5ffbc8242efef2a70f43e19ff9d5a5693a9b0fa92952cc302d4c6f3bbaded4d",
+      "source": "Wikimedia Commons",
+      "colour_management": {
+        "source_icc_name": null,
+        "converted_to_srgb": false,
+        "untagged_assumed_srgb": true
+      },
+      "attribution": "Andreas Kunze / Wikimedia Commons / CC BY-SA 3.0",
+      "alt": "Lactarius deterrimus. Dettaglio ravvicinato delle lamelle aranciate.",
+      "caption": "Dettaglio ravvicinato delle lamelle aranciate.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.51,
+          0.49
+        ],
+        "riquadro": [
+          0.01,
+          0.01,
+          0.99,
+          0.99
+        ],
+        "nota": "Dettaglio ravvicinato delle lamelle aranciate. Vista completa e sei ritagli controllati; i formati stretti possono escludere parti. Nessuna fase biologica dedotta; nessun giudizio di commestibilità."
+      },
+      "crop_points": {
+        "5:4": [
+          0.654,
+          0.5
+        ],
+        "3:4": [
+          0.523,
+          0.5
+        ],
+        "4:5": [
+          0.525,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.476
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.54,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-lactarius-deterrimus-q01.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-lactarius-deterrimus-q01-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-lactarius-deterrimus-q01-t.webp"
+      },
+      "attribution_required_text": ""
+    },
+    {
+      "id": "pe2-main-morchella-esculenta-q01",
+      "target_group": "species",
+      "target_key": "morchella-esculenta",
+      "latin": "Morchella esculenta s.l.",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-morchella-esculenta-q01.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/4/4a/2011-04-30_Morchella_esculenta.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "a1aa01621ba690ab9e14dcb6de5f841b455be787",
+      "source_title": "File:2011-04-30 Morchella esculenta.jpg",
+      "source_description": "Morel ( Morchella esculenta  agg.)",
+      "source_categories": [
+        "Morchella esculenta",
+        "Self-published work",
+        "Photographs by Andreas Kunze",
+        "Bavaria photographs taken on 2011-04-30",
+        "Pezizales in Bavaria in April",
+        "Morchellaceae in Upper Bavaria"
+      ],
+      "page": "https://commons.wikimedia.org/wiki/File:2011-04-30_Morchella_esculenta.jpg",
+      "author": "Andreas Kunze",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sha256_original": "c3a33eda48af58fd8ee8911d786cf156a3e5393ff7b70fc90e72792fdf59b8b5",
+      "source": "Wikimedia Commons",
+      "colour_management": {
+        "source_icc_name": null,
+        "converted_to_srgb": false,
+        "untagged_assumed_srgb": true
+      },
+      "attribution": "Andreas Kunze / Wikimedia Commons / CC BY-SA 3.0",
+      "alt": "Morchella esculenta s.l.. Due esemplari con mitra alveolata e gambo visibili.",
+      "caption": "Due esemplari con mitra alveolata e gambo visibili.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.51,
+          0.53
+        ],
+        "riquadro": [
+          0.05,
+          0.04,
+          0.96,
+          0.98
+        ],
+        "nota": "Due esemplari con mitra alveolata e gambo visibili. Vista completa e sei ritagli controllati; i formati stretti possono escludere parti. Nessuna fase biologica dedotta; nessun giudizio di commestibilità."
+      },
+      "crop_points": {
+        "5:4": [
+          0.86,
+          0.5
+        ],
+        "3:4": [
+          0.524,
+          0.5
+        ],
+        "4:5": [
+          0.526,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.569
+        ],
+        "4:3": [
+          0.5,
+          1.0
+        ],
+        "1:1": [
+          0.545,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-morchella-esculenta-q01.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-morchella-esculenta-q01-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-morchella-esculenta-q01-t.webp"
+      },
+      "attribution_required_text": ""
+    },
+    {
+      "id": "pe2-main-pleurotus-cornucopiae-q01",
+      "target_group": "species",
+      "target_key": "pleurotus-cornucopiae",
+      "latin": "Pleurotus cornucopiae",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-pleurotus-cornucopiae-q01.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/0/00/2011-06-30_Pleurotus_cornucopiae_1_70824.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "97094d8a9449f05775e6bb50da55effe27528a96",
+      "source_title": "File:2011-06-30 Pleurotus cornucopiae 1 70824.jpg",
+      "source_description": "For more information about this, see the  observation page  at Mushroom Observer.",
+      "source_categories": [
+        "Pleurotus cornucopiae",
+        "Images from Mushroom Observer",
+        "Files from external sources with reviewed licenses",
+        "Fungi in June",
+        "Pleurotaceae in Russia"
+      ],
+      "page": "https://commons.wikimedia.org/wiki/File:2011-06-30_Pleurotus_cornucopiae_1_70824.jpg",
+      "author": "Iv Merlu",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sha256_original": "1dc29d3fd5794a88e708cbaf4d47094299eff1c6b6cc447eac4c80305acf41ff",
+      "source": "Wikimedia Commons",
+      "colour_management": {
+        "source_icc_name": null,
+        "converted_to_srgb": false,
+        "untagged_assumed_srgb": true
+      },
+      "attribution": "Iv Merlu / Wikimedia Commons / CC BY-SA 3.0",
+      "alt": "Pleurotus cornucopiae. Cappelli di un gruppo sul legno coperto di muschio.",
+      "caption": "Cappelli di un gruppo sul legno coperto di muschio.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.51
+        ],
+        "riquadro": [
+          0.03,
+          0.1,
+          0.98,
+          0.98
+        ],
+        "nota": "Cappelli di un gruppo sul legno coperto di muschio. Vista completa e sei ritagli controllati; i formati stretti possono escludere parti. Nessuna fase biologica dedotta; nessun giudizio di commestibilità."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.524
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-pleurotus-cornucopiae-q01.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-pleurotus-cornucopiae-q01-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-pleurotus-cornucopiae-q01-t.webp"
+      },
+      "attribution_required_text": ""
+    },
+    {
+      "id": "pe2-main-russula-aurea-q01",
+      "target_group": "species",
+      "target_key": "russula-aurea",
+      "latin": "Russula aurea",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-russula-aurea-q01.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Gibel_kuletoa_azpitik_ikusita.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "9078a8bb79a6264e58b32beb733c6b9eb14cdad9",
+      "source_title": "File:Gibel kuletoa azpitik ikusita.jpg",
+      "source_description": "Gibel kuletoa2",
+      "source_categories": [
+        "Russula aurea",
+        "Self-published work"
+      ],
+      "page": "https://commons.wikimedia.org/wiki/File:Gibel_kuletoa_azpitik_ikusita.jpg",
+      "author": "Jose Angel Urquia Goitia",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sha256_original": "628e57a3a1ffa5f059009c8f08292467b2ca7f0ddf6431121ab06d1bcdbfdab7",
+      "source": "Wikimedia Commons",
+      "colour_management": {
+        "source_icc_name": null,
+        "converted_to_srgb": false,
+        "untagged_assumed_srgb": true
+      },
+      "attribution": "Jose Angel Urquia Goitia / Wikimedia Commons / CC BY-SA 4.0",
+      "alt": "Russula aurea. Esemplare rovesciato nel sottobosco con lamelle e gambo visibili.",
+      "caption": "Esemplare rovesciato nel sottobosco con lamelle e gambo visibili.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.5
+        ],
+        "riquadro": [
+          0.1,
+          0.04,
+          0.97,
+          0.93
+        ],
+        "nota": "Esemplare rovesciato nel sottobosco con lamelle e gambo visibili. Vista completa e sei ritagli controllati; i formati stretti possono escludere parti. Nessuna fase biologica dedotta; nessun giudizio di commestibilità."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.38
+        ],
+        "16:7": [
+          0.5,
+          0.5
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-russula-aurea-q01.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-russula-aurea-q01-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-russula-aurea-q01-t.webp"
+      },
+      "attribution_required_text": ""
+    },
+    {
+      "id": "pe2-main-tricholoma-portentosum-q01",
+      "target_group": "species",
+      "target_key": "tricholoma-portentosum",
+      "latin": "Tricholoma portentosum",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-tricholoma-portentosum-q01.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/2/2b/G%C4%85ska_niekszta%C5%82tna_%28Tricholoma_portentosum%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "a620b1c482f6d93bc71cd02fefd4a9f3e574efbd",
+      "source_title": "File:Gąska niekształtna (Tricholoma portentosum).jpg",
+      "source_description": "Gąska niekształtna",
+      "source_categories": [
+        "Tricholoma portentosum",
+        "GFDL",
+        "Taken with Nikon Coolpix L14",
+        "License migration redundant",
+        "CC-BY-SA-4.0,3.0,2.5,2.0,1.0",
+        "Self-published work",
+        "Fungi in November"
+      ],
+      "page": "https://commons.wikimedia.org/wiki/File:G%C4%85ska_niekszta%C5%82tna_(Tricholoma_portentosum).jpg",
+      "author": "Aorg1961",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sha256_original": "fc37fab5f98fa81a336e8b467d5cf98165edc68895bfd31c73b76659c3f91e50",
+      "source": "Wikimedia Commons",
+      "colour_management": {
+        "source_icc_name": null,
+        "converted_to_srgb": false,
+        "untagged_assumed_srgb": true
+      },
+      "attribution": "Aorg1961 / Wikimedia Commons / CC BY-SA 4.0",
+      "alt": "Tricholoma portentosum. Cappello scuro e margine con lamelle visibili fra le foglie.",
+      "caption": "Cappello scuro e margine con lamelle visibili fra le foglie.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.49
+        ],
+        "riquadro": [
+          0.08,
+          0.08,
+          0.95,
+          0.89
+        ],
+        "nota": "Cappello scuro e margine con lamelle visibili fra le foglie. Vista completa e sei ritagli controllati; i formati stretti possono escludere parti. Nessuna fase biologica dedotta; nessun giudizio di commestibilità."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.476
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-tricholoma-portentosum-q01.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-tricholoma-portentosum-q01-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-tricholoma-portentosum-q01-t.webp"
+      },
+      "attribution_required_text": ""
+    },
+    {
+      "id": "pe2-main-agaricus-sylvicola-q02",
+      "target_group": "species",
+      "target_key": "agaricus-sylvicola",
+      "latin": "Agaricus sylvicola",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-agaricus-sylvicola-q02.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/7/71/Agaricus_sylvicola_242465703.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "50011d63b17e094b1fab351aa0947481c560ede0",
+      "source_title": "File:Agaricus sylvicola 242465703.jpg",
+      "source_description": "Wood Mushroom ( Agaricus sylvicola )",
+      "source_categories": [
+        "Agaricus silvicola",
+        "Media from iNaturalist",
+        "Fungi of Denmark in October",
+        "Denmark photographs taken on 2022-10-21",
+        "INaturalist images reviewed by iNaturalistReviewBot",
+        "Agaricaceae in Denmark",
+        "Files with coordinates missing SDC location of creation",
+        "Uploaded with iNaturalist2Commons"
+      ],
+      "page": "https://commons.wikimedia.org/wiki/File:Agaricus_sylvicola_242465703.jpg",
+      "author": "nikibifrost",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "sha256_original": "b1046e4e60d71ed54f78beba78a3764c058d27483ba4bdd43c96bad78adef2b2",
+      "source": "Wikimedia Commons",
+      "colour_management": {
+        "source_icc_name": null,
+        "converted_to_srgb": false,
+        "untagged_assumed_srgb": true
+      },
+      "attribution": "nikibifrost / Wikimedia Commons / CC BY 4.0",
+      "alt": "Agaricus sylvicola. Dettaglio della superficie inferiore del cappello e del gambo.",
+      "caption": "Dettaglio della superficie inferiore del cappello e del gambo.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.52,
+          0.5
+        ],
+        "riquadro": [
+          0.01,
+          0.01,
+          0.99,
+          0.99
+        ],
+        "nota": "Dettaglio della superficie inferiore del cappello e del gambo. Vista completa e sei ritagli controllati; i formati stretti possono escludere parti. Nessuna fase biologica dedotta; nessun giudizio di commestibilità."
+      },
+      "crop_points": {
+        "5:4": [
+          0.82,
+          0.5
+        ],
+        "3:4": [
+          0.546,
+          0.5
+        ],
+        "4:5": [
+          0.55,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.5
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.58,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-agaricus-sylvicola-q02.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-agaricus-sylvicola-q02-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-agaricus-sylvicola-q02-t.webp"
+      },
+      "attribution_required_text": ""
+    },
+    {
+      "id": "pe2-main-amanita-rubescens-q02",
+      "target_group": "species",
+      "target_key": "amanita-rubescens",
+      "latin": "Amanita rubescens",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-amanita-rubescens-q02.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Amanita_-_Flickr_-_S._Rae_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "f5e3de77e2efdeb6f9581fabb32756f65b882a14",
+      "source_title": "File:Amanita - Flickr - S. Rae (2).jpg",
+      "source_description": "Penmanshiel Wood, Berwickshire, Scotland",
+      "source_categories": [
+        "Amanita rubescens",
+        "Flickr images reviewed by FlickreviewR",
+        "Fungi of the Scottish Borders",
+        "Fungi in September",
+        "United Kingdom photographs taken on 2014-09-21",
+        "Photographs by S. Rae",
+        "Amanita rubescens in the United Kingdom",
+        "Files uploaded by Josve05a (S. Rae)"
+      ],
+      "page": "https://commons.wikimedia.org/wiki/File:Amanita_-_Flickr_-_S._Rae_(2).jpg",
+      "author": "S. Rae  from Scotland, UK",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "sha256_original": "6feca89425d57c5556e227d2c00c97fdbff6fd5926fa425832abfd06f0e24ec5",
+      "source": "Wikimedia Commons",
+      "colour_management": {
+        "source_icc_name": null,
+        "converted_to_srgb": false,
+        "untagged_assumed_srgb": true
+      },
+      "attribution": "S. Rae  from Scotland, UK / Wikimedia Commons / CC BY 2.0",
+      "alt": "Amanita rubescens. Esemplare nel sottobosco, con cappello e gambo visibili.",
+      "caption": "Esemplare nel sottobosco, con cappello e gambo visibili.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.51,
+          0.53
+        ],
+        "riquadro": [
+          0.18,
+          0.1,
+          0.91,
+          0.98
+        ],
+        "nota": "Esemplare nel sottobosco, con cappello e gambo visibili. Vista completa e sei ritagli controllati; i formati stretti possono escludere parti. Nessuna fase biologica dedotta; nessun giudizio di commestibilità."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.66
+        ],
+        "3:4": [
+          0.655,
+          0.5
+        ],
+        "4:5": [
+          0.575,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.554
+        ],
+        "4:3": [
+          0.5,
+          0.626
+        ],
+        "1:1": [
+          1.0,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-amanita-rubescens-q02.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-amanita-rubescens-q02-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-amanita-rubescens-q02-t.webp"
+      },
+      "attribution_required_text": ""
+    },
+    {
+      "id": "pe2-main-coprinus-comatus-q02",
+      "target_group": "species",
+      "target_key": "coprinus-comatus",
+      "latin": "Coprinus comatus",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-coprinus-comatus-q02.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/4/4a/-_Coprinus_comatus_-.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "6ec546644154716d6f3d36878de285714deec4d7",
+      "source_title": "File:- Coprinus comatus -.jpg",
+      "source_description": "Coprinus comatus",
+      "source_categories": [
+        "Coprinus comatus",
+        "GFDL",
+        "License migration redundant",
+        "Self-published work",
+        "Photos by User:Nino Barbieri",
+        "Fungi in November",
+        "Photographs taken on 2006-11-06"
+      ],
+      "page": "https://commons.wikimedia.org/wiki/File:-_Coprinus_comatus_-.jpg",
+      "author": "User:Nino Barbieri",
+      "license": "CC BY 2.5",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+      "sha256_original": "1ba628d141998891821384ade80b6e0b4ee964f88d5ab771a3f333e2f812d2ee",
+      "source": "Wikimedia Commons",
+      "colour_management": {
+        "source_icc_name": null,
+        "converted_to_srgb": false,
+        "untagged_assumed_srgb": true
+      },
+      "attribution": "User:Nino Barbieri / Wikimedia Commons / CC BY 2.5",
+      "alt": "Coprinus comatus. Gruppo con cappelli e gambi osservati di lato.",
+      "caption": "Gruppo con cappelli e gambi osservati di lato.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.49,
+          0.48
+        ],
+        "riquadro": [
+          0.11,
+          0.09,
+          0.82,
+          0.82
+        ],
+        "nota": "Gruppo con cappelli e gambi osservati di lato. Vista completa e sei ritagli controllati; i formati stretti possono escludere parti. Nessuna fase biologica dedotta; nessun giudizio di commestibilità."
+      },
+      "crop_points": {
+        "5:4": [
+          0.44,
+          0.5
+        ],
+        "3:4": [
+          0.48,
+          0.5
+        ],
+        "4:5": [
+          0.479,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.442
+        ],
+        "4:3": [
+          0.41,
+          0.5
+        ],
+        "1:1": [
+          0.47,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-coprinus-comatus-q02.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-coprinus-comatus-q02-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-coprinus-comatus-q02-t.webp"
+      },
+      "attribution_required_text": ""
+    },
+    {
+      "id": "pe2-main-marasmius-oreades-r01",
+      "target_group": "species",
+      "target_key": "marasmius-oreades",
+      "latin": "Marasmius oreades",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-marasmius-oreades-r01.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Marasme_des_Or%C3%A9ades_dans_l%27Ain_en_mai_2021_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "781df97097062e38f3e6cae20931cd1f115c70e6",
+      "source_title": "File:Marasme des Oréades dans l'Ain en mai 2021 (2).jpg",
+      "source_description": "Marasme des Oréades dans l'Ain en mai 2021.",
+      "source_categories": [
+        "Marasmius oreades",
+        "CC-Zero",
+        "Photographs by Benoît Prieur",
+        "Self-published work",
+        "Images of Saint-Maurice-de-Beynost by Benoît Prieur",
+        "May 2021 in Ain",
+        "Files with coordinates missing SDC location of creation",
+        "Fungi of Ain",
+        "2021 in Saint-Maurice-de-Beynost",
+        "2021 images by Benoît Prieur",
+        "Auvergne-Rhône-Alpes photographs taken on 2021-05-12",
+        "Uploaded with PyCommonist",
+        "28 rue des Andrés (Saint-Maurice-de-Beynost) - exterior"
+      ],
+      "page": "https://commons.wikimedia.org/wiki/File:Marasme_des_Or%C3%A9ades_dans_l%27Ain_en_mai_2021_(2).jpg",
+      "author": "Benoît Prieur",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "sha256_original": "9338a5a86367bc311957b4aaaab26c2bdcccf42be04985f573b920e28404c801",
+      "source": "Wikimedia Commons",
+      "colour_management": {
+        "source_icc_name": "sRGB - GIMP",
+        "converted_to_srgb": true,
+        "untagged_assumed_srgb": false
+      },
+      "attribution": "Benoît Prieur / Wikimedia Commons / CC0",
+      "alt": "Marasmius oreades. Cappelli di un gruppo osservati dall'alto fra erbe e foglie.",
+      "caption": "Cappelli di un gruppo osservati dall'alto fra erbe e foglie.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.52,
+          0.38
+        ],
+        "riquadro": [
+          0.17,
+          0.12,
+          0.76,
+          0.63
+        ],
+        "nota": "Cappelli di un gruppo osservati dall'alto fra erbe e foglie. Vista completa e sei ritagli controllati; i formati stretti possono escludere parti. Nessuna fase biologica dedotta; nessun giudizio di commestibilità."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.0
+        ],
+        "3:4": [
+          0.587,
+          0.5
+        ],
+        "4:5": [
+          0.613,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.291
+        ],
+        "4:3": [
+          0.5,
+          0.057
+        ],
+        "1:1": [
+          0.5,
+          0.0
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-marasmius-oreades-r01.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-marasmius-oreades-r01-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-marasmius-oreades-r01-t.webp"
+      },
+      "attribution_required_text": ""
+    },
+    {
+      "id": "pe2-main-marasmius-oreades-r02",
+      "target_group": "species",
+      "target_key": "marasmius-oreades",
+      "latin": "Marasmius oreades",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-marasmius-oreades-r02.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Marasme_des_Or%C3%A9ades_dans_l%27Ain_en_mai_2021.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "afc2206948897cd3dc01b8a3851e61e6c1b00dc0",
+      "source_title": "File:Marasme des Oréades dans l'Ain en mai 2021.jpg",
+      "source_description": "Marasme des Oréades dans l'Ain en mai 2021.",
+      "source_categories": [
+        "Marasmius oreades",
+        "CC-Zero",
+        "Photographs by Benoît Prieur",
+        "Self-published work",
+        "Images of Saint-Maurice-de-Beynost by Benoît Prieur",
+        "May 2021 in Ain",
+        "Fungi of Ain",
+        "2021 in Saint-Maurice-de-Beynost",
+        "2021 images by Benoît Prieur",
+        "Auvergne-Rhône-Alpes photographs taken on 2021-05-12",
+        "Uploaded with PyCommonist",
+        "28 rue des Andrés (Saint-Maurice-de-Beynost) - exterior"
+      ],
+      "page": "https://commons.wikimedia.org/wiki/File:Marasme_des_Or%C3%A9ades_dans_l%27Ain_en_mai_2021.jpg",
+      "author": "Benoît Prieur",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "sha256_original": "869483599ce2f8a31db1ef5bdbda2a4096a4e0e9718c7401dae21468a9cb1e85",
+      "source": "Wikimedia Commons",
+      "colour_management": {
+        "source_icc_name": "sRGB - GIMP",
+        "converted_to_srgb": true,
+        "untagged_assumed_srgb": false
+      },
+      "attribution": "Benoît Prieur / Wikimedia Commons / CC0",
+      "alt": "Marasmius oreades. Cappello e parte del gambo osservati fra le erbe.",
+      "caption": "Cappello e parte del gambo osservati fra le erbe.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.58,
+          0.35
+        ],
+        "riquadro": [
+          0.32,
+          0.22,
+          0.82,
+          0.48
+        ],
+        "nota": "Cappello e parte del gambo osservati fra le erbe. Vista completa e sei ritagli controllati; i formati stretti possono escludere parti. Nessuna fase biologica dedotta; nessun giudizio di commestibilità."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.158
+        ],
+        "3:4": [
+          0.5,
+          0.0
+        ],
+        "4:5": [
+          0.5,
+          0.0
+        ],
+        "16:7": [
+          0.5,
+          0.284
+        ],
+        "4:3": [
+          0.5,
+          0.183
+        ],
+        "1:1": [
+          0.5,
+          0.0
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-marasmius-oreades-r02.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-marasmius-oreades-r02-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-marasmius-oreades-r02-t.webp"
+      },
+      "attribution_required_text": ""
+    },
+    {
+      "id": "pe2-main-hygrophorus-latitabundus-q02",
+      "target_group": "species",
+      "target_key": "hygrophorus-latitabundus",
+      "latin": "Hygrophorus latitabundus",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-hygrophorus-latitabundus-q02.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/5/52/Hygophorus_latitabundus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "d42898e3525f9d47f1205108a10e4c405fa59965",
+      "source_title": "File:Hygophorus latitabundus.jpg",
+      "source_description": "Bolet Llanega",
+      "source_categories": [
+        "Hygrophorus latitabundus",
+        "Self-published work"
+      ],
+      "page": "https://commons.wikimedia.org/wiki/File:Hygophorus_latitabundus.jpg",
+      "author": "A.Aguilera",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sha256_original": "b5391f3a3cf0591eeaa7c9981b0dd3050dc2749d55e4e7403f37ce6b5c44627b",
+      "source": "Wikimedia Commons",
+      "colour_management": {
+        "source_icc_name": null,
+        "converted_to_srgb": false,
+        "untagged_assumed_srgb": true
+      },
+      "attribution": "A.Aguilera / Wikimedia Commons / CC BY-SA 4.0",
+      "alt": "Hygrophorus latitabundus. Esemplari fra gli aghi, con lamelle e gambo in primo piano.",
+      "caption": "Esemplari fra gli aghi, con lamelle e gambo in primo piano.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.49
+        ],
+        "riquadro": [
+          0.03,
+          0.01,
+          0.98,
+          0.94
+        ],
+        "nota": "Esemplari fra gli aghi, con lamelle e gambo in primo piano. Vista completa e sei ritagli controllati; i formati stretti possono escludere parti. Nessuna fase biologica dedotta; nessun giudizio di commestibilità."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.5
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.476
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.5,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-hygrophorus-latitabundus-q02.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-hygrophorus-latitabundus-q02-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-hygrophorus-latitabundus-q02-t.webp"
+      },
+      "attribution_required_text": ""
+    },
+    {
+      "id": "pe2-main-pleurotus-cornucopiae-q02",
+      "target_group": "species",
+      "target_key": "pleurotus-cornucopiae",
+      "latin": "Pleurotus cornucopiae",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-pleurotus-cornucopiae-q02.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/9/9b/2011-06-30_Pleurotus_cornucopiae_2_70824.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "99a12de81946f3a633e0150e2f792ff9d6aa4425",
+      "source_title": "File:2011-06-30 Pleurotus cornucopiae 2 70824.jpg",
+      "source_description": "For more information about this, see the  observation page  at Mushroom Observer.",
+      "source_categories": [
+        "Pleurotus cornucopiae",
+        "Images from Mushroom Observer",
+        "Files from external sources with reviewed licenses",
+        "Fungi in June",
+        "Pleurotaceae in Russia"
+      ],
+      "page": "https://commons.wikimedia.org/wiki/File:2011-06-30_Pleurotus_cornucopiae_2_70824.jpg",
+      "author": "{{{2}}}",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sha256_original": "4a059dd23bc499eabe923f7336c1d5c07873de4b915653196bd96120ddf17290",
+      "source": "Wikimedia Commons",
+      "source_attribution": "This image was created by user  {{{2}}}  at  Mushroom Observer , a source for mycological images. You can contact this user  here .",
+      "colour_management": {
+        "source_icc_name": null,
+        "converted_to_srgb": false,
+        "untagged_assumed_srgb": true
+      },
+      "attribution": "{{{2}}} / Wikimedia Commons / CC BY-SA 3.0",
+      "alt": "Pleurotus cornucopiae. Gruppi di cappelli sul legno, osservati di lato.",
+      "caption": "Gruppi di cappelli sul legno, osservati di lato.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.61,
+          0.52
+        ],
+        "riquadro": [
+          0.11,
+          0.22,
+          0.9,
+          0.88
+        ],
+        "nota": "Gruppi di cappelli sul legno, osservati di lato. Vista completa e sei ritagli controllati; i formati stretti possono escludere parti. Nessuna fase biologica dedotta; nessun giudizio di commestibilità."
+      },
+      "crop_points": {
+        "5:4": [
+          1.0,
+          0.5
+        ],
+        "3:4": [
+          0.751,
+          0.5
+        ],
+        "4:5": [
+          0.775,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.548
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.94,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-pleurotus-cornucopiae-q02.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-pleurotus-cornucopiae-q02-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-pleurotus-cornucopiae-q02-t.webp"
+      },
+      "attribution_required_text": ""
+    },
+    {
+      "id": "pe2-main-russula-aurea-q02",
+      "target_group": "species",
+      "target_key": "russula-aurea",
+      "latin": "Russula aurea",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-russula-aurea-q02.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Gibel_kuletoa_goitik_ikusita.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "dec1147faa00b03c700bdb61bb806864823d299f",
+      "source_title": "File:Gibel kuletoa goitik ikusita.jpg",
+      "source_description": "Gibel kuleto1",
+      "source_categories": [
+        "Russula aurea",
+        "Self-published work"
+      ],
+      "page": "https://commons.wikimedia.org/wiki/File:Gibel_kuletoa_goitik_ikusita.jpg",
+      "author": "Jose Angel Urquia Goitia",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sha256_original": "a45066cea24447f6980c1a5c13be26c8282bf634d6f80a0efc831bc600c890ef",
+      "source": "Wikimedia Commons",
+      "colour_management": {
+        "source_icc_name": null,
+        "converted_to_srgb": false,
+        "untagged_assumed_srgb": true
+      },
+      "attribution": "Jose Angel Urquia Goitia / Wikimedia Commons / CC BY-SA 4.0",
+      "alt": "Russula aurea. Cappello aranciato osservato dall'alto nel sottobosco.",
+      "caption": "Cappello aranciato osservato dall'alto nel sottobosco.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.51,
+          0.34
+        ],
+        "riquadro": [
+          0.12,
+          0.15,
+          0.9,
+          0.57
+        ],
+        "nota": "Cappello aranciato osservato dall'alto nel sottobosco. Vista completa e sei ritagli controllati; i formati stretti possono escludere parti. Nessuna fase biologica dedotta; nessun giudizio di commestibilità."
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.115
+        ],
+        "3:4": [
+          0.5,
+          0.0
+        ],
+        "4:5": [
+          0.5,
+          0.0
+        ],
+        "16:7": [
+          0.5,
+          0.265
+        ],
+        "4:3": [
+          0.5,
+          0.146
+        ],
+        "1:1": [
+          0.5,
+          0.0
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-russula-aurea-q02.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-russula-aurea-q02-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-russula-aurea-q02-t.webp"
+      },
+      "attribution_required_text": ""
+    },
+    {
+      "id": "pe2-main-tricholoma-portentosum-q02",
+      "target_group": "species",
+      "target_key": "tricholoma-portentosum",
+      "latin": "Tricholoma portentosum",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-tricholoma-portentosum-q02.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/b/bb/G%C4%85ska_niekszta%C5%82tna_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "826ff2f203acf37855b09f9c5ab9585ce6536635",
+      "source_title": "File:Gąska niekształtna 1.jpg",
+      "source_description": "Gąska niekształtna",
+      "source_categories": [
+        "Tricholoma portentosum",
+        "GFDL",
+        "Taken with Nikon Coolpix L14",
+        "License migration redundant",
+        "CC-BY-SA-4.0,3.0,2.5,2.0,1.0",
+        "Self-published work",
+        "Fungi in October"
+      ],
+      "page": "https://commons.wikimedia.org/wiki/File:G%C4%85ska_niekszta%C5%82tna_1.jpg",
+      "author": "Aorg1961",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sha256_original": "aa139f69adace6fee4b76345bb098c3f72276b52892749fb621461deac7b1ce6",
+      "source": "Wikimedia Commons",
+      "colour_management": {
+        "source_icc_name": null,
+        "converted_to_srgb": false,
+        "untagged_assumed_srgb": true
+      },
+      "attribution": "Aorg1961 / Wikimedia Commons / CC BY-SA 4.0",
+      "alt": "Tricholoma portentosum. Cappello e gambo nel bosco, fra aghi e muschio.",
+      "caption": "Cappello e gambo nel bosco, fra aghi e muschio.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.53,
+          0.55
+        ],
+        "riquadro": [
+          0.2,
+          0.22,
+          0.77,
+          0.79
+        ],
+        "nota": "Cappello e gambo nel bosco, fra aghi e muschio. Vista completa e sei ritagli controllati; i formati stretti possono escludere parti. Nessuna fase biologica dedotta; nessun giudizio di commestibilità."
+      },
+      "crop_points": {
+        "5:4": [
+          0.98,
+          0.5
+        ],
+        "3:4": [
+          0.569,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.528
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.62,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-tricholoma-portentosum-q02.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-tricholoma-portentosum-q02-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-tricholoma-portentosum-q02-t.webp"
+      },
+      "attribution_required_text": ""
+    },
+    {
+      "id": "pe2-main-morchella-elata-q02",
+      "target_group": "species",
+      "target_key": "morchella-elata",
+      "latin": "Morchella elata s.l.",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-morchella-elata-q02.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/f/f3/A_young_%27Black_Morel%27%2C_Morchella_elata_%2814004871422%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "a47714295c3014dbc19406c478762c9bf7cad8d1",
+      "source_title": "File:A young 'Black Morel', Morchella elata (14004871422).jpg",
+      "source_description": "a young 'Black Morel', Morchella elata",
+      "source_categories": [
+        "Morchella elata",
+        "Flickr images reviewed by FlickreviewR",
+        "Photographs by Scott Darbey"
+      ],
+      "page": "https://commons.wikimedia.org/wiki/File:A_young_%27Black_Morel%27,_Morchella_elata_(14004871422).jpg",
+      "author": "Scott Darbey  from Canada",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "sha256_original": "5d21049c4b33ff17582238afb9afc8eaf143f7d565f95c416e36dd8e805156aa",
+      "source": "Wikimedia Commons",
+      "colour_management": {
+        "source_icc_name": "Adobe RGB (1998)",
+        "converted_to_srgb": true,
+        "untagged_assumed_srgb": false
+      },
+      "attribution": "Scott Darbey  from Canada / Wikimedia Commons / CC BY 2.0",
+      "alt": "Morchella elata s.l.. Morchella elata s.l.; foto riferita al gruppo, non delimitazione molecolare. Mitra scura fra il muschio; gambo nascosto.",
+      "caption": "Morchella elata s.l.; foto riferita al gruppo, non delimitazione molecolare. Mitra scura fra il muschio; gambo nascosto.",
+      "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.56,
+          0.5
+        ],
+        "riquadro": [
+          0.51,
+          0.26,
+          0.61,
+          0.71
+        ],
+        "nota": "Morchella elata s.l.; foto riferita al gruppo, non delimitazione molecolare. Mitra scura fra il muschio; gambo nascosto. Vista completa e sei ritagli controllati; i formati stretti possono escludere parti. Nessuna fase biologica dedotta; nessun giudizio di commestibilità."
+      },
+      "crop_points": {
+        "5:4": [
+          0.866,
+          0.5
+        ],
+        "3:4": [
+          0.62,
+          0.5
+        ],
+        "4:5": [
+          0.629,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.5
+        ],
+        "4:3": [
+          1.0,
+          0.5
+        ],
+        "1:1": [
+          0.681,
+          0.5
+        ]
+      },
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-morchella-elata-q02.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-morchella-elata-q02-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/funghi-principali/webp/pe2-main-morchella-elata-q02-t.webp"
+      },
+      "attribution_required_text": ""
+    }
+  ],
+  "rejected": [
+    {
+      "id": "pe2-main-agaricus-campestris-02",
+      "reason": "Fonte localizzata in Nepal; esclusa per prudenza tassonomica rispetto al contesto europeo."
+    },
+    {
+      "id": "pe2-main-pinophilus-02",
+      "reason": "Stessa fotografia di pe2-main-pinophilus-01, diversa resa e taglio; esclusa come duplicato visivo."
+    },
+    {
+      "id": "pe2-main-suillus-01",
+      "reason": "Scatto distinto ma vista superiore ridondante con la migliore suillus04; mantenute tre nuove viste complementari per totale6foto nella scheda."
+    },
+    {
+      "id": "pe2-main-suillus-02",
+      "reason": "La descrizione del singolo file dichiara spore print: non usare come dettaglio dei pori nonostante apparente trama simile."
+    },
+    {
+      "id": "pe2-main-marasmius-oreades-inat01",
+      "reason": "Soggetti troppo piccoli nel prato per una galleria didattica di dettaglio."
+    },
+    {
+      "id": "pe2-main-marasmius-oreades-inat02",
+      "reason": "Illuminazione notturna e fili d’erba riducono la leggibilità; attendere scatti migliori Commons."
+    },
+    {
+      "id": "pe2-main-pleurotus-cornucopiae-inat01",
+      "reason": "Gruppo molto deteriorato e secco, dettagli poco leggibili; mantenere come candidatura scartata."
+    },
+    {
+      "id": "pe2-main-lactarius-deterrimus-inat01",
+      "reason": "Cappello molto danneggiato e visibilita bassa; mantenuta la seconda osservazione piu leggibile."
+    },
+    {
+      "id": "pe2-main-fistulina-hepatica-inat01",
+      "reason": "Illuminazione fortemente arancione e appiattente, non aggiunge dettaglio affidabile rispetto alla sezione inat02."
+    },
+    {
+      "id": "pe2-main-russula-aurea-inat01",
+      "reason": "Soggetti piccoli sul terreno e dettaglio limitato; preferita vista lamellare inat02."
+    },
+    {
+      "id": "pe2-main-amanita-rubescens-inat01",
+      "reason": "Cappello molto coperto dal terreno e dettaglio insufficiente rispetto alle altre nuove viste."
+    },
+    {
+      "id": "pe2-main-cyclocybe-aegerita-inat02",
+      "reason": "Cappello fortemente screpolato e poco rappresentativo per questa galleria; preferite la vista superiore del gruppo e il dettaglio lamellare."
+    },
+    {
+      "id": "pe2-main-lactarius-deliciosus-q01",
+      "reason": "Descrizione fonte Lactarius deliciosus group; non abbastanza precisa per attribuzione della scheda alla specie."
+    },
+    {
+      "id": "pe2-main-marasmius-oreades-q01",
+      "reason": "Conflitto: categoria Marasmius oreades ma descrizione Tricholoma pardinum. Esclusa."
+    },
+    {
+      "id": "pe2-main-morchella-elata-q01",
+      "reason": "Morchella elata group da Ushuaia in Argentina; esclusa per prudenza rispetto al complesso europeo della scheda."
+    },
+    {
+      "id": "pe2-main-pleurotus-eryngii-q01",
+      "reason": "Provenienza Kazakhstan e attribuzione al complesso eryngii non verificata al livello europeo; preferite due osservazioni research italiane esatte."
+    },
+    {
+      "id": "pe2-main-pleurotus-ostreatus-q01",
+      "reason": "Gruppo molto piccolo nella veduta del tronco; vista ambientale gia meglio rappresentata dalle fotografie esistenti."
+    },
+    {
+      "id": "pe2-main-agaricus-bisporus-q02",
+      "reason": "Stesso soggetto e composizione della q01, immagine ritagliata o quasi identica: nessuna vista complementare nuova."
+    },
+    {
+      "id": "pe2-main-coprinus-comatus-q01",
+      "reason": "Vista laterale ridondante; sostituita dalla q02 con gruppo piu leggibile e maggior dettaglio."
+    },
+    {
+      "id": "pe2-main-marasmius-oreades-q02",
+      "acquired": false,
+      "reason": "Descrizione Tricholoma pardinum in conflitto con categoria Marasmius oreades; esclusa prima della acquisizione."
+    },
+    {
+      "id": "pe2-main-morchella-esculenta-q02",
+      "acquired": false,
+      "reason": "Fonte da Illinois per un complesso tassonomico non approfondito; esclusa prima della acquisizione."
+    },
+    {
+      "id": "pe2-main-lactarius-deliciosus-q02",
+      "acquired": false,
+      "reason": "Fonte da Stati Uniti per il complesso deliciosus, determinazione non approfondita; esclusa prima della acquisizione."
+    },
+    {
+      "id": "pe2-main-lactarius-deterrimus-q02",
+      "acquired": false,
+      "reason": "La fonte descrive parassitismo Hypomyces lateritius e foto ritoccata; esclusa prima della acquisizione come riferimento ordinario."
+    },
+    {
+      "id": "pe2-main-pleurotus-eryngii-q02",
+      "acquired": false,
+      "reason": "La fonte specifica var. ferulae; manca una verifica della applicabilita alla scheda corrente, esclusa prima della acquisizione."
+    },
+    {
+      "id": "pe2-main-fistulina-hepatica-q02",
+      "acquired": false,
+      "reason": "Fonte da West Virginia: attribuzione nordamericana non approfondita rispetto alla specie europea, esclusa prima della acquisizione."
+    },
+    {
+      "id": "pe2-main-pleurotus-ostreatus-q02",
+      "reason": "Vista distante del gruppo sul tronco, ridondante e meno leggibile delle fotografie gia presenti e delle nuove osservazioni italiane."
+    },
+    {
+      "id": "pe2-main-cyclocybe-aegerita-q01",
+      "reason": "Fonte Agrocybe cylindrica: equivalenza con Cyclocybe cylindracea non verificata in registro autorevole accessibile in questa revisione."
+    },
+    {
+      "id": "pe2-main-cyclocybe-aegerita-q02",
+      "reason": "Fonte Agrocybe cylindrica: equivalenza con Cyclocybe cylindracea non verificata in registro autorevole accessibile in questa revisione."
+    }
+  ],
+  "network": {
+    "commons_api_status": 200,
+    "upload_status": 200,
+    "upload_probe_bytes": 385301,
+    "subsequent_status": 429,
+    "downloads_paused": true
+  },
+  "limits": [
+    "Metadati della pagina del singolo file letti tramite imageinfo/extmetadata e categorie Commons; non equivale a certificazione micologica.",
+    "Nessuna fase di crescita attribuita.",
+    "Nessuna suite avviata."
+  ],
+  "summary": {
+    "photo_count": 47,
+    "derivative_count": 141,
+    "sources": {
+      "Wikimedia Commons": 31,
+      "iNaturalist": 16
+    },
+    "not_acquired_are_not_counted": true
+  },
+  "review_tables": [
+    "incoming/photo-expansion-2026-10-18/funghi-principali/approved-originals-01.jpg",
+    "incoming/photo-expansion-2026-10-18/funghi-principali/approved-originals-02.jpg",
+    "incoming/photo-expansion-2026-10-18/funghi-principali/approved-originals-03.jpg",
+    "incoming/photo-expansion-2026-10-18/funghi-principali/approved-originals-04.jpg",
+    "incoming/photo-expansion-2026-10-18/funghi-principali/approved-crops-01.jpg",
+    "incoming/photo-expansion-2026-10-18/funghi-principali/approved-crops-02.jpg",
+    "incoming/photo-expansion-2026-10-18/funghi-principali/approved-crops-03.jpg",
+    "incoming/photo-expansion-2026-10-18/funghi-principali/approved-crops-04.jpg",
+    "incoming/photo-expansion-2026-10-18/funghi-principali/approved-crops-05.jpg",
+    "incoming/photo-expansion-2026-10-18/funghi-principali/approved-crops-06.jpg",
+    "incoming/photo-expansion-2026-10-18/funghi-principali/approved-crops-07.jpg",
+    "incoming/photo-expansion-2026-10-18/funghi-principali/approved-crops-08.jpg",
+    "incoming/photo-expansion-2026-10-18/funghi-principali/approved-crops-09.jpg",
+    "incoming/photo-expansion-2026-10-18/funghi-principali/approved-crops-10.jpg",
+    "incoming/photo-expansion-2026-10-18/funghi-principali/approved-crops-11.jpg",
+    "incoming/photo-expansion-2026-10-18/funghi-principali/approved-crops-12.jpg",
+    "incoming/photo-expansion-2026-10-18/funghi-principali/approved-crops-13.jpg",
+    "incoming/photo-expansion-2026-10-18/funghi-principali/approved-crops-14.jpg",
+    "incoming/photo-expansion-2026-10-18/funghi-principali/approved-crops-15.jpg",
+    "incoming/photo-expansion-2026-10-18/funghi-principali/approved-crops-16.jpg"
+  ],
+  "checks_file": "incoming/photo-expansion-2026-10-18/funghi-principali/checks.json",
+  "delivery_status": "Acquired and prepared bundle, not canonical integration or publication",
+  "colour_management_review": {
+    "file": "incoming/photo-expansion-2026-10-18/funghi-principali/colour-review.json",
+    "tables": [
+      "incoming/photo-expansion-2026-10-18/funghi-principali/colour-review-P3-01.jpg",
+      "incoming/photo-expansion-2026-10-18/funghi-principali/colour-review-P3-02.jpg",
+      "incoming/photo-expansion-2026-10-18/funghi-principali/colour-review-AdobeRGB.jpg"
+    ],
+    "profiles": {
+      "Display P3": 6,
+      "Adobe RGB (1998)": 1,
+      "sRGB variants": 6,
+      "untagged_assumed_srgb": 34
+    },
+    "reviewed": true
+  }
+}

@@ -1,0 +1,2520 @@
+{
+  "batchcomplete": "",
+  "query": {
+    "pages": {
+      "42687712": {
+        "pageid": 42687712,
+        "ns": 6,
+        "title": "File:Distribution of Tricholoma sciodes.svg",
+        "index": 13,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 427955,
+            "width": 2045,
+            "height": 1720,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/04/Distribution_of_Tricholoma_sciodes.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Distribution_of_Tricholoma_sciodes.svg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=42687712",
+            "sha1": "04cc285c45d9b96f86c6049b487e15d61a2992d9",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2024-10-31 12:34:46",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Distribution of Tricholoma sciodes",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Tricholoma sciodes|CC-Zero|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Distribution of <i>Tricholoma sciodes</i> in Europe.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2015-08-27",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "Blank_Map_of_Europe_-w_boundaries.svg (modified)",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Thkgk\" title=\"User:Thkgk\">Thkgk</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Tricholoma sciodes"
+          }
+        ]
+      },
+      "24712425": {
+        "pageid": 24712425,
+        "ns": 6,
+        "title": "File:Entoloma porphyrophaeum BŻ7.jpg",
+        "index": 21,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1926716,
+            "width": 2754,
+            "height": 2065,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/65/Entoloma_porphyrophaeum_B%C5%BB7.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Entoloma_porphyrophaeum_B%C5%BB7.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=24712425",
+            "sha1": "663899a515e2ead293b72585e1d7366a87c3408b",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2013-02-17 08:45:27",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Entoloma porphyrophaeum BŻ7",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Entoloma porphyrophaeum|Taken with Sony DSC-HX100V|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Entoloma porphyrophaeum</i>. Location: Poland, Beskid Żywiecki",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2012-09-23 00:33:24",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Selso\" title=\"User:Selso\">Jerzy Opioła</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Entoloma porphyrophaeum"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Sony DSC-HX100V"
+          }
+        ]
+      },
+      "31243674": {
+        "pageid": 31243674,
+        "ns": 6,
+        "title": "File:Entoloma porphyrophaeum BŻ7 (3).jpg",
+        "index": 15,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2013845,
+            "width": 2688,
+            "height": 2016,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Entoloma_porphyrophaeum_B%C5%BB7_%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Entoloma_porphyrophaeum_B%C5%BB7_(3).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=31243674",
+            "sha1": "349bd928a7408c25798c0eeb1a74e63e01cf54f3",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2014-02-19 09:04:07",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Entoloma porphyrophaeum BŻ7 (3)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Entoloma porphyrophaeum|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Entoloma porphyrophaeum</i>. Location: Poland, Beskid Żywiecki",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2012-09-23 00:34:03",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Selso\" title=\"User:Selso\">Selso</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Entoloma porphyrophaeum"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "93618020": {
+        "pageid": 93618020,
+        "ns": 6,
+        "title": "File:Tricholoma sciodes (27897733154).jpg",
+        "index": 18,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3206500,
+            "width": 5456,
+            "height": 3632,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/68/Tricholoma_sciodes_%2827897733154%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Tricholoma_sciodes_(27897733154).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=93618020",
+            "sha1": "5320fb43e1043b42006d073a9653f74eb727f594",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-08-28 11:38:45",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Tricholoma sciodes (27897733154)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Tricholoma sciodes|Fungi in October|Flickr images reviewed by FlickreviewR 2|Flickr images missing SDC published in",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Tricholoma sciodes",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2015-10-08 09:07",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/99278910@N00/27897733154/\">Tricholoma sciodes</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/99278910@N00\">Lukas</a> from London, England",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-2.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images missing SDC published in"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images reviewed by FlickreviewR 2"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in October"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Tricholoma sciodes"
+          }
+        ]
+      },
+      "93618019": {
+        "pageid": 93618019,
+        "ns": 6,
+        "title": "File:Tricholoma sciodes (27897736064).jpg",
+        "index": 5,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3490862,
+            "width": 5456,
+            "height": 3632,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Tricholoma_sciodes_%2827897736064%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Tricholoma_sciodes_(27897736064).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=93618019",
+            "sha1": "2cadf17a52ef94c4e904a0d48ad4820dbd2845c7",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-08-28 11:38:45",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Tricholoma sciodes (27897736064)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Tricholoma sciodes|Fungi in October|Flickr images reviewed by FlickreviewR 2",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Tricholoma sciodes",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2015-10-08 09:03",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/99278910@N00/27897736064/\">Tricholoma sciodes</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/99278910@N00\">Lukas</a> from London, England",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-2.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images reviewed by FlickreviewR 2"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in October"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Tricholoma sciodes"
+          }
+        ]
+      },
+      "93618022": {
+        "pageid": 93618022,
+        "ns": 6,
+        "title": "File:Tricholoma sciodes (27897737914).jpg",
+        "index": 3,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 4101140,
+            "width": 5456,
+            "height": 3632,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Tricholoma_sciodes_%2827897737914%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Tricholoma_sciodes_(27897737914).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=93618022",
+            "sha1": "e35797d96f3094c02822161d06a29e7aab28d528",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-08-28 11:38:47",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Tricholoma sciodes (27897737914)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Tricholoma sciodes|Fungi in October|Flickr images reviewed by FlickreviewR 2",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Tricholoma sciodes",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2015-10-08 09:03",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/99278910@N00/27897737914/\">Tricholoma sciodes</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/99278910@N00\">Lukas</a> from London, England",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-2.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images reviewed by FlickreviewR 2"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in October"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Tricholoma sciodes"
+          }
+        ]
+      },
+      "93618033": {
+        "pageid": 93618033,
+        "ns": 6,
+        "title": "File:Tricholoma sciodes (27898531034).jpg",
+        "index": 2,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1986434,
+            "width": 3527,
+            "height": 4628,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/63/Tricholoma_sciodes_%2827898531034%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Tricholoma_sciodes_(27898531034).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=93618033",
+            "sha1": "a3f6f981c766c3196c86c6230f0b38a564424ccc",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-08-28 11:39:02",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Tricholoma sciodes (27898531034)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Tricholoma sciodes|Fungi in September|Flickr images reviewed by FlickreviewR 2",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Tricholoma sciodes",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2015-09-29 17:36",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/99278910@N00/27898531034/\">Tricholoma sciodes</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/99278910@N00\">Lukas</a> from London, England",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-2.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images reviewed by FlickreviewR 2"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in September"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Tricholoma sciodes"
+          }
+        ]
+      },
+      "93618029": {
+        "pageid": 93618029,
+        "ns": 6,
+        "title": "File:Tricholoma sciodes (27898531944).jpg",
+        "index": 14,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2121584,
+            "width": 3371,
+            "height": 4164,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/00/Tricholoma_sciodes_%2827898531944%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Tricholoma_sciodes_(27898531944).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=93618029",
+            "sha1": "8e03d8846efd30fd81272054a65ac4dfe49a437b",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-08-28 11:38:57",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Tricholoma sciodes (27898531944)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Tricholoma sciodes|Fungi in September|Flickr images reviewed by FlickreviewR 2",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Tricholoma sciodes",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2015-09-29 17:41",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/99278910@N00/27898531944/\">Tricholoma sciodes</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/99278910@N00\">Lukas</a> from London, England",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-2.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images reviewed by FlickreviewR 2"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in September"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Tricholoma sciodes"
+          }
+        ]
+      },
+      "93618030": {
+        "pageid": 93618030,
+        "ns": 6,
+        "title": "File:Tricholoma sciodes (27898532844).jpg",
+        "index": 1,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2545205,
+            "width": 5456,
+            "height": 3632,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/14/Tricholoma_sciodes_%2827898532844%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Tricholoma_sciodes_(27898532844).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=93618030",
+            "sha1": "bdd79d10a6ab98298cd9fa30b472fa24f69f9be9",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-08-28 11:38:58",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Tricholoma sciodes (27898532844)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Tricholoma sciodes|Fungi in September|Flickr images reviewed by FlickreviewR 2",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Tricholoma sciodes",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2015-09-29 17:39",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/99278910@N00/27898532844/\">Tricholoma sciodes</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/99278910@N00\">Lukas</a> from London, England",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-2.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images reviewed by FlickreviewR 2"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in September"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Tricholoma sciodes"
+          }
+        ]
+      },
+      "93618016": {
+        "pageid": 93618016,
+        "ns": 6,
+        "title": "File:Tricholoma sciodes (28230936300).jpg",
+        "index": 17,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3804526,
+            "width": 5456,
+            "height": 3632,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Tricholoma_sciodes_%2828230936300%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Tricholoma_sciodes_(28230936300).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=93618016",
+            "sha1": "f5315642b664610711f107b98b9bec42e3bfa3ad",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-08-28 11:38:40",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Tricholoma sciodes (28230936300)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Tricholoma sciodes|Fungi in October|Flickr images reviewed by FlickreviewR 2",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Tricholoma sciodes",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2015-10-08 09:08",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/99278910@N00/28230936300/\">Tricholoma sciodes</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/99278910@N00\">Lukas</a> from London, England",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-2.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images reviewed by FlickreviewR 2"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in October"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Tricholoma sciodes"
+          }
+        ]
+      },
+      "93618013": {
+        "pageid": 93618013,
+        "ns": 6,
+        "title": "File:Tricholoma sciodes (28409017992).jpg",
+        "index": 12,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 4045679,
+            "width": 5456,
+            "height": 3632,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Tricholoma_sciodes_%2828409017992%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Tricholoma_sciodes_(28409017992).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=93618013",
+            "sha1": "968efc0aca1f13eebef355d70611c259c6065c86",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-08-28 11:38:38",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Tricholoma sciodes (28409017992)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Tricholoma sciodes|Fungi in October|Flickr images reviewed by FlickreviewR 2|Flickr images missing SDC published in",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Tricholoma sciodes",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2015-10-08 09:10",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/99278910@N00/28409017992/\">Tricholoma sciodes</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/99278910@N00\">Lukas</a> from London, England",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-2.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images missing SDC published in"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images reviewed by FlickreviewR 2"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in October"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Tricholoma sciodes"
+          }
+        ]
+      },
+      "93618017": {
+        "pageid": 93618017,
+        "ns": 6,
+        "title": "File:Tricholoma sciodes (28409019832).jpg",
+        "index": 8,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 4866862,
+            "width": 5456,
+            "height": 3632,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Tricholoma_sciodes_%2828409019832%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Tricholoma_sciodes_(28409019832).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=93618017",
+            "sha1": "7559db744ba812ae3b438fd3f0136238c1537dda",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-08-28 11:38:43",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Tricholoma sciodes (28409019832)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Tricholoma sciodes|Fungi in October|Flickr images reviewed by FlickreviewR 2",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Tricholoma sciodes",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2015-10-08 09:04",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/99278910@N00/28409019832/\">Tricholoma sciodes</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/99278910@N00\">Lukas</a> from London, England",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-2.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images reviewed by FlickreviewR 2"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in October"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Tricholoma sciodes"
+          }
+        ]
+      },
+      "110657157": {
+        "pageid": 110657157,
+        "ns": 6,
+        "title": "File:Tricholoma sciodes (Haute-Loire, France) 01.jpg",
+        "index": 6,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1391095,
+            "width": 3200,
+            "height": 2400,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Tricholoma_sciodes_%28Haute-Loire%2C_France%29_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Tricholoma_sciodes_(Haute-Loire,_France)_01.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=110657157",
+            "sha1": "474b56952ddd4bdb5b8d6a67f4b3749ce253f577",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-10-02 17:46:03",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Tricholoma sciodes (Haute-Loire, France) 01",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Tricholoma sciodes|Self-published work|Images by User:Abalg",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Tricholoma sciodes</i> (Persoon) C. Martín, 1919 photographed under a big Beech (<i>Fagus sylvatica</i>) in a silver Fir (<i>Abies alba</i>) and Beech forest in Haute-Loire (France)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-10-02 16:29:07",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Abalg\" title=\"User:Abalg\">Adrien BENOIT à la GUILLAUME</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images by User:Abalg"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Tricholoma sciodes"
+          }
+        ]
+      },
+      "110657156": {
+        "pageid": 110657156,
+        "ns": 6,
+        "title": "File:Tricholoma sciodes (Haute-Loire, France) 02.jpg",
+        "index": 7,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1684013,
+            "width": 3200,
+            "height": 2400,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Tricholoma_sciodes_%28Haute-Loire%2C_France%29_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Tricholoma_sciodes_(Haute-Loire,_France)_02.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=110657156",
+            "sha1": "1b030c1412bd69b5b6680c65b6f1e8dbe9958a6e",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-10-02 17:46:03",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Tricholoma sciodes (Haute-Loire, France) 02",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Tricholoma sciodes|Self-published work|Images by User:Abalg",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Tricholoma sciodes</i> (Persoon) C. Martín, 1919 photographed under a big Beech (<i>Fagus sylvatica</i>) in a silver Fir (<i>Abies alba</i>) and Beech forest in Haute-Loire (France)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-10-02 16:30:25",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Abalg\" title=\"User:Abalg\">Adrien BENOIT à la GUILLAUME</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images by User:Abalg"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Tricholoma sciodes"
+          }
+        ]
+      },
+      "110657155": {
+        "pageid": 110657155,
+        "ns": 6,
+        "title": "File:Tricholoma sciodes (Haute-Loire, France) 03.jpg",
+        "index": 4,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1662332,
+            "width": 3200,
+            "height": 2400,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Tricholoma_sciodes_%28Haute-Loire%2C_France%29_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Tricholoma_sciodes_(Haute-Loire,_France)_03.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=110657155",
+            "sha1": "e99e9f6f7b1a0379aec6ee295ab4e934c00c4f09",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-10-02 17:46:03",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Tricholoma sciodes (Haute-Loire, France) 03",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Tricholoma sciodes|Self-published work|Images by User:Abalg",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Tricholoma sciodes</i> (Persoon) C. Martín, 1919 photographed under a big Beech (<i>Fagus sylvatica</i>) in a silver Fir (<i>Abies alba</i>) and Beech forest in Haute-Loire (France)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-10-02 16:33:46",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Abalg\" title=\"User:Abalg\">Adrien BENOIT à la GUILLAUME</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images by User:Abalg"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Tricholoma sciodes"
+          }
+        ]
+      },
+      "110657160": {
+        "pageid": 110657160,
+        "ns": 6,
+        "title": "File:Tricholoma sciodes (Haute-Loire, France) 04.jpg",
+        "index": 20,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1397965,
+            "width": 3200,
+            "height": 2400,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Tricholoma_sciodes_%28Haute-Loire%2C_France%29_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Tricholoma_sciodes_(Haute-Loire,_France)_04.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=110657160",
+            "sha1": "becf322834d404fb88c4ecb7c1bfe51e0d02f208",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-10-02 17:46:08",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Tricholoma sciodes (Haute-Loire, France) 04",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Tricholoma sciodes|Self-published work|Images by User:Abalg",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Tricholoma sciodes</i> (Persoon) C. Martín, 1919 photographed under a big Beech (<i>Fagus sylvatica</i>) in a silver Fir (<i>Abies alba</i>) and Beech forest in Haute-Loire (France). Black edge's gills.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-10-02 17:11:31",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Abalg\" title=\"User:Abalg\">Adrien BENOIT à la GUILLAUME</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images by User:Abalg"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Tricholoma sciodes"
+          }
+        ]
+      },
+      "39952791": {
+        "pageid": 39952791,
+        "ns": 6,
+        "title": "File:Tricholoma sciodes (Pers.) C. Martín (396913).jpg",
+        "index": 19,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1449542,
+            "width": 2048,
+            "height": 1536,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Tricholoma_sciodes_%28Pers.%29_C._Mart%C3%ADn_%28396913%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Tricholoma_sciodes_(Pers.)_C._Mart%C3%ADn_(396913).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=39952791",
+            "sha1": "7b38a89f7ddcf8670bd8a9e71a1b4b07d67f0dac",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-05-03 21:11:42",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Tricholoma sciodes (Pers.) C. Martín (396913)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Tricholoma sciodes|Files from external sources with reviewed licenses",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Tricholoma sciodes</i> fotografata in Austria.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2014-01-06 16:04:56",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/image/show_image/396913?q=2YcAp\">Mushroom Observer</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Gerhard Koller (Gerhard)",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Attribution": {
+                "value": "Gerhard Koller",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files from external sources with reviewed licenses"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Tricholoma sciodes"
+          }
+        ]
+      },
+      "17217364": {
+        "pageid": 17217364,
+        "ns": 6,
+        "title": "File:Tricholoma sciodes 110922w.JPG",
+        "index": 10,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 430886,
+            "width": 1713,
+            "height": 1142,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/27/Tricholoma_sciodes_110922w.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Tricholoma_sciodes_110922w.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=17217364",
+            "sha1": "e3fd7ed6bfa37c87482e1f71f4e335dfc02606fe",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-11-02 20:46:15",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Tricholoma sciodes 110922w",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Tricholoma sciodes|GFDL|Taken with Canon EOS 350D|License migration redundant|Self-published work|Fungi in September|Files with coordinates missing SDC location of creation",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "47.058333",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "3.916667",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Tricholoma sciodes</i> in a beech forest area near Château-Chinon, France.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2011-09-22",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Strobilomyces\" title=\"User:Strobilomyces\">Strobilomyces</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in September"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Canon EOS 350D"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Tricholoma sciodes"
+          }
+        ]
+      },
+      "31243460": {
+        "pageid": 31243460,
+        "ns": 6,
+        "title": "File:Tricholoma sciodes G8 (3).JPG",
+        "index": 16,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1128265,
+            "width": 2265,
+            "height": 1699,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Tricholoma_sciodes_G8_%283%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Tricholoma_sciodes_G8_(3).JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=31243460",
+            "sha1": "dfb2d5095400cfa076e4f2eabaf3a761aea95ad0",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2014-02-19 08:49:07",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Tricholoma sciodes G8 (3)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Tricholoma sciodes|Self-published work|Fungi in October",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Tricholoma sciodes</i>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2013-10-25 01:14:58",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Jerzy Opioła",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in October"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Tricholoma sciodes"
+          }
+        ]
+      },
+      "31243461": {
+        "pageid": 31243461,
+        "ns": 6,
+        "title": "File:Tricholoma sciodes G8 (4).JPG",
+        "index": 11,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1673657,
+            "width": 2795,
+            "height": 2096,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Tricholoma_sciodes_G8_%284%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Tricholoma_sciodes_G8_(4).JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=31243461",
+            "sha1": "ace968bdd1617ac7bf9d3435de3b094482eee145",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2014-02-19 08:49:07",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Tricholoma sciodes G8 (4)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Tricholoma sciodes|Taken with Sony DSC-HX100V|Self-published work|Fungi in October",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Tricholoma sciodes</i>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2013-10-25 01:14:27",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Jerzy Opioła",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in October"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Sony DSC-HX100V"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Tricholoma sciodes"
+          }
+        ]
+      },
+      "31255876": {
+        "pageid": 31255876,
+        "ns": 6,
+        "title": "File:Tricholoma sciodes G8 (6).JPG",
+        "index": 9,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1983914,
+            "width": 3093,
+            "height": 2320,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Tricholoma_sciodes_G8_%286%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Tricholoma_sciodes_G8_(6).JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=31255876",
+            "sha1": "5fd120a5e52760ee5342692021bfdd71996c69f6",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2014-02-20 02:46:52",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Tricholoma sciodes G8 (6)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Tricholoma sciodes|Self-published work|Fungi in September",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Tricholoma sciodes</i>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2013-09-27 01:16:05",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Selso\" title=\"User:Selso\">Jerzy Opioła</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in September"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Tricholoma sciodes"
+          }
+        ]
+      },
+      "3566906": {
+        "pageid": 3566906,
+        "ns": 6,
+        "title": "File:Tricholoma spec. - Lindsey 1a.jpg",
+        "index": 22,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 155890,
+            "width": 640,
+            "height": 426,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/15/Tricholoma_spec._-_Lindsey_1a.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Tricholoma_spec._-_Lindsey_1a.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=3566906",
+            "sha1": "ed641a18e1cfd014408e1ae3456192776a0e2024",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2008-02-16 17:56:24",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Tricholoma spec. - Lindsey 1a",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Taken with Nikon D70|Self-published work|Items with VRTS permission confirmed|Pictures by James Lindsey|Unidentified Tricholoma|Belgium photographs taken on 2005-10-11|Fungi in October|Verified pictures of mushrooms by James K. Lindsey|Tricholoma in Belgium|Tricholomataceae in Commanster",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<p><i><a href=\"//commons.wikimedia.org/wiki/Tricholoma\" title=\"Tricholoma\">Tricholoma</a></i> spec. from Commanster, Belgium.\n</p>\n<small>The determination of the species shown in this picture has been verified.</small>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2005-10-11",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"http://popgen.unimaas.nl/~jlindsey/commanster.html\">James Lindsey's Ecology of Commanster Site</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "James Lindsey",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Attribution": {
+                "value": "James Lindsey at <a rel=\"nofollow\" class=\"external text\" href=\"http://popgen.unimaas.nl/~jlindsey/commanster.html\">Ecology of Commanster</a>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Belgium photographs taken on 2005-10-11"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-2.5"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in October"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Items with VRTS permission confirmed"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Pictures by James Lindsey"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Nikon D70"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Tricholoma in Belgium"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Tricholomataceae in Commanster"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Unidentified Tricholoma"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Verified pictures of mushrooms by James K. Lindsey"
+          }
+        ]
+      }
+    }
+  }
+}

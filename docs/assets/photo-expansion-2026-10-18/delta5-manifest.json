@@ -1,0 +1,638 @@
+{
+  "photos": [
+    {
+      "target_group": "animals",
+      "target_key": "tasso",
+      "latin": "Meles meles",
+      "photo_taxon": "Meles meles",
+      "source_title": "File:Grevling (Meles meles).jpg",
+      "source_description": "Bildet av grevling tatt i de norske skoger. Dette er tatt med IR-sensor - Hvor grevlingen selv har utløst kamera.",
+      "source_categories": [],
+      "page": "https://commons.wikimedia.org/wiki/File:Grevling_(Meles_meles).jpg",
+      "author": "Trond Sætre Stegarud",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Grevling_%28Meles_meles%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "2ca0b989de0b33ba5f0a05042f45435d08c79b9d",
+      "size": 2834345,
+      "id": "pe2-natura-tasso-2ca0b989",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-tasso-2ca0b989.jpg",
+      "sha256_original": "3485ebb345a9b839ee529070555a1ab2e9248e26e749e109783231dfe2b38b1a",
+      "index": 53,
+      "source": "Wikimedia Commons",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-tasso-2ca0b989.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-tasso-2ca0b989-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-tasso-2ca0b989-t.webp"
+      },
+      "crop_points": {
+        "5:4": [
+          0.866,
+          0.5
+        ],
+        "3:4": [
+          0.636,
+          0.5
+        ],
+        "4:5": [
+          0.645,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.815
+        ],
+        "4:3": [
+          1.0,
+          0.5
+        ],
+        "1:1": [
+          0.698,
+          0.5
+        ]
+      },
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.57,
+          0.58
+        ],
+        "riquadro": [
+          0.23,
+          0.31,
+          0.97,
+          0.94
+        ],
+        "nota": "Originale e metadati Commons esaminati. Inquadratura complementare, fonte e licenza verificate; località limitata a quella dichiarata, nessuna presenza nel Reatino dedotta."
+      },
+      "caption": "Tasso (Meles meles) nel bosco.",
+      "alt": "Meles meles nel bosco.",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP e miniatura ritagliata; nessuna correzione cromatica. EXIF/XMP rimossi.",
+      "attribution": "Trond Sætre Stegarud · Wikimedia Commons · CC BY-SA 4.0",
+      "source_icc_profile": null,
+      "export_color_space": "sRGB",
+      "color_conversion": "untagged_RGB_assumed_sRGB",
+      "sha1_basis": "commons_api_verified",
+      "attribution_required_text": "",
+      "attribution_required_html": "",
+      "source_metadata": "incoming/photo-expansion-2026-10-18/natura/commons-extmetadata.json"
+    },
+    {
+      "target_group": "animals",
+      "target_key": "volpe",
+      "latin": "Vulpes vulpes",
+      "photo_taxon": "Vulpes vulpes",
+      "source_title": "File:Alaska Red Fox (Vulpes vulpes).jpg",
+      "source_description": "Vulpes vulpes (Red Fox) near Nome, Alaska, USA",
+      "source_categories": [],
+      "page": "https://commons.wikimedia.org/wiki/File:Alaska_Red_Fox_(Vulpes_vulpes).jpg",
+      "author": "Gregory \"Slobirdr\" Smith",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Alaska_Red_Fox_%28Vulpes_vulpes%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "5de3e8485a182bf85712fa52b92479f9f2a2aa65",
+      "size": 7306999,
+      "id": "pe2-natura-volpe-5de3e848",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-volpe-5de3e848.jpg",
+      "sha256_original": "55bd6ef2fb255a3aa0a2963eb1de1c5ffe65b76f0f17faaadaa6850465aa44d3",
+      "index": 46,
+      "source": "Wikimedia Commons",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-volpe-5de3e848.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-volpe-5de3e848-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-volpe-5de3e848-t.webp"
+      },
+      "crop_points": {
+        "5:4": [
+          0.604,
+          0.5
+        ],
+        "3:4": [
+          0.522,
+          0.5
+        ],
+        "4:5": [
+          0.524,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.475
+        ],
+        "4:3": [
+          0.775,
+          0.5
+        ],
+        "1:1": [
+          0.536,
+          0.5
+        ]
+      },
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.51,
+          0.49
+        ],
+        "riquadro": [
+          0.13,
+          0.04,
+          0.93,
+          0.99
+        ],
+        "nota": "Originale e metadati Commons esaminati. Inquadratura complementare, fonte e licenza verificate; località limitata a quella dichiarata, nessuna presenza nel Reatino dedotta."
+      },
+      "caption": "Volpe (Vulpes vulpes), fotografia scattata in Alaska.",
+      "alt": "Vulpes vulpes: particolare della testa, fotografato in Alaska.",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP e miniatura ritagliata; nessuna correzione cromatica. EXIF/XMP rimossi.",
+      "attribution": "Gregory \"Slobirdr\" Smith · Wikimedia Commons · CC BY-SA 2.0",
+      "source_icc_profile": "IEC 61966-2.1 Default RGB colour space - sRGB",
+      "export_color_space": "sRGB",
+      "color_conversion": "source_sRGB",
+      "sha1_basis": "commons_api_verified",
+      "attribution_required_text": "",
+      "attribution_required_html": "",
+      "source_metadata": "incoming/photo-expansion-2026-10-18/natura/commons-extmetadata.json"
+    },
+    {
+      "target_group": "animals",
+      "target_key": "volpe",
+      "latin": "Vulpes vulpes",
+      "photo_taxon": "Vulpes vulpes",
+      "source_title": "File:Vulpes vulpes Mallnitz 01.jpg",
+      "source_description": "This file shows the National Park Hohe Tauern in Austria.",
+      "source_categories": [],
+      "page": "https://commons.wikimedia.org/wiki/File:Vulpes_vulpes_Mallnitz_01.jpg",
+      "author": "Uoaei1",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Vulpes_vulpes_Mallnitz_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "058efeffe60e0fc2c40250cfe2ec986619eca4aa",
+      "size": 13789254,
+      "id": "pe2-natura-volpe-058efeff",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-volpe-058efeff.jpg",
+      "sha256_original": "24beec090e5200e3f896d3c9bb017ea6a4cd09ce4a933d8bb894f061fd375a63",
+      "index": 47,
+      "source": "Wikimedia Commons",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-volpe-058efeff.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-volpe-058efeff-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-volpe-058efeff-t.webp"
+      },
+      "crop_points": {
+        "5:4": [
+          0.62,
+          0.5
+        ],
+        "3:4": [
+          0.54,
+          0.5
+        ],
+        "4:5": [
+          0.543,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.5
+        ],
+        "4:3": [
+          0.68,
+          0.5
+        ],
+        "1:1": [
+          0.56,
+          0.5
+        ]
+      },
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.52,
+          0.5
+        ],
+        "riquadro": [
+          0.09,
+          0.1,
+          0.95,
+          0.92
+        ],
+        "nota": "Originale e metadati Commons esaminati. Inquadratura complementare, fonte e licenza verificate; località limitata a quella dichiarata, nessuna presenza nel Reatino dedotta."
+      },
+      "caption": "Volpe (Vulpes vulpes) su terreno roccioso, fotografata in Austria.",
+      "alt": "Vulpes vulpes: vista laterale su terreno roccioso.",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP e miniatura ritagliata; nessuna correzione cromatica. EXIF/XMP rimossi.",
+      "attribution": "Uoaei1 · Wikimedia Commons · CC BY-SA 4.0",
+      "source_icc_profile": "IEC 61966-2.1 Default RGB colour space - sRGB",
+      "export_color_space": "sRGB",
+      "color_conversion": "source_sRGB",
+      "sha1_basis": "commons_api_verified",
+      "attribution_required_text": "",
+      "attribution_required_html": "",
+      "source_metadata": "incoming/photo-expansion-2026-10-18/natura/commons-extmetadata.json"
+    },
+    {
+      "target_group": "trees",
+      "target_key": "ciliegio",
+      "latin": "Prunus avium",
+      "photo_taxon": "Prunus avium",
+      "source_title": "File:Süßkirsche Prunus avium.jpg",
+      "source_description": "VOGELkirsche bei Ableg, Stadt Zwiesel, Bayerischer Wald",
+      "source_categories": [],
+      "page": "https://commons.wikimedia.org/wiki/File:S%C3%BC%C3%9Fkirsche_Prunus_avium.jpg",
+      "author": "Konrad Lackerbeck",
+      "license": "CC BY-SA 2.5",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/1/1c/S%C3%BC%C3%9Fkirsche_Prunus_avium.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "7b19a05827c1ddc46b3cf10e5d36e0b0c2d05417",
+      "size": 361639,
+      "id": "pe2-natura-ciliegio-7b19a058",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-ciliegio-7b19a058.jpg",
+      "sha256_original": "0c2e9222ec7f566e13e7e563ab4dda9f14efa11740605891914f3245f4f07bff",
+      "index": 75,
+      "source": "Wikimedia Commons",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-ciliegio-7b19a058.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-ciliegio-7b19a058-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-ciliegio-7b19a058-t.webp"
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.4
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.0
+        ],
+        "16:7": [
+          0.5,
+          0.44
+        ],
+        "4:3": [
+          0.5,
+          0.409
+        ],
+        "1:1": [
+          0.5,
+          0.34
+        ]
+      },
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.46
+        ],
+        "riquadro": [
+          0.07,
+          0.01,
+          0.96,
+          0.99
+        ],
+        "nota": "Originale e metadati Commons esaminati. Inquadratura complementare, fonte e licenza verificate; località limitata a quella dichiarata, nessuna presenza nel Reatino dedotta."
+      },
+      "caption": "Albero in fiore · Prunus avium (L.) L.",
+      "alt": "Prunus avium: albero in fiore.",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP e miniatura ritagliata; nessuna correzione cromatica. EXIF/XMP rimossi.",
+      "attribution": "Konrad Lackerbeck · Wikimedia Commons · CC BY-SA 2.5",
+      "source_icc_profile": null,
+      "export_color_space": "sRGB",
+      "color_conversion": "untagged_RGB_assumed_sRGB",
+      "sha1_basis": "commons_api_verified",
+      "attribution_required_text": "",
+      "attribution_required_html": "",
+      "source_metadata": "incoming/photo-expansion-2026-10-18/natura/commons-extmetadata.json"
+    },
+    {
+      "target_group": "trees",
+      "target_key": "ippocastano",
+      "latin": "Aesculus hippocastanum",
+      "photo_taxon": "Aesculus hippocastanum",
+      "source_title": "File:Aesculus hippocastanum Kasztanowiec zwyczajny 2023-05-05 04.jpg",
+      "source_description": "Horse-chestnut (Aesculus hippocastanum), a tree cultivated in Wrocław University Botanical Garden, Wrocław, Poland.",
+      "source_categories": [],
+      "page": "https://commons.wikimedia.org/wiki/File:Aesculus_hippocastanum_Kasztanowiec_zwyczajny_2023-05-05_04.jpg",
+      "author": "Agnieszka Kwiecień, Nova",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/3/34/Aesculus_hippocastanum_Kasztanowiec_zwyczajny_2023-05-05_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "001a6317c39572c6c0309dd845fee982cd5fee1b",
+      "size": 1458087,
+      "id": "pe2-natura-ippocastano-001a6317",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-ippocastano-001a6317.jpg",
+      "sha256_original": "7a03a4221017f3d5f250f5b590ca0ec0bcc694d38878ee92480de3c2049982cb",
+      "index": 83,
+      "source": "Wikimedia Commons",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-ippocastano-001a6317.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-ippocastano-001a6317-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-ippocastano-001a6317-t.webp"
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.35
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.0
+        ],
+        "16:7": [
+          0.5,
+          0.411
+        ],
+        "4:3": [
+          0.5,
+          0.363
+        ],
+        "1:1": [
+          0.5,
+          0.26
+        ]
+      },
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.49,
+          0.44
+        ],
+        "riquadro": [
+          0.13,
+          0.03,
+          0.86,
+          0.99
+        ],
+        "nota": "Originale e metadati Commons esaminati. Inquadratura complementare, fonte e licenza verificate; località limitata a quella dichiarata, nessuna presenza nel Reatino dedotta."
+      },
+      "caption": "Infiorescenza · Aesculus hippocastanum, fotografata nell’orto botanico di Breslavia.",
+      "alt": "Aesculus hippocastanum: infiorescenza.",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP e miniatura ritagliata; nessuna correzione cromatica. EXIF/XMP rimossi.",
+      "attribution": "Agnieszka Kwiecień, Nova · Wikimedia Commons · CC BY-SA 4.0",
+      "source_icc_profile": null,
+      "export_color_space": "sRGB",
+      "color_conversion": "untagged_RGB_assumed_sRGB",
+      "sha1_basis": "commons_api_verified",
+      "attribution_required_text": "",
+      "attribution_required_html": "",
+      "source_metadata": "incoming/photo-expansion-2026-10-18/natura/commons-extmetadata.json"
+    },
+    {
+      "target_group": "trees",
+      "target_key": "noce",
+      "latin": "Juglans regia",
+      "photo_taxon": "Juglans regia",
+      "source_title": "File:Juglans regia Echte Walnussfrucht 1.jpg",
+      "source_description": "Juglans regia (the Common walnut or Persian walnut), is the original walnut tree of the Old World.",
+      "source_categories": [
+        "Category:Austria photographs taken on 2008-09-20",
+        "Category:CC-BY-SA-2.5",
+        "Category:Fagales in Austria in September",
+        "Category:Fruit of Austria",
+        "Category:Juglandaceae in September",
+        "Category:Juglans regia (fruit)",
+        "Category:Juglans regia in Austria",
+        "Category:Photos by Böhringer",
+        "Category:Self-published work"
+      ],
+      "page": "https://commons.wikimedia.org/wiki/File:Juglans_regia_Echte_Walnussfrucht_1.jpg",
+      "author": "Böhringer Friedrich",
+      "license": "CC BY-SA 2.5",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Juglans_regia_Echte_Walnussfrucht_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "1ba9ef6500d9c6539e507dfe4efc04cd0967f66e",
+      "size": 2180011,
+      "id": "pe2-natura-noce-1ba9ef65",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-noce-1ba9ef65.jpg",
+      "sha256_original": "bba67944179f47bea891adc501596bbc989a2181f22b68d8ac8fb2725a5dfddf",
+      "index": 77,
+      "source": "Wikimedia Commons",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-noce-1ba9ef65.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-noce-1ba9ef65-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-noce-1ba9ef65-t.webp"
+      },
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.45
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.18
+        ],
+        "16:7": [
+          0.5,
+          0.47
+        ],
+        "4:3": [
+          0.5,
+          0.454
+        ],
+        "1:1": [
+          0.5,
+          0.42
+        ]
+      },
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.52,
+          0.48
+        ],
+        "riquadro": [
+          0.11,
+          0.05,
+          0.97,
+          0.92
+        ],
+        "nota": "Originale e metadati Commons esaminati. Inquadratura complementare, fonte e licenza verificate; località limitata a quella dichiarata, nessuna presenza nel Reatino dedotta."
+      },
+      "caption": "Frutto con involucro aperto · Juglans regia L.",
+      "alt": "Juglans regia: frutto con involucro aperto.",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP e miniatura ritagliata; nessuna correzione cromatica. EXIF/XMP rimossi.",
+      "attribution": "Böhringer Friedrich · Wikimedia Commons · CC BY-SA 2.5",
+      "source_icc_profile": null,
+      "export_color_space": "sRGB",
+      "color_conversion": "untagged_RGB_assumed_sRGB",
+      "sha1_basis": "commons_api_verified",
+      "attribution_required_text": "",
+      "attribution_required_html": "",
+      "source_metadata": "incoming/photo-expansion-2026-10-18/natura/commons-extmetadata.json"
+    },
+    {
+      "target_group": "trees",
+      "target_key": "olmo montano",
+      "latin": "Ulmus glabra",
+      "photo_taxon": "Ulmus glabra",
+      "source_title": "File:Ulmus glabra, Osor.jpg",
+      "source_description": "Ulmus glabra, Osor (Catalunya)",
+      "source_categories": [],
+      "page": "https://commons.wikimedia.org/wiki/File:Ulmus_glabra,_Osor.jpg",
+      "author": "Josep Gesti",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Ulmus_glabra%2C_Osor.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "dbc95e40ea34df56b89fbb89699db3a6bf01e53c",
+      "size": 3523977,
+      "id": "pe2-natura-olmo-montano-dbc95e40",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-olmo-montano-dbc95e40.jpg",
+      "sha256_original": "2aee0d3b1ab9f67c2235b92f0f96e1559be3cfde2c96aafdce26c129252cff61",
+      "index": 81,
+      "source": "Wikimedia Commons",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-olmo-montano-dbc95e40.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-olmo-montano-dbc95e40-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-olmo-montano-dbc95e40-t.webp"
+      },
+      "crop_points": {
+        "5:4": [
+          0.66,
+          0.5
+        ],
+        "3:4": [
+          0.523,
+          0.5
+        ],
+        "4:5": [
+          0.525,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.452
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.54,
+          0.5
+        ]
+      },
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.51,
+          0.48
+        ],
+        "riquadro": [
+          0.14,
+          0.19,
+          0.94,
+          0.85
+        ],
+        "nota": "Originale e metadati Commons esaminati. Inquadratura complementare, fonte e licenza verificate; località limitata a quella dichiarata, nessuna presenza nel Reatino dedotta."
+      },
+      "caption": "Ramo e foglie · Ulmus glabra Huds.",
+      "alt": "Ulmus glabra: ramo e foglie.",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP e miniatura ritagliata; nessuna correzione cromatica. EXIF/XMP rimossi.",
+      "attribution": "Josep Gesti · Wikimedia Commons · CC BY-SA 4.0",
+      "source_icc_profile": null,
+      "export_color_space": "sRGB",
+      "color_conversion": "untagged_RGB_assumed_sRGB",
+      "sha1_basis": "commons_api_verified",
+      "attribution_required_text": "",
+      "attribution_required_html": "",
+      "source_metadata": "incoming/photo-expansion-2026-10-18/natura/commons-extmetadata.json"
+    },
+    {
+      "target_group": "trees",
+      "target_key": "sorbo domestico",
+      "latin": "Sorbus domestica",
+      "photo_taxon": "Sorbus domestica",
+      "source_title": "File:Serbal (Sorbus domestica, L.).jpg",
+      "source_description": "Serbal (Sorbus domestica, L.)",
+      "source_categories": [],
+      "page": "https://commons.wikimedia.org/wiki/File:Serbal_(Sorbus_domestica,_L.).jpg",
+      "author": "Juan Emilio Prades Bel",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/3/32/Serbal_%28Sorbus_domestica%2C_L.%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "commons_sha1": "13f8c203152b6a4a4a0752d2c6d5e718003a8139",
+      "size": 7544884,
+      "id": "pe2-natura-sorbo-domestico-13f8c203",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-sorbo-domestico-13f8c203.jpg",
+      "sha256_original": "766e883371b928aef83e9fcd7e6a9372ee0792969d2be5789e4ecda611bd26b6",
+      "index": 73,
+      "source": "Wikimedia Commons",
+      "files": {
+        "file": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-sorbo-domestico-13f8c203.webp",
+        "file_hd": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-sorbo-domestico-13f8c203-hd.webp",
+        "thumb": "incoming/photo-expansion-2026-10-18/natura/prepared/pe2-natura-sorbo-domestico-13f8c203-t.webp"
+      },
+      "crop_points": {
+        "5:4": [
+          0.36,
+          0.5
+        ],
+        "3:4": [
+          0.454,
+          0.5
+        ],
+        "4:5": [
+          0.45,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.38
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.42,
+          0.5
+        ]
+      },
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.48,
+          0.45
+        ],
+        "riquadro": [
+          0.03,
+          0.04,
+          0.96,
+          0.98
+        ],
+        "nota": "Originale e metadati Commons esaminati. Inquadratura complementare, fonte e licenza verificate; località limitata a quella dichiarata, nessuna presenza nel Reatino dedotta."
+      },
+      "caption": "Portamento · Sorbus domestica L.",
+      "alt": "Sorbus domestica: portamento.",
+      "changes": "Orientamento EXIF, ridimensionamento, compressione WebP e miniatura ritagliata; nessuna correzione cromatica. EXIF/XMP rimossi.",
+      "attribution": "Juan Emilio Prades Bel · Wikimedia Commons · CC BY 4.0",
+      "source_icc_profile": null,
+      "export_color_space": "sRGB",
+      "color_conversion": "untagged_RGB_assumed_sRGB",
+      "sha1_basis": "commons_api_verified",
+      "attribution_required_text": "",
+      "attribution_required_html": "",
+      "source_metadata": "incoming/photo-expansion-2026-10-18/natura/commons-extmetadata.json"
+    }
+  ]
+}

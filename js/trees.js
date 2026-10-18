@@ -52,7 +52,7 @@ export function treeForCategory(cat) {
     || Object.entries(T).find(([, t]) => (t.forest_categories || []).includes(cat))?.[0] || null;
 }
 
-const credit = (m) => m ? `Foto: ${esc(m.author)}${m.license ? `, ${esc(m.license)}` : ''} · <a href="${esc(m.page)}" target="_blank" rel="noopener">${esc(m.source)}</a>` : '';
+const credit = (m) => m ? `Foto: ${esc(m.attribution_required_text || m.author)}${m.license ? `, ${esc(m.license)}` : ''} · <a href="${esc(m.page)}" target="_blank" rel="noopener">${esc(m.source)}</a>` : '';
 
 const treePhotos=id=>[MEDIA[id]?.ref,...(MEDIA[id]?.inat||[]),...(MEDIA[id]?.commons||[])].filter((p,i,a)=>p&&a.findIndex(x=>x?.file===p.file)===i);
 
@@ -148,6 +148,6 @@ export function renderTreePage(body, id) {
     </div>`;
   enhanceEntityAccordions(body);
   Promise.all([loadKeyData('alberi'), loadTreeIcons()]).then(([d, icons]) => { const slot = body.querySelector('[data-tree-traits]'); if (slot && d?.items?.[id]) slot.innerHTML = traitTilesHtml(d, d.items[id].traits, icons); });
-  const gallery = photos.map((p) => ({ src: ASSET(p.file_hd || p.file), alt: t.name, caption: captionHtml({ title: esc(t.name), text: esc(t.latin), credit: credit(p) }) }));
+  const gallery = photos.map((p) => ({ src: ASSET(p.file_hd || p.file), alt: p.alt || t.name, caption: captionHtml({ title: esc(t.name), text: esc(p.caption || t.latin), credit: credit(p) }) }));
   body.querySelectorAll('[data-photo]').forEach((b) => b.addEventListener('click', () => openLightbox(gallery, +b.dataset.photo)));
 }

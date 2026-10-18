@@ -1,0 +1,4349 @@
+{
+  "continue": {
+    "clcontinue": "51880716|CC-BY-SA-2.0",
+    "continue": "||imageinfo"
+  },
+  "query": {
+    "pages": {
+      "1777824": {
+        "pageid": 1777824,
+        "ns": 6,
+        "title": "File:Amanita-pantherina.jpg",
+        "index": 40,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 136687,
+            "width": 480,
+            "height": 640,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/42/Amanita-pantherina.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Amanita-pantherina.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=1777824",
+            "sha1": "56f3f5c2362b5fefd9423385829088abf4f5d93d",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2007-03-12 19:17:26",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Amanita-pantherina",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Amanita pantherina|GFDL|Taken with Samsung 301|License migration redundant|Self-published work|Fungi of Moscow Oblast",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Amanita Pantherina / Moscow",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2006-09-03",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "own photo collection",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Tod Schwarzkaiser",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 2.5",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 2.5",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/2.5",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-2.5",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Amanita pantherina"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-2.5"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0-migrated"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Moscow Oblast"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Samsung 301"
+          }
+        ]
+      },
+      "95723677": {
+        "pageid": 95723677,
+        "ns": 6,
+        "title": "File:Amanita excelsa 2016 G1.jpg",
+        "index": 5,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 5632052,
+            "width": 3500,
+            "height": 3000,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/21/Amanita_excelsa_2016_G1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Amanita_excelsa_2016_G1.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=95723677",
+            "sha1": "7e9c08185e6a3473287ba842d5761332c14fa332",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-11-01 21:15:39",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Amanita excelsa 2016 G1",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Amanita excelsa|Taken with Canon EOS 750D|Taken with Canon EF 50mm F1.4 USM|Self-published work|Fungi of Ukraine in June|Fungi of Ivano-Frankivsk Oblast|June 2016 in Ivano-Frankivsk Oblast|Amanita in Ukraine|Ukraine photographs taken on 2016-06-24|2 fungi|Agaricales in Ukraine in June|Images by George Chernilevsky",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Amanita excelsa</i>. Ukraine, Carpathian mountains",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2016-06-24 09:09:26",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:George_Chernilevsky\" title=\"User:George Chernilevsky\">George Chernilevsky</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "95723673": {
+        "pageid": 95723673,
+        "ns": 6,
+        "title": "File:Amanita excelsa 2016 G2.jpg",
+        "index": 4,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 6385483,
+            "width": 4100,
+            "height": 3600,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Amanita_excelsa_2016_G2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Amanita_excelsa_2016_G2.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=95723673",
+            "sha1": "2c012a27e31b5d892c738b8425938ada97da37d6",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-11-01 21:15:40",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Amanita excelsa 2016 G2",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Amanita excelsa|Taken with Canon EOS 750D|Taken with Canon EF 50mm F1.4 USM|Self-published work|Fungi of Ukraine in June|Fungi of Ivano-Frankivsk Oblast|June 2016 in Ivano-Frankivsk Oblast|Amanita in Ukraine|Ukraine photographs taken on 2016-06-24|2 fungi|Agaricales in Ukraine in June|Images by George Chernilevsky",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Amanita excelsa</i>. Ukraine, Carpathian mountains",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2016-06-24 09:11:56",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:George_Chernilevsky\" title=\"User:George Chernilevsky\">George Chernilevsky</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "95723672": {
+        "pageid": 95723672,
+        "ns": 6,
+        "title": "File:Amanita excelsa 2016 G3.jpg",
+        "index": 3,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 5778889,
+            "width": 4000,
+            "height": 3600,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/25/Amanita_excelsa_2016_G3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Amanita_excelsa_2016_G3.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=95723672",
+            "sha1": "849a3530d80095cfcf998338c3eda442e46f5d37",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-11-01 21:15:39",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Amanita excelsa 2016 G3",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Amanita excelsa|Taken with Canon EOS 750D|Taken with Canon EF 50mm F1.4 USM|Self-published work|Fungi of Ukraine in June|Fungi of Ivano-Frankivsk Oblast|June 2016 in Ivano-Frankivsk Oblast|Amanita in Ukraine|Ukraine photographs taken on 2016-06-24|Agaricales in Ukraine in June|Images by George Chernilevsky",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Amanita excelsa</i>. Ukraine, Carpathian mountains",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2016-06-24 10:04:43",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"mw:WikiLink\" href=\"https://commons.wikimedia.org/wiki/User:George_Chernilevsky\" title=\"User:George Chernilevsky\">George Chernilevsky</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "123189329": {
+        "pageid": 123189329,
+        "ns": 6,
+        "title": "File:Amanita pantherina, Fruiting body.jpg",
+        "index": 22,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 12578632,
+            "width": 6000,
+            "height": 4000,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/79/Amanita_pantherina%2C_Fruiting_body.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Amanita_pantherina,_Fruiting_body.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=123189329",
+            "sha1": "22bdefb1a0743f5c0cf8a12c854fb9c1d66c5d54",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-09-20 14:07:09",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Amanita pantherina, Fruiting body",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Amanita pantherina|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Fruiting body of Amanita pantherina",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-09-15 11:06:38",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:KuCeri&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:KuCeri (page does not exist)\">Kustrim Cerimi</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "23279502": {
+        "pageid": 23279502,
+        "ns": 6,
+        "title": "File:Amanita pantherina, a, Krugersdorp.jpg",
+        "index": 29,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 5495979,
+            "width": 4000,
+            "height": 3000,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Amanita_pantherina%2C_a%2C_Krugersdorp.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Amanita_pantherina,_a,_Krugersdorp.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=23279502",
+            "sha1": "8aa28b9485a6fe647a30dd03e153d3e8b78f6783",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2012-12-21 16:34:51",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Amanita pantherina, a, Krugersdorp",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Amanita pantherina|GFDL|Taken with Panasonic Lumix DMC-TZ8|License migration redundant|Self-published work|Photographs by User:JMK|Biota of Gauteng|Amanita in South Africa",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Fruiting body of <i>Amanita pantherina</i> breaking though soil and pine needles, at Krugersdorp, South Africa",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2012-12-16 10:29",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:JMK\" title=\"User:JMK\">JMK</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Amanita in South Africa"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Amanita pantherina"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Biota of Gauteng"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by User:JMK"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Panasonic Lumix DMC-TZ8"
+          }
+        ]
+      },
+      "123189326": {
+        "pageid": 123189326,
+        "ns": 6,
+        "title": "File:Amanita pantherina, young fruiting body.jpg",
+        "index": 23,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 11600658,
+            "width": 3434,
+            "height": 4982,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Amanita_pantherina%2C_young_fruiting_body.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Amanita_pantherina,_young_fruiting_body.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=123189326",
+            "sha1": "04ddc07f10ec6654fe0350f14bd6375a5f02d977",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-09-20 14:07:08",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Amanita pantherina, young fruiting body",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Amanita pantherina|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Young fruiting body of Amanita pantherina",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-09-15 11:07:55",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:KuCeri&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:KuCeri (page does not exist)\">Kustrim Cerimi</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "97669248": {
+        "pageid": 97669248,
+        "ns": 6,
+        "title": "File:Amanita pantherina (29460957134).jpg",
+        "index": 15,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 192627,
+            "width": 1024,
+            "height": 679,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/95/Amanita_pantherina_%2829460957134%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Amanita_pantherina_(29460957134).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=97669248",
+            "sha1": "eb1986e20910e2dd99fcd8983c00d2d1d8ad5cd4",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-12-16 21:08:32",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Amanita pantherina (29460957134)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Amanita pantherina|Fungi in October|Flickr images reviewed by FlickreviewR 2|Photographs by Hans-Günter Wagner",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Amanita pantherina",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2016-10-03 15:26",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/145400091@N04/29460957134/\">Amanita pantherina</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/145400091@N04\">Dr. Hans-Günter Wagner</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "97669259": {
+        "pageid": 97669259,
+        "ns": 6,
+        "title": "File:Amanita pantherina (29461459273).jpg",
+        "index": 19,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 104354,
+            "width": 1024,
+            "height": 685,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Amanita_pantherina_%2829461459273%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Amanita_pantherina_(29461459273).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=97669259",
+            "sha1": "4e4deede066cc96624457db5274c063a3a556f0b",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-12-16 21:08:41",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Amanita pantherina (29461459273)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Amanita pantherina|Fungi in August|Flickr images reviewed by FlickreviewR 2|Photographs by Hans-Günter Wagner",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Amanita pantherina",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2006-08-18 01:27",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/145400091@N04/29461459273/\">Amanita pantherina</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/145400091@N04\">Dr. Hans-Günter Wagner</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "63553178": {
+        "pageid": 63553178,
+        "ns": 6,
+        "title": "File:Amanita pantherina (36497334393).jpg",
+        "index": 30,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 5891777,
+            "width": 3456,
+            "height": 5184,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/69/Amanita_pantherina_%2836497334393%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Amanita_pantherina_(36497334393).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=63553178",
+            "sha1": "18c2e0dddc8806b46c234c1538e991b6a1a863c1",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-10-23 20:01:41",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Amanita pantherina (36497334393)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Amanita pantherina|Flickr images reviewed by FlickreviewR|North Rhine-Westphalia photographs taken on 2017-08-06|Agaricales in Oberbergischer Kreis in August|Amanita in Lindlar|Files with coordinates missing SDC location of creation (51° N, 7° E)|Photographs by Björn Sothmann",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.023500",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "7.280641",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Panther Cap - Amanita pantherina",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-08-06 10:35",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/40948266@N04/36497334393/\">Panther Cap - Amanita pantherina</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/40948266@N04\">Björn S...</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "74134088": {
+        "pageid": 74134088,
+        "ns": 6,
+        "title": "File:Amanita pantherina (43451733400).jpg",
+        "index": 6,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 5678535,
+            "width": 3456,
+            "height": 5184,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Amanita_pantherina_%2843451733400%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Amanita_pantherina_(43451733400).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=74134088",
+            "sha1": "a55be446aafdb22bcdc8214875dea1eb08766581",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-11-04 20:34:53",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Amanita pantherina (43451733400)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Amanita pantherina|Flickr images reviewed by FlickreviewR 2|Oberhausen photographs taken on 2018-09-10|Amanita in Oberhausen|Agaricales in Oberhausen in September|Files with coordinates missing SDC location of creation (51° N, 6° E)|Photographs by Björn Sothmann",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.577263",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "6.835477",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Panther Cap - Amanita pantherina",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2018-09-10 15:27",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/40948266@N04/43451733400/\">Panther Cap - Amanita pantherina</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/40948266@N04\">Björn S...</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "74134080": {
+        "pageid": 74134080,
+        "ns": 6,
+        "title": "File:Amanita pantherina (45266018821).jpg",
+        "index": 17,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 5643831,
+            "width": 3456,
+            "height": 5184,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/65/Amanita_pantherina_%2845266018821%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Amanita_pantherina_(45266018821).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=74134080",
+            "sha1": "37e504b473dafc7e3849c20565ce5f8de8f9ecd5",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-11-04 20:34:46",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Amanita pantherina (45266018821)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Amanita pantherina|Flickr images reviewed by FlickreviewR 2|Oberhausen photographs taken on 2018-09-10|Amanita in Oberhausen|Fungi of Oberhausen in September|Files with coordinates missing SDC location of creation (51° N, 6° E)|Photographs by Björn Sothmann",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.577263",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "6.835477",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Panther Cap - Amanita pantherina",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2018-09-10 15:27",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"mw:ExtLink nofollow\" href=\"https://www.flickr.com/photos/40948266@N04/45266018821/\" class=\"external text\">Panther Cap - Amanita pantherina</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"mw:ExtLink nofollow\" href=\"https://www.flickr.com/people/40948266@N04\" class=\"external text\">Björn S...</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "93616813": {
+        "pageid": 93616813,
+        "ns": 6,
+        "title": "File:Amanita pantherina (45570884671).jpg",
+        "index": 24,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2502551,
+            "width": 5456,
+            "height": 3632,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Amanita_pantherina_%2845570884671%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Amanita_pantherina_(45570884671).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=93616813",
+            "sha1": "92f28d2d59b114a7c90b962d4b83d88bea174db0",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-08-28 11:12:00",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Amanita pantherina (45570884671)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Amanita pantherina|Flickr images reviewed by FlickreviewR 2",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Amanita pantherina",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2018-10-13 08:07",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/99278910@N00/45570884671/\">Amanita pantherina</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/99278910@N00\">Lukas</a> from London, England",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "97669182": {
+        "pageid": 97669182,
+        "ns": 6,
+        "title": "File:Amanita pantherina (?) (29543239573).jpg",
+        "index": 16,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 116699,
+            "width": 1024,
+            "height": 685,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Amanita_pantherina_%28%3F%29_%2829543239573%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Amanita_pantherina_(%3F)_(29543239573).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=97669182",
+            "sha1": "dea498d341e6315b2eeba216636155f9d6a790d8",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-12-16 21:07:21",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Amanita pantherina (?) (29543239573)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Amanita pantherina|Fungi in August|Flickr images reviewed by FlickreviewR 2|Photographs by Hans-Günter Wagner",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Amanita pantherina (?)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2007-08-27 00:00",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/145400091@N04/29543239573/\">Amanita pantherina (?)</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/145400091@N04\">Dr. Hans-Günter Wagner</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "1126427": {
+        "pageid": 1126427,
+        "ns": 6,
+        "title": "File:Amanita pantherina - Ss181292.jpg",
+        "index": 8,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2248414,
+            "width": 2304,
+            "height": 1728,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Amanita_pantherina_-_Ss181292.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Amanita_pantherina_-_Ss181292.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=1126427",
+            "sha1": "15bf0d05c3233367a3d54bd65562e43adb57cb8b",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2006-09-01 14:47:31",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Amanita pantherina - Ss181292",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Amanita pantherina|Taken with HP PhotoSmart R607|Self-published work|PD-self|Amanita in Poland",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Amanita pantherina - single fungal fruiting body. Location: Europe, Poland, Mazovian Voivodship, Podkowa Leśna, garden.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2006-09-01",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Ss181292\" title=\"User:Ss181292\">Stanisław Skowron</a>",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "all rights released",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Amanita in Poland"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Amanita pantherina"
+          },
+          {
+            "ns": 14,
+            "title": "Category:PD-self"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with HP PhotoSmart R607"
+          }
+        ]
+      },
+      "93758537": {
+        "pageid": 93758537,
+        "ns": 6,
+        "title": "File:Amanita pantherina - Warmond, South Holland, NL (30829385868).jpg",
+        "index": 36,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 10256384,
+            "width": 6000,
+            "height": 4000,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Amanita_pantherina_-_Warmond%2C_South_Holland%2C_NL_%2830829385868%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Amanita_pantherina_-_Warmond,_South_Holland,_NL_(30829385868).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=93758537",
+            "sha1": "41ab84e35af205482820f3a58a9bcd3899deacae",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-09-02 07:07:42",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Amanita pantherina - Warmond, South Holland, NL (30829385868)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Flickr images reviewed by FlickreviewR 2|Netherlands photographs taken on 2018-09-15|Amanita pantherina in the Netherlands|Fungi of South Holland in September|Fungi of Warmond",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "52.207677",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "4.506791",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<p>Huys te Warmond\n</p>\nHelios M44-2",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2018-09-15 13:19",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/ronaldc5/30829385868/\">Summer is over...</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/91830216@N03\">Ronald van der Graaf</a> from The Netherlands",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "35376285": {
+        "pageid": 35376285,
+        "ns": 6,
+        "title": "File:Amanita pantherina 04.jpg",
+        "index": 13,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1511874,
+            "width": 3501,
+            "height": 2334,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Amanita_pantherina_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Amanita_pantherina_04.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=35376285",
+            "sha1": "1d0c935110fd62a4e3a102ff3345ad68683d2045",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2014-09-15 02:43:36",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Amanita pantherina 04",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Amanita pantherina|GFDL|Taken with Canon EOS 300D|License migration redundant|Self-published work|Amanita in Japan|Fungi of Japan in September",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "​<a href=\"https://ja.wikipedia.org/wiki/%E3%83%86%E3%83%B3%E3%82%B0%E3%82%BF%E3%82%B1\" class=\"extiw\" title=\"ja:テングタケ\">テングタケ</a> (学名：<i>Amanita pantherina</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2014-09-14",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"https://ja.wikipedia.org/wiki/User:%CE%A364\" class=\"extiw\" title=\"ja:User:Σ64\">Σ64</a>",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "You may select the license of your choice.",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Amanita in Japan"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Amanita pantherina"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Japan in September"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Canon EOS 300D"
+          }
+        ]
+      },
+      "125223791": {
+        "pageid": 125223791,
+        "ns": 6,
+        "title": "File:Amanita pantherina 07Nov2019.jpg",
+        "index": 38,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 405458,
+            "width": 1745,
+            "height": 1343,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Amanita_pantherina_07Nov2019.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Amanita_pantherina_07Nov2019.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=125223791",
+            "sha1": "5d07d5d14161a7a11221d0b0ffaaae6be2a873ef",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-11-09 20:43:40",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Amanita pantherina 07Nov2019",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Amanita pantherina|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Amanita pantherina, late fall, Vancouver, B.C.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2019-11-07",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Jim_slater307&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Jim slater307 (page does not exist)\">Jim slater307</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "36518275": {
+        "pageid": 36518275,
+        "ns": 6,
+        "title": "File:Amanita pantherina 09.jpg",
+        "index": 14,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2030717,
+            "width": 3476,
+            "height": 2318,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Amanita_pantherina_09.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Amanita_pantherina_09.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=36518275",
+            "sha1": "b1d05b9f7238f574df67905e94cc614fb89aa321",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2014-10-31 14:44:23",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Amanita pantherina 09",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Amanita pantherina|GFDL|Taken with Canon EOS 300D|License migration redundant|Self-published work|Amanita in Japan|Fungi of Japan in October",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<a href=\"https://ja.wikipedia.org/wiki/%E3%83%86%E3%83%B3%E3%82%B0%E3%82%BF%E3%82%B1\" class=\"extiw\" title=\"ja:テングタケ\">テングタケ</a> (学名：<i><a href=\"//commons.wikimedia.org/wiki/Amanita_pantherina\" title=\"Amanita pantherina\">Amanita pantherina</a></i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2014-10-26",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"https://ja.wikipedia.org/wiki/User:%CE%A364\" class=\"extiw\" title=\"ja:User:Σ64\">Σ64</a>",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "You may select the license of your choice.",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Amanita in Japan"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Amanita pantherina"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Japan in October"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Canon EOS 300D"
+          }
+        ]
+      },
+      "60963088": {
+        "pageid": 60963088,
+        "ns": 6,
+        "title": "File:Amanita pantherina 100.jpg",
+        "index": 26,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2788270,
+            "width": 4608,
+            "height": 2592,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Amanita_pantherina_100.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Amanita_pantherina_100.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=60963088",
+            "sha1": "48d9c7afe7fc4183f225bdeedbf6365673739dd4",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-07-12 15:29:28",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Amanita pantherina 100",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Amanita pantherina|Self-published work|Fungi in July|Amanita in Serbia|Jestive ili ne upoznajmo ih sve",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Amanita pantherina",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-07-12",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Megalogena&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Megalogena (page does not exist)\">Megalogena</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "109878445": {
+        "pageid": 109878445,
+        "ns": 6,
+        "title": "File:Amanita pantherina 113463504.jpg",
+        "index": 32,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1610882,
+            "width": 2048,
+            "height": 1530,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Amanita_pantherina_113463504.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Amanita_pantherina_113463504.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=109878445",
+            "sha1": "3ccf8f020afd50e9310ccdf0d6247abf294cc831",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-09-09 19:46:07",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Amanita pantherina 113463504",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Amanita pantherina|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Amanita in Italy|Files with coordinates missing SDC location of creation|Italy photographs taken on 2006-08-23|Uploaded with iNaturalist2Commons",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "46.638122",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "11.004181",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Panthercap (<i>Amanita pantherina</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2006-08-23",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/113463504\">https://www.inaturalist.org/photos/113463504</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/2469630\">Felicia Seichter</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "109878475": {
+        "pageid": 109878475,
+        "ns": 6,
+        "title": "File:Amanita pantherina 127834394.jpg",
+        "index": 9,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 898831,
+            "width": 2048,
+            "height": 1536,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/03/Amanita_pantherina_127834394.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Amanita_pantherina_127834394.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=109878475",
+            "sha1": "172032f67b945e7bfdc65925e2fc07c1e381ac9b",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-09-09 19:47:15",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Amanita pantherina 127834394",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Amanita pantherina|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Amanita in Canada|Uploaded with iNaturalist2Commons|Canada photographs taken on 2021-05-09|Fungi of Canada in May",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "48.968457",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-123.800431",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Panthercap (<i>Amanita pantherina</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-05-09",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/127834394\">https://www.inaturalist.org/photos/127834394</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/3029117\">Liam Steele</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "109878482": {
+        "pageid": 109878482,
+        "ns": 6,
+        "title": "File:Amanita pantherina 143827597.jpg",
+        "index": 37,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 905062,
+            "width": 1536,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Amanita_pantherina_143827597.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Amanita_pantherina_143827597.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=109878482",
+            "sha1": "659470f4b943a238474054567f2b31d0e39562a0",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-09-09 19:47:35",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Amanita pantherina 143827597",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Amanita pantherina|Amanita in Germany|CC-Zero|Media from iNaturalist|Fungi in July|INaturalist images reviewed by iNaturalistReviewBot|Uploaded with iNaturalist2Commons|Hesse photographs taken on 2021-07-16|Files with coordinates missing SDC location of creation (50° N, 8° E)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "50.583303",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "8.686396",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Panthercap (<i>Amanita pantherina</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-07-16",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/143827597\">https://www.inaturalist.org/photos/143827597</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/1908828\">mangoblatt</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "36518384": {
+        "pageid": 36518384,
+        "ns": 6,
+        "title": "File:Amanita pantherina 15.jpg",
+        "index": 18,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2121239,
+            "width": 3888,
+            "height": 2592,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Amanita_pantherina_15.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Amanita_pantherina_15.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=36518384",
+            "sha1": "b6b78a1b3a87a1ed1e12ff0274d556287c211821",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2014-10-31 14:48:58",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Amanita pantherina 15",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Amanita pantherina|GFDL|Taken with Canon EOS 300D|License migration redundant|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<a href=\"https://ja.wikipedia.org/wiki/%E3%83%86%E3%83%B3%E3%82%B0%E3%82%BF%E3%82%B1\" class=\"extiw\" title=\"ja:テングタケ\">テングタケ</a> (学名：<i><a href=\"//commons.wikimedia.org/wiki/Amanita_pantherina\" title=\"Amanita pantherina\">Amanita pantherina</a></i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2014-10-26",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"https://ja.wikipedia.org/wiki/User:%CE%A364\" class=\"extiw\" title=\"ja:User:Σ64\">Σ64</a>",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "You may select the license of your choice.",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Amanita pantherina"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Canon EOS 300D"
+          }
+        ]
+      },
+      "36518421": {
+        "pageid": 36518421,
+        "ns": 6,
+        "title": "File:Amanita pantherina 18.jpg",
+        "index": 33,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2869195,
+            "width": 3888,
+            "height": 2592,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/de/Amanita_pantherina_18.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Amanita_pantherina_18.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=36518421",
+            "sha1": "aa98ff93d1e79f9ebe299fe981ad856fcd6cd476",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2014-10-31 14:51:46",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Amanita pantherina 18",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Amanita pantherina|GFDL|Taken with Canon EOS 300D|License migration redundant|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<a href=\"https://ja.wikipedia.org/wiki/%E3%83%86%E3%83%B3%E3%82%B0%E3%82%BF%E3%82%B1\" class=\"extiw\" title=\"ja:テングタケ\">テングタケ</a> (学名：<i><a href=\"//commons.wikimedia.org/wiki/Amanita_pantherina\" title=\"Amanita pantherina\">Amanita pantherina</a></i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2014-10-26",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"https://ja.wikipedia.org/wiki/User:%CE%A364\" class=\"extiw\" title=\"ja:User:Σ64\">Σ64</a>",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "You may select the license of your choice.",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Amanita pantherina"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Canon EOS 300D"
+          }
+        ]
+      },
+      "36518417": {
+        "pageid": 36518417,
+        "ns": 6,
+        "title": "File:Amanita pantherina 19.jpg",
+        "index": 20,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1863983,
+            "width": 3478,
+            "height": 2319,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Amanita_pantherina_19.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Amanita_pantherina_19.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=36518417",
+            "sha1": "574af1843cc3893d7b3cb72af7fa0ef4b14dafc1",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2014-10-31 14:51:36",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Amanita pantherina 19",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Amanita pantherina|GFDL|Taken with Canon EOS 300D|License migration redundant|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<a href=\"https://ja.wikipedia.org/wiki/%E3%83%86%E3%83%B3%E3%82%B0%E3%82%BF%E3%82%B1\" class=\"extiw\" title=\"ja:テングタケ\">テングタケ</a> (学名：<i><a href=\"//commons.wikimedia.org/wiki/Amanita_pantherina\" title=\"Amanita pantherina\">Amanita pantherina</a></i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2014-10-26",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"https://ja.wikipedia.org/wiki/User:%CE%A364\" class=\"extiw\" title=\"ja:User:Σ64\">Σ64</a>",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "You may select the license of your choice.",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Amanita pantherina"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Canon EOS 300D"
+          }
+        ]
+      },
+      "26556137": {
+        "pageid": 26556137,
+        "ns": 6,
+        "title": "File:Amanita pantherina 2013 G1.jpg",
+        "index": 2,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3593693,
+            "width": 3300,
+            "height": 3600,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Amanita_pantherina_2013_G1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Amanita_pantherina_2013_G1.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=26556137",
+            "sha1": "bd6ffd7578831f747f4720aed65eb51c37e5802d",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2013-06-09 08:45:56",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Amanita pantherina 2013 G1",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Amanita pantherina|Taken with Canon EOS 550D|Self-published work|PD-self|Fungi in June|Fungi of Vinnytsia Oblast|Amanita in Ukraine|Images by George Chernilevsky",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Panther cap, false blusher. Ukraine.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2013-06-08",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:George_Chernilevsky\" title=\"User:George Chernilevsky\">George Chernilevsky</a>",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "<table class=\"licensetpl\" style=\"display:none\">\n<tbody><tr>\n<td><span class=\"licensetpl_short\">Public domain</span><span class=\"licensetpl_long\">Public domain</span><span class=\"licensetpl_link_req\">false</span><span class=\"licensetpl_attr_req\">false</span>\n</td></tr></tbody></table>\n<table style=\"width: 100%; clear: both; margin: 0.5em auto; background-color: var(--background-color-progressive-subtle, #f7f8ff); color: var(--color-base, #202122); border: var(--border-subtle, 2px solid #8888aa); border-spacing: 8px; padding: 0px;\" dir=\"ltr\" class=\"layouttemplate\" lang=\"en\">\n<tbody><tr>\n<td><span typeof=\"mw:File\"><span title=\"Public domain\"><img alt=\"Public domain\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/PD-icon.svg/120px-PD-icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"64\" height=\"64\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/PD-icon.svg/250px-PD-icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"196\" data-file-height=\"196\"></span></span>\n</td>\n<td>I, the copyright holder of this work, release this work into the <b><a href=\"https://en.wikipedia.org/wiki/en:public_domain\" class=\"extiw\" title=\"w:en:public domain\">public domain</a></b>. This applies worldwide.<br><small>In some countries this may not be legally possible; if so:</small><br><i>I grant anyone the right to use this work <b>for any purpose</b>, without any conditions, unless such conditions are required by law.</i>\n</td></tr></tbody></table>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Amanita in Ukraine"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Amanita pantherina"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in June"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Vinnytsia Oblast"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images by George Chernilevsky"
+          },
+          {
+            "ns": 14,
+            "title": "Category:PD-self"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality Images by George Chernilevsky"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of Amanita"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of Vinnytsia Oblast"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of fungi in Ukraine"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Canon EOS 550D"
+          }
+        ]
+      },
+      "136373970": {
+        "pageid": 136373970,
+        "ns": 6,
+        "title": "File:Amanita pantherina 312957524.jpg",
+        "index": 10,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 704100,
+            "width": 2048,
+            "height": 1152,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Amanita_pantherina_312957524.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Amanita_pantherina_312957524.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=136373970",
+            "sha1": "daebbb8818c6142ce0cc8262a95361392482dde3",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-08-23 16:47:27",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Amanita pantherina 312957524",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Media from iNaturalist|Netherlands photographs taken on 2023-08-22|INaturalist images reviewed by iNaturalistReviewBot|Uploaded with iNaturalist2Commons|Amanita pantherina in the Netherlands|Fungi of South Holland in August|Amanita in South Holland|Photographs by Rudolphous of Nature (Netherlands)|Fungi of Leeuwenhorstbos",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "52.247758",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "4.474750",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Panthercap (<i>Amanita pantherina</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2023-08-22",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/312957524\">https://www.inaturalist.org/photos/312957524</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/3599717\">Michel Langeveld</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "7114564": {
+        "pageid": 7114564,
+        "ns": 6,
+        "title": "File:Amanita pantherina 4.jpg",
+        "index": 39,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 102759,
+            "width": 800,
+            "height": 520,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Amanita_pantherina_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Amanita_pantherina_4.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=7114564",
+            "sha1": "dedff28f1b4e35739b829fabd2e5971915e76ebd",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2009-06-24 16:54:15",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Amanita pantherina 4",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Amanita pantherina|GFDL|License migration redundant|Self-published work|Items with VRTS permission confirmed|Unknown date|Amanita in Russia",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Amanita pantherina",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "Unknown date",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"http://www.toadstool.ru/spisok-rodov/amanita/amanita-pantherina/amanita-pantherina-pic-3.html\">http://www.toadstool.ru/spisok-rodov/amanita/amanita-pantherina/amanita-pantherina-pic-3.html</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Игорь Лебединский",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Attribution": {
+                "value": "Игорь Лебединский",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Amanita in Russia"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Amanita pantherina"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Items with VRTS permission confirmed"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Unknown date"
+          }
+        ]
+      },
+      "168414968": {
+        "pageid": 168414968,
+        "ns": 6,
+        "title": "File:Amanita pantherina Norway.jpg",
+        "index": 34,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 233155,
+            "width": 912,
+            "height": 935,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Amanita_pantherina_Norway.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Amanita_pantherina_Norway.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=168414968",
+            "sha1": "5e0930c8aff804ca91da49df4eb89ebf2e1e2b05",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2025-06-24 06:58:27",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Amanita pantherina Norway",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Amanita pantherina",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Amanita pantherina",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-09-12",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "cropped from <a rel=\"nofollow\" class=\"external free\" href=\"https://www.gbif.org/occurrence/3907658548\">https://www.gbif.org/occurrence/3907658548</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Inger-Lise Fonneland",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "22855124": {
+        "pageid": 22855124,
+        "ns": 6,
+        "title": "File:Amanita pantherina capell.JPG",
+        "index": 21,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1881829,
+            "width": 2542,
+            "height": 1865,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Amanita_pantherina_capell.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Amanita_pantherina_capell.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=22855124",
+            "sha1": "f2573b535df6bc86e910089bce910f00d5fdaa99",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2012-11-25 10:15:20",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Amanita pantherina capell",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Amanita pantherina|GFDL|Taken with 7MP-9GB|License migration redundant|Self-published work|Fungi of Catalonia|Fungi in November|Spain photographs taken on 2012-11-24",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Amanita pantherina, an old specimen near Quercus ilex tree, Castelltallat, Catalonia",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2012-11-24",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Victor_M._Vicente_Selvas\" title=\"User:Victor M. Vicente Selvas\">Victor M. Vicente Selvas</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Amanita pantherina"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in November"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Catalonia"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Spain photographs taken on 2012-11-24"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with 7MP-9GB"
+          }
+        ]
+      },
+      "168415869": {
+        "pageid": 168415869,
+        "ns": 6,
+        "title": "File:Amanita pantherina collection.png",
+        "index": 7,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3389573,
+            "width": 1683,
+            "height": 1270,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Amanita_pantherina_collection.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Amanita_pantherina_collection.png",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=168415869",
+            "sha1": "1a894536cc78f7130c470f70dc83029effba5dad",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2025-06-24 07:12:10",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Amanita pantherina collection",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Amanita pantherina",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Amanita pantherina",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2019-09-09T00:00Z",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "cropped from <a rel=\"nofollow\" class=\"external free\" href=\"https://www.gbif.org/occurrence/3441168913\">https://www.gbif.org/occurrence/3441168913</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Jukka Vauras",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "168415935": {
+        "pageid": 168415935,
+        "ns": 6,
+        "title": "File:Amanita pantherina collection 2.jpg",
+        "index": 11,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 484977,
+            "width": 1968,
+            "height": 1174,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Amanita_pantherina_collection_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Amanita_pantherina_collection_2.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=168415935",
+            "sha1": "da70639f9ea98eed9feebce34b18f51631b5f0b8",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2025-06-24 07:13:22",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Amanita pantherina collection 2",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Amanita pantherina",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Amanita pantherina",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2019-10-24T21:25:39.000+00:00",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "cropped from <a rel=\"nofollow\" class=\"external free\" href=\"https://www.gbif.org/occurrence/4908535524\">https://www.gbif.org/occurrence/4908535524</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "bjoerns",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "132626375": {
+        "pageid": 132626375,
+        "ns": 6,
+        "title": "File:Amanita pantherina in Aveyron (1).jpg",
+        "index": 28,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 7499500,
+            "width": 2440,
+            "height": 2440,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Amanita_pantherina_in_Aveyron_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Amanita_pantherina_in_Aveyron_(1).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=132626375",
+            "sha1": "31f64a637c29ec477533ea366f9ae8a8fb9ef28d",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-06-03 13:07:22",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Amanita pantherina in Aveyron (1)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Amanita pantherina|Self-published work|October 2022 in Aveyron|Fungi of Aveyron|Files with coordinates missing SDC location of creation|Occitanie photographs taken on 2022-10-10|Nature of Saint-Chély-d'Aubrac",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "44.597500",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "2.963000",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Amanita pantherina</i> in commune of Saint-Chély-d'Aubrac, Aveyron, France",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-10-10 12:54:50",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Tournasol7\" title=\"User:Tournasol7\">Krzysztof Golik</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "132626379": {
+        "pageid": 132626379,
+        "ns": 6,
+        "title": "File:Amanita pantherina in Aveyron (6).jpg",
+        "index": 27,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 7188484,
+            "width": 2640,
+            "height": 2783,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/34/Amanita_pantherina_in_Aveyron_%286%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Amanita_pantherina_in_Aveyron_(6).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=132626379",
+            "sha1": "f230193d086c418d590d1606ba5cfac4975a9881",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-06-03 13:07:27",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Amanita pantherina in Aveyron (6)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Amanita pantherina|Self-published work|October 2022 in Aveyron|Fungi of Aveyron|Files with coordinates missing SDC location of creation|Occitanie photographs taken on 2022-10-10|Nature of Saint-Chély-d'Aubrac",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "44.597500",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "2.963000",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Amanita pantherina</i> in commune of Saint-Chély-d'Aubrac, Aveyron, France",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-10-10 12:57:35",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Tournasol7\" title=\"User:Tournasol7\">Krzysztof Golik</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "82577619": {
+        "pageid": 82577619,
+        "ns": 6,
+        "title": "File:Amanita pantherina ts4.jpg",
+        "index": 12,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 4526439,
+            "width": 5120,
+            "height": 3840,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Amanita_pantherina_ts4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Amanita_pantherina_ts4.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=82577619",
+            "sha1": "43c5396d5cbcbaaaa0c8200c84165b21ad739a94",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2019-09-27 07:24:49",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Amanita pantherina ts4",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Amanita pantherina|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Amanita pantherina",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2019-09-22 10:34:26",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Jadf88&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Jadf88 (page does not exist)\">Tomasz Sobczak</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "82577618": {
+        "pageid": 82577618,
+        "ns": 6,
+        "title": "File:Amanita pantherina ts5.jpg",
+        "index": 31,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 4747349,
+            "width": 5120,
+            "height": 3840,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Amanita_pantherina_ts5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Amanita_pantherina_ts5.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=82577618",
+            "sha1": "17413484af00a20707035d794483ddc537b91eb0",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2019-09-27 07:24:49",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Amanita pantherina ts5",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Amanita pantherina|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Amanita pantherina",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2019-09-22 10:34:19",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Jadf88&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Jadf88 (page does not exist)\">Tomasz Sobczak</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "61577557": {
+        "pageid": 61577557,
+        "ns": 6,
+        "title": "File:Panthercap Mushroom (Amanita pantherina) (35227498411).jpg",
+        "index": 25,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 6989617,
+            "width": 3379,
+            "height": 3648,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Panthercap_Mushroom_%28Amanita_pantherina%29_%2835227498411%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Panthercap_Mushroom_(Amanita_pantherina)_(35227498411).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=61577557",
+            "sha1": "0f95fb398b2de67f9229b5c855cb4db607c954f7",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-08-09 16:45:35",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Panthercap Mushroom (Amanita pantherina) (35227498411)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Amanita pantherina|Flickr images reviewed by FlickreviewR|Fungi in May|Photographs by Bernard Dupont|Amanita in France|Files with coordinates missing SDC location of creation (48° N, 0° E)|Normandie photographs taken on 2017-05-30",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "48.549725",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "0.179246",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Le Petit Mesnil, Neauphe sous Essai, Orne, Normandy, FRANCE",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-05-30 06:37",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/berniedup/35227498411/\">Panthercap Mushroom (Amanita pantherina)</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/65695019@N07\">Bernard DUPONT</a> from FRANCE",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "30048748": {
+        "pageid": 30048748,
+        "ns": 6,
+        "title": "File:Pantherpilz Amanita pantherina.jpg",
+        "index": 1,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 4159338,
+            "width": 3000,
+            "height": 2012,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Pantherpilz_Amanita_pantherina.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Pantherpilz_Amanita_pantherina.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=30048748",
+            "sha1": "a8ddd3b0b570fa2a60d044f6b402d0788f7c8337",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2013-12-07 20:44:16",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Pantherpilz Amanita pantherina",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Amanita pantherina|Fungi of Germany in October|Amanita in Germany|Germany photographs taken on 2013-10-11|Taken with Canon EOS 500D|Self-published work|Images with extracted images|Fungi in Alb-Donau-Kreis|Files with coordinates missing SDC location of creation (48° N, 9° E)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "48.351181",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "9.849861",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Panther Cap or False Blusher, <i><a href=\"//commons.wikimedia.org/wiki/Amanita_pantherina\" title=\"Amanita pantherina\">Amanita pantherina</a></i>, Family: Amanitaceae, Location: Germany, Erbach, Ringingen",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2013-10-11",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Holleday\" title=\"User:Holleday\">Holger Krisp</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Amanita in Germany"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Amanita pantherina"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation (48° N, 9° E)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in Alb-Donau-Kreis"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Germany in October"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Germany photographs taken on 2013-10-11"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images with extracted images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of Amanita"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of Germany"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Canon EOS 500D"
+          }
+        ]
+      },
+      "51880716": {
+        "pageid": 51880716,
+        "ns": 6,
+        "title": "File:Smithers area - Driftwood Canyon Park to the NE - \"anybody know their mushrooms\"? - this is, I think, the deadly poionous Amanita pantherina - (21368740188).jpg",
+        "index": 35,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 7221533,
+            "width": 3831,
+            "height": 2554,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Smithers_area_-_Driftwood_Canyon_Park_to_the_NE_-_%22anybody_know_their_mushrooms%22%3F_-_this_is%2C_I_think%2C_the_deadly_poionous_Amanita_pantherina_-_%2821368740188%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Smithers_area_-_Driftwood_Canyon_Park_to_the_NE_-_%22anybody_know_their_mushrooms%22%3F_-_this_is,_I_think,_the_deadly_poionous_Amanita_pantherina_-_(21368740188).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=51880716",
+            "sha1": "a3c4a3d2aeaadb30930972b29489ccf03eb71f5e",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2016-09-29 13:58:31",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Smithers area - Driftwood Canyon Park to the NE - \"anybody know their mushrooms\"? - this is, I think, the deadly poionous Amanita pantherina - (21368740188)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Amanita pantherina|Photos uploaded from Flickr by Fæ using a script|Flickr images reviewed by FlickreviewR|Photographs by Murray Foubister|Flickr images missing SDC published in",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Smithers area...Driftwood Canyon Park to the NE...\"anybody know their mushrooms\"?...this is, I think, the deadly poionous Amanita pantherina...",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2015-08-06 13:29:25",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.flickr.com/photos/mfoubister/21368740188/\">https://www.flickr.com/photos/mfoubister/21368740188/</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/61456446@N06\">Murray Foubister</a>",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "At the time of upload, the image license was automatically confirmed using the Flickr <a href=\"https://en.wikipedia.org/wiki/API\" class=\"extiw\" title=\"en:API\">API</a>. For more information see <a href=\"//commons.wikimedia.org/wiki/User:F%C3%A6/Flickr_API_detail\" title=\"User:Fæ/Flickr API detail\">Flickr API detail</a>.",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Amanita pantherina"
+          }
+        ]
+      }
+    }
+  }
+}
