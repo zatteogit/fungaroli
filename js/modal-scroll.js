@@ -1,3 +1,4 @@
+import './focus.js';
 import './modal-flow.js';
 // Blocco condiviso per il dialog attivo e i passaggi conservati dal percorso.
 // Nessun position:fixed sul body: intestazione e navigazione mantengono il viewport.

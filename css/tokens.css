@@ -133,7 +133,7 @@
   --calendula: var(--_ref-calendula); --calendula-soft: var(--_ref-accent-soft); --calendula-ink: var(--_ref-calendula-ink);
   --fiordaliso: var(--_ref-fiordaliso); --fiordaliso-soft: var(--_ref-fiordaliso-soft); --fiordaliso-ink: var(--_ref-fiordaliso-ink);
   --germoglio: var(--_ref-germoglio); --germoglio-soft: var(--_ref-germoglio-soft); --germoglio-ink: var(--_ref-germoglio-ink);
-  --focus: var(--_ref-fiordaliso-ink);
+  --focus: var(--_ref-forest);
   /* semantica dei colori: interazione (link, indietro) in bosco; selezione («scelto») e azione principale in polline;
      informazione (occhielli, etichette) in calendula; l'indice resta verde (anello, pallini, scala --s*) */
   --link: var(--_ref-forest);

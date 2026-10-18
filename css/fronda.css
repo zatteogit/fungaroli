@@ -1001,3 +1001,7 @@ button.cover-index:focus-visible { outline:3px solid var(--focus); outline-offse
 @media(prefers-reduced-motion:reduce) {
   :root body .appbar[data-context] .appbar-title,:root body .appbar[data-context="home"] :is(.brand,.brand-place),:root.title-in-bar body .appbar[data-context="home"] :is(.brand,.brand-place) { transition:none; }
 }
+
+/* Il focus automatico delle modali non disegna anelli sui comandi dopo un tap.
+   I campi di testo conservano il segnale di editing; Tab ripristina subito gli anelli. */
+:root[data-focus-input="pointer"] :is(button,a,summary,[role="button"]):focus { outline:none !important; }
