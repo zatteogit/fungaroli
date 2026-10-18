@@ -16,3 +16,5 @@ La revisione indipendente completa fullsize/64px è in revisione-indipendente-fa
 - L’indice `trait-icons.json` pubblica le fasi complete, usate dal selettore di crescita già presente nelle schede e nei confronti. Le103pendenze di fase sono risolte; le altre categorie rimangono registrate.
 
 Controlli limitati all’import, alla provenienza e al rapporto asset richiesti per queste immagini. Nessuna suite unit/browser eseguita, come richiesto dal proprietario. Non si dichiara verificata tutta l’app o Safari reale.
+
+Ispezione visiva finale nel browser locale Chromium a390px: accettato l’avviso iniziale tramite il pulsante dell’app, aperta la scheda edulis e selezionata la fase Giovane; immagini decodificate e screenshot conservato. Esaminata anche la scheda fragolina con i nuovi collegamenti. Nessuna suite o asserzione automatica, nessun accesso o dato di un utente reale. Questo controllo non attesta Safari.
