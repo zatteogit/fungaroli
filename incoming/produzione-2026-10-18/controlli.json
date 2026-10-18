@@ -3232,5 +3232,177 @@
     },
     "state": "pronta da integrare",
     "review": "Suillus bovinus bruno piano con pori larghi gialli; terreum bruno convesso/piano con fibre e lamelle chiare, nessun anello aggiunto, senza volva/reticolo. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-62.png",
+    "sha256": "bae2af42ed5f8c79408aa923b7c8bc4e6a86bd131ee2c8cccd11c71d134d6605",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        454,
+        68,
+        798,
+        402
+      ],
+      "0": [
+        52,
+        136,
+        418,
+        330
+      ],
+      "4": [
+        454,
+        474,
+        798,
+        806
+      ],
+      "3": [
+        52,
+        546,
+        418,
+        734
+      ],
+      "7": [
+        466,
+        872,
+        786,
+        1210
+      ],
+      "6": [
+        52,
+        936,
+        418,
+        1146
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Portentoso bruno/giallo convesso con fibre; virescens grigio emisferico con mosaico, lamelle/gambi chiari senza anello/volva/reticolo. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-63.png",
+    "sha256": "96bdcbd9a2ff0c9c300cdc58af3fdf10527542bf4a062f742f95581ae02a295e",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        484,
+        80,
+        786,
+        406
+      ],
+      "0": [
+        86,
+        164,
+        402,
+        364
+      ],
+      "4": [
+        484,
+        466,
+        786,
+        794
+      ],
+      "3": [
+        84,
+        554,
+        404,
+        752
+      ],
+      "7": [
+        448,
+        904,
+        828,
+        1184
+      ],
+      "6": [
+        44,
+        948,
+        438,
+        1116
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Virescens rosa/violetto emisferici e grigio imbuto, mosaico pallido, lamelle/gambi crema senza anello/volva/reticolo. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-64.png",
+    "sha256": "8f2716feb9343364ef022aa79a46360891c982162f7cf0579932b6e48b71eb46",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        446,
+        124,
+        830,
+        402
+      ],
+      "0": [
+        38,
+        156,
+        430,
+        320
+      ],
+      "4": [
+        446,
+        514,
+        830,
+        794
+      ],
+      "3": [
+        38,
+        548,
+        432,
+        710
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Virescens rosa/violetto a imbuto con mosaico pallido, lamelle/gambi crema invariati senza anello/volva/reticolo. Alpha e quattro celle verificati, terza riga vuota."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-65.png",
+    "sha256": "b21a438f0fad3494827ddf84c3660a910419ce8a1290de0add66975429077e50",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        468,
+        138,
+        804,
+        478
+      ],
+      "0": [
+        42,
+        192,
+        414,
+        406
+      ],
+      "4": [
+        468,
+        602,
+        804,
+        940
+      ],
+      "3": [
+        42,
+        652,
+        414,
+        868
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Morchella bruna/crema emisferiche con alveoli a nido di ape e gambo corto crema, senza lamelle/pori/anello/volva/reticolo. Silhouette arrotondate con identico profilo fra coppie. Alpha e quattro celle verificati."
   }
 ]
