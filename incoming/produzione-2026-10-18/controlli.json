@@ -2007,5 +2007,250 @@
     },
     "state": "pronta da integrare",
     "review": "Amanita rubescens bruna piana con anello; tabescens bruno piano senza anello; Cyclocybe crema emisferica con anello, lamelle crema/grigie. Volve/reticoli non aggiunti. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-37.png",
+    "sha256": "01e94631966dcca00a302c7f00a222c5b3c44713bd985e9e0a3303a82c3649ff",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        450,
+        102,
+        804,
+        378
+      ],
+      "0": [
+        42,
+        160,
+        400,
+        280
+      ],
+      "4": [
+        448,
+        474,
+        806,
+        772
+      ],
+      "3": [
+        42,
+        534,
+        400,
+        670
+      ],
+      "7": [
+        478,
+        840,
+        774,
+        1180
+      ],
+      "6": [
+        48,
+        914,
+        396,
+        1096
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Cyclocybe crema piano e mellea bruno piano con anelli, lamelle rispettivamente grigie/crema; Neoboletus bruno emisferico con pori rossi e punti rossi sul gambo, non reticolo. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-38.png",
+    "sha256": "c767f8edcb6d46fa5110612662603d2b98a54bf2ddff7fb90cfe0ea449695aa8",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        472,
+        70,
+        784,
+        416
+      ],
+      "0": [
+        74,
+        140,
+        396,
+        322
+      ],
+      "4": [
+        452,
+        504,
+        804,
+        776
+      ],
+      "3": [
+        54,
+        546,
+        412,
+        682
+      ],
+      "7": [
+        448,
+        884,
+        808,
+        1154
+      ],
+      "6": [
+        56,
+        938,
+        412,
+        1070
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Neoboletus nero emisferico con pori/punti rossi, senza reticolo; Lepista nuda bruno/rosa piane con lamelle violette e gambo chiaro senza anello/volva. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-39.png",
+    "sha256": "8ef046ce4b763f124f13a5ad875b620476f11066a168eecd540e81a6d2e3c2de",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        472,
+        52,
+        776,
+        398
+      ],
+      "0": [
+        68,
+        124,
+        382,
+        312
+      ],
+      "4": [
+        474,
+        452,
+        776,
+        794
+      ],
+      "3": [
+        68,
+        528,
+        382,
+        716
+      ],
+      "7": [
+        474,
+        848,
+        776,
+        1194
+      ],
+      "6": [
+        68,
+        924,
+        382,
+        1110
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Suillus arancio/giallo/violetto emisferici con pori gialli, gambi crema e nessun anello/volva/reticolo aggiunto. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-40.png",
+    "sha256": "57efc70e7dc345153a822e79e7774242827a0a4d4f7046b58c320af01f415aaf",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        450,
+        86,
+        804,
+        374
+      ],
+      "0": [
+        50,
+        160,
+        420,
+        284
+      ],
+      "4": [
+        448,
+        482,
+        804,
+        778
+      ],
+      "3": [
+        50,
+        560,
+        418,
+        684
+      ],
+      "7": [
+        448,
+        876,
+        804,
+        1170
+      ],
+      "6": [
+        50,
+        952,
+        418,
+        1078
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Suillus arancio/giallo/violetto piani con pori gialli e gambi crema, nessun anello/volva/reticolo aggiunto. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-41.png",
+    "sha256": "c7033a3199a4615d87510ac34df4f1ced0e70c98879ffff351dae4319cee3005",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        474,
+        64,
+        784,
+        418
+      ],
+      "0": [
+        76,
+        134,
+        388,
+        334
+      ],
+      "4": [
+        460,
+        508,
+        806,
+        796
+      ],
+      "3": [
+        54,
+        564,
+        414,
+        684
+      ],
+      "7": [
+        476,
+        848,
+        782,
+        1204
+      ],
+      "6": [
+        76,
+        922,
+        390,
+        1120
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Aereus bruno emisferico/piano con pori chiari e reticolo pallido superiore; aestivalis crema emisferico con pori gialli e reticolo ocra. Nessun anello/volva. Alpha e sei celle verificati."
   }
 ]
