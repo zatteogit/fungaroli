@@ -693,6 +693,12 @@ button.cover-index:focus-visible { outline:3px solid var(--focus); outline-offse
 /* Aperto = contenuti nuovi: le anteprime lasciano posto al dettaglio corrispondente. */
 .walk-focus[open] > summary .walk-entrances:has(.walk-entrance-list),
 .essential-sections .sec[open] > summary .ent-chips { display:none; }
+.observation-toggle { display:block; margin-top:10px; font-size:13px; font-weight:600; color:var(--link); }
+.observation-collapse { display:none; }
+.essential-sections [data-sec="specie"][open] .observation-expand { display:none; }
+.essential-sections [data-sec="specie"][open] .observation-collapse { display:inline; }
+.observation-context { color:var(--text-2); font-size:14px; line-height:1.5; }
+.observation-context p { margin:0 0 12px; }
 .notebook-note:has(> .notebook-full-note[open]) > .notebook-preview { display:none; }
 .note-collapse, .notebook-full-note[open] .note-expand { display:none; }
 .notebook-full-note[open] .note-collapse { display:inline; }

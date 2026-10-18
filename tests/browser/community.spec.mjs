@@ -590,3 +590,25 @@ test('accordion: riepilogo e dettaglio si completano senza duplicare tratto, imb
  if(await species.locator('summary .plan-crit').count())await expect(species.locator('summary .plan-crit')).toBeVisible();
  expect(errors).toEqual([]);
 });
+
+for(const theme of ['light','dark'])test(`cosa osservare: riepilogo compatto e dettagli distinti in ${theme}`,async({page})=>{
+ await page.setViewportSize({width:390,height:844});await page.emulateMedia({reducedMotion:'reduce'});
+ await page.addInitScript(theme=>{localStorage.setItem('fungaroli:theme',theme);localStorage.setItem('fungaroli:install-later',String(Date.now()));},theme);
+ const errors=await setup(page);await page.goto('/#/zona/tancia/0');
+ const section=page.locator('#detail .essential-sections [data-sec="specie"]'),summary=section.locator(':scope > summary'),body=section.locator(':scope > .sec-body');
+ await expect(summary).toBeVisible();await expect(section).not.toHaveAttribute('open','');
+ await expect(summary.locator('.observation-expand')).toBeVisible();await expect(summary.locator('.plan-where,.ent-chips')).toHaveCount(0);
+ const warning=summary.locator('.plan-crit');await expect(warning).toBeVisible();const warningText=await warning.innerText();
+ await expect(body.locator('.plan-where')).toBeHidden();
+ const closed=(await section.boundingBox()).height;
+ await summary.scrollIntoViewIfNeeded();await section.screenshot({path:`/tmp/fronda-observation-closed-${theme}.png`});
+ await summary.focus();await page.keyboard.press('Enter');await expect(section).toHaveAttribute('open','');
+ await expect(summary.locator('.observation-collapse')).toBeVisible();await expect(summary.locator('.observation-expand')).toBeHidden();
+ await expect(body.locator('.plan-where')).toBeVisible();await expect(body.locator('.zsp')).toBeVisible();
+ await expect(body.locator('.plan-crit')).toBeVisible();await expect(body.locator('.plan-crit')).toContainText('non certifica');
+ await expect(warning).toBeVisible();expect(await warning.innerText()).toBe(warningText);
+ expect((await section.boundingBox()).height).toBeGreaterThan(closed+100);
+ await page.screenshot({path:`/tmp/fronda-observation-open-${theme}.png`});
+ await summary.press('Enter');await expect(body).toBeHidden();await expect(warning).toBeVisible();
+ expect(Math.abs((await section.boundingBox()).height-closed)).toBeLessThan(2);expect(errors).toEqual([]);
+});
