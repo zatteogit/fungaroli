@@ -51,3 +51,12 @@ La foto 1 conferma fiori gialli piccolissimi, non i fiori bianchi aperti dell'ic
 ## Ordine di produzione successiva
 
 Prima raster, controllo dati/foto e leggibilità, poi eventualmente vettore multilivello. Priorità proposte: cinorrodo esterno della rosa canina; ombrella gialla del finocchietto; morfologie già documentate ma molto diverse nelle categorie sopra. La presente consegna include soltanto i due asset della fragolina approvati: le altre specie non ricevono un'approvazione implicita.
+
+## Seconda consegna: raster corretti dopo controllo indipendente
+
+- `approvati/rosa-canina-cinorrodo.webp`: approvato come **esterno schematico intero**, non sezione. Forma ovale rossa/aranciata, residuo calicino secco scuro all'apice, peduncolo verde all'estremo opposto, superficie senza acheni esterni. Confrontato con foto1. La diversa dimensione degli organi è semplificata: non diagramma in scala, non descrizione dei peli interni. Lieve cicatrice sul breve tratto di fusto coerente con riferimento, non carattere diagnostico aggiunto al testo.
+- `approvati/finocchietto-ombrella.webp`: approvato **r02** come schema dell'ombrella composta gialla: raggi principali da un punto e raggi secondari in ogni ombrelletta; fiori gialli ridotti a punti alla scala dell'icona. Non raffigura singoli organi fiorali né ne afferma il numero. Confrontato con foto1 e dati catalogo. Non copre frutti, foglie o portamento intero.
+- Finocchietto **r00 scartato**: corolle gialle con quattro petali grandi, incongrue rispetto ai piccoli petali ripiegati della foto; staminali rappresentati come terminazioni separate.
+- Finocchietto **r01 scartato**: migliore colore ma mantiene corolle troppo grandi e schema ambiguo di filamenti separati dai fiori. Non basta correggere il colore.
+- Finocchietto **r02** semplifica il dettaglio al livello realmente leggibile e documentato: ombrella composta e fiori gialli minuti, senza inventare anatomia fiorale. Questo è un nuovo raster generato, non un disegno manuale né un SVG.
+- Entrambi i definitivi controllati a128 e64px nel foglio `controllo-successivi-128-64.png`. WebP lossless128alpha con margini>=8px. Originali e scarti conservati; prompt e riferimenti nei file `prompt-successivi.json`, `prompt-finocchietto-r01.txt`, `prompt-finocchietto-r02.txt`.
