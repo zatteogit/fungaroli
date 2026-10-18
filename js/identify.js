@@ -931,7 +931,6 @@ function renderCompare(box, ref, pick) {
   const start = Math.max(0, list.findIndex((t) => t.key === pick));
   box.innerHTML = `
     <h1 class="sec-title cmp-title">${esc(heading(list[start]))}</h1>
-    <div class="cmp-edit-line"><a class="btn ghost" data-edit-comparison href="${editHref(list[start])}">Cambia i due funghi <span aria-hidden="true">↗</span></a></div>
     <dialog class="cmp-chooser" aria-labelledby="cmp-chooser-title"><div class="cmp-chooser-head"><h2 id="cmp-chooser-title">Confronta con…</h2><button type="button" data-close-chooser aria-label="Chiudi">×</button></div><div class="cmp-choices">${list.map((t,k)=>`<button type="button" class="cmp-chip ${toxCls(t)}" data-go="${k}" aria-pressed="${k===start}"><span class="cmp-chip-img">${pic(t,true)}</span><span><b>${esc(t.name||t.latin)}</b><small>${esc(t.tox_label||t.toxicity)} · ${documentedKeys.has(t.key)?'sosia documentato':'confronto libero'}</small></span><span class="cmp-choice-check" aria-hidden="true">✓</span></button>`).join('')}</div><button type="button" class="cmp-picker-all" data-pick-any>Tutti i funghi del catalogo <span aria-hidden="true">→</span></button></dialog>
     <div class="cmp-gallery" role="group" aria-roledescription="carosello" aria-label="Confronti con ${esc(ref.name || ref.latin)}">
     <div class="cmp-pair-nav${list.length===1?' is-single':''}" role="group" aria-label="Specie a confronto"><div class="cmp-nav-content"><span class="cmp-nav-master">${list.length>1?`<span class="cmp-sosia-total">${documentedKeys.has(list[start].key)?`${documented.length} sosia`:'Confronto libero'}</span>`:''}<b class="cmp-master-name">${esc(ref.name||ref.latin)}</b></span><i class="cmp-nav-vs" aria-hidden="true">vs</i>${list.length>1?`<button type="button" class="cmp-pair-menu" data-change-lookalike aria-haspopup="dialog" aria-label="Scegli il fungo: ${esc(list[start].name||list[start].latin)}"><span data-current-lookalike>${esc(list[start].name||list[start].latin)}</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>`:`<b class="cmp-current-single">${esc(list[0].name||list[0].latin)}</b>`}</div></div>
@@ -947,7 +946,8 @@ function renderCompare(box, ref, pick) {
   const mark = (i) => {
     chips.forEach(c => c.setAttribute('aria-pressed', String(Number(c.dataset.go) === i)));
     box.querySelector('.cmp-title').textContent=heading(list[i]);
-    box.querySelector('[data-edit-comparison]').href=editHref(list[i]);
+    const headerAction=document.querySelector('[data-appbar-action]');
+    if(headerAction) headerAction.href=editHref(list[i]);
     const count=box.querySelector('.cmp-sosia-total');
     if(count)count.textContent=documentedKeys.has(list[i].key)?`${documented.length} sosia`:'Confronto libero';
     const currentName = box.querySelector('[data-current-lookalike]');

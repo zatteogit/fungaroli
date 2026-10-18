@@ -581,7 +581,25 @@ function watchTitle() {
   }, { rootMargin: `-${Math.round(top)}px 0px 0px 0px` });
   titleIO.observe(h);
 }
+// Le pagine operative espongono l'azione pertinente al contenuto nella barra.
+function updateHeaderActions(r) {
+  const appbar=$('.appbar'), action=$('[data-appbar-action]');
+  const comparison=r.view==='riconosci' && !!r.compare;
+  appbar.dataset.context=comparison?'comparison':'default';
+  action.hidden=!comparison;
+  if (comparison) {
+    action.textContent='Cambia';
+    action.setAttribute('aria-label','Cambia i due funghi del confronto');
+    const current=r.pick || document.querySelector('.cmp-slide:not([hidden])')?.id.replace(/^cmp-/, '') || '';
+    action.href=`#/confronta/${encodeURIComponent(r.compare)}/${encodeURIComponent(current)}`;
+  } else {
+    action.removeAttribute('href');
+    action.removeAttribute('aria-label');
+    action.textContent='';
+  }
+}
 function updateBack(r, nav) {
+  updateHeaderActions(r);
   if (nav === 'pop') { while (navStack.length && navStack[navStack.length - 1].hash !== r.hash) navStack.pop(); }
   if (navStack[navStack.length - 1]?.hash !== r.hash) {
     if (nav === 'left' || nav === 'right' || navStack.length && navStack[navStack.length - 1].tab !== r.tab && !navStack[navStack.length - 1].level) navStack.length = 0; // cambio di scheda dalla radice di un'altra: si riparte
