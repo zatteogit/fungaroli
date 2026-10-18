@@ -476,3 +476,10 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 .cmp-pair-nav .cmp-sosia-count[hidden],
 .cmp-pair-nav.is-stuck .cmp-sosia-count { display:none; }
 .cmp-pair-nav:not(.is-stuck) .cmp-pair-menu:has(.cmp-sosia-count:not([hidden])) [data-current-lookalike] { display:none; }
+
+.search-feature-reason { display:block; margin-top:4px; color:var(--text-2); font:400 12px/1.5 var(--font-body); }
+
+/* Segue il rientro della barra principale senza saltare fra le due quote. */
+@media(prefers-reduced-motion:no-preference) {
+  .cmp-pair-nav.is-stuck .cmp-nav-content { transition:top .22s var(--ease-out); }
+}

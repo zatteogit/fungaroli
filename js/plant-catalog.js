@@ -1,8 +1,8 @@
+import {matchSpecies} from './species-search.js';
 // Ricerca e filtri dei cataloghi di Scopri (piante e alberi). Funzioni pure, testabili senza DOM.
 const norm=s=>String(s).normalize('NFD').replace(/\p{Diacritic}/gu,'').toLowerCase();
 export function searchPlants(rows,query='',category=''){
-  const words=norm(query).trim().split(/\s+/).filter(Boolean);
-  return rows.filter(p=>(!category||p.category===category)&&words.every(w=>norm([p.name,p.latin,...(p.aliases||[]),p.habitat,...(p.recognize||[])].join(' ')).includes(w)));
+  return matchSpecies(rows.filter(p=>!category||p.category===category),query).items;
 }
 
 // Sosia pericoloso: tra i sosia indicati nella scheda c'è una pianta della categoria «Pericolose».
@@ -12,10 +12,11 @@ export const hasDangerousLookalike=(p,danger)=>(p.lookalikes||[]).some(id=>dange
 // Filtri in AND: categoria, testo, fioritura nel mese, sosia pericolosi, ambiente.
 export function filterPlants(rows,{category='',q='',flowering=false,month=new Date().getMonth()+1,lookalikes=false,habitat=''}={}){
   const danger=lookalikes?dangerousIds(rows):null;
-  return searchPlants(rows,q,category).filter(p=>
+  const eligible=rows.filter(p=>(!category||p.category===category)&&
     (!flowering||(p.flowerMonths||[]).includes(month))&&
     (!lookalikes||hasDangerousLookalike(p,danger))&&
     (!habitat||(p.habitatCategories||[]).includes(habitat)));
+  return searchPlants(eligible,q);
 }
 
 // Ambienti presenti nel catalogo, dal più frequente; a parità, in ordine alfabetico.

@@ -1,3 +1,4 @@
+import {matchSpecies} from './species-search.js';
 import { SPECIES } from './species.js';
 
 const EDIBLE = new Set(['commestibile', 'commestibile con cautela']);
@@ -11,7 +12,7 @@ export function buildEdibleCatalog(traits, extra, identification) {
     const t = taxa[sp.id];
     if (t && !EDIBLE.has(t.toxicity)) continue;
     records.set(sp.id, { id: sp.id, name: t?.name || sp.name, latin: t?.latin || sp.latin, modelId: sp.id, group: sp.group,
-      toxicity: t?.toxicity || 'commestibile', months: validMonths(t?.traits?.season) || sp.months.flatMap((w, i) => w > 0 ? [i + 1] : []),
+      traits:t?.traits, toxicity: t?.toxicity || 'commestibile', months: validMonths(t?.traits?.season) || sp.months.flatMap((w, i) => w > 0 ? [i + 1] : []),
       aliases: [t?.name || '', ...(identification?.species?.[sp.id]?.aka || [])], caution: t?.caution || sp.warning || '', sources: t?.sources || [], href: '#/specie/' + sp.id });
   }
   // una scheda breve del catalogo diventata taxon completo tiene sinonimi, ambiente e fonti del catalogo
@@ -21,7 +22,7 @@ export function buildEdibleCatalog(traits, extra, identification) {
     const e = short.get(id);
     const sources = [...(t.sources || []), ...(e?.sources || []).filter((x) => !(t.sources || []).some((y) => y.url === x.url))];
     records.set(id, { id, name: t.name || e?.name || t.latin, latin: t.latin, modelId: models.has(id) ? id : null,
-      toxicity: t.toxicity, months: validMonths(t.traits?.season) || validMonths(e?.months), aliases: e?.aliases || [], habitat: e?.habitat,
+      traits:t.traits, toxicity: t.toxicity, months: validMonths(t.traits?.season) || validMonths(e?.months), aliases: e?.aliases || [], habitat: e?.habitat,
       caution: t.caution || e?.caution || '', sources, href: (e ? '#/commestibile/' : '#/fungo/') + id }); // indirizzo invariato per le schede del catalogo
   }
   for (const s of extra?.species || []) {
@@ -42,11 +43,8 @@ export const seasonLabel = (s, date) => ({ in: 'Nel periodo tipico', out: 'Fuori
 export function searchEdibleCatalog(catalog, query, { date, limit = 12 } = {}) {
   const q = normalizeSpeciesText(query);
   if (!q) return [];
-  const words = q.split(' ');
-  return catalog.filter((s) => {
-    const text = normalizeSpeciesText([s.name, s.latin, ...(s.aliases || [])].join(' '));
-    return words.every((w) => text.includes(w));
-  }).sort((a, b) => {
+  const result=matchSpecies(catalog,q);
+  return result.items.map(s=>result.byTraits?{...s,searchReason:result.reasons.get(s)}:s).sort((a, b) => {
     const rank = (s) => (normalizeSpeciesText(s.name).startsWith(q) ? 4 : 0) + (seasonStatus(s, date) === 'in' ? 1 : 0);
     return rank(b) - rank(a) || a.name.localeCompare(b.name, 'it');
   }).slice(0, limit);

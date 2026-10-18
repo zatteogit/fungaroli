@@ -1,3 +1,4 @@
+import {matchSpecies} from './species-search.js';
 import {factCards,monthCalendar} from './content-ui.js';
 import {enhanceEntityAccordions} from './entity-accordions.js';
 // Botanical descriptions are independent of the mushroom weather index.
@@ -62,7 +63,7 @@ export function renderPlants(box,{identify=false}={}){
     const hits=filterPlants(all,{...state,month}),filtered=!identify&&activeFilters(state);
     const resultButton=box.querySelector('[data-plant-filter-results]');if(resultButton)resultButton.textContent=`Mostra ${hits.length} ${hits.length===1?'scheda':'schede'}`;
     box.querySelector('[data-flower-slot]').innerHTML=state.category==='Fiori'?FLOWER_NOTE:'';
-    box.querySelector('[data-plant-count]').textContent=`${hits.length} ${hits.length===1?'scheda':'schede'}${filtered?` su ${all.length}`:''} · catalogo di confronto`;
+    box.querySelector('[data-plant-count]').textContent=`${hits.length} ${hits.length===1?'scheda':'schede'}${filtered?` su ${all.length}`:''}${state.q&&matchSpecies(all.filter(p=>!state.category||p.category===state.category),state.q).byTraits?' · suggerimenti per caratteri':''} · catalogo di confronto`;
     const empty=filtered?'<div class="notice catalog-empty"><p>Nessuna scheda corrisponde a questi filtri. Il catalogo non comprende tutte le piante.</p><button type="button" class="btn ghost small" data-plant-reset>Togli i filtri</button></div>':'<p class="notice">Nessuna scheda corrisponde. Prova un altro carattere: il catalogo non comprende tutte le piante e una corrispondenza non identifica l’esemplare.</p>';
     box.querySelector('[data-plant-results]').innerHTML=hits.length?hits.map(p=>identify?`<article class="botanical-card"><a href="#/pianta/${p.id}" data-entity class="botanical-photo"><img data-src="${esc(ASSET(p.photos[0].file))}" width="826" height="590" alt="${esc(p.photos[0].alt)}" loading="lazy" decoding="async"></a><div class="botanical-card-body"><span class="tag ${isToxic(p)?'warn':''}">${esc(p.category==='Pericolose'?p.foodUse.status.toUpperCase():p.category==='Frutti'?'FRUTTI E BACCHE':p.category.toLocaleUpperCase('it'))}</span><h2><a href="#/pianta/${p.id}" data-entity>${esc(p.name)}</a></h2><i>${esc(p.latin)}</i><p>${esc(p.recognize.slice(0,2).join(' '))}</p><a class="botanical-details" href="#/pianta/${p.id}" data-entity>${p.category==='Pericolose'?'Confronta i caratteri':p.category==='Fiori'?'Caratteri e tutela':'Caratteri, parti e cautele'} →</a></div></article>`:plantCatalogCard(p)).join(''):empty;
     if(!identify)renderAlsoIn(box.querySelector('[data-also-slot]'),state.q,['pianta']);

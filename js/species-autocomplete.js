@@ -18,7 +18,7 @@ export function mountSpeciesAutocomplete({ input, list, catalog, date, onSelect 
     const queried = !!input.value.trim(); list.hidden = !queried;
     input.setAttribute('aria-expanded', String(queried));
     input.removeAttribute('aria-activedescendant');
-    list.innerHTML = matches.map((s,i) => `<li role="presentation"><button type="button" role="option" id="${list.id}-option-${i}" data-option="${i}" aria-selected="false"><span><b>${esc(s.name)}</b><i>${esc(s.latin)}</i></span><span class="season-badge ${seasonStatus(s,date)==='out'?'season-out':''}">${seasonLabel(s,date)}</span></button></li>`).join('') || '<li role="presentation" class="small muted">Nessun commestibile nel catalogo con questo nome.</li>';
+    list.innerHTML = matches.map((s,i) => `<li role="presentation"><button type="button" role="option" id="${list.id}-option-${i}" data-option="${i}" aria-selected="false"><span><b>${esc(s.name)}</b><i>${esc(s.latin)}</i>${s.searchReason?`<small class="search-feature-reason">${esc(s.searchReason)}</small>`:''}</span><span class="season-badge ${seasonStatus(s,date)==='out'?'season-out':''}">${seasonLabel(s,date)}</span></button></li>`).join('') || '<li role="presentation" class="small muted">Nessuna specie corrisponde nel catalogo.</li>';
     list.querySelectorAll('[data-option]').forEach(b=>b.addEventListener('click',()=>select(+b.dataset.option)));
   };
   input.addEventListener('input', render);

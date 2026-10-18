@@ -965,3 +965,14 @@ button.cover-index:focus-visible { outline:3px solid var(--focus); outline-offse
   :root body .appbar[data-context="comparison"] .appbar-title { left:48px; right:100px; max-width:none; text-align:left; }
   :root:not(.scrolled):not(.title-in-bar) body:is([data-page="zona"],[data-page="specie-dettaglio"],[data-page="albero"],[data-page="fungo"]) .appbar { background:transparent; }
 }
+
+/* Le barre del browser possono attivare il profilo basso anche in verticale.
+   Il tasto Cerca non deve imporre una riga più alta dello spazio interno. */
+@media(max-width:899px) {
+  .tabbar {
+    --sbw:calc(var(--tabbar-h) - 2 * var(--tbp) - 2px);
+    padding:var(--tbp);
+    grid-template-rows:minmax(0,1fr);
+  }
+  .tabbar a, .tabbar .tab-search { min-height:0; }
+}

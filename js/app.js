@@ -1,3 +1,4 @@
+import {speciesFeatures} from './species-search.js';
 import './modal-scroll.js';
 import {factCards,enhanceContentReading} from './content-ui.js';
 import {enhanceEntityAccordions} from './entity-accordions.js';
@@ -493,7 +494,7 @@ function revealHeader() {
 }
 function updateHeaderScroll() {
   const y = Math.max(0, scrollY);
-  if (!mobileHeader.matches || y < 64 || document.body.dataset.page === 'mappa' || document.querySelector('.appbar :focus-visible')) {
+  if (!mobileHeader.matches || y < 64 || document.body.dataset.page === 'mappa' || document.querySelector('.appbar[data-context="comparison"]') || document.querySelector('.appbar :focus-visible')) {
     revealHeader();
     return;
   }
@@ -1626,6 +1627,14 @@ function buildSearch(idj, trj, embedded) {
     ['Installa l\'app', 'A tutto schermo e senza campo', 'installa app schermo home offline', '#/info'],
   ];
   for (const [title, sub, hay, href] of pages) items.push({ kind: 'pagina', title, sub, hay, href, img: '<span class="sr-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 16h5"/></svg></span>' });
+  for(const item of items) {
+    if(!['fungo','velenoso','pianta','albero'].includes(item.kind))continue;
+    const id=decodeURIComponent(item.href.split('/').pop());
+    const record=item.kind==='pianta'?plants().find(p=>p.id===id):item.kind==='albero'?trj?.trees?.[id]:taxonByKey(id);
+    const entry=catalog.find(s=>s.id===id);
+    item.searchNames=[item.title,record?.latin,...(record?.aliases||[]),...(entry?.aliases||[]),...(idj?.species?.[id]?.aka||[])].filter(Boolean).join(' ');
+    item.features=speciesFeatures(record || entry || {});
+  }
   initSearch(items);
 }
 

@@ -1,3 +1,4 @@
+import {matchSpecies} from './species-search.js';
 import {mountCompareStart,openComparePicker} from './compare-picker.js';
 import {enhanceEntityAccordions} from './entity-accordions.js';
 import {speciesHabitat, speciesSafetyNote} from './species-context.js';
@@ -347,19 +348,14 @@ function matches(t, ans = state.ans) {
   return matchTraits(t, ans, QUESTIONS);
 }
 
-function textHit(t) {
-  if (!state.q) return true;
-  const hay = norm([t.name, t.latin, ...(t.check_before_picking || []), ...Object.values(t.traits || {}).flat()].join(' '));
-  return norm(state.q).split(/\s+/).every((w) => hay.includes(w));
-}
-
 function candidates(ans = state.ans) {
-  return TAXA.filter(textHit).map((t) => {
+  const search=matchSpecies(TAXA,state.q);
+  return search.items.map((t) => {
     const m = matches(t, ans);
     let prior = 1;
     if (state.zone && t.edible_id) prior = 0.4 + 0.6 * (POTENTIAL(t.edible_id, state.zone)?.score ?? 0.5);
     const fit = m.tot ? m.ok / m.tot : 1;
-    return { t, ...m, fit, rank: fit * prior };
+    return { t, ...m, fit, rank: fit * prior, searchReason:search.reasons.get(t) };
   }).filter((c) => retainCandidate(c.t, c))
     .sort((a, b) => b.rank - a.rank || (TOX_ORDER[a.t.toxicity] ?? 9) - (TOX_ORDER[b.t.toxicity] ?? 9));
 }
@@ -473,7 +469,7 @@ function resultCard(c) {
       ${ph ? `<button type="button" class="id-zoom" data-photo="${esc(t.key)}" aria-label="${name}: ingrandisci la foto"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="m20 20-5-5M10.5 8v5M8 10.5h5"/></svg></button>` : ''}
       </div>
     <div class="id-card-body">
-      <button type="button" class="id-link" data-taxon="${esc(t.key)}">${name}</button>${t.name && t.name !== t.latin ? `<i>${esc(t.latin)}</i>` : ''}
+      <button type="button" class="id-link" data-taxon="${esc(t.key)}">${name}</button>${t.name && t.name !== t.latin ? `<i>${esc(t.latin)}</i>` : ''}${c.searchReason?`<p class="search-feature-reason">Suggerimento per caratteri · ${esc(c.searchReason)}</p>`:''}
       ${matchSummary(c)}
       <button type="button" class="small id-more" data-taxon="${esc(t.key)}" aria-label="Dettagli di ${name}">Dettagli ›</button>
     </div></li>`;
@@ -961,16 +957,40 @@ function renderCompare(box, ref, pick) {
   // l'altezza segue la slide visibile: niente vuoto sotto i confronti corti
   const gallery = box.querySelector('.cmp-gallery'), header = box.querySelector('.cmp-pair-nav');
   const headerContent = header.querySelector('.cmp-nav-content');
+  let headerWanted=false, headerMotion=null;
+  const setHeaderStuck = stuck => {
+    if (stuck===headerWanted) return;
+    headerWanted=stuck;
+    const wasFixed=header.classList.contains('is-stuck');
+    const opacity=wasFixed?Number.parseFloat(getComputedStyle(headerContent).opacity):0;
+    headerMotion?.cancel();
+    headerMotion=null;
+    if (stuck) header.classList.add('is-stuck');
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches || !headerContent.animate) {
+      header.classList.toggle('is-stuck',stuck);
+      return;
+    }
+    // In uscita resta fisso fino al termine della dissolvenza: la posizione
+    // non torna nel flusso a metà animazione. Le inversioni ripartono dall'opacità corrente.
+    const motion=headerContent.animate([{opacity},{opacity:stuck?1:0}],{
+      duration:stuck?200:160,easing:'cubic-bezier(.2,.8,.2,1)',fill:'both',
+    });
+    headerMotion=motion;
+    motion.onfinish=()=>{
+      if (headerMotion!==motion) return;
+      if (!headerWanted) header.classList.remove('is-stuck');
+      motion.cancel();headerMotion=null;
+    };
+  };
+
   const syncCompareHeader = () => {
     if (!gallery.getClientRects().length) return;
-    const appbarHidden = matchMedia('(max-width:899px)').matches && document.documentElement.classList.contains('header-away');
     const appbar = document.querySelector('.appbar');
-    const safeTop = parseFloat(appbar && getComputedStyle(appbar).paddingTop) || 0;
     const viewportTop = window.visualViewport?.offsetTop || 0;
-    const contentTop = viewportTop + safeTop;
-    const top = viewportTop + (appbarHidden ? safeTop : appbar?.offsetHeight || 0);
-    // La soglia non cambia quando l'header principale si nasconde o riappare.
-    // Scendendo, i nomi restano nell'area visibile anche sotto la safe area iOS.
+    const top = viewportTop + (appbar?.offsetHeight || 0);
+    const contentTop = top;
+    // Nel confronto il back e le azioni restano visibili: i nomi si fissano
+    // subito sotto, quando le intestazioni delle colonne superano la barra.
     header.style.setProperty('--cmp-header-top', `${top}px`);
     const columns = slides[cur]?.querySelector('.cmp-panel:not([hidden]) .cmp-column-head') || slides[cur]?.querySelector('.cmp-kind-tabs');
     const rect = header.getBoundingClientRect();
@@ -981,7 +1001,7 @@ function renderCompare(box, ref, pick) {
     }
     header.style.setProperty('--cmp-header-left', `${rect.left}px`);
     header.style.setProperty('--cmp-header-width', `${rect.width}px`);
-    header.classList.toggle('is-stuck', !!pastColumns && onScreen);
+    setHeaderStuck(!!pastColumns && onScreen);
   };
   addEventListener('scroll', syncCompareHeader, {passive:true});
   addEventListener('resize', syncCompareHeader, {passive:true});
@@ -997,6 +1017,7 @@ function renderCompare(box, ref, pick) {
     window.visualViewport?.removeEventListener('resize', syncCompareHeader);
     window.visualViewport?.removeEventListener('scroll', syncCompareHeader);
     headerChanges.disconnect(); headerSize.disconnect();
+    headerMotion?.cancel();headerMotion=null;
     ro.disconnect(); trackSize.disconnect();
     candidateAnimation?.cancel();
   };
