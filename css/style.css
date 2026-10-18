@@ -3460,7 +3460,9 @@ details.context-note { margin: 12px 0 16px; padding: 0; border: 0; border-radius
 .onboarding .ob-data summary { min-height:44px; display:flex; align-items:center; color:var(--link); text-decoration:underline dotted; text-underline-offset:3px; cursor:pointer; }
 .onboarding .ob-data ul { padding-left:20px; display:grid; gap:10px; }
 
-#legal-loading { position:fixed; inset:0; z-index:10000; display:grid; place-content:center; padding:24px; background:var(--bg); color:var(--text); text-align:center; }
+#legal-loading { position:fixed; inset:0; z-index:10000; display:grid; place-content:center; justify-items:center; gap:16px; padding:24px; background:var(--bg); color:var(--text); text-align:center; }
+.legal-loading-spinner { display:block; width:32px; height:32px; box-sizing:border-box; border:3px solid var(--hair); border-top-color:var(--link); border-radius:50%; }
+@media(prefers-reduced-motion:no-preference) { .legal-loading-spinner { animation:spin .9s linear infinite; } }
 #ob-h:focus { outline:none; }
 .onboarding .ob-more { margin:16px 0; font-size:14px; line-height:1.6; }
 .onboarding .ob-more > summary { min-height:44px; display:flex; align-items:center; color:var(--link); text-decoration:underline dotted; text-underline-offset:3px; cursor:pointer; }
