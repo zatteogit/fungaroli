@@ -111,11 +111,12 @@ usa una stilo con pennino per richiamare la scrittura, la Mappa una carta ripieg
 
 ### Tavola illustrata dei caratteri dei funghi
 
-Nella panoramica il cappello occupa una card larga: titolo, illustrazione e dati,
-poi selettori di colore e forma distinti. Le altre parti hanno due colonne su
-telefono/tablet e quattro sul desktop, con titolo prima del disegno, corpo di
-16 px e note subordinate. Le card usano bordi leggeri; il colore pieno segnala
-solo la variante selezionata. Anello, volva e reticolo si leggono in righe
+La panoramica usa una griglia di sette unità: cappello largo quattro, dettagli
+larghi tre. Il cappello si incastra con sotto-cappello e gambo impilati; al taglio
+e sporata completano una coppia di larghezze differenti. Le altezze dipendono dai
+contenuti, senza tagliare testi o varianti, né cambiare l’ordine di lettura del DOM.
+Bordi leggeri, illustrazione principale più grande e selettori distinti; il colore
+pieno segnala la variante selezionata. Anello, volva e reticolo si leggono in righe
 presente/assente esclusivamente quando il relativo dato è booleano documentato.
-Le fasi di crescita mantengono la propria galleria. Non si forzano altezze fisse
-né si omettono alternative per far entrare il contenuto.
+Le fasi di crescita mantengono la propria galleria. Benchmark e motivazioni in
+[griglia-caratteri-2026-10-18.md](griglia-caratteri-2026-10-18.md).

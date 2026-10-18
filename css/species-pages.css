@@ -497,39 +497,53 @@ body[data-page="mappa"] .view-map { border-radius:0; }
   .sub-nav.recognize-entry > .btn.ghost { font-size:12px; }
 }
 
-/* Tavola dei caratteri: un disegno principale, poi dettagli con spazio di lettura. */
-.fungus-page .trait-strip:not(.growth-gallery) { grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
-.fungus-page .trait-strip > .ts-card { grid-column:span 1; padding:16px; gap:10px; border:1px solid var(--hair); border-radius:20px; }
-.fungus-page .trait-strip > li.ts-card-cap { grid-column:1 / -1; display:grid; grid-template-columns:minmax(88px,.8fr) minmax(0,1.2fr); column-gap:18px; row-gap:8px; }
-.fungus-page .ts-card > .ts-k { font:650 13px/1.4 var(--font-body); color:var(--text); }
+/* Tavola illustrata: card larga incastrata con due dettagli; ordine uguale al DOM. */
+.fungus-page .trait-strip:not(.growth-gallery) { grid-template-columns:repeat(7,minmax(0,1fr)); gap:12px; }
+.fungus-page .trait-strip > li.ts-card { grid-column:span 3; padding:14px; gap:10px; border:1px solid var(--hair); border-radius:20px; }
+.fungus-page .trait-strip > li.ts-card-cap { grid-column:1 / span 4; grid-row:span 2; grid-template-rows:auto minmax(144px,1fr); align-content:stretch; }
+.fungus-page .trait-strip > li:is(.ts-card-hymenophore,.ts-card-stem,.ts-card-spores) { grid-column:5 / -1; }
+.fungus-page .trait-strip > li.ts-card-flesh { grid-column:1 / span 4; }
+.fungus-page .ts-card > .ts-k { font:600 18px/1.25 var(--font-display); color:var(--text); }
+.fungus-page .ts-card-cap > .ts-k { font-size:22px; line-height:1.2; }
 .fungus-page .ts-card > .ts-v { font:400 16px/1.5 var(--font-body); overflow-wrap:normal; }
 .fungus-page .ts-card > .ts-sub { color:var(--muted); font:400 13px/1.5 var(--font-body); overflow-wrap:normal; }
-.fungus-page .ts-card > .ts-art { height:82px; margin:0; justify-content:center; }
-.fungus-page .ts-card .ts-art > .ts-ill { width:80px; height:80px; }
-.fungus-page .ts-card .ts-art > svg.ta { max-height:76px; height:76px; max-width:100%; width:auto; }
-.fungus-page .ts-card-cap > .ts-k { grid-column:1 / -1; }
-.fungus-page .ts-card-cap > .ts-art { grid-column:1; grid-row:2 / span 2; height:112px; width:100%; border-radius:14px; background:var(--bg); }
-.fungus-page .ts-card-cap .ts-art > .ts-ill { width:104px; height:104px; max-width:100%; }
-.fungus-page .ts-card-cap > .ts-v { grid-column:2; grid-row:2; align-self:end; }
-.fungus-page .ts-card-cap > .ts-sub { grid-column:2; grid-row:3; align-self:start; }
+.fungus-page .ts-card > .ts-art { height:72px; margin:0; justify-content:center; }
+.fungus-page .ts-card .ts-art > .ts-ill { width:72px; height:72px; max-width:100%; }
+.fungus-page .ts-card .ts-art > svg.ta { max-height:68px; height:68px; max-width:100%; width:auto; }
+/* Il respiro del pannello principale sta attorno al disegno, non in un vuoto in fondo. */
+.fungus-page .ts-card-cap > .ts-art { height:auto; min-height:144px; }
+.fungus-page .ts-card-cap .ts-art > .ts-ill { width:140px; height:140px; }
 .ts-controls { display:grid; gap:12px; width:100%; min-width:0; }
 .ts-variant-group { display:grid; gap:6px; min-width:0; }
 .ts-control-label { font:500 12px/1.4 var(--font-body); color:var(--muted); }
-.fungus-page .ts-card-cap > .ts-controls { grid-column:1 / -1; margin-top:8px; padding-top:14px; border-top:1px solid var(--hair); }
-.fungus-page .ts-controls :is(.ts-chip,.ts-form) { min-height:44px; padding:8px 12px; font-size:13px; border-radius:12px; }
+.fungus-page .ts-card-cap > .ts-controls { margin-top:4px; padding-top:12px; border-top:1px solid var(--hair); }
+/* Scelte tipografiche: campione attivo cerchiato e forma sottolineata. */
+.fungus-page .ts-card .ts-controls :is(.ts-chip,.ts-form) { min-height:44px; border:0; padding:6px 4px; border-radius:0; background:none; box-shadow:none; color:var(--text-2); font:500 13px/1.4 var(--font-body); }
+.fungus-page .ts-card .ts-controls button[aria-pressed="true"] { background:none; color:var(--text); font-weight:700; border-color:transparent; }
+.fungus-page .ts-card .ts-controls .ts-form { box-shadow:inset 0 -1px var(--hair); }
+.fungus-page .ts-card .ts-controls .ts-form[aria-pressed="true"] { box-shadow:inset 0 -2px var(--select); }
+.fungus-page .ts-card .ts-controls .ts-chip[aria-pressed="true"]::before { box-shadow:0 0 0 2px var(--surface),0 0 0 3px var(--text); }
+.fungus-page .ts-card .ts-controls button:focus-visible { outline:2px solid var(--focus); outline-offset:3px; border-radius:4px; }
+.ts-choice-label { display:grid; gap:1px; text-align:left; }
+.ts-choice-label small { color:var(--muted); font:400 12px/1.4 var(--font-body); }
 .fungus-page .ts-controls .ts-note { margin:0; font-size:12px; line-height:1.5; }
 .ts-facts { display:grid; gap:7px; width:100%; }
 .ts-fact { display:flex; flex-wrap:wrap; align-items:baseline; gap:2px 6px; font:400 13px/1.45 var(--font-body); }
 .ts-fact > span { color:var(--muted); }
 .ts-fact > b { font-weight:600; }
+.fungus-page .ts-card-stem > .ts-v { width:100%; }
+.fungus-page .ts-card .ts-fact { justify-content:space-between; gap:2px; }
+/* Le citazioni restano integrali anche sulle schede strette. */
+.fungus-page .att-cite { white-space:normal; overflow-wrap:anywhere; }
 @media(min-width:600px) {
-  .fungus-page .trait-strip > li.ts-card-cap { grid-template-columns:140px minmax(0,1fr); }
-  .fungus-page .ts-card-cap > .ts-art { height:136px; }
-  .fungus-page .ts-card-cap .ts-art > .ts-ill { width:128px; height:128px; }
-  .fungus-page .ts-card-cap > .ts-controls { grid-template-columns:repeat(2,minmax(0,1fr)); }
-  .fungus-page .ts-controls .ts-note { grid-column:1 / -1; }
+  .fungus-page .trait-strip > li.ts-card { padding:20px; }
 }
-@media(min-width:1000px) {
-  .fungus-page .trait-strip:not(.growth-gallery) { grid-template-columns:repeat(4,minmax(0,1fr)); }
-  .fungus-page .trait-strip > .ts-card { padding:14px; }
+@media(max-width:359px) {
+  .fungus-page .trait-strip:not(.growth-gallery) { gap:8px; }
+  .fungus-page .trait-strip > li.ts-card { padding:10px; border-radius:16px; }
+  .fungus-page .ts-card .ts-art { height:64px; }
+  .fungus-page .ts-card .ts-art > .ts-ill { width:64px; height:64px; }
+  .fungus-page .trait-strip > li.ts-card-cap { grid-template-rows:auto minmax(112px,1fr); }
+  .fungus-page .ts-card-cap > .ts-art { height:auto; min-height:112px; }
+  .fungus-page .ts-card-cap .ts-art > .ts-ill { width:104px; height:104px; }
 }
