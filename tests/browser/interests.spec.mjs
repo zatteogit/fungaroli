@@ -34,7 +34,7 @@ for(const width of [320,1280])test(`interessi indipendenti: tutte le combinazion
 test('filtri sulle specie indipendenti nella ricerca combinata',async({browser})=>{
  const context=await browser.newContext({serviceWorkers:'block',reducedMotion:'reduce'}),page=await preparePage(context,{theme:'dark'});
  await page.goto('/');await page.locator('#active-filters [data-intent="piante"]').click();
- await page.locator('#home-filter-action [data-more]:visible,#appbar-home-filters [data-more]:visible').click();
+ await page.locator('html.title-in-bar #appbar-home-filters [data-more],html:not(.title-in-bar) #home-filter-action [data-more]').click();
  const panel=page.locator('#full-filters');await expect(panel.locator('[data-intent][aria-pressed="true"]')).toHaveCount(2);
  await panel.locator('#species-filter-search').fill('prugnolo');await panel.locator('#species-filter-options [role="option"]').first().click();
  const plants=await page.evaluate(()=>JSON.parse(localStorage.getItem('fungaroli:prefs:v2')).plantIds);expect(plants.length).toBeGreaterThan(0);
@@ -52,12 +52,12 @@ test('mappa botanica: spunti concreti e spiegazione progressiva',async({browser}
  const note=page.locator('#legend .map-plant-note');await expect(note).toHaveCount(1);await expect(note).not.toHaveAttribute('open','');
  await expect(page.locator('#map .pc')).toHaveCount(0);await expect(page.locator('#map')).not.toContainText('0 spunti');
  const badge=page.locator('#map .map-plant-badge').first();await expect(badge).toBeVisible();await expect(badge).toHaveAttribute('title',/^Da osservare: /);
- await badge.click();await expect(page.locator('#map-sheet .map-discoveries-title')).toHaveText('Da osservare');await expect(page.locator('#map-sheet .discovery-link').first()).toBeVisible();await expect(page.locator('#map-sheet .discovery-intro')).toHaveCount(0);
+ await badge.locator('xpath=ancestor::*[@role="button"][1]').press('Enter');await expect(page.locator('#map-sheet .map-discoveries-title')).toHaveText('Da osservare');await expect(page.locator('#map-sheet .discovery-link').first()).toBeVisible();await expect(page.locator('#map-sheet .discovery-intro')).toHaveCount(0);
  await expect(page.locator('#map-sheet')).not.toContainText('presenza da verificare');
  await loadAllImages(page);await page.locator('#map-sheet').screenshot({path:'/tmp/fronda-v98-plant-sheet-final.png'});
  await page.locator('#map-sheet .sheet-close').click();
  await mapToggle(page,'funghi');await expect(page.locator('#map .pc').first()).toBeVisible();
- await page.locator('#map .map-plant-badge').first().click();await expect(page.locator('#map-sheet .ring')).toBeVisible();await expect(page.locator('#map-sheet .discovery-link').first()).toBeVisible();
+ await page.locator('#map .map-plant-badge').first().locator('xpath=ancestor::*[@role="button"][1]').press('Enter');await expect(page.locator('#map-sheet .ring')).toBeVisible();await expect(page.locator('#map-sheet .discovery-link').first()).toBeVisible();
  await page.locator('#map-sheet .sheet-close').click();await mapLegend(page);await note.locator('summary').click();await expect(note).toHaveAttribute('open','');await expect(note).toContainText('Non sono avvistamenti confermati');
  await context.close();
 });

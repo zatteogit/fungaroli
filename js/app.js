@@ -1881,7 +1881,7 @@ function renderMapDays() {
   const box = $('#map-days');
   const html = Array.from({length:AHEAD_DAYS+1}, (_,o) => { const date = outdoorDate(o); return `<button type="button" class="day" role="tab" data-day-offset="${o}" aria-selected="${o === state.dayOffset}" aria-label="${esc(fmtDate(date,{weekday:'long',day:'numeric',month:'long'}))}"><span class="d1">${o===0?'Oggi':o===1?'Domani':esc(fmtDate(date,{weekday:'long'}))}</span><span class="d2">${esc(fmtDate(date,{day:'numeric'}))}</span></button>`; }).join('');
   if (box.innerHTML !== html) box.innerHTML = html;
-  box.querySelectorAll('[data-day-offset]').forEach(b => b.onclick = () => { mapDateManual=true;if(state.dayOffset===Number(b.dataset.dayOffset))return;state.dayOffset=Number(b.dataset.dayOffset);checkSavedSeason();$('.map-top').classList.remove('days-open');renderAll();renderFilterSummary();dateChangeFeedback('#map-filters [data-days]', '#map-results');$('#map-filters [data-days]')?.focus({preventScroll:true}); });
+  box.querySelectorAll('[data-day-offset]').forEach(b => b.onclick = () => { mapDateManual=true;$('.map-top').classList.remove('days-open');if(state.dayOffset===Number(b.dataset.dayOffset)){$('#map-filters [data-days]')?.setAttribute('aria-expanded','false');$('#map-filters [data-days]')?.focus({preventScroll:true});return;}state.dayOffset=Number(b.dataset.dayOffset);checkSavedSeason();renderAll();renderFilterSummary();dateChangeFeedback('#map-filters [data-days]', '#map-results');$('#map-filters [data-days]')?.focus({preventScroll:true}); });
 }
 // riquadro della zona aperto: su telefono la barra delle sezioni si toglie di mezzo (come fa Google Maps)
 new MutationObserver(() => document.documentElement.classList.toggle('map-sheet-open', !$('#map-sheet')?.hidden))

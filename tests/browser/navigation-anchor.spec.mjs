@@ -32,9 +32,10 @@ test('navigazione ripristinata dopo tastiera: viewport ridotto e ripristinato',a
 
 for(const width of [320,768,1280])test(`confronto sticky: riferimento completo e sosia a ${width}px`,async({browser})=>{
  const context=await browser.newContext({viewport:{width,height:900},reducedMotion:'reduce',serviceWorkers:'block'});
- const page=await preparePage(context);await page.goto('/#/riconosci/confronta/repandum/hydnum-rufescens');const bar=page.locator('.cmp-pickbar');await expect(bar.locator('.cmp-ref-l b')).toHaveText('Steccherino dorato');await expect(bar.locator('.cmp-ref-l i')).toHaveText('vs');
- await page.evaluate(()=>scrollTo(0,900));
- await expect.poll(()=>bar.evaluate(e=>Math.abs(e.getBoundingClientRect().top-parseFloat(getComputedStyle(e).top)))).toBeLessThan(2);
- expect(await bar.locator('.cmp-ref-l b').evaluate(e=>e.scrollWidth<=e.clientWidth+1)).toBe(true);await expect(bar.locator('.cmp-ref-l')).toBeInViewport();
- const reference=await bar.locator('.cmp-ref-l').innerText();await bar.locator('.cmp-chip[aria-selected="false"]').first().click();await expect(bar.locator('.cmp-ref-l')).toHaveText(reference,{useInnerText:true});expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await context.close();
+ const page=await preparePage(context);await page.goto('/#/riconosci/confronta/edulis/tylopilus-felleus');const bar=page.locator('.cmp-pair-nav'),content=bar.locator('.cmp-nav-content'),master=bar.locator('[data-change-master]');
+ await expect(master).toHaveText('Porcino');await expect(bar.locator('.cmp-nav-vs')).toHaveText('vs');
+ await page.evaluate(()=>scrollTo(0,900));await expect(bar).toHaveClass(/is-stuck/);
+ await expect.poll(()=>content.evaluate(e=>Math.abs(e.getBoundingClientRect().top-parseFloat(getComputedStyle(e).top)))).toBeLessThan(2);
+ expect(await master.evaluate(e=>e.scrollWidth<=e.clientWidth+1)).toBe(true);await expect(master).toBeInViewport();
+ const reference=await master.innerText();await page.locator('[data-cmp-step="1"]').click();await expect(master).toHaveText(reference,{useInnerText:true});expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await context.close();
 });

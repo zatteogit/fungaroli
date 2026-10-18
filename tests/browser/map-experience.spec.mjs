@@ -34,7 +34,7 @@ test('preferenze leggibili nell’elenco, senza cambiare indice né posizione de
  const before=await read(),camera=await p.evaluate(()=>auditMap.getCenter());
  await p.locator('#map-filters [data-more]').click();await p.locator('#full-filters [data-pref="distancePenalty"]').click();await p.locator('#full-filters [data-close]').last().click();
  await expect.poll(read).not.toEqual(before);const after=await read();expect(new Map(after.map(r=>[r.id,r.index]))).toEqual(new Map(before.map(r=>[r.id,r.index])));expect(await p.evaluate(()=>auditMap.getCenter())).toEqual(camera);
- await p.locator('#map-results > summary').click();await expect(p.locator('[data-map-order]')).toContainText('vicino a casa');
+ await p.locator('#map-results > summary').click();await expect(p.locator('[data-map-order]')).toContainText('vicino a me');
  expect(errors).toEqual([]);await c.close();
 });
 test('difficoltà e lunghezza restringono le zone anche senza interesse Sentieri',async({browser})=>{
