@@ -42,7 +42,14 @@ export function enhanceContentReading(root) {
     if (paragraph.closest('li,figcaption,summary,nav,.content-facts,.notice,.attention,.content-points') || paragraph.matches('.small,.muted,.article-lede') || paragraph.querySelector('.btn,button,img')) continue;
     const text=paragraph.textContent;
     if (text.length<180) continue;
-    const segments=[...segmenter.segment(text)];
+    const segments=[];
+    for (const part of segmenter.segment(text)) {
+      const previous=segments.at(-1);
+      // Nei testi tecnici una breve frase di raccordo resta con la successiva.
+      // Nelle guide i caratteri descritti mantengono invece la propria riga.
+      if (!root.matches('.editorial-article') && previous?.segment.trim().length<70) previous.segment+=part.segment;
+      else segments.push({segment:part.segment,index:part.index});
+    }
     if (segments.length<3) continue;
     const nodes=[];let length=0;
     const walker=document.createTreeWalker(paragraph,NodeFilter.SHOW_TEXT);
@@ -57,5 +64,26 @@ export function enhanceContentReading(root) {
       const item=document.createElement('li');item.append(range.cloneContents());list.append(item);
     }
     if(list.childElementCount===segments.length)paragraph.replaceWith(list);
+  }
+}
+
+// Enfasi editoriali esplicite: soltanto parole già presenti, una volta per voce.
+// Non modifica titoli, link, citazioni, fonti o avvisi di sicurezza.
+export function emphasizeContent(root, phrases = []) {
+  if (!root) return;
+  for (const phrase of phrases) {
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {acceptNode(node) {
+      return node.parentElement.closest('p,li') && !node.parentElement.closest('a,b,strong,summary,figcaption,.eyebrow,.article-lede,.small,.muted,.attention,.notice')
+        ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+    }});
+    while (walker.nextNode()) {
+      const node = walker.currentNode, index = node.data.toLocaleLowerCase('it').indexOf(phrase.toLocaleLowerCase('it'));
+      if (index < 0) continue;
+      const bold = document.createElement('strong');
+      const match = node.splitText(index);
+      match.splitText(phrase.length);
+      match.replaceWith(bold); bold.append(match);
+      break;
+    }
   }
 }

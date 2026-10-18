@@ -1,3 +1,4 @@
+import './modal-scroll.js';
 import {factCards,enhanceContentReading} from './content-ui.js';
 import {enhanceEntityAccordions} from './entity-accordions.js';
 import {plannedDeparture, recommendedStartAvailable, calendarDate} from './planning-time.js';
@@ -30,7 +31,7 @@ import { initLearning, renderGlossary, renderFieldIdentify, difficultyLink, glos
 import { openLightbox, captionHtml } from './lightbox.js';
 import { initInstall, maybeInvite } from './install.js';
 import { loadOuting, outingFor, OUTING_LABEL, OUTING_SHORT, OUTING_RANK } from './outing.js';
-import { initIdentify, renderIdentify, setCompare, searchTaxa, openTaxon, renderTaxonPage, renderTaxonView, taxonHeroSrc, taxonName, taxonByKey, attentionLine, sourceRows } from './identify.js';
+import { initIdentify, renderIdentify, renderComparisonStart, setCompare, searchTaxa, openTaxon, renderTaxonPage, renderTaxonView, taxonHeroSrc, taxonName, taxonByKey, attentionLine, sourceRows } from './identify.js';
 import { initSearch } from './search.js';
 import { renderGuidedKey } from './guided-key.js';
 import { renderWhy, renderMethod, drawWhyCharts } from './science.js';
@@ -372,7 +373,7 @@ function initShell() {
 // Scopri: tre cataloghi con riconoscimento in pannello; Guide raccoglie i contenuti sul bosco.
 const SCOPRI = [['funghi', '#/specie', 'Funghi'], ['piante', '#/piante', 'Piante e fiori'], ['alberi', '#/alberi', 'Alberi'], ['impara', '#/impara', 'Guide']];
 const SCOPRI_SUB = {
-  funghi: [['#/specie', 'Sfoglia'], ['#/riconosci', 'Impara a riconoscere']],
+  funghi: [['#/specie', 'Sfoglia'], ['#/riconosci', 'Impara a riconoscere'], ['#/confronta','Confronta funghi']],
   piante: [['#/piante', 'Sfoglia'], ['#/riconosci/piante', 'Impara a riconoscere']],
   alberi: [['#/alberi', 'Sfoglia'], ['#/riconosci/alberi', 'Impara a riconoscere']],
   impara: [['#/glossario', 'Glossario'], ['#/guide', 'Approfondimenti'], ['#/riconosci/bosco', 'Bosco e sentiero'], ['#/sfide', 'Sfide']],
@@ -384,6 +385,7 @@ const RECOGNIZE_HEAD = {
   bosco: ['Bosco e sentiero', 'Tracce, segni e dettagli che incontri camminando.'],
 };
 function scopriPlace(r) {
+  if (r.view === 'riconosci' && r.compareStart) return ['funghi','#/confronta'];
   if (r.view === 'riconosci') return [r.recognizeMode === 'bosco' ? 'impara' : r.recognizeMode, r.recognizeMode === 'bosco' ? '#/riconosci/bosco' : SCOPRI_SUB[r.recognizeMode][1][0]];
   return { specie: ['funghi', '#/specie'], piante: ['piante', '#/piante'], alberi: ['alberi', '#/alberi'], impara: ['impara', '#/impara'], glossario: ['impara', '#/glossario'], 'guide-list': ['impara', '#/guide'], sfide: ['impara', '#/sfide'] }[r.view] || null;
 }
@@ -401,6 +403,7 @@ function paintScopriNav(r) {
     const catalog = ['specie','piante','alberi'].includes(r.view);
     sub.classList.toggle('recognize-entry', catalog);
     sub.innerHTML = catalog ? `<button type="button" class="btn ghost" data-open-recognition="${sec}" aria-haspopup="dialog"><svg class="recognize-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="m15 15 6 6"/>${sec === 'funghi' ? '<path d="M6 11c0-5 8-5 8 0ZM9 11v3h2v-3"/>' : '<path d="M7 13c-2-4 0-7 6-7 0 6-2 8-6 7Zm0 0 4-4"/>'}</svg><span>Impara a riconoscere</span><span aria-hidden="true">→</span></button>` : sec !== 'impara' || r.view === 'impara' ? '' : SCOPRI_SUB[sec].map(([href, label]) => `<a href="${href}"${cur(href === here)}>${label}</a>`).join('');
+    if(catalog && sec==='funghi') sub.insertAdjacentHTML('beforeend','<a class="btn ghost compare-entry" href="#/confronta">Confronta funghi <span aria-hidden="true">↔</span></a>');
   }
 }
 
@@ -440,7 +443,8 @@ function parseRoute(hash = location.hash) {
   if (a === 'piante') return {view:'piante'};
   if (a === 'pianta' && b) return {view:'pianta',plantId:b};
   if (a === 'alberi') return { view: 'alberi' };
-  if (a === 'riconosci') return { view: 'riconosci', recognizeMode: ['alberi','piante','bosco'].includes(b) ? b : 'funghi', compare: b === 'confronta' ? c : '', pick: b === 'confronta' ? parts[3] : '' };
+  if (a === 'confronta') return {view:'riconosci',recognizeMode:'funghi',compareStart:true,compareLeft:b,compareRight:c};
+  if (a === 'riconosci') return { view: 'riconosci', recognizeMode: ['alberi','piante','bosco'].includes(b) ? b : 'funghi', compareStart:b==='confronta'&&!c, compare: b === 'confronta' ? c : '', pick: b === 'confronta' ? parts[3] : '' };
   if (a === 'guide') return b ? { view: 'guide', guideId: b } : { view: 'guide-list' };
   if (a === 'sfide') return { view: 'sfide', challengeId: b || '' };
   if (a === 'diario') return { view: 'diario', notebookDemo:b==='esempio', notebookEntry:['pagina','esempio'].includes(b)?c||'':'' };
@@ -532,7 +536,7 @@ function titleOf(r) {
   if (r.view === 'glossario' && r.termId) return glossaryTitle(r.termId);
   if (r.view === 'pianta') return plantName(r.plantId)||'Pianta';
   if (r.view === 'albero') return treesData?.trees?.[r.treeId]?.name || 'Albero';
-  if (r.view === 'riconosci' && r.compare) return 'Confronto';
+  if (r.view === 'riconosci' && (r.compare || r.compareStart)) return r.compareStart?'Confronta funghi':'Confronto';
   if (r.view === 'sfide' && r.challengeId) return challengeTitle(r.challengeId) || 'Sfida';
   return TITLES[r.view] || '';
 }
@@ -547,12 +551,13 @@ function parentOf(r) {
   if (r.view === 'albero') return '#/alberi';
   if (r.view === 'guide') return '#/guide';
   if (['glossario','guide-list','sfide'].includes(r.view) && !r.challengeId || r.view === 'riconosci' && r.recognizeMode === 'bosco') return '#/impara';
-  if (r.view === 'riconosci' && r.compare) return '#/riconosci';
+  if (r.view === 'riconosci' && r.compare) return '#/confronta';
+  if (r.view === 'riconosci' && r.compareStart) return '#/specie';
   if (r.view === 'sfide' && r.challengeId) return '#/sfide';
   if (['specie','alberi','piante','riconosci','glossario','guide-list','sfide'].includes(r.view)) return '#/scopri';
   return '#/';
 }
-const PARENT_TITLE = (r) => ({ '#/diario':'Taccuino', '#/diario/esempio':'Diario di prova', '#/scopri': 'Scopri', '#/specie': 'Funghi', '#/alberi': 'Alberi', '#/piante':'Piante e fiori', '#/riconosci': 'Impara a riconoscere', '#/guide': 'Approfondimenti', '#/sfide': 'Sfide', '#/impara': 'Guide', '#/': 'Uscite' }[parentOf(r)]);
+const PARENT_TITLE = (r) => ({ '#/diario':'Taccuino', '#/diario/esempio':'Diario di prova', '#/scopri': 'Scopri', '#/specie': 'Funghi', '#/alberi': 'Alberi', '#/piante':'Piante e fiori', '#/riconosci': 'Impara a riconoscere', '#/confronta':'Confronta funghi', '#/guide': 'Approfondimenti', '#/sfide': 'Sfide', '#/impara': 'Guide', '#/': 'Uscite' }[parentOf(r)]);
 // Quando il titolo della pagina passa sotto la barra, lo mostriamo compatto al centro su telefono e tablet.
 let titleIO = null;
 function watchTitle() {
@@ -677,11 +682,11 @@ function routeNow(r, nav) {
   if (r.view === 'sfide') { if (r.challengeId) renderChallenge($('#challenges'), r.challengeId); else renderChallengeList($('#challenges')); }
   paintScopriNav(r);
   if (r.view === 'riconosci') {
-    const rt = RECOGNIZE_HEAD[r.recognizeMode];
+    const rt = r.compareStart?['Confronta funghi','Scegli due specie e guarda differenze e somiglianze, una accanto all’altra.']:RECOGNIZE_HEAD[r.recognizeMode];
     $('[data-recognize-title]').textContent = rt[0]; $('[data-recognize-sub]').textContent = rt[1];
     $('#identify').hidden = r.recognizeMode !== 'funghi';
     $('#field-identify').hidden = r.recognizeMode === 'funghi';
-    if(r.recognizeMode==='funghi') {setCompare(r.compare,r.pick);renderIdentify($('#identify'));}
+    if(r.recognizeMode==='funghi') {if(r.compareStart)renderComparisonStart($('#identify'),r.compareLeft,r.compareRight);else{setCompare(r.compare,r.pick);renderIdentify($('#identify'));}}
     // piante e alberi: lo stesso percorso guidato dei funghi, una domanda alla volta
     else if(r.recognizeMode==='piante') renderGuidedKey($('#field-identify'),'piante',{items:plants().map(p=>({id:p.id,name:p.name,latin:cardLatin(p.latin),href:`#/pianta/${encodeURIComponent(p.id)}`,danger:p.category==='Pericolose'})),thumb:plantThumb});
     else if(r.recognizeMode==='alberi') renderGuidedKey($('#field-identify'),'alberi',{items:Object.entries(treesData?.trees||{}).map(([id,t])=>({id,name:t.name,latin:cardLatin(t.latin),href:`#/albero/${encodeURIComponent(id)}`})),thumb:treeThumb});
@@ -1251,7 +1256,7 @@ let prep = null, trailheads = {}, treesData = null, idData = null;
 function prepGeneralHtml(rules) {
   const ord = [...rules].sort((a, b) => (a.level === 'obbligatorio' ? 0 : 1) - (b.level === 'obbligatorio' ? 0 : 1));
   return `<details class="prep-gen"><summary><h2>Prepararli e conservarli: le regole per tutti</h2></summary>
-    <ol class="content-prep-rules">${ord.map(r=>`<li><span class="content-prep-kind">${r.level==='obbligatorio'?'Indicazione di sicurezza':'Indicazione prudenziale'}</span><h3>${esc(r.title)}</h3><p>${esc(r.text)}</p>${r.why?`<aside class="content-observe"><b>Perché</b><p>${esc(r.why)}</p></aside>`:''}${r.sources?.length?`<details class="content-explain"><summary>Fonti (${r.sources.length})</summary>${sourceRows(r.sources)}</details>`:''}</li>`).join('')}</ol>
+    <ol class="content-prep-rules">${ord.map(r=>`<li${r.level==='obbligatorio'?' class="content-prep-required"':''}><span class="content-prep-kind">${r.level==='obbligatorio'?'Indicazione di sicurezza':'Indicazione prudenziale'}</span><h3>${esc(r.title)}</h3><p>${esc(r.text)}</p>${r.why?`<aside class="content-observe"><b>Perché</b><p>${esc(r.why)}</p></aside>`:''}${r.sources?.length?`<details class="content-explain"><summary>Fonti (${r.sources.length})</summary>${sourceRows(r.sources)}</details>`:''}</li>`).join('')}</ol>
   </details>`;
 }
 const adjParts = (zone, d) => {
@@ -1586,6 +1591,7 @@ function buildSearch(idj, trj, embedded) {
     items.push({ kind: 'sentiero', title: `${t.ref ? `Sentiero ${t.ref}` : 'Sentiero'}${t.name ? ` · ${t.name}` : ''}`, sub: zs.map((z) => splitName(z)[0]).join(', '), hay: `${(t.itinerary || []).join(' ')} ${t.operator || ''} cai segnavia`, href: walkHref(zs[0], 0, t), img: segnavia(t) });
   }
   const pages = [
+    ['Confronta funghi','Scegli due specie dal catalogo','confronto sosia differenze comparare funghi riferimento master','#/confronta'],
     ['Impara a riconoscere i funghi', 'Descrivi quello che vedi, anche se è velenoso', 'identificare trovato velenoso sosia caratteri lamelle pori volva anello sporata', '#/riconosci'],
     ['Emergenza e intossicazione', 'Cosa fare, chi chiamare', 'emergenza intossicazione avvelenamento centro antiveleni 118 112 pronto soccorso sintomi', '#/info'],
     ['Regole di raccolta nel Lazio', 'Attestato, contributo, limiti, orari', 'regole legge tesserino attestato contributo 3 kg limite orari divieti parchi aree protette', '#/info'],

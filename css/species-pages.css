@@ -23,9 +23,9 @@
 .fungus-page .ts-k { font-size:12px; font-weight:500; line-height:1.5; letter-spacing:0; text-transform:none; }
 .fungus-page .ts-v { font-size:16px; font-weight:400; line-height:1.5; }
 .fungus-page .ts-sub, .fungus-page .ts-note { font-size:12px; line-height:1.5; }
-.fungus-page .ts-dots { justify-content:flex-start; gap:6px; margin:0; }
-.fungus-page .ts-dot.ts-chip, .fungus-page .ts-form { min-height:44px; font-size:12px; padding:8px; }
-.fungus-page :is(.ts-dot.ts-chip,.ts-form)[aria-pressed="true"] { background:var(--select); color:var(--select-ink); border-color:var(--select-edge); }
+:is(.fungus-page,.fungus-compare) .ts-dots { justify-content:flex-start; gap:6px; margin:0; }
+:is(.fungus-page,.fungus-compare) .ts-dot.ts-chip, :is(.fungus-page,.fungus-compare) .ts-form { min-height:44px; font-size:12px; padding:8px; }
+:is(.fungus-page,.fungus-compare) :is(.ts-dot.ts-chip,.ts-form)[aria-pressed="true"] { background:var(--select); color:var(--select-ink); border-color:var(--select-edge); }
 .fungus-page .trait-strip .ts-art { height:64px; justify-content:flex-start; }
 .fungus-page .attention { margin:0 0 24px; padding:20px; border-radius:24px; }
 .fungus-page .attention .att-top { gap:8px; align-items:center; }
@@ -144,7 +144,7 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 }
 @media(hover:hover) {
   .fungus-page .tx-cmp-btn:hover { background:var(--action-hover); color:var(--action-ink); }
-  .fungus-page :is(.ts-dot.ts-chip,.ts-form):hover { border-color:var(--control-edge); }
+  :is(.fungus-page,.fungus-compare) :is(.ts-dot.ts-chip,.ts-form):hover { border-color:var(--control-edge); }
 }
 .fungus-page .tx-cmp-btn:focus-visible { outline:3px solid var(--focus); outline-offset:3px; }
 .tabbar .fungus-glyph { fill:currentColor; stroke:none; }
@@ -154,7 +154,7 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 .fungus-compare :is(.cmp-same,.cmp-sources) { margin-top:24px; }
 .fungus-compare .sec > summary { min-height:56px; font-size:16px; line-height:1.5; }
 .view:has(> .fungus-compare) > :is(.view-head,.seg-nav,.sub-nav) { display:none; }
-.fungus-compare .cmp-track { scroll-behavior:auto; }
+.fungus-compare .cmp-track { display:block; overflow:visible; touch-action:pan-y pinch-zoom; transition:none; }
 /* A label is a value, not an extra illustration: retain source details on request. */
 .growth-selector { display:flex; flex-wrap:wrap; gap:8px; margin:0 0 16px; }
 .growth-selector button { min-height:44px; padding:10px 14px; border:1px solid var(--control-edge); border-radius:22px; color:var(--text); background:var(--surface); font:600 14px/1.5 var(--font-body); cursor:pointer; }
@@ -183,7 +183,7 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 .mapctl-stack .mapctl-btn:hover { background:var(--surface-2); }
 .mapctl-x { width:44px; height:44px; }
 @media(max-width:359px) { .map-top .map-filters [data-intent] { padding-inline:6px; gap:4px; font-size:13px; } }
-/* JS settles each pair after a swipe; native snap can move the compositor during resize. */
+/* Una coppia alla volta: nessun binario orizzontale, anche durante il gesto touch. */
 .fungus-compare .cmp-track { scroll-snap-type:none; }
 
 /* Context: read the fact first, open the explanation when needed. */
@@ -332,7 +332,7 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 .cmp-edge-arrows svg { width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
 .cmp-pair-menu:focus-visible, .cmp-edge-arrows button:focus-visible { outline:3px solid var(--focus); outline-offset:3px; }
 .cmp-pair-nav.is-stuck .cmp-nav-content { position:fixed; top:var(--cmp-header-top); left:var(--cmp-header-left); width:var(--cmp-header-width); box-shadow:0 1px 0 var(--hair); }
-@media(max-width:899px) { .header-away .cmp-pair-nav { --cmp-header-top:0px; } }
+
 @media(hover:hover) { .cmp-edge-arrows button:hover { background:var(--surface-2); } }
 .cmp-chooser { width:min(440px,calc(100% - 32px)); max-height:80svh; margin:auto; padding:20px; border:1px solid var(--hair); border-radius:24px; color:var(--text); background:var(--bg); box-shadow:var(--shadow-2); }
 .cmp-chooser::backdrop { background:rgb(0 0 0 / .45); }
@@ -374,3 +374,97 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 .entity-accordion-root [data-entity-accordion] > summary:focus-visible { outline:3px solid var(--focus); outline-offset:-3px; border-radius:15px; }
 @media(hover:hover) { .entity-accordion-root [data-entity-accordion] > summary:hover { background:var(--surface-2); } }
 @media(prefers-reduced-motion:reduce) { .entity-accordion-root [data-entity-accordion] > summary, .entity-accordion-root [data-entity-accordion] > summary::after { transition:none; } }
+
+/* La fascia sicura sopra i nomi resta coperta anche quando la barra principale è fuori vista. */
+.cmp-pair-nav.is-stuck .cmp-nav-content::before { content:''; position:absolute; bottom:100%; left:0; right:0; height:env(safe-area-inset-top,0px); background:var(--bg); pointer-events:none; }
+
+/* La parte della specie si vede una volta per colonna; i valori restano separati. */
+.fungus-compare .cmp-part-art { display:flex; align-items:center; justify-content:flex-start; min-height:72px; margin:8px 0 12px; }
+.fungus-compare .cmp-part-art:empty { display:none; }
+.fungus-compare .cmp-part-art img { display:block; width:72px; height:72px; object-fit:contain; }
+.fungus-compare .cmp-cell:has(.cmp-part-art img) .cmp-v-art { display:none; }
+.fungus-compare .cmp-color-dot { display:none; flex:0 0 10px; width:10px; height:10px; border:1px solid var(--control-edge); border-radius:50%; background:var(--cmp-color); }
+.fungus-compare .cmp-cell:has(.cmp-part-art img) .cmp-color-dot { display:block; }
+.fungus-compare .cmp-illustration-note { display:none; max-width:65ch; margin:12px 0 16px; color:var(--text-2); font:400 13px/1.55 var(--font-body); }
+.fungus-compare .cmp-slide:has(.cmp-part-art img) .cmp-illustration-note { display:block; }
+
+/* I caratteri compatti si leggono come miniatura + valore, senza una seconda riga. */
+.fungus-compare .cmp-cell-miniature:has(.cmp-part-art img) { display:grid; grid-template-columns:44px minmax(0,1fr); align-items:center; gap:8px; }
+.fungus-compare .cmp-cell-miniature .cmp-part-art { min-height:44px; margin:0; }
+.fungus-compare .cmp-cell-miniature .cmp-part-art img { width:44px; height:44px; }
+.fungus-compare .cmp-cell-miniature .cmp-vals { min-width:0; }
+.fungus-compare .cmp-shape-art { flex:0 0 44px; width:44px; height:44px; align-items:center; justify-content:center; }
+.fungus-compare .cmp-shape-art img { display:block; width:44px; height:44px; object-fit:contain; }
+.fungus-compare .cmp-shape-art svg { width:40px; max-width:40px; height:40px; }
+
+/* Varianti del solo disegno: due controlli compatti nelle colonne del confronto. */
+.fungus-compare .cmp-variant-controls:empty { display:none; }
+.fungus-compare .cmp-variant-controls { margin:8px 0 16px; }
+.fungus-compare .cmp-variant-fields { display:grid; gap:8px; }
+.fungus-compare .cmp-variant-status { display:block; margin-top:8px; color:var(--text-2); font:400 12px/1.5 var(--font-body); }
+.fungus-compare .cmp-variant-status:empty { display:none; }
+@supports(grid-template-rows:subgrid) {
+  .fungus-compare .cmp-row[data-trait="cap_color"]:has(.cmp-variant-fields) > .cmp-cell { display:grid; grid-template-rows:subgrid; grid-row:span 3; row-gap:0; }
+  .fungus-compare .cmp-row[data-trait="cap_color"]:has(.cmp-variant-fields) > .cmp-cell > .cmp-part-art { grid-row:1; }
+  .fungus-compare .cmp-row[data-trait="cap_color"]:has(.cmp-variant-fields) > .cmp-cell > .cmp-variant-controls { grid-row:2; }
+  .fungus-compare .cmp-row[data-trait="cap_color"]:has(.cmp-variant-fields) > .cmp-cell > .cmp-vals { grid-row:3; align-self:start; }
+}
+
+.fungus-compare .cmp-variant-fields .ts-dots { min-width:0; flex-wrap:wrap; }
+.fungus-compare .cmp-variant-fields button { max-width:100%; overflow-wrap:anywhere; }
+.fungus-compare .cmp-variant-fields button:focus-visible { outline:2px solid var(--focus); outline-offset:2px; }
+
+/* Il confronto può partire dalla scelta di due specie, anche fuori dai sosia documentati. */
+.sub-nav.recognize-entry:has(.compare-entry) { flex-wrap:wrap; gap:8px; }
+.cmp-edit-line { display:flex; justify-content:flex-end; margin:-12px 0 12px; }
+.cmp-edit-line .btn { min-height:40px; padding:8px 12px; font-size:13px; }
+.cmp-picker-all { display:flex; align-items:center; justify-content:space-between; gap:12px; width:100%; min-height:48px; margin-top:16px; padding:12px 0 0; border:0; border-top:1px solid var(--border); background:none; color:var(--link); font:600 14px/1.5 var(--font-body); cursor:pointer; text-align:left; }
+.cmp-free-note { display:grid; gap:5px; padding:14px 16px; margin:20px 0; border-inline-start:3px solid var(--fiordaliso-ink); border-radius:0 12px 12px 0; background:var(--fiordaliso-soft); font:400 14px/1.6 var(--font-body); }
+.cmp-free-note b { color:var(--fiordaliso-ink); font-weight:650; }
+.cmp-start-pair { position:relative; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); align-items:stretch; gap:10px; max-width:900px; margin:24px auto; }
+.cmp-start-choice { display:flex; flex-direction:column; align-items:center; gap:10px; min-width:0; padding:0 0 18px; border:1px solid var(--border); border-radius:20px; background:var(--surface); color:var(--text); text-align:center; cursor:pointer; font-family:var(--font-body); }
+.cmp-start-choice > :is(img,.cmp-picker-placeholder,.cmp-start-empty) { display:grid; place-items:center; align-self:start; width:100%; height:auto; aspect-ratio:1; border-radius:19px 19px 0 0; object-fit:cover; }
+.cmp-start-label { padding:2px 10px 0; color:var(--text-2); font-size:11px; line-height:1.5; font-weight:600; }
+.cmp-start-choice b { padding:0 10px; font:600 22px/1.25 var(--font-display); overflow-wrap:anywhere; }
+.cmp-start-choice i { padding:0 10px; color:var(--text-2); font:italic 400 13px/1.5 var(--font-body); }
+.cmp-start-change { margin-top:auto; padding:4px 10px 0; color:var(--link); font:600 12px/1.5 var(--font-body); }
+.cmp-start-vs { position:absolute; z-index:1; inset:0 0 auto; aspect-ratio:2; display:grid; place-items:center; pointer-events:none; }
+.cmp-start-vs i { display:grid; place-items:center; width:46px; height:46px; border-radius:50%; background:var(--on-photo); color:var(--story-ink); box-shadow:0 2px 8px color-mix(in srgb,var(--scrim) 12%,transparent); font:italic 600 23px/1 var(--font-display); }
+.cmp-start-empty { color:var(--link); background:var(--surface-2); font:400 38px/1 var(--font-body); }
+.cmp-start-actions { display:flex; flex-wrap:wrap; justify-content:center; gap:12px; margin:20px 0; }
+.cmp-start-actions .btn { min-height:48px; font-size:14px; }
+.cmp-start-actions button:disabled { opacity:.55; cursor:default; }
+.cmp-start-context { max-width:65ch; margin:20px auto; text-align:center; color:var(--text-2); font:400 14px/1.6 var(--font-body); }
+.cmp-start-note { max-width:65ch; padding:20px; margin:28px auto; border-radius:16px; background:var(--surface-2); font:400 15px/1.65 var(--font-body); }
+.cmp-start-note b { font-weight:650; }
+.cmp-start-note p { margin:8px 0 0; }
+.cmp-finder { overflow-y:auto; }
+.cmp-finder-search { display:grid; gap:8px; margin:16px 0; color:var(--text-2); font:600 13px/1.5 var(--font-body); }
+.cmp-finder-search input { width:100%; min-height:44px; margin:0; padding:10px 12px; border:1px solid var(--border); border-radius:10px; background:var(--surface); color:var(--text); font:400 16px/1.5 var(--font-body); }
+.cmp-finder-scopes { display:flex; flex-wrap:wrap; gap:8px; }
+.cmp-finder-scopes button { min-height:44px; padding:8px 12px; border:1px solid var(--border); border-radius:999px; color:var(--text-2); background:var(--surface); font:600 12px/1.5 var(--font-body); cursor:pointer; }
+.cmp-finder-scopes [aria-pressed="true"] { background:var(--select); color:var(--select-ink); border-color:var(--select-edge); }
+.cmp-finder-count { margin:16px 0 12px; color:var(--text-2); font:400 13px/1.5 var(--font-body); }
+.cmp-finder-results { display:grid; gap:8px; }
+.cmp-finder-item { display:flex; align-items:center; gap:12px; width:100%; min-height:76px; padding:10px; border:1px solid var(--hair); border-radius:14px; background:var(--surface); color:var(--text); text-align:left; font-family:var(--font-body); cursor:pointer; }
+.cmp-finder-item > img,.cmp-finder-item > .cmp-picker-placeholder { flex:0 0 48px; width:48px; height:48px; border-radius:50%; object-fit:cover; }
+.cmp-picker-placeholder { display:grid; place-items:center; background:var(--surface-2); color:var(--text-2); }
+.cmp-finder-item > span:not(.cmp-picker-placeholder):not(:last-child),.cmp-finder-item > span:nth-child(2) { display:grid; gap:3px; min-width:0; flex:1; }
+.cmp-finder-item b { font:600 15px/1.4 var(--font-body); }
+.cmp-finder-item i { color:var(--text-2); font:italic 400 12px/1.4 var(--font-body); }
+.cmp-finder-item small { color:var(--text-2); font:400 12px/1.5 var(--font-body); }
+.cmp-finder-item .cmp-finder-risk { color:var(--crit-ink); font-weight:600; }
+.cmp-finder-item[aria-pressed="true"] { border-color:var(--link); background:var(--surface-2); }
+.cmp-picker-empty { padding:16px 0; color:var(--text-2); font:400 15px/1.6 var(--font-body); }
+:is(.cmp-start-choice,.cmp-finder button,.cmp-picker-all):focus-visible { outline:3px solid var(--focus); outline-offset:2px; }
+@media(max-width:359px) { .cmp-start-pair { gap:8px; } .cmp-start-choice b { font-size:19px; } }
+@supports(grid-template-rows:subgrid) {
+  .cmp-start-choice { display:grid; grid-template-rows:subgrid; justify-items:center; row-gap:10px; }
+  .cmp-start-choice:first-child { grid-column:1; grid-row:1 / span 5; }
+  .cmp-start-choice:last-child { grid-column:2; grid-row:1 / span 5; }
+  .cmp-start-choice > :is(img,.cmp-picker-placeholder,.cmp-start-empty) { grid-row:1; }
+  .cmp-start-label { grid-row:2; }
+  .cmp-start-choice > b { grid-row:3; }
+  .cmp-start-choice > i { grid-row:4; }
+  .cmp-start-change { grid-row:5; }
+}
