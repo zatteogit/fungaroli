@@ -65,7 +65,7 @@ test('base privata del profilo: salvataggio, distanze, navigatori, isolamento e 
   const href=await page.locator('#detail a[href*="google.com/maps/dir"]').first().getAttribute('href');expect(new URL(href).searchParams.get('origin')).toBe('41.9028,12.4964');
   await page.reload();await expect(page.locator('#detail [data-sec="accesso"] > summary')).toContainText('da Roma');
   expect((await api(page,'profile','PUT',{accountId:owner,base:{name:'Errata',lat:91,lon:0}})).status).toBe(422);
-  expect((await page.request.post('/api/community/travel',{headers:{origin:'http://localhost:8788'},data:{targets:[]}})).status()).toBe(422);
+  expect((await page.request.post('/api/community/travel',{headers:{origin:new URL(page.url()).origin},data:{targets:[]}})).status()).toBe(422);
   const csrf=await page.request.put('/api/community/profile',{headers:{origin:'https://evil.example'},data:{accountId:owner,base:null}});expect(csrf.status()).toBe(403);
   const second=await browser.newContext({serviceWorkers:'block'}),other=await second.newPage();await setup(other);await register(other,'Secondo');
   expect((await api(other,'session')).data.user.base).toBe(null);
@@ -195,7 +195,7 @@ for(const width of [320,1280]) test(`tracciato e profilo nello stesso riquadro a
   const focus=page.locator('#detail .walk-focus'),summary=focus.locator(':scope > summary');
   await expect(summary.locator('.walk-entrance').first()).toBeVisible();
   await expect(summary.locator('.tprof,.ws-forest')).toHaveCount(0);
-  await summary.click();
+  await summary.locator('.walk-title').click();
   await expect(summary.locator('.walk-entrance').first()).toBeHidden();
   await expect(summary.locator('.walk-title')).toBeVisible();
   await expect(focus.locator('.sec-body > .ws-forest')).toBeVisible();
@@ -243,6 +243,7 @@ for(const width of [320,1280]) test(`tracciato e profilo nello stesso riquadro a
 });
 
 test('Quando ha una sola testata, mantiene gli avvisi meteo e aggiunge solo dettagli',async({page})=>{
+ await page.clock.setFixedTime(new Date(new Date().setUTCHours(5,0,0,0)));
  await page.setViewportSize({width:390,height:900});await page.emulateMedia({reducedMotion:'reduce'});
  const errors=await setup(page,{gust:46});await page.goto('/#/zona/tancia/0');
  const section=page.locator('#detail details[data-sec="quando"]'),summary=section.locator(':scope > summary');

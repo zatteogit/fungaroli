@@ -18,7 +18,7 @@ async function setup(page,width) {
 
 for(const width of [390,1280]) test(`sfide: Confronta dà il timbro e le spunte di Osserva restano dopo il ricaricamento a ${width}px`,async({page})=>{
   const errors=await setup(page,width);
-  await page.goto('/#/guide');await expect(page.locator('.view[data-view="guide"]')).toBeVisible();
+  await page.goto('/#/impara');await expect(page.locator('.view[data-view="impara"]')).toBeVisible();
   await page.goto('/#/sfide');
   const view=page.locator('.view[data-view="sfide"]');
   await expect(view.locator('h1')).toHaveText('Sfide');
