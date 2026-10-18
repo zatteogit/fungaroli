@@ -155,9 +155,9 @@ test('tratto locale distinto dal percorso intero, segmenti separati e imbocco ma
   await expect(focus).toContainText('più segmenti separati');
   await focus.getByRole('tab',{name:'Tracciato',exact:true}).click();
   await expect(focus.locator('.walk-sketch polyline')).toHaveCount(2);
-  await focus.getByRole('tab',{name:'Profilo',exact:true}).click();
-  await expect(focus.getByRole('tabpanel',{name:'Profilo',exact:true})).toContainText('Non costituiscono un profilo continuo');
-  await expect(focus.getByRole('tabpanel',{name:'Profilo',exact:true}).locator('svg')).toHaveCount(0);
+  await focus.getByRole('tab',{name:'Quote',exact:true}).click();
+  await expect(focus.getByRole('tabpanel',{name:'Quote',exact:true})).toContainText('Non costituiscono un profilo continuo');
+  await expect(focus.getByRole('tabpanel',{name:'Quote',exact:true}).locator('svg')).toHaveCount(0);
   const values = await focus.locator('.walk-facts dd').allTextContents();
   await expect(focus.locator('summary .walk-stats li').first()).toContainText('4,1 km');
   expect(values).toHaveLength(1);
@@ -236,9 +236,9 @@ for(const width of [320,1280]) test(`tracciato e profilo nello stesso riquadro a
   await page.route('**/api/content/v1/snapshot',r=>r.fulfill({status:503,json:{error:'test'}}));
   await page.route('**/data/trails.json',r=>r.fulfill({json:data}));
   await page.evaluate(()=>{localStorage.removeItem('fungaroli:content:v1');localStorage.removeItem('fungaroli:prefs:v2');});await page.reload();
-  await focus.locator(':scope > summary').click();await profile.click();
-  await expect(visual.getByRole('tabpanel',{name:'Profilo',exact:true})).toContainText('mancano quote sufficienti');
-  await expect(visual.getByRole('tabpanel',{name:'Profilo',exact:true}).locator('svg')).toHaveCount(0);
+  await focus.locator(':scope > summary').click();await visual.getByRole('tab',{name:'Quote',exact:true}).click();
+  await expect(visual.getByRole('tabpanel',{name:'Quote',exact:true})).toContainText('mancano quote sufficienti');
+  await expect(visual.getByRole('tabpanel',{name:'Quote',exact:true}).locator('svg')).toHaveCount(0);
   expect(errors).toEqual([]);
 });
 

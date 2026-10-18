@@ -8,7 +8,7 @@ import {plannedDeparture, recommendedStartAvailable, calendarDate} from './plann
 import {speciesObservationContext} from './species-context.js';
 import { mapQuery, mountMapResults, compactMapFilters } from './map-experience.js';
 import './index-tip.js';
-import { leafGlyph, notebookGlyph } from './ui-icons.js';
+import { leafGlyph, notebookGlyph, carGlyph } from './ui-icons.js';
 import {fungusGlyph, progressCircle, weatherGlyphs} from './indicators.js';
 import { INTENTS, validIntent, normalizeInterests, primaryInterest, toggleInterest, seasonalSelection, matchesWalk, compareOutdoor } from './outing-intent.js';
 import './rails.js';
@@ -1664,7 +1664,7 @@ const IC = {
   copy: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V4H4v12h4"/></svg>',
   unknown: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 8a3 3 0 0 1 6 0c0 2-3 2-3 5M12 17h.01"/></svg>',
   clock: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>',
-  car: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 16v-4.5L7 7h10l2 4.5V16"/><path d="M3.5 16h17"/><circle cx="8" cy="17" r="1.6"/><circle cx="16" cy="17" r="1.6"/></svg>',
+  car: carGlyph,
   people: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8.5" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><circle cx="17" cy="9.5" r="2.4"/><path d="M15.5 14.2A4.5 4.5 0 0 1 21 18.5"/></svg>',
   walk: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="13" cy="4.5" r="1.8"/><path d="m9 21 2.5-6.5L14 17v4M8 11l3-3.5 3 1.5 2 3M11.5 14.5l1-5"/></svg>',
   back: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7"/></svg>',
@@ -2565,7 +2565,7 @@ const ICON = {
   ext: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v6H4V6h6"/></svg>',
   find: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 6 0 0 1 16 0z"/><path d="M10 12v6a2 2 0 0 0 4 0v-6"/></svg>',
   when: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>',
-  car: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 16V11l2-4h10l2 4v5"/><path d="M4 16h16"/><circle cx="8" cy="17" r="1.5"/><circle cx="16" cy="17" r="1.5"/></svg>',
+  car: carGlyph,
   trail: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 20c2-4 8-3 8-7s-6-3-6-7"/><circle cx="17" cy="5" r="1.5"/></svg>',
 };
 
@@ -2969,7 +2969,7 @@ function headX(t, h) {
 function trailProfile(zid, t, sp, band, heads = [], visualId = '') {
   const sm = t.samples || [];
   if (sm.length < 4 || sm.some(x => !Number.isFinite(x[0]))) return '';
-  if (t.lines?.length > 1) return `<p class="small muted">Quote campionate tra ${Math.min(...sm.map(x => x[0]))} e ${Math.max(...sm.map(x => x[0]))} m su segmenti separati. Non costituiscono un profilo continuo.</p>`;
+  if (t.lines?.length > 1) return '';
   const cats = trails[zid]?.sample_categories || [];
   const es = sm.map((x) => x[0]);
   const lo = Math.min(...es), hi = Math.max(...es);
@@ -2995,11 +2995,14 @@ function trailVisual(z, t, d, heads = [], where = 'list') {
   const id = `trail-visual-${where}-${`${z.id}-${t.id}`.replace(/[^\w-]/g, '_')}`, key = `${z.id}/${t.id}`;
   const view = trailViews.get(key) || 'profile', sketch = trailSketch(t, heads[0], heads.slice(1));
   const trace = sketch ? `<figure class="walk-sketch"><span class="trail-north" aria-hidden="true">N ↑</span><svg viewBox="${sketch.viewBox.map(n=>n.toFixed(1)).join(' ')}" role="img" aria-label="Schema del tratto locale orientato a nord${heads.length ? ', con accessi mappati numerati' : ''}">${sketch.paths.map(p => `<polyline points="${p}"/>`).join('')}${sketch.heads.map((p,k) => `<g class="trail-access" data-trail-head="${k}" aria-hidden="true"><circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="8"/><text x="${p[0].toFixed(1)}" y="${p[1].toFixed(1)}" text-anchor="middle" dominant-baseline="central">${k+1}</text></g>`).join('')}</svg><figcaption><details class="trail-sketch-info"><summary>Info sul tracciato</summary><p>${sketch.paths.length > 1 ? 'Segmenti separati. ' : ''}${heads.length ? 'I numeri indicano gli imbocchi mappati. ' : ''}Schema orientato a nord: per orientarti usa la mappa del sentiero.</p></details></figcaption></figure>` : '<p class="small muted">Tracciato non disponibile per questo tratto.</p>';
-  const profile = trailProfile(z.id, t, d?.best?.species, d?.best?.band, heads,id) || '<p class="small muted">Profilo altimetrico non disponibile: mancano quote sufficienti per questo tratto.</p>';
+  const profile = trailProfile(z.id, t, d?.best?.species, d?.best?.band, heads,id);
+  const elevations=(t.samples||[]).map(sample=>sample[0]).filter(Number.isFinite);
+  const quotes=elevations.length?`<dl class="trail-elevation-summary"><div><dt>Quota minima</dt><dd>${Math.min(...elevations).toLocaleString('it-IT')} <span>m</span></dd></div><div><dt>Quota massima</dt><dd>${Math.max(...elevations).toLocaleString('it-IT')} <span>m</span></dd></div></dl><p class="small muted">${t.lines?.length>1?'Quote campionate su segmenti separati. Non costituiscono un profilo continuo.':'Quote campionate nel tratto della zona; mancano campioni sufficienti per un profilo continuo.'}</p>`:'<p class="small muted">Quote non disponibili: mancano quote sufficienti per questo tratto.</p>';
+  const elevationLabel=profile?'Profilo':'Quote';
   return `<div class="trail-visual" data-trail-view-key="${esc(key)}">
-    <div class="trail-view-tabs" role="tablist" aria-label="Vista del tratto di ${esc(trailName(t))}">${[['profile','Profilo'],['trace','Tracciato']].map(([v,label]) => `<button type="button" role="tab" id="${id}-${v}-tab" data-trail-view="${v}" aria-selected="${view===v}" aria-controls="${id}-${v}" tabindex="${view===v?0:-1}">${label}</button>`).join('')}</div>
+    <div class="trail-view-tabs" role="tablist" aria-label="Vista del tratto di ${esc(trailName(t))}">${[['profile',elevationLabel],['trace','Tracciato']].map(([v,label]) => `<button type="button" role="tab" id="${id}-${v}-tab" data-trail-view="${v}" aria-selected="${view===v}" aria-controls="${id}-${v}" tabindex="${view===v?0:-1}">${label}</button>`).join('')}</div>
     <div class="trail-visual-panel" role="tabpanel" id="${id}-trace" data-trail-panel="trace" aria-labelledby="${id}-trace-tab" tabindex="0"${view!=='trace'?' hidden':''}>${trace}</div>
-    <div class="trail-visual-panel" role="tabpanel" id="${id}-profile" data-trail-panel="profile" aria-labelledby="${id}-profile-tab" tabindex="0"${view!=='profile'?' hidden':''}>${profile}</div>
+    <div class="trail-visual-panel${profile?'':' trail-visual-panel--quotes'}" role="tabpanel" id="${id}-profile" data-trail-panel="profile" aria-labelledby="${id}-profile-tab" tabindex="0"${view!=='profile'?' hidden':''}>${profile||quotes}</div>
     ${heads.length ? `<div class="th-row"><span class="th-k">Imbocchi</span><div class="th-list">${heads.map((h,k)=>`<a class="th-chip" id="${id}-head-${k}" data-trail-head="${k}" data-trail-head-chip href="${gmaps(h.lat,h.lon)}" target="_blank" rel="noopener" aria-label="Indicazioni stradali per l’imbocco ${k+1}${h.ele!=null?`, a ${h.ele} metri`:''}"><i class="th-n">${k+1}</i>${h.kind==='strada'?IC.car:ICON.track}<span><b>${h.ele!=null?`${h.ele.toLocaleString('it-IT')} m`:'Imbocco'}</b><small>${esc(h.road||(h.kind==='strada'?'su strada':'su sterrata'))}</small></span></a>`).join('')}</div></div>` : ''}
   </div>`;
 }

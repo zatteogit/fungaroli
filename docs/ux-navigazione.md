@@ -169,3 +169,20 @@ Verifiche browser dedicate: nota/scheda/Valle di Malito a 320 e 390 px, Indietro
 app e browser, Avanti, identità del DOM, accordion e posizione, focus, schede
 concatenate, X, link diretto e ricostruzione dopo l’evizione del DOM. Restano da
 verificare sul dispositivo fisico i gesti di navigazione di Safari.
+
+
+### Quote quando manca il profilo (decisione del 18/10)
+
+La prima tab del tratto si chiama «Profilo» soltanto quando il renderer può
+mostrare un profilo continuo. Per segmenti separati o campioni insufficienti
+diventa «Quote»: quota minima e massima dei campioni validi del tratto locale,
+con una breve spiegazione del limite. Nessuna linea unisce segmenti separati,
+nessun dislivello viene dedotto dall’intervallo di quote. Senza campioni resta
+un messaggio compatto. La tab «Tracciato» e gli imbocchi rimangono disponibili.
+Il riepilogo Quote ha altezza naturale, anche nelle anteprime; il grafico e il
+tracciato conservano il proprio spazio. Selezione e tastiera restano condivise
+fra le viste dello stesso tratto.
+
+L’auto delle indicazioni stradali e degli imbocchi usa un unico glyph frontale
+in `js/ui-icons.js`, con parabrezza, fari e ruote riconoscibili a 18 px. È
+decorativo, eredita il colore e conserva testo, destinazione e area del comando.

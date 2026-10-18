@@ -2361,6 +2361,14 @@ html.entity-open { overflow: hidden; }
 .pt-preview .trail-visual-panel, .sheet .trail-visual-panel { height: 144px; }
 .pt-preview .trail-visual-panel .tprof svg, .sheet .trail-visual-panel .tprof svg { height: 78px; }
 
+/* Senza profilo, i dati di quota occupano soltanto lo spazio necessario. */
+.trail-visual-panel.trail-visual-panel--quotes { height:auto; padding:16px; gap:12px; }
+.trail-elevation-summary { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin:0; }
+.trail-elevation-summary dt { font-size:13px; color:var(--text-2); }
+.trail-elevation-summary dd { margin:4px 0 0; font-size:22px; line-height:1.3; font-weight:600; font-variant-numeric:tabular-nums; }
+.trail-elevation-summary dd span { font-size:14px; font-weight:400; }
+.trail-visual-panel--quotes p { margin:0; }
+
 /* Botanical sheets and a private notebook: readable paper, including dark mode. */
 .botanical-tools { display:grid; gap:12px; margin-bottom:16px; }
 .botanical-tools label,.notebook-form label { display:grid; gap:6px; font-size:14px; }
