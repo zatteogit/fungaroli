@@ -1,0 +1,90 @@
+{
+  "schema_version": "fungal-semantic-1",
+  "id": "virescens-rosa-cappello",
+  "species": "virescens",
+  "field": "cap_color",
+  "value": "rosa",
+  "source": {
+    "master": "master.png",
+    "master_sha256": "680fa52705c98c5e56e316a7cfa9d1ddb1a0bab951cf830a96a68fc7864f7a3a",
+    "cell": 0,
+    "crop_bbox": [
+      38,
+      166,
+      408,
+      340
+    ],
+    "crop_resized_size": [
+      370,
+      174
+    ],
+    "padding": 8,
+    "crop_sha256": "86f5c0da45766968a442d19bd67c0bc39c7bfd617dabea9ddb9e0029110d02a8",
+    "original_path": "/workspace/fronda-image-production/incoming/icone/virescens-colore-liscio-2026-10-18-r03.png"
+  },
+  "raster_review": {
+    "status": "passed-independent-species-raster-review",
+    "reviewer": "vector_production (independent of raster_production author)",
+    "scope": "Independent direct three-sheet review completed before SVG: pink/purple smooth cyanoxantha alternatives; pale lamellae and stem, no ring, volva or reticulum. Schematic aggregate, not organism identification.",
+    "record": "raster-review.md",
+    "record_sha256": "0388f443018218b24f16a664e4630fb8e764124754c11ceffb0957894f1675f2",
+    "master_sha256": "680fa52705c98c5e56e316a7cfa9d1ddb1a0bab951cf830a96a68fc7864f7a3a"
+  },
+  "trace_sha256": "eb80aa051f83508eb25a884fc550ffd420f73a631cb25403aeec8d23cc5fe1c4",
+  "anatomy": {
+    "canvas": [
+      386,
+      190
+    ],
+    "status": "manually-annotated-from-reviewed-raster",
+    "raster_review_sha256": "0388f443018218b24f16a664e4630fb8e764124754c11ceffb0957894f1675f2",
+    "trace_sha256": "eb80aa051f83508eb25a884fc550ffd420f73a631cb25403aeec8d23cc5fe1c4",
+    "description": "Schema dell’alternativa rosa liscia del gruppo virescens/cyanoxantha. Cappello convesso, lamelle chiare; fungo intero con gambo chiaro senza anello, volva o reticolo. Non identificazione di organismo.",
+    "annotation_method": "Manual regions fitted separately to the approved r03 raster crops; real boolean-intersected paint paths, no automatic anatomy inference.",
+    "parts": [
+      {
+        "id": "cap",
+        "label": "Cappello liscio",
+        "region": "M-2-2H388V146H365C285 110 95 110 20 146H-2Z",
+        "meaning": "Alternativa cromatica liscia coerente con cyanoxantha nei traits_notes dell’aggregato; non aggiungere il mosaico di virescens.",
+        "region_plus_source_paths": [
+          0,
+          4,
+          28,
+          37,
+          52
+        ],
+        "source_path_selection_note": "Manually reviewed pink/purple cap paint stack added to an interior boundary polygon. Pale gill and stem paints excluded; dark shared boundary is split graphically.",
+        "extra_source_paths_visible_only": true
+      },
+      {
+        "id": "hymenophore",
+        "label": "Lamelle",
+        "remainder": true,
+        "meaning": "Lamelle chiare schematiche; nessun poro o piega sostitutivo, nessun conteggio quantitativo."
+      }
+    ],
+    "limitations": [
+      "Aggregate illustrated alternatives do not assert every trait coexists in one organism.",
+      "Smooth pink/purple alternative follows cyanoxantha notes; do not transfer virescens mosaic.",
+      "Hiding parts can expose transparent gaps. No hidden tissue reconstruction.",
+      "Technical tint is not an approved biological color variant."
+    ]
+  },
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "author": "Fronda/Fungaroli",
+  "geometry": "Source paint stacks intersected into actual anatomical part geometries; no raster, masks, clips or complete-object copies. Graphic underpaint retained inside each part to preserve antialiasing, not reconstructed hidden tissue.",
+  "operations": [
+    "inspect-part",
+    "toggle-part",
+    "technical-material-tint-within-part"
+  ],
+  "unsupported": [
+    "anatomical morphing",
+    "new biological color variants",
+    "automatic anatomy recognition",
+    "quantitative organ counts from illustrative marks"
+  ],
+  "review_status": "svg-awaiting-coordinator-review"
+}

@@ -75,3 +75,14 @@ Solo i due nuovi SVG sono qui legati a una revisione indipendente raster e vetto
 Per ogni nuovo disegno: raster corretto → revisione severa del valore e della specie → ritaglio con hash → ricalco → annotazione delle parti e dei dettagli → controllo isolato e a 64 px → revisione indipendente SVG → verifica delle modifiche. `trace_queue.py` rifiuta fonti senza revisione esplicita legata all’hash; la coda non promuove automaticamente nessuna tavola. Non propagare le regioni fra raster con sagome diverse. Reticoli, lamelle, squame e strutture alveolate richiedono annotazioni specifiche. Le piante vanno prima revisionate come raster, senza trasferire un simbolo generico a una specie incompatibile.
 
 La consegna termina a questo checkpoint. Nessuna integrazione automatica nell’app e nessuna conversione in serie dichiarata completata. Il raster Tylopilus corretto è disponibile per un import separato; questa branch non modifica gli asset pubblicati.
+
+## Produzione autorizzata successiva · otto candidati SVG
+
+Dopo il checkpoint di Tylopilus sono stati prodotti altri **8 SVG da raster già revisionati**, conservando separata l’approvazione del nuovo vettore:
+
+- [Primo lotto botanico](botanici-lotto-01/README.md): fragolina foglia/frutto, finocchietto ombrella, rosa cinorrodo. Quattro master specifici, livelli anatomici annotati, manifest/hash e inspector.
+- [Secondo lotto russule](virescens-lotto-02/README.md): cappello e intero rosa/violetto lisci della tavola r03 corretta; nessun mosaico trasferito alle alternative cyanoxantha.
+
+Tutti gli otto hanno geometrie reali senza bitmap o clip, render a 64/128/656 px e prove di tinta confinata/parti isolate. **Stato: `svg-awaiting-coordinator-review`**, non automaticamente aggiunti ai due SVG revisionati precedenti. La revisione indipendente degli otto nuovi vettori resta del coordinatore. Nessuna sostituzione runtime o integrazione nell’app effettuata da questa produzione.
+
+Verificati anche la rigenerazione esatta degli otto crop dai rispettivi master e due ricalchi rappresentativi riprodotti con hash identico (foglia a 16 colori e fungo intero da RGB diretto). Gli inspector dei due lotti hanno superato selezione di tutti i campioni, livelli, tinta tecnica, reset e temi chiaro/scuro senza errori JavaScript.

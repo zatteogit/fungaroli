@@ -1,0 +1,33 @@
+{
+  "status": "technical-checks-passed-awaiting-independent-svg-review",
+  "parts": [
+    "cap",
+    "hymenophore"
+  ],
+  "path_count": 64,
+  "bitmap_count": 0,
+  "clip_count": 0,
+  "renders": [
+    {
+      "width": 64,
+      "silhouette_iou": 0.971861,
+      "raster_rgb_mae_255": 6.80466,
+      "trace_rgb_mae_255": 0.249205
+    },
+    {
+      "width": 128,
+      "silhouette_iou": 0.991963,
+      "raster_rgb_mae_255": 5.911144,
+      "trace_rgb_mae_255": 0.194461
+    },
+    {
+      "width": 656,
+      "silhouette_iou": 0.995748,
+      "raster_rgb_mae_255": 5.738359,
+      "trace_rgb_mae_255": 0.04451
+    }
+  ],
+  "meaning": "Fidelity/edit checks do not establish botanical correctness. Prior species-specific raster review is recorded; SVG needs coordinator review.",
+  "all_part_tints_confined": true,
+  "svg_sha256": "8bb90dd0b63efb86b7d878542112ca54ac506f0f7a2822867efb7e151c01f8c4"
+}

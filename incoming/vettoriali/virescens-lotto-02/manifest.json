@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "method": "Approved corrected raster r03 before real semantic vector parts; SVG coordinator review pending.",
+  "items": [
+    {
+      "id": "virescens-rosa-cappello",
+      "species": "virescens",
+      "tile": "cappello",
+      "field": "cap_color",
+      "value": "rosa",
+      "raster_master": "virescens-rosa-cappello/master.png",
+      "raster_sha256": "680fa52705c98c5e56e316a7cfa9d1ddb1a0bab951cf830a96a68fc7864f7a3a",
+      "cell": 0,
+      "raster_review_sha256": "0388f443018218b24f16a664e4630fb8e764124754c11ceffb0957894f1675f2",
+      "svg": "virescens-rosa-cappello/semantic.svg",
+      "svg_sha256": "9fe16faee778becd0166b93061b5c7ca863722b8b0f03abe36044f40f0ea3180",
+      "anatomy_sha256": "618a4d9df7e1f612ff12991e9cecdd933cbfb83cced40e472c94cd891cbbe1d0",
+      "status": "technical-checks-passed-awaiting-coordinator-svg-review",
+      "paths": 63,
+      "parts": [
+        "cap",
+        "hymenophore"
+      ],
+      "embedded_raster": 0,
+      "clips": 0
+    },
+    {
+      "id": "virescens-rosa-gambo",
+      "species": "virescens",
+      "tile": "gambo",
+      "field": "cap_color",
+      "value": "rosa",
+      "raster_master": "virescens-rosa-gambo/master.png",
+      "raster_sha256": "680fa52705c98c5e56e316a7cfa9d1ddb1a0bab951cf830a96a68fc7864f7a3a",
+      "cell": 1,
+      "raster_review_sha256": "0388f443018218b24f16a664e4630fb8e764124754c11ceffb0957894f1675f2",
+      "svg": "virescens-rosa-gambo/semantic.svg",
+      "svg_sha256": "779e1ee684d2e86e28d532feb7918458485aa1b7fc17a502dd55d3f76edb4d4e",
+      "anatomy_sha256": "73a7cae574c00f0f734a0bd3c25e0e89df1b7d3c19c07880fe743cd19281c120",
+      "status": "technical-checks-passed-awaiting-coordinator-svg-review",
+      "paths": 56,
+      "parts": [
+        "stem",
+        "cap",
+        "hymenophore"
+      ],
+      "embedded_raster": 0,
+      "clips": 0
+    },
+    {
+      "id": "virescens-violetto-cappello",
+      "species": "virescens",
+      "tile": "cappello",
+      "field": "cap_color",
+      "value": "violetto",
+      "raster_master": "virescens-violetto-cappello/master.png",
+      "raster_sha256": "680fa52705c98c5e56e316a7cfa9d1ddb1a0bab951cf830a96a68fc7864f7a3a",
+      "cell": 3,
+      "raster_review_sha256": "0388f443018218b24f16a664e4630fb8e764124754c11ceffb0957894f1675f2",
+      "svg": "virescens-violetto-cappello/semantic.svg",
+      "svg_sha256": "8bb90dd0b63efb86b7d878542112ca54ac506f0f7a2822867efb7e151c01f8c4",
+      "anatomy_sha256": "b4b9e6a8039968bcf0491e5deb101e0369046261f3aa58336b6d90edb99947b9",
+      "status": "technical-checks-passed-awaiting-coordinator-svg-review",
+      "paths": 64,
+      "parts": [
+        "cap",
+        "hymenophore"
+      ],
+      "embedded_raster": 0,
+      "clips": 0
+    },
+    {
+      "id": "virescens-violetto-gambo",
+      "species": "virescens",
+      "tile": "gambo",
+      "field": "cap_color",
+      "value": "violetto",
+      "raster_master": "virescens-violetto-gambo/master.png",
+      "raster_sha256": "680fa52705c98c5e56e316a7cfa9d1ddb1a0bab951cf830a96a68fc7864f7a3a",
+      "cell": 4,
+      "raster_review_sha256": "0388f443018218b24f16a664e4630fb8e764124754c11ceffb0957894f1675f2",
+      "svg": "virescens-violetto-gambo/semantic.svg",
+      "svg_sha256": "3a12958c1dfd4c22f022a0f3fcf0d63abcb5ab0a921be092736701584f5524da",
+      "anatomy_sha256": "e47c8603c23d267a2dfb08993e91b9e2484f35ae6954d70612eea42f7e2c7ae1",
+      "status": "technical-checks-passed-awaiting-coordinator-svg-review",
+      "paths": 64,
+      "parts": [
+        "stem",
+        "cap",
+        "hymenophore"
+      ],
+      "embedded_raster": 0,
+      "clips": 0
+    }
+  ]
+}

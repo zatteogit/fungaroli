@@ -19,12 +19,16 @@ def build(folder):
     assert record['raster_review']['status']=='passed-independent-species-raster-review'
     if (folder/'detail-candidates.json').exists():
         assert json.loads((folder/'detail-candidates.json').read_text())['review_status']=='manually-reviewed-candidate-overlay'
+    if record.get('domain')=='fungal':
+        traits=record['provenance']['documented_traits']['traits']
+        assert record['value']in traits['cap_color']and 'convesso'in traits['cap_shape']
+        assert traits['stem_ring']is False and traits['stem_volva']is False and traits['stem_reticulum']is False
     trace=ET.parse(folder/'trace-clean.svg').getroot();w,h=ann['canvas'];root=element('svg',{'viewBox':f'0 0 {w} {h}','width':str(w),'height':str(h),'role':'img','aria-labelledby':'title description'})
     root.append(element('title',{'id':'title'},record['name']))
     root.append(element('desc',{'id':'description'},ann['description']))
-    meta={'schema_version':'botanical-semantic-1','id':record['id'],'species':record['species'],'field':record['field'],'value':record['value'],'source':record['source'],'raster_review':record['raster_review'],'trace_sha256':record['trace_sha256'],'anatomy':ann,'license':'CC BY-SA 4.0','license_url':'https://creativecommons.org/licenses/by-sa/4.0/','author':'Fronda/Fungaroli','geometry':'Source paint stacks intersected into actual anatomical part geometries; no raster, masks, clips or complete-object copies. Graphic underpaint retained inside each part to preserve antialiasing, not reconstructed hidden tissue.','operations':['inspect-part','toggle-part','technical-material-tint-within-part'],'unsupported':['anatomical morphing','new biological color variants','automatic anatomy recognition','quantitative organ counts from illustrative marks'],'review_status':'svg-awaiting-coordinator-review'}
+    meta={'schema_version':'fungal-semantic-1'if record.get('domain')=='fungal'else'botanical-semantic-1','id':record['id'],'species':record['species'],'field':record['field'],'value':record['value'],'source':record['source'],'raster_review':record['raster_review'],'trace_sha256':record['trace_sha256'],'anatomy':ann,'license':'CC BY-SA 4.0','license_url':'https://creativecommons.org/licenses/by-sa/4.0/','author':'Fronda/Fungaroli','geometry':'Source paint stacks intersected into actual anatomical part geometries; no raster, masks, clips or complete-object copies. Graphic underpaint retained inside each part to preserve antialiasing, not reconstructed hidden tissue.','operations':['inspect-part','toggle-part','technical-material-tint-within-part'],'unsupported':['anatomical morphing','new biological color variants','automatic anatomy recognition','quantitative organ counts from illustrative marks'],'review_status':'svg-awaiting-coordinator-review'}
     root.append(element('metadata',text=json.dumps(meta,ensure_ascii=False)))
-    full=parse(f'M-2-2H{w+2}V{h+2}H-2Z');regions={};covered=pathops.Path()
+    full=parse(f'M-2-2H{w+2}V{h+2}H-2Z');regions={};covered=pathops.Path();visible_extras=None
     for part in ann['parts']:
         if part.get('region_svg'):
             detail=folder/part['region_svg'];assert digest(detail)==part['region_sha256'];shape=pathops.Path()
@@ -32,7 +36,11 @@ def build(folder):
             shape=pathops.simplify(shape)
         else:shape=subtract(full,covered)if part.get('remainder')else parse(part['region'])
         for source_index in part.get('region_plus_source_paths',[]):
-            node=trace[source_index];shape.addPath(parse(node.get('d'),node.get('transform')))
+            if part.get('extra_source_paths_visible_only'):
+                if visible_extras is None:visible_extras={i:g for i,c,g in visible_paints(trace)}
+                shape.addPath(visible_extras[source_index])
+            else:
+                node=trace[source_index];shape.addPath(parse(node.get('d'),node.get('transform')))
         if part.get('region_plus_source_paths'):shape=pathops.simplify(shape)
         # Annotated regions are disjoint partitions: overlap follows explicit order.
         shape=subtract(shape,covered);regions[part['id']]=shape
