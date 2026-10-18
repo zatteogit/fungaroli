@@ -957,6 +957,32 @@ function renderCompare(box, ref, pick) {
   // l'altezza segue la slide visibile: niente vuoto sotto i confronti corti
   const gallery = box.querySelector('.cmp-gallery'), header = box.querySelector('.cmp-pair-nav');
   const headerContent = header.querySelector('.cmp-nav-content');
+  let headerWanted=false, headerMotion=null;
+  const setHeaderStuck = stuck => {
+    if (stuck===headerWanted) return;
+    headerWanted=stuck;
+    const wasFixed=header.classList.contains('is-stuck');
+    const opacity=wasFixed?Number.parseFloat(getComputedStyle(headerContent).opacity):0;
+    headerMotion?.cancel();
+    headerMotion=null;
+    if (stuck) header.classList.add('is-stuck');
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches || !headerContent.animate) {
+      header.classList.toggle('is-stuck',stuck);
+      return;
+    }
+    // In uscita resta fisso fino al termine della dissolvenza: la posizione
+    // non torna nel flusso a metà animazione. Le inversioni ripartono dall'opacità corrente.
+    const motion=headerContent.animate([{opacity},{opacity:stuck?1:0}],{
+      duration:stuck?200:160,easing:'cubic-bezier(.2,.8,.2,1)',fill:'both',
+    });
+    headerMotion=motion;
+    motion.onfinish=()=>{
+      if (headerMotion!==motion) return;
+      if (!headerWanted) header.classList.remove('is-stuck');
+      motion.cancel();headerMotion=null;
+    };
+  };
+
   const syncCompareHeader = () => {
     if (!gallery.getClientRects().length) return;
     const appbarHidden = matchMedia('(max-width:899px)').matches && document.documentElement.classList.contains('header-away');
@@ -977,7 +1003,7 @@ function renderCompare(box, ref, pick) {
     }
     header.style.setProperty('--cmp-header-left', `${rect.left}px`);
     header.style.setProperty('--cmp-header-width', `${rect.width}px`);
-    header.classList.toggle('is-stuck', !!pastColumns && onScreen);
+    setHeaderStuck(!!pastColumns && onScreen);
   };
   addEventListener('scroll', syncCompareHeader, {passive:true});
   addEventListener('resize', syncCompareHeader, {passive:true});
@@ -993,6 +1019,7 @@ function renderCompare(box, ref, pick) {
     window.visualViewport?.removeEventListener('resize', syncCompareHeader);
     window.visualViewport?.removeEventListener('scroll', syncCompareHeader);
     headerChanges.disconnect(); headerSize.disconnect();
+    headerMotion?.cancel();headerMotion=null;
     ro.disconnect(); trackSize.disconnect();
     candidateAnimation?.cancel();
   };
