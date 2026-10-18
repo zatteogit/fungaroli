@@ -15,7 +15,7 @@ Ridondanze tenute di proposito:
 
 ## Interessi dell’uscita — decisione del 16 ottobre 2026
 
-Nella home la barra espone **Alla ricerca di… › Funghi / Piante / Sentieri**: sono interessi indipendenti, combinabili e ricordati tra home e mappa. «Alla ricerca di…» apre i filtri avanzati. Sotto compaiono **Poca gente / Accesso comodo / Vicino a casa**, con icona sostituita dalla spunta quando selezionati. «Poca gente» mantiene un testo fisso, come richiesto nella revisione finale. La navigazione Uscite, Mappa, Scopri e Taccuino resta la stessa.
+Nella home la barra espone **Alla ricerca di… › Funghi / Piante / Sentieri**: sono interessi indipendenti, combinabili e ricordati tra home e mappa. «Alla ricerca di…» apre i filtri avanzati. Sotto compaiono **Poca gente / Accesso comodo / Vicino a me**, con icona sostituita dalla spunta quando selezionati. «Poca gente» mantiene un testo fisso, come richiesto nella revisione finale. La navigazione Uscite, Mappa, Scopri e Taccuino resta la stessa.
 
 Con Funghi attivo l’indice e l’ordine biologico restano esclusivamente fungini. Piante aggiunge gli spunti botanici nella stessa proposta e nella fascia delle specie; una selezione esplicita di piante restringe i percorsi a quelli con ambienti compatibili. Sentieri richiede un tratto mappato e abilita la ricerca pratica insieme agli altri interessi. Senza interessi selezionati si esplorano le proposte pratiche, senza indice. Non si sommano punteggi biologici diversi.
 

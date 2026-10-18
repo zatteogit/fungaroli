@@ -953,7 +953,7 @@ function renderOutdoorMap() {
 }
 
 // Tre intenti sempre esposti, preferenze e specie nel pannello avanzato.
-const PREFS = [['avoidCrowd', 'Poca gente', 'Poca gente'], ['preferComfort', 'Accesso comodo', 'Comodo'], ['distancePenalty', 'Vicino a casa', 'A casa']];
+const PREFS = [['avoidCrowd', 'Poca gente', 'Poca gente'], ['preferComfort', 'Accesso comodo', 'Comodo'], ['distancePenalty', 'Vicino a me', 'Vicino a me']];
 const mapToolbarObserver=new ResizeObserver(entries=>{
   for(const {target} of entries)target.closest('.view-map')?.style.setProperty('--map-toolbar-bottom',`${target.offsetTop+target.offsetHeight+12}px`);
 });
@@ -1285,7 +1285,7 @@ function prepGeneralHtml(rules) {
 }
 const adjParts = (zone, d) => {
   const out = [];
-  if (state.distancePenalty) out.push({ label: 'vicino a casa', mult: proximityMultiplier(zone) });
+  if (state.distancePenalty) out.push({ label: 'vicino a me', mult: proximityMultiplier(zone) });
   if (state.avoidCrowd && d?.crowd) out.push({ label: 'poca gente', mult: 1 - 0.45 * d.crowd.value });
   if (state.preferComfort && d?.comfort) out.push({ label: 'accesso comodo', mult: 0.55 + 0.45 * d.comfort.value });
   return out;
