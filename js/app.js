@@ -1488,9 +1488,9 @@ function calendarWeather(z,d) {
 }
 
 function dayChips(box, selected, onPick, { withAll = false } = {}) {
-  const previous=weatherPainting?box:null,railScroll=box.scrollLeft;
-  if(previous)box=document.createElement('div');
-  box.innerHTML = '';
+  const previous=box,hadDays=box.children.length>0;
+  const previousSelection=box.querySelector('[aria-selected="true"]')?.dataset.dayOffset;
+  box=document.createElement('div');
   const mk = (top, mid, o, sc) => {
     const b = document.createElement('button');
     b.type = 'button';
@@ -1522,8 +1522,16 @@ function dayChips(box, selected, onPick, { withAll = false } = {}) {
     if (best) { mk(o === 0 ? 'Oggi' : o === 1 ? 'Domani' : fmtDate(best.d.date, { weekday: 'long' }).replace('.', ''), fmtDate(best.d.date, { day: 'numeric' }), o, best.s);
     box.lastChild.insertAdjacentHTML('beforeend',calendarWeather(best.z,best.d)); }
   }
-  if(previous){reconcileChildren(previous,box);previous.scrollLeft=railScroll;}
-  else box.querySelector('[aria-selected="true"]')?.scrollIntoView({ block: 'nearest', inline: 'center' });
+  // Conserva nodi, focus e posizione del binario mentre cambia la selezione.
+  reconcileChildren(previous,box);
+  const active=previous.querySelector('[aria-selected="true"]');
+  if(active&&!weatherPainting&&(!hadDays||previousSelection!==active.dataset.dayOffset)){
+    const rail=previous.getBoundingClientRect(),chip=active.getBoundingClientRect();
+    previous.scrollTo({
+      left:previous.scrollLeft+chip.left-rail.left-(rail.width-chip.width)/2,
+      behavior:hadDays&&!matchMedia('(prefers-reduced-motion: reduce)').matches?'smooth':'instant'
+    });
+  }
 }
 
 // Un riscontro anche su iOS, dove le View Transitions sono disattivate.
