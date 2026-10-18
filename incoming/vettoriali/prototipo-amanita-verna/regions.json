@@ -1,0 +1,33 @@
+{
+  "taxon_key": "amanita-verna",
+  "variant": {
+    "cap_color": "crema",
+    "cap_shape": "emisferico"
+  },
+  "canvas": [
+    280,
+    354
+  ],
+  "source": {
+    "sheet": "incoming/icone/confronto-combinazioni-2026-10-18-01-r01.png",
+    "branch": "images/missing-comparison-2026-10-18",
+    "cell": 1,
+    "crop_box": [
+      496,
+      66,
+      760,
+      404
+    ],
+    "padding": 8,
+    "method": "Raster generato e revisionato prima della vettorizzazione; celle estratte con sheet_cells.drawings.",
+    "sheet_sha256": "dba1e3ee68d7e60a272b0c0e779bf4a890f88c8d0503213bce906d1510e9b81a"
+  },
+  "review": "Partizioni anatomiche annotate sul raster e da verificare visivamente nel prototipo; non dedotte automaticamente dai colori.",
+  "boundaries": {
+    "cap_zone": "M-10 -10H290V160H-10Z",
+    "gills": "M25 131C26 112 77 106 119 107L118 152C77 154 37 146 25 136ZM165 107C205 107 245 114 252 131C247 143 205 152 167 151Z",
+    "neck": "M119 105H164L168 160H115Z",
+    "ring": "M112 164C122 160 156 160 168 165L191 191L180 205H101L90 195Z",
+    "volva": "M74 246C82 230 91 237 100 254C116 269 135 283 141 298C148 280 168 266 179 252C189 232 201 235 205 252L230 365H50Z"
+  }
+}

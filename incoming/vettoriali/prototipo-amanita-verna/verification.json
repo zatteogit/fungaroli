@@ -1,0 +1,32 @@
+{
+  "vector_paths": 115,
+  "layers": [
+    "cap",
+    "hymenophore",
+    "ring",
+    "stem",
+    "volva"
+  ],
+  "embedded_rasters": 0,
+  "renders": [
+    {
+      "width": 128,
+      "source_silhouette_iou": 0.99406,
+      "semantic_vs_trace_pixels_over_12_fraction": 0.01818
+    },
+    {
+      "width": 560,
+      "source_silhouette_iou": 0.99549,
+      "semantic_vs_trace_pixels_over_12_fraction": 0.00357
+    }
+  ],
+  "checks": [
+    "source digest",
+    "documented traits",
+    "real paths and unique IDs",
+    "five non-empty anatomical groups",
+    "unsupported edits rejected",
+    "non-cap paths unchanged",
+    "cap recolor stays within cap"
+  ]
+}

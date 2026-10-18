@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "type": "schematic-illustration",
+  "taxon_key": "amanita-verna",
+  "variant": {
+    "cap_color": "crema",
+    "cap_shape": "emisferico"
+  },
+  "documented_traits": {
+    "hymenophore": [
+      "lamelle"
+    ],
+    "hymenophore_color": [
+      "bianco"
+    ],
+    "cap_color": [
+      "bianco",
+      "crema"
+    ],
+    "cap_shape": [
+      "emisferico",
+      "convesso",
+      "piano"
+    ],
+    "cap_size": [
+      "medio"
+    ],
+    "stem_ring": true,
+    "stem_volva": true,
+    "stem_reticulum": false,
+    "flesh_change": [
+      "nessuno"
+    ],
+    "smell": [
+      "nessuno"
+    ],
+    "habitat": [
+      "latifoglie"
+    ],
+    "growth": [
+      "singolo",
+      "gregario"
+    ],
+    "season": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "spore_print": [
+      "bianco"
+    ],
+    "cap_veil": null,
+    "latex": false,
+    "flesh_texture": [
+      "fibrosa",
+      "soda"
+    ],
+    "cap_surface": [
+      "liscia",
+      "viscida",
+      "asciutta"
+    ],
+    "gill_attachment": [
+      "libere"
+    ],
+    "stem_base": [
+      "bulbosa",
+      "normale"
+    ]
+  },
+  "source": {
+    "sheet": "incoming/icone/confronto-combinazioni-2026-10-18-01-r01.png",
+    "branch": "images/missing-comparison-2026-10-18",
+    "cell": 1,
+    "crop_box": [
+      496,
+      66,
+      760,
+      404
+    ],
+    "padding": 8,
+    "method": "Raster generato e revisionato prima della vettorizzazione; celle estratte con sheet_cells.drawings.",
+    "sheet_sha256": "dba1e3ee68d7e60a272b0c0e779bf4a890f88c8d0503213bce906d1510e9b81a",
+    "crop_sha256": "fc715b0b56146736095ee8b7bd7d411b6d86faf61883ebd3ec16d29cd0e279dc",
+    "traits_sha256": "a2149f75008184cb691c4935d6967706c36069392106f68d7fa20d4e6eee5d18"
+  },
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "author": "Fronda/Fungaroli",
+  "raster_first": true,
+  "vectorizer": {
+    "package": "vtracer",
+    "version": "0.6.15",
+    "palette_colors": 16,
+    "alpha_threshold": 220
+  },
+  "semantic_segmentation": {
+    "method": "reviewed anatomical clip regions",
+    "annotation": "Partizioni anatomiche annotate sul raster e da verificare visivamente nel prototipo; non dedotte automaticamente dai colori.",
+    "not_automatic_anatomy_recognition": true
+  },
+  "layers": [
+    {
+      "id": "cap",
+      "label": "Cappello",
+      "trait_fields": [
+        "cap_color",
+        "cap_shape",
+        "cap_surface"
+      ]
+    },
+    {
+      "id": "hymenophore",
+      "label": "Lamelle",
+      "trait_fields": [
+        "hymenophore",
+        "hymenophore_color"
+      ]
+    },
+    {
+      "id": "stem",
+      "label": "Gambo",
+      "trait_fields": [
+        "stem_base"
+      ]
+    },
+    {
+      "id": "ring",
+      "label": "Anello",
+      "trait_fields": [
+        "stem_ring"
+      ]
+    },
+    {
+      "id": "volva",
+      "label": "Volva",
+      "trait_fields": [
+        "stem_volva"
+      ]
+    }
+  ],
+  "geometry_model": "Traced paths duplicated under non-overlapping anatomical clips; editable parts are groups with their clip regions, not independently redrawn silhouettes.",
+  "not_drawn": {
+    "stem_reticulum": false
+  },
+  "editable_operations": [
+    "recolor-cap-with-documented-value",
+    "toggle-layer",
+    "inspect-paths"
+  ],
+  "review_status": "prototype-needs-visual-approval"
+}
