@@ -22,7 +22,7 @@ function open(button, pin = false) {
   tip.hidden = false;
   if (tip.showPopover && !tip.matches(':popover-open')) tip.showPopover();
   position();
-  observer.observe(document.querySelector('#hero') || document.body,{childList:true,subtree:true});
+  observer.observe(button.closest('#detail, #hero') || document.body,{childList:true,subtree:true});
 }
 function position() {
   const r = opener.getBoundingClientRect(), p = tip.getBoundingClientRect();
