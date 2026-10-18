@@ -1027,5 +1027,250 @@
     },
     "state": "pronta da integrare",
     "review": "Chlorophyllum bruni convessi/emisferico con squame scure, lamelle crema, anello e gambo senza volva o reticolo. Morfologie coerenti con riferimenti. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-17.png",
+    "sha256": "c9eb31bab3d86725a04570bcdc792e4b7cc10de551269600e5039092fe09bd67",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        502,
+        76,
+        816,
+        398
+      ],
+      "0": [
+        82,
+        142,
+        412,
+        322
+      ],
+      "4": [
+        502,
+        482,
+        816,
+        802
+      ],
+      "3": [
+        78,
+        540,
+        412,
+        726
+      ],
+      "7": [
+        482,
+        896,
+        844,
+        1170
+      ],
+      "6": [
+        70,
+        946,
+        430,
+        1060
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Clitocybe convessi bruno/crema e piano bruno, lamelle crema leggermente decorrenti e gambo chiaro senza anello/volva/reticolo; alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-18.png",
+    "sha256": "aa715c6904c35053e1eef4e346c57b2712a3f849062ea325d3f3efbaf3633293",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        468,
+        102,
+        808,
+        364
+      ],
+      "0": [
+        52,
+        144,
+        410,
+        258
+      ],
+      "4": [
+        482,
+        458,
+        788,
+        788
+      ],
+      "3": [
+        58,
+        504,
+        406,
+        692
+      ],
+      "7": [
+        482,
+        870,
+        788,
+        1196
+      ],
+      "6": [
+        58,
+        906,
+        406,
+        1098
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Clitocybe crema piano senza anello e Entoloma bianco/crema conici con apice evidente e lamelle rosa; gambi chiari privi di anello/volva/reticolo. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-19.png",
+    "sha256": "ca1fbcee0c08d9a703f5660ff8da58416e729ec805189a91219769f4cb19aab8",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        450,
+        128,
+        824,
+        400
+      ],
+      "0": [
+        28,
+        170,
+        410,
+        272
+      ],
+      "4": [
+        450,
+        528,
+        826,
+        802
+      ],
+      "3": [
+        26,
+        574,
+        410,
+        678
+      ],
+      "7": [
+        454,
+        904,
+        840,
+        1186
+      ],
+      "6": [
+        26,
+        948,
+        420,
+        1066
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Entoloma piani bianco/crema con lamelle rosa e nessun anello; Gymnopilus giallo piano con anello e lamelle gialle, texture conforme. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-20.png",
+    "sha256": "21870c825372d8f32aa5703b74f9a2d2cbefa3994f224c8461d4222a2f639e35",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        452,
+        82,
+        802,
+        372
+      ],
+      "0": [
+        52,
+        158,
+        402,
+        282
+      ],
+      "4": [
+        472,
+        460,
+        782,
+        788
+      ],
+      "3": [
+        60,
+        540,
+        396,
+        712
+      ],
+      "7": [
+        474,
+        864,
+        780,
+        1190
+      ],
+      "6": [
+        58,
+        944,
+        396,
+        1114
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Hypholoma arancio piano con lamelle verdi/gialle; Inocybe bianchi/crema convessi con fibre radiali e lamelle brune. Nessun anello/volva/reticolo aggiunto; alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-21.png",
+    "sha256": "bfbe5c19e9b3d04ea0ad51366b1d2192f9c9e21fa90304a0e56a775372e50aa4",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        472,
+        64,
+        780,
+        376
+      ],
+      "0": [
+        70,
+        140,
+        404,
+        314
+      ],
+      "4": [
+        474,
+        474,
+        778,
+        784
+      ],
+      "3": [
+        70,
+        550,
+        402,
+        722
+      ],
+      "7": [
+        474,
+        872,
+        778,
+        1182
+      ],
+      "6": [
+        70,
+        948,
+        402,
+        1122
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Inocybe convessi giallo/grigio/rosa, texture fibrosa e lamelle brune; gambi chiari senza anello/volva/reticolo aggiunto. Alpha e sei celle verificati."
   }
 ]
