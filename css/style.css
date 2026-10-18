@@ -1253,14 +1253,15 @@ html.is-offline #updated { color: var(--warn-ink); font-weight: 600; }
 .fl-sheet { padding: 10px 12px; border-radius: 12px; background: var(--surface-2); }
 
 /* ricerca generale */
-.search-dlg { border: 0; padding: 0; margin: 0 auto; width: 100%; max-width: 640px; height: var(--vvh, 100dvh); max-height: none; background: var(--bg); color: var(--text); }
-@media (min-width: 700px) { .search-dlg { margin-top: 8vh; height: auto; max-height: 76vh; border-radius: var(--r-xl); box-shadow: 0 30px 80px rgb(0 0 0 / .35); } }
-.search-dlg::backdrop { background: rgb(10 8 5 / .45); backdrop-filter: blur(3px); }
+/* Un layer opaco sopra l’intera pagina, anche nelle zone scoperte dalle barre
+   di Safari. Il contenuto segue il visual viewport quando sale la tastiera. */
+.search-dlg { position:fixed; inset:auto; top:var(--modal-visible-top, 0px); left:var(--modal-visible-left, 0px); border:0; border-radius:0; padding:0; margin:0; width:var(--modal-visible-width, 100%); min-width:0; max-width:none; height:var(--modal-visible-height, 100dvh); min-height:0; max-height:none; box-sizing:border-box; overflow:hidden; box-shadow:none; background:var(--bg); color:var(--text); }
+.search-dlg::backdrop { background:var(--bg); backdrop-filter:none; -webkit-backdrop-filter:none; }
 .search-dlg[open] { display: grid; grid-template-rows: auto 1fr; }
 .search-top { display: flex; gap: 8px; align-items: center; padding: calc(10px + env(safe-area-inset-top, 0px)) var(--gutter) 10px; border-bottom: 1px solid var(--hair); background: var(--bg); }
-.search-main { flex: 1; margin: 0; }
-.search-cancel { border: 0; background: none; color: var(--link); font: inherit; font-weight: 600; padding: 10px 4px; cursor: pointer; }
-.search-res { overflow-y: auto; padding: 6px var(--gutter) calc(20px + env(safe-area-inset-bottom, 0px)); overscroll-behavior: contain; }
+.search-main { flex:1; min-width:0; margin:0; }
+.search-cancel { flex:none; min-height:44px; border: 0; background: none; color: var(--link); font: inherit; font-weight: 600; padding: 10px 4px; cursor: pointer; }
+.search-res { min-height:0; overflow-y: auto; padding: 6px var(--gutter) calc(20px + env(safe-area-inset-bottom, 0px)); overscroll-behavior: contain; }
 .sr-h { margin: 16px 2px 6px; font-size: 11.5px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); }
 .sr-chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .sr-hint { margin: 18px 2px; }
@@ -1297,7 +1298,8 @@ html.is-offline #updated { color: var(--warn-ink); font-weight: 600; }
 .search-fake { width: 100%; border: 1px solid var(--hair); font: inherit; color: var(--muted); text-align: left; cursor: text; }
 .search-fake span { flex: 1; }
 .search-scopes { padding: 8px var(--gutter) 0; margin: 0; border-bottom: 1px solid var(--hair); padding-bottom: 10px; background: var(--bg); }
-.search-dlg[open] { grid-template-rows: auto auto 1fr; }
+.search-dlg[open] { grid-template-rows:auto auto minmax(0, 1fr); }
+.search-dlg > :is(.search-top,.search-scopes,.search-res) { width:100%; max-width:900px; min-width:0; box-sizing:border-box; margin-inline:auto; }
 @media (prefers-reduced-motion: no-preference) { .tab-search { transition: transform .5s var(--spring); } .tab-search:active { transform: scale(.9); transition-duration: .1s; } }
 .search-fake { min-height: 50px; }
 .id-filter { box-shadow: none; background: var(--surface-2); }

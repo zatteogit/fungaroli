@@ -106,11 +106,11 @@ function build() {
   dlg.className = 'search-dlg';
   dlg.setAttribute('aria-label', 'Cerca');
   dlg.innerHTML = `
-    <div class="search-top">
+    <header class="search-top">
       <label class="search-box search-main"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
         <input type="search" placeholder="Cerca zone, funghi, alberi, sentieri…" autocomplete="off" enterkeyhint="search" aria-label="Cerca in tutta l'app" aria-controls="search-res" aria-autocomplete="list"></label>
       <button type="button" class="search-cancel">Annulla</button>
-    </div>
+    </header>
     <div class="search-scopes filter-rail" role="group" aria-label="Cerca in">${SCOPES.map(([k, l]) => `<button type="button" class="chip" data-scope="${k}" aria-pressed="${k === ''}">${l}</button>`).join('')}</div>
     <div class="search-res" id="search-res" role="listbox" aria-label="Risultati"></div>`;
   document.body.append(dlg);
@@ -129,9 +129,9 @@ function build() {
   dlg.querySelector('.search-cancel').addEventListener('click', () => dlg.close());
   dlg.addEventListener('click', (e) => {
     const sc = e.target.closest('[data-scope]');
-    if (sc) { scope = sc.dataset.scope; dlg.querySelectorAll('[data-scope]').forEach((b) => b.setAttribute('aria-pressed', String(b === sc))); render(input.value); input.focus(); return; }
+    if (sc) { scope = sc.dataset.scope; dlg.querySelectorAll('[data-scope]').forEach((b) => b.setAttribute('aria-pressed', String(b === sc))); render(input.value); input.focus({preventScroll:true}); return; }
     const chip = e.target.closest('[data-q]');
-    if (chip) { input.value = chip.dataset.q; render(input.value); input.focus(); return; }
+    if (chip) { input.value = chip.dataset.q; render(input.value); input.focus({preventScroll:true}); return; }
     const it = e.target.closest('.sr-item');
     if (!it) return;
     const item = ITEMS[+it.dataset.i];
@@ -178,5 +178,5 @@ export function openSearch(q = '', sc = '') {
   input.value = typeof q === 'string' ? q : '';
   render(input.value);
   openModal(dlg);
-  input.focus();
+  input.focus({preventScroll:true});
 }
