@@ -272,7 +272,7 @@ test('riepiloghi essenziali negli accordion sul posto, senza voci duplicate o sa
 test('editoriale, filtri completi, passkey, isolamento e condivisione revocabile', async ({ browser, page }) => {
   const errors = await setup(page);
   await expect(page.locator('#community-intro')).toContainText('Ancora nessuna osservazione condivisa.');
-  await page.locator('#active-filters [data-more]').click();
+  await page.locator('#home-filter-action [data-more]:visible,#appbar-home-filters [data-more]:visible').click();
   await expect(page.locator('#full-filters [data-group]')).toHaveCount(11);
   // «Azzera» compare solo quando qualcosa è cambiato e riporta ai valori di partenza
   await expect(page.locator('#full-filters [data-reset]')).toHaveCount(0);
@@ -412,7 +412,7 @@ test('i campi del diario importato vengono visualizzati come testo', async ({ pa
 test('autocomplete dei commestibili, selezione individuale, stagione e persistenza', async ({page})=>{
   await page.setViewportSize({width:390,height:844}); const errors=await setup(page);
   const baseline=await page.locator('#hero .pc').first().textContent();
-  await page.locator('#active-filters [data-more]').click();
+  await page.locator('#home-filter-action [data-more]:visible,#appbar-home-filters [data-more]:visible').click();
   const input=page.locator('#species-filter-search'), options=page.locator('#species-filter-options');
   await input.fill('phalloides'); await expect(options.getByRole('option')).toHaveCount(0);
   await input.fill('agrocybe aegerita'); await expect(options.getByRole('option')).toHaveCount(1);
@@ -435,14 +435,14 @@ test('autocomplete dei commestibili, selezione individuale, stagione e persisten
   await page.locator('#sp-cards').getByRole('link',{name:'Pioppino',exact:true}).click();
   await expect(page.locator('#edible-detail')).toContainText('Pioppino');
   await expect(page.locator('#edible-detail')).toContainText('Indice non ancora disponibile');
-  await page.goto('/'); await page.locator('#active-filters [data-more]').click();
+  await page.goto('/'); await page.locator('#home-filter-action [data-more]:visible,#appbar-home-filters [data-more]:visible').click();
   await input.fill('Boletus pinophilus'); await input.press('Enter');
   const pref=await page.evaluate(()=>JSON.parse(localStorage.getItem('fungaroli:prefs:v2')));
   expect(pref.speciesIds).toContain('pinophilus'); expect(pref.speciesIds).not.toContain('edulis');
   await page.locator('#full-filters [data-close]').first().click();
   await expect(page.locator('#hero')).toContainText('Porcino rosso');
   await page.goto('/'); await expect(page.locator('#followed-species')).toHaveCount(0);
-  await page.locator('#active-filters [data-more]').click();
+  await page.locator('#home-filter-action [data-more]:visible,#appbar-home-filters [data-more]:visible').click();
   await expect(page.locator('#full-filters [data-remove-species]')).toHaveCount(3);
   await expect(page.locator('#full-filters [data-remove-species] .season-badge')).toHaveCount(3);
   await page.locator('#full-filters [data-all]').click();

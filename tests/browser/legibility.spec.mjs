@@ -130,7 +130,7 @@ for(const theme of ['light','dark']) test(`AA: pomelli degli interruttori accesi
   const {parseCssColor,contrastRatio,blend}=await import('../../tools/legibility.mjs');
   const context=await browser.newContext({viewport:{width:390,height:844},colorScheme:theme,reducedMotion:'reduce',serviceWorkers:'block'});
   const page=await preparePage(context,{theme});await page.goto('/',{waitUntil:'domcontentloaded'});
-  await page.locator('#active-filters [data-more]').click();
+  await page.locator('#home-filter-action [data-more]:visible,#appbar-home-filters [data-more]:visible').click();
   const paints=await page.locator('#full-filters .switch-input').evaluateAll(els=>els.flatMap(el=>[false,true].map(checked=>{
     el.checked=checked;
     const s=getComputedStyle(el),thumb=getComputedStyle(el,'::before'),dialog=getComputedStyle(el.closest('dialog'));

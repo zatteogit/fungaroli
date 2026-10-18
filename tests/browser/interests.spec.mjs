@@ -34,7 +34,7 @@ for(const width of [320,1280])test(`interessi indipendenti: tutte le combinazion
 test('filtri sulle specie indipendenti nella ricerca combinata',async({browser})=>{
  const context=await browser.newContext({serviceWorkers:'block',reducedMotion:'reduce'}),page=await preparePage(context,{theme:'dark'});
  await page.goto('/');await page.locator('#active-filters [data-intent="piante"]').click();
- await page.locator('#active-filters [data-more]').click();
+ await page.locator('#home-filter-action [data-more]:visible,#appbar-home-filters [data-more]:visible').click();
  const panel=page.locator('#full-filters');await expect(panel.locator('[data-intent][aria-pressed="true"]')).toHaveCount(2);
  await panel.locator('#species-filter-search').fill('prugnolo');await panel.locator('#species-filter-options [role="option"]').first().click();
  const plants=await page.evaluate(()=>JSON.parse(localStorage.getItem('fungaroli:prefs:v2')).plantIds);expect(plants.length).toBeGreaterThan(0);

@@ -20,7 +20,7 @@ test('tre intenti: home, filtri, mappa, dettaglio e memoria coerenti',async({pag
  await expect(page.locator('#hero .cover-index')).toBeVisible();
  await page.locator('#active-filters [data-intent="passeggiata"]').click();await page.locator('#active-filters [data-intent="funghi"]').click();
  await expect(page.locator('#hero .outdoor-hero')).toBeVisible();await expect(page.locator('#hero .cover-index')).toHaveCount(0);
- await page.locator('#active-filters [data-more]').click();const filters=page.locator('#full-filters[open]');await expect(filters.locator('#species-filter-search')).toHaveCount(0);
+ await page.locator('#home-filter-action [data-more]:visible,#appbar-home-filters [data-more]:visible').click();const filters=page.locator('#full-filters[open]');await expect(filters.locator('#species-filter-search')).toHaveCount(0);
  await filters.locator('[data-pref="shortTrails"]').click();await filters.locator('[data-close]').last().click();
  await page.reload();await expect(page.locator('#active-filters [data-intent="passeggiata"]')).toHaveAttribute('aria-pressed','true');
  await page.locator('#hero .outdoor-hero').click();await expect(page.locator('#detail h1')).toBeVisible();await expect(page.locator('#detail .hero-indicators > .ring')).toHaveCount(0);await expect(page.locator('#detail .weather-ring')).toHaveCount(1);
@@ -28,7 +28,7 @@ test('tre intenti: home, filtri, mappa, dettaglio e memoria coerenti',async({pag
  await mapToggle(page,'piante');await mapToggle(page,'passeggiata');await expect(page.locator('#legend .map-plant-note')).toHaveCount(1);await expect(page.locator('#legend .map-plant-note')).not.toHaveAttribute('open','');
  await page.goto('/#/uscite');await expect(page.locator('#season .outdoor-plant').first()).toBeVisible();
  expect(await page.evaluate(()=>!!(document.querySelector('#hero').compareDocumentPosition(document.querySelector('#season'))&Node.DOCUMENT_POSITION_FOLLOWING))).toBe(true);
- await page.locator('#active-filters [data-more]').click();await expect(page.locator('#species-filter-search')).toBeVisible();await page.keyboard.press('Escape');
+ await page.locator('#home-filter-action [data-more]:visible,#appbar-home-filters [data-more]:visible').click();await expect(page.locator('#species-filter-search')).toBeVisible();await page.keyboard.press('Escape');
  for(const theme of ['light','dark'])for(const width of [320,390,768,1280]){
  await page.setViewportSize({width,height:900});await page.evaluate(t=>document.documentElement.dataset.theme=t,theme);
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
