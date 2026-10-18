@@ -3221,8 +3221,6 @@ div.tx-look-main { cursor: default; }
 :is(.k-more, .legend-box, .notebook-storage, .fp-more, .k-src-d) > summary::-webkit-details-marker { display: none; }
 :is(.k-more, .legend-box, .notebook-storage) > summary::after { content: ''; flex: none; width: 7px; height: 7px; margin-left: auto; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg) translate(-2px, -2px); opacity: .7; transition: transform .2s; }
 :is(.k-more, .legend-box, .notebook-storage)[open] > summary::after { transform: rotate(225deg); }
-.zone-actions [data-save-plan] svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linejoin: round; }
-.zone-actions [data-save-plan] { display: inline-flex; align-items: center; gap: 6px; }
 /* profilo: da ospite un'icona tonda come le altre, con il nome solo quando hai un profilo */
 .profile-entry:not(.is-user) { width: 40px; height: 40px; padding: 0; justify-content: center; }
 .profile-entry:not(.is-user) [data-profile-label] { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }

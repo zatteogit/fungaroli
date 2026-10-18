@@ -166,12 +166,17 @@ for(const width of [390,1280]) test(`cambio di giorno nella zona senza ricreare 
     expect(s.focus).toBe(o);expect(r.y).toBe(initialScroll);
   }
   expect(page.url()).toContain(`/zona/`);expect(page.url()).toContain(`/${days.at(-1)}`);
-  // dopo tre cambi di giorno un'azione della scheda si esegue una volta sola
-  await page.evaluate(()=>{window.__writes=0;const set=Storage.prototype.setItem;Storage.prototype.setItem=function(k,v){if(/^fungaroli:diario/.test(k))window.__writes++;return set.call(this,k,v);};});
-  await page.locator('#detail [data-save-plan]').click();
-  await expect(page.locator('#detail [data-plan-status]')).toContainText('salvati');
-  await page.waitForTimeout(400);
-  expect(await page.evaluate(()=>window.__writes)).toBe(1);
+  // Dopo tre cambi di giorno resta un solo ingresso al taccuino, senza salvataggi impliciti.
+  const actions=page.locator('#detail .zone-actions');
+  await expect(actions.locator('[data-save-plan]')).toHaveCount(0);
+  await expect(actions.locator('.zone-note-action')).toHaveCount(1);
+  await expect(actions.locator('.zone-note-hint')).toContainText('ricerche a vuoto');
+  await actions.locator('.zone-note-action').click();
+  const report=page.locator('.report-dialog');await expect(report).toBeVisible();
+  await expect(page.locator('dialog[open]:modal')).toHaveCount(1);
+  await expect(report.locator('[name="zone"]')).toHaveValue(new URL(page.url()).hash.split('/')[2]);
+  await report.locator('[data-report-dismiss]').click();
+
   expect(errors).toEqual([]);
 });
 

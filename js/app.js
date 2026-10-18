@@ -2708,15 +2708,7 @@ $('#detail')?.addEventListener('click', (e) => {
   const c = detailCtx;
   if (!c) return;
   if (e.target.closest('[data-cover]') && c.cov) { openLightbox([{ src: c.cov.hd, alt: c.cov.alt, caption: captionHtml({ title: esc(c.z.name), credit: creditLine(c.cov.credit) }) }]); return; }
-  const save = e.target.closest('[data-save-plan]');
-  if (save && !save.disabled) {
-    const status = e.currentTarget.querySelector('[data-plan-status]');
-    save.disabled = true;
-    journal.savePlan(c.z.id, c.d.date, c.best.band)
-      .then(() => { if (status) status.textContent = 'Previsione e dati salvati nel taccuino. Dopo l’uscita registra specie cercate, orario e ritrovamenti.'; })
-      .catch((err) => { if (status) status.textContent = err.message; })
-      .finally(() => { save.disabled = false; });
-  }
+
 });
 function updateDetailInPlace(box, html, cov) {
   const ring = box.querySelector(':scope > .phero .hero-indicators > .ring'), before = ring?.querySelector('b')?.textContent;
@@ -2840,11 +2832,11 @@ function renderDetail() {
     <section class="zone-actions" aria-label="Taccuino e mappa">
       <h2 class="outing-section-title">Taccuino e mappa</h2>
       ${best.kind==='plant'?`<button type="button" class="btn primary zone-note-action" data-note-kind="pianta" data-note-id="${best.species.plantId}" data-note-zone="${z.id}" data-note-title="${esc(best.species.name)}">${notebookGlyph}<span>Annota la fase nel taccuino</span><span aria-hidden="true">→</span></button>`:`<div class="zone-community"><button type="button" class="btn primary zone-note-action" data-report data-zone="${z.id}" data-species="${best.species.id}">${notebookGlyph}<span>Annota nel taccuino</span><span aria-hidden="true">→</span></button>${reportBadge(z.id, best.species.id)}</div>`}
+      <p class="zone-note-hint">${best.kind==='plant'?'Nel taccuino puoi annotare le fasi della pianta e le ricerche a vuoto, con luogo e giorno dell’osservazione.':'Nel taccuino puoi registrare specie cercate, ritrovamenti e ricerche a vuoto, con luogo e giorno dell’uscita.'}</p>
       <div class="zone-secondary-actions">
-        ${best.kind==='plant'?'':`<button type="button" class="zone-secondary-action" data-save-plan aria-label="Salva le condizioni nel taccuino">${notebookGlyph}<span><b>Salva condizioni</b><small>Nel taccuino</small></span></button>`}
         <a class="zone-secondary-action" href="#/mappa/${z.id}" aria-label="Sentieri e accessi sulla mappa">${IC.map}<span><b>Apri la mappa</b><small>Sentieri e accessi</small></span></a>
       </div>
-      ${best.kind==='plant'?'<p class="small muted">Confronta la pianta e verifica regole, tutela e permessi prima della raccolta.</p>':'<p class="small muted" data-plan-status role="status"></p>'}
+      ${best.kind==='plant'?'<p class="small muted">Confronta la pianta e verifica regole, tutela e permessi prima della raccolta.</p>':''}
     </section>
     ${z.protection ? `<div class="notice">${esc(z.protection)}</div>` : ''}
     <section class="zone-more" aria-label="Approfondimenti sulla zona"><h2 class="outing-section-title">Approfondimenti</h2>

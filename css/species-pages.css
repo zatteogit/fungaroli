@@ -259,6 +259,7 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 #detail .zone-secondary-action small { font:400 11px/1.4 var(--font-body); color:var(--text-2); }
 #detail .zone-secondary-actions > :only-child { grid-column:1/-1; }
 #detail .zone-actions > p { margin:0; font-size:12px; line-height:1.6; }
+#detail .zone-actions > .zone-note-hint { font-size:14px; }
 #detail [data-plan-status]:empty { display:none; }
 #detail .zone-more { margin:32px 0 12px; padding:20px; border:1px solid var(--hair); border-radius:20px; background:var(--surface); }
 #detail .zone-more > .outing-section-title { margin:0 0 6px; }

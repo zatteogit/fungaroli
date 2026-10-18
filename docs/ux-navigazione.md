@@ -186,3 +186,12 @@ fra le viste dello stesso tratto.
 L’auto delle indicazioni stradali e degli imbocchi usa un unico glyph frontale
 in `js/ui-icons.js`, con parabrezza, fari e ruote riconoscibili a 18 px. È
 decorativo, eredita il colore e conserva testo, destinazione e area del comando.
+
+
+Nella sezione «Taccuino e mappa» della zona compare una sola CTA per annotare,
+con la penna d’oca. Un testo breve spiega specie cercate, ritrovamenti e ricerche
+a vuoto (oppure fasi della pianta), luogo e giorno. «Apri la mappa» rimane
+un’azione distinta. Rimosso «Salva condizioni», che richiedeva una previsione
+completa e aggiornata: non si promette una cattura automatica delle previsioni
+attraverso il comando di annotazione. Le condizioni già salvate nei taccuini
+restano leggibili. Il percorso esistente di annotazione non viene modificato.
