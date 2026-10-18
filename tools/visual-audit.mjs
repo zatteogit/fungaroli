@@ -80,7 +80,7 @@ export async function preparePage(context, { legal = true, theme = 'light' } = {
   });
   await page.addInitScript(([legalOk, th, key]) => {
     try {
-      if (legalOk) localStorage.setItem('fungaroli:legal-accepted', key); else localStorage.removeItem('fungaroli:legal-accepted');
+      if (legalOk === true) localStorage.setItem('fungaroli:legal-accepted', key); else if (legalOk === false) localStorage.removeItem('fungaroli:legal-accepted');
       localStorage.setItem('fungaroli:theme', th);
     } catch { /* storage non disponibile */ }
   }, [legal, theme, LEGAL_KEY]);

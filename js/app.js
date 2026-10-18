@@ -1,3 +1,5 @@
+import {configureLegalAccess,acceptLegalNotice,hasLegalAcceptance} from './legal-access.js';
+import {currentLegalNotice,legalNoticeVersion,legalNoticeFingerprint} from './legal-notice.js';
 import {rememberNavigationContext,recordNavigationPage,restoreNavigationContext,contextualBackTitle,returningNavigation,restoredNavigationScroll,backNavigation} from './navigation-context.js';
 import {openModal} from './modal-flow.js';
 import {speciesFeatures} from './species-search.js';
@@ -244,7 +246,7 @@ async function init() {
   contentCopy = embedded?.contentCopy || await load('ui-copy') || {};
   initGuideContent(embedded?.guides || await load('guides'),contentCopy,embedded?(f)=>embedded.assets?.[f]||'':null);
   for(const[selector,key]of [['#home-h','homeTitle'],['#others-h','otherPlacesTitle'],['#season-h','speciesTitle']])if(contentCopy[key]&&$(selector))$(selector).textContent=contentCopy[key];
-  legal = embedded ? embedded.legal : await load('legal');
+  legal = currentLegalNotice(embedded ? embedded.legal : await load('legal'));
   const [zj, hj, aj, tj, idj, mj, ij, trj, stj, mtj, mzj, prj, thj, ecj] = embedded
     ? [embedded.zones, embedded.habitat, embedded.access, embedded.trails, embedded.speciesId, embedded.media, embedded.infographics, embedded.trees, embedded.traits, null, null, embedded.preparation, embedded.trailheads, embedded.edibleCatalog]
     : await Promise.all(['zones', 'habitat', 'access', 'trails', 'species-id', 'media', 'infografiche', 'trees', 'species-traits', 'media-trees', 'media-zones', 'preparation', 'trailheads', 'edible-catalog'].map(load));
@@ -284,7 +286,7 @@ async function init() {
     potential: (sid, zid) => { const sp = SPECIES.find((x) => x.id === sid); const z = zones.find((x) => x.id === zid); return sp && z ? potentialOf(sp, z) : null; },
   });
   renderSpeciesGrid();
-  applyLegal();
+  await applyLegal();
   initTrees({ trees: trj, media: mj, assetUrl: embedded ? (f) => embedded.assets?.[f] || '' : (f) => f, zones, habitat, thumb });
   const plantData=embedded?.plants||await load('plants');plantModels=botanicalModels(embedded?.botanicalModels||await load('botanical-models'),plantData);
   if(state.plantIds!==null){state.plantIds=new Set([...state.plantIds].filter(id=>plantModels.some(p=>p.id===id)));if(!state.plantIds.size)state.plantIds=null;}
@@ -3102,7 +3104,6 @@ function trailLinks(z, t) {
 }
 
 // --- testi legali e di sicurezza (data/legal.json, con ripiego prudente) ------
-const LEGAL_KEY = 'fungaroli:legal-accepted';
 function notebookPrivacyHtml(html) {
   // Solo testo editoriale: URL e identificativi dei vecchi diari restano validi.
   const template=document.createElement('template');template.innerHTML=String(html||'');
@@ -3119,7 +3120,7 @@ function privacyHtml(html) {
   return end < 0 ? `${out}<p>${esc(BASE_PRIVACY_TEXT)}</p>` : `${out.slice(0, end)}<li>${esc(BASE_PRIVACY_TEXT)}</li>${out.slice(end)}`;
 }
 
-function applyLegal() {
+async function applyLegal() {
   const L = legal || {};
   if (L.home_strip) $('#home-legal .ar-s').textContent = L.home_strip;
   // emergenza e sezioni legali nella pagina Info
@@ -3132,18 +3133,19 @@ function applyLegal() {
   // preparazione e conservazione: regole per tutti i funghi (obbligatorie prima)
   if (prep?.general?.length && $('#prep-general')) $('#prep-general').innerHTML = prepGeneralHtml(prep.general);
   // versione pilota: la stessa frase dell'avviso iniziale, in cima a Regole e metodo (ci porta l'etichetta «Rieti» della testata)
-  const pilot = $('#info-pilot'); if (pilot) { pilot.textContent = L.onboarding?.subtitle || ''; pilot.hidden = !pilot.textContent; }
+  const pilot = $('#info-pilot'); if (pilot) { pilot.textContent = [L.onboarding?.prototype_notice,L.onboarding?.subtitle].filter(Boolean).join(' '); pilot.hidden = !pilot.textContent; }
   $('#legal-sections').innerHTML = (L.info_sections || []).map((x) => `<details><summary><h2>${esc(x.title)}</h2></summary><div class="method">${x.id==='normativa'?zoneLegal({}):''}${x.id==='privacy'?privacyHtml(x.html):x.html}</div></details>`).join('');
   $('#legal-sections').querySelectorAll('.method').forEach(enhanceContentReading);
   enhanceEntityAccordions($('#legal-sections'));
   // primo avvio: avviso da confermare (si ripresenta se cambia la versione dei testi)
-  const ver = String(L.version || 0) + (L.verified_on || '');
-  let accepted = null;
-  try { accepted = localStorage.getItem(LEGAL_KEY); } catch { /* ignora */ }
-  if (accepted !== ver) {
+  const ver=legalNoticeVersion(L),accepted=await configureLegalAccess(ver,legalNoticeFingerprint(L));
+  if (!accepted) {
     const dlg = $('#onboarding');
     dlg.querySelector('h2').textContent = L.onboarding?.title || 'Prima di usare l\'app';
     const sub = $('#ob-sub'); if (sub) { sub.textContent = L.onboarding?.subtitle || ''; sub.hidden = !sub.textContent; }
+    $('#ob-prototype').textContent=L.onboarding.prototype_notice;
+    $('#ob-cookie-summary').textContent=L.onboarding.cookie_summary;
+    $('#ob-cookie-policy').innerHTML=(L.info_sections||[]).find(section=>section.id==='cookie')?.html||'';
     dlg.querySelector('.ob-points').innerHTML = (L.onboarding?.points || [
       'Le previsioni sono stime: non garantiscono che troverai funghi.',
       'Schede e ricerca aiutano a orientarsi ma non sono un\'identificazione: prima di mangiare fai controllare i funghi all\'Ispettorato Micologico ASL.',
@@ -3151,13 +3153,18 @@ function applyLegal() {
       'In montagna la sicurezza e il rispetto delle regole di parchi e riserve sono tua responsabilità.',
     ]).map((x) => `<li>${esc(x)}</li>`).join('');
     $('#ob-accept').textContent = L.onboarding?.accept || 'Ho capito';
-    $('#ob-accept').onclick = () => { try { localStorage.setItem(LEGAL_KEY, ver); } catch { /* ignora */ } dlg.close(); };
-    $('#ob-more').onclick = () => dlg.close();
+    $('#ob-legal-details').innerHTML=(L.info_sections||[]).filter(section=>section.id!=='cookie').map(section=>`<section><h3>${esc(section.title)}</h3>${section.id==='privacy'?privacyHtml(section.html):section.html}</section>`).join('');
+    $('#ob-accept').onclick=async()=>{
+      const button=$('#ob-accept');button.disabled=true;
+      try{const {persisted}=await acceptLegalNotice();dlg.close();if(!persisted){const note=document.createElement('div');note.className='app-toast on';note.setAttribute('role','status');note.textContent='Conferma valida per questa apertura. Il browser non permette di conservarla.';document.body.append(note);setTimeout(()=>note.remove(),7000);}}catch{$('#ob-status').textContent='Non riesco a registrare la conferma. Riprova.';}finally{button.disabled=false;}
+    };
     dlg.addEventListener('cancel', (e) => e.preventDefault());
-    dlg.addEventListener('close', maybeInvite, { once: true }); // dopo l'avviso, l'invito a installare
-    openModal(dlg);
+    dlg.onclose=()=>{if(hasLegalAcceptance())maybeInvite();else queueMicrotask(()=>{if(!dlg.open&&!hasLegalAcceptance())openModal(dlg);});};
+    openModal(dlg);dlg.scrollTop=0;dlg.querySelector('h2').focus({preventScroll:true});
   } else maybeInvite();
 }
+addEventListener('fronda:legal-required',()=>{if(legal)applyLegal();});
+addEventListener('fronda:legal-access',event=>{if(event.detail.accepted&&$('#onboarding')?.open)$('#onboarding').close();});
 
 function zoneLegal(z) {
   const L = legal || {};
@@ -3290,6 +3297,7 @@ function captureForecast(zoneId, date, band) {
 init().catch((e) => {
   console.error('Avvio di Fronda non riuscito', e);
   const message = '<div class="error boot-error" role="alert"><p>Fronda non è riuscita a caricare boschi, sentieri e funghi. Controlla la connessione e riprova.</p><button type="button" class="btn primary" data-boot-retry>Riprova</button></div>';
+  $('#legal-loading').innerHTML=message;
   $('#hero').innerHTML = message;
   $('#detail').innerHTML = message;
   document.querySelectorAll('[data-boot-retry]').forEach((b) => b.addEventListener('click', () => location.reload()));

@@ -66,6 +66,7 @@ function finish(frame) {
   });
 }
 export function openModal(dialog) {
+  if(document.body.hasAttribute('data-legal-pending')&&dialog.id!=='onboarding')return false;
   if (dialog.matches(':modal')) return;
   // Un singleton già conservato (es. scheda aperta dal glossario) torna attivo:
   // non può diventare contemporaneamente antenato e figlio del proprio percorso.

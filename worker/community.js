@@ -1,5 +1,6 @@
 import { generateRegistrationOptions, verifyRegistrationResponse, generateAuthenticationOptions, verifyAuthenticationResponse } from '@simplewebauthn/server';
 import schema from '../migrations/0001_community.sql';
+import legalAcceptancesSchema from '../migrations/0009_legal_acceptances.sql';
 import preferencesSchema from '../migrations/0003_account_preferences.sql';
 import observationsSchema from '../migrations/0007_shared_observations.sql';
 import {rankingPolicy} from './admin-dashboard.js';
@@ -36,7 +37,7 @@ const fail = (message, status = 400) => { const e = new Error(message); e.status
 async function init(db) {
   if (!initialized.has(db)) initialized.set(db, (async () => {
     // D1 exec treats individual lines as statements; use complete SQL statements.
-    await db.batch((schema+';'+preferencesSchema+';'+observationsSchema).split(';').map((s) => s.trim()).filter((s) => s && !s.startsWith('PRAGMA')).map((s) => db.prepare(s)));
+    await db.batch((schema+';'+preferencesSchema+';'+observationsSchema+';'+legalAcceptancesSchema).split(';').map((s) => s.trim()).filter((s) => s && !s.startsWith('PRAGMA')).map((s) => db.prepare(s)));
     await db.prepare("INSERT INTO community_meta(key,value) VALUES('ip_salt',?) ON CONFLICT(key) DO NOTHING").bind(token()).run();
   })().catch((e) => { initialized.delete(db); throw e; }));
   return initialized.get(db);
@@ -195,6 +196,14 @@ export async function handleCommunity(request, env, now = Date.now()) {
       return result({ user: { id:user.id, handle:user.handle, base:user.base, role } });
     }
     await rate(db, 'user:' + user.id, 120, 3600, now);
+    if(path==='legal-acceptance'&&request.method==='POST') {
+      const data=await body(request);
+      if(data.accountId!==user.id)fail('Il profilo è cambiato. Riprova.',409);
+      if(typeof data.version!=='string'||!/^\d{1,6}\d{4}-\d{2}-\d{2}$/.test(data.version)||typeof data.noticeHash!=='string'||!/^([a-f0-9]{64})$/.test(data.noticeHash)||!['explicit','legacy'].includes(data.source)||!['browser','standalone'].includes(data.platform)||(data.source==='explicit'&&(typeof data.acceptedAt!=='string'||data.acceptedAt.length>32||!Number.isFinite(Date.parse(data.acceptedAt))||new Date(data.acceptedAt).toISOString()!==data.acceptedAt))||(data.source==='legacy'&&data.acceptedAt!==null))fail('Conferma non valida.',422);
+      await db.prepare('INSERT INTO legal_acceptances(account_id,version,notice_hash,accepted_at,recorded_at,source,platform) VALUES(?,?,?,?,?,?,?) ON CONFLICT(account_id,version,notice_hash) DO NOTHING').bind(user.id,data.version,data.noticeHash,data.acceptedAt,now,data.source,data.platform).run();
+      const receipt=await db.prepare('SELECT version,notice_hash AS noticeHash,accepted_at AS acceptedAt,recorded_at AS recordedAt,source,platform FROM legal_acceptances WHERE account_id=? AND version=? AND notice_hash=?').bind(user.id,data.version,data.noticeHash).first();
+      return result({receipt});
+    }
     if(path==='profile'&&request.method==='PUT') {
       const data=await body(request);
       if(data.accountId!==user.id)fail('Il profilo è cambiato. Riaprilo prima di salvare.',409);

@@ -4,7 +4,7 @@ async function start(page,hash='#/piante',width=390){
  await page.setViewportSize({width,height:900});await page.emulateMedia({reducedMotion:'reduce'});
  await page.route('**/api/weather/v1/forecast*',r=>r.fulfill({status:503,json:{error:'test'}}));
  await page.route('https://**',r=>r.abort());
- await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','32026-10-16'));
+ await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','42026-10-16'));
  const errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('/'+hash);
  await expect(page.locator('#plant-grid [data-plant-results]')).toBeVisible();return errors;
 }

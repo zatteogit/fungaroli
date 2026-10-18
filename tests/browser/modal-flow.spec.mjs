@@ -34,6 +34,7 @@ for(const width of [320,390])test(`scheda → taccuino: un pannello e ritorno al
 test('passi conservati: bozza e cleanup once, Escape e navigazione di rotta',async({browser})=>{
  const context=await browser.newContext({viewport:{width:390,height:844},reducedMotion:'reduce',serviceWorkers:'block'}),page=await preparePage(context);
  await page.goto('/#/diario');
+ await expect(page.locator('body')).not.toHaveAttribute('data-legal-pending','');
  await page.evaluate(async()=>{
   const {openModal}=await import('/js/modal-flow.js');window.flowCleanup={a:0,b:0};
   for(const id of ['a','b','c']){

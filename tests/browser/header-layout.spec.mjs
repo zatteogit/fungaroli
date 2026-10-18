@@ -3,7 +3,7 @@ for(const width of [320,390,768,1280])test(`filtri della testata compatti con tu
   await page.setViewportSize({width,height:900});await page.emulateMedia({reducedMotion:'reduce'});
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.route('https://**/*',r=>r.abort());await page.route('**/api/weather/v1/forecast?**',r=>r.fulfill({status:503,json:{error:'No forecast needed for header layout'}}));
-  await page.addInitScript(()=>{localStorage.setItem('fungaroli:legal-accepted','32026-10-16');localStorage.setItem('fungaroli:prefs:v2',JSON.stringify({avoidCrowd:true,preferComfort:true,distancePenalty:true}));});
+  await page.addInitScript(()=>{localStorage.setItem('fungaroli:legal-accepted','42026-10-16');localStorage.setItem('fungaroli:prefs:v2',JSON.stringify({avoidCrowd:true,preferComfort:true,distancePenalty:true}));});
   await page.goto('/');const header=page.locator('#active-filters'),prefs=header.locator('[data-p]');await expect(prefs).toHaveCount(3);await expect(header.locator('[data-more]')).toContainText('Filtri avanzati');for(const pref of await prefs.all())await expect(pref).toHaveAttribute('aria-pressed','true');
   expect(await header.locator('[data-more]').evaluate(el=>!!(el.compareDocumentPosition(el.closest('#active-filters').querySelector('[data-intent]')) & Node.DOCUMENT_POSITION_FOLLOWING))).toBe(true);
   const geometry=()=>header.evaluate(e=>{
@@ -23,7 +23,7 @@ for(const width of [320,390,768])test(`titolo scheda nella barra dopo lo scroll 
  await page.setViewportSize({width,height:800});await page.emulateMedia({reducedMotion:'reduce'});
  await page.route('https://**/*',r=>r.abort());
  await page.route('**/api/weather/v1/forecast?**',r=>r.fulfill({status:503,json:{error:'test'}}));
- await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','32026-10-16'));
+ await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','42026-10-16'));
  await page.goto('/#/fungo/mellea');
  const heading=page.locator('.view:not([hidden]) .phero-title'),bar=page.locator('.appbar-title');
  await expect(heading).toBeVisible();await expect(bar).toHaveText(await heading.innerText());

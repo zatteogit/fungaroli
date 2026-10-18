@@ -3445,3 +3445,16 @@ details.context-note { margin: 12px 0 16px; padding: 0; border: 0; border-radius
 
 .notebook-glyph { display:inline-block; width:20px; height:20px; flex:0 0 20px; vertical-align:middle; }
 :is(.diary-demo-banner a,.app-toast .link-btn):has(>.notebook-glyph) { display:inline-flex; align-items:center; gap:6px; }
+
+/* Informative consultabili nell’unico avviso iniziale. */
+.onboarding .ob-prototype { padding:12px 14px; border-left:3px solid var(--link); background:var(--surface-2); font-size:15px; line-height:1.6; }
+.onboarding .ob-data { margin:16px 0; font-size:14px; line-height:1.6; }
+.onboarding .ob-data p { margin:10px 0; }
+.onboarding .ob-data summary { min-height:44px; display:flex; align-items:center; color:var(--link); text-decoration:underline dotted; text-underline-offset:3px; cursor:pointer; }
+.onboarding .ob-data ul { padding-left:20px; display:grid; gap:10px; }
+
+#legal-loading { position:fixed; inset:0; z-index:10000; display:grid; place-content:center; padding:24px; background:var(--bg); color:var(--text); text-align:center; }
+#ob-h:focus { outline:none; }
+.onboarding .ob-more { margin:16px 0; font-size:14px; line-height:1.6; }
+.onboarding .ob-more > summary { min-height:44px; display:flex; align-items:center; color:var(--link); text-decoration:underline dotted; text-underline-offset:3px; cursor:pointer; }
+.onboarding .ob-more h3 { margin-top:20px; }

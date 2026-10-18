@@ -195,3 +195,5 @@ un’azione distinta. Rimosso «Salva condizioni», che richiedeva una prevision
 completa e aggiornata: non si promette una cattura automatica delle previsioni
 attraverso il comando di annotazione. Le condizioni già salvate nei taccuini
 restano leggibili. Il percorso esistente di annotazione non viene modificato.
+
+L’avviso iniziale presenta Fronda come esperimento personale, usato esclusivamente per provare e migliorare il prototipo. Cookie policy e privacy si consultano nello stesso pannello; un solo pulsante conferma la lettura. Prima della conferma l’interfaccia resta inerte, anche cambiando hash o chiudendo il dialog. Versione, impronta e data vengono conservate sul dispositivo e, con un profilo, registrate sul server; le vecchie date sconosciute non vengono inventate. Il tutorial di installazione è successivo e facoltativo; la sua chiusura non revoca la conferma. Nella PWA si riusa la ricevuta solo se disponibile. Dettagli, limiti e migrazione in [accettazione-condizioni.md](accettazione-condizioni.md).

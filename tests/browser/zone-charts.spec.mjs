@@ -16,7 +16,7 @@ async function setup(page, theme = 'light') {
     const out = Array.from({ length: count }, () => ({ daily: { time: dates, precipitation_sum: dates.map((_, i) => RAIN[i % 30]), temperature_2m_mean: tmean, temperature_2m_min: tmean.map((t) => t - 5), temperature_2m_max: tmean.map((t) => t + 6) }, hourly: { time, soil_moisture_3_to_9cm: time.map((_, h) => 0.22 + 0.12 * Math.sin(h / 120)), soil_temperature_6cm: fill(12), precipitation: fill(0), precipitation_probability: fill(0), weather_code: fill(1), wind_gusts_10m: fill(8), temperature_2m: fill(13) } }));
     return route.fulfill({ json: out });
   });
-  await page.addInitScript((t) => { localStorage.setItem('fungaroli:legal-accepted', '32026-10-16'); localStorage.setItem('fungaroli:theme', t); }, theme);
+  await page.addInitScript((t) => { localStorage.setItem('fungaroli:legal-accepted', '42026-10-16'); localStorage.setItem('fungaroli:theme', t); }, theme);
   const errors = []; page.on('pageerror', (e) => errors.push(e.message));
   await page.goto('/#/zona/poggio-cantalice/0');
   const meteo = page.locator('#detail [data-sec="meteo"]');
