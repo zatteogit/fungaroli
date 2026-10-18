@@ -294,3 +294,21 @@ A = approvata per la fase con i limiti sopra; R = approvata con riserva di leggi
 ## Indicazione al coordinatore
 
 È possibile procedere all’import selettivo dopo la verifica UI del coordinatore; mantenere le riserve registrate e non approvare implicitamente altre varianti o età. Il controllo non può essere trasferito a raster rigenerati o modificati dopo questi hash. Nessun file da scartare deve entrare nell’indice per la sola presenza fisica nella cartella.
+
+## Addendum · cinque correzioni del reticolo, revisione indipendente mirata
+
+Esaminate la nuova tavola `incoming/icone/fasi-reticolo-pallido-r01.png` a piena risoluzione, il confronto esatto prima/dopo a 64 px `incoming/reticolo-64-2026-10-18/confronto-r01-64.png`, il montaggio di foto locali `foto-controllo.jpg`, prompt e ricevuta r01. Non è stata ripetuta l’analisi delle altre 98 tessere.
+
+**Le cinque correzioni sono approvate e risolvono la riserva di leggibilità per i soli nuovi output sotto indicati.** Le maglie interconnesse sono più leggibili a 64 px senza diventare rete grossolana bruna o rossa. Restano pallide/avorio, limitate alla parte alta del gambo, con dissolvenza nella parte inferiore. Cappello giovane/adulto/maturo dell’aereus rimane scuro, il giovane dell’edulis emisferico bruno e l’adulto basso-convesso; le sagome restano coerenti con gli originali pur con lievi differenze di generazione. I pori dell’aereus restano bianchi→gialli→giallo sporco, quelli dell’edulis bianchi→gialli. Nessun anello, volva, lamella, rete colorata, radice o viraggio aggiunto. Il giovane intero edulis conserva la campitura quasi uniforme del sotto: per il dettaglio dei fori vale ancora il disco dedicato.
+
+Il miglioramento rimane moderato e schematico: non misura larghezza o numero delle maglie; a 64 px si distinguono connessioni chiare, non tutta l’anatomia. Non autorizza ricolorazioni tecniche delle reti né trasferimenti ad altre varianti. I cinque hash precedenti restano storicamente con riserva; la revoca riguarda solo questi nuovi raster. Nessun import o dato modificato da questo agente.
+
+| Cella | Target | SHA-256 nuovo output approvato |
+|---:|---|---|
+| 0 | `aereus-gambo-fase-giovane.webp` | `97ad7b7db89c5b7c3d3102a8f11cef06b878faa98102eee61fb3910636e17252` |
+| 1 | `aereus-gambo-fase-adulto.webp` | `d4a1a152a93a812323eb5cf05e984d67fc8403457d228fdc376b658eba9acc0f` |
+| 2 | `aereus-gambo-fase-maturo.webp` | `759ddf63ac8d4f56340d0ac927a1f4922401f2852bb01aefab1776d2e36ec72d` |
+| 3 | `edulis-gambo-fase-giovane.webp` | `5387c4f40fd94bc12f02392e5ae3748086b545490a590cc675945165ce608044` |
+| 4 | `edulis-gambo-fase-adulto.webp` | `3ecdb5ead5dacf8c83f8f17f00e6431b3ae6f7d16a0f0e6578b57c97c81d91c9` |
+
+SHA-256 della nuova tavola approvata: `4ba599da5d62df47432869270979ca0698c738a8b40525fc846d069f4936b078`. La ricevuta r01 conserva i cinque output sostituiti e la corrispondenza di celle.
