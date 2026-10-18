@@ -134,6 +134,76 @@
       "url": "https://www.parchilazio.it/cammino_naturale_dei_parchi-schede-863-il_lupo",
       "publisher": "Parchi Lazio · Cammino Naturale dei Parchi",
       "checkedOn": "2026-10-18"
+    },
+    {
+      "id": "PNALM-CAPRIOLO",
+      "title": "Capriolo",
+      "url": "https://www.parcoabruzzo.it/fauna.schede.dettaglio.php?id=18",
+      "publisher": "Parco Nazionale d’Abruzzo, Lazio e Molise",
+      "checkedOn": "2026-10-18"
+    },
+    {
+      "id": "PNALM-CERVO",
+      "title": "Cervo",
+      "url": "https://www.parcoabruzzo.it/fauna.schede.dettaglio.php?id=313",
+      "publisher": "Parco Nazionale d’Abruzzo, Lazio e Molise",
+      "checkedOn": "2026-10-18"
+    },
+    {
+      "id": "PNALM-CETONIA-DORATA",
+      "title": "Cetonia dorata",
+      "url": "https://www.parcoabruzzo.it/fauna.schede.dettaglio.php?id=29",
+      "publisher": "Parco Nazionale d’Abruzzo, Lazio e Molise",
+      "checkedOn": "2026-10-18"
+    },
+    {
+      "id": "PNALM-ROSALIA-ALPINA",
+      "title": "Rosalia alpina",
+      "url": "https://www.parcoabruzzo.it/fauna.schede.dettaglio.php?id=42",
+      "publisher": "Parco Nazionale d’Abruzzo, Lazio e Molise",
+      "checkedOn": "2026-10-18"
+    },
+    {
+      "id": "PNALM-TRITONE-CRESTATO-ITALIANO",
+      "title": "Tritone crestato italiano",
+      "url": "https://www.parcoabruzzo.it/fauna.schede.dettaglio.php?id=251",
+      "publisher": "Parco Nazionale d’Abruzzo, Lazio e Molise",
+      "checkedOn": "2026-10-18"
+    },
+    {
+      "id": "PNALM-SALAMANDRA-PEZZATA",
+      "title": "Salamandra pezzata",
+      "url": "https://www.parcoabruzzo.it/fauna.schede.dettaglio.php?id=250",
+      "publisher": "Parco Nazionale d’Abruzzo, Lazio e Molise",
+      "checkedOn": "2026-10-18"
+    },
+    {
+      "id": "PNALM-RICCIO-EUROPEO",
+      "title": "Riccio europeo",
+      "url": "https://www.parcoabruzzo.it/fauna.schede.dettaglio.php?id=291",
+      "publisher": "Parco Nazionale d’Abruzzo, Lazio e Molise",
+      "checkedOn": "2026-10-18"
+    },
+    {
+      "id": "PNALM-VOLPE",
+      "title": "Volpe",
+      "url": "https://www.parcoabruzzo.it/fauna.schede.dettaglio.php?id=314",
+      "publisher": "Parco Nazionale d’Abruzzo, Lazio e Molise",
+      "checkedOn": "2026-10-18"
+    },
+    {
+      "id": "PNALM-ISTRICE",
+      "title": "Istrice",
+      "url": "https://www.parcoabruzzo.it/fauna.schede.dettaglio.php?id=316",
+      "publisher": "Parco Nazionale d’Abruzzo, Lazio e Molise",
+      "checkedOn": "2026-10-18"
+    },
+    {
+      "id": "PNALM-TASSO",
+      "title": "Tasso",
+      "url": "https://www.parcoabruzzo.it/fauna.schede.dettaglio.php?id=308",
+      "publisher": "Parco Nazionale d’Abruzzo, Lazio e Molise",
+      "checkedOn": "2026-10-18"
     }
   ],
   "items": [
@@ -149,7 +219,14 @@
       ],
       "summary": "L’ape allevata dagli apicoltori è una delle molte specie di api che visitano i fiori.",
       "observe": [],
-      "habitat": [],
+      "habitat": [
+        {
+          "text": "Le api da miele costruiscono nidi di cera e vivono in colonie organizzate in caste.",
+          "sourceIds": [
+            "UNIBO-G"
+          ]
+        }
+      ],
       "behavior": [
         {
           "text": "Vive in colonie organizzate in caste e costruisce favi di cera.",
@@ -304,6 +381,12 @@
           "sourceIds": [
             "ISPRA-S"
           ]
+        },
+        {
+          "text": "Gli adulti visitano i fiori e si alimentano anche di nettare e polline.",
+          "sourceIds": [
+            "RER-V"
+          ]
         }
       ],
       "cautions": [],
@@ -454,9 +537,22 @@
           "sourceIds": [
             "RER-V"
           ]
+        },
+        {
+          "text": "La colonia è annuale; superano l’inverno le giovani regine, che possono fondare una nuova colonia.",
+          "sourceIds": [
+            "RER-V"
+          ]
         }
       ],
-      "ecology": [],
+      "ecology": [
+        {
+          "text": "Tra gli insetti che preda vi sono anche le api.",
+          "sourceIds": [
+            "RER-V"
+          ]
+        }
+      ],
       "cautions": [
         {
           "text": "Non avvicinarti ai nidi per osservarli o tentare di distruggerli.",
@@ -509,11 +605,23 @@
           "sourceIds": [
             "ISS-Z"
           ]
+        },
+        {
+          "text": "Temperatura, umidità e disponibilità di ospiti influenzano l’attività: non esiste un calendario valido per ogni luogo.",
+          "sourceIds": [
+            "ISS-Z"
+          ]
         }
       ],
       "behavior": [
         {
           "text": "Molte zecche attendono sull’erba o sui cespugli il passaggio di un ospite al quale aggrapparsi.",
+          "sourceIds": [
+            "ISS-Z"
+          ]
+        },
+        {
+          "text": "Il ciclo di sviluppo comprende uovo, larva, ninfa e adulto.",
           "sourceIds": [
             "ISS-Z"
           ]
@@ -688,6 +796,18 @@
           "sourceIds": [
             "LAZ-C"
           ]
+        },
+        {
+          "text": "Tra gli alimenti vegetali figurano ghiande, castagne, tuberi e frutta.",
+          "sourceIds": [
+            "LAZ-C"
+          ]
+        },
+        {
+          "text": "Gli scavi per cercare cibo rimescolano e arieggiano il terreno.",
+          "sourceIds": [
+            "LAZ-C"
+          ]
         }
       ],
       "cautions": [],
@@ -736,11 +856,23 @@
           "sourceIds": [
             "PNALM-L"
           ]
+        },
+        {
+          "text": "Le marcature odorose, con feci e urina, contribuiscono a delimitare il territorio.",
+          "sourceIds": [
+            "PNALM-L"
+          ]
         }
       ],
       "ecology": [
         {
           "text": "La dieta comprende ungulati come cinghiali, caprioli e cervi.",
+          "sourceIds": [
+            "PNALM-L"
+          ]
+        },
+        {
+          "text": "La dieta può comprendere anche roditori e carcasse; non è limitata alle prede di grandi dimensioni.",
           "sourceIds": [
             "PNALM-L"
           ]
@@ -759,6 +891,587 @@
         "Nessuna sottospecie assegnata: le fonti consultate adottano interpretazioni differenti.",
         "Le fonti non documentano un avvistamento attuale nel luogo della passeggiata.",
         "Indicazioni operative per gli incontri da completare con una fonte dedicata al visitatore."
+      ],
+      "publicationStatus": "ready"
+    },
+    {
+      "id": "capriolo",
+      "name": "Capriolo",
+      "latin": "Capreolus capreolus",
+      "rank": "species",
+      "groupLabel": "Mammiferi",
+      "paths": [
+        "trail"
+      ],
+      "summary": "Tra bosco e radure: il mantello cambia con la stagione.",
+      "observe": [
+        {
+          "text": "Il mantello estivo tende al bruno rossastro; quello invernale è più grigiastro, con il posteriore bianco.",
+          "sourceIds": [
+            "PNALM-CAPRIOLO"
+          ]
+        },
+        {
+          "text": "I piccoli hanno un mantello maculato.",
+          "sourceIds": [
+            "PNALM-CAPRIOLO"
+          ]
+        }
+      ],
+      "habitat": [
+        {
+          "text": "Zone boscose con radure e uno strato arbustivo folto.",
+          "sourceIds": [
+            "PNALM-CAPRIOLO"
+          ]
+        }
+      ],
+      "behavior": [
+        {
+          "text": "In inverno può riunirsi in piccoli gruppi; nelle altre stagioni è più spesso solitario.",
+          "sourceIds": [
+            "PNALM-CAPRIOLO"
+          ]
+        }
+      ],
+      "ecology": [
+        {
+          "text": "Si nutre di erbe, foglie e piccole piante.",
+          "sourceIds": [
+            "PNALM-CAPRIOLO"
+          ]
+        }
+      ],
+      "cautions": [],
+      "sourceIds": [
+        "PNALM-CAPRIOLO"
+      ],
+      "photos": [],
+      "knownGaps": [
+        "Fotografie reali con autore e licenza verificati ancora da acquisire.",
+        "Fonte riferita al PNALM: non documenta presenza attuale nel Reatino o nel sentiero selezionato.",
+        "Descrizione non diagnostica; nessuna chiave di identificazione certa."
+      ],
+      "publicationStatus": "ready"
+    },
+    {
+      "id": "cervo",
+      "name": "Cervo",
+      "latin": "Cervus elaphus",
+      "rank": "species",
+      "groupLabel": "Mammiferi",
+      "paths": [
+        "trail"
+      ],
+      "summary": "Un erbivoro del bosco e delle radure, con palchi che si rinnovano.",
+      "observe": [
+        {
+          "text": "Nei maschi si sviluppano i palchi; le femmine ne sono prive.",
+          "sourceIds": [
+            "PNALM-CERVO"
+          ]
+        },
+        {
+          "text": "I piccoli hanno il dorso maculato.",
+          "sourceIds": [
+            "PNALM-CERVO"
+          ]
+        }
+      ],
+      "habitat": [
+        {
+          "text": "Boschi alternati a radure e praterie.",
+          "sourceIds": [
+            "PNALM-CERVO"
+          ]
+        }
+      ],
+      "behavior": [
+        {
+          "text": "I maschi perdono e riformano i palchi ogni anno.",
+          "sourceIds": [
+            "PNALM-CERVO"
+          ]
+        },
+        {
+          "text": "Il bramito è legato alle interazioni tra maschi durante la stagione riproduttiva.",
+          "sourceIds": [
+            "PNALM-CERVO"
+          ]
+        }
+      ],
+      "ecology": [
+        {
+          "text": "La dieta comprende erbe, germogli, foglie e cortecce.",
+          "sourceIds": [
+            "PNALM-CERVO"
+          ]
+        }
+      ],
+      "cautions": [],
+      "sourceIds": [
+        "PNALM-CERVO"
+      ],
+      "photos": [],
+      "knownGaps": [
+        "Fotografie reali con autore e licenza verificati ancora da acquisire.",
+        "Fonte riferita al PNALM: non documenta presenza attuale nel Reatino o nel sentiero selezionato.",
+        "Descrizione non diagnostica; nessuna chiave di identificazione certa."
+      ],
+      "publicationStatus": "ready"
+    },
+    {
+      "id": "cetonia-dorata",
+      "name": "Cetonia dorata",
+      "latin": "Cetonia aurata",
+      "rank": "species",
+      "groupLabel": "Insetti",
+      "paths": [
+        "flowers"
+      ],
+      "summary": "Un coleottero sui fiori: adulto e larva frequentano ambienti diversi.",
+      "observe": [
+        {
+          "text": "Il colore dell’adulto è variabile: il nome comune non descrive ogni esemplare.",
+          "sourceIds": [
+            "PNALM-CETONIA-DORATA"
+          ]
+        }
+      ],
+      "habitat": [
+        {
+          "text": "Gli adulti frequentano i fiori, tra cui quelli di rose e peonie.",
+          "sourceIds": [
+            "PNALM-CETONIA-DORATA"
+          ]
+        },
+        {
+          "text": "Le larve possono vivere nel legno decomposto o nei nidi di alcune formiche.",
+          "sourceIds": [
+            "PNALM-CETONIA-DORATA"
+          ]
+        }
+      ],
+      "behavior": [],
+      "ecology": [
+        {
+          "text": "Gli adulti si alimentano di polline e frutta.",
+          "sourceIds": [
+            "PNALM-CETONIA-DORATA"
+          ]
+        }
+      ],
+      "cautions": [],
+      "sourceIds": [
+        "PNALM-CETONIA-DORATA"
+      ],
+      "photos": [],
+      "knownGaps": [
+        "Fotografie reali con autore e licenza verificati ancora da acquisire.",
+        "Fonte riferita al PNALM: non documenta presenza attuale nel Reatino o nel sentiero selezionato.",
+        "Descrizione non diagnostica; nessuna chiave di identificazione certa."
+      ],
+      "publicationStatus": "ready"
+    },
+    {
+      "id": "rosalia-alpina",
+      "name": "Rosalia alpina",
+      "latin": "Rosalia alpina",
+      "rank": "species",
+      "groupLabel": "Insetti",
+      "paths": [
+        "trail"
+      ],
+      "summary": "Lunghe antenne e legno dei boschi maturi: un coleottero delle faggete.",
+      "observe": [
+        {
+          "text": "La livrea è azzurra con macchie nere e le antenne sono lunghe e articolate.",
+          "sourceIds": [
+            "PNALM-ROSALIA-ALPINA"
+          ]
+        }
+      ],
+      "habitat": [
+        {
+          "text": "Boschi montani di latifoglie, soprattutto faggete con alberi maturi.",
+          "sourceIds": [
+            "PNALM-ROSALIA-ALPINA"
+          ]
+        }
+      ],
+      "behavior": [
+        {
+          "text": "Le larve scavano gallerie nei tronchi cariati, spezzati o morti da poco.",
+          "sourceIds": [
+            "PNALM-ROSALIA-ALPINA"
+          ]
+        }
+      ],
+      "ecology": [
+        {
+          "text": "Il legno dei vecchi alberi è il luogo di sviluppo delle larve.",
+          "sourceIds": [
+            "PNALM-ROSALIA-ALPINA"
+          ]
+        }
+      ],
+      "cautions": [],
+      "sourceIds": [
+        "PNALM-ROSALIA-ALPINA"
+      ],
+      "photos": [],
+      "knownGaps": [
+        "Fotografie reali con autore e licenza verificati ancora da acquisire.",
+        "Fonte riferita al PNALM: non documenta presenza attuale nel Reatino o nel sentiero selezionato.",
+        "Descrizione non diagnostica; nessuna chiave di identificazione certa."
+      ],
+      "publicationStatus": "ready"
+    },
+    {
+      "id": "tritone-crestato-italiano",
+      "name": "Tritone crestato italiano",
+      "latin": "Triturus carnifex",
+      "rank": "species",
+      "groupLabel": "Anfibi",
+      "paths": [
+        "trail"
+      ],
+      "summary": "La vita acquatica di un anfibio di stagni, pozze e fontanili.",
+      "observe": [
+        {
+          "text": "La colorazione del dorso tende al bruno scuro; il ventre presenta macchie nere su fondo giallo, ocra o rossastro.",
+          "sourceIds": [
+            "PNALM-TRITONE-CRESTATO-ITALIANO"
+          ]
+        },
+        {
+          "text": "I maschi sviluppano una cresta dorsale e caudale; femmine e giovani possono avere una linea dorsale gialla.",
+          "sourceIds": [
+            "PNALM-TRITONE-CRESTATO-ITALIANO"
+          ]
+        }
+      ],
+      "habitat": [
+        {
+          "text": "Acque ferme o a lento scorrimento, come pozze, stagni e piccoli ruscelli; anche vasche e abbeveratoi.",
+          "sourceIds": [
+            "PNALM-TRITONE-CRESTATO-ITALIANO"
+          ]
+        }
+      ],
+      "behavior": [
+        {
+          "text": "La femmina depone le uova una alla volta sulla vegetazione sommersa e le avvolge con le foglie.",
+          "sourceIds": [
+            "PNALM-TRITONE-CRESTATO-ITALIANO"
+          ]
+        }
+      ],
+      "ecology": [
+        {
+          "text": "Si alimenta di invertebrati acquatici e può predare anche stadi giovanili di altri anfibi.",
+          "sourceIds": [
+            "PNALM-TRITONE-CRESTATO-ITALIANO"
+          ]
+        }
+      ],
+      "cautions": [],
+      "sourceIds": [
+        "PNALM-TRITONE-CRESTATO-ITALIANO"
+      ],
+      "photos": [],
+      "knownGaps": [
+        "Fotografie reali con autore e licenza verificati ancora da acquisire.",
+        "Fonte riferita al PNALM: non documenta presenza attuale nel Reatino o nel sentiero selezionato.",
+        "Descrizione non diagnostica; nessuna chiave di identificazione certa."
+      ],
+      "publicationStatus": "ready"
+    },
+    {
+      "id": "salamandra-pezzata",
+      "name": "Salamandra pezzata",
+      "latin": "Salamandra salamandra",
+      "rank": "species",
+      "groupLabel": "Anfibi",
+      "paths": [
+        "trail"
+      ],
+      "summary": "Un anfibio del sottobosco umido, con larve che si sviluppano in acqua.",
+      "observe": [
+        {
+          "text": "Il corpo è nero con macchie gialle; nelle popolazioni dell’Appennino centrale e meridionale possono essere anche arancioni.",
+          "sourceIds": [
+            "PNALM-SALAMANDRA-PEZZATA"
+          ]
+        }
+      ],
+      "habitat": [
+        {
+          "text": "Negli Appennini frequenta boschi umidi di latifoglie, presso ruscelli con pozze.",
+          "sourceIds": [
+            "PNALM-SALAMANDRA-PEZZATA"
+          ]
+        }
+      ],
+      "behavior": [
+        {
+          "text": "L’adulto vive soprattutto a terra; la femmina raggiunge l’acqua per partorire le larve.",
+          "sourceIds": [
+            "PNALM-SALAMANDRA-PEZZATA"
+          ]
+        }
+      ],
+      "ecology": [
+        {
+          "text": "Le larve si alimentano di piccoli invertebrati acquatici.",
+          "sourceIds": [
+            "PNALM-SALAMANDRA-PEZZATA"
+          ]
+        }
+      ],
+      "cautions": [],
+      "sourceIds": [
+        "PNALM-SALAMANDRA-PEZZATA"
+      ],
+      "photos": [],
+      "knownGaps": [
+        "Fotografie reali con autore e licenza verificati ancora da acquisire.",
+        "Fonte riferita al PNALM: non documenta presenza attuale nel Reatino o nel sentiero selezionato.",
+        "Descrizione non diagnostica; nessuna chiave di identificazione certa."
+      ],
+      "publicationStatus": "ready"
+    },
+    {
+      "id": "riccio-europeo",
+      "name": "Riccio europeo",
+      "latin": "Erinaceus europaeus",
+      "rank": "species",
+      "groupLabel": "Mammiferi",
+      "paths": [
+        "trail"
+      ],
+      "summary": "Un onnivoro che trova riparo fra foglie, radici e cespugli.",
+      "observe": [
+        {
+          "text": "Il dorso è ricoperto di aculei, mentre altre parti del corpo sono rivestite di pelo.",
+          "sourceIds": [
+            "PNALM-RICCIO-EUROPEO"
+          ]
+        }
+      ],
+      "habitat": [
+        {
+          "text": "Margini dei boschi con sottobosco, zone cespugliate, orti e giardini.",
+          "sourceIds": [
+            "PNALM-RICCIO-EUROPEO"
+          ]
+        }
+      ],
+      "behavior": [
+        {
+          "text": "Durante il giorno si ripara tra radici, rovi o foglie; cerca il cibo soprattutto di notte.",
+          "sourceIds": [
+            "PNALM-RICCIO-EUROPEO"
+          ]
+        }
+      ],
+      "ecology": [
+        {
+          "text": "La dieta comprende insetti, molluschi e lombrichi, ma anche frutta e altro materiale vegetale.",
+          "sourceIds": [
+            "PNALM-RICCIO-EUROPEO"
+          ]
+        }
+      ],
+      "cautions": [],
+      "sourceIds": [
+        "PNALM-RICCIO-EUROPEO"
+      ],
+      "photos": [],
+      "knownGaps": [
+        "Fotografie reali con autore e licenza verificati ancora da acquisire.",
+        "Fonte riferita al PNALM: non documenta presenza attuale nel Reatino o nel sentiero selezionato.",
+        "Descrizione non diagnostica; nessuna chiave di identificazione certa."
+      ],
+      "publicationStatus": "ready"
+    },
+    {
+      "id": "volpe",
+      "name": "Volpe",
+      "latin": "Vulpes vulpes",
+      "rank": "species",
+      "groupLabel": "Mammiferi",
+      "paths": [
+        "trail"
+      ],
+      "summary": "Un canide adattabile, dai boschi agli ambienti coltivati.",
+      "observe": [
+        {
+          "text": "Muso appuntito, orecchie larghe e coda molto folta.",
+          "sourceIds": [
+            "PNALM-VOLPE"
+          ]
+        }
+      ],
+      "habitat": [
+        {
+          "text": "Frequenta boschi, campagne coltivate e ambienti modificati dalle attività umane.",
+          "sourceIds": [
+            "PNALM-VOLPE"
+          ]
+        }
+      ],
+      "behavior": [
+        {
+          "text": "L’andatura cambia la disposizione delle impronte: una pista non basta da sola a confermare la specie.",
+          "sourceIds": [
+            "PNALM-VOLPE"
+          ]
+        }
+      ],
+      "ecology": [
+        {
+          "text": "La dieta comprende piccoli mammiferi, uccelli e invertebrati.",
+          "sourceIds": [
+            "PNALM-VOLPE"
+          ]
+        },
+        {
+          "text": "Può integrare l’alimentazione con frutti selvatici e bacche.",
+          "sourceIds": [
+            "PNALM-VOLPE"
+          ]
+        }
+      ],
+      "cautions": [],
+      "sourceIds": [
+        "PNALM-VOLPE"
+      ],
+      "photos": [],
+      "knownGaps": [
+        "Fotografie reali con autore e licenza verificati ancora da acquisire.",
+        "Fonte riferita al PNALM: non documenta presenza attuale nel Reatino o nel sentiero selezionato.",
+        "Descrizione non diagnostica; nessuna chiave di identificazione certa."
+      ],
+      "publicationStatus": "ready"
+    },
+    {
+      "id": "istrice",
+      "name": "Istrice",
+      "latin": "Hystrix cristata",
+      "rank": "species",
+      "groupLabel": "Mammiferi",
+      "paths": [
+        "trail"
+      ],
+      "summary": "Un roditore che cerca alimenti vegetali fra boschi e coltivi.",
+      "observe": [
+        {
+          "text": "Gli aculei sono peli modificati, presenti soprattutto su dorso, fianchi e coda.",
+          "sourceIds": [
+            "PNALM-ISTRICE"
+          ]
+        }
+      ],
+      "habitat": [
+        {
+          "text": "Zone boscose e cespugliate alternate a campi coltivati.",
+          "sourceIds": [
+            "PNALM-ISTRICE"
+          ]
+        }
+      ],
+      "behavior": [
+        {
+          "text": "L’attività è soprattutto notturna.",
+          "sourceIds": [
+            "PNALM-ISTRICE"
+          ]
+        },
+        {
+          "text": "Vive in coppie o gruppi familiari.",
+          "sourceIds": [
+            "PNALM-ISTRICE"
+          ]
+        }
+      ],
+      "ecology": [
+        {
+          "text": "Si alimenta di tuberi, radici, erbe, semi e frutti caduti.",
+          "sourceIds": [
+            "PNALM-ISTRICE"
+          ]
+        }
+      ],
+      "cautions": [],
+      "sourceIds": [
+        "PNALM-ISTRICE"
+      ],
+      "photos": [],
+      "knownGaps": [
+        "Fotografie reali con autore e licenza verificati ancora da acquisire.",
+        "Fonte riferita al PNALM: non documenta presenza attuale nel Reatino o nel sentiero selezionato.",
+        "Descrizione non diagnostica; nessuna chiave di identificazione certa."
+      ],
+      "publicationStatus": "ready"
+    },
+    {
+      "id": "tasso",
+      "name": "Tasso",
+      "latin": "Meles meles",
+      "rank": "species",
+      "groupLabel": "Mammiferi",
+      "paths": [
+        "trail"
+      ],
+      "summary": "Vita notturna e dieta varia fra boschi, cespugli e radure.",
+      "observe": [
+        {
+          "text": "La testa è bianca con due fasce scure; il dorso tende al grigio.",
+          "sourceIds": [
+            "PNALM-TASSO"
+          ]
+        }
+      ],
+      "habitat": [
+        {
+          "text": "Boschi di latifoglie alternati a zone aperte, cespugliate o incolte.",
+          "sourceIds": [
+            "PNALM-TASSO"
+          ]
+        }
+      ],
+      "behavior": [
+        {
+          "text": "Trascorre molto tempo nella tana ed è attivo soprattutto di notte.",
+          "sourceIds": [
+            "PNALM-TASSO"
+          ]
+        }
+      ],
+      "ecology": [
+        {
+          "text": "Si alimenta di risorse vegetali e animali, tra cui frutta, insetti e piccoli mammiferi.",
+          "sourceIds": [
+            "PNALM-TASSO"
+          ]
+        },
+        {
+          "text": "I semi ingeriti con i frutti possono essere dispersi attraverso gli escrementi.",
+          "sourceIds": [
+            "PNALM-TASSO"
+          ]
+        }
+      ],
+      "cautions": [],
+      "sourceIds": [
+        "PNALM-TASSO"
+      ],
+      "photos": [],
+      "knownGaps": [
+        "Fotografie reali con autore e licenza verificati ancora da acquisire.",
+        "Fonte riferita al PNALM: non documenta presenza attuale nel Reatino o nel sentiero selezionato.",
+        "Descrizione non diagnostica; nessuna chiave di identificazione certa."
       ],
       "publicationStatus": "ready"
     }
