@@ -1517,5 +1517,250 @@
     },
     "state": "pronta da integrare",
     "review": "Russula olivacea violetta a imbuto e bruna/rossa piane, lamelle gialle e gambi rosati invariati senza anello/volva/reticolo. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-27.png",
+    "sha256": "e0ee8a6efaf31a07e105db524f0aa16404c32e830739e537c8a3fb066218d742",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        448,
+        106,
+        836,
+        382
+      ],
+      "0": [
+        36,
+        146,
+        436,
+        286
+      ],
+      "4": [
+        464,
+        424,
+        800,
+        792
+      ],
+      "3": [
+        46,
+        460,
+        420,
+        692
+      ],
+      "7": [
+        462,
+        832,
+        800,
+        1200
+      ],
+      "6": [
+        52,
+        880,
+        422,
+        1110
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Russula violetta piana e Tricholoma bruno/verde conici, lamelle gialle; gambo Russula rosato e Tricholoma giallo, senza anello/volva/reticolo. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-28.png",
+    "sha256": "5730c3de8a970f4d83d926a6c04e8992f30399faf6c791cf625e64cc2061fb4b",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        448,
+        94,
+        822,
+        408
+      ],
+      "0": [
+        62,
+        150,
+        424,
+        318
+      ],
+      "4": [
+        448,
+        486,
+        822,
+        800
+      ],
+      "3": [
+        56,
+        542,
+        430,
+        710
+      ],
+      "7": [
+        450,
+        906,
+        826,
+        1182
+      ],
+      "6": [
+        58,
+        934,
+        428,
+        1062
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Tricholoma equestre bruno/verde ombrellati con umbone evidente e bruno piano senza umbone; lamelle e gambi gialli, nessun anello/volva/reticolo. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-29.png",
+    "sha256": "97b0320259a03773d33c5adcc2bd6cb76714834f6c804449bd3efda17bf0edcf",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        444,
+        104,
+        812,
+        384
+      ],
+      "0": [
+        46,
+        158,
+        420,
+        296
+      ],
+      "4": [
+        442,
+        484,
+        812,
+        780
+      ],
+      "3": [
+        42,
+        552,
+        424,
+        690
+      ],
+      "7": [
+        440,
+        872,
+        812,
+        1168
+      ],
+      "6": [
+        42,
+        942,
+        424,
+        1080
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Tricholoma equestre verde piano con lamelle/gambo gialli; pardinum bianco/bruno piano con squame scure, lamelle e gambo chiari. Nessun anello/volva/reticolo. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-30.png",
+    "sha256": "25c32028fd428734327701c7902f6f2f706e460fc2de1462226ae40f07bd1867",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        480,
+        62,
+        772,
+        408
+      ],
+      "0": [
+        68,
+        156,
+        400,
+        348
+      ],
+      "4": [
+        480,
+        454,
+        772,
+        798
+      ],
+      "3": [
+        68,
+        548,
+        400,
+        740
+      ],
+      "7": [
+        480,
+        846,
+        772,
+        1190
+      ],
+      "6": [
+        68,
+        940,
+        400,
+        1132
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Calopus bruno/crema/grigio emisferici, pori gialli e gambo rosso con reticolo bianco invariati; nessun anello/volva. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-31.png",
+    "sha256": "6c23a79354c7b99981a50cc60214c4251caee3d7ee55deac5fab0f29e11dcf5f",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        494,
+        60,
+        762,
+        426
+      ],
+      "0": [
+        70,
+        136,
+        392,
+        312
+      ],
+      "4": [
+        494,
+        476,
+        764,
+        844
+      ],
+      "3": [
+        72,
+        552,
+        394,
+        730
+      ],
+      "7": [
+        466,
+        924,
+        786,
+        1192
+      ],
+      "6": [
+        66,
+        954,
+        400,
+        1072
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Radicans bianco/grigio emisferici con pori gialli, reticolo bianco e base radicante; Chalciporus bruno piano con pori bruni e gambo senza reticolo. Nessun anello/volva. Alpha e sei celle verificati."
   }
 ]
