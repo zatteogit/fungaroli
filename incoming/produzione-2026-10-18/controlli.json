@@ -1762,5 +1762,250 @@
     },
     "state": "pronta da integrare",
     "review": "Radicans bianco/grigio emisferici con pori gialli, reticolo bianco e base radicante; Chalciporus bruno piano con pori bruni e gambo senza reticolo. Nessun anello/volva. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-32.png",
+    "sha256": "e64c282d8e3b4d9cabdf9a9644834f156fea9cae0dd1f0215acd6692f26b1638",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        462,
+        116,
+        814,
+        382
+      ],
+      "0": [
+        54,
+        160,
+        422,
+        274
+      ],
+      "4": [
+        478,
+        478,
+        796,
+        784
+      ],
+      "3": [
+        56,
+        532,
+        418,
+        680
+      ],
+      "7": [
+        478,
+        868,
+        796,
+        1174
+      ],
+      "6": [
+        56,
+        922,
+        418,
+        1070
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Cortinario nero piano con lamelle/gambo violetti; Hydnellum bruno/rosa convessi con gocce rosse, aculei crema e gambo bruno. Nessun anello/volva/reticolo. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-33.png",
+    "sha256": "efab4210a62e1dad3385596c431bee82a4673430c1fad8ed77ad012585a5ac5e",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        456,
+        90,
+        810,
+        388
+      ],
+      "0": [
+        60,
+        142,
+        432,
+        320
+      ],
+      "4": [
+        456,
+        490,
+        810,
+        788
+      ],
+      "3": [
+        60,
+        542,
+        434,
+        720
+      ],
+      "7": [
+        474,
+        860,
+        780,
+        1174
+      ],
+      "6": [
+        74,
+        938,
+        420,
+        1116
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Hydnellum bruno/rosa a imbuto con gocce rosse e aculei crema; Hygrophoropsis bruno convesso con lamelle arancio decorrenti. Senza anello/volva/reticolo. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-34.png",
+    "sha256": "84df1ec00aaa2d62e2c324f3a7dd7941c1631b31eb2de22935df666ce529f5a9",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        460,
+        52,
+        802,
+        374
+      ],
+      "0": [
+        46,
+        116,
+        406,
+        284
+      ],
+      "4": [
+        464,
+        452,
+        828,
+        772
+      ],
+      "3": [
+        42,
+        510,
+        422,
+        654
+      ],
+      "7": [
+        464,
+        842,
+        808,
+        1176
+      ],
+      "6": [
+        44,
+        914,
+        414,
+        1098
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Hygrophoropsis giallo convesso con lamelle arancio; Pholiota bruna piana con squame e anello; Tricholoma grigio convesso con fibre e senza anello. Nessuna volva/reticolo. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-35.png",
+    "sha256": "f5e953ed4e4483bc3e6d9db4b6b7ddbc695dedba3fa7423c1eb331f10dfffb35",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        484,
+        62,
+        766,
+        416
+      ],
+      "0": [
+        76,
+        140,
+        392,
+        338
+      ],
+      "4": [
+        462,
+        518,
+        794,
+        802
+      ],
+      "3": [
+        68,
+        552,
+        400,
+        682
+      ],
+      "7": [
+        488,
+        846,
+        762,
+        1198
+      ],
+      "6": [
+        74,
+        914,
+        392,
+        1100
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Fiele bruno emisferico/piano con pori rosa e reticolo bruno; Amanita rubescens bruna emisferica con verruche rosa, lamelle chiare e anello, nessuna volva aggiunta. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-36.png",
+    "sha256": "032cdbbb76a9eb3a0bacecf392e7032d3830329dc321af7385e91e8728f861c2",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        456,
+        92,
+        804,
+        390
+      ],
+      "0": [
+        76,
+        142,
+        438,
+        274
+      ],
+      "4": [
+        470,
+        468,
+        782,
+        800
+      ],
+      "3": [
+        78,
+        546,
+        438,
+        676
+      ],
+      "7": [
+        490,
+        856,
+        762,
+        1194
+      ],
+      "6": [
+        96,
+        906,
+        418,
+        1084
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Amanita rubescens bruna piana con anello; tabescens bruno piano senza anello; Cyclocybe crema emisferica con anello, lamelle crema/grigie. Volve/reticoli non aggiunti. Alpha e sei celle verificati."
   }
 ]
