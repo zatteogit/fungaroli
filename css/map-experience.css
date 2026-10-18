@@ -2,7 +2,14 @@
 body[data-page="mappa"] { overflow:hidden; }
 body[data-page="mappa"] #weather-work { display:none; }
 body[data-page="mappa"] #views { padding:0; }
-.map-top { width:auto; max-width:540px; left:12px; right:12px; padding:6px; grid-template-columns:minmax(0,1fr); border-radius:22px; box-shadow:var(--shadow-1); }
+/* Superficie opaca: Safari standalone può ricampionare anche il testo
+   quando il pannello sopra la carta usa il backdrop-filter ereditato. */
+.map-top { width:auto; max-width:540px; left:12px; right:12px; padding:6px; grid-template-columns:minmax(0,1fr); border-radius:22px; box-shadow:var(--shadow-1); background:var(--surface); backdrop-filter:none; -webkit-backdrop-filter:none; }
+@media(max-width:760px) {
+  /* La carta non deve scorrere o essere campionata dietro la status bar.
+     Nei browser senza inset questa superficie ha altezza zero. */
+  body[data-page="mappa"]::before { content:''; position:fixed; top:0; left:0; right:0; height:env(safe-area-inset-top,0px); z-index:1001; background:var(--bg); pointer-events:none; }
+}
 .map-top #map-filters { order:-1; min-width:0; display:grid; grid-template-columns:auto minmax(0,1fr); gap:6px; padding:0; overflow:visible; }
 .map-query, .map-date { display:flex; align-items:center; min-height:48px; border:0; border-radius:16px; padding:8px 12px; font:600 14px/1.4 var(--font-body); background:var(--surface); color:var(--text); cursor:pointer; }
 .map-query { gap:8px; text-align:left; min-width:0; }
