@@ -189,7 +189,11 @@ export async function handleCommunity(request, env, now = Date.now()) {
     }
 
     const user = await signedIn(request, db, now);
-    if (path === 'session' && request.method === 'GET') return result({ user: { id: user.id, handle: user.handle, base:user.base } });
+    if (path === 'session' && request.method === 'GET') {
+      const assigned=key=>(env[key]||'').split(',').map(s=>s.trim()).filter(Boolean).includes(user.id);
+      const role=assigned('CMS_ADMIN_IDS')?'admin':assigned('CMS_EDITOR_IDS')?'editor':'member';
+      return result({ user: { id:user.id, handle:user.handle, base:user.base, role } });
+    }
     await rate(db, 'user:' + user.id, 120, 3600, now);
     if(path==='profile'&&request.method==='PUT') {
       const data=await body(request);

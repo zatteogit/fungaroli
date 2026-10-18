@@ -37,6 +37,7 @@ test('ruoli del profilo: utente, editor delle bozze e amministratore',async({bro
     await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','32026-10-16'));
     await loginFixture(page,id);await page.goto('/');
     const me=await cms(page,'me');expect(me.status).toBe(200);expect(me.data.user.role).toBe(role);
+    expect((await api(page,'/api/community/session')).data.user.role).toBe(role);
     if(role==='member'){
       expect(me.data.user.scopes).toEqual([]);expect((await cms(page,'items')).status).toBe(403);
       expect((await cms(page,'items/ui-copy','PATCH',{role:'admin',data:{}},{'if-match':'"0"'})).status).toBe(403);

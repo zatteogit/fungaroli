@@ -120,3 +120,5 @@ pieno segnala la variante selezionata. Anello, volva e reticolo si leggono in ri
 presente/assente esclusivamente quando il relativo dato è booleano documentato.
 Le fasi di crescita mantengono la propria galleria. Benchmark e motivazioni in
 [griglia-caratteri-2026-10-18.md](griglia-caratteri-2026-10-18.md).
+
+Il diario di prova viene proposto nel Taccuino soltanto agli amministratori e agli editor: sia il collegamento nell’intestazione sia l’invito in fondo all’elenco. Il ruolo arriva dalla sessione verificata dal server, non da preferenze locali; in assenza di ruolo verificato le proposte restano nascoste, anche durante il caricamento. Il logout le rimuove. Il collegamento diretto alla dimostrazione rimane consultabile: i contenuti sono inventati e pubblici, non dati riservati.
