@@ -1,0 +1,18 @@
+[
+  {
+    "id": "ebbio-portamento-r02",
+    "refs": [
+      "/workspace/fungaroli/assets/plants/ebbio-1.webp",
+      "/workspace/fronda-plant-corrections/incoming/lotto-botanico-02-2026-10-18/originali/ebbio-foglia-r00.png"
+    ],
+    "prompt": "Create a new, botanically accurate simplified habit illustration of dwarf elder Sambucus ebulus, FIRST reference controls plant habit, SECOND reference is one correctly drawn compound leaf. Show one straight slender GREEN HERBACEOUS main stem, never brown woody trunk. On the middle part of the stem, exactly ONE clear opposite pair of compound leaves as a compositional sample, one left and one right at the same node. Critical structure: EACH compound leaf has a LONG green rachis extending obliquely OUTWARD away from the main stem, a terminal narrow pointed leaflet at its outer end and THREE PAIRS of narrow serrated pointed lateral leaflets at THREE SEPARATE positions ALONG that rachis. Leaflets must NOT all join at one point or form a palm/cannabis fan. Each leaf should look like the SECOND reference turned diagonally outward, a feather-like pinnate leaf not a hand. Green main stem continues upward from node to a small cream/palegreen flower cluster as in FIRST photo. No additional large simple leaves, no ambiguous central leaf, no roots or fruits. Aboveground only, base cut green stem without invented root system. Flat bright greens, darkbrown outlines, simple pale veins, limited cream/yellowgreen flowers secondary. True transparent background, no labels/ruler/ground/shadow. Full plant centered with margin, readable64px. This shows nonwoody herbaceous habit and opposite PINNATE compound leaves; chosen leaf-pair count is illustrative and not a fixed botanical assertion."
+  },
+  {
+    "id": "sambuco-portamento-r02",
+    "refs": [
+      "/workspace/fungaroli/assets/plants/sambuco-3.webp",
+      "/workspace/fronda-plant-corrections/incoming/lotto-botanico-02-2026-10-18/da-correggere/sambuco-portamento-r01.png"
+    ],
+    "prompt": "Correct SECOND illustration into a species-faithful ELDER Sambucus nigra woody habit icon using FIRST real photograph. Keep short irregular branched BROWN WOODY TRUNK and broad uneven green flowering crown. Major correction: REMOVE EVERY MAPLE-LIKE PALMATE GREEN BLADE, including the small background silhouette leaves. Sambu cus has PINNATE compound leaves, not single lobed palmate maple leaves. At small wholeplant icon scale render interior crown as smooth overlapping organic green MASSES WITH ROUNDED CONTOURS and NO star lobes, no leaf-shaped cutouts, no jagged maples. Around outer crown edge only, show a few clearly pinnate leaf sprigs: each has a slender rachis with two pairs of SEPARATE pointed oval serrated leaflets attached at TWO DIFFERENT positions and one terminal leaflet farther out. Do not make fingers all meet at one point. White/cream tiny flattened flower clusters spread over crown, from photographed flowering elder. No blackberries or fruit, no roots, exactscale, ground or backdrop. Flat green/brown/cream colors, thick darkbrown contours, entire isolated plant on true transparent background, generous margins, readability64px. The result must show woody flowering elder with neutral foliage masses and correct pinnate outer leaves, zero maple/palmate foliage."
+  }
+]
