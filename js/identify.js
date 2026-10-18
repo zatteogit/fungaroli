@@ -185,7 +185,7 @@ fetch('data/trait-icons.json').then((r) => (r.ok ? r.json() : null)).then((d) =>
 const illus = (key, part, colour) => `<img class="ts-ill" src="${esc(ASSET(`assets/traits/${key}-${part}${colour ? `-${colour}` : ''}.webp`))}" alt="" width="64" height="64" loading="lazy" decoding="async" data-ill="${part}">`;
 // Nel confronto la parte illustrata è un esempio della specie, non di ogni variante.
 const CMP_PARTS = {
-  cap_color:'cappello', cap_size:'cappello', cap_surface:'cappello', cap_veil:'cappello',
+  cap_color:'cappello', cap_surface:'cappello', cap_veil:'cappello',
   hymenophore:'sotto', hymenophore_color:'sotto', gill_attachment:'sotto',
   stem_ring:'gambo', stem_volva:'gambo', stem_reticulum:'gambo', stem_base:'gambo',
 };
@@ -846,7 +846,7 @@ const CMP = [
   { key: 'habitat', k: 'Dove', art: (a) => ART[a[0]], say: (v) => (QUESTIONS.find((q) => q.key === 'habitat').labels[v] || v) },
   { key: 'growth', k: 'Come cresce', art: (a) => ART[a[0]], say: (v) => (QUESTIONS.find((q) => q.key === 'growth').labels[v] || v) },
   { key: 'cap_shape', k: 'Forma del cappello', art: (a) => SHAPE[a[0]], say: (v) => optLabel(QK('cap_shape'), v) },
-  { key: 'cap_size', k: 'Dimensione', say: (v) => optLabel(QK('cap_size'), v) },
+  { key: 'cap_size', k: 'Diametro del cappello', say: (v) => optLabel(QK('cap_size'), v) },
   { key: 'trees', k: 'Alberi', get: (t) => t.trees, say: (v) => v },
   { key: 'spore_print', k: 'Sporata', art: (a) => sporeArt(a[0]), say: (v) => optLabel(QK('spore_print'), v) },
   { key: 'gill_attachment', k: 'Attaccatura delle lamelle', art: (a) => ATTACH[a[0]], say: (v) => optLabel(QK('gill_attachment'), v) },
@@ -874,7 +874,7 @@ function cmpRows(ref, t) {
     const illustration = who => r.key==='cap_shape' ? `<span class="cmp-part-art" data-cmp-ill-key="${esc(who.key)}" data-cmp-ill-part="cappello" aria-hidden="true">${comparisonIllustration(who.key,'cappello',comparisonVariantState(who.key).shape) || capArt([comparisonVariantState(who.key).shape],[comparisonVariantState(who.key).color],who.traits?.cap_veil===true)}</span>` : CMP_PARTS[r.key] ? `<span class="cmp-part-art" data-cmp-ill-key="${esc(who.key)}" data-cmp-ill-part="${CMP_PARTS[r.key]}" aria-hidden="true">${r.key==='hymenophore_color' && [].concat(who.traits?.hymenophore_color || []).length>1 ? hymArt([].concat(who.traits?.hymenophore || [])[0],[comparisonVariantState(who.key).underColor]) : ICONS?.[who.key] ? illus(who.key,CMP_PARTS[r.key]) : ''}</span>` : '';
     const cell = (X, Y, who) => r.key === 'season'
       ? `<div class="cmp-cell" role="group" aria-label="${esc(who.name||who.latin)}"><span>${esc(txt(X))}</span></div>`
-      : `<div class="cmp-cell${['hymenophore','stem_ring','stem_volva','stem_reticulum','stem_base','gill_attachment','cap_size'].includes(r.key)?' cmp-cell-miniature':''}" role="group" aria-label="${esc(who.name||who.latin)}">${r.label ? `<span class="cmp-k">${esc(r.label(who))}</span>` : ''}${illustration(who)}${['cap_color','cap_shape','hymenophore_color'].includes(r.key)?`<div class="cmp-variant-controls" data-cmp-controls="${esc(who.key)}" data-cmp-trait="${r.key}">${comparisonControls(who,r.key)}</div>`:''}<ul class="cmp-vals">${[...A.filter((v) => Y.includes(v) && X.includes(v)), ...X.filter((v) => !Y.includes(v))].map(v => value(v, who, !differentStructure && Y.includes(v))).join('')}</ul></div>`;
+      : `<div class="cmp-cell${['hymenophore','stem_ring','stem_volva','stem_reticulum','stem_base','gill_attachment'].includes(r.key)?' cmp-cell-miniature':''}" role="group" aria-label="${esc(who.name||who.latin)}">${r.label ? `<span class="cmp-k">${esc(r.label(who))}</span>` : ''}${illustration(who)}${['cap_color','cap_shape','hymenophore_color'].includes(r.key)?`<div class="cmp-variant-controls" data-cmp-controls="${esc(who.key)}" data-cmp-trait="${r.key}">${comparisonControls(who,r.key)}</div>`:''}<ul class="cmp-vals">${[...A.filter((v) => Y.includes(v) && X.includes(v)), ...X.filter((v) => !Y.includes(v))].map(v => value(v, who, !differentStructure && Y.includes(v))).join('')}</ul></div>`;
     return { kind, info:!!r.info, k: r.k, html: `<li class="cmp-row ${kind}" data-trait="${r.key}">${r.label ? '' : `<span class="cmp-k">${esc(r.k)}</span>`}${cell(A, B, ref)}${cell(B, A, t)}</li>` };
   }).filter(Boolean);
 }
