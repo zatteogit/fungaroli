@@ -976,3 +976,14 @@ button.cover-index:focus-visible { outline:3px solid var(--focus); outline-offse
   }
   .tabbar a, .tabbar .tab-search { min-height:0; }
 }
+
+/* Home: il titolo grande lascia posto alla stessa barra compatta delle viste operative.
+   Una sola riga resta ancorata: titolo e filtri, senza duplicare il blocco delle scelte. */
+#appbar-home-filters { display:none; }
+@media(max-width:899px) {
+  :root.title-in-bar body .appbar[data-context="home"] :is(.brand,.brand-place) { display:none; }
+  :root.title-in-bar body .appbar[data-context="home"] .appbar-title { display:block; left:var(--gutter); right:145px; max-width:none; text-align:left; transform:none; }
+  :root.title-in-bar body .appbar[data-context="home"] .appbar-actions > :not(#appbar-home-filters) { display:none; }
+  :root.title-in-bar body .appbar[data-context="home"] #appbar-home-filters { display:flex; }
+  .appbar[data-context="home"] .home-filter-button { font-size:14px; }
+}

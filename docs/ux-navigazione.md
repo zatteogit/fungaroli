@@ -94,3 +94,13 @@ Al primo ingresso si inquadrano le zone compatibili con i filtri, comprese le lo
 L’indice `#/diario` mostra card sintetiche con data, luogo, due righe di testo e pochi dati strutturati. Ogni card apre una pagina `#/diario/pagina/<id>`: testo completo, scheda collegata, dati di campo e azioni. Modifica, copia, eliminazione e condivisione stanno nel dettaglio. Il ritorno conserva ricerca e filtro. Le fotografie di catalogo sono dichiarate come tali e rimandano alla scheda con i crediti.
 
 “Diario di prova” apre `#/diario/esempio`, con 14 pagine fittizie e dettagli navigabili. Gli esempi restano esclusivamente nel renderer: non vengono scritti nello storage, esportati, passati alla personalizzazione o inviati alla community. Nel dettaglio reale, quando l’osservazione è condivisibile, uno switch mostra il consenso alla condivisione con community Fronda; il testo resta privato.
+
+### Testata della home durante lo scroll
+
+Su telefono e tablet, quando «Dove andare» supera la barra superiore, il titolo
+compatto e il comando Filtri sostituiscono logo e azioni generali. La barra resta
+visibile in entrambe le direzioni di scroll, come nelle viste operative; non si
+aggiunge un secondo blocco sticky con calendario e preferenze. Tornando sopra il
+titolo riappare la testata iniziale. Il conteggio e il pannello dei filtri sono
+condivisi e la chiusura restituisce il focus al comando visibile senza spostare la
+pagina. Sul desktop restano navigazione e testata estese.

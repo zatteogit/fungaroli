@@ -496,7 +496,7 @@ function revealHeader() {
 }
 function updateHeaderScroll() {
   const y = Math.max(0, scrollY);
-  if (!mobileHeader.matches || y < 64 || document.body.dataset.page === 'mappa' || document.querySelector('.appbar[data-context="comparison"]') || document.querySelector('.appbar :focus-visible')) {
+  if (!mobileHeader.matches || y < 64 || ['mappa','uscite'].includes(document.body.dataset.page) || document.querySelector('.appbar[data-context="comparison"]') || document.querySelector('.appbar :focus-visible')) {
     revealHeader();
     return;
   }
@@ -571,8 +571,8 @@ function watchTitle() {
   // il titolo del livello in cui sei: prima quello della pagina interna (confronto, scheda), poi quello della sezione
   const v = $('.view:not([hidden])');
   const h = v?.querySelector('.cmp-title') || v?.querySelector('.phero-title') || v?.querySelector('.view-title');
-  // dove c'e' il logo (la home) la barra ha gia' il suo titolo: niente titolino sopra il logo
-  if (!h || ($('.brand') && !$('.brand').hidden)) return;
+  // Anche la home passa dal titolo grande a quello compatto; il logo lascia spazio.
+  if (!h) return;
   bar.textContent = h.textContent.trim();
   const top = $('.appbar').getBoundingClientRect().bottom;
   // stato iniziale subito (anche tornando a una pagina già scorsa): la barra entra nella transizione già giusta, senza scatto
@@ -588,7 +588,7 @@ function watchTitle() {
 function updateHeaderActions(r) {
   const appbar=$('.appbar'), action=$('[data-appbar-action]');
   const comparison=r.view==='riconosci' && !!r.compare;
-  appbar.dataset.context=comparison?'comparison':'default';
+  appbar.dataset.context=comparison?'comparison':r.view==='uscite'?'home':'default';
   action.hidden=!comparison;
   if (comparison) {
     action.textContent='Cambia';
@@ -980,9 +980,10 @@ function renderFilterBox(box, onMap = false) {
   box.innerHTML=`<div class="af-group-row intent-row" role="group" aria-label="Cosa cerchi">${intentButtons()}</div><div class="af-pref-row" role="group" aria-label="Preferenze dell’uscita">${prefs}</div>`;
   box.querySelectorAll('[data-intent]').forEach(b=>b.onclick=()=>changeIntent(b.dataset.intent));
   box.querySelectorAll('[data-p]').forEach(b=>b.onclick=()=>soft(()=>{state[b.dataset.p]=!state[b.dataset.p];savePrefs();outCache.clear();renderFilterSummary();renderAll();}));
-  const action=$('#home-filter-action');
-  action.innerHTML=more;
-  action.querySelector('[data-more]').onclick=openFullFilters;
+  for (const action of document.querySelectorAll('#home-filter-action, #appbar-home-filters')) {
+    action.innerHTML=more;
+    action.querySelector('[data-more]').onclick=openFullFilters;
+  }
 }
 
 // Il pannello si riconfigura per attività, conservando le altre selezioni.
@@ -1047,7 +1048,10 @@ function openFullFilters() {
     dlg.querySelectorAll('[data-catalog-id]').forEach(b=>b.onclick=()=>{const id=b.dataset.catalogId; if(selectionFor(id)?.has(id))removeSpecies(id);else addSpecies(id);changed('#species-filter-search');});
     dlg.querySelectorAll('[data-pref]').forEach(b=>b.onclick=()=>{const k=b.dataset.pref;state[k]=!state[k];changed(`[data-pref="${k}"]`);});
   };
-  dlg.onclose = () => $(state.view === 'mappa' ? '#map-filters [data-more]' : '#home-filter-action [data-more]')?.focus();
+  dlg.onclose = () => {
+    const selector=state.view==='mappa'?'#map-filters [data-more]':mobileHeader.matches && document.documentElement.classList.contains('title-in-bar')?'#appbar-home-filters [data-more]':'#home-filter-action [data-more]';
+    $(selector)?.focus({preventScroll:true});
+  };
   paint(); dlg.showModal();
 }
 
