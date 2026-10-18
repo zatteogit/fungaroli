@@ -3,8 +3,8 @@
 let callouts = null;
 export function calloutSvg(point) {
   if (!point || ![point.x,point.y].every(n=>Number.isFinite(n)&&n>=0&&n<=128)) return '';
-  const {x,y}=point, tip=x+4;
-  return `<svg class="cmp-callout" viewBox="0 0 160 128" aria-hidden="true" focusable="false"><path d="M154 64 H140 V${y} H${tip} M${tip+8} ${y-5} L${tip} ${y} L${tip+8} ${y+5}"/></svg>`;
+  const {x,y}=point;
+  return `<svg class="cmp-callout" viewBox="0 0 160 128" aria-hidden="true" focusable="false"><path d="M154 64 C134 64 ${Math.min(134,x+28)} ${y} ${x+5} ${y}"/><circle cx="${x}" cy="${y}" r="4"/></svg>`;
 }
 function update(slot) {
   slot.querySelector('.cmp-callout')?.remove();

@@ -34,6 +34,7 @@ test('il blocco resta attivo su link diretto e apertura di altre modali',async({
 
 test('ricevuta sincronizzata al profilo soltanto dopo la conferma',async({browser})=>{
  const context=await browser.newContext({viewport:{width:390,height:844},reducedMotion:'reduce',serviceWorkers:'block'}),page=await preparePage(context,{legal:null}),receipts=[];
+ await page.route('**/api/community/status',r=>r.fulfill({json:{enabled:true}}));
  await page.route('**/api/community/session',r=>r.fulfill({json:{user:{id:'audit-user',handle:'Nome',role:'member'}}}));
  await page.route('**/api/community/legal-acceptance',async r=>{receipts.push(r.request().postDataJSON());await r.fulfill({json:{receipt:receipts.at(-1)}});});
  await page.goto('/');await expect(page.locator('#onboarding')).toBeVisible();expect(receipts).toHaveLength(0);await page.locator('#ob-accept').click();await expect.poll(()=>receipts.length).toBe(1);

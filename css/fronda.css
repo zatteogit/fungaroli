@@ -693,6 +693,12 @@ button.cover-index:focus-visible { outline:3px solid var(--focus); outline-offse
 /* Aperto = contenuti nuovi: le anteprime lasciano posto al dettaglio corrispondente. */
 .walk-focus[open] > summary .walk-entrances:has(.walk-entrance-list),
 .essential-sections .sec[open] > summary .ent-chips { display:none; }
+.observation-toggle { display:block; margin-top:10px; font-size:13px; font-weight:600; color:var(--link); }
+.observation-collapse { display:none; }
+.essential-sections [data-sec="specie"][open] .observation-expand { display:none; }
+.essential-sections [data-sec="specie"][open] .observation-collapse { display:inline; }
+.observation-context { color:var(--text-2); font-size:14px; line-height:1.5; }
+.observation-context p { margin:0 0 12px; }
 .notebook-note:has(> .notebook-full-note[open]) > .notebook-preview { display:none; }
 .note-collapse, .notebook-full-note[open] .note-expand { display:none; }
 .notebook-full-note[open] .note-collapse { display:inline; }
@@ -998,6 +1004,16 @@ button.cover-index:focus-visible { outline:3px solid var(--focus); outline-offse
   :root body .appbar:not(:has(.appbar-back:not([hidden]))) .appbar-title { transform:none; }
 }
 :root body .appbar[data-context="comparison"] .appbar-title { transform:none; }
+/* Schede: il titolo occupa lo spazio reale tra Indietro e le azioni.
+   Nella barra compatta basta la freccia; il nome della destinazione resta nell'aria-label. */
+@media(max-width:899px) {
+  :root.title-in-bar body .appbar[data-context="default"]:has(.appbar-back:not([hidden])) { gap:8px; }
+  :root.title-in-bar body .appbar[data-context="default"] .appbar-back:not([hidden]) { flex:0 0 44px; width:44px; max-width:44px; padding:0; justify-content:center; }
+  :root.title-in-bar body .appbar[data-context="default"] .appbar-back span { display:none; }
+  :root.title-in-bar body .appbar[data-context="default"]:has(.appbar-back:not([hidden])) .appbar-title { position:static; flex:1 1 0; min-width:0; max-width:none; transform:none; text-align:left; }
+  :root.title-in-bar body .appbar[data-context="default"] .appbar-actions { flex:none; }
+  :root body .appbar .profile-entry { width:44px; min-width:44px; height:44px; min-height:44px; padding:0; justify-content:center; flex:none; }
+}
 @media(prefers-reduced-motion:reduce) {
   :root body .appbar[data-context] .appbar-title,:root body .appbar[data-context="home"] :is(.brand,.brand-place),:root.title-in-bar body .appbar[data-context="home"] :is(.brand,.brand-place) { transition:none; }
 }
@@ -1005,6 +1021,28 @@ button.cover-index:focus-visible { outline:3px solid var(--focus); outline-offse
 /* Il focus automatico delle modali non disegna anelli sui comandi dopo un tap.
    I campi di testo conservano il segnale di editing; Tab ripristina subito gli anelli. */
 :root[data-focus-input="pointer"] :is(button,a,summary,[role="button"]):focus { outline:none !important; }
+
+/* Pannelli del coordinatore: entrata e uscita native, senza ritardare close()
+   o aggiungere timer al ripristino di focus e cronologia. I pannelli già
+   animati conservano il loro movimento; le sospensioni restano immediate. */
+@supports (transition-behavior:allow-discrete) {
+  @media(prefers-reduced-motion:no-preference) {
+    dialog[data-modal-motion]:not(.sheet-dlg,.wiz,.search-dlg) {
+      opacity:0; translate:0 18px;
+      transition:opacity .22s ease,translate .22s var(--ease-out),display .22s allow-discrete,overlay .22s allow-discrete;
+    }
+    dialog[data-modal-motion]:not(.sheet-dlg,.wiz,.search-dlg)[open] { opacity:1; translate:0 0; }
+    dialog[data-modal-motion]:not(.sheet-dlg,.wiz,.search-dlg)::backdrop {
+      opacity:0;
+      transition:opacity .22s ease,display .22s allow-discrete,overlay .22s allow-discrete;
+    }
+    dialog[data-modal-motion]:not(.sheet-dlg,.wiz,.search-dlg)[open]::backdrop { opacity:1; }
+    @starting-style {
+      dialog[data-modal-motion]:not(.sheet-dlg,.wiz,.search-dlg)[open] { opacity:0; translate:0 18px; }
+      dialog[data-modal-motion]:not(.sheet-dlg,.wiz,.search-dlg)[open]::backdrop { opacity:0; }
+    }
+  }
+}
 
 /* Glossario: il titolo ha un richiamo discreto, i termini nel testo una sottolineatura. */
 .glossary-link.glossary-heading { display:inline-flex; align-items:center; gap:6px; min-height:44px; max-width:100%; color:inherit; text-decoration:none; box-shadow:none; border:0; }

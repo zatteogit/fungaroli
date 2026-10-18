@@ -225,6 +225,10 @@ function comparisonControls(t, trait='cap_color') {
   const fields = `<div class="ts-dots${key==='shape'?' ts-forms':''}" role="group" aria-label="${label}: ${esc(t.name||t.latin)}">${values.map(v=>`<button type="button" class="${key==='shape'?'ts-form':'ts-dot ts-chip'}"${key!=='shape'?` style="--c:${esc(COLORS[v]?.[1] || 'var(--muted)')}"`:''} data-cmp-variant="${key}" data-cmp-variant-key="${esc(t.key)}" value="${esc(v)}" aria-pressed="${chosen[key]===v}">${key==='shape'?shapeHint(v):''}${esc(optLabel(QK(trait),v))}</button>`).join('')}</div>`;
   return `<div class="cmp-variant-fields">${fields}</div><span class="cmp-variant-status" role="status"></span>`;
 }
+const comparisonArtworkJobs = new WeakMap();
+function revealComparisonArtwork(slot) {
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) slot.animate?.([{opacity:.25},{opacity:1}],{duration:180,easing:'ease-out'});
+}
 function updateComparisonVariant(control, gallery) {
   const key = control.dataset.cmpVariantKey, record = ICONS?.[key] || {}, t = TAXA.find(t=>t.key===key);
   if (!t) return;
@@ -248,31 +252,43 @@ function updateComparisonVariant(control, gallery) {
     const part = slot.dataset.cmpIllPart;
     if (slot.dataset.cmpIllKey!==key || slot.dataset.cmpIllValue) return;
     if (part==='sotto') {
-      if (control.dataset.cmpVariant==='underColor') { slot.dataset.variantWanted='schematic'; slot.innerHTML=hymArt([].concat(t.traits?.hymenophore || [])[0],[chosen.underColor]); }
+      if (control.dataset.cmpVariant==='underColor') { slot.dataset.variantWanted='schematic'; slot.innerHTML=hymArt([].concat(t.traits?.hymenophore || [])[0],[chosen.underColor]); revealComparisonArtwork(slot); }
       return;
     }
     if (!['cappello','gambo'].includes(part) || control.dataset.cmpVariant==='underColor') return;
+    const job = Symbol(); comparisonArtworkJobs.set(slot,job);
+    slot.getAnimations().forEach(animation=>animation.cancel());
+    const finish = () => {
+      if (comparisonArtworkJobs.get(slot)!==job) return;
+      slot.classList.remove('is-loading'); slot.removeAttribute('aria-busy');
+      const busy=[...gallery.querySelectorAll('[data-cmp-ill-key][aria-busy="true"]')].some(el=>el.dataset.cmpIllKey===key);
+      controls.forEach(group=>group.setAttribute('aria-busy',String(busy)));
+    };
     slot.dataset.variantWanted='';
     const colorAvailable = !c || c===c0 || record.colors?.values?.includes(c);
     const shapeAvailable = !f || f===f0 || record.shapes?.values?.includes(f);
     if (!ICONS?.[key] || !colorAvailable || !shapeAvailable) {
       if (part==='cappello') slot.innerHTML=capArt([f || [].concat(t.traits?.cap_shape || [])[0]],[c || [].concat(t.traits?.cap_color || [])[0]],t.traits?.cap_veil===true);
       for (const group of controls) group.querySelector('.cmp-variant-status').textContent='Variante mostrata con un disegno schematico.';
+      finish(); revealComparisonArtwork(slot);
       return;
     }
     if (!slot.querySelector('img')) slot.innerHTML=illus(key,part);
     const image = slot.querySelector('img');
-    if (!image) return;
+    if (!image) { finish(); return; }
     const url = ASSET(`assets/traits/${key}-${part}${suffix}.webp`);
     slot.dataset.variantWanted = url;
-    if (image.getAttribute('src')===url) return;
+    if (image.getAttribute('src')===url) { finish(); return; }
+    slot.classList.add('is-loading'); slot.setAttribute('aria-busy','true');
+    controls.forEach(group=>group.setAttribute('aria-busy','true'));
     const pre = new Image(); pre.src = url;
     pre.decode().then(()=>{
-      if (!slot.isConnected || slot.dataset.variantWanted!==url) return;
+      if (!slot.isConnected || comparisonArtworkJobs.get(slot)!==job) return;
       image.src = url;
-      if (!matchMedia('(prefers-reduced-motion: reduce)').matches) image.animate?.([{opacity:.35},{opacity:1}],{duration:180,easing:'ease-out'});
+      finish(); revealComparisonArtwork(slot);
     }).catch(()=>{
-      if (slot.dataset.variantWanted!==url) return;
+      if (comparisonArtworkJobs.get(slot)!==job) return;
+      finish();
       for (const group of controls) group.querySelector('.cmp-variant-status').textContent = 'Disegno non disponibile. Resta visibile l’ultima immagine caricata.';
     });
   });
@@ -931,7 +947,7 @@ function renderCompare(box, ref, pick) {
       </div>
       ${how ? `<p class="cmp-how" data-glossary="Funghi"><b>Differenze descritte.</b> ${esc(how)}</p>` : ''}
       <div class="cmp-kind-tabs" role="tablist" aria-label="Caratteri da confrontare">${groups.map(g=>`<button type="button" role="tab" id="cmp-${esc(t.key)}-tab-${g.kind}" data-cmp-group="${g.kind}" aria-controls="cmp-${esc(t.key)}-panel-${g.kind}" aria-selected="${g.kind==='diff'}" tabindex="${g.kind==='diff'?0:-1}">${g.label}</button>`).join('')}</div>
-      <p class="cmp-illustration-note">Disegni schematici generati con AI: mostrano un esempio. Leggi tutte le varianti elencate e confronta con le foto.<span class="cmp-callout-note"> Le frecce indicano la zona da osservare, anche quando il carattere è assente.</span></p>
+      <p class="cmp-illustration-note">Disegni schematici generati con AI: mostrano un esempio. Leggi tutte le varianti elencate e confronta con le foto.<span class="cmp-callout-note"> I richiami indicano la zona da osservare, anche quando il carattere è assente.</span></p>
       <p class="cmp-legend" hidden><span><span class="cmp-relation" aria-hidden="true">=</span> Valore in comune</span><span><span class="cmp-relation" aria-hidden="true">≠</span> Valore diverso</span></p>
       ${groups.map(g=>{const items=rows.filter(r=>!r.info&&r.kind===g.kind);return `<section class="cmp-panel" id="cmp-${esc(t.key)}-panel-${g.kind}" data-cmp-panel="${g.kind}" role="tabpanel" aria-labelledby="cmp-${esc(t.key)}-tab-${g.kind}" tabindex="0"${g.kind==='diff'?'':' hidden'}>${items.length?`<div class="cmp-column-head" aria-hidden="true"><span>${esc(ref.name||ref.latin)}</span><span>${esc(t.name||t.latin)}</span></div><ul class="cmp-rows">${items.map(r=>r.html).join('')}</ul>`:`<p class="cmp-none">${g.empty}</p>`}</section>`;}).join('')}
       ${info.length?`<div class="cmp-season"><ul class="cmp-rows">${info.map(r=>r.html).join('')}</ul></div>`:''}

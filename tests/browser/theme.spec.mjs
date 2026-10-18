@@ -27,7 +27,7 @@ for(const width of [320,390])test(`tema: area tattile 44px, bordi cliccabili e n
  expect(boxes.length).toBeGreaterThanOrEqual(2);
  for(let i=0;i<boxes.length;i++){expect(boxes[i].width).toBeGreaterThanOrEqual(44);expect(boxes[i].height).toBeGreaterThanOrEqual(44);expect(boxes[i].right).toBeLessThanOrEqual(width);if(i)expect(boxes[i].x).toBeGreaterThanOrEqual(boxes[i-1].right);}
  const rect=await button.boundingBox();
- for(const [x,y,next]of [[rect.x+3,rect.y+3,'dark'],[rect.x+rect.width-3,rect.y+rect.height-3,'auto'],[rect.x+3,rect.y+rect.height-3,'light']]){
+ for(const [x,y,next]of [[rect.x+rect.width/2,rect.y+3,'dark'],[rect.x+rect.width-3,rect.y+rect.height/2,'auto'],[rect.x+3,rect.y+rect.height/2,'light']]){
   expect(await page.evaluate(({x,y})=>document.elementFromPoint(x,y)?.closest('button')?.id,{x,y})).toBe('theme-btn');
   await page.touchscreen.tap(x,y);await expect(button).toHaveAttribute('aria-label',new RegExp('^'+labels[next]));
  }

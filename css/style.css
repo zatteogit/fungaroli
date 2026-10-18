@@ -534,7 +534,6 @@ li.crit { font-weight: 600; }
 .j-top { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; flex-wrap: wrap; }
 .j-top b { font-size: 15.5px; }
 .j-item .tag { margin-left: 0; }
-.journal-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
 #journal-storage { margin-top: 14px; }
 .j-connect { display: grid; gap: 6px; margin-top: 4px; color: var(--text-2); }
 .j-connect-row { display: flex; gap: 8px; max-width: 420px; }
@@ -3439,7 +3438,7 @@ details.context-note { margin: 12px 0 16px; padding: 0; border: 0; border-radius
 
 /* Area tattile costante anche negli header più stretti; il simbolo resta discreto. */
 .appbar-actions .icon-btn { width:44px; min-width:44px; height:44px; min-height:44px; flex:none; padding:0; touch-action:manipulation; }
-.appbar-actions .theme-btn { border-radius:8px; }
+.appbar-actions .theme-btn { border-radius:50%; }
 .appbar-actions .icon-btn:focus-visible { outline:2px solid var(--link); outline-offset:2px; }
 @media(prefers-reduced-motion:reduce) { .theme-btn svg { transition:none; } .theme-btn.spin svg { transform:none; } }
 

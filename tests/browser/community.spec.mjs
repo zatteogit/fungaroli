@@ -383,33 +383,24 @@ test('taccuini e community restano accessibili senza dati meteo', async ({ page 
   await expect(page.locator('[data-register]')).toBeVisible();
 });
 
-test('migrazione esplicita del diario con codice senza pubblicare osservazioni', async ({ page }) => {
-  await setup(page); await register(page,'Test migrazione');
-  await page.route('**/api/diario',r=>{
-    expect(r.request().headers().authorization).toBe('Bearer codice-di-test');
-    return r.fulfill({json:{entries:[{id:'legacy123',date:todayISO(),zoneId:'tancia',finds:{edulis:2},note:'nota del vecchio diario',predicted:{edulis:72},savedAt:new Date().toISOString()}]}});
-  });
-  await page.goto('/#/diario');
-  await page.locator('#notebook-storage-panel > summary').click();await page.locator('#journal-storage details summary').click();
-  await page.locator('[data-legacy-code]').fill('codice-di-test'); await page.locator('[data-import-legacy] [type="submit"]').click();
-  await expect(page.locator('[data-legacy-status]')).toContainText('1 voci importate');
-  expect((await api(page,'entries')).data.entries[0].note).toBe('nota del vecchio diario');
-  expect((await api(page,'summary')).data.totalReports).toBe(0);
-  await api(page,'account','DELETE');
+test('taccuino: gestione profilo senza importazione o esportazione',async({page})=>{
+ const errors=await setup(page);await page.goto('/#/diario');
+ const panel=page.locator('#notebook-storage-panel');await panel.locator(':scope > summary').click();
+ await expect(panel.locator('#journal-export,#journal-import,[data-import-local],[data-import-legacy]')).toHaveCount(0);
+ await expect(panel).not.toContainText(/Importa|Esporta|vecchio taccuino/);await expect(panel.locator('[data-community-account]')).toBeVisible();
+ await register(page,'Profilo senza copie');await expect(panel.locator('[data-community-account]')).toHaveText('Gestisci il profilo');
+ await expect(panel).not.toContainText(/Importa|Esporta|vecchio taccuino/);await expect(panel).toContainText('sincronizzato con la passkey');
+ expect(errors).toEqual([]);await api(page,'account','DELETE');
 });
 
-test('i campi del diario importato vengono visualizzati come testo', async ({ page }) => {
-  // Import while the archive is still opening: this must not reject a valid JSON file.
-  await page.route('**/api/community/session', async route => {
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    await route.continue();
-  });
-  await setup(page); await page.goto('/#/diario');
-  const payload={id:'x123"><img src=x onerror="window.injected=1">',date:todayISO(),zoneId:'tancia',band:'<img src=x onerror="window.injected=1">',note:'<svg onload="window.injected=1">',finds:{},predicted:{},savedAt:new Date().toISOString()};
-  await page.locator('#journal-import').setInputFiles({name:'diario.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify({entries:[payload]}))});
-  await expect(page.locator('#journal-list')).toContainText(payload.note);
-  expect(await page.evaluate(()=>window.injected)).toBeUndefined();
-  expect(await page.locator('#journal-list [onerror], #journal-list [onload]').count()).toBe(0);
+test('i campi del diario locale vengono visualizzati come testo',async({page})=>{
+ const payload={id:'x123"><img src=x onerror="window.injected=1">',date:todayISO(),zoneId:'tancia',band:'<img src=x onerror="window.injected=1">',note:'<svg onload="window.injected=1">',finds:{},predicted:{},savedAt:new Date().toISOString()};
+ await page.addInitScript(payload=>localStorage.setItem('fungaroli:diario:v1',JSON.stringify([payload])),payload);
+ await setup(page);await page.goto('/#/diario');
+ await expect(page.locator('#journal-list')).toContainText(payload.note);
+ expect(await page.evaluate(()=>window.injected)).toBeUndefined();
+ expect(await page.locator('#journal-list [onerror],#journal-list [onload]').count()).toBe(0);
+ expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('fungaroli:diario:v1'))[0].note)).toBe(payload.note);
 });
 
 test('autocomplete dei commestibili, selezione individuale, stagione e persistenza', async ({page})=>{
@@ -589,4 +580,26 @@ test('accordion: riepilogo e dettaglio si completano senza duplicare tratto, imb
  // L'avviso sul sosia rimane nel riepilogo anche quando è aperto.
  if(await species.locator('summary .plan-crit').count())await expect(species.locator('summary .plan-crit')).toBeVisible();
  expect(errors).toEqual([]);
+});
+
+for(const theme of ['light','dark'])test(`cosa osservare: riepilogo compatto e dettagli distinti in ${theme}`,async({page})=>{
+ await page.setViewportSize({width:390,height:844});await page.emulateMedia({reducedMotion:'reduce'});
+ await page.addInitScript(theme=>{localStorage.setItem('fungaroli:theme',theme);localStorage.setItem('fungaroli:install-later',String(Date.now()));},theme);
+ const errors=await setup(page);await page.goto('/#/zona/tancia/0');
+ const section=page.locator('#detail .essential-sections [data-sec="specie"]'),summary=section.locator(':scope > summary'),body=section.locator(':scope > .sec-body');
+ await expect(summary).toBeVisible();await expect(section).not.toHaveAttribute('open','');
+ await expect(summary.locator('.observation-expand')).toBeVisible();await expect(summary.locator('.plan-where,.ent-chips')).toHaveCount(0);
+ const warning=summary.locator('.plan-crit');await expect(warning).toBeVisible();const warningText=await warning.innerText();
+ await expect(body.locator('.plan-where')).toBeHidden();
+ const closed=(await section.boundingBox()).height;
+ await summary.scrollIntoViewIfNeeded();await section.screenshot({path:`/tmp/fronda-observation-closed-${theme}.png`});
+ await summary.focus();await page.keyboard.press('Enter');await expect(section).toHaveAttribute('open','');
+ await expect(summary.locator('.observation-collapse')).toBeVisible();await expect(summary.locator('.observation-expand')).toBeHidden();
+ await expect(body.locator('.plan-where')).toBeVisible();await expect(body.locator('.zsp')).toBeVisible();
+ await expect(body.locator('.plan-crit')).toBeVisible();await expect(body.locator('.plan-crit')).toContainText('non certifica');
+ await expect(warning).toBeVisible();expect(await warning.innerText()).toBe(warningText);
+ expect((await section.boundingBox()).height).toBeGreaterThan(closed+100);
+ await page.screenshot({path:`/tmp/fronda-observation-open-${theme}.png`});
+ await summary.press('Enter');await expect(body).toBeHidden();await expect(warning).toBeVisible();
+ expect(Math.abs((await section.boundingBox()).height-closed)).toBeLessThan(2);expect(errors).toEqual([]);
 });

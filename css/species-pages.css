@@ -396,9 +396,19 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 .fungus-compare .cmp-cell-miniature .cmp-part-art img { width:44px; height:44px; }
 .fungus-compare .cmp-cell-miniature .cmp-vals { min-width:0; }
 .fungus-compare .cmp-part-art:has(.cmp-callout) { position:relative; width:44px; }
-.fungus-compare .cmp-cell-miniature:has(.cmp-callout) { grid-template-columns:56px minmax(0,1fr); }
-.fungus-compare .cmp-part-art > .cmp-callout { position:absolute; left:0; top:0; width:125%; height:100%; max-width:none; overflow:visible; pointer-events:none; fill:none; stroke:var(--text); stroke-width:1.25; stroke-linecap:round; stroke-linejoin:round; }
+.fungus-compare .cmp-cell-miniature:has(.cmp-part-art .cmp-callout) { grid-template-columns:56px minmax(0,1fr); column-gap:12px; }
+.fungus-compare .cmp-part-art > .cmp-callout { position:absolute; left:0; top:0; width:125%; height:100%; max-width:none; overflow:visible; pointer-events:none; fill:none; stroke:var(--text-2); stroke-width:1.1; stroke-linecap:round; stroke-linejoin:round; }
 .fungus-compare .cmp-callout path { vector-effect:non-scaling-stroke; }
+.fungus-compare .cmp-callout circle { fill:var(--text); stroke:none; }
+.fungus-compare .cmp-part-art { position:relative; }
+.fungus-compare .cmp-part-art.is-loading > :is(img,svg) { opacity:.25; }
+.fungus-compare .cmp-part-art.is-loading > .cmp-callout { visibility:hidden; }
+.fungus-compare .cmp-part-art.is-loading::after { content:''; position:absolute; left:36px; top:50%; width:18px; height:18px; margin:-9px 0 0 -9px; box-sizing:border-box; border:2px solid var(--hair); border-top-color:var(--link); border-radius:50%; }
+.fungus-compare .cmp-cell-miniature .cmp-part-art.is-loading::after { left:22px; }
+@media(prefers-reduced-motion:no-preference) {
+  .fungus-compare .cmp-part-art.is-loading::after { animation:cmp-artwork-spin .75s linear infinite; }
+}
+@keyframes cmp-artwork-spin { to { transform:rotate(360deg); } }
 .cmp-callout-note { display:none; }
 .cmp-slide:has(.cmp-callout) .cmp-callout-note { display:inline; }
 .fungus-compare .cmp-shape-art { flex:0 0 44px; width:44px; height:44px; align-items:center; justify-content:center; }

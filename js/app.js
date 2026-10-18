@@ -729,9 +729,8 @@ function routeNow(r, nav) {
       // chiusa di default ovunque: la carta prima di tutto (si apre a mano o accendendo la Carta Forestale)
       if (lb && !lb.dataset.touched) lb.open = false;
       const z = zones.find((x) => x.id === r.zoneId);
-      if(z&&map)chooseMapZone(z.id,{animate:false});
-      else if(map&&!mapInitialFrameDone)fitMapResults({animate:false});
-      if(map)mapInitialFrameDone=true;
+      if(z&&map){chooseMapZone(z.id,{animate:false});mapInitialFrameDone=true;}
+      else if(map&&!mapInitialFrameDone)mapInitialFrameDone=fitMapResults({animate:false});
     });
   }
   renderAll();
@@ -1999,7 +1998,11 @@ function scheduleMapResults(){
 function renderMapResults(){
   if(!mapExperience||state.view!=='mappa')return;
   const status=$('#map-weather-status');status.hidden=$('#stale').hidden&&!$('#weather-work').classList.contains('busy');status.querySelector('summary').textContent=!$('#stale').hidden?'Meteo da verificare':'Aggiornamento meteo…';
-  const all=mapCandidates(),visible=map?all.filter(r=>map.getBounds().contains([r.z.lat,r.z.lon])):all;
+  const all=mapCandidates();
+  // Al primo accesso i contributi possono arrivare dopo la carta: inquadra
+  // i risultati appena disponibili, senza ricentrare le visite successive.
+  if(map&&!mapInitialFrameDone&&all.length){map.invalidateSize({pan:false});mapInitialFrameDone=frameMapZones(all.map(r=>r.z),{overview:true,animate:false});}
+  const visible=map?all.filter(r=>map.getBounds().contains([r.z.lat,r.z.lon])):all;
   const prefs=PREFS.filter(([key])=>state[key]).map(([,name])=>name.toLowerCase());
   const order=prefs.length?`Ordinate anche per ${prefs.join(', ')}. L’indice dei funghi non cambia.`:hasInterest('funghi')?'Indice dei funghi e condizioni dell’uscita. Le zone senza indice restano esplorabili.':hasInterest('piante')?'Ambienti e spunti botanici, senza un indice delle piante.':'Zone con i tratti mappati, accessi e condizioni dell’uscita.';
   mapExperience.render({total:all.length,order:(state.communityOnly?'Dati community Fronda · In sviluppo. Osservazioni dichiarate degli ultimi 7 giorni. ':'')+order,rows:visible.map(r=>({id:r.z.id,name:shortName(r.z),selected:r.z.id===state.zoneId,index:Number.isFinite(r.score)?`${fungusGlyph}${idxDot(r.score)}`:'',meta:[Number.isFinite(r.trip.minutes)?`${r.trip.minutes} min in auto`:'',r.walk?`${r.walk.t.difficulty||'Sentiero'} · ${fmtKm(r.walk.t.in_zone_km)} km nel tratto`:'Scheda della zona',hasInterest('funghi')&&!Number.isFinite(r.score)?'Indice non disponibile':'',state.avoidCrowd&&r.d?.crowd?crowdText(r.d.crowd):''].filter(Boolean).join(' · ')}))});
@@ -2620,12 +2623,13 @@ function renderWalkFocus(z, d, walk) {
 
 function essentialSections(z, d, walk) {
   const best = d.best, hostNote = pineHostNote(z, best.species, best.band);
+  const observationRule = criticalRuleOf(best.species.id);
+  // Gli avvisi brevi restano completi; quelli lunghi mantengono il titolo
+  // nel riepilogo e il testo integrale nel dettaglio, senza riscrivere i dati.
+  const expandedWarning = observationRule?.title && observationRule.text?.length > 120;
   const rows = [];
   rows.push({ sec: 'specie', icon: 'find', thumb: best.species.id, k: 'Cosa osservare', v: `<span class="primary-species"><button type="button" class="sp-inline" data-species="${best.species.id}">${esc(best.species.name)}</button>${best.kind!=='plant'&&Number.isFinite(best.score)?idxDot(best.score):''}</span> ${intornoA(best.band)} <b>${best.band} m</b>`,
-    sub: [whereSummary(best.species.id) && `<span class="plan-where">${linkTrees(whereSummary(best.species.id))}</span>`,
-      hostNote && `<span class="plan-host">${esc(hostNote)}</span>`,
-      attentionLine(criticalRuleOf(best.species.id)),
-      (() => { const more = d.perSpecies.slice(1, 3).map((p) => [p, spScore(z, d, p)]).filter(([, sc]) => sc >= 20); return more.length ? `<span class="ent-chips">${more.map(([p, sc]) => `<a class="ent-chip" href="${p.species.kind==='plant'?p.species.href:'#/specie/'+encodeURIComponent(p.species.id)}">${thumb(p.species.id,28)}<span>${esc(p.species.name)}</span>${idxDot(sc)}</a>`).join('')}</span>` : ''; })()].filter(Boolean).join('') || esc(best.species.latin) });
+    sub: attentionLine(expandedWarning ? {...observationRule, text:observationRule.title, title:''} : observationRule) });
   if (d.crowd &&state.target==='funghi') {
     const t = timingAdvice({ dateStr: d.date, lat: z.lat, lon: z.lon, crowd: d.crowd });
     rows.push({ sec: 'quando', icon: 'when', k: 'Quando', v: `<span>${practicalTiming(z,d,walk).available?`Arriva <b>entro le ${fmtRough(t.arrive,15,'floor')}</b>`:'<b>Orario consigliato superato</b>'}</span><span class="badge crowd-${d.crowd.level}">${crowdText(d.crowd)}</span>` });
@@ -2646,10 +2650,11 @@ function essentialSections(z, d, walk) {
       sub: `${a0 ? `<span class="plan-travel">${esc(travelText(zoneTrip(z,walk)))} da ${esc(currentBase().name)}${customBase()?'':unp}</span>` : ''}${walk?.h ? actPill(gmaps(walk.h.lat, walk.h.lon),'nav','Indicazioni',true) : ax ? actPill(gmaps(ax.rlat, ax.rlon),'nav','Navigatore',true) : ''}`,
       badge: d.comfort ? `<span class="badge comfort-${d.comfort.level}">${d.comfort.level}</span>` : '' });
   }
-  const bodies={specie:()=>zoneSpecies(z,d)+discoverySection(z,d,walk,true),quando:()=>renderHuman(z,d)||renderWhenWeather(z,d),accesso:()=>renderAccess(z,d,{summarized:true,walk})};
+  const observationContext = [expandedWarning && attentionLine({...observationRule,title:''}), whereSummary(best.species.id) && `<p class="plan-where">${linkTrees(whereSummary(best.species.id))}</p>`, hostNote && `<p class="plan-host">${esc(hostNote)}</p>`].filter(Boolean).join('');
+  const bodies={specie:()=>`<div class="observation-context">${observationContext}</div>`+zoneSpecies(z,d)+discoverySection(z,d,walk,true),quando:()=>renderHuman(z,d)||renderWhenWeather(z,d),accesso:()=>renderAccess(z,d,{summarized:true,walk})};
   return `<div class="essential-sections"><h2 class="outing-section-title">Il piano in breve</h2>${Object.keys(bodies).map(id=>{
     const group=rows.filter(r=>r.sec===id);if(!group.length)return '';
-    const summary=group.map(r=>`<span class="essential-summary"><span class="plan-ic${r.thumb?' has-thumb':''}">${r.thumb?thumb(r.thumb,48):r.svg||ICON[r.icon]}</span><span class="plan-body"><span class="plan-k">${r.k}${r.badge?' '+r.badge:''}</span><span class="plan-v">${r.v}</span>${r.sub?`<span class="plan-sub">${r.sub}</span>`:''}</span></span>`).join('');
+    const summary=group.map(r=>`<span class="essential-summary"><span class="plan-ic${r.thumb?' has-thumb':''}">${r.thumb?thumb(r.thumb,48):r.svg||ICON[r.icon]}</span><span class="plan-body"><span class="plan-k">${r.k}${r.badge?' '+r.badge:''}</span><span class="plan-v">${r.v}</span>${r.sub?`<span class="plan-sub">${r.sub}</span>`:''}${id==='specie'?'<span class="observation-toggle" aria-hidden="true"><span class="observation-expand">Esplora specie e habitat</span><span class="observation-collapse">Chiudi dettagli</span></span>':''}</span></span>`).join('');
     return section(id,summary,bodies[id]()||'<p class="small muted">Verifica le previsioni aggiornate e le condizioni del percorso prima di partire.</p>');
   }).join('')}</div>`;
 }

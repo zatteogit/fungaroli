@@ -3,7 +3,7 @@
 const frames = [], pendingSuspensions = new WeakSet();
 let lastTrigger = null;
 const activeModal = () => [...document.querySelectorAll('dialog[open]:modal')].at(-1);
-function show(dialog) { delete dialog.dataset.modalFlowLeaving; dialog.showModal(); }
+function show(dialog) { delete dialog.dataset.modalFlowLeaving; dialog.dataset.modalMotion = ''; dialog.showModal(); }
 function returnLabel(dialog) {
   const title = dialog.getAttribute('aria-labelledby')?.split(' ')[0];
   return dialog.getAttribute('aria-label') || (title && document.getElementById(title)?.textContent) || 'passaggio precedente';
