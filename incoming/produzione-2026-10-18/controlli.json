@@ -782,5 +782,250 @@
     },
     "state": "pronta da integrare",
     "review": "Agaricus piani crema/giallo/grigio con lamelle rosa, anello e gambi bianchi invariati. Nessuna volva, reticolo o squame. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-12.png",
+    "sha256": "91001edec0e2c72870aea10ae27bf90d8fad41faca1dd572ca881ead0191e2c5",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        490,
+        56,
+        764,
+        402
+      ],
+      "0": [
+        64,
+        128,
+        376,
+        312
+      ],
+      "4": [
+        452,
+        484,
+        802,
+        794
+      ],
+      "3": [
+        48,
+        556,
+        396,
+        686
+      ],
+      "7": [
+        480,
+        834,
+        768,
+        1200
+      ],
+      "6": [
+        54,
+        918,
+        392,
+        1114
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Crocea gialla emisferica/piana senza anello, con gambo fasciato e volva a sacco; muscaria arancio emisferica con verruche, anello e resti basali. Lamelle bianche, alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-13.png",
+    "sha256": "24a039bb0df17088701dc83d5943bcf3f6aeae00da56a7c7e7bf80dc2f76a2c3",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        488,
+        58,
+        766,
+        408
+      ],
+      "0": [
+        68,
+        142,
+        396,
+        344
+      ],
+      "4": [
+        450,
+        492,
+        812,
+        788
+      ],
+      "3": [
+        36,
+        558,
+        434,
+        678
+      ],
+      "7": [
+        440,
+        860,
+        820,
+        1172
+      ],
+      "6": [
+        38,
+        942,
+        434,
+        1066
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Muscaria gialla emisferica e arancio/gialla piane, verruche e lamelle bianche, anello e resti basali preservati. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-14.png",
+    "sha256": "a40f43b953ed2e033821ae395b50de2b22114f7f76a3f459e77786e1770659ed",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        494,
+        50,
+        758,
+        396
+      ],
+      "0": [
+        88,
+        120,
+        376,
+        322
+      ],
+      "4": [
+        494,
+        456,
+        762,
+        804
+      ],
+      "3": [
+        84,
+        530,
+        382,
+        734
+      ],
+      "7": [
+        486,
+        864,
+        766,
+        1196
+      ],
+      "6": [
+        78,
+        926,
+        390,
+        1114
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Panterina crema/grigia coniche e crema emisferica, verruche, lamelle chiare, anello e residui basali preservati. Distinzione conico/emisferico visibile; alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-15.png",
+    "sha256": "ad21578493afe93c5421fbc8de8d38e2607004ac17cc02fad29fdeb7ba4eaae1",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        484,
+        52,
+        776,
+        412
+      ],
+      "0": [
+        48,
+        154,
+        394,
+        344
+      ],
+      "4": [
+        444,
+        478,
+        814,
+        792
+      ],
+      "3": [
+        32,
+        578,
+        422,
+        712
+      ],
+      "7": [
+        446,
+        868,
+        822,
+        1194
+      ],
+      "6": [
+        36,
+        972,
+        420,
+        1110
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Panterina grigia emisferica e crema/grigia piane, verruche, lamelle chiare, anello e resti volvali invariati. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-16.png",
+    "sha256": "b7dccbdeb5b08e50fbee6f40356e3f32b9e640cea83c0b98be1e69906e4d5c5f",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        494,
+        72,
+        814,
+        392
+      ],
+      "0": [
+        72,
+        146,
+        424,
+        304
+      ],
+      "4": [
+        508,
+        450,
+        798,
+        792
+      ],
+      "3": [
+        78,
+        498,
+        418,
+        702
+      ],
+      "7": [
+        482,
+        850,
+        820,
+        1182
+      ],
+      "6": [
+        68,
+        924,
+        428,
+        1086
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Chlorophyllum bruni convessi/emisferico con squame scure, lamelle crema, anello e gambo senza volva o reticolo. Morfologie coerenti con riferimenti. Alpha e sei celle verificati."
   }
 ]
