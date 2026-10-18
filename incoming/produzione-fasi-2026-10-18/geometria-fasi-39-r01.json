@@ -1,0 +1,101 @@
+{
+  "file": "incoming/icone/fasi-39-r01.png",
+  "sha256": "5fa37fe906bacc46e62657e31e7bea28cb0cf4136abab4aa05fae9aeb8251375",
+  "size": [
+    1254,
+    1254
+  ],
+  "celle": [
+    {
+      "soggetto": "edulis",
+      "fase": "giovane",
+      "tessera": "cappello",
+      "cella": 0,
+      "bbox": [
+        76,
+        144,
+        372,
+        316
+      ],
+      "source": "https://it.wikipedia.org/wiki/Boletus_edulis"
+    },
+    {
+      "soggetto": "edulis",
+      "fase": "giovane",
+      "tessera": "sotto",
+      "cella": 1,
+      "bbox": [
+        474,
+        78,
+        776,
+        378
+      ],
+      "source": "https://it.wikipedia.org/wiki/Boletus_edulis"
+    },
+    {
+      "soggetto": "edulis",
+      "fase": "giovane",
+      "tessera": "gambo",
+      "cella": 2,
+      "bbox": [
+        902,
+        60,
+        1180,
+        392
+      ],
+      "source": "https://it.wikipedia.org/wiki/Boletus_edulis"
+    },
+    {
+      "soggetto": "edulis",
+      "fase": "adulto",
+      "tessera": "cappello",
+      "cella": 3,
+      "bbox": [
+        50,
+        548,
+        412,
+        710
+      ],
+      "source": "https://it.wikipedia.org/wiki/Boletus_edulis"
+    },
+    {
+      "soggetto": "edulis",
+      "fase": "adulto",
+      "tessera": "sotto",
+      "cella": 4,
+      "bbox": [
+        476,
+        482,
+        776,
+        780
+      ],
+      "source": "https://it.wikipedia.org/wiki/Boletus_edulis"
+    },
+    {
+      "soggetto": "edulis",
+      "fase": "adulto",
+      "tessera": "gambo",
+      "cella": 5,
+      "bbox": [
+        860,
+        478,
+        1210,
+        800
+      ],
+      "source": "https://it.wikipedia.org/wiki/Boletus_edulis"
+    },
+    {
+      "soggetto": "edulis",
+      "fase": "maturo",
+      "tessera": "sotto",
+      "cella": 6,
+      "bbox": [
+        70,
+        870,
+        390,
+        1190
+      ],
+      "source": "https://it.wikipedia.org/wiki/Boletus_edulis"
+    }
+  ]
+}

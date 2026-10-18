@@ -1,0 +1,127 @@
+{
+  "file": "incoming/icone/fasi-37-r01.png",
+  "sha256": "9fc5d8d57a36c38301f692ba2571acb4e4b91ca5c9d855399fa690b88232ae07",
+  "size": [
+    1254,
+    1254
+  ],
+  "celle": [
+    {
+      "soggetto": "aereus",
+      "fase": "giovane",
+      "tessera": "cappello",
+      "cella": 0,
+      "bbox": [
+        74,
+        130,
+        392,
+        340
+      ],
+      "source": "https://it.wikipedia.org/wiki/Boletus_aereus"
+    },
+    {
+      "soggetto": "aereus",
+      "fase": "giovane",
+      "tessera": "sotto",
+      "cella": 1,
+      "bbox": [
+        476,
+        78,
+        778,
+        384
+      ],
+      "source": "https://it.wikipedia.org/wiki/Boletus_aereus"
+    },
+    {
+      "soggetto": "aereus",
+      "fase": "giovane",
+      "tessera": "gambo",
+      "cella": 2,
+      "bbox": [
+        900,
+        32,
+        1202,
+        396
+      ],
+      "source": "https://it.wikipedia.org/wiki/Boletus_aereus"
+    },
+    {
+      "soggetto": "aereus",
+      "fase": "adulto",
+      "tessera": "cappello",
+      "cella": 3,
+      "bbox": [
+        48,
+        548,
+        416,
+        728
+      ],
+      "source": "https://it.wikipedia.org/wiki/Boletus_aereus"
+    },
+    {
+      "soggetto": "aereus",
+      "fase": "adulto",
+      "tessera": "sotto",
+      "cella": 4,
+      "bbox": [
+        474,
+        484,
+        780,
+        790
+      ],
+      "source": "https://it.wikipedia.org/wiki/Boletus_aereus"
+    },
+    {
+      "soggetto": "aereus",
+      "fase": "adulto",
+      "tessera": "gambo",
+      "cella": 5,
+      "bbox": [
+        868,
+        444,
+        1220,
+        810
+      ],
+      "source": "https://it.wikipedia.org/wiki/Boletus_aereus"
+    },
+    {
+      "soggetto": "aereus",
+      "fase": "maturo",
+      "tessera": "cappello",
+      "cella": 6,
+      "bbox": [
+        32,
+        978,
+        432,
+        1116
+      ],
+      "source": "https://it.wikipedia.org/wiki/Boletus_aereus"
+    },
+    {
+      "soggetto": "aereus",
+      "fase": "maturo",
+      "tessera": "sotto",
+      "cella": 7,
+      "bbox": [
+        474,
+        884,
+        780,
+        1190
+      ],
+      "source": "https://it.wikipedia.org/wiki/Boletus_aereus"
+    },
+    {
+      "soggetto": "aereus",
+      "fase": "maturo",
+      "tessera": "gambo",
+      "cella": 8,
+      "bbox": [
+        812,
+        880,
+        1230,
+        1208
+      ],
+      "source": "https://it.wikipedia.org/wiki/Boletus_aereus"
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "file": "incoming/icone/fasi-38-r01.png",
+  "sha256": "4c29ff9a9c175dc67abf4c63dfeef11ec715e1ed3902a579fbed55a6ee30bb35",
+  "size": [
+    1254,
+    1254
+  ],
+  "celle": [
+    {
+      "soggetto": "aestivalis",
+      "fase": "giovane",
+      "tessera": "cappello",
+      "cella": 0,
+      "bbox": [
+        98,
+        170,
+        384,
+        336
+      ],
+      "source": "https://it.wikipedia.org/wiki/Boletus_aestivalis"
+    },
+    {
+      "soggetto": "aestivalis",
+      "fase": "giovane",
+      "tessera": "sotto",
+      "cella": 1,
+      "bbox": [
+        494,
+        106,
+        754,
+        368
+      ],
+      "source": "https://it.wikipedia.org/wiki/Boletus_aestivalis"
+    },
+    {
+      "soggetto": "aestivalis",
+      "fase": "giovane",
+      "tessera": "gambo",
+      "cella": 2,
+      "bbox": [
+        880,
+        88,
+        1142,
+        394
+      ],
+      "source": "https://it.wikipedia.org/wiki/Boletus_aestivalis"
+    },
+    {
+      "soggetto": "aestivalis",
+      "fase": "adulto",
+      "tessera": "cappello",
+      "cella": 3,
+      "bbox": [
+        56,
+        574,
+        424,
+        716
+      ],
+      "source": "https://it.wikipedia.org/wiki/Boletus_aestivalis"
+    },
+    {
+      "soggetto": "aestivalis",
+      "fase": "adulto",
+      "tessera": "sotto",
+      "cella": 4,
+      "bbox": [
+        490,
+        504,
+        762,
+        774
+      ],
+      "source": "https://it.wikipedia.org/wiki/Boletus_aestivalis"
+    },
+    {
+      "soggetto": "aestivalis",
+      "fase": "adulto",
+      "tessera": "gambo",
+      "cella": 5,
+      "bbox": [
+        830,
+        510,
+        1208,
+        804
+      ],
+      "source": "https://it.wikipedia.org/wiki/Boletus_aestivalis"
+    },
+    {
+      "soggetto": "aestivalis",
+      "fase": "maturo",
+      "tessera": "sotto",
+      "cella": 6,
+      "bbox": [
+        94,
+        888,
+        386,
+        1178
+      ],
+      "source": "https://it.wikipedia.org/wiki/Boletus_aestivalis"
+    }
+  ]
+}

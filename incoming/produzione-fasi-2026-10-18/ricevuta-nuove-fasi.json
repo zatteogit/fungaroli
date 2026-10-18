@@ -95,7 +95,223 @@
       "target": "assets/traits/tylopilus-felleus-sotto-fase-adulto.webp",
       "source": "https://it.wikipedia.org/wiki/Tylopilus_felleus",
       "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-37-r01.png",
+      "cella": 0,
+      "sha256": "9fc5d8d57a36c38301f692ba2571acb4e4b91ca5c9d855399fa690b88232ae07",
+      "target": "assets/traits/aereus-cappello-fase-giovane.webp",
+      "source": "https://it.wikipedia.org/wiki/Boletus_aereus",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-37-r01.png",
+      "cella": 1,
+      "sha256": "9fc5d8d57a36c38301f692ba2571acb4e4b91ca5c9d855399fa690b88232ae07",
+      "target": "assets/traits/aereus-sotto-fase-giovane.webp",
+      "source": "https://it.wikipedia.org/wiki/Boletus_aereus",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-37-r01.png",
+      "cella": 2,
+      "sha256": "9fc5d8d57a36c38301f692ba2571acb4e4b91ca5c9d855399fa690b88232ae07",
+      "target": "assets/traits/aereus-gambo-fase-giovane.webp",
+      "source": "https://it.wikipedia.org/wiki/Boletus_aereus",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-37-r01.png",
+      "cella": 3,
+      "sha256": "9fc5d8d57a36c38301f692ba2571acb4e4b91ca5c9d855399fa690b88232ae07",
+      "target": "assets/traits/aereus-cappello-fase-adulto.webp",
+      "source": "https://it.wikipedia.org/wiki/Boletus_aereus",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-37-r01.png",
+      "cella": 4,
+      "sha256": "9fc5d8d57a36c38301f692ba2571acb4e4b91ca5c9d855399fa690b88232ae07",
+      "target": "assets/traits/aereus-sotto-fase-adulto.webp",
+      "source": "https://it.wikipedia.org/wiki/Boletus_aereus",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-37-r01.png",
+      "cella": 5,
+      "sha256": "9fc5d8d57a36c38301f692ba2571acb4e4b91ca5c9d855399fa690b88232ae07",
+      "target": "assets/traits/aereus-gambo-fase-adulto.webp",
+      "source": "https://it.wikipedia.org/wiki/Boletus_aereus",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-37-r01.png",
+      "cella": 6,
+      "sha256": "9fc5d8d57a36c38301f692ba2571acb4e4b91ca5c9d855399fa690b88232ae07",
+      "target": "assets/traits/aereus-cappello-fase-maturo.webp",
+      "source": "https://it.wikipedia.org/wiki/Boletus_aereus",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-37-r01.png",
+      "cella": 7,
+      "sha256": "9fc5d8d57a36c38301f692ba2571acb4e4b91ca5c9d855399fa690b88232ae07",
+      "target": "assets/traits/aereus-sotto-fase-maturo.webp",
+      "source": "https://it.wikipedia.org/wiki/Boletus_aereus",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-37-r01.png",
+      "cella": 8,
+      "sha256": "9fc5d8d57a36c38301f692ba2571acb4e4b91ca5c9d855399fa690b88232ae07",
+      "target": "assets/traits/aereus-gambo-fase-maturo.webp",
+      "source": "https://it.wikipedia.org/wiki/Boletus_aereus",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-38-r01.png",
+      "cella": 0,
+      "sha256": "4c29ff9a9c175dc67abf4c63dfeef11ec715e1ed3902a579fbed55a6ee30bb35",
+      "target": "assets/traits/aestivalis-cappello-fase-giovane.webp",
+      "source": "https://it.wikipedia.org/wiki/Boletus_aestivalis",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-38-r01.png",
+      "cella": 1,
+      "sha256": "4c29ff9a9c175dc67abf4c63dfeef11ec715e1ed3902a579fbed55a6ee30bb35",
+      "target": "assets/traits/aestivalis-sotto-fase-giovane.webp",
+      "source": "https://it.wikipedia.org/wiki/Boletus_aestivalis",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-38-r01.png",
+      "cella": 2,
+      "sha256": "4c29ff9a9c175dc67abf4c63dfeef11ec715e1ed3902a579fbed55a6ee30bb35",
+      "target": "assets/traits/aestivalis-gambo-fase-giovane.webp",
+      "source": "https://it.wikipedia.org/wiki/Boletus_aestivalis",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-38-r01.png",
+      "cella": 3,
+      "sha256": "4c29ff9a9c175dc67abf4c63dfeef11ec715e1ed3902a579fbed55a6ee30bb35",
+      "target": "assets/traits/aestivalis-cappello-fase-adulto.webp",
+      "source": "https://it.wikipedia.org/wiki/Boletus_aestivalis",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-38-r01.png",
+      "cella": 4,
+      "sha256": "4c29ff9a9c175dc67abf4c63dfeef11ec715e1ed3902a579fbed55a6ee30bb35",
+      "target": "assets/traits/aestivalis-sotto-fase-adulto.webp",
+      "source": "https://it.wikipedia.org/wiki/Boletus_aestivalis",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-38-r01.png",
+      "cella": 5,
+      "sha256": "4c29ff9a9c175dc67abf4c63dfeef11ec715e1ed3902a579fbed55a6ee30bb35",
+      "target": "assets/traits/aestivalis-gambo-fase-adulto.webp",
+      "source": "https://it.wikipedia.org/wiki/Boletus_aestivalis",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-38-r01.png",
+      "cella": 6,
+      "sha256": "4c29ff9a9c175dc67abf4c63dfeef11ec715e1ed3902a579fbed55a6ee30bb35",
+      "target": "assets/traits/aestivalis-sotto-fase-maturo.webp",
+      "source": "https://it.wikipedia.org/wiki/Boletus_aestivalis",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-39-r01.png",
+      "cella": 0,
+      "sha256": "5fa37fe906bacc46e62657e31e7bea28cb0cf4136abab4aa05fae9aeb8251375",
+      "target": "assets/traits/edulis-cappello-fase-giovane.webp",
+      "source": "https://it.wikipedia.org/wiki/Boletus_edulis",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-39-r01.png",
+      "cella": 1,
+      "sha256": "5fa37fe906bacc46e62657e31e7bea28cb0cf4136abab4aa05fae9aeb8251375",
+      "target": "assets/traits/edulis-sotto-fase-giovane.webp",
+      "source": "https://it.wikipedia.org/wiki/Boletus_edulis",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-39-r01.png",
+      "cella": 2,
+      "sha256": "5fa37fe906bacc46e62657e31e7bea28cb0cf4136abab4aa05fae9aeb8251375",
+      "target": "assets/traits/edulis-gambo-fase-giovane.webp",
+      "source": "https://it.wikipedia.org/wiki/Boletus_edulis",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-39-r01.png",
+      "cella": 3,
+      "sha256": "5fa37fe906bacc46e62657e31e7bea28cb0cf4136abab4aa05fae9aeb8251375",
+      "target": "assets/traits/edulis-cappello-fase-adulto.webp",
+      "source": "https://it.wikipedia.org/wiki/Boletus_edulis",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-39-r01.png",
+      "cella": 4,
+      "sha256": "5fa37fe906bacc46e62657e31e7bea28cb0cf4136abab4aa05fae9aeb8251375",
+      "target": "assets/traits/edulis-sotto-fase-adulto.webp",
+      "source": "https://it.wikipedia.org/wiki/Boletus_edulis",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-39-r01.png",
+      "cella": 5,
+      "sha256": "5fa37fe906bacc46e62657e31e7bea28cb0cf4136abab4aa05fae9aeb8251375",
+      "target": "assets/traits/edulis-gambo-fase-adulto.webp",
+      "source": "https://it.wikipedia.org/wiki/Boletus_edulis",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-39-r01.png",
+      "cella": 6,
+      "sha256": "5fa37fe906bacc46e62657e31e7bea28cb0cf4136abab4aa05fae9aeb8251375",
+      "target": "assets/traits/edulis-sotto-fase-maturo.webp",
+      "source": "https://it.wikipedia.org/wiki/Boletus_edulis",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-40-r01.png",
+      "cella": 0,
+      "sha256": "9c7e97a9b880a2adfcdc8b173db4b2d36a6e23716499e978d62ba3b1d5e35528",
+      "target": "assets/traits/pinophilus-sotto-fase-giovane.webp",
+      "source": "https://it.wikipedia.org/wiki/Boletus_pinophilus",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-40-r01.png",
+      "cella": 3,
+      "sha256": "9c7e97a9b880a2adfcdc8b173db4b2d36a6e23716499e978d62ba3b1d5e35528",
+      "target": "assets/traits/pinophilus-sotto-fase-adulto.webp",
+      "source": "https://it.wikipedia.org/wiki/Boletus_pinophilus",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-40-r01.png",
+      "cella": 6,
+      "sha256": "9c7e97a9b880a2adfcdc8b173db4b2d36a6e23716499e978d62ba3b1d5e35528",
+      "target": "assets/traits/cibarius-cappello-fase-giovane.webp",
+      "source": "https://it.wikipedia.org/wiki/Cantharellus_cibarius",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-40-r01.png",
+      "cella": 7,
+      "sha256": "9c7e97a9b880a2adfcdc8b173db4b2d36a6e23716499e978d62ba3b1d5e35528",
+      "target": "assets/traits/cibarius-gambo-fase-giovane.webp",
+      "source": "https://it.wikipedia.org/wiki/Cantharellus_cibarius",
+      "stato": "raster revisionato; attende controllo indipendente"
     }
   ],
-  "nuove_tessere_revisionate": 12
+  "nuove_tessere_revisionate": 39
 }

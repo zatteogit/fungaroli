@@ -1,0 +1,62 @@
+{
+  "file": "incoming/icone/fasi-40-r01.png",
+  "sha256": "9c7e97a9b880a2adfcdc8b173db4b2d36a6e23716499e978d62ba3b1d5e35528",
+  "size": [
+    1254,
+    1254
+  ],
+  "celle": [
+    {
+      "soggetto": "pinophilus",
+      "fase": "giovane",
+      "tessera": "sotto",
+      "cella": 0,
+      "bbox": [
+        92,
+        102,
+        390,
+        400
+      ],
+      "source": "https://it.wikipedia.org/wiki/Boletus_pinophilus"
+    },
+    {
+      "soggetto": "pinophilus",
+      "fase": "adulto",
+      "tessera": "sotto",
+      "cella": 3,
+      "bbox": [
+        92,
+        500,
+        394,
+        798
+      ],
+      "source": "https://it.wikipedia.org/wiki/Boletus_pinophilus"
+    },
+    {
+      "soggetto": "cibarius",
+      "fase": "giovane",
+      "tessera": "cappello",
+      "cella": 6,
+      "bbox": [
+        80,
+        988,
+        394,
+        1120
+      ],
+      "source": "https://it.wikipedia.org/wiki/Cantharellus_cibarius"
+    },
+    {
+      "soggetto": "cibarius",
+      "fase": "giovane",
+      "tessera": "gambo",
+      "cella": 7,
+      "bbox": [
+        502,
+        894,
+        776,
+        1180
+      ],
+      "source": "https://it.wikipedia.org/wiki/Cantharellus_cibarius"
+    }
+  ]
+}
