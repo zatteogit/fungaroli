@@ -2987,5 +2987,250 @@
     },
     "state": "pronta da integrare",
     "review": "Ostreatus crema imbuto laterale, procera bruno emisferico con squame/anello e gambo fasciato; Pseudocraterellus bruno trombetta aperta senza lamelle vere. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-57.png",
+    "sha256": "aba1fe362307636ffe57105f323a419cfeec669664387608d313379bd5b00337",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        462,
+        142,
+        818,
+        424
+      ],
+      "0": [
+        74,
+        170,
+        436,
+        352
+      ],
+      "4": [
+        464,
+        522,
+        822,
+        796
+      ],
+      "3": [
+        74,
+        560,
+        444,
+        730
+      ],
+      "7": [
+        458,
+        924,
+        820,
+        1168
+      ],
+      "6": [
+        70,
+        944,
+        436,
+        1086
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Repandum arancio/crema imbuto e arancio piano, aculei crema distinti da lamelle/pori, gambi chiari invariati senza anello/volva/reticolo. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-58.png",
+    "sha256": "1f0f71f35b1b3e36123ca8a7387445c39dcaaa3152d5f4867223adbab3b2d09f",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        460,
+        122,
+        804,
+        368
+      ],
+      "0": [
+        70,
+        170,
+        436,
+        312
+      ],
+      "4": [
+        476,
+        464,
+        784,
+        786
+      ],
+      "3": [
+        84,
+        530,
+        414,
+        714
+      ],
+      "7": [
+        474,
+        858,
+        784,
+        1178
+      ],
+      "6": [
+        84,
+        922,
+        414,
+        1108
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Repandum crema piano con aculei; Russula aurea gialla/rossa emisferiche con lamelle crema/gialle e gambo pallido giallastro. Nessun anello/volva/reticolo. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-59.png",
+    "sha256": "13a5e7b7fe7f5205e1e8b2a1c0b55f03695b14e39ff45f80f5b6a8fb09b67ee6",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        488,
+        134,
+        874,
+        396
+      ],
+      "0": [
+        62,
+        168,
+        468,
+        296
+      ],
+      "4": [
+        488,
+        504,
+        882,
+        774
+      ],
+      "3": [
+        60,
+        544,
+        468,
+        670
+      ],
+      "7": [
+        498,
+        888,
+        884,
+        1180
+      ],
+      "6": [
+        62,
+        918,
+        460,
+        1082
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Russula aurea gialla/rossa piane con lamelle/gambi giallastri; heterophylla bruna imbuto con lamelle/gambo crema. Nessun anello/volva/reticolo. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-60.png",
+    "sha256": "70da8a950e4948379054dcfbdc80b0deca36d1368f6ba6827e60e2629475060f",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        456,
+        142,
+        810,
+        414
+      ],
+      "0": [
+        62,
+        196,
+        434,
+        354
+      ],
+      "4": [
+        454,
+        518,
+        816,
+        776
+      ],
+      "3": [
+        58,
+        556,
+        430,
+        700
+      ],
+      "7": [
+        454,
+        898,
+        818,
+        1154
+      ],
+      "6": [
+        58,
+        936,
+        432,
+        1076
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Russula heterophylla grigia imbuto e bruna/grigia piane, lamelle/gambi crema senza anello/volva/reticolo. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-61.png",
+    "sha256": "fa9f4e1f799b6ff4f3dbb028204b284f11e17fc75cf83dee2aa6cb61fffa8787",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        470,
+        158,
+        796,
+        408
+      ],
+      "0": [
+        88,
+        164,
+        412,
+        294
+      ],
+      "4": [
+        480,
+        492,
+        782,
+        792
+      ],
+      "3": [
+        86,
+        548,
+        410,
+        718
+      ],
+      "7": [
+        472,
+        894,
+        796,
+        1138
+      ],
+      "6": [
+        82,
+        932,
+        414,
+        1046
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Suillus bovinus bruno piano con pori larghi gialli; terreum bruno convesso/piano con fibre e lamelle chiare, nessun anello aggiunto, senza volva/reticolo. Alpha e sei celle verificati."
   }
 ]

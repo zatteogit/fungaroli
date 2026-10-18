@@ -7,7 +7,7 @@ Autorizzazione: avviare gli asset mancanti del confronto usando metodologia, pro
 - Forme: sei varianti, dodici disegni, nelle due tavole `confronto-forme-2026-10-18-01-r01.png` e `-02-r01.png`.
 - Combinazioni: tre varianti, sei disegni, nella tavola `confronto-combinazioni-2026-10-18-01-r01.png`.
 - Totale pronto da integrare: tre tavole, diciotto disegni. Nessun file dell’app modificato in questo ramo di produzione immagini.
-- Aggiornamento: pronti anche i lotti combo-02–56 (165 combinazioni, 330 disegni). Restano **25 combinazioni da generare** in **9 tavole**, incluse le due Morchella emisferiche rilevate dal successivo rapporto asset. Produzione supervisionata in corso, con controllo visivo per tavola e ritagli tecnici conservati in `produzione-2026-10-18/ritagli/`.
+- Aggiornamento: pronti anche i lotti combo-02–61 (180 combinazioni, 360 disegni). Restano **10 combinazioni da generare** in **4 tavole**, incluse le due Morchella emisferiche rilevate dal successivo rapporto asset. Produzione supervisionata in corso, con controllo visivo per tavola e ritagli tecnici conservati in `produzione-2026-10-18/ritagli/`.
 
 ## Metodo
 
