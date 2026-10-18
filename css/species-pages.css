@@ -467,7 +467,6 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 
 /* La coppia si sceglie sempre nei due menu, anche quando non sono sosia. */
 .cmp-edge-arrows[hidden] { display:none; }
-.fungus-compare .cmp-related-badge { display:table; margin:16px 0; padding:6px 10px; border-radius:999px; background:var(--surface-2); color:var(--link); font:600 12px/1.5 var(--font-body); }
 
 /* Sopra le foto conta i sosia; nella barra scorsa identifica la coppia corrente. */
 .cmp-pair-nav .cmp-sosia-count[hidden],

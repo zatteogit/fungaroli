@@ -910,7 +910,6 @@ function renderCompare(box, ref, pick) {
           <div class="cmp-name">${nameBtn(x)}${x.name !== x.latin ? `<i>${esc(x.latin)}</i>` : ''}</div></div>`).join('')}
         <span class="cmp-vs" aria-hidden="true">vs</span>
       </div>
-      ${documentedKeys.has(t.key)?`<p class="cmp-related-badge">Sosia documentati${documented.length>1?` · ${documented.findIndex(x=>x.key===t.key)+1} di ${documented.length}`:' nel catalogo'}</p>`:''}
       ${how ? `<p class="cmp-how" data-glossary="Funghi"><b>Differenze descritte.</b> ${esc(how)}</p>` : ''}
       <div class="cmp-kind-tabs" role="tablist" aria-label="Caratteri da confrontare">${groups.map(g=>`<button type="button" role="tab" id="cmp-${esc(t.key)}-tab-${g.kind}" data-cmp-group="${g.kind}" aria-controls="cmp-${esc(t.key)}-panel-${g.kind}" aria-selected="${g.kind==='diff'}" tabindex="${g.kind==='diff'?0:-1}">${g.label}</button>`).join('')}</div>
       <p class="cmp-illustration-note">Disegni schematici generati con AI: mostrano un esempio. Leggi tutte le varianti elencate e confronta con le foto.</p>
