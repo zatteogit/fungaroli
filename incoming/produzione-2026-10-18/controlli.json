@@ -2252,5 +2252,250 @@
     },
     "state": "pronta da integrare",
     "review": "Aereus bruno emisferico/piano con pori chiari e reticolo pallido superiore; aestivalis crema emisferico con pori gialli e reticolo ocra. Nessun anello/volva. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-42.png",
+    "sha256": "0faf11b1e165deda4d769c88e81190e229757b9cce138890e471f882b79009aa",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        474,
+        60,
+        784,
+        398
+      ],
+      "0": [
+        62,
+        140,
+        408,
+        348
+      ],
+      "4": [
+        472,
+        452,
+        784,
+        790
+      ],
+      "3": [
+        62,
+        532,
+        408,
+        740
+      ],
+      "7": [
+        448,
+        894,
+        810,
+        1180
+      ],
+      "6": [
+        50,
+        952,
+        418,
+        1082
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Arvensis bianco/giallo emisferici e bianco piano con tenue texture, lamelle brune e anello su gambo chiaro, senza volva/reticolo. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-43.png",
+    "sha256": "f2a727ecdae9534631670991c389f9d9d245344517caa33dc8de39a5a964ae6d",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        462,
+        96,
+        822,
+        392
+      ],
+      "0": [
+        68,
+        168,
+        428,
+        298
+      ],
+      "4": [
+        486,
+        466,
+        792,
+        798
+      ],
+      "3": [
+        82,
+        518,
+        406,
+        702
+      ],
+      "7": [
+        472,
+        900,
+        812,
+        1176
+      ],
+      "6": [
+        68,
+        944,
+        426,
+        1070
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Arvensis giallo piano e bisporus bianchi emisferico/piano con lamelle brune e anelli; bisporus liscio, nessuna volva/reticolo. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-44.png",
+    "sha256": "1b7903a4a34b20862d0dbff5a5a3d38a7ef669f20ef489e3992be7f547436b84",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        488,
+        80,
+        798,
+        404
+      ],
+      "0": [
+        72,
+        152,
+        396,
+        338
+      ],
+      "4": [
+        486,
+        474,
+        800,
+        800
+      ],
+      "3": [
+        72,
+        554,
+        396,
+        736
+      ],
+      "7": [
+        466,
+        922,
+        824,
+        1188
+      ],
+      "6": [
+        54,
+        980,
+        420,
+        1094
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Campestris bruno/crema emisferici e bruno piano, lamelle brune e gambi chiari; profilo superiore del gambo coerente con riferimento senza aggiunta di gonna, nessuna volva/reticolo. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-45.png",
+    "sha256": "ac4516783bd7fc8163de895886394075b2dd56dfd8d05b91b66ba757062b8ebd",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        456,
+        112,
+        798,
+        346
+      ],
+      "0": [
+        56,
+        158,
+        416,
+        272
+      ],
+      "4": [
+        486,
+        454,
+        766,
+        778
+      ],
+      "3": [
+        70,
+        518,
+        396,
+        700
+      ],
+      "7": [
+        486,
+        850,
+        768,
+        1176
+      ],
+      "6": [
+        72,
+        924,
+        396,
+        1100
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Campestris crema piano senza gonna aggiunta; sylvicola bianco/giallo emisferici con anello, lamelle brune e gambo chiaro. Senza volva/reticolo. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-46.png",
+    "sha256": "3f66b2bff05041dc4b4b8326f6746ebeed33a6d2c994ce6489ec635ece2a4cfc",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        464,
+        66,
+        820,
+        378
+      ],
+      "0": [
+        58,
+        160,
+        436,
+        288
+      ],
+      "4": [
+        462,
+        456,
+        824,
+        770
+      ],
+      "3": [
+        58,
+        544,
+        436,
+        680
+      ],
+      "7": [
+        500,
+        820,
+        782,
+        1186
+      ],
+      "6": [
+        84,
+        888,
+        394,
+        1082
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Sylvicola bianco/giallo piani con lamelle brune e anello; caesarea gialla emisferica con lamelle/gambo/anello gialli e volva bianca a sacco. Nessun reticolo o verruche aggiunte. Alpha e sei celle verificati."
   }
 ]
