@@ -104,3 +104,7 @@ aggiunge un secondo blocco sticky con calendario e preferenze. Tornando sopra il
 titolo riappare la testata iniziale. Il conteggio e il pannello dei filtri sono
 condivisi e la chiusura restituisce il focus al comando visibile senza spostare la
 pagina. Sul desktop restano navigazione e testata estese.
+
+Scopri usa un libro aperto come icona: rappresenta cataloghi, caratteri e guide di
+funghi, piante e alberi. La foglia è riservata ai contenuti botanici; il Taccuino
+resta un quaderno chiuso, la Mappa una carta ripiegata.
