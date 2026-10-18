@@ -1,0 +1,49 @@
+{
+  "file": "incoming/icone/fasi-43-r01.png",
+  "sha256": "8c09da12568d4f23cf9f76f20b2666437c1fd4263d8c3f4af97f95a755f62321",
+  "size": [
+    1254,
+    1254
+  ],
+  "celle": [
+    {
+      "soggetto": "hypholoma-fasciculare",
+      "fase": "giovane",
+      "tessera": "sotto",
+      "cella": 0,
+      "bbox": [
+        62,
+        64,
+        404,
+        400
+      ],
+      "source": "https://www.first-nature.com/fungi/hypholoma-fasciculare.php"
+    },
+    {
+      "soggetto": "hypholoma-fasciculare",
+      "fase": "adulto",
+      "tessera": "sotto",
+      "cella": 3,
+      "bbox": [
+        62,
+        450,
+        404,
+        788
+      ],
+      "source": "https://www.first-nature.com/fungi/hypholoma-fasciculare.php"
+    },
+    {
+      "soggetto": "hypholoma-fasciculare",
+      "fase": "maturo",
+      "tessera": "sotto",
+      "cella": 6,
+      "bbox": [
+        62,
+        834,
+        404,
+        1174
+      ],
+      "source": "https://www.first-nature.com/fungi/hypholoma-fasciculare.php"
+    }
+  ]
+}

@@ -1,9 +1,11 @@
 {
   "recuperate_revisionate": 30,
-  "nuove_revisionate": 39,
-  "nuove_da_generare": 34,
-  "boleti_nuove_completi": 37,
-  "altre_nuove": 2,
-  "scarti_esclusi": 2,
-  "nota": "Nessun import app; approvazione indipendente coordinatore pendente."
+  "nuove_revisionate": 59,
+  "nuove_da_generare_o_revisionare": 14,
+  "scarti_esclusi": 4,
+  "in_generazione": [
+    "fasi44",
+    "fasi45"
+  ],
+  "nota": "Zero import app, revisione indipendente coordinatore pendente."
 }

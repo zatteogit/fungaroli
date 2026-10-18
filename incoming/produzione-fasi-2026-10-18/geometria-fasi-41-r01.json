@@ -1,0 +1,114 @@
+{
+  "file": "incoming/icone/fasi-41-r01.png",
+  "sha256": "57c0e7a76a35f727913e31de5c70e64422c006f8485f40ea446306fa76e6f210",
+  "size": [
+    1254,
+    1254
+  ],
+  "celle": [
+    {
+      "soggetto": "cibarius",
+      "fase": "adulto",
+      "tessera": "cappello",
+      "cella": 0,
+      "bbox": [
+        42,
+        112,
+        432,
+        356
+      ],
+      "source": "https://it.wikipedia.org/wiki/Cantharellus_cibarius"
+    },
+    {
+      "soggetto": "cibarius",
+      "fase": "adulto",
+      "tessera": "gambo",
+      "cella": 1,
+      "bbox": [
+        436,
+        60,
+        828,
+        394
+      ],
+      "source": "https://it.wikipedia.org/wiki/Cantharellus_cibarius"
+    },
+    {
+      "soggetto": "coprinus-comatus",
+      "fase": "giovane",
+      "tessera": "cappello",
+      "cella": 3,
+      "bbox": [
+        136,
+        448,
+        320,
+        810
+      ],
+      "source": "https://en.wikipedia.org/wiki/Coprinus_comatus"
+    },
+    {
+      "soggetto": "coprinus-comatus",
+      "fase": "giovane",
+      "tessera": "sotto",
+      "cella": 4,
+      "bbox": [
+        488,
+        486,
+        766,
+        762
+      ],
+      "source": "https://en.wikipedia.org/wiki/Coprinus_comatus"
+    },
+    {
+      "soggetto": "coprinus-comatus",
+      "fase": "giovane",
+      "tessera": "gambo",
+      "cella": 5,
+      "bbox": [
+        970,
+        430,
+        1116,
+        814
+      ],
+      "source": "https://en.wikipedia.org/wiki/Coprinus_comatus"
+    },
+    {
+      "soggetto": "coprinus-comatus",
+      "fase": "maturo",
+      "tessera": "cappello",
+      "cella": 6,
+      "bbox": [
+        94,
+        840,
+        374,
+        1196
+      ],
+      "source": "https://www.first-nature.com/fungi/coprinus-comatus.php"
+    },
+    {
+      "soggetto": "coprinus-comatus",
+      "fase": "maturo",
+      "tessera": "sotto",
+      "cella": 7,
+      "bbox": [
+        488,
+        896,
+        766,
+        1170
+      ],
+      "source": "https://www.first-nature.com/fungi/coprinus-comatus.php"
+    },
+    {
+      "soggetto": "coprinus-comatus",
+      "fase": "maturo",
+      "tessera": "gambo",
+      "cella": 8,
+      "bbox": [
+        922,
+        832,
+        1156,
+        1218
+      ],
+      "source": "https://www.first-nature.com/fungi/coprinus-comatus.php"
+    }
+  ]
+}

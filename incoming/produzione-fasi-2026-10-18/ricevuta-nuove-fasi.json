@@ -305,13 +305,173 @@
       "stato": "raster revisionato; attende controllo indipendente"
     },
     {
-      "file": "incoming/icone/fasi-40-r01.png",
+      "file": "incoming/icone/fasi-41-r01.png",
+      "cella": 0,
+      "sha256": "57c0e7a76a35f727913e31de5c70e64422c006f8485f40ea446306fa76e6f210",
+      "target": "assets/traits/cibarius-cappello-fase-adulto.webp",
+      "source": "https://it.wikipedia.org/wiki/Cantharellus_cibarius",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-41-r01.png",
+      "cella": 3,
+      "sha256": "57c0e7a76a35f727913e31de5c70e64422c006f8485f40ea446306fa76e6f210",
+      "target": "assets/traits/coprinus-comatus-cappello-fase-giovane.webp",
+      "source": "https://en.wikipedia.org/wiki/Coprinus_comatus",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-41-r01.png",
+      "cella": 4,
+      "sha256": "57c0e7a76a35f727913e31de5c70e64422c006f8485f40ea446306fa76e6f210",
+      "target": "assets/traits/coprinus-comatus-sotto-fase-giovane.webp",
+      "source": "https://en.wikipedia.org/wiki/Coprinus_comatus",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-41-r01.png",
+      "cella": 5,
+      "sha256": "57c0e7a76a35f727913e31de5c70e64422c006f8485f40ea446306fa76e6f210",
+      "target": "assets/traits/coprinus-comatus-gambo-fase-giovane.webp",
+      "source": "https://en.wikipedia.org/wiki/Coprinus_comatus",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-41-r01.png",
+      "cella": 6,
+      "sha256": "57c0e7a76a35f727913e31de5c70e64422c006f8485f40ea446306fa76e6f210",
+      "target": "assets/traits/coprinus-comatus-cappello-fase-maturo.webp",
+      "source": "https://www.first-nature.com/fungi/coprinus-comatus.php",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-41-r01.png",
       "cella": 7,
-      "sha256": "9c7e97a9b880a2adfcdc8b173db4b2d36a6e23716499e978d62ba3b1d5e35528",
+      "sha256": "57c0e7a76a35f727913e31de5c70e64422c006f8485f40ea446306fa76e6f210",
+      "target": "assets/traits/coprinus-comatus-sotto-fase-maturo.webp",
+      "source": "https://www.first-nature.com/fungi/coprinus-comatus.php",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-41-r01.png",
+      "cella": 8,
+      "sha256": "57c0e7a76a35f727913e31de5c70e64422c006f8485f40ea446306fa76e6f210",
+      "target": "assets/traits/coprinus-comatus-gambo-fase-maturo.webp",
+      "source": "https://www.first-nature.com/fungi/coprinus-comatus.php",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-42-r01.png",
+      "cella": 0,
+      "sha256": "7822cc588c81a351435683dfbbce068e836c29262851d653bb287e4ea666e8ce",
+      "target": "assets/traits/coprinus-comatus-cappello-fase-sciolto.webp",
+      "source": "https://www.first-nature.com/fungi/coprinus-comatus.php",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-42-r01.png",
+      "cella": 1,
+      "sha256": "7822cc588c81a351435683dfbbce068e836c29262851d653bb287e4ea666e8ce",
+      "target": "assets/traits/coprinus-comatus-sotto-fase-sciolto.webp",
+      "source": "https://www.first-nature.com/fungi/coprinus-comatus.php",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-42-r01.png",
+      "cella": 2,
+      "sha256": "7822cc588c81a351435683dfbbce068e836c29262851d653bb287e4ea666e8ce",
+      "target": "assets/traits/coprinus-comatus-gambo-fase-sciolto.webp",
+      "source": "https://www.first-nature.com/fungi/coprinus-comatus.php",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-42-r01.png",
+      "cella": 3,
+      "sha256": "7822cc588c81a351435683dfbbce068e836c29262851d653bb287e4ea666e8ce",
+      "target": "assets/traits/cyclocybe-aegerita-cappello-fase-giovane.webp",
+      "source": "https://www.first-nature.com/fungi/cyclocybe-cylindracea.php",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-42-r01.png",
+      "cella": 4,
+      "sha256": "7822cc588c81a351435683dfbbce068e836c29262851d653bb287e4ea666e8ce",
+      "target": "assets/traits/cyclocybe-aegerita-sotto-fase-giovane.webp",
+      "source": "https://www.first-nature.com/fungi/cyclocybe-cylindracea.php",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-42-r01.png",
+      "cella": 5,
+      "sha256": "7822cc588c81a351435683dfbbce068e836c29262851d653bb287e4ea666e8ce",
+      "target": "assets/traits/cyclocybe-aegerita-gambo-fase-giovane.webp",
+      "source": "https://www.first-nature.com/fungi/cyclocybe-cylindracea.php",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-42-r01.png",
+      "cella": 6,
+      "sha256": "7822cc588c81a351435683dfbbce068e836c29262851d653bb287e4ea666e8ce",
+      "target": "assets/traits/cyclocybe-aegerita-cappello-fase-adulto.webp",
+      "source": "https://www.first-nature.com/fungi/cyclocybe-cylindracea.php",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-42-r01.png",
+      "cella": 7,
+      "sha256": "7822cc588c81a351435683dfbbce068e836c29262851d653bb287e4ea666e8ce",
+      "target": "assets/traits/cyclocybe-aegerita-sotto-fase-adulto.webp",
+      "source": "https://www.first-nature.com/fungi/cyclocybe-cylindracea.php",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-42-r01.png",
+      "cella": 8,
+      "sha256": "7822cc588c81a351435683dfbbce068e836c29262851d653bb287e4ea666e8ce",
+      "target": "assets/traits/cyclocybe-aegerita-gambo-fase-adulto.webp",
+      "source": "https://www.first-nature.com/fungi/cyclocybe-cylindracea.php",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-cibarius-r02.png",
+      "cella": 0,
+      "sha256": "8ed27af0febd017ad5e7238eed12e23d8d59c0cf4f07d1db26f3cd0955469f84",
       "target": "assets/traits/cibarius-gambo-fase-giovane.webp",
       "source": "https://it.wikipedia.org/wiki/Cantharellus_cibarius",
       "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-cibarius-r02.png",
+      "cella": 1,
+      "sha256": "8ed27af0febd017ad5e7238eed12e23d8d59c0cf4f07d1db26f3cd0955469f84",
+      "target": "assets/traits/cibarius-gambo-fase-adulto.webp",
+      "source": "https://it.wikipedia.org/wiki/Cantharellus_cibarius",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-43-r01.png",
+      "cella": 0,
+      "sha256": "8c09da12568d4f23cf9f76f20b2666437c1fd4263d8c3f4af97f95a755f62321",
+      "target": "assets/traits/hypholoma-fasciculare-sotto-fase-giovane.webp",
+      "source": "https://www.first-nature.com/fungi/hypholoma-fasciculare.php",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-43-r01.png",
+      "cella": 3,
+      "sha256": "8c09da12568d4f23cf9f76f20b2666437c1fd4263d8c3f4af97f95a755f62321",
+      "target": "assets/traits/hypholoma-fasciculare-sotto-fase-adulto.webp",
+      "source": "https://www.first-nature.com/fungi/hypholoma-fasciculare.php",
+      "stato": "raster revisionato; attende controllo indipendente"
+    },
+    {
+      "file": "incoming/icone/fasi-43-r01.png",
+      "cella": 6,
+      "sha256": "8c09da12568d4f23cf9f76f20b2666437c1fd4263d8c3f4af97f95a755f62321",
+      "target": "assets/traits/hypholoma-fasciculare-sotto-fase-maturo.webp",
+      "source": "https://www.first-nature.com/fungi/hypholoma-fasciculare.php",
+      "stato": "raster revisionato; attende controllo indipendente"
     }
   ],
-  "nuove_tessere_revisionate": 39
+  "nuove_tessere_revisionate": 59
 }

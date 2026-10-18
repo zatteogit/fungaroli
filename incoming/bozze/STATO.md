@@ -104,3 +104,13 @@
 | incoming/icone/fasi-39-r01.png | Fasi crescita, 7 tessere selezionate | pronta da integrare | Revisione piena/64px in produzione-fasi-2026-10-18/revisione-fasi-39.md; hash 5fa37fe906bacc46e62657e31e7bea28cb0cf4136abab4aa05fae9aeb8251375; solo celle 0,1,2,3,4,5,6; controllo indipendente coordinatore prima import. |
 
 | incoming/icone/fasi-40-r01.png | Fasi crescita, 4 tessere selezionate | pronta da integrare | Revisione piena/64px in produzione-fasi-2026-10-18/revisione-fasi-40.md; hash 9c7e97a9b880a2adfcdc8b173db4b2d36a6e23716499e978d62ba3b1d5e35528; solo celle 0,3,6,7; controllo indipendente coordinatore prima import. |
+
+| incoming/icone/fasi-40-r01.png | Fasi crescita, 3 tessere selezionate | pronta da integrare | Revisione piena/64px in produzione-fasi-2026-10-18/revisione-fasi-40.md; hash 9c7e97a9b880a2adfcdc8b173db4b2d36a6e23716499e978d62ba3b1d5e35528; solo celle 0,3,6; controllo indipendente coordinatore prima import. |
+
+| incoming/icone/fasi-41-r01.png | Fasi crescita, 7 tessere selezionate | pronta da integrare | Revisione piena/64px in produzione-fasi-2026-10-18/revisione-fasi-41.md; hash 57c0e7a76a35f727913e31de5c70e64422c006f8485f40ea446306fa76e6f210; solo celle 0,3,4,5,6,7,8; controllo indipendente coordinatore prima import. |
+
+| incoming/icone/fasi-42-r01.png | Fasi crescita, 9 tessere selezionate | pronta da integrare | Revisione piena/64px in produzione-fasi-2026-10-18/revisione-fasi-42.md; hash 7822cc588c81a351435683dfbbce068e836c29262851d653bb287e4ea666e8ce; solo celle 0,1,2,3,4,5,6,7,8; controllo indipendente coordinatore prima import. |
+
+| incoming/icone/fasi-cibarius-r02.png | Fasi crescita, 2 tessere selezionate | pronta da integrare | Revisione piena/64px in produzione-fasi-2026-10-18/revisione-fasi-cibarius.md; hash 8ed27af0febd017ad5e7238eed12e23d8d59c0cf4f07d1db26f3cd0955469f84; solo celle 0,1; controllo indipendente coordinatore prima import. |
+
+| incoming/icone/fasi-43-r01.png | Fasi crescita, 3 tessere selezionate | pronta da integrare | Revisione piena/64px in produzione-fasi-2026-10-18/revisione-fasi-43.md; hash 8c09da12568d4f23cf9f76f20b2666437c1fd4263d8c3f4af97f95a755f62321; solo celle 0,3,6; controllo indipendente coordinatore prima import. |

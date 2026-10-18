@@ -1,0 +1,127 @@
+{
+  "file": "incoming/icone/fasi-42-r01.png",
+  "sha256": "7822cc588c81a351435683dfbbce068e836c29262851d653bb287e4ea666e8ce",
+  "size": [
+    1254,
+    1254
+  ],
+  "celle": [
+    {
+      "soggetto": "coprinus-comatus",
+      "fase": "sciolto",
+      "tessera": "cappello",
+      "cella": 0,
+      "bbox": [
+        118,
+        36,
+        346,
+        486
+      ],
+      "source": "https://www.first-nature.com/fungi/coprinus-comatus.php"
+    },
+    {
+      "soggetto": "coprinus-comatus",
+      "fase": "sciolto",
+      "tessera": "sotto",
+      "cella": 1,
+      "bbox": [
+        456,
+        88,
+        802,
+        436
+      ],
+      "source": "https://www.first-nature.com/fungi/coprinus-comatus.php"
+    },
+    {
+      "soggetto": "coprinus-comatus",
+      "fase": "sciolto",
+      "tessera": "gambo",
+      "cella": 2,
+      "bbox": [
+        950,
+        28,
+        1144,
+        484
+      ],
+      "source": "https://www.first-nature.com/fungi/coprinus-comatus.php"
+    },
+    {
+      "soggetto": "cyclocybe-aegerita",
+      "fase": "giovane",
+      "tessera": "cappello",
+      "cella": 3,
+      "bbox": [
+        76,
+        626,
+        386,
+        802
+      ],
+      "source": "https://www.first-nature.com/fungi/cyclocybe-cylindracea.php"
+    },
+    {
+      "soggetto": "cyclocybe-aegerita",
+      "fase": "giovane",
+      "tessera": "sotto",
+      "cella": 4,
+      "bbox": [
+        476,
+        566,
+        776,
+        856
+      ],
+      "source": "https://www.first-nature.com/fungi/cyclocybe-cylindracea.php"
+    },
+    {
+      "soggetto": "cyclocybe-aegerita",
+      "fase": "giovane",
+      "tessera": "gambo",
+      "cella": 5,
+      "bbox": [
+        918,
+        542,
+        1180,
+        868
+      ],
+      "source": "https://www.first-nature.com/fungi/cyclocybe-cylindracea.php"
+    },
+    {
+      "soggetto": "cyclocybe-aegerita",
+      "fase": "adulto",
+      "tessera": "cappello",
+      "cella": 6,
+      "bbox": [
+        30,
+        984,
+        448,
+        1134
+      ],
+      "source": "https://www.first-nature.com/fungi/cyclocybe-cylindracea.php"
+    },
+    {
+      "soggetto": "cyclocybe-aegerita",
+      "fase": "adulto",
+      "tessera": "sotto",
+      "cella": 7,
+      "bbox": [
+        472,
+        910,
+        806,
+        1214
+      ],
+      "source": "https://www.first-nature.com/fungi/cyclocybe-cylindracea.php"
+    },
+    {
+      "soggetto": "cyclocybe-aegerita",
+      "fase": "adulto",
+      "tessera": "gambo",
+      "cella": 8,
+      "bbox": [
+        832,
+        922,
+        1240,
+        1226
+      ],
+      "source": "https://www.first-nature.com/fungi/cyclocybe-cylindracea.php"
+    }
+  ]
+}

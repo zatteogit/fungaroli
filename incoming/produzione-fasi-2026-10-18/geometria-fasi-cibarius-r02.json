@@ -1,0 +1,36 @@
+{
+  "file": "incoming/icone/fasi-cibarius-r02.png",
+  "sha256": "8ed27af0febd017ad5e7238eed12e23d8d59c0cf4f07d1db26f3cd0955469f84",
+  "size": [
+    1254,
+    1254
+  ],
+  "celle": [
+    {
+      "soggetto": "cibarius",
+      "fase": "giovane",
+      "tessera": "gambo",
+      "cella": 0,
+      "bbox": [
+        62,
+        112,
+        378,
+        426
+      ],
+      "source": "https://it.wikipedia.org/wiki/Cantharellus_cibarius"
+    },
+    {
+      "soggetto": "cibarius",
+      "fase": "adulto",
+      "tessera": "gambo",
+      "cella": 1,
+      "bbox": [
+        412,
+        48,
+        868,
+        434
+      ],
+      "source": "https://it.wikipedia.org/wiki/Cantharellus_cibarius"
+    }
+  ]
+}
