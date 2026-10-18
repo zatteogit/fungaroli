@@ -46,8 +46,7 @@ test('segue visualViewport ridotto e spostato senza nascondere la X',async({brow
     Object.defineProperty(window,'visualViewport',{configurable:true,value:{height:410,width:340,offsetTop:35,offsetLeft:12}});
     dispatchEvent(new Event('resize'));
   });
-  const box=await page.locator('dialog').boundingBox();
-  expect(box.x).toBe(12);expect(box.y).toBe(35);expect(box.height).toBe(410);expect(box.width).toBe(340);
+  await expect.poll(async()=>{const box=await page.locator('dialog').boundingBox();return {x:box.x,y:box.y,height:box.height,width:box.width};}).toEqual({x:12,y:35,height:410,width:340});
   await closeVisible(page);await page.locator('.iv-close').click();await context.close();
 });
 for(const [token,browserName] of [['CriOS','Chrome'],['FxiOS','browser'],['EdgiOS','browser']]) {
