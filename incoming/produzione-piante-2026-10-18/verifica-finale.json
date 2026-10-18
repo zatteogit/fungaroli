@@ -1,0 +1,13 @@
+{
+  "schema_values": 51,
+  "manifest_rows": 51,
+  "selected_sheets": 6,
+  "importer_output": "51 icone importate da 6 tavole; 51 nell’indice",
+  "importer_location": "/tmp/fronda-plant-import-verify (temporary copy of importer and schema; no app mutations)",
+  "minimum_imported_margin_px": 4,
+  "crop_size": [
+    128,
+    128
+  ],
+  "review": "Visual review per sheet recorded in controlli.json; technical checks do not establish botanical correctness on their own."
+}

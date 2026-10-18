@@ -1,0 +1,415 @@
+{
+  "scope": "Un’icona generica per valore delle domande correnti, esclusi special/habitat; nessuna specie.",
+  "schema_source": "data/recognize-plants.json",
+  "schema_sha256": "3c8ce42eec40480179c18ca039a4a136a0d43ea0627dae40beb694054878ec0e",
+  "value_count": 51,
+  "sheet_count": 6,
+  "height_decision": "Inclusa height_class: ask=true; tabella del brief e importatore comprendono tre valori. Frase iniziale brief «taglia» contraddittoria. Nessun dato cambiato.",
+  "batches": [
+    {
+      "id": "piante-01",
+      "file": "incoming/icone-piante/tavola-piante-01.png",
+      "status": "pronta da integrare",
+      "values": [
+        {
+          "chiave": "leaf_arrangement",
+          "valore": "alterne",
+          "label": "una per nodo, a zig-zag",
+          "cella": 0
+        },
+        {
+          "chiave": "leaf_arrangement",
+          "valore": "opposte",
+          "label": "due per nodo, una di fronte all’altra",
+          "cella": 1
+        },
+        {
+          "chiave": "leaf_arrangement",
+          "valore": "verticillate",
+          "label": "tre o più per nodo, a raggiera",
+          "cella": 2
+        },
+        {
+          "chiave": "leaf_arrangement",
+          "valore": "rosetta_basale",
+          "label": "tutte o quasi a terra, a rosetta",
+          "cella": 3
+        },
+        {
+          "chiave": "leaf_type",
+          "valore": "semplice",
+          "label": "una lamina intera, anche lobata",
+          "cella": 4
+        },
+        {
+          "chiave": "leaf_type",
+          "valore": "composta",
+          "label": "divisa in foglioline separate",
+          "cella": 5
+        },
+        {
+          "chiave": "leaf_type",
+          "valore": "molto_divisa_fine",
+          "label": "divisa in fili sottili, come capelli",
+          "cella": 6
+        },
+        {
+          "chiave": "leaf_type",
+          "valore": "molto_divisa_larga",
+          "label": "molto frastagliata, a segmenti larghi o dentati, tipo felce o prezzemolo",
+          "cella": 7
+        },
+        {
+          "chiave": "leaf_type",
+          "valore": "aghiforme",
+          "label": "ago o squama stretta",
+          "cella": 8
+        }
+      ],
+      "generated_file": "incoming/icone-piante/tavola-piante-01.png",
+      "review": "Verificate foglie alterne senza coppie, opposte a due nodi, verticilli con almeno tre foglie, rosetta basale; distinta lamina semplice, sette foglioline, divisione filiforme, segmenti larghi e ago. Nessun fiore o frutto aggiunto. Margini/componenti completi.",
+      "prompt": "Create a Fronda botanical trait icon sheet matching the attached approved tree-trait illustrations: flat simple natural green palette, thick dark brown outlines, restrained light highlight, clean rounded readable shapes, genuinely transparent alpha background. 1254x1254 square, invisible exact 3x3 grid, one isolated generic teaching icon per cell, cells numbered 0-8 left to right top to bottom. Minimum 50px clear margins inside each 418px cell; no touching neighbors, no frames, NO text, letters, numerals, arrows, labels, backgrounds or shadows. Generic botanical diagrams, not recognizable species. Keep the same drawing scale and line weight. CELL0 ALTERNATE LEAVES: upright thin stem with exactly one simple leaf per node, alternating left/right at successively different heights; never paired. CELL1 OPPOSITE LEAVES: same upright stem, exactly two simple leaves at each node at the same height, directly opposite, two clearly separated pairs. CELL2 WHORLED LEAVES: same stem with two nodes, each bearing four leaves radiating from that single node; perspective makes whorls clear, not alternate pairs. CELL3 BASAL ROSETTE: compact top-down radial rosette of simple green leaves, all attached to one low central base, no tall stem. CELL4 SIMPLE LEAF: one continuous entire oval green blade with single petiole, central vein, no separate leaflets. CELL5 COMPOUND LEAF: single petiole and rachis bearing seven physically separate oval leaflets (three pairs plus terminal), visible gaps between leaflets, one whole compound leaf. CELL6 VERY FINELY DIVIDED LEAF: one connected green leaf repeatedly divided into many hair-thin filamentous segments, airy feathery hairlike branching, not a compound leaf with oval leaflets. CELL7 BROADLY DIVIDED LEAF: one connected deeply dissected leaf with broad flattened jagged triangular/lanceolate segments, strong broad cut blades, clearly different from hair-fine cell6. CELL8 NEEDLE-SHAPED LEAF: one long narrow tapered green needle, subtle central ridge, much longer than wide, no broad blade, no cluster. All nine cells occupied. Preserve these exact morphological distinctions; do not add flowers, fruit, spines or species-specific marks.",
+      "references": [
+        "assets/tree-traits/leaf_margin-dentato.webp",
+        "assets/tree-traits/leaf_kind-foglia_larga.webp",
+        "assets/tree-traits/fruit_type-carnoso.webp"
+      ]
+    },
+    {
+      "id": "piante-02",
+      "file": "incoming/icone-piante/tavola-piante-02.png",
+      "status": "pronta da integrare",
+      "values": [
+        {
+          "chiave": "leaf_margin",
+          "valore": "intero",
+          "label": "liscio",
+          "cella": 0
+        },
+        {
+          "chiave": "leaf_margin",
+          "valore": "dentato",
+          "label": "con dentini o seghettato",
+          "cella": 1
+        },
+        {
+          "chiave": "leaf_margin",
+          "valore": "lobato",
+          "label": "con lobi profondi",
+          "cella": 2
+        },
+        {
+          "chiave": "flower_color",
+          "valore": "bianco",
+          "label": "bianco o crema",
+          "cella": 3
+        },
+        {
+          "chiave": "flower_color",
+          "valore": "giallo",
+          "label": "giallo",
+          "cella": 4
+        },
+        {
+          "chiave": "flower_color",
+          "valore": "arancio_rosso",
+          "label": "arancio o rosso",
+          "cella": 5
+        },
+        {
+          "chiave": "flower_color",
+          "valore": "rosa",
+          "label": "rosa",
+          "cella": 6
+        },
+        {
+          "chiave": "flower_color",
+          "valore": "viola_blu",
+          "label": "viola, lilla o azzurro",
+          "cella": 7
+        },
+        {
+          "chiave": "flower_color",
+          "valore": "verdastro",
+          "label": "verdastro o brunastro, poco vistoso",
+          "cella": 8
+        }
+      ],
+      "generated_file": "incoming/icone-piante/tavola-piante-02.png",
+      "review": "Margine intero, dentato e profondamente lobato distinti. Sei fiori con cinque petali, silhouette coerente e colori bianco-crema, giallo, arancio-rosso, rosa, viola-blu e verdastro. Nessuna specie raffigurata. Controlli componenti e ritagli passati.",
+      "prompt": "Fronda botanical trait production sheet, match attached approved icon style precisely: flat natural colors, dark brown thick outlines, minimal light highlight, clear simple generic teaching icons, true transparent alpha background. Square1254x1254, invisible exact3x3 grid, one icon per cell, 50px margins inside each418px cell, all9 cells occupied. No text, letters, numbers, labels, arrows, frames, ground or drop shadows. FIRST ROW LEAF MARGINS: cell0 one oval green leaf with completely smooth entire margin; cell1 same oval leaf with clearly repeated small pointed serrations around the edge; cell2 same basic green blade but deeply lobed with broad rounded lobes and deep sinuses, not merely serrated. Simple petiole and center vein on all3, never flowers/fruit. OTHER SIX CELLS FLOWER COLOR ONLY: identical neutral front-facing generic five-petal open flower, exactly five broad rounded petals and small warm muted yellow center, no stem, no leaves; vary ONLY petal color. cell3 ivory white/cream petals visible through dark outline; cell4 clear yellow petals; cell5 orange-red petals; cell6 pink petals; cell7 violet-blue petals; cell8 muted greenish petals (greenish to brownish inconspicuous tone, not yellow). Keep identical flower silhouette, petal count, size, orientation and line weight between cells3-8. Nothing species-specific. Keep flowers light enough for dark theme and outlined enough for cream theme.",
+      "references": [
+        "assets/tree-traits/leaf_margin-dentato.webp",
+        "assets/tree-traits/leaf_kind-foglia_larga.webp",
+        "assets/tree-traits/fruit_type-carnoso.webp",
+        "incoming/icone-piante/tavola-piante-01.png"
+      ]
+    },
+    {
+      "id": "piante-03",
+      "file": "incoming/icone-piante/tavola-piante-03.png",
+      "status": "pronta da integrare",
+      "values": [
+        {
+          "chiave": "flower_shape",
+          "valore": "cinque_petali",
+          "label": "5 petali (o lobi) aperti",
+          "cella": 0
+        },
+        {
+          "chiave": "flower_shape",
+          "valore": "quattro_petali",
+          "label": "4 petali (o parti simili) a croce",
+          "cella": 1
+        },
+        {
+          "chiave": "flower_shape",
+          "valore": "sei_tepali",
+          "label": "6 petali uguali, a stella",
+          "cella": 2
+        },
+        {
+          "chiave": "flower_shape",
+          "valore": "molti_petali",
+          "label": "molti petali stretti a raggiera",
+          "cella": 3
+        },
+        {
+          "chiave": "flower_shape",
+          "valore": "ombrella",
+          "label": "tanti fiorellini su un piano, a ombrella o corimbo",
+          "cella": 4
+        },
+        {
+          "chiave": "flower_shape",
+          "valore": "capolino",
+          "label": "un “fiore” fatto di tanti fiorellini, tipo margherita",
+          "cella": 5
+        },
+        {
+          "chiave": "flower_shape",
+          "valore": "campanula",
+          "label": "a campana, imbuto o urna",
+          "cella": 6
+        },
+        {
+          "chiave": "flower_shape",
+          "valore": "tubo_labbra",
+          "label": "a tubo, spesso con labbra",
+          "cella": 7
+        },
+        {
+          "chiave": "flower_shape",
+          "valore": "farfalla",
+          "label": "a farfalla, come il pisello",
+          "cella": 8
+        }
+      ],
+      "references": [
+        "incoming/icone-piante/tavola-piante-02.png",
+        "assets/tree-traits/leaf_margin-dentato.webp",
+        "assets/tree-traits/fruit_type-carnoso.webp"
+      ],
+      "original_prompt": "Create the next Fronda botanical TRAIT icon sheet matching attached approved flat illustration style, natural warm palette, thick dark brown contour, simple readable morphology, transparent alpha background. 1254x1254 square invisible3x3 grid, one isolated icon percell, generous margins, all9 cells used. NO text, letters, numbers, labels, arrows, frames, environment or shadows. These are generic flower/inflorescence structures, not portraits of specific species; show just enough green stalk to explain structure, no decorative leaves. CELL0 open frontal flower with EXACTLY FIVE broad pale-cream petals (five separate lobes, count carefully), small yellow center. CELL1 flower with EXACTLY FOUR broad cream petals arranged as a cross, one up, one right, one down, one left, small yellow center. CELL2 star-shaped open flower with EXACTLY SIX equal pointed cream tepals radiating symmetrically, small yellow center, do not make five or seven. CELL3 MANY PETALS: single frontal pink flower with many thin narrow petals in several radial rings, clearly many rather than5/6. CELL4 UMBEL: upright green stalk ending in one point from which 7 thin pedicels radiate like umbrella ribs, each ends in tiny white floret; all flower tops form a flat nearly horizontal plane; clearly show the branched umbrella ribs. CELL5 CAPITULUM: frontal daisy-like composite flower head: dense golden disc visibly made of many tiny florets packed together on one receptacle, surrounded by white ray florets, green short stalk; no separate pedicel umbrella. CELL6 BELL: one single pale violet bell-shaped tubular flower hanging down, unified cup silhouette flaring gently at the open rim, side view and short curved green pedicel. CELL7 TUBULAR BILABIATE: side profile of one lavender elongated flower tube ending in an obvious upper hood/lip and a projecting lower lip, short green calyx and pedicel, not a hanging bell. CELL8 PEA-TYPE PAPILIONACEOUS: single generic pale rose pea-like flower shown obliquely, one large upright banner petal behind, two lateral wing petals and two fused-looking lower keel petals, unmistakable butterfly-like floral structure; no insect. Keep all structures clean, separated, countable and legible at128px.",
+      "revision_prompt": "Edit this Fronda 3x3 botanical icon sheet. Preserve transparent alpha,1254x1254 canvas, thick brown outlines and all icons/cell positions. Change ONLY CENTER CELL4 (umbrella inflorescence). Its current flower tops form a curved arch; replace it with a FLAT-TOP UMBEL: central upright green stalk ending at one common junction; five distinct long thin green pedicels all radiate from that single lower point and terminate at five tiny ivory-white flowers whose flower centers all lie on the SAME HORIZONTAL LINE. Side pedicels should therefore be longer/angled; middle one vertical shorter. Five flowers have clear gaps. The top outline is flat rather than rounded. This is a generic umbel diagram, not a species. Keep all eight other cells unchanged including exact petal counts5/4/6 in top row. No text/labels/numbers/arrows/environment.",
+      "generated_file": "incoming/icone-piante/tavola-piante-03-r01.png",
+      "review": "Petali contati: cinque, quattro a croce, sei tepali uguali; molti petali distinti dal capolino con fiori nel disco. Ombrella rivista r01: cinque fiorellini sullo stesso piano e pedicelli dallo stesso punto. Distinti campana, tubo bilabiato e forma papilionacea. Controlli crop passati.",
+      "prompt": "Create the next Fronda botanical TRAIT icon sheet matching attached approved flat illustration style, natural warm palette, thick dark brown contour, simple readable morphology, transparent alpha background. 1254x1254 square invisible3x3 grid, one isolated icon percell, generous margins, all9 cells used. NO text, letters, numbers, labels, arrows, frames, environment or shadows. These are generic flower/inflorescence structures, not portraits of specific species; show just enough green stalk to explain structure, no decorative leaves. CELL0 open frontal flower with EXACTLY FIVE broad pale-cream petals (five separate lobes, count carefully), small yellow center. CELL1 flower with EXACTLY FOUR broad cream petals arranged as a cross, one up, one right, one down, one left, small yellow center. CELL2 star-shaped open flower with EXACTLY SIX equal pointed cream tepals radiating symmetrically, small yellow center, do not make five or seven. CELL3 MANY PETALS: single frontal pink flower with many thin narrow petals in several radial rings, clearly many rather than5/6. CELL4 UMBEL: upright green stalk ending in one point from which 7 thin pedicels radiate like umbrella ribs, each ends in tiny white floret; all flower tops form a flat nearly horizontal plane; clearly show the branched umbrella ribs. CELL5 CAPITULUM: frontal daisy-like composite flower head: dense golden disc visibly made of many tiny florets packed together on one receptacle, surrounded by white ray florets, green short stalk; no separate pedicel umbrella. CELL6 BELL: one single pale violet bell-shaped tubular flower hanging down, unified cup silhouette flaring gently at the open rim, side view and short curved green pedicel. CELL7 TUBULAR BILABIATE: side profile of one lavender elongated flower tube ending in an obvious upper hood/lip and a projecting lower lip, short green calyx and pedicel, not a hanging bell. CELL8 PEA-TYPE PAPILIONACEOUS: single generic pale rose pea-like flower shown obliquely, one large upright banner petal behind, two lateral wing petals and two fused-looking lower keel petals, unmistakable butterfly-like floral structure; no insect. Keep all structures clean, separated, countable and legible at128px.\n\nREVISIONE:\nEdit this Fronda 3x3 botanical icon sheet. Preserve transparent alpha,1254x1254 canvas, thick brown outlines and all icons/cell positions. Change ONLY CENTER CELL4 (umbrella inflorescence). Its current flower tops form a curved arch; replace it with a FLAT-TOP UMBEL: central upright green stalk ending at one common junction; five distinct long thin green pedicels all radiate from that single lower point and terminate at five tiny ivory-white flowers whose flower centers all lie on the SAME HORIZONTAL LINE. Side pedicels should therefore be longer/angled; middle one vertical shorter. Five flowers have clear gaps. The top outline is flat rather than rounded. This is a generic umbel diagram, not a species. Keep all eight other cells unchanged including exact petal counts5/4/6 in top row. No text/labels/numbers/arrows/environment."
+    },
+    {
+      "id": "piante-04",
+      "file": "incoming/icone-piante/tavola-piante-04.png",
+      "status": "pronta da integrare",
+      "values": [
+        {
+          "chiave": "flower_shape",
+          "valore": "labello",
+          "label": "con un labbro grande in basso, tipo orchidea",
+          "cella": 0
+        },
+        {
+          "chiave": "flower_shape",
+          "valore": "petali_rovesciati",
+          "label": "petali ripiegati all’indietro",
+          "cella": 1
+        },
+        {
+          "chiave": "flower_shape",
+          "valore": "spata",
+          "label": "una foglia a cappuccio che avvolge una clava",
+          "cella": 2
+        },
+        {
+          "chiave": "flower_shape",
+          "valore": "fiori_minuti",
+          "label": "fiorellini piccoli e fitti, in spiga, grappolo o testa",
+          "cella": 3
+        },
+        {
+          "chiave": "flower_shape",
+          "valore": "nessun_fiore_vistoso",
+          "label": "nessun fiore vistoso",
+          "cella": 4
+        },
+        {
+          "chiave": "fruit_type",
+          "valore": "carnoso",
+          "label": "piccolo frutto carnoso, tondo (bacca o drupa)",
+          "cella": 5
+        },
+        {
+          "chiave": "fruit_type",
+          "valore": "mora",
+          "label": "tante palline unite, come la mora",
+          "cella": 6
+        },
+        {
+          "chiave": "fruit_type",
+          "valore": "falso_frutto",
+          "label": "frutto carnoso con semini o peli dentro o fuori (fragola, cinorrodo)",
+          "cella": 7
+        },
+        {
+          "chiave": "fruit_type",
+          "valore": "capsula",
+          "label": "capsula secca che si apre",
+          "cella": 8
+        }
+      ],
+      "references": [
+        "incoming/icone-piante/tavola-piante-03-r01.png",
+        "assets/tree-traits/fruit_type-carnoso.webp",
+        "assets/tree-traits/leaf_kind-foglia_larga.webp"
+      ],
+      "original_prompt": "Fronda generic botanical trait icon sheet, same flat natural palette and thick dark brown contours as attached approved sheets, subtle simple highlights, true transparent alpha.1254x1254 square invisible3x3 grid, one isolated icon in each cell, clear margins, all9 occupied. No words, letters, numbers, labels, arrows, frames, ground or shadows; not species portraits. CELL0 LABELLUM: one generic orchid-like flower frontal view, three simple pale pink outer segments and two smaller upper segments, with a LARGE broad drooping lower petal/lip clearly projecting below the center. Pale rose/cream, no detailed species marks or spots. CELL1 REFLEXED PETALS: one generic pink flower in side view with petals strongly turned and swept BACKWARDS/up away from the central downward-pointing flower mouth, short curved pedicel; clear reverse-folded petal shape rather than ordinary upward petals. CELL2 SPATHE AND SPADIX: one green hood-like wrapping leaf/bract open on one side and cupping one single upright cream club-shaped spadix, short green stalk, no red fruit. CELL3 TINY FLOWERS: upright short spike/raceme covered with many clearly TINY pale greenish-cream florets, modest inconspicuous dots/small lobes, visibly a dense inflorescence rather than one large showy flower. CELL4 NO SHOWY FLOWER: generic short leafy green shoot with three pairs of modest simple leaves and an unflowered growing tip; absolutely no large flower, no fruit, no warning symbols or crossed-out icon. CELL5 FLESHY FRUIT: one generic round red fleshy berry/drupelike fruit, smooth plump contour, tiny short brown stalk, light highlight, no species-specific crown or leaf. CELL6 AGGREGATE BRAMBLE-LIKE FRUIT: one generic dark purple cluster made of many round drupelets joined into one compact fruit, clear individual little rounded units, short stalk, no leaves. CELL7 FALSE FRUIT: generic red fleshy oval fruit with a small cutaway wedge revealing several small beige seed-like units held INSIDE the fleshy wall; keep clear rounded red wall and pale seed-containing interior, no blood, knife, text or arrows. CELL8 DRY CAPSULE: generic brown dry seed capsule visibly opening into three dry narrow valves with a few small brown seeds inside at the base, connected in one icon, short dry stalk; not a green legume pod. Keep all nine icons in same scale and illustration family as approved references.",
+      "revision_prompt": "Edit this botanical trait sheet1254x1254 alpha, preserving eight cells exactly. ONLY top middle CELL1 needs correction for strongly REFLEXED PETALS. Current drawing has some normal downward petals. Replace the flower in that cell by a simple generic side-view reflexed flower: a short curved green pedicel arches from left and attaches to the flower's base at the top of a small downward-pointing pink tubular mouth. FIVE narrow pink petals start around that downward-facing mouth, then ALL FIVE turn sharply BACKWARDS/UPWARDS, rising above the flower attachment, like swept-back rabbit ears/fins. Every petal tip points upward or up-right, all tips above their roots. NO broad petal hanging down as a lower lip. Keep the central small flower mouth pointing down; only the petals curl back up. Generic structural teaching diagram inspired by reflexed flowers, not a species portrait. Same thick brown outlines, flat pinks, transparent alpha, generous margin. Do not change any other cell, colors, positions, shapes. No text, arrows or labels.",
+      "generated_file": "incoming/icone-piante/tavola-piante-04-r01.png",
+      "review": "Labello inferiore, spata che avvolge clava, fiori minuti e germoglio senza fiore vistoso distinti. Petali rovesciati rivisti r01: bocca rivolta in basso e petali ripiegati indietro in alto, senza labbro inferiore largo. Frutti carnoso, mora a drupeole, falso frutto con semini nella parete carnosa e capsula secca aperta distinti. Controlli crop passati.",
+      "prompt": "Fronda generic botanical trait icon sheet, same flat natural palette and thick dark brown contours as attached approved sheets, subtle simple highlights, true transparent alpha.1254x1254 square invisible3x3 grid, one isolated icon in each cell, clear margins, all9 occupied. No words, letters, numbers, labels, arrows, frames, ground or shadows; not species portraits. CELL0 LABELLUM: one generic orchid-like flower frontal view, three simple pale pink outer segments and two smaller upper segments, with a LARGE broad drooping lower petal/lip clearly projecting below the center. Pale rose/cream, no detailed species marks or spots. CELL1 REFLEXED PETALS: one generic pink flower in side view with petals strongly turned and swept BACKWARDS/up away from the central downward-pointing flower mouth, short curved pedicel; clear reverse-folded petal shape rather than ordinary upward petals. CELL2 SPATHE AND SPADIX: one green hood-like wrapping leaf/bract open on one side and cupping one single upright cream club-shaped spadix, short green stalk, no red fruit. CELL3 TINY FLOWERS: upright short spike/raceme covered with many clearly TINY pale greenish-cream florets, modest inconspicuous dots/small lobes, visibly a dense inflorescence rather than one large showy flower. CELL4 NO SHOWY FLOWER: generic short leafy green shoot with three pairs of modest simple leaves and an unflowered growing tip; absolutely no large flower, no fruit, no warning symbols or crossed-out icon. CELL5 FLESHY FRUIT: one generic round red fleshy berry/drupelike fruit, smooth plump contour, tiny short brown stalk, light highlight, no species-specific crown or leaf. CELL6 AGGREGATE BRAMBLE-LIKE FRUIT: one generic dark purple cluster made of many round drupelets joined into one compact fruit, clear individual little rounded units, short stalk, no leaves. CELL7 FALSE FRUIT: generic red fleshy oval fruit with a small cutaway wedge revealing several small beige seed-like units held INSIDE the fleshy wall; keep clear rounded red wall and pale seed-containing interior, no blood, knife, text or arrows. CELL8 DRY CAPSULE: generic brown dry seed capsule visibly opening into three dry narrow valves with a few small brown seeds inside at the base, connected in one icon, short dry stalk; not a green legume pod. Keep all nine icons in same scale and illustration family as approved references.\n\nREVISIONE:\nEdit this botanical trait sheet1254x1254 alpha, preserving eight cells exactly. ONLY top middle CELL1 needs correction for strongly REFLEXED PETALS. Current drawing has some normal downward petals. Replace the flower in that cell by a simple generic side-view reflexed flower: a short curved green pedicel arches from left and attaches to the flower's base at the top of a small downward-pointing pink tubular mouth. FIVE narrow pink petals start around that downward-facing mouth, then ALL FIVE turn sharply BACKWARDS/UPWARDS, rising above the flower attachment, like swept-back rabbit ears/fins. Every petal tip points upward or up-right, all tips above their roots. NO broad petal hanging down as a lower lip. Keep the central small flower mouth pointing down; only the petals curl back up. Generic structural teaching diagram inspired by reflexed flowers, not a species portrait. Same thick brown outlines, flat pinks, transparent alpha, generous margin. Do not change any other cell, colors, positions, shapes. No text, arrows or labels."
+    },
+    {
+      "id": "piante-05",
+      "file": "incoming/icone-piante/tavola-piante-05.png",
+      "status": "pronta da integrare",
+      "values": [
+        {
+          "chiave": "fruit_type",
+          "valore": "baccello",
+          "label": "baccello allungato",
+          "cella": 0
+        },
+        {
+          "chiave": "fruit_type",
+          "valore": "secco_piccolo",
+          "label": "semini secchi, piccoli",
+          "cella": 1
+        },
+        {
+          "chiave": "fruit_type",
+          "valore": "secco_piumoso",
+          "label": "semi con piume o pennacchi (soffione)",
+          "cella": 2
+        },
+        {
+          "chiave": "fruit_color",
+          "valore": "rosso",
+          "label": "rosso",
+          "cella": 3
+        },
+        {
+          "chiave": "fruit_color",
+          "valore": "arancio",
+          "label": "arancio",
+          "cella": 4
+        },
+        {
+          "chiave": "fruit_color",
+          "valore": "rosa",
+          "label": "rosa",
+          "cella": 5
+        },
+        {
+          "chiave": "fruit_color",
+          "valore": "nero",
+          "label": "nero o blu-nero",
+          "cella": 6
+        },
+        {
+          "chiave": "fruit_color",
+          "valore": "blu_metallico",
+          "label": "blu metallico",
+          "cella": 7
+        },
+        {
+          "chiave": "fruit_color",
+          "valore": "bruno",
+          "label": "bruno, secco",
+          "cella": 8
+        }
+      ],
+      "references": [
+        "incoming/icone-piante/tavola-piante-04-r01.png",
+        "assets/tree-traits/fruit_type-carnoso.webp"
+      ],
+      "generated_file": "incoming/icone-piante/tavola-piante-05.png",
+      "review": "Baccello allungato aperto, piccoli semi secchi e achenio con pappo distinti. Pappo controllato anche su carta chiara: peli crema collegati, senza anomalie colorate visibili. Sei frutti con sagoma coerente e colori rosso/arancio/rosa/nero-blu/blu brillante/bruno. Celle e ritagli completi.",
+      "prompt": "Fronda botanical trait icon production, matching attached approved flat warm natural palette and thick dark brown outlines, minimal simple highlights. True transparent alpha,1254x1254 square, invisible3x3 grid, one isolated icon percell, generous clear margins, all9 occupied. NO text, labels, letters, numbers, arrows, frames, background or shadows. Generic structures, not a recognizable plant species. CELL0 LEGUME POD: one elongated green pod split slightly along one seam, showing several round seeds inside; long curved tapering pod, not a round capsule. CELL1 SMALL DRY SEEDS: small group of THREE plain dry tan/brown little achenes/seed-like units, elongated teardrop to oval, no flesh, no tuft, clear thin dark outlines, no capsule or vessel. CELL2 PLUMED SEED: one dry tan narrow achene attached by slender stalk to an airy umbrella-shaped tuft of fine pale cream silky hairs, each hair connected; no whole plant, no fluffy fruit pulp. CELLS3-8 FRUIT COLOR ONLY: SAME neutral round berry-like fruit with tiny identical short brown stalk and a single simple highlight, no leaves/crown/seed/cutaway. Vary only fruit body color: cell3 RED; cell4 ORANGE; cell5 PINK; cell6 nearly BLACK/blue-black but readable with muted blue highlight; cell7 METALLIC BLUE stylized saturated blue with a few simple pale-blue reflective highlight facets, keep FLAT icon not realistic chrome; cell8 BROWN dry muted warm brown, no red/orange. All6 berry icons have matching silhouette, outline weight, orientation and size, preserving the neutral shape from attached carnoso reference. Do not add poisonous/edible symbols."
+    },
+    {
+      "id": "piante-06",
+      "file": "incoming/icone-piante/tavola-piante-06.png",
+      "status": "pronta da integrare",
+      "values": [
+        {
+          "chiave": "growth_form",
+          "valore": "erba",
+          "label": "erba, fusti non legnosi",
+          "cella": 0
+        },
+        {
+          "chiave": "growth_form",
+          "valore": "arbusto",
+          "label": "arbusto, fusti legnosi",
+          "cella": 1
+        },
+        {
+          "chiave": "growth_form",
+          "valore": "rampicante",
+          "label": "liana o rampicante",
+          "cella": 2
+        },
+        {
+          "chiave": "height_class",
+          "valore": "bassa",
+          "label": "sotto i 30 cm",
+          "cella": 3
+        },
+        {
+          "chiave": "height_class",
+          "valore": "media",
+          "label": "da 30 cm a 1,5 m",
+          "cella": 4
+        },
+        {
+          "chiave": "height_class",
+          "valore": "alta",
+          "label": "oltre 1,5 m",
+          "cella": 5
+        }
+      ],
+      "references": [
+        "incoming/icone-piante/tavola-piante-01.png",
+        "assets/tree-traits/leaf_kind-foglia_larga.webp"
+      ],
+      "original_prompt": "Final Fronda generic botanical trait icon sheet. Flat natural green/brown palette, thick dark brown contour, simple restrained highlights, same style as approved references.1254x1254 true transparent alpha, invisible3x3 grid. ONLY SIX icons in cells0,1,2,3,4,5; cells6,7,8 completely empty transparent. One isolated icon peroccupiedcell, generous margins, NO text, letters, numbers, labels, arrows, ruler marks, ground, environment, shadows. These are generic growth forms, never species portraits. TOP ROW GROWTH FORM: CELL0 HERBACEOUS PLANT, small upright plant with two soft GREEN nonwoody stems and a few simple green leaves, NO brown woody trunk, no flower orfruit. CELL1 SHRUB, compact rounded bush with several BROWN woody branching stems arising near base, simple green leaves on branches, clearly woody bush rather than a tree with one trunk. CELL2 CLIMBER, green flexible stem visibly spiraling/twining around a single thin plain vertical brown support cane, a few simple leaves, no fruit/flower, no recognizable ivy outline. MIDDLE ROW HEIGHT CLASSES: each icon shows SAME generic simple upright green leafy plant next to SAME plain neutral brown hiking boot as a fixed physical size reference (boot shaft height represents roughly30cm), boot always toleft planttoright, same ground baseline implicitly but NO ground line. CELL3 LOW: plant entire height clearly LESS than the boot shaft height (about two-thirds of bootheight), only a few small leaves, boot not a pot. CELL4 MEDIUM: plant entirely between30cm and1.5m, approximately THREE TIMES boot shaft height; same plant morphology, boot beside it on theleft. CELL5 TALL: plant clearly above1.5m, approximately SIX TIMES the exact same boot shaft height; plant slender and upright with simple leaves, boot atbase left. Maintain the RELATIVE plant:boot ratios2/3,3,6 unequivocally; do not enlarge the plant in low cell to match boot height. Hiking boot has laces and short shaft, clearly a boot not a flowerpot, no person. Do NOT add measurements or digits. All height drawings are generic comparison diagrams, NOT claims about a particular species.",
+      "revision_prompt": [
+        "Correct ONLY middle-row HEIGHT icons (cells3,4,5) in this sheet. Preserve top row0-2 exactly and keep bottomrow6-8 empty transparent. True alpha1254x1254. Existing LOW plant is too tall relative to its boot and existing TALL plant not tall enough. Use these STRICT VISIBLE HEIGHT RATIOS in each individual middlecell: cell3 LOW plant height is HALF the height of its boot; cell4 MEDIUM plant height is THREE TIMES the height of its boot; cell5 TALL plant height is NINE TIMES the height of its boot. All three show the same generic plain green leafy plant and same neutral brown hiking boot motif, boot onleft plantonright, basesaligned. You MAY RESIZE the boot inside each separate cell to make exact ratios fit. In particular cell5 boot must be tiny, only about35px tall, while plant approx315px tall. Cell4 boot approx75px high, plant225px high. Cell3 boot approx150px high, plant75px high. Each cell depiction can be independently scaled; DO NOT keep boots equal pixel height if that prevents the required ratios. Whole drawing fits within its418px cell withmargin, no overlapwithtoprow. Plants never come out of boots. No text,numbers,measurementlines/arrows/ground/shadows. All nine-times ratio is essential: tall plant must dramatically tower over a tiny boot, not just3x. Flat natural palette and thickbrowncontours.",
+        "Revise ONLY HEIGHT diagrams in middle cells3,4,5. Keep top-row generic herb, shrub and climber EXACTLY unchanged; bottom cells6-8 remain entirely transparent empty.1254x1254 transparent alpha, same flat natural colors darkbrown outlines. REMOVE ALL HIKING BOOTS from middle row. Replace each with a SINGLE SIMPLE STRAIGHT BROWN WALKING STICK, rounded top, identical vertical pixel height250px and width12px in allthreecells, locatedleft of plant, no handle, no branches, no markings/numbers. Stick bottoms and plant bases align at y800 in allthreecells. Each stick top at y550. Generic simple green plant onright: CELL3 LOW plant only40px tall, a tiny rosette/sprout reaching y760; stick dramatically taller than sprout (six times). CELL4 MEDIUM plant150px tall reaching y650, about60% of stick height; generic leafy uprightgreenstem. CELL5 HIGH plant340px tall reaching y460, clearly TALLER than stick by roughly90px; tallleafygreenstem. Keep stick same250pxheight in ALLthree, the whole reason is a FIXED unchanged size reference. Schematic relative height diagram only; NO numeric measurements or labels, no scale lines, ground, arrows, letters or symbols. Cells stay separate within respective418pxsquare. Do not draw a new fourthdiagram or anything in bottomrow.",
+        "Technical layout correction ONLY. Keep the drawings' morphology and top row icons intact.1254x1254 alpha invisible3x3 grid. The THREE MIDDLE ROW icons currently extend down to y930, which is outside the middle row; the bottom row must be COMPLETELY EMPTY. Shrink EACH entire middle-row drawing (its brown stick AND green plant together, maintaining relative proportions) to70% of its current size and move it so its BASELINE is at y780. All middle-row occupied pixels must be between y450 and y800. Specifically middle right tall plant must fit wholly inside cell5 [x836..1253,y418..835], leaving35px clearance from its bottom and top. Middleleft low sprout must also be ABOVE y800, beside its stick, not in bottomrowcell6. Middlecenter plant and stick also entirely above y800. Keep brown sticks sameheight across all3, low plantmuchshorter, mediumplantshorter, tallplanthigher thanstick. Top row0-2 stays unchanged; final row6-8 entirely emptytransparent. No newicons or text. This is only icon GROUP SCALE AND PLACEMENT adjustment, not a newdrawing. Truealpha, flat naturalcolors darkbrownoutlines."
+      ],
+      "generated_file": "incoming/icone-piante/tavola-piante-06-r03.png",
+      "review": "Portamenti erbaceo/arbusto legnoso/rampicante distinti. Altezza r03 con bastone fisso e piante molto sotto, sotto e sopra il riferimento; schema relativo non metrico, soglie nelle label. Nessuna icona nelle celle6-8. R03 ridimensiona gruppi affinché le componenti siano attribuite alle celle3-5; nessun taglio o sovrapposizione.",
+      "prompt": "Final Fronda generic botanical trait icon sheet. Flat natural green/brown palette, thick dark brown contour, simple restrained highlights, same style as approved references.1254x1254 true transparent alpha, invisible3x3 grid. ONLY SIX icons in cells0,1,2,3,4,5; cells6,7,8 completely empty transparent. One isolated icon peroccupiedcell, generous margins, NO text, letters, numbers, labels, arrows, ruler marks, ground, environment, shadows. These are generic growth forms, never species portraits. TOP ROW GROWTH FORM: CELL0 HERBACEOUS PLANT, small upright plant with two soft GREEN nonwoody stems and a few simple green leaves, NO brown woody trunk, no flower orfruit. CELL1 SHRUB, compact rounded bush with several BROWN woody branching stems arising near base, simple green leaves on branches, clearly woody bush rather than a tree with one trunk. CELL2 CLIMBER, green flexible stem visibly spiraling/twining around a single thin plain vertical brown support cane, a few simple leaves, no fruit/flower, no recognizable ivy outline. MIDDLE ROW HEIGHT CLASSES: each icon shows SAME generic simple upright green leafy plant next to SAME plain neutral brown hiking boot as a fixed physical size reference (boot shaft height represents roughly30cm), boot always toleft planttoright, same ground baseline implicitly but NO ground line. CELL3 LOW: plant entire height clearly LESS than the boot shaft height (about two-thirds of bootheight), only a few small leaves, boot not a pot. CELL4 MEDIUM: plant entirely between30cm and1.5m, approximately THREE TIMES boot shaft height; same plant morphology, boot beside it on theleft. CELL5 TALL: plant clearly above1.5m, approximately SIX TIMES the exact same boot shaft height; plant slender and upright with simple leaves, boot atbase left. Maintain the RELATIVE plant:boot ratios2/3,3,6 unequivocally; do not enlarge the plant in low cell to match boot height. Hiking boot has laces and short shaft, clearly a boot not a flowerpot, no person. Do NOT add measurements or digits. All height drawings are generic comparison diagrams, NOT claims about a particular species.\n\nREVISIONE:\nCorrect ONLY middle-row HEIGHT icons (cells3,4,5) in this sheet. Preserve top row0-2 exactly and keep bottomrow6-8 empty transparent. True alpha1254x1254. Existing LOW plant is too tall relative to its boot and existing TALL plant not tall enough. Use these STRICT VISIBLE HEIGHT RATIOS in each individual middlecell: cell3 LOW plant height is HALF the height of its boot; cell4 MEDIUM plant height is THREE TIMES the height of its boot; cell5 TALL plant height is NINE TIMES the height of its boot. All three show the same generic plain green leafy plant and same neutral brown hiking boot motif, boot onleft plantonright, basesaligned. You MAY RESIZE the boot inside each separate cell to make exact ratios fit. In particular cell5 boot must be tiny, only about35px tall, while plant approx315px tall. Cell4 boot approx75px high, plant225px high. Cell3 boot approx150px high, plant75px high. Each cell depiction can be independently scaled; DO NOT keep boots equal pixel height if that prevents the required ratios. Whole drawing fits within its418px cell withmargin, no overlapwithtoprow. Plants never come out of boots. No text,numbers,measurementlines/arrows/ground/shadows. All nine-times ratio is essential: tall plant must dramatically tower over a tiny boot, not just3x. Flat natural palette and thickbrowncontours.\n\nREVISIONE SUCCESSIVA:\nRevise ONLY HEIGHT diagrams in middle cells3,4,5. Keep top-row generic herb, shrub and climber EXACTLY unchanged; bottom cells6-8 remain entirely transparent empty.1254x1254 transparent alpha, same flat natural colors darkbrown outlines. REMOVE ALL HIKING BOOTS from middle row. Replace each with a SINGLE SIMPLE STRAIGHT BROWN WALKING STICK, rounded top, identical vertical pixel height250px and width12px in allthreecells, locatedleft of plant, no handle, no branches, no markings/numbers. Stick bottoms and plant bases align at y800 in allthreecells. Each stick top at y550. Generic simple green plant onright: CELL3 LOW plant only40px tall, a tiny rosette/sprout reaching y760; stick dramatically taller than sprout (six times). CELL4 MEDIUM plant150px tall reaching y650, about60% of stick height; generic leafy uprightgreenstem. CELL5 HIGH plant340px tall reaching y460, clearly TALLER than stick by roughly90px; tallleafygreenstem. Keep stick same250pxheight in ALLthree, the whole reason is a FIXED unchanged size reference. Schematic relative height diagram only; NO numeric measurements or labels, no scale lines, ground, arrows, letters or symbols. Cells stay separate within respective418pxsquare. Do not draw a new fourthdiagram or anything in bottomrow.\n\nREVISIONE SUCCESSIVA:\nTechnical layout correction ONLY. Keep the drawings' morphology and top row icons intact.1254x1254 alpha invisible3x3 grid. The THREE MIDDLE ROW icons currently extend down to y930, which is outside the middle row; the bottom row must be COMPLETELY EMPTY. Shrink EACH entire middle-row drawing (its brown stick AND green plant together, maintaining relative proportions) to70% of its current size and move it so its BASELINE is at y780. All middle-row occupied pixels must be between y450 and y800. Specifically middle right tall plant must fit wholly inside cell5 [x836..1253,y418..835], leaving35px clearance from its bottom and top. Middleleft low sprout must also be ABOVE y800, beside its stick, not in bottomrowcell6. Middlecenter plant and stick also entirely above y800. Keep brown sticks sameheight across all3, low plantmuchshorter, mediumplantshorter, tallplanthigher thanstick. Top row0-2 stays unchanged; final row6-8 entirely emptytransparent. No newicons or text. This is only icon GROUP SCALE AND PLACEMENT adjustment, not a newdrawing. Truealpha, flat naturalcolors darkbrownoutlines."
+    }
+  ]
+}

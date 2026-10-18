@@ -1,0 +1,410 @@
+[
+  {
+    "file": "incoming/icone-piante/tavola-piante-01.png",
+    "sha256": "20ed2aacde3215612d30c7c56d9083a14a0bf1fe74d538f9d72b3e445ee034bb",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "2": [
+        886,
+        38,
+        1182,
+        408
+      ],
+      "0": [
+        114,
+        54,
+        382,
+        408
+      ],
+      "1": [
+        478,
+        70,
+        776,
+        408
+      ],
+      "5": [
+        878,
+        436,
+        1182,
+        810
+      ],
+      "4": [
+        538,
+        462,
+        718,
+        798
+      ],
+      "3": [
+        52,
+        468,
+        434,
+        776
+      ],
+      "6": [
+        62,
+        816,
+        422,
+        1216
+      ],
+      "7": [
+        472,
+        816,
+        822,
+        1224
+      ],
+      "8": [
+        908,
+        844,
+        1192,
+        1210
+      ]
+    },
+    "review": "Verificate foglie alterne senza coppie, opposte a due nodi, verticilli con almeno tre foglie, rosetta basale; distinta lamina semplice, sette foglioline, divisione filiforme, segmenti larghi e ago. Nessun fiore o frutto aggiunto. Margini/componenti completi.",
+    "references": [
+      "assets/tree-traits/leaf_margin-dentato.webp",
+      "assets/tree-traits/leaf_kind-foglia_larga.webp",
+      "assets/tree-traits/fruit_type-carnoso.webp"
+    ],
+    "crop_check": "component boxes complete, no border contact, no box overlap, no extra/empty cells; 128px crops saved"
+  },
+  {
+    "file": "incoming/icone-piante/tavola-piante-02.png",
+    "sha256": "4c9466d93c044c71590520c60e36911739d782e6631c73b6fe9db16cb228a908",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "2": [
+        878,
+        60,
+        1178,
+        438
+      ],
+      "0": [
+        130,
+        68,
+        330,
+        432
+      ],
+      "1": [
+        504,
+        68,
+        750,
+        436
+      ],
+      "3": [
+        62,
+        480,
+        398,
+        796
+      ],
+      "4": [
+        460,
+        480,
+        794,
+        796
+      ],
+      "5": [
+        860,
+        480,
+        1194,
+        796
+      ],
+      "6": [
+        62,
+        850,
+        398,
+        1164
+      ],
+      "7": [
+        460,
+        850,
+        794,
+        1164
+      ],
+      "8": [
+        858,
+        850,
+        1192,
+        1164
+      ]
+    },
+    "review": "Margine intero, dentato e profondamente lobato distinti. Sei fiori con cinque petali, silhouette coerente e colori bianco-crema, giallo, arancio-rosso, rosa, viola-blu e verdastro. Nessuna specie raffigurata. Controlli componenti e ritagli passati.",
+    "references": [
+      "assets/tree-traits/leaf_margin-dentato.webp",
+      "assets/tree-traits/leaf_kind-foglia_larga.webp",
+      "assets/tree-traits/fruit_type-carnoso.webp",
+      "incoming/icone-piante/tavola-piante-01.png"
+    ],
+    "crop_check": "component boxes complete, no border contact, no box overlap, no extra/empty cells; 128px crops saved"
+  },
+  {
+    "file": "incoming/icone-piante/tavola-piante-03-r01.png",
+    "sha256": "cae7f3ceb58579150ae81fdc77cfb291e6e4c738bda9e1591f11350c08d3168b",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "2": [
+        876,
+        50,
+        1196,
+        410
+      ],
+      "1": [
+        460,
+        62,
+        794,
+        410
+      ],
+      "0": [
+        54,
+        64,
+        372,
+        396
+      ],
+      "5": [
+        864,
+        448,
+        1212,
+        806
+      ],
+      "3": [
+        42,
+        452,
+        392,
+        810
+      ],
+      "4": [
+        422,
+        480,
+        830,
+        806
+      ],
+      "8": [
+        882,
+        834,
+        1206,
+        1204
+      ],
+      "7": [
+        456,
+        844,
+        812,
+        1168
+      ],
+      "6": [
+        50,
+        850,
+        316,
+        1170
+      ]
+    },
+    "review": "Petali contati: cinque, quattro a croce, sei tepali uguali; molti petali distinti dal capolino con fiori nel disco. Ombrella rivista r01: cinque fiorellini sullo stesso piano e pedicelli dallo stesso punto. Distinti campana, tubo bilabiato e forma papilionacea. Controlli crop passati.",
+    "references": [
+      "incoming/icone-piante/tavola-piante-03.png"
+    ],
+    "crop_check": "component boxes complete, no border contact, no box overlap, no extra/empty cells; 128px crops saved"
+  },
+  {
+    "file": "incoming/icone-piante/tavola-piante-04-r01.png",
+    "sha256": "1a92a38de1f70c7f98c9ee3bcee86a85701d400d2b09437d696287490a926c5a",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "2": [
+        964,
+        46,
+        1202,
+        424
+      ],
+      "0": [
+        44,
+        58,
+        414,
+        424
+      ],
+      "1": [
+        476,
+        74,
+        884,
+        418
+      ],
+      "3": [
+        138,
+        442,
+        316,
+        822
+      ],
+      "4": [
+        478,
+        448,
+        816,
+        822
+      ],
+      "5": [
+        942,
+        470,
+        1172,
+        792
+      ],
+      "6": [
+        74,
+        834,
+        358,
+        1198
+      ],
+      "8": [
+        878,
+        838,
+        1212,
+        1210
+      ],
+      "7": [
+        508,
+        840,
+        748,
+        1208
+      ]
+    },
+    "review": "Labello inferiore, spata che avvolge clava, fiori minuti e germoglio senza fiore vistoso distinti. Petali rovesciati rivisti r01: bocca rivolta in basso e petali ripiegati indietro in alto, senza labbro inferiore largo. Frutti carnoso, mora a drupeole, falso frutto con semini nella parete carnosa e capsula secca aperta distinti. Controlli crop passati.",
+    "references": [
+      "incoming/icone-piante/tavola-piante-04.png"
+    ],
+    "crop_check": "component boxes complete, no border contact, no box overlap, no extra/empty cells; 128px crops saved"
+  },
+  {
+    "file": "incoming/icone-piante/tavola-piante-05.png",
+    "sha256": "591611a17b47121359b20077310a40066a0f43176023f8cbbc92a5d1e7025792",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "0": [
+        64,
+        64,
+        408,
+        444
+      ],
+      "2": [
+        892,
+        74,
+        1214,
+        438
+      ],
+      "1": [
+        494,
+        148,
+        766,
+        392
+      ],
+      "3": [
+        98,
+        490,
+        356,
+        822
+      ],
+      "4": [
+        498,
+        490,
+        756,
+        822
+      ],
+      "5": [
+        906,
+        490,
+        1164,
+        822
+      ],
+      "6": [
+        94,
+        870,
+        356,
+        1200
+      ],
+      "7": [
+        498,
+        870,
+        756,
+        1200
+      ],
+      "8": [
+        906,
+        870,
+        1164,
+        1200
+      ]
+    },
+    "review": "Baccello allungato aperto, piccoli semi secchi e achenio con pappo distinti. Pappo controllato anche su carta chiara: peli crema collegati, senza anomalie colorate visibili. Sei frutti con sagoma coerente e colori rosso/arancio/rosa/nero-blu/blu brillante/bruno. Celle e ritagli completi.",
+    "references": [
+      "incoming/icone-piante/tavola-piante-04-r01.png",
+      "assets/tree-traits/fruit_type-carnoso.webp"
+    ],
+    "crop_check": "component boxes complete, no border contact, no box overlap, no extra/empty cells; 128px crops saved"
+  },
+  {
+    "file": "incoming/icone-piante/tavola-piante-06-r03.png",
+    "sha256": "480a4467634add9e574a096dfad15170df1641af03a2418ddb52b942243ecf34",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "2": [
+        930,
+        50,
+        1170,
+        428
+      ],
+      "1": [
+        470,
+        88,
+        834,
+        430
+      ],
+      "0": [
+        86,
+        90,
+        370,
+        426
+      ],
+      "5": [
+        958,
+        518,
+        1140,
+        850
+      ],
+      "4": [
+        542,
+        622,
+        706,
+        846
+      ],
+      "3": [
+        162,
+        624,
+        300,
+        846
+      ]
+    },
+    "review": "Portamenti erbaceo/arbusto legnoso/rampicante distinti. Altezza r03 con bastone fisso e piante molto sotto, sotto e sopra il riferimento; schema relativo non metrico, soglie nelle label. Nessuna icona nelle celle6-8. R03 ridimensiona gruppi affinché le componenti siano attribuite alle celle3-5; nessun taglio o sovrapposizione.",
+    "references": [
+      "incoming/icone-piante/tavola-piante-06-r02.png"
+    ],
+    "crop_check": "component boxes complete, no border contact, no box overlap, no extra/empty cells; 128px crops saved"
+  }
+]

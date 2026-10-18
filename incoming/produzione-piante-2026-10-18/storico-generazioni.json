@@ -1,0 +1,57 @@
+[
+  {
+    "file": "incoming/icone-piante/tavola-piante-01.png",
+    "sha256": "20ed2aacde3215612d30c7c56d9083a14a0bf1fe74d538f9d72b3e445ee034bb",
+    "ready": true
+  },
+  {
+    "file": "incoming/icone-piante/tavola-piante-02.png",
+    "sha256": "4c9466d93c044c71590520c60e36911739d782e6631c73b6fe9db16cb228a908",
+    "ready": true
+  },
+  {
+    "file": "incoming/icone-piante/tavola-piante-03-r01.png",
+    "sha256": "cae7f3ceb58579150ae81fdc77cfb291e6e4c738bda9e1591f11350c08d3168b",
+    "ready": true
+  },
+  {
+    "file": "incoming/icone-piante/tavola-piante-03.png",
+    "sha256": "a57532e2e7c573b11837b8c7a9996a5da0483de8115daa968a7fbf6557ca4dcf",
+    "ready": false
+  },
+  {
+    "file": "incoming/icone-piante/tavola-piante-04-r01.png",
+    "sha256": "1a92a38de1f70c7f98c9ee3bcee86a85701d400d2b09437d696287490a926c5a",
+    "ready": true
+  },
+  {
+    "file": "incoming/icone-piante/tavola-piante-04.png",
+    "sha256": "47950902f68098247b897b986bfbe837a75334554d2eb7680167b2c1b997f0ce",
+    "ready": false
+  },
+  {
+    "file": "incoming/icone-piante/tavola-piante-05.png",
+    "sha256": "591611a17b47121359b20077310a40066a0f43176023f8cbbc92a5d1e7025792",
+    "ready": true
+  },
+  {
+    "file": "incoming/icone-piante/tavola-piante-06-r01.png",
+    "sha256": "ace15493261c4c5f075457621a68566b26e84de388618e33719ed8b4c1a09f3d",
+    "ready": false
+  },
+  {
+    "file": "incoming/icone-piante/tavola-piante-06-r02.png",
+    "sha256": "34e3fc260debee7020023ebd1ad39ebae20e0cb0abd6c037f4a3dcffeb4827d4",
+    "ready": false
+  },
+  {
+    "file": "incoming/icone-piante/tavola-piante-06-r03.png",
+    "sha256": "480a4467634add9e574a096dfad15170df1641af03a2418ddb52b942243ecf34",
+    "ready": true
+  },
+  {
+    "file": "incoming/icone-piante/tavola-piante-06.png",
+    "sha256": "ec61d74cbf7ce0038ac94454fe00bb62e958de8ca228817793e84088fb121a4e",
+    "ready": false
+  }
+]
