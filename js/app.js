@@ -729,9 +729,8 @@ function routeNow(r, nav) {
       // chiusa di default ovunque: la carta prima di tutto (si apre a mano o accendendo la Carta Forestale)
       if (lb && !lb.dataset.touched) lb.open = false;
       const z = zones.find((x) => x.id === r.zoneId);
-      if(z&&map)chooseMapZone(z.id,{animate:false});
-      else if(map&&!mapInitialFrameDone)fitMapResults({animate:false});
-      if(map)mapInitialFrameDone=true;
+      if(z&&map){chooseMapZone(z.id,{animate:false});mapInitialFrameDone=true;}
+      else if(map&&!mapInitialFrameDone)mapInitialFrameDone=fitMapResults({animate:false});
     });
   }
   renderAll();
@@ -1999,7 +1998,11 @@ function scheduleMapResults(){
 function renderMapResults(){
   if(!mapExperience||state.view!=='mappa')return;
   const status=$('#map-weather-status');status.hidden=$('#stale').hidden&&!$('#weather-work').classList.contains('busy');status.querySelector('summary').textContent=!$('#stale').hidden?'Meteo da verificare':'Aggiornamento meteo…';
-  const all=mapCandidates(),visible=map?all.filter(r=>map.getBounds().contains([r.z.lat,r.z.lon])):all;
+  const all=mapCandidates();
+  // Al primo accesso i contributi possono arrivare dopo la carta: inquadra
+  // i risultati appena disponibili, senza ricentrare le visite successive.
+  if(map&&!mapInitialFrameDone&&all.length){map.invalidateSize({pan:false});mapInitialFrameDone=frameMapZones(all.map(r=>r.z),{overview:true,animate:false});}
+  const visible=map?all.filter(r=>map.getBounds().contains([r.z.lat,r.z.lon])):all;
   const prefs=PREFS.filter(([key])=>state[key]).map(([,name])=>name.toLowerCase());
   const order=prefs.length?`Ordinate anche per ${prefs.join(', ')}. L’indice dei funghi non cambia.`:hasInterest('funghi')?'Indice dei funghi e condizioni dell’uscita. Le zone senza indice restano esplorabili.':hasInterest('piante')?'Ambienti e spunti botanici, senza un indice delle piante.':'Zone con i tratti mappati, accessi e condizioni dell’uscita.';
   mapExperience.render({total:all.length,order:(state.communityOnly?'Dati community Fronda · In sviluppo. Osservazioni dichiarate degli ultimi 7 giorni. ':'')+order,rows:visible.map(r=>({id:r.z.id,name:shortName(r.z),selected:r.z.id===state.zoneId,index:Number.isFinite(r.score)?`${fungusGlyph}${idxDot(r.score)}`:'',meta:[Number.isFinite(r.trip.minutes)?`${r.trip.minutes} min in auto`:'',r.walk?`${r.walk.t.difficulty||'Sentiero'} · ${fmtKm(r.walk.t.in_zone_km)} km nel tratto`:'Scheda della zona',hasInterest('funghi')&&!Number.isFinite(r.score)?'Indice non disponibile':'',state.avoidCrowd&&r.d?.crowd?crowdText(r.d.crowd):''].filter(Boolean).join(' · ')}))});
