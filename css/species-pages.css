@@ -297,6 +297,7 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 .fungus-compare .cmp-value-text { overflow-wrap:anywhere; }
 .fungus-compare .cmp-or { color:var(--text-2); font-size:11px; }
 .fungus-compare .cmp-panel { margin-top:20px; }
+.fungus-compare .cmp-season { margin-top:28px; }
 .fungus-compare .cmp-kind-tabs { margin-bottom:0; }
 @media(max-width:599px) {
   .fungus-compare .cmp-column-head { gap:16px; padding-inline:12px; font-size:12px; }
