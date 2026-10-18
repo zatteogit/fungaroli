@@ -1,0 +1,265 @@
+{
+  "version": 1,
+  "date": "2026-10-18",
+  "note": "Priorità Animali dopo riavvio autorizzato. Otto candidature non acquisite: nessun nuovo asset pronto, nessuna foto inserita nell’app.",
+  "candidates": [
+    {
+      "id": "animals-ape-da-miele-candidate1",
+      "target_group": "animals",
+      "target_key": "ape-da-miele",
+      "editorial_rank": "species",
+      "editorial_latin": "Apis mellifera",
+      "photo_taxon": "Apis mellifera",
+      "photo_rank": "species",
+      "latin": "Apis mellifera",
+      "commons_title": "Apis mellifera.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Apis_mellifera.jpg",
+      "author": "Cody Hough",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "attribution": "Cody Hough · Wikimedia Commons · CC BY-SA 3.0",
+      "original_file_link": "https://commons.wikimedia.org/wiki/Special:FilePath/Apis%20mellifera.jpg",
+      "source_reported_dimensions": [
+        560,
+        456
+      ],
+      "proposed_caption": "Ape da miele (Apis mellifera), fotografia della specie.",
+      "taxon_verification": "Taxon dichiarato nella pagina individuale del file; corrispondenza al rango editoriale controllata. Non revisione zoologica specialistica.",
+      "source_checked_on": "2026-10-18",
+      "source_check": "Pagina individuale letta: autore, licenza e descrizione. Licenza del file, non CC0 generico dei metadati Commons.",
+      "status": "candidate_not_acquired",
+      "visual_review": {
+        "approved": false,
+        "attribution_approved": false,
+        "reason": "Byte non acquisiti: proxy CONNECT 403. Nessun controllo visivo locale del file o dei ritagli."
+      },
+      "notes": "Nessuna sottospecie attribuita. Ripresa in Michigan, non osservazione locale; preferire una seconda fonte italiana quando disponibile."
+    },
+    {
+      "id": "animals-bombi-candidate1",
+      "target_group": "animals",
+      "target_key": "bombi",
+      "editorial_rank": "genus",
+      "editorial_latin": "Bombus",
+      "photo_taxon": "Bombus terrestris",
+      "photo_rank": "species",
+      "latin": "Bombus terrestris",
+      "commons_title": "Bombus terrestris (1).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bombus_terrestris_%281%29.jpg",
+      "author": "T137",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "attribution": "T137 · Wikimedia Commons · CC BY-SA 3.0",
+      "original_file_link": "https://commons.wikimedia.org/wiki/Special:FilePath/Bombus%20terrestris%20%281%29.jpg",
+      "source_reported_dimensions": [
+        3872,
+        2592
+      ],
+      "proposed_caption": "Esempio di bombo: Bombus terrestris, su un fiore.",
+      "taxon_verification": "Taxon dichiarato nella pagina individuale del file; corrispondenza al rango editoriale controllata. Non revisione zoologica specialistica.",
+      "source_checked_on": "2026-10-18",
+      "source_check": "Pagina individuale letta: autore, licenza e descrizione. Licenza del file, non CC0 generico dei metadati Commons.",
+      "status": "candidate_not_acquired",
+      "visual_review": {
+        "approved": false,
+        "attribution_approved": false,
+        "reason": "Byte non acquisiti: proxy CONNECT 403. Nessun controllo visivo locale del file o dei ritagli."
+      },
+      "notes": "Foto di una specie rappresentativa del genere Bombus: non rappresenta tutti i bombi. Non trasferire colori o visita a una pianta all’intero genere."
+    },
+    {
+      "id": "animals-sirfidi-candidate1",
+      "target_group": "animals",
+      "target_key": "sirfidi",
+      "editorial_rank": "family",
+      "editorial_latin": "Syrphidae",
+      "photo_taxon": "Syrphus ribesii",
+      "photo_rank": "species",
+      "latin": "Syrphus ribesii",
+      "commons_title": "Syrphus ribesii SLO.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Syrphus_ribesii_SLO.jpg",
+      "author": "Rude",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "attribution": "Rude · Wikimedia Commons · CC BY-SA 3.0",
+      "original_file_link": "https://commons.wikimedia.org/wiki/Special:FilePath/Syrphus%20ribesii%20SLO.jpg",
+      "source_reported_dimensions": [
+        3797,
+        2848
+      ],
+      "proposed_caption": "Esempio di sirfide: Syrphus ribesii, su un fiore.",
+      "taxon_verification": "Taxon dichiarato nella pagina individuale del file; corrispondenza al rango editoriale controllata. Non revisione zoologica specialistica.",
+      "source_checked_on": "2026-10-18",
+      "source_check": "Pagina individuale letta: autore, licenza e descrizione. Licenza del file, non CC0 generico dei metadati Commons.",
+      "status": "candidate_not_acquired",
+      "visual_review": {
+        "approved": false,
+        "attribution_approved": false,
+        "reason": "Byte non acquisiti: proxy CONNECT 403. Nessun controllo visivo locale del file o dei ritagli."
+      },
+      "notes": "Specie della famiglia Syrphidae secondo pagina e categoria del file; la scheda mantiene il rango famiglia, senza estendere aspetto o comportamento a tutti i sirfidi."
+    },
+    {
+      "id": "animals-farfalle-diurne-candidate1",
+      "target_group": "animals",
+      "target_key": "farfalle-diurne",
+      "editorial_rank": "editorial_group",
+      "editorial_latin": "",
+      "photo_taxon": "Papilio machaon",
+      "photo_rank": "species",
+      "latin": "Papilio machaon",
+      "commons_title": "Papilio Machaon JPG1a.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Papilio_Machaon_JPG1a.jpg",
+      "author": "Jean-Pol GRANDMONT",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "attribution": "Jean-Pol GRANDMONT · Wikimedia Commons · CC BY 3.0",
+      "original_file_link": "https://commons.wikimedia.org/wiki/Special:FilePath/Papilio%20Machaon%20JPG1a.jpg",
+      "source_reported_dimensions": [
+        1500,
+        1000
+      ],
+      "proposed_caption": "Esempio di farfalla diurna: macaone (Papilio machaon).",
+      "taxon_verification": "Taxon dichiarato nella pagina individuale del file; corrispondenza al rango editoriale controllata. Non revisione zoologica specialistica.",
+      "source_checked_on": "2026-10-18",
+      "source_check": "Pagina individuale letta: autore, licenza e descrizione. Licenza del file, non CC0 generico dei metadati Commons.",
+      "status": "candidate_not_acquired",
+      "visual_review": {
+        "approved": false,
+        "attribution_approved": false,
+        "reason": "Byte non acquisiti: proxy CONNECT 403. Nessun controllo visivo locale del file o dei ritagli."
+      },
+      "notes": "La pagina offre più licenze: scelta CC BY 3.0. Raggruppamento editoriale non trasformato in specie; non usare il disegno alare come tratto di tutte le farfalle.",
+      "source_multi_license_note": "Pagina: CC BY-SA 3.0 e CC BY 3.0; per questo lotto viene selezionata CC BY 3.0."
+    },
+    {
+      "id": "animals-calabrone-europeo-candidate1",
+      "target_group": "animals",
+      "target_key": "calabrone-europeo",
+      "editorial_rank": "species",
+      "editorial_latin": "Vespa crabro",
+      "photo_taxon": "Vespa crabro",
+      "photo_rank": "species",
+      "latin": "Vespa crabro",
+      "commons_title": "Vespa crabro (\"European hornet\").jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Vespa_crabro_%28%22European_hornet%22%29.jpg",
+      "author": "Andrea Bonifazi",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "Andrea Bonifazi · Wikimedia Commons · CC BY-SA 4.0",
+      "original_file_link": "https://commons.wikimedia.org/wiki/Special:FilePath/Vespa%20crabro%20%28%22European%20hornet%22%29.jpg",
+      "source_reported_dimensions": [
+        2261,
+        1792
+      ],
+      "proposed_caption": "Calabrone europeo (Vespa crabro), Parco della Vena del Gesso Romagnola.",
+      "taxon_verification": "Taxon dichiarato nella pagina individuale del file; corrispondenza al rango editoriale controllata. Non revisione zoologica specialistica.",
+      "source_checked_on": "2026-10-18",
+      "source_check": "Pagina individuale letta: autore, licenza e descrizione. Licenza del file, non CC0 generico dei metadati Commons.",
+      "status": "candidate_not_acquired",
+      "visual_review": {
+        "approved": false,
+        "attribution_approved": false,
+        "reason": "Byte non acquisiti: proxy CONNECT 403. Nessun controllo visivo locale del file o dei ritagli."
+      },
+      "notes": "Località e taxon nella descrizione del file; nessuna segnalazione nel Lazio e nessuna nuova chiave diagnostica ricavata dalla foto."
+    },
+    {
+      "id": "animals-zecche-candidate1",
+      "target_group": "animals",
+      "target_key": "zecche",
+      "editorial_rank": "editorial_group",
+      "editorial_latin": "Ixodida",
+      "photo_taxon": "Ixodes ricinus",
+      "photo_rank": "species",
+      "latin": "Ixodes ricinus",
+      "commons_title": "Ixodes ricinus on dry grass.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Ixodes_ricinus_on_dry_grass.jpg",
+      "author": "W.alter",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "W.alter · Wikimedia Commons · CC BY-SA 4.0",
+      "original_file_link": "https://commons.wikimedia.org/wiki/Special:FilePath/Ixodes%20ricinus%20on%20dry%20grass.jpg",
+      "source_reported_dimensions": [
+        2155,
+        1616
+      ],
+      "proposed_caption": "Esempio di zecca: Ixodes ricinus, su un filo d’erba.",
+      "taxon_verification": "Taxon dichiarato nella pagina individuale del file; corrispondenza al rango editoriale controllata. Non revisione zoologica specialistica.",
+      "source_checked_on": "2026-10-18",
+      "source_check": "Pagina individuale letta: autore, licenza e descrizione. Licenza del file, non CC0 generico dei metadati Commons.",
+      "status": "candidate_not_acquired",
+      "visual_review": {
+        "approved": false,
+        "attribution_approved": false,
+        "reason": "Byte non acquisiti: proxy CONNECT 403. Nessun controllo visivo locale del file o dei ritagli."
+      },
+      "notes": "La fonte descrive una femmina; la didascalia iniziale resta generica. Una specie rappresenta qui il gruppo Ixodida, non tutte le zecche o ogni loro stadio."
+    },
+    {
+      "id": "animals-cinghiale-candidate1",
+      "target_group": "animals",
+      "target_key": "cinghiale",
+      "editorial_rank": "species",
+      "editorial_latin": "Sus scrofa",
+      "photo_taxon": "Sus scrofa",
+      "photo_rank": "species",
+      "latin": "Sus scrofa",
+      "commons_title": "Wild boar (Sus scrofa).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Wild_boar_%28Sus_scrofa%29.jpg",
+      "author": "Bramans",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "Bramans · Wikimedia Commons · CC BY-SA 4.0",
+      "original_file_link": "https://commons.wikimedia.org/wiki/Special:FilePath/Wild%20boar%20%28Sus%20scrofa%29.jpg",
+      "source_reported_dimensions": [
+        3000,
+        2000
+      ],
+      "proposed_caption": "Cinghiale (Sus scrofa), Oberursel, Germania.",
+      "taxon_verification": "Taxon dichiarato nella pagina individuale del file; corrispondenza al rango editoriale controllata. Non revisione zoologica specialistica.",
+      "source_checked_on": "2026-10-18",
+      "source_check": "Pagina individuale letta: autore, licenza e descrizione. Licenza del file, non CC0 generico dei metadati Commons.",
+      "status": "candidate_not_acquired",
+      "visual_review": {
+        "approved": false,
+        "attribution_approved": false,
+        "reason": "Byte non acquisiti: proxy CONNECT 403. Nessun controllo visivo locale del file o dei ritagli."
+      },
+      "notes": "Fotografia dichiarata di cinghiale, non forma domestica. Condizione di cattività/libertà non certificata nella descrizione: non attribuirla."
+    },
+    {
+      "id": "animals-lupo-candidate1",
+      "target_group": "animals",
+      "target_key": "lupo",
+      "editorial_rank": "species",
+      "editorial_latin": "Canis lupus",
+      "photo_taxon": "Canis lupus",
+      "photo_rank": "species",
+      "latin": "Canis lupus",
+      "commons_title": "Lupo Appenninico.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Lupo_Appenninico.jpg",
+      "author": "Guido Mastrobono",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+      "attribution": "Guido Mastrobono · Wikimedia Commons · CC BY 2.0",
+      "original_file_link": "https://commons.wikimedia.org/wiki/Special:FilePath/Lupo%20Appenninico.jpg",
+      "source_reported_dimensions": [
+        3872,
+        2592
+      ],
+      "proposed_caption": "Lupo (Canis lupus), Parco Nazionale d’Abruzzo.",
+      "taxon_verification": "Taxon dichiarato nella pagina individuale del file; corrispondenza al rango editoriale controllata. Non revisione zoologica specialistica.",
+      "source_checked_on": "2026-10-18",
+      "source_check": "Pagina individuale letta: autore, licenza e descrizione. Licenza del file, non CC0 generico dei metadati Commons.",
+      "status": "candidate_not_acquired",
+      "visual_review": {
+        "approved": false,
+        "attribution_approved": false,
+        "reason": "Byte non acquisiti: proxy CONNECT 403. Nessun controllo visivo locale del file o dei ritagli."
+      },
+      "notes": "La fonte nomina il lupo appenninico; la scheda mantiene Canis lupus senza assegnare una sottospecie. Ripresa locale al parco, non prova di avvistamenti o presenza su un sentiero. Stato libero/cattivo da verificare prima di un’eventuale didascalia più specifica.",
+      "source_page": "https://www.flickr.com/photos/trippiit/6172818197/"
+    }
+  ]
+}

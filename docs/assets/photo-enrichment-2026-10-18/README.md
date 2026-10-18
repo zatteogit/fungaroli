@@ -64,3 +64,33 @@ CMS: i cataloghi fotografici e le piante sono `REPOSITORY_REFRESHED`, ma il depl
 - Prova locale della pipeline su una foto già presente, in cartella temporanea: dimensioni, EXIF assente, hash, miniatura e controllo approvazione verificati (nessuna foto di prova entra nel lotto).
 - `node tools/asset-report.mjs`: nessuna incoerenza, nessun asset da rifare; rapporto base completo allegato. Non è una prova di acquisizione delle candidature.
 - Nessuna suite completa o modifica all’app.
+
+## Riavvio autorizzato · priorità alle otto schede Animali
+
+Dopo il riavvio richiesto dal proprietario sono stati ricontrollati gli accessi ordinari, senza assumere che il precedente blocco fosse ancora valido. L’esito resta **proxy CONNECT 403**, ora confermato anche per ISS, Parchi Lazio e GBIF; risorse esatte in `restart-network-check.json`. Nessun byte acquisito: **zero foto Animali pronte**.
+
+Le otto schede in `/workspace/fungaroli/data/animals.json` e i limiti di `docs/animali-catalogo-2026-10-18.md` sono stati letti prima della selezione. `animals-candidates.json` contiene una candidatura per ogni scheda pronta, con **autore e licenza letti nella pagina del singolo file**, nome del taxon fotografato e rango del contenuto editoriale. Il taxon è dichiarato dalla fonte fotografica, non certificato da una nuova revisione zoologica. Nessun dato scientifico o runtime modificato.
+
+| Scheda | Taxon fotografato candidato | Autore | Licenza scelta |
+|---|---|---|---|
+| Ape da miele | [Apis mellifera](https://commons.wikimedia.org/wiki/File:Apis_mellifera.jpg) | Cody Hough | CC BY-SA 3.0 |
+| Bombi | [Bombus terrestris](https://commons.wikimedia.org/wiki/File:Bombus_terrestris_(1).jpg), esempio del genere | T137 | CC BY-SA 3.0 |
+| Sirfidi | [Syrphus ribesii](https://commons.wikimedia.org/wiki/File:Syrphus_ribesii_SLO.jpg), esempio della famiglia | Rude | CC BY-SA 3.0 |
+| Farfalle diurne | [Papilio machaon](https://commons.wikimedia.org/wiki/File:Papilio_Machaon_JPG1a.jpg), esempio del gruppo editoriale | Jean-Pol GRANDMONT | CC BY 3.0, scelta fra più licenze |
+| Calabrone europeo | [Vespa crabro](https://commons.wikimedia.org/wiki/File:Vespa_crabro_(%22European_hornet%22).jpg) | Andrea Bonifazi | CC BY-SA 4.0 |
+| Zecche | [Ixodes ricinus](https://commons.wikimedia.org/wiki/File:Ixodes_ricinus_on_dry_grass.jpg), esempio del gruppo Ixodida | W.alter | CC BY-SA 4.0 |
+| Cinghiale | [Sus scrofa](https://commons.wikimedia.org/wiki/File:Wild_boar_(Sus_scrofa).jpg) | Bramans | CC BY-SA 4.0 |
+| Lupo | [Canis lupus](https://commons.wikimedia.org/wiki/File:Lupo_Appenninico.jpg), senza assegnazione di sottospecie nella scheda | Guido Mastrobono | CC BY 2.0 |
+
+Le didascalie proposte dichiarano «Esempio di…» per i gruppi ampi. La foto di ape è piccola (560×456): non ingrandirla artificialmente; sostituirla se insufficiente alla revisione visiva. La foto del lupo arriva dal Parco d’Abruzzo ma non prova presenza sul percorso e non documenta con certezza libertà/cattività: non inventare quella condizione nella didascalia. Non usare specie domestiche per il cinghiale. La fonte può chiamare il lupo «appenninico», ma il contenuto editoriale mantiene soltanto *Canis lupus*.
+
+Ripresa del lotto Animali:
+
+```bash
+python3 tools/photo-enrichment.py acquire --manifest docs/assets/photo-enrichment-2026-10-18/animals-candidates.json --limit 8
+python3 tools/photo-enrichment.py prepare --manifest docs/assets/photo-enrichment-2026-10-18/animals-candidates.json
+```
+
+La prima richiesta API di questo nuovo lotto è stata eseguita e negata dal proxy, registrata in `acquisition.json`; non sono stati salvati hash, ritagli o immagini fittizi. Il preparatore ignora gli elementi di altri manifest e richiede la stessa revisione visiva/attribuzione prima di creare asset. Nel file multilicenza del macaone la scelta CC BY va confermata con i metadati API prima di scaricare: il confronto prudente della pipeline può richiedere revisione manuale, senza scegliere implicitamente una licenza differente.
+
+**Verifiche in questo riavvio:** soltanto provenienza documentale e accesso alle risorse. Nessuna suite, test unitario o browser: fermati dal proprietario. Non è stato possibile eseguire la revisione visiva di originali/ritagli perché non sono stati acquisiti. Le verifiche della sezione precedente appartengono alla consegna iniziale, non sono state rilanciate.

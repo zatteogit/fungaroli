@@ -22,6 +22,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 DOC = ROOT / 'docs/assets/photo-enrichment-2026-10-18'
 WORK = ROOT / 'incoming/photo-enrichment-2026-10-18'
+MANIFEST = DOC / 'candidates.json'
 UA = 'Fronda/PhotoEnrichment (https://github.com/zatteogit/fungaroli)'
 
 
@@ -86,7 +87,7 @@ def plain(value):
 
 
 def acquire(limit):
-    candidates = read(DOC / 'candidates.json')['candidates']
+    candidates = read(MANIFEST)['candidates']
     state_path = WORK / 'acquisition.json'
     previous = read(state_path)['results'] if state_path.exists() else []
     results = {item['id']: item for item in previous}
@@ -145,11 +146,13 @@ def prepare():
     from PIL import Image, ImageOps
     sys.path.insert(0, str(ROOT / 'tools'))
     from import_crop_points import positions, valid
-    candidates = {c['id']: c for c in read(DOC / 'candidates.json')['candidates']}
+    candidates = {c['id']: c for c in read(MANIFEST)['candidates']}
     acquisition = read(WORK / 'acquisition.json')['results']
     prepared = []
     for item in acquisition:
         if item['status'] != 'downloaded_pending_visual_review':
+            continue
+        if item['id'] not in candidates:
             continue
         c = candidates[item['id']]
         review = c.get('visual_review', {})
@@ -184,7 +187,9 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('command', choices=['inventory', 'acquire', 'prepare'])
     parser.add_argument('--limit', type=int, default=12)
+    parser.add_argument('--manifest', type=Path, default=MANIFEST)
     args = parser.parse_args()
+    MANIFEST = args.manifest
     if args.command == 'inventory':
         inventory()
     elif args.command == 'acquire':

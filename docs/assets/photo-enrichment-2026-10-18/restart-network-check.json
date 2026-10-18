@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-18",
+  "purpose": "Nuovo controllo accesso ordinario dopo riavvio agenti",
+  "result": "blocked_before_resource_bytes",
+  "error": "URLError: Tunnel connection failed: 403 Forbidden",
+  "resources_checked": [
+    "https://commons.wikimedia.org/w/api.php?action=query&format=json&titles=File:Apis_mellifera.jpg&prop=imageinfo&iiprop=url%7Cextmetadata",
+    "https://api.inaturalist.org/v1/observations?taxon_name=Apis%20mellifera&quality_grade=research&photo_license=cc-by,cc-by-sa,cc0&per_page=1",
+    "https://dryades.units.it",
+    "https://www.epicentro.iss.it/zecche/",
+    "https://api.gbif.org/v1/species/match?name=Apis%20mellifera",
+    "https://www.parchilazio.it/cammino_naturale_dei_parchi-schede-862-il_cinghiale_sus_scrofa",
+    "https://inaturalist-open-data.s3.amazonaws.com/photos/10099268/original.jpg"
+  ],
+  "web_tool": "Pagine individuali Commons leggibili; apertura foto originale restituisce soltanto testo ImageDisplayed, senza bytes o percorso esportabile.",
+  "acquired_files": 0,
+  "prepared_files": 0,
+  "tests": "Nessuna suite/unit/browser: fermati dall’utente. Solo controlli di provenienza documentale."
+}

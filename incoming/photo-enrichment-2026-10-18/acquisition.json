@@ -5,6 +5,11 @@
       "id": "aestivalis-commons9",
       "status": "not_downloaded",
       "error": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "id": "animals-ape-da-miele-candidate1",
+      "status": "not_downloaded",
+      "error": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>"
     }
   ]
 }
