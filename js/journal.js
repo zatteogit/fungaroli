@@ -173,6 +173,9 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
   let listMessage = '';
   const actionStates=new Map();let entriesRevision=0;
   let listFilter='',listQuery='',noteControls=[];
+  let listLayout='pages',listDensity='large';
+  try { const saved=JSON.parse(localStorage.getItem('fungaroli:notebook-view')||'null');if(['pages','gallery','list'].includes(saved?.layout))listLayout=saved.layout;if(saved?.density==='compact')listDensity='compact'; } catch { /* La vista resta utilizzabile anche senza storage. */ }
+
   let demoEntries=null,lastDemoMode=false;
   const getDemoEntries=()=>demoEntries ||= notebookDemo({zones,catalogs:noteCatalogs(),species:speciesCatalog});
   const sortEntries = () => entries.sort((a, b) => String(b.date||'').localeCompare(String(a.date||'')) || String(b.savedAt||'').localeCompare(String(a.savedAt||'')));
@@ -472,7 +475,7 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
       const a=agreement(e),top=Object.entries(e.predicted||{}).filter(([,v])=>Number.isFinite(v)).sort((x,y)=>y[1]-x[1])[0];
       return `<details class="notebook-analysis"><summary>Condizioni ${e.kind==='plan'?'salvate':'dell’uscita'}</summary>${top?`<p>Indice salvato ${formatIndex(top[1])} · ${esc(speciesCatalog.find(x=>x.id===top[0])?.name||top[0])}</p><p class="small muted">Valore storico: non descrive le condizioni attuali.</p>`:''}${e.kind==='plan'?'<p>Previsione salvata prima dell’uscita.</p>':a?a.species.map(x=>`<p>${esc(speciesCatalog.find(s=>s.id===x.id)?.name||x.id)}: ${x.ok?'concordante':x.said?'indice alto, zero osservato':'trovata con indice basso'}</p>`).join(''):'<p>Osservazione senza confronto prospettico.</p>'}</details>`;
     };
-    const result=renderNotebook({entries:route.demo?getDemoEntries():entries,zones,species:speciesCatalog,zoneImage,referenceImage,route,filter:listFilter,query:listQuery,canPreview:['admin','editor'].includes(currentUser()?.role),actions:rowActions,analysis,shared:e=>store?.kind==='community'&&e.shared});
+    const result=renderNotebook({entries:route.demo?getDemoEntries():entries,zones,species:speciesCatalog,zoneImage,referenceImage,route,filter:listFilter,query:listQuery,layout:listLayout,density:listDensity,canPreview:['admin','editor'].includes(currentUser()?.role),actions:rowActions,analysis,shared:e=>store?.kind==='community'&&e.shared});
     const heading=document.querySelector('.notebook-heading');
     heading.querySelector('h1').textContent=result.title;
     heading.querySelector('.kicker').textContent=result.kicker;
@@ -487,6 +490,21 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
     list.innerHTML=(!route.demo&&listMessage&&!hasRowMessage?`<p class="notice notebook-feedback" role="status">${esc(listMessage)}</p>`:'')+result.html;
     if(inNotebook)document.title=`${result.detail?result.title:route.demo?'Diario di prova':'Taccuino'} · Fronda`;
     list.querySelectorAll('[data-edit-note]').forEach(b=>b.onclick=()=>openNote({},entries.find(e=>String(e.id)===b.dataset.editNote)));
+    list.querySelectorAll('button[data-notebook-layout],button[data-notebook-density]').forEach(button=>button.onclick=()=>{
+      const bar=list.querySelector('.diary-view-bar'),edge=document.querySelector('.appbar').getBoundingClientRect().bottom;
+      const anchored=bar.getBoundingClientRect().top<=edge+2;
+      const anchor=anchored?[...list.querySelectorAll('.diary-card')].find(card=>card.getBoundingClientRect().bottom>bar.getBoundingClientRect().bottom+8):null;
+      const anchorTop=anchor?Math.max(anchor.getBoundingClientRect().top,bar.getBoundingClientRect().bottom+8):0,id=anchor?.dataset.journalId;
+      if(button.dataset.notebookLayout)listLayout=button.dataset.notebookLayout;
+      if(button.dataset.notebookDensity)listDensity=button.dataset.notebookDensity;
+      try { localStorage.setItem('fungaroli:notebook-view',JSON.stringify({layout:listLayout,density:listDensity})); } catch { /* Preferenza solo in memoria. */ }
+      renderList();
+      const restored=id&&list.querySelector(`.diary-card[data-journal-id="${CSS.escape(id)}"]`);
+      if(restored){const targetTop=Math.max(anchorTop,list.querySelector('.diary-view-bar').getBoundingClientRect().bottom+8);scrollBy({top:restored.getBoundingClientRect().top-targetTop,behavior:'instant'});}
+      const selector=button.dataset.notebookLayout?`[data-notebook-layout="${listLayout}"]`:`[data-notebook-density="${listDensity==='large'?'compact':'large'}"]`;
+      list.querySelector(selector)?.focus({preventScroll:true});
+      if(!matchMedia('(prefers-reduced-motion: reduce)').matches)list.querySelector('.diary-grid')?.animate([{opacity:.5},{opacity:1}],{duration:160,easing:'ease-out'});
+    });
     list.querySelectorAll('[data-notebook-filter]').forEach(b=>b.onclick=()=>{listFilter=b.dataset.notebookFilter;renderList();list.querySelector(`[data-notebook-filter="${CSS.escape(listFilter)}"]`)?.focus({preventScroll:true});});
     list.querySelector('[data-notebook-reset]')?.addEventListener('click',()=>{listFilter='';listQuery='';renderList();list.querySelector('#notebook-query')?.focus({preventScroll:true});});
     list.querySelector('#notebook-query')?.addEventListener('input',ev=>{const pos=ev.target.selectionStart;listQuery=ev.target.value;renderList();const input=list.querySelector('#notebook-query');input.focus({preventScroll:true});if(pos!=null)try{input.setSelectionRange(pos,pos);}catch{/* Search inputs may not expose selection. */}});
