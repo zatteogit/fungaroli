@@ -292,5 +292,250 @@
     },
     "state": "pronta da integrare",
     "review": "Bruno corretto; riferimenti crema emisferico/piano verificati, anello e volva preservati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-02.png",
+    "sha256": "5bb39738b1ca75e2096df0fc21682592c753d0db9d7023cd60c38c9dd4f48ae5",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        482,
+        66,
+        764,
+        394
+      ],
+      "0": [
+        84,
+        118,
+        384,
+        312
+      ],
+      "4": [
+        462,
+        524,
+        784,
+        778
+      ],
+      "3": [
+        60,
+        558,
+        408,
+        670
+      ],
+      "7": [
+        460,
+        912,
+        794,
+        1164
+      ],
+      "6": [
+        60,
+        944,
+        408,
+        1054
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Forme conico/piano, rosso e bruno distinti, lamelle brune, gambo crema senza anello, volva o reticolo. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-03.png",
+    "sha256": "a1109971e3b9416422b6ea296048709a0bb75d66cdfb8eab802845aca2dbbbd2",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        468,
+        72,
+        784,
+        408
+      ],
+      "0": [
+        68,
+        154,
+        388,
+        322
+      ],
+      "4": [
+        470,
+        482,
+        784,
+        802
+      ],
+      "3": [
+        68,
+        554,
+        390,
+        714
+      ],
+      "7": [
+        458,
+        946,
+        796,
+        1186
+      ],
+      "6": [
+        64,
+        976,
+        394,
+        1074
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Convesso rosso/bruno e piano bruno coerenti; lamelle brune e gambo crema, nessun anello, volva o reticolo. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-04.png",
+    "sha256": "862fb34ca1e268467d3a3c0b1f771421724b5ad0f347f0e3b0a2b082142f700a",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        450,
+        114,
+        804,
+        384
+      ],
+      "0": [
+        50,
+        160,
+        390,
+        280
+      ],
+      "4": [
+        450,
+        504,
+        804,
+        792
+      ],
+      "3": [
+        46,
+        552,
+        394,
+        672
+      ],
+      "7": [
+        450,
+        900,
+        804,
+        1184
+      ],
+      "6": [
+        46,
+        946,
+        392,
+        1066
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Cortinario rosso senza anello; Galerina bruna/gialla con anello visibile, nessuna volva o reticolo. Piano coerente con riferimento approvato. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-05.png",
+    "sha256": "4a8d938bf5e4408e4410cd7253ec499a25365b1c0daa3bd05c72f12f79baa01b",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        468,
+        50,
+        786,
+        400
+      ],
+      "0": [
+        64,
+        124,
+        400,
+        314
+      ],
+      "4": [
+        468,
+        448,
+        786,
+        798
+      ],
+      "3": [
+        64,
+        524,
+        400,
+        714
+      ],
+      "7": [
+        468,
+        846,
+        786,
+        1196
+      ],
+      "6": [
+        64,
+        922,
+        400,
+        1112
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Tre emisferici con lamelle crema, squame piccole e gambo fasciato preservati. Cappelli bruno/crema/rosso distinti, nessun anello o volva aggiunto; alpha e celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-06.png",
+    "sha256": "5dc221eb0a0a6c43d09be9d7c9477fcad2ffe519cdbc843e89233d0abb5bfe2f",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        452,
+        92,
+        800,
+        400
+      ],
+      "0": [
+        52,
+        168,
+        414,
+        322
+      ],
+      "4": [
+        452,
+        472,
+        800,
+        782
+      ],
+      "3": [
+        52,
+        554,
+        414,
+        706
+      ],
+      "7": [
+        452,
+        854,
+        800,
+        1168
+      ],
+      "6": [
+        52,
+        942,
+        412,
+        1096
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Tre ombrellati con umbone distinto, palette bruno/crema/rosso, squame, gambo fasciato e lamelle crema preservati. Nessun anello o volva aggiunto; alpha e sei celle verificati."
   }
 ]

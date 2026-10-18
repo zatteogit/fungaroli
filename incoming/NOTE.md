@@ -7,7 +7,7 @@ Autorizzazione: avviare gli asset mancanti del confronto usando metodologia, pro
 - Forme: sei varianti, dodici disegni, nelle due tavole `confronto-forme-2026-10-18-01-r01.png` e `-02-r01.png`.
 - Combinazioni: tre varianti, sei disegni, nella tavola `confronto-combinazioni-2026-10-18-01-r01.png`.
 - Totale pronto da integrare: tre tavole, diciotto disegni. Nessun file dell’app modificato in questo ramo di produzione immagini.
-- Restano **188 combinazioni da generare** in **63 tavole**. La coda è preparata, non è un processo automatico in esecuzione.
+- Aggiornamento: pronti anche i lotti combo-02–06 (15 combinazioni, 30 disegni). Restano **173 combinazioni da generare** in **58 tavole**. Produzione supervisionata in corso, con controllo visivo per tavola e ritagli tecnici conservati in `produzione-2026-10-18/ritagli/`.
 
 ## Metodo
 
