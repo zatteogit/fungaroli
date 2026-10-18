@@ -178,7 +178,12 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
   const sortEntries = () => entries.sort((a, b) => String(b.date||'').localeCompare(String(a.date||'')) || String(b.savedAt||'').localeCompare(String(a.savedAt||'')));
   const noteDialog=document.createElement('dialog');noteDialog.className='wiz notebook-dialog';noteDialog.setAttribute('aria-label','Appunto privato');document.body.append(noteDialog);
   const savedNotice=document.createElement('div');savedNotice.className='app-toast';savedNotice.setAttribute('role','status');document.body.append(savedNotice);let noticeTimer;
-  document.addEventListener('fungaroli:note-saved',()=>{clearTimeout(noticeTimer);(noteOrigin?.closest('dialog[open]')||document.body).append(savedNotice);savedNotice.innerHTML=`Salvato nel taccuino <a href="#/diario" class="link-btn">${notebookGlyph}Apri →</a>`;savedNotice.classList.add('on');noticeTimer=setTimeout(()=>savedNotice.classList.remove('on'),5000);});
+  document.addEventListener('fungaroli:note-saved',()=>{
+    const origin=noteOrigin;
+    const showSavedNotice=()=>{clearTimeout(noticeTimer);(origin?.closest('dialog[open]')||document.body).append(savedNotice);savedNotice.innerHTML=`Salvato nel taccuino <a href="#/diario" class="link-btn">${notebookGlyph}Apri →</a>`;savedNotice.classList.add('on');noticeTimer=setTimeout(()=>savedNotice.classList.remove('on'),5000);};
+    // Il coordinatore riapre la scheda al close: prima il suo dialog è sospeso.
+    if(noteDialog.open)noteDialog.addEventListener('close',showSavedNotice,{once:true});else showSavedNotice();
+  });
   let noteOrigin=null;
   noteDialog.addEventListener('close',()=>{noteControls.forEach(c=>c.destroy());noteControls=[];noteOrigin?.isConnected&&noteOrigin.focus({preventScroll:true});});
   addEventListener('hashchange',()=>{if(noteDialog.open)noteDialog.close();});

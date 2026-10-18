@@ -118,17 +118,17 @@ for(const width of [320,390,768,1280])test(`testata home: filtri interi e separa
  await context.close();
 });
 
-for(const width of [390,1280])for(const theme of ['light','dark'])test(`invito community e accordion leggibili a ${width}px ${theme}`,async({browser})=>{
+for(const width of [390,1280])for(const theme of ['light','dark'])test(`invito community leggibile e azione raggiungibile a ${width}px ${theme}`,async({browser})=>{
  const context=await browser.newContext({viewport:{width,height:900},reducedMotion:'reduce',serviceWorkers:'block'});
  const page=await preparePage(context,{theme});await page.goto('/');const card=page.locator('#community-intro');await expect(card.locator('h2')).toBeVisible();await card.scrollIntoViewIfNeeded();
- const summary=card.locator('summary');
- for(const state of ['closed','hover','open']){
-  if(state==='hover')await card.locator('.btn.primary').hover();
-  if(state==='open'){await summary.focus();await page.keyboard.press('Enter');await expect(card.locator('details')).toHaveAttribute('open','');}
+ const action=card.locator('.btn.primary');
+ await expect(card.locator('summary,details')).toHaveCount(0);
+ for(const state of ['default','hover','focus']){
+  if(state==='hover')await action.hover();
+  if(state==='focus')await action.focus();
   const records=await auditState(page,{root:'#community-intro'});expect(records.length).toBeGreaterThan(2);expect(records.filter(r=>r.ratio<r.threshold)).toEqual([]);
  }
- expect(await summary.evaluate(el=>({order:getComputedStyle(el,'::after').order,margin:getComputedStyle(el,'::after').marginLeft}))).toEqual({order:'-1',margin:'2px'});
  expect(await card.evaluate(el=>{const r=el.getBoundingClientRect();return [...el.querySelectorAll('.btn')].every(b=>{const x=b.getBoundingClientRect();return x.height>=44&&x.right<=r.right;});})).toBe(true);
- await summary.press('Enter');await expect(card.locator('details')).not.toHaveAttribute('open','');
+ await action.press('Enter');await expect(page.locator('dialog[open]:modal')).toHaveCount(1);await expect(page.locator('dialog[open]:modal')).toContainText(/specie|luogo|giorno/i);
  await context.close();
 });
