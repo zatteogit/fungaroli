@@ -1,3 +1,4 @@
+import {openModal} from './modal-flow.js';
 import {PHENO_PHASES,normalizeNotebookNote} from './notebook-entry.js';
 import {PRESENCE,HABITATS,sharedObservation} from './community-observation.js';
 import {mountSearchSelect} from './search-select.js';
@@ -52,5 +53,5 @@ export function createNotebookComposer({dialog,zones,catalogs,canShare,onSave,on
   if(form.elements.communityShare)value.share=form.elements.communityShare.checked&&!form.elements.communityShare.disabled;
  }
  dialog.addEventListener('close',()=>{destroy();origin?.isConnected&&origin.focus({preventScroll:true});});
- return {open(context={},entry=null){existing=entry;origin=document.activeElement;value={id:entry?.id||Date.now().toString(36)+crypto.randomUUID().replace(/-/g,'').slice(0,6),kind:'note',category:entry?.category||context.category||'appunto',title:entry?.title||context.reference?.title||'',date:entry?.date||todayISO(),note:entry?.note||'',reference:entry?.reference||context.reference||null,zoneId:entry?.zoneId||context.zoneId||null,record:entry?.record?{...entry.record}:{presence:'unknown',amount:null,minutes:entry?.observation?.minutes??null,people:null,elevation:null,habitat:'unknown'},observation:entry?.observation||null,share:entry?.shared===true,savedAt:entry?.savedAt||new Date().toISOString()};step=entry?2:context.category?(value.reference&&value.zoneId?2:1):0;render();if(!dialog.open)dialog.showModal();dialog.querySelector('button,input')?.focus({preventScroll:true});}};
+ return {open(context={},entry=null){existing=entry;origin=document.activeElement;value={id:entry?.id||Date.now().toString(36)+crypto.randomUUID().replace(/-/g,'').slice(0,6),kind:'note',category:entry?.category||context.category||'appunto',title:entry?.title||context.reference?.title||'',date:entry?.date||todayISO(),note:entry?.note||'',reference:entry?.reference||context.reference||null,zoneId:entry?.zoneId||context.zoneId||null,record:entry?.record?{...entry.record}:{presence:'unknown',amount:null,minutes:entry?.observation?.minutes??null,people:null,elevation:null,habitat:'unknown'},observation:entry?.observation||null,share:entry?.shared===true,savedAt:entry?.savedAt||new Date().toISOString()};step=entry?2:context.category?(value.reference&&value.zoneId?2:1):0;render();if(!dialog.open)openModal(dialog);dialog.querySelector('button,input')?.focus({preventScroll:true});}};
 }

@@ -1,3 +1,4 @@
+import {openModal} from './modal-flow.js';
 import {matchSpecies} from './species-search.js';
 import {initTraitCallouts} from './trait-callouts.js';
 initTraitCallouts();
@@ -1195,7 +1196,7 @@ function openFilterSheet(box) {
   };
   idfSheet._paint = paint;
   paint();
-  if (!idfSheet.open) idfSheet.showModal();
+  if (!idfSheet.open) openModal(idfSheet);
 }
 function focusFilter(root, selector) {
   (root.querySelector(selector) || root.querySelector('[data-idf-open],[data-idf-close]'))?.focus({preventScroll:true});

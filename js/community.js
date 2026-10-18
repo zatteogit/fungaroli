@@ -1,3 +1,4 @@
+import {openModal} from './modal-flow.js';
 import { SPECIES } from './species.js';
 import { todayISO } from './weather.js';
 import { mountSearchSelect } from './search-select.js';
@@ -88,7 +89,7 @@ export async function openAccount() {
   authDialog.classList.toggle('profile-dialog', !!user);
   if (!enabled) {
     authDialog.innerHTML = '<h2>Il taccuino è già tuo</h2><p>Puoi usarlo su questo dispositivo. Profili e segnalazioni collettive saranno disponibili quando il servizio è attivo.</p><button class="btn primary" type="button">Continua</button>';
-    authDialog.querySelector('button').onclick = () => authDialog.close(); authDialog.showModal(); return null;
+    authDialog.querySelector('button').onclick = () => authDialog.close(); openModal(authDialog); return null;
   }
   return new Promise((resolve) => {
     authDialog.innerHTML = user ? `<div class="profile-header"><div><h2>${esc(user.handle || 'Il tuo profilo')}</h2><p class="small muted profile-role" data-account-role>Profilo personale</p></div><button type="button" class="profile-close" data-close aria-label="Chiudi il profilo">×</button></div>
@@ -147,7 +148,7 @@ export async function openAccount() {
       try { await communityRequest('account', 'DELETE'); user = null; changed(); await refreshCommunity(); authDialog.close(); }
       catch (err) { status.textContent = err.message; }
     });
-    authDialog.showModal();
+    openModal(authDialog);
   });
 }
 
@@ -233,7 +234,7 @@ export async function openQuickReport(zoneId = '', speciesId = '') {
     } catch(err) {status.textContent=err.message;}
     finally {if(submit.isConnected){submit.disabled=false;submit.textContent='Condividi';}}
   };
-  if(!reportDialog.open)reportDialog.showModal();
+  if(!reportDialog.open)openModal(reportDialog);
   // Nessuna ricerca aperta automaticamente quando si arriva da una scheda già selezionata.
   reportDialog.querySelector('[data-report-dismiss]').focus({preventScroll:true});
   reportDialog.scrollTop=0;

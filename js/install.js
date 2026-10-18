@@ -1,3 +1,4 @@
+import {openModal} from './modal-flow.js';
 // Modalita' app: installazione (Android/Chrome/Edge con il prompt del browser, iPhone con le istruzioni),
 // service worker per l'uso senza rete e classi sull'<html> per adattare l'interfaccia al dispositivo.
 const ua = navigator.userAgent;
@@ -219,7 +220,7 @@ function openInvite(fromButton) {
   };
   dlg.querySelectorAll('[data-later]').forEach(button => button.addEventListener('click', dismiss));
   dlg.oncancel = event => { event.preventDefault(); dismiss(); };
-  if (!dlg.open) dlg.showModal();
+  if (!dlg.open) openModal(dlg);
   trackViewport();
   dlg.querySelector('.iv-scroll').scrollTop = 0;
   dlg.querySelector('.iv-close').focus({ preventScroll: true });

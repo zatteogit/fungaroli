@@ -1,3 +1,4 @@
+import {openModal,modalScrollPosition} from './modal-flow.js';
 // Le schede contestuali usano gli stessi renderer delle pagine, senza cambiare rotta.
 let renderEntity, enhance, dialog, origin, frames = [], sequence = 0, locked = false;
 const entityRoute = href => /^#\/(albero|pianta|specie|fungo|commestibile)\/[^/]+$/.test(href || '');
@@ -86,13 +87,14 @@ export function openEntitySheet(href, trigger = document.activeElement, {decorat
   decorate?.(body);
   ensureDialog();
   enhance?.(body); namespaceIds(body);
-  if (dialog.open) frames.at(-1).scroll = dialog.scrollTop;
+  if (dialog.open || dialog.hasAttribute('data-modal-suspended')) frames.at(-1).scroll = modalScrollPosition(dialog);
   else { origin = trigger; frames = []; }
   frames.push({body, href, title, trigger, scroll:0});
   showFrame(frames.at(-1));
   if (!dialog.open) {
     document.documentElement.classList.add('entity-open'); locked = true;
-    dialog.showModal();
+    openModal(dialog);
+    dialog.scrollTop = frames.at(-1).scroll;
     dialog.querySelector('[data-entity-close]').focus({preventScroll:true});
   }
   return true;

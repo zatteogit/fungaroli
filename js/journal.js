@@ -1,3 +1,4 @@
+import {openModal} from './modal-flow.js';
 import {renderNotebook, notebookRoute, notebookTitle} from './notebook-view.js';
 import {notebookDemo} from './notebook-demo.js';
 // Diario delle uscite: procedura guidata a passi + elenco con confronto previsto/trovato.
@@ -207,7 +208,7 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
     draft = { zoneId: getZoneId(), date: iso(new Date()), band: undefined, finds: {}, searched: [], effort: {}, note: '' };
     step = 0;
     render();
-    dlg.showModal();
+    openModal(dlg);
   }
 
   function next() { step = Math.min(STEPS.length - 1, step + 1); render(); }
@@ -410,7 +411,7 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
       const status=shareDialog.querySelector('[data-copy-status]');
       try{await navigator.clipboard.writeText(text);status.textContent='Appunto copiato. Incollalo nella chat o nel messaggio che preferisci.';}catch{shareDialog.querySelector('textarea').select();status.textContent='Seleziona e copia il testo, poi incollalo nel tuo messaggio.';}
     });
-    shareDialog.showModal();
+    openModal(shareDialog);
   });
   list.addEventListener('click',async event=>{
     const button=event.target.closest('[data-share-entry],[data-withdraw-entry],[data-del],[data-cancel-delete]');

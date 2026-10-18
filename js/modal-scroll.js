@@ -1,4 +1,5 @@
-// Blocco condiviso per tutti i dialog modali, anche sovrapposti o rimossi dalla rotta.
+import './modal-flow.js';
+// Blocco condiviso per il dialog attivo e i passaggi conservati dal percorso.
 // Nessun position:fixed sul body: intestazione e navigazione mantengono il viewport.
 const root = document.documentElement;
 let saved = null, opening = null, touch = null;

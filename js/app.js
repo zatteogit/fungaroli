@@ -1,3 +1,4 @@
+import {openModal} from './modal-flow.js';
 import {speciesFeatures} from './species-search.js';
 import './modal-scroll.js';
 import {factCards,enhanceContentReading} from './content-ui.js';
@@ -428,7 +429,7 @@ document.addEventListener('click', e => {
   if(mode==='funghi'){setCompare('','');renderIdentify(box);}
   else if(mode==='piante')renderGuidedKey(box,'piante',{items:plants().map(p=>({id:p.id,name:p.name,latin:cardLatin(p.latin),href:`#/pianta/${encodeURIComponent(p.id)}`,danger:p.category==='Pericolose'})),thumb:plantThumb});
   else renderGuidedKey(box,'alberi',{items:Object.entries(treesData?.trees||{}).map(([id,t])=>({id,name:t.name,latin:cardLatin(t.latin),href:`#/albero/${encodeURIComponent(id)}`})),thumb:treeThumb});
-  recognitionDialog.showModal();document.documentElement.classList.add('recognition-open');enhanceGlossary(box);
+  openModal(recognitionDialog);document.documentElement.classList.add('recognition-open');enhanceGlossary(box);
 });
 
 function parseRoute(hash = location.hash) {
@@ -786,7 +787,7 @@ function checkSavedSeason() {
     if(document.querySelector('dialog[open]')){setTimeout(show,500);return;}
     const dlg=document.createElement('dialog');dlg.className='full-filters season-dialog';dlg.setAttribute('aria-labelledby','season-dialog-title');
     dlg.innerHTML=`<div class="fp-body"><h2 id="season-dialog-title">La stagione è cambiata</h2><p>${decision.suspendIntent?'Abbiamo sospeso la scelta salvata e aperto Sentieri.':'Abbiamo tolto il filtro salvato sulle specie, lasciando la tua attività.'}</p><p>${esc(decision.names.slice(0,4).join(', '))}${decision.names.length>4?' e altre specie':''}: fuori dal calendario indicativo di ${esc(fmtDate(filterDate(),{month:'long'}))}. Clima e quota possono spostarlo: questo non dimostra assenza.</p><p>La scelta precedente resta recuperabile.</p><div class="fp-head-actions"><button type="button" class="btn ghost" data-restore-season>Ripristina la mia scelta</button><button type="button" class="btn primary" data-accept-season>Continua</button></div></div>`;
-    document.body.append(dlg);dlg.querySelector('[data-restore-season]').onclick=()=>{restoreSeason();dlg.close();};dlg.querySelector('[data-accept-season]').onclick=()=>dlg.close();dlg.onclose=()=>{dlg.remove();$('#home-filter-action [data-more]')?.focus();};dlg.showModal();
+    document.body.append(dlg);dlg.querySelector('[data-restore-season]').onclick=()=>{restoreSeason();dlg.close();};dlg.querySelector('[data-accept-season]').onclick=()=>dlg.close();dlg.onclose=()=>{dlg.remove();$('#home-filter-action [data-more]')?.focus();};openModal(dlg);
   };
   setTimeout(show,0);
 }
@@ -1052,7 +1053,7 @@ function openFullFilters() {
     const selector=state.view==='mappa'?'#map-filters [data-more]':mobileHeader.matches && document.documentElement.classList.contains('title-in-bar')?'#appbar-home-filters [data-more]':'#home-filter-action [data-more]';
     $(selector)?.focus({preventScroll:true});
   };
-  paint(); dlg.showModal();
+  paint(); openModal(dlg);
 }
 
 let weatherUnavailable=false;
@@ -3159,7 +3160,7 @@ function applyLegal() {
     $('#ob-more').onclick = () => dlg.close();
     dlg.addEventListener('cancel', (e) => e.preventDefault());
     dlg.addEventListener('close', maybeInvite, { once: true }); // dopo l'avviso, l'invito a installare
-    dlg.showModal();
+    openModal(dlg);
   } else maybeInvite();
 }
 
@@ -3190,7 +3191,7 @@ document.addEventListener('click',event=>{
   legalRuleDialog.querySelector('.legal-rule-text').textContent=button.dataset.legalText;
   legalRuleDialog.querySelector('[data-legal-close]').onclick=()=>legalRuleDialog.close();
   legalRuleDialog.onclose=()=>button.isConnected&&button.focus({preventScroll:true});
-  legalRuleDialog.showModal();
+  openModal(legalRuleDialog);
 });
 
 // Dove trovare una specie: idoneita' dell'habitat per zona + indice di oggi (se il meteo e' caricato).

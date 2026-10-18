@@ -1423,6 +1423,15 @@ html.is-offline #updated { color: var(--warn-ink); font-weight: 600; }
 html.modal-scroll-locked { overflow:hidden; overscroll-behavior:none; }
 html { scrollbar-gutter: stable; }
 dialog { overscroll-behavior: contain; }
+.modal-flow-back { display:inline-flex; align-items:center; justify-content:center; flex:0 0 44px; width:44px; min-height:44px; padding:8px; border:0; border-radius:50%; background:transparent; color:inherit; cursor:pointer; }
+.modal-flow-back svg { width:24px; height:24px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+.modal-flow-back:focus-visible { outline:2px solid var(--focus); outline-offset:2px; }
+.modal-flow-header > :is(div,h2,span):not(.lb-tools) { min-width:0; }
+.modal-flow-header.report-header > div { flex:1; }
+.modal-flow-nav { position:sticky; top:0; z-index:20; display:flex; padding:4px 12px; background:var(--surface); }
+/* Nessun pannello precedente o backdrop resta visibile durante il cambio di passo. */
+dialog:is([data-modal-suspended],[data-modal-flow-leaving]) { display:none !important; transition:none !important; animation:none !important; }
+dialog:is([data-modal-suspended],[data-modal-flow-leaving])::backdrop { display:none; transition:none !important; }
 /* Safari riduce il visual viewport con la tastiera senza ridurre il layout viewport. */
 html.modal-viewport-constrained :is(.wiz,.sheet-dlg,.community-dialog,.cmp-chooser,.cms-dialog)[open]:modal {
   position:fixed;

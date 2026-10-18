@@ -1,3 +1,4 @@
+import {openModal} from './modal-flow.js';
 import './modal-scroll.js';
 import { initCommunity, communityReady, currentUser } from './community.js';
 import './images.js';
@@ -161,7 +162,7 @@ $('#cms-resources').onclick=e=>{const b=e.target.closest('[data-resource]');if(b
 $('#cms-agents').onclick=async()=>{
   const d=$('#cms-token-dialog');$('#cms-token-result').textContent='';
   $('#cms-token-resources').innerHTML='<legend>Sezioni</legend>'+CONTENT_RESOURCES.filter(r=>!r.readonly).map(r=>`<label><input type="checkbox" name="resource" value="${r.id}" ${r.id===doc?.id?'checked':''}> ${esc(r.title)}</label>`).join('');
-  d.showModal();await tokens();
+  openModal(d);await tokens();
 };
 $('#cms-token-dialog [data-close]').onclick=()=>{$('#cms-token-result').textContent='';$('#cms-token-dialog').close();};
 async function tokens(){const r=await api('tokens');$('#cms-token-list').innerHTML='<h3>Credenziali esistenti</h3>'+r.tokens.map(t=>`<div class="cms-token-row"><b>${esc(t.name)}</b> · ${esc(t.scopes.join(', '))}<br><span class="small muted">${t.revokedAt?'Revocata':`Scade il ${new Date(t.expiresAt).toLocaleDateString('it-IT')}`}</span>${!t.revokedAt?` <button type="button" class="btn ghost small" data-revoke="${t.id}">Revoca</button>`:''}</div>`).join('');}
@@ -200,7 +201,7 @@ function surveyRow(x){
   };
   row.append(info,del,err);return row;
 }
-$('#cms-survey').onclick=()=>{$('#cms-survey-result').textContent='';$('#cms-survey-find').reset();$('#cms-survey-dialog').showModal();surveyCount();};
+$('#cms-survey').onclick=()=>{$('#cms-survey-result').textContent='';$('#cms-survey-find').reset();openModal($('#cms-survey-dialog'));surveyCount();};
 $('#cms-survey-dialog [data-close]').onclick=()=>$('#cms-survey-dialog').close();
 $('#cms-survey-dialog').addEventListener('click',async e=>{
   const b=e.target.closest('[data-survey-download]');if(!b)return;

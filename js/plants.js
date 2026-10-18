@@ -1,3 +1,4 @@
+import {openModal} from './modal-flow.js';
 import {matchSpecies} from './species-search.js';
 import {factCards,monthCalendar} from './content-ui.js';
 import {enhanceEntityAccordions} from './entity-accordions.js';
@@ -44,7 +45,7 @@ export function renderPlants(box,{identify=false}={}){
   const input=box.querySelector('[data-plant-query]'),select=box.querySelector('[data-plant-habitat]');
   const panel=box.querySelector('.plant-filter-panel'),opener=box.querySelector('[data-open-plant-filters]');
   if(panel){
-    opener.addEventListener('click',()=>panel.showModal());
+    opener.addEventListener('click',()=>openModal(panel));
     panel.querySelectorAll('[data-close-plant-filters]').forEach(b=>b.addEventListener('click',()=>panel.close()));
     panel.addEventListener('close',()=>opener.isConnected&&opener.focus({preventScroll:true}));
     panel.querySelector('[data-reset-plant-filters]').addEventListener('click',()=>{Object.assign(state,{flowering:false,lookalikes:false,habitat:''});sync();update();});

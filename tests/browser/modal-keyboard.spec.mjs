@@ -1,6 +1,6 @@
 import {test,expect} from '@playwright/test';
 import {preparePage} from '../../tools/visual-audit.mjs';
-test('tastiera con layout viewport invariato: modale, chiusura e suggerimenti restano nell’area visibile',async({browser})=>{
+for(const nested of [false,true])test(`tastiera con layout viewport invariato: campo e suggerimenti ${nested?'nel percorso dalla scheda':'nel taccuino'}`,async({browser})=>{
  const context=await browser.newContext({viewport:{width:390,height:844},reducedMotion:'reduce',serviceWorkers:'block'}),page=await preparePage(context);
  await page.addInitScript(()=>{
   localStorage.setItem('fungaroli:install-later',String(Date.now()));
@@ -8,8 +8,12 @@ test('tastiera con layout viewport invariato: modale, chiusura e suggerimenti re
   Object.defineProperty(window,'visualViewport',{configurable:true,value:viewport});
   window.setKeyboardViewport=(height,offsetTop)=>{Object.assign(viewport,{height,offsetTop});viewport.dispatchEvent(new Event('resize'));viewport.dispatchEvent(new Event('scroll'));};
  });
- await page.goto('/#/diario');await page.locator('[data-new-note]').first().click();
- const dialog=page.locator('.notebook-dialog[open]');await dialog.locator('[data-note-type="fungo"]').click();
+ if(nested){
+  await page.goto('/#/pianta/cicuta');await page.locator('#plant-detail a[href="#/pianta/finocchietto"]').click();await page.locator('#entity-sheet [data-note-kind]').click();
+ }else{
+  await page.goto('/#/diario');await page.locator('[data-new-note]').first().click();await page.locator('.notebook-dialog [data-note-type="fungo"]').click();
+ }
+ const dialog=page.locator('.notebook-dialog[open]');await expect(page.locator('dialog[open]:modal')).toHaveCount(1);
  const input=dialog.locator('[data-note-zone]'),list=dialog.locator('#notebook-zone-options');await input.focus();
  const documentScroll=await page.evaluate(()=>scrollY);
  for(const [height,offset]of [[390,0],[330,80],[440,0]]){
