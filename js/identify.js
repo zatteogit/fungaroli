@@ -76,6 +76,9 @@ const SHAPE_D = {
   conico: 'M32 8 C36 16 46 26 50 34 H14 C18 26 28 16 32 8 Z', ombrellato: 'M4 32 C14 26 22 22 27 17 Q32 9 37 17 C42 22 50 26 60 32 L60 34 H4 Z',
   imbuto: 'M6 20 Q32 36 58 20 L46 34 H18 Z', trombetta: 'M12 10 Q32 22 52 10 L38 54 H26 Z',
 };
+// Microprofili neutri del solo contorno: riusano le geometrie didattiche,
+// senza colore, gambo o dettagli che possano sembrare un ritratto della specie.
+const shapeHint = v => SHAPE_D[v] ? `<svg class="ts-shape-hint" viewBox="0 0 64 ${v==='trombetta'?60:40}" aria-hidden="true" focusable="false"><path d="${SHAPE_D[v]}"/></svg>` : '';
 const SHAPE = {
   convesso: sh('M8 34 C10 16 54 16 56 34 Z'),
   piano: sh('M6 30 C8 25 56 25 58 30 L58 34 H6 Z'),
@@ -214,7 +217,7 @@ function comparisonControls(t, trait='cap_color') {
   const values = [].concat(t.traits?.[trait] || []);
   if (values.length < 2) return '';
   if (!values.includes(chosen[key])) chosen[key]=values[0];
-  const fields = `<div class="ts-dots${key==='shape'?' ts-forms':''}" role="group" aria-label="${label}: ${esc(t.name||t.latin)}">${values.map(v=>`<button type="button" class="${key==='shape'?'ts-form':'ts-dot ts-chip'}"${key!=='shape'?` style="--c:${esc(COLORS[v]?.[1] || 'var(--muted)')}"`:''} data-cmp-variant="${key}" data-cmp-variant-key="${esc(t.key)}" value="${esc(v)}" aria-pressed="${chosen[key]===v}">${esc(optLabel(QK(trait),v))}</button>`).join('')}</div>`;
+  const fields = `<div class="ts-dots${key==='shape'?' ts-forms':''}" role="group" aria-label="${label}: ${esc(t.name||t.latin)}">${values.map(v=>`<button type="button" class="${key==='shape'?'ts-form':'ts-dot ts-chip'}"${key!=='shape'?` style="--c:${esc(COLORS[v]?.[1] || 'var(--muted)')}"`:''} data-cmp-variant="${key}" data-cmp-variant-key="${esc(t.key)}" value="${esc(v)}" aria-pressed="${chosen[key]===v}">${key==='shape'?shapeHint(v):''}${esc(optLabel(QK(trait),v))}</button>`).join('')}</div>`;
   return `<div class="cmp-variant-fields">${fields}</div><span class="cmp-variant-status" role="status"></span>`;
 }
 function updateComparisonVariant(control, gallery) {
@@ -527,7 +530,7 @@ export function traitStrip(edibleId, t = refOf(edibleId)) {
     return `<span class="ts-variant-group"><span class="ts-control-label">${dot?'Colore':'Forma'}</span><span class="ts-dots${dot ? '' : ' ts-forms'}" role="group" aria-label="${label}">${g.values.map((v) => {
       const name = esc(one(Q(q), v)), frequency=t.trait_freq?.[q]?.[v];
       // pillola con il colore e il suo nome: su telefono un pallino da solo è un bersaglio troppo piccolo e muto
-      return `<button type="button" class="${dot ? 'ts-dot ts-chip' : 'ts-form'}"${dot ? ` style="--c:${COLORS[v]?.[1] || '#999'}"` : ''} aria-pressed="${v === g.drawn}" data-ill-key="${esc(t.key)}" data-ill-v="${esc(v)}" data-ill-drawn="${esc(g.drawn)}">${dot ? `<span class="ts-choice-label">${name}${frequency ? `<small>${esc(frequency)}</small>` : ''}</span>` : name}</button>`;
+      return `<button type="button" class="${dot ? 'ts-dot ts-chip' : 'ts-form'}"${dot ? ` style="--c:${COLORS[v]?.[1] || '#999'}"` : ''} aria-pressed="${v === g.drawn}" data-ill-key="${esc(t.key)}" data-ill-v="${esc(v)}" data-ill-drawn="${esc(g.drawn)}">${dot ? `<span class="ts-choice-label">${name}${frequency ? `<small>${esc(frequency)}</small>` : ''}</span>` : shapeHint(v)+name}</button>`;
     }).join('')}</span></span>`;
   };
   const dots = pick('colors', 'cap_color', 'Colori del cappello descritti dalle fonti', true) + pick('shapes', 'cap_shape', 'Forme del cappello descritte dalle fonti', false);

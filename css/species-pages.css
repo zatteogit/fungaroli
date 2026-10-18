@@ -525,6 +525,8 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 .fungus-page .ts-card .ts-controls .ts-chip[aria-pressed="true"]::before { box-shadow:0 0 0 2px var(--surface),0 0 0 3px var(--text); }
 .fungus-page .ts-card .ts-controls button:focus-visible { outline:2px solid var(--focus); outline-offset:3px; border-radius:4px; }
 .ts-choice-label { display:grid; gap:1px; text-align:left; }
+.ts-form { display:inline-flex; align-items:center; justify-content:center; gap:5px; }
+.ts-form .ts-shape-hint { width:24px; height:20px; flex:none; fill:none; stroke:currentColor; stroke-width:3; stroke-linecap:round; stroke-linejoin:round; }
 .ts-choice-label small { color:var(--muted); font:400 12px/1.4 var(--font-body); }
 .fungus-page .ts-controls .ts-note { margin:0; font-size:12px; line-height:1.5; }
 .ts-facts { display:grid; gap:7px; width:100%; }
