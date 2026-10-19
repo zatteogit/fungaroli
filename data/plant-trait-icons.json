@@ -1,5 +1,5 @@
 {
- "note": "Schemi dei valori botanici generati con AI (image_gen) dai dati di recognize-plants.json. Le icone generiche sono esempi della categoria per la chiave guidata, non ritratti delle specie. Nelle schede forme dei fiori, tipi dei frutti e foglie composte richiedono una revisione registrata in species; i colori sono campioni cromatici. Fonti, riferimenti fotografici e limiti delle correzioni: docs/assets/fragolina-2026-10-18/README.md. Correzioni finocchietto e rosa canina: docs/assets/correzioni-botaniche-2026-10-18/README.md. Raster specifici aggiuntivi e limiti: docs/ipotesi/integrazione-raster-botanici-2026-10-18.md.",
+ "note": "Schemi dei valori botanici generati con AI (image_gen) dai dati di recognize-plants.json. Le icone generiche sono esempi della categoria per la chiave guidata, non ritratti delle specie. Nelle schede forme dei fiori, tipi dei frutti, foglie intere e dettagli dei margini richiedono una revisione registrata in species; i colori sono campioni cromatici. Fonti, riferimenti fotografici e limiti delle correzioni: docs/assets/fragolina-2026-10-18/README.md. Correzioni finocchietto e rosa canina: docs/assets/correzioni-botaniche-2026-10-18/README.md. Raster specifici aggiuntivi e limiti: docs/ipotesi/integrazione-raster-botanici-2026-10-18.md.",
  "author": "Fronda/Fungaroli, rivista dal progetto",
  "license": "CC BY-SA 4.0",
  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it",
@@ -247,6 +247,439 @@
      "sha256": "b2f9e1a82766f800ab307ac07638da53e02f2eee21dcec9288c41ef332b000b4",
      "review": "docs/ipotesi/integrazione-raster-botanici-2026-10-18.md",
      "scope": "Fusto centrale verde non legnoso, foglie composte contrapposte e infiorescenza chiara; esempio del portamento erbaceo. Nessun organo sotterraneo o frutto maturo dedotto."
+    }
+   }
+  },
+  "corbezzolo": {
+   "leaf_type": {
+    "semplice": {
+     "src": "assets/plant-traits/corbezzolo-leaf_type-semplice.webp",
+     "source": "https://www.sardegnaforeste.it/sites/default/files/3_68_20130916114432.pdf",
+     "referencePhoto": "assets/plants/corbezzolo-3.webp",
+     "sha256": "386e160a507e14c611b99f192355b96cce21a3cec22fd50df8ebe992597344a5",
+     "review": "docs/assets/botanici-specifici-2026-10-19/corbezzolo-revisione.md",
+     "scope": "Foglia semplice ovale-lanceolata con piccolo picciolo e dentatura chiaramente rappresentata; nervatura schematica, non diagnostica."
+    }
+   },
+   "leaf_margin": {
+    "dentato": {
+     "src": "assets/plant-traits/corbezzolo-leaf_margin-dentato.webp",
+     "source": "https://www.sardegnaforeste.it/sites/default/files/3_68_20130916114432.pdf",
+     "referencePhoto": "assets/plants/corbezzolo-3.webp",
+     "sha256": "cec636fe13972b1216ac0f2c6bcda2ae934de4fd53bb23730ea9047d9394fc0b",
+     "review": "docs/assets/botanici-specifici-2026-10-19/corbezzolo-revisione.md",
+     "scope": "Ingrandimento del margine laterale dentato; contorni rettilinei sinistro e inferiore sono limiti del dettaglio, non bordo naturale."
+    }
+   },
+   "fruit_type": {
+    "carnoso": {
+     "src": "assets/plant-traits/corbezzolo-fruit_type-carnoso.webp",
+     "source": "https://www.sardegnaforeste.it/sites/default/files/3_68_20130916114432.pdf",
+     "referencePhoto": "assets/plants/corbezzolo-1.webp",
+     "sha256": "43bc584daf1cb78ef9583be6432cb54c0d3473d234e1d153f899e135d9f8bac6",
+     "review": "docs/assets/botanici-specifici-2026-10-19/corbezzolo-revisione.md",
+     "scope": "Bacca globosa arancio-rossa con superficie tubercolata conica, non polidrupa e non fragola; numero/dimensione dei tubercoli stilizzati."
+    }
+   },
+   "flower_shape": {
+    "campanula": {
+     "src": "assets/plant-traits/corbezzolo-flower_shape-campanula.webp",
+     "source": "https://www.sardegnaforeste.it/sites/default/files/3_68_20130916114432.pdf",
+     "referencePhoto": "https://www.comune.poggio-a-caiano.po.it/moduli/output_immagine.php?id=6176",
+     "review": "docs/assets/botanici-specifici-2026-10-19/corbezzolo-revisione.md",
+     "scope": "Tre corolle bianco-crema urceolate pendule, bocca inferiore stretta e minuscoli denti ricurvi; scelta compositiva, non conteggio dei fiori biologico. Calice verde e asse rossastro; organi interni non rappresentati.",
+     "sha256": "459514c913116ebb143fcaae51c9710dc1fd2202893505eda5c52974767b1889"
+    }
+   }
+  },
+  "ortica": {
+   "leaf_type": {
+    "semplice": {
+     "src": "assets/plant-traits/ortica-leaf_type-semplice.webp",
+     "sha256": "5abd40c7da444a6ec11924137599546b0a5bb9762f509d487c8570884ef1e4b3",
+     "source": "https://www.infoflora.ch/it/flora/urtica-dioica.html",
+     "referencePhoto": "assets/plants/ortica-2.webp",
+     "review": "Lamina semplice ovata con base cordata, apice acuminato e denti acuti; dettaglio coerente. V1 rifiutata per proiezioni bianche aghiformi, rimosse nella correzione raster V2. Peli non usati come carattere diagnostico.",
+     "scope": "species",
+     "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/ortica-melissa-v2.png"
+    }
+   },
+   "leaf_margin": {
+    "dentato": {
+     "src": "assets/plant-traits/ortica-leaf_margin-dentato.webp",
+     "sha256": "5b0cb5a5741e4ae1eaad2cf04cda285e9d0a7c0d93259109f721e396c7e5ea11",
+     "source": "https://www.infoflora.ch/it/flora/urtica-dioica.html",
+     "referencePhoto": "assets/plants/ortica-2.webp",
+     "review": "Lamina semplice ovata con base cordata, apice acuminato e denti acuti; dettaglio coerente. V1 rifiutata per proiezioni bianche aghiformi, rimosse nella correzione raster V2. Peli non usati come carattere diagnostico.",
+     "scope": "species",
+     "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/ortica-melissa-v2.png"
+    }
+   },
+   "flower_shape": {
+    "fiori_minuti": {
+     "src": "assets/plant-traits/ortica-flower_shape-fiori_minuti.webp",
+     "sha256": "3f3e60f8511e3fce72895dc99f294b58e663240e73f948c47eba0815df5b3ff9",
+     "source": "https://www.infoflora.ch/it/flora/urtica-dioica.html",
+     "referencePhoto": "assets/plants/ortica-3.webp",
+     "review": "Infiorescenza ramificata pendula di piccoli fiori verdi, non grandi corolle e non un amento cilindrico. Il disegno non distingue sessi della specie dioica.",
+     "scope": "species",
+     "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/ortica-melissa-fiori-v1.png"
+    }
+   }
+  },
+  "melissa": {
+   "leaf_type": {
+    "semplice": {
+     "src": "assets/plant-traits/melissa-leaf_type-semplice.webp",
+     "sha256": "ec5229f21e0f4c95d517af5a66a2906f40194435a89ccd6f00b8e5285bca7b0a",
+     "source": "https://www.infoflora.ch/it/flora/melissa-officinalis.html",
+     "referencePhoto": "assets/plants/melissa-2.webp",
+     "review": "Lamina semplice ovata con base subcordata e bordo crenato-dentato; dettaglio arrotondato coerente con descrizione e foto. Venatura reticolata semplificata; non descrive superficie microscopica.",
+     "scope": "species",
+     "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/ortica-melissa-v2.png"
+    }
+   },
+   "leaf_margin": {
+    "dentato": {
+     "src": "assets/plant-traits/melissa-leaf_margin-dentato.webp",
+     "sha256": "74689ecdfce3c93aabccd710eee9850296bfeef34d056e3a54fa2ca328688d6d",
+     "source": "https://www.infoflora.ch/it/flora/melissa-officinalis.html",
+     "referencePhoto": "assets/plants/melissa-2.webp",
+     "review": "Lamina semplice ovata con base subcordata e bordo crenato-dentato; dettaglio arrotondato coerente con descrizione e foto. Venatura reticolata semplificata; non descrive superficie microscopica.",
+     "scope": "species",
+     "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/ortica-melissa-v2.png"
+    }
+   },
+   "flower_shape": {
+    "tubo_labbra": {
+     "src": "assets/plant-traits/melissa-flower_shape-tubo_labbra.webp",
+     "sha256": "c082cf1a7de8bdeef3b827c0638ae6ff81785637b26d81a56832c646e7c53e2f",
+     "source": "https://www.infoflora.ch/it/flora/melissa-officinalis.html",
+     "referencePhoto": "assets/plants/melissa-3.webp",
+     "review": "Corolla crema a tubo arcuato, labbro superiore debolmente bilobo e inferiore trilobo, calice verde. V1 rifiutata per labbro superiore a ventaglio; V2 corretta raster contro foto, stami omessi anziche conteggio incerto.",
+     "scope": "species",
+     "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/melissa-fiore-v2.png"
+    }
+   }
+  },
+  "malva": {
+   "leaf_type": {
+    "semplice": {
+     "src": "assets/plant-traits/malva-leaf_type-semplice.webp",
+     "sha256": "ff9cad7ba34f5b361a417eba0782b5c7084ec6090537e62ae59db687152d38d6",
+     "source": "https://www.infoflora.ch/it/flora/malva-sylvestris.html",
+     "referencePhoto": "assets/plants/malva-3.webp",
+     "review": "Foglia semplice palmato-lobata con cinque lobi arrotondati e piccoli denti; dettaglio mostra insieme due lobi e dentatura, per entrambi i valori documentati. Variabilita reale dei lobi non esaustivamente rappresentata.",
+     "scope": "species",
+     "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/malva-rovo-v1.png"
+    }
+   },
+   "leaf_margin": {
+    "lobato": {
+     "src": "assets/plant-traits/malva-leaf_margin-lobato.webp",
+     "sha256": "813113f985235c6a9fee830d19c4f6aa73451a14552a32c9efffc8b75518b091",
+     "source": "https://www.infoflora.ch/it/flora/malva-sylvestris.html",
+     "referencePhoto": "assets/plants/malva-3.webp",
+     "review": "Foglia semplice palmato-lobata con cinque lobi arrotondati e piccoli denti; dettaglio mostra insieme due lobi e dentatura, per entrambi i valori documentati. Variabilita reale dei lobi non esaustivamente rappresentata.",
+     "scope": "species",
+     "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/malva-rovo-v1.png"
+    },
+    "dentato": {
+     "src": "assets/plant-traits/malva-leaf_margin-lobato.webp",
+     "sha256": "813113f985235c6a9fee830d19c4f6aa73451a14552a32c9efffc8b75518b091",
+     "source": "https://www.infoflora.ch/it/flora/malva-sylvestris.html",
+     "referencePhoto": "assets/plants/malva-3.webp",
+     "review": "Foglia semplice palmato-lobata con cinque lobi arrotondati e piccoli denti; dettaglio mostra insieme due lobi e dentatura, per entrambi i valori documentati. Variabilita reale dei lobi non esaustivamente rappresentata.",
+     "scope": "species",
+     "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/malva-rovo-v1.png"
+    }
+   },
+   "flower_shape": {
+    "cinque_petali": {
+     "src": "assets/plant-traits/malva-flower_shape-cinque_petali.webp",
+     "sha256": "d9032066c3e941dc0de98d50b22ac720007719a2f268087561d1595c60de719b",
+     "source": "https://www.infoflora.ch/it/flora/malva-sylvestris.html",
+     "referencePhoto": "assets/plants/malva-1.webp",
+     "review": "Cinque petali rosa-porpora distinti, intaccatura apicale e nervature piu scure, colonna staminale centrale schematica. Non conteggia stami microscopici.",
+     "scope": "species",
+     "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/malva-rovo-organi-v1.png"
+    }
+   }
+  },
+  "rovo": {
+   "leaf_type": {
+    "composta": {
+     "src": "assets/plant-traits/rovo-leaf_type-composta.webp",
+     "sha256": "54789ad614d91cfc002ba9d9970a58bfc60a4103ca2303ce609e1a68027e278d",
+     "source": "https://www.efloras.org/florataxon.aspx?flora_id=1&taxon_id=250041051",
+     "referencePhoto": "assets/plants/rovo-2.webp",
+     "review": "Foglia composta con esattamente cinque foglioline separate, terminale maggiore, dentatura coerente; foto reale conferma cinque foglioline. Il dettaglio e della fogliolina, non di una foglia semplice.",
+     "scope": "species",
+     "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/malva-rovo-v1.png"
+    }
+   },
+   "leaf_margin": {
+    "dentato": {
+     "src": "assets/plant-traits/rovo-leaf_margin-dentato.webp",
+     "sha256": "fb91888333b23403f848945e7c5f9d3057ae0bdb1288e271691c27220a472bb7",
+     "source": "https://www.efloras.org/florataxon.aspx?flora_id=1&taxon_id=250041051",
+     "referencePhoto": "assets/plants/rovo-2.webp",
+     "review": "Foglia composta con esattamente cinque foglioline separate, terminale maggiore, dentatura coerente; foto reale conferma cinque foglioline. Il dettaglio e della fogliolina, non di una foglia semplice.",
+     "scope": "species",
+     "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/malva-rovo-v1.png"
+    }
+   },
+   "flower_shape": {
+    "cinque_petali": {
+     "src": "assets/plant-traits/rovo-flower_shape-cinque_petali.webp",
+     "sha256": "34d60a33701bcd2f1a2c5d058eee182da1e77b7b4836ee63eeb1954f54d3a8fa",
+     "source": "https://www.nzflora.info/factsheet/taxon/Rubus-ulmifolius.html",
+     "referencePhoto": "assets/plants/rovo-3.webp",
+     "review": "Cinque petali rosa arrotondati e molti stami; foto della stessa specie. Nessuna intaccatura profonda da malva.",
+     "scope": "species",
+     "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/malva-rovo-organi-v1.png"
+    }
+   },
+   "fruit_type": {
+    "mora": {
+     "src": "assets/plant-traits/rovo-fruit_type-mora.webp",
+     "sha256": "8d936098c71943753fce948a55d5f8709ab1a76ca7fee16243fca17d8519ac38",
+     "source": "https://www.efloras.org/florataxon.aspx?flora_id=1&taxon_id=250041051",
+     "referencePhoto": "assets/plants/rovo-1.webp",
+     "review": "Frutto aggregato nero-porpora con drupeole distinte e calice sul lato del pedicello. V1 non usata per aculei involontari sul pedicello; V2 raster con pedicello liscio.",
+     "scope": "species",
+     "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/rovo-frutto-v2.png"
+    }
+   }
+  },
+  "biancospino": {
+   "leaf_type": {
+    "semplice": {
+     "src": "assets/plant-traits/biancospino-leaf_type-semplice.webp",
+     "sha256": "2cf906c330cb784e48c53eaf002828fa7a0b191550ede8db68f7d10e85a19925",
+     "source": "https://www.infoflora.ch/it/flora/crataegus-monogyna.html",
+     "referencePhoto": "assets/plants/biancospino-2.webp",
+     "review": "Lamina semplice profondamente divisa in cinque lobi, seni profondi e denti terminali, lati in prevalenza interi; dettaglio mostra il seno e due lobi. Corrisponde a C. monogyna e non a quercia.",
+     "scope": "species",
+     "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/biancospino-prugnolo-v1.png"
+    }
+   },
+   "leaf_margin": {
+    "lobato": {
+     "src": "assets/plant-traits/biancospino-leaf_margin-lobato.webp",
+     "sha256": "410f59d0a7fee6ff2e12440b248c0ceb1e8e9dcde1c4e405ff7701d7e3e00d6a",
+     "source": "https://www.infoflora.ch/it/flora/crataegus-monogyna.html",
+     "referencePhoto": "assets/plants/biancospino-2.webp",
+     "review": "Lamina semplice profondamente divisa in cinque lobi, seni profondi e denti terminali, lati in prevalenza interi; dettaglio mostra il seno e due lobi. Corrisponde a C. monogyna e non a quercia.",
+     "scope": "species",
+     "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/biancospino-prugnolo-v1.png"
+    }
+   },
+   "flower_shape": {
+    "cinque_petali": {
+     "src": "assets/plant-traits/biancospino-flower_shape-cinque_petali.webp",
+     "sha256": "19dc693086c67ba51759d3c3906c71eba249bce45bebe3bf4534df52909a0a1b",
+     "source": "https://www.nwcb.wa.gov/images/weeds/English_hawthorn_written_findings.pdf#page=2",
+     "referencePhoto": "assets/plants/biancospino-2.webp",
+     "review": "Cinque petali bianchi, stami con antere rosa-porpora, uno stilo centrale. Sepali piccoli e triangolari.",
+     "scope": "species",
+     "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/biancospino-prugnolo-organi-v1.png"
+    }
+   },
+   "fruit_type": {
+    "carnoso": {
+     "src": "assets/plant-traits/biancospino-fruit_type-carnoso.webp",
+     "sha256": "0292243cd405b3dd7c969a76f592a64956eb10b6cae4a2d96ce6384a24433d69",
+     "source": "https://www.nwcb.wa.gov/images/weeds/English_hawthorn_written_findings.pdf#page=3",
+     "referencePhoto": "https://www.nwcb.wa.gov/images/weeds/English_hawthorn_written_findings.pdf#page=3",
+     "review": "Due pomi rossi ovoidi con piccolo calice secco persistente alla parte opposta al pedicello. Foto reale Ben Legler 2006 p.3 verificata dal PDF renderizzato. La scala del calice e resa didatticamente leggibile, non metrica.",
+     "scope": "species",
+     "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/biancospino-prugnolo-organi-v1.png"
+    }
+   }
+  },
+  "prugnolo": {
+   "leaf_type": {
+    "semplice": {
+     "src": "assets/plant-traits/prugnolo-leaf_type-semplice.webp",
+     "sha256": "22ec2daf011726e41fc86bd07b7c12eb144fff99eb85ff767b7577f7d54a300f",
+     "source": "https://www.infoflora.ch/it/flora/prunus-spinosa.html",
+     "referencePhoto": "assets/plants/prugnolo-2.webp",
+     "review": "Lamina semplice ellittico-lanceolata con base ristretta, piccolo picciolo e denti acuti; dettaglio mostra bordo dentato della stessa specie. Non disegnati caratteri di superficie non richiesti.",
+     "scope": "species",
+     "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/biancospino-prugnolo-v1.png"
+    }
+   },
+   "leaf_margin": {
+    "dentato": {
+     "src": "assets/plant-traits/prugnolo-leaf_margin-dentato.webp",
+     "sha256": "ea70e080bc85dab3cca24278f67a8e3a9af6381793fb00aaa8f1f5510437a274",
+     "source": "https://www.infoflora.ch/it/flora/prunus-spinosa.html",
+     "referencePhoto": "assets/plants/prugnolo-2.webp",
+     "review": "Lamina semplice ellittico-lanceolata con base ristretta, piccolo picciolo e denti acuti; dettaglio mostra bordo dentato della stessa specie. Non disegnati caratteri di superficie non richiesti.",
+     "scope": "species",
+     "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/biancospino-prugnolo-v1.png"
+    }
+   },
+   "flower_shape": {
+    "cinque_petali": {
+     "src": "assets/plant-traits/prugnolo-flower_shape-cinque_petali.webp",
+     "sha256": "570513b1444673c764ea3429779c1b6b7e75c648c06c782e5514b094b8528934",
+     "source": "https://www.infoflora.ch/it/flora/prunus-spinosa.html",
+     "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TSB19825.jpg",
+     "review": "Cinque petali bianchi obovati, molti stami con antere giallo-brune e un pistillo. Riferimento fotografico Universita di Trieste Andrea Moro CC BY-SA 4.0; pagina Roma taxon2222.",
+     "scope": "species",
+     "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/biancospino-prugnolo-organi-v1.png"
+    }
+   },
+   "fruit_type": {
+    "carnoso": {
+     "src": "assets/plant-traits/prugnolo-fruit_type-carnoso.webp",
+     "sha256": "3e8abb3dafc119d9ea59d2fc5a84de02dcc12a9da24d88665d20178e81de4c56",
+     "source": "https://www.infoflora.ch/it/flora/prunus-spinosa.html",
+     "referencePhoto": "assets/plants/prugnolo-1.webp",
+     "review": "Drupa globosa blu-nera con pruina blu chiara, senza calice distale stellato da biancospino; pedicello corto.",
+     "scope": "species",
+     "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/biancospino-prugnolo-organi-v1.png"
+    }
+   }
+  },
+  "genziana-maggiore": {
+   "leaf_type": {
+    "semplice": {
+     "src": "assets/plant-traits/genziana-maggiore-leaf-type-semplice-v1.webp",
+     "source": "https://www.infoflora.ch/it/flora/gentiana-lutea.html",
+     "referencePhoto": "assets/plants/genziana-maggiore-1.webp",
+     "sha256": "d8797a0603a36e92719a920cbd7e8484a7f629daf54ee423c36e55b43b2386f7",
+     "review": "approvato: margine intero, 5-7 nervature convergenti; fiore a cinque lobi stretti; coppia opposta. Master v1 scartato per alone; v2 corretto via image_gen e rivisto. Solo schema didattico, non identificazione.",
+     "scope": "species-specific",
+     "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/genziana-master-v2.png"
+    }
+   },
+   "leaf_margin": {
+    "intero": {
+     "src": "assets/plant-traits/genziana-maggiore-leaf-margin-intero-v1.webp",
+     "source": "https://www.infoflora.ch/it/flora/gentiana-lutea.html",
+     "referencePhoto": "assets/plants/genziana-maggiore-1.webp",
+     "sha256": "6fe46495b4b3bd201c0f4f7299532cc880b805c020eaa51a817fe742bebc263c",
+     "review": "approvato: margine intero, 5-7 nervature convergenti; fiore a cinque lobi stretti; coppia opposta. Master v1 scartato per alone; v2 corretto via image_gen e rivisto. Solo schema didattico, non identificazione.",
+     "scope": "species-specific",
+     "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/genziana-master-v2.png"
+    }
+   },
+   "flower_shape": {
+    "cinque_petali": {
+     "src": "assets/plant-traits/genziana-maggiore-flower-shape-cinque_petali-v1.webp",
+     "source": "https://www.infoflora.ch/it/flora/gentiana-lutea.html",
+     "referencePhoto": "assets/plants/genziana-maggiore-1.webp",
+     "sha256": "c01f52d6827891be2d12bece88125503549b3b27156602744343827c5e2a5e36",
+     "review": "approvato: margine intero, 5-7 nervature convergenti; fiore a cinque lobi stretti; coppia opposta. Master v1 scartato per alone; v2 corretto via image_gen e rivisto. Solo schema didattico, non identificazione.",
+     "scope": "species-specific",
+     "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/genziana-master-v2.png"
+    }
+   },
+   "leaf_arrangement": {
+    "opposte": {
+     "src": "assets/plant-traits/genziana-maggiore-leaf-arrangement-opposte-v1.webp",
+     "source": "https://www.infoflora.ch/it/flora/gentiana-lutea.html",
+     "referencePhoto": "assets/plants/genziana-maggiore-1.webp",
+     "sha256": "44aa9dff7e4b9df25de03df1e8c6704bcca1a164ee14dca6d070f101fe9c0896",
+     "review": "approvato: margine intero, 5-7 nervature convergenti; fiore a cinque lobi stretti; coppia opposta. Master v1 scartato per alone; v2 corretto via image_gen e rivisto. Solo schema didattico, non identificazione.",
+     "scope": "species-specific",
+     "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/genziana-master-v2.png"
+    }
+   }
+  },
+  "veratro": {
+   "leaf_type": {
+    "semplice": {
+     "src": "assets/plant-traits/veratro-leaf-type-semplice-v1.webp",
+     "source": "https://www.infoflora.ch/it/flora/veratrum-album.html",
+     "referencePhoto": "assets/plants/veratro-3.webp",
+     "sha256": "9d1009aa8b3b1f8176281d4f9064ec8a83a4cd6483b6647a8e5bdef7efde43fc",
+     "review": "approvato: lamina larga intera con nervature longitudinali e plettatura; sei tepali verdastri e sei stami; foglie alterne su guaine abbraccianti, senza coppie opposte. Foto osservate a piena risoluzione; solo schema didattico.",
+     "scope": "species-specific",
+     "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/veratro-master-v1.png"
+    }
+   },
+   "leaf_margin": {
+    "intero": {
+     "src": "assets/plant-traits/veratro-leaf-margin-intero-v1.webp",
+     "source": "https://www.infoflora.ch/it/flora/veratrum-album.html",
+     "referencePhoto": "assets/plants/veratro-3.webp",
+     "sha256": "695d21b33b3c7dd41d685f61337749e8eae03b0286145530a6f707f07e75feab",
+     "review": "approvato: lamina larga intera con nervature longitudinali e plettatura; sei tepali verdastri e sei stami; foglie alterne su guaine abbraccianti, senza coppie opposte. Foto osservate a piena risoluzione; solo schema didattico.",
+     "scope": "species-specific",
+     "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/veratro-master-v1.png"
+    }
+   },
+   "flower_shape": {
+    "sei_tepali": {
+     "src": "assets/plant-traits/veratro-flower-shape-sei_tepali-v1.webp",
+     "source": "https://www.infoflora.ch/it/flora/veratrum-album.html",
+     "referencePhoto": "assets/plants/veratro-4.webp",
+     "sha256": "76399f1cd6da80656979439ddb09e89f5a7ceef3a0da4b4400fc53ffac1e7f4c",
+     "review": "approvato: lamina larga intera con nervature longitudinali e plettatura; sei tepali verdastri e sei stami; foglie alterne su guaine abbraccianti, senza coppie opposte. Foto osservate a piena risoluzione; solo schema didattico.",
+     "scope": "species-specific",
+     "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/veratro-master-v1.png"
+    }
+   },
+   "leaf_arrangement": {
+    "alterne": {
+     "src": "assets/plant-traits/veratro-leaf-arrangement-alterne-v1.webp",
+     "source": "https://www.infoflora.ch/it/flora/veratrum-album.html",
+     "referencePhoto": "assets/plants/veratro-3.webp",
+     "sha256": "cfe4c5f746af3bd8a2710aa43da91acadcde39c60a4cea10b07a95628cb45e89",
+     "review": "approvato: lamina larga intera con nervature longitudinali e plettatura; sei tepali verdastri e sei stami; foglie alterne su guaine abbraccianti, senza coppie opposte. Foto osservate a piena risoluzione; solo schema didattico.",
+     "scope": "species-specific",
+     "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/veratro-master-v1.png"
+    }
+   }
+  },
+  "aglio-orsino": {
+   "leaf_type": {
+    "semplice": {
+     "src": "assets/plant-traits/aglio-orsino-leaf-type-semplice-v1.webp",
+     "source": "https://www.infoflora.ch/it/flora/allium-ursinum.html",
+     "referencePhoto": "assets/plants/aglio-orsino-3.webp",
+     "sha256": "7f9220fb5b2e329681673d716b9a657f3ee781ca825879974f5ea0d28a1270a5",
+     "review": "approvato: foglia semplice lungo-picciolata e nervature arcuate; foglie tutte basali; ombrella semplice con pedicelli da unico punto e fiori bianchi sei tepali; capsula verde immatura trilobata verificata sulle ovaie in sviluppo in foto4, non colore di maturità. V1 respinto per venatura pennata, v2 corretto raster. Nessuna figura per leaf_margin null.",
+     "scope": "species-specific",
+     "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/aglio-master-v2.png"
+    }
+   },
+   "leaf_arrangement": {
+    "rosetta_basale": {
+     "src": "assets/plant-traits/aglio-orsino-leaf-arrangement-rosetta_basale-v1.webp",
+     "source": "https://www.infoflora.ch/it/flora/allium-ursinum.html",
+     "referencePhoto": "assets/plants/aglio-orsino-3.webp",
+     "sha256": "5caab3cc6d75d5028ea6fb5ce318ec9e10d2707f22104dd0c6c11d4ce5d24156",
+     "review": "approvato: foglia semplice lungo-picciolata e nervature arcuate; foglie tutte basali; ombrella semplice con pedicelli da unico punto e fiori bianchi sei tepali; capsula verde immatura trilobata verificata sulle ovaie in sviluppo in foto4, non colore di maturità. V1 respinto per venatura pennata, v2 corretto raster. Nessuna figura per leaf_margin null.",
+     "scope": "species-specific",
+     "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/aglio-master-v2.png"
+    }
+   },
+   "flower_shape": {
+    "ombrella": {
+     "src": "assets/plant-traits/aglio-orsino-flower-shape-ombrella-v1.webp",
+     "source": "https://www.infoflora.ch/it/flora/allium-ursinum.html",
+     "referencePhoto": "assets/plants/aglio-orsino-4.webp",
+     "sha256": "35b195882ba4def7b42a3215fe379b54db7bcdb0ed9ba03ae8871574a7ba9970",
+     "review": "approvato: foglia semplice lungo-picciolata e nervature arcuate; foglie tutte basali; ombrella semplice con pedicelli da unico punto e fiori bianchi sei tepali; capsula verde immatura trilobata verificata sulle ovaie in sviluppo in foto4, non colore di maturità. V1 respinto per venatura pennata, v2 corretto raster. Nessuna figura per leaf_margin null.",
+     "scope": "species-specific",
+     "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/aglio-master-v2.png"
+    }
+   },
+   "fruit_type": {
+    "capsula": {
+     "src": "assets/plant-traits/aglio-orsino-fruit-type-capsula-v1.webp",
+     "source": "https://flora.uniud.it/scheda.php?id=148",
+     "referencePhoto": "assets/plants/aglio-orsino-4.webp",
+     "sha256": "e818a213ea95b325f2653572d26cc322b93fecf50b846812cad65001bb012b5b",
+     "review": "approvato: foglia semplice lungo-picciolata e nervature arcuate; foglie tutte basali; ombrella semplice con pedicelli da unico punto e fiori bianchi sei tepali; capsula verde immatura trilobata verificata sulle ovaie in sviluppo in foto4, non colore di maturità. V1 respinto per venatura pennata, v2 corretto raster. Nessuna figura per leaf_margin null.",
+     "scope": "species-specific: developing capsule, not ripe fruit colour",
+     "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/aglio-master-v2.png",
+     "caption": "Capsula in formazione"
     }
    }
   }

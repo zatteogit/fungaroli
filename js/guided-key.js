@@ -79,7 +79,7 @@ const PLANT_SWATCHES = {
 };
 // Queste categorie includono anatomie diverse: l'esempio della chiave non è
 // automaticamente una raffigurazione valida per ogni specie della categoria.
-const plantNeedsSpeciesReview = (k,v) => k === 'fruit_type' || k === 'flower_shape' || (k === 'leaf_type' && v === 'composta');
+const plantNeedsSpeciesReview = k => ['fruit_type','flower_shape','leaf_type','leaf_margin'].includes(k);
 // tessere dei caratteri per le schede di piante e alberi: stessi caratteri del percorso guidato, con le loro etichette.
 // I segni particolari stanno in una riga a parte; i valori non verificati (null) non compaiono.
 // Con più valori si mostrano i primi due disegni disponibili e il testo completo.
@@ -89,14 +89,15 @@ export function traitTilesHtml(data, traits, icons = null, mode = 'alberi', spec
   const tiles = Object.entries(data.schema).filter(([k, q]) => k !== 'special' && q.ask !== false && traits[k] != null && [].concat(traits[k]).length)
     .map(([k, q]) => {
       const vals = [].concat(traits[k]);
+      const captions = mode === 'piante' ? [...new Set(vals.map(v=>speciesArt?.[k]?.[v]?.caption).filter(Boolean))] : [];
       const swatches = mode === 'piante' && icons && PLANT_SWATCHES[k];
-      const srcs = vals.map(v => {
+      const srcs = [...new Set(vals.map(v => {
         if (mode !== 'piante') return iconSrc(icons,k,v,mode);
         if (!icons || swatches) return '';
-        return speciesArt?.[k]?.[v]?.src || (plantNeedsSpeciesReview(k,v) ? '' : iconSrc(icons,k,v,mode));
-      }).filter(Boolean).slice(0,2);
+        return speciesArt?.[k]?.[v]?.src || (plantNeedsSpeciesReview(k) ? '' : iconSrc(icons,k,v,mode));
+      }).filter(Boolean))].slice(0,2);
       const art = swatches ? `<span class="ts-art" aria-hidden="true">${vals.filter(v=>swatches[v]).map(v=>`<span class="ts-color" style="background:${swatches[v]}"></span>`).join('')}</span>` : srcs.length ? `<span class="ts-art${srcs.length > 1 ? ' ts-art-2' : ''}" aria-hidden="true">${srcs.map((s) => ill(s, srcs.length > 1 ? 44 : 64)).join('')}</span>` : '';
-      return `<li>${art}<span class="ts-k" data-no-glossary>${esc(q.short)}</span><span class="ts-v">${vals.map((v, i) => termHtml(q, v, i > 0)).join(' o ')}</span></li>`;
+      return `<li>${art}<span class="ts-k" data-no-glossary>${esc(q.short)}</span><span class="ts-v">${vals.map((v, i) => termHtml(q, v, i > 0)).join(' o ')}</span>${captions.length?`<small class="ts-figure-caption" data-no-glossary>${esc(captions.join(' · '))}</small>`:''}</li>`;
     });
   const special = data.schema.special && [].concat(traits.special || []).map((v) => label(data.schema.special, v));
   return tiles.length ? `<ul class="trait-strip ${icons ? 'trait-strip-ill' : 'trait-strip-txt'}" aria-label="Caratteri principali">${tiles.join('')}</ul>${special?.length ? `<p class="small" data-glossary><b>Segni particolari:</b> ${esc(special.join(' · '))}</p>` : ''}` : '';

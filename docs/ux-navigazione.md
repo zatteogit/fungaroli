@@ -85,6 +85,10 @@ Mostrare prima il dato o l’indicazione sintetica; spiegazioni estese solo su r
 
 Le sezioni richiuse devono anticipare il contenuto con titolo specifico e dati o elementi principali. Evitare contenitori generici come «La zona»: paesaggio e alberi, accessi e soste, composizione dei boschi e crediti delle foto hanno destinazioni distinte.
 
+**Transizione chiuso → aperto, 19 ottobre.** Progettare i due stati come lo sviluppo dello stesso contenuto: titolo, specie e dati essenziali restano nella testata, nello stesso ordine. L’apertura aggiunge il contesto sotto; non ripete il riepilogo. Gli avvisi con un titolo breve passano dalla sintesi al testo integrale nello stesso riquadro, conservando etichetta e gravità; quelli senza sintesi restano completi anche da chiusi. Il chevron comunica la chiusura senza aggiungere «Chiudi dettagli». In «Cosa osservare», piante e alberi sono una sezione leggibile nel corpo aperto, senza un secondo accordion. L’apertura conserva la posizione della testata, anche quando richiude una sezione precedente.
+
+**Indice fungino, 19 ottobre.** Le raccolte di card con un numero fungino hanno una legenda comune subito sotto: simbolo del fungo, «Indice funghi · 0–10» e «Condizioni di crescita stimate». La spiegazione raggiungibile esplicita che è una scala sperimentale, non una probabilità di ritrovamento. La legenda segue anche elenco e riepilogo della mappa, piano dell’uscita e zone nella scheda del fungo. Non compare nelle raccolte prive di indici, comprese le proposte solo botaniche.
+
 ### Inquadratura della mappa
 
 Al primo ingresso si inquadrano le zone compatibili con i filtri, comprese le loro aree; un link a una zona inquadra direttamente quella. Cerchi, etichette ed elenco usano lo stesso movimento breve e considerano testata, barra di navigazione e scheda aperta. Niente volo iniziale o ricentratura durante aggiornamenti meteo, filtri, cambio giorno e ritorno alla mappa. «Mostra tutte le zone» ripristina esplicitamente la panoramica. I campioni selezionano la zona di appartenenza; il dettaglio compare a movimento concluso.

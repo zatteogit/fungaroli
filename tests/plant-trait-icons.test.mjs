@@ -40,5 +40,5 @@ test('senza indice rimangono i testi, senza immagini rotte o caratteri nulli dis
  const html=traitTilesHtml(plants,traits,null,'piante');
  assert.doesNotMatch(html,/<img/);assert.match(html,/Lacinie filiformi/);
  const art=traitTilesHtml(plants,traits,plantIcons.values,'piante');
- assert.match(art,/leaf_type-molto_divisa_fine.webp/);assert.doesNotMatch(art,/flower_color-/);
+ assert.doesNotMatch(art,/<img/);assert.doesNotMatch(art,/flower_color-/);
 });
