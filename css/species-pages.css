@@ -237,6 +237,7 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 #detail .essential-sections .plan-ic :is(.thumb-btn,.thumb) { width:36px; height:36px; border-radius:50%; }
 #detail .essential-sections .plan-k { font:600 10px/1.5 var(--font-body); letter-spacing:.08em; gap:8px; margin-bottom:5px; }
 #detail .essential-sections .plan-v { font-size:17px; line-height:1.5; }
+#detail .essential-sections .sp-inline { color:var(--text); }
 #detail .essential-sections .plan-sub { margin-top:10px; font-size:13px; line-height:1.55; }
 #detail .essential-sections [data-sec="quando"] .plan-v { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
 #detail .essential-sections .plan-v .badge { margin:0; font-size:11px; }
@@ -244,11 +245,23 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 #detail .essential-sections .plan-travel { display:block; }
 #detail .essential-sections > .sec > summary::after { position:absolute; top:18px; right:14px; order:0; margin:0; width:20px; height:20px; border:0; background:currentColor; mask:url('../assets/ui/chevron-right.svg') center / contain no-repeat; -webkit-mask:url('../assets/ui/chevron-right.svg') center / contain no-repeat; transform:rotate(90deg); transition:transform .2s ease; }
 #detail .essential-sections > .sec[open] > summary::after { transform:rotate(270deg); }
-#detail .essential-sections > .sec > .sec-body { padding:0 16px 18px; border-top:1px solid var(--hair); }
+#detail .essential-sections > .sec > .sec-body { padding:20px 16px; border-top:1px solid var(--hair); }
 #detail .essential-sections [data-sec="specie"]:not([open]) > summary .plan-crit:has(.pc-t) .pc-x,
-#detail .essential-sections [data-sec="specie"][open] > summary .plan-crit .pc-t,
-#detail .essential-sections [data-sec="specie"][open] > summary .observation-toggle { display:none; }
-#detail .zone-more > .sec[open] > summary .section-preview-detail { display:none; }
+#detail .essential-sections [data-sec="specie"][open] > summary .plan-crit .pc-t { display:none; }
+#detail .essential-sections > .sec > .sec-body > :first-child { margin-top:0; }
+#detail .essential-sections > .sec > .sec-body > :last-child { margin-bottom:0; }
+#detail .zone-more > .sec > .sec-body { padding:4px 0 20px; }
+#detail .walk-focus > summary { display:block; position:relative; padding:20px 32px 20px 0; }
+#detail .walk-focus > summary::after { position:absolute; top:20px; right:0; margin:0; width:20px; height:20px; border:0; background:currentColor; mask:url('../assets/ui/chevron-right.svg') center / contain no-repeat; -webkit-mask:url('../assets/ui/chevron-right.svg') center / contain no-repeat; transform:rotate(90deg); }
+#detail .walk-focus[open] > summary::after { transform:rotate(270deg); }
+#detail .walk-focus > .sec-body { border-top:1px solid var(--hair); padding:20px 0; }
+/* Il cambio di altezza è immediato: l'ancoraggio del titolo non rincorre
+   la chiusura della sezione precedente, soprattutto dopo contenuti lunghi. */
+#detail details.sec::details-content { transition:none; opacity:1; transform:none; }
+@media(prefers-reduced-motion:no-preference) {
+  #detail details.sec[open]::details-content { animation:outing-section-reveal .16s ease; }
+}
+@keyframes outing-section-reveal { from { opacity:0; } to { opacity:1; } }
 #detail .observation-altitude { display:inline-block; white-space:nowrap; }
 #detail .observation-discoveries { margin-top:24px; padding-top:20px; }
 #detail .observation-discoveries > h3:first-child { margin:0 0 12px; padding:0; border:0; }

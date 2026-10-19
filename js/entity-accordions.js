@@ -8,7 +8,7 @@ function scrollPort(element) {
   }
   return document.scrollingElement;
 }
-function keepSummary(summary,change) {
+export function keepSummary(summary,change) {
   const port=scrollPort(summary),page=port===document.scrollingElement;
   const rect=summary.getBoundingClientRect(),bounds=page?{top:0,bottom:innerHeight}:port.getBoundingClientRect();
   const vv=globalThis.visualViewport,top=Math.max(bounds.top,vv?.offsetTop||0),bottom=Math.min(bounds.bottom,(vv?.offsetTop||0)+(vv?.height||innerHeight));

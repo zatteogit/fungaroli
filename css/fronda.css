@@ -703,7 +703,6 @@ body:has(#ranking .ring) #ranking-index-legend,body:has(#season .ring) #season-i
 }
 
 /* Aperto = contenuti nuovi: le anteprime lasciano posto al dettaglio corrispondente. */
-.walk-focus[open] > summary .walk-entrances:has(.walk-entrance-list),
 .essential-sections .sec[open] > summary .ent-chips { display:none; }
 .observation-toggle { display:block; margin-top:10px; font-size:13px; font-weight:600; color:var(--link); }
 .observation-context { color:var(--text-2); font-size:14px; line-height:1.5; }
@@ -753,10 +752,10 @@ body:has(#ranking .ring) #ranking-index-legend,body:has(#season .ring) #season-i
 }
 @media(prefers-reduced-motion:no-preference) {
   :is(.walk-focus, .essential-sections .sec)::details-content {
-    opacity:0; transform:translateY(-6px);
-    transition:block-size .26s var(--ease-out), opacity .18s ease, transform .26s var(--ease-out), content-visibility .26s allow-discrete;
+    opacity:0;
+    transition:opacity .18s ease, content-visibility .18s allow-discrete;
   }
-  :is(.walk-focus, .essential-sections .sec)[open]::details-content { opacity:1; transform:none; }
+  :is(.walk-focus, .essential-sections .sec)[open]::details-content { opacity:1; }
 }
 @media(prefers-reduced-motion:reduce) {
   .walk-focus, :is(.walk-focus, .essential-sections .sec) > summary::after { transition:none; }
@@ -782,6 +781,20 @@ body:has(#ranking .ring) #ranking-index-legend,body:has(#season .ring) #season-i
 .timing-alternative > b { display:block; }
 .timing-method { border-top:1px solid var(--hair); padding-top:14px; max-width:65ch; }
 .timing-signals { padding-left:18px; margin:8px 0 0; font-size:13px; line-height:1.6; color:var(--text-2); }
+.walk-data { margin-top:20px; padding-top:16px; border-top:1px solid var(--hair); color:var(--text-2); font-size:13px; line-height:1.6; }
+.walk-data h3 { margin:0 0 8px; color:var(--text); font:600 14px/1.5 var(--font-body); }
+.walk-data p { margin:0 0 8px; }
+.trail-sketch-info p { font-size:12px; line-height:1.5; }
+.outing-extra { margin-block:16px; }
+.outing-extra > .more-row { width:100%; text-align:left; }
+.outing-extra-dialog { width:min(860px,calc(100vw - 32px)); padding:24px; }
+.outing-extra-dialog .report-header { position:sticky; top:-24px; z-index:1; display:flex; align-items:start; gap:16px; margin:0 0 16px; padding-block:8px 12px; background:var(--surface); }
+.outing-extra-dialog .report-header h2 { flex:1; margin:0; font:600 22px/1.3 var(--font-display); }
+.outing-extra-body { min-width:0; }
+.outing-extra-body .sci-technical-body { padding:0; }
+.outing-extra-body .viz-table-wrap { overflow-x:auto; }
+.outing-extra-body table { min-width:520px; }
+@media(max-width:600px) { .outing-extra-dialog { padding:18px; } .outing-extra-dialog .report-header { top:-18px; } }
 @media(max-width:600px) { .timing-facts { grid-template-columns:repeat(2,minmax(0,1fr)); } .timing-facts > div:last-child { grid-column:1 / -1; } }
 
 /* Prima il dato, poi la spiegazione su richiesta. */
