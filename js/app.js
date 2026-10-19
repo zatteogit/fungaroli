@@ -865,11 +865,11 @@ function arrangeHome() {
   legalStrip._fungiCopy||=[legalTitle.textContent,legalText.textContent];
   legalTitle.textContent=state.target==='funghi'?legalStrip._fungiCopy[0]:'Prima di uscire';
   legalText.textContent=state.target==='funghi'?legalStrip._fungiCopy[1]:'Accessi, aree protette e regole locali: verifica le indicazioni per il luogo e l’attività.';
-  // Keep the same hierarchy when switching between fungi and plants.
-  view.insertBefore($('#season-h'),$('#community-intro'));view.insertBefore($('#season').closest('.rail-host')||$('#season'),$('#community-intro'));
-  view.insertBefore($('#season-index-legend'),$('#community-intro'));
+  // Move complete bands so headings, carousels and legends stay together.
+  const bands=view.querySelector('.home-bands'),season=view.querySelector('.home-season');
+  bands.insertBefore(season,$('#community-intro'));
   // In walking mode the discoveries follow the main proposal, before alternatives.
-  view.insertBefore(during,state.target==='passeggiata'?$('#others-h'):$('#season-h'));
+  bands.insertBefore(during,state.target==='passeggiata'?view.querySelector('.home-alternatives'):season);
   $('#others-h').textContent=state.target==='piante'?'Altri sentieri da esplorare':contentCopy.otherPlacesTitle||'Altre buone uscite';
   $('#season-h').textContent=hasInterest('funghi')&&hasInterest('piante')?'Funghi e piante da osservare':state.target==='piante'?'Piante da osservare in questo periodo':contentCopy.speciesTitle||'Nei boschi in questi giorni';
 }
