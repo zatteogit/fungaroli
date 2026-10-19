@@ -1,0 +1,90 @@
+{
+  "checkedAt": "2026-10-19",
+  "scope": "Estremi e quattro angoli bbox O7 ufficiale; controllo cartografico OSM, non rilievo confine legale",
+  "points": [
+    {
+      "lat": 41.67871764460652,
+      "lon": 13.90739237590507,
+      "address": {
+        "village": "Settefrati",
+        "county": "Frosinone",
+        "ISO3166-2-lvl6": "IT-FR",
+        "state": "Lazio",
+        "ISO3166-2-lvl4": "IT-62",
+        "country": "Italia",
+        "country_code": "it"
+      },
+      "sourceUrl": "https://nominatim.openstreetmap.org/reverse?lat=41.67871764460652&lon=13.90739237590507&format=jsonv2&zoom=10"
+    },
+    {
+      "lat": 41.67060905765168,
+      "lon": 13.85067941522744,
+      "address": {
+        "village": "Settefrati",
+        "county": "Frosinone",
+        "ISO3166-2-lvl6": "IT-FR",
+        "state": "Lazio",
+        "ISO3166-2-lvl4": "IT-62",
+        "country": "Italia",
+        "country_code": "it"
+      },
+      "sourceUrl": "https://nominatim.openstreetmap.org/reverse?lat=41.67060905765168&lon=13.85067941522744&format=jsonv2&zoom=10"
+    },
+    {
+      "lat": 41.66184232025745,
+      "lon": 13.85046601201267,
+      "address": {
+        "village": "Settefrati",
+        "county": "Frosinone",
+        "ISO3166-2-lvl6": "IT-FR",
+        "state": "Lazio",
+        "ISO3166-2-lvl4": "IT-62",
+        "country": "Italia",
+        "country_code": "it"
+      },
+      "sourceUrl": "https://nominatim.openstreetmap.org/reverse?lat=41.66184232025745&lon=13.85046601201267&format=jsonv2&zoom=10"
+    },
+    {
+      "lat": 41.66184232025745,
+      "lon": 13.90771313875895,
+      "address": {
+        "village": "Picinisco",
+        "county": "Frosinone",
+        "ISO3166-2-lvl6": "IT-FR",
+        "state": "Lazio",
+        "ISO3166-2-lvl4": "IT-62",
+        "country": "Italia",
+        "country_code": "it"
+      },
+      "sourceUrl": "https://nominatim.openstreetmap.org/reverse?lat=41.66184232025745&lon=13.90771313875895&format=jsonv2&zoom=10"
+    },
+    {
+      "lat": 41.67871764460652,
+      "lon": 13.85046601201267,
+      "address": {
+        "village": "Settefrati",
+        "county": "Frosinone",
+        "ISO3166-2-lvl6": "IT-FR",
+        "state": "Lazio",
+        "ISO3166-2-lvl4": "IT-62",
+        "country": "Italia",
+        "country_code": "it"
+      },
+      "sourceUrl": "https://nominatim.openstreetmap.org/reverse?lat=41.67871764460652&lon=13.85046601201267&format=jsonv2&zoom=10"
+    },
+    {
+      "lat": 41.67871764460652,
+      "lon": 13.90771313875895,
+      "address": {
+        "village": "Settefrati",
+        "county": "Frosinone",
+        "ISO3166-2-lvl6": "IT-FR",
+        "state": "Lazio",
+        "ISO3166-2-lvl4": "IT-62",
+        "country": "Italia",
+        "country_code": "it"
+      },
+      "sourceUrl": "https://nominatim.openstreetmap.org/reverse?lat=41.67871764460652&lon=13.90771313875895&format=jsonv2&zoom=10"
+    }
+  ]
+}

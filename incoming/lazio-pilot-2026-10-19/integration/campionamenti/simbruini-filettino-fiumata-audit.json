@@ -1,0 +1,81 @@
+{
+ "started": "2026-10-19T11:11:46.807622+00:00",
+ "seed": {
+  "id": "simbruini-filettino-fiumata",
+  "name": "Fiumata e Fosso Acqua Corore",
+  "lat": 41.9067994,
+  "lon": 13.2921344,
+  "radius_m": 1500,
+  "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+  "province": [
+   "FR"
+  ],
+  "coordinateProvenance": {
+   "method": "official_trace_bbox_midpoint",
+   "sourceUrl": "https://www.parcomontisimbruini.it/gpx/693a.gpx",
+   "bbox": {
+    "west": 13.284499794244766,
+    "south": 41.898640505969524,
+    "east": 13.299768939614296,
+    "north": 41.914958311244845
+   },
+   "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+  },
+  "collectionStatus": "unknown",
+  "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita.",
+  "collectionSourceUrl": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+  "publicationStatus": "active",
+  "manager": "Ente Parco Naturale Regionale Monti Simbruini",
+  "researchGroup": "sud",
+  "officialTrailRefs": [
+   "693a"
+  ],
+  "officialTrailNameMatches": []
+ },
+ "demProvider": "copernicus-glo90-openmeteo",
+ "demResolutionM": 90,
+ "elevation": {
+  "min": 934,
+  "p25": 1090,
+  "median": 1168,
+  "p75": 1233,
+  "max": 1439
+ },
+ "suggestedBandsM": [
+  1090,
+  1170,
+  1230
+ ],
+ "forestPolygonCount": 12,
+ "habitatSamples": 317,
+ "roadErrors": [],
+ "trails": {
+  "listedRelations": 7,
+  "requestedRefs": [
+   "693a"
+  ],
+  "requestedDistinctiveNames": [],
+  "matchedRelations": [
+   {
+    "relation": 12145860,
+    "ref": "693A",
+    "source": "https://www.openstreetmap.org/relation/12145860",
+    "license": "ODbL-1.0",
+    "officialTagLengthM": 2700.0,
+    "mappedLengthM": 2757,
+    "inZoneLengthM": 2757.3515181059383,
+    "sampleCount": 27,
+    "note": "Reference match with institutional itinerary; geometry independently obtained from OSM via Waymarked Trails. Match does not certify exact geometric identity or current opening."
+   }
+  ],
+  "unmatchedRefs": [],
+  "driveError": null,
+  "coverageLimit": 100,
+  "geometryStatus": "matched_osm_geometry"
+ },
+ "status": "complete",
+ "finished": "2026-10-19T11:12:01.204311+00:00",
+ "habitatStatus": "complete",
+ "grid": 21,
+ "gridStepM": 150.0
+}

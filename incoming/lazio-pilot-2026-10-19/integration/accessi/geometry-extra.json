@@ -1,0 +1,68 @@
+[
+  {
+    "zoneId": "monterano-bicione",
+    "sourceUrl": "https://www.parchilazio.it/documenti/schede/bandita.kml",
+    "pointCount": 363,
+    "bbox": {
+      "west": 12.0620305,
+      "south": 42.1316117,
+      "east": 12.0906344,
+      "north": 42.1531243
+    },
+    "first": [
+      42.1513245,
+      12.0695088
+    ],
+    "last": [
+      42.1512762,
+      12.0696668
+    ],
+    "sha256": "3241e56041254636e128313f7e9079fbfb65a6f1346b8cb8e8f370d4b037cadc",
+    "checkedAt": "2026-10-19",
+    "license": "Unknown; no trace redistributed"
+  },
+  {
+    "zoneId": "aurunci-itri-campello",
+    "sourceUrl": "https://www.parchilazio.it/documenti/schede/20220422232757_17197_map_1.kml",
+    "pointCount": 964,
+    "bbox": {
+      "west": 13.551000981,
+      "south": 41.306455024,
+      "east": 13.60303198,
+      "north": 41.337223984
+    },
+    "first": [
+      41.306455024,
+      13.558526002
+    ],
+    "last": [
+      41.337223984,
+      13.602779014
+    ],
+    "sha256": "9201b75c77a1d91230a698e444d7d96da27d44601cc7c411e46d282418e5c2a6",
+    "checkedAt": "2026-10-19",
+    "license": "Unknown; no trace redistributed"
+  },
+  {
+    "zoneId": "pnalm-settefrati-canneto",
+    "sourceUrl": "https://www.parcoabruzzo.it/iti_kmz.php?id=4988",
+    "pointCount": 529,
+    "bbox": {
+      "west": 13.85046601201267,
+      "south": 41.66184232025745,
+      "east": 13.90771313875895,
+      "north": 41.67871764460652
+    },
+    "first": [
+      41.67871764460652,
+      13.90739237590507
+    ],
+    "last": [
+      41.67060905765168,
+      13.85067941522744
+    ],
+    "sha256": "0b2809c0abcad7c05197d9b92a6e0fbf3a2eb758d337bc9bf7cac522954a7278",
+    "checkedAt": "2026-10-19",
+    "license": "Unknown; no trace redistributed"
+  }
+]

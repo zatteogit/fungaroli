@@ -1,0 +1,114 @@
+[
+ {
+  "zoneId": "monterano-bicione",
+  "relation": 10240055,
+  "ref": null,
+  "name": "Bandita",
+  "documentedAccess": {
+   "lat": 42.131757,
+   "lon": 12.089668
+  },
+  "nearestStoredPolylineVertexM": 1630,
+  "nearestStoredVertex": [
+   42.13783,
+   12.07172
+  ],
+  "scope": "Distance to simplified clipped OSM line vertex, positional comparison only; does not prove accessible connection."
+ },
+ {
+  "zoneId": "aurunci-itri-campello",
+  "relation": 12358634,
+  "ref": "951",
+  "name": "La Valle di Itri-Monte Revole",
+  "documentedAccess": {
+   "lat": 41.3064,
+   "lon": 13.558617
+  },
+  "nearestStoredPolylineVertexM": 1744,
+  "nearestStoredVertex": [
+   41.32154,
+   13.56413
+  ],
+  "scope": "Distance to simplified clipped OSM line vertex, positional comparison only; does not prove accessible connection."
+ },
+ {
+  "zoneId": "ernici-prato-campoli",
+  "relation": 12164662,
+  "ref": "622",
+  "name": "Antenne - Passo del Melancoro - Prato di Campoli",
+  "documentedAccess": {
+   "lat": 41.7745277778,
+   "lon": 13.4925555556
+  },
+  "nearestStoredPolylineVertexM": 9,
+  "nearestStoredVertex": [
+   41.77452,
+   13.49266
+  ],
+  "scope": "Distance to simplified clipped OSM line vertex, positional comparison only; does not prove accessible connection."
+ },
+ {
+  "zoneId": "ernici-prato-campoli",
+  "relation": 12402883,
+  "ref": "617",
+  "name": "Prato Di Campoli - Pizzo Deta",
+  "documentedAccess": {
+   "lat": 41.7745277778,
+   "lon": 13.4925555556
+  },
+  "nearestStoredPolylineVertexM": 9,
+  "nearestStoredVertex": [
+   41.77452,
+   13.49266
+  ],
+  "scope": "Distance to simplified clipped OSM line vertex, positional comparison only; does not prove accessible connection."
+ },
+ {
+  "zoneId": "ernici-prato-campoli",
+  "relation": 12427077,
+  "ref": "618",
+  "name": "Prato di Campoli - Vado della Rocca",
+  "documentedAccess": {
+   "lat": 41.7745277778,
+   "lon": 13.4925555556
+  },
+  "nearestStoredPolylineVertexM": 958,
+  "nearestStoredVertex": [
+   41.78233,
+   13.49748
+  ],
+  "scope": "Distance to simplified clipped OSM line vertex, positional comparison only; does not prove accessible connection."
+ },
+ {
+  "zoneId": "faete-rocca-papa",
+  "relation": 3328048,
+  "ref": "509",
+  "name": "Circuito delle Faete di Rocca di Papa",
+  "documentedAccess": {
+   "lat": 41.756795,
+   "lon": 12.709967
+  },
+  "nearestStoredPolylineVertexM": 17,
+  "nearestStoredVertex": [
+   41.75695,
+   12.70994
+  ],
+  "scope": "Distance to simplified clipped OSM line vertex, positional comparison only; does not prove accessible connection."
+ },
+ {
+  "zoneId": "gennaro-roccagiovine",
+  "relation": 2068875,
+  "ref": "305",
+  "name": null,
+  "documentedAccess": {
+   "lat": 42.052437,
+   "lon": 12.894007
+  },
+  "nearestStoredPolylineVertexM": 1187,
+  "nearestStoredVertex": [
+   42.05108,
+   12.87978
+  ],
+  "scope": "Distance to simplified clipped OSM line vertex, positional comparison only; does not prove accessible connection."
+ }
+]

@@ -4,9 +4,10 @@
 // - meteo Open-Meteo: gestito dall'app con data di acquisizione e limite d'età
 // - mappe: dalla cache se gia' viste, con un limite di tessere
 // - diario (/api/): mai in cache
-const SHELL = 'fungaroli-shell-v237';
+const SHELL = 'fungaroli-shell-v238';
 const RUNTIME = 'fungaroli-runtime-v1';
 const TILES = 'fungaroli-tiles-v1';
+const CONTENT = 'fungaroli-content-v1';
 const MAX_TILES = 1500;
 const PRECACHE = [
   'js/editorial-outings.js', 'css/editorial-outings.css', 'data/editorial-outings.json',
@@ -32,7 +33,7 @@ self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(SHELL).then((c) => Promise.allSettled(PRECACHE.map((u) => c.add(u)))).then(() => self.skipWaiting()));
 });
 self.addEventListener('activate', (e) => {
-  const keep = [SHELL, RUNTIME, TILES];
+  const keep = [SHELL, RUNTIME, TILES, CONTENT];
   e.waitUntil(caches.keys().then((ks) => Promise.all(ks.filter((k) => !keep.includes(k)).map((k) => caches.delete(k)))).then(() => self.clients.claim()));
 });
 

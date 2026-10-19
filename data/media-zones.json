@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-15",
- "note": "Foto dei luoghi da Wikimedia Commons: solo paesaggi o boschi della zona (niente centri abitati), scelte a mano tra le foto georeferenziate vicine (tools/build_media_zones.py). Dove non c'e' niente di adatto si vede la foto del fungo.",
+ "note": "Foto reali dei luoghi con autore, pagina della fonte e licenza. Nelle nuove zone Lazio del 19/10 senza foto adeguata, copertina neutra: nessun paesaggio sostitutivo. Le varianti già presenti per le zone originarie conservano i loro metadati.",
  "zones": {
   "vallonina": {
    "file": "assets/zones/vallonina.webp",
@@ -2474,6 +2474,201 @@
      "generated": true
     }
    ]
+  },
+  "vico-monte-venere": {
+   "file": "assets/zones/vico-monte-venere.webp",
+   "file_hd": "assets/zones/vico-monte-venere-hd.webp",
+   "thumb": "assets/zones/vico-monte-venere-t.webp",
+   "source": "Wikimedia Commons",
+   "page": "https://commons.wikimedia.org/wiki/File:Monte_Venere,_Riserva_naturale_Lago_di_Vico.jpg",
+   "author": "Albarubescens",
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "size": [
+    600,
+    441
+   ],
+   "modified": "Ritaglio e conversione WebP"
+  },
+  "oriolo-monte-raschio": {
+   "file": "assets/zones/oriolo-monte-raschio.webp",
+   "file_hd": "assets/zones/oriolo-monte-raschio-hd.webp",
+   "thumb": "assets/zones/oriolo-monte-raschio-t.webp",
+   "source": "Wikimedia Commons",
+   "page": "https://commons.wikimedia.org/wiki/File:Fonte_Petrella.jpg",
+   "author": "Dino Michelini",
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "size": [
+    600,
+    338
+   ],
+   "modified": "Ritaglio e conversione WebP"
+  },
+  "allumiere-faggeto": {
+   "file": "assets/zones/allumiere-faggeto.webp",
+   "file_hd": "assets/zones/allumiere-faggeto-hd.webp",
+   "thumb": "assets/zones/allumiere-faggeto-t.webp",
+   "source": "Wikimedia Commons",
+   "page": "https://commons.wikimedia.org/wiki/File:Faggeta_e_Cava_di_Alunite.jpg",
+   "author": "Albarubescens",
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "size": [
+    600,
+    450
+   ],
+   "modified": "Ritaglio e conversione WebP"
+  },
+  "monterano-bicione": {
+   "file": "assets/zones/monterano-bicione.webp",
+   "file_hd": "assets/zones/monterano-bicione-hd.webp",
+   "thumb": "assets/zones/monterano-bicione-t.webp",
+   "source": "Wikimedia Commons",
+   "page": "https://commons.wikimedia.org/wiki/File:Cascate_di_Diosilla.JPG",
+   "author": "Patafisik",
+   "license": "Public domain",
+   "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Public_domain",
+   "size": [
+    600,
+    449
+   ],
+   "modified": "Ritaglio e conversione WebP"
+  },
+  "veio-monte-musino": {
+   "file": "assets/zones/veio-monte-musino.webp",
+   "file_hd": "assets/zones/veio-monte-musino-hd.webp",
+   "thumb": "assets/zones/veio-monte-musino-t.webp",
+   "source": "Wikimedia Commons",
+   "page": "https://commons.wikimedia.org/wiki/File:Percorso_a_Monte_Musino.jpg",
+   "author": "Albarubescens",
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "size": [
+    600,
+    450
+   ],
+   "modified": "Ritaglio e conversione WebP"
+  },
+  "faete-rocca-papa": {
+   "file": "assets/zones/faete-rocca-papa.webp",
+   "file_hd": "assets/zones/faete-rocca-papa-hd.webp",
+   "thumb": "assets/zones/faete-rocca-papa-t.webp",
+   "source": "Wikimedia Commons",
+   "page": "https://commons.wikimedia.org/wiki/File:Monte_Cavo_Visto_da_castel_gandolfo.jpg",
+   "author": "NikonZ7II",
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "size": [
+    600,
+    413
+   ],
+   "modified": "Ritaglio e conversione WebP"
+  },
+  "cerquone-doganella": {
+   "file": "assets/zones/cerquone-doganella.webp",
+   "file_hd": "assets/zones/cerquone-doganella-hd.webp",
+   "thumb": "assets/zones/cerquone-doganella-t.webp",
+   "source": "Wikimedia Commons",
+   "page": "https://commons.wikimedia.org/wiki/File:Pozzi_di_Doganella.jpg",
+   "author": "Albarubescens",
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "size": [
+    600,
+    425
+   ],
+   "modified": "Ritaglio e conversione WebP"
+  },
+  "circeo-cerasella-verdesca": {
+   "file": "assets/zones/circeo-cerasella-verdesca.webp",
+   "file_hd": "assets/zones/circeo-cerasella-verdesca-hd.webp",
+   "thumb": "assets/zones/circeo-cerasella-verdesca-t.webp",
+   "source": "Wikimedia Commons",
+   "page": "https://commons.wikimedia.org/wiki/File:Parco_del_Circeo_foresta.jpg",
+   "author": "MasPro57",
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "size": [
+    600,
+    400
+   ],
+   "modified": "Ritaglio e conversione WebP"
+  },
+  "ernici-prato-campoli": {
+   "file": "assets/zones/ernici-prato-campoli.webp",
+   "file_hd": "assets/zones/ernici-prato-campoli-hd.webp",
+   "thumb": "assets/zones/ernici-prato-campoli-t.webp",
+   "source": "Wikimedia Commons",
+   "page": "https://commons.wikimedia.org/wiki/File:Wild_Horses_(224754759).jpeg",
+   "author": "Giuseppe Pinto",
+   "license": "CC BY-SA 3.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+   "size": [
+    600,
+    450
+   ],
+   "modified": "Ritaglio e conversione WebP"
+  },
+  "pnalm-settefrati-canneto": {
+   "file": "assets/zones/pnalm-settefrati-canneto.webp",
+   "file_hd": "assets/zones/pnalm-settefrati-canneto-hd.webp",
+   "thumb": "assets/zones/pnalm-settefrati-canneto-t.webp",
+   "source": "Wikimedia Commons",
+   "page": "https://commons.wikimedia.org/wiki/File:La_sorgente_del_Melfa.jpg",
+   "author": "Spatuzzi Bruno",
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "size": [
+    600,
+    389
+   ],
+   "modified": "Ritaglio e conversione WebP"
+  },
+  "nemi-fontan-tempesta": {
+   "file": "assets/zones/nemi-fontan-tempesta.webp",
+   "file_hd": "assets/zones/nemi-fontan-tempesta-hd.webp",
+   "thumb": "assets/zones/nemi-fontan-tempesta-t.webp",
+   "source": "Wikimedia Commons",
+   "page": "https://commons.wikimedia.org/wiki/File:Castagni_con_radici_esposte.jpg",
+   "author": "Emanuele Petriglia",
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "size": [
+    600,
+    450
+   ],
+   "modified": "Ritaglio e conversione WebP"
+  },
+  "livata-tufai": {
+   "file": "assets/zones/livata-tufai.webp",
+   "file_hd": "assets/zones/livata-tufai-hd.webp",
+   "thumb": "assets/zones/livata-tufai-t.webp",
+   "source": "Wikimedia Commons",
+   "page": "https://commons.wikimedia.org/wiki/File:Osservatorio_Le_Vedute,_Monte_Livata_02.jpg",
+   "author": "Filippo Bussi",
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "size": [
+    600,
+    450
+   ],
+   "modified": "Ritaglio e conversione WebP"
+  },
+  "gennaro-roccagiovine": {
+   "file": "assets/zones/gennaro-roccagiovine.webp",
+   "file_hd": "assets/zones/gennaro-roccagiovine-hd.webp",
+   "thumb": "assets/zones/gennaro-roccagiovine-t.webp",
+   "source": "Wikimedia Commons",
+   "page": "https://commons.wikimedia.org/wiki/File:Parco_dei_Monti_Lucretili_il_Pratone_di_M._Gennaro.jpg",
+   "author": "V.lattanzi",
+   "license": "CC BY 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+   "size": [
+    600,
+    450
+   ],
+   "modified": "Ritaglio e conversione WebP"
   }
  }
 }

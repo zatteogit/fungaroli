@@ -1,5 +1,17 @@
 # Il metodo e la validazione locale
 
+## Estensione del pilota Lazio · 19 ottobre 2026
+
+Il pilota comprende 36 zone selezionate nelle cinque province: le 15 zone iniziali del Reatino e 21 nuove zone. Non rappresenta l’intero territorio regionale. Il filtro Provincia limita insieme proposte e mappa; la base predefinita resta Rieti, modificabile nel profilo.
+
+Per le nuove zone, centri e riferimenti derivano da fonti degli enti gestori e tracce istituzionali. Il raggio è una scelta editoriale per campionare habitat e meteo, non il confine di un parco né un’autorizzazione di accesso. Tutte le 21 nuove zone hanno 317 punti reali di Carta Forestale e rilievo (6.657 in totale), con DEM Copernicus GLO90 omogeneo: la data di acquisizione non trasforma la carta in una rilevazione attuale della vegetazione.
+
+L’indice fungino conserva i parametri sperimentali esistenti: non è calibrato né validato sui ritrovamenti nelle nuove zone. Non sono stati assegnati valori di notorietà alle nuove zone; affollamento e comodità restano assenti quando mancano gli ingressi verificati. Cinque soste documentate hanno itinerari stradali da Rieti; per gli altri luoghi non si inventano parcheggi, tempi di guida o fondo asfaltato. Un arco stradale vicino a un campione non prova il diritto di transito.
+
+Le proposte mostrano le condizioni di raccolta locali. Cerasella e Verdesca sono un’uscita di osservazione per il pubblico generale: il disciplinare Circeo 2026 riserva la raccolta a specifiche categorie autorizzate e aree. Uno stato locale “da verificare” non equivale a permesso di raccolta. Le lunghezze dei sentieri importati descrivono il tratto nella zona, non necessariamente un giro completo. Le tracce OSM sono distinte dagli itinerari descritti dagli enti e non sostituiscono la segnaletica.
+
+Fonti, richieste, limiti e verifiche sono registrati in `incoming/lazio-pilot-2026-10-19/integration/`. Le descrizioni dei modelli storici riportate più sotto spiegano le euristiche originarie del Reatino, non attestano una validazione regionale.
+
 Fungaroli invita a passeggiare, scoprire sentieri e imparare. L’app ha lo scopo di diventare più accurata grazie alle osservazioni degli utenti. La validazione della trovabilità è ancora iniziale e nessuna percentuale di accuratezza è disponibile.
 
 Questa pagina spiega come Fungaroli Rieti calcola l’indice pubblico 0–10 con un decimale (modello 2.0.0; internamente 0–100 per conservare i dati storici) e che cosa c'è dietro ogni numero. I valori citati sono quelli in uso nell'app al momento della stesura.

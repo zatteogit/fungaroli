@@ -1,0 +1,50 @@
+[
+  {
+    "zoneId": "monte-rufeno-felceto",
+    "status": "photo_pending",
+    "reason": "Panorama Monte Rufeno ripreso dal lontano Amiata; georicerca riporta prevalentemente centro abitato/museo Acquapendente. Cerro trovato in un giardino attrezzato. Nessuna copertina del bosco Felceto sufficientemente rappresentativa.",
+    "fallback": "Copertina neutra proposta; nessuna fotografia di altro luogo."
+  },
+  {
+    "zoneId": "tuscolo-nord",
+    "status": "photo_pending",
+    "reason": "Candidato locale Tuscolo/Unsplash mostra sagoma di fotografo al tramonto, cielo dominante: non rappresenta il bosco. Altri risultati ville, danni storici e centro abitato.",
+    "fallback": "Copertina neutra proposta; nessuna fotografia di altro luogo."
+  },
+  {
+    "zoneId": "cervara-prataglia",
+    "status": "photo_pending",
+    "reason": "Risultati Cervara: borgo/monumenti, non il bosco Prataglia. Ricerca Prataglia produce anche Foreste Casentinesi, luogo sbagliato, escluso.",
+    "fallback": "Copertina neutra proposta; nessuna fotografia di altro luogo."
+  },
+  {
+    "zoneId": "lepini-bassiano-santangelo",
+    "status": "photo_pending",
+    "reason": "Risultati: cavallo in primo piano, documentazione geologica o vista aerea di Latina. Nessuna copertina del bosco Sant’Angelo/Semprevisa convincente.",
+    "fallback": "Copertina neutra proposta; nessuna fotografia di altro luogo."
+  },
+  {
+    "zoneId": "ausoni-san-vito",
+    "status": "photo_pending",
+    "reason": "Nessuna fotografia della Sughereta di San Vito con licenza individuale e corrispondenza locale verificabili trovata nelle ricerche eseguite.",
+    "fallback": "Copertina neutra proposta; nessuna fotografia di altro luogo."
+  },
+  {
+    "zoneId": "aurunci-itri-campello",
+    "status": "photo_pending",
+    "reason": "Foto vicina (4,8 km) mostra un pendio/strada in nebbia, fonte dice soltanto Monti Aurunci. Il legame con Valle di Itri/Campello resta troppo debole. Altri risultati villa o neve in quota.",
+    "fallback": "Copertina neutra proposta; nessuna fotografia di altro luogo."
+  },
+  {
+    "zoneId": "lepini-supino-santaserena",
+    "status": "photo_pending",
+    "reason": "Panorama reale Santa Serena troppo sottile: ritaglio per copertina rivela tende e auto e risoluzione utile soltanto 585×390. Geopanorama contiene annotazioni geologiche. Entrambi scartati.",
+    "fallback": "Copertina neutra proposta; nessuna fotografia di altro luogo."
+  },
+  {
+    "zoneId": "simbruini-filettino-fiumata",
+    "status": "photo_pending",
+    "reason": "Paesaggi/pascoli Simbruini entro 4,5 km non localizzati con sufficiente precisione a Fiumata/Fosso Acqua Corore; niente uso di foto dei vicini Campo Staffi senza corrispondenza provata. Fiumata nelle ricerche nominali spesso è il Lago del Salto, escluso.",
+    "fallback": "Copertina neutra proposta; nessuna fotografia di altro luogo."
+  }
+]

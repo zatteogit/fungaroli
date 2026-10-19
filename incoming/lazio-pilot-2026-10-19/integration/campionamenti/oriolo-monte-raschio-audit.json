@@ -1,0 +1,92 @@
+{
+ "started": "2026-10-19T10:48:12.787236+00:00",
+ "seed": {
+  "id": "oriolo-monte-raschio",
+  "name": "Oriolo Romano – Monte Raschio",
+  "lat": 42.1671,
+  "lon": 12.149406,
+  "radius_m": 1500,
+  "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+  "province": [
+   "VT"
+  ],
+  "coordinateProvenance": {
+   "method": "official_trace_bbox_midpoint",
+   "sourceUrl": "https://www.parcobracciano.it/media/2051/sent-175c-monte-raschio-oriolo-romano.gpx",
+   "bbox": {
+    "west": 12.138417,
+    "south": 42.158027,
+    "east": 12.160395,
+    "north": 42.176173
+   },
+   "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+  },
+  "collectionStatus": "unknown",
+  "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita.",
+  "collectionSourceUrl": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+  "publicationStatus": "active",
+  "manager": "Ente Parco Bracciano-Martignano, 0699801176",
+  "researchGroup": "nord",
+  "officialTrailRefs": [
+   "175C",
+   "260"
+  ],
+  "officialTrailNameMatches": []
+ },
+ "elevation": {
+  "min": 390,
+  "p25": 416,
+  "median": 447,
+  "p75": 470,
+  "max": 561
+ },
+ "suggestedBandsM": [
+  420,
+  450,
+  470
+ ],
+ "forestPolygonCount": 35,
+ "habitatSamples": 317,
+ "roadErrors": [],
+ "trails": {
+  "listedRelations": 10,
+  "requestedRefs": [
+   "175c",
+   "260"
+  ],
+  "requestedDistinctiveNames": [],
+  "matchedRelations": [
+   {
+    "relation": 11353673,
+    "ref": "175C",
+    "source": "https://www.openstreetmap.org/relation/11353673",
+    "license": "ODbL-1.0",
+    "officialTagLengthM": 8400.0,
+    "mappedLengthM": 8036,
+    "inZoneLengthM": 7937.234660208369,
+    "sampleCount": 78,
+    "note": "Reference match with institutional itinerary; geometry independently obtained from OSM via Waymarked Trails. Match does not certify exact geometric identity or current opening."
+   }
+  ],
+  "unmatchedRefs": [],
+  "driveError": null,
+  "omittedShortClips": [
+   {
+    "relation": 11358282,
+    "ref": "260",
+    "name": "Oriolo Romano - Pisciarelli - Bracciano",
+    "inZoneKm": 0.2,
+    "reason": "Below existing build_trails minimum500m inside-zone geometry threshold."
+   }
+  ],
+  "geometryStatus": "matched_osm_geometry",
+  "coverageLimit": 100
+ },
+ "status": "complete",
+ "finished": "2026-10-19T10:48:52.416892+00:00",
+ "demProvider": "copernicus-glo90-openmeteo",
+ "demResolutionM": 90,
+ "habitatStatus": "complete",
+ "grid": 21,
+ "gridStepM": 150.0
+}

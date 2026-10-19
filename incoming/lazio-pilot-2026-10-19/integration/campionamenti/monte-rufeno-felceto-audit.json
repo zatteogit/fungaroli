@@ -1,0 +1,63 @@
+{
+ "started": "2026-10-19T10:46:59.061110+00:00",
+ "seed": {
+  "id": "monte-rufeno-felceto",
+  "name": "Monte Rufeno – Felceto",
+  "lat": 42.7832961,
+  "lon": 11.8934405,
+  "radius_m": 1500,
+  "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+  "province": [
+   "VT"
+  ],
+  "coordinateProvenance": {
+   "method": "official_trace_bbox_midpoint",
+   "sourceUrl": "https://www.parchilazio.it/documenti/schede/sentiero_natura_felceto.kml",
+   "bbox": {
+    "west": 11.891231434419751,
+    "south": 42.7814853284508,
+    "east": 11.895649619400501,
+    "north": 42.785106897354126
+   },
+   "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+  },
+  "collectionStatus": "unknown",
+  "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita.",
+  "collectionSourceUrl": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+  "publicationStatus": "active",
+  "manager": "Comune di Acquapendente / Riserva, 0763 733442, info@monterufeno.it",
+  "researchGroup": "nord",
+  "officialTrailRefs": []
+ },
+ "elevation": {
+  "min": 329,
+  "p25": 496,
+  "median": 556,
+  "p75": 612,
+  "max": 728
+ },
+ "suggestedBandsM": [
+  500,
+  560,
+  610
+ ],
+ "forestPolygonCount": 46,
+ "habitatSamples": 317,
+ "roadErrors": [],
+ "trails": {
+  "listedRelations": 3,
+  "requestedRefs": [],
+  "matchedRelations": [],
+  "unmatchedRefs": [],
+  "driveError": null,
+  "geometryStatus": "no_documented_osm_match_imported",
+  "coverageLimit": 100
+ },
+ "status": "complete",
+ "finished": "2026-10-19T10:47:22.923875+00:00",
+ "demProvider": "copernicus-glo90-openmeteo",
+ "demResolutionM": 90,
+ "habitatStatus": "complete",
+ "grid": 21,
+ "gridStepM": 150.0
+}

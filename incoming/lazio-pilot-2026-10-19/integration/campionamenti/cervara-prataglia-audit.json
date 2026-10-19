@@ -1,0 +1,81 @@
+{
+ "started": "2026-10-19T11:10:03.499022+00:00",
+ "seed": {
+  "id": "cervara-prataglia",
+  "name": "Cervara e Prataglia",
+  "lat": 42.0004981,
+  "lon": 13.061135,
+  "radius_m": 1500,
+  "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+  "province": [
+   "RM"
+  ],
+  "coordinateProvenance": {
+   "method": "official_trace_bbox_midpoint",
+   "sourceUrl": "https://www.parcomontisimbruini.it/itinerari-dettaglio.php?id_iti=174",
+   "bbox": {
+    "west": 13.04302454,
+    "south": 41.988847973,
+    "east": 13.07924551,
+    "north": 42.012148323
+   },
+   "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+  },
+  "collectionStatus": "unknown",
+  "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita.",
+  "collectionSourceUrl": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+  "publicationStatus": "active",
+  "manager": "Ente Parco Monti Simbruini",
+  "researchGroup": "roma-est",
+  "officialTrailRefs": [
+   "661"
+  ],
+  "officialTrailNameMatches": []
+ },
+ "demProvider": "copernicus-glo90-openmeteo",
+ "demResolutionM": 90,
+ "elevation": {
+  "min": 613,
+  "p25": 792,
+  "median": 997,
+  "p75": 1126,
+  "max": 1223
+ },
+ "suggestedBandsM": [
+  790,
+  1000,
+  1130
+ ],
+ "forestPolygonCount": 54,
+ "habitatSamples": 317,
+ "roadErrors": [],
+ "trails": {
+  "listedRelations": 11,
+  "requestedRefs": [
+   "661"
+  ],
+  "requestedDistinctiveNames": [],
+  "matchedRelations": [
+   {
+    "relation": 2071204,
+    "ref": "661",
+    "source": "https://www.openstreetmap.org/relation/2071204",
+    "license": "ODbL-1.0",
+    "officialTagLengthM": 12500.0,
+    "mappedLengthM": 12508,
+    "inZoneLengthM": 8817.818460829094,
+    "sampleCount": 86,
+    "note": "Reference match with institutional itinerary; geometry independently obtained from OSM via Waymarked Trails. Match does not certify exact geometric identity or current opening."
+   }
+  ],
+  "unmatchedRefs": [],
+  "driveError": null,
+  "coverageLimit": 100,
+  "geometryStatus": "matched_osm_geometry"
+ },
+ "status": "complete",
+ "finished": "2026-10-19T11:10:17.222529+00:00",
+ "habitatStatus": "complete",
+ "grid": 21,
+ "gridStepM": 150.0
+}

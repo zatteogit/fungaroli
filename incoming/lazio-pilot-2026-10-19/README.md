@@ -1,6 +1,6 @@
 # Fronda · raccolta per il pilota Lazio
 
-Richiesta di Matteo del 19 ottobre 2026: estendere il pilota a tutta la regione e avviare agenti per i dati e i contenuti necessari. La raccolta è conclusa; le nuove aree sono **candidate, non ancora attive nell’app**. La versione pubblica resta v237 con le 15 zone reatine. Il focus rimane l’uscita con interesse prioritario ai funghi; piante, animali e paesaggio aggiungono contesto utile al giro.
+Richiesta di Matteo del 19 ottobre 2026: estendere il pilota a tutta la regione e avviare agenti per i dati e i contenuti necessari. La raccolta iniziale è stata verificata e integrata nel rilascio v238, su mandato esplicito di pubblicazione. Sono disponibili 36 zone, 21 nuovi campionamenti completi, 17 nuove tracce OSM, cinque soste documentate e 13 copertine reali. [Rapporto, limiti e verifiche](integration/release-report.md). La tabella seguente conserva il perimetro della ricerca iniziale. Il focus rimane l’uscita con interesse prioritario ai funghi; piante, animali e paesaggio aggiungono contesto utile al giro.
 
 ## Copertura raccolta
 

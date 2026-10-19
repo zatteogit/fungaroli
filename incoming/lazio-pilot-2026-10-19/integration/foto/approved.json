@@ -1,0 +1,1801 @@
+[
+  {
+    "zoneId": "vico-monte-venere",
+    "pageid": 133569188,
+    "review": "approved_by_photo_agent_and_root_contact_sheet",
+    "localization": "Monte Venere fotografato dalla riva del lago di Vico. Paesaggio della zona; non la partenza del percorso.",
+    "source": {
+      "query": "vico-monte-venere",
+      "title": "File:Monte Venere, Riserva naturale Lago di Vico.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Monte_Venere,_Riserva_naturale_Lago_di_Vico.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Monte_Venere%2C_Riserva_naturale_Lago_di_Vico.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "Albarubescens",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "description": "Riserva naturale Lago di Vico (Q3936610)\nMonte Venere, Riserva naturale del Lago di Vico",
+      "width": 4512,
+      "height": 3319,
+      "pageid": 133569188,
+      "extmetadata": {
+        "DateTime": {
+          "value": "2023-06-25 13:08:35",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Monte Venere, Riserva naturale Lago di Vico",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Monti Cimini|Riserva naturale Lago di Vico|Lago di Vico Monte Venere e Monte Fogliano (protected area)|Self-published work|Images from Wiki Loves Earth 2023|Images from Wiki Loves Earth 2023 in Italy|Uploaded via Campaign:wle-it|Images from Wiki Loves Earth 2023 in Italy - Lazio|Images from Wiki Loves Earth missing SDC location of creation|Monte Venere|Images from Wiki Loves Earth 2023 in Italy - landscape",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "Riserva naturale Lago di Vico <small>(<a href=\"https://www.wikidata.org/wiki/Q3936610\" class=\"extiw\" title=\"d:Q3936610\">Q3936610</a>)</small>\nMonte Venere, Riserva naturale del Lago di Vico",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2022-09-21 12:40:36",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Albarubescens&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Albarubescens (page does not exist)\">Albarubescens</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC BY-SA 4.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution-Share Alike 4.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-sa-4.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "local": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/lazio-pilot-2026-10-19/integration/foto/originals/133569188.jpg",
+      "sha256": "908185a32aa5104c30811566108b7512a8328571c9659d2675b65cef56e1b760",
+      "screen": "visual_pending"
+    },
+    "originalAcquired": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/lazio-pilot-2026-10-19/integration/foto/originals/133569188.jpg",
+    "originalSha256": "908185a32aa5104c30811566108b7512a8328571c9659d2675b65cef56e1b760",
+    "outputs": {
+      "": {
+        "file": "assets/zones/vico-monte-venere.webp",
+        "size": [
+          600,
+          441
+        ],
+        "sha256": "6f3cc8d448d597ccdc79d90f3834bb619f2b4035f516aaece0f04d78bcb2a1a8"
+      },
+      "-hd": {
+        "file": "assets/zones/vico-monte-venere-hd.webp",
+        "size": [
+          1600,
+          1177
+        ],
+        "sha256": "1eb3fe23c5a197a4087ba2c841a136c27352132b60f484123c4f6f91055059e8"
+      },
+      "-t": {
+        "file": "assets/zones/vico-monte-venere-t.webp",
+        "size": [
+          240,
+          177
+        ],
+        "sha256": "048c09d22308ec160d89276494c1f351398bb794d4241513009425123cb267e5"
+      }
+    },
+    "crop": [
+      0.5,
+      0.45
+    ],
+    "corrections": "Rotazione EXIF applicata; ritaglio centrale 3:2 per originali verticali o panoramici estremi; ridimensionamento, nessuna ricostruzione o generazione. Punto CSS rivisto sul provino.",
+    "rootReview": "2026-10-19: fotografia reale e paesaggio leggibile sul foglio finale; verificare la fonte per localizzazione e licenza. Non è una foto del punto di parcheggio."
+  },
+  {
+    "zoneId": "oriolo-monte-raschio",
+    "pageid": 65284712,
+    "review": "approved_by_photo_agent_and_root_contact_sheet",
+    "localization": "Fonte Petrella nella faggeta di Monte Raschio. Il fontanile è visibile nel bosco; non indica un accesso carrabile.",
+    "source": {
+      "query": "oriolo-raschio",
+      "title": "File:Fonte Petrella.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Fonte_Petrella.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/93/Fonte_Petrella.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "Dino Michelini",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "description": "Fonte Petrella nella faggeta vetusta depressa di Monte Raschio",
+      "width": 4320,
+      "height": 2432,
+      "pageid": 65284712,
+      "extmetadata": {
+        "DateTime": {
+          "value": "2020-08-03 10:58:47",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Fonte Petrella",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Ancient and primeval beech forests of the Carpathians and other regions of Europe|Parco naturale regionale di Bracciano-Martignano|Oriolo Romano|World Heritage Sites in Lazio|Self-published work|On OSM|Files with coordinates missing SDC location of creation|Fountains in Oriolo Romano",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "GPSLatitude": {
+          "value": "42.175389",
+          "source": "commons-desc-page"
+        },
+        "GPSLongitude": {
+          "value": "12.164124",
+          "source": "commons-desc-page"
+        },
+        "GPSMapDatum": {
+          "value": "WGS-84",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "Fonte Petrella nella faggeta vetusta depressa di Monte Raschio",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2017-06-02 09:44:02",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a href=\"//commons.wikimedia.org/wiki/User:Dino_Michelini\" title=\"User:Dino Michelini\">Dino Michelini</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC BY-SA 4.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution-Share Alike 4.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-sa-4.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "local": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/lazio-pilot-2026-10-19/integration/foto/originals/65284712.jpg",
+      "sha256": "5a55bd8288cdabaf292c67391b00b9d6ccb82a74e6707d5547b0b577bfc74c68",
+      "screen": "visual_pending"
+    },
+    "originalAcquired": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/lazio-pilot-2026-10-19/integration/foto/originals/65284712.jpg",
+    "originalSha256": "5a55bd8288cdabaf292c67391b00b9d6ccb82a74e6707d5547b0b577bfc74c68",
+    "outputs": {
+      "": {
+        "file": "assets/zones/oriolo-monte-raschio.webp",
+        "size": [
+          600,
+          338
+        ],
+        "sha256": "84afd81e527b05e613ab22ece964a26a87817b5eb0f496083c6096a3f7e10c9e"
+      },
+      "-hd": {
+        "file": "assets/zones/oriolo-monte-raschio-hd.webp",
+        "size": [
+          1600,
+          901
+        ],
+        "sha256": "82fb572929a516635044fa39873d70f61403c3fddf51490c7d60d5aa4792ce06"
+      },
+      "-t": {
+        "file": "assets/zones/oriolo-monte-raschio-t.webp",
+        "size": [
+          240,
+          135
+        ],
+        "sha256": "1a450cdf67d0a7d148963998ae38dee92ce47b8fa0fa648518abac62644ce820"
+      }
+    },
+    "crop": [
+      0.55,
+      0.56
+    ],
+    "corrections": "Rotazione EXIF applicata; ritaglio centrale 3:2 per originali verticali o panoramici estremi; ridimensionamento, nessuna ricostruzione o generazione. Punto CSS rivisto sul provino.",
+    "rootReview": "2026-10-19: fotografia reale e paesaggio leggibile sul foglio finale; verificare la fonte per localizzazione e licenza. Non è una foto del punto di parcheggio."
+  },
+  {
+    "zoneId": "allumiere-faggeto",
+    "pageid": 119306695,
+    "review": "approved_by_photo_agent_and_root_contact_sheet",
+    "localization": "Faggeto di Allumiere, Cava del Silenzio. Rocce e faggi ben leggibili, luce naturale; nessuna città.",
+    "source": {
+      "query": "allumiere",
+      "title": "File:Faggeta e Cava di Alunite.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Faggeta_e_Cava_di_Alunite.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Faggeta_e_Cava_di_Alunite.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "Albarubescens",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "description": "Boschi mesofili di Allumiere (Q61867441)\nCava di alunite detta Cava del Silenzio (un tempo Cava del Moro) nel Faggeto di Allumiere (Monumento Naturale)",
+      "width": 4608,
+      "height": 3456,
+      "pageid": 119306695,
+      "extmetadata": {
+        "DateTime": {
+          "value": "2022-06-15 09:46:57",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Faggeta e Cava di Alunite",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Alunite|Allumiere|Natural monuments in Italy|Self-published work|Italy photographs taken on 2021-08-07|Fagus sylvatica forests in Italy|Images from Wiki Loves Earth 2022|Images from Wiki Loves Earth 2022 in Italy|Images from Wiki Loves Earth 2022 in Italy - Lazio|Uploaded via Campaign:wle-it|Images from Wiki Loves Earth missing SDC location of creation|Monumento Naturale Faggeto di Allumiere|Images from Wiki Loves Earth 2022 in Italy - landscape",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "Boschi mesofili di Allumiere <small>(<a href=\"https://www.wikidata.org/wiki/Q61867441\" class=\"extiw\" title=\"d:Q61867441\">Q61867441</a>)</small>\nCava di alunite detta Cava del Silenzio (un tempo Cava del Moro) nel Faggeto di Allumiere (Monumento Naturale)",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2021-08-07 15:13:52",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Albarubescens&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Albarubescens (page does not exist)\">Albarubescens</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC BY-SA 4.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution-Share Alike 4.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-sa-4.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "local": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/lazio-pilot-2026-10-19/integration/foto/originals/119306695.jpg",
+      "sha256": "961c9fb2995b91b33af7817771a0e3c10c56f58e2bf766f29665bb015e0f6709",
+      "screen": "visual_pending"
+    },
+    "originalAcquired": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/lazio-pilot-2026-10-19/integration/foto/originals/119306695.jpg",
+    "originalSha256": "961c9fb2995b91b33af7817771a0e3c10c56f58e2bf766f29665bb015e0f6709",
+    "outputs": {
+      "": {
+        "file": "assets/zones/allumiere-faggeto.webp",
+        "size": [
+          600,
+          450
+        ],
+        "sha256": "f7e7264b36a71e1f718496d2ed3779cd2b1e082b3c75e96178a1e5fec7619fb1"
+      },
+      "-hd": {
+        "file": "assets/zones/allumiere-faggeto-hd.webp",
+        "size": [
+          1600,
+          1200
+        ],
+        "sha256": "a7dce9d2edd23806f68d6d89622d676829efc28dd5d77dac15f2c6b642bbcbc4"
+      },
+      "-t": {
+        "file": "assets/zones/allumiere-faggeto-t.webp",
+        "size": [
+          240,
+          180
+        ],
+        "sha256": "a9388d9f8f70189ffbf43bd0e4c490395c6c04ad27524c1d9bedaae91b6adc8b"
+      }
+    },
+    "crop": [
+      0.52,
+      0.55
+    ],
+    "corrections": "Rotazione EXIF applicata; ritaglio centrale 3:2 per originali verticali o panoramici estremi; ridimensionamento, nessuna ricostruzione o generazione. Punto CSS rivisto sul provino.",
+    "rootReview": "2026-10-19: fotografia reale e paesaggio leggibile sul foglio finale; verificare la fonte per localizzazione e licenza. Non è una foto del punto di parcheggio."
+  },
+  {
+    "zoneId": "monterano-bicione",
+    "pageid": 6798700,
+    "review": "approved_by_photo_agent_and_root_contact_sheet",
+    "localization": "Cascata della Diosilla, nel contesto della Riserva Monterano e del percorso proposto; non un punto del Bicione geolocalizzato.",
+    "source": {
+      "query": "Monterano Diosilla",
+      "title": "File:Cascate di Diosilla.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Cascate_di_Diosilla.JPG",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Cascate_di_Diosilla.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "Patafisik",
+      "license": "Public domain",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Public_domain",
+      "description": "Roccia visibile alle Cascate di Diosilla",
+      "width": 2288,
+      "height": 1712,
+      "pageid": 6798700,
+      "extmetadata": {
+        "DateTime": {
+          "value": "2009-05-17 00:20:49",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Cascate di Diosilla",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Taken with Nikon Coolpix 4600|Faults|Waterfalls in Lazio|Self-published work|PD-self|Sedimentary mountains|Riserva Naturale di Monterano",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "Roccia visibile alle Cascate di Diosilla",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2009-04-25",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a href=\"//commons.wikimedia.org/wiki/User:Patafisik\" class=\"mw-redirect\" title=\"User:Patafisik\">Patafisik</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "Public domain",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Public domain",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "false",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Copyrighted": {
+          "value": "False",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "pd",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "local": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/lazio-pilot-2026-10-19/integration/foto/originals/6798700.jpg",
+      "sha256": "2b8395eb5616d65b6529f4606d757100c1066ce5743fedc0e5e762cffa1e0a21",
+      "acquiredUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Cascate_di_Diosilla.JPG/960px-Cascate_di_Diosilla.JPG",
+      "screen": "visual_pending"
+    },
+    "originalAcquired": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/lazio-pilot-2026-10-19/integration/foto/originals/6798700-original.jpg",
+    "originalSha256": "64aa8442294776ad7c827b1db30cd901631ffed9bca925aa35035e4e6bb9d806",
+    "outputs": {
+      "": {
+        "file": "assets/zones/monterano-bicione.webp",
+        "size": [
+          600,
+          449
+        ],
+        "sha256": "48afee25ce6f5b8e738608e0205ab7be0979afcfb7988a222e56f8d3962fa5df"
+      },
+      "-hd": {
+        "file": "assets/zones/monterano-bicione-hd.webp",
+        "size": [
+          1600,
+          1197
+        ],
+        "sha256": "e95f0a0c431de022edf3fdce987ac9a97ca1eaf19acbc7e5c7f10dac44320fb2"
+      },
+      "-t": {
+        "file": "assets/zones/monterano-bicione-t.webp",
+        "size": [
+          240,
+          180
+        ],
+        "sha256": "fb6f8b62623dadb83c45f3f617cd6c7cec77c2d89c5d70a9cdaf5c5017469b1e"
+      }
+    },
+    "crop": [
+      0.5,
+      0.5
+    ],
+    "corrections": "Rotazione EXIF applicata; ritaglio centrale 3:2 per originali verticali o panoramici estremi; ridimensionamento, nessuna ricostruzione o generazione. Punto CSS rivisto sul provino.",
+    "rootReview": "2026-10-19: fotografia reale e paesaggio leggibile sul foglio finale; verificare la fonte per localizzazione e licenza. Non è una foto del punto di parcheggio."
+  },
+  {
+    "zoneId": "veio-monte-musino",
+    "pageid": 133405256,
+    "review": "approved_by_photo_agent_and_root_contact_sheet",
+    "localization": "Sentiero a Monte Musino, fonte esplicitamente Sacrofano/Parco di Veio. Bosco e tracciato leggibili.",
+    "source": {
+      "query": "Monte Musino",
+      "title": "File:Percorso a Monte Musino.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Percorso_a_Monte_Musino.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Percorso_a_Monte_Musino.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "Albarubescens",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "description": "parco regionale di Veio (Q3895752)\nPercorso a Monte Musino, Parco di Veio, Sacrofano",
+      "width": 4608,
+      "height": 3456,
+      "pageid": 133405256,
+      "extmetadata": {
+        "DateTime": {
+          "value": "2023-06-21 14:24:17",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Percorso a Monte Musino",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Parco regionale di Veio|Sacrofano|Self-published work|Images from Wiki Loves Earth 2023|Images from Wiki Loves Earth 2023 in Italy|Uploaded via Campaign:wle-it|Images from Wiki Loves Earth 2023 in Italy - Lazio|Images from Wiki Loves Earth missing SDC location of creation|Images from Wiki Loves Earth 2023 in Italy - landscape|Monte Musino",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "parco regionale di Veio <small>(<a href=\"https://www.wikidata.org/wiki/Q3895752\" class=\"extiw\" title=\"d:Q3895752\">Q3895752</a>)</small>\nPercorso a Monte Musino, Parco di Veio, Sacrofano",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2022-11-05 12:59:36",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Albarubescens&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Albarubescens (page does not exist)\">Albarubescens</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC BY-SA 4.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution-Share Alike 4.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-sa-4.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "local": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/lazio-pilot-2026-10-19/integration/foto/originals/133405256.jpg",
+      "sha256": "69ad576183ae87513f46a61362cbbf8ed228201bbc249cf2f8018c17c82519de",
+      "acquiredUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Percorso_a_Monte_Musino.jpg/960px-Percorso_a_Monte_Musino.jpg",
+      "screen": "visual_pending"
+    },
+    "originalAcquired": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/lazio-pilot-2026-10-19/integration/foto/originals/133405256-original.jpg",
+    "originalSha256": "df3ecc42e33ea2a2b5557b216ed880fd5f87a03de68fdd299d4824ce266f2e62",
+    "outputs": {
+      "": {
+        "file": "assets/zones/veio-monte-musino.webp",
+        "size": [
+          600,
+          450
+        ],
+        "sha256": "0c08f14fb6e5f4a9bcef78a5403750136360b1c9cc55cbd0cbe7bd00526ba79b"
+      },
+      "-hd": {
+        "file": "assets/zones/veio-monte-musino-hd.webp",
+        "size": [
+          1600,
+          1200
+        ],
+        "sha256": "083ae5a6eeff1470d1ed77665719c3864a6d9264caed1aede6ee9c742baeda88"
+      },
+      "-t": {
+        "file": "assets/zones/veio-monte-musino-t.webp",
+        "size": [
+          240,
+          180
+        ],
+        "sha256": "302c8c9e492584c00ea4f9f4ad0b0c60fea7059af709563418e170087aece4c1"
+      }
+    },
+    "crop": [
+      0.5,
+      0.57
+    ],
+    "corrections": "Rotazione EXIF applicata; ritaglio centrale 3:2 per originali verticali o panoramici estremi; ridimensionamento, nessuna ricostruzione o generazione. Punto CSS rivisto sul provino.",
+    "rootReview": "2026-10-19: fotografia reale e paesaggio leggibile sul foglio finale; verificare la fonte per localizzazione e licenza. Non è una foto del punto di parcheggio."
+  },
+  {
+    "zoneId": "faete-rocca-papa",
+    "pageid": 103801473,
+    "review": "approved_by_photo_agent_and_root_contact_sheet",
+    "localization": "Monte Cavo visto da Castel Gandolfo. Copertina panoramica della montagna, non veduta dal sentiero Faete.",
+    "source": {
+      "query": "\"Monte Cavo\"",
+      "title": "File:Monte Cavo Visto da castel gandolfo.jpg",
+      "pageid": 103801473,
+      "page": "https://commons.wikimedia.org/wiki/File:Monte_Cavo_Visto_da_castel_gandolfo.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Monte_Cavo_Visto_da_castel_gandolfo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "previewUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Monte_Cavo_Visto_da_castel_gandolfo.jpg/1920px-Monte_Cavo_Visto_da_castel_gandolfo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "author": "NikonZ7II",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "description": "Monte Cavo (Colli Albani) from Castel Gandolfo",
+      "width": 6616,
+      "height": 4560,
+      "extmetadata": {
+        "DateTime": {
+          "value": "2021-04-17 10:31:47",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Monte Cavo Visto da castel gandolfo",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Monte Cavo|Lake Albano|Alban Hills|Images with annotations|Self-published work|Volcanoes in Italy in 2021",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "Monte Cavo (<a href=\"//commons.wikimedia.org/wiki/Colli_Albani\" title=\"Colli Albani\">Colli Albani</a>) from <a href=\"//commons.wikimedia.org/wiki/Castel_Gandolfo\" title=\"Castel Gandolfo\">Castel Gandolfo</a>",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2021-04-05 16:55:32",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a href=\"//commons.wikimedia.org/wiki/User:NikonZ7II\" title=\"User:NikonZ7II\">NikonZ7II</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC BY-SA 4.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution-Share Alike 4.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-sa-4.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "local": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/lazio-pilot-2026-10-19/integration/foto/originals/103801473.jpg",
+      "sha256": "5c1ae65c035fe8d35daef8b9296a1cf4c288b27941974273cde4724894dde534",
+      "acquiredUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Monte_Cavo_Visto_da_castel_gandolfo.jpg/1920px-Monte_Cavo_Visto_da_castel_gandolfo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "screen": "visual_pending"
+    },
+    "originalAcquired": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/lazio-pilot-2026-10-19/integration/foto/originals/103801473.jpg",
+    "originalSha256": "5c1ae65c035fe8d35daef8b9296a1cf4c288b27941974273cde4724894dde534",
+    "outputs": {
+      "": {
+        "file": "assets/zones/faete-rocca-papa.webp",
+        "size": [
+          600,
+          413
+        ],
+        "sha256": "9b1b2751338713fb52c254bd316dd1e3514825063e98036ae92d1b0e120169ad"
+      },
+      "-hd": {
+        "file": "assets/zones/faete-rocca-papa-hd.webp",
+        "size": [
+          1600,
+          1103
+        ],
+        "sha256": "b445f6f662c74cfb230d66e2e67eb7857ac9fb4837e2b2f66ef4f722ba30d7c7"
+      },
+      "-t": {
+        "file": "assets/zones/faete-rocca-papa-t.webp",
+        "size": [
+          240,
+          165
+        ],
+        "sha256": "703644e59228e1eb5dd6ffe4dc04852c3e1f5fff0850ee960fe48a3bfbab814a"
+      }
+    },
+    "crop": [
+      0.5,
+      0.48
+    ],
+    "corrections": "Rotazione EXIF applicata; ritaglio centrale 3:2 per originali verticali o panoramici estremi; ridimensionamento, nessuna ricostruzione o generazione. Punto CSS rivisto sul provino.",
+    "rootReview": "2026-10-19: fotografia reale e paesaggio leggibile sul foglio finale; verificare la fonte per localizzazione e licenza. Non è una foto del punto di parcheggio."
+  },
+  {
+    "zoneId": "cerquone-doganella",
+    "pageid": 194280661,
+    "review": "approved_by_photo_agent_and_root_contact_sheet",
+    "localization": "Pozzi di Doganella: prato e margine arboreo del sito nominato. Non si attribuisce questa radura al bosco interno del Cerquone.",
+    "source": {
+      "query": "Cerquone",
+      "title": "File:Pozzi di Doganella.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Pozzi_di_Doganella.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/54/Pozzi_di_Doganella.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "Albarubescens",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "description": "Cerquone - Doganella (Q61867453)\nPozzi di Doganella",
+      "width": 4305,
+      "height": 3047,
+      "pageid": 194280661,
+      "extmetadata": {
+        "DateTime": {
+          "value": "2026-06-21 17:17:29",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Pozzi di Doganella",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Parco regionale dei Castelli Romani|Self-published work|Uploaded via Campaign:wle-it|Images from Wiki Loves Earth missing SDC depicts|Images from Wiki Loves Earth missing SDC location of creation|Images from Wiki Loves Earth missing SDC source of file|Images from Wiki Loves Earth missing SDC creator|Images from Wiki Loves Earth missing SDC participant in|Images from Wiki Loves Earth 2026|Images from Wiki Loves Earth 2026 in Italy|Images from Wiki Loves Earth 2026 in Italy - Lazio",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "Cerquone - Doganella <small>(<a href=\"https://www.wikidata.org/wiki/Q61867453\" class=\"extiw\" title=\"d:Q61867453\">Q61867453</a>)</small>\nPozzi di Doganella",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2026-06-21 13:44:05",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Albarubescens&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Albarubescens (page does not exist)\">Albarubescens</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC BY-SA 4.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution-Share Alike 4.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-sa-4.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "local": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/lazio-pilot-2026-10-19/integration/foto/originals/194280661.jpg",
+      "sha256": "088887229623cbf144fd81d3a96aad7efcbd7a0c0abf22c40aafe9f6b917a94d",
+      "acquiredUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Pozzi_di_Doganella.jpg/960px-Pozzi_di_Doganella.jpg",
+      "screen": "visual_pending"
+    },
+    "originalAcquired": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/lazio-pilot-2026-10-19/integration/foto/originals/194280661-original.jpg",
+    "originalSha256": "095557f3feaaa4c574c3db91cab7baa25897d4c952496f7e660eaf706bf46b5e",
+    "outputs": {
+      "": {
+        "file": "assets/zones/cerquone-doganella.webp",
+        "size": [
+          600,
+          425
+        ],
+        "sha256": "2f3b838280b6710f26fb66b66919cbcede6331c4a4d43358309c41fb02d45581"
+      },
+      "-hd": {
+        "file": "assets/zones/cerquone-doganella-hd.webp",
+        "size": [
+          1600,
+          1132
+        ],
+        "sha256": "4032ec46c7701f0d3336256d6815acf9850420e2dc9e7690c830008769f8e1b7"
+      },
+      "-t": {
+        "file": "assets/zones/cerquone-doganella-t.webp",
+        "size": [
+          240,
+          170
+        ],
+        "sha256": "0cfb035c1e71f872e8000381c8b8f37d95e6d0d1b4a86775d6f47dc9bfe3e0ed"
+      }
+    },
+    "crop": [
+      0.5,
+      0.5
+    ],
+    "corrections": "Rotazione EXIF applicata; ritaglio centrale 3:2 per originali verticali o panoramici estremi; ridimensionamento, nessuna ricostruzione o generazione. Punto CSS rivisto sul provino.",
+    "rootReview": "2026-10-19: fotografia reale e paesaggio leggibile sul foglio finale; verificare la fonte per localizzazione e licenza. Non è una foto del punto di parcheggio."
+  },
+  {
+    "zoneId": "circeo-cerasella-verdesca",
+    "pageid": 120277474,
+    "review": "approved_by_photo_agent_and_root_contact_sheet",
+    "localization": "Foresta demaniale del Circeo. La fonte non specifica Cerasella/Verdesca: copertina del contesto forestale condiviso, non del singolo punto.",
+    "source": {
+      "query": "Circeo foresta",
+      "title": "File:Parco del Circeo foresta.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Parco_del_Circeo_foresta.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Parco_del_Circeo_foresta.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "MasPro57",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "description": "Riserva naturale Foresta demaniale del Circeo (Q3936581)",
+      "width": 2084,
+      "height": 4624,
+      "pageid": 120277474,
+      "extmetadata": {
+        "DateTime": {
+          "value": "2022-07-10 05:57:43",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Parco del Circeo foresta",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Self-published work|Images from Wiki Loves Earth 2022|Images from Wiki Loves Earth 2022 in Italy|Images from Wiki Loves Earth 2022 in Italy - Lazio|Uploaded via Campaign:wle-it|Images from Wiki Loves Earth missing SDC depicts|Images from Wiki Loves Earth missing SDC location of creation|Images from Wiki Loves Earth missing SDC inception|Images from Wiki Loves Earth 2022 in Italy - missing",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "Riserva naturale Foresta demaniale del Circeo <small>(<a href=\"https://www.wikidata.org/wiki/Q3936581\" class=\"extiw\" title=\"d:Q3936581\">Q3936581</a>)</small>",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "Parco del Circeo",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:MasPro57&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:MasPro57 (page does not exist)\">MasPro57</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC BY-SA 4.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution-Share Alike 4.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-sa-4.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "local": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/lazio-pilot-2026-10-19/integration/foto/originals/120277474.jpg",
+      "sha256": "f5bc20c1278353c91f6c55497b522d97bd392fa84c73be7f06aa30ca92a8bc18",
+      "screen": "visual_pending"
+    },
+    "originalAcquired": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/lazio-pilot-2026-10-19/integration/foto/originals/120277474.jpg",
+    "originalSha256": "f5bc20c1278353c91f6c55497b522d97bd392fa84c73be7f06aa30ca92a8bc18",
+    "outputs": {
+      "": {
+        "file": "assets/zones/circeo-cerasella-verdesca.webp",
+        "size": [
+          600,
+          400
+        ],
+        "sha256": "25105ed46c7cb464cc8482097925d20036964a84d13aa36b101c438ca11f0d1e"
+      },
+      "-hd": {
+        "file": "assets/zones/circeo-cerasella-verdesca-hd.webp",
+        "size": [
+          1600,
+          1066
+        ],
+        "sha256": "5db4d69ab7af053669fe00bbf7b1c7ddb45d18e298e1e122fd1c81ce28c2d3cd"
+      },
+      "-t": {
+        "file": "assets/zones/circeo-cerasella-verdesca-t.webp",
+        "size": [
+          240,
+          160
+        ],
+        "sha256": "f621a1b82f0655bd566c40b5789603888201a7e94b4d6bed9c4e0b3c1c03c3cd"
+      }
+    },
+    "crop": [
+      0.5,
+      0.56
+    ],
+    "corrections": "Rotazione EXIF applicata; ritaglio centrale 3:2 per originali verticali o panoramici estremi; ridimensionamento, nessuna ricostruzione o generazione. Punto CSS rivisto sul provino.",
+    "rootReview": "2026-10-19: fotografia reale e paesaggio leggibile sul foglio finale; verificare la fonte per localizzazione e licenza. Non è una foto del punto di parcheggio."
+  },
+  {
+    "zoneId": "ernici-prato-campoli",
+    "pageid": 73616749,
+    "review": "approved_by_photo_agent_and_root_contact_sheet",
+    "localization": "Prato di Campoli documentato dalla descrizione originale 500px; piana e faggete, cavalli sullo sfondo.",
+    "source": {
+      "query": "ernici",
+      "title": "File:Wild Horses (224754759).jpeg",
+      "page": "https://commons.wikimedia.org/wiki/File:Wild_Horses_(224754759).jpeg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Wild_Horses_%28224754759%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "author": "Giuseppe Pinto",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "description": "500px provided description: Prato di Campoli [#nature ,#europe ,#italy ,#grass ,#animal ,#mountain ,#valley ,#italia ,#outdoors ,#frosinone ,#hillside ,#lazio ,#ciociaria ,#no person]",
+      "width": 2048,
+      "height": 1536,
+      "pageid": 73616749,
+      "extmetadata": {
+        "DateTime": {
+          "value": "2018-10-15 02:31:24",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "<div class=\"fn\">\nWild Horses</div>",
+          "source": "commons-desc-page"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Prato di Campoli (Veroli)|Files with coordinates missing SDC location of creation|Italy photographs taken on 2017-08-17|Photos imported with import-500px",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "GPSLatitude": {
+          "value": "41.773353",
+          "source": "commons-desc-page"
+        },
+        "GPSLongitude": {
+          "value": "13.495137",
+          "source": "commons-desc-page"
+        },
+        "GPSMapDatum": {
+          "value": "WGS-84",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Artist": {
+          "value": "<div class=\"fn value\">\n<a rel=\"nofollow\" class=\"external text\" href=\"https://500px.com/pinopinto\">Giuseppe Pinto</a></div>",
+          "source": "commons-desc-page"
+        },
+        "ImageDescription": {
+          "value": "<div class=\"description\">\n500px provided description: Prato di Campoli [#nature ,#europe ,#italy ,#grass ,#animal ,#mountain ,#valley ,#italia ,#outdoors ,#frosinone ,#hillside ,#lazio ,#ciociaria ,#no person]</div>",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "17 August 2017, 17:46:41 (UTC)",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "Imported from <a rel=\"nofollow\" class=\"external text\" href=\"https://500px.com/photo/224754759/wild-horses-by-giuseppe-pinto\">500px</a> (<a rel=\"nofollow\" class=\"external text\" href=\"https://web.archive.org/web/201807id_/https://drscdn.500px.org/photo/224754759/m%3D2048/v2?webp=true&amp;sig=b6f36ffce5278761ca8fc597f46a7d5784e74e34a640921362b4be2874740093\">archived version</a>) by <a rel=\"nofollow\" class=\"external text\" href=\"https://www.archiveteam.org/index.php?title=500px\">the Archive Team</a>. (<a href=\"https://iw.toolforge.org/import-500px/photo/224754759\" class=\"extiw\" title=\"toolforge:import-500px/photo/224754759\">detail page</a>)",
+          "source": "commons-desc-page"
+        },
+        "Permission": {
+          "value": "<div class=\"responsive-license-cc layouttemplate licensetpl\" dir=\"ltr\" lang=\"en\"><div class=\"rlicense-icons\"><span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"w:en:Creative Commons\"><img alt=\"w:en:Creative Commons\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/CC_some_rights_reserved.svg/120px-CC_some_rights_reserved.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"90\" height=\"36\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/CC_some_rights_reserved.svg/250px-CC_some_rights_reserved.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"744\" data-file-height=\"300\"></span></span><br>\n<span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"attribution\"><img alt=\"attribution\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Cc-by_new_white.svg/40px-Cc-by_new_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"24\" height=\"24\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Cc-by_new_white.svg/60px-Cc-by_new_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"64\" data-file-height=\"64\"></span></span> <span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"share alike\"><img alt=\"share alike\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Cc-sa_white.svg/40px-Cc-sa_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"24\" height=\"24\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Cc-sa_white.svg/60px-Cc-sa_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"64\" data-file-height=\"64\"></span></span></div><div class=\"rlicense-text\"><div class=\"rlicense-declaration\">This file is licensed under the <a href=\"https://en.wikipedia.org/wiki/en:Creative_Commons\" class=\"extiw\" title=\"w:en:Creative Commons\">Creative Commons</a> <a href=\"//creativecommons.org/licenses/by-sa/3.0/deed.en\" class=\"extiw\" title=\"creativecommons:by-sa/3.0/deed.en\">Attribution-Share Alike 3.0 Unported</a> license.</div><div class=\"rlicense-desc\" style=\"text-align:start;\" lang=\"en\">\n<dl><dd>You are free:\n<ul><li><b>to share</b> – to copy, distribute and transmit the work</li>\n<li><b>to remix</b> – to adapt the work</li></ul></dd>\n<dd>Under the following conditions:\n<ul><li><b>attribution</b> – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.</li>\n<li><b>share alike</b> – If you remix, transform, or build upon the material, you must distribute your contributions under the <a href=\"https://creativecommons.org/share-your-work/licensing-considerations/compatible-licenses\" class=\"extiw\" title=\"ccorg:share-your-work/licensing-considerations/compatible-licenses\">same or compatible license</a> as the original.</li></ul></dd></dl></div><span class=\"licensetpl_link\" style=\"display:none;\">https://creativecommons.org/licenses/by-sa/3.0</span><span class=\"licensetpl_short\" style=\"display:none;\">CC BY-SA 3.0 </span><span class=\"licensetpl_long\" style=\"display:none;\">Creative Commons Attribution-Share Alike 3.0 </span><span class=\"licensetpl_link_req\" style=\"display:none;\">true</span><span class=\"licensetpl_attr_req\" style=\"display:none;\">true</span></div></div>",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseShortName": {
+          "value": "CC BY-SA 3.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution-Share Alike 3.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by-sa/3.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-sa-3.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "local": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/lazio-pilot-2026-10-19/integration/foto/originals/73616749.jpg",
+      "sha256": "f0c03f8d8061a65091085de72bbdb25b677f63f97467d189d8e48f33dde47df8",
+      "acquiredUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Wild_Horses_%28224754759%29.jpeg/960px-Wild_Horses_%28224754759%29.jpeg",
+      "screen": "visual_pending"
+    },
+    "originalAcquired": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/lazio-pilot-2026-10-19/integration/foto/originals/73616749-original.jpg",
+    "originalSha256": "87ac3607bfd394b34bb5446371b28ecb619735451b9d8e3ebfa64d5e587fb68c",
+    "outputs": {
+      "": {
+        "file": "assets/zones/ernici-prato-campoli.webp",
+        "size": [
+          600,
+          450
+        ],
+        "sha256": "217e31fb6e197daddd4ba74af93c49a599d73305ca95e6c93c59bc46060764f3"
+      },
+      "-hd": {
+        "file": "assets/zones/ernici-prato-campoli-hd.webp",
+        "size": [
+          1600,
+          1200
+        ],
+        "sha256": "ea2e481359afcfccddb51adea16e5f159e58c9dde0ec6b01728ec8de82242f53"
+      },
+      "-t": {
+        "file": "assets/zones/ernici-prato-campoli-t.webp",
+        "size": [
+          240,
+          180
+        ],
+        "sha256": "153ed12d0216528abbb6c975449b0e00a1af86ef79fb1f65557759eefcfb3bfa"
+      }
+    },
+    "crop": [
+      0.5,
+      0.45
+    ],
+    "corrections": "Rotazione EXIF applicata; ritaglio centrale 3:2 per originali verticali o panoramici estremi; ridimensionamento, nessuna ricostruzione o generazione. Punto CSS rivisto sul provino.",
+    "rootReview": "2026-10-19: fotografia reale e paesaggio leggibile sul foglio finale; verificare la fonte per localizzazione e licenza. Non è una foto del punto di parcheggio."
+  },
+  {
+    "zoneId": "nemi-fontan-tempesta",
+    "pageid": 120252877,
+    "review": "approved_by_photo_agent_and_root_contact_sheet",
+    "localization": "Castagni con radici esposte nel Parco dei Castelli Romani, fotografia georeferenziata a 751 m dal centro editoriale della traccia. Non attribuita al punto Fontan Tempesta.",
+    "source": {
+      "zoneId": "nemi-fontan-tempesta",
+      "distanceFromZoneSeedM": 750.8,
+      "title": "File:Castagni con radici esposte.jpg",
+      "pageid": 120252877,
+      "page": "https://commons.wikimedia.org/wiki/File:Castagni_con_radici_esposte.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/79/Castagni_con_radici_esposte.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "previewUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Castagni_con_radici_esposte.jpg/1920px-Castagni_con_radici_esposte.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "author": "Emanuele Petriglia",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "description": "parco regionale dei Castelli Romani (Q3895730)",
+      "width": 4000,
+      "height": 3000,
+      "extmetadata": {
+        "DateTime": {
+          "value": "2022-07-09 13:57:27",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Castagni con radici esposte",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Parco regionale dei Castelli Romani|Self-published work|Files with coordinates missing SDC location of creation|Italy photographs taken on 2022-06-10|Images from Wiki Loves Earth 2022|Images from Wiki Loves Earth 2022 in Italy|Images from Wiki Loves Earth 2022 in Italy - Lazio|Uploaded via Campaign:wle-it|Images from Wiki Loves Earth missing SDC location of creation|Images from Wiki Loves Earth missing SDC inception|Images from Wiki Loves Earth 2022 in Italy - landscape",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "GPSLatitude": {
+          "value": "41.733061",
+          "source": "commons-desc-page"
+        },
+        "GPSLongitude": {
+          "value": "12.709831",
+          "source": "commons-desc-page"
+        },
+        "GPSMapDatum": {
+          "value": "WGS-84",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "parco regionale dei Castelli Romani <small>(<a href=\"https://www.wikidata.org/wiki/Q3895730\" class=\"extiw\" title=\"d:Q3895730\">Q3895730</a>)</small>",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2022-06-10 09:28:22",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Epimete&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Epimete (page does not exist)\">Emanuele Petriglia</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC BY-SA 4.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution-Share Alike 4.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-sa-4.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "local": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/lazio-pilot-2026-10-19/integration/foto/originals/120252877.jpg",
+      "sha256": "629d0ba4c18d150df000db26ba21d403719b202d8f776983388244dd98b76895",
+      "acquiredUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Castagni_con_radici_esposte.jpg/1920px-Castagni_con_radici_esposte.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "screen": "visual_pending"
+    },
+    "originalAcquired": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/lazio-pilot-2026-10-19/integration/foto/originals/120252877.jpg",
+    "originalSha256": "629d0ba4c18d150df000db26ba21d403719b202d8f776983388244dd98b76895",
+    "outputs": {
+      "": {
+        "file": "assets/zones/nemi-fontan-tempesta.webp",
+        "size": [
+          600,
+          450
+        ],
+        "sha256": "b91f9b8f1560ec7b0e3c06c606636e23e0b90bfdc188e3b0061de53ed0d9e561"
+      },
+      "-hd": {
+        "file": "assets/zones/nemi-fontan-tempesta-hd.webp",
+        "size": [
+          1600,
+          1200
+        ],
+        "sha256": "c1bc717144908efacf7b5cd115a9b190da061f2e8ddd276ece098573150a44e7"
+      },
+      "-t": {
+        "file": "assets/zones/nemi-fontan-tempesta-t.webp",
+        "size": [
+          240,
+          180
+        ],
+        "sha256": "d4b8a8aee0d716c2f352273915c4757e3e53d3a0c64ce81fb98b31ff55f85e26"
+      }
+    },
+    "crop": [
+      0.5,
+      0.55
+    ],
+    "corrections": "Rotazione EXIF applicata; ritaglio centrale 3:2 per originali verticali o panoramici estremi; ridimensionamento, nessuna ricostruzione o generazione. Punto CSS rivisto sul provino.",
+    "rootReview": "2026-10-19: fotografia reale e paesaggio leggibile sul foglio finale; verificare la fonte per localizzazione e licenza. Non è una foto del punto di parcheggio."
+  },
+  {
+    "zoneId": "livata-tufai",
+    "pageid": 107524919,
+    "review": "approved_by_photo_agent_and_root_contact_sheet",
+    "localization": "Faggeta autunnale e strada presso Le Vedute, Monte Livata. Ripresa aerea locale, 3,6 km dal centro editoriale della traccia; non satellite, non veduta dal sentiero Tufai.",
+    "source": {
+      "zoneId": "livata-tufai",
+      "distanceFromZoneSeedM": 3598.6,
+      "title": "File:Osservatorio Le Vedute, Monte Livata 02.jpg",
+      "pageid": 107524919,
+      "page": "https://commons.wikimedia.org/wiki/File:Osservatorio_Le_Vedute,_Monte_Livata_02.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Osservatorio_Le_Vedute%2C_Monte_Livata_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "previewUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Osservatorio_Le_Vedute%2C_Monte_Livata_02.jpg/1920px-Osservatorio_Le_Vedute%2C_Monte_Livata_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "author": "Filippo Bussi",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "description": "The \"Le vedute\" observatory, located at Monte Livata, is an icon for those who come to see Le vedute, a breathtaking landscape in the beautiful park of the Simbruni Mountains.",
+      "width": 3968,
+      "height": 2976,
+      "extmetadata": {
+        "DateTime": {
+          "value": "2021-07-13 16:08:06",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Osservatorio Le Vedute, Monte Livata 02",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Subiaco|Mountain roads|Self-published work|Views from above|Files with coordinates missing SDC location of creation",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "GPSLatitude": {
+          "value": "41.955361",
+          "source": "commons-desc-page"
+        },
+        "GPSLongitude": {
+          "value": "13.187917",
+          "source": "commons-desc-page"
+        },
+        "GPSMapDatum": {
+          "value": "WGS-84",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "The \"Le vedute\" observatory, located at Monte Livata, is an icon for those who come to see Le vedute, a breathtaking landscape in the beautiful park of the Simbruni Mountains.",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2019-12-28",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Filippo961&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Filippo961 (page does not exist)\">Filippo Bussi</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC BY-SA 4.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution-Share Alike 4.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-sa-4.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "local": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/lazio-pilot-2026-10-19/integration/foto/originals/107524919.jpg",
+      "sha256": "fe23c479aa45b338e87c2d285d467339852a692665b547b555ff3b2ad2732d8f",
+      "acquiredUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Osservatorio_Le_Vedute%2C_Monte_Livata_02.jpg/1920px-Osservatorio_Le_Vedute%2C_Monte_Livata_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "screen": "visual_pending"
+    },
+    "originalAcquired": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/lazio-pilot-2026-10-19/integration/foto/originals/107524919.jpg",
+    "originalSha256": "fe23c479aa45b338e87c2d285d467339852a692665b547b555ff3b2ad2732d8f",
+    "outputs": {
+      "": {
+        "file": "assets/zones/livata-tufai.webp",
+        "size": [
+          600,
+          450
+        ],
+        "sha256": "25cc7768533122bec648ec4567cf28dda458a14f7b75d63dc56184f22f671a51"
+      },
+      "-hd": {
+        "file": "assets/zones/livata-tufai-hd.webp",
+        "size": [
+          1600,
+          1200
+        ],
+        "sha256": "372a812f9154506e81526f3d192a3e73095e9d34f8106e717def5c9fa6c2eb6e"
+      },
+      "-t": {
+        "file": "assets/zones/livata-tufai-t.webp",
+        "size": [
+          240,
+          180
+        ],
+        "sha256": "2b2b863d5ae3ada5ee10e2fe11ac79612660f6ed5e0ea3c6066bcca9543649a5"
+      }
+    },
+    "crop": [
+      0.5,
+      0.5
+    ],
+    "corrections": "Rotazione EXIF applicata; ritaglio centrale 3:2 per originali verticali o panoramici estremi; ridimensionamento, nessuna ricostruzione o generazione. Punto CSS rivisto sul provino.",
+    "rootReview": "2026-10-19: fotografia reale e paesaggio leggibile sul foglio finale; verificare la fonte per localizzazione e licenza. Non è una foto del punto di parcheggio."
+  },
+  {
+    "zoneId": "gennaro-roccagiovine",
+    "pageid": 84167254,
+    "review": "approved_by_photo_agent_and_root_contact_sheet",
+    "localization": "Pratone e Pizzo di Monte Gennaro: piana carsica e margine boschivo, luogo esplicitato nella fonte. Non la partenza da Roccagiovine.",
+    "source": {
+      "zoneId": "gennaro-roccagiovine",
+      "distanceFromZoneSeedM": 1787.4,
+      "title": "File:Parco dei Monti Lucretili il Pratone di M. Gennaro.jpg",
+      "pageid": 84167254,
+      "page": "https://commons.wikimedia.org/wiki/File:Parco_dei_Monti_Lucretili_il_Pratone_di_M._Gennaro.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Parco_dei_Monti_Lucretili_il_Pratone_di_M._Gennaro.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "previewUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Parco_dei_Monti_Lucretili_il_Pratone_di_M._Gennaro.jpg/1920px-Parco_dei_Monti_Lucretili_il_Pratone_di_M._Gennaro.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "author": "V.lattanzi",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "description": "L'altopiano carsico a quota c.a 1000 m. del Pratone e sullo sfondo il Pizzo di Monte Gennaro",
+      "width": 2048,
+      "height": 1536,
+      "extmetadata": {
+        "DateTime": {
+          "value": "2019-11-20 10:31:04",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Parco dei Monti Lucretili il Pratone di M. Gennaro",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Monti Lucretili|Self-published work|Files with coordinates missing SDC location of creation|Uploaded via Campaign:wsc-it|Images from Wiki Science Competition 2019 in Italy|Images of people in science from Wiki Science Competition 2019",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "GPSLatitude": {
+          "value": "42.057491",
+          "source": "commons-desc-page"
+        },
+        "GPSLongitude": {
+          "value": "12.828867",
+          "source": "commons-desc-page"
+        },
+        "GPSMapDatum": {
+          "value": "WGS-84",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "L'altopiano carsico a quota c.a 1000 m. del Pratone e sullo sfondo il Pizzo di Monte Gennaro",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2003-05-04 11:22:18",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:V.lattanzi&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:V.lattanzi (page does not exist)\">V.lattanzi</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC BY 4.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution 4.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by/4.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-4.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "local": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/lazio-pilot-2026-10-19/integration/foto/originals/84167254.jpg",
+      "sha256": "6e9c86724c17309c27989571a0767a425fa76263c4ba797edfe4c4066621529e",
+      "acquiredUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Parco_dei_Monti_Lucretili_il_Pratone_di_M._Gennaro.jpg/1920px-Parco_dei_Monti_Lucretili_il_Pratone_di_M._Gennaro.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "screen": "visual_pending"
+    },
+    "originalAcquired": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/lazio-pilot-2026-10-19/integration/foto/originals/84167254.jpg",
+    "originalSha256": "6e9c86724c17309c27989571a0767a425fa76263c4ba797edfe4c4066621529e",
+    "outputs": {
+      "": {
+        "file": "assets/zones/gennaro-roccagiovine.webp",
+        "size": [
+          600,
+          450
+        ],
+        "sha256": "1449924bd437bb5bffa3ed2d0641c682079facd59460daa924c4c5d1fd78c188"
+      },
+      "-hd": {
+        "file": "assets/zones/gennaro-roccagiovine-hd.webp",
+        "size": [
+          1600,
+          1200
+        ],
+        "sha256": "1237fa79b4eaafe4f2d38f48e7b7f682cea9007c88eb1ebf4c8da2c306067d22"
+      },
+      "-t": {
+        "file": "assets/zones/gennaro-roccagiovine-t.webp",
+        "size": [
+          240,
+          180
+        ],
+        "sha256": "fe8121647c75856ee6aefd65061197e1b2830028ddd03afd41cdabfadc53b0a7"
+      }
+    },
+    "crop": [
+      0.5,
+      0.5
+    ],
+    "corrections": "Rotazione EXIF applicata; ritaglio centrale 3:2 per originali verticali o panoramici estremi; ridimensionamento, nessuna ricostruzione o generazione. Punto CSS rivisto sul provino.",
+    "rootReview": "2026-10-19: fotografia reale e paesaggio leggibile sul foglio finale; verificare la fonte per localizzazione e licenza. Non è una foto del punto di parcheggio."
+  },
+  {
+    "zoneId": "pnalm-settefrati-canneto",
+    "pageid": 120441205,
+    "review": "approved_by_photo_agent_and_root_contact_sheet",
+    "localization": "Sorgente del Melfa nella Valle di Canneto. Acqua e vegetazione locali; struttura del ponticello parte del luogo reale.",
+    "source": {
+      "query": "\"Valle di Canneto\"",
+      "title": "File:La sorgente del Melfa.jpg",
+      "pageid": 120441205,
+      "page": "https://commons.wikimedia.org/wiki/File:La_sorgente_del_Melfa.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/63/La_sorgente_del_Melfa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "previewUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/La_sorgente_del_Melfa.jpg/1920px-La_sorgente_del_Melfa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "author": "Spatuzzi Bruno",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "description": "Nella verdissima valle di Canneto, nasce uno dei fiumi più belli del centro Italia, dalla roccia del Monte Petroso, sgorgano le acque  del fiume Melfa.",
+      "width": 4582,
+      "height": 2970,
+      "extmetadata": {
+        "DateTime": {
+          "value": "2022-07-14 17:32:44",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "La sorgente del Melfa",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Self-published work|Files with coordinates missing SDC location of creation|Val Canneto",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "GPSLatitude": {
+          "value": "41.688611",
+          "source": "commons-desc-page"
+        },
+        "GPSLongitude": {
+          "value": "13.909722",
+          "source": "commons-desc-page"
+        },
+        "GPSMapDatum": {
+          "value": "WGS-84",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "Nella verdissima valle di Canneto, nasce uno dei fiumi più belli del centro Italia, dalla roccia del Monte Petroso, sgorgano le acque  del fiume Melfa.",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2012-08-13 11:43:35",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Spatuzzi_Bruno&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Spatuzzi Bruno (page does not exist)\">Spatuzzi Bruno</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC BY-SA 4.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution-Share Alike 4.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-sa-4.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "local": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/lazio-pilot-2026-10-19/integration/foto/originals/120441205.jpg",
+      "sha256": "537f13c3adc6394577ee3cbbaba62b8539295352a18ad88e6b6c823c92158b57",
+      "acquiredUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/La_sorgente_del_Melfa.jpg/1920px-La_sorgente_del_Melfa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "screen": "visual_pending"
+    },
+    "originalAcquired": "/Users/matteo/Documents/ChatGPT/fronda/fungaroli/incoming/lazio-pilot-2026-10-19/integration/foto/originals/120441205.jpg",
+    "originalSha256": "537f13c3adc6394577ee3cbbaba62b8539295352a18ad88e6b6c823c92158b57",
+    "outputs": {
+      "": {
+        "file": "assets/zones/pnalm-settefrati-canneto.webp",
+        "size": [
+          600,
+          389
+        ],
+        "sha256": "582ff0e2023abd28fade3766fd654d4cdc3efc854107b88b7d267495f7be8e5b"
+      },
+      "-hd": {
+        "file": "assets/zones/pnalm-settefrati-canneto-hd.webp",
+        "size": [
+          1600,
+          1038
+        ],
+        "sha256": "fdc4242e32a6876ce3518c89566a73bd2a15506cb790140aa1e1c926e17065fb"
+      },
+      "-t": {
+        "file": "assets/zones/pnalm-settefrati-canneto-t.webp",
+        "size": [
+          240,
+          156
+        ],
+        "sha256": "6569899fcaf6d386551341a22a98aeba09e3f132bf96b7e5aec1ad94fc19fde9"
+      }
+    },
+    "crop": [
+      0.5,
+      0.55
+    ],
+    "corrections": "Rotazione EXIF applicata; ritaglio centrale 3:2 per originali verticali o panoramici estremi; ridimensionamento, nessuna ricostruzione o generazione. Punto CSS rivisto sul provino.",
+    "rootReview": "2026-10-19: fotografia reale e paesaggio leggibile sul foglio finale; verificare la fonte per localizzazione e licenza. Non è una foto del punto di parcheggio."
+  }
+]

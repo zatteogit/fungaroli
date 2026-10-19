@@ -1,0 +1,71 @@
+{
+ "started": "2026-10-19T11:12:01.262068+00:00",
+ "seed": {
+  "id": "pnalm-settefrati-canneto",
+  "name": "Valle di Canneto da Settefrati",
+  "lat": 41.67028,
+  "lon": 13.8790896,
+  "radius_m": 2500,
+  "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+  "province": [
+   "FR"
+  ],
+  "coordinateProvenance": {
+   "method": "official_trace_bbox_midpoint",
+   "sourceUrl": "https://www.parcoabruzzo.it/iti_kmz.php?id=4988",
+   "bbox": {
+    "west": 13.85046601201267,
+    "south": 41.66184232025745,
+    "east": 13.90771313875895,
+    "north": 41.67871764460652
+   },
+   "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+  },
+  "collectionStatus": "restricted",
+  "collectionNote": "Raccolta regolamentata nel PNALM: verificare zona e autorizzazioni con il Parco; restare sui sentieri.",
+  "collectionSourceUrl": "https://www.parcoabruzzo.it/pagina.php?id=618",
+  "publicationStatus": "active",
+  "manager": "Ente Parco Nazionale d’Abruzzo, Lazio e Molise",
+  "researchGroup": "sud",
+  "officialTrailRefs": [
+   "O7"
+  ],
+  "officialTrailNameMatches": []
+ },
+ "demProvider": "copernicus-glo90-openmeteo",
+ "demResolutionM": 90,
+ "elevation": {
+  "min": 448,
+  "p25": 851,
+  "median": 1056,
+  "p75": 1293,
+  "max": 1877
+ },
+ "suggestedBandsM": [
+  850,
+  1060,
+  1290
+ ],
+ "forestPolygonCount": 50,
+ "habitatSamples": 317,
+ "roadErrors": [],
+ "trails": {
+  "listedRelations": 8,
+  "requestedRefs": [
+   "o7"
+  ],
+  "requestedDistinctiveNames": [],
+  "matchedRelations": [],
+  "unmatchedRefs": [
+   "o7"
+  ],
+  "driveError": null,
+  "coverageLimit": 100,
+  "geometryStatus": "no_documented_osm_match_imported"
+ },
+ "status": "complete",
+ "finished": "2026-10-19T11:12:12.735503+00:00",
+ "habitatStatus": "complete",
+ "grid": 21,
+ "gridStepM": 250.0
+}

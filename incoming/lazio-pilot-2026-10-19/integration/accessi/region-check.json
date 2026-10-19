@@ -1,0 +1,411 @@
+[
+  {
+    "id": "vico-monte-venere",
+    "lat": 42.3472377,
+    "lon": 12.1808827,
+    "sourceUrl": "https://nominatim.openstreetmap.org/reverse?lat=42.3472377&lon=12.1808827&format=jsonv2&zoom=10&addressdetails=1",
+    "address": {
+      "village": "Caprarola",
+      "county": "Viterbo",
+      "ISO3166-2-lvl6": "IT-VT",
+      "state": "Lazio",
+      "ISO3166-2-lvl4": "IT-62",
+      "postcode": "01032",
+      "country": "Italia",
+      "country_code": "it"
+    },
+    "display_name": "Caprarola, Viterbo, Lazio, 01032, Italia",
+    "checkedAt": "2026-10-19",
+    "license": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "scope": "Centro editoriale; non intero cerchio o traccia"
+  },
+  {
+    "id": "monte-rufeno-felceto",
+    "lat": 42.7832961,
+    "lon": 11.8934405,
+    "sourceUrl": "https://nominatim.openstreetmap.org/reverse?lat=42.7832961&lon=11.8934405&format=jsonv2&zoom=10&addressdetails=1",
+    "address": {
+      "town": "Acquapendente",
+      "county": "Viterbo",
+      "ISO3166-2-lvl6": "IT-VT",
+      "state": "Lazio",
+      "ISO3166-2-lvl4": "IT-62",
+      "postcode": "01021",
+      "country": "Italia",
+      "country_code": "it"
+    },
+    "display_name": "Acquapendente, Viterbo, Lazio, 01021, Italia",
+    "checkedAt": "2026-10-19",
+    "license": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "scope": "Centro editoriale; non intero cerchio o traccia"
+  },
+  {
+    "id": "oriolo-monte-raschio",
+    "lat": 42.1671,
+    "lon": 12.149406,
+    "sourceUrl": "https://nominatim.openstreetmap.org/reverse?lat=42.1671&lon=12.149406&format=jsonv2&zoom=10&addressdetails=1",
+    "address": {
+      "village": "Oriolo Romano",
+      "county": "Viterbo",
+      "ISO3166-2-lvl6": "IT-VT",
+      "state": "Lazio",
+      "ISO3166-2-lvl4": "IT-62",
+      "country": "Italia",
+      "country_code": "it"
+    },
+    "display_name": "Oriolo Romano, Viterbo, Lazio, Italia",
+    "checkedAt": "2026-10-19",
+    "license": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "scope": "Centro editoriale; non intero cerchio o traccia"
+  },
+  {
+    "id": "allumiere-faggeto",
+    "lat": 42.1539073,
+    "lon": 11.9080639,
+    "sourceUrl": "https://nominatim.openstreetmap.org/reverse?lat=42.1539073&lon=11.9080639&format=jsonv2&zoom=10&addressdetails=1",
+    "address": {
+      "village": "Allumiere",
+      "county": "Roma Capitale",
+      "ISO3166-2-lvl6": "IT-RM",
+      "state": "Lazio",
+      "ISO3166-2-lvl4": "IT-62",
+      "postcode": "00051",
+      "country": "Italia",
+      "country_code": "it"
+    },
+    "display_name": "Allumiere, Roma Capitale, Lazio, 00051, Italia",
+    "checkedAt": "2026-10-19",
+    "license": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "scope": "Centro editoriale; non intero cerchio o traccia"
+  },
+  {
+    "id": "monterano-bicione",
+    "lat": 42.142368,
+    "lon": 12.0763325,
+    "sourceUrl": "https://nominatim.openstreetmap.org/reverse?lat=42.142368&lon=12.0763325&format=jsonv2&zoom=10&addressdetails=1",
+    "address": {
+      "village": "Canale Monterano",
+      "county": "Roma Capitale",
+      "ISO3166-2-lvl6": "IT-RM",
+      "state": "Lazio",
+      "ISO3166-2-lvl4": "IT-62",
+      "country": "Italia",
+      "country_code": "it"
+    },
+    "display_name": "Canale Monterano, Roma Capitale, Lazio, Italia",
+    "checkedAt": "2026-10-19",
+    "license": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "scope": "Centro editoriale; non intero cerchio o traccia"
+  },
+  {
+    "id": "veio-monte-musino",
+    "lat": 42.0978367,
+    "lon": 12.4401353,
+    "sourceUrl": "https://nominatim.openstreetmap.org/reverse?lat=42.0978367&lon=12.4401353&format=jsonv2&zoom=10&addressdetails=1",
+    "address": {
+      "village": "Sacrofano",
+      "county": "Roma Capitale",
+      "ISO3166-2-lvl6": "IT-RM",
+      "state": "Lazio",
+      "ISO3166-2-lvl4": "IT-62",
+      "country": "Italia",
+      "country_code": "it"
+    },
+    "display_name": "Sacrofano, Roma Capitale, Lazio, Italia",
+    "checkedAt": "2026-10-19",
+    "license": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "scope": "Centro editoriale; non intero cerchio o traccia"
+  },
+  {
+    "id": "tuscolo-nord",
+    "lat": 41.8024272,
+    "lon": 12.69921,
+    "sourceUrl": "https://nominatim.openstreetmap.org/reverse?lat=41.8024272&lon=12.69921&format=jsonv2&zoom=10&addressdetails=1",
+    "address": {
+      "village": "Monte Porzio Catone",
+      "county": "Roma Capitale",
+      "ISO3166-2-lvl6": "IT-RM",
+      "state": "Lazio",
+      "ISO3166-2-lvl4": "IT-62",
+      "postcode": "00078",
+      "country": "Italia",
+      "country_code": "it"
+    },
+    "display_name": "Monte Porzio Catone, Roma Capitale, Lazio, 00078, Italia",
+    "checkedAt": "2026-10-19",
+    "license": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "scope": "Centro editoriale; non intero cerchio o traccia"
+  },
+  {
+    "id": "faete-rocca-papa",
+    "lat": 41.7546186,
+    "lon": 12.7237168,
+    "sourceUrl": "https://nominatim.openstreetmap.org/reverse?lat=41.7546186&lon=12.7237168&format=jsonv2&zoom=10&addressdetails=1",
+    "address": {
+      "town": "Rocca di Papa",
+      "county": "Roma Capitale",
+      "ISO3166-2-lvl6": "IT-RM",
+      "state": "Lazio",
+      "ISO3166-2-lvl4": "IT-62",
+      "country": "Italia",
+      "country_code": "it"
+    },
+    "display_name": "Rocca di Papa, Roma Capitale, Lazio, Italia",
+    "checkedAt": "2026-10-19",
+    "license": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "scope": "Centro editoriale; non intero cerchio o traccia"
+  },
+  {
+    "id": "nemi-fontan-tempesta",
+    "lat": 41.7266247,
+    "lon": 12.7125641,
+    "sourceUrl": "https://nominatim.openstreetmap.org/reverse?lat=41.7266247&lon=12.7125641&format=jsonv2&zoom=10&addressdetails=1",
+    "address": {
+      "village": "Nemi",
+      "county": "Roma Capitale",
+      "ISO3166-2-lvl6": "IT-RM",
+      "state": "Lazio",
+      "ISO3166-2-lvl4": "IT-62",
+      "postcode": "00074",
+      "country": "Italia",
+      "country_code": "it"
+    },
+    "display_name": "Nemi, Roma Capitale, Lazio, 00074, Italia",
+    "checkedAt": "2026-10-19",
+    "license": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "scope": "Centro editoriale; non intero cerchio o traccia"
+  },
+  {
+    "id": "cerquone-doganella",
+    "lat": 41.7784217,
+    "lon": 12.7823341,
+    "sourceUrl": "https://nominatim.openstreetmap.org/reverse?lat=41.7784217&lon=12.7823341&format=jsonv2&zoom=10&addressdetails=1",
+    "address": {
+      "town": "Rocca Priora",
+      "county": "Roma Capitale",
+      "ISO3166-2-lvl6": "IT-RM",
+      "state": "Lazio",
+      "ISO3166-2-lvl4": "IT-62",
+      "postcode": "00079",
+      "country": "Italia",
+      "country_code": "it"
+    },
+    "display_name": "Rocca Priora, Roma Capitale, Lazio, 00079, Italia",
+    "checkedAt": "2026-10-19",
+    "license": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "scope": "Centro editoriale; non intero cerchio o traccia"
+  },
+  {
+    "id": "livata-tufai",
+    "lat": 41.9331844,
+    "lon": 13.1562279,
+    "sourceUrl": "https://nominatim.openstreetmap.org/reverse?lat=41.9331844&lon=13.1562279&format=jsonv2&zoom=10&addressdetails=1",
+    "address": {
+      "village": "Subiaco",
+      "county": "Roma Capitale",
+      "ISO3166-2-lvl6": "IT-RM",
+      "state": "Lazio",
+      "ISO3166-2-lvl4": "IT-62",
+      "postcode": "00028",
+      "country": "Italia",
+      "country_code": "it"
+    },
+    "display_name": "Subiaco, Roma Capitale, Lazio, 00028, Italia",
+    "checkedAt": "2026-10-19",
+    "license": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "scope": "Centro editoriale; non intero cerchio o traccia"
+  },
+  {
+    "id": "cervara-prataglia",
+    "lat": 42.0004981,
+    "lon": 13.061135,
+    "sourceUrl": "https://nominatim.openstreetmap.org/reverse?lat=42.0004981&lon=13.061135&format=jsonv2&zoom=10&addressdetails=1",
+    "address": {
+      "village": "Cervara di Roma",
+      "county": "Roma Capitale",
+      "ISO3166-2-lvl6": "IT-RM",
+      "state": "Lazio",
+      "ISO3166-2-lvl4": "IT-62",
+      "country": "Italia",
+      "country_code": "it"
+    },
+    "display_name": "Cervara di Roma, Roma Capitale, Lazio, Italia",
+    "checkedAt": "2026-10-19",
+    "license": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "scope": "Centro editoriale; non intero cerchio o traccia"
+  },
+  {
+    "id": "gennaro-roccagiovine",
+    "lat": 42.0565333,
+    "lon": 12.8504782,
+    "sourceUrl": "https://nominatim.openstreetmap.org/reverse?lat=42.0565333&lon=12.8504782&format=jsonv2&zoom=10&addressdetails=1",
+    "address": {
+      "village": "San Polo dei Cavalieri",
+      "county": "Roma Capitale",
+      "ISO3166-2-lvl6": "IT-RM",
+      "state": "Lazio",
+      "ISO3166-2-lvl4": "IT-62",
+      "country": "Italia",
+      "country_code": "it"
+    },
+    "display_name": "San Polo dei Cavalieri, Roma Capitale, Lazio, Italia",
+    "checkedAt": "2026-10-19",
+    "license": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "scope": "Centro editoriale; non intero cerchio o traccia"
+  },
+  {
+    "id": "lepini-bassiano-santangelo",
+    "lat": 41.561727,
+    "lon": 13.056672,
+    "sourceUrl": "https://nominatim.openstreetmap.org/reverse?lat=41.561727&lon=13.056672&format=jsonv2&zoom=10&addressdetails=1",
+    "address": {
+      "village": "Bassiano",
+      "county": "Latina",
+      "ISO3166-2-lvl6": "IT-LT",
+      "state": "Lazio",
+      "ISO3166-2-lvl4": "IT-62",
+      "country": "Italia",
+      "country_code": "it"
+    },
+    "display_name": "Bassiano, Latina, Lazio, Italia",
+    "checkedAt": "2026-10-19",
+    "license": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "scope": "Centro editoriale; non intero cerchio o traccia"
+  },
+  {
+    "id": "ausoni-san-vito",
+    "lat": 41.3692321,
+    "lon": 13.3378515,
+    "sourceUrl": "https://nominatim.openstreetmap.org/reverse?lat=41.3692321&lon=13.3378515&format=jsonv2&zoom=10&addressdetails=1",
+    "address": {
+      "village": "Monte San Biagio",
+      "county": "Latina",
+      "ISO3166-2-lvl6": "IT-LT",
+      "state": "Lazio",
+      "ISO3166-2-lvl4": "IT-62",
+      "country": "Italia",
+      "country_code": "it"
+    },
+    "display_name": "Monte San Biagio, Latina, Lazio, Italia",
+    "checkedAt": "2026-10-19",
+    "license": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "scope": "Centro editoriale; non intero cerchio o traccia"
+  },
+  {
+    "id": "aurunci-itri-campello",
+    "lat": 41.3218395,
+    "lon": 13.5770165,
+    "sourceUrl": "https://nominatim.openstreetmap.org/reverse?lat=41.3218395&lon=13.5770165&format=jsonv2&zoom=10&addressdetails=1",
+    "address": {
+      "town": "Itri",
+      "county": "Latina",
+      "ISO3166-2-lvl6": "IT-LT",
+      "state": "Lazio",
+      "ISO3166-2-lvl4": "IT-62",
+      "country": "Italia",
+      "country_code": "it"
+    },
+    "display_name": "Itri, Latina, Lazio, Italia",
+    "checkedAt": "2026-10-19",
+    "license": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "scope": "Centro editoriale; non intero cerchio o traccia"
+  },
+  {
+    "id": "circeo-cerasella-verdesca",
+    "lat": 41.3518884,
+    "lon": 13.0482759,
+    "sourceUrl": "https://nominatim.openstreetmap.org/reverse?lat=41.3518884&lon=13.0482759&format=jsonv2&zoom=10&addressdetails=1",
+    "address": {
+      "town": "Sabaudia",
+      "county": "Latina",
+      "ISO3166-2-lvl6": "IT-LT",
+      "state": "Lazio",
+      "ISO3166-2-lvl4": "IT-62",
+      "postcode": "04016",
+      "country": "Italia",
+      "country_code": "it"
+    },
+    "display_name": "Sabaudia, Latina, Lazio, 04016, Italia",
+    "checkedAt": "2026-10-19",
+    "license": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "scope": "Centro editoriale; non intero cerchio o traccia"
+  },
+  {
+    "id": "ernici-prato-campoli",
+    "lat": 41.7745278,
+    "lon": 13.4925556,
+    "sourceUrl": "https://nominatim.openstreetmap.org/reverse?lat=41.7745278&lon=13.4925556&format=jsonv2&zoom=10&addressdetails=1",
+    "address": {
+      "town": "Veroli",
+      "county": "Frosinone",
+      "ISO3166-2-lvl6": "IT-FR",
+      "state": "Lazio",
+      "ISO3166-2-lvl4": "IT-62",
+      "postcode": "03029",
+      "country": "Italia",
+      "country_code": "it"
+    },
+    "display_name": "Veroli, Frosinone, Lazio, 03029, Italia",
+    "checkedAt": "2026-10-19",
+    "license": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "scope": "Centro editoriale; non intero cerchio o traccia"
+  },
+  {
+    "id": "lepini-supino-santaserena",
+    "lat": 41.6020667,
+    "lon": 13.1660833,
+    "sourceUrl": "https://nominatim.openstreetmap.org/reverse?lat=41.6020667&lon=13.1660833&format=jsonv2&zoom=10&addressdetails=1",
+    "address": {
+      "village": "Supino",
+      "county": "Frosinone",
+      "ISO3166-2-lvl6": "IT-FR",
+      "state": "Lazio",
+      "ISO3166-2-lvl4": "IT-62",
+      "postcode": "03019",
+      "country": "Italia",
+      "country_code": "it"
+    },
+    "display_name": "Supino, Frosinone, Lazio, 03019, Italia",
+    "checkedAt": "2026-10-19",
+    "license": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "scope": "Centro editoriale; non intero cerchio o traccia"
+  },
+  {
+    "id": "simbruini-filettino-fiumata",
+    "lat": 41.9067994,
+    "lon": 13.2921344,
+    "sourceUrl": "https://nominatim.openstreetmap.org/reverse?lat=41.9067994&lon=13.2921344&format=jsonv2&zoom=10&addressdetails=1",
+    "address": {
+      "village": "Filettino",
+      "county": "Frosinone",
+      "ISO3166-2-lvl6": "IT-FR",
+      "state": "Lazio",
+      "ISO3166-2-lvl4": "IT-62",
+      "country": "Italia",
+      "country_code": "it"
+    },
+    "display_name": "Filettino, Frosinone, Lazio, Italia",
+    "checkedAt": "2026-10-19",
+    "license": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "scope": "Centro editoriale; non intero cerchio o traccia"
+  },
+  {
+    "id": "pnalm-settefrati-canneto",
+    "lat": 41.67028,
+    "lon": 13.8790896,
+    "sourceUrl": "https://nominatim.openstreetmap.org/reverse?lat=41.67028&lon=13.8790896&format=jsonv2&zoom=10&addressdetails=1",
+    "address": {
+      "village": "Settefrati",
+      "county": "Frosinone",
+      "ISO3166-2-lvl6": "IT-FR",
+      "state": "Lazio",
+      "ISO3166-2-lvl4": "IT-62",
+      "country": "Italia",
+      "country_code": "it"
+    },
+    "display_name": "Settefrati, Frosinone, Lazio, Italia",
+    "checkedAt": "2026-10-19",
+    "license": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "scope": "Centro editoriale; non intero cerchio o traccia"
+  }
+]

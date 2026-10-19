@@ -1,0 +1,59 @@
+{
+ "started": "2026-10-19T11:10:43.776781+00:00",
+ "seed": {
+  "id": "ausoni-san-vito",
+  "name": "Sughereta di San Vito",
+  "lat": 41.3692321,
+  "lon": 13.3378515,
+  "radius_m": 1500,
+  "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+  "province": [
+   "LT"
+  ],
+  "coordinateProvenance": {
+   "method": "published_place_or_map",
+   "sourceUrl": "https://montesanbiagio.halleyegov.it/vivere_il_comune/luoghi/luogo_16.html",
+   "note": "Punto mappa nella scheda comunale aggiornata il 01/07/2025; centro editoriale, non parcheggio."
+  },
+  "collectionStatus": "unknown",
+  "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita.",
+  "collectionSourceUrl": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+  "publicationStatus": "active",
+  "manager": "Ente Parco Naturale Regionale Monti Ausoni e Lago di Fondi",
+  "researchGroup": "sud",
+  "officialTrailRefs": [],
+  "officialTrailNameMatches": []
+ },
+ "demProvider": "copernicus-glo90-openmeteo",
+ "demResolutionM": 90,
+ "elevation": {
+  "min": 16,
+  "p25": 82,
+  "median": 134,
+  "p75": 300,
+  "max": 553
+ },
+ "suggestedBandsM": [
+  80,
+  130,
+  300
+ ],
+ "forestPolygonCount": 34,
+ "habitatSamples": 317,
+ "roadErrors": [],
+ "trails": {
+  "listedRelations": 2,
+  "requestedRefs": [],
+  "requestedDistinctiveNames": [],
+  "matchedRelations": [],
+  "unmatchedRefs": [],
+  "driveError": null,
+  "coverageLimit": 100,
+  "geometryStatus": "no_documented_osm_match_imported"
+ },
+ "status": "complete",
+ "finished": "2026-10-19T11:10:54.991322+00:00",
+ "habitatStatus": "complete",
+ "grid": 21,
+ "gridStepM": 150.0
+}

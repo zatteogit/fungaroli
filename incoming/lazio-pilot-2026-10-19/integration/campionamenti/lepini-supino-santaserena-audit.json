@@ -1,0 +1,59 @@
+{
+ "started": "2026-10-19T11:11:35.282115+00:00",
+ "seed": {
+  "id": "lepini-supino-santaserena",
+  "name": "Fonte Santa Serena e boschi del Monte Gemma",
+  "lat": 41.6020667,
+  "lon": 13.1660833,
+  "radius_m": 1500,
+  "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+  "province": [
+   "FR"
+  ],
+  "coordinateProvenance": {
+   "method": "published_wgs_point",
+   "sourceUrl": "https://www.cairoma.it/?p=28403",
+   "note": "Centro editoriale coincidente con il punto WGS pubblicato dal CAI; il raggio non delimita l’area naturale."
+  },
+  "collectionStatus": "unknown",
+  "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita.",
+  "collectionSourceUrl": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+  "publicationStatus": "active",
+  "manager": "Ente competente indicato nelle fonti",
+  "researchGroup": "sud",
+  "officialTrailRefs": [],
+  "officialTrailNameMatches": []
+ },
+ "demProvider": "copernicus-glo90-openmeteo",
+ "demResolutionM": 90,
+ "elevation": {
+  "min": 912,
+  "p25": 1110,
+  "median": 1226,
+  "p75": 1339,
+  "max": 1468
+ },
+ "suggestedBandsM": [
+  1110,
+  1230,
+  1340
+ ],
+ "forestPolygonCount": 35,
+ "habitatSamples": 317,
+ "roadErrors": [],
+ "trails": {
+  "listedRelations": 12,
+  "requestedRefs": [],
+  "requestedDistinctiveNames": [],
+  "matchedRelations": [],
+  "unmatchedRefs": [],
+  "driveError": null,
+  "coverageLimit": 100,
+  "geometryStatus": "no_documented_osm_match_imported"
+ },
+ "status": "complete",
+ "finished": "2026-10-19T11:11:46.751283+00:00",
+ "habitatStatus": "complete",
+ "grid": 21,
+ "gridStepM": 150.0
+}

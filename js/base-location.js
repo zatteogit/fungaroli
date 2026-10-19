@@ -12,12 +12,12 @@ export function setBaseUser(user){
   account=id;base=next;epoch++;controller?.abort();clearTimeout(timer);loading=false;routes.clear();queue.clear();failed.clear();inflight.clear();announce('base');
 }
 export function retryBaseRoutes(){failed.clear();announce('travel');}
-export function travelTo(target,reference){
+export function travelTo(target,reference,{route=true}={}){
   const airKm=airDistanceKm(currentBase(),target);
   if(!customBase())return{minutes:Number.isFinite(reference?.minutes)?reference.minutes:null,km:Number.isFinite(reference?.km)?reference.km:null,airKm,reference:true};
   const key=pointKey(target),known=routes.get(key);
   if(known)return{...known,airKm,reference:false};
-  if(account&&!failed.has(key)&&!inflight.has(key)){queue.set(key,{lat:target.lat,lon:target.lon});if(!loading){clearTimeout(timer);timer=setTimeout(flush,80);}}
+  if(route&&account&&!failed.has(key)&&!inflight.has(key)){queue.set(key,{lat:target.lat,lon:target.lon});if(!loading){clearTimeout(timer);timer=setTimeout(flush,80);}}
   return{minutes:null,km:null,airKm,reference:false};
 }
 async function flush(){

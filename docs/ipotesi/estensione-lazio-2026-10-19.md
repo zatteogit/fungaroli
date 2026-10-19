@@ -11,3 +11,7 @@ Verificati JSON, riferimenti alle fonti e assenza di ID duplicati rispetto alle 
 Approvata la prosecuzione verso pacchetti regionali con uscite e funghi prioritari, dati ignoti distinti da zero e osservazione distinta dalla raccolta. **Integrazione applicativa ancora da eseguire**: perimetri, habitat e quote campionati, tracce riutilizzabili, accessi/regole attuali, immagini revisionate, partenza regionale e risorse CMS coerenti. Nessuna nuova zona o indice è pubblicato da questa raccolta.
 
 Nessuna suite, test, dry-run o CI eseguiti per richiesta persistente dell’utente. Il lavoro botanico precedente rimane nel suo ramo e non viene duplicato o incorporato nell’estensione geografica.
+
+## Adozione per l’integrazione · 19 ottobre 2026
+
+Matteo ha autorizzato esplicitamente verifiche, integrazione e pubblicazione del pilota Lazio, senza suite di test. Adottate le 21 zone dopo verifiche territoriali e fonti; i 15 oggetti originari restano identici. L’integrazione applicativa aggiunge provincia, provenienza delle coordinate, stato della raccolta e fonti; campioni reali e accessi documentati. Nessun nuovo parametro biologico o valore di notorietà. Le fotografie passano da candidate ad approvate solo dopo revisione visiva dell’agente e del coordinatore. Pubblicazione e riscontri finali saranno registrati nel rapporto di integrazione.

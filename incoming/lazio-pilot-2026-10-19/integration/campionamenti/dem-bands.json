@@ -1,0 +1,429 @@
+{
+ "vico-monte-venere": {
+  "elevation": {
+   "min": 512,
+   "p25": 566,
+   "median": 617,
+   "p75": 691,
+   "max": 897
+  },
+  "suggestedBandsM": [
+   570,
+   620,
+   690
+  ],
+  "demProvider": "copernicus-glo90-openmeteo",
+  "demResolutionM": 90,
+  "habitatStatus": "complete"
+ },
+ "monte-rufeno-felceto": {
+  "elevation": {
+   "min": 329,
+   "p25": 496,
+   "median": 556,
+   "p75": 612,
+   "max": 728
+  },
+  "suggestedBandsM": [
+   500,
+   560,
+   610
+  ],
+  "demProvider": "copernicus-glo90-openmeteo",
+  "demResolutionM": 90,
+  "habitatStatus": "complete"
+ },
+ "oriolo-monte-raschio": {
+  "elevation": {
+   "min": 390,
+   "p25": 416,
+   "median": 447,
+   "p75": 470,
+   "max": 561
+  },
+  "suggestedBandsM": [
+   420,
+   450,
+   470
+  ],
+  "demProvider": "copernicus-glo90-openmeteo",
+  "demResolutionM": 90,
+  "habitatStatus": "complete"
+ },
+ "allumiere-faggeto": {
+  "elevation": {
+   "min": 298,
+   "p25": 447,
+   "median": 495,
+   "p75": 541,
+   "max": 628
+  },
+  "suggestedBandsM": [
+   450,
+   500,
+   540
+  ],
+  "demProvider": "copernicus-glo90-openmeteo",
+  "demResolutionM": 90,
+  "habitatStatus": "complete"
+ },
+ "monterano-bicione": {
+  "elevation": {
+   "min": 172,
+   "p25": 250,
+   "median": 285,
+   "p75": 315,
+   "max": 465
+  },
+  "suggestedBandsM": [
+   250,
+   290,
+   320
+  ],
+  "demProvider": "copernicus-glo90-openmeteo",
+  "demResolutionM": 90,
+  "habitatStatus": "complete"
+ },
+ "veio-monte-musino": {
+  "elevation": {
+   "min": 167,
+   "p25": 219,
+   "median": 263,
+   "p75": 300,
+   "max": 384
+  },
+  "suggestedBandsM": [
+   220,
+   260,
+   300
+  ],
+  "demProvider": "copernicus-glo90-openmeteo",
+  "demResolutionM": 90,
+  "habitatStatus": "complete"
+ },
+ "tuscolo-nord": {
+  "elevation": {
+   "min": 315,
+   "p25": 404,
+   "median": 455,
+   "p75": 527,
+   "max": 667
+  },
+  "suggestedBandsM": [
+   400,
+   460,
+   530
+  ],
+  "demProvider": "copernicus-glo90-openmeteo",
+  "demResolutionM": 90,
+  "habitatStatus": "complete"
+ },
+ "faete-rocca-papa": {
+  "demProvider": "copernicus-glo90-openmeteo",
+  "demResolutionM": 90,
+  "elevation": {
+   "min": 590,
+   "p25": 752,
+   "median": 790,
+   "p75": 852,
+   "max": 944
+  },
+  "suggestedBandsM": [
+   750,
+   790,
+   850
+  ],
+  "gridPointCount": 317,
+  "grid": 21,
+  "status": "dem_complete_habitat_pending",
+  "habitatStatus": "complete",
+  "habitatReason": "Carta Forestale WFS timed out repeatedly after 2026-10-19T10:54Z; no forest samples/composition substituted.",
+  "finished": "2026-10-19T10:58:59.758858+00:00"
+ },
+ "nemi-fontan-tempesta": {
+  "demProvider": "copernicus-glo90-openmeteo",
+  "demResolutionM": 90,
+  "elevation": {
+   "min": 319,
+   "p25": 455,
+   "median": 605,
+   "p75": 643,
+   "max": 769
+  },
+  "suggestedBandsM": [
+   460,
+   610,
+   640
+  ],
+  "gridPointCount": 317,
+  "grid": 21,
+  "status": "dem_complete_habitat_pending",
+  "habitatStatus": "complete",
+  "habitatReason": "Carta Forestale WFS timed out repeatedly after 2026-10-19T10:54Z; no forest samples/composition substituted.",
+  "finished": "2026-10-19T10:59:36.222035+00:00"
+ },
+ "cerquone-doganella": {
+  "demProvider": "copernicus-glo90-openmeteo",
+  "demResolutionM": 90,
+  "elevation": {
+   "min": 521,
+   "p25": 564,
+   "median": 602,
+   "p75": 659,
+   "max": 763
+  },
+  "suggestedBandsM": [
+   560,
+   600,
+   660
+  ],
+  "gridPointCount": 317,
+  "grid": 21,
+  "status": "dem_complete_habitat_pending",
+  "habitatStatus": "complete",
+  "habitatReason": "Carta Forestale WFS timed out repeatedly after 2026-10-19T10:54Z; no forest samples/composition substituted.",
+  "finished": "2026-10-19T11:00:35.966700+00:00"
+ },
+ "livata-tufai": {
+  "demProvider": "copernicus-glo90-openmeteo",
+  "demResolutionM": 90,
+  "elevation": {
+   "min": 1101,
+   "p25": 1341,
+   "median": 1387,
+   "p75": 1459,
+   "max": 1603
+  },
+  "suggestedBandsM": [
+   1340,
+   1390,
+   1460
+  ],
+  "gridPointCount": 317,
+  "grid": 21,
+  "status": "dem_complete_habitat_pending",
+  "habitatStatus": "complete",
+  "habitatReason": "Carta Forestale WFS timed out repeatedly after 2026-10-19T10:54Z; no forest samples/composition substituted.",
+  "finished": "2026-10-19T11:01:12.394274+00:00"
+ },
+ "cervara-prataglia": {
+  "demProvider": "copernicus-glo90-openmeteo",
+  "demResolutionM": 90,
+  "elevation": {
+   "min": 613,
+   "p25": 792,
+   "median": 997,
+   "p75": 1126,
+   "max": 1223
+  },
+  "suggestedBandsM": [
+   790,
+   1000,
+   1130
+  ],
+  "gridPointCount": 317,
+  "grid": 21,
+  "status": "dem_complete_habitat_pending",
+  "habitatStatus": "complete",
+  "habitatReason": "Carta Forestale WFS timed out repeatedly after 2026-10-19T10:54Z; no forest samples/composition substituted.",
+  "finished": "2026-10-19T11:01:48.717167+00:00"
+ },
+ "gennaro-roccagiovine": {
+  "demProvider": "copernicus-glo90-openmeteo",
+  "demResolutionM": 90,
+  "elevation": {
+   "min": 539,
+   "p25": 864,
+   "median": 956,
+   "p75": 1039,
+   "max": 1186
+  },
+  "suggestedBandsM": [
+   860,
+   960,
+   1040
+  ],
+  "gridPointCount": 317,
+  "grid": 21,
+  "status": "dem_complete_habitat_pending",
+  "habitatStatus": "complete",
+  "habitatReason": "Carta Forestale WFS timed out repeatedly after 2026-10-19T10:54Z; no forest samples/composition substituted.",
+  "finished": "2026-10-19T11:02:25.172805+00:00"
+ },
+ "lepini-bassiano-santangelo": {
+  "demProvider": "copernicus-glo90-openmeteo",
+  "demResolutionM": 90,
+  "elevation": {
+   "min": 538,
+   "p25": 703,
+   "median": 820,
+   "p75": 953,
+   "max": 1218
+  },
+  "suggestedBandsM": [
+   700,
+   820,
+   950
+  ],
+  "gridPointCount": 317,
+  "grid": 21,
+  "status": "dem_complete_habitat_pending",
+  "habitatStatus": "complete",
+  "habitatReason": "Carta Forestale WFS timed out repeatedly after 2026-10-19T10:54Z; no forest samples/composition substituted.",
+  "finished": "2026-10-19T11:03:01.663995+00:00"
+ },
+ "ausoni-san-vito": {
+  "demProvider": "copernicus-glo90-openmeteo",
+  "demResolutionM": 90,
+  "elevation": {
+   "min": 16,
+   "p25": 82,
+   "median": 134,
+   "p75": 300,
+   "max": 553
+  },
+  "suggestedBandsM": [
+   80,
+   130,
+   300
+  ],
+  "gridPointCount": 317,
+  "grid": 21,
+  "status": "dem_complete_habitat_pending",
+  "habitatStatus": "complete",
+  "habitatReason": "Carta Forestale WFS timed out repeatedly after 2026-10-19T10:54Z; no forest samples/composition substituted.",
+  "finished": "2026-10-19T11:03:38.097179+00:00"
+ },
+ "aurunci-itri-campello": {
+  "demProvider": "copernicus-glo90-openmeteo",
+  "demResolutionM": 90,
+  "elevation": {
+   "min": 711,
+   "p25": 839,
+   "median": 937,
+   "p75": 1068,
+   "max": 1267
+  },
+  "suggestedBandsM": [
+   840,
+   940,
+   1070
+  ],
+  "gridPointCount": 317,
+  "grid": 21,
+  "status": "dem_complete_habitat_pending",
+  "habitatStatus": "complete",
+  "habitatReason": "Carta Forestale WFS timed out repeatedly after 2026-10-19T10:54Z; no forest samples/composition substituted.",
+  "finished": "2026-10-19T11:04:14.533957+00:00"
+ },
+ "circeo-cerasella-verdesca": {
+  "demProvider": "copernicus-glo90-openmeteo",
+  "demResolutionM": 90,
+  "elevation": {
+   "min": 20,
+   "p25": 37,
+   "median": 42,
+   "p75": 46,
+   "max": 56
+  },
+  "suggestedBandsM": [
+   40,
+   40,
+   50
+  ],
+  "gridPointCount": 317,
+  "grid": 21,
+  "status": "dem_complete_habitat_pending",
+  "habitatStatus": "complete",
+  "habitatReason": "Carta Forestale WFS timed out repeatedly after 2026-10-19T10:54Z; no forest samples/composition substituted.",
+  "finished": "2026-10-19T11:04:51.007047+00:00"
+ },
+ "ernici-prato-campoli": {
+  "demProvider": "copernicus-glo90-openmeteo",
+  "demResolutionM": 90,
+  "elevation": {
+   "min": 1100,
+   "p25": 1196,
+   "median": 1282,
+   "p75": 1372,
+   "max": 1710
+  },
+  "suggestedBandsM": [
+   1200,
+   1280,
+   1370
+  ],
+  "gridPointCount": 317,
+  "grid": 21,
+  "status": "dem_complete_habitat_pending",
+  "habitatStatus": "complete",
+  "habitatReason": "Carta Forestale WFS timed out repeatedly after 2026-10-19T10:54Z; no forest samples/composition substituted.",
+  "finished": "2026-10-19T11:05:27.460085+00:00"
+ },
+ "lepini-supino-santaserena": {
+  "demProvider": "copernicus-glo90-openmeteo",
+  "demResolutionM": 90,
+  "elevation": {
+   "min": 912,
+   "p25": 1110,
+   "median": 1226,
+   "p75": 1339,
+   "max": 1468
+  },
+  "suggestedBandsM": [
+   1110,
+   1230,
+   1340
+  ],
+  "gridPointCount": 317,
+  "grid": 21,
+  "status": "dem_complete_habitat_pending",
+  "habitatStatus": "complete",
+  "habitatReason": "Carta Forestale WFS timed out repeatedly after 2026-10-19T10:54Z; no forest samples/composition substituted.",
+  "finished": "2026-10-19T11:06:03.992080+00:00"
+ },
+ "simbruini-filettino-fiumata": {
+  "demProvider": "copernicus-glo90-openmeteo",
+  "demResolutionM": 90,
+  "elevation": {
+   "min": 934,
+   "p25": 1090,
+   "median": 1168,
+   "p75": 1233,
+   "max": 1439
+  },
+  "suggestedBandsM": [
+   1090,
+   1170,
+   1230
+  ],
+  "gridPointCount": 317,
+  "grid": 21,
+  "status": "dem_complete_habitat_pending",
+  "habitatStatus": "complete",
+  "habitatReason": "Carta Forestale WFS timed out repeatedly after 2026-10-19T10:54Z; no forest samples/composition substituted.",
+  "finished": "2026-10-19T11:06:40.419474+00:00"
+ },
+ "pnalm-settefrati-canneto": {
+  "demProvider": "copernicus-glo90-openmeteo",
+  "demResolutionM": 90,
+  "elevation": {
+   "min": 448,
+   "p25": 851,
+   "median": 1056,
+   "p75": 1293,
+   "max": 1877
+  },
+  "suggestedBandsM": [
+   850,
+   1060,
+   1290
+  ],
+  "gridPointCount": 317,
+  "grid": 21,
+  "status": "dem_complete_habitat_pending",
+  "habitatStatus": "complete",
+  "habitatReason": "Carta Forestale WFS timed out repeatedly after 2026-10-19T10:54Z; no forest samples/composition substituted.",
+  "finished": "2026-10-19T11:07:40.029013+00:00"
+ }
+}
