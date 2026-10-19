@@ -51,7 +51,7 @@ export function compactMapFilters(dialog) {
   const headings = [...body.querySelectorAll(':scope > h3')];
   const trails = headings.find(h => h.textContent === 'Sentieri');
   const practical = headings.find(h => h.textContent === 'Uscita');
-  const species = body.querySelector(':scope > .species-search-label');
+  const species = body.querySelector(':scope > label[for="species-filter-search"]');
   wrap(species, trails, 'Quali specie');
   wrap(trails, practical, 'Tipo di sentiero');
   if (practical) { practical.textContent = 'Preferenze per l’elenco'; const note = document.createElement('p'); note.className = 'small muted'; note.textContent = 'Cambiano l’ordine delle zone. L’indice dei funghi resta invariato.'; practical.after(note); }

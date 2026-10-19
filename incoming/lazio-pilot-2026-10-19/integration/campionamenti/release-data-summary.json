@@ -1,0 +1,195 @@
+{
+ "generated": "2026-10-19T11:13:14.404475+00:00",
+ "newZoneCount": 21,
+ "DEMCompleteCount": 21,
+ "DEMGrid": 21,
+ "DEMGridPointCount": 6657,
+ "DEMProvider": "Copernicus GLO90 2021 / Open-Meteo, all21zones",
+ "habitatCompleteNewZoneCount": 21,
+ "habitatPendingNewZoneIds": [],
+ "habitatNewSampleCount": 6657,
+ "habitatTotalZoneCount": 36,
+ "trailsTotalZoneCount": 36,
+ "importedNewTrailCount": 17,
+ "importedNewTrailSampleCount": 652,
+ "importedNewTrails": [
+  {
+   "zoneId": "vico-monte-venere",
+   "id": 11357919,
+   "ref": "128B",
+   "name": "Monte Venere",
+   "in_zone_km": 2.9,
+   "total_km": 3.0,
+   "sampleCount": 29
+  },
+  {
+   "zoneId": "oriolo-monte-raschio",
+   "id": 11353673,
+   "ref": "175C",
+   "name": "Sentiero Faggeta Unesco",
+   "in_zone_km": 7.9,
+   "total_km": 8.4,
+   "sampleCount": 78
+  },
+  {
+   "zoneId": "monterano-bicione",
+   "id": 10240055,
+   "ref": null,
+   "name": "Bandita",
+   "in_zone_km": 6.1,
+   "total_km": 10.2,
+   "sampleCount": 59
+  },
+  {
+   "zoneId": "veio-monte-musino",
+   "id": 13128911,
+   "ref": "209D",
+   "name": "Monte Musino",
+   "in_zone_km": 0.8,
+   "total_km": 0.8,
+   "sampleCount": 8
+  },
+  {
+   "zoneId": "tuscolo-nord",
+   "id": 3327083,
+   "ref": "501",
+   "name": null,
+   "in_zone_km": 3.7,
+   "total_km": 3.7,
+   "sampleCount": 37
+  },
+  {
+   "zoneId": "faete-rocca-papa",
+   "id": 3328048,
+   "ref": "509",
+   "name": "Circuito delle Faete di Rocca di Papa",
+   "in_zone_km": 7.1,
+   "total_km": 7.1,
+   "sampleCount": 70
+  },
+  {
+   "zoneId": "nemi-fontan-tempesta",
+   "id": 3223059,
+   "ref": "511B",
+   "name": null,
+   "in_zone_km": 1.8,
+   "total_km": 1.9,
+   "sampleCount": 18
+  },
+  {
+   "zoneId": "cerquone-doganella",
+   "id": 3327154,
+   "ref": "504",
+   "name": "Rocca Priora - Bosco del Cerquone",
+   "in_zone_km": 5.0,
+   "total_km": 5.4,
+   "sampleCount": 50
+  },
+  {
+   "zoneId": "livata-tufai",
+   "id": 12036002,
+   "ref": "672C",
+   "name": null,
+   "in_zone_km": 3.1,
+   "total_km": 5.4,
+   "sampleCount": 31
+  },
+  {
+   "zoneId": "cervara-prataglia",
+   "id": 2071204,
+   "ref": "661",
+   "name": "Anello Prataglia da Cervara di Roma",
+   "in_zone_km": 8.8,
+   "total_km": 12.5,
+   "sampleCount": 86
+  },
+  {
+   "zoneId": "gennaro-roccagiovine",
+   "id": 2068875,
+   "ref": "305",
+   "name": null,
+   "in_zone_km": 6.4,
+   "total_km": 10.0,
+   "sampleCount": 63
+  },
+  {
+   "zoneId": "lepini-bassiano-santangelo",
+   "id": 11632035,
+   "ref": "710",
+   "name": "Sentiero Daniele Nardi",
+   "in_zone_km": 3.3,
+   "total_km": 5.7,
+   "sampleCount": 33
+  },
+  {
+   "zoneId": "aurunci-itri-campello",
+   "id": 12358634,
+   "ref": "951",
+   "name": "La Valle di Itri-Monte Revole",
+   "in_zone_km": 2.6,
+   "total_km": 4.1,
+   "sampleCount": 26
+  },
+  {
+   "zoneId": "ernici-prato-campoli",
+   "id": 12164662,
+   "ref": "622",
+   "name": "Antenne - Passo del Melancoro - Prato di Campoli",
+   "in_zone_km": 1.6,
+   "total_km": 10.3,
+   "sampleCount": 15
+  },
+  {
+   "zoneId": "ernici-prato-campoli",
+   "id": 12402883,
+   "ref": "617",
+   "name": "Prato Di Campoli - Pizzo Deta",
+   "in_zone_km": 1.5,
+   "total_km": 5.2,
+   "sampleCount": 15
+  },
+  {
+   "zoneId": "ernici-prato-campoli",
+   "id": 12427077,
+   "ref": "618",
+   "name": "Prato di Campoli - Vado della Rocca",
+   "in_zone_km": 0.8,
+   "total_km": 2.1,
+   "sampleCount": 7
+  },
+  {
+   "zoneId": "simbruini-filettino-fiumata",
+   "id": 12145860,
+   "ref": "693A",
+   "name": null,
+   "in_zone_km": 2.8,
+   "total_km": 2.8,
+   "sampleCount": 27
+  }
+ ],
+ "roadSampleCountWithUnknownSurface": 0,
+ "roadSampleCountWithoutRoad": 0,
+ "loggedCompletedHttpAttempts": 349,
+ "httpSuccessAttempts": 335,
+ "httpFailureAttempts": 14,
+ "httpResponseBytes": 58403024,
+ "existingRecordsPreservedAtMainCompletion": {
+  "habitat": true,
+  "trails": true
+ },
+ "outputSha256": {
+  "data/habitat.json": "02e5d7221d24ea9c6652ae7f8cca4b1e0e9405758625b355ce12d208d6a5432c",
+  "data/trails.json": "296523064b83c65d9956dff57725c037630451a1af8a926c6f1301bd74e77a1f",
+  "incoming/lazio-pilot-2026-10-19/integration/campionamenti/dem-bands.json": "161fd2c75306e5519491ab8e9bab8a8fb1c1679f82fd9ec43330273ef7cb20d3"
+ },
+ "notes": [
+  "Existing15records not re-sampled; incremental dictionary inserts, original22records preserved at main resume completion.",
+  "Diosilla outside retained local Bandita line; access does not imply local trailhead.",
+  "Five500m-or-longer mapped trails initially; two smaller clips omitted to preserve existing minimum500m criterion. Additional12trails acquired after WFS recovery.",
+  "No suite, test, CI or dryrun executed.",
+  "Root review: Faete route response is retained as raw research but excluded from published trails.drive because no approved parking point exists. Only the five access.json destinations are adopted.",
+  "Root review: editorial notes in 509, 661 and 672C retain the source discrepancies; geometry remains OSM, no official GPX redistribution."
+ ],
+ "documentedDriveCount": 5,
+ "acquiredDriveResponsesCount": 6
+}

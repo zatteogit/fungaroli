@@ -1,0 +1,75 @@
+{
+ "started": "2026-10-19T11:10:30.329911+00:00",
+ "seed": {
+  "id": "lepini-bassiano-santangelo",
+  "name": "Valle Sant’Angelo e lecci del Semprevisa",
+  "lat": 41.561727,
+  "lon": 13.056672,
+  "radius_m": 1500,
+  "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+  "province": [
+   "LT"
+  ],
+  "coordinateProvenance": {
+   "method": "published_place_or_map",
+   "sourceUrl": "https://www.cailatina.com/pagu_percorso.php?id=6",
+   "note": "Centro della mappa del percorso incorporata dal CAI Latina; punto editoriale, non accesso o parcheggio. Nessuna conversione delle coordinate UTM dal datum ignoto."
+  },
+  "collectionStatus": "unknown",
+  "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita.",
+  "collectionSourceUrl": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+  "publicationStatus": "active",
+  "manager": "Ente competente indicato nelle fonti",
+  "researchGroup": "sud",
+  "officialTrailRefs": [
+   "710"
+  ],
+  "officialTrailNameMatches": []
+ },
+ "demProvider": "copernicus-glo90-openmeteo",
+ "demResolutionM": 90,
+ "elevation": {
+  "min": 538,
+  "p25": 703,
+  "median": 820,
+  "p75": 953,
+  "max": 1218
+ },
+ "suggestedBandsM": [
+  700,
+  820,
+  950
+ ],
+ "forestPolygonCount": 24,
+ "habitatSamples": 317,
+ "roadErrors": [],
+ "trails": {
+  "listedRelations": 5,
+  "requestedRefs": [
+   "710"
+  ],
+  "requestedDistinctiveNames": [],
+  "matchedRelations": [
+   {
+    "relation": 11632035,
+    "ref": "710",
+    "source": "https://www.openstreetmap.org/relation/11632035",
+    "license": "ODbL-1.0",
+    "officialTagLengthM": 5700.0,
+    "mappedLengthM": 5706,
+    "inZoneLengthM": 3348.489442774255,
+    "sampleCount": 33,
+    "note": "Reference match with institutional itinerary; geometry independently obtained from OSM via Waymarked Trails. Match does not certify exact geometric identity or current opening."
+   }
+  ],
+  "unmatchedRefs": [],
+  "driveError": null,
+  "coverageLimit": 100,
+  "geometryStatus": "matched_osm_geometry"
+ },
+ "status": "complete",
+ "finished": "2026-10-19T11:10:43.716171+00:00",
+ "habitatStatus": "complete",
+ "grid": 21,
+ "gridStepM": 150.0
+}

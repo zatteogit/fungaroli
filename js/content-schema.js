@@ -38,6 +38,7 @@ export const CONTENT_TEMPLATES = {
 };
 export const isLockedField = key => ['samples','lines','line','sample_categories','in_zone_km','total_km','duration','ascent','generated','source'].includes(key);
 export const FIELD_LABELS = {
+  samplingProvenance:'Provenienza del campionamento',province:'Province',coordinateProvenance:'Provenienza delle coordinate',radiusNote:'Significato del raggio',collectionStatus:'Stato della raccolta',collectionNote:'Regole locali',collectionSourceUrl:'Fonte delle regole locali',accessStatus:'Verifica degli accessi',manager:'Ente gestore',
   items:'Schede',rank:'Tipo di scheda',groupLabel:'Gruppo',paths:'Percorsi',reviewedOn:'Verificato il',publicationStatus:'Stato di pubblicazione',sourceIds:'Fonti citate',knownGaps:'Lacune editoriali',checkedOn:'Consultata il',publisher:'Ente autore',behavior:'Vita e abitudini',ecology:'Nell’ecosistema',cautions:'Cautele',
   plants:'Piante',foodUse:'Parti alimentari e cautele',parts:'Parti e preparazione',flowerMonths:'Mesi della fioritura',phaseNote:'Fasi e limiti dei dati',recognize:'Caratteri da confrontare',photos:'Fotografie',sourceImage:'Immagine originale',status:'Stato',
   guides:'Articoli',taxa:'Specie e sosia',species:'Specie',zones:'Luoghi',trees:'Alberi',

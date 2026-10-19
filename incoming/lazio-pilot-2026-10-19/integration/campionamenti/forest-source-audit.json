@@ -1,0 +1,29 @@
+{
+ "consultedAt": "2026-10-19T10:59:19.371774+00:00",
+ "dataset": "Carta forestale su base tipologica della Regione Lazio",
+ "datasetId": "91a9cd67-1a41-4584-b611-960c65d82724",
+ "datasetLicenseId": "cc-by4",
+ "metadataModified": "2022-03-07T13:27:05.874764",
+ "resources": [
+  {
+   "id": "f9289a77-f7f7-4cc3-8c02-5ab607ccf6bc",
+   "name": "Carta forestale su base tipologica della Regione Lazio WMS",
+   "url": "https://geoportale.regione.lazio.it/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typename=geonode%3Atipi_forestali2&outputFormat=SHAPE-ZIP&srs=EPSG%3A25833&format_options=charset%3AUTF-8",
+   "license": "https://w3id.org/italia/controlled-vocabulary/licences/A21_CCBY40"
+  },
+  {
+   "id": "68897c70-79ab-4f86-b20c-9c920442ec05",
+   "name": "Relazione Carta Forestale tipologica del Lazio",
+   "url": "https://dati.lazio.it/dataset/91a9cd67-1a41-4584-b611-960c65d82724/resource/68897c70-79ab-4f86-b20c-9c920442ec05/download/relazionecartaforestaletipologicadellazio.pdf",
+   "license": null
+  },
+  {
+   "id": "5d8c5060-1242-4422-9e3a-52703cad54ce",
+   "name": "Metadati - Carta forestale su base tipologica della Regione Lazio",
+   "url": "https://dati.lazio.it/dataset/91a9cd67-1a41-4584-b611-960c65d82724/resource/5d8c5060-1242-4422-9e3a-52703cad54ce/download/metadaticartaforestalesubasetipologica.pdf",
+   "license": null
+  }
+ ],
+ "downloadAlternative": "The CKAN SHP resource resolves to the same unavailable WFS service, not an independent archive.",
+ "metadataCaution": "Legacy PDF metadata dated December2012 contains more restrictive wording. Current resource metadata explicitly exposes CC BY4.0. Geoportale 2021 metadata says License NotSpecified / NessunVincolo; generic regional Geoportale policy declares public data CC BY4.0. Keep these distinctions, do not claim a fresh forest survey."
+}

@@ -1,0 +1,81 @@
+{
+ "started": "2026-10-19T11:10:55.057149+00:00",
+ "seed": {
+  "id": "aurunci-itri-campello",
+  "name": "La Valle di Itri e Campello Vecchio",
+  "lat": 41.3218395,
+  "lon": 13.5770165,
+  "radius_m": 1500,
+  "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+  "province": [
+   "LT"
+  ],
+  "coordinateProvenance": {
+   "method": "official_trace_bbox_midpoint",
+   "sourceUrl": "https://www.parchilazio.it/documenti/schede/20220422232757_17197_map_1.kml",
+   "bbox": {
+    "west": 13.551000981,
+    "south": 41.306455024,
+    "east": 13.60303198,
+    "north": 41.337223984
+   },
+   "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+  },
+  "collectionStatus": "unknown",
+  "collectionNote": "Il Parco ammette la raccolta secondo la normativa; verificare requisiti personali, proprietà e limitazioni locali.",
+  "collectionSourceUrl": "https://www.parcoaurunci.it/pagina.php?id=7",
+  "publicationStatus": "active",
+  "manager": "Ente Parco Naturale Regionale Monti Aurunci",
+  "researchGroup": "sud",
+  "officialTrailRefs": [
+   "951"
+  ],
+  "officialTrailNameMatches": []
+ },
+ "demProvider": "copernicus-glo90-openmeteo",
+ "demResolutionM": 90,
+ "elevation": {
+  "min": 711,
+  "p25": 839,
+  "median": 937,
+  "p75": 1068,
+  "max": 1267
+ },
+ "suggestedBandsM": [
+  840,
+  940,
+  1070
+ ],
+ "forestPolygonCount": 21,
+ "habitatSamples": 317,
+ "roadErrors": [],
+ "trails": {
+  "listedRelations": 9,
+  "requestedRefs": [
+   "951"
+  ],
+  "requestedDistinctiveNames": [],
+  "matchedRelations": [
+   {
+    "relation": 12358634,
+    "ref": "951",
+    "source": "https://www.openstreetmap.org/relation/12358634",
+    "license": "ODbL-1.0",
+    "officialTagLengthM": 4100.0,
+    "mappedLengthM": 4322,
+    "inZoneLengthM": 2625.7828771026007,
+    "sampleCount": 26,
+    "note": "Reference match with institutional itinerary; geometry independently obtained from OSM via Waymarked Trails. Match does not certify exact geometric identity or current opening."
+   }
+  ],
+  "unmatchedRefs": [],
+  "driveError": null,
+  "coverageLimit": 100,
+  "geometryStatus": "matched_osm_geometry"
+ },
+ "status": "complete",
+ "finished": "2026-10-19T11:11:08.276519+00:00",
+ "habitatStatus": "complete",
+ "grid": 21,
+ "gridStepM": 150.0
+}

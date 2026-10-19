@@ -1,0 +1,92 @@
+{
+ "started": "2026-10-19T10:49:53.384433+00:00",
+ "seed": {
+  "id": "monterano-bicione",
+  "name": "Monterano – valle del Bicione",
+  "lat": 42.142368,
+  "lon": 12.0763325,
+  "radius_m": 1500,
+  "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+  "province": [
+   "RM"
+  ],
+  "coordinateProvenance": {
+   "method": "official_trace_bbox_midpoint",
+   "sourceUrl": "https://www.parchilazio.it/documenti/schede/bandita.kml",
+   "bbox": {
+    "west": 12.0620305,
+    "south": 42.1316117,
+    "east": 12.0906344,
+    "north": 42.1531243
+   },
+   "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+  },
+  "collectionStatus": "unknown",
+  "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita.",
+  "collectionSourceUrl": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+  "publicationStatus": "active",
+  "manager": "Comune di Canale Monterano / Riserva, 06 9962724, riservamonterano@regione.lazio.it",
+  "researchGroup": "nord",
+  "officialTrailRefs": [],
+  "officialTrailNameMatches": [
+   "Bandita",
+   "Bicione"
+  ]
+ },
+ "elevation": {
+  "min": 172,
+  "p25": 250,
+  "median": 285,
+  "p75": 315,
+  "max": 465
+ },
+ "suggestedBandsM": [
+  250,
+  290,
+  320
+ ],
+ "forestPolygonCount": 47,
+ "habitatSamples": 317,
+ "roadErrors": [],
+ "trails": {
+  "listedRelations": 7,
+  "requestedRefs": [],
+  "requestedDistinctiveNames": [
+   "bandita",
+   "bicione"
+  ],
+  "matchedRelations": [
+   {
+    "relation": 10240055,
+    "ref": null,
+    "source": "https://www.openstreetmap.org/relation/10240055",
+    "license": "ODbL-1.0",
+    "officialTagLengthM": null,
+    "mappedLengthM": 10215,
+    "inZoneLengthM": 6096.268571699568,
+    "sampleCount": 59,
+    "note": "Reference match with institutional itinerary; geometry independently obtained from OSM via Waymarked Trails. Match does not certify exact geometric identity or current opening."
+   }
+  ],
+  "unmatchedRefs": [],
+  "driveError": null,
+  "omittedShortClips": [
+   {
+    "relation": 9359584,
+    "ref": null,
+    "name": "Bicione",
+    "inZoneKm": 0.4,
+    "reason": "Below existing build_trails minimum500m inside-zone geometry threshold."
+   }
+  ],
+  "geometryStatus": "matched_osm_geometry",
+  "coverageLimit": 100
+ },
+ "status": "complete",
+ "finished": "2026-10-19T10:51:19.197445+00:00",
+ "demProvider": "copernicus-glo90-openmeteo",
+ "demResolutionM": 90,
+ "habitatStatus": "complete",
+ "grid": 21,
+ "gridStepM": 150.0
+}

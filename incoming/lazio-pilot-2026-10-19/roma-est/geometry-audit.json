@@ -1,0 +1,434 @@
+{
+  "consultedAt": "2026-10-19",
+  "status": "ispezione_sorgenti_non_importata",
+  "method": "Ispezione XML, non suite di test. File letti via HTTPS in memoria; nessuna ridistribuzione dei file integrali. Hash SHA-256 sui byte della risposta. Estremi nell’ordine XML; bbox semplice dei punti, non superficie della zona.",
+  "coordinateSystem": "Valori latitudine/longitudine pubblicati nei formati GPX/KML; nessuna trasformazione o correzione. Coordinate derivate della geometria, non centroide o parcheggio.",
+  "geometries": [
+    {
+      "zoneId": "tuscolo-nord",
+      "itineraryRef": "501",
+      "sourceIds": [
+        "REA-501"
+      ],
+      "sourcePage": "https://www.parchilazio.it/castelliromani-schede-18117-501_frascati_croce_di_tuscolo_cai",
+      "geometryUrl": "https://www.parchilazio.it/documenti/schede/501_frascati_croce_di_tuscolo.gpx",
+      "format": "GPX",
+      "sha256": "c6ba2c3768663eddbca2aae7640926b8af4df1ed1b7a3df392f967eba22ff5e6",
+      "bytes": 14486,
+      "pointCount": 321,
+      "segmentCount": 1,
+      "bbox": {
+        "west": 12.6851544,
+        "south": 41.7975873,
+        "east": 12.7132657,
+        "north": 41.8072671
+      },
+      "firstPoint": {
+        "lat": 41.80579,
+        "lon": 12.6851544,
+        "elevationM": null
+      },
+      "lastPoint": {
+        "lat": 41.7987762,
+        "lon": 12.7132657,
+        "elevationM": null
+      },
+      "hasElevation": false,
+      "pointsWithElevation": 0,
+      "derivation": "Valori derivati direttamente dai punti XML nell’ordine del documento. GPX: trkpt/rtept; KML: coordinate delle LineString, ordine lon,lat,alt. Nessun centro zona, imbocco verificato o parcheggio inferito dai punti.",
+      "elevationCaution": "Le quote presenti sono valori XML, non misure verificate. Un valore KML zero può essere segnaposto; non interpretato come quota reale.",
+      "redistributionLicense": null,
+      "licensing": {
+        "status": "nessuna_licenza_esplicita_specifica_della_geometria_verificata",
+        "sourcePageInspected": "https://www.parchilazio.it/castelliromani-schede-18117-501_frascati_croce_di_tuscolo_cai",
+        "licenseLinksFound": [
+          {
+            "url": "https://www.parchilazio.it/pagine-8-copyleft",
+            "label": "leggi il Copyleft"
+          }
+        ],
+        "xmlLicenseMetadata": [
+          {
+            "element": "copyright",
+            "attributes": {
+              "author": "OpenStreetMap and Contributors"
+            },
+            "text": "https://www.openstreetmap.org/copyright"
+          },
+          {
+            "element": "license",
+            "attributes": {},
+            "text": "https://www.openstreetmap.org/copyright"
+          }
+        ],
+        "generalPolicySourceId": "REA-copyleft",
+        "note": "ParchiLazio espone un copyleft generale con attribuzione, gratuità e limite non commerciale; applicazione esplicita al singolo GPX/KML e titolarità da confermare. Le pagine Simbruini non espongono una licenza geometrica esplicita nei collegamenti letti. Nessuna autorizzazione al riuso nell’app dedotta."
+      }
+    },
+    {
+      "zoneId": "faete-rocca-papa",
+      "itineraryRef": "509",
+      "sourceIds": [
+        "REA-509"
+      ],
+      "sourcePage": "https://www.parchilazio.it/castelliromani-schede-17961-509_circuito_delle_faete_di_rocca_di_papa_cai",
+      "geometryUrl": "https://www.parchilazio.it/documenti/schede/509.gpx",
+      "format": "GPX",
+      "sha256": "1b4e9df6e51fcff7ecb820c98bf294c7af00e454c3ea82d4a3b9c78ce29da281",
+      "bytes": 152282,
+      "pointCount": 923,
+      "segmentCount": 1,
+      "bbox": {
+        "west": 12.707468625158072,
+        "south": 41.744398484006524,
+        "east": 12.739965012297034,
+        "north": 41.76483867689967
+      },
+      "firstPoint": {
+        "lat": 41.75898743793368,
+        "lon": 12.710974188521504,
+        "elevationM": 667.77
+      },
+      "lastPoint": {
+        "lat": 41.759080812335014,
+        "lon": 12.711730655282736,
+        "elevationM": 672.58
+      },
+      "hasElevation": true,
+      "pointsWithElevation": 923,
+      "derivation": "Valori derivati direttamente dai punti XML nell’ordine del documento. GPX: trkpt/rtept; KML: coordinate delle LineString, ordine lon,lat,alt. Nessun centro zona, imbocco verificato o parcheggio inferito dai punti.",
+      "elevationCaution": "Le quote presenti sono valori XML, non misure verificate. Un valore KML zero può essere segnaposto; non interpretato come quota reale.",
+      "redistributionLicense": null,
+      "licensing": {
+        "status": "nessuna_licenza_esplicita_specifica_della_geometria_verificata",
+        "sourcePageInspected": "https://www.parchilazio.it/castelliromani-schede-17961-509_circuito_delle_faete_di_rocca_di_papa_cai",
+        "licenseLinksFound": [
+          {
+            "url": "https://www.parchilazio.it/pagine-8-copyleft",
+            "label": "leggi il Copyleft"
+          }
+        ],
+        "xmlLicenseMetadata": [],
+        "generalPolicySourceId": "REA-copyleft",
+        "note": "ParchiLazio espone un copyleft generale con attribuzione, gratuità e limite non commerciale; applicazione esplicita al singolo GPX/KML e titolarità da confermare. Le pagine Simbruini non espongono una licenza geometrica esplicita nei collegamenti letti. Nessuna autorizzazione al riuso nell’app dedotta."
+      }
+    },
+    {
+      "zoneId": "nemi-fontan-tempesta",
+      "itineraryRef": "511b",
+      "sourceIds": [
+        "REA-511b"
+      ],
+      "sourcePage": "https://www.parchilazio.it/castelliromani-schede-18037-511b_fontana_tempesta_nemi_cai",
+      "geometryUrl": "https://www.parchilazio.it/documenti/schede/511b_fontana_tempesta_nemi.gpx",
+      "format": "GPX",
+      "sha256": "a16fb30ed8c02ca3b17ef4201950000699c4f48d9f0bfd591b027d60772b1580",
+      "bytes": 3558,
+      "pointCount": 67,
+      "segmentCount": 1,
+      "bbox": {
+        "west": 12.7091608,
+        "south": 41.7206108,
+        "east": 12.7159675,
+        "north": 41.7326387
+      },
+      "firstPoint": {
+        "lat": 41.7326387,
+        "lon": 12.709538,
+        "elevationM": null
+      },
+      "lastPoint": {
+        "lat": 41.7206108,
+        "lon": 12.7142827,
+        "elevationM": null
+      },
+      "hasElevation": false,
+      "pointsWithElevation": 0,
+      "derivation": "Valori derivati direttamente dai punti XML nell’ordine del documento. GPX: trkpt/rtept; KML: coordinate delle LineString, ordine lon,lat,alt. Nessun centro zona, imbocco verificato o parcheggio inferito dai punti.",
+      "elevationCaution": "Le quote presenti sono valori XML, non misure verificate. Un valore KML zero può essere segnaposto; non interpretato come quota reale.",
+      "redistributionLicense": null,
+      "licensing": {
+        "status": "nessuna_licenza_esplicita_specifica_della_geometria_verificata",
+        "sourcePageInspected": "https://www.parchilazio.it/castelliromani-schede-18037-511b_fontana_tempesta_nemi_cai",
+        "licenseLinksFound": [
+          {
+            "url": "https://www.parchilazio.it/pagine-8-copyleft",
+            "label": "leggi il Copyleft"
+          }
+        ],
+        "xmlLicenseMetadata": [
+          {
+            "element": "copyright",
+            "attributes": {
+              "author": "OpenStreetMap and Contributors"
+            },
+            "text": "https://www.openstreetmap.org/copyright"
+          },
+          {
+            "element": "license",
+            "attributes": {},
+            "text": "https://www.openstreetmap.org/copyright"
+          }
+        ],
+        "generalPolicySourceId": "REA-copyleft",
+        "note": "ParchiLazio espone un copyleft generale con attribuzione, gratuità e limite non commerciale; applicazione esplicita al singolo GPX/KML e titolarità da confermare. Le pagine Simbruini non espongono una licenza geometrica esplicita nei collegamenti letti. Nessuna autorizzazione al riuso nell’app dedotta."
+      }
+    },
+    {
+      "zoneId": "cerquone-doganella",
+      "itineraryRef": "504",
+      "sourceIds": [
+        "REA-504"
+      ],
+      "sourcePage": "https://www.parchilazio.it/castelliromani-schede-18053-504_rocca_priora_bosco_del_cerquone_cai",
+      "geometryUrl": "https://www.parchilazio.it/documenti/schede/504_rocca_priora_bosco_del_cerquone.gpx",
+      "format": "GPX",
+      "sha256": "55bb29629cd39174beb63a6c25559491008c56b7623ac1988a372b4ad7f9e0e3",
+      "bytes": 51400,
+      "pointCount": 413,
+      "segmentCount": 1,
+      "bbox": {
+        "west": 12.769194971770048,
+        "south": 41.76909844391048,
+        "east": 12.795473327860236,
+        "north": 41.78774499334395
+      },
+      "firstPoint": {
+        "lat": 41.78737333975732,
+        "lon": 12.769194971770048,
+        "elevationM": 707.8
+      },
+      "lastPoint": {
+        "lat": 41.76909844391048,
+        "lon": 12.787527535110712,
+        "elevationM": 530.22265625
+      },
+      "hasElevation": true,
+      "pointsWithElevation": 413,
+      "derivation": "Valori derivati direttamente dai punti XML nell’ordine del documento. GPX: trkpt/rtept; KML: coordinate delle LineString, ordine lon,lat,alt. Nessun centro zona, imbocco verificato o parcheggio inferito dai punti.",
+      "elevationCaution": "Le quote presenti sono valori XML, non misure verificate. Un valore KML zero può essere segnaposto; non interpretato come quota reale.",
+      "redistributionLicense": null,
+      "licensing": {
+        "status": "nessuna_licenza_esplicita_specifica_della_geometria_verificata",
+        "sourcePageInspected": "https://www.parchilazio.it/castelliromani-schede-18053-504_rocca_priora_bosco_del_cerquone_cai",
+        "licenseLinksFound": [
+          {
+            "url": "https://www.parchilazio.it/pagine-8-copyleft",
+            "label": "leggi il Copyleft"
+          }
+        ],
+        "xmlLicenseMetadata": [],
+        "generalPolicySourceId": "REA-copyleft",
+        "note": "ParchiLazio espone un copyleft generale con attribuzione, gratuità e limite non commerciale; applicazione esplicita al singolo GPX/KML e titolarità da confermare. Le pagine Simbruini non espongono una licenza geometrica esplicita nei collegamenti letti. Nessuna autorizzazione al riuso nell’app dedotta."
+      }
+    },
+    {
+      "zoneId": "livata-tufai",
+      "itineraryRef": "672c",
+      "sourceIds": [
+        "REA-672c"
+      ],
+      "sourcePage": "https://www.parcomontisimbruini.it/itinerari-dettaglio.php?id_iti=370",
+      "geometryUrl": "https://www.parcomontisimbruini.it/gpx/672c.gpx",
+      "format": "GPX",
+      "sha256": "6dc370af69f92de7272f3e8bc298579f974277986cefc056d1f211e345d6ac70",
+      "bytes": 118851,
+      "pointCount": 753,
+      "segmentCount": 1,
+      "bbox": {
+        "west": 13.147823140025139,
+        "south": 41.927543906494975,
+        "east": 13.164632711559534,
+        "north": 41.938824858516455
+      },
+      "firstPoint": {
+        "lat": 41.93876978941262,
+        "lon": 13.148976908996701,
+        "elevationM": 1340.7
+      },
+      "lastPoint": {
+        "lat": 41.938824858516455,
+        "lon": 13.149005491286516,
+        "elevationM": 1358.96
+      },
+      "hasElevation": true,
+      "pointsWithElevation": 753,
+      "derivation": "Valori derivati direttamente dai punti XML nell’ordine del documento. GPX: trkpt/rtept; KML: coordinate delle LineString, ordine lon,lat,alt. Nessun centro zona, imbocco verificato o parcheggio inferito dai punti.",
+      "elevationCaution": "Le quote presenti sono valori XML, non misure verificate. Un valore KML zero può essere segnaposto; non interpretato come quota reale.",
+      "redistributionLicense": null,
+      "licensing": {
+        "status": "nessuna_licenza_esplicita_specifica_della_geometria_verificata",
+        "sourcePageInspected": "https://www.parcomontisimbruini.it/itinerari-dettaglio.php?id_iti=370",
+        "licenseLinksFound": [],
+        "xmlLicenseMetadata": [],
+        "generalPolicySourceId": null,
+        "note": "ParchiLazio espone un copyleft generale con attribuzione, gratuità e limite non commerciale; applicazione esplicita al singolo GPX/KML e titolarità da confermare. Le pagine Simbruini non espongono una licenza geometrica esplicita nei collegamenti letti. Nessuna autorizzazione al riuso nell’app dedotta."
+      }
+    },
+    {
+      "zoneId": "cervara-prataglia",
+      "itineraryRef": "661",
+      "sourceIds": [
+        "REA-661"
+      ],
+      "sourcePage": "https://www.parcomontisimbruini.it/itinerari-dettaglio.php?id_iti=174",
+      "geometryUrl": "https://www.parcomontisimbruini.it/gpx/661.gpx",
+      "format": "GPX",
+      "sha256": "164f21bdc6a19b0e3b3ecb7982d15d7c6e747abc89188f8651ae912433cdfd81",
+      "bytes": 90977,
+      "pointCount": 754,
+      "segmentCount": 3,
+      "bbox": {
+        "west": 13.04302454,
+        "south": 41.988847973,
+        "east": 13.07924551,
+        "north": 42.012148323
+      },
+      "firstPoint": {
+        "lat": 41.990078017,
+        "lon": 13.072685497,
+        "elevationM": 1100.713
+      },
+      "lastPoint": {
+        "lat": 41.99915193,
+        "lon": 13.059499757,
+        "elevationM": 892.298
+      },
+      "hasElevation": true,
+      "pointsWithElevation": 754,
+      "derivation": "Valori derivati direttamente dai punti XML nell’ordine del documento. GPX: trkpt/rtept; KML: coordinate delle LineString, ordine lon,lat,alt. Nessun centro zona, imbocco verificato o parcheggio inferito dai punti.",
+      "elevationCaution": "Le quote presenti sono valori XML, non misure verificate. Un valore KML zero può essere segnaposto; non interpretato come quota reale.",
+      "redistributionLicense": null,
+      "licensing": {
+        "status": "nessuna_licenza_esplicita_specifica_della_geometria_verificata",
+        "sourcePageInspected": "https://www.parcomontisimbruini.it/itinerari-dettaglio.php?id_iti=174",
+        "licenseLinksFound": [],
+        "xmlLicenseMetadata": [],
+        "generalPolicySourceId": null,
+        "note": "ParchiLazio espone un copyleft generale con attribuzione, gratuità e limite non commerciale; applicazione esplicita al singolo GPX/KML e titolarità da confermare. Le pagine Simbruini non espongono una licenza geometrica esplicita nei collegamenti letti. Nessuna autorizzazione al riuso nell’app dedotta."
+      }
+    },
+    {
+      "zoneId": "gennaro-roccagiovine",
+      "itineraryRef": "305",
+      "sourceIds": [
+        "REA-305"
+      ],
+      "sourcePage": "https://www.parchilazio.it/montilucretili-schede-18056-305_roccagiovine_monte_gennaro_cai",
+      "geometryUrl": "https://www.parchilazio.it/documenti/schede/roccagiovine_m_gennaro.kml",
+      "format": "KML",
+      "sha256": "10b92f4bc0e0c9b365f7a1e71d5308619e32e379aa0b474a526b8664b82ccfc6",
+      "bytes": 12933,
+      "pointCount": 561,
+      "segmentCount": 1,
+      "bbox": {
+        "west": 12.807004,
+        "south": 42.0501196,
+        "east": 12.8939525,
+        "north": 42.0629469
+      },
+      "firstPoint": {
+        "lat": 42.0605462,
+        "lon": 12.807004,
+        "elevationM": null
+      },
+      "lastPoint": {
+        "lat": 42.0524249,
+        "lon": 12.8939525,
+        "elevationM": null
+      },
+      "hasElevation": false,
+      "pointsWithElevation": 0,
+      "derivation": "Valori derivati direttamente dai punti XML nell’ordine del documento. GPX: trkpt/rtept; KML: coordinate delle LineString, ordine lon,lat,alt. Nessun centro zona, imbocco verificato o parcheggio inferito dai punti.",
+      "elevationCaution": "Le quote presenti sono valori XML, non misure verificate. Un valore KML zero può essere segnaposto; non interpretato come quota reale.",
+      "redistributionLicense": null,
+      "licensing": {
+        "status": "nessuna_licenza_esplicita_specifica_della_geometria_verificata",
+        "sourcePageInspected": "https://www.parchilazio.it/montilucretili-schede-18056-305_roccagiovine_monte_gennaro_cai",
+        "licenseLinksFound": [
+          {
+            "url": "https://www.parchilazio.it/pagine-8-copyleft",
+            "label": "leggi il Copyleft"
+          }
+        ],
+        "xmlLicenseMetadata": [],
+        "generalPolicySourceId": "REA-copyleft",
+        "note": "ParchiLazio espone un copyleft generale con attribuzione, gratuità e limite non commerciale; applicazione esplicita al singolo GPX/KML e titolarità da confermare. Le pagine Simbruini non espongono una licenza geometrica esplicita nei collegamenti letti. Nessuna autorizzazione al riuso nell’app dedotta."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "REA-501",
+      "url": "https://www.parchilazio.it/documenti/schede/501_frascati_croce_di_tuscolo.gpx",
+      "entity": "Ente Parco Castelli Romani",
+      "title": "CAI 501 Frascati - Croce di Tuscolo — file geometrico",
+      "consultedAt": "2026-10-19",
+      "accessStatus": "letto_XML_HTTP_200",
+      "evidence": "XML analizzato in memoria; hash sul corpo HTTP originale; nessun file geometrico integrale salvato."
+    },
+    {
+      "id": "REA-509",
+      "url": "https://www.parchilazio.it/documenti/schede/509.gpx",
+      "entity": "Ente Parco Castelli Romani",
+      "title": "CAI 509 Circuito delle Faete di Rocca di Papa — file geometrico",
+      "consultedAt": "2026-10-19",
+      "accessStatus": "letto_XML_HTTP_200",
+      "evidence": "XML analizzato in memoria; hash sul corpo HTTP originale; nessun file geometrico integrale salvato."
+    },
+    {
+      "id": "REA-511b",
+      "url": "https://www.parchilazio.it/documenti/schede/511b_fontana_tempesta_nemi.gpx",
+      "entity": "Ente Parco Castelli Romani",
+      "title": "CAI 511B Fontana Tempesta-Nemi — file geometrico",
+      "consultedAt": "2026-10-19",
+      "accessStatus": "letto_XML_HTTP_200",
+      "evidence": "XML analizzato in memoria; hash sul corpo HTTP originale; nessun file geometrico integrale salvato."
+    },
+    {
+      "id": "REA-504",
+      "url": "https://www.parchilazio.it/documenti/schede/504_rocca_priora_bosco_del_cerquone.gpx",
+      "entity": "Ente Parco Castelli Romani",
+      "title": "CAI 504 Rocca Priora - Bosco del Cerquone — file geometrico",
+      "consultedAt": "2026-10-19",
+      "accessStatus": "letto_XML_HTTP_200",
+      "evidence": "XML analizzato in memoria; hash sul corpo HTTP originale; nessun file geometrico integrale salvato."
+    },
+    {
+      "id": "REA-672c",
+      "url": "https://www.parcomontisimbruini.it/gpx/672c.gpx",
+      "entity": "Ente Parco Monti Simbruini",
+      "title": "Percorso 672c Livata - I Tufai - Valle delle Mele - Livata — file geometrico",
+      "consultedAt": "2026-10-19",
+      "accessStatus": "letto_XML_HTTP_200",
+      "evidence": "XML analizzato in memoria; hash sul corpo HTTP originale; nessun file geometrico integrale salvato."
+    },
+    {
+      "id": "REA-661",
+      "url": "https://www.parcomontisimbruini.it/gpx/661.gpx",
+      "entity": "Ente Parco Monti Simbruini",
+      "title": "Percorso 661 Cervara - Prataglia - Cervara — file geometrico",
+      "consultedAt": "2026-10-19",
+      "accessStatus": "letto_XML_HTTP_200",
+      "evidence": "XML analizzato in memoria; hash sul corpo HTTP originale; nessun file geometrico integrale salvato."
+    },
+    {
+      "id": "REA-305",
+      "url": "https://www.parchilazio.it/documenti/schede/roccagiovine_m_gennaro.kml",
+      "entity": "Ente Parco Monti Lucretili",
+      "title": "CAI 305 Roccagiovine - Monte Gennaro — file geometrico",
+      "consultedAt": "2026-10-19",
+      "accessStatus": "letto_XML_HTTP_200",
+      "evidence": "XML analizzato in memoria; hash sul corpo HTTP originale; nessun file geometrico integrale salvato."
+    },
+    {
+      "id": "REA-copyleft",
+      "url": "https://www.parchilazio.it/pagine-8-copyleft",
+      "entity": "Regione Lazio / ParchiLazio",
+      "title": "Copyleft",
+      "consultedAt": "2026-10-19",
+      "accessStatus": "letto",
+      "evidence": "Condizioni generali: attribuzione della fonte e autore, gratuità, assenza di fini commerciali; non è stata verificata una licenza esplicitamente associata al singolo file geometrico."
+    }
+  ]
+}

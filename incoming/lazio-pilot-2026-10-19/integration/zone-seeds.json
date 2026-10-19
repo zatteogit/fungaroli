@@ -1,0 +1,558 @@
+{
+  "generated": "2026-10-19",
+  "status": "stable_sampling_seeds",
+  "zones": [
+    {
+      "id": "vico-monte-venere",
+      "name": "Monte Venere e lago di Vico",
+      "lat": 42.3472377,
+      "lon": 12.1808827,
+      "radius_m": 1500,
+      "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+      "province": [
+        "VT"
+      ],
+      "coordinateProvenance": {
+        "method": "official_trace_bbox_midpoint",
+        "sourceUrl": "https://www.parchilazio.it/documenti/schede/monte_venere.kml",
+        "bbox": {
+          "west": 12.1727654,
+          "south": 42.3419702,
+          "east": 12.1890001,
+          "north": 42.3525052
+        },
+        "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+      },
+      "collectionStatus": "unknown",
+      "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita.",
+      "collectionSourceUrl": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+      "publicationStatus": "active",
+      "manager": "Ente Monti Cimini, 0761 752282, info@entemonticimini.it",
+      "researchGroup": "nord"
+    },
+    {
+      "id": "monte-rufeno-felceto",
+      "name": "Monte Rufeno – Felceto",
+      "lat": 42.7832961,
+      "lon": 11.8934405,
+      "radius_m": 1500,
+      "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+      "province": [
+        "VT"
+      ],
+      "coordinateProvenance": {
+        "method": "official_trace_bbox_midpoint",
+        "sourceUrl": "https://www.parchilazio.it/documenti/schede/sentiero_natura_felceto.kml",
+        "bbox": {
+          "west": 11.891231434419751,
+          "south": 42.7814853284508,
+          "east": 11.895649619400501,
+          "north": 42.785106897354126
+        },
+        "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+      },
+      "collectionStatus": "unknown",
+      "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita.",
+      "collectionSourceUrl": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+      "publicationStatus": "active",
+      "manager": "Comune di Acquapendente / Riserva, 0763 733442, info@monterufeno.it",
+      "researchGroup": "nord"
+    },
+    {
+      "id": "oriolo-monte-raschio",
+      "name": "Oriolo Romano – Monte Raschio",
+      "lat": 42.1671,
+      "lon": 12.149406,
+      "radius_m": 1500,
+      "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+      "province": [
+        "VT"
+      ],
+      "coordinateProvenance": {
+        "method": "official_trace_bbox_midpoint",
+        "sourceUrl": "https://www.parcobracciano.it/media/2051/sent-175c-monte-raschio-oriolo-romano.gpx",
+        "bbox": {
+          "west": 12.138417,
+          "south": 42.158027,
+          "east": 12.160395,
+          "north": 42.176173
+        },
+        "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+      },
+      "collectionStatus": "unknown",
+      "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita.",
+      "collectionSourceUrl": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+      "publicationStatus": "active",
+      "manager": "Ente Parco Bracciano-Martignano, 0699801176",
+      "researchGroup": "nord"
+    },
+    {
+      "id": "allumiere-faggeto",
+      "name": "Faggeto di Allumiere",
+      "lat": 42.1539073,
+      "lon": 11.9080639,
+      "radius_m": 1500,
+      "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+      "province": [
+        "RM"
+      ],
+      "coordinateProvenance": {
+        "method": "published_place_or_map",
+        "sourceUrl": "https://comune.allumiere.rm.it/it/vivere/monumento-naturale-il-faggeto",
+        "note": "Punto del luogo pubblicato dal Comune; centro editoriale, non parcheggio."
+      },
+      "collectionStatus": "unknown",
+      "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita.",
+      "collectionSourceUrl": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+      "publicationStatus": "active",
+      "manager": "Comune di Allumiere; recapito diretto non acquisito",
+      "researchGroup": "nord"
+    },
+    {
+      "id": "monterano-bicione",
+      "name": "Monterano – valle del Bicione",
+      "lat": 42.142368,
+      "lon": 12.0763325,
+      "radius_m": 1500,
+      "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+      "province": [
+        "RM"
+      ],
+      "coordinateProvenance": {
+        "method": "official_trace_bbox_midpoint",
+        "sourceUrl": "https://www.parchilazio.it/documenti/schede/bandita.kml",
+        "bbox": {
+          "west": 12.0620305,
+          "south": 42.1316117,
+          "east": 12.0906344,
+          "north": 42.1531243
+        },
+        "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+      },
+      "collectionStatus": "unknown",
+      "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita.",
+      "collectionSourceUrl": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+      "publicationStatus": "active",
+      "manager": "Comune di Canale Monterano / Riserva, 06 9962724, riservamonterano@regione.lazio.it",
+      "researchGroup": "nord"
+    },
+    {
+      "id": "veio-monte-musino",
+      "name": "Veio – Monte Musino",
+      "lat": 42.0978367,
+      "lon": 12.4401353,
+      "radius_m": 1500,
+      "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+      "province": [
+        "RM"
+      ],
+      "coordinateProvenance": {
+        "method": "official_trace_bbox_midpoint",
+        "sourceUrl": "https://www.parchilazio.it/documenti/schede/monte_musino.kml",
+        "bbox": {
+          "west": 12.4372474,
+          "south": 42.0955103,
+          "east": 12.4430232,
+          "north": 42.1001632
+        },
+        "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+      },
+      "collectionStatus": "unknown",
+      "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita.",
+      "collectionSourceUrl": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+      "publicationStatus": "active",
+      "manager": "Ente Parco di Veio, 06 9042774, protocollo@parcodiveio.it",
+      "researchGroup": "nord"
+    },
+    {
+      "id": "tuscolo-nord",
+      "name": "Tuscolo, boschi verso Frascati",
+      "lat": 41.8024272,
+      "lon": 12.69921,
+      "radius_m": 1500,
+      "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+      "province": [
+        "RM"
+      ],
+      "coordinateProvenance": {
+        "method": "official_trace_bbox_midpoint",
+        "sourceUrl": "https://www.parchilazio.it/castelliromani-schede-18117-501_frascati_croce_di_tuscolo_cai",
+        "bbox": {
+          "west": 12.6851544,
+          "south": 41.7975873,
+          "east": 12.7132657,
+          "north": 41.8072671
+        },
+        "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+      },
+      "collectionStatus": "unknown",
+      "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita.",
+      "collectionSourceUrl": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+      "publicationStatus": "active",
+      "manager": "Ente Parco Castelli Romani",
+      "researchGroup": "roma-est"
+    },
+    {
+      "id": "faete-rocca-papa",
+      "name": "Faete e Monte Cavo",
+      "lat": 41.7546186,
+      "lon": 12.7237168,
+      "radius_m": 1500,
+      "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+      "province": [
+        "RM"
+      ],
+      "coordinateProvenance": {
+        "method": "official_trace_bbox_midpoint",
+        "sourceUrl": "https://www.parchilazio.it/castelliromani-schede-17961-509_circuito_delle_faete_di_rocca_di_papa_cai",
+        "bbox": {
+          "west": 12.707468625158072,
+          "south": 41.744398484006524,
+          "east": 12.739965012297034,
+          "north": 41.76483867689967
+        },
+        "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+      },
+      "collectionStatus": "unknown",
+      "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita.",
+      "collectionSourceUrl": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+      "publicationStatus": "active",
+      "manager": "Ente Parco Castelli Romani",
+      "researchGroup": "roma-est"
+    },
+    {
+      "id": "nemi-fontan-tempesta",
+      "name": "Nemi e Fontan Tempesta",
+      "lat": 41.7266247,
+      "lon": 12.7125641,
+      "radius_m": 1500,
+      "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+      "province": [
+        "RM"
+      ],
+      "coordinateProvenance": {
+        "method": "official_trace_bbox_midpoint",
+        "sourceUrl": "https://www.parchilazio.it/castelliromani-schede-18037-511b_fontana_tempesta_nemi_cai",
+        "bbox": {
+          "west": 12.7091608,
+          "south": 41.7206108,
+          "east": 12.7159675,
+          "north": 41.7326387
+        },
+        "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+      },
+      "collectionStatus": "unknown",
+      "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita.",
+      "collectionSourceUrl": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+      "publicationStatus": "active",
+      "manager": "Ente Parco Castelli Romani",
+      "researchGroup": "roma-est"
+    },
+    {
+      "id": "cerquone-doganella",
+      "name": "Cerquone e Doganella",
+      "lat": 41.7784217,
+      "lon": 12.7823341,
+      "radius_m": 1500,
+      "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+      "province": [
+        "RM"
+      ],
+      "coordinateProvenance": {
+        "method": "official_trace_bbox_midpoint",
+        "sourceUrl": "https://www.parchilazio.it/castelliromani-schede-18053-504_rocca_priora_bosco_del_cerquone_cai",
+        "bbox": {
+          "west": 12.769194971770048,
+          "south": 41.76909844391048,
+          "east": 12.795473327860236,
+          "north": 41.78774499334395
+        },
+        "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+      },
+      "collectionStatus": "unknown",
+      "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita.",
+      "collectionSourceUrl": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+      "publicationStatus": "active",
+      "manager": "Ente Parco Castelli Romani",
+      "researchGroup": "roma-est"
+    },
+    {
+      "id": "livata-tufai",
+      "name": "Livata e Valle delle Mele",
+      "lat": 41.9331844,
+      "lon": 13.1562279,
+      "radius_m": 1500,
+      "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+      "province": [
+        "RM"
+      ],
+      "coordinateProvenance": {
+        "method": "official_trace_bbox_midpoint",
+        "sourceUrl": "https://www.parcomontisimbruini.it/itinerari-dettaglio.php?id_iti=370",
+        "bbox": {
+          "west": 13.147823140025139,
+          "south": 41.927543906494975,
+          "east": 13.164632711559534,
+          "north": 41.938824858516455
+        },
+        "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+      },
+      "collectionStatus": "unknown",
+      "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita.",
+      "collectionSourceUrl": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+      "publicationStatus": "active",
+      "manager": "Ente Parco Monti Simbruini",
+      "researchGroup": "roma-est"
+    },
+    {
+      "id": "cervara-prataglia",
+      "name": "Cervara e Prataglia",
+      "lat": 42.0004981,
+      "lon": 13.061135,
+      "radius_m": 1500,
+      "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+      "province": [
+        "RM"
+      ],
+      "coordinateProvenance": {
+        "method": "official_trace_bbox_midpoint",
+        "sourceUrl": "https://www.parcomontisimbruini.it/itinerari-dettaglio.php?id_iti=174",
+        "bbox": {
+          "west": 13.04302454,
+          "south": 41.988847973,
+          "east": 13.07924551,
+          "north": 42.012148323
+        },
+        "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+      },
+      "collectionStatus": "unknown",
+      "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita.",
+      "collectionSourceUrl": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+      "publicationStatus": "active",
+      "manager": "Ente Parco Monti Simbruini",
+      "researchGroup": "roma-est"
+    },
+    {
+      "id": "gennaro-roccagiovine",
+      "name": "Monte Gennaro da Roccagiovine",
+      "lat": 42.0565333,
+      "lon": 12.8504782,
+      "radius_m": 2500,
+      "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+      "province": [
+        "RM"
+      ],
+      "coordinateProvenance": {
+        "method": "official_trace_bbox_midpoint",
+        "sourceUrl": "https://www.parchilazio.it/montilucretili-schede-18056-305_roccagiovine_monte_gennaro_cai",
+        "bbox": {
+          "west": 12.807004,
+          "south": 42.0501196,
+          "east": 12.8939525,
+          "north": 42.0629469
+        },
+        "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+      },
+      "collectionStatus": "unknown",
+      "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita.",
+      "collectionSourceUrl": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+      "publicationStatus": "active",
+      "manager": "Ente Parco Monti Lucretili",
+      "researchGroup": "roma-est"
+    },
+    {
+      "id": "lepini-bassiano-santangelo",
+      "name": "Valle Sant’Angelo e lecci del Semprevisa",
+      "lat": 41.561727,
+      "lon": 13.056672,
+      "radius_m": 1500,
+      "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+      "province": [
+        "LT"
+      ],
+      "coordinateProvenance": {
+        "method": "published_place_or_map",
+        "sourceUrl": "https://www.cailatina.com/pagu_percorso.php?id=6",
+        "note": "Centro della mappa del percorso incorporata dal CAI Latina; punto editoriale, non accesso o parcheggio. Nessuna conversione delle coordinate UTM dal datum ignoto."
+      },
+      "collectionStatus": "unknown",
+      "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita.",
+      "collectionSourceUrl": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+      "publicationStatus": "active",
+      "manager": "Ente competente indicato nelle fonti",
+      "researchGroup": "sud"
+    },
+    {
+      "id": "ausoni-san-vito",
+      "name": "Sughereta di San Vito",
+      "lat": 41.3692321,
+      "lon": 13.3378515,
+      "radius_m": 1500,
+      "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+      "province": [
+        "LT"
+      ],
+      "coordinateProvenance": {
+        "method": "published_place_or_map",
+        "sourceUrl": "https://montesanbiagio.halleyegov.it/vivere_il_comune/luoghi/luogo_16.html",
+        "note": "Punto mappa nella scheda comunale aggiornata il 01/07/2025; centro editoriale, non parcheggio."
+      },
+      "collectionStatus": "unknown",
+      "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita.",
+      "collectionSourceUrl": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+      "publicationStatus": "active",
+      "manager": "Ente Parco Naturale Regionale Monti Ausoni e Lago di Fondi",
+      "researchGroup": "sud"
+    },
+    {
+      "id": "aurunci-itri-campello",
+      "name": "La Valle di Itri e Campello Vecchio",
+      "lat": 41.3218395,
+      "lon": 13.5770165,
+      "radius_m": 1500,
+      "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+      "province": [
+        "LT"
+      ],
+      "coordinateProvenance": {
+        "method": "official_trace_bbox_midpoint",
+        "sourceUrl": "https://www.parchilazio.it/documenti/schede/20220422232757_17197_map_1.kml",
+        "bbox": {
+          "west": 13.551000981,
+          "south": 41.306455024,
+          "east": 13.60303198,
+          "north": 41.337223984
+        },
+        "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+      },
+      "collectionStatus": "unknown",
+      "collectionNote": "Il Parco ammette la raccolta secondo la normativa; verificare requisiti personali, proprietà e limitazioni locali.",
+      "collectionSourceUrl": "https://www.parcoaurunci.it/pagina.php?id=7",
+      "publicationStatus": "active",
+      "manager": "Ente Parco Naturale Regionale Monti Aurunci",
+      "researchGroup": "sud"
+    },
+    {
+      "id": "circeo-cerasella-verdesca",
+      "name": "Cerasella e Piscina della Verdesca",
+      "lat": 41.3518884,
+      "lon": 13.0482759,
+      "radius_m": 1500,
+      "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+      "province": [
+        "LT"
+      ],
+      "coordinateProvenance": {
+        "method": "published_place_or_map",
+        "sourceUrl": "https://www.openstreetmap.org/node/768875089",
+        "note": "Località Cerasella in OSM, geocodifica Nominatim; centro editoriale, non parcheggio."
+      },
+      "collectionStatus": "observation_only",
+      "collectionNote": "Uscita di osservazione. Raccolta 2026 riservata ad autorizzati nelle sole aree derogate; il percorso non dimostra il diritto di raccolta.",
+      "collectionSourceUrl": "https://www.parcocirceo.it/dettaglio.php?id=85389",
+      "publicationStatus": "active",
+      "manager": "Ente Parco Nazionale del Circeo",
+      "researchGroup": "sud"
+    },
+    {
+      "id": "ernici-prato-campoli",
+      "name": "Prato di Campoli e boschi verso Pizzo Deta",
+      "lat": 41.7745278,
+      "lon": 13.4925556,
+      "radius_m": 1500,
+      "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+      "province": [
+        "FR"
+      ],
+      "coordinateProvenance": {
+        "method": "published_wgs_point",
+        "sourceUrl": "https://www.cairoma.it/?p=29232",
+        "note": "Centro editoriale coincidente con il punto WGS pubblicato dal CAI; il raggio non delimita l’area naturale."
+      },
+      "collectionStatus": "unknown",
+      "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita.",
+      "collectionSourceUrl": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+      "publicationStatus": "active",
+      "manager": "Ente competente indicato nelle fonti",
+      "researchGroup": "sud"
+    },
+    {
+      "id": "lepini-supino-santaserena",
+      "name": "Fonte Santa Serena e boschi del Monte Gemma",
+      "lat": 41.6020667,
+      "lon": 13.1660833,
+      "radius_m": 1500,
+      "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+      "province": [
+        "FR"
+      ],
+      "coordinateProvenance": {
+        "method": "published_wgs_point",
+        "sourceUrl": "https://www.cairoma.it/?p=28403",
+        "note": "Centro editoriale coincidente con il punto WGS pubblicato dal CAI; il raggio non delimita l’area naturale."
+      },
+      "collectionStatus": "unknown",
+      "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita.",
+      "collectionSourceUrl": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+      "publicationStatus": "active",
+      "manager": "Ente competente indicato nelle fonti",
+      "researchGroup": "sud"
+    },
+    {
+      "id": "simbruini-filettino-fiumata",
+      "name": "Fiumata e Fosso Acqua Corore",
+      "lat": 41.9067994,
+      "lon": 13.2921344,
+      "radius_m": 1500,
+      "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+      "province": [
+        "FR"
+      ],
+      "coordinateProvenance": {
+        "method": "official_trace_bbox_midpoint",
+        "sourceUrl": "https://www.parcomontisimbruini.it/gpx/693a.gpx",
+        "bbox": {
+          "west": 13.284499794244766,
+          "south": 41.898640505969524,
+          "east": 13.299768939614296,
+          "north": 41.914958311244845
+        },
+        "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+      },
+      "collectionStatus": "unknown",
+      "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita.",
+      "collectionSourceUrl": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+      "publicationStatus": "active",
+      "manager": "Ente Parco Naturale Regionale Monti Simbruini",
+      "researchGroup": "sud"
+    },
+    {
+      "id": "pnalm-settefrati-canneto",
+      "name": "Valle di Canneto da Settefrati",
+      "lat": 41.67028,
+      "lon": 13.8790896,
+      "radius_m": 2500,
+      "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+      "province": [
+        "FR"
+      ],
+      "coordinateProvenance": {
+        "method": "official_trace_bbox_midpoint",
+        "sourceUrl": "https://www.parcoabruzzo.it/iti_kmz.php?id=4988",
+        "bbox": {
+          "west": 13.85046601201267,
+          "south": 41.66184232025745,
+          "east": 13.90771313875895,
+          "north": 41.67871764460652
+        },
+        "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+      },
+      "collectionStatus": "restricted",
+      "collectionNote": "Raccolta regolamentata nel PNALM: verificare zona e autorizzazioni con il Parco; restare sui sentieri.",
+      "collectionSourceUrl": "https://www.parcoabruzzo.it/pagina.php?id=618",
+      "publicationStatus": "active",
+      "manager": "Ente Parco Nazionale d’Abruzzo, Lazio e Molise",
+      "researchGroup": "sud"
+    }
+  ]
+}

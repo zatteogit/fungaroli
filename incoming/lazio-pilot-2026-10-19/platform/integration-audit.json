@@ -1,0 +1,240 @@
+{
+  "checkedAt": "2026-10-19",
+  "productionCommit": "003bf61290c10fae2856c4312c787f5eddbfaf25",
+  "productionShell": "v237",
+  "currentScope": "15 zone del Reatino; dati di produzione non modificati",
+  "existingZones": [
+    {
+      "id": "vallonina",
+      "name": "Vallonina / Terminillo"
+    },
+    {
+      "id": "poggio-cantalice",
+      "name": "Poggio Bustone / Cantalice"
+    },
+    {
+      "id": "antrodoco",
+      "name": "Antrodoco / Media Valle del Velino"
+    },
+    {
+      "id": "cicolano",
+      "name": "Cicolano – Marcetelli, Ascrea, Collalto"
+    },
+    {
+      "id": "rascino",
+      "name": "Altopiano di Rascino"
+    },
+    {
+      "id": "tancia",
+      "name": "Monte Tancia (Monti Sabini)"
+    },
+    {
+      "id": "laga",
+      "name": "Monti della Laga (Amatrice)"
+    },
+    {
+      "id": "terminillo-ovest",
+      "name": "Pian de' Rosce / Terminillo ovest"
+    },
+    {
+      "id": "terminillo-est",
+      "name": "Cinque Confini / Monte Bove"
+    },
+    {
+      "id": "cittareale",
+      "name": "Cittareale / Alto Velino"
+    },
+    {
+      "id": "pescorocchiano",
+      "name": "Pescorocchiano / Cicolano est"
+    },
+    {
+      "id": "malito",
+      "name": "Valle di Malito / Corvaro"
+    },
+    {
+      "id": "sangiovanni",
+      "name": "Monte San Giovanni in Sabina"
+    },
+    {
+      "id": "leonessa",
+      "name": "Leonessa / faggete nord"
+    },
+    {
+      "id": "domo",
+      "name": "Domo / Valle del Tronto"
+    }
+  ],
+  "resources": [
+    {
+      "resource": "zones",
+      "file": "data/zones.json",
+      "sha256": "e2e8a44bb78d4890346d98be32fce2101a2e60c309198755c7bdb173533c8355",
+      "zoneCount": 15,
+      "missingZoneIds": []
+    },
+    {
+      "resource": "habitat",
+      "file": "data/habitat.json",
+      "sha256": "896468123e136560fc2d40d0f635e14d4a83fbc0700a93a5d4d33e3ecb682822",
+      "zoneCount": 15,
+      "missingZoneIds": []
+    },
+    {
+      "resource": "trails",
+      "file": "data/trails.json",
+      "sha256": "1db316129ed1ad254cf092a563b4131033b91597d9601da25d312ddd5a7417db",
+      "zoneCount": 15,
+      "missingZoneIds": []
+    },
+    {
+      "resource": "access",
+      "file": "data/access.json",
+      "sha256": "ccd33ea7a73b1560734042fc6390002459198b82653337fb44fea35d78f2397b",
+      "zoneCount": 15,
+      "missingZoneIds": []
+    },
+    {
+      "resource": "trailheads",
+      "file": "data/trailheads.json",
+      "sha256": "f9709666bc516c50ba1e5e39bebd4ab753c8189090606a31c766bf495d3cd112",
+      "zoneCount": 15,
+      "missingZoneIds": []
+    },
+    {
+      "resource": "media-zones",
+      "file": "data/media-zones.json",
+      "sha256": "8dfde6b2edfdb414b3fdb024703f1195b5542cfc2fefe97b4e5d15c58abf159f",
+      "zoneCount": 9,
+      "missingZoneIds": [
+        "terminillo-est",
+        "pescorocchiano",
+        "malito",
+        "sangiovanni",
+        "leonessa",
+        "domo"
+      ]
+    }
+  ],
+  "regionalDataSources": [
+    {
+      "id": "LAZIO-GEOPORTALE",
+      "url": "https://www.regione.lazio.it/cittadini/urbanistica/sistema-informativo-territoriale-regionale/geoportale-regionale",
+      "publisher": "Regione Lazio",
+      "evidence": "Descrive dati geografici regionali, WMS/WFS e riuso con attribuzione CC BY 4.0 per i dati pubblici. Verificare anche il metadato del singolo strato prima della distribuzione.",
+      "checkedAt": "2026-10-19",
+      "access": "read"
+    },
+    {
+      "id": "LAZIO-FOREST-METADATA",
+      "url": "https://geoportale.regione.lazio.it/documents/173/link",
+      "publisher": "Regione Lazio",
+      "evidence": "Metadato della Carta Forestale tipologica, riferimenti metodologici e basi storiche; non è una rilevazione attuale dei singoli boschi.",
+      "checkedAt": "2026-10-19",
+      "access": "read_pdf"
+    },
+    {
+      "id": "LAZIO-PROTECTION",
+      "url": "https://www.regione.lazio.it/cittadini/tutela-ambientale-difesa-suolo/parchi-rete-natura-2000/cartografia",
+      "publisher": "Regione Lazio",
+      "evidence": "Rinvia agli strati aggiornabili delle aree protette e di Natura 2000; le carte vanno lette insieme agli strati di origine.",
+      "checkedAt": "2026-10-19",
+      "access": "read"
+    },
+    {
+      "id": "LAZIO-FUNGHI",
+      "url": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+      "publisher": "Regione Lazio",
+      "publisherUpdatedAt": "2026-10-16",
+      "checkedAt": "2026-10-19",
+      "access": "read",
+      "evidence": "Pagina regionale corrente per formazione, contributo e documento; segnala raccolta tutti i giorni dopo modifica del 2024. Non sostituisce regolamenti delle singole aree."
+    },
+    {
+      "id": "OPEN-METEO-TERMS",
+      "url": "https://open-meteo.com/en/terms",
+      "publisher": "Open-Meteo",
+      "checkedAt": "2026-10-19",
+      "access": "read",
+      "evidence": "Free API per uso non commerciale e con limiti; dati CC BY 4.0. Estensione geografica richiede controllo del carico. Eventuale prodotto commerciale richiede adeguamento del servizio, non solo attribuzione."
+    }
+  ],
+  "integrationWork": [
+    {
+      "id": "geography",
+      "files": [
+        "data/zones.json",
+        "tools/build_basemap.py",
+        "js/app.js"
+      ],
+      "work": "Centri/estensioni editoriali documentati, province/comuni, confine Lazio, camera dinamica e base offline/artifact. Non trasformare un centro parco in parcheggio."
+    },
+    {
+      "id": "habitat",
+      "files": [
+        "tools/build_habitat.py",
+        "data/habitat.json"
+      ],
+      "work": "Campionare forestale e DEM per le nuove zone approvate, distinguendo età del dato e data estrazione. Ignoto diverso da zero."
+    },
+    {
+      "id": "trails-access",
+      "files": [
+        "tools/build_trails.py",
+        "tools/build_access.py",
+        "tools/build_trailheads.py"
+      ],
+      "work": "Importare geometrie realmente ottenute e licenziate, campionare, verificare inizio/accesso e chiusure. Km ufficiali completi distinti da km nel tratto locale."
+    },
+    {
+      "id": "origin-ranking",
+      "files": [
+        "data/zones.json",
+        "worker/travel-provider.js",
+        "js/app.js"
+      ],
+      "work": "Rimuovere il privilegio implicito della partenza Rieti dalla scelta regionale e dalla ricerca luoghi; usare partenza scelta e routing reale, mai tempi inventati."
+    },
+    {
+      "id": "weather",
+      "files": [
+        "worker/weather-provider.js",
+        "worker/index.js"
+      ],
+      "work": "Lettura per zona e fasce già presente. Misurare richiesta incrementale e cache con il catalogo regionale; schema e snapshot CMS devono concordare con la lista ammessa dal proxy."
+    },
+    {
+      "id": "content-cms",
+      "files": [
+        "js/content-schema.js",
+        "worker/cms.js",
+        "data/legal.json",
+        "index.html"
+      ],
+      "work": "Dati editoriali/snapshot pubblicato devono concordare. Esporre Pilota Lazio - zone selezionate solo quando i nuovi pacchetti sono effettivamente pronti. Aggiornare fonti locali, contatti sanitari, limiti scientifici e versione condizioni quando necessario."
+    },
+    {
+      "id": "media",
+      "files": [
+        "data/media-zones.json",
+        "data/crop-points.json"
+      ],
+      "work": "Copertine fotografiche reali locali selezionate visivamente, licenza e crop, varianti solo quando revisionate. Commons raggiungibile con UA del progetto (vedere endpoint-probes.json). Non attribuire una foto generica al sentiero."
+    },
+    {
+      "id": "regional-calibration",
+      "files": [
+        "docs/metodo-scientifico.md",
+        "js/model.js"
+      ],
+      "work": "Non trasportare notorietà, festività patronali e coefficenti locali come fatti validati regionalmente. Nessuna calibrazione o aumento di punteggio senza evidenza."
+    }
+  ],
+  "releaseGates": [
+    "zone candidate non equivalgono a zone attive",
+    "raccolta consentita, riservata, vietata o da verificare va rappresentata separatamente dall’osservazione",
+    "geometrie e habitat campionati, accessi e media verificati prima dell’integrazione",
+    "nessuna suite o CI avviata per mandato utente; successiva verifica manuale della copertura e dei dati",
+    "non pubblicare il solo cambio di etichetta Lazio sopra le 15 zone Rieti"
+  ]
+}

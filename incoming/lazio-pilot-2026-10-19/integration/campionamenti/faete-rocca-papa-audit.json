@@ -1,0 +1,81 @@
+{
+ "started": "2026-10-19T11:09:10.869760+00:00",
+ "seed": {
+  "id": "faete-rocca-papa",
+  "name": "Faete e Monte Cavo",
+  "lat": 41.7546186,
+  "lon": 12.7237168,
+  "radius_m": 1500,
+  "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+  "province": [
+   "RM"
+  ],
+  "coordinateProvenance": {
+   "method": "official_trace_bbox_midpoint",
+   "sourceUrl": "https://www.parchilazio.it/castelliromani-schede-17961-509_circuito_delle_faete_di_rocca_di_papa_cai",
+   "bbox": {
+    "west": 12.707468625158072,
+    "south": 41.744398484006524,
+    "east": 12.739965012297034,
+    "north": 41.76483867689967
+   },
+   "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+  },
+  "collectionStatus": "unknown",
+  "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita.",
+  "collectionSourceUrl": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+  "publicationStatus": "active",
+  "manager": "Ente Parco Castelli Romani",
+  "researchGroup": "roma-est",
+  "officialTrailRefs": [
+   "509"
+  ],
+  "officialTrailNameMatches": []
+ },
+ "demProvider": "copernicus-glo90-openmeteo",
+ "demResolutionM": 90,
+ "elevation": {
+  "min": 590,
+  "p25": 752,
+  "median": 790,
+  "p75": 852,
+  "max": 944
+ },
+ "suggestedBandsM": [
+  750,
+  790,
+  850
+ ],
+ "forestPolygonCount": 12,
+ "habitatSamples": 317,
+ "roadErrors": [],
+ "trails": {
+  "listedRelations": 8,
+  "requestedRefs": [
+   "509"
+  ],
+  "requestedDistinctiveNames": [],
+  "matchedRelations": [
+   {
+    "relation": 3328048,
+    "ref": "509",
+    "source": "https://www.openstreetmap.org/relation/3328048",
+    "license": "ODbL-1.0",
+    "officialTagLengthM": 7000.0,
+    "mappedLengthM": 7070,
+    "inZoneLengthM": 7078.502015367165,
+    "sampleCount": 70,
+    "note": "Reference match with institutional itinerary; geometry independently obtained from OSM via Waymarked Trails. Match does not certify exact geometric identity or current opening."
+   }
+  ],
+  "unmatchedRefs": [],
+  "driveError": null,
+  "coverageLimit": 100,
+  "geometryStatus": "matched_osm_geometry"
+ },
+ "status": "complete",
+ "finished": "2026-10-19T11:09:23.045379+00:00",
+ "habitatStatus": "complete",
+ "grid": 21,
+ "gridStepM": 150.0
+}

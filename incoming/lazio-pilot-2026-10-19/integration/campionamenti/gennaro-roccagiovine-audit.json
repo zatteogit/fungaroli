@@ -1,0 +1,81 @@
+{
+ "started": "2026-10-19T11:10:17.267633+00:00",
+ "seed": {
+  "id": "gennaro-roccagiovine",
+  "name": "Monte Gennaro da Roccagiovine",
+  "lat": 42.0565333,
+  "lon": 12.8504782,
+  "radius_m": 2500,
+  "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+  "province": [
+   "RM"
+  ],
+  "coordinateProvenance": {
+   "method": "official_trace_bbox_midpoint",
+   "sourceUrl": "https://www.parchilazio.it/montilucretili-schede-18056-305_roccagiovine_monte_gennaro_cai",
+   "bbox": {
+    "west": 12.807004,
+    "south": 42.0501196,
+    "east": 12.8939525,
+    "north": 42.0629469
+   },
+   "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+  },
+  "collectionStatus": "unknown",
+  "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita.",
+  "collectionSourceUrl": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+  "publicationStatus": "active",
+  "manager": "Ente Parco Monti Lucretili",
+  "researchGroup": "roma-est",
+  "officialTrailRefs": [
+   "305"
+  ],
+  "officialTrailNameMatches": []
+ },
+ "demProvider": "copernicus-glo90-openmeteo",
+ "demResolutionM": 90,
+ "elevation": {
+  "min": 539,
+  "p25": 864,
+  "median": 956,
+  "p75": 1039,
+  "max": 1186
+ },
+ "suggestedBandsM": [
+  860,
+  960,
+  1040
+ ],
+ "forestPolygonCount": 98,
+ "habitatSamples": 317,
+ "roadErrors": [],
+ "trails": {
+  "listedRelations": 22,
+  "requestedRefs": [
+   "305"
+  ],
+  "requestedDistinctiveNames": [],
+  "matchedRelations": [
+   {
+    "relation": 2068875,
+    "ref": "305",
+    "source": "https://www.openstreetmap.org/relation/2068875",
+    "license": "ODbL-1.0",
+    "officialTagLengthM": 10000.0,
+    "mappedLengthM": 9860,
+    "inZoneLengthM": 6358.089809693915,
+    "sampleCount": 63,
+    "note": "Reference match with institutional itinerary; geometry independently obtained from OSM via Waymarked Trails. Match does not certify exact geometric identity or current opening."
+   }
+  ],
+  "unmatchedRefs": [],
+  "driveError": null,
+  "coverageLimit": 100,
+  "geometryStatus": "matched_osm_geometry"
+ },
+ "status": "complete",
+ "finished": "2026-10-19T11:10:30.282137+00:00",
+ "habitatStatus": "complete",
+ "grid": 21,
+ "gridStepM": 250.0
+}

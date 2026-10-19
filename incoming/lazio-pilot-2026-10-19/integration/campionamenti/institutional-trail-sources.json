@@ -1,0 +1,106 @@
+{
+ "vico-monte-venere": [
+  {
+   "name": "CAI 128b Area sosta Canale – Monte Venere",
+   "ref": null,
+   "sourcePage": "https://www.parchilazio.it/vico-schede-18236-128b_monte_venere_cai"
+  }
+ ],
+ "monte-rufeno-felceto": [
+  {
+   "name": "Sentiero Natura Felceto",
+   "ref": null,
+   "sourcePage": "https://www.parchilazio.it/monterufeno-schede-28994-sentiero_natura_felceto"
+  }
+ ],
+ "oriolo-monte-raschio": [
+  {
+   "name": "175C Monte Raschio",
+   "ref": null,
+   "sourcePage": "https://www.parcobracciano.it/vivere-il-parco/percorsi-e-sentieri/sentiero-175c-monte-raschio-oriolo-romano-sentiero-della-faggeta-patrimonio-mondiale-unesco/"
+  },
+  {
+   "name": "CAI 260 Bracciano – Oriolo Romano",
+   "ref": null,
+   "sourcePage": "https://www.parchilazio.it/lago_di_bracciano-schede-30165-sentiero_cai_260_bracciano_oriolo_romano"
+  }
+ ],
+ "allumiere-faggeto": [
+  {
+   "name": "La faggeta di Allumiere – itinerario RESINA",
+   "ref": null,
+   "sourcePage": "https://www.museiresina.it/itinerari/la-faggeta-di-allumiere-2/"
+  }
+ ],
+ "monterano-bicione": [
+  {
+   "name": "Valle del Bicione–Bandita, segnavia giallo",
+   "ref": null,
+   "sourcePage": "https://www.parchilazio.it/monterano-schede-18447-bandita"
+  }
+ ],
+ "veio-monte-musino": [
+  {
+   "name": "CAI 209d Grottini – Monte Musino",
+   "ref": null,
+   "sourcePage": "https://www.parchilazio.it/veio-schede-18206-209d_monte_musino_cai"
+  }
+ ],
+ "tuscolo-nord": [
+  {
+   "name": "CAI 501 Frascati - Croce di Tuscolo",
+   "ref": "501",
+   "sourcePage": "https://www.parchilazio.it/castelliromani-schede-18117-501_frascati_croce_di_tuscolo_cai"
+  }
+ ],
+ "faete-rocca-papa": [
+  {
+   "name": "CAI 509 Circuito delle Faete di Rocca di Papa",
+   "ref": "509",
+   "sourcePage": "https://www.parchilazio.it/castelliromani-schede-17961-509_circuito_delle_faete_di_rocca_di_papa_cai"
+  }
+ ],
+ "nemi-fontan-tempesta": [
+  {
+   "name": "CAI 511B Fontana Tempesta-Nemi",
+   "ref": "511b",
+   "sourcePage": "https://www.parchilazio.it/castelliromani-schede-18037-511b_fontana_tempesta_nemi_cai"
+  }
+ ],
+ "cerquone-doganella": [
+  {
+   "name": "CAI 504 Rocca Priora - Bosco del Cerquone",
+   "ref": "504",
+   "sourcePage": "https://www.parchilazio.it/castelliromani-schede-18053-504_rocca_priora_bosco_del_cerquone_cai"
+  }
+ ],
+ "livata-tufai": [
+  {
+   "name": "Percorso 672c Livata - I Tufai - Valle delle Mele - Livata",
+   "ref": "672c",
+   "sourcePage": "https://www.parcomontisimbruini.it/itinerari-dettaglio.php?id_iti=370"
+  }
+ ],
+ "cervara-prataglia": [
+  {
+   "name": "Percorso 661 Cervara - Prataglia - Cervara",
+   "ref": "661",
+   "sourcePage": "https://www.parcomontisimbruini.it/itinerari-dettaglio.php?id_iti=174"
+  }
+ ],
+ "gennaro-roccagiovine": [
+  {
+   "name": "CAI 305 Roccagiovine - Monte Gennaro",
+   "ref": "305",
+   "sourcePage": "https://www.parchilazio.it/montilucretili-schede-18056-305_roccagiovine_monte_gennaro_cai"
+  }
+ ],
+ "lepini-bassiano-santangelo": [],
+ "ausoni-san-vito": [],
+ "aurunci-itri-campello": [],
+ "circeo-cerasella-verdesca": [],
+ "ernici-prato-campoli": [],
+ "lepini-supino-santaserena": [],
+ "simbruini-filettino-fiumata": [],
+ "pnalm-settefrati-canneto": []
+}

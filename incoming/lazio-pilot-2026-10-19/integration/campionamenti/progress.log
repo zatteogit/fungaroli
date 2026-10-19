@@ -1,0 +1,42 @@
+2026-10-19T10:46:41.499386+00:00 vico-monte-venere
+2026-10-19T10:46:59.061047+00:00 monte-rufeno-felceto
+2026-10-19T10:47:22.995661+00:00 oriolo-monte-raschio
+BLOCKED oriolo-monte-raschio API failed: https://api.open-meteo.com/v1/elevation?latitude=42.16710%2C42.16845%2C42.16979%2C42.17114%2C42.17249%2C42.17384%2C42.17518%2C42.16171%2C42.16306%2C42.16441%2C4
+2026-10-19T10:47:37.845673+00:00 allumiere-faggeto
+BLOCKED allumiere-faggeto API failed: https://api.open-meteo.com/v1/elevation?latitude=42.15391%2C42.14852%2C42.14986%2C42.15121%2C42.15256%2C42.15391%2C42.15525%2C42.15660%2C42.15795%2C42.15930%2C4
+2026-10-19T10:47:53.529634+00:00 monterano-bicione
+2026-10-19T10:48:12.787166+00:00 oriolo-monte-raschio
+2026-10-19T10:48:52.475147+00:00 allumiere-faggeto
+2026-10-19T10:49:53.384407+00:00 monterano-bicione
+2026-10-19T10:51:19.273304+00:00 veio-monte-musino
+2026-10-19T10:52:24.250996+00:00 tuscolo-nord
+2026-10-19T10:53:56.790819+00:00 faete-rocca-papa
+2026-10-19T10:56:05.273363+00:00 faete-rocca-papa
+2026-10-19T10:58:13.194158+00:00 DEM-only faete-rocca-papa copernicus-glo90-openmeteo
+2026-10-19T10:58:59.766979+00:00 DEM-only nemi-fontan-tempesta copernicus-glo90-openmeteo
+2026-10-19T10:59:36.230802+00:00 DEM-only cerquone-doganella copernicus-glo90-openmeteo
+2026-10-19T11:00:35.978412+00:00 DEM-only livata-tufai copernicus-glo90-openmeteo
+2026-10-19T11:01:12.407564+00:00 DEM-only cervara-prataglia copernicus-glo90-openmeteo
+2026-10-19T11:01:48.727426+00:00 DEM-only gennaro-roccagiovine copernicus-glo90-openmeteo
+2026-10-19T11:02:25.175297+00:00 DEM-only lepini-bassiano-santangelo copernicus-glo90-openmeteo
+2026-10-19T11:03:01.670747+00:00 DEM-only ausoni-san-vito copernicus-glo90-openmeteo
+2026-10-19T11:03:38.110402+00:00 DEM-only aurunci-itri-campello copernicus-glo90-openmeteo
+2026-10-19T11:04:14.537802+00:00 DEM-only circeo-cerasella-verdesca copernicus-glo90-openmeteo
+2026-10-19T11:04:51.022786+00:00 DEM-only ernici-prato-campoli copernicus-glo90-openmeteo
+2026-10-19T11:05:27.473980+00:00 DEM-only lepini-supino-santaserena copernicus-glo90-openmeteo
+2026-10-19T11:06:04.002060+00:00 DEM-only simbruini-filettino-fiumata copernicus-glo90-openmeteo
+2026-10-19T11:06:40.428144+00:00 DEM-only pnalm-settefrati-canneto copernicus-glo90-openmeteo
+2026-10-19T11:09:10.869652+00:00 faete-rocca-papa
+2026-10-19T11:09:23.086342+00:00 nemi-fontan-tempesta
+2026-10-19T11:09:36.017471+00:00 cerquone-doganella
+2026-10-19T11:09:48.348363+00:00 livata-tufai
+2026-10-19T11:10:03.498997+00:00 cervara-prataglia
+2026-10-19T11:10:17.267602+00:00 gennaro-roccagiovine
+2026-10-19T11:10:30.329884+00:00 lepini-bassiano-santangelo
+2026-10-19T11:10:43.776754+00:00 ausoni-san-vito
+2026-10-19T11:10:55.057109+00:00 aurunci-itri-campello
+2026-10-19T11:11:08.326633+00:00 circeo-cerasella-verdesca
+2026-10-19T11:11:19.067762+00:00 ernici-prato-campoli
+2026-10-19T11:11:35.282083+00:00 lepini-supino-santaserena
+2026-10-19T11:11:46.807578+00:00 simbruini-filettino-fiumata
+2026-10-19T11:12:01.262040+00:00 pnalm-settefrati-canneto

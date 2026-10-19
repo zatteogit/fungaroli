@@ -8,3 +8,10 @@ dist/
 .wrangler/
 test-results/
 playwright-report/
+
+# Ricerca pilota Lazio: originali e cache locali; audit e dati normalizzati restano versionati.
+incoming/lazio-pilot-2026-10-19/integration/foto/originals/
+incoming/lazio-pilot-2026-10-19/integration/campionamenti/responses/
+
+# Snapshot e log della navigazione manuale locale.
+.playwright-cli/

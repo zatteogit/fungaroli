@@ -1,0 +1,36 @@
+{
+  "reviewedOn": "2026-10-19",
+  "kind": "read_only_data_inspection_not_test_suite",
+  "canonical": {
+    "zones": {
+      "originalRecordsPreserved": true,
+      "totalRecords": 36,
+      "sha256": "c6d9331b41cab2585ce731839faf0de2802cf1489a27aba6bb4f4bf785b1b2ab"
+    },
+    "habitat": {
+      "originalRecordsPreserved": true,
+      "totalRecords": 36,
+      "sha256": "02e5d7221d24ea9c6652ae7f8cca4b1e0e9405758625b355ce12d208d6a5432c"
+    },
+    "access": {
+      "originalRecordsPreserved": true,
+      "totalRecords": 36,
+      "sha256": "8475001243e50fc27cb7ed86db132aa74faef007c527d381a7241bf27c573388"
+    },
+    "trailheads": {
+      "originalRecordsPreserved": true,
+      "totalRecords": 15,
+      "sha256": "f9709666bc516c50ba1e5e39bebd4ab753c8189090606a31c766bf495d3cd112"
+    },
+    "trails": {
+      "originalRecordsPreserved": true,
+      "totalRecords": 36,
+      "sha256": "296523064b83c65d9956dff57725c037630451a1af8a926c6f1301bd74e77a1f"
+    }
+  },
+  "approvedNewParkingCount": 5,
+  "photoCovers": 13,
+  "photoCoversPending": 8,
+  "newTrailCount": 17,
+  "newGridSampleCount": 6657
+}

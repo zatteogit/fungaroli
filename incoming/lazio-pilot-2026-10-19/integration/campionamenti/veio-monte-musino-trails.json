@@ -1,0 +1,99 @@
+{
+ "sample_categories": [
+  "Arbusteto e macchia alta",
+  "Bosco alveale e ripariale",
+  "Cerreta",
+  "Lecceta",
+  "Pineta termofila",
+  "Pseudo-macchia"
+ ],
+ "trails": [
+  {
+   "id": 13128911,
+   "ref": "209D",
+   "name": "Monte Musino",
+   "itinerary": [
+    "209B",
+    "209A"
+   ],
+   "group": "AL2",
+   "operator": "Ente Regionale Parco di Veio",
+   "difficulty": "E",
+   "total_km": 0.8,
+   "duration": "00:40",
+   "ascent": "110",
+   "in_zone_km": 0.8,
+   "samples": [
+    [
+     304,
+     2
+    ],
+    [
+     317,
+     2
+    ],
+    [
+     327,
+     2
+    ],
+    [
+     363,
+     2
+    ],
+    [
+     383,
+     2
+    ],
+    [
+     375,
+     2
+    ],
+    [
+     359,
+     2
+    ],
+    [
+     351,
+     2
+    ]
+   ],
+   "lines": [
+    [
+     [
+      42.09551,
+      12.44212
+     ],
+     [
+      42.09573,
+      12.44203
+     ],
+     [
+      42.09695,
+      12.44302
+     ],
+     [
+      42.09721,
+      12.44279
+     ],
+     [
+      42.09804,
+      12.44142
+     ],
+     [
+      42.09881,
+      12.44097
+     ],
+     [
+      42.09998,
+      12.43838
+     ],
+     [
+      42.10014,
+      12.43725
+     ]
+    ]
+   ]
+  }
+ ],
+ "drive": null
+}

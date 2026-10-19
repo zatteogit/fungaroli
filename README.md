@@ -1,6 +1,6 @@
-# Fungaroli · Rieti
+# Fronda · pilota Lazio
 
-App per scegliere un’uscita nei boschi intorno a Rieti: **A funghi, Piante spontanee o Passeggiata**. La scelta è ricordata nel browser e guida home, filtri avanzati, mappa e dettagli. A funghi mette in primo piano l’indice sperimentale; Piante spontanee evidenzia fase e compatibilità ambientale documentata; Passeggiata privilegia sentieri, accessi e meteo pratico. Il taccuino e le segnalazioni conservano il loro funzionamento. Le condizioni di crescita sono stimate: accuratezza della trovabilità e abbondanza reale non sono ancora misurate.
+Fronda aiuta a scegliere un’uscita nei boschi del Lazio, con interesse prioritario ai funghi. Funghi, Piante e Sentieri sono interessi combinabili, ricordati nel browser e condivisi fra home e mappa. Il pilota comprende 36 zone selezionate nelle cinque province: indice fungino sperimentale, meteo, habitat, sentieri e regole locali. Taccuino e osservazioni accompagnano il giro. L’indice descrive condizioni di crescita: non misura abbondanza né probabilità di ritrovamento.
 
 La parte ambientale incrocia:
 
@@ -38,6 +38,8 @@ Un Artifact non può chiamare API esterne né caricare tile di mappa, quindi la 
 Procedura guidata in 6 passi (zona → giorno → quota → ricerca → cosa e quanto → nota). Prima dell’uscita si può salvare una previsione immutabile con modello e input. Il diario confronta poi le specie cercate, distinguendo zeri espliciti, dati mancanti e ricostruzioni a posteriori. I conteggi sono esplorativi e non misurano l’accuratezza scientifica. Con un server statico (per esempio `npm start`, senza Worker) il diario resta nel browser: usa *Esporta* / *Importa*.
 
 ## Zone (prima versione)
+
+Il nucleo originario di 15 zone è riportato sotto. L’estensione del 19 ottobre aggiunge 21 zone, 6.657 campioni, 17 tracce OSM e 13 copertine reali: [rapporto di integrazione](incoming/lazio-pilot-2026-10-19/integration/release-report.md). Base predefinita Rieti; modificabile nel profilo.
 
 | Zona | Quote valutate | Bosco prevalente (Carta Forestale) | Auto da Rieti* |
 |---|---|---|---|
@@ -126,7 +128,7 @@ Per aggiungere una zona: inserirla in `data/zones.json` (centro, raggio, tre quo
 
 ## Avvertenze
 
-Strumento di supporto alla pianificazione, **non di identificazione**. Raccolta solo con attestato micologico e contributo regionale (L.R. Lazio 32/98 e s.m.i.), max 3 kg/giorno. Far controllare il raccolto all'Ispettorato Micologico ASL Rieti (Via del Terminillo 42, blocco 4; lun–ven 8:30–9:30; tel. 0746 279801), gratuito per i privati secondo il Ministero della Salute. Nelle riserve (Navegna-Cervia, Duchessa) e nel Parco Gran Sasso-Laga valgono zonizzazioni e regolamenti propri.
+Strumento di supporto alla pianificazione, **non di identificazione**. Raccolta solo con attestato micologico e contributo regionale (L.R. Lazio 32/98 e s.m.i.), max 3 kg/giorno. Far controllare il raccolto a un Ispettorato Micologico ASL: controllo gratuito per i privati. Sedi e orari vanno verificati con il servizio; i riferimenti regionali sono nelle informazioni dell’app. Nelle riserve (Navegna-Cervia, Duchessa) e nel Parco Gran Sasso-Laga valgono zonizzazioni e regolamenti propri.
 
 ## Fonti
 

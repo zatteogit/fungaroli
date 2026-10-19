@@ -1,0 +1,988 @@
+{
+  "schema": "fronda.research-candidates.v1",
+  "status": "ricerca incoming, nessuna integrazione app",
+  "date": "2026-10-19",
+  "coverage": "Viterbo e Roma nord/ovest; sei zone scelte, non copertura esaustiva",
+  "rules": [
+    "null significa non acquisito, mai zero",
+    "Nessuna geometria, indice, percentuale forestale o tempi auto inventati",
+    "Compatibilità habitat diversa da presenza osservata e da permesso di raccolta"
+  ],
+  "sources": [
+    {
+      "id": "N01",
+      "url": "https://www.parchilazio.it/vico",
+      "ente": "Regione Lazio / ParchiLazio",
+      "title": "Lago di Vico",
+      "consultedAt": "2026-10-19",
+      "evidence": "Comuni Caprarola e Ronciglione, ambito Viterbo. Ente Monti Cimini; telefono 0761 752282, info@entemonticimini.it. Faggete di Monte Venere e Monte Fogliano.",
+      "accessOutcome": "pagina effettivamente letta"
+    },
+    {
+      "id": "N02",
+      "url": "https://www.parchilazio.it/vico-natura",
+      "ente": "Regione Lazio / ParchiLazio",
+      "title": "Vico – Natura",
+      "consultedAt": "2026-10-19",
+      "evidence": "Cerrete, faggete sui versanti settentrionali, castagneti da frutto; lago e canneti. Svasso maggiore nidificante; tasso e martora accertati.",
+      "accessOutcome": "pagina effettivamente letta"
+    },
+    {
+      "id": "N03",
+      "url": "https://www.parchilazio.it/vico-schede-18236-128b_monte_venere_cai",
+      "ente": "Regione Lazio / ParchiLazio",
+      "title": "CAI 128b Canale – Monte Venere",
+      "consultedAt": "2026-10-19",
+      "evidence": "Sentiero ripido per sommità e Pozzo del Diavolo. E, 3 km, 1 h, salita 255 m, discesa 220 m. Partenza area sosta Canale; KML collegato.",
+      "accessOutcome": "pagina effettivamente letta"
+    },
+    {
+      "id": "N04",
+      "url": "https://www.parchilazio.it/monterufeno",
+      "ente": "Regione Lazio / ParchiLazio",
+      "title": "Monte Rufeno",
+      "consultedAt": "2026-10-19",
+      "evidence": "Comune di Acquapendente, Viterbo; gestore Comune di Acquapendente, 0763/733442, info@monterufeno.it.",
+      "accessOutcome": "pagina effettivamente letta"
+    },
+    {
+      "id": "N05",
+      "url": "https://www.parchilazio.it/monterufeno-schede-28994-sentiero_natura_felceto",
+      "ente": "Regione Lazio / ParchiLazio",
+      "title": "Sentiero Natura Felceto",
+      "consultedAt": "2026-10-19",
+      "evidence": "Anello dal bosco oltre ingresso 3; auto lasciabile in prossimità ingresso. T, 1,5 km, 50 min, salita 48 m, discesa 49 m.",
+      "accessOutcome": "pagina effettivamente letta"
+    },
+    {
+      "id": "N06",
+      "url": "https://www.parchilazio.it/documenti/schede/news_19014_2844_pieghevole_sentiero_int_def.pdf",
+      "ente": "Regione Lazio / ParchiLazio",
+      "title": "Pieghevole Monte Rufeno",
+      "consultedAt": "2026-10-19",
+      "evidence": "Querceti, castagneti e rimboschimenti a conifere; scoiattoli e caprioli. Le trosce ospitano testuggini ed erba scopina ma sono visitabili solo per motivi scientifici. Vecchia brochure: Felceto 1,6 km/2 h, dato divergente dalla scheda attuale N05. Foto porcini e Sasseto Gianfranco Gelsomini, licenza individuale non esplicitata.",
+      "accessOutcome": "PDF letto, 2 pagine; documento storico"
+    },
+    {
+      "id": "N07",
+      "url": "https://www.parchilazio.it/schede-144-i_funghi_della_riserva_naturale_monte_rufeno",
+      "ente": "Regione Lazio / ParchiLazio",
+      "title": "I funghi della Riserva Monte Rufeno",
+      "consultedAt": "2026-10-19",
+      "evidence": "Raccolta regolata dalla LR 32/1998. Presenza documentata nella riserva di Boletus aereus e Amanita phalloides; ambienti citati boschi di cerro e misti cerro-roverella. Segnalazioni non equivalgono a fruttificazione attuale.",
+      "accessOutcome": "pagina effettivamente letta"
+    },
+    {
+      "id": "N08",
+      "url": "https://www.parcobracciano.it/vivere-il-parco/percorsi-e-sentieri/sentiero-175c-monte-raschio-oriolo-romano-sentiero-della-faggeta-patrimonio-mondiale-unesco/",
+      "ente": "Ente Parco Bracciano-Martignano",
+      "title": "175C Monte Raschio",
+      "consultedAt": "2026-10-19",
+      "evidence": "Anello 8 km, dislivello 244 m, difficoltà media, piazza principale di Oriolo Romano sotto Comune. Parte centrale in sottobosco, pineta, cerri e faggi. GPX collegato. Durata non fornita.",
+      "accessOutcome": "pagina effettivamente letta"
+    },
+    {
+      "id": "N09",
+      "url": "https://www.parchilazio.it/faggete_di_monte_raschio_e_oriolo",
+      "ente": "Regione Lazio / ParchiLazio",
+      "title": "ZSC Faggete Monte Raschio e Oriolo",
+      "consultedAt": "2026-10-19",
+      "evidence": "ZSC IT6010034, ambito Roma e Viterbo, gestore Ente Parco Bracciano-Martignano. Nessuna geometria o quota acquisita.",
+      "accessOutcome": "pagina effettivamente letta"
+    },
+    {
+      "id": "N10",
+      "url": "https://www.parchilazio.it/lago_di_bracciano-schede-30165-sentiero_cai_260_bracciano_oriolo_romano",
+      "ente": "Regione Lazio / ParchiLazio",
+      "title": "CAI 260 Bracciano – Oriolo Romano",
+      "consultedAt": "2026-10-19",
+      "evidence": "Collega i centri attraverso Borgo Paola e Pisciarelli e piccoli tratti Via Clodia. T, 9 km, 2 h 40 min, salita 250 m; GPX e KML collegati.",
+      "accessOutcome": "pagina effettivamente letta"
+    },
+    {
+      "id": "N11",
+      "url": "https://www.parcobracciano.it/vivere-il-parco/percorsi-e-sentieri/",
+      "ente": "Ente Parco Bracciano-Martignano",
+      "title": "Rete sentieri e avvisi",
+      "consultedAt": "2026-10-19",
+      "evidence": "Al 29/05/2026: 176M Fonte Vitabbia chiuso per alberi, 132A Monte Calvi chiuso per taglio, 266C non transitabile. Correzione 175L in 176L. Contatto Parco 0699801176.",
+      "accessOutcome": "pagina effettivamente letta"
+    },
+    {
+      "id": "N12",
+      "url": "https://www.museiresina.it/itinerari/la-faggeta-di-allumiere-2/",
+      "ente": "Sistema museale RESINA / musei naturalistici del Lazio",
+      "title": "La faggeta di Allumiere",
+      "consultedAt": "2026-10-19",
+      "evidence": "Partenza Via del Faggeto, rete segnata nel bosco; durata da 1 a 2 h, difficoltà media, quote faggeta 500–600 m. Faggi, aceri, querce e castagni.",
+      "accessOutcome": "pagina effettivamente letta"
+    },
+    {
+      "id": "N13",
+      "url": "https://www.parchilazio.it/faggeto_di_allumiere",
+      "ente": "Regione Lazio / ParchiLazio",
+      "title": "Faggeto di Allumiere",
+      "consultedAt": "2026-10-19",
+      "evidence": "Allumiere, Roma, gestore Comune di Allumiere. Monumento naturale istituito DPRL T00063/2018. Faggeta e colonia ibernante di chirotteri.",
+      "accessOutcome": "pagina effettivamente letta"
+    },
+    {
+      "id": "N14",
+      "url": "https://www.parchilazio.it/monterano",
+      "ente": "Regione Lazio / ParchiLazio",
+      "title": "Monterano",
+      "consultedAt": "2026-10-19",
+      "evidence": "Comune di Canale Monterano, Roma; gestore Comune, 06/9962724, riservamonterano@regione.lazio.it. Boschi, pascoli, corsi acqua e forre.",
+      "accessOutcome": "pagina effettivamente letta"
+    },
+    {
+      "id": "N15",
+      "url": "https://www.parchilazio.it/monterano-schede-18447-bandita",
+      "ente": "Regione Lazio / ParchiLazio",
+      "title": "Valle Bicione–Bandita",
+      "consultedAt": "2026-10-19",
+      "evidence": "Partenza e ritorno area sosta Diosilla; E, 10 km, 4 h 30 min, salita 200 m e discesa 150 m. Quote itinerario 180–310 m. Segnavia giallo; niente punti acqua. Guado Rafanello; boschi e pascoli.",
+      "accessOutcome": "pagina effettivamente letta"
+    },
+    {
+      "id": "N16",
+      "url": "https://www.parchilazio.it/monterano-natura",
+      "ente": "Regione Lazio / ParchiLazio",
+      "title": "Monterano – Natura",
+      "consultedAt": "2026-10-19",
+      "evidence": "Forre e boschi ripariali ad ontano, pioppo e salici; carpino bianco nei valloni, cerro sui pendii. Felce regale e lonchite minore; picchio verde nei boschi. Evidenza della riserva, non del singolo sentiero.",
+      "accessOutcome": "pagina effettivamente letta"
+    },
+    {
+      "id": "N17",
+      "url": "https://www.parchilazio.it/veio",
+      "ente": "Regione Lazio / ParchiLazio",
+      "title": "Veio",
+      "consultedAt": "2026-10-19",
+      "evidence": "Parco a nord Roma fra Cassia e Flaminia; comuni includono Sacrofano e Formello; gestore Ente Parco Veio, 069042774, protocollo@parcodiveio.it.",
+      "accessOutcome": "pagina effettivamente letta"
+    },
+    {
+      "id": "N18",
+      "url": "https://www.parchilazio.it/veio-schede-18206-209d_monte_musino_cai",
+      "ente": "Regione Lazio / ParchiLazio",
+      "title": "CAI 209d Monte Musino",
+      "consultedAt": "2026-10-19",
+      "evidence": "Loc. Grottini Sacrofano – Monte Musino. E, 0,8 km, 25 min, salita 120 m, discesa 15 m. Parcheggio nelle vicinanze lungo Via di Grottini. Sconnesso e con pendenza; non adatto passeggini/disabilità motorie.",
+      "accessOutcome": "pagina letta con urllib dopo timeout intermittente del browser web"
+    },
+    {
+      "id": "N19",
+      "url": "https://www.parchilazio.it/veio-schede-18273-207c_strada_del_sordo_formello_cai",
+      "ente": "Regione Lazio / ParchiLazio",
+      "title": "CAI 207c Valli Sorbo – Formello",
+      "consultedAt": "2026-10-19",
+      "evidence": "La pagina reca SENTIRO CHIUSO. Itinerario escluso dalle proposte praticabili.",
+      "accessOutcome": "pagina effettivamente letta"
+    },
+    {
+      "id": "N20",
+      "url": "https://www.parchilazio.it/veio-natura",
+      "ente": "Regione Lazio / ParchiLazio",
+      "title": "Veio – Natura",
+      "consultedAt": "2026-10-19",
+      "evidence": "Settore settentrionale boschi misti di cerro; forre con carpini, noccioli e cerri; vegetazione ripariale. Picchio verde, agrifoglio e felci documentati nel Parco. Nessuna osservazione geolocalizzata al Monte Musino.",
+      "accessOutcome": "pagina effettivamente letta"
+    },
+    {
+      "id": "N21",
+      "url": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+      "ente": "Regione Lazio",
+      "title": "Funghi – Regione Lazio",
+      "consultedAt": "2026-10-19",
+      "evidence": "Aggiornamento/verifica pagina 16/10/2026: LR20/2024 art21 abroga i giorni limitati; raccolta tutti i giorni. Non più necessario tesserino: attestato/card, contributo annuale e documento secondo requisiti ed esenzioni. Questa pagina generale non certifica deroghe o permessi di singola area protetta.",
+      "accessOutcome": "pagina effettivamente letta"
+    },
+    {
+      "id": "N22",
+      "url": "https://www.parcobracciano.it/vivere-il-parco/news/raccolta-funghi-le-buone-pratiche-dal-parco-bracciano-martignano/",
+      "ente": "Ente Parco Bracciano-Martignano",
+      "title": "Buone pratiche raccolta – 19/09/2022",
+      "consultedAt": "2026-10-19",
+      "evidence": "News storica testimonia raccolta nei boschi del Parco ma riporta ancora tesserino e giorni martedì/venerdì/sabato/domenica, superati dalla fonte regionale N21. Non usarla come disciplina vigente.",
+      "accessOutcome": "pagina effettivamente letta"
+    },
+    {
+      "id": "N23",
+      "url": "https://www.parcobracciano.it/media/2051/sent-175c-monte-raschio-oriolo-romano.gpx",
+      "ente": "Ente Parco Bracciano-Martignano / ParchiLazio",
+      "title": "Traccia GPX 175C Monte Raschio",
+      "consultedAt": "2026-10-19",
+      "evidence": "URL ufficiale restituisce HTTP 200 e application/gpx+xml; prefisso XML letto. Nessuna geometria importata o controllata.",
+      "accessOutcome": "lettura diretta HTTP del prefisso; browser web non visualizza il formato"
+    },
+    {
+      "id": "N24",
+      "url": "https://www.parchilazio.it/documenti/schede/260_bracciano_pisciarelli_oriolo.gpx",
+      "ente": "Ente Parco Bracciano-Martignano / ParchiLazio",
+      "title": "Traccia GPX CAI 260 Bracciano – Oriolo Romano",
+      "consultedAt": "2026-10-19",
+      "evidence": "URL ufficiale restituisce HTTP 200 e application/gpx+xml; prefisso XML letto. Nessuna geometria importata o controllata.",
+      "accessOutcome": "lettura diretta HTTP del prefisso; browser web non visualizza il formato"
+    }
+  ],
+  "candidates": [
+    {
+      "proposedId": "vico-monte-venere",
+      "name": "Monte Venere e lago di Vico",
+      "administration": {
+        "value": {
+          "comuni": [
+            "Caprarola",
+            "Ronciglione"
+          ],
+          "province": [
+            "VT"
+          ]
+        },
+        "sourceIds": [
+          "N01"
+        ]
+      },
+      "editorialProposal": {
+        "text": "Dal Canale si entra nel bosco di Monte Venere; il sentiero sale deciso verso la sommità e il Pozzo del Diavolo. Una proposta per osservare il bosco, da tenere distinta dalla possibilità di raccogliere.",
+        "basedOnSourceIds": [
+          "N01",
+          "N02",
+          "N03"
+        ],
+        "status": "testo originale proposto, non pubblicato"
+      },
+      "habitat": {
+        "value": "Cerreta e faggeta sui versanti settentrionali; castagneti da frutto, canneti e lago nel contesto della riserva.",
+        "sourceIds": [
+          "N02"
+        ]
+      },
+      "coordinates": null,
+      "coordinatePrecision": null,
+      "elevation": null,
+      "trails": [
+        {
+          "name": "CAI 128b Area sosta Canale – Monte Venere",
+          "sourceIds": [
+            "N03"
+          ],
+          "pageUrl": "https://www.parchilazio.it/vico-schede-18236-128b_monte_venere_cai",
+          "pageRead": true,
+          "lengthKm": 3,
+          "ascentM": 255,
+          "descentM": 220,
+          "difficultyAsPublished": "E",
+          "durationMinutes": 60,
+          "gpxUrl": null,
+          "kmlUrl": "https://www.parchilazio.it/documenti/schede/monte_venere.kml",
+          "geometry": null,
+          "notes": null
+        }
+      ],
+      "access": {
+        "start": {
+          "value": "Area sosta Canale",
+          "sourceIds": [
+            "N03"
+          ]
+        },
+        "parking": null,
+        "roads": null,
+        "unknown": [
+          "Capienza, fondo e coordinate parcheggio"
+        ]
+      },
+      "managerContact": {
+        "value": "Ente Monti Cimini, 0761 752282, info@entemonticimini.it",
+        "sourceIds": [
+          "N01"
+        ]
+      },
+      "mushroomCollection": {
+        "currentProtectedAreaStatus": null,
+        "reason": "Regime puntuale vigente dell’area non accertato; la norma regionale generale non costituisce permesso locale.",
+        "regionalContextSourceIds": [
+          "N21"
+        ]
+      },
+      "fungalInterest": {
+        "status": "compatibilità ambientale, senza previsione di ritrovamento",
+        "evidenceSourceIds": [
+          "N02"
+        ]
+      },
+      "natureIdeas": [
+        {
+          "value": "Faggi e cerri: osservare le differenze fra gli ambienti forestali della riserva.",
+          "sourceIds": [
+            "N02"
+          ]
+        },
+        {
+          "value": "Svasso maggiore: presenza nidificante documentata sul lago, non avvistamento lungo il sentiero.",
+          "sourceIds": [
+            "N02"
+          ]
+        }
+      ],
+      "photoCandidates": [],
+      "photoGap": "Nessuna foto locale con autore e licenza individuale verificati acquisita. Non usare le immagini delle pagine senza controllo diritti.",
+      "technicalPending": [
+        "Delimitare perimetro reale; nessun cerchio o centro stimato",
+        "Acquisire quote e coordinate da cartografia con provenienza",
+        "Campionare habitat lungo traccia dopo import revisionato",
+        "Verificare raccolta, proprietà, accesso e chiusure prima di proporre raccolta",
+        "Foto locali con licenza e verifica visiva"
+      ]
+    },
+    {
+      "proposedId": "monte-rufeno-felceto",
+      "name": "Monte Rufeno – Felceto",
+      "administration": {
+        "value": {
+          "comuni": [
+            "Acquapendente"
+          ],
+          "province": [
+            "VT"
+          ]
+        },
+        "sourceIds": [
+          "N04"
+        ]
+      },
+      "editorialProposal": {
+        "text": "Un anello breve nel bosco del Felceto, raggiungibile dall’ingresso 3. La riserva offre un contesto micologico documentato: l’uscita resta un’occasione di osservazione, senza promessa di trovare specie.",
+        "basedOnSourceIds": [
+          "N04",
+          "N06",
+          "N05"
+        ],
+        "status": "testo originale proposto, non pubblicato"
+      },
+      "habitat": {
+        "value": "Querceti, castagneti e nuclei di conifere nel contesto della riserva; bosco lungo il Felceto.",
+        "sourceIds": [
+          "N06"
+        ]
+      },
+      "coordinates": null,
+      "coordinatePrecision": null,
+      "elevation": null,
+      "trails": [
+        {
+          "name": "Sentiero Natura Felceto",
+          "sourceIds": [
+            "N05"
+          ],
+          "pageUrl": "https://www.parchilazio.it/monterufeno-schede-28994-sentiero_natura_felceto",
+          "pageRead": true,
+          "lengthKm": 1.5,
+          "ascentM": 48,
+          "descentM": 49,
+          "difficultyAsPublished": "T",
+          "durationMinutes": 50,
+          "gpxUrl": null,
+          "kmlUrl": "https://www.parchilazio.it/documenti/schede/sentiero_natura_felceto.kml",
+          "geometry": null,
+          "notes": "Usare scheda corrente; brochure storica N06 indica valori diversi."
+        }
+      ],
+      "access": {
+        "start": {
+          "value": "Oltre ingresso 3, tabella di inizio sulla sinistra dopo strada comoda",
+          "sourceIds": [
+            "N05"
+          ]
+        },
+        "parking": {
+          "value": "Auto lasciabile in prossimità ingresso 3; non documentata area formalmente attrezzata",
+          "sourceIds": [
+            "N05"
+          ]
+        },
+        "roads": null,
+        "unknown": [
+          "Coordinate e capacità sosta"
+        ]
+      },
+      "managerContact": {
+        "value": "Comune di Acquapendente / Riserva, 0763 733442, info@monterufeno.it",
+        "sourceIds": [
+          "N04"
+        ]
+      },
+      "mushroomCollection": {
+        "currentProtectedAreaStatus": null,
+        "reason": "Regime puntuale vigente dell’area non accertato; la norma regionale generale non costituisce permesso locale.",
+        "regionalContextSourceIds": [
+          "N21"
+        ],
+        "documentedAreaReference": {
+          "value": "La scheda della riserva rinvia alla LR32/1998; resta da verificare l’assenza di restrizioni puntuali aggiornate.",
+          "sourceIds": [
+            "N07"
+          ]
+        }
+      },
+      "fungalInterest": {
+        "status": "presenze documentate nell’area, non fruttificazione attuale o presenza sul tracciato",
+        "evidenceSourceIds": [
+          "N07"
+        ],
+        "examples": [
+          "Boletus aereus",
+          "Amanita phalloides"
+        ]
+      },
+      "natureIdeas": [
+        {
+          "value": "Scoiattolo e capriolo sono documentati nella riserva; osservare senza attese di avvistamento.",
+          "sourceIds": [
+            "N06"
+          ]
+        },
+        {
+          "value": "Querceti e conifere offrono ambienti diversi da confrontare lungo le uscite.",
+          "sourceIds": [
+            "N06"
+          ]
+        }
+      ],
+      "photoCandidates": [],
+      "photoGap": "Nessuna foto locale con autore e licenza individuale verificati acquisita. Non usare le immagini delle pagine senza controllo diritti.",
+      "technicalPending": [
+        "Delimitare perimetro reale; nessun cerchio o centro stimato",
+        "Acquisire quote e coordinate da cartografia con provenienza",
+        "Campionare habitat lungo traccia dopo import revisionato",
+        "Verificare raccolta, proprietà, accesso e chiusure prima di proporre raccolta",
+        "Foto locali con licenza e verifica visiva"
+      ]
+    },
+    {
+      "proposedId": "oriolo-monte-raschio",
+      "name": "Oriolo Romano – Monte Raschio",
+      "administration": {
+        "value": {
+          "comuni": [
+            "Oriolo Romano"
+          ],
+          "province": [
+            "VT"
+          ]
+        },
+        "sourceIds": [
+          "N08"
+        ]
+      },
+      "editorialProposal": {
+        "text": "Dalla piazza di Oriolo un anello raggiunge Monte Raschio, alternando pineta, cerri e faggeta. Il tratto centrale in sottobosco dà spazio a una lettura lenta degli alberi e del terreno.",
+        "basedOnSourceIds": [
+          "N10",
+          "N08"
+        ],
+        "status": "testo originale proposto, non pubblicato"
+      },
+      "habitat": {
+        "value": "Faggeta con pineta e bosco di cerri nel tratto centrale del 175C.",
+        "sourceIds": [
+          "N08"
+        ]
+      },
+      "coordinates": null,
+      "coordinatePrecision": null,
+      "elevation": null,
+      "trails": [
+        {
+          "name": "175C Monte Raschio",
+          "sourceIds": [
+            "N08",
+            "N23"
+          ],
+          "pageUrl": "https://www.parcobracciano.it/vivere-il-parco/percorsi-e-sentieri/sentiero-175c-monte-raschio-oriolo-romano-sentiero-della-faggeta-patrimonio-mondiale-unesco/",
+          "pageRead": true,
+          "lengthKm": 8,
+          "ascentM": null,
+          "descentM": null,
+          "difficultyAsPublished": "media",
+          "durationMinutes": null,
+          "gpxUrl": "https://www.parcobracciano.it/media/2051/sent-175c-monte-raschio-oriolo-romano.gpx",
+          "kmlUrl": null,
+          "geometry": null,
+          "notes": "Dislivello pubblicato senza specifica salita/discesa; 244 m registrati provvisoriamente come dato da non convertire automaticamente in ascent.",
+          "elevationDifferenceAsPublishedM": 244,
+          "gpxAccess": {
+            "status": 200,
+            "contentType": "application/gpx+xml",
+            "xmlPrefix": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<gpx creator=\"Wikiloc",
+            "checkedAt": "2026-10-19",
+            "geometryImported": false
+          }
+        },
+        {
+          "name": "CAI 260 Bracciano – Oriolo Romano",
+          "sourceIds": [
+            "N10",
+            "N24"
+          ],
+          "pageUrl": "https://www.parchilazio.it/lago_di_bracciano-schede-30165-sentiero_cai_260_bracciano_oriolo_romano",
+          "pageRead": true,
+          "lengthKm": 9,
+          "ascentM": 250,
+          "descentM": null,
+          "difficultyAsPublished": "T",
+          "durationMinutes": 160,
+          "gpxUrl": "https://www.parchilazio.it/documenti/schede/260_bracciano_pisciarelli_oriolo.gpx",
+          "kmlUrl": "https://www.parchilazio.it/documenti/schede/260_bracciano_p.kml",
+          "geometry": null,
+          "notes": "Collegamento più ampio, non equivalente all’anello della faggeta.",
+          "gpxAccess": {
+            "status": 200,
+            "contentType": "application/gpx+xml",
+            "xmlPrefix": "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?><gpx creator=\"Garmin ",
+            "checkedAt": "2026-10-19",
+            "geometryImported": false
+          }
+        }
+      ],
+      "access": {
+        "start": {
+          "value": "Piazza principale sotto palazzo del Comune di Oriolo",
+          "sourceIds": [
+            "N08"
+          ]
+        },
+        "parking": null,
+        "roads": null,
+        "unknown": [
+          "Parcheggio autorizzato, coordinate"
+        ]
+      },
+      "managerContact": {
+        "value": "Ente Parco Bracciano-Martignano, 0699801176",
+        "sourceIds": [
+          "N11"
+        ]
+      },
+      "mushroomCollection": {
+        "currentProtectedAreaStatus": null,
+        "reason": "Regime puntuale vigente dell’area non accertato; la norma regionale generale non costituisce permesso locale.",
+        "regionalContextSourceIds": [
+          "N21"
+        ]
+      },
+      "fungalInterest": {
+        "status": "compatibilità ambientale, senza previsione di ritrovamento",
+        "evidenceSourceIds": [
+          "N08"
+        ]
+      },
+      "natureIdeas": [
+        {
+          "value": "Confrontare il faggio con i cerri presenti nel percorso.",
+          "sourceIds": [
+            "N08"
+          ]
+        },
+        {
+          "value": "Osservare il cambio fra pineta e faggeta, senza dedurre specie fungine da raccogliere.",
+          "sourceIds": [
+            "N08"
+          ]
+        }
+      ],
+      "photoCandidates": [],
+      "photoGap": "Nessuna foto locale con autore e licenza individuale verificati acquisita. Non usare le immagini delle pagine senza controllo diritti.",
+      "technicalPending": [
+        "Delimitare perimetro reale; nessun cerchio o centro stimato",
+        "Acquisire quote e coordinate da cartografia con provenienza",
+        "Campionare habitat lungo traccia dopo import revisionato",
+        "Verificare raccolta, proprietà, accesso e chiusure prima di proporre raccolta",
+        "Foto locali con licenza e verifica visiva"
+      ],
+      "alerts": [
+        {
+          "value": "176M Fonte Vitabbia chiuso, 132A Monte Calvi chiuso, 266C non transitabile; non aggiungerli come varianti.",
+          "sourceIds": [
+            "N11"
+          ]
+        }
+      ]
+    },
+    {
+      "proposedId": "allumiere-faggeto",
+      "name": "Faggeto di Allumiere",
+      "administration": {
+        "value": {
+          "comuni": [
+            "Allumiere"
+          ],
+          "province": [
+            "RM"
+          ]
+        },
+        "sourceIds": [
+          "N13"
+        ]
+      },
+      "editorialProposal": {
+        "text": "Da Via del Faggeto si esplora una rete segnata fra faggi e tracce della storia mineraria. È una proposta per conoscere un bosco a bassa quota; il regime di raccolta nel monumento naturale va accertato.",
+        "basedOnSourceIds": [
+          "N13",
+          "N12"
+        ],
+        "status": "testo originale proposto, non pubblicato"
+      },
+      "habitat": {
+        "value": "Faggeta depressa con aceri, querce e castagni.",
+        "sourceIds": [
+          "N12"
+        ]
+      },
+      "coordinates": null,
+      "coordinatePrecision": null,
+      "elevation": {
+        "value": {
+          "minM": 500,
+          "maxM": 600,
+          "scope": "faggeta, non profilo itinerario",
+          "precision": "intervallo divulgativo della fonte"
+        },
+        "sourceIds": [
+          "N12"
+        ]
+      },
+      "trails": [
+        {
+          "name": "La faggeta di Allumiere – itinerario RESINA",
+          "sourceIds": [
+            "N12"
+          ],
+          "pageUrl": "https://www.museiresina.it/itinerari/la-faggeta-di-allumiere-2/",
+          "pageRead": true,
+          "lengthKm": null,
+          "ascentM": null,
+          "descentM": null,
+          "difficultyAsPublished": "media",
+          "durationMinutes": null,
+          "gpxUrl": null,
+          "kmlUrl": null,
+          "geometry": null,
+          "notes": "Durata pubblicata 1–2 ore per rete di sentieri, non una singola traccia definita; lunghezza e dislivello non documentati.",
+          "durationRangeMinutes": [
+            60,
+            120
+          ]
+        }
+      ],
+      "access": {
+        "start": {
+          "value": "Via del Faggeto, lato est del borgo, inizio provinciale per Tolfa",
+          "sourceIds": [
+            "N12"
+          ]
+        },
+        "parking": null,
+        "roads": null,
+        "unknown": [
+          "Parcheggi e singolo anello georeferenziato"
+        ]
+      },
+      "managerContact": {
+        "value": "Comune di Allumiere; recapito diretto non acquisito",
+        "sourceIds": [
+          "N13"
+        ]
+      },
+      "mushroomCollection": {
+        "currentProtectedAreaStatus": null,
+        "reason": "Regime puntuale vigente dell’area non accertato; la norma regionale generale non costituisce permesso locale.",
+        "regionalContextSourceIds": [
+          "N21"
+        ]
+      },
+      "fungalInterest": {
+        "status": "compatibilità ambientale, senza previsione di ritrovamento",
+        "evidenceSourceIds": [
+          "N12"
+        ]
+      },
+      "natureIdeas": [
+        {
+          "value": "Faggi, aceri e castagni documentati nel bosco.",
+          "sourceIds": [
+            "N12"
+          ]
+        },
+        {
+          "value": "Colonia ibernante di chirotteri documentata nel monumento; osservazione solo esterna, nessun invito a entrare nelle gallerie.",
+          "sourceIds": [
+            "N13"
+          ]
+        }
+      ],
+      "photoCandidates": [],
+      "photoGap": "Nessuna foto locale con autore e licenza individuale verificati acquisita. Non usare le immagini delle pagine senza controllo diritti.",
+      "technicalPending": [
+        "Delimitare perimetro reale; nessun cerchio o centro stimato",
+        "Acquisire quote e coordinate da cartografia con provenienza",
+        "Campionare habitat lungo traccia dopo import revisionato",
+        "Verificare raccolta, proprietà, accesso e chiusure prima di proporre raccolta",
+        "Foto locali con licenza e verifica visiva"
+      ]
+    },
+    {
+      "proposedId": "monterano-bicione",
+      "name": "Monterano – valle del Bicione",
+      "administration": {
+        "value": {
+          "comuni": [
+            "Canale Monterano"
+          ],
+          "province": [
+            "RM"
+          ]
+        },
+        "sourceIds": [
+          "N14"
+        ]
+      },
+      "editorialProposal": {
+        "text": "Dalla Diosilla il giro della Bandita segue boschi, acqua e pascoli arborati. È un’uscita più lunga, con un guado: la lettura della forra e delle sue piante viene prima di qualsiasi promessa di raccolta.",
+        "basedOnSourceIds": [
+          "N16",
+          "N14",
+          "N15"
+        ],
+        "status": "testo originale proposto, non pubblicato"
+      },
+      "habitat": {
+        "value": "Boschi ripariali ad ontano e salici; carpineti nei valloni e cerrete sulle pendici nel contesto della riserva.",
+        "sourceIds": [
+          "N16"
+        ]
+      },
+      "coordinates": null,
+      "coordinatePrecision": null,
+      "elevation": {
+        "value": {
+          "minM": 180,
+          "maxM": 310,
+          "scope": "itinerario Bandita",
+          "precision": "intervallo dichiarato nella scheda"
+        },
+        "sourceIds": [
+          "N15"
+        ]
+      },
+      "trails": [
+        {
+          "name": "Valle del Bicione–Bandita, segnavia giallo",
+          "sourceIds": [
+            "N15"
+          ],
+          "pageUrl": "https://www.parchilazio.it/monterano-schede-18447-bandita",
+          "pageRead": true,
+          "lengthKm": 10,
+          "ascentM": 200,
+          "descentM": 150,
+          "difficultyAsPublished": "E",
+          "durationMinutes": 270,
+          "gpxUrl": null,
+          "kmlUrl": null,
+          "geometry": null,
+          "notes": "Guado Fosso Rafanello; nessun punto acqua dichiarato. KML presente nella pagina, URL diretto non acquisito."
+        }
+      ],
+      "access": {
+        "start": {
+          "value": "Area di sosta Diosilla",
+          "sourceIds": [
+            "N15"
+          ]
+        },
+        "parking": {
+          "value": "Ritorno al parcheggio Diosilla dichiarato nella descrizione",
+          "sourceIds": [
+            "N15"
+          ]
+        },
+        "roads": {
+          "value": "Da centro Canale Monterano circa 1,3 km verso Diosilla per chi arriva con Cotral",
+          "sourceIds": [
+            "N15"
+          ]
+        },
+        "unknown": [
+          "Condizioni attuali del guado, capienza e coordinate sosta"
+        ]
+      },
+      "managerContact": {
+        "value": "Comune di Canale Monterano / Riserva, 06 9962724, riservamonterano@regione.lazio.it",
+        "sourceIds": [
+          "N14"
+        ]
+      },
+      "mushroomCollection": {
+        "currentProtectedAreaStatus": null,
+        "reason": "Regime puntuale vigente dell’area non accertato; la norma regionale generale non costituisce permesso locale.",
+        "regionalContextSourceIds": [
+          "N21"
+        ]
+      },
+      "fungalInterest": {
+        "status": "compatibilità ambientale, senza previsione di ritrovamento",
+        "evidenceSourceIds": [
+          "N16"
+        ]
+      },
+      "natureIdeas": [
+        {
+          "value": "Felce regale e lonchite minore documentate nel sottobosco delle forre della riserva.",
+          "sourceIds": [
+            "N16"
+          ]
+        },
+        {
+          "value": "Picchio verde documentato nei boschi della riserva, senza avvistamento garantito sul giro.",
+          "sourceIds": [
+            "N16"
+          ]
+        }
+      ],
+      "photoCandidates": [],
+      "photoGap": "Nessuna foto locale con autore e licenza individuale verificati acquisita. Non usare le immagini delle pagine senza controllo diritti.",
+      "technicalPending": [
+        "Delimitare perimetro reale; nessun cerchio o centro stimato",
+        "Acquisire quote e coordinate da cartografia con provenienza",
+        "Campionare habitat lungo traccia dopo import revisionato",
+        "Verificare raccolta, proprietà, accesso e chiusure prima di proporre raccolta",
+        "Foto locali con licenza e verifica visiva"
+      ]
+    },
+    {
+      "proposedId": "veio-monte-musino",
+      "name": "Veio – Monte Musino",
+      "administration": {
+        "value": {
+          "comuni": [
+            "Sacrofano"
+          ],
+          "province": [
+            "RM"
+          ]
+        },
+        "sourceIds": [
+          "N18"
+        ]
+      },
+      "editorialProposal": {
+        "text": "Da Via di Grottini un breve sentiero sale a Monte Musino. Il contesto del Veio settentrionale permette di leggere boschi di cerro e forre; la brevità non elimina pendenza e terreno sconnesso.",
+        "basedOnSourceIds": [
+          "N20",
+          "N18"
+        ],
+        "status": "testo originale proposto, non pubblicato"
+      },
+      "habitat": {
+        "value": "Nel settore settentrionale del Parco boschi misti di cerro; nelle forre carpini e noccioli. Non trasferire questa descrizione generale a ogni metro del 209d.",
+        "sourceIds": [
+          "N20"
+        ]
+      },
+      "coordinates": null,
+      "coordinatePrecision": null,
+      "elevation": null,
+      "trails": [
+        {
+          "name": "CAI 209d Grottini – Monte Musino",
+          "sourceIds": [
+            "N18"
+          ],
+          "pageUrl": "https://www.parchilazio.it/veio-schede-18206-209d_monte_musino_cai",
+          "pageRead": true,
+          "lengthKm": 0.8,
+          "ascentM": 120,
+          "descentM": 15,
+          "difficultyAsPublished": "E",
+          "durationMinutes": 25,
+          "gpxUrl": null,
+          "kmlUrl": "https://www.parchilazio.it/documenti/schede/monte_musino.kml",
+          "geometry": null,
+          "notes": "Tratto lineare; non aggiungere ritorno o tempi raddoppiati come dato ufficiale."
+        }
+      ],
+      "access": {
+        "start": {
+          "value": "Località Grottini / Via di Grottini, Sacrofano",
+          "sourceIds": [
+            "N18"
+          ]
+        },
+        "parking": {
+          "value": "La scheda indica sosta nelle vicinanze lungo Via di Grottini; non certifica stalli dedicati",
+          "sourceIds": [
+            "N18"
+          ]
+        },
+        "roads": null,
+        "unknown": [
+          "Sicurezza e legalità puntuale sosta, coordinate"
+        ]
+      },
+      "managerContact": {
+        "value": "Ente Parco di Veio, 06 9042774, protocollo@parcodiveio.it",
+        "sourceIds": [
+          "N17"
+        ]
+      },
+      "mushroomCollection": {
+        "currentProtectedAreaStatus": null,
+        "reason": "Regime puntuale vigente dell’area non accertato; la norma regionale generale non costituisce permesso locale.",
+        "regionalContextSourceIds": [
+          "N21"
+        ]
+      },
+      "fungalInterest": {
+        "status": "compatibilità ambientale, senza previsione di ritrovamento",
+        "evidenceSourceIds": [
+          "N20"
+        ]
+      },
+      "natureIdeas": [
+        {
+          "value": "Picchio verde documentato nel Parco; ascolto e osservazione senza aspettativa di incontro.",
+          "sourceIds": [
+            "N20"
+          ]
+        },
+        {
+          "value": "Agrifoglio e felci sono legati alle forre fresche del Parco; presenza non verificata sul 209d.",
+          "sourceIds": [
+            "N20"
+          ]
+        }
+      ],
+      "photoCandidates": [],
+      "photoGap": "Nessuna foto locale con autore e licenza individuale verificati acquisita. Non usare le immagini delle pagine senza controllo diritti.",
+      "technicalPending": [
+        "Delimitare perimetro reale; nessun cerchio o centro stimato",
+        "Acquisire quote e coordinate da cartografia con provenienza",
+        "Campionare habitat lungo traccia dopo import revisionato",
+        "Verificare raccolta, proprietà, accesso e chiusure prima di proporre raccolta",
+        "Foto locali con licenza e verifica visiva"
+      ],
+      "excludedTrails": [
+        {
+          "name": "CAI 207c Valli del Sorbo–Formello",
+          "reason": "Chiuso nella scheda ufficiale letta",
+          "sourceIds": [
+            "N19"
+          ]
+        }
+      ]
+    }
+  ]
+}

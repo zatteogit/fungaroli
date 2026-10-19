@@ -1081,3 +1081,35 @@ body:has(#ranking .ring) #ranking-index-legend,body:has(#season .ring) #season-i
 .directions-confirm h2 { margin:0 0 12px; font:600 26px/1.2 var(--font-display); }
 .directions-confirm-actions { display:flex; justify-content:flex-end; flex-wrap:wrap; gap:8px; margin-top:20px; }
 .directions-confirm-actions .btn { min-height:44px; }
+
+/* Le regole del luogo accompagnano il piano, anche prima di aprire gli approfondimenti. */
+.zone-collection { background:var(--warn-bg); color:var(--warn-ink); }
+.zone-collection > b { display:block; color:inherit; }
+.zone-collection p { margin-block:8px; max-width:65ch; }
+.zone-collection a { color:inherit; text-underline-offset:.2em; }
+.zone-sources { margin-block:24px; overflow-wrap:anywhere; }
+.zone-sources li { margin-block:8px; }
+.cover-local-rule { display:block; font-size:14px; line-height:1.5; font-weight:600; }
+#province-filter { width:100%; margin-block:8px; color:var(--text); background:var(--surface); }
+
+#lazio-explore { margin-block:40px; }
+.regional-heading { display:flex; align-items:end; justify-content:space-between; gap:16px; margin-bottom:20px; flex-wrap:wrap; }
+.regional-heading h2 { margin-block:4px 8px; }
+.regional-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; }
+.regional-zone { display:flex; flex-direction:column; overflow:hidden; border:1px solid var(--border); border-radius:24px; background:var(--surface); color:var(--text); text-decoration:none; }
+.regional-zone > :is(img,.regional-no-photo) { width:100%; height:160px; object-fit:cover; background:var(--surface-2); }
+.regional-no-photo { display:grid; place-items:center; color:var(--muted); }
+.regional-no-photo svg { width:48px; height:48px; }
+.regional-zone > span:last-child { display:grid; gap:8px; padding:20px; }
+.regional-zone b { font-family:var(--font-display); font-size:24px; line-height:1.2; }
+.regional-zone small { color:var(--muted); font-size:13px; line-height:1.5; }
+@media(max-width:480px) { .regional-grid { grid-template-columns:1fr; } }
+
+.zone-data-pending { background:var(--surface-2); color:var(--text-2); }
+.zone-photo-credit { font-size:12px; line-height:1.5; overflow-wrap:anywhere; }
+
+.phero.outing-hero.no-local-photo { min-height:240px; padding-top:48px; background:var(--surface-2); }
+.no-local-photo .phero-body { color:var(--text); }
+.no-local-photo .phero-body::before { display:none; }
+.no-local-photo :is(.phero-title,.phero-sub,.pill) { color:var(--text); text-shadow:none; }
+.no-local-photo .pill { background:var(--surface); }

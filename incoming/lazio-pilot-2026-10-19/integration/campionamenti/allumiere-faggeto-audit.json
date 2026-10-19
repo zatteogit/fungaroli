@@ -1,0 +1,59 @@
+{
+ "started": "2026-10-19T10:48:52.475226+00:00",
+ "seed": {
+  "id": "allumiere-faggeto",
+  "name": "Faggeto di Allumiere",
+  "lat": 42.1539073,
+  "lon": 11.9080639,
+  "radius_m": 1500,
+  "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+  "province": [
+   "RM"
+  ],
+  "coordinateProvenance": {
+   "method": "published_place_or_map",
+   "sourceUrl": "https://comune.allumiere.rm.it/it/vivere/monumento-naturale-il-faggeto",
+   "note": "Punto del luogo pubblicato dal Comune; centro editoriale, non parcheggio."
+  },
+  "collectionStatus": "unknown",
+  "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita.",
+  "collectionSourceUrl": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+  "publicationStatus": "active",
+  "manager": "Comune di Allumiere; recapito diretto non acquisito",
+  "researchGroup": "nord",
+  "officialTrailRefs": [],
+  "officialTrailNameMatches": []
+ },
+ "elevation": {
+  "min": 298,
+  "p25": 447,
+  "median": 495,
+  "p75": 541,
+  "max": 628
+ },
+ "suggestedBandsM": [
+  450,
+  500,
+  540
+ ],
+ "forestPolygonCount": 53,
+ "habitatSamples": 317,
+ "roadErrors": [],
+ "trails": {
+  "listedRelations": 0,
+  "requestedRefs": [],
+  "requestedDistinctiveNames": [],
+  "matchedRelations": [],
+  "unmatchedRefs": [],
+  "driveError": null,
+  "geometryStatus": "no_documented_osm_match_imported",
+  "coverageLimit": 100
+ },
+ "status": "complete",
+ "finished": "2026-10-19T10:49:53.321554+00:00",
+ "demProvider": "copernicus-glo90-openmeteo",
+ "demResolutionM": 90,
+ "habitatStatus": "complete",
+ "grid": 21,
+ "gridStepM": 150.0
+}

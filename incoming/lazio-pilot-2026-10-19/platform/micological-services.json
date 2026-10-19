@@ -1,0 +1,226 @@
+{
+  "status": "candidate_directory_not_integrated",
+  "purpose": "Riferimenti pratici per il controllo micologico dopo l’uscita, da collegare al luogo senza dedurre competenza da distanza o sigla provinciale.",
+  "sources": [
+    {
+      "id": "ASL-LAZIO-DIRECTORY",
+      "publisher": "ASL Roma 5, struttura tecnica regionale di riferimento",
+      "title": "Elenco ispettorati micologici Regione Lazio, link etichettato2026",
+      "url": "https://www.aslroma5.it/wp-content/uploads/2026/04/elenco-ufficiale-Ispettorati-micologici-Lazio-2026.pdf",
+      "checkedAt": "2026-10-19",
+      "documentInternalDate": null,
+      "sha256": "704dedaa8679462b6abd2bc283a51048089ecced006b198d030a6d7a9dee8da0",
+      "inspection": "Tre pagine renderizzate e lette visivamente; fonte non redistribuita nel repository.",
+      "caveat": "Data nel percorso/etichetta non prova aggiornamento di ogni riga; divergenze con pagine servizio conservate."
+    }
+  ],
+  "entries": [
+    {
+      "id": "roma1",
+      "name": "ASL Roma 1",
+      "locationsFromSources": [
+        "Roma, via Tanaro"
+      ],
+      "serviceUrl": "https://www.aslroma1.it/news/dal-14-ottobre-riorganizzazione-sportello-micologico",
+      "directorySourceId": "ASL-LAZIO-DIRECTORY",
+      "directoryPage": 1,
+      "institutionalEmail": "dprev.sian@aslroma1.it",
+      "emailSource": "PDF e pagina istituzionale quando disponibile",
+      "hoursForApp": null,
+      "appointmentRequiredForApp": null,
+      "phoneForApp": null,
+      "checkedAt": "2026-10-19",
+      "pagePublishedOrUpdatedAt": "2024-10-14",
+      "status": "source_directory_candidate_not_published",
+      "reviewNote": "Orari e giorni diversi tra news2024 e PDF etichettato2026."
+    },
+    {
+      "id": "roma2",
+      "name": "ASL Roma 2",
+      "locationsFromSources": [
+        "Roma, Casale De Merode"
+      ],
+      "serviceUrl": "https://www.aslroma2.it/index.php/home/archivio-comunicazioni-news/1225-cernita-per-il-controllo-della-commestibilita-dei-funghi-raccolti-da-privati-cittadini",
+      "directorySourceId": "ASL-LAZIO-DIRECTORY",
+      "directoryPage": 1,
+      "institutionalEmail": "ispettoratomicologico@aslroma2.it",
+      "emailSource": "PDF e pagina istituzionale quando disponibile",
+      "hoursForApp": null,
+      "appointmentRequiredForApp": null,
+      "phoneForApp": null,
+      "checkedAt": "2026-10-19",
+      "pagePublishedOrUpdatedAt": "2025-04-14",
+      "status": "source_directory_candidate_not_published",
+      "reviewNote": "Orari diversi tra pagina2025 e PDF etichettato2026."
+    },
+    {
+      "id": "roma3",
+      "name": "ASL Roma 3",
+      "locationsFromSources": [
+        "Ostia"
+      ],
+      "serviceUrl": "https://www.aslroma3.it/dipartimenti/dipartimento-di-prevenzione/s-i-a-n-servizio-di-igiene-degli-alimenti-e-della-nutrizione/",
+      "directorySourceId": "ASL-LAZIO-DIRECTORY",
+      "directoryPage": 1,
+      "institutionalEmail": "isp.micologico@aslroma3.it",
+      "emailSource": "PDF e pagina istituzionale quando disponibile",
+      "hoursForApp": null,
+      "appointmentRequiredForApp": null,
+      "phoneForApp": null,
+      "checkedAt": "2026-10-19",
+      "pagePublishedOrUpdatedAt": null,
+      "status": "source_directory_candidate_not_published",
+      "reviewNote": "Pagina contiene anche avviso del2025: non trasferirlo al2026."
+    },
+    {
+      "id": "roma4",
+      "name": "ASL Roma 4",
+      "locationsFromSources": [
+        "Civitavecchia",
+        "Bracciano",
+        "Rignano Flaminio"
+      ],
+      "serviceUrl": "https://www.aslroma4.it/azienda/dipartimenti/dipartimento-di-prevenzione/servizio-igiene-degli-alimenti-e-nutrizione-s-i-a-n",
+      "directorySourceId": "ASL-LAZIO-DIRECTORY",
+      "directoryPage": 1,
+      "institutionalEmail": null,
+      "emailSource": null,
+      "hoursForApp": null,
+      "appointmentRequiredForApp": null,
+      "phoneForApp": null,
+      "checkedAt": "2026-10-19",
+      "pagePublishedOrUpdatedAt": null,
+      "status": "source_directory_candidate_not_published",
+      "reviewNote": "Recapiti e sedi SIAN documentati; appuntamento/orari del controllo da confermare."
+    },
+    {
+      "id": "roma5",
+      "name": "ASL Roma 5",
+      "locationsFromSources": [
+        "Colleferro",
+        "Guidonia",
+        "Monterotondo",
+        "Palestrina",
+        "Subiaco",
+        "Tivoli"
+      ],
+      "serviceUrl": "https://www.aslroma5.it/dipartimento-di-prevenzione/ispettorato-micologico/",
+      "directorySourceId": "ASL-LAZIO-DIRECTORY",
+      "directoryPage": 1,
+      "institutionalEmail": "ispettorato.micologico@aslroma5.it",
+      "emailSource": "PDF e pagina istituzionale quando disponibile",
+      "hoursForApp": null,
+      "appointmentRequiredForApp": null,
+      "phoneForApp": null,
+      "checkedAt": "2026-10-19",
+      "pagePublishedOrUpdatedAt": null,
+      "status": "source_directory_candidate_not_published",
+      "reviewNote": "La pagina di servizio aggiunge Subiaco rispetto alla tabella PDF; usare pagina corrente con data consultazione."
+    },
+    {
+      "id": "roma6",
+      "name": "ASL Roma 6",
+      "locationsFromSources": [
+        "Ariccia",
+        "Frascati",
+        "Pomezia",
+        "Nettuno"
+      ],
+      "serviceUrl": null,
+      "directorySourceId": "ASL-LAZIO-DIRECTORY",
+      "directoryPage": 2,
+      "institutionalEmail": null,
+      "emailSource": null,
+      "hoursForApp": null,
+      "appointmentRequiredForApp": null,
+      "phoneForApp": null,
+      "checkedAt": "2026-10-19",
+      "pagePublishedOrUpdatedAt": null,
+      "status": "source_directory_candidate_not_published",
+      "reviewNote": "Riferimento dal PDF, pagina servizio specifica non acquisita: non associare orari automaticamente."
+    },
+    {
+      "id": "frosinone",
+      "name": "ASL Frosinone",
+      "locationsFromSources": [
+        "Sora",
+        "Frosinone",
+        "Alatri",
+        "Cassino"
+      ],
+      "serviceUrl": "https://www.asl.fr.it/strutture/dipartimenti/dipartimento-di-prevenzione/uoc-igiene-degli-alimenti-e-della-nutrizione/ispettorato-micologico/",
+      "directorySourceId": "ASL-LAZIO-DIRECTORY",
+      "directoryPage": 2,
+      "institutionalEmail": "ispettoratomicologico@aslfrosinone.it",
+      "emailSource": "PDF e pagina istituzionale quando disponibile",
+      "hoursForApp": null,
+      "appointmentRequiredForApp": null,
+      "phoneForApp": null,
+      "checkedAt": "2026-10-19",
+      "pagePublishedOrUpdatedAt": "2024-07-10",
+      "status": "source_directory_candidate_not_published",
+      "reviewNote": "Search restituisce contenuto ma apertura diretta fallita; telefono differisce dal PDF. Non riusare sezione tesserino come norma corrente."
+    },
+    {
+      "id": "latina",
+      "name": "ASL Latina",
+      "locationsFromSources": [
+        "Aprilia",
+        "Pontinia"
+      ],
+      "serviceUrl": "https://www.ausl.latina.it/mnuimprese/112-azienda/dipartimento-prevenzione/1957-igiene-e-sanita-pubblica",
+      "directorySourceId": "ASL-LAZIO-DIRECTORY",
+      "directoryPage": 2,
+      "institutionalEmail": null,
+      "emailSource": null,
+      "hoursForApp": null,
+      "appointmentRequiredForApp": null,
+      "phoneForApp": null,
+      "checkedAt": "2026-10-19",
+      "pagePublishedOrUpdatedAt": null,
+      "status": "source_directory_candidate_not_published",
+      "reviewNote": "PDF e pagina servizio; calendario da confermare al servizio."
+    },
+    {
+      "id": "rieti",
+      "name": "ASL Rieti",
+      "locationsFromSources": [
+        "Rieti"
+      ],
+      "serviceUrl": "https://www.asl.rieti.it/organizzazione-aziendale/dipartimenti/dipartimento-di-prevenzione",
+      "directorySourceId": "ASL-LAZIO-DIRECTORY",
+      "directoryPage": 3,
+      "institutionalEmail": "ispettoratomicologico@asl.rieti.it",
+      "emailSource": "PDF e pagina istituzionale quando disponibile",
+      "hoursForApp": null,
+      "appointmentRequiredForApp": null,
+      "phoneForApp": null,
+      "checkedAt": "2026-10-19",
+      "pagePublishedOrUpdatedAt": null,
+      "status": "source_directory_candidate_not_published",
+      "reviewNote": "Conservare il servizio esistente; recapiti attuali da riconfermare nella transizione regionale."
+    },
+    {
+      "id": "viterbo",
+      "name": "ASL Viterbo",
+      "locationsFromSources": [
+        "Viterbo",
+        "Montefiascone",
+        "Civita Castellana",
+        "Tarquinia"
+      ],
+      "serviceUrl": "https://www.asl.vt.it/ispettorato-micologico",
+      "directorySourceId": "ASL-LAZIO-DIRECTORY",
+      "directoryPage": 3,
+      "institutionalEmail": null,
+      "emailSource": null,
+      "hoursForApp": null,
+      "appointmentRequiredForApp": null,
+      "phoneForApp": null,
+      "checkedAt": "2026-10-19",
+      "pagePublishedOrUpdatedAt": null,
+      "status": "source_directory_candidate_not_published",
+      "reviewNote": "La pagina contiene indicazioni di costo non uniformi; non pubblicare importi dal solo testo del servizio."
+    }
+  ]
+}

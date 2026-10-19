@@ -1,0 +1,239 @@
+{
+  "date": "2026-10-19",
+  "status": "collection_complete_pending_data_integration",
+  "scope": "Pilota regionale su zone selezionate, non copertura continua di ogni bosco o comune.",
+  "productionUnchanged": true,
+  "existingActiveZones": 15,
+  "newCandidateZones": 21,
+  "prospectiveTotalZones": 36,
+  "itineraryRecords": 24,
+  "territorialSourceRecords": 75,
+  "territorialDistinctSourceUrls": 74,
+  "territorialPackages": [
+    {
+      "area": "nord",
+      "candidateZones": 6,
+      "itineraryRecords": 7,
+      "sourceRecords": 24
+    },
+    {
+      "area": "roma-est",
+      "candidateZones": 7,
+      "itineraryRecords": 7,
+      "sourceRecords": 24
+    },
+    {
+      "area": "sud",
+      "candidateZones": 8,
+      "itineraryRecords": 10,
+      "sourceRecords": 27
+    }
+  ],
+  "candidateIndex": [
+    {
+      "id": "vico-monte-venere",
+      "name": "Monte Venere e lago di Vico",
+      "area": "nord",
+      "candidateFile": "nord/candidates.json",
+      "itineraryCount": 1,
+      "duplicateExistingRieti": false,
+      "integrationApproved": false
+    },
+    {
+      "id": "monte-rufeno-felceto",
+      "name": "Monte Rufeno – Felceto",
+      "area": "nord",
+      "candidateFile": "nord/candidates.json",
+      "itineraryCount": 1,
+      "duplicateExistingRieti": false,
+      "integrationApproved": false
+    },
+    {
+      "id": "oriolo-monte-raschio",
+      "name": "Oriolo Romano – Monte Raschio",
+      "area": "nord",
+      "candidateFile": "nord/candidates.json",
+      "itineraryCount": 2,
+      "duplicateExistingRieti": false,
+      "integrationApproved": false
+    },
+    {
+      "id": "allumiere-faggeto",
+      "name": "Faggeto di Allumiere",
+      "area": "nord",
+      "candidateFile": "nord/candidates.json",
+      "itineraryCount": 1,
+      "duplicateExistingRieti": false,
+      "integrationApproved": false
+    },
+    {
+      "id": "monterano-bicione",
+      "name": "Monterano – valle del Bicione",
+      "area": "nord",
+      "candidateFile": "nord/candidates.json",
+      "itineraryCount": 1,
+      "duplicateExistingRieti": false,
+      "integrationApproved": false
+    },
+    {
+      "id": "veio-monte-musino",
+      "name": "Veio – Monte Musino",
+      "area": "nord",
+      "candidateFile": "nord/candidates.json",
+      "itineraryCount": 1,
+      "duplicateExistingRieti": false,
+      "integrationApproved": false
+    },
+    {
+      "id": "tuscolo-nord",
+      "name": "Tuscolo, boschi verso Frascati",
+      "area": "roma-est",
+      "candidateFile": "roma-est/candidates.json",
+      "itineraryCount": 1,
+      "duplicateExistingRieti": false,
+      "integrationApproved": false
+    },
+    {
+      "id": "faete-rocca-papa",
+      "name": "Faete e Monte Cavo",
+      "area": "roma-est",
+      "candidateFile": "roma-est/candidates.json",
+      "itineraryCount": 1,
+      "duplicateExistingRieti": false,
+      "integrationApproved": false
+    },
+    {
+      "id": "nemi-fontan-tempesta",
+      "name": "Nemi e Fontan Tempesta",
+      "area": "roma-est",
+      "candidateFile": "roma-est/candidates.json",
+      "itineraryCount": 1,
+      "duplicateExistingRieti": false,
+      "integrationApproved": false
+    },
+    {
+      "id": "cerquone-doganella",
+      "name": "Cerquone e Doganella",
+      "area": "roma-est",
+      "candidateFile": "roma-est/candidates.json",
+      "itineraryCount": 1,
+      "duplicateExistingRieti": false,
+      "integrationApproved": false
+    },
+    {
+      "id": "livata-tufai",
+      "name": "Livata e Valle delle Mele",
+      "area": "roma-est",
+      "candidateFile": "roma-est/candidates.json",
+      "itineraryCount": 1,
+      "duplicateExistingRieti": false,
+      "integrationApproved": false
+    },
+    {
+      "id": "cervara-prataglia",
+      "name": "Cervara e Prataglia",
+      "area": "roma-est",
+      "candidateFile": "roma-est/candidates.json",
+      "itineraryCount": 1,
+      "duplicateExistingRieti": false,
+      "integrationApproved": false
+    },
+    {
+      "id": "gennaro-roccagiovine",
+      "name": "Monte Gennaro da Roccagiovine",
+      "area": "roma-est",
+      "candidateFile": "roma-est/candidates.json",
+      "itineraryCount": 1,
+      "duplicateExistingRieti": false,
+      "integrationApproved": false
+    },
+    {
+      "id": "lepini-bassiano-santangelo",
+      "name": "Valle Sant’Angelo e lecci del Semprevisa",
+      "area": "sud",
+      "candidateFile": "sud/candidates.json",
+      "itineraryCount": 2,
+      "duplicateExistingRieti": false,
+      "integrationApproved": false
+    },
+    {
+      "id": "ausoni-san-vito",
+      "name": "Sughereta di San Vito",
+      "area": "sud",
+      "candidateFile": "sud/candidates.json",
+      "itineraryCount": 1,
+      "duplicateExistingRieti": false,
+      "integrationApproved": false
+    },
+    {
+      "id": "aurunci-itri-campello",
+      "name": "La Valle di Itri e Campello Vecchio",
+      "area": "sud",
+      "candidateFile": "sud/candidates.json",
+      "itineraryCount": 1,
+      "duplicateExistingRieti": false,
+      "integrationApproved": false
+    },
+    {
+      "id": "circeo-cerasella-verdesca",
+      "name": "Cerasella e Piscina della Verdesca",
+      "area": "sud",
+      "candidateFile": "sud/candidates.json",
+      "itineraryCount": 1,
+      "duplicateExistingRieti": false,
+      "integrationApproved": false
+    },
+    {
+      "id": "ernici-prato-campoli",
+      "name": "Prato di Campoli e boschi verso Pizzo Deta",
+      "area": "sud",
+      "candidateFile": "sud/candidates.json",
+      "itineraryCount": 2,
+      "duplicateExistingRieti": false,
+      "integrationApproved": false
+    },
+    {
+      "id": "lepini-supino-santaserena",
+      "name": "Fonte Santa Serena e boschi del Monte Gemma",
+      "area": "sud",
+      "candidateFile": "sud/candidates.json",
+      "itineraryCount": 1,
+      "duplicateExistingRieti": false,
+      "integrationApproved": false
+    },
+    {
+      "id": "simbruini-filettino-fiumata",
+      "name": "Fiumata e Fosso Acqua Corore",
+      "area": "sud",
+      "candidateFile": "sud/candidates.json",
+      "itineraryCount": 1,
+      "duplicateExistingRieti": false,
+      "integrationApproved": false
+    },
+    {
+      "id": "pnalm-settefrati-canneto",
+      "name": "Valle di Canneto da Settefrati",
+      "area": "sud",
+      "candidateFile": "sud/candidates.json",
+      "itineraryCount": 1,
+      "duplicateExistingRieti": false,
+      "integrationApproved": false
+    }
+  ],
+  "sourceReferenceIssues": [],
+  "reviewedByCoordinator": [
+    "JSON e riferimenti alle fonti",
+    "deduplicazione degli ID rispetto alle 15 zone esistenti",
+    "verifica indipendente avviso Circeo2026, chiusura CAI207c e scheda ente672c",
+    "probe WFS nord/centro/sud e domini Commons, tutti HTTP200",
+    "lettura visiva elenco micologico PDF tre pagine e confronto divergenze con siti ASL"
+  ],
+  "notApproved": [
+    "perimetri/centri zona e fasce quote per nuovi indici",
+    "regimi locali di raccolta non accertati",
+    "diritti specifici di ridistribuzione delle tracce",
+    "foto senza revisione visiva/localizzazione",
+    "percorrenza attuale di itinerari storici o discordanti"
+  ],
+  "testsRun": false
+}
