@@ -1,0 +1,73 @@
+{
+  "status": "frozen_for_independent_review",
+  "anatomicalMappingStatus": {
+    "integrated_published_v237": 35,
+    "blocked_documentation": 20,
+    "candidate_pending_independent_review": 128,
+    "existing_reviewed": 9,
+    "pending_visual_revision": 4,
+    "assigned_not_started": 61,
+    "conflicting_data": 3,
+    "documented_pending_generation_frozen": 9,
+    "blocked_visual_revision": 3
+  },
+  "lots": [
+    {
+      "registry": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/registry-proposal.json",
+      "mappingTotal": 75,
+      "pendingMapping": 63,
+      "pendingPhysicalFiles": 61,
+      "pendingDistinctRasterHashes": 61,
+      "pendingVisualRevision": 0,
+      "pendingIndependentReviewExcludingVisual": 63
+    },
+    {
+      "registry": "docs/assets/botanici-specifici-2026-10-19/lotti/arbusti-cladodi/registry-proposal.json",
+      "mappingTotal": 12,
+      "pendingMapping": 12,
+      "pendingPhysicalFiles": 12,
+      "pendingDistinctRasterHashes": 12,
+      "pendingVisualRevision": 0,
+      "pendingIndependentReviewExcludingVisual": 12
+    },
+    {
+      "registry": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/registry-proposal.json",
+      "mappingTotal": 17,
+      "pendingMapping": 17,
+      "pendingPhysicalFiles": 17,
+      "pendingDistinctRasterHashes": 17,
+      "pendingVisualRevision": 0,
+      "pendingIndependentReviewExcludingVisual": 17
+    },
+    {
+      "registry": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/registry-proposal.json",
+      "mappingTotal": 43,
+      "pendingMapping": 43,
+      "pendingPhysicalFiles": 43,
+      "pendingDistinctRasterHashes": 42,
+      "pendingVisualRevision": 4,
+      "pendingIndependentReviewExcludingVisual": 39,
+      "holdNote": "Tre capsule con colore non documentato + foglia di cicuta troppo semplificata, sospesa dal coordinatore dopo confronto con fonte/foto."
+    },
+    {
+      "registry": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/registry-proposal.json",
+      "mappingTotal": 22,
+      "pendingMapping": 0,
+      "pendingPhysicalFiles": 0,
+      "pendingDistinctRasterHashes": 0,
+      "pendingVisualRevision": 0,
+      "pendingIndependentReviewExcludingVisual": 0
+    },
+    {
+      "registry": "docs/assets/botanici-specifici-2026-10-19/registry-proposal.json",
+      "mappingTotal": 4,
+      "pendingMapping": 0,
+      "pendingPhysicalFiles": 0,
+      "pendingDistinctRasterHashes": 0,
+      "pendingVisualRevision": 0,
+      "pendingIndependentReviewExcludingVisual": 0
+    }
+  ],
+  "researchFruitEvidenceFound": 9,
+  "note": "272 mapping anatomici totali, separati da file fisici/raster unici e bonus disposizione. Candidati non integrati, namespace src solo proposto."
+}

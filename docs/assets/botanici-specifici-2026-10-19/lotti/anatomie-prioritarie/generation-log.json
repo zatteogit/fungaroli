@@ -1,0 +1,748 @@
+{
+  "method": "Built-in image_gen raster. Revisione visiva e correzioni anatomiche solo con image_gen. Python solo crop/isolatione/resize geometrici e montaggio tavole, senza anatomia da codice.",
+  "masters": [
+    {
+      "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/aglio-master-v2.png",
+      "sha256": "98ee446833732b285c60b4836cb3446d4bbb4d7e4f3443309c171cb4d7c48746",
+      "sourceUrls": [
+        "https://flora.uniud.it/scheda.php?id=148",
+        "https://www.infoflora.ch/it/flora/allium-ursinum.html"
+      ],
+      "referencePhotos": [
+        "assets/plants/aglio-orsino-3.webp",
+        "assets/plants/aglio-orsino-4.webp"
+      ],
+      "outputCharacters": [
+        {
+          "species": "aglio-orsino",
+          "key": "leaf_type",
+          "value": "semplice"
+        },
+        {
+          "species": "aglio-orsino",
+          "key": "leaf_arrangement",
+          "value": "rosetta_basale"
+        },
+        {
+          "species": "aglio-orsino",
+          "key": "flower_shape",
+          "value": "ombrella"
+        },
+        {
+          "species": "aglio-orsino",
+          "key": "fruit_type",
+          "value": "capsula"
+        }
+      ]
+    },
+    {
+      "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/cicoria-master-v1.png",
+      "sha256": "f21cae72ce8f775f3eb46eb8e6aee11ed723b09f96d3c352ea97461f7b9b9a2f",
+      "sourceUrls": [
+        "https://www.infoflora.ch/it/flora/cichorium-intybus.html"
+      ],
+      "referencePhotos": [
+        "assets/plants/cicoria-1.webp",
+        "https://dryades.units.it/dryades/plants/foto/IMG9417JPG1595246509.jpg"
+      ],
+      "outputCharacters": [
+        {
+          "species": "cicoria",
+          "key": "leaf_type",
+          "value": "semplice"
+        },
+        {
+          "species": "cicoria",
+          "key": "leaf_margin",
+          "value": "lobato"
+        },
+        {
+          "species": "cicoria",
+          "key": "leaf_margin",
+          "value": "dentato"
+        },
+        {
+          "species": "cicoria",
+          "key": "flower_shape",
+          "value": "capolino"
+        }
+      ]
+    },
+    {
+      "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/colchico-flower-master-v4.png",
+      "sha256": "c35dc97a5aed0be1169b6768cccbcc9160b6f4bcffc2e628a6453768e6ce993b",
+      "sourceUrls": [
+        "https://www.provincia.prato.it/pagina2493_colchicaceae.html"
+      ],
+      "referencePhotos": [
+        "assets/plants/colchico-3.webp"
+      ],
+      "outputCharacters": [
+        {
+          "species": "colchico",
+          "key": "flower_shape",
+          "value": "sei_tepali"
+        }
+      ]
+    },
+    {
+      "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/colchico-master-v2-partial.png",
+      "sha256": "f7a8a3ca76423ac85e6f866db7ad0098d5d4343d0990c8cd3e1e3dd3ecb90344",
+      "sourceUrls": [
+        "https://www.provincia.prato.it/pagina2493_colchicaceae.html"
+      ],
+      "referencePhotos": [
+        "assets/plants/colchico-3.webp"
+      ],
+      "outputCharacters": [
+        {
+          "species": "colchico",
+          "key": "leaf_type",
+          "value": "semplice"
+        },
+        {
+          "species": "colchico",
+          "key": "leaf_arrangement",
+          "value": "rosetta_basale"
+        }
+      ]
+    },
+    {
+      "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/digitale-master-v2.png",
+      "sha256": "6b000b201a71137273c75bf4da034af1376c1cd1d2d17ad6dee446f3cefcdba1",
+      "sourceUrls": [
+        "https://www.provincia.prato.it/pagina2574_plantaginaceae.html"
+      ],
+      "referencePhotos": [
+        "assets/plants/digitale-gialla-1.webp",
+        "assets/plants/pe2-natura-digitale-gialla-dryades-1f95db6b.webp"
+      ],
+      "outputCharacters": [
+        {
+          "species": "digitale-gialla",
+          "key": "leaf_type",
+          "value": "semplice"
+        },
+        {
+          "species": "digitale-gialla",
+          "key": "leaf_margin",
+          "value": "dentato"
+        },
+        {
+          "species": "digitale-gialla",
+          "key": "flower_shape",
+          "value": "tubo_labbra"
+        },
+        {
+          "species": "digitale-gialla",
+          "key": "leaf_arrangement",
+          "value": "alterne"
+        }
+      ]
+    },
+    {
+      "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/genziana-master-v2.png",
+      "sha256": "d89584c35f24d8fa57b504dd16667e1bebd691c78ad20dda56603b48312310e6",
+      "sourceUrls": [
+        "https://www.infoflora.ch/it/flora/gentiana-lutea.html"
+      ],
+      "referencePhotos": [
+        "assets/plants/genziana-maggiore-1.webp"
+      ],
+      "outputCharacters": [
+        {
+          "species": "genziana-maggiore",
+          "key": "leaf_type",
+          "value": "semplice"
+        },
+        {
+          "species": "genziana-maggiore",
+          "key": "leaf_margin",
+          "value": "intero"
+        },
+        {
+          "species": "genziana-maggiore",
+          "key": "flower_shape",
+          "value": "cinque_petali"
+        },
+        {
+          "species": "genziana-maggiore",
+          "key": "leaf_arrangement",
+          "value": "opposte"
+        }
+      ]
+    },
+    {
+      "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/giglio-rosso-flower-master-v3.png",
+      "sha256": "6b26befb6c786dfd5c659581e46d57824f5be7190aa58bce137988812fa9200f",
+      "sourceUrls": [
+        "https://www.infoflora.ch/it/flora/lilium-bulbiferum-subsp-croceum.html"
+      ],
+      "referencePhotos": [
+        "assets/plants/giglio-rosso-1.webp"
+      ],
+      "outputCharacters": [
+        {
+          "species": "giglio-rosso",
+          "key": "flower_shape",
+          "value": "campanula"
+        }
+      ]
+    },
+    {
+      "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-flowers1-master-v2.png",
+      "sha256": "e9dd0355fbcfd6a8e4b7fc52a51c336874627fb6380cc1804b998a114243a61e",
+      "sourceUrls": [
+        "https://dryades.units.it/Roma/index.php?id=1046&procedure=taxon_page",
+        "https://plants.ces.ncsu.edu/plants/datura-stramonium/",
+        "https://www.infoflora.ch/it/flora/aristolochia-clematitis.html",
+        "https://www.infoflora.ch/it/flora/arum-italicum.html",
+        "https://www.infoflora.ch/it/flora/gentiana-verna.html",
+        "https://www.infoflora.ch/it/flora/helleborus-foetidus.html",
+        "https://www.parcogallipolicognato.it/flora-dettaglio.php?id=380",
+        "https://www.parcomontisimbruini.it/flora-dettaglio.php?id=271"
+      ],
+      "referencePhotos": [
+        "assets/plants/anemone-appennini-1.webp",
+        "assets/plants/aristolochia-1.webp",
+        "assets/plants/asfodelo-1.webp",
+        "assets/plants/elleboro-3.webp",
+        "assets/plants/genziana-primaticcia-2.webp",
+        "assets/plants/gigaro-2.webp",
+        "assets/plants/narciso-dei-poeti-2.webp",
+        "assets/plants/stramonio-2.webp"
+      ],
+      "outputCharacters": [
+        {
+          "species": "anemone-appennini",
+          "key": "flower_shape",
+          "value": "molti_petali"
+        },
+        {
+          "species": "elleboro",
+          "key": "flower_shape",
+          "value": "campanula"
+        },
+        {
+          "species": "stramonio",
+          "key": "fruit_type",
+          "value": "capsula"
+        },
+        {
+          "species": "gigaro",
+          "key": "flower_shape",
+          "value": "spata"
+        },
+        {
+          "species": "asfodelo",
+          "key": "flower_shape",
+          "value": "sei_tepali"
+        },
+        {
+          "species": "narciso-dei-poeti",
+          "key": "flower_shape",
+          "value": "sei_tepali"
+        },
+        {
+          "species": "genziana-primaticcia",
+          "key": "flower_shape",
+          "value": "cinque_petali"
+        },
+        {
+          "species": "aristolochia",
+          "key": "flower_shape",
+          "value": "tubo_labbra"
+        }
+      ]
+    },
+    {
+      "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-flowers2-master-v2.png",
+      "sha256": "654a5f6335a3db50356cf4cad84ee71a87ca793c2e54901635061e0550d5b4f6",
+      "sourceUrls": [
+        "https://www.gruppomicologicoancona.it/botanica/ritrovamenti-e-schede/schede-descrittive-botanica/crocus-neapolitanus-ker-gawl-loisel.html",
+        "https://www.infoflora.ch/it/flora/cephalanthera-longifolia.html",
+        "https://www.infoflora.ch/it/flora/dactylorhiza-sambucina.html",
+        "https://www.infoflora.ch/it/flora/lilium-martagon.html",
+        "https://www.infoflora.ch/it/flora/orchis-mascula-subsp-mascula.html",
+        "https://www.infoflora.ch/it/flora/orchis-purpurea.html"
+      ],
+      "referencePhotos": [
+        "assets/plants/cefalantera-maggiore-1.webp",
+        "assets/plants/croco-2.webp",
+        "assets/plants/orchide-maschia-2.webp",
+        "assets/plants/orchide-sambucina-2.webp",
+        "assets/plants/pe2-natura-giglio-martagone-dryades-a0b110ce.webp",
+        "assets/plants/pe2-natura-orchide-maschia-dryades-7f4b824b.webp",
+        "assets/plants/pe2-natura-orchide-purpurea-dryades-2ab1266d.webp"
+      ],
+      "outputCharacters": [
+        {
+          "species": "croco",
+          "key": "flower_shape",
+          "value": "sei_tepali"
+        },
+        {
+          "species": "giglio-martagone",
+          "key": "flower_shape",
+          "value": "petali_rovesciati"
+        },
+        {
+          "species": "cefalantera-maggiore",
+          "key": "flower_shape",
+          "value": "labello"
+        },
+        {
+          "species": "orchide-sambucina",
+          "key": "flower_shape",
+          "value": "labello"
+        },
+        {
+          "species": "orchide-maschia",
+          "key": "flower_shape",
+          "value": "labello"
+        },
+        {
+          "species": "orchide-maschia",
+          "key": "leaf_margin",
+          "value": "intero"
+        },
+        {
+          "species": "orchide-purpurea",
+          "key": "flower_shape",
+          "value": "labello"
+        }
+      ]
+    },
+    {
+      "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-leaves1-master-v2.png",
+      "sha256": "0b5c30b5ac764702909de91b91624e274b37de6f771e85a14508c5ff69a80105",
+      "sourceUrls": [
+        "https://dryades.units.it/Roma/index.php?id=1046&procedure=taxon_page",
+        "https://www.infoflora.ch/it/flora/arum-italicum.html",
+        "https://www.infoflora.ch/it/flora/datura-stramonium.html",
+        "https://www.infoflora.ch/it/flora/helleborus-foetidus.html"
+      ],
+      "referencePhotos": [
+        "assets/plants/anemone-appennini-3.webp",
+        "assets/plants/elleboro-2.webp",
+        "assets/plants/gigaro-3.webp",
+        "assets/plants/stramonio-1.webp"
+      ],
+      "outputCharacters": [
+        {
+          "species": "anemone-appennini",
+          "key": "leaf_type",
+          "value": "molto_divisa_larga"
+        },
+        {
+          "species": "anemone-appennini",
+          "key": "leaf_margin",
+          "value": "lobato"
+        },
+        {
+          "species": "anemone-appennini",
+          "key": "leaf_margin",
+          "value": "dentato"
+        },
+        {
+          "species": "elleboro",
+          "key": "leaf_type",
+          "value": "composta"
+        },
+        {
+          "species": "elleboro",
+          "key": "leaf_margin",
+          "value": "dentato"
+        },
+        {
+          "species": "stramonio",
+          "key": "leaf_type",
+          "value": "semplice"
+        },
+        {
+          "species": "stramonio",
+          "key": "leaf_margin",
+          "value": "dentato"
+        },
+        {
+          "species": "stramonio",
+          "key": "leaf_margin",
+          "value": "lobato"
+        },
+        {
+          "species": "gigaro",
+          "key": "leaf_type",
+          "value": "semplice"
+        },
+        {
+          "species": "gigaro",
+          "key": "leaf_margin",
+          "value": "intero"
+        }
+      ]
+    },
+    {
+      "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-leaves2-master-v2.png",
+      "sha256": "665389c6b399558bf4bdfaca6d237078d0281d21e62457f6a27731a5cb36b09a",
+      "sourceUrls": [
+        "https://www.infoflora.ch/it/flora/gentiana-verna.html",
+        "https://www.infoflora.ch/it/flora/hepatica-nobilis.html",
+        "https://www.parcogallipolicognato.it/flora-dettaglio.php?id=380",
+        "https://www.parcomontisimbruini.it/flora-dettaglio.php?id=271"
+      ],
+      "referencePhotos": [
+        "assets/plants/asfodelo-3.webp",
+        "assets/plants/erba-trinita-2.webp",
+        "assets/plants/genziana-primaticcia-1.webp",
+        "assets/plants/narciso-dei-poeti-1.webp"
+      ],
+      "outputCharacters": [
+        {
+          "species": "asfodelo",
+          "key": "leaf_type",
+          "value": "semplice"
+        },
+        {
+          "species": "asfodelo",
+          "key": "leaf_margin",
+          "value": "intero"
+        },
+        {
+          "species": "erba-trinita",
+          "key": "leaf_type",
+          "value": "semplice"
+        },
+        {
+          "species": "erba-trinita",
+          "key": "leaf_margin",
+          "value": "lobato"
+        },
+        {
+          "species": "narciso-dei-poeti",
+          "key": "leaf_type",
+          "value": "semplice"
+        },
+        {
+          "species": "narciso-dei-poeti",
+          "key": "leaf_margin",
+          "value": "intero"
+        },
+        {
+          "species": "genziana-primaticcia",
+          "key": "leaf_type",
+          "value": "semplice"
+        },
+        {
+          "species": "genziana-primaticcia",
+          "key": "leaf_margin",
+          "value": "intero"
+        }
+      ]
+    },
+    {
+      "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-leaves3-master-v1.png",
+      "sha256": "bcedec0e70f1619cf1af8f2216b19eef76569e769a7a9fd378b6a2f702d2ee1e",
+      "sourceUrls": [
+        "https://www.gruppomicologicoancona.it/botanica/ritrovamenti-e-schede/schede-descrittive-botanica/crocus-neapolitanus-ker-gawl-loisel.html",
+        "https://www.infoflora.ch/it/flora/cephalanthera-longifolia.html",
+        "https://www.infoflora.ch/it/flora/dactylorhiza-sambucina.html",
+        "https://www.infoflora.ch/it/flora/galanthus-nivalis.html",
+        "https://www.infoflora.ch/it/flora/lilium-bulbiferum-subsp-croceum.html",
+        "https://www.infoflora.ch/it/flora/lilium-martagon.html",
+        "https://www.infoflora.ch/it/flora/orchis-mascula-subsp-mascula.html",
+        "https://www.infoflora.ch/it/flora/orchis-purpurea.html",
+        "https://www.infoflora.ch/it/flora/scilla-bifolia.html"
+      ],
+      "referencePhotos": [
+        "assets/plants/bucaneve-2.webp",
+        "assets/plants/croco-4.webp",
+        "assets/plants/orchide-maschia-2.webp",
+        "assets/plants/pe2-natura-cefalantera-maggiore-dryades-f54c9ca6.webp",
+        "assets/plants/pe2-natura-giglio-martagone-dryades-809cc98b.webp",
+        "assets/plants/pe2-natura-giglio-rosso-dryades-3ee413a7.webp",
+        "assets/plants/pe2-natura-orchide-purpurea-d5c818c3.webp",
+        "assets/plants/pe2-natura-orchide-sambucina-dryades-222df38a.webp",
+        "assets/plants/pe2-natura-scilla-silvestre-dryades-004c44a4.webp"
+      ],
+      "outputCharacters": [
+        {
+          "species": "bucaneve",
+          "key": "leaf_type",
+          "value": "semplice"
+        },
+        {
+          "species": "scilla-silvestre",
+          "key": "leaf_type",
+          "value": "semplice"
+        },
+        {
+          "species": "croco",
+          "key": "leaf_type",
+          "value": "semplice"
+        },
+        {
+          "species": "giglio-martagone",
+          "key": "leaf_type",
+          "value": "semplice"
+        },
+        {
+          "species": "giglio-rosso",
+          "key": "leaf_type",
+          "value": "semplice"
+        },
+        {
+          "species": "cefalantera-maggiore",
+          "key": "leaf_type",
+          "value": "semplice"
+        },
+        {
+          "species": "orchide-sambucina",
+          "key": "leaf_type",
+          "value": "semplice"
+        },
+        {
+          "species": "orchide-maschia",
+          "key": "leaf_type",
+          "value": "semplice"
+        },
+        {
+          "species": "orchide-purpurea",
+          "key": "leaf_type",
+          "value": "semplice"
+        }
+      ]
+    },
+    {
+      "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-other-organs-master-v2.png",
+      "sha256": "964126dbb65ada90ded947fb08811e7365a6945869579b496c268088447df5a1",
+      "sourceUrls": [
+        "https://dryades.units.it/gallignano/index.php?id=7850&num=4925&procedure=taxon_page",
+        "https://plants.ces.ncsu.edu/plants/datura-stramonium/"
+      ],
+      "referencePhotos": [
+        "https://dryades.units.it/dryades/plants/foto/TSB27708.jpg",
+        "https://eit-planttoolbox-prod.s3.amazonaws.com/media/images/Datura-stramonium--F_Nlgl5yf8ZReG.apng"
+      ],
+      "outputCharacters": [
+        {
+          "species": "stramonio",
+          "key": "flower_shape",
+          "value": "campanula"
+        },
+        {
+          "species": "gigaro",
+          "key": "fruit_type",
+          "value": "carnoso"
+        }
+      ]
+    },
+    {
+      "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/scilla-flower-master-v3.png",
+      "sha256": "83c2e37a98dee809b815e607b804a08ea72b4f82a71a2b0da40593463c545212",
+      "sourceUrls": [
+        "https://www.infoflora.ch/it/flora/scilla-bifolia.html"
+      ],
+      "referencePhotos": [
+        "assets/plants/scilla-silvestre-2.webp"
+      ],
+      "outputCharacters": [
+        {
+          "species": "scilla-silvestre",
+          "key": "flower_shape",
+          "value": "sei_tepali"
+        }
+      ]
+    },
+    {
+      "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/tarassaco-master-v3.png",
+      "sha256": "0f18c2fb6583a444aea3f9ca5560fbf26eb741bb874dd208a9960316bd220d11",
+      "sourceUrls": [
+        "https://dryades.units.it/online_books/Lumiei_book/HTML/files/assets/basic-html/page205.html",
+        "https://www.infoflora.ch/it/flora/taraxacum-officinale-aggr.html"
+      ],
+      "referencePhotos": [
+        "assets/plants/tarassaco-1.webp",
+        "https://commons.wikimedia.org/wiki/File:(MHNT)_Taraxacum_sect._Ruderalia.jpg"
+      ],
+      "outputCharacters": [
+        {
+          "species": "tarassaco",
+          "key": "leaf_type",
+          "value": "semplice"
+        },
+        {
+          "species": "tarassaco",
+          "key": "leaf_margin",
+          "value": "dentato"
+        },
+        {
+          "species": "tarassaco",
+          "key": "leaf_margin",
+          "value": "lobato"
+        },
+        {
+          "species": "tarassaco",
+          "key": "flower_shape",
+          "value": "capolino"
+        },
+        {
+          "species": "tarassaco",
+          "key": "fruit_type",
+          "value": "secco_piumoso"
+        },
+        {
+          "species": "tarassaco",
+          "key": "leaf_arrangement",
+          "value": "rosetta_basale"
+        }
+      ]
+    },
+    {
+      "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/veratro-master-v1.png",
+      "sha256": "8585b91c93a220e8deb710e062a93619e0b99547092ee1c36fb65d3d893105e0",
+      "sourceUrls": [
+        "https://www.infoflora.ch/it/flora/veratrum-album.html"
+      ],
+      "referencePhotos": [
+        "assets/plants/veratro-3.webp",
+        "assets/plants/veratro-4.webp"
+      ],
+      "outputCharacters": [
+        {
+          "species": "veratro",
+          "key": "leaf_type",
+          "value": "semplice"
+        },
+        {
+          "species": "veratro",
+          "key": "leaf_margin",
+          "value": "intero"
+        },
+        {
+          "species": "veratro",
+          "key": "flower_shape",
+          "value": "sei_tepali"
+        },
+        {
+          "species": "veratro",
+          "key": "leaf_arrangement",
+          "value": "alterne"
+        }
+      ]
+    }
+  ],
+  "promptFiles": [
+    {
+      "path": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/aglio-correction.txt",
+      "sha256": "520ef3e945de6a1916757bbda11899ee9c83e0cd44b69516ae7db7da03fe920d"
+    },
+    {
+      "path": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/aglio-prompt.txt",
+      "sha256": "e2f81288a071b9abc0126eef9601d29621e54efeebe3f3ed1b294cb7e9a4054c"
+    },
+    {
+      "path": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/cicoria-prompt.txt",
+      "sha256": "88bf42ea59ddae16b3bf3adbf0f8442ec383bb2dec690a710680eb43ac6e4904"
+    },
+    {
+      "path": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/colchico-correction.txt",
+      "sha256": "41bd8ec5ddfede0fd0ab38edada0236fe4b842741c1cd038fe758b55193dc38b"
+    },
+    {
+      "path": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/colchico-correction2.txt",
+      "sha256": "1546ba701b8cb0eaae65cd0083e55dbef3b1f722f0e36982067d05999a71380e"
+    },
+    {
+      "path": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/colchico-final-correction.txt",
+      "sha256": "9e2103b0232dceacc95205a6cd9bd586f2878b056c12a840ba2c637e8ef814cf"
+    },
+    {
+      "path": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/colchico-prompt.txt",
+      "sha256": "8b2829d9197cc9728161ad5cd20c23aeb7078284ea1a6d31f368d1e90f753851"
+    },
+    {
+      "path": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/digitale-correction.txt",
+      "sha256": "2fcd56328b650c1f02d1fb41b324985a4f3fb996c4019f3a23d0ec0c17537a42"
+    },
+    {
+      "path": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/digitale-prompt.txt",
+      "sha256": "36a3c0d6dda40c7ddc615f532a54825a5716650969bd846d52d49e734edb8341"
+    },
+    {
+      "path": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/genziana-correction.txt",
+      "sha256": "19c29aa02475babfe4efe7d54855587783bd6412ba5ddc9591ca1699a246f4e4"
+    },
+    {
+      "path": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/genziana-prompt.txt",
+      "sha256": "0c8de5c055afc2fa3521c54840184e9a03cce54959b3fd4c33f39d81cdf5f541"
+    },
+    {
+      "path": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/giglio-rosso-final-correction.txt",
+      "sha256": "80a5c53bb57078dc90878adb418ee248f96e13dceaa9fd94892bbecb5252adb8"
+    },
+    {
+      "path": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-flowers1-correction.txt",
+      "sha256": "43bb9548db7b45b9387585a20a521388f99ba03ed3b3342be443c01c2512ada5"
+    },
+    {
+      "path": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-flowers1-prompt.txt",
+      "sha256": "d3782831358900f0e0dcbf7a1d0c1be019390937d852b79a444d9f3762e41b38"
+    },
+    {
+      "path": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-flowers2-correction.txt",
+      "sha256": "0a9db609be67cc48ba5153e86517b78e1142f5283b380c6fc2f9f77098e88765"
+    },
+    {
+      "path": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-flowers2-prompt.txt",
+      "sha256": "cfb4ad77e2bda60e784987c566db2a6f5ba9e480ceabe0c0079223ce38c1c11a"
+    },
+    {
+      "path": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-leaves1-correction.txt",
+      "sha256": "5096185a6c36019d7b0ff428817c724d20cfd9ad52176bdd3164e0e8ede3bfac"
+    },
+    {
+      "path": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-leaves1-prompt.txt",
+      "sha256": "498958363b99243fb058b69a568c2a13f5166b9e97d628096f348ad918d9f772"
+    },
+    {
+      "path": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-leaves2-correction.txt",
+      "sha256": "943a1ed87118032050728477c07d2a120f57790f15f620b4c533f1fc2ccb751e"
+    },
+    {
+      "path": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-leaves2-prompt.txt",
+      "sha256": "f27a93bc279b163390a7012e4d3cf9ce641e58e81e3c52dcbfa6659cdec76f72"
+    },
+    {
+      "path": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-leaves3-prompt.txt",
+      "sha256": "5ce5faa45a9fcd1280780c8694344108468b821fd4357e1fc3426b8d16b37c7a"
+    },
+    {
+      "path": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-other-organs-correction.txt",
+      "sha256": "558aada08458e3863be5551cad2e8175a9d1fa36c38ce6357d358fc9502d1208"
+    },
+    {
+      "path": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-other-organs-prompt.txt",
+      "sha256": "76ad79558d42f75f6b9021288caac3f6e9c76f7855cbd59bdf933d2049fe2d90"
+    },
+    {
+      "path": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/scilla-final-correction.txt",
+      "sha256": "78915ba8273e85d0dc80b256fb1366cc36c2be618d5ff690387f03d497f6022e"
+    },
+    {
+      "path": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/tarassaco-correction.txt",
+      "sha256": "001d81222c066a942b1fee4b097b9501fe39da364c21084dd17505678566723a"
+    },
+    {
+      "path": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/tarassaco-correction2.txt",
+      "sha256": "8475a6897a58f0789e4e5794d239ca52a26a4ed16fe1123a6b46c9ed42f9d5c4"
+    },
+    {
+      "path": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/tarassaco-prompt.txt",
+      "sha256": "8a0f55811b1a26477b9f58c46422c3de6379c7e343f5da2a13120c3286ef79ab"
+    },
+    {
+      "path": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/veratro-prompt.txt",
+      "sha256": "41f51ce185eb9e755e5c245f1be9cf9181920dd84be5ecdfd63c088948ddfa40"
+    }
+  ]
+}

@@ -176,6 +176,27 @@
           605
         ]
       }
+    },
+    "flower_shape": {
+      "sei_tepali": {
+        "source": "https://www.provincia.prato.it/pagina2493_colchicaceae.html",
+        "referencePhoto": "assets/plants/colchico-3.webp",
+        "review": "Revisione produttore:6tepali rosa visibili con nervature longitudinali, lungo tubo chiaro e nessun calice verde. Vista laterale di fiore semichiuso: stami e stili intenzionalmente nascosti in profondità dietro tepali anteriori, quindi non illustra né sostiene alcun loro conteggio. Non usare per confronto del numero di stami con Crocus.",
+        "caption": "Perigonio in vista laterale",
+        "src": "assets/plant-traits/colchico-flower-shape-sei_tepali-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/colchico-flower-shape-sei_tepali-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "sha256": "3edb57880d20aa5ac72e8b1df36ce86b4b7c87deba71a5cdfaa60356e5e03fd5",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/colchico-flower-master-v4.png",
+        "crop": [
+          235,
+          67,
+          1030,
+          1192
+        ],
+        "processing": "Crop e isolamento geometrico, pixel anatomici non ridisegnati; alpha32 serve solo a localizzare organi separati e bbox."
+      }
     }
   },
   "digitale-gialla": {
@@ -461,6 +482,964 @@
           997,
           1518
         ]
+      }
+    }
+  },
+  "anemone-appennini": {
+    "leaf_type": {
+      "molto_divisa_larga": {
+        "src": "assets/plant-traits/anemone-appennini-leaf-type-molto_divisa_larga-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/anemone-appennini-leaf-type-molto_divisa_larga-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "source": "https://dryades.units.it/Roma/index.php?id=1046&procedure=taxon_page",
+        "referencePhoto": "assets/plants/anemone-appennini-3.webp",
+        "sha256": "fc7e086810baa327f7c0f2d499fadab15f368ce0df2bef5dd5f3c94372a61463",
+        "review": "prima revisione produttore su foto piena risoluzione e fonte: anatomie specifiche; dettaglio margine distinto da foglia intera; anemone corretto da5divisioni a3divisioni. Nessun colore o tratto null aggiunto. In attesa revisione indipendente.",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-leaves1-master-v2.png",
+        "crop": [
+          53,
+          5,
+          556,
+          354
+        ],
+        "processing": "Isolamento geometrico componenti; soglia alpha32 solo localizza core e bbox, pixel soggetto conservati senza correzioni anatomiche;6px margine antialias."
+      }
+    },
+    "leaf_margin": {
+      "lobato": {
+        "src": "assets/plant-traits/anemone-appennini-leaf-margin-lobato-dentato-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/anemone-appennini-leaf-margin-lobato-dentato-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "source": "https://dryades.units.it/Roma/index.php?id=1046&procedure=taxon_page",
+        "referencePhoto": "assets/plants/anemone-appennini-3.webp",
+        "sha256": "3be15db3f12ec7ddf53bb3561c4c3fb67fdab20685cd9d77ac5953e98812808e",
+        "review": "prima revisione produttore su foto piena risoluzione e fonte: anatomie specifiche; dettaglio margine distinto da foglia intera; anemone corretto da5divisioni a3divisioni. Nessun colore o tratto null aggiunto. In attesa revisione indipendente.",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-leaves1-master-v2.png",
+        "crop": [
+          585,
+          28,
+          973,
+          367
+        ],
+        "caption": "Margine lobato e dentato",
+        "processing": "Isolamento geometrico componenti; soglia alpha32 solo localizza core e bbox, pixel soggetto conservati senza correzioni anatomiche;6px margine antialias."
+      },
+      "dentato": {
+        "src": "assets/plant-traits/anemone-appennini-leaf-margin-lobato-dentato-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/anemone-appennini-leaf-margin-lobato-dentato-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "source": "https://dryades.units.it/Roma/index.php?id=1046&procedure=taxon_page",
+        "referencePhoto": "assets/plants/anemone-appennini-3.webp",
+        "sha256": "3be15db3f12ec7ddf53bb3561c4c3fb67fdab20685cd9d77ac5953e98812808e",
+        "review": "prima revisione produttore su foto piena risoluzione e fonte: anatomie specifiche; dettaglio margine distinto da foglia intera; anemone corretto da5divisioni a3divisioni. Nessun colore o tratto null aggiunto. In attesa revisione indipendente.",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-leaves1-master-v2.png",
+        "crop": [
+          585,
+          28,
+          973,
+          367
+        ],
+        "caption": "Margine lobato e dentato",
+        "processing": "Isolamento geometrico componenti; soglia alpha32 solo localizza core e bbox, pixel soggetto conservati senza correzioni anatomiche;6px margine antialias."
+      }
+    },
+    "flower_shape": {
+      "molti_petali": {
+        "source": "https://dryades.units.it/Roma/index.php?id=1046&procedure=taxon_page",
+        "referencePhoto": "assets/plants/anemone-appennini-1.webp",
+        "review": "Revisione produttore: Fiore singolo con12 tepali azzurri e molti stami distinti, carpelli centrali verdi: nessun disco di flosculi.",
+        "src": "assets/plant-traits/anemone-appennini-flower-shape-molti_petali-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/anemone-appennini-flower-shape-molti_petali-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "sha256": "1c9ff4ff74d203276e327d44e01ec0043e0d07ec5c4703d38d63aae589644fcd",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-flowers1-master-v2.png",
+        "crop": [
+          24,
+          13,
+          432,
+          432
+        ],
+        "processing": "Crop e isolamento geometrico, pixel anatomici non ridisegnati; alpha32 serve solo a localizzare organi separati e bbox."
+      }
+    }
+  },
+  "elleboro": {
+    "leaf_type": {
+      "composta": {
+        "src": "assets/plant-traits/elleboro-leaf-type-composta-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/elleboro-leaf-type-composta-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "source": "https://www.infoflora.ch/it/flora/helleborus-foetidus.html",
+        "referencePhoto": "assets/plants/elleboro-2.webp",
+        "sha256": "69ecc593a1b66d41dae445e31d76e807a119099da4f23fb1697cf16d1419b457",
+        "review": "prima revisione produttore su foto piena risoluzione e fonte: anatomie specifiche; dettaglio margine distinto da foglia intera; anemone corretto da5divisioni a3divisioni. Nessun colore o tratto null aggiunto. In attesa revisione indipendente.",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-leaves1-master-v2.png",
+        "crop": [
+          47,
+          336,
+          536,
+          735
+        ],
+        "processing": "Isolamento geometrico componenti; soglia alpha32 solo localizza core e bbox, pixel soggetto conservati senza correzioni anatomiche;6px margine antialias."
+      }
+    },
+    "leaf_margin": {
+      "dentato": {
+        "src": "assets/plant-traits/elleboro-leaf-margin-dentato-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/elleboro-leaf-margin-dentato-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "source": "https://www.infoflora.ch/it/flora/helleborus-foetidus.html",
+        "referencePhoto": "assets/plants/elleboro-2.webp",
+        "sha256": "f16acc32321de4078c7bab10e92530ced44729c2f6f26cb26b65a2e8634737cd",
+        "review": "prima revisione produttore su foto piena risoluzione e fonte: anatomie specifiche; dettaglio margine distinto da foglia intera; anemone corretto da5divisioni a3divisioni. Nessun colore o tratto null aggiunto. In attesa revisione indipendente.",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-leaves1-master-v2.png",
+        "crop": [
+          612,
+          371,
+          932,
+          721
+        ],
+        "processing": "Isolamento geometrico componenti; soglia alpha32 solo localizza core e bbox, pixel soggetto conservati senza correzioni anatomiche;6px margine antialias."
+      }
+    },
+    "flower_shape": {
+      "campanula": {
+        "source": "https://www.infoflora.ch/it/flora/helleborus-foetidus.html",
+        "referencePhoto": "assets/plants/elleboro-3.webp",
+        "review": "Revisione produttore: Campana pendula con5 sepali verdi sovrapposti, unica serie, bocca interna scura non seconda corolla.",
+        "src": "assets/plant-traits/elleboro-flower-shape-campanula-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/elleboro-flower-shape-campanula-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "sha256": "9090f36b343578794a43f98e476524b9768d727a6c9693771ac1f25cbe513f8e",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-flowers1-master-v2.png",
+        "crop": [
+          456,
+          49,
+          814,
+          383
+        ],
+        "processing": "Crop e isolamento geometrico, pixel anatomici non ridisegnati; alpha32 serve solo a localizzare organi separati e bbox."
+      }
+    }
+  },
+  "stramonio": {
+    "leaf_type": {
+      "semplice": {
+        "src": "assets/plant-traits/stramonio-leaf-type-semplice-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/stramonio-leaf-type-semplice-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "source": "https://www.infoflora.ch/it/flora/datura-stramonium.html",
+        "referencePhoto": "assets/plants/stramonio-1.webp",
+        "sha256": "94385f27076d05627455163c3efd9a52bb18c3e2b3f7096a71d2b27e20997ed3",
+        "review": "prima revisione produttore su foto piena risoluzione e fonte: anatomie specifiche; dettaglio margine distinto da foglia intera; anemone corretto da5divisioni a3divisioni. Nessun colore o tratto null aggiunto. In attesa revisione indipendente.",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-leaves1-master-v2.png",
+        "crop": [
+          56,
+          716,
+          565,
+          1091
+        ],
+        "processing": "Isolamento geometrico componenti; soglia alpha32 solo localizza core e bbox, pixel soggetto conservati senza correzioni anatomiche;6px margine antialias."
+      }
+    },
+    "leaf_margin": {
+      "dentato": {
+        "src": "assets/plant-traits/stramonio-leaf-margin-dentato-lobato-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/stramonio-leaf-margin-dentato-lobato-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "source": "https://www.infoflora.ch/it/flora/datura-stramonium.html",
+        "referencePhoto": "assets/plants/stramonio-1.webp",
+        "sha256": "04996a0432ddf44e2f0254680b98321029aa9ba25551f989393207603d1dee09",
+        "review": "prima revisione produttore su foto piena risoluzione e fonte: anatomie specifiche; dettaglio margine distinto da foglia intera; anemone corretto da5divisioni a3divisioni. Nessun colore o tratto null aggiunto. In attesa revisione indipendente.",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-leaves1-master-v2.png",
+        "crop": [
+          613,
+          735,
+          959,
+          1100
+        ],
+        "caption": "Margine lobato e dentato",
+        "processing": "Isolamento geometrico componenti; soglia alpha32 solo localizza core e bbox, pixel soggetto conservati senza correzioni anatomiche;6px margine antialias."
+      },
+      "lobato": {
+        "src": "assets/plant-traits/stramonio-leaf-margin-dentato-lobato-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/stramonio-leaf-margin-dentato-lobato-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "source": "https://www.infoflora.ch/it/flora/datura-stramonium.html",
+        "referencePhoto": "assets/plants/stramonio-1.webp",
+        "sha256": "04996a0432ddf44e2f0254680b98321029aa9ba25551f989393207603d1dee09",
+        "review": "prima revisione produttore su foto piena risoluzione e fonte: anatomie specifiche; dettaglio margine distinto da foglia intera; anemone corretto da5divisioni a3divisioni. Nessun colore o tratto null aggiunto. In attesa revisione indipendente.",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-leaves1-master-v2.png",
+        "crop": [
+          613,
+          735,
+          959,
+          1100
+        ],
+        "caption": "Margine lobato e dentato",
+        "processing": "Isolamento geometrico componenti; soglia alpha32 solo localizza core e bbox, pixel soggetto conservati senza correzioni anatomiche;6px margine antialias."
+      }
+    },
+    "fruit_type": {
+      "capsula": {
+        "source": "https://plants.ces.ncsu.edu/plants/datura-stramonium/",
+        "referencePhoto": "assets/plants/stramonio-2.webp",
+        "review": "Revisione produttore: Capsula verde eretta chiusa con spine coniche e calice persistente alla base; fase immatura verificata foto2.",
+        "caption": "Capsula spinosa immatura",
+        "src": "assets/plant-traits/stramonio-fruit-type-capsula-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/stramonio-fruit-type-capsula-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "sha256": "3da8018b9f12c942680d2783f022b9c9367f4668ef9544df86046d38c75a1f0e",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-flowers1-master-v2.png",
+        "crop": [
+          882,
+          10,
+          1208,
+          443
+        ],
+        "processing": "Crop e isolamento geometrico, pixel anatomici non ridisegnati; alpha32 serve solo a localizzare organi separati e bbox."
+      }
+    },
+    "flower_shape": {
+      "campanula": {
+        "source": "https://plants.ces.ncsu.edu/plants/datura-stramonium/",
+        "referencePhoto": "https://eit-planttoolbox-prod.s3.amazonaws.com/media/images/Datura-stramonium--F_Nlgl5yf8ZReG.apng",
+        "review": "Revisione produttore: corolla bianca gamopetala a tromba, cinque lobi prolungati in punta; calice tubolare verde a denti brevi, corretto da precedente calice erroneo a sepali liberi. Vista laterale, organi interni naturalmente nascosti. Foto Forest e Kim Starr CC BY2.0 pubblicata NCState.",
+        "src": "assets/plant-traits/stramonio-flower-shape-campanula-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/stramonio-flower-shape-campanula-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "sha256": "16c18fc3d9f211496355f3f57b63fc48a8f9fbf8a4453f82a2c9a503b6aa4c5b",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-other-organs-master-v2.png",
+        "crop": [
+          639,
+          48,
+          1214,
+          645
+        ],
+        "processing": "Crop e isolamento geometrico, pixel anatomici non ridisegnati; alpha32 serve solo a localizzare organi separati e bbox."
+      }
+    }
+  },
+  "gigaro": {
+    "leaf_type": {
+      "semplice": {
+        "src": "assets/plant-traits/gigaro-leaf-type-semplice-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/gigaro-leaf-type-semplice-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "source": "https://www.infoflora.ch/it/flora/arum-italicum.html",
+        "referencePhoto": "assets/plants/gigaro-3.webp",
+        "sha256": "c4c3482e0e57a520f31c90dea162d363600f1ec66537b7c4a4ce00a57dc52e93",
+        "review": "prima revisione produttore su foto piena risoluzione e fonte: anatomie specifiche; dettaglio margine distinto da foglia intera; anemone corretto da5divisioni a3divisioni. Nessun colore o tratto null aggiunto. In attesa revisione indipendente.",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-leaves1-master-v2.png",
+        "crop": [
+          90,
+          1053,
+          522,
+          1520
+        ],
+        "processing": "Isolamento geometrico componenti; soglia alpha32 solo localizza core e bbox, pixel soggetto conservati senza correzioni anatomiche;6px margine antialias."
+      }
+    },
+    "leaf_margin": {
+      "intero": {
+        "src": "assets/plant-traits/gigaro-leaf-margin-intero-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/gigaro-leaf-margin-intero-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "source": "https://www.infoflora.ch/it/flora/arum-italicum.html",
+        "referencePhoto": "assets/plants/gigaro-3.webp",
+        "sha256": "9388c1ab9ff01243f585166837d57a5164690f738e2cadc71d2db03a2e717c7d",
+        "review": "prima revisione produttore su foto piena risoluzione e fonte: anatomie specifiche; dettaglio margine distinto da foglia intera; anemone corretto da5divisioni a3divisioni. Nessun colore o tratto null aggiunto. In attesa revisione indipendente.",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-leaves1-master-v2.png",
+        "crop": [
+          613,
+          1114,
+          989,
+          1501
+        ],
+        "processing": "Isolamento geometrico componenti; soglia alpha32 solo localizza core e bbox, pixel soggetto conservati senza correzioni anatomiche;6px margine antialias."
+      }
+    },
+    "flower_shape": {
+      "spata": {
+        "source": "https://www.infoflora.ch/it/flora/arum-italicum.html",
+        "referencePhoto": "assets/plants/gigaro-2.webp",
+        "review": "Revisione produttore: Una spata verde chiaro avvolge spadice a clava gialla; non interpretata come corolla.",
+        "src": "assets/plant-traits/gigaro-flower-shape-spata-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/gigaro-flower-shape-spata-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "sha256": "f0a1a8cf557058ca5746cba8f17cebeea527a82f99bb89cc39639d0b00ab0625",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-flowers1-master-v2.png",
+        "crop": [
+          505,
+          393,
+          749,
+          841
+        ],
+        "processing": "Crop e isolamento geometrico, pixel anatomici non ridisegnati; alpha32 serve solo a localizzare organi separati e bbox."
+      }
+    },
+    "fruit_type": {
+      "carnoso": {
+        "source": "https://dryades.units.it/gallignano/index.php?id=7850&num=4925&procedure=taxon_page",
+        "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TSB27708.jpg",
+        "review": "Revisione produttore: infruttescenza colonnare eretta, bacche verdi inferiori e rosso-arancio superiori durante maturazione; piccole cicatrici apicali e residuo di spata cartaceo basale. Foto primaria Andrea Moro UniTrieste,23/07/2005,CC BY-SA4.0.",
+        "caption": "Bacche in maturazione",
+        "src": "assets/plant-traits/gigaro-fruit-type-carnoso-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/gigaro-fruit-type-carnoso-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "sha256": "56e4e395b178a667f5bcb65cc9156989a25548e23679eecd8bb64e68684afe23",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-other-organs-master-v2.png",
+        "crop": [
+          219,
+          44,
+          470,
+          667
+        ],
+        "processing": "Crop e isolamento geometrico, pixel anatomici non ridisegnati; alpha32 serve solo a localizzare organi separati e bbox."
+      }
+    }
+  },
+  "asfodelo": {
+    "leaf_type": {
+      "semplice": {
+        "source": "https://www.parcogallipolicognato.it/flora-dettaglio.php?id=380",
+        "referencePhoto": "assets/plants/asfodelo-3.webp",
+        "review": "prima revisione produttore: foglia intera specifica e dettaglio bordo, verificati su fonte e foto. Hepatica corretta raster per lamina continua e3lobi, non trifogliata. In attesa revisione indipendente.",
+        "src": "assets/plant-traits/asfodelo-leaf-type-semplice-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/asfodelo-leaf-type-semplice-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "sha256": "c567197a00b3253adb1cefac98955249dd848066c9c1968a169d39479883d11f",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-leaves2-master-v2.png",
+        "crop": [
+          263,
+          1,
+          367,
+          394
+        ],
+        "processing": "Crop e isolamento geometrico, pixel anatomici non ridisegnati; alpha32 serve solo a localizzare organi separati e bbox."
+      }
+    },
+    "leaf_margin": {
+      "intero": {
+        "source": "https://www.parcogallipolicognato.it/flora-dettaglio.php?id=380",
+        "referencePhoto": "assets/plants/asfodelo-3.webp",
+        "review": "prima revisione produttore: foglia intera specifica e dettaglio bordo, verificati su fonte e foto. Hepatica corretta raster per lamina continua e3lobi, non trifogliata. In attesa revisione indipendente.",
+        "src": "assets/plant-traits/asfodelo-leaf-margin-intero-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/asfodelo-leaf-margin-intero-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "sha256": "c2fa3941074767ec59267dcc1e7be5121cbb12d6d8036f0f80bf6c343bef8f08",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-leaves2-master-v2.png",
+        "crop": [
+          638,
+          16,
+          868,
+          375
+        ],
+        "processing": "Crop e isolamento geometrico, pixel anatomici non ridisegnati; alpha32 serve solo a localizzare organi separati e bbox."
+      }
+    },
+    "flower_shape": {
+      "sei_tepali": {
+        "source": "https://www.parcogallipolicognato.it/flora-dettaglio.php?id=380",
+        "referencePhoto": "assets/plants/asfodelo-1.webp",
+        "review": "Revisione produttore: 6tepali bianchi con stria bruno-rosata centrale,6 stami con antere arancio,1stilo centrale pallido.",
+        "src": "assets/plant-traits/asfodelo-flower-shape-sei_tepali-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/asfodelo-flower-shape-sei_tepali-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "sha256": "a620d997d25ef0cbac4a26673af05487aba3ae5df56a45224af69f07b0189096",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-flowers1-master-v2.png",
+        "crop": [
+          832,
+          441,
+          1233,
+          843
+        ],
+        "processing": "Crop e isolamento geometrico, pixel anatomici non ridisegnati; alpha32 serve solo a localizzare organi separati e bbox."
+      }
+    }
+  },
+  "erba-trinita": {
+    "leaf_type": {
+      "semplice": {
+        "source": "https://www.infoflora.ch/it/flora/hepatica-nobilis.html",
+        "referencePhoto": "assets/plants/erba-trinita-2.webp",
+        "review": "prima revisione produttore: foglia intera specifica e dettaglio bordo, verificati su fonte e foto. Hepatica corretta raster per lamina continua e3lobi, non trifogliata. In attesa revisione indipendente.",
+        "src": "assets/plant-traits/erba-trinita-leaf-type-semplice-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/erba-trinita-leaf-type-semplice-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "sha256": "3d8be9c8e2e2cc35630045bac29381580d1d2aafdc8cebb77a25ec9c9ebb96f1",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-leaves2-master-v2.png",
+        "crop": [
+          135,
+          397,
+          484,
+          746
+        ],
+        "processing": "Crop e isolamento geometrico, pixel anatomici non ridisegnati; alpha32 serve solo a localizzare organi separati e bbox."
+      }
+    },
+    "leaf_margin": {
+      "lobato": {
+        "source": "https://www.infoflora.ch/it/flora/hepatica-nobilis.html",
+        "referencePhoto": "assets/plants/erba-trinita-2.webp",
+        "review": "prima revisione produttore: foglia intera specifica e dettaglio bordo, verificati su fonte e foto. Hepatica corretta raster per lamina continua e3lobi, non trifogliata. In attesa revisione indipendente.",
+        "src": "assets/plant-traits/erba-trinita-leaf-margin-lobato-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/erba-trinita-leaf-margin-lobato-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "sha256": "82bb6993db3215903435fcdd6d97a83fbbbeeceb927d3afd3dcf289e90bd2585",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-leaves2-master-v2.png",
+        "crop": [
+          620,
+          417,
+          967,
+          728
+        ],
+        "processing": "Crop e isolamento geometrico, pixel anatomici non ridisegnati; alpha32 serve solo a localizzare organi separati e bbox."
+      }
+    }
+  },
+  "narciso-dei-poeti": {
+    "leaf_type": {
+      "semplice": {
+        "source": "https://www.parcomontisimbruini.it/flora-dettaglio.php?id=271",
+        "referencePhoto": "assets/plants/narciso-dei-poeti-1.webp",
+        "review": "prima revisione produttore: foglia intera specifica e dettaglio bordo, verificati su fonte e foto. Hepatica corretta raster per lamina continua e3lobi, non trifogliata. In attesa revisione indipendente.",
+        "src": "assets/plant-traits/narciso-dei-poeti-leaf-type-semplice-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/narciso-dei-poeti-leaf-type-semplice-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "sha256": "beb1070fff484d7cb65473328cda09e22121aa50aa63217f7f6a48316dfd546c",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-leaves2-master-v2.png",
+        "crop": [
+          271,
+          739,
+          362,
+          1153
+        ],
+        "processing": "Crop e isolamento geometrico, pixel anatomici non ridisegnati; alpha32 serve solo a localizzare organi separati e bbox."
+      }
+    },
+    "leaf_margin": {
+      "intero": {
+        "source": "https://www.parcomontisimbruini.it/flora-dettaglio.php?id=271",
+        "referencePhoto": "assets/plants/narciso-dei-poeti-1.webp",
+        "review": "prima revisione produttore: foglia intera specifica e dettaglio bordo, verificati su fonte e foto. Hepatica corretta raster per lamina continua e3lobi, non trifogliata. In attesa revisione indipendente.",
+        "src": "assets/plant-traits/narciso-dei-poeti-leaf-margin-intero-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/narciso-dei-poeti-leaf-margin-intero-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "sha256": "ac79f4ee22de17a9f40a4248b0a504d646317fc8c949b869c5ed7425e85fd913",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-leaves2-master-v2.png",
+        "crop": [
+          676,
+          768,
+          882,
+          1132
+        ],
+        "processing": "Crop e isolamento geometrico, pixel anatomici non ridisegnati; alpha32 serve solo a localizzare organi separati e bbox."
+      }
+    },
+    "flower_shape": {
+      "sei_tepali": {
+        "source": "https://www.parcomontisimbruini.it/flora-dettaglio.php?id=271",
+        "referencePhoto": "assets/plants/narciso-dei-poeti-2.webp",
+        "review": "Revisione produttore: 6tepali bianchi e paracorolla molto corta gialla con bordo rosso-arancio, non tromba lunga.",
+        "src": "assets/plant-traits/narciso-dei-poeti-flower-shape-sei_tepali-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/narciso-dei-poeti-flower-shape-sei_tepali-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "sha256": "b07fa94d78c596e4d091e4bdcda4052ff1f9e07491203e61019b56a4620289e9",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-flowers1-master-v2.png",
+        "crop": [
+          451,
+          841,
+          826,
+          1240
+        ],
+        "processing": "Crop e isolamento geometrico, pixel anatomici non ridisegnati; alpha32 serve solo a localizzare organi separati e bbox."
+      }
+    }
+  },
+  "genziana-primaticcia": {
+    "leaf_type": {
+      "semplice": {
+        "source": "https://www.infoflora.ch/it/flora/gentiana-verna.html",
+        "referencePhoto": "assets/plants/genziana-primaticcia-1.webp",
+        "review": "prima revisione produttore: foglia intera specifica e dettaglio bordo, verificati su fonte e foto. Hepatica corretta raster per lamina continua e3lobi, non trifogliata. In attesa revisione indipendente.",
+        "src": "assets/plant-traits/genziana-primaticcia-leaf-type-semplice-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/genziana-primaticcia-leaf-type-semplice-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "sha256": "5b2ca3b404c1ecfbb13c3b8ddcfefcd7417d6530d8930af19f0abf7c64e56554",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-leaves2-master-v2.png",
+        "crop": [
+          214,
+          1165,
+          378,
+          1505
+        ],
+        "processing": "Crop e isolamento geometrico, pixel anatomici non ridisegnati; alpha32 serve solo a localizzare organi separati e bbox."
+      }
+    },
+    "leaf_margin": {
+      "intero": {
+        "source": "https://www.infoflora.ch/it/flora/gentiana-verna.html",
+        "referencePhoto": "assets/plants/genziana-primaticcia-1.webp",
+        "review": "prima revisione produttore: foglia intera specifica e dettaglio bordo, verificati su fonte e foto. Hepatica corretta raster per lamina continua e3lobi, non trifogliata. In attesa revisione indipendente.",
+        "src": "assets/plant-traits/genziana-primaticcia-leaf-margin-intero-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/genziana-primaticcia-leaf-margin-intero-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "sha256": "03914ef81dab5c4ef81d12897d3505848e57197f3c356fa0b433b0d988567f8f",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-leaves2-master-v2.png",
+        "crop": [
+          682,
+          1161,
+          907,
+          1504
+        ],
+        "processing": "Crop e isolamento geometrico, pixel anatomici non ridisegnati; alpha32 serve solo a localizzare organi separati e bbox."
+      }
+    },
+    "flower_shape": {
+      "cinque_petali": {
+        "source": "https://www.infoflora.ch/it/flora/gentiana-verna.html",
+        "referencePhoto": "assets/plants/genziana-primaticcia-2.webp",
+        "review": "Revisione produttore: 5lobi corollini azzurri maggiori, gola bianca e pliche interposte piccole; calice allungato alato.",
+        "src": "assets/plant-traits/genziana-primaticcia-flower-shape-cinque_petali-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/genziana-primaticcia-flower-shape-cinque_petali-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "sha256": "7335754ce0387ff7c520c18522223b8b42e13c93efde9457a6e12fc38e82c7ce",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-flowers1-master-v2.png",
+        "crop": [
+          856,
+          822,
+          1233,
+          1243
+        ],
+        "processing": "Crop e isolamento geometrico, pixel anatomici non ridisegnati; alpha32 serve solo a localizzare organi separati e bbox."
+      }
+    }
+  },
+  "bucaneve": {
+    "leaf_type": {
+      "semplice": {
+        "source": "https://www.infoflora.ch/it/flora/galanthus-nivalis.html",
+        "referencePhoto": "assets/plants/bucaneve-2.webp",
+        "review": "Revisione produttore: Lamina lineare glauca, lati quasi paralleli, apice ottuso e carena longitudinale. Confermata lamina unica semplice. Confronto con fotografia reale e fonte botanica.",
+        "src": "assets/plant-traits/bucaneve-leaf-type-semplice-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/bucaneve-leaf-type-semplice-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "sha256": "2fa9aa5ecd054c2d2fbeb20452c89a90c0d6d0900fce888e178503aa49fd313a",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-leaves3-master-v1.png",
+        "crop": [
+          129,
+          56,
+          399,
+          422
+        ],
+        "processing": "Crop e isolamento geometrico, pixel anatomici non ridisegnati; alpha32 serve solo a localizzare organi separati e bbox."
+      }
+    }
+  },
+  "scilla-silvestre": {
+    "leaf_type": {
+      "semplice": {
+        "source": "https://www.infoflora.ch/it/flora/scilla-bifolia.html",
+        "referencePhoto": "assets/plants/pe2-natura-scilla-silvestre-dryades-004c44a4.webp",
+        "review": "Revisione produttore: Lamina lineare-lanceolata verde, apice ottuso cucullato nel riferimento, margine intero. Confermata lamina unica semplice. Confronto con fotografia reale e fonte botanica.",
+        "src": "assets/plant-traits/scilla-silvestre-leaf-type-semplice-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/scilla-silvestre-leaf-type-semplice-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "sha256": "990f4fe5863bb4df7f04773eef857b2e78f60af8100fd5d87e53408d040cf388",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-leaves3-master-v1.png",
+        "crop": [
+          530,
+          34,
+          796,
+          425
+        ],
+        "processing": "Crop e isolamento geometrico, pixel anatomici non ridisegnati; alpha32 serve solo a localizzare organi separati e bbox."
+      }
+    },
+    "flower_shape": {
+      "sei_tepali": {
+        "source": "https://www.infoflora.ch/it/flora/scilla-bifolia.html",
+        "referencePhoto": "assets/plants/scilla-silvestre-2.webp",
+        "review": "Revisione produttore:6tepali azzurri appuntiti,6antere grigio-azzurre e1stilo centrale bianco, conteggio corretto in raster dopo due revisioni.",
+        "src": "assets/plant-traits/scilla-silvestre-flower-shape-sei_tepali-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/scilla-silvestre-flower-shape-sei_tepali-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "sha256": "038d7397260ced61868b82570b6dbd13d310015c8a20089ec8c21f617e722ac4",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/scilla-flower-master-v3.png",
+        "crop": [
+          79,
+          83,
+          1168,
+          1201
+        ],
+        "processing": "Crop e isolamento geometrico, pixel anatomici non ridisegnati; alpha32 serve solo a localizzare organi separati e bbox."
+      }
+    }
+  },
+  "croco": {
+    "leaf_type": {
+      "semplice": {
+        "source": "https://www.gruppomicologicoancona.it/botanica/ritrovamenti-e-schede/schede-descrittive-botanica/crocus-neapolitanus-ker-gawl-loisel.html",
+        "referencePhoto": "assets/plants/croco-4.webp",
+        "review": "Revisione produttore: Lamina strettissima, striscia longitudinale bianca e apice acuto; non assimilata al colchico. Confermata lamina unica semplice. Confronto con fotografia reale e fonte botanica.",
+        "src": "assets/plant-traits/croco-leaf-type-semplice-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/croco-leaf-type-semplice-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "sha256": "1f47ac92f673b9073ed57f8ff22e00093d070997bf984b04f96572bb8c9b43d0",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-leaves3-master-v1.png",
+        "crop": [
+          970,
+          50,
+          1216,
+          422
+        ],
+        "processing": "Crop e isolamento geometrico, pixel anatomici non ridisegnati; alpha32 serve solo a localizzare organi separati e bbox."
+      }
+    },
+    "flower_shape": {
+      "sei_tepali": {
+        "source": "https://www.gruppomicologicoancona.it/botanica/ritrovamenti-e-schede/schede-descrittive-botanica/crocus-neapolitanus-ker-gawl-loisel.html",
+        "referencePhoto": "assets/plants/croco-2.webp",
+        "review": "Revisione produttore: 6tepali viola in2verticilli,3antere gialle e uno stimma arancio trifido, distinti dal colchico.",
+        "src": "assets/plant-traits/croco-flower-shape-sei_tepali-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/croco-flower-shape-sei_tepali-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "sha256": "a2bebd0db14648896fb58e1a6cc56abfe7f2328c4dcd9a44cf5b456d23afa5cf",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-flowers2-master-v2.png",
+        "crop": [
+          129,
+          402,
+          464,
+          771
+        ],
+        "processing": "Crop e isolamento geometrico, pixel anatomici non ridisegnati; alpha32 serve solo a localizzare organi separati e bbox."
+      }
+    }
+  },
+  "giglio-martagone": {
+    "leaf_type": {
+      "semplice": {
+        "source": "https://www.infoflora.ch/it/flora/lilium-martagon.html",
+        "referencePhoto": "assets/plants/pe2-natura-giglio-martagone-dryades-809cc98b.webp",
+        "review": "Revisione produttore: Lamina lanceolata ampia, nervature arcuate longitudinali, apice acuto e base sessile. Confermata lamina unica semplice. Confronto con fotografia reale e fonte botanica.",
+        "src": "assets/plant-traits/giglio-martagone-leaf-type-semplice-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/giglio-martagone-leaf-type-semplice-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "sha256": "87d4b25bdfd4e2a3f418bbebe5e1bf21c0ebc32d035447ad5a9f9bd4d9d5cc58",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-leaves3-master-v1.png",
+        "crop": [
+          122,
+          431,
+          411,
+          838
+        ],
+        "processing": "Crop e isolamento geometrico, pixel anatomici non ridisegnati; alpha32 serve solo a localizzare organi separati e bbox."
+      }
+    },
+    "flower_shape": {
+      "petali_rovesciati": {
+        "source": "https://www.infoflora.ch/it/flora/lilium-martagon.html",
+        "referencePhoto": "assets/plants/pe2-natura-giglio-martagone-dryades-a0b110ce.webp",
+        "review": "Revisione produttore: Fiore pendulo rosa puntinato,6tepali revoluti,6antere arancio e stilo centrale distinto.",
+        "src": "assets/plant-traits/giglio-martagone-flower-shape-petali_rovesciati-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/giglio-martagone-flower-shape-petali_rovesciati-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "sha256": "2f14bf2c222c15cbdc58f5800e6c07c4468331c87361df18dc997881b587f436",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-flowers2-master-v2.png",
+        "crop": [
+          122,
+          18,
+          446,
+          387
+        ],
+        "processing": "Crop e isolamento geometrico, pixel anatomici non ridisegnati; alpha32 serve solo a localizzare organi separati e bbox."
+      }
+    }
+  },
+  "giglio-rosso": {
+    "leaf_type": {
+      "semplice": {
+        "source": "https://www.infoflora.ch/it/flora/lilium-bulbiferum-subsp-croceum.html",
+        "referencePhoto": "assets/plants/pe2-natura-giglio-rosso-dryades-3ee413a7.webp",
+        "review": "Revisione produttore: Lamina lanceolata più stretta e allungata del martagone, sessile, senza bulbilli. Confermata lamina unica semplice. Confronto con fotografia reale e fonte botanica.",
+        "src": "assets/plant-traits/giglio-rosso-leaf-type-semplice-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/giglio-rosso-leaf-type-semplice-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "sha256": "84faeb2c3757ebaadd3f9f0ef6ffbf917c43c37ff2acee66d6eb9a260e7889ae",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-leaves3-master-v1.png",
+        "crop": [
+          538,
+          439,
+          807,
+          836
+        ],
+        "processing": "Crop e isolamento geometrico, pixel anatomici non ridisegnati; alpha32 serve solo a localizzare organi separati e bbox."
+      }
+    },
+    "flower_shape": {
+      "campanula": {
+        "source": "https://www.infoflora.ch/it/flora/lilium-bulbiferum-subsp-croceum.html",
+        "referencePhoto": "assets/plants/giglio-rosso-1.webp",
+        "review": "Revisione produttore:6tepali arancio punteggiati,6antere brune su filamenti lunghi e1stilo verde centrale. Conteggio corretto in raster dopo due revisioni.",
+        "src": "assets/plant-traits/giglio-rosso-flower-shape-campanula-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/giglio-rosso-flower-shape-campanula-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "sha256": "20081be34e269b69471dd7a412f440dfb7cd26baa63b8ef3d38ed6ea8c69a461",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/giglio-rosso-flower-master-v3.png",
+        "crop": [
+          54,
+          92,
+          1230,
+          1131
+        ],
+        "processing": "Crop e isolamento geometrico, pixel anatomici non ridisegnati; alpha32 serve solo a localizzare organi separati e bbox."
+      }
+    }
+  },
+  "cefalantera-maggiore": {
+    "leaf_type": {
+      "semplice": {
+        "source": "https://www.infoflora.ch/it/flora/cephalanthera-longifolia.html",
+        "referencePhoto": "assets/plants/pe2-natura-cefalantera-maggiore-dryades-f54c9ca6.webp",
+        "review": "Revisione produttore: Lamina lungamente lanceolata e scanalata, nervature longitudinali e apice acuto. Confermata lamina unica semplice. Confronto con fotografia reale e fonte botanica.",
+        "src": "assets/plant-traits/cefalantera-maggiore-leaf-type-semplice-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/cefalantera-maggiore-leaf-type-semplice-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "sha256": "7864d1d43f678850f3ee83daff64ccb76018db9d6ebfc5a4d798f067746b3fdd",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-leaves3-master-v1.png",
+        "crop": [
+          954,
+          430,
+          1222,
+          836
+        ],
+        "processing": "Crop e isolamento geometrico, pixel anatomici non ridisegnati; alpha32 serve solo a localizzare organi separati e bbox."
+      }
+    },
+    "flower_shape": {
+      "labello": {
+        "source": "https://www.infoflora.ch/it/flora/cephalanthera-longifolia.html",
+        "referencePhoto": "assets/plants/cefalantera-maggiore-1.webp",
+        "review": "Revisione produttore: Tepali bianchi acuti conniventi e labello con punta gialla visibile fra tepali parzialmente aperti. Nessuno sperone.",
+        "src": "assets/plant-traits/cefalantera-maggiore-flower-shape-labello-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/cefalantera-maggiore-flower-shape-labello-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "sha256": "3be9d10be89ac0e93726c4c8db3b751f8c988cbe0e9a6bb9aea397620206fe9c",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-flowers2-master-v2.png",
+        "crop": [
+          161,
+          1131,
+          462,
+          1513
+        ],
+        "processing": "Crop e isolamento geometrico, pixel anatomici non ridisegnati; alpha32 serve solo a localizzare organi separati e bbox."
+      }
+    }
+  },
+  "orchide-sambucina": {
+    "leaf_type": {
+      "semplice": {
+        "source": "https://www.infoflora.ch/it/flora/dactylorhiza-sambucina.html",
+        "referencePhoto": "assets/plants/pe2-natura-orchide-sambucina-dryades-222df38a.webp",
+        "review": "Revisione produttore: Lamina obovata più larga sopra il centro, apice ottuso, verde immacolata. Confermata lamina unica semplice. Confronto con fotografia reale e fonte botanica.",
+        "src": "assets/plant-traits/orchide-sambucina-leaf-type-semplice-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/orchide-sambucina-leaf-type-semplice-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "sha256": "b0f1763b4e5cdcbd14ce510f982a5e33a036710bd6c97295a469cd4da32219a4",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-leaves3-master-v1.png",
+        "crop": [
+          142,
+          845,
+          414,
+          1221
+        ],
+        "processing": "Crop e isolamento geometrico, pixel anatomici non ridisegnati; alpha32 serve solo a localizzare organi separati e bbox."
+      }
+    },
+    "flower_shape": {
+      "labello": {
+        "source": "https://www.infoflora.ch/it/flora/dactylorhiza-sambucina.html",
+        "referencePhoto": "assets/plants/orchide-sambucina-2.webp",
+        "review": "Revisione produttore: Fiore giallo, sepali eretto-patenti, petali in cappuccio, labello brevemente trilobato con macchie rossastre; sperone conico discendente.",
+        "src": "assets/plant-traits/orchide-sambucina-flower-shape-labello-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/orchide-sambucina-flower-shape-labello-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "sha256": "c33c23df095ba9a12d3d43ce7fd1c154198150be0dec53c6c8af5909798b9cf3",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-flowers2-master-v2.png",
+        "crop": [
+          605,
+          403,
+          922,
+          764
+        ],
+        "processing": "Crop e isolamento geometrico, pixel anatomici non ridisegnati; alpha32 serve solo a localizzare organi separati e bbox."
+      }
+    }
+  },
+  "orchide-maschia": {
+    "leaf_type": {
+      "semplice": {
+        "source": "https://www.infoflora.ch/it/flora/orchis-mascula-subsp-mascula.html",
+        "referencePhoto": "assets/plants/orchide-maschia-2.webp",
+        "review": "Revisione produttore: Foglia basale oblungo-lanceolata, esempio verde immacolato documentato da Flora Helvetica; margine intero. Confermata lamina unica semplice. Confronto con fotografia reale e fonte botanica.",
+        "src": "assets/plant-traits/orchide-maschia-leaf-type-semplice-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/orchide-maschia-leaf-type-semplice-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "sha256": "9fb7c91d808bf7491bc1a0af23818f5621d5c4dc69d959da267167a44a76b5ef",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-leaves3-master-v1.png",
+        "crop": [
+          549,
+          846,
+          801,
+          1226
+        ],
+        "processing": "Crop e isolamento geometrico, pixel anatomici non ridisegnati; alpha32 serve solo a localizzare organi separati e bbox."
+      }
+    },
+    "flower_shape": {
+      "labello": {
+        "source": "https://www.infoflora.ch/it/flora/orchis-mascula-subsp-mascula.html",
+        "referencePhoto": "assets/plants/pe2-natura-orchide-maschia-dryades-7f4b824b.webp",
+        "review": "Revisione produttore: Sepali laterali eretto-riflessi, casco centrale, labello trilobato con lobo mediano ulteriormente lobulato, gola chiara punteggiata porpora.",
+        "src": "assets/plant-traits/orchide-maschia-flower-shape-labello-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/orchide-maschia-flower-shape-labello-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "sha256": "7c9b8b5084ee5e4e99a30bc06492d80ffe3760958f3244d071f000351eaa7d99",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-flowers2-master-v2.png",
+        "crop": [
+          172,
+          768,
+          430,
+          1141
+        ],
+        "processing": "Crop e isolamento geometrico, pixel anatomici non ridisegnati; alpha32 serve solo a localizzare organi separati e bbox."
+      }
+    },
+    "leaf_margin": {
+      "intero": {
+        "source": "https://www.infoflora.ch/it/flora/orchis-mascula-subsp-mascula.html",
+        "referencePhoto": "assets/plants/orchide-maschia-2.webp",
+        "review": "Revisione produttore: Dettaglio del margine intero continuo, nervature longitudinali parallele/arcuate, nessun dente.",
+        "src": "assets/plant-traits/orchide-maschia-leaf-margin-intero-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/orchide-maschia-leaf-margin-intero-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "sha256": "9d9fcc1696c5e676af1b06df190ea6d64b74aadaa22979bd33220f2e473f99f9",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-flowers2-master-v2.png",
+        "crop": [
+          644,
+          1125,
+          916,
+          1515
+        ],
+        "processing": "Crop e isolamento geometrico, pixel anatomici non ridisegnati; alpha32 serve solo a localizzare organi separati e bbox."
+      }
+    }
+  },
+  "orchide-purpurea": {
+    "leaf_type": {
+      "semplice": {
+        "source": "https://www.infoflora.ch/it/flora/orchis-purpurea.html",
+        "referencePhoto": "assets/plants/pe2-natura-orchide-purpurea-d5c818c3.webp",
+        "review": "Revisione produttore: Foglia basale oblungo-lanceolata ampia con nervature longitudinali e base guainante. Confermata lamina unica semplice. Confronto con fotografia reale e fonte botanica.",
+        "src": "assets/plant-traits/orchide-purpurea-leaf-type-semplice-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/orchide-purpurea-leaf-type-semplice-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "sha256": "5b7d64e53f0641dfd9b43e66d3db136bc53b468c5b1c776f31783470852db681",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-leaves3-master-v1.png",
+        "crop": [
+          944,
+          835,
+          1197,
+          1228
+        ],
+        "processing": "Crop e isolamento geometrico, pixel anatomici non ridisegnati; alpha32 serve solo a localizzare organi separati e bbox."
+      }
+    },
+    "flower_shape": {
+      "labello": {
+        "source": "https://www.infoflora.ch/it/flora/orchis-purpurea.html",
+        "referencePhoto": "assets/plants/pe2-natura-orchide-purpurea-dryades-2ab1266d.webp",
+        "review": "Revisione produttore: Casco porpora scuro, labello chiaro con macchie violacee profondamente trilobato e lobo centrale bifido.",
+        "src": "assets/plant-traits/orchide-purpurea-flower-shape-labello-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/orchide-purpurea-flower-shape-labello-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "sha256": "8f36dbb2e7f1b531cb8e37cc7658e6063805032ae9f74256382b8d772b05768d",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-flowers2-master-v2.png",
+        "crop": [
+          618,
+          759,
+          890,
+          1123
+        ],
+        "processing": "Crop e isolamento geometrico, pixel anatomici non ridisegnati; alpha32 serve solo a localizzare organi separati e bbox."
+      }
+    }
+  },
+  "aristolochia": {
+    "flower_shape": {
+      "tubo_labbra": {
+        "source": "https://www.infoflora.ch/it/flora/aristolochia-clematitis.html",
+        "referencePhoto": "assets/plants/aristolochia-1.webp",
+        "review": "Revisione produttore: Fiore giallo laterale con utricolo basale, tubo lungo e un solo labbro superiore. Apertura presente al raccordo sotto il labbro.",
+        "src": "assets/plant-traits/aristolochia-flower-shape-tubo_labbra-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/aristolochia-flower-shape-tubo_labbra-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "sha256": "e6796f4aab15e74781506f183e66be4fa28a5114e7d9bc4dda261c6659d9b5a4",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/new-flowers1-master-v2.png",
+        "crop": [
+          126,
+          414,
+          430,
+          848
+        ],
+        "processing": "Crop e isolamento geometrico, pixel anatomici non ridisegnati; alpha32 serve solo a localizzare organi separati e bbox."
       }
     }
   }

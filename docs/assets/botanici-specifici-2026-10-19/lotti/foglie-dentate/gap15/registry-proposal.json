@@ -1,0 +1,635 @@
+{
+  "fragolina": {
+    "leaf_margin": {
+      "dentato": {
+        "src": "assets/plant-traits/fragolina-leaf_margin-dentato.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/candidates/fragolina-leaf_margin-dentato.webp",
+        "sha256": "5f9419970c435245f9ffa6022b3233a5462c716a540deeffece5586aeaa7297d",
+        "source": "https://www.infoflora.ch/it/flora/fragaria-vesca.html",
+        "referencePhoto": "assets/plants/fragolina-2.webp",
+        "review": "Revisione raster contro descrizione e foto della specie: Dettaglio del bordo di una fogliolina.",
+        "scope": "species",
+        "caption": "Dettaglio del bordo di una fogliolina.",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/m01-margini-sambuco.png",
+        "status": "candidate_reviewed_by_worker"
+      }
+    }
+  },
+  "rosa-canina": {
+    "leaf_margin": {
+      "dentato": {
+        "src": "assets/plant-traits/rosa-canina-leaf_margin-dentato.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/candidates/rosa-canina-leaf_margin-dentato.webp",
+        "sha256": "3b684083df8c8059586d8422595ab0a57b6fa7e449e9e53afaec1bb46e246c77",
+        "source": "https://www.infoflora.ch/it/flora/rosa-canina.html",
+        "referencePhoto": "assets/plants/rosa-canina-2.webp",
+        "review": "Revisione raster contro descrizione e foto della specie: Dettaglio del bordo di una fogliolina.",
+        "scope": "species",
+        "caption": "Dettaglio del bordo di una fogliolina.",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/m01-margini-sambuco.png",
+        "status": "candidate_reviewed_by_worker"
+      }
+    }
+  },
+  "sambuco": {
+    "leaf_type": {
+      "composta": {
+        "src": "assets/plant-traits/sambuco-leaf_type-composta.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/candidates/sambuco-leaf_type-composta.webp",
+        "sha256": "5c8c76f78d4ad12ed117ca17235ec90f623a3187c1222439ed05d022eb8cc6bc",
+        "source": "https://www.infoflora.ch/it/flora/sambucus-nigra.html",
+        "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TS142753.jpg",
+        "review": "Revisione raster contro descrizione e foto della specie: Foglia imparipennata a cinque foglioline; numero esemplificativo.",
+        "scope": "species",
+        "caption": "Foglia imparipennata a cinque foglioline; numero esemplificativo.",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/m01-margini-sambuco.png",
+        "status": "candidate_reviewed_by_worker"
+      }
+    },
+    "leaf_margin": {
+      "dentato": {
+        "src": "assets/plant-traits/sambuco-leaf_margin-dentato.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/candidates/sambuco-leaf_margin-dentato.webp",
+        "sha256": "eec8e7f4260f298924fb2e0c817ffdf2bf31c79550f9f6830c71f266766e9e32",
+        "source": "https://www.infoflora.ch/it/flora/sambucus-nigra.html",
+        "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TS142753.jpg",
+        "review": "Revisione raster contro descrizione e foto della specie: Bordo di una fogliolina.",
+        "scope": "species",
+        "caption": "Bordo di una fogliolina.",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/m01-margini-sambuco.png",
+        "status": "candidate_reviewed_by_worker"
+      }
+    },
+    "fruit_type": {
+      "carnoso": {
+        "src": "assets/plant-traits/sambuco-fruit_type-carnoso.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/candidates/sambuco-fruit_type-carnoso.webp",
+        "sha256": "f67d310d8856984e453d7f5503427b5b5bbdc370ae50c1d62ffd7c07a161b791",
+        "source": "https://www.infoflora.ch/it/flora/sambucus-nigra.html",
+        "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TSB30223.jpg",
+        "review": "Revisione raster contro descrizione e foto della specie: Frutti maturi su corimbo pendente.",
+        "scope": "species",
+        "caption": "Frutti maturi su corimbo pendente.",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/m03-ebbio-sambuco-organi.png",
+        "status": "candidate_reviewed_by_worker"
+      }
+    }
+  },
+  "finocchietto": {
+    "leaf_type": {
+      "molto_divisa_fine": {
+        "src": "assets/plant-traits/finocchietto-leaf_type-molto_divisa_fine.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/candidates/finocchietto-leaf_type-molto_divisa_fine.webp",
+        "sha256": "8a8d40e74cd18c5be99937721ca99bdfe72cff36275534adafb03ea759e87b60",
+        "source": "https://www.infoflora.ch/it/flora/foeniculum-vulgare.html",
+        "referencePhoto": "https://dryades.units.it/dryades/plants/foto/IMG6205JPG1595931513.jpg",
+        "review": "Revisione raster contro descrizione e foto della specie: Foglia divisa in segmenti filiformi.",
+        "scope": "species",
+        "caption": "Foglia divisa in segmenti filiformi.",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/m02-finocchio-cicuta-v2.png",
+        "status": "candidate_reviewed_by_worker"
+      }
+    },
+    "fruit_type": {
+      "secco_piccolo": {
+        "src": "assets/plant-traits/finocchietto-fruit_type-secco_piccolo.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/candidates/finocchietto-fruit_type-secco_piccolo.webp",
+        "sha256": "0a904e5c4cb65d1fdd26c5253cb3319f7b7f5122a4ace0835e60e62a1fd5dd47",
+        "source": "https://www.infoflora.ch/it/flora/foeniculum-vulgare.html",
+        "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TSB19538.jpg",
+        "review": "Revisione raster contro descrizione e foto della specie: Frutto secco maturo, intero.",
+        "scope": "species",
+        "caption": "Frutto secco maturo, intero.",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/m02-finocchio-cicuta-v2.png",
+        "status": "candidate_reviewed_by_worker"
+      }
+    }
+  },
+  "cicuta": {
+    "leaf_type": {
+      "molto_divisa_larga": {
+        "src": "assets/plant-traits/cicuta-leaf_type-molto_divisa_larga.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/candidates/cicuta-leaf_type-molto_divisa_larga.webp",
+        "sha256": "37120f25573f75276765c253860fa427ae926f039f09c4311325fe4aa0068b5a",
+        "source": "https://www.infoflora.ch/it/flora/conium-maculatum.html",
+        "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TS187931.jpg",
+        "review": "Revisione raster contro descrizione e foto della specie: Foglia molto divisa con segmenti larghi.",
+        "scope": "species",
+        "caption": "Foglia molto divisa con segmenti larghi.",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/m02-finocchio-cicuta-v2.png",
+        "status": "candidate_reviewed_by_worker"
+      }
+    },
+    "leaf_margin": {
+      "dentato": {
+        "src": "assets/plant-traits/cicuta-leaf_margin-dentato.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/candidates/cicuta-leaf_margin-dentato.webp",
+        "sha256": "45c843a244e80fbbefa97e5dc91d11dcb033904f1a5f734bde71e88edae6b4f6",
+        "source": "https://www.infoflora.ch/it/flora/conium-maculatum.html",
+        "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TS187931.jpg",
+        "review": "Revisione raster contro descrizione e foto della specie: Dettaglio di un segmento terminale.",
+        "scope": "species",
+        "caption": "Dettaglio di un segmento terminale.",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/m02-finocchio-cicuta-v2.png",
+        "status": "candidate_reviewed_by_worker"
+      }
+    },
+    "flower_shape": {
+      "ombrella": {
+        "src": "assets/plant-traits/cicuta-flower_shape-ombrella.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/candidates/cicuta-flower_shape-ombrella.webp",
+        "sha256": "29bf61c7217c87dc7f3e79d554f8dfe6d21da25c8396877f78507c62b3144bb4",
+        "source": "https://www.infoflora.ch/it/flora/conium-maculatum.html",
+        "referencePhoto": "assets/plants/cicuta-2.webp",
+        "review": "Revisione raster contro descrizione e foto della specie: Ombrella composta; dieci raggi principali nello schema.",
+        "scope": "species",
+        "caption": "Ombrella composta; dieci raggi principali nello schema.",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/m04-cicuta-achillea-v2.png",
+        "status": "candidate_reviewed_by_worker"
+      }
+    },
+    "fruit_type": {
+      "secco_piccolo": {
+        "src": "assets/plant-traits/cicuta-fruit_type-secco_piccolo.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/candidates/cicuta-fruit_type-secco_piccolo.webp",
+        "sha256": "3524fdd9d5cc86bb4395714a2985291f6bf992709e6a8a6329b5a2a46bef1607",
+        "source": "https://www.infoflora.ch/it/flora/conium-maculatum.html",
+        "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TS190244.jpg",
+        "review": "Revisione raster contro descrizione e foto della specie: Frutto immaturo ingrandito; coste ondulate.",
+        "scope": "species",
+        "caption": "Frutto immaturo ingrandito; coste ondulate.",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/m04-cicuta-achillea-v1-partial.png",
+        "status": "candidate_reviewed_by_worker"
+      }
+    }
+  },
+  "ebbio": {
+    "leaf_margin": {
+      "dentato": {
+        "src": "assets/plant-traits/ebbio-leaf_margin-dentato.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/candidates/ebbio-leaf_margin-dentato.webp",
+        "sha256": "a1f9522a83ca3aafa4258a3f94bf0b204229a8ad50b46876801e51c94e516758",
+        "source": "https://www.infoflora.ch/it/flora/sambucus-ebulus.html",
+        "referencePhoto": "assets/plants/ebbio-3.webp",
+        "review": "Revisione raster contro descrizione e foto della specie: Bordo di una fogliolina.",
+        "scope": "species",
+        "caption": "Bordo di una fogliolina.",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/m03-ebbio-sambuco-organi.png",
+        "status": "candidate_reviewed_by_worker"
+      }
+    },
+    "flower_shape": {
+      "ombrella": {
+        "src": "assets/plant-traits/ebbio-flower_shape-ombrella.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/candidates/ebbio-flower_shape-ombrella.webp",
+        "sha256": "de0b62df8e6f0ce6feb07d4de24e4ac273928804575e2c2d8a3b46d04237eaa0",
+        "source": "https://www.infoflora.ch/it/flora/sambucus-ebulus.html",
+        "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TSB96703.jpg",
+        "review": "Revisione raster contro descrizione e foto della specie: Corimbo: le ramificazioni partono da altezze diverse.",
+        "scope": "species",
+        "caption": "Corimbo: le ramificazioni partono da altezze diverse.",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/m03-ebbio-sambuco-organi.png",
+        "status": "candidate_reviewed_by_worker"
+      }
+    },
+    "fruit_type": {
+      "carnoso": {
+        "src": "assets/plant-traits/ebbio-fruit_type-carnoso.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/candidates/ebbio-fruit_type-carnoso.webp",
+        "sha256": "5501aca088d90e0ba72081aad2db3acbaea6c43dd7b9862ca3dbba2e8fd53229",
+        "source": "https://www.infoflora.ch/it/flora/sambucus-ebulus.html",
+        "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TSB28850.jpg",
+        "review": "Revisione raster contro descrizione e foto della specie: Frutti maturi su corimbo eretto.",
+        "scope": "species",
+        "caption": "Frutti maturi su corimbo eretto.",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/m03-ebbio-sambuco-organi.png",
+        "status": "candidate_reviewed_by_worker"
+      }
+    }
+  },
+  "achillea-ligure": {
+    "leaf_type": {
+      "molto_divisa_larga": {
+        "src": "assets/plant-traits/achillea-ligure-leaf_type-molto_divisa_larga.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/candidates/achillea-ligure-leaf_type-molto_divisa_larga.webp",
+        "sha256": "284feec8b30361cd98ac2aa63908fa92cc6d8cbf88ef9b083e95e7a0f2ac23d1",
+        "source": "https://dryades.units.it/Roma/index.php?id=5655&procedure=taxon_page",
+        "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TSB53900.jpg",
+        "review": "Revisione raster contro descrizione e foto della specie: Foglia a segmenti larghi ripetutamente divisi.",
+        "scope": "species",
+        "caption": "Foglia a segmenti larghi ripetutamente divisi.",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/m04-cicuta-achillea-v2.png",
+        "status": "candidate_reviewed_by_worker"
+      }
+    },
+    "flower_shape": {
+      "capolino": {
+        "src": "assets/plant-traits/achillea-ligure-flower_shape-capolino.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/candidates/achillea-ligure-flower_shape-capolino.webp",
+        "sha256": "9f7c99b68aecf5a28cef562fdad7231de7728d7603101b4ab44d31be88ea5674",
+        "source": "https://dryades.units.it/Roma/index.php?id=5655&procedure=taxon_page",
+        "referencePhoto": "assets/plants/achillea-ligure-1.webp",
+        "review": "Revisione raster contro descrizione e foto della specie: Un singolo capolino ingrandito.",
+        "scope": "species",
+        "caption": "Un singolo capolino ingrandito.",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/m04-cicuta-achillea-v1-partial.png",
+        "status": "candidate_reviewed_by_worker"
+      }
+    }
+  },
+  "iperico": {
+    "leaf_type": {
+      "semplice": {
+        "src": "assets/plant-traits/iperico-leaf_type-semplice.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/candidates/iperico-leaf_type-semplice.webp",
+        "sha256": "dfa0a3af8bc3d153ef4770ab15423a3bf5ca7470b9e20baa5ed93487d199453b",
+        "source": "https://www.infoflora.ch/it/flora/hypericum-perforatum-subsp-perforatum.html",
+        "referencePhoto": "https://dryades.units.it/dryades/plants/foto/IMG7155JPG1596120788.jpg",
+        "review": "Revisione raster contro descrizione e foto della specie: Foglia semplice con ghiandole chiare e punti scuri marginali.",
+        "scope": "species",
+        "caption": "Foglia semplice con ghiandole chiare e punti scuri marginali.",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/m05-iperico.png",
+        "status": "candidate_reviewed_by_worker"
+      }
+    },
+    "leaf_margin": {
+      "intero": {
+        "src": "assets/plant-traits/iperico-leaf_margin-intero.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/candidates/iperico-leaf_margin-intero.webp",
+        "sha256": "19e099dce962d66528e05ad7fb21122f1ae8785a7fce13a70521b426376b29bd",
+        "source": "https://www.infoflora.ch/it/flora/hypericum-perforatum-subsp-perforatum.html",
+        "referencePhoto": "https://dryades.units.it/dryades/plants/foto/IMG7155JPG1596120788.jpg",
+        "review": "Revisione raster contro descrizione e foto della specie: Bordo intero ingrandito.",
+        "scope": "species",
+        "caption": "Bordo intero ingrandito.",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/m05-iperico.png",
+        "status": "candidate_reviewed_by_worker"
+      }
+    },
+    "flower_shape": {
+      "cinque_petali": {
+        "src": "assets/plant-traits/iperico-flower_shape-cinque_petali.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/candidates/iperico-flower_shape-cinque_petali.webp",
+        "sha256": "5d5cf82b02ef5580bacaaf1c73da21189f47806a7d80428b77b6395da0bc7680",
+        "source": "https://www.infoflora.ch/it/flora/hypericum-perforatum-subsp-perforatum.html",
+        "referencePhoto": "assets/plants/iperico-1.webp",
+        "review": "Revisione raster contro descrizione e foto della specie: Cinque petali gialli; stami schematizzati.",
+        "scope": "species",
+        "caption": "Cinque petali gialli; stami schematizzati.",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/m05-iperico.png",
+        "status": "candidate_reviewed_by_worker"
+      }
+    },
+    "fruit_type": {
+      "capsula": {
+        "src": "assets/plant-traits/iperico-fruit_type-capsula.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/candidates/iperico-fruit_type-capsula.webp",
+        "sha256": "1f84872f6b343ed45ae5611b4e97cec17837d65b51c48eae58b3fab8bcea0e0f",
+        "source": "https://www.infoflora.ch/it/flora/hypericum-perforatum-subsp-perforatum.html",
+        "referencePhoto": "https://dryades.units.it/dryades/plants/foto/IMG7216JPG1596122945.jpg",
+        "review": "NON APPROVATO — Sospeso dal coordinatore: fruit_color è null; crema del frutto accanto al calice verde può essere letto come colore naturale. La caption non basta; richiede revisione visiva indipendente prima dell’integrazione.",
+        "scope": "species",
+        "caption": "Capsula chiusa, schema della forma; colore non rappresentato.",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/m05-iperico.png",
+        "status": "pending_visual_revision",
+        "statusReason": "Sospeso dal coordinatore: fruit_color è null; crema del frutto accanto al calice verde può essere letto come colore naturale. La caption non basta; richiede revisione visiva indipendente prima dell’integrazione."
+      }
+    }
+  },
+  "silene": {
+    "leaf_type": {
+      "semplice": {
+        "src": "assets/plant-traits/silene-leaf_type-semplice.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/candidates/silene-leaf_type-semplice.webp",
+        "sha256": "da6b5b96ea27697ce708d01c3bfdc7924283ab17db0b712ef3b7b35af9114062",
+        "source": "https://www.infoflora.ch/it/flora/silene-vulgaris.html",
+        "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TSB49200.jpg",
+        "review": "Revisione raster contro descrizione e foto della specie: Foglia semplice lanceolata.",
+        "scope": "species",
+        "caption": "Foglia semplice lanceolata.",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/m06-silene-raponzolo.png",
+        "status": "candidate_reviewed_by_worker"
+      }
+    },
+    "flower_shape": {
+      "cinque_petali": {
+        "src": "assets/plant-traits/silene-flower_shape-cinque_petali.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/candidates/silene-flower_shape-cinque_petali.webp",
+        "sha256": "72bfdea96dcb78079d39ed4ef9faf5a470dd4c601bddaa7f2bc0c754424b6e56",
+        "source": "https://www.infoflora.ch/it/flora/silene-vulgaris.html",
+        "referencePhoto": "assets/plants/silene-1.webp",
+        "review": "Revisione raster contro descrizione e foto della specie: Vista laterale: calice rigonfio e petali bifidi.",
+        "scope": "species",
+        "caption": "Vista laterale: calice rigonfio e petali bifidi.",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/m06-silene-raponzolo.png",
+        "status": "candidate_reviewed_by_worker"
+      }
+    },
+    "fruit_type": {
+      "capsula": {
+        "src": "assets/plant-traits/silene-fruit_type-capsula.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/candidates/silene-fruit_type-capsula.webp",
+        "sha256": "0c5553887c34982146de91f813a4d3fb3e0a348fc9677d4590039e61fa9e499b",
+        "source": "https://www.infoflora.ch/it/flora/silene-vulgaris.html",
+        "referencePhoto": "https://dryades.units.it/dryades/plants/foto/IMG6910JPG1596103683.jpg",
+        "review": "NON APPROVATO — Sospeso dal coordinatore: fruit_color è null; crema del frutto accanto al calice verde può essere letto come colore naturale. La caption non basta; richiede revisione visiva indipendente prima dell’integrazione.",
+        "scope": "species",
+        "caption": "Capsula aperta a sei denti; schema, colore non rappresentato.",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/m06-silene-raponzolo.png",
+        "status": "pending_visual_revision",
+        "statusReason": "Sospeso dal coordinatore: fruit_color è null; crema del frutto accanto al calice verde può essere letto come colore naturale. La caption non basta; richiede revisione visiva indipendente prima dell’integrazione."
+      }
+    }
+  },
+  "raponzolo": {
+    "flower_shape": {
+      "campanula": {
+        "src": "assets/plant-traits/raponzolo-flower_shape-campanula.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/candidates/raponzolo-flower_shape-campanula.webp",
+        "sha256": "30eeae9d549e2952f81608619128478d4390694c8acbf6ceb70f31168c35a520",
+        "source": "https://www.infoflora.ch/it/flora/campanula-rapunculus.html",
+        "referencePhoto": "assets/plants/raponzolo-1.webp",
+        "review": "Revisione raster contro descrizione e foto della specie: Corolla a campana aperta con cinque lobi.",
+        "scope": "species",
+        "caption": "Corolla a campana aperta con cinque lobi.",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/m06-silene-raponzolo.png",
+        "status": "candidate_reviewed_by_worker"
+      }
+    },
+    "leaf_type": {
+      "semplice": {
+        "src": "assets/plant-traits/raponzolo-leaf_type-semplice.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/candidates/raponzolo-leaf_type-semplice.webp",
+        "sha256": "d16335addd3502840daf2d59b1b44bf5db8994f7411b1bc67859892deec54754",
+        "source": "https://www.infoflora.ch/it/flora/campanula-rapunculus.html",
+        "referencePhoto": "https://dryades.units.it/dryades/plants/foto/IMG5563JPG1589873452jpg1678445224.jpg",
+        "review": "Revisione raster contro descrizione e foto della specie: Foglia inferiore; forma diversa dalle foglie alte del fusto.",
+        "scope": "species",
+        "caption": "Foglia inferiore; forma diversa dalle foglie alte del fusto.",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/m07-raponzolo-primula.png",
+        "status": "candidate_reviewed_by_worker"
+      }
+    },
+    "leaf_margin": {
+      "dentato": {
+        "src": "assets/plant-traits/raponzolo-leaf_margin-dentato.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/candidates/raponzolo-leaf_margin-dentato.webp",
+        "sha256": "691326d6f07e0cc7fe89dd3b00a6d227b034281c7af6b873874e1d8b1c986a74",
+        "source": "https://www.infoflora.ch/it/flora/campanula-rapunculus.html",
+        "referencePhoto": "https://dryades.units.it/dryades/plants/foto/IMG5563JPG1589873452jpg1678445224.jpg",
+        "review": "Revisione raster contro descrizione e foto della specie: Bordo con piccoli denti distanziati.",
+        "scope": "species",
+        "caption": "Bordo con piccoli denti distanziati.",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/m07-raponzolo-primula.png",
+        "status": "candidate_reviewed_by_worker"
+      }
+    }
+  },
+  "primula": {
+    "leaf_type": {
+      "semplice": {
+        "src": "assets/plant-traits/primula-leaf_type-semplice.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/candidates/primula-leaf_type-semplice.webp",
+        "sha256": "ce4805c0c1e85758c2b181fa855638294bdf3437970f11b0e7f44b108beb1c1f",
+        "source": "https://plants.ces.ncsu.edu/plants/primula-vulgaris/",
+        "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TSB42911.jpg",
+        "review": "Revisione raster contro descrizione e foto della specie: Foglia basale con nervatura reticolata.",
+        "scope": "species",
+        "caption": "Foglia basale con nervatura reticolata.",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/m07-raponzolo-primula.png",
+        "status": "candidate_reviewed_by_worker"
+      }
+    },
+    "leaf_margin": {
+      "dentato": {
+        "src": "assets/plant-traits/primula-leaf_margin-dentato.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/candidates/primula-leaf_margin-dentato.webp",
+        "sha256": "68e5e7d1570fef3272d5c9541dfbbd96ac1ab883983822da191dd508fbff66f6",
+        "source": "https://plants.ces.ncsu.edu/plants/primula-vulgaris/",
+        "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TSB42911.jpg",
+        "review": "Revisione raster contro descrizione e foto della specie: Bordo crenato-dentato ingrandito.",
+        "scope": "species",
+        "caption": "Bordo crenato-dentato ingrandito.",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/m07-raponzolo-primula.png",
+        "status": "candidate_reviewed_by_worker"
+      }
+    },
+    "flower_shape": {
+      "cinque_petali": {
+        "src": "assets/plant-traits/primula-flower_shape-cinque_petali.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/candidates/primula-flower_shape-cinque_petali.webp",
+        "sha256": "f814a57c3f9d46d4643d998ae08ee177789b0684b01c27ff33d86d30bdecc8bf",
+        "source": "https://plants.ces.ncsu.edu/plants/primula-vulgaris/",
+        "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TSB42910.jpg",
+        "review": "Revisione raster contro descrizione e foto della specie: Corolla a cinque lobi smarginati, saldati alla base, vista di fronte.",
+        "scope": "species",
+        "caption": "Corolla a cinque lobi smarginati, saldati alla base, vista di fronte.",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/m09-primula-margherita-v1-partial.png",
+        "status": "candidate_reviewed_by_worker"
+      }
+    }
+  },
+  "viola-mammola": {
+    "leaf_type": {
+      "semplice": {
+        "src": "assets/plant-traits/viola-mammola-leaf_type-semplice.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/candidates/viola-mammola-leaf_type-semplice.webp",
+        "sha256": "aa69754d4ad2ca01d43e85e564b372265edc0ce03f1e7270916afcc40f9361f9",
+        "source": "https://www.infoflora.ch/it/flora/viola-odorata.html",
+        "referencePhoto": "https://dryades.units.it/dryades/plants/foto/IMG8549JPG1584357080.jpg",
+        "review": "Revisione raster contro descrizione e foto della specie: Foglia semplice cordata-reniforme, a bordo crenato.",
+        "scope": "species",
+        "caption": "Foglia semplice cordata-reniforme, a bordo crenato.",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/m08-viola-v1-partial.png",
+        "status": "candidate_reviewed_by_worker"
+      }
+    },
+    "leaf_margin": {
+      "dentato": {
+        "src": "assets/plant-traits/viola-mammola-leaf_margin-dentato.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/candidates/viola-mammola-leaf_margin-dentato.webp",
+        "sha256": "0ac48a089ae181d2662ef0bbde03d19ff9997b357daf6bdb771d18dd4aeffc8f",
+        "source": "https://www.infoflora.ch/it/flora/viola-odorata.html",
+        "referencePhoto": "https://dryades.units.it/dryades/plants/foto/IMG8549JPG1584357080.jpg",
+        "review": "Revisione raster contro descrizione e foto della specie: Dettaglio del bordo crenato con denti arrotondati.",
+        "scope": "species",
+        "caption": "Dettaglio del bordo crenato con denti arrotondati.",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/m08-viola-v1-partial.png",
+        "status": "candidate_reviewed_by_worker"
+      }
+    },
+    "flower_shape": {
+      "cinque_petali": {
+        "src": "assets/plant-traits/viola-mammola-flower_shape-cinque_petali.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/candidates/viola-mammola-flower_shape-cinque_petali.webp",
+        "sha256": "3c7fb276ef31135e66237164c8509642ab97573b84acaa1663070f21588d4987",
+        "source": "https://www.infoflora.ch/it/flora/viola-odorata.html",
+        "referencePhoto": "https://dryades.units.it/dryades/plants/foto/IMG7136JPG1679063637.jpg",
+        "review": "Revisione raster contro descrizione e foto della specie: Fiore visto di fronte: cinque petali disuguali, simmetria bilaterale.",
+        "scope": "species",
+        "caption": "Fiore visto di fronte: cinque petali disuguali, simmetria bilaterale.",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/m08-viola-v1-partial.png",
+        "status": "candidate_reviewed_by_worker"
+      }
+    },
+    "fruit_type": {
+      "capsula": {
+        "src": "assets/plant-traits/viola-mammola-fruit_type-capsula.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/candidates/viola-mammola-fruit_type-capsula.webp",
+        "sha256": "7fa8539aabb61864be8ca00eac4fed2c24fdef4c500e0645fb581f18b9602c51",
+        "source": "https://www.infoflora.ch/it/flora/viola-odorata.html",
+        "referencePhoto": "https://dryades.units.it/dryades/plants/foto/IMG3182JPG1585641725.jpg",
+        "review": "NON APPROVATO — Sospeso dal coordinatore: fruit_color è null; crema del frutto accanto al calice verde può essere letto come colore naturale. La caption non basta; richiede revisione visiva indipendente prima dell’integrazione.",
+        "scope": "species",
+        "caption": "Capsula pubescente chiusa, pendula. Schema del frutto: colore non rappresentato.",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/m11-ciclamini-organi-corretti.png",
+        "status": "pending_visual_revision",
+        "statusReason": "Sospeso dal coordinatore: fruit_color è null; crema del frutto accanto al calice verde può essere letto come colore naturale. La caption non basta; richiede revisione visiva indipendente prima dell’integrazione."
+      }
+    }
+  },
+  "margherita": {
+    "flower_shape": {
+      "capolino": {
+        "src": "assets/plant-traits/margherita-flower_shape-capolino.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/candidates/margherita-flower_shape-capolino.webp",
+        "sha256": "6921f72fe5a3b4e9d1ab65892a7860db2a0e6d8a937ec960c826b109863d4531",
+        "source": "https://www.infoflora.ch/it/flora/leucanthemum-vulgare.html",
+        "referencePhoto": "assets/plants/margherita-1.webp",
+        "review": "Revisione raster contro descrizione e foto della specie: Capolino: fiori ligulati bianchi attorno al disco di fiori tubulosi gialli.",
+        "scope": "species",
+        "caption": "Capolino: fiori ligulati bianchi attorno al disco di fiori tubulosi gialli.",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/m09-primula-margherita-v1-partial.png",
+        "status": "candidate_reviewed_by_worker"
+      }
+    },
+    "leaf_margin": {
+      "dentato": {
+        "src": "assets/plant-traits/margherita-leaf_margin-dentato.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/candidates/margherita-leaf_margin-dentato.webp",
+        "sha256": "6510bc6d66f927169020dd7c34a3455ea02e42f13f624639af1378f331c947d1",
+        "source": "https://www.infoflora.ch/it/flora/leucanthemum-vulgare.html",
+        "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TSB22410.jpg",
+        "review": "Revisione raster contro descrizione e foto della specie: Bordo di foglia caulina: denti e incisioni più profonde verso la base.",
+        "scope": "species",
+        "caption": "Bordo di foglia caulina: denti e incisioni più profonde verso la base.",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/m09-primula-margherita-v1-partial.png",
+        "status": "candidate_reviewed_by_worker"
+      },
+      "lobato": {
+        "src": "assets/plant-traits/margherita-leaf_margin-lobato.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/candidates/margherita-leaf_margin-lobato.webp",
+        "sha256": "6510bc6d66f927169020dd7c34a3455ea02e42f13f624639af1378f331c947d1",
+        "source": "https://www.infoflora.ch/it/flora/leucanthemum-vulgare.html",
+        "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TSB22410.jpg",
+        "review": "Revisione raster contro descrizione e foto della specie: Bordo di foglia caulina: denti e incisioni più profonde verso la base.",
+        "scope": "species",
+        "caption": "Bordo di foglia caulina: denti e incisioni più profonde verso la base.",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/m09-primula-margherita-v1-partial.png",
+        "status": "candidate_reviewed_by_worker"
+      }
+    },
+    "leaf_type": {
+      "semplice": {
+        "src": "assets/plant-traits/margherita-leaf_type-semplice.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/candidates/margherita-leaf_type-semplice.webp",
+        "sha256": "410204a0428fc1e782a936279c661d0b5efddd55a48a9f69d0e6e69aa4986727",
+        "source": "https://www.infoflora.ch/it/flora/leucanthemum-vulgare.html",
+        "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TSB22410.jpg",
+        "review": "Revisione raster contro descrizione e foto della specie: Foglia caulina allungata: apice ottuso dentato e base più profondamente incisa.",
+        "scope": "species",
+        "caption": "Foglia caulina allungata: apice ottuso dentato e base più profondamente incisa.",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/m11-ciclamini-organi-corretti.png",
+        "status": "candidate_reviewed_by_worker"
+      }
+    }
+  },
+  "ciclamino-autunnale": {
+    "leaf_type": {
+      "semplice": {
+        "src": "assets/plant-traits/ciclamino-autunnale-leaf_type-semplice.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/candidates/ciclamino-autunnale-leaf_type-semplice.webp",
+        "sha256": "eaf172862e1ae70ffb9ed2134fce93b8a19ca6521b2a1dcc754296bbab4e3f9f",
+        "source": "https://www.infoflora.ch/it/flora/cyclamen-hederifolium.html",
+        "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TS194923.jpg",
+        "review": "Revisione raster contro descrizione e foto della specie: Foglia semplice, cordata con lobi angolosi; marezzatura variabile.",
+        "scope": "species",
+        "caption": "Foglia semplice, cordata con lobi angolosi; marezzatura variabile.",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/m10-ciclamini-foglie.png",
+        "status": "candidate_reviewed_by_worker"
+      }
+    },
+    "leaf_margin": {
+      "dentato": {
+        "src": "assets/plant-traits/ciclamino-autunnale-leaf_margin-dentato.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/candidates/ciclamino-autunnale-leaf_margin-dentato.webp",
+        "sha256": "33130b273bf355072aaf688355ebc55ad352271b73301582ba0d2b7a58792f75",
+        "source": "https://www.infoflora.ch/it/flora/cyclamen-hederifolium.html",
+        "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TS194923.jpg",
+        "review": "Revisione raster contro descrizione e foto della specie: Dettaglio del margine irregolarmente dentato-lobato.",
+        "scope": "species",
+        "caption": "Dettaglio del margine irregolarmente dentato-lobato.",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/m10-ciclamini-foglie.png",
+        "status": "candidate_reviewed_by_worker"
+      }
+    },
+    "flower_shape": {
+      "petali_rovesciati": {
+        "src": "assets/plant-traits/ciclamino-autunnale-flower_shape-petali_rovesciati.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/candidates/ciclamino-autunnale-flower_shape-petali_rovesciati.webp",
+        "sha256": "095fdcceb751fcad20dcc3e4d9f17f2a5442ac8ca026cb521b159d73c29a842d",
+        "source": "https://www.infoflora.ch/it/flora/cyclamen-hederifolium.html",
+        "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TSB48281.jpg",
+        "review": "Revisione raster contro descrizione e foto della specie: Fiore in vista laterale: lobi riflessi rosa pallido, auricole presso la bocca. Parti sovrapposte nella prospettiva.",
+        "scope": "species",
+        "caption": "Fiore in vista laterale: lobi riflessi rosa pallido, auricole presso la bocca. Parti sovrapposte nella prospettiva.",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/m11-ciclamini-organi-corretti.png",
+        "status": "candidate_reviewed_by_worker"
+      }
+    }
+  },
+  "ciclamino-primaverile": {
+    "leaf_type": {
+      "semplice": {
+        "src": "assets/plant-traits/ciclamino-primaverile-leaf_type-semplice.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/candidates/ciclamino-primaverile-leaf_type-semplice.webp",
+        "sha256": "0d028b8b6beab8651643b56e1d439cc81ba4c1f872dd0def5a57b66b067b3a97",
+        "source": "https://www.parchilazio.it/documenti/schede/pubblicazioni_1569_125_125_allegato1.pdf#page=48",
+        "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TSB41673.jpg",
+        "review": "Revisione raster contro descrizione e foto della specie: Foglia semplice, cordata con lobi angolosi; marezzatura variabile.",
+        "scope": "species",
+        "caption": "Foglia semplice, cordata con lobi angolosi; marezzatura variabile.",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/m10-ciclamini-foglie.png",
+        "status": "candidate_reviewed_by_worker"
+      }
+    },
+    "leaf_margin": {
+      "dentato": {
+        "src": "assets/plant-traits/ciclamino-primaverile-leaf_margin-dentato.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/candidates/ciclamino-primaverile-leaf_margin-dentato.webp",
+        "sha256": "d886a4c4d7333105b900e356dd348eb12b80c616d205dc0a0902ff5f98d6559b",
+        "source": "https://www.parchilazio.it/documenti/schede/pubblicazioni_1569_125_125_allegato1.pdf#page=48",
+        "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TSB41673.jpg",
+        "review": "Revisione raster contro descrizione e foto della specie: Dettaglio del margine irregolarmente dentato-lobato.",
+        "scope": "species",
+        "caption": "Dettaglio del margine irregolarmente dentato-lobato.",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/m10-ciclamini-foglie.png",
+        "status": "candidate_reviewed_by_worker"
+      }
+    },
+    "flower_shape": {
+      "petali_rovesciati": {
+        "src": "assets/plant-traits/ciclamino-primaverile-flower_shape-petali_rovesciati.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/candidates/ciclamino-primaverile-flower_shape-petali_rovesciati.webp",
+        "sha256": "ad19ca539a464764d8dce9c9da7712e22a76d1484191638d02b0627cc79a2492",
+        "source": "https://www.parchilazio.it/documenti/schede/pubblicazioni_1569_125_125_allegato1.pdf#page=48",
+        "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TSB41670.jpg",
+        "review": "Revisione raster contro descrizione e foto della specie: Fiore in vista laterale: lobi riflessi più stretti e attorcigliati; bocca senza auricole. Parti sovrapposte nella prospettiva.",
+        "scope": "species",
+        "caption": "Fiore in vista laterale: lobi riflessi più stretti e attorcigliati; bocca senza auricole. Parti sovrapposte nella prospettiva.",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/m11-ciclamini-organi-corretti.png",
+        "status": "candidate_reviewed_by_worker"
+      }
+    }
+  }
+}

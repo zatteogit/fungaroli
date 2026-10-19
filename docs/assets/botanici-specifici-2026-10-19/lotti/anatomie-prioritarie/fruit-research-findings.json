@@ -1,0 +1,203 @@
+{
+  "status": "research_frozen_no_generation",
+  "galleriesReviewed": 19,
+  "thumbnailsReviewed": 604,
+  "speciesWithUsefulFruitEvidence": 9,
+  "speciesWithPromisingEvidence": 1,
+  "references": [
+    {
+      "species": "genziana-maggiore",
+      "key": "fruit_type",
+      "value": "capsula",
+      "status": "documented_pending_generation_frozen",
+      "source": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=4012",
+      "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TSB46271.jpg",
+      "referencePath": "/Users/matteo/Documents/ChatGPT/fronda/output/botanical-references/anatomie-prioritarie/fruit-research/genziana-maggiore/original-1.jpg",
+      "sha256": "0239784d96468745e8f82c57b9a71fb8aa6e704f04db7343131cfae35a77c643",
+      "phase": "Capsule verdi chiuse",
+      "review": "Forma allungata a punta, sutura longitudinale e residui stigmatici apicali.",
+      "photoMetadata": "Dipartimento di Scienze della Vita, Università degli Studi di Trieste by Andrea Moro Distributed under CC-BY-SA 4.0 license.",
+      "scope": "Aspetto esterno nella fase fotografata. Colori nulli nel catalogo restano nulli; nessuna anatomia interna o semi dedotti."
+    },
+    {
+      "species": "veratro",
+      "key": "fruit_type",
+      "value": "capsula",
+      "status": "documented_pending_generation_frozen",
+      "source": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=13222",
+      "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TS181834.jpg",
+      "referencePath": "/Users/matteo/Documents/ChatGPT/fronda/output/botanical-references/anatomie-prioritarie/fruit-research/veratro/original-15.jpg",
+      "sha256": "3767974d71c2357bf216c1057ded8e88caa017acc83592363a3978663bbc89b0",
+      "phase": "Capsule verdi chiuse",
+      "review": "Organi allungati con lobi longitudinali e apici ricurvi; non dedurre logge interne dalla sola foto.",
+      "photoMetadata": "Dipartimento di Scienze della Vita, Università di Trieste by Andrea Moro Distributed under CC-BY-SA 4.0 license.",
+      "scope": "Aspetto esterno nella fase fotografata. Colori nulli nel catalogo restano nulli; nessuna anatomia interna o semi dedotti."
+    },
+    {
+      "species": "colchico",
+      "key": "fruit_type",
+      "value": "capsula",
+      "status": "documented_pending_generation_frozen",
+      "source": "https://dryades.units.it/Roma/index.php?id=6766&procedure=taxon_page",
+      "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TS240363.jpg",
+      "referencePath": "/Users/matteo/Documents/ChatGPT/fronda/output/botanical-references/anatomie-prioritarie/fruit-research/colchico/original-7.jpg",
+      "sha256": "eba13b33e6600443db31931f06f6053f99ef0bc3aedcab5cc8be5b93cdb7350c",
+      "phase": "Capsula verde in formazione",
+      "review": "Organo ovoidale rigonfio tra foglie, tre settori esterni visibili con apici secchi.",
+      "photoMetadata": "© Franco Barbadoro - Source: http://www.catria.net/Erbario.html Franco Barbadoro",
+      "scope": "Aspetto esterno nella fase fotografata. Colori nulli nel catalogo restano nulli; nessuna anatomia interna o semi dedotti."
+    },
+    {
+      "species": "digitale-gialla",
+      "key": "fruit_type",
+      "value": "capsula",
+      "status": "documented_pending_generation_frozen",
+      "source": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=4859",
+      "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TSB55205.jpg",
+      "referencePath": "/Users/matteo/Documents/ChatGPT/fronda/output/botanical-references/anatomie-prioritarie/fruit-research/digitale-gialla/original-7.jpg",
+      "sha256": "08fdde487673c39215ec7f2f235878381110283c07a6be98479427262abe467c",
+      "phase": "Capsule verdi in formazione",
+      "review": "Capsule ovoidi pelose con calice persistente e residuo di stilo; taxon Digitalis micrantha.",
+      "photoMetadata": "Dipartimento di Scienze della Vita, Università degli Studi di Trieste by Andrea Moro Distributed under CC-BY-SA 4.0 license.",
+      "scope": "Aspetto esterno nella fase fotografata. Colori nulli nel catalogo restano nulli; nessuna anatomia interna o semi dedotti."
+    },
+    {
+      "species": "aristolochia",
+      "key": "fruit_type",
+      "value": "capsula",
+      "status": "documented_pending_generation_frozen",
+      "source": "https://dryades.units.it/Roma/index.php?id=333&procedure=taxon_page",
+      "referencePhoto": "https://dryades.units.it/dryades/plants/foto/IMG6728JPG1655734224.jpg",
+      "referencePath": "/Users/matteo/Documents/ChatGPT/fronda/output/botanical-references/anatomie-prioritarie/fruit-research/aristolochia/original-35.jpg",
+      "sha256": "d38224a5a44af6b984d2fe470be66747f49e1362f88994730d18cb542f9d3196",
+      "phase": "Capsula verde chiusa",
+      "review": "Capsula pendula piriforme con lungo peduncolo ricurvo.",
+      "photoMetadata": "© Università di Trieste, Dipartimento di Scienze della Vita Andrea Moro Comune di Trieste, Monte Valerio, TS, Friuli Venezia Giulia, Italia 20/06/2020 Distributed under CC BY-SA 4.0 license.",
+      "scope": "Aspetto esterno nella fase fotografata. Colori nulli nel catalogo restano nulli; nessuna anatomia interna o semi dedotti."
+    },
+    {
+      "species": "asfodelo",
+      "key": "fruit_type",
+      "value": "capsula",
+      "status": "documented_pending_generation_frozen",
+      "source": "https://dryades.units.it/Roma/index.php?id=6750&procedure=taxon_page",
+      "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TS228270.jpg",
+      "referencePath": "/Users/matteo/Documents/ChatGPT/fronda/output/botanical-references/anatomie-prioritarie/fruit-research/asfodelo/original-53.jpg",
+      "sha256": "94f74a8b7d077f174a2286bdb8df5a9c6e00f2dd214a2e0a2dfc43ae279ed2c6",
+      "phase": "Capsule secche in apertura",
+      "review": "Capsule brune sul racemo, valve esterne divaricate in alcuni frutti; non disegnare semi non visibili.",
+      "photoMetadata": "© Dipartimento di Scienze della Vita, Università di Trieste Andrea Moro Comune di Villasimius, litorale tra la spiaggia di Porto Luna e Punta Molentis, Sardegna, Italia 28/05/2018 Distributed under CC BY-SA 4.0 license.",
+      "scope": "Aspetto esterno nella fase fotografata. Colori nulli nel catalogo restano nulli; nessuna anatomia interna o semi dedotti."
+    },
+    {
+      "species": "erba-trinita",
+      "key": "fruit_type",
+      "value": "secco_piccolo",
+      "status": "promising_pending_organ_validation",
+      "source": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=1054",
+      "referencePhoto": "https://dryades.units.it/dryades/plants/foto/IMG8639JPG1682675830.jpg",
+      "referencePath": "/Users/matteo/Documents/ChatGPT/fronda/output/botanical-references/anatomie-prioritarie/fruit-research/erba-trinita/original-8.jpg",
+      "sha256": "13719e3cad1b9a70437a457e50b013f1e061dd924fbbf2e18cb441eae1c064e6",
+      "phase": "Organi verdi dopo caduta tepali",
+      "review": "Promettente per frutti in formazione, ma richiede conferma indipendente della fase e dei singoli organi prima di produrre.",
+      "photoMetadata": "Dipartimento di Scienze della Vita, Università degli Studi di Trieste by Andrea Moro Distributed under CC-BY-SA 4.0 license.",
+      "scope": "Aspetto esterno nella fase fotografata. Colori nulli nel catalogo restano nulli; nessuna anatomia interna o semi dedotti."
+    },
+    {
+      "species": "scilla-silvestre",
+      "key": "fruit_type",
+      "value": "capsula",
+      "status": "documented_pending_generation_frozen",
+      "source": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=6817",
+      "referencePhoto": "https://dryades.units.it/dryades/plants/foto/IMG7641JPG1686235806.jpg",
+      "referencePath": "/Users/matteo/Documents/ChatGPT/fronda/output/botanical-references/anatomie-prioritarie/fruit-research/scilla-silvestre/original-17.jpg",
+      "sha256": "e45030e19008490669b6d4456843805a1261471ba479536145b4aabce2394d01",
+      "phase": "Capsule verdi chiuse",
+      "review": "Capsule globose trilobate su pedicelli incurvati, resti perigoniali secchi presenti.",
+      "photoMetadata": "Dipartimento di Scienze della Vita, Università degli Studi di Trieste by Andrea Moro Distributed under CC-BY-SA 4.0 license.",
+      "scope": "Aspetto esterno nella fase fotografata. Colori nulli nel catalogo restano nulli; nessuna anatomia interna o semi dedotti."
+    },
+    {
+      "species": "giglio-martagone",
+      "key": "fruit_type",
+      "value": "capsula",
+      "status": "documented_pending_generation_frozen",
+      "source": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=6806",
+      "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TSB77184.jpg",
+      "referencePath": "/Users/matteo/Documents/ChatGPT/fronda/output/botanical-references/anatomie-prioritarie/fruit-research/giglio-martagone/original-18.jpg",
+      "sha256": "c5a501d82cb0d829d2100004be618d91ed9824208288e72e4c0509e9bbed594a",
+      "phase": "Capsula in formazione",
+      "review": "Organo verde costoluto post-antesi con stilo persistente lungo e stigma apicale, senza tepali.",
+      "photoMetadata": "Dipartimento di Scienze della Vita, Università degli Studi di Trieste by Andrea Moro Distributed under CC-BY-SA 4.0 license.",
+      "scope": "Aspetto esterno nella fase fotografata. Colori nulli nel catalogo restano nulli; nessuna anatomia interna o semi dedotti."
+    },
+    {
+      "species": "orchide-sambucina",
+      "key": "fruit_type",
+      "value": "capsula",
+      "status": "documented_pending_generation_frozen",
+      "source": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=8191",
+      "referencePhoto": "https://dryades.units.it/dryades/plants/foto/IMG2029JPG1593769999.jpg",
+      "referencePath": "/Users/matteo/Documents/ChatGPT/fronda/output/botanical-references/anatomie-prioritarie/fruit-research/orchide-sambucina/original-9.jpg",
+      "sha256": "7a2f23387e4e1e86368887629bc2cba27be6bcecc2224022275cd5de1b2c9e9a",
+      "phase": "Capsula verde avanzata",
+      "review": "Capsula allungata con coste longitudinali e resti fiorali secchi.",
+      "photoMetadata": "Dipartimento di Scienze della Vita, Università degli Studi di Trieste by Andrea Moro Distributed under CC-BY-SA 4.0 license.",
+      "scope": "Aspetto esterno nella fase fotografata. Colori nulli nel catalogo restano nulli; nessuna anatomia interna o semi dedotti."
+    },
+    {
+      "species": "orchide-sambucina",
+      "key": "fruit_type",
+      "value": "capsula",
+      "status": "documented_pending_generation_frozen",
+      "source": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=8191",
+      "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TS163294.jpg",
+      "referencePath": "/Users/matteo/Documents/ChatGPT/fronda/output/botanical-references/anatomie-prioritarie/fruit-research/orchide-sambucina/original-27.jpg",
+      "sha256": "8cb33d011bc8c6f64b197f7ffb8cfcac7af5d14151738061977ef08b19d22412",
+      "phase": "Capsule secche aperte",
+      "review": "Capsule brune allungate con fessure longitudinali e resti fiorali secchi; nessun seme macroscopico da inventare.",
+      "photoMetadata": "Dipartimento di Scienze della Vita, Università degli Studi di Trieste by Andrea Moro Distributed under CC-BY-SA 4.0 license.",
+      "scope": "Aspetto esterno nella fase fotografata. Colori nulli nel catalogo restano nulli; nessuna anatomia interna o semi dedotti."
+    }
+  ],
+  "rejectedReferences": [
+    {
+      "species": "aristolochia",
+      "index": 32,
+      "reason": "È un fiore appassito con tubo e labbro bruni, non una capsula aperta. Scartato dopo visione originale."
+    },
+    {
+      "species": "giglio-martagone",
+      "index": 19,
+      "reason": "È un fiore appassito con tepali e stami ancora presenti, non una capsula matura."
+    },
+    {
+      "species": "cefalantera-maggiore",
+      "index": 8,
+      "reason": "Sono fiori/boccioli bianchi con ovari inferiori, non prova di fruttificazione."
+    },
+    {
+      "species": "asfodelo",
+      "index": 54,
+      "reason": "Panorama, indice corretto per dettaglio capsule è53."
+    }
+  ],
+  "notResolvedInFullGallery": [
+    "cicoria",
+    "anemone-appennini",
+    "narciso-dei-poeti",
+    "giglio-rosso",
+    "orchide-maschia",
+    "orchide-purpurea",
+    "cefalantera-maggiore",
+    "genziana-primaticcia",
+    "croco"
+  ],
+  "anemoneNote": "Nessuna foto del frutto nella galleria completa esaminata. Fonti consultate parlano di acheni pelosi, non confermano un pappo da rappresentare come Taraxacum. Non generare un frutto piumoso generico; resta da documentare precisamente.",
+  "anemoneSources": [
+    "https://www.infoflora.ch/en/flora/anemone-apennina.html",
+    "https://www.treviambiente.it/ambienteebiodiversita/anemoni/"
+  ],
+  "photosInRepo": false,
+  "galleryManifest": "/Users/matteo/Documents/ChatGPT/fronda/output/botanical-references/anatomie-prioritarie/fruit-research/galleries.json"
+}

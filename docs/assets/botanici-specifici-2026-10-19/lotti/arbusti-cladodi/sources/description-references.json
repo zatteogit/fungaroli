@@ -1,0 +1,87 @@
+[
+  {
+    "species": "asparago-selvatico",
+    "source": "https://www.infoflora.ch/it/flora/asparagus-acutifolius.html",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "species": "cisto-montpellier",
+    "source": "https://www.infoflora.ch/it/flora/cistus-monspeliensis.html",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "species": "cisto-salvia",
+    "source": "https://www.infoflora.ch/it/flora/cistus-salviifolius.html",
+    "description": "Descrizione della specie (© Flora Helvetica 2018) Sous-arbrisseau haut de 30-60 cm. Rameaux, feuilles et pédicelles très tomenteux , à poils étoilés et poils fasciculés. Feuilles opposées, sans stipules, à pétiole court ou sessiles, ovales, rugueuses-réticulées, bord entier. Pétales 5, blancs, longs de 1,5-2 cm, jaunes à la base . Etamines nombreuses. Style très court. Sépales int. 2, ovales, largement en coeur à la base ; sépales ext. 3, arrondis (égalant ou dépassant les int.). Capsule dressée, longue de 5-8 mm, à 5 loges. "
+  },
+  {
+    "species": "corniolo",
+    "source": "https://www.infoflora.ch/it/flora/cornus-mas.html",
+    "description": "Descrizione della specie (© Flora Helvetica 2018) Arbuste atteignant 5 m de haut . Feuilles opposées, largement lancéolées, atteignant 8 cm de long, gén. à 4 paires de nervures latérales arquées. Fleurs jaunes , à 4 pétales longs de 2-3 mm, apparaissant avant les feuilles , groupées en ombelles simples, subsphériques, opposées, de 10-25 fleurs, involucre de 4 petites bractées jaune verdâtre. Fruit rouge vif, pendant, acidulé, à saveur agréable, comestible , atteignant 2 cm de long, oblong-ovale, gén. 1-3 par inflorescence. "
+  },
+  {
+    "species": "dafne-laureola",
+    "source": "https://www.infoflora.ch/it/flora/daphne-laureola.html",
+    "description": "Descrizione della specie (© Flora Helvetica 2018) Arbrisseau haut de 40-120 cm. Tiges dressées, souples , dénudées à la base. Feuilles persistantes, lancéolées à obovales, coriaces mais souples, longues de 3-12 cm, larges de 1-3,5 cm , glabres, vert foncé et luisantes dessus , vert clair et mates dessous. Fleurs jaune verdâtre, subsessiles, légèrement odorantes, groupées par 3-7 en petites grappes penchées à l'aisselle des feuilles sup. Baies noires à maturité, ovoïdes, longues de 5-10 mm. "
+  },
+  {
+    "species": "edera",
+    "source": "https://www.infoflora.ch/it/flora/hedera-helix.html",
+    "description": "Descrizione della specie (© Flora Helvetica 2018) Arbuste atteignant 20 m de haut, sarmenteux , couché-radicant ou grimpant par crampons sur un support, ou croissant librement. Feuilles persistantes , coriaces, luisantes, polymorphes : celles des rameaux stériles palmatinervées, à 3-5 lobes triangulaires, celles des rameaux fleuris entières , ovales ou rhomboïdales, obtuses ou acuminées. Fleurs vert jaunâtre, en ombelles terminales subsphériques, multiflores ; pétales 5, réfléchis, pubescents. Baie noire, diamètre 8-10 mm, mûrissant de mars à mai. "
+  },
+  {
+    "species": "erica-arborea",
+    "source": "https://www.infoflora.ch/it/flora/erica-arborea.html",
+    "description": ""
+  },
+  {
+    "species": "fusaggine",
+    "source": "https://www.infoflora.ch/it/flora/euonymus-europaeus.html",
+    "description": "Descrizione della specie (© Flora Helvetica 2018) Arbuste haut de 1-5 m. Jeunes rameaux verts , souvent marqués de 4 côtes liégeuses. Feuilles glabres, ovales-lancéolées, opposées, longues de 3-5 cm (longues jusqu'à 12 cm aux rameaux stériles), à pétiole long d'env. 5 mm. Fleurs à 4 pétales vert blanchâtre, diamètre 8-10 mm, groupées par 2-6 en cymes axillaires ; pédicelles longs de 1-3 cm. Capsule rose violacé, à 4 loges s'ouvrant sur 4 graines orangées, luisantes , à angles obtus. Bourgeons d'hiver longs de 2-4 mm. "
+  },
+  {
+    "species": "ginepro",
+    "source": "https://www.infoflora.ch/it/flora/juniperus-communis.html",
+    "description": "Descrizione della specie (© Flora Helvetica 2018) Arbuste à aiguilles glauques, portant une raie cireuse blanchâtre sur la face sup . Dioïque. Fruit plutôt sphérique, d'abord pruineux, puis bleu grisâtre, 5-8 mm de large, semblable à une baie . Ambiente e distribuzione svizzera Ambiente e distribuzione svizzera --> Status Categoria IUCN Non minacciato (LC) Urgenza — Responsabilità internazionale della Svizzera — Conservazione Minacce --> Carta di distribuzione ( Atlas ) Ultimo aggiornamento: I dati vengono aggiornati una volta al giorno, nei limiti del possibile. var map_type = \"embedded\"; var layer_title = \"Atlante floristico\"; var last_update = \"Ultimo aggiornamento\"; var atlas_basic_symbology = \"Base (cronologia)\"; var atlas_advanced_symbology = \"Avanzato (cronologia, grado di naturalizzazione, stato di convalida)\"; var atlas_count_symbology = \"Numero di osservazioni\"; var symbols_before_year = \"Prima dell'anno limite\"; var symbols_after_year = \"Dall'anno limite\"; var symbols_before_and_after_year = \"Prima e dopo l'anno limite\"; var symbols_form_title = \"Simboli\"; var symbols_native = \"Indigeno\"; var symbols_reintroduced = \"Reintrodotto\"; var symbols_notnative = \"Introdotto / naturalizzato / subspontanea / scappata\"; var symbols_doubtful = \"Insicuro / dubbioso\"; var symbols_color_title = \"Colore dei simboli\"; var symbols_validated = \"Osservazione convalidata\"; var symbols_not_validated = \"Osservazione in fase di convalida\"; var symbols_without_observation = \"Occorrenza proveniente dall'Atlante Welten & Sutter (1982) e rispettivi supplementi (1984, 1994) senza osservazione nella banca dati Info Flora\"; var symbols_ws = \"Occorrenza proveniente dall'Atlante Welten & Sutter (1982)\"; var symbols_ws_supplements_1 = \"Occorrenze da supplementi 1984\"; var symbols_ws_supplemen"
+  },
+  {
+    "species": "ginestra-carbonai",
+    "source": "https://www.infoflora.ch/it/flora/cytisus-scoparius.html",
+    "description": "Descrizione della specie (© Flora Helvetica 2018) Arbuste haut de 1-2 m ; rameaux minces, dressés, verts, anguleux et glabres. Feuilles inf. trifoliolées, pétiolées , à folioles longues de 0,5-2 cm, gén. pubescentes. Feuilles sup. indivises, lancéolées, +/- sessiles, promptement caduques. Fleurs jaunes, longues de 2-2,5 cm, par 1-2 sur rameaux de l'année précédente. Pédicelle 1-3 fois plus long que le calice bilabié et glabre. Etendard, ailes et carène +/- égaux. Style très long, enroulé en spirale. Gousse atteignant 6 cm de long, poilue seul. au bord. "
+  },
+  {
+    "species": "ginestra-odorosa",
+    "source": "https://www.infoflora.ch/it/flora/spartium-junceum.html",
+    "description": "Descrizione della specie (© Flora Helvetica 2018) Arbuste atteignant jusqu'à 3 m de haut, inerme, à longs rameaux, feuilles indivises et peu nombreuses. Fleurs jaunes, 2-2,5 cm de long, en grappes terminales lâches. Siliques de 6-8 cm de long. "
+  },
+  {
+    "species": "lentaggine",
+    "source": "https://www.infoflora.ch/it/flora/viburnum-tinus.html",
+    "description": "Descrizione della specie (© Flora Helvetica 2018) Arbuste pouvant atteindre 3 m de haut, persistant. Feuilles ovales, entières, coriaces, face sup. vert foncé, face inf. glanduleuse. Fleurs blanches à roses. Baies bleu métallique. "
+  },
+  {
+    "species": "ligustro",
+    "source": "https://www.infoflora.ch/it/flora/ligustrum-vulgare.html",
+    "description": "Descrizione della specie (© Flora Helvetica 2018) Arbuste atteignant 4 m de haut. Feuilles opposées, lancéolées à obovales, entières, coriaces, glabres , longues de 2-5 cm et larges de 1-2 cm, à pétiole court, souvent persistantes, mais caduques au second printemps. Fleurs blanches, odorantes, en panicules compactes, dressées à l'extrémité des rameaux. Calice petit, caduc. Corolle longue d'env. 5 mm, tube +/- égalant les 4 lobes étalés. Etamines incluses. Baie sphérique à ovoïde, noire , amère, toxique, diamètre 0,5-1 cm, à 2-4 graines. "
+  },
+  {
+    "species": "pungitopo",
+    "source": "https://www.infoflora.ch/it/flora/ruscus-aculeatus.html",
+    "description": "Descrizione della specie (© Flora Helvetica 2018) Sous-arbuste sempervirent, haut de 30-80(-100) m. Ramuscules foliacés : cladodes , largement lancéolés, coriaces, terminés en épine très piquante , longs de 2-3,5 cm. Feuilles longues d'env. 1 cm et larges de 2 mm, promptement caduques. Fleurs blanc verdâtre, un peu violacées , larges d'env. 5 mm, gén. solitaires, insérées au-dessous de la moitié des cladodes. Plante dioïque. Baie rouge, luisante, globuleuse , semblant se trouver sous le cladode par rotation de celui-ci. "
+  },
+  {
+    "species": "salsapariglia",
+    "source": "https://www.infoflora.ch/it/flora/smilax-aspera.html",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "species": "sanguinello",
+    "source": "https://www.infoflora.ch/it/flora/cornus-sanguinea.html",
+    "description": "Descrizione della specie (© Flora Helvetica 2018) Arbuste atteignant 4 m de haut . Rameaux pourpre foncé en automne et en hiver . Feuilles opposées, largement ovales-elliptiques, entières, hispides dessous, 4-8 cm de long, à 3-4(-5) paires de nervures latérales arquées. Fleurs blanc crème , à 4 pétales étroits, longs de 4-6 mm, groupées par 20-100 en corymbe ombelliforme ; pédoncule assez long. Etamines 4. Fruit globuleux, noir bleuâtre, finement ponctué de blanc, diamètre 6-8 mm, non comestible. "
+  },
+  {
+    "species": "vitalba",
+    "source": "https://www.infoflora.ch/it/flora/clematis-vitalba.html",
+    "description": "Descrizione della specie (© Flora Helvetica 2018) Plante sarmenteuse, liane .Tige atteignant 8 m de long, à moelle pleine, ligneuse, grimpante. Feuilles opposées, imparipennées, à 3-5 folioles longuement pétiolées, à bord entier ou lâchement crénelées. Fleurs blanches, en panicules axillaires ou terminales, tépales tomenteux sur les 2 faces . Etamines et carpelles nombreux, sans nectaires. Akènes mûrs surmontés d'une longue arête plumeuse, à soies étalées. "
+  }
+]

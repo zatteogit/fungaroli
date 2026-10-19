@@ -1,0 +1,189 @@
+{
+  "tool": "image_gen built-in",
+  "status": "production_frozen_for_independent_review",
+  "candidateMappingCount": 17,
+  "candidateFileCount": 17,
+  "masters": [
+    {
+      "file": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/masters/alliaria-borragine-v1.png",
+      "sha256": "9d6e8c6eeb108899b875ba77b53e7e97369d98ba1d6178ebe4a4f010bd2b9ab9"
+    },
+    {
+      "file": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/masters/alliaria-borragine-v2.png",
+      "sha256": "975c66dd628c62447a25650abc7c2eae60187da138a39e113e21f030492f7bd1"
+    },
+    {
+      "file": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/masters/mente-origano-v1.png",
+      "sha256": "c35c5954844d6285688af9cd28582786e9b8bcc4e40c0e01b07e77f130594b61"
+    },
+    {
+      "file": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/masters/mente-origano-v2.png",
+      "sha256": "b54605b67bf722932b0678da6a5b7295b3c3ba2115564c102be92f08f28d1d3d"
+    },
+    {
+      "file": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/masters/piantaggine-v1.png",
+      "sha256": "435fa884228f7e732c4d0d3061eb9b8456c5f271a42d6d7a23ff56f8d7619501"
+    },
+    {
+      "file": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/masters/piantaggine-v2.png",
+      "sha256": "9e2f5118db508bd236926c336b006a34da61d095a5fe57a70e0a0632731d9ed1"
+    }
+  ],
+  "exports": [
+    {
+      "species": "alliaria",
+      "key": "leaf_type",
+      "value": "semplice",
+      "file": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/candidates/alliaria-leaf_type-semplice.webp",
+      "sha256": "846904bb5a8a3c82a10925ddba3b79960e33b4091cf4938b5e365b12758a93b2",
+      "matchesRegistry": true,
+      "status": "pending_independent_review"
+    },
+    {
+      "species": "alliaria",
+      "key": "leaf_margin",
+      "value": "dentato",
+      "file": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/candidates/alliaria-leaf_margin-dentato.webp",
+      "sha256": "2d46bbeba59090822494214c63c3d347e13225e44cd15df2737a93b3dccbf84e",
+      "matchesRegistry": true,
+      "status": "pending_independent_review"
+    },
+    {
+      "species": "borragine",
+      "key": "leaf_type",
+      "value": "semplice",
+      "file": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/candidates/borragine-leaf_type-semplice.webp",
+      "sha256": "ebef0c502a81ca0c866335528b97331473f03585e876d04e237ca8693b83791a",
+      "matchesRegistry": true,
+      "status": "pending_independent_review"
+    },
+    {
+      "species": "borragine",
+      "key": "leaf_margin",
+      "value": "dentato",
+      "file": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/candidates/borragine-leaf_margin-dentato.webp",
+      "sha256": "8a0b293ceed769e12ffe304c71a28970d83c0caeb6c0d69a7e55c4ef782a6122",
+      "matchesRegistry": true,
+      "status": "pending_independent_review"
+    },
+    {
+      "species": "piantaggine",
+      "key": "leaf_type",
+      "value": "semplice",
+      "file": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/candidates/piantaggine-leaf_type-semplice.webp",
+      "sha256": "4157003ca83644b1cec5f09c267a7a15ee7e2d425449f40d2fa39e2a0f91c882",
+      "matchesRegistry": true,
+      "status": "pending_independent_review"
+    },
+    {
+      "species": "piantaggine",
+      "key": "leaf_margin",
+      "value": "intero",
+      "file": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/candidates/piantaggine-leaf_margin-intero.webp",
+      "sha256": "cf7cc5df30ea60f172ee61ad9f3eb004b4a6e5146ec01d149b8aeef2ab4a5694",
+      "matchesRegistry": true,
+      "status": "pending_independent_review"
+    },
+    {
+      "species": "piantaggine",
+      "key": "leaf_margin",
+      "value": "dentato",
+      "file": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/candidates/piantaggine-leaf_margin-dentato.webp",
+      "sha256": "e5047b22c99008a60b9d048589f3a101c92bc9df3b8faab157c49ff81884ffab",
+      "matchesRegistry": true,
+      "status": "pending_independent_review"
+    },
+    {
+      "species": "piantaggine",
+      "key": "flower_shape",
+      "value": "fiori_minuti",
+      "file": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/candidates/piantaggine-flower_shape-fiori_minuti.webp",
+      "sha256": "e5223c5839c5c1b72708114b2a2de957fb7c7c4c24008bbd28ac68ab845d0f44",
+      "matchesRegistry": true,
+      "status": "pending_independent_review"
+    },
+    {
+      "species": "menta-acquatica",
+      "key": "leaf_type",
+      "value": "semplice",
+      "file": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/candidates/menta-acquatica-leaf_type-semplice.webp",
+      "sha256": "3651e3d09dc46291e32bbed980b809f3dd8cde9225d9e207f358ff23750e6e40",
+      "matchesRegistry": true,
+      "status": "pending_independent_review"
+    },
+    {
+      "species": "menta-acquatica",
+      "key": "leaf_margin",
+      "value": "dentato",
+      "file": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/candidates/menta-acquatica-leaf_margin-dentato.webp",
+      "sha256": "971bbf9193691796a0863625765aa7543fb439ae96fe64d40bef9ea9c24e2086",
+      "matchesRegistry": true,
+      "status": "pending_independent_review"
+    },
+    {
+      "species": "menta-acquatica",
+      "key": "flower_shape",
+      "value": "fiori_minuti",
+      "file": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/candidates/menta-acquatica-flower_shape-fiori_minuti.webp",
+      "sha256": "d4751b25d82b1702bf05b751555ed5a6346b3e399191c114bc82ac9b14159a8d",
+      "matchesRegistry": true,
+      "status": "pending_independent_review"
+    },
+    {
+      "species": "menta-longifolia",
+      "key": "leaf_type",
+      "value": "semplice",
+      "file": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/candidates/menta-longifolia-leaf_type-semplice.webp",
+      "sha256": "357d3848c7a24304a54844098890a04c030f3e50c02823d78bfa2148eee1205a",
+      "matchesRegistry": true,
+      "status": "pending_independent_review"
+    },
+    {
+      "species": "menta-longifolia",
+      "key": "leaf_margin",
+      "value": "dentato",
+      "file": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/candidates/menta-longifolia-leaf_margin-dentato.webp",
+      "sha256": "bb5b9a4a565f4ea2492c3dad2910b665c3aecea39d0cde6da2e1e60223cd9f8b",
+      "matchesRegistry": true,
+      "status": "pending_independent_review"
+    },
+    {
+      "species": "menta-longifolia",
+      "key": "flower_shape",
+      "value": "fiori_minuti",
+      "file": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/candidates/menta-longifolia-flower_shape-fiori_minuti.webp",
+      "sha256": "f3f1b82882397cb9afbaa5e67b4563421666d2fc0a4591f16514d36839b688be",
+      "matchesRegistry": true,
+      "status": "pending_independent_review"
+    },
+    {
+      "species": "origano",
+      "key": "leaf_type",
+      "value": "semplice",
+      "file": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/candidates/origano-leaf_type-semplice.webp",
+      "sha256": "0b8c43a49ebf1c557d76415a2f4028f03a952b647ca7bc0c0e7cedea6b5fb7a5",
+      "matchesRegistry": true,
+      "status": "pending_independent_review"
+    },
+    {
+      "species": "origano",
+      "key": "leaf_margin",
+      "value": "intero",
+      "file": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/candidates/origano-leaf_margin-intero.webp",
+      "sha256": "74b9ebc3d6ec2fe5ea587bdaed860e196bae32a4734f56d93b6dc20bfa144dde",
+      "matchesRegistry": true,
+      "status": "pending_independent_review"
+    },
+    {
+      "species": "origano",
+      "key": "leaf_margin",
+      "value": "dentato",
+      "file": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/candidates/origano-leaf_margin-dentato.webp",
+      "sha256": "c6555b991d36e972526297d47683f92e6a6d2529131a840f287d195bf9aaf047",
+      "matchesRegistry": true,
+      "status": "pending_independent_review"
+    }
+  ],
+  "normalization": "Soli crop di isolamento e ridimensionamento neutro, RGBA384px, WebP lossless exact=True; nessuna correzione anatomica da codice. Per il residuo disgiunto sotto la foglia di Mentha longifolia vedere review.md.",
+  "scope": "Correttezza specialistica contro fonti e foto; approvazione indipendente del coordinatore ancora richiesta. Nessuna suite/test/dry-run."
+}

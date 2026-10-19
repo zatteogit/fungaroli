@@ -1,0 +1,34 @@
+[
+  {
+    "species": "achillea-ligure",
+    "taxon": "Achillea ligustica All.",
+    "path": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/proofs/achillea-ligustica-TSB53900-original.jpg",
+    "sha256": "5d89bad596d3134f387ee2c9ca8e1f1e9e99fd2623db51774d9473bdb6b0a32b",
+    "sourcePhoto": "https://dryades.units.it/dryades/plants/foto/TSB53900.jpg",
+    "credit": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste | Andrea Moro | Vácrátót, Giardino botanico, Institute of Ecology and Botany of the Hungarian Academy of Sciences., Ungheria | 31/05/2008 | Distributed under CC BY-SA 4.0 license.",
+    "license": "CC BY-SA 4.0",
+    "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "referenceUse": "Copia fotografica di prova con attribuzione per revisione anatomica; non aggiunta al catalogo pubblico."
+  },
+  {
+    "species": "cicuta",
+    "taxon": "Conium maculatum L.",
+    "path": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/proofs/conium-maculatum-TS187931-original.jpg",
+    "sha256": "6a852384c7a6bdae11ef4d8a0fd6ccaae3ed5d86f71498594883c31c14034eef",
+    "sourcePhoto": "https://dryades.units.it/dryades/plants/foto/TS187931.jpg",
+    "credit": "© Dipartimento di Scienze della Vita, Università di Trieste | Andrea Moro | Comune di Trieste, Civico Orto Botanico, Friuli Venezia Giulia, Italia | 16/05/2016 | Distributed under CC BY-SA 4.0 license.",
+    "license": "CC BY-SA 4.0",
+    "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "referenceUse": "Copia fotografica di prova con attribuzione per revisione anatomica; non aggiunta al catalogo pubblico.",
+    "crop": {
+      "path": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-dentate/gap15/proofs/conium-maculatum-TS187931-organ-crop.jpg",
+      "box": [
+        1500,
+        1500,
+        2650,
+        2950
+      ],
+      "modification": "Solo ritaglio rettangolare della foto, nessun ritocco anatomico."
+    }
+  }
+]

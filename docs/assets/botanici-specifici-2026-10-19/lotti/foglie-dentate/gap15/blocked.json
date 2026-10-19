@@ -1,0 +1,72 @@
+[
+  {
+    "species": "achillea-ligure",
+    "key": "leaf_type",
+    "value": "molto_divisa_fine",
+    "status": "blocked_documentation",
+    "reason": "La foglia TSB53900 e le 34 immagini della galleria universitaria confermano la divisione in segmenti più larghi; non è stata documentata una seconda morfologia a segmenti filiformi per distinguere con rigore questo valore dal molto_divisa_larga già candidato.",
+    "source": "https://dryades.units.it/Roma/index.php?id=5655&procedure=taxon_page",
+    "universityGalleryPhotosReviewed": 34,
+    "asset": null
+  },
+  {
+    "species": "achillea-ligure",
+    "key": "fruit_type",
+    "value": "secco_piccolo",
+    "status": "blocked_documentation",
+    "reason": "Nelle 34 immagini universitarie esaminate non compare un macro-dettaglio leggibile del frutto maturo. I capolini fioriti e il campione di erbario non consentono di validare forma e coste del singolo achenio.",
+    "source": "https://dryades.units.it/Roma/index.php?id=5655&procedure=taxon_page",
+    "universityGalleryPhotosReviewed": 34,
+    "asset": null
+  },
+  {
+    "species": "margherita",
+    "key": "fruit_type",
+    "value": "secco_piccolo",
+    "status": "blocked_documentation",
+    "reason": "InfoFlora descrive piccoli acheni; tutte le 24 immagini universitarie esaminate mostrano foglie, fiori o habitus, senza macro del frutto che ne risolva la morfologia specifica.",
+    "source": "https://www.infoflora.ch/it/flora/leucanthemum-vulgare.html",
+    "universityGalleryPhotosReviewed": 24,
+    "asset": null
+  },
+  {
+    "species": "raponzolo",
+    "key": "fruit_type",
+    "value": "capsula",
+    "status": "blocked_documentation",
+    "reason": "InfoFlora documenta una capsula eretta glabra, ma nessuna delle 59 immagini della galleria universitaria esaminata permette di verificare la capsula matura e la deiscenza; l’ovario sotto la corolla non è stato usato come sostituto.",
+    "source": "https://www.infoflora.ch/it/flora/campanula-rapunculus.html",
+    "universityGalleryPhotosReviewed": 59,
+    "asset": null
+  },
+  {
+    "species": "primula",
+    "key": "fruit_type",
+    "value": "capsula",
+    "status": "blocked_documentation",
+    "reason": "NC State descrive la capsula ovale; le 31 fotografie universitarie esaminate non offrono un dettaglio del frutto maturo, sufficiente per confermare l’apertura e i rapporti con il calice.",
+    "source": "https://plants.ces.ncsu.edu/plants/primula-vulgaris/",
+    "universityGalleryPhotosReviewed": 31,
+    "asset": null
+  },
+  {
+    "species": "ciclamino-autunnale",
+    "key": "fruit_type",
+    "value": "capsula",
+    "status": "blocked_documentation",
+    "reason": "Le 24 immagini universitarie esaminate includono fiori, foglie e tuberi, ma nessun frutto in vista anatomica leggibile: il tubero sotterraneo non è la capsula.",
+    "source": "https://www.infoflora.ch/it/flora/cyclamen-hederifolium.html",
+    "universityGalleryPhotosReviewed": 24,
+    "asset": null
+  },
+  {
+    "species": "ciclamino-primaverile",
+    "key": "fruit_type",
+    "value": "capsula",
+    "status": "blocked_documentation",
+    "reason": "La scheda Parchi Lazio documenta la capsula globosa, ma le 31 immagini universitarie esaminate non ne mostrano una macro leggibile, né documentano il peduncolo fruttifero per un disegno specie-specifico.",
+    "source": "https://www.parchilazio.it/documenti/schede/pubblicazioni_1569_125_125_allegato1.pdf#page=48",
+    "universityGalleryPhotosReviewed": 31,
+    "asset": null
+  }
+]

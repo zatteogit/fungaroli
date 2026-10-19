@@ -1,0 +1,15 @@
+{
+  "species": 25,
+  "combinations": 75,
+  "rasterFiles": 73,
+  "previouslyApprovedRaster": 12,
+  "newCandidates": 61,
+  "blockedCombinations": 22,
+  "exportChecks": {
+    "hashGeometryAlphaErrors": [],
+    "format": "WebP lossless=True exact=True;384x384RGBA"
+  },
+  "testsRun": false,
+  "commit": false,
+  "deployed": false
+}

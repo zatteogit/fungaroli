@@ -1,0 +1,202 @@
+[
+  {
+    "species": "genziana-maggiore",
+    "key": "fruit_type",
+    "value": "capsula",
+    "status": "blocked_documentation",
+    "source": "https://www.infoflora.ch/it/flora/gentiana-lutea.html",
+    "reason": "Nel set fotografico esaminato non è documentata con dettaglio sufficiente la forma esterna del frutto e la sua fase. Nessuna capsula generica dedotta dal solo fiore; occorre nuova foto primaria e revisione prima della produzione.",
+    "scope": "Selezione fotografica catalogo e fonti botaniche esaminate; non afferma assenza assoluta di fotografie online."
+  },
+  {
+    "species": "veratro",
+    "key": "fruit_type",
+    "value": "capsula",
+    "status": "blocked_documentation",
+    "source": "https://www.infoflora.ch/it/flora/veratrum-album.html",
+    "reason": "Nel set fotografico esaminato non è documentata con dettaglio sufficiente la forma esterna del frutto e la sua fase. Nessuna capsula generica dedotta dal solo fiore; occorre nuova foto primaria e revisione prima della produzione.",
+    "scope": "Selezione fotografica catalogo e fonti botaniche esaminate; non afferma assenza assoluta di fotografie online."
+  },
+  {
+    "species": "colchico",
+    "key": "fruit_type",
+    "value": "capsula",
+    "status": "blocked_documentation",
+    "source": "https://www.provincia.prato.it/pagina2493_colchicaceae.html",
+    "reason": "Nel set fotografico esaminato non è documentata con dettaglio sufficiente la forma esterna del frutto e la sua fase. Nessuna capsula generica dedotta dal solo fiore; occorre nuova foto primaria e revisione prima della produzione.",
+    "scope": "Selezione fotografica catalogo e fonti botaniche esaminate; non afferma assenza assoluta di fotografie online."
+  },
+  {
+    "species": "digitale-gialla",
+    "key": "fruit_type",
+    "value": "capsula",
+    "status": "blocked_documentation",
+    "source": "https://www.provincia.prato.it/pagina2574_plantaginaceae.html",
+    "reason": "Nel set fotografico esaminato non è documentata con dettaglio sufficiente la forma esterna del frutto e la sua fase. Nessuna capsula generica dedotta dal solo fiore; occorre nuova foto primaria e revisione prima della produzione.",
+    "scope": "Selezione fotografica catalogo e fonti botaniche esaminate; non afferma assenza assoluta di fotografie online."
+  },
+  {
+    "species": "cicoria",
+    "key": "fruit_type",
+    "value": "secco_piccolo",
+    "status": "blocked_documentation",
+    "source": "https://www.infoflora.ch/it/flora/cichorium-intybus.html",
+    "reason": "Nel set fotografico esaminato non è documentata con dettaglio sufficiente la forma esterna del frutto e la sua fase. Nessuna capsula generica dedotta dal solo fiore; occorre nuova foto primaria e revisione prima della produzione.",
+    "scope": "Selezione fotografica catalogo e fonti botaniche esaminate; non afferma assenza assoluta di fotografie online."
+  },
+  {
+    "species": "anemone-appennini",
+    "key": "fruit_type",
+    "value": "secco_piccolo",
+    "status": "blocked_documentation",
+    "source": "https://dryades.units.it/Roma/index.php?id=1046&procedure=taxon_page",
+    "reason": "Nel set fotografico esaminato non è documentata con dettaglio sufficiente la forma esterna del frutto e la sua fase. Nessuna capsula generica dedotta dal solo fiore; occorre nuova foto primaria e revisione prima della produzione.",
+    "scope": "Selezione fotografica catalogo e fonti botaniche esaminate; non afferma assenza assoluta di fotografie online."
+  },
+  {
+    "species": "elleboro",
+    "key": "fruit_type",
+    "value": "capsula",
+    "status": "conflicting_data",
+    "source": "https://www.infoflora.ch/it/flora/helleborus-foetidus.html",
+    "reason": "Il catalogo indica capsula ma Flora Helvetica descrive3–8follicoli. Non prodotto un frutto anatomicamente errato per adattarlo al valore dati.",
+    "scope": "Selezione fotografica catalogo e fonti botaniche esaminate; non afferma assenza assoluta di fotografie online."
+  },
+  {
+    "species": "aristolochia",
+    "key": "leaf_type",
+    "value": "semplice",
+    "status": "conflicting_data",
+    "source": "https://gobotany.nativeplanttrust.org/species/aristolochia/clematitis/",
+    "reason": "Catalogo margine dentato; Native Plant Trust descrive intero, Meller2014 riporta Nardi1984 per margine MINUTAMENTE dentato italiano. Prima di disegnare denti, chiarire scala e variabilità. Anche foglia semplice sospesa per coerenza della coppia figura-dato.",
+    "scope": "Selezione fotografica catalogo e fonti botaniche esaminate; non afferma assenza assoluta di fotografie online.",
+    "additionalSource": "https://www.palaeo-electronica.org/content/2014/718-aristolochia-from-austria"
+  },
+  {
+    "species": "aristolochia",
+    "key": "leaf_margin",
+    "value": "dentato",
+    "status": "conflicting_data",
+    "source": "https://gobotany.nativeplanttrust.org/species/aristolochia/clematitis/",
+    "reason": "Catalogo margine dentato; Native Plant Trust descrive intero, Meller2014 riporta Nardi1984 per margine MINUTAMENTE dentato italiano. Prima di disegnare denti, chiarire scala e variabilità. Anche foglia semplice sospesa per coerenza della coppia figura-dato.",
+    "scope": "Selezione fotografica catalogo e fonti botaniche esaminate; non afferma assenza assoluta di fotografie online.",
+    "additionalSource": "https://www.palaeo-electronica.org/content/2014/718-aristolochia-from-austria"
+  },
+  {
+    "species": "aristolochia",
+    "key": "fruit_type",
+    "value": "capsula",
+    "status": "blocked_documentation",
+    "source": "https://www.infoflora.ch/it/flora/aristolochia-clematitis.html",
+    "reason": "Nel set fotografico esaminato non è documentata con dettaglio sufficiente la forma esterna del frutto e la sua fase. Nessuna capsula generica dedotta dal solo fiore; occorre nuova foto primaria e revisione prima della produzione.",
+    "scope": "Selezione fotografica catalogo e fonti botaniche esaminate; non afferma assenza assoluta di fotografie online."
+  },
+  {
+    "species": "asfodelo",
+    "key": "fruit_type",
+    "value": "capsula",
+    "status": "blocked_documentation",
+    "source": "https://www.parcogallipolicognato.it/flora-dettaglio.php?id=380",
+    "reason": "Nel set fotografico esaminato non è documentata con dettaglio sufficiente la forma esterna del frutto e la sua fase. Nessuna capsula generica dedotta dal solo fiore; occorre nuova foto primaria e revisione prima della produzione.",
+    "scope": "Selezione fotografica catalogo e fonti botaniche esaminate; non afferma assenza assoluta di fotografie online."
+  },
+  {
+    "species": "erba-trinita",
+    "key": "fruit_type",
+    "value": "secco_piccolo",
+    "status": "blocked_documentation",
+    "source": "https://www.infoflora.ch/it/flora/hepatica-nobilis.html",
+    "reason": "Nel set fotografico esaminato non è documentata con dettaglio sufficiente la forma esterna del frutto e la sua fase. Nessuna capsula generica dedotta dal solo fiore; occorre nuova foto primaria e revisione prima della produzione.",
+    "scope": "Selezione fotografica catalogo e fonti botaniche esaminate; non afferma assenza assoluta di fotografie online."
+  },
+  {
+    "species": "scilla-silvestre",
+    "key": "fruit_type",
+    "value": "capsula",
+    "status": "blocked_documentation",
+    "source": "https://www.infoflora.ch/it/flora/scilla-bifolia.html",
+    "reason": "Nel set fotografico esaminato non è documentata con dettaglio sufficiente la forma esterna del frutto e la sua fase. Nessuna capsula generica dedotta dal solo fiore; occorre nuova foto primaria e revisione prima della produzione.",
+    "scope": "Selezione fotografica catalogo e fonti botaniche esaminate; non afferma assenza assoluta di fotografie online."
+  },
+  {
+    "species": "narciso-dei-poeti",
+    "key": "fruit_type",
+    "value": "capsula",
+    "status": "blocked_documentation",
+    "source": "https://www.parcomontisimbruini.it/flora-dettaglio.php?id=271",
+    "reason": "Nel set fotografico esaminato non è documentata con dettaglio sufficiente la forma esterna del frutto e la sua fase. Nessuna capsula generica dedotta dal solo fiore; occorre nuova foto primaria e revisione prima della produzione.",
+    "scope": "Selezione fotografica catalogo e fonti botaniche esaminate; non afferma assenza assoluta di fotografie online."
+  },
+  {
+    "species": "giglio-martagone",
+    "key": "fruit_type",
+    "value": "capsula",
+    "status": "blocked_documentation",
+    "source": "https://www.infoflora.ch/it/flora/lilium-martagon.html",
+    "reason": "Nel set fotografico esaminato non è documentata con dettaglio sufficiente la forma esterna del frutto e la sua fase. Nessuna capsula generica dedotta dal solo fiore; occorre nuova foto primaria e revisione prima della produzione.",
+    "scope": "Selezione fotografica catalogo e fonti botaniche esaminate; non afferma assenza assoluta di fotografie online."
+  },
+  {
+    "species": "giglio-rosso",
+    "key": "fruit_type",
+    "value": "capsula",
+    "status": "blocked_documentation",
+    "source": "https://www.infoflora.ch/it/flora/lilium-bulbiferum-subsp-croceum.html",
+    "reason": "Nel set fotografico esaminato non è documentata con dettaglio sufficiente la forma esterna del frutto e la sua fase. Nessuna capsula generica dedotta dal solo fiore; occorre nuova foto primaria e revisione prima della produzione.",
+    "scope": "Selezione fotografica catalogo e fonti botaniche esaminate; non afferma assenza assoluta di fotografie online."
+  },
+  {
+    "species": "orchide-sambucina",
+    "key": "fruit_type",
+    "value": "capsula",
+    "status": "blocked_documentation",
+    "source": "https://www.infoflora.ch/it/flora/dactylorhiza-sambucina.html",
+    "reason": "Nel set fotografico esaminato non è documentata con dettaglio sufficiente la forma esterna del frutto e la sua fase. Nessuna capsula generica dedotta dal solo fiore; occorre nuova foto primaria e revisione prima della produzione.",
+    "scope": "Selezione fotografica catalogo e fonti botaniche esaminate; non afferma assenza assoluta di fotografie online."
+  },
+  {
+    "species": "orchide-maschia",
+    "key": "fruit_type",
+    "value": "capsula",
+    "status": "blocked_documentation",
+    "source": "https://www.infoflora.ch/it/flora/orchis-mascula-subsp-mascula.html",
+    "reason": "Nel set fotografico esaminato non è documentata con dettaglio sufficiente la forma esterna del frutto e la sua fase. Nessuna capsula generica dedotta dal solo fiore; occorre nuova foto primaria e revisione prima della produzione.",
+    "scope": "Selezione fotografica catalogo e fonti botaniche esaminate; non afferma assenza assoluta di fotografie online."
+  },
+  {
+    "species": "orchide-purpurea",
+    "key": "fruit_type",
+    "value": "capsula",
+    "status": "blocked_documentation",
+    "source": "https://www.infoflora.ch/it/flora/orchis-purpurea.html",
+    "reason": "Nel set fotografico esaminato non è documentata con dettaglio sufficiente la forma esterna del frutto e la sua fase. Nessuna capsula generica dedotta dal solo fiore; occorre nuova foto primaria e revisione prima della produzione.",
+    "scope": "Selezione fotografica catalogo e fonti botaniche esaminate; non afferma assenza assoluta di fotografie online."
+  },
+  {
+    "species": "cefalantera-maggiore",
+    "key": "fruit_type",
+    "value": "capsula",
+    "status": "blocked_documentation",
+    "source": "https://www.infoflora.ch/it/flora/cephalanthera-longifolia.html",
+    "reason": "Nel set fotografico esaminato non è documentata con dettaglio sufficiente la forma esterna del frutto e la sua fase. Nessuna capsula generica dedotta dal solo fiore; occorre nuova foto primaria e revisione prima della produzione.",
+    "scope": "Selezione fotografica catalogo e fonti botaniche esaminate; non afferma assenza assoluta di fotografie online."
+  },
+  {
+    "species": "genziana-primaticcia",
+    "key": "fruit_type",
+    "value": "capsula",
+    "status": "blocked_documentation",
+    "source": "https://www.infoflora.ch/it/flora/gentiana-verna.html",
+    "reason": "Nel set fotografico esaminato non è documentata con dettaglio sufficiente la forma esterna del frutto e la sua fase. Nessuna capsula generica dedotta dal solo fiore; occorre nuova foto primaria e revisione prima della produzione.",
+    "scope": "Selezione fotografica catalogo e fonti botaniche esaminate; non afferma assenza assoluta di fotografie online."
+  },
+  {
+    "species": "croco",
+    "key": "fruit_type",
+    "value": "capsula",
+    "status": "blocked_documentation",
+    "source": "https://www.gruppomicologicoancona.it/botanica/ritrovamenti-e-schede/schede-descrittive-botanica/crocus-neapolitanus-ker-gawl-loisel.html",
+    "reason": "Nel set fotografico esaminato non è documentata con dettaglio sufficiente la forma esterna del frutto e la sua fase. Nessuna capsula generica dedotta dal solo fiore; occorre nuova foto primaria e revisione prima della produzione.",
+    "scope": "Selezione fotografica catalogo e fonti botaniche esaminate; non afferma assenza assoluta di fotografie online."
+  }
+]

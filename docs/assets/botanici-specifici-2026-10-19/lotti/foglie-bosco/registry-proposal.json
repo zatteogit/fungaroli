@@ -10,7 +10,8 @@
           "referencePhoto": "assets/plants/alliaria-1.webp",
           "sha256": "846904bb5a8a3c82a10925ddba3b79960e33b4091cf4938b5e365b12758a93b2",
           "review": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/review.md",
-          "scope": "Foglia basale reniforme-cordata semplice a lungo picciolo, margine sinuato-dentato e nervature palmate; non raffigura le foglie superiori triangolari."
+          "scope": "Foglia basale reniforme-cordata semplice a lungo picciolo, margine sinuato-dentato e nervature palmate; non raffigura le foglie superiori triangolari.",
+          "caption": "Foglia basale"
         }
       },
       "leaf_margin": {
@@ -49,6 +50,168 @@
           "sha256": "8a0b293ceed769e12ffe304c71a28970d83c0caeb6c0d69a7e55c4ef782a6122",
           "review": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/review.md",
           "scope": "Ingrandimento parziale di bordo ondulato debolmente dentato e peli sottili; non aculei. Dentatura/peli schematizzati."
+        }
+      }
+    },
+    "piantaggine": {
+      "leaf_type": {
+        "semplice": {
+          "src": "assets/plant-traits/piantaggine-leaf_type-semplice.webp",
+          "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/candidates/piantaggine-leaf_type-semplice.webp",
+          "status": "pending_independent_review",
+          "source": "https://www.infoflora.ch/it/flora/plantago-lanceolata.html",
+          "referencePhoto": "assets/plants/piantaggine-2.webp",
+          "sha256": "4157003ca83644b1cec5f09c267a7a15ee7e2d425449f40d2fa39e2a0f91c882",
+          "review": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/review.md",
+          "scope": "Lamina semplice strettamente lanceolata con nervature longitudinali arcuate e denti piccoli distanziati; esempio della variante dentata, non presenza invariabile dei denti.",
+          "caption": "Esempio con denti piccoli e distanziati"
+        }
+      },
+      "leaf_margin": {
+        "intero": {
+          "src": "assets/plant-traits/piantaggine-leaf_margin-intero.webp",
+          "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/candidates/piantaggine-leaf_margin-intero.webp",
+          "status": "pending_independent_review",
+          "source": "https://www.infoflora.ch/it/flora/plantago-lanceolata.html",
+          "referencePhoto": "assets/plants/piantaggine-2.webp",
+          "sha256": "cf7cc5df30ea60f172ee61ad9f3eb004b4a6e5146ec01d149b8aeef2ab4a5694",
+          "review": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/review.md",
+          "scope": "Dettaglio parziale del margine continuo intero; nervature longitudinali, nessuna dentatura. Variante intera documentata dalla fonte."
+        },
+        "dentato": {
+          "src": "assets/plant-traits/piantaggine-leaf_margin-dentato.webp",
+          "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/candidates/piantaggine-leaf_margin-dentato.webp",
+          "status": "pending_independent_review",
+          "source": "https://www.infoflora.ch/it/flora/plantago-lanceolata.html",
+          "referencePhoto": "assets/plants/piantaggine-2.webp",
+          "sha256": "e5047b22c99008a60b9d048589f3a101c92bc9df3b8faab157c49ff81884ffab",
+          "review": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/review.md",
+          "scope": "Dettaglio ingrandito con pochi denti piccoli e distanziati, non seghettatura fitta; variante dentata documentata, ingrandimento schematico."
+        }
+      },
+      "flower_shape": {
+        "fiori_minuti": {
+          "src": "assets/plant-traits/piantaggine-flower_shape-fiori_minuti.webp",
+          "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/candidates/piantaggine-flower_shape-fiori_minuti.webp",
+          "status": "pending_independent_review",
+          "source": "https://www.infoflora.ch/it/flora/plantago-lanceolata.html",
+          "referencePhoto": "assets/plants/piantaggine-1.webp",
+          "sha256": "e5223c5839c5c1b72708114b2a2de957fb7c7c4c24008bbd28ac68ab845d0f44",
+          "review": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/review.md",
+          "scope": "Spiga compatta su scapo nudo con antere chiare su filamenti sporgenti; corolle minute non vistose. Numero di fiori/antere schematico, non conteggio biologico."
+        }
+      }
+    },
+    "menta-acquatica": {
+      "leaf_type": {
+        "semplice": {
+          "src": "assets/plant-traits/menta-acquatica-leaf_type-semplice.webp",
+          "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/candidates/menta-acquatica-leaf_type-semplice.webp",
+          "status": "pending_independent_review",
+          "source": "https://www.infoflora.ch/it/flora/mentha-aquatica.html",
+          "referencePhoto": "assets/plants/menta-acquatica-3.webp",
+          "sha256": "3651e3d09dc46291e32bbed980b809f3dd8cde9225d9e207f358ff23750e6e40",
+          "review": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/review.md",
+          "scope": "Lamina semplice ovata dentata con breve picciolo, nervature pennate e peli schematici. Dettaglio schematico esterno: proporzioni/numero dei denti e peli semplificati; nessuna struttura interna o conteggio fisso dedotto."
+        }
+      },
+      "leaf_margin": {
+        "dentato": {
+          "src": "assets/plant-traits/menta-acquatica-leaf_margin-dentato.webp",
+          "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/candidates/menta-acquatica-leaf_margin-dentato.webp",
+          "status": "pending_independent_review",
+          "source": "https://www.infoflora.ch/it/flora/mentha-aquatica.html",
+          "referencePhoto": "assets/plants/menta-acquatica-3.webp",
+          "sha256": "971bbf9193691796a0863625765aa7543fb439ae96fe64d40bef9ea9c24e2086",
+          "review": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/review.md",
+          "scope": "Ingrandimento parziale del margine seghettato, con limiti rettilinei del dettaglio. Dettaglio schematico esterno: proporzioni/numero dei denti e peli semplificati; nessuna struttura interna o conteggio fisso dedotto."
+        }
+      },
+      "flower_shape": {
+        "fiori_minuti": {
+          "src": "assets/plant-traits/menta-acquatica-flower_shape-fiori_minuti.webp",
+          "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/candidates/menta-acquatica-flower_shape-fiori_minuti.webp",
+          "status": "pending_independent_review",
+          "source": "https://www.infoflora.ch/it/flora/mentha-aquatica.html",
+          "referencePhoto": "assets/plants/menta-acquatica-1.webp",
+          "sha256": "d4751b25d82b1702bf05b751555ed5a6346b3e399191c114bc82ac9b14159a8d",
+          "review": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/review.md",
+          "scope": "Infiorescenza terminale globosa con piccole corolle a quattro lobi lilla e stami sporgenti; numero dei fiori stilizzato. Dettaglio schematico esterno: proporzioni/numero dei denti e peli semplificati; nessuna struttura interna o conteggio fisso dedotto."
+        }
+      }
+    },
+    "menta-longifolia": {
+      "leaf_type": {
+        "semplice": {
+          "src": "assets/plant-traits/menta-longifolia-leaf_type-semplice.webp",
+          "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/candidates/menta-longifolia-leaf_type-semplice.webp",
+          "status": "pending_independent_review",
+          "source": "https://www.infoflora.ch/it/flora/mentha-longifolia.html",
+          "referencePhoto": "assets/plants/menta-longifolia-2.webp",
+          "sha256": "357d3848c7a24304a54844098890a04c030f3e50c02823d78bfa2148eee1205a",
+          "review": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/review.md",
+          "scope": "Lamina oblungo-lanceolata quasi sessile, denti rivolti in avanti, verde-grigio e pubescenza semplificata. Dettaglio schematico esterno: proporzioni/numero dei denti e peli semplificati; nessuna struttura interna o conteggio fisso dedotto."
+        }
+      },
+      "leaf_margin": {
+        "dentato": {
+          "src": "assets/plant-traits/menta-longifolia-leaf_margin-dentato.webp",
+          "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/candidates/menta-longifolia-leaf_margin-dentato.webp",
+          "status": "pending_independent_review",
+          "source": "https://www.infoflora.ch/it/flora/mentha-longifolia.html",
+          "referencePhoto": "assets/plants/menta-longifolia-2.webp",
+          "sha256": "bb5b9a4a565f4ea2492c3dad2910b665c3aecea39d0cde6da2e1e60223cd9f8b",
+          "review": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/review.md",
+          "scope": "Ingrandimento parziale dei denti acuti rivolti in avanti e pochi peli fini schematici. Dettaglio schematico esterno: proporzioni/numero dei denti e peli semplificati; nessuna struttura interna o conteggio fisso dedotto."
+        }
+      },
+      "flower_shape": {
+        "fiori_minuti": {
+          "src": "assets/plant-traits/menta-longifolia-flower_shape-fiori_minuti.webp",
+          "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/candidates/menta-longifolia-flower_shape-fiori_minuti.webp",
+          "status": "pending_independent_review",
+          "source": "https://www.infoflora.ch/it/flora/mentha-longifolia.html",
+          "referencePhoto": "assets/plants/menta-longifolia-1.webp",
+          "sha256": "f3f1b82882397cb9afbaa5e67b4563421666d2fc0a4591f16514d36839b688be",
+          "review": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/review.md",
+          "scope": "Spiga terminale allungata con piccole corolle a quattro lobi e stami sporgenti, distinta dalla testa globosa della menta acquatica. Dettaglio schematico esterno: proporzioni/numero dei denti e peli semplificati; nessuna struttura interna o conteggio fisso dedotto."
+        }
+      }
+    },
+    "origano": {
+      "leaf_type": {
+        "semplice": {
+          "src": "assets/plant-traits/origano-leaf_type-semplice.webp",
+          "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/candidates/origano-leaf_type-semplice.webp",
+          "status": "pending_independent_review",
+          "source": "https://www.infoflora.ch/it/flora/origanum-vulgare.html",
+          "referencePhoto": "assets/plants/origano-3.webp",
+          "sha256": "0b8c43a49ebf1c557d76415a2f4028f03a952b647ca7bc0c0e7cedea6b5fb7a5",
+          "review": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/review.md",
+          "scope": "Lamina semplice ovata brevemente picciolata, esempio del margine debolmente dentato documentato in alternativa a quello intero. Dettaglio schematico esterno: proporzioni/numero dei denti e peli semplificati; nessuna struttura interna o conteggio fisso dedotto.",
+          "caption": "Esempio con margine debolmente dentato"
+        }
+      },
+      "leaf_margin": {
+        "intero": {
+          "src": "assets/plant-traits/origano-leaf_margin-intero.webp",
+          "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/candidates/origano-leaf_margin-intero.webp",
+          "status": "pending_independent_review",
+          "source": "https://www.infoflora.ch/it/flora/origanum-vulgare.html",
+          "referencePhoto": "assets/plants/origano-3.webp",
+          "sha256": "74b9ebc3d6ec2fe5ea587bdaed860e196bae32a4734f56d93b6dc20bfa144dde",
+          "review": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/review.md",
+          "scope": "Ingrandimento parziale del margine continuo intero; variante intera documentata, distinta dal dettaglio dentato. Dettaglio schematico esterno: proporzioni/numero dei denti e peli semplificati; nessuna struttura interna o conteggio fisso dedotto."
+        },
+        "dentato": {
+          "src": "assets/plant-traits/origano-leaf_margin-dentato.webp",
+          "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/candidates/origano-leaf_margin-dentato.webp",
+          "status": "pending_independent_review",
+          "source": "https://www.infoflora.ch/it/flora/origanum-vulgare.html",
+          "referencePhoto": "assets/plants/origano-3.webp",
+          "sha256": "c6555b991d36e972526297d47683f92e6a6d2529131a840f287d195bf9aaf047",
+          "review": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/review.md",
+          "scope": "Ingrandimento parziale del margine debolmente dentato; variante documentata in alternativa al margine intero. Dettaglio schematico esterno: proporzioni/numero dei denti e peli semplificati; nessuna struttura interna o conteggio fisso dedotto."
         }
       }
     }

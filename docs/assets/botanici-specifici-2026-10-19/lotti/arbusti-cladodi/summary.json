@@ -1,0 +1,12 @@
+{
+  "species": 17,
+  "inventoryMappings": 66,
+  "candidateMappings": 12,
+  "candidateRasters": 12,
+  "blockedVisualMappings": 3,
+  "assignedNotStarted": 51,
+  "mastersCompleted": 4,
+  "canonicalNewFiles": 0,
+  "stopReason": "Stop del coordinatore: completate soltanto le quattro generazioni già avviate. Nessuna ulteriore generazione iniziata.",
+  "tool": "image_gen integrato"
+}

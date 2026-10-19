@@ -1,0 +1,26 @@
+[
+  {
+    "species": "ginepro",
+    "key": "leaf_type",
+    "value": "aghiforme",
+    "status": "blocked_visual_revision",
+    "master": "docs/assets/botanici-specifici-2026-10-19/lotti/arbusti-cladodi/m03-ginepro-pungitopo-partial.png",
+    "reason": "Il master mostra più di tre aghi al nodo superiore; i verticilli di Juniperus communis devono avere tre aghi. Nessun export del carattere. Correzione raster da avviare dopo la revisione del backlog."
+  },
+  {
+    "species": "pungitopo",
+    "key": "flower_shape",
+    "value": "fiori_minuti",
+    "status": "blocked_visual_revision",
+    "master": "docs/assets/botanici-specifici-2026-10-19/lotti/arbusti-cladodi/m03-ginepro-pungitopo-partial.png",
+    "reason": "Il primo master non risolveva sei tepali; il secondo corregge il perianzio ma mostra quattro puntini centrali che potrebbero suggerire una falsa anatomia staminale. Nessun export approvato del fiore; va semplificato/corretto via raster."
+  },
+  {
+    "species": "corniolo",
+    "key": "leaf_type",
+    "value": "semplice",
+    "status": "blocked_visual_revision",
+    "master": "docs/assets/botanici-specifici-2026-10-19/lotti/arbusti-cladodi/m04-cornus-daphne-partial.png",
+    "reason": "Il raster ha troppe coppie di nervature laterali fortemente evidenziate rispetto alle quattro tipiche documentate e alla fotografia IMG7724JPG1596456710. Nessun export del carattere; serve correzione raster."
+  }
+]

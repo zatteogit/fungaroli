@@ -1,0 +1,14 @@
+{
+  "species": 15,
+  "inventoryMappings": 59,
+  "existingPreserved": 9,
+  "newCandidateMappings": 43,
+  "newCandidateRasters": 42,
+  "blockedMappings": 7,
+  "canonicalNewFiles": 0,
+  "tool": "built-in image_gen",
+  "review": "Candidati non approvati. Tre capsule sospese dal coordinatore per colore non documentato; tutto il lotto resta in attesa di revisione indipendente.",
+  "alphaExport": "RGBA512; WEBP lossless exact=True; crop e ridimensionamento neutro soltanto.",
+  "pendingVisualRevisionMappings": 3,
+  "candidateMappingsExcludingPendingVisualRevision": 40
+}

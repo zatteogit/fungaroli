@@ -1,0 +1,389 @@
+[
+  {
+    "species": "fragolina",
+    "key": "leaf_margin",
+    "value": "dentato",
+    "descriptionSource": "https://www.infoflora.ch/it/flora/fragaria-vesca.html",
+    "referencePhoto": "assets/plants/fragolina-2.webp",
+    "referenceCredit": "Fotografia già nel catalogo Fronda: attribuzione e licenza nella voce fotografica esistente, non modificata.",
+    "referenceUse": "Riferimento anatomico per illustrazione generata, nessuna nuova fotografia redistribuita."
+  },
+  {
+    "species": "rosa-canina",
+    "key": "leaf_margin",
+    "value": "dentato",
+    "descriptionSource": "https://www.infoflora.ch/it/flora/rosa-canina.html",
+    "referencePhoto": "assets/plants/rosa-canina-2.webp",
+    "referenceCredit": "Fotografia già nel catalogo Fronda: attribuzione e licenza nella voce fotografica esistente, non modificata.",
+    "referenceUse": "Riferimento anatomico per illustrazione generata, nessuna nuova fotografia redistribuita."
+  },
+  {
+    "species": "sambuco",
+    "key": "leaf_type",
+    "value": "composta",
+    "descriptionSource": "https://www.infoflora.ch/it/flora/sambucus-nigra.html",
+    "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TS142753.jpg",
+    "referenceCredit": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste | Andrea Moro | Comune di Trieste, Campus Universitario, Friuli Venezia Giulia, Italia | 14/06/2013 | Distributed under CC BY-SA 4.0 license.",
+    "referenceUse": "Riferimento anatomico per illustrazione generata, nessuna nuova fotografia redistribuita."
+  },
+  {
+    "species": "sambuco",
+    "key": "leaf_margin",
+    "value": "dentato",
+    "descriptionSource": "https://www.infoflora.ch/it/flora/sambucus-nigra.html",
+    "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TS142753.jpg",
+    "referenceCredit": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste | Andrea Moro | Comune di Trieste, Campus Universitario, Friuli Venezia Giulia, Italia | 14/06/2013 | Distributed under CC BY-SA 4.0 license.",
+    "referenceUse": "Riferimento anatomico per illustrazione generata, nessuna nuova fotografia redistribuita."
+  },
+  {
+    "species": "finocchietto",
+    "key": "leaf_type",
+    "value": "molto_divisa_fine",
+    "descriptionSource": "https://www.infoflora.ch/it/flora/foeniculum-vulgare.html",
+    "referencePhoto": "https://dryades.units.it/dryades/plants/foto/IMG6205JPG1595931513.jpg",
+    "referenceCredit": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste | Andrea Moro | Comune di Trieste, Monte Valerio, TS, Friuli Venezia Giulia, Italia | 27/07/2020 | Distributed under CC BY-SA 4.0 license.",
+    "referenceUse": "Riferimento anatomico per illustrazione generata, nessuna nuova fotografia redistribuita."
+  },
+  {
+    "species": "finocchietto",
+    "key": "fruit_type",
+    "value": "secco_piccolo",
+    "descriptionSource": "https://www.infoflora.ch/it/flora/foeniculum-vulgare.html",
+    "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TSB19538.jpg",
+    "referenceCredit": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste | Andrea Moro | Comune di Trieste, Monte Valerio, nei pressi del campus universitario. , FVG, Italia | 7/3/05 0.00.00 | Distributed under CC BY-SA 4.0 license.",
+    "referenceUse": "Riferimento anatomico per illustrazione generata, nessuna nuova fotografia redistribuita."
+  },
+  {
+    "species": "cicuta",
+    "key": "leaf_type",
+    "value": "molto_divisa_larga",
+    "descriptionSource": "https://www.infoflora.ch/it/flora/conium-maculatum.html",
+    "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TS187931.jpg",
+    "referenceCredit": "© Dipartimento di Scienze della Vita, Università di Trieste | Andrea Moro | Comune di Trieste, Civico Orto Botanico, Friuli Venezia Giulia, Italia | 16/05/2016 | Distributed under CC BY-SA 4.0 license.",
+    "referenceUse": "Riferimento anatomico per illustrazione generata, nessuna nuova fotografia redistribuita."
+  },
+  {
+    "species": "cicuta",
+    "key": "leaf_margin",
+    "value": "dentato",
+    "descriptionSource": "https://www.infoflora.ch/it/flora/conium-maculatum.html",
+    "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TS187931.jpg",
+    "referenceCredit": "© Dipartimento di Scienze della Vita, Università di Trieste | Andrea Moro | Comune di Trieste, Civico Orto Botanico, Friuli Venezia Giulia, Italia | 16/05/2016 | Distributed under CC BY-SA 4.0 license.",
+    "referenceUse": "Riferimento anatomico per illustrazione generata, nessuna nuova fotografia redistribuita."
+  },
+  {
+    "species": "ebbio",
+    "key": "leaf_margin",
+    "value": "dentato",
+    "descriptionSource": "https://www.infoflora.ch/it/flora/sambucus-ebulus.html",
+    "referencePhoto": "assets/plants/ebbio-3.webp",
+    "referenceCredit": "Fotografia già nel catalogo Fronda: attribuzione e licenza nella voce fotografica esistente, non modificata.",
+    "referenceUse": "Riferimento anatomico per illustrazione generata, nessuna nuova fotografia redistribuita."
+  },
+  {
+    "species": "ebbio",
+    "key": "flower_shape",
+    "value": "ombrella",
+    "descriptionSource": "https://www.infoflora.ch/it/flora/sambucus-ebulus.html",
+    "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TSB96703.jpg",
+    "referenceCredit": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste | Andrea Moro | Comune di Ferrara del Monte Baldo, lungo la strada per Novezzina, Veneto, Italia | 15/06/2011 | Distributed under CC BY-SA 4.0 license.",
+    "referenceUse": "Riferimento anatomico per illustrazione generata, nessuna nuova fotografia redistribuita."
+  },
+  {
+    "species": "ebbio",
+    "key": "fruit_type",
+    "value": "carnoso",
+    "descriptionSource": "https://www.infoflora.ch/it/flora/sambucus-ebulus.html",
+    "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TSB28850.jpg",
+    "referenceCredit": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste | Andrea Moro | Comune di Magione, località San Feliciano, presso un piccolo molo sul lago., Umbria, Italia | 12/08/05 | Distributed under CC BY-SA 4.0 license.",
+    "referenceUse": "Riferimento anatomico per illustrazione generata, nessuna nuova fotografia redistribuita."
+  },
+  {
+    "species": "sambuco",
+    "key": "fruit_type",
+    "value": "carnoso",
+    "descriptionSource": "https://www.infoflora.ch/it/flora/sambucus-nigra.html",
+    "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TSB30223.jpg",
+    "referenceCredit": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste | Andrea Moro | Comune di San Dorligo della Valle, nei pressi della chiesetta di San Lorenzo., FVG, Italia | 27/09/05 | Distributed under CC BY-SA 4.0 license.",
+    "referenceUse": "Riferimento anatomico per illustrazione generata, nessuna nuova fotografia redistribuita."
+  },
+  {
+    "species": "cicuta",
+    "key": "flower_shape",
+    "value": "ombrella",
+    "descriptionSource": "https://www.infoflora.ch/it/flora/conium-maculatum.html",
+    "referencePhoto": "assets/plants/cicuta-2.webp",
+    "referenceCredit": "Fotografia già nel catalogo Fronda: attribuzione e licenza nella voce fotografica esistente, non modificata.",
+    "referenceUse": "Riferimento anatomico per illustrazione generata, nessuna nuova fotografia redistribuita."
+  },
+  {
+    "species": "cicuta",
+    "key": "fruit_type",
+    "value": "secco_piccolo",
+    "descriptionSource": "https://www.infoflora.ch/it/flora/conium-maculatum.html",
+    "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TS190244.jpg",
+    "referenceCredit": "© Dipartimento di Scienze della Vita, Università di Trieste | Andrea Moro | Comune di Padova, Orto Botanico, Veneto, Italia | 24/06/2016 | Distributed under CC BY-SA 4.0 license.",
+    "referenceUse": "Riferimento anatomico per illustrazione generata, nessuna nuova fotografia redistribuita."
+  },
+  {
+    "species": "achillea-ligure",
+    "key": "leaf_type",
+    "value": "molto_divisa_larga",
+    "descriptionSource": "https://dryades.units.it/Roma/index.php?id=5655&procedure=taxon_page",
+    "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TSB53900.jpg",
+    "referenceCredit": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste | Andrea Moro | Vácrátót, Giardino botanico, Institute of Ecology and Botany of the Hungarian Academy of Sciences., Ungheria | 31/05/2008 | Distributed under CC BY-SA 4.0 license.",
+    "referenceUse": "Riferimento anatomico per illustrazione generata, nessuna nuova fotografia redistribuita."
+  },
+  {
+    "species": "achillea-ligure",
+    "key": "flower_shape",
+    "value": "capolino",
+    "descriptionSource": "https://dryades.units.it/Roma/index.php?id=5655&procedure=taxon_page",
+    "referencePhoto": "assets/plants/achillea-ligure-1.webp",
+    "referenceCredit": "Fotografia già nel catalogo Fronda: attribuzione e licenza nella voce fotografica esistente, non modificata.",
+    "referenceUse": "Riferimento anatomico per illustrazione generata, nessuna nuova fotografia redistribuita."
+  },
+  {
+    "species": "iperico",
+    "key": "leaf_type",
+    "value": "semplice",
+    "descriptionSource": "https://www.infoflora.ch/it/flora/hypericum-perforatum-subsp-perforatum.html",
+    "referencePhoto": "https://dryades.units.it/dryades/plants/foto/IMG7155JPG1596120788.jpg",
+    "referenceCredit": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste | Andrea Moro | Comune di Trieste, Monte Valerio, TS, Friuli Venezia Giulia, Italia | 30/07/2020 | Distributed under CC BY-SA 4.0 license.",
+    "referenceUse": "Riferimento anatomico per illustrazione generata, nessuna nuova fotografia redistribuita."
+  },
+  {
+    "species": "iperico",
+    "key": "leaf_margin",
+    "value": "intero",
+    "descriptionSource": "https://www.infoflora.ch/it/flora/hypericum-perforatum-subsp-perforatum.html",
+    "referencePhoto": "https://dryades.units.it/dryades/plants/foto/IMG7155JPG1596120788.jpg",
+    "referenceCredit": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste | Andrea Moro | Comune di Trieste, Monte Valerio, TS, Friuli Venezia Giulia, Italia | 30/07/2020 | Distributed under CC BY-SA 4.0 license.",
+    "referenceUse": "Riferimento anatomico per illustrazione generata, nessuna nuova fotografia redistribuita."
+  },
+  {
+    "species": "iperico",
+    "key": "flower_shape",
+    "value": "cinque_petali",
+    "descriptionSource": "https://www.infoflora.ch/it/flora/hypericum-perforatum-subsp-perforatum.html",
+    "referencePhoto": "assets/plants/iperico-1.webp",
+    "referenceCredit": "Fotografia già nel catalogo Fronda: attribuzione e licenza nella voce fotografica esistente, non modificata.",
+    "referenceUse": "Riferimento anatomico per illustrazione generata, nessuna nuova fotografia redistribuita."
+  },
+  {
+    "species": "iperico",
+    "key": "fruit_type",
+    "value": "capsula",
+    "descriptionSource": "https://www.infoflora.ch/it/flora/hypericum-perforatum-subsp-perforatum.html",
+    "referencePhoto": "https://dryades.units.it/dryades/plants/foto/IMG7216JPG1596122945.jpg",
+    "referenceCredit": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste | Andrea Moro | Comune di Trieste, Monte Valerio, TS, Friuli Venezia Giulia, Italia | 30/07/2020 | Distributed under CC BY-SA 4.0 license.",
+    "referenceUse": "Riferimento anatomico per illustrazione generata, nessuna nuova fotografia redistribuita."
+  },
+  {
+    "species": "silene",
+    "key": "leaf_type",
+    "value": "semplice",
+    "descriptionSource": "https://www.infoflora.ch/it/flora/silene-vulgaris.html",
+    "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TSB49200.jpg",
+    "referenceCredit": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste | Andrea Moro | Comune di Trieste, Monte Valerio., Friuli Venezia Giulia, Italia | Distributed under CC BY-SA 4.0 license.",
+    "referenceUse": "Riferimento anatomico per illustrazione generata, nessuna nuova fotografia redistribuita."
+  },
+  {
+    "species": "silene",
+    "key": "flower_shape",
+    "value": "cinque_petali",
+    "descriptionSource": "https://www.infoflora.ch/it/flora/silene-vulgaris.html",
+    "referencePhoto": "assets/plants/silene-1.webp",
+    "referenceCredit": "Fotografia già nel catalogo Fronda: attribuzione e licenza nella voce fotografica esistente, non modificata.",
+    "referenceUse": "Riferimento anatomico per illustrazione generata, nessuna nuova fotografia redistribuita."
+  },
+  {
+    "species": "silene",
+    "key": "fruit_type",
+    "value": "capsula",
+    "descriptionSource": "https://www.infoflora.ch/it/flora/silene-vulgaris.html",
+    "referencePhoto": "https://dryades.units.it/dryades/plants/foto/IMG6910JPG1596103683.jpg",
+    "referenceCredit": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste | Andrea Moro | Comune di Trieste, Monte Valerio, TS, Friuli Venezia Giulia, Italia | 29/07/2020 | Distributed under CC BY-SA 4.0 license.",
+    "referenceUse": "Riferimento anatomico per illustrazione generata, nessuna nuova fotografia redistribuita."
+  },
+  {
+    "species": "raponzolo",
+    "key": "flower_shape",
+    "value": "campanula",
+    "descriptionSource": "https://www.infoflora.ch/it/flora/campanula-rapunculus.html",
+    "referencePhoto": "assets/plants/raponzolo-1.webp",
+    "referenceCredit": "Fotografia già nel catalogo Fronda: attribuzione e licenza nella voce fotografica esistente, non modificata.",
+    "referenceUse": "Riferimento anatomico per illustrazione generata, nessuna nuova fotografia redistribuita."
+  },
+  {
+    "species": "raponzolo",
+    "key": "leaf_type",
+    "value": "semplice",
+    "descriptionSource": "https://www.infoflora.ch/it/flora/campanula-rapunculus.html",
+    "referencePhoto": "https://dryades.units.it/dryades/plants/foto/IMG5563JPG1589873452jpg1678445224.jpg",
+    "referenceCredit": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste | Andrea Moro | Comune di Trieste, località Basovizza, lungo la strada per la Foiba, prati stabili, TS, Friuli Venezia Giulia, Italia | 16/05/2020 | Distributed under CC BY-SA 4.0 license.",
+    "referenceUse": "Riferimento anatomico per illustrazione generata, nessuna nuova fotografia redistribuita."
+  },
+  {
+    "species": "raponzolo",
+    "key": "leaf_margin",
+    "value": "dentato",
+    "descriptionSource": "https://www.infoflora.ch/it/flora/campanula-rapunculus.html",
+    "referencePhoto": "https://dryades.units.it/dryades/plants/foto/IMG5563JPG1589873452jpg1678445224.jpg",
+    "referenceCredit": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste | Andrea Moro | Comune di Trieste, località Basovizza, lungo la strada per la Foiba, prati stabili, TS, Friuli Venezia Giulia, Italia | 16/05/2020 | Distributed under CC BY-SA 4.0 license.",
+    "referenceUse": "Riferimento anatomico per illustrazione generata, nessuna nuova fotografia redistribuita."
+  },
+  {
+    "species": "primula",
+    "key": "leaf_type",
+    "value": "semplice",
+    "descriptionSource": "https://plants.ces.ncsu.edu/plants/primula-vulgaris/",
+    "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TSB42911.jpg",
+    "referenceCredit": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste | Andrea Moro | Comune di Serle, altopiano di Cariadeghe., Lombardia, Italia | 10/04/2007 | Distributed under CC BY-SA 4.0 license.",
+    "referenceUse": "Riferimento anatomico per illustrazione generata, nessuna nuova fotografia redistribuita."
+  },
+  {
+    "species": "primula",
+    "key": "leaf_margin",
+    "value": "dentato",
+    "descriptionSource": "https://plants.ces.ncsu.edu/plants/primula-vulgaris/",
+    "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TSB42911.jpg",
+    "referenceCredit": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste | Andrea Moro | Comune di Serle, altopiano di Cariadeghe., Lombardia, Italia | 10/04/2007 | Distributed under CC BY-SA 4.0 license.",
+    "referenceUse": "Riferimento anatomico per illustrazione generata, nessuna nuova fotografia redistribuita."
+  },
+  {
+    "species": "viola-mammola",
+    "key": "leaf_type",
+    "value": "semplice",
+    "descriptionSource": "https://www.infoflora.ch/it/flora/viola-odorata.html",
+    "referencePhoto": "https://dryades.units.it/dryades/plants/foto/IMG8549JPG1584357080.jpg",
+    "referenceCredit": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste | Andrea Moro | Comune di Trieste, Comprensorio di San Giovanni, TS, Friuli Venezia Giulia, Italia | 11/03/2020 | Distributed under CC BY-SA 4.0 license.",
+    "referenceUse": "Riferimento anatomico per illustrazione generata, nessuna nuova fotografia redistribuita."
+  },
+  {
+    "species": "viola-mammola",
+    "key": "leaf_margin",
+    "value": "dentato",
+    "descriptionSource": "https://www.infoflora.ch/it/flora/viola-odorata.html",
+    "referencePhoto": "https://dryades.units.it/dryades/plants/foto/IMG8549JPG1584357080.jpg",
+    "referenceCredit": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste | Andrea Moro | Comune di Trieste, Comprensorio di San Giovanni, TS, Friuli Venezia Giulia, Italia | 11/03/2020 | Distributed under CC BY-SA 4.0 license.",
+    "referenceUse": "Riferimento anatomico per illustrazione generata, nessuna nuova fotografia redistribuita."
+  },
+  {
+    "species": "viola-mammola",
+    "key": "flower_shape",
+    "value": "cinque_petali",
+    "descriptionSource": "https://www.infoflora.ch/it/flora/viola-odorata.html",
+    "referencePhoto": "https://dryades.units.it/dryades/plants/foto/IMG7136JPG1679063637.jpg",
+    "referenceCredit": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste | Andrea Moro | Comune di Trieste, Campus Universitario, TS, Friuli Venezia Giulia, Italia | 16/03/2023 | Distributed under CC BY-SA 4.0 license.",
+    "referenceUse": "Riferimento anatomico per illustrazione generata, nessuna nuova fotografia redistribuita."
+  },
+  {
+    "species": "primula",
+    "key": "flower_shape",
+    "value": "cinque_petali",
+    "descriptionSource": "https://plants.ces.ncsu.edu/plants/primula-vulgaris/",
+    "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TSB42910.jpg",
+    "referenceCredit": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste | Andrea Moro | Comune di Serle, altopiano di Cariadeghe., Lombardia, Italia | 10/04/2007 | Distributed under CC BY-SA 4.0 license.",
+    "referenceUse": "Riferimento anatomico per illustrazione generata, nessuna nuova fotografia redistribuita."
+  },
+  {
+    "species": "margherita",
+    "key": "flower_shape",
+    "value": "capolino",
+    "descriptionSource": "https://www.infoflora.ch/it/flora/leucanthemum-vulgare.html",
+    "referencePhoto": "assets/plants/margherita-1.webp",
+    "referenceCredit": "Fotografia già nel catalogo Fronda: attribuzione e licenza nella voce fotografica esistente, non modificata.",
+    "referenceUse": "Riferimento anatomico per illustrazione generata, nessuna nuova fotografia redistribuita."
+  },
+  {
+    "species": "margherita",
+    "key": "leaf_margin",
+    "value": "dentato",
+    "descriptionSource": "https://www.infoflora.ch/it/flora/leucanthemum-vulgare.html",
+    "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TSB22410.jpg",
+    "referenceCredit": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste | Andrea Moro | Comune di Arcugnano, rive del lago di Fimon., Veneto, Italia | 12/5/05 0.00.00 | Distributed under CC BY-SA 4.0 license.",
+    "referenceUse": "Riferimento anatomico per illustrazione generata, nessuna nuova fotografia redistribuita."
+  },
+  {
+    "species": "margherita",
+    "key": "leaf_margin",
+    "value": "lobato",
+    "descriptionSource": "https://www.infoflora.ch/it/flora/leucanthemum-vulgare.html",
+    "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TSB22410.jpg",
+    "referenceCredit": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste | Andrea Moro | Comune di Arcugnano, rive del lago di Fimon., Veneto, Italia | 12/5/05 0.00.00 | Distributed under CC BY-SA 4.0 license.",
+    "referenceUse": "Riferimento anatomico per illustrazione generata, nessuna nuova fotografia redistribuita."
+  },
+  {
+    "species": "ciclamino-autunnale",
+    "key": "leaf_type",
+    "value": "semplice",
+    "descriptionSource": "https://www.infoflora.ch/it/flora/cyclamen-hederifolium.html",
+    "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TS194923.jpg",
+    "referenceCredit": "© Dipartimento di Scienze della Vita, Università di Trieste | Andrea Moro | Comune di Fiesole, area archeologica, Toscana, Italia | 05/11/2016 | Distributed under CC BY-SA 4.0 license.",
+    "referenceUse": "Riferimento anatomico per illustrazione generata, nessuna nuova fotografia redistribuita."
+  },
+  {
+    "species": "ciclamino-autunnale",
+    "key": "leaf_margin",
+    "value": "dentato",
+    "descriptionSource": "https://www.infoflora.ch/it/flora/cyclamen-hederifolium.html",
+    "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TS194923.jpg",
+    "referenceCredit": "© Dipartimento di Scienze della Vita, Università di Trieste | Andrea Moro | Comune di Fiesole, area archeologica, Toscana, Italia | 05/11/2016 | Distributed under CC BY-SA 4.0 license.",
+    "referenceUse": "Riferimento anatomico per illustrazione generata, nessuna nuova fotografia redistribuita."
+  },
+  {
+    "species": "ciclamino-primaverile",
+    "key": "leaf_type",
+    "value": "semplice",
+    "descriptionSource": "https://www.parchilazio.it/documenti/schede/pubblicazioni_1569_125_125_allegato1.pdf#page=48",
+    "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TSB41673.jpg",
+    "referenceCredit": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste | Andrea Moro | Isola d'Ischia, lungo il sentiero a monte di Serrara Fontana., Campania, Italia | 10/04/2007 | Distributed under CC BY-SA 4.0 license.",
+    "referenceUse": "Riferimento anatomico per illustrazione generata, nessuna nuova fotografia redistribuita."
+  },
+  {
+    "species": "ciclamino-primaverile",
+    "key": "leaf_margin",
+    "value": "dentato",
+    "descriptionSource": "https://www.parchilazio.it/documenti/schede/pubblicazioni_1569_125_125_allegato1.pdf#page=48",
+    "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TSB41673.jpg",
+    "referenceCredit": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste | Andrea Moro | Isola d'Ischia, lungo il sentiero a monte di Serrara Fontana., Campania, Italia | 10/04/2007 | Distributed under CC BY-SA 4.0 license.",
+    "referenceUse": "Riferimento anatomico per illustrazione generata, nessuna nuova fotografia redistribuita."
+  },
+  {
+    "species": "ciclamino-autunnale",
+    "key": "flower_shape",
+    "value": "petali_rovesciati",
+    "descriptionSource": "https://www.infoflora.ch/it/flora/cyclamen-hederifolium.html",
+    "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TSB48281.jpg",
+    "referenceCredit": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste | Andrea Moro | Casentino, comune di Chiusi della Verna, ai margini dell'abitato, zona boscosa., Toscana, Italia | 12/08/2007 | Distributed under CC BY-SA 4.0 license.",
+    "referenceUse": "Riferimento anatomico per illustrazione generata, nessuna nuova fotografia redistribuita."
+  },
+  {
+    "species": "ciclamino-primaverile",
+    "key": "flower_shape",
+    "value": "petali_rovesciati",
+    "descriptionSource": "https://www.parchilazio.it/documenti/schede/pubblicazioni_1569_125_125_allegato1.pdf#page=48",
+    "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TSB41670.jpg",
+    "referenceCredit": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste | Andrea Moro | Isola d'Ischia, lungo il sentiero a monte di Serrara Fontana., Campania, Italia | 10/04/2007 | Distributed under CC BY-SA 4.0 license.",
+    "referenceUse": "Riferimento anatomico per illustrazione generata, nessuna nuova fotografia redistribuita."
+  },
+  {
+    "species": "margherita",
+    "key": "leaf_type",
+    "value": "semplice",
+    "descriptionSource": "https://www.infoflora.ch/it/flora/leucanthemum-vulgare.html",
+    "referencePhoto": "https://dryades.units.it/dryades/plants/foto/TSB22410.jpg",
+    "referenceCredit": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste | Andrea Moro | Comune di Arcugnano, rive del lago di Fimon., Veneto, Italia | 12/5/05 0.00.00 | Distributed under CC BY-SA 4.0 license.",
+    "referenceUse": "Riferimento anatomico per illustrazione generata, nessuna nuova fotografia redistribuita."
+  },
+  {
+    "species": "viola-mammola",
+    "key": "fruit_type",
+    "value": "capsula",
+    "descriptionSource": "https://www.infoflora.ch/it/flora/viola-odorata.html",
+    "referencePhoto": "https://dryades.units.it/dryades/plants/foto/IMG3182JPG1585641725.jpg",
+    "referenceCredit": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste | Andrea Moro | Comune di Trieste, Campus Universitario, TS, Friuli Venezia Giulia, Italia | 30/03/2020 | Distributed under CC BY-SA 4.0 license.",
+    "referenceUse": "Riferimento anatomico per illustrazione generata, nessuna nuova fotografia redistribuita."
+  }
+]

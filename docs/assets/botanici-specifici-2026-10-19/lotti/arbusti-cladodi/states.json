@@ -1,0 +1,464 @@
+[
+  {
+    "species": "asparago-selvatico",
+    "key": "leaf_type",
+    "value": "aghiforme",
+    "status": "candidate_reviewed_by_worker",
+    "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/arbusti-cladodi/candidates/asparago-selvatico-leaf_type-aghiforme.webp"
+  },
+  {
+    "species": "asparago-selvatico",
+    "key": "flower_shape",
+    "value": "fiori_minuti",
+    "status": "candidate_reviewed_by_worker",
+    "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/arbusti-cladodi/candidates/asparago-selvatico-flower_shape-fiori_minuti.webp"
+  },
+  {
+    "species": "asparago-selvatico",
+    "key": "fruit_type",
+    "value": "carnoso",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "pungitopo",
+    "key": "leaf_type",
+    "value": "semplice",
+    "status": "candidate_reviewed_by_worker",
+    "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/arbusti-cladodi/candidates/pungitopo-leaf_type-semplice.webp"
+  },
+  {
+    "species": "pungitopo",
+    "key": "flower_shape",
+    "value": "fiori_minuti",
+    "status": "blocked_visual_revision",
+    "reason": "Il primo master non risolveva sei tepali; il secondo corregge il perianzio ma mostra quattro puntini centrali che potrebbero suggerire una falsa anatomia staminale. Nessun export approvato del fiore; va semplificato/corretto via raster."
+  },
+  {
+    "species": "pungitopo",
+    "key": "fruit_type",
+    "value": "carnoso",
+    "status": "candidate_reviewed_by_worker",
+    "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/arbusti-cladodi/candidates/pungitopo-fruit_type-carnoso.webp"
+  },
+  {
+    "species": "dafne-laureola",
+    "key": "leaf_type",
+    "value": "semplice",
+    "status": "candidate_reviewed_by_worker",
+    "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/arbusti-cladodi/candidates/dafne-laureola-leaf_type-semplice.webp"
+  },
+  {
+    "species": "dafne-laureola",
+    "key": "flower_shape",
+    "value": "fiori_minuti",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "dafne-laureola",
+    "key": "fruit_type",
+    "value": "carnoso",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "fusaggine",
+    "key": "leaf_type",
+    "value": "semplice",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "fusaggine",
+    "key": "leaf_margin",
+    "value": "dentato",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "fusaggine",
+    "key": "flower_shape",
+    "value": "quattro_petali",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "fusaggine",
+    "key": "fruit_type",
+    "value": "capsula",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "ligustro",
+    "key": "leaf_type",
+    "value": "semplice",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "ligustro",
+    "key": "leaf_margin",
+    "value": "intero",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "ligustro",
+    "key": "flower_shape",
+    "value": "fiori_minuti",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "ligustro",
+    "key": "fruit_type",
+    "value": "carnoso",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "lentaggine",
+    "key": "leaf_type",
+    "value": "semplice",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "lentaggine",
+    "key": "leaf_margin",
+    "value": "intero",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "lentaggine",
+    "key": "flower_shape",
+    "value": "ombrella",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "lentaggine",
+    "key": "fruit_type",
+    "value": "carnoso",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "vitalba",
+    "key": "leaf_type",
+    "value": "composta",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "vitalba",
+    "key": "leaf_margin",
+    "value": "intero",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "vitalba",
+    "key": "leaf_margin",
+    "value": "dentato",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "vitalba",
+    "key": "flower_shape",
+    "value": "quattro_petali",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "vitalba",
+    "key": "fruit_type",
+    "value": "secco_piumoso",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "edera",
+    "key": "leaf_type",
+    "value": "semplice",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "edera",
+    "key": "leaf_margin",
+    "value": "lobato",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "edera",
+    "key": "leaf_margin",
+    "value": "intero",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "edera",
+    "key": "flower_shape",
+    "value": "ombrella",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "edera",
+    "key": "fruit_type",
+    "value": "carnoso",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "ginepro",
+    "key": "leaf_type",
+    "value": "aghiforme",
+    "status": "blocked_visual_revision",
+    "reason": "Il master mostra più di tre aghi al nodo superiore; i verticilli di Juniperus communis devono avere tre aghi. Nessun export del carattere. Correzione raster da avviare dopo la revisione del backlog."
+  },
+  {
+    "species": "ginepro",
+    "key": "flower_shape",
+    "value": "nessun_fiore_vistoso",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "ginepro",
+    "key": "fruit_type",
+    "value": "carnoso",
+    "status": "candidate_reviewed_by_worker",
+    "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/arbusti-cladodi/candidates/ginepro-fruit_type-carnoso.webp"
+  },
+  {
+    "species": "corniolo",
+    "key": "leaf_type",
+    "value": "semplice",
+    "status": "blocked_visual_revision",
+    "reason": "Il raster ha troppe coppie di nervature laterali fortemente evidenziate rispetto alle quattro tipiche documentate e alla fotografia IMG7724JPG1596456710. Nessun export del carattere; serve correzione raster."
+  },
+  {
+    "species": "corniolo",
+    "key": "flower_shape",
+    "value": "quattro_petali",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "corniolo",
+    "key": "flower_shape",
+    "value": "ombrella",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "corniolo",
+    "key": "fruit_type",
+    "value": "carnoso",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "sanguinello",
+    "key": "leaf_type",
+    "value": "semplice",
+    "status": "candidate_reviewed_by_worker",
+    "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/arbusti-cladodi/candidates/sanguinello-leaf_type-semplice.webp"
+  },
+  {
+    "species": "sanguinello",
+    "key": "leaf_margin",
+    "value": "intero",
+    "status": "candidate_reviewed_by_worker",
+    "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/arbusti-cladodi/candidates/sanguinello-leaf_margin-intero.webp"
+  },
+  {
+    "species": "sanguinello",
+    "key": "flower_shape",
+    "value": "quattro_petali",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "sanguinello",
+    "key": "flower_shape",
+    "value": "ombrella",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "sanguinello",
+    "key": "fruit_type",
+    "value": "carnoso",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "ginestra-carbonai",
+    "key": "leaf_type",
+    "value": "composta",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "ginestra-carbonai",
+    "key": "leaf_type",
+    "value": "semplice",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "ginestra-carbonai",
+    "key": "flower_shape",
+    "value": "farfalla",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "ginestra-carbonai",
+    "key": "fruit_type",
+    "value": "baccello",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "ginestra-odorosa",
+    "key": "leaf_type",
+    "value": "semplice",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "ginestra-odorosa",
+    "key": "leaf_margin",
+    "value": "intero",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "ginestra-odorosa",
+    "key": "flower_shape",
+    "value": "farfalla",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "ginestra-odorosa",
+    "key": "fruit_type",
+    "value": "baccello",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "erica-arborea",
+    "key": "leaf_type",
+    "value": "aghiforme",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "erica-arborea",
+    "key": "flower_shape",
+    "value": "campanula",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "erica-arborea",
+    "key": "fruit_type",
+    "value": "capsula",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "salsapariglia",
+    "key": "leaf_type",
+    "value": "semplice",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "salsapariglia",
+    "key": "leaf_margin",
+    "value": "dentato",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "salsapariglia",
+    "key": "flower_shape",
+    "value": "fiori_minuti",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "salsapariglia",
+    "key": "fruit_type",
+    "value": "carnoso",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "cisto-montpellier",
+    "key": "leaf_type",
+    "value": "semplice",
+    "status": "candidate_reviewed_by_worker",
+    "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/arbusti-cladodi/candidates/cisto-montpellier-leaf_type-semplice.webp"
+  },
+  {
+    "species": "cisto-montpellier",
+    "key": "leaf_margin",
+    "value": "intero",
+    "status": "candidate_reviewed_by_worker",
+    "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/arbusti-cladodi/candidates/cisto-montpellier-leaf_margin-intero.webp"
+  },
+  {
+    "species": "cisto-montpellier",
+    "key": "flower_shape",
+    "value": "cinque_petali",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "cisto-montpellier",
+    "key": "fruit_type",
+    "value": "capsula",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "cisto-salvia",
+    "key": "leaf_type",
+    "value": "semplice",
+    "status": "candidate_reviewed_by_worker",
+    "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/arbusti-cladodi/candidates/cisto-salvia-leaf_type-semplice.webp"
+  },
+  {
+    "species": "cisto-salvia",
+    "key": "leaf_margin",
+    "value": "intero",
+    "status": "candidate_reviewed_by_worker",
+    "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/arbusti-cladodi/candidates/cisto-salvia-leaf_margin-intero.webp"
+  },
+  {
+    "species": "cisto-salvia",
+    "key": "flower_shape",
+    "value": "cinque_petali",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  },
+  {
+    "species": "cisto-salvia",
+    "key": "fruit_type",
+    "value": "capsula",
+    "status": "assigned_not_started",
+    "reason": "Generazione non avviata prima dello stop del coordinatore per revisione backlog; non è un blocco documentale."
+  }
+]
