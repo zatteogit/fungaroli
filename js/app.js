@@ -2640,7 +2640,7 @@ function renderWalkFocus(z, d, walk) {
     ${t.mainCat ? `<p class="small" data-glossary="${d?.best?.kind==='plant'?'Piante':'Funghi'}">Lungo il tracciato: ${linkTrees(t.mainCat.toLowerCase())} nei campioni tra circa ${Math.floor(t.lo / 25) * 25} e ${Math.ceil(t.hi / 25) * 25} m${d?.best?.species ? `, ${d.best.kind==='plant'?'proxy di paesaggio per':'compatibili con l’habitat di'} ${speciesLink(d.best.species, d.best.species.name.toLowerCase())}` : ''}.</p>` : ''}
     ${trailVisual(z, t, d, headsOf(z,t), 'focus')}
     ${walkForest(z,t)}
-    <button type="button" class="btn ghost" data-note-kind="zona" data-note-id="${z.id}" data-note-zone="${z.id}" data-note-href="${esc(walkHref(z,state.dayOffset,t))}" data-note-title="${esc(trailName(t))}">${notebookGlyph}<span>Salva il giro nel taccuino</span></button>
+    <button type="button" class="btn ghost" data-save-trip data-trip-zone="${z.id}" data-trip-href="${esc(walkHref(z,state.dayOffset,t))}" data-trip-title="${esc(trailName(t))}" data-trip-date="${d.date}">${notebookGlyph}<span>Salva il giro nel taccuino</span></button>
     ${trailLinks(z, t)}
     <p class="small muted">Verifica accesso, sosta e stato del sentiero prima di partire.</p>
     <details class="context-note walk-data"><summary>Tracciato e limiti dei dati</summary><p>Il GPX contiene solo il tratto nella zona. Tempi e dislivello, quando disponibili, riguardano l’itinerario completo.</p><p>Tracciato OpenStreetMap / Waymarked Trails · imbocchi ricavati dalla rete stradale mappata.${state.target==='funghi'?' L’indice e le segnalazioni riguardano la zona, non questo singolo sentiero.':''}</p></details>
@@ -2864,9 +2864,10 @@ function renderDetail() {
     ${essentialSections(z, d, walk)}
     ${best.kind==='plant'?`<p class="small muted">Indice di contesto sperimentale · fattori disponibili ${best.factors.filter(f=>f.value!=null).length}/${best.factors.length}${best.quality.climateUnavailable?' · meteo non disponibile':''}</p><div class="notice">${esc(best.species.parts)} ${esc(best.species.caution)}</div>`:''}
     <section class="zone-actions" aria-label="Taccuino e mappa">
-      <h2 class="outing-section-title">Taccuino e mappa</h2>
-      ${best.kind==='plant'?`<button type="button" class="btn primary zone-note-action" data-note-kind="pianta" data-note-id="${best.species.plantId}" data-note-zone="${z.id}" data-note-title="${esc(best.species.name)}">${notebookGlyph}<span>Annota la fase nel taccuino</span><span aria-hidden="true">→</span></button>`:`<div class="zone-community"><button type="button" class="btn primary zone-note-action" data-report data-zone="${z.id}" data-species="${best.species.id}">${notebookGlyph}<span>Annota nel taccuino</span><span aria-hidden="true">→</span></button>${reportBadge(z.id, best.species.id)}</div>`}
-      <p class="zone-note-hint">${best.kind==='plant'?'Nel taccuino puoi annotare le fasi della pianta e le ricerche a vuoto, con luogo e giorno dell’osservazione.':'Nel taccuino puoi registrare specie cercate, ritrovamenti e ricerche a vuoto, con luogo e giorno dell’uscita.'}</p>
+      <h2 class="outing-section-title">Il giro, nel tuo taccuino</h2>
+      <button type="button" class="btn primary zone-note-action" data-new-outing data-trip-zone="${z.id}"${walk?` data-trip-href="${esc(walkHref(z,state.dayOffset,walk.t))}" data-trip-title="${esc(trailName(walk.t))}"`:''}>${notebookGlyph}<span>Ci sono stato</span><span aria-hidden="true">→</span></button>
+      ${best.kind==='plant'?`<button type="button" class="btn primary zone-note-action" data-note-kind="pianta" data-note-id="${best.species.plantId}" data-note-zone="${z.id}" data-note-title="${esc(best.species.name)}">${notebookGlyph}<span>Annota la fase nel taccuino</span><span aria-hidden="true">→</span></button>`:`<div class="zone-community"><button type="button" class="btn ghost zone-note-action" data-report data-zone="${z.id}" data-species="${best.species.id}">${notebookGlyph}<span>Annota un’osservazione</span><span aria-hidden="true">→</span></button>${reportBadge(z.id, best.species.id)}</div>`}
+      <p class="zone-note-hint">${best.kind==='plant'?'Nel taccuino puoi annotare le fasi della pianta e le ricerche a vuoto, con luogo e giorno dell’osservazione.':'Ricorda il giro con pochi tocchi: funghi osservati, fatica e un pensiero, se vuoi.'}</p>
       <div class="zone-secondary-actions">
         <a class="zone-secondary-action" href="#/mappa/${z.id}" aria-label="Sentieri e accessi sulla mappa">${IC.map}<span><b>Apri la mappa</b><small>Sentieri e accessi</small></span></a>
       </div>

@@ -7,11 +7,12 @@ import {notebookDemo} from './notebook-demo.js';
 // da Claude per la taratura); altrove localStorage del browser.
 
 import { SPECIES } from './species.js';
-import { intornoA } from './human.js';
+import {createOutingComposer} from './outing-composer.js';
+import {outingMemory,outingStory} from './outing-memory.js';
 import { formatIndex } from './model.js';
 import { todayISO } from './weather.js';
 import { communityReady, communityEnabled, currentUser, communityRequest, shareDiaryEntry, shareNotebookNote } from './community.js';
-import {PHENO_PHASES} from './notebook-entry.js';
+import {normalizeNotebookNote,PHENO_PHASES} from './notebook-entry.js';
 import {sharedObservation} from './community-observation.js';
 import {createNotebookComposer} from './notebook-composer.js';
 
@@ -161,7 +162,6 @@ async function openStore() {
 
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const iso = todayISO;
-const fmt = (s) => new Date(s + 'T12:00:00').toLocaleDateString('it-IT', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' });
 
 export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, predict, captureForecast, getZoneId, noteCatalogs=()=>({}), zoneImage = () => '', referenceImage=()=>null }) {
   const dlg = document.getElementById('journal-dialog');
@@ -169,7 +169,6 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
   const list = document.getElementById('journal-list');
   let entries = [],notifiedEntries=null;
   let store = null;
-  let draft, step;
   let listMessage = '';
   const actionStates=new Map();let entriesRevision=0;
   let listFilter='',listQuery='',noteControls=[];
@@ -211,175 +210,49 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
     openNote({...(kind?{category}:{}),zoneId:b.dataset.noteZone,reference:kind?{href:b.dataset.noteHref||`#/${kind}/${id}`,title:b.dataset.noteTitle}:null});
   });
 
-  const STEPS = ['dove', 'quando', 'quota', 'ricerca', 'cosa', 'nota'];
-
-  function open() {
-    draft = { zoneId: getZoneId(), date: iso(new Date()), band: undefined, finds: {}, searched: [], effort: {}, note: '' };
-    step = 0;
-    render();
-    openModal(dlg);
+  // Il ricordo dell’uscita resta distinto dalle osservazioni di ricerca.
+  const outingSpecies=()=>{
+    const byId=new Map(speciesCatalog.map(s=>[s.id,s]));
+    for(const item of noteCatalogs().fungo||[]){const id=item.href?.split('/').at(-1);if(id&&!byId.has(id))byId.set(id,{...item,id});}
+    return [...byId.values()];
+  };
+  let outingOwner;
+  const outingComposer=createOutingComposer({dialog:dlg,zones,species:outingSpecies,onSave:async(draft,existing)=>{
+    const owner=outingOwner;if(!currentStore(owner))throw new Error('Profilo cambiato: riapri l’uscita.');
+    if(!zones.some(z=>z.id===draft.zoneId)||!/^\d{4}-\d{2}-\d{2}$/.test(draft.date)||draft.date>iso(new Date()))throw new Error('Controlla luogo e giorno dell’uscita.');
+    const parsedDay=new Date(draft.date+'T12:00:00Z');if(!Number.isFinite(+parsedDay)||parsedDay.toISOString().slice(0,10)!==draft.date)throw new Error('Controlla il giorno dell’uscita.');
+    const now=new Date().toISOString(),sameContext=existing&&existing.zoneId===draft.zoneId&&existing.date===draft.date;
+    const entry={...draft,id:existing?.id||crypto.randomUUID(),kind:'outing',note:draft.note.trim(),band:sameContext?existing?.band??null:null,
+      experience:outingMemory(draft,outingSpecies()),savedAt:existing?.savedAt||now,
+      predicted:sameContext?existing.predicted||{}:{},
+      forecast:sameContext?existing.forecast:{mode:'retrospective',capturedAt:now}};
+    await owner.put(entry);if(!currentStore(owner))throw new Error('Profilo cambiato: riapri il taccuino.');
+    entries=[entry,...entries.filter(e=>e.id!==entry.id)];sortEntries();entriesRevision++;renderList('Uscita salvata nel taccuino.');return entry;
+  },onDone:entry=>{location.hash='#/diario/pagina/'+encodeURIComponent(entry.id);}});
+  async function open(context={},existing=null){
+    await storageReady;if(!store)return;outingOwner=store;outingComposer.open(context,existing);
   }
-
-  function next() { step = Math.min(STEPS.length - 1, step + 1); render(); }
-  function back() { step = Math.max(0, step - 1); render(); }
-
-  function shell(title, hint, content, { canNext = true, nextLabel = 'Avanti' } = {}) {
-    body.innerHTML = `
-      <div class="wiz-progress" aria-hidden="true">${STEPS.map((_, k) => `<span class="${k <= step ? 'on' : ''}"></span>`).join('')}</div>
-      <p class="wiz-step">Passo ${step + 1} di ${STEPS.length}</p>
-      <h2 class="wiz-title">${title}</h2>
-      ${hint ? `<p class="wiz-hint">${hint}</p>` : ''}
-      <div class="wiz-content">${content}</div>
-      <div class="wiz-nav">
-        ${step > 0 ? '<button type="button" class="btn ghost" data-act="back">Indietro</button>' : '<button type="button" class="btn ghost" data-change-note-type>Cambia tipo</button>'}
-        ${canNext ? `<button type="button" class="btn primary" data-act="next">${nextLabel}</button>` : ''}
-      </div>`;
-    body.querySelector('[data-act="back"]')?.addEventListener('click', back);
-    body.querySelector('[data-change-note-type]')?.addEventListener('click',()=>{dlg.close();openNote();});
-    body.querySelector('[data-act="next"]')?.addEventListener('click', step === STEPS.length - 1 ? save : next);
-  }
-
-  function choices(items, current, onPick) {
-    const wrap = document.createElement('div');
-    wrap.className = 'wiz-choices';
-    for (const it of items) {
-      const b = document.createElement('button');
-      b.type = 'button';
-      b.className = 'wiz-choice' + (it.value === current ? ' sel' : '') + (it.img ? ' has-img' : '');
-      b.innerHTML = `${it.img ? `<img data-src="${it.img}" alt="" loading="lazy" decoding="async">` : ''}<span>${esc(it.label)}</span>${it.sub ? `<small>${esc(it.sub)}</small>` : ''}`;
-      b.addEventListener('click', () => onPick(it.value));
-      wrap.appendChild(b);
+  document.addEventListener('click',async event=>{
+    const button=event.target.closest('[data-new-outing],[data-edit-outing],[data-complete-outing],[data-save-trip]');if(!button||button.disabled)return;
+    const entry=entries.find(e=>String(e.id)===(button.dataset.editOuting||button.dataset.completeOuting));
+    if(button.hasAttribute('data-edit-outing')){if(entry)open({},entry);return;}
+    if(button.hasAttribute('data-complete-outing')){
+      if(!entry)return;const reference=entry.reference;
+      open({zoneId:entry.zoneId,date:entry.date<=iso(new Date())?entry.date:iso(new Date()),fromEntryId:entry.id,route:reference?{href:reference.href,name:reference.title,followed:false}:null});return;
     }
-    return wrap;
-  }
-
-  function render() {
-    const zone = zones.find((z) => z.id === draft.zoneId);
-    const s = STEPS[step];
-
-    if (s === 'dove') {
-      shell('Dove sei stato?', 'Tocca la zona.', '', { canNext: false });
-      body.querySelector('.wiz-content').appendChild(choices(
-        zones.map((z) => ({ value: z.id, label: z.title || z.name, sub: z.subtitle, img: zoneImage(z.id) })), draft.zoneId,
-        (v) => { draft.zoneId = v; draft.band = undefined; next(); }));
-    }
-
-    if (s === 'quando') {
-      const today = new Date();
-      const yest = new Date(Date.now() - 864e5);
-      const other = draft.date !== iso(today) && draft.date !== iso(yest);
-      shell('Quando?', null, '', { canNext: other });
-      const c = body.querySelector('.wiz-content');
-      c.appendChild(choices([
-        { value: iso(today), label: 'Oggi' },
-        { value: iso(yest), label: 'Ieri' },
-        { value: 'altro', label: 'Un altro giorno' },
-      ], other ? 'altro' : draft.date, (v) => {
-        if (v === 'altro') { draft.date = iso(new Date(Date.now() - 2 * 864e5)); render(); } else { draft.date = v; next(); }
-      }));
-      if (other) {
-        const inp = document.createElement('input');
-        inp.type = 'date'; inp.className = 'wiz-input'; inp.value = draft.date; inp.max = iso(today);
-        inp.addEventListener('change', () => { if (inp.value) draft.date = inp.value; });
-        c.appendChild(inp);
-      }
-    }
-
-    if (s === 'quota') {
-      shell('A che quota, più o meno?', 'Se non lo sai va bene lo stesso.', '', { canNext: false });
-      body.querySelector('.wiz-content').appendChild(choices(
-        [...zone.bands.map((b) => ({ value: b, label: `${intornoA(b).replace('i', 'I')} ${b} m` })), { value: null, label: 'Non lo so' }],
-        draft.band, (v) => { draft.band = v; next(); }));
-    }
-
-    if (s === 'ricerca') {
-      shell('Come hai cercato?', 'Indica le specie cercate, anche quando non le hai trovate. Le altre restano non osservate.',
-        `<div class="filter-panel-groups">${speciesCatalog.map((sp) => `<button type="button" class="chip" data-searched="${sp.id}" aria-pressed="${draft.searched.includes(sp.id)}">${esc(sp.name)}</button>`).join('')}</div>
-         <label>Inizio ricerca (ora del dispositivo) <input class="wiz-input" type="datetime-local" data-effort="startedAt" value="${esc(draft.effort.startedAt || '')}" min="${draft.date}T00:00" max="${draft.date}T23:59"></label>
-         <label>Minuti di ricerca <input class="wiz-input" type="number" min="1" max="1440" data-effort="minutes" value="${draft.effort.minutes || ''}"></label>
-         <label>Numero di cercatori <input class="wiz-input" type="number" min="1" max="100" data-effort="people" value="${draft.effort.people || ''}"></label>
-         <p class="small muted">Orario e sforzo sono facoltativi. Il confronto per specie richiede una previsione salvata prima dell'inizio della ricerca.</p>`);
-      body.querySelectorAll('[data-searched]').forEach((b) => b.addEventListener('click', () => { const id = b.dataset.searched; draft.searched = draft.searched.includes(id) ? draft.searched.filter((x) => x !== id) : [...draft.searched, id]; render(); }));
-      body.querySelectorAll('[data-effort]').forEach((inp) => inp.addEventListener('input', () => { draft.effort[inp.dataset.effort] = inp.value; }));
-    }
-
-    if (s === 'cosa') {
-      const pred = predict(draft.zoneId, draft.date, draft.band) || {};
-      const sorted = [...speciesCatalog].sort((a, b) => (pred[b.id] ?? -1) - (pred[a.id] ?? -1));
-      const showAll = draft.showAll || sorted.slice(6).some((sp) => draft.finds[sp.id] || draft.searched.includes(sp.id));
-      const shown = showAll ? sorted : sorted.slice(0, 6);
-      const rows = shown.map((sp) => `
-        <div class="wiz-row">
-          <div class="wiz-sp">${esc(sp.name)}<small>${esc(sp.latin)}</small></div>
-          <div class="seg" role="group" aria-label="${esc(sp.name)}">
-            ${[1, 2, 3].map((l) => `<button type="button" data-sp="${sp.id}" data-l="${l}" aria-pressed="${draft.finds[sp.id] === l}">${LEVELS[l]}</button>`).join('')}
-          </div>
-        </div>`).join('');
-      const nothing = !Object.values(draft.finds).some(Boolean);
-      shell('Cosa hai trovato?', 'Indica i ritrovamenti. Per le specie che hai dichiarato di cercare, nessuna quantità significa zero; per le altre significa non osservata.',
-        rows + (showAll ? '' : '<button type="button" class="link-btn" data-act="all">Mostra altre specie</button>'),
-        { nextLabel: nothing ? 'Niente funghi, avanti' : 'Avanti' });
-      body.querySelectorAll('.seg button').forEach((b) => b.addEventListener('click', () => {
-        const id = b.dataset.sp, l = +b.dataset.l;
-        draft.finds[id] = draft.finds[id] === l ? 0 : l;
-        render();
-      }));
-      body.querySelector('[data-act="all"]')?.addEventListener('click', () => { draft.showAll = true; render(); });
-    }
-
-    if (s === 'nota') {
-      const found = Object.entries(draft.finds).filter(([, l]) => l);
-      const recap = found.length
-        ? found.map(([id, l]) => `${speciesCatalog.find((x) => x.id === id).name} (${LEVELS[l].toLowerCase()})`).join(', ')
-        : 'niente funghi';
-      shell('Vuoi aggiungere una nota?', 'Facoltativo: esposizione, tipo di bosco, com\'era il terreno…',
-        `<p class="wiz-recap"><b>${esc(zone.name)}</b> · ${fmt(draft.date)}${draft.band ? ` · ${draft.band} m` : ''}<br>${esc(recap)}</p>
-         <textarea class="wiz-input" rows="3" placeholder="Es. versante nord, faggeta, terreno umido">${esc(draft.note)}</textarea>
-         <section class="composer-sharing"><label class="composer-share-switch"><span><b>Condividi con Fronda</b><small>Zona, giorno, specie, quantità e sforzo di ricerca nei conteggi community. Il testo resta privato.</small></span><input class="switch-input" type="checkbox" role="switch" name="share"${draft.share?' checked':''}${store?.kind==='community'?'':' disabled'}></label><p class="small">${store?.kind==='community'?'Condivisione facoltativa. Puoi ritirare le osservazioni dal taccuino.':'Per condividere serve un profilo Fronda. Puoi salvare intanto l’uscita privata.'}</p></section>`,
-        { nextLabel: 'Salva uscita' });
-      body.querySelector('textarea').addEventListener('input', (e) => { draft.note = e.target.value; });
-      body.querySelectorAll('[name="share"]').forEach((r) => r.addEventListener('change', (e) => { draft.share = e.target.checked; }));
-    }
-  }
-
-  async function save() {
-    const startedAt = draft.effort.startedAt ? new Date(draft.effort.startedAt).toISOString() : null;
-    const plan = entries.filter((e) => e.kind === 'plan' && e.zoneId === draft.zoneId && e.date === draft.date
-      && Date.parse(e.forecast?.capturedAt) < Date.parse(startedAt)).sort((a, b) => b.savedAt.localeCompare(a.savedAt))[0];
-    const forecast = plan ? { ...plan.forecast, mode: 'prospective', planId: plan.id }
-      : { mode: 'retrospective', capturedAt: new Date().toISOString() };
-    const predicted = plan ? (draft.band == null ? plan.forecast.scores : plan.forecast.scoresByBand?.[draft.band] || {})
-      : predict(draft.zoneId, draft.date, draft.band) || {};
-    const entry = {
-      id: Date.now().toString(36),
-      date: draft.date,
-      zoneId: draft.zoneId,
-      band: draft.band ?? null,
-      kind: 'outing', searched: draft.searched,
-      effort: { startedAt, minutes: +draft.effort.minutes || null, people: +draft.effort.people || null },
-      finds: { ...Object.fromEntries(draft.searched.map((id) => [id, 0])), ...Object.fromEntries(Object.entries(draft.finds).filter(([, l]) => l)) },
-      note: draft.note.trim(),
-      predicted, forecast,
-      savedAt: new Date().toISOString(),
-    };
-    let ok = true;
-    let shared = false, shareError = '';
-    try {
-      await store.put(entry);
-      if (draft.share && store.kind === 'community') {
-        try { shared = await shareDiaryEntry(entry); } catch (e) { shareError = e.message; }
-        entry.shared = !!shared;
-      }
-    } catch { ok = false; }
-    entries = [entry, ...entries];
-    sortEntries();
-    body.innerHTML = `<div class="wiz-done"><p class="wiz-big">✓</p><h2 class="wiz-title">Uscita salvata</h2>
-      ${ok ? '' : '<p class="notice">Non sono riuscito a salvarla in modo permanente: esporta subito il taccuino.</p>'}
-      ${shared ? '<p>Osservazioni aggiunte ai conteggi della community.</p>' : ''}${shareError ? `<p class="notice">Taccuino salvato, condivisione non completata: ${esc(shareError)}</p>` : ''}
-      <div class="wiz-nav"><span></span><button type="button" class="btn primary" data-act="close">Chiudi</button></div></div>`;
-    body.querySelector('[data-act="close"]').addEventListener('click', () => dlg.close());
-    renderList();
-  }
+    const zoneId=button.dataset.tripZone,route=button.dataset.tripHref?{href:button.dataset.tripHref,name:button.dataset.tripTitle,followed:false}:null;
+    if(!button.hasAttribute('data-save-trip')){open({zoneId,route});return;}
+    await storageReady;if(!store)return;const owner=store;button.disabled=true;
+    try{
+      const duplicate=entries.find(e=>e.kind==='note'&&e.category==='percorso'&&e.reference?.href===route?.href&&e.date===button.dataset.tripDate);
+      if(duplicate){location.hash='#/diario/pagina/'+encodeURIComponent(duplicate.id);return;}
+      const saved=normalizeNotebookNote({id:crypto.randomUUID(),kind:'note',category:'percorso',title:route?.name?.slice(0,120),date:button.dataset.tripDate||iso(new Date()),zoneId,note:'',reference:route?{href:route.href,title:route.name.slice(0,160)}:null,savedAt:new Date().toISOString()},{zoneIds:new Set(zones.map(z=>z.id))});
+      await owner.put(saved);if(!currentStore(owner))return;
+      entries=[saved,...entries];sortEntries();entriesRevision++;renderList('Giro salvato. Dopo l’uscita, tocca “Ci sono stato”.');location.hash='#/diario/pagina/'+encodeURIComponent(saved.id);
+    }catch(error){
+      clearTimeout(noticeTimer);document.body.append(savedNotice);savedNotice.textContent='Giro non salvato. '+error.message;savedNotice.classList.add('on');noticeTimer=setTimeout(()=>savedNotice.classList.remove('on'),7000);
+    }finally{button.disabled=false;}
+  });
 
   // dove sta la voce: solo nel taccuino o anche nei conteggi della community (zona, giorno, specie, quantita')
   function privacyTag(entry){
@@ -389,32 +262,35 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
   }
   function rowActions(entry){
     const state=actionStates.get(String(entry.id))||{},id=esc(entry.id),disabled=state.busy?' disabled':'';
-    let canPublish=entry.kind!=='note';if(entry.kind==='note')try{sharedObservation(entry);canPublish=true;}catch{/* Contesto incompleto: modifica prima di condividere. */}
+    const completed=entries.filter(e=>e.kind==='outing'&&e.experience?.fromEntryId===entry.id);
+    let canPublish=entry.kind==='outing'&&Object.entries(entry.finds||{}).some(([id,amount])=>speciesCatalog.some(sp=>sp.id===id)&&(amount>0||amount===0&&entry.searched?.includes(id)));if(entry.kind==='note')try{sharedObservation(entry);canPublish=true;}catch{/* Contesto incompleto: modifica prima di condividere. */}
     const publicControl=store.kind==='community'&&entry.kind!=='plan'&&(entry.shared||canPublish)?`<button type="button" class="diary-community-switch" role="switch" aria-checked="${!!entry.shared}" ${entry.shared?'data-withdraw-entry':'data-share-entry'}="${id}"${disabled}><span class="diary-switch-track" aria-hidden="true"></span><span><b>Condividi con community Fronda</b><small>Solo dati di osservazione. Il testo resta privato.</small></span></button>`:'';
-    return `${privacyTag(entry)}${publicControl}<div class="j-actions" aria-busy="${!!state.busy}">
-      ${entry.kind==='note'?`<button type="button" class="btn notebook-share" data-share-note="${id}"${disabled}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V3m-5 5 5-5 5 5M5 13v7h14v-7"/></svg>Invia una copia</button>`:''}
+    return `${completed.length?`<p class="small">${completed.map(e=>`<a href="#/diario/pagina/${encodeURIComponent(e.id)}">Uscita del ${esc(e.date)} →</a>`).join(' · ')}</p>`:''}${privacyTag(entry)}${publicControl}<div class="j-actions" aria-busy="${!!state.busy}">
+      ${['note','outing','plan'].includes(entry.kind)?`<button type="button" class="btn notebook-share" data-share-note="${id}"${disabled}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V3m-5 5 5-5 5 5M5 13v7h14v-7"/></svg>Invia una copia</button>`:''}
       ${entry.kind==='note'?`<button type="button" class="link-btn small" data-edit-note="${id}"${disabled}>Modifica</button>`:''}
 
+      ${entry.kind==='outing'?`<button type="button" class="link-btn small" data-edit-outing="${id}"${disabled}>Modifica il ricordo</button>`:''}
+      ${entry.kind==='plan'||entry.category==='percorso'?`<button type="button" class="btn primary" data-complete-outing="${id}"${disabled}>Ci sono stato</button>`:''}
       <button type="button" class="link-btn small j-delete" data-del="${id}"${disabled}>${state.busy==='delete'?'Elimino…':state.confirmDelete?'Conferma eliminazione':'Elimina'}</button>
       ${state.confirmDelete&&!state.busy?`<button type="button" class="link-btn small" data-cancel-delete="${id}">Annulla</button>`:''}
     </div>${state.message?`<p class="j-action-status${state.error?' is-error':''}" role="${state.error?'alert':'status'}">${esc(state.message)}</p>`:''}`;
   }
-  const currentStore=target=>target===store&&(target.kind!=='community'||target.ownerId===currentUser()?.id);
+  const currentStore=target=>!!target&&target===store&&(target.kind!=='community'||target.ownerId===currentUser()?.id);
   const focusAction=(id,attr)=>list.querySelector(`[${attr}="${CSS.escape(id)}"]`)?.focus({preventScroll:true});
-  const shareDialog=document.createElement('dialog');shareDialog.className='wiz notebook-share-dialog';shareDialog.setAttribute('aria-label','Condividi appunto');document.body.append(shareDialog);
+  const shareDialog=document.createElement('dialog');shareDialog.className='wiz notebook-share-dialog';shareDialog.setAttribute('aria-label','Condividi una copia');document.body.append(shareDialog);
   let shareOrigin=null;
   shareDialog.addEventListener('close',()=>shareOrigin?.isConnected&&shareOrigin.focus({preventScroll:true}));
   addEventListener('hashchange',()=>shareDialog.close());
   list.addEventListener('click',async event=>{
     const button=event.target.closest('[data-share-note]');if(!button||button.disabled)return;
     const entry=entries.find(e=>String(e.id)===button.dataset.shareNote);if(!entry)return;
-    const zone=zones.find(z=>z.id===entry.zoneId),title=entry.title||'Appunto dal bosco';
-    const text=[title,[entry.date,zone?.title||zone?.name].filter(Boolean).join(' · '),entry.note,entry.reference?.title,entry.reference?.href?new URL(entry.reference.href,location.href).href:''].filter(Boolean).join('\n\n');
+    const zone=zones.find(z=>z.id===entry.zoneId),title=notebookTitle(entry,zones);
+    const text=[title,[entry.date,zone?.title||zone?.name].filter(Boolean).join(' · '),outingStory(entry,{zones,species:outingSpecies()}),entry.note,entry.reference?.title,(entry.reference?.href||outingMemory(entry,outingSpecies()).route?.href)?new URL(entry.reference?.href||outingMemory(entry,outingSpecies()).route.href,location.href).href:''].filter(Boolean).join('\n\n');
     shareOrigin=button;
     if(navigator.share){
       try{await navigator.share({title,text});return;}catch(error){if(error.name==='AbortError')return;}
     }
-    shareDialog.innerHTML=`<div class="wiz-body"><h2>Condividi appunto</h2><p>Copia il testo e invialo a chi vuoi.</p><label for="note-share-text" class="sr-only">Testo da condividere</label><textarea id="note-share-text" readonly rows="8">${esc(text)}</textarea><p class="small" role="status" data-copy-status></p><div class="wiz-nav"><button class="btn ghost" type="button" data-share-close>Chiudi</button><button class="btn primary" type="button" data-copy-note>Copia appunto</button></div></div>`;
+    shareDialog.innerHTML=`<div class="wiz-body"><h2>Condividi una copia</h2><p>Copia il testo e invialo a chi vuoi.</p><label for="note-share-text" class="sr-only">Testo da condividere</label><textarea id="note-share-text" readonly rows="8">${esc(text)}</textarea><p class="small" role="status" data-copy-status></p><div class="wiz-nav"><button class="btn ghost" type="button" data-share-close>Chiudi</button><button class="btn primary" type="button" data-copy-note>Copia il testo</button></div></div>`;
     shareDialog.querySelector('[data-share-close]').addEventListener('click',()=>shareDialog.close());
     shareDialog.querySelector('[data-copy-note]').addEventListener('click',async()=>{
       const status=shareDialog.querySelector('[data-copy-status]');
@@ -475,13 +351,13 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
       const a=agreement(e),top=Object.entries(e.predicted||{}).filter(([,v])=>Number.isFinite(v)).sort((x,y)=>y[1]-x[1])[0];
       return `<details class="notebook-analysis"><summary>Condizioni ${e.kind==='plan'?'salvate':'dell’uscita'}</summary>${top?`<p>Indice salvato ${formatIndex(top[1])} · ${esc(speciesCatalog.find(x=>x.id===top[0])?.name||top[0])}</p><p class="small muted">Valore storico: non descrive le condizioni attuali.</p>`:''}${e.kind==='plan'?'<p>Previsione salvata prima dell’uscita.</p>':a?a.species.map(x=>`<p>${esc(speciesCatalog.find(s=>s.id===x.id)?.name||x.id)}: ${x.ok?'concordante':x.said?'indice alto, zero osservato':'trovata con indice basso'}</p>`).join(''):'<p>Osservazione senza confronto prospettico.</p>'}</details>`;
     };
-    const result=renderNotebook({entries:route.demo?getDemoEntries():entries,zones,species:speciesCatalog,zoneImage,referenceImage,route,filter:listFilter,query:listQuery,layout:listLayout,density:listDensity,canPreview:['admin','editor'].includes(currentUser()?.role),actions:rowActions,analysis,shared:e=>store?.kind==='community'&&e.shared});
+    const result=renderNotebook({entries:route.demo?getDemoEntries():entries,zones,species:outingSpecies(),zoneImage,referenceImage,route,filter:listFilter,query:listQuery,layout:listLayout,density:listDensity,canPreview:['admin','editor'].includes(currentUser()?.role),actions:rowActions,analysis,shared:e=>store?.kind==='community'&&e.shared});
     const heading=document.querySelector('.notebook-heading');
     heading.querySelector('h1').textContent=result.title;
     heading.querySelector('.kicker').textContent=result.kicker;
     heading.querySelector('.view-sub').textContent=result.subtitle;
     heading.querySelector('.diary-header-actions').hidden=route.demo||result.detail;
-    heading.querySelector('[data-new-note]').hidden=route.demo||result.detail;
+    heading.querySelectorAll('[data-new-note],[data-new-outing]').forEach(b=>b.hidden=route.demo||result.detail);
     heading.querySelector('.diary-demo-link').hidden=!['admin','editor'].includes(currentUser()?.role)||route.demo||result.detail;
     document.querySelector('.notebook-view').classList.toggle('is-detail',result.detail);
     document.querySelector('.notebook-view').classList.toggle('is-demo',route.demo);
@@ -627,7 +503,7 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
     const next = currentUser()?.id || null;
     if (next === profileId) { if (store?.kind === 'community') { const loading = store,revision=entriesRevision; try { const fresh = await loading.list({isCurrent:()=>currentStore(loading)&&revision===entriesRevision}); if (!currentStore(loading)||revision!==entriesRevision) return; entries = fresh; sortEntries(); renderList(); } catch { /* nessuna perdita della copia locale */ } } return; }
     profileId = next;entriesRevision++;actionStates.clear();listMessage='';
-    if(noteDialog.open)noteDialog.close();
+    if(noteDialog.open)noteDialog.close();if(dlg.open)dlg.close();
     store = next ? collectiveStore() : localStore();
     entries = []; renderList();
     const loading = store;
