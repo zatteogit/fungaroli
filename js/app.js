@@ -2072,8 +2072,9 @@ function mapCameraOptions({animate=true,maxZoom=12.5}={}){
   const box=map.getContainer().getBoundingClientRect(),toolbar=$('.map-top'),sheet=$('#map-sheet');
   let right=24,bottom=24;
   if(!sheet.hidden){
-    if(box.width>=900&&box.width-sheet.offsetWidth>360)right=sheet.offsetWidth+32;
-    else bottom=Math.min(sheet.offsetHeight+24,box.height*.5);
+    const r=sheet.getBoundingClientRect();
+    if(r.left-box.left>=360)right=box.right-r.left+16;
+    else bottom=Math.min(box.bottom-r.top+16,box.height-toolbar.offsetTop-toolbar.offsetHeight-116);
   }else{
     for(const el of [$('.tabbar'),mapExperience?.host]){
       if(!el||el.hidden)continue;const r=el.getBoundingClientRect();
@@ -2091,12 +2092,39 @@ function frameMapZones(items,{overview=false,animate=true}={}){
 function fitMapResults({animate=true}={}){
   return frameMapZones(mapCandidates().map(r=>r.z),{overview:true,animate});
 }
-function chooseMapZone(id,{animate=true}={}){
+function focusMapZone(z,{animate=true,anchor=null}={}){
+  const options=mapCameraOptions({animate,maxZoom:14});
+  const controls=map.getContainer().querySelector('.mapctl-stack');
+  if(controls){
+    const box=map.getContainer().getBoundingClientRect(),r=controls.getBoundingClientRect();
+    options.paddingBottomRight[0]=Math.max(options.paddingBottomRight[0],box.right-r.left+16);
+  }
+  const bounds=L.latLng(z.lat,z.lon).toBounds(z.radius_m*2.3);
+  const padding=L.point(options.paddingTopLeft).add(options.paddingBottomRight);
+  // Dalla vista generale avvicina la zona. Un dettaglio già scelto dall'utente
+  // conserva invece la scala: aprire una scheda non equivale a «mostra tutto».
+  map.stop();
+  if(map.getZoom()<Math.min(14,map.getBoundsZoom(bounds,false,padding))){
+    map.fitBounds(bounds,options);return;
+  }
+  // Sposta solo quanto serve a lasciare il punto toccato fuori da scheda e barra.
+  const p=map.latLngToContainerPoint(anchor||[z.lat,z.lon]),size=map.getSize();
+  const label=anchor?null:map.getContainer().querySelector('.zone-label-sel');
+  const available=size.x-options.paddingTopLeft[0]-options.paddingBottomRight[0];
+  const inset=Math.min((label?.offsetWidth||32)/2+8,Math.max(16,available/2-8));
+  const left=options.paddingTopLeft[0]+inset,top=options.paddingTopLeft[1]+20;
+  const right=size.x-options.paddingBottomRight[0]-inset,bottom=size.y-options.paddingBottomRight[1]-20;
+  const dx=p.x-Math.max(left,Math.min(p.x,right)),dy=p.y-Math.max(top,Math.min(p.y,bottom));
+  if(dx||dy)map.panBy([dx,dy],options);
+}
+function chooseMapZone(id,{animate=true,anchor=null}={}){
   if(mapExperience)mapExperience.host.open=false;
   const toolbar=$('.map-top');toolbar.classList.remove('days-open');toolbar.querySelector('[data-days]')?.setAttribute('aria-expanded','false');
   openSheet(id);
   const z=(weatherZones||zones).find(z=>z.id===id);
-  if(map&&z)frameMapZones([z],{animate});
+  // L'apertura aggiorna anche barra inferiore e ingombri dei controlli.
+  // Misurali dopo che il nuovo stato della scheda è stato applicato.
+  if(map&&z)requestAnimationFrame(()=>{if(state.view==='mappa'&&state.zoneId===id)focusMapZone(z,{animate,anchor});});
 }
 function initMapExperience(){
   if(mapExperience)return;
@@ -2489,7 +2517,7 @@ function renderMap(changed=null) {
       if(z.id===state.zoneId&&pinCellCard(e))return;
       // Lo stesso clic non deve selezionare il cerchio e aprire anche il campione nel bubbling.
       if(e.originalEvent)e.originalEvent._frondaCellHandled=true;
-      chooseMapZone(z.id);
+      chooseMapZone(z.id,{anchor:e.latlng});
     });
     if (showCells && d) cellsLayer(z, d).addTo(g);
     else if (d && canHover) {
