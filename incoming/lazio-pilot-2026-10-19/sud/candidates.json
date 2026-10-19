@@ -1,0 +1,1728 @@
+{
+  "schemaVersion": "research-candidates-1",
+  "area": "Lazio sud — province Latina e Frosinone",
+  "checkedAt": "2026-10-19",
+  "status": "proposta_non_integrata",
+  "scope": "8 zone candidate; nessuna modifica ai dati app, nessuna pubblicazione, nessuna geometria o inferenza di presenza fungina",
+  "counts": {
+    "zones": 8,
+    "LT": 4,
+    "FR": 4
+  },
+  "epistemicConvention": "verificato = la fonte letta documenta il fatto, non sopralluogo; proposta = scelta o testo editoriale; sconosciuto = null o verifica tecnica mancante. Schede CAI/eventi storici non dimostrano apertura attuale.",
+  "sources": [
+    {
+      "id": "sud-lazio-regole",
+      "url": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+      "ente": "Regione Lazio",
+      "title": "Funghi",
+      "checkedAt": "2026-10-19",
+      "evidence": "La raccolta richiede attestato/titolo o tesserino, documento e contributo annuale; la pagina rinvia alla L.R. 32/1998. Non prova un diritto di accesso alla singola proprietà o una deroga nelle aree protette.",
+      "accessOutcome": "letta_pagina_completa"
+    },
+    {
+      "id": "sud-bassiano-1",
+      "url": "https://www.cailatina.com/pagu_percorso.php?id=5",
+      "ente": "CAI Latina",
+      "title": "I Lecci del Semprevisa (primo percorso)",
+      "checkedAt": "2026-10-19",
+      "evidence": "Valle Sant’Angelo a Bassiano: lecceta cedua e lecci monumentali a candelabro; percorso da Le Cornetta di 6,6 km, +500/-500 m, 3 ore; un tratto risale senza sentiero fra rovi. Coordinate UTM pubblicate del punto di partenza: 33T 337188E 4601983N.",
+      "accessOutcome": "letta_pagina_completa"
+    },
+    {
+      "id": "sud-bassiano-2",
+      "url": "https://www.cailatina.com/pagu_percorso.php?id=6",
+      "ente": "CAI Latina",
+      "title": "I lecci del Semprevisa, secondo percorso. Sentiero Nardi – Loc. Orticello",
+      "checkedAt": "2026-10-19",
+      "evidence": "Da Le Cornetta a Fonte Sant’Angelo e Orticello, ritorno sul medesimo percorso: 7 km, +450/-450 m, 2 ore e 30; primo tratto su carrareccia del CAI 710. La pagina riporta 3T anziché 33T nel riferimento UTM: non convertito.",
+      "accessOutcome": "letta_pagina_completa"
+    },
+    {
+      "id": "sud-sanvito-it",
+      "url": "https://www.parchilazio.it/montiausoni-schede-8508-giorniverdi_alla_scoperta_della_sughereta_di_san_vito_parco_naturale_regionale_monti_ausoni_e_lago_d",
+      "ente": "Regione Lazio / Parco Monti Ausoni e Lago di Fondi",
+      "title": "Giorniverdi — Alla scoperta della Sughereta di San Vito",
+      "checkedAt": "2026-10-19",
+      "evidence": "Scheda di appuntamento del 5 aprile 2011: passeggiata sui sentieri di Villa San Vito, Monte San Biagio; dislivello circa 150 m, difficoltà descrittiva media; appuntamento Via Appia km 114,500. Fonte storica: non documenta la percorribilità né l’accesso nel 2026.",
+      "accessOutcome": "letta_pagina_completa"
+    },
+    {
+      "id": "sud-ausoni-natura",
+      "url": "https://www.parchilazio.it/montiausoni-natura",
+      "ente": "Regione Lazio / Parco Monti Ausoni e Lago di Fondi",
+      "title": "La natura del Parco",
+      "checkedAt": "2026-10-19",
+      "evidence": "La sughereta di San Vito si trova a Monte San Biagio e ha sottobosco di erica bianca e cisto. Pagina del parco: informazioni generali non estese automaticamente a ogni sentiero.",
+      "accessOutcome": "letta_pagina_completa"
+    },
+    {
+      "id": "sud-sanvito-tutela",
+      "url": "https://www.parchilazio.it/montiausoni-schede-28600-insieme_conserviamo_la_sughereta_incontro_in_occasione_della_giornta_internazionale_delle_foreste",
+      "ente": "Regione Lazio / Ente Parco Monti Ausoni e Lago di Fondi",
+      "title": "Insieme, conserviamo la Sughereta",
+      "checkedAt": "2026-10-19",
+      "evidence": "Incontro del 21 marzo 2022: l’ente descrive le sugherete di San Vito e Valle Marina nel territorio del parco e un progetto con DIBAF Università della Tuscia per contrastare il deperimento delle querce. Non è un bollettino sanitario attuale né autorizzazione di accesso.",
+      "accessOutcome": "letta_pagina_completa"
+    },
+    {
+      "id": "sud-itri-951",
+      "url": "https://www.parchilazio.it/montiaurunci-schede-18157-951_la_valle_di_itri_monte_revole_cai",
+      "ente": "Regione Lazio / Parco Monti Aurunci",
+      "title": "CAI 951 La Valle di Itri–Monte Revole",
+      "checkedAt": "2026-10-19",
+      "evidence": "Da La Valle nel comune di Itri: carrareccia, lecceta, valli carsiche e un faggio al bivio con 953. Scheda: EE, 7,3 km, 3 h 30, +957/-162 m; parcheggio di fronte alla partenza, nessun punto acqua. Link KML presente; non GPX.",
+      "accessOutcome": "letta_pagina_completa"
+    },
+    {
+      "id": "sud-aurunci-faq",
+      "url": "https://www.parcoaurunci.it/pagina.php?id=7",
+      "ente": "Ente Parco Naturale dei Monti Aurunci",
+      "title": "FAQ — Posso raccogliere i funghi ed i tartufi nel Parco?",
+      "checkedAt": "2026-10-19",
+      "evidence": "Il parco risponde sì alla raccolta dei funghi e rinvia alla L.R. 32/1998 e alla legge istitutiva L.R. 29/1997. La FAQ non certifica assenza di ordinanze temporanee o diritti privati sul percorso.",
+      "accessOutcome": "letta_html_via_urllib_HTTP200",
+      "limitations": "Primo tentativo web senza www fallito; URL con www letto interamente anche via HTTP locale."
+    },
+    {
+      "id": "sud-circeo-it",
+      "url": "https://www.parcocirceo.it/iti_dettaglio.php?id_iti=2245",
+      "ente": "Ente Parco Nazionale del Circeo",
+      "title": "Sentiero Foresta Demaniale e Piscina della Verdesca",
+      "checkedAt": "2026-10-19",
+      "evidence": "Anello da Cerasella: 4 km, 2 ore, difficoltà descrittiva Medio-Facile, pianeggiante, accesso Pontina km 89,2. Scheda aperta; farnetto e cerro nella foresta, frassino meridionale nelle piscine; area faunistica didattica con animali recuperati.",
+      "accessOutcome": "letta_pagina_completa"
+    },
+    {
+      "id": "sud-circeo-2026",
+      "url": "https://www.parcocirceo.it/dettaglio.php?id=85389",
+      "ente": "Ente Parco Nazionale del Circeo",
+      "title": "Nel 2026 riapre la raccolta dei funghi nel Parco Nazionale del Circeo",
+      "checkedAt": "2026-10-19",
+      "evidence": "Avviso del 30 dicembre 2025: raccolta 2026 solo nelle aree derogate A/B con autorizzazione, requisiti di residenza e contingenti; martedì, sabato e domenica 6:30–14:00, massimo 2 kg delle specie consentite. Zona A riservata ai residenti nei comuni del parco; non estendere la deroga all’intera foresta o al sentiero Cerasella-Verdesca.",
+      "accessOutcome": "letta_pagina_completa"
+    },
+    {
+      "id": "sud-circeo-albo",
+      "url": "https://www.parcocirceo.it/albo_dettaglio.php?id=72927",
+      "ente": "Ente Parco Nazionale del Circeo",
+      "title": "Raccolta funghi 2026. Avvio rilascio tesserini di autorizzazione",
+      "checkedAt": "2026-10-19",
+      "evidence": "Albo della determina 196 del 15 dicembre 2025; permette di correggere l’evidente refuso 15.13.2025 nell’avviso divulgativo. Sono elencati atto e quattro allegati, da acquisire prima di modellare poligoni derogati.",
+      "accessOutcome": "letta_pagina_completa"
+    },
+    {
+      "id": "sud-campoli-it",
+      "url": "https://www.cairoma.it/?p=29232",
+      "ente": "CAI Roma",
+      "title": "Pizzo Deta (2041 m) da Prato di Campoli",
+      "checkedAt": "2026-10-19",
+      "evidence": "Uscita 29 giugno 2025: anello 10 km, +900/-900 m, EE, 5 ore; partenza a Prato di Campoli 1.140 m, termine della strada asfaltata e parcheggio; coordinate WGS 41°46′28.3″ 13°29′33.2″. Salita faticosa, esposizione, radure e ginepri in discesa; non adatta a persone poco allenate.",
+      "accessOutcome": "letta_pagina_completa"
+    },
+    {
+      "id": "sud-campoli-faggi",
+      "url": "https://www.caifrascati.it/evento/monte-serra-comune-da-prato-di-campoli/",
+      "ente": "CAI Frascati",
+      "title": "Monte Serra Comune da Prato di Campoli",
+      "checkedAt": "2026-10-19",
+      "evidence": "Scheda escursione del 19 ottobre 2025 da Prato di Campoli: boschi di faggio e tasso, parcheggio a 1138 m; sentieri 617/618 verso Vado della Rocca, 619 Serra Comune e 622 di ritorno. EE, +750/-750 m, 5 ore. Quote e metriche appartengono a questo itinerario, non all’anello CAI Roma.",
+      "accessOutcome": "letta_pagina_completa"
+    },
+    {
+      "id": "sud-supino-it",
+      "url": "https://www.cairoma.it/?p=28403",
+      "ente": "CAI Roma",
+      "title": "Monte Gemma e Monte Salerio",
+      "checkedAt": "2026-10-19",
+      "evidence": "Uscita del 13 marzo 2025: da Fonte Santa Serena, Supino; 8 km, +500/-500 m, E, 4 ore escluse soste. Strada montana da Supino termina alla fonte; parcheggio, poi circa 1 km su asfalto prima della salita boscosa. Punto WGS N41°36.124′ E13°09.965′.",
+      "accessOutcome": "letta_pagina_completa"
+    },
+    {
+      "id": "sud-supino-faggi",
+      "url": "https://organizzazione.cai.it/sez-monterotondo/evento/monte-gemma-da-fonte-santa-serena-monti-lepini-escursionismo/",
+      "ente": "CAI Monterotondo",
+      "title": "Monte Gemma da fonte Santa Serena — Monti Lepini",
+      "checkedAt": "2026-10-19",
+      "evidence": "Scheda del 7 giugno 2026: anello da Santa Serena, Supino (FR), attraverso faggete e ambienti carsici fino alla dorsale di Monte Gemma. Conferma il contesto boschivo senza estendere dati a tutte le pendici.",
+      "accessOutcome": "letta_pagina_completa"
+    },
+    {
+      "id": "sud-fiumata-luogo",
+      "url": "https://www.parcomontisimbruini.it/pun-dettaglio.php?id=2773",
+      "ente": "Ente Parco Naturale Regionale Monti Simbruini",
+      "title": "Le sorgenti dell’Aniene — Fiumata",
+      "checkedAt": "2026-10-19",
+      "evidence": "Fiumata nel comune di Filettino FR: provinciale Trevi-Filettino, deviazione sulla carrabile comunale a circa 2 km da Filettino. Due rami lungo Corore e Riglioso; faggi secolari sulle acque. Fonte narrativa descrive distanze approssimate diverse dalla scheda 693a: non fonderle.",
+      "accessOutcome": "letta_pagina_completa"
+    },
+    {
+      "id": "sud-fiumata-693a",
+      "url": "https://www.parcomontisimbruini.it/itinerari-dettaglio.php?id_iti=2810",
+      "ente": "Ente Parco Naturale Regionale Monti Simbruini",
+      "title": "Percorso 693a — Fiumata–Fosso Acqua Corore",
+      "checkedAt": "2026-10-19",
+      "evidence": "Scheda 693a: T, 2,700 km, 50 minuti, +168/-4 m; sterrata lungo Aniene poi faggeta e tornanti; parcheggio al bivio. Quote min/max pubblicate 948/1111 m del tracciato. Campi automatici comune/partenza erroneamente «Filattiera», in contrasto con testo e pagina locale Filettino: richiede rettifica/conferma.",
+      "accessOutcome": "letta_pagina_completa"
+    },
+    {
+      "id": "sud-gpx-693a",
+      "url": "https://www.parcomontisimbruini.it/gpx/693a.gpx",
+      "ente": "Ente Parco Naturale Regionale Monti Simbruini",
+      "title": "GPX originale del sentiero 693a",
+      "checkedAt": "2026-10-19",
+      "evidence": "Link estratto dalla scheda 693a. Risposta HTTP 200, Content-Type application/gpx+xml, intestazione XML GPX 1.1 letta. Nessuna geometria estratta, convertita o salvata.",
+      "accessOutcome": "HTTP200_intestazione_XML_GPX_verificata"
+    },
+    {
+      "id": "sud-fiumata-natura",
+      "url": "https://www.parchilazio.it/parcomontisimbruini-schede-17765-zona_di_protezione_speciale_monti_simbruini_ed_ernici",
+      "ente": "Regione Lazio / Parco Monti Simbruini",
+      "title": "Zona di Protezione Speciale Monti Simbruini ed Ernici",
+      "checkedAt": "2026-10-19",
+      "evidence": "Articolo del 7 dicembre 2021: sorgenti dell’Aniene in faggeta e relativa ZSC; cita tritone crestato italiano e salamandrina di Savi. Sono spunti del sito/ambiente, non avvistamenti recenti né presenze garantite sul 693a.",
+      "accessOutcome": "letta_pagina_completa"
+    },
+    {
+      "id": "sud-simbruini-reg",
+      "url": "https://www.parcomontisimbruini.it/pdf/Reg.GeneraleEnte_det%20168_2007.pdf",
+      "ente": "Ente Parco Naturale Regionale Monti Simbruini",
+      "title": "Revisione e aggiornamento Piano di assetto e Regolamento — revisione 3",
+      "checkedAt": "2026-10-19",
+      "evidence": "PDF intestato Deliberazione Commissario n.58 del 14 agosto 2015: art.54 contempla raccolta nel rispetto della normativa, con esclusioni e facoltà di limitazioni temporanee. Nome file storico non prova vigenza/approvazione definitiva: non usato come autorizzazione corrente.",
+      "accessOutcome": "PDF_letto_sul_sito_ente",
+      "limitations": "Stato di efficacia attuale non dimostrato; richiesta fonte vigente."
+    },
+    {
+      "id": "sud-canneto-o7",
+      "url": "https://www.parcoabruzzo.it/sentiero.php?id_iti=4988",
+      "ente": "Ente PN Abruzzo Lazio e Molise",
+      "title": "O7 — Settefrati–Madonna di Canneto",
+      "checkedAt": "2026-10-19",
+      "evidence": "Scheda corrente: aperto, da Settefrati a Madonna Canneto, E, 8,258 km, 3 h 50. Link KMZ presente; GPX non individuato. Nessun dislivello nella scheda letta.",
+      "accessOutcome": "letta_html_via_urllib_HTTP200",
+      "limitations": "Web open ha avuto timeout; pagina HTTP letta interamente via urllib."
+    },
+    {
+      "id": "sud-canneto-natura",
+      "url": "https://www.parchilazio.it/parcoabruzzo-natura",
+      "ente": "Regione Lazio / PN Abruzzo Lazio e Molise",
+      "title": "Abruzzo, Lazio e Molise — Natura",
+      "checkedAt": "2026-10-19",
+      "evidence": "Il versante laziale include la valle di Canneto, descritta come ricoperta da faggi; la pagina tratta l’orso marsicano nel contesto di questa valle e delle altre valli laziali. Nessuna garanzia di incontro o segnalazione odierna.",
+      "accessOutcome": "letta_pagina_completa"
+    },
+    {
+      "id": "sud-pnalm-norme",
+      "url": "https://www.parcoabruzzo.it/pagina.php?id=618",
+      "ente": "Ente PN Abruzzo Lazio e Molise",
+      "title": "Come comportarsi — Decalogo del visitatore",
+      "checkedAt": "2026-10-19",
+      "evidence": "L’ente chiede di non abbandonare i sentieri, non raccogliere fiori e rispettare i regolamenti; precisa che raccolta funghi e prodotti del bosco è regolamentata. Il decalogo non specifica da solo permessi, zone o deroghe del settore laziale.",
+      "accessOutcome": "letta_pagina_completa"
+    },
+    {
+      "id": "sud-veroli-comune",
+      "url": "https://www.comune.veroli.fr.it/home/vivere.html",
+      "ente": "Comune di Veroli",
+      "title": "Vivere il Comune — Prato di Campoli",
+      "checkedAt": "2026-10-19",
+      "evidence": "Il sito comunale presenta Prato di Campoli come area naturalistica di Veroli e Veroli come città della provincia di Frosinone. Quota pubblicata 1143 m, differente dai 1140/1138 m delle schede CAI: non considerarla quota esatta del parcheggio.",
+      "accessOutcome": "letta_pagina_completa"
+    },
+    {
+      "id": "sud-cerasella-luogo",
+      "url": "https://www.parcocirceo.it/centri-visita-dettaglio.php?id=486",
+      "ente": "Ente Parco Nazionale del Circeo",
+      "title": "Area faunistica di Cerasella",
+      "checkedAt": "2026-10-19",
+      "evidence": "Scheda località: Cerasella, comune Sabaudia LT. La foresta è visitabile escludendo le riserve integrali; area con daini e cinghiali in recinto. Non trasferire questa possibilità di visita a un permesso di raccolta.",
+      "accessOutcome": "letta_pagina_completa"
+    },
+    {
+      "id": "sud-settefrati-comune",
+      "url": "https://www.parcoabruzzo.it/paesi.scheda.php?id=60072",
+      "ente": "Ente PN Abruzzo Lazio e Molise",
+      "title": "Settefrati (FR)",
+      "checkedAt": "2026-10-19",
+      "evidence": "La scheda del comune indica Provincia Frosinone, Regione Lazio, e lega il paese alla Valle di Canneto. Non usata la quota del paese come quota del bosco o del santuario.",
+      "accessOutcome": "letta_pagina_completa"
+    },
+    {
+      "id": "sud-itri-provincia",
+      "url": "https://www.parcoaurunci.it/centri-visita.php",
+      "ente": "Ente Parco Monti Aurunci",
+      "title": "Centri Visita",
+      "checkedAt": "2026-10-19",
+      "evidence": "L’ente localizza il proprio vivaio a Itri (LT); fonte per la provincia del comune. Non assunto come punto di partenza dell’itinerario 951.",
+      "accessOutcome": "letta_pagina_completa"
+    }
+  ],
+  "zones": [
+    {
+      "idProposto": "lepini-bassiano-santangelo",
+      "nameProposto": "Valle Sant’Angelo e lecci del Semprevisa",
+      "status": "proposta_da_revisionare",
+      "municipalities": {
+        "value": [
+          "Bassiano"
+        ],
+        "status": "verificato",
+        "sourceId": "sud-bassiano-1"
+      },
+      "provinces": {
+        "value": [
+          "LT"
+        ],
+        "status": "verificato",
+        "sourceId": "sud-bassiano-1"
+      },
+      "region": {
+        "value": "Lazio",
+        "status": "verificato",
+        "sourceId": "sud-bassiano-1"
+      },
+      "description": {
+        "text": "Una valle di lecci da esplorare con un percorso già descritto dal CAI. Per una proposta a funghi conviene partire dai tratti documentati verso Sant’Angelo e tenere distinta la variante fuori sentiero.",
+        "status": "proposta_editoriale",
+        "sourceIds": [
+          "sud-bassiano-1"
+        ]
+      },
+      "habitat": [
+        {
+          "value": "Lecceta a ceduo con lecci monumentali a candelabro nella Valle Sant’Angelo.",
+          "status": "verificato",
+          "sourceId": "sud-bassiano-1"
+        }
+      ],
+      "coordinates": {
+        "value": {
+          "raw": "33T 337188E 4601983N",
+          "crs": "UTM zona 33T; datum non esplicitato",
+          "lat": null,
+          "lon": null,
+          "pointRole": "partenza Le Cornetta",
+          "precision": "coordinate pubblicate al metro; accuratezza e datum non dichiarati"
+        },
+        "status": "verificato",
+        "sourceId": "sud-bassiano-1",
+        "note": "Nessuna conversione o presunta accuratezza metrica."
+      },
+      "elevationM": {
+        "value": null,
+        "status": "sconosciuto",
+        "sourceId": null,
+        "note": "Nessuna quota puntuale d’accesso verificata"
+      },
+      "manager": {
+        "value": null,
+        "status": "sconosciuto",
+        "sourceId": null,
+        "note": "Gestore forestale/proprietà e usi civici da identificare"
+      },
+      "protection": {
+        "value": null,
+        "status": "sconosciuto",
+        "sourceId": null,
+        "note": "Perimetri/ZSC e regole puntuali da verificare; non assumere area libera"
+      },
+      "activities": {
+        "mushroomCollection": {
+          "status": "sconosciuto",
+          "legalBasisSourceIds": [
+            "sud-lazio-regole"
+          ],
+          "currentLocalAuthorization": null,
+          "note": "Habitat documentato; nessuna presenza fungina garantita. Titolo regionale non dimostra libertà di accesso, proprietà o assenza di limiti locali."
+        },
+        "mushroomObservation": {
+          "status": "proposta",
+          "note": "Solo da sentieri accessibili e dopo verifica di aperture/divieti attuali; non implica raccolta."
+        }
+      },
+      "access": [
+        {
+          "value": "Partenza a Le Cornetta presso il ponte sul Fosso Sant’Angelo.",
+          "status": "verificato",
+          "sourceId": "sud-bassiano-2"
+        }
+      ],
+      "parking": [
+        {
+          "value": null,
+          "status": "sconosciuto",
+          "sourceId": null,
+          "note": "La fonte indica il ponte, non descrive un parcheggio autorizzato."
+        }
+      ],
+      "itineraries": [
+        {
+          "name": {
+            "value": "Sentiero Nardi–Orticello da Le Cornetta",
+            "status": "verificato",
+            "sourceId": "sud-bassiano-2"
+          },
+          "url": "https://www.cailatina.com/pagu_percorso.php?id=6",
+          "sourceId": "sud-bassiano-2",
+          "pageRead": true,
+          "lengthKm": {
+            "value": 7,
+            "status": "verificato",
+            "sourceId": "sud-bassiano-2"
+          },
+          "ascentM": {
+            "value": 450,
+            "status": "verificato",
+            "sourceId": "sud-bassiano-2"
+          },
+          "descentM": {
+            "value": 450,
+            "status": "verificato",
+            "sourceId": "sud-bassiano-2"
+          },
+          "durationMinutes": {
+            "value": 150,
+            "status": "verificato",
+            "sourceId": "sud-bassiano-2"
+          },
+          "difficulty": {
+            "value": null,
+            "status": "sconosciuto",
+            "sourceId": null,
+            "note": "Classe CAI non documentata"
+          },
+          "gpxUrl": {
+            "value": null,
+            "status": "sconosciuto",
+            "sourceId": null,
+            "note": "Non trovato un link GPX diretto; nessuna traccia generata"
+          },
+          "otherTrack": {
+            "value": null,
+            "status": "sconosciuto",
+            "sourceId": null,
+            "note": "Non reperita"
+          },
+          "note": "Ritorno sul percorso di andata; classe CAI non indicata. Preferenza editoriale per il percorso documentato senza il tratto fuori sentiero del primo anello.",
+          "lazioSpatialCheck": {
+            "status": "sconosciuto",
+            "note": "Localizzazione da descrizione; nessuna geometria acquisita né verifica punto-per-punto del confine regionale."
+          }
+        },
+        {
+          "name": {
+            "value": "I Lecci del Semprevisa — primo percorso",
+            "status": "verificato",
+            "sourceId": "sud-bassiano-1"
+          },
+          "url": "https://www.cailatina.com/pagu_percorso.php?id=5",
+          "sourceId": "sud-bassiano-1",
+          "pageRead": true,
+          "lengthKm": {
+            "value": 6.6,
+            "status": "verificato",
+            "sourceId": "sud-bassiano-1"
+          },
+          "ascentM": {
+            "value": 500,
+            "status": "verificato",
+            "sourceId": "sud-bassiano-1"
+          },
+          "descentM": {
+            "value": 500,
+            "status": "verificato",
+            "sourceId": "sud-bassiano-1"
+          },
+          "durationMinutes": {
+            "value": 180,
+            "status": "verificato",
+            "sourceId": "sud-bassiano-1"
+          },
+          "difficulty": {
+            "value": null,
+            "status": "sconosciuto",
+            "sourceId": null,
+            "note": "Classe CAI non documentata"
+          },
+          "gpxUrl": {
+            "value": null,
+            "status": "sconosciuto",
+            "sourceId": null,
+            "note": "Non trovato un link GPX diretto; nessuna traccia generata"
+          },
+          "otherTrack": {
+            "value": null,
+            "status": "sconosciuto",
+            "sourceId": null,
+            "note": "Non reperita"
+          },
+          "note": "Fonte segnala tratto senza sentiero e rovi; non presentare come giro facile.",
+          "lazioSpatialCheck": {
+            "status": "sconosciuto",
+            "note": "Localizzazione da descrizione; nessuna geometria acquisita né verifica punto-per-punto del confine regionale."
+          }
+        }
+      ],
+      "natureIdeas": [
+        {
+          "value": "Lecci monumentali: confronto fra ceduo e grandi alberi lasciati crescere.",
+          "status": "verificato",
+          "sourceId": "sud-bassiano-1"
+        },
+        {
+          "value": "Lecci a candelabro: il CAI collega la forma alla capitozzatura storica.",
+          "status": "verificato",
+          "sourceId": "sud-bassiano-1"
+        }
+      ],
+      "photoCandidates": [],
+      "photoGap": "Nessuna foto con autore, licenza e corrispondenza locale verificati in questo pacchetto. Nessuna immagine scaricata.",
+      "technicalGaps": [
+        "Perimetro di zona e confini amministrativi da ricavare da dati ufficiali; nessuna geometria prodotta.",
+        "Accessibilità e ordinanze temporanee 2026 da riscontrare presso ente competente.",
+        "Nessun campione forestale, fascia altimetrica, punteggio fungino o tempo auto calcolato."
+      ]
+    },
+    {
+      "idProposto": "ausoni-san-vito",
+      "nameProposto": "Sughereta di San Vito",
+      "status": "proposta_da_revisionare",
+      "municipalities": {
+        "value": [
+          "Monte San Biagio"
+        ],
+        "status": "verificato",
+        "sourceId": "sud-sanvito-it"
+      },
+      "provinces": {
+        "value": [
+          "LT"
+        ],
+        "status": "verificato",
+        "sourceId": "sud-sanvito-it"
+      },
+      "region": {
+        "value": "Lazio",
+        "status": "verificato",
+        "sourceId": "sud-sanvito-it"
+      },
+      "description": {
+        "text": "Un bosco di sughere porta il pilota verso gli ambienti mediterranei del sud del Lazio. La vecchia passeggiata di Villa San Vito è un riferimento da riaprire con il parco prima di trasformarlo in uscita pratica.",
+        "status": "proposta_editoriale",
+        "sourceIds": [
+          "sud-sanvito-it"
+        ]
+      },
+      "habitat": [
+        {
+          "value": "Bosco di quercia da sughero presso Villa San Vito.",
+          "status": "verificato",
+          "sourceId": "sud-sanvito-it"
+        },
+        {
+          "value": "Sottobosco con erica bianca e cisto, specificamente riferito alla sughereta di San Vito.",
+          "status": "verificato",
+          "sourceId": "sud-ausoni-natura"
+        }
+      ],
+      "coordinates": {
+        "value": null,
+        "status": "sconosciuto",
+        "sourceId": null,
+        "note": "Nessun centro-zona inventato. Servono coordinate verificate dell’accesso e validazione spaziale."
+      },
+      "elevationM": {
+        "value": null,
+        "status": "sconosciuto",
+        "sourceId": null,
+        "note": "Nessuna quota puntuale d’accesso verificata"
+      },
+      "manager": {
+        "value": "Ente Parco Naturale Regionale Monti Ausoni e Lago di Fondi",
+        "status": "verificato",
+        "sourceId": "sud-sanvito-it"
+      },
+      "protection": {
+        "value": "La Sughereta di San Vito è nel territorio del Parco Monti Ausoni e Lago di Fondi.",
+        "status": "verificato",
+        "sourceId": "sud-sanvito-tutela"
+      },
+      "activities": {
+        "mushroomCollection": {
+          "status": "sconosciuto",
+          "legalBasisSourceIds": [
+            "sud-lazio-regole"
+          ],
+          "currentLocalAuthorization": null,
+          "note": "Habitat documentato; nessuna presenza fungina garantita. Titolo regionale non dimostra libertà di accesso, proprietà o assenza di limiti locali."
+        },
+        "mushroomObservation": {
+          "status": "proposta",
+          "note": "Solo da sentieri accessibili e dopo verifica di aperture/divieti attuali; non implica raccolta."
+        }
+      },
+      "access": [
+        {
+          "value": "Riferimento storico dell’appuntamento: Via Appia km 114,500.",
+          "status": "verificato",
+          "sourceId": "sud-sanvito-it",
+          "note": "Non trasferire un punto di ritrovo del 2011 in accesso garantito 2026."
+        }
+      ],
+      "parking": [
+        {
+          "value": null,
+          "status": "sconosciuto",
+          "sourceId": null,
+          "note": "Non documentato parcheggio attuale."
+        }
+      ],
+      "itineraries": [
+        {
+          "name": {
+            "value": "Passeggiata sui sentieri di Villa San Vito",
+            "status": "verificato",
+            "sourceId": "sud-sanvito-it"
+          },
+          "url": "https://www.parchilazio.it/montiausoni-schede-8508-giorniverdi_alla_scoperta_della_sughereta_di_san_vito_parco_naturale_regionale_monti_ausoni_e_lago_d",
+          "sourceId": "sud-sanvito-it",
+          "pageRead": true,
+          "lengthKm": {
+            "value": null,
+            "status": "sconosciuto",
+            "sourceId": null,
+            "note": "Non documentata"
+          },
+          "ascentM": {
+            "value": 150,
+            "status": "verificato",
+            "sourceId": "sud-sanvito-it"
+          },
+          "descentM": {
+            "value": null,
+            "status": "sconosciuto",
+            "sourceId": null,
+            "note": "Non documentato"
+          },
+          "durationMinutes": {
+            "value": null,
+            "status": "sconosciuto",
+            "sourceId": null,
+            "note": "Non documentata"
+          },
+          "difficulty": {
+            "value": "media — descrizione dell’evento, non classe CAI",
+            "status": "verificato",
+            "sourceId": "sud-sanvito-it"
+          },
+          "gpxUrl": {
+            "value": null,
+            "status": "sconosciuto",
+            "sourceId": null,
+            "note": "Non trovato un link GPX diretto; nessuna traccia generata"
+          },
+          "otherTrack": {
+            "value": null,
+            "status": "sconosciuto",
+            "sourceId": null,
+            "note": "Non reperita"
+          },
+          "note": "Appuntamento del 2011. Dato storico, dislivello approssimato; traccia, accesso e percorribilità attuali sconosciuti.",
+          "lazioSpatialCheck": {
+            "status": "sconosciuto",
+            "note": "Localizzazione da descrizione; nessuna geometria acquisita né verifica punto-per-punto del confine regionale."
+          }
+        }
+      ],
+      "natureIdeas": [
+        {
+          "value": "Sughere: il progetto locale di conservazione documenta il valore e la vulnerabilità di questi alberi.",
+          "status": "verificato",
+          "sourceId": "sud-sanvito-tutela"
+        },
+        {
+          "value": "Erica bianca e cisto nel sottobosco della sughereta.",
+          "status": "verificato",
+          "sourceId": "sud-ausoni-natura"
+        }
+      ],
+      "photoCandidates": [],
+      "photoGap": "Nessuna foto con autore, licenza e corrispondenza locale verificati in questo pacchetto. Nessuna immagine scaricata.",
+      "technicalGaps": [
+        "Perimetro di zona e confini amministrativi da ricavare da dati ufficiali; nessuna geometria prodotta.",
+        "Accessibilità e ordinanze temporanee 2026 da riscontrare presso ente competente.",
+        "Nessun campione forestale, fascia altimetrica, punteggio fungino o tempo auto calcolato.",
+        "Regolamento fungino specifico vigente e autorizzazione di accesso a Villa San Vito non trovati: raccolta non proponibile come consentita."
+      ]
+    },
+    {
+      "idProposto": "aurunci-itri-campello",
+      "nameProposto": "La Valle di Itri e Campello Vecchio",
+      "status": "proposta_da_revisionare",
+      "municipalities": {
+        "value": [
+          "Itri"
+        ],
+        "status": "verificato",
+        "sourceId": "sud-itri-951"
+      },
+      "provinces": {
+        "value": [
+          "LT"
+        ],
+        "status": "verificato",
+        "sourceId": "sud-itri-provincia"
+      },
+      "region": {
+        "value": "Lazio",
+        "status": "verificato",
+        "sourceId": "sud-itri-951"
+      },
+      "description": {
+        "text": "Dalla carrareccia della Valle si entra nei lecci e si raggiungono le valli carsiche di Campello. È un contesto boschivo da approfondire per il giro a funghi; la salita completa al Revole resta un itinerario EE distinto dalla passeggiata nel bosco.",
+        "status": "proposta_editoriale",
+        "sourceIds": [
+          "sud-itri-951"
+        ]
+      },
+      "habitat": [
+        {
+          "value": "Lecceta sul tratto iniziale del sentiero 951, poi valli carsiche; faggio al bivio con il 953.",
+          "status": "verificato",
+          "sourceId": "sud-itri-951"
+        }
+      ],
+      "coordinates": {
+        "value": null,
+        "status": "sconosciuto",
+        "sourceId": null,
+        "note": "Nessun centro-zona inventato. Servono coordinate verificate dell’accesso e validazione spaziale."
+      },
+      "elevationM": {
+        "value": null,
+        "status": "sconosciuto",
+        "sourceId": null,
+        "note": "Nessuna quota puntuale d’accesso verificata"
+      },
+      "manager": {
+        "value": "Ente Parco Naturale Regionale Monti Aurunci",
+        "status": "verificato",
+        "sourceId": "sud-itri-951"
+      },
+      "protection": {
+        "value": "Parco Naturale Regionale Monti Aurunci; scheda pubblicata dal parco.",
+        "status": "verificato",
+        "sourceId": "sud-itri-951"
+      },
+      "activities": {
+        "mushroomCollection": {
+          "status": "consentita_secondo_FAQ_con_verifiche_locali_pendenti",
+          "legalBasisSourceIds": [
+            "sud-aurunci-faq",
+            "sud-lazio-regole"
+          ],
+          "currentLocalAuthorization": null,
+          "note": "FAQ ente ammette raccolta secondo norme regionali. Assenza di ulteriori permessi, usi civici e limitazioni temporanee sul percorso non verificata."
+        },
+        "mushroomObservation": {
+          "status": "proposta",
+          "note": "Solo da sentieri accessibili e dopo verifica di aperture/divieti attuali; non implica raccolta."
+        }
+      },
+      "access": [
+        {
+          "value": "La Valle, nel comune di Itri; prima carrareccia fino a Stremigna.",
+          "status": "verificato",
+          "sourceId": "sud-itri-951"
+        }
+      ],
+      "parking": [
+        {
+          "value": "Parcheggio antistante il punto di partenza; coordinate, capacità, fondo e tariffe non documentati.",
+          "status": "verificato",
+          "sourceId": "sud-itri-951"
+        }
+      ],
+      "itineraries": [
+        {
+          "name": {
+            "value": "CAI 951 La Valle di Itri–Monte Revole",
+            "status": "verificato",
+            "sourceId": "sud-itri-951"
+          },
+          "url": "https://www.parchilazio.it/montiaurunci-schede-18157-951_la_valle_di_itri_monte_revole_cai",
+          "sourceId": "sud-itri-951",
+          "pageRead": true,
+          "lengthKm": {
+            "value": 7.3,
+            "status": "verificato",
+            "sourceId": "sud-itri-951"
+          },
+          "ascentM": {
+            "value": 957,
+            "status": "verificato",
+            "sourceId": "sud-itri-951"
+          },
+          "descentM": {
+            "value": 162,
+            "status": "verificato",
+            "sourceId": "sud-itri-951"
+          },
+          "durationMinutes": {
+            "value": 210,
+            "status": "verificato",
+            "sourceId": "sud-itri-951"
+          },
+          "difficulty": {
+            "value": "EE",
+            "status": "verificato",
+            "sourceId": "sud-itri-951"
+          },
+          "gpxUrl": {
+            "value": null,
+            "status": "sconosciuto",
+            "sourceId": null,
+            "note": "Non trovato un link GPX diretto; nessuna traccia generata"
+          },
+          "otherTrack": {
+            "value": {
+              "format": "KML",
+              "url": "https://www.parchilazio.it/documenti/schede/20220422232757_17197_map_1.kml"
+            },
+            "status": "verificato",
+            "sourceId": "sud-itri-951"
+          },
+          "note": "Metriche dell’intero percorso ufficiale, non di un anello e non di un breve tratto nel bosco; nessun punto acqua secondo scheda.",
+          "lazioSpatialCheck": {
+            "status": "sconosciuto",
+            "note": "Localizzazione da descrizione; nessuna geometria acquisita né verifica punto-per-punto del confine regionale."
+          }
+        }
+      ],
+      "natureIdeas": [
+        {
+          "value": "Lecci del primo tratto: punto per leggere il cambiamento del bosco lungo la salita.",
+          "status": "verificato",
+          "sourceId": "sud-itri-951"
+        },
+        {
+          "value": "Il grosso faggio presso l’incrocio 953 è un riferimento botanico descritto dall’ente.",
+          "status": "verificato",
+          "sourceId": "sud-itri-951"
+        }
+      ],
+      "photoCandidates": [],
+      "photoGap": "Nessuna foto con autore, licenza e corrispondenza locale verificati in questo pacchetto. Nessuna immagine scaricata.",
+      "technicalGaps": [
+        "Perimetro di zona e confini amministrativi da ricavare da dati ufficiali; nessuna geometria prodotta.",
+        "Accessibilità e ordinanze temporanee 2026 da riscontrare presso ente competente.",
+        "Nessun campione forestale, fascia altimetrica, punteggio fungino o tempo auto calcolato."
+      ]
+    },
+    {
+      "idProposto": "circeo-cerasella-verdesca",
+      "nameProposto": "Cerasella e Piscina della Verdesca",
+      "status": "proposta_da_revisionare",
+      "municipalities": {
+        "value": [
+          "Sabaudia"
+        ],
+        "status": "verificato",
+        "sourceId": "sud-cerasella-luogo"
+      },
+      "provinces": {
+        "value": [
+          "LT"
+        ],
+        "status": "verificato",
+        "sourceId": "sud-cerasella-luogo"
+      },
+      "region": {
+        "value": "Lazio",
+        "status": "verificato",
+        "sourceId": "sud-circeo-it"
+      },
+      "description": {
+        "text": "Una foresta di pianura con querce e depressioni stagionalmente allagate. È una buona proposta per osservare il bosco e i funghi lungo i sentieri; la raccolta segue un regime speciale che impedisce di proporla come uscita aperta a tutti.",
+        "status": "proposta_editoriale",
+        "sourceIds": [
+          "sud-circeo-it"
+        ]
+      },
+      "habitat": [
+        {
+          "value": "Foresta planiziale con farnetto e cerro, piscine con frassino meridionale.",
+          "status": "verificato",
+          "sourceId": "sud-circeo-it"
+        }
+      ],
+      "coordinates": {
+        "value": null,
+        "status": "sconosciuto",
+        "sourceId": null,
+        "note": "Nessun centro-zona inventato. Servono coordinate verificate dell’accesso e validazione spaziale."
+      },
+      "elevationM": {
+        "value": null,
+        "status": "sconosciuto",
+        "sourceId": null,
+        "note": "Nessuna quota puntuale d’accesso verificata"
+      },
+      "manager": {
+        "value": "Ente Parco Nazionale del Circeo",
+        "status": "verificato",
+        "sourceId": "sud-circeo-it"
+      },
+      "protection": {
+        "value": "Parco Nazionale del Circeo, Foresta Demaniale.",
+        "status": "verificato",
+        "sourceId": "sud-circeo-it"
+      },
+      "activities": {
+        "mushroomCollection": {
+          "status": "non_proponibile_al_pubblico_generale",
+          "legalBasisSourceIds": [
+            "sud-circeo-2026",
+            "sud-circeo-albo",
+            "sud-lazio-regole"
+          ],
+          "currentLocalAuthorization": null,
+          "authorizationRequired": true,
+          "eligibility": "Requisiti locali di residenza, contingenti e autorizzazione; non assumere idoneità dell’utente.",
+          "routeInsideAuthorizedArea": null,
+          "note": "Non verificata sovrapposizione Cerasella–Verdesca con aree derogate A/B. Non proporre raccolta sul sentiero. Il regime generale 2026 ammette raccolta solo in porzioni determinate, martedì/sabato/domenica 6:30–14:00, massimo 2 kg di specie consentite; verificare disciplinare e aggiornamenti."
+        },
+        "mushroomObservation": {
+          "status": "disponibile_su_itinerario_ufficiale_aperto",
+          "sourceId": "sud-circeo-it",
+          "note": "Osservazione senza prelievo dal sentiero; apertura della scheda verificata oggi, soggetta a cambiamenti."
+        }
+      },
+      "access": [
+        {
+          "value": "Da Pontina km 89,2 all’area attrezzata di Cerasella.",
+          "status": "verificato",
+          "sourceId": "sud-circeo-it"
+        }
+      ],
+      "parking": [
+        {
+          "value": null,
+          "status": "sconosciuto",
+          "sourceId": null,
+          "note": "Area attrezzata documentata, parcheggio e tariffe non descritti nella scheda letta."
+        }
+      ],
+      "itineraries": [
+        {
+          "name": {
+            "value": "Sentiero Foresta Demaniale e Piscina della Verdesca",
+            "status": "verificato",
+            "sourceId": "sud-circeo-it"
+          },
+          "url": "https://www.parcocirceo.it/iti_dettaglio.php?id_iti=2245",
+          "sourceId": "sud-circeo-it",
+          "pageRead": true,
+          "lengthKm": {
+            "value": 4,
+            "status": "verificato",
+            "sourceId": "sud-circeo-it"
+          },
+          "ascentM": {
+            "value": null,
+            "status": "sconosciuto",
+            "sourceId": null,
+            "note": "Non documentato"
+          },
+          "descentM": {
+            "value": null,
+            "status": "sconosciuto",
+            "sourceId": null,
+            "note": "Non documentato"
+          },
+          "durationMinutes": {
+            "value": 120,
+            "status": "verificato",
+            "sourceId": "sud-circeo-it"
+          },
+          "difficulty": {
+            "value": "Medio - Facile; pianeggiante",
+            "status": "verificato",
+            "sourceId": "sud-circeo-it"
+          },
+          "gpxUrl": {
+            "value": null,
+            "status": "sconosciuto",
+            "sourceId": null,
+            "note": "Non trovato un link GPX diretto; nessuna traccia generata"
+          },
+          "otherTrack": {
+            "value": null,
+            "status": "sconosciuto",
+            "sourceId": null,
+            "note": "Non reperita"
+          },
+          "note": "Stato ufficiale letto: aperto. «Pianeggiante» non trasformato in dislivello numerico zero.",
+          "lazioSpatialCheck": {
+            "status": "sconosciuto",
+            "note": "Localizzazione da descrizione; nessuna geometria acquisita né verifica punto-per-punto del confine regionale."
+          }
+        }
+      ],
+      "natureIdeas": [
+        {
+          "value": "Farnetto e cerro: due querce che la scheda localizza nella foresta del percorso.",
+          "status": "verificato",
+          "sourceId": "sud-circeo-it"
+        },
+        {
+          "value": "Frassino meridionale nelle depressioni umide della foresta.",
+          "status": "verificato",
+          "sourceId": "sud-circeo-it"
+        }
+      ],
+      "photoCandidates": [],
+      "photoGap": "Nessuna foto con autore, licenza e corrispondenza locale verificati in questo pacchetto. Nessuna immagine scaricata.",
+      "technicalGaps": [
+        "Perimetro di zona e confini amministrativi da ricavare da dati ufficiali; nessuna geometria prodotta.",
+        "Accessibilità e ordinanze temporanee 2026 da riscontrare presso ente competente.",
+        "Nessun campione forestale, fascia altimetrica, punteggio fungino o tempo auto calcolato."
+      ]
+    },
+    {
+      "idProposto": "ernici-prato-campoli",
+      "nameProposto": "Prato di Campoli e boschi verso Pizzo Deta",
+      "status": "proposta_da_revisionare",
+      "municipalities": {
+        "value": [
+          "Veroli"
+        ],
+        "status": "verificato",
+        "sourceId": "sud-veroli-comune"
+      },
+      "provinces": {
+        "value": [
+          "FR"
+        ],
+        "status": "verificato",
+        "sourceId": "sud-veroli-comune"
+      },
+      "region": {
+        "value": "Lazio",
+        "status": "verificato",
+        "sourceId": "sud-campoli-it"
+      },
+      "description": {
+        "text": "Il parcheggio di Prato di Campoli offre un riferimento concreto per approfondire i boschi degli Ernici. La direttrice al Pizzo Deta documenta il contesto, ma l’anello completo è faticoso ed EE: un futuro giro a funghi va progettato nei tratti boscosi senza ereditarne automaticamente lunghezza e difficoltà.",
+        "status": "proposta_editoriale",
+        "sourceIds": [
+          "sud-campoli-it"
+        ]
+      },
+      "habitat": [
+        {
+          "value": "Prato, tratti boscosi ripidi e radure; ginepri sulla discesa dell’anello.",
+          "status": "verificato",
+          "sourceId": "sud-campoli-it"
+        },
+        {
+          "value": "Boschi di faggio e tasso sull’itinerario da Prato di Campoli a Serra Comune.",
+          "status": "verificato",
+          "sourceId": "sud-campoli-faggi"
+        }
+      ],
+      "coordinates": {
+        "value": {
+          "lat": 41.77452777777778,
+          "lon": 13.492555555555555,
+          "raw": "WGS 41°46′28.3″ 13°29′33.2″",
+          "crs": "WGS come da fonte",
+          "pointRole": "termine strada asfaltata/ritrovo",
+          "precision": "0,1 secondi nella fonte; accuratezza sul terreno non dichiarata"
+        },
+        "status": "verificato",
+        "sourceId": "sud-campoli-it"
+      },
+      "elevationM": {
+        "value": 1140,
+        "status": "verificato",
+        "sourceId": "sud-campoli-it",
+        "note": "Quota di Prato di Campoli nella descrizione CAI Roma, non quota media della zona. CAI Frascati indica parcheggio a 1138 m: non uniformare artificialmente."
+      },
+      "manager": {
+        "value": null,
+        "status": "sconosciuto",
+        "sourceId": null,
+        "note": "Gestore forestale/proprietà e usi civici da identificare"
+      },
+      "protection": {
+        "value": null,
+        "status": "sconosciuto",
+        "sourceId": null,
+        "note": "Perimetri/ZSC e regole puntuali da verificare; non assumere area libera"
+      },
+      "activities": {
+        "mushroomCollection": {
+          "status": "sconosciuto",
+          "legalBasisSourceIds": [
+            "sud-lazio-regole"
+          ],
+          "currentLocalAuthorization": null,
+          "note": "Habitat documentato; nessuna presenza fungina garantita. Titolo regionale non dimostra libertà di accesso, proprietà o assenza di limiti locali."
+        },
+        "mushroomObservation": {
+          "status": "proposta",
+          "note": "Solo da sentieri accessibili e dopo verifica di aperture/divieti attuali; non implica raccolta."
+        }
+      },
+      "access": [
+        {
+          "value": "Da Veroli verso Santa Maria Amaseno e Prato di Campoli, fino al termine della strada asfaltata.",
+          "status": "verificato",
+          "sourceId": "sud-campoli-it"
+        }
+      ],
+      "parking": [
+        {
+          "value": "Parcheggio al termine della strada asfaltata, con coordinate pubblicate nella scheda. Tariffe, capienza e apertura attuali sconosciute.",
+          "status": "verificato",
+          "sourceId": "sud-campoli-it"
+        }
+      ],
+      "itineraries": [
+        {
+          "name": {
+            "value": "Anello Pizzo Deta da Prato di Campoli",
+            "status": "verificato",
+            "sourceId": "sud-campoli-it"
+          },
+          "url": "https://www.cairoma.it/?p=29232",
+          "sourceId": "sud-campoli-it",
+          "pageRead": true,
+          "lengthKm": {
+            "value": 10,
+            "status": "verificato",
+            "sourceId": "sud-campoli-it"
+          },
+          "ascentM": {
+            "value": 900,
+            "status": "verificato",
+            "sourceId": "sud-campoli-it"
+          },
+          "descentM": {
+            "value": 900,
+            "status": "verificato",
+            "sourceId": "sud-campoli-it"
+          },
+          "durationMinutes": {
+            "value": 300,
+            "status": "verificato",
+            "sourceId": "sud-campoli-it"
+          },
+          "difficulty": {
+            "value": "EE",
+            "status": "verificato",
+            "sourceId": "sud-campoli-it"
+          },
+          "gpxUrl": {
+            "value": null,
+            "status": "sconosciuto",
+            "sourceId": null,
+            "note": "Non trovato un link GPX diretto; nessuna traccia generata"
+          },
+          "otherTrack": {
+            "value": null,
+            "status": "sconosciuto",
+            "sourceId": null,
+            "note": "Non reperita"
+          },
+          "note": "Evento CAI 2025, non attestazione di apertura nel 2026. Tratti esposti e salita ripida. Verificare il confine Lazio/Abruzzo sulle creste prima di integrare una traccia.",
+          "lazioSpatialCheck": {
+            "status": "sconosciuto",
+            "note": "Localizzazione da descrizione; nessuna geometria acquisita né verifica punto-per-punto del confine regionale."
+          }
+        },
+        {
+          "name": {
+            "value": "Monte Serra Comune da Prato di Campoli — sentieri 617, 618, 619 e 622",
+            "status": "verificato",
+            "sourceId": "sud-campoli-faggi"
+          },
+          "url": "https://www.caifrascati.it/evento/monte-serra-comune-da-prato-di-campoli/",
+          "sourceId": "sud-campoli-faggi",
+          "pageRead": true,
+          "lengthKm": {
+            "value": null,
+            "status": "sconosciuto",
+            "sourceId": null,
+            "note": "Non documentata"
+          },
+          "ascentM": {
+            "value": 750,
+            "status": "verificato",
+            "sourceId": "sud-campoli-faggi"
+          },
+          "descentM": {
+            "value": 750,
+            "status": "verificato",
+            "sourceId": "sud-campoli-faggi"
+          },
+          "durationMinutes": {
+            "value": 300,
+            "status": "verificato",
+            "sourceId": "sud-campoli-faggi"
+          },
+          "difficulty": {
+            "value": "EE",
+            "status": "verificato",
+            "sourceId": "sud-campoli-faggi"
+          },
+          "gpxUrl": {
+            "value": null,
+            "status": "sconosciuto",
+            "sourceId": null,
+            "note": "Non trovato un link GPX diretto; nessuna traccia generata"
+          },
+          "otherTrack": {
+            "value": null,
+            "status": "sconosciuto",
+            "sourceId": null,
+            "note": "Non reperita"
+          },
+          "note": "Scheda evento 19 ottobre 2025. Attraversa l’antico confine degli Stati, che non deve essere confuso con il confine amministrativo Lazio attuale: controllo spaziale obbligatorio prima dell’import.",
+          "lazioSpatialCheck": {
+            "status": "sconosciuto",
+            "note": "Localizzazione da descrizione; nessuna geometria acquisita né verifica punto-per-punto del confine regionale."
+          }
+        }
+      ],
+      "natureIdeas": [
+        {
+          "value": "Faggi lungo la salita da Prato di Campoli verso Serra Comune.",
+          "status": "verificato",
+          "sourceId": "sud-campoli-faggi"
+        },
+        {
+          "value": "Tasso nel contesto boschivo del percorso descritto dal CAI Frascati: osservazione, senza prelievo.",
+          "status": "verificato",
+          "sourceId": "sud-campoli-faggi"
+        },
+        {
+          "value": "Ginepri delle radure nella discesa da Pizzo Deta descritta dal CAI Roma.",
+          "status": "verificato",
+          "sourceId": "sud-campoli-it"
+        }
+      ],
+      "photoCandidates": [],
+      "photoGap": "Nessuna foto con autore, licenza e corrispondenza locale verificati in questo pacchetto. Nessuna immagine scaricata.",
+      "technicalGaps": [
+        "Perimetro di zona e confini amministrativi da ricavare da dati ufficiali; nessuna geometria prodotta.",
+        "Accessibilità e ordinanze temporanee 2026 da riscontrare presso ente competente.",
+        "Nessun campione forestale, fascia altimetrica, punteggio fungino o tempo auto calcolato.",
+        "Nome/provincia del comune coerenti col luogo descritto ma confine catastale e gestore dei boschi/ZSC da confermare prima dell’import; nessun permesso locale verificato."
+      ]
+    },
+    {
+      "idProposto": "lepini-supino-santaserena",
+      "nameProposto": "Fonte Santa Serena e boschi del Monte Gemma",
+      "status": "proposta_da_revisionare",
+      "municipalities": {
+        "value": [
+          "Supino"
+        ],
+        "status": "verificato",
+        "sourceId": "sud-supino-it"
+      },
+      "provinces": {
+        "value": [
+          "FR"
+        ],
+        "status": "verificato",
+        "sourceId": "sud-supino-it"
+      },
+      "region": {
+        "value": "Lazio",
+        "status": "verificato",
+        "sourceId": "sud-supino-it"
+      },
+      "description": {
+        "text": "Santa Serena è un accesso già descritto dal CAI per entrare nei boschi dei Lepini orientali. Il giro a Gemma e Salerio alterna salita boscosa e cresta; serve individuare con il gestore la parte adatta a un’uscita a funghi e verificarne i diritti di raccolta.",
+        "status": "proposta_editoriale",
+        "sourceIds": [
+          "sud-supino-it"
+        ]
+      },
+      "habitat": [
+        {
+          "value": "Faggete e ambienti carsici nell’anello da Fonte Santa Serena.",
+          "status": "verificato",
+          "sourceId": "sud-supino-faggi"
+        }
+      ],
+      "coordinates": {
+        "value": {
+          "lat": 41.602066666666666,
+          "lon": 13.166083333333333,
+          "raw": "WGS N41°36.124′ E13°09.965′",
+          "crs": "WGS come da fonte",
+          "pointRole": "ritrovo Fonte Santa Serena",
+          "precision": "0,001 minuti pubblicati; accuratezza sul terreno non dichiarata"
+        },
+        "status": "verificato",
+        "sourceId": "sud-supino-it"
+      },
+      "elevationM": {
+        "value": null,
+        "status": "sconosciuto",
+        "sourceId": null,
+        "note": "Nessuna quota puntuale d’accesso verificata"
+      },
+      "manager": {
+        "value": null,
+        "status": "sconosciuto",
+        "sourceId": null,
+        "note": "Gestore forestale/proprietà e usi civici da identificare"
+      },
+      "protection": {
+        "value": null,
+        "status": "sconosciuto",
+        "sourceId": null,
+        "note": "Perimetri/ZSC e regole puntuali da verificare; non assumere area libera"
+      },
+      "activities": {
+        "mushroomCollection": {
+          "status": "sconosciuto",
+          "legalBasisSourceIds": [
+            "sud-lazio-regole"
+          ],
+          "currentLocalAuthorization": null,
+          "note": "Habitat documentato; nessuna presenza fungina garantita. Titolo regionale non dimostra libertà di accesso, proprietà o assenza di limiti locali."
+        },
+        "mushroomObservation": {
+          "status": "proposta",
+          "note": "Solo da sentieri accessibili e dopo verifica di aperture/divieti attuali; non implica raccolta."
+        }
+      },
+      "access": [
+        {
+          "value": "Strada di montagna da Supino fino a Fonte Santa Serena.",
+          "status": "verificato",
+          "sourceId": "sud-supino-it"
+        }
+      ],
+      "parking": [
+        {
+          "value": "La scheda descrive il parcheggio alla partenza; capienza, regolamento e tariffe non documentati.",
+          "status": "verificato",
+          "sourceId": "sud-supino-it"
+        }
+      ],
+      "itineraries": [
+        {
+          "name": {
+            "value": "Monte Gemma e Monte Salerio da Fonte Santa Serena",
+            "status": "verificato",
+            "sourceId": "sud-supino-it"
+          },
+          "url": "https://www.cairoma.it/?p=28403",
+          "sourceId": "sud-supino-it",
+          "pageRead": true,
+          "lengthKm": {
+            "value": 8,
+            "status": "verificato",
+            "sourceId": "sud-supino-it"
+          },
+          "ascentM": {
+            "value": 500,
+            "status": "verificato",
+            "sourceId": "sud-supino-it"
+          },
+          "descentM": {
+            "value": 500,
+            "status": "verificato",
+            "sourceId": "sud-supino-it"
+          },
+          "durationMinutes": {
+            "value": 240,
+            "status": "verificato",
+            "sourceId": "sud-supino-it"
+          },
+          "difficulty": {
+            "value": "E",
+            "status": "verificato",
+            "sourceId": "sud-supino-it"
+          },
+          "gpxUrl": {
+            "value": null,
+            "status": "sconosciuto",
+            "sourceId": null,
+            "note": "Non trovato un link GPX diretto; nessuna traccia generata"
+          },
+          "otherTrack": {
+            "value": null,
+            "status": "sconosciuto",
+            "sourceId": null,
+            "note": "Non reperita"
+          },
+          "note": "Tempo escluse le soste. Evento del 2025, non attestazione di percorribilità attuale.",
+          "lazioSpatialCheck": {
+            "status": "sconosciuto",
+            "note": "Localizzazione da descrizione; nessuna geometria acquisita né verifica punto-per-punto del confine regionale."
+          }
+        }
+      ],
+      "natureIdeas": [
+        {
+          "value": "Faggete lungo l’anello da Santa Serena: tema botanico documentato da CAI Monterotondo.",
+          "status": "verificato",
+          "sourceId": "sud-supino-faggi"
+        },
+        {
+          "value": "Dal bosco alla cresta del Gemma: la descrizione CAI Roma individua il punto in cui si esce dalla copertura arborea; spunto di lettura della vegetazione, senza aggiungere altre specie.",
+          "status": "verificato",
+          "sourceId": "sud-supino-it"
+        }
+      ],
+      "photoCandidates": [],
+      "photoGap": "Nessuna foto con autore, licenza e corrispondenza locale verificati in questo pacchetto. Nessuna immagine scaricata.",
+      "technicalGaps": [
+        "Perimetro di zona e confini amministrativi da ricavare da dati ufficiali; nessuna geometria prodotta.",
+        "Accessibilità e ordinanze temporanee 2026 da riscontrare presso ente competente.",
+        "Nessun campione forestale, fascia altimetrica, punteggio fungino o tempo auto calcolato."
+      ]
+    },
+    {
+      "idProposto": "simbruini-filettino-fiumata",
+      "nameProposto": "Fiumata e Fosso Acqua Corore",
+      "status": "proposta_da_revisionare",
+      "municipalities": {
+        "value": [
+          "Filettino"
+        ],
+        "status": "verificato",
+        "sourceId": "sud-fiumata-luogo"
+      },
+      "provinces": {
+        "value": [
+          "FR"
+        ],
+        "status": "verificato",
+        "sourceId": "sud-fiumata-luogo"
+      },
+      "region": {
+        "value": "Lazio",
+        "status": "verificato",
+        "sourceId": "sud-fiumata-luogo"
+      },
+      "description": {
+        "text": "Acqua e faggeta danno a Fiumata un carattere diverso dai pianori asciutti del sud. Il 693a offre una base breve e documentata per esplorare il bosco; prima di pubblicarlo vanno risolti l’errore del comune sulla scheda ufficiale e le regole locali di raccolta.",
+        "status": "proposta_editoriale",
+        "sourceIds": [
+          "sud-fiumata-luogo"
+        ]
+      },
+      "habitat": [
+        {
+          "value": "Faggi secolari lungo i rami sorgentizi dell’Aniene.",
+          "status": "verificato",
+          "sourceId": "sud-fiumata-luogo"
+        }
+      ],
+      "coordinates": {
+        "value": null,
+        "status": "sconosciuto",
+        "sourceId": null,
+        "note": "Nessun centro-zona inventato. Servono coordinate verificate dell’accesso e validazione spaziale."
+      },
+      "elevationM": {
+        "value": null,
+        "status": "sconosciuto",
+        "sourceId": null,
+        "note": "Nessuna quota puntuale d’accesso verificata"
+      },
+      "manager": {
+        "value": "Ente Parco Naturale Regionale Monti Simbruini",
+        "status": "verificato",
+        "sourceId": "sud-fiumata-luogo"
+      },
+      "protection": {
+        "value": "Parco Monti Simbruini; sorgenti dell’Aniene nella ZSC omonima, come descritto dall’ente.",
+        "status": "verificato",
+        "sourceId": "sud-fiumata-natura"
+      },
+      "activities": {
+        "mushroomCollection": {
+          "status": "sconosciuto",
+          "legalBasisSourceIds": [
+            "sud-lazio-regole",
+            "sud-simbruini-reg"
+          ],
+          "currentLocalAuthorization": null,
+          "note": "Regolamento PDF del 2015 reperito, ma efficacia corrente e limitazioni temporanee non dimostrate; autorizzazione attuale resta null."
+        },
+        "mushroomObservation": {
+          "status": "proposta",
+          "note": "Solo da sentieri accessibili e dopo verifica di aperture/divieti attuali; non implica raccolta."
+        }
+      },
+      "access": [
+        {
+          "value": "Provinciale Trevi–Filettino; circa 2 km da Filettino si imbocca la carrabile per Fiumata.",
+          "status": "verificato",
+          "sourceId": "sud-fiumata-luogo"
+        }
+      ],
+      "parking": [
+        {
+          "value": "Parcheggio al bivio per Fiumata nella descrizione del 693a; coordinate, capienza e tariffe non documentate.",
+          "status": "verificato",
+          "sourceId": "sud-fiumata-693a"
+        }
+      ],
+      "itineraries": [
+        {
+          "name": {
+            "value": "693a Fiumata–Fosso Acqua Corore",
+            "status": "verificato",
+            "sourceId": "sud-fiumata-693a"
+          },
+          "url": "https://www.parcomontisimbruini.it/itinerari-dettaglio.php?id_iti=2810",
+          "sourceId": "sud-fiumata-693a",
+          "pageRead": true,
+          "lengthKm": {
+            "value": 2.7,
+            "status": "verificato",
+            "sourceId": "sud-fiumata-693a"
+          },
+          "ascentM": {
+            "value": 168,
+            "status": "verificato",
+            "sourceId": "sud-fiumata-693a"
+          },
+          "descentM": {
+            "value": 4,
+            "status": "verificato",
+            "sourceId": "sud-fiumata-693a"
+          },
+          "durationMinutes": {
+            "value": 50,
+            "status": "verificato",
+            "sourceId": "sud-fiumata-693a"
+          },
+          "difficulty": {
+            "value": "T",
+            "status": "verificato",
+            "sourceId": "sud-fiumata-693a"
+          },
+          "gpxUrl": {
+            "value": "https://www.parcomontisimbruini.it/gpx/693a.gpx",
+            "status": "verificato",
+            "sourceId": "sud-gpx-693a"
+          },
+          "otherTrack": {
+            "value": {
+              "format": "KMZ",
+              "url": "https://www.parcomontisimbruini.it/iti_kmz.php?id=2810"
+            },
+            "status": "verificato",
+            "sourceId": "sud-fiumata-693a"
+          },
+          "note": "ERRORE FONTE: comune/partenza automatici indicano Filattiera; testo e pagina locale attestano Filettino. Valori del tracciato 948–1111 m non trasformati in quota del parcheggio. Vecchio elenco PDF riporta +175 m: non combinare.",
+          "lazioSpatialCheck": {
+            "status": "sconosciuto",
+            "note": "Localizzazione da descrizione; nessuna geometria acquisita né verifica punto-per-punto del confine regionale."
+          }
+        }
+      ],
+      "natureIdeas": [
+        {
+          "value": "Faggi secolari con radici lungo i torrenti, descritti dalla pagina locale Fiumata.",
+          "status": "verificato",
+          "sourceId": "sud-fiumata-luogo"
+        },
+        {
+          "value": "Salamandrina di Savi e tritone crestato italiano: specie citate dall’ente per il contesto delle sorgenti dell’Aniene; nessun avvistamento o presenza sul singolo segmento affermati.",
+          "status": "verificato",
+          "sourceId": "sud-fiumata-natura"
+        }
+      ],
+      "photoCandidates": [],
+      "photoGap": "Nessuna foto con autore, licenza e corrispondenza locale verificati in questo pacchetto. Nessuna immagine scaricata.",
+      "technicalGaps": [
+        "Perimetro di zona e confini amministrativi da ricavare da dati ufficiali; nessuna geometria prodotta.",
+        "Accessibilità e ordinanze temporanee 2026 da riscontrare presso ente competente.",
+        "Nessun campione forestale, fascia altimetrica, punteggio fungino o tempo auto calcolato.",
+        "Correggere errore Filattiera/Filettino con conferma del gestore; validare GPX contro confini e catasto prima di importarlo."
+      ]
+    },
+    {
+      "idProposto": "pnalm-settefrati-canneto",
+      "nameProposto": "Valle di Canneto da Settefrati",
+      "status": "proposta_da_revisionare",
+      "municipalities": {
+        "value": [
+          "Settefrati"
+        ],
+        "status": "verificato",
+        "sourceId": "sud-settefrati-comune"
+      },
+      "provinces": {
+        "value": [
+          "FR"
+        ],
+        "status": "verificato",
+        "sourceId": "sud-settefrati-comune"
+      },
+      "region": {
+        "value": "Lazio",
+        "status": "verificato",
+        "sourceId": "sud-settefrati-comune"
+      },
+      "description": {
+        "text": "La valle di Canneto conserva un contesto di faggeta documentato sul versante laziale del PNALM. Il collegamento da Settefrati è un itinerario ufficiale da usare per orientare la ricerca; la raccolta resta sospesa come proposta operativa finché non sono chiariti zonazione e autorizzazioni locali.",
+        "status": "proposta_editoriale",
+        "sourceIds": [
+          "sud-canneto-o7"
+        ]
+      },
+      "habitat": [
+        {
+          "value": "Valle di Canneto ricoperta da bosco di faggi nel settore laziale del PNALM.",
+          "status": "verificato",
+          "sourceId": "sud-canneto-natura"
+        }
+      ],
+      "coordinates": {
+        "value": null,
+        "status": "sconosciuto",
+        "sourceId": null,
+        "note": "Nessun centro-zona inventato. Servono coordinate verificate dell’accesso e validazione spaziale."
+      },
+      "elevationM": {
+        "value": null,
+        "status": "sconosciuto",
+        "sourceId": null,
+        "note": "Nessuna quota puntuale d’accesso verificata"
+      },
+      "manager": {
+        "value": "Ente Parco Nazionale d’Abruzzo, Lazio e Molise",
+        "status": "verificato",
+        "sourceId": "sud-canneto-o7"
+      },
+      "protection": {
+        "value": "PNALM: il decalogo prescrive di restare sui sentieri e segnala la regolamentazione della raccolta.",
+        "status": "verificato",
+        "sourceId": "sud-pnalm-norme"
+      },
+      "activities": {
+        "mushroomCollection": {
+          "status": "sconosciuto_non_proporre_raccolta",
+          "legalBasisSourceIds": [
+            "sud-pnalm-norme",
+            "sud-lazio-regole"
+          ],
+          "currentLocalAuthorization": null,
+          "note": "Il parco conferma regolamentazione, ma questa ricerca non dimostra deroga, titolo o zona autorizzata nel settore Canneto. Restare sui sentieri; non applicare le regole delle porzioni abruzzesi o molisane al Lazio."
+        },
+        "mushroomObservation": {
+          "status": "proposta",
+          "note": "Solo da sentieri accessibili e dopo verifica di aperture/divieti attuali; non implica raccolta."
+        }
+      },
+      "access": [
+        {
+          "value": "Partenza ufficiale del sentiero O7: Settefrati.",
+          "status": "verificato",
+          "sourceId": "sud-canneto-o7"
+        }
+      ],
+      "parking": [
+        {
+          "value": null,
+          "status": "sconosciuto",
+          "sourceId": null,
+          "note": "Nessun parcheggio documentato nella scheda O7 letta."
+        }
+      ],
+      "itineraries": [
+        {
+          "name": {
+            "value": "O7 Settefrati–Madonna di Canneto",
+            "status": "verificato",
+            "sourceId": "sud-canneto-o7"
+          },
+          "url": "https://www.parcoabruzzo.it/sentiero.php?id_iti=4988",
+          "sourceId": "sud-canneto-o7",
+          "pageRead": true,
+          "lengthKm": {
+            "value": 8.258,
+            "status": "verificato",
+            "sourceId": "sud-canneto-o7"
+          },
+          "ascentM": {
+            "value": null,
+            "status": "sconosciuto",
+            "sourceId": null,
+            "note": "Non documentato"
+          },
+          "descentM": {
+            "value": null,
+            "status": "sconosciuto",
+            "sourceId": null,
+            "note": "Non documentato"
+          },
+          "durationMinutes": {
+            "value": 230,
+            "status": "verificato",
+            "sourceId": "sud-canneto-o7"
+          },
+          "difficulty": {
+            "value": "E",
+            "status": "verificato",
+            "sourceId": "sud-canneto-o7"
+          },
+          "gpxUrl": {
+            "value": null,
+            "status": "sconosciuto",
+            "sourceId": null,
+            "note": "Non trovato un link GPX diretto; nessuna traccia generata"
+          },
+          "otherTrack": {
+            "value": {
+              "format": "KMZ",
+              "url": "https://www.parcoabruzzo.it/iti_kmz.php?id=4988"
+            },
+            "status": "verificato",
+            "sourceId": "sud-canneto-o7"
+          },
+          "note": "Stato letto: aperto. Si sceglie il collegamento con entrambi gli estremi nel settore laziale, evitando itinerari fino a Civitella Alfedena/Forca Resuni. Permanenza integrale del tracciato nel Lazio ancora da verificare spazialmente; non associare questi 8,258 km al breve giro delle cascate.",
+          "lazioSpatialCheck": {
+            "status": "sconosciuto",
+            "note": "Localizzazione da descrizione; nessuna geometria acquisita né verifica punto-per-punto del confine regionale."
+          }
+        }
+      ],
+      "natureIdeas": [
+        {
+          "value": "Faggeta di Canneto: riferimento vegetazionale esplicito per il versante laziale.",
+          "status": "verificato",
+          "sourceId": "sud-canneto-natura"
+        },
+        {
+          "value": "Orso marsicano: il portale regionale lo collega al contesto delle valli laziali inclusa Canneto; solo contesto faunistico, nessuna promessa di avvistamento.",
+          "status": "verificato",
+          "sourceId": "sud-canneto-natura"
+        }
+      ],
+      "photoCandidates": [],
+      "photoGap": "Nessuna foto con autore, licenza e corrispondenza locale verificati in questo pacchetto. Nessuna immagine scaricata.",
+      "technicalGaps": [
+        "Perimetro di zona e confini amministrativi da ricavare da dati ufficiali; nessuna geometria prodotta.",
+        "Accessibilità e ordinanze temporanee 2026 da riscontrare presso ente competente.",
+        "Nessun campione forestale, fascia altimetrica, punteggio fungino o tempo auto calcolato.",
+        "Validare O7 e confine Lazio punto per punto prima di integrare; identificare zonazione PNALM, gestore della proprietà e disciplina fungina laziale vigente."
+      ]
+    }
+  ]
+}

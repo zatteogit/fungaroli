@@ -1,0 +1,385 @@
+{
+  "date": "2026-10-19",
+  "scope": "Ispezione XML dei soli link già raccolti; nessuna importazione o redistribuzione XML",
+  "coordinateOrder": "oggetti lat/lon; bbox west,south,east,north",
+  "warning": "Primo/ultimo punto e bbox derivano da geometria XML e non certificano centro zona, partenza pratica o parcheggio. Precisione numerica conservata dal dato, accuratezza posizionale non verificata.",
+  "sources": [
+    {
+      "id": "NG01",
+      "url": "https://www.parchilazio.it/documenti/schede/monte_venere.kml",
+      "ente": "Regione Lazio / ParchiLazio",
+      "title": "Geometria XML CAI 128b Area sosta Canale – Monte Venere",
+      "consultedAt": "2026-10-19",
+      "evidence": "Conteggi, hash e coordinate derivati direttamente dai byte XML letti; vedi geometries.",
+      "accessOutcome": "HTTP200, XML completo letto in memoria e analizzato; non salvato"
+    },
+    {
+      "id": "NG02",
+      "url": "https://www.parchilazio.it/documenti/schede/sentiero_natura_felceto.kml",
+      "ente": "Regione Lazio / ParchiLazio",
+      "title": "Geometria XML Sentiero Natura Felceto",
+      "consultedAt": "2026-10-19",
+      "evidence": "Conteggi, hash e coordinate derivati direttamente dai byte XML letti; vedi geometries.",
+      "accessOutcome": "HTTP200, XML completo letto in memoria e analizzato; non salvato"
+    },
+    {
+      "id": "NG03",
+      "url": "https://www.parcobracciano.it/media/2051/sent-175c-monte-raschio-oriolo-romano.gpx",
+      "ente": "Ente Parco Bracciano-Martignano",
+      "title": "Geometria XML 175C Monte Raschio",
+      "consultedAt": "2026-10-19",
+      "evidence": "Conteggi, hash e coordinate derivati direttamente dai byte XML letti; vedi geometries.",
+      "accessOutcome": "HTTP200, XML completo letto in memoria e analizzato; non salvato"
+    },
+    {
+      "id": "NG04",
+      "url": "https://www.parchilazio.it/documenti/schede/260_bracciano_pisciarelli_oriolo.gpx",
+      "ente": "Regione Lazio / ParchiLazio",
+      "title": "Geometria XML CAI 260 Bracciano – Oriolo Romano",
+      "consultedAt": "2026-10-19",
+      "evidence": "Conteggi, hash e coordinate derivati direttamente dai byte XML letti; vedi geometries.",
+      "accessOutcome": "HTTP200, XML completo letto in memoria e analizzato; non salvato"
+    },
+    {
+      "id": "NG05",
+      "url": "https://www.parchilazio.it/documenti/schede/260_bracciano_p.kml",
+      "ente": "Regione Lazio / ParchiLazio",
+      "title": "Geometria XML CAI 260 Bracciano – Oriolo Romano",
+      "consultedAt": "2026-10-19",
+      "evidence": "Conteggi, hash e coordinate derivati direttamente dai byte XML letti; vedi geometries.",
+      "accessOutcome": "HTTP200, XML completo letto in memoria e analizzato; non salvato"
+    },
+    {
+      "id": "NG06",
+      "url": "https://www.parchilazio.it/documenti/schede/monte_musino.kml",
+      "ente": "Regione Lazio / ParchiLazio",
+      "title": "Geometria XML CAI 209d Grottini – Monte Musino",
+      "consultedAt": "2026-10-19",
+      "evidence": "Conteggi, hash e coordinate derivati direttamente dai byte XML letti; vedi geometries.",
+      "accessOutcome": "HTTP200, XML completo letto in memoria e analizzato; non salvato"
+    },
+    {
+      "id": "NGLICENSE",
+      "url": "https://www.parchilazio.it/pagine-8-copyleft",
+      "ente": "Regione Lazio / ParchiLazio",
+      "title": "Copyleft",
+      "consultedAt": "2026-10-19",
+      "evidence": "Download libero dei materiali; riuso con fonte/autore, stessi termini, gratuità e senza fini commerciali. Alcune immagini escluse. Non specifica licenza standard del singolo GPX/KML.",
+      "accessOutcome": "pagina effettivamente letta"
+    }
+  ],
+  "geometries": [
+    {
+      "candidateId": "vico-monte-venere",
+      "trailName": "CAI 128b Area sosta Canale – Monte Venere",
+      "url": "https://www.parchilazio.it/documenti/schede/monte_venere.kml",
+      "sourceIds": [
+        "NG01"
+      ],
+      "format": "KML",
+      "sha256": "4bf6db1edc8989757d45b089ea7a1c40502ea793d698265dceee6d02b4308181",
+      "pointCount": 181,
+      "bbox": {
+        "west": 12.1727654,
+        "south": 42.3419702,
+        "east": 12.1890001,
+        "north": 42.3525052
+      },
+      "firstPoint": {
+        "lat": 42.3525052,
+        "lon": 12.1890001,
+        "elevationM": null
+      },
+      "lastPoint": {
+        "lat": 42.3487174,
+        "lon": 12.1727797,
+        "elevationM": null
+      },
+      "elevation": {
+        "present": false,
+        "pointsWithElevation": 0,
+        "minM": null,
+        "maxM": null,
+        "note": "Quote XML, non verificate; eventuale quota zero in KML può essere segnaposto."
+      },
+      "redistributionLicense": null,
+      "licenseCheck": {
+        "pageUrl": "https://www.parchilazio.it/vico-schede-18236-128b_monte_venere_cai",
+        "outcome": "Nessuna licenza esplicita della specifica geometria trovata sulla pagina del percorso.",
+        "portalPolicyUrl": "https://www.parchilazio.it/pagine-8-copyleft",
+        "portalPolicyNote": "Il portale permette download e indica riuso con fonte/autore, gratuità e uso non commerciale; nessuna licenza standard o dichiarazione dedicata al singolo XML verificata.",
+        "sourceIds": [
+          "NGLICENSE"
+        ]
+      },
+      "bytes": 4552,
+      "httpStatus": 200,
+      "contentType": "application/vnd.google-earth.kml+xml",
+      "xmlElementCounts": {
+        "LineString": 1
+      },
+      "accessOutcome": "HTTP200, XML completo letto in memoria e analizzato; non salvato",
+      "pointCountDefinition": "Punti della traccia, escludendo waypoint GPX e Point KML isolati; tutti i segmenti concatenati in ordine XML."
+    },
+    {
+      "candidateId": "monte-rufeno-felceto",
+      "trailName": "Sentiero Natura Felceto",
+      "url": "https://www.parchilazio.it/documenti/schede/sentiero_natura_felceto.kml",
+      "sourceIds": [
+        "NG02"
+      ],
+      "format": "KML",
+      "sha256": "74e286f81c2e08bbe383ec379ef923259a927f675ea6139e5ac6c5cc82190a28",
+      "pointCount": 313,
+      "bbox": {
+        "west": 11.891231434419751,
+        "south": 42.7814853284508,
+        "east": 11.895649619400501,
+        "north": 42.785106897354126
+      },
+      "firstPoint": {
+        "lat": 42.78151013888419,
+        "lon": 11.89138918183744,
+        "elevationM": 554.81787109375
+      },
+      "lastPoint": {
+        "lat": 42.78148742392659,
+        "lon": 11.89137987792492,
+        "elevationM": 553.3759765625
+      },
+      "elevation": {
+        "present": true,
+        "pointsWithElevation": 313,
+        "minM": 537.9949951171875,
+        "maxM": 576.44775390625,
+        "note": "Quote XML, non verificate; eventuale quota zero in KML può essere segnaposto."
+      },
+      "redistributionLicense": null,
+      "licenseCheck": {
+        "pageUrl": "https://www.parchilazio.it/monterufeno-schede-28994-sentiero_natura_felceto",
+        "outcome": "Nessuna licenza esplicita della specifica geometria trovata sulla pagina del percorso.",
+        "portalPolicyUrl": "https://www.parchilazio.it/pagine-8-copyleft",
+        "portalPolicyNote": "Il portale permette download e indica riuso con fonte/autore, gratuità e uso non commerciale; nessuna licenza standard o dichiarazione dedicata al singolo XML verificata.",
+        "sourceIds": [
+          "NGLICENSE"
+        ]
+      },
+      "bytes": 103800,
+      "httpStatus": 200,
+      "contentType": "application/vnd.google-earth.kml+xml",
+      "xmlElementCounts": {
+        "Point": 313,
+        "LineString": 1
+      },
+      "accessOutcome": "HTTP200, XML completo letto in memoria e analizzato; non salvato",
+      "pointCountDefinition": "Punti della traccia, escludendo waypoint GPX e Point KML isolati; tutti i segmenti concatenati in ordine XML.",
+      "totalCoordinateTupleCountIncludingPointPlacemarks": 626
+    },
+    {
+      "candidateId": "oriolo-monte-raschio",
+      "trailName": "175C Monte Raschio",
+      "url": "https://www.parcobracciano.it/media/2051/sent-175c-monte-raschio-oriolo-romano.gpx",
+      "sourceIds": [
+        "NG03"
+      ],
+      "format": "GPX",
+      "sha256": "75ca7f51ca7567caba654b24788e1b92aecf481e5ee305a5e718f4c9d515b54a",
+      "pointCount": 264,
+      "bbox": {
+        "west": 12.138417,
+        "south": 42.158027,
+        "east": 12.160395,
+        "north": 42.176173
+      },
+      "firstPoint": {
+        "lat": 42.159037,
+        "lon": 12.138417,
+        "elevationM": 425.839
+      },
+      "lastPoint": {
+        "lat": 42.158464,
+        "lon": 12.13957,
+        "elevationM": 418.823
+      },
+      "elevation": {
+        "present": true,
+        "pointsWithElevation": 264,
+        "minM": 389.395,
+        "maxM": 565.851,
+        "note": "Quote XML, non verificate; eventuale quota zero in KML può essere segnaposto."
+      },
+      "redistributionLicense": null,
+      "licenseCheck": {
+        "pageUrl": "https://www.parcobracciano.it/vivere-il-parco/percorsi-e-sentieri/sentiero-175c-monte-raschio-oriolo-romano-sentiero-della-faggeta-patrimonio-mondiale-unesco/",
+        "outcome": "Nessuna licenza esplicita della specifica geometria trovata sulla pagina del percorso.",
+        "portalPolicyUrl": null,
+        "portalPolicyNote": "La pagina del gestore offre download GPX; offerta download non equivale a licenza di redistribuzione."
+      },
+      "bytes": 37027,
+      "httpStatus": 200,
+      "contentType": "application/gpx+xml",
+      "xmlElementCounts": {
+        "trkpt": 264
+      },
+      "accessOutcome": "HTTP200, XML completo letto in memoria e analizzato; non salvato",
+      "pointCountDefinition": "Punti della traccia, escludendo waypoint GPX e Point KML isolati; tutti i segmenti concatenati in ordine XML."
+    },
+    {
+      "candidateId": "oriolo-monte-raschio",
+      "trailName": "CAI 260 Bracciano – Oriolo Romano",
+      "url": "https://www.parchilazio.it/documenti/schede/260_bracciano_pisciarelli_oriolo.gpx",
+      "sourceIds": [
+        "NG04"
+      ],
+      "format": "GPX",
+      "sha256": "34722f249e0c089ec2bd8100ceedc6e564c2cde818dcc967dcfe75327755f3b5",
+      "pointCount": 794,
+      "bbox": {
+        "west": 12.138193985447288,
+        "south": 42.102094274014235,
+        "east": 12.174336081370711,
+        "north": 42.15939396992326
+      },
+      "firstPoint": {
+        "lat": 42.102094274014235,
+        "lon": 12.174336081370711,
+        "elevationM": 325.0
+      },
+      "lastPoint": {
+        "lat": 42.158956015482545,
+        "lon": 12.138193985447288,
+        "elevationM": 511.0
+      },
+      "elevation": {
+        "present": true,
+        "pointsWithElevation": 794,
+        "minM": 299.0,
+        "maxM": 525.0,
+        "note": "Quote XML, non verificate; eventuale quota zero in KML può essere segnaposto."
+      },
+      "redistributionLicense": null,
+      "licenseCheck": {
+        "pageUrl": "https://www.parchilazio.it/lago_di_bracciano-schede-30165-sentiero_cai_260_bracciano_oriolo_romano",
+        "outcome": "Nessuna licenza esplicita della specifica geometria trovata sulla pagina del percorso.",
+        "portalPolicyUrl": "https://www.parchilazio.it/pagine-8-copyleft",
+        "portalPolicyNote": "Il portale permette download e indica riuso con fonte/autore, gratuità e uso non commerciale; nessuna licenza standard o dichiarazione dedicata al singolo XML verificata.",
+        "sourceIds": [
+          "NGLICENSE"
+        ]
+      },
+      "bytes": 126494,
+      "httpStatus": 200,
+      "contentType": "application/gpx+xml",
+      "xmlElementCounts": {
+        "wpt": 9,
+        "trkpt": 794
+      },
+      "accessOutcome": "HTTP200, XML completo letto in memoria e analizzato; non salvato",
+      "pointCountDefinition": "Punti della traccia, escludendo waypoint GPX e Point KML isolati; tutti i segmenti concatenati in ordine XML."
+    },
+    {
+      "candidateId": "oriolo-monte-raschio",
+      "trailName": "CAI 260 Bracciano – Oriolo Romano",
+      "url": "https://www.parchilazio.it/documenti/schede/260_bracciano_p.kml",
+      "sourceIds": [
+        "NG05"
+      ],
+      "format": "KML",
+      "sha256": "bec37afb47bda5145472fb35565fdd6e12796ca36d7c63d6bde6c77d08946280",
+      "pointCount": 727,
+      "bbox": {
+        "west": 12.138379,
+        "south": 42.102094,
+        "east": 12.174336,
+        "north": 42.153634
+      },
+      "firstPoint": {
+        "lat": 42.102094,
+        "lon": 12.174336,
+        "elevationM": 325.0
+      },
+      "lastPoint": {
+        "lat": 42.153634,
+        "lon": 12.138731,
+        "elevationM": 467.0
+      },
+      "elevation": {
+        "present": true,
+        "pointsWithElevation": 727,
+        "minM": 299.0,
+        "maxM": 504.0,
+        "note": "Quote XML, non verificate; eventuale quota zero in KML può essere segnaposto."
+      },
+      "redistributionLicense": null,
+      "licenseCheck": {
+        "pageUrl": "https://www.parchilazio.it/lago_di_bracciano-schede-30165-sentiero_cai_260_bracciano_oriolo_romano",
+        "outcome": "Nessuna licenza esplicita della specifica geometria trovata sulla pagina del percorso.",
+        "portalPolicyUrl": "https://www.parchilazio.it/pagine-8-copyleft",
+        "portalPolicyNote": "Il portale permette download e indica riuso con fonte/autore, gratuità e uso non commerciale; nessuna licenza standard o dichiarazione dedicata al singolo XML verificata.",
+        "sourceIds": [
+          "NGLICENSE"
+        ]
+      },
+      "bytes": 23189,
+      "httpStatus": 200,
+      "contentType": "application/vnd.google-earth.kml+xml",
+      "xmlElementCounts": {
+        "LineString": 1
+      },
+      "accessOutcome": "HTTP200, XML completo letto in memoria e analizzato; non salvato",
+      "pointCountDefinition": "Punti della traccia, escludendo waypoint GPX e Point KML isolati; tutti i segmenti concatenati in ordine XML."
+    },
+    {
+      "candidateId": "veio-monte-musino",
+      "trailName": "CAI 209d Grottini – Monte Musino",
+      "url": "https://www.parchilazio.it/documenti/schede/monte_musino.kml",
+      "sourceIds": [
+        "NG06"
+      ],
+      "format": "KML",
+      "sha256": "53d92726d02a846edcd4db2e195a4955329597d5938c4f7ec61515477a7cbd72",
+      "pointCount": 26,
+      "bbox": {
+        "west": 12.4372474,
+        "south": 42.0955103,
+        "east": 12.4430232,
+        "north": 42.1001632
+      },
+      "firstPoint": {
+        "lat": 42.0955103,
+        "lon": 12.4421152,
+        "elevationM": null
+      },
+      "lastPoint": {
+        "lat": 42.1001418,
+        "lon": 12.4372474,
+        "elevationM": null
+      },
+      "elevation": {
+        "present": false,
+        "pointsWithElevation": 0,
+        "minM": null,
+        "maxM": null,
+        "note": "Quote XML, non verificate; eventuale quota zero in KML può essere segnaposto."
+      },
+      "redistributionLicense": null,
+      "licenseCheck": {
+        "pageUrl": "https://www.parchilazio.it/veio-schede-18206-209d_monte_musino_cai",
+        "outcome": "Nessuna licenza esplicita della specifica geometria trovata sulla pagina del percorso.",
+        "portalPolicyUrl": "https://www.parchilazio.it/pagine-8-copyleft",
+        "portalPolicyNote": "Il portale permette download e indica riuso con fonte/autore, gratuità e uso non commerciale; nessuna licenza standard o dichiarazione dedicata al singolo XML verificata.",
+        "sourceIds": [
+          "NGLICENSE"
+        ]
+      },
+      "bytes": 1142,
+      "httpStatus": 200,
+      "contentType": "application/vnd.google-earth.kml+xml",
+      "xmlElementCounts": {
+        "LineString": 1
+      },
+      "accessOutcome": "HTTP200, XML completo letto in memoria e analizzato; non salvato",
+      "pointCountDefinition": "Punti della traccia, escludendo waypoint GPX e Point KML isolati; tutti i segmenti concatenati in ordine XML."
+    }
+  ]
+}

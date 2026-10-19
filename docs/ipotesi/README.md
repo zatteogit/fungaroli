@@ -13,6 +13,8 @@ Il ramo di produzione e i documenti in `docs/` fanno fede. Ciò che sta solo in 
 
 ## Registro
 
+Estensione del pilota a tutto il Lazio richiesta da Matteo il 19/10: [valutazione della raccolta](estensione-lazio-2026-10-19.md). Tre agenti territoriali, 21 nuove zone candidate e 24 itinerari; documentazione e lacune salvate, integrazione applicativa ancora da eseguire.
+
 Ampliamento fotografico tramite tre agenti, richiesto il 18 e proseguito il 19/10: [valutazione, fonti e integrazione](integrazione-fotografie-agenti-2026-10-19.md). Commons, osservazioni iNaturalist e fotografie istituzionali Dryades; selezione per singolo file, senza ripetere il lotto già pubblicato.
 
 Ampliamento autorizzato il 18/10: [integrazione dei materiali](integrazione-materiali-2026-10-18.md), con [fasi fungine](integrazione-fasi-funghi-2026-10-18.md), [raster botanici](integrazione-raster-botanici-2026-10-18.md), [sorgenti vettoriali](revisione-svg-2026-10-18.md) e [schede animali](../animali-arricchimento-2026-10-18.md). I conteggi distinguono copertura visibile e sorgenti editabili; scarti e pendenze restano documentati.
