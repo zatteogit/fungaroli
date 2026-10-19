@@ -48,6 +48,25 @@ Queste persone hanno motivazioni differenti. Non considero dimostrato che il pri
 
 L’app deve essere utile anche con zero segnalazioni altrui. La rete può migliorare il servizio quando ci sono dati sufficienti; non deve essere il requisito che rende utile il primo giro.
 
+## Perché tenere il diario
+
+Il diario deve essere la memoria utile dell’uscita: ritrovare un giro, ricordare cosa si è osservato e decidere se tornarci. Scrivere bene non è un requisito. L’app compone il riepilogo dai dettagli dichiarati; il testo personale è un’aggiunta facoltativa. La bellezza della pagina aiuta a rileggerla, ma da sola non risolve l’inserimento.
+
+Il riferimento utile è il passaggio di Komoot dal percorso salvato all’attività conclusa, arricchibile in seguito e con una scelta di visibilità. Non è necessario ricostruire tutta la sua piattaforma. [Komoot, navigare un percorso salvato e salvare l’attività](https://support.komoot.com/hc/articles/10207935661338).
+
+**Prima:** salvo un giro con un tocco. **Al ritorno:** confermo luogo e giorno, scelgo i funghi osservati e la fatica. **Poi:** ritrovo una pagina composta da Fronda, posso correggerla e inviarne una copia nella chat che uso già. Non compilare un campo non deve significare “non trovato”. Indicare un nome non deve inventare una quantità né diventare un’identificazione verificata. Durata complessiva e tempo di ricerca sono informazioni diverse.
+
+Il rilascio v234 implementa questo primo passaggio per le zone del pilota: salvataggio del percorso, compositore in due schermate, scelte facoltative, riepilogo deterministico, modifica e copia condivisibile. Il catalogo propone nomi, senza confermare le identificazioni. Le osservazioni scientifiche dettagliate e il loro consenso restano nel percorso separato già esistente. Nessuna generazione esterna del testo e nessun costo per una chiamata AI a ogni uscita.
+
+### Dove vale la pena arrivare, per gradi
+
+1. **Ricordi collegati al giro:** foto personali, compagni e semplici etichette (“da rifare”, “con i bambini”). Servono collegamenti e gestione dei file reali: le foto del catalogo non diventano foto scattate durante l’uscita. Non sono inclusi nel rilascio v234.
+2. **Punti personali:** segnare il punto di un ritrovamento in modo esplicito, mantenendolo privato anche quando si condivide il giro. Per ora si annota la zona; non si salva una coordinata precisa. Evitare notifiche o mappe pubbliche che rivelino automaticamente i posti dei funghi.
+3. **Traccia percorsa:** prima verificare se le persone la richiedono davvero; valutare l’importazione di una traccia registrata con gli strumenti già usati. Riferimento a un sentiero, percorso dichiarato dall’utente e traccia GPS registrata vanno presentati come tre cose diverse.
+4. **Registrazione continua:** il browser può ricevere posizioni con HTTPS e permesso esplicito; questo non dimostra affidabilità a schermo spento. Una registrazione da proporre come funzione richiede prove su telefoni reali, sospensione/ripresa, batteria, assenza di rete e recupero dei dati. Valutare un’app nativa solo quando il bisogno giustifica manutenzione e assistenza. [MDN, watchPosition](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/watchPosition), [visibilità della pagina e attività in background](https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API).
+
+Il prossimo esperimento di prodotto è osservare persone reali salvare un giro e annotarlo al ritorno, senza spiegazioni. Il segnale utile è che riescano a farlo e che ritrovino il ricordo quando organizzano la prossima uscita. Non sono risultati già misurati e non si attiva tracciamento comportamentale per misurarli.
+
 ## Integrazione sociale senza costruire un secondo social network
 
 L’intuizione di usare le reti esistenti è fondata: l’Osservatorio AGCOM n. 1/2026, pubblicato il 14 maggio e riferito al 2025, riporta per dicembre 36,2 milioni di utenti Facebook e circa 33,6 milioni Instagram. Questo documenta la diffusione generale, non la domanda per Fronda né la quota del suo pubblico. [AGCOM](https://www.agcom.it/comunicazione/comunicati-stampa/osservatorio-sulle-comunicazioni-n1-2026).
