@@ -1,3 +1,4 @@
+import {initEditorialOutings,editorialOutings,editorialTitle,editorialReference,renderEditorialIndex,renderEditorialPage} from './editorial-outings.js';
 import {initAnimals,animals,animalName,animalSearchItems,renderAnimals,renderAnimalPage} from './animals.js';
 import {configureLegalAccess,acceptLegalNotice,hasLegalAcceptance} from './legal-access.js';
 import {currentLegalNotice,legalNoticeVersion,legalNoticeFingerprint} from './legal-notice.js';
@@ -293,6 +294,8 @@ async function init() {
   const plantData=embedded?.plants||await load('plants');plantModels=botanicalModels(embedded?.botanicalModels||await load('botanical-models'),plantData);
   if(state.plantIds!==null){state.plantIds=new Set([...state.plantIds].filter(id=>plantModels.some(p=>p.id===id)));if(!state.plantIds.size)state.plantIds=null;}
   initPlants(plantData,embedded?(f)=>embedded.assets?.[f]||'':(f)=>f,id=>plantModels.find(m=>m.plantId===id));
+  initEditorialOutings(embedded?.editorialOutings||await load('editorial-outings'),{zones,trails,photos:zoneMedia,species:catalog});
+  renderEditorialIndex($('#editorial-outings-home'),{home:true});
   initLearning({ glossary: embedded?.glossary || await load('glossary'), trees: trj,media:embedded?.glossaryMedia||await load('media-glossary'),assetUrl:embedded?(f)=>embedded.assets?.[f]||'':(f)=>f });
   if (embedded) challengeAsset = (f) => embedded.assets?.[f] || '';
   initChallenges({ data: embedded?.challenges || await load('challenges'), assetUrl: challengeAsset, entity: challengeEntity });
@@ -325,13 +328,14 @@ async function init() {
     const [,kind,encoded]=href.split('/');let id;try{id=decodeURIComponent(encoded||'');}catch{return null;}
     let image;
     if(kind==='zona')image=zoneMedia[id];
+    else if(kind==='giri')image=zoneMedia[editorialReference(href)?.zoneId];
     else if(kind==='pianta')image=plantRecord(id)?.photos?.[0];
     else if(kind==='albero'){const m=mj.trees?.[id];image=m?.ref||m?.inat?.[0]||m?.commons?.[0];}
     else if(['specie','commestibile'].includes(kind))image=fungusPhoto(id);
     else if(kind==='fungo')image=searchTaxa().find(t=>t.key===id)?.photo;
     const file=image?.file_hd||image?.file||image?.thumb;return file?{file:assetSrc(file)}:null;
   };
-  journal = initJournal({ noteCatalogs:()=>({fungo:Object.entries(stj.taxa).map(([id,t])=>({name:t.name||t.latin,latin:t.latin,href:t.edible_id&&!t.lookalike_of?.length?'#/specie/'+t.edible_id:'#/fungo/'+id})),botanica:plants().map(p=>({name:p.name,latin:p.latin,href:'#/pianta/'+p.id})),albero:Object.entries(trj.trees).map(([id,t])=>({name:t.name,latin:t.latin,href:'#/albero/'+id}))}),onEntries:entries=>{botanicalNotes=entries.filter(e=>e.kind==='note'&&e.observation);if(series){compute();outCache.clear();if(weatherBusy)paintWeatherView();else renderAll();}},zones, speciesCatalog: catalog, predict, captureForecast, getZoneId: () => state.zoneId || zones[0].id, zoneImage:zid=>assetSrc(zoneMedia[zid]?.file_hd||zoneMedia[zid]?.file||''),referenceImage:notebookReferenceImage });
+  journal = initJournal({ resolveTrip:editorialReference,noteCatalogs:()=>({fungo:Object.entries(stj.taxa).map(([id,t])=>({name:t.name||t.latin,latin:t.latin,href:t.edible_id&&!t.lookalike_of?.length?'#/specie/'+t.edible_id:'#/fungo/'+id})),botanica:plants().map(p=>({name:p.name,latin:p.latin,href:'#/pianta/'+p.id})),albero:Object.entries(trj.trees).map(([id,t])=>({name:t.name,latin:t.latin,href:'#/albero/'+id}))}),onEntries:entries=>{botanicalNotes=entries.filter(e=>e.kind==='note'&&e.observation);if(series){compute();outCache.clear();if(weatherBusy)paintWeatherView();else renderAll();}},zones, speciesCatalog: catalog, predict, captureForecast, getZoneId: () => state.zoneId || zones[0].id, zoneImage:zid=>assetSrc(zoneMedia[zid]?.file_hd||zoneMedia[zid]?.file||''),referenceImage:notebookReferenceImage });
   // preferenza personale (non un filtro): usare le fasi annotate nel taccuino per le cose da osservare
   const botanicalToggle = $('[data-botanical-personalize]');
   if (botanicalToggle) { botanicalToggle.checked = state.useBotanicalNotes; botanicalToggle.addEventListener('change', () => { state.useBotanicalNotes = botanicalToggle.checked; savePrefs(); if (series) { compute(); outCache.clear(); renderAll(); } }); }
@@ -442,6 +446,7 @@ function parseRoute(hash = location.hash) {
   const parts = hash.replace(/^#\/?/, '').split('/').filter(Boolean).map((x) => { try { return decodeURIComponent(x); } catch { return x; } });
   const [a, b, c] = parts;
   if (a === 'zona' && (weatherZones||zones).some((z) => z.id === b)) return { view: 'zona', zoneId: b, offset: Math.max(0, Math.min(AHEAD_DAYS, +c || 0)), trailId: parts[3] === 'sentiero' && (trails[b]?.trails || []).some(t => String(t.id) === parts[4]) ? parts[4] : null };
+  if (a === 'giri') return {view:'giri',outingId:b||''};
   if (a === 'mappa') return { view: 'mappa', zoneId: b };
   if (a === 'specie' && b) return { view: 'specie-dettaglio', speciesId: b };
   if (a === 'specie' || a === 'scopri') return { view: 'specie' };
@@ -468,12 +473,12 @@ function parseRoute(hash = location.hash) {
 }
 
 // profondita' e posizione delle viste: decidono la direzione della transizione
-const LEVEL = { animale:1, pianta:1, commestibile: 1, guide: 2, zona: 1, 'specie-dettaglio': 1, albero: 1, info: 1, metodo: 2, fungo: 1, glossario: 1, 'guide-list': 1, sfide: 1 };
+const LEVEL = { giri:1, animale:1, pianta:1, commestibile: 1, guide: 2, zona: 1, 'specie-dettaglio': 1, albero: 1, info: 1, metodo: 2, fungo: 1, glossario: 1, 'guide-list': 1, sfide: 1 };
 const TABS = ['uscite', 'mappa', 'specie', 'diario'];
 // posizione delle schede di Scopri (Funghi, Piante, Alberi, Impara e le loro sotto-schede): tra loro si passa in dissolvenza
 const SUB = { animali:8, specie: 0, alberi: 1, piante:2, riconosci: 3, glossario: 4, 'guide-list': 5, sfide: 6, impara: 7 };
 // una sfida aperta è un livello sotto l'elenco delle sfide
-const levelOf = (r) => (LEVEL[r.view] || 0) + (r.compare ? 2 : 0) + (r.challengeId ? 1 : 0) + (r.notebookEntry ? 1 : 0) + (r.view === 'riconosci' && r.recognizeMode === 'bosco' ? 1 : 0);
+const levelOf = (r) => (LEVEL[r.view] || 0) + (r.outingId?1:0) + (r.compare ? 2 : 0) + (r.challengeId ? 1 : 0) + (r.notebookEntry ? 1 : 0) + (r.view === 'riconosci' && r.recognizeMode === 'bosco' ? 1 : 0);
 const scrollMem = new Map();
 let prev = null;
 function navKind(a, b) {
@@ -542,6 +547,7 @@ globalThis.visualViewport?.addEventListener('resize',scheduleHeader,{passive:tru
 const TITLES = { animali:'Animali', piante:'Piante e fiori', uscite: 'Uscite', mappa: 'Mappa', specie: 'Funghi', alberi: 'Alberi', riconosci: 'Riconosci', impara: 'Guide', glossario: 'Glossario', 'guide-list': 'Approfondimenti', sfide: 'Sfide', diario: 'Taccuino', info: 'Regole e metodo', metodo: 'Come funziona' };
 function titleOf(r) {
   if (!r) return '';
+  if(r.view==='giri')return r.outingId?editorialTitle(r.outingId):'I giri di Matteo';
   if (r.view === 'diario' && r.notebookEntry) return journal?.entryTitle(r.notebookEntry,r.notebookDemo)||'Pagina del taccuino';
   if (r.view === 'diario' && r.notebookDemo) return 'Diario di prova';
   if (r.view === 'zona') { const z = (weatherZones||zones).find((x) => x.id === r.zoneId); return z ? splitName(z)[0] : 'Zona'; }
@@ -561,6 +567,7 @@ function titleOf(r) {
 function pageTitle(r) { const t = r.view === 'uscite' ? '' : titleOf(r); return t ? `${t} · Fronda` : 'Fronda'; }
 function parentOf(r) {
   if (!r) return '#/';
+  if(r.view==='giri'&&r.outingId)return '#/giri';
   if(r.view==='diario' && r.notebookEntry) return r.notebookDemo?'#/diario/esempio':'#/diario';
   if(r.view==='diario' && r.notebookDemo) return '#/diario';
   if (r.view === 'specie-dettaglio' || r.view === 'fungo' || r.view === 'commestibile') return '#/specie';
@@ -575,7 +582,7 @@ function parentOf(r) {
   if (['specie','alberi','piante','animali','riconosci','glossario','guide-list','sfide'].includes(r.view)) return '#/scopri';
   return '#/';
 }
-const PARENT_TITLE = (r) => ({ '#/diario':'Taccuino', '#/diario/esempio':'Diario di prova', '#/scopri': 'Scopri', '#/specie': 'Funghi', '#/alberi': 'Alberi', '#/animali':'Animali', '#/piante':'Piante e fiori', '#/riconosci': 'Impara a riconoscere', '#/confronta':'Confronta', '#/guide': 'Approfondimenti', '#/sfide': 'Sfide', '#/impara': 'Guide', '#/': 'Uscite' }[parentOf(r)]);
+const PARENT_TITLE = (r) => ({ '#/giri':'I giri di Matteo', '#/diario':'Taccuino', '#/diario/esempio':'Diario di prova', '#/scopri': 'Scopri', '#/specie': 'Funghi', '#/alberi': 'Alberi', '#/animali':'Animali', '#/piante':'Piante e fiori', '#/riconosci': 'Impara a riconoscere', '#/confronta':'Confronta', '#/guide': 'Approfondimenti', '#/sfide': 'Sfide', '#/impara': 'Guide', '#/': 'Uscite' }[parentOf(r)]);
 // Quando il titolo della pagina passa sotto la barra, lo mostriamo compatto al centro su telefono e tablet.
 let watchedTitle = null, compactTitle = false;
 function updateCompactTitle(initial=false) {
@@ -636,7 +643,7 @@ function route() {
   // un ridisegno del meteo in sospeso (in home aspetta fino a 6 s) non deve cadere sulla pagina nuova: questa si disegna gia' con i dati aggiornati
   if (weatherPaintTimer) { clearTimeout(weatherPaintTimer.handle); weatherPaintTimer = null; }
   const r = parseRoute();
-  r.tab = { animali:'specie', animale:'specie', impara: 'specie', piante:'specie', pianta:'specie', zona: 'uscite', glossario: 'specie', 'specie-dettaglio': 'specie', alberi: 'specie', albero: 'specie', riconosci: 'specie', info: '', metodo: '', guide: 'specie', 'guide-list': 'specie', sfide: 'specie', fungo: 'specie', commestibile: 'specie' }[r.view] ?? r.view;
+  r.tab = { giri:'uscite', animali:'specie', animale:'specie', impara: 'specie', piante:'specie', pianta:'specie', zona: 'uscite', glossario: 'specie', 'specie-dettaglio': 'specie', alberi: 'specie', albero: 'specie', riconosci: 'specie', info: '', metodo: '', guide: 'specie', 'guide-list': 'specie', sfide: 'specie', fungo: 'specie', commestibile: 'specie' }[r.view] ?? r.view;
   r.hash = location.hash || '#/';
   const nav = returningNavigation()?'pop':navKind(prev,r), back = prev?.hash || '';
   rememberNavigationContext();
@@ -699,6 +706,7 @@ function routeNow(r, nav) {
   syncNavIndicator();
   placeStale(r.view);
   if(r.view==='diario')journal?.refresh();
+  if(r.view==='giri'){if(r.outingId)renderEditorialPage($('#editorial-outings-page'),r.outingId);else renderEditorialIndex($('#editorial-outings-page'));}
   if (r.view === 'specie-dettaglio') renderSpeciesDetail($('#species-detail'), r.speciesId);
   if (r.view === 'animali') renderAnimals($('#animal-grid'));
   if (r.view === 'animale') renderAnimalPage($('#animal-detail'),r.animalId);
@@ -1642,6 +1650,7 @@ function buildSearch(idj, trj, embedded) {
   for (const { t, zs } of seen.values()) {
     items.push({ kind: 'sentiero', title: `${t.ref ? `Sentiero ${t.ref}` : 'Sentiero'}${t.name ? ` · ${t.name}` : ''}`, sub: zs.map((z) => splitName(z)[0]).join(', '), hay: `${(t.itinerary || []).join(' ')} ${t.operator || ''} cai segnavia`, href: walkHref(zs[0], 0, t), img: segnavia(t) });
   }
+  for(const item of editorialOutings())items.push({kind:'pagina',title:item.title,sub:'Matteo · Redattore Fronda · Giro simulato',hay:[item.intro,item.eyebrow,'giro uscita autore simulazione Matteo redazione',zones.find(z=>z.id===item.zoneId)?.title].join(' '),href:'#/giri/'+item.id,img:zoneMedia[item.zoneId]?.file?img(zoneMedia[item.zoneId].file):''});
   const pages = [
     ['Confronta','Scegli due specie dal catalogo','confronto sosia differenze comparare funghi riferimento master','#/confronta'],
     ['Impara a riconoscere i funghi', 'Descrivi quello che vedi, anche se è velenoso', 'identificare trovato velenoso sosia caratteri lamelle pori volva anello sporata', '#/riconosci'],

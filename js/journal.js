@@ -163,7 +163,7 @@ async function openStore() {
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const iso = todayISO;
 
-export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, predict, captureForecast, getZoneId, noteCatalogs=()=>({}), zoneImage = () => '', referenceImage=()=>null }) {
+export function initJournal({ resolveTrip=()=>null,onEntries=()=>{},zones, speciesCatalog = SPECIES, predict, captureForecast, getZoneId, noteCatalogs=()=>({}), zoneImage = () => '', referenceImage=()=>null }) {
   const dlg = document.getElementById('journal-dialog');
   const body = dlg.querySelector('.wiz-body');
   const list = document.getElementById('journal-list');
@@ -210,6 +210,7 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
     openNote({...(kind?{category}:{}),zoneId:b.dataset.noteZone,reference:kind?{href:b.dataset.noteHref||`#/${kind}/${id}`,title:b.dataset.noteTitle}:null});
   });
 
+  const editorialTripTitle=source=>source.reference.title.replace(/^Giro simulato di Matteo · /,'');
   // Il ricordo dell’uscita resta distinto dalle osservazioni di ricerca.
   const outingSpecies=()=>{
     const byId=new Map(speciesCatalog.map(s=>[s.id,s]));
@@ -237,16 +238,17 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
     const entry=entries.find(e=>String(e.id)===(button.dataset.editOuting||button.dataset.completeOuting));
     if(button.hasAttribute('data-edit-outing')){if(entry)open({},entry);return;}
     if(button.hasAttribute('data-complete-outing')){
-      if(!entry)return;const reference=entry.reference;
-      open({zoneId:entry.zoneId,date:entry.date<=iso(new Date())?entry.date:iso(new Date()),fromEntryId:entry.id,route:reference?{href:reference.href,name:reference.title,followed:false}:null});return;
+      if(!entry)return;const reference=entry.reference,source=resolveTrip(reference?.href);
+      open({zoneId:entry.zoneId,date:entry.date<=iso(new Date())?entry.date:iso(new Date()),fromEntryId:entry.id,reference:source?.reference||null,route:source?(source.zoneId===entry.zoneId?source.route:null):reference?{href:reference.href,name:reference.title,followed:false}:null});return;
     }
-    const zoneId=button.dataset.tripZone,route=button.dataset.tripHref?{href:button.dataset.tripHref,name:button.dataset.tripTitle,followed:false}:null;
-    if(!button.hasAttribute('data-save-trip')){open({zoneId,route});return;}
+    const source=resolveTrip(button.dataset.tripSource),zoneId=button.dataset.tripZone,route=button.dataset.tripHref?{href:button.dataset.tripHref,name:button.dataset.tripTitle,followed:false}:null;
+    if(!button.hasAttribute('data-save-trip')){open({zoneId,route,reference:source?.reference||null});return;}
     await storageReady;if(!store)return;const owner=store;button.disabled=true;
     try{
-      const duplicate=entries.find(e=>e.kind==='note'&&e.category==='percorso'&&e.reference?.href===route?.href&&e.date===button.dataset.tripDate);
+      const reference=source?.reference||(route?{href:route.href,title:route.name.slice(0,160)}:null),date=button.dataset.tripDate||iso(new Date());
+      const duplicate=entries.find(e=>e.kind==='note'&&e.category==='percorso'&&e.reference?.href===reference?.href&&(source||e.date===date));
       if(duplicate){location.hash='#/diario/pagina/'+encodeURIComponent(duplicate.id);return;}
-      const saved=normalizeNotebookNote({id:crypto.randomUUID(),kind:'note',category:'percorso',title:route?.name?.slice(0,120),date:button.dataset.tripDate||iso(new Date()),zoneId,note:'',reference:route?{href:route.href,title:route.name.slice(0,160)}:null,savedAt:new Date().toISOString()},{zoneIds:new Set(zones.map(z=>z.id))});
+      const saved=normalizeNotebookNote({id:crypto.randomUUID(),kind:'note',category:'percorso',title:(source?editorialTripTitle(source):route?.name)?.slice(0,120),date,zoneId,note:'',reference,savedAt:new Date().toISOString()},{zoneIds:new Set(zones.map(z=>z.id))});
       await owner.put(saved);if(!currentStore(owner))return;
       entries=[saved,...entries];sortEntries();entriesRevision++;renderList('Giro salvato. Dopo l’uscita, tocca “Ci sono stato”.');location.hash='#/diario/pagina/'+encodeURIComponent(saved.id);
     }catch(error){

@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="utf-8">
-  <meta name="app-version" content="fungaroli-shell-v235">
+  <meta name="app-version" content="fungaroli-shell-v236">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
   <link rel="preload" href="data/crop-points.json" as="fetch" crossorigin>
   <meta name="theme-color" content="#f7f4ea" media="(prefers-color-scheme: light)">
@@ -28,6 +28,7 @@
   <link rel="stylesheet" href="css/animals.css">
   <link rel="stylesheet" href="css/map-experience.css">
   <link rel="stylesheet" href="css/notebook.css">
+  <link rel="stylesheet" href="css/editorial-outings.css">
   <script>try{var t=localStorage.getItem('fungaroli:theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
   <noscript><style>#hero .loader { display: none; }</style></noscript>
 </head>
@@ -105,6 +106,7 @@
       <div id="install-banner" class="install-banner" hidden></div>
       <h2 class="sec-title" id="others-h">Altre buone uscite</h2>
       <ol id="ranking" class="rail" aria-labelledby="others-h"></ol>
+      <section id="editorial-outings-home" class="editorial-outings-home" aria-label="Giri dalla redazione" hidden></section>
       <div id="during-walk" hidden></div>
       <h2 class="sec-title" id="season-h">Nei boschi in questi giorni</h2>
       <ul id="season" class="rail rail-portrait" aria-labelledby="season-h"></ul>
@@ -112,6 +114,8 @@
       <section id="community-intro" class="community-intro" aria-label="La community di Fronda"></section>
       <a class="act-row legal-strip" id="home-legal" href="#/info"><span class="ar-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span><span class="ar-b"><span class="ar-t">Regole di raccolta</span><span class="ar-s">Nel Lazio si raccoglie con attestato micologico, ricevuta del contributo regionale annuale e documento d'identità (L.R. 32/1998).</span></span></a>
     </section>
+
+    <section class="view editorial-outings-view" data-view="giri" hidden><div id="editorial-outings-page"></div></section>
 
     <section class="view view-hero" data-view="zona" hidden>
       <div id="detail" aria-live="polite"></div>

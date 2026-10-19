@@ -73,6 +73,8 @@ L’intuizione di usare le reti esistenti è fondata: l’Osservatorio AGCOM n. 
 
 La prima funzione sociale proposta è **«Questo è il giro, vieni?»**: un piano concreto che circola in una conversazione già esistente. Fronda conserva struttura e memoria; la conversazione resta dove il gruppo la usa.
 
+Primo esperimento realizzato il 19 ottobre: tre [giri editoriali simulati](giri-editoriali-2026-10-19.md), firmati Matteo, con pagine pubbliche, segnalibro privato, avvio dell’uscita guidata e messaggio condivisibile. La simulazione è dichiarata anche nel messaggio. Questo verifica il flusso editoriale; non dimostra ancora domanda, partecipazione o efficacia commerciale. Anteprime specifiche nelle chat, inviti di gruppo e pubblicazione dei giri personali restano sviluppi separati.
+
 | Integrazione | Fattibilità verificata e limiti | Priorità proposta |
 | --- | --- | --- |
 | Condividere testo e link su WhatsApp | Il link ufficiale `wa.me/?text=…` apre la scelta del destinatario; la persona completa l’invio. Non richiede di leggere la chat | Prima versione |

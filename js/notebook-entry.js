@@ -2,7 +2,7 @@ import {normalizeFieldRecord} from './community-observation.js';
 // Internal phase status absent means searched, not observed; it does not prove absence.
 // Private notes have no forecast/finds payload and cannot become mushroom reports.
 export const PHENO_PHASES=[['young_leaves','Foglie giovani'],['open_flowers','Fiori aperti'],['unripe_fruits','Frutti immaturi'],['ripe_fruits','Frutti maturi'],['dry_fruits','Frutti secchi']];
-const refPattern=/^#\/(?:pianta|albero|specie|fungo|commestibile|guide|glossario)\/[a-zA-Z0-9%-]+$|^#\/zona\/[a-z0-9-]+(?:\/[0-7](?:\/sentiero\/[a-zA-Z0-9-]+)?)?$/;
+const refPattern=/^#\/(?:pianta|albero|specie|fungo|commestibile|guide|glossario|giri)\/[a-zA-Z0-9%-]+$|^#\/zona\/[a-z0-9-]+(?:\/[0-7](?:\/sentiero\/[a-zA-Z0-9-]+)?)?$/;
 const invalid=()=>{throw new Error('Appunto non valido: controlla titolo, giorno, testo e riferimento.');};
 export function normalizeNotebookNote(e,{zoneIds,plantIds,now=Date.now()}={}){
   if(!e||e.kind!=='note'||typeof e.id!=='string'||!/^[a-zA-Z0-9-]{4,64}$/.test(e.id)||typeof e.date!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(e.date))invalid();
