@@ -12,6 +12,22 @@ Il possibile vantaggio competitivo è la combinazione fra contesto locale curato
 
 L’educazione dovrebbe emergere da una domanda incontrata durante il giro: cosa sto guardando, come osservarlo, che cosa cambia nella prossima stagione. L’intrattenimento può rendere piacevole l’esperienza, ma il successo si misura nelle uscite preparate e ripetute, non nel tempo passato dentro l’app.
 
+## Le alternative con cui il progetto deve confrontarsi
+
+Le pagine ufficiali dei prodotti mostrano che le categorie adiacenti sono già presidiate. Questo prova l’esistenza di offerte, non i loro risultati economici né la disponibilità di clienti per Fronda.
+
+| Alternativa | Offerta dichiarata dal produttore | Conseguenza per Fronda |
+| --- | --- | --- |
+| Komoot | Mappe, pianificazione e prodotti per l’outdoor | Collegare i percorsi; evitare di competere sulla quantità di sentieri |
+| Seek e iNaturalist | Seek propone osservazione della natura, riconoscimento da immagine e sfide anche per famiglie; iNaturalist ha una comunità naturalistica | Curiosità e apprendimento da soli non distinguono Fronda. Non promettere riconoscimento o valore scientifico equivalenti |
+| Outdooractive per destinazioni | Piani per gestione, distribuzione di contenuti e siti territoriali; un livello Basic gratuito e offerte professionali su preventivo | Un ente ha alternative già strutturate: la proposta deve risolvere un bisogno locale specifico, non limitarsi a una nuova app |
+| Geotrek | Suite open source BSD per gestione di itinerari, sito, widget e mobile | Anche una soluzione aperta è un’alternativa di acquisto o riuso. Il lavoro curato sul territorio può valere più del solo codice |
+| Chat, mappe e sito del parco già usati dal gruppo | Insieme di strumenti che le persone conoscono | Il concorrente quotidiano è l’abitudine: Fronda deve far risparmiare passaggi senza imporre l’iscrizione a tutti |
+
+Fonti: [Komoot](https://www.komoot.com/it-it/product), [Seek](https://www.inaturalist.org/pages/seek_app), [Outdooractive Destinations](https://business.outdooractive.com/product-plans-destinations), [Geotrek](https://geotrek.fr/index.html). La lettura delle offerte non è una prova comparativa della loro qualità sul campo. Non è stata stimata una dimensione di mercato dei raccoglitori di funghi italiani.
+
+Perciò la prima offerta professionale dovrebbe essere un pacchetto piccolo di **contenuti e flussi utili all’uscita**, riutilizzabile anche su un sito esistente. È più verificabile che chiedere a una destinazione di sostituire l’intero sistema che già usa.
+
 ## Chi deve trovare valore prima degli altri
 
 | Persona | Problema da risolvere | Prova da cercare |
