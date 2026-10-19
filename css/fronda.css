@@ -616,9 +616,7 @@ body:has(#ranking .ring) #ranking-index-legend,body:has(#season .ring) #season-i
 .map-top .map-days .day { min-width:80px; min-height:132px; padding:12px 7px; border-radius:24px; }
 .map-top .map-days .day .d1 { font-size:12px; }
 .map-top .map-days .day .d2 { font-size:28px; }
-.recognize-entry .btn.ghost { min-height:48px; padding:12px 20px; border-radius:16px; background:var(--story-germoglio); color:var(--story-ink); border-color:var(--story-ink); }
 .recognize-entry .btn.ghost .recognize-icon { stroke:currentColor; }
-@media(hover:hover) { .recognize-entry .btn.ghost:hover { background:var(--story-germoglio); color:var(--story-ink); box-shadow:inset 0 0 0 1px var(--story-ink); } }
 .recognize-entry .btn.ghost:focus-visible { outline:3px solid var(--focus); outline-offset:3px; }
 
 @media(prefers-reduced-transparency:reduce) {
