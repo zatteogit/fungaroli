@@ -10,7 +10,7 @@ export function createOutingComposer({dialog,zones,species,onSave,onDone}) {
   addEventListener('hashchange',()=>{if(dialog.open&&!busy)dialog.close();});
   const catalog=()=>species();
   function collect() {
-    if(step===0){const zoneId=body.querySelector('[name="place"]').value;if(zoneId!==draft.zoneId){draft.experience.route=null;draft.experience.fromEntryId=null;}draft.zoneId=zoneId;draft.date=body.querySelector('[name="day"]').value;}
+    if(step===0){const zoneId=body.querySelector('[name="place"]').value;if(zoneId!==draft.zoneId){draft.experience.route=null;draft.experience.fromEntryId=null;if(draft.reference?.href?.startsWith('#/giri/'))draft.reference=null;}draft.zoneId=zoneId;draft.date=body.querySelector('[name="day"]').value;}
     else {draft.note=body.querySelector('[name="note"]').value;const duration=body.querySelector('[name="duration"]').value;draft.experience.durationMinutes=duration?Number(duration):null;const route=body.querySelector('[name="followed"]');if(route)draft.experience.route.followed=route.checked;}
   }
   function render(focus=true) {
@@ -58,7 +58,7 @@ export function createOutingComposer({dialog,zones,species,onSave,onDone}) {
   }
   return {open(context={},entry=null){
     existing=entry;step=entry?1:0;query='';origin=document.activeElement;
-    draft=entry?structuredClone(entry):{kind:'outing',zoneId:context.zoneId||'',date:context.date||todayISO(new Date()),note:'',finds:{},searched:[],effort:{},experience:{route:context.route||null,fromEntryId:context.fromEntryId||null}};
+    draft=entry?structuredClone(entry):{kind:'outing',zoneId:context.zoneId||'',date:context.date||todayISO(new Date()),reference:context.reference||null,note:'',finds:{},searched:[],effort:{},experience:{route:context.route||null,fromEntryId:context.fromEntryId||null}};
     draft.experience=outingMemory(draft,catalog());
     if(!entry)draft.experience.mushrooms='unknown';
     body.innerHTML='';render(false);openModal(dialog);body.querySelector('h2').focus({preventScroll:true});
