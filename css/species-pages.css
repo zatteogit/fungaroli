@@ -574,6 +574,7 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 /* Caratteri botanici: testo e immagini condividono la stessa tessera leggibile. */
 [data-plant-traits] .trait-strip { grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
 [data-plant-traits] .trait-strip > li { padding:14px; gap:8px; border-radius:18px; }
+[data-plant-traits] .ts-figure-caption { color:var(--text-2); font:400 13px/1.5 var(--font-body); }
 [data-plant-traits] .ts-k { font:500 12px/1.4 var(--font-body); letter-spacing:0; text-transform:none; }
 [data-plant-traits] .ts-v { font:500 15px/1.5 var(--font-body); }
 @media(min-width:760px) { [data-plant-traits] .trait-strip { grid-template-columns:repeat(3,minmax(0,1fr)); } }

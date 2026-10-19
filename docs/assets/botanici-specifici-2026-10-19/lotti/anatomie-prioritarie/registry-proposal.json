@@ -1,0 +1,467 @@
+{
+  "genziana-maggiore": {
+    "leaf_type": {
+      "semplice": {
+        "src": "assets/plant-traits/genziana-maggiore-leaf-type-semplice-v1.webp",
+        "source": "https://www.infoflora.ch/it/flora/gentiana-lutea.html",
+        "referencePhoto": "assets/plants/genziana-maggiore-1.webp",
+        "sha256": "d8797a0603a36e92719a920cbd7e8484a7f629daf54ee423c36e55b43b2386f7",
+        "review": "approvato: margine intero, 5-7 nervature convergenti; fiore a cinque lobi stretti; coppia opposta. Master v1 scartato per alone; v2 corretto via image_gen e rivisto. Solo schema didattico, non identificazione.",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/genziana-master-v2.png"
+      }
+    },
+    "leaf_margin": {
+      "intero": {
+        "src": "assets/plant-traits/genziana-maggiore-leaf-margin-intero-v1.webp",
+        "source": "https://www.infoflora.ch/it/flora/gentiana-lutea.html",
+        "referencePhoto": "assets/plants/genziana-maggiore-1.webp",
+        "sha256": "6fe46495b4b3bd201c0f4f7299532cc880b805c020eaa51a817fe742bebc263c",
+        "review": "approvato: margine intero, 5-7 nervature convergenti; fiore a cinque lobi stretti; coppia opposta. Master v1 scartato per alone; v2 corretto via image_gen e rivisto. Solo schema didattico, non identificazione.",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/genziana-master-v2.png"
+      }
+    },
+    "flower_shape": {
+      "cinque_petali": {
+        "src": "assets/plant-traits/genziana-maggiore-flower-shape-cinque_petali-v1.webp",
+        "source": "https://www.infoflora.ch/it/flora/gentiana-lutea.html",
+        "referencePhoto": "assets/plants/genziana-maggiore-1.webp",
+        "sha256": "c01f52d6827891be2d12bece88125503549b3b27156602744343827c5e2a5e36",
+        "review": "approvato: margine intero, 5-7 nervature convergenti; fiore a cinque lobi stretti; coppia opposta. Master v1 scartato per alone; v2 corretto via image_gen e rivisto. Solo schema didattico, non identificazione.",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/genziana-master-v2.png"
+      }
+    },
+    "leaf_arrangement": {
+      "opposte": {
+        "src": "assets/plant-traits/genziana-maggiore-leaf-arrangement-opposte-v1.webp",
+        "source": "https://www.infoflora.ch/it/flora/gentiana-lutea.html",
+        "referencePhoto": "assets/plants/genziana-maggiore-1.webp",
+        "sha256": "44aa9dff7e4b9df25de03df1e8c6704bcca1a164ee14dca6d070f101fe9c0896",
+        "review": "approvato: margine intero, 5-7 nervature convergenti; fiore a cinque lobi stretti; coppia opposta. Master v1 scartato per alone; v2 corretto via image_gen e rivisto. Solo schema didattico, non identificazione.",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/genziana-master-v2.png"
+      }
+    }
+  },
+  "veratro": {
+    "leaf_type": {
+      "semplice": {
+        "src": "assets/plant-traits/veratro-leaf-type-semplice-v1.webp",
+        "source": "https://www.infoflora.ch/it/flora/veratrum-album.html",
+        "referencePhoto": "assets/plants/veratro-3.webp",
+        "sha256": "9d1009aa8b3b1f8176281d4f9064ec8a83a4cd6483b6647a8e5bdef7efde43fc",
+        "review": "approvato: lamina larga intera con nervature longitudinali e plettatura; sei tepali verdastri e sei stami; foglie alterne su guaine abbraccianti, senza coppie opposte. Foto osservate a piena risoluzione; solo schema didattico.",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/veratro-master-v1.png"
+      }
+    },
+    "leaf_margin": {
+      "intero": {
+        "src": "assets/plant-traits/veratro-leaf-margin-intero-v1.webp",
+        "source": "https://www.infoflora.ch/it/flora/veratrum-album.html",
+        "referencePhoto": "assets/plants/veratro-3.webp",
+        "sha256": "695d21b33b3c7dd41d685f61337749e8eae03b0286145530a6f707f07e75feab",
+        "review": "approvato: lamina larga intera con nervature longitudinali e plettatura; sei tepali verdastri e sei stami; foglie alterne su guaine abbraccianti, senza coppie opposte. Foto osservate a piena risoluzione; solo schema didattico.",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/veratro-master-v1.png"
+      }
+    },
+    "flower_shape": {
+      "sei_tepali": {
+        "src": "assets/plant-traits/veratro-flower-shape-sei_tepali-v1.webp",
+        "source": "https://www.infoflora.ch/it/flora/veratrum-album.html",
+        "referencePhoto": "assets/plants/veratro-4.webp",
+        "sha256": "76399f1cd6da80656979439ddb09e89f5a7ceef3a0da4b4400fc53ffac1e7f4c",
+        "review": "approvato: lamina larga intera con nervature longitudinali e plettatura; sei tepali verdastri e sei stami; foglie alterne su guaine abbraccianti, senza coppie opposte. Foto osservate a piena risoluzione; solo schema didattico.",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/veratro-master-v1.png"
+      }
+    },
+    "leaf_arrangement": {
+      "alterne": {
+        "src": "assets/plant-traits/veratro-leaf-arrangement-alterne-v1.webp",
+        "source": "https://www.infoflora.ch/it/flora/veratrum-album.html",
+        "referencePhoto": "assets/plants/veratro-3.webp",
+        "sha256": "cfe4c5f746af3bd8a2710aa43da91acadcde39c60a4cea10b07a95628cb45e89",
+        "review": "approvato: lamina larga intera con nervature longitudinali e plettatura; sei tepali verdastri e sei stami; foglie alterne su guaine abbraccianti, senza coppie opposte. Foto osservate a piena risoluzione; solo schema didattico.",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/veratro-master-v1.png"
+      }
+    }
+  },
+  "aglio-orsino": {
+    "leaf_type": {
+      "semplice": {
+        "src": "assets/plant-traits/aglio-orsino-leaf-type-semplice-v1.webp",
+        "source": "https://www.infoflora.ch/it/flora/allium-ursinum.html",
+        "referencePhoto": "assets/plants/aglio-orsino-3.webp",
+        "sha256": "7f9220fb5b2e329681673d716b9a657f3ee781ca825879974f5ea0d28a1270a5",
+        "review": "approvato: foglia semplice lungo-picciolata e nervature arcuate; foglie tutte basali; ombrella semplice con pedicelli da unico punto e fiori bianchi sei tepali; capsula verde immatura trilobata verificata sulle ovaie in sviluppo in foto4, non colore di maturità. V1 respinto per venatura pennata, v2 corretto raster. Nessuna figura per leaf_margin null.",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/aglio-master-v2.png"
+      }
+    },
+    "leaf_arrangement": {
+      "rosetta_basale": {
+        "src": "assets/plant-traits/aglio-orsino-leaf-arrangement-rosetta_basale-v1.webp",
+        "source": "https://www.infoflora.ch/it/flora/allium-ursinum.html",
+        "referencePhoto": "assets/plants/aglio-orsino-3.webp",
+        "sha256": "5caab3cc6d75d5028ea6fb5ce318ec9e10d2707f22104dd0c6c11d4ce5d24156",
+        "review": "approvato: foglia semplice lungo-picciolata e nervature arcuate; foglie tutte basali; ombrella semplice con pedicelli da unico punto e fiori bianchi sei tepali; capsula verde immatura trilobata verificata sulle ovaie in sviluppo in foto4, non colore di maturità. V1 respinto per venatura pennata, v2 corretto raster. Nessuna figura per leaf_margin null.",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/aglio-master-v2.png"
+      }
+    },
+    "flower_shape": {
+      "ombrella": {
+        "src": "assets/plant-traits/aglio-orsino-flower-shape-ombrella-v1.webp",
+        "source": "https://www.infoflora.ch/it/flora/allium-ursinum.html",
+        "referencePhoto": "assets/plants/aglio-orsino-4.webp",
+        "sha256": "35b195882ba4def7b42a3215fe379b54db7bcdb0ed9ba03ae8871574a7ba9970",
+        "review": "approvato: foglia semplice lungo-picciolata e nervature arcuate; foglie tutte basali; ombrella semplice con pedicelli da unico punto e fiori bianchi sei tepali; capsula verde immatura trilobata verificata sulle ovaie in sviluppo in foto4, non colore di maturità. V1 respinto per venatura pennata, v2 corretto raster. Nessuna figura per leaf_margin null.",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/aglio-master-v2.png"
+      }
+    },
+    "fruit_type": {
+      "capsula": {
+        "src": "assets/plant-traits/aglio-orsino-fruit-type-capsula-v1.webp",
+        "source": "https://flora.uniud.it/scheda.php?id=148",
+        "referencePhoto": "assets/plants/aglio-orsino-4.webp",
+        "sha256": "e818a213ea95b325f2653572d26cc322b93fecf50b846812cad65001bb012b5b",
+        "review": "approvato: foglia semplice lungo-picciolata e nervature arcuate; foglie tutte basali; ombrella semplice con pedicelli da unico punto e fiori bianchi sei tepali; capsula verde immatura trilobata verificata sulle ovaie in sviluppo in foto4, non colore di maturità. V1 respinto per venatura pennata, v2 corretto raster. Nessuna figura per leaf_margin null.",
+        "scope": "species-specific: developing capsule, not ripe fruit colour",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/aglio-master-v2.png",
+        "caption": "Capsula in formazione"
+      }
+    }
+  },
+  "colchico": {
+    "leaf_type": {
+      "semplice": {
+        "src": "assets/plant-traits/colchico-leaf-type-semplice-v1.webp",
+        "source": "https://www.provincia.prato.it/pagina2493_colchicaceae.html",
+        "referencePhoto": "assets/plants/colchico-3.webp",
+        "sha256": "d593a8e299d2601e0b12d411904e081c5b38e05ed9b5b245408040afad04e5ff",
+        "review": "approvato solo foglie: lamina allungata con apice ottuso, assenza di lungo picciolo, guaine basali. Fiori del master esclusi per conteggi errati degli organi. Margine null non illustrato.",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/colchico-master-v2-partial.png",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/colchico-leaf-type-semplice-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "crop": [
+          243,
+          25,
+          402,
+          607
+        ]
+      }
+    },
+    "leaf_arrangement": {
+      "rosetta_basale": {
+        "src": "assets/plant-traits/colchico-leaf-arrangement-rosetta_basale-v1.webp",
+        "source": "https://www.provincia.prato.it/pagina2493_colchicaceae.html",
+        "referencePhoto": "assets/plants/colchico-3.webp",
+        "sha256": "5bf1f2d0216b1eab50196bd3927201a2441eb27e9a29b1de8a250f8eda1f14c4",
+        "review": "approvato solo foglie: lamina allungata con apice ottuso, assenza di lungo picciolo, guaine basali. Fiori del master esclusi per conteggi errati degli organi. Margine null non illustrato.",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/colchico-master-v2-partial.png",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/colchico-leaf-arrangement-rosetta_basale-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "crop": [
+          634,
+          22,
+          1225,
+          605
+        ]
+      }
+    }
+  },
+  "digitale-gialla": {
+    "leaf_type": {
+      "semplice": {
+        "src": "assets/plant-traits/digitale-gialla-leaf-type-semplice-v1.webp",
+        "source": "https://www.provincia.prato.it/pagina2574_plantaginaceae.html",
+        "referencePhoto": "assets/plants/pe2-natura-digitale-gialla-dryades-1f95db6b.webp",
+        "sha256": "38162861d1f23b850611b7e01daef5a5aa10b2f3111097962cf047d81a57a59f",
+        "review": "approvato per Digitalis micrantha, non D. lutea: foglia lunga stretta con piccoli denti; ingrandimento margine; corolla tubulosa bianco-giallastra bilabiata con due macchie rossastre alle fauci. Master v1 corretto via image_gen su proporzioni foglia e macchie. Capsula non disegnata senza foto.",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/digitale-master-v2.png",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/digitale-gialla-leaf-type-semplice-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "crop": [
+          314,
+          22,
+          449,
+          688
+        ],
+        "processing": "Crop rettangolare del singolo organo; rimozione solo dei componenti disgiunti di altri organi che intersecavano il bounding box; nessun pixel anatomico del soggetto ridisegnato."
+      }
+    },
+    "leaf_margin": {
+      "dentato": {
+        "src": "assets/plant-traits/digitale-gialla-leaf-margin-dentato-v1.webp",
+        "source": "https://www.provincia.prato.it/pagina2574_plantaginaceae.html",
+        "referencePhoto": "assets/plants/pe2-natura-digitale-gialla-dryades-1f95db6b.webp",
+        "sha256": "c6ba5d65cb25d383578e208d9878928a41973b8410efc9160cc834c038f0024b",
+        "review": "approvato per Digitalis micrantha, non D. lutea: foglia lunga stretta con piccoli denti; ingrandimento margine; corolla tubulosa bianco-giallastra bilabiata con due macchie rossastre alle fauci. Master v1 corretto via image_gen su proporzioni foglia e macchie. Capsula non disegnata senza foto.",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/digitale-master-v2.png",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/digitale-gialla-leaf-margin-dentato-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "crop": [
+          712,
+          57,
+          1165,
+          630
+        ],
+        "processing": "Crop rettangolare del singolo organo; rimozione solo dei componenti disgiunti di altri organi che intersecavano il bounding box; nessun pixel anatomico del soggetto ridisegnato."
+      }
+    },
+    "flower_shape": {
+      "tubo_labbra": {
+        "src": "assets/plant-traits/digitale-gialla-flower-shape-tubo_labbra-v1.webp",
+        "source": "https://www.provincia.prato.it/pagina2574_plantaginaceae.html",
+        "referencePhoto": "assets/plants/digitale-gialla-1.webp",
+        "sha256": "5dcf908005e7a4e9882520e9c574764744230a3380da5e645f628c95139c900f",
+        "review": "approvato per Digitalis micrantha, non D. lutea: foglia lunga stretta con piccoli denti; ingrandimento margine; corolla tubulosa bianco-giallastra bilabiata con due macchie rossastre alle fauci. Master v1 corretto via image_gen su proporzioni foglia e macchie. Capsula non disegnata senza foto.",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/digitale-master-v2.png",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/digitale-gialla-flower-shape-tubo_labbra-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "crop": [
+          126,
+          669,
+          609,
+          1189
+        ],
+        "processing": "Crop rettangolare del singolo organo; rimozione solo dei componenti disgiunti di altri organi che intersecavano il bounding box; nessun pixel anatomico del soggetto ridisegnato."
+      }
+    },
+    "leaf_arrangement": {
+      "alterne": {
+        "src": "assets/plant-traits/digitale-gialla-leaf-arrangement-alterne-v1.webp",
+        "source": "https://www.provincia.prato.it/pagina2574_plantaginaceae.html",
+        "referencePhoto": "assets/plants/pe2-natura-digitale-gialla-dryades-1f95db6b.webp",
+        "sha256": "715ab0f5a41534b177f7d08291d5e22ff2eb121baf4f7082a1c10ee4125e0780",
+        "review": "approvato per Digitalis micrantha, non D. lutea: foglia lunga stretta con piccoli denti; ingrandimento margine; corolla tubulosa bianco-giallastra bilabiata con due macchie rossastre alle fauci. Master v1 corretto via image_gen su proporzioni foglia e macchie. Capsula non disegnata senza foto.",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/digitale-master-v2.png",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/digitale-gialla-leaf-arrangement-alterne-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "crop": [
+          693,
+          673,
+          1237,
+          1226
+        ],
+        "processing": "Crop rettangolare del singolo organo; rimozione solo dei componenti disgiunti di altri organi che intersecavano il bounding box; nessun pixel anatomico del soggetto ridisegnato."
+      }
+    }
+  },
+  "cicoria": {
+    "leaf_type": {
+      "semplice": {
+        "src": "assets/plant-traits/cicoria-leaf-type-semplice-v1.webp",
+        "source": "https://www.infoflora.ch/it/flora/cichorium-intybus.html",
+        "referencePhoto": "https://dryades.units.it/dryades/plants/foto/IMG9417JPG1595246509.jpg",
+        "referencePhotoPage": "https://dryades.units.it/casentinesi/index.php?id=6152&num=8589&procedure=taxon_page",
+        "referencePhotoAttribution": "Andrea Moro, Università di Trieste, CC BY-SA 4.0",
+        "review": "prima revisione produttore: foglia semplice pennatolobata non composta; distinti dettagli lobato e dentato per variabilità documentata; capolino di soli fiori ligulati azzurri, senza disco giallo. In attesa revisione indipendente.",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/cicoria-master-v1.png",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/cicoria-leaf-type-semplice-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "sha256": "007e6446d9146e551a9cc8d7e5b9a73a88e2d85df0d08c7d428146c1796e6a94",
+        "crop": [
+          236,
+          9,
+          505,
+          655
+        ],
+        "processing": "Crop rettangolare del singolo organo; rimozione solo dei componenti disgiunti di altri organi che intersecavano il bounding box; nessun pixel anatomico del soggetto ridisegnato."
+      }
+    },
+    "leaf_margin": {
+      "lobato": {
+        "src": "assets/plant-traits/cicoria-leaf-margin-lobato-v1.webp",
+        "source": "https://www.infoflora.ch/it/flora/cichorium-intybus.html",
+        "referencePhoto": "https://dryades.units.it/dryades/plants/foto/IMG9417JPG1595246509.jpg",
+        "referencePhotoPage": "https://dryades.units.it/casentinesi/index.php?id=6152&num=8589&procedure=taxon_page",
+        "referencePhotoAttribution": "Andrea Moro, Università di Trieste, CC BY-SA 4.0",
+        "review": "prima revisione produttore: foglia semplice pennatolobata non composta; distinti dettagli lobato e dentato per variabilità documentata; capolino di soli fiori ligulati azzurri, senza disco giallo. In attesa revisione indipendente.",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/cicoria-master-v1.png",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/cicoria-leaf-margin-lobato-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "sha256": "3ef4770b0b9ee6d3cf4a4cbd502760e61dfa5c9dbd3fcc9f021f6346a77c923c",
+        "crop": [
+          722,
+          56,
+          1171,
+          630
+        ],
+        "processing": "Crop rettangolare del singolo organo; rimozione solo dei componenti disgiunti di altri organi che intersecavano il bounding box; nessun pixel anatomico del soggetto ridisegnato."
+      },
+      "dentato": {
+        "src": "assets/plant-traits/cicoria-leaf-margin-dentato-v1.webp",
+        "source": "https://www.infoflora.ch/it/flora/cichorium-intybus.html",
+        "referencePhoto": "https://dryades.units.it/dryades/plants/foto/IMG9417JPG1595246509.jpg",
+        "referencePhotoPage": "https://dryades.units.it/casentinesi/index.php?id=6152&num=8589&procedure=taxon_page",
+        "referencePhotoAttribution": "Andrea Moro, Università di Trieste, CC BY-SA 4.0",
+        "review": "prima revisione produttore: foglia semplice pennatolobata non composta; distinti dettagli lobato e dentato per variabilità documentata; capolino di soli fiori ligulati azzurri, senza disco giallo. In attesa revisione indipendente.",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/cicoria-master-v1.png",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/cicoria-leaf-margin-dentato-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "sha256": "5ce0b0ecf9880301a117d0a8226d409ec7a1af1f86b761e080fc3caf4287ced2",
+        "crop": [
+          154,
+          671,
+          478,
+          1211
+        ],
+        "processing": "Crop rettangolare del singolo organo; rimozione solo dei componenti disgiunti di altri organi che intersecavano il bounding box; nessun pixel anatomico del soggetto ridisegnato."
+      }
+    },
+    "flower_shape": {
+      "capolino": {
+        "src": "assets/plant-traits/cicoria-flower-shape-capolino-v1.webp",
+        "source": "https://www.infoflora.ch/it/flora/cichorium-intybus.html",
+        "referencePhoto": "assets/plants/cicoria-1.webp",
+        "referencePhotoPage": "https://dryades.units.it/casentinesi/index.php?id=6152&num=8589&procedure=taxon_page",
+        "referencePhotoAttribution": "Foto già in catalogo: crediti in data/plants.json",
+        "review": "prima revisione produttore: foglia semplice pennatolobata non composta; distinti dettagli lobato e dentato per variabilità documentata; capolino di soli fiori ligulati azzurri, senza disco giallo. In attesa revisione indipendente.",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/cicoria-master-v1.png",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/cicoria-flower-shape-capolino-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "sha256": "5447953c7740419e596abe2b6b885cd9b3c77f52c762700a922cda4326311530",
+        "crop": [
+          646,
+          676,
+          1211,
+          1222
+        ],
+        "processing": "Crop rettangolare del singolo organo; rimozione solo dei componenti disgiunti di altri organi che intersecavano il bounding box; nessun pixel anatomico del soggetto ridisegnato."
+      }
+    }
+  },
+  "tarassaco": {
+    "leaf_type": {
+      "semplice": {
+        "src": "assets/plant-traits/tarassaco-leaf-type-semplice-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/tarassaco-leaf-type-semplice-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "source": "https://www.infoflora.ch/it/flora/taraxacum-officinale-aggr.html",
+        "referencePhoto": "assets/plants/tarassaco-1.webp",
+        "sha256": "61318c08f841861c573d904f4d01859efb11bccb2bd5942eef2f2ca1207afeaa",
+        "review": "prima revisione produttore: foglia semplice con lobi profondi e denti, distinti dettagli margini; capolino di soli fiori ligulati gialli e brattee esterne riflesse; rosetta basale. Achenio con becco lungo circa3volte il corpo e pappo di peli semplici confrontato foto Muséum Toulouse. In attesa revisione indipendente.",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/tarassaco-master-v3.png",
+        "crop": [
+          161,
+          15,
+          395,
+          530
+        ]
+      }
+    },
+    "leaf_margin": {
+      "dentato": {
+        "src": "assets/plant-traits/tarassaco-leaf-margin-dentato-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/tarassaco-leaf-margin-dentato-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "source": "https://www.infoflora.ch/it/flora/taraxacum-officinale-aggr.html",
+        "referencePhoto": "assets/plants/tarassaco-1.webp",
+        "sha256": "76f4e028f063d37ab4c3789793eec172c1a349c84ea074940c276da877212cb2",
+        "review": "prima revisione produttore: foglia semplice con lobi profondi e denti, distinti dettagli margini; capolino di soli fiori ligulati gialli e brattee esterne riflesse; rosetta basale. Achenio con becco lungo circa3volte il corpo e pappo di peli semplici confrontato foto Muséum Toulouse. In attesa revisione indipendente.",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/tarassaco-master-v3.png",
+        "crop": [
+          572,
+          60,
+          958,
+          486
+        ]
+      },
+      "lobato": {
+        "src": "assets/plant-traits/tarassaco-leaf-margin-lobato-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/tarassaco-leaf-margin-lobato-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "source": "https://www.infoflora.ch/it/flora/taraxacum-officinale-aggr.html",
+        "referencePhoto": "assets/plants/tarassaco-1.webp",
+        "sha256": "b7a395736948cd214e3ce5c430f9f07dd3907bf78a67fe516f681474e8bae37d",
+        "review": "prima revisione produttore: foglia semplice con lobi profondi e denti, distinti dettagli margini; capolino di soli fiori ligulati gialli e brattee esterne riflesse; rosetta basale. Achenio con becco lungo circa3volte il corpo e pappo di peli semplici confrontato foto Muséum Toulouse. In attesa revisione indipendente.",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/tarassaco-master-v3.png",
+        "crop": [
+          65,
+          533,
+          439,
+          899
+        ]
+      }
+    },
+    "flower_shape": {
+      "capolino": {
+        "src": "assets/plant-traits/tarassaco-flower-shape-capolino-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/tarassaco-flower-shape-capolino-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "source": "https://www.infoflora.ch/it/flora/taraxacum-officinale-aggr.html",
+        "referencePhoto": "assets/plants/tarassaco-1.webp",
+        "sha256": "32014666961b752c792c5ca5e936dffbcfc1f13e003b879eb7ed6157c077f1ca",
+        "review": "prima revisione produttore: foglia semplice con lobi profondi e denti, distinti dettagli margini; capolino di soli fiori ligulati gialli e brattee esterne riflesse; rosetta basale. Achenio con becco lungo circa3volte il corpo e pappo di peli semplici confrontato foto Muséum Toulouse. In attesa revisione indipendente.",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/tarassaco-master-v3.png",
+        "crop": [
+          557,
+          524,
+          994,
+          986
+        ]
+      }
+    },
+    "fruit_type": {
+      "secco_piumoso": {
+        "src": "assets/plant-traits/tarassaco-fruit-type-secco_piumoso-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/tarassaco-fruit-type-secco_piumoso-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "source": "https://dryades.units.it/online_books/Lumiei_book/HTML/files/assets/basic-html/page205.html",
+        "referencePhoto": "https://commons.wikimedia.org/wiki/File:(MHNT)_Taraxacum_sect._Ruderalia.jpg",
+        "sha256": "c030c1313c62fde90bad3041f45827836305ebff6bd3aa3d6487c1dee341c4f7",
+        "review": "prima revisione produttore: foglia semplice con lobi profondi e denti, distinti dettagli margini; capolino di soli fiori ligulati gialli e brattee esterne riflesse; rosetta basale. Achenio con becco lungo circa3volte il corpo e pappo di peli semplici confrontato foto Muséum Toulouse. In attesa revisione indipendente.",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/tarassaco-master-v3.png",
+        "crop": [
+          55,
+          931,
+          485,
+          1475
+        ],
+        "caption": "Achenio con pappo",
+        "referencePhotoAttribution": "Didier Descouens, Muséum de Toulouse, CC BY-SA 4.0"
+      }
+    },
+    "leaf_arrangement": {
+      "rosetta_basale": {
+        "src": "assets/plant-traits/tarassaco-leaf-arrangement-rosetta_basale-v1.webp",
+        "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/candidates/tarassaco-leaf-arrangement-rosetta_basale-v1.webp",
+        "status": "candidate_pending_independent_review",
+        "source": "https://www.infoflora.ch/it/flora/taraxacum-officinale-aggr.html",
+        "referencePhoto": "assets/plants/tarassaco-1.webp",
+        "sha256": "0570ea22429d4eb84c72356857773ceced44bdc3f84f76bd759510878ae40293",
+        "review": "prima revisione produttore: foglia semplice con lobi profondi e denti, distinti dettagli margini; capolino di soli fiori ligulati gialli e brattee esterne riflesse; rosetta basale. Achenio con becco lungo circa3volte il corpo e pappo di peli semplici confrontato foto Muséum Toulouse. In attesa revisione indipendente.",
+        "scope": "species-specific",
+        "master": "docs/assets/botanici-specifici-2026-10-19/lotti/anatomie-prioritarie/tarassaco-master-v3.png",
+        "crop": [
+          483,
+          971,
+          997,
+          1518
+        ]
+      }
+    }
+  }
+}
