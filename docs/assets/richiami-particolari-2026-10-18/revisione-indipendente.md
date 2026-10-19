@@ -27,3 +27,13 @@ Per valore `false`, il punto indica **la zona dove osservare** l'assenza del car
 - Le anteprime sono strumenti di revisione con punti sovrapposti; non sono asset da pubblicare come nuove illustrazioni.
 
 Provenienza: dati e file della working copy `/workspace/fungaroli` al momento del controllo; hash del dataset e dei singoli raster nel JSON. Nessun nuovo dato scientifico introdotto.
+
+## Revisione della presentazione · 19/10/2026
+
+Richiesta di Matteo: avvicinare le linee alle etichette e valutare il contrasto sul singolo disegno. Nel confronto compatto la distanza fra estremità della linea e testo passa da circa 15 a 3 pixel CSS, mantenendo invariata la miniatura da 44 pixel.
+
+Il colore del punto viene scelto tra inchiostro scuro e avorio in base al colore appena all’interno del bordo revisionato, nel file realmente caricato. La linea sfuma verso l’inchiostro del tema sul fondo della scheda; un sottile contorno opposto conserva la leggibilità al passaggio tra disegno e carta. Non è una valutazione dei caratteri biologici. Se i pixel non sono leggibili viene usato il contrasto del tema. Al cambio di immagine o tema il richiamo viene aggiornato.
+
+Non sono cambiati i raster, gli ancoraggi, i valori dei caratteri o la copertura degli asset. Le varianti prive di un ancoraggio revisionato continuano a non ricevere richiami.
+
+Verifica manuale nel browser: confronti Trombetta dei morti / Craterello sinuoso e Craterello cenerino, Porcino / Tignosa verdognola; tonalità diverse riscontrate nei disegni scuri e chiari, tema scuro e schermo da 320 pixel. Distanza positiva di circa 3 pixel, nessun overflow orizzontale nei casi controllati. Nessuna suite di test o dry-run; controllo di sintassi e diff.
