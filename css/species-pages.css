@@ -245,6 +245,13 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 #detail .essential-sections > .sec > summary::after { position:absolute; top:18px; right:14px; order:0; margin:0; width:20px; height:20px; border:0; background:currentColor; mask:url('../assets/ui/chevron-right.svg') center / contain no-repeat; -webkit-mask:url('../assets/ui/chevron-right.svg') center / contain no-repeat; transform:rotate(90deg); transition:transform .2s ease; }
 #detail .essential-sections > .sec[open] > summary::after { transform:rotate(270deg); }
 #detail .essential-sections > .sec > .sec-body { padding:0 16px 18px; border-top:1px solid var(--hair); }
+#detail .essential-sections [data-sec="specie"]:not([open]) > summary .plan-crit:has(.pc-t) .pc-x,
+#detail .essential-sections [data-sec="specie"][open] > summary .plan-crit .pc-t,
+#detail .essential-sections [data-sec="specie"][open] > summary .observation-toggle { display:none; }
+#detail .zone-more > .sec[open] > summary .section-preview-detail { display:none; }
+#detail .observation-altitude { display:inline-block; white-space:nowrap; }
+#detail .observation-discoveries { margin-top:24px; padding-top:20px; }
+#detail .observation-discoveries > h3:first-child { margin:0 0 12px; padding:0; border:0; }
 #detail .zone-actions { display:grid; gap:12px; margin:28px 0; padding:20px; border:1px solid var(--hair); border-radius:20px; background:var(--surface-2); }
 #detail .zone-actions > .outing-section-title { margin:0 0 2px; font-size:21px; }
 #detail .zone-actions .zone-community { display:grid; gap:8px; margin:0; }
@@ -575,6 +582,10 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 [data-plant-traits] .trait-strip { grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
 [data-plant-traits] .trait-strip > li { padding:14px; gap:8px; border-radius:18px; }
 [data-plant-traits] .ts-figure-caption { color:var(--text-2); font:400 13px/1.5 var(--font-body); }
+.src-photos .src-photo-group { display:block; padding-block:14px; }
+.src-photo-credit { display:flex; align-items:start; justify-content:space-between; gap:12px; }
+.src-photo-links { display:flex; flex-wrap:wrap; gap:8px 16px; margin-top:10px; }
+.src-photo-links a { display:inline-flex; align-items:center; gap:5px; min-height:36px; font-size:14px; color:var(--link); }
 [data-plant-traits] .ts-k { font:500 12px/1.4 var(--font-body); letter-spacing:0; text-transform:none; }
 [data-plant-traits] .ts-v { font:500 15px/1.5 var(--font-body); }
 @media(min-width:760px) { [data-plant-traits] .trait-strip { grid-template-columns:repeat(3,minmax(0,1fr)); } }

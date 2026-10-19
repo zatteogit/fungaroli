@@ -32,3 +32,11 @@ Per il corbezzolo sono state lette indipendentemente [Regione Sardegna / Sardegn
 Controllo visivo indipendente dei raster e delle fotografie, poi delle 10 schede nel browser. Controllati caricamento delle figure, foglia e macro del corbezzolo, deduplicazione del bordo della malva e didascalia della capsula. Verificati 1280, 390 e 320 px e temi chiaro/scuro sul caso guida. Il rapporto asset non segnala incoerenze o nuove mancanze non elencate; conserva le pendenze storiche del catalogo.
 
 Nessuna suite di test, test unitario, dry-run o suite CI avviata, come richiesto. Il test esistente che pretendeva la foglia generica non revisionata è stato aggiornato alla nuova regola, senza eseguirlo. Controllate sintassi e differenze Git. Dati morfologici e matrici non modificati per adattarli ai disegni. Shell e HTML aggiornati insieme a v237.
+
+## Correzioni di lettura nello stesso rilascio
+
+La transizione degli accordion parte dalla testata stabile: un solo avviso passa dal titolo breve al testo integrale nello stesso riquadro. Eliminati la seconda copia dell’avviso e l’accordion interno delle piante. Controllato manualmente il chiodino, con un unico avviso e nessun `details` annidato in «Cosa osservare»; controllato anche il caso senza avviso.
+
+Una legenda condivisa spiega il simbolo e la scala fungina 0–10 sotto le raccolte fotografiche, nella mappa e nelle schede delle uscite e dei funghi. Il dettaglio delle zone nella scheda del fungo ora formatta anche il numero sulla scala 0–10, come le altre superfici. Verificato che le raccolte solo botaniche non mostrino la legenda.
+
+I dieci calendari botanici con modello separano istruzioni utili al giro e note tecniche: periodo indicativo e ambiente sono leggibili prima, provenienza geografica, ipotesi e limiti restano nell’approfondimento «Metodo e limiti dei dati». Non cambiano punteggi, mesi o fattori del modello. Le attribuzioni fotografiche identiche sono raggruppate per autore, testo obbligatorio, licenza e relativo URL; ogni collegamento alla foto originale è conservato. Controllo manuale della rosa canina: una attribuzione, tre collegamenti fotografici e una licenza.

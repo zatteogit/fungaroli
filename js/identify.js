@@ -645,10 +645,24 @@ export function sourceRows(sources) {
 // crediti delle foto: «Autore · Licenza», sotto la fonte; la riga apre la pagina originale
 export function photoRows(photos) {
   const list = (photos || []).filter((p) => p && (p.author || p.page));
-  return list.length ? `<ul class="src-rows src-photos">${list.map((p) => {
+  const groups = new Map();
+  list.forEach((p, index) => {
+    // Keep different authors or legally required credit wording in separate groups.
+    const key = JSON.stringify([p.author||'', p.attribution_required_text||'', p.license||'', p.licenseUrl||'',p.author||p.attribution_required_text?'':index]);
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push({photo:p, number:index+1});
+  });
+  return list.length ? `<ul class="src-rows src-photos">${[...groups.values()].map((group) => {
+    const p = group[0].photo;
     const label = [p.attribution_required_text || p.author || 'Autore non indicato', p.license].filter(Boolean).join(' · ');
     const sub = [p.prefix, p.source || 'Fotografia originale'].filter(Boolean).join(' · ');
     const lic = p.licenseUrl ? `<a class="src-lic" href="${esc(p.licenseUrl)}" target="_blank" rel="noopener" aria-label="Testo della licenza ${esc(p.license || '')}">Licenza</a>` : '';
+    const sharedSource=group.every(({photo})=>photo.source===p.source)?p.source||'Fotografie originali':'';
+    if (group.length > 1) return `<li class="src-row src-photo-group"><div class="src-photo-credit"><span class="src-tx"><b>${esc(label)}</b><small>${group.length} fotografie${sharedSource?' · '+esc(sharedSource):''}</small></span>${lic}</div><div class="src-photo-links">${group.map(({photo,number}) => {
+      const detail=[photo.prefix,photo.source||'Fotografia originale'].filter(Boolean).join(' · ');
+      const caption=[`Foto ${number}`,photo.prefix,!sharedSource?photo.source:''].filter(Boolean).join(' · ');
+      return photo.page?`<a href="${esc(photo.page)}" target="_blank" rel="noopener" title="${esc(detail)}">${esc(caption)}${EXT_IC}</a>`:`<span class="small">${esc(caption)} · ${esc(detail)}</span>`;
+    }).join('')}</div></li>`;
     return p.page ? srcRow(p.page, label, sub, lic) : `<li class="src-row"><span class="src-a"><span class="src-tx"><b>${esc(label)}</b><small>${esc(sub)}</small></span></span>${lic}</li>`;
   }).join('')}</ul>` : '';
 }

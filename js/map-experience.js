@@ -7,10 +7,10 @@ export function mapQuery({ interests, day, count }) {
   return `${date}<button type="button" class="map-query" data-more aria-haspopup="dialog" aria-label="Filtri della mappa: ${esc(label)}${count ? `, ${count} filtri attivi` : ''}"><span class="map-query-copy"><small>Filtri${count ? ` · ${count} attivi` : ''}</small><b>${esc(label)}</b></span><svg class="map-query-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M3 7h5m4 0h9M3 17h9m4 0h5"/><circle cx="10" cy="7" r="2"/><circle cx="14" cy="17" r="2"/></svg></button>`;
 }
 
-export function mountMapResults(root, { choose, fit, filters }) {
+export function mountMapResults(root, { choose, fit, filters, indexLegend='' }) {
   const host = document.createElement('details');
   host.id = 'map-results'; host.className = 'map-results';
-  host.innerHTML = '<summary><span data-map-count aria-live="polite"></span><b>Elenco <span aria-hidden="true">⌃</span></b></summary><div class="map-results-body"><p class="map-results-order" data-map-order></p><ol data-map-rows></ol><p data-map-empty hidden></p><button type="button" class="btn ghost" data-map-fit>Mostra tutte le zone</button></div>';
+  host.innerHTML = `<summary><span data-map-count aria-live="polite"></span><b>Elenco <span aria-hidden="true">⌃</span></b></summary><div class="map-results-body"><p class="map-results-order" data-map-order></p><ol data-map-rows></ol><div data-map-index-legend hidden>${indexLegend}</div><p data-map-empty hidden></p><button type="button" class="btn ghost" data-map-fit>Mostra tutte le zone</button></div>`;
   root.append(host);
   host.addEventListener('click', e => {
     const row = e.target.closest('[data-map-zone]');
@@ -29,6 +29,7 @@ export function mountMapResults(root, { choose, fit, filters }) {
       const list = host.querySelector('[data-map-rows]');
       const html = rows.map(r => `<li><button type="button" data-map-zone="${esc(r.id)}"${r.selected ? ' aria-current="true"' : ''}><span class="map-result-name">${esc(r.name)}</span>${r.index ? `<span class="map-result-index">${r.index}</span>` : ''}<span class="map-result-meta">${esc(r.meta)}</span></button></li>`).join('');
       if (list.innerHTML !== html) { const top = host.querySelector('.map-results-body').scrollTop; list.innerHTML = html; host.querySelector('.map-results-body').scrollTop = top; }
+      host.querySelector('[data-map-index-legend]').hidden=!indexLegend||!rows.some(r=>r.index);
       const empty = host.querySelector('[data-map-empty]'); empty.hidden = !!rows.length;
       empty.innerHTML = total ? 'Nessuna zona in quest’area. Sposta la carta o mostra tutte le zone.' : 'Nessuna zona corrisponde alle scelte. <button type="button" class="link-btn" data-map-filters>Rivedi i filtri</button>.';
       host.querySelector('[data-map-fit]').hidden = !total || rows.length === total;
