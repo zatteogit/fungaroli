@@ -7,7 +7,7 @@ import {openModal} from './modal-flow.js';
 import {speciesFeatures} from './species-search.js';
 import './modal-scroll.js';
 import {factCards,enhanceContentReading} from './content-ui.js';
-import {enhanceEntityAccordions} from './entity-accordions.js';
+import {enhanceEntityAccordions,keepSummary} from './entity-accordions.js';
 import {plannedDeparture, recommendedStartAvailable, calendarDate} from './planning-time.js';
 import {speciesObservationContext} from './species-context.js';
 import { mapQuery, mountMapResults, compactMapFilters } from './map-experience.js';
@@ -2673,10 +2673,10 @@ function renderWalkFocus(z, d, walk) {
     ${t.mainCat ? `<p class="small" data-glossary="${d?.best?.kind==='plant'?'Piante':'Funghi'}">Lungo il tracciato: ${linkTrees(t.mainCat.toLowerCase())} nei campioni tra circa ${Math.floor(t.lo / 25) * 25} e ${Math.ceil(t.hi / 25) * 25} m${d?.best?.species ? `, ${d.best.kind==='plant'?'proxy di paesaggio per':'compatibili con l’habitat di'} ${speciesLink(d.best.species, d.best.species.name.toLowerCase())}` : ''}.</p>` : ''}
     ${trailVisual(z, t, d, headsOf(z,t), 'focus')}
     ${walkForest(z,t)}
-    <button type="button" class="btn ghost" data-save-trip data-trip-zone="${z.id}" data-trip-href="${esc(walkHref(z,state.dayOffset,t))}" data-trip-title="${esc(trailName(t))}" data-trip-date="${d.date}">${notebookGlyph}<span>Salva il giro nel taccuino</span></button>
+    <button type="button" class="btn ghost" data-save-trip data-trip-zone="${z.id}" data-trip-href="${esc(walkHref(z,state.dayOffset,t))}" data-trip-title="${esc(trailName(t))}" data-trip-date="${d?.date||''}">${notebookGlyph}<span>Salva il giro nel taccuino</span></button>
     ${trailLinks(z, t)}
     <p class="small muted">Verifica accesso, sosta e stato del sentiero prima di partire.</p>
-    <details class="context-note walk-data"><summary>Tracciato e limiti dei dati</summary><p>Il GPX contiene solo il tratto nella zona. Tempi e dislivello, quando disponibili, riguardano l’itinerario completo.</p><p>Tracciato OpenStreetMap / Waymarked Trails · imbocchi ricavati dalla rete stradale mappata.${state.target==='funghi'?' L’indice e le segnalazioni riguardano la zona, non questo singolo sentiero.':''}</p></details>
+    <aside class="walk-data"><h3>Tracciato e limiti dei dati</h3><p>Il GPX contiene solo il tratto nella zona. Tempi e dislivello, quando disponibili, riguardano l’itinerario completo.</p><p>Tracciato OpenStreetMap / Waymarked Trails · imbocchi ricavati dalla rete stradale mappata.${state.target==='funghi'?' L’indice e le segnalazioni riguardano la zona, non questo singolo sentiero.':''}</p></aside>
     </div>
   </details>`;
 }
@@ -2684,8 +2684,7 @@ function renderWalkFocus(z, d, walk) {
 function essentialSections(z, d, walk) {
   const best = d.best, hostNote = pineHostNote(z, best.species, best.band);
   const observationRule = criticalRuleOf(best.species.id);
-  // Un unico avviso nello stesso punto: da chiuso il titolo breve, da aperto
-  // il testo integrale. Le regole prive di sintesi restano sempre complete.
+  // Un solo avviso: la sintesi si estende nello stesso punto quando si apre.
   const rows = [];
   rows.push({ sec: 'specie', icon: 'find', thumb: best.species.id, k: 'Cosa osservare', v: `<span class="primary-species"><button type="button" class="sp-inline" data-species="${best.species.id}">${esc(best.species.name)}</button>${best.kind!=='plant'&&Number.isFinite(best.score)?idxDot(best.score):''}</span> <span class="observation-altitude">${intornoA(best.band)} <b>${best.band} m</b></span>`,
     sub: attentionLine(observationRule) });
@@ -2713,16 +2712,40 @@ function essentialSections(z, d, walk) {
   const bodies={specie:()=>`<div class="observation-context">${observationContext}</div>`+zoneSpecies(z,d)+discoverySection(z,d,walk,true),quando:()=>renderHuman(z,d)||renderWhenWeather(z,d),accesso:()=>renderAccess(z,d,{summarized:true,walk})};
   return `<div class="essential-sections"><h2 class="outing-section-title">Il piano in breve</h2>${Object.keys(bodies).map(id=>{
     const group=rows.filter(r=>r.sec===id);if(!group.length)return '';
-    const summary=group.map(r=>`<span class="essential-summary"><span class="plan-ic${r.thumb?' has-thumb':''}">${r.thumb?thumb(r.thumb,48):r.svg||ICON[r.icon]}</span><span class="plan-body"><span class="plan-k">${r.k}${r.badge?' '+r.badge:''}</span><span class="plan-v">${r.v}</span>${r.sub?`<span class="plan-sub">${r.sub}</span>`:''}${id==='specie'?'<span class="observation-toggle" aria-hidden="true">Esplora specie e habitat</span>':''}</span></span>`).join('');
+    const summary=group.map(r=>`<span class="essential-summary"><span class="plan-ic${r.thumb?' has-thumb':''}">${r.thumb?thumb(r.thumb,48):r.svg||ICON[r.icon]}</span><span class="plan-body"><span class="plan-k">${r.k}${r.badge?' '+r.badge:''}</span><span class="plan-v">${r.v}</span>${r.sub?`<span class="plan-sub">${r.sub}</span>`:''}</span></span>`).join('');
     return section(id,summary,bodies[id]()||'<p class="small muted">Verifica le previsioni aggiornate e le condizioni del percorso prima di partire.</p>');
   }).join('')}</div>`;
 }
 
 const section = (id, title, body, open = false) => body ? `
   <details class="sec" name="zone-details" data-sec="${id}"${['sentieri','accesso'].includes(id)?' data-glossary-context="Sentiero"':''}${openSecs.has(id) || (open && !openSecs.size) ? ' open' : ''}>
-    <summary>${title}</summary><div class="sec-body">${body}</div>
+    <summary>${title}</summary><div class="sec-body">${id==='meteo'?outingScienceExtras(body):body}</div>
   </details>` : '';
 const openSecs = new Set();
+
+// Tabelle e calcolo sono consultazioni a parte, non altri accordion nel piano.
+function outingScienceExtras(html){
+  const fragment=document.createRange().createContextualFragment(html);
+  fragment.querySelectorAll('details').forEach(detail=>{
+    const summary=detail.querySelector(':scope > summary'),title=summary.textContent;
+    summary.remove();
+    const extra=document.createElement('section');extra.className='outing-extra';
+    const button=document.createElement('button');button.type='button';button.className='more-row';button.dataset.outingExtra='';button.setAttribute('aria-haspopup','dialog');button.textContent=title+' ↗';
+    const content=document.createElement('div');content.className='outing-extra-content';content.hidden=true;content.append(...detail.childNodes);
+    extra.append(button,content);detail.replaceWith(extra);
+  });
+  const box=document.createElement('div');box.append(fragment);return box.innerHTML;
+}
+let outingExtraDialog;
+document.addEventListener('click',event=>{
+  const button=event.target.closest('[data-outing-extra]');if(!button)return;
+  if(!outingExtraDialog){
+    outingExtraDialog=document.createElement('dialog');outingExtraDialog.className='wiz outing-extra-dialog';outingExtraDialog.setAttribute('aria-labelledby','outing-extra-title');document.body.append(outingExtraDialog);
+    addEventListener('hashchange',()=>outingExtraDialog.close());
+  }
+  outingExtraDialog.innerHTML=`<header class="report-header"><h2 id="outing-extra-title">${esc(button.textContent.replace(/ ↗$/,''))}</h2><button type="button" class="profile-close" aria-label="Chiudi">×</button></header><div class="outing-extra-body">${button.nextElementSibling.innerHTML}</div>`;
+  outingExtraDialog.querySelector('.profile-close').onclick=()=>outingExtraDialog.close();openModal(outingExtraDialog);
+});
 
 // Idempotente: la scheda della zona si aggiorna sul posto e le sezioni restano gli stessi nodi, quindi ogni sezione
 // riceve i suoi gestori una volta sola; l'azione all'apertura (es. i grafici del giorno scelto) è sempre l'ultima.
@@ -2746,9 +2769,12 @@ function bindDetailSections(box, onOpen = () => {}) {
     const summary=el.querySelector(':scope > summary');
     summary.addEventListener('click',e=>{
       if(e.target.closest('a,button,input')||e.defaultPrevented)return;
-      const top=summary.getBoundingClientRect().top;
-      // Chiudere una sezione più alta non deve far sparire quella appena aperta.
-      requestAnimationFrame(()=>{if(summary.isConnected)scrollBy({top:summary.getBoundingClientRect().top-top,behavior:'instant'});});
+      e.preventDefault();
+      keepSummary(summary,()=>{
+        const opening=!el.open;
+        if(opening)sections.forEach(other=>{if(other!==el)other.open=false;});
+        el.open=opening;
+      });
     });
   });
   const current = sections.find(el => el.open);
@@ -2846,7 +2872,7 @@ function renderDetail() {
   if (!d?.best) {
     const missing = [...new Set((d?.perSpecies || []).flatMap((p) => p.quality?.missing || []))];
     delete box.dataset.zone;detailCtx=null;lastDetailHtml='';
-    box.innerHTML = `<h1>${esc(z.title || z.name)}</h1>${zoneCollectionNotice(z)}${!series[z.id]?'<p class="notice">Meteo non disponibile per questa zona. <button type="button" class="link-btn" data-zone-weather-retry>Riprova</button></p>':''}<p class="notice">${selectedSpecies().length?'Indice non calcolabile':'Indice non ancora disponibile per le specie selezionate'}${missing.length ? ': mancano ' + esc(missing.join(', ')) : ' per questo giorno'}. Un dato mancante non indica assenza di ${state.target==='piante'?'piante':'funghi'}.</p><p><a href="#/mappa/${z.id}">Apri la mappa</a> · <a href="#/metodo">Metodo e limiti</a></p>${renderWalkFocus(z, d, walk)}${discoverySection(z,d,walk)}${z.protection ? `<p class="notice">${esc(z.protection)}</p>` : ''}<p>${linkTrees(z.description)}</p>${zoneSourceLinks(z)}${section('accesso','Accessi e soste',renderAccess(z,{access:null}))}${section('sentieri','Sentieri della zona',renderTrails(z,null),true)}`;
+    box.innerHTML = `<h1>${esc(z.title || z.name)}</h1>${zoneCollectionNotice(z)}${!series?.[z.id]?'<p class="notice">Meteo non disponibile per questa zona. <button type="button" class="link-btn" data-zone-weather-retry>Riprova</button></p>':''}<p class="notice">${selectedSpecies().length?'Indice non calcolabile':'Indice non ancora disponibile per le specie selezionate'}${missing.length ? ': mancano ' + esc(missing.join(', ')) : ' per questo giorno'}. Un dato mancante non indica assenza di ${state.target==='piante'?'piante':'funghi'}.</p><p><a href="#/mappa/${z.id}">Apri la mappa</a> · <a href="#/metodo">Metodo e limiti</a></p>${renderWalkFocus(z, d, walk)}${discoverySection(z,d,walk)}${z.protection ? `<p class="notice">${esc(z.protection)}</p>` : ''}<p>${linkTrees(z.description)}</p>${zoneSourceLinks(z)}${section('accesso','Accessi e soste',renderAccess(z,{access:null}))}${section('sentieri','Sentieri della zona',renderTrails(z,null),true)}`;
     bindDetailSections(box); return;
   }
   const best = d.best;
@@ -3084,7 +3110,7 @@ const trailViews = new Map();
 function trailVisual(z, t, d, heads = [], where = 'list') {
   const id = `trail-visual-${where}-${`${z.id}-${t.id}`.replace(/[^\w-]/g, '_')}`, key = `${z.id}/${t.id}`;
   const view = trailViews.get(key) || 'profile', sketch = trailSketch(t, heads[0], heads.slice(1));
-  const trace = sketch ? `<figure class="walk-sketch"><span class="trail-north" aria-hidden="true">N ↑</span><svg viewBox="${sketch.viewBox.map(n=>n.toFixed(1)).join(' ')}" role="img" aria-label="Schema del tratto locale orientato a nord${heads.length ? ', con accessi mappati numerati' : ''}">${sketch.paths.map(p => `<polyline points="${p}"/>`).join('')}${sketch.heads.map((p,k) => `<g class="trail-access" data-trail-head="${k}" aria-hidden="true"><circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="8"/><text x="${p[0].toFixed(1)}" y="${p[1].toFixed(1)}" text-anchor="middle" dominant-baseline="central">${k+1}</text></g>`).join('')}</svg><figcaption><details class="trail-sketch-info"><summary>Info sul tracciato</summary><p>${sketch.paths.length > 1 ? 'Segmenti separati. ' : ''}${heads.length ? 'I numeri indicano gli imbocchi mappati. ' : ''}Schema orientato a nord: per orientarti usa la mappa del sentiero.</p></details></figcaption></figure>` : '<p class="small muted">Tracciato non disponibile per questo tratto.</p>';
+  const trace = sketch ? `<figure class="walk-sketch"><span class="trail-north" aria-hidden="true">N ↑</span><svg viewBox="${sketch.viewBox.map(n=>n.toFixed(1)).join(' ')}" role="img" aria-label="Schema del tratto locale orientato a nord${heads.length ? ', con accessi mappati numerati' : ''}">${sketch.paths.map(p => `<polyline points="${p}"/>`).join('')}${sketch.heads.map((p,k) => `<g class="trail-access" data-trail-head="${k}" aria-hidden="true"><circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="8"/><text x="${p[0].toFixed(1)}" y="${p[1].toFixed(1)}" text-anchor="middle" dominant-baseline="central">${k+1}</text></g>`).join('')}</svg><figcaption class="trail-sketch-info"><p>${sketch.paths.length > 1 ? 'Segmenti separati. ' : ''}${heads.length ? 'I numeri indicano gli imbocchi mappati. ' : ''}Schema orientato a nord: per orientarti usa la mappa del sentiero.</p></figcaption></figure>` : '<p class="small muted">Tracciato non disponibile per questo tratto.</p>';
   const profile = trailProfile(z.id, t, d?.best?.species, d?.best?.band, heads,id);
   const elevations=(t.samples||[]).map(sample=>sample[0]).filter(Number.isFinite);
   const quotes=elevations.length?`<dl class="trail-elevation-summary"><div><dt>Quota minima</dt><dd>${Math.min(...elevations).toLocaleString('it-IT')} <span>m</span></dd></div><div><dt>Quota massima</dt><dd>${Math.max(...elevations).toLocaleString('it-IT')} <span>m</span></dd></div></dl><p class="small muted">${t.lines?.length>1?'Quote campionate su segmenti separati. Non costituiscono un profilo continuo.':'Quote campionate nel tratto della zona; mancano campioni sufficienti per un profilo continuo.'}</p>`:'<p class="small muted">Quote non disponibili: mancano quote sufficienti per questo tratto.</p>';
