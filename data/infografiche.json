@@ -1,5 +1,5 @@
 {
-  "note": "Infografiche di confronto, illustrazioni generate con AI (image_gen) dai brief in docs/infografiche/«specie».md e riviste dal proprietario del progetto: affiancano le foto, non le sostituiscono. Per aggiungerne una: tools/import_illustrations.py (assets/infografiche/«specie».webp) e una voce qui con file, alt, crediti e licenza.",
+  "note": "Tavole sorgenti generate con AI. La pubblicazione richiede publication.status=approved e publication.visibleLabels=true: nomi delle specie, separazione dei sosia e caratteri validati, visibili anche a schermo intero. Le tavole grezze restano sospese.",
   "species": {
     "caesarea": {
       "file": "assets/infografiche/caesarea.webp",
@@ -11,7 +11,13 @@
       "credit": "Illustrazione generata con AI (image_gen) dal brief del progetto, senza opere di terzi: non è una foto e non serve a identificare.",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it",
       "note": "Illustrazione generata con AI (image_gen), senza opere di terzi",
-      "review": "Da rivedere con un micologo"
+      "review": "Da rivedere con un micologo",
+      "publication": {
+        "status": "suspended",
+        "visibleLabels": false,
+        "reason": "Tavola di confronto priva di nomi e separazione visibile dei sosia. Revisione anatomica e impaginazione da completare prima della pubblicazione.",
+        "reviewedOn": "2026-10-19"
+      }
     },
     "mellea": {
       "file": "assets/infografiche/mellea.webp",
@@ -22,7 +28,13 @@
       "generated": true,
       "credit": "Illustrazione generata con AI (image_gen) dal brief del progetto, senza opere di terzi: non è una foto e non serve a identificare.",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it",
-      "note": "Illustrazione generata con AI (image_gen), senza opere di terzi"
+      "note": "Illustrazione generata con AI (image_gen), senza opere di terzi",
+      "publication": {
+        "status": "suspended",
+        "visibleLabels": false,
+        "reason": "Tavola di confronto priva di nomi e separazione visibile dei sosia. Revisione anatomica e impaginazione da completare prima della pubblicazione.",
+        "reviewedOn": "2026-10-19"
+      }
     },
     "procera": {
       "file": "assets/infografiche/procera.webp",
@@ -33,7 +45,13 @@
       "generated": true,
       "credit": "Illustrazione generata con AI (image_gen) dal brief del progetto, senza opere di terzi: non è una foto e non serve a identificare.",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it",
-      "note": "Illustrazione generata con AI (image_gen), senza opere di terzi"
+      "note": "Illustrazione generata con AI (image_gen), senza opere di terzi",
+      "publication": {
+        "status": "suspended",
+        "visibleLabels": false,
+        "reason": "Tavola di confronto priva di nomi e separazione visibile dei sosia. Revisione anatomica e impaginazione da completare prima della pubblicazione.",
+        "reviewedOn": "2026-10-19"
+      }
     },
     "edulis": {
       "file": "assets/infografiche/edulis.webp",
@@ -44,7 +62,13 @@
       "generated": true,
       "credit": "Illustrazione generata con AI (image_gen) dal brief del progetto, senza opere di terzi: non è una foto e non serve a identificare.",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it",
-      "note": "Illustrazione generata con AI (image_gen), senza opere di terzi"
+      "note": "Illustrazione generata con AI (image_gen), senza opere di terzi",
+      "publication": {
+        "status": "suspended",
+        "visibleLabels": false,
+        "reason": "Tavola di confronto priva di nomi e separazione visibile dei sosia. Revisione anatomica e impaginazione da completare prima della pubblicazione.",
+        "reviewedOn": "2026-10-19"
+      }
     },
     "pinophilus": {
       "file": "assets/infografiche/pinophilus.webp",
@@ -55,7 +79,13 @@
       "generated": true,
       "credit": "Illustrazione generata con AI (image_gen) dal brief del progetto, senza opere di terzi: non è una foto e non serve a identificare.",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it",
-      "note": "Illustrazione generata con AI (image_gen), senza opere di terzi"
+      "note": "Illustrazione generata con AI (image_gen), senza opere di terzi",
+      "publication": {
+        "status": "suspended",
+        "visibleLabels": false,
+        "reason": "Tavola di confronto priva di nomi e separazione visibile dei sosia. Revisione anatomica e impaginazione da completare prima della pubblicazione.",
+        "reviewedOn": "2026-10-19"
+      }
     },
     "aereus": {
       "file": "assets/infografiche/aereus.webp",
@@ -66,7 +96,13 @@
       "generated": true,
       "credit": "Illustrazione generata con AI (image_gen) dal brief del progetto, senza opere di terzi: non è una foto e non serve a identificare.",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it",
-      "note": "Illustrazione generata con AI (image_gen), senza opere di terzi"
+      "note": "Illustrazione generata con AI (image_gen), senza opere di terzi",
+      "publication": {
+        "status": "suspended",
+        "visibleLabels": false,
+        "reason": "Tavola di confronto priva di nomi e separazione visibile dei sosia. Revisione anatomica e impaginazione da completare prima della pubblicazione.",
+        "reviewedOn": "2026-10-19"
+      }
     },
     "aestivalis": {
       "file": "assets/infografiche/aestivalis.webp",
@@ -77,7 +113,13 @@
       "generated": true,
       "credit": "Illustrazione generata con AI (image_gen) dal brief del progetto, senza opere di terzi: non è una foto e non serve a identificare.",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it",
-      "note": "Illustrazione generata con AI (image_gen), senza opere di terzi"
+      "note": "Illustrazione generata con AI (image_gen), senza opere di terzi",
+      "publication": {
+        "status": "suspended",
+        "visibleLabels": false,
+        "reason": "Tavola di confronto priva di nomi e separazione visibile dei sosia. Revisione anatomica e impaginazione da completare prima della pubblicazione.",
+        "reviewedOn": "2026-10-19"
+      }
     },
     "repandum": {
       "file": "assets/infografiche/repandum.webp",
@@ -88,7 +130,13 @@
       "generated": true,
       "credit": "Illustrazione generata con AI (image_gen) dal brief del progetto, senza opere di terzi: non è una foto e non serve a identificare.",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it",
-      "note": "Illustrazione generata con AI (image_gen), senza opere di terzi"
+      "note": "Illustrazione generata con AI (image_gen), senza opere di terzi",
+      "publication": {
+        "status": "suspended",
+        "visibleLabels": false,
+        "reason": "Tavola di confronto priva di nomi e separazione visibile dei sosia. Revisione anatomica e impaginazione da completare prima della pubblicazione.",
+        "reviewedOn": "2026-10-19"
+      }
     },
     "cibarius": {
       "file": "assets/infografiche/cibarius.webp",
@@ -99,7 +147,13 @@
       "generated": true,
       "credit": "Illustrazione generata con AI (image_gen) dal brief del progetto, senza opere di terzi: non è una foto e non serve a identificare.",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it",
-      "note": "Illustrazione generata con AI (image_gen), senza opere di terzi"
+      "note": "Illustrazione generata con AI (image_gen), senza opere di terzi",
+      "publication": {
+        "status": "suspended",
+        "visibleLabels": false,
+        "reason": "Tavola di confronto priva di nomi e separazione visibile dei sosia. Revisione anatomica e impaginazione da completare prima della pubblicazione.",
+        "reviewedOn": "2026-10-19"
+      }
     },
     "cornucopioides": {
       "file": "assets/infografiche/cornucopioides.webp",
@@ -110,7 +164,13 @@
       "generated": true,
       "credit": "Illustrazione generata con AI (image_gen) dal brief del progetto, senza opere di terzi: non è una foto e non serve a identificare.",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it",
-      "note": "Illustrazione generata con AI (image_gen), senza opere di terzi"
+      "note": "Illustrazione generata con AI (image_gen), senza opere di terzi",
+      "publication": {
+        "status": "suspended",
+        "visibleLabels": false,
+        "reason": "Tavola di confronto priva di nomi e separazione visibile dei sosia. Revisione anatomica e impaginazione da completare prima della pubblicazione.",
+        "reviewedOn": "2026-10-19"
+      }
     },
     "virescens": {
       "file": "assets/infografiche/virescens.webp",
@@ -121,7 +181,13 @@
       "generated": true,
       "credit": "Illustrazione generata con AI (image_gen) dal brief del progetto, senza opere di terzi: non è una foto e non serve a identificare.",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it",
-      "note": "Illustrazione generata con AI (image_gen), senza opere di terzi"
+      "note": "Illustrazione generata con AI (image_gen), senza opere di terzi",
+      "publication": {
+        "status": "suspended",
+        "visibleLabels": false,
+        "reason": "Tavola di confronto priva di nomi e separazione visibile dei sosia. Revisione anatomica e impaginazione da completare prima della pubblicazione.",
+        "reviewedOn": "2026-10-19"
+      }
     },
     "suillus": {
       "file": "assets/infografiche/suillus.webp",
@@ -132,7 +198,13 @@
       "generated": true,
       "credit": "Illustrazione generata con AI (image_gen) dal brief del progetto, senza opere di terzi: non è una foto e non serve a identificare.",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it",
-      "note": "Illustrazione generata con AI (image_gen), senza opere di terzi"
+      "note": "Illustrazione generata con AI (image_gen), senza opere di terzi",
+      "publication": {
+        "status": "suspended",
+        "visibleLabels": false,
+        "reason": "Tavola di confronto priva di nomi e separazione visibile dei sosia. Revisione anatomica e impaginazione da completare prima della pubblicazione.",
+        "reviewedOn": "2026-10-19"
+      }
     },
     "nuda": {
       "file": "assets/infografiche/nuda.webp",
@@ -143,7 +215,13 @@
       "generated": true,
       "credit": "Illustrazione generata con AI (image_gen) dal brief del progetto, senza opere di terzi: non è una foto e non serve a identificare.",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it",
-      "note": "Illustrazione generata con AI (image_gen), senza opere di terzi"
+      "note": "Illustrazione generata con AI (image_gen), senza opere di terzi",
+      "publication": {
+        "status": "suspended",
+        "visibleLabels": false,
+        "reason": "Tavola di confronto priva di nomi e separazione visibile dei sosia. Revisione anatomica e impaginazione da completare prima della pubblicazione.",
+        "reviewedOn": "2026-10-19"
+      }
     }
   }
 }

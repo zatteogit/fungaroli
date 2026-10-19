@@ -19,7 +19,11 @@ let PREP = null, ID = null, MEDIA = null, ASSET = (f) => f, EMBED_3D = true, INF
 
 export function initSpeciesCards({ idData, media, assetUrl, allow3d = true, infographics = {}, whereSection, traits, footer, prep }) {
   PREP = prep || null;
-  ID = idData; MEDIA = media; if (assetUrl) ASSET = assetUrl; EMBED_3D = allow3d; INFO = infographics || {}; if (whereSection) WHERE = whereSection;
+  ID = idData; MEDIA = media; if (assetUrl) ASSET = assetUrl; EMBED_3D = allow3d;
+  // Una tavola grezza non è un'infografica pubblicabile. Richiede revisione
+  // anatomica e nomi visibili anche a schermo intero, non soltanto nell'alt.
+  INFO = Object.fromEntries(Object.entries(infographics || {}).filter(([,m])=>m.publication?.status==='approved'&&m.publication?.visibleLabels===true));
+  if (whereSection) WHERE = whereSection;
   TRAITS = traits?.taxa || {}; FOOTER = footer || '';
   // I richiami contestuali aprono la stessa scheda senza abbandonare la vista.
   document.addEventListener('click', (e) => {

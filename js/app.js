@@ -2266,7 +2266,11 @@ function zoneCells(z, d) {
   const out = [];
   for (const smp of hab.samples) {
     const [e, c, lat, lon] = smp;
-    const cat = c >= 0 ? hab.sample_categories[c] : 'non bosco';
+    // -1 indica assenza di poligono forestale, non un prato verificato:
+    // comprende anche laghi e abitato. Non localizzare funghi su questo dato.
+    if(c<0||!Number.isFinite(e)||!Number.isFinite(lat)||!Number.isFinite(lon))continue;
+    const cat = hab.sample_categories[c];
+    if(!cat)continue;
     const parts = [];
     for (const { p, sc } of sp) {
       const f = p.species.forest[cat] || 0;
@@ -2512,7 +2516,7 @@ function renderMap(changed=null) {
     const showCells = near || selected;
     const circle = L.circle([z.lat, z.lon], {
       radius: z.radius_m, pane:selected?'zoneFocus':'overlayPane', color: selected ? cssVar('--text') : color, weight: selected ? 2.5 : 2,
-      dashArray: showCells ? '6 6' : null, fillColor: color, fillOpacity: 0.28, zoneId:z.id,className: `zone-c${showCells ? ' has-cells' : ''}${selected?' is-selected':''}`,
+      dashArray: showCells ? '6 6' : null, fillColor: color, fillOpacity: showCells?0:0.28, zoneId:z.id,className: `zone-c${showCells ? ' has-cells' : ''}${selected?' is-selected':''}`,
     }).addTo(g).on('click', e => {
       if(z.id===state.zoneId&&pinCellCard(e))return;
       // Lo stesso clic non deve selezionare il cerchio e aprire anche il campione nel bubbling.
