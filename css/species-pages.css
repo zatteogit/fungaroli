@@ -525,18 +525,18 @@ body[data-page="mappa"] .view-map { border-radius:0; }
    serie di miniature, che mescolerebbe i simboli storici alle nuove varianti. */
 .fungus-compare .cmp-cell:has(.cmp-part-art:not(:empty)) .cmp-shape-art { display:none; }
 
-/* Accessi al catalogo: azioni secondarie sulla stessa riga, anche sul telefono. */
+/* Azioni del catalogo: stesso peso, icone e altezza su ogni schermo. */
+.sub-nav.recognize-entry { gap:8px; overflow:visible; }
+.sub-nav.recognize-entry:has(.compare-entry) { flex-wrap:wrap; }
+.sub-nav.recognize-entry > .btn.ghost { display:inline-flex; align-items:center; justify-content:center; flex:0 1 auto; min-width:0; min-height:44px; margin:0; padding:10px 14px; gap:8px; border:1px solid var(--control-edge); border-radius:12px; background:var(--surface); color:var(--link); font:600 14px/1.35 var(--font-body); white-space:nowrap; box-shadow:none; text-decoration:none; }
+.sub-nav.recognize-entry .recognize-icon { width:20px; height:20px; flex:0 0 20px; }
+@media(hover:hover) { .sub-nav.recognize-entry > .btn.ghost:hover { background:var(--surface-2); color:var(--link); box-shadow:none; } }
 @media(max-width:899px) {
-  .sub-nav.recognize-entry { gap:8px; overflow:visible; }
   .sub-nav.recognize-entry:has(.compare-entry) { flex-wrap:nowrap; }
-  .sub-nav.recognize-entry > .btn.ghost { flex:0 1 auto; min-width:0; min-height:44px; margin:0; padding:6px 8px; gap:6px; border:1px solid var(--hair); border-radius:12px; background:var(--surface); color:var(--link); font:600 13px/1.35 var(--font-body); white-space:nowrap; box-shadow:none; }
+  .sub-nav.recognize-entry > .btn.ghost { padding:8px 10px; font-size:13px; }
   .sub-nav.recognize-entry .recognize-icon { width:18px; height:18px; flex-basis:18px; }
-  .sub-nav.recognize-entry [data-open-recognition] > span:last-child { display:none; }
-  .sub-nav.recognize-entry > .btn.ghost:hover { background:var(--surface-2); box-shadow:none; }
 }
-@media(max-width:359px) {
-  .sub-nav.recognize-entry > .btn.ghost { font-size:12px; }
-}
+@media(max-width:359px) { .sub-nav.recognize-entry > .btn.ghost { font-size:12px; gap:6px; } }
 
 /* Tavola illustrata: card larga incastrata con due dettagli; ordine uguale al DOM. */
 .fungus-page .trait-strip:not(.growth-gallery) { grid-template-columns:repeat(7,minmax(0,1fr)); gap:12px; }
