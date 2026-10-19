@@ -2441,6 +2441,16 @@ html.entity-open { overflow: hidden; }
 .discovery-link small { font-size:11.5px; color:var(--text-2); line-height:1.4; }
 .discovery-link :is(b, small) { text-wrap: balance; }
 .discovery-link>span:last-child { margin-left:auto; color:var(--link); }
+/* Il pannello mappa resta stretto anche su desktop: righe leggibili, senza colonne vuote. */
+.sheet .map-discoveries-title { margin: 4px 0 0; font-size: 15px; }
+.sheet .discovery-grid { grid-template-columns: minmax(0,1fr); gap: 6px; }
+.sheet .discovery-grid li { padding: 10px 12px; }
+.sheet .discovery-link { display: grid; grid-template-columns: 44px minmax(0,1fr) auto; align-items: center; width: 100%; }
+.sheet .discovery-link :is(b,small) { text-wrap: pretty; }
+.sheet .discovery-link small { font-size: 12px; }
+.sheet .discovery-link > span:last-child { margin-left: 0; }
+.sheet-key > .sheet-key-item { display: inline-flex; align-items: center; gap: 6px; }
+.sheet { max-height: calc(100% - 24px); overflow-y: auto; overscroll-behavior-y: contain; }
 .outing-discoveries .discovery-grid + .act-row { margin-top: 16px; }
 .observation-discoveries { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--rule); }
 .observation-discoveries h3 { margin: 0 0 8px; font-size: 17px; font-weight: 650; }
