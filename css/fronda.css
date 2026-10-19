@@ -1092,7 +1092,7 @@ body:has(#ranking .ring) #ranking-index-legend,body:has(#season .ring) #season-i
 .cover-local-rule { display:block; font-size:14px; line-height:1.5; font-weight:600; }
 #province-filter { width:100%; margin-block:8px; color:var(--text); background:var(--surface); }
 
-#lazio-explore { margin-block:40px; }
+#lazio-explore { margin-block:0; }
 .regional-heading { display:flex; align-items:end; justify-content:space-between; gap:16px; margin-bottom:20px; flex-wrap:wrap; }
 .regional-heading h2 { margin-block:4px 8px; }
 .regional-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; }
@@ -1113,3 +1113,15 @@ body:has(#ranking .ring) #ranking-index-legend,body:has(#season .ring) #season-i
 .no-local-photo .phero-body::before { display:none; }
 .no-local-photo :is(.phero-title,.phero-sub,.pill) { color:var(--text); text-shadow:none; }
 .no-local-photo .pill { background:var(--surface); }
+
+/* Un solo ritmo tra le fasce; titoli, caroselli e legende appartengono alla stessa fascia. */
+.home-bands { --home-band-gap:var(--sp-6); display:flex; flex-direction:column; gap:var(--home-band-gap); margin-top:var(--home-band-gap); }
+.home-bands > .home-band { min-width:0; margin-block:0; }
+.home-bands > .home-band:empty,
+.home-alternatives:has(#ranking:empty),
+.home-season:has(#season:empty) { display:none; }
+.home-band > .sec-title { margin:0 0 var(--sp-4); }
+.home-band > .rail-host { margin-block:0; }
+.home-band > .index-legend-slot { margin:var(--sp-2) 0 0; }
+.home-bands #during-walk > .outing-discoveries { margin-block:0; }
+@media(min-width:761px) { .home-bands { --home-band-gap:calc(var(--sp-5) * 2); } }
