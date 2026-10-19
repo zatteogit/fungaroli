@@ -396,10 +396,14 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 .fungus-compare .cmp-cell-miniature .cmp-part-art img { width:44px; height:44px; }
 .fungus-compare .cmp-cell-miniature .cmp-vals { min-width:0; }
 .fungus-compare .cmp-part-art:has(.cmp-callout) { position:relative; width:44px; }
-.fungus-compare .cmp-cell-miniature:has(.cmp-part-art .cmp-callout) { grid-template-columns:56px minmax(0,1fr); column-gap:12px; }
-.fungus-compare .cmp-part-art > .cmp-callout { position:absolute; left:0; top:0; width:125%; height:100%; max-width:none; overflow:visible; pointer-events:none; fill:none; stroke:var(--text-2); stroke-width:1.1; stroke-linecap:round; stroke-linejoin:round; }
+.fungus-compare .cmp-cell-miniature:has(.cmp-part-art .cmp-callout) { grid-template-columns:56px minmax(0,1fr); column-gap:0; }
+.fungus-compare .cmp-part-art { --cmp-callout-tip:var(--text); --cmp-callout-edge:var(--surface); }
+.fungus-compare .cmp-part-art[data-callout-tone="light"] { --cmp-callout-tip:var(--story-avorio); --cmp-callout-edge:var(--story-ink); }
+.fungus-compare .cmp-part-art[data-callout-tone="dark"] { --cmp-callout-tip:var(--story-ink); --cmp-callout-edge:var(--story-avorio); }
+.fungus-compare .cmp-part-art > .cmp-callout { position:absolute; left:0; top:0; width:125%; height:100%; max-width:none; overflow:visible; pointer-events:none; fill:none; stroke-width:1.1; stroke-linecap:round; stroke-linejoin:round; }
 .fungus-compare .cmp-callout path { vector-effect:non-scaling-stroke; }
-.fungus-compare .cmp-callout circle { fill:var(--text); stroke:none; }
+.fungus-compare .cmp-callout .cmp-callout-halo { stroke-width:2.3; }
+.fungus-compare .cmp-callout circle { fill:var(--cmp-callout-tip); stroke:var(--cmp-callout-edge); stroke-width:.7; vector-effect:non-scaling-stroke; }
 .fungus-compare .cmp-part-art { position:relative; }
 .fungus-compare .cmp-part-art.is-loading > :is(img,svg) { opacity:.25; }
 .fungus-compare .cmp-part-art.is-loading > .cmp-callout { visibility:hidden; }
