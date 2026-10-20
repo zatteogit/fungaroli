@@ -14,7 +14,7 @@ function open(button, pin = false) {
   if (!tip) {
     tip = document.createElement('div'); tip.id = 'index-tip'; tip.className = 'index-tip';
     tip.setAttribute('role','tooltip'); tip.setAttribute('popover','manual');
-    tip.textContent = 'Condizioni stimate per i funghi selezionati, nel luogo e nel giorno indicati. Scala sperimentale da 0 a 10: non è una probabilità di ritrovamento.';
+    tip.textContent = 'Stima sperimentale 0–10, non ancora validata sui ritrovamenti locali. Può non corrispondere a ciò che troverai nel bosco: non misura presenza, abbondanza o probabilità di trovare funghi. Le segnalazioni della community sono dati dichiarati separati, non una conferma della stima.';
     document.body.append(tip);
   }
   opener = button; pinned ||= pin;
