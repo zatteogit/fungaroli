@@ -986,7 +986,7 @@ function outdoorTile(c,hero=false) {
     return homeCover({c,body,extraClass:'outdoor-hero'});
   }
   const brief=`${c.walk.t.difficulty||'Difficoltà n.d.'} · ${fmtKm(c.walk.t.in_zone_km)} km nel tratto`;
-  return `<a class="tile outdoor-tile" data-walk-zone="${c.z.id}" href="${walkHref(c.z,c.o,c.walk.t)}">${outdoorBackdrop()}${cv?`<img data-src="${cv.small}" alt="" loading="lazy">`:''}<span class="shade"></span>${w&&w.level!=='ok'?`<span class="tile-wx wx-${w.level}" title="${esc(w.text)}">${wxi(w)}${esc(OUTING_LABEL[w.level])}</span>`:''}<span class="tile-body"><span class="tile-day">${esc(dayLabel(c.o,c.d.date,true))}</span><b>${esc(splitName(c.z)[0])}</b>${c.z.collectionStatus==='observation_only'?'<small>Uscita di osservazione</small>':''}<small>${esc(brief)}</small></span></a>`;
+  return `<a class="tile outdoor-tile" data-walk-zone="${c.z.id}" href="${walkHref(c.z,c.o,c.walk.t)}">${outdoorBackdrop()}${cv?`<img data-src="${cv.small}" alt="" loading="lazy">`:''}<span class="shade"></span>${w&&w.level!=='ok'?`<span class="tile-wx wx-${w.level}" title="${esc(w.text)}">${wxi(w)}<span class="tile-wx-label">${esc(OUTING_LABEL[w.level])}</span></span>`:''}<span class="tile-body"><span class="tile-day">${esc(dayLabel(c.o,c.d.date,true))}</span><b>${esc(splitName(c.z)[0])}</b>${c.z.collectionStatus==='observation_only'?'<small>Uscita di osservazione</small>':''}<small>${esc(brief)}</small></span></a>`;
 }
 function plantRailItems(list) {
   const seen=new Set();return list.flatMap(c=>c.items||outdoorDiscoveries(c.z,c.d,c.walk)).filter(i=>i.kind==='pianta'&&!seen.has(i.id)&&seen.add(i.id)).slice(0,8);
@@ -1810,7 +1810,7 @@ function coverOf(z, spId, d) {
   const p = speciesPhoto(spId);
   return p ? { hd: p.file_hd || p.file, small: p.file, credit: p, alt: '' } : null;
 }
-const ring = (s, big = true, interactive = false) => `<${interactive?'button type="button" data-index-tip aria-expanded="false"':'span'} data-weather-key="fungi-indicator" class="ring model-index${big ? '' : ' ring-sm'}" aria-label="Condizioni di crescita ${formatIndex(s)} su 10${interactive?': come leggerle':''}"><span>Condizioni di crescita</span><b>${fungusGlyph}<span>${scoreText(s)}<small>/10</small></span></b></${interactive?'button':'span'}>`;
+const ring = (s, big = true, interactive = false) => `<${interactive?'button type="button" data-index-tip aria-expanded="false"':'span'} data-weather-key="fungi-indicator" class="ring model-index${big ? '' : ' ring-sm'}" aria-label="Condizioni di crescita ${formatIndex(s)} su 10${interactive?': come leggerle':''}"><span>${big?'Condizioni di crescita':'Crescita'}</span><b>${fungusGlyph}<span>${scoreText(s)}<small>/10</small></span></b></${interactive?'button':'span'}>`;
 function indexLegend(){return `<button type="button" class="index-legend" data-index-tip aria-expanded="false" aria-label="Condizioni di crescita da 0 a 10: come leggerle"><span><b>Condizioni di crescita · 0–10</b><span>Quanto le condizioni favoriscono la crescita dei funghi</span></span></button>`;}
 const IC = {
   home: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h5v-7h4v7h5V9"/></svg>',
@@ -1947,7 +1947,7 @@ function renderHome() {
     const trail = c.walk?.t;
     const brief = trail ? `${trail.difficulty || 'Difficoltà n.d.'} · ${fmtKm(trail.in_zone_km)} km nel tratto` : '';
     return `<li data-weather-key="${c.z.id}|${c.o}" class="vtn" style="--vtn:t-${c.z.id}-${c.o}"><a class="tile" data-walk-zone="${c.z.id}" href="${walkHref(c.z, c.o, c.walk?.t)}">
-      ${cv ? `<img data-src="${cv.small}" alt="" loading="lazy" decoding="async">` : ''}<span class="shade"></span>${ring(c.s, false)}${(() => { const w = wxOf(c.z, c.d); return w && w.level !== 'ok' ? `<span class="tile-wx wx-${w.level}" title="${esc(w.text)}">${wxi(w)}${esc(OUTING_LABEL[w.level])}</span>` : ''; })()}
+      ${cv ? `<img data-src="${cv.small}" alt="" loading="lazy" decoding="async">` : ''}<span class="shade"></span>${ring(c.s, false)}${(() => { const w = wxOf(c.z, c.d); return w && w.level !== 'ok' ? `<span class="tile-wx wx-${w.level}" title="${esc(w.text)}">${wxi(w)}<span class="tile-wx-label">${esc(OUTING_LABEL[w.level])}</span></span>` : ''; })()}
       <span class="tile-body"><span class="tile-day">${esc(dayLabel(c.o, c.d.date, true))}</span><b>${esc(splitName(c.z)[0])}</b>${c.z.collectionStatus==='observation_only'?'<small>Uscita di osservazione</small>':''}${brief ? `<small>${esc(brief)}</small>` : ''}</span>
     </a></li>`;
   }).join('');
@@ -1968,13 +1968,14 @@ function renderCommunityIntro() {
   if(communityCardDismissed){box.replaceChildren();return;}
   const open=box.querySelector('details')?.open;
   const connected=communityHasAccess();
-  box.innerHTML = `<div class="community-heading"><h2>${connected?'Sei già nel giro.':'Il tuo giro apre il bosco.'}</h2><button class="community-dismiss" type="button" aria-label="Chiudi la card della community" title="Chiudi"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+  box.innerHTML = `<div class="community-heading"><h2>${connected?'Il bosco ha anche la tua voce.':'Il bosco, visto da chi c’è stato.'}</h2><button class="community-dismiss" type="button" aria-label="Chiudi la card della community" title="Chiudi"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+    <p class="community-promise">${connected?'Hai accesso alle segnalazioni degli altri. Ogni tuo giro arricchisce il racconto.':'Condividi un’uscita e <strong>accedi alle segnalazioni degli altri.</strong>'}</p>
     <div class="community-vignettes" aria-label="Condividi e scopri">
-      <div class="community-vignette"><span class="community-vignette-icon">${notebookGlyph}</span><h3>Racconta</h3><p>Un incontro, o un giro a vuoto.</p></div>
-      <div class="community-vignette"><span class="community-vignette-icon">${IC.people}</span><h3>Scopri</h3><p>${connected?'Hai accesso alle segnalazioni degli altri, per zona.':'Condividi e accedi alle segnalazioni degli altri.'}</p></div>
-      <button class="community-vignette community-vignette-cta" type="button" data-report><span class="community-vignette-icon" aria-hidden="true">→</span><strong>${connected?'Racconta ancora':'Entra nel giro'}</strong><span class="community-vignette-copy">Condividi un’osservazione</span></button>
+      <div class="community-vignette"><span class="community-vignette-icon">${notebookGlyph}</span><h3>Tu racconti</h3><p>Un ritrovamento. O un giro a vuoto: conta anche quello.</p></div>
+      <div class="community-vignette"><span class="community-vignette-icon">${IC.people}</span><h3>Tu scopri</h3><p>Le segnalazioni degli altri, zona per zona.</p></div>
+      <button class="community-vignette community-vignette-cta" type="button" data-report><span class="community-vignette-icon" aria-hidden="true">→</span><strong>${connected?'Racconta ancora':'Condividi e scopri'}</strong><span class="community-vignette-copy">Parti dalla tua ultima uscita</span></button>
     </div>
-    <div class="community-footer"><details${open?' open':''}><summary>Come funziona e privacy</summary><p class="small community-current-status">${esc(communityStatus())}</p><p>Condividi un’osservazione per accedere alle segnalazioni della community. Mostriamo solo riepiloghi degli ultimi 7 giorni, per zona ampia e specie, quando ci sono almeno 3 persone e 2 giorni diversi. La tua fungaia resta riservata: nessun punto GPS, nome o giorno preciso.</p>${communityOverview()}<p class="small">Le osservazioni sono dichiarate e non raccontano tutte le uscite: poche segnalazioni non significano pochi funghi. Condividere è facoltativo. Puoi ritirare le tue osservazioni dal Taccuino; ritirandole tutte, non potrai più consultare i riepiloghi condivisi. Puoi continuare a usare il resto di Fronda.</p></details></div>`;
+    <div class="community-footer"><p class="community-reassurance">I posti precisi restano tuoi.</p><details${open?' open':''}><summary>Come funziona e privacy</summary><p class="small community-current-status">${esc(communityStatus())}</p><p>Condividi un’osservazione per accedere alle segnalazioni della community. Mostriamo solo riepiloghi degli ultimi 7 giorni, per zona ampia e specie, quando ci sono almeno 3 persone e 2 giorni diversi. La tua fungaia resta riservata: nessun punto GPS, nome o giorno preciso.</p>${communityOverview()}<p class="small">Le osservazioni sono dichiarate e non raccontano tutte le uscite: poche segnalazioni non significano pochi funghi. Condividere è facoltativo. Puoi ritirare le tue osservazioni dal Taccuino; ritirandole tutte, non potrai più consultare i riepiloghi condivisi. Puoi continuare a usare il resto di Fronda.</p></details></div>`;
   box.querySelector('.community-dismiss').addEventListener('click',()=>{
     communityCardDismissed=true;
     try { localStorage.setItem(COMMUNITY_CARD_DISMISSED,'1'); } catch { /* resta chiusa durante questa visita */ }
