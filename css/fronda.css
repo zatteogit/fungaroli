@@ -1472,10 +1472,9 @@ button.cover-index > b { font-size:21px; line-height:1.2; }
 
 /* I due strumenti sono navigazione del catalogo, con pari rilievo. */
 .catalog-tools { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); margin:20px 0 0; border-block:1px solid var(--hair); }
-.catalog-tool { display:grid; grid-template-columns:minmax(0,1fr); align-items:center; gap:12px; min-width:0; min-height:80px; padding:16px 12px; box-sizing:border-box; border:0; background:transparent; color:var(--text); text-align:left; text-decoration:none; cursor:pointer; font-family:var(--font-body); }
+.catalog-tool { display:grid; grid-template-columns:24px minmax(0,1fr); align-items:center; gap:12px; min-width:0; min-height:80px; padding:16px 12px; box-sizing:border-box; border:0; background:transparent; color:var(--text); text-align:left; text-decoration:none; cursor:pointer; font-family:var(--font-body); }
 .catalog-tool + .catalog-tool { border-left:1px solid var(--hair); padding-left:24px; }
 .catalog-tool-title { display:inline-flex; align-items:center; justify-content:space-between; gap:12px; min-height:40px; box-sizing:border-box; padding:8px 14px; border-radius:999px; background:var(--action); color:var(--action-ink); font-size:14px; font-weight:600; line-height:1.4; }
-.catalog-tool-title > span { font-size:20px; line-height:1; }
 .catalog-tool-description { display:block; margin-top:8px; color:var(--muted); font-size:13px; font-weight:400; line-height:1.4; }
 .catalog-tool:hover, .catalog-tool:focus-visible { background:var(--surface-2); }
 .catalog-tool:hover .catalog-tool-title, .catalog-tool:active .catalog-tool-title { background:var(--action-hover); }
@@ -1487,3 +1486,5 @@ button.cover-index > b { font-size:21px; line-height:1.2; }
  .catalog-tool { padding:14px 2px; min-height:76px; }
  .catalog-tool + .catalog-tool { border-left:0; border-top:1px solid var(--hair); padding-left:2px; }
 }
+
+.catalog-tool > svg { width:24px; height:24px; fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
