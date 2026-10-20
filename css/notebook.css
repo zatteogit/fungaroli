@@ -363,10 +363,6 @@
 }
 
 /* Ritrovamenti personali: stessa carta del taccuino, fotografia completa. */
-.tab-annotate .tsl { display:block; font:600 10px/1.1 var(--font-body); }
-.tabbar .tab-annotate { gap:2px; }
-.tabbar .tab-annotate svg { width:23px; height:23px; }
-@media(min-width:900px) { .tab-annotate .tsl { font-size:14px; } }
 .quick-note-form { gap:18px; }
 .quick-note-form .eyebrow svg, .diary-capture-invite .diary-section-label svg { width:18px; height:18px; }
 .notebook-dialog .eyebrow { display:flex; align-items:center; gap:8px; }
