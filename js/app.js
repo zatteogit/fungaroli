@@ -34,7 +34,6 @@ import {updateWeatherHTML,updateHTMLTracked,reconcileChildren,keepWeatherReading
 import { SPECIES, GROUPS, FOREST } from './species.js';
 import { scoreZoneDay, scoreSpecies, habitatAtBand, habitatPotential, elevationFit, combine, classOf, scoreLabel, scoreShortLabel, formatIndex, MODEL_VERSION, PARAMS, CLASSES } from './model.js';
 import { todayISO, loadWeather } from './weather.js';
-import { weatherErrorMessage } from './weather-request.js';
 import { initJournal } from './journal.js';
 import { renderSvgMap } from './svgmap.js';
 import { initSpeciesCards, thumb as fungusThumb, renderSpeciesDetail, speciesHeroSrc, whereSummary, criticalRule as fungusCriticalRule, criticalRuleOf as fungusCriticalRuleOf, speciesPhoto as fungusPhoto, speciesPhotos as fungusPhotos } from './speciescard.js';
@@ -1143,11 +1142,12 @@ function openFullFilters() {
 
 let weatherUnavailable=false;
 function prepareCalendarFallback(){
- if(!weatherUnavailable||state.target==='funghi')return;
+ if(!weatherUnavailable)return;
  const dates=Array.from({length:70},(_,i)=>todayISO(new Date(Date.now()+(i-62)*864e5)));
  weatherZones??=zones;zones=weatherZones.filter(z=>habitat[z.id]);
  series=Object.fromEntries(zones.map(z=>[z.id,z.bands.map(()=>({dates,todayIndex:62,issuedIndex:62,source:{expired:true,calendarOnly:true},...Object.fromEntries(['p','tmean','tmin','tmax','soilm','soilt'].map(k=>[k,Array(70).fill(null)]))}))]));
- $('#stale').hidden=false;$('#stale').textContent='Meteo non disponibile. Sentieri e spunti botanici restano consultabili.';
+ $('#stale').hidden=false;$('#stale').textContent='Non riesco ad aggiornare il meteo e non ho una copia salvata. Zone, sentieri e schede restano consultabili. ';
+ const retry=document.createElement('button');retry.type='button';retry.className='link-btn';retry.textContent='Riprova';retry.onclick=()=>refreshWeather(true);$('#stale').append(retry);
 }
 let weatherRevision=0,weatherController=null,weatherBusy=false,weatherPainting=false,deferredWeatherView=false;
 let lastWeatherSnapshot=null,weatherPaintTimer=null;
@@ -1180,8 +1180,9 @@ function weatherStamp(w,busy=weatherBusy,done=false){
   $('#refresh').classList.toggle('is-done',!!done);
   $('#refresh').setAttribute('aria-busy',String(busy));
   $('#refresh').title='Meteo acquisito '+w.fetchedAt.toLocaleString('it-IT')+'. Tocca per aggiornarlo.';
-  $('#stale').hidden=!w.stale&&!w.missingZones?.length;
-  $('#stale').textContent=w.missingZones?.length?`Meteo parziale: ${weatherZones.filter(z=>habitat[z.id]).length-w.missingZones.length}/${weatherZones.filter(z=>habitat[z.id]).length} zone con indice. `:busy?'Aggiornamento…':'Meteo da aggiornare. ';
+  const expired=Object.values(w.series||{}).some(ss=>ss.some(s=>s.source?.expired));
+  $('#stale').hidden=!w.stale&&!w.offline&&!w.failedZones?.length&&!w.missingZones?.length;
+  $('#stale').textContent=w.missingZones?.length?`Meteo parziale: ${weatherZones.filter(z=>habitat[z.id]).length-w.missingZones.length}/${weatherZones.filter(z=>habitat[z.id]).length} zone con dati meteo. ${expired?'Le copie scadute non producono un indice attuale. ':''}`:busy?'Aggiornamento…':expired?`Copia meteo del ${when}: l’indice attuale non è disponibile. `:`Uso il meteo salvato del ${when}, da aggiornare. `;
   $('#stale').title=w.missingZones?.length?'Le zone senza meteo non vengono valutate.':'Oltre 24 ore l’indice dei funghi non viene calcolato.';
   if(!$('#stale').hidden&&!busy){const retry=document.createElement('button');retry.type='button';retry.className='link-btn';retry.textContent='Riprova';retry.onclick=()=>refreshWeather(true);$('#stale').append(retry);}
 }
@@ -1258,10 +1259,8 @@ async function refreshWeather(force){
     if(!deferredWeatherView)weatherWork(done?WX_DONE:'',false,done);
   }else{
     weatherWork('');$('#updated').textContent='';weatherUnavailable=true;prepareCalendarFallback();
-    if(state.target!=='funghi'){compute();renderAll();return;}
-    if(state.view==='mappa'){renderAll();$('#stale').hidden=false;$('#stale').textContent='Meteo non disponibile. Puoi esplorare zone, sentieri e accessi.';}
-    const msg=`<div class="error">${esc(weatherErrorMessage(mainFailure))} <button type="button" class="link-btn" data-retry>Riprova</button>.</div>`;
-    $('#hero').innerHTML=msg;if(state.view==='zona')renderDetail();else $('#detail').innerHTML=msg;document.querySelectorAll('[data-retry]').forEach(b=>b.addEventListener('click',()=>refreshWeather(true)));
+    compute();renderAll();
+    if(state.view==='zona')renderDetail();
   }
 }
 document.addEventListener('close',()=>{if(deferredWeatherView&&!weatherPanelOpen()){deferredWeatherView=false;paintWeatherView();weatherWork(weatherBusy?WX_BUSY:'',weatherBusy);}},{capture:true});
@@ -1887,7 +1886,7 @@ function renderHome() {
   const hero = list[0];
   if(!hero&&hasInterest('piante')){renderOutdoorHome();return;}
   const box = $('#hero');
-  if (!hero) { $('#during-walk').hidden=true;$('#during-walk').innerHTML='';box.innerHTML = `<p class="notice">${selectedSpecies().length ? 'Le condizioni di crescita non sono calcolabili: mancano dati o meteo aggiornato.' : 'Per queste specie l’indice di crescita non è ancora disponibile. Puoi consultare le schede e contribuire con le osservazioni.'} Puoi comunque esplorare boschi e sentieri.</p><div class="explore-fallback">${zones.filter(matchesProvince).slice(0, 6).map((z) => `<a class="btn ghost" href="#/zona/${z.id}/${state.homeDay || 0}">${esc(z.title || z.name)}</a>`).join('')}</div>`; $('#ranking').innerHTML = ''; $('#others-h').hidden = true; renderSeason(); renderCommunityIntro(); return; }
+  if (!hero) { $('#during-walk').hidden=true;$('#during-walk').innerHTML='';box.innerHTML = `<p class="notice">${weatherUnavailable ? 'Il meteo non è disponibile: le zone qui sotto restano esplorabili, senza una valutazione delle condizioni di oggi.' : selectedSpecies().length ? 'Le condizioni di crescita non sono calcolabili: mancano dati o meteo aggiornato.' : 'Per queste specie l’indice di crescita non è ancora disponibile. Puoi consultare le schede e contribuire con le osservazioni.'}${weatherUnavailable?'':' Puoi comunque esplorare boschi e sentieri.'}</p><div class="explore-fallback">${zones.filter(matchesProvince).slice(0, 6).map((z) => `<a class="btn ghost" href="#/zona/${z.id}/${state.homeDay || 0}">${esc(z.title || z.name)}</a>`).join('')}</div>`; $('#ranking').innerHTML = ''; $('#others-h').hidden = true; renderSeason(); renderCommunityIntro(); return; }
   $('#others-h').hidden = false;
   const t = state.target==='funghi'&&hero.d.crowd ? timingAdvice({ dateStr: hero.d.date, lat: hero.z.lat, lon: hero.z.lon, crowd: hero.d.crowd }) : null;
   const a0 = access[hero.z.id]?.[0];
