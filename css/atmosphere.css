@@ -16,13 +16,11 @@
   #hero .cover-editorial > .atmosphere { grid-column:1; grid-row:1; height:clamp(196px,58vw,320px); min-height:0; }
   .story-photo.atmosphere { min-height:200px; }
   .story-photo.atmosphere .atmosphere-toggle { right:6px; top:6px; width:44px; padding:8px; font-size:0; }
-  .story-photo.atmosphere .atmosphere-toggle::after { content:'Ⅱ'; font-size:16px; }
-  .story-photo.atmosphere .atmosphere-toggle[aria-label^="Riprendi"]::after { content:'▶'; }
 }
 @media(prefers-reduced-motion:reduce) { .atmosphere-media > video { transition:none; } }
 
 /* Controllo discreto, con bersaglio di tocco da 44 px e nome accessibile completo. */
-.atmosphere .atmosphere-toggle { width:44px; height:44px; min-width:44px; min-height:44px; padding:0; font-size:0; display:grid; place-items:center; }
+.atmosphere .atmosphere-toggle { width:44px; height:44px; min-width:44px; min-height:44px; padding:0; font-size:0; display:grid; place-items:center; border:0; background:transparent; }
 .atmosphere .atmosphere-toggle[hidden] { display:none; }
-.atmosphere .atmosphere-toggle::after { content:'Ⅱ'; font:500 16px/1 var(--font-body); }
+.atmosphere .atmosphere-toggle::after { content:'Ⅱ'; box-sizing:border-box; display:grid; place-items:center; width:28px; height:28px; border:1px solid var(--on-photo); border-radius:50%; background:var(--forest); font:600 12px/1 var(--font-body); }
 .atmosphere .atmosphere-toggle[aria-label^="Riprendi"]::after { content:'▶'; }
