@@ -74,3 +74,8 @@ La base è bosco/avorio. I quattro accenti possono convivere: uno domina la sing
 Aprire `index.html` o `product.html` dopo aver estratto l’intera cartella. Per una prova uniforme del salvataggio locale è preferibile servirla da un server statico e aprirla nel browser. Il prototipo non richiede account, non modifica il taccuino di Fungaroli e non si collega al meteo o alla comunità. Le pagine salvate sono solo su quel browser, nella chiave `fronda:studio:v11:notes`; l’esportazione JSON permette di conservarne una copia. Non è un servizio di backup o sincronizzazione.
 
 Il contenuto deriva dal commit `44f1420e5bc08474428e1049cc9ce550799e9bf0` del 15 ottobre 2026. La nuova navigazione segue l’handoff UX del progetto; le differenze rispetto alla shell esistente sono descritte nelle fonti e nel manuale. Gli stati non collegati a servizi reali sono dichiarati esplicitamente. L’app pubblicata e il repository originale non sono stati modificati.
+
+
+### Avvisi editoriali con fotografia · 20 ottobre 2026
+
+Usare una campitura di brand con testo scuro e una fotografia pertinente a lato, riprendendo il componente `story-invite` / `story-photo`. La foto resta separata dal testo: niente scritte sovrapposte o segni decorativi aggiunti. Su telefono il ritaglio diventa una fascia laterale; verificare che il soggetto rimanga leggibile e che l’immagine non imponga la sua altezza naturale all’avviso. Riutilizzare foto del catalogo con provenienza e licenza, collegandole alla scheda con crediti. Prima applicazione: avviso del catalogo Animali, ape da miele sul meliloto (Ivar Leidus, CC BY-SA 4.0).
