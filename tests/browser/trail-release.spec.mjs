@@ -5,6 +5,7 @@ for(const width of [390,1280])test(`sentiero: accesso visuale, fonti compatte e 
  await page.goto('/#/zona/vallonina/0/sentiero/10645640');
  await expect(page.locator('#detail .hero-indicators [data-index-tip]')).toContainText('Condizioni di crescita');
  await expect(page.locator('#legal-loading')).toBeHidden();
+ await expect(page.locator('.primary-species .idx-dot .fungus-glyph')).toHaveCount(1);await expect(page.locator('.primary-species .idx-dot i')).toHaveCount(0);
  await page.locator('#detail summary').filter({hasText:/^Come arrivare/}).click();
  await expect(page.locator('.access-mini-map')).toBeVisible();
  const frame=page.locator('.access-mini-map iframe');await expect(frame).toHaveAttribute('src',/openstreetmap\.org\/export\/embed\.html.*marker=/);

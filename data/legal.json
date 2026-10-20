@@ -1,5 +1,6 @@
 {
- "version": 6,
+ "version": 7,
+ "acceptance_version": 1,
  "verified_on": "2026-10-20",
  "onboarding": {
   "title": "Prima di cominciare",

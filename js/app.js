@@ -4,7 +4,7 @@ import {initExternalSignals,externalForecastMultiplier,combineFieldMultipliers} 
 import {initEditorialOutings,editorialOutings,editorialTitle,editorialReference,renderEditorialIndex,renderEditorialPage} from './editorial-outings.js';
 import {initAnimals,animals,animalName,animalSearchItems,renderAnimals,renderAnimalPage} from './animals.js';
 import {configureLegalAccess,acceptLegalNotice,hasLegalAcceptance} from './legal-access.js';
-import {currentLegalNotice,legalNoticeVersion,legalNoticeFingerprint} from './legal-notice.js';
+import {currentLegalNotice,legalNoticeVersion,legalNoticeFingerprint,compatibleLegalVersions} from './legal-notice.js';
 import {rememberNavigationContext,recordNavigationPage,restoreNavigationContext,contextualBackTitle,returningNavigation,restoredNavigationScroll,backNavigation} from './navigation-context.js';
 import {openModal} from './modal-flow.js';
 import {speciesFeatures} from './species-search.js';
@@ -1294,8 +1294,9 @@ function alternativeFor(z, o, d) {
 const wxi = (w) => `<span class="wxi wxi-${wxIcon(w)}">${weatherGlyphs[wxIcon(w)]||IC[wxIcon(w)]}</span>`;
 // l'icona mostra il problema principale, nello stesso ordine di gravità del testo: mai il sole con vento forte o nebbia
 const wxIcon = (w) => (!w?.available ? 'unknown' : w.thunder ? 'storm' : w.snow ? 'snow' : (w.rain >= 0.5 || w.prob >= 50) ? 'rain' : w.gust >= 40 ? 'wind' : w.fog ? 'fog' : w.prob >= 20 ? 'cloud' : 'sun');
-// indice con il pallino del suo colore: lo stesso segno ovunque compare un indice
-const idxDot = (sc) => `<span class="idx-dot" title="Condizioni di crescita ${formatIndex(sc)}/10"><i aria-hidden="true" style="background:var(${scoreVar(sc).replace('--s', '--ps')})"></i><b class="pc">${formatIndex(sc)}</b></span>`;
+// Il fungo, nel colore dell’indice, accompagna ogni valore delle condizioni di crescita.
+const indexGlyph=sc=>fungusGlyph.replace('<svg ',`<svg style="color:var(${scoreVar(sc).replace('--s','--ps')})" `);
+const idxDot = (sc) => `<span class="idx-dot" title="Condizioni di crescita ${formatIndex(sc)}/10">${indexGlyph(sc)}<b class="pc">${formatIndex(sc)}</b></span>`;
 
 function compute(changed=null) {
   const sp = selectedSpecies();
@@ -1370,7 +1371,7 @@ const preferenceRank = (zone, score, d) => {
 // Il numero mostrato resta biologico; le preferenze cambiano solo l'ordine.
 const adjusted = (zone, score) => Number.isFinite(score) ? score : null;
 const spScore = (z, d, p) => p.score;
-const spPill = (name, sc) => `<span class="sp-pill" title="Condizioni di crescita ${formatIndex(sc)}/10"><i style="background:var(${scoreVar(sc).replace('--s', '--ps')})"></i>${name ? `${esc(name)} ` : ''}<b>${formatIndex(sc)}</b></span>`;
+const spPill = (name,sc) => `<span class="sp-pill" title="Condizioni di crescita ${formatIndex(sc)}/10">${indexGlyph(sc)}${name?`${esc(name)} `:''}<b class="pc">${formatIndex(sc)}</b></span>`;
 
 // Punto del bosco adatto piu' vicino a una strada carrozzabile (campioni Carta Forestale + Valhalla).
 function accessFor(z, sp, band) {
@@ -1868,7 +1869,7 @@ function renderHome() {
   // il posto con l'indice piu' alto quel giorno, se il meteo della mattina l'ha fatto scendere: nota breve e cliccabile
   const g = list.filter((c) => c.o === hero.o).sort((a, b) => b.s - a.s)[0], wg = g && wxOf(g.z, g.d);
   const note = g && g.z.id !== hero.z.id && wg && wg.level !== 'ok'
-    ? `<a class="cover-note" href="#/zona/${g.z.id}/${g.o}"><span>${wxi(wg)}<b>${esc(splitName(g.z)[0])}</b> <span class="pc-up">${formatIndex(g.s)}</span> ma ${esc(wg.short || wg.main)}</span><span aria-hidden="true">›</span></a>` : '';
+    ? `<a class="cover-note" href="#/zona/${g.z.id}/${g.o}"><span>${wxi(wg)}<b>${esc(splitName(g.z)[0])}</b> <span class="pc-up growth-value">${indexGlyph(g.s)}${formatIndex(g.s)}</span> ma ${esc(wg.short || wg.main)}</span><span aria-hidden="true">›</span></a>` : '';
   const heroHTML = `${state.seasonSuspended?'<p class="notice">Filtro sulle specie sospeso fuori dal calendario indicativo. <button type="button" class="link-btn" data-season-restore>Ripristina la scelta</button></p>':''}${homeCover({c:hero,photo:cov,score:hero.s,body:`
         <span class="cover-title">${esc(title)}</span>${sub ? `<span class="cover-sub">${esc(sub)}</span>` : ''}
         ${hero.walk ? `<span class="cover-walk"><b>${esc(hero.walk.microzone)}</b><span>${esc(walkBrief(hero.walk))}</span></span>` : ''}
@@ -2097,7 +2098,7 @@ function renderMapResults(){
   const visible=map?all.filter(r=>map.getBounds().contains([r.z.lat,r.z.lon])):all;
   const prefs=PREFS.filter(([key])=>state[key]).map(([,name])=>name.toLowerCase());
   const order=prefs.length?`Ordinate anche per ${prefs.join(', ')}. L’indice dei funghi non cambia.`:hasInterest('funghi')?'Condizioni di crescita e meteo dell’uscita. Le zone senza indice restano esplorabili.':hasInterest('piante')?'Ambienti e spunti botanici, senza un indice delle piante.':'Zone con i tratti mappati, accessi e condizioni dell’uscita.';
-  mapExperience.render({total:all.length,order:(state.communityOnly?'Dati community Fronda · In sviluppo. Osservazioni dichiarate degli ultimi 7 giorni. ':'')+order,rows:visible.map(r=>({id:r.z.id,name:shortName(r.z),selected:r.z.id===state.zoneId,index:Number.isFinite(r.score)?`${fungusGlyph}${idxDot(r.score)}`:'',meta:[Number.isFinite(r.trip.minutes)?`${r.trip.minutes} min in auto`:'',r.walk?`${r.walk.t.difficulty||'Sentiero'} · ${fmtKm(r.walk.t.in_zone_km)} km nel tratto`:'Scheda della zona',hasInterest('funghi')&&!Number.isFinite(r.score)?'Indice non disponibile':'',state.avoidCrowd&&r.d?.crowd?crowdText(r.d.crowd):''].filter(Boolean).join(' · ')}))});
+  mapExperience.render({total:all.length,order:(state.communityOnly?'Dati community Fronda · In sviluppo. Osservazioni dichiarate degli ultimi 7 giorni. ':'')+order,rows:visible.map(r=>({id:r.z.id,name:shortName(r.z),selected:r.z.id===state.zoneId,index:Number.isFinite(r.score)?idxDot(r.score):'',meta:[Number.isFinite(r.trip.minutes)?`${r.trip.minutes} min in auto`:'',r.walk?`${r.walk.t.difficulty||'Sentiero'} · ${fmtKm(r.walk.t.in_zone_km)} km nel tratto`:'Scheda della zona',hasInterest('funghi')&&!Number.isFinite(r.score)?'Indice non disponibile':'',state.avoidCrowd&&r.d?.crowd?crowdText(r.d.crowd):''].filter(Boolean).join(' · ')}))});
   if(state.communityOnly&&!all.length){const empty=mapExperience.host.querySelector('[data-map-empty]');empty.hidden=false;empty.innerHTML=communityEmptyHtml();}
 }
 function mapCameraOptions({animate=true,maxZoom=12.5}={}){
@@ -2330,8 +2331,8 @@ function syncCellBackdrop() {
 // popover della mappa: titolo e percentuale grande, una riga per fungo con la barretta nella scala dell'indice, l'azione in fondo
 function mapCard({ title, sub, pct, rows = [], more = 0, foot = '', interactive = false }) {
   return `<div class="mtt"${interactive ? '' : ' data-no-glossary'}><b class="mtt-t">${esc(title)}</b>${sub ? `<span class="mtt-s">${sub}</span>` : ''}
-    <span class="mtt-p" style="--c:var(${scoreVar(pct)})"><b class="pc">${scoreText(pct)}</b><small>condizioni di crescita</small></span>
-    ${rows.length ? `<ul class="mtt-rows">${rows.map((r) => `<li><span>${esc(r.name)}</span><i><i style="width:${r.v}%;background:var(${scoreVar(r.v)})"></i></i><b class="pc">${formatIndex(r.v)}</b></li>`).join('')}</ul>` : ''}
+    <span class="mtt-p" style="--c:var(${scoreVar(pct)})"><b class="pc growth-value">${indexGlyph(pct)}${scoreText(pct)}</b><small>condizioni di crescita</small></span>
+    ${rows.length ? `<ul class="mtt-rows">${rows.map((r) => `<li><span>${esc(r.name)}</span><i><i style="width:${r.v}%;background:var(${scoreVar(r.v)})"></i></i><b class="pc growth-value">${indexGlyph(r.v)}${formatIndex(r.v)}</b></li>`).join('')}</ul>` : ''}
     ${more ? `<p class="mtt-more">e altri ${more}</p>` : ''}${foot ? `<p class="mtt-f" data-glossary="Bosco">${foot}</p>` : ''}</div>`;
 }
 const canHover = matchMedia('(hover: hover) and (pointer: fine)').matches;
@@ -2352,7 +2353,7 @@ function showCellPeek(h) {
   if (cellPeek?._fz === c) return;
   highlightCell(h);
   const best = c.parts[0];
-  const html = `<span class="cell-peek-p" style="--c:var(${scoreVar(c.v)})"><b class="pc">${scoreText(c.v)}</b>${best ? `<span>${esc(best.sp.name.split(' / ')[0])}</span>` : ''}</span><span class="cell-peek-s">${esc(c.cat)} · ${c.e} m s.l.m. · clic per i dettagli</span>`;
+  const html = `<span class="cell-peek-p" style="--c:var(${scoreVar(c.v)})"><b class="pc growth-value">${indexGlyph(c.v)}${scoreText(c.v)}</b>${best ? `<span>${esc(best.sp.name.split(' / ')[0])}</span>` : ''}</span><span class="cell-peek-s">${esc(c.cat)} · ${c.e} m s.l.m. · clic per i dettagli</span>`;
   const position = [c.lat + dLat, c.lon];
   if (!cellPeek) cellPeek = L.tooltip({ className: 'zone-tt cell-peek', interactive: false, permanent: true, direction: 'top', offset: [0, -6], opacity: 1 }).setLatLng(position).setContent(html).addTo(map);
   else cellPeek.setLatLng(position).setContent(html);
@@ -2570,7 +2571,7 @@ function renderMap(changed=null) {
         foot: 'Tocca per aprire la zona' }), { className: 'zone-tt', sticky: true, direction: 'top', offset: [0, -14], opacity: 1 });
     }
     L.marker(labelPos[z.id], {
-      icon: L.divIcon({ className: '', html: `<span class="zone-label${state.zoneId && !selected ? ' zone-label-min' : ''}${selected ? ' zone-label-sel' : ''}">${mapPlantBadge(z,d,walkFor(z,d))}<span class="dot" style="background:${color}"></span> ${Number.isFinite(s)?`<b class="pc">${formatIndex(s)}</b>`:''}${state.zoneId && !selected ? '' : ` <span class="zone-name">${esc(shortName(z))}</span>`}</span>`, iconSize: null }),
+      icon: L.divIcon({ className: '', html: `<span class="zone-label${state.zoneId && !selected ? ' zone-label-min' : ''}${selected ? ' zone-label-sel' : ''}">${mapPlantBadge(z,d,walkFor(z,d))}${Number.isFinite(s)?`<span class="growth-value">${indexGlyph(s)}<b class="pc">${formatIndex(s)}</b></span>`:''}${state.zoneId && !selected ? '' : ` <span class="zone-name">${esc(shortName(z))}</span>`}</span>`, iconSize: null }),
       interactive:true,pane:'zoneLabels',title:z.name,
     }).addTo(g).on('click',()=>chooseMapZone(z.id));
     if (selected && d?.best) {
@@ -2945,7 +2946,7 @@ function renderDetail() {
         ${p.species.warning ? `<div class="warnline">⚠ ${esc(p.species.warning)}</div>` : ''}</td>
       <td class="num">${p.band} m</td>
       <td><div class="bar"><i style="width:${p.score ?? 0}%;background:var(${scoreVar(p.score)})"></i></div></td>
-      <td class="num"><b class="pc">${formatIndex(p.score)}</b>${p.score == null ? `<small>${esc(p.quality.missing.join(', '))}</small>` : ''}</td>
+      <td class="num"><b class="pc growth-value">${p.species.kind==='plant'?'':indexGlyph(p.score)}${formatIndex(p.score)}</b>${p.score == null ? `<small>${esc(p.quality.missing.join(', '))}</small>` : ''}</td>
     </tr>`).join('');
 
   const sb = series[z.id][bandIndex(z, best.band)];
@@ -2966,7 +2967,7 @@ function renderDetail() {
     const x = dayEntry(z.id, o);
     if (!x?.best) return '';
     const sc = adjusted(z, x.score, x);
-    return `<button type="button" class="day" role="tab" data-day-offset="${o}" aria-selected="${o === state.dayOffset}"><span class="d1">${o === 0 ? 'Oggi' : o === 1 ? 'Domani' : fmtDate(x.date, { weekday: 'long' }).replace('.', '')}</span><span class="d2">${fmtDate(x.date, { day: 'numeric' })}</span><span class="d3">${fungusGlyph}<span class="dot" style="--dc:var(${scoreVar(sc)});--dcs:var(${scoreVar(sc).replace('--s', '--ps')})"></span><b class="pc">${formatIndex(sc)}</b></span>${calendarWeather(z,x)}</button>`;
+    return `<button type="button" class="day" role="tab" data-day-offset="${o}" aria-selected="${o === state.dayOffset}"><span class="d1">${o === 0 ? 'Oggi' : o === 1 ? 'Domani' : fmtDate(x.date, { weekday: 'long' }).replace('.', '')}</span><span class="d2">${fmtDate(x.date, { day: 'numeric' })}</span><span class="d3">${fungusGlyph}<b class="pc">${formatIndex(sc)}</b></span>${calendarWeather(z,x)}</button>`;
   }).join('');
   const html = `
     <header class="phero outing-hero${cov?'':' no-local-photo'}">
@@ -3086,7 +3087,7 @@ function renderHuman(z, d) {
     </dl>
     ${t.arrive<t.sunrise?'<p class="timing-light">Arrivo prima dell’alba: porta una luce.</p>':''}
     ${renderWhenWeather(z,d)}
-    ${alt?`<p class="timing-alternative"><b>Preferisci meno gente?</b> ${fmtDate(alt.date,{weekday:'long',day:'numeric'})} · indice ${formatIndex(alt.score)} · ${crowdText(alt.crowd)}.</p>`:''}
+    ${alt?`<p class="timing-alternative"><b>Preferisci meno gente?</b> ${fmtDate(alt.date,{weekday:'long',day:'numeric'})} · ${idxDot(alt.score)} · ${crowdText(alt.crowd)}.</p>`:''}
     <div class="timing-method"><p class="small muted"><b>Affollamento stimato.</b> Calendario, notorietà, accessi, pioggia e indice; presenze e passaparola non misurati.</p>${tips.length?`<ul class="timing-signals">${tips.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''}</div>
   </div>`;
 }
@@ -3328,7 +3329,7 @@ async function applyLegal() {
   $('#legal-sections').querySelectorAll('.method').forEach(enhanceContentReading);
   enhanceEntityAccordions($('#legal-sections'));
   // primo avvio: avviso da confermare (si ripresenta se cambia la versione dei testi)
-  const ver=legalNoticeVersion(L),accepted=await configureLegalAccess(ver,legalNoticeFingerprint(L));
+  const ver=legalNoticeVersion(L),accepted=await configureLegalAccess(ver,legalNoticeFingerprint(L),{compatibleVersions:compatibleLegalVersions(L)});
   if (!accepted) {
     const dlg = $('#onboarding');
     dlg.querySelector('h2').textContent = L.onboarding?.title || 'Prima di usare l\'app';
@@ -3450,7 +3451,7 @@ function zoneSpecies(z, d) {
   return `<h3 class="observation-heading">Funghi nel bosco</h3><p class="small muted observation-caption">Condizioni del giorno · habitat e segnalazioni degli ultimi 7 giorni</p><ul class="zsp">${rows.map(({ sp, pot, score, host }) => `
     <li><a href="#/specie/${sp.id}" class="zsp-row">${thumb(sp.id, 40)}
       <span class="zsp-body"><b>${esc(sp.name)}</b>${reportBadge(z.id, sp.id)}<span class="small muted">${POT_LABEL[pot.level]}${pot.ha ? ` · ~${pot.ha.toLocaleString('it-IT')} ha` : ''}</span>${host ? `<span class="small zsp-host">${esc(host)}</span>` : ''}</span>
-      <span class="score-pill" style="--index-color:var(${scoreVar(score).replace('--s','--ps')})" aria-label="Indice funghi ${formatIndex(score)} su 10">${fungusGlyph}<b class="pc">${formatIndex(score)}</b></span></a></li>`).join('')}</ul>${indexLegend()}
+      <span class="score-pill" style="--index-color:var(${scoreVar(score).replace('--s','--ps')})" aria-label="Condizioni di crescita ${formatIndex(score)} su 10">${fungusGlyph}<b class="pc">${formatIndex(score)}</b></span></a></li>`).join('')}</ul>${indexLegend()}
     `;
 }
 

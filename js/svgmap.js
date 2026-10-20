@@ -1,3 +1,4 @@
+import {fungusGlyph} from './indicators.js';
 import { formatIndex } from './model.js';
 // Mappa schematica in SVG (usata quando le tile esterne non sono disponibili, es. Artifact).
 // Proiezione equirettangolare locale: abbastanza fedele su ~60 km.
@@ -77,7 +78,7 @@ export function renderSvgMap(container, { zones, origin, items, onSelect }) {
     const text = `${it.label||formatIndex(it.score)}  ${name}`;
     const w = 14 + text.length * 6.4;
     el('rect', { x: -w / 2, y: -11, width: w, height: 22, rx: 7, fill: 'var(--surface)', stroke: 'var(--border)' }, label);
-    el('circle', { cx: -w / 2 + 10, cy: 0, r: 4.5, fill: it.color }, label);
+    if(Number.isFinite(it.score)){const icon=el('g',{transform:`translate(${-w/2+2},-8)`,color:it.color},label);icon.innerHTML=fungusGlyph;icon.firstElementChild.setAttribute('width','15');icon.firstElementChild.setAttribute('height','15');}else el('circle',{cx:-w/2+10,cy:0,r:4.5,fill:it.color},label);
     el('text', { x: -w / 2 + 19, y: 4.5, class: 'zone-text' }, label).textContent = text;
     const title = el('title', {}, g);
     title.textContent = it.tooltip;
