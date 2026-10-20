@@ -23,6 +23,7 @@ async function api(path,method='GET',data,headers={}) {
   const r=await fetch('/api/cms/v1/'+path,{method,credentials:'same-origin',cache:'no-store',headers:{...(data===undefined?{}:{'content-type':'application/json'}),...headers},body:data===undefined?undefined:JSON.stringify(data)});
   const out=await r.json();if(!r.ok)throw Object.assign(new Error(out.error||'Richiesta non riuscita.'),{status:r.status});return out;
 }
+function openSurveyExports(){openModal($('#cms-survey-dialog'));void surveyCount();}
 function can(scope){return actor?.scopes?.includes(scope);}
 async function access() {
   const n=++opening;surveys?.dispose();surveys=null;overview?.dispose();overview=null;dashboard?.dispose();dashboard=null;externalObservations?.dispose();externalObservations=null;
@@ -34,9 +35,9 @@ async function access() {
     $('#cms-identity').textContent=`${actor.name} · ${role} · accesso con passkey`;
     dashboard?.dispose();dashboard=null;
     $('#cms-dashboard-tab').hidden=!can('admin');
-    if(can('admin'))dashboard=mountAdminDashboard($('#cms-dashboard'),{api,openSurvey:()=>$('#cms-survey').click()});
+    if(can('admin'))dashboard=mountAdminDashboard($('#cms-dashboard'),{api,openSurvey:openSurveyExports});
     if(can('admin'))externalObservations=mountExternalObservations($('#cms-external'),{api});
-    if(can('admin')){surveys=mountSurveyAdmin($('#cms-questionnaires'),{api,openExports:()=>{$('#cms-survey-dialog').showModal();surveyCount();}});overview=mountResearchOverview($('#cms-overview'),{api,navigate:setWorkspace,filter:v=>externalObservations.setFilters(v)});}
+    if(can('admin')){surveys=mountSurveyAdmin($('#cms-questionnaires'),{api,openExports:openSurveyExports});overview=mountResearchOverview($('#cms-overview'),{api,navigate:setWorkspace,filter:v=>externalObservations.setFilters(v)});}
     document.querySelectorAll('[data-admin-tab]').forEach(b=>b.hidden=!can('admin'));
     setWorkspace(can('admin')?'overview':'content');
     $('#cms-agents').hidden=!can('admin');$('#cms-survey').hidden=!can('admin');
