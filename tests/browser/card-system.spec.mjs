@@ -6,9 +6,9 @@ test('la foto della home mobile conserva lo spazio prima del caricamento',async(
  const context=await browser.newContext({viewport:{width:390,height:920},reducedMotion:'reduce',serviceWorkers:'block'});
  const page=await preparePage(context);let release;
  const pending=new Promise(resolve=>{release=resolve;});
- await page.route('**/assets/zones/**',async route=>{await pending;await route.continue();});
+ await page.route('**/assets/video/nature/*poster*.webp',async route=>{await pending;await route.continue();});
  try{
-  await page.goto('/');await expect(page.locator('#hero .cover-title')).toBeVisible();
+  await page.goto('/',{waitUntil:'domcontentloaded'});await expect(page.locator('#hero .cover-title')).toBeVisible();
   const photo=page.locator('#hero .cover-img');
   await expect.poll(()=>photo.evaluate(e=>e.getBoundingClientRect().height)).toBeGreaterThanOrEqual(196);
   const before=await page.locator('#hero .cover-body').boundingBox();

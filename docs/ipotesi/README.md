@@ -13,6 +13,8 @@ Il ramo di produzione e i documenti in `docs/` fanno fede. Ciò che sta solo in 
 
 ## Registro
 
+Video di atmosfera richiesti e autorizzati alla pubblicazione da Matteo il 20/10: [valutazione e collocazioni](video-atmosfera-2026-10-20.md). Ramo `codex/nature-video-release`, porting selettivo della prova locale sulla produzione corrente; nessuna sostituzione delle foto informative.
+
 Estensione del pilota a tutto il Lazio richiesta da Matteo il 19/10: [valutazione della raccolta](estensione-lazio-2026-10-19.md). Tre agenti territoriali, 21 nuove zone candidate e 24 itinerari; documentazione e lacune salvate, integrazione applicativa ancora da eseguire.
 
 Ampliamento fotografico tramite tre agenti, richiesto il 18 e proseguito il 19/10: [valutazione, fonti e integrazione](integrazione-fotografie-agenti-2026-10-19.md). Commons, osservazioni iNaturalist e fotografie istituzionali Dryades; selezione per singolo file, senza ripetere il lotto già pubblicato.
