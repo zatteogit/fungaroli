@@ -16,6 +16,7 @@ test('still prima del video: rete ritardata, buffer e loop senza spostare il pan
  try{
   await page.goto('/',{waitUntil:'domcontentloaded'});const hero=page.locator('#hero .atmosphere'),video=hero.locator('video');
   await expect(hero).toBeVisible({timeout:60000});await expect.poll(()=>hero.locator('img').evaluate(i=>i.complete&&i.naturalWidth>0)).toBe(true);
+  await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');
   await expect(video).toHaveCSS('opacity','0');const before=await page.locator('#hero .cover-body').boundingBox();
   await page.screenshot({path:'output/playwright/atmosphere-still.png'});release();
   await expect(video).toHaveAttribute('data-video-ready','true');await expect(video).toHaveCSS('opacity','1');expect(stillFirst).toBe(true);
