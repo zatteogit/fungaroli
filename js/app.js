@@ -2705,18 +2705,10 @@ const ICON = {
 // Solo dati del tratto nella zona: niente dislivello ricavato dai campioni (a passo fisso lo gonfierebbe);
 // la salita della fonte riguarda l'itinerario completo e resta nella scheda aperta.
 function walkGlance(z, t) {
-  const sm = (t.samples || []).filter((x) => Number.isFinite(x[0]));
-  const es = sm.map((x) => x[0]);
-  // come nelle app outdoor: il numero sopra, l'etichetta piccola sotto (il testo letto resta «5,4 km nella zona»)
-  const stat = (v, k) => `<li><span class="ws-v">${v}</span> <span class="ws-k">${k}</span></li>`;
-  const stats = [
-    stat(`${fmtKm(t.in_zone_km)}\u00a0km`, 'nella zona'),
-    es.length ? stat(`${Math.min(...es)}–${Math.max(...es)}\u00a0m`, 'quote del tratto') : '',
-    stat(t.difficulty ? difficultyLink(t.difficulty, t.difficulty) : 'n.d.', t.difficulty ? esc(DIFF[t.difficulty] || 'difficoltà') : 'difficoltà'),
-  ].join('');
-  const heads=headsOf(z,t);
-  const entrances=heads.length?`<span class="walk-entrances"><span class="ws-k">${heads.length===1?'Imbocco mappato':'Imbocchi mappati'}</span><span class="walk-entrance-list">${heads.map((h,i)=>`<span class="walk-entrance"><i class="th-n">${i+1}</i><span><b>${esc(h.road||(h.kind==='strada'?'Su strada':'Su sterrata'))}</b>${h.ele!=null?`<small>${h.ele.toLocaleString('it-IT')} m</small>`:''}</span></span>`).join('')}</span></span>`:'<span class="walk-entrances"><span class="ws-k">Imbocco mappato</span><span class="small muted">Non disponibile; le soste indicate riguardano la zona</span></span>';
-  return `<span class="walk-glance"><ul class="walk-stats">${stats}</ul>${entrances}</span>`;
+  const a=assessWalkingRoute(t),stat=(v,k)=>`<li><span class="ws-v">${v}</span><span class="ws-k">${k}</span></li>`;
+  const distance=a.trailRoundTripKm??t.in_zone_km;
+  const stats=[stat(`${fmtKm(distance)} km${a.trailRoundTripMinutes!==null?' · '+walkTimeText(t):a.outboundMinutes!==null?' · '+walkTimeText(t):''}`,a.trailRoundTripMinutes!==null?'solo sentiero · raccordo escluso':a.outboundMinutes!==null?'solo andata':'tratto sulla mappa'),stat(t.difficulty?difficultyLink(t.difficulty,t.difficulty):'n.d.','difficoltà')].join('');
+  return `<span class="walk-glance"><ul class="walk-stats">${stats}</ul></span>`;
 }
 
 function walkForest(z,t){
@@ -2727,10 +2719,21 @@ function walkForest(z,t){
 }
 
 function outingTiming(z,t,walk){
- const a=assessWalkingRoute(t),v=t.routeValidation,trip=zoneTrip(z,walk),duration=n=>Number.isFinite(n)?n===0?'0 min':`${Math.floor(n/60)?Math.floor(n/60)+' h':''}${n%60?' '+n%60+' min':''}`.trim():'Da definire';
- const cell=(icon,label,value,note)=>`<div class="outing-leg">${icon}<span><small>${label}</small><b>${value}</b><small>${note}</small></span></div>`;
- const valid=v?.geometrySignature===geometrySignature(t.lines),network=valid&&v.status==='network_correspondence_checked';
- return `<section class="walk-timing-status outing-plan" aria-label="Tempi e verifica dell’uscita"><header><b>Il giro, dall’auto al ritorno</b><small>Uscita da completare</small></header><div class="outing-legs">${cell(IC.car,'Auto · andata',esc(duration(trip.minutes)),esc(trip.destination))}${cell(IC.walk,'Sentiero · andata',esc(duration(a.outboundMinutes)),a.outboundMinutes!==null?'Dall’inizio del sentiero':'Tratto da verificare')}${cell(IC.walk,'Sentiero · ritorno',esc(duration(a.returnMinutes)),a.returnMinutes!==null?'Stima OSM · stessa via':'Percorso da definire')}${cell(ICON.track,'Sosta ↔ imbocco','Da verificare','Percorso dalla sosta')}</div>${a.trailRoundTripMinutes!==null?`<p class="outing-subtotal"><b>${duration(a.trailRoundTripMinutes)}</b> · ${fmtKm(a.trailRoundTripKm)} km sul sentiero A/R<small>Raccordo e soste esclusi · totale dall’auto ancora da definire</small></p>`:''}<details class="outing-evidence"><summary>Verifiche e fonti</summary><ul><li>${network?'Geometria confrontata con la rete OSM completa.':'Geometria completa ancora da verificare.'}</li><li>${valid&&v.parking?.status==='historically_reported_area'?'Sosta presso il cimitero citata dal CAI nel 2022; punto esatto e disponibilità attuale da confermare.':'Punto di sosta e possibilità di parcheggio da confermare.'}</li><li>Raccordo pedonale e tempo auto di ritorno da verificare. I tempi di cammino escludono le soste.</li></ul>${network?`<a href="${esc(v.sourceUrl)}" target="_blank" rel="noopener">OpenStreetMap · ${esc(v.sourceUpdatedOn)} · ODbL</a>`:''}${valid&&v.parking?.sourceUrl?` · <a href="${esc(v.parking.sourceUrl)}" target="_blank" rel="noopener">CAI · sosta descritta nel 2022</a>`:''}</details></section>`;
+ const a=assessWalkingRoute(t),v=t.routeValidation,trip=zoneTrip(z,walk);
+ const duration=n=>Number.isFinite(n)?`${Math.floor(n/60)?Math.floor(n/60)+' h ':''}${n%60?n%60+' min':n===0?'0 min':''}`.trim():'tempo da definire';
+ const metrics=(km,minutes)=>`${Number.isFinite(km)?fmtKm(km)+' km · ':''}${duration(minutes)}`;
+ const leg=(icon,label,points,value,note='')=>`<li class="outing-leg">${icon}<div><small>${label}</small><span class="outing-leg-points">${points}</span><b>${value}</b>${note?`<small>${note}</small>`:''}</div></li>`;
+ const valid=v?.geometrySignature===geometrySignature(t.lines),network=valid&&v.status==='network_correspondence_checked',named=a.outboundMinutes!==null?t.wholeTrailEvidence.direction.split(' → '):[];
+ const from=named[0],to=named[1],drive=drivePoint(z,walk),target=drive?.target;
+ const driveLink=target?`<a class="link-btn small" href="${gmaps(target.lat,target.lon)}" target="_blank" rel="noopener">Apri il navigatore ↗</a>`:'';
+ return `<section class="walk-timing-status outing-plan" aria-label="Tempi e verifica dell’uscita"><header><b>Dal viaggio al ritorno</b><small>Sosta e raccordo da confermare</small></header>
+ <ol class="outing-legs">
+ ${leg(IC.car,'In auto · andata',`${esc(currentBase().name)} → ${esc(trip.destination)}`,esc(metrics(trip.km,trip.minutes)),`Arrivo auto · parcheggio da confermare ${driveLink}`)}
+ ${leg(ICON.track,'Raccordo a piedi',from?`Sosta → partenza a ${esc(from)}`:'Sosta → inizio del sentiero','Distanza e tempo da verificare')}
+ ${leg(IC.walk,a.outboundMinutes!==null?'Sul sentiero · andata':'Tratto mostrato sulla mappa',from&&to?`${esc(from)} → ${esc(to)}`:esc(trailName(t)),esc(metrics(a.outboundMinutes!==null?fullTrailKm(t):t.in_zone_km,a.outboundMinutes)))}
+ ${leg(IC.walk,'Sul sentiero · ritorno',from&&to?`${esc(to)} → ${esc(from)}`:'Percorso di ritorno da definire',a.returnMinutes!==null?esc(metrics(fullTrailKm(t),a.returnMinutes)):'Distanza e tempo da verificare',a.returnMinutes!==null?'Stessa via · tempo stimato da OSM':'')}
+ </ol>${a.trailRoundTripMinutes!==null?`<div class="outing-subtotal"><small>Totale sul sentiero · andata e ritorno</small><b>${fmtKm(a.trailRoundTripKm)} km · ${duration(a.trailRoundTripMinutes)}</b><small>Raccordo dalla sosta e pause esclusi</small></div>`:''}
+ <details class="outing-evidence"><summary>Dati del sentiero e fonti</summary><dl class="walk-facts"><div><dt>Relazione OSM intera · dati della fonte</dt><dd>${fullTrailKm(t)?fmtKm(fullTrailKm(t))+' km':'Lunghezza n.d.'}${t.duration?' · '+fmtDur(t.duration):''}${t.ascent?' · salita +'+esc(t.ascent)+' m':''}</dd></div></dl><p>Questi dati non includono il raccordo dalla sosta e non definiscono un’uscita completa.</p><ul><li>${network?'Geometria confrontata con la rete OSM completa.':'Geometria completa ancora da verificare.'}</li><li>${valid&&v.parking?.status==='historically_reported_area'?'Sosta presso il cimitero citata dal CAI nel 2022; punto esatto e disponibilità attuale da confermare.':'Punto di sosta e possibilità di parcheggio da confermare.'}</li><li>Il tempo auto riguarda solo l’andata dalla base indicata. Il ritorno auto va calcolato separatamente.</li></ul>${network?`<a href="${esc(v.sourceUrl)}" target="_blank" rel="noopener">OpenStreetMap · ${esc(v.sourceUpdatedOn)} · ODbL</a>`:''}${valid&&v.parking?.sourceUrl?` · <a href="${esc(v.parking.sourceUrl)}" target="_blank" rel="noopener">CAI · sosta descritta nel 2022</a>`:''}</details></section>`;
 }
 
 function renderWalkFocus(z, d, walk) {
@@ -2738,18 +2741,17 @@ function renderWalkFocus(z, d, walk) {
   const { t } = walk;
   return `<details class="sec walk-focus" data-glossary-context="Sentiero" name="zone-details" data-sec="passeggiata" data-walk-trail="${t.id}"${openSecs.has('passeggiata') ? ' open' : ''}>
     <summary><span class="walk-summary">
-      <span class="eyebrow">La passeggiata, più da vicino</span><span class="walk-title">${esc(walk.microzone)}</span>
+      <span class="eyebrow">La passeggiata, più da vicino</span>
       <span class="walk-route">${segnavia(t)}<b>${esc(trailName(t))}</b></span>
       ${walkGlance(z, t)}
     </span></summary><div class="sec-body">
-    <dl class="walk-facts"><div><dt>Itinerario completo</dt><dd>${fullTrailKm(t) ? `${fmtKm(fullTrailKm(t))} km` : 'Lunghezza n.d.'}${t.duration ? ` · ${fmtDur(t.duration)}` : ''}${t.ascent ? ` · +${esc(t.ascent)} m` : ''}</dd></div></dl>
+    ${outingTiming(z,t,walk)}
     ${t.lines?.length > 1 ? '<p class="small muted">Il tratto nella zona comprende più segmenti separati.</p>' : ''}
     ${t.mainCat ? `<p class="small" data-glossary="${d?.best?.kind==='plant'?'Piante':'Funghi'}">Lungo il tracciato: ${linkTrees(t.mainCat.toLowerCase())} nei campioni tra circa ${Math.floor(t.lo / 25) * 25} e ${Math.ceil(t.hi / 25) * 25} m${d?.best?.species ? `, ${d.best.kind==='plant'?'proxy di paesaggio per':'compatibili con l’habitat di'} ${speciesLink(d.best.species, d.best.species.name.toLowerCase())}` : ''}.</p>` : ''}
     ${trailVisual(z, t, d, headsOf(z,t), 'focus')}
     ${walkForest(z,t)}
     <button type="button" class="btn ghost" data-save-trip data-trip-zone="${z.id}" data-trip-href="${esc(walkHref(z,state.dayOffset,t))}" data-trip-title="${esc(trailName(t))}" data-trip-date="${d?.date||''}">${notebookGlyph}<span>Salva il giro nel taccuino</span></button>
     ${trailLinks(z, t)}
-    ${outingTiming(z,t,walk)}
     <p class="small muted">Verifica accesso, sosta e stato del sentiero prima di partire.</p>
     <aside class="walk-data"><h3>Tracciato e limiti dei dati</h3><p>Il GPX contiene solo il tratto nella zona. Tempi e dislivello, quando disponibili, riguardano l’itinerario completo.</p><p>Tracciato OpenStreetMap / Waymarked Trails · imbocchi ricavati dalla rete stradale mappata.${state.target==='funghi'?' L’indice e le segnalazioni riguardano la zona, non questo singolo sentiero.':''}</p></aside>
     </div>
@@ -2995,8 +2997,8 @@ function renderDetail() {
     ${essentialSections(z, d, walk)}
     ${best.kind==='plant'?`<p class="small muted">Indice di contesto sperimentale · fattori disponibili ${best.factors.filter(f=>f.value!=null).length}/${best.factors.length}${best.quality.climateUnavailable?' · meteo non disponibile':''}</p><div class="notice">${esc(best.species.parts)} ${esc(best.species.caution)}</div>`:''}
     <section class="zone-actions" aria-label="Il tuo taccuino">
-      <button type="button" class="btn primary zone-note-action" data-new-outing data-trip-zone="${z.id}"${walk?` data-trip-href="${esc(walkHref(z,state.dayOffset,walk.t))}" data-trip-title="${esc(trailName(walk.t))}"`:''}>${notebookGlyph}<span>Com’è andata? Annota l’uscita</span><span aria-hidden="true">→</span></button>
-      ${best.kind==='plant'?`<button type="button" class="zone-observation-link" data-note-kind="pianta" data-note-id="${best.species.plantId}" data-note-zone="${z.id}" data-note-title="${esc(best.species.name)}">Aggiungi un’osservazione botanica →</button>`:`<div class="zone-community"><button type="button" class="zone-observation-link" data-report data-zone="${z.id}" data-species="${best.species.id}">Segnala un ritrovamento o una ricerca a vuoto →</button>${reportBadge(z.id,best.species.id)}</div>`}
+      <button type="button" class="btn primary zone-note-action" data-note-kind="${best.kind==='plant'?'pianta':'fungo'}" data-note-id="${best.kind==='plant'?best.species.plantId:best.species.id}" data-note-zone="${z.id}" data-note-title="${esc(best.species.name)}">${notebookGlyph}<span>Com’è andata?</span><span aria-hidden="true">→</span></button>
+      <p class="zone-note-caption">Anche una ricerca a vuoto conta. Scegli tu se condividere.</p>
       <div class="zone-privacy-story"><svg class="zone-privacy-illustration" viewBox="0 0 120 104" aria-hidden="true"><path class="privacy-ground" d="M8 88q48-20 104 0v12H8Z"/><path class="privacy-tree" d="m24 16-18 40h11L8 74h32l-9-18h11zM90 6 72 46h10L72 68h36L98 46h10z"/><path class="privacy-trunks" d="M24 74v16M90 68v20"/><path class="privacy-trail" d="M40 98q36-14 16-29"/><circle class="privacy-pin" cx="61" cy="49" r="20"/><path class="privacy-lock" d="M54 47v-5a7 7 0 0 1 14 0v5M51 47h20v16H51zM61 53v5"/></svg><div><h3>I tuoi posti restano tuoi</h3><p>Agli altri non mostriamo il tuo punto. Se condividi, vedono solo un riepilogo per zona.</p><a href="#/info">Come proteggiamo i tuoi dati ↗</a></div></div>
     </section>
     ${z.protection ? `<div class="notice">${esc(z.protection)}</div>` : ''}
@@ -3176,7 +3178,7 @@ function trailProfile(zid, t, sp, band, heads = [], visualId = '') {
   const step = W / (n - 1);
   const good = sm.map(([e], i) => (ok[i] ? `<rect x="${(X(i) - step / 2).toFixed(1)}" y="${Y(e).toFixed(1)}" width="${step.toFixed(1)}" height="${(H - Y(e)).toFixed(1)}"/>` : '')).join('');
   // imbocchi sulla linea, numerati come i bottoni sotto il grafico
-  const marks = heads.map((h, k) => { const x = headX(t, h); if (x == null) return ''; const i = Math.round(x * (n - 1)); return `<button type="button" class="tp-th" data-trail-head="${k}" aria-controls="${visualId}-head-${k}" aria-label="Mostra imbocco ${k + 1}${h.ele != null ? `, a ${h.ele} metri` : ''}" aria-pressed="false" style="--x:${(x * 100).toFixed(1)}%;top:${((Y(es[i]) / H) * 100).toFixed(1)}%">${k + 1}</button>`; }).join('');
+  const marks = heads.map((h, k) => { const x = headX(t, h); if (x == null) return ''; const i = Math.round(x * (n - 1)); return `<button type="button" class="tp-th" data-trail-head="${k}" aria-controls="${visualId}-head-${k}" aria-label="Mostra intersezione ${k + 1}${h.ele != null ? `, a ${h.ele} metri` : ''}" aria-pressed="false" style="--x:${(x * 100).toFixed(1)}%;top:${((Y(es[i]) / H) * 100).toFixed(1)}%">${k + 1}</button>`; }).join('');
   return `<figure class="tprof"><div class="tp-wrap"><svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="Profilo del tratto nella zona: da ${es[0]} a ${es[n - 1]} m, tra ${lo} e ${hi} m">
       <path d="${area}" class="tp-area"/><g class="tp-good">${good}</g><path d="${line}" class="tp-line"/></svg>${marks}</div>
     <figcaption><span>${es[0]} m</span><span class="tp-key">${habitatKnown ? `<i></i><span>${sp.kind==='plant'?'paesaggio compatibile (proxy) per':'bosco compatibile con'} ${speciesLink(sp, sp.name.toLowerCase())}</span>` : 'Quote del tratto locale'}</span><span>${es[n - 1]} m</span></figcaption></figure>`;
@@ -3196,7 +3198,7 @@ function trailVisual(z, t, d, heads = [], where = 'list') {
     <div class="trail-view-tabs" role="tablist" aria-label="Vista del tratto di ${esc(trailName(t))}">${[['profile',elevationLabel],['trace','Tracciato']].map(([v,label]) => `<button type="button" role="tab" id="${id}-${v}-tab" data-trail-view="${v}" aria-selected="${view===v}" aria-controls="${id}-${v}" tabindex="${view===v?0:-1}">${label}</button>`).join('')}</div>
     <div class="trail-visual-panel" role="tabpanel" id="${id}-trace" data-trail-panel="trace" aria-labelledby="${id}-trace-tab" tabindex="0"${view!=='trace'?' hidden':''}>${trace}</div>
     <div class="trail-visual-panel${profile?'':' trail-visual-panel--quotes'}" role="tabpanel" id="${id}-profile" data-trail-panel="profile" aria-labelledby="${id}-profile-tab" tabindex="0"${view!=='profile'?' hidden':''}>${profile||quotes}</div>
-    ${heads.length ? `<div class="th-row"><span class="th-k">Imbocchi</span><div class="th-list">${heads.map((h,k)=>`<a class="th-chip" id="${id}-head-${k}" data-trail-head="${k}" data-trail-head-chip href="https://www.openstreetmap.org/?mlat=${h.lat}&mlon=${h.lon}#map=17/${h.lat}/${h.lon}" target="_blank" rel="noopener" aria-label="Punto sulla mappa per l’imbocco ${k+1}${h.ele!=null?`, a ${h.ele} metri`:''}"><i class="th-n">${k+1}</i>${ICON.track}<span><b>${h.ele!=null?`${h.ele.toLocaleString('it-IT')} m`:'Imbocco'}</b><small>${esc(h.road||(h.kind==='strada'?'su strada':'su sterrata'))}</small></span></a>`).join('')}</div></div>` : ''}
+    ${heads.length ? `<div class="th-row"><span class="th-k">Intersezioni con strade</span><div class="th-list">${heads.map((h,k)=>`<a class="th-chip" id="${id}-head-${k}" data-trail-head="${k}" data-trail-head-chip href="https://www.openstreetmap.org/?mlat=${h.lat}&mlon=${h.lon}#map=17/${h.lat}/${h.lon}" target="_blank" rel="noopener" aria-label="Intersezione ${k+1} sulla mappa${h.ele!=null?`, a ${h.ele} metri`:''}"><i class="th-n">${k+1}</i>${ICON.track}<span><b>${h.ele!=null?`${h.ele.toLocaleString('it-IT')} m`:'Intersezione'}</b><small>${esc(h.road||(h.kind==='strada'?'su strada':'su sterrata'))}</small></span></a>`).join('')}</div></div>` : ''}
   </div>`;
 }
 function selectTrailView(box, view) {
@@ -3294,7 +3296,7 @@ function trailGeo(z, t) {
 function trailLinks(z, t) {
   const g = trailGeo(z, t);
   if (!g) return `<a class="small" href="https://www.openstreetmap.org/relation/${t.id}" target="_blank" rel="noopener">Tracciato su OpenStreetMap</a>${renderTrailContext(t)}`;
-  const h=headsOf(z,t)[0],drive=drivePoint(z,{h}),go=drive?.target;
+  const h=headsOf(z,t)[0],drive=drivePoint(z,{h,t}),go=drive?.target;
   const startUrl=go?gmaps(go.lat,go.lon):`https://www.openstreetmap.org/?mlat=${(h?.lat??g.start[0])}&mlon=${(h?.lon??g.start[1])}#map=16/${(h?.lat??g.start[0])}/${(h?.lon??g.start[1])}`;
   return `<div class="tl-btns">
     <a class="tl-btn primary" href="${startUrl}" target="_blank" rel="noopener">${go?IC.car:IC.map}<span>${go?'Arrivo in auto':'Punto sulla mappa'}</span></a>
