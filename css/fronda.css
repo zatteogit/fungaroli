@@ -207,6 +207,19 @@
 :is(.ts-cta, .cmp-cta, .tx-vs, .act-pill, .tx-cmp-btn) { background:var(--action); color:var(--action-ink); border-color:var(--action); border-radius:999px; }
 .chip-x { background:var(--surface-2); color:var(--link); }
 :is(.ts-cta, .cmp-cta) { color:var(--action-ink); }
+/* L’invito fotografico ha più contenuti: angoli morbidi, testo sempre sul colore della CTA. */
+.cmp-cta { grid-template-columns:auto minmax(0,1fr) auto; gap:16px; padding:18px 20px; border-radius:24px; }
+.cmp-cta .cc-row { grid-column:auto; }
+.cmp-cta .cc-txt { min-width:0; }
+.cmp-cta :is(.cc-txt b,.cc-txt small,.cc-vs,.ts-cta-go) { color:inherit; }
+.cmp-cta .cc-txt b { margin-bottom:5px; line-height:1.35; }
+.cmp-cta .cc-txt small { display:block; line-height:1.5; }
+.ts-cta :is(b,small,.ts-cta-go) { color:inherit; }
+@media(max-width:599px) {
+ .cmp-cta { grid-template-columns:minmax(0,1fr) auto; gap:14px 12px; padding:18px; }
+ .cmp-cta .cc-row { grid-column:1 / -1; }
+}
+
 .chip-x { border-color: var(--border); }
 @media (hover: hover) {
   :is(.ts-cta, .cmp-cta, .tx-vs, .act-pill, .tx-cmp-btn):hover { background:var(--action-hover); }
