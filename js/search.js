@@ -10,7 +10,7 @@ const KINDS = {
   animale:'Animali', pianta:'Piante e fiori', zona: 'Zone', fungo: 'Funghi', velenoso: 'Velenosi e sosia', albero: 'Alberi', sentiero: 'Sentieri', termine: 'Glossario', pagina: 'Pagine e regole',
 };
 const ORDER = Object.keys(KINDS);
-const SUGGEST = ['Terminillo', 'Porcino', 'More', 'Ortica', 'Faggio', 'Emergenza', 'Fragolina', 'Castagno'];
+const SUGGEST = ['Terminillo', 'Porcino', 'More', 'Ortica', 'Faggio', 'Emergenza', 'Fragolina', 'Castagno', 'Lupo', 'Bombi'];
 const RECENT_KEY = 'fungaroli:search-recent';
 
 // la sezione in cui sei decide cosa viene prima (la ricerca resta su tutto)
@@ -25,7 +25,7 @@ const PLACEHOLDER = { animali:'Cerca animali, nomi e caratteri…', animale:'Cer
   specie: 'Cerca funghi, sosia, alberi, zone…', 'specie-dettaglio': 'Cerca funghi, sosia, alberi, zone…', riconosci: 'Cerca velenosi, sosia, funghi…',
   alberi: 'Cerca alberi, funghi, zone…', albero: 'Cerca alberi, funghi, zone…', mappa: 'Cerca zone, sentieri, funghi…',
 };
-const SCOPES = [['', 'Tutto'], ['zona', 'Zone'], ['fungo', 'Funghi'], ['velenoso', 'Velenosi'], ['pianta', 'Piante'], ['albero', 'Alberi'], ['sentiero', 'Sentieri'], ['termine', 'Glossario']];
+const SCOPES = [['', 'Tutto'], ['zona', 'Zone'], ['fungo', 'Funghi'], ['velenoso', 'Velenosi'], ['pianta', 'Piante'], ['albero', 'Alberi'], ['animale', 'Animali'], ['sentiero', 'Sentieri'], ['termine', 'Glossario']];
 let ITEMS = [], dlg = null, sel = -1, scope = '', prio = [];
 
 export function initSearch(items) {
@@ -108,7 +108,7 @@ function build() {
   dlg.innerHTML = `
     <header class="search-top">
       <label class="search-box search-main"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
-        <input type="search" placeholder="Cerca zone, funghi, alberi, sentieri…" autocomplete="off" enterkeyhint="search" aria-label="Cerca in tutta l'app" aria-controls="search-res" aria-autocomplete="list"></label>
+        <input type="search" placeholder="Cerca zone, funghi, piante, animali…" autocomplete="off" enterkeyhint="search" aria-label="Cerca in tutta l'app" aria-controls="search-res" aria-autocomplete="list"></label>
       <button type="button" class="search-cancel">Annulla</button>
     </header>
     <div class="search-scopes filter-rail" role="group" aria-label="Cerca in">${SCOPES.map(([k, l]) => `<button type="button" class="chip" data-scope="${k}" aria-pressed="${k === ''}">${l}</button>`).join('')}</div>
@@ -174,7 +174,7 @@ export function openSearch(q = '', sc = '') {
   prio = PRIORITY[context] || [];
   scope = typeof q === 'string' ? sc : '';
   dlg.querySelectorAll('[data-scope]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.scope === scope)));
-  input.placeholder = PLACEHOLDER[context] || 'Cerca zone, funghi, alberi, sentieri…';
+  input.placeholder = PLACEHOLDER[context] || 'Cerca zone, funghi, piante, animali…';
   input.value = typeof q === 'string' ? q : '';
   render(input.value);
   openModal(dlg);

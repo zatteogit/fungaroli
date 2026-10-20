@@ -759,7 +759,7 @@ function routeNow(r, nav) {
   const referenceBox=document.querySelector(`.view[data-view="${r.view}"]`);
   const noteRoute={'albero':['albero',r.treeId],'specie-dettaglio':['specie',r.speciesId],'fungo':['fungo',r.taxonId],'commestibile':['commestibile',r.speciesId],'guide':['guide',r.guideId]}[r.view];
   if(noteRoute)addNotebookReference(referenceBox.querySelector('.sp-page,#guide-body,#edible-detail')||referenceBox,noteRoute[0],noteRoute[1],titleOf(r));
-  if(!['animali','animale'].includes(r.view))enhanceGlossary(referenceBox);
+  enhanceGlossary(referenceBox);
   const learningNav=document.querySelector(`.view[data-view="${r.view}"] .seg-nav`),selectedSection=learningNav?.querySelector('[aria-current="page"]');
   if(selectedSection) learningNav.scrollLeft=selectedSection.offsetLeft-(learningNav.clientWidth-selectedSection.offsetWidth)/2;
   if (r.view === 'mappa') {
@@ -1297,7 +1297,7 @@ function alternativeFor(z, o, d) {
 // icona meteo con il suo colore (sole ambra, pioggia blu, temporale viola, neve azzurro)
 const wxi = (w) => `<span class="wxi wxi-${wxIcon(w)}">${weatherGlyphs[wxIcon(w)]||IC[wxIcon(w)]}</span>`;
 // l'icona mostra il problema principale, nello stesso ordine di gravità del testo: mai il sole con vento forte o nebbia
-const wxIcon = (w) => (!w?.available ? 'unknown' : w.thunder ? 'storm' : w.snow ? 'snow' : (w.rain >= 0.5 || w.prob >= 50) ? 'rain' : w.gust >= 40 ? 'wind' : w.fog ? 'fog' : w.prob >= 20 ? 'cloud' : 'sun');
+const wxIcon = (w) => (!w || (!w.available && !Number.isFinite(w.rain)) ? 'unknown' : w.thunder ? 'storm' : w.snow ? 'snow' : (w.rain >= 0.5 || w.prob >= 50) ? 'rain' : w.gust >= 40 ? 'wind' : w.fog ? 'fog' : w.prob >= 20 ? 'cloud' : 'sun');
 // Il fungo, nel colore dell’indice, accompagna ogni valore delle condizioni di crescita.
 const indexGlyph=sc=>fungusGlyph.replace('<svg ',`<svg style="color:var(${scoreVar(sc).replace('--s','--ps')})" `);
 const idxDot = (sc) => `<span class="idx-dot" title="Condizioni di crescita ${formatIndex(sc)}/10">${indexGlyph(sc)}<b class="pc">${formatIndex(sc)}</b></span>`;
@@ -1481,7 +1481,7 @@ function renderLearnHub(box) {
   const n = (k, one, many) => (k ? `${k} ${k === 1 ? one : many}` : '');
   const list = challengeList(), done = list.filter((c) => challengeProgressOf(c.id)?.complete).length;
   const cards = [
-    ['glossario', '#/glossario', 'Glossario', 'Le parole di funghi, alberi e sentieri, con disegni e foto.', n(glossaryTerms().length, 'voce', 'voci')],
+    ['glossario', '#/glossario', 'Glossario', 'Le parole di funghi, piante, alberi, animali e sentieri.', n(glossaryTerms().length, 'voce', 'voci')],
     ['guide', '#/guide', 'Approfondimenti', 'Piccole letture sul bosco e sulla passeggiata.', n(guideCount(), 'approfondimento', 'approfondimenti')],
     ['bosco', '#/riconosci/bosco', 'Bosco e sentiero', 'Tracce, segni e dettagli che incontri camminando.', ''],
     ['sfide', '#/sfide', 'Sfide', 'Osserva, confronta e raccogli i timbri.', list.length ? `${done} di ${list.length} timbri` : ''],
