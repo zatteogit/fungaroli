@@ -1,0 +1,185 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (1292 spike-08.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="403904972" visible="true" version="1" timestamp="2009-05-18T13:47:59Z" lat="42.1825109" lon="12.9959033" />
+ <node id="403904973" visible="true" version="2" timestamp="2012-07-08T18:53:17Z" lat="42.1854085" lon="12.9949603" />
+ <node id="1818049582" visible="true" version="2" timestamp="2019-07-26T15:10:33Z" lat="42.1840629" lon="12.9954297" />
+ <node id="1818049583" visible="true" version="1" timestamp="2012-07-08T18:53:15Z" lat="42.1837525" lon="12.9956008" />
+ <node id="1877734010" visible="true" version="2" timestamp="2025-01-02T09:05:38Z" lat="42.1889578" lon="12.9949687" />
+ <node id="1877734034" visible="true" version="2" timestamp="2025-01-02T09:05:38Z" lat="42.1895729" lon="12.9947139" />
+ <node id="1877734056" visible="true" version="2" timestamp="2025-01-02T09:05:38Z" lat="42.1895312" lon="12.9943478" />
+ <node id="1877734063" visible="true" version="1" timestamp="2012-08-22T14:28:12Z" lat="42.1888413" lon="12.9951130" />
+ <node id="1877734065" visible="true" version="2" timestamp="2022-06-29T14:51:06Z" lat="42.1902952" lon="12.9951714" />
+ <node id="1877734068" visible="true" version="2" timestamp="2025-01-02T09:05:38Z" lat="42.1913555" lon="12.9965271" />
+ <node id="1877734089" visible="true" version="2" timestamp="2025-01-02T09:05:38Z" lat="42.1915950" lon="12.9965492" />
+ <node id="1877734101" visible="true" version="3" timestamp="2025-01-02T09:05:38Z" lat="42.1916660" lon="12.9964507" />
+ <node id="1877734158" visible="true" version="1" timestamp="2012-08-22T14:28:13Z" lat="42.1872051" lon="12.9946267" />
+ <node id="1877734160" visible="true" version="1" timestamp="2012-08-22T14:28:13Z" lat="42.1905060" lon="12.9973813" />
+ <node id="1877734195" visible="true" version="2" timestamp="2025-01-02T09:05:38Z" lat="42.1882215" lon="12.9940568" />
+ <node id="1877734204" visible="true" version="2" timestamp="2025-01-02T09:05:38Z" lat="42.1903052" lon="12.9945476" />
+ <node id="1877734213" visible="true" version="2" timestamp="2025-01-02T09:05:38Z" lat="42.1891586" lon="12.9948869" />
+ <node id="1877734220" visible="true" version="1" timestamp="2012-08-22T14:28:13Z" lat="42.1860570" lon="12.9949896" />
+ <node id="1877734226" visible="true" version="3" timestamp="2025-01-02T09:05:38Z" lat="42.1904930" lon="12.9951833" />
+ <node id="1877734259" visible="true" version="1" timestamp="2012-08-22T14:28:14Z" lat="42.1887673" lon="12.9950459" />
+ <node id="1877734267" visible="true" version="2" timestamp="2025-01-02T09:05:38Z" lat="42.1901174" lon="12.9943572" />
+ <node id="1877734270" visible="true" version="2" timestamp="2025-01-02T09:05:38Z" lat="42.1887273" lon="12.9941051" />
+ <node id="1877734272" visible="true" version="1" timestamp="2012-08-22T14:28:14Z" lat="42.1908061" lon="12.9957264" />
+ <node id="1877734279" visible="true" version="1" timestamp="2012-08-22T14:28:14Z" lat="42.1904272" lon="12.9974036" />
+ <node id="1877734283" visible="true" version="2" timestamp="2025-01-02T09:05:38Z" lat="42.1902645" lon="12.9946120" />
+ <node id="1877734293" visible="true" version="1" timestamp="2012-08-22T14:28:14Z" lat="42.1901224" lon="12.9951309" />
+ <node id="1877734304" visible="true" version="3" timestamp="2025-01-02T09:05:38Z" lat="42.1891943" lon="12.9950801" />
+ <node id="1877734330" visible="true" version="1" timestamp="2012-08-22T14:28:15Z" lat="42.1864698" lon="12.9949432" />
+ <node id="1877734333" visible="true" version="1" timestamp="2012-08-22T14:28:15Z" lat="42.1855727" lon="12.9948902" />
+ <node id="1877734335" visible="true" version="1" timestamp="2012-08-22T14:28:15Z" lat="42.1903086" lon="12.9944660" />
+ <node id="1877734340" visible="true" version="1" timestamp="2012-08-22T14:28:15Z" lat="42.1856907" lon="12.9949378" />
+ <node id="1877734361" visible="true" version="1" timestamp="2012-08-22T14:28:15Z" lat="42.1909412" lon="12.9970755" />
+ <node id="1877734370" visible="true" version="2" timestamp="2025-01-02T09:05:38Z" lat="42.1908199" lon="12.9964104" />
+ <node id="1877734374" visible="true" version="1" timestamp="2012-08-22T14:28:16Z" lat="42.1878451" lon="12.9942136" />
+ <node id="1877734376" visible="true" version="3" timestamp="2025-01-02T09:05:38Z" lat="42.1897150" lon="12.9950331" />
+ <node id="1877734382" visible="true" version="3" timestamp="2025-01-02T09:05:38Z" lat="42.1905666" lon="12.9952544" />
+ <node id="1877734405" visible="true" version="3" timestamp="2025-01-02T09:05:38Z" lat="42.1915652" lon="12.9964802" />
+ <node id="1877734406" visible="true" version="2" timestamp="2025-01-02T09:05:38Z" lat="42.1908666" lon="12.9964828" />
+ <node id="1877734411" visible="true" version="1" timestamp="2012-08-22T14:28:16Z" lat="42.1908120" lon="12.9958444" />
+ <node id="1877734424" visible="true" version="2" timestamp="2025-01-02T09:05:38Z" lat="42.1902605" lon="12.9944015" />
+ <node id="1877734426" visible="true" version="1" timestamp="2012-08-22T14:28:16Z" lat="42.1902198" lon="12.9951604" />
+ <node id="1877768489" visible="true" version="1" timestamp="2012-08-22T14:39:35Z" lat="42.1814305" lon="12.9963029" />
+ <node id="1877768544" visible="true" version="1" timestamp="2012-08-22T14:39:35Z" lat="42.1812503" lon="12.9959730" />
+ <node id="1877768580" visible="true" version="1" timestamp="2012-08-22T14:39:36Z" lat="42.1796920" lon="12.9959784" />
+ <node id="1877768720" visible="true" version="1" timestamp="2012-08-22T14:39:37Z" lat="42.1805029" lon="12.9962412" />
+ <node id="1877768783" visible="true" version="1" timestamp="2012-08-22T14:39:38Z" lat="42.1813755" lon="12.9961460" />
+ <node id="1877768842" visible="true" version="1" timestamp="2012-08-22T14:39:39Z" lat="42.1809839" lon="12.9960159" />
+ <node id="1877768871" visible="true" version="1" timestamp="2012-08-22T14:39:39Z" lat="42.1794853" lon="12.9958925" />
+ <node id="1877768947" visible="true" version="1" timestamp="2012-08-22T14:39:40Z" lat="42.1808726" lon="12.9962573" />
+ <node id="1877769016" visible="true" version="1" timestamp="2012-08-22T14:39:41Z" lat="42.1807613" lon="12.9963968" />
+ <node id="9855942383" visible="true" version="1" timestamp="2022-06-29T14:51:06Z" lat="42.1890226" lon="12.9951086" />
+ <node id="9855942384" visible="true" version="2" timestamp="2025-01-02T09:05:38Z" lat="42.1906401" lon="12.9953536" />
+ <node id="9855942385" visible="true" version="2" timestamp="2025-01-02T09:05:38Z" lat="42.1907633" lon="12.9955709" />
+ <node id="9855942386" visible="true" version="1" timestamp="2022-06-29T14:51:06Z" lat="42.1911570" lon="12.9965155" />
+ <node id="9855942387" visible="true" version="2" timestamp="2025-01-02T09:05:38Z" lat="42.1912422" lon="12.9965378" />
+ <node id="9855942388" visible="true" version="2" timestamp="2025-01-02T09:05:38Z" lat="42.1912785" lon="12.9968040" />
+ <node id="12468503013" visible="true" version="1" timestamp="2025-01-02T09:05:38Z" lat="42.1905348" lon="12.9952088" />
+ <node id="12468503014" visible="true" version="1" timestamp="2025-01-02T09:05:38Z" lat="42.1907722" lon="12.9962200" />
+ <node id="12468503015" visible="true" version="1" timestamp="2025-01-02T09:05:38Z" lat="42.1916715" lon="12.9965144" />
+ <node id="12468503016" visible="true" version="1" timestamp="2025-01-02T09:05:38Z" lat="42.1916864" lon="12.9964668" />
+ <way id="177322095" visible="true" version="4" timestamp="2022-06-29T14:51:06Z">
+  <nd ref="1877734259" />
+  <nd ref="1877734010" />
+  <nd ref="1877734213" />
+  <nd ref="1877734034" />
+  <nd ref="1877734283" />
+  <nd ref="1877734204" />
+  <nd ref="1877734335" />
+  <nd ref="1877734424" />
+  <nd ref="1877734267" />
+  <nd ref="1877734056" />
+  <nd ref="1877734270" />
+  <nd ref="1877734195" />
+  <nd ref="1877734374" />
+  <nd ref="1877734158" />
+  <nd ref="1877734330" />
+  <nd ref="1877734220" />
+  <nd ref="1877734340" />
+  <nd ref="1877734333" />
+  <tag k="highway" v="tertiary" />
+  <tag k="name" v="Strada provinciale 34F di Paganico" />
+  <tag k="ref" v="SP 34e" />
+  <tag k="surface" v="asphalt" />
+ </way>
+ <way id="177322096" visible="true" version="4" timestamp="2025-01-02T09:05:38Z">
+  <nd ref="1877734279" />
+  <nd ref="1877734160" />
+  <nd ref="1877734361" />
+  <nd ref="9855942388" />
+  <nd ref="1877734089" />
+  <nd ref="12468503015" />
+  <nd ref="12468503016" />
+  <nd ref="1877734101" />
+  <nd ref="1877734405" />
+  <nd ref="1877734068" />
+  <nd ref="9855942387" />
+  <nd ref="9855942386" />
+  <nd ref="1877734406" />
+  <nd ref="1877734370" />
+  <nd ref="12468503014" />
+  <nd ref="1877734411" />
+  <nd ref="1877734272" />
+  <nd ref="9855942385" />
+  <nd ref="9855942384" />
+  <nd ref="1877734382" />
+  <nd ref="12468503013" />
+  <nd ref="1877734226" />
+  <nd ref="1877734065" />
+  <nd ref="1877734426" />
+  <nd ref="1877734293" />
+  <nd ref="1877734376" />
+  <nd ref="1877734304" />
+  <nd ref="9855942383" />
+  <nd ref="1877734063" />
+  <nd ref="1877734259" />
+  <tag k="highway" v="unclassified" />
+  <tag k="surface" v="asphalt" />
+ </way>
+ <way id="177323152" visible="true" version="2" timestamp="2022-06-29T14:51:06Z">
+  <nd ref="1877768489" />
+  <nd ref="1877768783" />
+  <nd ref="1877768544" />
+  <nd ref="1877768842" />
+  <nd ref="1877768947" />
+  <nd ref="1877769016" />
+  <nd ref="1877768720" />
+  <tag k="highway" v="unclassified" />
+  <tag k="surface" v="compacted" />
+ </way>
+ <way id="177323163" visible="true" version="3" timestamp="2022-06-29T14:51:06Z">
+  <nd ref="1877768720" />
+  <nd ref="1877768580" />
+  <tag k="bridge" v="yes" />
+  <tag k="highway" v="unclassified" />
+  <tag k="layer" v="1" />
+ </way>
+ <way id="1065839457" visible="true" version="2" timestamp="2022-06-29T14:51:06Z">
+  <nd ref="1877734333" />
+  <nd ref="403904973" />
+  <nd ref="1818049582" />
+  <nd ref="1818049583" />
+  <nd ref="403904972" />
+  <nd ref="1877768489" />
+  <tag k="highway" v="secondary" />
+  <tag k="name" v="Strada provinciale 34 Turanense" />
+  <tag k="ref" v="SP 34" />
+  <tag k="surface" v="asphalt" />
+ </way>
+ <way id="1065839459" visible="true" version="2" timestamp="2022-06-29T14:51:06Z">
+  <nd ref="1877768871" />
+  <nd ref="1877768580" />
+  <tag k="highway" v="unclassified" />
+  <tag k="surface" v="compacted" />
+ </way>
+ <relation id="14307618" visible="true" version="1" timestamp="2022-06-29T14:51:06Z">
+  <member type="way" ref="177322096" role="" />
+  <member type="way" ref="177322095" role="" />
+  <member type="way" ref="1065839457" role="" />
+  <member type="way" ref="177323152" role="" />
+  <member type="way" ref="177323163" role="" />
+  <member type="way" ref="1065839459" role="" />
+  <tag k="ascent" v="73" />
+  <tag k="cai_scale" v="T" />
+  <tag k="descent" v="200" />
+  <tag k="distance" v="1.950" />
+  <tag k="duration:backward" v="0:50" />
+  <tag k="duration:forward" v="0:40" />
+  <tag k="from" v="Paganico" />
+  <tag k="name" v="Paganico-ponte di Paganico" />
+  <tag k="network" v="lwn" />
+  <tag k="osmc:symbol" v="red:red:white_stripe:374A:black" />
+  <tag k="ref" v="374A" />
+  <tag k="ref:REI" v="ORIN374A" />
+  <tag k="route" v="hiking" />
+  <tag k="rwn:name" v="Rete Escursionistica del Lazio (REL)" />
+  <tag k="source" v="survey:CAI" />
+  <tag k="source:ref" v="9232004" />
+  <tag k="symbol" v="374A on white red flags" />
+  <tag k="symbol:it" v="374A su bandierina bianca e rossa" />
+  <tag k="to" v="Ponte di Paganico" />
+  <tag k="type" v="route" />
+ </relation>
+</osm>

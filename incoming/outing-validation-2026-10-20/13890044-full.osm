@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (1301 spike-08.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="9554127911" visible="true" version="1" timestamp="2022-03-04T12:36:14Z" lat="42.1930203" lon="13.1333654" />
+ <node id="9554725900" visible="true" version="1" timestamp="2022-03-04T18:36:33Z" lat="42.1909938" lon="13.1386627" />
+ <node id="9554725901" visible="true" version="1" timestamp="2022-03-04T18:36:33Z" lat="42.1909312" lon="13.1387405" />
+ <node id="9554725902" visible="true" version="1" timestamp="2022-03-04T18:36:33Z" lat="42.1908627" lon="13.1387646" />
+ <node id="9554725903" visible="true" version="1" timestamp="2022-03-04T18:36:33Z" lat="42.1908319" lon="13.1387191" />
+ <node id="9554725904" visible="true" version="1" timestamp="2022-03-04T18:36:33Z" lat="42.1907126" lon="13.1382309" />
+ <node id="9554725905" visible="true" version="1" timestamp="2022-03-04T18:36:33Z" lat="42.1906679" lon="13.1379801" />
+ <node id="9554725906" visible="true" version="1" timestamp="2022-03-04T18:36:33Z" lat="42.1906689" lon="13.1376448" />
+ <node id="9554725907" visible="true" version="1" timestamp="2022-03-04T18:36:33Z" lat="42.1906103" lon="13.1374289" />
+ <node id="9554725908" visible="true" version="1" timestamp="2022-03-04T18:36:33Z" lat="42.1905646" lon="13.1372143" />
+ <node id="9554725909" visible="true" version="1" timestamp="2022-03-04T18:36:33Z" lat="42.1905358" lon="13.1371392" />
+ <node id="9554725910" visible="true" version="1" timestamp="2022-03-04T18:36:33Z" lat="42.1906272" lon="13.1368442" />
+ <node id="9554725911" visible="true" version="1" timestamp="2022-03-04T18:36:33Z" lat="42.1907156" lon="13.1367020" />
+ <node id="9554725912" visible="true" version="1" timestamp="2022-03-04T18:36:33Z" lat="42.1907395" lon="13.1364794" />
+ <node id="9554725913" visible="true" version="1" timestamp="2022-03-04T18:36:33Z" lat="42.1908498" lon="13.1362863" />
+ <node id="9554725914" visible="true" version="1" timestamp="2022-03-04T18:36:33Z" lat="42.1911061" lon="13.1360798" />
+ <node id="9554725915" visible="true" version="1" timestamp="2022-03-04T18:36:33Z" lat="42.1912373" lon="13.1360020" />
+ <node id="9554725916" visible="true" version="1" timestamp="2022-03-04T18:36:33Z" lat="42.1915214" lon="13.1358652" />
+ <node id="9554748117" visible="true" version="1" timestamp="2022-03-04T18:36:33Z" lat="42.1916774" lon="13.1357954" />
+ <node id="9554748118" visible="true" version="1" timestamp="2022-03-04T18:36:33Z" lat="42.1918523" lon="13.1357069" />
+ <node id="9554748119" visible="true" version="1" timestamp="2022-03-04T18:36:33Z" lat="42.1919447" lon="13.1355540" />
+ <node id="9554748120" visible="true" version="1" timestamp="2022-03-04T18:36:33Z" lat="42.1920043" lon="13.1352858" />
+ <node id="9554748121" visible="true" version="1" timestamp="2022-03-04T18:36:33Z" lat="42.1920242" lon="13.1351866" />
+ <node id="9554748122" visible="true" version="1" timestamp="2022-03-04T18:36:33Z" lat="42.1920242" lon="13.1350283" />
+ <node id="9554748123" visible="true" version="1" timestamp="2022-03-04T18:36:33Z" lat="42.1919785" lon="13.1348835" />
+ <node id="9554748124" visible="true" version="1" timestamp="2022-03-04T18:36:33Z" lat="42.1919726" lon="13.1346837" />
+ <node id="9554748125" visible="true" version="1" timestamp="2022-03-04T18:36:33Z" lat="42.1919745" lon="13.1345361" />
+ <node id="9554748126" visible="true" version="1" timestamp="2022-03-04T18:36:33Z" lat="42.1920262" lon="13.1343471" />
+ <node id="9554748127" visible="true" version="1" timestamp="2022-03-04T18:36:33Z" lat="42.1920977" lon="13.1341942" />
+ <node id="9554748128" visible="true" version="1" timestamp="2022-03-04T18:36:33Z" lat="42.1922766" lon="13.1340373" />
+ <node id="9554748129" visible="true" version="1" timestamp="2022-03-04T18:36:33Z" lat="42.1924048" lon="13.1338240" />
+ <node id="9554748130" visible="true" version="1" timestamp="2022-03-04T18:36:33Z" lat="42.1924555" lon="13.1336497" />
+ <node id="9554748131" visible="true" version="1" timestamp="2022-03-04T18:36:33Z" lat="42.1927665" lon="13.1334418" />
+ <way id="1037192824" visible="true" version="1" timestamp="2022-03-04T18:36:33Z">
+  <nd ref="9554725909" />
+  <nd ref="9554725908" />
+  <nd ref="9554725907" />
+  <nd ref="9554725906" />
+  <nd ref="9554725905" />
+  <nd ref="9554725904" />
+  <nd ref="9554725903" />
+  <nd ref="9554725902" />
+  <nd ref="9554725901" />
+  <nd ref="9554725900" />
+  <tag k="highway" v="path" />
+  <tag k="surface" v="gravel" />
+ </way>
+ <way id="1037192825" visible="true" version="1" timestamp="2022-03-04T18:36:33Z">
+  <nd ref="9554127911" />
+  <nd ref="9554748131" />
+  <nd ref="9554748130" />
+  <nd ref="9554748129" />
+  <nd ref="9554748128" />
+  <nd ref="9554748127" />
+  <nd ref="9554748126" />
+  <nd ref="9554748125" />
+  <nd ref="9554748124" />
+  <nd ref="9554748123" />
+  <nd ref="9554748122" />
+  <nd ref="9554748121" />
+  <nd ref="9554748120" />
+  <nd ref="9554748119" />
+  <nd ref="9554748118" />
+  <nd ref="9554748117" />
+  <nd ref="9554725916" />
+  <nd ref="9554725915" />
+  <nd ref="9554725914" />
+  <nd ref="9554725913" />
+  <nd ref="9554725912" />
+  <nd ref="9554725911" />
+  <nd ref="9554725910" />
+  <nd ref="9554725909" />
+  <tag k="highway" v="path" />
+  <tag k="surface" v="ground" />
+ </way>
+ <relation id="13890044" visible="true" version="2" timestamp="2024-06-26T07:30:45Z">
+  <member type="way" ref="1037192825" role="" />
+  <member type="way" ref="1037192824" role="" />
+  <tag k="ascent" v="15" />
+  <tag k="cai_scale" v="T" />
+  <tag k="descent" v="94" />
+  <tag k="distance" v="0.500" />
+  <tag k="duration:backward" v="0:25" />
+  <tag k="duration:forward" v="0:20" />
+  <tag k="from" v="La Portella" />
+  <tag k="name" v="La Portella - Grotta Val de' Varri" />
+  <tag k="network" v="lwn" />
+  <tag k="osmc:symbol" v="red:red:white_stripe:478D:black" />
+  <tag k="ref" v="478D" />
+  <tag k="ref:REI" v="ORIE478D" />
+  <tag k="route" v="hiking" />
+  <tag k="rwn:name" v="Rete Escursionistica del Lazio (REL)" />
+  <tag k="source" v="survey:CAI" />
+  <tag k="source:ref" v="9132018" />
+  <tag k="symbol" v="478D on white red flags" />
+  <tag k="symbol:it" v="478D su bandierina bianca e rossa" />
+  <tag k="to" v="Grotta Val de' Varri" />
+  <tag k="type" v="route" />
+ </relation>
+</osm>

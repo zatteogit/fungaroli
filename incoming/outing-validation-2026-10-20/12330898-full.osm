@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (1296 spike-08.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="1251732748" visible="true" version="2" timestamp="2018-12-14T19:36:23Z" lat="42.6002501" lon="13.3507866" />
+ <node id="8432776420" visible="true" version="1" timestamp="2021-02-17T19:20:38Z" lat="42.6002952" lon="13.3507517" />
+ <node id="8432776421" visible="true" version="1" timestamp="2021-02-17T19:20:38Z" lat="42.6003504" lon="13.3506578" />
+ <node id="8432776422" visible="true" version="1" timestamp="2021-02-17T19:20:38Z" lat="42.6004255" lon="13.3505237" />
+ <node id="8432776423" visible="true" version="1" timestamp="2021-02-17T19:20:38Z" lat="42.6005123" lon="13.3503252" />
+ <node id="8432776424" visible="true" version="1" timestamp="2021-02-17T19:20:38Z" lat="42.6007256" lon="13.3500409" />
+ <node id="8432776425" visible="true" version="1" timestamp="2021-02-17T19:20:38Z" lat="42.6008065" lon="13.3500570" />
+ <node id="8432776426" visible="true" version="1" timestamp="2021-02-17T19:20:38Z" lat="42.6009171" lon="13.3501294" />
+ <node id="8432776427" visible="true" version="1" timestamp="2021-02-17T19:20:38Z" lat="42.6010079" lon="13.3501857" />
+ <node id="8432776428" visible="true" version="1" timestamp="2021-02-17T19:20:38Z" lat="42.6010889" lon="13.3499122" />
+ <node id="8432776429" visible="true" version="1" timestamp="2021-02-17T19:20:38Z" lat="42.6011501" lon="13.3501884" />
+ <node id="8432776430" visible="true" version="1" timestamp="2021-02-17T19:20:38Z" lat="42.6012981" lon="13.3501589" />
+ <node id="8432776431" visible="true" version="1" timestamp="2021-02-17T19:20:38Z" lat="42.6017305" lon="13.3499739" />
+ <node id="8432776432" visible="true" version="1" timestamp="2021-02-17T19:20:38Z" lat="42.6022201" lon="13.3501267" />
+ <node id="8432776433" visible="true" version="1" timestamp="2021-02-17T19:20:38Z" lat="42.6025992" lon="13.3500624" />
+ <node id="8432776434" visible="true" version="1" timestamp="2021-02-17T19:20:38Z" lat="42.6030454" lon="13.3500168" />
+ <node id="8432776435" visible="true" version="1" timestamp="2021-02-17T19:20:38Z" lat="42.6033988" lon="13.3500114" />
+ <node id="8432776436" visible="true" version="1" timestamp="2021-02-17T19:20:38Z" lat="42.6037186" lon="13.3501643" />
+ <node id="8432776437" visible="true" version="1" timestamp="2021-02-17T19:20:38Z" lat="42.6045735" lon="13.3496118" />
+ <node id="8432776438" visible="true" version="1" timestamp="2021-02-17T19:20:38Z" lat="42.6046386" lon="13.3495420" />
+ <node id="8432776439" visible="true" version="1" timestamp="2021-02-17T19:20:38Z" lat="42.6050927" lon="13.3491263" />
+ <node id="8432776440" visible="true" version="1" timestamp="2021-02-17T19:20:38Z" lat="42.6055527" lon="13.3488044" />
+ <node id="8432776441" visible="true" version="1" timestamp="2021-02-17T19:20:38Z" lat="42.6060028" lon="13.3485201" />
+ <node id="8432776442" visible="true" version="1" timestamp="2021-02-17T19:20:38Z" lat="42.6065397" lon="13.3482975" />
+ <node id="8432776443" visible="true" version="1" timestamp="2021-02-17T19:20:38Z" lat="42.6073294" lon="13.3480588" />
+ <node id="8432776444" visible="true" version="1" timestamp="2021-02-17T19:20:38Z" lat="42.6077361" lon="13.3481956" />
+ <way id="908175451" visible="true" version="1" timestamp="2021-02-17T19:20:38Z">
+  <nd ref="8432776444" />
+  <nd ref="8432776443" />
+  <nd ref="8432776442" />
+  <nd ref="8432776441" />
+  <nd ref="8432776440" />
+  <nd ref="8432776439" />
+  <nd ref="8432776438" />
+  <nd ref="8432776437" />
+  <nd ref="8432776436" />
+  <nd ref="8432776435" />
+  <nd ref="8432776434" />
+  <nd ref="8432776433" />
+  <nd ref="8432776432" />
+  <nd ref="8432776431" />
+  <nd ref="8432776430" />
+  <nd ref="8432776429" />
+  <nd ref="8432776428" />
+  <nd ref="8432776427" />
+  <nd ref="8432776426" />
+  <nd ref="8432776425" />
+  <nd ref="8432776424" />
+  <nd ref="8432776423" />
+  <nd ref="8432776422" />
+  <nd ref="8432776421" />
+  <nd ref="8432776420" />
+  <nd ref="1251732748" />
+  <tag k="highway" v="path" />
+  <tag k="noname" v="yes" />
+  <tag k="surface" v="grass" />
+ </way>
+ <relation id="12330898" visible="true" version="5" timestamp="2025-09-01T14:07:28Z">
+  <member type="way" ref="908175451" role="" />
+  <tag k="ascent" v="190" />
+  <tag k="cai_scale" v="E" />
+  <tag k="descent" v="2" />
+  <tag k="distance" v="0.9" />
+  <tag k="duration:forward" v="0:45" />
+  <tag k="ele:to" v="1367" />
+  <tag k="from" v="Tornante le Cese" />
+  <tag k="network" v="lwn" />
+  <tag k="operator" v="CAI Amatrice" />
+  <tag k="osmc:symbol" v="red:red:white_stripe:362B:black" />
+  <tag k="ref" v="362B" />
+  <tag k="ref:REI" v="ORIE362B" />
+  <tag k="route" v="hiking" />
+  <tag k="rwn:name" v="Rete Escursionistica del Lazio (REL)" />
+  <tag k="source" v="survey:CAI" />
+  <tag k="source:ref" v="9232019" />
+  <tag k="survey:date" v="2014-07-15" />
+  <tag k="symbol" v="362B on white red flags" />
+  <tag k="symbol:it" v="362B su bandierina bianca e rossa" />
+  <tag k="to" v="Le Serre" />
+  <tag k="type" v="route" />
+  <tag k="website" v="https://www.caiamatrice.it/" />
+ </relation>
+</osm>

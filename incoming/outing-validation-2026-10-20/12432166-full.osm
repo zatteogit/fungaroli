@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (1293 spike-08.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="8382000020" visible="true" version="1" timestamp="2021-01-31T21:33:33Z" lat="42.6435087" lon="13.3424449" />
+ <node id="8443675730" visible="true" version="1" timestamp="2021-02-21T21:12:54Z" lat="42.6495458" lon="13.3397157" />
+ <node id="8507869519" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6435156" lon="13.3422876" />
+ <node id="8507869520" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6435275" lon="13.3420563" />
+ <node id="8507869521" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6435908" lon="13.3416404" />
+ <node id="8507869522" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6436567" lon="13.3413357" />
+ <node id="8507869523" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6436976" lon="13.3411815" />
+ <node id="8507869524" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6438717" lon="13.3413393" />
+ <node id="8507869525" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6439877" lon="13.3414468" />
+ <node id="8507869526" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6440893" lon="13.3417605" />
+ <node id="8507869527" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6441183" lon="13.3418842" />
+ <node id="8507869528" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6441789" lon="13.3419954" />
+ <node id="8507869529" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6443029" lon="13.3419918" />
+ <node id="8507869530" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6443978" lon="13.3420545" />
+ <node id="8507869531" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6445033" lon="13.3421549" />
+ <node id="8507869532" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6446259" lon="13.3421729" />
+ <node id="8507869533" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6448145" lon="13.3420294" />
+ <node id="8507869534" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6450083" lon="13.3417552" />
+ <node id="8507869535" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6451231" lon="13.3414343" />
+ <node id="8507869536" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6454475" lon="13.3411851" />
+ <node id="8507869537" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6454804" lon="13.3410202" />
+ <node id="8507869538" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6455595" lon="13.3408337" />
+ <node id="8507869539" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6456756" lon="13.3405774" />
+ <node id="8507869540" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6457758" lon="13.3405433" />
+ <node id="8507869541" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6459353" lon="13.3405218" />
+ <node id="8507869542" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6460474" lon="13.3404931" />
+ <node id="8507869543" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6462518" lon="13.3404842" />
+ <node id="8507869544" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6463428" lon="13.3405021" />
+ <node id="8507869545" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6464259" lon="13.3405164" />
+ <node id="8507869546" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6465445" lon="13.3405200" />
+ <node id="8507869547" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6466052" lon="13.3405612" />
+ <node id="8507869548" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6467489" lon="13.3406491" />
+ <node id="8507869549" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6468149" lon="13.3407477" />
+ <node id="8507869550" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6468992" lon="13.3408570" />
+ <node id="8507869551" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6470707" lon="13.3409144" />
+ <node id="8507869552" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6471972" lon="13.3409323" />
+ <node id="8507869553" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6473383" lon="13.3409592" />
+ <node id="8507869554" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6474438" lon="13.3410130" />
+ <node id="8507869555" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6476100" lon="13.3410973" />
+ <node id="8507869556" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6477003" lon="13.3411609" />
+ <node id="8507869557" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6477834" lon="13.3411510" />
+ <node id="8507869558" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6479106" lon="13.3410937" />
+ <node id="8507869559" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6479805" lon="13.3410022" />
+ <node id="8507869560" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6480372" lon="13.3407387" />
+ <node id="8507869561" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6480543" lon="13.3405577" />
+ <node id="8507869562" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6480583" lon="13.3404053" />
+ <node id="8507869563" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6480688" lon="13.3403013" />
+ <node id="8507869564" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6480912" lon="13.3401328" />
+ <node id="8507869565" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6480767" lon="13.3399858" />
+ <node id="8507869566" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6480543" lon="13.3398065" />
+ <node id="8507869567" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6480214" lon="13.3396523" />
+ <node id="8507869568" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6479554" lon="13.3393243" />
+ <node id="8507869569" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6479106" lon="13.3390177" />
+ <node id="8507869570" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6478869" lon="13.3387255" />
+ <node id="8507869571" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6479554" lon="13.3385624" />
+ <node id="8507869572" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6480688" lon="13.3384764" />
+ <node id="8507869573" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6481532" lon="13.3384997" />
+ <node id="8507869574" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6482402" lon="13.3385660" />
+ <node id="8507869575" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6483339" lon="13.3386825" />
+ <node id="8507869576" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6483497" lon="13.3387668" />
+ <node id="8507869577" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6484248" lon="13.3388474" />
+ <node id="8507869578" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6484947" lon="13.3388474" />
+ <node id="8507869579" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6485145" lon="13.3388923" />
+ <node id="8507869580" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6486516" lon="13.3390159" />
+ <node id="8507869581" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6486925" lon="13.3390841" />
+ <node id="8507869582" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6488125" lon="13.3392167" />
+ <node id="8507869583" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6489285" lon="13.3393099" />
+ <node id="8507869584" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6490024" lon="13.3394157" />
+ <node id="8507869585" visible="true" version="1" timestamp="2021-03-11T18:23:12Z" lat="42.6492529" lon="13.3394713" />
+ <way id="915956078" visible="true" version="3" timestamp="2024-10-19T11:03:06Z">
+  <nd ref="8443675730" />
+  <nd ref="8507869585" />
+  <nd ref="8507869584" />
+  <nd ref="8507869583" />
+  <nd ref="8507869582" />
+  <nd ref="8507869581" />
+  <nd ref="8507869580" />
+  <nd ref="8507869579" />
+  <nd ref="8507869578" />
+  <nd ref="8507869577" />
+  <nd ref="8507869576" />
+  <nd ref="8507869575" />
+  <nd ref="8507869574" />
+  <nd ref="8507869573" />
+  <nd ref="8507869572" />
+  <nd ref="8507869571" />
+  <nd ref="8507869570" />
+  <nd ref="8507869569" />
+  <nd ref="8507869568" />
+  <nd ref="8507869567" />
+  <nd ref="8507869566" />
+  <nd ref="8507869565" />
+  <nd ref="8507869564" />
+  <nd ref="8507869563" />
+  <nd ref="8507869562" />
+  <nd ref="8507869561" />
+  <nd ref="8507869560" />
+  <nd ref="8507869559" />
+  <nd ref="8507869558" />
+  <nd ref="8507869557" />
+  <nd ref="8507869556" />
+  <nd ref="8507869555" />
+  <nd ref="8507869554" />
+  <nd ref="8507869553" />
+  <nd ref="8507869552" />
+  <nd ref="8507869551" />
+  <nd ref="8507869550" />
+  <nd ref="8507869549" />
+  <nd ref="8507869548" />
+  <nd ref="8507869547" />
+  <nd ref="8507869546" />
+  <nd ref="8507869545" />
+  <nd ref="8507869544" />
+  <nd ref="8507869543" />
+  <nd ref="8507869542" />
+  <nd ref="8507869541" />
+  <nd ref="8507869540" />
+  <nd ref="8507869539" />
+  <nd ref="8507869538" />
+  <nd ref="8507869537" />
+  <nd ref="8507869536" />
+  <nd ref="8507869535" />
+  <nd ref="8507869534" />
+  <nd ref="8507869533" />
+  <nd ref="8507869532" />
+  <nd ref="8507869531" />
+  <nd ref="8507869530" />
+  <nd ref="8507869529" />
+  <nd ref="8507869528" />
+  <nd ref="8507869527" />
+  <nd ref="8507869526" />
+  <nd ref="8507869525" />
+  <nd ref="8507869524" />
+  <nd ref="8507869523" />
+  <nd ref="8507869522" />
+  <nd ref="8507869521" />
+  <nd ref="8507869520" />
+  <nd ref="8507869519" />
+  <nd ref="8382000020" />
+  <tag k="description:it" v="strada per Croce Voceto" />
+  <tag k="highway" v="path" />
+ </way>
+ <relation id="12432166" visible="true" version="3" timestamp="2024-04-03T18:06:32Z">
+  <member type="way" ref="915956078" role="" />
+  <tag k="ascent" v="147" />
+  <tag k="cai_scale" v="E" />
+  <tag k="descent" v="37" />
+  <tag k="distance" v="1.04" />
+  <tag k="duration:forward" v="0:45" />
+  <tag k="from" v="innesto 366" />
+  <tag k="network" v="lwn" />
+  <tag k="old_ref" v="370A" />
+  <tag k="operator" v="CAI Amatrice" />
+  <tag k="osmc:symbol" v="red:red:white_stripe:370A:black" />
+  <tag k="ref" v="370A" />
+  <tag k="ref:REI" v="ORIE370A" />
+  <tag k="route" v="hiking" />
+  <tag k="rwn:name" v="Rete Escursionistica del Lazio (REL)" />
+  <tag k="source" v="survey:CAI" />
+  <tag k="source:ref" v="9232019" />
+  <tag k="symbol" v="370A on white red flags" />
+  <tag k="symbol:it" v="370A su bandierina bianca e rossa" />
+  <tag k="to" v="Croce di Voceto" />
+  <tag k="type" v="route" />
+  <tag k="website" v="https://www.caiamatrice.it/" />
+ </relation>
+</osm>

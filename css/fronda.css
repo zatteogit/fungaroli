@@ -1277,3 +1277,17 @@ a.daily-thought-credit { color:var(--link); text-underline-offset:3px; }
 #onboarding .ob-acceptance { position:sticky; bottom:-24px; z-index:3; margin-top:16px; padding:12px 0 max(12px,env(safe-area-inset-bottom,0px)); background:var(--surface); box-shadow:0 -1px 0 var(--border); }
 #onboarding .ob-acceptance #ob-accept { width:100%; margin:0; min-height:48px; }
 #onboarding .ob-acceptance #ob-status:empty { display:none; }
+
+/* Tempi separati: i subtotali non diventano una durata dell’uscita. */
+.outing-plan { display:block; }
+.outing-plan header { display:flex; flex-wrap:wrap; gap:8px; justify-content:space-between; margin-bottom:14px; }
+.outing-legs { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px 12px; }
+.outing-leg { display:flex; align-items:flex-start; gap:8px; min-width:0; }
+.outing-leg>svg { width:20px; height:20px; flex:none; fill:none; stroke:currentColor; stroke-width:1.7; }
+.outing-leg>span { display:grid; gap:3px; min-width:0; }
+.outing-leg b { font-size:18px; }
+.outing-subtotal { border-top:1px solid var(--border); padding-top:12px; margin:16px 0 8px; }
+.outing-subtotal small { display:block; }
+.outing-evidence { margin-top:12px; font-size:13px; }
+.outing-evidence ul { padding-left:20px; }
+@media(max-width:360px) { .outing-legs { grid-template-columns:1fr; } }
