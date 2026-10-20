@@ -28,3 +28,12 @@
 .home-weather-illustration { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:20px; color:var(--text); background:var(--surface-2); }
 .home-weather-illustration > span svg { width:96px; height:96px; }
 .home-weather-illustration small { font:500 14px/1.5 var(--font-body); }
+
+/* Con il mouse il controllo compare sulla card; touch e tastiera restano accessibili.
+   Il media lascia passare i clic al link della card sottostante. */
+@media (hover:hover) and (pointer:fine) {
+  .atmosphere .atmosphere-toggle { opacity:0; pointer-events:none; }
+  :hover > .atmosphere > .atmosphere-toggle,
+  .atmosphere:hover > .atmosphere-toggle,
+  .atmosphere:focus-within > .atmosphere-toggle { opacity:1; pointer-events:auto; }
+}
