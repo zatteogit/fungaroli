@@ -3,6 +3,8 @@ import schema from '../migrations/0001_community.sql';
 import legalAcceptancesSchema from '../migrations/0009_legal_acceptances.sql';
 import preferencesSchema from '../migrations/0003_account_preferences.sql';
 import observationsSchema from '../migrations/0007_shared_observations.sql';
+import animalObservationsSchema from '../migrations/0013_animal_observations.sql';
+import animalCatalog from '../data/animals.json';
 import {rankingPolicy} from './admin-dashboard.js';
 import {initExternalObservations} from './external-observations.js';
 import {sharedObservation} from '../js/community-observation.js';
@@ -39,6 +41,8 @@ async function init(db) {
   if (!initialized.has(db)) initialized.set(db, (async () => {
     // D1 exec treats individual lines as statements; use complete SQL statements.
     await db.batch((schema+';'+preferencesSchema+';'+observationsSchema+';'+legalAcceptancesSchema).split(';').map((s) => s.trim()).filter((s) => s && !s.startsWith('PRAGMA')).map((s) => db.prepare(s)));
+    const observationTable=await db.prepare("SELECT sql FROM sqlite_master WHERE type='table' AND name='shared_observations'").first('sql');
+    if(!observationTable?.includes("'animale'"))await db.batch(animalObservationsSchema.split(';').map(s=>s.trim()).filter(Boolean).map(s=>db.prepare(s)));
     await db.prepare("INSERT INTO community_meta(key,value) VALUES('ip_salt',?) ON CONFLICT(key) DO NOTHING").bind(token()).run();
   })().catch((e) => { initialized.delete(db); throw e; }));
   return initialized.get(db);
@@ -82,8 +86,8 @@ export async function readCommunityUser(request,env,now=Date.now()) {
   try{return await signedIn(request,env.COMMUNITY_DB,now);}catch(e){if(e.status===401)return null;throw e;}
 }
 async function currentCatalogIds(env,origin) {
-  const content=await publishedResources(env,origin,['species-traits','edible-catalog','zones','plants','trees']);
-  const references=new Set([...Object.keys(content?.['species-traits']?.taxa||traits.taxa).map(id=>'#/fungo/'+id),...buildEdibleCatalog(content?.['species-traits']||traits,content?.['edible-catalog']||edibleCatalog).flatMap(s=>['#/specie/'+s.id,'#/commestibile/'+s.id]),...Object.keys(content?.plants?.plants||plantCatalog.plants).map(id=>'#/pianta/'+id),...Object.keys(content?.trees?.trees||treeCatalog.trees).map(id=>'#/albero/'+id)]);
+  const content=await publishedResources(env,origin,['species-traits','edible-catalog','zones','plants','trees','animals']);
+  const references=new Set([...(content?.animals?.items||animalCatalog.items).filter(a=>a.publicationStatus==='ready').map(a=>'#/animale/'+a.id),...Object.keys(content?.['species-traits']?.taxa||traits.taxa).map(id=>'#/fungo/'+id),...buildEdibleCatalog(content?.['species-traits']||traits,content?.['edible-catalog']||edibleCatalog).flatMap(s=>['#/specie/'+s.id,'#/commestibile/'+s.id]),...Object.keys(content?.plants?.plants||plantCatalog.plants).map(id=>'#/pianta/'+id),...Object.keys(content?.trees?.trees||treeCatalog.trees).map(id=>'#/albero/'+id)]);
   if(!content)return {speciesIds,zoneIds,plantIds:new Set(Object.keys(plantCatalog.plants)),references};
   return {references,plantIds:new Set(Object.keys(content.plants?.plants||plantCatalog.plants)),speciesIds:new Set(buildEdibleCatalog(content['species-traits'],content['edible-catalog']).map(s=>s.id)),zoneIds:new Set(content.zones.zones.map(z=>z.id))};
 }

@@ -14,6 +14,7 @@ const clearSummary = () => { summaryRevision++; summary = null; };
 export const communityEnabled = () => enabled;
 export const currentUser = () => user;
 export const communityReady = () => ready;
+export const animalCommunity = id => ({access:summary?.access||'unavailable',status:communityStatus(),records:summary?.access==='granted'?(summary.observations||[]).filter(r=>r.category==='animale'&&r.taxonId===id):[]});
 
 export async function communityRequest(path, method = 'GET', data, {signal} = {}) {
   const res = await fetch('/api/community/' + path, { method, credentials: 'same-origin', cache: 'no-store',
@@ -65,7 +66,7 @@ export function communityOverview() {
   // Notes may describe the same outing: keep the series distinct, never sum them as independent outings.
   const notes=summary.observations||[];
   const list=(records,note=false)=>records.length?`<ul class="community-totals">${records.map(r=>`<li><b>${esc(zoneName(r.zoneId))} · ${esc(note?taxonName(r.taxonId):r.name)}</b><span>${note?`${r.sightings} osservazioni dichiarate · ${r.zeros} ricerche a vuoto`:outcomes(r)}</span></li>`).join('')}</ul>`:'';
-  return list(rows)+(notes.length?`<h3>Osservazioni strutturate</h3><p class="small">Serie separata: può comprendere note della stessa uscita, su funghi, piante e alberi.</p>${list(notes,true)}`:'');
+  return list(rows)+(notes.length?`<h3>Osservazioni strutturate</h3><p class="small">Serie separata: può comprendere note della stessa uscita, su funghi, piante, alberi e animali.</p>${list(notes,true)}`:'');
 }
 export function reportBadge(zoneId, speciesId) {
   const records = (summary?.reports || []).filter(r => (!zoneId || r.zoneId === zoneId) && r.speciesId === speciesId);
