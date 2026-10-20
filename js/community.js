@@ -50,12 +50,12 @@ export async function refreshCommunity({signal} = {}) {
 }
 export function communityStatus() {
   if (!enabled) return 'Condivisione delle osservazioni non ancora attiva.';
-  if (!user) return 'Accedi e scegli un’osservazione da condividere per consultare i dati collettivi.';
-  if (!summary) return 'Dati collettivi temporaneamente non disponibili.';
-  if (summary.access!=='granted') return 'Condividi un’osservazione, anche una ricerca a vuoto, per consultare i dati collettivi.';
+  if (!user) return 'Ogni uscita aggiunge qualcosa. Accedi e condividi un’osservazione per scoprire cosa raccontano gli altri.';
+  if (!summary) return 'Le osservazioni condivise non sono disponibili in questo momento. Riprova più tardi.';
+  if (summary.access!=='granted') return 'Hai fatto un giro nel bosco? Condividi cosa hai osservato, anche se non hai trovato nulla, per leggere i riepiloghi degli altri.';
   const count=(summary.totalReports||0)+(summary.observations||[]).reduce((n,r)=>n+r.observations,0);
-  return count ? `${count} segnalazioni negli aggregati consultabili · ultimi 7 giorni.`
-    : 'Dati ancora insufficienti per pubblicare gli aggregati degli ultimi 7 giorni. Non significa che manchino funghi.';
+  return count ? `${count} osservazioni condivise negli ultimi 7 giorni. Scopri dove e cosa è stato segnalato.`
+    : 'Le osservazioni degli ultimi 7 giorni sono ancora poche per un riepilogo. Anche la tua uscita può essere utile.';
 }
 const outcomes = r => `${r.sightings} ritrovamenti dichiarati · ${r.zeros} ricerche a vuoto`;
 export function communityOverview() {
