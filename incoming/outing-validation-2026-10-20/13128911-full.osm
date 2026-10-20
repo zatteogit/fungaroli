@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (1295 spike-08.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="3436609996" visible="true" version="3" timestamp="2021-08-26T06:20:45Z" lat="42.0955103" lon="12.4421152" />
+ <node id="5330973936" visible="true" version="1" timestamp="2018-01-10T10:26:12Z" lat="42.1001418" lon="12.4372474" />
+ <node id="5330974158" visible="true" version="2" timestamp="2022-03-20T20:56:11Z" lat="42.0998718" lon="12.4385148" />
+ <node id="5330974204" visible="true" version="2" timestamp="2022-03-20T20:56:11Z" lat="42.1000461" lon="12.4381587" />
+ <node id="9037077715" visible="true" version="1" timestamp="2021-08-26T07:09:24Z" lat="42.1001632" lon="12.4376015" />
+ <node id="9037077716" visible="true" version="1" timestamp="2021-08-26T07:09:24Z" lat="42.1001390" lon="12.4378367" />
+ <node id="9037116017" visible="true" version="1" timestamp="2021-08-26T07:09:24Z" lat="42.0999811" lon="12.4383792" />
+ <node id="9037116018" visible="true" version="1" timestamp="2021-08-26T07:09:24Z" lat="42.0996511" lon="12.4387861" />
+ <node id="9037116019" visible="true" version="1" timestamp="2021-08-26T07:09:24Z" lat="42.0994562" lon="12.4393732" />
+ <node id="9037116020" visible="true" version="1" timestamp="2021-08-26T07:09:24Z" lat="42.0991773" lon="12.4399535" />
+ <node id="9037116021" visible="true" version="1" timestamp="2021-08-26T07:09:24Z" lat="42.0990066" lon="12.4402471" />
+ <node id="9037116022" visible="true" version="1" timestamp="2021-08-26T07:09:24Z" lat="42.0989390" lon="12.4405819" />
+ <node id="9037116023" visible="true" version="1" timestamp="2021-08-26T07:09:24Z" lat="42.0988053" lon="12.4409750" />
+ <node id="9037116024" visible="true" version="1" timestamp="2021-08-26T07:09:24Z" lat="42.0986295" lon="12.4412703" />
+ <node id="9037116025" visible="true" version="1" timestamp="2021-08-26T07:09:24Z" lat="42.0983951" lon="12.4413098" />
+ <node id="9037116026" visible="true" version="1" timestamp="2021-08-26T07:09:24Z" lat="42.0980448" lon="12.4414163" />
+ <node id="9037116027" visible="true" version="1" timestamp="2021-08-26T07:09:24Z" lat="42.0977085" lon="12.4418746" />
+ <node id="9037116028" visible="true" version="1" timestamp="2021-08-26T07:09:24Z" lat="42.0975734" lon="12.4422678" />
+ <node id="9037116029" visible="true" version="1" timestamp="2021-08-26T07:09:24Z" lat="42.0972117" lon="12.4427931" />
+ <node id="9037116030" visible="true" version="1" timestamp="2021-08-26T07:09:24Z" lat="42.0969454" lon="12.4430232" />
+ <node id="9037116031" visible="true" version="1" timestamp="2021-08-26T07:09:24Z" lat="42.0967365" lon="12.4429305" />
+ <node id="9037116032" visible="true" version="1" timestamp="2021-08-26T07:09:24Z" lat="42.0966244" lon="12.4427863" />
+ <node id="9037116033" visible="true" version="1" timestamp="2021-08-26T07:09:24Z" lat="42.0964677" lon="12.4427125" />
+ <node id="9037116034" visible="true" version="1" timestamp="2021-08-26T07:09:24Z" lat="42.0963314" lon="12.4426094" />
+ <node id="9037116035" visible="true" version="1" timestamp="2021-08-26T07:09:24Z" lat="42.0962218" lon="12.4424824" />
+ <node id="9037116036" visible="true" version="1" timestamp="2021-08-26T07:09:24Z" lat="42.0960779" lon="12.4424223" />
+ <node id="9037116037" visible="true" version="1" timestamp="2021-08-26T07:09:24Z" lat="42.0957288" lon="12.4420274" />
+ <node id="9037116038" visible="true" version="1" timestamp="2021-08-26T07:09:24Z" lat="42.0956397" lon="12.4420206" />
+ <node id="9592769157" visible="true" version="1" timestamp="2022-03-20T20:56:11Z" lat="42.0992110" lon="12.4398834" />
+ <node id="9592769158" visible="true" version="1" timestamp="2022-03-20T20:56:11Z" lat="42.0990382" lon="12.4401927" />
+ <node id="9592769159" visible="true" version="1" timestamp="2022-03-20T20:56:11Z" lat="42.0989566" lon="12.4404946" />
+ <way id="976575736" visible="true" version="2" timestamp="2022-03-20T20:56:11Z">
+  <nd ref="3436609996" />
+  <nd ref="9037116038" />
+  <nd ref="9037116037" />
+  <nd ref="9037116036" />
+  <nd ref="9037116035" />
+  <nd ref="9037116034" />
+  <nd ref="9037116033" />
+  <nd ref="9037116032" />
+  <nd ref="9037116031" />
+  <nd ref="9037116030" />
+  <nd ref="9037116029" />
+  <nd ref="9037116028" />
+  <nd ref="9037116027" />
+  <nd ref="9037116026" />
+  <nd ref="9037116025" />
+  <nd ref="9037116024" />
+  <nd ref="9037116023" />
+  <nd ref="9037116022" />
+  <nd ref="9592769159" />
+  <nd ref="9037116021" />
+  <nd ref="9592769158" />
+  <nd ref="9037116020" />
+  <nd ref="9592769157" />
+  <nd ref="9037116019" />
+  <nd ref="9037116018" />
+  <nd ref="5330974158" />
+  <nd ref="9037116017" />
+  <nd ref="5330974204" />
+  <nd ref="9037077716" />
+  <nd ref="9037077715" />
+  <nd ref="5330973936" />
+  <tag k="highway" v="path" />
+  <tag k="surface" v="grass" />
+ </way>
+ <relation id="13128911" visible="true" version="5" timestamp="2023-02-19T20:35:24Z">
+  <member type="way" ref="976575736" role="" />
+  <tag k="ascent" v="110" />
+  <tag k="cai_scale" v="E" />
+  <tag k="descent" v="20" />
+  <tag k="distance" v="00.8" />
+  <tag k="duration:backward" v="00:40" />
+  <tag k="duration:forward" v="00:40" />
+  <tag k="from" v="209B" />
+  <tag k="name" v="Monte Musino" />
+  <tag k="network" v="lwn" />
+  <tag k="operator" v="Ente Regionale Parco di Veio" />
+  <tag k="osmc:symbol" v="red:red:white_stripe:209D:black" />
+  <tag k="ref" v="209D" />
+  <tag k="ref:REI" v="ORMN209D" />
+  <tag k="route" v="hiking" />
+  <tag k="rwn:name" v="Rete Escursionistica del Lazio (REL)" />
+  <tag k="source" v="survey:CAI" />
+  <tag k="source:ref" v="9232001" />
+  <tag k="symbol" v="209D on white red flags" />
+  <tag k="symbol:it" v="209D su bandierina bianca e rossa" />
+  <tag k="to" v="209A" />
+  <tag k="type" v="route" />
+ </relation>
+</osm>

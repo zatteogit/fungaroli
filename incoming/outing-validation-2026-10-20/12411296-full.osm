@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (1300 spike-08.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="4364332215" visible="true" version="3" timestamp="2025-07-16T19:35:22Z" lat="42.6343875" lon="13.3141724" />
+ <node id="4365095364" visible="true" version="2" timestamp="2021-03-07T14:58:24Z" lat="42.6340646" lon="13.3142446" />
+ <node id="4365095365" visible="true" version="2" timestamp="2021-03-07T14:58:24Z" lat="42.6338150" lon="13.3143626" />
+ <node id="4365095366" visible="true" version="2" timestamp="2021-03-07T14:58:24Z" lat="42.6336641" lon="13.3144940" />
+ <node id="4365095367" visible="true" version="2" timestamp="2021-03-07T14:58:24Z" lat="42.6335314" lon="13.3147547" />
+ <node id="4365095368" visible="true" version="2" timestamp="2021-03-07T14:58:24Z" lat="42.6334716" lon="13.3147966" />
+ <node id="4365095369" visible="true" version="2" timestamp="2021-03-07T14:58:24Z" lat="42.6308934" lon="13.3120334" />
+ <node id="8494243713" visible="true" version="1" timestamp="2021-03-07T14:58:24Z" lat="42.6309231" lon="13.3119929" />
+ <node id="8494243714" visible="true" version="1" timestamp="2021-03-07T14:58:24Z" lat="42.6310395" lon="13.3119555" />
+ <node id="8494243715" visible="true" version="1" timestamp="2021-03-07T14:58:24Z" lat="42.6311804" lon="13.3119856" />
+ <node id="8494243716" visible="true" version="1" timestamp="2021-03-07T14:58:24Z" lat="42.6313382" lon="13.3126351" />
+ <node id="8494271617" visible="true" version="1" timestamp="2021-03-07T14:58:24Z" lat="42.6312738" lon="13.3121896" />
+ <node id="8494271618" visible="true" version="1" timestamp="2021-03-07T14:58:24Z" lat="42.6314438" lon="13.3130587" />
+ <node id="8494271619" visible="true" version="1" timestamp="2021-03-07T14:58:24Z" lat="42.6314837" lon="13.3134407" />
+ <node id="8494271620" visible="true" version="1" timestamp="2021-03-07T14:58:24Z" lat="42.6315189" lon="13.3136447" />
+ <node id="8494271621" visible="true" version="1" timestamp="2021-03-07T14:58:24Z" lat="42.6321736" lon="13.3143567" />
+ <node id="8494271622" visible="true" version="1" timestamp="2021-03-07T14:58:24Z" lat="42.6319447" lon="13.3138935" />
+ <node id="8494271623" visible="true" version="1" timestamp="2021-03-07T14:58:24Z" lat="42.6326040" lon="13.3149250" />
+ <node id="8494271624" visible="true" version="1" timestamp="2021-03-07T14:58:24Z" lat="42.6326775" lon="13.3149291" />
+ <node id="8494271625" visible="true" version="1" timestamp="2021-03-07T14:58:24Z" lat="42.6324171" lon="13.3147980" />
+ <node id="8494271626" visible="true" version="1" timestamp="2021-03-07T14:58:24Z" lat="42.6325634" lon="13.3149052" />
+ <node id="8494271627" visible="true" version="1" timestamp="2021-03-07T14:58:24Z" lat="42.6328505" lon="13.3149583" />
+ <node id="8494271628" visible="true" version="1" timestamp="2021-03-07T14:58:24Z" lat="42.6330466" lon="13.3149187" />
+ <node id="8494271629" visible="true" version="1" timestamp="2021-03-07T14:58:24Z" lat="42.6332411" lon="13.3148375" />
+ <node id="8494271630" visible="true" version="1" timestamp="2021-03-07T14:58:24Z" lat="42.6331553" lon="13.3148719" />
+ <node id="8494271631" visible="true" version="1" timestamp="2021-03-07T14:58:24Z" lat="42.6334631" lon="13.3147970" />
+ <node id="8494271632" visible="true" version="1" timestamp="2021-03-07T14:58:24Z" lat="42.6334471" lon="13.3148146" />
+ <node id="8494271633" visible="true" version="1" timestamp="2021-03-07T14:58:24Z" lat="42.6334348" lon="13.3148178" />
+ <node id="8494271634" visible="true" version="1" timestamp="2021-03-07T14:58:24Z" lat="42.6334080" lon="13.3148188" />
+ <node id="8494271635" visible="true" version="2" timestamp="2024-10-26T15:20:00Z" lat="42.6333862" lon="13.3148244">
+  <tag k="ford" v="yes" />
+ </node>
+ <node id="8494271637" visible="true" version="1" timestamp="2021-03-07T14:58:24Z" lat="42.6335022" lon="13.3147741" />
+ <way id="438859688" visible="true" version="3" timestamp="2024-10-26T15:20:00Z">
+  <nd ref="4364332215" />
+  <nd ref="4365095364" />
+  <nd ref="4365095365" />
+  <nd ref="4365095366" />
+  <nd ref="4365095367" />
+  <nd ref="8494271637" />
+  <nd ref="4365095368" />
+  <nd ref="8494271631" />
+  <nd ref="8494271632" />
+  <nd ref="8494271633" />
+  <nd ref="8494271634" />
+  <nd ref="8494271635" />
+  <nd ref="8494271629" />
+  <nd ref="8494271630" />
+  <nd ref="8494271628" />
+  <nd ref="8494271627" />
+  <nd ref="8494271624" />
+  <nd ref="8494271623" />
+  <nd ref="8494271626" />
+  <nd ref="8494271625" />
+  <nd ref="8494271621" />
+  <nd ref="8494271622" />
+  <nd ref="8494271620" />
+  <nd ref="8494271619" />
+  <nd ref="8494271618" />
+  <nd ref="8494243716" />
+  <nd ref="8494271617" />
+  <nd ref="8494243715" />
+  <nd ref="8494243714" />
+  <nd ref="8494243713" />
+  <nd ref="4365095369" />
+  <tag k="highway" v="track" />
+ </way>
+ <relation id="12411296" visible="true" version="5" timestamp="2025-07-16T19:35:22Z">
+  <member type="way" ref="438859688" role="" />
+  <tag k="ascent" v="12" />
+  <tag k="cai_scale" v="T" />
+  <tag k="descent" v="12" />
+  <tag k="distance" v="0.55" />
+  <tag k="duration:backward" v="0:15" />
+  <tag k="duration:forward" v="0:15" />
+  <tag k="from" v="Percorsa 369 (Collepagluca)" />
+  <tag k="network" v="lwn" />
+  <tag k="old_ref" v="369D" />
+  <tag k="operator" v="CAI Amatrice" />
+  <tag k="osmc:symbol" v="red:red:white_stripe:369D:black" />
+  <tag k="ref" v="369D" />
+  <tag k="ref:REI" v="ORIE369D" />
+  <tag k="route" v="hiking" />
+  <tag k="rwn:name" v="Rete Escursionistica del Lazio (REL)" />
+  <tag k="source" v="survey:CAI" />
+  <tag k="source:ref" v="9232019" />
+  <tag k="survey:date" v="2014-07-14" />
+  <tag k="symbol" v="369D on white red flags" />
+  <tag k="symbol:it" v="369D su bandierina bianca e rossa" />
+  <tag k="to" v="Cerro delle Valli (monumentale)" />
+  <tag k="type" v="route" />
+ </relation>
+</osm>

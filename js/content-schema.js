@@ -36,7 +36,7 @@ export const CONTENT_TEMPLATES = {
   infografiche:{file:'',alt:'',author:'',license:'',page:''},
   'media-glossary':{name:'',illustrations:[]},
 };
-export const isLockedField = key => ['samples','lines','line','sample_categories','in_zone_km','total_km','duration','ascent','generated','source','sourceEvidence','publicPlaces','wholeTrailEvidence','outingAssessment'].includes(key);
+export const isLockedField = key => ['samples','lines','line','sample_categories','in_zone_km','total_km','duration','ascent','generated','source','sourceEvidence','publicPlaces','wholeTrailEvidence','outingAssessment','routeValidation'].includes(key);
 export const FIELD_LABELS = {
   acceptance_version:'Revisione delle CGS (aumentare solo se occorre una nuova accettazione)',
   samplingProvenance:'Provenienza del campionamento',province:'Province',coordinateProvenance:'Provenienza delle coordinate',radiusNote:'Significato del raggio',collectionStatus:'Stato della raccolta',collectionNote:'Regole locali',collectionSourceUrl:'Fonte delle regole locali',accessStatus:'Verifica degli accessi',manager:'Ente gestore',

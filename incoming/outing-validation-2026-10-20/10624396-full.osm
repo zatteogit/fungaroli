@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (1321 spike-08.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="876050371" visible="true" version="2" timestamp="2010-08-23T16:30:18Z" lat="42.4476300" lon="12.9996781" />
+ <node id="876050375" visible="true" version="1" timestamp="2010-08-23T16:27:10Z" lat="42.4461795" lon="13.0063867" />
+ <node id="876050378" visible="true" version="3" timestamp="2020-01-28T14:20:07Z" lat="42.4499580" lon="12.9977824">
+  <tag k="information" v="guidepost" />
+  <tag k="tourism" v="information" />
+ </node>
+ <node id="876050381" visible="true" version="1" timestamp="2010-08-23T16:27:10Z" lat="42.4469747" lon="13.0013658" />
+ <node id="876050385" visible="true" version="3" timestamp="2010-08-23T16:31:01Z" lat="42.4496414" lon="12.9980142" />
+ <node id="876050393" visible="true" version="1" timestamp="2010-08-23T16:27:10Z" lat="42.4485131" lon="12.9977036" />
+ <node id="876050399" visible="true" version="1" timestamp="2010-08-23T16:27:10Z" lat="42.4468537" lon="13.0027167" />
+ <node id="876050411" visible="true" version="1" timestamp="2010-08-23T16:27:11Z" lat="42.4487079" lon="12.9977425" />
+ <node id="876050415" visible="true" version="1" timestamp="2010-08-23T16:27:11Z" lat="42.4468825" lon="13.0041691" />
+ <node id="876050420" visible="true" version="1" timestamp="2010-08-23T16:27:12Z" lat="42.4462308" lon="13.0059627" />
+ <node id="876050423" visible="true" version="1" timestamp="2010-08-23T16:27:12Z" lat="42.4477698" lon="12.9992419" />
+ <node id="876050425" visible="true" version="1" timestamp="2010-08-23T16:27:12Z" lat="42.4466866" lon="13.0052701" />
+ <node id="876050428" visible="true" version="1" timestamp="2010-08-23T16:27:12Z" lat="42.4472858" lon="13.0005225" />
+ <node id="876050432" visible="true" version="2" timestamp="2010-08-23T16:30:16Z" lat="42.4494071" lon="12.9982649" />
+ <node id="876050437" visible="true" version="1" timestamp="2010-08-23T16:27:12Z" lat="42.4468479" lon="13.0022091" />
+ <node id="876050454" visible="true" version="1" timestamp="2010-08-23T16:27:13Z" lat="42.4481951" lon="12.9979299" />
+ <node id="876050458" visible="true" version="1" timestamp="2010-08-23T16:27:13Z" lat="42.4479715" lon="12.9984610" />
+ <node id="876050462" visible="true" version="2" timestamp="2010-08-23T16:30:17Z" lat="42.4469735" lon="13.0033016" />
+ <node id="876050465" visible="true" version="2" timestamp="2010-08-23T16:30:17Z" lat="42.4465796" lon="13.0054692" />
+ <node id="876054318" visible="true" version="1" timestamp="2010-08-23T16:30:14Z" lat="42.4494882" lon="12.9982604" />
+ <node id="876054321" visible="true" version="2" timestamp="2010-08-23T16:31:02Z" lat="42.4495775" lon="12.9981918" />
+ <node id="876054326" visible="true" version="1" timestamp="2010-08-23T16:30:14Z" lat="42.4469785" lon="13.0037062" />
+ <node id="876055114" visible="true" version="1" timestamp="2010-08-23T16:31:00Z" lat="42.4498092" lon="12.9981231" />
+ <node id="7640963783" visible="true" version="1" timestamp="2020-06-21T20:46:53Z" lat="42.4499443" lon="12.9978137" />
+ <node id="9854391038" visible="true" version="1" timestamp="2022-06-28T22:13:46Z" lat="42.4461808" lon="13.0064813" />
+ <way id="74037538" visible="true" version="5" timestamp="2022-06-28T22:13:46Z">
+  <nd ref="876050378" />
+  <nd ref="7640963783" />
+  <nd ref="876055114" />
+  <nd ref="876050385" />
+  <nd ref="876054321" />
+  <nd ref="876054318" />
+  <nd ref="876050432" />
+  <nd ref="876050411" />
+  <nd ref="876050393" />
+  <nd ref="876050454" />
+  <nd ref="876050458" />
+  <nd ref="876050423" />
+  <nd ref="876050371" />
+  <nd ref="876050428" />
+  <nd ref="876050381" />
+  <nd ref="876050437" />
+  <nd ref="876050399" />
+  <nd ref="876050462" />
+  <nd ref="876054326" />
+  <nd ref="876050415" />
+  <nd ref="876050425" />
+  <nd ref="876050465" />
+  <nd ref="876050420" />
+  <nd ref="876050375" />
+  <nd ref="9854391038" />
+  <tag k="highway" v="path" />
+  <tag k="name" v="Sentiero Natura Acerone" />
+ </way>
+ <relation id="10624396" visible="true" version="4" timestamp="2022-07-02T11:56:22Z">
+  <member type="way" ref="74037538" role="" />
+  <tag k="ascent" v="100" />
+  <tag k="cai_scale" v="E" />
+  <tag k="descent" v="100" />
+  <tag k="distance" v="1" />
+  <tag k="duration:backward" v="0:30" />
+  <tag k="duration:forward" v="00:30" />
+  <tag k="from" v="Maneggio" />
+  <tag k="name" v="Sentiero Natura L'Acerone" />
+  <tag k="network" v="lwn" />
+  <tag k="operator" v="Club Alpino Italiano" />
+  <tag k="osmc:symbol" v="red:red:white_stripe:443:black" />
+  <tag k="ref" v="443" />
+  <tag k="ref:REI" v="ORIE4430" />
+  <tag k="route" v="hiking" />
+  <tag k="rwn:name" v="Rete Escursionistica del Lazio (REL)" />
+  <tag k="source" v="survey:CAI" />
+  <tag k="source:ref" v="9232020" />
+  <tag k="symbol" v="443 on white red flags" />
+  <tag k="symbol:it" v="443 su bandierina bianca e rossa" />
+  <tag k="to" v="Acerone" />
+  <tag k="type" v="route" />
+ </relation>
+</osm>

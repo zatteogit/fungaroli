@@ -27,8 +27,8 @@ test('avvio unico: il consenso continua a bloccare le viste e poi lascia il cont
  await expect(page.locator('#days .d-area')).toContainText(/km da/);await expect(page.locator('#hero .cover-trace')).toHaveCount(1);await expect(page.locator('.regional-route-preview').first()).toBeVisible();
  await context.close();
 });
-test('324: durata del sentiero intero distinta dall’uscita e dai raccordi',async({browser})=>{
- const context=await browser.newContext({viewport:{width:390,height:844},serviceWorkers:'block',reducedMotion:'reduce'}),page=await preparePage(context);
+for(const [width,theme]of [[320,'light'],[390,'dark'],[1280,'light']])test(`324: andata, ritorno e raccordo distinti a ${width}px ${theme}`,async({browser})=>{
+ const context=await browser.newContext({viewport:{width,height:844},serviceWorkers:'block',reducedMotion:'reduce'}),page=await preparePage(context,{theme});
  await page.goto('/#/zona/cicolano/0/sentiero/11098449');await page.locator('#detail summary').filter({hasText:'La passeggiata, più da vicino'}).click();
- await expect(page.locator('.walk-timing-status')).toContainText('2 h andata');await expect(page.locator('.walk-timing-status')).toContainText('Ascrea');await expect(page.locator('.walk-timing-status')).toContainText('Raccordo dalla sosta e ritorno da verificare');await context.close();
+ await expect(page.locator('.walk-timing-status')).toContainText('Sentiero · andata2 h');await expect(page.locator('.walk-timing-status')).toContainText('Ascrea');await expect(page.locator('.walk-timing-status')).toContainText('Sentiero · ritorno1 h 30 min');await expect(page.locator('.outing-subtotal')).toContainText('3 h 30 min');await expect(page.locator('.outing-subtotal')).toContainText('totale dall’auto ancora da definire');await expect(page.locator('.th-chip').first()).toHaveAttribute('href',/openstreetmap.org/);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await context.close();
 });

@@ -1,3 +1,4 @@
+import {geometrySignature} from './outing-route.js';
 // Geometrie aperte, punti mappati e collegamenti editoriali restano evidenze distinte.
 export const TRAIL_PLACE_KINDS={parking:'Parcheggio mappato',drinking_water:'Acqua potabile indicata in mappa',shelter:'Riparo mappato',toilets:'Servizi igienici mappati',alpine_hut:'Rifugio mappato',wilderness_hut:'Bivacco mappato',picnic_site:'Area picnic mappata'};
 const fail=m=>{throw Object.assign(new Error(m),{status:422});};
@@ -17,6 +18,12 @@ export function validateRelatedLinks(links){
 export function validateTrailContext(data){
  for(const z of Object.values(data.zones||{})){
   for(const t of z.trails||[]){
+   const v=t.routeValidation;
+   if(v){
+    if(!['not_checked','network_correspondence_checked','needs_review'].includes(v.status)||v.geometrySignature!==geometrySignature(t.lines))fail('Verifica del percorso non coerente con la geometria corrente.');
+    if(v.status!=='not_checked'&&(!day(v.checkedOn)||!day(v.sourceUpdatedOn)||!Number.isInteger(v.sourceVersion)||v.sourceUrl!==`https://www.openstreetmap.org/relation/${t.id}`||v.license!=='ODbL-1.0'||!Array.isArray(v.members)||!Array.isArray(v.cautions)||v.walkingTotalMinutes!==null||v.connector?.status!=='unverified'||v.connector?.minutes!==null||v.fieldValidation!==false))fail('Evidenze del percorso incomplete o stato dell’uscita non supportato.');
+    if(v.status==='network_correspondence_checked'&&(!v.connectedSimpleChain||v.cautions.length||!Array.isArray(v.maxDeviationMeters)||v.maxDeviationMeters.length!==2||v.maxDeviationMeters.some(n=>!Number.isFinite(n)||n>16||n<0)))fail('Continuità del sentiero non dimostrata.');
+   }
    if(t.relatedLinks)validateRelatedLinks(t.relatedLinks);
    const p=t.sourceEvidence;if(p&&(!day(p.checkedOn)||!day(p.sourceUpdatedOn)||!Number.isInteger(p.sourceVersion)||p.sourceVersion<1||p.sourceUrl!==`https://www.openstreetmap.org/relation/${t.id}`||p.license!=='ODbL-1.0'||p.licenseUrl!=='https://opendatacommons.org/licenses/odbl/1-0/'||p.geometryReacquired!==false))fail('Provenienza del sentiero incoerente con la relazione OSM.');
   }
