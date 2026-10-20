@@ -1564,3 +1564,6 @@ button.cover-index > b { font-size:21px; line-height:1.2; }
  .discovery-story h2 { font-size:27px; }
  .discovery-next { padding:14px; }
 }
+
+/* Il riquadro cucina delimita già la sezione: niente secondo separatore sul titolo. */
+.pbody section.kitchen > h3:first-child { border-top:0; padding-top:0; margin-top:0; }
