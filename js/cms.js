@@ -1,4 +1,5 @@
 import {mountAdminDashboard} from './admin-dashboard.js';
+import {mountExternalObservations} from './external-observations-admin.js';
 import {openModal} from './modal-flow.js';
 import './modal-scroll.js';
 import { initCommunity, communityReady, currentUser } from './community.js';
@@ -8,7 +9,7 @@ import { SURVEY_ID, SURVEY_ENDPOINT } from './survey-schema.js';
 
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-let dashboard;
+let dashboard,externalObservations;
 let actor,items=[],release='0',doc,published,collection='',record='',dirty=false,opening=0;
 const editor=$('#cms-editor'),status=$('#cms-status');
 const title=k=>FIELD_LABELS[k]||k.replace(/_/g,' ');
@@ -22,7 +23,7 @@ async function api(path,method='GET',data,headers={}) {
 }
 function can(scope){return actor?.scopes?.includes(scope);}
 async function access() {
-  const n=++opening;dashboard?.dispose();dashboard=null;
+  const n=++opening;dashboard?.dispose();dashboard=null;externalObservations?.dispose();externalObservations=null;
   try {
     const me=await api('me');if(n!==opening)return;actor=me.user;
     const allowed=can('read');$('#cms-access').hidden=allowed;$('#cms-workspace').hidden=!allowed;
@@ -32,6 +33,7 @@ async function access() {
     dashboard?.dispose();dashboard=null;
     $('#cms-dashboard-tab').hidden=!can('admin');
     if(can('admin'))dashboard=mountAdminDashboard($('#cms-dashboard'),{api,openSurvey:()=>$('#cms-survey').click()});
+    if(can('admin'))externalObservations=mountExternalObservations($('#cms-external'),{api});
     setWorkspace(can('admin'));
     $('#cms-agents').hidden=!can('admin');$('#cms-survey').hidden=!can('admin');
     await refreshItems();
@@ -40,8 +42,10 @@ async function access() {
 }
 function setWorkspace(isDashboard){
  $('#cms-dashboard').hidden=!isDashboard;$('#cms-content').hidden=isDashboard;
+ $('#cms-external').hidden=!isDashboard;
  $('#cms-dashboard-tab').setAttribute('aria-pressed',String(isDashboard));$('#cms-content-tab').setAttribute('aria-pressed',String(!isDashboard));
  if(isDashboard&&!$('#cms-dashboard').childElementCount)dashboard?.load();
+ if(isDashboard&&!$('#cms-external').childElementCount)externalObservations?.load();
 }
 $('#cms-dashboard-tab').onclick=()=>setWorkspace(true);
 $('#cms-content-tab').onclick=()=>setWorkspace(false);

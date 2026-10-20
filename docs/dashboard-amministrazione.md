@@ -1,5 +1,7 @@
 # Dashboard di amministrazione · 18 ottobre 2026
 
+Dal 20 ottobre la stessa Dashboard comprende anche il registro modificabile delle segnalazioni esterne, separato dai contributi volontari. Schema, fonti, API, revisione ed evidenze per il motore: [Registro delle segnalazioni esterne](registro-segnalazioni-esterne-2026-10-20.md).
+
 La redazione `/redazione` apre la Dashboard per gli amministratori; gli editor mantengono l’editor Contenuti. Il cambio di sezione conserva il documento e le bozze locali aperte. La dashboard usa le sessioni e i ruoli già verificati dal server, non introduce credenziali o binding.
 
 ## Cosa influenza oggi i consigli

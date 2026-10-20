@@ -4,6 +4,7 @@ import legalAcceptancesSchema from '../migrations/0009_legal_acceptances.sql';
 import preferencesSchema from '../migrations/0003_account_preferences.sql';
 import observationsSchema from '../migrations/0007_shared_observations.sql';
 import {rankingPolicy} from './admin-dashboard.js';
+import {initExternalObservations} from './external-observations.js';
 import {sharedObservation} from '../js/community-observation.js';
 import treeCatalog from '../data/trees.json';
 import {normalizeNotebookNote} from '../js/notebook-entry.js';
@@ -132,7 +133,10 @@ export async function handleCommunity(request, env, now = Date.now()) {
     const ipKey = await hash(salt + new Date(now).toISOString().slice(0, 10) + ip);
     await rate(db, 'api:' + ipKey, 600, 3600, now);
 
-    if (path === 'status' && request.method === 'GET') return result({ enabled: true, modelStatus: 'experimental', registration: 'passkey' });
+    if (path === 'status' && request.method === 'GET') {
+      const externalImport=await initExternalObservations(db);
+      return result({ enabled: true, modelStatus: 'experimental', registration: 'passkey',externalImport });
+    }
 
     if (['auth/register-options', 'auth/login-options'].includes(path) && request.method === 'POST') {
       const register = path === 'auth/register-options';

@@ -5,6 +5,7 @@ import { validateContent } from './content-validation.js';
 import {glossaryContextSeedUpdate,repositorySeedUpdate} from './seed-update.js';
 import {adminDashboard,saveRankingPolicy} from './admin-dashboard.js';
 import { weatherMetrics } from './weather-metrics.js';
+import {listExternalObservations,readExternalObservation,saveExternalObservation,externalDataset,externalCatalog} from './external-observations.js';
 
 const initialized=new WeakMap(), enc=new TextEncoder();
 const hash=async s=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',enc.encode(s))),b=>b.toString(16).padStart(2,'0')).join('');
@@ -116,6 +117,18 @@ export async function handleCms(req,env,now=Date.now()) {
     if(req.method!=='GET' && (actor.kind==='human'?origin!==expected:origin&&origin!==expected)) failure('Origine non autorizzata.',403);
     if(path==='me'&&req.method==='GET')return response({user:actor,configured:!!(env.CMS_ADMIN_IDS||env.CMS_EDITOR_IDS)});
     permit(actor,'read');await rate(db,actor,now);
+    if(path==='external-observations'||path.startsWith('external-observations/')){
+      permit(actor,'admin');
+      const suffix=path.slice('external-observations'.length).replace(/^\//,'');
+      if(!suffix&&req.method==='GET')return response({...await listExternalObservations(env.COMMUNITY_DB,url.searchParams),catalog:await externalCatalog(db)});
+      if(!suffix&&req.method==='POST')return response(await saveExternalObservation(env.COMMUNITY_DB,null,await json(req),actor.id,now,db),201);
+      if(suffix==='engine'&&req.method==='GET')return response(await externalDataset(env.COMMUNITY_DB,now));
+      if(/^[a-zA-Z0-9-]{1,100}$/.test(suffix)){
+        if(req.method==='GET')return response(await readExternalObservation(env.COMMUNITY_DB,suffix));
+        if(req.method==='PATCH')return response(await saveExternalObservation(env.COMMUNITY_DB,suffix,await json(req),actor.id,now,db));
+      }
+      failure('Percorso o metodo non consentito.',405);
+    }
     if(path==='dashboard'){
       permit(actor,'admin');
       if(req.method==='GET')return response(await adminDashboard(env.COMMUNITY_DB,now,db));
