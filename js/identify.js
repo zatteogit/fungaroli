@@ -851,7 +851,8 @@ export function renderTaxonView(box, t, { photos = null, habitatText = '', extra
 export function compareCta(edibleId, taxon = null) {
   const t = taxon || refOf(edibleId);
   const list = t ? sosiaOf(t) : [];
-  if (!list.length) return '';
+  if (!t) return '';
+  if (!list.length) return `<a class="cmp-cta" href="#/confronta/${esc(t.key)}"><span class="cc-txt"><b>Confronta con un’altra specie</b><small>Nessun sosia collegato in questa scheda. Scegli una seconda specie dal catalogo per confrontare i caratteri disponibili.</small></span><span class="ts-cta-go" aria-hidden="true">›</span></a>`;
   // fotografico: lui e i sosia in miniatura (oltre 4, un "+N")
   const th = (x, cls = '') => { const ph = photoOf(x); return `<span class="cc-th ${cls} tox-${String(x.toxicity || '').replace(/\s/g, '-')}">${ph ? `<img data-src="${ASSET(ph.thumb || ph.file)}" alt="" loading="lazy" decoding="async">` : ''}</span>`; };
   const shown = list.slice(0, 4), more = list.length - shown.length;
@@ -945,6 +946,7 @@ function renderCompare(box, ref, pick) {
   const toxCls = (t) => `tox-${String(t.toxicity || '').replace(/\s/g, '-')}`;
   const nameBtn = (t) => `<button type="button" data-taxon="${esc(t.key)}">${esc(t.name || t.latin)}</button>`; // nel confronto: anteprima, per tutti
   const slide = (t, k) => {
+    const missing=CMP.filter(r=>{const a=r.get?r.get(ref):ref.traits?.[r.key],b=r.get?r.get(t):t.traits?.[r.key];return a==null||b==null||Array.isArray(a)&&!a.length||Array.isArray(b)&&!b.length;});
     const rows = cmpRows(ref, t), groups = [
       {kind:'diff',label:'Differenti',empty:'Nessun carattere completamente diverso nei dati disponibili. Le somiglianze non confermano l’identità.'},
       {kind:'part',label:'A volte simili',empty:'Nessuna somiglianza parziale documentata.'},
@@ -963,8 +965,9 @@ function renderCompare(box, ref, pick) {
       <div class="cmp-kind-tabs" role="tablist" aria-label="Caratteri da confrontare">${groups.map(g=>`<button type="button" role="tab" id="cmp-${esc(t.key)}-tab-${g.kind}" data-cmp-group="${g.kind}" aria-controls="cmp-${esc(t.key)}-panel-${g.kind}" aria-selected="${g.kind==='diff'}" tabindex="${g.kind==='diff'?0:-1}">${g.label}</button>`).join('')}</div>
       <p class="cmp-illustration-note">Disegni schematici generati con AI: mostrano un esempio. Leggi tutte le varianti elencate e confronta con le foto.<span class="cmp-callout-note"> I richiami indicano la zona da osservare, anche quando il carattere è assente.</span></p>
       <p class="cmp-legend" hidden><span><span class="cmp-relation" aria-hidden="true">=</span> Valore in comune</span><span><span class="cmp-relation" aria-hidden="true">≠</span> Valore diverso</span></p>
-      ${groups.map(g=>{const items=rows.filter(r=>!r.info&&r.kind===g.kind);return `<section class="cmp-panel" id="cmp-${esc(t.key)}-panel-${g.kind}" data-cmp-panel="${g.kind}" role="tabpanel" aria-labelledby="cmp-${esc(t.key)}-tab-${g.kind}" tabindex="0"${g.kind==='diff'?'':' hidden'}>${items.length?`<div class="cmp-column-head" aria-hidden="true"><span>${esc(ref.name||ref.latin)}</span><span>${esc(t.name||t.latin)}</span></div><ul class="cmp-rows">${items.map(r=>r.html).join('')}</ul>`:`<p class="cmp-none">${g.empty}</p>`}</section>`;}).join('')}
+      ${groups.map(g=>{const items=rows.filter(r=>!r.info&&r.kind===g.kind);return `<section class="cmp-panel" id="cmp-${esc(t.key)}-panel-${g.kind}" data-cmp-panel="${g.kind}" role="tabpanel" aria-labelledby="cmp-${esc(t.key)}-tab-${g.kind}" tabindex="0"${g.kind==='diff'?'':' hidden'}>${items.length?`<div class="cmp-column-head" aria-hidden="true"><span>${esc(ref.name||ref.latin)}</span><span>${esc(t.name||t.latin)}</span></div><ul class="cmp-rows">${items.map(r=>r.html).join('')}</ul>`:`<p class="cmp-none">${rows.some(r=>!r.info)?g.empty:'I dati disponibili non permettono ancora un confronto dei caratteri tra queste due specie. Apri le schede per leggere descrizioni e fonti; non è possibile dedurre somiglianze o differenze.'}</p>`}</section>`;}).join('')}
       ${info.length?`<div class="cmp-season"><ul class="cmp-rows">${info.map(r=>r.html).join('')}</ul></div>`:''}
+      ${missing.length?`<details class="context-note cmp-missing-data"><summary>Dati incompleti · ${missing.length} caratteri</summary><p>Questi caratteri non sono confrontabili perché mancano dati per una o entrambe le specie. Un dato mancante non significa carattere assente.</p><ul>${missing.map(r=>`<li>${esc(r.k)}</li>`).join('')}</ul></details>`:''}
       <details class="sec cmp-sources"><summary>Fonti del confronto</summary><div class="sec-body">${sourceRows([...(ref.sources || []), ...(t.sources || [])])}</div></details>
       <p class="cmp-verdict">${[ref,t].some(x=>['mortale','tossico'].includes(x.toxicity)) ? 'Il confronto include specie tossiche o mortali; i caratteri possono variare o essere incompleti. ' : ''}Somiglianze e differenze non identificano il tuo esemplare. Fai controllare il raccolto all’Ispettorato micologico ASL.</p>
     </section>`;
