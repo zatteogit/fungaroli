@@ -1,10 +1,11 @@
+import {mountInlineGallery} from './inline-gallery.js';
 import {notebookGlyph} from './ui-icons.js';
 import {openModal} from './modal-flow.js';
 import {matchSpecies} from './species-search.js';
 import {factCards,monthCalendar} from './content-ui.js';
 import {enhanceEntityAccordions} from './entity-accordions.js';
 // Botanical descriptions are independent of the mushroom weather index.
-import {openLightbox,captionHtml} from './lightbox.js';
+import {captionHtml} from './lightbox.js';
 import {filterPlants,plantHabitats} from './plant-catalog.js';
 import { cardLatin } from './names.js';
 import { renderAlsoIn } from './catalog-search.js';
@@ -97,5 +98,5 @@ export function renderPlantPage(box,id){
   enhanceEntityAccordions(box);
   Promise.all([loadKeyData('piante'),loadPlantArtwork()]).then(([d,artwork])=>{const slot=box.querySelector(`[data-plant-traits="${CSS.escape(id)}"]`);if(slot&&d?.items?.[id])slot.innerHTML=traitTilesHtml(d,d.items[id].traits,artwork?.values,'piante',artwork?.species?.[id])+(artwork?'<p class="small muted ts-ai">Disegni schematici, non foto: confronta con il testo e le foto.</p>':'');});
   const gallery=p.photos.map(m=>({src:ASSET(m.file_hd||m.file),alt:m.alt,caption:captionHtml({title:esc(p.name),text:esc(m.caption),credit:`${esc(m.attribution_required_text || m.author)} · <a href="${esc(m.licenseUrl)}" target="_blank" rel="noopener">${esc(m.license)}</a> · <a href="${esc(m.page)}" target="_blank" rel="noopener">Originale</a>`})}));
-  box.querySelectorAll('[data-plant-zoom]').forEach(b=>b.onclick=()=>openLightbox(gallery,+b.dataset.plantZoom,{container:box.closest('dialog')||document.body}));
+  mountInlineGallery(box,gallery,{selector:'[data-plant-zoom]',indexOf:b=>Number(b.dataset.plantZoom)});
 }

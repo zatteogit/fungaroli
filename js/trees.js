@@ -1,9 +1,10 @@
+import {mountInlineGallery} from './inline-gallery.js';
 import {factCards} from './content-ui.js';
 import {enhanceEntityAccordions} from './entity-accordions.js';
 // Schede degli alberi simbionti e collegamenti automatici nei testi (#/albero/<id>).
 
 import { SPECIES } from './species.js';
-import { openLightbox, captionHtml } from './lightbox.js';
+import { captionHtml } from './lightbox.js';
 import { cardLatin } from './names.js';
 import { treeGroup } from './plant-catalog.js';
 import { loadKeyData, loadTreeIcons, traitTilesHtml } from './guided-key.js';
@@ -149,5 +150,5 @@ export function renderTreePage(body, id) {
   enhanceEntityAccordions(body);
   Promise.all([loadKeyData('alberi'), loadTreeIcons()]).then(([d, icons]) => { const slot = body.querySelector('[data-tree-traits]'); if (slot && d?.items?.[id]) slot.innerHTML = traitTilesHtml(d, d.items[id].traits, icons); });
   const gallery = photos.map((p) => ({ src: ASSET(p.file_hd || p.file), alt: p.alt || t.name, caption: captionHtml({ title: esc(t.name), text: esc(p.caption || t.latin), credit: credit(p) }) }));
-  body.querySelectorAll('[data-photo]').forEach((b) => b.addEventListener('click', () => openLightbox(gallery, +b.dataset.photo)));
+  mountInlineGallery(body,gallery);
 }
