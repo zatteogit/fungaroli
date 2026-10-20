@@ -46,4 +46,4 @@ Sono estratti di opere originali in pubblico dominio, verificati il 20/10/2026. 
 
 Il dry-run del Worker è riuscito e ha prodotto il bundle. Il runtime locale Wrangler sul Mac presenta `spawn EBADF`: la suite completa usa quindi il Worker reale su runner Linux isolati, tramite il workflow manuale CI. I controlli locali di interfaccia usano invece il server statico con risposte meteo controllate.
 
-Rilascio seguito nella [PR #162](https://github.com/zatteogit/fungaroli/pull/162). La pubblicazione viene confermata solo dopo la suite completa verde e la verifica diretta della home e dello snapshot pubblico.
+Rilascio seguito nella [PR #162](https://github.com/zatteogit/fungaroli/pull/162). La suite browser completa è stata interrotta su indicazione esplicita dell’utente, che ha richiesto di procedere alla pubblicazione. La pubblicazione viene confermata dopo la verifica diretta della home e dello snapshot pubblico.

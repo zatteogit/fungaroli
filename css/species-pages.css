@@ -416,7 +416,7 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 .fungus-compare .cmp-cell-miniature .cmp-part-art img { width:44px; height:44px; }
 .fungus-compare .cmp-cell-miniature .cmp-vals { min-width:0; }
 .fungus-compare .cmp-part-art:has(.cmp-callout) { position:relative; width:44px; }
-.fungus-compare .cmp-cell-miniature:has(.cmp-part-art .cmp-callout) { grid-template-columns:56px minmax(0,1fr); column-gap:0; }
+.fungus-compare .cmp-cell-miniature:has(.cmp-part-art .cmp-callout) { grid-template-columns:66px minmax(0,1fr); column-gap:0; }
 .fungus-compare .cmp-part-art { --cmp-callout-tip:var(--text); --cmp-callout-edge:var(--surface); }
 .fungus-compare .cmp-part-art[data-callout-tone="light"] { --cmp-callout-tip:var(--story-avorio); --cmp-callout-edge:var(--story-ink); }
 .fungus-compare .cmp-part-art[data-callout-tone="dark"] { --cmp-callout-tip:var(--story-ink); --cmp-callout-edge:var(--story-avorio); }
