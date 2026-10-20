@@ -222,7 +222,7 @@
   --action: var(--_ref-white); --action-hover: var(--_ref-cta-white-hover); --action-ink: var(--_ref-night);
   --ciclamino-ink: var(--_ref-ciclamino-dark-ink); --ciclamino-soft: var(--surface-2);
   --corallo-ink: var(--_ref-corallo-dark-ink); --corallo-soft: var(--surface-2);
-  --link: var(--_ref-white); --select-edge: var(--_ref-white);
+  --link: var(--_ref-white); --select-edge: var(--_ref-polline);
   --polline-soft: var(--_ref-surface-2-dark); --polline-ink: var(--_ref-polline); --calendula-soft: var(--_ref-surface-2-dark); --calendula-ink: var(--_ref-accent-dark);
   --fiordaliso-soft: var(--_ref-surface-2-dark); --fiordaliso-ink: var(--_ref-fiordaliso-ink-dark); --germoglio-soft: var(--_ref-surface-2-dark); --germoglio-ink: var(--_ref-germoglio);
   --rain: var(--_ref-rain-dark); --viz-index: var(--_ref-forest-light); --line: var(--_ref-line-dark); --grid: var(--_ref-grid-dark);
@@ -241,7 +241,7 @@
   --action: var(--_ref-white); --action-hover: var(--_ref-cta-white-hover); --action-ink: var(--_ref-night);
   --ciclamino-ink: var(--_ref-ciclamino-dark-ink); --ciclamino-soft: var(--surface-2);
   --corallo-ink: var(--_ref-corallo-dark-ink); --corallo-soft: var(--surface-2);
-  --link: var(--_ref-white); --select-edge: var(--_ref-white);
+  --link: var(--_ref-white); --select-edge: var(--_ref-polline);
   --polline-soft: var(--_ref-surface-2-dark); --polline-ink: var(--_ref-polline); --calendula-soft: var(--_ref-surface-2-dark); --calendula-ink: var(--_ref-accent-dark);
   --fiordaliso-soft: var(--_ref-surface-2-dark); --fiordaliso-ink: var(--_ref-fiordaliso-ink-dark); --germoglio-soft: var(--_ref-surface-2-dark); --germoglio-ink: var(--_ref-germoglio);
   --rain: var(--_ref-rain-dark); --viz-index: var(--_ref-forest-light); --line: var(--_ref-line-dark); --grid: var(--_ref-grid-dark);

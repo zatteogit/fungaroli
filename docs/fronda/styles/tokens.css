@@ -230,7 +230,7 @@
   --card-padding: var(--space-6);
   --chip-bg: var(--surface-subtle);
   --chip-fg: var(--text);
-  --chip-radius: var(--selection-radius);
+  --chip-radius: var(--radius-pill);
   --nav-bg: var(--surface);
   --nav-active: var(--brand);
   --toast-bg: var(--brand-fixed);
@@ -286,5 +286,5 @@
   --ciclamino-soft: var(--surface-subtle);
   --corallo-ink: var(--_ref-corallo-dark-ink);
   --corallo-soft: var(--surface-subtle);
-  --selection-edge: var(--_ref-cta-white);
+  --selection-edge: var(--_ref-polline);
 }
