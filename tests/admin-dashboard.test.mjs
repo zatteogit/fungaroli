@@ -76,7 +76,12 @@ test('limite persistente, audit atomico, conflitti senza sovrascrittura e ritorn
  const d=await adminDashboard(env.COMMUNITY_DB,NOW);
  assert.deepEqual(d.history.map(r=>[r.previousPercent,r.maxPercent]),[[0,4],[4,0],[10,4]]);
  assert.equal(d.history[0].updatedBy,'admin');
- const summary=await (await handleCommunity(new Request(ORIGIN+'/api/community/summary'),env,NOW)).json();assert.equal(summary.policy.maxPercent,4);assert.deepEqual(Object.keys(summary.policy).sort(),['maxPercent','version']);
+ const summaryRequest=()=>new Request(ORIGIN+'/api/community/summary',{headers:{cookie:'__Host-fungaroli_session=admin'}});
+ const locked=await (await handleCommunity(summaryRequest(),env,NOW)).json();
+ assert.equal(locked.access,'contribution_required');assert.equal(locked.policy,undefined);
+ sql.prepare('INSERT INTO diary_entries(account_id,id,payload,saved_at) VALUES(?,?,?,?)').run('admin','note-admin','{}',NOW);
+ sql.prepare('INSERT INTO reports(id,account_id,entry_id,day,zone_id,species_id,amount,searched,created_at) VALUES(?,?,?,?,?,?,?,?,?)').run('report-admin','admin','note-admin','2026-10-18','vallonina','edulis',0,1,NOW);
+ const summary=await (await handleCommunity(summaryRequest(),env,NOW)).json();assert.equal(summary.access,'granted');assert.equal(summary.policy.maxPercent,4);assert.deepEqual(Object.keys(summary.policy).sort(),['maxPercent','version']);
 });
 test('i parametri non accettano nuovi pesi scientifici o limiti fuori dal tetto esistente',async()=>{
  const {env}=setup();

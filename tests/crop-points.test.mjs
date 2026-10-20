@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 
 const crops = JSON.parse(readFileSync(new URL('../data/crop-points.json', import.meta.url))).files;
+const zones = JSON.parse(readFileSync(new URL('../data/media-zones.json', import.meta.url))).zones;
+const variants = new Map(Object.entries(zones).flatMap(([id, zone]) => (zone.variants || []).flatMap(v => [v.file,v.file_hd].filter(Boolean).map(file => [file,{id,zone}]))));
 const FORMATS = ['5:4', '3:4', '4:5', '16:7', '4:3', '1:1'];
 
 test('every crop entry points to an existing file, with six positions between 0 and 1', () => {
@@ -24,9 +26,11 @@ test('every season and weather cover has the crop of its real photo', () => {
   for (const f of files) {
     const c = crops[`assets/zones/var/${f}`];
     assert.ok(c, `copertina senza punto: ${f}`);
-    const zone = f.split('-').slice(0, f.startsWith('poggio-cantalice') ? 2 : 1).join('-');
+    const entry=variants.get(`assets/zones/var/${f}`);
+    assert.ok(entry, `variante non associata a una zona: ${f}`);
     // stessa inquadratura: le misure differiscono di qualche pixel, le posizioni quasi per nulla
-    const real = crops[`assets/zones/${zone}-hd.webp`];
+    const real = crops[entry.zone.file_hd];
+    assert.ok(real, `manca il ritaglio della foto originale di ${entry.id}`);
     for (const fm of FORMATS) for (const i of [0, 1]) assert.ok(Math.abs(c[fm][i] - real[fm][i]) < 0.03, `${f} ${fm}`);
   }
 });

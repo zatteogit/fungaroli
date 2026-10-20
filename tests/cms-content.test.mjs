@@ -1,3 +1,4 @@
+import {resourceOf} from '../js/content-schema.js';
 // Snapshot pubblico del CMS: aggiornamento dal repository dei documenti non toccati (elenco
 // REPOSITORY_REFRESHED di worker/cms.js) e ETag. Il Worker gira su un D1 finto (node:sqlite).
 import test from 'node:test';
@@ -63,8 +64,8 @@ test('ogni documento aggiornato dal repository passa la validazione del CMS e ne
     const { value } = validateContent(id, data);
     if (!['guides', 'legal'].includes(id)) assert.equal(JSON.stringify(value), JSON.stringify(data), `${id}: la validazione non deve cambiare il seed`);
   }
-  // i generati in sola lettura restano fuori: si aggiornano dai loro script, non dal CMS
-  for (const id of ['access', 'habitat', 'trailheads']) assert.equal(REPOSITORY_REFRESHED.includes(id), false);
+  // I generati sono in sola lettura in Redazione; una release aggiorna i seed intatti.
+  for (const id of ['access', 'habitat', 'trailheads']) {assert.equal(resourceOf(id).readonly,true);assert.equal(REPOSITORY_REFRESHED.includes(id),true);}
 });
 
 test('primo avvio: i seed entrano come versione 0, senza release aggiuntive', async () => {
@@ -139,7 +140,7 @@ test('lo snapshot risponde 304 anche all’ETag debole che il browser rimanda do
 test('animal catalog is seeded in snapshots, refreshed only when untouched, and preserves an author draft',async()=>{
  const sql=new DatabaseSync(':memory:');
  const initial=await publishedContent(env(sql),ORIGIN);
- assert.equal(initial.resources.animals.items.filter(i=>i.publicationStatus==='ready').length,8);
+ assert.deepEqual(initial.resources.animals,JSON.parse(read('animals')));
  const changed=JSON.parse(read('animals'));changed.items[0].summary+=' Aggiornamento.';
  const updated=await publishedContent(env(sql,{animals:JSON.stringify(changed)}),ORIGIN);
  assert.deepEqual(updated.resources.animals,changed);

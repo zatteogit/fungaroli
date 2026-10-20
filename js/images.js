@@ -15,7 +15,7 @@ export function applyCrop(img){
   const c=CROPS?.[cropKey(img.getAttribute('data-src')||img.getAttribute('src'))];
   for(const [k,v] of Object.entries(OP)){if(c?.[k])img.style.setProperty(v,`${Math.round(c[k][0]*1000)/10}% ${Math.round(c[k][1]*1000)/10}%`);else img.style.removeProperty(v);}
 }
-if(!CROPS)fetch('data/crop-points.json').then(r=>(r.ok?r.json():null)).then(d=>{CROPS=d?.files||{};document.querySelectorAll('img').forEach(applyCrop);}).catch(()=>{CROPS={};});
+if(typeof document!=='undefined'&&!CROPS)fetch('data/crop-points.json').then(r=>(r.ok?r.json():null)).then(d=>{CROPS=d?.files||{};document.querySelectorAll('img').forEach(applyCrop);}).catch(()=>{CROPS={};});
 // Foto già scaricate e decodificate in questa sessione (o preparate al tocco da motion.js): quando ricompaiono
 // in una pagina ridisegnata non aspettano il viewport e non ripassano dallo scheletro, si mostrano subito.
 const known=new Set();
@@ -98,6 +98,7 @@ function scan(node,fn) {
   if(node.matches('img'))fn(node);
   node.querySelectorAll('img').forEach(fn);
 }
+if(typeof document!=='undefined') {
 new MutationObserver(records=>{
   for(const r of records){
     if(r.type==='attributes'){if(r.target.dataset.imageState!=='error')prepare(r.target);continue;}
@@ -106,3 +107,4 @@ new MutationObserver(records=>{
   }
 }).observe(document.body,{childList:true,subtree:true,attributes:true,attributeFilter:['src','data-src']});
 document.querySelectorAll('img').forEach(prepare);
+}

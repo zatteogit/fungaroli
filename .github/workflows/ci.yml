@@ -5,6 +5,11 @@ on:
   push:
     branches: [claude/brave-tesla-wu0a2b]
   workflow_dispatch:
+    inputs:
+      browser:
+        description: Verifica completa browser prima del rilascio
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -35,3 +40,24 @@ jobs:
       - name: Spazi e conflitti nel diff
         if: github.event_name == 'pull_request'
         run: git diff --check ${{ github.event.pull_request.base.sha }} ${{ github.sha }}
+
+  browser:
+    if: github.event_name == 'workflow_dispatch' && inputs.browser
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Tutta la suite sul Worker locale
+        run: CHROMIUM_PATH="$(node -p "require('@playwright/test').chromium.executablePath()")" npx playwright test
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: browser-failures
+          path: test-results/
+          retention-days: 5
