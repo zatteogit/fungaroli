@@ -22,10 +22,13 @@ test('still prima del video: rete ritardata, buffer e loop senza spostare il pan
 });
 test('un video alla volta, pausa globale, inviti alle guide e taccuino vuoto',async({browser})=>{
  const {page,context}=await start(browser,{width:1280});await page.goto('/');
+ await page.locator('#days [data-day-offset="0"]').click();
  await expect(page.locator('#hero .atmosphere')).toBeVisible({timeout:60000});
  const video=page.locator('#hero .atmosphere video');await expect(video).toHaveAttribute('data-video-ready','true');
  await page.locator('#hero .atmosphere-toggle').click();await expect.poll(()=>video.evaluate(v=>v.paused)).toBe(true);
- await page.locator('#days').getByRole('tab',{name:/Domani/}).click();
+ const initialClip=await page.locator('#hero [data-atmosphere]').getAttribute('data-atmosphere');
+ await page.locator('#days [data-day-offset="1"]').click();
+ await expect(page.locator('#hero [data-atmosphere]')).not.toHaveAttribute('data-atmosphere',initialClip);
  await expect(page.locator('#hero .atmosphere-toggle')).toHaveAccessibleName('Riprendi il video di atmosfera');
  await page.locator('#hero .atmosphere-toggle').click();await expect.poll(()=>page.locator('#hero .atmosphere video').evaluate(v=>!v.paused)).toBe(true);
  const invite=page.locator('[data-view="uscite"] .story-photo.atmosphere');await invite.scrollIntoViewIfNeeded();await expect(invite.locator('video')).toHaveAttribute('data-video-ready','true');

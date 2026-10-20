@@ -8,9 +8,9 @@ Questa valutazione adotta il materiale della prova di questa stessa chat, ramo l
 
 ## Collocazioni
 
-- **Copertina della home:** video di atmosfera stagionale (Autunno nei mesi settembre–novembre, Luce tra le foglie negli altri mesi). Il mese è una scelta editoriale, non un'inferenza su luogo o meteo. Dicitura visibile «Video di atmosfera». Testi, data, indice, avvisi e azione restano sul pannello pieno.
-- **Home Piante:** Gocce sulla felce come dettaglio decorativo; nessuna previsione di presenza botanica.
-- **Home senza interesse fungino o botanico:** Bosco e sentiero come invito alla passeggiata; foto e dati delle località rimangono nelle schede.
+- **Copertina della home:** video di atmosfera variabile in base alla zona e al giorno della proposta: Luce tra le foglie, Bosco e sentiero, Gocce sulla felce, con Autunno disponibile solo nei mesi settembre–novembre. La scelta è stabile durante gli aggiornamenti meteo. Il mese è una scelta editoriale, non un'inferenza su luogo o meteo. Dicitura visibile «Video di atmosfera». Testi, data, indice, avvisi e azione restano sul pannello pieno.
+- **Home Piante:** riprese orizzontali alternate, dando a Gocce sulla felce una posizione diversa nella sequenza come dettaglio decorativo; nessuna previsione di presenza botanica.
+- **Home senza interesse fungino o botanico:** riprese alternate nella stessa raccolta, con una sequenza distinta come invito alla passeggiata; foto e dati delle località rimangono nelle schede.
 - **Inviti alle guide, in home e cataloghi:** Luce tra le foglie o Gocce sulla felce nell'area visiva esistente. Non sono più immagini cliccabili della ginestra: l'azione testuale resta «Scopri le nostre guide», coerente con il contenuto.
 - **Taccuino vuoto:** Ombre di foglie come illustrazione introduttiva, prima del testo dello stato vuoto. Non compare dietro appunti, fotografie o pagine già salvate.
 
