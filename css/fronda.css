@@ -1313,3 +1313,7 @@ a.daily-thought-credit { color:var(--link); text-underline-offset:3px; }
 .outing-subtotal { display:grid; gap:4px; }
 .outing-subtotal>b { font-size:20px; }
 .zone-note-caption { font-size:14px; color:var(--muted); margin:10px 0 0; }
+
+/* The map preview keeps the model index separate from the thumbnail. */
+.sheet-row:not(:has(.sheet-img)) { grid-template-columns:minmax(0,1fr); }
+.sheet-txt .ring.model-index { position:static; justify-self:start; width:fit-content; max-width:100%; margin-block:4px; }
