@@ -30,6 +30,7 @@ import './theme.js';
 import './images.js';
 import './atmosphere-video.js';
 import {atmosphere,createHomeAtmospherePicker} from './atmosphere.js';
+import {chooseHomeCover} from './home-cover-media.js';
 import { consumeFresh, freshDone } from './refresh.js';
 import {updateWeatherHTML,updateHTMLTracked,reconcileChildren,keepWeatherReadingPosition} from './weather-dom.js';
 import { SPECIES, GROUPS, FOREST } from './species.js';
@@ -936,10 +937,19 @@ function routeCover(z){
  return preview?`<span class="regional-route-preview">${preview}<span class="route-preview-meta"><b>${esc(t.ref||'Sentiero')}</b><span>${fmtKm(t.in_zone_km)} km${t.difficulty?' · '+esc(t.difficulty):''}</span></span><small>Tratto mappato · OSM</small></span>`:`<span class="regional-no-photo">${IC.map}<small>Mappa della zona</small></span>`;
 }
 const pickHomeAtmosphere=createHomeAtmospherePicker();
+function homeCoverVisual(c) {
+ const choice=chooseHomeCover({zone:c.z.id,date:c.d.date,icon:wxIcon(wxOf(c.z,c.d)),media:zoneMedia[c.z.id],pickStock:pickHomeAtmosphere,walking:state.target==='passeggiata',plants:state.target==='piante'});
+ if(choice.kind==='place-photo'){
+  const photo=choice.photo,label=photo.generated?'Foto del luogo · variante meteo illustrativa':'Foto del luogo';
+  return `<figure class="atmosphere" data-cover-kind="place-photo" title="${label}"><span class="atmosphere-media"><img class="atmosphere-still cover-img" src="${esc(assetSrc(photo.file))}" srcset="${esc(assetSrc(photo.file))} 600w, ${esc(assetSrc(photo.file_hd||photo.file))} 1600w" sizes="(max-width:760px) calc(100vw - 28px), 600px" width="${photo.size?.[0]||1600}" height="${photo.size?.[1]||900}" alt="${esc(c.z.name)}${photo.generated?' · variante meteo illustrativa':''}" fetchpriority="high"></span></figure>`;
+ }
+ if(choice.kind==='weather-illustration')return `<figure class="atmosphere home-weather-illustration" data-cover-kind="weather-illustration" role="img" aria-label="Previsione meteo illustrata, foto del luogo non disponibile"><span aria-hidden="true">${weatherGlyphs[choice.icon]||IC[choice.icon]||IC.unknown}</span><small>Previsione meteo</small></figure>`;
+ return atmosphere(choice.id,{hero:true,kind:choice.kind});
+}
 function homeCover({c,body,score=null,extraClass=''}) {
   const title=splitName(c.z)[0];
   return `<div class="cover cover-editorial vtn ${extraClass}" style="--vtn:cover">
-    ${atmosphere(pickHomeAtmosphere({walking:state.target==='passeggiata',plants:state.target==='piante',zone:c.z.id,date:c.d.date}),{hero:true})}<span class="shade"></span>
+    ${homeCoverVisual(c)}<span class="shade"></span>
     <a class="cover-link" data-walk-zone="${c.z.id}" href="${walkHref(c.z,c.o,c.walk?.t)}" aria-label="${esc(title)}, ${esc(dayLabel(c.o,c.d.date,true))}: i dettagli della passeggiata"></a>
     <span class="cover-top"><span class="pill glass">${esc(dayLabel(c.o,c.d.date,true))}</span>${score===null?'':`<button type="button" class="cover-index" data-index-tip aria-expanded="false" aria-label="Condizioni di crescita ${formatIndex(score)} su 10: come leggerle"><span>Condizioni di crescita</span><b>${fungusGlyph}<span>${formatIndex(score)}<small>/10</small></span></b></button>`}</span>
     <span class="cover-body">${body}</span></div>`;

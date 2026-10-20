@@ -1,9 +1,13 @@
 import {test,expect} from '@playwright/test';
-import {preparePage} from '../../tools/visual-audit.mjs';
+import {preparePage,forecast} from '../../tools/visual-audit.mjs';
+import {readFileSync} from 'node:fs';
 test.setTimeout(process.env.CI ? 120000 : 60000);
-async function start(browser,{reducedMotion='no-preference',width=390,legal=true}={}){
+async function start(browser,{reducedMotion='no-preference',width=390,legal=true,withPlaces=false}={}){
  const context=await browser.newContext({viewport:{width,height:920},reducedMotion,serviceWorkers:'block'});
- const page=await preparePage(context,{legal});return {page,context};
+ const page=await preparePage(context,{legal});
+ await page.route('**/api/content/v1/snapshot',r=>r.fulfill({status:503,json:{error:'fixture'}}));
+ if(!withPlaces)await page.route('**/data/media-zones.json',r=>r.fulfill({json:{zones:{}}}));
+ return {page,context};
 }
 test('still prima del video: rete ritardata, buffer e loop senza spostare il pannello',async({browser})=>{
  const {page,context}=await start(browser);let release;const gate=new Promise(r=>release=r);let stillFirst=false;
@@ -64,4 +68,25 @@ test('copertine responsive e comando compatto negli inviti alle guide',async({br
  await expect(button).toHaveAccessibleName('Riprendi il video di atmosfera');
  const [media,control]=await Promise.all([invite.boundingBox(),button.boundingBox()]);expect(control.x).toBeGreaterThanOrEqual(media.x);expect(control.x+control.width).toBeLessThanOrEqual(media.x+media.width);
  await page.screenshot({path:'output/playwright/atmosphere-guide-320.png'});await context.close();
+});
+
+for(const rain of [false,true])test(`Tancia: precedenza al luogo e meteo coerente, pioggia=${rain}`,async({browser})=>{
+ const {page,context}=await start(browser,{withPlaces:true});
+ const zones=JSON.parse(readFileSync(new URL('../../data/zones.json',import.meta.url),'utf8'));zones.zones=zones.zones.filter(z=>z.id==='tancia');
+ await page.route('**/data/zones.json',r=>r.fulfill({json:zones}));
+ if(rain)await page.route('**/api/weather/v1/forecast?**',r=>{
+  const rows=forecast(r.request().url());for(const row of rows){row.hourly.precipitation.fill(2);row.hourly.precipitation_probability.fill(95);row.hourly.weather_code.fill(61);}
+  return r.fulfill({json:rows});
+ });
+ await page.goto('/');await page.locator('#days [data-day-offset="1"]').click();
+ const autumn=[9,10,11].includes(new Date().getMonth()+1),cover=page.locator('#hero [data-cover-kind]');
+ if(!rain&&autumn){
+  await expect(cover).toHaveAttribute('data-cover-kind','place-video');
+  await expect(cover).toHaveAttribute('data-atmosphere','tancia-autunno-asciutto');
+  await expect(cover.locator('video')).toHaveAttribute('data-video-ready','true');
+ }else{
+  await expect(cover).toHaveAttribute('data-cover-kind','place-photo');await expect(cover.locator('video')).toHaveCount(0);
+  if(rain)await expect(cover.locator('img')).toHaveAttribute('src',/tancia-.*-pioggia/);
+ }
+ await page.screenshot({path:`output/playwright/tancia-${rain?'pioggia':'asciutto'}.png`});await context.close();
 });

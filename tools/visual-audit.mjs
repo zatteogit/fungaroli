@@ -55,7 +55,7 @@ export function coverPhotos() {
 }
 
 // previsione sintetica (come negli spec): così la home ha proposte, card e copertine
-function forecast(url) {
+export function forecast(url) {
   const q = new URL(url).searchParams, count = q.get('latitude').split(',').length;
   const iso = (d) => new Date(d.getTime() - d.getTimezoneOffset() * 6e4).toISOString().slice(0, 10);
   const days = Array.from({ length: 70 }, (_, i) => iso(new Date(Date.now() + (i - 62) * 864e5)));
