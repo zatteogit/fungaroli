@@ -93,3 +93,21 @@ export function outingFor(series, z, dateStr, now = Date.now()) {
 export const OUTING_LABEL = { ok: 'meteo senza criticità segnalate', attenzione: 'tempo incerto', sconsigliata: 'uscita sconsigliata', non_disponibile: 'meteo non verificabile' };
 export const OUTING_SHORT = { ok: 'senza criticità segnalate', attenzione: 'incerto', sconsigliata: 'sconsigliata', non_disponibile: 'non verificabile' };
 export const OUTING_RANK = { ok: 1, attenzione: 0.85, sconsigliata: 0.55, non_disponibile: 0.75 };
+
+// Decisione di prodotto 20/10: le condizioni dell’uscita includono anche il meteo attuale.
+// I pesi sono quelli già usati per ordinare le uscite; il modello biologico resta separato.
+export function conditionsScore(growth,weather){
+  if(!Number.isFinite(growth)||!weather?.available||!['ok','attenzione','sconsigliata'].includes(weather.level))return null;
+  return Math.round(Math.max(0,Math.min(100,growth))*OUTING_RANK[weather.level]);
+}
+export function selectOutingWeather(items,weatherOf){
+  const safer=items.filter(c=>{const w=weatherOf(c);return w?.available&&['ok','attenzione'].includes(w.level);});
+  return safer.length?safer:items;
+}
+export function outingHeadings(weather,defaults={home:'Dove andare',others:'Altre buone uscite'}){
+  if(!weather.length)return defaults;
+  if(weather.every(w=>w?.level==='sconsigliata'))return {home:'Con questo meteo, meglio rimandare',others:'Zone da esplorare in un altro momento'};
+  if(weather.some(w=>!w?.available))return {home:'Meteo da verificare',others:'Altre zone da valutare'};
+  if(weather.some(w=>w.level==='attenzione'))return {home:'Uscite da valutare',others:'Altre uscite da valutare'};
+  return defaults;
+}
