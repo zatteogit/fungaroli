@@ -1334,13 +1334,12 @@ button.cover-index > span { white-space:normal; text-wrap:balance; }
 /* Tre vignette: il gesto, il beneficio, l’azione. */
 #community-intro .community-vignettes { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin:16px 0 12px; padding-bottom:7px; }
 #community-intro .community-vignette { --bubble:var(--surface); position:relative; display:flex; flex-direction:column; align-items:flex-start; gap:7px; min-width:0; margin:0; padding:14px; border:1px solid var(--hair); border-radius:15px; background:var(--bubble); color:var(--text); text-align:left; }
-#community-intro .community-vignette::after { content:''; position:absolute; left:18px; bottom:-6px; width:10px; height:10px; background:var(--bubble); border-right:1px solid var(--hair); border-bottom:1px solid var(--hair); transform:rotate(45deg); }
+#community-intro .community-vignette-story::after { content:''; position:absolute; left:18px; bottom:-6px; width:10px; height:10px; background:var(--bubble); border-right:1px solid var(--hair); border-bottom:1px solid var(--hair); transform:rotate(45deg); }
 #community-intro .community-vignette-icon { display:grid; place-items:center; width:24px; height:24px; font:600 24px/1 var(--font-body); }
 #community-intro .community-vignette-icon svg { width:24px; height:24px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
 #community-intro .community-vignette :is(h3,strong) { margin:2px 0 0; font:700 15px/1.3 var(--font-body); }
 #community-intro .community-vignette :is(p,.community-vignette-copy) { margin:0; font:400 13px/1.45 var(--font-body); overflow-wrap:normal; }
 #community-intro .community-vignette-cta { --bubble:var(--action); color:var(--action-ink); border-color:var(--select-edge); cursor:pointer; transition:background .18s ease; }
-#community-intro .community-vignette-cta::after { border-color:var(--select-edge); }
 #community-intro .community-vignette-cta:hover { --bubble:var(--action-hover); }
 #community-intro .community-vignette-cta:focus-visible { outline:3px solid var(--focus); outline-offset:4px; }
 #community-intro .community-vignette-cta strong { text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }
@@ -1381,3 +1380,9 @@ button.cover-index > span { white-space:normal; text-wrap:balance; }
 #ranking .tile-wx { max-width:calc(100% - 124px); padding:6px 8px; border-radius:10px; overflow-wrap:normal; word-break:normal; hyphens:none; }
 #ranking .tile-wx-label { min-width:0; white-space:normal; overflow-wrap:normal; word-break:normal; line-height:1.3; }
 #ranking .tile:not(:has(> img:not([data-image-state="error"]),> .outdoor-backdrop)) > .tile-wx { max-width:calc(100% - 124px); }
+
+/* Tre ruoli distinti: lettura, racconto, azione. Solo il racconto è un fumetto. */
+#community-intro .community-vignette-read { border-radius:8px; }
+#community-intro .community-vignette-story { border-radius:18px 18px 18px 4px; }
+#community-intro .community-vignette-cta { border-radius:24px; }
+@media(max-width:480px) { #community-intro .community-vignette-cta { border-radius:20px; } }
