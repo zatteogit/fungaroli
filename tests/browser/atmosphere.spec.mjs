@@ -90,3 +90,23 @@ for(const rain of [false,true])test(`Tancia: precedenza al luogo e meteo coerent
  }
  await page.screenshot({path:`output/playwright/tancia-${rain?'pioggia':'asciutto'}.png`});await context.close();
 });
+test('Canneto: loop locale verde in estate serena e foto locale sotto la pioggia',async({browser})=>{
+ const {page,context}=await start(browser,{withPlaces:true});
+ await page.route('**/canneto-fixture',r=>r.fulfill({contentType:'text/html',body:'<!doctype html><html><head><link rel="stylesheet" href="/css/atmosphere.css"></head><body style="margin:16px;--forest:#24513D;--on-photo:white"><style>.atmosphere{aspect-ratio:16/9;min-height:200px}</style><main id="hero"></main></body></html>'}));
+ await page.goto('/canneto-fixture');
+ await page.evaluate(async()=>{
+  const {chooseHomeCover}=await import('/js/home-cover-media.js'),{atmosphere}=await import('/js/atmosphere.js');
+  const media=(await(await fetch('/data/media-zones.json')).json()).zones['pnalm-settefrati-canneto'];
+  const choice=chooseHomeCover({zone:'pnalm-settefrati-canneto',date:'2026-07-20',icon:'sun',media});
+  document.querySelector('#hero').innerHTML=atmosphere(choice.id,{hero:true,kind:choice.kind});
+  await import('/js/atmosphere-video.js');
+ });
+ const cover=page.locator('#hero [data-atmosphere="canneto-verde-sereno"]');await cover.scrollIntoViewIfNeeded();
+ await expect(cover).toHaveAttribute('data-cover-kind','place-video');await expect(cover.locator('video')).toHaveAttribute('data-video-ready','true');
+ expect(await cover.locator('video').evaluate(v=>v.loop&&v.muted&&v.videoWidth===1280&&Math.abs(v.duration-8)<.1)).toBe(true);
+ await page.screenshot({path:'output/playwright/canneto-estate-sereno.png'});
+ const wet=await page.evaluate(async()=>{
+  const {chooseHomeCover}=await import('/js/home-cover-media.js');const media=(await(await fetch('/data/media-zones.json')).json()).zones['pnalm-settefrati-canneto'];
+  return chooseHomeCover({zone:'pnalm-settefrati-canneto',date:'2026-07-20',icon:'rain',media});
+ });expect(wet.kind).toBe('place-photo');expect(wet.photo.file).toContain('pnalm-settefrati-canneto');await context.close();
+});

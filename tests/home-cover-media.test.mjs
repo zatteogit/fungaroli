@@ -22,3 +22,13 @@ test('stock soltanto senza foto locale; nessuna scena serena per neve, nebbia o 
  assert.equal(choose({...empty,icon:'rain'}).id,'gocce-sulla-felce');
  for(const icon of ['snow','fog','storm'])assert.equal(choose({...empty,icon}).kind,'weather-illustration');
 });
+
+test('Canneto: animazione verde soltanto con sole in primavera ed estate; Antrodoco escluso',()=>{
+ const local={zone:'pnalm-settefrati-canneto',media:media['pnalm-settefrati-canneto']};
+ for(const date of ['2026-04-20','2026-07-20']){
+  assert.equal(choose({...local,date}).id,'canneto-verde-sereno');
+  for(const icon of ['rain','storm','snow','fog','cloud','wind','unknown'])assert.equal(choose({...local,date,icon}).kind,'place-photo');
+ }
+ for(const date of ['2026-01-20','2026-10-20'])assert.equal(choose({...local,date}).kind,'place-photo');
+ for(const date of ['2026-01-20','2026-04-20','2026-07-20','2026-10-20'])assert.equal(choose({zone:'antrodoco',media:media.antrodoco,date}).kind,'place-photo');
+});
