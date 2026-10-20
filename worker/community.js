@@ -12,7 +12,8 @@ import treeCatalog from '../data/trees.json';
 import {normalizeNotebookNote} from '../js/notebook-entry.js';
 import plantCatalog from '../data/plants.json';
 import {normalizeBase,validPoint} from '../js/travel-model.js';
-import {searchPlaces,routeMatrix} from './travel-provider.js';
+import {searchPlaces} from './travel-provider.js';
+import {cachedRoutes} from './travel-cache.js';
 import { buildEdibleCatalog } from '../js/edible-catalog.js';
 import traits from '../data/species-traits.json';
 import edibleCatalog from '../data/edible-catalog.json';
@@ -237,12 +238,8 @@ export async function handleCommunity(request, env, now = Date.now()) {
       if(!user.base)fail('Imposta prima la tua base nel profilo.',422);
       if(!Array.isArray(data.targets)||!data.targets.length||data.targets.length>50||data.targets.some(p=>!validPoint(p)))fail('Punti del percorso non validi.',422);
       await rate(db,'travel:'+user.id,60,3600,now);
-      const cache=globalThis.caches?.default;
-      const key=new Request(new URL('/api/internal/travel-cache/'+await hash(user.id+JSON.stringify([user.base,data.targets.map(p=>({lat:p.lat,lon:p.lon}))])),url.origin));
-      try{const cached=cache&&await cache.match(key);if(cached)return result(await cached.json());}catch{/* cache is optional */}
-      const routes=await routeMatrix(user.base,data.targets);
+      const routes=await cachedRoutes({base:user.base,targets:data.targets,owner:user.id,origin:url.origin,cache:globalThis.caches?.default,hash});
       const out={base:user.base,routes,source:'OSRM / OpenStreetMap',traffic:false};
-      if(cache)try{await cache.put(key,new Response(JSON.stringify(out),{headers:{'content-type':'application/json','cache-control':`max-age=${routes.some(r=>r.minutes===null)?120:21600}`}}));}catch{/* preserve the calculated routes */}
       return result(out);
     }
 
