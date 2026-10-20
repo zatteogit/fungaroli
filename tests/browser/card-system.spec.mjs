@@ -11,6 +11,8 @@ test('la foto della home mobile conserva lo spazio prima del caricamento',async(
   await page.goto('/',{waitUntil:'domcontentloaded'});await expect(page.locator('#hero .cover-title')).toBeVisible();
   const photo=page.locator('#hero .cover-img');
   await expect.poll(()=>photo.evaluate(e=>e.getBoundingClientRect().height)).toBeGreaterThanOrEqual(196);
+  // Isola il caricamento della foto dall'aggiornamento indipendente del badge meteo.
+  await expect(page.locator('#hero .facts .fact.wx-ok')).toBeVisible();
   const before=await page.locator('#hero .cover-body').boundingBox();
   expect(await photo.evaluate(e=>e.naturalWidth)).toBe(0);
   release();await expect.poll(()=>photo.evaluate(e=>e.complete&&e.naturalWidth>0)).toBe(true);
