@@ -6,7 +6,7 @@ import {matchSpecies} from '../js/species-search.js';
 import {validateContent} from '../worker/content-validation.js';
 const data=JSON.parse(readFileSync(new URL('../data/animals.json',import.meta.url)));
 test('animal catalog publishes only reviewed ready entries, including direct lookup and search',()=>{
- initAnimals(data);assert.equal(publicAnimals(data).length,8);assert.equal(animalRecord('vipera-comune'),undefined);assert.equal(animalSearchItems().some(i=>i.href.endsWith('/vipera-comune')),false);
+ initAnimals(data);assert.equal(publicAnimals(data).length,27);assert.deepEqual(publicAnimals({items:[{id:'ready',publicationStatus:'ready'},{id:'draft',publicationStatus:'draft'},{id:'missing'}]}).map(i=>i.id),['ready']);assert.equal(animalRecord('vipera-comune'),undefined);assert.equal(animalSearchItems().some(i=>i.href.endsWith('/vipera-comune')),false);
  assert.equal(validateContent('animals',data).needsReview,true);
 });
 test('animal claims require known sources; unsafe media and unreviewed schema changes are rejected',()=>{

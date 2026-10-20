@@ -8,6 +8,7 @@ Leggere insieme a [handoff di prodotto](handoff-2026-10-14.md) e [AGENTS.md](../
 
 ## Decisioni approvate
 
+- **Payoff ufficiale (decisione di Matteo, 20/10/2026): «Chi cerca, si ritrova.»** Conservare maiuscola, virgola e punto finale. Esprime ricerca nel bosco e tempo per sé, senza promettere ritrovamenti. Regole d’uso nel [README del kit](fronda/README.md#payoff-ufficiale--decisione-del-20-ottobre-2026) e nella [guida, Linguaggio](fronda/index.html#linguaggio).
 - Nome **Fronda**. Il progetto resta un compagno per scegliere dove/quando andare a funghi nel Reatino e conoscere il bosco durante il giro.
 - Marchio **C / Lobata**: foglia con pochi lobi larghi, sentiero in negativo e richiamo a un pennino. Il riferimento alla scrittura è voluto. Il contorno deve essere naturale e leggibile, senza dentellature o effetto strappato.
 - Conservare la geometria di `fronda/assets/master-geometry.json` e dei master SVG. Non ripartire da un nuovo logo né ricalcare le tavole raster.

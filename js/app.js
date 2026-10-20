@@ -1,3 +1,4 @@
+import {initDailyThought} from './daily-thought.js';
 import {assessWalkingRoute,driveAccessFor,documentedTrailStart,geometrySignature} from './outing-route.js';
 import {renderTrailContext,renderMappedPlaces} from './trail-context.js';
 import {initExternalSignals,externalForecastMultiplier,combineFieldMultipliers} from './external-signals-client.js';
@@ -259,7 +260,8 @@ async function init() {
     // Migrazione in sola lettura della vecchia chiave, soltanto senza una copia nella nuova cache.
     if(!snapshot)try{const s=JSON.parse(localStorage.getItem(legacyKey)||'null');if(complete(s)){snapshot=s;await saveSnapshot(s);}}catch{/* usa i dati inclusi nella release */}
   }
-  const load = (f) => snapshot?.resources?.[f] ? Promise.resolve(structuredClone(snapshot.resources[f])) : fetch(`data/${f}.json`).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+  const load = (f) => snapshot?.resources?.[f] ? Promise.resolve(structuredClone(snapshot.resources[f])) : fetch(`data/${f}.json`,{signal:AbortSignal.timeout(7000)}).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+  void initDailyThought({ embedded: embedded?.dailyThoughts || snapshot?.resources?.['daily-thoughts'] });
   contentCopy = embedded?.contentCopy || await load('ui-copy') || {};
   initGuideContent(embedded?.guides || await load('guides'),contentCopy,embedded?(f)=>embedded.assets?.[f]||'':null);
   for(const[selector,key]of [['#home-h','homeTitle'],['#others-h','otherPlacesTitle'],['#season-h','speciesTitle']])if(contentCopy[key]&&$(selector))$(selector).textContent=contentCopy[key];

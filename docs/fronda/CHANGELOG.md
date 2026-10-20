@@ -1,3 +1,9 @@
+# 20 ottobre 2026 — payoff ufficiale
+
+- Matteo adotta «Chi cerca, si ritrova.» come payoff di Fronda.
+- Aggiornati guida HTML (Linguaggio), manuale PDF (pagina 10), README e handoff con significato e regole d’uso.
+- Geometrie del marchio, token e interfaccia del prodotto invariati.
+
 # Fronda 1.1 — natura a colori
 
 - Verde principale aperto da 163D2D a 24513D; verde profondo conservato per testo e dettaglio.

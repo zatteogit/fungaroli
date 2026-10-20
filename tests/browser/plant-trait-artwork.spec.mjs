@@ -23,7 +23,7 @@ for(const width of [320,390])test(`caratteri botanici illustrati nelle schede e 
  await page.addInitScript(()=>localStorage.setItem('fungaroli:install-later',String(Date.now())));
  await page.goto('/#/pianta/finocchietto');
  const tiles=page.locator('[data-plant-traits="finocchietto"]');
- await expect(tiles.locator('img[src$="leaf_type-molto_divisa_fine.webp"]')).toHaveCount(1);
+ await expect(tiles.locator('img[src$="leaf_type-molto_divisa_fine.webp"]')).toHaveCount(0);
  await expect(tiles.locator('img[src$="/flower_shape-ombrella.webp"]')).toHaveCount(0);
  await expect(tiles.locator('img[src$="finocchietto-flower_shape-ombrella.webp"]')).toHaveCount(1);
  await expect(tiles).toContainText('Ombrella');

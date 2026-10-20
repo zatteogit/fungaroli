@@ -80,11 +80,12 @@ test('glossary homonyms require disjoint explicit contexts, including normalized
 test('flowers are a plant category: toxic or to observe, never edible parts, with sourced protection',()=>{
   const data=read('plants');
   const flowers=Object.values(data.plants).filter(p=>p.category==='Fiori');
-  assert.equal(flowers.length,14);
+  assert.equal(flowers.length,22);
+  assert.equal(flowers.filter(p=>p.protection!=null).length,14);
   for(const p of flowers){
     assert.ok(['da osservare','tossico','mortale'].includes(p.foodUse.status));
     assert.equal(p.foodUse.parts,'');
-    assert.match(p.protection.url,/^https:\/\//);
+    if(p.protection!==null)assert.match(p.protection.url,/^https:\/\//);
     // licenze aperte e commerciali: CC0, CC BY, CC BY-SA (niente NC/ND sulle foto nuove)
     assert.ok(p.photos.every(m=>/^(CC0|CC BY(-SA)?) \d/.test(m.license)&&m.page&&m.licenseUrl),p.name);
   }

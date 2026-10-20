@@ -1,3 +1,4 @@
+import {thoughtErrors} from '../js/daily-thought.js';
 import {validateTrailContext} from '../js/trail-context.js';
 import {GLOSSARY_CONTEXTS,termContexts,glossaryAliasKey} from '../js/glossary-context.js';
 import sanitizeHtml from 'sanitize-html';
@@ -67,6 +68,7 @@ export function validateContent(id, data, previous) {
     }));
   }
   const value=visit(data,'',previous);
+  if(id==='daily-thoughts'){const errors=thoughtErrors(value);if(errors.length)err(errors.join(' '));}
   if(id==='trails'){for(const z of Object.values(value.zones||{}))for(const t of z.trails||[])for(const l of t.relatedLinks||[])if(l.caution==='')delete l.caution;validateTrailContext(value);}
   if(id==='trails')for(const z of Object.values(value.zones||{}))for(const t of z.trails||[]){if(!t.editorialNote?.trim())delete t.editorialNote;if(t.relatedLinks?.length===0)delete t.relatedLinks;}
   function normalizeSources(v){
