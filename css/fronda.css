@@ -1,14 +1,9 @@
 /* Fronda: componenti condivisi sopra lo stile esistente. Perimetro a tolleranza zero di tools/ds-guard.mjs: solo ruoli pubblici dei token. */
 .appbar-back { min-width:0; }
 /* ------------------------------------------------------------------ Fronda: componenti
-   Semantica dei colori (decisione di Matteo, 15/10): interazione = bosco (--link), selezione = polline
-   (--select, testo --select-ink, filo --select-edge), azione principale = polline (--action), informazione =
-   calendula (--accent: occhielli, etichette), indice = verde (--s*, anello, pallini). Solo ruoli, niente
-   colori scritti a mano: i valori stanno in css/tokens.css.
-   Nella home, gli interessi usano germoglio, le preferenze un contorno e il giorno scelto avorio.
-   Negli altri contesti, azione e selezione hanno lo stesso giallo ma forme diverse: l'azione è un bottone pieno senza filo, in
-   grassetto, con il segno dell'azione (＋, →); il «scelto» sta sempre dentro un gruppo (fila, vassoio, barra),
-   ha il filo ocra --select-edge e, nei filtri, la spunta. */
+   Gerarchia approvata il 20/10: azione primaria polline; accessi secondari a contorno;
+   selezione verde tenue con segno persistente; navigazione con indicatore nel gruppo.
+   Le regole valgono in light e dark. I colori consumano solo ruoli pubblici. */
 .tab-pill { background: var(--select); box-shadow: inset 0 0 0 1px var(--select-edge); }
 .tabbar a[aria-current="page"] { color: var(--select-ink); }
 @media (min-width: 900px) {
@@ -16,28 +11,30 @@
   .tabbar a[aria-current="page"] { color: var(--select-ink); }
   @media (hover: hover) { .tabbar a[aria-current="page"]:hover { background: none; } }
 }
+.btn { min-height:44px; border-radius:var(--r-sm); }
+.btn.ghost { border-color:var(--link); }
 .btn.primary { background: var(--action); color: var(--action-ink); border-color: var(--action); }
 @media (hover: hover) { .btn.primary:hover { background: var(--action-hover); border-color: var(--action-hover); filter: none; } }
 .cover-cta { background: var(--action); color: var(--action-ink); }
-/* filtri e scelte attive: polline con il filo ocra; la spunta (style.css) prende il colore del testo */
+/* Scelte persistenti: verde tenue, contorno e spunta dove prevista dal controllo. */
 :is(.chip.pref, .chip, .ts-form, .ts-dot.ts-chip)[aria-pressed="true"],
 :is(.recognize-modes a[aria-current="page"], .recognize-modes button[aria-pressed="true"], .fo[aria-pressed="true"], .seg button[aria-pressed="true"], .cmp-chip[aria-selected="true"], .report-days [aria-pressed="true"], .th-chip.is-active) {
   background: var(--select); color: var(--select-ink); border-color: var(--select-edge); box-shadow: none;
 }
 .fo[aria-pressed="true"] .fo-n { color: inherit; }
 .chip[aria-pressed="true"] svg, .th-chip.is-active svg { color: currentColor; }
-/* segmenti (Scopri, percorso guidato, vista del sentiero): il segmento scelto è polline nel vassoio */
-:is(.seg-nav a[aria-current="page"], .seg-tabs button[aria-selected="true"], .trail-view-tabs [aria-selected="true"]) { background: var(--select); color: var(--select-ink); box-shadow: inset 0 0 0 1px var(--select-edge); }
-/* sotto-schede: testo pieno e sottolineatura ocra/polline (il polline puro su avorio non si vede abbastanza) */
+/* Navigazione: fondo tenue e indicatore persistente, senza riempimento da CTA. */
+:is(.seg-nav a[aria-current="page"], .seg-tabs button[aria-selected="true"], .trail-view-tabs [aria-selected="true"]) { background: var(--select); color: var(--select-ink); box-shadow: inset 0 -3px 0 var(--select-edge); }
+/* Sotto-schede: indicatore verde, distinto dall’azione principale. */
 .sub-nav a[aria-current="page"] { color: var(--text); border-bottom: 3px solid var(--select-edge); padding-bottom: 8px; }
 .notebook-tabs button[aria-pressed="true"] { border-bottom-color: var(--select-edge); }
-/* scelte grandi (risposte del percorso guidato, procedure): fondo polline tenue e filo ocra */
-:is(.id-opt[aria-pressed="true"], .wiz-choice.sel, .report-quantity:has(:checked), .mapctl-base[aria-pressed="true"]) { border-color: var(--select-edge); background: var(--polline-soft); box-shadow: inset 0 0 0 1px var(--select-edge); }
+/* Risposte e opzioni grandi seguono la stessa selezione verde. */
+:is(.id-opt[aria-pressed="true"], .wiz-choice.sel, .report-quantity:has(:checked), .mapctl-base[aria-pressed="true"]) { border-color: var(--select-edge); background: var(--select); box-shadow: inset 0 0 0 1px var(--select-edge); }
 .id-opt[aria-pressed="true"] .id-art { color: var(--text); }
 .share-choice label:has(input:checked) { border-color: var(--select-edge); box-shadow: inset 0 0 0 1px var(--select-edge); }
 .mapctl-tile[aria-pressed="true"] { color: var(--text); }
 .mapctl-tile[aria-pressed="true"] img { box-shadow: 0 0 0 3px var(--select-edge); }
-/* giorno scelto (home, zona, mappa): polline con testo bosco notte; il pallino resta nel colore del suo indice */
+/* Il giorno scelto è una selezione; il pallino conserva il colore dell’indice. */
 .day[aria-selected="true"] { background: var(--select); color: var(--select-ink); border-color: var(--select-edge); box-shadow: var(--shadow-1); }
 .day[aria-selected="true"] :is(.d1, .d3) { color: var(--select-ink); }
 .day[aria-selected="true"] .dot { background: var(--dc); box-shadow: 0 0 0 1.5px var(--select-ink); }
@@ -254,7 +251,7 @@ a.src-a:active { opacity: 1; text-decoration-style: solid; }
 /* Testo e fondo selezionati cambiano insieme, senza passare da coppie illeggibili. */
 :is(.chip, .btn.ghost, .seg-nav a, .tabbar a, .fo, .day, .th-chip, .seg-tabs button, .trail-view-tabs button, .switch, .switch-input, .mt-switch) { transition-property: transform, box-shadow, border-color; }
 .tab-pill { visibility: hidden; }
-.tabbar a[aria-current="page"] { background: var(--select); color: var(--select-ink); box-shadow: inset 0 0 0 1px var(--select-edge); }
+.tabbar a[aria-current="page"] { background: var(--select); color: var(--select-ink); box-shadow: inset 0 -3px 0 var(--select-edge); }
 @media (min-width: 900px) {
   .tabbar a[aria-current="page"] { border-radius: 999px; }
   @media (hover: hover) { .tabbar a[aria-current="page"]:hover { background: var(--select); } }
@@ -934,13 +931,13 @@ body:has(#ranking .ring) #ranking-index-legend,body:has(#season .ring) #season-i
 @media(prefers-reduced-motion:no-preference) { .cell-card.is-leaving { opacity:0 !important; transition:opacity .12s ease; } .cell-card.is-leaving .mtt { animation:none; } }
 
 /* Uscite: il polline resta sulla proposta e sulla navigazione, le scelte rapide respirano. */
-#active-filters [data-intent][aria-pressed="true"] { background:var(--story-germoglio); color:var(--story-ink); border-color:var(--story-ink); }
+#active-filters [data-intent][aria-pressed="true"] { background:var(--select); color:var(--select-ink); border-color:var(--select-edge); box-shadow:inset 0 0 0 1px var(--select-edge); }
 #active-filters [data-p][aria-pressed="true"] { background:var(--surface-2); color:var(--link); border-color:var(--link); box-shadow:inset 0 0 0 1px var(--link); }
 #days .day[aria-selected="true"] { background:var(--select); color:var(--select-ink); border-color:var(--select-edge); box-shadow:var(--shadow-1); }
 #days .day[aria-selected="true"] :is(.d1,.d3) { color:var(--select-ink); }
-#days .day[aria-selected="true"] .dot { box-shadow:0 0 0 1.5px var(--story-ink); }
+#days .day[aria-selected="true"] .dot { box-shadow:0 0 0 1.5px var(--select-ink); }
 @media(hover:hover) {
-  #active-filters [data-intent][aria-pressed="true"]:hover { background:var(--story-germoglio); color:var(--story-ink); }
+  #active-filters [data-intent][aria-pressed="true"]:hover { background:var(--select); color:var(--select-ink); }
   #active-filters [data-p][aria-pressed="true"]:hover { background:var(--surface-3); color:var(--link); }
 }
 
@@ -1421,14 +1418,14 @@ button.cover-index > b { font-size:21px; line-height:1.2; }
 .tabbar .tab-annotate {
   position:relative; z-index:1; display:inline-flex; align-items:center; justify-content:center;
   flex:none; gap:8px; min-width:100px; height:44px; margin-left:12px; padding:0 14px;
-  border:0; border-radius:999px; background:var(--text); color:var(--bg); box-shadow:none;
+  border:0; border-radius:var(--r-sm); background:var(--action); color:var(--action-ink); box-shadow:none;
   font:600 14px/1.15 var(--font-body); cursor:pointer; touch-action:manipulation;
 }
 .tab-annotate .tab-annotate-label { display:block; white-space:nowrap; }
 .tabbar .tab-annotate svg { flex:none; width:21px; height:21px; }
-.tab-annotate:focus-visible { outline:2px solid var(--text); outline-offset:3px; }
-.tabbar .tab-annotate:active { background:color-mix(in srgb,var(--text) 88%,var(--bg)); }
-@media(hover:hover) { .tabbar .tab-annotate:hover { background:color-mix(in srgb,var(--text) 92%,var(--bg)); } }
+.tab-annotate:focus-visible { outline:2px solid var(--focus); outline-offset:3px; }
+.tabbar .tab-annotate:active { background:var(--action-hover); }
+@media(hover:hover) { .tabbar .tab-annotate:hover { background:var(--action-hover); } }
 @media(max-width:899px) {
   :root:has(.tab-annotate) { --tabbar-h:64px; }
   .tabbar:has(.tab-annotate) {
@@ -1474,9 +1471,9 @@ button.cover-index > b { font-size:21px; line-height:1.2; }
 .catalog-tools { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); margin:20px 0 0; border-block:1px solid var(--hair); }
 .catalog-tool { display:grid; grid-template-columns:minmax(0,1fr); align-items:center; gap:12px; min-width:0; min-height:80px; padding:16px 12px; box-sizing:border-box; border:0; background:transparent; color:var(--text); text-align:left; text-decoration:none; cursor:pointer; font-family:var(--font-body); }
 .catalog-tool + .catalog-tool { border-left:1px solid var(--hair); padding-left:24px; }
-.catalog-tool-title { display:inline-flex; align-items:center; justify-content:flex-start; gap:8px; min-height:42px; box-sizing:border-box; padding:9px 14px; border-radius:12px; background:var(--action); color:var(--action-ink); font-size:14px; font-weight:600; line-height:1.4; }
+.catalog-tool-title { display:inline-flex; align-items:center; justify-content:flex-start; gap:8px; min-height:44px; box-sizing:border-box; padding:9px 14px; border:1px solid var(--link); border-radius:var(--r-sm); background:transparent; color:var(--text); font-size:14px; font-weight:600; line-height:1.4; }
 .catalog-tool-description { display:block; margin-top:8px; color:var(--muted); font-size:13px; font-weight:400; line-height:1.4; }
-.catalog-tool:hover .catalog-tool-title, .catalog-tool:active .catalog-tool-title { background:var(--action-hover); }
+.catalog-tool:hover .catalog-tool-title, .catalog-tool:active .catalog-tool-title { background:var(--surface-2); }
 .catalog-tool:focus-visible { outline:2px solid var(--focus); outline-offset:-2px; }
 .catalog-tools-note { margin:10px 0 24px; color:var(--muted); font-size:11px; line-height:1.5; }
 @media(max-width:600px) {
@@ -1486,3 +1483,6 @@ button.cover-index > b { font-size:21px; line-height:1.2; }
 }
 
 .catalog-tool-title > svg { width:20px; height:20px; flex:none; fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
+
+/* Una scelta del catalogo mantiene il segno di stato anche senza colore. */
+[data-fungi-group][aria-pressed="true"]::before { content:'✓'; margin-right:4px; }
