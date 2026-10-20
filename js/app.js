@@ -45,7 +45,7 @@ import {initBaseLocation,currentBase,customBase,travelTo,travelText,directionsTo
 import { initLearning, renderGlossary, renderFieldIdentify, difficultyLink, glossaryTerms, glossaryTitle, enhanceGlossary } from './learning.js';
 import { openLightbox, captionHtml } from './lightbox.js';
 import { initInstall, maybeInvite } from './install.js';
-import { loadOuting, outingFor, OUTING_LABEL, OUTING_SHORT, OUTING_RANK, conditionsScore, selectOutingWeather, outingHeadings } from './outing.js';
+import { loadOuting, outingFor, OUTING_LABEL, OUTING_SHORT, OUTING_RANK, conditionsScore, selectOutingWeather, outingHeadings, nextOutingWindow } from './outing.js';
 import { initIdentify, renderIdentify, renderComparisonStart, setCompare, searchTaxa, openTaxon, renderTaxonPage, renderTaxonView, taxonHeroSrc, taxonName, taxonByKey, attentionLine, sourceRows } from './identify.js';
 import { initSearch } from './search.js';
 import { renderGuidedKey } from './guided-key.js';
@@ -921,13 +921,40 @@ function outdoorProposals(day=state.homeDay, onlyUpcoming=false) {
   const seenZones=new Set(),seenTrails=new Set();
   return selectOutingWeather(list,c=>wxOf(c.z,c.d)).filter(c=>{const id=String(c.walk.t.id);if(seenZones.has(c.z.id)||seenTrails.has(id))return false;seenZones.add(c.z.id);seenTrails.add(id);return true;});
 }
-// Una proposta editoriale, senza cambiare indice, meteo o ordine delle uscite.
+// Contenuto sul meteo che stai guardando, con una finestra futura verificabile.
+function discoveryWindow() {
+  const candidates=[],after=state.homeDay??0;
+  for(let o=after+1;o<=AHEAD_DAYS;o++) {
+    if(state.target!=='funghi'){candidates.push(...outdoorProposals(o));continue;}
+    for(const z of zones){
+      const d=dayEntry(z.id,o);if(!d?.best)continue;
+      const walk=walkFor(z,d);if(!matchesInterests(z,d,walk))continue;
+      const s=adjusted(z,d.score,d);
+      candidates.push({z,d,o,s,walk,r:preferenceRank(z,s,d)*fieldRank(z,d)});
+    }
+  }
+  return nextOutingWindow(candidates,c=>wxOf(c.z,c.d),{after,canRecommend:c=>state.target!=='funghi'||Number.isFinite(c.s)&&classOf(c.s)<=2});
+}
 function renderDiscoveryBreak(list) {
   const box=$('#home-discovery-break');
   if(!box)return;
   const poorWeather=list.length>0&&list.every(c=>{const w=wxOf(c.z,c.d);return w?.available&&['attenzione','sconsigliata'].includes(w.level);});
   const limitedConditions=state.target==='funghi'&&list.length>0&&list.every(c=>Number.isFinite(c.s)&&classOf(c.s)>=3);
   box.hidden=!(poorWeather||limitedConditions);
+  if(box.hidden){box.replaceChildren();return;}
+  const current=list[0],w=wxOf(current.z,current.d);
+  const rain=w?.available&&(w.thunder||w.rain>=.5||w.prob>=50);
+  const title=rain?'Pioggia nel bosco: cosa cambia?':poorWeather?'Il bosco può aspettare. Intanto, leggiamolo.':'Bel tempo non basta.';
+  const story=rain
+    ? '<p>La pioggia prevista cambia il giro. Quella delle settimane precedenti può contribuire alle condizioni di fruttificazione: contano anche temperatura, terreno e alberi.</p><p>Non parte un conto alla rovescia per i funghi. Alla prossima uscita osserva lettiera, esposizione e vegetazione: il bosco racconta più del solo cielo.</p>'
+    : poorWeather
+    ? '<p>Il meteo della mattina e il potenziale dei funghi raccontano cose diverse. Fronda li combina nelle condizioni dell’uscita: un bosco promettente può avere un meteo poco adatto al giro.</p><p>Nel frattempo puoi leggere la zona: alberi, lettiera ed esposizione aiutano a capire l’habitat, prima ancora di cercare un fungo.</p>'
+    : '<p>Una mattina asciutta non basta a far salire le condizioni dei funghi. Contano anche le piogge delle settimane precedenti, la temperatura e l’habitat.</p><p>Può essere comunque l’occasione per conoscere un bosco: osserva gli alberi e i cambiamenti di vegetazione, senza aspettarti che l’indice racconti tutto ciò che troverai.</p>';
+  const guide=poorWeather&&!rain?'leggere-il-bosco':'pioggia-e-crescita';
+  const next=discoveryWindow(),c=next?.proposal,nw=c&&wxOf(c.z,c.d);
+  const nextHTML=c?`<span class="discovery-kicker">${next.conditionsUseful?'Il prossimo giorno da valutare':'La prossima pausa nel maltempo'}</span><h3>${esc(dayLabel(c.o,c.d.date,true))}</h3><p class="discovery-next-place">${esc(splitName(c.z)[0])}</p><p class="discovery-next-weather">${wxi(nw)}<span>${esc(nw.main)} · ${nw.tmin===nw.tmax?nw.tmax:`${nw.tmin}–${nw.tmax}`} °C</span></p>${Number.isFinite(c.s)?`<p class="discovery-next-score">Condizioni <b>${formatIndex(c.s)}</b> · ${esc(scoreShortLabel(c.s))}</p>`:''}${!next.conditionsUseful?'<p class="discovery-next-limit">Il meteo dà una tregua; le condizioni dei funghi restano limitate.</p>':''}<a class="btn primary" href="${walkHref(c.z,c.o,c.walk?.t)}">Guarda l’uscita</a><small>Previsioni della mattina, da ricontrollare prima di partire.</small>`
+    : `<span class="discovery-kicker">Quando si torna fuori?</span><h3>Non c’è ancora una data da proporti.</h3><p>Nelle zone selezionate non emerge una mattina con previsioni aggiornate e senza criticità, fino a ${esc(fmtDate(outdoorDate(AHEAD_DAYS),{weekday:'long',day:'numeric',month:'long'}))}.</p><small>Riproviamo con i prossimi aggiornamenti meteo.</small>`;
+  box.innerHTML=`<article class="discovery-story"><span class="discovery-kicker">${rain?'Pioggia e bosco':'Leggere le condizioni'}</span><h2 id="discovery-break-title">${title}</h2>${story}<a class="discovery-read" href="#/guide/${guide}">${rain?'Come la pioggia entra nel modello':poorWeather?'Impara a leggere il bosco':'Da cosa dipendono le condizioni'}</a></article><section class="discovery-next" aria-label="La prossima occasione per uscire">${nextHTML}</section>`;
 }
 function setOutingHeadings(list){
  const defaults={home:contentCopy.homeTitle||'Dove andare',others:state.target==='piante'?'Altri sentieri da esplorare':contentCopy.otherPlacesTitle||'Altre buone uscite'};

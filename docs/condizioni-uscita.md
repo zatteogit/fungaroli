@@ -9,3 +9,10 @@ Senza previsione disponibile e verificabile, nessun valore complessivo: non si u
 Le uscite sconsigliate vengono escluse dalle raccomandazioni quando esistono alternative con meteo verificabile meno critico. Se il tempo è avverso ovunque, la pagina dice «Con questo meteo, meglio rimandare» e «Zone da esplorare in un altro momento». Con previsioni mancanti o cautele, le intestazioni non chiamano le proposte «buone uscite». La stessa regola si applica alle proposte già lette durante un aggiornamento: non restano artificialmente prioritarie.
 
 Questa decisione supera per il numero generale dell’uscita le precedenti istruzioni che separavano meteo dell’uscita e indice biologico visibile. Non modifica parametri o dati del modello biologico.
+
+
+### Contenuti nelle giornate meno favorevoli · 21 ottobre
+
+La fascia fiordaliso della home propone un contenuto pertinente al meteo della proposta principale, riprendendo le guide già presenti (`pioggia-e-crescita`, `leggere-il-bosco`). Nessun tempo di attesa pioggia→funghi, ritrovamento o miglioramento viene inventato.
+
+La prossima occasione si cerca dopo il giorno selezionato (dopo oggi nella vista settimanale), entro i 7 giorni già valutati. Si rispettano i filtri di zona, interessi, community e sentieri. Si ammettono soltanto previsioni aggiornate con livello `ok`; per i funghi si preferisce la prima data con condizioni almeno discrete secondo le classi esistenti. A parità di data si usa l’ordine di preferenza corrente. Se c’è solo una pausa meteorologica con indice limitato, viene presentata come tale; senza dati sufficienti o senza finestre idonee si dice che non emerge ancora una data. I pesi e il modello restano invariati.

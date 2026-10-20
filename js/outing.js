@@ -111,3 +111,13 @@ export function outingHeadings(weather,defaults={home:'Dove andare',others:'Altr
   if(weather.some(w=>w.level==='attenzione'))return {home:'Uscite da valutare',others:'Altre uscite da valutare'};
   return defaults;
 }
+
+// Prima data futura con meteo verificabile senza criticità; distingue l’uscita
+// consigliabile dalla sola pausa nel maltempo, senza modificare i punteggi.
+export function nextOutingWindow(items,weatherOf,{after=0,canRecommend=()=>true}={}) {
+  const ready=items.filter(c=>Number.isInteger(c.o)&&c.o>after&&weatherOf(c)?.available&&weatherOf(c).level==='ok');
+  const order=(a,b)=>a.o-b.o||((b.r??b.s??0)-(a.r??a.s??0));
+  const useful=ready.filter(canRecommend).sort(order);
+  const proposal=useful[0]||ready.sort(order)[0];
+  return proposal?{proposal,conditionsUseful:useful.includes(proposal)}:null;
+}
