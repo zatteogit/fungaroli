@@ -145,3 +145,10 @@ area interattiva minima 24 × 24 px, mantenendo la citazione nella riga di lettu
 Su richiesta del proprietario la sezione è indicata come «Sezione in costruzione» finché il catalogo non avrà contenuti e immagini sufficienti. Le prime otto schede pubblicate restano consultabili; nessuna soglia numerica di completezza viene inventata e il segnale non sparisce automaticamente. Griglia e riquadro introduttivo riusano i componenti delle altre sezioni di Scopri. Le descrizioni complete restano nelle schede, mentre le tessere mostrano nome, gruppo e nome scientifico. Il binario comune delle sezioni sfuma soltanto sui margini con altro contenuto, su mouse e tocco.
 
 Revisione del diff; test automatici non eseguiti per richiesta del proprietario. Safari reale non verificato.
+
+
+## Ricerca e glossario · 20 ottobre 2026
+
+La ricerca globale include il filtro **Animali** e trova le schede anche per gruppo (es. Mammiferi, Anfibi). Il glossario include l’argomento **Animali**, modificabile anche dalla Redazione, con otto prime voci: impollinazione, impollinatore, metamorfosi completa, larva, crisalide, spiritromba, palchi e bramito. Le fonti sono indicate in ogni voce (ISPRA, Aree Protette Alpi Marittime, PNALM). Le definizioni si aprono anche dai testi descrittivi delle schede animali; fonti, didascalie e titoli rimangono esclusi dai collegamenti automatici.
+
+Compatibilità conservata con i documenti precedenti che dichiaravano tutti e cinque gli ambiti originari del glossario. Nessuna nuova immagine richiesta o generata per queste voci testuali. Rapporto asset: nessuna incoerenza o immagine da rifare; restano le lacune preesistenti del catalogo.
