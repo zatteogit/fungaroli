@@ -388,6 +388,13 @@ a.src-a:active { opacity: 1; text-decoration-style: solid; }
 #hero .cover-editorial .facts .fact { display:flex; min-height:24px; padding:0; font-size:13px; color:inherit; box-shadow:none; }
 #hero .cover-editorial .facts :is(.fk,.fc,.fx) { display:inline; }
 #hero .cover-editorial .facts svg { color:inherit; }
+/* Severity stays legible on every editorial cover colour. */
+.cover .facts .fact:is(.wx-attenzione,.wx-sconsigliata,.wx-non_disponibile), #hero .cover-editorial .facts .fact:is(.wx-attenzione,.wx-sconsigliata,.wx-non_disponibile) { padding:4px 8px; border:1px solid currentColor; border-radius:8px; }
+.cover .facts .fact.wx-attenzione, #hero .cover-editorial .facts .fact.wx-attenzione { background:var(--warn-bg); color:var(--warn-ink); }
+.cover .facts .fact.wx-sconsigliata, #hero .cover-editorial .facts .fact.wx-sconsigliata { background:var(--crit-bg); color:var(--crit-ink); }
+.cover .facts .fact.wx-non_disponibile, #hero .cover-editorial .facts .fact.wx-non_disponibile { background:var(--surface); color:var(--text-2); }
+.cover .facts .fact[class*="wx-"] .wxi { color:inherit; }
+
 #hero .cover-editorial .cover-cta { display:inline-flex; align-items:center; gap:24px; justify-content:space-between; min-height:48px; padding:12px 20px; margin-top:4px; color:var(--story-ink); border:1px solid var(--story-ink); background:none; box-shadow:none; border-radius:999px; }
 #hero .cover-editorial .cover-note { color:inherit; background:color-mix(in srgb,var(--story-ink) 8%,transparent); border-color:color-mix(in srgb,var(--story-ink) 24%,transparent); }
 .cover-note-place { display:grid; gap:2px; min-width:0; }
