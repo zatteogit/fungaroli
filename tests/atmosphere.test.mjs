@@ -10,5 +10,5 @@ test('ogni atmosfera ha loop, still piccoli e grandi, autore e licenza tracciabi
   assert.equal(row.duration,8);assert.equal(row.audio,false);assert.ok(row.bytes<2_000_000);
  }
  assert.equal(homeAtmosphere({month:10}),'autunno');assert.equal(homeAtmosphere({month:4}),'luce-tra-le-foglie');assert.equal(homeAtmosphere({month:10,walking:true}),'bosco-e-sentiero');
- assert.equal(atmosphere('sconosciuta'),'');assert.match(atmosphere('autunno',{hero:true}),/Video di atmosfera/);
+ assert.equal(atmosphere('sconosciuta'),'');assert.doesNotMatch(atmosphere('autunno',{hero:true}),/<figcaption>/);
 });

@@ -61,6 +61,8 @@ function ensureDialog() {
 }
 
 function showFrame(frame) {
+  // A restored frame must reflect current personal notes and account access.
+  enhance?.(frame.body);
   dialog.querySelector('[data-entity-content]').replaceChildren(frame.body);
   dialog.querySelector('#entity-sheet-title').textContent = frame.title;
   dialog.querySelector('[data-entity-page]').href = frame.href;

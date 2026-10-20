@@ -17,7 +17,7 @@ test('still prima del video: rete ritardata, buffer e loop senza spostare il pan
   expect(await video.evaluate(v=>v.buffered.end(v.buffered.length-1)-v.currentTime>=2)).toBe(true);
   expect((await page.locator('#hero .cover-body').boundingBox()).y).toBe(before.y);
   await video.evaluate(v=>v.currentTime=7.7);await expect.poll(()=>video.evaluate(v=>v.currentTime<1&&!v.paused)).toBe(true);
-  await expect(hero.locator('figcaption')).toHaveText('Video di atmosfera');
+  await expect(hero.locator('figcaption')).toHaveCount(0);
  }finally{release();await context.close();}
 });
 test('un video alla volta, pausa globale, inviti alle guide e taccuino vuoto',async({browser})=>{

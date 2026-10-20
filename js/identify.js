@@ -1,3 +1,4 @@
+import {SPECIES} from './species.js';
 import {mountInlineGallery} from './inline-gallery.js';
 import {glossaryHeading} from './content-ui.js';
 import {openModal} from './modal-flow.js';
@@ -1169,7 +1170,7 @@ function renderCompare(box, ref, pick) {
 export function openTaxon(key, {answers = false} = {}) {
   const t = TAXA.find(x => x.key === key);
   if (!t) return;
-  const href = t.edible_id && !t.lookalike_of?.length ? `#/specie/${t.edible_id}` : `#/fungo/${t.key}`;
+  const href = t.edible_id && !t.lookalike_of?.length ? `#/${SPECIES.some(s=>s.id===t.edible_id)?'specie':'commestibile'}/${t.edible_id}` : `#/fungo/${t.key}`;
   const decorate=answers?body=>{
     const c={t,...matches(t)};
     if(!c.tot)return;

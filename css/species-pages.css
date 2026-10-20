@@ -651,3 +651,19 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 .inline-gallery-error { position:absolute; z-index:5; top:76px; right:16px; max-width:calc(100% - 32px); padding:8px 12px; border-radius:10px; background:var(--surface); color:var(--text); font-size:13px; }
 .inline-gallery-error[hidden] { display:none; }
 .sp-strip button[aria-pressed="true"] { outline:3px solid var(--focus); outline-offset:-3px; }
+
+/* Ogni scheda si collega al Taccuino e alle segnalazioni effettivamente disponibili. */
+.fronda-connections { margin:24px 0; padding:20px; border:1px solid var(--border); border-radius:18px; background:var(--surface-2); color:var(--text); }
+.fronda-connections h2 { margin:0 0 16px; font:600 24px/1.2 var(--font-display); }
+.fronda-connections-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; }
+.fronda-connections h3 { margin:0 0 8px; font:600 16px/1.4 var(--font-body); }
+.fronda-connections h4 { margin:12px 0 6px; font:600 13px/1.4 var(--font-body); }
+.fronda-connections p,.fronda-connections li { font-size:14px; line-height:1.5; }
+.fronda-connections ul { padding:0; margin:0 0 12px; list-style:none; }
+.fronda-connections li { display:grid; gap:2px; padding:8px 0; border-bottom:1px solid var(--border); overflow-wrap:anywhere; }
+.fronda-connections li > span,.fronda-note-zone { font-size:13px; }
+.fronda-sharing-limits { margin-top:12px; }
+.fronda-sharing-limits summary { cursor:pointer; font-size:13px; padding-block:12px; min-height:44px; }
+.fronda-connections-links { display:flex; flex-wrap:wrap; gap:4px 20px; margin-top:16px; padding-top:12px; border-top:1px solid var(--border); }
+.fronda-connections-links a { display:inline-flex; align-items:center; min-height:44px; font-size:14px; }
+@media(max-width:600px) { .fronda-connections { padding:16px; } .fronda-connections-grid { grid-template-columns:minmax(0,1fr); gap:20px; } }
