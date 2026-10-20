@@ -1426,32 +1426,19 @@ button.cover-index > b { font-size:21px; line-height:1.2; }
  #hero .cover-editorial { grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr); }
 }
 
-/* Accesso compatto ai due strumenti del catalogo. */
-.catalog-welcome { display:flex; flex-wrap:wrap; align-items:center; gap:16px 24px; margin:20px 0 28px; padding:22px 24px; border-radius:20px; background:var(--story-fiordaliso); color:var(--story-ink); }
-.catalog-welcome-intro { flex:1 1 240px; min-width:0; }
-.catalog-welcome h2 { margin:0 0 6px; font:600 24px/1.15 var(--font-display); letter-spacing:-.02em; }
-.catalog-welcome-intro p { margin:0; font-size:14px; line-height:1.5; }
-.catalog-welcome-tools { display:flex; flex-wrap:wrap; gap:10px; }
-.catalog-tool { display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:44px; padding:10px 14px; box-sizing:border-box; border:1px solid color-mix(in srgb,var(--story-ink) 45%,transparent); border-radius:999px; background:transparent; color:var(--story-ink); text-align:left; text-decoration:none; cursor:pointer; font:600 14px/1.3 var(--font-body); }
-.catalog-tool-recognize { background:var(--action); border-color:var(--action); }
-.catalog-tool > svg { width:20px; height:20px; flex:none; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+/* I due strumenti sono navigazione del catalogo, con pari rilievo. */
+.catalog-tools { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); margin:20px 0 0; border-block:1px solid var(--hair); }
+.catalog-tool { display:grid; grid-template-columns:24px minmax(0,1fr) 20px; align-items:center; gap:12px; min-width:0; min-height:80px; padding:16px 12px; box-sizing:border-box; border:0; background:transparent; color:var(--text); text-align:left; text-decoration:none; cursor:pointer; font-family:var(--font-body); }
+.catalog-tool + .catalog-tool { border-left:1px solid var(--hair); padding-left:24px; }
+.catalog-tool > svg { width:24px; height:24px; fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
+.catalog-tool-title { display:block; font-size:15px; font-weight:600; line-height:1.4; }
+.catalog-tool-description { display:block; margin-top:3px; color:var(--muted); font-size:13px; font-weight:400; line-height:1.4; }
+.catalog-tool-arrow { font-size:20px; }
 .catalog-tool:hover .catalog-tool-title { text-decoration:underline; text-underline-offset:4px; }
-.catalog-tool:focus-visible { outline:3px solid var(--story-ink); outline-offset:3px; }
-.catalog-welcome-note { flex-basis:100%; margin:0; font-size:11px; line-height:1.5; }
-@media(max-width:480px) { .catalog-welcome { padding:18px; gap:14px; } .catalog-welcome h2 { font-size:23px; } .catalog-welcome-tools { gap:8px; } .catalog-tool { padding:10px 12px; font-size:13px; } }
-
-/* La foto accompagna gli strumenti senza diventare uno sfondo del testo. */
-.catalog-welcome { display:grid; grid-template-columns:220px minmax(0,1fr); align-items:stretch; gap:0; padding:0; overflow:hidden; }
-.catalog-welcome-photo { position:relative; min-width:0; min-height:210px; margin:0; background:var(--forest); }
-.catalog-welcome-photo img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:48% center; }
-.catalog-welcome-body { display:flex; flex-wrap:wrap; align-content:center; align-items:center; gap:14px; padding:22px 24px; min-width:0; }
-.catalog-welcome-body .catalog-welcome-intro { flex-basis:100%; }
+.catalog-tool:focus-visible { outline:2px solid var(--focus); outline-offset:-2px; }
+.catalog-tools-note { margin:10px 0 24px; color:var(--muted); font-size:11px; line-height:1.5; }
 @media(max-width:600px) {
- .catalog-welcome { grid-template-columns:minmax(0,1fr); padding:0; gap:0; }
- .catalog-welcome-photo { min-height:0; aspect-ratio:2.25; }
- .catalog-welcome-photo img { object-position:50% 48%; }
- .catalog-welcome-body { padding:18px; }
+ .catalog-tools { grid-template-columns:minmax(0,1fr); }
+ .catalog-tool { padding:14px 2px; min-height:76px; }
+ .catalog-tool + .catalog-tool { border-left:0; border-top:1px solid var(--hair); padding-left:2px; }
 }
-
-.catalog-welcome-photo > a { position:absolute; inset:0; display:block; }
-.catalog-welcome-photo > a:focus-visible { outline:3px solid var(--focus); outline-offset:-4px; }
