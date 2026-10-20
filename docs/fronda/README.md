@@ -59,7 +59,7 @@ I template di stampa hanno dimensioni nominali, senza abbondanze o profilo CMYK.
 
 ## Palette 1.1
 
-La base è bosco/avorio. I quattro accenti possono convivere: uno domina la singola composizione e gli altri sostengono il ritmo. Sui colori accesi il testo usa inchiostro scuro; sui fondi chiari le etichette usano varianti “ink”. Gli stati di sistema conservano ruoli separati. I pulsanti principali sono polline, con varianti contestuali esplicite `tone-calendula`, `tone-fiordaliso`, `tone-germoglio`. Il marchio mantiene la stessa geometria.
+La base è bosco/avorio. I quattro accenti possono convivere: uno domina la singola composizione e gli altri sostengono il ritmo. Sui colori accesi il testo usa inchiostro scuro; sui fondi chiari le etichette usano varianti “ink”. Gli stati di sistema conservano ruoli separati. I pulsanti principali sono polline. Calendula, fiordaliso e germoglio restano accenti editoriali e informativi, senza cambiare il ruolo delle azioni. Il marchio mantiene la stessa geometria.
 
 
 ## Studio completo e prototipo
@@ -79,3 +79,18 @@ Il contenuto deriva dal commit `44f1420e5bc08474428e1049cc9ce550799e9bf0` del 15
 ### Avvisi editoriali con fotografia · 20 ottobre 2026
 
 Usare una campitura di brand con testo scuro e una fotografia pertinente a lato, riprendendo il componente `story-invite` / `story-photo`. La foto resta separata dal testo: niente scritte sovrapposte o segni decorativi aggiunti. Su telefono il ritaglio diventa una fascia laterale; verificare che il soggetto rimanga leggibile e che l’immagine non imponga la sua altezza naturale all’avviso. Riutilizzare foto del catalogo con provenienza e licenza, collegandole alla scheda con crediti. Prima applicazione: avviso del catalogo Animali, ape da miele sul meliloto (Ivar Leidus, CC BY-SA 4.0).
+
+
+## Gerarchia dei controlli — prova approvata il 20 ottobre 2026
+
+- **Azione principale:** polline pieno con testo bosco notte, nei due temi. «Annota» è il comando globale di creazione; «Salva» è primario nel modulo.
+- **Accessi e azioni secondarie:** contorno leggibile, fondo neutro/trasparente, icona con etichetta. «Confronta» e «Impara a riconoscere» sono equivalenti nell’indice del catalogo; un’azione che avvia effettivamente il confronto può essere primaria nel proprio percorso.
+- **Selezione persistente:** verde tenue, contorno e spunta dove prevista. Il giallo pieno non indica più il giorno o il filtro selezionato.
+- **Navigazione corrente:** indicatore persistente nel gruppo e fondo tenue. «Annota» non è una destinazione selezionabile della barra.
+- **Approfondimenti:** link testuali riconoscibili. Rischi e avvisi conservano la propria semantica.
+
+Primario e secondario condividono altezza minima di 44 px e raggio 12 px. La posizione globale di «Annota» mantiene la geometria circolare su mobile, ma usa gli stessi colori primari. Hover sul controllo effettivo, focus da tastiera distinto, nessuna sottolineatura o evidenziatore su una riga che contiene già un pulsante.
+
+La stessa gerarchia vale in light e dark: si adeguano testo, superfici e contorni, non il significato del colore. La prima applicazione riguarda barra globale, strumenti del catalogo e selezioni condivise di filtri e navigazione. I materiali PDF precedenti restano la documentazione storica; questa sezione aggiorna la regola interattiva.
+
+Razionale ed esempi: [documento](../proposte/razionale-controlli-2026-10-20.md), [tavola interattiva](../proposte/linguaggio-controlli.html).

@@ -189,9 +189,15 @@
   --action-bg: var(--_ref-polline);
   --action-fg: var(--_ref-night);
   --action-hover: var(--_ref-polline-hover);
+  --selection-bg: var(--surface-subtle);
+  --selection-fg: var(--text);
+  --selection-edge: var(--brand);
+  --navigation-current-bg: var(--selection-bg);
+  --navigation-current-fg: var(--selection-fg);
+  --navigation-current-indicator: var(--selection-edge);
   --button-bg: var(--action-bg);
   --button-fg: var(--action-fg);
-  --button-radius: var(--radius-pill);
+  --button-radius: var(--radius-sm);
   --button-height: var(--control-h);
   --button-padding: var(--space-6);
   --field-bg: var(--surface);
@@ -214,6 +220,12 @@
   --tone-soft: var(--polline-soft);
   --tone-ink: var(--polline-ink);
   --tone-hover: var(--polline-hover);
+  --button-secondary-bg: var(--bg);
+  --button-secondary-fg: var(--text);
+  --button-secondary-border: var(--brand);
+  --chip-selected-bg: var(--selection-bg);
+  --chip-selected-fg: var(--selection-fg);
+  --chip-selected-border: var(--selection-edge);
 }
 [data-theme="dark"] {
   --bg: var(--_ref-night);
