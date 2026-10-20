@@ -1,3 +1,4 @@
+import {mountInlineGallery} from './inline-gallery.js';
 import {factCards,monthCalendar} from './content-ui.js';
 import {enhanceEntityAccordions} from './entity-accordions.js';
 import {speciesSafetyNote} from './species-context.js';
@@ -250,7 +251,7 @@ export function renderSpeciesDetail(body, id) {
   });
   // foto della specie: visore con zoom e swipe tra tutte le foto
   const gallery = photos.map((p) => ({ src: hd(p), alt: p.alt || sp.name, caption: captionHtml({ title: esc(d.name || sp.name), text: esc([p.caption, p.place, p.date].filter(Boolean).join(' · ')), credit: creditText(p) }) }));
-  body.querySelectorAll('[data-photo]').forEach((b) => b.addEventListener('click', () => openLightbox(gallery, +b.dataset.photo)));
+  mountInlineGallery(body,gallery);
   body.querySelectorAll('[data-info]').forEach((b) => b.addEventListener('click', () => openLightbox([{ src: ASSET(INFO[id].file), alt: `Infografica ${sp.name}`, caption: captionHtml({ title: `Infografica · ${esc(sp.name)}`, credit: infoCredit(INFO[id]) }) }])));
   // sosia: foto grande con pericolosita' e differenza da guardare
   const looks = (d.lookalikes || []).map((l) => {

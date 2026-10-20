@@ -1,3 +1,4 @@
+import {mountInlineGallery} from './inline-gallery.js';
 import {glossaryHeading} from './content-ui.js';
 import {openModal} from './modal-flow.js';
 import {matchSpecies} from './species-search.js';
@@ -846,7 +847,7 @@ export function renderTaxonView(box, t, { photos = null, habitatText = '', extra
     </div>`;
   enhanceEntityAccordions(box);
   const lb = ph.map((p) => ({ src: ASSET(p.file_hd || p.file), alt: p.alt || t.name, caption: captionHtml({ title: `<span class="tox">${toxL}</span> ${esc(t.name || '')} <i>${esc(t.latin)}</i>`, text: esc(p.caption || ''), credit: `Foto: ${esc(p.attribution_required_text || p.author || '')}${p.license ? `, ${p.licenseUrl ? `<a href="${esc(p.licenseUrl)}" target="_blank" rel="noopener">${esc(p.license)}</a>` : esc(p.license)}` : ''}${p.page ? ` · <a href="${esc(p.page)}" target="_blank" rel="noopener">${esc(p.source || 'Fotografia originale')}</a>` : ''}` }) }));
-  box.querySelectorAll('[data-photo]').forEach((b) => b.addEventListener('click', () => openLightbox(lb, +b.dataset.photo)));
+  mountInlineGallery(box,lb);
 }
 export function compareCta(edibleId, taxon = null) {
   const t = taxon || refOf(edibleId);

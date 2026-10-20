@@ -639,3 +639,15 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 .plant-cmp-row .ts-k { display:none; }
 .plant-cmp-unknown { color:var(--text-2); font-size:14px; }
 @media(max-width:600px) { .plant-cmp-pair { gap:12px; } .plant-cmp-species .btn { padding-inline:8px; font-size:14px; } .plant-cmp-row .trait-strip > li { padding-inline:8px; } }
+
+/* Stationary photo controls: changing photographs never shifts the page. */
+.inline-gallery-controls { position:absolute; z-index:5; top:16px; right:16px; display:flex; align-items:center; gap:4px; padding:3px; border:1px solid var(--control-edge); border-radius:999px; background:var(--surface); color:var(--text); }
+.inline-gallery-controls button { display:grid; place-items:center; width:44px; height:44px; padding:0; border:0; border-radius:50%; color:inherit; background:none; cursor:pointer; }
+.inline-gallery-controls button:hover { background:var(--surface-2); }
+.inline-gallery-controls button:focus-visible { outline:3px solid var(--focus); outline-offset:1px; }
+.inline-gallery-controls svg { width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+.inline-gallery-controls [data-gallery-counter] { min-width:42px; font:600 13px/1.5 var(--font-body); text-align:center; font-variant-numeric:tabular-nums; }
+.phero-img > .inline-gallery-outgoing { pointer-events:none; transition:none; }
+.inline-gallery-error { position:absolute; z-index:5; top:76px; right:16px; max-width:calc(100% - 32px); padding:8px 12px; border-radius:10px; background:var(--surface); color:var(--text); font-size:13px; }
+.inline-gallery-error[hidden] { display:none; }
+.sp-strip button[aria-pressed="true"] { outline:3px solid var(--focus); outline-offset:-3px; }
