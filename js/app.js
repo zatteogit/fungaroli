@@ -259,7 +259,7 @@ document.addEventListener('visibilitychange', refreshPlanningClock);
 addEventListener('focus', refreshPlanningClock);
 
 const compactTravel=t=>Number.isFinite(t.minutes)?`${t.minutes}<span class="fk2"> min</span><span class="fk3">′</span>`:`${fmtKm(t.airKm)} km in linea d’aria`;
-const travelFact=t=>fact('car',`<span title="${esc(Number.isFinite(t.minutes)?`Stima auto fino a ${t.destination}; senza traffico${t.stale?' · copia del '+new Date(t.calculatedAt).toLocaleDateString('it-IT'):''}`:'Percorso stradale fino all’accesso, non distanza in linea d’aria')}"><b>${Number.isFinite(t.minutes)?compactTravel(t):!t.routeAvailable?'Accesso da definire':t.pending?'Calcolo auto…':'Tempo auto non disponibile'}</b>${t.stale?'<small> · da aggiornare</small>':''}</span>`);
+const travelFact=t=>Number.isFinite(t.minutes)?fact('car',`<span title="${esc(`Stima auto fino a ${t.destination}; senza traffico${t.stale?' · copia del '+new Date(t.calculatedAt).toLocaleDateString('it-IT'):''}`)}"><b>${compactTravel(t)}</b>${t.stale?'<small> · da aggiornare</small>':''}</span>`):'';
 function proximityMultiplier(z) {
   const t=zoneTrip(z),distance=customBase()?(t.km??t.airKm)/100:Number.isFinite(t.minutes)?t.minutes/120:(t.airKm??0)/100;
   return 1-0.3*Math.min(1,distance);
