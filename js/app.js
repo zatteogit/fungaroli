@@ -965,6 +965,20 @@ function setOutingHeadings(list){
  }
  $('#home-h').textContent=labels.home;$('#others-h').textContent=labels.others;
 }
+function finishAlternativeList() {
+  const count=$('#ranking').children.length,heading=$('#others-h');
+  heading.hidden=count===0;
+  if(count!==1)return;
+  const singular={
+    'Altre zone da conoscere':'Un’altra zona da conoscere',
+    'Altre buone uscite':'Un’altra uscita',
+    'Altre uscite da valutare':'Un’altra uscita da valutare',
+    'Zone da esplorare in un altro momento':'Una zona per un altro momento',
+    'Altre zone da valutare':'Un’altra zona da valutare',
+    'Altri sentieri da esplorare':'Un altro sentiero da esplorare'
+  };
+  heading.textContent=singular[heading.textContent]||'Un’altra proposta';
+}
 function arrangeHome() {
   const view=$('[data-view="uscite"]');view.dataset.intent=state.target;
   const during=$('#during-walk');
@@ -1060,7 +1074,7 @@ function renderOutdoorHome() {
   const status=state.seasonSuspended?'<p class="notice">Una scelta salvata è stata sospesa fuori dal calendario indicativo. <button type="button" class="link-btn" data-season-restore>Ripristina la scelta</button></p>':'';
   updateWeatherHTML(box,status+(hero?outdoorTile(hero,true):`<p class="notice">Nessun sentiero mappato corrisponde ai filtri. Puoi ampliarli o consultare le schede.</p><button class="btn ghost" type="button" data-outdoor-filters>Rivedi i filtri</button>`));
   box.querySelector('[data-outdoor-filters]')?.addEventListener('click',openFullFilters);box.querySelector('[data-season-restore]')?.addEventListener('click',restoreSeason);
-  updateWeatherHTML($('#ranking'),list.slice(1,8).map(c=>`<li data-weather-key="${c.z.id}|${c.o}">${outdoorTile(c)}</li>`).join(''));$('#others-h').hidden=list.length<2;
+  updateWeatherHTML($('#ranking'),list.slice(1,8).map(c=>`<li data-weather-key="${c.z.id}|${c.o}">${outdoorTile(c)}</li>`).join(''));finishAlternativeList();
   if(hero)renderDiscoveries($('#during-walk'),hero.z,hero.d,hero.walk);else {$('#during-walk').hidden=true;$('#during-walk').innerHTML='';}
   if(hasInterest('piante'))outdoorPlantRail(list);
   else {$('#season-h').hidden=false;updateWeatherHTML($('#season'),`<li>${actRow('#/piante','leaf','Piante spontanee','Sfoglia il catalogo')}</li><li>${actRow('#/alberi','leaf','Gli alberi del bosco','Caratteri da osservare')}</li><li>${actRow('#/specie','go','Funghi in Scopri','Schede e confronti')}</li>`);}
@@ -2011,7 +2025,7 @@ function renderHome() {
     </a></li>`;
   }).join('');
   if(weatherPainting)updateWeatherHTML(ol,rankingHTML);else ol.innerHTML=rankingHTML;
-  $('#others-h').hidden = list.length < 2;
+  finishAlternativeList();
   fitFacts($('#hero .facts'));
   renderSeason();if(!weatherPainting)renderCommunityIntro();
   fitCover();
