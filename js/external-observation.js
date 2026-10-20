@@ -9,7 +9,7 @@ export const EXTERNAL_ENUMS = {
  quality:['research','needs_id','unverified'],
  reviewStatus:['pending','accepted','excluded'],
 };
-const lengths={sourceUrl:800,sourceLabel:160,sourceRecordId:100,publicationLabel:160,publishedOn:10,observedOn:10,observationLabel:250,placeName:200,province:80,reportedTaxon:250,scientificName:160,zoneId:100,taxonId:100,summary:2000,limitations:2000,license:160,attribution:300,eventKey:150};
+export const EXTERNAL_LENGTHS={sourceUrl:800,sourceLabel:160,sourceRecordId:100,publicationLabel:160,publishedOn:10,observedOn:10,observationLabel:250,placeName:200,province:80,reportedTaxon:250,scientificName:160,zoneId:100,taxonId:100,summary:2000,limitations:2000,license:160,attribution:300,eventKey:150};
 const fail=message=>{throw Object.assign(new Error(message),{status:422});};
 export function canonicalSource(value){
  let u;try{u=new URL(value);}catch{fail('Indica un link HTTPS alla fonte.');}
@@ -26,10 +26,10 @@ export function validExternalDay(day,now=Date.now()){
 }
 export function normalizeExternalObservation(input,{zoneIds,taxonIds,now=Date.now()}={}){
  if(!input||Array.isArray(input)||typeof input!=='object')fail('Segnalazione non valida.');
- const allowed=new Set([...Object.keys(lengths),...Object.keys(EXTERNAL_ENUMS),'searched','effortMinutes']);
+ const allowed=new Set([...Object.keys(EXTERNAL_LENGTHS),...Object.keys(EXTERNAL_ENUMS),'searched','effortMinutes']);
  if(Object.keys(input).some(k=>!allowed.has(k)))fail('La segnalazione contiene campi non previsti.');
  const r={};
- for(const [k,max] of Object.entries(lengths)){
+ for(const [k,max] of Object.entries(EXTERNAL_LENGTHS)){
   const v=input[k];if(v!==null&&v!==undefined&&typeof v!=='string')fail(`Campo ${k} non valido.`);
   if(v?.length>max)fail(`Campo ${k} troppo lungo.`);r[k]=v?.trim()||null;
  }

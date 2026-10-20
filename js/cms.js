@@ -178,7 +178,7 @@ $('#cms-resource-search').oninput=renderResources;
 $('#cms-resources').onclick=e=>{const b=e.target.closest('[data-resource]');if(b)openItem(b.dataset.resource);};
 $('#cms-agents').onclick=async()=>{
   const d=$('#cms-token-dialog');$('#cms-token-result').textContent='';
-  $('#cms-token-resources').innerHTML='<legend>Sezioni</legend>'+CONTENT_RESOURCES.filter(r=>!r.readonly).map(r=>`<label><input type="checkbox" name="resource" value="${r.id}" ${r.id===doc?.id?'checked':''}> ${esc(r.title)}</label>`).join('');
+  $('#cms-token-resources').innerHTML='<legend>Sezioni</legend><label><input type="checkbox" name="resource" value="external-observations"> Segnalazioni esterne e analisi del motore</label>'+CONTENT_RESOURCES.filter(r=>!r.readonly).map(r=>`<label><input type="checkbox" name="resource" value="${r.id}" ${r.id===doc?.id?'checked':''}> ${esc(r.title)}</label>`).join('');
   openModal(d);await tokens();
 };
 $('#cms-token-dialog [data-close]').onclick=()=>{$('#cms-token-result').textContent='';$('#cms-token-dialog').close();};

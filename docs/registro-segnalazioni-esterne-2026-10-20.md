@@ -1,5 +1,7 @@
 # Registro delle segnalazioni esterne
 
+Aggiornamento successivo: [collegamento al motore, dashboard dell’uso e API agenti](segnalazioni-motore-api.md). Il contratto iniziale qui sotto documenta lo stato prima del collegamento numerico all’ordine delle uscite.
+
 Richiesta di Matteo del 20 ottobre: cercare altre fonti, inserire le segnalazioni nel database, permettere consultazione e modifica dalla dashboard e conservare dati utilizzabili dal motore.
 
 ## Raccolta iniziale

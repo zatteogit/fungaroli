@@ -1,3 +1,4 @@
+import {initExternalSignals,externalForecastMultiplier,combineFieldMultipliers} from './external-signals-client.js';
 import {initEditorialOutings,editorialOutings,editorialTitle,editorialReference,renderEditorialIndex,renderEditorialPage} from './editorial-outings.js';
 import {initAnimals,animals,animalName,animalSearchItems,renderAnimals,renderAnimalPage} from './animals.js';
 import {configureLegalAccess,acceptLegalNotice,hasLegalAcceptance} from './legal-access.js';
@@ -288,6 +289,7 @@ async function init() {
   habitat = hj.zones;
   renderGuideCards($('#editorial'));
   initCommunity({ zoneList: weatherZones, speciesList: catalog });
+  initExternalSignals(()=>{if(results)paintWeatherView();});
   renderCommunityIntro();
   document.addEventListener('fungaroli:community', () => { renderCommunityIntro(); if(state.communityOnly)outCache.clear();if (results) paintWeatherView(); });
   initIdentify({
@@ -1247,6 +1249,11 @@ function wxOf(z, d) {
   if (!outCache.has(k)) outCache.set(k, outingFor(outing?.[z.id], z, d.date));
   return outCache.get(k);
 }
+function fieldRank(z,d){
+  if(state.target!=='funghi'||!hasInterest('funghi'))return 1;
+  const ids=selectedSpecies().filter(s=>s.kind!=='plant').map(s=>s.id);
+  return combineFieldMultipliers(communityRank(z.id,ids),externalForecastMultiplier(z.id,ids,d?.date));
+}
 const wxRank = (z, d) => OUTING_RANK[wxOf(z, d)?.level] ?? OUTING_RANK.non_disponibile;
 // "Puoi andare a...": stesso giorno, tempo migliore, funghi ancora probabili
 function alternativeFor(z, o, d) {
@@ -1506,7 +1513,7 @@ function bestOfDay(o, onlyUpcoming=false) {
     if (!d?.best||!matchesInterests(z,d,walkFor(z,d))) continue;
     if(onlyUpcoming && o===0 && !practicalTiming(z,d,walkFor(z,d)).available)continue;
     const sc = adjusted(z, d.score, d);
-    const rank = preferenceRank(z, sc, d) * wxRank(z, d) * communityRank(z.id, selectedCatalog().filter(s=>!botanicalById(s.id)).map(s=>s.id));
+    const rank = preferenceRank(z, sc, d) * wxRank(z, d) * fieldRank(z,d);
     if (!best || rank > best.rank) best = { s: sc, rank, z, d, o };
   }
   return best;
@@ -1596,7 +1603,7 @@ function combosList() {
     for (let o = 0; o <= AHEAD_DAYS; o++) {
       if (state.homeDay != null && o !== state.homeDay) continue;
       const d = dayEntry(z.id, o);
-      if (d?.best) { if(o===0 && (state.homeDay==null || !homeDateManual) && !practicalTiming(z,d,walkFor(z,d)).available)continue; const s = adjusted(z, d.score, d); combos.push({ z, o, d, s, r: preferenceRank(z, s, d) * wxRank(z, d) * communityRank(z.id, selectedCatalog().filter(s=>!botanicalById(s.id)).map(s=>s.id)) }); }
+      if (d?.best) { if(o===0 && (state.homeDay==null || !homeDateManual) && !practicalTiming(z,d,walkFor(z,d)).available)continue; const s = adjusted(z, d.score, d); combos.push({ z, o, d, s, r: preferenceRank(z, s, d) * wxRank(z, d) * fieldRank(z,d) }); }
     }
   }
   const seenTrails = new Set(), list = [];
@@ -2049,7 +2056,7 @@ function mapCandidates() {
     const d=dayEntry(z.id,state.dayOffset),day=d||{date:outdoorDate(state.dayOffset)},walk=walkFor(z,day,z.id===state.zoneId?state.trailId:null);
     if(!matchesInterests(z,day,walk))return null;
     const score=hasInterest('funghi')?d?.score:null,trip=zoneTrip(z,walk);
-    return {z,d,walk,score,trip,o:state.dayOffset,rank:Number.isFinite(score)?preferenceRank(z,score,d)*wxRank(z,d)*communityRank(z.id,selectedCatalog().filter(s=>!botanicalById(s.id)).map(s=>s.id)):-Infinity,weatherRank:wxRank(z,day),botanicalRank:hasInterest('piante')?Math.max(0,...mapPlants(z,day,walk).map(i=>i.rank||0)):0,minutes:trip.minutes,crowd:d?.crowd?.value??z.popularity,comfort:d?.comfort?.value};
+    return {z,d,walk,score,trip,o:state.dayOffset,rank:Number.isFinite(score)?preferenceRank(z,score,d)*wxRank(z,d)*fieldRank(z,d):-Infinity,weatherRank:wxRank(z,day),botanicalRank:hasInterest('piante')?Math.max(0,...mapPlants(z,day,walk).map(i=>i.rank||0)):0,minutes:trip.minutes,crowd:d?.crowd?.value??z.popularity,comfort:d?.comfort?.value};
   }).filter(Boolean).sort((a,b)=>hasInterest('funghi')?b.rank-a.rank||compareOutdoor(a,b,state):compareOutdoor(a,b,state));
 }
 function scheduleMapResults(){
@@ -2960,7 +2967,7 @@ function renderDetail() {
     <section class="zone-actions" aria-label="Taccuino e mappa">
       <h2 class="outing-section-title">Il giro, nel tuo taccuino</h2>
       <button type="button" class="btn primary zone-note-action" data-new-outing data-trip-zone="${z.id}"${walk?` data-trip-href="${esc(walkHref(z,state.dayOffset,walk.t))}" data-trip-title="${esc(trailName(walk.t))}"`:''}>${notebookGlyph}<span>Ci sono stato</span><span aria-hidden="true">→</span></button>
-      ${best.kind==='plant'?`<button type="button" class="btn primary zone-note-action" data-note-kind="pianta" data-note-id="${best.species.plantId}" data-note-zone="${z.id}" data-note-title="${esc(best.species.name)}">${notebookGlyph}<span>Annota la fase nel taccuino</span><span aria-hidden="true">→</span></button>`:`<div class="zone-community"><button type="button" class="btn ghost zone-note-action" data-report data-zone="${z.id}" data-species="${best.species.id}">${notebookGlyph}<span>Annota un’osservazione</span><span aria-hidden="true">→</span></button>${reportBadge(z.id, best.species.id)}</div>`}
+      ${best.kind==='plant'?`<button type="button" class="btn primary zone-note-action" data-note-kind="pianta" data-note-id="${best.species.plantId}" data-note-zone="${z.id}" data-note-title="${esc(best.species.name)}">${notebookGlyph}<span>Annota la fase nel taccuino</span><span aria-hidden="true">→</span></button>`:`<div class="zone-community"><button type="button" class="btn ghost zone-note-action" data-report data-zone="${z.id}" data-species="${best.species.id}">${notebookGlyph}<span>Annota un’osservazione</span><span aria-hidden="true">→</span></button>${reportBadge(z.id, best.species.id)}<p class="small muted">Fonti esterne: ${((externalForecastMultiplier(z.id,[best.species.id],d.date)-1)*100).toLocaleString('it-IT',{maximumFractionDigits:1})}% sulla priorità · indice invariato. Segnale sperimentale da osservazioni recenti della stessa zona e specie.</p></div>`}
       <p class="zone-note-hint">${best.kind==='plant'?'Nel taccuino puoi annotare le fasi della pianta e le ricerche a vuoto, con luogo e giorno dell’osservazione.':'Ricorda il giro con pochi tocchi: funghi osservati, fatica e un pensiero, se vuoi.'}</p>
       <div class="zone-secondary-actions">
         <a class="zone-secondary-action" href="#/mappa/${z.id}" aria-label="Sentieri e accessi sulla mappa">${IC.map}<span><b>Apri la mappa</b><small>Sentieri e accessi</small></span></a>

@@ -1,3 +1,5 @@
+import {mountExternalSources} from './external-sources-admin.js';
+import {mountExternalImpact} from './external-impact-admin.js';
 import {EXTERNAL_ENUMS,externalUsability} from './external-observation.js';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const labels={sourceType:'Tipo di fonte',outcome:'Esito',evidence:'Tipo di testimonianza',datePrecision:'Precisione della data',spatialScope:'Precisione del luogo',quality:'Qualità della fonte',reviewStatus:'Revisione',
@@ -9,11 +11,14 @@ const select=(key,value,options,blank=false)=>`<label>${esc(labels[key])}<select
 const input=(k,value,type='text')=>`<label>${esc(labels[k])}<input name="${k}" type="${type}" value="${esc(value)}"${type==='number'?' min="1" max="1440" step="1"':''}></label>`;
 
 export function mountExternalObservations(root,{api}){
+ let impact,sources;
  let list,catalog,current=null,dead=false,loading=false,dirty=false,detailRevision=0;
  const filters={q:'',status:'',source:'',page:0};
  const status=(text,error=false)=>{const el=root.querySelector('[data-external-status]');if(el){el.textContent=text;el.classList.toggle('error',error);}};
  function scaffold(){
-  root.innerHTML=`<section class="admin-section external-register"><header class="admin-heading"><div><p class="eyebrow">Fonti esterne</p><h2>Registro delle segnalazioni</h2><p>Consulta, correggi e revisiona ritrovamenti, ricerche a vuoto e informazioni di contesto.</p></div><button class="btn primary" type="button" data-new>Nuova segnalazione</button></header><p class="cms-status" role="status" aria-live="polite" data-external-status></p><p class="small muted">Il motore legge solo i dati con i requisiti necessari. Date mancanti, sentito dire e previsioni restano distinguibili. Queste fonti non entrano nei contributi volontari né cambiano automaticamente l’indice.</p><form data-external-filters class="external-filters"><label>Cerca luogo o specie<input type="search" name="q" maxlength="160"></label><label>Revisione<select name="status"><option value="">Tutte</option>${EXTERNAL_ENUMS.reviewStatus.map(v=>`<option value="${v}">${values[v]}</option>`).join('')}</select></label><label>Fonte<select name="source"><option value="">Tutte</option>${EXTERNAL_ENUMS.sourceType.map(v=>`<option value="${v}">${values[v]}</option>`).join('')}</select></label><button class="btn ghost" type="submit">Cerca</button></form><div class="cms-actions"><button class="btn ghost" type="button" data-export>Esporta per il motore</button><button class="btn ghost" type="button" data-external-refresh>Rileggi il registro</button></div><p data-external-count></p><div class="admin-records" data-external-list></div><div class="cms-actions"><button class="btn ghost" type="button" data-prev>Precedenti</button><span data-page></span><button class="btn ghost" type="button" data-next>Successive</button></div><section data-external-editor aria-label="Modifica segnalazione"></section></section>`;
+  root.innerHTML=`<section class="admin-section external-register"><header class="admin-heading"><div><p class="eyebrow">Fonti esterne</p><h2>Registro delle segnalazioni</h2><p>Consulta, correggi e revisiona ritrovamenti, ricerche a vuoto e informazioni di contesto.</p></div><button class="btn primary" type="button" data-new>Nuova segnalazione</button></header><p class="cms-status" role="status" aria-live="polite" data-external-status></p><p class="small muted">Il motore legge solo i dati con i requisiti necessari. Date mancanti, sentito dire e previsioni restano distinguibili. Queste fonti non entrano nei contributi volontari né cambiano automaticamente l’indice.</p><details><summary>Fonti da ricontrollare e punti di ripresa</summary><div data-external-sources></div></details><div data-external-impact></div><form data-external-filters class="external-filters"><label>Cerca luogo o specie<input type="search" name="q" maxlength="160"></label><label>Revisione<select name="status"><option value="">Tutte</option>${EXTERNAL_ENUMS.reviewStatus.map(v=>`<option value="${v}">${values[v]}</option>`).join('')}</select></label><label>Fonte<select name="source"><option value="">Tutte</option>${EXTERNAL_ENUMS.sourceType.map(v=>`<option value="${v}">${values[v]}</option>`).join('')}</select></label><button class="btn ghost" type="submit">Cerca</button></form><div class="cms-actions"><button class="btn ghost" type="button" data-export>Esporta per il motore</button><button class="btn ghost" type="button" data-external-refresh>Rileggi il registro</button></div><p data-external-count></p><div class="admin-records" data-external-list></div><div class="cms-actions"><button class="btn ghost" type="button" data-prev>Precedenti</button><span data-page></span><button class="btn ghost" type="button" data-next>Successive</button></div><section data-external-editor aria-label="Modifica segnalazione"></section></section>`;
+  sources=mountExternalSources(root.querySelector('[data-external-sources]'),{api});
+  impact=mountExternalImpact(root.querySelector('[data-external-impact]'),{api,open});
   root.querySelector('[data-external-filters]').onsubmit=e=>{e.preventDefault();const f=e.target;filters.q=f.elements.q.value;filters.status=f.elements.status.value;filters.source=f.elements.source.value;filters.page=0;load();};
   root.querySelector('[data-prev]').onclick=()=>{filters.page--;load();};root.querySelector('[data-next]').onclick=()=>{filters.page++;load();};
   root.querySelector('[data-external-refresh]').onclick=load;
@@ -67,8 +72,8 @@ export function mountExternalObservations(root,{api}){
  async function load(){
   if(loading||dead)return;loading=true;if(!root.childElementCount)scaffold();
   const button=root.querySelector('[data-external-refresh]');button.disabled=true;status('Leggo il registro…');
-  try{const next=await api('external-observations?'+new URLSearchParams(filters));if(dead)return;list=next;catalog=next.catalog;renderList();status('Registro aggiornato.');return true;}
+  try{const next=await api('external-observations?'+new URLSearchParams(filters));if(dead)return;list=next;catalog=next.catalog;renderList();await Promise.all([impact.load(),sources.load()]);status('Registro aggiornato.');return true;}
   catch(e){status(e.message,true);return false;}finally{loading=false;button.disabled=false;}
  }
- return {load,dispose(){dead=true;detailRevision++;root.replaceChildren();}};
+ return {load,dispose(){dead=true;impact?.dispose();sources?.dispose();detailRevision++;root.replaceChildren();}};
 }

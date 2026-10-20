@@ -1,3 +1,7 @@
+import {listExternalSources,readExternalSource,saveExternalSource} from './external-sources.js';
+import {externalEngineImpact} from './external-engine.js';
+import {externalMultiplier,combineFieldMultipliers} from '../js/external-signal.js';
+import {EXTERNAL_ENUMS,EXTERNAL_LENGTHS} from '../js/external-observation.js';
 import schema from '../migrations/0002_cms.sql';
 import { CONTENT_RESOURCES, CONTENT_SCHEMA_VERSION, resourceOf } from '../js/content-schema.js';
 import { readCommunityUser } from './community.js';
@@ -118,14 +122,37 @@ export async function handleCms(req,env,now=Date.now()) {
     if(path==='me'&&req.method==='GET')return response({user:actor,configured:!!(env.CMS_ADMIN_IDS||env.CMS_EDITOR_IDS)});
     permit(actor,'read');await rate(db,actor,now);
     if(path==='external-observations'||path.startsWith('external-observations/')){
-      permit(actor,'admin');
+      if(actor.kind==='human')permit(actor,'admin');
+      else {permit(actor,'read','external-observations');if(req.method!=='GET'&&path!=='external-observations/evaluate')permit(actor,'write','external-observations');}
       const suffix=path.slice('external-observations'.length).replace(/^\//,'');
       if(!suffix&&req.method==='GET')return response({...await listExternalObservations(env.COMMUNITY_DB,url.searchParams),catalog:await externalCatalog(db)});
-      if(!suffix&&req.method==='POST')return response(await saveExternalObservation(env.COMMUNITY_DB,null,await json(req),actor.id,now,db),201);
+      if(suffix==='sources'){
+        if(req.method==='GET')return response(await listExternalSources(env.COMMUNITY_DB));
+        if(req.method==='POST')return response(await saveExternalSource(env.COMMUNITY_DB,null,await json(req),actor.id,now),201);
+        failure('Metodo non consentito.',405);
+      }
+      const sourceMatch=suffix.match(/^sources\/([a-zA-Z0-9-]{1,100})$/);
+      if(sourceMatch){
+        if(req.method==='GET')return response(await readExternalSource(env.COMMUNITY_DB,sourceMatch[1]));
+        if(req.method==='PATCH')return response(await saveExternalSource(env.COMMUNITY_DB,sourceMatch[1],await json(req),actor.id,now));
+        failure('Metodo non consentito.',405);
+      }
+      const reviewedInput=async()=>{const input=await json(req);if(actor.kind==='agent'&&input?.data?.reviewStatus!=='pending')permit(actor,'review','external-observations');return input;};
+      if(suffix==='impact'&&req.method==='GET')return response(await externalEngineImpact(env,{day:url.searchParams.get('day')||undefined,now}));
+      if(suffix==='schema'&&req.method==='GET')return response({schemaVersion:1,enums:EXTERNAL_ENUMS,fields:{...Object.fromEntries(Object.entries(EXTERNAL_LENGTHS).map(([k,maxLength])=>[k,{type:['string','null'],maxLength}])),...Object.fromEntries(Object.entries(EXTERNAL_ENUMS).map(([k,values])=>[k,{type:'string',enum:values}])),searched:{type:'boolean'},effortMinutes:{type:['integer','null'],minimum:1,maximum:1440}},required:['sourceUrl','sourceLabel','placeName','summary','eventKey','searched',...Object.keys(EXTERNAL_ENUMS)],writes:{create:['data','reason'],update:['data','version','reason'],reasonLength:[5,500]},permissions:{read:'read + external-observations',write:'write + external-observations',acceptOrExclude:'review + external-observations'},endpoints:['external-observations','external-observations/:id','external-observations/engine','external-observations/impact?day=YYYY-MM-DD','external-observations/evaluate','external-observations/sources','external-observations/sources/:id']});
+      if(suffix==='evaluate'&&req.method==='POST'){
+        const input=await json(req);
+        if(!input||typeof input!=='object'||Array.isArray(input)||Object.keys(input).some(k=>!['day','zoneId','taxonIds','baseIndex','basePriority','communityMultiplier'].includes(k))||typeof input.zoneId!=='string'||!Array.isArray(input.taxonIds)||input.taxonIds.length>100||input.taxonIds.some(t=>typeof t!=='string')||!Number.isFinite(input.baseIndex)||input.baseIndex<0||input.baseIndex>10||!Number.isFinite(input.basePriority)||input.basePriority<0||input.basePriority>1000000||input.communityMultiplier!==undefined&&(!Number.isFinite(input.communityMultiplier)||input.communityMultiplier<.9||input.communityMultiplier>1.1))failure('Indica zona, specie, indice 0–10, priorità finita e moltiplicatore community tra 0,9 e 1,1.',422);
+        const impact=await externalEngineImpact(env,{day:input.day,now});
+        if(!impact.catalog.zones.some(z=>z.id===input.zoneId)||input.taxonIds.some(id=>!impact.catalog.taxa.some(t=>t.id===id)))failure('Zona o specie non presenti nel catalogo.',422);
+        const ext=externalMultiplier(impact.groups,input.zoneId,input.taxonIds),base=input.communityMultiplier??1,combined=combineFieldMultipliers(base,ext,impact.policy.maxPercent);
+        return response({generatedAt:impact.generatedAt,day:impact.day,inputOrigin:'caller_supplied_baseline',index:{before:input.baseIndex,after:input.baseIndex,delta:0},priority:{baseline:input.basePriority,before:input.basePriority*base,after:input.basePriority*combined,externalMultiplier:ext,communityMultiplier:base,combinedMultiplier:combined},groups:impact.groups.filter(g=>g.zoneId===input.zoneId&&input.taxonIds.includes(g.taxonId)),policy:impact.policy});
+      }
+      if(!suffix&&req.method==='POST')return response(await saveExternalObservation(env.COMMUNITY_DB,null,await reviewedInput(),actor.id,now,db),201);
       if(suffix==='engine'&&req.method==='GET')return response(await externalDataset(env.COMMUNITY_DB,now));
       if(/^[a-zA-Z0-9-]{1,100}$/.test(suffix)){
         if(req.method==='GET')return response(await readExternalObservation(env.COMMUNITY_DB,suffix));
-        if(req.method==='PATCH')return response(await saveExternalObservation(env.COMMUNITY_DB,suffix,await json(req),actor.id,now,db));
+        if(req.method==='PATCH'){const input=await reviewedInput();if(actor.kind==='agent'){const previous=await readExternalObservation(env.COMMUNITY_DB,suffix);if(previous.data.reviewStatus!=='pending')permit(actor,'review','external-observations');}return response(await saveExternalObservation(env.COMMUNITY_DB,suffix,input,actor.id,now,db));}
       }
       failure('Percorso o metodo non consentito.',405);
     }
@@ -135,7 +162,7 @@ export async function handleCms(req,env,now=Date.now()) {
       if(req.method==='PATCH')return response(await saveRankingPolicy(env.COMMUNITY_DB,await json(req),actor.id,now));
       failure('Metodo non consentito.',405);
     }
-    if(path==='schemas'&&req.method==='GET')return response({schemaVersion:CONTENT_SCHEMA_VERSION,resources:CONTENT_RESOURCES.map(r=>({...r,schema:{type:'object',required:r.required,additionalProperties:true}})),operations:['read','write','publish','review'],maxBytes:1500000});
+    if(path==='schemas'&&req.method==='GET')return response({schemaVersion:CONTENT_SCHEMA_VERSION,resources:CONTENT_RESOURCES.map(r=>({...r,schema:{type:'object',required:r.required,additionalProperties:true}})),operations:['read','write','publish','review'],externalObservations:{resource:'external-observations',schema:'/api/cms/v1/external-observations/schema',impact:'/api/cms/v1/external-observations/impact',evaluate:'/api/cms/v1/external-observations/evaluate'},maxBytes:1500000});
     if(path==='items'&&req.method==='GET') {
       const rows=(await db.prepare('SELECT id,version,published_version,updated_at,updated_by FROM cms_documents').all()).results;
       return response({items:rows.filter(r=>actor.resources.includes(r.id)).map(r=>({...resourceOf(r.id),version:r.version,publishedVersion:r.published_version,updatedAt:r.updated_at})),release:await db.prepare("SELECT value FROM cms_meta WHERE key='release'").first('value')});
@@ -201,7 +228,7 @@ export async function handleCms(req,env,now=Date.now()) {
     if(path==='tokens'&&req.method==='GET'){permit(actor,'admin');return response({tokens:(await db.prepare('SELECT id,name,scopes,resources,expires_at AS expiresAt,revoked_at AS revokedAt FROM cms_agent_tokens ORDER BY created_at DESC').all()).results.map(t=>({...t,scopes:JSON.parse(t.scopes),resources:JSON.parse(t.resources)}))});}
     if(path==='tokens'&&req.method==='POST') {
       permit(actor,'admin');const input=await json(req);
-      if(typeof input.name!=='string'||!input.name.trim()||!Array.isArray(input.scopes)||!input.scopes.length||input.scopes.some(s=>!['read','write','publish','review'].includes(s))||!input.scopes.includes('read')||!Array.isArray(input.resources)||!input.resources.length||input.resources.some(r=>!resourceOf(r))||!Number.isInteger(input.days)||input.days<1||input.days>90)failure('Indica nome, permessi, sezioni e scadenza (1–90 giorni).');
+      if(typeof input.name!=='string'||!input.name.trim()||!Array.isArray(input.scopes)||!input.scopes.length||input.scopes.some(s=>!['read','write','publish','review'].includes(s))||!input.scopes.includes('read')||!Array.isArray(input.resources)||!input.resources.length||input.resources.some(r=>r!=='external-observations'&&!resourceOf(r))||!Number.isInteger(input.days)||input.days<1||input.days>90)failure('Indica nome, permessi, sezioni e scadenza (1–90 giorni).');
       const raw='cms_'+Array.from(crypto.getRandomValues(new Uint8Array(32)),b=>b.toString(16).padStart(2,'0')).join(''),id=crypto.randomUUID();
       await db.batch([
         db.prepare('INSERT INTO cms_agent_tokens(id,token_hash,name,scopes,resources,created_at,expires_at,created_by) VALUES(?,?,?,?,?,?,?,?)').bind(id,await hash(raw),input.name.trim().slice(0,80),JSON.stringify([...new Set(input.scopes)]),JSON.stringify([...new Set(input.resources)]),now,now+input.days*864e5,actor.id),
