@@ -1,3 +1,4 @@
+import {thoughtErrors} from '../js/daily-thought.js';
 import {GLOSSARY_CONTEXTS,termContexts,glossaryAliasKey} from '../js/glossary-context.js';
 import sanitizeHtml from 'sanitize-html';
 import { resourceOf, isLockedField } from '../js/content-schema.js';
@@ -66,6 +67,7 @@ export function validateContent(id, data, previous) {
     }));
   }
   const value=visit(data,'',previous);
+  if(id==='daily-thoughts'){const errors=thoughtErrors(value);if(errors.length)err(errors.join(' '));}
   if(id==='trails')for(const z of Object.values(value.zones||{}))for(const t of z.trails||[])if(!t.editorialNote?.trim())delete t.editorialNote;
   function normalizeSources(v){
     if(!v||typeof v!=='object')return;

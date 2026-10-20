@@ -21,6 +21,17 @@ export async function load(url, context, next) {
 const { handleContent, noneMatch, publishedContent, REPOSITORY_REFRESHED } = await import('../worker/cms.js');
 
 const read = id => readFileSync(new URL(`../data/${id}.json`, import.meta.url), 'utf8');
+test('frasi del giorno: seed nel database e snapshot, bozza autore preservata', async () => {
+  const sql = new DatabaseSync(':memory:');
+  const initial = await publishedContent(env(sql), ORIGIN);
+  assert.deepEqual(initial.resources['daily-thoughts'], JSON.parse(read('daily-thoughts')));
+  const draft = structuredClone(initial.resources['daily-thoughts']);
+  draft.items[0].text = 'Una frase in lavorazione.';
+  sql.prepare("UPDATE cms_documents SET version=1,draft=?,updated_by='autore' WHERE id='daily-thoughts'").run(JSON.stringify(draft));
+  const snapshot = await publishedContent(env(sql), ORIGIN);
+  assert.deepEqual(snapshot.resources['daily-thoughts'], initial.resources['daily-thoughts']);
+  assert.equal(JSON.parse(sql.prepare("SELECT draft FROM cms_documents WHERE id='daily-thoughts'").get().draft).items[0].text, 'Una frase in lavorazione.');
+});
 // D1 essenziale: prepare/bind/all/first/run e batch in una transazione. Un nuovo adattatore sulla
 // stessa base equivale a un nuovo isolate del Worker: init() riparte e confronta con il repository.
 function d1(sql) {

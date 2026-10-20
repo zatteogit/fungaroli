@@ -4,6 +4,25 @@ Direzione C / Lobata scelta il 15 ottobre 2026. Revisione 1.1: bosco più lumino
 
 Apri `index.html` nel browser: guida completa, componenti interattivi, tema chiaro e scuro. I font sono locali. Nella guida le azioni sono dimostrative e non conservano note. Il prototipo separato `product.html` conserva invece le pagine del taccuino solo su questo browser. La preferenza del tema può essere salvata nel browser.
 
+## Payoff ufficiale — decisione del 20 ottobre 2026
+
+**Chi cerca, si ritrova.**
+
+Il payoff unisce il piacere della ricerca nel bosco alla possibilità di ritrovare tempo per sé, attenzione e contatto con la natura. La virgola sostiene il doppio significato. È un invito alla scoperta, senza promettere raccolti, ritrovamenti o identificazioni certe.
+
+- **Scrittura:** mantenere esattamente «Chi cerca, si ritrova.», con maiuscola iniziale, virgola e punto finale. Non usare le alternative esplorate come payoff del brand.
+- **Firma:** Fronda + payoff, su righe distinte. Il logotipo resta il master vettoriale; il payoff è testo separato in Manrope, più piccolo del nome e fuori dall’area di rispetto del marchio.
+- **Impaginazione:** preferire una sola riga; se serve, andare a capo dopo la virgola. Non comprimere o deformare il testo per farlo entrare.
+- **Colore:** usare i ruoli di testo del sistema, con contrasto adeguato al fondo. Nessun colore esclusivo aggiuntivo per il payoff.
+- **Dove usarlo:** copertine, presentazioni, materiali di comunicazione e aperture editoriali. La firma completa è facoltativa: nelle intestazioni compatte, nelle icone e quando la leggibilità è insufficiente si usa il marchio da solo.
+- **Tono:** il gioco di parole appartiene alla comunicazione di brand; nei dati, nelle indicazioni pratiche e negli avvisi prevalgono chiarezza e precisione.
+
+La [guida HTML, sezione Linguaggio](index.html#linguaggio) e la pagina 10 del manuale PDF riportano il payoff e le regole essenziali.
+
+## Frase del giorno
+
+La home può ospitare una piccola pausa editoriale dopo le proposte di uscita: un solo testo breve, con firma discreta, senza immagini o caroselli. Alternare curiosità, poesia e umorismo gentile; distinguere testi originali e citazioni attribuite. Il payoff rimane la firma permanente del brand. Archivio e regole in [Frasi del giorno](../frasi-del-giorno.md).
+
 ## Contenuto
 
 - `assets/fronda-symbol-*.svg`: simbolo master, verde / avorio / nero.

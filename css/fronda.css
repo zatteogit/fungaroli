@@ -1159,3 +1159,13 @@ button.cover-index > span { font-size:11px; }
 /* Il fungo identifica la stima anche nella presentazione compatta. */
 .cover-index > b, .ring.model-index > b { display:inline-flex; align-items:center; gap:6px; }
 .cover-index > b > .fungus-glyph, .ring.model-index > b > .fungus-glyph { width:18px; height:18px; flex:none; color:currentColor; }
+
+/* Una pausa dopo le proposte: nessuna copertina o azione primaria si sposta. */
+.daily-thought { display:flex; align-items:center; gap:var(--sp-4); padding:var(--sp-3) var(--sp-4); border:1px solid var(--border); border-radius:var(--r-sm); background:var(--surface); color:var(--text); }
+.daily-thought[hidden] { display:none; }
+.daily-thought-label { flex:0 0 auto; font:600 11px/1.4 var(--font-body); color:var(--text-2); }
+.daily-thought > div { min-width:0; }
+.daily-thought-text { display:inline; margin:0; font:400 14px/1.5 var(--font-body); overflow-wrap:anywhere; }
+.daily-thought-credit { margin-inline-start:var(--sp-2); font:500 11px/1.4 var(--font-body); color:var(--text-2); }
+a.daily-thought-credit { color:var(--link); text-underline-offset:3px; }
+@media(max-width:480px) { .daily-thought { align-items:flex-start; flex-direction:column; gap:var(--sp-1); } }
