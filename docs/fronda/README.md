@@ -85,7 +85,7 @@ Usare una campitura di brand con testo scuro e una fotografia pertinente a lato,
 
 Questa direzione sostituisce la prima prova del 20 ottobre, che assegnava giallo all’azione e verde alla selezione.
 
-- **CTA:** verde leggermente più acceso in light, mantenendo le geometrie precedenti dei diversi controlli. In dark il verde dell’azione diventa bianco, con testo bosco notte. Icona pertinente e testo stanno nello stesso controllo, senza freccia decorativa aggiuntiva.
+- **CTA:** verde bosco in light, mantenendo le geometrie precedenti dei diversi controlli. In dark il verde dell’azione diventa bianco, con testo bosco notte. Icona pertinente e testo stanno nello stesso controllo, senza freccia decorativa aggiuntiva.
 - **Selezione:** giallo polline con le forme e i bordi precedenti dei diversi gruppi, in entrambi i temi. Spunta nei filtri quando prevista, stato corrente nel gruppo di navigazione. I chip conservano la forma a capsula.
 - **Secondarie e approfondimenti:** contorno o link nella famiglia del verde (bianco in dark), con la stessa geometria della famiglia di azioni. Il rilievo segue il contesto.
 - **Accenti editoriali:** giallo, ciclamino e corallo. Il corallo riprende il tono mostrato da Matteo nel badge «Mortale»; la somiglianza cromatica non unifica i ruoli. Token di rischio, testo esplicito e simboli restano dedicati agli avvisi.
@@ -100,3 +100,8 @@ La prima applicazione riguarda barra globale, strumenti del catalogo, selezioni 
 Matteo preferisce le geometrie e i bordi precedenti alla prova: mantenere i nuovi colori di ruolo, senza uniformare selezioni e destinazioni della barra a una nuova forma rettangolare. Ripristinati i chip a capsula e i raggi originali dei diversi gruppi; gli strumenti del catalogo mantengono il raggio precedente. Rimossi il rinforzo globale dei bordi delle azioni secondarie e il contorno bianco delle selezioni gialle in dark. Questa correzione supera la prescrizione geometrica del paragrafo precedente.
 
 La frase del giorno conserva cornice e fondo discreti: testo in carattere editoriale, firma sotto e piccola etichetta separata; nessuna nuova illustrazione, cornice o azione aggiuntiva.
+
+
+### Verde e bordi dei selettori — ulteriore affinamento del 21 ottobre
+
+Il verde delle CTA in light torna al bosco del marchio, senza schiarirlo. In dark le azioni restano bianche. La scelta Funghi nella home usa lo stesso bordo singolo degli altri selettori gialli: nessun secondo filetto aggiunto da un’ombra interna.
