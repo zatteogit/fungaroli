@@ -47,3 +47,17 @@ test('prima dell’avviso obbligatorio non parte alcun video e un errore conserv
  await expect.poll(()=>requests).toBeGreaterThan(0);await expect(page.locator('#hero .atmosphere video')).toHaveCSS('opacity','0');await expect(page.locator('#hero .atmosphere-still')).toBeVisible();await expect(page.locator('#hero .atmosphere-toggle')).toBeHidden();
  await context.close();
 });
+test('copertine responsive e comando compatto negli inviti alle guide',async({browser})=>{
+ const {page,context}=await start(browser,{width:320});await page.goto('/');
+ for(const width of [320,390,768,1280]){
+  await page.setViewportSize({width,height:920});await expect(page.locator('#hero .atmosphere')).toBeVisible();
+  await page.screenshot({path:`output/playwright/atmosphere-home-${width}.png`});
+  expect(await page.locator('#hero .atmosphere').evaluate(e=>{const r=e.getBoundingClientRect();return r.left>=0&&r.right<=innerWidth;})).toBe(true);
+ }
+ await page.setViewportSize({width:320,height:920});await expect(page.locator('#hero video')).toHaveAttribute('data-video-ready','true');
+ await page.locator('#hero .atmosphere-toggle').click();
+ const invite=page.locator('[data-view="uscite"] .story-photo.atmosphere');await invite.scrollIntoViewIfNeeded();const button=invite.locator('button');
+ await expect(button).toHaveAccessibleName('Riprendi il video di atmosfera');
+ const [media,control]=await Promise.all([invite.boundingBox(),button.boundingBox()]);expect(control.x).toBeGreaterThanOrEqual(media.x);expect(control.x+control.width).toBeLessThanOrEqual(media.x+media.width);
+ await page.screenshot({path:'output/playwright/atmosphere-guide-320.png'});await context.close();
+});
