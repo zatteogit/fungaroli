@@ -473,6 +473,9 @@ function paintScopriNav(r) {
   if (nav) { nav.hidden = inLearning; nav.innerHTML = inLearning ? '' : SCOPRI.map(([id, href, label]) => `<a href="${href}" data-section="${id}"${cur(id === sec)}>${label}</a>`).join(''); }
   // la pagina indice di Impara mostra già le sue parti come card: sotto-schede solo nelle pagine interne
   if (sub) {
+    // Nel catalogo Funghi i due strumenti sono accolti dalla hero dedicata.
+    if (r.view === 'specie') { sub.hidden = true; sub.replaceChildren(); return; }
+    sub.hidden = false;
     const catalog = ['specie','piante','alberi'].includes(r.view);
     sub.classList.toggle('recognize-entry', catalog);
     sub.innerHTML = catalog ? `<button type="button" class="btn ghost" data-open-recognition="${sec}" aria-haspopup="dialog"><svg class="recognize-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="m15 15 6 6"/>${sec === 'funghi' ? '<path d="M6 11c0-5 8-5 8 0ZM9 11v3h2v-3"/>' : '<path d="M7 13c-2-4 0-7 6-7 0 6-2 8-6 7Zm0 0 4-4"/>'}</svg><span>Impara a riconoscere</span></button>` : sec !== 'impara' || r.view === 'impara' ? '' : SCOPRI_SUB[sec].map(([href, label]) => `<a href="${href}"${cur(href === here)}>${label}</a>`).join('');
