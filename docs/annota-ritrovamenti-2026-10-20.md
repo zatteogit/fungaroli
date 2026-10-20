@@ -12,7 +12,7 @@ Salvando si apre la pagina personale, con foto completa e didascalia esplicita. 
 
 Una fotografia per pagina. Copia JPEG fino a 1280 px e 120 kB, ricampionata nel browser senza metadati EXIF; nessun riconoscimento automatico. Gli originali non vengono modificati. Validazione condivisa fra browser e API: JPEG incorporato, dimensioni e lunghezza limitate. Il payload rientra nel limite esistente di 250 kB delle API.
 
-Le fotografie sono private, incluse nella voce personale sincronizzata col proprio profilo; non entrano negli aggregati community. In locale vengono conservate in IndexedDB, con riferimenti nel precedente archivio localStorage; le vecchie note restano leggibili. Le chiavi sono separate per archivio/profilo. Una mancata scrittura non viene confermata come salvataggio.
+Le fotografie sono private, incluse nella voce personale sincronizzata col proprio profilo; non entrano negli aggregati community. In locale vengono conservate in IndexedDB, con riferimenti nel precedente archivio localStorage; le vecchie note restano leggibili. Le chiavi sono separate per archivio/profilo. Una mancata scrittura non viene confermata come salvataggio. I salvataggi dello stesso archivio vengono eseguiti in sequenza, così due inserimenti simultanei non si sovrascrivono.
 
 Se si indica una zona e il giorno è oggi, si conserva la previsione della mattina solo quando disponibile e aggiornata. Viene etichettata come previsione, non meteo osservato nel punto del ritrovamento. Cambiare giorno o luogo rimuove il riferimento incompatibile; nessun meteo ricostruito per giornate passate.
 

@@ -31,6 +31,7 @@ test('archivio foto isolato per profilo, cancellazione e nessuna copia falsa dop
  const context=await browser.newContext({serviceWorkers:'block'}),page=await preparePage(context);await page.goto('/');
  const result=await page.evaluate(async()=>{
   const {notebookLocalStore}=await import('/js/notebook-photo-store.js');const a=notebookLocalStore('test-owner-a'),b=notebookLocalStore('test-owner-b'),photo={data:'data:image/jpeg;base64,'+btoa('\xff\xd8test\xff\xd9'),width:20,height:20};
+  await Promise.all([a.put({id:'parallel-one',photo}),a.put({id:'parallel-two',photo})]);if((await a.list()).length!==2)throw Error('Una foto sovrascrive un’altra nota');await a.remove('parallel-one');await a.remove('parallel-two');
   await a.put({id:'same-entry',photo});await b.put({id:'same-entry',photo:{...photo,width:10}});await a.remove('same-entry');
   const isolated=(await b.list())[0].photo.width===10&&(await a.list()).length===0;
   const set=Storage.prototype.setItem;Storage.prototype.setItem=function(){throw Error('Quota');};let failed=false;try{await b.put({id:'another',photo});}catch{failed=true;}finally{Storage.prototype.setItem=set;}
@@ -42,4 +43,10 @@ test('CTA con penna d’oca e ricerca in testata a 320px',async({browser})=>{
  const context=await browser.newContext({viewport:{width:320,height:850},serviceWorkers:'block'}),page=await preparePage(context);await page.goto('/');await expect(page.locator('#hero .cover-link')).toBeVisible();await expect(page.locator('#legal-loading')).toBeHidden();
  await page.evaluate(()=>scrollTo(0,0));await expect(page.locator('.appbar [data-open-search]')).toBeVisible();expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
  await page.screenshot({path:'output/playwright/annota-home-320.png'});await page.locator('.appbar [data-open-search]').click();await expect(page.locator('.search-dlg[open]')).toBeVisible();await context.close();
+});
+
+test('Annota mantiene accessibili gli altri appunti e il racconto dell’uscita',async({browser})=>{
+ const context=await browser.newContext({viewport:{width:390,height:950},serviceWorkers:'block'}),page=await preparePage(context);await page.goto('/');await page.locator('.tabbar [data-annotate]').click();await page.locator('[data-quick-more]').click();
+ await expect(page.locator('.notebook-dialog[open] [data-note-type="uscita"]')).toBeVisible();await page.locator('[data-note-type="appunto"]').click();await page.locator('[name="date"]').fill('2026-10-20');await page.locator('.notebook-dialog[open] [type="submit"]').click();
+ await page.locator('.notebook-dialog[open] [name="title"]').fill('Un pensiero');await page.locator('.notebook-dialog[open] [name="note"]').fill('Il ritorno nel bosco.');await page.locator('.notebook-dialog[open] [type="submit"]').click();await expect(page.locator('.notebook-dialog[open]')).toHaveCount(0);await context.close();
 });

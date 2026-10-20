@@ -1,5 +1,10 @@
 // Le fotografie restano fuori dal piccolo spazio localStorage. Ogni archivio ha chiavi proprie.
 let opening;
+const queues=new Map();
+function serial(scope,work){
+ const pending=(queues.get(scope)||Promise.resolve()).catch(()=>{}).then(work);queues.set(scope,pending);
+ pending.finally(()=>{if(queues.get(scope)===pending)queues.delete(scope);}).catch(()=>{});return pending;
+}
 function database(){return opening||=(new Promise((resolve,reject)=>{
  const r=indexedDB.open('fronda-notebook-photos',1);r.onupgradeneeded=()=>r.result.createObjectStore('photos');r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(Error('Archivio fotografico non disponibile. Riprova senza chiudere questa pagina.'));
 })).catch(e=>{opening=null;throw e;});}
@@ -29,5 +34,5 @@ export function notebookLocalStore(scope='fungaroli:diario:v1'){
    await Promise.all([...oldKeys].filter(k=>!keep.has(k)).map(k=>photoIO('delete',k).catch(()=>{})));
   }catch(error){await Promise.all(written.map(k=>photoIO('delete',k).catch(()=>{})));throw error;}
  }
- return {kind:'local',async list(){return Promise.all(metadata().map(hydrate));},replace:write,async put(e){await write([...metadata().filter(x=>x.id!==e.id),e]);},async remove(id){await write(metadata().filter(x=>x.id!==id));}};
+ return {kind:'local',async list(){return Promise.all(metadata().map(hydrate));},replace:entries=>serial(scope,()=>write(entries)),put:e=>serial(scope,()=>write([...metadata().filter(x=>x.id!==e.id),e])),remove:id=>serial(scope,()=>write(metadata().filter(x=>x.id!==id)))};
 }
