@@ -1382,13 +1382,26 @@ button.cover-index > b { font-size:21px; line-height:1.2; }
 #ranking .tile-wx { width:fit-content; max-width:calc(100% - 112px); padding:4px 7px; border-radius:999px; font-size:11px; font-weight:500; line-height:1.25; }
 #ranking .tile-wx .wxi, #ranking .tile-wx .wxi svg { width:14px; height:14px; }
 #ranking .tile:not(:has(> img:not([data-image-state="error"]),> .outdoor-backdrop)) > .tile-wx { max-width:calc(100% - 112px); }
-/* Un invito all’approfondimento, con il suo contenuto raccolto sotto. */
-#community-intro .community-footer { margin-top:4px; padding-top:6px; border-top:1px solid var(--hair); }
-#community-intro .community-footer summary { min-height:40px; gap:8px; font-weight:500; color:var(--link); }
-#community-intro .community-footer summary::before { content:'i'; display:grid; place-items:center; width:17px; height:17px; border:1px solid currentColor; border-radius:50%; font:600 11px/1 var(--font-body); }
+/* Un approfondimento compatto, con spiegazioni brevi e distinte. */
+#community-intro { margin:24px 0 28px; padding:20px; background:color-mix(in srgb,var(--ciclamino) 12%,var(--bg)); }
+#community-intro .community-vignettes { margin:18px 0 8px; }
+#community-intro .community-footer { margin-top:0; padding-top:0; border-top:0; }
+#community-intro .community-footer summary { min-height:32px; gap:8px; padding:0; font-size:13px; font-weight:500; color:var(--link); }
+#community-intro .community-footer summary::before { content:none; }
 #community-intro .community-footer summary::after { content:''; width:6px; height:6px; margin-left:1px; border-right:1px solid currentColor; border-bottom:1px solid currentColor; transform:translateY(-2px) rotate(45deg); }
 #community-intro .community-footer details[open] > summary::after { content:''; transform:translateY(2px) rotate(225deg); }
-#community-intro .community-footer details > p { max-width:65ch; line-height:1.6; }
+#community-intro .community-explainer { padding:12px 0 4px; }
+#community-intro .community-explainer .community-current-status { margin:0 0 20px; color:var(--muted); }
+#community-intro .community-explainer-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px 28px; }
+#community-intro .community-explainer-grid section { min-width:0; }
+#community-intro .community-explainer h3 { margin:0 0 6px; font:600 14px/1.35 var(--font-body); }
+#community-intro .community-explainer p { max-width:65ch; margin:0; font-size:14px; line-height:1.6; }
+#community-intro .community-explainer ul:not(.community-totals) { margin:10px 0 0; padding-left:18px; font-size:13px; line-height:1.7; }
+#community-intro .community-explainer > h3 { margin-top:24px; }
+@media(max-width:599px) {
+ #community-intro { margin:20px 0 24px; padding:16px; }
+ #community-intro .community-explainer-grid { grid-template-columns:minmax(0,1fr); gap:18px; }
+}
 
 /* La larghezza del pannello, non quella dello schermo, decide la distribuzione. */
 #hero .cover-editorial .cover-panel { container-type:inline-size; position:relative; z-index:2; pointer-events:none; grid-column:2; grid-row:1/3; display:flex; flex-direction:column; min-width:0; }

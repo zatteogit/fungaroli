@@ -1985,13 +1985,24 @@ function renderCommunityIntro() {
   if(communityCardDismissed){box.replaceChildren();return;}
   const open=box.querySelector('details')?.open;
   const connected=communityHasAccess();
-  box.innerHTML = `<div class="community-heading"><h2>${connected?'Il bosco ha anche la tua voce.':'Il bosco, visto da chi c’è stato.'}</h2><button class="community-dismiss" type="button" aria-label="Chiudi la card della community" title="Chiudi"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+  box.innerHTML = `<div class="community-heading"><h2>Come funziona</h2><button class="community-dismiss" type="button" aria-label="Chiudi la card della community" title="Chiudi"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
     <div class="community-vignettes" aria-label="Condividi e scopri">
       <div class="community-vignette community-vignette-read"><span class="community-vignette-icon">${IC.people}</span><h3>Vedi cosa si trova in giro</h3><p>Ritrovamenti e giri a vuoto, zona per zona.</p></div>
       <div class="community-vignette community-vignette-story"><span class="community-vignette-icon">${notebookGlyph}</span><h3>Racconta un’uscita</h3><p>I tuoi posti segreti restano tuoi.</p></div>
       <button class="community-vignette community-vignette-cta" type="button" data-report><span class="community-vignette-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></span><strong>${connected?'Racconta ancora':'Diamoci una mano'}</strong><span class="community-vignette-copy">${connected?'Condividi un’altra uscita.':'Condividi e scopri le segnalazioni degli altri.'}</span></button>
     </div>
-    <div class="community-footer"><details${open?' open':''}><summary>Dimmi di più</summary><p class="small community-current-status">${esc(communityStatus())}</p><p>Condividi un’osservazione per accedere alle segnalazioni della community. Mostriamo solo riepiloghi degli ultimi 7 giorni, per zona ampia e specie, quando ci sono almeno 3 persone e 2 giorni diversi. La tua fungaia resta riservata: nessun punto GPS, nome o giorno preciso.</p>${communityOverview()}<p class="small">Le osservazioni sono dichiarate e non raccontano tutte le uscite: poche segnalazioni non significano pochi funghi. Condividere è facoltativo. Puoi ritirare le tue osservazioni dal Taccuino; ritirandole tutte, non potrai più consultare i riepiloghi condivisi. Puoi continuare a usare il resto di Fronda.</p></details></div>`;
+    <div class="community-footer"><details${open?' open':''}><summary>Dimmi di più</summary>
+      <div class="community-explainer">
+        <p class="small community-current-status">${esc(communityStatus())}</p>
+        <div class="community-explainer-grid">
+          <section><h3>Condividi e scopri</h3><p>Condividi un’osservazione per accedere ai riepiloghi degli altri, per zona ampia e specie.</p><ul><li>Ultimi <strong>7 giorni</strong></li><li>Almeno <strong>3 persone</strong></li><li>Almeno <strong>2 giorni diversi</strong></li></ul></section>
+          <section><h3>I posti restano tuoi</h3><p>Nei riepiloghi non mostriamo punti GPS, nomi o giorni precisi. La tua fungaia resta riservata.</p></section>
+          <section><h3>Un segnale, non tutto il bosco</h3><p>Le osservazioni sono dichiarate e non raccontano tutte le uscite. Poche segnalazioni non significano pochi funghi.</p></section>
+          <section><h3>Scegli tu</h3><p>Condividere è facoltativo. Puoi ritirare le tue osservazioni dal Taccuino: se le ritiri tutte, perdi l’accesso ai riepiloghi condivisi. Il resto di Fronda resta disponibile.</p></section>
+        </div>
+        ${communityOverview()}
+      </div>
+    </details></div>`;
   box.querySelector('.community-dismiss').addEventListener('click',()=>{
     communityCardDismissed=true;
     try { localStorage.setItem(COMMUNITY_CARD_DISMISSED,'1'); } catch { /* resta chiusa durante questa visita */ }
