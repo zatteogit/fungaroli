@@ -1927,11 +1927,22 @@ function renderHome() {
   fitCover();
 }
 
+const COMMUNITY_CARD_DISMISSED='fronda:community-card-dismissed:v1';
+let communityCardDismissed=false;
+try { communityCardDismissed=localStorage.getItem(COMMUNITY_CARD_DISMISSED)==='1'; } catch { /* chiusura valida almeno per questa visita */ }
 function renderCommunityIntro() {
   const box = $('#community-intro');
   if (!box) return;
+  box.hidden=communityCardDismissed;
+  if(communityCardDismissed){box.replaceChildren();return;}
   const open=box.querySelector('details')?.open;
-  box.innerHTML = `<div class="community-heading"><h2>Dati dal bosco</h2><button class="btn ghost" type="button" data-report>${notebookGlyph}<span>Contribuisci</span></button></div><p class="small">${esc(communityStatus())}</p><details${open?' open':''}><summary>Ritrovamenti, ricerche a vuoto e privacy</summary><p>Condividi un’osservazione per consultare i dati collettivi. La tua fungaia resta riservata: agli altri mostriamo solo conteggi per zona ampia e specie su 7 giorni, con almeno 3 contributori e 2 giorni diversi. Nessun punto GPS, nome o giorno preciso.</p>${communityOverview()}<p class="small">Le segnalazioni sono dichiarate e non rappresentano tutte le ricerche. Nessun dato non significa assenza di funghi. La condivisione è facoltativa e revocabile dal taccuino: ritirandole tutte perdi l’accesso agli aggregati. Il resto dell’app resta utilizzabile.</p></details>`;
+  box.innerHTML = `<div class="community-heading"><h2>Le voci del bosco</h2><button class="community-dismiss" type="button" aria-label="Chiudi la card Le voci del bosco" title="Chiudi"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div><p class="small">${esc(communityStatus())}</p><div class="community-footer"><details${open?' open':''}><summary>Come funziona e privacy</summary><p>Condividi un’osservazione per leggere i racconti del bosco raccolti da Fronda. Mostriamo solo riepiloghi degli ultimi 7 giorni, per zona ampia e specie, quando ci sono almeno 3 persone e 2 giorni diversi. La tua fungaia resta riservata: nessun punto GPS, nome o giorno preciso.</p>${communityOverview()}<p class="small">Le osservazioni sono dichiarate e non raccontano tutte le uscite: poche segnalazioni non significano pochi funghi. Condividere è facoltativo. Puoi ritirare le tue osservazioni dal Taccuino; ritirandole tutte, non potrai più consultare i riepiloghi condivisi. Puoi continuare a usare il resto di Fronda.</p></details><button class="btn ghost" type="button" data-report>${notebookGlyph}<span>Racconta un’uscita</span></button></div>`;
+  box.querySelector('.community-dismiss').addEventListener('click',()=>{
+    communityCardDismissed=true;
+    try { localStorage.setItem(COMMUNITY_CARD_DISMISSED,'1'); } catch { /* resta chiusa durante questa visita */ }
+    box.hidden=true;
+    box.replaceChildren();
+  });
 }
 
 // barra delle info: se non ci sta, toglie prima "entro le", poi "min", poi il testo del meteo quando e' bello (resta l'icona)

@@ -1153,10 +1153,17 @@ body:has(#ranking .ring) #ranking-index-legend,body:has(#season .ring) #season-i
 button.cover-index { font-size:15px; gap:2px; }
 button.cover-index > span { font-size:11px; }
 #community-intro { margin:12px 0; padding:12px 16px; border-radius:16px; background:var(--surface-2); color:var(--text); }
-#community-intro .community-heading { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+#community-intro[hidden] { display:none; }
+#community-intro .community-heading { padding-right:36px; }
+#community-intro .community-dismiss { position:absolute; top:4px; right:4px; display:grid; place-items:center; width:44px; height:44px; padding:0; border:0; border-radius:50%; color:inherit; background:transparent; cursor:pointer; }
+#community-intro .community-dismiss:hover { background:var(--surface); }
+#community-intro .community-dismiss:focus-visible { outline:3px solid var(--focus); outline-offset:-3px; }
+#community-intro .community-footer { display:flex; align-items:flex-start; flex-wrap:wrap; gap:0 16px; }
+#community-intro .community-footer details { flex:1 1 160px; min-width:0; }
+#community-intro .community-footer .btn { flex:none; min-height:44px; font-size:13px; white-space:nowrap; }
 #community-intro h2 { margin:0; font:600 20px/1.2 var(--font-display); }
 #community-intro .btn { color:var(--text); border-color:var(--hair); padding:8px 12px; }
-#community-intro > p { margin:4px 0 8px; }
+#community-intro > p { margin:6px 28px 4px 0; font-size:14px; line-height:1.45; max-width:76ch; }
 #community-intro summary { cursor:pointer; font-size:13px; min-height:44px; display:flex; align-items:center; gap:8px; }
 #community-intro summary::after { content:'+'; margin-left:auto; }
 #community-intro details[open] summary::after { content:'−'; }
