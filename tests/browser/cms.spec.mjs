@@ -1,3 +1,4 @@
+import {CONTENT_RESOURCES} from '../../js/content-schema.js';
 import {test,expect} from '@playwright/test';
 import {execFileSync} from 'node:child_process';
 import {createHash,randomBytes} from 'node:crypto';
@@ -93,7 +94,7 @@ test('redazione, bozze, pubblicazione, conflitti, agenti e catalogo condiviso',a
   await expect(page.locator('#cms-workspace')).toBeVisible();
   await page.locator('#cms-content-tab').click();
   await expect(page.locator('[data-profile-label]')).toHaveText('Matteo');
-  await expect(page.locator('[data-resource]')).toHaveCount(21);
+  await expect(page.locator('[data-resource]')).toHaveCount(CONTENT_RESOURCES.length);
   // Risposte al questionario: pannello solo per gli amministratori (conteggio, esportazione, ricerca e cancellazione per ricevuta).
   // Una risposta vera, inviata dalla stessa origine come fa la pagina /questionario, con un testo che sembra una formula.
   const sent=await api(page,'/api/survey/v1/responses','POST',{survey:'esperti-reatino',version:1,website:'',respondent:{name:'Prova redazione'},consent:{anonymousUse:true,recontact:false,diary:false},answers:{profile:{years:30},risks:{knowsPoisonings:'sì',poisonings:'=SOMMA(1;2), -3'}}});
