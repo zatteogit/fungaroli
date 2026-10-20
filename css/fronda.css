@@ -1359,7 +1359,8 @@ button.cover-index > span { white-space:normal; text-wrap:balance; }
 }
 
 
-/* Annota è un’azione: spazio proprio per la penna e la stessa linea delle etichette. */
+/* Annota è un’azione: penna e testo affiancati in un pulsante dedicato. */
+.tab-destinations { position:relative; display:flex; align-items:center; gap:2px; }
 .tabbar .tab-annotate {
   position:relative; z-index:1; display:inline-flex; align-items:center; justify-content:center;
   flex:none; gap:8px; min-width:100px; height:44px; margin-left:12px; padding:0 14px;
@@ -1372,13 +1373,31 @@ button.cover-index > span { white-space:normal; text-wrap:balance; }
 .tabbar .tab-annotate:active { background:color-mix(in srgb,var(--text) 88%,var(--bg)); }
 @media(hover:hover) { .tabbar .tab-annotate:hover { background:color-mix(in srgb,var(--text) 92%,var(--bg)); } }
 @media(max-width:899px) {
-  .tabbar:has(.tab-annotate) { --sbw:64px; }
-  .tabbar .tab-annotate {
-    flex-direction:column; gap:3px; align-self:stretch; width:100%; min-width:0; min-height:44px;
-    height:auto; margin:0; padding:0 8px; border-radius:16px; font-size:11px; letter-spacing:.01em;
+  .tabbar:has(.tab-annotate) {
+    --sbw:96px; grid-template-columns:minmax(0,1fr) var(--sbw); gap:10px;
+    padding:0; border:0; background:none; box-shadow:none;
+    backdrop-filter:none; -webkit-backdrop-filter:none;
   }
-  .tabbar .tab-annotate svg { width:23px; height:23px; }
+  .tab-destinations {
+    display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); align-items:stretch;
+    min-width:0; height:100%; padding:var(--tbp); gap:4px; border-radius:999px;
+    border:1px solid var(--hair); background:color-mix(in srgb,var(--surface) 94%,transparent);
+    box-shadow:var(--shadow-2); backdrop-filter:blur(20px) saturate(1.6); -webkit-backdrop-filter:blur(20px) saturate(1.6);
+  }
+  .tabbar .tab-annotate {
+    flex-direction:row; gap:6px; align-self:center; width:100%; min-width:0; min-height:44px;
+    height:52px; margin:0; padding:0 10px; border-radius:999px; font-size:13px; letter-spacing:0;
+    box-shadow:var(--shadow-2);
+  }
+  .tabbar .tab-annotate svg { width:20px; height:20px; }
+}
+@media(max-width:359px) {
+  .tabbar:has(.tab-annotate) { --sbw:90px; gap:8px; }
+  .tab-destinations { gap:2px; }
+  .tabbar:has(.tab-annotate) a { font-size:10px; }
+  .tabbar .tab-annotate { gap:5px; padding-inline:8px; font-size:12px; }
 }
 @media(orientation:landscape) and (max-height:520px) and (max-width:899px) {
   :root:has(.tab-annotate) { --tabbar-h:56px; }
+  .tabbar .tab-annotate { height:48px; }
 }
