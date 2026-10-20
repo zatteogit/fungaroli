@@ -12,7 +12,7 @@
 import {normalizeNotebookNote} from '../../../js/notebook-entry.js';
 
 const MAX_BYTES = 250_000; // include i nuovi snapshot con modello e input meteo
-const ID_RE = /^[a-z0-9]{4,32}$/;
+const ID_RE = /^[a-zA-Z0-9-]{4,64}$/;
 
 const json = (data, status = 200) => new Response(JSON.stringify(data), {
   status,
