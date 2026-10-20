@@ -21,7 +21,10 @@ test('rate limiting falls back to dated data within its limit and never renews i
   const limited={zones,cache:storage,now:now+3600001,fetcher:async()=>Response.json({error:true},{status:429})};
   const stale=await cachedForecast(params,limited);
   assert.equal(stale.headers.get('x-weather-cache'),'stale');assert.equal(stale.headers.get('x-weather-fetched-at'),new Date(now).toISOString());
-  await assert.rejects(cachedForecast(params,{...limited,now:now+3*3600000+1}),e=>e.status===429);
+  const expired=await cachedForecast(params,{...limited,now:now+3*3600000+1});
+  assert.equal(expired.headers.get('x-weather-cache'),'stale');
+  assert.equal(expired.headers.get('x-weather-fetched-at'),new Date(now).toISOString());
+  await assert.rejects(cachedForecast(params,{...limited,now:now+6*86400000+1}),e=>e.status===429);
 });
 test('arbitrary coordinates, duplicate parameters and extra models cannot spend provider quota',async()=>{
   let calls=0;const options={zones,cache:cache(),now,fetcher:async()=>{calls++;return Response.json(raw());}};
@@ -120,3 +123,15 @@ test('fresh shared outing cache serves another client without calling the provid
  assert.equal(calls,1);assert.equal(second.headers.get('x-weather-cache'),'hit');
  assert.equal(second.headers.get('x-weather-fetched-at'),new Date(now).toISOString());assert.deepEqual(await second.json(),raw('outing'));
 });
+
+ test('saved growth survives an outage beyond 24 hours without claiming a current forecast',async()=>{
+ const storage=cache(),params=forecastParams(zones,'growth');let retention;
+ const put=storage.put;storage.put=async(k,v,options)=>{retention=options.expirationTtl;return put(k,v);};
+ await cachedForecast(params,{zones,cache:storage,now,fetcher:async()=>Response.json(raw())});
+ assert.equal(retention,6*86400);
+ const response=await cachedForecast(params,{zones,cache:storage,now:now+2*86400000,fetcher:async()=>Response.json({},{status:503})});
+ assert.equal(response.headers.get('x-weather-cache'),'stale');
+ assert.equal(response.headers.get('x-weather-fetched-at'),new Date(now).toISOString());
+ const rows=await response.json(),series=toDaily(rows[0],todayISO(new Date(now+2*86400000)),{expired:true});
+ assert.equal(series.todayIndex,-1);assert.equal(series.source.expired,true);
+ });

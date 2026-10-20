@@ -19,7 +19,9 @@ export default {
     if(url.pathname==='/api/weather/v1/forecast') {
       if(request.method!=='GET')return new Response('Metodo non consentito.',{status:405});
       try {
-        const content=await publishedResources(env,url.origin,['zones'],{initialize:false});
+        // A CMS outage must not prevent reading the independent weather cache.
+        let content;
+        try { content=await publishedResources(env,url.origin,['zones'],{initialize:false}); } catch { /* fall back to the published bundled zones */ }
         const zones=content?.zones?.zones||(await (await env.ASSETS.fetch(new Request(new URL('/data/zones.json',url)))).json()).zones;
         const metrics=env.CMS_DB&&ctx?.waitUntil?m=>ctx.waitUntil(recordWeatherMetric(env.CMS_DB,m)):undefined;
         return await cachedForecast(url.searchParams,{zones,cache:env.DIARIO,waitUntil:ctx?.waitUntil?.bind(ctx),waitForFresh:request.headers.get('x-weather-refresh')==='1',metrics});

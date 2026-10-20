@@ -1,4 +1,5 @@
 import {compactGrowth} from '../js/weather-data.js';
+import {WEATHER_LOCAL_RETENTION_MS} from '../js/weather-cache.js';
 export {compactGrowth} from '../js/weather-data.js';
 import {todayISO,PAST_DAYS,FORECAST_DAYS} from '../js/weather.js';
 const API='https://api.open-meteo.com/v1/forecast', TTL=3600000;
@@ -22,13 +23,13 @@ export function requestWeight(params){
   const locations=params.get('latitude')?.split(',').length||0;
   return {locations,weighted:locations*Math.max(1,variables/10)*Math.max(1,days/14)};
 }
-function validate(raw,params,now,compact=false) {
+function validate(raw,params,now,compact=false,requireToday=true) {
   const rows=Array.isArray(raw)?raw:[raw],count=params.get('latitude').split(',').length,today=todayISO(new Date(now));
   if(rows.length!==count)throw fail('Il servizio meteo ha restituito dati incompleti.',502);
   for(const row of rows)for(const group of ['daily','hourly']) {
     const fields=params.get(group)?.split(',');if(!fields||compact&&group==='hourly'&&params.has('daily'))continue;
     const data=row?.[group];
-    if(!Array.isArray(data?.time)||!data.time.length||data.time.some(t=>typeof t!=='string')||!data.time.some(t=>t.startsWith(today))
+    if(!Array.isArray(data?.time)||!data.time.length||data.time.some(t=>typeof t!=='string')||requireToday&&!data.time.some(t=>t.startsWith(today))
       ||fields.some(f=>!Array.isArray(data[f])||data[f].length!==data.time.length||data[f].some(v=>v!==null&&!Number.isFinite(v))))throw fail('Il servizio meteo ha restituito dati incompleti.',502);
   }
   if(compact&&params.has('daily'))for(const row of rows)for(const key of ['soil_moisture_3_to_9cm_mean','soil_temperature_6cm_mean'])if(!Array.isArray(row.daily[key])||row.daily[key].length!==row.daily.time.length||row.daily[key].some(v=>v!==null&&!Number.isFinite(v)))throw fail('Le medie giornaliere del suolo sono incomplete.',502);
@@ -74,14 +75,16 @@ export async function cachedForecast(query,{zones,cache,fetcher=fetch,now=Date.n
   // The query identifies the place and altitude. Midnight must not discard a
   // still-valid forecast that already covers the new day.
   const key=`weather:v3:${digest}`;
-  const maxAge=kind==='growth'?86400000:3*TTL;
+  // Retention is not forecast validity: return dated data for consultation even
+  // after its scientific age limit; clients independently suppress current scores.
+  const maxAge=WEATHER_LOCAL_RETENTION_MS;
   let saved=null;
   try {
     saved=cache?await cache.get(key,'json'):null;
     if(!saved&&cache)saved=await cache.get(`weather:v2:${todayISO(new Date(now))}:${digest}`,'json');
   } catch { /* cache opzionale */ }
   if(saved&&(!Number.isFinite(saved.t)||now-saved.t<0||now-saved.t>maxAge))saved=null;
-  if(saved)try {validate(saved.raw,params,now,kind==='growth');} catch {saved=null;}
+  if(saved)try {validate(saved.raw,params,now,kind==='growth',false);} catch {saved=null;}
   const response=(data,mode,refreshing=false)=>(note('served:'+(mode==='stale'&&!refreshing?'stale-fallback':mode)),new Response(JSON.stringify(data.raw),{headers:{'content-type':'application/json; charset=utf-8','cache-control':'no-store','x-weather-fetched-at':new Date(data.t).toISOString(),'x-weather-cache':mode,'x-weather-refreshing':refreshing?'1':'0','x-content-type-options':'nosniff'}}));
   if(saved&&now-saved.t<TTL)return response(saved,'hit');
   if(!pending.has(key))pending.set(key,(async()=>{

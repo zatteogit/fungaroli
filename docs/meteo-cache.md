@@ -13,7 +13,7 @@ Entrambi si aggiornano dopo un'ora. La data mostrata è quella di acquisizione o
 
 `worker/weather-provider.js` accetta esclusivamente coordinate, quote e profili pubblicati. Le richieste correnti sono per zona. KV `DIARIO` conserva `weather:v3:<SHA-256 della query>`: il cambio di giorno non invalida una previsione che copre già la nuova data. La lettura migra anche la precedente chiave giornaliera v2.
 
-Una copia entro un'ora viene restituita subito. Una copia più vecchia, ancora entro il limite del profilo e completa per oggi, viene restituita subito e aggiornata con `ctx.waitUntil`. Le richieste concomitanti sullo stesso isolate condividono il download. L'header `x-weather-refreshing: 1` fa richiedere al browser il risultato con `x-weather-refresh: 1`; il follow-up attende lo stesso lavoro. In caso di errore rimane la copia datata. Non è un lock distribuito tra isolate o regioni Cloudflare.
+Una copia entro un'ora viene restituita subito. Una copia più vecchia, conservata fino a sei giorni anche se non copre più oggi, viene restituita subito e aggiornata con `ctx.waitUntil`. Le richieste concomitanti sullo stesso isolate condividono il download. L'header `x-weather-refreshing: 1` fa richiedere al browser il risultato con `x-weather-refresh: 1`; il follow-up attende lo stesso lavoro. In caso di errore rimane la copia datata. Non è un lock distribuito tra isolate o regioni Cloudflare.
 
 Timeout upstream 15 secondi. I grandi batch delle pagine precedenti restano un percorso di compatibilità in streaming, senza cache: aggiornare l'app per usare il nuovo flusso per zona. Le medie del suolo richiedono almeno 24 ore valide; dati mancanti non diventano zero.
 
@@ -32,9 +32,9 @@ Durante l'aggiornamento rimane l'ordine delle proposte già visualizzate; i valo
 Il calendario della home e della zona usa tre righe: giorno, data, indice e meteo affiancati. Lo spazio del meteo resta vuoto quando i dati mancano; il loro arrivo non sposta data e indice né cambia l'altezza delle tile. Le tessere sono alte 88 px, con nomi dei giorni per esteso e un solo simbolo del fungo accanto all'indice. «Settimana» centra il proprio indice, senza inventare un meteo unico per l'intero periodo. Il calendario della mappa, composto solo dalle date, rimane distinto.
 
 - Oltre **24 ore** non viene calcolato l'indice fungino per oggi e il futuro.
-- Il meteo pratico più vecchio di **un'ora** viene dichiarato non aggiornato; oltre **tre ore** non è utilizzabile.
+- Il meteo pratico più vecchio di **un'ora** viene dichiarato non aggiornato; oltre **tre ore** non è utilizzabile per valutare l’uscita. La conservazione della copia sul server resta di sei giorni, come sul dispositivo, e non rinnova la data originale.
 - Dati mancanti non significano tempo asciutto, assenza di funghi o assenza di piante.
-- Il sistema attenua ritardi e indisponibilità del provider; una prima apertura senza copie salvate richiede comunque almeno una risposta valida.
+- Anche senza copie meteo, la modalità Funghi mostra le zone esplorabili e le schede, con un avviso esplicito e il tentativo di aggiornamento; non inventa previsioni o indici.
 - Non sono stati introdotti prefetch periodici, quote di servizio a pagamento o una garanzia di disponibilità del provider.
 
 ## Misure
@@ -73,3 +73,11 @@ Prima di scegliere prefetch, lock distribuito, piano a pagamento o una finestra 
 `npm test`; `npx playwright test tests/browser/weather.spec.mjs tests/browser/weather-background.spec.mjs tests/browser/map-popover.spec.mjs`.
 
 Copertura: cache immediata prima di rete bloccata; salvataggio parziale e riapertura; timestamp/quote/limiti; storage pieno; risposta vecchia; refresh server coalescente; cambio di giorno; timeout/429/retry; foto e consiglio stabili a 390 e 1280 px; pannelli della mappa utilizzabili durante l'arrivo del meteo. Misure (`tests/weather-metrics.test.mjs`, su SQLite reale): schema allineato alla migrazione, aggregazione oraria e giornaliera, peso delle richieste, eventi `served`/`upstream` per hit, miss, 429, errore e risposta non valida, database assente o guasto senza effetti sul meteo, pulizia dopo 180 giorni.
+
+## Recupero in caso di disservizio · 20 ottobre 2026
+
+La conservazione KV è stata separata dai limiti di utilizzo: prima le copie venivano eliminate dopo 24 ore (crescita) e tre ore (uscita), impedendo il recupero da un dispositivo nuovo durante un guasto più lungo. Ora entrambi i profili restano disponibili per sei giorni, senza cambiare timestamp, soglie dei modelli o indicazioni di validità. Le copie senza il giorno corrente possono essere consultate ma non producono un indice corrente.
+
+Il recupero meteo non viene più interrotto da un errore nella lettura delle zone dal CMS: in quel caso usa il catalogo distribuito con la release, con le stesse restrizioni delle coordinate. Se non esiste alcuna copia, anche la modalità Funghi usa il calendario senza dati climatici: valori nulli, nessun indice o meteo favorevole inventato, collegamenti alle zone e alle schede. L’avviso spiega il limite e offre Riprova.
+
+La nuova durata si applica alle copie salvate dopo la pubblicazione: non ricrea record KV già eliminati. Non è possibile attribuire retroattivamente un errore a una specifica causa senza i log della richiesta del dispositivo.
