@@ -364,7 +364,7 @@
 
 /* Ritrovamenti personali: stessa carta del taccuino, fotografia completa. */
 .quick-note-form { gap:18px; }
-.quick-note-form .eyebrow svg, .diary-capture-invite .diary-section-label svg { width:18px; height:18px; }
+.quick-note-form .eyebrow svg { width:18px; height:18px; }
 .notebook-dialog .eyebrow { display:flex; align-items:center; gap:8px; }
 .quick-note-intro { margin:0; color:var(--text-2); }
 .quick-photo { border:1px dashed var(--border); border-radius:18px; padding:22px; text-align:center; background:var(--surface); }
@@ -384,9 +384,6 @@
 .quick-note-save { display:grid; gap:14px; position:sticky; bottom:-24px; background:var(--bg); padding:16px 0 24px; }
 .quick-note-save .btn { justify-content:center; gap:10px; }
 .quick-note-save .link-btn { white-space:normal; }
-.diary-capture-invite { display:block; background:var(--surface); padding:clamp(20px,4vw,36px); border:1px solid var(--hair); border-radius:18px; margin-bottom:32px; }
-.diary-capture-invite h2 { font:500 clamp(24px,3vw,34px)/1.15 var(--font-display); margin:12px 0; }
-.diary-capture-invite p { max-width:52ch; }
 .diary-detail-photo.is-personal img { aspect-ratio:auto; object-fit:contain; max-height:720px; }
 .diary-detail-photo.is-personal .diary-photo-print { padding:12px; }
 @media(max-width:600px) { .quick-note-save { bottom:-18px; padding-bottom:18px; } }

@@ -43,8 +43,8 @@ test('CTA con penna d’oca e ricerca in testata a 320px',async({browser})=>{
  const context=await browser.newContext({viewport:{width:320,height:850},serviceWorkers:'block'}),page=await preparePage(context);await page.goto('/');await expect(page.locator('#hero .cover-link')).toBeVisible();await expect(page.locator('#legal-loading')).toBeHidden();
  await page.evaluate(()=>scrollTo(0,0));await expect(page.locator('.appbar [data-open-search]')).toBeVisible();expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
  await page.screenshot({path:'output/playwright/annota-home-320.png'});await page.locator('.appbar [data-open-search]').click();await expect(page.locator('.search-dlg[open]')).toBeVisible();
- await page.goto('/#/diario');await expect(page.locator('.diary-capture-invite')).toBeVisible();
- await expect(page.locator('[data-annotate]:visible')).toHaveCount(1);await expect(page.locator('.diary-capture-invite button')).toHaveCount(0);
+ await page.goto('/#/diario');await expect(page.locator('.diary-empty')).toBeVisible();await expect(page.locator('.diary-capture-invite')).toHaveCount(0);
+ await expect(page.locator('[data-annotate]:visible')).toHaveCount(1);
  await expect(page.locator('.diary-header-actions [data-new-outing]')).toBeVisible();await expect(page.locator('.diary-header-actions [data-new-note]')).toBeVisible();
  await page.locator('.tabbar [data-annotate]').click();await expect(page.locator('.notebook-dialog[open] h2')).toHaveText('Cosa hai incontrato?');await context.close();
 });
