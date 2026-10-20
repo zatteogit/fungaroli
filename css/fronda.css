@@ -1439,3 +1439,18 @@ button.cover-index > b { font-size:21px; line-height:1.2; }
 .catalog-tool:focus-visible { outline:3px solid var(--story-ink); outline-offset:3px; }
 .catalog-welcome-note { flex-basis:100%; margin:0; font-size:11px; line-height:1.5; }
 @media(max-width:480px) { .catalog-welcome { padding:18px; gap:14px; } .catalog-welcome h2 { font-size:23px; } .catalog-welcome-tools { gap:8px; } .catalog-tool { padding:10px 12px; font-size:13px; } }
+
+/* La foto accompagna gli strumenti senza diventare uno sfondo del testo. */
+.catalog-welcome { display:grid; grid-template-columns:220px minmax(0,1fr); align-items:stretch; gap:0; padding:0; overflow:hidden; }
+.catalog-welcome-photo { position:relative; min-width:0; min-height:210px; margin:0; background:var(--forest); }
+.catalog-welcome-photo img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:48% center; }
+.catalog-welcome-photo figcaption { position:absolute; inset:auto 0 0; padding:22px 10px 8px; background:linear-gradient(transparent,var(--scrim)); color:var(--on-photo); font:400 10px/1.5 var(--font-body); }
+.catalog-welcome-photo a { color:inherit; text-underline-offset:2px; }
+.catalog-welcome-body { display:flex; flex-wrap:wrap; align-content:center; align-items:center; gap:14px; padding:22px 24px; min-width:0; }
+.catalog-welcome-body .catalog-welcome-intro { flex-basis:100%; }
+@media(max-width:600px) {
+ .catalog-welcome { grid-template-columns:minmax(0,1fr); padding:0; gap:0; }
+ .catalog-welcome-photo { min-height:0; aspect-ratio:2.25; }
+ .catalog-welcome-photo img { object-position:50% 48%; }
+ .catalog-welcome-body { padding:18px; }
+}
