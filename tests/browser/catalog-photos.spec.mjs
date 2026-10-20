@@ -1,5 +1,9 @@
 import {test,expect} from '@playwright/test';
+import {readFileSync} from 'node:fs';
 import {todayISO} from '../../js/weather.js';
+const read=id=>JSON.parse(readFileSync(new URL(`../../data/${id}.json`,import.meta.url)));
+const media=read('media').species['agaricus-bisporus'];
+const photoCounts={fungo:new Set([media.ref,...media.inat].map(p=>p.file)).size,rovo:read('plants').plants.rovo.photos.length,noce:read('media-trees').trees.noce.commons.length};
 async function setup(page,width) {
   await page.setViewportSize({width,height:900});
   await page.emulateMedia({reducedMotion:'reduce'});
@@ -18,7 +22,7 @@ async function setup(page,width) {
 for(const width of [320,1280])for(const theme of ['light','dark'])test(`nuove gallerie reali, zoom e scoperte a ${width}px in ${theme}`,async({page})=>{
  const errors=await setup(page,width);await page.evaluate(theme=>document.documentElement.dataset.theme=theme,theme);
  await expect(page.locator('#during-walk')).toBeVisible();await page.locator('#during-walk').screenshot({path:`/tmp/fungaroli-discoveries-${width}-${theme}.png`});
- for(const [route,selector,count,author]of [['/#/commestibile/agaricus-bisporus','#edible-detail',2,/iNaturalist/],['/#/pianta/rovo','#plant-detail',3,/Trieste/],['/#/albero/noce','#tree-detail',3,/Trieste/]]){
+ for(const [route,selector,count,author]of [['/#/commestibile/agaricus-bisporus','#edible-detail',photoCounts.fungo,/iNaturalist/],['/#/pianta/rovo','#plant-detail',photoCounts.rovo,/Trieste/],['/#/albero/noce','#tree-detail',photoCounts.noce,/Trieste/]]){
   await page.goto(route);await page.evaluate(theme=>document.documentElement.dataset.theme=theme,theme);
   const view=page.locator(selector);await expect(view.locator('.phero-img img')).toHaveAttribute('data-image-state','ready');await expect(view.locator('.sp-strip button')).toHaveCount(count-1);await expect(view.locator('[data-note-kind]')).toHaveCount(1);await expect(view).toContainText(author);
   await view.screenshot({path:`/tmp/fungaroli-gallery-${route.split('/').at(-1)}-${width}-${theme}.png`});await view.locator('.phero-img').click();await expect(page.locator('.lb[open]')).toBeVisible();await expect(page.locator('.lb-stage img')).toHaveAttribute('data-image-state','ready');await expect(page.locator('.lb-cap')).toContainText(author);await page.keyboard.press('Escape');

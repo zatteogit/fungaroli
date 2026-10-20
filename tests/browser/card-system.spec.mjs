@@ -24,7 +24,7 @@ for(const theme of ['light','dark']) test(`template editoriali: testi lunghi, ta
  const page=await preparePage(context,{theme}),errors=[];page.on('pageerror',e=>errors.push(e.message));
  await page.goto('/');await expect(page.locator('#hero .cover-editorial')).toBeVisible();await loadAllImages(page);
  await expect(page.locator('#days [data-day-offset="1"] .d1')).toHaveText('Domani');
- for(const day of await page.locator('#days .day').all())expect(await day.evaluate(e=>{const r=e.getBoundingClientRect();return r.width>=80&&r.height>=44&&r.height<=100;})).toBe(true);
+ for(const day of await page.locator('#days .day').all())expect(await day.evaluate(e=>{const r=e.getBoundingClientRect();return r.width>=80&&r.height>=44&&r.height<=(e.classList.contains('day-all')?160:100);})).toBe(true);
  // A long place name must grow the panel and leave the action fully reachable.
  await page.locator('#hero .cover-title').evaluate(e=>e.textContent='Poggio Bustone e Cantalice, sentieri del versante occidentale');
  await page.locator('#hero .cover-cta').scrollIntoViewIfNeeded();
