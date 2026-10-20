@@ -37,3 +37,11 @@ La PWA non precache i video e non intercetta i loro Range; conserva i piccoli st
 ## Verifiche
 
 Esiti finali, commit e pubblicazione sono riportati nella PR del rilascio. La PR #162 è entrata in produzione durante questo lavoro; il ramo ne recepisce il merge canonico, senza pubblicarla da questa chat. La suite completa viene eseguita sul candidato aggiornato. Il successo di una prova locale o di un controllo statico non vale pubblicazione.
+
+## Correzione del 20 ottobre: luogo e meteo prima dello stock
+
+Matteo ha precisato: «i video stock usali quando non hai alternative di foto/video reali» e che le copertine devono illustrare anche il meteo. Le copertine delle uscite ora scelgono prima un video assegnato alla località con stagione e meteo compatibili, poi `pickCover` dalla foto della zona e relative varianti. Queste elaborazioni illustrano condizioni previste: non sono fotografie del meteo osservato. Lo stock rimane un ripiego senza foto locale; la pioggia usa la felce bagnata. Per nebbia, neve o temporali senza alternative locali si mostra una previsione illustrata, senza spacciare una ripresa serena per quel meteo.
+
+Il file utente `gemini_generated_video_0654230b.mp4` è stato approvato esplicitamente per «il tancia d’autunno quando non piove». È l’animazione della scena autunnale della faggeta già nel catalogo; vengono mantenuti i crediti della foto di Christoph Strässler, CC BY-SA 2.0, e indicata l’elaborazione Gemini fornita da Matteo. Derivato web: loop 8 s a 1280×720, 24 fps, senza audio, raccordo e faststart, still WebP autentici del filmato. Associazione e hash sono in `assets/video/places/manifest.json`. Non è una nuova ripresa documentaria del Tancia, né una rilevazione meteo.
+
+Il pacchetto di lavoro richiesto da Matteo è salvato negli output della chat: 19 fotografie reali orizzontali del catalogo e 8 varianti meteo/stagionali illustrative, con numeri, fonti, licenze e indicazioni per restituire i video mantenendo l’associazione.

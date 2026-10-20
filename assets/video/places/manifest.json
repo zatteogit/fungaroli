@@ -1,0 +1,27 @@
+[
+  {
+    "slug": "tancia-autunno-asciutto",
+    "zone": "tancia",
+    "season": "autunno",
+    "weather": [
+      "sereno",
+      "nuvoloso"
+    ],
+    "generated": true,
+    "author": "Christoph Strässler (foto originale); animazione Gemini fornita da Matteo",
+    "page": "https://commons.wikimedia.org/wiki/File%3ABeech_Forest_in_the_Sabina_Hills%2C_Latium%2C_Italy_-_52993979506.jpg",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "source_file": "gemini_generated_video_0654230b.mp4",
+    "original_sha256": "59e2e491f12d675ab0e8e1e00dc1d47dd533bc6f6c880e3e396c1d20dfb3f61b",
+    "source_photo_variant": "assets/zones/var/tancia-autunno-sereno-hd.webp",
+    "authorization": "Uso nel progetto autorizzato dal proprietario il 2026-10-20 per Tancia, autunno asciutto.",
+    "video": "tancia-autunno-asciutto-loop.mp4",
+    "duration": 8,
+    "fps": 24,
+    "audio": false,
+    "bytes": 1427583,
+    "dimensions": "1280x720",
+    "loop_method": "Ultimo secondo raccordato al primo con dissolvenza; audio rimosso; faststart."
+  }
+]

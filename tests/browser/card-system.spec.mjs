@@ -6,7 +6,7 @@ test('la foto della home mobile conserva lo spazio prima del caricamento',async(
  const context=await browser.newContext({viewport:{width:390,height:920},reducedMotion:'reduce',serviceWorkers:'block'});
  const page=await preparePage(context);let release;
  const pending=new Promise(resolve=>{release=resolve;});
- await page.route('**/assets/video/nature/*poster*.webp',async route=>{await pending;await route.continue();});
+ await page.route(/\/assets\/(?:zones\/.*|video\/.*poster.*)\.webp$/,async route=>{await pending;await route.continue();});
  try{
   await page.goto('/',{waitUntil:'domcontentloaded'});await expect(page.locator('#hero .cover-title')).toBeVisible();
   const photo=page.locator('#hero .cover-img');
@@ -124,7 +124,7 @@ for(const width of [390,1280])for(const theme of ['light','dark'])test(`invito c
  const context=await browser.newContext({viewport:{width,height:900},reducedMotion:'reduce',serviceWorkers:'block'});
  const page=await preparePage(context,{theme});await page.goto('/');const card=page.locator('#community-intro');await expect(card.locator('h2')).toBeVisible();await card.scrollIntoViewIfNeeded();
  const action=card.locator('[data-report]');
- const privacy=card.locator('details');await expect(privacy).not.toHaveAttribute('open','');await privacy.locator('summary').click();await expect(privacy).toContainText('Nessun punto GPS, nome o giorno preciso.');
+ const privacy=card.locator('details');await expect(privacy).not.toHaveAttribute('open','');await privacy.locator('summary').click();await expect(privacy).toContainText(/nessun punto GPS, nome o giorno preciso\./i);
  for(const state of ['default','hover','focus']){
   if(state==='hover')await action.hover();
   if(state==='focus')await action.focus();
