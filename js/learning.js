@@ -34,7 +34,7 @@ function termBody(t, legend = false, context=t.category, categoryShown = false) 
     <p class="learning-sources small muted">Fonti: ${sourceLinks(t.sources)}</p>`;
 }
 
-export function renderGlossary(box, selected = '', categories = ['Funghi','Piante','Alberi','Bosco','Sentiero']) {
+export function renderGlossary(box, selected = '', categories = GLOSSARY_CONTEXTS) {
   const category = TERMS.find(t => t.id === selected)?.category || '';
   box.innerHTML = `<div class="learning-filters" role="group" aria-label="Argomento del glossario">${['', ...categories].map(c => `<button type="button" class="chip" data-category="${c}" aria-pressed="${c === category}">${c || 'Tutto'}</button>`).join('')}</div>
     <div class="glossary-index"><nav class="glossary-alphabet filter-rail" aria-label="Indice alfabetico"></nav></div>
