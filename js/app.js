@@ -55,7 +55,7 @@ import { applyCrop } from './images.js';
 import { FOREST_LEGEND } from './forest-legend.js';
 import { initTrees, renderTreeGrid, renderTreePage, linkTrees, treeChips, treeForCategory, treeThumb, treePhotoSrc, treeHeroSrc } from './trees.js';
 import { crowding, comfortScore, timingAdvice, sunTimes, fmtTime, fmtRough, intornoA } from './human.js';
-import { initCommunity, communityStatus, communityOverview,communityForEntity, communityRank, communityHasZone, communityDataAvailable, reportBadge } from './community.js';
+import { initCommunity, communityStatus, communityOverview,communityHasAccess,communityForEntity, communityRank, communityHasZone, communityDataAvailable, reportBadge } from './community.js';
 import { guideTitle, renderGuideCards, renderGuide, initGuideContent, guideCount } from './guides.js';
 import { buildEdibleCatalog, seasonStatus, seasonLabel } from './edible-catalog.js';
 import { mountSpeciesAutocomplete } from './species-autocomplete.js';
@@ -1965,7 +1965,14 @@ function renderCommunityIntro() {
   box.hidden=communityCardDismissed;
   if(communityCardDismissed){box.replaceChildren();return;}
   const open=box.querySelector('details')?.open;
-  box.innerHTML = `<div class="community-heading"><h2>Le voci del bosco</h2><button class="community-dismiss" type="button" aria-label="Chiudi la card Le voci del bosco" title="Chiudi"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div><p class="small">${esc(communityStatus())}</p><div class="community-footer"><details${open?' open':''}><summary>Come funziona e privacy</summary><p>Condividi un’osservazione per leggere i racconti del bosco raccolti da Fronda. Mostriamo solo riepiloghi degli ultimi 7 giorni, per zona ampia e specie, quando ci sono almeno 3 persone e 2 giorni diversi. La tua fungaia resta riservata: nessun punto GPS, nome o giorno preciso.</p>${communityOverview()}<p class="small">Le osservazioni sono dichiarate e non raccontano tutte le uscite: poche segnalazioni non significano pochi funghi. Condividere è facoltativo. Puoi ritirare le tue osservazioni dal Taccuino; ritirandole tutte, non potrai più consultare i riepiloghi condivisi. Puoi continuare a usare il resto di Fronda.</p></details><button class="btn ghost" type="button" data-report>${notebookGlyph}<span>Racconta un’uscita</span></button></div>`;
+  const connected=communityHasAccess();
+  box.innerHTML = `<div class="community-heading"><h2>${connected?'Sei già nel giro.':'Il tuo giro apre il bosco.'}</h2><button class="community-dismiss" type="button" aria-label="Chiudi la card della community" title="Chiudi"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+    <div class="community-vignettes" aria-label="Condividi e scopri">
+      <div class="community-vignette"><span class="community-vignette-icon">${notebookGlyph}</span><h3>Racconta</h3><p>Un incontro, o un giro a vuoto.</p></div>
+      <div class="community-vignette"><span class="community-vignette-icon">${IC.people}</span><h3>Scopri</h3><p>${connected?'Hai accesso alle segnalazioni degli altri, per zona.':'Condividi e accedi alle segnalazioni degli altri.'}</p></div>
+      <button class="community-vignette community-vignette-cta" type="button" data-report><span class="community-vignette-icon" aria-hidden="true">→</span><strong>${connected?'Racconta ancora':'Entra nel giro'}</strong><span class="community-vignette-copy">Condividi un’osservazione</span></button>
+    </div>
+    <div class="community-footer"><details${open?' open':''}><summary>Come funziona e privacy</summary><p class="small community-current-status">${esc(communityStatus())}</p><p>Condividi un’osservazione per accedere alle segnalazioni della community. Mostriamo solo riepiloghi degli ultimi 7 giorni, per zona ampia e specie, quando ci sono almeno 3 persone e 2 giorni diversi. La tua fungaia resta riservata: nessun punto GPS, nome o giorno preciso.</p>${communityOverview()}<p class="small">Le osservazioni sono dichiarate e non raccontano tutte le uscite: poche segnalazioni non significano pochi funghi. Condividere è facoltativo. Puoi ritirare le tue osservazioni dal Taccuino; ritirandole tutte, non potrai più consultare i riepiloghi condivisi. Puoi continuare a usare il resto di Fronda.</p></details></div>`;
   box.querySelector('.community-dismiss').addEventListener('click',()=>{
     communityCardDismissed=true;
     try { localStorage.setItem(COMMUNITY_CARD_DISMISSED,'1'); } catch { /* resta chiusa durante questa visita */ }
