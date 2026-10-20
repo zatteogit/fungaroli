@@ -1,3 +1,4 @@
+import {fungusGlyph} from './indicators.js';
 import {enhanceContentReading} from './content-ui.js';
 // La scienza dietro l'indice, per chi vuole approfondire: la "ricetta" fattore per fattore con i numeri veri del giorno,
 // i grafici giorno per giorno (un solo componente, js/viz.js), il profilo della specie e la pagina del metodo (docs/metodo-scientifico.md).
@@ -165,7 +166,7 @@ export function drawWhyCharts(box, { s, sp, days, todayIndex, i }) {
   const tbl = box.querySelector('[data-viz-table]');
   if (tbl && !tbl.firstChild) {
     const dash = '—';
-    tbl.innerHTML = `<table><caption class="sr-only">Valori giornalieri usati nei grafici</caption><thead><tr><th scope="col">Giorno</th><th scope="col">Pioggia</th><th scope="col">Temperatura media</th><th scope="col">Suolo</th><th scope="col">Condizioni di crescita</th></tr></thead><tbody>${days.map((d, k) => `<tr${d.i === i ? ' class="is-selected"' : ''}><th scope="row">${esc(fmtDay(d.date, true))}${d.i === todayIndex ? ' · oggi' : d.i > todayIndex ? ' · prev.' : ''}</th><td>${rain[k] == null ? dash : mm(rain[k])}</td><td>${temp[k] == null ? dash : `${n1(temp[k])} °C`}</td><td>${soil[k] == null ? dash : `${soilLevel(soil[k])} <small>${n1(soil[k], 2)} m³/m³</small>`}</td><td>${score[k] == null ? dash : formatIndex(score[k])}</td></tr>`).join('')}</tbody></table><p class="small muted">${dash} dato assente: non vuol dire zero.</p>`;
+    tbl.innerHTML = `<table><caption class="sr-only">Valori giornalieri usati nei grafici</caption><thead><tr><th scope="col">Giorno</th><th scope="col">Pioggia</th><th scope="col">Temperatura media</th><th scope="col">Suolo</th><th scope="col"><span class="growth-value">${fungusGlyph}Condizioni di crescita</span></th></tr></thead><tbody>${days.map((d, k) => `<tr${d.i === i ? ' class="is-selected"' : ''}><th scope="row">${esc(fmtDay(d.date, true))}${d.i === todayIndex ? ' · oggi' : d.i > todayIndex ? ' · prev.' : ''}</th><td>${rain[k] == null ? dash : mm(rain[k])}</td><td>${temp[k] == null ? dash : `${n1(temp[k])} °C`}</td><td>${soil[k] == null ? dash : `${soilLevel(soil[k])} <small>${n1(soil[k], 2)} m³/m³</small>`}</td><td><span class="growth-value">${score[k]==null?dash:fungusGlyph+formatIndex(score[k])}</span></td></tr>`).join('')}</tbody></table><p class="small muted">${dash} dato assente: non vuol dire zero.</p>`;
   }
   // ridisegna quando cambia la larghezza (rotazione, finestra), senza osservatori orfani
   if (!box._vizObserver && typeof ResizeObserver !== 'undefined') {
@@ -205,7 +206,7 @@ export function renderWhy({ r, s, i, sp, band, dateStr, shown, agg, parts = [], 
   const takeaway = !complete ? 'Mancano dati per un indice completo.' : tied.length ? `Nel modello ${tied.map(x => x.k.toLowerCase()).join(' e ')} ${tied.length > 1 ? 'sono i fattori che riducono' : 'è il fattore che riduce'} di più l’indice.` : 'Nessun fattore riduce l’indice nel modello.';
   const fc = `<p class="sci-note"><b>Dati ${r.quality?.complete ? 'completi per le finestre richieste' : 'incompleti'}.</b> ${r.quality?.usesForecast ? 'Il calcolo include previsioni meteorologiche, anche del giorno di acquisizione.' : 'Il calcolo usa meteo passato di modello, non misure nella fungaia.'} L'accuratezza dei ritrovamenti non è stata misurata nel Reatino. ${r.quality?.fetchedAt ? `Acquisizione: ${esc(new Date(r.quality.fetchedAt).toLocaleString('it-IT', { timeZone: 'Europe/Rome' }))}.` : ''}</p>`;
   return `
-    <p class="sci-lede">${Number.isFinite(shown) && complete ? `Condizioni di crescita <b>${formatIndex(shown)}/10</b>` : '<b>Condizioni di crescita non disponibili</b>'} per ${speciesLink(sp, sp.name.toLowerCase())} a ${band} m. Descrive condizioni ambientali stimate, non la probabilità di trovare funghi.</p>
+    <p class="sci-lede">${Number.isFinite(shown) && complete ? `Condizioni di crescita <b class="growth-value">${fungusGlyph}${formatIndex(shown)}/10</b>` : '<b>Condizioni di crescita non disponibili</b>'} per ${speciesLink(sp, sp.name.toLowerCase())} a ${band} m. Descrive condizioni ambientali stimate, non la probabilità di trovare funghi.</p>
     <p class="sci-takeaway">${esc(takeaway)}</p>
     <p class="sci-sub">Come incidono le condizioni nel modello</p>
     <ul class="sci-signals" aria-label="Come incidono i fattori nel modello">${main.map(x => { const state = factorState(x); return `<li class="sci-signal ${tied.includes(x) && complete ? 'weak' : ''}"><div class="sci-signal-head"><b>${esc(x.k)}</b><span class="sci-state state-${state.kind}">${state.label}</span></div><p>${esc(x.brief)}</p></li>`; }).join('')}</ul>
@@ -219,7 +220,7 @@ export function renderWhy({ r, s, i, sp, band, dateStr, shown, agg, parts = [], 
         <p class="sf-why">${esc(x.why)} ${x.tags.map(tag).join(' ')}</p>
       </li>`).join('')}
     </ol>
-    <p class="sci-eq"><span>min(10; 10 × ${rows.map((x) => n1(x.v, 2)).join(' × ')})</span> ≈ <b>${formatIndex(raw)}</b></p>
+    <p class="sci-eq"><span>min(10; 10 × ${rows.map((x) => n1(x.v, 2)).join(' × ')})</span> ≈ <b class="growth-value">${fungusGlyph}${formatIndex(raw)}</b></p>
     <p class="sci-note">I coefficienti mostrati sono arrotondati; il risultato usa i valori completi ed è limitato a 10.</p>
     ${parts.length > 1 ? `<p class="sci-note">L'indice della zona è il <b>massimo</b> delle specie selezionate. Le altre: ${parts.slice(1).map((x) => `${esc(x.name.toLowerCase())} ${formatIndex(x.score)}`).join(', ')}. Aggiungere specie non aumenta automaticamente il numero. Specie diverse possono avere la quota migliore in luoghi diversi.</p>` : ''}
     ${prefs.length ? `<p class="sci-note">Le preferenze (${prefs.map((p) => `${esc(p.label)} ×${n1(p.mult, 2)}`).join(', ')}) modificano solo l'ordine dei consigli. L'indice delle condizioni resta <b>${formatIndex(shown)}</b>.</p>` : ''}

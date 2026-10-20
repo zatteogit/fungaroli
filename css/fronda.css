@@ -1258,3 +1258,8 @@ button.cover-index > span { font-size:11px; }
 .access-map-fallback>span { position:absolute; left:12px; bottom:8px; font-size:11px; color:var(--muted); }
 .access-mini-map iframe { position:relative; opacity:0; }
 .access-mini-map iframe.map-loaded { opacity:1; }
+/* Il fungo è il segno dell'indice in ogni presentazione numerica. */
+.growth-value { display:inline-flex; align-items:center; gap:5px; white-space:nowrap; }
+:is(.idx-dot,.sp-pill,.growth-value)>.fungus-glyph { width:15px; height:15px; flex:none; vertical-align:middle; }
+.zone-label .growth-value>.fungus-glyph { width:13px; height:13px; }
+.mtt-p b.pc::before, .cell-peek-p::before { content:none; }

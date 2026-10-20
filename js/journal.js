@@ -1,3 +1,4 @@
+import {fungusGlyph} from './indicators.js';
 import {notebookGlyph} from './ui-icons.js';
 import {openModal} from './modal-flow.js';
 import {renderNotebook, notebookRoute, notebookTitle} from './notebook-view.js';
@@ -351,7 +352,7 @@ export function initJournal({ resolveTrip=()=>null,onEntries=()=>{},zones, speci
     if(store&&notifiedEntries!==entries){notifiedEntries=entries;onEntries(entries);}
     const analysis=e=>{
       const a=agreement(e),top=Object.entries(e.predicted||{}).filter(([,v])=>Number.isFinite(v)).sort((x,y)=>y[1]-x[1])[0];
-      return `<details class="notebook-analysis"><summary>Condizioni ${e.kind==='plan'?'salvate':'dell’uscita'}</summary>${top?`<p>Indice salvato ${formatIndex(top[1])} · ${esc(speciesCatalog.find(x=>x.id===top[0])?.name||top[0])}</p><p class="small muted">Valore storico: non descrive le condizioni attuali.</p>`:''}${e.kind==='plan'?'<p>Previsione salvata prima dell’uscita.</p>':a?a.species.map(x=>`<p>${esc(speciesCatalog.find(s=>s.id===x.id)?.name||x.id)}: ${x.ok?'concordante':x.said?'indice alto, zero osservato':'trovata con indice basso'}</p>`).join(''):'<p>Osservazione senza confronto prospettico.</p>'}</details>`;
+      return `<details class="notebook-analysis"><summary>Condizioni ${e.kind==='plan'?'salvate':'dell’uscita'}</summary>${top?`<p>Condizioni salvate <span class="growth-value">${fungusGlyph}${formatIndex(top[1])}</span> · ${esc(speciesCatalog.find(x=>x.id===top[0])?.name||top[0])}</p><p class="small muted">Valore storico: non descrive le condizioni attuali.</p>`:''}${e.kind==='plan'?'<p>Previsione salvata prima dell’uscita.</p>':a?a.species.map(x=>`<p>${esc(speciesCatalog.find(s=>s.id===x.id)?.name||x.id)}: ${x.ok?'concordante':x.said?'indice alto, zero osservato':'trovata con indice basso'}</p>`).join(''):'<p>Osservazione senza confronto prospettico.</p>'}</details>`;
     };
     const result=renderNotebook({entries:route.demo?getDemoEntries():entries,zones,species:outingSpecies(),zoneImage,referenceImage,route,filter:listFilter,query:listQuery,layout:listLayout,density:listDensity,canPreview:['admin','editor'].includes(currentUser()?.role),actions:rowActions,analysis,shared:e=>store?.kind==='community'&&e.shared});
     const heading=document.querySelector('.notebook-heading');
