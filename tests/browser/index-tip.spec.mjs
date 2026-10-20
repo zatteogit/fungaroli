@@ -3,8 +3,8 @@ import {preparePage,auditState} from '../../tools/visual-audit.mjs';
 for(const theme of ['light','dark'])test(`indice compatto: hover, focus, Escape e clic senza aprire la scheda (${theme})`,async({browser})=>{
  const c=await browser.newContext({viewport:{width:1280,height:900},serviceWorkers:'block',reducedMotion:'reduce'}),p=await preparePage(c,{theme});
  await p.goto('/#/');const button=p.locator('#hero [data-index-tip]'),tip=p.locator('#index-tip'),url=p.url();
- await expect(button).toBeVisible();await expect(button).toContainText('Condizioni di crescita');await expect(button).not.toContainText('Funghi');await expect(button.locator('.fungus-glyph')).toHaveCount(1);
- await button.hover();await expect(tip).toBeVisible();await expect(tip).toContainText('non una promessa di ritrovamento');
+ await expect(button).toBeVisible();await expect(button).toContainText('Condizioni');await expect(button).not.toContainText('Funghi');await expect(button.locator('.fungus-glyph')).toHaveCount(1);
+ await button.hover();await expect(tip).toBeVisible();await expect(tip).toContainText('non una garanzia di ritrovamento');
  await tip.hover();await expect(tip).toBeVisible();await p.mouse.move(1,1);await expect(tip).toBeHidden();
  await button.focus();await expect(tip).toBeVisible();await expect(button).toBeFocused();await p.keyboard.press('Escape');await expect(tip).toBeHidden();await expect(button).toBeFocused();
  await button.click();await expect(tip).toBeVisible();expect(p.url()).toBe(url);

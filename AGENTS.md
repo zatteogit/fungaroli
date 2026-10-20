@@ -76,3 +76,5 @@ Italiano, frasi brevi, senza gergo. Decimale con la virgola (7,2). Distinguere s
 ## Knowledge base · Kipi
 
 Per `kipi init`, `scan`, `process`, `update` o `status`, usa la [skill locale](.agents/skills/kipi/SKILL.md), adattata all’intero repository Fungaroli. Leggi prima indice e stato in `knowledge/`. Il riepilogo di ingresso è in [agents/kipi.md](agents/kipi.md).
+
+- **Condizioni dell’uscita (decisione di Matteo, 20/10):** il numero generale mostrato in home, mappa e testata della zona include il fattore meteo già usato nell’ordine (`OUTING_RANK`), una sola volta. Etichetta «Condizioni», cerchio, nessun «/10» visibile nel badge. Il potenziale biologico resta distinto negli approfondimenti e nel modello. Senza meteo verificabile, nessun numero complessivo. Con alternative meno critiche non raccomandare uscite sconsigliate; se il meteo è sfavorevole ovunque, dirlo nelle intestazioni invece di chiamarle «buone uscite». Questa regola supera le vecchie indicazioni sul numero generale rimasto esclusivamente biologico. Vedi [docs/condizioni-uscita.md](docs/condizioni-uscita.md).
