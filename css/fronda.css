@@ -1155,3 +1155,7 @@ button.cover-index > span { font-size:11px; }
 #community-intro details p { font-size:14px; margin:8px 0; }
 .community-totals { margin:12px 0; padding:0; list-style:none; max-height:320px; overflow-y:auto; overscroll-behavior:contain; }
 .community-totals li { display:grid; gap:4px; padding:10px 0; border-top:1px solid var(--hair); font-size:14px; }
+
+/* Il fungo identifica la stima anche nella presentazione compatta. */
+.cover-index > b, .ring.model-index > b { display:inline-flex; align-items:center; gap:6px; }
+.cover-index > b > .fungus-glyph, .ring.model-index > b > .fungus-glyph { width:18px; height:18px; flex:none; color:currentColor; }

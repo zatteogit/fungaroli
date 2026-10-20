@@ -878,7 +878,7 @@ function homeCover({c,photo,body,score=null,extraClass=''}) {
   return `<div class="cover cover-editorial vtn ${extraClass}" style="--vtn:cover">
     ${extraClass.includes('outdoor-hero')?outdoorBackdrop():''}${photo?`<img class="cover-img" data-src="${photo.hd}" alt="${esc(photo.alt||'')}" fetchpriority="high">`:''}<span class="shade"></span>
     <a class="cover-link" data-walk-zone="${c.z.id}" href="${walkHref(c.z,c.o,c.walk?.t)}" aria-label="${esc(title)}, ${esc(dayLabel(c.o,c.d.date,true))}: i dettagli della passeggiata"></a>
-    <span class="cover-top"><span class="pill glass">${esc(dayLabel(c.o,c.d.date,true))}</span>${score===null?'':`<button type="button" class="cover-index" data-index-tip aria-expanded="false" aria-label="Stima sperimentale ${formatIndex(score)} su 10: non validata"><span>Stima non validata</span><b>${formatIndex(score)}<small>/10</small></b></button>`}</span>
+    <span class="cover-top"><span class="pill glass">${esc(dayLabel(c.o,c.d.date,true))}</span>${score===null?'':`<button type="button" class="cover-index" data-index-tip aria-expanded="false" aria-label="Stima sperimentale ${formatIndex(score)} su 10: non validata"><span>Stima non validata</span><b>${fungusGlyph}<span>${formatIndex(score)}<small>/10</small></span></b></button>`}</span>
     <span class="cover-body">${body}</span></div>`;
 }
 function outdoorCover(c) {
@@ -1719,7 +1719,7 @@ function coverOf(z, spId, d) {
   const p = speciesPhoto(spId);
   return p ? { hd: p.file_hd || p.file, small: p.file, credit: p, alt: '' } : null;
 }
-const ring = (s, big = true, interactive = false) => `<${interactive?'button type="button" data-index-tip aria-expanded="false"':'span'} data-weather-key="fungi-indicator" class="ring model-index${big ? '' : ' ring-sm'}" aria-label="Stima sperimentale ${formatIndex(s)} su 10, non validata${interactive?': come leggerla':''}"><span>Stima</span><b>${scoreText(s)}<small>/10</small></b>${big ? '<span>Non validata</span>' : ''}</${interactive?'button':'span'}>`;
+const ring = (s, big = true, interactive = false) => `<${interactive?'button type="button" data-index-tip aria-expanded="false"':'span'} data-weather-key="fungi-indicator" class="ring model-index${big ? '' : ' ring-sm'}" aria-label="Stima sperimentale ${formatIndex(s)} su 10, non validata${interactive?': come leggerla':''}"><span>Stima</span><b>${fungusGlyph}<span>${scoreText(s)}<small>/10</small></span></b>${big ? '<span>Non validata</span>' : ''}</${interactive?'button':'span'}>`;
 function indexLegend(){return `<button type="button" class="index-legend" data-index-tip aria-expanded="false" aria-label="Stima sperimentale da 0 a 10: come leggerla"><span><b>Stima sperimentale · 0–10</b><span>Non validata sui ritrovamenti locali</span></span></button>`;}
 const IC = {
   home: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h5v-7h4v7h5V9"/></svg>',
