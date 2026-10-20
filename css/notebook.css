@@ -384,10 +384,9 @@
 .quick-note-save { display:grid; gap:14px; position:sticky; bottom:-24px; background:var(--bg); padding:16px 0 24px; }
 .quick-note-save .btn { justify-content:center; gap:10px; }
 .quick-note-save .link-btn { white-space:normal; }
-.diary-capture-invite { display:flex; align-items:center; justify-content:space-between; gap:24px; background:var(--surface); padding:clamp(20px,4vw,36px); border:1px solid var(--hair); border-radius:18px; margin-bottom:32px; }
+.diary-capture-invite { display:block; background:var(--surface); padding:clamp(20px,4vw,36px); border:1px solid var(--hair); border-radius:18px; margin-bottom:32px; }
 .diary-capture-invite h2 { font:500 clamp(24px,3vw,34px)/1.15 var(--font-display); margin:12px 0; }
 .diary-capture-invite p { max-width:52ch; }
-.diary-capture-invite .btn { flex-shrink:0; }
 .diary-detail-photo.is-personal img { aspect-ratio:auto; object-fit:contain; max-height:720px; }
 .diary-detail-photo.is-personal .diary-photo-print { padding:12px; }
-@media(max-width:600px) { .diary-capture-invite { display:grid; gap:12px; } .quick-note-save { bottom:-18px; padding-bottom:18px; } }
+@media(max-width:600px) { .quick-note-save { bottom:-18px; padding-bottom:18px; } }
