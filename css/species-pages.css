@@ -621,3 +621,21 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 .spore-color-dot { display:inline-block; width:20px; height:20px; flex:0 0 20px; border-radius:50%; background:var(--spore-color); border:1px solid color-mix(in srgb,var(--text) 30%,transparent); }
 .fungus-page .ts-card-spores { align-content:start; }
 .fungus-page .ts-card-spores > .ts-v { margin-top:4px; width:100%; }
+
+/* Plant comparisons use the same documented traits as the species cards. */
+.plant-cmp-pair { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
+.plant-cmp-species { min-width:0; display:flex; flex-direction:column; gap:8px; }
+.plant-cmp-species > a { display:grid; gap:8px; }
+.plant-cmp-species img { width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:16px; }
+.plant-cmp-species i { font-size:14px; }
+.plant-cmp-species button { white-space:normal; text-align:left; }
+.plant-cmp-filters { margin-block:24px 16px; }
+.plant-cmp-row { padding:20px 0; border-top:1px solid var(--line); }
+.plant-cmp-row[hidden] { display:none; }
+.plant-cmp-row h3 { margin:0 0 12px; font:600 16px/1.5 var(--font-body); }
+.plant-cmp-row h3 small { margin-left:10px; font-size:12px; color:var(--text-2); font-weight:400; }
+.plant-cmp-row .trait-strip { display:block; margin:0; }
+.plant-cmp-row .trait-strip > li { min-width:0; }
+.plant-cmp-row .ts-k { display:none; }
+.plant-cmp-unknown { color:var(--text-2); font-size:14px; }
+@media(max-width:600px) { .plant-cmp-pair { gap:12px; } .plant-cmp-species .btn { padding-inline:8px; font-size:14px; } .plant-cmp-row .trait-strip > li { padding-inline:8px; } }
