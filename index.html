@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="utf-8">
-  <meta name="app-version" content="fungaroli-shell-v307">
+  <meta name="app-version" content="fungaroli-shell-v308">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
   <link rel="preload" href="data/crop-points.json" as="fetch" crossorigin>
   <meta name="theme-color" content="#f7f4ea" media="(prefers-color-scheme: light)">
@@ -35,6 +35,35 @@
 </head>
 <body data-legal-pending>
   <div id="legal-loading" role="status"><span class="legal-loading-spinner" aria-hidden="true"></span><p class="boot-tip">Anche una ricerca a vuoto racconta il bosco.<small>Annotala nel tuo taccuino.</small></p></div>
+  <script>
+    // Sceglie subito la frase, senza attendere dati o moduli dell’app.
+    (() => {
+      const tips = [
+        ['Anche una ricerca a vuoto racconta il bosco.', 'Annotala nel tuo taccuino.'],
+        ['Il bosco si riconosce dai dettagli.', 'Comincia da una foglia, una corteccia, una traccia.'],
+        ['Ogni bosco ha più di una storia.', 'Alberi, funghi, incontri: guarda cosa c’è intorno.'],
+        ['Prima di guardare a terra, guarda gli alberi.', 'Anche loro aiutano a leggere il bosco.'],
+        ['I posti segreti restano tuoi.', 'Nel Taccuino, foto e appunti sono privati.'],
+        ['Una foglia può cambiarti il giro.', 'Fermati un momento. Guarda più vicino.'],
+        ['Il sentiero è pieno di piccoli incontri.', 'C’è spazio anche per quelli che non cercavi.'],
+        ['Il bosco cambia. La curiosità resta.', 'Torna sulle tue tracce, con occhi diversi.'],
+        ['Chi cerca, si ritrova.', 'Funghi, sentieri e cose da scoprire.'],
+        ['Una foto, una foglia, una domanda.', 'Il prossimo appunto può cominciare così.']
+      ];
+      const key = 'fronda:boot-tip:v1';
+      let previous = -1;
+      try { previous = Number(localStorage.getItem(key) ?? -1); } catch {}
+      if (!Number.isInteger(previous) || previous < 0 || previous >= tips.length) previous = -1;
+      let index = Math.floor(Math.random() * (tips.length - (previous >= 0 ? 1 : 0)));
+      if (previous >= 0 && index >= previous) index++;
+      const tip = document.querySelector('#legal-loading .boot-tip');
+      if (!tip) return;
+      const small = document.createElement('small');
+      small.textContent = tips[index][1];
+      tip.replaceChildren(document.createTextNode(tips[index][0]), small);
+      try { localStorage.setItem(key, String(index)); } catch {}
+    })();
+  </script>
   <header class="appbar" inert>
     <button type="button" class="appbar-back" data-back hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7"/></svg><span></span></button>
     <span class="appbar-title" aria-hidden="true"></span>
