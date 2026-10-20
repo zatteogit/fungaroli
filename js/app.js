@@ -29,7 +29,7 @@ import {botanicalModels} from './botanical-model.js';
 import './theme.js';
 import './images.js';
 import './atmosphere-video.js';
-import {atmosphere,homeAtmosphere} from './atmosphere.js';
+import {atmosphere,createHomeAtmospherePicker} from './atmosphere.js';
 import { consumeFresh, freshDone } from './refresh.js';
 import {updateWeatherHTML,updateHTMLTracked,reconcileChildren,keepWeatherReadingPosition} from './weather-dom.js';
 import { SPECIES, GROUPS, FOREST } from './species.js';
@@ -935,10 +935,11 @@ function routeCover(z){
  const t=chooseWalkTrail([],trails[z.id]?.trails||[],t=>headsOf(z,t)),preview=trailPreview(t);
  return preview?`<span class="regional-route-preview">${preview}<span class="route-preview-meta"><b>${esc(t.ref||'Sentiero')}</b><span>${fmtKm(t.in_zone_km)} km${t.difficulty?' · '+esc(t.difficulty):''}</span></span><small>Tratto mappato · OSM</small></span>`:`<span class="regional-no-photo">${IC.map}<small>Mappa della zona</small></span>`;
 }
+const pickHomeAtmosphere=createHomeAtmospherePicker();
 function homeCover({c,body,score=null,extraClass=''}) {
   const title=splitName(c.z)[0];
   return `<div class="cover cover-editorial vtn ${extraClass}" style="--vtn:cover">
-    ${atmosphere(state.target==='piante'?'gocce-sulla-felce':homeAtmosphere({walking:state.target==='passeggiata'}),{hero:true})}<span class="shade"></span>
+    ${atmosphere(pickHomeAtmosphere({walking:state.target==='passeggiata',plants:state.target==='piante',zone:c.z.id,date:c.d.date}),{hero:true})}<span class="shade"></span>
     <a class="cover-link" data-walk-zone="${c.z.id}" href="${walkHref(c.z,c.o,c.walk?.t)}" aria-label="${esc(title)}, ${esc(dayLabel(c.o,c.d.date,true))}: i dettagli della passeggiata"></a>
     <span class="cover-top"><span class="pill glass">${esc(dayLabel(c.o,c.d.date,true))}</span>${score===null?'':`<button type="button" class="cover-index" data-index-tip aria-expanded="false" aria-label="Condizioni di crescita ${formatIndex(score)} su 10: come leggerle"><span>Condizioni di crescita</span><b>${fungusGlyph}<span>${formatIndex(score)}<small>/10</small></span></b></button>`}</span>
     <span class="cover-body">${body}</span></div>`;
