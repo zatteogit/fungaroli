@@ -241,6 +241,8 @@ export function validateContent(id, data, previous) {
     }
     needsReview=!!previous&&!same(value,previous);
   }
+  if(id==='legal'&&value.acceptance_version!=null&&(!Number.isInteger(value.acceptance_version)||value.acceptance_version<1||value.acceptance_version>999999))err('La revisione delle CGS deve essere un intero positivo.');
+  if(id==='legal'&&previous?.acceptance_version&&(!value.acceptance_version||value.acceptance_version<previous.acceptance_version))err('La revisione delle CGS non può diminuire o essere rimossa.');
   if (id==='legal' && previous && !same(value,previous)) {
     if (!Number.isInteger(value.version)||value.version<=previous.version) err('Aumenta la versione degli avvisi quando aggiorni le regole.');
     needsReview=true;

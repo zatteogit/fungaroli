@@ -49,3 +49,8 @@ test('ricevute protette da sessione, origine, profilo e formato',async()=>{
  for(const change of [{noticeHash:'bad'},{acceptedAt:'invalid'},{acceptedAt:'2026-10-18'},{acceptedAt:valid().acceptedAt+' '.repeat(100)},{source:'implicit'},{platform:'unknown'},{source:'legacy',acceptedAt:valid().acceptedAt}])assert.equal((await send(env,{...valid(),...change})).status,422);
  assert.equal(sql.prepare('SELECT count(*) AS n FROM legal_acceptances').get().n,0);sql.close();
 });
+
+test('ricevuta della revisione CGS: API stabile e compatibilità con lo storico',async()=>{
+ const {sql,env}=setup();const r=await send(env,{...valid(),version:'cgs-1'});assert.equal(r.status,200);assert.equal((await r.json()).receipt.version,'cgs-1');
+ for(const version of ['cgs-0','cgs--1','cgs-1.5','cgs-abc','cgs-1000000'])assert.equal((await send(env,{...valid(),version})).status,422);sql.close();
+});

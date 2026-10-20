@@ -1263,3 +1263,7 @@ button.cover-index > span { font-size:11px; }
 :is(.idx-dot,.sp-pill,.growth-value)>.fungus-glyph { width:15px; height:15px; flex:none; vertical-align:middle; }
 .zone-label .growth-value>.fungus-glyph { width:13px; height:13px; }
 .mtt-p b.pc::before, .cell-peek-p::before { content:none; }
+/* La conferma rimane raggiungibile mentre si leggono le informative. */
+#onboarding .ob-acceptance { position:sticky; bottom:-24px; z-index:3; margin-top:16px; padding:12px 0 max(12px,env(safe-area-inset-bottom,0px)); background:var(--surface); box-shadow:0 -1px 0 var(--border); }
+#onboarding .ob-acceptance #ob-accept { width:100%; margin:0; min-height:48px; }
+#onboarding .ob-acceptance #ob-status:empty { display:none; }

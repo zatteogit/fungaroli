@@ -4,7 +4,7 @@ import {initExternalSignals,externalForecastMultiplier,combineFieldMultipliers} 
 import {initEditorialOutings,editorialOutings,editorialTitle,editorialReference,renderEditorialIndex,renderEditorialPage} from './editorial-outings.js';
 import {initAnimals,animals,animalName,animalSearchItems,renderAnimals,renderAnimalPage} from './animals.js';
 import {configureLegalAccess,acceptLegalNotice,hasLegalAcceptance} from './legal-access.js';
-import {currentLegalNotice,legalNoticeVersion,legalNoticeFingerprint} from './legal-notice.js';
+import {currentLegalNotice,legalNoticeVersion,legalNoticeFingerprint,compatibleLegalVersions} from './legal-notice.js';
 import {rememberNavigationContext,recordNavigationPage,restoreNavigationContext,contextualBackTitle,returningNavigation,restoredNavigationScroll,backNavigation} from './navigation-context.js';
 import {openModal} from './modal-flow.js';
 import {speciesFeatures} from './species-search.js';
@@ -3329,7 +3329,7 @@ async function applyLegal() {
   $('#legal-sections').querySelectorAll('.method').forEach(enhanceContentReading);
   enhanceEntityAccordions($('#legal-sections'));
   // primo avvio: avviso da confermare (si ripresenta se cambia la versione dei testi)
-  const ver=legalNoticeVersion(L),accepted=await configureLegalAccess(ver,legalNoticeFingerprint(L));
+  const ver=legalNoticeVersion(L),accepted=await configureLegalAccess(ver,legalNoticeFingerprint(L),{compatibleVersions:compatibleLegalVersions(L)});
   if (!accepted) {
     const dlg = $('#onboarding');
     dlg.querySelector('h2').textContent = L.onboarding?.title || 'Prima di usare l\'app';

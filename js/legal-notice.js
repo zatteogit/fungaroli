@@ -17,10 +17,12 @@ export function currentLegalNotice(value={}) {
  const sharingIndex=sections.findIndex(section=>section.id===sharingSection.id);
  if(sharingIndex<0)sections.push(sharingSection);else sections[sharingIndex]=sharingSection;
  if(!sections.some(section=>section.id==='cookie'))sections.push({id:'cookie',title:'Cookie policy e memoria del browser',html:COOKIE_POLICY_HTML});
- return {...source,version:Math.max(LEGAL_NOTICE_VERSION,Number(source.version)||0),onboarding:{...source.onboarding,points:[MODEL_NOTICE,...(source.onboarding?.points||[]).slice(1)],community_notice:'Condividere è facoltativo: chi contribuisce può consultare gli aggregati. Agli altri non viene mostrata la posizione della tua fungaia. Puoi ritirare la condivisione dal taccuino.',prototype_notice:source.onboarding?.prototype_notice||PROTOTYPE_NOTICE,cookie_summary:source.onboarding?.cookie_summary||COOKIE_SUMMARY,accept:source.onboarding?.accept&&Number(source.version)>=LEGAL_NOTICE_VERSION?source.onboarding.accept:'Ho letto, continua'},info_sections:sections};
+ return {...source,acceptance_version:Number.isInteger(source.acceptance_version)?source.acceptance_version:1,version:Math.max(LEGAL_NOTICE_VERSION,Number(source.version)||0),onboarding:{...source.onboarding,points:[MODEL_NOTICE,...(source.onboarding?.points||[]).slice(1)],community_notice:'Condividere è facoltativo: chi contribuisce può consultare gli aggregati. Agli altri non viene mostrata la posizione della tua fungaia. Puoi ritirare la condivisione dal taccuino.',prototype_notice:source.onboarding?.prototype_notice||PROTOTYPE_NOTICE,cookie_summary:source.onboarding?.cookie_summary||COOKIE_SUMMARY,accept:source.onboarding?.accept&&Number(source.version)>=LEGAL_NOTICE_VERSION?source.onboarding.accept:'Ho letto, continua'},info_sections:sections};
 }
 
-export const legalNoticeVersion=value=>String(value.version||0)+(value.verified_on||'');
+// La revisione delle CGS è distinta da versione editoriale, data e copy UI.
+export const legalNoticeVersion=value=>`cgs-${Number.isInteger(value.acceptance_version)?value.acceptance_version:1}`;
+export const compatibleLegalVersions=value=>legalNoticeVersion(value)==='cgs-1'?['62026-10-20']:[];
 export async function legalNoticeFingerprint(value){
  const ordered=value=>Array.isArray(value)?value.map(ordered):value&&typeof value==='object'?Object.fromEntries(Object.keys(value).sort().map(key=>[key,ordered(value[key])])):value;
  const hash=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(JSON.stringify(ordered(value))));
