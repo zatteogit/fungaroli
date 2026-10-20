@@ -60,13 +60,20 @@ function mount(root,video){
     paint();
   }
   const toggle=()=>{manualPaused=!video.paused;preferred=manualPaused?null:c;schedule();};
+  const hover=event=>{
+    const rect=root.getBoundingClientRect();
+    root.classList.toggle('is-hovered',event.pointerType!=='touch'&&event.clientX>=rect.left&&event.clientX<rect.right&&event.clientY>=rect.top&&event.clientY<rect.bottom);
+  };
+  const leave=()=>root.classList.remove('is-hovered');
+  document.addEventListener('pointermove',hover,{passive:true});
+  document.addEventListener('pointerleave',leave);
   const waiting=()=>{shown=false;paint();};
   const error=()=>{failed=true;shown=false;video.pause();paint();};
   const progress=()=>apply(active===c);
   const events=[['playing',playing],['pause',paint],['waiting',waiting],['error',error],['canplay',progress],['progress',progress]];
   events.forEach(([event,fn])=>video.addEventListener(event,fn));button.addEventListener('click',toggle);
   const observer=new IntersectionObserver(([entry])=>{c.ratio=entry.isIntersecting?entry.intersectionRatio:0;schedule();});observer.observe(root);
-  function dispose(){disposed=true;observer.disconnect();if(frameRequest!=null)video.cancelVideoFrameCallback?.(frameRequest);events.forEach(([event,fn])=>video.removeEventListener(event,fn));button.removeEventListener('click',toggle);video.pause();}
+  function dispose(){disposed=true;observer.disconnect();document.removeEventListener('pointermove',hover);document.removeEventListener('pointerleave',leave);if(frameRequest!=null)video.cancelVideoFrameCallback?.(frameRequest);events.forEach(([event,fn])=>video.removeEventListener(event,fn));button.removeEventListener('click',toggle);video.pause();}
   return c;
 }
 reduced.addEventListener('change',schedule);navigator.connection?.addEventListener('change',schedule);document.addEventListener('visibilitychange',schedule);
