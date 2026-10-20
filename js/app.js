@@ -921,9 +921,21 @@ function outdoorProposals(day=state.homeDay, onlyUpcoming=false) {
   const seenZones=new Set(),seenTrails=new Set();
   return selectOutingWeather(list,c=>wxOf(c.z,c.d)).filter(c=>{const id=String(c.walk.t.id);if(seenZones.has(c.z.id)||seenTrails.has(id))return false;seenZones.add(c.z.id);seenTrails.add(id);return true;});
 }
+// Una proposta editoriale, senza cambiare indice, meteo o ordine delle uscite.
+function renderDiscoveryBreak(list) {
+  const box=$('#home-discovery-break');
+  if(!box)return;
+  const poorWeather=list.length>0&&list.every(c=>{const w=wxOf(c.z,c.d);return w?.available&&['attenzione','sconsigliata'].includes(w.level);});
+  const limitedConditions=state.target==='funghi'&&list.length>0&&list.every(c=>Number.isFinite(c.s)&&classOf(c.s)>=3);
+  box.hidden=!(poorWeather||limitedConditions);
+}
 function setOutingHeadings(list){
  const defaults={home:contentCopy.homeTitle||'Dove andare',others:state.target==='piante'?'Altri sentieri da esplorare':contentCopy.otherPlacesTitle||'Altre buone uscite'};
  const labels=outingHeadings(list.map(c=>wxOf(c.z,c.d)),defaults);
+ if(state.target==='funghi'&&list.length&&list.every(c=>Number.isFinite(c.s)&&classOf(c.s)>=3)){
+  if(labels.home===defaults.home)labels.home='In attesa di condizioni migliori';
+  if(labels.others===defaults.others)labels.others='Altre zone da conoscere';
+ }
  $('#home-h').textContent=labels.home;$('#others-h').textContent=labels.others;
 }
 function arrangeHome() {
@@ -1015,6 +1027,7 @@ function renderOutdoorHome() {
   }
   list=selectOutingWeather(list,c=>wxOf(c.z,c.d));
   setOutingHeadings(list);
+  renderDiscoveryBreak(list);
   homeProposalKeys=list.slice(0,8).map(c=>({id:c.z.id,o:c.o,trail:c.walk?.t.id}));
   const hero=list[0],box=$('#hero');
   const status=state.seasonSuspended?'<p class="notice">Una scelta salvata è stata sospesa fuori dal calendario indicativo. <button type="button" class="link-btn" data-season-restore>Ripristina la scelta</button></p>':'';
@@ -1914,6 +1927,7 @@ document.addEventListener('click',e=>{
 
 let homeProposalKeys=[];
 function renderHome() {
+  $('#home-discovery-break').hidden=true;
   if(state.communityOnly&&!zones.some(z=>communityHasZone(z.id))){
     updateWeatherHTML($('#hero'),communityEmptyHtml());updateWeatherHTML($('#ranking'),'');$('#others-h').hidden=true;$('#season-h').hidden=true;updateWeatherHTML($('#season'),'');$('#during-walk').hidden=true;return;
   }
@@ -1931,6 +1945,7 @@ function renderHome() {
   }
   list=selectOutingWeather(list,c=>wxOf(c.z,c.d));
   setOutingHeadings(list);
+  renderDiscoveryBreak(list);
   homeProposalKeys=list.slice(0,8).map(c=>({id:c.z.id,o:c.o,trail:c.walk?.t.id}));
   const hero = list[0];
   if(!hero&&hasInterest('piante')){renderOutdoorHome();return;}

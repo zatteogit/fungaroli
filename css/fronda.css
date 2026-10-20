@@ -571,14 +571,16 @@ body:has(#ranking .ring) #ranking-index-legend,body:has(#season .ring) #season-i
 }
 /* Move rail wrappers as a unit; arrows stay next to the content, never at the end of the page. */
 @media(hover:hover) and (pointer:fine) {
-  .rail-host:has(> .days) { padding-inline:52px; }
-  .rail-host:has(> .days) > .rail-arrow { width:40px; height:44px; margin-top:-22px; border-radius:999px; }
+  .rail-host:has(> .days) { padding-inline:28px; }
+  .rail-host:has(> .days) > .rail-arrow { width:28px; height:44px; margin-top:-22px; border:0; border-radius:8px; background:transparent; box-shadow:none; }
+  .rail-host:has(> .days) > .rail-arrow svg { width:16px; height:16px; }
+  .rail-host:has(> .days) > .rail-arrow:hover { background:var(--surface-2); }
   .rail-host:has(> .days) > .rail-prev { left:0; }
   .rail-host:has(> .days) > .rail-next { right:0; }
   .rail-host > .days {
     margin-inline:0; padding-inline:8px; min-width:0;
-    -webkit-mask-image:linear-gradient(to right, transparent, var(--text) min(24px,var(--rail-fade-start)), var(--text) calc(100% - min(24px,var(--rail-fade-end))), transparent);
-    mask-image:linear-gradient(to right, transparent, var(--text) min(24px,var(--rail-fade-start)), var(--text) calc(100% - min(24px,var(--rail-fade-end))), transparent);
+    -webkit-mask-image:linear-gradient(to right, transparent, var(--text) min(8px,var(--rail-fade-start)), var(--text) calc(100% - min(8px,var(--rail-fade-end))), transparent);
+    mask-image:linear-gradient(to right, transparent, var(--text) min(8px,var(--rail-fade-start)), var(--text) calc(100% - min(8px,var(--rail-fade-end))), transparent);
   }
 }
 .story-photo { position:relative; flex:none; width:32%; max-width:260px; min-height:180px; align-self:stretch; margin:0; border-radius:16px; overflow:hidden; }
@@ -880,11 +882,11 @@ body:has(#ranking .ring) #ranking-index-legend,body:has(#season .ring) #season-i
 .home-weather-status .upd-btn { min-height:44px; font-size:12px; }
 /* Due righe: giorno e data, poi indice e meteo. Solo il calendario home. */
 #days { gap:6px; margin-block:0 8px; padding-block:2px; }
-#days .day { flex-basis:110px; min-width:110px; min-height:64px; grid-template-columns:1fr auto; grid-template-rows:22px 20px; gap:4px; padding:7px 8px; border-radius:14px; box-shadow:none; }
+#days .day { flex-basis:110px; min-width:110px; min-height:64px; grid-template-columns:minmax(0,1fr) auto; grid-template-rows:22px 20px; gap:4px; padding:7px 8px; border-radius:14px; box-shadow:none; }
 #days .day .d1 { grid-column:1; grid-row:1; justify-self:start; align-self:center; max-width:100%; overflow:hidden; text-overflow:ellipsis; font-size:12px; }
 #days .day .d2 { grid-column:2; grid-row:1; align-self:center; font:700 16px/1.2 var(--font-body); }
 #days .day .d3 { grid-column:1; grid-row:2; justify-self:start; font-size:13px; }
-#days .day .d-weather { grid-column:2; grid-row:2; font-size:12px; }
+#days .day .d-weather { grid-column:1 / -1; grid-row:2; justify-self:end; font-size:12px; }
 #days .day-all { flex-basis:120px; min-width:120px; }
 #days .day-all .d2 { font-size:14px; }
 #days .day-all .d3 { grid-column:1/-1; justify-self:center; }
@@ -908,6 +910,9 @@ body:has(#ranking .ring) #ranking-index-legend,body:has(#season .ring) #season-i
 /* Il primo giorno segue il margine della pagina, senza riservare spazio alla freccia nascosta. */
 #days { justify-content:flex-start; margin-inline:0; padding-inline:0; scroll-padding-inline:0; }
 .rail-host:has(> #days) { padding-left:0; }
+@media(hover:hover) and (pointer:fine) {
+  .rail-host:has(> #days):has(> .rail-prev:not([hidden])) { padding-left:28px; }
+}
 
 /* Le card del carosello escono gradualmente sullo sfondo della pagina. */
 @media(hover:hover) and (pointer:fine) {
@@ -1501,3 +1506,21 @@ button.cover-index > b { font-size:21px; line-height:1.2; }
 [data-fungi-group][aria-pressed="true"]::before { content:'✓'; margin-right:4px; }
 
 .story-invite .btn.primary { color:var(--action-ink); }
+
+/* Il fiordaliso accompagna le scoperte in home; il ciclamino resta nei cataloghi. */
+[data-view="uscite"] .story-invite.story-blue { background:var(--story-fiordaliso); }
+.discovery-break { padding:24px; border-radius:24px; background:var(--story-fiordaliso); color:var(--story-ink); }
+.discovery-break[hidden] { display:none; }
+.discovery-break header { margin-bottom:24px; }
+.discovery-break h2 { margin:0 0 8px; font:600 clamp(25px,3vw,34px)/1.15 var(--font-display); letter-spacing:-.02em; }
+.discovery-break header p { margin:0; max-width:60ch; font-size:15px; line-height:1.6; }
+.discovery-break-tools { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; }
+.discovery-break-tools section { display:flex; flex-direction:column; align-items:flex-start; min-width:0; }
+.discovery-break-tools h3 { margin:0 0 8px; font:600 17px/1.3 var(--font-body); }
+.discovery-break-tools p { margin:0 0 18px; font-size:14px; line-height:1.6; }
+.discovery-break-tools .btn { margin-top:auto; }
+@media(max-width:760px) {
+ .discovery-break { padding:20px; }
+ .discovery-break-tools { grid-template-columns:minmax(0,1fr); gap:22px; }
+ .discovery-break-tools section + section { padding-top:20px; border-top:1px solid color-mix(in srgb,var(--story-ink) 22%,transparent); }
+}
