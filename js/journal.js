@@ -1,3 +1,4 @@
+import {entityEntries} from './fronda-connections.js';
 import {fungusGlyph} from './indicators.js';
 import {notebookGlyph} from './ui-icons.js';
 import {openModal} from './modal-flow.js';
@@ -512,7 +513,7 @@ export function initJournal({ resolveTrip=()=>null,onEntries=()=>{},zones, speci
     const loading = store;
     try { const fresh = await loading.list(); if (loading !== store) return; entries = fresh; sortEntries(); renderStorage('none'); renderList(); } catch { if (loading === store) renderList('Taccuino non disponibile. Riprova.'); }
   });
-  return { notesFor:href=>entries.filter(e=>e.kind==='note'&&e.reference?.href===href).map(e=>({...e})), refresh: renderList, entryTitle:(id,demo=false)=>{const e=(demo?getDemoEntries():entries).find(e=>String(e.id)===id);return e?notebookTitle(e,zones):'Pagina del taccuino';}, async savePlan(zoneId, date, band) {
+  return { observationsFor:context=>entityEntries(entries,context).map(e=>({...e})), notesFor:href=>entries.filter(e=>e.kind==='note'&&e.reference?.href===href).map(e=>({...e})), refresh: renderList, entryTitle:(id,demo=false)=>{const e=(demo?getDemoEntries():entries).find(e=>String(e.id)===id);return e?notebookTitle(e,zones):'Pagina del taccuino';}, async savePlan(zoneId, date, band) {
     if (!store) throw new Error('Il taccuino sta ancora caricando. Riprova tra poco.');
     const forecast = captureForecast?.(zoneId, date, band);
     if (!forecast) throw new Error('Non ci sono dati completi e aggiornati per salvare questa previsione.');

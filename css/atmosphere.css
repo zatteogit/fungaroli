@@ -20,3 +20,9 @@
   .story-photo.atmosphere .atmosphere-toggle[aria-label^="Riprendi"]::after { content:'▶'; }
 }
 @media(prefers-reduced-motion:reduce) { .atmosphere-media > video { transition:none; } }
+
+/* Controllo discreto, con bersaglio di tocco da 44 px e nome accessibile completo. */
+.atmosphere .atmosphere-toggle { width:44px; height:44px; min-width:44px; min-height:44px; padding:0; font-size:0; display:grid; place-items:center; }
+.atmosphere .atmosphere-toggle[hidden] { display:none; }
+.atmosphere .atmosphere-toggle::after { content:'Ⅱ'; font:500 16px/1 var(--font-body); }
+.atmosphere .atmosphere-toggle[aria-label^="Riprendi"]::after { content:'▶'; }

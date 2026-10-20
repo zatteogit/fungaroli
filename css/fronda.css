@@ -1325,3 +1325,8 @@ a.daily-thought-credit { color:var(--link); text-underline-offset:3px; }
 /* The map preview keeps the model index separate from the thumbnail. */
 .sheet-row:not(:has(.sheet-img)) { grid-template-columns:minmax(0,1fr); }
 .sheet-txt .ring.model-index { position:static; justify-self:start; width:fit-content; max-width:100%; margin-block:4px; }
+
+/* Titoli dell’indice sempre contenuti, anche nelle card più strette. */
+.ring.model-index { box-sizing:border-box; max-width:calc(100% - 24px); }
+.ring.model-index > span { max-width:100%; white-space:normal; text-wrap:balance; overflow-wrap:normal; }
+button.cover-index > span { white-space:normal; text-wrap:balance; }

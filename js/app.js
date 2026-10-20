@@ -1,3 +1,4 @@
+import {entityIdentity,connectionsHtml} from './fronda-connections.js';
 import {renderPlantComparison} from './plant-comparison.js';
 import {initDailyThought} from './daily-thought.js';
 import {assessWalkingRoute,driveAccessFor,documentedTrailStart,geometrySignature} from './outing-route.js';
@@ -53,7 +54,7 @@ import { applyCrop } from './images.js';
 import { FOREST_LEGEND } from './forest-legend.js';
 import { initTrees, renderTreeGrid, renderTreePage, linkTrees, treeChips, treeForCategory, treeThumb, treePhotoSrc, treeHeroSrc } from './trees.js';
 import { crowding, comfortScore, timingAdvice, sunTimes, fmtTime, fmtRough, intornoA } from './human.js';
-import { initCommunity, communityStatus, communityOverview,animalCommunity, communityRank, communityHasZone, communityDataAvailable, reportBadge } from './community.js';
+import { initCommunity, communityStatus, communityOverview,communityForEntity, communityRank, communityHasZone, communityDataAvailable, reportBadge } from './community.js';
 import { guideTitle, renderGuideCards, renderGuide, initGuideContent, guideCount } from './guides.js';
 import { buildEdibleCatalog, seasonStatus, seasonLabel } from './edible-catalog.js';
 import { mountSpeciesAutocomplete } from './species-autocomplete.js';
@@ -69,20 +70,33 @@ const PREFS_KEY = 'fungaroli:prefs:v2'; // v2: si parte con tutti i gruppi
 
 const $ = (s) => document.querySelector(s);
 
+let frondaTaxa={};
+const connectionContext=(kind,id)=>entityIdentity(kind,id,{taxa:frondaTaxa,modeledIds:SPECIES.map(s=>s.id)});
+function connectEntity(box,kind,id){
+ const context=connectionContext(kind,id);if(!box||!context)return;
+ const target=box.querySelector('.pbody,.animal-page')||box;
+ let section=target.querySelector('[data-fronda-connections]');
+ if(!section){section=document.createElement('section');section.className='fronda-connections';section.dataset.frondaConnections='';const sources=target.querySelector('.sp-more,.animal-page-sources');if(sources)sources.before(section);else target.append(section);}
+ section.dataset.entityKind=kind;section.dataset.entityId=id;
+ const links=[{href:'#/mappa',label:'Mappa e zone'},{href:'#/glossario',label:'Parole del bosco'}];
+ if(context.category==='fungo')links.push({href:`#/confronta/${encodeURIComponent(taxonByKey(id)?.key||Object.keys(frondaTaxa).find(k=>frondaTaxa[k].edible_id===id)||id)}`,label:'Confronta questo fungo'},{href:'#/specie',label:'Altri funghi'});
+ if(kind==='pianta')links.push({href:`#/confronta/piante/${encodeURIComponent(id)}`,label:'Confronta questa pianta'},{href:'#/piante',label:'Piante e fiori'});
+ if(kind==='albero')links.push({href:'#/riconosci/alberi',label:'Riconosci per caratteri'},{href:'#/alberi',label:'Altri alberi'});
+ if(kind==='animale'){links.push({href:'#/animali',label:'Altri animali'});if(animalRecord(id)?.paths.includes('flowers'))links.push({href:'#/piante',label:'Piante e fiori'});}
+ // Cross-catalog links use only explicit associations already documented in the trees catalogue.
+ if(context.category==='fungo')for(const [key,t] of Object.entries(treesData?.trees||{}))if(t.fungi?.some(s=>context.ids.includes(s)))links.push({href:`#/albero/${key}`,label:t.name});
+ if(kind==='albero')for(const sid of treesData?.trees?.[id]?.fungi||[]){const item=catalog.find(s=>s.id===sid);if(item)links.push({href:connectionContext('commestibile',sid).href,label:item.name});}
+ section.innerHTML=connectionsHtml({notes:journal?.observationsFor(context)||[],community:communityForEntity(context),zoneLabel:id=>weatherZones?.find(z=>z.id===id)?.title||weatherZones?.find(z=>z.id===id)?.name||id,links});
+}
+function refreshEntityConnections(root=document){
+ root.querySelectorAll('[data-fronda-connections]').forEach(section=>connectEntity(section.parentElement,section.dataset.entityKind,section.dataset.entityId));
+}
 function renderAnimalConnections(){
  const page=document.querySelector('.view[data-view="animale"] .animal-page');
  if(!page||state.view!=='animale')return;
  const id=location.hash.split('/')[2],item=animalRecord(id);if(!item)return;
- const href=`#/animale/${id}`,notes=journal?.notesFor(href)||[],community=animalCommunity(id);
- const zoneLabel=id=>weatherZones?.find(z=>z.id===id)?.title||weatherZones?.find(z=>z.id===id)?.name||id;
- const dateLabel=day=>fmtDate(day,{day:'numeric',month:'long',year:'numeric'});
- let section=page.querySelector('[data-animal-connections]');
- if(!section){section=document.createElement('section');section.className='animal-connections';section.dataset.animalConnections='';page.querySelector('.animal-limit').after(section);
- const action=document.createElement('button');action.type='button';action.className='btn primary animal-note-action';action.dataset.noteKind='animale';action.dataset.noteId=id;action.dataset.noteTitle=item.name;action.innerHTML=notebookGlyph+'<span>Annota un’osservazione</span>';page.querySelector('.animal-page-head').append(action);}
- section.innerHTML=`<h2>Nel tuo Fronda</h2><p>Ritrova le tue annotazioni e le zone segnalate dalla community.</p>
- <div class="animal-connections-grid"><div><h3>Le tue osservazioni</h3>${notes.length?`<ul>${notes.slice(0,5).map(e=>`<li><a href="#/diario/pagina/${encodeURIComponent(e.id)}">${esc(dateLabel(e.date))} · ${e.record?.presence==='observed'?'Osservato':e.record?.presence==='searched_absent'?'Cercato, non osservato':'Appunto'}</a>${e.zoneId?` · <a href="#/zona/${esc(e.zoneId)}">${esc(zoneLabel(e.zoneId))}</a>`:' · zona non indicata'}</li>`).join('')}</ul>`:'<p>Non hai ancora annotazioni collegate a questa scheda.</p>'}<a href="#/diario">Apri il tuo taccuino →</a></div>
- <div><h3>Segnalazioni dalla community</h3>${community.access==='granted'?(community.records.length?`<ul>${community.records.map(r=>`<li><a href="#/zona/${esc(r.zoneId)}">${esc(zoneLabel(r.zoneId))}</a> · ${r.sightings} osservazioni dichiarate · ${r.zeros} ricerche senza avvistamento</li>`).join('')}</ul>`:'<p>Non ci sono aggregati pubblicabili per questo animale negli ultimi 7 giorni. Non significa che sia assente.</p>'):`<p>${esc(community.status)}</p>`}<p class="small muted">Solo zone ampie, su 7 giorni, con almeno 3 contributori e 2 giorni diversi. Segnalazioni non verificate: non confermano la presenza attuale.</p></div></div>
- <nav class="animal-connections-links" aria-label="Esplora Fronda da questa scheda"><a href="#/mappa">Mappa e zone</a>${item.paths.includes('flowers')?'<a href="#/piante">Piante e fiori</a>':''}<a href="#/glossario">Parole del bosco</a><a href="#/animali">Altri animali</a></nav>`;
+ if(!page.querySelector('.animal-note-action')){const action=document.createElement('button');action.type='button';action.className='btn primary animal-note-action';action.dataset.noteKind='animale';action.dataset.noteId=id;action.dataset.noteTitle=item.name;action.innerHTML=notebookGlyph+'<span>Annota un’osservazione</span>';page.querySelector('.animal-page-head').append(action);}
+ connectEntity(page,'animale',id);
 }
 function addNotebookReference(box,kind,id,title){if(!box||!title||box.querySelector('[data-note-kind]'))return;const button=box.querySelector('.notebook-context-action')||document.createElement('button');button.type='button';button.className='btn ghost notebook-context-action';button.dataset.noteKind=kind;button.dataset.noteId=id;button.dataset.noteTitle=title;button.innerHTML=notebookGlyph+'<span>'+esc(({fungo:'Annota questo fungo nel taccuino',specie:'Annota questo fungo nel taccuino',commestibile:'Annota questo fungo nel taccuino',pianta:'Annota questa pianta nel taccuino',albero:'Annota questo albero nel taccuino',guide:'Salva questa lettura nel taccuino'}[kind]||'Aggiungi una nota al taccuino'))+'</span>';const hero=box.querySelector('.phero-body'),target=box.querySelector('.pbody'),lead=box.querySelector('.article-lede');if(hero){button.classList.add('notebook-hero-action');hero.append(button);}else if(target)target.prepend(button);else if(lead)lead.after(button);else box.append(button);}
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -240,7 +254,8 @@ setInterval(refreshPlanningClock, 60000);
 document.addEventListener('visibilitychange', refreshPlanningClock);
 addEventListener('focus', refreshPlanningClock);
 
-const compactTravel=t=>Number.isFinite(t.minutes)?`${t.minutes}<span class="fk2"> min</span><span class="fk3">′</span>`:`${fmtKm(t.airKm)} km <abbr title="In linea d’aria" aria-label="in linea d’aria">l.d.</abbr>`;
+const compactTravel=t=>Number.isFinite(t.minutes)?`${t.minutes}<span class="fk2"> min</span><span class="fk3">′</span>`:`${fmtKm(t.airKm)} km in linea d’aria`;
+const travelFact=t=>fact(Number.isFinite(t.minutes)?'car':'pin',`<span><b>${compactTravel(t)}</b></span>`);
 function proximityMultiplier(z) {
   const t=zoneTrip(z),distance=customBase()?(t.km??t.airKm)/100:Number.isFinite(t.minutes)?t.minutes/120:(t.airKm??0)/100;
   return 1-0.3*Math.min(1,distance);
@@ -317,7 +332,8 @@ async function init() {
   initCommunity({ zoneList: weatherZones, speciesList: catalog });
   initExternalSignals(()=>{if(results)paintWeatherView();});
   renderCommunityIntro();
-  document.addEventListener('fungaroli:community', () => { renderCommunityIntro(); renderAnimalConnections(); if(state.communityOnly)outCache.clear();if (results) paintWeatherView(); });
+  document.addEventListener('fungaroli:community', () => { renderCommunityIntro(); refreshEntityConnections(); if(state.communityOnly)outCache.clear();if (results) paintWeatherView(); });
+  frondaTaxa=stj.taxa||{};
   initIdentify({
     traits: stj, media: mj, assetUrl: embedded ? (f) => embedded.assets?.[f] || '' : (f) => f, thumb, zones, banner: legal?.identify_banner,
     howTo: (eid, latin) => idj?.species?.[eid]?.lookalikes?.find((l) => l.latin === latin)?.how_to_tell || '',
@@ -336,16 +352,17 @@ async function init() {
   initLearning({ glossary: embedded?.glossary || await load('glossary'), trees: trj,media:embedded?.glossaryMedia||await load('media-glossary'),assetUrl:embedded?(f)=>embedded.assets?.[f]||'':(f)=>f });
   if (embedded) challengeAsset = (f) => embedded.assets?.[f] || '';
   initChallenges({ data: embedded?.challenges || await load('challenges'), assetUrl: challengeAsset, entity: challengeEntity });
-  initEntitySheets({ enhance: enhanceGlossary, render: (body, href) => {
+  initEntitySheets({ enhance: body=>{refreshEntityConnections(body);enhanceGlossary(body);}, render: (body, href) => {
     const [, kind, encodedId] = href.split('/'), id = decodeURIComponent(encodedId);
-    if (kind === 'pianta' && plantName(id)) {renderPlantPage(body,id);enhanceDiscoverySheet(body,href);return plantName(id);}
-    if (kind === 'albero' && trj.trees?.[id]) { renderTreePage(body, id);addNotebookReference(body,'albero',id,trj.trees[id].name);enhanceDiscoverySheet(body,href); return trj.trees[id].name; }
-    if (kind === 'fungo' && taxonName(id)) { renderTaxonPage(body, id);addNotebookReference(body,'fungo',id,taxonName(id)); return taxonName(id); }
+    if (kind === 'pianta' && plantName(id)) {renderPlantPage(body,id);connectEntity(body,kind,id);enhanceDiscoverySheet(body,href);return plantName(id);}
+    if (kind === 'albero' && trj.trees?.[id]) { renderTreePage(body, id);addNotebookReference(body,'albero',id,trj.trees[id].name);connectEntity(body,kind,id);enhanceDiscoverySheet(body,href); return trj.trees[id].name; }
+    if (kind === 'fungo' && taxonName(id)) { renderTaxonPage(body, id);addNotebookReference(body,'fungo',id,taxonName(id)); connectEntity(body,kind,id);return taxonName(id); }
     const s = catalog.find(x => x.id === id);
     if (!s) return '';
     if (kind === 'specie' && SPECIES.some(x => x.id === id)) renderSpeciesDetail(body, id);
     else renderEdiblePage(id, body);
     addNotebookReference(body,kind,id,s.name);
+    connectEntity(body,kind,id);
     return s.name;
   }});
   // l'avviso nel riassunto di una sezione resta un avviso: toccarlo non apre la sezione (sembrerebbe un approfondimento del pericolo)
@@ -373,7 +390,7 @@ async function init() {
     else if(kind==='fungo')image=searchTaxa().find(t=>t.key===id)?.photo;
     const file=image?.file_hd||image?.file||image?.thumb;return file?{file:assetSrc(file)}:null;
   };
-  journal = initJournal({ resolveTrip:editorialReference,noteCatalogs:()=>({animale:animals().map(a=>({name:a.name,latin:a.latin,href:'#/animale/'+a.id})),fungo:Object.entries(stj.taxa).map(([id,t])=>({name:t.name||t.latin,latin:t.latin,href:t.edible_id&&!t.lookalike_of?.length?'#/specie/'+t.edible_id:'#/fungo/'+id})),botanica:plants().map(p=>({name:p.name,latin:p.latin,href:'#/pianta/'+p.id})),albero:Object.entries(trj.trees).map(([id,t])=>({name:t.name,latin:t.latin,href:'#/albero/'+id}))}),onEntries:entries=>{botanicalNotes=entries.filter(e=>e.kind==='note'&&e.observation);renderAnimalConnections();if(series){compute();outCache.clear();if(weatherBusy)paintWeatherView();else renderAll();}},zones:weatherZones, speciesCatalog: catalog, predict, captureForecast, getZoneId: () => state.zoneId || zones[0].id, zoneImage:zid=>assetSrc(zoneMedia[zid]?.file_hd||zoneMedia[zid]?.file||''),referenceImage:notebookReferenceImage });
+  journal = initJournal({ resolveTrip:editorialReference,noteCatalogs:()=>({animale:animals().map(a=>({name:a.name,latin:a.latin,href:'#/animale/'+a.id})),fungo:Object.entries(stj.taxa).map(([id,t])=>({name:t.name||t.latin,latin:t.latin,href:connectionContext('fungo',id).href})),botanica:plants().map(p=>({name:p.name,latin:p.latin,href:'#/pianta/'+p.id})),albero:Object.entries(trj.trees).map(([id,t])=>({name:t.name,latin:t.latin,href:'#/albero/'+id}))}),onEntries:entries=>{botanicalNotes=entries.filter(e=>e.kind==='note'&&e.observation);refreshEntityConnections();if(series){compute();outCache.clear();if(weatherBusy)paintWeatherView();else renderAll();}},zones:weatherZones, speciesCatalog: catalog, predict, captureForecast, getZoneId: () => state.zoneId || zones[0].id, zoneImage:zid=>assetSrc(zoneMedia[zid]?.file_hd||zoneMedia[zid]?.file||''),referenceImage:notebookReferenceImage });
   // preferenza personale (non un filtro): usare le fasi annotate nel taccuino per le cose da osservare
   const botanicalToggle = $('[data-botanical-personalize]');
   if (botanicalToggle) { botanicalToggle.checked = state.useBotanicalNotes; botanicalToggle.addEventListener('change', () => { state.useBotanicalNotes = botanicalToggle.checked; savePrefs(); if (series) { compute(); outCache.clear(); renderAll(); } }); }
@@ -779,6 +796,8 @@ function routeNow(r, nav) {
   const referenceBox=document.querySelector(`.view[data-view="${r.view}"]`);
   const noteRoute={'albero':['albero',r.treeId],'specie-dettaglio':['specie',r.speciesId],'fungo':['fungo',r.taxonId],'commestibile':['commestibile',r.speciesId],'guide':['guide',r.guideId]}[r.view];
   if(noteRoute)addNotebookReference(referenceBox.querySelector('.sp-page,#guide-body,#edible-detail')||referenceBox,noteRoute[0],noteRoute[1],titleOf(r));
+  const speciesRoute={'pianta':['pianta',r.plantId],'albero':['albero',r.treeId],'specie-dettaglio':['specie',r.speciesId],'fungo':['fungo',r.taxonId],'commestibile':['commestibile',r.speciesId]}[r.view];
+  if(speciesRoute)connectEntity(referenceBox,...speciesRoute);
   enhanceGlossary(referenceBox);
   const learningNav=document.querySelector(`.view[data-view="${r.view}"] .seg-nav`),selectedSection=learningNav?.querySelector('[aria-current="page"]');
   if(selectedSection) learningNav.scrollLeft=selectedSection.offsetLeft-(learningNav.clientWidth-selectedSection.offsetWidth)/2;
@@ -949,7 +968,7 @@ function outdoorTile(c,hero=false) {
     const body=`<span class="cover-title">${esc(title)}</span>${sub?`<span class="cover-sub">${esc(sub)}</span>`:''}
       <span class="cover-walk"><b>${esc(c.walk.microzone)}</b><span>${esc(walkBrief(c.walk))}</span></span>
       ${plantCoverHint(c)}
-      <span class="facts" aria-label="L’uscita in breve">${fact('car',`<span><b>${compactTravel(zoneTrip(c.z,c.walk))}</b></span>`)}${walkTimeFact(c.walk)}${w?`<span class="fact wx-${w.level}" title="${esc(w.text)}">${wxi(w)}<span class="fx">${w.available?esc(w.level==='ok'?w.main:w.short||w.main):'Meteo non disponibile'}</span></span>`:''}</span>
+      <span class="facts" aria-label="L’uscita in breve">${travelFact(zoneTrip(c.z,c.walk))}${walkTimeFact(c.walk)}${w?`<span class="fact wx-${w.level}" title="${esc(w.text)}">${wxi(w)}<span class="fx">${w.available?esc(w.level==='ok'?w.main:w.short||w.main):'Meteo non disponibile'}</span></span>`:''}</span>
       <span class="cover-cta" aria-hidden="true">Dai uno sguardo <span>→</span></span>`;
     return homeCover({c,body,extraClass:'outdoor-hero'});
   }
@@ -1902,7 +1921,7 @@ function renderHome() {
         <span class="cover-sp">${thumb(hero.d.best.species.id, 44)}<span><small>${hero.d.best.kind==='plant'?'Da osservare':'Da conoscere in questi boschi'}</small><span class="cover-sp-name"><b>${esc(hero.d.best.species.name)}</b> ${reportBadge(hero.z.id, hero.d.best.species.id)}</span>
           <small>${hero.d.best.kind==='plant'?`Periodo indicativo: ${esc(hero.d.best.phaseLabel.toLowerCase())}`:`${intornoA(hero.d.best.band)} ${hero.d.best.band} m s.l.m.`}${hero.d.best.kind!=='plant' && pineHostUnsure(hero.z, hero.d.best.species, hero.d.best.band) ? ' · la carta non conferma i pini' : ''}</small></span></span>
         ${plantCoverHint(hero)}
-        <span class="facts" aria-label="L'uscita in breve">${t ? fact('clock', practicalTiming(hero.z,hero.d,hero.walk).available ? `<span class="fk">entro le </span><b>${fmtRough(t.arrive,15,'floor')}</b>` : '<b>Orario superato</b>') : ''}${fact('car', `<span><b>${compactTravel(zoneTrip(hero.z,hero.walk))}</b></span>`)}${walkTimeFact(hero.walk)}${state.target==='funghi'&&hero.d.crowd ? `<span class="fact" title="${esc(crowdText(hero.d.crowd))}">${IC.people}<span class="fc">${crowdText(hero.d.crowd)}</span></span>` : ''}${w0 ? `<span class="fact wx-${w0.level}" title="${esc(w0.text)}">${wxi(w0)}<span class="fx">${esc(w0.level === 'ok' ? w0.main : (w0.short || w0.main))}</span></span>` : ''}</span>
+        <span class="facts" aria-label="L'uscita in breve">${t ? fact('clock', practicalTiming(hero.z,hero.d,hero.walk).available ? `<span class="fk">entro le </span><b>${fmtRough(t.arrive,15,'floor')}</b>` : '<b>Orario superato</b>') : ''}${travelFact(zoneTrip(hero.z,hero.walk))}${walkTimeFact(hero.walk)}${state.target==='funghi'&&hero.d.crowd ? `<span class="fact" title="${esc(crowdText(hero.d.crowd))}">${IC.people}<span class="fc">${crowdText(hero.d.crowd)}</span></span>` : ''}${w0 ? `<span class="fact wx-${w0.level}" title="${esc(w0.text)}">${wxi(w0)}<span class="fx">${esc(w0.level === 'ok' ? w0.main : (w0.short || w0.main))}</span></span>` : ''}</span>
         ${hero.z.collectionStatus==='observation_only'?'<span class="cover-local-rule">Uscita di osservazione · verifica le regole del Parco</span>':hero.z.collectionStatus==='restricted'?'<span class="cover-local-rule">Raccolta con limitazioni locali</span>':''}
         ${note}
         <span class="cover-cta" aria-hidden="true">Dai uno sguardo <span>→</span></span>`})}`;
