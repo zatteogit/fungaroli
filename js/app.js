@@ -986,7 +986,7 @@ function outdoorTile(c,hero=false) {
     return homeCover({c,body,extraClass:'outdoor-hero'});
   }
   const brief=`${c.walk.t.difficulty||'Difficoltà n.d.'} · ${fmtKm(c.walk.t.in_zone_km)} km nel tratto`;
-  return `<a class="tile outdoor-tile" data-walk-zone="${c.z.id}" href="${walkHref(c.z,c.o,c.walk.t)}">${outdoorBackdrop()}${cv?`<img data-src="${cv.small}" alt="" loading="lazy">`:''}<span class="shade"></span>${w&&w.level!=='ok'?`<span class="tile-wx wx-${w.level}" title="${esc(w.text)}">${wxi(w)}${esc(OUTING_LABEL[w.level])}</span>`:''}<span class="tile-body"><span class="tile-day">${esc(dayLabel(c.o,c.d.date,true))}</span><b>${esc(splitName(c.z)[0])}</b>${c.z.collectionStatus==='observation_only'?'<small>Uscita di osservazione</small>':''}<small>${esc(brief)}</small></span></a>`;
+  return `<a class="tile outdoor-tile" data-walk-zone="${c.z.id}" href="${walkHref(c.z,c.o,c.walk.t)}">${outdoorBackdrop()}${cv?`<img data-src="${cv.small}" alt="" loading="lazy">`:''}<span class="shade"></span>${w&&w.level!=='ok'?`<span class="tile-wx wx-${w.level}" title="${esc(w.text)}">${wxi(w)}<span class="tile-wx-label">${esc(OUTING_LABEL[w.level])}</span></span>`:''}<span class="tile-body"><span class="tile-day">${esc(dayLabel(c.o,c.d.date,true))}</span><b>${esc(splitName(c.z)[0])}</b>${c.z.collectionStatus==='observation_only'?'<small>Uscita di osservazione</small>':''}<small>${esc(brief)}</small></span></a>`;
 }
 function plantRailItems(list) {
   const seen=new Set();return list.flatMap(c=>c.items||outdoorDiscoveries(c.z,c.d,c.walk)).filter(i=>i.kind==='pianta'&&!seen.has(i.id)&&seen.add(i.id)).slice(0,8);
@@ -1810,7 +1810,7 @@ function coverOf(z, spId, d) {
   const p = speciesPhoto(spId);
   return p ? { hd: p.file_hd || p.file, small: p.file, credit: p, alt: '' } : null;
 }
-const ring = (s, big = true, interactive = false) => `<${interactive?'button type="button" data-index-tip aria-expanded="false"':'span'} data-weather-key="fungi-indicator" class="ring model-index${big ? '' : ' ring-sm'}" aria-label="Condizioni di crescita ${formatIndex(s)} su 10${interactive?': come leggerle':''}"><span>Condizioni di crescita</span><b>${fungusGlyph}<span>${scoreText(s)}<small>/10</small></span></b></${interactive?'button':'span'}>`;
+const ring = (s, big = true, interactive = false) => `<${interactive?'button type="button" data-index-tip aria-expanded="false"':'span'} data-weather-key="fungi-indicator" class="ring model-index${big ? '' : ' ring-sm'}" aria-label="Condizioni di crescita ${formatIndex(s)} su 10${interactive?': come leggerle':''}"><span>${big?'Condizioni di crescita':'Crescita'}</span><b>${fungusGlyph}<span>${scoreText(s)}<small>/10</small></span></b></${interactive?'button':'span'}>`;
 function indexLegend(){return `<button type="button" class="index-legend" data-index-tip aria-expanded="false" aria-label="Condizioni di crescita da 0 a 10: come leggerle"><span><b>Condizioni di crescita · 0–10</b><span>Quanto le condizioni favoriscono la crescita dei funghi</span></span></button>`;}
 const IC = {
   home: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h5v-7h4v7h5V9"/></svg>',
@@ -1947,7 +1947,7 @@ function renderHome() {
     const trail = c.walk?.t;
     const brief = trail ? `${trail.difficulty || 'Difficoltà n.d.'} · ${fmtKm(trail.in_zone_km)} km nel tratto` : '';
     return `<li data-weather-key="${c.z.id}|${c.o}" class="vtn" style="--vtn:t-${c.z.id}-${c.o}"><a class="tile" data-walk-zone="${c.z.id}" href="${walkHref(c.z, c.o, c.walk?.t)}">
-      ${cv ? `<img data-src="${cv.small}" alt="" loading="lazy" decoding="async">` : ''}<span class="shade"></span>${ring(c.s, false)}${(() => { const w = wxOf(c.z, c.d); return w && w.level !== 'ok' ? `<span class="tile-wx wx-${w.level}" title="${esc(w.text)}">${wxi(w)}${esc(OUTING_LABEL[w.level])}</span>` : ''; })()}
+      ${cv ? `<img data-src="${cv.small}" alt="" loading="lazy" decoding="async">` : ''}<span class="shade"></span>${ring(c.s, false)}${(() => { const w = wxOf(c.z, c.d); return w && w.level !== 'ok' ? `<span class="tile-wx wx-${w.level}" title="${esc(w.text)}">${wxi(w)}<span class="tile-wx-label">${esc(OUTING_LABEL[w.level])}</span></span>` : ''; })()}
       <span class="tile-body"><span class="tile-day">${esc(dayLabel(c.o, c.d.date, true))}</span><b>${esc(splitName(c.z)[0])}</b>${c.z.collectionStatus==='observation_only'?'<small>Uscita di osservazione</small>':''}${brief ? `<small>${esc(brief)}</small>` : ''}</span>
     </a></li>`;
   }).join('');
