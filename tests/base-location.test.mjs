@@ -21,3 +21,22 @@ test('a late route response cannot overwrite a new base or cross into another ac
     setBaseUser({id:'owner-b',base:null});assert.equal(travelTo(target,{minutes:55,km:30}).minutes,55);
   }finally{setBaseUser(null);globalThis.fetch=originalFetch;globalThis.document=originalDocument;}
 });
+
+test('routes survive a module reload, stay available offline, and are removed on logout',async()=>{
+ const old={fetch:globalThis.fetch,document:globalThis.document,storage:globalThis.localStorage};
+ const saved=new Map();globalThis.localStorage={getItem:k=>saved.get(k)||null,setItem:(k,v)=>saved.set(k,v),removeItem:k=>saved.delete(k)};
+ globalThis.document=new EventTarget();
+ const base={name:'Roma',lat:41.9,lon:12.5},target={lat:42.4,lon:12.86};
+ const first=await import('../js/base-location.js?cache-first');
+ globalThis.fetch=async()=>Response.json({base,routes:[{key:pointKey(target),minutes:42,km:50}]});
+ try{
+  first.setBaseUser({id:'private-owner',base});first.travelTo(target);await pause(120);
+  assert.equal(first.travelTo(target).minutes,42);
+  const reloaded=await import('../js/base-location.js?cache-reloaded');
+  globalThis.fetch=async()=>{throw Error('offline');};
+  reloaded.setBaseUser({id:'private-owner',base});assert.equal(reloaded.travelTo(target).minutes,42);
+  reloaded.retryBaseRoutes();assert.equal(reloaded.travelTo(target).minutes,42);await pause(120);
+  assert.equal(reloaded.travelTo(target).minutes,42);assert.equal(reloaded.travelTo(target).stale,true);
+  reloaded.setBaseUser(null);assert.equal(saved.size,0);
+ }finally{first.setBaseUser(null);globalThis.fetch=old.fetch;globalThis.document=old.document;if(old.storage===undefined)delete globalThis.localStorage;else globalThis.localStorage=old.storage;}
+});

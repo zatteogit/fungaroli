@@ -206,10 +206,10 @@ let baseMarker=null;
 function drivePoint(z,walk=null){return driveAccessFor(access?.[z.id]||[],z.parking||[],documentedTrailStart(walk?.t)||walk?.h);}
 function zoneTrip(z,walk=null) {
   const drive=drivePoint(z,walk),target=drive?.target||z,a=drive?.reference;
-  return {...travelTo(target,{minutes:a?.minutes??null,km:a?.km??null},{route:!!drive}),destination:drive?.name||z.name};
+  return {...travelTo(target,{minutes:a?.minutes??null,km:a?.km??null},{route:!!drive}),routeAvailable:!!drive,destination:drive?.name||z.name};
 }
 const walkTimeText=t=>{const a=t&&assessWalkingRoute(t),n=a?.trailRoundTripMinutes??a?.wholeTrailMinutes;return n!=null?`${Math.floor(n/60)} h${n%60?' '+n%60+' min':''} ${a.trailRoundTripMinutes!=null?'A/R':'andata'}`:'—';};
-const walkTimeFact=walk=>walk?fact('walk',`<span title="${walk.t.wholeTrailEvidence?'Solo sentiero; raccordo dalla sosta escluso. Eventuale ritorno: stima OSM sulla stessa via.':'Durata dell’uscita non definita: il tempo dell’intero sentiero non si trasferisce al tratto locale'}"><b>${walkTimeText(walk.t)}</b><span class="walk-time-scope">${walk.t.wholeTrailEvidence?'solo sentiero':'a piedi'}</span></span>`):'';
+const walkTimeFact=walk=>walk?fact('walk',`<span title="${walk.t.wholeTrailEvidence?'Solo sentiero; raccordo dalla sosta escluso. Eventuale ritorno: stima OSM sulla stessa via.':'Durata dell’uscita non definita: il tempo dell’intero sentiero non si trasferisce al tratto locale'}"><b>${walkTimeText(walk.t)==='—'?'Tempo da verificare':walkTimeText(walk.t)}</b><span class="walk-time-scope">${walk.t.wholeTrailEvidence?'solo sentiero':'a piedi'}</span></span>`):'';
 
 function practicalTiming(z, d, walk = null) {
   const trip = zoneTrip(z, walk);
@@ -256,7 +256,7 @@ document.addEventListener('visibilitychange', refreshPlanningClock);
 addEventListener('focus', refreshPlanningClock);
 
 const compactTravel=t=>Number.isFinite(t.minutes)?`${t.minutes}<span class="fk2"> min</span><span class="fk3">′</span>`:`${fmtKm(t.airKm)} km in linea d’aria`;
-const travelFact=t=>fact(Number.isFinite(t.minutes)?'car':'pin',`<span><b>${compactTravel(t)}</b></span>`);
+const travelFact=t=>fact('car',`<span title="${esc(Number.isFinite(t.minutes)?`Stima auto fino a ${t.destination}; senza traffico${t.stale?' · copia del '+new Date(t.calculatedAt).toLocaleDateString('it-IT'):''}`:'Percorso stradale fino all’accesso, non distanza in linea d’aria')}"><b>${Number.isFinite(t.minutes)?compactTravel(t):!t.routeAvailable?'Accesso da definire':t.pending?'Calcolo auto…':'Tempo auto non disponibile'}</b>${t.stale?'<small> · da aggiornare</small>':''}</span>`);
 function proximityMultiplier(z) {
   const t=zoneTrip(z),distance=customBase()?(t.km??t.airKm)/100:Number.isFinite(t.minutes)?t.minutes/120:(t.airKm??0)/100;
   return 1-0.3*Math.min(1,distance);
@@ -325,8 +325,10 @@ async function init() {
   weatherZones = zj.zones.filter(z=>z.publicationStatus!=='draft'&&z.bands?.length);
   zones = weatherZones.filter(z=>hj.zones[z.id]); // una zona senza dati di bosco non e' ancora pronta
   initBaseLocation(zj.origin);origin = currentBase();
+  const prepareTravel=()=>{for(const z of zones){zoneTrip(z);for(const t of trails[z.id]?.trails||[])zoneTrip(z,{t,h:documentedTrailStart(t)});}};
   const updateTravel=()=>{origin=currentBase();if(series){compute();outCache.clear();renderAll();}renderFilterSummary();};
-  document.addEventListener('fungaroli:base',updateTravel);
+  document.addEventListener('fungaroli:base',()=>{prepareTravel();updateTravel();});
+  prepareTravel();
   document.addEventListener('fungaroli:travel',updateTravel);
   habitat = hj.zones;
   renderGuideCards($('#editorial'));
@@ -1833,7 +1835,7 @@ const IC = {
 // affollamento in parole (il livello resta basso/medio/alto per i colori)
 const CROWD = { basso: 'poca gente', medio: 'un po\' di gente', alto: 'molta gente' };
 const crowdText = (c) => CROWD[c?.level] || '';
-const fact = (ic, html) => `<span class="fact">${IC[ic]}${html}</span>`;
+const fact = (ic, html) => `<span class="fact">${IC[ic]||''}${html}</span>`;
 const creditLine = (m) => m ? `${m.generated ? `Stagione elaborata con AI dalla foto di ${esc(m.author || '')}` : `Foto: ${esc(m.author || '')}`}${m.license ? `, ${m.licenseUrl?`<a href="${esc(m.licenseUrl)}" target="_blank" rel="noopener">${esc(m.license)}</a>`:esc(m.license)}` : ''}${m.modified?` · ${esc(m.modified)}`:''} · <a href="${esc(m.page)}" target="_blank" rel="noopener">${esc(m.source || 'fonte')}</a>` : '';
 
 const discoveryItems=new Map();let openingDiscovery=null;
