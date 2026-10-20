@@ -11,7 +11,7 @@ export function normalizeFieldRecord(record){
 export function sharedObservation(entry,{now=Date.now(),references,zoneIds}={}){
  const record=normalizeFieldRecord(entry.record),reference=entry.reference;
  const today=new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Rome',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(now));
- const prefix={fungo:/^#\/(fungo|specie|commestibile)\//,botanica:/^#\/pianta\//,albero:/^#\/albero\//}[entry.category];
+ const prefix={animale:/^#\/animale\//,fungo:/^#\/(fungo|specie|commestibile)\//,botanica:/^#\/pianta\//,albero:/^#\/albero\//}[entry.category];
  if(entry.kind!=='note'||!prefix||!reference||!prefix.test(reference.href)||references&&!references.has(reference.href)||!entry.zoneId||zoneIds&&!zoneIds.has(entry.zoneId)||entry.date>today||record.presence==='unknown')throw new Error('Per condividere indica specie, zona, giorno e osservazione.');
  return {category:entry.category,taxonId:reference.href.split('/').at(-1),reference:reference.href,zoneId:entry.zoneId,day:entry.date,...record,phases:entry.observation?.phases?.map(p=>({code:p.code,status:p.status}))||[],availability:entry.observation?.availability||'unknown',validation:'unreviewed'};
 }
