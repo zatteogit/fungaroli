@@ -2,6 +2,23 @@
 // Funzioni pure: nessuna dipendenza dal DOM, testabili con `node --test`.
 
 import {scoreBotanical} from './botanical-model.js';
+import {validExternalDay} from './external-observation.js';
+
+// Evidenze del registro esterno: informazioni osservate, separate dal punteggio.
+// Il chiamante può fornire il dataset autenticato della redazione per analisi e confronto.
+export function externalFieldEvidence(dataset,zoneId,taxonId,day,{windowDays=7,now=Date.now()}={}) {
+  if(!dataset||dataset.schemaVersion!==1||dataset.purpose!=='occurrence_evidence'||!Array.isArray(dataset.occurrences)||!validExternalDay(day,now)||!Number.isInteger(windowDays)||windowDays<1||windowDays>365)return null;
+  const since=new Date(Date.parse(day+'T12:00:00Z')-(windowDays-1)*864e5).toISOString().slice(0,10),seen=new Set();
+  const records=dataset.occurrences.filter(r=>{
+    if(r.zoneUsable!==true||r.zoneId!==zoneId||r.taxonId!==taxonId||!validExternalDay(r.observedOn,now)||r.observedOn<since||r.observedOn>day||!['presence','searched_absent'].includes(r.outcome))return false;
+    if(r.outcome==='searched_absent'&&(!r.searched||!Number.isInteger(r.effortMinutes)||r.effortMinutes<1))return false;
+    if(r.outcome==='presence'&&r.quality!=='research')return false;
+    const key=r.eventKey+'|'+r.observedOn;if(seen.has(key))return false;seen.add(key);return true;
+  });
+  return {since,asOf:day,zoneId,taxonId,records:records.map(r=>({id:r.id,version:r.version,observedOn:r.observedOn,outcome:r.outcome,sourceUrl:r.sourceUrl})),
+    presences:records.filter(r=>r.outcome==='presence').length,searchedAbsent:records.filter(r=>r.outcome==='searched_absent').length,
+    coverage:records.length?'observations_available':'no_usable_observations',rankingEffect:'none'};
+}
 
 export const MODEL_VERSION = '2.0.0'; // indice sperimentale; nessuna calibrazione locale
 export const PARAMS = {
@@ -165,6 +182,7 @@ export function scoreZoneDay(zone, hab, seriesByBand, speciesList, i,context) {
       const r = scoreSpecies(sp, s, i, hab, band,context);
       if (!spBest || (r.score ?? -1) > (spBest.score ?? -1)) spBest = { ...r, band, species: sp };
     });
+    if (spBest&&context?.externalObservations)spBest.fieldEvidence=externalFieldEvidence(context.externalObservations,zone.id,sp.id,seriesByBand.find(Boolean)?.dates?.[i],context.evidenceOptions);
     if (spBest) perSpecies.push(spBest);
     if (spBest && Number.isFinite(spBest.score) && (!best || spBest.score > best.score)) best = spBest;
   }

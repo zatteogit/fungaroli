@@ -47,3 +47,7 @@ archive
 
 # Sorgenti raster, prototipi e ricevute di produzione: solo repository.
 incoming
+
+# Ricevute di verifica e navigazione locali, mai pubblicate come asset.
+output
+.playwright-cli
