@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="utf-8">
-  <meta name="app-version" content="fungaroli-shell-v285">
+  <meta name="app-version" content="fungaroli-shell-v286">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
   <link rel="preload" href="data/crop-points.json" as="fetch" crossorigin>
   <meta name="theme-color" content="#f7f4ea" media="(prefers-color-scheme: light)">
@@ -143,10 +143,20 @@
       <div class="view-head"><div><p class="kicker" data-catalog-count="specie" hidden></p><h1 id="sp-h" class="view-title">Funghi</h1>
         <p class="view-sub">Caratteri, sosia e ambienti.</p></div></div>
       <nav class="seg-nav" data-scopri-nav aria-label="Sezioni di Scopri"></nav><nav class="sub-nav" data-scopri-sub aria-label="Modalità della sezione"></nav>
-      <aside class="story-invite story-blue catalog-invite"><div><h2>Guarda più vicino.</h2><p>Caratteri, parole e piccoli dettagli del bosco.</p><a class="btn primary" href="#/impara">Scopri le nostre guide <span aria-hidden="true">→</span></a></div><figure class="atmosphere story-photo" data-atmosphere="luce-tra-le-foglie">
-    <span class="atmosphere-media" aria-hidden="true"><img class="atmosphere-still" src="assets/video/nature/luce-tra-le-foglie-poster-small.webp" srcset="assets/video/nature/luce-tra-le-foglie-poster-small.webp 960w, assets/video/nature/luce-tra-le-foglie-poster.webp 1920w" sizes="(max-width:760px) 260px, 320px" width="1920" height="1080" alt="" loading="lazy"><video src="assets/video/nature/luce-tra-le-foglie-loop.mp4" muted loop playsinline preload="none" tabindex="-1"></video></span>
-    <button class="atmosphere-toggle" type="button" hidden aria-label="Metti in pausa il video di atmosfera">Ⅱ Pausa</button>
-  </figure></aside>
+      <section class="catalog-welcome" aria-labelledby="fungi-welcome-title">
+        <div class="catalog-welcome-intro"><p class="catalog-welcome-eyebrow">Un dettaglio alla volta</p><h2 id="fungi-welcome-title">Guarda bene.<br>Scopri le differenze.</h2><p>Dal cappello al gambo, ogni carattere aiuta a conoscere un fungo. Da dove vuoi cominciare?</p></div>
+        <div class="catalog-welcome-tools">
+          <button type="button" class="catalog-tool catalog-tool-recognize" data-open-recognition="funghi" aria-haspopup="dialog">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="m15 15 6 6M6 11c0-5 8-5 8 0ZM9 11v3h2v-3"/></svg>
+            <span class="catalog-tool-title">Impara a riconoscere</span><span class="catalog-tool-copy">Osserva i caratteri, segui le domande e scopri cosa confrontare.</span><span class="catalog-tool-go" aria-hidden="true">Comincia dai dettagli <span>↗</span></span>
+          </button>
+          <a class="catalog-tool catalog-tool-compare" href="#/confronta">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16m-4-4 4 4-4 4M20 16H4m4-4-4 4 4 4"/></svg>
+            <span class="catalog-tool-title">Confronta</span><span class="catalog-tool-copy">Due funghi, fianco a fianco. Metti a fuoco somiglianze e differenze.</span><span class="catalog-tool-go" aria-hidden="true">Scegli i funghi <span>↗</span></span>
+          </a>
+        </div>
+        <p class="catalog-welcome-note">Per conoscere, non per decidere cosa mangiare: Fronda non certifica la commestibilità.</p>
+      </section>
       <div id="species-grid" class="species-grid"></div>
     </section>
 
