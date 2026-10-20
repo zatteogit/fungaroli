@@ -1,3 +1,4 @@
+import {validateTrailContext} from '../js/trail-context.js';
 import {GLOSSARY_CONTEXTS,termContexts,glossaryAliasKey} from '../js/glossary-context.js';
 import sanitizeHtml from 'sanitize-html';
 import { resourceOf, isLockedField } from '../js/content-schema.js';
@@ -66,7 +67,8 @@ export function validateContent(id, data, previous) {
     }));
   }
   const value=visit(data,'',previous);
-  if(id==='trails')for(const z of Object.values(value.zones||{}))for(const t of z.trails||[])if(!t.editorialNote?.trim())delete t.editorialNote;
+  if(id==='trails'){for(const z of Object.values(value.zones||{}))for(const t of z.trails||[])for(const l of t.relatedLinks||[])if(l.caution==='')delete l.caution;validateTrailContext(value);}
+  if(id==='trails')for(const z of Object.values(value.zones||{}))for(const t of z.trails||[]){if(!t.editorialNote?.trim())delete t.editorialNote;if(t.relatedLinks?.length===0)delete t.relatedLinks;}
   function normalizeSources(v){
     if(!v||typeof v!=='object')return;
     if(Array.isArray(v.sources))v.sources=v.sources.map(s=>{
@@ -78,6 +80,7 @@ export function validateContent(id, data, previous) {
   }
   normalizeSources(value);
   let needsReview=false;
+  if(id==='trails'&&previous){const links=d=>Object.entries(d.zones||{}).flatMap(([zone,z])=>(z.trails||[]).map(t=>[zone,t.id,t.relatedLinks||[]]));needsReview=!same(links(value),links(previous));}
   if(id==='botanical-models'){
     if(!value.models||typeof value.models!=='object'||Array.isArray(value.models))err('Elenco dei modelli botanici non valido.');
     for(const [key,m] of Object.entries(value.models)){

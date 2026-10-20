@@ -20,19 +20,19 @@
       "access": "Da Rieti SS 4 bis del Terminillo, oltre Pian de' Valli, poi SP 10 della Vallonina verso la Sella di Leonessa.",
       "parking": [
         {
-          "name": "Rifugio Maiolica (fondovalle)",
-          "lat": 42.5005,
-          "lon": 13.009
-        },
-        {
-          "name": "Bivio Rifugio Sebastiani",
-          "lat": 42.4697,
-          "lon": 13.0102
+          "name": "Parcheggio mappato presso Sella di Leonessa",
+          "lat": 42.473514,
+          "lon": 13.006334,
+          "sourceUrl": "https://www.openstreetmap.org/way/132609641",
+          "checkedOn": "2026-10-20",
+          "license": "ODbL-1.0",
+          "accessStatus": "unknown",
+          "positionMethod": "area_representative"
         }
       ],
       "trails": "CAI 404 (Selletta di Pratorecchia, Iaccio Crudele); CAI 439 (Buco del Merlo, Monte I Porcini).",
-      "drive_min": 55,
-      "drive_km": 34,
+      "drive_min": null,
+      "drive_km": null,
       "protection": null,
       "popularity": 1.0,
       "title": "Vallonina",

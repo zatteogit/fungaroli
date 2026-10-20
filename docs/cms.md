@@ -166,3 +166,7 @@ Un agente richiede la risorsa **`survey-responses`**, scope **`read`** e, per mu
 Le revisioni conservano risposte, provenienza, data dichiarata, autore e motivo; non archiviano copie storiche dei contatti. Il trigger di eliminazione copre anche cancellazione pubblica e pulizia delle scadenze. Il CSV per Excel continua a usare l’export originario; il JSON della nuova vista rispetta i filtri. Lo storico non attribuisce ai rispondenti le modifiche degli amministratori o degli agenti.
 
 Ricerca verificata: [audit delle proposte Gemini](research/2026-10-20-verifica-gemini.md). Il seed incrementale corregge solo proposte importate ancora alla revisione 0; preserva gli interventi umani e scrive lo storico. Nessuna coordinata precisa o nome di osservatore viene importato.
+
+## Sentieri: provenienza e riferimenti esterni (20 ottobre 2026)
+
+Il documento `trails` espone `sourceEvidence`, `publicPlaces` e `relatedLinks` nello snapshot pubblico. Punti e provenienza generati sono protetti dalla modifica editoriale; i riferimenti esterni si modificano dalla dashboard e dalle stesse API degli agenti, con revisione richiesta alla pubblicazione. Un link revisionato non certifica identità del percorso né apertura/accesso: le note dichiarano la relazione effettiva. Contratto, fonti e lotto iniziale in [Sentieri aperti e riferimenti esterni](sentieri-fonti-aperte-2026-10-20.md).
