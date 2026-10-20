@@ -30,7 +30,7 @@ for(const width of [320,768,1440])for(const theme of ['light','dark'])test(`fasi
 });
 test('partial or undelivered series do not expose a selector; late icons enhance the open page',async({browser})=>{
  const c=await browser.newContext({viewport:{width:390,height:900},serviceWorkers:'block'}),p=await preparePage(c);let release;const wait=new Promise(r=>release=r);
- await p.route('**/data/trait-icons.json',async r=>{await wait;await r.continue();});
+ await p.route('**/data/trait-icons.json',async r=>{await wait;const data=read('trait-icons');delete data.taxa['agaricus-arvensis'].stages[Object.keys(data.taxa['agaricus-arvensis'].stages)[0]];delete data.taxa.edulis.stages;await r.fulfill({json:data});});
  await p.goto('/#/specie/caesarea');await expect(p.locator('.view:not([hidden]) .trait-strip')).toBeVisible();await expect(p.locator('.view:not([hidden]) .growth-selector')).toHaveCount(0);release();await expect(p.locator('.view:not([hidden]) .growth-selector')).toBeVisible();
  for(const key of ['agaricus-arvensis','edulis']){await p.goto('/#/fungo/'+key);await expect(p.locator('.view:not([hidden]) .trait-strip')).toBeVisible();await expect(p.locator('.view:not([hidden]) .growth-selector')).toHaveCount(0);}
  await c.close();

@@ -4,7 +4,7 @@
 
 Matteo ha chiesto nella chat «Imposta il video come sfondo hero» di cercare clip riutilizzabili per licenza, acquisirle e preparare still nitidi prima del caricamento sufficiente, preferendo loop. Dopo la raccolta e la prova locale del 20 ottobre ha autorizzato: **«Ok, pubblichiamole nei punti giusti»**.
 
-Questa valutazione adotta il materiale della prova di questa stessa chat, ramo locale `codex/home-hero-video`, selezionando solo le clip licenziate e il comportamento di caricamento. La prova del 15 ottobre era basata su una versione superata dell'app: non viene unita integralmente. L'integrazione riparte dalla produzione `52ca846`, ramo `claude/brave-tesla-wu0a2b`, conservando layout Fronda, interessi combinabili, stato del taccuino, foto delle schede e navigazione attuali.
+Questa valutazione adotta il materiale della prova di questa stessa chat, ramo locale `codex/home-hero-video`, selezionando solo le clip licenziate e il comportamento di caricamento. La prova del 15 ottobre era basata su una versione superata dell'app: non viene unita integralmente. L'integrazione riparte dalla produzione aggiornata `3131e2f` (che include la PR #162), ramo `claude/brave-tesla-wu0a2b`, conservando layout Fronda, interessi combinabili, stato del taccuino, foto delle schede e navigazione attuali.
 
 ## Collocazioni
 
@@ -36,4 +36,4 @@ La PWA non precache i video e non intercetta i loro Range; conserva i piccoli st
 
 ## Verifiche
 
-Esiti finali, commit e pubblicazione sono riportati nella PR del rilascio. La suite completa richiede la produzione aggiornata con i controlli preesistenti corretti; la PR #162 è un lavoro separato, non viene unita da questa chat. Il successo di una prova locale o di un controllo statico non vale pubblicazione.
+Esiti finali, commit e pubblicazione sono riportati nella PR del rilascio. La PR #162 è entrata in produzione durante questo lavoro; il ramo ne recepisce il merge canonico, senza pubblicarla da questa chat. La suite completa viene eseguita sul candidato aggiornato. Il successo di una prova locale o di un controllo statico non vale pubblicazione.

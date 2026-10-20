@@ -1,3 +1,4 @@
+import {CONTENT_RESOURCES} from '../../js/content-schema.js';
 import {test,expect} from '@playwright/test';
 import {execFileSync} from 'node:child_process';
 import {createHash,randomBytes} from 'node:crypto';
@@ -34,7 +35,7 @@ test('ruoli del profilo: utente, editor delle bozze e amministratore',async({bro
     page.on('pageerror',e=>errors.push(e.message));
     await page.route('https://**/*',r=>r.abort());
   await page.route('**/api/weather/v1/forecast?**',r=>r.fulfill({status:503,json:{error:'Meteo non disponibile nella prova CMS.'}}));
-    await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','42026-10-16'));
+    await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','62026-10-20'));
     await loginFixture(page,id);await page.goto('/');
     const me=await cms(page,'me');expect(me.status).toBe(200);expect(me.data.user.role).toBe(role);
     expect((await api(page,'/api/community/session')).data.user.role).toBe(role);
@@ -83,7 +84,7 @@ test('redazione, bozze, pubblicazione, conflitti, agenti e catalogo condiviso',a
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.route('https://**/*',r=>r.abort());
   await page.route('**/api/weather/v1/forecast?**',r=>r.fulfill({status:503,json:{error:'Meteo non disponibile nella prova CMS.'}}));
-  await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','42026-10-16'));
+  await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','62026-10-20'));
   await page.goto('/redazione');
   await expect(page.locator('#cms-access-status')).toContainText('Accedi');
   expect((await cms(page,'items')).status).toBe(401);
@@ -93,7 +94,7 @@ test('redazione, bozze, pubblicazione, conflitti, agenti e catalogo condiviso',a
   await expect(page.locator('#cms-workspace')).toBeVisible();
   await page.locator('#cms-content-tab').click();
   await expect(page.locator('[data-profile-label]')).toHaveText('Matteo');
-  await expect(page.locator('[data-resource]')).toHaveCount(21);
+  await expect(page.locator('[data-resource]')).toHaveCount(CONTENT_RESOURCES.length);
   // Risposte al questionario: pannello solo per gli amministratori (conteggio, esportazione, ricerca e cancellazione per ricevuta).
   // Una risposta vera, inviata dalla stessa origine come fa la pagina /questionario, con un testo che sembra una formula.
   const sent=await api(page,'/api/survey/v1/responses','POST',{survey:'esperti-reatino',version:1,website:'',respondent:{name:'Prova redazione'},consent:{anonymousUse:true,recontact:false,diary:false},answers:{profile:{years:30},risks:{knowsPoisonings:'sì',poisonings:'=SOMMA(1;2), -3'}}});

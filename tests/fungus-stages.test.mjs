@@ -7,8 +7,10 @@ const taxa=read('species-traits').taxa,icons=read('trait-icons').taxa;
 
 test('growth selector requires the whole sourced series, never a partial delivery',()=>{
  assert.equal(availableGrowthStages(taxa.caesarea,icons.caesarea).length,4);
- assert.deepEqual(availableGrowthStages(taxa['agaricus-arvensis'],icons['agaricus-arvensis']),[]);
- assert.deepEqual(availableGrowthStages(taxa.edulis,icons.edulis),[]);
+ const partial=structuredClone(icons.caesarea);partial.stages=partial.stages.slice(1);
+ assert.deepEqual(availableGrowthStages(taxa.caesarea,partial),[]);
+ const mismatch=structuredClone(taxa.caesarea);mismatch.stages[0].tiles.push('sconosciuto');
+ assert.deepEqual(availableGrowthStages(mismatch,icons.caesarea),[]);
  assert.deepEqual(availableGrowthStages(taxa.caesarea,null),[]);
  const t=structuredClone(taxa.caesarea);delete t.stages[0].source;
  assert.deepEqual(availableGrowthStages(t,icons.caesarea),[]);
@@ -22,5 +24,5 @@ test('every selectable stage has its declared files, including all four egg sect
    if(part==='taglio')sections++;
   }
  }
- assert.equal(species,15);assert.equal(sections,4);
+ assert.equal(species,33);assert.equal(sections,4);
 });

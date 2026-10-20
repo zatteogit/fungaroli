@@ -36,5 +36,5 @@ export function mountAdminDashboard(root,{api,openSurvey}){
   catch(error){if(disposed)return;if(!data){root.innerHTML='<p role="status" data-admin-status></p><button class="btn ghost" type="button" data-refresh>Riprova</button>';root.querySelector('button').onclick=load;}notice(error.message,true);}
   finally{loading=false;const b=root.querySelector('[data-refresh]');if(b)b.disabled=false;}
  }
- return {load,dispose(){disposed=true;root.replaceChildren();}};
+ return {load,ensureLoaded(){if(!data)return load();},dispose(){disposed=true;root.replaceChildren();}};
 }

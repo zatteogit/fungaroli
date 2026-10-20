@@ -4,12 +4,12 @@ async function start(page,hash='#/piante',width=390){
  await page.setViewportSize({width,height:900});await page.emulateMedia({reducedMotion:'reduce'});
  await page.route('**/api/weather/v1/forecast*',r=>r.fulfill({status:503,json:{error:'test'}}));
  await page.route('https://**',r=>r.abort());
- await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','42026-10-16'));
+ await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','62026-10-20'));
  const errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('/'+hash);
  await expect(page.locator('#plant-grid [data-plant-results]')).toBeVisible();return errors;
 }
 test('plants: search, comparison sheets and private simultaneous phenophases on mobile and desktop',async({page})=>{
- const errors=await start(page);await expect(page.locator('#plant-grid .sp-card')).toHaveCount(70);
+ const errors=await start(page);await expect(page.locator('#plant-grid .sp-card')).toHaveCount(78);
  for(const width of [320,390,1280]){await page.setViewportSize({width,height:900});expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);if(width===1280)await page.screenshot({path:'/tmp/fungaroli-plants-desktop.png'});}
  await page.setViewportSize({width:390,height:900});await expect(page.locator('#plant-grid input[type="search"]')).toHaveCount(0);await page.keyboard.press('/');const search=page.locator('dialog.search-dlg[open]');await search.locator('input').fill('sambuco');await expect(search.locator('.sr-group > .sr-h').first()).toHaveText('Piante e fiori');await expect(search.locator('.sr-item').filter({hasText:'Sambuco'}).first()).toBeVisible();await page.keyboard.press('Escape');
  await page.goto('/#/pianta/sambuco');await expect(page.locator('#plant-detail')).toContainText('Frutti crudi o immaturi');
@@ -82,6 +82,6 @@ for(const width of [390,1280])test(`filtri aggiuntivi delle piante nel pannello 
  await expect(panel.locator('[data-plant-filter-results]')).toContainText(/Mostra \d+ schede?/);
  await panel.locator('[data-plant-filter-results]').click();await expect(panel).not.toHaveAttribute('open','');await expect(opener).toBeFocused();
  await opener.click();await expect(panel.locator('[data-plant-filter="lookalikes"]')).toHaveAttribute('aria-pressed','true');
- await panel.locator('[data-reset-plant-filters]').click();await expect(opener.locator('[data-filter-n]')).toBeEmpty();await expect(page.locator('[data-plant-results] .sp-card')).toHaveCount(70);
+ await panel.locator('[data-reset-plant-filters]').click();await expect(opener.locator('[data-filter-n]')).toBeEmpty();await expect(page.locator('[data-plant-results] .sp-card')).toHaveCount(78);
  await page.keyboard.press('Escape');await expect(opener).toBeFocused();expect(errors).toEqual([]);
 });

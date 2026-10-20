@@ -2,6 +2,10 @@
 
 Il CMS essenziale gestisce tutte le sezioni dei contenuti tramite moduli per le persone e API per gli agenti. La redazione è disponibile su `/redazione`, con lo stesso profilo e la stessa passkey dell’app. L’account indicato dal gestore ha il ruolo amministratore; la semplice registrazione di un profilo non dà accesso editoriale.
 
+## Frasi del giorno
+
+La sezione **Frasi del giorno** gestisce citazioni, aforismi, battute e barzellette con tag per tema, tono, contesto, momento e stagione. Il documento `daily-thoughts` usa il database e lo snapshot esistenti. Regole editoriali, fonti e selezione in [frasi-del-giorno.md](frasi-del-giorno.md).
+
 ## Usare la redazione
 
 Dalla home, il pulsante in alto mostra **Accedi** oppure il nome del profilo, per esempio **Matteo**. Il profilo mostra il ruolo verificato dal server; **Apri la redazione** compare per editor e amministratori. È possibile aprire direttamente [la redazione](https://fungaroli.zatteo.workers.dev/redazione).

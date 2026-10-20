@@ -23,6 +23,7 @@ async function api(path,method='GET',data,headers={}) {
   const r=await fetch('/api/cms/v1/'+path,{method,credentials:'same-origin',cache:'no-store',headers:{...(data===undefined?{}:{'content-type':'application/json'}),...headers},body:data===undefined?undefined:JSON.stringify(data)});
   const out=await r.json();if(!r.ok)throw Object.assign(new Error(out.error||'Richiesta non riuscita.'),{status:r.status});return out;
 }
+function openSurveyExports(){openModal($('#cms-survey-dialog'));void surveyCount();}
 function can(scope){return actor?.scopes?.includes(scope);}
 async function access() {
   const n=++opening;surveys?.dispose();surveys=null;overview?.dispose();overview=null;dashboard?.dispose();dashboard=null;externalObservations?.dispose();externalObservations=null;
@@ -34,9 +35,9 @@ async function access() {
     $('#cms-identity').textContent=`${actor.name} · ${role} · accesso con passkey`;
     dashboard?.dispose();dashboard=null;
     $('#cms-dashboard-tab').hidden=!can('admin');
-    if(can('admin'))dashboard=mountAdminDashboard($('#cms-dashboard'),{api,openSurvey:()=>$('#cms-survey').click()});
+    if(can('admin'))dashboard=mountAdminDashboard($('#cms-dashboard'),{api,openSurvey:openSurveyExports});
     if(can('admin'))externalObservations=mountExternalObservations($('#cms-external'),{api});
-    if(can('admin')){surveys=mountSurveyAdmin($('#cms-questionnaires'),{api,openExports:()=>{$('#cms-survey-dialog').showModal();surveyCount();}});overview=mountResearchOverview($('#cms-overview'),{api,navigate:setWorkspace,filter:v=>externalObservations.setFilters(v)});}
+    if(can('admin')){surveys=mountSurveyAdmin($('#cms-questionnaires'),{api,openExports:openSurveyExports});overview=mountResearchOverview($('#cms-overview'),{api,navigate:setWorkspace,filter:v=>externalObservations.setFilters(v)});}
     document.querySelectorAll('[data-admin-tab]').forEach(b=>b.hidden=!can('admin'));
     setWorkspace(can('admin')?'overview':'content');
     $('#cms-agents').hidden=!can('admin');$('#cms-survey').hidden=!can('admin');
@@ -53,7 +54,7 @@ function setWorkspace(view){
  $('#cms-dashboard').hidden=view!=='policy';$('#cms-content').hidden=view!=='content';$('#cms-overview').hidden=view!=='overview';$('#cms-external').hidden=!['records','sources','impact'].includes(view);$('#cms-questionnaires').hidden=view!=='surveys';
  document.querySelectorAll('[data-workspace]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.workspace===view)));
  if(view==='overview')overview?.load();
- if(view==='policy')dashboard?.load();
+ if(view==='policy')dashboard?.ensureLoaded();
  if(['records','sources','impact'].includes(view)){externalObservations?.setView(view);if(!$('#cms-external [data-external-list]').childElementCount)externalObservations?.load();}
  if(view==='surveys')surveys?.load();
  message('');
@@ -89,7 +90,7 @@ function renderEditor(){
     <div class="cms-toolbar"><button class="btn primary" type="button" data-save ${!can('write')||schema.readonly?'disabled':''}>Salva bozza</button><button class="btn ghost" type="button" data-preview>Anteprima e controlli</button><button class="btn ghost" type="button" data-publish ${!can('publish')||schema.readonly?'disabled':''}>Pubblica bozza</button><button class="btn ghost" type="button" data-reload>Rileggi</button></div>
     ${actor.role==='editor'?'<p class="small muted">Puoi preparare e salvare bozze. La pubblicazione e la verifica delle fonti sono riservate agli amministratori.</p>':''}
     ${schema.readonly?'<p class="small muted">Questi campioni e percorsi provengono dai processi geografici. La redazione li consulta; l’aggiornamento avviene tramite importazione dei dati.</p>':''}
-    ${schema.collections.length?`<div class="cms-record-picker"><label>Gruppo<select data-collection>${schema.collections.map(k=>`<option value="${esc(k)}" ${k===collection?'selected':''}>${esc(title(k))}</option>`).join('')}<option value="" ${!collection?'selected':''}>Impostazioni del documento</option></select></label><label>Voce<select data-record>${rows.map(([k,v])=>`<option value="${esc(k)}" ${k===record?'selected':''}>${esc(typeof v==='string'?v.slice(0,70):v.name||v.title||v.term||v.latin||v.id||k)}</option>`).join('')}</select></label></div>${!schema.readonly&&collection&&doc.id!=='trails'?'<button class="btn ghost small" type="button" data-new>＋ Nuova voce</button>':''}`:''}
+    ${schema.collections.length?`<div class="cms-record-picker"><label>Gruppo<select data-collection>${schema.collections.map(k=>`<option value="${esc(k)}" ${k===collection?'selected':''}>${esc(title(k))}</option>`).join('')}<option value="" ${!collection?'selected':''}>Impostazioni del documento</option></select></label><label>Voce<select data-record>${rows.map(([k,v])=>`<option value="${esc(k)}" ${k===record?'selected':''}>${esc(typeof v==='string'?v.slice(0,70):v.name||v.title||v.term||v.text||v.latin||v.id||k)}</option>`).join('')}</select></label></div>${!schema.readonly&&collection&&doc.id!=='trails'?'<button class="btn ghost small" type="button" data-new>＋ Nuova voce</button>':''}`:''}
     <fieldset class="cms-fieldset" ${!can('write')||schema.readonly?'disabled':''}><legend>Contenuto</legend><div class="cms-fields">${fields(value,path)}</div></fieldset>
     ${can('review')&&['species-traits','edible-catalog','legal','glossary','media-glossary','plants','botanical-models','trails'].includes(doc.id)?'<label class="cms-review"><span><input type="checkbox" data-reviewed> Ho verificato le fonti delle modifiche scientifiche o normative, quando richiesto.</span></label><p class="small muted">I controlli automatici verificano struttura e collegamenti; non certificano la correttezza scientifica.</p>':''}
     <p class="small muted">La pubblicazione include tutte le voci modificate in questa sezione.</p>
@@ -108,7 +109,7 @@ function fields(v,path,depth=0){
   }
   return Object.entries(v).map(([k,x])=>{
     const p=[...path,k];
-    if(isLockedField(k)&&!(doc.id==='media-glossary'&&k==='generated'))return `<details class="cms-fieldset"><summary>${esc(title(k))} · dalla fonte</summary><pre class="cms-readonly">${esc(JSON.stringify(x,null,2).slice(0,800))}</pre></details>`;
+    if(isLockedField(k)&&!(doc.id==='media-glossary'&&k==='generated')&&doc.id!=='daily-thoughts')return `<details class="cms-fieldset"><summary>${esc(title(k))} · dalla fonte</summary><pre class="cms-readonly">${esc(JSON.stringify(x,null,2).slice(0,800))}</pre></details>`;
     if(x&&typeof x==='object'&&!Array.isArray(x))return `<details class="cms-fieldset" ${depth<1?'open':''}><summary>${esc(title(k))}</summary><div class="cms-fields">${fields(x,p,depth+1)}</div></details>`;
     return fields(x,p,depth+1);
   }).join('');

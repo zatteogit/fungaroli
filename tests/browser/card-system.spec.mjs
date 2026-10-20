@@ -24,7 +24,7 @@ for(const theme of ['light','dark']) test(`template editoriali: testi lunghi, ta
  const page=await preparePage(context,{theme}),errors=[];page.on('pageerror',e=>errors.push(e.message));
  await page.goto('/');await expect(page.locator('#hero .cover-editorial')).toBeVisible();await loadAllImages(page);
  await expect(page.locator('#days [data-day-offset="1"] .d1')).toHaveText('Domani');
- for(const day of await page.locator('#days .day').all())expect(await day.evaluate(e=>{const r=e.getBoundingClientRect();return r.width>=80&&r.height>=44&&r.height<=100;})).toBe(true);
+ for(const day of await page.locator('#days .day').all())expect(await day.evaluate(e=>{const r=e.getBoundingClientRect();return r.width>=80&&r.height>=44&&r.height<=(e.classList.contains('day-all')?160:100);})).toBe(true);
  // A long place name must grow the panel and leave the action fully reachable.
  await page.locator('#hero .cover-title').evaluate(e=>e.textContent='Poggio Bustone e Cantalice, sentieri del versante occidentale');
  await page.locator('#hero .cover-cta').scrollIntoViewIfNeeded();
@@ -113,7 +113,7 @@ for(const width of [320,390,768,1280])test(`testata home: filtri interi e separa
   return r.left<g.left-1||r.right>g.right+1||r.height<(b.matches('[data-more]')?24:44)?[b.textContent]:[];
  }));expect(issues).toEqual([]);
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
- const heading=await page.locator('#home-h').boundingBox(),status=await page.locator('.view[data-view="uscite"] .view-sub').boundingBox();
+ const heading=await page.locator('.appbar').boundingBox(),status=await page.locator('.home-weather-status').boundingBox();
  expect(heading.x+heading.width<=status.x||heading.y+heading.height<=status.y||status.y+status.height<=heading.y).toBe(true);
  await context.close();
 });
@@ -121,8 +121,8 @@ for(const width of [320,390,768,1280])test(`testata home: filtri interi e separa
 for(const width of [390,1280])for(const theme of ['light','dark'])test(`invito community leggibile e azione raggiungibile a ${width}px ${theme}`,async({browser})=>{
  const context=await browser.newContext({viewport:{width,height:900},reducedMotion:'reduce',serviceWorkers:'block'});
  const page=await preparePage(context,{theme});await page.goto('/');const card=page.locator('#community-intro');await expect(card.locator('h2')).toBeVisible();await card.scrollIntoViewIfNeeded();
- const action=card.locator('.btn.primary');
- await expect(card.locator('summary,details')).toHaveCount(0);
+ const action=card.locator('[data-report]');
+ const privacy=card.locator('details');await expect(privacy).not.toHaveAttribute('open','');await privacy.locator('summary').click();await expect(privacy).toContainText('Nessun punto GPS, nome o giorno preciso.');
  for(const state of ['default','hover','focus']){
   if(state==='hover')await action.hover();
   if(state==='focus')await action.focus();

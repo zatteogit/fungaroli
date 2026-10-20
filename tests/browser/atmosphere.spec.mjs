@@ -24,7 +24,7 @@ test('un video alla volta, pausa globale, inviti alle guide e taccuino vuoto',as
  const {page,context}=await start(browser,{width:1280});await page.goto('/');
  const video=page.locator('#hero .atmosphere video');await expect(video).toHaveAttribute('data-video-ready','true');
  await page.locator('#hero .atmosphere-toggle').click();await expect.poll(()=>video.evaluate(v=>v.paused)).toBe(true);
- await page.locator('#days [data-day-offset="1"]').click();
+ await page.locator('#days').getByRole('tab',{name:/Domani/}).click();
  await expect(page.locator('#hero .atmosphere-toggle')).toHaveAccessibleName('Riprendi il video di atmosfera');
  await page.locator('#hero .atmosphere-toggle').click();await expect.poll(()=>page.locator('#hero .atmosphere video').evaluate(v=>!v.paused)).toBe(true);
  const invite=page.locator('[data-view="uscite"] .story-photo.atmosphere');await invite.scrollIntoViewIfNeeded();await expect(invite.locator('video')).toHaveAttribute('data-video-ready','true');

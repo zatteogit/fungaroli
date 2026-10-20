@@ -68,7 +68,7 @@ const fonts = `<style>${read('css/fonts.css').replace(/url\(([^)]+)\)/g,(_,src)=
 const body = html.match(/<body>([\s\S]*)<\/body>/)[1]
   .replace(/<script[\s\S]*?<\/script>/g, '')
   .replace('Mappe © OpenStreetMap, OpenTopoMap (CC-BY-SA). ', '');
-const extra = Object.fromEntries(Object.entries({ cropPoints:'crop-points',animals:'animals',botanicalModels:'botanical-models',plants:'plants',glossary:'glossary',glossaryMedia:'media-glossary',guides:'guides',contentCopy:'ui-copy',edibleCatalog: 'edible-catalog', legal: 'legal', traits: 'species-traits', trees: 'trees', infographics: 'infografiche', preparation: 'preparation', trailheads: 'trailheads', challenges: 'challenges' }).map(([k,f]) => [k, readOpt('data/' + f + '.json')]));
+const extra = Object.fromEntries(Object.entries({ dailyThoughts:'daily-thoughts',cropPoints:'crop-points',animals:'animals',botanicalModels:'botanical-models',plants:'plants',glossary:'glossary',glossaryMedia:'media-glossary',guides:'guides',contentCopy:'ui-copy',edibleCatalog: 'edible-catalog', legal: 'legal', traits: 'species-traits', trees: 'trees', infographics: 'infografiche', preparation: 'preparation', trailheads: 'trailheads', challenges: 'challenges' }).map(([k,f]) => [k, readOpt('data/' + f + '.json')]));
 for(const p of Object.values(extra.plants?.plants||{}))for(const m of p.photos||[])collect(m);
 for(const animal of extra.animals?.items||[])for(const photo of animal.photos||[])collect(photo);
 for(const row of Object.values(extra.glossaryMedia?.terms||{}))for(const m of row.illustrations||[])put(m.file);

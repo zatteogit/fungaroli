@@ -11,7 +11,7 @@ const forecast=request=>{
 async function start(page,prefs={},offline=false) {
  await page.route('https://**/*',r=>r.abort());
  await page.route('**/api/weather/v1/forecast?**',r=>r.fulfill(offline?{status:503,json:{error:'Offline'}}:{json:forecast(r.request())}));
- await page.addInitScript(prefs=>{localStorage.setItem('fungaroli:legal-accepted','42026-10-16');if(!localStorage.getItem('fungaroli:prefs:v2'))localStorage.setItem('fungaroli:prefs:v2',JSON.stringify(prefs));},prefs);
+ await page.addInitScript(prefs=>{localStorage.setItem('fungaroli:legal-accepted','62026-10-20');if(!localStorage.getItem('fungaroli:prefs:v2'))localStorage.setItem('fungaroli:prefs:v2',JSON.stringify(prefs));},prefs);
  await page.emulateMedia({reducedMotion:'reduce'});await page.goto('/');
  await expect(page.locator('#active-filters [data-intent="funghi"]')).toBeVisible();
 }
@@ -53,7 +53,7 @@ for(const intent of ['piante','passeggiata'])test(`mappa Leaflet: ${intent}, sen
  await page.route('**/leaflet.min.js',r=>r.fulfill({contentType:'text/javascript',body:readFileSync('node_modules/leaflet/dist/leaflet.js','utf8')+'\n;const orig=L.map;L.map=(...args)=>(window.testMap=orig(...args));'}));
  await page.route('**/leaflet.min.css',r=>r.fulfill({contentType:'text/css',body:readFileSync('node_modules/leaflet/dist/leaflet.css','utf8')}));
  await page.route('**/api/weather/v1/forecast?**',r=>r.fulfill({json:forecast(r.request())}));
- await page.addInitScript(intent=>{localStorage.setItem('fungaroli:legal-accepted','42026-10-16');localStorage.setItem('fungaroli:prefs:v2',JSON.stringify({target:intent}));},intent);
+ await page.addInitScript(intent=>{localStorage.setItem('fungaroli:legal-accepted','62026-10-20');localStorage.setItem('fungaroli:prefs:v2',JSON.stringify({target:intent}));},intent);
  await page.goto('/#/mappa');await expect(page.locator('.leaflet-container')).toBeVisible();
  await expect(page.locator('#map .zone-label').first()).toBeVisible();
  await page.setViewportSize({width:390,height:900});await page.locator('#map-filters [data-days]').click();await expect(page.locator('#map-days')).toBeVisible();await page.locator('#map-days [data-day-offset="2"]').click();await expect(page.locator('#map-days')).toBeHidden();await page.setViewportSize({width:1280,height:900});await expect(page.locator('#map .pc')).toHaveCount(0);

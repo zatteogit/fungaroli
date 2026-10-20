@@ -18,7 +18,7 @@ async function setup(page,{gust=8}={}) {
     const out = Array.from({ length: count }, () => ({ daily: { time: dates, precipitation_sum: dates.map((_, i) => i % 4 ? 3 : 12), temperature_2m_mean: Array(70).fill(13), temperature_2m_min: Array(70).fill(8), temperature_2m_max: Array(70).fill(18) }, hourly: { time, soil_moisture_3_to_9cm: fill(.3), soil_temperature_6cm: fill(13), precipitation: fill(0), precipitation_probability: fill(0), weather_code: fill(1), wind_gusts_10m: fill(gust), temperature_2m: fill(13) } }));
     return route.fulfill({ json: out });
   });
-  await page.addInitScript(() => localStorage.setItem('fungaroli:legal-accepted', '42026-10-16'));
+  await page.addInitScript(() => localStorage.setItem('fungaroli:legal-accepted', '62026-10-20'));
   const errors=[]; page.on('pageerror', (e) => errors.push(e.message));
   await page.goto('/');await expect(page.locator('body')).not.toHaveAttribute('data-legal-pending','');
   await expect(page.locator('#editorial')).toBeHidden();
@@ -449,7 +449,7 @@ test('le nuove specie sono segnalabili e i tossici restano esclusi dal server',a
   const errors=await setup(page);await register(page,'Test nuovo catalogo');
   await page.locator('#community-intro [data-report]').click();
   const dlg=page.locator('dialog[aria-label="Annota un’osservazione nel taccuino"]');
-  await dlg.locator('#report-species').click();await expect(dlg.locator('#report-species-options [role="option"]')).toHaveCount(46);
+  await dlg.locator('#report-species').click();await expect(dlg.locator('#report-species-options [role="option"]')).toHaveCount(51);
   await dlg.locator('#report-zone').fill('vallonina');await dlg.locator('#report-zone-options [role="option"]').click();
   await dlg.locator('#report-species').fill('cyclocybe');await dlg.locator('#report-species-options [role="option"]').click();
   await dlg.locator('[name="amount"][value="1"]').check();await dlg.locator('[type="submit"]').click();

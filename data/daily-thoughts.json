@@ -1,0 +1,778 @@
+{
+  "schemaVersion": 1,
+  "updatedOn": "2026-10-20",
+  "description": "Archivio editoriale Fronda: testi originali e citazioni con fonte verificata. Tag editoriali, non dati scientifici.",
+  "items": [
+    {
+      "id": "fronda-001",
+      "type": "aforisma",
+      "text": "La meta può aspettare un minuto. Quel dettaglio, forse no.",
+      "author": "Fronda",
+      "rights": "originale-fronda",
+      "status": "published",
+      "language": "it",
+      "tags": [
+        "cammino",
+        "attenzione"
+      ],
+      "tones": [
+        "curioso"
+      ],
+      "contexts": [
+        "home"
+      ],
+      "moments": [
+        "pausa",
+        "prima-di-uscire"
+      ],
+      "seasons": [
+        "tutte"
+      ],
+      "source": null
+    },
+    {
+      "id": "fronda-002",
+      "type": "aforisma",
+      "text": "Una passeggiata comincia quando smetti di guardare soltanto l’orologio.",
+      "author": "Fronda",
+      "rights": "originale-fronda",
+      "status": "published",
+      "language": "it",
+      "tags": [
+        "lentezza",
+        "cammino"
+      ],
+      "tones": [
+        "riflessivo"
+      ],
+      "contexts": [
+        "home"
+      ],
+      "moments": [
+        "pausa",
+        "prima-di-uscire"
+      ],
+      "seasons": [
+        "tutte"
+      ],
+      "source": null
+    },
+    {
+      "id": "fronda-003",
+      "type": "aforisma",
+      "text": "Anche tornare con una domanda è una bella scoperta.",
+      "author": "Fronda",
+      "rights": "originale-fronda",
+      "status": "published",
+      "language": "it",
+      "tags": [
+        "scoperta",
+        "curiosita"
+      ],
+      "tones": [
+        "curioso"
+      ],
+      "contexts": [
+        "home"
+      ],
+      "moments": [
+        "pausa",
+        "prima-di-uscire"
+      ],
+      "seasons": [
+        "tutte"
+      ],
+      "source": null
+    },
+    {
+      "id": "fronda-004",
+      "type": "aforisma",
+      "text": "Il bello di cercare è tutto quello che incontri nel frattempo.",
+      "author": "Fronda",
+      "rights": "originale-fronda",
+      "status": "published",
+      "language": "it",
+      "tags": [
+        "ricerca",
+        "scoperta"
+      ],
+      "tones": [
+        "riflessivo"
+      ],
+      "contexts": [
+        "home"
+      ],
+      "moments": [
+        "pausa",
+        "prima-di-uscire"
+      ],
+      "seasons": [
+        "tutte"
+      ],
+      "source": null
+    },
+    {
+      "id": "fronda-005",
+      "type": "aforisma",
+      "text": "Una nota oggi. Un ricordo che ritrovi domani.",
+      "author": "Fronda",
+      "rights": "originale-fronda",
+      "status": "published",
+      "language": "it",
+      "tags": [
+        "taccuino",
+        "ricordi"
+      ],
+      "tones": [
+        "caldo"
+      ],
+      "contexts": [
+        "home",
+        "taccuino"
+      ],
+      "moments": [
+        "rientro"
+      ],
+      "seasons": [
+        "tutte"
+      ],
+      "source": null
+    },
+    {
+      "id": "fronda-006",
+      "type": "aforisma",
+      "text": "Certe giornate hanno bisogno di meno programmi e più foglie.",
+      "author": "Fronda",
+      "rights": "originale-fronda",
+      "status": "published",
+      "language": "it",
+      "tags": [
+        "bosco",
+        "lentezza"
+      ],
+      "tones": [
+        "leggero"
+      ],
+      "contexts": [
+        "home"
+      ],
+      "moments": [
+        "pausa",
+        "prima-di-uscire"
+      ],
+      "seasons": [
+        "tutte"
+      ],
+      "source": null
+    },
+    {
+      "id": "fronda-007",
+      "type": "aforisma",
+      "text": "Un sentiero conosciuto può ancora sorprenderti.",
+      "author": "Fronda",
+      "rights": "originale-fronda",
+      "status": "published",
+      "language": "it",
+      "tags": [
+        "sentieri",
+        "scoperta"
+      ],
+      "tones": [
+        "curioso"
+      ],
+      "contexts": [
+        "home"
+      ],
+      "moments": [
+        "pausa",
+        "prima-di-uscire"
+      ],
+      "seasons": [
+        "tutte"
+      ],
+      "source": null
+    },
+    {
+      "id": "fronda-008",
+      "type": "aforisma",
+      "text": "Il tempo passato a osservare non è tempo perso.",
+      "author": "Fronda",
+      "rights": "originale-fronda",
+      "status": "published",
+      "language": "it",
+      "tags": [
+        "attenzione",
+        "lentezza"
+      ],
+      "tones": [
+        "riflessivo"
+      ],
+      "contexts": [
+        "home"
+      ],
+      "moments": [
+        "pausa",
+        "prima-di-uscire"
+      ],
+      "seasons": [
+        "tutte"
+      ],
+      "source": null
+    },
+    {
+      "id": "fronda-009",
+      "type": "aforisma",
+      "text": "Ci sono dettagli che si vedono solo facendo una pausa.",
+      "author": "Fronda",
+      "rights": "originale-fronda",
+      "status": "published",
+      "language": "it",
+      "tags": [
+        "attenzione",
+        "pausa"
+      ],
+      "tones": [
+        "riflessivo"
+      ],
+      "contexts": [
+        "home"
+      ],
+      "moments": [
+        "pausa",
+        "prima-di-uscire"
+      ],
+      "seasons": [
+        "tutte"
+      ],
+      "source": null
+    },
+    {
+      "id": "fronda-010",
+      "type": "aforisma",
+      "text": "Non serve dare un nome a tutto per cominciare a meravigliarsi.",
+      "author": "Fronda",
+      "rights": "originale-fronda",
+      "status": "published",
+      "language": "it",
+      "tags": [
+        "curiosita",
+        "meraviglia"
+      ],
+      "tones": [
+        "curioso"
+      ],
+      "contexts": [
+        "home"
+      ],
+      "moments": [
+        "pausa",
+        "prima-di-uscire"
+      ],
+      "seasons": [
+        "tutte"
+      ],
+      "source": null
+    },
+    {
+      "id": "fronda-011",
+      "type": "aforisma",
+      "text": "Il bosco non finisce al bordo della fotografia.",
+      "author": "Fronda",
+      "rights": "originale-fronda",
+      "status": "published",
+      "language": "it",
+      "tags": [
+        "bosco",
+        "fotografia"
+      ],
+      "tones": [
+        "riflessivo"
+      ],
+      "contexts": [
+        "home"
+      ],
+      "moments": [
+        "pausa",
+        "prima-di-uscire"
+      ],
+      "seasons": [
+        "tutte"
+      ],
+      "source": null
+    },
+    {
+      "id": "fronda-012",
+      "type": "aforisma",
+      "text": "Porta a casa una domanda. C’è posto anche nel taccuino.",
+      "author": "Fronda",
+      "rights": "originale-fronda",
+      "status": "published",
+      "language": "it",
+      "tags": [
+        "taccuino",
+        "curiosita"
+      ],
+      "tones": [
+        "curioso"
+      ],
+      "contexts": [
+        "home",
+        "taccuino"
+      ],
+      "moments": [
+        "pausa",
+        "prima-di-uscire"
+      ],
+      "seasons": [
+        "tutte"
+      ],
+      "source": null
+    },
+    {
+      "id": "fronda-013",
+      "type": "aforisma",
+      "text": "Una bella uscita può stare anche in pochi passi.",
+      "author": "Fronda",
+      "rights": "originale-fronda",
+      "status": "published",
+      "language": "it",
+      "tags": [
+        "cammino",
+        "pausa"
+      ],
+      "tones": [
+        "caldo"
+      ],
+      "contexts": [
+        "home"
+      ],
+      "moments": [
+        "pausa",
+        "prima-di-uscire"
+      ],
+      "seasons": [
+        "tutte"
+      ],
+      "source": null
+    },
+    {
+      "id": "fronda-014",
+      "type": "aforisma",
+      "text": "I ricordi migliori non hanno sempre una posizione precisa.",
+      "author": "Fronda",
+      "rights": "originale-fronda",
+      "status": "published",
+      "language": "it",
+      "tags": [
+        "ricordi",
+        "cammino"
+      ],
+      "tones": [
+        "caldo"
+      ],
+      "contexts": [
+        "home"
+      ],
+      "moments": [
+        "rientro"
+      ],
+      "seasons": [
+        "tutte"
+      ],
+      "source": null
+    },
+    {
+      "id": "fronda-015",
+      "type": "aforisma",
+      "text": "A volte la scoperta è accorgersi di essere stati bene.",
+      "author": "Fronda",
+      "rights": "originale-fronda",
+      "status": "published",
+      "language": "it",
+      "tags": [
+        "benessere",
+        "scoperta"
+      ],
+      "tones": [
+        "caldo"
+      ],
+      "contexts": [
+        "home"
+      ],
+      "moments": [
+        "pausa",
+        "prima-di-uscire"
+      ],
+      "seasons": [
+        "tutte"
+      ],
+      "source": null
+    },
+    {
+      "id": "fronda-016",
+      "type": "aforisma",
+      "text": "Una foglia cambia colore. Tu puoi cambiare ritmo.",
+      "author": "Fronda",
+      "rights": "originale-fronda",
+      "status": "published",
+      "language": "it",
+      "tags": [
+        "foglie",
+        "lentezza"
+      ],
+      "tones": [
+        "riflessivo"
+      ],
+      "contexts": [
+        "home"
+      ],
+      "moments": [
+        "pausa",
+        "prima-di-uscire"
+      ],
+      "seasons": [
+        "tutte"
+      ],
+      "source": null
+    },
+    {
+      "id": "fronda-017",
+      "type": "battuta",
+      "text": "Sono uscito per schiarirmi le idee. Sono tornato con altre tre domande.",
+      "author": "Fronda",
+      "rights": "originale-fronda",
+      "status": "published",
+      "language": "it",
+      "tags": [
+        "curiosita",
+        "cammino"
+      ],
+      "tones": [
+        "ironico"
+      ],
+      "contexts": [
+        "home"
+      ],
+      "moments": [
+        "pausa",
+        "prima-di-uscire"
+      ],
+      "seasons": [
+        "tutte"
+      ],
+      "source": null
+    },
+    {
+      "id": "fronda-018",
+      "type": "battuta",
+      "text": "Avevo un programma preciso. Poi ho visto un albero interessante.",
+      "author": "Fronda",
+      "rights": "originale-fronda",
+      "status": "published",
+      "language": "it",
+      "tags": [
+        "alberi",
+        "scoperta"
+      ],
+      "tones": [
+        "ironico"
+      ],
+      "contexts": [
+        "home"
+      ],
+      "moments": [
+        "pausa",
+        "prima-di-uscire"
+      ],
+      "seasons": [
+        "tutte"
+      ],
+      "source": null
+    },
+    {
+      "id": "fronda-019",
+      "type": "battuta",
+      "text": "Il mio passo è contemplativo. Soprattutto in salita.",
+      "author": "Fronda",
+      "rights": "originale-fronda",
+      "status": "published",
+      "language": "it",
+      "tags": [
+        "cammino",
+        "salita"
+      ],
+      "tones": [
+        "ironico"
+      ],
+      "contexts": [
+        "home"
+      ],
+      "moments": [
+        "pausa",
+        "prima-di-uscire"
+      ],
+      "seasons": [
+        "tutte"
+      ],
+      "source": null
+    },
+    {
+      "id": "fronda-020",
+      "type": "battuta",
+      "text": "Ho fatto una passeggiata breve. Con moltissime parentesi.",
+      "author": "Fronda",
+      "rights": "originale-fronda",
+      "status": "published",
+      "language": "it",
+      "tags": [
+        "cammino",
+        "attenzione"
+      ],
+      "tones": [
+        "ironico"
+      ],
+      "contexts": [
+        "home"
+      ],
+      "moments": [
+        "pausa",
+        "prima-di-uscire"
+      ],
+      "seasons": [
+        "tutte"
+      ],
+      "source": null
+    },
+    {
+      "id": "fronda-021",
+      "type": "battuta",
+      "text": "Il taccuino è piccolo. Le digressioni no.",
+      "author": "Fronda",
+      "rights": "originale-fronda",
+      "status": "published",
+      "language": "it",
+      "tags": [
+        "taccuino",
+        "curiosita"
+      ],
+      "tones": [
+        "ironico"
+      ],
+      "contexts": [
+        "home",
+        "taccuino"
+      ],
+      "moments": [
+        "pausa",
+        "prima-di-uscire"
+      ],
+      "seasons": [
+        "tutte"
+      ],
+      "source": null
+    },
+    {
+      "id": "fronda-022",
+      "type": "battuta",
+      "text": "La foto era per ricordare il posto. Ora ho venti foto dello stesso muschio.",
+      "author": "Fronda",
+      "rights": "originale-fronda",
+      "status": "published",
+      "language": "it",
+      "tags": [
+        "fotografia",
+        "bosco"
+      ],
+      "tones": [
+        "ironico"
+      ],
+      "contexts": [
+        "home"
+      ],
+      "moments": [
+        "pausa",
+        "prima-di-uscire"
+      ],
+      "seasons": [
+        "tutte"
+      ],
+      "source": null
+    },
+    {
+      "id": "fronda-023",
+      "type": "barzelletta",
+      "text": "«Quanto manca?» «Dipende.» «Da cosa?» «Da quanti alberi vuoi salutare.»",
+      "author": "Fronda",
+      "rights": "originale-fronda",
+      "status": "published",
+      "language": "it",
+      "tags": [
+        "cammino",
+        "alberi"
+      ],
+      "tones": [
+        "ironico"
+      ],
+      "contexts": [
+        "home"
+      ],
+      "moments": [
+        "pausa",
+        "prima-di-uscire"
+      ],
+      "seasons": [
+        "tutte"
+      ],
+      "source": null
+    },
+    {
+      "id": "fronda-024",
+      "type": "barzelletta",
+      "text": "«Hai trovato qualcosa?» «Sì: un ottimo motivo per tornare.»",
+      "author": "Fronda",
+      "rights": "originale-fronda",
+      "status": "published",
+      "language": "it",
+      "tags": [
+        "ricerca",
+        "ritorno"
+      ],
+      "tones": [
+        "ironico"
+      ],
+      "contexts": [
+        "home"
+      ],
+      "moments": [
+        "rientro"
+      ],
+      "seasons": [
+        "tutte"
+      ],
+      "source": null
+    },
+    {
+      "id": "fronda-025",
+      "type": "barzelletta",
+      "text": "«Perché ti sei fermato?» «Sto facendo il pieno.» «Di cosa?» «Di bosco.»",
+      "author": "Fronda",
+      "rights": "originale-fronda",
+      "status": "published",
+      "language": "it",
+      "tags": [
+        "bosco",
+        "pausa"
+      ],
+      "tones": [
+        "ironico"
+      ],
+      "contexts": [
+        "home"
+      ],
+      "moments": [
+        "pausa",
+        "prima-di-uscire"
+      ],
+      "seasons": [
+        "tutte"
+      ],
+      "source": null
+    },
+    {
+      "id": "fronda-026",
+      "type": "barzelletta",
+      "text": "«Andiamo a passo svelto?» «Certo. Appena finisco di guardare questa foglia.»",
+      "author": "Fronda",
+      "rights": "originale-fronda",
+      "status": "published",
+      "language": "it",
+      "tags": [
+        "foglie",
+        "cammino"
+      ],
+      "tones": [
+        "ironico"
+      ],
+      "contexts": [
+        "home"
+      ],
+      "moments": [
+        "pausa",
+        "prima-di-uscire"
+      ],
+      "seasons": [
+        "tutte"
+      ],
+      "source": null
+    },
+    {
+      "id": "citazione-dante-stelle",
+      "type": "citazione",
+      "text": "E quindi uscimmo a riveder le stelle.",
+      "author": "Dante Alighieri",
+      "rights": "pubblico-dominio",
+      "status": "published",
+      "language": "it",
+      "tags": [
+        "cammino",
+        "cielo",
+        "meraviglia"
+      ],
+      "tones": [
+        "poetico"
+      ],
+      "contexts": [
+        "home",
+        "taccuino"
+      ],
+      "moments": [
+        "rientro",
+        "sera"
+      ],
+      "seasons": [
+        "tutte"
+      ],
+      "source": {
+        "title": "Divina Commedia, Inferno, XXXIV, v. 139",
+        "url": "https://it.wikisource.org/wiki/Divina_Commedia/Inferno/Canto_XXXIV",
+        "verified": true,
+        "verifiedOn": "2026-10-20",
+        "note": "Testo originale in pubblico dominio; fonte di consultazione Wikisource."
+      }
+    },
+    {
+      "id": "citazione-pascoli-sole",
+      "type": "citazione",
+      "text": "C’è qualcosa di nuovo oggi nel sole,",
+      "author": "Giovanni Pascoli",
+      "rights": "pubblico-dominio",
+      "status": "published",
+      "language": "it",
+      "tags": [
+        "luce",
+        "meraviglia",
+        "primavera"
+      ],
+      "tones": [
+        "poetico"
+      ],
+      "contexts": [
+        "home"
+      ],
+      "moments": [
+        "mattina",
+        "prima-di-uscire"
+      ],
+      "seasons": [
+        "primavera"
+      ],
+      "source": {
+        "title": "Primi poemetti, L’aquilone, v. 1",
+        "url": "https://it.wikisource.org/wiki/Primi_poemetti/L%27aquilone",
+        "verified": true,
+        "verifiedOn": "2026-10-20",
+        "note": "Estratto: primo verso, punteggiatura originale. Testo originale in pubblico dominio; fonte di consultazione Wikisource."
+      }
+    }
+  ]
+}
