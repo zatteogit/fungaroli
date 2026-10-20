@@ -13,6 +13,7 @@ let enabled = false, user = null, summary = null, zones = [], ready = Promise.re
 let summaryRevision = 0;
 const clearSummary = () => { summaryRevision++; summary = null; };
 export const communityEnabled = () => enabled;
+export const communityHasAccess = () => summary?.access==='granted';
 export const currentUser = () => user;
 export const communityReady = () => ready;
 export const communityForEntity = context => ({...entityCommunity(summary,context),status:communityStatus()});
