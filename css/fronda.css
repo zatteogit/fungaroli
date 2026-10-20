@@ -1281,3 +1281,17 @@ button.cover-index > span { font-size:11px; }
 .outing-evidence { margin-top:12px; font-size:13px; }
 .outing-evidence ul { padding-left:20px; }
 @media(max-width:360px) { .outing-legs { grid-template-columns:1fr; } }
+
+/* Una sequenza di tratte: ogni valore appartiene ai punti indicati sopra. */
+.walk-focus[open] .walk-glance { display:none; }
+.outing-legs { display:flex; flex-direction:column; list-style:none; margin:0; padding:0; gap:0; }
+.outing-leg { position:relative; padding:0 0 20px; gap:12px; }
+.outing-leg:not(:last-child)::after { content:""; position:absolute; left:9px; top:26px; bottom:6px; border-left:1px dashed var(--hair); }
+.outing-leg>svg { margin-top:3px; background:var(--surface-2); }
+.outing-leg>div { display:grid; gap:4px; min-width:0; }
+.outing-leg-points { font-size:14px; line-height:1.45; }
+.outing-leg b { font-size:18px; }
+.outing-leg small .link-btn { display:block; margin-top:5px; }
+.outing-subtotal { display:grid; gap:4px; }
+.outing-subtotal>b { font-size:20px; }
+.zone-note-caption { font-size:14px; color:var(--muted); margin:10px 0 0; }
