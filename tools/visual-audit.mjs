@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import {legalNoticeVersion} from '../js/legal-notice.js';
 /**
  * Audit visivo della leggibilità: visita le viste principali dell'app a più larghezze e nei due temi,
  * misura il contrasto di ogni testo visibile e scrive un report JSON e un riepilogo Markdown.
@@ -65,7 +66,7 @@ function forecast(url) {
 // Chiave dell'avviso legale accettato, calcolata come in js/app.js (version + verified_on): così non
 // invecchia quando cambiano le regole.
 const LEGAL = JSON.parse(readFileSync(join(ROOT, 'data/legal.json'), 'utf8'));
-const LEGAL_KEY = String(LEGAL.version || 0) + (LEGAL.verified_on || '');
+const LEGAL_KEY = legalNoticeVersion(LEGAL);
 
 export async function preparePage(context, { legal = true, theme = 'light' } = {}) {
   const page = await context.newPage();
@@ -80,7 +81,7 @@ export async function preparePage(context, { legal = true, theme = 'light' } = {
   });
   await page.addInitScript(([legalOk, th, key]) => {
     try {
-      if (legalOk === true) localStorage.setItem('fungaroli:legal-accepted', key); else if (legalOk === false) localStorage.removeItem('fungaroli:legal-accepted');
+      if (legalOk === true) {localStorage.setItem('fungaroli:legal-accepted',key);localStorage.setItem('fungaroli:legal-acceptance:v1',JSON.stringify({version:key,acceptanceVersion:key,noticeHash:'e'.repeat(64),acceptedAt:null,source:'legacy',platform:'browser'}));} else if (legalOk === false) localStorage.removeItem('fungaroli:legal-accepted');
       localStorage.setItem('fungaroli:theme', th);
     } catch { /* storage non disponibile */ }
   }, [legal, theme, LEGAL_KEY]);

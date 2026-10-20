@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (1293 spike-08.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <relation id="10645472" visible="true" version="11" timestamp="2025-06-10T15:44:27Z">
+  <member type="way" ref="435954382" role="" />
+  <member type="way" ref="73191863" role="" />
+  <member type="way" ref="73191870" role="" />
+  <member type="way" ref="1393927798" role="" />
+  <member type="way" ref="767508199" role="" />
+  <tag k="ascent" v="580" />
+  <tag k="cai_scale" v="EE" />
+  <tag k="descent" v="265" />
+  <tag k="description:it" v="Rifugio &quot;A. Sebastiani&quot; (1820m) - Sella di Leonessa (1901m) - Le Scangive - Prato dei Sassi (2000m) - Cresta Sassetelli (2079m) - Cima Sassetelli (2139m) - M.te Terminillo (2216m)Grado difficoltà: Escursionisti EspertiTempo: 01:45:00" />
+  <tag k="distance" v="5.6" />
+  <tag k="duration:backward" v="02:00" />
+  <tag k="duration:forward" v="02:15" />
+  <tag k="from" v="Micigliano (RI) Rifugio Sebastiani" />
+  <tag k="network" v="lwn" />
+  <tag k="operator" v="Sezione CAI di Rieti" />
+  <tag k="osmc:symbol" v="red:red:white_stripe:403:black" />
+  <tag k="ref" v="403" />
+  <tag k="ref:REI" v="ORIE4030" />
+  <tag k="roundtrip" v="no" />
+  <tag k="route" v="hiking" />
+  <tag k="rwn:name" v="Rete Escursionistica del Lazio (REL)" />
+  <tag k="source" v="survey:CAI" />
+  <tag k="source:ref" v="9232004" />
+  <tag k="symbol" v="403 on white red flag" />
+  <tag k="symbol:it" v="403 su bandierina bianca e rossa" />
+  <tag k="to" v="Micigliano (RI) Monte Terminillo" />
+  <tag k="type" v="route" />
+ </relation>
+</osm>

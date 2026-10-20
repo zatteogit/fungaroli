@@ -1,3 +1,4 @@
+import {fungusGlyph} from './indicators.js';
 import {enhanceContentReading} from './content-ui.js';
 // La scienza dietro l'indice, per chi vuole approfondire: la "ricetta" fattore per fattore con i numeri veri del giorno,
 // i grafici giorno per giorno (un solo componente, js/viz.js), il profilo della specie e la pagina del metodo (docs/metodo-scientifico.md).
@@ -118,7 +119,7 @@ function storyHtml({ r, sp, rows, days, todayIndex, i }) {
     ${block('rain', 'Ha piovuto abbastanza, e al momento giusto?', t.rain, key('sw-water', 'pioggia del giorno (modello)') + key('sw-water is-forecast', 'prevista') + key('sw-threshold', `${PARAMS.triggerMm} mm: innesco nel modello`, 'thr'))}
     ${block('temp', 'Fa la temperatura giusta?', t.temp, key('sw-heat-line', 'media del giorno') + key('sw-heat-band', `fascia preferita nel modello: ${n0(lo)}–${n0(hi)} °C`))}
     ${block('soil', 'Il terreno è umido?', t.soil, key('sw-water-line', 'umidità stimata tra 3 e 9 cm') + `<span class="viz-k">secco sotto ${n1(PARAMS.moistDry, 2)} m³/m³, umido sopra ${n1(PARAMS.moistWet, 2)}</span>`)}
-    ${block('index', 'Come va nei prossimi giorni?', t.next, key('sw-index-line', 'indice con meteo passato di modello') + key('sw-index-line is-forecast', 'con previsioni'))}
+    ${block('index', 'Come va nei prossimi giorni?', t.next, key('sw-index-line', 'condizioni di crescita con meteo passato di modello') + key('sw-index-line is-forecast', 'con previsioni'))}
     <details class="viz-table"><summary>Tutti i valori giorno per giorno</summary><div class="viz-table-wrap" data-viz-table></div></details>
     </div>`;
 }
@@ -131,7 +132,7 @@ function plantDaysHtml({ days, todayIndex, i }) {
     <div class="sci-days">
     <h3 class="sci-h" id="sci-giorni">Le condizioni giorno per giorno</h3>
     ${block('rain', 'Quanto ha piovuto?', 'Pioggia giornaliera di modello: fa da contesto, non decide da sola la fase della pianta.', key('sw-water', 'pioggia del giorno (modello)') + key('sw-water is-forecast', 'prevista'))}
-    ${block('index', 'Come va nei prossimi giorni?', `${sel && Number.isFinite(sel.score) ? `Il giorno scelto vale ${formatIndex(sel.score)} su 10.` : 'Per il giorno scelto l’indice non è calcolabile.'} Dopo oggi il calcolo usa previsioni: più sono lontane, meno sono affidabili.`, key('sw-index-line', 'indice con meteo passato di modello') + key('sw-index-line is-forecast', 'con previsioni'))}
+    ${block('index', 'Come va nei prossimi giorni?', `${sel && Number.isFinite(sel.score) ? `Il giorno scelto vale ${formatIndex(sel.score)} su 10.` : 'Per il giorno scelto l’indice non è calcolabile.'} Dopo oggi il calcolo usa previsioni: più sono lontane, meno sono affidabili.`, key('sw-index-line', 'condizioni di crescita con meteo passato di modello') + key('sw-index-line is-forecast', 'con previsioni'))}
     <details class="viz-table"><summary>Tutti i valori giorno per giorno</summary><div class="viz-table-wrap" data-viz-table></div></details>
     </div>`;
 }
@@ -154,7 +155,7 @@ export function drawWhyCharts(box, { s, sp, days, todayIndex, i }) {
     rain: { kind: 'bars', name: 'Pioggia giornaliera in millimetri', values: rain, format: mm, y: { min: 0, max: rTicks.max, ticks: rTicks.ticks.map((v, k, a) => ({ v, label: k === a.length - 1 ? `${n0(v)} mm` : n0(v) })) }, ...(fungal ? { window: { from: at(i - lagMax), to: at(i - lagMin), label: 'finestra che conta' }, threshold: { v: PARAMS.triggerMm, label: `${PARAMS.triggerMm} mm innesco` } } : {}) },
     temp: { kind: 'line', name: 'Temperatura media giornaliera in gradi', values: temp, format: (v) => `${n1(v)} °C`, y: { min: tTicks.min, max: tTicks.max, ticks: tTicks.ticks.map((v) => ({ v, label: `${n0(v)} °C` })) }, window: { from: at(i - PARAMS.tDays), to: at(i - 1), label: 'finestra che conta' }, band: { lo: tlo, hi: thi } },
     soil: { kind: 'line', name: 'Umidità del suolo stimata', values: soil, format: (v) => soilLevel(v), describe: (v) => `${n1(v, 2)} m³/m³`, y: { min: 0, max: sMax, ticks: [] }, zones: [{ lo: 0, hi: PARAMS.moistDry, label: 'secco' }, { lo: PARAMS.moistDry, hi: PARAMS.moistWet, label: 'medio' }, { lo: PARAMS.moistWet, hi: sMax, label: 'umido' }], window: { from: at(i - 3), to: at(i - 1), label: 'finestra che conta' } },
-    index: { kind: 'line', name: 'Indice sperimentale da 0 a 10', values: score, format: (v) => `${formatIndex(v)} su 10`, y: { min: 0, max: 100, ticks: [0, 50, 100].map((v) => ({ v, label: formatIndex(v).replace(',0', '') })) } },
+    index: { kind: 'line', name: 'Condizioni di crescita da 0 a 10', values: score, format: (v) => `${formatIndex(v)} su 10`, y: { min: 0, max: 100, ticks: [0, 50, 100].map((v) => ({ v, label: formatIndex(v).replace(',0', '') })) } },
   };
   // stesso margine sinistro per tutti: gli assi dei giorni restano allineati da un grafico all'altro
   const left = Math.max(24, ...Object.values(specs).flatMap((sp2) => (sp2.zones ? sp2.zones.map((z) => z.label) : sp2.y.ticks.map((t) => t.label))).map((t) => textWidth(t, 11))) + 8;
@@ -165,7 +166,7 @@ export function drawWhyCharts(box, { s, sp, days, todayIndex, i }) {
   const tbl = box.querySelector('[data-viz-table]');
   if (tbl && !tbl.firstChild) {
     const dash = '—';
-    tbl.innerHTML = `<table><caption class="sr-only">Valori giornalieri usati nei grafici</caption><thead><tr><th scope="col">Giorno</th><th scope="col">Pioggia</th><th scope="col">Temperatura media</th><th scope="col">Suolo</th><th scope="col">Indice</th></tr></thead><tbody>${days.map((d, k) => `<tr${d.i === i ? ' class="is-selected"' : ''}><th scope="row">${esc(fmtDay(d.date, true))}${d.i === todayIndex ? ' · oggi' : d.i > todayIndex ? ' · prev.' : ''}</th><td>${rain[k] == null ? dash : mm(rain[k])}</td><td>${temp[k] == null ? dash : `${n1(temp[k])} °C`}</td><td>${soil[k] == null ? dash : `${soilLevel(soil[k])} <small>${n1(soil[k], 2)} m³/m³</small>`}</td><td>${score[k] == null ? dash : formatIndex(score[k])}</td></tr>`).join('')}</tbody></table><p class="small muted">${dash} dato assente: non vuol dire zero.</p>`;
+    tbl.innerHTML = `<table><caption class="sr-only">Valori giornalieri usati nei grafici</caption><thead><tr><th scope="col">Giorno</th><th scope="col">Pioggia</th><th scope="col">Temperatura media</th><th scope="col">Suolo</th><th scope="col"><span class="growth-value">${fungusGlyph}Condizioni di crescita</span></th></tr></thead><tbody>${days.map((d, k) => `<tr${d.i === i ? ' class="is-selected"' : ''}><th scope="row">${esc(fmtDay(d.date, true))}${d.i === todayIndex ? ' · oggi' : d.i > todayIndex ? ' · prev.' : ''}</th><td>${rain[k] == null ? dash : mm(rain[k])}</td><td>${temp[k] == null ? dash : `${n1(temp[k])} °C`}</td><td>${soil[k] == null ? dash : `${soilLevel(soil[k])} <small>${n1(soil[k], 2)} m³/m³</small>`}</td><td><span class="growth-value">${score[k]==null?dash:fungusGlyph+formatIndex(score[k])}</span></td></tr>`).join('')}</tbody></table><p class="small muted">${dash} dato assente: non vuol dire zero.</p>`;
   }
   // ridisegna quando cambia la larghezza (rotazione, finestra), senza osservatori orfani
   if (!box._vizObserver && typeof ResizeObserver !== 'undefined') {
@@ -205,7 +206,7 @@ export function renderWhy({ r, s, i, sp, band, dateStr, shown, agg, parts = [], 
   const takeaway = !complete ? 'Mancano dati per un indice completo.' : tied.length ? `Nel modello ${tied.map(x => x.k.toLowerCase()).join(' e ')} ${tied.length > 1 ? 'sono i fattori che riducono' : 'è il fattore che riduce'} di più l’indice.` : 'Nessun fattore riduce l’indice nel modello.';
   const fc = `<p class="sci-note"><b>Dati ${r.quality?.complete ? 'completi per le finestre richieste' : 'incompleti'}.</b> ${r.quality?.usesForecast ? 'Il calcolo include previsioni meteorologiche, anche del giorno di acquisizione.' : 'Il calcolo usa meteo passato di modello, non misure nella fungaia.'} L'accuratezza dei ritrovamenti non è stata misurata nel Reatino. ${r.quality?.fetchedAt ? `Acquisizione: ${esc(new Date(r.quality.fetchedAt).toLocaleString('it-IT', { timeZone: 'Europe/Rome' }))}.` : ''}</p>`;
   return `
-    <p class="sci-lede">${Number.isFinite(shown) && complete ? `Indice sperimentale <b>${formatIndex(shown)}/10</b>` : '<b>Indice non disponibile</b>'} per ${speciesLink(sp, sp.name.toLowerCase())} a ${band} m. Descrive condizioni ambientali stimate, non la probabilità di trovare funghi.</p>
+    <p class="sci-lede">${Number.isFinite(shown) && complete ? `Condizioni di crescita <b class="growth-value">${fungusGlyph}${formatIndex(shown)}/10</b>` : '<b>Condizioni di crescita non disponibili</b>'} per ${speciesLink(sp, sp.name.toLowerCase())} a ${band} m. Descrive condizioni ambientali stimate, non la probabilità di trovare funghi.</p>
     <p class="sci-takeaway">${esc(takeaway)}</p>
     <p class="sci-sub">Come incidono le condizioni nel modello</p>
     <ul class="sci-signals" aria-label="Come incidono i fattori nel modello">${main.map(x => { const state = factorState(x); return `<li class="sci-signal ${tied.includes(x) && complete ? 'weak' : ''}"><div class="sci-signal-head"><b>${esc(x.k)}</b><span class="sci-state state-${state.kind}">${state.label}</span></div><p>${esc(x.brief)}</p></li>`; }).join('')}</ul>
@@ -219,7 +220,7 @@ export function renderWhy({ r, s, i, sp, band, dateStr, shown, agg, parts = [], 
         <p class="sf-why">${esc(x.why)} ${x.tags.map(tag).join(' ')}</p>
       </li>`).join('')}
     </ol>
-    <p class="sci-eq"><span>min(10; 10 × ${rows.map((x) => n1(x.v, 2)).join(' × ')})</span> ≈ <b>${formatIndex(raw)}</b></p>
+    <p class="sci-eq"><span>min(10; 10 × ${rows.map((x) => n1(x.v, 2)).join(' × ')})</span> ≈ <b class="growth-value">${fungusGlyph}${formatIndex(raw)}</b></p>
     <p class="sci-note">I coefficienti mostrati sono arrotondati; il risultato usa i valori completi ed è limitato a 10.</p>
     ${parts.length > 1 ? `<p class="sci-note">L'indice della zona è il <b>massimo</b> delle specie selezionate. Le altre: ${parts.slice(1).map((x) => `${esc(x.name.toLowerCase())} ${formatIndex(x.score)}`).join(', ')}. Aggiungere specie non aumenta automaticamente il numero. Specie diverse possono avere la quota migliore in luoghi diversi.</p>` : ''}
     ${prefs.length ? `<p class="sci-note">Le preferenze (${prefs.map((p) => `${esc(p.label)} ×${n1(p.mult, 2)}`).join(', ')}) modificano solo l'ordine dei consigli. L'indice delle condizioni resta <b>${formatIndex(shown)}</b>.</p>` : ''}

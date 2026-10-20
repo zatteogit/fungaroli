@@ -1,4 +1,5 @@
 import {thoughtErrors} from '../js/daily-thought.js';
+import {validateTrailContext} from '../js/trail-context.js';
 import {GLOSSARY_CONTEXTS,termContexts,glossaryAliasKey} from '../js/glossary-context.js';
 import sanitizeHtml from 'sanitize-html';
 import { resourceOf, isLockedField } from '../js/content-schema.js';
@@ -68,7 +69,8 @@ export function validateContent(id, data, previous) {
   }
   const value=visit(data,'',previous);
   if(id==='daily-thoughts'){const errors=thoughtErrors(value);if(errors.length)err(errors.join(' '));}
-  if(id==='trails')for(const z of Object.values(value.zones||{}))for(const t of z.trails||[])if(!t.editorialNote?.trim())delete t.editorialNote;
+  if(id==='trails'){for(const z of Object.values(value.zones||{}))for(const t of z.trails||[])for(const l of t.relatedLinks||[])if(l.caution==='')delete l.caution;validateTrailContext(value);}
+  if(id==='trails')for(const z of Object.values(value.zones||{}))for(const t of z.trails||[]){if(!t.editorialNote?.trim())delete t.editorialNote;if(t.relatedLinks?.length===0)delete t.relatedLinks;}
   function normalizeSources(v){
     if(!v||typeof v!=='object')return;
     if(Array.isArray(v.sources))v.sources=v.sources.map(s=>{
@@ -80,6 +82,7 @@ export function validateContent(id, data, previous) {
   }
   normalizeSources(value);
   let needsReview=false;
+  if(id==='trails'&&previous){const links=d=>Object.entries(d.zones||{}).flatMap(([zone,z])=>(z.trails||[]).map(t=>[zone,t.id,t.relatedLinks||[]]));needsReview=!same(links(value),links(previous));}
   if(id==='botanical-models'){
     if(!value.models||typeof value.models!=='object'||Array.isArray(value.models))err('Elenco dei modelli botanici non valido.');
     for(const [key,m] of Object.entries(value.models)){
@@ -240,6 +243,8 @@ export function validateContent(id, data, previous) {
     }
     needsReview=!!previous&&!same(value,previous);
   }
+  if(id==='legal'&&value.acceptance_version!=null&&(!Number.isInteger(value.acceptance_version)||value.acceptance_version<1||value.acceptance_version>999999))err('La revisione delle CGS deve essere un intero positivo.');
+  if(id==='legal'&&previous?.acceptance_version&&(!value.acceptance_version||value.acceptance_version<previous.acceptance_version))err('La revisione delle CGS non può diminuire o essere rimossa.');
   if (id==='legal' && previous && !same(value,previous)) {
     if (!Number.isInteger(value.version)||value.version<=previous.version) err('Aumenta la versione degli avvisi quando aggiorni le regole.');
     needsReview=true;

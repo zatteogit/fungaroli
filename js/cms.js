@@ -82,7 +82,7 @@ function recordPath(){return collection&&record!==''?[collection,Array.isArray(d
 function valueAt(path){return path.reduce((v,k)=>v?.[k],doc.data);}
 function writeAt(path,value){let at=doc.data;for(const k of path.slice(0,-1))at=at[k];at[path.at(-1)]=value;dirty=true;}
 function renderEditor(){
-  if(doc.id==='trails')for(const z of Object.values(doc.data.zones||{}))for(const t of z.trails||[])t.editorialNote??='';
+  if(doc.id==='trails')for(const z of Object.values(doc.data.zones||{}))for(const t of z.trails||[]){t.editorialNote??='';t.relatedLinks??=[];for(const l of t.relatedLinks)l.caution??='';}
   const schema=CONTENT_RESOURCES.find(r=>r.id===doc.id),rows=entries();if(record===''&&rows.length)record=rows[0][0];
   const path=recordPath(),value=valueAt(path)||doc.data;
   editor.innerHTML=`<p class="eyebrow">${esc(schema.group)}</p><h2>${esc(schema.title)}</h2><div class="cms-meta"><span>Revisione ${doc.version}</span><span>Pubblicata: ${doc.publishedVersion}</span>${schema.readonly?'<span>Dati generati · consultazione</span>':''}</div>
@@ -91,7 +91,7 @@ function renderEditor(){
     ${schema.readonly?'<p class="small muted">Questi campioni e percorsi provengono dai processi geografici. La redazione li consulta; l’aggiornamento avviene tramite importazione dei dati.</p>':''}
     ${schema.collections.length?`<div class="cms-record-picker"><label>Gruppo<select data-collection>${schema.collections.map(k=>`<option value="${esc(k)}" ${k===collection?'selected':''}>${esc(title(k))}</option>`).join('')}<option value="" ${!collection?'selected':''}>Impostazioni del documento</option></select></label><label>Voce<select data-record>${rows.map(([k,v])=>`<option value="${esc(k)}" ${k===record?'selected':''}>${esc(typeof v==='string'?v.slice(0,70):v.name||v.title||v.term||v.text||v.latin||v.id||k)}</option>`).join('')}</select></label></div>${!schema.readonly&&collection&&doc.id!=='trails'?'<button class="btn ghost small" type="button" data-new>＋ Nuova voce</button>':''}`:''}
     <fieldset class="cms-fieldset" ${!can('write')||schema.readonly?'disabled':''}><legend>Contenuto</legend><div class="cms-fields">${fields(value,path)}</div></fieldset>
-    ${can('review')&&['species-traits','edible-catalog','legal','glossary','media-glossary','plants','botanical-models'].includes(doc.id)?'<label class="cms-review"><span><input type="checkbox" data-reviewed> Ho verificato le fonti delle modifiche scientifiche o normative, quando richiesto.</span></label><p class="small muted">I controlli automatici verificano struttura e collegamenti; non certificano la correttezza scientifica.</p>':''}
+    ${can('review')&&['species-traits','edible-catalog','legal','glossary','media-glossary','plants','botanical-models','trails'].includes(doc.id)?'<label class="cms-review"><span><input type="checkbox" data-reviewed> Ho verificato le fonti delle modifiche scientifiche o normative, quando richiesto.</span></label><p class="small muted">I controlli automatici verificano struttura e collegamenti; non certificano la correttezza scientifica.</p>':''}
     <p class="small muted">La pubblicazione include tutte le voci modificate in questa sezione.</p>
     <div id="cms-preview" hidden></div><details class="cms-revisions"><summary>Cronologia e ripristino</summary><div id="cms-revisions"></div></details>`;
   loadRevisions();
@@ -117,6 +117,7 @@ function field(v,path){
   const key=path.at(-1),label=esc(title(key));
   if(typeof v==='boolean')return `<label><span><input type="checkbox" data-field="${pathCode(path)}" data-kind="boolean" ${v?'checked':''}> ${label}</span></label>`;
   if(key==='id')return `<label>${label}<input value="${esc(v)}" readonly></label>`;
+  if(doc.id==='trails'&&path.includes('relatedLinks')&&['relationship','status'].includes(key))return `<label>${label}<select data-field="${pathCode(path)}" data-kind="string">${Object.entries(key==='relationship'?{partly_overlapping:'Itinerario parzialmente sovrapposto',official_context:'Riferimento ufficiale di contesto'}:{pending:'Da verificare (non mostrato)',reviewed:'Pertinenza verificata'}).map(([id,name])=>`<option value="${id}" ${id===v?'selected':''}>${name}</option>`).join('')}</select></label>`;
   if(doc.id==='media-glossary'&&key==='kind')return `<label>${label}<select data-field="${pathCode(path)}" data-kind="string">${[['photo','Fotografia'],['diagram','Schema didattico']].map(([id,name])=>`<option value="${id}" ${id===v?'selected':''}>${name}</option>`).join('')}</select></label>`;
   if(doc.id==='glossary'&&key==='category')return `<label>${label}<select data-field="${pathCode(path)}" data-kind="string">${['Funghi','Piante','Alberi','Bosco','Sentiero'].map(x=>`<option ${x===v?'selected':''}>${x}</option>`).join('')}</select></label>`;
   if(doc.id==='botanical-models'&&['phase','calendarOrigin'].includes(key))return `<label>${label}<select data-field="${pathCode(path)}" data-kind="string">${(key==='phase'?[['young_leaves','Foglie giovani'],['ripe_fruits','Frutti maturi'],['dry_fruits','Frutti aromatici maturi']]:[['hypothesis','Mesi ricavati da una stagione (ipotesi)'],['source_calendar','Mesi riportati dalla fonte']]).map(([id,name])=>`<option value="${id}" ${id===v?'selected':''}>${name}</option>`).join('')}</select></label>`;
@@ -180,7 +181,7 @@ editor.addEventListener('click',async e=>{
       for(const k of ['name','title','latin','excerpt','body','sources'])if(k in template)template[k]=Array.isArray(template[k])?[]:'';
       dirty=true;renderEditor();message('Nuova voce in bozza: completa i campi e le fonti prima di salvare.');
     }
-    if(b.dataset.add){const p=decode(b.dataset.add),v=valueAt(p);v.push(['illustrations','photos'].includes(p.at(-1))?{file:'',alt:'',caption:'',author:'',license:'',licenseUrl:'',page:'',...(p.at(-1)==='illustrations'?{kind:'photo',generated:false}:{sourceImage:''})}:typeof v[0]==='object'?blank(v[0]):'');dirty=true;renderEditor();}
+    if(b.dataset.add){const p=decode(b.dataset.add),v=valueAt(p);v.push(p.at(-1)==='relatedLinks'?{provider:'Wikiloc',url:'',label:'Altro itinerario su Wikiloc',relationship:'partly_overlapping',note:'',caution:'',checkedOn:'',status:'pending'}:['illustrations','photos'].includes(p.at(-1))?{file:'',alt:'',caption:'',author:'',license:'',licenseUrl:'',page:'',...(p.at(-1)==='illustrations'?{kind:'photo',generated:false}:{sourceImage:''})}:typeof v[0]==='object'?blank(v[0]):'');dirty=true;renderEditor();}
     if(b.dataset.remove){const p=decode(b.dataset.remove),v=valueAt(p.slice(0,-1));v.splice(p.at(-1),1);dirty=true;renderEditor();}
   }catch(e){message(e.message,true);}finally{if(b.isConnected)b.disabled=false;}
 });
