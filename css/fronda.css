@@ -931,7 +931,7 @@ body:has(#ranking .ring) #ranking-index-legend,body:has(#season .ring) #season-i
 @media(prefers-reduced-motion:no-preference) { .cell-card.is-leaving { opacity:0 !important; transition:opacity .12s ease; } .cell-card.is-leaving .mtt { animation:none; } }
 
 /* Uscite: il polline resta sulla proposta e sulla navigazione, le scelte rapide respirano. */
-#active-filters [data-intent][aria-pressed="true"] { background:var(--select); color:var(--select-ink); border-color:var(--select-edge); box-shadow:inset 0 0 0 1px var(--select-edge); }
+#active-filters [data-intent][aria-pressed="true"] { background:var(--select); color:var(--select-ink); border-color:var(--select-edge); box-shadow:none; }
 #active-filters [data-p][aria-pressed="true"] { background:var(--surface-2); color:var(--link); border-color:var(--link); box-shadow:inset 0 0 0 1px var(--link); }
 #days .day[aria-selected="true"] { background:var(--select); color:var(--select-ink); border-color:var(--select-edge); box-shadow:var(--shadow-1); }
 #days .day[aria-selected="true"] :is(.d1,.d3) { color:var(--select-ink); }
