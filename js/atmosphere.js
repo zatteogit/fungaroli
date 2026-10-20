@@ -1,5 +1,6 @@
 // Riprese decorative: non rappresentano specie o località consigliate.
 export const ATMOSPHERES = Object.freeze({
+  'canneto-verde-sereno': {width:1280,height:720,base:'assets/video/places/canneto-verde-sereno',manifest:'assets/video/places/manifest.json'},
   'tancia-autunno-asciutto': {width:1280,height:720,base:'assets/video/places/tancia-autunno-asciutto',manifest:'assets/video/places/manifest.json'},
   'luce-tra-le-foglie': { width:1920, height:1080 },
   'bosco-e-sentiero': { width:1920, height:1080 },

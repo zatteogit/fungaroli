@@ -45,3 +45,9 @@ Matteo ha precisato: «i video stock usali quando non hai alternative di foto/vi
 Il file utente `gemini_generated_video_0654230b.mp4` è stato approvato esplicitamente per «il tancia d’autunno quando non piove». È l’animazione della scena autunnale della faggeta già nel catalogo; vengono mantenuti i crediti della foto di Christoph Strässler, CC BY-SA 2.0, e indicata l’elaborazione Gemini fornita da Matteo. Derivato web: loop 8 s a 1280×720, 24 fps, senza audio, raccordo e faststart, still WebP autentici del filmato. Associazione e hash sono in `assets/video/places/manifest.json`. Non è una nuova ripresa documentaria del Tancia, né una rilevazione meteo.
 
 Il pacchetto di lavoro richiesto da Matteo è salvato negli output della chat: 19 fotografie reali orizzontali del catalogo e 8 varianti meteo/stagionali illustrative, con numeri, fonti, licenze e indicazioni per restituire i video mantenendo l’associazione.
+
+## Settefrati–Canneto, 20 ottobre
+
+Il video `gemini_generated_video_f87b7d84.mp4` restituito da Matteo anima la foto del torrente Melfa (Spatuzzi Bruno, CC BY-SA 4.0). La scena mostra vegetazione verde e sole: viene usata per Canneto soltanto in primavera/estate e con icona meteo serena. Negli altri casi resta la scelta fotografica locale. È un’animazione illustrativa, non una ripresa dal vivo né un dato meteo osservato. Derivati: loop 8 secondi senza audio con raccordo, still WebP in due risoluzioni, hash e crediti nel manifest.
+
+Matteo ha successivamente chiesto «antrodoco lascialo stare»: il secondo video non viene integrato. Resta valida la deroga esplicita alla suite generale già concessa per la pubblicazione dei video; si verificano unità, guardie e browser mirati.

@@ -23,5 +23,32 @@
     "bytes": 1427583,
     "dimensions": "1280x720",
     "loop_method": "Ultimo secondo raccordato al primo con dissolvenza; audio rimosso; faststart."
+  },
+  {
+    "slug": "canneto-verde-sereno",
+    "zone": "pnalm-settefrati-canneto",
+    "seasons": [
+      "primavera",
+      "estate"
+    ],
+    "weather": [
+      "sereno"
+    ],
+    "generated": true,
+    "author": "Spatuzzi Bruno (foto originale); animazione Gemini fornita da Matteo",
+    "page": "https://commons.wikimedia.org/wiki/File:La_sorgente_del_Melfa.jpg",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "source_file": "gemini_generated_video_f87b7d84.mp4",
+    "original_sha256": "c5040eda8251f1332cfa715dd79bd1ad7ca8efe782efab18120cb093e88efef4",
+    "source_photo_variant": "assets/zones/pnalm-settefrati-canneto-hd.webp",
+    "authorization": "Uso nel progetto autorizzato da Matteo il 2026-10-20 per Settefrati–Canneto. Antrodoco escluso su richiesta.",
+    "video": "canneto-verde-sereno-loop.mp4",
+    "duration": 8,
+    "fps": 24,
+    "audio": false,
+    "bytes": 1466745,
+    "dimensions": "1280x720",
+    "loop_method": "Ultimo secondo raccordato al primo con dissolvenza; audio rimosso; faststart."
   }
 ]
