@@ -1295,7 +1295,7 @@ function alternativeFor(z, o, d) {
 // icona meteo con il suo colore (sole ambra, pioggia blu, temporale viola, neve azzurro)
 const wxi = (w) => `<span class="wxi wxi-${wxIcon(w)}">${weatherGlyphs[wxIcon(w)]||IC[wxIcon(w)]}</span>`;
 // l'icona mostra il problema principale, nello stesso ordine di gravità del testo: mai il sole con vento forte o nebbia
-const wxIcon = (w) => (!w?.available ? 'unknown' : w.thunder ? 'storm' : w.snow ? 'snow' : (w.rain >= 0.5 || w.prob >= 50) ? 'rain' : w.gust >= 40 ? 'wind' : w.fog ? 'fog' : w.prob >= 20 ? 'cloud' : 'sun');
+const wxIcon = (w) => (!w || (!w.available && !Number.isFinite(w.rain)) ? 'unknown' : w.thunder ? 'storm' : w.snow ? 'snow' : (w.rain >= 0.5 || w.prob >= 50) ? 'rain' : w.gust >= 40 ? 'wind' : w.fog ? 'fog' : w.prob >= 20 ? 'cloud' : 'sun');
 // Il fungo, nel colore dell’indice, accompagna ogni valore delle condizioni di crescita.
 const indexGlyph=sc=>fungusGlyph.replace('<svg ',`<svg style="color:var(${scoreVar(sc).replace('--s','--ps')})" `);
 const idxDot = (sc) => `<span class="idx-dot" title="Condizioni di crescita ${formatIndex(sc)}/10">${indexGlyph(sc)}<b class="pc">${formatIndex(sc)}</b></span>`;

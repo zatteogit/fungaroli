@@ -86,7 +86,7 @@ export function outingFor(series, z, dateStr, now = Date.now()) {
   const stale = now - fetched > TTL;
   return { level: stale && level === 'ok' ? 'non_disponibile' : level,
     text: text + (stale ? ' · previsione da aggiornare' : ''), main: parts[0] || main,
-    short: stale && level === 'ok' ? 'previsione da aggiornare' : shorts[0] || main,
+    short: stale ? (level === 'ok' ? 'previsione da aggiornare' : `${shorts[0] || main} · da aggiornare`) : shorts[0] || main,
     available: !stale, fetchedAt: series.fetchedAt, rain, prob, thunder, snow, fog, gust, tmin, tmax, from };
 }
 
