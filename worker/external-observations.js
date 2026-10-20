@@ -1,5 +1,6 @@
 import schema from '../migrations/0010_external_observations.sql';
 import seed from './external-observations-seed.json';
+import geminiSeed from './gemini-research-seed.json';
 import zones from '../data/zones.json';
 import traits from '../data/species-traits.json';
 import {canonicalSource,normalizeExternalObservation,externalUsability,externalEngineDataset} from '../js/external-observation.js';
@@ -14,22 +15,24 @@ export async function initExternalObservations(db){
  if(!db)fail('Database delle segnalazioni non disponibile.',503);
  if(!initialized.has(db))initialized.set(db,(async()=>{
   await db.batch(schema.split(';').map(s=>s.trim()).filter(Boolean).map(s=>db.prepare(s)));
-  const imported=await db.prepare('SELECT id,imported_at AS importedAt,record_count AS records FROM external_observation_imports WHERE id=?').bind('external-2026-10-20-v1').first();
-  if(imported)return imported;
+  for(const batchSeed of [{...seed,importId:'external-2026-10-20-v1'},geminiSeed]){
+  const imported=await db.prepare('SELECT id,imported_at AS importedAt,record_count AS records FROM external_observation_imports WHERE id=?').bind(batchSeed.importId).first();
+  if(imported)continue;
   // Importazione idempotente: i dati già corretti dalla dashboard non vengono riscritti.
   // È un seed versionato autorizzato, non un import di dati inviati dalla richiesta.
-  for(let i=0;i<seed.records.length;i+=20){
+  for(let i=0;i<batchSeed.records.length;i+=20){
    const writes=[];
-   for(const {id,data} of seed.records.slice(i,i+20)){
+   for(const {id,data} of batchSeed.records.slice(i,i+20)){
     const r=normalizeExternalObservation(data,catalog),payload=JSON.stringify(r),nonce=crypto.randomUUID(),now=Date.now();
-    writes.push(db.prepare('INSERT INTO external_observations(id,source_key,payload,observed_on,zone_id,taxon_id,outcome,review_status,updated_at,updated_by,write_nonce) VALUES(?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING').bind(id,keyOf(r),payload,r.observedOn,r.zoneId,r.taxonId,r.outcome,r.reviewStatus,now,'release:external-2026-10-20',nonce));
-    writes.push(db.prepare("INSERT INTO external_observation_history(observation_id,version,payload,updated_at,updated_by,reason) SELECT id,version,payload,updated_at,updated_by,'Importazione iniziale con fonte e limiti' FROM external_observations WHERE id=? AND write_nonce=? ON CONFLICT DO NOTHING").bind(id,nonce));
+    writes.push(db.prepare('INSERT INTO external_observations(id,source_key,payload,observed_on,zone_id,taxon_id,outcome,review_status,updated_at,updated_by,write_nonce) VALUES(?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING').bind(id,keyOf(r),payload,r.observedOn,r.zoneId,r.taxonId,r.outcome,r.reviewStatus,now,'release:'+batchSeed.importId,nonce));
+    writes.push(db.prepare("INSERT INTO external_observation_history(observation_id,version,payload,updated_at,updated_by,reason) SELECT id,version,payload,updated_at,updated_by,'Importazione con fonte, provenienza e limiti; controllare lo stato di revisione' FROM external_observations WHERE id=? AND write_nonce=? ON CONFLICT DO NOTHING").bind(id,nonce));
    }
    await db.batch(writes);
   }
-  const count=await db.prepare(`SELECT COUNT(*) AS n FROM external_observations WHERE id IN (${seed.records.map(()=>'?').join(',')})`).bind(...seed.records.map(r=>r.id)).first('n');
-  if(count!==seed.records.length)fail('Importazione iniziale incompleta: una fonte è già presente con un altro identificativo.',503);
-  await db.prepare('INSERT INTO external_observation_imports(id,imported_at,record_count) VALUES(?,?,?) ON CONFLICT DO NOTHING').bind('external-2026-10-20-v1',Date.now(),count).run();
+  const count=await db.prepare(`SELECT COUNT(*) AS n FROM external_observations WHERE id IN (${batchSeed.records.map(()=>'?').join(',')})`).bind(...batchSeed.records.map(r=>r.id)).first('n');
+  if(count!==batchSeed.records.length)fail('Importazione iniziale incompleta: una fonte è già presente con un altro identificativo.',503);
+  await db.prepare('INSERT INTO external_observation_imports(id,imported_at,record_count) VALUES(?,?,?) ON CONFLICT DO NOTHING').bind(batchSeed.importId,Date.now(),count).run();
+  }
   return db.prepare('SELECT id,imported_at AS importedAt,record_count AS records FROM external_observation_imports WHERE id=?').bind('external-2026-10-20-v1').first();
  })().catch(e=>{initialized.delete(db);throw e;}));
  return initialized.get(db);

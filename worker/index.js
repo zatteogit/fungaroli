@@ -1,5 +1,6 @@
 // Worker di Fronda: i file statici sono serviti da Workers Assets (wrangler.jsonc);
 // qui arrivano solo le richieste che non corrispondono a un file, cioe' l'API del diario.
+import {publicExternalSignals} from './external-engine.js';
 import { handleDiario } from '../functions/api/diario/[[path]].js';
 import { handleCommunity, cleanupCommunity } from './community.js';
 import { handleSurvey, cleanupSurvey } from './survey.js';
@@ -10,6 +11,11 @@ import { recordWeatherMetric, cleanupWeatherMetrics } from './weather-metrics.js
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
+    if(url.pathname==='/api/forecast/v1/external-signals'){
+      if(request.method!=='GET')return Response.json({error:'Metodo non consentito.'},{status:405});
+      try{await publishedResources(env,url.origin,['zones','species-traits']);return Response.json(await publicExternalSignals(env),{headers:{'cache-control':'no-store','x-content-type-options':'nosniff'}});}
+      catch{return Response.json({error:'Segnalazioni temporaneamente non disponibili.'},{status:503,headers:{'cache-control':'no-store'}});}
+    }
     if(url.pathname==='/api/weather/v1/forecast') {
       if(request.method!=='GET')return new Response('Metodo non consentito.',{status:405});
       try {

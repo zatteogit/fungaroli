@@ -41,3 +41,5 @@ Prima di aggiungere un peso serve una specifica che distingua calendario, habita
 ## Verifiche
 
 Test API con SQLite: ruoli e origine, valori fuori intervallo, campi aggiuntivi rifiutati, conflitti, storico atomico, ripristino, propagazione pubblica e assenza dei dati privati. Browser: 320/390/1280, salvataggio e lettura reali sul Worker locale, anteprima, consultazione questionari, ritorno ai contenuti, errori/riprova. Il controllo non costituisce validazione scientifica del modello.
+
+L’uso delle fonti esterne, i motivi di esclusione, il confronto numerico e le credenziali per agenti sono descritti in [Segnalazioni, motore e API](segnalazioni-motore-api.md).
