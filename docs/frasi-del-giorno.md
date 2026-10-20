@@ -39,8 +39,11 @@ Sono estratti di opere originali in pubblico dominio, verificati il 20/10/2026. 
 - 5 controlli mirati: archivio/validazione CMS, fuso e cambio ora, rotazione, recupero per tag, seed/snapshot D1 e conservazione della bozza autore.
 - 3 controlli browser: 320/390/768/1280 px, chiaro/scuro, contrasto e assenza di overflow, posizione dopo le alternative e nessuno spostamento dell’hero, stabilità al reload, archivio non disponibile e priorità dello snapshot CMS sul seed.
 - Il controllo visivo della card e della pagina 10 del PDF del brand è stato completato. Nel PDF le altre 25 pagine sono conservate.
-- Suite unitari completa: 333/345 passano; i medesimi 12 errori sono riprodotti sulla base senza questa modifica (328/340). Nessuna regressione aggiuntiva rilevata. Guardia del design system e verifica del kit passano.
+- Suite unitaria completa: **364/364 passano**. Risolti i 12 errori precedenti, conservando i controlli su accesso con contributo, cataloghi, fonti, dati sconosciuti e serie di illustrazioni incomplete. Guardia del design system e verifica del kit passano.
+- Ripristinata l’esportazione dalla dashboard della Redazione e conservate le modifiche non salvate quando si torna al pannello di policy.
+- Caricamento dei dati incluso nella release limitato a 7 secondi per richiesta: un file facoltativo bloccato non trattiene indefinitamente l’avvio.
+- Test browser aggiornati ai cataloghi pubblicati, alla conferma delle condizioni e alle preferenze attive nella home; verifica di leggibilità e ingombri su telefono e desktop.
 
-Il dry-run del Worker è riuscito e ha prodotto il bundle. L’avvio del runtime locale Wrangler si arresta invece con `spawn EBADF`: i controlli browser sono stati eseguiti sulla home reale servita staticamente, con meteo e snapshot controllati; il percorso D1 è verificato separatamente nei test con SQLite. Non è una verifica completa dei servizi in esecuzione.
+Il dry-run del Worker è riuscito e ha prodotto il bundle. Il runtime locale Wrangler sul Mac presenta `spawn EBADF`: la suite completa usa quindi il Worker reale su runner Linux isolati, tramite il workflow manuale CI. I controlli locali di interfaccia usano invece il server statico con risposte meteo controllate.
 
-Il lavoro è una modifica da revisionare; non attesta una pubblicazione in produzione.
+Rilascio seguito nella [PR #162](https://github.com/zatteogit/fungaroli/pull/162). La pubblicazione viene confermata solo dopo la suite completa verde e la verifica diretta della home e dello snapshot pubblico.
