@@ -9,12 +9,14 @@ async function start(browser,{reducedMotion='no-preference',width=390,legal=true
  if(!withPlaces)await page.route('**/data/media-zones.json',r=>r.fulfill({json:{zones:{}}}));
  return {page,context};
 }
+async function hoverVideo(page,media){const r=await media.boundingBox();await page.mouse.move(r.x+r.width/2,r.y+r.height/2);}
 test('still prima del video: rete ritardata, buffer e loop senza spostare il pannello',async({browser})=>{
  const {page,context}=await start(browser);let release;const gate=new Promise(r=>release=r);let stillFirst=false;
  await page.route('**/assets/video/**/*.mp4',async route=>{stillFirst=await page.locator('#hero .atmosphere-still').evaluate(i=>i.complete&&i.naturalWidth>0);await gate;await route.continue();});
  try{
   await page.goto('/',{waitUntil:'domcontentloaded'});const hero=page.locator('#hero .atmosphere'),video=hero.locator('video');
   await expect(hero).toBeVisible({timeout:60000});await expect.poll(()=>hero.locator('img').evaluate(i=>i.complete&&i.naturalWidth>0)).toBe(true);
+  await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');
   await expect(video).toHaveCSS('opacity','0');const before=await page.locator('#hero .cover-body').boundingBox();
   await page.screenshot({path:'output/playwright/atmosphere-still.png'});release();
   await expect(video).toHaveAttribute('data-video-ready','true');await expect(video).toHaveCSS('opacity','1');expect(stillFirst).toBe(true);
@@ -29,17 +31,28 @@ test('un video alla volta, pausa globale, inviti alle guide e taccuino vuoto',as
  await page.locator('#days [data-day-offset="0"]').click();
  await expect(page.locator('#hero .atmosphere')).toBeVisible({timeout:60000});
  const video=page.locator('#hero .atmosphere video');await expect(video).toHaveAttribute('data-video-ready','true');
- await page.locator('#hero .atmosphere-toggle').click();await expect.poll(()=>video.evaluate(v=>v.paused)).toBe(true);
+ await hoverVideo(page,page.locator('#hero .atmosphere'));await page.locator('#hero .atmosphere-toggle').click();await expect.poll(()=>video.evaluate(v=>v.paused)).toBe(true);
  const initialClip=await page.locator('#hero [data-atmosphere]').getAttribute('data-atmosphere');
  await page.locator('#days [data-day-offset="1"]').click();
  await expect(page.locator('#hero [data-atmosphere]')).not.toHaveAttribute('data-atmosphere',initialClip);
  await expect(page.locator('#hero .atmosphere-toggle')).toHaveAccessibleName('Riprendi il video di atmosfera');
- await page.locator('#hero .atmosphere-toggle').click();await expect.poll(()=>page.locator('#hero .atmosphere video').evaluate(v=>!v.paused)).toBe(true);
+ await hoverVideo(page,page.locator('#hero .atmosphere'));await page.locator('#hero .atmosphere-toggle').click();await expect.poll(()=>page.locator('#hero .atmosphere video').evaluate(v=>!v.paused)).toBe(true);
  const invite=page.locator('[data-view="uscite"] .story-photo.atmosphere');await invite.scrollIntoViewIfNeeded();await expect(invite.locator('video')).toHaveAttribute('data-video-ready','true');
  expect(await page.locator('video').evaluateAll(vs=>vs.filter(v=>!v.paused).length)).toBe(1);
  await page.goto('/#/piante');await expect(page.locator('#plant-grid')).toBeVisible();
  expect(await page.locator('#plant-grid [data-atmosphere]').count()).toBe(0);
  await page.goto('/#/diario');const empty=page.locator('.diary-empty [data-atmosphere="ombre-di-foglie"]');await expect(empty).toBeVisible();await empty.scrollIntoViewIfNeeded();await expect(empty.locator('video')).toHaveAttribute('data-video-ready','true');
+ await context.close();
+});
+test('comando video discreto: compare sul video al puntatore e con la tastiera',async({browser})=>{
+ const {page,context}=await start(browser,{width:1280});await page.goto('/');
+ const hero=page.locator('#hero .atmosphere'),video=hero.locator('video'),button=hero.locator('.atmosphere-toggle');
+ await expect(video).toHaveAttribute('data-video-ready','true');
+ await page.mouse.move(0,0);await expect(button).toHaveCSS('opacity','0');await expect(button).toHaveCSS('pointer-events','none');
+ const box=await hero.boundingBox();await page.mouse.move(box.x+box.width/2,box.y+box.height/2);
+ await expect(button).toHaveCSS('opacity','1');await button.click();await expect.poll(()=>video.evaluate(v=>v.paused)).toBe(true);
+ await page.mouse.move(0,0);await expect(button).toHaveCSS('opacity','0');
+ await page.keyboard.press('Tab');await button.focus();await expect(button).toHaveCSS('opacity','1');await button.press('Enter');await expect.poll(()=>video.evaluate(v=>!v.paused)).toBe(true);
  await context.close();
 });
 for(const mode of ['reduced','save-data'])test(`solo still e nessun MP4 con ${mode}`,async({browser})=>{
@@ -63,7 +76,7 @@ test('copertine responsive e comando compatto negli inviti alle guide',async({br
   expect(await page.locator('#hero .atmosphere').evaluate(e=>{const r=e.getBoundingClientRect();return r.left>=0&&r.right<=innerWidth;})).toBe(true);
  }
  await page.setViewportSize({width:320,height:920});await expect(page.locator('#hero video')).toHaveAttribute('data-video-ready','true');
- await page.locator('#hero .atmosphere-toggle').click();
+ await hoverVideo(page,page.locator('#hero .atmosphere'));await page.locator('#hero .atmosphere-toggle').click();
  const invite=page.locator('[data-view="uscite"] .story-photo.atmosphere');await invite.scrollIntoViewIfNeeded();const button=invite.locator('button');
  await expect(button).toHaveAccessibleName('Riprendi il video di atmosfera');
  const [media,control]=await Promise.all([invite.boundingBox(),button.boundingBox()]);expect(control.x).toBeGreaterThanOrEqual(media.x);expect(control.x+control.width).toBeLessThanOrEqual(media.x+media.width);

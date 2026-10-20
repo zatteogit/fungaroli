@@ -209,7 +209,10 @@ function zoneTrip(z,walk=null) {
   return {...travelTo(target,{minutes:a?.minutes??null,km:a?.km??null},{route:!!drive}),routeAvailable:!!drive,destination:drive?.name||z.name};
 }
 const walkTimeText=t=>{const a=t&&assessWalkingRoute(t),n=a?.trailRoundTripMinutes??a?.wholeTrailMinutes;return n!=null?`${Math.floor(n/60)} h${n%60?' '+n%60+' min':''} ${a.trailRoundTripMinutes!=null?'A/R':'andata'}`:'—';};
-const walkTimeFact=walk=>walk?fact('walk',`<span title="${walk.t.wholeTrailEvidence?'Solo sentiero; raccordo dalla sosta escluso. Eventuale ritorno: stima OSM sulla stessa via.':'Durata dell’uscita non definita: il tempo dell’intero sentiero non si trasferisce al tratto locale'}"><b>${walkTimeText(walk.t)==='—'?'Tempo da verificare':walkTimeText(walk.t)}</b><span class="walk-time-scope">${walk.t.wholeTrailEvidence?'solo sentiero':'a piedi'}</span></span>`):'';
+const walkTimeFact=walk=>{
+  const time=walk&&walkTimeText(walk.t);
+  return !time||time==='—'?'':fact('walk',`<span title="${walk.t.wholeTrailEvidence?'Solo sentiero; raccordo dalla sosta escluso. Eventuale ritorno: stima OSM sulla stessa via.':'Durata dell’uscita non definita: il tempo dell’intero sentiero non si trasferisce al tratto locale'}"><b>${time}</b><span class="walk-time-scope">${walk.t.wholeTrailEvidence?'solo sentiero':'a piedi'}</span></span>`);
+};
 
 function practicalTiming(z, d, walk = null) {
   const trip = zoneTrip(z, walk);
@@ -256,7 +259,7 @@ document.addEventListener('visibilitychange', refreshPlanningClock);
 addEventListener('focus', refreshPlanningClock);
 
 const compactTravel=t=>Number.isFinite(t.minutes)?`${t.minutes}<span class="fk2"> min</span><span class="fk3">′</span>`:`${fmtKm(t.airKm)} km in linea d’aria`;
-const travelFact=t=>fact('car',`<span title="${esc(Number.isFinite(t.minutes)?`Stima auto fino a ${t.destination}; senza traffico${t.stale?' · copia del '+new Date(t.calculatedAt).toLocaleDateString('it-IT'):''}`:'Percorso stradale fino all’accesso, non distanza in linea d’aria')}"><b>${Number.isFinite(t.minutes)?compactTravel(t):!t.routeAvailable?'Accesso da definire':t.pending?'Calcolo auto…':'Tempo auto non disponibile'}</b>${t.stale?'<small> · da aggiornare</small>':''}</span>`);
+const travelFact=t=>Number.isFinite(t.minutes)?fact('car',`<span title="${esc(`Stima auto fino a ${t.destination}; senza traffico${t.stale?' · copia del '+new Date(t.calculatedAt).toLocaleDateString('it-IT'):''}`)}"><b>${compactTravel(t)}</b>${t.stale?'<small> · da aggiornare</small>':''}</span>`):'';
 function proximityMultiplier(z) {
   const t=zoneTrip(z),distance=customBase()?(t.km??t.airKm)/100:Number.isFinite(t.minutes)?t.minutes/120:(t.airKm??0)/100;
   return 1-0.3*Math.min(1,distance);
@@ -393,7 +396,7 @@ async function init() {
     else if(kind==='fungo')image=searchTaxa().find(t=>t.key===id)?.photo;
     const file=image?.file_hd||image?.file||image?.thumb;return file?{file:assetSrc(file)}:null;
   };
-  journal = initJournal({ resolveTrip:editorialReference,noteCatalogs:()=>({animale:animals().map(a=>({name:a.name,latin:a.latin,href:'#/animale/'+a.id})),fungo:Object.entries(stj.taxa).map(([id,t])=>({name:t.name||t.latin,latin:t.latin,href:connectionContext('fungo',id).href})),botanica:plants().map(p=>({name:p.name,latin:p.latin,href:'#/pianta/'+p.id})),albero:Object.entries(trj.trees).map(([id,t])=>({name:t.name,latin:t.latin,href:'#/albero/'+id}))}),onEntries:entries=>{botanicalNotes=entries.filter(e=>e.kind==='note'&&e.observation);refreshEntityConnections();if(series){compute();outCache.clear();if(weatherBusy)paintWeatherView();else renderAll();}},zones:weatherZones, speciesCatalog: catalog, predict, captureForecast, getZoneId: () => state.zoneId || zones[0].id, zoneImage:zid=>assetSrc(zoneMedia[zid]?.file_hd||zoneMedia[zid]?.file||''),referenceImage:notebookReferenceImage });
+  journal = initJournal({ noteWeather:(zoneId,date)=>{if(date!==todayISO())return null;const z=zones.find(z=>z.id===zoneId),w=z&&wxOf(z,{date});return w?.available?{date,zoneId,icon:wxIcon(w),tmin:w.tmin,tmax:w.tmax,capturedAt:w.fetchedAt}:null;},resolveTrip:editorialReference,noteCatalogs:()=>({animale:animals().map(a=>({name:a.name,latin:a.latin,href:'#/animale/'+a.id})),fungo:Object.entries(stj.taxa).map(([id,t])=>({name:t.name||t.latin,latin:t.latin,href:connectionContext('fungo',id).href})),botanica:plants().map(p=>({name:p.name,latin:p.latin,href:'#/pianta/'+p.id})),albero:Object.entries(trj.trees).map(([id,t])=>({name:t.name,latin:t.latin,href:'#/albero/'+id}))}),onEntries:entries=>{botanicalNotes=entries.filter(e=>e.kind==='note'&&e.observation);refreshEntityConnections();if(series){compute();outCache.clear();if(weatherBusy)paintWeatherView();else renderAll();}},zones:weatherZones, speciesCatalog: catalog, predict, captureForecast, getZoneId: () => state.zoneId || zones[0].id, zoneImage:zid=>assetSrc(zoneMedia[zid]?.file_hd||zoneMedia[zid]?.file||''),referenceImage:notebookReferenceImage });
   // preferenza personale (non un filtro): usare le fasi annotate nel taccuino per le cose da osservare
   const botanicalToggle = $('[data-botanical-personalize]');
   if (botanicalToggle) { botanicalToggle.checked = state.useBotanicalNotes; botanicalToggle.addEventListener('change', () => { state.useBotanicalNotes = botanicalToggle.checked; savePrefs(); if (series) { compute(); outCache.clear(); renderAll(); } }); }

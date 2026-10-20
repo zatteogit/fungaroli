@@ -17,6 +17,8 @@ import { communityReady, communityEnabled, currentUser, communityRequest, shareD
 import {normalizeNotebookNote,PHENO_PHASES} from './notebook-entry.js';
 import {sharedObservation} from './community-observation.js';
 import {createNotebookComposer} from './notebook-composer.js';
+import {createQuickNotebookComposer} from './notebook-quick-composer.js';
+import {notebookLocalStore} from './notebook-photo-store.js';
 
 const KEY = 'fungaroli:diario:v1';
 export const LEVELS = ['', 'Pochi', 'Discreti', 'Tanti'];
@@ -61,17 +63,7 @@ export function summary(entries) {
 
 // --- archivio -----------------------------------------------------------------
 
-function localStore(key = KEY) {
-  const read = () => { try { return JSON.parse(localStorage.getItem(key) || '[]'); } catch { return []; } };
-  const write = (list) => { localStorage.setItem(key, JSON.stringify(list)); };
-  return {
-    kind: 'local',
-    async list() { return read(); },
-    async replace(list) { write(list); },
-    async put(e) { write([...read().filter((x) => x.id !== e.id), e]); },
-    async remove(id) { write(read().filter((x) => x.id !== id)); },
-  };
-}
+const localStore=(key=KEY)=>notebookLocalStore(key);
 
 function collectiveStore() {
   const account = currentUser();
@@ -133,7 +125,7 @@ function remoteStore(token) {
     async list() {
       try {
         const { entries } = await call(API);
-        try { localStorage.setItem(KEY, JSON.stringify(entries)); } catch { /* copia locale facoltativa */ }
+        try { await local.replace(entries); } catch { /* copia locale facoltativa */ }
         return entries;
       } catch (e) {
         if (e.status === 401) throw e;
@@ -165,7 +157,7 @@ async function openStore() {
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const iso = todayISO;
 
-export function initJournal({ resolveTrip=()=>null,onEntries=()=>{},zones, speciesCatalog = SPECIES, predict, captureForecast, getZoneId, noteCatalogs=()=>({}), zoneImage = () => '', referenceImage=()=>null }) {
+export function initJournal({ resolveTrip=()=>null,onEntries=()=>{},zones, speciesCatalog = SPECIES, predict, captureForecast, getZoneId, noteCatalogs=()=>({}), zoneImage = () => '', referenceImage=()=>null, noteWeather=()=>null }) {
   const dlg = document.getElementById('journal-dialog');
   const body = dlg.querySelector('.wiz-body');
   const list = document.getElementById('journal-list');
@@ -193,23 +185,27 @@ export function initJournal({ resolveTrip=()=>null,onEntries=()=>{},zones, speci
   addEventListener('hashchange',()=>{if(noteDialog.open)noteDialog.close();});
 
   let noteOwner;
-  const composer=createNotebookComposer({dialog:noteDialog,zones,catalogs:noteCatalogs,canShare:()=>store?.kind==='community'&&!!currentUser(),onOuting:()=>open(),onSave:async(entry,share)=>{
+  const saveNote=async(entry,share)=>{
     const owner=noteOwner;if(owner!==store)throw new Error('Profilo cambiato: riapri la nota.');
     await owner.put(entry);if(owner!==store)throw new Error('Profilo cambiato: riapri la nota.');
     entries=[entry,...entries.filter(e=>e.id!==entry.id)];sortEntries();entriesRevision++;renderList('Nota salvata nel taccuino.');
     if(share){try{await shareNotebookNote(entry);if(owner!==store)throw new Error('Profilo cambiato: riapri il taccuino.');entry.shared=true;renderList('Osservazione condivisa con Fronda. Il testo resta privato.');}catch(error){throw new Error('Nota salvata privata. Condivisione non completata: '+error.message);}}
     if(!share&&owner.kind==='community')document.dispatchEvent(new CustomEvent('fungaroli:refresh-community'));
     document.dispatchEvent(new CustomEvent('fungaroli:note-saved',{detail:{title:entry.title}}));
-  }});
+  };
+  const composer=createNotebookComposer({dialog:noteDialog,zones,catalogs:noteCatalogs,canShare:()=>store?.kind==='community'&&!!currentUser(),onOuting:()=>open(),onSave:saveNote});
+  const quickComposer=createQuickNotebookComposer({dialog:noteDialog,zones,catalogs:noteCatalogs,onSave:saveNote,noteWeather,onMore:()=>openNote(),onDone:entry=>location.hash='#/diario/pagina/'+encodeURIComponent(entry.id)});
   async function openNote(context={},existing=null){
     await storageReady;if(!store){renderList('Il taccuino sta ancora caricando.');return;}
-    noteOwner=store;noteOrigin=document.activeElement;composer.open(context,existing);
+    noteOwner=store;noteOrigin=document.activeElement;(context.quick||existing?.photo?quickComposer:composer).open(context,existing);
   }
   document.addEventListener('click',e=>{
-    const b=e.target.closest('[data-new-note],[data-note-kind]');if(!b)return;
+    const b=e.target.closest('[data-new-note],[data-note-kind],[data-annotate]');if(!b)return;
     const kind=b.dataset.noteKind,id=b.dataset.noteId;
     const category={animale:'animale',pianta:'botanica',albero:'albero',specie:'fungo',fungo:'fungo',commestibile:'fungo',zona:'percorso',guide:'lettura'}[kind]||'appunto';
-    openNote({...(kind?{category}:{}),zoneId:b.dataset.noteZone,reference:kind?{href:b.dataset.noteHref||`#/${kind}/${id}`,title:b.dataset.noteTitle}:null});
+    const quick=b.hasAttribute('data-annotate'),parts=location.hash.split('/'),contextCategory={fungo:'fungo',specie:'fungo',commestibile:'fungo',pianta:'botanica',albero:'albero',animale:'animale'}[parts[1]];
+    const contextual=quick&&contextCategory?(noteCatalogs()[contextCategory]||[]).find(t=>t.href===`#/${parts[1]}/${parts[2]}`):null;
+    openNote({quick,...(kind?{category}:contextCategory&&quick?{category:contextCategory}:{}),zoneId:b.dataset.noteZone||(quick&&parts[1]==='zona'&&zones.some(z=>z.id===parts[2])?parts[2]:null),reference:kind?{href:b.dataset.noteHref||`#/${kind}/${id}`,title:b.dataset.noteTitle}:contextual?{href:contextual.href,title:contextual.name}:null});
   });
 
   const editorialTripTitle=source=>source.reference.title.replace(/^Giro simulato di Matteo · /,'');
@@ -361,7 +357,7 @@ export function initJournal({ resolveTrip=()=>null,onEntries=()=>{},zones, speci
     heading.querySelector('.kicker').textContent=result.kicker;
     heading.querySelector('.view-sub').textContent=result.subtitle;
     heading.querySelector('.diary-header-actions').hidden=route.demo||result.detail;
-    heading.querySelectorAll('[data-new-note],[data-new-outing]').forEach(b=>b.hidden=route.demo||result.detail);
+    heading.querySelectorAll('[data-new-note],[data-new-outing],[data-annotate]').forEach(b=>b.hidden=route.demo||result.detail);
     heading.querySelector('.diary-demo-link').hidden=!['admin','editor'].includes(currentUser()?.role)||route.demo||result.detail;
     document.querySelector('.notebook-view').classList.toggle('is-detail',result.detail);
     document.querySelector('.notebook-view').classList.toggle('is-demo',route.demo);

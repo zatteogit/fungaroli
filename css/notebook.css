@@ -361,3 +361,29 @@
  .diary-field-data dl { gap:16px 12px; }
  .diary-page-end span:last-child { display:none; }
 }
+
+/* Ritrovamenti personali: stessa carta del taccuino, fotografia completa. */
+.quick-note-form { gap:18px; }
+.quick-note-form .eyebrow svg { width:18px; height:18px; }
+.notebook-dialog .eyebrow { display:flex; align-items:center; gap:8px; }
+.quick-note-intro { margin:0; color:var(--text-2); }
+.quick-photo { border:1px dashed var(--border); border-radius:18px; padding:22px; text-align:center; background:var(--surface); }
+.quick-photo img { display:block; width:100%; height:auto; max-height:280px; object-fit:contain; border-radius:10px; margin-bottom:12px; }
+.quick-photo-pick { position:relative; cursor:pointer; min-height:64px; display:flex!important; flex-direction:column; justify-content:center; align-items:center; color:var(--text); }
+.quick-photo-pick span { font:600 19px/1.4 var(--font-display); }
+.quick-photo-pick small { color:var(--text-2); }
+.quick-photo-pick input { position:absolute; opacity:0; inset:0; width:100%; height:100%; cursor:pointer; }
+.quick-photo-pick:focus-within { outline:2px solid var(--text); outline-offset:6px; border-radius:8px; }
+.quick-note-types { border:0; padding:0; margin:0; display:flex; flex-wrap:wrap; gap:8px; }
+.quick-note-types legend { font-size:14px; margin-bottom:10px; }
+.quick-note-types .chip[aria-pressed="true"] { background:var(--select); color:var(--select-ink); border-color:var(--select-edge); }
+.quick-note-details { border-block:1px solid var(--hair); padding:16px 0; }
+.quick-note-details summary { cursor:pointer; font:600 14px/1.5 var(--font-body); }
+.quick-note-details label { margin-top:16px; }
+.quick-note-private { margin:0; font-size:12px; color:var(--text-2); }
+.quick-note-save { display:grid; gap:14px; position:sticky; bottom:-24px; background:var(--bg); padding:16px 0 24px; }
+.quick-note-save .btn { justify-content:center; gap:10px; }
+.quick-note-save .link-btn { white-space:normal; }
+.diary-detail-photo.is-personal img { aspect-ratio:auto; object-fit:contain; max-height:720px; }
+.diary-detail-photo.is-personal .diary-photo-print { padding:12px; }
+@media(max-width:600px) { .quick-note-save { bottom:-18px; padding-bottom:18px; } }
