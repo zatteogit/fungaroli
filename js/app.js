@@ -209,7 +209,10 @@ function zoneTrip(z,walk=null) {
   return {...travelTo(target,{minutes:a?.minutes??null,km:a?.km??null},{route:!!drive}),routeAvailable:!!drive,destination:drive?.name||z.name};
 }
 const walkTimeText=t=>{const a=t&&assessWalkingRoute(t),n=a?.trailRoundTripMinutes??a?.wholeTrailMinutes;return n!=null?`${Math.floor(n/60)} h${n%60?' '+n%60+' min':''} ${a.trailRoundTripMinutes!=null?'A/R':'andata'}`:'—';};
-const walkTimeFact=walk=>walk?fact('walk',`<span title="${walk.t.wholeTrailEvidence?'Solo sentiero; raccordo dalla sosta escluso. Eventuale ritorno: stima OSM sulla stessa via.':'Durata dell’uscita non definita: il tempo dell’intero sentiero non si trasferisce al tratto locale'}"><b>${walkTimeText(walk.t)==='—'?'Tempo da verificare':walkTimeText(walk.t)}</b><span class="walk-time-scope">${walk.t.wholeTrailEvidence?'solo sentiero':'a piedi'}</span></span>`):'';
+const walkTimeFact=walk=>{
+  const time=walk&&walkTimeText(walk.t);
+  return !time||time==='—'?'':fact('walk',`<span title="${walk.t.wholeTrailEvidence?'Solo sentiero; raccordo dalla sosta escluso. Eventuale ritorno: stima OSM sulla stessa via.':'Durata dell’uscita non definita: il tempo dell’intero sentiero non si trasferisce al tratto locale'}"><b>${time}</b><span class="walk-time-scope">${walk.t.wholeTrailEvidence?'solo sentiero':'a piedi'}</span></span>`);
+};
 
 function practicalTiming(z, d, walk = null) {
   const trip = zoneTrip(z, walk);
