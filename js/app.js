@@ -1,4 +1,4 @@
-import {assessWalkingRoute,driveAccessFor} from './outing-route.js';
+import {assessWalkingRoute,driveAccessFor,documentedTrailStart,geometrySignature} from './outing-route.js';
 import {renderTrailContext,renderMappedPlaces} from './trail-context.js';
 import {initExternalSignals,externalForecastMultiplier,combineFieldMultipliers} from './external-signals-client.js';
 import {initEditorialOutings,editorialOutings,editorialTitle,editorialReference,renderEditorialIndex,renderEditorialPage} from './editorial-outings.js';
@@ -170,13 +170,13 @@ const outOfSeason = (id) => { const members = groupMembers(id); return members.l
 
 let zones, weatherZones, origin, habitat, access, trails, traits, legal, series, results, map, zoneLayers = {}, zoneMedia = {}, outing = null;
 let baseMarker=null;
-function drivePoint(z,walk=null){return driveAccessFor(access?.[z.id]||[],z.parking||[],walk?.h);}
+function drivePoint(z,walk=null){return driveAccessFor(access?.[z.id]||[],z.parking||[],documentedTrailStart(walk?.t)||walk?.h);}
 function zoneTrip(z,walk=null) {
   const drive=drivePoint(z,walk),target=drive?.target||z,a=drive?.reference;
   return {...travelTo(target,{minutes:a?.minutes??null,km:a?.km??null},{route:!!drive}),destination:drive?.name||z.name};
 }
-const walkTimeText=t=>{const a=t&&assessWalkingRoute(t);return a?.wholeTrailMinutes!=null?`${Math.floor(a.wholeTrailMinutes/60)} h${a.wholeTrailMinutes%60?' '+a.wholeTrailMinutes%60:''} andata`:'—';};
-const walkTimeFact=walk=>walk?fact('walk',`<span title="${walk.t.wholeTrailEvidence?'Tempo dell’intero dal suo inizio; raccordo dalla sosta e ritorno da definire':'Durata dell’uscita non definita: il tempo dell’intero sentiero non si trasferisce al tratto locale'}"><b>${walkTimeText(walk.t)}</b><span class="walk-time-scope">${walk.t.wholeTrailEvidence?'sentiero completo':'a piedi'}</span></span>`):'';
+const walkTimeText=t=>{const a=t&&assessWalkingRoute(t),n=a?.trailRoundTripMinutes??a?.wholeTrailMinutes;return n!=null?`${Math.floor(n/60)} h${n%60?' '+n%60+' min':''} ${a.trailRoundTripMinutes!=null?'A/R':'andata'}`:'—';};
+const walkTimeFact=walk=>walk?fact('walk',`<span title="${walk.t.wholeTrailEvidence?'Solo sentiero; raccordo dalla sosta escluso. Eventuale ritorno: stima OSM sulla stessa via.':'Durata dell’uscita non definita: il tempo dell’intero sentiero non si trasferisce al tratto locale'}"><b>${walkTimeText(walk.t)}</b><span class="walk-time-scope">${walk.t.wholeTrailEvidence?'solo sentiero':'a piedi'}</span></span>`):'';
 
 function practicalTiming(z, d, walk = null) {
   const trip = zoneTrip(z, walk);
@@ -2724,6 +2724,13 @@ function walkForest(z,t){
   return n>=4?`<div class="ws-forest"><p class="small muted">Boschi lungo il tratto</p>${forestBar(Object.fromEntries(Object.entries(counts).map(([k,v])=>[k,v/n])))}</div>`:'';
 }
 
+function outingTiming(z,t,walk){
+ const a=assessWalkingRoute(t),v=t.routeValidation,trip=zoneTrip(z,walk),duration=n=>Number.isFinite(n)?n===0?'0 min':`${Math.floor(n/60)?Math.floor(n/60)+' h':''}${n%60?' '+n%60+' min':''}`.trim():'Da definire';
+ const cell=(icon,label,value,note)=>`<div class="outing-leg">${icon}<span><small>${label}</small><b>${value}</b><small>${note}</small></span></div>`;
+ const valid=v?.geometrySignature===geometrySignature(t.lines),network=valid&&v.status==='network_correspondence_checked';
+ return `<section class="walk-timing-status outing-plan" aria-label="Tempi e verifica dell’uscita"><header><b>Il giro, dall’auto al ritorno</b><small>Uscita da completare</small></header><div class="outing-legs">${cell(IC.car,'Auto · andata',esc(duration(trip.minutes)),esc(trip.destination))}${cell(IC.walk,'Sentiero · andata',esc(duration(a.outboundMinutes)),a.outboundMinutes!==null?'Dall’inizio del sentiero':'Tratto da verificare')}${cell(IC.walk,'Sentiero · ritorno',esc(duration(a.returnMinutes)),a.returnMinutes!==null?'Stima OSM · stessa via':'Percorso da definire')}${cell(ICON.track,'Sosta ↔ imbocco','Da verificare','Percorso dalla sosta')}</div>${a.trailRoundTripMinutes!==null?`<p class="outing-subtotal"><b>${duration(a.trailRoundTripMinutes)}</b> · ${fmtKm(a.trailRoundTripKm)} km sul sentiero A/R<small>Raccordo e soste esclusi · totale dall’auto ancora da definire</small></p>`:''}<details class="outing-evidence"><summary>Verifiche e fonti</summary><ul><li>${network?'Geometria confrontata con la rete OSM completa.':'Geometria completa ancora da verificare.'}</li><li>${valid&&v.parking?.status==='historically_reported_area'?'Sosta presso il cimitero citata dal CAI nel 2022; punto esatto e disponibilità attuale da confermare.':'Punto di sosta e possibilità di parcheggio da confermare.'}</li><li>Raccordo pedonale e tempo auto di ritorno da verificare. I tempi di cammino escludono le soste.</li></ul>${network?`<a href="${esc(v.sourceUrl)}" target="_blank" rel="noopener">OpenStreetMap · ${esc(v.sourceUpdatedOn)} · ODbL</a>`:''}${valid&&v.parking?.sourceUrl?` · <a href="${esc(v.parking.sourceUrl)}" target="_blank" rel="noopener">CAI · sosta descritta nel 2022</a>`:''}</details></section>`;
+}
+
 function renderWalkFocus(z, d, walk) {
   if (!walk) return `<p class="small muted">Non abbiamo ancora un sentiero documentato per questa zona.</p>`;
   const { t } = walk;
@@ -2740,7 +2747,7 @@ function renderWalkFocus(z, d, walk) {
     ${walkForest(z,t)}
     <button type="button" class="btn ghost" data-save-trip data-trip-zone="${z.id}" data-trip-href="${esc(walkHref(z,state.dayOffset,t))}" data-trip-title="${esc(trailName(t))}" data-trip-date="${d?.date||''}">${notebookGlyph}<span>Salva il giro nel taccuino</span></button>
     ${trailLinks(z, t)}
-    <div class="walk-timing-status">${IC.walk}<span><b>${t.wholeTrailEvidence?walkTimeText(t)+' · intero sentiero':'Durata dell’uscita da definire'}</b><small>${t.wholeTrailEvidence?esc(t.wholeTrailEvidence.direction)+' · '+esc(t.wholeTrailEvidence.startNote):'Il tempo dell’intero non è il tempo del tratto locale.'}</small><small>Raccordo dalla sosta e ritorno da verificare.</small></span></div>
+    ${outingTiming(z,t,walk)}
     <p class="small muted">Verifica accesso, sosta e stato del sentiero prima di partire.</p>
     <aside class="walk-data"><h3>Tracciato e limiti dei dati</h3><p>Il GPX contiene solo il tratto nella zona. Tempi e dislivello, quando disponibili, riguardano l’itinerario completo.</p><p>Tracciato OpenStreetMap / Waymarked Trails · imbocchi ricavati dalla rete stradale mappata.${state.target==='funghi'?' L’indice e le segnalazioni riguardano la zona, non questo singolo sentiero.':''}</p></aside>
     </div>
@@ -3187,7 +3194,7 @@ function trailVisual(z, t, d, heads = [], where = 'list') {
     <div class="trail-view-tabs" role="tablist" aria-label="Vista del tratto di ${esc(trailName(t))}">${[['profile',elevationLabel],['trace','Tracciato']].map(([v,label]) => `<button type="button" role="tab" id="${id}-${v}-tab" data-trail-view="${v}" aria-selected="${view===v}" aria-controls="${id}-${v}" tabindex="${view===v?0:-1}">${label}</button>`).join('')}</div>
     <div class="trail-visual-panel" role="tabpanel" id="${id}-trace" data-trail-panel="trace" aria-labelledby="${id}-trace-tab" tabindex="0"${view!=='trace'?' hidden':''}>${trace}</div>
     <div class="trail-visual-panel${profile?'':' trail-visual-panel--quotes'}" role="tabpanel" id="${id}-profile" data-trail-panel="profile" aria-labelledby="${id}-profile-tab" tabindex="0"${view!=='profile'?' hidden':''}>${profile||quotes}</div>
-    ${heads.length ? `<div class="th-row"><span class="th-k">Imbocchi</span><div class="th-list">${heads.map((h,k)=>`<a class="th-chip" id="${id}-head-${k}" data-trail-head="${k}" data-trail-head-chip href="${gmaps(h.lat,h.lon)}" target="_blank" rel="noopener" aria-label="Indicazioni stradali per l’imbocco ${k+1}${h.ele!=null?`, a ${h.ele} metri`:''}"><i class="th-n">${k+1}</i>${h.kind==='strada'?IC.car:ICON.track}<span><b>${h.ele!=null?`${h.ele.toLocaleString('it-IT')} m`:'Imbocco'}</b><small>${esc(h.road||(h.kind==='strada'?'su strada':'su sterrata'))}</small></span></a>`).join('')}</div></div>` : ''}
+    ${heads.length ? `<div class="th-row"><span class="th-k">Imbocchi</span><div class="th-list">${heads.map((h,k)=>`<a class="th-chip" id="${id}-head-${k}" data-trail-head="${k}" data-trail-head-chip href="https://www.openstreetmap.org/?mlat=${h.lat}&mlon=${h.lon}#map=17/${h.lat}/${h.lon}" target="_blank" rel="noopener" aria-label="Punto sulla mappa per l’imbocco ${k+1}${h.ele!=null?`, a ${h.ele} metri`:''}"><i class="th-n">${k+1}</i>${ICON.track}<span><b>${h.ele!=null?`${h.ele.toLocaleString('it-IT')} m`:'Imbocco'}</b><small>${esc(h.road||(h.kind==='strada'?'su strada':'su sterrata'))}</small></span></a>`).join('')}</div></div>` : ''}
   </div>`;
 }
 function selectTrailView(box, view) {
