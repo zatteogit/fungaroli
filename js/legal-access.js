@@ -17,7 +17,7 @@ function persist(){
 function setAccess(allowed){
  document.body.toggleAttribute('data-legal-pending',!allowed);
  document.querySelectorAll('body > .appbar,body > .tabbar,#views').forEach(el=>el.inert=!allowed);
- const loading=document.getElementById('legal-loading');if(loading)loading.hidden=allowed;
+ const loading=document.getElementById('legal-loading');if(loading)loading.hidden=allowed&&loading.dataset.ready==='true';
  dispatchEvent(new CustomEvent('fronda:legal-access',{detail:{accepted:allowed}}));
 }
 export async function configureLegalAccess(value,hash){
@@ -52,3 +52,5 @@ addEventListener('storage',async event=>{
  setAccess(!!receipt);
  if(!receipt)dispatchEvent(new Event('fronda:legal-required'));else syncAcceptance();
 });
+
+addEventListener('fronda:boot-ready',()=>{const loading=document.getElementById('legal-loading');if(loading){loading.dataset.ready='true';loading.hidden=!!receipt;}});

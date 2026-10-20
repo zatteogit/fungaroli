@@ -36,7 +36,7 @@ export const CONTENT_TEMPLATES = {
   infografiche:{file:'',alt:'',author:'',license:'',page:''},
   'media-glossary':{name:'',illustrations:[]},
 };
-export const isLockedField = key => ['samples','lines','line','sample_categories','in_zone_km','total_km','duration','ascent','generated','source'].includes(key);
+export const isLockedField = key => ['samples','lines','line','sample_categories','in_zone_km','total_km','duration','ascent','generated','source','sourceEvidence','publicPlaces','wholeTrailEvidence','outingAssessment'].includes(key);
 export const FIELD_LABELS = {
   samplingProvenance:'Provenienza del campionamento',province:'Province',coordinateProvenance:'Provenienza delle coordinate',radiusNote:'Significato del raggio',collectionStatus:'Stato della raccolta',collectionNote:'Regole locali',collectionSourceUrl:'Fonte delle regole locali',accessStatus:'Verifica degli accessi',manager:'Ente gestore',
   items:'Schede',rank:'Tipo di scheda',groupLabel:'Gruppo',paths:'Percorsi',reviewedOn:'Verificato il',publicationStatus:'Stato di pubblicazione',sourceIds:'Fonti citate',knownGaps:'Lacune editoriali',checkedOn:'Consultata il',publisher:'Ente autore',behavior:'Vita e abitudini',ecology:'Nell’ecosistema',cautions:'Cautele',
@@ -53,7 +53,7 @@ export const FIELD_LABELS = {
   file:'File immagine',file_hd:'Immagine grande',thumb:'Miniatura',author:'Autore',license:'Licenza',
   page:'Pagina della fonte',alt:'Testo alternativo',caption:'Didascalia',id:'Identificativo',
   lat:'Latitudine',lon:'Longitudine',parking:'Soste',access:'Accesso',protection:'Tutela e regole locali',law:'Norma',summary:'Sintesi per l’app',lookalikeNote:'Nota sui sosia',presenceNote:'Presenza nel Lazio',
-  ref:'Segnavia',operator:'Gestore',difficulty:'Difficoltà',editorialNote:'Nota della redazione',group:'Gruppo',
+  sourceEvidence:'Provenienza verificata',publicPlaces:'Punti utili mappati',relatedLinks:'Riferimenti esterni',caution:'Avvertenza breve',provider:'Sito o ente',relationship:'Relazione con il sentiero',checkedOn:'Ultima consultazione',authorLabel:'Autore della scheda',url:'Link',label:'Etichetta del collegamento',note:'Nota',status:'Stato della verifica',ref:'Segnavia',operator:'Gestore',difficulty:'Difficoltà',editorialNote:'Nota della redazione',group:'Gruppo',
   homeTitle:'Titolo della home',homeIntro:'Introduzione della home',otherPlacesTitle:'Titolo degli altri luoghi',
   speciesTitle:'Titolo delle specie',editorialEyebrow:'Etichetta dei taccuini',editorialTitle:'Titolo dei taccuini',
   communityEyebrow:'Etichetta della community',communityTitle:'Titolo della community',

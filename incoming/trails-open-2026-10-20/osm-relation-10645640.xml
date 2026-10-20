@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (1310 spike-08.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <relation id="10645640" visible="true" version="7" timestamp="2024-03-31T13:44:52Z">
+  <member type="way" ref="353193901" role="" />
+  <member type="way" ref="501081013" role="" />
+  <member type="way" ref="420768908" role="" />
+  <member type="way" ref="501081015" role="" />
+  <member type="way" ref="362120470" role="" />
+  <member type="way" ref="73228803" role="" />
+  <member type="way" ref="845351251" role="" />
+  <member type="way" ref="845351252" role="" />
+  <member type="way" ref="767561514" role="" />
+  <member type="way" ref="767561515" role="" />
+  <member type="way" ref="732142752" role="" />
+  <member type="way" ref="732142749" role="" />
+  <member type="way" ref="732142754" role="" />
+  <member type="way" ref="590837961" role="" />
+  <member type="way" ref="73228809" role="" />
+  <member type="way" ref="501081020" role="" />
+  <member type="way" ref="420880326" role="" />
+  <member type="way" ref="176324952" role="" />
+  <member type="way" ref="590837964" role="" />
+  <member type="way" ref="590837963" role="" />
+  <tag k="ascent" v="1120" />
+  <tag k="cai_scale" v="E" />
+  <tag k="descent" v="320" />
+  <tag k="distance" v="16.3" />
+  <tag k="duration:backward" v="05:00" />
+  <tag k="duration:forward" v="05:30" />
+  <tag k="from" v="Leonessa" />
+  <tag k="network" v="lwn" />
+  <tag k="operator" v="CAI Leonessa" />
+  <tag k="osmc:symbol" v="red:red:white_stripe:404:black" />
+  <tag k="ref" v="404" />
+  <tag k="ref:REI" v="ORIE4040" />
+  <tag k="route" v="hiking" />
+  <tag k="rwn:name" v="Rete Escursionistica Alpinistica Speleologica e Torrentistica Abruzzo (REASTA)" />
+  <tag k="source" v="survey:CAI" />
+  <tag k="source:ref" v="9232022" />
+  <tag k="symbol" v="404 on white red flags" />
+  <tag k="symbol:it" v="404 su bandierina bianca e rossa" />
+  <tag k="to" v="Rifugio Angelo Sebastiani" />
+  <tag k="type" v="route" />
+  <tag k="via" v="Vallonina" />
+ </relation>
+</osm>
