@@ -1164,8 +1164,8 @@ button.cover-index > span { font-size:11px; }
 #community-intro h2 { margin:0; font:600 20px/1.2 var(--font-display); }
 #community-intro .btn { color:var(--text); border-color:var(--hair); padding:8px 12px; }
 #community-intro > p { margin:6px 28px 4px 0; font-size:14px; line-height:1.45; max-width:76ch; }
-#community-intro summary { cursor:pointer; font-size:13px; min-height:44px; display:flex; align-items:center; gap:8px; }
-#community-intro summary::after { content:'+'; margin-left:auto; }
+#community-intro summary { width:fit-content; max-width:100%; cursor:pointer; font-size:13px; min-height:44px; display:flex; align-items:center; gap:8px; }
+#community-intro summary::after { content:'+'; margin-left:0; flex:none; }
 #community-intro details[open] summary::after { content:'−'; }
 #community-intro details p { font-size:14px; margin:8px 0; }
 .community-totals { margin:12px 0; padding:0; list-style:none; max-height:320px; overflow-y:auto; overscroll-behavior:contain; }
