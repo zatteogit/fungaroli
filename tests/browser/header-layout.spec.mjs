@@ -3,7 +3,7 @@ for(const width of [320,390,768,1280])test(`filtri della testata compatti con tu
   await page.setViewportSize({width,height:900});await page.emulateMedia({reducedMotion:'reduce'});
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.route('https://**/*',r=>r.abort());await page.route('**/api/weather/v1/forecast?**',r=>r.fulfill({status:503,json:{error:'No forecast needed for header layout'}}));
-  await page.addInitScript(()=>{localStorage.setItem('fungaroli:legal-accepted','42026-10-16');localStorage.setItem('fungaroli:prefs:v2',JSON.stringify({avoidCrowd:true,preferComfort:true,distancePenalty:true}));});
+  await page.addInitScript(()=>{localStorage.setItem('fungaroli:legal-accepted','62026-10-20');localStorage.setItem('fungaroli:prefs:v2',JSON.stringify({avoidCrowd:true,preferComfort:true,distancePenalty:true}));});
   await page.goto('/');const header=page.locator('#active-filters'),prefs=header.locator('[data-p]'),filters=page.locator('#appbar-home-filters [data-more]:visible,#home-filter-action [data-more]:visible').first();await expect(prefs).toHaveCount(3);await expect(filters).toHaveAccessibleName(/Filtri avanzati/);await expect(filters).toContainText('Filtri');for(const pref of await prefs.all())await expect(pref).toHaveAttribute('aria-pressed','true');
   expect(await filters.evaluate(el=>!!(el.compareDocumentPosition(document.querySelector('#active-filters [data-intent]')) & Node.DOCUMENT_POSITION_FOLLOWING))).toBe(true);
   const geometry=()=>header.evaluate(e=>{
@@ -23,7 +23,7 @@ for(const width of [320,390,768])for(const theme of ['light','dark'])for(const r
  await page.setViewportSize({width,height:800});await page.emulateMedia({reducedMotion:'reduce'});
  await page.route('https://**/*',r=>r.abort());
  await page.route('**/api/weather/v1/forecast?**',r=>r.fulfill({status:503,json:{error:'test'}}));
- await page.addInitScript(theme=>{localStorage.setItem('fungaroli:legal-accepted','42026-10-16');localStorage.setItem('fungaroli:theme',theme);localStorage.setItem('fungaroli:install-later',String(Date.now()));},theme);
+ await page.addInitScript(theme=>{localStorage.setItem('fungaroli:legal-accepted','62026-10-20');localStorage.setItem('fungaroli:theme',theme);localStorage.setItem('fungaroli:install-later',String(Date.now()));},theme);
  await page.goto(route);
  await expect(page.locator('body')).not.toHaveAttribute('data-legal-pending','');
  const heading=page.locator('.view:not([hidden]) .phero-title'),bar=page.locator('.appbar-title'),back=page.locator('.appbar-back');

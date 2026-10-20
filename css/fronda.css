@@ -426,7 +426,7 @@ body:has(#ranking .ring) #ranking-index-legend,body:has(#season .ring) #season-i
 .tile-wx.wx-sconsigliata { background:var(--crit-bg); color:var(--crit-ink); }
 .tile-wx .wxi { color:inherit; flex:none; }
 .tile .tile-wx, .tile .tile-wx .wxi { text-shadow:none; }
-#ranking .tile-wx { top:12px; left:12px; right:auto; }
+#ranking .tile-wx { top:12px; left:12px; right:auto; max-width:calc(100% - 152px); overflow-wrap:anywhere; }
 #ranking .tile .ring { top:12px; right:12px; }
 
 /* One ring construction throughout: equal stroke, equal rounded caps. */
@@ -1216,7 +1216,7 @@ a.daily-thought-credit { color:var(--link); text-underline-offset:3px; }
 .regional-route-preview>small { position:absolute; bottom:10px; left:14px; font-size:11px; color:var(--muted); }
 .regional-no-photo small { font:500 13px/1.5 var(--font-body); }
 /* Sans photo, la météo occupe sa propre ligne, jamais celle du jour. */
-#ranking .tile:not(:has(> img:not([data-image-state="error"]),> .outdoor-backdrop))>.tile-wx { position:relative; inset:auto; margin:12px 12px 0; align-self:flex-start; max-width:calc(100% - 148px); }
+#ranking .tile:not(:has(> img:not([data-image-state="error"]),> .outdoor-backdrop))>.tile-wx { position:relative; inset:auto; margin:12px 12px 0; align-self:flex-start; max-width:calc(100% - 152px); }
 #ranking .tile .ring.model-index { max-width:124px; }
 .day .d-area { display:flex; align-items:flex-start; gap:4px; grid-column:1/-1; font-size:11px; font-weight:500; line-height:1.35; white-space:normal; text-align:left; }
 .day .d-area svg { width:13px; height:13px; flex:none; fill:none; stroke:currentColor; stroke-width:1.8; margin-top:1px; }

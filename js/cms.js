@@ -53,7 +53,7 @@ function setWorkspace(view){
  $('#cms-dashboard').hidden=view!=='policy';$('#cms-content').hidden=view!=='content';$('#cms-overview').hidden=view!=='overview';$('#cms-external').hidden=!['records','sources','impact'].includes(view);$('#cms-questionnaires').hidden=view!=='surveys';
  document.querySelectorAll('[data-workspace]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.workspace===view)));
  if(view==='overview')overview?.load();
- if(view==='policy')dashboard?.load();
+ if(view==='policy')dashboard?.ensureLoaded();
  if(['records','sources','impact'].includes(view)){externalObservations?.setView(view);if(!$('#cms-external [data-external-list]').childElementCount)externalObservations?.load();}
  if(view==='surveys')surveys?.load();
  message('');

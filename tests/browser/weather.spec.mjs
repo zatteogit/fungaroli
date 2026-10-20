@@ -10,7 +10,7 @@ test('limite del servizio esplicito e recupero dal pulsante senza chiamate diret
   let unavailable=true,externalCalls=0;
   await page.route('https://**/*',r=>{if(new URL(r.request().url()).hostname==='api.open-meteo.com')externalCalls++;return r.abort();});
   await page.route('**/api/weather/v1/forecast?**',r=>unavailable?r.fulfill({status:429,json:{error:'Il servizio meteo ha raggiunto il limite di richieste. Riprova tra poco.'}}):r.fulfill({json:forecast(r.request())}));
-  await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','42026-10-16'));
+  await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','62026-10-20'));
   await page.goto('/');await expect(page.locator('#hero .error')).toContainText('limite di richieste');
   await expect(page.locator('#hero .error')).not.toContainText('Controlla la connessione');
   unavailable=false;await page.locator('#hero [data-retry]').click();await expect(page.locator('#hero .cover-link')).toBeVisible();
@@ -20,7 +20,7 @@ test('richiesta bloccata termina il loader con un messaggio di timeout',async({p
   await page.route('https://**/*',r=>r.abort());
   await page.route('**/api/weather/v1/forecast?**',async r=>{await new Promise(resolve=>setTimeout(resolve,350));try{await r.fulfill({json:forecast(r.request())});}catch{/* richiesta già interrotta */}});
   await page.addInitScript(()=>{
-    localStorage.setItem('fungaroli:legal-accepted','42026-10-16');
+    localStorage.setItem('fungaroli:legal-accepted','62026-10-20');
     const original=AbortSignal.timeout.bind(AbortSignal);AbortSignal.timeout=ms=>original(ms===20000?100:ms);
   });
   await page.goto('/');await expect(page.locator('#hero .error')).toContainText('impiega troppo tempo');
@@ -33,7 +33,7 @@ test('una zona indisponibile mantiene le altre e il retry recupera l’intero ca
     const lat=new URL(r.request().url()).searchParams.get('latitude').split(',')[0];missingLatitude??=lat;
     return unavailable&&lat===missingLatitude?r.fulfill({status:503,json:{error:'Zona temporaneamente non disponibile'}}):r.fulfill({json:forecast(r.request())});
   });
-  await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','42026-10-16'));
+  await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','62026-10-20'));
   await page.goto('/');await expect(page.locator('#hero .cover-link')).toBeVisible();
   await expect(page.locator('#stale')).toContainText('14 zone su 15');await expect(page.locator('#stale')).toContainText('Le altre non vengono valutate');
   const zones=(await(await page.request.get('/data/zones.json')).json()).zones,missing=zones.find(z=>String(z.lat)===missingLatitude);
@@ -44,6 +44,6 @@ test('una zona indisponibile mantiene le altre e il retry recupera l’intero ca
 test('catalogo botanico e calendario accessibili senza meteo, senza falsi indici fungini',async({page})=>{
  const errors=[];page.on('pageerror',e=>errors.push(e.message));
  await page.route('https://**/*',r=>r.abort());await page.route('**/api/weather/v1/forecast?**',r=>r.fulfill({status:503,json:{error:'Servizio temporaneamente indisponibile'}}));
- await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','42026-10-16'));await page.goto('/');await expect(page.locator('#hero .error')).toBeVisible();await expect(page.locator('[data-target]')).toHaveCount(0);
+ await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','62026-10-20'));await page.goto('/');await expect(page.locator('#hero .error')).toBeVisible();await expect(page.locator('[data-target]')).toHaveCount(0);
  await page.goto('/#/pianta/ortica');await expect(page.locator('#plant-detail h1')).toHaveText('Ortica');await page.locator('[data-botanical-method]>summary').click();await expect(page.locator('[data-botanical-method]')).toContainText(/calendario/i);await expect(page.locator('#plant-detail .ring')).toHaveCount(0);expect(errors).toEqual([]);
 });
