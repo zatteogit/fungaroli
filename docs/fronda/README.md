@@ -85,11 +85,18 @@ Usare una campitura di brand con testo scuro e una fotografia pertinente a lato,
 
 Questa direzione sostituisce la prima prova del 20 ottobre, che assegnava giallo all’azione e verde alla selezione.
 
-- **CTA:** verde leggermente più acceso e forma tonda/a capsula in light. In dark il verde dell’azione diventa bianco, con testo bosco notte. Icona pertinente e testo stanno nello stesso controllo, senza freccia decorativa aggiuntiva.
-- **Selezione:** giallo polline, rettangolo smussato e bordino leggibile, in entrambi i temi. Spunta nei filtri quando prevista, stato corrente nel gruppo di navigazione. I chip non prendono la forma della CTA.
+- **CTA:** verde leggermente più acceso in light, mantenendo le geometrie precedenti dei diversi controlli. In dark il verde dell’azione diventa bianco, con testo bosco notte. Icona pertinente e testo stanno nello stesso controllo, senza freccia decorativa aggiuntiva.
+- **Selezione:** giallo polline con le forme e i bordi precedenti dei diversi gruppi, in entrambi i temi. Spunta nei filtri quando prevista, stato corrente nel gruppo di navigazione. I chip conservano la forma a capsula.
 - **Secondarie e approfondimenti:** contorno o link nella famiglia del verde (bianco in dark), con la stessa geometria della famiglia di azioni. Il rilievo segue il contesto.
 - **Accenti editoriali:** giallo, ciclamino e corallo. Il corallo riprende il tono mostrato da Matteo nel badge «Mortale»; la somiglianza cromatica non unifica i ruoli. Token di rischio, testo esplicito e simboli restano dedicati agli avvisi.
 
-Le CTA hanno altezza minima di 44 px e raggio a capsula; le selezioni hanno raggio 12 px. Annota globale resta circolare su mobile ed è un comando, non una destinazione selezionata. Confronta e Impara a riconoscere sono accessi equivalenti nel catalogo.
+Le azioni principali mantengono un bersaglio comodo, di almeno 44 px; non si impone una nuova geometria unica alle selezioni. Annota globale resta circolare su mobile ed è un comando, non una destinazione selezionata. Confronta e Impara a riconoscere sono accessi equivalenti nel catalogo.
 
 La prima applicazione riguarda barra globale, strumenti del catalogo, selezioni condivise di filtri e navigazione, richiami editoriali e compositore rapido. I materiali PDF precedenti sono documentazione storica; questa sezione aggiorna le regole interattive.
+
+
+### Forme e bordi — correzione successiva del 21 ottobre
+
+Matteo preferisce le geometrie e i bordi precedenti alla prova: mantenere i nuovi colori di ruolo, senza uniformare selezioni e destinazioni della barra a una nuova forma rettangolare. Ripristinati i chip a capsula e i raggi originali dei diversi gruppi; gli strumenti del catalogo mantengono il raggio precedente. Rimossi il rinforzo globale dei bordi delle azioni secondarie e il contorno bianco delle selezioni gialle in dark. Questa correzione supera la prescrizione geometrica del paragrafo precedente.
+
+La frase del giorno conserva cornice e fondo discreti: testo in carattere editoriale, firma sotto e piccola etichetta separata; nessuna nuova illustrazione, cornice o azione aggiuntiva.
