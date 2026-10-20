@@ -143,3 +143,26 @@ probabilità o procedure sanitarie per completare una scheda. Foto reali soltant
 con fonte, autore e licenza; le foto mancanti stanno in `asset-pending.json`.
 Il seed della nuova risorsa entra nello snapshot; gli aggiornamenti del repository
 rispettano bozze e contenuti modificati dagli autori.
+
+## Spazio di ricerca e questionari (20 ottobre 2026)
+
+La redazione separa Panoramica, Segnalazioni, Fonti e ricerche, Uso nel motore, Questionari, Contenuti e Amministrazione. Le osservazioni si ordinano per giorno della raccolta; i filtri provincia, intervallo, revisione, fonte ed esito valgono anche nell’esportazione della vista. «Rieti · ultimi 14 giorni» usa il giorno dichiarato dell’osservazione, non la pubblicazione.
+
+`GET /api/cms/v1/external-observations/overview` restituisce conteggi, copertura temporale, province e uso nel motore. Il numero di voci non è un conteggio di uscite indipendenti o di abbondanza. Il grafico comprende solo date esatte. Le fonti conservano URL, query, accesso, copertura, cursore, ultimo controllo e storico.
+
+### Questionari dalla dashboard e da agenti
+
+Le risposte pubbliche e quelle inserite dalla redazione usano lo stesso schema e lo stesso database. La redazione può condurre un’intervista (`interview`) o trascrivere risposte già raccolte (`transcription`), cercare, modificare, riprendere risposte da una revisione precedente ed eliminare. Non è un editor della definizione delle domande. Il consenso è esplicito e inizialmente non selezionato. Le testimonianze non modificano automaticamente il modello.
+
+Un agente richiede la risorsa **`survey-responses`**, scope **`read`** e, per mutare, **`write`**. Il token si crea in «Accesso degli agenti», con scadenza e risorse limitate. Tutte le risposte API sono private (`Cache-Control: no-store`).
+
+- `GET /api/cms/v1/survey-responses/schema`: schema canonico, liste e scadenze.
+- `GET /api/cms/v1/survey-responses?q=...&mode=interview&page=0`: ricerca, 30 risultati per pagina. `includeAnswers=true` include le risposte complete correnti per esportazioni a pagine; nomi e contatti restano dati privati.
+- `GET /api/cms/v1/survey-responses/:id`: dettaglio e ultime 30 revisioni.
+- `POST /api/cms/v1/survey-responses`: crea con `{data, mode, collectedOn, reason}`. `data` segue lo schema restituito da `/schema`, inclusi `survey`, `version`, `respondent`, `consent`, `answers`.
+- `PATCH /api/cms/v1/survey-responses/:id`: stessi campi, più `revision` letta dal dettaglio. Conflitto `412`: rileggere e riconciliare; nessuna sovrascrittura silenziosa.
+- `DELETE /api/cms/v1/survey-responses/:id`: elimina risposta, metadati e storico.
+
+Le revisioni conservano risposte, provenienza, data dichiarata, autore e motivo; non archiviano copie storiche dei contatti. Il trigger di eliminazione copre anche cancellazione pubblica e pulizia delle scadenze. Il CSV per Excel continua a usare l’export originario; il JSON della nuova vista rispetta i filtri. Lo storico non attribuisce ai rispondenti le modifiche degli amministratori o degli agenti.
+
+Ricerca verificata: [audit delle proposte Gemini](research/2026-10-20-verifica-gemini.md). Il seed incrementale corregge solo proposte importate ancora alla revisione 0; preserva gli interventi umani e scrive lo storico. Nessuna coordinata precisa o nome di osservatore viene importato.

@@ -1,3 +1,5 @@
+import {mountSurveyAdmin} from './survey-admin.js';
+import {mountResearchOverview} from './research-overview.js';
 import {mountAdminDashboard} from './admin-dashboard.js';
 import {mountExternalObservations} from './external-observations-admin.js';
 import {openModal} from './modal-flow.js';
@@ -9,7 +11,7 @@ import { SURVEY_ID, SURVEY_ENDPOINT } from './survey-schema.js';
 
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-let dashboard,externalObservations;
+let dashboard,externalObservations,surveys,overview,workspaceView;
 let actor,items=[],release='0',doc,published,collection='',record='',dirty=false,opening=0;
 const editor=$('#cms-editor'),status=$('#cms-status');
 const title=k=>FIELD_LABELS[k]||k.replace(/_/g,' ');
@@ -23,7 +25,7 @@ async function api(path,method='GET',data,headers={}) {
 }
 function can(scope){return actor?.scopes?.includes(scope);}
 async function access() {
-  const n=++opening;dashboard?.dispose();dashboard=null;externalObservations?.dispose();externalObservations=null;
+  const n=++opening;surveys?.dispose();surveys=null;overview?.dispose();overview=null;dashboard?.dispose();dashboard=null;externalObservations?.dispose();externalObservations=null;
   try {
     const me=await api('me');if(n!==opening)return;actor=me.user;
     const allowed=can('read');$('#cms-access').hidden=allowed;$('#cms-workspace').hidden=!allowed;
@@ -34,21 +36,29 @@ async function access() {
     $('#cms-dashboard-tab').hidden=!can('admin');
     if(can('admin'))dashboard=mountAdminDashboard($('#cms-dashboard'),{api,openSurvey:()=>$('#cms-survey').click()});
     if(can('admin'))externalObservations=mountExternalObservations($('#cms-external'),{api});
-    setWorkspace(can('admin'));
+    if(can('admin')){surveys=mountSurveyAdmin($('#cms-questionnaires'),{api,openExports:()=>{$('#cms-survey-dialog').showModal();surveyCount();}});overview=mountResearchOverview($('#cms-overview'),{api,navigate:setWorkspace,filter:v=>externalObservations.setFilters(v)});}
+    document.querySelectorAll('[data-admin-tab]').forEach(b=>b.hidden=!can('admin'));
+    setWorkspace(can('admin')?'overview':'content');
     $('#cms-agents').hidden=!can('admin');$('#cms-survey').hidden=!can('admin');
     await refreshItems();
     if(!doc)await openItem(items.find(i=>!i.readonly)?.id);
   }catch(e){if(n!==opening)return;dashboard?.dispose();dashboard=null;$('#cms-workspace').hidden=true;$('#cms-access').hidden=false;$('#cms-access-status').textContent=e.status===401?'Accedi con il pulsante in alto.':e.message;}
 }
-function setWorkspace(isDashboard){
- $('#cms-dashboard').hidden=!isDashboard;$('#cms-content').hidden=isDashboard;
- $('#cms-external').hidden=!isDashboard;
- $('#cms-dashboard-tab').setAttribute('aria-pressed',String(isDashboard));$('#cms-content-tab').setAttribute('aria-pressed',String(!isDashboard));
- if(isDashboard&&!$('#cms-dashboard').childElementCount)dashboard?.load();
- if(isDashboard&&!$('#cms-external').childElementCount)externalObservations?.load();
+function setWorkspace(view){
+ if(typeof view==='boolean')view=view?'overview':'content';
+ if(view!=='surveys'&&surveys?.isDirty()){message('Salva o scarta la compilazione del questionario prima di cambiare sezione.',true);return;}
+ if(!['records','sources','impact'].includes(view)&&externalObservations?.isDirty()){message('Salva o annulla la modifica della segnalazione prima di cambiare sezione.',true);return;}
+ if(workspaceView==='content'&&view!=='content'&&dirty){message('Salva le modifiche al contenuto prima di cambiare sezione.',true);return;}
+ workspaceView=view;
+ $('#cms-dashboard').hidden=view!=='policy';$('#cms-content').hidden=view!=='content';$('#cms-overview').hidden=view!=='overview';$('#cms-external').hidden=!['records','sources','impact'].includes(view);$('#cms-questionnaires').hidden=view!=='surveys';
+ document.querySelectorAll('[data-workspace]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.workspace===view)));
+ if(view==='overview')overview?.load();
+ if(view==='policy')dashboard?.load();
+ if(['records','sources','impact'].includes(view)){externalObservations?.setView(view);if(!$('#cms-external [data-external-list]').childElementCount)externalObservations?.load();}
+ if(view==='surveys')surveys?.load();
+ message('');
 }
-$('#cms-dashboard-tab').onclick=()=>setWorkspace(true);
-$('#cms-content-tab').onclick=()=>setWorkspace(false);
+document.querySelectorAll('[data-workspace]').forEach(b=>b.onclick=()=>setWorkspace(b.dataset.workspace));
 async function refreshItems(){const r=await api('items');items=r.items;release=r.release;renderResources();}
 function renderResources(){
   const q=$('#cms-resource-search').value.toLowerCase();let group='';
@@ -178,7 +188,7 @@ $('#cms-resource-search').oninput=renderResources;
 $('#cms-resources').onclick=e=>{const b=e.target.closest('[data-resource]');if(b)openItem(b.dataset.resource);};
 $('#cms-agents').onclick=async()=>{
   const d=$('#cms-token-dialog');$('#cms-token-result').textContent='';
-  $('#cms-token-resources').innerHTML='<legend>Sezioni</legend><label><input type="checkbox" name="resource" value="external-observations"> Segnalazioni esterne e analisi del motore</label>'+CONTENT_RESOURCES.filter(r=>!r.readonly).map(r=>`<label><input type="checkbox" name="resource" value="${r.id}" ${r.id===doc?.id?'checked':''}> ${esc(r.title)}</label>`).join('');
+  $('#cms-token-resources').innerHTML='<legend>Sezioni</legend><label><input type="checkbox" name="resource" value="survey-responses"> Questionari: risposte, inserimento e revisione</label><label><input type="checkbox" name="resource" value="external-observations"> Segnalazioni esterne e analisi del motore</label>'+CONTENT_RESOURCES.filter(r=>!r.readonly).map(r=>`<label><input type="checkbox" name="resource" value="${r.id}" ${r.id===doc?.id?'checked':''}> ${esc(r.title)}</label>`).join('');
   openModal(d);await tokens();
 };
 $('#cms-token-dialog [data-close]').onclick=()=>{$('#cms-token-result').textContent='';$('#cms-token-dialog').close();};
@@ -218,7 +228,7 @@ function surveyRow(x){
   };
   row.append(info,del,err);return row;
 }
-$('#cms-survey').onclick=()=>{$('#cms-survey-result').textContent='';$('#cms-survey-find').reset();openModal($('#cms-survey-dialog'));surveyCount();};
+$('#cms-survey').onclick=()=>setWorkspace('surveys');
 $('#cms-survey-dialog [data-close]').onclick=()=>$('#cms-survey-dialog').close();
 $('#cms-survey-dialog').addEventListener('click',async e=>{
   const b=e.target.closest('[data-survey-download]');if(!b)return;
@@ -238,6 +248,6 @@ $('#cms-survey-find').onsubmit=async e=>{
     box.replaceChildren(...r.responses.map(surveyRow));
   }catch(err){box.textContent=err.message;}
 };
-addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.returnValue='';}});
+addEventListener('beforeunload',e=>{if(dirty||surveys?.isDirty()||externalObservations?.isDirty()){e.preventDefault();e.returnValue='';}});
 document.addEventListener('fungaroli:community',()=>{if(currentUser()?.id!==actor?.id){doc=null;dirty=false;editor.textContent='';access();}});
 initCommunity({zoneList:[]});await communityReady();await access();

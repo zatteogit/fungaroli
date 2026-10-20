@@ -13,7 +13,8 @@ const {externalFieldEvidence}=await import('../js/model.js');
 const seed=JSON.parse(readFileSync(new URL('../worker/external-observations-seed.json',import.meta.url)));
 const geminiSeed=JSON.parse(readFileSync(new URL('../worker/gemini-research-seed.json',import.meta.url)));
 const sourceSeed=JSON.parse(readFileSync(new URL('../worker/external-sources-seed.json',import.meta.url)));
-const TOTAL=seed.records.length+geminiSeed.records.length;
+const reviewSeed=JSON.parse(readFileSync(new URL('../worker/research-review-seed.json',import.meta.url)));
+const TOTAL=seed.records.length+geminiSeed.records.length+reviewSeed.records.length;
 const NOW=Date.parse('2026-10-20T12:00:00Z'),ORIGIN='https://fungaroli.test';
 function d1(sql){
  const stmt=(q,p=[])=>{const exec=()=>{const s=sql.prepare(q);return /^\s*SELECT\b/i.test(q)||/\bRETURNING\b/i.test(q)?{results:s.all(...p),meta:{changes:0}}:{results:[],meta:{changes:Number(s.run(...p).changes)}};};return{exec,bind:(...v)=>stmt(q,v),all:async()=>exec(),run:async()=>exec(),first:async k=>{const r=exec().results[0]??null;return k&&r?r[k]:r;}};};
@@ -132,7 +133,7 @@ test('agenti: credenziali limitate, schema, lettura e calcolo, scritture revisio
  const escalation=await handleCms(new Request(ORIGIN+'/api/cms/v1/tokens',{method:'POST',headers:{authorization:'Bearer '+review.token,'content-type':'application/json'},body:'{}'}),env,NOW);assert.equal(escalation.status,403);
 });
 test('registro fonti: copertura reale, cursore, storico, conflitti e seed senza sovrascritture',async()=>{
- const {env}=setup();const first=await req(env,'/sources');assert.equal(first.status,200);const list=await first.json();assert.equal(list.items.length,sourceSeed.length);assert.equal(list.items.filter(r=>r.id.startsWith('facebook-group-')).length,4);assert.ok(list.items.some(r=>r.data.query.includes('place_id=33138')));
+ const {env}=setup();const first=await req(env,'/sources');assert.equal(first.status,200);const list=await first.json();assert.equal(list.items.length,sourceSeed.length+2);assert.equal(list.items.filter(r=>r.id.startsWith('facebook-group-')).length,4);assert.ok(list.items.some(r=>r.data.query.includes('place_id=33138')));
  let row=await(await req(env,'/sources/'+list.items[0].id)).json();const data={...row.data,cursor:'Ultimo post consultato: da verificare al prossimo passaggio',notes:'Consultazione locale di verifica della persistenza'};
  let response=await req(env,'/sources/'+row.id,'PATCH',{version:row.version,data,reason:'Aggiornamento punto di ripresa'});assert.equal(response.status,200);row=await response.json();assert.equal(row.history.length,2);assert.equal(row.version,1);assert.equal(row.data.cursor,data.cursor);
  assert.equal((await req(env,'/sources/'+row.id,'PATCH',{version:0,data,reason:'Versione obsoleta'})).status,412);

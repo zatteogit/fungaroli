@@ -1,6 +1,7 @@
 import schema from '../migrations/0010_external_observations.sql';
 import seed from './external-observations-seed.json';
 import geminiSeed from './gemini-research-seed.json';
+import reviewSeed from './research-review-seed.json';
 import zones from '../data/zones.json';
 import traits from '../data/species-traits.json';
 import {canonicalSource,normalizeExternalObservation,externalUsability,externalEngineDataset} from '../js/external-observation.js';
@@ -15,7 +16,7 @@ export async function initExternalObservations(db){
  if(!db)fail('Database delle segnalazioni non disponibile.',503);
  if(!initialized.has(db))initialized.set(db,(async()=>{
   await db.batch(schema.split(';').map(s=>s.trim()).filter(Boolean).map(s=>db.prepare(s)));
-  for(const batchSeed of [{...seed,importId:'external-2026-10-20-v1'},geminiSeed]){
+  for(const batchSeed of [{...seed,importId:'external-2026-10-20-v1'},geminiSeed,reviewSeed]){
   const imported=await db.prepare('SELECT id,imported_at AS importedAt,record_count AS records FROM external_observation_imports WHERE id=?').bind(batchSeed.importId).first();
   if(imported)continue;
   // Importazione idempotente: i dati già corretti dalla dashboard non vengono riscritti.
@@ -28,6 +29,14 @@ export async function initExternalObservations(db){
     writes.push(db.prepare("INSERT INTO external_observation_history(observation_id,version,payload,updated_at,updated_by,reason) SELECT id,version,payload,updated_at,updated_by,'Importazione con fonte, provenienza e limiti; controllare lo stato di revisione' FROM external_observations WHERE id=? AND write_nonce=? ON CONFLICT DO NOTHING").bind(id,nonce));
    }
    await db.batch(writes);
+  }
+  for(const patch of batchSeed.patches||[]){
+   const r=normalizeExternalObservation(patch.data,catalog),nonce=crypto.randomUUID(),now=Date.now();
+   // Preserve subsequent human edits; the release corrects only untouched imported proposals.
+   await db.batch([
+    db.prepare("UPDATE external_observations SET payload=?,observed_on=?,zone_id=?,taxon_id=?,outcome=?,review_status=?,version=version+1,updated_at=?,updated_by=?,write_nonce=? WHERE id=? AND version=0 AND updated_by LIKE 'release:%'").bind(JSON.stringify(r),r.observedOn,r.zoneId,r.taxonId,r.outcome,r.reviewStatus,now,'release:'+batchSeed.importId,nonce,patch.id),
+    db.prepare('INSERT INTO external_observation_history(observation_id,version,payload,updated_at,updated_by,reason) SELECT id,version,payload,updated_at,updated_by,? FROM external_observations WHERE id=? AND write_nonce=?').bind(patch.reason,patch.id,nonce)
+   ]);
   }
   const count=await db.prepare(`SELECT COUNT(*) AS n FROM external_observations WHERE id IN (${batchSeed.records.map(()=>'?').join(',')})`).bind(...batchSeed.records.map(r=>r.id)).first('n');
   if(count!==batchSeed.records.length)fail('Importazione iniziale incompleta: una fonte è già presente con un altro identificativo.',503);
@@ -51,15 +60,23 @@ export async function listExternalObservations(db,params){
  await initExternalObservations(db);
  const q=params.get('q')||'',status=params.get('status')||'',source=params.get('source')||'';
  if(q.length>160||status&&!['pending','accepted','excluded'].includes(status)||source&&!['facebook','inaturalist','forum','editorial','other'].includes(source))fail('Filtri non validi.');
- const page=Number(params.get('page')||0);if(!Number.isInteger(page)||page<0||page>10000)fail('Pagina non valida.');
+ const page=Number(params.get('page')||0);
+ const pageSize=Number(params.get('pageSize')||30),province=params.get('province')||'',from=params.get('from')||'',to=params.get('to')||'',outcome=params.get('outcome')||'',sort=params.get('sort')||'observed-desc';
+ const sorts={'observed-desc':"COALESCE(observed_on,'') DESC,id",'observed-asc':"COALESCE(observed_on,'') ASC,id",updated:'updated_at DESC,id',province:"COALESCE(json_extract(payload,'$.province'),'') ASC,observed_on DESC,id"};
+ if(![30,50,100].includes(pageSize)||province&&!['Rieti','Roma','Viterbo','Latina','Frosinone'].includes(province)||from&&!/^\d{4}-\d{2}-\d{2}$/.test(from)||to&&!/^\d{4}-\d{2}-\d{2}$/.test(to)||from&&to&&from>to||outcome&&!['presence','searched_absent','absence_claim','mixed','context'].includes(outcome)||!Object.hasOwn(sorts,sort))fail('Filtri o ordinamento non validi.');if(!Number.isInteger(page)||page<0||page>10000)fail('Pagina non valida.');
  const conditions=[],bindings=[];
  if(q){conditions.push("(json_extract(payload,'$.summary') LIKE ? ESCAPE '\\' OR json_extract(payload,'$.placeName') LIKE ? ESCAPE '\\' OR json_extract(payload,'$.reportedTaxon') LIKE ? ESCAPE '\\')");const search='%'+q.replace(/[\\%_]/g,'\\$&')+'%';bindings.push(search,search,search);}
+ if(province){conditions.push("json_extract(payload,'$.province')=?");bindings.push(province);}
+ if(from){conditions.push('observed_on>=?');bindings.push(from);}
+ if(to){conditions.push('observed_on<=?');bindings.push(to);}
+ if(outcome){conditions.push('outcome=?');bindings.push(outcome);}
  if(status){conditions.push('review_status=?');bindings.push(status);}
  if(source){conditions.push("json_extract(payload,'$.sourceType')=?");bindings.push(source);}
  const where=conditions.length?' WHERE '+conditions.join(' AND '):'';
  const total=await db.prepare('SELECT COUNT(*) AS n FROM external_observations'+where).bind(...bindings).first('n');
- const rows=(await db.prepare('SELECT * FROM external_observations'+where+' ORDER BY COALESCE(observed_on,\'\') DESC,id LIMIT 30 OFFSET ?').bind(...bindings,page*30).all()).results;
- return {items:rows.map(view),total,page,pageSize:30};
+ const rows=(await db.prepare('SELECT * FROM external_observations'+where+' ORDER BY '+sorts[sort]+' LIMIT ? OFFSET ?').bind(...bindings,pageSize,page*pageSize).all()).results;
+ const stats=await db.prepare("SELECT COUNT(*) AS records,SUM(review_status='accepted') AS accepted,SUM(review_status='pending') AS pending,SUM(review_status='excluded') AS excluded FROM external_observations"+where).bind(...bindings).first();
+ return {items:rows.map(view),total,page,pageSize,stats};
 }
 
 export async function readExternalObservation(db,id){
