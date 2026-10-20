@@ -1,5 +1,6 @@
 import schema from '../migrations/0011_external_sources.sql';
 import seeds from './external-sources-seed.json';
+import review from './research-review-seed.json';
 import {canonicalSource,validExternalDay} from '../js/external-observation.js';
 const initialized=new WeakMap();
 const fail=(m,status=422)=>{throw Object.assign(new Error(m),{status});};
@@ -12,6 +13,19 @@ async function init(db){
   const writes=[];
   for(const r of seeds){const data=normalize(r.data),now=Date.now(),nonce=crypto.randomUUID();writes.push(db.prepare('INSERT INTO external_sources(id,source_key,payload,updated_at,updated_by,nonce) VALUES(?,?,?,?,?,?) ON CONFLICT DO NOTHING').bind(r.id,data.url,JSON.stringify(data),now,'release:external-sources',nonce));writes.push(db.prepare("INSERT INTO external_source_history(source_id,version,payload,updated_at,updated_by,reason) SELECT id,version,payload,updated_at,updated_by,'Registro delle fonti consultate il 20 ottobre 2026' FROM external_sources WHERE id=? AND nonce=? ON CONFLICT DO NOTHING").bind(r.id,nonce));}
   await db.batch(writes);
+  for(const patch of review.patches){
+   const id='source-'+patch.id,row=await db.prepare('SELECT * FROM external_sources WHERE id=?').bind(id).first();
+   if(!row||row.version!==0||!row.updated_by.startsWith('release:'))continue;
+   const data=JSON.parse(row.payload);data.lastCheckedOn='2026-10-20';data.coverage=patch.reason;data.notes='Verifica indipendente della proposta Gemini. '+patch.data.limitations;data.cursor='Verificato il contenuto citato; ripartire dalla fonte e distinguere raccolta da pubblicazione.';
+   if(['gemini-rec-07','gemini-rec-23','gemini-rec-24'].includes(patch.id))data.status='unavailable';
+   const normalized=normalize(data),nonce=crypto.randomUUID(),now=Date.now();
+   await db.batch([db.prepare('UPDATE external_sources SET payload=?,version=version+1,updated_at=?,updated_by=?,nonce=? WHERE id=? AND version=0').bind(JSON.stringify(normalized),now,'release:'+review.importId,nonce,id),db.prepare('INSERT INTO external_source_history(source_id,version,payload,updated_at,updated_by,reason) SELECT id,version,payload,updated_at,updated_by,? FROM external_sources WHERE id=? AND nonce=?').bind('Verifica della fonte originale e correzione della proposta Gemini',id,nonce)]);
+  }
+  for(const [i,c] of review.coverage.entries()){
+   const data=normalize({name:'iNaturalist – controllo recente '+(i?'Lazio':'Rieti'),url:c.url,kind:'inaturalist',territory:i?'Lazio':'Rieti',access:'API pubblica, nessuna autenticazione',query:'Funghi osservati dal 6 al 20 ottobre 2026'+(i?', research grade':''),lastCheckedOn:'2026-10-20',resumeUrl:c.url,cursor:'Pagina 1 completa; '+c.read+'/'+c.totalResults+' risultati letti',coverage:'Finestra 6–20 ottobre 2026. Totale complessivo: 40 nuove voci Lazio, nessuna nuova Rieti. Nessuna nuova associazione a zona/specie del motore.',notes:'Coordinate e osservatori non conservati. Assenza di osservazioni non equivale ad assenza di funghi.',status:'active'}),id='recent-inat-2026-10-20-'+i,nonce=crypto.randomUUID(),now=Date.now();
+   await db.batch([db.prepare('INSERT INTO external_sources(id,source_key,payload,updated_at,updated_by,nonce) VALUES(?,?,?,?,?,?) ON CONFLICT DO NOTHING').bind(id,data.url,JSON.stringify(data),now,'release:'+review.importId,nonce),db.prepare('INSERT INTO external_source_history(source_id,version,payload,updated_at,updated_by,reason) SELECT id,version,payload,updated_at,updated_by,? FROM external_sources WHERE id=? AND nonce=? ON CONFLICT DO NOTHING').bind('Ricerca recente completa e cursore riutilizzabile',id,nonce)]);
+  }
+
  })().catch(e=>{initialized.delete(db);throw e;}));await initialized.get(db);
 }
 function normalize(data,now=Date.now()){

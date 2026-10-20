@@ -66,7 +66,7 @@ test('limiti, indirizzo e nome del questionario vengono dallo schema, non dalla 
 
 test('redazione: pannello delle risposte per gli amministratori, con l’API dello schema', () => {
   const html = read('redazione.html'), cms = read('js/cms.js');
-  assert.match(html, /<button class="btn ghost" id="cms-survey" type="button" hidden>Risposte al questionario<\/button>/);
+  assert.match(html, /<button class="btn ghost" id="cms-survey" type="button" hidden>Questionari<\/button>/);
   assert.match(html, /<dialog id="cms-survey-dialog"/);
   // «CSV per Excel» (punto e virgola, &sep=semicolon) come scelta principale; restano la virgola e il JSON
   assert.match(html, /<button type="button" class="btn primary" data-survey-download="csv-excel">CSV per Excel<\/button>/);
