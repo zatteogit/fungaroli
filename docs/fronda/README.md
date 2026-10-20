@@ -104,4 +104,4 @@ La frase del giorno conserva cornice e fondo discreti: testo in carattere editor
 
 ### Verde e bordi dei selettori — ulteriore affinamento del 21 ottobre
 
-Il verde delle CTA in light torna al bosco del marchio, senza schiarirlo. In dark le azioni restano bianche. La scelta Funghi nella home usa lo stesso bordo singolo degli altri selettori gialli: nessun secondo filetto aggiunto da un’ombra interna.
+Il verde delle CTA in light riprende l’inchiostro bosco originale di Annota (#18382C), senza schiarirlo. In dark le azioni restano bianche. La scelta Funghi nella home usa lo stesso bordo singolo degli altri selettori gialli: nessun secondo filetto aggiunto da un’ombra interna.
