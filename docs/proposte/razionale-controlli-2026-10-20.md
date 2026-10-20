@@ -1,3 +1,5 @@
+> **Revisione di Matteo, 21 ottobre 2026:** la prima prova descritta sotto è superata. La direzione applicata usa CTA verdi tondeggianti in light, bianche in dark; selezioni gialle rettangolari smussate con bordino; accenti giallo/ciclamino/corallo. Riferimento corrente: [guide di brand](../fronda/README.md). La tavola HTML segue la revisione, la prima immagine PNG rimane un confronto storico della prova iniziale.
+
 # Controlli Fronda: ruoli, gerarchia e temi
 
 Stato: direzione approvata da Matteo con «ok proviamo» il 20 ottobre 2026. Prima applicazione nella versione 297: Annota globale, strumenti del catalogo, selezioni condivise e navigazione. Le sezioni di analisi sottostanti descrivono il punto di partenza, prima dell’intervento. Esempi interattivi: [linguaggio-controlli.html](linguaggio-controlli.html).

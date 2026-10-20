@@ -21,3 +21,8 @@ Se si indica una zona e il giorno è oggi, si conserva la previsione della matti
 Unità: validazione foto, nota senza nome/luogo, priorità foto personale, vincolo del meteo al contesto. Browser: 320/390/768/1280, due temi, inserimento, riapertura dopo reload, modifica, separazione degli archivi, errore di spazio, inserimento senza fotografia e ricerca.
 
 Il server Worker locale incontra un errore di avvio esbuild EBADF sul Mac: le verifiche browser locali usano il server statico; la suite completa e le API si verificano nella CI su Linux. La deroga concessa per i video non si estende automaticamente a questo rilascio.
+
+
+## Revisione del modulo · 21 ottobre 2026
+
+Il compositore rapido usa un caricamento foto facoltativo compatto con icona macchina fotografica; una foto allegata rimane visibile completa e può essere sostituita o rimossa. I tipi hanno etichette brevi e stato verde tenue/spunta. Nome e relativa cautela sono raccolti nello stesso gruppo; luogo, data e note restano nei dettagli espandibili. «Salva nel taccuino» è l’unica azione primaria e non ha una freccia decorativa aggiuntiva. L’accesso agli altri appunti rimane un link secondario. Rimossi il pannello foto vuoto sovradimensionato e il fondo scuro separato della fascia di salvataggio. Nessun cambio a sincronizzazione, privacy, validazione o contenuto salvato.
