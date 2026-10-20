@@ -27,6 +27,8 @@ import {initPlants,plants,plantName,plantRecord,plantThumb,plantHeroSrc,renderPl
 import {botanicalModels} from './botanical-model.js';
 import './theme.js';
 import './images.js';
+import './atmosphere-video.js';
+import {atmosphere,homeAtmosphere} from './atmosphere.js';
 import { consumeFresh, freshDone } from './refresh.js';
 import {updateWeatherHTML,updateHTMLTracked,reconcileChildren,keepWeatherReadingPosition} from './weather-dom.js';
 import { SPECIES, GROUPS, FOREST } from './species.js';
@@ -915,10 +917,10 @@ function routeCover(z){
  const t=chooseWalkTrail([],trails[z.id]?.trails||[],t=>headsOf(z,t)),preview=trailPreview(t);
  return preview?`<span class="regional-route-preview">${preview}<span class="route-preview-meta"><b>${esc(t.ref||'Sentiero')}</b><span>${fmtKm(t.in_zone_km)} km${t.difficulty?' · '+esc(t.difficulty):''}</span></span><small>Tratto mappato · OSM</small></span>`:`<span class="regional-no-photo">${IC.map}<small>Mappa della zona</small></span>`;
 }
-function homeCover({c,photo,body,score=null,extraClass=''}) {
+function homeCover({c,body,score=null,extraClass=''}) {
   const title=splitName(c.z)[0];
   return `<div class="cover cover-editorial vtn ${extraClass}" style="--vtn:cover">
-    ${extraClass.includes('outdoor-hero')?outdoorBackdrop():''}${trailPreview(c.walk?.t,{background:true})}${photo?`<img class="cover-img" data-src="${photo.hd}" alt="${esc(photo.alt||'')}" fetchpriority="high">`:''}<span class="shade"></span>
+    ${atmosphere(state.target==='piante'?'gocce-sulla-felce':homeAtmosphere({walking:state.target==='passeggiata'}),{hero:true})}<span class="shade"></span>
     <a class="cover-link" data-walk-zone="${c.z.id}" href="${walkHref(c.z,c.o,c.walk?.t)}" aria-label="${esc(title)}, ${esc(dayLabel(c.o,c.d.date,true))}: i dettagli della passeggiata"></a>
     <span class="cover-top"><span class="pill glass">${esc(dayLabel(c.o,c.d.date,true))}</span>${score===null?'':`<button type="button" class="cover-index" data-index-tip aria-expanded="false" aria-label="Condizioni di crescita ${formatIndex(score)} su 10: come leggerle"><span>Condizioni di crescita</span><b>${fungusGlyph}<span>${formatIndex(score)}<small>/10</small></span></b></button>`}</span>
     <span class="cover-body">${body}</span></div>`;
@@ -950,7 +952,7 @@ function outdoorTile(c,hero=false) {
       ${plantCoverHint(c)}
       <span class="facts" aria-label="L’uscita in breve">${fact('car',`<span><b>${compactTravel(zoneTrip(c.z,c.walk))}</b></span>`)}${walkTimeFact(c.walk)}${w?`<span class="fact wx-${w.level}" title="${esc(w.text)}">${wxi(w)}<span class="fx">${w.available?esc(w.level==='ok'?w.main:w.short||w.main):'Meteo non disponibile'}</span></span>`:''}</span>
       <span class="cover-cta" aria-hidden="true">Dai uno sguardo <span>→</span></span>`;
-    return homeCover({c,photo:cv,body,extraClass:'outdoor-hero'});
+    return homeCover({c,body,extraClass:'outdoor-hero'});
   }
   const brief=`${c.walk.t.difficulty||'Difficoltà n.d.'} · ${fmtKm(c.walk.t.in_zone_km)} km nel tratto`;
   return `<a class="tile outdoor-tile" data-walk-zone="${c.z.id}" href="${walkHref(c.z,c.o,c.walk.t)}">${outdoorBackdrop()}${cv?`<img data-src="${cv.small}" alt="" loading="lazy">`:''}<span class="shade"></span>${w&&w.level!=='ok'?`<span class="tile-wx wx-${w.level}" title="${esc(w.text)}">${wxi(w)}${esc(OUTING_LABEL[w.level])}</span>`:''}<span class="tile-body"><span class="tile-day">${esc(dayLabel(c.o,c.d.date,true))}</span><b>${esc(splitName(c.z)[0])}</b>${c.z.collectionStatus==='observation_only'?'<small>Uscita di osservazione</small>':''}<small>${esc(brief)}</small></span></a>`;
@@ -1887,13 +1889,12 @@ function renderHome() {
   const t = state.target==='funghi'&&hero.d.crowd ? timingAdvice({ dateStr: hero.d.date, lat: hero.z.lat, lon: hero.z.lon, crowd: hero.d.crowd }) : null;
   const a0 = access[hero.z.id]?.[0];
   const [title, sub] = splitName(hero.z);
-  const cov = coverOf(hero.z, hero.d.best.species.id, hero.d);
   const w0 = wxOf(hero.z, hero.d);
   // il posto con l'indice piu' alto quel giorno, se il meteo della mattina l'ha fatto scendere: nota breve e cliccabile
   const g = list.filter((c) => c.o === hero.o).sort((a, b) => b.s - a.s)[0], wg = g && wxOf(g.z, g.d);
   const note = g && g.z.id !== hero.z.id && wg && wg.level !== 'ok'
     ? `<a class="cover-note" href="#/zona/${g.z.id}/${g.o}"><span>${wxi(wg)}<span class="cover-note-place"><small>In alternativa</small><b>${esc(splitName(g.z)[0])}</b></span> <span class="pc-up growth-value">${indexGlyph(g.s)}${formatIndex(g.s)}</span> ma ${esc(wg.short || wg.main)}</span><span aria-hidden="true">›</span></a>` : '';
-  const heroHTML = `${state.seasonSuspended?'<p class="notice">Filtro sulle specie sospeso fuori dal calendario indicativo. <button type="button" class="link-btn" data-season-restore>Ripristina la scelta</button></p>':''}${homeCover({c:hero,photo:cov,score:hero.s,body:`
+  const heroHTML = `${state.seasonSuspended?'<p class="notice">Filtro sulle specie sospeso fuori dal calendario indicativo. <button type="button" class="link-btn" data-season-restore>Ripristina la scelta</button></p>':''}${homeCover({c:hero,score:hero.s,body:`
         <span class="cover-title">${esc(title)}</span>${sub ? `<span class="cover-sub">${esc(sub)}</span>` : ''}
         ${hero.walk ? `<span class="cover-walk"><b>${esc(hero.walk.microzone)}</b><span>${esc(walkBrief(hero.walk))}</span></span>` : ''}
         <span class="cover-sp">${thumb(hero.d.best.species.id, 44)}<span><small>${hero.d.best.kind==='plant'?'Da osservare':'Da conoscere in questi boschi'}</small><span class="cover-sp-name"><b>${esc(hero.d.best.species.name)}</b> ${reportBadge(hero.z.id, hero.d.best.species.id)}</span>

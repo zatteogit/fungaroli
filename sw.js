@@ -4,12 +4,15 @@
 // - meteo Open-Meteo: gestito dall'app con data di acquisizione e limite d'età
 // - mappe: dalla cache se gia' viste, con un limite di tessere
 // - diario (/api/): mai in cache
-const SHELL = 'fungaroli-shell-v265';
+const SHELL = 'fungaroli-shell-v266';
 const RUNTIME = 'fungaroli-runtime-v1';
 const TILES = 'fungaroli-tiles-v1';
 const CONTENT = 'fungaroli-content-v1';
 const MAX_TILES = 1500;
 const PRECACHE = [
+  'js/atmosphere.js', 'js/atmosphere-video.js', 'css/atmosphere.css',
+  'assets/video/nature/autunno-poster-small.webp', 'assets/video/nature/luce-tra-le-foglie-poster-small.webp',
+  'assets/video/nature/bosco-e-sentiero-poster-small.webp', 'assets/video/nature/gocce-sulla-felce-poster-small.webp', 'assets/video/nature/ombre-di-foglie-poster-small.webp',
   'js/daily-thought.js', 'data/daily-thoughts.json',
   'js/trail-context.js', 'js/outing-route.js',
   'js/external-observation.js', 'js/external-signal.js', 'js/external-signals-client.js',
@@ -88,6 +91,8 @@ self.addEventListener('fetch', (e) => {
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
   if (url.origin === location.origin) {
+    // Streaming e richieste Range: gestiti dal browser, mai copiati nella cache PWA.
+    if (url.pathname.startsWith('/assets/video/') && url.pathname.endsWith('.mp4')) return;
     if(url.pathname==='/api/content/v1/snapshot'){e.respondWith(networkFirst(req,RUNTIME));return;}
     if(url.pathname.startsWith('/redazione')||url.pathname.startsWith('/api/cms/'))return;
     // Il questionario è una pagina a sé: senza rete non deve aprirsi l'app (ripiego su index.html).

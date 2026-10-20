@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="utf-8">
-  <meta name="app-version" content="fungaroli-shell-v265">
+  <meta name="app-version" content="fungaroli-shell-v266">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
   <link rel="preload" href="data/crop-points.json" as="fetch" crossorigin>
   <meta name="theme-color" content="#f7f4ea" media="(prefers-color-scheme: light)">
@@ -28,6 +28,7 @@
   <link rel="stylesheet" href="css/animals.css">
   <link rel="stylesheet" href="css/map-experience.css">
   <link rel="stylesheet" href="css/notebook.css">
+  <link rel="stylesheet" href="css/atmosphere.css">
   <link rel="stylesheet" href="css/editorial-outings.css">
   <script>try{var t=localStorage.getItem('fungaroli:theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
   <noscript><style>#hero .loader { display: none; }</style></noscript>
@@ -107,7 +108,10 @@
       <ul id="season" class="rail rail-portrait" aria-labelledby="season-h"></ul>
       <div id="season-index-legend" class="index-legend-slot"></div>
       </section>
-      <aside class="story-invite story-blue home-band" aria-labelledby="home-guide-title"><div><h2 id="home-guide-title">Guarda più vicino.</h2><p>Le parole del bosco, quando ti servono.</p><a class="btn primary" href="#/impara">Scopri le nostre guide <span aria-hidden="true">→</span></a></div><figure class="story-photo"><a href="#/pianta/ginestra-odorosa" aria-label="Ginestra odorosa: apri la scheda"><img src="assets/plants/ginestra-odorosa-1.webp" alt="" loading="lazy" decoding="async"></a></figure></aside>
+      <aside class="story-invite story-blue home-band" aria-labelledby="home-guide-title"><div><h2 id="home-guide-title">Guarda più vicino.</h2><p>Le parole del bosco, quando ti servono.</p><a class="btn primary" href="#/impara">Scopri le nostre guide <span aria-hidden="true">→</span></a></div><figure class="atmosphere story-photo" data-atmosphere="gocce-sulla-felce">
+    <span class="atmosphere-media" aria-hidden="true"><img class="atmosphere-still" src="assets/video/nature/gocce-sulla-felce-poster-small.webp" srcset="assets/video/nature/gocce-sulla-felce-poster-small.webp 960w, assets/video/nature/gocce-sulla-felce-poster.webp 1920w" sizes="(max-width:760px) 260px, 320px" width="1920" height="1080" alt="" loading="lazy"><video src="assets/video/nature/gocce-sulla-felce-loop.mp4" muted loop playsinline preload="none" tabindex="-1"></video></span>
+    <button class="atmosphere-toggle" type="button" hidden aria-label="Metti in pausa il video di atmosfera">Ⅱ Pausa</button>
+  </figure></aside>
       <a class="act-row legal-strip home-band" id="home-legal" href="#/info"><span class="ar-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span><span class="ar-b"><span class="ar-t">Regole di raccolta</span><span class="ar-s">Nel Lazio si raccoglie con attestato micologico, ricevuta del contributo regionale annuale e documento d'identità (L.R. 32/1998).</span></span></a>
       </div>
     </section>
@@ -139,7 +143,10 @@
       <div class="view-head"><div><p class="kicker" data-catalog-count="specie" hidden></p><h1 id="sp-h" class="view-title">Funghi</h1>
         <p class="view-sub">Caratteri, sosia e ambienti.</p></div></div>
       <nav class="seg-nav" data-scopri-nav aria-label="Sezioni di Scopri"></nav><nav class="sub-nav" data-scopri-sub aria-label="Modalità della sezione"></nav>
-      <aside class="story-invite story-blue catalog-invite"><div><h2>Guarda più vicino.</h2><p>Caratteri, parole e piccoli dettagli del bosco.</p><a class="btn primary" href="#/impara">Scopri le nostre guide <span aria-hidden="true">→</span></a></div><figure class="story-photo"><a href="#/pianta/ginestra-odorosa" aria-label="Ginestra odorosa: apri la scheda"><img src="assets/plants/ginestra-odorosa-1.webp" alt="" loading="lazy" decoding="async"></a></figure></aside>
+      <aside class="story-invite story-blue catalog-invite"><div><h2>Guarda più vicino.</h2><p>Caratteri, parole e piccoli dettagli del bosco.</p><a class="btn primary" href="#/impara">Scopri le nostre guide <span aria-hidden="true">→</span></a></div><figure class="atmosphere story-photo" data-atmosphere="luce-tra-le-foglie">
+    <span class="atmosphere-media" aria-hidden="true"><img class="atmosphere-still" src="assets/video/nature/luce-tra-le-foglie-poster-small.webp" srcset="assets/video/nature/luce-tra-le-foglie-poster-small.webp 960w, assets/video/nature/luce-tra-le-foglie-poster.webp 1920w" sizes="(max-width:760px) 260px, 320px" width="1920" height="1080" alt="" loading="lazy"><video src="assets/video/nature/luce-tra-le-foglie-loop.mp4" muted loop playsinline preload="none" tabindex="-1"></video></span>
+    <button class="atmosphere-toggle" type="button" hidden aria-label="Metti in pausa il video di atmosfera">Ⅱ Pausa</button>
+  </figure></aside>
       <div id="species-grid" class="species-grid"></div>
     </section>
 
@@ -147,14 +154,20 @@
       <div class="view-head"><div><p class="kicker" data-catalog-count="alberi" hidden></p><h1 id="tr-h" class="view-title">Alberi</h1>
         <p class="view-sub">Foglie, corteccia, frutti e habitat.</p></div></div>
       <nav class="seg-nav" data-scopri-nav aria-label="Sezioni di Scopri"></nav><nav class="sub-nav" data-scopri-sub aria-label="Modalità della sezione"></nav>
-      <aside class="story-invite story-blue catalog-invite"><div><h2>Guarda più vicino.</h2><p>Caratteri, parole e piccoli dettagli del bosco.</p><a class="btn primary" href="#/impara">Scopri le nostre guide <span aria-hidden="true">→</span></a></div><figure class="story-photo"><a href="#/pianta/ginestra-odorosa" aria-label="Ginestra odorosa: apri la scheda"><img src="assets/plants/ginestra-odorosa-1.webp" alt="" loading="lazy" decoding="async"></a></figure></aside>
+      <aside class="story-invite story-blue catalog-invite"><div><h2>Guarda più vicino.</h2><p>Caratteri, parole e piccoli dettagli del bosco.</p><a class="btn primary" href="#/impara">Scopri le nostre guide <span aria-hidden="true">→</span></a></div><figure class="atmosphere story-photo" data-atmosphere="luce-tra-le-foglie">
+    <span class="atmosphere-media" aria-hidden="true"><img class="atmosphere-still" src="assets/video/nature/luce-tra-le-foglie-poster-small.webp" srcset="assets/video/nature/luce-tra-le-foglie-poster-small.webp 960w, assets/video/nature/luce-tra-le-foglie-poster.webp 1920w" sizes="(max-width:760px) 260px, 320px" width="1920" height="1080" alt="" loading="lazy"><video src="assets/video/nature/luce-tra-le-foglie-loop.mp4" muted loop playsinline preload="none" tabindex="-1"></video></span>
+    <button class="atmosphere-toggle" type="button" hidden aria-label="Metti in pausa il video di atmosfera">Ⅱ Pausa</button>
+  </figure></aside>
       <div id="tree-grid" class="species-grid"></div>
     </section>
 
     <section class="view" data-view="piante" hidden aria-labelledby="plants-h">
       <div class="view-head"><div><p class="kicker" data-catalog-count="piante" hidden></p><h1 id="plants-h" class="view-title">Piante e fiori</h1><p class="view-sub">Erbe, fiori, frutti e arbusti.</p></div></div>
       <nav class="seg-nav" data-scopri-nav aria-label="Sezioni di Scopri"></nav><nav class="sub-nav" data-scopri-sub aria-label="Modalità della sezione"></nav>
-      <aside class="story-invite story-blue catalog-invite"><div><h2>Guarda più vicino.</h2><p>Caratteri, parole e piccoli dettagli del bosco.</p><a class="btn primary" href="#/impara">Scopri le nostre guide <span aria-hidden="true">→</span></a></div><figure class="story-photo"><a href="#/pianta/ginestra-odorosa" aria-label="Ginestra odorosa: apri la scheda"><img src="assets/plants/ginestra-odorosa-1.webp" alt="" loading="lazy" decoding="async"></a></figure></aside>
+      <aside class="story-invite story-blue catalog-invite"><div><h2>Guarda più vicino.</h2><p>Caratteri, parole e piccoli dettagli del bosco.</p><a class="btn primary" href="#/impara">Scopri le nostre guide <span aria-hidden="true">→</span></a></div><figure class="atmosphere story-photo" data-atmosphere="gocce-sulla-felce">
+    <span class="atmosphere-media" aria-hidden="true"><img class="atmosphere-still" src="assets/video/nature/gocce-sulla-felce-poster-small.webp" srcset="assets/video/nature/gocce-sulla-felce-poster-small.webp 960w, assets/video/nature/gocce-sulla-felce-poster.webp 1920w" sizes="(max-width:760px) 260px, 320px" width="1920" height="1080" alt="" loading="lazy"><video src="assets/video/nature/gocce-sulla-felce-loop.mp4" muted loop playsinline preload="none" tabindex="-1"></video></span>
+    <button class="atmosphere-toggle" type="button" hidden aria-label="Metti in pausa il video di atmosfera">Ⅱ Pausa</button>
+  </figure></aside>
       <div id="plant-grid" class="species-grid"></div>
     </section>
     <section class="view" data-view="animali" hidden aria-labelledby="animals-h">
@@ -237,6 +250,8 @@
   <div id="legal-sections"></div>
   <details class="sec"><summary>Fotografie e illustrazioni</summary><div class="sec-body">
   <p class="small muted" id="zone-credits"></p>
+  <div class="video-credits"><h3>Video di atmosfera</h3><p>Le riprese decorative di copertine e inviti non rappresentano le località o le specie suggerite. I loop sono adattati da Pexels; le foto nelle schede restano i riferimenti.</p>
+  <ul><li><a href="https://www.pexels.com/video/sunlight-peeking-through-the-leaves-of-trees-in-a-forest-3493297/" target="_blank" rel="noopener">Luce tra le foglie</a> · lam loi</li><li><a href="https://www.pexels.com/video/daylight-in-forest-856169/" target="_blank" rel="noopener">Bosco e sentiero</a> · Pixabay</li><li><a href="https://www.pexels.com/video/autumn-foliage-with-sunny-tree-and-leaves-29052577/" target="_blank" rel="noopener">Foglie autunnali</a> · Ellysa jordens</li><li><a href="https://www.pexels.com/video/droplets-of-water-on-the-wet-fresh-leaves-of-a-fern-tree-3224544/" target="_blank" rel="noopener">Gocce sulla felce</a> · Chris Gonzalez</li><li><a href="https://www.pexels.com/video/a-shadow-of-a-plant-swaying-in-the-wind-8516628/" target="_blank" rel="noopener">Ombre di foglie</a> · Hanna Pad</li></ul><p><a href="https://www.pexels.com/license/" target="_blank" rel="noopener">Licenza Pexels</a> · Per Bosco e sentiero, la scheda rimanda alla <a href="https://www.pexels.com/creative-commons-images/" target="_blank" rel="noopener">pagina Creative Commons di Pexels</a>.</p></div>
   <p class="small muted">Le <b>icone dei caratteri</b> nelle schede dei funghi (il cappello, la parte sotto il cappello vista dal basso, il fungo intero con il gambo) sono disegni schematici fatti con AI a partire dai caratteri descritti dalle fonti, rivisti dal gestore del progetto e non da un micologo. Mostrano una forma tipica: non sono foto e non servono a identificare. Confrontale sempre con le foto e con il testo della scheda.</p>
   <p class="small muted">Le <b>icone dei caratteri degli alberi</b> (foglia, aghi, corteccia, frutto), nelle schede e nel percorso guidato, sono disegni schematici fatti con AI a partire dallo schema dei caratteri, rivisti dal gestore del progetto. Ce n'è uno per ogni valore, uguale per tutti gli alberi che lo hanno: non sono foto e non servono a identificare. Confrontali con le foto e con il testo della scheda.</p>
   </div></details>

@@ -45,7 +45,7 @@ for (const width of [390, 1280]) for (const theme of ['light', 'dark']) {
     const hard = [bright, photos.find((p) => p.key === 'tancia · autunno sereno')].filter(Boolean);
 
     // Proposta e alternative: misurare sia vetro/foto sia i nuovi pannelli pieni.
-    const hero = await sweepCover(page, { host: '#hero .cover', img: '#hero .cover > img', size: 'hd', photos: hard });
+    const hero = await sweepCover(page, { host: '#hero .cover', img: '#hero .atmosphere-still', size: 'hd', photos: hard });
     const heroSolid = (await auditState(page, { root: '#hero' })).filter((r) => r.method === 'pieno');
     expect(hero.items.length + heroSolid.length).toBeGreaterThan(8);
     expect(describeBelow([...hero.items, ...heroSolid])).toEqual([]);
