@@ -180,16 +180,23 @@ export async function handleCommunity(request, env, now = Date.now()) {
       return result({ ok: true }, 200, [await newSession(db, id, now), cookie(CHALLENGE, '', 0)]);
     }
 
+    const user = await signedIn(request, db, now);
     if (path === 'summary' && request.method === 'GET') {
+      // Reciprocity is enforced here, before reading any collective data.
+      // A withdrawn contribution no longer grants access; a negative report does.
+      const contributes = await db.prepare('SELECT EXISTS(SELECT 1 FROM reports WHERE account_id=?) OR EXISTS(SELECT 1 FROM shared_observations WHERE account_id=?) AS active').bind(user.id,user.id).first('active');
+      const base = {windowDays:7,validation:'unvalidated',updatedAt:new Date(now).toISOString()};
+      if (!contributes) return result({...base,access:'contribution_required',reports:[],observations:[],totalReports:0});
       const since = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Rome', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(now - 6 * 864e5));
-      const { results } = await db.prepare('SELECT r.zone_id AS zoneId,r.species_id AS speciesId,COUNT(*) AS reports,SUM(r.amount>0) AS sightings,SUM(r.amount=0) AS zeros,COUNT(DISTINCT r.account_id) AS contributors,COUNT(DISTINCT CASE WHEN a.created_at<? THEN r.account_id END) AS establishedContributors,COUNT(DISTINCT day) AS days,MAX(day) AS latestDay,SUM(amount=1) AS few,SUM(amount=2) AS some,SUM(amount=3) AS many FROM reports r JOIN accounts a ON a.id=r.account_id WHERE day>=? GROUP BY zone_id,species_id').bind(now - 864e5, since).all();
-      const total = await db.prepare('SELECT COUNT(*) AS n FROM reports').first('n');
-      const {results:observations}=await db.prepare('SELECT zone_id AS zoneId, category, taxon_id AS taxonId, COUNT(*) AS observations, MAX(day) AS latestDay FROM shared_observations WHERE day>=? GROUP BY zone_id,category,taxon_id').bind(since).all();
+      // Reuse the existing 3 contributors / 2 days guard for publication too.
+      // This is small-group suppression, not a scientific validation or anonymity guarantee.
+      // Project only broad catalogue zones and window totals: no person, note, day or GPS.
+      const { results } = await db.prepare('SELECT r.zone_id AS zoneId,r.species_id AS speciesId,COUNT(*) AS reports,SUM(r.amount>0) AS sightings,SUM(r.amount=0) AS zeros,COUNT(DISTINCT r.account_id) AS contributors,COUNT(DISTINCT CASE WHEN a.created_at<? THEN r.account_id END) AS establishedContributors,COUNT(DISTINCT day) AS days FROM reports r JOIN accounts a ON a.id=r.account_id WHERE day>=? GROUP BY zone_id,species_id HAVING COUNT(DISTINCT r.account_id)>=3 AND COUNT(DISTINCT day)>=2').bind(now - 864e5, since).all();
+      const {results:observations}=await db.prepare("SELECT zone_id AS zoneId,category,taxon_id AS taxonId,COUNT(*) AS observations,SUM(json_extract(payload,'$.presence')='observed') AS sightings,SUM(json_extract(payload,'$.presence')='searched_absent') AS zeros FROM shared_observations WHERE day>=? GROUP BY zone_id,category,taxon_id HAVING COUNT(DISTINCT account_id)>=3 AND COUNT(DISTINCT day)>=2").bind(since).all();
       const policy=await rankingPolicy(db);
-      return result({ policy:{maxPercent:policy.maxPercent,version:policy.version}, observations, reports: results, totalReports: total, windowDays: 7, validation: 'unvalidated', updatedAt: new Date(now).toISOString() });
+      return result({...base,access:'granted',policy:{maxPercent:policy.maxPercent,version:policy.version},observations,reports:results,totalReports:results.reduce((n,r)=>n+r.reports,0)});
     }
 
-    const user = await signedIn(request, db, now);
     if (path === 'session' && request.method === 'GET') {
       const assigned=key=>(env[key]||'').split(',').map(s=>s.trim()).filter(Boolean).includes(user.id);
       const role=assigned('CMS_ADMIN_IDS')?'admin':assigned('CMS_EDITOR_IDS')?'editor':'member';

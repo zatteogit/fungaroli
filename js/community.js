@@ -9,6 +9,8 @@ import {setBaseUser,mountBaseEditor} from './base-location.js';
 
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 let enabled = false, user = null, summary = null, zones = [], ready = Promise.resolve(), reportDialog, authDialog, speciesCatalog = SPECIES;
+let summaryRevision = 0;
+const clearSummary = () => { summaryRevision++; summary = null; };
 export const communityEnabled = () => enabled;
 export const currentUser = () => user;
 export const communityReady = () => ready;
@@ -32,22 +34,44 @@ const changed = () => {
   document.dispatchEvent(new CustomEvent('fungaroli:community', { detail: { user } }));
 };
 export async function refreshCommunity({signal} = {}) {
-  if (!enabled) return;
-  try { summary = await communityRequest('summary','GET',undefined,{signal}); } catch { summary = null; }
+  const revision=++summaryRevision,accountId=user?.id;
+  if (!enabled || !accountId) { summary=null; changed(); return; }
+  try {
+    const next=await communityRequest('summary','GET',undefined,{signal});
+    if(revision!==summaryRevision||user?.id!==accountId)return;
+    summary=next;
+  } catch(error) {
+    if(revision!==summaryRevision||user?.id!==accountId)return;
+    summary=null;
+    if(error.status===401)user=null;
+  }
   changed();
 }
 export function communityStatus() {
   if (!enabled) return 'Condivisione delle osservazioni non ancora attiva.';
-  if (!summary) return 'Segnalazioni temporaneamente non disponibili.';
+  if (!user) return 'Accedi e scegli un’osservazione da condividere per consultare i dati collettivi.';
+  if (!summary) return 'Dati collettivi temporaneamente non disponibili.';
+  if (summary.access!=='granted') return 'Condividi un’osservazione, anche una ricerca a vuoto, per consultare i dati collettivi.';
   const count=(summary.totalReports||0)+(summary.observations||[]).reduce((n,r)=>n+r.observations,0);
-  return count ? `${count} ${count === 1 ? 'osservazione condivisa' : 'osservazioni condivise'}.`
-    : 'Ancora nessuna osservazione condivisa.';
+  return count ? `${count} segnalazioni negli aggregati consultabili · ultimi 7 giorni.`
+    : 'Dati ancora insufficienti per pubblicare gli aggregati degli ultimi 7 giorni. Non significa che manchino funghi.';
+}
+const outcomes = r => `${r.sightings} ritrovamenti dichiarati · ${r.zeros} ricerche a vuoto`;
+export function communityOverview() {
+  if(summary?.access!=='granted')return '';
+  const zoneName=id=>zones.find(z=>z.id===id)?.title||zones.find(z=>z.id===id)?.name||id;
+  const taxonName=id=>speciesCatalog.find(s=>s.id===id)?.name||id.replaceAll('-',' ');
+  const rows=(summary.reports||[]).map(r=>({...r,name:taxonName(r.speciesId)}));
+  // Notes may describe the same outing: keep the series distinct, never sum them as independent outings.
+  const notes=summary.observations||[];
+  const list=(records,note=false)=>records.length?`<ul class="community-totals">${records.map(r=>`<li><b>${esc(zoneName(r.zoneId))} · ${esc(note?taxonName(r.taxonId):r.name)}</b><span>${note?`${r.sightings} osservazioni dichiarate · ${r.zeros} ricerche a vuoto`:outcomes(r)}</span></li>`).join('')}</ul>`:'';
+  return list(rows)+(notes.length?`<h3>Osservazioni strutturate</h3><p class="small">Serie separata: può comprendere note della stessa uscita, su funghi, piante e alberi.</p>${list(notes,true)}`:'');
 }
 export function reportBadge(zoneId, speciesId) {
   const records = (summary?.reports || []).filter(r => (!zoneId || r.zoneId === zoneId) && r.speciesId === speciesId);
   if (!records.length) return '';
-  const r = records.reduce((a,r) => ({sightings:a.sightings+r.sightings,zeros:a.zeros+r.zeros,latestDay:r.latestDay>a.latestDay?r.latestDay:a.latestDay}), {sightings:0,zeros:0,latestDay:''});
-  return `<span class="community-badge" title="Segnalazioni degli ultimi 7 giorni, dichiarate dagli utenti e non certificate. Ultima: ${esc(r.latestDay)}">${r.sightings ? `${r.sightings} ${r.sightings === 1 ? 'segnalazione' : 'segnalazioni'}` : `${r.zeros} ${r.zeros === 1 ? 'ricerca a vuoto' : 'ricerche a vuoto'}`}</span>`;
+  const r = records.reduce((a,r) => ({sightings:a.sightings+r.sightings,zeros:a.zeros+r.zeros}), {sightings:0,zeros:0});
+  return `<span class="community-badge" title="Ultimi 7 giorni: dichiarazioni, non un campione rappresentativo né una conferma di presenza attuale.">${outcomes(r)}</span>`;
 }
 export function communityRank(zoneId, speciesIds) {
   if (!summary || Date.now() - Date.parse(summary.updatedAt) > 10 * 60e3) return 1;
@@ -61,7 +85,7 @@ async function session() {
 export function initCommunity({ zoneList, speciesList = SPECIES }) {
   zones = zoneList; speciesCatalog = speciesList;
   document.addEventListener('fungaroli:refresh-community', refreshCommunity);
-  document.addEventListener('fungaroli:refresh-account',async()=>{if(enabled){await session();changed();}});
+  document.addEventListener('fungaroli:refresh-account',async()=>{if(enabled){clearSummary();changed();await session();await refreshCommunity();}});
   ready = (async () => {
     if (globalThis.FUNGAROLI_DATA || globalThis.FUNGAROLI_REVIEW) { changed(); return; }
     try { enabled = (await communityRequest('status')).enabled; } catch { enabled = false; }
@@ -95,7 +119,7 @@ export async function openAccount() {
   }
   return new Promise((resolve) => {
     authDialog.innerHTML = user ? `<div class="profile-header"><div><h2>${esc(user.handle || 'Il tuo profilo')}</h2><p class="small muted profile-role" data-account-role>Profilo personale</p></div><button type="button" class="profile-close" data-close aria-label="Chiudi il profilo">×</button></div>
-      <p>Il taccuino è privato. Solo le osservazioni che scegli di condividere entrano nei conteggi collettivi.</p>
+      <p>Il taccuino è privato. Condividendo un’osservazione puoi consultare gli aggregati della community. Anche una ricerca a vuoto conta. Ritirando tutte le condivisioni perdi questo accesso. Nessuna condivisione è automatica. La tua fungaia non viene mostrata agli altri: solo conteggi per zona ampia e specie, su 7 giorni, con almeno 3 contributori e 2 giorni diversi.</p>
       <div data-profile-base></div>
       <div class="profile-editorial" data-cms-link hidden></div>
       <div class="profile-actions" role="group" aria-label="Azioni del profilo"><button type="button" class="btn ghost" data-logout>Esci dal profilo</button><button type="button" class="btn primary" data-close autofocus>Chiudi</button></div>
@@ -103,7 +127,7 @@ export async function openAccount() {
       : `<header class="account-header"><h2>Unisciti a Fronda</h2><button type="button" class="profile-close" data-close aria-label="Chiudi l’accesso" autofocus>×</button></header><div class="auth-content"><p class="auth-intro">Accedi con la passkey del dispositivo, senza password o email.</p>
       <label>Nome facoltativo <input class="wiz-input" maxlength="32" autocomplete="nickname" data-handle placeholder="Un nome, anche inventato"></label>
       <div class="auth-actions"><button type="button" class="btn primary" data-register>Crea profilo con passkey</button><button type="button" class="btn ghost" data-login>Ho già una passkey</button></div>
-      <p class="small muted auth-privacy">Il taccuino rimane tuo. Zona, specie, giorno e quantità diventano pubblici solo in forma aggregata quando scegli di segnalarli. <a href="#/info">Privacy e condizioni</a></p>
+      <p class="small muted auth-privacy">Il taccuino rimane tuo. Scegli tu se condividere: chi contribuisce può consultare gli aggregati. Agli altri non mostriamo la posizione della tua fungaia, nomi o note: solo conteggi per zona ampia e specie su 7 giorni, se ci sono almeno 3 contributori e 2 giorni diversi. <a href="#/info">Privacy e condizioni</a></p>
       <details class="context-note"><summary>Come ritrovare il profilo</summary><p>Usa la stessa passkey, anche sincronizzata fra i tuoi dispositivi. Se la perdi, non possiamo recuperarla tramite email. Il nome non appare nelle segnalazioni.</p></details>
       <p role="status" data-status></p><button type="button" class="link-btn auth-dismiss" data-close>Continua senza profilo</button></div>`;
     authDialog.setAttribute('aria-label', user ? 'Il tuo profilo' : 'Accedi o crea un profilo');
@@ -136,18 +160,18 @@ export async function openAccount() {
         const optionsJSON = await communityRequest(register ? 'auth/register-options' : 'auth/login-options', 'POST', { handle: authDialog.querySelector('[data-handle]')?.value || '' });
         const response = register ? await startRegistration({ optionsJSON }) : await startAuthentication({ optionsJSON });
         await communityRequest(register ? 'auth/register' : 'auth/login', 'POST', response);
-        await session(); changed(); authDialog.close();
+        await session(); await refreshCommunity(); authDialog.close();
       } catch (e) { status.textContent = e.name === 'NotAllowedError' ? 'Accesso annullato. Puoi riprovare quando vuoi.' : e.message; }
       finally { buttons.forEach((b) => b.disabled = false); }
     };
     authDialog.querySelector('[data-register]')?.addEventListener('click', () => auth(true));
     authDialog.querySelector('[data-login]')?.addEventListener('click', () => auth(false));
     authDialog.querySelector('[data-logout]')?.addEventListener('click', async () => {
-      try { await communityRequest('auth/logout', 'POST', {}); user = null; changed(); authDialog.close(); } catch (e) { status.textContent = e.message; }
+      try { await communityRequest('auth/logout', 'POST', {}); user = null; clearSummary(); changed(); authDialog.close(); } catch (e) { status.textContent = e.message; }
     });
     authDialog.querySelector('[data-delete-account]')?.addEventListener('click', async (e) => {
       if (!e.currentTarget.dataset.confirm) { e.currentTarget.dataset.confirm = '1'; e.currentTarget.textContent = 'Conferma eliminazione'; status.textContent = 'Elimina il tuo profilo, il taccuino e le tue segnalazioni. Premi ancora per confermare.'; return; }
-      try { await communityRequest('account', 'DELETE'); user = null; changed(); await refreshCommunity(); authDialog.close(); }
+      try { await communityRequest('account', 'DELETE'); user = null; clearSummary(); changed(); await refreshCommunity(); authDialog.close(); }
       catch (err) { status.textContent = err.message; }
     });
     openModal(authDialog);
@@ -160,7 +184,7 @@ export async function shareNotebookNote(entry,{signal}={}){
   await refreshCommunity({signal});return true;
 }
 export function communityHasZone(zoneId){return [...(summary?.reports||[]),...(summary?.observations||[])].some(r=>r.zoneId===zoneId);}
-export const communityDataAvailable=()=>!!summary;
+export const communityDataAvailable=()=>summary?.access==='granted';
 
 export async function shareDiaryEntry(entry, { identificationChecked = false, signal } = {}) {
   if (!entry || entry.kind==='note' || !Object.entries(entry.finds || {}).some(([id, amount]) => speciesCatalog.some((s) => s.id === id) && (amount > 0 || (amount === 0 && entry.searched?.includes(id)))))
@@ -198,7 +222,7 @@ export async function openQuickReport(zoneId = '', speciesId = '') {
         ['Nessuno','Ricerca a vuoto'],['Pochi','Ritrovamento scarso'],['Discreti','Presenza intermedia'],['Tanti','Presenza abbondante']
       ].map(([label,hint],i)=>`<label class="report-quantity"><input type="radio" name="amount" value="${i}" required><span><b>${label}</b><small>${hint}</small></span></label>`).join('')}</div></fieldset>
       <details class="report-extra"><summary>Controllo dell’identità <span class="small muted">facoltativo</span></summary><label class="report-check"><input type="checkbox" name="checked"><span>Identità controllata da un micologo</span></label></details>
-      <p class="report-privacy">È pubblica solo la zona: nessun punto preciso o nome personale.</p>
+      <p class="report-privacy">Condividi per consultare gli aggregati della community. Agli altri non mostriamo la tua fungaia: solo conteggi per zona ampia e specie su 7 giorni, con almeno 3 contributori e 2 giorni diversi. Nessun punto GPS, nome, giorno preciso o testo della nota. Puoi ritirare la condivisione dal taccuino; ritirandole tutte perdi l’accesso agli aggregati.</p>
       <details class="report-safety context-note"><summary>L’app non certifica la commestibilità.</summary><p>Segnala solo specie che sai riconoscere. Foto e schede non identificano l’esemplare: fai controllare il raccolto all’Ispettorato micologico ASL prima del consumo. Quantità e ritrovamenti sono dichiarazioni degli utenti; scegli “Nessuno” solo se hai cercato questa specie senza trovarla.</p></details>
       <p role="status" class="report-status" data-status></p>
       <footer class="report-actions"><button class="btn primary" type="submit">Condividi</button><button class="btn ghost" type="button" data-close>Annulla</button></footer>
