@@ -1226,7 +1226,8 @@ a.daily-thought-credit { color:var(--link); text-underline-offset:3px; }
 /* Sans photo, la météo occupe sa propre ligne, jamais celle du jour. */
 #ranking .tile:not(:has(> img:not([data-image-state="error"]),> .outdoor-backdrop))>.tile-wx { position:relative; inset:auto; margin:12px 12px 0; align-self:flex-start; max-width:calc(100% - 152px); }
 #ranking .tile .ring.model-index { max-width:124px; }
-.day .d-area { display:flex; align-items:flex-start; gap:4px; grid-column:1/-1; font-size:11px; font-weight:500; line-height:1.35; white-space:normal; text-align:left; }
+.day .d-area { display:flex; align-items:flex-start; gap:4px; grid-column:1/-1; font-size:11px; font-weight:500; line-height:1.35; white-space:nowrap; text-align:left; }
+#days .day-all .d-area { grid-row:2; align-self:center; min-width:0; }
 .day .d-area svg { width:13px; height:13px; flex:none; fill:none; stroke:currentColor; stroke-width:1.8; margin-top:1px; }
 .access-overview { display:grid; grid-template-columns:minmax(0,1.4fr) minmax(180px,1fr); align-items:center; gap:20px; margin:0 0 20px; }
 .access-mini-map { margin:0; overflow:hidden; border:1px solid var(--border); border-radius:16px; background:var(--surface-2); }

@@ -1598,12 +1598,15 @@ function dayChips(box, selected, onPick, { withAll = false } = {}) {
       const b = box.lastChild;
       b.classList.add('day-all');
       const area=[...bests].sort((a,b)=>(b.r??b.s??0)-(a.r??a.s??0))[0]?.z;
+      let areaDescription='';
       if(area&&Number.isFinite(area.radius_m)){
         const place=(area.title||area.name).split(/[/–]/)[0].trim(),province=(area.province||['RI']).join(', '),label=`${fmtKm(area.radius_m/1000)} km da ${place} (${province})`;
-        b.insertAdjacentHTML('beforeend',`<span class="d-area" title="Raggio della zona della proposta migliore della settimana">${IC.map}<span>${esc(label)}</span></span>`);
+        areaDescription=`. Zona della proposta migliore: ${label}`;
+        b.title=`Zona della proposta migliore della settimana: ${label}`;
+        b.insertAdjacentHTML('beforeend',`<span class="d-area" aria-hidden="true">${IC.map}<span>Raggio ${fmtKm(area.radius_m/1000)} km</span></span>`);
       }
 
-      b.setAttribute('aria-label', `Tutta la settimana, ${fmtDate(d0, { day: 'numeric', month: 'long' })} - ${fmtDate(d1, { day: 'numeric', month: 'long' })}${same ? '' : ''}: mostra le uscite migliori del periodo`);
+      b.setAttribute('aria-label', `Tutta la settimana, ${fmtDate(d0, { day: 'numeric', month: 'long' })} - ${fmtDate(d1, { day: 'numeric', month: 'long' })}${same ? '' : ''}: mostra le uscite migliori del periodo${areaDescription}`);
     }
   }
   for (let o = 0; o <= AHEAD_DAYS; o++) {
