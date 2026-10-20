@@ -1,3 +1,4 @@
+import {renderPlantComparison} from './plant-comparison.js';
 import {initDailyThought} from './daily-thought.js';
 import {assessWalkingRoute,driveAccessFor,documentedTrailStart,geometrySignature} from './outing-route.js';
 import {renderTrailContext,renderMappedPlaces} from './trail-context.js';
@@ -425,7 +426,7 @@ function initShell() {
 const SCOPRI = [['funghi', '#/specie', 'Funghi'], ['piante', '#/piante', 'Piante e fiori'], ['alberi', '#/alberi', 'Alberi'], ['animali', '#/animali', 'Animali'], ['impara', '#/impara', 'Guide']];
 const SCOPRI_SUB = {
   funghi: [['#/specie', 'Sfoglia'], ['#/riconosci', 'Impara a riconoscere'], ['#/confronta','Confronta']],
-  piante: [['#/piante', 'Sfoglia'], ['#/riconosci/piante', 'Impara a riconoscere']],
+  piante: [['#/piante', 'Sfoglia'], ['#/riconosci/piante', 'Impara a riconoscere'], ['#/confronta/piante','Confronta']],
   alberi: [['#/alberi', 'Sfoglia'], ['#/riconosci/alberi', 'Impara a riconoscere']],
   animali: [],
   impara: [['#/glossario', 'Glossario'], ['#/guide', 'Approfondimenti'], ['#/riconosci/bosco', 'Bosco e sentiero'], ['#/sfide', 'Sfide']],
@@ -437,6 +438,7 @@ const RECOGNIZE_HEAD = {
   bosco: ['Bosco e sentiero', 'Tracce, segni e dettagli che incontri camminando.'],
 };
 function scopriPlace(r) {
+  if (r.view === 'riconosci' && (r.compareStart||r.compare)&&r.recognizeMode==='piante') return ['piante','#/confronta/piante'];
   if (r.view === 'riconosci' && r.compareStart) return ['funghi','#/confronta'];
   if (r.view === 'riconosci') return [r.recognizeMode === 'bosco' ? 'impara' : r.recognizeMode, r.recognizeMode === 'bosco' ? '#/riconosci/bosco' : SCOPRI_SUB[r.recognizeMode][1][0]];
   return { animali:['animali','#/animali'], specie: ['funghi', '#/specie'], piante: ['piante', '#/piante'], alberi: ['alberi', '#/alberi'], impara: ['impara', '#/impara'], glossario: ['impara', '#/glossario'], 'guide-list': ['impara', '#/guide'], sfide: ['impara', '#/sfide'] }[r.view] || null;
@@ -455,7 +457,7 @@ function paintScopriNav(r) {
     const catalog = ['specie','piante','alberi'].includes(r.view);
     sub.classList.toggle('recognize-entry', catalog);
     sub.innerHTML = catalog ? `<button type="button" class="btn ghost" data-open-recognition="${sec}" aria-haspopup="dialog"><svg class="recognize-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="m15 15 6 6"/>${sec === 'funghi' ? '<path d="M6 11c0-5 8-5 8 0ZM9 11v3h2v-3"/>' : '<path d="M7 13c-2-4 0-7 6-7 0 6-2 8-6 7Zm0 0 4-4"/>'}</svg><span>Impara a riconoscere</span></button>` : sec !== 'impara' || r.view === 'impara' ? '' : SCOPRI_SUB[sec].map(([href, label]) => `<a href="${href}"${cur(href === here)}>${label}</a>`).join('');
-    if(catalog && sec==='funghi') sub.insertAdjacentHTML('beforeend','<a class="btn ghost compare-entry" href="#/confronta"><svg class="recognize-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16m-4-4 4 4-4 4M20 16H4m4-4-4 4 4 4"/></svg><span>Confronta</span></a>');
+    if(catalog && ['funghi','piante'].includes(sec)) sub.insertAdjacentHTML('beforeend','<a class="btn ghost compare-entry" href="'+(sec==='piante'?'#/confronta/piante':'#/confronta')+'"><svg class="recognize-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16m-4-4 4 4-4 4M20 16H4m4-4-4 4 4 4"/></svg><span>Confronta</span></a>');
   }
 }
 
@@ -498,6 +500,7 @@ function parseRoute(hash = location.hash) {
   if (a === 'piante') return {view:'piante'};
   if (a === 'pianta' && b) return {view:'pianta',plantId:b};
   if (a === 'alberi') return { view: 'alberi' };
+  if (a === 'confronta' && b === 'piante') return {view:'riconosci',recognizeMode:'piante',compare:c&&parts[3]&&c!==parts[3]?c:'',pick:parts[3]||'',compareStart:!c||!parts[3]||c===parts[3],compareLeft:c,compareRight:parts[3]};
   if (a === 'confronta') return b&&c&&b!==c
     ? {view:'riconosci',recognizeMode:'funghi',compare:b,pick:c}
     : {view:'riconosci',recognizeMode:'funghi',compareStart:true,compareLeft:b,compareRight:c};
@@ -616,13 +619,13 @@ function parentOf(r) {
   if (r.view === 'albero') return '#/alberi';
   if (r.view === 'guide') return '#/guide';
   if (['glossario','guide-list','sfide'].includes(r.view) && !r.challengeId || r.view === 'riconosci' && r.recognizeMode === 'bosco') return '#/impara';
-  if (r.view === 'riconosci' && r.compare) return '#/confronta';
-  if (r.view === 'riconosci' && r.compareStart) return '#/specie';
+  if (r.view === 'riconosci' && r.compare) return r.recognizeMode==='piante'?'#/confronta/piante':'#/confronta';
+  if (r.view === 'riconosci' && r.compareStart) return r.recognizeMode==='piante'?'#/piante':'#/specie';
   if (r.view === 'sfide' && r.challengeId) return '#/sfide';
   if (['specie','alberi','piante','animali','riconosci','glossario','guide-list','sfide'].includes(r.view)) return '#/scopri';
   return '#/';
 }
-const PARENT_TITLE = (r) => ({ '#/giri':'I giri di Matteo', '#/diario':'Taccuino', '#/diario/esempio':'Diario di prova', '#/scopri': 'Scopri', '#/specie': 'Funghi', '#/alberi': 'Alberi', '#/animali':'Animali', '#/piante':'Piante e fiori', '#/riconosci': 'Impara a riconoscere', '#/confronta':'Confronta', '#/guide': 'Approfondimenti', '#/sfide': 'Sfide', '#/impara': 'Guide', '#/': 'Uscite' }[parentOf(r)]);
+const PARENT_TITLE = (r) => ({ '#/giri':'I giri di Matteo', '#/diario':'Taccuino', '#/diario/esempio':'Diario di prova', '#/scopri': 'Scopri', '#/specie': 'Funghi', '#/alberi': 'Alberi', '#/animali':'Animali', '#/piante':'Piante e fiori', '#/riconosci': 'Impara a riconoscere', '#/confronta':'Confronta', '#/confronta/piante':'Confronta', '#/guide': 'Approfondimenti', '#/sfide': 'Sfide', '#/impara': 'Guide', '#/': 'Uscite' }[parentOf(r)]);
 // Quando il titolo della pagina passa sotto la barra, lo mostriamo compatto al centro su telefono e tablet.
 let watchedTitle = null, compactTitle = false;
 function updateCompactTitle(initial=false) {
@@ -653,8 +656,8 @@ function updateHeaderActions(r) {
   action.hidden=!comparison;
   if (comparison) {
     action.textContent='Cambia';
-    action.setAttribute('aria-label','Cambia i due funghi del confronto');
-    action.href='#/confronta';
+    action.setAttribute('aria-label',r.recognizeMode==='piante'?'Cambia le due piante del confronto':'Cambia i due funghi del confronto');
+    action.href=r.recognizeMode==='piante'?'#/confronta/piante':'#/confronta';
   } else {
     action.removeAttribute('href');
     action.removeAttribute('aria-label');
@@ -762,12 +765,13 @@ function routeNow(r, nav) {
   if (r.view === 'sfide') { if (r.challengeId) renderChallenge($('#challenges'), r.challengeId); else renderChallengeList($('#challenges')); }
   paintScopriNav(r);
   if (r.view === 'riconosci') {
-    const rt = r.compareStart?['Confronta','Scegli due specie e guarda differenze e somiglianze, una accanto all’altra.']:RECOGNIZE_HEAD[r.recognizeMode];
+    const rt = (r.compareStart||r.compare)?['Confronta','Scegli due specie e guarda differenze e somiglianze, una accanto all’altra.']:RECOGNIZE_HEAD[r.recognizeMode];
     $('[data-recognize-title]').textContent = rt[0]; $('[data-recognize-sub]').textContent = rt[1];
     $('#identify').hidden = r.recognizeMode !== 'funghi';
     $('#field-identify').hidden = r.recognizeMode === 'funghi';
     if(r.recognizeMode==='funghi') {if(r.compareStart)renderComparisonStart($('#identify'),r.compareLeft,r.compareRight);else{setCompare(r.compare,r.pick);renderIdentify($('#identify'));}}
     // piante e alberi: lo stesso percorso guidato dei funghi, una domanda alla volta
+    else if(r.recognizeMode==='piante'&&(r.compareStart||r.compare))renderPlantComparison($('#field-identify'),r.compare||r.compareLeft,r.pick||r.compareRight);
     else if(r.recognizeMode==='piante') renderGuidedKey($('#field-identify'),'piante',{items:plants().map(p=>({id:p.id,name:p.name,latin:cardLatin(p.latin),href:`#/pianta/${encodeURIComponent(p.id)}`,danger:p.category==='Pericolose'})),thumb:plantThumb});
     else if(r.recognizeMode==='alberi') renderGuidedKey($('#field-identify'),'alberi',{items:Object.entries(treesData?.trees||{}).map(([id,t])=>({id,name:t.name,latin:cardLatin(t.latin),href:`#/albero/${encodeURIComponent(id)}`})),thumb:treeThumb});
     else renderFieldIdentify($('#field-identify'));
@@ -2020,9 +2024,9 @@ function openSheet(zid) {
   sh.innerHTML = `
     <button type="button" class="sheet-close" aria-label="Chiudi">✕</button>
     <a class="sheet-row" href="#/zona/${zid}/${state.dayOffset}">
-      <span class="sheet-img">${cv ? `<img data-src="${cv.small}" alt="" loading="lazy" decoding="async">` : ''}${ring(sc, false)}</span>
+      ${cv ? `<span class="sheet-img"><img data-src="${cv.small}" alt="" loading="lazy" decoding="async"></span>` : ''}
       <span class="sheet-txt"><span class="eyebrow">${esc(dayLabel(state.dayOffset, d.date, true))}</span><b class="sheet-title">${esc(splitName(z)[0])}</b>
-        <span class="small">${esc(d.best.species.name)} ~${d.best.band} m</span><span class="small">${esc(travelText(zoneTrip(z)))}${d.crowd ? ` · ${crowdText(d.crowd)}` : ''}</span>${wxOf(z, d) ? `<span class="small wx-line wx-${wxOf(z, d).level}">${wxi(wxOf(z, d))}${esc(wxOf(z, d).text)}</span>` : ''}</span>
+        ${ring(sc, false)}<span class="small">${esc(d.best.species.name)} · ${d.best.band} m s.l.m.</span><span class="small">${esc(travelText(zoneTrip(z)))}${d.crowd ? ` · ${crowdText(d.crowd)}` : ''}</span>${wxOf(z, d) ? `<span class="small wx-line wx-${wxOf(z, d).level}">${wxi(wxOf(z, d))}${esc(wxOf(z, d).text)}</span>` : ''}</span>
     </a>
     ${indexLegend()}
     ${zoneCollectionNotice(z)}
