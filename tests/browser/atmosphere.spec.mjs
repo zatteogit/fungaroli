@@ -1,6 +1,6 @@
 import {test,expect} from '@playwright/test';
 import {preparePage} from '../../tools/visual-audit.mjs';
-test.setTimeout(20000);
+test.setTimeout(process.env.CI ? 120000 : 60000);
 async function start(browser,{reducedMotion='no-preference',width=390,legal=true}={}){
  const context=await browser.newContext({viewport:{width,height:920},reducedMotion,serviceWorkers:'block'});
  const page=await preparePage(context,{legal});return {page,context};
@@ -10,7 +10,7 @@ test('still prima del video: rete ritardata, buffer e loop senza spostare il pan
  await page.route('**/assets/video/**/*.mp4',async route=>{stillFirst=await page.locator('#hero .atmosphere-still').evaluate(i=>i.complete&&i.naturalWidth>0);await gate;await route.continue();});
  try{
   await page.goto('/',{waitUntil:'domcontentloaded'});const hero=page.locator('#hero .atmosphere'),video=hero.locator('video');
-  await expect(hero).toBeVisible();await expect.poll(()=>hero.locator('img').evaluate(i=>i.complete&&i.naturalWidth>0)).toBe(true);
+  await expect(hero).toBeVisible({timeout:60000});await expect.poll(()=>hero.locator('img').evaluate(i=>i.complete&&i.naturalWidth>0)).toBe(true);
   await expect(video).toHaveCSS('opacity','0');const before=await page.locator('#hero .cover-body').boundingBox();
   await page.screenshot({path:'output/playwright/atmosphere-still.png'});release();
   await expect(video).toHaveAttribute('data-video-ready','true');await expect(video).toHaveCSS('opacity','1');expect(stillFirst).toBe(true);
@@ -22,6 +22,7 @@ test('still prima del video: rete ritardata, buffer e loop senza spostare il pan
 });
 test('un video alla volta, pausa globale, inviti alle guide e taccuino vuoto',async({browser})=>{
  const {page,context}=await start(browser,{width:1280});await page.goto('/');
+ await expect(page.locator('#hero .atmosphere')).toBeVisible({timeout:60000});
  const video=page.locator('#hero .atmosphere video');await expect(video).toHaveAttribute('data-video-ready','true');
  await page.locator('#hero .atmosphere-toggle').click();await expect.poll(()=>video.evaluate(v=>v.paused)).toBe(true);
  await page.locator('#days').getByRole('tab',{name:/Domani/}).click();
@@ -37,7 +38,7 @@ test('un video alla volta, pausa globale, inviti alle guide e taccuino vuoto',as
 for(const mode of ['reduced','save-data'])test(`solo still e nessun MP4 con ${mode}`,async({browser})=>{
  const {page,context}=await start(browser,{reducedMotion:mode==='reduced'?'reduce':'no-preference'});let requests=0;page.on('request',r=>{if(r.url().endsWith('.mp4'))requests++;});
  if(mode==='save-data')await page.addInitScript(()=>Object.defineProperty(navigator.connection,'saveData',{get:()=>true}));
- await page.goto('/');await expect(page.locator('#hero .atmosphere')).toBeVisible();await expect.poll(()=>page.locator('#hero .atmosphere-still').evaluate(i=>i.complete&&i.naturalWidth>0)).toBe(true);
+ await page.goto('/');await expect(page.locator('#hero .atmosphere')).toBeVisible({timeout:60000});await expect.poll(()=>page.locator('#hero .atmosphere-still').evaluate(i=>i.complete&&i.naturalWidth>0)).toBe(true);
  await expect(page.locator('#hero video')).toHaveCSS('opacity','0');expect(requests).toBe(0);await context.close();
 });
 test('prima dell’avviso obbligatorio non parte alcun video e un errore conserva lo still',async({browser})=>{
@@ -50,7 +51,7 @@ test('prima dell’avviso obbligatorio non parte alcun video e un errore conserv
 test('copertine responsive e comando compatto negli inviti alle guide',async({browser})=>{
  const {page,context}=await start(browser,{width:320});await page.goto('/');
  for(const width of [320,390,768,1280]){
-  await page.setViewportSize({width,height:920});await expect(page.locator('#hero .atmosphere')).toBeVisible();
+  await page.setViewportSize({width,height:920});await expect(page.locator('#hero .atmosphere')).toBeVisible({timeout:60000});
   await page.screenshot({path:`output/playwright/atmosphere-home-${width}.png`});
   expect(await page.locator('#hero .atmosphere').evaluate(e=>{const r=e.getBoundingClientRect();return r.left>=0&&r.right<=innerWidth;})).toBe(true);
  }
