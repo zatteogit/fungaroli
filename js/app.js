@@ -3,7 +3,7 @@ import {assessWalkingRoute,driveAccessFor,documentedTrailStart,geometrySignature
 import {renderTrailContext,renderMappedPlaces} from './trail-context.js';
 import {initExternalSignals,externalForecastMultiplier,combineFieldMultipliers} from './external-signals-client.js';
 import {initEditorialOutings,editorialOutings,editorialTitle,editorialReference,renderEditorialIndex,renderEditorialPage} from './editorial-outings.js';
-import {initAnimals,animals,animalName,animalSearchItems,renderAnimals,renderAnimalPage} from './animals.js';
+import {initAnimals,animals,animalRecord,animalName,animalSearchItems,renderAnimals,renderAnimalPage} from './animals.js';
 import {configureLegalAccess,acceptLegalNotice,hasLegalAcceptance} from './legal-access.js';
 import {currentLegalNotice,legalNoticeVersion,legalNoticeFingerprint,compatibleLegalVersions} from './legal-notice.js';
 import {rememberNavigationContext,recordNavigationPage,restoreNavigationContext,contextualBackTitle,returningNavigation,restoredNavigationScroll,backNavigation} from './navigation-context.js';
@@ -53,7 +53,7 @@ import { applyCrop } from './images.js';
 import { FOREST_LEGEND } from './forest-legend.js';
 import { initTrees, renderTreeGrid, renderTreePage, linkTrees, treeChips, treeForCategory, treeThumb, treePhotoSrc, treeHeroSrc } from './trees.js';
 import { crowding, comfortScore, timingAdvice, sunTimes, fmtTime, fmtRough, intornoA } from './human.js';
-import { initCommunity, communityStatus, communityOverview, communityRank, communityHasZone, communityDataAvailable, reportBadge } from './community.js';
+import { initCommunity, communityStatus, communityOverview,animalCommunity, communityRank, communityHasZone, communityDataAvailable, reportBadge } from './community.js';
 import { guideTitle, renderGuideCards, renderGuide, initGuideContent, guideCount } from './guides.js';
 import { buildEdibleCatalog, seasonStatus, seasonLabel } from './edible-catalog.js';
 import { mountSpeciesAutocomplete } from './species-autocomplete.js';
@@ -69,6 +69,21 @@ const PREFS_KEY = 'fungaroli:prefs:v2'; // v2: si parte con tutti i gruppi
 
 const $ = (s) => document.querySelector(s);
 
+function renderAnimalConnections(){
+ const page=document.querySelector('.view[data-view="animale"] .animal-page');
+ if(!page||state.view!=='animale')return;
+ const id=location.hash.split('/')[2],item=animalRecord(id);if(!item)return;
+ const href=`#/animale/${id}`,notes=journal?.notesFor(href)||[],community=animalCommunity(id);
+ const zoneLabel=id=>weatherZones?.find(z=>z.id===id)?.title||weatherZones?.find(z=>z.id===id)?.name||id;
+ const dateLabel=day=>fmtDate(day,{day:'numeric',month:'long',year:'numeric'});
+ let section=page.querySelector('[data-animal-connections]');
+ if(!section){section=document.createElement('section');section.className='animal-connections';section.dataset.animalConnections='';page.querySelector('.animal-limit').after(section);
+ const action=document.createElement('button');action.type='button';action.className='btn primary animal-note-action';action.dataset.noteKind='animale';action.dataset.noteId=id;action.dataset.noteTitle=item.name;action.innerHTML=notebookGlyph+'<span>Annota un’osservazione</span>';page.querySelector('.animal-page-head').append(action);}
+ section.innerHTML=`<h2>Nel tuo Fronda</h2><p>Ritrova le tue annotazioni e le zone segnalate dalla community.</p>
+ <div class="animal-connections-grid"><div><h3>Le tue osservazioni</h3>${notes.length?`<ul>${notes.slice(0,5).map(e=>`<li><a href="#/diario/pagina/${encodeURIComponent(e.id)}">${esc(dateLabel(e.date))} · ${e.record?.presence==='observed'?'Osservato':e.record?.presence==='searched_absent'?'Cercato, non osservato':'Appunto'}</a>${e.zoneId?` · <a href="#/zona/${esc(e.zoneId)}">${esc(zoneLabel(e.zoneId))}</a>`:' · zona non indicata'}</li>`).join('')}</ul>`:'<p>Non hai ancora annotazioni collegate a questa scheda.</p>'}<a href="#/diario">Apri il tuo taccuino →</a></div>
+ <div><h3>Segnalazioni dalla community</h3>${community.access==='granted'?(community.records.length?`<ul>${community.records.map(r=>`<li><a href="#/zona/${esc(r.zoneId)}">${esc(zoneLabel(r.zoneId))}</a> · ${r.sightings} osservazioni dichiarate · ${r.zeros} ricerche senza avvistamento</li>`).join('')}</ul>`:'<p>Non ci sono aggregati pubblicabili per questo animale negli ultimi 7 giorni. Non significa che sia assente.</p>'):`<p>${esc(community.status)}</p>`}<p class="small muted">Solo zone ampie, su 7 giorni, con almeno 3 contributori e 2 giorni diversi. Segnalazioni non verificate: non confermano la presenza attuale.</p></div></div>
+ <nav class="animal-connections-links" aria-label="Esplora Fronda da questa scheda"><a href="#/mappa">Mappa e zone</a>${item.paths.includes('flowers')?'<a href="#/piante">Piante e fiori</a>':''}<a href="#/glossario">Parole del bosco</a><a href="#/animali">Altri animali</a></nav>`;
+}
 function addNotebookReference(box,kind,id,title){if(!box||!title||box.querySelector('[data-note-kind]'))return;const button=box.querySelector('.notebook-context-action')||document.createElement('button');button.type='button';button.className='btn ghost notebook-context-action';button.dataset.noteKind=kind;button.dataset.noteId=id;button.dataset.noteTitle=title;button.innerHTML=notebookGlyph+'<span>'+esc(({fungo:'Annota questo fungo nel taccuino',specie:'Annota questo fungo nel taccuino',commestibile:'Annota questo fungo nel taccuino',pianta:'Annota questa pianta nel taccuino',albero:'Annota questo albero nel taccuino',guide:'Salva questa lettura nel taccuino'}[kind]||'Aggiungi una nota al taccuino'))+'</span>';const hero=box.querySelector('.phero-body'),target=box.querySelector('.pbody'),lead=box.querySelector('.article-lede');if(hero){button.classList.add('notebook-hero-action');hero.append(button);}else if(target)target.prepend(button);else if(lead)lead.after(button);else box.append(button);}
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const cssVar = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
@@ -302,7 +317,7 @@ async function init() {
   initCommunity({ zoneList: weatherZones, speciesList: catalog });
   initExternalSignals(()=>{if(results)paintWeatherView();});
   renderCommunityIntro();
-  document.addEventListener('fungaroli:community', () => { renderCommunityIntro(); if(state.communityOnly)outCache.clear();if (results) paintWeatherView(); });
+  document.addEventListener('fungaroli:community', () => { renderCommunityIntro(); renderAnimalConnections(); if(state.communityOnly)outCache.clear();if (results) paintWeatherView(); });
   initIdentify({
     traits: stj, media: mj, assetUrl: embedded ? (f) => embedded.assets?.[f] || '' : (f) => f, thumb, zones, banner: legal?.identify_banner,
     howTo: (eid, latin) => idj?.species?.[eid]?.lookalikes?.find((l) => l.latin === latin)?.how_to_tell || '',
@@ -352,12 +367,13 @@ async function init() {
     if(kind==='zona')image=zoneMedia[id];
     else if(kind==='giri')image=zoneMedia[editorialReference(href)?.zoneId];
     else if(kind==='pianta')image=plantRecord(id)?.photos?.[0];
+    else if(kind==='animale')image=animalRecord(id)?.photos?.[0];
     else if(kind==='albero'){const m=mj.trees?.[id];image=m?.ref||m?.inat?.[0]||m?.commons?.[0];}
     else if(['specie','commestibile'].includes(kind))image=fungusPhoto(id);
     else if(kind==='fungo')image=searchTaxa().find(t=>t.key===id)?.photo;
     const file=image?.file_hd||image?.file||image?.thumb;return file?{file:assetSrc(file)}:null;
   };
-  journal = initJournal({ resolveTrip:editorialReference,noteCatalogs:()=>({fungo:Object.entries(stj.taxa).map(([id,t])=>({name:t.name||t.latin,latin:t.latin,href:t.edible_id&&!t.lookalike_of?.length?'#/specie/'+t.edible_id:'#/fungo/'+id})),botanica:plants().map(p=>({name:p.name,latin:p.latin,href:'#/pianta/'+p.id})),albero:Object.entries(trj.trees).map(([id,t])=>({name:t.name,latin:t.latin,href:'#/albero/'+id}))}),onEntries:entries=>{botanicalNotes=entries.filter(e=>e.kind==='note'&&e.observation);if(series){compute();outCache.clear();if(weatherBusy)paintWeatherView();else renderAll();}},zones:weatherZones, speciesCatalog: catalog, predict, captureForecast, getZoneId: () => state.zoneId || zones[0].id, zoneImage:zid=>assetSrc(zoneMedia[zid]?.file_hd||zoneMedia[zid]?.file||''),referenceImage:notebookReferenceImage });
+  journal = initJournal({ resolveTrip:editorialReference,noteCatalogs:()=>({animale:animals().map(a=>({name:a.name,latin:a.latin,href:'#/animale/'+a.id})),fungo:Object.entries(stj.taxa).map(([id,t])=>({name:t.name||t.latin,latin:t.latin,href:t.edible_id&&!t.lookalike_of?.length?'#/specie/'+t.edible_id:'#/fungo/'+id})),botanica:plants().map(p=>({name:p.name,latin:p.latin,href:'#/pianta/'+p.id})),albero:Object.entries(trj.trees).map(([id,t])=>({name:t.name,latin:t.latin,href:'#/albero/'+id}))}),onEntries:entries=>{botanicalNotes=entries.filter(e=>e.kind==='note'&&e.observation);renderAnimalConnections();if(series){compute();outCache.clear();if(weatherBusy)paintWeatherView();else renderAll();}},zones:weatherZones, speciesCatalog: catalog, predict, captureForecast, getZoneId: () => state.zoneId || zones[0].id, zoneImage:zid=>assetSrc(zoneMedia[zid]?.file_hd||zoneMedia[zid]?.file||''),referenceImage:notebookReferenceImage });
   // preferenza personale (non un filtro): usare le fasi annotate nel taccuino per le cose da osservare
   const botanicalToggle = $('[data-botanical-personalize]');
   if (botanicalToggle) { botanicalToggle.checked = state.useBotanicalNotes; botanicalToggle.addEventListener('change', () => { state.useBotanicalNotes = botanicalToggle.checked; savePrefs(); if (series) { compute(); outCache.clear(); renderAll(); } }); }
@@ -756,6 +772,7 @@ function routeNow(r, nav) {
     else if(r.recognizeMode==='alberi') renderGuidedKey($('#field-identify'),'alberi',{items:Object.entries(treesData?.trees||{}).map(([id,t])=>({id,name:t.name,latin:cardLatin(t.latin),href:`#/albero/${encodeURIComponent(id)}`})),thumb:treeThumb});
     else renderFieldIdentify($('#field-identify'));
   }
+  if(r.view==='animale')renderAnimalConnections();
   const referenceBox=document.querySelector(`.view[data-view="${r.view}"]`);
   const noteRoute={'albero':['albero',r.treeId],'specie-dettaglio':['specie',r.speciesId],'fungo':['fungo',r.taxonId],'commestibile':['commestibile',r.speciesId],'guide':['guide',r.guideId]}[r.view];
   if(noteRoute)addNotebookReference(referenceBox.querySelector('.sp-page,#guide-body,#edible-detail')||referenceBox,noteRoute[0],noteRoute[1],titleOf(r));

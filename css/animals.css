@@ -44,3 +44,14 @@
 .animal-photo-grid figcaption{font-size:14px;line-height:1.6;color:var(--text-2);margin-top:10px;overflow-wrap:anywhere}
 .animal-photo-grid figcaption small{display:block;font-size:13px;margin-top:6px}
 @media(max-width:520px){.animal-photo-grid{grid-template-columns:1fr;gap:20px}}
+
+.animal-construction .story-photo img { position:absolute; inset:0; object-position:58% 50%; }
+
+.animal-connections { margin:24px 0 32px; padding:24px; border:1px solid var(--line); border-radius:20px; background:var(--surface-2); }
+.animal-connections h2 { margin-top:0; }
+.animal-connections-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; margin-top:20px; }
+.animal-connections li { margin-block:8px; }
+.animal-connections-links { display:flex; flex-wrap:wrap; gap:12px 24px; padding-top:16px; border-top:1px solid var(--line); }
+@media(max-width:600px) { .animal-connections { padding:20px; } .animal-connections-grid { grid-template-columns:minmax(0,1fr); gap:8px; } }
+
+.animal-note-action { margin-top:8px; }

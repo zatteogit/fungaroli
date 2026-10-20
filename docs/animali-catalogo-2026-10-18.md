@@ -152,3 +152,12 @@ Revisione del diff; test automatici non eseguiti per richiesta del proprietario.
 La ricerca globale include il filtro **Animali** e trova le schede anche per gruppo (es. Mammiferi, Anfibi). Il glossario include l’argomento **Animali**, modificabile anche dalla Redazione, con otto prime voci: impollinazione, impollinatore, metamorfosi completa, larva, crisalide, spiritromba, palchi e bramito. Le fonti sono indicate in ogni voce (ISPRA, Aree Protette Alpi Marittime, PNALM). Le definizioni si aprono anche dai testi descrittivi delle schede animali; fonti, didascalie e titoli rimangono esclusi dai collegamenti automatici.
 
 Compatibilità conservata con i documenti precedenti che dichiaravano tutti e cinque gli ambiti originari del glossario. Nessuna nuova immagine richiesta o generata per queste voci testuali. Rapporto asset: nessuna incoerenza o immagine da rifare; restano le lacune preesistenti del catalogo.
+
+
+## Integrazione con Fronda · 20 ottobre 2026
+
+Tutte le schede animali permettono di annotare un incontro nel Taccuino, ritrovare le note collegate, aprire le zone associate alle proprie note e consultare gli aggregati degli avvistamenti dichiarati. Il Taccuino include la categoria e il filtro Animali; nome, zona, data, presenza, quantità, ambiente e sforzo seguono lo stesso percorso delle altre osservazioni strutturate. La condivisione è facoltativa e revocabile; il testo libero rimane privato. Gli aggregati richiedono un contributo attivo e mantengono almeno tre contributori e due giorni distinti su sette giorni, senza coordinate o date individuali pubbliche. Nessun aggiornamento dell’indice fungino.
+
+I rimandi a Mappa, Glossario, catalogo Animali e, per i percorsi sui fiori, Piante collegano la lettura alle altre sezioni. Un habitat compatibile non crea un avvistamento. In assenza di aggregati pubblicabili la scheda lo esplicita.
+
+La migrazione 0013 estende la categoria del registro delle osservazioni, conservandone righe, chiavi, indice e cancellazione a cascata. L’inizializzazione la applica in un batch atomico solo agli schemi precedenti. Verificati localmente conservazione delle righe e ritiro a cascata; salvataggio di una nota animale privata e rimando alla scheda; bundle Worker riuscito. Nessuna suite completa avviata su indicazione dell’utente.
