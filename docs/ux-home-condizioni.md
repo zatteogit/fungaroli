@@ -1,6 +1,6 @@
 # Home composta secondo il contesto · demo del 21 ottobre 2026
 
-Stato: **proposta da validare, non integrazione nella home pubblica**. [Demo interattiva](prototipi/home-stati.html).
+Stato: **proposta da validare, non integrazione nella home pubblica**. [Demo interattiva](../dev/home-stati.html).
 
 ## Richieste di Matteo
 

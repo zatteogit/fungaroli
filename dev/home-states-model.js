@@ -1,6 +1,6 @@
 // Studio UX: scenari sintetici. Non carica né modifica dati personali o previsioni.
-import {CLASSES} from '../../js/model.js';
-import {conditionsScore} from '../../js/outing.js';
+import {CLASSES} from '/js/model.js';
+import {conditionsScore} from '/js/outing.js';
 const favourable=CLASSES.find(c=>c.shortLabel==='Buone').min;
 const fair=CLASSES.find(c=>c.shortLabel==='Discrete').min;
 export const places=[

@@ -7,7 +7,8 @@ for(const width of [320,390,768])for(const theme of ['light','dark'])test(`Anima
  await expect(page.locator('.tabbar [aria-current="page"]')).toContainText('Scopri');
  await page.getByRole('button',{name:'Sui fiori',exact:true}).click();await expect(page.locator('.animal-card')).toHaveCount(7);
  await page.getByRole('link',{name:/Sirfidi.*Esplora/}).click();await expect(page.locator('#animal-detail h1')).toHaveText('Sirfidi');
- await expect(page.locator('#animal-detail')).not.toContainText('taccuino');
+ await expect(page.locator('#animal-detail').getByRole('button',{name:'Annota un’osservazione'})).toBeVisible();
+ await expect(page.locator('#animal-detail').getByRole('link',{name:'Apri il tuo taccuino',exact:false})).toBeVisible();
  const source=page.locator('#animal-detail [data-animal-source]').first();const target=await source.boundingBox();expect(target.width).toBeGreaterThanOrEqual(24);expect(target.height).toBeGreaterThanOrEqual(24);await source.click();await expect(page).toHaveURL(/#\/animale\/sirfidi$/);await expect(page.locator('#animal-detail li:focus')).toBeVisible();
  await page.goBack();await expect(page.locator('.animal-card')).toHaveCount(7);
  await page.goto(`${baseURL}/#/animale/zecche`);await expect(page.locator('.animal-caution')).toBeVisible();await expect(page.locator('.animal-caution details')).toHaveCount(0);
