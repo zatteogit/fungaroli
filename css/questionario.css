@@ -46,11 +46,6 @@ h2, h3 { font-family: var(--font-display); font-weight: 600; }
 .q-count { margin: 0; font-weight: 700; color: var(--brand); }
 .q-bar { height: 6px; margin: .35rem 0 .25rem; background: var(--surface-3); border-radius: 999px; overflow: hidden; }
 .q-bar-fill { display: block; height: 100%; background: var(--brand); border-radius: inherit; }
-.q-mode { margin: 0; font-size: .95rem; color: var(--muted); }
-.q-mode .q-link { min-height: 44px; padding-inline: .25rem; }
-/* la scelta breve/completa sta sotto la barra e scorre con la pagina: la parte incollata resta bassa anche sul telefono */
-.q-mode-line:empty { display: none; }
-.q-mode-line { padding-top: .25rem; }
 
 /* passi */
 .q-step { margin-top: 1rem; }
@@ -61,7 +56,6 @@ h2, h3 { font-family: var(--font-display); font-weight: 600; }
 .q-points { padding-left: 1.2rem; }
 .q-points li { margin-bottom: .4rem; }
 .q-body { display: grid; gap: .5rem; }
-.q-sub-title { margin: 1.5rem 0 .25rem; font-size: 1.25rem; }
 
 /* domande */
 .q-field { margin: 0; padding: 1rem 0 .5rem; border: 0; border-top: 1px solid var(--hair); min-width: 0; }
@@ -71,11 +65,6 @@ label.q-q { float: none; }
 legend.q-q + * { clear: both; }
 .q-hint { margin: 0 0 .6rem; font-size: .95rem; color: var(--muted); }
 .q-dict { margin: 0 0 .35rem; font-size: .875rem; color: var(--muted); }
-.q-sub { margin: .5rem 0 0; padding: 0; border: 0; min-width: 0; }
-.q-sub-q { display: block; margin: .5rem 0 .35rem; font-weight: 600; font-size: 1rem; color: var(--text-2); }
-.q-group > .q-field { padding-top: .25rem; }
-.q-error { margin: .4rem 0 0; padding: .35rem .6rem; background: var(--crit-bg); color: var(--crit-ink); border-radius: var(--r-sm); font-size: .95rem; }
-.q-warn { margin: .4rem 0 0; padding: .45rem .7rem; background: var(--warn-bg); color: var(--warn-ink); border-radius: var(--r-sm); font-size: .95rem; }
 
 /* campi di testo e numeri */
 .q-input {
@@ -87,11 +76,7 @@ legend.q-q + * { clear: both; }
 .q-input:focus { border-color: var(--brand); }
 .q-input[aria-invalid="true"] { border-color: var(--crit); }
 .q-area { min-height: 5.5rem; resize: vertical; field-sizing: content; max-height: 60vh; line-height: 1.5; }
-.q-num-row { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; }
-.q-num { width: 7.5rem; flex: 0 1 7.5rem; min-width: 5rem; }
-.q-unit { color: var(--muted); }
 .q-count-chars { margin: .3rem 0 0; font-size: .875rem; color: var(--muted); }
-.q-other { margin-top: .6rem; }
 
 /* scelte a tocco: l'input resta nativo (tastiera, lettori di schermo) e copre tutta l'etichetta */
 .q-chips { display: flex; flex-wrap: wrap; gap: .5rem; margin: .25rem 0; }
@@ -111,26 +96,18 @@ legend.q-q + * { clear: both; }
 .q-chip input:focus-visible + span { outline: 3px solid var(--focus); outline-offset: 2px; }
 .q-chip input:disabled + span { opacity: .55; }
 .q-chip:hover input:not(:checked):not(:disabled) + span, .q-chip-btn:hover:not([aria-pressed="true"]) { border-color: var(--brand); }
-.q-unknown { font-size: .95rem; }
-.q-small { min-height: 44px; padding-block: .35rem; font-size: .95rem; }
-.q-extra { margin-top: .5rem; }
 
 /* mesi: griglia di 12, almeno 4 colonne anche a 320 px */
 .q-months { display: grid; grid-template-columns: repeat(auto-fill, minmax(4.1rem, 1fr)); gap: .4rem; }
 .q-months .q-chip { display: flex; }
 .q-months .q-chip > span { justify-content: center; width: 100%; padding-inline: .3rem; border-radius: var(--r-sm); text-transform: capitalize; }
 .q-months .q-chip input:checked + span::before { content: none; }
-.q-years .q-chip > span { font-variant-numeric: tabular-nums; }
 
-/* sicurezza 1–5: cinque pallini grandi */
-.q-dots .q-chips { gap: .6rem; }
-.q-dots .q-chip > span { justify-content: center; width: 3rem; height: 3rem; padding: 0; border-radius: 50%; font-weight: 700; font-size: 1.1rem; }
-.q-dots .q-chip input:checked + span::before { content: none; }
-
-/* classifica e zone in ordine */
-.q-rank { cursor: pointer; }
-.q-badge:empty { display: none; }
-.q-badge { display: inline-grid; place-items: center; min-width: 1.6rem; height: 1.6rem; border-radius: 50%; background: var(--brand-ink); color: var(--brand); font-weight: 800; font-size: .9rem; }
+/* più righe di testo (zone, altre specie): campo largo e «Togli» accanto */
+.q-text-rows { display: grid; gap: .5rem; margin: .25rem 0 .5rem; }
+.q-text-row { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; }
+.q-text-row .q-input { flex: 1 1 12rem; width: auto; min-width: 0; }
+.q-count-note { margin: .35rem 0 0; }
 
 /* pulsanti */
 .q-btn {
@@ -150,8 +127,7 @@ legend.q-q + * { clear: both; }
 .q-nav { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--hair); }
 .q-nav .q-btn { flex: 1 1 8rem; }
 .q-nav .q-btn-primary { flex-grow: 2; }
-.q-skip-part { margin: .5rem 0 0; text-align: center; }
-.q-add { width: 100%; margin-top: .75rem; border-style: dashed; }
+a.q-btn { text-decoration: none; }
 
 /* schede ripetibili */
 .q-cards, .q-list { display: grid; gap: .9rem; margin-top: .75rem; }
@@ -159,7 +135,6 @@ legend.q-q + * { clear: both; }
 .q-card-title { margin: 0; font-family: var(--font-display); font-size: 1.15rem; font-weight: 650; }
 h3.q-card-title:focus { outline: none; }
 h3.q-card-title:focus-visible { outline: 3px solid var(--focus); }
-.q-card-tools { margin: .4rem 0 .25rem; }
 details.q-card > summary { display: flex; align-items: center; gap: .5rem; min-height: 44px; cursor: pointer; list-style: none; }
 details.q-card > summary::-webkit-details-marker { display: none; }
 details.q-card > summary::before { content: "▸"; content: "▸" / ""; color: var(--brand); transition: transform .15s; }
@@ -167,18 +142,7 @@ details.q-card[open] > summary::before { transform: rotate(90deg); }
 .q-card-body { margin-top: .25rem; }
 
 /* inizio */
-.q-versions { display: grid; gap: .75rem; margin-top: 1.25rem; }
-.q-versions h3 { margin: 0; font-size: 1.25rem; }
-.q-big {
-  display: grid; gap: .15rem; width: 100%; min-height: 44px; padding: 1rem 1.1rem; text-align: left; cursor: pointer;
-  font: inherit; color: var(--text); background: var(--surface); border: 2px solid var(--border); border-radius: var(--r-lg); box-shadow: var(--shadow-1);
-}
-.q-big:hover { border-color: var(--brand); }
-.q-big.q-current { border-color: var(--brand); }
-.q-big-title { font-family: var(--font-display); font-size: 1.3rem; font-weight: 650; color: var(--brand); }
-.q-big-time { font-weight: 700; }
-.q-big-text { color: var(--text-2); }
-.q-resume .q-row { margin-top: .5rem; }
+.q-resume .q-row, .q-old-draft .q-row { margin-top: .5rem; }
 
 /* riepilogo */
 .q-sum { margin-top: 1rem; padding: .75rem 1rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); }
@@ -216,26 +180,16 @@ details.q-card[open] > summary::before { transform: rotate(90deg); }
 
 @media (min-width: 40rem) {
   .q-progress { margin-inline: 0; padding-inline: 0; }
-  .q-versions { grid-template-columns: 1fr 1fr; }
-  .q-versions h3, .q-versions .q-hint { grid-column: 1 / -1; }
 }
 /* contrasto elevato di Windows: le scelte fatte restano visibili anche senza i colori del sito */
 @media (forced-colors: active) {
   .q-chip input:checked + span, .q-chip-btn[aria-pressed="true"] { forced-color-adjust: none; background: Highlight; border-color: Highlight; color: HighlightText; }
-  .q-badge { forced-color-adjust: none; background: HighlightText; color: Highlight; }
   .q-bar-fill { background: Highlight; }
 }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; scroll-behavior: auto !important; }
 }
 
-/* Ogni precisazione resta accanto alla sua domanda, anche nelle schede ripetute. */
-.q-question { margin-block: 1rem; }
-.q-answer-body { min-width: 0; padding: 0; margin: 0; border: 0; }
-.q-answer-body > .q-field { margin-bottom: .4rem; }
-.q-clarifications { display: grid; gap: .5rem; margin-bottom: 1rem; }
-.q-specify > summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; color: var(--link); text-decoration: underline; text-underline-offset: .18em; }
-.q-specify textarea { width: 100%; }
 .q-footer .q-privacy { max-width: none; padding-inline: 0; margin-top: 1rem; text-align: left; }
 .q-privacy > summary { cursor: pointer; min-height: 44px; font-size: 1rem; font-weight: 700; display: flex; align-items: center; }
 .q-privacy > summary::before { content: "▸"; margin-right: .5rem; }

@@ -97,25 +97,27 @@ test('redazione, bozze, pubblicazione, conflitti, agenti e catalogo condiviso',a
   await expect(page.locator('[data-resource]')).toHaveCount(CONTENT_RESOURCES.length);
   // Risposte al questionario: pannello solo per gli amministratori (conteggio, esportazione, ricerca e cancellazione per ricevuta).
   // Una risposta vera, inviata dalla stessa origine come fa la pagina /questionario, con un testo che sembra una formula.
-  const sent=await api(page,'/api/survey/v1/responses','POST',{survey:'esperti-reatino',version:1,website:'',respondent:{name:'Prova redazione'},consent:{anonymousUse:true,recontact:false,diary:false},answers:{profile:{years:30},risks:{knowsPoisonings:'sì',poisonings:'=SOMMA(1;2), -3'}}});
+  // Versione 2 del questionario: il nome si salva perché la persona segnalerebbe con l'app e chiede il ricontatto.
+  const sent=await api(page,'/api/survey/v1/responses','POST',{survey:'esperti-reatino',version:2,website:'',respondent:{name:'Prova redazione'},consent:{anonymousUse:true,recontact:true},answers:{profile:{years:'30 anni o più'},warning:'=SOMMA(1;2), -3',willReport:'sì'}});
   expect(sent.status).toBe(201);const receipt=sent.data.receipt;
   const surveyGets=[];page.on('request',r=>{if(r.url().includes('/api/survey/v1/responses?'))surveyGets.push(new URL(r.url()).searchParams.get('format'));});
-  await page.locator('#cms-survey').click();const survey=page.locator('#cms-survey-dialog');await expect(survey).toBeVisible();
-  await expect(survey.locator('#cms-survey-count')).toContainText(/rispost[ae]\. L’ultima è arrivata il /);
+  // le esportazioni si aprono dalla sezione «Questionari» (il vecchio pulsante in testata è nascosto dal 20/10)
+  await page.locator('[data-workspace="surveys"]').click();await page.locator('#cms-questionnaires [data-survey-csv]').click();const survey=page.locator('#cms-survey-dialog');await expect(survey).toBeVisible();
+  await expect(survey.locator('#cms-survey-count')).toContainText(/rispost[ae] \(versione 2: \d+[^)]*\)\. L’ultima è arrivata il /);
   // il conteggio non scarica le risposte (format=count): nomi e contatti restano sul server finché non si esporta
   expect(surveyGets).toEqual(['count']);
   const fs=await import('node:fs');
   const download=async name=>{const d=page.waitForEvent('download');await survey.getByRole('button',{name,exact:true}).click();const file=await d;return{name:file.suggestedFilename(),text:fs.readFileSync(await file.path(),'utf8')};};
   const comma=await download('CSV con la virgola'),excel=await download('CSV per Excel');
-  expect(comma.name).toMatch(/^questionario-esperti-reatino-\d{4}-\d{2}-\d{2}\.csv$/);expect(excel.name).toMatch(/^questionario-esperti-reatino-\d{4}-\d{2}-\d{2}-excel\.csv$/);
+  expect(comma.name).toMatch(/^questionario-esperti-reatino-v2-\d{4}-\d{2}-\d{2}\.csv$/);expect(excel.name).toMatch(/^questionario-esperti-reatino-v2-\d{4}-\d{2}-\d{2}-excel\.csv$/);
   expect(comma.text.startsWith('\uFEFFid,created_at,survey,')).toBe(true);expect(excel.text.startsWith('\uFEFFid;created_at;survey;')).toBe(true);
   // stesse colonne con i due separatori; l'apostrofo contro le formule a inizio cella, e nel file per Excel anche dopo la virgola
   const [hc,...rc]=parseCsv(comma.text.slice(1),','),[hx,...rx]=parseCsv(excel.text.slice(1),';');expect(hx).toEqual(hc);
   const row=(rows,head)=>rows.find(r=>r[head.indexOf('receipt')]===receipt),rowC=row(rc,hc),rowX=row(rx,hx);
   expect(rowC).toHaveLength(hc.length);expect(rowX).toHaveLength(hx.length);
   expect(rowC[hc.indexOf('name')]).toBe('Prova redazione');expect(rowX[hx.indexOf('name')]).toBe('Prova redazione');
-  expect(rowC[hc.indexOf('risks.poisonings.text')]).toBe("'=SOMMA(1;2), -3");expect(rowX[hx.indexOf('risks.poisonings.text')]).toBe("'=SOMMA(1;2),' -3");
-  expect(rowX[hx.indexOf('risks.knowsPoisonings')]).toBe('sì');
+  expect(rowC[hc.indexOf('warning')]).toBe("'=SOMMA(1;2), -3");expect(rowX[hx.indexOf('warning')]).toBe("'=SOMMA(1;2),' -3");
+  expect(rowX[hx.indexOf('willReport')]).toBe('sì');expect(rowX[hx.indexOf('version')]).toBe('2');
   // richiesta di cancellazione: il codice si trova anche in minuscolo e con il trattino, si cancella dopo una conferma
   const find=async code=>{await survey.getByLabel('Richiesta di cancellazione: codice ricevuta').fill(code);await survey.getByRole('button',{name:'Cerca la risposta'}).click();};
   await find(`${receipt.slice(0,4)}-${receipt.slice(4)}`.toLowerCase());
@@ -125,7 +127,7 @@ test('redazione, bozze, pubblicazione, conflitti, agenti e catalogo condiviso',a
   await result.getByRole('button',{name:'Conferma: cancella per sempre'}).click();await expect(result).toContainText(`Risposta ${receipt} cancellata.`);
   expect((await api(page,`/api/survey/v1/responses?survey=esperti-reatino&format=json&receipt=${receipt}`)).data.count).toBe(0);
   await find(receipt);await expect(result).toContainText('Nessuna risposta con questo codice');
-  await survey.locator('[data-close]').click();await expect(survey).toBeHidden();
+  await survey.locator('[data-close]').click();await expect(survey).toBeHidden();await page.locator('#cms-content-tab').click();
   const original=(await api(page,'/api/content/v1/snapshot')).data;
   await page.locator('[data-resource="guides"]').click();
   await expect(page.locator('#cms-editor > h2')).toHaveText('Articoli e taccuini');

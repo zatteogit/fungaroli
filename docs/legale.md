@@ -2,6 +2,8 @@
 >
 > Aggiornamento del 16 ottobre 2026: dopo due controlli esterni sono state riviste le parti sulle norme (§1), sulle aree protette delle 15 zone (§2), sulla geolocalizzazione (§6.1 e §6.2), sulle verifiche aperte (§8) e la tabella delle discrepanze (§9). `data/legal.json` è passato alla versione 3 (`verified_on` 2026-10-16). Le fonti nuove sono in fondo alla sezione 11.
 
+> Aggiornamento del 21 ottobre 2026 (seconda tornata, modello 2.1.0): nel Parco Gran Sasso-Laga l'app non propone punti in zona A e B (§2.3); nuove fonti di dati con le loro licenze (§7); livello «Aree protette» della mappa e nuovi servizi chiamati dal browser (§6.2); punti aperti (§8, punti 15–17). Le 21 zone del pilota Lazio non sono coperte dalla verifica delle aree protette di §2.0.
+
 # Note legali e di sicurezza
 
 Documento di riferimento per i testi legali di Fungaroli Rieti (`data/legal.json`). Raccoglie le norme vigenti, le fonti consultate, i punti che non è stato possibile verificare e i rischi che l'app presenta oggi.
@@ -143,6 +145,8 @@ Due controlli indipendenti hanno incrociato i cerchi delle 15 zone e i circa 315
 
 **Limiti del controllo.** I confini del Geoportale «non hanno valenza giuridica e/o probatoria» (nota del dataset): fa fede la cartografia dell'ente. Licenze: perimetri «creativecommons» senza versione, zonazioni «not_specified». Per questo l'app non ridistribuisce queste geometrie e scrive solo frasi nei testi delle zone. Gli strati si fermano al confine del Lazio: fuori regione cadono 20 punti della Laga (quasi certamente nel Parco, versante abruzzese e marchigiano; non verificato), 35 di Rascino, 4 di Cittareale e 3 di Antrodoco. Per la Laga le quote di Parco e di zona «a» sono quindi limiti inferiori.
 
+**Dato per punto nell'app (16/10/2026).** Da questa verifica nasce `data/habitat-info.json` (`tools/build_habitat_info.py`): per ogni punto campione delle 15 zone, area protetta e zona del piano dagli stessi strati del Geoportale. Nella Laga risultano 23 punti in zona A (tutti fuori bosco) e 146 in zona B (74 di bosco), su 313. Le 21 zone del pilota Lazio (19/10/2026) non sono state incrociate così: molte toccano parchi e riserve regionali e nazionali (per esempio Castelli Romani, Monti Simbruini, Veio, Circeo, Abruzzo-Lazio-Molise), e le loro zone di riserva **non sono verificate**.
+
 ### 2.1 Riserva naturale Monte Navegna e Monte Cervia (zona Cicolano)
 
 - **Legge istitutiva:** L.R. 9 settembre 1988, n. 56. L'ampliamento del 1997 ha aggiunto altri comuni, tra cui Ascrea e Collalto Sabino.
@@ -167,6 +171,7 @@ Due controlli indipendenti hanno incrociato i cerchi delle 15 zone e i circa 315
 - **Regolamento del Parco:** sul sito dell'Ente c'è una **bozza** (2019) che all'art. 16 vieta la raccolta di funghi e tartufi nella zona a e la riserva, nelle zone b, c e d, "agli aventi titolo rilasciato dagli enti competenti". Non risulta approvata: la pagina "Regolamenti in vigore" dell'Ente non elenca un regolamento generale né uno sui funghi.
 - **Usi civici:** Piano e bozza fanno salvi gli usi civici nelle zone a e b. Nella Laga (Amatrice) i residenti titolari possono avere diritti di raccolta: l'app non può saperlo e lo dice con «salvi gli usi civici».
 - **Da fare prima di uscire:** consultare la zonazione del Piano (gransassolagapark.it, pdf "ZONAZIONE") e chiedere all'Ente Parco se ci sono regole per la raccolta dei funghi in vigore.
+- **In app dalla seconda tornata (decisione di Matteo del 16/10/2026):** i punti in zona A e B non si propongono come punto d'accesso o destinazione, per tutti gli interessi; restano nell'indice biologico, che descrive il bosco e non il permesso di raccolta. Quando in una fascia tutto il bosco adatto è in zona A o B (nella Laga, la fascia dei 1.600 m per tutti i funghi), la scheda scrive: «In questa fascia il bosco adatto è in zona di riserva del Parco: la raccolta è esclusa» e propone il punto consentito più comodo, con la sua quota. Se solo una parte è esclusa, dice quanti punti su quanti. Le frasi richiamano gli usi civici e dicono che la cartografia della Regione è indicativa. Base: Normativa di attuazione, art. 7, c. 7 e art. 8, c. 7, con l'interpretazione data sopra per la zona b. La regola è scritta nel dato (`esclusioni` di `data/habitat-info.json`): se il file non è allineato a `habitat.json` l'app non esclude nulla e resta solo l'avviso di zona.
 - **Domande da fare per iscritto all'Ente Parco:** la raccolta in zona b è esclusa (art. 8, c. 7)? Valgono gli usi civici per i residenti delle frazioni di Amatrice? Nelle zone c e d esiste una «diversa disposizione» ai sensi della L.R. 32/1998, art. 10, lett. d? Le risposte vanno registrate qui.
 
 ### 2.4 Altre zone
@@ -279,6 +284,7 @@ Ho cercato in `index.html`, `js/`, `css/`, `worker/` e `functions/` i termini an
 | Cache meteo per zona (`fungaroli:weather:zones:v3`, `fungaroli:outing:zones:v3`) | `localStorage` | Solo il dispositivo |
 | Diario (`fungaroli:diario:v1`): data, zona, fascia di quota, specie trovate, nota libera fino a 2000 caratteri, indice previsto, ora di salvataggio | `localStorage` | Solo il dispositivo, finché non lo si sincronizza o esporta |
 | Codice diario (`fungaroli:diario-token`) | `localStorage`, in chiaro | Solo il dispositivo |
+| Previsioni conservate in automatico (**in corso** il 21/10/2026): zona, giorno, indici e meteo della zona, senza posizione dell'utente | Senza profilo nel diario locale, con un limite di spazio e di giorni; con un profilo nel diario del profilo, come i piani salvati a mano | Come il diario. Il testo per `legal.json` lo sta scrivendo un altro agente: va ricontrollato qui a lavoro finito |
 | Conferma dell'avviso iniziale (`fungaroli:legal-accepted`) | `localStorage` | Solo il dispositivo |
 | Diario sincronizzato | Cloudflare Workers KV, namespace `fungaroli-diario`, account Cloudflare di Matteo Sgambato | Chiunque abbia il codice diario: legge, modifica e cancella **tutte** le uscite. Non c'è separazione tra persone. |
 | Contatori orari del servizio meteo (esito e durata delle chiamate a Open-Meteo, uso della cache), aggiornamento del 14/10/2026 | Cloudflare D1, tabella `weather_metrics`, conservati 180 giorni | Amministratori. Nessun IP, account o identificativo: solo giorno, ora, profilo ed esito. |
@@ -298,7 +304,7 @@ Ogni richiesta a un server esterno gli trasmette l'**indirizzo IP**, lo user age
 | {a,b,c}.tile.opentopomap.org | Mappa topografica | Tile richieste, cioè l'area guardata; anche l'area intorno a te se premi «La mia posizione» (tessere di circa 2 km a livello 14) | La pagina del progetto non contiene un'informativa privacy. Le tessere restano nella cache del service worker |
 | tile.openstreetmap.org (OSMF) | Mappa OSM, se scelta | Tile richieste; anche l'area intorno a te se premi «La mia posizione» | Si applica la privacy policy di OSMF |
 | photon.komoot.io, routing.openstreetmap.de (dal server dell'app) | Base di partenza, solo con un profilo | Testo della località cercata; coordinate della base e delle zone per i percorsi, senza nome o ID del profilo | Chiamati dal Worker, non dal browser (`worker/travel-provider.js`) |
-| geoportale.regione.lazio.it | Livello Carta Forestale e legenda | Area guardata | |
+| geoportale.regione.lazio.it | Livello Carta Forestale e legenda; dal modello 2.1.0 anche il livello «Aree protette» (perimetri e zone dei piani del Gran Sasso-Laga e della Duchessa) e le sue legende | Area guardata | Solo se si accende uno dei due livelli |
 | sketchfab.com | Solo se si tocca "Apri il modello 3D" | Iframe del visore | Sketchfab può impostare cookie propri; non verificato |
 | Google Maps, iNaturalist, Wikipedia, Waymarked Trails, OpenStreetMap, GBIF | Solo cliccando un link | Navigazione verso il sito esterno | Link in uscita, non incorporati |
 
@@ -345,6 +351,11 @@ Nell'interfaccia del sito non ci sono richieste dirette a GBIF, Wikidata, iNatur
 | **Foto di Wikimedia Commons e iNaturalist** | Varie (vedi sotto) | Licenze CC: autore, licenza con link (dove ragionevolmente possibile), link all'opera, indicazione delle modifiche (CC BY 4.0, sez. 3(a)(1)). Gli obblighi si possono adempiere "in qualsiasi modo ragionevole" secondo mezzo e contesto (sez. 3(a)(2)). Ridimensionare e convertire il formato sono modifiche tecniche consentite (sez. 2(a)(4)). | Ogni foto mostra autore, sigla della licenza e link alla pagina d'origine. Manca il **link al testo della licenza**: conviene aggiungerlo. |
 | **Modelli 3D Sketchfab** | CC BY, CC BY-NC, CC BY-NC-SA, CC BY-NC-ND | Il visore li incorpora senza modificarli, quindi ND e SA non creano problemi. Va mostrata l'attribuzione. | Nome, autore, licenza e link a Sketchfab presenti. Non ho verificato le condizioni d'uso di Sketchfab. |
 | **Leaflet 1.9.4** | BSD-2-Clause | Mantenere la nota di copyright nel codice distribuito | Caricato da cdnjs con la sua intestazione. |
+| **TINITALY 1.1** (INGV, DEM a 10 m), dal 16/10/2026 | CC BY 4.0 | Attribuzione: Tarquini et al. (2023), https://doi.org/10.13127/tinitaly/1.1, link alla licenza | Dati derivati (pendenza, esposizione, dislivelli) in `data/habitat-info.json` e `data/access-info.json`, con la citazione nell'intestazione. Nella scheda: «TINITALY 1.1, INGV (CC BY 4.0)» con il link al DOI. |
+| **European Forest Disturbance Atlas v3.0**, dal 16/10/2026 | CC BY 4.0 | Attribuzione con il DOI del deposito (https://doi.org/10.5281/zenodo.21722408) e dell'articolo di metodo | Anno e causa del disturbo per punto in `data/habitat-info.json`. Nella scheda: «European Forest Disturbance Atlas v3.0 (CC BY 4.0)». |
+| **Regione Lazio, aree naturali protette** (PTPR Tav. B) e **limiti comunali** (DBGT 2014) | «creativecommons» senza versione sul Geoportale | Citare «© Regione Lazio»; la versione della licenza non è indicata | Area protetta per punto in `data/habitat-info.json`; perimetri mostrati solo come immagini WMS del Geoportale, non ridistribuiti. Nella mappa: «Aree protette © Regione Lazio; indicativo: fa fede la cartografia dell'ente». |
+| **Regione Lazio, zonazioni dei piani** (Gran Sasso-Laga, Duchessa e altre) | Nessuna licenza indicata (`not_specified`) | Non chiare | Il repository pubblica solo il codice della zona per punto (per esempio «B»), non le geometrie; la mappa mostra le zone come immagini WMS del Geoportale. Vedi §8, punto 15. |
+| **Valhalla su OpenStreetMap**, per `data/access-info.json` | Dati ODbL 1.0 | Come OpenStreetMap | Percorsi a piedi e punti strada derivati da OSM: stessa attribuzione di OpenStreetMap. |
 
 ### 7.1 Foto: licenze presenti in `data/media.json`
 
@@ -374,6 +385,9 @@ Conteggio: CC-BY-NC 56, CC-BY 14, CC BY-SA 3.0 6, CC BY-SA 4.0 3, CC0 3, CC BY 3
 12. **Workers Logs e analytics di Cloudflare** attivi sull'account: si controllano solo dal pannello. Il codice non li attiva.
 13. **Tempo d'attesa del 118** e instradamento delle chiamate al 112 nel Reatino: non verificati su una fonte primaria aggiornata.
 14. **L.R. 29/1987** sulla circolazione fuoristrada: letta nel testo coordinato il 15/10/2026 (vedi 1.6). Resta da verificare caso per caso quali piste sono vietate da comuni, aree protette o proprietari.
+15. **Licenza delle zonazioni dei piani** sul Geoportale (`not_specified`) e versione della licenza «creativecommons» dei perimetri: da chiedere alla Regione insieme alla Carta Forestale. Oggi si pubblica solo il codice della zona per punto.
+16. **Zone di riserva delle altre aree protette.** L'esclusione dei punti vale solo per le zone A e B del Gran Sasso-Laga. Riserva Monte Navegna e Monte Cervia: zone A e B previste dalla legge istitutiva ma non digitalizzate (vedi 2.1). Le aree protette delle 21 zone del pilota Lazio non sono state verificate punto per punto.
+17. **Usi civici nelle zone A e B della Laga:** l'app esclude i punti per tutti e lo dice («salvi usi civici»), senza sapere chi ne ha diritto.
 
 ---
 
@@ -501,6 +515,7 @@ Tutte consultate il 12 ottobre 2026.
 - L. 6 dicembre 1991, n. 394, artt. 11, 12 e 30 (Normattiva): https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1991-12-06;394~art30
 - L. 20 novembre 2017, n. 168, domini collettivi, art. 1 (Normattiva): https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2017-11-20;168~art1
 - Ente Parco Gran Sasso e Monti della Laga, Normativa di attuazione del Piano, artt. 7, 8 e 9 (c. 7): https://www.gransassolagapark.it/pdf/Piano-Parco/Normativa-Attuazione.pdf
+- Dati della seconda tornata, letti il 16/10/2026 (licenze nelle intestazioni di `data/habitat-info.json` e `data/access-info.json`; DOI ricontrollati su DataCite e Crossref il 21/10/2026): TINITALY 1.1, https://doi.org/10.13127/tinitaly/1.1; European Forest Disturbance Atlas v3.0.0, https://doi.org/10.5281/zenodo.21722408 e https://doi.org/10.5194/essd-17-2373-2025; Geoportale Lazio, schede dei dataset 846 (aree protette), 1182 e 1221 (zonazioni) e 564 (limiti comunali): https://geoportale.regione.lazio.it/catalogue/#/dataset/846
 - Riserva Montagne della Duchessa, sito dell'ente (ente gestore e contatti, letto il 16/10/2026): https://www.riservaduchessa.it/
 - DCR Lazio 15 settembre 2021, n. 16 (Piano della Duchessa), copia del Consiglio regionale: https://www.consiglio.regione.lazio.it/binary/consiglio_regionale/tbl_trasparenzaContenuti/DC_2021_16.pdf
 - Regione Lazio, Geoportale, servizi WFS e WMS (aree naturali protette, zonazione PNGSL e Duchessa, Natura 2000), scaricati il 15/10/2026: https://geoportale.regione.lazio.it/geoserver/ows?service=WFS&request=GetCapabilities; metadati e licenze: https://geoportale.regione.lazio.it/api/v2/datasets/846, https://geoportale.regione.lazio.it/api/v2/datasets/1182, https://geoportale.regione.lazio.it/api/v2/datasets/1221
