@@ -927,7 +927,7 @@ function outdoorProposals(day=state.homeDay, onlyUpcoming=false) {
 let homePresentation=null,homeReviewOpen=false,homeReviewKey='';
 function homeCandidates(day=state.homeDay){
  const list=[];
- for(const z of (state.target==='funghi'?zones:weatherZones||zones)){
+ for(const z of (weatherZones||zones)){
   for(const o of day==null?Array.from({length:AHEAD_DAYS+1},(_,i)=>i):[day]){
    const d=state.target==='funghi'?dayEntry(z.id,o)||outdoorDay(z,o):outdoorDay(z,o);
    const walk=walkFor(z,d);if(!matchesInterests(z,d,walk)||state.target!=='funghi'&&!walk)continue;
@@ -950,7 +950,7 @@ function uniqueHomeCandidates(list){
 function prepareHome(){
  const raw=homeCandidates(),fungi=state.target==='funghi';
  homePresentation=composeHome(raw,{fungi,modeled:!fungi||selectedSpecies().length>0,loading:weatherBusy,
-  community:state.communityOnly&&!zones.some(z=>communityHasZone(z.id))});
+  community:state.communityOnly&&!(weatherZones||zones).some(z=>matchesProvince(z)&&communityHasZone(z.id))});
  homePresentation.raw=raw;
  const key=JSON.stringify([state.homeDay,state.interests,state.province,state.speciesIds&&[...state.speciesIds],state.plantIds&&[...state.plantIds],state.communityOnly,state.easyTrails,state.shortTrails,state.distancePenalty,state.avoidCrowd,state.preferComfort]);
  if(key!==homeReviewKey){homeReviewKey=key;homeReviewOpen=false;}
