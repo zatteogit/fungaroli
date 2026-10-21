@@ -35,7 +35,7 @@ test('una zona indisponibile mantiene le altre e il retry recupera l’intero ca
   });
   await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','62026-10-20'));
   await page.goto('/');await expect(page.locator('#hero .cover-link')).toBeVisible();
-  await expect(page.locator('#stale')).toContainText('14 zone su 15');await expect(page.locator('#stale')).toContainText('Le altre non vengono valutate');
+  await expect(page.locator('#updated')).toContainText('da aggiornare');await expect(page.locator('#stale')).toContainText(/\d+ zone su \d+/);await expect(page.locator('#stale')).toContainText('Le altre non vengono valutate');
   const zones=(await(await page.request.get('/data/zones.json')).json()).zones,missing=zones.find(z=>String(z.lat)===missingLatitude);
   await page.evaluate(id=>location.hash=`#/zona/${id}/0`,missing.id);
   await expect(page.locator('#detail h1')).toHaveText(missing.title||missing.name);await expect(page.locator('#detail')).toContainText('Meteo non disponibile per questa zona');

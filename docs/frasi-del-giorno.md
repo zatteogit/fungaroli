@@ -4,7 +4,9 @@ Decisione di Matteo, 20 ottobre 2026: una card discreta nella home e un archivio
 
 ## Collocazione e comportamento
 
-La card viene dopo **Altre buone uscite**, prima delle zone del Lazio. Non precede la proposta principale, i filtri o le alternative. Fondo neutro, testi piccoli ma leggibili, nessuna immagine, carosello o pulsante aggiuntivo. Il testo resta integrale; l’autore delle citazioni è un link alla fonte.
+La card viene dopo **Altre buone uscite**, prima delle zone del Lazio. Non precede la proposta principale, i filtri o le alternative.
+
+**Deroga del 21 ottobre 2026 (Matteo).** Negli stati senza proposta (tardi, condizioni basse, meteo sfavorevole, da valutare, dati mancanti, filtri) la card scende dopo Luoghi del Lazio, la guida pertinente e il «Come funziona» compatto. Con una proposta resta dopo le alternative. Fondo neutro, testi piccoli ma leggibili, nessuna immagine, carosello o pulsante aggiuntivo. Il testo resta integrale; l’autore delle citazioni è un link alla fonte.
 
 Una frase per giorno civile di **Europe/Rome**, stabile al ricaricamento e senza dati personali. Il selettore esclude bozze, testi archiviati e stagioni incompatibili. Scorre l’elenco compatibile con una rotazione deterministica senza ripetizioni nello stesso ciclo, finché il catalogo resta invariato. Le stagioni sono editoriali: marzo–maggio, giugno–agosto, settembre–novembre, dicembre–febbraio. Il cambio giorno viene controllato anche al ritorno dalla sospensione. Nessuna rotazione durante la lettura nello stesso giorno.
 

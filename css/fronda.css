@@ -901,7 +901,9 @@ body:has(#ranking .ring) #ranking-index-legend,body:has(#season .ring) #season-i
 #days .day .d3 { grid-column:1; grid-row:2; justify-self:start; font-size:13px; }
 #days .day .d-weather { grid-column:1 / -1; grid-row:2; justify-self:end; font-size:12px; }
 #days .day-all { flex-basis:120px; min-width:120px; }
-#days .day-all .d2 { font-size:14px; }
+/* «Settimana» intera sulla prima riga, intervallo sotto: niente troncamento. */
+#days .day-all .d1 { grid-column:1 / -1; overflow:visible; }
+#days .day-all .d2 { grid-column:1 / -1; grid-row:2; justify-self:end; font-size:14px; }
 #days .day-all .d3 { grid-column:1/-1; justify-self:center; }
 @media(max-width:899px) {
   .appbar[data-context="home"] { gap:6px; }
@@ -1150,7 +1152,7 @@ body:has(#ranking .ring) #ranking-index-legend,body:has(#season .ring) #season-i
 
 /* Un solo ritmo tra le fasce; titoli, caroselli e legende appartengono alla stessa fascia. */
 .home-bands { --home-band-gap:var(--sp-6); display:flex; flex-direction:column; gap:var(--home-band-gap); margin-top:var(--home-band-gap); }
-.home-bands > .home-band { min-width:0; margin-block:0; }
+.home-bands > .home-band, .home-bands > #community-intro { min-width:0; margin-block:0; }
 .home-bands > .home-band:empty,
 .home-alternatives:has(#ranking:empty),
 .home-season:has(#season:empty) { display:none; }
@@ -1248,9 +1250,6 @@ a.daily-thought-credit { color:var(--link); text-underline-offset:3px; }
 /* Sans photo, la météo occupe sa propre ligne, jamais celle du jour. */
 #ranking .tile:not(:has(> img:not([data-image-state="error"]),> .outdoor-backdrop))>.tile-wx { position:relative; inset:auto; margin:12px 12px 0; align-self:flex-start; max-width:calc(100% - 152px); }
 #ranking .tile .ring.model-index { max-width:124px; }
-.day .d-area { display:flex; align-items:flex-start; gap:4px; grid-column:1/-1; font-size:11px; font-weight:500; line-height:1.35; white-space:nowrap; text-align:left; }
-#days .day-all .d-area { grid-row:2; align-self:center; min-width:0; }
-.day .d-area svg { width:13px; height:13px; flex:none; fill:none; stroke:currentColor; stroke-width:1.8; margin-top:1px; }
 .access-overview { display:grid; grid-template-columns:minmax(0,1.4fr) minmax(180px,1fr); align-items:center; gap:20px; margin:0 0 20px; }
 .access-mini-map { margin:0; overflow:hidden; border:1px solid var(--border); border-radius:16px; background:var(--surface-2); }
 .access-mini-map iframe { display:block; width:100%; height:210px; border:0; }
@@ -1643,20 +1642,59 @@ button.cover-index > b { font-size:21px; line-height:1.2; }
 .catalog-view .animal-construction .story-photo img { object-position:0 50%; }
 
 /* La data selezionata e le proposte restano contigue; il resto è esplorazione. */
-.home-empty { display:flex; align-items:flex-start; gap:16px; padding:22px; border:1px solid var(--hair); border-radius:20px; background:var(--surface-2); }
+.home-empty { overflow:hidden; border:1px solid var(--hair); border-radius:20px; background:var(--surface-2); }
+.home-empty-why { display:flex; align-items:flex-start; gap:16px; padding:22px; }
 .home-empty-icon { display:grid; place-items:center; flex:none; width:40px; height:40px; padding:8px; border-radius:12px; background:var(--story-fiordaliso); color:var(--story-ink); }
 .home-empty-icon svg { width:24px; height:24px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
 .home-empty h2 { margin:0; font:700 18px/1.35 var(--font-body); }
 .home-empty p { margin:6px 0 0; max-width:65ch; color:var(--text-2); font-size:14px; line-height:1.6; }
 .home-empty .link-btn { margin-top:10px; min-height:44px; }
-.home-weather-status { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+.home-empty .btn { margin-top:14px; }
+.home-empty + .notice, .notice + .home-empty { margin-top:12px; }
+/* Prossima occasione dentro il riquadro: foto, giorno, luogo, dati e una sola azione. */
+.home-empty .home-next { display:grid; grid-template-columns:clamp(116px,26%,180px) minmax(0,1fr); border-top:1px solid var(--hair); background:var(--surface); }
+.home-next-media { position:relative; display:block; min-height:168px; overflow:hidden; background:var(--surface-2); color:var(--muted); }
+.home-next-media img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.home-next-media .outdoor-backdrop { position:absolute; inset:0; display:grid; place-items:center; }
+.home-next-media .outdoor-backdrop svg { width:40px; height:40px; fill:none; stroke:currentColor; stroke-width:1.6; }
+.home-next-copy { min-width:0; padding:16px 18px 18px; }
+.home-next-copy > small { display:block; color:var(--calendula-ink); font:700 11px/1.4 var(--font-body); text-transform:uppercase; letter-spacing:.07em; }
+.home-next-copy h3 { margin:4px 0 6px; font:600 24px/1.15 var(--font-display); letter-spacing:-.01em; overflow-wrap:anywhere; }
+.home-empty .home-next-facts { display:flex; flex-wrap:wrap; align-items:center; gap:6px 12px; margin:0 0 14px; color:var(--text-2); font-size:13px; line-height:1.4; }
+.home-next-facts .ring.model-index { position:static; flex-direction:row; width:auto; height:auto; min-width:0; min-height:0; max-width:100%; gap:6px; padding:3px 10px 3px 8px; border:0; border-radius:999px; backdrop-filter:none; -webkit-backdrop-filter:none; background:var(--scrim); color:var(--on-photo); }
+.home-next-facts .ring.model-index > span { font-size:11px; }
+.home-next-facts .ring.model-index > b { font-size:14px; gap:3px; }
+.home-next-facts .ring.model-index .fungus-glyph { width:13px; height:13px; }
+.home-next-wx { display:inline-flex; align-items:center; gap:4px; }
+.home-next-wx .wxi, .home-next-wx .wxi svg { width:16px; height:16px; }
+.home-empty .home-next-copy .btn { margin-top:0; }
+.home-empty .home-next-none { margin:0; padding:14px 22px; border-top:1px solid var(--hair); background:var(--surface); max-width:none; font-size:13px; }
+.home-empty .home-next-none .link-btn { display:inline-flex; align-items:center; min-height:44px; margin:-12px 0 -12px 4px; vertical-align:middle; }
+/* Riga sopra la proposta quando la home è passata da sola a un altro giorno. */
+.home-day-note { display:flex; align-items:center; flex-wrap:wrap; gap:0 10px; margin:0 0 10px; padding:2px 14px; border-radius:var(--r-sm); background:var(--fiordaliso-soft); color:var(--fiordaliso-ink); font-size:13px; line-height:1.4; }
+.home-day-note[hidden] { display:none; }
+/* Con la riga sopra, la foto della proposta si accorcia: l'azione resta nel primo schermo del telefono. */
+@media(max-width:760px) { .view[data-view="uscite"]:has(> #home-day-note:not([hidden])) #hero .cover-editorial > .atmosphere { height:clamp(140px,40vw,320px); } }
+#days .day .d-late { color:var(--text-2); }
+#days .day[aria-selected="true"] .d-late { color:inherit; }
+#days .day .d-late svg { width:14px; height:14px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; }
+.home-day-note > svg { flex:none; width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; }
+.home-day-note > span { flex:1 1 180px; min-width:0; padding-block:6px; }
+.home-day-note .link-btn { min-height:44px; color:inherit; font-weight:600; }
+.home-weather-status { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0 16px; }
+.home-weather-line { display:inline-flex; align-items:center; flex-wrap:wrap; justify-content:flex-end; gap:0 10px; margin-left:auto; color:var(--text-2); font-size:12px; }
+.home-weather-status.is-stale #updated { color:var(--warn-ink); }
+.home-weather-status .upd-label { text-decoration:underline; text-underline-offset:2px; font-weight:600; color:var(--text); }
+.home-weather-status:not(.is-stale) .upd-label { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+.home-weather-status.without-action #refresh { display:none; }
+.home-weather-details { flex-basis:100%; font-size:12px; color:var(--text-2); }
+.home-weather-details[hidden] { display:none; }
+.home-weather-details > summary { width:fit-content; margin-left:auto; min-height:32px; display:flex; align-items:center; cursor:pointer; text-decoration:underline; text-underline-offset:2px; }
+.home-weather-details #stale { text-align:right; }
+.home-weather-details #stale .link-btn { display:none; }
 .home-how-link { font-size:12px; min-height:44px; }
-.home-next { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:20px 0; border-block:1px solid var(--hair); }
-.home-next[hidden] { display:none; }
-.home-next h2 { margin:4px 0 8px; font:650 20px/1.3 var(--font-body); }
-.home-next p { margin:0; color:var(--text-2); font-size:13px; }
-.home-next small { color:var(--text-2); font-size:11px; text-transform:uppercase; letter-spacing:.07em; }
-.home-next .btn { flex:none; }
+.home-how-link[hidden] { display:none; }
+.home-horizon { margin:10px 2px 0; }
 #ranking:has(.home-review-item) { display:grid; gap:10px; margin:0; padding:0; overflow:visible; mask-image:none; }
 #ranking .home-review-item { width:auto; flex:none; }
 .home-review-item a { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:16px; border:1px solid var(--hair); border-radius:16px; background:var(--surface); text-decoration:none; }
@@ -1669,11 +1707,14 @@ button.cover-index > b { font-size:21px; line-height:1.2; }
 .home-partial { margin-top:12px; }
 .home-notebook-link { background:var(--surface-2); }
 @media(max-width:599px){
- .home-empty { padding:18px; gap:12px; }
+ .home-empty-why { padding:18px; gap:12px; }
  .home-empty h2 { font-size:16px; }
  .home-empty p { font-size:13px; }
- .home-next { align-items:flex-start; flex-direction:column; gap:12px; }
- .home-next h2 { font-size:18px; }
+ .home-next-copy { padding:14px; }
+ .home-empty .home-next { grid-template-columns:96px minmax(0,1fr); }
+ .home-next-copy .btn { padding-inline:16px; white-space:nowrap; }
+ .home-next-copy h3 { font-size:21px; }
+ .home-empty .home-next-none { padding:12px 18px; }
  #community-intro.is-compact > span { font-size:12px; gap:8px; }
  #community-intro.is-compact .link-btn { font-size:12px; }
 }
