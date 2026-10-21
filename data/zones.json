@@ -2082,9 +2082,9 @@
         },
         "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
       },
-      "collectionStatus": "unknown",
-      "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita. Referente: Ente Parco Naturale Regionale Monti Simbruini.",
-      "collectionSourceUrl": "https://www.parcomontisimbruini.it/pun-dettaglio.php?id=2773",
+      "collectionStatus": "observation_only",
+      "collectionNote": "Uscita di osservazione. Il bosco della zona ricade nelle zone di riserva R1, R2 e R4 del Piano di assetto del Parco (DCR 587/1999, NTA artt. 27–31), che non elencano la raccolta tra gli usi ammessi: l’app non propone punti di raccolta. Per chiarimenti: Ente Parco Naturale Regionale Monti Simbruini.",
+      "collectionSourceUrl": "https://www.parcomontisimbruini.it/pdf/Piano.Assetto.pdf",
       "publicationStatus": "active",
       "manager": "Ente Parco Naturale Regionale Monti Simbruini",
       "title": "Fiumata e Fosso Acqua Corore",
