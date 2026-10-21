@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {cachedForecast,forecastParams,compactGrowth} from '../worker/weather-provider.js';
 import {fetchForecast} from '../js/weather-request.js';
 import {todayISO,toDaily} from '../js/weather.js';
-import {LEGACY_GROWTH_HOURLY} from '../js/weather-data.js';
+import {LEGACY_GROWTH_DAILY,LEGACY_GROWTH_HOURLY} from '../js/weather-data.js';
 const now=Date.parse(todayISO()+'T10:00:00Z'),zones=[{lat:42.4,lon:12.8,bands:[800,1000]}];
 const cache=()=>{const data=new Map();return{data,get:async k=>data.has(k)?JSON.parse(data.get(k)):null,put:async(k,v)=>data.set(k,v)};};
 const raw=(kind='growth')=>Array.from({length:kind==='growth'?2:1},()=>Object.fromEntries(['daily','hourly'].filter(g=>forecastParams(zones,kind).has(g)).map(g=>[g,{time:[todayISO(new Date(now))+(g==='hourly'?'T12:00':'')],...Object.fromEntries(forecastParams(zones,kind).get(g).split(',').map(f=>[f,[0]]))}])));
@@ -114,8 +114,9 @@ test('shared cache survives midnight when its forecast covers the new day',async
 });
 
 // ---- Strato 9–27 cm: registrato, non usato nell'indice; compatibilità con copie e pagine precedenti ----
-const legacyRaw=()=>raw().map(row=>{delete row.hourly.soil_moisture_9_to_27cm;return row;});
-const legacyQuery=()=>{const q=forecastParams(zones,'growth');q.set('hourly',LEGACY_GROWTH_HOURLY);return q;};
+// la richiesta della versione in produzione (v82): senza strato 9–27 cm e senza ET₀
+const legacyRaw=()=>raw().map(row=>{delete row.hourly.soil_moisture_9_to_27cm;delete row.daily.et0_fao_evapotranspiration;return row;});
+const legacyQuery=()=>{const q=forecastParams(zones,'growth');q.set('daily',LEGACY_GROWTH_DAILY);q.set('hourly',LEGACY_GROWTH_HOURLY);return q;};
 test('lo strato 9–27 cm diventa una media giornaliera; le righe che non lo hanno restano valide',()=>{
   const hours=Array.from({length:48},(_,i)=>`2026-10-${i<24?'12':'13'}T${String(i%24).padStart(2,'0')}:00`);
   const row={daily:{time:['2026-10-12','2026-10-13'],precipitation_sum:[4,1],temperature_2m_mean:[13,14],temperature_2m_min:[8,9],temperature_2m_max:[18,19]},
@@ -132,10 +133,13 @@ test('lo strato 9–27 cm diventa una media giornaliera; le righe che non lo han
 });
 test('il profilo di crescita chiede lo strato 9–27 cm; una pagina aperta con la richiesta precedente non riceve 422',async()=>{
   assert.equal(forecastParams(zones,'growth').get('hourly'),'soil_moisture_3_to_9cm,soil_temperature_6cm,soil_moisture_9_to_27cm');
+  assert.equal(forecastParams(zones,'growth').get('daily'),'precipitation_sum,temperature_2m_mean,temperature_2m_min,temperature_2m_max,et0_fao_evapotranspiration');
   let asked;
-  const res=await cachedForecast(legacyQuery(),{zones,cache:cache(),now,fetcher:async url=>{asked=new URL(url).searchParams.get('hourly');return Response.json(legacyRaw());}});
-  assert.equal(res.status,200);assert.equal(asked,LEGACY_GROWTH_HOURLY);
+  const res=await cachedForecast(legacyQuery(),{zones,cache:cache(),now,fetcher:async url=>{asked=new URL(url).searchParams;return Response.json(legacyRaw());}});
+  assert.equal(res.status,200);assert.equal(asked.get('hourly'),LEGACY_GROWTH_HOURLY);assert.equal(asked.get('daily'),LEGACY_GROWTH_DAILY);
   const rows=await res.json();assert.ok(Array.isArray(rows[0].daily.soil_moisture_3_to_9cm_mean));assert.equal('soil_moisture_9_to_27cm_mean' in rows[0].daily,false);
+  // la copia vecchia resta valida: nel browser ET₀ e strato 9–27 cm sono serie di null
+  const old=toDaily(rows[0],todayISO(new Date(now)));assert.deepEqual(old.et0,[null]);assert.deepEqual(old.soilm9to27,[null]);
 });
 test('la copia condivisa salvata con la richiesta precedente si usa subito, ma parte l’aggiornamento che porta lo strato nuovo',async()=>{
   const storage=cache();
@@ -149,7 +153,8 @@ test('la copia condivisa salvata con la richiesta precedente si usa subito, ma p
   await Promise.all(work);assert.equal(calls,1);
   const hit=await cachedForecast(params,{zones,cache:storage,now:now+120000,fetcher});
   assert.equal(hit.headers.get('x-weather-cache'),'hit');assert.equal(calls,1);
-  assert.ok(Array.isArray((await hit.json())[0].daily.soil_moisture_9_to_27cm_mean));
+  const fresh=(await hit.json())[0].daily;
+  assert.ok(Array.isArray(fresh.soil_moisture_9_to_27cm_mean));assert.ok(Array.isArray(fresh.et0_fao_evapotranspiration));
   // se l'aggiornamento non riesce, resta la copia datata della richiesta precedente
   const other=cache();await cachedForecast(legacyQuery(),{zones,cache:other,now,fetcher:async()=>Response.json(legacyRaw())});
   const kept=await cachedForecast(params,{zones,cache:other,now:now+60000,fetcher:async()=>Response.json({},{status:429})});
@@ -159,4 +164,28 @@ test('una risposta nuova senza lo strato richiesto non entra nella cache condivi
   const storage=cache();
   await assert.rejects(cachedForecast(forecastParams(zones,'growth'),{zones,cache:storage,now,fetcher:async()=>Response.json(legacyRaw())}),e=>e.status===502);
   assert.equal(storage.data.size,0);
+});
+
+test('ET₀: il profilo nuovo la chiede, una risposta senza ET₀ non entra in cache, la riga compatta la conserva',async()=>{
+  const storage=cache(),params=forecastParams(zones,'growth');
+  const noEt0=()=>raw().map(row=>{delete row.daily.et0_fao_evapotranspiration;return row;});
+  await assert.rejects(cachedForecast(params,{zones,cache:storage,now,fetcher:async()=>Response.json(noEt0())}),e=>e.status===502);
+  assert.equal(storage.data.size,0);
+  const withEt0=()=>raw().map(row=>({...row,daily:{...row.daily,et0_fao_evapotranspiration:[3.1]}}));
+  const res=await cachedForecast(params,{zones,cache:storage,now,fetcher:async()=>Response.json(withEt0())});
+  const rows=await res.json();assert.deepEqual(rows[0].daily.et0_fao_evapotranspiration,[3.1]);
+  assert.deepEqual(toDaily(rows[0],todayISO(new Date(now))).et0,[3.1]);
+});
+test('righe compatte: le ore di umidità fuori da 0–1 non entrano nella media, come nella via oraria del browser',()=>{
+  const hours=Array.from({length:24},(_,i)=>`2026-10-12T${String(i).padStart(2,'0')}:00`);
+  const row=()=>({daily:{time:['2026-10-12'],precipitation_sum:[4],temperature_2m_mean:[13],temperature_2m_min:[8],temperature_2m_max:[18],et0_fao_evapotranspiration:[2]},
+    hourly:{time:hours,soil_moisture_3_to_9cm:Array(24).fill(.3),soil_temperature_6cm:Array(24).fill(13),soil_moisture_9_to_27cm:Array(24).fill(.25)}});
+  const bad=row();bad.hourly.soil_moisture_3_to_9cm[7]=2.5;bad.hourly.soil_moisture_9_to_27cm[9]=-0.4;
+  const small=compactGrowth([bad])[0].daily;
+  assert.equal(small.soil_moisture_3_to_9cm_mean[0],null);assert.equal(small.soil_moisture_9_to_27cm_mean[0],null);
+  assert.equal(toDaily(compactGrowth([bad])[0],'2026-10-12').soilm[0],toDaily(bad,'2026-10-12').soilm[0]);
+  // la temperatura del suolo non è una frazione: 24 valori validi restano una media
+  const warm=row();warm.hourly.soil_temperature_6cm.fill(14);
+  assert.equal(compactGrowth([warm])[0].daily.soil_temperature_6cm_mean[0],14);
+  assert.ok(Math.abs(compactGrowth([row()])[0].daily.soil_moisture_3_to_9cm_mean[0]-.3)<1e-12);
 });

@@ -1,13 +1,13 @@
-import {compactGrowth,GROWTH_DAILY,GROWTH_HOURLY,LEGACY_GROWTH_HOURLY} from '../js/weather-data.js';
+import {compactGrowth,GROWTH_DAILY,GROWTH_HOURLY,LEGACY_GROWTH_DAILY,LEGACY_GROWTH_HOURLY} from '../js/weather-data.js';
 export {compactGrowth} from '../js/weather-data.js';
 import {todayISO,PAST_DAYS,FORECAST_DAYS} from '../js/weather.js';
 const API='https://api.open-meteo.com/v1/forecast', TTL=3600000;
-const growthProfile=hourly=>({daily:GROWTH_DAILY,hourly,past_days:String(PAST_DAYS),forecast_days:String(FORECAST_DAYS),timezone:'Europe/Rome'});
+const growthProfile=(daily,hourly)=>({daily,hourly,past_days:String(PAST_DAYS),forecast_days:String(FORECAST_DAYS),timezone:'Europe/Rome'});
 const profiles={
-  growth:growthProfile(GROWTH_HOURLY),
-  // Pagine aperte prima dello strato 9–27 cm: stessa elaborazione e stessa cache per query,
-  // con i campi di allora. Senza questo profilo riceverebbero 422 fino al ricaricamento.
-  growthLegacy:growthProfile(LEGACY_GROWTH_HOURLY),
+  growth:growthProfile(GROWTH_DAILY,GROWTH_HOURLY),
+  // Pagine aperte con la versione in produzione (senza strato 9–27 cm e senza ET₀): stessa elaborazione e
+  // stessa cache per query, con i campi di allora. Senza questo profilo riceverebbero 422 fino al ricaricamento.
+  growthLegacy:growthProfile(LEGACY_GROWTH_DAILY,LEGACY_GROWTH_HOURLY),
   outing:{hourly:'precipitation,precipitation_probability,weather_code,wind_gusts_10m,temperature_2m',forecast_days:'8',timezone:'Europe/Rome'},
 };
 const pending=new Map();
@@ -61,11 +61,11 @@ export async function cachedForecast(query,{zones,cache,fetcher=fetch,now=Date.n
   // still-valid forecast that already covers the new day.
   const key=`weather:v3:${digest}`;
   const maxAge=growth?86400000:3*TTL;
-  // Una query nuova di crescita (con lo strato 9–27 cm) ha un'altra chiave. La copia salvata con la
+  // Una query nuova di crescita (con lo strato 9–27 cm e l'ET₀) ha un'altra chiave. La copia salvata con la
   // query precedente, stesso luogo e stesse quote, resta usabile come copia datata: viene restituita
-  // subito ma mai come «hit», così l'aggiornamento parte e porta il campo nuovo.
+  // subito ma mai come «hit», così l'aggiornamento parte e porta i campi nuovi (nel browser: serie di null).
   let legacyParams=null;
-  if(kind==='growth'){legacyParams=new URLSearchParams(params);legacyParams.set('hourly',LEGACY_GROWTH_HOURLY);}
+  if(kind==='growth'){legacyParams=new URLSearchParams(params);legacyParams.set('daily',LEGACY_GROWTH_DAILY);legacyParams.set('hourly',LEGACY_GROWTH_HOURLY);}
   let saved=null,savedParams=params,legacy=false;
   try {
     saved=cache?await cache.get(key,'json'):null;

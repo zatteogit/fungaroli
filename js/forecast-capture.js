@@ -4,8 +4,9 @@ import { scoreSpecies, combine, MODEL_VERSION, PARAMS } from './model.js';
 import { SPECIES } from './species.js';
 
 // Serie meteo salvate per ogni fascia: 31 giorni (da d−30 a d). soilt copre la finestra dello shock (da d−23 a d−6);
-// soilm9to27 (umidità 9–27 cm, dal 16/10/2026) si registra senza entrare nell'indice. Una serie assente vale null.
-export const FORECAST_INPUTS = ['p', 'tmean', 'tmin', 'tmax', 'soilm', 'soilt', 'soilm9to27'];
+// soilm9to27 (umidità 9–27 cm, m³/m³) ed et0 (ET₀ FAO-56, mm/giorno), dal 16/10/2026, si registrano senza entrare
+// nell'indice (decisione D2), per confrontarli poi con le uscite. Una serie assente (copie meteo precedenti) vale null.
+export const FORECAST_INPUTS = ['p', 'tmean', 'tmin', 'tmax', 'soilm', 'soilt', 'soilm9to27', 'et0'];
 const bandIndex = (zone, band) => Math.max(0, zone.bands.indexOf(band));
 
 // Indice di ogni specie per il giorno i (band null = miglior quota della zona).

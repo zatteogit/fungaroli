@@ -25,14 +25,14 @@ import { loadOuting, outingFor, OUTING_LABEL, OUTING_SHORT, OUTING_RANK } from '
 import { initIdentify, renderIdentify, setCompare, searchTaxa, openTaxon, renderTaxonPage, renderTaxonView, taxonHeroSrc, taxonName, taxonByKey, attentionLine, sourceRows } from './identify.js';
 import { initSearch } from './search.js';
 import { renderGuidedKey } from './guided-key.js';
-import { renderWhy, renderMethod, drawWhyCharts } from './science.js';
+import { renderWhy, renderMethod, drawWhyCharts, whereMeta } from './science.js';
 import { navigate, soft, setCoverResolver } from './motion.js';
 import { applyCrop } from './images.js';
 import { FOREST_LEGEND } from './forest-legend.js';
 import { initTrees, renderTreeGrid, renderTreePage, linkTrees, treeChips, treeForCategory, treeThumb, treePhotoSrc, treeHeroSrc } from './trees.js';
 import { crowding, comfortScore, timingAdvice, fmtTime, fmtRough, holidayName, intornoA, todayGone, defaultDayOffset, msToNextDayChange, timingState, shownArrive, shownEnd, departureAdvice, collectWindow, addDays, chooseAccess, accessFieldIndex, accessRow, walkPhrase, trackNote } from './human.js';
 import { prepareSiteInfo, alignedZones, excludedFn, bandReserve, RESERVE_BAND_TEXT, bandForestInfo, bandForestLines, zoneSiteInfo, zoneSiteLines, siteSources } from './site-info.js';
-import { predictScores, captureForecastData } from './forecast-capture.js';
+import { predictScores, captureForecastData, FORECAST_INPUTS } from './forecast-capture.js';
 import { initCommunity, communityStatus, communityRank, reportBadge } from './community.js';
 import { guideTitle, renderGuideCards, renderGuide, initGuideContent, guideCount } from './guides.js';
 import { buildEdibleCatalog, seasonStatus, seasonLabel } from './edible-catalog.js';
@@ -759,13 +759,13 @@ function renderOutdoorDetail() {
   const d=outdoorDay(z,state.dayOffset),walk=walkFor(z,d,state.trailId),box=$('#detail'),w=wxOf(z,d);
   delete box.dataset.zone;detailCtx=null;lastDetailHtml='';box.dataset.glossaryContext=state.target==='piante'?'Piante':'Sentieri';
   const discoveries=walk?outdoorDiscoveries(z,d,walk):[];
-  box.innerHTML=`<h1>${esc(z.title||z.name)}</h1><p class="eyebrow">${esc(INTENTS.find(i=>i.id===state.target).label)} · ${esc(fmtDate(d.date,{weekday:'long',day:'numeric',month:'long'}))}</p><p>${esc(w?.text||'Meteo pratico non disponibile: verifica le condizioni prima di partire.')}</p><p>${esc(travelText(zoneTrip(z,walk)))}</p>${state.target==='piante'?discoveriesHtml(z,d,walk,discoveries):''}${walk?renderWalkFocus(z,{...d,best:null},walk):'<p class="notice">Nessun sentiero corrisponde ai filtri attivi.</p>'}${z.protection?`<p class="notice">${esc(z.protection)}</p>`:''}<p>${linkTrees(z.description)}</p>${state.target==='passeggiata'?discoverySection(z,d,walk):''}${section('accesso','Accessi e soste',renderAccess(z,{access:null}))}${section('sentieri','Sentieri della zona',renderTrails(z,null),true)}<p><a href="#/mappa/${z.id}">Vedi sulla mappa</a></p>`;
+  box.innerHTML=`<h1>${esc(z.title||z.name)}</h1><p class="eyebrow">${esc(INTENTS.find(i=>i.id===state.target).label)} · ${esc(fmtDate(d.date,{weekday:'long',day:'numeric',month:'long'}))}</p><p>${esc(w?.text||'Meteo pratico non disponibile: verifica le condizioni prima di partire.')}</p><p>${esc(travelText(zoneTrip(z,walk)))}</p>${state.target==='piante'?discoveriesHtml(z,d,walk,discoveries):''}${walk?renderWalkFocus(z,{...d,best:null},walk):'<p class="notice">Nessun sentiero corrisponde ai filtri attivi.</p>'}${z.protection?`<p class="notice">${esc(z.protection)}</p>`:''}<p>${linkTrees(z.description)}</p>${state.target==='passeggiata'?discoverySection(z,d,walk):''}${section('accesso','Accessi e soste',renderAccess(z,{access:null}))}${section('sentieri','Sentieri della zona',renderTrails(z,null),true)}${zoneInfoSection(z)}<p><a href="#/mappa/${z.id}">Vedi sulla mappa</a></p>`;
   bindDetailSections(box);
 }
 function openOutdoorSheet(zid) {
   sheetPoint=null;sheetZone=zid;const z=(weatherZones||zones).find(z=>z.id===zid);if(!z)return;
   const d=outdoorDay(z,state.dayOffset),walk=walkFor(z,d,state.trailId),items=walk?outdoorDiscoveries(z,d,walk):[],sh=$('#map-sheet');
-  sh.innerHTML=`<button type="button" class="sheet-close" aria-label="Chiudi">✕</button><h2>${esc(splitName(z)[0])}</h2><p>${esc(walkBrief(walk))}</p><p>${esc(wxOf(z,d)?.text||'Meteo non disponibile')}</p>${state.target==='piante'?discoveriesHtml(z,d,walk,items):''}${forestOn?forestHere(zid):''}<a class="btn primary" href="${walkHref(z,state.dayOffset,walk?.t)}">Esplora l’uscita</a>`;
+  sh.innerHTML=`<button type="button" class="sheet-close" aria-label="Chiudi">✕</button><h2>${esc(splitName(z)[0])}</h2><p>${esc(walkBrief(walk))}</p><p>${esc(wxOf(z,d)?.text||'Meteo non disponibile')}</p>${state.target==='piante'?discoveriesHtml(z,d,walk,items):''}${forestOn?forestHere(zid):''}${protectedOn?protectedHere(zid):''}<a class="btn primary" href="${walkHref(z,state.dayOffset,walk?.t)}">Esplora l’uscita</a>`;
   sh.hidden=false;sh.querySelector('.sheet-close').onclick=()=>{sh.hidden=true;sheetZone=null;state.zoneId=null;renderMap();};
   if(state.zoneId!==zid){state.zoneId=zid;renderMap();}
 }
@@ -870,7 +870,7 @@ function prepareCalendarFallback(){
  if(!weatherUnavailable||state.target==='funghi')return;
  const dates=Array.from({length:70},(_,i)=>todayISO(new Date(Date.now()+(i-62)*864e5)));
  weatherZones??=zones;zones=weatherZones;
- series=Object.fromEntries(zones.map(z=>[z.id,z.bands.map(()=>({dates,todayIndex:62,issuedIndex:62,source:{expired:true,calendarOnly:true},...Object.fromEntries(['p','tmean','tmin','tmax','soilm','soilt','soilm9to27'].map(k=>[k,Array(70).fill(null)]))}))]));
+ series=Object.fromEntries(zones.map(z=>[z.id,z.bands.map(()=>({dates,todayIndex:62,issuedIndex:62,source:{expired:true,calendarOnly:true},...Object.fromEntries(FORECAST_INPUTS.map(k=>[k,Array(70).fill(null)]))}))]));
  $('#stale').hidden=false;$('#stale').textContent='Meteo non disponibile: consigli botanici basati sul paesaggio e sul calendario della fase. Nessun contributo climatico.';
 }
 let weatherRevision=0,weatherController=null,weatherBusy=false,weatherPainting=false,deferredWeatherView=false;
@@ -2217,7 +2217,7 @@ function renderMap(changed=null) {
 }
 
 function renderLegend() {
-  if(state.target!=='funghi'){$('#legend').innerHTML=`<span>${state.target==='piante'?'Ambienti compatibili con le piante selezionate; presenza da verificare. Nessuna densità o probabilità.':'Zone e sentieri mappati, senza indice fungino.'}</span><span>Le linee mostrano i tratti nella zona, non giri completi.</span><div class="wms"${forestOn?'':' hidden'}>${forestLegend()}</div>`;return;}
+  if(state.target!=='funghi'){$('#legend').innerHTML=`<span>${state.target==='piante'?'Ambienti compatibili con le piante selezionate; presenza da verificare. Nessuna densità o probabilità.':'Zone e sentieri mappati, senza indice fungino.'}</span><span>Le linee mostrano i tratti nella zona, non giri completi.</span><div class="wms"${forestOn?'':' hidden'}>${forestLegend()}</div><div class="wms wms-pa"${protectedOn?'':' hidden'}>${protectedLegend()}</div>`;return;}
   const items = [...CLASSES].reverse().map((c) => `<span><span class="sw" style="background:var(${mapVar(c.min)})"></span>${c.label}${c.min ? ' ≥' + formatIndex(c.min) : ''}</span>`);
   $('#legend').innerHTML = items.join('') +
     (hasLeaflet() || !globalThis.FUNGAROLI_DATA ? '' : `<span class="muted">Schema: cerchi = zone, anelli = distanza in linea d’aria da ${esc(currentBase().name)}</span>`) +
@@ -2238,7 +2238,7 @@ function protectedLegend() {
     <figure>${paLegendImg('geonode:zoning_montagne_duchessa0', 'Colori delle zone della Riserva')}<figcaption>Montagne della Duchessa</figcaption></figure>
     <figure>${paLegendImg('geonode:aree_naturali_protette1', 'Contorno dei parchi e delle riserve')}<figcaption>Contorno di parchi e riserve</figcaption></figure></div>
     <dl class="pa-zones">${Object.entries(words).map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>
-    <p class="small">Nel Gran Sasso-Laga il Piano del Parco esclude la raccolta in zona A e B, salvi usi civici: l’app non propone lì i punti per la raccolta.</p>
+    <p class="small">Nel Gran Sasso-Laga il Piano del Parco esclude in zona A e B il prelievo di funghi e piante, salvi usi civici: l’app non propone lì punti per la raccolta.</p>
     <p class="fl-src">© Regione Lazio; indicativo: fa fede la cartografia dell’ente. Zone del Parco solo sul versante laziale.</p>`;
 }
 // nel riquadro della zona, con le aree protette accese: quanta parte dei punti campione è in un'area protetta
@@ -2634,6 +2634,11 @@ function zoneInfoHtml(z) {
   const lines = zoneSiteLines(zoneSiteInfo({ hab: habitat[z.id], si: siteInfo, zid: z.id }), siteInfo);
   return lines.length ? `<ul class="site-info-list small" data-site-info="zone">${lines.map((l) => `<li>${esc(l.text)}</li>`).join('')}</ul>` : '';
 }
+// Piante e passeggiata: la stessa descrizione del bosco e delle aree protette della zona, con le fonti (senza indice)
+function zoneInfoSection(z) {
+  const body = zoneInfoHtml(z);
+  return body ? section('zona', 'Bosco e aree protette', `${body}<p class="small muted">Dati da leggere, fuori da ogni indice. Fonti: ${siteSourcesHtml()}.</p>`) : '';
+}
 
 const fmtKm = (km) => km.toLocaleString('it-IT', { maximumFractionDigits: 1 });
 const fmtM = (m) => (m >= 1000 ? `${fmtKm(m / 1000)} km` : `${Math.round(m / 10) * 10} m`);
@@ -2992,7 +2997,7 @@ function whereToFind(id) {
       <li><a href="#/zona/${z.id}/0">
         <div class="where-top"><b>${esc(shortName(z))}</b><span class="badge pot-${pot.level}">${POT_LABEL[pot.level]}</span></div>
         <div class="bar"><i style="width:${Math.round(pot.score * 100)}%;background:var(--line)"></i></div>
-        <div class="small muted">${pot.ha ? `~${pot.ha.toLocaleString('it-IT')} ha adatti` : 'nessun bosco adatto'}${pot.elevRange ? ` tra ${pot.elevRange[0]} e ${pot.elevRange[1]} m` : ''}${today != null ? ` · indice oggi ${today}` : ''}</div>
+        <div class="small muted">${esc(whereMeta(pot, today))}</div>
       </a></li>`).join('')}</ul>`;
 }
 
@@ -3029,7 +3034,7 @@ function bandIndex(z, band) {
 }
 
 // Previsione datata del piano d'uscita (js/forecast-capture.js): indice con e senza il bonus del calo del suolo,
-// 31 giorni di meteo per fascia (compresi soilt e soilm9to27), parametri e campioni del modello.
+// 31 giorni di meteo per fascia (compresi soilt, soilm9to27 ed et0), parametri e campioni del modello.
 function captureForecast(zoneId, date, band) {
   const z = zones.find((x) => x.id === zoneId);
   return z ? captureForecastData({ zone: z, seriesByBand: series?.[zoneId], hab: habitat[zoneId], date, band }) : null;

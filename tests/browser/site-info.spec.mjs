@@ -26,7 +26,7 @@ const pinophilus = SPECIES.find((s) => s.id === 'pinophilus');
 const allowed = chooseAccess({ hab: habitat.zones.laga, sp: pinophilus, band: 1600, rows: rows('laga'), excluded: excludedFn(si, 'laga') });
 const forbidden = chooseAccess({ hab: habitat.zones.laga, sp: pinophilus, band: 1600, rows: rows('laga') });
 
-async function setup(page, { species = ['pinophilus'], width = 390, map = false, geoportale = null } = {}) {
+async function setup(page, { species = ['pinophilus'], target = 'funghi', width = 390, map = false, geoportale = null } = {}) {
   await page.setViewportSize({ width, height: 900 });
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.clock.setFixedTime(NOW);
@@ -45,10 +45,13 @@ async function setup(page, { species = ['pinophilus'], width = 390, map = false,
       hourly: { time, soil_moisture_3_to_9cm: fill(0.3), soil_temperature_6cm: fill(13), soil_moisture_9_to_27cm: fill(0.32), precipitation: fill(0), precipitation_probability: fill(0), weather_code: fill(1), wind_gusts_10m: fill(8), temperature_2m: fill(13) } }));
     return r.fulfill({ json: out });
   });
-  await page.addInitScript((ids) => {
+  await page.addInitScript(({ ids, target }) => {
     localStorage.setItem('fungaroli:legal-accepted', '32026-10-16');
-    localStorage.setItem('fungaroli:prefs:v2', JSON.stringify({ speciesIds: ids }));
-  }, species);
+    localStorage.setItem('fungaroli:prefs:v2', JSON.stringify({ target, speciesIds: ids }));
+    // niente geolocalizzazione continua: si contano le richieste di posizione
+    window.__geo = 0;
+    if (navigator.geolocation) for (const k of ['watchPosition', 'getCurrentPosition']) navigator.geolocation[k] = () => { window.__geo++; return 0; };
+  }, { ids: species, target });
   return errors;
 }
 const ready = async (page, v = 'ok') => {
@@ -167,7 +170,7 @@ test('mappa: livello «Aree protette» dal Geoportale con legenda A/B/C/D e attr
   await tile.click();
   await expect(tile).toHaveAttribute('aria-pressed', 'false');
   await expect(legend).toBeHidden();
-  expect(await page.evaluate(() => typeof navigator.geolocation?.watchPosition)).toBe('function');
+  expect(await page.evaluate(() => window.__geo)).toBe(0);
   expect(errors).toEqual([]);
 });
 
@@ -186,5 +189,52 @@ test('piano salvato nel Taccuino: indice con e senza il bonus del calo del suolo
   expect(plan.forecast.shock.byBand['1600'].pinophilus.status).toBe('nessun calo');
   expect(plan.forecast.inputs[0].soilt).toHaveLength(31);
   expect('soilm9to27' in plan.forecast.inputs[0]).toBe(true);
+  // ET₀ registrata con le altre serie (il meteo simulato non la contiene: serie di null, mai zero)
+  expect(plan.forecast.inputs[0].et0).toHaveLength(31);
+  expect(plan.forecast.inputs[0].et0.every((v) => v === null)).toBe(true);
+  expect(errors).toEqual([]);
+});
+
+// Piante e passeggiata: nessun indice e nessun punto di raccolta, ma l'avviso del Parco e le informazioni sul bosco
+// e sulle aree protette della zona restano (il Piano esclude ogni prelievo in zona A e B).
+for (const target of ['piante', 'passeggiata']) test(`intento ${target}: alla Laga avviso del Parco, bosco e aree protette, nessun indice`, async ({ page }) => {
+  const errors = await setup(page, { target, species: [] });
+  await page.goto('/#/zona/laga/1');
+  await ready(page);
+  await expect(page.locator('#detail .ring')).toHaveCount(0);
+  await expect(page.locator('#detail .notice', { hasText: 'Gran Sasso e Monti della Laga' })).toContainText('zone «a» e «b»');
+  const zona = await openSec(page, 'zona');
+  await expect(zona).toContainText('Bosco e aree protette');
+  await expect(zona.locator('[data-site-info="zone"]')).toContainText('Parco nazionale Gran Sasso e Monti della Laga');
+  await expect(zona.locator('[data-site-info="zone"]')).toContainText('fuori dal Lazio');
+  await expect(zona).toContainText('fuori da ogni indice');
+  await expect(page.locator('#detail')).not.toContainText('Punto consentito');
+  expect(errors).toEqual([]);
+});
+
+test('mappa, intento passeggiata: il livello «Aree protette» ha la sua legenda anche senza indice fungino', async ({ page }) => {
+  const requests = [];
+  const errors = await setup(page, { target: 'passeggiata', species: [], width: 1280, map: true, geoportale: requests });
+  await page.goto('/#/mappa');
+  await expect(page.locator('#legend')).toContainText('senza indice fungino');
+  await page.locator('.mapctl [data-act="layers"]').first().click();
+  await page.locator('.mapctl [data-act="protected"]').click();
+  await expect(page.locator('#legend .wms-pa')).toBeVisible();
+  await expect(page.locator('#legend .wms-pa')).toContainText('prelievo di funghi e piante');
+  expect(errors).toEqual([]);
+});
+
+// Difetto del 16/10/2026: nella scheda specie «Dove trovarlo nelle zone» l'indice di oggi era sulla scala 0–100.
+test('scheda specie: «dove trovarlo» mostra l’indice di oggi su 0–10 con la virgola', async ({ page }) => {
+  const errors = await setup(page, { species: ['edulis'] });
+  await page.goto('/#/');
+  await expect(page.locator('#hero .ring')).toBeVisible();
+  await page.goto('/#/specie/edulis');
+  const where = page.locator('ul.where');
+  await expect(where.first()).toContainText('indice oggi');
+  const texts = await where.locator('li').allTextContents();
+  const shown = texts.map((t) => t.match(/indice oggi (\S+)/)?.[1]).filter(Boolean);
+  expect(shown.length).toBeGreaterThan(0);
+  for (const v of shown) expect(v).toMatch(/^(\d|10),\d$/);
   expect(errors).toEqual([]);
 });

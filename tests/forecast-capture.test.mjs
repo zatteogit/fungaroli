@@ -12,7 +12,7 @@ function band(drop = 6, extra = {}) {
   const p = Array(N).fill(1); for (const k of [25, 26, 27, 28]) p[k] = 12;
   const soilt = Array(N).fill(15); for (let k = TODAY - 10; k < N; k++) soilt[k] = 15 - drop;
   return { dates, p, tmean: Array(N).fill(13), tmin: Array(N).fill(7), tmax: Array(N).fill(18), soilm: Array(N).fill(0.3), soilt,
-    soilm9to27: Array(N).fill(0.33), todayIndex: TODAY, issuedIndex: TODAY, source: { fetchedAt: '2026-10-16T05:00:00Z' }, ...extra };
+    soilm9to27: Array(N).fill(0.33), et0: Array(N).fill(1.8), todayIndex: TODAY, issuedIndex: TODAY, source: { fetchedAt: '2026-10-16T05:00:00Z' }, ...extra };
 }
 const zone = { id: 'prova', bands: [1100, 1350, 1600] };
 const hab = { sample_categories: ['Faggeta'], samples: Array.from({ length: 60 }, (_, k) => [1100 + (k % 3) * 250, 0]) };
@@ -44,16 +44,18 @@ test('la previsione datata salva l’indice con e senza il bonus del calo del su
   assert.equal(saved.scoresByBandNoShock['1350'].edulis, f.scoresByBandNoShock[1350].edulis);
 });
 
-test('31 giorni di meteo per fascia, compresi temperatura del suolo e umidità 9–27 cm; serie assenti come null', () => {
-  const sb = zone.bands.map((b, k) => band(6, k === 2 ? { soilm9to27: undefined } : {}));
+test('31 giorni di meteo per fascia, compresi temperatura del suolo, umidità 9–27 cm ed ET₀; serie assenti come null', () => {
+  const sb = zone.bands.map((b, k) => band(6, k === 2 ? { soilm9to27: undefined, et0: undefined } : {}));
   const f = captureForecastData({ zone, seriesByBand: sb, hab, date: dates[TODAY + 2], band: 1600, species });
-  assert.deepEqual(FORECAST_INPUTS, ['p', 'tmean', 'tmin', 'tmax', 'soilm', 'soilt', 'soilm9to27']);
+  assert.deepEqual(FORECAST_INPUTS, ['p', 'tmean', 'tmin', 'tmax', 'soilm', 'soilt', 'soilm9to27', 'et0']);
   for (const inp of f.inputs) {
     assert.equal(inp.dates.length, 31);
     assert.equal(inp.soilt.length, 31);
   }
   assert.equal(f.inputs[0].soilm9to27.length, 31);
+  assert.deepEqual(f.inputs[0].et0, Array(31).fill(1.8));
   assert.equal(f.inputs[2].soilm9to27, null);
+  assert.equal(f.inputs[2].et0, null);
   assert.equal(f.mode, 'prospective');
   assert.ok(f.model.params.shockBonus && f.model.species.find((s) => s.id === 'edulis').soilShock);
 });
@@ -64,6 +66,13 @@ test('niente previsione datata per giorni passati, fuori serie o con meteo scadu
   assert.equal(captureForecastData({ zone, seriesByBand: sb, hab, date: '2030-01-01', band: 1350, species }), null);
   const expired = zone.bands.map(() => band(6, { source: { expired: true } }));
   assert.equal(captureForecastData({ zone, seriesByBand: expired, hab, date: dates[TODAY], band: 1350, species }), null);
+});
+
+test('l’ET₀ si registra e basta: cambiarla non cambia l’indice', () => {
+  const a = captureForecastData({ zone, seriesByBand: zone.bands.map(() => band()), hab, date: dates[TODAY], band: 1350, species });
+  const b = captureForecastData({ zone, seriesByBand: zone.bands.map(() => band(6, { et0: Array(N).fill(6) })), hab, date: dates[TODAY], band: 1350, species });
+  assert.deepEqual(a.scoresByBand, b.scoresByBand);
+  assert.deepEqual(a.scoresByBandNoShock, b.scoresByBandNoShock);
 });
 
 test('predictScores senza shock coincide con il calcolo con shock quando il suolo non cala', () => {

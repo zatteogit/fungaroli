@@ -79,6 +79,14 @@ function speciesProfile(sp) {
   </div>`;
 }
 
+// Riga «dove cercarla» della scheda specie: ettari adatti, quote e indice di oggi sulla scala mostrata dall'app
+// (0–10 con la virgola, formatIndex), mai sulla scala interna 0–100. Testo semplice: l'app lo protegge.
+export function whereMeta(pot, today) {
+  const ha = pot?.ha ? `~${pot.ha.toLocaleString('it-IT')} ha adatti` : 'nessun bosco adatto';
+  const range = pot?.elevRange ? ` tra ${pot.elevRange[0]} e ${pot.elevRange[1]} m` : '';
+  return `${ha}${range}${Number.isFinite(today) ? ` · indice oggi ${formatIndex(today)}` : ''}`;
+}
+
 // ---- le condizioni giorno per giorno: quattro domande, un solo componente grafico (js/viz.js) ----
 
 /** Umidità del suolo a parole, con le soglie del modello (PARAMS.moistDry / moistWet). */
@@ -227,7 +235,7 @@ export function renderWhy({ r, s, i, sp, band, dateStr, shown, agg, parts = [], 
   const takeaway = !complete ? 'Mancano dati per un indice completo.' : tied.length ? `Nel modello ${tied.map(x => x.k.toLowerCase()).join(' e ')} ${tied.length > 1 ? 'sono i fattori che riducono' : 'è il fattore che riduce'} di più l’indice.` : 'Nessun fattore riduce l’indice nel modello.';
   const fc = `<p class="sci-note"><b>Dati ${r.quality?.complete ? 'completi per le finestre richieste' : 'incompleti'}.</b> ${r.quality?.usesForecast ? 'Il calcolo include previsioni meteorologiche, anche del giorno di acquisizione.' : 'Il calcolo usa meteo passato di modello, non misure nella fungaia.'} ${r.quality?.bonusUnavailable?.length ? 'La temperatura del suolo è incompleta: il bonus per il suo calo non è stato valutato. ' : ''}L'accuratezza dei ritrovamenti non è stata misurata nel Reatino. ${r.quality?.fetchedAt ? `Acquisizione: ${esc(new Date(r.quality.fetchedAt).toLocaleString('it-IT', { timeZone: 'Europe/Rome' }))}.` : ''}</p>`;
   return `
-    <p class="sci-lede">${Number.isFinite(shown) && complete ? `Indice sperimentale <b>${formatIndex(shown)}/10</b>` : '<b>Indice non disponibile</b>'} per ${speciesLink(sp, sp.name.toLowerCase())} a ${band} m. Descrive condizioni ambientali stimate, non la probabilità di trovare funghi.</p>
+    <p class="sci-lede">${Number.isFinite(shown) && complete ? `Indice sperimentale <b>${formatIndex(shown)}/10</b>` : '<b>Indice non disponibile</b>'} per ${speciesLink(sp, sp.name.toLowerCase())} a ${band} m nella zona. Descrive condizioni ambientali stimate, non la probabilità di trovare funghi.</p>
     <p class="sci-takeaway">${esc(takeaway)}</p>
     <p class="sci-sub">Come incidono le condizioni nel modello</p>
     <ul class="sci-signals" aria-label="Come incidono i fattori nel modello">${main.map(x => { const state = factorState(x); return `<li class="sci-signal ${tied.includes(x) && complete ? 'weak' : ''}"><div class="sci-signal-head"><b>${esc(x.k)}</b><span class="sci-state state-${state.kind}">${state.label}</span></div><p>${esc(x.brief)}</p></li>`; }).join('')}</ul>

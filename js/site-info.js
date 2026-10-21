@@ -126,7 +126,7 @@ export function bandForestInfo({ hab, si, zid, sp, band, half = PARAMS.bandHalfW
     }
   }
   return {
-    scope, n: idx.length, band,
+    scope, n: idx.length, band, noSpecies: !sp,
     struct: Object.entries(struct).map(([k, n]) => ({ k: +k, n })).sort((a, b) => b.n - a.n), noStruct,
     aspects: Object.entries(aspects).map(([k, n]) => ({ k, n })).sort((a, b) => b.n - a.n), flat,
     disturbances: Object.entries(dist).map(([k, n]) => { const [y, c] = k.split('|'); return { year: +y, cause: c === '' ? null : +c, n }; })
@@ -148,11 +148,22 @@ const join = (xs) => xs.length > 1 ? `${xs.slice(0, -1).join(', ')} e ${xs[xs.le
 
 // Le frasi della fascia: struttura, esposizione, disturbi, aree protette. Testo semplice (l'app lo protegge).
 const punti = (n) => `${n} ${n === 1 ? 'punto' : 'punti'}`;
+// «taglio nel 2017 (2 punti), nel 2015 e nel 2012»; «incendio nel 2018, taglio nel 2016»: la causa non si ripete
+// quando resta la stessa dell'anno prima nell'elenco.
+function disturbanceList(list) {
+  const parts = list.map((d, k) => {
+    const cause = d.cause ? CAUSE_WORD[d.cause] : 'disturbo di causa non attribuita';
+    const same = k > 0 && list[k - 1].cause === d.cause;
+    return { same, text: `${same ? '' : `${cause} `}nel ${d.year}${d.n > 1 ? ` (${punti(d.n)})` : ''}` };
+  });
+  return parts.reduce((out, p, k) => !k ? p.text : `${out}${p.same && (k === parts.length - 1 || !parts[k + 1].same) ? ' e ' : ', '}${p.text}`, '');
+}
 export function bandForestLines(f, si) {
   if (!f) return [];
   const who = f.scope === 'adatto' ? 'il bosco adatto' : 'il bosco';
   const lines = [];
   lines.push({ k: 'campioni', text: f.scope === 'adatto' ? `Bosco adatto della fascia dei ${f.band} m: ${punti(f.n)} campione.`
+    : f.noSpecies ? `Bosco della fascia dei ${f.band} m: ${punti(f.n)} campione.`
     : `Nessun punto adatto alla specie nella fascia dei ${f.band} m: i dati riguardano tutto il bosco della fascia (${punti(f.n)} campione).` });
   if (f.struct.length) {
     const parts = f.struct.map((s) => `${STRUCT_WORD[s.k]} ${pct(s.n, f.n)}`);
@@ -167,12 +178,15 @@ export function bandForestLines(f, si) {
   const ev = f.disturbances.reduce((a, d) => a + d.n, 0), assessed = f.n - f.notAssessed;
   if (ev) {
     // tutti gli anni, i più recenti per primi: nessuna soglia d'età (l'app non dice quando un bosco «torna buono»)
-    const shown = f.disturbances.slice(0, 3).map((d) => `${d.cause ? CAUSE_WORD[d.cause] : 'disturbo di causa non attribuita'} nel ${d.year}${d.n > 1 ? ` (${punti(d.n)})` : ''}`);
+    const shown = disturbanceList(f.disturbances.slice(0, 3));
     const rest = f.disturbances.slice(3), years = rest.map((d) => d.year);
-    const older = rest.length ? `; gli altri tra il ${Math.min(...years)} e il ${Math.max(...years)}` : '';
-    lines.push({ k: 'disturbo', text: `Disturbo rilevato da satellite in ${punti(ev)} su ${f.n}, da verificare sul posto. Più recenti: ${shown.join(', ')}${older}.` });
+    const lo = Math.min(...years), hi = Math.max(...years), many = rest.reduce((a, d) => a + d.n, 0) > 1;
+    const older = !rest.length ? '' : lo === hi ? `; ${many ? 'gli altri' : 'l’altro'} nel ${lo}` : `; gli altri tra il ${lo} e il ${hi}`;
+    lines.push({ k: 'disturbo', text: f.disturbances.length === 1
+      ? `Disturbo rilevato da satellite in ${punti(ev)} su ${f.n}: ${shown}, da verificare sul posto.`
+      : `Disturbo rilevato da satellite in ${punti(ev)} su ${f.n}, da verificare sul posto. Più recenti: ${shown}${older}.` });
   } else if (assessed) {
-    lines.push({ k: 'disturbo', text: `Nessun disturbo rilevato da satellite dal 1985 al 2024 nei ${punti(assessed)} valutati.` });
+    lines.push({ k: 'disturbo', text: `Nessun disturbo rilevato da satellite dal 1985 al 2024 ${assessed === 1 ? 'nell’unico punto valutato' : `nei ${punti(assessed)} valutati`}.` });
   }
   if (f.notAssessed) lines.push({ k: 'disturbo-nd', text: `${punti(f.notAssessed)} non ${f.notAssessed === 1 ? 'valutato' : 'valutati'}: il satellite non ${f.notAssessed === 1 ? 'lo classifica' : 'li classifica'} come bosco.` });
   for (const a of f.areas) {

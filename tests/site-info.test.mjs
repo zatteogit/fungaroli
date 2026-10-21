@@ -87,3 +87,36 @@ test('zona intera e fonti: i punti fuori dal Lazio sono dichiarati, le fonti han
   const r = infoRow(si, 'laga', 1);
   assert.deepEqual(Object.keys(r), ['strutt', 'copertura', 'pendenza', 'esposizione', 'anno', 'causa', 'area', 'zona', 'lazio']);
 });
+
+test('disturbi in parole: un solo evento senza «più recenti», la causa non si ripete, gli anni non diventano soglie', () => {
+  const si = { zones: new Set(['z']), idx: { strutt: 0, copertura: 1, pendenza: 2, esposizione: 3, disturbo_anno: 4, disturbo_causa: 5, area: 6, zona: 7, lazio: 8 },
+    info: { zones: { z: { samples: [] } } } };
+  const hab = { sample_categories: ['Faggeta'], samples: [] };
+  const lines = (rows) => {
+    si.info.zones.z.samples = rows; hab.samples = rows.map(() => [1000, 0]);
+    return bandForestLines(bandForestInfo({ hab, si, zid: 'z', sp: null, band: 1000 }), si).find((l) => l.k === 'disturbo')?.text;
+  };
+  const r = (anno, causa) => [1, 3, 20, 'N', anno, causa, null, null, 1];
+  assert.equal(lines([r(1986, 3), r(0, null)]), 'Disturbo rilevato da satellite in 1 punto su 2: taglio nel 1986, da verificare sul posto.');
+  assert.equal(lines([r(2018, 2), r(2016, 3), r(2010, 3)]),
+    'Disturbo rilevato da satellite in 3 punti su 3, da verificare sul posto. Più recenti: incendio nel 2018, taglio nel 2016 e nel 2010.');
+  assert.equal(lines([r(2017, 3), r(2017, 3), r(2015, 3), r(2012, 3), r(1990, 2)]),
+    'Disturbo rilevato da satellite in 5 punti su 5, da verificare sul posto. Più recenti: taglio nel 2017 (2 punti), nel 2015 e nel 2012; l’altro nel 1990.');
+  // anno null = fuori dalla maschera forestale del satellite: «non valutato», mai «nessun disturbo»
+  assert.equal(lines([r(null, null), r(0, null)]), 'Nessun disturbo rilevato da satellite dal 1985 al 2024 nell’unico punto valutato.');
+  assert.match(lines([r(2001, 3), r(1995, 2), r(1990, 3), r(1988, 3), r(1988, 3)]), /; gli altri nel 1988\.$/);
+});
+
+// Intento dell'uscita (PR #101): con piante e passeggiata non c'è un punto di raccolta proposto, ma le informazioni
+// della zona (bosco, aree protette, punti fuori dal Lazio) valgono lo stesso e non dipendono dalla specie.
+test('piante e passeggiata: riepilogo della zona senza specie; nessuna esclusione calcolata per le piante', () => {
+  const lines = zoneSiteLines(zoneSiteInfo({ hab: habitat.zones.laga, si, zid: 'laga' }), si).map((l) => l.text).join(' ');
+  assert.match(lines, /Parco nazionale Gran Sasso e Monti della Laga \(zone del piano: A \d+, B \d+/);
+  assert.match(lines, /fuori dal Lazio/);
+  // passeggiata: nessuna specie, il riepilogo della fascia riguarda tutto il bosco
+  const f = bandForestInfo({ hab: habitat.zones.laga, si, zid: 'laga', sp: null, band: 1600 });
+  assert.equal(f.scope, 'fascia');
+  assert.match(bandForestLines(f, si)[0].text, /^Bosco della fascia dei 1600 m: \d+ punti campione\.$/);
+  // piante: il punto di raccolta non si calcola (presenza non localizzabile), quindi neanche la riserva della fascia
+  assert.equal(bandReserve({ hab: habitat.zones.laga, sp: { kind: 'plant', forest: { Faggeta: 1 } }, band: 1600, excluded: excludedFn(si, 'laga') }), null);
+});
