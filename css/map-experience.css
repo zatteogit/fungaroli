@@ -1,0 +1,96 @@
+/* La carta resta il piano principale. Filtri, risultati e livelli hanno un solo posto. */
+body[data-page="mappa"] { overflow:hidden; }
+body[data-page="mappa"] #weather-work { display:none; }
+body[data-page="mappa"] #views { padding:0; }
+/* Superficie opaca: Safari standalone può ricampionare anche il testo
+   quando il pannello sopra la carta usa il backdrop-filter ereditato. */
+.map-top { width:auto; max-width:540px; left:12px; right:12px; padding:6px; grid-template-columns:minmax(0,1fr); border-radius:22px; box-shadow:var(--shadow-1); background:var(--surface); backdrop-filter:none; -webkit-backdrop-filter:none; }
+@media(max-width:760px) {
+  /* La carta non deve scorrere o essere campionata dietro la status bar.
+     Nei browser senza inset questa superficie ha altezza zero. */
+  body[data-page="mappa"]::before { content:''; position:fixed; top:0; left:0; right:0; height:env(safe-area-inset-top,0px); z-index:1001; background:var(--bg); pointer-events:none; }
+}
+.map-top #map-filters { order:-1; min-width:0; display:grid; grid-template-columns:auto minmax(0,1fr); gap:6px; padding:0; overflow:visible; }
+.map-query, .map-date { display:flex; align-items:center; min-height:48px; border:0; border-radius:16px; padding:8px 12px; font:600 14px/1.4 var(--font-body); background:var(--surface); color:var(--text); cursor:pointer; }
+.map-query { gap:8px; text-align:left; min-width:0; }
+.map-query-copy { display:grid; gap:1px; flex:1; min-width:0; }
+.map-query-copy small { font-size:11px; line-height:1.35; font-weight:500; color:var(--text-2); }
+.map-query-copy b { font-size:14px; line-height:1.4; overflow:hidden; text-overflow:ellipsis; white-space:normal; }
+.map-query .ui-icon, .map-query-icon { flex:0 0 20px; width:20px; height:20px; }
+.map-date { gap:10px; background:var(--surface-2); }
+.map-filter-count { display:grid; place-items:center; min-width:24px; height:24px; border-radius:50%; background:var(--select); color:var(--select-ink); font-size:12px; }
+.map-top .map-days .day { min-width:80px; min-height:80px; padding:10px 8px; border-radius:18px; }
+.map-top .map-days .day .d2 { font-size:24px; }
+.map-top .map-days .day .d3 { display:none; }
+.map-top.days-open .map-days { padding-top:10px; padding-bottom:6px; }
+.map-top > .rail-host:has(> #map-filters) { order:-1; }
+.map-top.days-open > #map-days,
+.map-top > .rail-host:has(> #map-days) { overflow:hidden; border-top:1px solid var(--hair); margin-top:6px; }
+.map-top #map-days { min-width:0; max-width:100%; }
+.map-top .map-days .day { flex:none; min-width:90px; min-height:80px; }
+.map-date > .map-date-chevron { display:block; width:20px; height:20px; flex:0 0 20px; transform-origin:center; transition:transform .2s ease; }
+.map-date[aria-expanded="true"] > .map-date-chevron { transform:rotate(180deg); }
+@media(prefers-reduced-motion:reduce) { .map-date > .map-date-chevron { transition:none; } }
+.map-top.days-open #map-filters { border:0; }
+.map-weather-status { font-size:12px; line-height:1.5; margin:0 6px; }
+.map-weather-status > summary { cursor:pointer; padding:6px; min-height:32px; color:var(--warn-ink); }
+.map-weather-status #stale { margin:0 0 6px; padding:12px; font-size:13px; }
+.view-map .leaflet-top, .view-map .leaflet-top.leaflet-right, .map-top.days-open ~ * .leaflet-top { top:var(--map-toolbar-bottom,80px); }
+.map-results { position:absolute; z-index:650; left:12px; bottom:calc(var(--tabbar-space) + 32px); width:min(370px,calc(100% - 24px)); border:1px solid var(--hair); border-radius:22px; color:var(--text); background:var(--surface); box-shadow:var(--shadow-1); }
+.map-results > summary { display:flex; justify-content:space-between; gap:12px; align-items:center; min-height:48px; padding:12px 16px; cursor:pointer; list-style:none; font-size:14px; }
+.map-results > summary::-webkit-details-marker { display:none; }
+.map-results > summary b { font-size:13px; }
+.map-results[open] > summary { border-bottom:1px solid var(--hair); }
+.map-results[open] > summary b > span { display:inline-block; transform:rotate(180deg); }
+.map-results-body { max-height:min(45svh,430px); overflow:auto; overscroll-behavior:contain; padding:0 12px 12px; border-radius:0 0 22px 22px; }
+.map-results-order { font-size:12px; line-height:1.5; color:var(--text-2); margin:12px 4px; }
+.map-results ol { padding:0; margin:0; list-style:none; display:grid; gap:4px; }
+.map-results li > button { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:4px 12px; width:100%; padding:12px; min-height:64px; border:1px solid transparent; border-radius:14px; color:var(--text); background:var(--surface); text-align:left; font:inherit; cursor:pointer; }
+.map-results li > button[aria-current="true"] { border-color:var(--select-edge); }
+.map-result-name { font-size:15px; font-weight:700; line-height:1.4; }
+.map-result-meta { grid-column:1 / -1; font-size:12px; line-height:1.5; color:var(--text-2); }
+.map-result-index { white-space:nowrap; }
+.map-results [data-map-empty] { font-size:14px; line-height:1.6; padding:4px; }
+.map-results [data-map-fit] { width:100%; min-height:44px; margin-top:8px; }
+.view-map:has(#map-sheet:not([hidden])) .map-results { display:none; }
+:is(.mapctl-panel,.map-results-body) .legend-box { display:block; position:static; max-width:none; margin:4px 0 0; padding:0; border:0; box-shadow:none; background:transparent; }
+:is(.mapctl-panel,.map-results-body) .legend-box > summary { padding-inline:0; }
+:is(.mapctl-panel,.map-results-body) .legend { padding:10px 0; max-width:none; }
+.mapctl-panel { max-height:calc(100svh - var(--map-toolbar-bottom,80px) - var(--tabbar-space) - 32px); overflow:auto; }
+.map-filter-section { border-block:1px solid var(--hair); margin:0; }
+.map-filter-section + .map-filter-section { border-block-start:0; }
+.map-filter-section > summary { min-height:52px; padding:14px 0; cursor:pointer; font-size:16px; font-weight:700; }
+.map-filter-section .fp-h:first-of-type { margin-top:12px; }
+.map-filter-panel .fp-body > p:last-child { font-size:12px; }
+.map-query:focus-visible, .map-date:focus-visible, .map-results summary:focus-visible, .map-results button:focus-visible, .map-filter-section summary:focus-visible { outline:3px solid var(--focus); outline-offset:2px; }
+@media(hover:hover) { .map-query:hover, .map-date:hover, .map-results li > button:hover { background:var(--surface-2); } }
+@media(min-width:761px) { .map-top { margin-inline:0; right:auto; width:430px; } }
+@media(max-width:360px) { .map-top { left:8px; right:8px; } .map-query { padding-inline:8px; } .map-date { padding-inline:10px; } }
+@media(max-height:550px) { .map-results-body { max-height:38svh; } .map-top { max-width:400px; margin-inline:0; } }
+
+/* Sulla carta verde, l'interfaccia usa carta e inchiostro anche nel tema scuro. */
+.view-map :is(.mapctl,.map-top,.map-results,.legend-box,.cell-card,.cell-peek,#map-sheet) {
+  color-scheme:light;
+  color:var(--text);
+  --surface:var(--story-avorio);
+  --surface-2:color-mix(in srgb,var(--story-ink) 6%,var(--story-avorio));
+  --surface-3:color-mix(in srgb,var(--story-ink) 12%,var(--story-avorio));
+  --text:var(--story-ink);
+  --text-2:color-mix(in srgb,var(--story-ink) 78%,var(--story-avorio));
+  --muted:var(--text-2);
+  --link:var(--story-ink);
+  --border:color-mix(in srgb,var(--story-ink) 26%,var(--story-avorio));
+  --hair:color-mix(in srgb,var(--story-ink) 18%,var(--story-avorio));
+  --control-edge:var(--text-2);
+  --focus:var(--story-ink);
+  --warn-ink:var(--map-warning-ink);
+  --warn-bg:var(--map-warning-bg);
+  --crit-ink:var(--map-error-ink);
+  --crit-bg:var(--map-error-bg);
+  --select-edge:var(--map-selected-edge);
+}
+.view-map .mapctl-stack .mapctl-btn { background:var(--surface); color:var(--text); border-color:var(--border); }
+.view-map .mapctl-stack .mapctl-btn:is(.on,[aria-expanded="true"]) { background:var(--select); color:var(--select-ink); border-color:var(--select-edge); }
+.view-map .mapctl-stack .mapctl-btn.err { color:var(--crit-ink); }
+.view-map .map-date[aria-expanded="true"] { background:var(--select); color:var(--select-ink); }
+@media(hover:hover) { .view-map .mapctl-stack .mapctl-btn:hover { background:var(--surface-2); } .view-map .mapctl-stack .mapctl-btn:is(.on,[aria-expanded="true"]):hover { background:var(--select); } }

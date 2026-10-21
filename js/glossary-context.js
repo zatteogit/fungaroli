@@ -1,5 +1,5 @@
 // A word can have several meanings. Never resolve a tie by catalogue order.
-export const GLOSSARY_CONTEXTS=['Funghi','Piante','Alberi','Bosco','Sentiero'];
+export const GLOSSARY_CONTEXTS=['Funghi','Piante','Alberi','Animali','Bosco','Sentiero'];
 export const glossaryAliasKey=word=>String(word||'').trim().toLowerCase().replace(/\s+/g,' ');
 
 // Tabella di compatibilità: categoria della voce → ambiti delle zone di testo in cui la voce si collega.
@@ -8,11 +8,11 @@ export const glossaryAliasKey=word=>String(word||'').trim().toLowerCase().replac
 //   Bosco, Sentiero   → ovunque (habitat, lettiera, quota, dislivello…)
 // Una voce può sostituire la riga della sua categoria con il campo `contexts` del glossario
 // (es. micorriza e micelio valgono anche per piante, alberi e bosco).
-export const CATEGORY_SCOPES={Funghi:['Funghi'],Piante:['Piante','Alberi'],Alberi:['Piante','Alberi'],Bosco:GLOSSARY_CONTEXTS,Sentiero:GLOSSARY_CONTEXTS};
+export const CATEGORY_SCOPES={Animali:['Animali'],Funghi:['Funghi'],Piante:['Piante','Alberi'],Alberi:['Piante','Alberi'],Bosco:GLOSSARY_CONTEXTS,Sentiero:GLOSSARY_CONTEXTS};
 // Glossari pubblicati prima del campo `contexts`: queste voci di ecologia erano già condivise.
 const SHARED_WITHOUT_CONTEXTS=['micorriza','saprotrofo','micelio','ifa','latifoglie','conifere','caducifoglia','sempreverde'];
 export function termContexts(term){
- if(Array.isArray(term.contexts))return term.contexts;
+ if(Array.isArray(term.contexts))return GLOSSARY_CONTEXTS.filter(c=>c!=='Animali').every(c=>term.contexts.includes(c))?GLOSSARY_CONTEXTS:term.contexts;
  // Older authored glossaries may lack the new metadata: keep domain-specific
  // meanings constrained rather than routing botanical words to fungi.
  if(SHARED_WITHOUT_CONTEXTS.includes(term.id))return GLOSSARY_CONTEXTS;

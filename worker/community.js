@@ -1,10 +1,19 @@
 import { generateRegistrationOptions, verifyRegistrationResponse, generateAuthenticationOptions, verifyAuthenticationResponse } from '@simplewebauthn/server';
 import schema from '../migrations/0001_community.sql';
+import legalAcceptancesSchema from '../migrations/0009_legal_acceptances.sql';
 import preferencesSchema from '../migrations/0003_account_preferences.sql';
+import observationsSchema from '../migrations/0007_shared_observations.sql';
+import animalObservationsSchema from '../migrations/0013_animal_observations.sql';
+import animalCatalog from '../data/animals.json';
+import {rankingPolicy} from './admin-dashboard.js';
+import {initExternalObservations} from './external-observations.js';
+import {sharedObservation} from '../js/community-observation.js';
+import treeCatalog from '../data/trees.json';
 import {normalizeNotebookNote} from '../js/notebook-entry.js';
 import plantCatalog from '../data/plants.json';
 import {normalizeBase,validPoint} from '../js/travel-model.js';
-import {searchPlaces,routeMatrix} from './travel-provider.js';
+import {searchPlaces} from './travel-provider.js';
+import {cachedRoutes} from './travel-cache.js';
 import { buildEdibleCatalog } from '../js/edible-catalog.js';
 import traits from '../data/species-traits.json';
 import edibleCatalog from '../data/edible-catalog.json';
@@ -32,7 +41,9 @@ const fail = (message, status = 400) => { const e = new Error(message); e.status
 async function init(db) {
   if (!initialized.has(db)) initialized.set(db, (async () => {
     // D1 exec treats individual lines as statements; use complete SQL statements.
-    await db.batch((schema+';'+preferencesSchema).split(';').map((s) => s.trim()).filter((s) => s && !s.startsWith('PRAGMA')).map((s) => db.prepare(s)));
+    await db.batch((schema+';'+preferencesSchema+';'+observationsSchema+';'+legalAcceptancesSchema).split(';').map((s) => s.trim()).filter((s) => s && !s.startsWith('PRAGMA')).map((s) => db.prepare(s)));
+    const observationTable=await db.prepare("SELECT sql FROM sqlite_master WHERE type='table' AND name='shared_observations'").first('sql');
+    if(!observationTable?.includes("'animale'"))await db.batch(animalObservationsSchema.split(';').map(s=>s.trim()).filter(Boolean).map(s=>db.prepare(s)));
     await db.prepare("INSERT INTO community_meta(key,value) VALUES('ip_salt',?) ON CONFLICT(key) DO NOTHING").bind(token()).run();
   })().catch((e) => { initialized.delete(db); throw e; }));
   return initialized.get(db);
@@ -84,9 +95,10 @@ export async function readCommunityUser(request,env,now=Date.now()) {
   try{return await signedIn(request,env.COMMUNITY_DB,now);}catch(e){if(e.status===401)return null;throw e;}
 }
 async function currentCatalogIds(env,origin) {
-  const content=await publishedResources(env,origin,['species-traits','edible-catalog','zones','plants']);
-  if(!content)return {speciesIds,zoneIds,plantIds:new Set(Object.keys(plantCatalog.plants))};
-  return {plantIds:new Set(Object.keys(content.plants?.plants||plantCatalog.plants)),speciesIds:new Set(buildEdibleCatalog(content['species-traits'],content['edible-catalog']).map(s=>s.id)),zoneIds:new Set(content.zones.zones.map(z=>z.id))};
+  const content=await publishedResources(env,origin,['species-traits','edible-catalog','zones','plants','trees','animals']);
+  const references=new Set([...(content?.animals?.items||animalCatalog.items).filter(a=>a.publicationStatus==='ready').map(a=>'#/animale/'+a.id),...Object.keys(content?.['species-traits']?.taxa||traits.taxa).map(id=>'#/fungo/'+id),...buildEdibleCatalog(content?.['species-traits']||traits,content?.['edible-catalog']||edibleCatalog).flatMap(s=>['#/specie/'+s.id,'#/commestibile/'+s.id]),...Object.keys(content?.plants?.plants||plantCatalog.plants).map(id=>'#/pianta/'+id),...Object.keys(content?.trees?.trees||treeCatalog.trees).map(id=>'#/albero/'+id)]);
+  if(!content)return {speciesIds,zoneIds,plantIds:new Set(Object.keys(plantCatalog.plants)),references};
+  return {references,plantIds:new Set(Object.keys(content.plants?.plants||plantCatalog.plants)),speciesIds:new Set(buildEdibleCatalog(content['species-traits'],content['edible-catalog']).map(s=>s.id)),zoneIds:new Set(content.zones.zones.map(z=>z.id))};
 }
 
 async function rate(db, key, limit, seconds, now) {
@@ -134,7 +146,10 @@ export async function handleCommunity(request, env, now = Date.now()) {
     const ipKey = await hash(salt + new Date(now).toISOString().slice(0, 10) + ip);
     await rate(db, 'api:' + ipKey, 600, 3600, now);
 
-    if (path === 'status' && request.method === 'GET') return result({ enabled: true, modelStatus: 'experimental', registration: 'passkey' });
+    if (path === 'status' && request.method === 'GET') {
+      const externalImport=await initExternalObservations(db);
+      return result({ enabled: true, modelStatus: 'experimental', registration: 'passkey',externalImport });
+    }
 
     if (['auth/register-options', 'auth/login-options'].includes(path) && request.method === 'POST') {
       const register = path === 'auth/register-options';
@@ -182,16 +197,37 @@ export async function handleCommunity(request, env, now = Date.now()) {
       return result({ ok: true }, 200, [await newSession(db, id, now), cookie(CHALLENGE, '', 0)]);
     }
 
+    const user = await signedIn(request, db, now);
     if (path === 'summary' && request.method === 'GET') {
+      // Reciprocity is enforced here, before reading any collective data.
+      // A withdrawn contribution no longer grants access; a negative report does.
+      const contributes = await db.prepare('SELECT EXISTS(SELECT 1 FROM reports WHERE account_id=?) OR EXISTS(SELECT 1 FROM shared_observations WHERE account_id=?) AS active').bind(user.id,user.id).first('active');
+      const base = {windowDays:7,validation:'unvalidated',updatedAt:new Date(now).toISOString()};
+      if (!contributes) return result({...base,access:'contribution_required',reports:[],observations:[],totalReports:0});
       const since = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Rome', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(now - 6 * 864e5));
-      const { results } = await db.prepare('SELECT r.zone_id AS zoneId,r.species_id AS speciesId,COUNT(*) AS reports,SUM(r.amount>0) AS sightings,SUM(r.amount=0) AS zeros,COUNT(DISTINCT r.account_id) AS contributors,COUNT(DISTINCT CASE WHEN a.created_at<? THEN r.account_id END) AS establishedContributors,COUNT(DISTINCT day) AS days,MAX(day) AS latestDay,SUM(amount=1) AS few,SUM(amount=2) AS some,SUM(amount=3) AS many FROM reports r JOIN accounts a ON a.id=r.account_id WHERE day>=? GROUP BY zone_id,species_id').bind(now - 864e5, since).all();
-      const total = await db.prepare('SELECT COUNT(*) AS n FROM reports').first('n');
-      return result({ reports: results, totalReports: total, windowDays: 7, validation: 'unvalidated', updatedAt: new Date(now).toISOString() });
+      // Reuse the existing 3 contributors / 2 days guard for publication too.
+      // This is small-group suppression, not a scientific validation or anonymity guarantee.
+      // Project only broad catalogue zones and window totals: no person, note, day or GPS.
+      const { results } = await db.prepare('SELECT r.zone_id AS zoneId,r.species_id AS speciesId,COUNT(*) AS reports,SUM(r.amount>0) AS sightings,SUM(r.amount=0) AS zeros,COUNT(DISTINCT r.account_id) AS contributors,COUNT(DISTINCT CASE WHEN a.created_at<? THEN r.account_id END) AS establishedContributors,COUNT(DISTINCT day) AS days FROM reports r JOIN accounts a ON a.id=r.account_id WHERE day>=? GROUP BY zone_id,species_id HAVING COUNT(DISTINCT r.account_id)>=3 AND COUNT(DISTINCT day)>=2').bind(now - 864e5, since).all();
+      const {results:observations}=await db.prepare("SELECT zone_id AS zoneId,category,taxon_id AS taxonId,COUNT(*) AS observations,SUM(json_extract(payload,'$.presence')='observed') AS sightings,SUM(json_extract(payload,'$.presence')='searched_absent') AS zeros FROM shared_observations WHERE day>=? GROUP BY zone_id,category,taxon_id HAVING COUNT(DISTINCT account_id)>=3 AND COUNT(DISTINCT day)>=2").bind(since).all();
+      const policy=await rankingPolicy(db);
+      return result({...base,access:'granted',policy:{maxPercent:policy.maxPercent,version:policy.version},observations,reports:results,totalReports:results.reduce((n,r)=>n+r.reports,0)});
     }
 
-    const user = await signedIn(request, db, now);
-    if (path === 'session' && request.method === 'GET') return result({ user: { id: user.id, handle: user.handle, base:user.base } });
+    if (path === 'session' && request.method === 'GET') {
+      const assigned=key=>(env[key]||'').split(',').map(s=>s.trim()).filter(Boolean).includes(user.id);
+      const role=assigned('CMS_ADMIN_IDS')?'admin':assigned('CMS_EDITOR_IDS')?'editor':'member';
+      return result({ user: { id:user.id, handle:user.handle, base:user.base, role } });
+    }
     await rate(db, 'user:' + user.id, 120, 3600, now);
+    if(path==='legal-acceptance'&&request.method==='POST') {
+      const data=await body(request);
+      if(data.accountId!==user.id)fail('Il profilo è cambiato. Riprova.',409);
+      if(typeof data.version!=='string'||!/^(?:cgs-[1-9]\d{0,5}|\d{1,6}\d{4}-\d{2}-\d{2})$/.test(data.version)||typeof data.noticeHash!=='string'||!/^([a-f0-9]{64})$/.test(data.noticeHash)||!['explicit','legacy'].includes(data.source)||!['browser','standalone'].includes(data.platform)||(data.source==='explicit'&&(typeof data.acceptedAt!=='string'||data.acceptedAt.length>32||!Number.isFinite(Date.parse(data.acceptedAt))||new Date(data.acceptedAt).toISOString()!==data.acceptedAt))||(data.source==='legacy'&&data.acceptedAt!==null))fail('Conferma non valida.',422);
+      await db.prepare('INSERT INTO legal_acceptances(account_id,version,notice_hash,accepted_at,recorded_at,source,platform) VALUES(?,?,?,?,?,?,?) ON CONFLICT(account_id,version,notice_hash) DO NOTHING').bind(user.id,data.version,data.noticeHash,data.acceptedAt,now,data.source,data.platform).run();
+      const receipt=await db.prepare('SELECT version,notice_hash AS noticeHash,accepted_at AS acceptedAt,recorded_at AS recordedAt,source,platform FROM legal_acceptances WHERE account_id=? AND version=? AND notice_hash=?').bind(user.id,data.version,data.noticeHash).first();
+      return result({receipt});
+    }
     if(path==='profile'&&request.method==='PUT') {
       const data=await body(request);
       if(data.accountId!==user.id)fail('Il profilo è cambiato. Riaprilo prima di salvare.',409);
@@ -210,12 +246,8 @@ export async function handleCommunity(request, env, now = Date.now()) {
       if(!user.base)fail('Imposta prima la tua base nel profilo.',422);
       if(!Array.isArray(data.targets)||!data.targets.length||data.targets.length>50||data.targets.some(p=>!validPoint(p)))fail('Punti del percorso non validi.',422);
       await rate(db,'travel:'+user.id,60,3600,now);
-      const cache=globalThis.caches?.default;
-      const key=new Request(new URL('/api/internal/travel-cache/'+await hash(user.id+JSON.stringify([user.base,data.targets.map(p=>({lat:p.lat,lon:p.lon}))])),url.origin));
-      try{const cached=cache&&await cache.match(key);if(cached)return result(await cached.json());}catch{/* cache is optional */}
-      const routes=await routeMatrix(user.base,data.targets);
+      const routes=await cachedRoutes({base:user.base,targets:data.targets,owner:user.id,origin:url.origin,cache:globalThis.caches?.default,hash});
       const out={base:user.base,routes,source:'OSRM / OpenStreetMap',traffic:false};
-      if(cache)try{await cache.put(key,new Response(JSON.stringify(out),{headers:{'content-type':'application/json','cache-control':`max-age=${routes.some(r=>r.minutes===null)?120:21600}`}}));}catch{/* preserve the calculated routes */}
       return result(out);
     }
 
@@ -230,7 +262,7 @@ export async function handleCommunity(request, env, now = Date.now()) {
 
     if (path === 'entries' && request.method === 'GET') {
       // shared: l'uscita ha segnalazioni attive nei conteggi della community (calcolato, mai salvato nella voce)
-      const { results } = await db.prepare('SELECT d.payload, EXISTS(SELECT 1 FROM reports r WHERE r.account_id=d.account_id AND r.entry_id=d.id) AS shared FROM diary_entries d WHERE d.account_id=? ORDER BY d.saved_at DESC LIMIT 1000').bind(user.id).all();
+      const { results } = await db.prepare('SELECT d.payload, (EXISTS(SELECT 1 FROM reports r WHERE r.account_id=d.account_id AND r.entry_id=d.id) OR EXISTS(SELECT 1 FROM shared_observations o WHERE o.account_id=d.account_id AND o.entry_id=d.id)) AS shared FROM diary_entries d WHERE d.account_id=? ORDER BY d.saved_at DESC LIMIT 1000').bind(user.id).all();
       return result({ entries: results.map((r) => ({ ...JSON.parse(r.payload), shared: !!r.shared })) });
     }
     const entryMatch = path.match(/^entries\/([a-zA-Z0-9-]{4,64})$/);
@@ -273,18 +305,32 @@ export async function handleCommunity(request, env, now = Date.now()) {
       }
       const writes = [db.prepare('INSERT INTO diary_entries(account_id,id,payload,saved_at) VALUES(?,?,?,?) ON CONFLICT(account_id,id) DO UPDATE SET payload=excluded.payload,saved_at=excluded.saved_at')
         .bind(user.id, id, JSON.stringify(entry), now)];
+      if(previous)writes.push(db.prepare('DELETE FROM shared_observations WHERE account_id=? AND entry_id=?').bind(user.id,id));
       // Una segnalazione condivisa porta con sé zona, giorno, ritrovamenti, specie cercate e sforzo dell'uscita
       // (validation_context.effort). Se uno di questi cambia, la segnalazione si ritira: la community non conta
       // dati che l'uscita non dice più. L'utente può condividerla di nuovo.
       if (previous && sharedFieldsChanged(JSON.parse(previous), entry))
         writes.push(db.prepare('DELETE FROM reports WHERE account_id=? AND entry_id=?').bind(user.id, id));
       await db.batch(writes);
-      const shared = !!(await db.prepare('SELECT 1 AS x FROM reports WHERE account_id=? AND entry_id=? LIMIT 1').bind(user.id, id).first('x'));
+      const shared = !!(await db.prepare('SELECT 1 AS x FROM reports WHERE account_id=? AND entry_id=? UNION ALL SELECT 1 AS x FROM shared_observations WHERE account_id=? AND entry_id=? LIMIT 1').bind(user.id,id,user.id,id).first('x'));
       return result({ ok: true, entry: { ...entry, shared } });
     }
     if (entryMatch && request.method === 'DELETE') {
       await db.prepare('DELETE FROM diary_entries WHERE account_id=? AND id=?').bind(user.id, entryMatch[1]).run();
       return result({ ok: true });
+    }
+
+    const observationMatch=path.match(/^observations\/([a-zA-Z0-9-]{4,64})$/);
+    if(observationMatch&&['PUT','DELETE'].includes(request.method)){
+      const id=observationMatch[1],raw=await db.prepare('SELECT payload FROM diary_entries WHERE account_id=? AND id=?').bind(user.id,id).first('payload');
+      if(!raw)fail('Questa nota non appartiene al tuo taccuino.',404);
+      if(request.method==='DELETE'){await db.prepare('DELETE FROM shared_observations WHERE account_id=? AND entry_id=?').bind(user.id,id).run();return result({ok:true});}
+      const data=await body(request);if(data.consent!==true)fail('Serve il consenso esplicito alla condivisione.');
+      await rate(db,'observations:'+user.id,30,86400,now);
+      const ids=await currentCatalogIds(env,url.origin);let snapshot;
+      try{snapshot={...sharedObservation(normalizeNotebookNote(JSON.parse(raw),ids),{...ids,now}),researchConsent:true};}catch(error){fail(error.message);}
+      await db.prepare('INSERT INTO shared_observations(account_id,entry_id,day,zone_id,category,taxon_id,payload,consent_version,consented_at) VALUES(?,?,?,?,?,?,?,?,?) ON CONFLICT(account_id,entry_id) DO UPDATE SET day=excluded.day,zone_id=excluded.zone_id,category=excluded.category,taxon_id=excluded.taxon_id,payload=excluded.payload,consent_version=excluded.consent_version,consented_at=excluded.consented_at').bind(user.id,id,snapshot.day,snapshot.zoneId,snapshot.category,snapshot.taxonId,JSON.stringify(snapshot),'fronda-community-v1',now).run();
+      return result({ok:true});
     }
 
     if (path === 'reports' && request.method === 'POST') {

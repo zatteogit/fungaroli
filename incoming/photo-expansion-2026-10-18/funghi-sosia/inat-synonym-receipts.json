@@ -1,0 +1,26 @@
+[
+  {
+    "id": "pe2-sosia-sarcodon-scabrosus-inat-52409791",
+    "status": 200,
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/52409791/original.jpeg",
+    "sha256": "9b8a820f785bcb2e406569928a3323a0a3232e8a787dabdcee695e6ea463a635",
+    "headers": {
+      "Content-Length": "384274",
+      "Last-Modified": "Wed, 24 Feb 2021 06:10:34 GMT",
+      "ETag": "\"d86cb5fd3ede7065c5438855d2b5a215\"",
+      "Content-Type": "image/jpeg"
+    }
+  },
+  {
+    "id": "pe2-sosia-sarcodon-scabrosus-inat-553878722",
+    "status": 200,
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/553878722/original.jpg",
+    "sha256": "e41158254dfe191548f4ab9a17e5373c4ebf6562d41b190d2af6a05087c2a7b2",
+    "headers": {
+      "Last-Modified": "Sun, 17 Aug 2025 19:55:15 GMT",
+      "ETag": "\"c588f9896766bc1ca7eccb8b8003b651\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "897567"
+    }
+  }
+]

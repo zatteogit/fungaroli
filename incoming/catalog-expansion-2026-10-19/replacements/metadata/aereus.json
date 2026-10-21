@@ -1,0 +1,3462 @@
+{
+  "continue": {
+    "clcontinue": "14993632|Self-published_work",
+    "continue": "||imageinfo"
+  },
+  "query": {
+    "pages": {
+      "4167219": {
+        "pageid": 4167219,
+        "ns": 6,
+        "title": "File:Aereusisle.jpg",
+        "index": 11,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 91636,
+            "width": 512,
+            "height": 384,
+            "thumburl": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Aereusisle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "thumbwidth": 700,
+            "thumbheight": 525,
+            "thumbattribs": {
+              "src": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Aereusisle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 525
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Aereusisle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Aereusisle.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=4167219",
+            "sha1": "0b92f338acc09fd4014966493c8fc660f0113200",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2008-06-05 09:46:20",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Aereusisle",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Boletus aereus|GFDL|CC-BY-SA-3.0,2.5,2.0,1.0|License migration redundant|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "boletus aereus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2007-10",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Cactusleroydlapatee&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Cactusleroydlapatee (page does not exist)\">Cactusleroydlapatee</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Boletus aereus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0,2.5,2.0,1.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "4167223": {
+        "pageid": 4167223,
+        "ns": 6,
+        "title": "File:Aereusisle1.jpg",
+        "index": 17,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 99977,
+            "width": 512,
+            "height": 384,
+            "thumburl": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Aereusisle1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "thumbwidth": 700,
+            "thumbheight": 525,
+            "thumbattribs": {
+              "src": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Aereusisle1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 525
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Aereusisle1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Aereusisle1.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=4167223",
+            "sha1": "d5999f9da8f0914663494fde7b274e6dd95fb10d",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2008-06-05 09:48:32",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Aereusisle1",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Boletus aereus|GFDL|CC-BY-SA-3.0,2.5,2.0,1.0|License migration redundant|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "boletus aereus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2007-10",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Cactusleroydlapatee&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Cactusleroydlapatee (page does not exist)\">Cactusleroydlapatee</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Boletus aereus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0,2.5,2.0,1.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "4167227": {
+        "pageid": 4167227,
+        "ns": 6,
+        "title": "File:Aereusisle2.jpg",
+        "index": 19,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 86319,
+            "width": 384,
+            "height": 512,
+            "thumburl": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Aereusisle2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "thumbwidth": 700,
+            "thumbheight": 933,
+            "thumbattribs": {
+              "src": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Aereusisle2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 933
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Aereusisle2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Aereusisle2.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=4167227",
+            "sha1": "698556a2f25cf455132b70eaddc5a73f33446340",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2008-06-05 09:49:54",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Aereusisle2",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Boletus aereus|GFDL|CC-BY-SA-3.0,2.5,2.0,1.0|License migration redundant|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "boletus aereus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2007-10",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Cactusleroydlapatee&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Cactusleroydlapatee (page does not exist)\">Cactusleroydlapatee</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Boletus aereus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0,2.5,2.0,1.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "93766348": {
+        "pageid": 93766348,
+        "ns": 6,
+        "title": "File:BOLETUS AEREUS Bull. (9106875143).jpg",
+        "index": 20,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3105874,
+            "width": 3072,
+            "height": 2304,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/BOLETUS_AEREUS_Bull._%289106875143%29.jpg/960px-BOLETUS_AEREUS_Bull._%289106875143%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 525,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/BOLETUS_AEREUS_Bull._%289106875143%29.jpg/1920px-BOLETUS_AEREUS_Bull._%289106875143%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/BOLETUS_AEREUS_Bull._%289106875143%29.jpg/960px-BOLETUS_AEREUS_Bull._%289106875143%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 525,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/BOLETUS_AEREUS_Bull._%289106875143%29.jpg/1920px-BOLETUS_AEREUS_Bull._%289106875143%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/bc/BOLETUS_AEREUS_Bull._%289106875143%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:BOLETUS_AEREUS_Bull._(9106875143).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=93766348",
+            "sha1": "286130f83edf3bc74097f9ac88dd90b615ed0cdc",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-09-02 11:26:27",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "BOLETUS AEREUS Bull. (9106875143)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Boletus aereus|Fungi in June|Boletaceae in Serbia|Flickr images reviewed by FlickreviewR 2|Flickr images missing SDC published in",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<p>Hat: wide 5-25 cm, hemispherical form, then spread, flattened when she is old. Color of young specimens is almost black, chocolate brown later. Shrimp hat is velvety in young specimens run over the edge, and the elderly are withdrawn.\nMEAT: tough, white, aromatic odor and taste extraordinary. Tubules are ocher and white, then light yellow and finally yellow olive.\nSPORE: olive brown, spindle-shaped.\nSASSY: a little shorter than a hat, 5 - 15 cm high: 2 - 6 inches wide. In young subjects is very wide at the bottom, then lengthened but remains towards the bottom of the cylindrical. Color is white at the bottom, and the brown hat with distinctive mesh that stretches along the entire handle.\nMEAT-hard and a lot of pleasant odor, in older specimens become spongy.\nHabitat and ABUNDANCE: black mushrooms growing from June to October, the deciduous, mostly oak and beech forests, and under the gentle chestnut, a lot of the sunny places. Very shutdown species in nearly all of Serbia, throughout southern Europe.\n</p>\nEdibility: the cooking is particularly appreciated because it has a hard meat least is grubby. It is used for all kinds of dishes and can be conserved. As marinated in a special delicacy.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2013-06-08 16:30",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/fungi-nis/9106875143/\">BOLETUS AEREUS Bull.</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/62999333@N05\">GLJIVARSKO DRUSTVO NIS</a> from Serbia",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "93766349": {
+        "pageid": 93766349,
+        "ns": 6,
+        "title": "File:BOLETUS AEREUS Bull. (9109097740).jpg",
+        "index": 12,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 407217,
+            "width": 2048,
+            "height": 1536,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/BOLETUS_AEREUS_Bull._%289109097740%29.jpg/960px-BOLETUS_AEREUS_Bull._%289109097740%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 525,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/BOLETUS_AEREUS_Bull._%289109097740%29.jpg/1920px-BOLETUS_AEREUS_Bull._%289109097740%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/BOLETUS_AEREUS_Bull._%289109097740%29.jpg/960px-BOLETUS_AEREUS_Bull._%289109097740%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 525,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/BOLETUS_AEREUS_Bull._%289109097740%29.jpg/1920px-BOLETUS_AEREUS_Bull._%289109097740%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f1/BOLETUS_AEREUS_Bull._%289109097740%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:BOLETUS_AEREUS_Bull._(9109097740).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=93766349",
+            "sha1": "38a1422a445fd918bb01eed14e22e3914de65080",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-09-02 11:26:27",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "BOLETUS AEREUS Bull. (9109097740)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Boletus aereus|Fungi in June|Boletaceae in Serbia|Flickr images reviewed by FlickreviewR 2",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<p>Hat: wide 5-25 cm, hemispherical form, then spread, flattened when she is old. Color of young specimens is almost black, chocolate brown later. Shrimp hat is velvety in young specimens run over the edge, and the elderly are withdrawn.\nMEAT: tough, white, aromatic odor and taste extraordinary. Tubules are ocher and white, then light yellow and finally yellow olive.\nSPORE: olive brown, spindle-shaped.\nSASSY: a little shorter than a hat, 5 - 15 cm high: 2 - 6 inches wide. In young subjects is very wide at the bottom, then lengthened but remains towards the bottom of the cylindrical. Color is white at the bottom, and the brown hat with distinctive mesh that stretches along the entire handle.\nMEAT-hard and a lot of pleasant odor, in older specimens become spongy.\nHabitat and ABUNDANCE: black mushrooms growing from June to October, the deciduous, mostly oak and beech forests, and under the gentle chestnut, a lot of the sunny places. Very shutdown species in nearly all of Serbia, throughout southern Europe.\n</p>\nEdibility: the cooking is particularly appreciated because it has a hard meat least is grubby. It is used for all kinds of dishes and can be conserved. As marinated in a special delicacy.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2013-06-22 16:59",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/fungi-nis/9109097740/\">BOLETUS AEREUS Bull.</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/62999333@N05\">GLJIVARSKO DRUSTVO NIS</a> from Serbia",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "93765868": {
+        "pageid": 93765868,
+        "ns": 6,
+        "title": "File:BOLETUS AEREUS Bull. Fr. (5829732765).jpg",
+        "index": 25,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 144205,
+            "width": 800,
+            "height": 600,
+            "thumburl": "https://upload.wikimedia.org/wikipedia/commons/c/ce/BOLETUS_AEREUS_Bull._Fr._%285829732765%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "thumbwidth": 700,
+            "thumbheight": 525,
+            "thumbattribs": {
+              "src": "https://upload.wikimedia.org/wikipedia/commons/c/ce/BOLETUS_AEREUS_Bull._Fr._%285829732765%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 525
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/ce/BOLETUS_AEREUS_Bull._Fr._%285829732765%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:BOLETUS_AEREUS_Bull._Fr._(5829732765).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=93765868",
+            "sha1": "2a82ece337901c5d4effb2c7f66ebb1388e98480",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-09-02 11:15:28",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "BOLETUS AEREUS Bull. Fr. (5829732765)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Boletus aereus|Fungi in June|Boletaceae in Serbia|Flickr images reviewed by FlickreviewR 2",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<p>Exceptional edible mushroom, top gastronomic quality. Vegetating in summer and autumn, in light oak and chestnut trees.\nFungi photographed member of the Fungi mushroom association Niš Stojanović Dejan.\n</p>\nMushrooms found in Zaplanje, in light oak forest in the village Gadzin Han (the city of Nis), Southern Serbia, SERBIA.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2011-06-13 22:37",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/fungi-nis/5829732765/\">BOLETUS AEREUS Bull.:Fr.</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/62999333@N05\">GLJIVARSKO DRUSTVO NIS</a> from Serbia",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "93766484": {
+        "pageid": 93766484,
+        "ns": 6,
+        "title": "File:BOLETUS AEREUS Bull. Fr. (6083526611).jpg",
+        "index": 9,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 34741,
+            "width": 240,
+            "height": 180,
+            "thumburl": "https://upload.wikimedia.org/wikipedia/commons/d/de/BOLETUS_AEREUS_Bull._Fr._%286083526611%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "thumbwidth": 700,
+            "thumbheight": 525,
+            "thumbattribs": {
+              "src": "https://upload.wikimedia.org/wikipedia/commons/d/de/BOLETUS_AEREUS_Bull._Fr._%286083526611%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 525
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/de/BOLETUS_AEREUS_Bull._Fr._%286083526611%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:BOLETUS_AEREUS_Bull._Fr._(6083526611).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=93766484",
+            "sha1": "26de19ff434351fde67192607ecdc8474183da7f",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-09-02 11:29:23",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "BOLETUS AEREUS Bull. Fr. (6083526611)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Boletus aereus|Fungi in August|Boletaceae in Serbia|Flickr images reviewed by FlickreviewR 2",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Exceptional edible mushroom, top gastronomic quality. Vegetating in summer and autumn, in light oak and chestnut trees.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2011-08-27 00:27",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/fungi-nis/6083526611/\">BOLETUS AEREUS Bull.:Fr.</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/62999333@N05\">GLJIVARSKO DRUSTVO NIS</a> from Serbia",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "49667249": {
+        "pageid": 49667249,
+        "ns": 6,
+        "title": "File:Boletus Aereus.jpg",
+        "index": 26,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 4098289,
+            "width": 4608,
+            "height": 3456,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Boletus_Aereus.jpg/960px-Boletus_Aereus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 525,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Boletus_Aereus.jpg/1920px-Boletus_Aereus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Boletus_Aereus.jpg/960px-Boletus_Aereus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 525,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Boletus_Aereus.jpg/1920px-Boletus_Aereus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/27/Boletus_Aereus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Boletus_Aereus.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=49667249",
+            "sha1": "8a96129efdb7044c8d732d746b646b7182b68930",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2016-06-23 14:20:48",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Boletus Aereus",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Boletus aereus|Taken with Panasonic Lumix DMC-XS1|Sierra de Grazalema Natural Park|Self-published work|Fungi of Andalusia|Fungi in October|Images from Wiki Loves Earth Biosphere Reserves 2016|Images from Wiki Loves Earth 2016|Biosphere reserves with IDs|Images from Wiki Loves Earth missing SDC location of creation|Uploaded via Campaign:wle-unesco",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "This is an image of the <a href=\"https://en.wikipedia.org/wiki/en:World_Network_of_Biosphere_Reserves\" class=\"extiw\" title=\"w:en:World Network of Biosphere Reserves\">Biosphere Reserve</a> or a <a href=\"https://en.wikipedia.org/wiki/en:Geopark\" class=\"extiw\" title=\"w:en:Geopark\">Geopark</a>:",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2014-10-05 19:11:32",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Davidruiz91&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Davidruiz91 (page does not exist)\">Davidruiz91</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "1057429": {
+        "pageid": 1057429,
+        "ns": 6,
+        "title": "File:Boletus aereus.jpg",
+        "index": 22,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 41497,
+            "width": 640,
+            "height": 480,
+            "thumburl": "https://upload.wikimedia.org/wikipedia/commons/3/38/Boletus_aereus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "thumbwidth": 700,
+            "thumbheight": 525,
+            "thumbattribs": {
+              "src": "https://upload.wikimedia.org/wikipedia/commons/3/38/Boletus_aereus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 525
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/38/Boletus_aereus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Boletus_aereus.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=1057429",
+            "sha1": "2f63ae615e48dba13c7bc7a5846da1b0f2e19c88",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2006-08-15 15:37:36",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Boletus aereus",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Boletus aereus|Files with no machine-readable source|Riserva naturale orientata Serre della Pizzuta|Self-published work|PD-self|Assumed own work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Boletus Aereus in sicilian mountain",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "15 August 2006 (original upload date)",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "No machine-readable source provided. Own work assumed (based on copyright claims).",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "No machine-readable author provided. <a href=\"//commons.wikimedia.org/w/index.php?title=User:Arbereshe&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Arbereshe (page does not exist)\">Arbereshe</a> assumed (based on copyright claims).",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Assumed own work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Boletus aereus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with no machine-readable source"
+          },
+          {
+            "ns": 14,
+            "title": "Category:PD-self"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Riserva naturale orientata Serre della Pizzuta"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "1642079": {
+        "pageid": 1642079,
+        "ns": 6,
+        "title": "File:Boletus aereus1.jpg",
+        "index": 21,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 29364,
+            "width": 800,
+            "height": 586,
+            "thumburl": "https://upload.wikimedia.org/wikipedia/commons/1/13/Boletus_aereus1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "thumbwidth": 700,
+            "thumbheight": 513,
+            "thumbattribs": {
+              "src": "https://upload.wikimedia.org/wikipedia/commons/1/13/Boletus_aereus1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 513
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Boletus_aereus1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Boletus_aereus1.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=1642079",
+            "sha1": "feb312f3ddb2d568506e2128753098b5bde6886f",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2007-02-05 20:17:33",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Boletus aereus1",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Boletus aereus|GFDL|Étrelles-et-la-Montbleuse|History of Haute-Saône|License migration completed",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bolet tête de nègre (<i><a href=\"//commons.wikimedia.org/wiki/Boletus_aereus\" title=\"Boletus aereus\">Boletus aereus</a></i>), <a href=\"//commons.wikimedia.org/wiki/%C3%89trelles-et-la-Montbleuse\" class=\"mw-redirect\" title=\"Étrelles-et-la-Montbleuse\">Étrelles-et-la-Montbleuse</a> (<a href=\"//commons.wikimedia.org/wiki/Haute-Sa%C3%B4ne\" title=\"Haute-Saône\">Haute-Saône</a>, France)., octobre 2004.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "29 October 2004 (original upload date)",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "photo by <a href=\"https://fr.wikipedia.org/wiki/User:Jeffdelonge\" class=\"extiw\" title=\"fr:User:Jeffdelonge\">Jeffdelonge</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "J.F. Gaffard <a href=\"https://fr.wikipedia.org/wiki/User:Jeffdelonge\" class=\"extiw\" title=\"fr:User:Jeffdelonge\">Jeffdelonge</a> at <a class=\"external text\" data-mw-original-href=\"http://fr.wikipedia.org\" href=\"https://fr.wikipedia.org\">fr.wikipedia</a>",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "Released under the <a href=\"//commons.wikimedia.org/wiki/GNU_Free_Documentation_License\" class=\"mw-redirect\" title=\"GNU Free Documentation License\">GNU Free Documentation License</a>.",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/licenses/by-sa/3.0/",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Boletus aereus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0-migrated"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:History of Haute-Saône"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration completed"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Étrelles-et-la-Montbleuse"
+          }
+        ]
+      },
+      "10855087": {
+        "pageid": 10855087,
+        "ns": 6,
+        "title": "File:Boletus aereusBG.JPG",
+        "index": 28,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2153838,
+            "width": 1536,
+            "height": 2048,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Boletus_aereusBG.JPG/960px-Boletus_aereusBG.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 933,
+            "responsiveUrls": {
+              "2": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Boletus_aereusBG.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Boletus_aereusBG.JPG/960px-Boletus_aereusBG.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 933,
+              "srcset": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Boletus_aereusBG.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Boletus_aereusBG.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Boletus_aereusBG.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=10855087",
+            "sha1": "2431020b9b16b441e7f06bf6bed283d0cb67ab90",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2010-07-10 22:16:48",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Boletus aereusBG",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Boletus aereus|GFDL|Taken with Olympus X-450 / D-535Z / C-370Z|License migration redundant|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Boletus aereus</i> under oak near Sofia, Bulgaria.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2010-07-10",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Paffka\" title=\"User:Paffka\">Paffka</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Boletus aereus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Olympus X-450 / D-535Z / C-370Z"
+          }
+        ]
+      },
+      "25373700": {
+        "pageid": 25373700,
+        "ns": 6,
+        "title": "File:Boletus aereusBG crop.jpg",
+        "index": 2,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 822855,
+            "width": 1280,
+            "height": 1280,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Boletus_aereusBG_crop.jpg/960px-Boletus_aereusBG_crop.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 700,
+            "responsiveUrls": {
+              "2": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Boletus_aereusBG_crop.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Boletus_aereusBG_crop.jpg/960px-Boletus_aereusBG_crop.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 700,
+              "srcset": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Boletus_aereusBG_crop.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Boletus_aereusBG_crop.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Boletus_aereusBG_crop.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=25373700",
+            "sha1": "98f324676a456f3c653b89776793d1ae85eb8b15",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2013-03-31 13:48:37",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Boletus aereusBG crop",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Boletus aereus|Taken with Olympus X-450 / D-535Z / C-370Z|Derivative versions",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Boletus arereus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2004-01-01",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This file was derived from:  <a href=\"//commons.wikimedia.org/wiki/File:Boletus_aereusBG.JPG\" title=\"File:Boletus aereusBG.JPG\">Boletus aereusBG.JPG</a>: <span typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/File:Boletus_aereusBG.JPG\" class=\"mw-file-description\"><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Boletus_aereusBG.JPG/60px-Boletus_aereusBG.JPG?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"50\" height=\"67\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Boletus_aereusBG.JPG/120px-Boletus_aereusBG.JPG?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"1536\" data-file-height=\"2048\"></a></span><br>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<ul><li><a href=\"//commons.wikimedia.org/wiki/File:Boletus_aereusBG.JPG\" title=\"File:Boletus aereusBG.JPG\">Boletus aereusBG.JPG</a>: <a href=\"//commons.wikimedia.org/wiki/User:Paffka\" title=\"User:Paffka\">Paffka</a></li>\n<li>derivative work: <a href=\"//commons.wikimedia.org/wiki/User:Xth-Floor\" title=\"User:Xth-Floor\">Xth-Floor</a></li></ul>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "50831291": {
+        "pageid": 50831291,
+        "ns": 6,
+        "title": "File:Boletus aereus (29105181796).jpg",
+        "index": 15,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 6931711,
+            "width": 5184,
+            "height": 3456,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Boletus_aereus_%2829105181796%29.jpg/960px-Boletus_aereus_%2829105181796%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 467,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Boletus_aereus_%2829105181796%29.jpg/1920px-Boletus_aereus_%2829105181796%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Boletus_aereus_%2829105181796%29.jpg/960px-Boletus_aereus_%2829105181796%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 467,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Boletus_aereus_%2829105181796%29.jpg/1920px-Boletus_aereus_%2829105181796%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Boletus_aereus_%2829105181796%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Boletus_aereus_(29105181796).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=50831291",
+            "sha1": "21bdbb321d29ac573c09a067cbcb9b4349ec38b3",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2016-08-22 22:38:29",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Boletus aereus (29105181796)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Boletus aereus|Flickr images reviewed by FlickreviewR|Files uploaded by INeverCry|Bavaria photographs taken on 2016-08-06|Boletales in Bavaria in August|Boletus in Rimpar|Files with coordinates missing SDC location of creation (49° N, 9° E)|Photographs by Björn Sothmann",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "49.879644",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "9.947691",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Dark Cep - Boletus aereus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2016-08-06 12:35",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/40948266@N04/29105181796/\">Dark Cep - Boletus aereus</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/40948266@N04\">Björn S...</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "29154028": {
+        "pageid": 29154028,
+        "ns": 6,
+        "title": "File:Boletus aereus -italy-lazio(vt)-01.JPG",
+        "index": 6,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3099316,
+            "width": 3456,
+            "height": 4608,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Boletus_aereus_-italy-lazio%28vt%29-01.JPG/960px-Boletus_aereus_-italy-lazio%28vt%29-01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 933,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Boletus_aereus_-italy-lazio%28vt%29-01.JPG/1920px-Boletus_aereus_-italy-lazio%28vt%29-01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Boletus_aereus_-italy-lazio%28vt%29-01.JPG/960px-Boletus_aereus_-italy-lazio%28vt%29-01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 933,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Boletus_aereus_-italy-lazio%28vt%29-01.JPG/1920px-Boletus_aereus_-italy-lazio%28vt%29-01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Boletus_aereus_-italy-lazio%28vt%29-01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Boletus_aereus_-italy-lazio(vt)-01.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=29154028",
+            "sha1": "543ac59a00bdf6df77a3aeac75722461bc67c900",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2013-10-23 18:02:22",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Boletus aereus -italy-lazio(vt)-01",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Boletus aereus|Taken with Pentax Optio VS20|Self-published work|Fungi in October|Fungi of Lazio|Boletus in Italy",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Boletus aereus -italy-lazio(vt)-porcino nero,bronzino,porcino reale.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2012-10-22 10:34:11",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Ilceramista\" title=\"User:Ilceramista\">Ilceramista</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "29154029": {
+        "pageid": 29154029,
+        "ns": 6,
+        "title": "File:Boletus aereus -italy-lazio(vt)-03.JPG",
+        "index": 16,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3310645,
+            "width": 3456,
+            "height": 4608,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Boletus_aereus_-italy-lazio%28vt%29-03.JPG/960px-Boletus_aereus_-italy-lazio%28vt%29-03.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 933,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Boletus_aereus_-italy-lazio%28vt%29-03.JPG/1920px-Boletus_aereus_-italy-lazio%28vt%29-03.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Boletus_aereus_-italy-lazio%28vt%29-03.JPG/960px-Boletus_aereus_-italy-lazio%28vt%29-03.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 933,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Boletus_aereus_-italy-lazio%28vt%29-03.JPG/1920px-Boletus_aereus_-italy-lazio%28vt%29-03.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/24/Boletus_aereus_-italy-lazio%28vt%29-03.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Boletus_aereus_-italy-lazio(vt)-03.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=29154029",
+            "sha1": "483e11ee5caf94897552d66cd7fa7274b0757d11",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2013-10-23 18:02:23",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Boletus aereus -italy-lazio(vt)-03",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Boletus aereus|Taken with Pentax Optio VS20|Self-published work|Fungi in October|Fungi of Lazio|Boletus in Italy",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Boletus aereus -italy-lazio(vt)-porcino nero,bronzino,porcino reale.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2012-10-22 10:37:19",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Ilceramista\" title=\"User:Ilceramista\">Ilceramista</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "29154030": {
+        "pageid": 29154030,
+        "ns": 6,
+        "title": "File:Boletus aereus -italy-lazio(vt)-04.JPG",
+        "index": 7,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3210434,
+            "width": 3456,
+            "height": 4608,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Boletus_aereus_-italy-lazio%28vt%29-04.JPG/960px-Boletus_aereus_-italy-lazio%28vt%29-04.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 933,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Boletus_aereus_-italy-lazio%28vt%29-04.JPG/1920px-Boletus_aereus_-italy-lazio%28vt%29-04.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Boletus_aereus_-italy-lazio%28vt%29-04.JPG/960px-Boletus_aereus_-italy-lazio%28vt%29-04.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 933,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Boletus_aereus_-italy-lazio%28vt%29-04.JPG/1920px-Boletus_aereus_-italy-lazio%28vt%29-04.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Boletus_aereus_-italy-lazio%28vt%29-04.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Boletus_aereus_-italy-lazio(vt)-04.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=29154030",
+            "sha1": "e72cbc57c21054062fc6ddce56203b7328a698d2",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2013-10-23 18:02:28",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Boletus aereus -italy-lazio(vt)-04",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Boletus aereus|Taken with Pentax Optio VS20|Self-published work|Fungi in October|Fungi of Lazio|Boletus in Italy",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Boletus aereus -italy-lazio(vt)-porcino nero,bronzino,porcino reale.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2012-10-22 10:53:45",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Ilceramista\" title=\"User:Ilceramista\">Ilceramista</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "95427970": {
+        "pageid": 95427970,
+        "ns": 6,
+        "title": "File:Boletus aereus 21766832.jpg",
+        "index": 10,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2388315,
+            "width": 1536,
+            "height": 2048,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Boletus_aereus_21766832.jpg/960px-Boletus_aereus_21766832.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 933,
+            "responsiveUrls": {
+              "2": "https://upload.wikimedia.org/wikipedia/commons/7/79/Boletus_aereus_21766832.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Boletus_aereus_21766832.jpg/960px-Boletus_aereus_21766832.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 933,
+              "srcset": "https://upload.wikimedia.org/wikipedia/commons/7/79/Boletus_aereus_21766832.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/79/Boletus_aereus_21766832.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Boletus_aereus_21766832.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=95427970",
+            "sha1": "aa0110d9ba294596bc0dc775494ed0eeaf6d6b35",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-10-24 22:24:30",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Boletus aereus 21766832",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Boletus aereus|Media from iNaturalist|Fungi in July|INaturalist images reviewed by iNaturalistReviewBot|Agaricomycetes in Greece|Boletales in Greece|Files with coordinates missing SDC location of creation|Greece photographs taken on 2018-07-08|Uploaded with iNaturalist2Commons",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "38.021906",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "21.897585",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bronze Bolete (<i>Boletus aereus</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2018-07-08",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/21766832\">https://www.inaturalist.org/photos/21766832</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/663022\">Sarah Faulwetter</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "95427950": {
+        "pageid": 95427950,
+        "ns": 6,
+        "title": "File:Boletus aereus 26939560.jpg",
+        "index": 23,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1581684,
+            "width": 2048,
+            "height": 1539,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Boletus_aereus_26939560.jpg/960px-Boletus_aereus_26939560.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 526,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Boletus_aereus_26939560.jpg/1920px-Boletus_aereus_26939560.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Boletus_aereus_26939560.jpg/960px-Boletus_aereus_26939560.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 526,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Boletus_aereus_26939560.jpg/1920px-Boletus_aereus_26939560.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Boletus_aereus_26939560.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Boletus_aereus_26939560.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=95427950",
+            "sha1": "1ae23777768e444c9f594b1724b605c03343f7a3",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-10-24 22:23:30",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Boletus aereus 26939560",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Boletus aereus|CC-Zero|Media from iNaturalist|Fungi in October|INaturalist images reviewed by iNaturalistReviewBot|Boletaceae in France|Boletus in France|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|Centre-Val de Loire photographs taken on 2018-10-20",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "47.480433",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "0.452888",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bronze Bolete (<i>Boletus aereus</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2018-10-20",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/26939560\">https://www.inaturalist.org/photos/26939560</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/871523\">Cyril Buslaitue</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "95427942": {
+        "pageid": 95427942,
+        "ns": 6,
+        "title": "File:Boletus aereus 26939651.jpg",
+        "index": 13,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1501619,
+            "width": 2048,
+            "height": 1536,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Boletus_aereus_26939651.jpg/960px-Boletus_aereus_26939651.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 525,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Boletus_aereus_26939651.jpg/1920px-Boletus_aereus_26939651.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Boletus_aereus_26939651.jpg/960px-Boletus_aereus_26939651.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 525,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Boletus_aereus_26939651.jpg/1920px-Boletus_aereus_26939651.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Boletus_aereus_26939651.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Boletus_aereus_26939651.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=95427942",
+            "sha1": "e3a4b7cae11cf487fd5402b9e1ab4b809060c339",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-10-24 22:23:11",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Boletus aereus 26939651",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Boletus aereus|CC-Zero|Media from iNaturalist|Fungi in October|INaturalist images reviewed by iNaturalistReviewBot|Boletaceae in France|Boletus in France|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|Centre-Val de Loire photographs taken on 2018-10-20",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "47.480433",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "0.452888",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bronze Bolete (<i>Boletus aereus</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2018-10-20",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/26939651\">https://www.inaturalist.org/photos/26939651</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/871523\">Cyril Buslaitue</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "42735896": {
+        "pageid": 42735896,
+        "ns": 6,
+        "title": "File:Boletus aereus 437478.jpg",
+        "index": 14,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1705043,
+            "width": 1920,
+            "height": 2560,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Boletus_aereus_437478.jpg/960px-Boletus_aereus_437478.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 933,
+            "responsiveUrls": {
+              "2": "https://upload.wikimedia.org/wikipedia/commons/2/25/Boletus_aereus_437478.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Boletus_aereus_437478.jpg/960px-Boletus_aereus_437478.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 933,
+              "srcset": "https://upload.wikimedia.org/wikipedia/commons/2/25/Boletus_aereus_437478.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/25/Boletus_aereus_437478.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Boletus_aereus_437478.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=42735896",
+            "sha1": "fbc02429a8660683ac017fe9780de51cdb2c9ec8",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-08-29 04:23:25",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Boletus aereus 437478",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Boletus aereus|Boletus in Germany|Images from Mushroom Observer|Files from external sources with reviewed licenses|Fungi in July|Fungi of Schönbuch",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Fruit body of <i>Boletus aereus</i> Bull.; photographed in Schönbuch, Baden-Württemberg, Germany.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2014-07-27",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This image is <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/image/show_image/437478\">Image Number 437478</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Susanne Sourell (suse)",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "73314585": {
+        "pageid": 73314585,
+        "ns": 6,
+        "title": "File:Boletus aereus Bull 512322 crop.jpg",
+        "index": 27,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1051242,
+            "width": 2394,
+            "height": 1924,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Boletus_aereus_Bull_512322_crop.jpg/960px-Boletus_aereus_Bull_512322_crop.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 563,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Boletus_aereus_Bull_512322_crop.jpg/1920px-Boletus_aereus_Bull_512322_crop.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Boletus_aereus_Bull_512322_crop.jpg/960px-Boletus_aereus_Bull_512322_crop.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 563,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Boletus_aereus_Bull_512322_crop.jpg/1920px-Boletus_aereus_Bull_512322_crop.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Boletus_aereus_Bull_512322_crop.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Boletus_aereus_Bull_512322_crop.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=73314585",
+            "sha1": "4acb1c7657a9bcf72f8388adbf1d508f2701194d",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-10-02 08:50:47",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Boletus aereus Bull 512322 crop",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Boletus aereus|Images from Mushroom Observer|Files from external sources with reviewed licenses|Italy photographs taken on 2014-10-26|Fungi in October|Boletus in Italy|Files with coordinates missing SDC location of creation",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "37.754300",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "14.995800",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "For more information about this, see the <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_observation/200728\">observation page</a> at Mushroom Observer.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2014-10-26",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This image is <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/image/show_image/512322\">Image Number 512322</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "This image was created by user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_user/5252\">Davide Puddu (Davide Puddu)</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.<br>You can contact this user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/ask_user_question/5252\">here</a>.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "1286334": {
+        "pageid": 1286334,
+        "ns": 6,
+        "title": "File:Boletus aereus IT.JPG",
+        "index": 3,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1421598,
+            "width": 2304,
+            "height": 1728,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Boletus_aereus_IT.JPG/960px-Boletus_aereus_IT.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 525,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Boletus_aereus_IT.JPG/1920px-Boletus_aereus_IT.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Boletus_aereus_IT.JPG/960px-Boletus_aereus_IT.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 525,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Boletus_aereus_IT.JPG/1920px-Boletus_aereus_IT.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Boletus_aereus_IT.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Boletus_aereus_IT.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=1286334",
+            "sha1": "daffbcfefc28d72ce5a4c7816cc8b3d6c7ce8158",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2006-10-17 20:14:23",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Boletus aereus IT",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Boletus aereus|Taken with Kodak EasyShare DX6490|PD-user",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Boletus aereus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2006-10-17",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "Own work, all rights released",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Roberto Petruzzo - Latina, Italy",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "Freeware",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Boletus aereus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:PD-user"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Kodak EasyShare DX6490"
+          }
+        ]
+      },
+      "143601483": {
+        "pageid": 143601483,
+        "ns": 6,
+        "title": "File:Boletus aereus IT cropped.jpg",
+        "index": 5,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 321520,
+            "width": 508,
+            "height": 554,
+            "thumburl": "https://upload.wikimedia.org/wikipedia/commons/5/59/Boletus_aereus_IT_cropped.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "thumbwidth": 700,
+            "thumbheight": 763,
+            "thumbattribs": {
+              "src": "https://upload.wikimedia.org/wikipedia/commons/5/59/Boletus_aereus_IT_cropped.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 763
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/59/Boletus_aereus_IT_cropped.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Boletus_aereus_IT_cropped.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=143601483",
+            "sha1": "dbe8d1acf40c7e94db02266e48ce59cbec7731ff",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2024-01-06 20:56:54",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Boletus aereus IT cropped",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Boletus aereus|PD US|PD-US missing SDC copyright status",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Boletus aereus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2024-01-06 22:54:02",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a class=\"external free\" href=\"https://commons.wikimedia.org/wiki/File:Boletus_aereus_IT.JPG\">https://commons.wikimedia.org/wiki/File:Boletus_aereus_IT.JPG</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Roberto Petruzzo - Latina, Italy",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "1251993": {
+        "pageid": 1251993,
+        "ns": 6,
+        "title": "File:Boletus aereus Italy.jpg",
+        "index": 18,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 502070,
+            "width": 1444,
+            "height": 1320,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Boletus_aereus_Italy.jpg/960px-Boletus_aereus_Italy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 640,
+            "responsiveUrls": {
+              "2": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Boletus_aereus_Italy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Boletus_aereus_Italy.jpg/960px-Boletus_aereus_Italy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 640,
+              "srcset": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Boletus_aereus_Italy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Boletus_aereus_Italy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Boletus_aereus_Italy.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=1251993",
+            "sha1": "2ea7e25b28cb34c0ba03dd67333a1ae275435aeb",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2012-03-29 16:43:39",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Boletus aereus Italy",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Boletus aereus|PD-user",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Boletus aereus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "6/10/2006",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Roberto Petruzzo (Latina, Italy)",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "All rights released",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Boletus aereus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:PD-user"
+          }
+        ]
+      },
+      "3247898": {
+        "pageid": 3247898,
+        "ns": 6,
+        "title": "File:Bronze Roehrling.jpg",
+        "index": 1,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 790946,
+            "width": 1590,
+            "height": 1844,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Bronze_Roehrling.jpg/960px-Bronze_Roehrling.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 812,
+            "responsiveUrls": {
+              "2": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Bronze_Roehrling.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Bronze_Roehrling.jpg/960px-Bronze_Roehrling.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 812,
+              "srcset": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Bronze_Roehrling.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Bronze_Roehrling.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Bronze_Roehrling.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=3247898",
+            "sha1": "06b32012e5a389d6ff8c4ef9e4a9efaddab9a7cb",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2007-12-18 23:21:15",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Bronze Roehrling",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Boletus aereus|Copyrighted free use|Files with derivative versions",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bronze Röhrling,Boletus aereus Bull.: Fr.- Pilz des Jahres 2008",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"http://www.dgfm-ev.de/www/img/img_pdj/2008/pdj_2008_g.jpg\">http://www.dgfm-ev.de/www/img/img_pdj/2008/pdj_2008_g.jpg</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Achim Bollmann",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "Nach E-Mail vom 18.12.2007 freigegeben für Wikipedia von der DGfM und H. Achim Bollmann",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "Copyrighted free use",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Copyrighted free use",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Boletus aereus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Copyrighted free use"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with derivative versions"
+          }
+        ]
+      },
+      "12809714": {
+        "pageid": 12809714,
+        "ns": 6,
+        "title": "File:Bronze Roehrling cropped.jpg",
+        "index": 4,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 516374,
+            "width": 1000,
+            "height": 800,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Bronze_Roehrling_cropped.jpg/960px-Bronze_Roehrling_cropped.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 560,
+            "responsiveUrls": {
+              "2": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Bronze_Roehrling_cropped.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Bronze_Roehrling_cropped.jpg/960px-Bronze_Roehrling_cropped.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 560,
+              "srcset": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Bronze_Roehrling_cropped.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Bronze_Roehrling_cropped.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Bronze_Roehrling_cropped.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=12809714",
+            "sha1": "7da01533202b9bae50c65f8055b3ce4e12ca5a0e",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-01-26 04:25:22",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Bronze Roehrling cropped",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Boletus aereus|Copyrighted free use|Retouched pictures|Self-published work|Uploaded with derivativeFX",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bronze Röhrling,Boletus aereus Bull.: Fr.- Pilz des Jahres 2008",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2011-01-26 04:24",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<ul><li><a href=\"//commons.wikimedia.org/wiki/File:Bronze_Roehrling.jpg\" title=\"File:Bronze Roehrling.jpg\">Bronze_Roehrling.jpg</a></li></ul>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<ul><li><a href=\"//commons.wikimedia.org/wiki/File:Bronze_Roehrling.jpg\" title=\"File:Bronze Roehrling.jpg\">Bronze_Roehrling.jpg</a>: Achim Bollmann</li>\n<li>derivative work: <a href=\"//commons.wikimedia.org/w/index.php?title=User:Ak_ccm&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Ak ccm (page does not exist)\">Ak ccm</a> (<a href=\"//commons.wikimedia.org/wiki/User_talk:Ak_ccm\" title=\"User talk:Ak ccm\"><span class=\"signature-talk\">talk</span></a>)</li></ul>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Copyrighted free use",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Copyrighted free use",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Boletus aereus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Copyrighted free use"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Retouched pictures"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded with derivativeFX"
+          }
+        ]
+      },
+      "14993706": {
+        "pageid": 14993706,
+        "ns": 6,
+        "title": "File:Porcino rinvenuto a Sasso Pisano (PI).jpg",
+        "index": 30,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 362426,
+            "width": 1232,
+            "height": 1856,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Porcino_rinvenuto_a_Sasso_Pisano_%28PI%29.jpg/960px-Porcino_rinvenuto_a_Sasso_Pisano_%28PI%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 1055,
+            "responsiveUrls": {
+              "2": "https://upload.wikimedia.org/wikipedia/commons/6/61/Porcino_rinvenuto_a_Sasso_Pisano_%28PI%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Porcino_rinvenuto_a_Sasso_Pisano_%28PI%29.jpg/960px-Porcino_rinvenuto_a_Sasso_Pisano_%28PI%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 1055,
+              "srcset": "https://upload.wikimedia.org/wikipedia/commons/6/61/Porcino_rinvenuto_a_Sasso_Pisano_%28PI%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/61/Porcino_rinvenuto_a_Sasso_Pisano_%28PI%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Porcino_rinvenuto_a_Sasso_Pisano_(PI).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=14993706",
+            "sha1": "dbba6e729fd68932ed8c39d87dfe9d3c903158a3",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-04-22 20:26:55",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Porcino rinvenuto a Sasso Pisano (PI)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Boletus aereus|CC-Zero|Self-published work|Boletus in Italy|Fungi of Sasso Pisano",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Sasso Pisano",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Edatoscana&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Edatoscana (page does not exist)\">Edatoscana</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "14993632": {
+        "pageid": 14993632,
+        "ns": 6,
+        "title": "File:Sasso Pisano (PI) Porcino.jpg",
+        "index": 29,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1685926,
+            "width": 2240,
+            "height": 1680,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Sasso_Pisano_%28PI%29_Porcino.jpg/960px-Sasso_Pisano_%28PI%29_Porcino.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 525,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Sasso_Pisano_%28PI%29_Porcino.jpg/1920px-Sasso_Pisano_%28PI%29_Porcino.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Sasso_Pisano_%28PI%29_Porcino.jpg/960px-Sasso_Pisano_%28PI%29_Porcino.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 525,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Sasso_Pisano_%28PI%29_Porcino.jpg/1920px-Sasso_Pisano_%28PI%29_Porcino.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/15/Sasso_Pisano_%28PI%29_Porcino.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Sasso_Pisano_(PI)_Porcino.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=14993632",
+            "sha1": "49fa079fa434b710dd53d820e439d8ea115c1b87",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-04-22 20:18:40",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Sasso Pisano (PI) Porcino",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Boletus aereus|CC-Zero|Self-published work|Boletus in Italy|Fungi of Sasso Pisano",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Sasso Pisano, Boletus aereus",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Edatoscana&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Edatoscana (page does not exist)\">Edatoscana</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Boletus aereus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Boletus in Italy"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Sasso Pisano"
+          }
+        ]
+      },
+      "35693598": {
+        "pageid": 35693598,
+        "ns": 6,
+        "title": "File:Vrganj crni Boletus aereus.JPG",
+        "index": 8,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1205669,
+            "width": 3872,
+            "height": 2592,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Vrganj_crni_Boletus_aereus.JPG/960px-Vrganj_crni_Boletus_aereus.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 469,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Vrganj_crni_Boletus_aereus.JPG/1920px-Vrganj_crni_Boletus_aereus.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Vrganj_crni_Boletus_aereus.JPG/960px-Vrganj_crni_Boletus_aereus.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 469,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Vrganj_crni_Boletus_aereus.JPG/1920px-Vrganj_crni_Boletus_aereus.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Vrganj_crni_Boletus_aereus.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Vrganj_crni_Boletus_aereus.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=35693598",
+            "sha1": "44274b89ffe9fded1475bd45c5217aff8d5c9073",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2014-09-27 12:32:12",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Vrganj crni Boletus aereus",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Boletus aereus|Taken with Nikon D60|National park Una|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "GLJIVE U NP UNA",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2012-09-22 09:27:47",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Nacionalni_park_Una&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Nacionalni park Una (page does not exist)\">Nacionalni park Una</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "97058669": {
+        "pageid": 97058669,
+        "ns": 6,
+        "title": "File:Боровик бронзовий, боровик темно-каштановий (Boletus aereus) - вид базидіомікотових грибів родини Болетові (Boletaceae) 02.jpg",
+        "index": 24,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 874335,
+            "width": 2560,
+            "height": 1920,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/%D0%91%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D0%BA_%D0%B1%D1%80%D0%BE%D0%BD%D0%B7%D0%BE%D0%B2%D0%B8%D0%B9%2C_%D0%B1%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D0%BA_%D1%82%D0%B5%D0%BC%D0%BD%D0%BE-%D0%BA%D0%B0%D1%88%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D0%B9_%28Boletus_aereus%29_-_%D0%B2%D0%B8%D0%B4_%D0%B1%D0%B0%D0%B7%D0%B8%D0%B4%D1%96%D0%BE%D0%BC%D1%96%D0%BA%D0%BE%D1%82%D0%BE%D0%B2%D0%B8%D1%85_%D0%B3%D1%80%D0%B8%D0%B1%D1%96%D0%B2_%D1%80%D0%BE%D0%B4%D0%B8%D0%BD%D0%B8_%D0%91%D0%BE%D0%BB%D0%B5%D1%82%D0%BE%D0%B2%D1%96_%28Boletaceae%29_02.jpg/960px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 525,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/%D0%91%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D0%BA_%D0%B1%D1%80%D0%BE%D0%BD%D0%B7%D0%BE%D0%B2%D0%B8%D0%B9%2C_%D0%B1%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D0%BA_%D1%82%D0%B5%D0%BC%D0%BD%D0%BE-%D0%BA%D0%B0%D1%88%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D0%B9_%28Boletus_aereus%29_-_%D0%B2%D0%B8%D0%B4_%D0%B1%D0%B0%D0%B7%D0%B8%D0%B4%D1%96%D0%BE%D0%BC%D1%96%D0%BA%D0%BE%D1%82%D0%BE%D0%B2%D0%B8%D1%85_%D0%B3%D1%80%D0%B8%D0%B1%D1%96%D0%B2_%D1%80%D0%BE%D0%B4%D0%B8%D0%BD%D0%B8_%D0%91%D0%BE%D0%BB%D0%B5%D1%82%D0%BE%D0%B2%D1%96_%28Boletaceae%29_02.jpg/1920px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/%D0%91%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D0%BA_%D0%B1%D1%80%D0%BE%D0%BD%D0%B7%D0%BE%D0%B2%D0%B8%D0%B9%2C_%D0%B1%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D0%BA_%D1%82%D0%B5%D0%BC%D0%BD%D0%BE-%D0%BA%D0%B0%D1%88%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D0%B9_%28Boletus_aereus%29_-_%D0%B2%D0%B8%D0%B4_%D0%B1%D0%B0%D0%B7%D0%B8%D0%B4%D1%96%D0%BE%D0%BC%D1%96%D0%BA%D0%BE%D1%82%D0%BE%D0%B2%D0%B8%D1%85_%D0%B3%D1%80%D0%B8%D0%B1%D1%96%D0%B2_%D1%80%D0%BE%D0%B4%D0%B8%D0%BD%D0%B8_%D0%91%D0%BE%D0%BB%D0%B5%D1%82%D0%BE%D0%B2%D1%96_%28Boletaceae%29_02.jpg/960px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 525,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/%D0%91%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D0%BA_%D0%B1%D1%80%D0%BE%D0%BD%D0%B7%D0%BE%D0%B2%D0%B8%D0%B9%2C_%D0%B1%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D0%BA_%D1%82%D0%B5%D0%BC%D0%BD%D0%BE-%D0%BA%D0%B0%D1%88%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D0%B9_%28Boletus_aereus%29_-_%D0%B2%D0%B8%D0%B4_%D0%B1%D0%B0%D0%B7%D0%B8%D0%B4%D1%96%D0%BE%D0%BC%D1%96%D0%BA%D0%BE%D1%82%D0%BE%D0%B2%D0%B8%D1%85_%D0%B3%D1%80%D0%B8%D0%B1%D1%96%D0%B2_%D1%80%D0%BE%D0%B4%D0%B8%D0%BD%D0%B8_%D0%91%D0%BE%D0%BB%D0%B5%D1%82%D0%BE%D0%B2%D1%96_%28Boletaceae%29_02.jpg/1920px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/%D0%91%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D0%BA_%D0%B1%D1%80%D0%BE%D0%BD%D0%B7%D0%BE%D0%B2%D0%B8%D0%B9%2C_%D0%B1%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D0%BA_%D1%82%D0%B5%D0%BC%D0%BD%D0%BE-%D0%BA%D0%B0%D1%88%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D0%B9_%28Boletus_aereus%29_-_%D0%B2%D0%B8%D0%B4_%D0%B1%D0%B0%D0%B7%D0%B8%D0%B4%D1%96%D0%BE%D0%BC%D1%96%D0%BA%D0%BE%D1%82%D0%BE%D0%B2%D0%B8%D1%85_%D0%B3%D1%80%D0%B8%D0%B1%D1%96%D0%B2_%D1%80%D0%BE%D0%B4%D0%B8%D0%BD%D0%B8_%D0%91%D0%BE%D0%BB%D0%B5%D1%82%D0%BE%D0%B2%D1%96_%28Boletaceae%29_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:%D0%91%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D0%BA_%D0%B1%D1%80%D0%BE%D0%BD%D0%B7%D0%BE%D0%B2%D0%B8%D0%B9,_%D0%B1%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D0%BA_%D1%82%D0%B5%D0%BC%D0%BD%D0%BE-%D0%BA%D0%B0%D1%88%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D0%B9_(Boletus_aereus)_-_%D0%B2%D0%B8%D0%B4_%D0%B1%D0%B0%D0%B7%D0%B8%D0%B4%D1%96%D0%BE%D0%BC%D1%96%D0%BA%D0%BE%D1%82%D0%BE%D0%B2%D0%B8%D1%85_%D0%B3%D1%80%D0%B8%D0%B1%D1%96%D0%B2_%D1%80%D0%BE%D0%B4%D0%B8%D0%BD%D0%B8_%D0%91%D0%BE%D0%BB%D0%B5%D1%82%D0%BE%D0%B2%D1%96_(Boletaceae)_02.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=97058669",
+            "sha1": "960a4b55ecf97aad5ab0cf8d01540137b43a3473",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-11-27 20:03:15",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Боровик бронзовий, боровик темно-каштановий (Boletus aereus) - вид базидіомікотових грибів родини Болетові (Boletaceae) 02",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Boletus aereus|Self-published work|Files with coordinates missing SDC location of creation|Uploaded via Campaign:espc-ua|Images from Wiki Science Competition 2020 in Ukraine|Living organisms images from Wiki Science Competition in Ukraine 2020",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.264527",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "27.106119",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Boletus aereus is a species of basidiomycotic fungi of the Boletaceae family. The fungus is listed in the Red Book of Ukraine.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-09-20 11:04:36",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:OlexandrBohdanets\" title=\"User:OlexandrBohdanets\">OlexandrBohdanets</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "status": "frozen",
+  "acquired_originals": 140,
+  "approved_photos": 125,
+  "covered_taxa": 43,
+  "approved_commons": 67,
+  "approved_inaturalist": 58,
+  "rejected_photos": 15,
+  "derived_files": 375,
+  "derived_bytes": 24897728,
+  "manifest_sha256": "4903f2d32513945abe4824f1fffc572902f62c512256787e4a83bec332037b02",
+  "icc_to_srgb_photos": 15,
+  "pending_visual_review": 0,
+  "audit_issues": [],
+  "active_processes": [],
+  "visual_review": "140 originali osservati; 750 ritagli per 125 foto approvate e 125 miniature reali centrate osservati. Dopo la conversione ICC sono stati rivisti i file aggiornati e le ultime viste Commons: 7 tavole final-colour-crops e 3 tavole thumbs finali.",
+  "limits": [
+    "Inocybe lilacina escluso: il taxon iNaturalist è di rango complex.",
+    "Chlorophyllum venenatum escluso: la sola foto Commons europea è già canonica; nessun taxon iNaturalist attivo con il nome esatto.",
+    "Research grade è uno stato comunitario, non una certificazione micologica.",
+    "Sarcodon scabrosus: la fonte usa Hydnellum scabrosum; sinonimia Index Fungorum 222119 conservata nella caption e nei metadati."
+  ],
+  "no_suites": true,
+  "public_catalogs_modified": false
+}

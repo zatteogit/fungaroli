@@ -1,14 +1,24 @@
+import {entityEntries} from './fronda-connections.js';
+import {fungusGlyph} from './indicators.js';
+import {notebookGlyph} from './ui-icons.js';
+import {openModal} from './modal-flow.js';
+import {renderNotebook, notebookRoute, notebookTitle} from './notebook-view.js';
+import {notebookDemo} from './notebook-demo.js';
 // Diario delle uscite: procedura guidata a passi + elenco con confronto previsto/trovato.
 // Archivio: nella versione Artifact usa il db privato dell'utente (persistente, leggibile
-// da Claude per la taratura); altrove localStorage del browser, da esportare ogni tanto.
+// da Claude per la taratura); altrove localStorage del browser.
 
 import { SPECIES } from './species.js';
-import { intornoA } from './human.js';
+import {createOutingComposer} from './outing-composer.js';
+import {outingMemory,outingStory} from './outing-memory.js';
 import { formatIndex } from './model.js';
 import { todayISO } from './weather.js';
-import { communityReady, communityEnabled, currentUser, communityRequest, shareDiaryEntry } from './community.js';
-import {PHENO_PHASES,normalizeNotebookNote} from './notebook-entry.js';
-import {mountSearchSelect} from './search-select.js';
+import { communityReady, communityEnabled, currentUser, communityRequest, shareDiaryEntry, shareNotebookNote } from './community.js';
+import {normalizeNotebookNote,PHENO_PHASES} from './notebook-entry.js';
+import {sharedObservation} from './community-observation.js';
+import {createNotebookComposer} from './notebook-composer.js';
+import {createQuickNotebookComposer} from './notebook-quick-composer.js';
+import {notebookLocalStore} from './notebook-photo-store.js';
 
 const KEY = 'fungaroli:diario:v1';
 export const LEVELS = ['', 'Pochi', 'Discreti', 'Tanti'];
@@ -53,17 +63,7 @@ export function summary(entries) {
 
 // --- archivio -----------------------------------------------------------------
 
-function localStore(key = KEY) {
-  const read = () => { try { return JSON.parse(localStorage.getItem(key) || '[]'); } catch { return []; } };
-  const write = (list) => { localStorage.setItem(key, JSON.stringify(list)); };
-  return {
-    kind: 'local',
-    async list() { return read(); },
-    async replace(list) { write(list); },
-    async put(e) { write([...read().filter((x) => x.id !== e.id), e]); },
-    async remove(id) { write(read().filter((x) => x.id !== id)); },
-  };
-}
+const localStore=(key=KEY)=>notebookLocalStore(key);
 
 function collectiveStore() {
   const account = currentUser();
@@ -125,7 +125,7 @@ function remoteStore(token) {
     async list() {
       try {
         const { entries } = await call(API);
-        try { localStorage.setItem(KEY, JSON.stringify(entries)); } catch { /* copia locale facoltativa */ }
+        try { await local.replace(entries); } catch { /* copia locale facoltativa */ }
         return entries;
       } catch (e) {
         if (e.status === 401) throw e;
@@ -156,270 +156,147 @@ async function openStore() {
 
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const iso = todayISO;
-const fmt = (s) => new Date(s + 'T12:00:00').toLocaleDateString('it-IT', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' });
 
-export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, predict, captureForecast, getZoneId, zoneImage = () => '', referenceImage=()=>null }) {
+export function initJournal({ resolveTrip=()=>null,onEntries=()=>{},zones, speciesCatalog = SPECIES, predict, captureForecast, getZoneId, noteCatalogs=()=>({}), zoneImage = () => '', referenceImage=()=>null, noteWeather=()=>null }) {
   const dlg = document.getElementById('journal-dialog');
   const body = dlg.querySelector('.wiz-body');
   const list = document.getElementById('journal-list');
   let entries = [],notifiedEntries=null;
   let store = null;
-  let draft, step;
   let listMessage = '';
   const actionStates=new Map();let entriesRevision=0;
   let listFilter='',listQuery='',noteControls=[];
+  let listLayout='pages',listDensity='large';
+  try { const saved=JSON.parse(localStorage.getItem('fungaroli:notebook-view')||'null');if(['pages','gallery','list'].includes(saved?.layout))listLayout=saved.layout;if(saved?.density==='compact')listDensity='compact'; } catch { /* La vista resta utilizzabile anche senza storage. */ }
+
+  let demoEntries=null,lastDemoMode=false;
+  const getDemoEntries=()=>demoEntries ||= notebookDemo({zones,catalogs:noteCatalogs(),species:speciesCatalog});
   const sortEntries = () => entries.sort((a, b) => String(b.date||'').localeCompare(String(a.date||'')) || String(b.savedAt||'').localeCompare(String(a.savedAt||'')));
   const noteDialog=document.createElement('dialog');noteDialog.className='wiz notebook-dialog';noteDialog.setAttribute('aria-label','Appunto privato');document.body.append(noteDialog);
   const savedNotice=document.createElement('div');savedNotice.className='app-toast';savedNotice.setAttribute('role','status');document.body.append(savedNotice);let noticeTimer;
-  document.addEventListener('fungaroli:note-saved',()=>{clearTimeout(noticeTimer);(noteOrigin?.closest('dialog[open]')||document.body).append(savedNotice);savedNotice.innerHTML='Salvato nel taccuino <a href="#/diario" class="link-btn">Apri →</a>';savedNotice.classList.add('on');noticeTimer=setTimeout(()=>savedNotice.classList.remove('on'),5000);});
+  document.addEventListener('fungaroli:note-saved',()=>{
+    const origin=noteOrigin;
+    const showSavedNotice=()=>{clearTimeout(noticeTimer);(origin?.closest('dialog[open]')||document.body).append(savedNotice);savedNotice.innerHTML=`Salvato nel taccuino <a href="#/diario" class="link-btn">${notebookGlyph}Apri →</a>`;savedNotice.classList.add('on');noticeTimer=setTimeout(()=>savedNotice.classList.remove('on'),5000);};
+    // Il coordinatore riapre la scheda al close: prima il suo dialog è sospeso.
+    if(noteDialog.open)noteDialog.addEventListener('close',showSavedNotice,{once:true});else showSavedNotice();
+  });
   let noteOrigin=null;
   noteDialog.addEventListener('close',()=>{noteControls.forEach(c=>c.destroy());noteControls=[];noteOrigin?.isConnected&&noteOrigin.focus({preventScroll:true});});
   addEventListener('hashchange',()=>{if(noteDialog.open)noteDialog.close();});
 
+  let noteOwner;
+  const saveNote=async(entry,share)=>{
+    const owner=noteOwner;if(owner!==store)throw new Error('Profilo cambiato: riapri la nota.');
+    await owner.put(entry);if(owner!==store)throw new Error('Profilo cambiato: riapri la nota.');
+    entries=[entry,...entries.filter(e=>e.id!==entry.id)];sortEntries();entriesRevision++;renderList('Nota salvata nel taccuino.');
+    if(share){try{await shareNotebookNote(entry);if(owner!==store)throw new Error('Profilo cambiato: riapri il taccuino.');entry.shared=true;renderList('Osservazione condivisa con Fronda. Il testo resta privato.');}catch(error){throw new Error('Nota salvata privata. Condivisione non completata: '+error.message);}}
+    if(!share&&owner.kind==='community')document.dispatchEvent(new CustomEvent('fungaroli:refresh-community'));
+    document.dispatchEvent(new CustomEvent('fungaroli:note-saved',{detail:{title:entry.title}}));
+  };
+  const composer=createNotebookComposer({dialog:noteDialog,zones,catalogs:noteCatalogs,canShare:()=>store?.kind==='community'&&!!currentUser(),onOuting:()=>open(),onSave:saveNote});
+  const quickComposer=createQuickNotebookComposer({dialog:noteDialog,zones,catalogs:noteCatalogs,onSave:saveNote,noteWeather,onMore:()=>openNote(),onDone:entry=>location.hash='#/diario/pagina/'+encodeURIComponent(entry.id)});
   async function openNote(context={},existing=null){
-    await storageReady;
-    if(!store){renderList('Il taccuino sta ancora caricando.');return;}
-    const owner=store;
-    noteOrigin=document.activeElement;
-    const reference=existing?.reference||context.reference||null;
-    const botanical=existing?.category==='botanica'||context.category==='botanica';
-    const observation=existing?.observation;
-    let zoneId=existing?.zoneId||context.zoneId||'';
-    noteControls.forEach(c=>c.destroy());noteControls=[];
-    noteDialog.innerHTML=`<header class="report-header"><div><p class="eyebrow">Nel tuo taccuino · privato</p><h2>${existing?'Modifica appunto':reference?'Annota e conserva':'Nuovo appunto'}</h2></div><button class="profile-close" type="button" data-note-close aria-label="Chiudi">×</button></header><form class="notebook-form"><label>Titolo<input class="wiz-input" name="title" maxlength="120" required value="${esc(existing?.title||reference?.title||'')}"></label><label>Giorno<input class="wiz-input" type="date" name="date" required value="${esc(existing?.date||iso(new Date()))}" ${botanical?`max="${iso(new Date())}"`:''}></label>${reference?`<p class="notebook-reference">${esc(reference.title)} <span class="muted small">· riferimento conservato</span></p>`:''}<label>Appunto<textarea class="wiz-input notebook-paper" name="note" rows="5" maxlength="2000" placeholder="Quello che vuoi ricordare, un’idea per il prossimo giro…" ${reference?'':'required'}>${esc(existing?.note||'')}</textarea></label><details class="notebook-context" ><summary>${botanical?'Fasi della pianta e luogo':'Aggiungi un luogo'}</summary><div class="search-select"><label>Zona (facoltativa)<input class="wiz-input" data-note-zone autocomplete="off" placeholder="Cerca una zona…"></label><ul class="search-select-list" id="notebook-zone-options" hidden></ul></div><button type="button" class="link-btn small" data-clear-note-zone>Togli la zona</button>${botanical?`<p class="small muted">Il nome è un’identificazione proposta, non verificata. Indica solo ciò che hai osservato; più fasi possono essere presenti insieme.</p><div class="phenology-fields">${PHENO_PHASES.map(([code,label])=>`<label>${label}<select class="wiz-input" data-phase="${code}">${[['unsure','Non osservato / non so'],['present','Presente'],['absent','Cercato, non osservato']].map(([v,l])=>`<option value="${v}" ${observation?.phases?.find(p=>p.code===code)?.status===v?'selected':''}>${l}</option>`).join('')}</select></label>`).join('')}</div><label>Frutti maturi ancora presenti<select class="wiz-input" name="availability">${[['unknown','Non osservato / non so'],['none','Nessuno, dopo aver cercato'],['few','Pochi'],['many','Molti']].map(([v,l])=>`<option value="${v}" ${observation?.availability===v?'selected':''}>${l}</option>`).join('')}</select></label><label>Minuti di osservazione (facoltativi)<input type="number" class="wiz-input" min="1" max="1440" name="minutes" value="${observation?.minutes||''}"></label><label>Pianta o gruppo da ritrovare (facoltativo)<input class="wiz-input" name="patchLabel" maxlength="120" value="${esc(observation?.patchLabel||'')}" placeholder="Un nome tuo, per riconoscerlo al prossimo giro"></label>`:''}</details><p class="small muted">Appunto privato. Non viene pubblicato né usato per tarare i modelli. Puoi scegliere nei filtri di usare le fasi annotate per i suggerimenti “Durante il giro”.</p><p data-note-status role="status"></p><div class="notebook-actions"><button type="submit" class="btn primary">${existing?'Salva modifiche':'Salva nel taccuino'}</button><button type="button" class="btn ghost" data-note-close>Annulla</button></div></form>`;
-    const input=noteDialog.querySelector('[data-note-zone]'),options=zones.map(z=>({value:z.id,label:z.title||z.name,detail:z.subtitle||''}));
-    noteControls.push(mountSearchSelect({input,list:noteDialog.querySelector('#notebook-zone-options'),options,selectedId:zoneId,onChange:v=>{zoneId=v;},bounds:()=>{const r=noteDialog.getBoundingClientRect();return {top:r.top+16,bottom:r.bottom-16};}}));
-    input.setCustomValidity('');input.addEventListener('input',()=>{if(!input.value.trim())input.setCustomValidity('');});
-    noteDialog.querySelector('[data-clear-note-zone]').onclick=()=>{input.value='';input.dispatchEvent(new Event('input'));input.blur();input.setCustomValidity('');zoneId='';};
-    noteDialog.querySelectorAll('[data-note-close]').forEach(b=>b.onclick=()=>noteDialog.close());
-    noteDialog.querySelector('form').onsubmit=async ev=>{
-      ev.preventDefault();const form=ev.currentTarget,button=form.querySelector('[type="submit"]'),status=form.querySelector('[data-note-status]');button.disabled=true;
-      try{
-        if(owner!==store)throw new Error('Profilo cambiato: riapri il taccuino.');
-        const entry=normalizeNotebookNote({id:existing?.id||Date.now().toString(36)+crypto.randomUUID().replace(/-/g,'').slice(0,6),kind:'note',title:form.elements.title.value,date:form.elements.date.value,note:form.elements.note.value,category:existing?.category||context.category||'appunto',zoneId,reference,savedAt:existing?.savedAt||new Date().toISOString(),observation:botanical&&([...form.querySelectorAll('[data-phase]')].some(s=>s.value!=='unsure')||form.elements.availability.value!=='unknown'||form.elements.minutes.value||form.elements.patchLabel.value.trim())?{taxonId:reference.href.split('/').at(-1),phases:[...form.querySelectorAll('[data-phase]')].map(s=>({code:s.dataset.phase,status:s.value})),availability:form.elements.availability.value,minutes:form.elements.minutes.value?Number(form.elements.minutes.value):null,patchLabel:form.elements.patchLabel.value}:null});
-        await owner.put(entry);if(owner!==store)return;
-        entries=[entry,...entries.filter(e=>e.id!==entry.id)];sortEntries();renderList('Appunto salvato nel taccuino privato.');noteDialog.close();
-        document.dispatchEvent(new CustomEvent('fungaroli:note-saved',{detail:{title:entry.title}}));
-      }catch(e){status.textContent=`Salvataggio non completato: ${e.message}`;}finally{button.disabled=false;}
-    };
-    noteDialog.showModal();noteDialog.querySelector('[name="title"]').focus({preventScroll:true});
+    await storageReady;if(!store){renderList('Il taccuino sta ancora caricando.');return;}
+    noteOwner=store;noteOrigin=document.activeElement;(context.quick||existing?.photo?quickComposer:composer).open(context,existing);
   }
   document.addEventListener('click',e=>{
-    const b=e.target.closest('[data-new-note],[data-note-kind]');if(!b)return;
+    const b=e.target.closest('[data-new-note],[data-note-kind],[data-annotate]');if(!b)return;
     const kind=b.dataset.noteKind,id=b.dataset.noteId;
-    const category={pianta:'botanica',albero:'albero',specie:'fungo',fungo:'fungo',commestibile:'fungo',zona:'percorso',guide:'lettura'}[kind]||'appunto';
-    openNote({category,zoneId:b.dataset.noteZone,reference:kind?{href:b.dataset.noteHref||`#/${kind}/${id}`,title:b.dataset.noteTitle}:null});
+    const category={animale:'animale',pianta:'botanica',albero:'albero',specie:'fungo',fungo:'fungo',commestibile:'fungo',zona:'percorso',guide:'lettura'}[kind]||'appunto';
+    const quick=b.hasAttribute('data-annotate'),parts=location.hash.split('/'),contextCategory={fungo:'fungo',specie:'fungo',commestibile:'fungo',pianta:'botanica',albero:'albero',animale:'animale'}[parts[1]];
+    const contextual=quick&&contextCategory?(noteCatalogs()[contextCategory]||[]).find(t=>t.href===`#/${parts[1]}/${parts[2]}`):null;
+    openNote({quick,...(kind?{category}:contextCategory&&quick?{category:contextCategory}:{}),zoneId:b.dataset.noteZone||(quick&&parts[1]==='zona'&&zones.some(z=>z.id===parts[2])?parts[2]:null),reference:kind?{href:b.dataset.noteHref||`#/${kind}/${id}`,title:b.dataset.noteTitle}:contextual?{href:contextual.href,title:contextual.name}:null});
   });
 
-  const STEPS = ['dove', 'quando', 'quota', 'ricerca', 'cosa', 'nota'];
-
-  function open() {
-    draft = { zoneId: getZoneId(), date: iso(new Date()), band: undefined, finds: {}, searched: [], effort: {}, note: '' };
-    step = 0;
-    render();
-    dlg.showModal();
+  const editorialTripTitle=source=>source.reference.title.replace(/^Giro simulato di Matteo · /,'');
+  // Il ricordo dell’uscita resta distinto dalle osservazioni di ricerca.
+  const outingSpecies=()=>{
+    const byId=new Map(speciesCatalog.map(s=>[s.id,s]));
+    for(const item of noteCatalogs().fungo||[]){const id=item.href?.split('/').at(-1);if(id&&!byId.has(id))byId.set(id,{...item,id});}
+    return [...byId.values()];
+  };
+  let outingOwner;
+  const outingComposer=createOutingComposer({dialog:dlg,zones,species:outingSpecies,onSave:async(draft,existing)=>{
+    const owner=outingOwner;if(!currentStore(owner))throw new Error('Profilo cambiato: riapri l’uscita.');
+    if(!zones.some(z=>z.id===draft.zoneId)||!/^\d{4}-\d{2}-\d{2}$/.test(draft.date)||draft.date>iso(new Date()))throw new Error('Controlla luogo e giorno dell’uscita.');
+    const parsedDay=new Date(draft.date+'T12:00:00Z');if(!Number.isFinite(+parsedDay)||parsedDay.toISOString().slice(0,10)!==draft.date)throw new Error('Controlla il giorno dell’uscita.');
+    const now=new Date().toISOString(),sameContext=existing&&existing.zoneId===draft.zoneId&&existing.date===draft.date;
+    const entry={...draft,id:existing?.id||crypto.randomUUID(),kind:'outing',note:draft.note.trim(),band:sameContext?existing?.band??null:null,
+      experience:outingMemory(draft,outingSpecies()),savedAt:existing?.savedAt||now,
+      predicted:sameContext?existing.predicted||{}:{},
+      forecast:sameContext?existing.forecast:{mode:'retrospective',capturedAt:now}};
+    await owner.put(entry);if(!currentStore(owner))throw new Error('Profilo cambiato: riapri il taccuino.');
+    entries=[entry,...entries.filter(e=>e.id!==entry.id)];sortEntries();entriesRevision++;renderList('Uscita salvata nel taccuino.');return entry;
+  },onDone:entry=>{location.hash='#/diario/pagina/'+encodeURIComponent(entry.id);}});
+  async function open(context={},existing=null){
+    await storageReady;if(!store)return;outingOwner=store;outingComposer.open(context,existing);
   }
-
-  function next() { step = Math.min(STEPS.length - 1, step + 1); render(); }
-  function back() { step = Math.max(0, step - 1); render(); }
-
-  function shell(title, hint, content, { canNext = true, nextLabel = 'Avanti' } = {}) {
-    body.innerHTML = `
-      <div class="wiz-progress" aria-hidden="true">${STEPS.map((_, k) => `<span class="${k <= step ? 'on' : ''}"></span>`).join('')}</div>
-      <p class="wiz-step">Passo ${step + 1} di ${STEPS.length}</p>
-      <h2 class="wiz-title">${title}</h2>
-      ${hint ? `<p class="wiz-hint">${hint}</p>` : ''}
-      <div class="wiz-content">${content}</div>
-      <div class="wiz-nav">
-        ${step > 0 ? '<button type="button" class="btn ghost" data-act="back">Indietro</button>' : '<span></span>'}
-        ${canNext ? `<button type="button" class="btn primary" data-act="next">${nextLabel}</button>` : ''}
-      </div>`;
-    body.querySelector('[data-act="back"]')?.addEventListener('click', back);
-    body.querySelector('[data-act="next"]')?.addEventListener('click', step === STEPS.length - 1 ? save : next);
-  }
-
-  function choices(items, current, onPick) {
-    const wrap = document.createElement('div');
-    wrap.className = 'wiz-choices';
-    for (const it of items) {
-      const b = document.createElement('button');
-      b.type = 'button';
-      b.className = 'wiz-choice' + (it.value === current ? ' sel' : '') + (it.img ? ' has-img' : '');
-      b.innerHTML = `${it.img ? `<img data-src="${it.img}" alt="" loading="lazy" decoding="async">` : ''}<span>${esc(it.label)}</span>${it.sub ? `<small>${esc(it.sub)}</small>` : ''}`;
-      b.addEventListener('click', () => onPick(it.value));
-      wrap.appendChild(b);
+  document.addEventListener('click',async event=>{
+    const button=event.target.closest('[data-new-outing],[data-edit-outing],[data-complete-outing],[data-save-trip]');if(!button||button.disabled)return;
+    const entry=entries.find(e=>String(e.id)===(button.dataset.editOuting||button.dataset.completeOuting));
+    if(button.hasAttribute('data-edit-outing')){if(entry)open({},entry);return;}
+    if(button.hasAttribute('data-complete-outing')){
+      if(!entry)return;const reference=entry.reference,source=resolveTrip(reference?.href);
+      open({zoneId:entry.zoneId,date:entry.date<=iso(new Date())?entry.date:iso(new Date()),fromEntryId:entry.id,reference:source?.reference||null,route:source?(source.zoneId===entry.zoneId?source.route:null):reference?{href:reference.href,name:reference.title,followed:false}:null});return;
     }
-    return wrap;
-  }
-
-  function render() {
-    const zone = zones.find((z) => z.id === draft.zoneId);
-    const s = STEPS[step];
-
-    if (s === 'dove') {
-      shell('Dove sei stato?', 'Tocca la zona.', '', { canNext: false });
-      body.querySelector('.wiz-content').appendChild(choices(
-        zones.map((z) => ({ value: z.id, label: z.title || z.name, sub: z.subtitle, img: zoneImage(z.id) })), draft.zoneId,
-        (v) => { draft.zoneId = v; draft.band = undefined; next(); }));
-    }
-
-    if (s === 'quando') {
-      const today = new Date();
-      const yest = new Date(Date.now() - 864e5);
-      const other = draft.date !== iso(today) && draft.date !== iso(yest);
-      shell('Quando?', null, '', { canNext: other });
-      const c = body.querySelector('.wiz-content');
-      c.appendChild(choices([
-        { value: iso(today), label: 'Oggi' },
-        { value: iso(yest), label: 'Ieri' },
-        { value: 'altro', label: 'Un altro giorno' },
-      ], other ? 'altro' : draft.date, (v) => {
-        if (v === 'altro') { draft.date = iso(new Date(Date.now() - 2 * 864e5)); render(); } else { draft.date = v; next(); }
-      }));
-      if (other) {
-        const inp = document.createElement('input');
-        inp.type = 'date'; inp.className = 'wiz-input'; inp.value = draft.date; inp.max = iso(today);
-        inp.addEventListener('change', () => { if (inp.value) draft.date = inp.value; });
-        c.appendChild(inp);
-      }
-    }
-
-    if (s === 'quota') {
-      shell('A che quota, più o meno?', 'Se non lo sai va bene lo stesso.', '', { canNext: false });
-      body.querySelector('.wiz-content').appendChild(choices(
-        [...zone.bands.map((b) => ({ value: b, label: `${intornoA(b).replace('i', 'I')} ${b} m` })), { value: null, label: 'Non lo so' }],
-        draft.band, (v) => { draft.band = v; next(); }));
-    }
-
-    if (s === 'ricerca') {
-      shell('Come hai cercato?', 'Indica le specie cercate, anche quando non le hai trovate. Le altre restano non osservate.',
-        `<div class="filter-panel-groups">${speciesCatalog.map((sp) => `<button type="button" class="chip" data-searched="${sp.id}" aria-pressed="${draft.searched.includes(sp.id)}">${esc(sp.name)}</button>`).join('')}</div>
-         <label>Inizio ricerca (ora del dispositivo) <input class="wiz-input" type="datetime-local" data-effort="startedAt" value="${esc(draft.effort.startedAt || '')}" min="${draft.date}T00:00" max="${draft.date}T23:59"></label>
-         <label>Minuti di ricerca <input class="wiz-input" type="number" min="1" max="1440" data-effort="minutes" value="${draft.effort.minutes || ''}"></label>
-         <label>Numero di cercatori <input class="wiz-input" type="number" min="1" max="100" data-effort="people" value="${draft.effort.people || ''}"></label>
-         <p class="small muted">Orario e sforzo sono facoltativi. Il confronto per specie richiede una previsione salvata prima dell'inizio della ricerca.</p>`);
-      body.querySelectorAll('[data-searched]').forEach((b) => b.addEventListener('click', () => { const id = b.dataset.searched; draft.searched = draft.searched.includes(id) ? draft.searched.filter((x) => x !== id) : [...draft.searched, id]; render(); }));
-      body.querySelectorAll('[data-effort]').forEach((inp) => inp.addEventListener('input', () => { draft.effort[inp.dataset.effort] = inp.value; }));
-    }
-
-    if (s === 'cosa') {
-      const pred = predict(draft.zoneId, draft.date, draft.band) || {};
-      const sorted = [...speciesCatalog].sort((a, b) => (pred[b.id] ?? -1) - (pred[a.id] ?? -1));
-      const showAll = draft.showAll || sorted.slice(6).some((sp) => draft.finds[sp.id] || draft.searched.includes(sp.id));
-      const shown = showAll ? sorted : sorted.slice(0, 6);
-      const rows = shown.map((sp) => `
-        <div class="wiz-row">
-          <div class="wiz-sp">${esc(sp.name)}<small>${esc(sp.latin)}</small></div>
-          <div class="seg" role="group" aria-label="${esc(sp.name)}">
-            ${[1, 2, 3].map((l) => `<button type="button" data-sp="${sp.id}" data-l="${l}" aria-pressed="${draft.finds[sp.id] === l}">${LEVELS[l]}</button>`).join('')}
-          </div>
-        </div>`).join('');
-      const nothing = !Object.values(draft.finds).some(Boolean);
-      shell('Cosa hai trovato?', 'Indica i ritrovamenti. Per le specie che hai dichiarato di cercare, nessuna quantità significa zero; per le altre significa non osservata.',
-        rows + (showAll ? '' : '<button type="button" class="link-btn" data-act="all">Mostra altre specie</button>'),
-        { nextLabel: nothing ? 'Niente funghi, avanti' : 'Avanti' });
-      body.querySelectorAll('.seg button').forEach((b) => b.addEventListener('click', () => {
-        const id = b.dataset.sp, l = +b.dataset.l;
-        draft.finds[id] = draft.finds[id] === l ? 0 : l;
-        render();
-      }));
-      body.querySelector('[data-act="all"]')?.addEventListener('click', () => { draft.showAll = true; render(); });
-    }
-
-    if (s === 'nota') {
-      const found = Object.entries(draft.finds).filter(([, l]) => l);
-      const recap = found.length
-        ? found.map(([id, l]) => `${speciesCatalog.find((x) => x.id === id).name} (${LEVELS[l].toLowerCase()})`).join(', ')
-        : 'niente funghi';
-      shell('Vuoi aggiungere una nota?', 'Facoltativo: esposizione, tipo di bosco, com\'era il terreno…',
-        `<p class="wiz-recap"><b>${esc(zone.name)}</b> · ${fmt(draft.date)}${draft.band ? ` · ${draft.band} m` : ''}<br>${esc(recap)}</p>
-         <textarea class="wiz-input" rows="3" placeholder="Es. versante nord, faggeta, terreno umido">${esc(draft.note)}</textarea>
-         ${store?.kind === 'community' ? `<fieldset class="share-choice"><legend>Chi vede questa uscita?</legend>
-           <label><input type="radio" name="share" value="0"${draft.share ? '' : ' checked'}><span><b>Solo io</b><small>Resta nel tuo taccuino privato.</small></span></label>
-           <label><input type="radio" name="share" value="1"${draft.share ? ' checked' : ''}><span><b>Anche i conteggi della community</b><small>Solo zona, giorno, specie e quantità, nei conteggi aggregati. Le note restano private.</small></span></label></fieldset>` : '<p class="small muted">Questa uscita resta su questo dispositivo. Puoi creare un profilo per tenere il taccuino privato online e scegliere cosa segnalare.</p>'}`,
-        { nextLabel: 'Salva uscita' });
-      body.querySelector('textarea').addEventListener('input', (e) => { draft.note = e.target.value; });
-      body.querySelectorAll('[name="share"]').forEach((r) => r.addEventListener('change', (e) => { if (e.target.checked) draft.share = e.target.value === '1'; }));
-    }
-  }
-
-  async function save() {
-    const startedAt = draft.effort.startedAt ? new Date(draft.effort.startedAt).toISOString() : null;
-    const plan = entries.filter((e) => e.kind === 'plan' && e.zoneId === draft.zoneId && e.date === draft.date
-      && Date.parse(e.forecast?.capturedAt) < Date.parse(startedAt)).sort((a, b) => b.savedAt.localeCompare(a.savedAt))[0];
-    const forecast = plan ? { ...plan.forecast, mode: 'prospective', planId: plan.id }
-      : { mode: 'retrospective', capturedAt: new Date().toISOString() };
-    const predicted = plan ? (draft.band == null ? plan.forecast.scores : plan.forecast.scoresByBand?.[draft.band] || {})
-      : predict(draft.zoneId, draft.date, draft.band) || {};
-    const entry = {
-      id: Date.now().toString(36),
-      date: draft.date,
-      zoneId: draft.zoneId,
-      band: draft.band ?? null,
-      kind: 'outing', searched: draft.searched,
-      effort: { startedAt, minutes: +draft.effort.minutes || null, people: +draft.effort.people || null },
-      finds: { ...Object.fromEntries(draft.searched.map((id) => [id, 0])), ...Object.fromEntries(Object.entries(draft.finds).filter(([, l]) => l)) },
-      note: draft.note.trim(),
-      predicted, forecast,
-      savedAt: new Date().toISOString(),
-    };
-    let ok = true;
-    let shared = false, shareError = '';
-    try {
-      await store.put(entry);
-      if (draft.share && store.kind === 'community') {
-        try { shared = await shareDiaryEntry(entry); } catch (e) { shareError = e.message; }
-        entry.shared = !!shared;
-      }
-    } catch { ok = false; }
-    entries = [entry, ...entries];
-    sortEntries();
-    body.innerHTML = `<div class="wiz-done"><p class="wiz-big">✓</p><h2 class="wiz-title">Uscita salvata</h2>
-      ${ok ? '' : '<p class="notice">Non sono riuscito a salvarla in modo permanente: esporta subito il taccuino.</p>'}
-      ${shared ? '<p>Osservazioni aggiunte ai conteggi della community.</p>' : ''}${shareError ? `<p class="notice">Taccuino salvato, condivisione non completata: ${esc(shareError)}</p>` : ''}
-      <div class="wiz-nav"><span></span><button type="button" class="btn primary" data-act="close">Chiudi</button></div></div>`;
-    body.querySelector('[data-act="close"]').addEventListener('click', () => dlg.close());
-    renderList();
-  }
+    const source=resolveTrip(button.dataset.tripSource),zoneId=button.dataset.tripZone,route=button.dataset.tripHref?{href:button.dataset.tripHref,name:button.dataset.tripTitle,followed:false}:null;
+    if(!button.hasAttribute('data-save-trip')){open({zoneId,route,reference:source?.reference||null});return;}
+    await storageReady;if(!store)return;const owner=store;button.disabled=true;
+    try{
+      const reference=source?.reference||(route?{href:route.href,title:route.name.slice(0,160)}:null),date=button.dataset.tripDate||iso(new Date());
+      const duplicate=entries.find(e=>e.kind==='note'&&e.category==='percorso'&&e.reference?.href===reference?.href&&(source||e.date===date));
+      if(duplicate){location.hash='#/diario/pagina/'+encodeURIComponent(duplicate.id);return;}
+      const saved=normalizeNotebookNote({id:crypto.randomUUID(),kind:'note',category:'percorso',title:(source?editorialTripTitle(source):route?.name)?.slice(0,120),date,zoneId,note:'',reference,savedAt:new Date().toISOString()},{zoneIds:new Set(zones.map(z=>z.id))});
+      await owner.put(saved);if(!currentStore(owner))return;
+      entries=[saved,...entries];sortEntries();entriesRevision++;renderList('Giro salvato. Dopo l’uscita, tocca “Ci sono stato”.');location.hash='#/diario/pagina/'+encodeURIComponent(saved.id);
+    }catch(error){
+      clearTimeout(noticeTimer);document.body.append(savedNotice);savedNotice.textContent='Giro non salvato. '+error.message;savedNotice.classList.add('on');noticeTimer=setTimeout(()=>savedNotice.classList.remove('on'),7000);
+    }finally{button.disabled=false;}
+  });
 
   // dove sta la voce: solo nel taccuino o anche nei conteggi della community (zona, giorno, specie, quantita')
   function privacyTag(entry){
-    const shared=store?.kind==='community'&&entry.kind==='outing'&&entry.shared;
+    const shared=store?.kind==='community'&&entry.shared;
     return shared?`<span class="j-privacy is-shared"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8.5" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><circle cx="17" cy="9.5" r="2.4"/><path d="M15.5 14.2A4.5 4.5 0 0 1 21 18.5"/></svg>Nei conteggi della community · le note restano private</span>`
       :`<span class="j-privacy"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Solo per te</span>`;
   }
   function rowActions(entry){
     const state=actionStates.get(String(entry.id))||{},id=esc(entry.id),disabled=state.busy?' disabled':'';
-    return `${privacyTag(entry)}<div class="j-actions" aria-busy="${!!state.busy}">
-      ${entry.kind==='note'?`<button type="button" class="btn notebook-share" data-share-note="${id}"${disabled}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V3m-5 5 5-5 5 5M5 13v7h14v-7"/></svg>Condividi appunto</button>`:''}
+    const completed=entries.filter(e=>e.kind==='outing'&&e.experience?.fromEntryId===entry.id);
+    let canPublish=entry.kind==='outing'&&Object.entries(entry.finds||{}).some(([id,amount])=>speciesCatalog.some(sp=>sp.id===id)&&(amount>0||amount===0&&entry.searched?.includes(id)));if(entry.kind==='note')try{sharedObservation(entry);canPublish=true;}catch{/* Contesto incompleto: modifica prima di condividere. */}
+    const publicControl=store.kind==='community'&&entry.kind!=='plan'&&(entry.shared||canPublish)?`<button type="button" class="diary-community-switch" role="switch" aria-checked="${!!entry.shared}" ${entry.shared?'data-withdraw-entry':'data-share-entry'}="${id}"${disabled}><span class="diary-switch-track" aria-hidden="true"></span><span><b>Condividi con community Fronda</b><small>Condividi per consultare gli aggregati. Agli altri solo conteggi per zona ampia e specie su 7 giorni, con almeno 3 contributori e 2 giorni diversi: nessun punto GPS, nome, giorno preciso o testo della nota. Ritirando tutte le condivisioni perdi l’accesso agli aggregati.</small></span></button>`:'';
+    return `${completed.length?`<p class="small">${completed.map(e=>`<a href="#/diario/pagina/${encodeURIComponent(e.id)}">Uscita del ${esc(e.date)} →</a>`).join(' · ')}</p>`:''}${privacyTag(entry)}${publicControl}<div class="j-actions" aria-busy="${!!state.busy}">
+      ${['note','outing','plan'].includes(entry.kind)?`<button type="button" class="btn notebook-share" data-share-note="${id}"${disabled}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V3m-5 5 5-5 5 5M5 13v7h14v-7"/></svg>Invia una copia</button>`:''}
       ${entry.kind==='note'?`<button type="button" class="link-btn small" data-edit-note="${id}"${disabled}>Modifica</button>`:''}
-      ${store.kind==='community'&&!['note','plan'].includes(entry.kind)?(entry.shared?`<button type="button" class="link-btn small" data-withdraw-entry="${id}" aria-label="Ritira le osservazioni dai conteggi"${disabled}>${state.busy==='withdraw'?'Ritiro…':'Ritira dai conteggi'}</button>`:`<button type="button" class="link-btn small" data-share-entry="${id}" aria-label="Condividi osservazioni"${disabled}>${state.busy==='share'?'Condivido…':'Condividi'}</button>`):''}
+
+      ${entry.kind==='outing'?`<button type="button" class="link-btn small" data-edit-outing="${id}"${disabled}>Modifica il ricordo</button>`:''}
+      ${entry.kind==='plan'||entry.category==='percorso'?`<button type="button" class="btn primary" data-complete-outing="${id}"${disabled}>Ci sono stato</button>`:''}
       <button type="button" class="link-btn small j-delete" data-del="${id}"${disabled}>${state.busy==='delete'?'Elimino…':state.confirmDelete?'Conferma eliminazione':'Elimina'}</button>
       ${state.confirmDelete&&!state.busy?`<button type="button" class="link-btn small" data-cancel-delete="${id}">Annulla</button>`:''}
     </div>${state.message?`<p class="j-action-status${state.error?' is-error':''}" role="${state.error?'alert':'status'}">${esc(state.message)}</p>`:''}`;
   }
-  const currentStore=target=>target===store&&(target.kind!=='community'||target.ownerId===currentUser()?.id);
+  const currentStore=target=>!!target&&target===store&&(target.kind!=='community'||target.ownerId===currentUser()?.id);
   const focusAction=(id,attr)=>list.querySelector(`[${attr}="${CSS.escape(id)}"]`)?.focus({preventScroll:true});
-  const shareDialog=document.createElement('dialog');shareDialog.className='wiz notebook-share-dialog';shareDialog.setAttribute('aria-label','Condividi appunto');document.body.append(shareDialog);
+  const shareDialog=document.createElement('dialog');shareDialog.className='wiz notebook-share-dialog';shareDialog.setAttribute('aria-label','Condividi una copia');document.body.append(shareDialog);
   let shareOrigin=null;
   shareDialog.addEventListener('close',()=>shareOrigin?.isConnected&&shareOrigin.focus({preventScroll:true}));
   addEventListener('hashchange',()=>shareDialog.close());
   list.addEventListener('click',async event=>{
     const button=event.target.closest('[data-share-note]');if(!button||button.disabled)return;
     const entry=entries.find(e=>String(e.id)===button.dataset.shareNote);if(!entry)return;
-    const zone=zones.find(z=>z.id===entry.zoneId),title=entry.title||'Appunto dal bosco';
-    const text=[title,[entry.date,zone?.title||zone?.name].filter(Boolean).join(' · '),entry.note,entry.reference?.title,entry.reference?.href?new URL(entry.reference.href,location.href).href:''].filter(Boolean).join('\n\n');
+    const zone=zones.find(z=>z.id===entry.zoneId),title=notebookTitle(entry,zones);
+    const text=[title,[entry.date,zone?.title||zone?.name].filter(Boolean).join(' · '),outingStory(entry,{zones,species:outingSpecies()}),entry.note,entry.reference?.title,(entry.reference?.href||outingMemory(entry,outingSpecies()).route?.href)?new URL(entry.reference?.href||outingMemory(entry,outingSpecies()).route.href,location.href).href:''].filter(Boolean).join('\n\n');
     shareOrigin=button;
     if(navigator.share){
       try{await navigator.share({title,text});return;}catch(error){if(error.name==='AbortError')return;}
     }
-    shareDialog.innerHTML=`<div class="wiz-body"><h2>Condividi appunto</h2><p>Copia il testo e invialo a chi vuoi.</p><label for="note-share-text" class="sr-only">Testo da condividere</label><textarea id="note-share-text" readonly rows="8">${esc(text)}</textarea><p class="small" role="status" data-copy-status></p><div class="wiz-nav"><button class="btn ghost" type="button" data-share-close>Chiudi</button><button class="btn primary" type="button" data-copy-note>Copia appunto</button></div></div>`;
+    shareDialog.innerHTML=`<div class="wiz-body"><h2>Condividi una copia</h2><p>Copia il testo e invialo a chi vuoi.</p><label for="note-share-text" class="sr-only">Testo da condividere</label><textarea id="note-share-text" readonly rows="8">${esc(text)}</textarea><p class="small" role="status" data-copy-status></p><div class="wiz-nav"><button class="btn ghost" type="button" data-share-close>Chiudi</button><button class="btn primary" type="button" data-copy-note>Copia il testo</button></div></div>`;
     shareDialog.querySelector('[data-share-close]').addEventListener('click',()=>shareDialog.close());
     shareDialog.querySelector('[data-copy-note]').addEventListener('click',async()=>{
       const status=shareDialog.querySelector('[data-copy-status]');
       try{await navigator.clipboard.writeText(text);status.textContent='Appunto copiato. Incollalo nella chat o nel messaggio che preferisci.';}catch{shareDialog.querySelector('textarea').select();status.textContent='Seleziona e copia il testo, poi incollalo nel tuo messaggio.';}
     });
-    shareDialog.showModal();
+    openModal(shareDialog);
   });
   list.addEventListener('click',async event=>{
     const button=event.target.closest('[data-share-entry],[data-withdraw-entry],[data-del],[data-cancel-delete]');
@@ -439,19 +316,20 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
     try{
       let message;
       if(action==='share'){
-        if(!await shareDiaryEntry(entry,{signal}))throw new Error('Accedi al tuo profilo per condividere questa osservazione.');
+        if(!await (entry.kind==='note'?shareNotebookNote:shareDiaryEntry)(entry,{signal}))throw new Error('Accedi al tuo profilo per condividere questa osservazione.');
         entry.shared=true;
         message='Osservazioni condivise: zona, giorno, specie e quantità. Le note restano private.';
       }else if(action==='withdraw'){
-        await communityRequest('reports','DELETE',{entryId:id},{signal});
+        await communityRequest(entry.kind==='note'?'observations/'+id:'reports','DELETE',entry.kind==='note'?undefined:{entryId:id},{signal});
         entry.shared=false;
         document.dispatchEvent(new CustomEvent('fungaroli:refresh-community'));
-        message='Segnalazioni ritirate. L’uscita resta nel taccuino privato.';
+        message=entry.kind==='note'?'Segnalazioni ritirate. La nota resta privata nel taccuino.':'Segnalazioni ritirate. L’uscita resta nel taccuino privato.';
       }else{
         await target.remove(entry.id,{signal});
         if(!currentStore(target))return;
         entries=entries.filter(e=>String(e.id)!==id);actionStates.delete(id);entriesRevision++;
-        renderList(entry.kind==='note'?'Appunto eliminato.':'Voce e segnalazioni eliminate.');return;
+        if(notebookRoute().id===id)location.hash='#/diario';
+        renderList(entry.kind==='note'?'Appunto eliminato.':'Voce e segnalazioni eliminate.');if(target.kind==='community')document.dispatchEvent(new CustomEvent('fungaroli:refresh-community'));return;
       }
       if(!currentStore(target))return;
       actionStates.set(id,{message});entriesRevision++;renderList(message);focusAction(id,attr);
@@ -464,79 +342,52 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
 
   function renderList(msg) {
     if (msg !== undefined) listMessage = msg;
-    msg = listMessage;
-    if (!store) { list.innerHTML = '<p class="muted">Carico il taccuino…</p>'; return; }
-    // Search, filters and action feedback do not change the saved observations.
-    if(notifiedEntries!==entries){notifiedEntries=entries;onEntries(entries);}
-    const sm = summary(entries);
-    const nnotes=entries.filter(e=>e.kind==='note').length;
-    const head = entries.length ? `<div class="notebook-index"><p class="j-sum"><span class="notebook-page-total">${entries.length} ${entries.length===1?'pagina':'pagine'}</span> <span aria-hidden="true">·</span> ${nnotes} ${nnotes===1?'appunto':'appunti'} <span aria-hidden="true">·</span> ${sm.total} ${sm.total===1?'uscita':'uscite'}</p><label class="notebook-search" for="notebook-query"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg><span class="sr-only">Cerca nel taccuino</span><input id="notebook-query" type="search" placeholder="Cerca un appunto…" value="${esc(listQuery)}"></label><div class="notebook-tabs" aria-label="Pagine del taccuino">${[['','Tutto'],['note','Appunti'],['percorso','Giri salvati'],['outing','Uscite']].map(([id,label])=>`<button type="button" data-notebook-filter="${id}" aria-pressed="${listFilter===id}">${label}</button>`).join('')}</div></div>${sm.judged?`<details class="notebook-comparison"><summary>Confronto fra condizioni salvate e osservazioni</summary><p>Concordanze esplorative per specie: ${sm.ok} su ${sm.judged}${sm.falseAlarm?` · ${sm.falseAlarm} falsi allarmi`:''}${sm.missed?` · ${sm.missed} ritrovamenti con indice basso`:''}.</p><p>Confronto a soglia 3,0 su 10, non calibrata. Le osservazioni non sono indipendenti: questi conteggi non misurano l’accuratezza scientifica.</p></details>`:''}` : '';
-    const matchesType=e=>!listFilter|| (listFilter==='percorso'?e.kind==='note'&&e.category==='percorso':listFilter==='outing'?!['plan','note'].includes(e.kind):e.kind==='note');
-    const visible=entries.filter(e=>matchesType(e)&&JSON.stringify([e.title,e.note,e.reference?.title,zones.find(z=>z.id===e.zoneId)?.name]).toLowerCase().includes(listQuery.toLowerCase().trim()));
-    const noteText=text=>!text?'':text.length<=360?`<p class="notebook-text">${esc(text)}</p>`:`<p class="notebook-text">${esc(text.slice(0,320).replace(/\s+\S*$/,''))}…</p><details class="notebook-full-note"><summary>Leggi tutto l’appunto</summary><p class="notebook-text">${esc(text)}</p></details>`;
-    const photo=(src,alt,href,label)=>src?`<figure class="j-img notebook-photo">${href?`<a href="${esc(href)}" data-entity aria-label="${esc(alt)}"><img data-src="${esc(src)}" alt="${esc(alt)}" loading="lazy" decoding="async"></a>`:`<img data-src="${esc(src)}" alt="${esc(alt)}" loading="lazy" decoding="async">`}<figcaption>${esc(label)}</figcaption></figure>`:'';
-    const rows=visible.map(e=>{
-      const number=entries.length-entries.indexOf(e),z=zones.find(x=>x.id===e.zoneId),note=e.kind==='note';
-      const kind=note?({botanica:'Osservazione botanica',albero:'Alberi',fungo:'Funghi',percorso:'Giro salvato',lettura:'Lettura'})[e.category]||'Appunto':e.kind==='plan'?'Condizioni salvate':'Uscita';
-      const title=note?e.title:z?.title||z?.name||e.zoneId;
-      const refPhoto=note&&e.reference?referenceImage(e.reference.href):null;
-      const photograph=refPhoto?.file?photo(refPhoto.file,`Foto dalla scheda: ${e.reference.title}`,e.reference.href,'Dalla scheda collegata'):!note&&zoneImage(e.zoneId)?photo(zoneImage(e.zoneId),`Immagine del luogo: ${title}`,'','Il luogo dell’uscita'):'';
-      const found=Object.entries(e.finds||{}).filter(([,l])=>l>0).map(([id,l])=>`${speciesCatalog.find(x=>x.id===id)?.name??id} (${LEVELS[l]?.toLowerCase()||l})`).join(', ')||'nessun ritrovamento annotato';
+    const route=notebookRoute(),inNotebook=location.hash.startsWith('#/diario');
+    if(route.demo!==lastDemoMode){listFilter='';listQuery='';lastDemoMode=route.demo;}
+    if (!store&&!route.demo) { list.innerHTML = '<p class="muted">Carico il taccuino…</p>'; return; }
+    // Fictional pages never enter personalisation, storage, exports or community requests.
+    if(store&&notifiedEntries!==entries){notifiedEntries=entries;onEntries(entries);}
+    const analysis=e=>{
       const a=agreement(e),top=Object.entries(e.predicted||{}).filter(([,v])=>Number.isFinite(v)).sort((x,y)=>y[1]-x[1])[0];
-      const comparison=a?a.species.map(x=>`<p>${esc(speciesCatalog.find(s=>s.id===x.id)?.name||x.id)}: ${x.ok?'concordante':x.said?'indice alto, zero osservato':'trovata con indice basso'}</p>`).join(''):'<p>Osservazione senza confronto prospettico.</p>';
-      return `<li class="j-item notebook-page${note?' notebook-entry':''}${photograph?' has-photo':''}" data-journal-id="${esc(e.id)}"><div class="entry-meta"><span class="entry-kind">${kind}</span><time datetime="${esc(e.date)}">${fmt(e.date)}</time></div><div class="j-body">${photograph}<h2 class="entry-title">${esc(title)}</h2>
-        ${note?`${e.reference?`<a class="notebook-reference-link" href="${esc(e.reference.href)}" data-entity>${esc(e.reference.title)} <svg class="notebook-reference-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></a>`:''}${e.zoneId?`<p class="entry-place">${esc(z?.name||e.zoneId)}</p>`:''}${noteText(e.note)}`:`<p class="entry-found">${e.kind==='plan'?'Da ritrovare al prossimo giro.':'Trovato: '+esc(found)}</p>${e.band?`<p class="entry-place">${esc(e.band)} m</p>`:''}${noteText(e.note)}`}
-        ${e.observation?`<ul class="notebook-phases">${e.observation.phases.filter(p=>p.status!=='unsure').map(p=>`<li>${esc(PHENO_PHASES.find(([code])=>code===p.code)?.[1]||p.code)}: ${p.status==='present'?'presente':'cercato, non osservato'}</li>`).join('')}</ul>${e.observation.availability!=='unknown'?`<p class="small">Frutti maturi rimasti: ${{none:'nessuno osservato',few:'pochi',many:'molti'}[e.observation.availability]||'non indicato'}</p>`:''}<p class="entry-caution">Identificazione proposta · non verificata</p>`:''}
-        ${!note?`<details class="notebook-analysis"><summary>Condizioni ${e.kind==='plan'?'salvate':'dell’uscita'}</summary>${top?`<p>Indice ${formatIndex(top[1])} · ${esc(speciesCatalog.find(x=>x.id===top[0])?.name||top[0])}</p>`:''}${e.kind==='plan'?'<p>Previsione salvata prima dell’uscita.</p>':comparison}</details>`:''}
-        </div><footer class="notebook-page-footer"><div class="notebook-page-actions">${rowActions(e)}</div><span class="notebook-page-number" aria-label="Pagina ${number}">${String(number).padStart(2,'0')}</span></footer></li>`;
-    }).join('');
-    const empty=`<div class="notebook-first-page"><div><p class="entry-kind">La prima pagina</p><h2>Una pagina per ogni cosa da ricordare</h2><p>Una pianta incontrata, un giro da fare, un’idea. Il tuo taccuino comincia da qui.</p><button type="button" class="btn primary" data-new-note>＋ Scrivi il primo appunto</button></div><aside class="notebook-pocket"><div class="pocket-note"><span class="entry-kind">Cosa puoi conservare</span><p>Un pensiero al volo.</p><p>Una scheda da ritrovare.</p><p>Il ricordo di un’uscita.</p></div><span class="pocket-label">Appunti da portare con te</span></aside></div>`;
-    const hasRowMessage=[...actionStates.values()].some(state=>state.message===msg);
-    list.innerHTML=(msg&&!hasRowMessage?`<p class="notice notebook-feedback" role="status">${esc(msg)}</p>`:'')+head+(rows?`<ul class="j-list">${rows}</ul>`:entries.length?'<p class="notebook-no-results" role="status">Nessuna pagina corrisponde. Prova un’altra parola o un altro filtro.</p>':empty);
-    list.querySelectorAll('[data-edit-note]').forEach(b=>b.onclick=()=>openNote({},entries.find(e=>e.id===b.dataset.editNote)));
+      return `<details class="notebook-analysis"><summary>Condizioni ${e.kind==='plan'?'salvate':'dell’uscita'}</summary>${top?`<p>Condizioni salvate <span class="growth-value">${fungusGlyph}${formatIndex(top[1])}</span> · ${esc(speciesCatalog.find(x=>x.id===top[0])?.name||top[0])}</p><p class="small muted">Valore storico: non descrive le condizioni attuali.</p>`:''}${e.kind==='plan'?'<p>Previsione salvata prima dell’uscita.</p>':a?a.species.map(x=>`<p>${esc(speciesCatalog.find(s=>s.id===x.id)?.name||x.id)}: ${x.ok?'concordante':x.said?'indice alto, zero osservato':'trovata con indice basso'}</p>`).join(''):'<p>Osservazione senza confronto prospettico.</p>'}</details>`;
+    };
+    const result=renderNotebook({entries:route.demo?getDemoEntries():entries,zones,species:outingSpecies(),zoneImage,referenceImage,route,filter:listFilter,query:listQuery,layout:listLayout,density:listDensity,canPreview:['admin','editor'].includes(currentUser()?.role),actions:rowActions,analysis,shared:e=>store?.kind==='community'&&e.shared});
+    const heading=document.querySelector('.notebook-heading');
+    heading.querySelector('h1').textContent=result.title;
+    heading.querySelector('.kicker').textContent=result.kicker;
+    heading.querySelector('.view-sub').textContent=result.subtitle;
+    heading.querySelector('.diary-header-actions').hidden=route.demo||result.detail;
+    heading.querySelectorAll('[data-new-note],[data-new-outing],[data-annotate]').forEach(b=>b.hidden=route.demo||result.detail);
+    heading.querySelector('.diary-demo-link').hidden=!['admin','editor'].includes(currentUser()?.role)||route.demo||result.detail;
+    document.querySelector('.notebook-view').classList.toggle('is-detail',result.detail);
+    document.querySelector('.notebook-view').classList.toggle('is-demo',route.demo);
+    document.getElementById('notebook-storage-panel').hidden=route.demo||result.detail;
+    const hasRowMessage=[...actionStates.values()].some(state=>state.message===listMessage);
+    list.innerHTML=(!route.demo&&listMessage&&!hasRowMessage?`<p class="notice notebook-feedback" role="status">${esc(listMessage)}</p>`:'')+result.html;
+    if(inNotebook)document.title=`${result.detail?result.title:route.demo?'Diario di prova':'Taccuino'} · Fronda`;
+    list.querySelectorAll('[data-edit-note]').forEach(b=>b.onclick=()=>openNote({},entries.find(e=>String(e.id)===b.dataset.editNote)));
+    list.querySelectorAll('button[data-notebook-layout],button[data-notebook-density]').forEach(button=>button.onclick=()=>{
+      const bar=list.querySelector('.diary-view-bar'),edge=document.querySelector('.appbar').getBoundingClientRect().bottom;
+      const anchored=bar.getBoundingClientRect().top<=edge+2;
+      const anchor=anchored?[...list.querySelectorAll('.diary-card')].find(card=>card.getBoundingClientRect().bottom>bar.getBoundingClientRect().bottom+8):null;
+      const anchorTop=anchor?Math.max(anchor.getBoundingClientRect().top,bar.getBoundingClientRect().bottom+8):0,id=anchor?.dataset.journalId;
+      if(button.dataset.notebookLayout)listLayout=button.dataset.notebookLayout;
+      if(button.dataset.notebookDensity)listDensity=button.dataset.notebookDensity;
+      try { localStorage.setItem('fungaroli:notebook-view',JSON.stringify({layout:listLayout,density:listDensity})); } catch { /* Preferenza solo in memoria. */ }
+      renderList();
+      const restored=id&&list.querySelector(`.diary-card[data-journal-id="${CSS.escape(id)}"]`);
+      if(restored){const targetTop=Math.max(anchorTop,list.querySelector('.diary-view-bar').getBoundingClientRect().bottom+8);scrollBy({top:restored.getBoundingClientRect().top-targetTop,behavior:'instant'});}
+      const selector=button.dataset.notebookLayout?`[data-notebook-layout="${listLayout}"]`:`[data-notebook-density="${listDensity==='large'?'compact':'large'}"]`;
+      list.querySelector(selector)?.focus({preventScroll:true});
+      if(!matchMedia('(prefers-reduced-motion: reduce)').matches)list.querySelector('.diary-grid')?.animate([{opacity:.5},{opacity:1}],{duration:160,easing:'ease-out'});
+    });
     list.querySelectorAll('[data-notebook-filter]').forEach(b=>b.onclick=()=>{listFilter=b.dataset.notebookFilter;renderList();list.querySelector(`[data-notebook-filter="${CSS.escape(listFilter)}"]`)?.focus({preventScroll:true});});
-    list.querySelector('#notebook-query')?.addEventListener('input',ev=>{const pos=ev.target.selectionStart;listQuery=ev.target.value;renderList();const input=list.querySelector('#notebook-query');input.focus({preventScroll:true});if(pos!=null)try{input.setSelectionRange(pos,pos);}catch{/* search inputs may not expose selection */}});
-    list.querySelector('[data-open-journal-inline]')?.addEventListener('click', open);
-    document.querySelector('[data-open-journal]').hidden = false;
+    list.querySelector('[data-notebook-reset]')?.addEventListener('click',()=>{listFilter='';listQuery='';renderList();list.querySelector('#notebook-query')?.focus({preventScroll:true});});
+    list.querySelector('#notebook-query')?.addEventListener('input',ev=>{const pos=ev.target.selectionStart;listQuery=ev.target.value;renderList();const input=list.querySelector('#notebook-query');input.focus({preventScroll:true});if(pos!=null)try{input.setSelectionRange(pos,pos);}catch{/* Search inputs may not expose selection. */}});
   }
 
-  async function exportFile() {
-    const json = JSON.stringify({ version: 2, internalScoreScale: '0–100', displayScoreScale: '0–10', entries }, null, 1);
-    const filename = `taccuino-fungaroli-${iso(new Date())}.json`;
-    const downloads = typeof globalThis.claude?.use === 'function' ? await globalThis.claude.use('downloads') : null;
-    if (downloads) {
-      try { await downloads.save({ filename, data: json }); } catch (e) { if (e?.code !== 'declined') renderList('Esportazione non disponibile qui.'); }
-      return;
-    }
-    const blob = new Blob([json], { type: 'application/json' });
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    a.download = filename;
-    a.click();
-    setTimeout(() => URL.revokeObjectURL(a.href), 1000);
-  }
-
-  async function importFile(file) {
-    try {
-      const data = JSON.parse(await file.text());
-      const incoming = (Array.isArray(data) ? data : data.entries).filter((e) => e && e.id && e.date && (e.zoneId||e.kind==='note')).map(e=>e.kind==='note'?normalizeNotebookNote(e):e);
-      await storageReady;
-      const ids = new Set(entries.map((e) => e.id));
-      const fresh = incoming.filter((e) => !ids.has(e.id));
-      for (const e of fresh) await store.put(e);
-      entries = [...entries, ...fresh];
-      sortEntries();
-      renderList(`Importate ${fresh.length} voci.`);
-    } catch {
-      renderList('File non valido: serve un taccuino esportato da questa app.');
-    }
-  }
-
-  document.querySelectorAll('[data-open-journal]').forEach((b) => b.addEventListener('click', open));
+  document.querySelectorAll('[data-open-journal]').forEach((b) => b.addEventListener('click',()=>openNote()));
   dlg.querySelector('.wiz-close').addEventListener('click', () => dlg.close());
-  document.getElementById('journal-export').addEventListener('click', exportFile);
-  const imp = document.getElementById('journal-import');
-  imp.addEventListener('change', () => { if (imp.files[0]) importFile(imp.files[0]); imp.value = ''; });
   renderList();
   const storageBox = document.getElementById('journal-storage');
 
@@ -568,29 +419,7 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
 
   function renderStorage(remote) {
     if (store.kind === 'community') {
-      storageBox.innerHTML = `<p>Taccuino privato di <b>${esc(currentUser()?.handle || 'questo profilo')}</b>, sincronizzato con la passkey. Le condivisioni sono facoltative.</p><button type="button" class="btn ghost" data-community-account>Gestisci il profilo</button><button type="button" class="btn ghost" data-import-local>Importa il taccuino di questo dispositivo</button>
-        <details><summary>Hai il vecchio taccuino con codice?</summary><p>Importalo nel profilo privato. La copia originale resta nel taccuino di famiglia; nessuna segnalazione viene pubblicata.</p>
-        <form data-import-legacy><label>Codice del vecchio taccuino <input type="password" class="wiz-input" data-legacy-code autocomplete="off" required></label><button type="submit" class="btn ghost">Importa nel mio profilo</button><p role="status" data-legacy-status></p></form></details>`;
-      storageBox.querySelector('[data-legacy-code]').value = getToken();
-      storageBox.querySelector('[data-import-legacy]').onsubmit = async (ev) => {
-        ev.preventDefault(); const form = ev.currentTarget, btn = form.querySelector('button'), status = form.querySelector('[data-legacy-status]'), target = store;
-        btn.disabled = true;
-        try {
-          const old = await remoteStore(form.querySelector('[data-legacy-code]').value.trim()).list();
-          const ids = new Set((await target.list()).map((e) => e.id)); let n = 0;
-          for (const e of old) if (!ids.has(e.id)) { await target.put(e); n++; }
-          if (target !== store) return;
-          entries = await target.list(); sortEntries(); renderList();
-          status.textContent = `${n} voci importate nel profilo privato. Nessuna osservazione pubblicata.`;
-          form.querySelector('[data-legacy-code]').value = '';
-        } catch (e) { status.textContent = e.status === 401 ? 'Codice non valido o sessione scaduta.' : 'Importazione incompleta. Il vecchio taccuino resta disponibile: puoi riprovare.'; }
-        finally { btn.disabled = false; }
-      };
-      storageBox.querySelector('[data-import-local]').onclick = async () => {
-        const local = await localStore().list(), ids = new Set(entries.map((e) => e.id));
-        try { for (const e of local) if (!ids.has(e.id)) await store.put(e); entries = await store.list(); sortEntries(); renderList('Taccuino importato nel profilo privato. Nessuna osservazione è stata condivisa automaticamente.'); }
-        catch { renderList('Importazione incompleta. La copia su questo dispositivo resta disponibile.'); }
-      };
+      storageBox.innerHTML = `<p>Taccuino privato di <b>${esc(currentUser()?.handle || 'questo profilo')}</b>, sincronizzato con la passkey. Le condivisioni sono facoltative.</p><button type="button" class="btn ghost" data-community-account>Gestisci il profilo</button>`;
     } else if (communityEnabled() && store.kind === 'local') {
       storageBox.innerHTML = '<p>Il taccuino resta su questo dispositivo. Con una passkey puoi tenerlo privato online e scegliere quali osservazioni condividere.</p><button type="button" class="btn primary" data-community-account>Crea profilo o accedi</button>';
     } else if (store.kind === 'db') {
@@ -632,7 +461,7 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
         await connect(inp.value.trim(), storageBox.querySelector('.j-connect-msg'));
       });
     } else {
-      storageBox.innerHTML = 'Il taccuino resta solo in questo browser. Esporta ogni tanto il file per non perderlo o per spostarlo su un altro dispositivo.';
+      storageBox.innerHTML = 'Il taccuino resta solo in questo browser.';
     }
   }
 
@@ -674,13 +503,13 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
     const next = currentUser()?.id || null;
     if (next === profileId) { if (store?.kind === 'community') { const loading = store,revision=entriesRevision; try { const fresh = await loading.list({isCurrent:()=>currentStore(loading)&&revision===entriesRevision}); if (!currentStore(loading)||revision!==entriesRevision) return; entries = fresh; sortEntries(); renderList(); } catch { /* nessuna perdita della copia locale */ } } return; }
     profileId = next;entriesRevision++;actionStates.clear();listMessage='';
-    if(noteDialog.open)noteDialog.close();
+    if(noteDialog.open)noteDialog.close();if(dlg.open)dlg.close();
     store = next ? collectiveStore() : localStore();
     entries = []; renderList();
     const loading = store;
     try { const fresh = await loading.list(); if (loading !== store) return; entries = fresh; sortEntries(); renderStorage('none'); renderList(); } catch { if (loading === store) renderList('Taccuino non disponibile. Riprova.'); }
   });
-  return { refresh: renderList, async savePlan(zoneId, date, band) {
+  return { observationsFor:context=>entityEntries(entries,context).map(e=>({...e})), notesFor:href=>entries.filter(e=>e.kind==='note'&&e.reference?.href===href).map(e=>({...e})), refresh: renderList, entryTitle:(id,demo=false)=>{const e=(demo?getDemoEntries():entries).find(e=>String(e.id)===id);return e?notebookTitle(e,zones):'Pagina del taccuino';}, async savePlan(zoneId, date, band) {
     if (!store) throw new Error('Il taccuino sta ancora caricando. Riprova tra poco.');
     const forecast = captureForecast?.(zoneId, date, band);
     if (!forecast) throw new Error('Non ci sono dati completi e aggiornati per salvare questa previsione.');

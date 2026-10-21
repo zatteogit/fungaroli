@@ -163,7 +163,8 @@ test('sfida suggerita: boschi principali della zona, mese, una sola e non comple
 });
 
 test('timbri SVG: doppio bordo, titolo sul bordo, immagine opzionale', () => {
-  const ch = list.find((c) => c.kind === 'confronta');
+  // timbro disegnato dal codice: per le sfide senza immagine e finché il timbro non è ottenuto
+  const ch = { ...list.find((c) => c.kind === 'confronta'), stamp: undefined };
   const svg = stampSvg(ch, { earned: true });
   assert.match(svg, /<svg class="ch-stamp is-earned"/);
   assert.equal((svg.match(/<circle cx="50" cy="50" r="4[16]"/g) || []).length, 2);
@@ -172,4 +173,11 @@ test('timbri SVG: doppio bordo, titolo sul bordo, immagine opzionale', () => {
   assert.match(stampSvg({ ...ch, stamp: 'assets/stamps/sosia.webp' }, { earned: true }), /<img class="ch-stamp-img" src="assets\/stamps\/sosia.webp"/);
   assert.doesNotMatch(stampSvg({ ...ch, stamp: 'javascript:alert(1)' }, { earned: true }), /<img/);
   assert.doesNotMatch(stampSvg({ ...ch, stampLabel: '<b>"x"</b>' }), /<b>/);
+});
+
+test('ogni timbro illustrato è un file in assets/stamps, uno per sfida', () => {
+  for (const c of list.filter((x) => x.stamp)) {
+    assert.equal(c.stamp, `assets/stamps/${c.id}.webp`, c.id);
+    assert.ok(fs.existsSync(new URL(`../${c.stamp}`, import.meta.url)), `${c.id}: manca ${c.stamp}`);
+  }
 });

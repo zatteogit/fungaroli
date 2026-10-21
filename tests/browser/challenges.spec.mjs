@@ -12,16 +12,17 @@ async function setup(page,width) {
     const out=Array.from({length:u.searchParams.get('latitude').split(',').length},()=>({daily:{time:dates,precipitation_sum:dates.map((_,i)=>i%4?3:12),temperature_2m_mean:Array(70).fill(13),temperature_2m_min:Array(70).fill(8),temperature_2m_max:Array(70).fill(18)},hourly:{time,soil_moisture_3_to_9cm:fill(.3),soil_temperature_6cm:fill(13),precipitation:fill(0),precipitation_probability:fill(0),weather_code:fill(1),wind_gusts_10m:fill(8),temperature_2m:fill(13)}}));
     await route.fulfill({json:out});
   });
-  await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','32026-10-16'));
+  await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','62026-10-20'));
   await page.goto('/');await expect(page.locator('#hero .cover-link')).toBeVisible();return errors;
 }
 
 for(const width of [390,1280]) test(`sfide: Confronta dà il timbro e le spunte di Osserva restano dopo il ricaricamento a ${width}px`,async({page})=>{
   const errors=await setup(page,width);
+  await page.goto('/#/impara');await expect(page.locator('.view[data-view="impara"]')).toBeVisible();
   await page.goto('/#/sfide');
   const view=page.locator('.view[data-view="sfide"]');
   await expect(view.locator('h1')).toHaveText('Sfide');
-  await expect(page.locator('[data-back]:visible span')).toHaveText('Impara');
+  await expect(page.locator('[data-back]:visible span')).toHaveText('Guide');
   await expect(page.locator('.tabbar [data-tab="specie"]')).toHaveAttribute('aria-current','page');
   await expect(view.locator('#ch-stamps-h')).toHaveText('I tuoi timbri');
   await expect(view.locator('.ch-stamps-grid')).toHaveCount(0);
@@ -45,7 +46,7 @@ for(const width of [390,1280]) test(`sfide: Confronta dà il timbro e le spunte 
   }
   await expect(view.locator('.ch-done')).toContainText('Sfida completata');
   await expect(view.locator('.ch-done')).toContainText(/Risposte giuste: \d su \d/);
-  await expect(view.locator('.ch-done svg.ch-stamp.is-earned')).toBeVisible();
+  await expect(view.locator('.ch-done img.ch-stamp-img')).toBeVisible();await expect(view.locator('.ch-done img.ch-stamp-img')).toHaveAttribute('src',/assets\/stamps\/funghi-sosia\.webp$/);
 
   await page.goto('/#/sfide');
   await expect(view.locator('.ch-stamps-grid li')).toHaveCount(1);

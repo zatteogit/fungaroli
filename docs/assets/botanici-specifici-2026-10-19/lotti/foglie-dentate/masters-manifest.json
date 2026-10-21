@@ -1,0 +1,47 @@
+[
+  {
+    "file": "ortica-melissa-v1-rejected.png",
+    "sha256": "885daa8e99784e5811bd2585eae7c0525136a75d8c6bd9f4071245f8a41f2866",
+    "review": "rejected: peli aghiformi e texture"
+  },
+  {
+    "file": "ortica-melissa-v2.png",
+    "sha256": "3b19f960f76e8e4756dcce42efab4ded1f975184fc47f006292fabf5a842e6b9",
+    "review": "approved: quattro foglie e margini"
+  },
+  {
+    "file": "malva-rovo-v1.png",
+    "sha256": "5d9c647ef93305f97d771f82ee3f773fec60d009a1885b0d97c2a02c188c421f",
+    "review": "approved: quattro foglie e margini"
+  },
+  {
+    "file": "biancospino-prugnolo-v1.png",
+    "sha256": "3d21d83aa11f823af02fc18aa620b0ad231eb80b9762ee6c71092b500deddeaf",
+    "review": "approved: quattro foglie e margini"
+  },
+  {
+    "file": "malva-rovo-organi-v1.png",
+    "sha256": "b63b87ce3e87ed1db9705a7bc29d4621d6eeccebf7449b98801773355da59817",
+    "review": "partial: approvati i due fiori; malva frutto bloccato, rovo frutto sostituito da V2"
+  },
+  {
+    "file": "biancospino-prugnolo-organi-v1.png",
+    "sha256": "d3bf8a70d13b0d9f1593fe52f83319e97a0f5e9aeb6c373324bf3db64deb02f7",
+    "review": "approved: quattro organi"
+  },
+  {
+    "file": "ortica-melissa-fiori-v1.png",
+    "sha256": "d76fef9159aac2adda221c7ee4c0b770e39d1867851f24d8d2ccf276c9f9d811",
+    "review": "partial: approvata ortica, melissa rifiutata"
+  },
+  {
+    "file": "melissa-fiore-v2.png",
+    "sha256": "0448771792206a8d6336c60b086ce73c603143cd3715383fa9e20b512420f7d6",
+    "review": "approved: correzione labbra"
+  },
+  {
+    "file": "rovo-frutto-v2.png",
+    "sha256": "5cb4bac3bfb7d90ba2ec0dea5a704b2441ee40fece6bc128dd978fd445ceb173",
+    "review": "approved: pedicello liscio"
+  }
+]

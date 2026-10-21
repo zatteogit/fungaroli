@@ -1,0 +1,1997 @@
+{
+ "note": "Raster generati e revisionati; prompt e riferimenti completi nei commit delle fonti. Nessuna modifica dei dati scientifici.",
+ "sources": [
+  {
+   "branch": "images/missing-comparison-2026-10-18",
+   "commit": "8720426"
+  },
+  {
+   "branch": "images/plant-traits-2026-10-18",
+   "commit": "66959d7"
+  }
+ ],
+ "sheets": [
+  {
+   "source_commit": "8720426",
+   "file": "incoming/icone/confronto-combinazioni-2026-10-18-01-r01.png",
+   "sha256": "dba1e3ee68d7e60a272b0c0e779bf4a890f88c8d0503213bce906d1510e9b81a",
+   "items": [
+    {
+     "soggetto": "amanita-verna",
+     "tessera": "cappello",
+     "variante": "colore:crema+forma:emisferico",
+     "cella": 0
+    },
+    {
+     "soggetto": "amanita-verna",
+     "tessera": "gambo",
+     "variante": "colore:crema+forma:emisferico",
+     "cella": 1
+    },
+    {
+     "soggetto": "amanita-verna",
+     "tessera": "cappello",
+     "variante": "colore:crema+forma:piano",
+     "cella": 3
+    },
+    {
+     "soggetto": "amanita-verna",
+     "tessera": "gambo",
+     "variante": "colore:crema+forma:piano",
+     "cella": 4
+    },
+    {
+     "soggetto": "cortinarius-orellanus",
+     "tessera": "cappello",
+     "variante": "colore:bruno+forma:conico",
+     "cella": 6
+    },
+    {
+     "soggetto": "cortinarius-orellanus",
+     "tessera": "gambo",
+     "variante": "colore:bruno+forma:conico",
+     "cella": 7
+    }
+   ]
+  },
+  {
+   "source_commit": "8720426",
+   "file": "incoming/icone/confronto-combinazioni-2026-10-18-02.png",
+   "sha256": "5bb39738b1ca75e2096df0fc21682592c753d0db9d7023cd60c38c9dd4f48ae5",
+   "items": [
+    {
+     "soggetto": "cortinarius-orellanus",
+     "tessera": "cappello",
+     "variante": "colore:rosso+forma:conico",
+     "cella": 0
+    },
+    {
+     "soggetto": "cortinarius-orellanus",
+     "tessera": "gambo",
+     "variante": "colore:rosso+forma:conico",
+     "cella": 1
+    },
+    {
+     "soggetto": "cortinarius-orellanus",
+     "tessera": "cappello",
+     "variante": "colore:bruno+forma:piano",
+     "cella": 3
+    },
+    {
+     "soggetto": "cortinarius-orellanus",
+     "tessera": "gambo",
+     "variante": "colore:bruno+forma:piano",
+     "cella": 4
+    },
+    {
+     "soggetto": "cortinarius-orellanus",
+     "tessera": "cappello",
+     "variante": "colore:rosso+forma:piano",
+     "cella": 6
+    },
+    {
+     "soggetto": "cortinarius-orellanus",
+     "tessera": "gambo",
+     "variante": "colore:rosso+forma:piano",
+     "cella": 7
+    }
+   ]
+  },
+  {
+   "source_commit": "8720426",
+   "file": "incoming/icone/confronto-combinazioni-2026-10-18-03.png",
+   "sha256": "a1109971e3b9416422b6ea296048709a0bb75d66cdfb8eab802845aca2dbbbd2",
+   "items": [
+    {
+     "soggetto": "cortinarius-rubellus",
+     "tessera": "cappello",
+     "variante": "colore:bruno+forma:convesso",
+     "cella": 0
+    },
+    {
+     "soggetto": "cortinarius-rubellus",
+     "tessera": "gambo",
+     "variante": "colore:bruno+forma:convesso",
+     "cella": 1
+    },
+    {
+     "soggetto": "cortinarius-rubellus",
+     "tessera": "cappello",
+     "variante": "colore:rosso+forma:convesso",
+     "cella": 3
+    },
+    {
+     "soggetto": "cortinarius-rubellus",
+     "tessera": "gambo",
+     "variante": "colore:rosso+forma:convesso",
+     "cella": 4
+    },
+    {
+     "soggetto": "cortinarius-rubellus",
+     "tessera": "cappello",
+     "variante": "colore:bruno+forma:piano",
+     "cella": 6
+    },
+    {
+     "soggetto": "cortinarius-rubellus",
+     "tessera": "gambo",
+     "variante": "colore:bruno+forma:piano",
+     "cella": 7
+    }
+   ]
+  },
+  {
+   "source_commit": "8720426",
+   "file": "incoming/icone/confronto-combinazioni-2026-10-18-04.png",
+   "sha256": "862fb34ca1e268467d3a3c0b1f771421724b5ad0f347f0e3b0a2b082142f700a",
+   "items": [
+    {
+     "soggetto": "cortinarius-rubellus",
+     "tessera": "cappello",
+     "variante": "colore:rosso+forma:piano",
+     "cella": 0
+    },
+    {
+     "soggetto": "cortinarius-rubellus",
+     "tessera": "gambo",
+     "variante": "colore:rosso+forma:piano",
+     "cella": 1
+    },
+    {
+     "soggetto": "galerina-marginata",
+     "tessera": "cappello",
+     "variante": "colore:bruno+forma:piano",
+     "cella": 3
+    },
+    {
+     "soggetto": "galerina-marginata",
+     "tessera": "gambo",
+     "variante": "colore:bruno+forma:piano",
+     "cella": 4
+    },
+    {
+     "soggetto": "galerina-marginata",
+     "tessera": "cappello",
+     "variante": "colore:giallo+forma:piano",
+     "cella": 6
+    },
+    {
+     "soggetto": "galerina-marginata",
+     "tessera": "gambo",
+     "variante": "colore:giallo+forma:piano",
+     "cella": 7
+    }
+   ]
+  },
+  {
+   "source_commit": "8720426",
+   "file": "incoming/icone/confronto-combinazioni-2026-10-18-05.png",
+   "sha256": "4a8d938bf5e4408e4410cd7253ec499a25365b1c0daa3bd05c72f12f79baa01b",
+   "items": [
+    {
+     "soggetto": "lepiota-brunneoincarnata",
+     "tessera": "cappello",
+     "variante": "colore:bruno+forma:emisferico",
+     "cella": 0
+    },
+    {
+     "soggetto": "lepiota-brunneoincarnata",
+     "tessera": "gambo",
+     "variante": "colore:bruno+forma:emisferico",
+     "cella": 1
+    },
+    {
+     "soggetto": "lepiota-brunneoincarnata",
+     "tessera": "cappello",
+     "variante": "colore:crema+forma:emisferico",
+     "cella": 3
+    },
+    {
+     "soggetto": "lepiota-brunneoincarnata",
+     "tessera": "gambo",
+     "variante": "colore:crema+forma:emisferico",
+     "cella": 4
+    },
+    {
+     "soggetto": "lepiota-brunneoincarnata",
+     "tessera": "cappello",
+     "variante": "colore:rosso+forma:emisferico",
+     "cella": 6
+    },
+    {
+     "soggetto": "lepiota-brunneoincarnata",
+     "tessera": "gambo",
+     "variante": "colore:rosso+forma:emisferico",
+     "cella": 7
+    }
+   ]
+  },
+  {
+   "source_commit": "8720426",
+   "file": "incoming/icone/confronto-combinazioni-2026-10-18-06.png",
+   "sha256": "5dc221eb0a0a6c43d09be9d7c9477fcad2ffe519cdbc843e89233d0abb5bfe2f",
+   "items": [
+    {
+     "soggetto": "lepiota-brunneoincarnata",
+     "tessera": "cappello",
+     "variante": "colore:bruno+forma:ombrellato",
+     "cella": 0
+    },
+    {
+     "soggetto": "lepiota-brunneoincarnata",
+     "tessera": "gambo",
+     "variante": "colore:bruno+forma:ombrellato",
+     "cella": 1
+    },
+    {
+     "soggetto": "lepiota-brunneoincarnata",
+     "tessera": "cappello",
+     "variante": "colore:crema+forma:ombrellato",
+     "cella": 3
+    },
+    {
+     "soggetto": "lepiota-brunneoincarnata",
+     "tessera": "gambo",
+     "variante": "colore:crema+forma:ombrellato",
+     "cella": 4
+    },
+    {
+     "soggetto": "lepiota-brunneoincarnata",
+     "tessera": "cappello",
+     "variante": "colore:rosso+forma:ombrellato",
+     "cella": 6
+    },
+    {
+     "soggetto": "lepiota-brunneoincarnata",
+     "tessera": "gambo",
+     "variante": "colore:rosso+forma:ombrellato",
+     "cella": 7
+    }
+   ]
+  },
+  {
+   "source_commit": "8720426",
+   "file": "incoming/icone/confronto-combinazioni-2026-10-18-07.png",
+   "sha256": "2a48c19f996de4924b035e26e68920ee13edf83a0d4b5d2d7f4d0a6c76724517",
+   "items": [
+    {
+     "soggetto": "lepiota-brunneoincarnata",
+     "tessera": "cappello",
+     "variante": "colore:bruno+forma:piano",
+     "cella": 0
+    },
+    {
+     "soggetto": "lepiota-brunneoincarnata",
+     "tessera": "gambo",
+     "variante": "colore:bruno+forma:piano",
+     "cella": 1
+    },
+    {
+     "soggetto": "lepiota-brunneoincarnata",
+     "tessera": "cappello",
+     "variante": "colore:crema+forma:piano",
+     "cella": 3
+    },
+    {
+     "soggetto": "lepiota-brunneoincarnata",
+     "tessera": "gambo",
+     "variante": "colore:crema+forma:piano",
+     "cella": 4
+    },
+    {
+     "soggetto": "lepiota-brunneoincarnata",
+     "tessera": "cappello",
+     "variante": "colore:rosso+forma:piano",
+     "cella": 6
+    },
+    {
+     "soggetto": "lepiota-brunneoincarnata",
+     "tessera": "gambo",
+     "variante": "colore:rosso+forma:piano",
+     "cella": 7
+    }
+   ]
+  },
+  {
+   "source_commit": "8720426",
+   "file": "incoming/icone/confronto-combinazioni-2026-10-18-08.png",
+   "sha256": "a9bc00294d491721d7098cfbbb647fe8e00a11d5506461d3e61114cc24bc95d6",
+   "items": [
+    {
+     "soggetto": "lepiota-subincarnata",
+     "tessera": "cappello",
+     "variante": "colore:bruno+forma:ombrellato",
+     "cella": 0
+    },
+    {
+     "soggetto": "lepiota-subincarnata",
+     "tessera": "gambo",
+     "variante": "colore:bruno+forma:ombrellato",
+     "cella": 1
+    },
+    {
+     "soggetto": "lepiota-subincarnata",
+     "tessera": "cappello",
+     "variante": "colore:crema+forma:ombrellato",
+     "cella": 3
+    },
+    {
+     "soggetto": "lepiota-subincarnata",
+     "tessera": "gambo",
+     "variante": "colore:crema+forma:ombrellato",
+     "cella": 4
+    },
+    {
+     "soggetto": "lepiota-subincarnata",
+     "tessera": "cappello",
+     "variante": "colore:bruno+forma:piano",
+     "cella": 6
+    },
+    {
+     "soggetto": "lepiota-subincarnata",
+     "tessera": "gambo",
+     "variante": "colore:bruno+forma:piano",
+     "cella": 7
+    }
+   ]
+  },
+  {
+   "source_commit": "8720426",
+   "file": "incoming/icone/confronto-combinazioni-2026-10-18-09.png",
+   "sha256": "7191c0d468aacb307aa7045415f484f7b591491f05522282229ab6377cb8fec2",
+   "items": [
+    {
+     "soggetto": "lepiota-subincarnata",
+     "tessera": "cappello",
+     "variante": "colore:crema+forma:piano",
+     "cella": 0
+    },
+    {
+     "soggetto": "lepiota-subincarnata",
+     "tessera": "gambo",
+     "variante": "colore:crema+forma:piano",
+     "cella": 1
+    },
+    {
+     "soggetto": "agaricus-xanthodermus",
+     "tessera": "cappello",
+     "variante": "colore:bruno+forma:emisferico",
+     "cella": 3
+    },
+    {
+     "soggetto": "agaricus-xanthodermus",
+     "tessera": "gambo",
+     "variante": "colore:bruno+forma:emisferico",
+     "cella": 4
+    },
+    {
+     "soggetto": "agaricus-xanthodermus",
+     "tessera": "cappello",
+     "variante": "colore:crema+forma:emisferico",
+     "cella": 6
+    },
+    {
+     "soggetto": "agaricus-xanthodermus",
+     "tessera": "gambo",
+     "variante": "colore:crema+forma:emisferico",
+     "cella": 7
+    }
+   ]
+  },
+  {
+   "source_commit": "8720426",
+   "file": "incoming/icone/confronto-combinazioni-2026-10-18-10.png",
+   "sha256": "8cbcc9b84778eb44c6f44cd51371756b4aeeea2ed9a2d7fffcc33b381b49ae25",
+   "items": [
+    {
+     "soggetto": "agaricus-xanthodermus",
+     "tessera": "cappello",
+     "variante": "colore:giallo+forma:emisferico",
+     "cella": 0
+    },
+    {
+     "soggetto": "agaricus-xanthodermus",
+     "tessera": "gambo",
+     "variante": "colore:giallo+forma:emisferico",
+     "cella": 1
+    },
+    {
+     "soggetto": "agaricus-xanthodermus",
+     "tessera": "cappello",
+     "variante": "colore:grigio+forma:emisferico",
+     "cella": 3
+    },
+    {
+     "soggetto": "agaricus-xanthodermus",
+     "tessera": "gambo",
+     "variante": "colore:grigio+forma:emisferico",
+     "cella": 4
+    },
+    {
+     "soggetto": "agaricus-xanthodermus",
+     "tessera": "cappello",
+     "variante": "colore:bruno+forma:piano",
+     "cella": 6
+    },
+    {
+     "soggetto": "agaricus-xanthodermus",
+     "tessera": "gambo",
+     "variante": "colore:bruno+forma:piano",
+     "cella": 7
+    }
+   ]
+  },
+  {
+   "source_commit": "8720426",
+   "file": "incoming/icone/confronto-combinazioni-2026-10-18-11.png",
+   "sha256": "db3665047fe3e874b6f27170612aca460f735d34e37cdf0beaff56928b7c1077",
+   "items": [
+    {
+     "soggetto": "agaricus-xanthodermus",
+     "tessera": "cappello",
+     "variante": "colore:crema+forma:piano",
+     "cella": 0
+    },
+    {
+     "soggetto": "agaricus-xanthodermus",
+     "tessera": "gambo",
+     "variante": "colore:crema+forma:piano",
+     "cella": 1
+    },
+    {
+     "soggetto": "agaricus-xanthodermus",
+     "tessera": "cappello",
+     "variante": "colore:giallo+forma:piano",
+     "cella": 3
+    },
+    {
+     "soggetto": "agaricus-xanthodermus",
+     "tessera": "gambo",
+     "variante": "colore:giallo+forma:piano",
+     "cella": 4
+    },
+    {
+     "soggetto": "agaricus-xanthodermus",
+     "tessera": "cappello",
+     "variante": "colore:grigio+forma:piano",
+     "cella": 6
+    },
+    {
+     "soggetto": "agaricus-xanthodermus",
+     "tessera": "gambo",
+     "variante": "colore:grigio+forma:piano",
+     "cella": 7
+    }
+   ]
+  },
+  {
+   "source_commit": "8720426",
+   "file": "incoming/icone/confronto-combinazioni-2026-10-18-12.png",
+   "sha256": "91001edec0e2c72870aea10ae27bf90d8fad41faca1dd572ca881ead0191e2c5",
+   "items": [
+    {
+     "soggetto": "amanita-crocea",
+     "tessera": "cappello",
+     "variante": "colore:giallo+forma:emisferico",
+     "cella": 0
+    },
+    {
+     "soggetto": "amanita-crocea",
+     "tessera": "gambo",
+     "variante": "colore:giallo+forma:emisferico",
+     "cella": 1
+    },
+    {
+     "soggetto": "amanita-crocea",
+     "tessera": "cappello",
+     "variante": "colore:giallo+forma:piano",
+     "cella": 3
+    },
+    {
+     "soggetto": "amanita-crocea",
+     "tessera": "gambo",
+     "variante": "colore:giallo+forma:piano",
+     "cella": 4
+    },
+    {
+     "soggetto": "amanita-muscaria",
+     "tessera": "cappello",
+     "variante": "colore:arancio+forma:emisferico",
+     "cella": 6
+    },
+    {
+     "soggetto": "amanita-muscaria",
+     "tessera": "gambo",
+     "variante": "colore:arancio+forma:emisferico",
+     "cella": 7
+    }
+   ]
+  },
+  {
+   "source_commit": "8720426",
+   "file": "incoming/icone/confronto-combinazioni-2026-10-18-13.png",
+   "sha256": "24a039bb0df17088701dc83d5943bcf3f6aeae00da56a7c7e7bf80dc2f76a2c3",
+   "items": [
+    {
+     "soggetto": "amanita-muscaria",
+     "tessera": "cappello",
+     "variante": "colore:giallo+forma:emisferico",
+     "cella": 0
+    },
+    {
+     "soggetto": "amanita-muscaria",
+     "tessera": "gambo",
+     "variante": "colore:giallo+forma:emisferico",
+     "cella": 1
+    },
+    {
+     "soggetto": "amanita-muscaria",
+     "tessera": "cappello",
+     "variante": "colore:arancio+forma:piano",
+     "cella": 3
+    },
+    {
+     "soggetto": "amanita-muscaria",
+     "tessera": "gambo",
+     "variante": "colore:arancio+forma:piano",
+     "cella": 4
+    },
+    {
+     "soggetto": "amanita-muscaria",
+     "tessera": "cappello",
+     "variante": "colore:giallo+forma:piano",
+     "cella": 6
+    },
+    {
+     "soggetto": "amanita-muscaria",
+     "tessera": "gambo",
+     "variante": "colore:giallo+forma:piano",
+     "cella": 7
+    }
+   ]
+  },
+  {
+   "source_commit": "8720426",
+   "file": "incoming/icone/confronto-combinazioni-2026-10-18-14.png",
+   "sha256": "a40f43b953ed2e033821ae395b50de2b22114f7f76a3f459e77786e1770659ed",
+   "items": [
+    {
+     "soggetto": "amanita-pantherina",
+     "tessera": "cappello",
+     "variante": "colore:crema+forma:conico",
+     "cella": 0
+    },
+    {
+     "soggetto": "amanita-pantherina",
+     "tessera": "gambo",
+     "variante": "colore:crema+forma:conico",
+     "cella": 1
+    },
+    {
+     "soggetto": "amanita-pantherina",
+     "tessera": "cappello",
+     "variante": "colore:grigio+forma:conico",
+     "cella": 3
+    },
+    {
+     "soggetto": "amanita-pantherina",
+     "tessera": "gambo",
+     "variante": "colore:grigio+forma:conico",
+     "cella": 4
+    },
+    {
+     "soggetto": "amanita-pantherina",
+     "tessera": "cappello",
+     "variante": "colore:crema+forma:emisferico",
+     "cella": 6
+    },
+    {
+     "soggetto": "amanita-pantherina",
+     "tessera": "gambo",
+     "variante": "colore:crema+forma:emisferico",
+     "cella": 7
+    }
+   ]
+  },
+  {
+   "source_commit": "8720426",
+   "file": "incoming/icone/confronto-combinazioni-2026-10-18-15.png",
+   "sha256": "ad21578493afe93c5421fbc8de8d38e2607004ac17cc02fad29fdeb7ba4eaae1",
+   "items": [
+    {
+     "soggetto": "amanita-pantherina",
+     "tessera": "cappello",
+     "variante": "colore:grigio+forma:emisferico",
+     "cella": 0
+    },
+    {
+     "soggetto": "amanita-pantherina",
+     "tessera": "gambo",
+     "variante": "colore:grigio+forma:emisferico",
+     "cella": 1
+    },
+    {
+     "soggetto": "amanita-pantherina",
+     "tessera": "cappello",
+     "variante": "colore:crema+forma:piano",
+     "cella": 3
+    },
+    {
+     "soggetto": "amanita-pantherina",
+     "tessera": "gambo",
+     "variante": "colore:crema+forma:piano",
+     "cella": 4
+    },
+    {
+     "soggetto": "amanita-pantherina",
+     "tessera": "cappello",
+     "variante": "colore:grigio+forma:piano",
+     "cella": 6
+    },
+    {
+     "soggetto": "amanita-pantherina",
+     "tessera": "gambo",
+     "variante": "colore:grigio+forma:piano",
+     "cella": 7
+    }
+   ]
+  },
+  {
+   "source_commit": "8720426",
+   "file": "incoming/icone/confronto-combinazioni-2026-10-18-16.png",
+   "sha256": "b7dccbdeb5b08e50fbee6f40356e3f32b9e640cea83c0b98be1e69906e4d5c5f",
+   "items": [
+    {
+     "soggetto": "chlorophyllum-rhacodes",
+     "tessera": "cappello",
+     "variante": "colore:bruno+forma:convesso",
+     "cella": 0
+    },
+    {
+     "soggetto": "chlorophyllum-rhacodes",
+     "tessera": "gambo",
+     "variante": "colore:bruno+forma:convesso",
+     "cella": 1
+    },
+    {
+     "soggetto": "chlorophyllum-rhacodes",
+     "tessera": "cappello",
+     "variante": "colore:bruno+forma:emisferico",
+     "cella": 3
+    },
+    {
+     "soggetto": "chlorophyllum-rhacodes",
+     "tessera": "gambo",
+     "variante": "colore:bruno+forma:emisferico",
+     "cella": 4
+    },
+    {
+     "soggetto": "chlorophyllum-venenatum",
+     "tessera": "cappello",
+     "variante": "colore:bruno+forma:convesso",
+     "cella": 6
+    },
+    {
+     "soggetto": "chlorophyllum-venenatum",
+     "tessera": "gambo",
+     "variante": "colore:bruno+forma:convesso",
+     "cella": 7
+    }
+   ]
+  },
+  {
+   "source_commit": "8720426",
+   "file": "incoming/icone/confronto-combinazioni-2026-10-18-17.png",
+   "sha256": "c9eb31bab3d86725a04570bcdc792e4b7cc10de551269600e5039092fe09bd67",
+   "items": [
+    {
+     "soggetto": "clitocybe-rivulosa",
+     "tessera": "cappello",
+     "variante": "colore:bruno+forma:convesso",
+     "cella": 0
+    },
+    {
+     "soggetto": "clitocybe-rivulosa",
+     "tessera": "gambo",
+     "variante": "colore:bruno+forma:convesso",
+     "cella": 1
+    },
+    {
+     "soggetto": "clitocybe-rivulosa",
+     "tessera": "cappello",
+     "variante": "colore:crema+forma:convesso",
+     "cella": 3
+    },
+    {
+     "soggetto": "clitocybe-rivulosa",
+     "tessera": "gambo",
+     "variante": "colore:crema+forma:convesso",
+     "cella": 4
+    },
+    {
+     "soggetto": "clitocybe-rivulosa",
+     "tessera": "cappello",
+     "variante": "colore:bruno+forma:piano",
+     "cella": 6
+    },
+    {
+     "soggetto": "clitocybe-rivulosa",
+     "tessera": "gambo",
+     "variante": "colore:bruno+forma:piano",
+     "cella": 7
+    }
+   ]
+  },
+  {
+   "source_commit": "8720426",
+   "file": "incoming/icone/confronto-combinazioni-2026-10-18-18.png",
+   "sha256": "aa715c6904c35053e1eef4e346c57b2712a3f849062ea325d3f3efbaf3633293",
+   "items": [
+    {
+     "soggetto": "clitocybe-rivulosa",
+     "tessera": "cappello",
+     "variante": "colore:crema+forma:piano",
+     "cella": 0
+    },
+    {
+     "soggetto": "clitocybe-rivulosa",
+     "tessera": "gambo",
+     "variante": "colore:crema+forma:piano",
+     "cella": 1
+    },
+    {
+     "soggetto": "entoloma-sinuatum",
+     "tessera": "cappello",
+     "variante": "colore:bianco+forma:conico",
+     "cella": 3
+    },
+    {
+     "soggetto": "entoloma-sinuatum",
+     "tessera": "gambo",
+     "variante": "colore:bianco+forma:conico",
+     "cella": 4
+    },
+    {
+     "soggetto": "entoloma-sinuatum",
+     "tessera": "cappello",
+     "variante": "colore:crema+forma:conico",
+     "cella": 6
+    },
+    {
+     "soggetto": "entoloma-sinuatum",
+     "tessera": "gambo",
+     "variante": "colore:crema+forma:conico",
+     "cella": 7
+    }
+   ]
+  },
+  {
+   "source_commit": "8720426",
+   "file": "incoming/icone/confronto-combinazioni-2026-10-18-19.png",
+   "sha256": "ca1fbcee0c08d9a703f5660ff8da58416e729ec805189a91219769f4cb19aab8",
+   "items": [
+    {
+     "soggetto": "entoloma-sinuatum",
+     "tessera": "cappello",
+     "variante": "colore:bianco+forma:piano",
+     "cella": 0
+    },
+    {
+     "soggetto": "entoloma-sinuatum",
+     "tessera": "gambo",
+     "variante": "colore:bianco+forma:piano",
+     "cella": 1
+    },
+    {
+     "soggetto": "entoloma-sinuatum",
+     "tessera": "cappello",
+     "variante": "colore:crema+forma:piano",
+     "cella": 3
+    },
+    {
+     "soggetto": "entoloma-sinuatum",
+     "tessera": "gambo",
+     "variante": "colore:crema+forma:piano",
+     "cella": 4
+    },
+    {
+     "soggetto": "gymnopilus-junonius",
+     "tessera": "cappello",
+     "variante": "colore:giallo+forma:piano",
+     "cella": 6
+    },
+    {
+     "soggetto": "gymnopilus-junonius",
+     "tessera": "gambo",
+     "variante": "colore:giallo+forma:piano",
+     "cella": 7
+    }
+   ]
+  },
+  {
+   "source_commit": "8720426",
+   "file": "incoming/icone/confronto-combinazioni-2026-10-18-20.png",
+   "sha256": "21870c825372d8f32aa5703b74f9a2d2cbefa3994f224c8461d4222a2f639e35",
+   "items": [
+    {
+     "soggetto": "hypholoma-fasciculare",
+     "tessera": "cappello",
+     "variante": "colore:arancio+forma:piano",
+     "cella": 0
+    },
+    {
+     "soggetto": "hypholoma-fasciculare",
+     "tessera": "gambo",
+     "variante": "colore:arancio+forma:piano",
+     "cella": 1
+    },
+    {
+     "soggetto": "inocybe",
+     "tessera": "cappello",
+     "variante": "colore:bianco+forma:convesso",
+     "cella": 3
+    },
+    {
+     "soggetto": "inocybe",
+     "tessera": "gambo",
+     "variante": "colore:bianco+forma:convesso",
+     "cella": 4
+    },
+    {
+     "soggetto": "inocybe",
+     "tessera": "cappello",
+     "variante": "colore:crema+forma:convesso",
+     "cella": 6
+    },
+    {
+     "soggetto": "inocybe",
+     "tessera": "gambo",
+     "variante": "colore:crema+forma:convesso",
+     "cella": 7
+    }
+   ]
+  },
+  {
+   "source_commit": "8720426",
+   "file": "incoming/icone/confronto-combinazioni-2026-10-18-21.png",
+   "sha256": "bfbe5c19e9b3d04ea0ad51366b1d2192f9c9e21fa90304a0e56a775372e50aa4",
+   "items": [
+    {
+     "soggetto": "inocybe",
+     "tessera": "cappello",
+     "variante": "colore:giallo+forma:convesso",
+     "cella": 0
+    },
+    {
+     "soggetto": "inocybe",
+     "tessera": "gambo",
+     "variante": "colore:giallo+forma:convesso",
+     "cella": 1
+    },
+    {
+     "soggetto": "inocybe",
+     "tessera": "cappello",
+     "variante": "colore:grigio+forma:convesso",
+     "cella": 3
+    },
+    {
+     "soggetto": "inocybe",
+     "tessera": "gambo",
+     "variante": "colore:grigio+forma:convesso",
+     "cella": 4
+    },
+    {
+     "soggetto": "inocybe",
+     "tessera": "cappello",
+     "variante": "colore:rosa+forma:convesso",
+     "cella": 6
+    },
+    {
+     "soggetto": "inocybe",
+     "tessera": "gambo",
+     "variante": "colore:rosa+forma:convesso",
+     "cella": 7
+    }
+   ]
+  },
+  {
+   "source_commit": "8720426",
+   "file": "incoming/icone/confronto-combinazioni-2026-10-18-22.png",
+   "sha256": "74b8777481dd4f98ee1bf2d1c88226a8ad1f728c3ab6fd68332e94cce2be0ec5",
+   "items": [
+    {
+     "soggetto": "inocybe",
+     "tessera": "cappello",
+     "variante": "colore:violetto+forma:convesso",
+     "cella": 0
+    },
+    {
+     "soggetto": "inocybe",
+     "tessera": "gambo",
+     "variante": "colore:violetto+forma:convesso",
+     "cella": 1
+    },
+    {
+     "soggetto": "lepiota-cristata",
+     "tessera": "cappello",
+     "variante": "colore:bruno+forma:convesso",
+     "cella": 3
+    },
+    {
+     "soggetto": "lepiota-cristata",
+     "tessera": "gambo",
+     "variante": "colore:bruno+forma:convesso",
+     "cella": 4
+    },
+    {
+     "soggetto": "lepiota-cristata",
+     "tessera": "cappello",
+     "variante": "colore:bruno+forma:piano",
+     "cella": 6
+    },
+    {
+     "soggetto": "lepiota-cristata",
+     "tessera": "gambo",
+     "variante": "colore:bruno+forma:piano",
+     "cella": 7
+    }
+   ]
+  },
+  {
+   "source_commit": "8720426",
+   "file": "incoming/icone/confronto-combinazioni-2026-10-18-23.png",
+   "sha256": "63ab84c92efa1e30982a52d607d7d6ccafb4e19e9a15ab37202c64d815e314cd",
+   "items": [
+    {
+     "soggetto": "mycena-pura",
+     "tessera": "cappello",
+     "variante": "colore:bianco+forma:convesso",
+     "cella": 0
+    },
+    {
+     "soggetto": "mycena-pura",
+     "tessera": "gambo",
+     "variante": "colore:bianco+forma:convesso",
+     "cella": 1
+    },
+    {
+     "soggetto": "mycena-pura",
+     "tessera": "cappello",
+     "variante": "colore:grigio+forma:convesso",
+     "cella": 3
+    },
+    {
+     "soggetto": "mycena-pura",
+     "tessera": "gambo",
+     "variante": "colore:grigio+forma:convesso",
+     "cella": 4
+    },
+    {
+     "soggetto": "mycena-pura",
+     "tessera": "cappello",
+     "variante": "colore:violetto+forma:convesso",
+     "cella": 6
+    },
+    {
+     "soggetto": "mycena-pura",
+     "tessera": "gambo",
+     "variante": "colore:violetto+forma:convesso",
+     "cella": 7
+    }
+   ]
+  },
+  {
+   "source_commit": "8720426",
+   "file": "incoming/icone/confronto-combinazioni-2026-10-18-24.png",
+   "sha256": "5ba5e31cc77235350baf5b19a58edb76fbfe176da253fd159943e3a39d9cd54b",
+   "items": [
+    {
+     "soggetto": "omphalotus-olearius",
+     "tessera": "cappello",
+     "variante": "colore:bruno+forma:convesso",
+     "cella": 0
+    },
+    {
+     "soggetto": "omphalotus-olearius",
+     "tessera": "gambo",
+     "variante": "colore:bruno+forma:convesso",
+     "cella": 1
+    },
+    {
+     "soggetto": "omphalotus-olearius",
+     "tessera": "cappello",
+     "variante": "colore:giallo+forma:convesso",
+     "cella": 3
+    },
+    {
+     "soggetto": "omphalotus-olearius",
+     "tessera": "gambo",
+     "variante": "colore:giallo+forma:convesso",
+     "cella": 4
+    },
+    {
+     "soggetto": "rubroboletus-satanas",
+     "tessera": "cappello",
+     "variante": "colore:bianco+forma:emisferico",
+     "cella": 6
+    },
+    {
+     "soggetto": "rubroboletus-satanas",
+     "tessera": "gambo",
+     "variante": "colore:bianco+forma:emisferico",
+     "cella": 7
+    }
+   ]
+  },
+  {
+   "source_commit": "8720426",
+   "file": "incoming/icone/confronto-combinazioni-2026-10-18-25.png",
+   "sha256": "18009e98c5c7577df1a44c14ff4614ae5a2d8599968a5e2370b44f0057693895",
+   "items": [
+    {
+     "soggetto": "rubroboletus-satanas",
+     "tessera": "cappello",
+     "variante": "colore:grigio+forma:emisferico",
+     "cella": 0
+    },
+    {
+     "soggetto": "rubroboletus-satanas",
+     "tessera": "gambo",
+     "variante": "colore:grigio+forma:emisferico",
+     "cella": 1
+    },
+    {
+     "soggetto": "russula-olivacea",
+     "tessera": "cappello",
+     "variante": "colore:bruno+forma:imbuto",
+     "cella": 3
+    },
+    {
+     "soggetto": "russula-olivacea",
+     "tessera": "gambo",
+     "variante": "colore:bruno+forma:imbuto",
+     "cella": 4
+    },
+    {
+     "soggetto": "russula-olivacea",
+     "tessera": "cappello",
+     "variante": "colore:rosso+forma:imbuto",
+     "cella": 6
+    },
+    {
+     "soggetto": "russula-olivacea",
+     "tessera": "gambo",
+     "variante": "colore:rosso+forma:imbuto",
+     "cella": 7
+    }
+   ]
+  },
+  {
+   "source_commit": "8720426",
+   "file": "incoming/icone/confronto-combinazioni-2026-10-18-26.png",
+   "sha256": "e2590b573f3539d5aea73f4cec1321703f8e0659646fb4e861da59bb78595026",
+   "items": [
+    {
+     "soggetto": "russula-olivacea",
+     "tessera": "cappello",
+     "variante": "colore:violetto+forma:imbuto",
+     "cella": 0
+    },
+    {
+     "soggetto": "russula-olivacea",
+     "tessera": "gambo",
+     "variante": "colore:violetto+forma:imbuto",
+     "cella": 1
+    },
+    {
+     "soggetto": "russula-olivacea",
+     "tessera": "cappello",
+     "variante": "colore:bruno+forma:piano",
+     "cella": 3
+    },
+    {
+     "soggetto": "russula-olivacea",
+     "tessera": "gambo",
+     "variante": "colore:bruno+forma:piano",
+     "cella": 4
+    },
+    {
+     "soggetto": "russula-olivacea",
+     "tessera": "cappello",
+     "variante": "colore:rosso+forma:piano",
+     "cella": 6
+    },
+    {
+     "soggetto": "russula-olivacea",
+     "tessera": "gambo",
+     "variante": "colore:rosso+forma:piano",
+     "cella": 7
+    }
+   ]
+  },
+  {
+   "source_commit": "8720426",
+   "file": "incoming/icone/confronto-combinazioni-2026-10-18-27.png",
+   "sha256": "e0ee8a6efaf31a07e105db524f0aa16404c32e830739e537c8a3fb066218d742",
+   "items": [
+    {
+     "soggetto": "russula-olivacea",
+     "tessera": "cappello",
+     "variante": "colore:violetto+forma:piano",
+     "cella": 0
+    },
+    {
+     "soggetto": "russula-olivacea",
+     "tessera": "gambo",
+     "variante": "colore:violetto+forma:piano",
+     "cella": 1
+    },
+    {
+     "soggetto": "tricholoma-equestre",
+     "tessera": "cappello",
+     "variante": "colore:bruno+forma:conico",
+     "cella": 3
+    },
+    {
+     "soggetto": "tricholoma-equestre",
+     "tessera": "gambo",
+     "variante": "colore:bruno+forma:conico",
+     "cella": 4
+    },
+    {
+     "soggetto": "tricholoma-equestre",
+     "tessera": "cappello",
+     "variante": "colore:verde+forma:conico",
+     "cella": 6
+    },
+    {
+     "soggetto": "tricholoma-equestre",
+     "tessera": "gambo",
+     "variante": "colore:verde+forma:conico",
+     "cella": 7
+    }
+   ]
+  },
+  {
+   "source_commit": "8720426",
+   "file": "incoming/icone/confronto-combinazioni-2026-10-18-28.png",
+   "sha256": "5730c3de8a970f4d83d926a6c04e8992f30399faf6c791cf625e64cc2061fb4b",
+   "items": [
+    {
+     "soggetto": "tricholoma-equestre",
+     "tessera": "cappello",
+     "variante": "colore:bruno+forma:ombrellato",
+     "cella": 0
+    },
+    {
+     "soggetto": "tricholoma-equestre",
+     "tessera": "gambo",
+     "variante": "colore:bruno+forma:ombrellato",
+     "cella": 1
+    },
+    {
+     "soggetto": "tricholoma-equestre",
+     "tessera": "cappello",
+     "variante": "colore:verde+forma:ombrellato",
+     "cella": 3
+    },
+    {
+     "soggetto": "tricholoma-equestre",
+     "tessera": "gambo",
+     "variante": "colore:verde+forma:ombrellato",
+     "cella": 4
+    },
+    {
+     "soggetto": "tricholoma-equestre",
+     "tessera": "cappello",
+     "variante": "colore:bruno+forma:piano",
+     "cella": 6
+    },
+    {
+     "soggetto": "tricholoma-equestre",
+     "tessera": "gambo",
+     "variante": "colore:bruno+forma:piano",
+     "cella": 7
+    }
+   ]
+  },
+  {
+   "source_commit": "8720426",
+   "file": "incoming/icone/confronto-combinazioni-2026-10-18-29.png",
+   "sha256": "97b0320259a03773d33c5adcc2bd6cb76714834f6c804449bd3efda17bf0edcf",
+   "items": [
+    {
+     "soggetto": "tricholoma-equestre",
+     "tessera": "cappello",
+     "variante": "colore:verde+forma:piano",
+     "cella": 0
+    },
+    {
+     "soggetto": "tricholoma-equestre",
+     "tessera": "gambo",
+     "variante": "colore:verde+forma:piano",
+     "cella": 1
+    },
+    {
+     "soggetto": "tricholoma-pardinum",
+     "tessera": "cappello",
+     "variante": "colore:bianco+forma:piano",
+     "cella": 3
+    },
+    {
+     "soggetto": "tricholoma-pardinum",
+     "tessera": "gambo",
+     "variante": "colore:bianco+forma:piano",
+     "cella": 4
+    },
+    {
+     "soggetto": "tricholoma-pardinum",
+     "tessera": "cappello",
+     "variante": "colore:bruno+forma:piano",
+     "cella": 6
+    },
+    {
+     "soggetto": "tricholoma-pardinum",
+     "tessera": "gambo",
+     "variante": "colore:bruno+forma:piano",
+     "cella": 7
+    }
+   ]
+  },
+  {
+   "source_commit": "8720426",
+   "file": "incoming/icone/confronto-combinazioni-2026-10-18-30.png",
+   "sha256": "25c32028fd428734327701c7902f6f2f706e460fc2de1462226ae40f07bd1867",
+   "items": [
+    {
+     "soggetto": "caloboletus-calopus",
+     "tessera": "cappello",
+     "variante": "colore:bruno+forma:emisferico",
+     "cella": 0
+    },
+    {
+     "soggetto": "caloboletus-calopus",
+     "tessera": "gambo",
+     "variante": "colore:bruno+forma:emisferico",
+     "cella": 1
+    },
+    {
+     "soggetto": "caloboletus-calopus",
+     "tessera": "cappello",
+     "variante": "colore:crema+forma:emisferico",
+     "cella": 3
+    },
+    {
+     "soggetto": "caloboletus-calopus",
+     "tessera": "gambo",
+     "variante": "colore:crema+forma:emisferico",
+     "cella": 4
+    },
+    {
+     "soggetto": "caloboletus-calopus",
+     "tessera": "cappello",
+     "variante": "colore:grigio+forma:emisferico",
+     "cella": 6
+    },
+    {
+     "soggetto": "caloboletus-calopus",
+     "tessera": "gambo",
+     "variante": "colore:grigio+forma:emisferico",
+     "cella": 7
+    }
+   ]
+  },
+  {
+   "source_commit": "8720426",
+   "file": "incoming/icone/confronto-combinazioni-2026-10-18-31.png",
+   "sha256": "6c23a79354c7b99981a50cc60214c4251caee3d7ee55deac5fab0f29e11dcf5f",
+   "items": [
+    {
+     "soggetto": "caloboletus-radicans",
+     "tessera": "cappello",
+     "variante": "colore:bianco+forma:emisferico",
+     "cella": 0
+    },
+    {
+     "soggetto": "caloboletus-radicans",
+     "tessera": "gambo",
+     "variante": "colore:bianco+forma:emisferico",
+     "cella": 1
+    },
+    {
+     "soggetto": "caloboletus-radicans",
+     "tessera": "cappello",
+     "variante": "colore:grigio+forma:emisferico",
+     "cella": 3
+    },
+    {
+     "soggetto": "caloboletus-radicans",
+     "tessera": "gambo",
+     "variante": "colore:grigio+forma:emisferico",
+     "cella": 4
+    },
+    {
+     "soggetto": "chalciporus-piperatus",
+     "tessera": "cappello",
+     "variante": "colore:bruno+forma:piano",
+     "cella": 6
+    },
+    {
+     "soggetto": "chalciporus-piperatus",
+     "tessera": "gambo",
+     "variante": "colore:bruno+forma:piano",
+     "cella": 7
+    }
+   ]
+  },
+  {
+   "source_commit": "8720426",
+   "file": "incoming/icone/confronto-combinazioni-2026-10-18-32.png",
+   "sha256": "e64c282d8e3b4d9cabdf9a9644834f156fea9cae0dd1f0215acd6692f26b1638",
+   "items": [
+    {
+     "soggetto": "cortinarius-violaceus",
+     "tessera": "cappello",
+     "variante": "colore:nero+forma:piano",
+     "cella": 0
+    },
+    {
+     "soggetto": "cortinarius-violaceus",
+     "tessera": "gambo",
+     "variante": "colore:nero+forma:piano",
+     "cella": 1
+    },
+    {
+     "soggetto": "hydnellum-peckii",
+     "tessera": "cappello",
+     "variante": "colore:bruno+forma:convesso",
+     "cella": 3
+    },
+    {
+     "soggetto": "hydnellum-peckii",
+     "tessera": "gambo",
+     "variante": "colore:bruno+forma:convesso",
+     "cella": 4
+    },
+    {
+     "soggetto": "hydnellum-peckii",
+     "tessera": "cappello",
+     "variante": "colore:rosa+forma:convesso",
+     "cella": 6
+    },
+    {
+     "soggetto": "hydnellum-peckii",
+     "tessera": "gambo",
+     "variante": "colore:rosa+forma:convesso",
+     "cella": 7
+    }
+   ]
+  },
+  {
+   "source_commit": "8720426",
+   "file": "incoming/icone/confronto-combinazioni-2026-10-18-33.png",
+   "sha256": "efab4210a62e1dad3385596c431bee82a4673430c1fad8ed77ad012585a5ac5e",
+   "items": [
+    {
+     "soggetto": "hydnellum-peckii",
+     "tessera": "cappello",
+     "variante": "colore:bruno+forma:imbuto",
+     "cella": 0
+    },
+    {
+     "soggetto": "hydnellum-peckii",
+     "tessera": "gambo",
+     "variante": "colore:bruno+forma:imbuto",
+     "cella": 1
+    },
+    {
+     "soggetto": "hydnellum-peckii",
+     "tessera": "cappello",
+     "variante": "colore:rosa+forma:imbuto",
+     "cella": 3
+    },
+    {
+     "soggetto": "hydnellum-peckii",
+     "tessera": "gambo",
+     "variante": "colore:rosa+forma:imbuto",
+     "cella": 4
+    },
+    {
+     "soggetto": "hygrophoropsis-aurantiaca",
+     "tessera": "cappello",
+     "variante": "colore:bruno+forma:convesso",
+     "cella": 6
+    },
+    {
+     "soggetto": "hygrophoropsis-aurantiaca",
+     "tessera": "gambo",
+     "variante": "colore:bruno+forma:convesso",
+     "cella": 7
+    }
+   ]
+  },
+  {
+   "source_commit": "8720426",
+   "file": "incoming/icone/confronto-combinazioni-2026-10-18-34.png",
+   "sha256": "84df1ec00aaa2d62e2c324f3a7dd7941c1631b31eb2de22935df666ce529f5a9",
+   "items": [
+    {
+     "soggetto": "hygrophoropsis-aurantiaca",
+     "tessera": "cappello",
+     "variante": "colore:giallo+forma:convesso",
+     "cella": 0
+    },
+    {
+     "soggetto": "hygrophoropsis-aurantiaca",
+     "tessera": "gambo",
+     "variante": "colore:giallo+forma:convesso",
+     "cella": 1
+    },
+    {
+     "soggetto": "pholiota-squarrosa",
+     "tessera": "cappello",
+     "variante": "colore:bruno+forma:piano",
+     "cella": 3
+    },
+    {
+     "soggetto": "pholiota-squarrosa",
+     "tessera": "gambo",
+     "variante": "colore:bruno+forma:piano",
+     "cella": 4
+    },
+    {
+     "soggetto": "tricholoma-sciodes",
+     "tessera": "cappello",
+     "variante": "colore:grigio+forma:convesso",
+     "cella": 6
+    },
+    {
+     "soggetto": "tricholoma-sciodes",
+     "tessera": "gambo",
+     "variante": "colore:grigio+forma:convesso",
+     "cella": 7
+    }
+   ]
+  },
+  {
+   "source_commit": "8720426",
+   "file": "incoming/icone/confronto-combinazioni-2026-10-18-35.png",
+   "sha256": "f5e953ed4e4483bc3e6d9db4b6b7ddbc695dedba3fa7423c1eb331f10dfffb35",
+   "items": [
+    {
+     "soggetto": "tylopilus-felleus",
+     "tessera": "cappello",
+     "variante": "colore:bruno+forma:emisferico",
+     "cella": 0
+    },
+    {
+     "soggetto": "tylopilus-felleus",
+     "tessera": "gambo",
+     "variante": "colore:bruno+forma:emisferico",
+     "cella": 1
+    },
+    {
+     "soggetto": "tylopilus-felleus",
+     "tessera": "cappello",
+     "variante": "colore:bruno+forma:piano",
+     "cella": 3
+    },
+    {
+     "soggetto": "tylopilus-felleus",
+     "tessera": "gambo",
+     "variante": "colore:bruno+forma:piano",
+     "cella": 4
+    },
+    {
+     "soggetto": "amanita-rubescens",
+     "tessera": "cappello",
+     "variante": "colore:bruno+forma:emisferico",
+     "cella": 6
+    },
+    {
+     "soggetto": "amanita-rubescens",
+     "tessera": "gambo",
+     "variante": "colore:bruno+forma:emisferico",
+     "cella": 7
+    }
+   ]
+  },
+  {
+   "source_commit": "8720426",
+   "file": "incoming/icone/confronto-combinazioni-2026-10-18-36.png",
+   "sha256": "032cdbbb76a9eb3a0bacecf392e7032d3830329dc321af7385e91e8728f861c2",
+   "items": [
+    {
+     "soggetto": "amanita-rubescens",
+     "tessera": "cappello",
+     "variante": "colore:bruno+forma:piano",
+     "cella": 0
+    },
+    {
+     "soggetto": "amanita-rubescens",
+     "tessera": "gambo",
+     "variante": "colore:bruno+forma:piano",
+     "cella": 1
+    },
+    {
+     "soggetto": "armillaria-tabescens",
+     "tessera": "cappello",
+     "variante": "colore:bruno+forma:piano",
+     "cella": 3
+    },
+    {
+     "soggetto": "armillaria-tabescens",
+     "tessera": "gambo",
+     "variante": "colore:bruno+forma:piano",
+     "cella": 4
+    },
+    {
+     "soggetto": "cyclocybe-aegerita",
+     "tessera": "cappello",
+     "variante": "colore:crema+forma:emisferico",
+     "cella": 6
+    },
+    {
+     "soggetto": "cyclocybe-aegerita",
+     "tessera": "gambo",
+     "variante": "colore:crema+forma:emisferico",
+     "cella": 7
+    }
+   ]
+  },
+  {
+   "source_commit": "8720426",
+   "file": "incoming/icone/confronto-forme-2026-10-18-01-r01.png",
+   "sha256": "36bf67201b4bb171171a38ceada5bbcd18e1b0e44a55c1184045f3b192c7ed10",
+   "items": [
+    {
+     "soggetto": "lepiota-brunneoincarnata",
+     "tessera": "cappello",
+     "variante": "forma:emisferico",
+     "cella": 0
+    },
+    {
+     "soggetto": "lepiota-brunneoincarnata",
+     "tessera": "gambo",
+     "variante": "forma:emisferico",
+     "cella": 1
+    },
+    {
+     "soggetto": "cortinarius-rubellus",
+     "tessera": "cappello",
+     "variante": "forma:piano",
+     "cella": 3
+    },
+    {
+     "soggetto": "cortinarius-rubellus",
+     "tessera": "gambo",
+     "variante": "forma:piano",
+     "cella": 4
+    },
+    {
+     "soggetto": "entoloma-sinuatum",
+     "tessera": "cappello",
+     "variante": "forma:conico",
+     "cella": 6
+    },
+    {
+     "soggetto": "entoloma-sinuatum",
+     "tessera": "gambo",
+     "variante": "forma:conico",
+     "cella": 7
+    }
+   ]
+  },
+  {
+   "source_commit": "8720426",
+   "file": "incoming/icone/confronto-forme-2026-10-18-02-r01.png",
+   "sha256": "295e025829b3a260e5f15dfc2dae67e281ac56d273b9bc8c854c94980213e605",
+   "items": [
+    {
+     "soggetto": "amanita-virosa",
+     "tessera": "cappello",
+     "variante": "forma:piano",
+     "cella": 0
+    },
+    {
+     "soggetto": "amanita-virosa",
+     "tessera": "gambo",
+     "variante": "forma:piano",
+     "cella": 1
+    },
+    {
+     "soggetto": "tylopilus-felleus",
+     "tessera": "cappello",
+     "variante": "forma:piano",
+     "cella": 3
+    },
+    {
+     "soggetto": "tylopilus-felleus",
+     "tessera": "gambo",
+     "variante": "forma:piano",
+     "cella": 4
+    },
+    {
+     "soggetto": "morchella-esculenta",
+     "tessera": "cappello",
+     "variante": "forma:emisferico",
+     "cella": 6
+    },
+    {
+     "soggetto": "morchella-esculenta",
+     "tessera": "gambo",
+     "variante": "forma:emisferico",
+     "cella": 7
+    }
+   ]
+  },
+  {
+   "source_commit": "66959d7",
+   "file": "incoming/icone-piante/tavola-piante-01.png",
+   "sha256": "20ed2aacde3215612d30c7c56d9083a14a0bf1fe74d538f9d72b3e445ee034bb",
+   "items": [
+    {
+     "soggetto": "piante",
+     "chiave": "leaf_arrangement",
+     "valore": "alterne",
+     "cella": 0
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "leaf_arrangement",
+     "valore": "opposte",
+     "cella": 1
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "leaf_arrangement",
+     "valore": "verticillate",
+     "cella": 2
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "leaf_arrangement",
+     "valore": "rosetta_basale",
+     "cella": 3
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "leaf_type",
+     "valore": "semplice",
+     "cella": 4
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "leaf_type",
+     "valore": "composta",
+     "cella": 5
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "leaf_type",
+     "valore": "molto_divisa_fine",
+     "cella": 6
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "leaf_type",
+     "valore": "molto_divisa_larga",
+     "cella": 7
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "leaf_type",
+     "valore": "aghiforme",
+     "cella": 8
+    }
+   ]
+  },
+  {
+   "source_commit": "66959d7",
+   "file": "incoming/icone-piante/tavola-piante-02.png",
+   "sha256": "4c9466d93c044c71590520c60e36911739d782e6631c73b6fe9db16cb228a908",
+   "items": [
+    {
+     "soggetto": "piante",
+     "chiave": "leaf_margin",
+     "valore": "intero",
+     "cella": 0
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "leaf_margin",
+     "valore": "dentato",
+     "cella": 1
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "leaf_margin",
+     "valore": "lobato",
+     "cella": 2
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "flower_color",
+     "valore": "bianco",
+     "cella": 3
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "flower_color",
+     "valore": "giallo",
+     "cella": 4
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "flower_color",
+     "valore": "arancio_rosso",
+     "cella": 5
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "flower_color",
+     "valore": "rosa",
+     "cella": 6
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "flower_color",
+     "valore": "viola_blu",
+     "cella": 7
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "flower_color",
+     "valore": "verdastro",
+     "cella": 8
+    }
+   ]
+  },
+  {
+   "source_commit": "66959d7",
+   "file": "incoming/icone-piante/tavola-piante-03-r01.png",
+   "sha256": "cae7f3ceb58579150ae81fdc77cfb291e6e4c738bda9e1591f11350c08d3168b",
+   "items": [
+    {
+     "soggetto": "piante",
+     "chiave": "flower_shape",
+     "valore": "cinque_petali",
+     "cella": 0
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "flower_shape",
+     "valore": "quattro_petali",
+     "cella": 1
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "flower_shape",
+     "valore": "sei_tepali",
+     "cella": 2
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "flower_shape",
+     "valore": "molti_petali",
+     "cella": 3
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "flower_shape",
+     "valore": "ombrella",
+     "cella": 4
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "flower_shape",
+     "valore": "capolino",
+     "cella": 5
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "flower_shape",
+     "valore": "campanula",
+     "cella": 6
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "flower_shape",
+     "valore": "tubo_labbra",
+     "cella": 7
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "flower_shape",
+     "valore": "farfalla",
+     "cella": 8
+    }
+   ]
+  },
+  {
+   "source_commit": "66959d7",
+   "file": "incoming/icone-piante/tavola-piante-04-r01.png",
+   "sha256": "1a92a38de1f70c7f98c9ee3bcee86a85701d400d2b09437d696287490a926c5a",
+   "items": [
+    {
+     "soggetto": "piante",
+     "chiave": "flower_shape",
+     "valore": "labello",
+     "cella": 0
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "flower_shape",
+     "valore": "petali_rovesciati",
+     "cella": 1
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "flower_shape",
+     "valore": "spata",
+     "cella": 2
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "flower_shape",
+     "valore": "fiori_minuti",
+     "cella": 3
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "flower_shape",
+     "valore": "nessun_fiore_vistoso",
+     "cella": 4
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "fruit_type",
+     "valore": "carnoso",
+     "cella": 5
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "fruit_type",
+     "valore": "mora",
+     "cella": 6
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "fruit_type",
+     "valore": "falso_frutto",
+     "cella": 7
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "fruit_type",
+     "valore": "capsula",
+     "cella": 8
+    }
+   ]
+  },
+  {
+   "source_commit": "66959d7",
+   "file": "incoming/icone-piante/tavola-piante-05.png",
+   "sha256": "591611a17b47121359b20077310a40066a0f43176023f8cbbc92a5d1e7025792",
+   "items": [
+    {
+     "soggetto": "piante",
+     "chiave": "fruit_type",
+     "valore": "baccello",
+     "cella": 0
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "fruit_type",
+     "valore": "secco_piccolo",
+     "cella": 1
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "fruit_type",
+     "valore": "secco_piumoso",
+     "cella": 2
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "fruit_color",
+     "valore": "rosso",
+     "cella": 3
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "fruit_color",
+     "valore": "arancio",
+     "cella": 4
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "fruit_color",
+     "valore": "rosa",
+     "cella": 5
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "fruit_color",
+     "valore": "nero",
+     "cella": 6
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "fruit_color",
+     "valore": "blu_metallico",
+     "cella": 7
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "fruit_color",
+     "valore": "bruno",
+     "cella": 8
+    }
+   ]
+  },
+  {
+   "source_commit": "66959d7",
+   "file": "incoming/icone-piante/tavola-piante-06-r03.png",
+   "sha256": "480a4467634add9e574a096dfad15170df1641af03a2418ddb52b942243ecf34",
+   "items": [
+    {
+     "soggetto": "piante",
+     "chiave": "growth_form",
+     "valore": "erba",
+     "cella": 0
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "growth_form",
+     "valore": "arbusto",
+     "cella": 1
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "growth_form",
+     "valore": "rampicante",
+     "cella": 2
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "height_class",
+     "valore": "bassa",
+     "cella": 3
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "height_class",
+     "valore": "media",
+     "cella": 4
+    },
+    {
+     "soggetto": "piante",
+     "chiave": "height_class",
+     "valore": "alta",
+     "cella": 5
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,80 @@
+{
+  "species": "corbezzolo",
+  "tool": "built-in image_gen",
+  "masters": [
+    {
+      "file": "docs/assets/botanici-specifici-2026-10-19/masters/corbezzolo-master-v1.png",
+      "status": "rejected",
+      "reason": "Stile troppo realistico e fiori allungati con imbocco troppo aperto."
+    },
+    {
+      "file": "docs/assets/botanici-specifici-2026-10-19/masters/corbezzolo-master-v2.png",
+      "status": "approved_specialist_pending_independent_review",
+      "sha256": "531e8f1e707cee6ef738d15fc7deeb501c58f7741dddc98700ffec6fe2965655"
+    }
+  ],
+  "exports": [
+    {
+      "key": "leaf_type",
+      "value": "semplice",
+      "src": "assets/plant-traits/corbezzolo-leaf_type-semplice.webp",
+      "sha256": "386e160a507e14c611b99f192355b96cce21a3cec22fd50df8ebe992597344a5",
+      "crop": [
+        240,
+        15,
+        570,
+        682
+      ],
+      "status": "approved_independent_review",
+      "reviewReason": "Revisione indipendente parent con dati, fonte primaria e foto.",
+      "master": "docs/assets/botanici-specifici-2026-10-19/masters/corbezzolo-master-v2.png"
+    },
+    {
+      "key": "leaf_margin",
+      "value": "dentato",
+      "src": "assets/plant-traits/corbezzolo-leaf_margin-dentato.webp",
+      "sha256": "cec636fe13972b1216ac0f2c6bcda2ae934de4fd53bb23730ea9047d9394fc0b",
+      "crop": [
+        725,
+        40,
+        1220,
+        650
+      ],
+      "status": "approved_independent_review",
+      "reviewReason": "Revisione indipendente parent con dati, fonte primaria e foto.",
+      "master": "docs/assets/botanici-specifici-2026-10-19/masters/corbezzolo-master-v2.png"
+    },
+    {
+      "key": "flower_shape",
+      "value": "campanula",
+      "src": "assets/plant-traits/corbezzolo-flower_shape-campanula.webp",
+      "sha256": "459514c913116ebb143fcaae51c9710dc1fd2202893505eda5c52974767b1889",
+      "crop": [
+        90,
+        680,
+        640,
+        1170
+      ],
+      "status": "approved_independent_review",
+      "reviewReason": "Revisione indipendente parent con dati, fonte primaria e foto.",
+      "master": "docs/assets/botanici-specifici-2026-10-19/masters/corbezzolo-master-v3.png"
+    },
+    {
+      "key": "fruit_type",
+      "value": "carnoso",
+      "src": "assets/plant-traits/corbezzolo-fruit_type-carnoso.webp",
+      "sha256": "43bc584daf1cb78ef9583be6432cb54c0d3473d234e1d153f899e135d9f8bac6",
+      "crop": [
+        760,
+        670,
+        1250,
+        1230
+      ],
+      "status": "approved_independent_review",
+      "reviewReason": "Revisione indipendente parent con dati, fonte primaria e foto.",
+      "master": "docs/assets/botanici-specifici-2026-10-19/masters/corbezzolo-master-v2.png"
+    }
+  ],
+  "normalization": "Crop neutri della figura raster; nessuna modifica anatomica, resize LANCZOS entro 320 px, canvas trasparente 384x384, WebP lossless.",
+  "licensing": "Nuove illustrazioni AI per Fronda, CC BY-SA 4.0 come libreria. Fotografie di confronto non incorporate; foto Comune priva di licenza ridistribuzione verificata custodita fuori repo."
+}

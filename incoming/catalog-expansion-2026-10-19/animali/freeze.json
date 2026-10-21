@@ -1,0 +1,53 @@
+{
+  "acquired_originals": 19,
+  "approved_new_photos": 12,
+  "approved_taxa": 8,
+  "reuse_photos": 2,
+  "ready_new_cards": 9,
+  "draft_new_cards": 1,
+  "draft_reason": "moscardino: foto mediocri, contenuto disponibile ma integrazione rinviata",
+  "rejected": [
+    {
+      "id": "ce26-animali-donnola-07bd1f0b",
+      "reason": "Soggetto minuscolo e bianco nella neve, corpo nascosto; nitidezza/lettura insufficienti alla UI."
+    },
+    {
+      "id": "ce26-animali-moscardino-81ca37a0",
+      "reason": "Animale quasi interamente occluso dai licheni nel tronco: manca una figura leggibile."
+    },
+    {
+      "id": "ce26-animali-lepre-italica-ff74b397",
+      "reason": "Esemplare morto sulla strada: materiale inadatto alla scheda fotografica di animale vivo."
+    },
+    {
+      "id": "ce26-animali-macaone-4145dd98",
+      "reason": "Foto originale nitidissima e fase attestata, ma nei formati5:4/4:3/16:7 e nella thumb il corpo è tagliato e sparisce la testa: scartata per crop UI, da sostituire con una larva orizzontale."
+    },
+    {
+      "id": "ce26-animali-martora-47e8a403",
+      "reason": "Seconda martora della stessa scena, quasi identica e senza carattere aggiuntivo abbastanza utile."
+    },
+    {
+      "id": "ce26-animali-moscardino-d1d4335d",
+      "reason": "A1200px muso e mantello risultano morbidi, corpo e coda parzialmente occlusi dalla vegetazione: non soddisfa selezione severa."
+    },
+    {
+      "id": "ce26-animali-quercino-3f400567",
+      "reason": "Solo parte del muso è visibile nella fessura; vista più occlusa e meno informativa rispetto al primo quercino nitido."
+    }
+  ],
+  "color_profiles_converted": [
+    "ce26-animali-martora-6e3edfc8",
+    "ce26-animali-faina-d1817718",
+    "ce26-animali-faina-8adf7b53"
+  ],
+  "derivatives": 36,
+  "bytes_derivatives": 2225802,
+  "crops_seen": 72,
+  "thumbnails_seen": 12,
+  "errors": [],
+  "active_processes": [],
+  "no_suite_run": true,
+  "manifest_sha256": "6e5c3e413c07309b6b217a4589e5fa5cb289365cd1d22a42973e50cc156da1c8",
+  "proposals_sha256": "e68b668e78220ef1f9c641d323667230567005b026c13b48649d05480c35673f"
+}

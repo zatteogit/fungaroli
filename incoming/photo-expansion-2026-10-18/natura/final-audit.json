@@ -1,0 +1,15 @@
+{
+  "approved": 102,
+  "unique_original_sha256": true,
+  "derivatives": 306,
+  "normal_max_bytes": 79518,
+  "hd_max_bytes": 219156,
+  "all_exports_exif_xmp_icc_free": true,
+  "non_sRGB_approved": 7,
+  "orphan_derivatives_archived": [
+    "incoming/photo-expansion-2026-10-18/natura/rejected-derivatives/pe2-natura-farfalle-diurne-inat280989662.webp",
+    "incoming/photo-expansion-2026-10-18/natura/rejected-derivatives/pe2-natura-farfalle-diurne-inat280989662-t.webp",
+    "incoming/photo-expansion-2026-10-18/natura/rejected-derivatives/pe2-natura-farfalle-diurne-inat280989662-hd.webp"
+  ],
+  "autonomous_processes": []
+}

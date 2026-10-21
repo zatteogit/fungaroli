@@ -1,0 +1,135 @@
+{
+  "batchcomplete": "",
+  "query": {
+    "pages": {
+      "131008825": {
+        "pageid": 131008825,
+        "ns": 6,
+        "title": "File:Chlorophyllum venenatum.jpg",
+        "index": 1,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2913073,
+            "width": 2448,
+            "height": 3264,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Chlorophyllum_venenatum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Chlorophyllum_venenatum.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=131008825",
+            "sha1": "0623b4b6b10fc81cdd29ed490c72a974b7b61981",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-04-22 14:13:36",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Chlorophyllum venenatum",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Chlorophyllum venenatum|Fungi of North Rhine-Westphalia in October|Files with coordinates missing SDC location of creation (51° N, 6° E)|Taken with ZTE Blade A3 2020",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.506300",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "6.904200",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Gift-Safranschirmling, gefunden in Oberhausen, NRW",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-10-22",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://mushroomobserver.org/images/1508980?q=1oaQa\">https://mushroomobserver.org/images/1508980?q=1oaQa</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "MM1994",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Chlorophyllum venenatum"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation (51° N, 6° E)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of North Rhine-Westphalia in October"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with ZTE Blade A3 2020"
+          }
+        ]
+      }
+    }
+  }
+}

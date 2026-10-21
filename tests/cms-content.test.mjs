@@ -1,3 +1,4 @@
+import {resourceOf} from '../js/content-schema.js';
 // Snapshot pubblico del CMS: aggiornamento dal repository dei documenti non toccati (elenco
 // REPOSITORY_REFRESHED di worker/cms.js) e ETag. Il Worker gira su un D1 finto (node:sqlite).
 import test from 'node:test';
@@ -21,6 +22,17 @@ export async function load(url, context, next) {
 const { handleContent, noneMatch, publishedContent, REPOSITORY_REFRESHED } = await import('../worker/cms.js');
 
 const read = id => readFileSync(new URL(`../data/${id}.json`, import.meta.url), 'utf8');
+test('frasi del giorno: seed nel database e snapshot, bozza autore preservata', async () => {
+  const sql = new DatabaseSync(':memory:');
+  const initial = await publishedContent(env(sql), ORIGIN);
+  assert.deepEqual(initial.resources['daily-thoughts'], JSON.parse(read('daily-thoughts')));
+  const draft = structuredClone(initial.resources['daily-thoughts']);
+  draft.items[0].text = 'Una frase in lavorazione.';
+  sql.prepare("UPDATE cms_documents SET version=1,draft=?,updated_by='autore' WHERE id='daily-thoughts'").run(JSON.stringify(draft));
+  const snapshot = await publishedContent(env(sql), ORIGIN);
+  assert.deepEqual(snapshot.resources['daily-thoughts'], initial.resources['daily-thoughts']);
+  assert.equal(JSON.parse(sql.prepare("SELECT draft FROM cms_documents WHERE id='daily-thoughts'").get().draft).items[0].text, 'Una frase in lavorazione.');
+});
 // D1 essenziale: prepare/bind/all/first/run e batch in una transazione. Un nuovo adattatore sulla
 // stessa base equivale a un nuovo isolate del Worker: init() riparte e confronta con il repository.
 function d1(sql) {
@@ -52,8 +64,8 @@ test('ogni documento aggiornato dal repository passa la validazione del CMS e ne
     const { value } = validateContent(id, data);
     if (!['guides', 'legal'].includes(id)) assert.equal(JSON.stringify(value), JSON.stringify(data), `${id}: la validazione non deve cambiare il seed`);
   }
-  // i dati generati (sola lettura nel CMS) si aggiornano dai loro script: devono essere nell'elenco
-  for (const id of ['access', 'habitat', 'trailheads']) assert.equal(REPOSITORY_REFRESHED.includes(id), true, id);
+  // I generati sono in sola lettura in Redazione; una release aggiorna i seed intatti.
+  for (const id of ['access', 'habitat', 'trailheads']) {assert.equal(resourceOf(id).readonly,true);assert.equal(REPOSITORY_REFRESHED.includes(id),true);}
 });
 
 test('dati generati: un JSON rigenerato arriva allo snapshot al deploy successivo', async () => {
@@ -142,4 +154,18 @@ test('lo snapshot risponde 304 anche all’ETag debole che il browser rimanda do
     assert.equal(await r.text(), '');
   }
   assert.equal((await get({ 'if-none-match': 'W/"vecchia"' })).status, 200);
+});
+
+test('animal catalog is seeded in snapshots, refreshed only when untouched, and preserves an author draft',async()=>{
+ const sql=new DatabaseSync(':memory:');
+ const initial=await publishedContent(env(sql),ORIGIN);
+ assert.deepEqual(initial.resources.animals,JSON.parse(read('animals')));
+ const changed=JSON.parse(read('animals'));changed.items[0].summary+=' Aggiornamento.';
+ const updated=await publishedContent(env(sql,{animals:JSON.stringify(changed)}),ORIGIN);
+ assert.deepEqual(updated.resources.animals,changed);
+ const draft=structuredClone(changed);draft.items[0].summary='Bozza autore';
+ sql.prepare("UPDATE cms_documents SET version=version+1,draft=?,updated_by='autore' WHERE id='animals'").run(JSON.stringify(draft));
+ const preserved=await publishedContent(env(sql),ORIGIN);
+ assert.deepEqual(preserved.resources.animals,changed);
+ assert.equal(JSON.parse(sql.prepare("SELECT draft FROM cms_documents WHERE id='animals'").get().draft).items[0].summary,'Bozza autore');
 });

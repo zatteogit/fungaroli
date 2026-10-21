@@ -1,0 +1,103 @@
+{
+ "started": "2026-10-19T11:11:19.067792+00:00",
+ "seed": {
+  "id": "ernici-prato-campoli",
+  "name": "Prato di Campoli e boschi verso Pizzo Deta",
+  "lat": 41.7745278,
+  "lon": 13.4925556,
+  "radius_m": 1500,
+  "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+  "province": [
+   "FR"
+  ],
+  "coordinateProvenance": {
+   "method": "published_wgs_point",
+   "sourceUrl": "https://www.cairoma.it/?p=29232",
+   "note": "Centro editoriale coincidente con il punto WGS pubblicato dal CAI; il raggio non delimita l’area naturale."
+  },
+  "collectionStatus": "unknown",
+  "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita.",
+  "collectionSourceUrl": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+  "publicationStatus": "active",
+  "manager": "Ente competente indicato nelle fonti",
+  "researchGroup": "sud",
+  "officialTrailRefs": [
+   "617",
+   "618",
+   "619",
+   "622"
+  ],
+  "officialTrailNameMatches": []
+ },
+ "demProvider": "copernicus-glo90-openmeteo",
+ "demResolutionM": 90,
+ "elevation": {
+  "min": 1100,
+  "p25": 1196,
+  "median": 1282,
+  "p75": 1372,
+  "max": 1710
+ },
+ "suggestedBandsM": [
+  1200,
+  1280,
+  1370
+ ],
+ "forestPolygonCount": 2,
+ "habitatSamples": 317,
+ "roadErrors": [],
+ "trails": {
+  "listedRelations": 11,
+  "requestedRefs": [
+   "617",
+   "618",
+   "619",
+   "622"
+  ],
+  "requestedDistinctiveNames": [],
+  "matchedRelations": [
+   {
+    "relation": 12164662,
+    "ref": "622",
+    "source": "https://www.openstreetmap.org/relation/12164662",
+    "license": "ODbL-1.0",
+    "officialTagLengthM": 10300.0,
+    "mappedLengthM": 10341,
+    "inZoneLengthM": 1559.1816158491242,
+    "sampleCount": 15,
+    "note": "Reference match with institutional itinerary; geometry independently obtained from OSM via Waymarked Trails. Match does not certify exact geometric identity or current opening."
+   },
+   {
+    "relation": 12402883,
+    "ref": "617",
+    "source": "https://www.openstreetmap.org/relation/12402883",
+    "license": "ODbL-1.0",
+    "officialTagLengthM": 5200.0,
+    "mappedLengthM": 4915,
+    "inZoneLengthM": 1542.9822761695116,
+    "sampleCount": 15,
+    "note": "Reference match with institutional itinerary; geometry independently obtained from OSM via Waymarked Trails. Match does not certify exact geometric identity or current opening."
+   },
+   {
+    "relation": 12427077,
+    "ref": "618",
+    "source": "https://www.openstreetmap.org/relation/12427077",
+    "license": "ODbL-1.0",
+    "officialTagLengthM": 2100.0,
+    "mappedLengthM": 2031,
+    "inZoneLengthM": 776.6743507052247,
+    "sampleCount": 7,
+    "note": "Reference match with institutional itinerary; geometry independently obtained from OSM via Waymarked Trails. Match does not certify exact geometric identity or current opening."
+   }
+  ],
+  "unmatchedRefs": [],
+  "driveError": null,
+  "coverageLimit": 100,
+  "geometryStatus": "matched_osm_geometry"
+ },
+ "status": "complete",
+ "finished": "2026-10-19T11:11:35.222862+00:00",
+ "habitatStatus": "complete",
+ "grid": 21,
+ "gridStepM": 150.0
+}

@@ -1,6 +1,8 @@
 # Fasi di crescita delle icone dei funghi — brief per l'agente immagini (15/10/2026)
 
-Seguito di `docs/handoff-immagini-varianti.md`. Stesso ramo `gpt/immagini`, stesse regole. Solo file nuovi in `incoming/`, niente PR, niente file dell'app. L'import lo fa poi una sessione Claude con `tools/import_trait_icons.py`.
+Seguito di `docs/handoff-immagini-varianti.md`. Stesso ramo `gpt/immagini`, stesse regole. Solo file nuovi in `incoming/`, niente PR, niente file dell'app. L'import lo fa poi una sessione Claude con `tools/import_stage_icons.py --stato` (solo le tavole «pronta da integrare» in `incoming/bozze/STATO.md`).
+
+**Stato al 16/10:** integrate le amanite, le lepiote, le mazze di tamburo, i cortinari (14 specie, 79 disegni con le 4 sezioni dell'uovo) e la tavola fasi-30 (prataiolo; prataiolo maggiore giovane). Restano i prataioli e l'entoloma, i porcini e i boleti, le altre specie: `node tools/asset-report.mjs`, categoria `funghi-fasi`.
 
 ## Perché
 
@@ -74,7 +76,7 @@ Niente `variante` nelle righe di fase.
 {"file": "incoming/icone/fasi-01.png", "tipo": "illustrazione", "soggetto": "caesarea", "tessera": "taglio", "cella": 2, "fase": "uovo", "modello": "image_gen (…)", "prompt": "…"}
 ```
 
-L'import (`tools/import_trait_icons.py`) rifiuta:
+L'import (`tools/import_stage_icons.py`, chiamato anche da `tools/import_trait_icons.py`) rifiuta, riga per riga e con il motivo:
 - una fase che non è tra gli `stages` della specie;
 - una tessera che non è nelle `tiles` di quella fase;
 - una riga con sia `fase` sia `variante`.

@@ -1,3 +1,4 @@
+import {CONTENT_RESOURCES} from '../../js/content-schema.js';
 import {test,expect} from '@playwright/test';
 import {execFileSync} from 'node:child_process';
 import {createHash,randomBytes} from 'node:crypto';
@@ -25,6 +26,8 @@ async function api(page,path,method='GET',data,headers={}) {
   return page.evaluate(async({path,method,data,headers})=>{const r=await fetch(path,{method,cache:'no-store',headers:{...(data===undefined?{}:{'content-type':'application/json'}),...headers},body:data===undefined?undefined:JSON.stringify(data)});return{status:r.status,data:await r.json()};},{path,method,data,headers});
 }
 const cms=(page,path,method='GET',data,headers)=>api(page,'/api/cms/v1/'+path,method,data,headers);
+// CSV con virgolette (RFC 4180), separatore a scelta: per leggere le esportazioni del questionario.
+function parseCsv(text,sep){const rows=[];let row=[],cell='',quoted=false;for(let i=0;i<text.length;i++){const c=text[i];if(quoted){if(c==='"'&&text[i+1]==='"'){cell+='"';i++;}else if(c==='"')quoted=false;else cell+=c;}else if(c==='"')quoted=true;else if(c===sep){row.push(cell);cell='';}else if(c==='\r'&&text[i+1]==='\n'){row.push(cell);rows.push(row);row=[];cell='';i++;}else cell+=c;}if(cell||row.length){row.push(cell);rows.push(row);}return rows;}
 
 test('ruoli del profilo: utente, editor delle bozze e amministratore',async({browser})=>{
   for(const[id,role,label]of[['cms-test-reader','member','Utente'],['cms-test-editor','editor','Editor'],['cms-test-admin','admin','Amministratore']]){
@@ -32,9 +35,10 @@ test('ruoli del profilo: utente, editor delle bozze e amministratore',async({bro
     page.on('pageerror',e=>errors.push(e.message));
     await page.route('https://**/*',r=>r.abort());
   await page.route('**/api/weather/v1/forecast?**',r=>r.fulfill({status:503,json:{error:'Meteo non disponibile nella prova CMS.'}}));
-    await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','32026-10-16'));
+    await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','62026-10-20'));
     await loginFixture(page,id);await page.goto('/');
     const me=await cms(page,'me');expect(me.status).toBe(200);expect(me.data.user.role).toBe(role);
+    expect((await api(page,'/api/community/session')).data.user.role).toBe(role);
     if(role==='member'){
       expect(me.data.user.scopes).toEqual([]);expect((await cms(page,'items')).status).toBe(403);
       expect((await cms(page,'items/ui-copy','PATCH',{role:'admin',data:{}},{'if-match':'"0"'})).status).toBe(403);
@@ -67,8 +71,9 @@ test('ruoli del profilo: utente, editor delle bozze e amministratore',async({bro
       await dialog.locator('.profile-actions [data-close]').click();await expect(dialog).toHaveCount(0);
     }
     if(role==='editor'){
-      await page.goto('/redazione');await expect(page.locator('#cms-workspace')).toBeVisible();await expect(page.locator('#cms-identity')).toContainText('Editor');
-      await expect(page.locator('[data-save]')).toBeEnabled();await expect(page.locator('[data-publish]')).toBeDisabled();await expect(page.locator('#cms-agents')).toBeHidden();
+      await page.goto('/redazione');await expect(page.locator('#cms-workspace')).toBeVisible();
+  await page.locator('#cms-content-tab').click();await expect(page.locator('#cms-identity')).toContainText('Editor');
+      await expect(page.locator('[data-save]')).toBeEnabled();await expect(page.locator('[data-publish]')).toBeDisabled();await expect(page.locator('#cms-agents')).toBeHidden();await expect(page.locator('#cms-survey')).toBeHidden();
       await page.locator('[data-resource="species-traits"]').click();await expect(page.locator('[data-reviewed]')).toHaveCount(0);
     }
     expect(errors).toEqual([]);await context.close();
@@ -79,7 +84,7 @@ test('redazione, bozze, pubblicazione, conflitti, agenti e catalogo condiviso',a
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.route('https://**/*',r=>r.abort());
   await page.route('**/api/weather/v1/forecast?**',r=>r.fulfill({status:503,json:{error:'Meteo non disponibile nella prova CMS.'}}));
-  await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','32026-10-16'));
+  await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','62026-10-20'));
   await page.goto('/redazione');
   await expect(page.locator('#cms-access-status')).toContainText('Accedi');
   expect((await cms(page,'items')).status).toBe(401);
@@ -87,8 +92,40 @@ test('redazione, bozze, pubblicazione, conflitti, agenti e catalogo condiviso',a
   expect((await cms(reader,'me')).data.user.scopes).toEqual([]);expect((await cms(reader,'me')).data.user.role).toBe('member');expect((await cms(reader,'items')).status).toBe(403);await other.close();
   await loginFixture(page);await page.reload();
   await expect(page.locator('#cms-workspace')).toBeVisible();
+  await page.locator('#cms-content-tab').click();
   await expect(page.locator('[data-profile-label]')).toHaveText('Matteo');
-  await expect(page.locator('[data-resource]')).toHaveCount(21);
+  await expect(page.locator('[data-resource]')).toHaveCount(CONTENT_RESOURCES.length);
+  // Risposte al questionario: pannello solo per gli amministratori (conteggio, esportazione, ricerca e cancellazione per ricevuta).
+  // Una risposta vera, inviata dalla stessa origine come fa la pagina /questionario, con un testo che sembra una formula.
+  const sent=await api(page,'/api/survey/v1/responses','POST',{survey:'esperti-reatino',version:1,website:'',respondent:{name:'Prova redazione'},consent:{anonymousUse:true,recontact:false,diary:false},answers:{profile:{years:30},risks:{knowsPoisonings:'sì',poisonings:'=SOMMA(1;2), -3'}}});
+  expect(sent.status).toBe(201);const receipt=sent.data.receipt;
+  const surveyGets=[];page.on('request',r=>{if(r.url().includes('/api/survey/v1/responses?'))surveyGets.push(new URL(r.url()).searchParams.get('format'));});
+  await page.locator('#cms-survey').click();const survey=page.locator('#cms-survey-dialog');await expect(survey).toBeVisible();
+  await expect(survey.locator('#cms-survey-count')).toContainText(/rispost[ae]\. L’ultima è arrivata il /);
+  // il conteggio non scarica le risposte (format=count): nomi e contatti restano sul server finché non si esporta
+  expect(surveyGets).toEqual(['count']);
+  const fs=await import('node:fs');
+  const download=async name=>{const d=page.waitForEvent('download');await survey.getByRole('button',{name,exact:true}).click();const file=await d;return{name:file.suggestedFilename(),text:fs.readFileSync(await file.path(),'utf8')};};
+  const comma=await download('CSV con la virgola'),excel=await download('CSV per Excel');
+  expect(comma.name).toMatch(/^questionario-esperti-reatino-\d{4}-\d{2}-\d{2}\.csv$/);expect(excel.name).toMatch(/^questionario-esperti-reatino-\d{4}-\d{2}-\d{2}-excel\.csv$/);
+  expect(comma.text.startsWith('\uFEFFid,created_at,survey,')).toBe(true);expect(excel.text.startsWith('\uFEFFid;created_at;survey;')).toBe(true);
+  // stesse colonne con i due separatori; l'apostrofo contro le formule a inizio cella, e nel file per Excel anche dopo la virgola
+  const [hc,...rc]=parseCsv(comma.text.slice(1),','),[hx,...rx]=parseCsv(excel.text.slice(1),';');expect(hx).toEqual(hc);
+  const row=(rows,head)=>rows.find(r=>r[head.indexOf('receipt')]===receipt),rowC=row(rc,hc),rowX=row(rx,hx);
+  expect(rowC).toHaveLength(hc.length);expect(rowX).toHaveLength(hx.length);
+  expect(rowC[hc.indexOf('name')]).toBe('Prova redazione');expect(rowX[hx.indexOf('name')]).toBe('Prova redazione');
+  expect(rowC[hc.indexOf('risks.poisonings.text')]).toBe("'=SOMMA(1;2), -3");expect(rowX[hx.indexOf('risks.poisonings.text')]).toBe("'=SOMMA(1;2),' -3");
+  expect(rowX[hx.indexOf('risks.knowsPoisonings')]).toBe('sì');
+  // richiesta di cancellazione: il codice si trova anche in minuscolo e con il trattino, si cancella dopo una conferma
+  const find=async code=>{await survey.getByLabel('Richiesta di cancellazione: codice ricevuta').fill(code);await survey.getByRole('button',{name:'Cerca la risposta'}).click();};
+  await find(`${receipt.slice(0,4)}-${receipt.slice(4)}`.toLowerCase());
+  const result=survey.locator('#cms-survey-result');await expect(result).toContainText(`Ricevuta ${receipt}`);await expect(result).toContainText('nome: Prova redazione');
+  await result.getByRole('button',{name:'Cancella questa risposta'}).click();await expect(result).toContainText('La cancellazione non si può annullare.');
+  expect((await api(page,`/api/survey/v1/responses?survey=esperti-reatino&format=json&receipt=${receipt}`)).data.count).toBe(1);
+  await result.getByRole('button',{name:'Conferma: cancella per sempre'}).click();await expect(result).toContainText(`Risposta ${receipt} cancellata.`);
+  expect((await api(page,`/api/survey/v1/responses?survey=esperti-reatino&format=json&receipt=${receipt}`)).data.count).toBe(0);
+  await find(receipt);await expect(result).toContainText('Nessuna risposta con questo codice');
+  await survey.locator('[data-close]').click();await expect(survey).toBeHidden();
   const original=(await api(page,'/api/content/v1/snapshot')).data;
   await page.locator('[data-resource="guides"]').click();
   await expect(page.locator('#cms-editor > h2')).toHaveText('Articoli e taccuini');
@@ -129,7 +166,7 @@ test('redazione, bozze, pubblicazione, conflitti, agenti e catalogo condiviso',a
   expect((await cms(page,'releases','POST',{baseRelease:list.release,items:[{id:'glossary',version:glossaryDraft.data.version}]})).status).toBe(422);
   expect((await api(page,'/api/content/v1/snapshot')).data.resources.glossary).toEqual(original.resources.glossary);
   expect((await cms(page,'releases','POST',{baseRelease:list.release,items:[{id:'glossary',version:glossaryDraft.data.version}],reviewed:true})).status).toBe(201);
-  await page.goto('/redazione');await page.locator('[data-resource="media-glossary"]').click();
+  await page.goto('/redazione');await page.locator('#cms-content-tab').click();await page.locator('[data-resource="media-glossary"]').click();
   await page.locator('[data-record]').selectOption('pliche');
   await page.locator('details.cms-fieldset > summary',{hasText:'Illustrazioni'}).click();
   await expect(page.getByLabel('Immagine generata',{exact:true})).toBeEnabled();
@@ -148,7 +185,7 @@ test('redazione, bozze, pubblicazione, conflitti, agenti e catalogo condiviso',a
   expect((await api(page,'/api/content/v1/snapshot')).data.resources.guides).toEqual(original.resources.guides);
   const readonly=(await cms(page,'items/habitat')).data;
   expect((await cms(page,'items/habitat','PATCH',{data:readonly.data},{'if-match':'"0"'})).status).toBe(403);
-  await page.setViewportSize({width:390,height:844});await page.goto('/redazione');
+  await page.setViewportSize({width:390,height:844});await page.goto('/redazione');await page.locator('#cms-content-tab').click();
   await page.locator('[data-resource="glossary"]').click();await page.locator('[data-record]').selectOption({label:'Volva'});await expect(page.getByRole('textbox',{name:'Definizione',exact:true})).toHaveValue(/velo generale/);await expect(page.getByRole('combobox',{name:'Categoria',exact:true})).toHaveValue('Funghi');
   await page.locator('[data-resource="guides"]').click();
   await expect(page.locator('#cms-editor > h2')).toHaveText('Articoli e taccuini');

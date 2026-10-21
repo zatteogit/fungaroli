@@ -2,6 +2,10 @@
 
 Il CMS essenziale gestisce tutte le sezioni dei contenuti tramite moduli per le persone e API per gli agenti. La redazione è disponibile su `/redazione`, con lo stesso profilo e la stessa passkey dell’app. L’account indicato dal gestore ha il ruolo amministratore; la semplice registrazione di un profilo non dà accesso editoriale.
 
+## Frasi del giorno
+
+La sezione **Frasi del giorno** gestisce citazioni, aforismi, battute e barzellette con tag per tema, tono, contesto, momento e stagione. Il documento `daily-thoughts` usa il database e lo snapshot esistenti. Regole editoriali, fonti e selezione in [frasi-del-giorno.md](frasi-del-giorno.md).
+
 ## Usare la redazione
 
 Dalla home, il pulsante in alto mostra **Accedi** oppure il nome del profilo, per esempio **Matteo**. Il profilo mostra il ruolo verificato dal server; **Apri la redazione** compare per editor e amministratori. È possibile aprire direttamente [la redazione](https://fungaroli.zatteo.workers.dev/redazione).
@@ -17,6 +21,8 @@ La registrazione assegna un profilo ordinario. Gli editor sono autorizzati dal g
 Scegli una sezione, poi una voce. I campi descrivono nomi, testi, caratteri, immagini e fonti. Gli articoli hanno un editor con grassetto, corsivo, elenchi e sottotitoli. Per creare una voce, usa un ID stabile con minuscole, numeri e trattini: l’ID non va cambiato quando cambia il titolo. Le nuove schede partono da campi vuoti; non ereditano i caratteri o le fonti di un’altra specie.
 
 **Salva bozza** registra una revisione privata. **Anteprima e controlli** mostra il risultato e le differenze rispetto al pubblicato. **Pubblica bozza** aggiorna il sito al prossimo caricamento. Ogni sezione è un documento: la pubblicazione include tutte le sue voci modificate. Una pubblicazione tramite API può includere più sezioni, aggiornandole insieme.
+
+**Risposte al questionario (dal 16/10).** Gli amministratori hanno anche il pulsante **Risposte al questionario**: conteggio, download in «CSV per Excel» (punto e virgola, si apre con un doppio clic in Excel in italiano), CSV con la virgola e JSON, ricerca per codice ricevuta e cancellazione su richiesta. Le risposte non sono contenuti del CMS: stanno nel database della comunità e non entrano nello snapshot. Dettagli in [questionario.md](https://github.com/zatteogit/fungaroli/blob/claude/brave-tesla-wu0a2b/docs/questionario.md).
 
 La cronologia recupera una revisione precedente come nuova bozza. Controlla il risultato e pubblicalo per ripristinare il sito: la cronologia rimane disponibile. Se una scheda è cambiata mentre lavoravi, il server rifiuta la sovrascrittura; rileggi e riconcilia le modifiche. I conflitti vengono controllati a livello di sezione in questa prima versione.
 
@@ -97,6 +103,7 @@ Il contratto è in [cms.openapi.json](cms.openapi.json). Gli endpoint principali
 | `GET, POST /api/cms/v1/tokens` | Gestisce le credenziali degli agenti; solo amministratori. |
 | `DELETE /api/cms/v1/tokens/{id}` | Revoca una credenziale; solo amministratori. |
 | `GET /api/cms/v1/audit` | Log delle operazioni; solo amministratori. |
+| `GET /api/cms/v1/metrics/weather?days=30` | Misure del servizio meteo per giorno (chiamate e quota stimata di Open-Meteo, errori, latenza, uso della cache); solo amministratori. Dettagli in [meteo-cache.md](meteo-cache.md#misure). |
 | `GET /api/content/v1/snapshot` | Export pubblico e coerente dei soli contenuti pubblicati. L'ETag è l'ID della release: con `If-None-Match` uguale risponde 304, anche se l'ETag torna debole (`W/"…"`, come lo rimanda il browser dopo la compressione di Cloudflare). |
 
 ## Architettura e gestione
@@ -124,3 +131,49 @@ L’app carica un singolo snapshot completo. Il backend delle segnalazioni legge
 Per un backup esportare D1 con gli strumenti Cloudflare: l’export pubblico conserva il sito pubblicato, ma non sostituisce il backup di bozze, revisioni e audit. D1 Time Travel dipende dal piano disponibile. Per aggiornare la versione Artifact, esportare i contenuti pubblici, sostituire i JSON della copia di build e rigenerarla; il build incorpora anche articoli e testi della home.
 
 Il primo passo per aumentare il numero di redattori o importare cataloghi molto grandi è separare i documenti in record individuali, mantenendo gli stessi ID e le release coerenti. Seguono upload R2, ricerca editoriale più ricca e pubblicazioni programmate. Un eventuale server MCP può adattare le API esistenti: non serve un secondo percorso di scrittura.
+
+## Dashboard amministrativa
+
+Gli amministratori aprono ora la redazione sulla **Dashboard**; **Contenuti** conserva l’editor esistente. La dashboard mostra questionari, segnalazioni e annotazioni condivise aggregate, con finestra di sette giorni e stato effettivo dell’uso nel modello. Il limite dell’influenza delle segnalazioni sull’ordine delle uscite è regolabile fra 0 e 10%, con motivo, controllo della versione e storico. I questionari e le altre annotazioni non hanno un peso automatico. API `GET/PATCH /api/cms/v1/dashboard`, solo amministratori. Dettagli, tempi di applicazione e limiti: [Dashboard di amministrazione](dashboard-amministrazione.md).
+
+## Catalogo Animali
+
+La risorsa `animals` contiene fonti con ID e schede in `items`. Ogni frase delle
+liste osservazione, ambiente, abitudini, ecologia e cautele cita almeno una fonte
+presente nella scheda. `publicationStatus: draft` esclude la voce da catalogo,
+ricerca e collegamenti diretti; `ready` espone soltanto i dati verificati presenti.
+Ogni modifica richiede revisione scientifica nel normale flusso del CMS.
+
+Le note `knownGaps` sono il registro editoriale delle lacune e non vengono esposte
+come lista di attività nell’app. Non aggiungere avvistamenti, punteggi di rischio,
+probabilità o procedure sanitarie per completare una scheda. Foto reali soltanto,
+con fonte, autore e licenza; le foto mancanti stanno in `asset-pending.json`.
+Il seed della nuova risorsa entra nello snapshot; gli aggiornamenti del repository
+rispettano bozze e contenuti modificati dagli autori.
+
+## Spazio di ricerca e questionari (20 ottobre 2026)
+
+La redazione separa Panoramica, Segnalazioni, Fonti e ricerche, Uso nel motore, Questionari, Contenuti e Amministrazione. Le osservazioni si ordinano per giorno della raccolta; i filtri provincia, intervallo, revisione, fonte ed esito valgono anche nell’esportazione della vista. «Rieti · ultimi 14 giorni» usa il giorno dichiarato dell’osservazione, non la pubblicazione.
+
+`GET /api/cms/v1/external-observations/overview` restituisce conteggi, copertura temporale, province e uso nel motore. Il numero di voci non è un conteggio di uscite indipendenti o di abbondanza. Il grafico comprende solo date esatte. Le fonti conservano URL, query, accesso, copertura, cursore, ultimo controllo e storico.
+
+### Questionari dalla dashboard e da agenti
+
+Le risposte pubbliche e quelle inserite dalla redazione usano lo stesso schema e lo stesso database. La redazione può condurre un’intervista (`interview`) o trascrivere risposte già raccolte (`transcription`), cercare, modificare, riprendere risposte da una revisione precedente ed eliminare. Non è un editor della definizione delle domande. Il consenso è esplicito e inizialmente non selezionato. Le testimonianze non modificano automaticamente il modello.
+
+Un agente richiede la risorsa **`survey-responses`**, scope **`read`** e, per mutare, **`write`**. Il token si crea in «Accesso degli agenti», con scadenza e risorse limitate. Tutte le risposte API sono private (`Cache-Control: no-store`).
+
+- `GET /api/cms/v1/survey-responses/schema`: schema canonico, liste e scadenze.
+- `GET /api/cms/v1/survey-responses?q=...&mode=interview&page=0`: ricerca, 30 risultati per pagina. `includeAnswers=true` include le risposte complete correnti per esportazioni a pagine; nomi e contatti restano dati privati.
+- `GET /api/cms/v1/survey-responses/:id`: dettaglio e ultime 30 revisioni.
+- `POST /api/cms/v1/survey-responses`: crea con `{data, mode, collectedOn, reason}`. `data` segue lo schema restituito da `/schema`, inclusi `survey`, `version`, `respondent`, `consent`, `answers`.
+- `PATCH /api/cms/v1/survey-responses/:id`: stessi campi, più `revision` letta dal dettaglio. Conflitto `412`: rileggere e riconciliare; nessuna sovrascrittura silenziosa.
+- `DELETE /api/cms/v1/survey-responses/:id`: elimina risposta, metadati e storico.
+
+Le revisioni conservano risposte, provenienza, data dichiarata, autore e motivo; non archiviano copie storiche dei contatti. Il trigger di eliminazione copre anche cancellazione pubblica e pulizia delle scadenze. Il CSV per Excel continua a usare l’export originario; il JSON della nuova vista rispetta i filtri. Lo storico non attribuisce ai rispondenti le modifiche degli amministratori o degli agenti.
+
+Ricerca verificata: [audit delle proposte Gemini](research/2026-10-20-verifica-gemini.md). Il seed incrementale corregge solo proposte importate ancora alla revisione 0; preserva gli interventi umani e scrive lo storico. Nessuna coordinata precisa o nome di osservatore viene importato.
+
+## Sentieri: provenienza e riferimenti esterni (20 ottobre 2026)
+
+Il documento `trails` espone `sourceEvidence`, `publicPlaces` e `relatedLinks` nello snapshot pubblico. Punti e provenienza generati sono protetti dalla modifica editoriale; i riferimenti esterni si modificano dalla dashboard e dalle stesse API degli agenti, con revisione richiesta alla pubblicazione. Un link revisionato non certifica identità del percorso né apertura/accesso: le note dichiarano la relazione effettiva. Contratto, fonti e lotto iniziale in [Sentieri aperti e riferimenti esterni](sentieri-fonti-aperte-2026-10-20.md).

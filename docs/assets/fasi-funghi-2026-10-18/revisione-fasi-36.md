@@ -1,0 +1,9 @@
+# Fasi36 — Tylopilus felleus
+
+Due raster generati ora. Fonte età: https://it.wikipedia.org/wiki/Tylopilus_felleus, estratti stages e traits_notes attuali. Riferimenti: foto locale tylopilus-felleus-inat1-hd.webp e master crema/piano approvato tylopilus-crema-piano-2026-10-18-r03.png. La foto mostra alternativa bruna, non prescrive il colore crema della base. Prompt effettivi conservati. Originali tool: exec-66465981-7b16-41d3-a557-0fff83e2cfe3.png e exec-9bf4b92d-b96a-47f2-8547-0e3ad0b41f80.png in /workspace/generated_images/.
+
+r01: approvate SOLO celle0,2,3,5, cappelli/interi giovane e adulto. Cap crema correttamente emisferico da giovane e molto basso/piano da adulto; interi coerenti per riga, pori bianchi poi rosa, rete bruna grossolana sul gambo ingrossato/clavato, nessun anello/volva/lamelle. Scartate celle1,4: dettagli dei pori contaminati dal gambo intero, inquadratura inadatta. Non inserirle nel manifest.
+
+r02: corretti i due soli dettagli sotto, con piccolo taglio centrale circolare del gambo, superficie bianca poi rosa con piccoli fori, nessuna lamella o rete sul disco. La tavola ha collocato i dettagli nelle celle0 e6 anziché0 e3 richieste: registrazione per baricentro rilevata con sheet_cells, nessuna cella mozzata o sovrapposta. Il bordo è leggermente ovale in verticale; resta un dettaglio sotto frontale, senza gambo pendente. Questa lieve stilizzazione non modifica colore né tipo dell'imenoforo.
+
+Controllati entrambi i raster a1254px e ogni tessera a64px. Differenza di età riconoscibile e colori documentati. I pori e il reticolo sono simbolici, non una densità misurata. Esito agente:6tessere candidate, due scarti conservati nella sorgente r01 ma esclusi dall'import. Revisione indipendente del coordinatore necessaria prima import. Nessun dato biologico modificato.

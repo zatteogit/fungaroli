@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "terms": [
     {
       "id": "difficolta-t",
@@ -3249,6 +3249,191 @@
           "title": "Wikipedia · Viticcio",
           "url": "https://it.wikipedia.org/wiki/Viticcio"
         }
+      ]
+    },
+    {
+      "id": "impollinazione",
+      "term": "Impollinazione",
+      "category": "Animali",
+      "aliases": [],
+      "definition": "Trasferimento del polline tra le parti riproduttive dei fiori. Può avvenire grazie agli animali, al vento o all’acqua.",
+      "observe": "Osserva le visite ai fiori: il semplice posarsi su un fiore non dimostra che un animale stia trasportando polline.",
+      "related": [
+        "impollinatore"
+      ],
+      "sources": [
+        {
+          "title": "ISPRA · Impollinatori",
+          "url": "https://www.isprambiente.gov.it/it/attivita/biodiversita/ispra-e-la-biodiversita/impollinatori/impollinatori"
+        }
+      ],
+      "contexts": [
+        "Animali",
+        "Piante",
+        "Alberi",
+        "Bosco"
+      ]
+    },
+    {
+      "id": "impollinatore",
+      "term": "Impollinatore",
+      "category": "Animali",
+      "aliases": [
+        "impollinatori"
+      ],
+      "definition": "Animale che trasporta polline tra i fiori, contribuendo alla riproduzione delle piante. Ne fanno parte api, farfalle e molti altri animali.",
+      "observe": "Non tutti gli impollinatori sono api e non tutte le visite ai fiori hanno lo stesso ruolo.",
+      "related": [
+        "impollinazione"
+      ],
+      "sources": [
+        {
+          "title": "ISPRA · Impollinatori",
+          "url": "https://www.isprambiente.gov.it/it/attivita/biodiversita/ispra-e-la-biodiversita/impollinatori/impollinatori"
+        }
+      ],
+      "contexts": [
+        "Animali",
+        "Piante",
+        "Alberi",
+        "Bosco"
+      ]
+    },
+    {
+      "id": "metamorfosi-completa",
+      "term": "Metamorfosi completa",
+      "category": "Animali",
+      "aliases": [
+        "metamorfosi"
+      ],
+      "definition": "Sviluppo che nelle farfalle comprende quattro stadi: uovo, larva o bruco, pupa o crisalide e adulto.",
+      "observe": "Bruco e farfalla adulta hanno aspetto e abitudini diversi: non sono specie differenti.",
+      "related": [
+        "larva",
+        "crisalide"
+      ],
+      "sources": [
+        {
+          "title": "Aree Protette Alpi Marittime · Ciclo di sviluppo della farfalla",
+          "url": "https://www.areeprotettealpimarittime.it/citizen-science/effetto-farfalla/ciclo-di-sviluppo-della-farfalla"
+        }
+      ],
+      "contexts": [
+        "Animali"
+      ]
+    },
+    {
+      "id": "larva",
+      "term": "Larva",
+      "category": "Animali",
+      "aliases": [
+        "larve",
+        "bruco",
+        "bruchi"
+      ],
+      "definition": "Stadio giovanile delle farfalle, chiamato bruco, che segue la schiusa dell’uovo e precede la crisalide.",
+      "observe": "La parola larva si usa anche per altri animali: non tutte le larve sono bruchi.",
+      "related": [
+        "metamorfosi-completa",
+        "crisalide"
+      ],
+      "sources": [
+        {
+          "title": "Aree Protette Alpi Marittime · Ciclo di sviluppo della farfalla",
+          "url": "https://www.areeprotettealpimarittime.it/citizen-science/effetto-farfalla/ciclo-di-sviluppo-della-farfalla"
+        }
+      ],
+      "contexts": [
+        "Animali"
+      ]
+    },
+    {
+      "id": "crisalide",
+      "term": "Crisalide",
+      "category": "Animali",
+      "aliases": [
+        "crisalidi",
+        "pupa",
+        "pupe"
+      ],
+      "definition": "Stadio di pupa delle farfalle, tra il bruco e l’adulto, durante il quale avviene la trasformazione del corpo.",
+      "observe": "La crisalide è uno stadio dell’animale; non è il nome di un eventuale involucro di seta.",
+      "related": [
+        "larva",
+        "metamorfosi-completa"
+      ],
+      "sources": [
+        {
+          "title": "Aree Protette Alpi Marittime · Ciclo di sviluppo della farfalla",
+          "url": "https://www.areeprotettealpimarittime.it/citizen-science/effetto-farfalla/ciclo-di-sviluppo-della-farfalla"
+        }
+      ],
+      "contexts": [
+        "Animali"
+      ]
+    },
+    {
+      "id": "spiritromba",
+      "term": "Spiritromba",
+      "category": "Animali",
+      "aliases": [
+        "spirotromba"
+      ],
+      "definition": "Apparato boccale avvolgibile con cui molte farfalle adulte aspirano liquidi come il nettare. A riposo resta arrotolato sotto il capo.",
+      "observe": "Puoi osservarne lo svolgimento quando una farfalla si alimenta su un fiore.",
+      "related": [
+        "impollinazione"
+      ],
+      "sources": [
+        {
+          "title": "Aree Protette Alpi Marittime · Morfologia della farfalla",
+          "url": "https://www.areeprotettealpimarittime.it/citizen-science/effetto-farfalla/morfologia-della-farfalla"
+        }
+      ],
+      "contexts": [
+        "Animali"
+      ]
+    },
+    {
+      "id": "palchi",
+      "term": "Palchi",
+      "category": "Animali",
+      "aliases": [
+        "palco"
+      ],
+      "definition": "Strutture ossee presenti sul capo dei cervi maschi. Cadono e ricrescono ogni anno; durante la crescita sono rivestite dal cosiddetto velluto.",
+      "observe": "Nel cervo la presenza dei palchi distingue il maschio dalla femmina.",
+      "related": [],
+      "sources": [
+        {
+          "title": "Parco Nazionale d’Abruzzo, Lazio e Molise · Cervo",
+          "url": "https://www.parcoabruzzo.it/fauna.schede.dettaglio.php?id=313"
+        }
+      ],
+      "contexts": [
+        "Animali"
+      ]
+    },
+    {
+      "id": "bramito",
+      "term": "Bramito",
+      "category": "Animali",
+      "aliases": [
+        "bramiti"
+      ],
+      "definition": "Richiamo potente emesso dal cervo maschio, particolarmente evidente durante la stagione degli amori.",
+      "observe": "Il richiamo può segnalare un cervo anche quando l’animale resta nascosto nel bosco.",
+      "related": [
+        "palchi"
+      ],
+      "sources": [
+        {
+          "title": "Parco Nazionale d’Abruzzo, Lazio e Molise · Cervo",
+          "url": "https://www.parcoabruzzo.it/fauna.schede.dettaglio.php?id=313"
+        }
+      ],
+      "contexts": [
+        "Animali"
       ]
     }
   ]

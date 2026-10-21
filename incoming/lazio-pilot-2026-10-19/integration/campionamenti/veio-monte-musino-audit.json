@@ -1,0 +1,81 @@
+{
+ "started": "2026-10-19T10:51:19.273339+00:00",
+ "seed": {
+  "id": "veio-monte-musino",
+  "name": "Veio – Monte Musino",
+  "lat": 42.0978367,
+  "lon": 12.4401353,
+  "radius_m": 1500,
+  "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+  "province": [
+   "RM"
+  ],
+  "coordinateProvenance": {
+   "method": "official_trace_bbox_midpoint",
+   "sourceUrl": "https://www.parchilazio.it/documenti/schede/monte_musino.kml",
+   "bbox": {
+    "west": 12.4372474,
+    "south": 42.0955103,
+    "east": 12.4430232,
+    "north": 42.1001632
+   },
+   "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+  },
+  "collectionStatus": "unknown",
+  "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita.",
+  "collectionSourceUrl": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+  "publicationStatus": "active",
+  "manager": "Ente Parco di Veio, 06 9042774, protocollo@parcodiveio.it",
+  "researchGroup": "nord",
+  "officialTrailRefs": [
+   "209d"
+  ],
+  "officialTrailNameMatches": []
+ },
+ "elevation": {
+  "min": 167,
+  "p25": 219,
+  "median": 263,
+  "p75": 300,
+  "max": 384
+ },
+ "suggestedBandsM": [
+  220,
+  260,
+  300
+ ],
+ "forestPolygonCount": 40,
+ "habitatSamples": 317,
+ "roadErrors": [],
+ "trails": {
+  "listedRelations": 6,
+  "requestedRefs": [
+   "209d"
+  ],
+  "requestedDistinctiveNames": [],
+  "matchedRelations": [
+   {
+    "relation": 13128911,
+    "ref": "209D",
+    "source": "https://www.openstreetmap.org/relation/13128911",
+    "license": "ODbL-1.0",
+    "officialTagLengthM": 800.0,
+    "mappedLengthM": 820,
+    "inZoneLengthM": 820.7743044234239,
+    "sampleCount": 8,
+    "note": "Reference match with institutional itinerary; geometry independently obtained from OSM via Waymarked Trails. Match does not certify exact geometric identity or current opening."
+   }
+  ],
+  "unmatchedRefs": [],
+  "driveError": null,
+  "geometryStatus": "matched_osm_geometry",
+  "coverageLimit": 100
+ },
+ "status": "complete",
+ "finished": "2026-10-19T10:52:24.181073+00:00",
+ "demProvider": "copernicus-glo90-openmeteo",
+ "demResolutionM": 90,
+ "habitatStatus": "complete",
+ "grid": 21,
+ "gridStepM": 150.0
+}

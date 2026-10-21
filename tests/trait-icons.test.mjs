@@ -44,3 +44,24 @@ test('le combinazioni colore + forma elencate hanno cappello e gambo e usano val
     for (const part of ['cappello', 'gambo']) assert.ok(file(`${key}-${part}-${c}-${f}`), `manca ${key}-${part}-${c}-${f}`);
   }
 });
+
+test('le forme approvate convivono con le fasi e conservano la provenienza in archivio', () => {
+  const dir = new URL('../archive/forme-con-fasi/', import.meta.url);
+  const arch = JSON.parse(readFileSync(new URL('index.json', dir)));
+  assert.ok(Object.keys(arch.items).length > 0);
+  for (const [name, r] of Object.entries(arch.items)) {
+    assert.ok(taxa[r.specie]?.stages?.length, `${name}: la specie non ha le fasi`);
+    assert.ok(taxa[r.specie].traits.cap_shape.includes(r.forma), `${name}: forma non nei dati`);
+    assert.equal(name, `${r.specie}-${r.tessera}-${r.forma}`);
+    assert.ok(existsSync(new URL(`${name}.webp`, dir)), `${name}: file mancante`);
+    assert.ok(r.tavola && Number.isInteger(r.cella) && r.prompt, `${name}: provenienza incompleta`);
+    assert.ok(file(name), `${name}: forma approvata mancante in assets/traits`);
+    assert.ok((icons.taxa[r.specie]?.shapes?.values || []).includes(r.forma), `${name}: forma approvata mancante nell'indice`);
+    for (const stage of taxa[r.specie].stages) {
+      if (stage.tiles.every(part=>file(`${r.specie}-${part}-fase-${stage.id}`)))
+        assert.ok(icons.taxa[r.specie]?.stages?.includes(stage.id), `${name}: fase consegnata ${stage.id} mancante nell'indice`);
+    }
+  }
+  const ignore = readFileSync(new URL('../.assetsignore', import.meta.url), 'utf8').split('\n').map((x) => x.trim());
+  assert.ok(ignore.includes('archive'), '.assetsignore deve escludere archive/');
+});

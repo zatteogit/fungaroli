@@ -1,4 +1,227 @@
 {
-  "note": "Infografiche di riconoscimento. Per aggiungerne una: salva l'immagine in assets/infografiche/<id>.webp (o .png/.jpg) e aggiungi qui una voce con file e credit. I brief per generarle sono in docs/infografiche/<id>.md.",
-  "species": {}
+  "note": "Tavole sorgenti generate con AI. La pubblicazione richiede publication.status=approved e publication.visibleLabels=true: nomi delle specie, separazione dei sosia e caratteri validati, visibili anche a schermo intero. Le tavole grezze restano sospese.",
+  "species": {
+    "caesarea": {
+      "file": "assets/infografiche/caesarea.webp",
+      "alt": "Tavola illustrata di confronto: Ovolo buono e le specie con cui si confonde, con sezione e dettagli dei caratteri",
+      "author": "Fronda/Fungaroli, dal brief docs/infografiche/caesarea.md, rivista dal progetto",
+      "license": "CC BY-SA 4.0",
+      "page": "https://github.com/zatteogit/fungaroli/blob/claude/brave-tesla-wu0a2b/docs/infografiche/caesarea.md",
+      "generated": true,
+      "credit": "Illustrazione generata con AI (image_gen) dal brief del progetto, senza opere di terzi: non è una foto e non serve a identificare.",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it",
+      "note": "Illustrazione generata con AI (image_gen), senza opere di terzi",
+      "review": "Da rivedere con un micologo",
+      "publication": {
+        "status": "suspended",
+        "visibleLabels": false,
+        "reason": "Tavola di confronto priva di nomi e separazione visibile dei sosia. Revisione anatomica e impaginazione da completare prima della pubblicazione.",
+        "reviewedOn": "2026-10-19"
+      }
+    },
+    "mellea": {
+      "file": "assets/infografiche/mellea.webp",
+      "alt": "Tavola illustrata di confronto: Chiodino e le specie con cui si confonde, con sezione e dettagli dei caratteri",
+      "author": "Fronda/Fungaroli, dal brief docs/infografiche/mellea.md, rivista dal progetto",
+      "license": "CC BY-SA 4.0",
+      "page": "https://github.com/zatteogit/fungaroli/blob/claude/brave-tesla-wu0a2b/docs/infografiche/mellea.md",
+      "generated": true,
+      "credit": "Illustrazione generata con AI (image_gen) dal brief del progetto, senza opere di terzi: non è una foto e non serve a identificare.",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it",
+      "note": "Illustrazione generata con AI (image_gen), senza opere di terzi",
+      "publication": {
+        "status": "suspended",
+        "visibleLabels": false,
+        "reason": "Tavola di confronto priva di nomi e separazione visibile dei sosia. Revisione anatomica e impaginazione da completare prima della pubblicazione.",
+        "reviewedOn": "2026-10-19"
+      }
+    },
+    "procera": {
+      "file": "assets/infografiche/procera.webp",
+      "alt": "Tavola illustrata di confronto: Mazza di tamburo e le specie con cui si confonde, con sezione e dettagli dei caratteri",
+      "author": "Fronda/Fungaroli, dal brief docs/infografiche/procera.md, rivista dal progetto",
+      "license": "CC BY-SA 4.0",
+      "page": "https://github.com/zatteogit/fungaroli/blob/claude/brave-tesla-wu0a2b/docs/infografiche/procera.md",
+      "generated": true,
+      "credit": "Illustrazione generata con AI (image_gen) dal brief del progetto, senza opere di terzi: non è una foto e non serve a identificare.",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it",
+      "note": "Illustrazione generata con AI (image_gen), senza opere di terzi",
+      "publication": {
+        "status": "suspended",
+        "visibleLabels": false,
+        "reason": "Tavola di confronto priva di nomi e separazione visibile dei sosia. Revisione anatomica e impaginazione da completare prima della pubblicazione.",
+        "reviewedOn": "2026-10-19"
+      }
+    },
+    "edulis": {
+      "file": "assets/infografiche/edulis.webp",
+      "alt": "Tavola illustrata di confronto: Porcino e le specie con cui si confonde, con sezione e dettagli dei caratteri",
+      "author": "Fronda/Fungaroli, dal brief docs/infografiche/edulis.md, rivista dal progetto",
+      "license": "CC BY-SA 4.0",
+      "page": "https://github.com/zatteogit/fungaroli/blob/claude/brave-tesla-wu0a2b/docs/infografiche/edulis.md",
+      "generated": true,
+      "credit": "Illustrazione generata con AI (image_gen) dal brief del progetto, senza opere di terzi: non è una foto e non serve a identificare.",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it",
+      "note": "Illustrazione generata con AI (image_gen), senza opere di terzi",
+      "publication": {
+        "status": "suspended",
+        "visibleLabels": false,
+        "reason": "Tavola di confronto priva di nomi e separazione visibile dei sosia. Revisione anatomica e impaginazione da completare prima della pubblicazione.",
+        "reviewedOn": "2026-10-19"
+      }
+    },
+    "pinophilus": {
+      "file": "assets/infografiche/pinophilus.webp",
+      "alt": "Tavola illustrata di confronto: Porcino rosso e le specie con cui si confonde, con sezione e dettagli dei caratteri",
+      "author": "Fronda/Fungaroli, dal brief docs/infografiche/pinophilus.md, rivista dal progetto",
+      "license": "CC BY-SA 4.0",
+      "page": "https://github.com/zatteogit/fungaroli/blob/claude/brave-tesla-wu0a2b/docs/infografiche/pinophilus.md",
+      "generated": true,
+      "credit": "Illustrazione generata con AI (image_gen) dal brief del progetto, senza opere di terzi: non è una foto e non serve a identificare.",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it",
+      "note": "Illustrazione generata con AI (image_gen), senza opere di terzi",
+      "publication": {
+        "status": "suspended",
+        "visibleLabels": false,
+        "reason": "Tavola di confronto priva di nomi e separazione visibile dei sosia. Revisione anatomica e impaginazione da completare prima della pubblicazione.",
+        "reviewedOn": "2026-10-19"
+      }
+    },
+    "aereus": {
+      "file": "assets/infografiche/aereus.webp",
+      "alt": "Tavola illustrata di confronto: Porcino nero e le specie con cui si confonde, con sezione e dettagli dei caratteri",
+      "author": "Fronda/Fungaroli, dal brief docs/infografiche/aereus.md, rivista dal progetto",
+      "license": "CC BY-SA 4.0",
+      "page": "https://github.com/zatteogit/fungaroli/blob/claude/brave-tesla-wu0a2b/docs/infografiche/aereus.md",
+      "generated": true,
+      "credit": "Illustrazione generata con AI (image_gen) dal brief del progetto, senza opere di terzi: non è una foto e non serve a identificare.",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it",
+      "note": "Illustrazione generata con AI (image_gen), senza opere di terzi",
+      "publication": {
+        "status": "suspended",
+        "visibleLabels": false,
+        "reason": "Tavola di confronto priva di nomi e separazione visibile dei sosia. Revisione anatomica e impaginazione da completare prima della pubblicazione.",
+        "reviewedOn": "2026-10-19"
+      }
+    },
+    "aestivalis": {
+      "file": "assets/infografiche/aestivalis.webp",
+      "alt": "Tavola illustrata di confronto: Porcino estivo e le specie con cui si confonde, con sezione e dettagli dei caratteri",
+      "author": "Fronda/Fungaroli, dal brief docs/infografiche/aestivalis.md, rivista dal progetto",
+      "license": "CC BY-SA 4.0",
+      "page": "https://github.com/zatteogit/fungaroli/blob/claude/brave-tesla-wu0a2b/docs/infografiche/aestivalis.md",
+      "generated": true,
+      "credit": "Illustrazione generata con AI (image_gen) dal brief del progetto, senza opere di terzi: non è una foto e non serve a identificare.",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it",
+      "note": "Illustrazione generata con AI (image_gen), senza opere di terzi",
+      "publication": {
+        "status": "suspended",
+        "visibleLabels": false,
+        "reason": "Tavola di confronto priva di nomi e separazione visibile dei sosia. Revisione anatomica e impaginazione da completare prima della pubblicazione.",
+        "reviewedOn": "2026-10-19"
+      }
+    },
+    "repandum": {
+      "file": "assets/infografiche/repandum.webp",
+      "alt": "Tavola illustrata di confronto: Steccherino dorato e le specie con cui si confonde, con sezione e dettagli dei caratteri",
+      "author": "Fronda/Fungaroli, dal brief docs/infografiche/repandum.md, rivista dal progetto",
+      "license": "CC BY-SA 4.0",
+      "page": "https://github.com/zatteogit/fungaroli/blob/claude/brave-tesla-wu0a2b/docs/infografiche/repandum.md",
+      "generated": true,
+      "credit": "Illustrazione generata con AI (image_gen) dal brief del progetto, senza opere di terzi: non è una foto e non serve a identificare.",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it",
+      "note": "Illustrazione generata con AI (image_gen), senza opere di terzi",
+      "publication": {
+        "status": "suspended",
+        "visibleLabels": false,
+        "reason": "Tavola di confronto priva di nomi e separazione visibile dei sosia. Revisione anatomica e impaginazione da completare prima della pubblicazione.",
+        "reviewedOn": "2026-10-19"
+      }
+    },
+    "cibarius": {
+      "file": "assets/infografiche/cibarius.webp",
+      "alt": "Tavola illustrata di confronto: Finferlo e le specie con cui si confonde, con sezione e dettagli dei caratteri",
+      "author": "Fronda/Fungaroli, dal brief docs/infografiche/cibarius.md, rivista dal progetto",
+      "license": "CC BY-SA 4.0",
+      "page": "https://github.com/zatteogit/fungaroli/blob/claude/brave-tesla-wu0a2b/docs/infografiche/cibarius.md",
+      "generated": true,
+      "credit": "Illustrazione generata con AI (image_gen) dal brief del progetto, senza opere di terzi: non è una foto e non serve a identificare.",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it",
+      "note": "Illustrazione generata con AI (image_gen), senza opere di terzi",
+      "publication": {
+        "status": "suspended",
+        "visibleLabels": false,
+        "reason": "Tavola di confronto priva di nomi e separazione visibile dei sosia. Revisione anatomica e impaginazione da completare prima della pubblicazione.",
+        "reviewedOn": "2026-10-19"
+      }
+    },
+    "cornucopioides": {
+      "file": "assets/infografiche/cornucopioides.webp",
+      "alt": "Tavola illustrata di confronto: Trombetta dei morti e le specie con cui si confonde, con sezione e dettagli dei caratteri",
+      "author": "Fronda/Fungaroli, dal brief docs/infografiche/cornucopioides.md, rivista dal progetto",
+      "license": "CC BY-SA 4.0",
+      "page": "https://github.com/zatteogit/fungaroli/blob/claude/brave-tesla-wu0a2b/docs/infografiche/cornucopioides.md",
+      "generated": true,
+      "credit": "Illustrazione generata con AI (image_gen) dal brief del progetto, senza opere di terzi: non è una foto e non serve a identificare.",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it",
+      "note": "Illustrazione generata con AI (image_gen), senza opere di terzi",
+      "publication": {
+        "status": "suspended",
+        "visibleLabels": false,
+        "reason": "Tavola di confronto priva di nomi e separazione visibile dei sosia. Revisione anatomica e impaginazione da completare prima della pubblicazione.",
+        "reviewedOn": "2026-10-19"
+      }
+    },
+    "virescens": {
+      "file": "assets/infografiche/virescens.webp",
+      "alt": "Tavola illustrata di confronto: Colombina verde e le specie con cui si confonde, con sezione e dettagli dei caratteri",
+      "author": "Fronda/Fungaroli, dal brief docs/infografiche/virescens.md, rivista dal progetto",
+      "license": "CC BY-SA 4.0",
+      "page": "https://github.com/zatteogit/fungaroli/blob/claude/brave-tesla-wu0a2b/docs/infografiche/virescens.md",
+      "generated": true,
+      "credit": "Illustrazione generata con AI (image_gen) dal brief del progetto, senza opere di terzi: non è una foto e non serve a identificare.",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it",
+      "note": "Illustrazione generata con AI (image_gen), senza opere di terzi",
+      "publication": {
+        "status": "suspended",
+        "visibleLabels": false,
+        "reason": "Tavola di confronto priva di nomi e separazione visibile dei sosia. Revisione anatomica e impaginazione da completare prima della pubblicazione.",
+        "reviewedOn": "2026-10-19"
+      }
+    },
+    "suillus": {
+      "file": "assets/infografiche/suillus.webp",
+      "alt": "Tavola illustrata di confronto: Pinarolo e le specie con cui si confonde, con sezione e dettagli dei caratteri",
+      "author": "Fronda/Fungaroli, dal brief docs/infografiche/suillus.md, rivista dal progetto",
+      "license": "CC BY-SA 4.0",
+      "page": "https://github.com/zatteogit/fungaroli/blob/claude/brave-tesla-wu0a2b/docs/infografiche/suillus.md",
+      "generated": true,
+      "credit": "Illustrazione generata con AI (image_gen) dal brief del progetto, senza opere di terzi: non è una foto e non serve a identificare.",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it",
+      "note": "Illustrazione generata con AI (image_gen), senza opere di terzi",
+      "publication": {
+        "status": "suspended",
+        "visibleLabels": false,
+        "reason": "Tavola di confronto priva di nomi e separazione visibile dei sosia. Revisione anatomica e impaginazione da completare prima della pubblicazione.",
+        "reviewedOn": "2026-10-19"
+      }
+    },
+    "nuda": {
+      "file": "assets/infografiche/nuda.webp",
+      "alt": "Tavola illustrata di confronto: Agarico violetto e le specie con cui si confonde, con sezione e dettagli dei caratteri",
+      "author": "Fronda/Fungaroli, dal brief docs/infografiche/nuda.md, rivista dal progetto",
+      "license": "CC BY-SA 4.0",
+      "page": "https://github.com/zatteogit/fungaroli/blob/claude/brave-tesla-wu0a2b/docs/infografiche/nuda.md",
+      "generated": true,
+      "credit": "Illustrazione generata con AI (image_gen) dal brief del progetto, senza opere di terzi: non è una foto e non serve a identificare.",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it",
+      "note": "Illustrazione generata con AI (image_gen), senza opere di terzi",
+      "publication": {
+        "status": "suspended",
+        "visibleLabels": false,
+        "reason": "Tavola di confronto priva di nomi e separazione visibile dei sosia. Revisione anatomica e impaginazione da completare prima della pubblicazione.",
+        "reviewedOn": "2026-10-19"
+      }
+    }
+  }
 }

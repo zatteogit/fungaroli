@@ -1,0 +1,1538 @@
+{
+  "pe2-natura-ape-da-miele-inat217394043": {
+    "punto": [
+      0.5,
+      0.5
+    ],
+    "riquadro": [
+      0.06,
+      0.03,
+      0.96,
+      0.98
+    ],
+    "caption": "Gruppo di api da miele (Apis mellifera) su una recinzione.",
+    "alt": "Gruppo di Apis mellifera su una recinzione.",
+    "note": "Originale esaminato realmente. Taxon e licenza della singola foto verificati nel JSON iNaturalist. Per la pupa, annotazione life-stage 1|4 e descrizione della successiva schiusa conservate nella fonte."
+  },
+  "pe2-natura-sirfidi-inat18548439": {
+    "punto": [
+      0.49,
+      0.53
+    ],
+    "riquadro": [
+      0.1,
+      0.1,
+      0.9,
+      0.93
+    ],
+    "caption": "Esempio di sirfide nella fase di pupa: Episyrphus balteatus. La foto rappresenta questa specie, non tutti i sirfidi.",
+    "alt": "Pupa di Episyrphus balteatus su una foglia; esempio di sirfide.",
+    "note": "Originale esaminato realmente. Taxon e licenza della singola foto verificati nel JSON iNaturalist. Per la pupa, annotazione life-stage 1|4 e descrizione della successiva schiusa conservate nella fonte."
+  },
+  "pe2-natura-farfalle-diurne-inat280989662": {
+    "reject": "Revisione indipendente del parent: Papilio machaon poco nitido; la foto Commons già approvata è più nitida e documenta adeguatamente il gruppo con caption specifica di specie."
+  },
+  "pe2-natura-cinghiale-inat296818186": {
+    "reject": "Suini maculati in parcheggio, aspetto compatibile con animali domestici o ibridi: non usarli come illustrazione del cinghiale selvatico, anche se taxon research-grade Sus scrofa."
+  },
+  "pe2-natura-scilla-silvestre-dryades-7785b908": {
+    "punto": [
+      0.5,
+      0.3
+    ],
+    "riquadro": [
+      0.08,
+      0.04,
+      0.94,
+      0.98
+    ],
+    "caption": "Pianta fiorita · Scilla bifolia L.. Fotografia dell’Università di Trieste, non una segnalazione locale.",
+    "alt": "Scilla bifolia L.: pianta fiorita.",
+    "note": "Originale e attribuzione per immagine esaminati; pagina istituzionale Dryades conservata. Nessuna localizzazione nel Reatino dedotta."
+  },
+  "pe2-natura-scilla-silvestre-dryades-41642556": {
+    "reject": "Più piante e fiori sovrapposti nella stessa inquadratura; scelta ambigua per l’illustrazione della scilla."
+  },
+  "pe2-natura-scilla-silvestre-dryades-004c44a4": {
+    "punto": [
+      0.5,
+      0.5
+    ],
+    "riquadro": [
+      0.08,
+      0.04,
+      0.94,
+      0.98
+    ],
+    "caption": "Particolare di una foglia · Scilla bifolia L.. Fotografia dell’Università di Trieste, non una segnalazione locale.",
+    "alt": "Scilla bifolia L.: particolare di una foglia.",
+    "note": "Originale e attribuzione per immagine esaminati; pagina istituzionale Dryades conservata. Nessuna localizzazione nel Reatino dedotta."
+  },
+  "pe2-natura-narciso-dei-poeti-dryades-dc06b5a5": {
+    "punto": [
+      0.43,
+      0.31
+    ],
+    "riquadro": [
+      0.08,
+      0.04,
+      0.94,
+      0.98
+    ],
+    "caption": "Fiore visto di lato · Narcissus poeticus L.. Fotografia dell’Università di Trieste, non una segnalazione locale.",
+    "alt": "Narcissus poeticus L.: fiore visto di lato.",
+    "note": "Originale e attribuzione per immagine esaminati; pagina istituzionale Dryades conservata. Nessuna localizzazione nel Reatino dedotta."
+  },
+  "pe2-natura-narciso-dei-poeti-dryades-6a228bd3": {
+    "punto": [
+      0.5,
+      0.3
+    ],
+    "riquadro": [
+      0.08,
+      0.04,
+      0.94,
+      0.98
+    ],
+    "caption": "Piante fiorite · Narcissus poeticus L.. Fotografia dell’Università di Trieste, non una segnalazione locale.",
+    "alt": "Narcissus poeticus L.: piante fiorite.",
+    "note": "Originale e attribuzione per immagine esaminati; pagina istituzionale Dryades conservata. Nessuna localizzazione nel Reatino dedotta."
+  },
+  "pe2-natura-narciso-dei-poeti-dryades-f3053618": {
+    "punto": [
+      0.5,
+      0.5
+    ],
+    "riquadro": [
+      0.08,
+      0.04,
+      0.94,
+      0.98
+    ],
+    "caption": "Fiore visto di fronte · Narcissus poeticus L.. Fotografia dell’Università di Trieste, non una segnalazione locale.",
+    "alt": "Narcissus poeticus L.: fiore visto di fronte.",
+    "note": "Originale e attribuzione per immagine esaminati; pagina istituzionale Dryades conservata. Nessuna localizzazione nel Reatino dedotta."
+  },
+  "pe2-natura-giglio-martagone-dryades-8af64dc1": {
+    "punto": [
+      0.5,
+      0.5
+    ],
+    "riquadro": [
+      0.08,
+      0.04,
+      0.94,
+      0.98
+    ],
+    "caption": "Particolare del fiore · Lilium martagon L.. Fotografia dell’Università di Trieste, non una segnalazione locale.",
+    "alt": "Lilium martagon L.: particolare del fiore.",
+    "note": "Originale e attribuzione per immagine esaminati; pagina istituzionale Dryades conservata. Nessuna localizzazione nel Reatino dedotta."
+  },
+  "pe2-natura-giglio-martagone-dryades-a0b110ce": {
+    "punto": [
+      0.5,
+      0.5
+    ],
+    "riquadro": [
+      0.13,
+      0.03,
+      0.88,
+      0.97
+    ],
+    "caption": "Fiore visto di lato · Lilium martagon L..",
+    "alt": "Lilium martagon L.: fiore visto di lato.",
+    "note": "Fotografia e didascalia individuale Dryades esaminate, taxon documentato dalla pagina istituzionale; nessuna presenza locale dedotta."
+  },
+  "pe2-natura-giglio-martagone-dryades-809cc98b": {
+    "punto": [
+      0.48,
+      0.18
+    ],
+    "riquadro": [
+      0.13,
+      0.03,
+      0.88,
+      0.97
+    ],
+    "caption": "Pianta fiorita e foglie · Lilium martagon L..",
+    "alt": "Lilium martagon L.: pianta fiorita e foglie.",
+    "note": "Fotografia e didascalia individuale Dryades esaminate, taxon documentato dalla pagina istituzionale; nessuna presenza locale dedotta."
+  },
+  "pe2-natura-orchide-sambucina-dryades-222df38a": {
+    "punto": [
+      0.49,
+      0.31
+    ],
+    "riquadro": [
+      0.13,
+      0.03,
+      0.88,
+      0.97
+    ],
+    "caption": "Pianta in fiore nel sottobosco · Dactylorhiza sambucina (L.) Soó.",
+    "alt": "Dactylorhiza sambucina (L.) Soó: pianta in fiore nel sottobosco.",
+    "note": "Fotografia e didascalia individuale Dryades esaminate, taxon documentato dalla pagina istituzionale; nessuna presenza locale dedotta."
+  },
+  "pe2-natura-orchide-sambucina-dryades-2aef7f41": {
+    "punto": [
+      0.5,
+      0.28
+    ],
+    "riquadro": [
+      0.13,
+      0.03,
+      0.88,
+      0.97
+    ],
+    "caption": "Particolare dell’infiorescenza · Dactylorhiza sambucina (L.) Soó.",
+    "alt": "Dactylorhiza sambucina (L.) Soó: particolare dell’infiorescenza.",
+    "note": "Fotografia e didascalia individuale Dryades esaminate, taxon documentato dalla pagina istituzionale; nessuna presenza locale dedotta."
+  },
+  "pe2-natura-orchide-sambucina-dryades-de16fd36": {
+    "punto": [
+      0.5,
+      0.28
+    ],
+    "riquadro": [
+      0.13,
+      0.03,
+      0.88,
+      0.97
+    ],
+    "caption": "Pianta fiorita · Dactylorhiza sambucina (L.) Soó.",
+    "alt": "Dactylorhiza sambucina (L.) Soó: pianta fiorita.",
+    "note": "Fotografia e didascalia individuale Dryades esaminate, taxon documentato dalla pagina istituzionale; nessuna presenza locale dedotta."
+  },
+  "pe2-natura-orchide-maschia-dryades-699e5776": {
+    "reject": "Tavola composita di più fotografie: non una fotografia singola."
+  },
+  "pe2-natura-orchide-maschia-dryades-1e42734a": {
+    "punto": [
+      0.5,
+      0.5
+    ],
+    "riquadro": [
+      0.13,
+      0.03,
+      0.88,
+      0.97
+    ],
+    "caption": "Fiore visto di lato · Orchis mascula (L.) L..",
+    "alt": "Orchis mascula (L.) L.: fiore visto di lato.",
+    "note": "Fotografia e didascalia individuale Dryades esaminate, taxon documentato dalla pagina istituzionale; nessuna presenza locale dedotta."
+  },
+  "pe2-natura-orchide-maschia-dryades-7f4b824b": {
+    "punto": [
+      0.5,
+      0.5
+    ],
+    "riquadro": [
+      0.13,
+      0.03,
+      0.88,
+      0.97
+    ],
+    "caption": "Particolare dei fiori · Orchis mascula (L.) L..",
+    "alt": "Orchis mascula (L.) L.: particolare dei fiori.",
+    "note": "Fotografia e didascalia individuale Dryades esaminate, taxon documentato dalla pagina istituzionale; nessuna presenza locale dedotta."
+  },
+  "pe2-natura-orchide-purpurea-dryades-2ab1266d": {
+    "punto": [
+      0.5,
+      0.36
+    ],
+    "riquadro": [
+      0.13,
+      0.03,
+      0.88,
+      0.97
+    ],
+    "caption": "Infiorescenza · Orchis purpurea Huds..",
+    "alt": "Orchis purpurea Huds.: infiorescenza.",
+    "note": "Fotografia e didascalia individuale Dryades esaminate, taxon documentato dalla pagina istituzionale; nessuna presenza locale dedotta."
+  },
+  "pe2-natura-ape-da-miele-2cfc6536": {
+    "punto": [
+      0.55,
+      0.49
+    ],
+    "riquadro": [
+      0.25,
+      0.1,
+      0.83,
+      0.84
+    ],
+    "caption": "Ape da miele (Apis mellifera) su fiori di meliloto; fotografia scattata a Keila, in Estonia.",
+    "alt": "Apis mellifera su fiori di meliloto.",
+    "note": "Originale e singola fonte Commons esaminati. Nessuna sottospecie attribuita dalla sola fotografia."
+  },
+  "pe2-natura-orchide-purpurea-dryades-d8b39e39": {
+    "punto": [
+      0.5,
+      0.5
+    ],
+    "riquadro": [
+      0.1,
+      0.02,
+      0.95,
+      0.98
+    ],
+    "caption": "Due infiorescenze · Orchis purpurea Huds..",
+    "alt": "Orchis purpurea Huds.: due infiorescenze.",
+    "note": "Originale visto realmente e didascalia/licenza individuale verificate sulla pagina istituzionale Dryades. Nei formati larghi la foto di portamento mostra la parte superiore; foto completa disponibile nel visore."
+  },
+  "pe2-natura-orchide-purpurea-dryades-332cfb66": {
+    "punto": [
+      0.5,
+      0.24
+    ],
+    "riquadro": [
+      0.1,
+      0.02,
+      0.95,
+      0.98
+    ],
+    "caption": "Pianta in fiore · Orchis purpurea Huds..",
+    "alt": "Orchis purpurea Huds.: pianta in fiore.",
+    "note": "Originale visto realmente e didascalia/licenza individuale verificate sulla pagina istituzionale Dryades. Nei formati larghi la foto di portamento mostra la parte superiore; foto completa disponibile nel visore."
+  },
+  "pe2-natura-cefalantera-maggiore-dryades-f54c9ca6": {
+    "punto": [
+      0.62,
+      0.31
+    ],
+    "riquadro": [
+      0.1,
+      0.02,
+      0.95,
+      0.98
+    ],
+    "caption": "Pianta nel sottobosco · Cephalanthera longifolia (L.) Fritsch.",
+    "alt": "Cephalanthera longifolia (L.) Fritsch: pianta nel sottobosco.",
+    "note": "Originale visto realmente e didascalia/licenza individuale verificate sulla pagina istituzionale Dryades. Nei formati larghi la foto di portamento mostra la parte superiore; foto completa disponibile nel visore."
+  },
+  "pe2-natura-cefalantera-maggiore-dryades-4d6831fc": {
+    "punto": [
+      0.5,
+      0.5
+    ],
+    "riquadro": [
+      0.1,
+      0.02,
+      0.95,
+      0.98
+    ],
+    "caption": "Particolare dei fiori · Cephalanthera longifolia (L.) Fritsch.",
+    "alt": "Cephalanthera longifolia (L.) Fritsch: particolare dei fiori.",
+    "note": "Originale visto realmente e didascalia/licenza individuale verificate sulla pagina istituzionale Dryades. Nei formati larghi la foto di portamento mostra la parte superiore; foto completa disponibile nel visore."
+  },
+  "pe2-natura-cefalantera-maggiore-dryades-4bdfb6ea": {
+    "punto": [
+      0.5,
+      0.27
+    ],
+    "riquadro": [
+      0.1,
+      0.02,
+      0.95,
+      0.98
+    ],
+    "caption": "Pianta in fiore · Cephalanthera longifolia (L.) Fritsch.",
+    "alt": "Cephalanthera longifolia (L.) Fritsch: pianta in fiore.",
+    "note": "Originale visto realmente e didascalia/licenza individuale verificate sulla pagina istituzionale Dryades. Nei formati larghi la foto di portamento mostra la parte superiore; foto completa disponibile nel visore."
+  },
+  "pe2-natura-genziana-primaticcia-dryades-bc2948b3": {
+    "punto": [
+      0.5,
+      0.43
+    ],
+    "riquadro": [
+      0.1,
+      0.02,
+      0.95,
+      0.98
+    ],
+    "caption": "Fiori su terreno pietroso · Gentiana verna L..",
+    "alt": "Gentiana verna L.: fiori su terreno pietroso.",
+    "note": "Originale visto realmente e didascalia/licenza individuale verificate sulla pagina istituzionale Dryades. Nei formati larghi la foto di portamento mostra la parte superiore; foto completa disponibile nel visore."
+  },
+  "pe2-natura-genziana-primaticcia-dryades-f28b7d49": {
+    "punto": [
+      0.45,
+      0.52
+    ],
+    "riquadro": [
+      0.1,
+      0.02,
+      0.95,
+      0.98
+    ],
+    "caption": "Gruppo di piante fiorite · Gentiana verna L..",
+    "alt": "Gentiana verna L.: gruppo di piante fiorite.",
+    "note": "Originale visto realmente e didascalia/licenza individuale verificate sulla pagina istituzionale Dryades. Nei formati larghi la foto di portamento mostra la parte superiore; foto completa disponibile nel visore."
+  },
+  "pe2-natura-genziana-primaticcia-dryades-070769d4": {
+    "punto": [
+      0.5,
+      0.5
+    ],
+    "riquadro": [
+      0.1,
+      0.02,
+      0.95,
+      0.98
+    ],
+    "caption": "Particolare delle foglie basali · Gentiana verna L..",
+    "alt": "Gentiana verna L.: particolare delle foglie basali.",
+    "note": "Originale visto realmente e didascalia/licenza individuale verificate sulla pagina istituzionale Dryades. Nei formati larghi la foto di portamento mostra la parte superiore; foto completa disponibile nel visore."
+  },
+  "pe2-natura-digitale-gialla-dryades-1f95db6b": {
+    "punto": [
+      0.5,
+      0.5
+    ],
+    "riquadro": [
+      0.02,
+      0.02,
+      0.98,
+      0.98
+    ],
+    "caption": "Particolare delle foglie · Digitalis micrantha Roth ex Schweigg..",
+    "alt": "Digitalis micrantha Roth ex Schweigg.: particolare delle foglie.",
+    "note": "Originale esaminato; taxon e crediti per immagine documentati nella pagina istituzionale Dryades salvata. Le foto della digitale mostrano foglie e infiorescenza, senza dedurre fase biologica ulteriore."
+  },
+  "pe2-natura-digitale-gialla-dryades-873c7f38": {
+    "punto": [
+      0.5,
+      0.5
+    ],
+    "riquadro": [
+      0.02,
+      0.02,
+      0.98,
+      0.98
+    ],
+    "caption": "Pianta vista dall’alto · Digitalis micrantha Roth ex Schweigg..",
+    "alt": "Digitalis micrantha Roth ex Schweigg.: pianta vista dall’alto.",
+    "note": "Originale esaminato; taxon e crediti per immagine documentati nella pagina istituzionale Dryades salvata. Le foto della digitale mostrano foglie e infiorescenza, senza dedurre fase biologica ulteriore."
+  },
+  "pe2-natura-digitale-gialla-dryades-a4b647cc": {
+    "punto": [
+      0.5,
+      0.28
+    ],
+    "riquadro": [
+      0.02,
+      0.02,
+      0.98,
+      0.98
+    ],
+    "caption": "Piante in fiore · Digitalis micrantha Roth ex Schweigg..",
+    "alt": "Digitalis micrantha Roth ex Schweigg.: piante in fiore.",
+    "note": "Originale esaminato; taxon e crediti per immagine documentati nella pagina istituzionale Dryades salvata. Le foto della digitale mostrano foglie e infiorescenza, senza dedurre fase biologica ulteriore."
+  },
+  "pe2-natura-sorbo-domestico-dryades-b2ef59ae": {
+    "punto": [
+      0.4,
+      0.58
+    ],
+    "riquadro": [
+      0.02,
+      0.02,
+      0.98,
+      0.98
+    ],
+    "caption": "Foglie e frutti · Sorbus domestica L..",
+    "alt": "Sorbus domestica L.: foglie e frutti.",
+    "note": "Originale esaminato; taxon e crediti per immagine documentati nella pagina istituzionale Dryades salvata. Le foto della digitale mostrano foglie e infiorescenza, senza dedurre fase biologica ulteriore."
+  },
+  "pe2-natura-sorbo-domestico-dryades-ceca7128": {
+    "punto": [
+      0.5,
+      0.5
+    ],
+    "riquadro": [
+      0.02,
+      0.02,
+      0.98,
+      0.98
+    ],
+    "caption": "Particolare di un frutto · Sorbus domestica L..",
+    "alt": "Sorbus domestica L.: particolare di un frutto.",
+    "note": "Originale esaminato; taxon e crediti per immagine documentati nella pagina istituzionale Dryades salvata. Le foto della digitale mostrano foglie e infiorescenza, senza dedurre fase biologica ulteriore."
+  },
+  "pe2-natura-sirfidi-b283e055": {
+    "caption": "Esempio di sirfide: Episyrphus balteatus adulto su un fiore. La foto rappresenta questa specie, non tutti i sirfidi.",
+    "alt": "Episyrphus balteatus adulto su un fiore; esempio di sirfide.",
+    "punto": [
+      0.49,
+      0.51
+    ],
+    "riquadro": [
+      0.2,
+      0.13,
+      0.86,
+      0.88
+    ],
+    "note": "Originale esaminato realmente. Descrizione e categorie Commons verificano la specie; nessuna presenza nel Reatino dedotta. Per il lupo la cattività documentata è esplicita nella didascalia."
+  },
+  "pe2-natura-farfalle-diurne-52e89a72": {
+    "caption": "Esempio di farfalla diurna: Papilio machaon, vista laterale. La foto rappresenta questa specie, non tutte le farfalle diurne.",
+    "alt": "Papilio machaon, vista laterale; esempio di farfalla diurna.",
+    "punto": [
+      0.5,
+      0.45
+    ],
+    "riquadro": [
+      0.01,
+      0.08,
+      0.77,
+      0.84
+    ],
+    "note": "Originale esaminato realmente. Descrizione e categorie Commons verificano la specie; nessuna presenza nel Reatino dedotta. Per il lupo la cattività documentata è esplicita nella didascalia."
+  },
+  "pe2-natura-cinghiale-aa94ee25": {
+    "caption": "Cinghiale (Sus scrofa) in acqua.",
+    "alt": "Cinghiale Sus scrofa in acqua.",
+    "punto": [
+      0.52,
+      0.55
+    ],
+    "riquadro": [
+      0.25,
+      0.17,
+      0.8,
+      0.9
+    ],
+    "note": "Originale esaminato realmente. Descrizione e categorie Commons verificano la specie; nessuna presenza nel Reatino dedotta. Per il lupo la cattività documentata è esplicita nella didascalia."
+  },
+  "pe2-natura-lupo-673bf6d1": {
+    "caption": "Lupo (Canis lupus) fotografato allo zoo di Schönbrunn, Vienna.",
+    "alt": "Lupo Canis lupus, vista della testa.",
+    "punto": [
+      0.5,
+      0.64
+    ],
+    "riquadro": [
+      0.15,
+      0.07,
+      0.85,
+      0.94
+    ],
+    "note": "Originale esaminato realmente. Descrizione e categorie Commons verificano la specie; nessuna presenza nel Reatino dedotta. Per il lupo la cattività documentata è esplicita nella didascalia."
+  },
+  "pe2-natura-capriolo-580bd0e7": {
+    "caption": "Capriolo (Capreolus capreolus), esemplare visto di lato.",
+    "alt": "Capreolus capreolus, esemplare intero.",
+    "punto": [
+      0.43,
+      0.27
+    ],
+    "riquadro": [
+      0.09,
+      0.05,
+      0.93,
+      0.98
+    ],
+    "note": "Originale esaminato realmente. Descrizione e categorie Commons verificano la specie; nessuna presenza nel Reatino dedotta. Per il lupo la cattività documentata è esplicita nella didascalia."
+  },
+  "pe2-natura-ciliegio-dryades-a169c710": {
+    "punto": [
+      0.5,
+      0.38
+    ],
+    "riquadro": [
+      0.04,
+      0.02,
+      0.97,
+      0.98
+    ],
+    "caption": "Albero in fiore nel paesaggio · Prunus avium (L.) L..",
+    "alt": "Prunus avium (L.) L.: albero in fiore nel paesaggio.",
+    "note": "Originale e fonte individuale osservati; nome della specie, fotografo e licenza espliciti nella pagina istituzionale Dryades salvata. Nessuna attribuzione a sottospecie o località non documentata."
+  },
+  "pe2-natura-ciliegio-dryades-a098ae68": {
+    "punto": [
+      0.5,
+      0.5
+    ],
+    "riquadro": [
+      0.04,
+      0.02,
+      0.97,
+      0.98
+    ],
+    "caption": "Fiori su un ramo · Prunus avium (L.) L..",
+    "alt": "Prunus avium (L.) L.: fiori su un ramo.",
+    "note": "Originale e fonte individuale osservati; nome della specie, fotografo e licenza espliciti nella pagina istituzionale Dryades salvata. Nessuna attribuzione a sottospecie o località non documentata."
+  },
+  "pe2-natura-noce-dryades-75d45111": {
+    "punto": [
+      0.5,
+      0.5
+    ],
+    "riquadro": [
+      0.04,
+      0.02,
+      0.97,
+      0.98
+    ],
+    "caption": "Particolare della corteccia · Juglans regia L..",
+    "alt": "Juglans regia L.: particolare della corteccia.",
+    "note": "Originale e fonte individuale osservati; nome della specie, fotografo e licenza espliciti nella pagina istituzionale Dryades salvata. Nessuna attribuzione a sottospecie o località non documentata."
+  },
+  "pe2-natura-noce-dryades-e36d5042": {
+    "punto": [
+      0.5,
+      0.5
+    ],
+    "riquadro": [
+      0.04,
+      0.02,
+      0.97,
+      0.98
+    ],
+    "caption": "Germoglio e foglie in apertura · Juglans regia L..",
+    "alt": "Juglans regia L.: germoglio e foglie in apertura.",
+    "note": "Originale e fonte individuale osservati; nome della specie, fotografo e licenza espliciti nella pagina istituzionale Dryades salvata. Nessuna attribuzione a sottospecie o località non documentata."
+  },
+  "pe2-natura-robinia-dryades-d2b8b107": {
+    "punto": [
+      0.5,
+      0.57
+    ],
+    "riquadro": [
+      0.04,
+      0.02,
+      0.97,
+      0.98
+    ],
+    "caption": "Ramo con foglie e infiorescenze · Robinia pseudoacacia L..",
+    "alt": "Robinia pseudoacacia L.: ramo con foglie e infiorescenze.",
+    "note": "Originale e fonte individuale osservati; nome della specie, fotografo e licenza espliciti nella pagina istituzionale Dryades salvata. Nessuna attribuzione a sottospecie o località non documentata."
+  },
+  "pe2-natura-robinia-dryades-c98bf068": {
+    "punto": [
+      0.5,
+      0.5
+    ],
+    "riquadro": [
+      0.04,
+      0.02,
+      0.97,
+      0.98
+    ],
+    "caption": "Particolare dei fiori · Robinia pseudoacacia L..",
+    "alt": "Robinia pseudoacacia L.: particolare dei fiori.",
+    "note": "Originale e fonte individuale osservati; nome della specie, fotografo e licenza espliciti nella pagina istituzionale Dryades salvata. Nessuna attribuzione a sottospecie o località non documentata."
+  },
+  "pe2-natura-olmo-montano-dryades-04a669b8": {
+    "punto": [
+      0.5,
+      0.5
+    ],
+    "riquadro": [
+      0.04,
+      0.02,
+      0.97,
+      0.98
+    ],
+    "caption": "Pagina inferiore di una foglia · Ulmus glabra Huds..",
+    "alt": "Ulmus glabra Huds.: pagina inferiore di una foglia.",
+    "note": "Originale e fonte individuale osservati; nome della specie, fotografo e licenza espliciti nella pagina istituzionale Dryades salvata. Nessuna attribuzione a sottospecie o località non documentata."
+  },
+  "pe2-natura-olmo-montano-dryades-cc218621": {
+    "punto": [
+      0.5,
+      0.5
+    ],
+    "riquadro": [
+      0.04,
+      0.02,
+      0.97,
+      0.98
+    ],
+    "caption": "Pagina superiore di una foglia · Ulmus glabra Huds..",
+    "alt": "Ulmus glabra Huds.: pagina superiore di una foglia.",
+    "note": "Originale e fonte individuale osservati; nome della specie, fotografo e licenza espliciti nella pagina istituzionale Dryades salvata. Nessuna attribuzione a sottospecie o località non documentata."
+  },
+  "pe2-natura-cervo-70931210": {
+    "caption": "Cervo (Cervus elaphus), femmina in un prato.",
+    "alt": "Femmina di Cervus elaphus.",
+    "punto": [
+      0.46,
+      0.35
+    ],
+    "riquadro": [
+      0.18,
+      0.07,
+      0.91,
+      0.98
+    ],
+    "note": "Originale e fonte Commons esaminati realmente; specie e licenza verificate, nessuna presenza locale dedotta."
+  },
+  "pe2-natura-cetonia-dorata-1a80f099": {
+    "caption": "Cetonia dorata (Cetonia aurata) su fiori.",
+    "alt": "Cetonia aurata su fiori.",
+    "punto": [
+      0.51,
+      0.5
+    ],
+    "riquadro": [
+      0.1,
+      0.08,
+      0.97,
+      0.9
+    ],
+    "note": "Originale e fonte Commons esaminati realmente; specie e licenza verificate, nessuna presenza locale dedotta."
+  },
+  "pe2-natura-rosalia-alpina-d4e26cbe": {
+    "caption": "Rosalia alpina (Rosalia alpina) sul legno.",
+    "alt": "Rosalia alpina sul legno.",
+    "punto": [
+      0.48,
+      0.5
+    ],
+    "riquadro": [
+      0.04,
+      0.03,
+      0.98,
+      0.98
+    ],
+    "note": "Originale e fonte Commons esaminati realmente; specie e licenza verificate, nessuna presenza locale dedotta."
+  },
+  "pe2-natura-giglio-rosso-dryades-3ee413a7": {
+    "punto": [
+      0.51,
+      0.42
+    ],
+    "riquadro": [
+      0.02,
+      0.02,
+      0.98,
+      0.98
+    ],
+    "caption": "Portamento e foglie · Lilium bulbiferum L. subsp. croceum (Chaix) Jan.",
+    "alt": "Lilium bulbiferum L. subsp. croceum (Chaix) Jan: portamento e foglie.",
+    "note": "Originale e fonte istituzionale individuale esaminati. Per il giglio rosso il titolo e og:title della pagina attestano esplicitamente Lilium bulbiferum subsp. croceum; nessuna sottospecie dedotta dall’aspetto."
+  },
+  "pe2-natura-giglio-rosso-dryades-095204fe": {
+    "punto": [
+      0.53,
+      0.46
+    ],
+    "riquadro": [
+      0.02,
+      0.02,
+      0.98,
+      0.98
+    ],
+    "caption": "Particolare del fiore · Lilium bulbiferum L. subsp. croceum (Chaix) Jan.",
+    "alt": "Lilium bulbiferum L. subsp. croceum (Chaix) Jan: particolare del fiore.",
+    "note": "Originale e fonte istituzionale individuale esaminati. Per il giglio rosso il titolo e og:title della pagina attestano esplicitamente Lilium bulbiferum subsp. croceum; nessuna sottospecie dedotta dall’aspetto."
+  },
+  "pe2-natura-scilla-silvestre-dryades-7c355280": {
+    "punto": [
+      0.55,
+      0.18
+    ],
+    "riquadro": [
+      0.02,
+      0.02,
+      0.98,
+      0.98
+    ],
+    "caption": "Pianta fiorita con le foglie · Scilla bifolia L..",
+    "alt": "Scilla bifolia L.: pianta fiorita con le foglie.",
+    "note": "Originale e fonte istituzionale individuale esaminati. Per il giglio rosso il titolo e og:title della pagina attestano esplicitamente Lilium bulbiferum subsp. croceum; nessuna sottospecie dedotta dall’aspetto."
+  },
+  "pe2-natura-tritone-crestato-italiano-3b27eb65": {
+    "caption": "Tritone crestato italiano (Triturus carnifex), vista laterale; la fonte descrive un giovane.",
+    "alt": "Triturus carnifex, vista laterale.",
+    "punto": [
+      0.72,
+      0.55
+    ],
+    "riquadro": [
+      0.03,
+      0.25,
+      0.98,
+      0.82
+    ],
+    "note": "Originale esaminato e metadati Commons verificati; per il tritone la fonte specifica giovane. Nessuna presenza locale dedotta."
+  },
+  "pe2-natura-salamandra-pezzata-e6c2ed4a": {
+    "caption": "Salamandra pezzata (Salamandra salamandra) fra l’erba.",
+    "alt": "Salamandra salamandra fra l’erba.",
+    "punto": [
+      0.65,
+      0.51
+    ],
+    "riquadro": [
+      0.04,
+      0.05,
+      0.97,
+      0.97
+    ],
+    "note": "Originale esaminato e metadati Commons verificati; per il tritone la fonte specifica giovane. Nessuna presenza locale dedotta."
+  },
+  "pe2-natura-riccio-europeo-8a940e60": {
+    "caption": "Riccio europeo (Erinaceus europaeus) fra le foglie.",
+    "alt": "Erinaceus europaeus fra le foglie.",
+    "punto": [
+      0.62,
+      0.55
+    ],
+    "riquadro": [
+      0.06,
+      0.2,
+      0.94,
+      0.95
+    ],
+    "note": "Originale esaminato e metadati Commons verificati; per il tritone la fonte specifica giovane. Nessuna presenza locale dedotta."
+  },
+  "pe2-natura-orchide-maschia-dryades-45dbadbc": {
+    "punto": [
+      0.35,
+      0.46
+    ],
+    "riquadro": [
+      0.02,
+      0.02,
+      0.98,
+      0.99
+    ],
+    "caption": "Infiorescenze · Orchis mascula (L.) L..",
+    "alt": "Orchis mascula (L.) L.: infiorescenze.",
+    "note": "Foto singola, originale e fonte Dryades esaminati; sostituisce la candidatura composita respinta. Il visore conserva la foto completa con il contesto botanico."
+  },
+  "pe2-natura-volpe-b9a5c0f9": {
+    "punto": [
+      0.48,
+      0.5
+    ],
+    "riquadro": [
+      0.05,
+      0.1,
+      0.83,
+      0.88
+    ],
+    "caption": "Volpe (Vulpes vulpes) fra le rocce, fotografata nel Parco nazionale di Ichkeul.",
+    "alt": "Vulpes vulpes fra le rocce.",
+    "note": "Originale e metadati Commons osservati; località della fonte esplicita, nessuna presenza nel Reatino dedotta."
+  },
+  "pe2-natura-bombi-52b1e667": {
+    "caption": "Esempio di bombo: Bombus terrestris su un fiore. La foto rappresenta questa specie, non tutto il genere Bombus.",
+    "alt": "Bombus terrestris su un fiore; esempio di specie del gruppo Bombi.",
+    "punto": [
+      0.49,
+      0.57
+    ],
+    "riquadro": [
+      0.28,
+      0.22,
+      0.94,
+      0.94
+    ],
+    "note": "Originale esaminato; soggetto fotografato attribuito dalla pagina Commons. I formati più larghi possono mostrare solo una parte del soggetto, la foto completa resta nel visore."
+  },
+  "pe2-natura-istrice-48ad365a": {
+    "caption": "Istrice (Hystrix cristata) con un piccolo.",
+    "alt": "Hystrix cristata con un piccolo.",
+    "punto": [
+      0.57,
+      0.55
+    ],
+    "riquadro": [
+      0.06,
+      0.03,
+      0.98,
+      0.95
+    ],
+    "note": "Originale e metadati Commons esaminati; soggetto e licenza verificati. Nessuna presenza locale o condizione di vita libera attribuita se non documentata."
+  },
+  "pe2-natura-tasso-556968d2": {
+    "caption": "Tasso (Meles meles), vista laterale presso l’acqua.",
+    "alt": "Meles meles, vista laterale presso l’acqua.",
+    "punto": [
+      0.47,
+      0.38
+    ],
+    "riquadro": [
+      0.05,
+      0.11,
+      0.92,
+      0.54
+    ],
+    "note": "Originale e metadati Commons esaminati; soggetto e licenza verificati. Nessuna presenza locale o condizione di vita libera attribuita se non documentata."
+  },
+  "pe2-natura-scilla-silvestre-a1ba5801": {
+    "reject": "Selezione editoriale: vista della pianta fiorita già ben rappresentata. Preferito il macro dei fiori (candidatura 55), che porta la scheda a 6 foto comprese le 2 esistenti."
+  },
+  "pe2-natura-scilla-silvestre-6b26b245": {
+    "caption": "Particolare dei fiori · Scilla bifolia L.",
+    "alt": "Scilla bifolia: particolare dei fiori.",
+    "punto": [
+      0.66,
+      0.59
+    ],
+    "riquadro": [
+      0.37,
+      0.11,
+      0.96,
+      0.97
+    ],
+    "note": "Originale e metadati Commons esaminati; soggetto e licenza verificati. Nessuna presenza locale o condizione di vita libera attribuita se non documentata."
+  },
+  "pe2-natura-narciso-dei-poeti-d63d09f3": {
+    "caption": "Fiore e stelo · Narcissus poeticus L.",
+    "alt": "Narcissus poeticus: fiore e stelo.",
+    "punto": [
+      0.51,
+      0.34
+    ],
+    "riquadro": [
+      0.12,
+      0.06,
+      0.9,
+      0.98
+    ],
+    "note": "Originale e attribuzione Commons esaminati; inquadratura distinta e complementare alle foto Dryades. Selezione porta la scheda a 6 foto comprese le 2 esistenti."
+  },
+  "pe2-natura-narciso-dei-poeti-7cc09b3e": {
+    "reject": "Limite editoriale di 6 foto complessive: preferito il narciso 56 con fiore/stelo e sfondo più leggibile, a completamento delle 3 nuove visteDryades."
+  },
+  "pe2-natura-giglio-martagone-f986fde3": {
+    "caption": "Infiorescenza · Lilium martagon L.",
+    "alt": "Lilium martagon: infiorescenza.",
+    "punto": [
+      0.5,
+      0.43
+    ],
+    "riquadro": [
+      0.08,
+      0.03,
+      0.95,
+      0.98
+    ],
+    "note": "Originale e attribuzione Commons esaminati; inquadratura distinta e complementare alle foto Dryades. Selezione porta la scheda a 6 foto comprese le 2 esistenti."
+  },
+  "pe2-natura-giglio-martagone-873468f2": {
+    "reject": "Fotografia vista, corretta ma esclusa dalla selezione per il limite 6 foto totali; preferita l’infiorescenza 58, complementare alle 3 fotoDryades già approvate."
+  },
+  "pe2-natura-orchide-sambucina-0ab7d369": {
+    "caption": "Due colorazioni della stessa specie · Dactylorhiza sambucina (L.) Soó.",
+    "alt": "Dactylorhiza sambucina: piante con fiori gialli e porpora.",
+    "punto": [
+      0.49,
+      0.45
+    ],
+    "riquadro": [
+      0.18,
+      0.1,
+      0.91,
+      0.93
+    ],
+    "note": "Originale e metadati Commons esaminati; foto singola e taxon esatto. Per Dactylorhiza sambucina la fonte dichiara esplicitamente stessa specie con due colori, confermati dalla foto. La selezione completa 6 foto in scheda."
+  },
+  "pe2-natura-orchide-maschia-6d68f2aa": {
+    "caption": "Infiorescenza · Orchis mascula (L.) L.",
+    "alt": "Orchis mascula: infiorescenza.",
+    "punto": [
+      0.49,
+      0.43
+    ],
+    "riquadro": [
+      0.13,
+      0.06,
+      0.88,
+      0.98
+    ],
+    "note": "Originale e metadati Commons esaminati; foto singola e taxon esatto. Per Dactylorhiza sambucina la fonte dichiara esplicitamente stessa specie con due colori, confermati dalla foto. La selezione completa 6 foto in scheda."
+  },
+  "pe2-natura-orchide-purpurea-d5c818c3": {
+    "caption": "Pianta fiorita e foglie basali · Orchis purpurea Huds.",
+    "alt": "Orchis purpurea: pianta fiorita e foglie basali.",
+    "punto": [
+      0.49,
+      0.35
+    ],
+    "riquadro": [
+      0.2,
+      0.08,
+      0.84,
+      0.98
+    ],
+    "note": "Originale e descrizione Commons esaminati realmente; nome della specie, autore e licenza verificati. Selezione complementare alle 3 fotoDryades, porta la scheda a 6 foto totali incluse le 2 esistenti."
+  },
+  "pe2-natura-cefalantera-maggiore-29235d31": {
+    "caption": "Gruppo di piante fiorite · Cephalanthera longifolia (L.) Fritsch.",
+    "alt": "Cephalanthera longifolia: gruppo di piante fiorite.",
+    "punto": [
+      0.5,
+      0.43
+    ],
+    "riquadro": [
+      0.12,
+      0.1,
+      0.97,
+      0.96
+    ],
+    "note": "Originale e descrizione Commons esaminati realmente; nome della specie, autore e licenza verificati. Selezione complementare alle 3 fotoDryades, porta la scheda a 6 foto totali incluse le 2 esistenti."
+  },
+  "pe2-natura-genziana-primaticcia-a46d7064": {
+    "caption": "Fiore visto di lato · Gentiana verna L.",
+    "alt": "Gentiana verna: fiore visto di lato.",
+    "punto": [
+      0.48,
+      0.37
+    ],
+    "riquadro": [
+      0.06,
+      0.04,
+      0.94,
+      0.92
+    ],
+    "note": "Originale e descrizione Commons esaminati realmente; nome della specie, autore e licenza verificati. Selezione complementare alle 3 fotoDryades, porta la scheda a 6 foto totali incluse le 2 esistenti."
+  },
+  "pe2-natura-digitale-gialla-8a9715d2": {
+    "caption": "Infiorescenza · Digitalis micrantha Roth ex Schweigg.",
+    "alt": "Digitalis micrantha: infiorescenza.",
+    "punto": [
+      0.5,
+      0.43
+    ],
+    "riquadro": [
+      0.19,
+      0.03,
+      0.9,
+      0.99
+    ],
+    "note": "Originale e descrizione Commons esaminati realmente; nome della specie, autore e licenza verificati. Selezione complementare alle 3 fotoDryades, porta la scheda a 6 foto totali incluse le 2 esistenti."
+  },
+  "pe2-natura-bombi-805373f9": {
+    "caption": "Esempio di bombo: Bombus terrestris su fiori di tiglio. La foto rappresenta questa specie, non tutto il genere Bombus.",
+    "alt": "Bombus terrestris su fiori di tiglio; esempio di bombo.",
+    "punto": [
+      0.58,
+      0.43
+    ],
+    "riquadro": [
+      0.27,
+      0.12,
+      0.97,
+      0.88
+    ],
+    "note": "Originale e fonte Commons esaminati; foto complementare al primo esemplare, specie esempio dichiarata per il gruppo. Nessuna presenza locale dedotta."
+  },
+  "pe2-natura-zecche-d8f91ccb": {
+    "caption": "Esempio di zecca: Ixodes ricinus, vista dall’alto su erba secca. La foto rappresenta questa specie, non tutto il gruppo Ixodida.",
+    "alt": "Ixodes ricinus visto dall’alto su erba secca; esempio di zecca.",
+    "punto": [
+      0.52,
+      0.66
+    ],
+    "riquadro": [
+      0.25,
+      0.47,
+      0.84,
+      0.84
+    ],
+    "note": "Originale e fonte Commons esaminati; foto complementare al primo esemplare, specie esempio dichiarata per il gruppo. Nessuna presenza locale dedotta."
+  },
+  "pe2-natura-sorbo-domestico-486bcc17": {
+    "reject": "Gemma troppo piccola rispetto all’inquadratura e sfondo molto dominante: nelle dimensioni della UI la vista non è sufficientemente utile. Originale conservato, non aumentare il conteggio della galleria."
+  },
+  "pe2-natura-ciliegio-7bfdad7d": {
+    "caption": "Ramo con frutti · Prunus avium (L.) L.",
+    "alt": "Prunus avium: ramo con frutti.",
+    "punto": [
+      0.55,
+      0.59
+    ],
+    "riquadro": [
+      0.05,
+      0.05,
+      0.95,
+      0.98
+    ],
+    "note": "Originale e fonte Commons esaminati; taxon alla specie, autore e licenza verificati. Per Aesculus la fonte dichiara focus stacking di 15 scatti: immagine fotografica reale, non generazione AI. Nessuna provenienza locale dedotta."
+  },
+  "pe2-natura-noce-e994fe97": {
+    "caption": "Albero senza foglie nel paesaggio · Juglans regia L.",
+    "alt": "Juglans regia: albero senza foglie nel paesaggio.",
+    "punto": [
+      0.8,
+      0.55
+    ],
+    "riquadro": [
+      0.59,
+      0.13,
+      0.99,
+      0.81
+    ],
+    "note": "Originale e fonte Commons esaminati; taxon alla specie, autore e licenza verificati. Per Aesculus la fonte dichiara focus stacking di 15 scatti: immagine fotografica reale, non generazione AI. Nessuna provenienza locale dedotta."
+  },
+  "pe2-natura-robinia-33d48d18": {
+    "caption": "Albero in fiore · Robinia pseudoacacia L.",
+    "alt": "Robinia pseudoacacia: albero in fiore.",
+    "punto": [
+      0.54,
+      0.46
+    ],
+    "riquadro": [
+      0.05,
+      0.03,
+      0.97,
+      0.98
+    ],
+    "note": "Originale e fonte Commons esaminati; taxon alla specie, autore e licenza verificati. Per Aesculus la fonte dichiara focus stacking di 15 scatti: immagine fotografica reale, non generazione AI. Nessuna provenienza locale dedotta."
+  },
+  "pe2-natura-olmo-montano-ddb434ae": {
+    "caption": "Particolare dei fiori · Ulmus glabra Huds.",
+    "alt": "Ulmus glabra: particolare dei fiori.",
+    "punto": [
+      0.66,
+      0.43
+    ],
+    "riquadro": [
+      0.33,
+      0.03,
+      0.98,
+      0.86
+    ],
+    "note": "Originale e fonte Commons esaminati; taxon alla specie, autore e licenza verificati. Per Aesculus la fonte dichiara focus stacking di 15 scatti: immagine fotografica reale, non generazione AI. Nessuna provenienza locale dedotta."
+  },
+  "pe2-natura-ippocastano-737fc738": {
+    "caption": "Frutto aperto con seme · Aesculus hippocastanum.",
+    "alt": "Aesculus hippocastanum: frutto aperto con seme.",
+    "punto": [
+      0.54,
+      0.55
+    ],
+    "riquadro": [
+      0.1,
+      0.2,
+      0.98,
+      0.96
+    ],
+    "note": "Originale e fonte Commons esaminati; taxon alla specie, autore e licenza verificati. Per Aesculus la fonte dichiara focus stacking di 15 scatti: immagine fotografica reale, non generazione AI. Nessuna provenienza locale dedotta."
+  },
+  "pe2-natura-ape-da-miele-ad812342": {
+    "caption": "Ape da miele (Apis mellifera) su un fiore di loto, fotografata nell’orto botanico di San Paolo, Brasile.",
+    "alt": "Apis mellifera su un fiore di loto.",
+    "punto": [
+      0.51,
+      0.48
+    ],
+    "riquadro": [
+      0.3,
+      0.31,
+      0.72,
+      0.64
+    ],
+    "note": "Originale e metadati Commons esaminati. La didascalia di gruppo nomina esplicitamente la specie fotografata; le località sono quelle dichiarate dalla fonte, senza presenza nel Reatino dedotta."
+  },
+  "pe2-natura-bombi-7c68ab77": {
+    "reject": "Fuoco selettivo e nitidezza meno adeguata sulla testa rispetto alle due foto di Bombus terrestris già approvate; non aggiunge una vista abbastanza leggibile per la scheda."
+  },
+  "pe2-natura-sirfidi-a34056ec": {
+    "caption": "Esempio di sirfide: particolare della testa di Episyrphus balteatus. La foto rappresenta questa specie, non tutti i sirfidi.",
+    "alt": "Particolare della testa di Episyrphus balteatus; esempio di sirfide.",
+    "punto": [
+      0.63,
+      0.52
+    ],
+    "riquadro": [
+      0.32,
+      0.12,
+      0.97,
+      0.98
+    ],
+    "note": "Originale e metadati Commons esaminati. La didascalia di gruppo nomina esplicitamente la specie fotografata; le località sono quelle dichiarate dalla fonte, senza presenza nel Reatino dedotta."
+  },
+  "pe2-natura-sirfidi-40f19ba6": {
+    "caption": "Esempio di sirfide: Episyrphus balteatus adulto su un fiore. La foto rappresenta questa specie, non tutti i sirfidi.",
+    "alt": "Episyrphus balteatus adulto su un fiore; esempio di sirfide.",
+    "punto": [
+      0.58,
+      0.46
+    ],
+    "riquadro": [
+      0.34,
+      0.16,
+      0.86,
+      0.8
+    ],
+    "note": "Originale e metadati Commons esaminati. La didascalia di gruppo nomina esplicitamente la specie fotografata; le località sono quelle dichiarate dalla fonte, senza presenza nel Reatino dedotta."
+  },
+  "pe2-natura-farfalle-diurne-3afc37e0": {
+    "caption": "Esempio di farfalla diurna: Papilio machaon posato sulla roccia. La foto rappresenta questa specie, non tutte le farfalle diurne.",
+    "alt": "Papilio machaon posato sulla roccia; esempio di farfalla diurna.",
+    "punto": [
+      0.57,
+      0.51
+    ],
+    "riquadro": [
+      0.35,
+      0.19,
+      0.85,
+      0.86
+    ],
+    "note": "Originale e metadati Commons esaminati. La didascalia di gruppo nomina esplicitamente la specie fotografata; le località sono quelle dichiarate dalla fonte, senza presenza nel Reatino dedotta."
+  },
+  "pe2-natura-farfalle-diurne-d02afe0d": {
+    "caption": "Esempio di farfalla diurna: Papilio machaon sulla vegetazione, fotografato in Ungheria. La foto rappresenta questa specie, non tutte le farfalle diurne.",
+    "alt": "Papilio machaon sulla vegetazione; esempio di farfalla diurna.",
+    "punto": [
+      0.61,
+      0.45
+    ],
+    "riquadro": [
+      0.34,
+      0.12,
+      0.92,
+      0.79
+    ],
+    "note": "Originale e metadati Commons esaminati. La didascalia di gruppo nomina esplicitamente la specie fotografata; le località sono quelle dichiarate dalla fonte, senza presenza nel Reatino dedotta."
+  },
+  "pe2-natura-zecche-222d7b59": {
+    "caption": "Esempio di zecca: Ixodes ricinus fotografato su fondo chiaro. La foto rappresenta questa specie, non tutto il gruppo Ixodida.",
+    "alt": "Ixodes ricinus su fondo chiaro; esempio di zecca.",
+    "punto": [
+      0.51,
+      0.5
+    ],
+    "riquadro": [
+      0.08,
+      0.09,
+      0.94,
+      0.96
+    ],
+    "note": "Originale e fonte Commons esaminati. Giovane cinghiale e lupi riportano nella didascalia il parco faunistico dichiarato dalla fonte. Il fondo chiaro della zecca non viene trasformato in un’affermazione sullo stato vivo o morto dell’esemplare."
+  },
+  "pe2-natura-cinghiale-0bf743b6": {
+    "reject": "Stesso cinghiale e scena quasi identica alla foto 18: possibile ritaglio o scatto ravvicinato della stessa sequenza, senza una vista complementare utile. Non conteggiare come nuovo arricchimento."
+  },
+  "pe2-natura-cinghiale-48a3b89d": {
+    "caption": "Giovane cinghiale (Sus scrofa), fotografato in un parco faunistico nei Paesi Bassi.",
+    "alt": "Giovane Sus scrofa in un parco faunistico.",
+    "punto": [
+      0.49,
+      0.5
+    ],
+    "riquadro": [
+      0.18,
+      0.11,
+      0.88,
+      0.93
+    ],
+    "note": "Originale e fonte Commons esaminati. Giovane cinghiale e lupi riportano nella didascalia il parco faunistico dichiarato dalla fonte. Il fondo chiaro della zecca non viene trasformato in un’affermazione sullo stato vivo o morto dell’esemplare."
+  },
+  "pe2-natura-lupo-d239eabc": {
+    "caption": "Lupo (Canis lupus) a riposo, fotografato nel parco faunistico Juraparc.",
+    "alt": "Canis lupus a riposo nel parco faunistico Juraparc.",
+    "punto": [
+      0.56,
+      0.58
+    ],
+    "riquadro": [
+      0.12,
+      0.26,
+      0.97,
+      0.88
+    ],
+    "note": "Originale e fonte Commons esaminati. Giovane cinghiale e lupi riportano nella didascalia il parco faunistico dichiarato dalla fonte. Il fondo chiaro della zecca non viene trasformato in un’affermazione sullo stato vivo o morto dell’esemplare."
+  },
+  "pe2-natura-lupo-d93dc708": {
+    "caption": "Lupo (Canis lupus), fotografato nel parco faunistico di Sainte-Croix, in Francia.",
+    "alt": "Canis lupus nel parco faunistico di Sainte-Croix.",
+    "punto": [
+      0.61,
+      0.54
+    ],
+    "riquadro": [
+      0.27,
+      0.23,
+      0.95,
+      0.95
+    ],
+    "note": "Originale e fonte Commons esaminati. Giovane cinghiale e lupi riportano nella didascalia il parco faunistico dichiarato dalla fonte. Il fondo chiaro della zecca non viene trasformato in un’affermazione sullo stato vivo o morto dell’esemplare."
+  },
+  "pe2-natura-capriolo-df147e99": {
+    "reject": "Capriolo piccolo nell’inquadratura e parzialmente nascosto dietro una lapide: non offre una vista abbastanza leggibile rispetto alla fotografia intera già approvata."
+  },
+  "pe2-natura-cervo-fbfb6aeb": {
+    "caption": "Cervo (Cervus elaphus), vista laterale con i palchi.",
+    "alt": "Cervus elaphus, vista laterale con i palchi.",
+    "punto": [
+      0.61,
+      0.46
+    ],
+    "riquadro": [
+      0.31,
+      0.02,
+      0.96,
+      0.96
+    ],
+    "note": "Originale e fonte Commons esaminati. Giovane cinghiale e lupi riportano nella didascalia il parco faunistico dichiarato dalla fonte. Il fondo chiaro della zecca non viene trasformato in un’affermazione sullo stato vivo o morto dell’esemplare."
+  },
+  "pe2-natura-cervo-8c64579f": {
+    "caption": "Cervi (Cervus elaphus), fotografati a Glen Torridon, in Scozia.",
+    "alt": "Cervus elaphus: più esemplari, con una testa in primo piano.",
+    "punto": [
+      0.42,
+      0.53
+    ],
+    "riquadro": [
+      0.02,
+      0.01,
+      0.97,
+      0.98
+    ],
+    "note": "Originale e fonte Commons esaminati; vista distinta e complementare alla prima fotografia. La posizione sull’acqua, sul legno o sulla mano è descritta senza attribuire comportamenti o presenze locali non documentati."
+  },
+  "pe2-natura-cetonia-dorata-eea302fd": {
+    "caption": "Cetonie dorate (Cetonia aurata) sui fiori.",
+    "alt": "Cetonia aurata: più esemplari sui fiori.",
+    "punto": [
+      0.34,
+      0.5
+    ],
+    "riquadro": [
+      0.03,
+      0.05,
+      0.97,
+      0.98
+    ],
+    "note": "Originale e fonte Commons esaminati; vista distinta e complementare alla prima fotografia. La posizione sull’acqua, sul legno o sulla mano è descritta senza attribuire comportamenti o presenze locali non documentati."
+  },
+  "pe2-natura-cetonia-dorata-1e5dddb7": {
+    "reject": "Esemplare isolato con ali distese su fondo uniforme: la fonte non contestualizza il comportamento di volo. Preferite due foto leggibili di cetonie sui fiori; non usare il solo nome del file come prova del volo naturale."
+  },
+  "pe2-natura-rosalia-alpina-3c5bc091": {
+    "caption": "Rosalia alpina (Rosalia alpina), vista laterale sul legno.",
+    "alt": "Rosalia alpina: vista laterale sul legno.",
+    "punto": [
+      0.57,
+      0.48
+    ],
+    "riquadro": [
+      0.02,
+      0.11,
+      0.98,
+      0.79
+    ],
+    "note": "Originale e fonte Commons esaminati; vista distinta e complementare alla prima fotografia. La posizione sull’acqua, sul legno o sulla mano è descritta senza attribuire comportamenti o presenze locali non documentati."
+  },
+  "pe2-natura-rosalia-alpina-da5be92c": {
+    "caption": "Rosalia alpina (Rosalia alpina), fotografia ravvicinata su una mano.",
+    "alt": "Rosalia alpina fotografata su una mano.",
+    "punto": [
+      0.56,
+      0.48
+    ],
+    "riquadro": [
+      0.1,
+      0.22,
+      0.98,
+      0.86
+    ],
+    "note": "Originale e fonte Commons esaminati; vista distinta e complementare alla prima fotografia. La posizione sull’acqua, sul legno o sulla mano è descritta senza attribuire comportamenti o presenze locali non documentati."
+  },
+  "pe2-natura-tritone-crestato-italiano-f236e465": {
+    "caption": "Tritone crestato italiano (Triturus carnifex), vista laterale in acqua.",
+    "alt": "Triturus carnifex: vista laterale in acqua.",
+    "punto": [
+      0.76,
+      0.7
+    ],
+    "riquadro": [
+      0.09,
+      0.43,
+      0.97,
+      0.97
+    ],
+    "note": "Originale e fonte Commons esaminati; vista distinta e complementare alla prima fotografia. La posizione sull’acqua, sul legno o sulla mano è descritta senza attribuire comportamenti o presenze locali non documentati."
+  },
+  "pe2-natura-tritone-crestato-italiano-e4b550c8": {
+    "caption": "Tritone crestato italiano (Triturus carnifex), vista laterale sul legno.",
+    "alt": "Triturus carnifex: vista laterale sul legno.",
+    "punto": [
+      0.68,
+      0.47
+    ],
+    "riquadro": [
+      0.02,
+      0.2,
+      0.98,
+      0.9
+    ],
+    "note": "Originale e fonte Commons esaminati; vista distinta e complementare alla prima fotografia. La posizione sull’acqua, sul legno o sulla mano è descritta senza attribuire comportamenti o presenze locali non documentati."
+  },
+  "pe2-natura-salamandra-pezzata-6a5e949a": {
+    "caption": "Salamandra pezzata (Salamandra salamandra), vista dall’alto tra le foglie secche.",
+    "alt": "Salamandra salamandra: vista dall’alto tra le foglie secche.",
+    "punto": [
+      0.58,
+      0.46
+    ],
+    "riquadro": [
+      0.06,
+      0.13,
+      0.95,
+      0.93
+    ],
+    "note": "Originale e fonte Commons esaminati; vista distinta e complementare alla prima fotografia. La posizione sull’acqua, sul legno o sulla mano è descritta senza attribuire comportamenti o presenze locali non documentati."
+  },
+  "pe2-natura-riccio-europeo-9f5a4de0": {
+    "caption": "Riccio europeo (Erinaceus europaeus), vista laterale nel bosco.",
+    "alt": "Erinaceus europaeus: vista laterale nel bosco.",
+    "punto": [
+      0.51,
+      0.59
+    ],
+    "riquadro": [
+      0.11,
+      0.31,
+      0.84,
+      0.92
+    ],
+    "note": "Originale e fonte Commons esaminati; vista distinta e complementare alla prima fotografia. La posizione sull’acqua, sul legno o sulla mano è descritta senza attribuire comportamenti o presenze locali non documentati."
+  },
+  "pe2-natura-riccio-europeo-ceee4469": {
+    "caption": "Riccio europeo (Erinaceus europaeus), vista frontale.",
+    "alt": "Erinaceus europaeus: vista frontale.",
+    "punto": [
+      0.49,
+      0.52
+    ],
+    "riquadro": [
+      0.25,
+      0.15,
+      0.84,
+      0.83
+    ],
+    "note": "Originale e fonte Commons esaminati; vista distinta e complementare alla prima fotografia. La posizione sull’acqua, sul legno o sulla mano è descritta senza attribuire comportamenti o presenze locali non documentati."
+  },
+  "pe2-natura-volpe-5de3e848": {
+    "caption": "Volpe (Vulpes vulpes), fotografia scattata in Alaska.",
+    "alt": "Vulpes vulpes: particolare della testa, fotografato in Alaska.",
+    "punto": [
+      0.51,
+      0.49
+    ],
+    "riquadro": [
+      0.13,
+      0.04,
+      0.93,
+      0.99
+    ],
+    "note": "Originale e metadati Commons esaminati. Inquadratura complementare, fonte e licenza verificate; località limitata a quella dichiarata, nessuna presenza nel Reatino dedotta."
+  },
+  "pe2-natura-volpe-058efeff": {
+    "caption": "Volpe (Vulpes vulpes) su terreno roccioso, fotografata in Austria.",
+    "alt": "Vulpes vulpes: vista laterale su terreno roccioso.",
+    "punto": [
+      0.36,
+      0.4
+    ],
+    "riquadro": [
+      0.09,
+      0.1,
+      0.95,
+      0.92
+    ],
+    "note": "Originale e metadati Commons esaminati. Inquadratura complementare, fonte e licenza verificate; località limitata a quella dichiarata, nessuna presenza nel Reatino dedotta."
+  },
+  "pe2-natura-tasso-2ca0b989": {
+    "caption": "Tasso (Meles meles) nel bosco.",
+    "alt": "Meles meles nel bosco.",
+    "punto": [
+      0.57,
+      0.58
+    ],
+    "riquadro": [
+      0.23,
+      0.31,
+      0.97,
+      0.94
+    ],
+    "note": "Originale e metadati Commons esaminati. Inquadratura complementare, fonte e licenza verificate; località limitata a quella dichiarata, nessuna presenza nel Reatino dedotta."
+  },
+  "pe2-natura-sorbo-domestico-13f8c203": {
+    "caption": "Portamento · Sorbus domestica L.",
+    "alt": "Sorbus domestica: portamento.",
+    "punto": [
+      0.48,
+      0.45
+    ],
+    "riquadro": [
+      0.03,
+      0.04,
+      0.96,
+      0.98
+    ],
+    "note": "Originale e metadati Commons esaminati. Inquadratura complementare, fonte e licenza verificate; località limitata a quella dichiarata, nessuna presenza nel Reatino dedotta."
+  },
+  "pe2-natura-ciliegio-7b19a058": {
+    "caption": "Albero in fiore · Prunus avium (L.) L.",
+    "alt": "Prunus avium: albero in fiore.",
+    "punto": [
+      0.5,
+      0.46
+    ],
+    "riquadro": [
+      0.07,
+      0.01,
+      0.96,
+      0.99
+    ],
+    "note": "Originale e metadati Commons esaminati. Inquadratura complementare, fonte e licenza verificate; località limitata a quella dichiarata, nessuna presenza nel Reatino dedotta."
+  },
+  "pe2-natura-noce-1ba9ef65": {
+    "caption": "Frutto con involucro aperto · Juglans regia L.",
+    "alt": "Juglans regia: frutto con involucro aperto.",
+    "punto": [
+      0.52,
+      0.48
+    ],
+    "riquadro": [
+      0.11,
+      0.05,
+      0.97,
+      0.92
+    ],
+    "note": "Originale e metadati Commons esaminati. Inquadratura complementare, fonte e licenza verificate; località limitata a quella dichiarata, nessuna presenza nel Reatino dedotta."
+  },
+  "pe2-natura-olmo-montano-dbc95e40": {
+    "caption": "Ramo e foglie · Ulmus glabra Huds.",
+    "alt": "Ulmus glabra: ramo e foglie.",
+    "punto": [
+      0.51,
+      0.48
+    ],
+    "riquadro": [
+      0.14,
+      0.19,
+      0.94,
+      0.85
+    ],
+    "note": "Originale e metadati Commons esaminati. Inquadratura complementare, fonte e licenza verificate; località limitata a quella dichiarata, nessuna presenza nel Reatino dedotta."
+  },
+  "pe2-natura-ippocastano-001a6317": {
+    "caption": "Infiorescenza · Aesculus hippocastanum, fotografata nell’orto botanico di Breslavia.",
+    "alt": "Aesculus hippocastanum: infiorescenza.",
+    "punto": [
+      0.49,
+      0.44
+    ],
+    "riquadro": [
+      0.13,
+      0.03,
+      0.86,
+      0.99
+    ],
+    "note": "Originale e metadati Commons esaminati. Inquadratura complementare, fonte e licenza verificate; località limitata a quella dichiarata, nessuna presenza nel Reatino dedotta."
+  }
+}

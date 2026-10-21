@@ -1,0 +1,63 @@
+{
+ "started": "2026-10-19T11:11:08.326664+00:00",
+ "seed": {
+  "id": "circeo-cerasella-verdesca",
+  "name": "Cerasella e Piscina della Verdesca",
+  "lat": 41.3518884,
+  "lon": 13.0482759,
+  "radius_m": 1500,
+  "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+  "province": [
+   "LT"
+  ],
+  "coordinateProvenance": {
+   "method": "published_place_or_map",
+   "sourceUrl": "https://www.openstreetmap.org/node/768875089",
+   "note": "Località Cerasella in OSM, geocodifica Nominatim; centro editoriale, non parcheggio."
+  },
+  "collectionStatus": "observation_only",
+  "collectionNote": "Uscita di osservazione. Raccolta 2026 riservata ad autorizzati nelle sole aree derogate; il percorso non dimostra il diritto di raccolta.",
+  "collectionSourceUrl": "https://www.parcocirceo.it/dettaglio.php?id=85389",
+  "publicationStatus": "active",
+  "manager": "Ente Parco Nazionale del Circeo",
+  "researchGroup": "sud",
+  "officialTrailRefs": [],
+  "officialTrailNameMatches": [
+   "Verdesca"
+  ]
+ },
+ "demProvider": "copernicus-glo90-openmeteo",
+ "demResolutionM": 90,
+ "elevation": {
+  "min": 20,
+  "p25": 37,
+  "median": 42,
+  "p75": 46,
+  "max": 56
+ },
+ "suggestedBandsM": [
+  40,
+  40,
+  50
+ ],
+ "forestPolygonCount": 18,
+ "habitatSamples": 317,
+ "roadErrors": [],
+ "trails": {
+  "listedRelations": 0,
+  "requestedRefs": [],
+  "requestedDistinctiveNames": [
+   "verdesca"
+  ],
+  "matchedRelations": [],
+  "unmatchedRefs": [],
+  "driveError": null,
+  "coverageLimit": 100,
+  "geometryStatus": "no_documented_osm_match_imported"
+ },
+ "status": "complete",
+ "finished": "2026-10-19T11:11:19.015062+00:00",
+ "habitatStatus": "complete",
+ "grid": 21,
+ "gridStepM": 150.0
+}

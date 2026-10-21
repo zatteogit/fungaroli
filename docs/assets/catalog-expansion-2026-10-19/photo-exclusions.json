@@ -1,0 +1,1323 @@
+{
+  "date": "2026-10-19",
+  "selection_policy": "Qualità fotografica e utilità dei particolari prevalgono sulla quantità.",
+  "excluded": [
+    {
+      "photo": {
+        "file": "assets/species/edulis-inat3.webp",
+        "source": "iNaturalist (research grade)",
+        "page": "https://www.inaturalist.org/observations/63767817",
+        "author": "danix",
+        "license": "CC-BY-NC",
+        "place": "Norma",
+        "date": "2020-10-13",
+        "file_hd": "assets/species/edulis-inat3-hd.webp",
+        "thumb": "assets/species/edulis-inat3-t.webp"
+      },
+      "target": "edulis",
+      "reason": "Esempio segnalato direttamente da Matteo: soggetto poco nitido, esemplari danneggiati e in parte coperti, sfondo confuso; particolari scarsamente leggibili. Fonte/licenza e file conservati per tracciabilità; foto rimossa dalla galleria."
+    },
+    {
+      "target": "edulis",
+      "photo": {
+        "file": "assets/species/edulis-inat2.webp",
+        "source": "iNaturalist (research grade)",
+        "page": "https://www.inaturalist.org/observations/62918419",
+        "author": "Rino",
+        "license": "CC-BY-NC",
+        "place": "Provincia di Chieti, Italia",
+        "date": "2020-10-18",
+        "file_hd": "assets/species/edulis-inat2-hd.webp",
+        "thumb": "assets/species/edulis-inat2-t.webp"
+      },
+      "reason": "Soggetti relativamente piccoli, base sporca rivolta verso camera e sfondo ingombro; ridondante rispetto a immagini più chiare."
+    },
+    {
+      "target": "aereus",
+      "photo": {
+        "file": "assets/species/aereus-inat2.webp",
+        "source": "iNaturalist (research grade)",
+        "page": "https://www.inaturalist.org/observations/311013942",
+        "author": "lucapassalacqua",
+        "license": "CC-BY-NC",
+        "place": "Provincia di Grosseto, Italia",
+        "date": "2025-09-01",
+        "file_hd": "assets/species/aereus-inat2-hd.webp",
+        "thumb": "assets/species/aereus-inat2-t.webp"
+      },
+      "reason": "Soggetti piccoli, sfocati; gambi nascosti, sfondo dominante."
+    },
+    {
+      "target": "aestivalis",
+      "photo": {
+        "file": "assets/species/aestivalis-anro3.webp",
+        "file_hd": "assets/species/aestivalis-anro3-hd.webp",
+        "thumb": "assets/species/aestivalis-anro3-t.webp",
+        "source": "Wikimedia Commons",
+        "page": "https://commons.wikimedia.org/wiki/File:20200611Boletus_reticulatus3.jpg",
+        "author": "AnRo0002",
+        "license": "CC0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "attribution": "AnRo0002 · Wikimedia Commons · CC0",
+        "alt": "Boletus aestivalis — Vista dal basso: pori e gambo",
+        "caption": "Vista dal basso: pori e gambo; complementare alla vista del cappello, nessuno stadio dichiarato.",
+        "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/4/4a/20200611Boletus_reticulatus3.jpg",
+        "sha256Original": "c8b0eb222fadc8190899f80e4d760e7bb12bc82c8ed5ecf08c923305df3af153",
+        "changes": "Orientamento EXIF, ridimensionamento, compressione WebP; miniatura ritagliata."
+      },
+      "reason": "Dominante ciano e controluce forte, lettura cromatica inaffidabile; disponibile vista dal basso migliore."
+    },
+    {
+      "target": "caesarea",
+      "photo": {
+        "file": "assets/species/caesarea-inat2.webp",
+        "source": "iNaturalist (research grade)",
+        "page": "https://www.inaturalist.org/observations/52141009",
+        "author": "lucapassalacqua",
+        "license": "CC-BY-NC",
+        "place": "Provincia di Grosseto, Italia",
+        "date": "2020-07-05",
+        "file_hd": "assets/species/caesarea-inat2-hd.webp",
+        "thumb": "assets/species/caesarea-inat2-t.webp"
+      },
+      "reason": "Morbida, colore slavato e cappello danneggiato; le alternative221/222 sono più leggibili."
+    },
+    {
+      "target": "cibarius",
+      "photo": {
+        "file": "assets/species/cibarius-inat2.webp",
+        "source": "iNaturalist (research grade)",
+        "page": "https://www.inaturalist.org/observations/41530979",
+        "author": "Rino",
+        "license": "CC-BY-NC",
+        "place": "Provincia di Isernia, Italia",
+        "date": "2009-07-02",
+        "file_hd": "assets/species/cibarius-inat2-hd.webp",
+        "thumb": "assets/species/cibarius-inat2-t.webp"
+      },
+      "reason": "Flash duro, esemplari rotti e sporchi, coltello dominante e particolare sfocato; 228/229 sono migliori."
+    },
+    {
+      "target": "cornucopioides",
+      "photo": {
+        "file": "assets/species/cornucopioides-inat1.webp",
+        "source": "iNaturalist (research grade)",
+        "page": "https://www.inaturalist.org/observations/194010261",
+        "author": "Manuela Fiorini",
+        "license": "CC-BY",
+        "place": "Marche, IT",
+        "date": "2023-11-25",
+        "file_hd": "assets/species/cornucopioides-inat1-hd.webp",
+        "thumb": "assets/species/cornucopioides-inat1-t.webp"
+      },
+      "reason": "Esemplare collassato e scuro su plastica, controluce e riflessi; 237/239 conservano figure più utili."
+    },
+    {
+      "target": "cornucopioides",
+      "photo": {
+        "file": "assets/species/cornucopioides-inat3.webp",
+        "source": "iNaturalist (research grade)",
+        "page": "https://www.inaturalist.org/observations/249367365",
+        "author": "gretezzz",
+        "license": "CC-BY-NC",
+        "place": "52100 Arezzo AR, Italia",
+        "date": "2024-10-27",
+        "file_hd": "assets/species/cornucopioides-inat3-hd.webp",
+        "thumb": "assets/species/cornucopioides-inat3-t.webp"
+      },
+      "reason": "Mosso evidente in HD e sfondo di foglie/rami invadente; 237/239 mostrano meglio le trombette."
+    },
+    {
+      "target": "repandum",
+      "photo": {
+        "file": "assets/species/repandum-inat3.webp",
+        "source": "iNaturalist (research grade)",
+        "page": "https://www.inaturalist.org/observations/64606585",
+        "author": "Rino",
+        "license": "CC-BY-NC",
+        "place": "Provincia di Chieti, Italia",
+        "date": "2020-11-10",
+        "file_hd": "assets/species/repandum-inat3-hd.webp",
+        "thumb": "assets/species/repandum-inat3-t.webp"
+      },
+      "reason": "Flash forte su esemplari sporchi/danneggiati nel buio, figure piccole; 300–302 mantengono meglio profilo e aculei."
+    },
+    {
+      "target": "procera",
+      "photo": {
+        "file": "assets/species/procera-inat1.webp",
+        "source": "iNaturalist (research grade)",
+        "page": "https://www.inaturalist.org/observations/4111137",
+        "author": "Davide",
+        "license": "CC-BY-NC",
+        "place": "Subiaco RM",
+        "date": "2016-09-13",
+        "file_hd": "assets/species/procera-inat1-hd.webp",
+        "thumb": "assets/species/procera-inat1-t.webp"
+      },
+      "reason": "Rumore alto e dominante fredda/violacea, margini poco nitidi; 296 conserva una figura intera e cappelli di forme diverse."
+    },
+    {
+      "target": "mellea",
+      "photo": {
+        "file": "assets/species/mellea-inat1.webp",
+        "source": "iNaturalist (research grade)",
+        "page": "https://www.inaturalist.org/observations/64431559",
+        "author": "lucapassalacqua",
+        "license": "CC-BY-NC",
+        "place": "Provincia di Grosseto, Italia",
+        "date": "2020-11-07",
+        "file_hd": "assets/species/mellea-inat1-hd.webp",
+        "thumb": "assets/species/mellea-inat1-t.webp"
+      },
+      "reason": "Gruppo relativamente piccolo in groviglio di rami, gambi nascosti; 270/273 più leggibili."
+    },
+    {
+      "target": "mellea",
+      "photo": {
+        "file": "assets/species/mellea-inat2.webp",
+        "source": "iNaturalist (research grade)",
+        "page": "https://www.inaturalist.org/observations/277155542",
+        "author": "Alessandra Florea e Andrea Boiani",
+        "license": "CC-BY-NC",
+        "place": "Provincia di Viterbo, Italia",
+        "date": "2024-10-20",
+        "file_hd": "assets/species/mellea-inat2-hd.webp",
+        "thumb": "assets/species/mellea-inat2-t.webp"
+      },
+      "reason": "Profondità di campo molto ridotta, gran parte dei cappelli e dei gambi sfocati; 273 offre un gruppo intero più chiaro."
+    },
+    {
+      "target": "terreum",
+      "photo": {
+        "file": "assets/species/terreum-inat2.webp",
+        "source": "iNaturalist (research grade)",
+        "page": "https://www.inaturalist.org/observations/146211484",
+        "author": "Dr. Fabio Mao Valletta",
+        "license": "CC-BY-NC",
+        "place": "Provincia di Frosinone, Italia",
+        "date": "2022-12-17",
+        "file_hd": "assets/species/terreum-inat2-hd.webp",
+        "thumb": "assets/species/terreum-inat2-t.webp"
+      },
+      "reason": "Sfocatura e dominante rosata/ciano evidenti in HD, funghi piccoli fra erba; 314/317 migliori."
+    },
+    {
+      "target": "nuda",
+      "photo": {
+        "file": "assets/species/nuda-commons109950721.webp",
+        "file_hd": "assets/species/nuda-commons109950721-hd.webp",
+        "thumb": "assets/species/nuda-commons109950721-t.webp",
+        "source": "Wikimedia Commons",
+        "page": "https://commons.wikimedia.org/wiki/File:Lepista_nuda_109950721.jpg",
+        "author": "Елена Патерикина",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "Елена Патерикина · Wikimedia Commons · CC BY 4.0",
+        "alt": "Lepista nuda — Vista dall’alto dei cappelli",
+        "caption": "Vista dall’alto dei cappelli; nessuna fase assegnata.",
+        "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Lepista_nuda_109950721.jpg",
+        "sha256Original": "62a93b69132af3598de3267f1f96200839c532d62585e28faa9aa50b65ea50d0",
+        "changes": "Orientamento EXIF, ridimensionamento, compressione WebP; miniatura ritagliata."
+      },
+      "reason": "Foglie e rami occultano completamente i gambi, dettaglio tenue; 280/283 coprono cappello e lamelle in modo più chiaro."
+    },
+    {
+      "target": "agaricus-arvensis",
+      "photo": {
+        "file": "assets/species/agaricus-arvensis-inat1.webp",
+        "file_hd": "assets/species/agaricus-arvensis-inat1-hd.webp",
+        "thumb": "assets/species/agaricus-arvensis-inat1-t.webp",
+        "source": "iNaturalist (research grade)",
+        "page": "https://www.inaturalist.org/observations/177322413",
+        "author": "Morten Heegaard",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "photoId": 308550024,
+        "taxonName": "Agaricus arvensis",
+        "taxonId": 58699,
+        "qualityGrade": "research",
+        "place": "Brøndby",
+        "date": "2023-08-08",
+        "originalWidth": 1024,
+        "originalHeight": 768
+      },
+      "reason": "Lamelle quasi nere senza dettaglio e gambo nascosto dall’erba; 200 conserva meglio anello e figura."
+    },
+    {
+      "target": "agaricus-arvensis",
+      "photo": {
+        "file": "assets/species/pe2-main-agaricus-arvensis-01.webp",
+        "file_hd": "assets/species/pe2-main-agaricus-arvensis-01-hd.webp",
+        "thumb": "assets/species/pe2-main-agaricus-arvensis-01-t.webp",
+        "page": "https://commons.wikimedia.org/wiki/File:Agaricus_arvensis_2.jpg",
+        "author": "Ian Sutton  from Collinsville and Oberon, Australia",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "attribution": "Ian Sutton  from Collinsville and Oberon, Australia / Wikimedia Commons / CC BY 2.0",
+        "alt": "Agaricus arvensis. Cappello e lamelle osservati di lato.",
+        "caption": "Cappello e lamelle osservati di lato.",
+        "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+        "source": "Wikimedia Commons",
+        "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Agaricus_arvensis_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "sha256Original": "ebb620697992e26f51d60a7802c43c77636d92643d6f9d48ed622810df023746"
+      },
+      "reason": "Cappello tagliato ai lati, lamelle e gambo in forte ombra; 200 rende meglio i caratteri, questa macro aggiunge poco."
+    },
+    {
+      "target": "agaricus-sylvicola",
+      "photo": {
+        "file": "assets/species/agaricus-sylvicola-inat1.webp",
+        "file_hd": "assets/species/agaricus-sylvicola-inat1-hd.webp",
+        "thumb": "assets/species/agaricus-sylvicola-inat1-t.webp",
+        "source": "iNaturalist (research grade)",
+        "page": "https://www.inaturalist.org/observations/308007790",
+        "author": "Сергей",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "photoId": 555683194,
+        "taxonName": "Agaricus sylvicola",
+        "taxonId": 154291,
+        "qualityGrade": "research",
+        "place": "Московская обл., Россия, 143081",
+        "date": "2025-08-21",
+        "originalWidth": 768,
+        "originalHeight": 1024
+      },
+      "reason": "Vista del solo cappello con mano dominante e nitidezza debole; 210/212/213 coprono meglio la figura."
+    },
+    {
+      "target": "agaricus-sylvicola",
+      "photo": {
+        "file": "assets/species/pe2-main-agaricus-sylvicola-inat02.webp",
+        "file_hd": "assets/species/pe2-main-agaricus-sylvicola-inat02-hd.webp",
+        "thumb": "assets/species/pe2-main-agaricus-sylvicola-inat02-t.webp",
+        "page": "https://www.inaturalist.org/observations/63304870",
+        "author": "pavlaki1968",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "(c) pavlaki1968, some rights reserved (CC BY)",
+        "alt": "Agaricus sylvicola. Cappelli chiari osservati dall’alto fra erba e foglie.",
+        "caption": "Cappelli chiari osservati dall’alto fra erba e foglie.",
+        "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+        "source": "iNaturalist",
+        "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/101575975/original.jpg",
+        "sha256Original": "114bb48450f05596bd3dabdc5b2d42c5ba730eba58b26d4f64d04f6eb7ccdb09",
+        "quality_grade": "research",
+        "observation_id": 63304870,
+        "photo_id": 101575975,
+        "source_taxon_name": "Agaricus sylvicola"
+      },
+      "reason": "Cappello molto eroso, luce rosata e forte erba di disturbo; 210/212/213 più leggibili."
+    },
+    {
+      "target": "pleurotus-eryngii",
+      "photo": {
+        "file": "assets/species/pleurotus-eryngii-ref.webp",
+        "file_hd": "assets/species/pleurotus-eryngii-ref-hd.webp",
+        "thumb": "assets/species/pleurotus-eryngii-ref-t.webp",
+        "source": "iNaturalist (research grade)",
+        "page": "https://www.inaturalist.org/observations/189118284",
+        "author": "szegedigombasz",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "photoId": 331203141,
+        "taxonName": "Pleurotus eryngii",
+        "taxonId": 205516,
+        "qualityGrade": "research",
+        "place": "Sándorfalva, Sándorfalva, 38-as km-kő (4519. sz. út), 6762 Magyarország",
+        "date": "2023-10-23",
+        "originalWidth": 1024,
+        "originalHeight": 768
+      },
+      "reason": "Stoppie sovrapposte e gambo coperto; 291 offre figura e lamelle più chiare,290 completa i caratteri del cappello."
+    },
+    {
+      "target": "morchella-esculenta",
+      "photo": {
+        "file": "assets/species/morchella-esculenta-inat1.webp",
+        "file_hd": "assets/species/morchella-esculenta-inat1-hd.webp",
+        "thumb": "assets/species/morchella-esculenta-inat1-t.webp",
+        "source": "iNaturalist (research grade)",
+        "page": "https://www.inaturalist.org/observations/77047645",
+        "author": "Barnaby Walters",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "photoId": 125995806,
+        "taxonName": "Morchella esculenta",
+        "taxonId": 58682,
+        "qualityGrade": "research",
+        "place": "Lobau, Vienna, Austria",
+        "date": "2021-05-03",
+        "originalWidth": 1024,
+        "originalHeight": 683,
+        "taxonNote": "Foto identificata dalla comunità iNaturalist; il catalogo tratta il complesso sensu lato, non una determinazione molecolare."
+      },
+      "reason": "Solo la mitra emerge piccola fra piante e rametti, gambo nascosto; 277/279 mostrano meglio l’intera struttura."
+    },
+    {
+      "target": "calocybe-gambosa",
+      "photo": {
+        "file": "assets/species/calocybe-gambosa-inat1.webp",
+        "file_hd": "assets/species/calocybe-gambosa-inat1-hd.webp",
+        "thumb": "assets/species/calocybe-gambosa-inat1-t.webp",
+        "source": "iNaturalist (research grade)",
+        "page": "https://www.inaturalist.org/observations/160062642",
+        "author": "Lee",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "photoId": 276576718,
+        "taxonName": "Calocybe gambosa",
+        "taxonId": 450829,
+        "qualityGrade": "research",
+        "place": "Brasside, Durham, England, GB",
+        "date": "2023-05-06",
+        "originalWidth": 1024,
+        "originalHeight": 768
+      },
+      "reason": "Esemplari danneggiati, cappelli screpolati e gambo occultato; 225 offre caratteri più chiari."
+    },
+    {
+      "target": "marasmius-oreades",
+      "photo": {
+        "file": "assets/species/marasmius-oreades-inat1.webp",
+        "file_hd": "assets/species/marasmius-oreades-inat1-hd.webp",
+        "thumb": "assets/species/marasmius-oreades-inat1-t.webp",
+        "source": "iNaturalist (research grade)",
+        "page": "https://www.inaturalist.org/observations/321956296",
+        "author": "Peter Chen 2.0",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "photoId": 582332549,
+        "taxonName": "Marasmius oreades",
+        "taxonId": 118240,
+        "qualityGrade": "research",
+        "place": "Parcul Kretzulescu, Bucharest, Romania",
+        "date": "2025-09-29",
+        "originalWidth": 1024,
+        "originalHeight": 768
+      },
+      "reason": "Cappelli molto danneggiati/deformati e gambo assente; 266 e268 mostrano i caratteri con figure meno alterate."
+    },
+    {
+      "target": "craterellus-lutescens",
+      "photo": {
+        "file": "assets/species/craterellus-lutescens-inat1.webp",
+        "file_hd": "assets/species/craterellus-lutescens-inat1-hd.webp",
+        "thumb": "assets/species/craterellus-lutescens-inat1-t.webp",
+        "source": "iNaturalist (research grade)",
+        "page": "https://www.inaturalist.org/observations/252073985",
+        "author": "Darío Estraviz López",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "photoId": 451165634,
+        "taxonName": "Craterellus lutescens",
+        "taxonId": 514218,
+        "qualityGrade": "research",
+        "place": "2530 São Bartolomeu dos Galegos, Portugal",
+        "date": "2024-11-09",
+        "originalWidth": 587,
+        "originalHeight": 1024
+      },
+      "reason": "Molti rametti attraversano i gambi e il primo piano è sfocato; 243 offre gli stessi caratteri con maggiore nitidezza e separazione."
+    },
+    {
+      "target": "hygrophorus-latitabundus",
+      "photo": {
+        "file": "assets/species/pe2-main-hygrophorus-latitabundus-q02.webp",
+        "file_hd": "assets/species/pe2-main-hygrophorus-latitabundus-q02-hd.webp",
+        "thumb": "assets/species/pe2-main-hygrophorus-latitabundus-q02-t.webp",
+        "page": "https://commons.wikimedia.org/wiki/File:Hygophorus_latitabundus.jpg",
+        "author": "A.Aguilera",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "attribution": "A.Aguilera / Wikimedia Commons / CC BY-SA 4.0",
+        "alt": "Hygrophorus latitabundus. Esemplari fra gli aghi, con lamelle e gambo in primo piano.",
+        "caption": "Esemplari fra gli aghi, con lamelle e gambo in primo piano.",
+        "changes": "Orientamento EXIF applicato, ridimensionamento, compressione WebP; miniatura quadrata centrale. Profili ICC presenti convertiti a sRGB prima della rimozione; originali non alterati. EXIF/XMP assenti. Nessuna correzione cromatica creativa o generazione.",
+        "source": "Wikimedia Commons",
+        "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/5/52/Hygophorus_latitabundus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "sha256Original": "b5391f3a3cf0591eeaa7c9981b0dd3050dc2749d55e4e7403f37ce6b5c44627b"
+      },
+      "reason": "Bassa risoluzione e dominante fredda, erba attraversa il soggetto; 251/252 mostrano lamelle e figura con più dettaglio."
+    },
+    {
+      "target": "tricholoma-portentosum",
+      "photo": {
+        "file": "assets/species/tricholoma-portentosum-inat1.webp",
+        "file_hd": "assets/species/tricholoma-portentosum-inat1-hd.webp",
+        "thumb": "assets/species/tricholoma-portentosum-inat1-t.webp",
+        "source": "iNaturalist (research grade)",
+        "page": "https://www.inaturalist.org/observations/321853110",
+        "author": "martin ingemansson",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "photoId": 582130444,
+        "taxonName": "Tricholoma portentosum",
+        "taxonId": 194460,
+        "qualityGrade": "research",
+        "place": "Göteborg, Västra Götaland County, SE",
+        "date": "2025-10-19",
+        "originalWidth": 768,
+        "originalHeight": 1024
+      },
+      "reason": "Soggetto piccolo e gambo coperto da un grosso ramo, inquadratura morbida; 318/320/322 più leggibili."
+    },
+    {
+      "target": "coprinus-comatus",
+      "photo": {
+        "file": "assets/species/coprinus-comatus-inat1.webp",
+        "file_hd": "assets/species/coprinus-comatus-inat1-hd.webp",
+        "thumb": "assets/species/coprinus-comatus-inat1-t.webp",
+        "source": "iNaturalist (research grade)",
+        "page": "https://www.inaturalist.org/observations/192464456",
+        "author": "Kieran Roy Powell",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "photoId": 337871793,
+        "taxonName": "Coprinus comatus",
+        "taxonId": 47392,
+        "qualityGrade": "research",
+        "place": "Aberystwyth University, Aberystwyth, Wales, GB",
+        "date": "2023-11-28",
+        "originalWidth": 1024,
+        "originalHeight": 768
+      },
+      "reason": "Stessa scena e stesso esemplare della232, già più pulita; la presenza del secondo fungo non aggiunge un carattere distinto rispetto a234–236."
+    },
+    {
+      "target": "amanita-rubescens",
+      "photo": {
+        "file": "assets/species/amanita-rubescens-inat1.webp",
+        "file_hd": "assets/species/amanita-rubescens-inat1-hd.webp",
+        "thumb": "assets/species/amanita-rubescens-inat1-t.webp",
+        "source": "iNaturalist (research grade)",
+        "page": "https://www.inaturalist.org/observations/315905982",
+        "author": "Kieran Roy Powell",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "photoId": 570720945,
+        "taxonName": "Amanita rubescens",
+        "taxonId": 67661,
+        "qualityGrade": "research",
+        "place": "Hugh Owen Building, Aberystwyth, Wales, GB",
+        "date": "2025-09-22",
+        "originalWidth": 1024,
+        "originalHeight": 768
+      },
+      "reason": "Ombra del fotografo sul cappello e luce dura; 216 e macro218 migliori per verruche e colore."
+    },
+    {
+      "target": "Caloboletus calopus",
+      "photo": {
+        "file": "assets/species/pe2-sosia-caloboletus-calopus-inat-524886055.webp",
+        "file_hd": "assets/species/pe2-sosia-caloboletus-calopus-inat-524886055-hd.webp",
+        "thumb": "assets/species/pe2-sosia-caloboletus-calopus-inat-524886055-t.webp",
+        "page": "https://www.inaturalist.org/observations/291715415",
+        "author": "Jose Castro",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "(c) Jose Castro, some rights reserved (CC BY)",
+        "alt": "Caloboletus calopus, cappello e gambo esposti.",
+        "caption": "Cappello e gambo esposti.",
+        "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+        "source": "iNaturalist (research grade)",
+        "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/524886055/original.jpg",
+        "sha256Original": "77e29e1845765aa0fce0b4658aa8dcaa0732996e126c1e01f527040ddadcad08",
+        "observation_id": 291715415,
+        "photo_id": 524886055,
+        "quality_grade": "research",
+        "source_taxon_id": 701434
+      },
+      "reason": "Sfocatura e dettaglio limitato; cappello coperto da foglia, ridondanza con viste migliori."
+    },
+    {
+      "target": "Neoboletus luridiformis",
+      "photo": {
+        "file": "assets/species/neoboletus-luridiformis-ref.webp",
+        "file_hd": "assets/species/neoboletus-luridiformis-ref-hd.webp",
+        "source": "Wikimedia Commons",
+        "page": "https://commons.wikimedia.org/wiki/File:Boletus_erythropus_JPG2.JPG",
+        "author": "Jean-Pol GRANDMONT",
+        "license": "CC BY 3.0",
+        "thumb": "assets/species/neoboletus-luridiformis-ref-t.webp"
+      },
+      "reason": "Risoluzione bassa, sole duro e saturazione estrema dei pori; 144 conserva una figura nitida. Servirebbe una nuova vista dei pori fedele."
+    },
+    {
+      "target": "Neoboletus luridiformis",
+      "photo": {
+        "file": "assets/species/pe2-sosia-neoboletus-luridiformis-845378a.webp",
+        "file_hd": "assets/species/pe2-sosia-neoboletus-luridiformis-845378a-hd.webp",
+        "thumb": "assets/species/pe2-sosia-neoboletus-luridiformis-845378a-t.webp",
+        "page": "https://commons.wikimedia.org/wiki/File:Neoboletus_luridiformis_Krasnoborowik_ceglastopory_2018-07-28_%C5%9Al%C4%99%C5%BCa_01.jpg",
+        "author": "Agnieszka Kwiecień, Nova",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "attribution": "Agnieszka Kwiecień, Nova · CC BY-SA 4.0 · Wikimedia Commons",
+        "alt": "Neoboletus luridiformis, esemplare nel sottobosco.",
+        "caption": "Esemplare nel sottobosco.",
+        "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+        "source": "Wikimedia Commons",
+        "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Neoboletus_luridiformis_Krasnoborowik_ceglastopory_2018-07-28_%C5%9Al%C4%99%C5%BCa_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "sha256Original": "18b9c6f97691726ee0338e11cc1e1b4b61aea867a88b6d9ff6decc8b88fd3249"
+      },
+      "reason": "Soggetti piccoli e parzialmente danneggiati in sfondo molto dominante; 144 è più leggibile."
+    },
+    {
+      "target": "Imleria badia",
+      "photo": {
+        "file": "assets/species/imleria-badia-inat1.webp",
+        "source": "iNaturalist (research grade)",
+        "page": "https://www.inaturalist.org/observations/216337372",
+        "author": "matteo_bevilacqua",
+        "license": "CC-BY-NC",
+        "place": "00066 Manziana RM, Italia",
+        "date": "2024-05-12",
+        "file_hd": "assets/species/imleria-badia-inat1-hd.webp",
+        "thumb": "assets/species/imleria-badia-inat1-t.webp"
+      },
+      "reason": "Soggetto piccolo o poco nitido, oppure inquadratura confusa; confrontare con alternative più leggibili della stessa scheda."
+    },
+    {
+      "target": "Imleria badia",
+      "photo": {
+        "file": "assets/species/pe2-sosia-imleria-badia-inat-169437935.webp",
+        "file_hd": "assets/species/pe2-sosia-imleria-badia-inat-169437935-hd.webp",
+        "thumb": "assets/species/pe2-sosia-imleria-badia-inat-169437935-t.webp",
+        "page": "https://www.inaturalist.org/observations/101452089",
+        "author": "A. Johann",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "(c) A. Johann, some rights reserved (CC BY)",
+        "alt": "Imleria badia, parte interna esposta.",
+        "caption": "Parte interna esposta.",
+        "changes": "Conversione ICC del profilo sorgente in sRGB per preservare la resa cromatica sul Web; orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessun ritocco creativo.",
+        "source": "iNaturalist (research grade)",
+        "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/169437935/original.jpg",
+        "sha256Original": "2b4b243314306ee96149c8b056570d668b7acd6641b7aa06f0a70ed42526cbcf",
+        "observation_id": 101452089,
+        "photo_id": 169437935,
+        "quality_grade": "research",
+        "source_taxon_id": 510854
+      },
+      "reason": "Esemplare deteriorato, coperto o mal inquadrato; particolari poco leggibili e vista già meglio coperta dalle alternative."
+    },
+    {
+      "target": "Amanita verna",
+      "photo": {
+        "file": "assets/species/verna-commons3.webp",
+        "file_hd": "assets/species/verna-commons3-hd.webp",
+        "thumb": "assets/species/verna-commons3-t.webp",
+        "source": "Wikimedia Commons",
+        "page": "https://commons.wikimedia.org/wiki/File:Amanita_verna_3.jpg",
+        "author": "Sinisa Radic",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "attribution": "Sinisa Radic · Wikimedia Commons · CC BY-SA 4.0",
+        "alt": "Amanita verna — Esemplari interi con base",
+        "caption": "Esemplari interi con base; dominante cromatica originale conservata, nessuna correzione del colore.",
+        "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/1/16/Amanita_verna_3.jpg",
+        "sha256Original": "f9ddab0605fbada07d24936cf90f9a51f05726e47d4bd5a75a417d7e0c32cfb7",
+        "changes": "Orientamento EXIF, ridimensionamento, compressione WebP; miniatura ritagliata."
+      },
+      "reason": "Dominante magenta marcata, scansione datata, particolari poco leggibili."
+    },
+    {
+      "target": "Hygrophoropsis aurantiaca",
+      "photo": {
+        "file": "assets/species/hygrophoropsis-aurantiaca-inat1.webp",
+        "source": "iNaturalist (research grade)",
+        "page": "https://www.inaturalist.org/observations/190086977",
+        "author": "Manuela Fiorini",
+        "license": "CC-BY",
+        "place": "Esanatoglia, Marche, IT",
+        "date": "2023-11-05",
+        "file_hd": "assets/species/hygrophoropsis-aurantiaca-inat1-hd.webp",
+        "thumb": "assets/species/hygrophoropsis-aurantiaca-inat1-t.webp"
+      },
+      "reason": "Immagine morbida e soggetti danneggiati, dettagli meno leggibili delle alternative."
+    },
+    {
+      "target": "Hygrophoropsis aurantiaca",
+      "photo": {
+        "file": "assets/species/pe2-sosia-hygrophoropsis-aurantiaca-1dadbca.webp",
+        "file_hd": "assets/species/pe2-sosia-hygrophoropsis-aurantiaca-1dadbca-hd.webp",
+        "thumb": "assets/species/pe2-sosia-hygrophoropsis-aurantiaca-1dadbca-t.webp",
+        "page": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis_aurantiaca_051106w.jpg",
+        "author": "Strobilomyces",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "attribution": "Strobilomyces · CC BY-SA 3.0 · Wikimedia Commons",
+        "alt": "Hygrophoropsis aurantiaca, cappelli e lamelle esposti.",
+        "caption": "Cappelli e lamelle esposti.",
+        "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+        "source": "Wikimedia Commons",
+        "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/d/da/Hygrophoropsis_aurantiaca_051106w.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "sha256Original": "11c8678cc0af8b8d8485bcf9d80ea35137f2f6d314833e2ed7ca0fe0f50cb9bf"
+      },
+      "reason": "Luce dura e alte luci sul cappello; vista ridondante con le alternative migliori."
+    },
+    {
+      "target": "Cortinarius orellanus",
+      "photo": {
+        "file": "assets/species/pe2-sosia-cortinarius-orellanus-inat-139699317.webp",
+        "file_hd": "assets/species/pe2-sosia-cortinarius-orellanus-inat-139699317-hd.webp",
+        "thumb": "assets/species/pe2-sosia-cortinarius-orellanus-inat-139699317-t.webp",
+        "page": "https://www.inaturalist.org/observations/84954351",
+        "author": "Jose Castro",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "(c) Jose Castro, some rights reserved (CC BY)",
+        "alt": "Cortinarius orellanus, cappelli e lamelle esposti.",
+        "caption": "Cappelli e lamelle esposti.",
+        "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+        "source": "iNaturalist (research grade)",
+        "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/139699317/original.jpeg",
+        "sha256Original": "087969a82589b3e05811d0a1227474b6a5556a5eb845898c8c19917e9a76bb7c",
+        "observation_id": 84954351,
+        "photo_id": 139699317,
+        "quality_grade": "research",
+        "source_taxon_id": 337849
+      },
+      "reason": "Dominante verde e nitidezza scarsa; esemplari scuri poco separati dallo sfondo."
+    },
+    {
+      "target": "Craterellus cinereus",
+      "photo": {
+        "file": "assets/species/craterellus-cinereus-inat1.webp",
+        "source": "iNaturalist (research grade)",
+        "page": "https://www.inaturalist.org/observations/243675622",
+        "author": "Manuela Fiorini",
+        "license": "CC-BY",
+        "place": "Perugia, Umbria, IT",
+        "date": "2024-09-23",
+        "file_hd": "assets/species/craterellus-cinereus-inat1-hd.webp",
+        "thumb": "assets/species/craterellus-cinereus-inat1-t.webp"
+      },
+      "reason": "Esposizione scura e luce non uniforme; viste dei particolari migliori disponibili."
+    },
+    {
+      "target": "Hydnum rufescens",
+      "photo": {
+        "file": "assets/species/pe2-sosia-hydnum-rufescens-c29da8d.webp",
+        "file_hd": "assets/species/pe2-sosia-hydnum-rufescens-c29da8d-hd.webp",
+        "thumb": "assets/species/pe2-sosia-hydnum-rufescens-c29da8d-t.webp",
+        "page": "https://commons.wikimedia.org/wiki/File:Hydnum_rufescens_578043094.jpg",
+        "author": "Matej Frančeškin",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+        "attribution": "Matej Frančeškin · CC BY 4.0 · Wikimedia Commons",
+        "alt": "Hydnum rufescens, vista dall’alto del cappello.",
+        "caption": "Vista dall’alto del cappello.",
+        "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+        "source": "Wikimedia Commons",
+        "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/1/19/Hydnum_rufescens_578043094.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "sha256Original": "f4946ce6fa159526fd6899a789713d46c5be9e05354f05fb977cd5b15723a664"
+      },
+      "reason": "Dominante cromatica forte e riflesso sul cappello."
+    },
+    {
+      "target": "Sarcodon imbricatus",
+      "photo": {
+        "file": "assets/species/pe2-sosia-sarcodon-imbricatus-d03816b.webp",
+        "file_hd": "assets/species/pe2-sosia-sarcodon-imbricatus-d03816b-hd.webp",
+        "thumb": "assets/species/pe2-sosia-sarcodon-imbricatus-d03816b-t.webp",
+        "page": "https://commons.wikimedia.org/wiki/File:Sarcodon_imbricatus_sur_T%C3%AAte_de_Danay.jpg",
+        "author": "Lpm",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "attribution": "Lpm · CC BY-SA 3.0 · Wikimedia Commons",
+        "alt": "Sarcodon imbricatus, gruppo nel sottobosco.",
+        "caption": "Gruppo nel sottobosco.",
+        "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+        "source": "Wikimedia Commons",
+        "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Sarcodon_imbricatus_sur_T%C3%AAte_de_Danay.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "sha256Original": "f5d0aba1fa948b81e276aa7faf8d11acb2326dc3b803a60b4c9b5684e0c53d6e"
+      },
+      "reason": "Dominante verde/ciano molto marcata e vegetazione sovrapposta; 169 offre cappelli e gambi nitidi."
+    },
+    {
+      "target": "Sarcodon imbricatus",
+      "photo": {
+        "file": "assets/species/pe2-sosia-sarcodon-imbricatus-inat-158616705.webp",
+        "file_hd": "assets/species/pe2-sosia-sarcodon-imbricatus-inat-158616705-hd.webp",
+        "thumb": "assets/species/pe2-sosia-sarcodon-imbricatus-inat-158616705-t.webp",
+        "page": "https://www.inaturalist.org/observations/95536148",
+        "author": "Ilkka Tuunainen",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "(c) Ilkka Tuunainen, some rights reserved (CC BY-SA)",
+        "alt": "Sarcodon imbricatus, cappelli nella lettiera.",
+        "caption": "Cappelli nella lettiera.",
+        "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+        "source": "iNaturalist (research grade)",
+        "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/158616705/original.jpeg",
+        "sha256Original": "29df3e1b8aef8f7dab0bfad72ec56601962cb41c3ea5c2625ce676d39918140a",
+        "observation_id": 95536148,
+        "photo_id": 158616705,
+        "quality_grade": "research",
+        "source_taxon_id": 122335
+      },
+      "reason": "Gruppo appiattito con margini rotti, colore slavato; 168/169 mantengono squame e figura più leggibili."
+    },
+    {
+      "target": "Lepiota brunneoincarnata",
+      "photo": {
+        "file": "assets/species/pe2-sosia-lepiota-brunneoincarnata-inat-436936263.webp",
+        "file_hd": "assets/species/pe2-sosia-lepiota-brunneoincarnata-inat-436936263-hd.webp",
+        "thumb": "assets/species/pe2-sosia-lepiota-brunneoincarnata-inat-436936263-t.webp",
+        "page": "https://www.inaturalist.org/observations/244906295",
+        "author": "no rights reserved",
+        "license": "CC0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "attribution": "no rights reserved",
+        "alt": "Lepiota brunneoincarnata, esemplare fotografato in mano.",
+        "caption": "Esemplare fotografato in mano.",
+        "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+        "source": "iNaturalist (research grade)",
+        "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/436936263/original.jpeg",
+        "sha256Original": "838a3ea3b5ff88e1d6f0c080a5ce130e99f37f2a95f77696b19b1a889d8213f7",
+        "observation_id": 244906295,
+        "photo_id": 436936263,
+        "quality_grade": "research",
+        "source_taxon_id": 515954
+      },
+      "reason": "Esemplare deteriorato, coperto o mal inquadrato; particolari poco leggibili e vista già meglio coperta dalle alternative."
+    },
+    {
+      "target": "Lepiota cristata",
+      "photo": {
+        "file": "assets/species/lepiota-cristata-inat1.webp",
+        "source": "iNaturalist (research grade)",
+        "page": "https://www.inaturalist.org/observations/62179738",
+        "author": "RICCARDO MATTEA",
+        "license": "CC-BY-NC",
+        "place": "Fiume Tronto, Arquata del Tronto, Marche, IT",
+        "date": "2020-10-10",
+        "file_hd": "assets/species/lepiota-cristata-inat1-hd.webp",
+        "thumb": "assets/species/lepiota-cristata-inat1-t.webp"
+      },
+      "reason": "Soggetto piccolo o poco nitido, oppure inquadratura confusa; confrontare con alternative più leggibili della stessa scheda."
+    },
+    {
+      "target": "Chlorophyllum rhacodes",
+      "photo": {
+        "file": "assets/species/chlorophyllum-rhacodes-inat1.webp",
+        "source": "iNaturalist (research grade)",
+        "page": "https://www.inaturalist.org/observations/142059891",
+        "author": "Jason Grant",
+        "license": "CC-BY",
+        "place": "Ins, Switzerland",
+        "date": "2022-11-13",
+        "file_hd": "assets/species/chlorophyllum-rhacodes-inat1-hd.webp",
+        "thumb": "assets/species/chlorophyllum-rhacodes-inat1-t.webp"
+      },
+      "reason": "Soggetto piccolo e ombra, gambo coperto; sostituibile dalle viste più chiare presenti."
+    },
+    {
+      "target": "Hypholoma fasciculare",
+      "photo": {
+        "file": "assets/species/hypholoma-fasciculare-inat1.webp",
+        "source": "iNaturalist (research grade)",
+        "page": "https://www.inaturalist.org/observations/140583438",
+        "author": "Riccardo Molajoli",
+        "license": "CC-BY-NC",
+        "place": "67029 Secinaro AQ, Italia",
+        "date": "2022-10-29",
+        "file_hd": "assets/species/hypholoma-fasciculare-inat1-hd.webp",
+        "thumb": "assets/species/hypholoma-fasciculare-inat1-t.webp"
+      },
+      "reason": "Soggetto piccolo o poco nitido, oppure inquadratura confusa; confrontare con alternative più leggibili della stessa scheda."
+    },
+    {
+      "target": "Hypholoma fasciculare",
+      "photo": {
+        "file": "assets/species/pe2-sosia-hypholoma-fasciculare-inat-595482754.webp",
+        "file_hd": "assets/species/pe2-sosia-hypholoma-fasciculare-inat-595482754-hd.webp",
+        "thumb": "assets/species/pe2-sosia-hypholoma-fasciculare-inat-595482754-t.webp",
+        "page": "https://www.inaturalist.org/observations/328600463",
+        "author": "Daniel Stow",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "(c) Daniel Stow, some rights reserved (CC BY)",
+        "alt": "Hypholoma fasciculare, esemplari sul legno.",
+        "caption": "Esemplari sul legno.",
+        "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+        "source": "iNaturalist (research grade)",
+        "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/595482754/original.jpg",
+        "sha256Original": "becaa74ccb92bebb66c87d2e6777ccd42d200584c34062e4a47ddc61d7541acf",
+        "observation_id": 328600463,
+        "photo_id": 595482754,
+        "quality_grade": "research",
+        "source_taxon_id": 48767
+      },
+      "reason": "Soggetto piccolo o poco nitido, oppure inquadratura confusa; confrontare con alternative più leggibili della stessa scheda."
+    },
+    {
+      "target": "Cortinarius rubellus",
+      "photo": {
+        "file": "assets/species/pe2-sosia-cortinarius-rubellus-inat-93384549.webp",
+        "file_hd": "assets/species/pe2-sosia-cortinarius-rubellus-inat-93384549-hd.webp",
+        "thumb": "assets/species/pe2-sosia-cortinarius-rubellus-inat-93384549-t.webp",
+        "page": "https://www.inaturalist.org/observations/58488538",
+        "author": "Albert Cardona",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "(c) Albert Cardona, some rights reserved (CC BY)",
+        "alt": "Cortinarius rubellus, esemplari nel sottobosco.",
+        "caption": "Esemplari nel sottobosco.",
+        "changes": "Conversione ICC del profilo sorgente in sRGB per preservare la resa cromatica sul Web; orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessun ritocco creativo.",
+        "source": "iNaturalist (research grade)",
+        "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/93384549/original.jpg",
+        "sha256Original": "a3d8acd55235b1fb1cc57a751f6ba7e350f79eb9f5b688331a29906ec116dd96",
+        "observation_id": 58488538,
+        "photo_id": 93384549,
+        "quality_grade": "research",
+        "source_taxon_id": 500053
+      },
+      "reason": "Soggetti piccoli, sfocati e sparsi in sfondo dominante."
+    },
+    {
+      "target": "Cortinarius rubellus",
+      "photo": {
+        "file": "assets/species/pe2-sosia-cortinarius-rubellus-inat-315854468.webp",
+        "file_hd": "assets/species/pe2-sosia-cortinarius-rubellus-inat-315854468-hd.webp",
+        "thumb": "assets/species/pe2-sosia-cortinarius-rubellus-inat-315854468-t.webp",
+        "page": "https://www.inaturalist.org/observations/181247642",
+        "author": "wkee4ager",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "(c) wkee4ager, some rights reserved (CC BY)",
+        "alt": "Cortinarius rubellus, lamelle e gambo esposti.",
+        "caption": "Lamelle e gambo esposti.",
+        "changes": "Conversione ICC del profilo sorgente in sRGB per preservare la resa cromatica sul Web; orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessun ritocco creativo.",
+        "source": "iNaturalist (research grade)",
+        "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/315854468/original.jpg",
+        "sha256Original": "2dd0663b1a785faab4fb3d64cec9f9c6c1109a755d46eed3839ae9b1513fce57",
+        "observation_id": 181247642,
+        "photo_id": 315854468,
+        "quality_grade": "research",
+        "source_taxon_id": 500053
+      },
+      "reason": "Cappello e lamelle non nitidi; vista in mano con molto sfondo."
+    },
+    {
+      "target": "Gymnopilus junonius",
+      "photo": {
+        "file": "assets/species/gymnopilus-junonius-inat1.webp",
+        "source": "iNaturalist (research grade)",
+        "page": "https://www.inaturalist.org/observations/190450489",
+        "author": "Manuela Fiorini",
+        "license": "CC-BY",
+        "place": "Parco Naturale Regionale della Gola della Rossa e di Frasassi, Fabriano, Marche, IT",
+        "date": "2023-10-08",
+        "file_hd": "assets/species/gymnopilus-junonius-inat1-hd.webp",
+        "thumb": "assets/species/gymnopilus-junonius-inat1-t.webp"
+      },
+      "reason": "Esemplari danneggiati ripresi da lontano, albero e contesto prevalgono."
+    },
+    {
+      "target": "Russula heterophylla",
+      "photo": {
+        "file": "assets/species/russula-heterophylla-inat1.webp",
+        "source": "iNaturalist (research grade)",
+        "page": "https://www.inaturalist.org/observations/70873344",
+        "author": "uwekozina",
+        "license": "CC-BY-NC",
+        "place": "Nestelbach bei Graz, Österreich",
+        "date": "2012-08-12",
+        "file_hd": "assets/species/russula-heterophylla-inat1-hd.webp",
+        "thumb": "assets/species/russula-heterophylla-inat1-t.webp"
+      },
+      "reason": "Dominante giallastra e vista dall’alto relativamente distante; 162/163 coprono cappello e lamelle meglio."
+    },
+    {
+      "target": "Russula heterophylla",
+      "photo": {
+        "file": "assets/species/pe2-sosia-russula-heterophylla-inat-116426430.webp",
+        "file_hd": "assets/species/pe2-sosia-russula-heterophylla-inat-116426430-hd.webp",
+        "thumb": "assets/species/pe2-sosia-russula-heterophylla-inat-116426430-t.webp",
+        "page": "https://www.inaturalist.org/observations/71502951",
+        "author": "Lazar Popović",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "(c) Lazar Popović, some rights reserved (CC BY)",
+        "alt": "Russula heterophylla, cappello nel sottobosco.",
+        "caption": "Cappello nel sottobosco.",
+        "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+        "source": "iNaturalist (research grade)",
+        "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/116426430/original.jpeg",
+        "sha256Original": "03335c92f1addfab487df4a4db1db3dbc3728304f5a281a4580a36a98100322b",
+        "observation_id": 71502951,
+        "photo_id": 116426430,
+        "quality_grade": "research",
+        "source_taxon_id": 203806
+      },
+      "reason": "Rametti attraversano il cappello danneggiato, gambo in ombra; 162/163 sono più chiare."
+    },
+    {
+      "target": "Russula aeruginea",
+      "photo": {
+        "file": "assets/species/russula-aeruginea-inat1.webp",
+        "source": "iNaturalist (research grade)",
+        "page": "https://www.inaturalist.org/observations/89746826",
+        "author": "Claudio",
+        "license": "CC-BY-NC",
+        "place": "39030 Vandoies di Sotto BZ, Italia",
+        "date": "2021-08-02",
+        "file_hd": "assets/species/russula-aeruginea-inat1-hd.webp",
+        "thumb": "assets/species/russula-aeruginea-inat1-t.webp"
+      },
+      "reason": "Margine molto eroso e cappello sporco; 159/160 mostrano meglio i caratteri e il colore."
+    },
+    {
+      "target": "Suillus bovinus",
+      "photo": {
+        "file": "assets/species/suillus-bovinus-inat1.webp",
+        "source": "iNaturalist (research grade)",
+        "page": "https://www.inaturalist.org/observations/34756911",
+        "author": "Mirko Tomasi",
+        "license": "CC-BY-NC",
+        "place": "Provincia di Varese, Italia",
+        "date": "2019-10-22",
+        "file_hd": "assets/species/suillus-bovinus-inat1-hd.webp",
+        "thumb": "assets/species/suillus-bovinus-inat1-t.webp"
+      },
+      "reason": "Soggetto piccolo con gambo in ombra e cappello colpito da luce dura; 176/177 più nitide e leggibili."
+    },
+    {
+      "target": "Suillus bovinus",
+      "photo": {
+        "file": "assets/species/pe2-sosia-suillus-bovinus-inat-152741362.webp",
+        "file_hd": "assets/species/pe2-sosia-suillus-bovinus-inat-152741362-hd.webp",
+        "thumb": "assets/species/pe2-sosia-suillus-bovinus-inat-152741362-t.webp",
+        "page": "https://www.inaturalist.org/observations/92264211",
+        "author": "no rights reserved",
+        "license": "CC0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "attribution": "no rights reserved",
+        "alt": "Suillus bovinus, cappello nel muschio.",
+        "caption": "Cappello nel muschio.",
+        "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+        "source": "iNaturalist (research grade)",
+        "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/152741362/original.jpeg",
+        "sha256Original": "8a1f217b97543939582080a16f51fa9bbfa6801f3f8bfc54dedaa266bbe24029",
+        "observation_id": 92264211,
+        "photo_id": 152741362,
+        "quality_grade": "research",
+        "source_taxon_id": 337850
+      },
+      "reason": "Un solo cappello piccolo in ampio sfondo di muschio; 176/177 mostrano meglio corpo e superficie."
+    },
+    {
+      "target": "Tricholoma pardinum",
+      "photo": {
+        "file": "assets/species/pe2-sosia-tricholoma-pardinum-inat-241935355.webp",
+        "file_hd": "assets/species/pe2-sosia-tricholoma-pardinum-inat-241935355-hd.webp",
+        "thumb": "assets/species/pe2-sosia-tricholoma-pardinum-inat-241935355-t.webp",
+        "page": "https://www.inaturalist.org/observations/141248461",
+        "author": "MichellePrice_CJBG",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "(c) MichellePrice_CJBG, some rights reserved (CC BY)",
+        "alt": "Tricholoma pardinum, cappello e lamelle esposti.",
+        "caption": "Cappello e lamelle esposti.",
+        "changes": "Conversione ICC del profilo sorgente in sRGB per preservare la resa cromatica sul Web; orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessun ritocco creativo.",
+        "source": "iNaturalist (research grade)",
+        "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/241935355/original.jpg",
+        "sha256Original": "0b594ba937ece76b4bb6456d4f53bdad0cdeb0d81a41da20db0e993ab2f6d2da",
+        "observation_id": 141248461,
+        "photo_id": 241935355,
+        "quality_grade": "research",
+        "source_taxon_id": 335206
+      },
+      "reason": "Cappello molto danneggiato e sovraesposto, gambo quasi nascosto; 183/184/185 più informativi."
+    },
+    {
+      "target": "Tricholoma virgatum",
+      "photo": {
+        "file": "assets/species/tricholoma-virgatum-inat1.webp",
+        "source": "iNaturalist (research grade)",
+        "page": "https://www.inaturalist.org/observations/66006841",
+        "author": "Claudio Peterlongo",
+        "license": "CC-BY-NC",
+        "place": "Trentino, Italia",
+        "date": "2020-09-13",
+        "file_hd": "assets/species/tricholoma-virgatum-inat1-hd.webp",
+        "thumb": "assets/species/tricholoma-virgatum-inat1-t.webp"
+      },
+      "reason": "Bianchi sovraesposti, lamelle sbiadite e dettaglio basso; 193/194 mostrano meglio cappello e imenoforo."
+    },
+    {
+      "target": "Tricholoma virgatum",
+      "photo": {
+        "file": "assets/species/pe2-sosia-tricholoma-virgatum-inat-322237302.webp",
+        "file_hd": "assets/species/pe2-sosia-tricholoma-virgatum-inat-322237302-hd.webp",
+        "thumb": "assets/species/pe2-sosia-tricholoma-virgatum-inat-322237302-t.webp",
+        "page": "https://www.inaturalist.org/observations/184590711",
+        "author": "wkee4ager",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "(c) wkee4ager, some rights reserved (CC BY)",
+        "alt": "Tricholoma virgatum, esemplare nel sottobosco.",
+        "caption": "Esemplare nel sottobosco.",
+        "changes": "Conversione ICC del profilo sorgente in sRGB per preservare la resa cromatica sul Web; orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessun ritocco creativo.",
+        "source": "iNaturalist (research grade)",
+        "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/322237302/original.jpg",
+        "sha256Original": "a16b954cb1fa35c8db86e7c1308b72be958a09fe1a6d0119bbec1d0cad129331",
+        "observation_id": 184590711,
+        "photo_id": 322237302,
+        "quality_grade": "research",
+        "source_taxon_id": 118206
+      },
+      "reason": "Margine fortemente morso e gambo occultato dalle foglie; 193/194 conservano la forma con minore confusione."
+    },
+    {
+      "target": "Tricholoma sciodes",
+      "photo": {
+        "file": "assets/species/pe2-sosia-tricholoma-sciodes-4cca704.webp",
+        "file_hd": "assets/species/pe2-sosia-tricholoma-sciodes-4cca704-hd.webp",
+        "thumb": "assets/species/pe2-sosia-tricholoma-sciodes-4cca704-t.webp",
+        "page": "https://commons.wikimedia.org/wiki/File:Tricholoma_sciodes_(Haute-Loire,_France)_01.jpg",
+        "author": "Adrien BENOIT à la GUILLAUME",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "attribution": "Adrien BENOIT à la GUILLAUME · CC BY-SA 4.0 · Wikimedia Commons",
+        "alt": "Tricholoma sciodes, cappelli, lamelle e gambi esposti.",
+        "caption": "Cappelli, lamelle e gambi esposti.",
+        "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+        "source": "Wikimedia Commons",
+        "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/3/37/Tricholoma_sciodes_%28Haute-Loire%2C_France%29_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "sha256Original": "e1a1f8d4573a5b8a615cf54c7c3ddd0cd47e5834b2d9493caa2046acef0dc3de"
+      },
+      "reason": "Dominante gialla e disposizione affollata, ripete profili e lamelle già meglio esposti in187/191."
+    },
+    {
+      "target": "Tricholoma sciodes",
+      "photo": {
+        "file": "assets/species/pe2-sosia-tricholoma-sciodes-inat-238126689.webp",
+        "file_hd": "assets/species/pe2-sosia-tricholoma-sciodes-inat-238126689-hd.webp",
+        "thumb": "assets/species/pe2-sosia-tricholoma-sciodes-inat-238126689-t.webp",
+        "page": "https://www.inaturalist.org/observations/139244900",
+        "author": "no rights reserved",
+        "license": "CC0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "attribution": "no rights reserved",
+        "alt": "Tricholoma sciodes, vista dall’alto dei cappelli.",
+        "caption": "Vista dall’alto dei cappelli.",
+        "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+        "source": "iNaturalist (research grade)",
+        "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/238126689/original.jpeg",
+        "sha256Original": "f2e36145806f30d889bbbdb3fccb45c2cf7c09eef475f000ae6554d6f4f6f70c",
+        "observation_id": 139244900,
+        "photo_id": 238126689,
+        "quality_grade": "research",
+        "source_taxon_id": 806590
+      },
+      "reason": "Rami e foglie coprono i cappelli; 187/191 mantengono lo stesso carattere con meno ostacoli."
+    },
+    {
+      "target": "Entoloma sinuatum",
+      "photo": {
+        "file": "assets/species/pe2-sosia-entoloma-sinuatum-aaeda3f.webp",
+        "file_hd": "assets/species/pe2-sosia-entoloma-sinuatum-aaeda3f-hd.webp",
+        "thumb": "assets/species/pe2-sosia-entoloma-sinuatum-aaeda3f-t.webp",
+        "page": "https://commons.wikimedia.org/wiki/File:2013-11-02_Entoloma_sinuatum_(Bull.)_P._Kumm_393811.jpg",
+        "author": "This image was created by user  zaca  at  Mushroom Observer , a source for mycological images. You can contact this user  here .",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "attribution": "This image was created by user  zaca  at  Mushroom Observer , a source for mycological images. You can contact this user  here . · CC BY-SA 3.0 · Wikimedia Commons",
+        "alt": "Entoloma sinuatum, vista dall’alto del cappello.",
+        "caption": "Vista dall’alto del cappello.",
+        "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+        "source": "Wikimedia Commons",
+        "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/4/44/2013-11-02_Entoloma_sinuatum_%28Bull.%29_P._Kumm_393811.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "sha256Original": "f9e7cc35863b89ebc3eb83da60b4259101ab0b77043c3a95b510b578752ae67b"
+      },
+      "reason": "Cappello molto danneggiato e sporco, dettaglio scuro; nessuna informazione aggiuntiva affidabile."
+    },
+    {
+      "target": "Mycena pura",
+      "photo": {
+        "file": "assets/species/pe2-sosia-mycena-pura-inat-10951579.webp",
+        "file_hd": "assets/species/pe2-sosia-mycena-pura-inat-10951579-hd.webp",
+        "thumb": "assets/species/pe2-sosia-mycena-pura-inat-10951579-t.webp",
+        "page": "https://www.inaturalist.org/observations/8256744",
+        "author": "Kostas Zontanos",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "(c) Kostas Zontanos, some rights reserved (CC BY)",
+        "alt": "Mycena pura, vista dall’alto dei cappelli.",
+        "caption": "Vista dall’alto dei cappelli.",
+        "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+        "source": "iNaturalist (research grade)",
+        "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/10951579/original.jpeg",
+        "sha256Original": "415a48ba53e47ee5fc743e641277de4c7dd61c034a372209da7cffa5623d6cae",
+        "observation_id": 8256744,
+        "photo_id": 10951579,
+        "quality_grade": "research",
+        "source_taxon_id": 63473
+      },
+      "reason": "Dominante blu marcata, solo cappelli senza gambo; 139–141 offrono profili e lamelle più leggibili."
+    },
+    {
+      "target": "Laccaria amethystina",
+      "photo": {
+        "file": "assets/species/laccaria-amethystina-inat1.webp",
+        "source": "iNaturalist (research grade)",
+        "page": "https://www.inaturalist.org/observations/135048688",
+        "author": "Rino",
+        "license": "CC-BY-NC",
+        "place": "Provincia di Teramo, Italia",
+        "date": "2022-09-11",
+        "file_hd": "assets/species/laccaria-amethystina-inat1-hd.webp",
+        "thumb": "assets/species/laccaria-amethystina-inat1-t.webp"
+      },
+      "reason": "Soggetto piccolo o poco nitido, oppure inquadratura confusa; confrontare con alternative più leggibili della stessa scheda."
+    },
+    {
+      "target": "Laccaria amethystina",
+      "photo": {
+        "file": "assets/species/pe2-sosia-laccaria-amethystina-inat-234651121.webp",
+        "file_hd": "assets/species/pe2-sosia-laccaria-amethystina-inat-234651121-hd.webp",
+        "thumb": "assets/species/pe2-sosia-laccaria-amethystina-inat-234651121-t.webp",
+        "page": "https://www.inaturalist.org/observations/137394309",
+        "author": "Ellie B",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "(c) Ellie B, some rights reserved (CC BY)",
+        "alt": "Laccaria amethystina, esemplari nella lettiera.",
+        "caption": "Esemplari nella lettiera.",
+        "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+        "source": "iNaturalist (research grade)",
+        "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/234651121/original.jpg",
+        "sha256Original": "b008b30303caf4208797a9d6079a1252b949ca901aff159ec82e63808be53598",
+        "observation_id": 137394309,
+        "photo_id": 234651121,
+        "quality_grade": "research",
+        "source_taxon_id": 55899
+      },
+      "reason": "Soggetto piccolo o poco nitido, oppure inquadratura confusa; confrontare con alternative più leggibili della stessa scheda."
+    },
+    {
+      "target": "Agaricus xanthodermus",
+      "photo": {
+        "file": "assets/species/pe2-sosia-agaricus-xanthodermus-e1661dd.webp",
+        "file_hd": "assets/species/pe2-sosia-agaricus-xanthodermus-e1661dd-hd.webp",
+        "thumb": "assets/species/pe2-sosia-agaricus-xanthodermus-e1661dd-t.webp",
+        "page": "https://commons.wikimedia.org/wiki/File:Agaricus_xanthodermus_170723wb.JPG",
+        "author": "Strobilomyces",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "attribution": "Strobilomyces · CC BY-SA 3.0 · Wikimedia Commons",
+        "alt": "Agaricus xanthodermus, cappello e lamelle esposti.",
+        "caption": "Cappello e lamelle esposti.",
+        "changes": "Orientamento, ridimensionamento e compressione WebP; miniatura quadrata centrata; nessuna modifica cromatica.",
+        "source": "Wikimedia Commons",
+        "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Agaricus_xanthodermus_170723wb.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "sha256Original": "bde5c2dfb80905a20aa1f17613aade2ec9088562dbaab159c6ade9d37f2daa26"
+      },
+      "reason": "Vista pressoché duplicata della foto precedente: stessa disposizione, aggiunge poco."
+    },
+    {
+      "target": "Gyromitra esculenta",
+      "photo": {
+        "file": "assets/species/gyromitra-esculenta-inat1.webp",
+        "file_hd": "assets/species/gyromitra-esculenta-inat1-hd.webp",
+        "thumb": "assets/species/gyromitra-esculenta-inat1-t.webp",
+        "source": "iNaturalist (research grade)",
+        "page": "https://www.inaturalist.org/observations/116416175",
+        "author": "Gianluca Congi",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "photoId": 196512859,
+        "taxonName": "Gyromitra esculenta",
+        "taxonId": 85120,
+        "qualityGrade": "research",
+        "place": "Bocchigliero (CS), Calabria, IT",
+        "date": "2022-05-10",
+        "originalWidth": 2048,
+        "originalHeight": 1152
+      },
+      "reason": "Luce slavata e contrasto basso rispetto alle tre alternative più leggibili."
+    },
+    {
+      "target": "aereus",
+      "photo": {
+        "file": "assets/species/aereus-ref.webp",
+        "source": "Wikimedia Commons",
+        "page": "https://commons.wikimedia.org/wiki/File:Bronze_Roehrling.jpg",
+        "author": "Achim Bollmann",
+        "license": "Copyrighted free use",
+        "thumb": "assets/species/aereus-ref-t.webp"
+      },
+      "reason": "Vecchia scansione granulosa: sostituita da una copertina nitida e da una seconda vista già presente."
+    },
+    {
+      "target": "aereus",
+      "photo": {
+        "file": "assets/species/aereus-inat1.webp",
+        "source": "iNaturalist (research grade)",
+        "page": "https://www.inaturalist.org/observations/190488055",
+        "author": "Marco Gasponi",
+        "license": "CC-BY-NC",
+        "place": "00060 Canale Monterano RM, Italia",
+        "date": "2023-11-09",
+        "file_hd": "assets/species/aereus-inat1-hd.webp",
+        "thumb": "assets/species/aereus-inat1-t.webp"
+      },
+      "reason": "Dominante blu marcata e ombra; sostituita da una vista con colori più leggibili."
+    },
+    {
+      "target": "Rubroboletus satanas",
+      "photo": {
+        "file": "assets/species/rubroboletus-satanas-inat1.webp",
+        "source": "iNaturalist (research grade)",
+        "page": "https://www.inaturalist.org/observations/402259542",
+        "author": "Manuela Fiorini",
+        "license": "CC-BY",
+        "place": "San Severino Marche, Marche, IT",
+        "date": "2026-09-19",
+        "file_hd": "assets/species/rubroboletus-satanas-inat1-hd.webp",
+        "thumb": "assets/species/rubroboletus-satanas-inat1-t.webp"
+      },
+      "reason": "Esemplare piccolo, coperto e deteriorato, poco leggibile; sostituito da immagine più nitida."
+    },
+    {
+      "target": "Rubroboletus satanas",
+      "photo": {
+        "file": "assets/species/satanas-223261.webp",
+        "file_hd": "assets/species/satanas-223261-hd.webp",
+        "thumb": "assets/species/satanas-223261-t.webp",
+        "source": "Wikimedia Commons",
+        "page": "https://commons.wikimedia.org/wiki/File:2008-10-19_Boletus_satanas_Lenz_223261.jpg",
+        "author": "Murselin Guney (Beyrek)",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "attribution": "Murselin Guney (Beyrek) · Wikimedia Commons · CC BY-SA 3.0",
+        "alt": "Rubroboletus satanas — Pori e gambo in vista dal basso",
+        "caption": "Pori e gambo in vista dal basso; non si deduce una fase dalla fotografia.",
+        "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/b/b0/2008-10-19_Boletus_satanas_Lenz_223261.jpg",
+        "sha256Original": "fe58fbd3faac700f0e1a2dcc35f0f1371e390951ccc081280d2bfb040326c417",
+        "changes": "Orientamento EXIF, ridimensionamento, compressione WebP; miniatura ritagliata."
+      },
+      "reason": "Cappello molto deteriorato e alte luci bruciate; sostituito da immagine con luce più uniforme."
+    },
+    {
+      "target": "Tylopilus felleus",
+      "photo": {
+        "file": "assets/species/tylopilus-felleus-inat1.webp",
+        "source": "iNaturalist (research grade)",
+        "page": "https://www.inaturalist.org/observations/378767718",
+        "author": "Luca Pilia",
+        "license": "CC-BY-NC",
+        "place": "Provincia di Rieti, Italia",
+        "date": "2026-07-04",
+        "file_hd": "assets/species/tylopilus-felleus-inat1-hd.webp",
+        "thumb": "assets/species/tylopilus-felleus-inat1-t.webp"
+      },
+      "reason": "Ombre profonde e lettura cromatica debole; sostituito da portamento e macro del reticolo più chiari."
+    }
+  ]
+}

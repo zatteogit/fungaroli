@@ -1,0 +1,672 @@
+{
+  "photos": 18,
+  "taxa": 12,
+  "webp": 54,
+  "originals_acquired": 26,
+  "rejected": 8,
+  "manifest_sha256": "b89435a1fd06c962d235b713f308e8bcba665d1a62dabc4b582a2d2a726d8774",
+  "files": [
+    {
+      "id": "ce-funghi-paxillus-involutus-16097960",
+      "kind": "file",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-paxillus-involutus-16097960.webp",
+      "bytes": 71780,
+      "size": [
+        560,
+        397
+      ],
+      "sha256": "394fd4fa730ac4bd6aa018e1d885179ec985439db49c31d049178850569f2e66",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-paxillus-involutus-16097960",
+      "kind": "file_hd",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-paxillus-involutus-16097960-hd.webp",
+      "bytes": 176898,
+      "size": [
+        1200,
+        851
+      ],
+      "sha256": "f5c63a8545c970559a333f29453f890c0eab5f620e4f4e5937b0718cff965bb7",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-paxillus-involutus-16097960",
+      "kind": "thumb",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-paxillus-involutus-16097960-t.webp",
+      "bytes": 7758,
+      "size": [
+        160,
+        160
+      ],
+      "sha256": "f160ea3df4dc6996d9a1899e8b07f4d216e14f7cfacab9ba321739cfd999d8a2",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-coprinopsis-atramentaria-35546872",
+      "kind": "file",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-coprinopsis-atramentaria-35546872.webp",
+      "bytes": 60298,
+      "size": [
+        560,
+        420
+      ],
+      "sha256": "d705b8d8b0e9b22ae5bf8628bebc08ac99449185daa77d59789f92dc00c8c781",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-coprinopsis-atramentaria-35546872",
+      "kind": "file_hd",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-coprinopsis-atramentaria-35546872-hd.webp",
+      "bytes": 185196,
+      "size": [
+        1200,
+        900
+      ],
+      "sha256": "349112e1b9b32926b5097778721797c538f13df816753233c75f51ac615be80e",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-coprinopsis-atramentaria-35546872",
+      "kind": "thumb",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-coprinopsis-atramentaria-35546872-t.webp",
+      "bytes": 6336,
+      "size": [
+        160,
+        160
+      ],
+      "sha256": "cee06e029ccba55357932c8a9797ffe3622f1b0ffbd90f57033799c636ee80f2",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-russula-emetica-404973",
+      "kind": "file",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-russula-emetica-404973.webp",
+      "bytes": 55324,
+      "size": [
+        560,
+        420
+      ],
+      "sha256": "d8d7b525f075c124422032f806c92a6b6d8eb91462e62fe702c8d893bf317d14",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-russula-emetica-404973",
+      "kind": "file_hd",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-russula-emetica-404973-hd.webp",
+      "bytes": 157594,
+      "size": [
+        1200,
+        900
+      ],
+      "sha256": "bea868d5266f1fe19249892a7c50d697e2687596acfb32226f69f04a3193ea99",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-russula-emetica-404973",
+      "kind": "thumb",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-russula-emetica-404973-t.webp",
+      "bytes": 6590,
+      "size": [
+        160,
+        160
+      ],
+      "sha256": "57e2a59f6dd5a418189bf6c57a8ef713b7c7a1f4fb282dbff9ef176356bb9fcf",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-lycoperdon-perlatum-84478911",
+      "kind": "file",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-lycoperdon-perlatum-84478911.webp",
+      "bytes": 42574,
+      "size": [
+        420,
+        560
+      ],
+      "sha256": "0a9f3eda33103df6d3db9059fa7473c1eb3bb41e62b3e426528b35d971e6a0c7",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-lycoperdon-perlatum-84478911",
+      "kind": "file_hd",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-lycoperdon-perlatum-84478911-hd.webp",
+      "bytes": 136676,
+      "size": [
+        900,
+        1200
+      ],
+      "sha256": "c5e4e4be4ba39a5ce8cd2373439bf9b84b055471aa62ce5651c008ab6eb91a35",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-lycoperdon-perlatum-84478911",
+      "kind": "thumb",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-lycoperdon-perlatum-84478911-t.webp",
+      "bytes": 4820,
+      "size": [
+        160,
+        160
+      ],
+      "sha256": "f5190408b84927a1e5a1a7a4668ddfb01c5eafb98724c17c0283cb0b0fb09ce4",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-auricularia-auricula-judae-145517351",
+      "kind": "file",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-auricularia-auricula-judae-145517351.webp",
+      "bytes": 51438,
+      "size": [
+        560,
+        373
+      ],
+      "sha256": "b7811a1b5f7205edd68f34cc031a96658e4689a0bed2d9e7a8f7f5ed5926381b",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-auricularia-auricula-judae-145517351",
+      "kind": "file_hd",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-auricularia-auricula-judae-145517351-hd.webp",
+      "bytes": 193114,
+      "size": [
+        1200,
+        800
+      ],
+      "sha256": "225e7a56c3a0d1ddcf51dd1475a2acbb857363cac34d4aa39b834eba5968480e",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-auricularia-auricula-judae-145517351",
+      "kind": "thumb",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-auricularia-auricula-judae-145517351-t.webp",
+      "bytes": 6456,
+      "size": [
+        160,
+        160
+      ],
+      "sha256": "dd4daff1e5dc636349b7ece05a0cfcba36d6b054ff5bb1ed1316bca9d4615fca",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-fomes-fomentarius-79262934",
+      "kind": "file",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-fomes-fomentarius-79262934.webp",
+      "bytes": 68564,
+      "size": [
+        560,
+        420
+      ],
+      "sha256": "8510fa6aceb39eb550cd7d7eaf5061b206cfc7fe443ee2b6aba7f2ccf8cbc2b0",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-fomes-fomentarius-79262934",
+      "kind": "file_hd",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-fomes-fomentarius-79262934-hd.webp",
+      "bytes": 198874,
+      "size": [
+        1200,
+        900
+      ],
+      "sha256": "21ea5d05fc995dad435c3ca0c921a2e5b4cd3604b4165ff747e29b0c9b3b5e18",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-fomes-fomentarius-79262934",
+      "kind": "thumb",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-fomes-fomentarius-79262934-t.webp",
+      "bytes": 6826,
+      "size": [
+        160,
+        160
+      ],
+      "sha256": "725f26771ace68b536d85a5724907f3cab3bfa21bccd57ff90dc76df7da8a04e",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-trametes-versicolor-132597918",
+      "kind": "file",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-trametes-versicolor-132597918.webp",
+      "bytes": 39788,
+      "size": [
+        560,
+        373
+      ],
+      "sha256": "113b77e7bba9811f24ffe56f16ff2a05b2f24ede92caa2ec3831a5ccc0f20ba0",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-trametes-versicolor-132597918",
+      "kind": "file_hd",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-trametes-versicolor-132597918-hd.webp",
+      "bytes": 105690,
+      "size": [
+        1200,
+        800
+      ],
+      "sha256": "14577b59a8cd3fec1d331f16525fdbb23b0eaf0aa5fc2faaf1cb0e75111cc6aa",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-trametes-versicolor-132597918",
+      "kind": "thumb",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-trametes-versicolor-132597918-t.webp",
+      "bytes": 5382,
+      "size": [
+        160,
+        160
+      ],
+      "sha256": "30ea34f0ee633e7940a98d8dbd0184ddd464dd986eca6ff7dbeff93fab1f6aba",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-lactarius-sanguifluus-95428903",
+      "kind": "file",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-lactarius-sanguifluus-95428903.webp",
+      "bytes": 69086,
+      "size": [
+        560,
+        373
+      ],
+      "sha256": "fb8438dff5f98b27988f49d4482e46b1de7f4d0b854a848f3c7d9ee7236d0d9b",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-lactarius-sanguifluus-95428903",
+      "kind": "file_hd",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-lactarius-sanguifluus-95428903-hd.webp",
+      "bytes": 191866,
+      "size": [
+        1200,
+        800
+      ],
+      "sha256": "4169019fb22b1242199ddf7a23135dcd256979f8498d019bfef60c8da6bd8fe1",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-lactarius-sanguifluus-95428903",
+      "kind": "thumb",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-lactarius-sanguifluus-95428903-t.webp",
+      "bytes": 7546,
+      "size": [
+        160,
+        160
+      ],
+      "sha256": "dbbf9d8a1252b9410b9352a6fc631495c3dbfb892b17dea89a61e4ea45582188",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-russula-vesca-121831228",
+      "kind": "file",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-russula-vesca-121831228.webp",
+      "bytes": 25724,
+      "size": [
+        560,
+        560
+      ],
+      "sha256": "866c743c0132fc92a7e16b58dec4f51ca7e66cedccd3a320a50ab81943a552b7",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-russula-vesca-121831228",
+      "kind": "file_hd",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-russula-vesca-121831228-hd.webp",
+      "bytes": 63508,
+      "size": [
+        1200,
+        1200
+      ],
+      "sha256": "0704cfe62b07b25bda32740e335522b51e1b842960caf0bd12010a3b0b29d391",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-russula-vesca-121831228",
+      "kind": "thumb",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-russula-vesca-121831228-t.webp",
+      "bytes": 2960,
+      "size": [
+        160,
+        160
+      ],
+      "sha256": "756c49f1cf117b552423cffdc9e03712fdfef5fe1aa717b40714bb0ef0b6150f",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-amanita-citrina-35484839",
+      "kind": "file",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-amanita-citrina-35484839.webp",
+      "bytes": 46602,
+      "size": [
+        373,
+        560
+      ],
+      "sha256": "f08780554ba7090bad7e795c099eceffb0b613b2d1530aaca67e90d19b60ed0a",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-amanita-citrina-35484839",
+      "kind": "file_hd",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-amanita-citrina-35484839-hd.webp",
+      "bytes": 143450,
+      "size": [
+        800,
+        1200
+      ],
+      "sha256": "eb58bc22344d0459d3c4c3e774137eab6f47914b1895df3d7d7c24df07046ebf",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-amanita-citrina-35484839",
+      "kind": "thumb",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-amanita-citrina-35484839-t.webp",
+      "bytes": 6396,
+      "size": [
+        160,
+        160
+      ],
+      "sha256": "8e99e9428f6d337f6acd78189b39d32d180b59661dd3a10f8a4472bf5bfbe35e",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-paxillus-involutus-4558768",
+      "kind": "file",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-paxillus-involutus-4558768.webp",
+      "bytes": 59616,
+      "size": [
+        560,
+        366
+      ],
+      "sha256": "3e70614a632a57d7804836e584d64b10f87c5793cd20f1c1b29290e6675525d5",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-paxillus-involutus-4558768",
+      "kind": "file_hd",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-paxillus-involutus-4558768-hd.webp",
+      "bytes": 197758,
+      "size": [
+        1200,
+        785
+      ],
+      "sha256": "a014e2b94fa8f7d33e4d302b91554f60479f5312cb85f3820085c26591dece26",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-paxillus-involutus-4558768",
+      "kind": "thumb",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-paxillus-involutus-4558768-t.webp",
+      "bytes": 6574,
+      "size": [
+        160,
+        160
+      ],
+      "sha256": "27efec286ead4633073f1dac2855a0aa63766b5a5372180f1fa106be5866c70c",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-coprinopsis-atramentaria-22502531",
+      "kind": "file",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-coprinopsis-atramentaria-22502531.webp",
+      "bytes": 79938,
+      "size": [
+        560,
+        390
+      ],
+      "sha256": "7f45021f3bdf9da369649de8c3fb072c5d7ba485662023ea5e1b938fd9d6bbcd",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-coprinopsis-atramentaria-22502531",
+      "kind": "file_hd",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-coprinopsis-atramentaria-22502531-hd.webp",
+      "bytes": 201254,
+      "size": [
+        1200,
+        835
+      ],
+      "sha256": "b9054e5131544dab8f64aa56260a0c9dfbe2aa9202465126b7de8b13ccd6b909",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-coprinopsis-atramentaria-22502531",
+      "kind": "thumb",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-coprinopsis-atramentaria-22502531-t.webp",
+      "bytes": 7868,
+      "size": [
+        160,
+        160
+      ],
+      "sha256": "789a0e48cc32a34f7e70aebb7f7835f67618b9af959ea6e54e472e3bc7868065",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-clitocybe-nebularis-84242752",
+      "kind": "file",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-clitocybe-nebularis-84242752.webp",
+      "bytes": 47418,
+      "size": [
+        560,
+        373
+      ],
+      "sha256": "78120d6042eab3607cb5c03d1c8306aaaddabcc059fe4c7690082866c82a8513",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-clitocybe-nebularis-84242752",
+      "kind": "file_hd",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-clitocybe-nebularis-84242752-hd.webp",
+      "bytes": 177940,
+      "size": [
+        1200,
+        800
+      ],
+      "sha256": "41c4c7021b8c98514f0f349cac649238bd48d2877b6e732be2e02e739bb9c04d",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-clitocybe-nebularis-84242752",
+      "kind": "thumb",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-clitocybe-nebularis-84242752-t.webp",
+      "bytes": 4970,
+      "size": [
+        160,
+        160
+      ],
+      "sha256": "032463cf669b86ea2c70613f56e0da86f7acf37757be9d77756f0431cda0d746",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-auricularia-auricula-judae-124675179",
+      "kind": "file",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-auricularia-auricula-judae-124675179.webp",
+      "bytes": 36230,
+      "size": [
+        560,
+        373
+      ],
+      "sha256": "32934980ccc6b44b2f3a583b1bf92e0f1c66aa54865b692ed434b38956557c44",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-auricularia-auricula-judae-124675179",
+      "kind": "file_hd",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-auricularia-auricula-judae-124675179-hd.webp",
+      "bytes": 122428,
+      "size": [
+        1200,
+        800
+      ],
+      "sha256": "3627ec86776eea516388f7270cc5216dfd41471deb634e620330df2f445c1807",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-auricularia-auricula-judae-124675179",
+      "kind": "thumb",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-auricularia-auricula-judae-124675179-t.webp",
+      "bytes": 3614,
+      "size": [
+        160,
+        160
+      ],
+      "sha256": "27a2bca1b90e422f6e42180365d3edd1f0af274064c4d7e7707cea69bd06df9d",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-trametes-versicolor-3891548",
+      "kind": "file",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-trametes-versicolor-3891548.webp",
+      "bytes": 70484,
+      "size": [
+        560,
+        420
+      ],
+      "sha256": "06f33dc59b843b5a1a06c093708c1c4ad7a960cabdcfca019c3a4670cc8ea7df",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-trametes-versicolor-3891548",
+      "kind": "file_hd",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-trametes-versicolor-3891548-hd.webp",
+      "bytes": 185308,
+      "size": [
+        1200,
+        900
+      ],
+      "sha256": "45fd2246cf449d47dc0f02024f6682be758074cd4a7cb225feb752f03585a4c1",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-trametes-versicolor-3891548",
+      "kind": "thumb",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-trametes-versicolor-3891548-t.webp",
+      "bytes": 7842,
+      "size": [
+        160,
+        160
+      ],
+      "sha256": "2fc4e436cb460afdbef34baae16da6335b7c1fceeeeb0848f299e673c4170e80",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-hygrophorus-russula-93766111",
+      "kind": "file",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-hygrophorus-russula-93766111.webp",
+      "bytes": 42314,
+      "size": [
+        560,
+        420
+      ],
+      "sha256": "4e9aab610cb39d6902d55cd5ad2544048996c0f40cffebb8be34ec446095888e",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-hygrophorus-russula-93766111",
+      "kind": "file_hd",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-hygrophorus-russula-93766111-hd.webp",
+      "bytes": 139340,
+      "size": [
+        1200,
+        900
+      ],
+      "sha256": "fa323aa070f565b4b301794c2b79350250c1ee8f83f5e43324624075877bccaa",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-hygrophorus-russula-93766111",
+      "kind": "thumb",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-hygrophorus-russula-93766111-t.webp",
+      "bytes": 4064,
+      "size": [
+        160,
+        160
+      ],
+      "sha256": "220c144144498920919527604f8c5a530be205c8a54cd72c342c9ccc0caf1b1c",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-amanita-citrina-63054929",
+      "kind": "file",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-amanita-citrina-63054929.webp",
+      "bytes": 33578,
+      "size": [
+        500,
+        560
+      ],
+      "sha256": "58865c5ceebf9c3623b06b85b0cc7d39c4e7a2e3b54a90ffa8973dc428e89128",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-amanita-citrina-63054929",
+      "kind": "file_hd",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-amanita-citrina-63054929-hd.webp",
+      "bytes": 87864,
+      "size": [
+        1071,
+        1200
+      ],
+      "sha256": "78ef3a8be056b6d0f595425af9c28beecf3dbd056768314ced847ef39604af27",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-amanita-citrina-63054929",
+      "kind": "thumb",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-amanita-citrina-63054929-t.webp",
+      "bytes": 4466,
+      "size": [
+        160,
+        160
+      ],
+      "sha256": "4c5f198000b951f566860dc2c279b25a69748cb22ec2b3653c4773534971ffbc",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-clitocybe-nebularis-53537315",
+      "kind": "file",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-clitocybe-nebularis-53537315.webp",
+      "bytes": 65384,
+      "size": [
+        560,
+        560
+      ],
+      "sha256": "914a8ea860a70c202e9cb881ec1372d912af013eeaf49137eb0311c5a6c5e375",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-clitocybe-nebularis-53537315",
+      "kind": "file_hd",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-clitocybe-nebularis-53537315-hd.webp",
+      "bytes": 195716,
+      "size": [
+        1200,
+        1200
+      ],
+      "sha256": "21c27d5b76f4edba6ebbbfd0502e4524408dad3d68eeae3be915fd3fd2bd7296",
+      "metadata_clean": true
+    },
+    {
+      "id": "ce-funghi-clitocybe-nebularis-53537315",
+      "kind": "thumb",
+      "file": "incoming/catalog-expansion-2026-10-19/funghi/webp/ce-funghi-clitocybe-nebularis-53537315-t.webp",
+      "bytes": 4182,
+      "size": [
+        160,
+        160
+      ],
+      "sha256": "debb481e3f92397f900acce4f8d1b376aa12173f9954e00de6189e8ac9caf1ab",
+      "metadata_clean": true
+    }
+  ],
+  "note": "Controllo mirato dei file e degli hash; nessuna suite o dry-run.",
+  "visual_review": {
+    "originals": 26,
+    "approved": 18,
+    "rejected": 8,
+    "crop_formats_per_photo": 6,
+    "crops_seen": 108,
+    "corrected_focus_points": 4,
+    "normal_webp_seen": 18,
+    "thumbnails_seen": 18,
+    "source_pages_rendered": true
+  },
+  "catalog_proposal_sha256": "f2989792408b0f69ace99969514f6c598ae5637510f08c4c0e821e49412bc33d",
+  "claim_evidence_sha256": "2382ea27d99ee1925f09c05ca23ead57fd105b0d39512a29c01dd7e543a4be63"
+}

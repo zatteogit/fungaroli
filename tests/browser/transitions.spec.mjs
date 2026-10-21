@@ -18,7 +18,7 @@ async function setup(page,width,{reduced=false,noVT=false}={}) {
     await route.fulfill({json:out});
   });
   await page.addInitScript(noVT=>{
-    localStorage.setItem('fungaroli:legal-accepted','32026-10-16');
+    localStorage.setItem('fungaroli:legal-accepted','62026-10-20');
     if(noVT)delete Document.prototype.startViewTransition;
     // registro delle direzioni (<html data-nav>) e degli spostamenti di layout, anche quelli dopo un tocco
     window.__navs=[];window.__shifts=[];
@@ -137,7 +137,7 @@ async function pickDays(page,n) {
   const offsets=await page.locator('#zone-days [data-day-offset]').evaluateAll(els=>els.filter(b=>b.getAttribute('aria-selected')!=='true').map(b=>b.dataset.dayOffset));
   return offsets.slice(0,n).reverse();
 }
-const ringState=page=>page.evaluate(()=>{const r=document.querySelector('#detail .phero > .ring');return{same:r===window.__ring,cover:document.querySelector('#detail .phero')===window.__cover,img:document.querySelector('#detail .phero-img img')===window.__img,text:r.querySelector('b').textContent,p:parseFloat(getComputedStyle(r).getPropertyValue('--p')),focus:document.activeElement?.dataset?.dayOffset||''};});
+const ringState=page=>page.evaluate(()=>{const r=document.querySelector('#detail .phero .hero-indicators > .ring');return{same:r===window.__ring,cover:document.querySelector('#detail .phero')===window.__cover,img:document.querySelector('#detail .phero-img img')===window.__img,text:r.querySelector('b').textContent,p:parseFloat(getComputedStyle(r).getPropertyValue('--p')),focus:document.activeElement?.dataset?.dayOffset||''};});
 for(const width of [390,1280]) test(`cambio di giorno nella zona senza ricreare la copertina a ${width}px`,async({page})=>{
   const errors=await setup(page,width);
   // alone «ambilight»: mai in home (proposta e card), sì dietro la testata della zona, come fratello prima di .phero
@@ -146,8 +146,11 @@ for(const width of [390,1280]) test(`cambio di giorno nella zona senza ricreare 
   await expect(page.locator('#detail > .ambi.on + .phero')).toHaveCount(1);
   await expect(page.locator('#detail > .ambi img')).toHaveCount(1);
   expect(await page.locator('#detail > .ambi').evaluate(a=>getComputedStyle(a).pointerEvents==='none'&&a.getAttribute('aria-hidden')==='true')).toBe(true);
-  await page.evaluate(()=>{window.__ring=document.querySelector('#detail .phero > .ring');window.__cover=document.querySelector('#detail .phero');window.__img=document.querySelector('#detail .phero-img img');window.__ambi=document.querySelector('#detail > .ambi');});
+  await page.evaluate(()=>{window.__ring=document.querySelector('#detail .phero .hero-indicators > .ring');window.__cover=document.querySelector('#detail .phero');window.__img=document.querySelector('#detail .phero-img img');window.__ambi=document.querySelector('#detail > .ambi');});
   const days=await pickDays(page,3);expect(days.length).toBe(3);
+  // Il calendario segue una hero che cresce con il contenuto: da quando è visibile non deve saltare.
+  await page.locator('#zone-days').scrollIntoViewIfNeeded();
+  const initialScroll=await page.evaluate(()=>scrollY);
   for(const o of days) {
     const day=page.locator(`#zone-days [data-day-offset="${o}"]`),expected=await day.locator('.pc').textContent();
     const r=await step(page,()=>day.click());
@@ -160,26 +163,31 @@ for(const width of [390,1280]) test(`cambio di giorno nella zona senza ricreare 
     expect(s.text).toBe(expected);
     expect(Math.abs(s.p-Number(expected.replace(',','.'))*10)).toBeLessThan(.6);
     // il giorno toccato resta col focus, la pagina non scorre
-    expect(s.focus).toBe(o);expect(r.y).toBe(0);
+    expect(s.focus).toBe(o);expect(r.y).toBe(initialScroll);
   }
   expect(page.url()).toContain(`/zona/`);expect(page.url()).toContain(`/${days.at(-1)}`);
-  // dopo tre cambi di giorno un'azione della scheda si esegue una volta sola
-  await page.evaluate(()=>{window.__writes=0;const set=Storage.prototype.setItem;Storage.prototype.setItem=function(k,v){if(/^fungaroli:diario/.test(k))window.__writes++;return set.call(this,k,v);};});
-  await page.locator('#detail [data-save-plan]').click();
-  await expect(page.locator('#detail [data-plan-status]')).toContainText('salvati');
-  await page.waitForTimeout(400);
-  expect(await page.evaluate(()=>window.__writes)).toBe(1);
+  // Dopo tre cambi di giorno resta un solo ingresso al taccuino, senza salvataggi impliciti.
+  const actions=page.locator('#detail .zone-actions');
+  await expect(actions.locator('[data-save-plan]')).toHaveCount(0);
+  await expect(actions.locator('.zone-note-action')).toHaveCount(1);
+  await expect(actions.locator('.zone-note-hint')).toContainText('ricerche a vuoto');
+  await actions.locator('.zone-note-action').click();
+  const report=page.locator('.report-dialog');await expect(report).toBeVisible();
+  await expect(page.locator('dialog[open]:modal')).toHaveCount(1);
+  await expect(report.locator('[name="zone"]')).toHaveValue(new URL(page.url()).hash.split('/')[2]);
+  await report.locator('[data-report-dismiss]').click();
+
   expect(errors).toEqual([]);
 });
 
 test('cambio di giorno con «riduci movimento»: valori subito finali',async({page})=>{
   const errors=await setup(page,390,{reduced:true});
-  await page.locator('#hero .cover-link').click();await expect(page.locator('#detail .phero > .ring')).toBeVisible();
-  await page.evaluate(()=>{window.__ring=document.querySelector('#detail .phero > .ring');});
+  await page.locator('#hero .cover-link').click();await expect(page.locator('#detail .phero .hero-indicators > .ring')).toBeVisible();
+  await page.evaluate(()=>{window.__ring=document.querySelector('#detail .phero .hero-indicators > .ring');});
   const [o]=await pickDays(page,1),day=page.locator(`#zone-days [data-day-offset="${o}"]`),expected=await day.locator('.pc').textContent();
   await day.click();
   // nessun conteggio e nessuna transizione dell'arco: il valore è già quello finale
-  const s=await page.evaluate(()=>{const r=document.querySelector('#detail .phero > .ring');return{same:r===window.__ring,text:r.querySelector('b').textContent,p:parseFloat(getComputedStyle(r).getPropertyValue('--p')),anims:r.getAnimations().length};});
+  const s=await page.evaluate(()=>{const r=document.querySelector('#detail .phero .hero-indicators > .ring');return{same:r===window.__ring,text:r.querySelector('b').textContent,p:parseFloat(getComputedStyle(r).getPropertyValue('--p')),anims:r.getAnimations().length};});
   expect(s.same).toBe(true);expect(s.text).toBe(expected);expect(s.anims).toBe(0);
   expect(Math.abs(s.p-Number(expected.replace(',','.'))*10)).toBeLessThan(.6);
   expect(errors).toEqual([]);

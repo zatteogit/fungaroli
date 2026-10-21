@@ -8,6 +8,7 @@ Leggere insieme a [handoff di prodotto](handoff-2026-10-14.md) e [AGENTS.md](../
 
 ## Decisioni approvate
 
+- **Payoff ufficiale (decisione di Matteo, 20/10/2026): «Chi cerca, si ritrova.»** Conservare maiuscola, virgola e punto finale. Esprime ricerca nel bosco e tempo per sé, senza promettere ritrovamenti. Regole d’uso nel [README del kit](fronda/README.md#payoff-ufficiale--decisione-del-20-ottobre-2026) e nella [guida, Linguaggio](fronda/index.html#linguaggio).
 - Nome **Fronda**. Il progetto resta un compagno per scegliere dove/quando andare a funghi nel Reatino e conoscere il bosco durante il giro.
 - Marchio **C / Lobata**: foglia con pochi lobi larghi, sentiero in negativo e richiamo a un pennino. Il riferimento alla scrittura è voluto. Il contorno deve essere naturale e leggibile, senza dentellature o effetto strappato.
 - Conservare la geometria di `fronda/assets/master-geometry.json` e dei master SVG. Non ripartire da un nuovo logo né ricalcare le tavole raster.
@@ -61,7 +62,7 @@ Ogni colore ha un compito. I valori stanno solo in `css/tokens.css` (ruoli pubbl
 | Selezione («scelto») | `--select` / `--select-ink` / `--select-edge` | polline, testo bosco notte, filo ocra #957A00 | polline, testo bosco notte, filo polline | filtri e chip attivi, giorno scelto (home, zona, mappa), segmenti di Scopri, sotto-schede (sottolineatura), voce attiva della barra in basso e della barra desktop |
 | Azione principale | `--action` / `--action-ink` | polline | polline | bottone pieno dell’azione principale (Vedi l’uscita, Nuovo appunto) |
 | Informazione | `--accent` | calendula scura | calendula chiara | occhielli ed etichette non cliccabili («GIOVEDÌ 15 OTTOBRE», «121 VOCI») |
-| Indice | `--s0…--s5`, `--viz-index` | verdi | verdi | anello, pallini, scala e grafici. Il verde non indica più la selezione |
+| Indice | `--s0…--s5`, `--viz-index` | neutri → ambra → verdi | neutri → ambra → verdi | anello, pallini, scala e grafici. Verde da 6, ambra da 3 a meno di 6, neutri sotto 3 (decisione del 18/10); classi e calcolo invariati |
 
 - **Selezione e azione** hanno lo stesso giallo ma forme diverse: lo «scelto» sta dentro un gruppo (fila, vassoio, barra), ha il filo `--select-edge` e, nei filtri, la spunta; l’azione è un bottone pieno senza filo, con il segno dell’azione (＋, →). Il polline su avorio ha poco contrasto di forma (1,35:1): per questo il filo ocra (≥3:1 su bg, surface, surface-2, surface-3).
 - **Giorno scelto:** polline con testo bosco notte; il pallino resta nel colore del suo indice, con un anello sottile scuro. Niente più verde pieno né doppio bordo nero.

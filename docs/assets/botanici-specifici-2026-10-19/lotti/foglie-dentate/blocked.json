@@ -1,0 +1,23 @@
+[
+  {
+    "species": "ortica",
+    "key": "fruit_type",
+    "value": "secco_piccolo",
+    "status": "blocked_documentation",
+    "reason": "Fotografie di frutto maturo insufficienti nel lotto; nessuna icona generica usata."
+  },
+  {
+    "species": "melissa",
+    "key": "fruit_type",
+    "value": "secco_piccolo",
+    "status": "blocked_documentation",
+    "reason": "Fotografie di frutto maturo insufficienti nel lotto; nessuna icona generica usata."
+  },
+  {
+    "species": "malva",
+    "key": "fruit_type",
+    "value": "secco_piccolo",
+    "status": "blocked_documentation",
+    "reason": "Riferimento fotografico di schizocarpo maturo insufficiente; master generato con calice a foglie dentate e numero/struttura mericarpi non affidabili, non esportato."
+  }
+]

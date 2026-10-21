@@ -17,12 +17,22 @@
   --_ref-forest: #24513d;
   --_ref-forest-deep: #163d2d;
   --_ref-polline: #f5d21f;
-  --_ref-action-hover: #f9de60;
+  --_ref-cta-green: #18382c;
+  --_ref-cta-green-hover: #214534;
+  --_ref-cta-white-hover: #e9efe8;
+  --_ref-ciclamino: #c973a5;
+  --_ref-ciclamino-ink: #8a3e6c;
+  --_ref-ciclamino-soft: #f5e3ee;
+  --_ref-ciclamino-dark-ink: #e5a5cd;
+  --_ref-corallo: #f0786c;
+  --_ref-corallo-ink: #9a4437;
+  --_ref-corallo-soft: #fae6e0;
+  --_ref-corallo-dark-ink: #ffab96;
   --_ref-night: #10271f;
   --_ref-polline-soft: #fff6c7;
   --_ref-polline-ink: #6b5500;
   /* bordo della selezione in polline sul chiaro: il polline su avorio ha poco contrasto di forma (1,35:1), il filo ocra sì (≥3:1 su bg, surface, surface-2, surface-3) */
-  --_ref-polline-edge: #957a00;
+  --_ref-polline-edge: #806800;
   --_ref-calendula: #f5822a;
   --_ref-fiordaliso: #7aa5ef;
   --_ref-fiordaliso-soft: #e7eeff;
@@ -37,15 +47,15 @@
   --_ref-line: #326820;
   --_ref-grid: #e6dfd3;
   --_ref-s0: #cfcabf;
-  --_ref-s1: #c2dea8;
-  --_ref-s2: #9fcb7a;
-  --_ref-s3: #7ab553;
+  --_ref-s1: #e0d5c5;
+  --_ref-s2: #dec18a;
+  --_ref-s3: #c7a445;
   --_ref-s4: #5a9c37;
   --_ref-s5: #3f8424;
   --_ref-ps0: #8d8a82;
-  --_ref-ps1: #8a9e7c;
-  --_ref-ps2: #8fb66c;
-  --_ref-ps3: #93cb57;
+  --_ref-ps1: #bba68c;
+  --_ref-ps2: #d6aa6c;
+  --_ref-ps3: #e6c35a;
   --_ref-ps4: #98dc43;
   --_ref-ps5: #a2ec33;
   --_ref-warn-bg: #faeecf;
@@ -75,9 +85,9 @@
   --_ref-line-dark: #9fd07a;
   --_ref-grid-dark: #1e3128;
   --_ref-s0-dark: #3c4a42;
-  --_ref-s1-dark: #3f6a43;
-  --_ref-s2-dark: #4f8c45;
-  --_ref-s3-dark: #64aa49;
+  --_ref-s1-dark: #6b5b49;
+  --_ref-s2-dark: #94723f;
+  --_ref-s3-dark: #b69a44;
   --_ref-s4-dark: #7fc84e;
   --_ref-s5-dark: #9be34c;
   --_ref-warn-bg-dark: #3a3214;
@@ -88,6 +98,50 @@
   --_ref-crit-ink-dark: #f8d0ca;
   --_ref-shadow-1-dark: 0 1px 2px rgb(0 0 0 / .45);
   --_ref-shadow-2-dark: 0 18px 44px rgb(0 0 0 / .55);
+
+  /* Campioni botanici descrittivi: colori stabili, non stati dell’interfaccia. */
+  --_ref-botanical-red: #cb2735;
+  --botanical-red: var(--_ref-botanical-red);
+  --_ref-botanical-orange: #e58c32;
+  --botanical-orange: var(--_ref-botanical-orange);
+  --_ref-botanical-pink: #d88d9f;
+  --botanical-pink: var(--_ref-botanical-pink);
+  --_ref-botanical-black: #252d38;
+  --botanical-black: var(--_ref-botanical-black);
+  --_ref-botanical-blue: #467692;
+  --botanical-blue: var(--_ref-botanical-blue);
+  --_ref-botanical-brown: #886344;
+  --botanical-brown: var(--_ref-botanical-brown);
+  --_ref-botanical-white: #f4efda;
+  --botanical-white: var(--_ref-botanical-white);
+  --_ref-botanical-yellow: #edcc35;
+  --botanical-yellow: var(--_ref-botanical-yellow);
+  --_ref-botanical-violet: #955f9e;
+  --botanical-violet: var(--_ref-botanical-violet);
+  --_ref-botanical-lilac: #baa0c9;
+  --botanical-lilac: var(--_ref-botanical-lilac);
+  --_ref-botanical-sky: #81abd0;
+  --botanical-sky: var(--_ref-botanical-sky);
+  --_ref-botanical-green: #899267;
+  --botanical-green: var(--_ref-botanical-green);
+
+  /* Campiture editoriali: stabili nei due temi, sempre con inchiostro bosco. */
+  --thermal-cool: var(--_ref-fiordaliso);
+  --thermal-range: var(--_ref-accent-dark);
+  --photo-warning: var(--_ref-warn-ink-dark);
+  --story-ink: var(--_ref-night);
+  --story-avorio: var(--_ref-ivory);
+  --story-polline: var(--_ref-polline);
+  --story-calendula: var(--_ref-calendula);
+  --story-fiordaliso: var(--_ref-fiordaliso);
+  --story-germoglio: var(--_ref-germoglio);
+  --story-ciclamino: var(--_ref-ciclamino); --story-corallo: var(--_ref-corallo);
+  /* Interfaccia della mappa: pannelli chiari indipendenti dal tema della pagina. */
+  --map-warning-ink: var(--_ref-warn-ink);
+  --map-warning-bg: var(--_ref-warn-bg);
+  --map-error-ink: var(--_ref-crit-ink);
+  --map-error-bg: var(--_ref-crit-bg);
+  --map-selected-edge: var(--_ref-polline-edge);
 
   /* ruoli pubblici */
   color-scheme: light;
@@ -104,23 +158,26 @@
   --text: var(--_ref-ink);
   --text-2: var(--_ref-text-2);
   --muted: var(--_ref-muted);
+  --control-edge: var(--muted);
   --accent: var(--_ref-calendula-ink);
   --accent-ink: var(--_ref-white);
   --accent-soft: var(--_ref-accent-soft);
   --forest: var(--_ref-forest);
-  /* ruoli Fronda: marchio, azione principale (polline con testo bosco notte) e i quattro accenti */
+  /* Ruoli Fronda: CTA verdi in light e bianche in dark; selezioni polline. */
   --brand: var(--_ref-forest); --brand-ink: var(--_ref-ivory); --brand-deep: var(--_ref-forest-deep);
-  --action: var(--_ref-polline); --action-hover: var(--_ref-action-hover); --action-ink: var(--_ref-night);
+  --action: var(--_ref-cta-green); --action-hover: var(--_ref-cta-green-hover); --action-ink: var(--_ref-white);
   --polline: var(--_ref-polline); --polline-soft: var(--_ref-polline-soft); --polline-ink: var(--_ref-polline-ink);
   --calendula: var(--_ref-calendula); --calendula-soft: var(--_ref-accent-soft); --calendula-ink: var(--_ref-calendula-ink);
   --fiordaliso: var(--_ref-fiordaliso); --fiordaliso-soft: var(--_ref-fiordaliso-soft); --fiordaliso-ink: var(--_ref-fiordaliso-ink);
   --germoglio: var(--_ref-germoglio); --germoglio-soft: var(--_ref-germoglio-soft); --germoglio-ink: var(--_ref-germoglio-ink);
-  --focus: var(--_ref-fiordaliso-ink);
-  /* semantica dei colori: interazione (link, indietro) in bosco; selezione («scelto») e azione principale in polline;
+  --focus: var(--_ref-forest);
+  /* semantica dei colori: interazione (link, indietro) in bosco; selezione («scelto») in polline e azione principale in verde/bianco;
      informazione (occhielli, etichette) in calendula; l'indice resta verde (anello, pallini, scala --s*) */
   --link: var(--_ref-forest);
   --select: var(--_ref-polline); --select-ink: var(--_ref-night); --select-edge: var(--_ref-polline-edge);
   /* testo sulle foto: sempre chiaro, su una velatura bosco notte che segue il blocco di testo (uguale nei due temi) */
+  --ciclamino: var(--_ref-ciclamino); --ciclamino-ink: var(--_ref-ciclamino-ink); --ciclamino-soft: var(--_ref-ciclamino-soft);
+  --corallo: var(--_ref-corallo); --corallo-ink: var(--_ref-corallo-ink); --corallo-soft: var(--_ref-corallo-soft);
   --on-photo: var(--_ref-white);
   --scrim: var(--_ref-night);
   /* testo sui fondi di rischio pieni (mortale, emergenza): chiaro sul rosso scuro, bosco notte sul rosso chiaro del tema scuro */
@@ -161,8 +218,11 @@
   --bg: var(--_ref-night); --surface: var(--_ref-surface-dark); --surface-2: var(--_ref-surface-2-dark); --surface-3: var(--_ref-surface-3-dark); --border: var(--_ref-border-dark); --hair: var(--_ref-hair-dark);
   --text: var(--_ref-ivory-light); --text-2: var(--_ref-text-2-dark); --muted: var(--_ref-muted-dark);
   --accent: var(--_ref-accent-dark); --accent-ink: var(--_ref-night); --accent-soft: var(--_ref-accent-soft-dark); --forest: var(--_ref-forest-deep);
-  --brand: var(--_ref-forest-light); --brand-ink: var(--_ref-night); --focus: var(--_ref-polline);
-  --link: var(--_ref-forest-light); --select-edge: var(--_ref-polline);
+  --brand: var(--_ref-white); --brand-ink: var(--_ref-night); --focus: var(--_ref-white);
+  --action: var(--_ref-white); --action-hover: var(--_ref-cta-white-hover); --action-ink: var(--_ref-night);
+  --ciclamino-ink: var(--_ref-ciclamino-dark-ink); --ciclamino-soft: var(--surface-2);
+  --corallo-ink: var(--_ref-corallo-dark-ink); --corallo-soft: var(--surface-2);
+  --link: var(--_ref-white); --select-edge: var(--_ref-polline);
   --polline-soft: var(--_ref-surface-2-dark); --polline-ink: var(--_ref-polline); --calendula-soft: var(--_ref-surface-2-dark); --calendula-ink: var(--_ref-accent-dark);
   --fiordaliso-soft: var(--_ref-surface-2-dark); --fiordaliso-ink: var(--_ref-fiordaliso-ink-dark); --germoglio-soft: var(--_ref-surface-2-dark); --germoglio-ink: var(--_ref-germoglio);
   --rain: var(--_ref-rain-dark); --viz-index: var(--_ref-forest-light); --line: var(--_ref-line-dark); --grid: var(--_ref-grid-dark);
@@ -177,8 +237,11 @@
   --bg: var(--_ref-night); --surface: var(--_ref-surface-dark); --surface-2: var(--_ref-surface-2-dark); --surface-3: var(--_ref-surface-3-dark); --border: var(--_ref-border-dark); --hair: var(--_ref-hair-dark);
   --text: var(--_ref-ivory-light); --text-2: var(--_ref-text-2-dark); --muted: var(--_ref-muted-dark);
   --accent: var(--_ref-accent-dark); --accent-ink: var(--_ref-night); --accent-soft: var(--_ref-accent-soft-dark); --forest: var(--_ref-forest-deep);
-  --brand: var(--_ref-forest-light); --brand-ink: var(--_ref-night); --focus: var(--_ref-polline);
-  --link: var(--_ref-forest-light); --select-edge: var(--_ref-polline);
+  --brand: var(--_ref-white); --brand-ink: var(--_ref-night); --focus: var(--_ref-white);
+  --action: var(--_ref-white); --action-hover: var(--_ref-cta-white-hover); --action-ink: var(--_ref-night);
+  --ciclamino-ink: var(--_ref-ciclamino-dark-ink); --ciclamino-soft: var(--surface-2);
+  --corallo-ink: var(--_ref-corallo-dark-ink); --corallo-soft: var(--surface-2);
+  --link: var(--_ref-white); --select-edge: var(--_ref-polline);
   --polline-soft: var(--_ref-surface-2-dark); --polline-ink: var(--_ref-polline); --calendula-soft: var(--_ref-surface-2-dark); --calendula-ink: var(--_ref-accent-dark);
   --fiordaliso-soft: var(--_ref-surface-2-dark); --fiordaliso-ink: var(--_ref-fiordaliso-ink-dark); --germoglio-soft: var(--_ref-surface-2-dark); --germoglio-ink: var(--_ref-germoglio);
   --rain: var(--_ref-rain-dark); --viz-index: var(--_ref-forest-light); --line: var(--_ref-line-dark); --grid: var(--_ref-grid-dark);

@@ -1,0 +1,1359 @@
+{
+  "base": "0a35ed2d0e5654ce504f472ac3085f94f2c7f84f",
+  "groups": {
+    "species": {
+      "records": 36,
+      "before": 98,
+      "after": 145,
+      "added": 47,
+      "enriched_records": 24,
+      "rows": [
+        {
+          "key": "edulis",
+          "before": 4,
+          "after": 4,
+          "added": 0
+        },
+        {
+          "key": "pinophilus",
+          "before": 2,
+          "after": 5,
+          "added": 3
+        },
+        {
+          "key": "aereus",
+          "before": 4,
+          "after": 4,
+          "added": 0
+        },
+        {
+          "key": "aestivalis",
+          "before": 5,
+          "after": 5,
+          "added": 0
+        },
+        {
+          "key": "caesarea",
+          "before": 4,
+          "after": 4,
+          "added": 0
+        },
+        {
+          "key": "cibarius",
+          "before": 4,
+          "after": 4,
+          "added": 0
+        },
+        {
+          "key": "cornucopioides",
+          "before": 4,
+          "after": 4,
+          "added": 0
+        },
+        {
+          "key": "repandum",
+          "before": 4,
+          "after": 4,
+          "added": 0
+        },
+        {
+          "key": "procera",
+          "before": 4,
+          "after": 4,
+          "added": 0
+        },
+        {
+          "key": "mellea",
+          "before": 4,
+          "after": 4,
+          "added": 0
+        },
+        {
+          "key": "virescens",
+          "before": 4,
+          "after": 4,
+          "added": 0
+        },
+        {
+          "key": "suillus",
+          "before": 3,
+          "after": 5,
+          "added": 2
+        },
+        {
+          "key": "terreum",
+          "before": 4,
+          "after": 4,
+          "added": 0
+        },
+        {
+          "key": "nuda",
+          "before": 4,
+          "after": 4,
+          "added": 0
+        },
+        {
+          "key": "agaricus-campestris",
+          "before": 2,
+          "after": 4,
+          "added": 2
+        },
+        {
+          "key": "agaricus-arvensis",
+          "before": 2,
+          "after": 3,
+          "added": 1
+        },
+        {
+          "key": "agaricus-bisporus",
+          "before": 2,
+          "after": 3,
+          "added": 1
+        },
+        {
+          "key": "agaricus-sylvicola",
+          "before": 2,
+          "after": 6,
+          "added": 4
+        },
+        {
+          "key": "cyclocybe-aegerita",
+          "before": 2,
+          "after": 3,
+          "added": 1
+        },
+        {
+          "key": "pleurotus-ostreatus",
+          "before": 2,
+          "after": 4,
+          "added": 2
+        },
+        {
+          "key": "pleurotus-eryngii",
+          "before": 2,
+          "after": 4,
+          "added": 2
+        },
+        {
+          "key": "pleurotus-cornucopiae",
+          "before": 2,
+          "after": 4,
+          "added": 2
+        },
+        {
+          "key": "morchella-esculenta",
+          "before": 2,
+          "after": 3,
+          "added": 1
+        },
+        {
+          "key": "morchella-elata",
+          "before": 2,
+          "after": 3,
+          "added": 1
+        },
+        {
+          "key": "calocybe-gambosa",
+          "before": 2,
+          "after": 3,
+          "added": 1
+        },
+        {
+          "key": "marasmius-oreades",
+          "before": 2,
+          "after": 4,
+          "added": 2
+        },
+        {
+          "key": "craterellus-lutescens",
+          "before": 2,
+          "after": 3,
+          "added": 1
+        },
+        {
+          "key": "lactarius-deliciosus",
+          "before": 2,
+          "after": 4,
+          "added": 2
+        },
+        {
+          "key": "lactarius-deterrimus",
+          "before": 2,
+          "after": 4,
+          "added": 2
+        },
+        {
+          "key": "hygrophorus-marzuolus",
+          "before": 2,
+          "after": 3,
+          "added": 1
+        },
+        {
+          "key": "hygrophorus-latitabundus",
+          "before": 2,
+          "after": 4,
+          "added": 2
+        },
+        {
+          "key": "tricholoma-portentosum",
+          "before": 2,
+          "after": 5,
+          "added": 3
+        },
+        {
+          "key": "coprinus-comatus",
+          "before": 2,
+          "after": 5,
+          "added": 3
+        },
+        {
+          "key": "fistulina-hepatica",
+          "before": 2,
+          "after": 4,
+          "added": 2
+        },
+        {
+          "key": "amanita-rubescens",
+          "before": 2,
+          "after": 5,
+          "added": 3
+        },
+        {
+          "key": "russula-aurea",
+          "before": 2,
+          "after": 5,
+          "added": 3
+        }
+      ]
+    },
+    "lookalikes": {
+      "records": 51,
+      "before": 58,
+      "after": 183,
+      "added": 125,
+      "enriched_records": 43,
+      "rows": [
+        {
+          "key": "Tylopilus felleus",
+          "before": 2,
+          "after": 2,
+          "added": 0
+        },
+        {
+          "key": "Rubroboletus satanas",
+          "before": 2,
+          "after": 2,
+          "added": 0
+        },
+        {
+          "key": "Caloboletus calopus",
+          "before": 1,
+          "after": 4,
+          "added": 3
+        },
+        {
+          "key": "Caloboletus radicans",
+          "before": 1,
+          "after": 4,
+          "added": 3
+        },
+        {
+          "key": "Neoboletus luridiformis",
+          "before": 1,
+          "after": 3,
+          "added": 2
+        },
+        {
+          "key": "Imleria badia",
+          "before": 1,
+          "after": 5,
+          "added": 4
+        },
+        {
+          "key": "Amanita phalloides",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "Amanita verna",
+          "before": 2,
+          "after": 2,
+          "added": 0
+        },
+        {
+          "key": "Amanita virosa",
+          "before": 2,
+          "after": 2,
+          "added": 0
+        },
+        {
+          "key": "Amanita muscaria",
+          "before": 1,
+          "after": 4,
+          "added": 3
+        },
+        {
+          "key": "Amanita crocea",
+          "before": 1,
+          "after": 4,
+          "added": 3
+        },
+        {
+          "key": "Omphalotus olearius",
+          "before": 2,
+          "after": 2,
+          "added": 0
+        },
+        {
+          "key": "Hygrophoropsis aurantiaca",
+          "before": 1,
+          "after": 5,
+          "added": 4
+        },
+        {
+          "key": "Cortinarius orellanus",
+          "before": 1,
+          "after": 2,
+          "added": 1
+        },
+        {
+          "key": "Craterellus cinereus",
+          "before": 1,
+          "after": 3,
+          "added": 2
+        },
+        {
+          "key": "Pseudocraterellus undulatus",
+          "before": 1,
+          "after": 3,
+          "added": 2
+        },
+        {
+          "key": "Urnula craterium",
+          "before": 1,
+          "after": 2,
+          "added": 1
+        },
+        {
+          "key": "Hydnum rufescens",
+          "before": 1,
+          "after": 5,
+          "added": 4
+        },
+        {
+          "key": "Sarcodon imbricatus",
+          "before": 1,
+          "after": 4,
+          "added": 3
+        },
+        {
+          "key": "Sarcodon scabrosus",
+          "before": 1,
+          "after": 3,
+          "added": 2
+        },
+        {
+          "key": "Hydnellum peckii",
+          "before": 1,
+          "after": 3,
+          "added": 2
+        },
+        {
+          "key": "Lepiota brunneoincarnata",
+          "before": 1,
+          "after": 4,
+          "added": 3
+        },
+        {
+          "key": "Lepiota subincarnata",
+          "before": 1,
+          "after": 4,
+          "added": 3
+        },
+        {
+          "key": "Lepiota cristata",
+          "before": 1,
+          "after": 3,
+          "added": 2
+        },
+        {
+          "key": "Chlorophyllum rhacodes",
+          "before": 1,
+          "after": 5,
+          "added": 4
+        },
+        {
+          "key": "Chlorophyllum venenatum",
+          "before": 1,
+          "after": 1,
+          "added": 0
+        },
+        {
+          "key": "Galerina marginata",
+          "before": 1,
+          "after": 3,
+          "added": 2
+        },
+        {
+          "key": "Hypholoma fasciculare",
+          "before": 1,
+          "after": 4,
+          "added": 3
+        },
+        {
+          "key": "Cortinarius rubellus",
+          "before": 1,
+          "after": 4,
+          "added": 3
+        },
+        {
+          "key": "Gymnopilus junonius",
+          "before": 1,
+          "after": 4,
+          "added": 3
+        },
+        {
+          "key": "Pholiota squarrosa",
+          "before": 1,
+          "after": 5,
+          "added": 4
+        },
+        {
+          "key": "Armillaria tabescens",
+          "before": 1,
+          "after": 2,
+          "added": 1
+        },
+        {
+          "key": "Russula heterophylla",
+          "before": 1,
+          "after": 4,
+          "added": 3
+        },
+        {
+          "key": "Russula olivacea",
+          "before": 1,
+          "after": 3,
+          "added": 2
+        },
+        {
+          "key": "Russula aeruginea",
+          "before": 1,
+          "after": 3,
+          "added": 2
+        },
+        {
+          "key": "Chalciporus piperatus",
+          "before": 1,
+          "after": 5,
+          "added": 4
+        },
+        {
+          "key": "Suillus bovinus",
+          "before": 1,
+          "after": 4,
+          "added": 3
+        },
+        {
+          "key": "Tricholoma pardinum",
+          "before": 1,
+          "after": 4,
+          "added": 3
+        },
+        {
+          "key": "Tricholoma virgatum",
+          "before": 1,
+          "after": 4,
+          "added": 3
+        },
+        {
+          "key": "Tricholoma sciodes",
+          "before": 1,
+          "after": 5,
+          "added": 4
+        },
+        {
+          "key": "Entoloma sinuatum",
+          "before": 1,
+          "after": 5,
+          "added": 4
+        },
+        {
+          "key": "Cortinarius traganus",
+          "before": 1,
+          "after": 5,
+          "added": 4
+        },
+        {
+          "key": "Cortinarius violaceus",
+          "before": 1,
+          "after": 5,
+          "added": 4
+        },
+        {
+          "key": "Inocybe lilacina",
+          "before": 1,
+          "after": 1,
+          "added": 0
+        },
+        {
+          "key": "Mycena pura",
+          "before": 1,
+          "after": 4,
+          "added": 3
+        },
+        {
+          "key": "Laccaria amethystina",
+          "before": 1,
+          "after": 5,
+          "added": 4
+        },
+        {
+          "key": "Agaricus xanthodermus",
+          "before": 1,
+          "after": 5,
+          "added": 4
+        },
+        {
+          "key": "Gyromitra esculenta",
+          "before": 1,
+          "after": 4,
+          "added": 3
+        },
+        {
+          "key": "Amanita pantherina",
+          "before": 1,
+          "after": 5,
+          "added": 4
+        },
+        {
+          "key": "Tricholoma equestre",
+          "before": 1,
+          "after": 4,
+          "added": 3
+        },
+        {
+          "key": "Clitocybe rivulosa",
+          "before": 1,
+          "after": 2,
+          "added": 1
+        }
+      ]
+    },
+    "trees": {
+      "records": 39,
+      "before": 145,
+      "after": 165,
+      "added": 20,
+      "enriched_records": 6,
+      "rows": [
+        {
+          "key": "faggio",
+          "before": 4,
+          "after": 4,
+          "added": 0
+        },
+        {
+          "key": "castagno",
+          "before": 4,
+          "after": 4,
+          "added": 0
+        },
+        {
+          "key": "cerro",
+          "before": 4,
+          "after": 4,
+          "added": 0
+        },
+        {
+          "key": "roverella",
+          "before": 4,
+          "after": 4,
+          "added": 0
+        },
+        {
+          "key": "farnetto",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "leccio",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "carpino nero",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "carpino bianco",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "orniello",
+          "before": 4,
+          "after": 4,
+          "added": 0
+        },
+        {
+          "key": "pino nero",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "pino domestico",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "pino d'aleppo",
+          "before": 4,
+          "after": 4,
+          "added": 0
+        },
+        {
+          "key": "pino silvestre",
+          "before": 4,
+          "after": 4,
+          "added": 0
+        },
+        {
+          "key": "abete bianco",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "betulla",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "nocciolo",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "acero campestre",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "pioppo",
+          "before": 4,
+          "after": 4,
+          "added": 0
+        },
+        {
+          "key": "salice",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "ontano",
+          "before": 4,
+          "after": 4,
+          "added": 0
+        },
+        {
+          "key": "olivo",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "acero di montpellier",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "sorbo domestico",
+          "before": 3,
+          "after": 6,
+          "added": 3
+        },
+        {
+          "key": "ciliegio",
+          "before": 3,
+          "after": 7,
+          "added": 4
+        },
+        {
+          "key": "noce",
+          "before": 3,
+          "after": 7,
+          "added": 4
+        },
+        {
+          "key": "tiglio nostrano",
+          "before": 4,
+          "after": 4,
+          "added": 0
+        },
+        {
+          "key": "agrifoglio",
+          "before": 4,
+          "after": 4,
+          "added": 0
+        },
+        {
+          "key": "robinia",
+          "before": 3,
+          "after": 6,
+          "added": 3
+        },
+        {
+          "key": "olmo montano",
+          "before": 3,
+          "after": 7,
+          "added": 4
+        },
+        {
+          "key": "olmo campestre",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "abete rosso",
+          "before": 5,
+          "after": 5,
+          "added": 0
+        },
+        {
+          "key": "acero opalo",
+          "before": 4,
+          "after": 4,
+          "added": 0
+        },
+        {
+          "key": "frassino maggiore",
+          "before": 5,
+          "after": 5,
+          "added": 0
+        },
+        {
+          "key": "sorbo degli uccellatori",
+          "before": 5,
+          "after": 5,
+          "added": 0
+        },
+        {
+          "key": "tasso",
+          "before": 5,
+          "after": 5,
+          "added": 0
+        },
+        {
+          "key": "carpinella",
+          "before": 5,
+          "after": 5,
+          "added": 0
+        },
+        {
+          "key": "ippocastano",
+          "before": 5,
+          "after": 7,
+          "added": 2
+        },
+        {
+          "key": "ontano napoletano",
+          "before": 5,
+          "after": 5,
+          "added": 0
+        },
+        {
+          "key": "pino marittimo",
+          "before": 5,
+          "after": 5,
+          "added": 0
+        }
+      ]
+    },
+    "plants": {
+      "records": 70,
+      "before": 206,
+      "after": 244,
+      "added": 38,
+      "enriched_records": 10,
+      "rows": [
+        {
+          "key": "ortica",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "cicoria",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "tarassaco",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "finocchietto",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "fragolina",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "rovo",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "rosa-canina",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "corbezzolo",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "prugnolo",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "sambuco",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "ebbio",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "cicuta",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "alliaria",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "asparago-selvatico",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "borragine",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "silene",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "piantaggine",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "malva",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "menta-acquatica",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "menta-longifolia",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "origano",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "melissa",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "achillea-ligure",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "iperico",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "margherita",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "raponzolo",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "primula",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "viola-mammola",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "ciclamino-autunnale",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "ciclamino-primaverile",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "anemone-appennini",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "elleboro",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "stramonio",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "colchico",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "aristolochia",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "gigaro",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "pungitopo",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "asfodelo",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "dafne-laureola",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "fusaggine",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "ligustro",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "lentaggine",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "vitalba",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "edera",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "biancospino",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "ginepro",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "corniolo",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "sanguinello",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "ginestra-carbonai",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "ginestra-odorosa",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "erica-arborea",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "salsapariglia",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "cisto-montpellier",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "cisto-salvia",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "bucaneve",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "erba-trinita",
+          "before": 3,
+          "after": 3,
+          "added": 0
+        },
+        {
+          "key": "scilla-silvestre",
+          "before": 2,
+          "after": 6,
+          "added": 4
+        },
+        {
+          "key": "narciso-dei-poeti",
+          "before": 2,
+          "after": 6,
+          "added": 4
+        },
+        {
+          "key": "giglio-martagone",
+          "before": 2,
+          "after": 6,
+          "added": 4
+        },
+        {
+          "key": "giglio-rosso",
+          "before": 2,
+          "after": 4,
+          "added": 2
+        },
+        {
+          "key": "orchide-sambucina",
+          "before": 2,
+          "after": 6,
+          "added": 4
+        },
+        {
+          "key": "orchide-maschia",
+          "before": 2,
+          "after": 6,
+          "added": 4
+        },
+        {
+          "key": "orchide-purpurea",
+          "before": 2,
+          "after": 6,
+          "added": 4
+        },
+        {
+          "key": "cefalantera-maggiore",
+          "before": 2,
+          "after": 6,
+          "added": 4
+        },
+        {
+          "key": "genziana-primaticcia",
+          "before": 2,
+          "after": 6,
+          "added": 4
+        },
+        {
+          "key": "digitale-gialla",
+          "before": 2,
+          "after": 6,
+          "added": 4
+        },
+        {
+          "key": "veratro",
+          "before": 5,
+          "after": 5,
+          "added": 0
+        },
+        {
+          "key": "genziana-maggiore",
+          "before": 4,
+          "after": 4,
+          "added": 0
+        },
+        {
+          "key": "aglio-orsino",
+          "before": 5,
+          "after": 5,
+          "added": 0
+        },
+        {
+          "key": "croco",
+          "before": 4,
+          "after": 4,
+          "added": 0
+        }
+      ]
+    },
+    "animals": {
+      "records": 22,
+      "before": 0,
+      "after": 44,
+      "added": 44,
+      "enriched_records": 18,
+      "rows": [
+        {
+          "key": "ape-da-miele",
+          "before": 0,
+          "after": 3,
+          "added": 3
+        },
+        {
+          "key": "bombi",
+          "before": 0,
+          "after": 2,
+          "added": 2
+        },
+        {
+          "key": "altre-api-selvatiche",
+          "before": 0,
+          "after": 0,
+          "added": 0
+        },
+        {
+          "key": "sirfidi",
+          "before": 0,
+          "after": 4,
+          "added": 4
+        },
+        {
+          "key": "farfalle-diurne",
+          "before": 0,
+          "after": 3,
+          "added": 3
+        },
+        {
+          "key": "vespe-sociali",
+          "before": 0,
+          "after": 0,
+          "added": 0
+        },
+        {
+          "key": "calabrone-europeo",
+          "before": 0,
+          "after": 1,
+          "added": 1
+        },
+        {
+          "key": "zecche",
+          "before": 0,
+          "after": 3,
+          "added": 3
+        },
+        {
+          "key": "processionaria-del-pino",
+          "before": 0,
+          "after": 0,
+          "added": 0
+        },
+        {
+          "key": "vipera-comune",
+          "before": 0,
+          "after": 0,
+          "added": 0
+        },
+        {
+          "key": "cinghiale",
+          "before": 0,
+          "after": 2,
+          "added": 2
+        },
+        {
+          "key": "lupo",
+          "before": 0,
+          "after": 3,
+          "added": 3
+        },
+        {
+          "key": "capriolo",
+          "before": 0,
+          "after": 1,
+          "added": 1
+        },
+        {
+          "key": "cervo",
+          "before": 0,
+          "after": 3,
+          "added": 3
+        },
+        {
+          "key": "cetonia-dorata",
+          "before": 0,
+          "after": 2,
+          "added": 2
+        },
+        {
+          "key": "rosalia-alpina",
+          "before": 0,
+          "after": 3,
+          "added": 3
+        },
+        {
+          "key": "tritone-crestato-italiano",
+          "before": 0,
+          "after": 3,
+          "added": 3
+        },
+        {
+          "key": "salamandra-pezzata",
+          "before": 0,
+          "after": 2,
+          "added": 2
+        },
+        {
+          "key": "riccio-europeo",
+          "before": 0,
+          "after": 3,
+          "added": 3
+        },
+        {
+          "key": "volpe",
+          "before": 0,
+          "after": 3,
+          "added": 3
+        },
+        {
+          "key": "istrice",
+          "before": 0,
+          "after": 1,
+          "added": 1
+        },
+        {
+          "key": "tasso",
+          "before": 0,
+          "after": 2,
+          "added": 2
+        }
+      ]
+    }
+  },
+  "scientific_data_unchanged": true
+}

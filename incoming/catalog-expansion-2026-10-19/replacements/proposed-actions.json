@@ -1,0 +1,62 @@
+[
+  {
+    "id": "ce1-replace-satanas-1",
+    "target_group": "lookalikes",
+    "target_key": "Rubroboletus satanas",
+    "action": "propose_as_cover",
+    "source_title": "File:Satans-Röhrling Boletus satanas.jpg",
+    "files": {
+      "file": "incoming/catalog-expansion-2026-10-19/replacements/prepared/ce1-replace-satanas-1.webp",
+      "file_hd": "incoming/catalog-expansion-2026-10-19/replacements/prepared/ce1-replace-satanas-1-hd.webp",
+      "thumb": "incoming/catalog-expansion-2026-10-19/replacements/prepared/ce1-replace-satanas-1-t.webp"
+    }
+  },
+  {
+    "id": "ce1-replace-virescens-2",
+    "target_group": "species",
+    "target_key": "virescens",
+    "action": "propose_as_cover",
+    "source_title": "File:Russula virescens duo.jpg",
+    "files": {
+      "file": "incoming/catalog-expansion-2026-10-19/replacements/prepared/ce1-replace-virescens-2.webp",
+      "file_hd": "incoming/catalog-expansion-2026-10-19/replacements/prepared/ce1-replace-virescens-2-hd.webp",
+      "thumb": "incoming/catalog-expansion-2026-10-19/replacements/prepared/ce1-replace-virescens-2-t.webp"
+    }
+  },
+  {
+    "id": "ce1-replace-felleus-extra19",
+    "target_group": "lookalikes",
+    "target_key": "Tylopilus felleus",
+    "action": "propose_as_cover",
+    "source_title": "File:Gemeiner Gallenröhrling Weinheim.jpg",
+    "files": {
+      "file": "incoming/catalog-expansion-2026-10-19/replacements/prepared/ce1-replace-felleus-extra19.webp",
+      "file_hd": "incoming/catalog-expansion-2026-10-19/replacements/prepared/ce1-replace-felleus-extra19-hd.webp",
+      "thumb": "incoming/catalog-expansion-2026-10-19/replacements/prepared/ce1-replace-felleus-extra19-t.webp"
+    }
+  },
+  {
+    "id": "ce1-replace-felleus-extra20",
+    "target_group": "lookalikes",
+    "target_key": "Tylopilus felleus",
+    "action": "add_complementary_photo",
+    "source_title": "File:Tylopilus felleus 11.jpg",
+    "files": {
+      "file": "incoming/catalog-expansion-2026-10-19/replacements/prepared/ce1-replace-felleus-extra20.webp",
+      "file_hd": "incoming/catalog-expansion-2026-10-19/replacements/prepared/ce1-replace-felleus-extra20-hd.webp",
+      "thumb": "incoming/catalog-expansion-2026-10-19/replacements/prepared/ce1-replace-felleus-extra20-t.webp"
+    }
+  },
+  {
+    "id": "ce1-replace-aereus-15",
+    "target_group": "species",
+    "target_key": "aereus",
+    "action": "propose_as_cover",
+    "source_title": "File:Boletus aereusBG.JPG",
+    "files": {
+      "file": "incoming/catalog-expansion-2026-10-19/replacements/prepared/ce1-replace-aereus-15.webp",
+      "file_hd": "incoming/catalog-expansion-2026-10-19/replacements/prepared/ce1-replace-aereus-15-hd.webp",
+      "thumb": "incoming/catalog-expansion-2026-10-19/replacements/prepared/ce1-replace-aereus-15-t.webp"
+    }
+  }
+]

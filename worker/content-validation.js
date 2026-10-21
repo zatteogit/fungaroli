@@ -1,3 +1,5 @@
+import {thoughtErrors} from '../js/daily-thought.js';
+import {validateTrailContext} from '../js/trail-context.js';
 import {GLOSSARY_CONTEXTS,termContexts,glossaryAliasKey} from '../js/glossary-context.js';
 import sanitizeHtml from 'sanitize-html';
 import { resourceOf, isLockedField } from '../js/content-schema.js';
@@ -66,7 +68,9 @@ export function validateContent(id, data, previous) {
     }));
   }
   const value=visit(data,'',previous);
-  if(id==='trails')for(const z of Object.values(value.zones||{}))for(const t of z.trails||[])if(!t.editorialNote?.trim())delete t.editorialNote;
+  if(id==='daily-thoughts'){const errors=thoughtErrors(value);if(errors.length)err(errors.join(' '));}
+  if(id==='trails'){for(const z of Object.values(value.zones||{}))for(const t of z.trails||[])for(const l of t.relatedLinks||[])if(l.caution==='')delete l.caution;validateTrailContext(value);}
+  if(id==='trails')for(const z of Object.values(value.zones||{}))for(const t of z.trails||[]){if(!t.editorialNote?.trim())delete t.editorialNote;if(t.relatedLinks?.length===0)delete t.relatedLinks;}
   function normalizeSources(v){
     if(!v||typeof v!=='object')return;
     if(Array.isArray(v.sources))v.sources=v.sources.map(s=>{
@@ -78,6 +82,7 @@ export function validateContent(id, data, previous) {
   }
   normalizeSources(value);
   let needsReview=false;
+  if(id==='trails'&&previous){const links=d=>Object.entries(d.zones||{}).flatMap(([zone,z])=>(z.trails||[]).map(t=>[zone,t.id,t.relatedLinks||[]]));needsReview=!same(links(value),links(previous));}
   if(id==='botanical-models'){
     if(!value.models||typeof value.models!=='object'||Array.isArray(value.models))err('Elenco dei modelli botanici non valido.');
     for(const [key,m] of Object.entries(value.models)){
@@ -95,6 +100,30 @@ export function validateContent(id, data, previous) {
     const seen=new Set();
     for (const t of rows) { if (!t || !idPattern.test(t.id) || seen.has(t.id)) err('Gli identificativi devono essere unici e stabili, con lettere minuscole, numeri e trattini.'); seen.add(t.id); }
   };
+  if(id==='animals'){
+    if(value.version!==1||!/^\d{4}-\d{2}-\d{2}$/.test(value.reviewedOn||'')||!Array.isArray(value.items)||!Array.isArray(value.sources))err('Catalogo animali non valido.');
+    const sourceIds=new Set();
+    for(const source of value.sources){
+      if(!source||typeof source.id!=='string'||!source.id||sourceIds.has(source.id)||typeof source.title!=='string'||!source.title.trim()||typeof source.publisher!=='string'||!source.publisher.trim()||!/^https:\/\/[^\s"'<>]+$/.test(source.url||'')||!/^\d{4}-\d{2}-\d{2}$/.test(source.checkedOn||''))err('Ogni fonte animale richiede ID unico, titolo, editore, URL HTTPS e data.');
+      sourceIds.add(source.id);
+    }
+    checkIds(value.items);
+    const keys=['id','name','latin','rank','groupLabel','paths','summary','observe','habitat','behavior','ecology','cautions','sourceIds','photos','knownGaps','publicationStatus'];
+    for(const animal of value.items){
+      if(Object.keys(animal).some(key=>!keys.includes(key)))err('Campo animale non previsto.');
+      if(typeof animal.name!=='string'||!animal.name.trim()||typeof animal.latin!=='string'||!['species','genus','family','editorial_group'].includes(animal.rank)||animal.rank!=='editorial_group'&&!animal.latin.trim()||typeof animal.groupLabel!=='string'||!animal.groupLabel.trim()||typeof animal.summary!=='string'||!animal.summary.trim()||!['ready','draft'].includes(animal.publicationStatus))err('Nome, rango e stato animale non validi.');
+      if(!Array.isArray(animal.paths)||!animal.paths.length||new Set(animal.paths).size!==animal.paths.length||animal.paths.some(path=>!['flowers','trail','care'].includes(path)))err('Percorsi animali non validi.');
+      if(!Array.isArray(animal.sourceIds)||!animal.sourceIds.length||animal.sourceIds.some(id=>!sourceIds.has(id)))err('Fonti della scheda animale non valide.');
+      for(const field of ['observe','habitat','behavior','ecology','cautions']){
+        if(!Array.isArray(animal[field]))err('I fatti animali devono essere elenchi.');
+        for(const claim of animal[field])if(!claim||Object.keys(claim).some(key=>!['text','sourceIds'].includes(key))||typeof claim.text!=='string'||!claim.text.trim()||!Array.isArray(claim.sourceIds)||!claim.sourceIds.length||claim.sourceIds.some(id=>!animal.sourceIds.includes(id)))err('Ogni fatto animale richiede testo e fonti della scheda.');
+      }
+      if(animal.publicationStatus==='ready'&&!['observe','habitat','behavior','ecology','cautions'].some(key=>animal[key].length))err('Una scheda animale pubblicabile richiede fatti documentati.');
+      if(!Array.isArray(animal.knownGaps)||animal.knownGaps.some(gap=>typeof gap!=='string')||!Array.isArray(animal.photos))err('Limiti e fotografie animali non validi.');
+      for(const photo of animal.photos)if(!photo||!photo.file||!photo.page||!photo.author||!photo.license||!photo.licenseUrl||photo.generated===true)err('Le fotografie animali richiedono file, fonte, autore e licenza: niente foto generate.');
+    }
+    needsReview=!previous||!same(value,previous);
+  }
   if (id === 'species-traits' || id === 'edible-catalog') {
     const key=id==='species-traits'?'taxa':'species';
     if (id === 'species-traits' ? !value.taxa || Array.isArray(value.taxa) : !Array.isArray(value.species)) err('Elenco delle specie non valido.');
@@ -147,6 +176,8 @@ export function validateContent(id, data, previous) {
     if (!Array.isArray(value.guides)) err('Elenco articoli non valido.');
     checkIds(value.guides);
     if (value.guides.some(g=>typeof g.title!=='string'||!g.title.trim()||typeof g.body!=='string')) err('Ogni articolo richiede titolo e testo.');
+    // illustrazione d'apertura facoltativa: file in assets/, testo alternativo, autore e licenza
+    if (value.guides.some(g=>g.image!=null&&(typeof g.image!=='object'||!/^\/?assets\/[a-zA-Z0-9_/-]+\.(?:webp|png|jpe?g)$/.test(g.image.file||'')||!['alt','author','license'].every(k=>typeof g.image[k]==='string'&&g.image[k].trim())||!/^https:\/\/[^\s"'<>]+$/.test(g.image.licenseUrl||'')||typeof g.image.generated!=='boolean'))) err('L’immagine di un articolo richiede file in assets, testo alternativo, autore, licenza con il link e se è generata.');
   }
   if(id==='plants'){
     if(!value.plants||typeof value.plants!=='object'||Array.isArray(value.plants))err('Elenco piante non valido.');
@@ -169,6 +200,14 @@ export function validateContent(id, data, previous) {
     if (!Array.isArray(value.zones)) err('Elenco zone non valido.');
     checkIds(value.zones);
     for(const z of value.zones) if(!z.name||!Number.isFinite(z.lat)||Math.abs(z.lat)>90||!Number.isFinite(z.lon)||Math.abs(z.lon)>180||!Array.isArray(z.bands)||!Array.isArray(z.parking)||!(z.radius_m>0)) err(`Dati geografici non validi per ${z.id}.`);
+  }
+  if(id==='zones')for(const z of value.zones){
+    if(z.province!==undefined&&(!Array.isArray(z.province)||!z.province.length||z.province.some(p=>!['RI','RM','VT','LT','FR'].includes(p))))err(`Province non valide per ${z.id}.`);
+    if(z.collectionStatus!==undefined&&!['unknown','restricted','observation_only'].includes(z.collectionStatus))err(`Stato di raccolta non valido per ${z.id}.`);
+    if(z.accessStatus!==undefined&&!['mapped_start','unverified','suspended'].includes(z.accessStatus))err(`Stato di accesso non valido per ${z.id}.`);
+    if(z.publicationStatus!==undefined&&!['active','draft'].includes(z.publicationStatus))err(`Stato di pubblicazione non valido per ${z.id}.`);
+    if(z.coordinateProvenance&&(!z.coordinateProvenance.method||!/^https:\/\//.test(z.coordinateProvenance.sourceUrl||'')))err(`Provenienza delle coordinate mancante per ${z.id}.`);
+    if(z.collectionStatus&&(!z.collectionNote||!/^https:\/\//.test(z.collectionSourceUrl||'')))err(`Fonte e indicazioni di raccolta mancanti per ${z.id}.`);
   }
   if (id==='glossary') {
     if(!Array.isArray(value.terms)) err('Elenco del glossario non valido.');
@@ -198,11 +237,14 @@ export function validateContent(id, data, previous) {
         if(!['file','alt','caption','author','license'].every(k=>typeof image[k]==='string'&&image[k].trim()))err(`Completa immagine, testo alternativo, didascalia, autore e licenza per ${term}.`);
         if(!/^(?:https:\/\/[^\s"'<>]+|\/?assets\/[a-zA-Z0-9_/-]+\.(?:svg|webp|png|jpe?g))$/.test(image.file))err('Usa un’immagine HTTPS o un file nella cartella assets.');
         if(!image.generated&&(!/^https:\/\/[^\s"'<>]+$/.test(image.page||'')||!/^https:\/\/[^\s"'<>]+$/.test(image.licenseUrl||'')))err('Per le immagini trovate indica la pagina di origine e il link alla licenza.');
+        if(image.generated&&!/^https:\/\/[^\s"'<>]+$/.test(image.licenseUrl||''))err('Per gli schemi generati indica il link alla licenza.');
         for(const k of ['page','licenseUrl'])if(image[k]&&!/^https:\/\/[^\s"'<>]+$/.test(image[k]))err('Fonte e licenza devono avere collegamenti HTTPS validi.');
       }
     }
     needsReview=!!previous&&!same(value,previous);
   }
+  if(id==='legal'&&value.acceptance_version!=null&&(!Number.isInteger(value.acceptance_version)||value.acceptance_version<1||value.acceptance_version>999999))err('La revisione delle CGS deve essere un intero positivo.');
+  if(id==='legal'&&previous?.acceptance_version&&(!value.acceptance_version||value.acceptance_version<previous.acceptance_version))err('La revisione delle CGS non può diminuire o essere rimossa.');
   if (id==='legal' && previous && !same(value,previous)) {
     if (!Number.isInteger(value.version)||value.version<=previous.version) err('Aumenta la versione degli avvisi quando aggiorni le regole.');
     needsReview=true;

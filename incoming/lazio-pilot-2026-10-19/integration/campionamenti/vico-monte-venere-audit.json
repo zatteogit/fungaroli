@@ -1,0 +1,79 @@
+{
+ "started": "2026-10-19T10:46:41.499482+00:00",
+ "seed": {
+  "id": "vico-monte-venere",
+  "name": "Monte Venere e lago di Vico",
+  "lat": 42.3472377,
+  "lon": 12.1808827,
+  "radius_m": 1500,
+  "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+  "province": [
+   "VT"
+  ],
+  "coordinateProvenance": {
+   "method": "official_trace_bbox_midpoint",
+   "sourceUrl": "https://www.parchilazio.it/documenti/schede/monte_venere.kml",
+   "bbox": {
+    "west": 12.1727654,
+    "south": 42.3419702,
+    "east": 12.1890001,
+    "north": 42.3525052
+   },
+   "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+  },
+  "collectionStatus": "unknown",
+  "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita.",
+  "collectionSourceUrl": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+  "publicationStatus": "active",
+  "manager": "Ente Monti Cimini, 0761 752282, info@entemonticimini.it",
+  "researchGroup": "nord",
+  "officialTrailRefs": [
+   "128b"
+  ]
+ },
+ "elevation": {
+  "min": 512,
+  "p25": 566,
+  "median": 617,
+  "p75": 691,
+  "max": 897
+ },
+ "suggestedBandsM": [
+  570,
+  620,
+  690
+ ],
+ "forestPolygonCount": 14,
+ "habitatSamples": 317,
+ "roadErrors": [],
+ "trails": {
+  "listedRelations": 7,
+  "requestedRefs": [
+   "128b"
+  ],
+  "matchedRelations": [
+   {
+    "relation": 11357919,
+    "ref": "128B",
+    "source": "https://www.openstreetmap.org/relation/11357919",
+    "license": "ODbL-1.0",
+    "officialTagLengthM": 3000.0,
+    "mappedLengthM": 2916,
+    "inZoneLengthM": 2920.5272934661143,
+    "sampleCount": 29,
+    "note": "Reference match with institutional itinerary; geometry independently obtained from OSM via Waymarked Trails. Match does not certify exact geometric identity or current opening."
+   }
+  ],
+  "unmatchedRefs": [],
+  "driveError": null,
+  "geometryStatus": "matched_osm_geometry",
+  "coverageLimit": 100
+ },
+ "status": "complete",
+ "finished": "2026-10-19T10:46:58.996150+00:00",
+ "demProvider": "copernicus-glo90-openmeteo",
+ "demResolutionM": 90,
+ "habitatStatus": "complete",
+ "grid": 21,
+ "gridStepM": 150.0
+}

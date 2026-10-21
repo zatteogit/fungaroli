@@ -1,0 +1,81 @@
+{
+ "started": "2026-10-19T11:09:36.017499+00:00",
+ "seed": {
+  "id": "cerquone-doganella",
+  "name": "Cerquone e Doganella",
+  "lat": 41.7784217,
+  "lon": 12.7823341,
+  "radius_m": 1500,
+  "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+  "province": [
+   "RM"
+  ],
+  "coordinateProvenance": {
+   "method": "official_trace_bbox_midpoint",
+   "sourceUrl": "https://www.parchilazio.it/castelliromani-schede-18053-504_rocca_priora_bosco_del_cerquone_cai",
+   "bbox": {
+    "west": 12.769194971770048,
+    "south": 41.76909844391048,
+    "east": 12.795473327860236,
+    "north": 41.78774499334395
+   },
+   "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+  },
+  "collectionStatus": "unknown",
+  "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita.",
+  "collectionSourceUrl": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+  "publicationStatus": "active",
+  "manager": "Ente Parco Castelli Romani",
+  "researchGroup": "roma-est",
+  "officialTrailRefs": [
+   "504"
+  ],
+  "officialTrailNameMatches": []
+ },
+ "demProvider": "copernicus-glo90-openmeteo",
+ "demResolutionM": 90,
+ "elevation": {
+  "min": 521,
+  "p25": 564,
+  "median": 602,
+  "p75": 659,
+  "max": 763
+ },
+ "suggestedBandsM": [
+  560,
+  600,
+  660
+ ],
+ "forestPolygonCount": 32,
+ "habitatSamples": 317,
+ "roadErrors": [],
+ "trails": {
+  "listedRelations": 5,
+  "requestedRefs": [
+   "504"
+  ],
+  "requestedDistinctiveNames": [],
+  "matchedRelations": [
+   {
+    "relation": 3327154,
+    "ref": "504",
+    "source": "https://www.openstreetmap.org/relation/3327154",
+    "license": "ODbL-1.0",
+    "officialTagLengthM": 5400.0,
+    "mappedLengthM": 5145,
+    "inZoneLengthM": 5024.56427952695,
+    "sampleCount": 50,
+    "note": "Reference match with institutional itinerary; geometry independently obtained from OSM via Waymarked Trails. Match does not certify exact geometric identity or current opening."
+   }
+  ],
+  "unmatchedRefs": [],
+  "driveError": null,
+  "coverageLimit": 100,
+  "geometryStatus": "matched_osm_geometry"
+ },
+ "status": "complete",
+ "finished": "2026-10-19T11:09:48.305528+00:00",
+ "habitatStatus": "complete",
+ "grid": 21,
+ "gridStepM": 150.0
+}

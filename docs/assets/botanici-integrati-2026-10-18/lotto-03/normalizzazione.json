@@ -1,0 +1,53 @@
+[
+  {
+    "master": "incoming/lotto-botanico-03-2026-10-18/originali/ebbio-portamento-r02.png",
+    "masterHash": "3d88ade508444dc3e222ce616c3ed10b846465cac1afb079d9e87fc11695ddf2",
+    "asset": "incoming/lotto-botanico-03-2026-10-18/approvati/ebbio-portamento-r02.webp",
+    "assetHash": "b2f9e1a82766f800ab307ac07638da53e02f2eee21dcec9288c41ef332b000b4",
+    "size": [
+      128,
+      128
+    ],
+    "alphaThreshold": 16,
+    "bbox": [
+      22,
+      8,
+      106,
+      120
+    ]
+  },
+  {
+    "master": "incoming/lotto-botanico-03-2026-10-18/originali/sambuco-portamento-r02.png",
+    "masterHash": "e9b3c92f4311a93b5fce50b78dbf05808c3cf99b198dc65a1b291c51212984fe",
+    "asset": "incoming/lotto-botanico-03-2026-10-18/approvati/sambuco-portamento-r02.webp",
+    "assetHash": "5d3e9c58f15b83f5451fae5728c0d8d168d8015242767eeb935daeeb0a214a21",
+    "size": [
+      128,
+      128
+    ],
+    "alphaThreshold": 16,
+    "bbox": [
+      8,
+      13,
+      120,
+      115
+    ]
+  },
+  {
+    "master": "incoming/lotto-botanico-03-2026-10-18/originali/rosa-canina-foglia-r00.png",
+    "masterHash": "1d6d0c00f47bc8c152825493fd85ecdfab1b1fa548343be9c8c3542210cfba64",
+    "asset": "incoming/lotto-botanico-03-2026-10-18/approvati/rosa-canina-foglia-r00.webp",
+    "assetHash": "5bc837260e111bcf25b3d037fec0ee166fd44f7fc4846497915455a7c1dcb3df",
+    "size": [
+      128,
+      128
+    ],
+    "alphaThreshold": 16,
+    "bbox": [
+      25,
+      8,
+      103,
+      120
+    ]
+  }
+]

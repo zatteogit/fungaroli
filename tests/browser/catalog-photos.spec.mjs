@@ -1,5 +1,9 @@
 import {test,expect} from '@playwright/test';
+import {readFileSync} from 'node:fs';
 import {todayISO} from '../../js/weather.js';
+const read=id=>JSON.parse(readFileSync(new URL(`../../data/${id}.json`,import.meta.url)));
+const media=read('media').species['agaricus-bisporus'];
+const photoCounts={fungo:new Set([media.ref,...media.inat].map(p=>p.file)).size,rovo:read('plants').plants.rovo.photos.length,noce:read('media-trees').trees.noce.commons.length};
 async function setup(page,width) {
   await page.setViewportSize({width,height:900});
   await page.emulateMedia({reducedMotion:'reduce'});
@@ -11,14 +15,14 @@ async function setup(page,width) {
     const out=Array.from({length:u.searchParams.get('latitude').split(',').length},()=>({daily:{time:dates,precipitation_sum:dates.map((_,i)=>i%4?3:12),temperature_2m_mean:Array(70).fill(13),temperature_2m_min:Array(70).fill(8),temperature_2m_max:Array(70).fill(18)},hourly:{time,soil_moisture_3_to_9cm:fill(.3),soil_temperature_6cm:fill(13),precipitation:fill(0),precipitation_probability:fill(0),weather_code:fill(1),wind_gusts_10m:fill(8),temperature_2m:fill(13)}}));
     await route.fulfill({json:out});
   });
-  await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','32026-10-16'));
+  await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','62026-10-20'));
   await page.goto('/');await expect(page.locator('#hero .cover-link')).toBeVisible();return errors;
 }
 
 for(const width of [320,1280])for(const theme of ['light','dark'])test(`nuove gallerie reali, zoom e scoperte a ${width}px in ${theme}`,async({page})=>{
  const errors=await setup(page,width);await page.evaluate(theme=>document.documentElement.dataset.theme=theme,theme);
  await expect(page.locator('#during-walk')).toBeVisible();await page.locator('#during-walk').screenshot({path:`/tmp/fungaroli-discoveries-${width}-${theme}.png`});
- for(const [route,selector,count,author]of [['/#/commestibile/agaricus-bisporus','#edible-detail',2,/iNaturalist/],['/#/pianta/rovo','#plant-detail',3,/Trieste/],['/#/albero/noce','#tree-detail',3,/Trieste/]]){
+ for(const [route,selector,count,author]of [['/#/commestibile/agaricus-bisporus','#edible-detail',photoCounts.fungo,/iNaturalist/],['/#/pianta/rovo','#plant-detail',photoCounts.rovo,/Trieste/],['/#/albero/noce','#tree-detail',photoCounts.noce,/Trieste/]]){
   await page.goto(route);await page.evaluate(theme=>document.documentElement.dataset.theme=theme,theme);
   const view=page.locator(selector);await expect(view.locator('.phero-img img')).toHaveAttribute('data-image-state','ready');await expect(view.locator('.sp-strip button')).toHaveCount(count-1);await expect(view.locator('[data-note-kind]')).toHaveCount(1);await expect(view).toContainText(author);
   await view.screenshot({path:`/tmp/fungaroli-gallery-${route.split('/').at(-1)}-${width}-${theme}.png`});await view.locator('.phero-img').click();await expect(page.locator('.lb[open]')).toBeVisible();await expect(page.locator('.lb-stage img')).toHaveAttribute('data-image-state','ready');await expect(page.locator('.lb-cap')).toContainText(author);await page.keyboard.press('Escape');

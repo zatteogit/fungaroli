@@ -1,6 +1,7 @@
 // Righe che scorrono di lato (giorni, filtri, card, sosia): con il mouse non basta la rotella,
 // quindi ai bordi compaiono due frecce, solo quando c'e' altro da vedere in quella direzione.
-const SEL = '.days, .active-filters, .rail, .sp-strip, .tree-fungi, .cmp-pick, .filter-rail';
+const SEL = '.days, .active-filters:not(.map-filters), .rail, .sp-strip, .tree-fungi, .cmp-pick, .filter-rail, .seg-nav';
+const TOUCH_SEL = '.days, .rail, .sp-strip, .tree-fungi, .seg-nav';
 const fine = matchMedia('(hover: hover) and (pointer: fine)');
 const reduce = matchMedia('(prefers-reduced-motion: reduce)');
 const CHEV = (d) => `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="${d}"/></svg>`;
@@ -9,7 +10,7 @@ const seen = new WeakSet();
 function update(el, host) {
   const max = el.scrollWidth - el.clientWidth;
   const over = max > 4 && getComputedStyle(el).overflowX !== 'visible';
-  host.style.setProperty('--rail-y', `${el.offsetTop + el.offsetHeight / 2}px`);
+  host.style.setProperty('--rail-y', `${el.getBoundingClientRect().top - host.getBoundingClientRect().top + el.offsetHeight / 2}px`);
   host.querySelector('.rail-prev').hidden = !over || el.scrollLeft <= 2;
   host.querySelector('.rail-next').hidden = !over || el.scrollLeft >= max - 2;
 }
@@ -38,7 +39,7 @@ function attach(el) {
 let t;
 function scan() {
   clearTimeout(t);
-  t = setTimeout(() => { if (fine.matches) document.querySelectorAll(SEL).forEach(attach); }, 60);
+  t = setTimeout(() => { document.querySelectorAll(fine.matches ? SEL : TOUCH_SEL).forEach(attach); }, 60);
 }
 new MutationObserver(scan).observe(document.body, { childList: true, subtree: true });
 fine.addEventListener?.('change', scan);

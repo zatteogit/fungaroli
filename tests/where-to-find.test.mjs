@@ -19,8 +19,11 @@ test('dove cercarla: senza meteo niente indice; senza bosco adatto lo dice', () 
   assert.equal(whereMeta({ ha: 40, elevRange: null }, NaN), '~40 ha adatti');
 });
 
+// La produzione (v319) mostra l'indice di oggi con il simbolo del fungo accanto: ettari e quote vengono da whereMeta,
+// l'indice dalla stessa formatIndex (0–10 con la virgola).
 test('la scheda specie usa whereMeta e non stampa più l’indice grezzo', () => {
   const app = readFileSync(new URL('../js/app.js', import.meta.url), 'utf8');
   assert.doesNotMatch(app, /indice oggi \$\{today\}/);
-  assert.match(app, /whereMeta\(pot, today\)/);
+  assert.match(app, /whereMeta\(pot, null\)/);
+  assert.match(app, /indice oggi \$\{formatIndex\(today\)\}/);
 });

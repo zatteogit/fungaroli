@@ -1,0 +1,25 @@
+{
+  "status": "frozen",
+  "approved_photographs": 102,
+  "approved_derivatives": 306,
+  "by_group": {
+    "animals": 44,
+    "plants": 38,
+    "trees": 20
+  },
+  "by_source": {
+    "Wikimedia Commons": 61,
+    "iNaturalist (research grade)": 2,
+    "Università di Trieste · Dryades": 39
+  },
+  "animal_records_covered": 18,
+  "plant_records_covered": 10,
+  "tree_records_covered": 6,
+  "rejected_acquired": 13,
+  "non_sRGB_approved": 7,
+  "converted_derivatives": 21,
+  "manifest_sha256": "df29296b09c239ecaee54d116e4c258e9e6592ab20524324a0ac941ba297188a",
+  "agent_modified_canonical": false,
+  "agent_started_test_suites": false,
+  "agent_autonomous_downloader_active": false
+}

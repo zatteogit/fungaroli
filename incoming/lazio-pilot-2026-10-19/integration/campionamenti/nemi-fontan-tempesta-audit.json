@@ -1,0 +1,81 @@
+{
+ "started": "2026-10-19T11:09:23.086370+00:00",
+ "seed": {
+  "id": "nemi-fontan-tempesta",
+  "name": "Nemi e Fontan Tempesta",
+  "lat": 41.7266247,
+  "lon": 12.7125641,
+  "radius_m": 1500,
+  "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+  "province": [
+   "RM"
+  ],
+  "coordinateProvenance": {
+   "method": "official_trace_bbox_midpoint",
+   "sourceUrl": "https://www.parchilazio.it/castelliromani-schede-18037-511b_fontana_tempesta_nemi_cai",
+   "bbox": {
+    "west": 12.7091608,
+    "south": 41.7206108,
+    "east": 12.7159675,
+    "north": 41.7326387
+   },
+   "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+  },
+  "collectionStatus": "unknown",
+  "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita.",
+  "collectionSourceUrl": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+  "publicationStatus": "active",
+  "manager": "Ente Parco Castelli Romani",
+  "researchGroup": "roma-est",
+  "officialTrailRefs": [
+   "511b"
+  ],
+  "officialTrailNameMatches": []
+ },
+ "demProvider": "copernicus-glo90-openmeteo",
+ "demResolutionM": 90,
+ "elevation": {
+  "min": 319,
+  "p25": 455,
+  "median": 605,
+  "p75": 643,
+  "max": 769
+ },
+ "suggestedBandsM": [
+  460,
+  610,
+  640
+ ],
+ "forestPolygonCount": 31,
+ "habitatSamples": 317,
+ "roadErrors": [],
+ "trails": {
+  "listedRelations": 12,
+  "requestedRefs": [
+   "511b"
+  ],
+  "requestedDistinctiveNames": [],
+  "matchedRelations": [
+   {
+    "relation": 3223059,
+    "ref": "511B",
+    "source": "https://www.openstreetmap.org/relation/3223059",
+    "license": "ODbL-1.0",
+    "officialTagLengthM": 1900.0,
+    "mappedLengthM": 1840,
+    "inZoneLengthM": 1844.1069356985613,
+    "sampleCount": 18,
+    "note": "Reference match with institutional itinerary; geometry independently obtained from OSM via Waymarked Trails. Match does not certify exact geometric identity or current opening."
+   }
+  ],
+  "unmatchedRefs": [],
+  "driveError": null,
+  "coverageLimit": 100,
+  "geometryStatus": "matched_osm_geometry"
+ },
+ "status": "complete",
+ "finished": "2026-10-19T11:09:35.975716+00:00",
+ "habitatStatus": "complete",
+ "grid": 21,
+ "gridStepM": 150.0
+}

@@ -86,10 +86,38 @@ export function outingFor(series, z, dateStr, now = Date.now()) {
   const stale = now - fetched > TTL;
   return { level: stale && level === 'ok' ? 'non_disponibile' : level,
     text: text + (stale ? ' · previsione da aggiornare' : ''), main: parts[0] || main,
-    short: stale && level === 'ok' ? 'previsione da aggiornare' : shorts[0] || main,
+    short: stale ? (level === 'ok' ? 'previsione da aggiornare' : `${shorts[0] || main} · da aggiornare`) : shorts[0] || main,
     available: !stale, fetchedAt: series.fetchedAt, rain, prob, thunder, snow, fog, gust, tmin, tmax, from };
 }
 
 export const OUTING_LABEL = { ok: 'meteo senza criticità segnalate', attenzione: 'tempo incerto', sconsigliata: 'uscita sconsigliata', non_disponibile: 'meteo non verificabile' };
 export const OUTING_SHORT = { ok: 'senza criticità segnalate', attenzione: 'incerto', sconsigliata: 'sconsigliata', non_disponibile: 'non verificabile' };
 export const OUTING_RANK = { ok: 1, attenzione: 0.85, sconsigliata: 0.55, non_disponibile: 0.75 };
+
+// Decisione di prodotto 20/10: le condizioni dell’uscita includono anche il meteo attuale.
+// I pesi sono quelli già usati per ordinare le uscite; il modello biologico resta separato.
+export function conditionsScore(growth,weather){
+  if(!Number.isFinite(growth)||!weather?.available||!['ok','attenzione','sconsigliata'].includes(weather.level))return null;
+  return Math.round(Math.max(0,Math.min(100,growth))*OUTING_RANK[weather.level]);
+}
+export function selectOutingWeather(items,weatherOf){
+  const safer=items.filter(c=>{const w=weatherOf(c);return w?.available&&['ok','attenzione'].includes(w.level);});
+  return safer.length?safer:items;
+}
+export function outingHeadings(weather,defaults={home:'Dove andare',others:'Altre buone uscite'}){
+  if(!weather.length)return defaults;
+  if(weather.every(w=>w?.level==='sconsigliata'))return {home:'Con questo meteo, meglio rimandare',others:'Zone da esplorare in un altro momento'};
+  if(weather.some(w=>!w?.available))return {home:'Meteo da verificare',others:'Altre zone da valutare'};
+  if(weather.some(w=>w.level==='attenzione'))return {home:'Uscite da valutare',others:'Altre uscite da valutare'};
+  return defaults;
+}
+
+// Prima data futura con meteo verificabile senza criticità; distingue l’uscita
+// consigliabile dalla sola pausa nel maltempo, senza modificare i punteggi.
+export function nextOutingWindow(items,weatherOf,{after=0,canRecommend=()=>true}={}) {
+  const ready=items.filter(c=>Number.isInteger(c.o)&&c.o>after&&weatherOf(c)?.available&&weatherOf(c).level==='ok');
+  const order=(a,b)=>a.o-b.o||((b.r??b.s??0)-(a.r??a.s??0));
+  const useful=ready.filter(canRecommend).sort(order);
+  const proposal=useful[0]||ready.sort(order)[0];
+  return proposal?{proposal,conditionsUseful:useful.includes(proposal)}:null;
+}

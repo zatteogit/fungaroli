@@ -1,0 +1,1141 @@
+{
+  "batchcomplete": "",
+  "continue": {
+    "gsroffset": 8,
+    "continue": "gsroffset||"
+  },
+  "query": {
+    "pages": {
+      "153527818": {
+        "pageid": 153527818,
+        "ns": 6,
+        "title": "File:Lactarius sanguifluus.jpg",
+        "index": 5,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 403021,
+            "width": 1531,
+            "height": 978,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Lactarius_sanguifluus.jpg/960px-Lactarius_sanguifluus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 640,
+            "thumbheight": 409,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Lactarius_sanguifluus.jpg/1280px-Lactarius_sanguifluus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Lactarius_sanguifluus.jpg/960px-Lactarius_sanguifluus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 409,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Lactarius_sanguifluus.jpg/1280px-Lactarius_sanguifluus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Lactarius_sanguifluus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Lactarius_sanguifluus.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=153527818",
+            "sha1": "ba667d330e945c2209bacbe9fbad6f8c8d673f44",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2024-10-04 11:57:19",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Lactarius sanguifluus",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Lactarius sanguifluus|Media from iNaturalist|INaturalist images reviewed by trusted reviewers|Media from GBIF|INaturalist images missing SDC depicts",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Lactarius sanguifluus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2024-03",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "cropped from  <a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/observations/201272978\">https://www.inaturalist.org/observations/201272978</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "kbosske",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:INaturalist images missing SDC depicts"
+          },
+          {
+            "ns": 14,
+            "title": "Category:INaturalist images reviewed by trusted reviewers"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lactarius sanguifluus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from GBIF"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from iNaturalist"
+          }
+        ]
+      },
+      "95428903": {
+        "pageid": 95428903,
+        "ns": 6,
+        "title": "File:Lactarius sanguifluus 25906288.jpg",
+        "index": 6,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1602446,
+            "width": 2048,
+            "height": 1365,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Lactarius_sanguifluus_25906288.jpg/960px-Lactarius_sanguifluus_25906288.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 640,
+            "thumbheight": 427,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Lactarius_sanguifluus_25906288.jpg/1280px-Lactarius_sanguifluus_25906288.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Lactarius_sanguifluus_25906288.jpg/960px-Lactarius_sanguifluus_25906288.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 427,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Lactarius_sanguifluus_25906288.jpg/1280px-Lactarius_sanguifluus_25906288.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Lactarius_sanguifluus_25906288.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Lactarius_sanguifluus_25906288.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=95428903",
+            "sha1": "205db1862cc62a37829220ada6686ed8d7e3f181",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-10-24 22:57:28",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Lactarius sanguifluus 25906288",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Lactarius sanguifluus|Media from iNaturalist|Fungi in September|INaturalist images reviewed by iNaturalistReviewBot|Lactarius in France|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|Provence-Alpes-Côte d'Azur photographs taken on 2018-09-30",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "43.830095",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "6.961878",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Lactarius sanguifluus</i>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2018-09-30",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/25906288\">https://www.inaturalist.org/photos/25906288</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/166761\">Fabien Piednoir</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in September"
+          },
+          {
+            "ns": 14,
+            "title": "Category:INaturalist images reviewed by iNaturalistReviewBot"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lactarius in France"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lactarius sanguifluus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from iNaturalist"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Provence-Alpes-Côte d'Azur photographs taken on 2018-09-30"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded with iNaturalist2Commons"
+          }
+        ]
+      },
+      "95428891": {
+        "pageid": 95428891,
+        "ns": 6,
+        "title": "File:Lactarius sanguifluus 25906478.jpg",
+        "index": 3,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1530208,
+            "width": 2048,
+            "height": 1365,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Lactarius_sanguifluus_25906478.jpg/960px-Lactarius_sanguifluus_25906478.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 640,
+            "thumbheight": 427,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Lactarius_sanguifluus_25906478.jpg/1280px-Lactarius_sanguifluus_25906478.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Lactarius_sanguifluus_25906478.jpg/960px-Lactarius_sanguifluus_25906478.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 427,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Lactarius_sanguifluus_25906478.jpg/1280px-Lactarius_sanguifluus_25906478.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/15/Lactarius_sanguifluus_25906478.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Lactarius_sanguifluus_25906478.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=95428891",
+            "sha1": "1875f82cafe38e90052c90a8a71651d3ac6ba18b",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-10-24 22:56:51",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Lactarius sanguifluus 25906478",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Lactarius sanguifluus|Media from iNaturalist|Fungi in September|INaturalist images reviewed by iNaturalistReviewBot|Lactarius in France|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|Provence-Alpes-Côte d'Azur photographs taken on 2018-09-30",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "43.830095",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "6.961878",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Lactarius sanguifluus</i>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2018-09-30",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/25906478\">https://www.inaturalist.org/photos/25906478</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/166761\">Fabien Piednoir</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in September"
+          },
+          {
+            "ns": 14,
+            "title": "Category:INaturalist images reviewed by iNaturalistReviewBot"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lactarius in France"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lactarius sanguifluus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from iNaturalist"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Provence-Alpes-Côte d'Azur photographs taken on 2018-09-30"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded with iNaturalist2Commons"
+          }
+        ]
+      },
+      "95428897": {
+        "pageid": 95428897,
+        "ns": 6,
+        "title": "File:Lactarius sanguifluus 25906519.jpg",
+        "index": 2,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1920609,
+            "width": 2048,
+            "height": 1365,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Lactarius_sanguifluus_25906519.jpg/960px-Lactarius_sanguifluus_25906519.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 640,
+            "thumbheight": 427,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Lactarius_sanguifluus_25906519.jpg/1280px-Lactarius_sanguifluus_25906519.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Lactarius_sanguifluus_25906519.jpg/960px-Lactarius_sanguifluus_25906519.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 427,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Lactarius_sanguifluus_25906519.jpg/1280px-Lactarius_sanguifluus_25906519.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Lactarius_sanguifluus_25906519.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Lactarius_sanguifluus_25906519.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=95428897",
+            "sha1": "e847338934b976f8deb8fcefb3c021d07b8b789b",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-10-24 22:57:08",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Lactarius sanguifluus 25906519",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Lactarius sanguifluus|Media from iNaturalist|Fungi in September|INaturalist images reviewed by iNaturalistReviewBot|Lactarius in France|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|Provence-Alpes-Côte d'Azur photographs taken on 2018-09-30",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "43.830095",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "6.961878",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Lactarius sanguifluus</i>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2018-09-30",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/25906519\">https://www.inaturalist.org/photos/25906519</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/166761\">Fabien Piednoir</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in September"
+          },
+          {
+            "ns": 14,
+            "title": "Category:INaturalist images reviewed by iNaturalistReviewBot"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lactarius in France"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lactarius sanguifluus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from iNaturalist"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Provence-Alpes-Côte d'Azur photographs taken on 2018-09-30"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded with iNaturalist2Commons"
+          }
+        ]
+      },
+      "153527813": {
+        "pageid": 153527813,
+        "ns": 6,
+        "title": "File:Lactarius sanguifluus 3.jpg",
+        "index": 8,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 265244,
+            "width": 1069,
+            "height": 954,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Lactarius_sanguifluus_3.jpg/960px-Lactarius_sanguifluus_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 640,
+            "thumbheight": 571,
+            "responsiveUrls": {
+              "2": "https://upload.wikimedia.org/wikipedia/commons/6/67/Lactarius_sanguifluus_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Lactarius_sanguifluus_3.jpg/960px-Lactarius_sanguifluus_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 571,
+              "srcset": "https://upload.wikimedia.org/wikipedia/commons/6/67/Lactarius_sanguifluus_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/67/Lactarius_sanguifluus_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Lactarius_sanguifluus_3.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=153527813",
+            "sha1": "f90cbcca1195d1444687e8d47fd5e686124493e8",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2024-10-04 11:57:10",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Lactarius sanguifluus 3",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Lactarius sanguifluus|Media from iNaturalist|INaturalist images reviewed by trusted reviewers|Media from GBIF",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Lactarius sanguifluus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2024-03",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "cropped from  <a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/observations/201272978\">https://www.inaturalist.org/observations/201272978</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "kbosske",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:INaturalist images reviewed by trusted reviewers"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lactarius sanguifluus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from GBIF"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from iNaturalist"
+          }
+        ]
+      },
+      "153527812": {
+        "pageid": 153527812,
+        "ns": 6,
+        "title": "File:Lactarius sanguifluus 4.jpg",
+        "index": 7,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 275656,
+            "width": 1352,
+            "height": 1114,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Lactarius_sanguifluus_4.jpg/960px-Lactarius_sanguifluus_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 640,
+            "thumbheight": 527,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Lactarius_sanguifluus_4.jpg/1280px-Lactarius_sanguifluus_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Lactarius_sanguifluus_4.jpg/960px-Lactarius_sanguifluus_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 527,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Lactarius_sanguifluus_4.jpg/1280px-Lactarius_sanguifluus_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Lactarius_sanguifluus_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Lactarius_sanguifluus_4.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=153527812",
+            "sha1": "ae6ae704c981758d23b621da9b20c53dfd5d44fa",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2024-10-04 11:57:09",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Lactarius sanguifluus 4",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Lactarius sanguifluus|Media from iNaturalist|INaturalist images reviewed by trusted reviewers|Media from GBIF",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Lactarius sanguifluus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2024-03",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "cropped from  <a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/observations/201272978\">https://www.inaturalist.org/observations/201272978</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "kbosske",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:INaturalist images reviewed by trusted reviewers"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lactarius sanguifluus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from GBIF"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from iNaturalist"
+          }
+        ]
+      },
+      "153527854": {
+        "pageid": 153527854,
+        "ns": 6,
+        "title": "File:Lactarius sanguifluus 5.jpg",
+        "index": 4,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 328722,
+            "width": 1426,
+            "height": 944,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Lactarius_sanguifluus_5.jpg/960px-Lactarius_sanguifluus_5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 640,
+            "thumbheight": 424,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Lactarius_sanguifluus_5.jpg/1280px-Lactarius_sanguifluus_5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Lactarius_sanguifluus_5.jpg/960px-Lactarius_sanguifluus_5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 424,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Lactarius_sanguifluus_5.jpg/1280px-Lactarius_sanguifluus_5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Lactarius_sanguifluus_5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Lactarius_sanguifluus_5.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=153527854",
+            "sha1": "7d0fe457e27dafeec855ad8fea0323dd3861634f",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2024-10-04 11:59:32",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Lactarius sanguifluus 5",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Lactarius sanguifluus|Media from iNaturalist|INaturalist images reviewed by trusted reviewers|Media from GBIF|INaturalist images missing SDC depicts",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Lactarius sanguifluus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-07",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/observations/53048358\">https://www.inaturalist.org/observations/53048358</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "nickmaz",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:INaturalist images missing SDC depicts"
+          },
+          {
+            "ns": 14,
+            "title": "Category:INaturalist images reviewed by trusted reviewers"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lactarius sanguifluus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from GBIF"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from iNaturalist"
+          }
+        ]
+      },
+      "9660877": {
+        "pageid": 9660877,
+        "ns": 6,
+        "title": "File:Lactarius sanguifluus 64507.jpg",
+        "index": 1,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 156516,
+            "width": 867,
+            "height": 531,
+            "thumburl": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Lactarius_sanguifluus_64507.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "thumbwidth": 640,
+            "thumbheight": 392,
+            "thumbattribs": {
+              "src": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Lactarius_sanguifluus_64507.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 392
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Lactarius_sanguifluus_64507.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Lactarius_sanguifluus_64507.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=9660877",
+            "sha1": "a187a484b6877e07695294994295d5d05af056cf",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-05-21 19:44:22",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Lactarius sanguifluus 64507",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Lactarius sanguifluus|Images from Mushroom Observer|Files from external sources with reviewed licenses|Fungi in November|Russulales in Sweden",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "The mushroom <i>Lactarius sanguifluus</i> (Paulet) Fr. Specimens photographed in Gotland, Sweden. \"Notes: Grows with Pinus on calcareous ground\".",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2009-11-12",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This image is <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/image/show_image/64507\">Image Number 64507</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "This image was created by user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_user/442\">Irene Andersson (irenea)</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.<br>You can contact this user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/ask_user_question/442\">here</a>.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files from external sources with reviewed licenses"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in November"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images from Mushroom Observer"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lactarius sanguifluus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Russulales in Sweden"
+          }
+        ]
+      }
+    }
+  },
+  "limits": {
+    "categories": 500
+  }
+}

@@ -1,8 +1,18 @@
+import {cleanupSurvey} from './survey.js';
+import {researchOverview} from './research-overview.js';
+import {surveyAdminSchema,listSurveyAdmin,readSurveyAdmin,saveSurveyAdmin,deleteSurveyAdmin} from './survey-admin.js';
+import {listExternalSources,readExternalSource,saveExternalSource} from './external-sources.js';
+import {externalEngineImpact} from './external-engine.js';
+import {externalMultiplier,combineFieldMultipliers} from '../js/external-signal.js';
+import {EXTERNAL_ENUMS,EXTERNAL_LENGTHS} from '../js/external-observation.js';
 import schema from '../migrations/0002_cms.sql';
 import { CONTENT_RESOURCES, CONTENT_SCHEMA_VERSION, resourceOf } from '../js/content-schema.js';
 import { readCommunityUser } from './community.js';
 import { validateContent } from './content-validation.js';
 import {glossaryContextSeedUpdate,repositorySeedUpdate} from './seed-update.js';
+import {adminDashboard,saveRankingPolicy} from './admin-dashboard.js';
+import { weatherMetrics } from './weather-metrics.js';
+import {listExternalObservations,readExternalObservation,saveExternalObservation,externalDataset,externalCatalog} from './external-observations.js';
 
 const initialized=new WeakMap(), enc=new TextEncoder();
 const hash=async s=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',enc.encode(s))),b=>b.toString(16).padStart(2,'0')).join('');
@@ -19,9 +29,7 @@ async function json(req) {
 
 // Documenti che un deploy aggiorna dal repository finché nessun autore li ha toccati (seed o ultima
 // scrittura di una release). Ognuno deve passare validateContent: un errore qui ferma init() e lo snapshot.
-// habitat, access e trailheads sono dati generati dagli script in tools/, in sola lettura nel CMS: senza
-// questo elenco un JSON rigenerato non arriverebbe mai allo snapshot pubblicato.
-export const REPOSITORY_REFRESHED=['ui-copy','plants','trees','media','media-trees','media-zones','species-id','species-traits','edible-catalog','preparation','glossary','guides','legal','media-glossary','trails','zones','habitat','access','trailheads'];
+export const REPOSITORY_REFRESHED=['daily-thoughts','ui-copy','plants','animals','trees','media','media-trees','media-zones','species-id','species-traits','edible-catalog','preparation','glossary','guides','legal','media-glossary','trails','zones','habitat','access','trailheads','infografiche'];
 
 async function init(env,origin) {
   const db=env.CMS_DB;
@@ -34,7 +42,7 @@ async function init(env,origin) {
       const res=await env.ASSETS.fetch(new Request(new URL(`/data/${r.id}.json`,origin)));
       if(!res.ok) failure(`Dati iniziali mancanti: ${r.title}.`,503);
       const data=await res.json();
-      const value=['guides','legal','glossary','plants','botanical-models'].includes(r.id)?validateContent(r.id,data).value:data;
+      const value=['guides','legal','glossary','plants','animals','botanical-models'].includes(r.id)?validateContent(r.id,data).value:data;
       return {id:r.id,payload:JSON.stringify(value)};
     }));
     if(seeds.length) await db.batch([
@@ -116,7 +124,63 @@ export async function handleCms(req,env,now=Date.now()) {
     if(req.method!=='GET' && (actor.kind==='human'?origin!==expected:origin&&origin!==expected)) failure('Origine non autorizzata.',403);
     if(path==='me'&&req.method==='GET')return response({user:actor,configured:!!(env.CMS_ADMIN_IDS||env.CMS_EDITOR_IDS)});
     permit(actor,'read');await rate(db,actor,now);
-    if(path==='schemas'&&req.method==='GET')return response({schemaVersion:CONTENT_SCHEMA_VERSION,resources:CONTENT_RESOURCES.map(r=>({...r,schema:{type:'object',required:r.required,additionalProperties:true}})),operations:['read','write','publish','review'],maxBytes:1500000});
+    if(path==='survey-responses'||path.startsWith('survey-responses/')){
+      if(actor.kind==='human')permit(actor,'admin');else {permit(actor,'read','survey-responses');if(req.method!=='GET')permit(actor,'write','survey-responses');}
+      await cleanupSurvey(env,now);
+      const suffix=path.slice('survey-responses'.length).replace(/^\//,'');
+      if(suffix==='schema'&&req.method==='GET')return response(surveyAdminSchema());
+      if(!suffix&&req.method==='GET')return response(await listSurveyAdmin(env.COMMUNITY_DB,url.searchParams,now));
+      if(!suffix&&req.method==='POST')return response(await saveSurveyAdmin(env.COMMUNITY_DB,null,await json(req),actor.id,now),201);
+      if(/^[a-f0-9-]{36}$/.test(suffix)){
+        if(req.method==='GET')return response(await readSurveyAdmin(env.COMMUNITY_DB,suffix));
+        if(req.method==='PATCH')return response(await saveSurveyAdmin(env.COMMUNITY_DB,suffix,await json(req),actor.id,now));
+        if(req.method==='DELETE')return response(await deleteSurveyAdmin(env.COMMUNITY_DB,suffix));
+      }
+      failure('Percorso o metodo non consentito.',405);
+    }
+    if(path==='external-observations'||path.startsWith('external-observations/')){
+      if(actor.kind==='human')permit(actor,'admin');
+      else {permit(actor,'read','external-observations');if(req.method!=='GET'&&path!=='external-observations/evaluate')permit(actor,'write','external-observations');}
+      const suffix=path.slice('external-observations'.length).replace(/^\//,'');
+      if(!suffix&&req.method==='GET')return response({...await listExternalObservations(env.COMMUNITY_DB,url.searchParams),catalog:await externalCatalog(db)});
+      if(suffix==='sources'){
+        if(req.method==='GET')return response(await listExternalSources(env.COMMUNITY_DB));
+        if(req.method==='POST')return response(await saveExternalSource(env.COMMUNITY_DB,null,await json(req),actor.id,now),201);
+        failure('Metodo non consentito.',405);
+      }
+      const sourceMatch=suffix.match(/^sources\/([a-zA-Z0-9-]{1,100})$/);
+      if(sourceMatch){
+        if(req.method==='GET')return response(await readExternalSource(env.COMMUNITY_DB,sourceMatch[1]));
+        if(req.method==='PATCH')return response(await saveExternalSource(env.COMMUNITY_DB,sourceMatch[1],await json(req),actor.id,now));
+        failure('Metodo non consentito.',405);
+      }
+      const reviewedInput=async()=>{const input=await json(req);if(actor.kind==='agent'&&input?.data?.reviewStatus!=='pending')permit(actor,'review','external-observations');return input;};
+      if(suffix==='overview'&&req.method==='GET')return response(await researchOverview(env,now));
+      if(suffix==='impact'&&req.method==='GET')return response(await externalEngineImpact(env,{day:url.searchParams.get('day')||undefined,now}));
+      if(suffix==='schema'&&req.method==='GET')return response({schemaVersion:1,enums:EXTERNAL_ENUMS,fields:{...Object.fromEntries(Object.entries(EXTERNAL_LENGTHS).map(([k,maxLength])=>[k,{type:['string','null'],maxLength}])),...Object.fromEntries(Object.entries(EXTERNAL_ENUMS).map(([k,values])=>[k,{type:'string',enum:values}])),searched:{type:'boolean'},effortMinutes:{type:['integer','null'],minimum:1,maximum:1440}},required:['sourceUrl','sourceLabel','placeName','summary','eventKey','searched',...Object.keys(EXTERNAL_ENUMS)],writes:{create:['data','reason'],update:['data','version','reason'],reasonLength:[5,500]},permissions:{read:'read + external-observations',write:'write + external-observations',acceptOrExclude:'review + external-observations'},endpoints:['external-observations','external-observations/:id','external-observations/engine','external-observations/impact?day=YYYY-MM-DD','external-observations/evaluate','external-observations/sources','external-observations/sources/:id']});
+      if(suffix==='evaluate'&&req.method==='POST'){
+        const input=await json(req);
+        if(!input||typeof input!=='object'||Array.isArray(input)||Object.keys(input).some(k=>!['day','zoneId','taxonIds','baseIndex','basePriority','communityMultiplier'].includes(k))||typeof input.zoneId!=='string'||!Array.isArray(input.taxonIds)||input.taxonIds.length>100||input.taxonIds.some(t=>typeof t!=='string')||!Number.isFinite(input.baseIndex)||input.baseIndex<0||input.baseIndex>10||!Number.isFinite(input.basePriority)||input.basePriority<0||input.basePriority>1000000||input.communityMultiplier!==undefined&&(!Number.isFinite(input.communityMultiplier)||input.communityMultiplier<.9||input.communityMultiplier>1.1))failure('Indica zona, specie, indice 0–10, priorità finita e moltiplicatore community tra 0,9 e 1,1.',422);
+        const impact=await externalEngineImpact(env,{day:input.day,now});
+        if(!impact.catalog.zones.some(z=>z.id===input.zoneId)||input.taxonIds.some(id=>!impact.catalog.taxa.some(t=>t.id===id)))failure('Zona o specie non presenti nel catalogo.',422);
+        const ext=externalMultiplier(impact.groups,input.zoneId,input.taxonIds),base=input.communityMultiplier??1,combined=combineFieldMultipliers(base,ext,impact.policy.maxPercent);
+        return response({generatedAt:impact.generatedAt,day:impact.day,inputOrigin:'caller_supplied_baseline',index:{before:input.baseIndex,after:input.baseIndex,delta:0},priority:{baseline:input.basePriority,before:input.basePriority*base,after:input.basePriority*combined,externalMultiplier:ext,communityMultiplier:base,combinedMultiplier:combined},groups:impact.groups.filter(g=>g.zoneId===input.zoneId&&input.taxonIds.includes(g.taxonId)),policy:impact.policy});
+      }
+      if(!suffix&&req.method==='POST')return response(await saveExternalObservation(env.COMMUNITY_DB,null,await reviewedInput(),actor.id,now,db),201);
+      if(suffix==='engine'&&req.method==='GET')return response(await externalDataset(env.COMMUNITY_DB,now));
+      if(/^[a-zA-Z0-9-]{1,100}$/.test(suffix)){
+        if(req.method==='GET')return response(await readExternalObservation(env.COMMUNITY_DB,suffix));
+        if(req.method==='PATCH'){const input=await reviewedInput();if(actor.kind==='agent'){const previous=await readExternalObservation(env.COMMUNITY_DB,suffix);if(previous.data.reviewStatus!=='pending')permit(actor,'review','external-observations');}return response(await saveExternalObservation(env.COMMUNITY_DB,suffix,input,actor.id,now,db));}
+      }
+      failure('Percorso o metodo non consentito.',405);
+    }
+    if(path==='dashboard'){
+      permit(actor,'admin');
+      if(req.method==='GET')return response(await adminDashboard(env.COMMUNITY_DB,now,db));
+      if(req.method==='PATCH')return response(await saveRankingPolicy(env.COMMUNITY_DB,await json(req),actor.id,now));
+      failure('Metodo non consentito.',405);
+    }
+    if(path==='schemas'&&req.method==='GET')return response({schemaVersion:CONTENT_SCHEMA_VERSION,resources:CONTENT_RESOURCES.map(r=>({...r,schema:{type:'object',required:r.required,additionalProperties:true}})),operations:['read','write','publish','review'],surveyResponses:{resource:'survey-responses',schema:'/api/cms/v1/survey-responses/schema',list:'/api/cms/v1/survey-responses'},externalObservations:{resource:'external-observations',schema:'/api/cms/v1/external-observations/schema',impact:'/api/cms/v1/external-observations/impact',evaluate:'/api/cms/v1/external-observations/evaluate'},maxBytes:1500000});
     if(path==='items'&&req.method==='GET') {
       const rows=(await db.prepare('SELECT id,version,published_version,updated_at,updated_by FROM cms_documents').all()).results;
       return response({items:rows.filter(r=>actor.resources.includes(r.id)).map(r=>({...resourceOf(r.id),version:r.version,publishedVersion:r.published_version,updatedAt:r.updated_at})),release:await db.prepare("SELECT value FROM cms_meta WHERE key='release'").first('value')});
@@ -182,7 +246,7 @@ export async function handleCms(req,env,now=Date.now()) {
     if(path==='tokens'&&req.method==='GET'){permit(actor,'admin');return response({tokens:(await db.prepare('SELECT id,name,scopes,resources,expires_at AS expiresAt,revoked_at AS revokedAt FROM cms_agent_tokens ORDER BY created_at DESC').all()).results.map(t=>({...t,scopes:JSON.parse(t.scopes),resources:JSON.parse(t.resources)}))});}
     if(path==='tokens'&&req.method==='POST') {
       permit(actor,'admin');const input=await json(req);
-      if(typeof input.name!=='string'||!input.name.trim()||!Array.isArray(input.scopes)||!input.scopes.length||input.scopes.some(s=>!['read','write','publish','review'].includes(s))||!input.scopes.includes('read')||!Array.isArray(input.resources)||!input.resources.length||input.resources.some(r=>!resourceOf(r))||!Number.isInteger(input.days)||input.days<1||input.days>90)failure('Indica nome, permessi, sezioni e scadenza (1–90 giorni).');
+      if(typeof input.name!=='string'||!input.name.trim()||!Array.isArray(input.scopes)||!input.scopes.length||input.scopes.some(s=>!['read','write','publish','review'].includes(s))||!input.scopes.includes('read')||!Array.isArray(input.resources)||!input.resources.length||input.resources.some(r=>!['external-observations','survey-responses'].includes(r)&&!resourceOf(r))||!Number.isInteger(input.days)||input.days<1||input.days>90)failure('Indica nome, permessi, sezioni e scadenza (1–90 giorni).');
       const raw='cms_'+Array.from(crypto.getRandomValues(new Uint8Array(32)),b=>b.toString(16).padStart(2,'0')).join(''),id=crypto.randomUUID();
       await db.batch([
         db.prepare('INSERT INTO cms_agent_tokens(id,token_hash,name,scopes,resources,created_at,expires_at,created_by) VALUES(?,?,?,?,?,?,?,?)').bind(id,await hash(raw),input.name.trim().slice(0,80),JSON.stringify([...new Set(input.scopes)]),JSON.stringify([...new Set(input.resources)]),now,now+input.days*864e5,actor.id),
@@ -193,6 +257,7 @@ export async function handleCms(req,env,now=Date.now()) {
     if(revoke&&req.method==='DELETE') {
       permit(actor,'admin');await db.batch([db.prepare('UPDATE cms_agent_tokens SET revoked_at=? WHERE id=?').bind(now,revoke[1]),db.prepare("INSERT INTO cms_audit(actor,action,created_at) VALUES(?,'token_revoke',?)").bind(actor.id,now)]);return response({ok:true});
     }
+    if(path==='metrics/weather'&&req.method==='GET'){permit(actor,'admin');return response(await weatherMetrics(db,Number(url.searchParams.get('days'))||30));}
     if(path==='audit'&&req.method==='GET'){permit(actor,'admin');return response({events:(await db.prepare('SELECT * FROM cms_audit ORDER BY id DESC LIMIT 100').all()).results});}
     failure('Percorso non trovato.',404);
   }catch(e){return response({error:e.status?e.message:'Redazione temporaneamente non disponibile.'},e.status||503);}

@@ -1,452 +1,2252 @@
 {
- "origin": {
-  "name": "Rieti",
-  "lat": 42.404,
-  "lon": 12.8623
- },
- "zones": [
-  {
-   "id": "vallonina",
-   "name": "Vallonina / Terminillo",
-   "lat": 42.485,
-   "lon": 13.005,
-   "radius_m": 3000,
-   "bands": [
-    1200,
-    1450,
-    1650
-   ],
-   "description": "Faggeta d'alto fusto continua sul versante nord del Terminillo verso Leonessa. Microclima umido e fresco, nebbie di condensazione e piogge orografiche anche d'estate.",
-   "access": "Da Rieti SS 4 bis del Terminillo, oltre Pian de' Valli, poi SP 10 della Vallonina verso la Sella di Leonessa.",
-   "parking": [
+  "origin": {
+    "name": "Rieti",
+    "lat": 42.404,
+    "lon": 12.8623
+  },
+  "zones": [
     {
-     "name": "Rifugio Maiolica (fondovalle)",
-     "lat": 42.5005,
-     "lon": 13.009
+      "id": "vallonina",
+      "name": "Vallonina / Terminillo",
+      "lat": 42.485,
+      "lon": 13.005,
+      "radius_m": 3000,
+      "bands": [
+        1200,
+        1450,
+        1650
+      ],
+      "description": "Faggeta d'alto fusto continua sul versante nord del Terminillo verso Leonessa. Microclima umido e fresco, nebbie di condensazione e piogge orografiche anche d'estate.",
+      "access": "Da Rieti SS 4 bis del Terminillo, oltre Pian de' Valli, poi SP 10 della Vallonina verso la Sella di Leonessa.",
+      "parking": [
+        {
+          "name": "Parcheggio mappato presso Sella di Leonessa",
+          "lat": 42.473514,
+          "lon": 13.006334,
+          "sourceUrl": "https://www.openstreetmap.org/way/132609641",
+          "checkedOn": "2026-10-20",
+          "license": "ODbL-1.0",
+          "accessStatus": "unknown",
+          "positionMethod": "area_representative"
+        }
+      ],
+      "trails": "CAI 404 (Selletta di Pratorecchia, Iaccio Crudele); CAI 439 (Buco del Merlo, Monte I Porcini).",
+      "drive_min": null,
+      "drive_km": null,
+      "protection": null,
+      "popularity": 1.0,
+      "title": "Vallonina",
+      "subtitle": "Terminillo, versante nord"
     },
     {
-     "name": "Bivio Rifugio Sebastiani",
-     "lat": 42.4697,
-     "lon": 13.0102
-    }
-   ],
-   "trails": "CAI 404 (Selletta di Pratorecchia, Iaccio Crudele); CAI 439 (Buco del Merlo, Monte I Porcini).",
-   "drive_min": 55,
-   "drive_km": 34,
-   "protection": null,
-   "popularity": 1.0,
-   "title": "Vallonina",
-   "subtitle": "Terminillo, versante nord"
-  },
-  {
-   "id": "poggio-cantalice",
-   "name": "Poggio Bustone / Cantalice",
-   "lat": 42.49,
-   "lon": 12.915,
-   "radius_m": 3000,
-   "bands": [
-    750,
-    950,
-    1200
-   ],
-   "description": "Cintura pedemontana ai piedi del Terminillo: querceti a roverella e ostrieti in basso, faggeta sopra i 1.000 m. Secondo la Carta Forestale i castagneti qui sono marginali.",
-   "access": "Da Rieti SP 2 verso Cantalice e Poggio Bustone, poi strade comunali alte e piste tagliafuoco.",
-   "parking": [
-    {
-     "name": "Poggio Bustone (Santuario)",
-     "lat": 42.5018,
-     "lon": 12.8881
-    }
-   ],
-   "trails": "Mulattiere e sentieri dal Santuario verso le pendici superiori.",
-   "drive_min": 34,
-   "drive_km": 17,
-   "protection": null,
-   "popularity": 0.7,
-   "title": "Poggio Bustone e Cantalice",
-   "subtitle": "Monti Reatini, versante ovest"
-  },
-  {
-   "id": "antrodoco",
-   "name": "Antrodoco / Media Valle del Velino",
-   "lat": 42.42,
-   "lon": 13.09,
-   "radius_m": 4000,
-   "bands": [
-    650,
-    850,
-    1100
-   ],
-   "description": "Castagneti secolari (Marrone Antrodocano) misti a carpino nero, cerro e roverella; faggeta alle quote superiori. Comprende i castagneti di Colle Rinaldo (Borgo Velino).",
-   "access": "SS 4 Salaria per Antrodoco e Borgo Velino; diramazione per Micigliano e il Colle.",
-   "parking": [
-    {
-     "name": "Antrodoco",
-     "lat": 42.4033,
-     "lon": 13.1354
+      "id": "poggio-cantalice",
+      "name": "Poggio Bustone / Cantalice",
+      "lat": 42.49,
+      "lon": 12.915,
+      "radius_m": 3000,
+      "bands": [
+        750,
+        950,
+        1200
+      ],
+      "description": "Cintura pedemontana ai piedi del Terminillo: querceti a roverella e ostrieti in basso, faggeta sopra i 1.000 m. Secondo la Carta Forestale i castagneti qui sono marginali.",
+      "access": "Da Rieti SP 2 verso Cantalice e Poggio Bustone, poi strade comunali alte e piste tagliafuoco.",
+      "parking": [
+        {
+          "name": "Poggio Bustone (Santuario)",
+          "lat": 42.5018,
+          "lon": 12.8881
+        }
+      ],
+      "trails": "Mulattiere e sentieri dal Santuario verso le pendici superiori.",
+      "drive_min": 34,
+      "drive_km": 17,
+      "protection": null,
+      "popularity": 0.7,
+      "title": "Poggio Bustone e Cantalice",
+      "subtitle": "Monti Reatini, versante ovest"
     },
     {
-     "name": "Micigliano",
-     "lat": 42.4513,
-     "lon": 13.0547
-    }
-   ],
-   "trails": "Sentieri rurali e mulattiere dai fondivalle verso le pendici.",
-   "drive_min": 42,
-   "drive_km": 31,
-   "protection": null,
-   "popularity": 0.6,
-   "title": "Antrodoco",
-   "subtitle": "Media Valle del Velino"
-  },
-  {
-   "id": "cicolano",
-   "name": "Cicolano – Marcetelli, Ascrea, Collalto",
-   "lat": 42.195,
-   "lon": 13.03,
-   "radius_m": 5000,
-   "bands": [
-    750,
-    900,
-    1050
-   ],
-   "description": "Collina e media montagna tra i laghi del Salto e del Turano. La Carta Forestale indica una netta prevalenza di castagneto, poi cerrete e ostrieti. Dentro il cerchio anche i castagneti di Tonnicoda, il nucleo di bosco adatto più esteso trovato nella provincia.",
-   "access": "SR 578 Salto-Cicolano, uscite per la diga del Salto, Marcetelli, Pescorocchiano; accessi comunali.",
-   "parking": [
-    {
-     "name": "Marcetelli",
-     "lat": 42.2266,
-     "lon": 13.0469
+      "id": "antrodoco",
+      "name": "Antrodoco / Media Valle del Velino",
+      "lat": 42.42,
+      "lon": 13.09,
+      "radius_m": 4000,
+      "bands": [
+        650,
+        850,
+        1100
+      ],
+      "description": "Castagneti secolari (Marrone Antrodocano) misti a carpino nero, cerro e roverella; faggeta alle quote superiori. Comprende i castagneti di Colle Rinaldo (Borgo Velino).",
+      "access": "SS 4 Salaria per Antrodoco e Borgo Velino; diramazione per Micigliano e il Colle.",
+      "parking": [
+        {
+          "name": "Antrodoco",
+          "lat": 42.4033,
+          "lon": 13.1354
+        },
+        {
+          "name": "Micigliano",
+          "lat": 42.4513,
+          "lon": 13.0547
+        }
+      ],
+      "trails": "Sentieri rurali e mulattiere dai fondivalle verso le pendici.",
+      "drive_min": 42,
+      "drive_km": 31,
+      "protection": null,
+      "popularity": 0.6,
+      "title": "Antrodoco",
+      "subtitle": "Media Valle del Velino"
     },
     {
-     "name": "Ascrea",
-     "lat": 42.1962,
-     "lon": 12.9966
-    }
-   ],
-   "trails": "Strade comunali e sentieri della Riserva Navegna-Cervia.",
-   "drive_min": 65,
-   "drive_km": 50,
-   "protection": "Parte dell'area è nella Riserva Naturale Monte Navegna e Monte Cervia. La legge istitutiva (L.R. 56/1988, art. 11) consente la raccolta secondo la L.R. 32/1998 finché la riserva non ha un regolamento: verifica con l'ente gestore eventuali divieti locali.",
-   "popularity": 0.6,
-   "title": "Cicolano",
-   "subtitle": "Marcetelli, Ascrea, Collalto"
-  },
-  {
-   "id": "rascino",
-   "name": "Altopiano di Rascino",
-   "lat": 42.335,
-   "lon": 13.15,
-   "radius_m": 3500,
-   "bands": [
-    1250,
-    1350,
-    1450
-   ],
-   "description": "Altopiano carsico tra Fiamignano e Petrella Salto. La Carta Forestale indica soprattutto faggeta; i rimboschimenti a pino nero sono nuclei limitati ma importanti per Suillus e morette.",
-   "access": "Da Fiamignano per la strada comunale panoramica verso il lago di Rascino.",
-   "parking": [
-    {
-     "name": "Pianori presso il lago di Rascino",
-     "lat": 42.3466,
-     "lon": 13.1464
-    }
-   ],
-   "trails": "Carrarecce e sentieri attorno alla piana del lago.",
-   "drive_min": 102,
-   "drive_km": 52,
-   "protection": null,
-   "popularity": 0.4,
-   "title": "Altopiano di Rascino",
-   "subtitle": "Cicolano, sopra Fiamignano"
-  },
-  {
-   "id": "tancia",
-   "name": "Monte Tancia (Monti Sabini)",
-   "lat": 42.315,
-   "lon": 12.745,
-   "radius_m": 3000,
-   "bands": [
-    650,
-    850,
-    1100
-   ],
-   "description": "Dorsale calcarea submediterranea: ostrieti, cerrete, lecci e roverelle; faggeta relitta sopra i 1.100 m verso la cima. Risponde molto rapidamente alle piogge di fine estate.",
-   "access": "Da Rieti SP 46 del Tancia fino al valico (Osteria del Tancia, ~800 m).",
-   "parking": [
-    {
-     "name": "Osteria del Tancia",
-     "lat": 42.3046,
-     "lon": 12.7497
-    }
-   ],
-   "trails": "Sentieri verso Monte Tancia, Monte Ode e le Pozze del Diavolo.",
-   "drive_min": 43,
-   "drive_km": 24,
-   "protection": null,
-   "popularity": 0.8,
-   "title": "Monte Tancia",
-   "subtitle": "Monti Sabini"
-  },
-  {
-   "id": "laga",
-   "name": "Monti della Laga (Amatrice)",
-   "lat": 42.635,
-   "lon": 13.345,
-   "radius_m": 4000,
-   "bands": [
-    1100,
-    1350,
-    1600
-   ],
-   "description": "Substrato arenaceo-marnoso acido, ad alta ritenzione idrica e con fossi perenni. Cerrete alle quote basse, faggete continue sopra i 1.200 m.",
-   "access": "SS 4 Salaria fino ad Amatrice, poi viabilità montana verso le frazioni a monte (Capricchia, Sant'Angelo).",
-   "parking": [
-    {
-     "name": "Capricchia",
-     "lat": 42.6222,
-     "lon": 13.3397
-    }
-   ],
-   "trails": "Accessi alle valli torrentizie dalle frazioni.",
-   "drive_min": 93,
-   "drive_km": 69,
-   "protection": "Area nel Parco Nazionale del Gran Sasso e Monti della Laga. Per la legge regionale qui la raccolta è vietata, salvo diverse disposizioni dell'Ente Parco. Il Piano del Parco (2020) esclude il prelievo nelle zone «a» e «b», salvi gli usi civici; il regolamento sui funghi è ancora in bozza. Secondo la cartografia della Regione, che è indicativa, la zona «b» comprende gran parte del bosco di quest'area alle quote di 1.350 e 1.600 m. Chiedi all'Ente Parco prima dell'uscita.",
-   "popularity": 0.5,
-   "title": "Monti della Laga",
-   "subtitle": "Amatrice"
-  },
-  {
-   "id": "terminillo-ovest",
-   "name": "Pian de' Rosce / Terminillo ovest",
-   "lat": 42.462,
-   "lon": 12.955,
-   "radius_m": 3000,
-   "popularity": 0.9,
-   "description": "Faggeta continua sul versante di Rieti del Terminillo, tra Pian de' Rosce, Monte Cardito e Campoforogna (circa 1000-1600 m). È la zona di montagna più vicina alla città e una delle più frequentate dai cercatori: le cronache locali la citano dal 2010 a oggi.",
-   "access": "Da Rieti SS 4 bis del Terminillo per Vazia e Lisciano fino a Pian de' Rosce (circa 30 minuti). Campoforogna è più in alto, oltre Pian de' Valli (circa 40 minuti).",
-   "parking": [
-    {
-     "name": "Pian de' Rosce",
-     "lat": 42.4612,
-     "lon": 12.938
+      "id": "cicolano",
+      "name": "Cicolano – Marcetelli, Ascrea, Collalto",
+      "lat": 42.195,
+      "lon": 13.03,
+      "radius_m": 5000,
+      "bands": [
+        750,
+        900,
+        1050
+      ],
+      "description": "Collina e media montagna tra i laghi del Salto e del Turano. La Carta Forestale indica una netta prevalenza di castagneto, poi cerrete e ostrieti. Dentro il cerchio anche i castagneti di Tonnicoda, il nucleo di bosco adatto più esteso trovato nella provincia.",
+      "access": "SR 578 Salto-Cicolano, uscite per la diga del Salto, Marcetelli, Pescorocchiano; accessi comunali.",
+      "parking": [
+        {
+          "name": "Marcetelli",
+          "lat": 42.2266,
+          "lon": 13.0469
+        },
+        {
+          "name": "Ascrea",
+          "lat": 42.1962,
+          "lon": 12.9966
+        }
+      ],
+      "trails": "Strade comunali e sentieri della Riserva Navegna-Cervia.",
+      "drive_min": 65,
+      "drive_km": 50,
+      "protection": "Parte dell'area è nella Riserva Naturale Monte Navegna e Monte Cervia. La legge istitutiva (L.R. 56/1988, art. 11) consente la raccolta secondo la L.R. 32/1998 finché la riserva non ha un regolamento: verifica con l'ente gestore eventuali divieti locali.",
+      "popularity": 0.6,
+      "title": "Cicolano",
+      "subtitle": "Marcetelli, Ascrea, Collalto"
     },
     {
-     "name": "Campoforogna",
-     "lat": 42.4537,
-     "lon": 12.9869
-    }
-   ],
-   "trails": "Sentieri CAI del versante sud-ovest del Terminillo.",
-   "protection": null,
-   "bands": [
-    860,
-    1180,
-    1390
-   ],
-   "proposed_by": "fonti+dati",
-   "title": "Pian de' Rosce",
-   "subtitle": "Terminillo, versante di Rieti"
-  },
-  {
-   "id": "terminillo-est",
-   "name": "Cinque Confini / Monte Bove",
-   "lat": 42.443,
-   "lon": 13.012,
-   "radius_m": 3000,
-   "popularity": 0.6,
-   "description": "Faggete d'alta quota sopra Micigliano e Borgo Velino, tra Cinque Confini, Fonte Porcini, Monte Bove e Colle delle Scangive (1200-1650 m). Frequentata dai fungaioli (soccorsi nel 2010 e ad agosto 2026), ma più fuori mano di Pian de' Rosce; tratti ripidi e senza segnaletica.",
-   "access": "Da Rieti SS 4 bis fino a Pian de' Valli e Campoforogna, poi al piazzale dei Cinque Confini; da lì a piedi (CAI 407).",
-   "parking": [
-    {
-     "name": "Cinque Confini",
-     "lat": 42.446,
-     "lon": 12.991
-    }
-   ],
-   "trails": "CAI 407 Cinque Confini - Monte Bove.",
-   "protection": null,
-   "bands": [
-    1000,
-    1310,
-    1490
-   ],
-   "proposed_by": "fonti+dati",
-   "title": "Cinque Confini e Monte Bove",
-   "subtitle": "Terminillo, versante sud-est"
-  },
-  {
-   "id": "cittareale",
-   "name": "Cittareale / Alto Velino",
-   "lat": 42.618,
-   "lon": 13.16,
-   "radius_m": 4000,
-   "popularity": 0.7,
-   "description": "Faggete e cerrete dell'Alto Velino attorno a Cittareale (900-1500 m), al confine con l'Umbria. I Carabinieri Forestali vi controllano spesso i raccoglitori, anche da Roma e Perugia (sequestri di porcini nel 2019 a Fonte Corno e Fosso Builli).",
-   "access": "Da Rieti SS 4 Salaria fino a Posta, poi la strada per Cittareale (circa 70 minuti).",
-   "parking": [
-    {
-     "name": "Cittareale",
-     "lat": 42.6182,
-     "lon": 13.1596
-    }
-   ],
-   "trails": "Sentieri locali dell'Alto Velino.",
-   "protection": null,
-   "bands": [
-    1000,
-    1210,
-    1340
-   ],
-   "proposed_by": "fonti+dati",
-   "title": "Cittareale",
-   "subtitle": "Alto Velino"
-  },
-  {
-   "id": "pescorocchiano",
-   "name": "Pescorocchiano / Cicolano est",
-   "lat": 42.21,
-   "lon": 13.112,
-   "radius_m": 3500,
-   "popularity": 0.55,
-   "description": "Castagneti e cerrete delle frazioni di Pescorocchiano (Pace, Colle di Pace, Leofreni, Santa Lucia), 600-1000 m: attorno a Leofreni il castagneto supera il 60% del bosco. Zona di ovoli e porcini estivi; più episodi di cercatori in difficoltà tra 2018 e 2025. Comprende anche i castagneti di Collaralli.",
-   "access": "Da Rieti SR 578 Salto-Cicolano fino a Pescorocchiano, poi le strade per le frazioni (circa 50 minuti).",
-   "parking": [
-    {
-     "name": "Pace",
-     "lat": 42.229,
-     "lon": 13.118
+      "id": "rascino",
+      "name": "Altopiano di Rascino",
+      "lat": 42.335,
+      "lon": 13.15,
+      "radius_m": 3500,
+      "bands": [
+        1250,
+        1350,
+        1450
+      ],
+      "description": "Altopiano carsico tra Fiamignano e Petrella Salto. La Carta Forestale indica soprattutto faggeta; i rimboschimenti a pino nero sono nuclei limitati ma importanti per Suillus e morette.",
+      "access": "Da Fiamignano per la strada comunale panoramica verso il lago di Rascino.",
+      "parking": [
+        {
+          "name": "Pianori presso il lago di Rascino",
+          "lat": 42.3466,
+          "lon": 13.1464
+        }
+      ],
+      "trails": "Carrarecce e sentieri attorno alla piana del lago.",
+      "drive_min": 102,
+      "drive_km": 52,
+      "protection": null,
+      "popularity": 0.4,
+      "title": "Altopiano di Rascino",
+      "subtitle": "Cicolano, sopra Fiamignano"
     },
     {
-     "name": "Leofreni",
-     "lat": 42.197,
-     "lon": 13.125
-    }
-   ],
-   "trails": "Strade forestali e sentieri tra le frazioni.",
-   "protection": null,
-   "bands": [
-    710,
-    780,
-    890
-   ],
-   "proposed_by": "fonti+dati",
-   "title": "Pescorocchiano",
-   "subtitle": "Cicolano orientale"
-  },
-  {
-   "id": "malito",
-   "name": "Valle di Malito / Corvaro",
-   "lat": 42.212,
-   "lon": 13.256,
-   "radius_m": 3000,
-   "popularity": 0.6,
-   "description": "Boschi misti di cerro, roverella, carpino nero e castagno sopra Corvaro (830-1250 m), con faggeta più in alto. Nel 2014 la Forestale di Borgorose vi segnalava porcini, finferli e trombette e molti raccoglitori.",
-   "access": "Da Rieti SR 578 o Salaria e A24 (uscita Valle del Salto) fino a Corvaro di Borgorose, poi verso la chiesa della Madonna di Malito (circa 1 ora - 1 ora e 10).",
-   "parking": [
-    {
-     "name": "Madonna di Malito",
-     "lat": 42.219,
-     "lon": 13.255
+      "id": "tancia",
+      "name": "Monte Tancia (Monti Sabini)",
+      "lat": 42.315,
+      "lon": 12.745,
+      "radius_m": 3000,
+      "bands": [
+        650,
+        850,
+        1100
+      ],
+      "description": "Dorsale calcarea submediterranea: ostrieti, cerrete, lecci e roverelle; faggeta relitta sopra i 1.100 m verso la cima. Risponde molto rapidamente alle piogge di fine estate.",
+      "access": "Da Rieti SP 46 del Tancia fino al valico (Osteria del Tancia, ~800 m).",
+      "parking": [
+        {
+          "name": "Osteria del Tancia",
+          "lat": 42.3046,
+          "lon": 12.7497
+        }
+      ],
+      "trails": "Sentieri verso Monte Tancia, Monte Ode e le Pozze del Diavolo.",
+      "drive_min": 43,
+      "drive_km": 24,
+      "protection": null,
+      "popularity": 0.8,
+      "title": "Monte Tancia",
+      "subtitle": "Monti Sabini"
     },
     {
-     "name": "Corvaro",
-     "lat": 42.2058,
-     "lon": 13.2647
-    }
-   ],
-   "trails": "Sentieri della Valle di Malito verso la Duchessa.",
-   "protection": "La parte alta della valle confina con la Riserva Naturale Montagne della Duchessa (L.R. 70/1990) e una piccola parte della zona è dentro la riserva. Il Piano della riserva (2021) non risulta contenere regole sui funghi e il regolamento non è approvato. Valgono quindi le norme di salvaguardia della legge istitutiva (art. 12): la raccolta di specie vegetali spontanee è vietata, salvo autorizzazione dell'ente gestore. Verifica i confini e, prima di raccogliere funghi, chiedi all'ente se serve l'autorizzazione (Comune di Borgorose; ufficio della riserva: riservaduchessa@regione.lazio.it, 0746 306493).",
-   "bands": [
-    880,
-    1110,
-    1290
-   ],
-   "proposed_by": "fonti+dati",
-   "title": "Valle di Malito",
-   "subtitle": "Corvaro di Borgorose"
-  },
-  {
-   "id": "sangiovanni",
-   "name": "Monte San Giovanni in Sabina",
-   "lat": 42.355,
-   "lon": 12.78,
-   "radius_m": 3000,
-   "popularity": 0.45,
-   "description": "Cerrete e boschi di carpino nero tra Cerchiara, Piediserre e San Giovanni Reatino (440-770 m), sul versante dei Sabini verso Rieti. Quote basse: zona da ovoli e porcini estivi dopo i temporali, frequentata anche da Terni.",
-   "access": "Da Rieti la strada per San Giovanni Reatino o la SP del Tancia (circa 30 minuti).",
-   "parking": [
+      "id": "laga",
+      "name": "Monti della Laga (Amatrice)",
+      "lat": 42.635,
+      "lon": 13.345,
+      "radius_m": 4000,
+      "bands": [
+        1100,
+        1350,
+        1600
+      ],
+      "description": "Substrato arenaceo-marnoso acido, ad alta ritenzione idrica e con fossi perenni. Cerrete alle quote basse, faggete continue sopra i 1.200 m.",
+      "access": "SS 4 Salaria fino ad Amatrice, poi viabilità montana verso le frazioni a monte (Capricchia, Sant'Angelo).",
+      "parking": [
+        {
+          "name": "Capricchia",
+          "lat": 42.6222,
+          "lon": 13.3397
+        }
+      ],
+      "trails": "Accessi alle valli torrentizie dalle frazioni.",
+      "drive_min": 93,
+      "drive_km": 69,
+      "protection": "Area nel Parco Nazionale del Gran Sasso e Monti della Laga. Per la legge regionale qui la raccolta è vietata, salvo diverse disposizioni dell'Ente Parco. Il Piano del Parco (2020) esclude il prelievo nelle zone «a» e «b», salvi gli usi civici; il regolamento sui funghi è ancora in bozza. Secondo la cartografia della Regione, che è indicativa, la zona «b» comprende gran parte del bosco di quest'area alle quote di 1.350 e 1.600 m. Chiedi all'Ente Parco prima dell'uscita.",
+      "popularity": 0.5,
+      "title": "Monti della Laga",
+      "subtitle": "Amatrice"
+    },
     {
-     "name": "Cerchiara",
-     "lat": 42.36,
-     "lon": 12.779
-    }
-   ],
-   "trails": "Strade bianche e sentieri dei Monti Sabini.",
-   "protection": null,
-   "bands": [
-    560,
-    690,
-    810
-   ],
-   "proposed_by": "fonti+dati",
-   "title": "Monte San Giovanni in Sabina",
-   "subtitle": "Monti Sabini, versante di Rieti"
-  },
-  {
-   "id": "leonessa",
-   "name": "Leonessa / faggete nord",
-   "lat": 42.535,
-   "lon": 12.99,
-   "radius_m": 3000,
-   "popularity": 0.4,
-   "description": "Faggete del versante nord dei Monti Reatini sopra Leonessa (1000-1700 m), estese e continue sulla Carta Forestale. Proposta dai dati: nelle fonti non risultano segnalazioni specifiche di cercatori, quindi probabilmente meno battuta del Terminillo.",
-   "access": "Da Rieti per la SR 79 verso Terni e poi la SR 521 di Morro (circa 55 minuti). In alternativa per il Terminillo: SS 4 bis fino a Pian de' Valli, poi SP 10 per la Sella di Leonessa, strada di valico in quota. Dal 9 ottobre 2026 un tratto della SR 521 è a senso unico alternato con semaforo, in attesa della messa in sicurezza del versante: possibili code (Comune di Leonessa, 7 ottobre 2026). Verifica la viabilità prima di partire.",
-   "parking": [
+      "id": "terminillo-ovest",
+      "name": "Pian de' Rosce / Terminillo ovest",
+      "lat": 42.462,
+      "lon": 12.955,
+      "radius_m": 3000,
+      "popularity": 0.9,
+      "description": "Faggeta continua sul versante di Rieti del Terminillo, tra Pian de' Rosce, Monte Cardito e Campoforogna (circa 1000-1600 m). È la zona di montagna più vicina alla città e una delle più frequentate dai cercatori: le cronache locali la citano dal 2010 a oggi.",
+      "access": "Da Rieti SS 4 bis del Terminillo per Vazia e Lisciano fino a Pian de' Rosce (circa 30 minuti). Campoforogna è più in alto, oltre Pian de' Valli (circa 40 minuti).",
+      "parking": [
+        {
+          "name": "Pian de' Rosce",
+          "lat": 42.4612,
+          "lon": 12.938
+        },
+        {
+          "name": "Campoforogna",
+          "lat": 42.4537,
+          "lon": 12.9869
+        }
+      ],
+      "trails": "Sentieri CAI del versante sud-ovest del Terminillo.",
+      "protection": null,
+      "bands": [
+        860,
+        1180,
+        1390
+      ],
+      "proposed_by": "fonti+dati",
+      "title": "Pian de' Rosce",
+      "subtitle": "Terminillo, versante di Rieti"
+    },
     {
-     "name": "Leonessa",
-     "lat": 42.5631,
-     "lon": 12.9638
-    }
-   ],
-   "trails": "Sentieri CAI tra Leonessa e il Terminillo.",
-   "protection": null,
-   "bands": [
-    1120,
-    1340,
-    1590
-   ],
-   "proposed_by": "dati",
-   "title": "Leonessa",
-   "subtitle": "faggete dei Monti Reatini"
-  },
-  {
-   "id": "domo",
-   "name": "Domo / Valle del Tronto",
-   "lat": 42.656,
-   "lon": 13.229,
-   "radius_m": 3000,
-   "popularity": 0.3,
-   "description": "Cerrete e castagneti della valle del Tronto ad ovest di Amatrice, attorno a Domo (860-1170 m): più in basso e più caldi della faggeta della Laga, quindi buoni prima in stagione e per ovoli e porcini estivi. Proposta dai dati, senza segnalazioni specifiche nelle fonti.",
-   "access": "Da Rieti SS 4 Salaria fino ad Amatrice, poi la strada per Domo (circa 1 ora e 25 minuti).",
-   "parking": [
+      "id": "terminillo-est",
+      "name": "Cinque Confini / Monte Bove",
+      "lat": 42.443,
+      "lon": 13.012,
+      "radius_m": 3000,
+      "popularity": 0.6,
+      "description": "Faggete d'alta quota sopra Micigliano e Borgo Velino, tra Cinque Confini, Fonte Porcini, Monte Bove e Colle delle Scangive (1200-1650 m). Frequentata dai fungaioli (soccorsi nel 2010 e ad agosto 2026), ma più fuori mano di Pian de' Rosce; tratti ripidi e senza segnaletica.",
+      "access": "Da Rieti SS 4 bis fino a Pian de' Valli e Campoforogna, poi al piazzale dei Cinque Confini; da lì a piedi (CAI 407).",
+      "parking": [
+        {
+          "name": "Cinque Confini",
+          "lat": 42.446,
+          "lon": 12.991
+        }
+      ],
+      "trails": "CAI 407 Cinque Confini - Monte Bove.",
+      "protection": null,
+      "bands": [
+        1000,
+        1310,
+        1490
+      ],
+      "proposed_by": "fonti+dati",
+      "title": "Cinque Confini e Monte Bove",
+      "subtitle": "Terminillo, versante sud-est"
+    },
     {
-     "name": "Domo",
-     "lat": 42.6581,
-     "lon": 13.2385
+      "id": "cittareale",
+      "name": "Cittareale / Alto Velino",
+      "lat": 42.618,
+      "lon": 13.16,
+      "radius_m": 4000,
+      "popularity": 0.7,
+      "description": "Faggete e cerrete dell'Alto Velino attorno a Cittareale (900-1500 m), al confine con l'Umbria. I Carabinieri Forestali vi controllano spesso i raccoglitori, anche da Roma e Perugia (sequestri di porcini nel 2019 a Fonte Corno e Fosso Builli).",
+      "access": "Da Rieti SS 4 Salaria fino a Posta, poi la strada per Cittareale (circa 70 minuti).",
+      "parking": [
+        {
+          "name": "Cittareale",
+          "lat": 42.6182,
+          "lon": 13.1596
+        }
+      ],
+      "trails": "Sentieri locali dell'Alto Velino.",
+      "protection": null,
+      "bands": [
+        1000,
+        1210,
+        1340
+      ],
+      "proposed_by": "fonti+dati",
+      "title": "Cittareale",
+      "subtitle": "Alto Velino"
+    },
+    {
+      "id": "pescorocchiano",
+      "name": "Pescorocchiano / Cicolano est",
+      "lat": 42.21,
+      "lon": 13.112,
+      "radius_m": 3500,
+      "popularity": 0.55,
+      "description": "Castagneti e cerrete delle frazioni di Pescorocchiano (Pace, Colle di Pace, Leofreni, Santa Lucia), 600-1000 m: attorno a Leofreni il castagneto supera il 60% del bosco. Zona di ovoli e porcini estivi; più episodi di cercatori in difficoltà tra 2018 e 2025. Comprende anche i castagneti di Collaralli.",
+      "access": "Da Rieti SR 578 Salto-Cicolano fino a Pescorocchiano, poi le strade per le frazioni (circa 50 minuti).",
+      "parking": [
+        {
+          "name": "Pace",
+          "lat": 42.229,
+          "lon": 13.118
+        },
+        {
+          "name": "Leofreni",
+          "lat": 42.197,
+          "lon": 13.125
+        }
+      ],
+      "trails": "Strade forestali e sentieri tra le frazioni.",
+      "protection": null,
+      "bands": [
+        710,
+        780,
+        890
+      ],
+      "proposed_by": "fonti+dati",
+      "title": "Pescorocchiano",
+      "subtitle": "Cicolano orientale"
+    },
+    {
+      "id": "malito",
+      "name": "Valle di Malito / Corvaro",
+      "lat": 42.212,
+      "lon": 13.256,
+      "radius_m": 3000,
+      "popularity": 0.6,
+      "description": "Boschi misti di cerro, roverella, carpino nero e castagno sopra Corvaro (830-1250 m), con faggeta più in alto. Nel 2014 la Forestale di Borgorose vi segnalava porcini, finferli e trombette e molti raccoglitori.",
+      "access": "Da Rieti SR 578 o Salaria e A24 (uscita Valle del Salto) fino a Corvaro di Borgorose, poi verso la chiesa della Madonna di Malito (circa 1 ora - 1 ora e 10).",
+      "parking": [
+        {
+          "name": "Madonna di Malito",
+          "lat": 42.219,
+          "lon": 13.255
+        },
+        {
+          "name": "Corvaro",
+          "lat": 42.2058,
+          "lon": 13.2647
+        }
+      ],
+      "trails": "Sentieri della Valle di Malito verso la Duchessa.",
+      "protection": "La parte alta della valle confina con la Riserva Naturale Montagne della Duchessa (L.R. 70/1990) e una piccola parte della zona è dentro la riserva. Il Piano della riserva (2021) non risulta contenere regole sui funghi e il regolamento non è approvato. Valgono quindi le norme di salvaguardia della legge istitutiva (art. 12): la raccolta di specie vegetali spontanee è vietata, salvo autorizzazione dell'ente gestore. Verifica i confini e, prima di raccogliere funghi, chiedi all'ente se serve l'autorizzazione (Comune di Borgorose; ufficio della riserva: riservaduchessa@regione.lazio.it, 0746 306493).",
+      "bands": [
+        880,
+        1110,
+        1290
+      ],
+      "proposed_by": "fonti+dati",
+      "title": "Valle di Malito",
+      "subtitle": "Corvaro di Borgorose"
+    },
+    {
+      "id": "sangiovanni",
+      "name": "Monte San Giovanni in Sabina",
+      "lat": 42.355,
+      "lon": 12.78,
+      "radius_m": 3000,
+      "popularity": 0.45,
+      "description": "Cerrete e boschi di carpino nero tra Cerchiara, Piediserre e San Giovanni Reatino (440-770 m), sul versante dei Sabini verso Rieti. Quote basse: zona da ovoli e porcini estivi dopo i temporali, frequentata anche da Terni.",
+      "access": "Da Rieti la strada per San Giovanni Reatino o la SP del Tancia (circa 30 minuti).",
+      "parking": [
+        {
+          "name": "Cerchiara",
+          "lat": 42.36,
+          "lon": 12.779
+        }
+      ],
+      "trails": "Strade bianche e sentieri dei Monti Sabini.",
+      "protection": null,
+      "bands": [
+        560,
+        690,
+        810
+      ],
+      "proposed_by": "fonti+dati",
+      "title": "Monte San Giovanni in Sabina",
+      "subtitle": "Monti Sabini, versante di Rieti"
+    },
+    {
+      "id": "leonessa",
+      "name": "Leonessa / faggete nord",
+      "lat": 42.535,
+      "lon": 12.99,
+      "radius_m": 3000,
+      "popularity": 0.4,
+      "description": "Faggete del versante nord dei Monti Reatini sopra Leonessa (1000-1700 m), estese e continue sulla Carta Forestale. Proposta dai dati: nelle fonti non risultano segnalazioni specifiche di cercatori, quindi probabilmente meno battuta del Terminillo.",
+      "access": "Da Rieti per la SR 79 verso Terni e poi la SR 521 di Morro (circa 55 minuti). In alternativa per il Terminillo: SS 4 bis fino a Pian de' Valli, poi SP 10 per la Sella di Leonessa, strada di valico in quota. Dal 9 ottobre 2026 un tratto della SR 521 è a senso unico alternato con semaforo, in attesa della messa in sicurezza del versante: possibili code (Comune di Leonessa, 7 ottobre 2026). Verifica la viabilità prima di partire.",
+      "parking": [
+        {
+          "name": "Leonessa",
+          "lat": 42.5631,
+          "lon": 12.9638
+        }
+      ],
+      "trails": "Sentieri CAI tra Leonessa e il Terminillo.",
+      "protection": null,
+      "bands": [
+        1120,
+        1340,
+        1590
+      ],
+      "proposed_by": "dati",
+      "title": "Leonessa",
+      "subtitle": "faggete dei Monti Reatini"
+    },
+    {
+      "id": "domo",
+      "name": "Domo / Valle del Tronto",
+      "lat": 42.656,
+      "lon": 13.229,
+      "radius_m": 3000,
+      "popularity": 0.3,
+      "description": "Cerrete e castagneti della valle del Tronto ad ovest di Amatrice, attorno a Domo (860-1170 m): più in basso e più caldi della faggeta della Laga, quindi buoni prima in stagione e per ovoli e porcini estivi. Proposta dai dati, senza segnalazioni specifiche nelle fonti.",
+      "access": "Da Rieti SS 4 Salaria fino ad Amatrice, poi la strada per Domo (circa 1 ora e 25 minuti).",
+      "parking": [
+        {
+          "name": "Domo",
+          "lat": 42.6581,
+          "lon": 13.2385
+        }
+      ],
+      "trails": "Sentieri locali dell'Amatriciano.",
+      "protection": null,
+      "bands": [
+        920,
+        1000,
+        1040
+      ],
+      "proposed_by": "dati",
+      "title": "Domo",
+      "subtitle": "valle del Tronto, Amatrice"
+    },
+    {
+      "id": "vico-monte-venere",
+      "name": "Monte Venere e lago di Vico",
+      "lat": 42.3472377,
+      "lon": 12.1808827,
+      "radius_m": 1500,
+      "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+      "province": [
+        "VT"
+      ],
+      "coordinateProvenance": {
+        "method": "official_trace_bbox_midpoint",
+        "sourceUrl": "https://www.parchilazio.it/documenti/schede/monte_venere.kml",
+        "bbox": {
+          "west": 12.1727654,
+          "south": 42.3419702,
+          "east": 12.1890001,
+          "north": 42.3525052
+        },
+        "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+      },
+      "collectionStatus": "unknown",
+      "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita. Referente: Ente Monti Cimini, 0761 752282, info@entemonticimini.it.",
+      "collectionSourceUrl": "https://www.parchilazio.it/vico",
+      "publicationStatus": "active",
+      "manager": "Ente Monti Cimini, 0761 752282, info@entemonticimini.it",
+      "title": "Monte Venere e lago di Vico",
+      "subtitle": "Tuscia",
+      "description": "Dal Canale si entra nel bosco di Monte Venere; il sentiero sale deciso verso la sommità e il Pozzo del Diavolo. Una proposta per osservare il bosco, da tenere distinta dalla possibilità di raccogliere.",
+      "bands": [
+        570,
+        620,
+        690
+      ],
+      "protection": "Ente Monti Cimini, 0761 752282, info@entemonticimini.it",
+      "access": "Area sosta Canale.",
+      "parking": [],
+      "accessStatus": "unverified",
+      "drive_min": null,
+      "drive_km": null,
+      "popularity": null,
+      "trails": "CAI 128b Area sosta Canale – Monte Venere",
+      "sources": [
+        {
+          "url": "https://www.parchilazio.it/vico",
+          "ente": "Regione Lazio / ParchiLazio",
+          "consultedAt": "2026-10-19",
+          "evidence": "Comuni Caprarola e Ronciglione, ambito Viterbo. Ente Monti Cimini; telefono 0761 752282, info@entemonticimini.it. Faggete di Monte Venere e Monte Fogliano."
+        },
+        {
+          "url": "https://www.parchilazio.it/vico-natura",
+          "ente": "Regione Lazio / ParchiLazio",
+          "consultedAt": "2026-10-19",
+          "evidence": "Cerrete, faggete sui versanti settentrionali, castagneti da frutto; lago e canneti. Svasso maggiore nidificante; tasso e martora accertati."
+        },
+        {
+          "url": "https://www.parchilazio.it/vico-schede-18236-128b_monte_venere_cai",
+          "ente": "Regione Lazio / ParchiLazio",
+          "consultedAt": "2026-10-19",
+          "evidence": "Sentiero ripido per sommità e Pozzo del Diavolo. E, 3 km, 1 h, salita 255 m, discesa 220 m. Partenza area sosta Canale; KML collegato."
+        },
+        {
+          "url": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+          "ente": "Regione Lazio",
+          "consultedAt": "2026-10-19",
+          "evidence": "Aggiornamento/verifica pagina 16/10/2026: LR20/2024 art21 abroga i giorni limitati; raccolta tutti i giorni. Non più necessario tesserino: attestato/card, contributo annuale e documento secondo requisiti ed esenzioni. Questa pagina generale non certifica deroghe o permessi di singola area protetta."
+        },
+        {
+          "url": "https://www.parchilazio.it/documenti/schede/monte_venere.kml",
+          "ente": "Fonte cartografica citata nella provenienza",
+          "consultedAt": "2026-10-19",
+          "evidence": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+        }
+      ],
+      "samplingProvenance": {
+        "checkedOn": "2026-10-19",
+        "grid": 21,
+        "pointCount": 317,
+        "elevationSource": "Copernicus GLO90 2021 via Open-Meteo",
+        "resolutionM": 90,
+        "forestSource": "Carta Forestale tipologica Regione Lazio, geonode:tipi_forestali2",
+        "note": "Fasce p25/mediana/p75 arrotondate a 10 m, rappresentative del cerchio editoriale; carta forestale storica, non rilevazione attuale."
+      }
+    },
+    {
+      "id": "monte-rufeno-felceto",
+      "name": "Monte Rufeno – Felceto",
+      "lat": 42.7832961,
+      "lon": 11.8934405,
+      "radius_m": 1500,
+      "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+      "province": [
+        "VT"
+      ],
+      "coordinateProvenance": {
+        "method": "official_trace_bbox_midpoint",
+        "sourceUrl": "https://www.parchilazio.it/documenti/schede/sentiero_natura_felceto.kml",
+        "bbox": {
+          "west": 11.891231434419751,
+          "south": 42.7814853284508,
+          "east": 11.895649619400501,
+          "north": 42.785106897354126
+        },
+        "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+      },
+      "collectionStatus": "unknown",
+      "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita. Referente: Comune di Acquapendente / Riserva, 0763 733442, info@monterufeno.it.",
+      "collectionSourceUrl": "https://www.parchilazio.it/monterufeno",
+      "publicationStatus": "active",
+      "manager": "Comune di Acquapendente / Riserva, 0763 733442, info@monterufeno.it",
+      "title": "Monte Rufeno – Felceto",
+      "subtitle": "Tuscia",
+      "description": "Un anello breve nel bosco del Felceto, raggiungibile dall’ingresso 3. La riserva offre un contesto micologico documentato: l’uscita resta un’occasione di osservazione, senza promessa di trovare specie.",
+      "bands": [
+        500,
+        560,
+        610
+      ],
+      "protection": "Comune di Acquapendente / Riserva, 0763 733442, info@monterufeno.it",
+      "access": "Oltre ingresso 3, tabella di inizio sulla sinistra dopo strada comoda. Auto lasciabile in prossimità ingresso 3; non documentata area formalmente attrezzata",
+      "parking": [],
+      "accessStatus": "unverified",
+      "drive_min": null,
+      "drive_km": null,
+      "popularity": null,
+      "trails": "Sentiero Natura Felceto",
+      "sources": [
+        {
+          "url": "https://www.parchilazio.it/monterufeno",
+          "ente": "Regione Lazio / ParchiLazio",
+          "consultedAt": "2026-10-19",
+          "evidence": "Comune di Acquapendente, Viterbo; gestore Comune di Acquapendente, 0763/733442, info@monterufeno.it."
+        },
+        {
+          "url": "https://www.parchilazio.it/monterufeno-schede-28994-sentiero_natura_felceto",
+          "ente": "Regione Lazio / ParchiLazio",
+          "consultedAt": "2026-10-19",
+          "evidence": "Anello dal bosco oltre ingresso 3; auto lasciabile in prossimità ingresso. T, 1,5 km, 50 min, salita 48 m, discesa 49 m."
+        },
+        {
+          "url": "https://www.parchilazio.it/documenti/schede/news_19014_2844_pieghevole_sentiero_int_def.pdf",
+          "ente": "Regione Lazio / ParchiLazio",
+          "consultedAt": "2026-10-19",
+          "evidence": "Querceti, castagneti e rimboschimenti a conifere; scoiattoli e caprioli. Le trosce ospitano testuggini ed erba scopina ma sono visitabili solo per motivi scientifici. Vecchia brochure: Felceto 1,6 km/2 h, dato divergente dalla scheda attuale N05. Foto porcini e Sasseto Gianfranco Gelsomini, licenza individuale non esplicitata."
+        },
+        {
+          "url": "https://www.parchilazio.it/schede-144-i_funghi_della_riserva_naturale_monte_rufeno",
+          "ente": "Regione Lazio / ParchiLazio",
+          "consultedAt": "2026-10-19",
+          "evidence": "Raccolta regolata dalla LR 32/1998. Presenza documentata nella riserva di Boletus aereus e Amanita phalloides; ambienti citati boschi di cerro e misti cerro-roverella. Segnalazioni non equivalgono a fruttificazione attuale."
+        },
+        {
+          "url": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+          "ente": "Regione Lazio",
+          "consultedAt": "2026-10-19",
+          "evidence": "Aggiornamento/verifica pagina 16/10/2026: LR20/2024 art21 abroga i giorni limitati; raccolta tutti i giorni. Non più necessario tesserino: attestato/card, contributo annuale e documento secondo requisiti ed esenzioni. Questa pagina generale non certifica deroghe o permessi di singola area protetta."
+        },
+        {
+          "url": "https://www.parchilazio.it/documenti/schede/sentiero_natura_felceto.kml",
+          "ente": "Fonte cartografica citata nella provenienza",
+          "consultedAt": "2026-10-19",
+          "evidence": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+        }
+      ],
+      "samplingProvenance": {
+        "checkedOn": "2026-10-19",
+        "grid": 21,
+        "pointCount": 317,
+        "elevationSource": "Copernicus GLO90 2021 via Open-Meteo",
+        "resolutionM": 90,
+        "forestSource": "Carta Forestale tipologica Regione Lazio, geonode:tipi_forestali2",
+        "note": "Fasce p25/mediana/p75 arrotondate a 10 m, rappresentative del cerchio editoriale; carta forestale storica, non rilevazione attuale."
+      }
+    },
+    {
+      "id": "oriolo-monte-raschio",
+      "name": "Oriolo Romano – Monte Raschio",
+      "lat": 42.1671,
+      "lon": 12.149406,
+      "radius_m": 1500,
+      "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+      "province": [
+        "VT"
+      ],
+      "coordinateProvenance": {
+        "method": "official_trace_bbox_midpoint",
+        "sourceUrl": "https://www.parcobracciano.it/media/2051/sent-175c-monte-raschio-oriolo-romano.gpx",
+        "bbox": {
+          "west": 12.138417,
+          "south": 42.158027,
+          "east": 12.160395,
+          "north": 42.176173
+        },
+        "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+      },
+      "collectionStatus": "unknown",
+      "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita. Referente: Ente Parco Bracciano-Martignano, 0699801176.",
+      "collectionSourceUrl": "https://www.parcobracciano.it/vivere-il-parco/percorsi-e-sentieri/sentiero-175c-monte-raschio-oriolo-romano-sentiero-della-faggeta-patrimonio-mondiale-unesco/",
+      "publicationStatus": "active",
+      "manager": "Ente Parco Bracciano-Martignano, 0699801176",
+      "title": "Oriolo Romano – Monte Raschio",
+      "subtitle": "Tuscia",
+      "description": "Dalla piazza di Oriolo un anello raggiunge Monte Raschio, alternando pineta, cerri e faggeta. Il tratto centrale in sottobosco dà spazio a una lettura lenta degli alberi e del terreno.",
+      "bands": [
+        420,
+        450,
+        470
+      ],
+      "protection": "Ente Parco Bracciano-Martignano, 0699801176",
+      "access": "Piazza principale sotto palazzo del Comune di Oriolo. Il Parco segnala chiusure su altri percorsi (176M, 132A, 266C): consultare gli avvisi prima di cambiare itinerario.",
+      "parking": [],
+      "accessStatus": "unverified",
+      "drive_min": null,
+      "drive_km": null,
+      "popularity": null,
+      "trails": "175C Monte Raschio; CAI 260 Bracciano – Oriolo Romano",
+      "sources": [
+        {
+          "url": "https://www.parcobracciano.it/vivere-il-parco/percorsi-e-sentieri/sentiero-175c-monte-raschio-oriolo-romano-sentiero-della-faggeta-patrimonio-mondiale-unesco/",
+          "ente": "Ente Parco Bracciano-Martignano",
+          "consultedAt": "2026-10-19",
+          "evidence": "Anello 8 km, dislivello 244 m, difficoltà media, piazza principale di Oriolo Romano sotto Comune. Parte centrale in sottobosco, pineta, cerri e faggi. GPX collegato. Durata non fornita."
+        },
+        {
+          "url": "https://www.parchilazio.it/lago_di_bracciano-schede-30165-sentiero_cai_260_bracciano_oriolo_romano",
+          "ente": "Regione Lazio / ParchiLazio",
+          "consultedAt": "2026-10-19",
+          "evidence": "Collega i centri attraverso Borgo Paola e Pisciarelli e piccoli tratti Via Clodia. T, 9 km, 2 h 40 min, salita 250 m; GPX e KML collegati."
+        },
+        {
+          "url": "https://www.parcobracciano.it/vivere-il-parco/percorsi-e-sentieri/",
+          "ente": "Ente Parco Bracciano-Martignano",
+          "consultedAt": "2026-10-19",
+          "evidence": "Al 29/05/2026: 176M Fonte Vitabbia chiuso per alberi, 132A Monte Calvi chiuso per taglio, 266C non transitabile. Correzione 175L in 176L. Contatto Parco 0699801176."
+        },
+        {
+          "url": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+          "ente": "Regione Lazio",
+          "consultedAt": "2026-10-19",
+          "evidence": "Aggiornamento/verifica pagina 16/10/2026: LR20/2024 art21 abroga i giorni limitati; raccolta tutti i giorni. Non più necessario tesserino: attestato/card, contributo annuale e documento secondo requisiti ed esenzioni. Questa pagina generale non certifica deroghe o permessi di singola area protetta."
+        },
+        {
+          "url": "https://www.parcobracciano.it/media/2051/sent-175c-monte-raschio-oriolo-romano.gpx",
+          "ente": "Ente Parco Bracciano-Martignano / ParchiLazio",
+          "consultedAt": "2026-10-19",
+          "evidence": "URL ufficiale restituisce HTTP 200 e application/gpx+xml; prefisso XML letto. Nessuna geometria importata o controllata."
+        },
+        {
+          "url": "https://www.parchilazio.it/documenti/schede/260_bracciano_pisciarelli_oriolo.gpx",
+          "ente": "Ente Parco Bracciano-Martignano / ParchiLazio",
+          "consultedAt": "2026-10-19",
+          "evidence": "URL ufficiale restituisce HTTP 200 e application/gpx+xml; prefisso XML letto. Nessuna geometria importata o controllata."
+        },
+        {
+          "url": "https://www.parcobracciano.it/media/2051/sent-175c-monte-raschio-oriolo-romano.gpx",
+          "ente": "Fonte cartografica citata nella provenienza",
+          "consultedAt": "2026-10-19",
+          "evidence": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+        }
+      ],
+      "samplingProvenance": {
+        "checkedOn": "2026-10-19",
+        "grid": 21,
+        "pointCount": 317,
+        "elevationSource": "Copernicus GLO90 2021 via Open-Meteo",
+        "resolutionM": 90,
+        "forestSource": "Carta Forestale tipologica Regione Lazio, geonode:tipi_forestali2",
+        "note": "Fasce p25/mediana/p75 arrotondate a 10 m, rappresentative del cerchio editoriale; carta forestale storica, non rilevazione attuale."
+      }
+    },
+    {
+      "id": "allumiere-faggeto",
+      "name": "Faggeto di Allumiere",
+      "lat": 42.1539073,
+      "lon": 11.9080639,
+      "radius_m": 1500,
+      "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+      "province": [
+        "RM"
+      ],
+      "coordinateProvenance": {
+        "method": "published_place_or_map",
+        "sourceUrl": "https://comune.allumiere.rm.it/it/vivere/monumento-naturale-il-faggeto",
+        "note": "Punto del luogo pubblicato dal Comune; centro editoriale, non parcheggio."
+      },
+      "collectionStatus": "unknown",
+      "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita. Referente: Comune di Allumiere; recapito diretto non acquisito.",
+      "collectionSourceUrl": "https://comune.allumiere.rm.it/it/vivere/monumento-naturale-il-faggeto",
+      "publicationStatus": "active",
+      "manager": "Comune di Allumiere; recapito diretto non acquisito",
+      "title": "Faggeto di Allumiere",
+      "subtitle": "Area romana",
+      "description": "Da Via del Faggeto si esplora una rete segnata fra faggi e tracce della storia mineraria. È una proposta per conoscere un bosco a bassa quota; il regime di raccolta nel monumento naturale va accertato.",
+      "bands": [
+        450,
+        500,
+        540
+      ],
+      "protection": "Comune di Allumiere; recapito diretto non acquisito",
+      "access": "Via del Faggeto, lato est del borgo, inizio provinciale per Tolfa.",
+      "parking": [],
+      "accessStatus": "unverified",
+      "drive_min": null,
+      "drive_km": null,
+      "popularity": null,
+      "trails": "La faggeta di Allumiere – itinerario RESINA",
+      "sources": [
+        {
+          "url": "https://www.museiresina.it/itinerari/la-faggeta-di-allumiere-2/",
+          "ente": "Sistema museale RESINA / musei naturalistici del Lazio",
+          "consultedAt": "2026-10-19",
+          "evidence": "Partenza Via del Faggeto, rete segnata nel bosco; durata da 1 a 2 h, difficoltà media, quote faggeta 500–600 m. Faggi, aceri, querce e castagni."
+        },
+        {
+          "url": "https://www.parchilazio.it/faggeto_di_allumiere",
+          "ente": "Regione Lazio / ParchiLazio",
+          "consultedAt": "2026-10-19",
+          "evidence": "Allumiere, Roma, gestore Comune di Allumiere. Monumento naturale istituito DPRL T00063/2018. Faggeta e colonia ibernante di chirotteri."
+        },
+        {
+          "url": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+          "ente": "Regione Lazio",
+          "consultedAt": "2026-10-19",
+          "evidence": "Aggiornamento/verifica pagina 16/10/2026: LR20/2024 art21 abroga i giorni limitati; raccolta tutti i giorni. Non più necessario tesserino: attestato/card, contributo annuale e documento secondo requisiti ed esenzioni. Questa pagina generale non certifica deroghe o permessi di singola area protetta."
+        },
+        {
+          "url": "https://comune.allumiere.rm.it/it/vivere/monumento-naturale-il-faggeto",
+          "ente": "Fonte cartografica citata nella provenienza",
+          "consultedAt": "2026-10-19",
+          "evidence": "Punto del luogo pubblicato dal Comune; centro editoriale, non parcheggio."
+        }
+      ],
+      "samplingProvenance": {
+        "checkedOn": "2026-10-19",
+        "grid": 21,
+        "pointCount": 317,
+        "elevationSource": "Copernicus GLO90 2021 via Open-Meteo",
+        "resolutionM": 90,
+        "forestSource": "Carta Forestale tipologica Regione Lazio, geonode:tipi_forestali2",
+        "note": "Fasce p25/mediana/p75 arrotondate a 10 m, rappresentative del cerchio editoriale; carta forestale storica, non rilevazione attuale."
+      }
+    },
+    {
+      "id": "monterano-bicione",
+      "name": "Monterano – valle del Bicione",
+      "lat": 42.142368,
+      "lon": 12.0763325,
+      "radius_m": 1500,
+      "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+      "province": [
+        "RM"
+      ],
+      "coordinateProvenance": {
+        "method": "official_trace_bbox_midpoint",
+        "sourceUrl": "https://www.parchilazio.it/documenti/schede/bandita.kml",
+        "bbox": {
+          "west": 12.0620305,
+          "south": 42.1316117,
+          "east": 12.0906344,
+          "north": 42.1531243
+        },
+        "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+      },
+      "collectionStatus": "unknown",
+      "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita. Referente: Comune di Canale Monterano / Riserva, 06 9962724, riservamonterano@regione.lazio.it.",
+      "collectionSourceUrl": "https://www.parchilazio.it/monterano",
+      "publicationStatus": "active",
+      "manager": "Comune di Canale Monterano / Riserva, 06 9962724, riservamonterano@regione.lazio.it",
+      "title": "Monterano – valle del Bicione",
+      "subtitle": "Area romana",
+      "description": "Dalla Diosilla il giro della Bandita segue boschi, acqua e pascoli arborati. È un’uscita più lunga, con un guado: la lettura della forra e delle sue piante viene prima di qualsiasi promessa di raccolta.",
+      "bands": [
+        250,
+        290,
+        320
+      ],
+      "protection": "Comune di Canale Monterano / Riserva, 06 9962724, riservamonterano@regione.lazio.it",
+      "access": "Area di sosta Diosilla. Ritorno al parcheggio Diosilla dichiarato nella descrizione Il percorso prevede il guado del Fosso Rafanello: condizioni del guado da verificare con la Riserva.",
+      "parking": [
+        {
+          "name": "Area di sosta Diosilla",
+          "lat": 42.131757,
+          "lon": 12.089668
+        }
+      ],
+      "accessStatus": "mapped_start",
+      "drive_min": 136,
+      "drive_km": 140.2,
+      "popularity": null,
+      "trails": "Valle del Bicione–Bandita, segnavia giallo",
+      "sources": [
+        {
+          "url": "https://www.parchilazio.it/monterano",
+          "ente": "Regione Lazio / ParchiLazio",
+          "consultedAt": "2026-10-19",
+          "evidence": "Comune di Canale Monterano, Roma; gestore Comune, 06/9962724, riservamonterano@regione.lazio.it. Boschi, pascoli, corsi acqua e forre."
+        },
+        {
+          "url": "https://www.parchilazio.it/monterano-schede-18447-bandita",
+          "ente": "Regione Lazio / ParchiLazio",
+          "consultedAt": "2026-10-19",
+          "evidence": "Partenza e ritorno area sosta Diosilla; E, 10 km, 4 h 30 min, salita 200 m e discesa 150 m. Quote itinerario 180–310 m. Segnavia giallo; niente punti acqua. Guado Rafanello; boschi e pascoli."
+        },
+        {
+          "url": "https://www.parchilazio.it/monterano-natura",
+          "ente": "Regione Lazio / ParchiLazio",
+          "consultedAt": "2026-10-19",
+          "evidence": "Forre e boschi ripariali ad ontano, pioppo e salici; carpino bianco nei valloni, cerro sui pendii. Felce regale e lonchite minore; picchio verde nei boschi. Evidenza della riserva, non del singolo sentiero."
+        },
+        {
+          "url": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+          "ente": "Regione Lazio",
+          "consultedAt": "2026-10-19",
+          "evidence": "Aggiornamento/verifica pagina 16/10/2026: LR20/2024 art21 abroga i giorni limitati; raccolta tutti i giorni. Non più necessario tesserino: attestato/card, contributo annuale e documento secondo requisiti ed esenzioni. Questa pagina generale non certifica deroghe o permessi di singola area protetta."
+        },
+        {
+          "url": "https://www.parchilazio.it/documenti/schede/bandita.kml",
+          "ente": "Fonte cartografica citata nella provenienza",
+          "consultedAt": "2026-10-19",
+          "evidence": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+        }
+      ],
+      "samplingProvenance": {
+        "checkedOn": "2026-10-19",
+        "grid": 21,
+        "pointCount": 317,
+        "elevationSource": "Copernicus GLO90 2021 via Open-Meteo",
+        "resolutionM": 90,
+        "forestSource": "Carta Forestale tipologica Regione Lazio, geonode:tipi_forestali2",
+        "note": "Fasce p25/mediana/p75 arrotondate a 10 m, rappresentative del cerchio editoriale; carta forestale storica, non rilevazione attuale."
+      }
+    },
+    {
+      "id": "veio-monte-musino",
+      "name": "Veio – Monte Musino",
+      "lat": 42.0978367,
+      "lon": 12.4401353,
+      "radius_m": 1500,
+      "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+      "province": [
+        "RM"
+      ],
+      "coordinateProvenance": {
+        "method": "official_trace_bbox_midpoint",
+        "sourceUrl": "https://www.parchilazio.it/documenti/schede/monte_musino.kml",
+        "bbox": {
+          "west": 12.4372474,
+          "south": 42.0955103,
+          "east": 12.4430232,
+          "north": 42.1001632
+        },
+        "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+      },
+      "collectionStatus": "unknown",
+      "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita. Referente: Ente Parco di Veio, 06 9042774, protocollo@parcodiveio.it.",
+      "collectionSourceUrl": "https://www.parchilazio.it/veio",
+      "publicationStatus": "active",
+      "manager": "Ente Parco di Veio, 06 9042774, protocollo@parcodiveio.it",
+      "title": "Veio – Monte Musino",
+      "subtitle": "Area romana",
+      "description": "Da Via di Grottini un breve sentiero sale a Monte Musino. Il contesto del Veio settentrionale permette di leggere boschi di cerro e forre; la brevità non elimina pendenza e terreno sconnesso.",
+      "bands": [
+        220,
+        260,
+        300
+      ],
+      "protection": "Ente Parco di Veio, 06 9042774, protocollo@parcodiveio.it",
+      "access": "Località Grottini / Via di Grottini, Sacrofano. La scheda indica sosta nelle vicinanze lungo Via di Grottini; non certifica stalli dedicati Il 207c Valli del Sorbo–Formello è segnalato chiuso: non incluso in questa proposta.",
+      "parking": [],
+      "accessStatus": "unverified",
+      "drive_min": null,
+      "drive_km": null,
+      "popularity": null,
+      "trails": "CAI 209d Grottini – Monte Musino",
+      "sources": [
+        {
+          "url": "https://www.parchilazio.it/veio",
+          "ente": "Regione Lazio / ParchiLazio",
+          "consultedAt": "2026-10-19",
+          "evidence": "Parco a nord Roma fra Cassia e Flaminia; comuni includono Sacrofano e Formello; gestore Ente Parco Veio, 069042774, protocollo@parcodiveio.it."
+        },
+        {
+          "url": "https://www.parchilazio.it/veio-schede-18206-209d_monte_musino_cai",
+          "ente": "Regione Lazio / ParchiLazio",
+          "consultedAt": "2026-10-19",
+          "evidence": "Loc. Grottini Sacrofano – Monte Musino. E, 0,8 km, 25 min, salita 120 m, discesa 15 m. Parcheggio nelle vicinanze lungo Via di Grottini. Sconnesso e con pendenza; non adatto passeggini/disabilità motorie."
+        },
+        {
+          "url": "https://www.parchilazio.it/veio-schede-18273-207c_strada_del_sordo_formello_cai",
+          "ente": "Regione Lazio / ParchiLazio",
+          "consultedAt": "2026-10-19",
+          "evidence": "La pagina reca SENTIRO CHIUSO. Itinerario escluso dalle proposte praticabili."
+        },
+        {
+          "url": "https://www.parchilazio.it/veio-natura",
+          "ente": "Regione Lazio / ParchiLazio",
+          "consultedAt": "2026-10-19",
+          "evidence": "Settore settentrionale boschi misti di cerro; forre con carpini, noccioli e cerri; vegetazione ripariale. Picchio verde, agrifoglio e felci documentati nel Parco. Nessuna osservazione geolocalizzata al Monte Musino."
+        },
+        {
+          "url": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+          "ente": "Regione Lazio",
+          "consultedAt": "2026-10-19",
+          "evidence": "Aggiornamento/verifica pagina 16/10/2026: LR20/2024 art21 abroga i giorni limitati; raccolta tutti i giorni. Non più necessario tesserino: attestato/card, contributo annuale e documento secondo requisiti ed esenzioni. Questa pagina generale non certifica deroghe o permessi di singola area protetta."
+        },
+        {
+          "url": "https://www.parchilazio.it/documenti/schede/monte_musino.kml",
+          "ente": "Fonte cartografica citata nella provenienza",
+          "consultedAt": "2026-10-19",
+          "evidence": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+        }
+      ],
+      "samplingProvenance": {
+        "checkedOn": "2026-10-19",
+        "grid": 21,
+        "pointCount": 317,
+        "elevationSource": "Copernicus GLO90 2021 via Open-Meteo",
+        "resolutionM": 90,
+        "forestSource": "Carta Forestale tipologica Regione Lazio, geonode:tipi_forestali2",
+        "note": "Fasce p25/mediana/p75 arrotondate a 10 m, rappresentative del cerchio editoriale; carta forestale storica, non rilevazione attuale."
+      }
+    },
+    {
+      "id": "tuscolo-nord",
+      "name": "Tuscolo, boschi verso Frascati",
+      "lat": 41.8024272,
+      "lon": 12.69921,
+      "radius_m": 1500,
+      "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+      "province": [
+        "RM"
+      ],
+      "coordinateProvenance": {
+        "method": "official_trace_bbox_midpoint",
+        "sourceUrl": "https://www.parchilazio.it/castelliromani-schede-18117-501_frascati_croce_di_tuscolo_cai",
+        "bbox": {
+          "west": 12.6851544,
+          "south": 41.7975873,
+          "east": 12.7132657,
+          "north": 41.8072671
+        },
+        "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+      },
+      "collectionStatus": "unknown",
+      "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita. Referente: Ente Parco Castelli Romani.",
+      "collectionSourceUrl": "https://www.parchilazio.it/castelliromani-schede-18117-501_frascati_croce_di_tuscolo_cai",
+      "publicationStatus": "active",
+      "manager": "Ente Parco Castelli Romani",
+      "title": "Tuscolo, boschi verso Frascati",
+      "subtitle": "Area romana",
+      "description": "Salire dal margine di Frascati verso il bosco del versante nord e concludere agli scavi e alla croce: un giro che alterna ombra e aperture sul paesaggio vulcanico.",
+      "bands": [
+        400,
+        460,
+        530
+      ],
+      "protection": "Ente Parco Castelli Romani",
+      "access": "Area di sosta presso gli scavi; parcheggio alla partenza non documentato.",
+      "parking": [],
+      "accessStatus": "unverified",
+      "drive_min": null,
+      "drive_km": null,
+      "popularity": null,
+      "trails": "CAI 501 Frascati - Croce di Tuscolo",
+      "sources": [
+        {
+          "url": "https://www.parchilazio.it/castelliromani-schede-18117-501_frascati_croce_di_tuscolo_cai",
+          "ente": null,
+          "consultedAt": "2026-10-19",
+          "evidence": "Scheda di itinerario letta: partenza, descrizione, dati tecnici e collegamenti. Per 501 i dati tecnici eventualmente conflittuali sono riportati nelle lacune del candidato."
+        },
+        {
+          "url": "https://www.tuscolo.org/la-natura/",
+          "ente": null,
+          "consultedAt": "2026-10-19",
+          "evidence": "Il versante nord verso Frascati e Monte Porzio ospita roverella, cerro e acero campestre; sottobosco con pungitopo, edera e asparago. Piccolo castagneto presso gli scavi."
+        },
+        {
+          "url": "https://www.parcocastelliromani.it/s/content/92003020580/1662037925.5863",
+          "ente": null,
+          "consultedAt": "2026-10-19",
+          "evidence": "Pagina informativa letta: formazione micologica almeno 14 ore e documenti/contributo richiesti; cita modifica regionale 2020. Non dimostra da sola assenza di divieti, diritti fondiari o deroghe locali nel 2026."
+        },
+        {
+          "url": "https://www.parchilazio.it/documenti/schede/501_frascati_croce_di_tuscolo.gpx",
+          "ente": null,
+          "consultedAt": "2026-10-19",
+          "evidence": "Risposta HTTP 200; documento XML con elemento gpx. Verifica di disponibilità, non validazione geometrica né prova della percorribilità."
+        },
+        {
+          "url": "https://www.parchilazio.it/castelliromani-schede-18117-501_frascati_croce_di_tuscolo_cai",
+          "ente": "Fonte cartografica citata nella provenienza",
+          "consultedAt": "2026-10-19",
+          "evidence": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+        }
+      ],
+      "samplingProvenance": {
+        "checkedOn": "2026-10-19",
+        "grid": 21,
+        "pointCount": 317,
+        "elevationSource": "Copernicus GLO90 2021 via Open-Meteo",
+        "resolutionM": 90,
+        "forestSource": "Carta Forestale tipologica Regione Lazio, geonode:tipi_forestali2",
+        "note": "Fasce p25/mediana/p75 arrotondate a 10 m, rappresentative del cerchio editoriale; carta forestale storica, non rilevazione attuale."
+      }
+    },
+    {
+      "id": "faete-rocca-papa",
+      "name": "Faete e Monte Cavo",
+      "lat": 41.7546186,
+      "lon": 12.7237168,
+      "radius_m": 1500,
+      "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+      "province": [
+        "RM"
+      ],
+      "coordinateProvenance": {
+        "method": "official_trace_bbox_midpoint",
+        "sourceUrl": "https://www.parchilazio.it/castelliromani-schede-17961-509_circuito_delle_faete_di_rocca_di_papa_cai",
+        "bbox": {
+          "west": 12.707468625158072,
+          "south": 41.744398484006524,
+          "east": 12.739965012297034,
+          "north": 41.76483867689967
+        },
+        "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+      },
+      "collectionStatus": "unknown",
+      "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita. Referente: Ente Parco Castelli Romani.",
+      "collectionSourceUrl": "https://www.parchilazio.it/castelliromani-schede-17961-509_circuito_delle_faete_di_rocca_di_papa_cai",
+      "publicationStatus": "active",
+      "manager": "Ente Parco Castelli Romani",
+      "title": "Faete e Monte Cavo",
+      "subtitle": "Area romana",
+      "description": "Un giro da Rocca di Papa che entra nei castagneti, segue la dorsale delle Faete e tocca il basolato della Via Sacra. La varietà del bosco conta più della sola conquista della cima.",
+      "bands": [
+        750,
+        790,
+        850
+      ],
+      "protection": "Ente Parco Castelli Romani",
+      "access": "Parcheggio nei pressi della piazza; capienza e gestione non documentate.",
+      "parking": [],
+      "accessStatus": "unverified",
+      "drive_min": null,
+      "drive_km": null,
+      "popularity": null,
+      "trails": "CAI 509 Circuito delle Faete di Rocca di Papa",
+      "sources": [
+        {
+          "url": "https://www.parchilazio.it/castelliromani-schede-17961-509_circuito_delle_faete_di_rocca_di_papa_cai",
+          "ente": null,
+          "consultedAt": "2026-10-19",
+          "evidence": "Scheda di itinerario letta: partenza, descrizione, dati tecnici e collegamenti. Per 509 i dati tecnici eventualmente conflittuali sono riportati nelle lacune del candidato."
+        },
+        {
+          "url": "https://www.parcocastelliromani.it/s/content/92003020580/1655729399.8254",
+          "ente": null,
+          "consultedAt": "2026-10-19",
+          "evidence": "Castagneti diffusi; lembi residuali di foresta originaria anche sulle coste di Nemi e sulla sommità di Monte Cavo. A Monte Cavo sopravvivono pochi faggi grandi e vecchi."
+        },
+        {
+          "url": "https://www.parcocastelliromani.it/s/content/92003020580/1662037925.5863",
+          "ente": null,
+          "consultedAt": "2026-10-19",
+          "evidence": "Pagina informativa letta: formazione micologica almeno 14 ore e documenti/contributo richiesti; cita modifica regionale 2020. Non dimostra da sola assenza di divieti, diritti fondiari o deroghe locali nel 2026."
+        },
+        {
+          "url": "https://www.parchilazio.it/documenti/schede/509.gpx",
+          "ente": null,
+          "consultedAt": "2026-10-19",
+          "evidence": "Risposta HTTP 200; documento XML con elemento gpx. Verifica di disponibilità, non validazione geometrica né prova della percorribilità."
+        },
+        {
+          "url": "https://www.parchilazio.it/castelliromani-schede-17961-509_circuito_delle_faete_di_rocca_di_papa_cai",
+          "ente": "Fonte cartografica citata nella provenienza",
+          "consultedAt": "2026-10-19",
+          "evidence": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+        }
+      ],
+      "samplingProvenance": {
+        "checkedOn": "2026-10-19",
+        "grid": 21,
+        "pointCount": 317,
+        "elevationSource": "Copernicus GLO90 2021 via Open-Meteo",
+        "resolutionM": 90,
+        "forestSource": "Carta Forestale tipologica Regione Lazio, geonode:tipi_forestali2",
+        "note": "Fasce p25/mediana/p75 arrotondate a 10 m, rappresentative del cerchio editoriale; carta forestale storica, non rilevazione attuale."
+      }
+    },
+    {
+      "id": "nemi-fontan-tempesta",
+      "name": "Nemi e Fontan Tempesta",
+      "lat": 41.7266247,
+      "lon": 12.7125641,
+      "radius_m": 1500,
+      "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+      "province": [
+        "RM"
+      ],
+      "coordinateProvenance": {
+        "method": "official_trace_bbox_midpoint",
+        "sourceUrl": "https://www.parchilazio.it/castelliromani-schede-18037-511b_fontana_tempesta_nemi_cai",
+        "bbox": {
+          "west": 12.7091608,
+          "south": 41.7206108,
+          "east": 12.7159675,
+          "north": 41.7326387
+        },
+        "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+      },
+      "collectionStatus": "unknown",
+      "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita. Referente: Ente Parco Castelli Romani.",
+      "collectionSourceUrl": "https://www.parchilazio.it/castelliromani-schede-18037-511b_fontana_tempesta_nemi_cai",
+      "publicationStatus": "active",
+      "manager": "Ente Parco Castelli Romani",
+      "title": "Nemi e Fontan Tempesta",
+      "subtitle": "Area romana",
+      "description": "Collegare Fontan Tempesta al borgo di Nemi con un tratto breve sul versante del lago. Il sentiero è una buona base per osservare il cambiamento fra bosco e belvedere, senza aggiungere piste forestali al giro.",
+      "bands": [
+        460,
+        610,
+        640
+      ],
+      "protection": "Ente Parco Castelli Romani",
+      "access": "Parcheggio non documentato; la fonte indica acqua alla partenza e ristori nel borgo.",
+      "parking": [],
+      "accessStatus": "unverified",
+      "drive_min": null,
+      "drive_km": null,
+      "popularity": null,
+      "trails": "CAI 511B Fontana Tempesta-Nemi",
+      "sources": [
+        {
+          "url": "https://www.parchilazio.it/castelliromani-schede-18037-511b_fontana_tempesta_nemi_cai",
+          "ente": null,
+          "consultedAt": "2026-10-19",
+          "evidence": "Scheda di itinerario letta: partenza, descrizione, dati tecnici e collegamenti. Per 511b i dati tecnici eventualmente conflittuali sono riportati nelle lacune del candidato."
+        },
+        {
+          "url": "https://www.parcocastelliromani.it/s/content/92003020580/1655729399.8254",
+          "ente": null,
+          "consultedAt": "2026-10-19",
+          "evidence": "Castagneti diffusi; lembi residuali di foresta originaria anche sulle coste di Nemi e sulla sommità di Monte Cavo. A Monte Cavo sopravvivono pochi faggi grandi e vecchi."
+        },
+        {
+          "url": "https://www.parcocastelliromani.it/s/content/92003020580/1662037925.5863",
+          "ente": null,
+          "consultedAt": "2026-10-19",
+          "evidence": "Pagina informativa letta: formazione micologica almeno 14 ore e documenti/contributo richiesti; cita modifica regionale 2020. Non dimostra da sola assenza di divieti, diritti fondiari o deroghe locali nel 2026."
+        },
+        {
+          "url": "https://www.parchilazio.it/documenti/schede/511b_fontana_tempesta_nemi.gpx",
+          "ente": null,
+          "consultedAt": "2026-10-19",
+          "evidence": "Risposta HTTP 200; documento XML con elemento gpx. Verifica di disponibilità, non validazione geometrica né prova della percorribilità."
+        },
+        {
+          "url": "https://www.parchilazio.it/castelliromani-schede-18037-511b_fontana_tempesta_nemi_cai",
+          "ente": "Fonte cartografica citata nella provenienza",
+          "consultedAt": "2026-10-19",
+          "evidence": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+        }
+      ],
+      "samplingProvenance": {
+        "checkedOn": "2026-10-19",
+        "grid": 21,
+        "pointCount": 317,
+        "elevationSource": "Copernicus GLO90 2021 via Open-Meteo",
+        "resolutionM": 90,
+        "forestSource": "Carta Forestale tipologica Regione Lazio, geonode:tipi_forestali2",
+        "note": "Fasce p25/mediana/p75 arrotondate a 10 m, rappresentative del cerchio editoriale; carta forestale storica, non rilevazione attuale."
+      }
+    },
+    {
+      "id": "cerquone-doganella",
+      "name": "Cerquone e Doganella",
+      "lat": 41.7784217,
+      "lon": 12.7823341,
+      "radius_m": 1500,
+      "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+      "province": [
+        "RM"
+      ],
+      "coordinateProvenance": {
+        "method": "official_trace_bbox_midpoint",
+        "sourceUrl": "https://www.parchilazio.it/castelliromani-schede-18053-504_rocca_priora_bosco_del_cerquone_cai",
+        "bbox": {
+          "west": 12.769194971770048,
+          "south": 41.76909844391048,
+          "east": 12.795473327860236,
+          "north": 41.78774499334395
+        },
+        "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+      },
+      "collectionStatus": "unknown",
+      "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita. Referente: Ente Parco Castelli Romani.",
+      "collectionSourceUrl": "https://www.parchilazio.it/castelliromani-schede-18053-504_rocca_priora_bosco_del_cerquone_cai",
+      "publicationStatus": "active",
+      "manager": "Ente Parco Castelli Romani",
+      "title": "Cerquone e Doganella",
+      "subtitle": "Area romana",
+      "description": "Scendere da Rocca Priora attraverso i castagneti fino al margine del Cerquone. Qui il giro cambia carattere: il bosco misto e la vicina zona umida invitano a fermarsi e osservare.",
+      "bands": [
+        560,
+        600,
+        660
+      ],
+      "protection": "Ente Parco Castelli Romani",
+      "access": "Area di sosta presso accesso Cerquone; non equivale a parcheggio verificato.",
+      "parking": [],
+      "accessStatus": "unverified",
+      "drive_min": null,
+      "drive_km": null,
+      "popularity": null,
+      "trails": "CAI 504 Rocca Priora - Bosco del Cerquone",
+      "sources": [
+        {
+          "url": "https://www.parchilazio.it/castelliromani-schede-18053-504_rocca_priora_bosco_del_cerquone_cai",
+          "ente": null,
+          "consultedAt": "2026-10-19",
+          "evidence": "Scheda di itinerario letta: partenza, descrizione, dati tecnici e collegamenti. Per 504 i dati tecnici eventualmente conflittuali sono riportati nelle lacune del candidato."
+        },
+        {
+          "url": "https://www.parchilazio.it/schede-730-il_bosco_del_cerquone",
+          "ente": null,
+          "consultedAt": "2026-10-19",
+          "evidence": "Rocca Priora: bosco mesofilo residuale a querce, tigli e aceri; farnia, cerro, roverella, acero campestre, nocciolo. Vicina Doganella; il testo cita la designazione ZSC."
+        },
+        {
+          "url": "https://www.parcocastelliromani.it/s/content/92003020580/1662037925.5863",
+          "ente": null,
+          "consultedAt": "2026-10-19",
+          "evidence": "Pagina informativa letta: formazione micologica almeno 14 ore e documenti/contributo richiesti; cita modifica regionale 2020. Non dimostra da sola assenza di divieti, diritti fondiari o deroghe locali nel 2026."
+        },
+        {
+          "url": "https://www.parchilazio.it/documenti/schede/504_rocca_priora_bosco_del_cerquone.gpx",
+          "ente": null,
+          "consultedAt": "2026-10-19",
+          "evidence": "Risposta HTTP 200; documento XML con elemento gpx. Verifica di disponibilità, non validazione geometrica né prova della percorribilità."
+        },
+        {
+          "url": "https://www.parchilazio.it/castelliromani-schede-18053-504_rocca_priora_bosco_del_cerquone_cai",
+          "ente": "Fonte cartografica citata nella provenienza",
+          "consultedAt": "2026-10-19",
+          "evidence": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+        }
+      ],
+      "samplingProvenance": {
+        "checkedOn": "2026-10-19",
+        "grid": 21,
+        "pointCount": 317,
+        "elevationSource": "Copernicus GLO90 2021 via Open-Meteo",
+        "resolutionM": 90,
+        "forestSource": "Carta Forestale tipologica Regione Lazio, geonode:tipi_forestali2",
+        "note": "Fasce p25/mediana/p75 arrotondate a 10 m, rappresentative del cerchio editoriale; carta forestale storica, non rilevazione attuale."
+      }
+    },
+    {
+      "id": "livata-tufai",
+      "name": "Livata e Valle delle Mele",
+      "lat": 41.9331844,
+      "lon": 13.1562279,
+      "radius_m": 1500,
+      "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+      "province": [
+        "RM"
+      ],
+      "coordinateProvenance": {
+        "method": "official_trace_bbox_midpoint",
+        "sourceUrl": "https://www.parcomontisimbruini.it/itinerari-dettaglio.php?id_iti=370",
+        "bbox": {
+          "west": 13.147823140025139,
+          "south": 41.927543906494975,
+          "east": 13.164632711559534,
+          "north": 41.938824858516455
+        },
+        "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+      },
+      "collectionStatus": "unknown",
+      "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita. Referente: Ente Parco Monti Simbruini.",
+      "collectionSourceUrl": "https://www.parchilazio.it/parcomontisimbruini-schede-1469-percorso_672c_livata_colle_cernale_tufali_livata",
+      "publicationStatus": "active",
+      "manager": "Ente Parco Monti Simbruini",
+      "title": "Livata e Valle delle Mele",
+      "subtitle": "Area romana",
+      "description": "Usare Livata come porta del bosco montano e scegliere l’anello dei Tufai e della Valle delle Mele. La proposta resta da raccordare con una partenza e una sosta auto verificate.",
+      "bands": [
+        1340,
+        1390,
+        1460
+      ],
+      "protection": "Ente Parco Monti Simbruini",
+      "access": "Parcheggio e sue condizioni non documentati dalle pagine lette.",
+      "parking": [],
+      "accessStatus": "unverified",
+      "drive_min": null,
+      "drive_km": null,
+      "popularity": null,
+      "trails": "Percorso 672c Livata - I Tufai - Valle delle Mele - Livata",
+      "sources": [
+        {
+          "url": "https://www.parchilazio.it/parcomontisimbruini-schede-1469-percorso_672c_livata_colle_cernale_tufali_livata",
+          "ente": null,
+          "consultedAt": "2026-10-19",
+          "evidence": "Scheda di itinerario letta: partenza, descrizione, dati tecnici e collegamenti. Per 672c i dati tecnici eventualmente conflittuali sono riportati nelle lacune del candidato."
+        },
+        {
+          "url": "https://www.parcomontisimbruini.it/itinerari-dettaglio.php?id_iti=370",
+          "ente": null,
+          "consultedAt": "2026-10-19",
+          "evidence": "Anello da Monte Livata, comune Subiaco; 5,4 km, 2 ore, T, salita 290 m, discesa 210 m; quote 1331–1446 m. Collegamento GPX pubblicato."
+        },
+        {
+          "url": "https://www.parcomontisimbruini.it/iniziativa.php?id=113249",
+          "ente": null,
+          "consultedAt": "2026-10-19",
+          "evidence": "Evento storico: descrive la partenza da Livata tra boschi, radure e faggete verso Campaegli. Usato solo come contesto locale del bosco, non come scheda di percorso 672c."
+        },
+        {
+          "url": "https://www.parcomontisimbruini.it/pagina.php?id=19",
+          "ente": null,
+          "consultedAt": "2026-10-19",
+          "evidence": "Ambiente montano del parco: faggete e comunità miste con acero di monte; nello strato arbustivo agrifoglio e ginepro. Informazione a scala parco, non osservazione puntuale del sentiero."
+        },
+        {
+          "url": "https://www.parcomontisimbruini.it/pagina.php?id=35",
+          "ente": null,
+          "consultedAt": "2026-10-19",
+          "evidence": "La pagina dichiara che i regolamenti adottati dall’Ente sono in via di approvazione regionale; elenca delibera CS 58/2015. Vigenza e applicabilità alla raccolta non concluse."
+        },
+        {
+          "url": "https://www.parcomontisimbruini.it/gpx/672c.gpx",
+          "ente": null,
+          "consultedAt": "2026-10-19",
+          "evidence": "Risposta HTTP 200; documento XML con elemento gpx. Verifica di disponibilità, non validazione geometrica né prova della percorribilità."
+        },
+        {
+          "url": "https://www.parcomontisimbruini.it/itinerari-dettaglio.php?id_iti=370",
+          "ente": "Fonte cartografica citata nella provenienza",
+          "consultedAt": "2026-10-19",
+          "evidence": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+        }
+      ],
+      "samplingProvenance": {
+        "checkedOn": "2026-10-19",
+        "grid": 21,
+        "pointCount": 317,
+        "elevationSource": "Copernicus GLO90 2021 via Open-Meteo",
+        "resolutionM": 90,
+        "forestSource": "Carta Forestale tipologica Regione Lazio, geonode:tipi_forestali2",
+        "note": "Fasce p25/mediana/p75 arrotondate a 10 m, rappresentative del cerchio editoriale; carta forestale storica, non rilevazione attuale."
+      }
+    },
+    {
+      "id": "cervara-prataglia",
+      "name": "Cervara e Prataglia",
+      "lat": 42.0004981,
+      "lon": 13.061135,
+      "radius_m": 1500,
+      "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+      "province": [
+        "RM"
+      ],
+      "coordinateProvenance": {
+        "method": "official_trace_bbox_midpoint",
+        "sourceUrl": "https://www.parcomontisimbruini.it/itinerari-dettaglio.php?id_iti=174",
+        "bbox": {
+          "west": 13.04302454,
+          "south": 41.988847973,
+          "east": 13.07924551,
+          "north": 42.012148323
+        },
+        "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+      },
+      "collectionStatus": "unknown",
+      "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita. Referente: Ente Parco Monti Simbruini.",
+      "collectionSourceUrl": "https://www.parchilazio.it/parcomontisimbruini-schede-1458-percorso_661_cervara_prataglia_cervara",
+      "publicationStatus": "active",
+      "manager": "Ente Parco Monti Simbruini",
+      "title": "Cervara e Prataglia",
+      "subtitle": "Area romana",
+      "description": "Dalla strada di Cervara verso Prataglia, entrare nell’alternanza di faggete e radure. Il rifugio e l’area faunistica sono riferimenti utili per costruire una giornata nel bosco, da definire dopo la riconciliazione delle schede.",
+      "bands": [
+        790,
+        1000,
+        1130
+      ],
+      "protection": "Ente Parco Monti Simbruini",
+      "access": "Accesso alla sterrata verso ostello di Prataglia da un tornante della Cervara-Campaegli; sosta auto non verificata.",
+      "parking": [],
+      "accessStatus": "unverified",
+      "drive_min": null,
+      "drive_km": null,
+      "popularity": null,
+      "trails": "Percorso 661 Cervara - Prataglia - Cervara",
+      "sources": [
+        {
+          "url": "https://www.parchilazio.it/parcomontisimbruini-schede-1458-percorso_661_cervara_prataglia_cervara",
+          "ente": null,
+          "consultedAt": "2026-10-19",
+          "evidence": "Scheda di itinerario letta: partenza, descrizione, dati tecnici e collegamenti. Per 661 i dati tecnici eventualmente conflittuali sono riportati nelle lacune del candidato."
+        },
+        {
+          "url": "https://www.parcomontisimbruini.it/itinerari-dettaglio.php?id_iti=174",
+          "ente": null,
+          "consultedAt": "2026-10-19",
+          "evidence": "Anello Cervara-Prataglia; 10,7 km, 4 ore, E, +400/-390 m; quote 866–1180 m; partenza Morra Coreara 1110 m. GPX pubblicato."
+        },
+        {
+          "url": "https://www.parchilazio.it/parcomontisimbruini-schede-29805-via_dei_lupi_tappa_4_riofreddo_cervara_di_roma",
+          "ente": null,
+          "consultedAt": "2026-10-19",
+          "evidence": "La descrizione locale riporta alternanza di radure e faggete e passaggio presso rifugio di Prataglia e area faunistica del cervo. Non utilizzata come itinerario perché attraversa anche Abruzzo."
+        },
+        {
+          "url": "https://www.parcomontisimbruini.it/pagina.php?id=35",
+          "ente": null,
+          "consultedAt": "2026-10-19",
+          "evidence": "La pagina dichiara che i regolamenti adottati dall’Ente sono in via di approvazione regionale; elenca delibera CS 58/2015. Vigenza e applicabilità alla raccolta non concluse."
+        },
+        {
+          "url": "https://www.parcomontisimbruini.it/gpx/661.gpx",
+          "ente": null,
+          "consultedAt": "2026-10-19",
+          "evidence": "Risposta HTTP 200; documento XML con elemento gpx. Verifica di disponibilità, non validazione geometrica né prova della percorribilità."
+        },
+        {
+          "url": "https://www.parcomontisimbruini.it/itinerari-dettaglio.php?id_iti=174",
+          "ente": "Fonte cartografica citata nella provenienza",
+          "consultedAt": "2026-10-19",
+          "evidence": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+        }
+      ],
+      "samplingProvenance": {
+        "checkedOn": "2026-10-19",
+        "grid": 21,
+        "pointCount": 317,
+        "elevationSource": "Copernicus GLO90 2021 via Open-Meteo",
+        "resolutionM": 90,
+        "forestSource": "Carta Forestale tipologica Regione Lazio, geonode:tipi_forestali2",
+        "note": "Fasce p25/mediana/p75 arrotondate a 10 m, rappresentative del cerchio editoriale; carta forestale storica, non rilevazione attuale."
+      }
+    },
+    {
+      "id": "gennaro-roccagiovine",
+      "name": "Monte Gennaro da Roccagiovine",
+      "lat": 42.0565333,
+      "lon": 12.8504782,
+      "radius_m": 2500,
+      "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+      "province": [
+        "RM"
+      ],
+      "coordinateProvenance": {
+        "method": "official_trace_bbox_midpoint",
+        "sourceUrl": "https://www.parchilazio.it/montilucretili-schede-18056-305_roccagiovine_monte_gennaro_cai",
+        "bbox": {
+          "west": 12.807004,
+          "south": 42.0501196,
+          "east": 12.8939525,
+          "north": 42.0629469
+        },
+        "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+      },
+      "collectionStatus": "unknown",
+      "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita. Referente: Ente Parco Monti Lucretili.",
+      "collectionSourceUrl": "https://www.parchilazio.it/montilucretili-schede-18056-305_roccagiovine_monte_gennaro_cai",
+      "publicationStatus": "active",
+      "manager": "Ente Parco Monti Lucretili",
+      "title": "Monte Gennaro da Roccagiovine",
+      "subtitle": "Area romana",
+      "description": "Partire dal paese e seguire la salita fino a Campitello e al Pratone. Grandi alberi e conche carsiche danno al giro un interesse autonomo anche senza proseguire fino alla cima.",
+      "bands": [
+        860,
+        960,
+        1040
+      ],
+      "protection": "Ente Parco Monti Lucretili",
+      "access": "La scheda indica il parcheggio in ingresso al paese, senza capienza o gestore.",
+      "parking": [
+        {
+          "name": "Parcheggio in ingresso a Roccagiovine",
+          "lat": 42.052437,
+          "lon": 12.894007
+        }
+      ],
+      "accessStatus": "mapped_start",
+      "drive_min": 86,
+      "drive_km": 98.7,
+      "popularity": null,
+      "trails": "CAI 305 Roccagiovine - Monte Gennaro",
+      "sources": [
+        {
+          "url": "https://www.parchilazio.it/montilucretili-schede-18056-305_roccagiovine_monte_gennaro_cai",
+          "ente": null,
+          "consultedAt": "2026-10-19",
+          "evidence": "Scheda di itinerario letta: partenza, descrizione, dati tecnici e collegamenti. Per 305 i dati tecnici eventualmente conflittuali sono riportati nelle lacune del candidato."
+        },
+        {
+          "url": "https://parcolucretili.it/wp-content/uploads/allegati_pdf/regolamento_aree_naturali_protette.pdf",
+          "ente": null,
+          "consultedAt": "2026-10-19",
+          "evidence": "PDF accessibile, 39 pagine; estrazione web priva di testo. Nessuna regola di raccolta ricavata."
+        },
+        {
+          "url": "https://www.parchilazio.it/montilucretili-schede-18056-305_roccagiovine_monte_gennaro_cai",
+          "ente": "Fonte cartografica citata nella provenienza",
+          "consultedAt": "2026-10-19",
+          "evidence": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+        }
+      ],
+      "samplingProvenance": {
+        "checkedOn": "2026-10-19",
+        "grid": 21,
+        "pointCount": 317,
+        "elevationSource": "Copernicus GLO90 2021 via Open-Meteo",
+        "resolutionM": 90,
+        "forestSource": "Carta Forestale tipologica Regione Lazio, geonode:tipi_forestali2",
+        "note": "Fasce p25/mediana/p75 arrotondate a 10 m, rappresentative del cerchio editoriale; carta forestale storica, non rilevazione attuale."
+      }
+    },
+    {
+      "id": "lepini-bassiano-santangelo",
+      "name": "Valle Sant’Angelo e lecci del Semprevisa",
+      "lat": 41.561727,
+      "lon": 13.056672,
+      "radius_m": 1500,
+      "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+      "province": [
+        "LT"
+      ],
+      "coordinateProvenance": {
+        "method": "published_place_or_map",
+        "sourceUrl": "https://www.cailatina.com/pagu_percorso.php?id=6",
+        "note": "Centro della mappa del percorso incorporata dal CAI Latina; punto editoriale, non accesso o parcheggio. Nessuna conversione delle coordinate UTM dal datum ignoto."
+      },
+      "collectionStatus": "unknown",
+      "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita.",
+      "collectionSourceUrl": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+      "publicationStatus": "active",
+      "manager": "Ente competente indicato nelle fonti",
+      "title": "Valle Sant’Angelo e lecci del Semprevisa",
+      "subtitle": "Provincia di Latina",
+      "description": "Una valle di lecci da esplorare con un percorso già descritto dal CAI. Per una proposta a funghi conviene partire dai tratti documentati verso Sant’Angelo e tenere distinta la variante fuori sentiero.",
+      "bands": [
+        700,
+        820,
+        950
+      ],
+      "protection": null,
+      "access": "Partenza a Le Cornetta presso il ponte sul Fosso Sant’Angelo. Coordinate del parcheggio non verificate. Seguire il Nardi–Orticello descritto dal CAI; non la variante fuori sentiero.",
+      "parking": [],
+      "accessStatus": "unverified",
+      "drive_min": null,
+      "drive_km": null,
+      "popularity": null,
+      "trails": "Sentiero Nardi–Orticello da Le Cornetta; I Lecci del Semprevisa — primo percorso",
+      "sources": [
+        {
+          "url": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+          "ente": "Regione Lazio",
+          "consultedAt": "2026-10-19",
+          "evidence": "La raccolta richiede attestato/titolo o tesserino, documento e contributo annuale; la pagina rinvia alla L.R. 32/1998. Non prova un diritto di accesso alla singola proprietà o una deroga nelle aree protette."
+        },
+        {
+          "url": "https://www.cailatina.com/pagu_percorso.php?id=5",
+          "ente": "CAI Latina",
+          "consultedAt": "2026-10-19",
+          "evidence": "Valle Sant’Angelo a Bassiano: lecceta cedua e lecci monumentali a candelabro; percorso da Le Cornetta di 6,6 km, +500/-500 m, 3 ore; un tratto risale senza sentiero fra rovi. Coordinate UTM pubblicate del punto di partenza: 33T 337188E 4601983N."
+        },
+        {
+          "url": "https://www.cailatina.com/pagu_percorso.php?id=6",
+          "ente": "CAI Latina",
+          "consultedAt": "2026-10-19",
+          "evidence": "Da Le Cornetta a Fonte Sant’Angelo e Orticello, ritorno sul medesimo percorso: 7 km, +450/-450 m, 2 ore e 30; primo tratto su carrareccia del CAI 710. La pagina riporta 3T anziché 33T nel riferimento UTM: non convertito."
+        },
+        {
+          "url": "https://www.cailatina.com/pagu_percorso.php?id=6",
+          "ente": "Fonte cartografica citata nella provenienza",
+          "consultedAt": "2026-10-19",
+          "evidence": "Centro della mappa del percorso incorporata dal CAI Latina; punto editoriale, non accesso o parcheggio. Nessuna conversione delle coordinate UTM dal datum ignoto."
+        }
+      ],
+      "samplingProvenance": {
+        "checkedOn": "2026-10-19",
+        "grid": 21,
+        "pointCount": 317,
+        "elevationSource": "Copernicus GLO90 2021 via Open-Meteo",
+        "resolutionM": 90,
+        "forestSource": "Carta Forestale tipologica Regione Lazio, geonode:tipi_forestali2",
+        "note": "Fasce p25/mediana/p75 arrotondate a 10 m, rappresentative del cerchio editoriale; carta forestale storica, non rilevazione attuale."
+      }
+    },
+    {
+      "id": "ausoni-san-vito",
+      "name": "Sughereta di San Vito",
+      "lat": 41.3692321,
+      "lon": 13.3378515,
+      "radius_m": 1500,
+      "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+      "province": [
+        "LT"
+      ],
+      "coordinateProvenance": {
+        "method": "published_place_or_map",
+        "sourceUrl": "https://montesanbiagio.halleyegov.it/vivere_il_comune/luoghi/luogo_16.html",
+        "note": "Punto mappa nella scheda comunale aggiornata il 01/07/2025; centro editoriale, non parcheggio."
+      },
+      "collectionStatus": "unknown",
+      "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita. Referente: Ente Parco Naturale Regionale Monti Ausoni e Lago di Fondi.",
+      "collectionSourceUrl": "https://montesanbiagio.halleyegov.it/vivere_il_comune/luoghi/luogo_16.html",
+      "publicationStatus": "active",
+      "manager": "Ente Parco Naturale Regionale Monti Ausoni e Lago di Fondi",
+      "title": "Sughereta di San Vito",
+      "subtitle": "Provincia di Latina",
+      "description": "Sughere e lecci nel territorio di Monte San Biagio. Il Comune indica la visita sui sentieri segnalati, rispettando le restrizioni locali.",
+      "bands": [
+        80,
+        130,
+        300
+      ],
+      "protection": "La Sughereta di San Vito è nel territorio del Parco Monti Ausoni e Lago di Fondi.",
+      "access": "Via San Vito, 1ª traversa, 6: riferimento pubblicato dal Comune. Seguire i sentieri segnalati; parcheggio non verificato.",
+      "parking": [],
+      "accessStatus": "mapped_start",
+      "drive_min": null,
+      "drive_km": null,
+      "popularity": null,
+      "trails": "Passeggiata sui sentieri di Villa San Vito",
+      "sources": [
+        {
+          "url": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+          "ente": "Regione Lazio",
+          "consultedAt": "2026-10-19",
+          "evidence": "La raccolta richiede attestato/titolo o tesserino, documento e contributo annuale; la pagina rinvia alla L.R. 32/1998. Non prova un diritto di accesso alla singola proprietà o una deroga nelle aree protette."
+        },
+        {
+          "url": "https://www.parchilazio.it/montiausoni-schede-8508-giorniverdi_alla_scoperta_della_sughereta_di_san_vito_parco_naturale_regionale_monti_ausoni_e_lago_d",
+          "ente": "Regione Lazio / Parco Monti Ausoni e Lago di Fondi",
+          "consultedAt": "2026-10-19",
+          "evidence": "Scheda di appuntamento del 5 aprile 2011: passeggiata sui sentieri di Villa San Vito, Monte San Biagio; dislivello circa 150 m, difficoltà descrittiva media; appuntamento Via Appia km 114,500. Fonte storica: non documenta la percorribilità né l’accesso nel 2026."
+        },
+        {
+          "url": "https://www.parchilazio.it/montiausoni-natura",
+          "ente": "Regione Lazio / Parco Monti Ausoni e Lago di Fondi",
+          "consultedAt": "2026-10-19",
+          "evidence": "La sughereta di San Vito si trova a Monte San Biagio e ha sottobosco di erica bianca e cisto. Pagina del parco: informazioni generali non estese automaticamente a ogni sentiero."
+        },
+        {
+          "url": "https://www.parchilazio.it/montiausoni-schede-28600-insieme_conserviamo_la_sughereta_incontro_in_occasione_della_giornta_internazionale_delle_foreste",
+          "ente": "Regione Lazio / Ente Parco Monti Ausoni e Lago di Fondi",
+          "consultedAt": "2026-10-19",
+          "evidence": "Incontro del 21 marzo 2022: l’ente descrive le sugherete di San Vito e Valle Marina nel territorio del parco e un progetto con DIBAF Università della Tuscia per contrastare il deperimento delle querce. Non è un bollettino sanitario attuale né autorizzazione di accesso."
+        },
+        {
+          "url": "https://montesanbiagio.halleyegov.it/vivere_il_comune/luoghi/luogo_16.html",
+          "ente": "Comune di Monte San Biagio",
+          "consultedAt": "2026-10-19",
+          "evidence": "Scheda aggiornata 01/07/2025: indirizzo, visite sui sentieri segnalati e punto nella mappa; non certifica parcheggio o raccolta."
+        },
+        {
+          "url": "https://montesanbiagio.halleyegov.it/vivere_il_comune/luoghi/luogo_16.html",
+          "ente": "Fonte cartografica citata nella provenienza",
+          "consultedAt": "2026-10-19",
+          "evidence": "Punto mappa nella scheda comunale aggiornata il 01/07/2025; centro editoriale, non parcheggio."
+        }
+      ],
+      "samplingProvenance": {
+        "checkedOn": "2026-10-19",
+        "grid": 21,
+        "pointCount": 317,
+        "elevationSource": "Copernicus GLO90 2021 via Open-Meteo",
+        "resolutionM": 90,
+        "forestSource": "Carta Forestale tipologica Regione Lazio, geonode:tipi_forestali2",
+        "note": "Fasce p25/mediana/p75 arrotondate a 10 m, rappresentative del cerchio editoriale; carta forestale storica, non rilevazione attuale."
+      }
+    },
+    {
+      "id": "aurunci-itri-campello",
+      "name": "La Valle di Itri e Campello Vecchio",
+      "lat": 41.3218395,
+      "lon": 13.5770165,
+      "radius_m": 1500,
+      "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+      "province": [
+        "LT"
+      ],
+      "coordinateProvenance": {
+        "method": "official_trace_bbox_midpoint",
+        "sourceUrl": "https://www.parchilazio.it/documenti/schede/20220422232757_17197_map_1.kml",
+        "bbox": {
+          "west": 13.551000981,
+          "south": 41.306455024,
+          "east": 13.60303198,
+          "north": 41.337223984
+        },
+        "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+      },
+      "collectionStatus": "unknown",
+      "collectionNote": "Il Parco ammette la raccolta secondo la normativa; verificare requisiti personali, proprietà e limitazioni locali. Referente: Ente Parco Naturale Regionale Monti Aurunci.",
+      "collectionSourceUrl": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+      "publicationStatus": "active",
+      "manager": "Ente Parco Naturale Regionale Monti Aurunci",
+      "title": "La Valle di Itri e Campello Vecchio",
+      "subtitle": "Provincia di Latina",
+      "description": "Dalla carrareccia della Valle si entra nei lecci e si raggiungono le valli carsiche di Campello. È un contesto boschivo da approfondire per il giro a funghi; la salita completa al Revole resta un itinerario EE distinto dalla passeggiata nel bosco.",
+      "bands": [
+        840,
+        940,
+        1070
+      ],
+      "protection": "Parco Naturale Regionale Monti Aurunci; scheda pubblicata dal parco.",
+      "access": "La Valle, nel comune di Itri; prima carrareccia fino a Stremigna. Itinerario 951 classificato EE dal gestore; non è una passeggiata facile.",
+      "parking": [
+        {
+          "name": "La Valle — partenza CAI 951",
+          "lat": 41.3064,
+          "lon": 13.558617
+        }
+      ],
+      "accessStatus": "mapped_start",
+      "drive_min": 203,
+      "drive_km": 203.7,
+      "popularity": null,
+      "trails": "CAI 951 La Valle di Itri–Monte Revole",
+      "sources": [
+        {
+          "url": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+          "ente": "Regione Lazio",
+          "consultedAt": "2026-10-19",
+          "evidence": "La raccolta richiede attestato/titolo o tesserino, documento e contributo annuale; la pagina rinvia alla L.R. 32/1998. Non prova un diritto di accesso alla singola proprietà o una deroga nelle aree protette."
+        },
+        {
+          "url": "https://www.parchilazio.it/montiaurunci-schede-18157-951_la_valle_di_itri_monte_revole_cai",
+          "ente": "Regione Lazio / Parco Monti Aurunci",
+          "consultedAt": "2026-10-19",
+          "evidence": "Da La Valle nel comune di Itri: carrareccia, lecceta, valli carsiche e un faggio al bivio con 953. Scheda: EE, 7,3 km, 3 h 30, +957/-162 m; parcheggio di fronte alla partenza, nessun punto acqua. Link KML presente; non GPX."
+        },
+        {
+          "url": "https://www.parcoaurunci.it/pagina.php?id=7",
+          "ente": "Ente Parco Naturale dei Monti Aurunci",
+          "consultedAt": "2026-10-19",
+          "evidence": "Il parco risponde sì alla raccolta dei funghi e rinvia alla L.R. 32/1998 e alla legge istitutiva L.R. 29/1997. La FAQ non certifica assenza di ordinanze temporanee o diritti privati sul percorso."
+        },
+        {
+          "url": "https://www.parcoaurunci.it/centri-visita.php",
+          "ente": "Ente Parco Monti Aurunci",
+          "consultedAt": "2026-10-19",
+          "evidence": "L’ente localizza il proprio vivaio a Itri (LT); fonte per la provincia del comune. Non assunto come punto di partenza dell’itinerario 951."
+        },
+        {
+          "url": "https://www.parchilazio.it/documenti/schede/20220422232757_17197_map_1.kml",
+          "ente": "Fonte cartografica citata nella provenienza",
+          "consultedAt": "2026-10-19",
+          "evidence": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+        }
+      ],
+      "samplingProvenance": {
+        "checkedOn": "2026-10-19",
+        "grid": 21,
+        "pointCount": 317,
+        "elevationSource": "Copernicus GLO90 2021 via Open-Meteo",
+        "resolutionM": 90,
+        "forestSource": "Carta Forestale tipologica Regione Lazio, geonode:tipi_forestali2",
+        "note": "Fasce p25/mediana/p75 arrotondate a 10 m, rappresentative del cerchio editoriale; carta forestale storica, non rilevazione attuale."
+      }
+    },
+    {
+      "id": "circeo-cerasella-verdesca",
+      "name": "Cerasella e Piscina della Verdesca",
+      "lat": 41.3518884,
+      "lon": 13.0482759,
+      "radius_m": 1500,
+      "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+      "province": [
+        "LT"
+      ],
+      "coordinateProvenance": {
+        "method": "published_place_or_map",
+        "sourceUrl": "https://www.openstreetmap.org/node/768875089",
+        "note": "Località Cerasella in OSM, geocodifica Nominatim; centro editoriale, non parcheggio."
+      },
+      "collectionStatus": "observation_only",
+      "collectionNote": "Uscita di osservazione. Raccolta 2026 riservata ad autorizzati nelle sole aree derogate; il percorso non dimostra il diritto di raccolta. Referente: Ente Parco Nazionale del Circeo.",
+      "collectionSourceUrl": "https://www.parcocirceo.it/dettaglio.php?id=85389",
+      "publicationStatus": "active",
+      "manager": "Ente Parco Nazionale del Circeo",
+      "title": "Cerasella e Piscina della Verdesca",
+      "subtitle": "Provincia di Latina",
+      "description": "Una foresta di pianura con querce e depressioni stagionalmente allagate. È una buona proposta per osservare il bosco e i funghi lungo i sentieri; la raccolta segue un regime speciale che impedisce di proporla come uscita aperta a tutti.",
+      "bands": [
+        40,
+        40,
+        50
+      ],
+      "protection": "Parco Nazionale del Circeo, Foresta Demaniale.",
+      "access": "Da Pontina km 89,2 all’area attrezzata di Cerasella.",
+      "parking": [],
+      "accessStatus": "unverified",
+      "drive_min": null,
+      "drive_km": null,
+      "popularity": null,
+      "trails": "Sentiero Foresta Demaniale e Piscina della Verdesca",
+      "sources": [
+        {
+          "url": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+          "ente": "Regione Lazio",
+          "consultedAt": "2026-10-19",
+          "evidence": "La raccolta richiede attestato/titolo o tesserino, documento e contributo annuale; la pagina rinvia alla L.R. 32/1998. Non prova un diritto di accesso alla singola proprietà o una deroga nelle aree protette."
+        },
+        {
+          "url": "https://www.parcocirceo.it/iti_dettaglio.php?id_iti=2245",
+          "ente": "Ente Parco Nazionale del Circeo",
+          "consultedAt": "2026-10-19",
+          "evidence": "Anello da Cerasella: 4 km, 2 ore, difficoltà descrittiva Medio-Facile, pianeggiante, accesso Pontina km 89,2. Scheda aperta; farnetto e cerro nella foresta, frassino meridionale nelle piscine; area faunistica didattica con animali recuperati."
+        },
+        {
+          "url": "https://www.parcocirceo.it/dettaglio.php?id=85389",
+          "ente": "Ente Parco Nazionale del Circeo",
+          "consultedAt": "2026-10-19",
+          "evidence": "Avviso del 30 dicembre 2025: raccolta 2026 solo nelle aree derogate A/B con autorizzazione, requisiti di residenza e contingenti; martedì, sabato e domenica 6:30–14:00, massimo 2 kg delle specie consentite. Zona A riservata ai residenti nei comuni del parco; non estendere la deroga all’intera foresta o al sentiero Cerasella-Verdesca."
+        },
+        {
+          "url": "https://www.parcocirceo.it/albo_dettaglio.php?id=72927",
+          "ente": "Ente Parco Nazionale del Circeo",
+          "consultedAt": "2026-10-19",
+          "evidence": "Albo della determina 196 del 15 dicembre 2025; permette di correggere l’evidente refuso 15.13.2025 nell’avviso divulgativo. Sono elencati atto e quattro allegati, da acquisire prima di modellare poligoni derogati."
+        },
+        {
+          "url": "https://www.parcocirceo.it/centri-visita-dettaglio.php?id=486",
+          "ente": "Ente Parco Nazionale del Circeo",
+          "consultedAt": "2026-10-19",
+          "evidence": "Scheda località: Cerasella, comune Sabaudia LT. La foresta è visitabile escludendo le riserve integrali; area con daini e cinghiali in recinto. Non trasferire questa possibilità di visita a un permesso di raccolta."
+        },
+        {
+          "url": "https://www.openstreetmap.org/node/768875089",
+          "ente": "Fonte cartografica citata nella provenienza",
+          "consultedAt": "2026-10-19",
+          "evidence": "Località Cerasella in OSM, geocodifica Nominatim; centro editoriale, non parcheggio."
+        }
+      ],
+      "samplingProvenance": {
+        "checkedOn": "2026-10-19",
+        "grid": 21,
+        "pointCount": 317,
+        "elevationSource": "Copernicus GLO90 2021 via Open-Meteo",
+        "resolutionM": 90,
+        "forestSource": "Carta Forestale tipologica Regione Lazio, geonode:tipi_forestali2",
+        "note": "Fasce p25/mediana/p75 arrotondate a 10 m, rappresentative del cerchio editoriale; carta forestale storica, non rilevazione attuale."
+      }
+    },
+    {
+      "id": "ernici-prato-campoli",
+      "name": "Prato di Campoli e boschi verso Pizzo Deta",
+      "lat": 41.7745278,
+      "lon": 13.4925556,
+      "radius_m": 1500,
+      "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+      "province": [
+        "FR"
+      ],
+      "coordinateProvenance": {
+        "method": "published_wgs_point",
+        "sourceUrl": "https://www.cairoma.it/?p=29232",
+        "note": "Centro editoriale coincidente con il punto WGS pubblicato dal CAI; il raggio non delimita l’area naturale."
+      },
+      "collectionStatus": "unknown",
+      "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita.",
+      "collectionSourceUrl": "https://www.cairoma.it/?p=29232",
+      "publicationStatus": "active",
+      "manager": "Ente competente indicato nelle fonti",
+      "title": "Prato di Campoli e boschi verso Pizzo Deta",
+      "subtitle": "Ciociaria",
+      "description": "Il parcheggio di Prato di Campoli offre un riferimento concreto per approfondire i boschi degli Ernici. La direttrice al Pizzo Deta documenta il contesto, ma l’anello completo è faticoso ed EE: un futuro giro a funghi va progettato nei tratti boscosi senza ereditarne automaticamente lunghezza e difficoltà.",
+      "bands": [
+        1200,
+        1280,
+        1370
+      ],
+      "protection": null,
+      "access": "Da Veroli verso Santa Maria Amaseno e Prato di Campoli, fino al termine della strada asfaltata. Il giro verso Pizzo Deta è EE, con salita faticosa e tratti esposti.",
+      "parking": [
+        {
+          "name": "Prato di Campoli — termine strada asfaltata",
+          "lat": 41.7745277778,
+          "lon": 13.4925555556
+        }
+      ],
+      "accessStatus": "mapped_start",
+      "drive_min": 147,
+      "drive_km": 151.7,
+      "popularity": null,
+      "trails": "Anello Pizzo Deta da Prato di Campoli; Monte Serra Comune da Prato di Campoli — sentieri 617, 618, 619 e 622",
+      "sources": [
+        {
+          "url": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+          "ente": "Regione Lazio",
+          "consultedAt": "2026-10-19",
+          "evidence": "La raccolta richiede attestato/titolo o tesserino, documento e contributo annuale; la pagina rinvia alla L.R. 32/1998. Non prova un diritto di accesso alla singola proprietà o una deroga nelle aree protette."
+        },
+        {
+          "url": "https://www.cairoma.it/?p=29232",
+          "ente": "CAI Roma",
+          "consultedAt": "2026-10-19",
+          "evidence": "Uscita 29 giugno 2025: anello 10 km, +900/-900 m, EE, 5 ore; partenza a Prato di Campoli 1.140 m, termine della strada asfaltata e parcheggio; coordinate WGS 41°46′28.3″ 13°29′33.2″. Salita faticosa, esposizione, radure e ginepri in discesa; non adatta a persone poco allenate."
+        },
+        {
+          "url": "https://www.caifrascati.it/evento/monte-serra-comune-da-prato-di-campoli/",
+          "ente": "CAI Frascati",
+          "consultedAt": "2026-10-19",
+          "evidence": "Scheda escursione del 19 ottobre 2025 da Prato di Campoli: boschi di faggio e tasso, parcheggio a 1138 m; sentieri 617/618 verso Vado della Rocca, 619 Serra Comune e 622 di ritorno. EE, +750/-750 m, 5 ore. Quote e metriche appartengono a questo itinerario, non all’anello CAI Roma."
+        },
+        {
+          "url": "https://www.comune.veroli.fr.it/home/vivere.html",
+          "ente": "Comune di Veroli",
+          "consultedAt": "2026-10-19",
+          "evidence": "Il sito comunale presenta Prato di Campoli come area naturalistica di Veroli e Veroli come città della provincia di Frosinone. Quota pubblicata 1143 m, differente dai 1140/1138 m delle schede CAI: non considerarla quota esatta del parcheggio."
+        },
+        {
+          "url": "https://www.cairoma.it/?p=29232",
+          "ente": "Fonte cartografica citata nella provenienza",
+          "consultedAt": "2026-10-19",
+          "evidence": "Centro editoriale coincidente con il punto WGS pubblicato dal CAI; il raggio non delimita l’area naturale."
+        }
+      ],
+      "samplingProvenance": {
+        "checkedOn": "2026-10-19",
+        "grid": 21,
+        "pointCount": 317,
+        "elevationSource": "Copernicus GLO90 2021 via Open-Meteo",
+        "resolutionM": 90,
+        "forestSource": "Carta Forestale tipologica Regione Lazio, geonode:tipi_forestali2",
+        "note": "Fasce p25/mediana/p75 arrotondate a 10 m, rappresentative del cerchio editoriale; carta forestale storica, non rilevazione attuale."
+      }
+    },
+    {
+      "id": "lepini-supino-santaserena",
+      "name": "Fonte Santa Serena e boschi del Monte Gemma",
+      "lat": 41.6020667,
+      "lon": 13.1660833,
+      "radius_m": 1500,
+      "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+      "province": [
+        "FR"
+      ],
+      "coordinateProvenance": {
+        "method": "published_wgs_point",
+        "sourceUrl": "https://www.cairoma.it/?p=28403",
+        "note": "Centro editoriale coincidente con il punto WGS pubblicato dal CAI; il raggio non delimita l’area naturale."
+      },
+      "collectionStatus": "unknown",
+      "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita.",
+      "collectionSourceUrl": "https://www.cairoma.it/?p=28403",
+      "publicationStatus": "active",
+      "manager": "Ente competente indicato nelle fonti",
+      "title": "Fonte Santa Serena e boschi del Monte Gemma",
+      "subtitle": "Ciociaria",
+      "description": "Santa Serena è un accesso già descritto dal CAI per entrare nei boschi dei Lepini orientali. Il giro a Gemma e Salerio alterna salita boscosa e cresta; serve individuare con il gestore la parte adatta a un’uscita a funghi e verificarne i diritti di raccolta.",
+      "bands": [
+        1110,
+        1230,
+        1340
+      ],
+      "protection": null,
+      "access": "Strada di montagna da Supino fino a Fonte Santa Serena.",
+      "parking": [
+        {
+          "name": "Fonte Santa Serena",
+          "lat": 41.6020666667,
+          "lon": 13.1660833333
+        }
+      ],
+      "accessStatus": "mapped_start",
+      "drive_min": 160,
+      "drive_km": 187.5,
+      "popularity": null,
+      "trails": "Monte Gemma e Monte Salerio da Fonte Santa Serena",
+      "sources": [
+        {
+          "url": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+          "ente": "Regione Lazio",
+          "consultedAt": "2026-10-19",
+          "evidence": "La raccolta richiede attestato/titolo o tesserino, documento e contributo annuale; la pagina rinvia alla L.R. 32/1998. Non prova un diritto di accesso alla singola proprietà o una deroga nelle aree protette."
+        },
+        {
+          "url": "https://www.cairoma.it/?p=28403",
+          "ente": "CAI Roma",
+          "consultedAt": "2026-10-19",
+          "evidence": "Uscita del 13 marzo 2025: da Fonte Santa Serena, Supino; 8 km, +500/-500 m, E, 4 ore escluse soste. Strada montana da Supino termina alla fonte; parcheggio, poi circa 1 km su asfalto prima della salita boscosa. Punto WGS N41°36.124′ E13°09.965′."
+        },
+        {
+          "url": "https://organizzazione.cai.it/sez-monterotondo/evento/monte-gemma-da-fonte-santa-serena-monti-lepini-escursionismo/",
+          "ente": "CAI Monterotondo",
+          "consultedAt": "2026-10-19",
+          "evidence": "Scheda del 7 giugno 2026: anello da Santa Serena, Supino (FR), attraverso faggete e ambienti carsici fino alla dorsale di Monte Gemma. Conferma il contesto boschivo senza estendere dati a tutte le pendici."
+        },
+        {
+          "url": "https://www.cairoma.it/?p=28403",
+          "ente": "Fonte cartografica citata nella provenienza",
+          "consultedAt": "2026-10-19",
+          "evidence": "Centro editoriale coincidente con il punto WGS pubblicato dal CAI; il raggio non delimita l’area naturale."
+        }
+      ],
+      "samplingProvenance": {
+        "checkedOn": "2026-10-19",
+        "grid": 21,
+        "pointCount": 317,
+        "elevationSource": "Copernicus GLO90 2021 via Open-Meteo",
+        "resolutionM": 90,
+        "forestSource": "Carta Forestale tipologica Regione Lazio, geonode:tipi_forestali2",
+        "note": "Fasce p25/mediana/p75 arrotondate a 10 m, rappresentative del cerchio editoriale; carta forestale storica, non rilevazione attuale."
+      }
+    },
+    {
+      "id": "simbruini-filettino-fiumata",
+      "name": "Fiumata e Fosso Acqua Corore",
+      "lat": 41.9067994,
+      "lon": 13.2921344,
+      "radius_m": 1500,
+      "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+      "province": [
+        "FR"
+      ],
+      "coordinateProvenance": {
+        "method": "official_trace_bbox_midpoint",
+        "sourceUrl": "https://www.parcomontisimbruini.it/gpx/693a.gpx",
+        "bbox": {
+          "west": 13.284499794244766,
+          "south": 41.898640505969524,
+          "east": 13.299768939614296,
+          "north": 41.914958311244845
+        },
+        "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+      },
+      "collectionStatus": "unknown",
+      "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita. Referente: Ente Parco Naturale Regionale Monti Simbruini.",
+      "collectionSourceUrl": "https://www.parcomontisimbruini.it/pun-dettaglio.php?id=2773",
+      "publicationStatus": "active",
+      "manager": "Ente Parco Naturale Regionale Monti Simbruini",
+      "title": "Fiumata e Fosso Acqua Corore",
+      "subtitle": "Ciociaria",
+      "description": "Acqua e faggeta danno a Fiumata un carattere diverso dai pianori asciutti del sud. Il 693a offre una base breve e documentata per esplorare il bosco; prima di pubblicarlo vanno risolti l’errore del comune sulla scheda ufficiale e le regole locali di raccolta.",
+      "bands": [
+        1090,
+        1170,
+        1230
+      ],
+      "protection": "Parco Monti Simbruini; sorgenti dell’Aniene nella ZSC omonima, come descritto dall’ente.",
+      "access": "Provinciale Trevi–Filettino; circa 2 km da Filettino si imbocca la carrabile per Fiumata. La scheda 693a contiene il refuso «Filattiera» nei campi automatici; il testo del Parco e il GPX rimandano a Filettino.",
+      "parking": [],
+      "accessStatus": "unverified",
+      "drive_min": null,
+      "drive_km": null,
+      "popularity": null,
+      "trails": "693a Fiumata–Fosso Acqua Corore",
+      "sources": [
+        {
+          "url": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+          "ente": "Regione Lazio",
+          "consultedAt": "2026-10-19",
+          "evidence": "La raccolta richiede attestato/titolo o tesserino, documento e contributo annuale; la pagina rinvia alla L.R. 32/1998. Non prova un diritto di accesso alla singola proprietà o una deroga nelle aree protette."
+        },
+        {
+          "url": "https://www.parcomontisimbruini.it/pun-dettaglio.php?id=2773",
+          "ente": "Ente Parco Naturale Regionale Monti Simbruini",
+          "consultedAt": "2026-10-19",
+          "evidence": "Fiumata nel comune di Filettino FR: provinciale Trevi-Filettino, deviazione sulla carrabile comunale a circa 2 km da Filettino. Due rami lungo Corore e Riglioso; faggi secolari sulle acque. Fonte narrativa descrive distanze approssimate diverse dalla scheda 693a: non fonderle."
+        },
+        {
+          "url": "https://www.parcomontisimbruini.it/itinerari-dettaglio.php?id_iti=2810",
+          "ente": "Ente Parco Naturale Regionale Monti Simbruini",
+          "consultedAt": "2026-10-19",
+          "evidence": "Scheda 693a: T, 2,700 km, 50 minuti, +168/-4 m; sterrata lungo Aniene poi faggeta e tornanti; parcheggio al bivio. Quote min/max pubblicate 948/1111 m del tracciato. Campi automatici comune/partenza erroneamente «Filattiera», in contrasto con testo e pagina locale Filettino: richiede rettifica/conferma."
+        },
+        {
+          "url": "https://www.parcomontisimbruini.it/gpx/693a.gpx",
+          "ente": "Ente Parco Naturale Regionale Monti Simbruini",
+          "consultedAt": "2026-10-19",
+          "evidence": "Link estratto dalla scheda 693a. Risposta HTTP 200, Content-Type application/gpx+xml, intestazione XML GPX 1.1 letta. Nessuna geometria estratta, convertita o salvata."
+        },
+        {
+          "url": "https://www.parchilazio.it/parcomontisimbruini-schede-17765-zona_di_protezione_speciale_monti_simbruini_ed_ernici",
+          "ente": "Regione Lazio / Parco Monti Simbruini",
+          "consultedAt": "2026-10-19",
+          "evidence": "Articolo del 7 dicembre 2021: sorgenti dell’Aniene in faggeta e relativa ZSC; cita tritone crestato italiano e salamandrina di Savi. Sono spunti del sito/ambiente, non avvistamenti recenti né presenze garantite sul 693a."
+        },
+        {
+          "url": "https://www.parcomontisimbruini.it/pdf/Reg.GeneraleEnte_det%20168_2007.pdf",
+          "ente": "Ente Parco Naturale Regionale Monti Simbruini",
+          "consultedAt": "2026-10-19",
+          "evidence": "PDF intestato Deliberazione Commissario n.58 del 14 agosto 2015: art.54 contempla raccolta nel rispetto della normativa, con esclusioni e facoltà di limitazioni temporanee. Nome file storico non prova vigenza/approvazione definitiva: non usato come autorizzazione corrente."
+        },
+        {
+          "url": "https://www.parcomontisimbruini.it/gpx/693a.gpx",
+          "ente": "Fonte cartografica citata nella provenienza",
+          "consultedAt": "2026-10-19",
+          "evidence": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+        }
+      ],
+      "samplingProvenance": {
+        "checkedOn": "2026-10-19",
+        "grid": 21,
+        "pointCount": 317,
+        "elevationSource": "Copernicus GLO90 2021 via Open-Meteo",
+        "resolutionM": 90,
+        "forestSource": "Carta Forestale tipologica Regione Lazio, geonode:tipi_forestali2",
+        "note": "Fasce p25/mediana/p75 arrotondate a 10 m, rappresentative del cerchio editoriale; carta forestale storica, non rilevazione attuale."
+      }
+    },
+    {
+      "id": "pnalm-settefrati-canneto",
+      "name": "Valle di Canneto da Settefrati",
+      "lat": 41.67028,
+      "lon": 13.8790896,
+      "radius_m": 2500,
+      "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+      "province": [
+        "FR"
+      ],
+      "coordinateProvenance": {
+        "method": "official_trace_bbox_midpoint",
+        "sourceUrl": "https://www.parcoabruzzo.it/iti_kmz.php?id=4988",
+        "bbox": {
+          "west": 13.85046601201267,
+          "south": 41.66184232025745,
+          "east": 13.90771313875895,
+          "north": 41.67871764460652
+        },
+        "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+      },
+      "collectionStatus": "restricted",
+      "collectionNote": "Raccolta regolamentata nel PNALM: verificare zona e autorizzazioni con il Parco; restare sui sentieri. Referente: Ente Parco Nazionale d’Abruzzo, Lazio e Molise.",
+      "collectionSourceUrl": "https://www.parcoabruzzo.it/pagina.php?id=618",
+      "publicationStatus": "active",
+      "manager": "Ente Parco Nazionale d’Abruzzo, Lazio e Molise",
+      "title": "Valle di Canneto da Settefrati",
+      "subtitle": "Ciociaria",
+      "description": "La valle di Canneto conserva un contesto di faggeta documentato sul versante laziale del PNALM. Il collegamento da Settefrati è un itinerario ufficiale da usare per orientare la ricerca; la raccolta resta sospesa come proposta operativa finché non sono chiariti zonazione e autorizzazioni locali.",
+      "bands": [
+        850,
+        1060,
+        1290
+      ],
+      "protection": "PNALM: il decalogo prescrive di restare sui sentieri e segnala la regolamentazione della raccolta.",
+      "access": "Partenza ufficiale del sentiero O7: Settefrati.",
+      "parking": [],
+      "accessStatus": "unverified",
+      "drive_min": null,
+      "drive_km": null,
+      "popularity": null,
+      "trails": "O7 Settefrati–Madonna di Canneto",
+      "sources": [
+        {
+          "url": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+          "ente": "Regione Lazio",
+          "consultedAt": "2026-10-19",
+          "evidence": "La raccolta richiede attestato/titolo o tesserino, documento e contributo annuale; la pagina rinvia alla L.R. 32/1998. Non prova un diritto di accesso alla singola proprietà o una deroga nelle aree protette."
+        },
+        {
+          "url": "https://www.parcoabruzzo.it/sentiero.php?id_iti=4988",
+          "ente": "Ente PN Abruzzo Lazio e Molise",
+          "consultedAt": "2026-10-19",
+          "evidence": "Scheda corrente: aperto, da Settefrati a Madonna Canneto, E, 8,258 km, 3 h 50. Link KMZ presente; GPX non individuato. Nessun dislivello nella scheda letta."
+        },
+        {
+          "url": "https://www.parchilazio.it/parcoabruzzo-natura",
+          "ente": "Regione Lazio / PN Abruzzo Lazio e Molise",
+          "consultedAt": "2026-10-19",
+          "evidence": "Il versante laziale include la valle di Canneto, descritta come ricoperta da faggi; la pagina tratta l’orso marsicano nel contesto di questa valle e delle altre valli laziali. Nessuna garanzia di incontro o segnalazione odierna."
+        },
+        {
+          "url": "https://www.parcoabruzzo.it/pagina.php?id=618",
+          "ente": "Ente PN Abruzzo Lazio e Molise",
+          "consultedAt": "2026-10-19",
+          "evidence": "L’ente chiede di non abbandonare i sentieri, non raccogliere fiori e rispettare i regolamenti; precisa che raccolta funghi e prodotti del bosco è regolamentata. Il decalogo non specifica da solo permessi, zone o deroghe del settore laziale."
+        },
+        {
+          "url": "https://www.parcoabruzzo.it/paesi.scheda.php?id=60072",
+          "ente": "Ente PN Abruzzo Lazio e Molise",
+          "consultedAt": "2026-10-19",
+          "evidence": "La scheda del comune indica Provincia Frosinone, Regione Lazio, e lega il paese alla Valle di Canneto. Non usata la quota del paese come quota del bosco o del santuario."
+        },
+        {
+          "url": "https://www.parcoabruzzo.it/iti_kmz.php?id=4988",
+          "ente": "Fonte cartografica citata nella provenienza",
+          "consultedAt": "2026-10-19",
+          "evidence": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+        }
+      ],
+      "samplingProvenance": {
+        "checkedOn": "2026-10-19",
+        "grid": 21,
+        "pointCount": 317,
+        "elevationSource": "Copernicus GLO90 2021 via Open-Meteo",
+        "resolutionM": 90,
+        "forestSource": "Carta Forestale tipologica Regione Lazio, geonode:tipi_forestali2",
+        "note": "Fasce p25/mediana/p75 arrotondate a 10 m, rappresentative del cerchio editoriale; carta forestale storica, non rilevazione attuale."
+      }
     }
-   ],
-   "trails": "Sentieri locali dell'Amatriciano.",
-   "protection": null,
-   "bands": [
-    920,
-    1000,
-    1040
-   ],
-   "proposed_by": "dati",
-   "title": "Domo",
-   "subtitle": "valle del Tronto, Amatrice"
-  }
- ],
- "popularity_note": "Notorieta' della zona 0-1 (euristica locale: Terminillo e Tancia piu' frequentati per vicinanza a Rieti e Roma)."
+  ],
+  "popularity_note": "Notorieta' della zona 0-1 (euristica locale: Terminillo e Tancia piu' frequentati per vicinanza a Rieti e Roma). Alle 21 nuove zone Lazio del 19/10 non è assegnata una notorietà: valore null, nessuna stima di affollamento."
 }

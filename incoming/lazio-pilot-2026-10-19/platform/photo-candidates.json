@@ -1,0 +1,709 @@
+{
+  "status": "metadata_only_not_integrated",
+  "scope": "Foto reali potenziali per l’estensione regionale; nessuna foto scaricata, ritagliata o approvata. Risoluzione e licenza non provano qualità fotografica né corrispondenza al luogo.",
+  "queries": [
+    {
+      "areaQuery": "vico-monte-venere",
+      "query": "Monte Venere Vico",
+      "apiUrl": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Monte+Venere+Vico&gsrnamespace=6&gsrlimit=3&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&iiurlwidth=900&format=json",
+      "checkedAt": "2026-10-19",
+      "candidates": [
+        {
+          "commonsPageId": 133488530,
+          "title": "File:Monte Fogliano e Monte Venere.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Monte_Fogliano_e_Monte_Venere.jpg",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Monte_Fogliano_e_Monte_Venere.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "previewUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Monte_Fogliano_e_Monte_Venere.jpg/960px-Monte_Fogliano_e_Monte_Venere.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 4434,
+          "height": 3101,
+          "author": "Albarubescens",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "credit": "Own work",
+          "visualReview": "pending",
+          "locationMatch": "search_candidate_not_confirmed",
+          "usage": "Non utilizzare come copertina prima di confronto visivo e geografico."
+        },
+        {
+          "commonsPageId": 133569188,
+          "title": "File:Monte Venere, Riserva naturale Lago di Vico.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Monte_Venere,_Riserva_naturale_Lago_di_Vico.jpg",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Monte_Venere%2C_Riserva_naturale_Lago_di_Vico.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "previewUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Monte_Venere%2C_Riserva_naturale_Lago_di_Vico.jpg/960px-Monte_Venere%2C_Riserva_naturale_Lago_di_Vico.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 4512,
+          "height": 3319,
+          "author": "Albarubescens",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "credit": "Own work",
+          "visualReview": "pending",
+          "locationMatch": "search_candidate_not_confirmed",
+          "usage": "Non utilizzare come copertina prima di confronto visivo e geografico."
+        },
+        {
+          "commonsPageId": 90890399,
+          "title": "File:Monte Venere ed il lago.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Monte_Venere_ed_il_lago.jpg",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Monte_Venere_ed_il_lago.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "previewUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Monte_Venere_ed_il_lago.jpg/960px-Monte_Venere_ed_il_lago.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 4023,
+          "height": 3016,
+          "author": "Albarubescens",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "credit": "Own work",
+          "visualReview": "pending",
+          "locationMatch": "search_candidate_not_confirmed",
+          "usage": "Non utilizzare come copertina prima di confronto visivo e geografico."
+        }
+      ],
+      "status": "queried",
+      "rejectedByMetadata": []
+    },
+    {
+      "areaQuery": "monte-rufeno",
+      "query": "Monte Rufeno",
+      "apiUrl": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Monte+Rufeno&gsrnamespace=6&gsrlimit=3&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&iiurlwidth=900&format=json",
+      "checkedAt": "2026-10-19",
+      "candidates": [
+        {
+          "commonsPageId": 90892238,
+          "title": "File:Monte Rufeno visto dalla cima dell'Amiata.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Monte_Rufeno_visto_dalla_cima_dell%27Amiata.jpg",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Monte_Rufeno_visto_dalla_cima_dell%27Amiata.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "previewUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Monte_Rufeno_visto_dalla_cima_dell%27Amiata.jpg/960px-Monte_Rufeno_visto_dalla_cima_dell%27Amiata.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2726,
+          "height": 1743,
+          "author": "Albarubescens",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "credit": "Own work",
+          "visualReview": "pending",
+          "locationMatch": "search_candidate_not_confirmed",
+          "usage": "Non utilizzare come copertina prima di confronto visivo e geografico."
+        }
+      ],
+      "status": "queried",
+      "rejectedByMetadata": []
+    },
+    {
+      "areaQuery": "oriolo-raschio",
+      "query": "Oriolo Romano beech forest",
+      "apiUrl": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Oriolo+Romano+beech+forest&gsrnamespace=6&gsrlimit=3&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&iiurlwidth=900&format=json",
+      "checkedAt": "2026-10-19",
+      "candidates": [
+        {
+          "commonsPageId": 98983733,
+          "title": "File:Fontanile di fonte Petrella.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Fontanile_di_fonte_Petrella.jpg",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/96/Fontanile_di_fonte_Petrella.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "previewUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Fontanile_di_fonte_Petrella.jpg/960px-Fontanile_di_fonte_Petrella.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2592,
+          "height": 4608,
+          "author": "Dino Michelini",
+          "license": "CC BY 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+          "credit": "Own work",
+          "visualReview": "pending",
+          "locationMatch": "search_candidate_not_confirmed",
+          "usage": "Non utilizzare come copertina prima di confronto visivo e geografico."
+        },
+        {
+          "commonsPageId": 65284712,
+          "title": "File:Fonte Petrella.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Fonte_Petrella.jpg",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/93/Fonte_Petrella.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "previewUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Fonte_Petrella.jpg/960px-Fonte_Petrella.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 4320,
+          "height": 2432,
+          "author": "Dino Michelini",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "credit": "Own work",
+          "visualReview": "pending",
+          "locationMatch": "search_candidate_not_confirmed",
+          "usage": "Non utilizzare come copertina prima di confronto visivo e geografico."
+        }
+      ],
+      "status": "queried",
+      "rejectedByMetadata": []
+    },
+    {
+      "areaQuery": "allumiere",
+      "query": "Allumiere faggeta",
+      "apiUrl": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Allumiere+faggeta&gsrnamespace=6&gsrlimit=3&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&iiurlwidth=900&format=json",
+      "checkedAt": "2026-10-19",
+      "candidates": [
+        {
+          "commonsPageId": 109595814,
+          "title": "File:Allumiere.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Allumiere.jpg",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Allumiere.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "previewUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Allumiere.jpg/960px-Allumiere.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 4608,
+          "height": 3291,
+          "author": "Albarubescens",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "credit": "Own work",
+          "visualReview": "pending",
+          "locationMatch": "search_candidate_not_confirmed",
+          "usage": "Non utilizzare come copertina prima di confronto visivo e geografico."
+        },
+        {
+          "commonsPageId": 119306695,
+          "title": "File:Faggeta e Cava di Alunite.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Faggeta_e_Cava_di_Alunite.jpg",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Faggeta_e_Cava_di_Alunite.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "previewUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Faggeta_e_Cava_di_Alunite.jpg/960px-Faggeta_e_Cava_di_Alunite.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 4608,
+          "height": 3456,
+          "author": "Albarubescens",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "credit": "Own work",
+          "visualReview": "pending",
+          "locationMatch": "search_candidate_not_confirmed",
+          "usage": "Non utilizzare come copertina prima di confronto visivo e geografico."
+        },
+        {
+          "commonsPageId": 99164764,
+          "title": "File:Fotowikitc.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Fotowikitc.jpg",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Fotowikitc.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "previewUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Fotowikitc.jpg/960px-Fotowikitc.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2736,
+          "height": 3648,
+          "author": "Riccardo Gilardi",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "credit": "Own work",
+          "visualReview": "pending",
+          "locationMatch": "search_candidate_not_confirmed",
+          "usage": "Non utilizzare come copertina prima di confronto visivo e geografico."
+        }
+      ],
+      "status": "queried",
+      "rejectedByMetadata": []
+    },
+    {
+      "areaQuery": "monterano",
+      "query": "Monterano landscape",
+      "apiUrl": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Monterano+landscape&gsrnamespace=6&gsrlimit=3&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&iiurlwidth=900&format=json",
+      "checkedAt": "2026-10-19",
+      "candidates": [
+        {
+          "commonsPageId": 120413927,
+          "title": "File:Vista dell'antico acquedotto di Canale Monterano.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Vista_dell%27antico_acquedotto_di_Canale_Monterano.jpg",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Vista_dell%27antico_acquedotto_di_Canale_Monterano.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "previewUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Vista_dell%27antico_acquedotto_di_Canale_Monterano.jpg/960px-Vista_dell%27antico_acquedotto_di_Canale_Monterano.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3992,
+          "height": 2992,
+          "author": "Francesco Simone Mensa",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "credit": "Own work",
+          "visualReview": "pending",
+          "locationMatch": "search_candidate_not_confirmed",
+          "usage": "Non utilizzare come copertina prima di confronto visivo e geografico."
+        }
+      ],
+      "status": "queried",
+      "rejectedByMetadata": [
+        {
+          "commonsPageId": 133188146,
+          "title": "File:Asfodelo nella Riserva di Monterano.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Asfodelo_nella_Riserva_di_Monterano.jpg",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/85/Asfodelo_nella_Riserva_di_Monterano.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "previewUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Asfodelo_nella_Riserva_di_Monterano.jpg/960px-Asfodelo_nella_Riserva_di_Monterano.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 4608,
+          "height": 3456,
+          "author": "Albarubescens",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "credit": "Own work",
+          "visualReview": "pending",
+          "locationMatch": "search_candidate_not_confirmed",
+          "usage": "Non utilizzare come copertina prima di confronto visivo e geografico.",
+          "rejectionReason": "Soggetto specialistico/struttura: non candidato alla copertina del bosco da questa ricerca."
+        },
+        {
+          "commonsPageId": 120373279,
+          "title": "File:Tomba etrusca, Necropoli dei Grottini di Rota.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Tomba_etrusca,_Necropoli_dei_Grottini_di_Rota.jpg",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Tomba_etrusca%2C_Necropoli_dei_Grottini_di_Rota.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "previewUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Tomba_etrusca%2C_Necropoli_dei_Grottini_di_Rota.jpg/960px-Tomba_etrusca%2C_Necropoli_dei_Grottini_di_Rota.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 4518,
+          "height": 3386,
+          "author": "Albarubescens",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "credit": "Own work",
+          "visualReview": "pending",
+          "locationMatch": "search_candidate_not_confirmed",
+          "usage": "Non utilizzare come copertina prima di confronto visivo e geografico.",
+          "rejectionReason": "Soggetto specialistico/struttura: non candidato alla copertina del bosco da questa ricerca."
+        }
+      ]
+    },
+    {
+      "areaQuery": "veio",
+      "query": "Parco Veio bosco",
+      "apiUrl": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Parco+Veio+bosco&gsrnamespace=6&gsrlimit=3&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&iiurlwidth=900&format=json",
+      "checkedAt": "2026-10-19",
+      "candidates": [],
+      "status": "queried",
+      "rejectedByMetadata": [
+        {
+          "commonsPageId": 168044941,
+          "title": "File:Fungo arancione luminoso.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Fungo_arancione_luminoso.jpg",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/27/Fungo_arancione_luminoso.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "previewUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Fungo_arancione_luminoso.jpg/960px-Fungo_arancione_luminoso.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 4608,
+          "height": 3456,
+          "author": "Albarubescens",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "credit": "Own work",
+          "visualReview": "pending",
+          "locationMatch": "search_candidate_not_confirmed",
+          "usage": "Non utilizzare come copertina prima di confronto visivo e geografico.",
+          "rejectionReason": "Soggetto specialistico/struttura: non candidato alla copertina del bosco da questa ricerca."
+        },
+        {
+          "commonsPageId": 108597408,
+          "title": "File:Il Friuli giornale politico-amministrativo-letterario-commerciale n. 152 (1895) (IA IlFriuli 152 1895).pdf",
+          "page": "https://commons.wikimedia.org/wiki/File:Il_Friuli_giornale_politico-amministrativo-letterario-commerciale_n._152_(1895)_(IA_IlFriuli_152_1895).pdf",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Il_Friuli_giornale_politico-amministrativo-letterario-commerciale_n._152_%281895%29_%28IA_IlFriuli_152_1895%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "previewUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Il_Friuli_giornale_politico-amministrativo-letterario-commerciale_n._152_%281895%29_%28IA_IlFriuli_152_1895%29.pdf/page1-960px-Il_Friuli_giornale_politico-amministrativo-letterario-commerciale_n._152_%281895%29_%28IA_IlFriuli_152_1895%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 1516,
+          "height": 2054,
+          "author": "Il Friuli",
+          "license": "Public domain",
+          "licenseUrl": "",
+          "credit": "Internet Archive identifier: IlFriuli_152_1895\nhttps://archive.org/download/IlFriuli_152_1895/history/files/Il%20Friuli%20_%20giornale%20politico-amministrativo-letterario-commerciale%20n.%20152%20%20%281895%29.PDF.%7E1%7E",
+          "visualReview": "pending",
+          "locationMatch": "search_candidate_not_confirmed",
+          "usage": "Non utilizzare come copertina prima di confronto visivo e geografico.",
+          "rejectionReason": "Formato/documento o opera illustrata, non foto di paesaggio candidata."
+        }
+      ]
+    },
+    {
+      "areaQuery": "tuscolo",
+      "query": "Tusculum landscape",
+      "apiUrl": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Tusculum+landscape&gsrnamespace=6&gsrlimit=3&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&iiurlwidth=900&format=json",
+      "checkedAt": "2026-10-19",
+      "candidates": [],
+      "status": "queried",
+      "rejectedByMetadata": [
+        {
+          "commonsPageId": 77198115,
+          "title": "File:Franz Johann Heinrich Nadorp - Album with Views of Rome and Surroundings, Landscape Studies, page 25a- Amp - 1989.13.ee - Cleveland Museum of Art.tif",
+          "page": "https://commons.wikimedia.org/wiki/File:Franz_Johann_Heinrich_Nadorp_-_Album_with_Views_of_Rome_and_Surroundings,_Landscape_Studies,_page_25a-_Amp_-_1989.13.ee_-_Cleveland_Museum_of_Art.tif",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/48/Franz_Johann_Heinrich_Nadorp_-_Album_with_Views_of_Rome_and_Surroundings%2C_Landscape_Studies%2C_page_25a-_Amp_-_1989.13.ee_-_Cleveland_Museum_of_Art.tif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "previewUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Franz_Johann_Heinrich_Nadorp_-_Album_with_Views_of_Rome_and_Surroundings%2C_Landscape_Studies%2C_page_25a-_Amp_-_1989.13.ee_-_Cleveland_Museum_of_Art.tif/lossy-page1-960px-Franz_Johann_Heinrich_Nadorp_-_Album_with_Views_of_Rome_and_Surroundings%2C_Landscape_Studies%2C_page_25a-_Amp_-_1989.13.ee_-_Cleveland_Museum_of_Art.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 5474,
+          "height": 4405,
+          "author": "Franz Nadorp",
+          "license": "CC0",
+          "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "credit": "https://clevelandart.org/art/1989.13.ee",
+          "visualReview": "pending",
+          "locationMatch": "search_candidate_not_confirmed",
+          "usage": "Non utilizzare come copertina prima di confronto visivo e geografico.",
+          "rejectionReason": "Formato/documento o opera illustrata, non foto di paesaggio candidata."
+        }
+      ]
+    },
+    {
+      "areaQuery": "monte-cavo",
+      "query": "Monte Cavo forest",
+      "apiUrl": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Monte+Cavo+forest&gsrnamespace=6&gsrlimit=3&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&iiurlwidth=900&format=json",
+      "checkedAt": "2026-10-19",
+      "candidates": [],
+      "status": "queried",
+      "rejectedByMetadata": [
+        {
+          "commonsPageId": 178780027,
+          "title": "File:ISS064-E-51263 - View of Italy - Lago di Nemi - Ariccia, Vallericcia - Lago Albano - Albano Laziale - Castel Gandolfo - Alban Hills (Colli Albani) - Colle Pardo - Colle delle Vacche - Piani di Gerri (cropped).jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:ISS064-E-51263_-_View_of_Italy_-_Lago_di_Nemi_-_Ariccia,_Vallericcia_-_Lago_Albano_-_Albano_Laziale_-_Castel_Gandolfo_-_Alban_Hills_(Colli_Albani)_-_Colle_Pardo_-_Colle_delle_Vacche_-_Piani_di_Gerri_(cropped).jpg",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/12/ISS064-E-51263_-_View_of_Italy_-_Lago_di_Nemi_-_Ariccia%2C_Vallericcia_-_Lago_Albano_-_Albano_Laziale_-_Castel_Gandolfo_-_Alban_Hills_%28Colli_Albani%29_-_Colle_Pardo_-_Colle_delle_Vacche_-_Piani_di_Gerri_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "previewUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/ISS064-E-51263_-_View_of_Italy_-_Lago_di_Nemi_-_Ariccia%2C_Vallericcia_-_Lago_Albano_-_Albano_Laziale_-_Castel_Gandolfo_-_Alban_Hills_%28Colli_Albani%29_-_Colle_Pardo_-_Colle_delle_Vacche_-_Piani_di_Gerri_%28cropped%29.jpg/960px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2800,
+          "height": 2298,
+          "author": "Earth Science and Remote Sensing Unit, Lyndon B. Johnson Space Center",
+          "license": "Public domain",
+          "licenseUrl": "",
+          "credit": "JSC Gateway to Astronaut Photography of Earth",
+          "visualReview": "pending",
+          "locationMatch": "search_candidate_not_confirmed",
+          "usage": "Non utilizzare come copertina prima di confronto visivo e geografico.",
+          "rejectionReason": "Ripresa satellitare, opera o documento: non adatta alla copertina di un giro nel bosco."
+        }
+      ]
+    },
+    {
+      "areaQuery": "nemi",
+      "query": "Nemi forest",
+      "apiUrl": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Nemi+forest&gsrnamespace=6&gsrlimit=3&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&iiurlwidth=900&format=json",
+      "checkedAt": "2026-10-19",
+      "candidates": [],
+      "status": "queried",
+      "rejectedByMetadata": [
+        {
+          "commonsPageId": 178780027,
+          "title": "File:ISS064-E-51263 - View of Italy - Lago di Nemi - Ariccia, Vallericcia - Lago Albano - Albano Laziale - Castel Gandolfo - Alban Hills (Colli Albani) - Colle Pardo - Colle delle Vacche - Piani di Gerri (cropped).jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:ISS064-E-51263_-_View_of_Italy_-_Lago_di_Nemi_-_Ariccia,_Vallericcia_-_Lago_Albano_-_Albano_Laziale_-_Castel_Gandolfo_-_Alban_Hills_(Colli_Albani)_-_Colle_Pardo_-_Colle_delle_Vacche_-_Piani_di_Gerri_(cropped).jpg",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/12/ISS064-E-51263_-_View_of_Italy_-_Lago_di_Nemi_-_Ariccia%2C_Vallericcia_-_Lago_Albano_-_Albano_Laziale_-_Castel_Gandolfo_-_Alban_Hills_%28Colli_Albani%29_-_Colle_Pardo_-_Colle_delle_Vacche_-_Piani_di_Gerri_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "previewUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/ISS064-E-51263_-_View_of_Italy_-_Lago_di_Nemi_-_Ariccia%2C_Vallericcia_-_Lago_Albano_-_Albano_Laziale_-_Castel_Gandolfo_-_Alban_Hills_%28Colli_Albani%29_-_Colle_Pardo_-_Colle_delle_Vacche_-_Piani_di_Gerri_%28cropped%29.jpg/960px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2800,
+          "height": 2298,
+          "author": "Earth Science and Remote Sensing Unit, Lyndon B. Johnson Space Center",
+          "license": "Public domain",
+          "licenseUrl": "",
+          "credit": "JSC Gateway to Astronaut Photography of Earth",
+          "visualReview": "pending",
+          "locationMatch": "search_candidate_not_confirmed",
+          "usage": "Non utilizzare come copertina prima di confronto visivo e geografico.",
+          "rejectionReason": "Ripresa satellitare, opera o documento: non adatta alla copertina di un giro nel bosco."
+        }
+      ]
+    },
+    {
+      "areaQuery": "livata",
+      "query": "Monte Livata",
+      "apiUrl": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Monte+Livata&gsrnamespace=6&gsrlimit=3&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&iiurlwidth=900&format=json",
+      "checkedAt": "2026-10-19",
+      "candidates": [
+        {
+          "commonsPageId": 133575502,
+          "title": "File:Monte Livata Monna dell'Orso vista pista nera.JPG",
+          "page": "https://commons.wikimedia.org/wiki/File:Monte_Livata_Monna_dell%27Orso_vista_pista_nera.JPG",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Monte_Livata_Monna_dell%27Orso_vista_pista_nera.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "previewUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Monte_Livata_Monna_dell%27Orso_vista_pista_nera.JPG/960px-Monte_Livata_Monna_dell%27Orso_vista_pista_nera.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3648,
+          "height": 2736,
+          "author": "Agordal",
+          "license": "Public domain",
+          "licenseUrl": "",
+          "credit": "Own work",
+          "visualReview": "pending",
+          "locationMatch": "search_candidate_not_confirmed",
+          "usage": "Non utilizzare come copertina prima di confronto visivo e geografico."
+        }
+      ],
+      "status": "queried",
+      "rejectedByMetadata": [
+        {
+          "commonsPageId": 107524915,
+          "title": "File:Osservatorio Le Vedute, Monte Livata 01.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Osservatorio_Le_Vedute,_Monte_Livata_01.jpg",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/44/Osservatorio_Le_Vedute%2C_Monte_Livata_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "previewUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Osservatorio_Le_Vedute%2C_Monte_Livata_01.jpg/960px-Osservatorio_Le_Vedute%2C_Monte_Livata_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3957,
+          "height": 2968,
+          "author": "Filippo Bussi",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "credit": "Own work",
+          "visualReview": "pending",
+          "locationMatch": "search_candidate_not_confirmed",
+          "usage": "Non utilizzare come copertina prima di confronto visivo e geografico.",
+          "rejectionReason": "Soggetto specialistico/struttura: non candidato alla copertina del bosco da questa ricerca."
+        },
+        {
+          "commonsPageId": 107524919,
+          "title": "File:Osservatorio Le Vedute, Monte Livata 02.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Osservatorio_Le_Vedute,_Monte_Livata_02.jpg",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Osservatorio_Le_Vedute%2C_Monte_Livata_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "previewUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Osservatorio_Le_Vedute%2C_Monte_Livata_02.jpg/960px-Osservatorio_Le_Vedute%2C_Monte_Livata_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 3968,
+          "height": 2976,
+          "author": "Filippo Bussi",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "credit": "Own work",
+          "visualReview": "pending",
+          "locationMatch": "search_candidate_not_confirmed",
+          "usage": "Non utilizzare come copertina prima di confronto visivo e geografico.",
+          "rejectionReason": "Soggetto specialistico/struttura: non candidato alla copertina del bosco da questa ricerca."
+        }
+      ]
+    },
+    {
+      "areaQuery": "cervara",
+      "query": "Cervara di Roma Prataglia",
+      "apiUrl": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Cervara+di+Roma+Prataglia&gsrnamespace=6&gsrlimit=3&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&iiurlwidth=900&format=json",
+      "checkedAt": "2026-10-19",
+      "candidates": [],
+      "status": "queried",
+      "rejectedByMetadata": []
+    },
+    {
+      "areaQuery": "gennaro",
+      "query": "Monte Gennaro",
+      "apiUrl": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Monte+Gennaro&gsrnamespace=6&gsrlimit=3&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&iiurlwidth=900&format=json",
+      "checkedAt": "2026-10-19",
+      "candidates": [
+        {
+          "commonsPageId": 36072544,
+          "title": "File:Monte Zappi Snow.JPG",
+          "page": "https://commons.wikimedia.org/wiki/File:Monte_Zappi_Snow.JPG",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Monte_Zappi_Snow.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "previewUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Monte_Zappi_Snow.JPG/960px-Monte_Zappi_Snow.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 5184,
+          "height": 3456,
+          "author": "Giammy98",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "credit": "Own work",
+          "visualReview": "pending",
+          "locationMatch": "search_candidate_not_confirmed",
+          "usage": "Non utilizzare come copertina prima di confronto visivo e geografico."
+        }
+      ],
+      "status": "queried",
+      "rejectedByMetadata": [
+        {
+          "commonsPageId": 48741893,
+          "title": "File:Gennaro monte, immacolata, 1682.JPG",
+          "page": "https://commons.wikimedia.org/wiki/File:Gennaro_monte,_immacolata,_1682.JPG",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/71/Gennaro_monte%2C_immacolata%2C_1682.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "previewUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Gennaro_monte%2C_immacolata%2C_1682.JPG/960px-Gennaro_monte%2C_immacolata%2C_1682.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2304,
+          "height": 3456,
+          "author": "Sailko",
+          "license": "CC BY 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+          "credit": "Own work",
+          "visualReview": "pending",
+          "locationMatch": "search_candidate_not_confirmed",
+          "usage": "Non utilizzare come copertina prima di confronto visivo e geografico.",
+          "rejectionReason": "Ripresa satellitare, opera o documento: non adatta alla copertina di un giro nel bosco."
+        }
+      ]
+    },
+    {
+      "areaQuery": "circeo",
+      "query": "Circeo forest",
+      "apiUrl": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Circeo+forest&gsrnamespace=6&gsrlimit=3&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&iiurlwidth=900&format=json",
+      "checkedAt": "2026-10-19",
+      "candidates": [],
+      "status": "queried",
+      "rejectedByMetadata": [
+        {
+          "commonsPageId": 111437685,
+          "title": "File:ISS024-E-8223 - View of Italy.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:ISS024-E-8223_-_View_of_Italy.jpg",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6f/ISS024-E-8223_-_View_of_Italy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "previewUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/ISS024-E-8223_-_View_of_Italy.jpg/960px-ISS024-E-8223_-_View_of_Italy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 4288,
+          "height": 2929,
+          "author": "Earth Science and Remote Sensing Unit, Lyndon B. Johnson Space Center",
+          "license": "Public domain",
+          "licenseUrl": "",
+          "credit": "JSC Gateway to Astronaut Photography of Earth",
+          "visualReview": "pending",
+          "locationMatch": "search_candidate_not_confirmed",
+          "usage": "Non utilizzare come copertina prima di confronto visivo e geografico.",
+          "rejectionReason": "Ripresa satellitare, opera o documento: non adatta alla copertina di un giro nel bosco."
+        },
+        {
+          "commonsPageId": 199735825,
+          "title": "File:Manoscritto n. P MSS 1502 IV Fondo Principale (Biblioteca 'Joppi' - Udine) (IA P MSS 1502 IV).pdf",
+          "page": "https://commons.wikimedia.org/wiki/File:Manoscritto_n._P_MSS_1502_IV_Fondo_Principale_(Biblioteca_%27Joppi%27_-_Udine)_(IA_P_MSS_1502_IV).pdf",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/55/Manoscritto_n._P_MSS_1502_IV_Fondo_Principale_%28Biblioteca_%27Joppi%27_-_Udine%29_%28IA_P_MSS_1502_IV%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "previewUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Manoscritto_n._P_MSS_1502_IV_Fondo_Principale_%28Biblioteca_%27Joppi%27_-_Udine%29_%28IA_P_MSS_1502_IV%29.pdf/page1-960px-Manoscritto_n._P_MSS_1502_IV_Fondo_Principale_%28Biblioteca_%27Joppi%27_-_Udine%29_%28IA_P_MSS_1502_IV%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 1454,
+          "height": 2058,
+          "author": "Biblioteca Civica 'Joppi' Udine",
+          "license": "Public domain",
+          "licenseUrl": "",
+          "credit": "Internet Archive identifier: P_MSS_1502_IV\nhttps://archive.org/download/P_MSS_1502_IV/P_MSS_1502_IV.pdf",
+          "visualReview": "pending",
+          "locationMatch": "search_candidate_not_confirmed",
+          "usage": "Non utilizzare come copertina prima di confronto visivo e geografico.",
+          "rejectionReason": "Formato/documento o opera illustrata, non foto di paesaggio candidata."
+        }
+      ]
+    },
+    {
+      "areaQuery": "aurunci",
+      "query": "Monti Aurunci forest",
+      "apiUrl": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Monti+Aurunci+forest&gsrnamespace=6&gsrlimit=3&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&iiurlwidth=900&format=json",
+      "checkedAt": "2026-10-19",
+      "candidates": [],
+      "status": "queried",
+      "rejectedByMetadata": []
+    },
+    {
+      "areaQuery": "ausoni",
+      "query": "Monti Ausoni",
+      "apiUrl": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Monti+Ausoni&gsrnamespace=6&gsrlimit=3&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&iiurlwidth=900&format=json",
+      "checkedAt": "2026-10-19",
+      "candidates": [],
+      "status": "queried",
+      "rejectedByMetadata": [
+        {
+          "commonsPageId": 178351355,
+          "title": "File:ISS020-E-18922 - View of Italy - Monti Ausoni - Cima del Nibbio - Lenola - Vallecorsa - Monte Il Piglioro - Pastena - Monte Cimate - Monte Solo (cropped).jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:ISS020-E-18922_-_View_of_Italy_-_Monti_Ausoni_-_Cima_del_Nibbio_-_Lenola_-_Vallecorsa_-_Monte_Il_Piglioro_-_Pastena_-_Monte_Cimate_-_Monte_Solo_(cropped).jpg",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/26/ISS020-E-18922_-_View_of_Italy_-_Monti_Ausoni_-_Cima_del_Nibbio_-_Lenola_-_Vallecorsa_-_Monte_Il_Piglioro_-_Pastena_-_Monte_Cimate_-_Monte_Solo_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "previewUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/ISS020-E-18922_-_View_of_Italy_-_Monti_Ausoni_-_Cima_del_Nibbio_-_Lenola_-_Vallecorsa_-_Monte_Il_Piglioro_-_Pastena_-_Monte_Cimate_-_Monte_Solo_%28cropped%29.jpg/960px-ISS020-E-18922_-_View_of_Italy_-_Monti_Ausoni_-_Cima_del_Nibbio_-_Lenola_-_Vallecorsa_-_Monte_Il_Piglioro_-_Pastena_-_Monte_Cimate_-_Monte_Solo_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2051,
+          "height": 2254,
+          "author": "Earth Science and Remote Sensing Unit, Lyndon B. Johnson Space Center",
+          "license": "Public domain",
+          "licenseUrl": "",
+          "credit": "JSC Gateway to Astronaut Photography of Earth",
+          "visualReview": "pending",
+          "locationMatch": "search_candidate_not_confirmed",
+          "usage": "Non utilizzare come copertina prima di confronto visivo e geografico.",
+          "rejectionReason": "Ripresa satellitare, opera o documento: non adatta alla copertina di un giro nel bosco."
+        },
+        {
+          "commonsPageId": 178289054,
+          "title": "File:ISS034-E-11051 - View of Italy - Capo Circeo - San Felice Circeo - Monti Ausoni - Monti Lepini - Latina - Terracina - Frosinone (cropped).jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:ISS034-E-11051_-_View_of_Italy_-_Capo_Circeo_-_San_Felice_Circeo_-_Monti_Ausoni_-_Monti_Lepini_-_Latina_-_Terracina_-_Frosinone_(cropped).jpg",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e3/ISS034-E-11051_-_View_of_Italy_-_Capo_Circeo_-_San_Felice_Circeo_-_Monti_Ausoni_-_Monti_Lepini_-_Latina_-_Terracina_-_Frosinone_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "previewUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/ISS034-E-11051_-_View_of_Italy_-_Capo_Circeo_-_San_Felice_Circeo_-_Monti_Ausoni_-_Monti_Lepini_-_Latina_-_Terracina_-_Frosinone_%28cropped%29.jpg/960px-ISS034-E-11051_-_View_of_Italy_-_Capo_Circeo_-_San_Felice_Circeo_-_Monti_Ausoni_-_Monti_Lepini_-_Latina_-_Terracina_-_Frosinone_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2412,
+          "height": 2278,
+          "author": "Earth Science and Remote Sensing Unit, Lyndon B. Johnson Space Center",
+          "license": "Public domain",
+          "licenseUrl": "",
+          "credit": "JSC Gateway to Astronaut Photography of Earth",
+          "visualReview": "pending",
+          "locationMatch": "search_candidate_not_confirmed",
+          "usage": "Non utilizzare come copertina prima di confronto visivo e geografico.",
+          "rejectionReason": "Ripresa satellitare, opera o documento: non adatta alla copertina di un giro nel bosco."
+        }
+      ]
+    },
+    {
+      "areaQuery": "ernici",
+      "query": "Prato di Campoli",
+      "apiUrl": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Prato+di+Campoli&gsrnamespace=6&gsrlimit=3&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&iiurlwidth=900&format=json",
+      "checkedAt": "2026-10-19",
+      "candidates": [
+        {
+          "commonsPageId": 144638277,
+          "title": "File:Prato di Campoli.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Prato_di_Campoli.jpg",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Prato_di_Campoli.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "previewUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Prato_di_Campoli.jpg/960px-Prato_di_Campoli.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2048,
+          "height": 1536,
+          "author": "Lucio90",
+          "license": "Public domain",
+          "licenseUrl": "",
+          "credit": "Own work",
+          "visualReview": "pending",
+          "locationMatch": "search_candidate_not_confirmed",
+          "usage": "Non utilizzare come copertina prima di confronto visivo e geografico."
+        },
+        {
+          "commonsPageId": 144638280,
+          "title": "File:Prato di Campoli versante ovest.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Prato_di_Campoli_versante_ovest.jpg",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Prato_di_Campoli_versante_ovest.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "previewUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Prato_di_Campoli_versante_ovest.jpg/960px-Prato_di_Campoli_versante_ovest.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2048,
+          "height": 1536,
+          "author": "Lucio90",
+          "license": "Public domain",
+          "licenseUrl": "",
+          "credit": "Own work",
+          "visualReview": "pending",
+          "locationMatch": "search_candidate_not_confirmed",
+          "usage": "Non utilizzare come copertina prima di confronto visivo e geografico."
+        },
+        {
+          "commonsPageId": 73616749,
+          "title": "File:Wild Horses (224754759).jpeg",
+          "page": "https://commons.wikimedia.org/wiki/File:Wild_Horses_(224754759).jpeg",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Wild_Horses_%28224754759%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "previewUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Wild_Horses_%28224754759%29.jpeg/960px-Wild_Horses_%28224754759%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2048,
+          "height": 1536,
+          "author": "Giuseppe Pinto",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "credit": "Imported from 500px (archived version) by the Archive Team. (detail page)",
+          "visualReview": "pending",
+          "locationMatch": "search_candidate_not_confirmed",
+          "usage": "Non utilizzare come copertina prima di confronto visivo e geografico."
+        }
+      ],
+      "status": "queried",
+      "rejectedByMetadata": []
+    },
+    {
+      "areaQuery": "mainarde",
+      "query": "Settefrati Canneto",
+      "apiUrl": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=Settefrati+Canneto&gsrnamespace=6&gsrlimit=3&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&iiurlwidth=900&format=json",
+      "checkedAt": "2026-10-19",
+      "candidates": [
+        {
+          "commonsPageId": 2641433,
+          "title": "File:Santuario di Canneto.JPG",
+          "page": "https://commons.wikimedia.org/wiki/File:Santuario_di_Canneto.JPG",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Santuario_di_Canneto.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "previewUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Santuario_di_Canneto.JPG/960px-Santuario_di_Canneto.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 2816,
+          "height": 2112,
+          "author": "Cominensis at Italian Wikipedia",
+          "license": "CC BY-SA 2.5",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+          "credit": "Transferred from it.wikipedia to Commons.",
+          "visualReview": "pending",
+          "locationMatch": "search_candidate_not_confirmed",
+          "usage": "Non utilizzare come copertina prima di confronto visivo e geografico."
+        },
+        {
+          "commonsPageId": 175546504,
+          "title": "File:Settefrati - Santuario di Canneto - 2025-09-25 05-56-30 001.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Settefrati_-_Santuario_di_Canneto_-_2025-09-25_05-56-30_001.jpg",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/da/Settefrati_-_Santuario_di_Canneto_-_2025-09-25_05-56-30_001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "previewUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Settefrati_-_Santuario_di_Canneto_-_2025-09-25_05-56-30_001.jpg/960px-Settefrati_-_Santuario_di_Canneto_-_2025-09-25_05-56-30_001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 4800,
+          "height": 2800,
+          "author": "Aggrucar",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "credit": "Own work",
+          "visualReview": "pending",
+          "locationMatch": "search_candidate_not_confirmed",
+          "usage": "Non utilizzare come copertina prima di confronto visivo e geografico."
+        },
+        {
+          "commonsPageId": 175546677,
+          "title": "File:Settefrati - Santuario di Canneto - 2025-09-25 06-07-12 001.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Settefrati_-_Santuario_di_Canneto_-_2025-09-25_06-07-12_001.jpg",
+          "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Settefrati_-_Santuario_di_Canneto_-_2025-09-25_06-07-12_001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "previewUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Settefrati_-_Santuario_di_Canneto_-_2025-09-25_06-07-12_001.jpg/960px-Settefrati_-_Santuario_di_Canneto_-_2025-09-25_06-07-12_001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "width": 4800,
+          "height": 2800,
+          "author": "Aggrucar",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "credit": "Own work",
+          "visualReview": "pending",
+          "locationMatch": "search_candidate_not_confirmed",
+          "usage": "Non utilizzare come copertina prima di confronto visivo e geografico."
+        }
+      ],
+      "status": "queried",
+      "rejectedByMetadata": []
+    }
+  ],
+  "counts": {
+    "initialSearchResults": 32,
+    "candidatePhotographs": 18,
+    "rejectedByMetadata": 14,
+    "visuallyApproved": 0
+  }
+}

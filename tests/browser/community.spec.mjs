@@ -1,19 +1,13 @@
 import { test, expect } from '@playwright/test';
 import { todayISO } from '../../js/weather.js';
-import {execFileSync} from 'node:child_process';
+import {randomBytes} from 'node:crypto';
 test.use({locale:'it-IT'});
-// Ogni prova ha il proprio budget di registrazioni nel database locale isolato.
-// Le molte passkey virtuali della suite non sono dieci iscrizioni dello stesso utente.
-test.beforeEach(()=>execFileSync('python3',['-c',`
-import pathlib,sqlite3,sys
-for path in pathlib.Path(sys.argv[1]).rglob('*.sqlite'):
- db=sqlite3.connect(path,timeout=20)
- if db.execute("SELECT COUNT(*) FROM sqlite_master WHERE name='rate_limits'").fetchone()[0]:
-  db.execute("DELETE FROM rate_limits WHERE key LIKE 'auth:%'");db.commit()
- db.close()
-`,process.env.FUNGAROLI_BROWSER_PERSIST]));
 
-async function setup(page) {
+async function setup(page,{gust=8}={}) {
+  // Un client locale distinto per ogni contesto mantiene separati i limiti delle
+  // passkey senza scrivere nel file SQLite mentre il Worker lo sta usando.
+  const ip='fd00:'+randomBytes(14).toString('hex').match(/.{4}/g).join(':');
+  await page.context().setExtraHTTPHeaders({'CF-Connecting-IP':ip});
   await page.route('**/*', async (route) => {
     const u = new URL(route.request().url());
     if(u.pathname!=='/api/weather/v1/forecast'&&u.hostname!=='api.open-meteo.com')return u.protocol==='https:'?route.abort():route.fallback();
@@ -21,12 +15,12 @@ async function setup(page) {
     const dates = Array.from({ length: 70 }, (_, i) => todayISO(new Date(Date.now() + (i - 62) * 864e5)));
     const time = dates.flatMap((d) => Array.from({ length: 24 }, (_, h) => `${d}T${String(h).padStart(2, '0')}:00`));
     const fill = (v) => Array(time.length).fill(v);
-    const out = Array.from({ length: count }, () => ({ daily: { time: dates, precipitation_sum: dates.map((_, i) => i % 4 ? 3 : 12), temperature_2m_mean: Array(70).fill(13), temperature_2m_min: Array(70).fill(8), temperature_2m_max: Array(70).fill(18) }, hourly: { time, soil_moisture_3_to_9cm: fill(.3), soil_temperature_6cm: fill(13), precipitation: fill(0), precipitation_probability: fill(0), weather_code: fill(1), wind_gusts_10m: fill(8), temperature_2m: fill(13) } }));
+    const out = Array.from({ length: count }, () => ({ daily: { time: dates, precipitation_sum: dates.map((_, i) => i % 4 ? 3 : 12), temperature_2m_mean: Array(70).fill(13), temperature_2m_min: Array(70).fill(8), temperature_2m_max: Array(70).fill(18) }, hourly: { time, soil_moisture_3_to_9cm: fill(.3), soil_temperature_6cm: fill(13), precipitation: fill(0), precipitation_probability: fill(0), weather_code: fill(1), wind_gusts_10m: fill(gust), temperature_2m: fill(13) } }));
     return route.fulfill({ json: out });
   });
-  await page.addInitScript(() => localStorage.setItem('fungaroli:legal-accepted', '32026-10-16'));
+  await page.addInitScript(() => localStorage.setItem('fungaroli:legal-accepted', '62026-10-20'));
   const errors=[]; page.on('pageerror', (e) => errors.push(e.message));
-  await page.goto('/');
+  await page.goto('/');await expect(page.locator('body')).not.toHaveAttribute('data-legal-pending','');
   await expect(page.locator('#editorial')).toBeHidden();
   await page.goto('/#/guide');await expect(page.locator('#editorial a')).toHaveCount(3);
   await page.goto('/');await expect(page.locator('#hero .cover-link')).toBeVisible();
@@ -36,7 +30,7 @@ async function register(page, name) {
   const cdp = await page.context().newCDPSession(page);
   await cdp.send('WebAuthn.enable');
   await cdp.send('WebAuthn.addVirtualAuthenticator', { options: { protocol: 'ctap2', transport: 'internal', hasResidentKey: true, hasUserVerification: true, isUserVerified: true, automaticPresenceSimulation: true } });
-  await page.locator('#community-intro [data-community-account]').click();
+  await page.locator('.appbar [data-community-account]').click();
   await page.locator('[data-handle]').fill(name);
   await page.locator('[data-register]').click();
   await expect(page.locator('dialog.community-dialog[open]')).toHaveCount(0);
@@ -57,7 +51,7 @@ test('base privata del profilo: salvataggio, distanze, navigatori, isolamento e 
     await r.fulfill({json:{base:data.user.base,routes:targets.map(p=>({key:`${p.lat.toFixed(5)},${p.lon.toFixed(5)}`,minutes:111,km:77})),source:'OSRM / OpenStreetMap',traffic:false}});
   });
   await register(page,'Base');const owner=(await api(page,'session')).data.user.id;
-  const score=await page.locator('#hero .ring b').textContent();
+  const score=await page.locator('#hero .cover-index b').textContent();
   await page.locator('[data-community-account]').first().click();const profile=page.locator('dialog.profile-dialog[open]');
   await profile.locator('.base-settings summary').click();expect(await page.evaluate(()=>globalThis.baseGpsCalls)).toBe(0);await profile.locator('[data-base-gps]').click();expect(await page.evaluate(()=>globalThis.baseGpsCalls)).toBe(1);expect((await api(page,'session')).data.user.base).toBe(null);
   await profile.locator('[data-base-query]').fill('Roma');await profile.locator('[data-base-search]').click();
@@ -65,13 +59,13 @@ test('base privata del profilo: salvataggio, distanze, navigatori, isolamento e 
   expect((await api(page,'session')).data.user.base).toEqual(rome);
   for(const width of[320,390,1280]){await page.setViewportSize({width,height:900});expect(await profile.evaluate(el=>el.scrollWidth<=el.clientWidth)).toBe(true);if(width===390)await profile.screenshot({path:'/tmp/fungaroli-profile-base-mobile.png'});}
   await profile.locator('.profile-actions [data-close]').click();await expect(page.locator('#hero .facts')).toContainText('111 min');
-  expect(await page.locator('#hero .ring b').textContent()).toBe(score);
+  expect(await page.locator('#hero .cover-index b').textContent()).toBe(score);
   await page.locator('#hero .cover-link').click();await page.locator('#detail [data-sec="accesso"] summary').click({position:{x:5,y:10}});
-  await expect(page.locator('#detail [data-sec="accesso"]')).toContainText('Da Roma 111 min · 77 km');
+  await expect(page.locator('#detail [data-sec="accesso"] > summary')).toContainText('111 min · 77 km da Roma');
   const href=await page.locator('#detail a[href*="google.com/maps/dir"]').first().getAttribute('href');expect(new URL(href).searchParams.get('origin')).toBe('41.9028,12.4964');
-  await page.reload();await expect(page.locator('#detail [data-sec="accesso"]')).toContainText('Da Roma');
+  await page.reload();await expect(page.locator('#detail [data-sec="accesso"] > summary')).toContainText('da Roma');
   expect((await api(page,'profile','PUT',{accountId:owner,base:{name:'Errata',lat:91,lon:0}})).status).toBe(422);
-  expect((await page.request.post('/api/community/travel',{headers:{origin:'http://localhost:8788'},data:{targets:[]}})).status()).toBe(422);
+  expect((await page.request.post('/api/community/travel',{headers:{origin:new URL(page.url()).origin},data:{targets:[]}})).status()).toBe(422);
   const csrf=await page.request.put('/api/community/profile',{headers:{origin:'https://evil.example'},data:{accountId:owner,base:null}});expect(csrf.status()).toBe(403);
   const second=await browser.newContext({serviceWorkers:'block'}),other=await second.newPage();await setup(other);await register(other,'Secondo');
   expect((await api(other,'session')).data.user.base).toBe(null);
@@ -161,18 +155,22 @@ test('tratto locale distinto dal percorso intero, segmenti separati e imbocco ma
   await expect(focus).toContainText('più segmenti separati');
   await focus.getByRole('tab',{name:'Tracciato',exact:true}).click();
   await expect(focus.locator('.walk-sketch polyline')).toHaveCount(2);
-  await focus.getByRole('tab',{name:'Profilo',exact:true}).click();
-  await expect(focus.getByRole('tabpanel',{name:'Profilo',exact:true})).toContainText('Non costituiscono un profilo continuo');
-  await expect(focus.getByRole('tabpanel',{name:'Profilo',exact:true}).locator('svg')).toHaveCount(0);
+  await focus.getByRole('tab',{name:'Quote',exact:true}).click();
+  await expect(focus.getByRole('tabpanel',{name:'Quote',exact:true})).toContainText('Non costituiscono un profilo continuo');
+  await expect(focus.getByRole('tabpanel',{name:'Quote',exact:true}).locator('svg')).toHaveCount(0);
   const values = await focus.locator('.walk-facts dd').allTextContents();
-  expect(values[1]).toContain('4,1 km');
-  expect(values[2]).toContain('9,9 km');
+  await expect(focus.locator('summary .walk-stats li').first()).toContainText('4,1 km');
+  expect(values).toHaveLength(1);
+  expect(values[0]).toContain('9,9 km');
   const gpx = await focus.locator('a[download]').getAttribute('href');
   const xml = decodeURIComponent(gpx.split(',').slice(1).join(','));
   expect(xml.match(/<trkseg>/g)).toHaveLength(2);
   expect(xml).toContain('Tratto nella zona');
   await page.goto('/#/zona/sangiovanni/0/sentiero/12313439');
   await expect(focus).toContainText('Non disponibile; le soste indicate riguardano la zona');
+  if(!await focus.evaluate(el=>el.open))await focus.locator(':scope > summary').click();
+  await expect(focus).toHaveAttribute('open','');
+  await expect(focus.locator('summary .walk-entrances')).toBeVisible();
   await expect(focus).toContainText('Punto sulla traccia');
   expect(errors).toEqual([]);
 });
@@ -192,9 +190,17 @@ test('un itinerario con lunghezza intera incoerente mostra «n.d.» e il titolo 
 });
 
 for(const width of [320,1280]) test(`tracciato e profilo nello stesso riquadro a ${width}px`,async({page})=>{
+  // La prova modifica il file locale al reload: mantiene la stessa fonte anche per gli avvisi.
+  await page.route('**/api/content/v1/snapshot',r=>r.fulfill({status:503,json:{error:'local trail fixture'}}));
   await page.setViewportSize({width,height:900});await page.emulateMedia({reducedMotion:'reduce'});
   const errors=await setup(page);await page.goto('/#/zona/tancia/0/sentiero/12313366');
-  const focus=page.locator('#detail .walk-focus');await focus.locator(':scope > summary').click();
+  const focus=page.locator('#detail .walk-focus'),summary=focus.locator(':scope > summary');
+  await expect(summary.locator('.walk-entrance').first()).toBeVisible();
+  await expect(summary.locator('.tprof,.ws-forest')).toHaveCount(0);
+  await summary.locator('.walk-title').click();
+  await expect(summary.locator('.walk-entrance').first()).toBeHidden();
+  await expect(summary.locator('.walk-title')).toBeVisible();
+  await expect(focus.locator('.sec-body > .ws-forest')).toBeVisible();
   const visual=focus.locator('.trail-visual'),trace=visual.getByRole('tab',{name:'Tracciato',exact:true,includeHidden:true}),profile=visual.getByRole('tab',{name:'Profilo',exact:true,includeHidden:true});
   await expect(profile).toHaveAttribute('aria-selected','true');
   await expect(visual.getByRole('tabpanel',{name:'Profilo',exact:true})).toBeVisible();
@@ -232,10 +238,23 @@ for(const width of [320,1280]) test(`tracciato e profilo nello stesso riquadro a
   await page.route('**/api/content/v1/snapshot',r=>r.fulfill({status:503,json:{error:'test'}}));
   await page.route('**/data/trails.json',r=>r.fulfill({json:data}));
   await page.evaluate(()=>{localStorage.removeItem('fungaroli:content:v1');localStorage.removeItem('fungaroli:prefs:v2');});await page.reload();
-  await focus.locator(':scope > summary').click();await profile.click();
-  await expect(visual.getByRole('tabpanel',{name:'Profilo',exact:true})).toContainText('mancano quote sufficienti');
-  await expect(visual.getByRole('tabpanel',{name:'Profilo',exact:true}).locator('svg')).toHaveCount(0);
+  await focus.locator(':scope > summary').click();await visual.getByRole('tab',{name:'Quote',exact:true}).click();
+  await expect(visual.getByRole('tabpanel',{name:'Quote',exact:true})).toContainText('mancano quote sufficienti');
+  await expect(visual.getByRole('tabpanel',{name:'Quote',exact:true}).locator('svg')).toHaveCount(0);
   expect(errors).toEqual([]);
+});
+
+test('Quando ha una sola testata, mantiene gli avvisi meteo e aggiunge solo dettagli',async({page})=>{
+ await page.clock.setFixedTime(new Date(new Date().setUTCHours(0,0,0,0)));
+ await page.setViewportSize({width:390,height:900});await page.emulateMedia({reducedMotion:'reduce'});
+ const errors=await setup(page,{gust:46});await page.goto('/#/zona/tancia/0');
+ const section=page.locator('#detail details[data-sec="quando"]'),summary=section.locator(':scope > summary');
+ await expect(summary.locator('.essential-summary')).toHaveCount(1);await expect(summary.locator('.plan-k')).toHaveText('Quando');
+ await expect(summary).toContainText('Arriva');await expect(summary).toContainText('46 km/h');await expect(summary).not.toContainText("Meteo dell'uscita");
+ await summary.click();await expect(section).toHaveAttribute('open','');
+ const body=section.locator(':scope > .sec-body');await expect(body).toContainText('Orario consentito di raccolta');await expect(body).toContainText('Partenza ·');await expect(body).not.toContainText('Arrivo consigliato');await expect(body.locator('.badge.crowd-basso,.badge.crowd-medio,.badge.crowd-alto')).toHaveCount(0);
+ const method=body.locator('.timing-method');await expect(body.locator('details')).toHaveCount(0);await expect(method).toContainText('presenze e passaparola non misurati');
+ await section.screenshot({path:'/tmp/fronda-when-accordion.png'});expect(errors).toEqual([]);
 });
 
 test('riepiloghi essenziali negli accordion sul posto, senza voci duplicate o salti',async({page})=>{
@@ -255,8 +274,8 @@ test('riepiloghi essenziali negli accordion sul posto, senza voci duplicate o sa
 
 test('editoriale, filtri completi, passkey, isolamento e condivisione revocabile', async ({ browser, page }) => {
   const errors = await setup(page);
-  await expect(page.locator('#community-intro')).toContainText('nessuna segnalazione');
-  await page.locator('#active-filters [data-more]').click();
+  await expect(page.locator('#community-intro')).toContainText('Ancora nessuna osservazione condivisa.');
+  await page.locator('#appbar-home-filters [data-more]:visible,#home-filter-action [data-more]:visible').first().click();
   await expect(page.locator('#full-filters [data-group]')).toHaveCount(11);
   // «Azzera» compare solo quando qualcosa è cambiato e riporta ai valori di partenza
   await expect(page.locator('#full-filters [data-reset]')).toHaveCount(0);
@@ -294,7 +313,7 @@ test('editoriale, filtri completi, passkey, isolamento e condivisione revocabile
   expect((await api(page,'summary')).data.totalReports).toBe(0); expect((await api(page,'entries')).data.entries).toHaveLength(1);
   await api(page,'auth/logout','POST',{}); expect((await api(page,'entries')).status).toBe(401);
   await page.goto('/');
-  await page.locator('#community-intro [data-community-account]').click(); await page.locator('[data-login]').click();
+  await page.locator('.appbar [data-community-account]').click(); await page.locator('[data-login]').click();
   await expect(page.locator('dialog.community-dialog[open]')).toHaveCount(0);
   expect((await api(page,'entries')).data.entries).toHaveLength(1);
   await api(page,'account','DELETE'); expect((await api(page,'session')).status).toBe(401);
@@ -308,14 +327,14 @@ test('segnalazione rapida su telefono, conteggi e ritiro dal diario', async ({ p
   await page.screenshot({path:'/tmp/fungaroli-mobile-home.png',fullPage:true});
   await register(page,'Test rapido');
   await page.locator('#community-intro [data-report]').click();
-  const dlg=page.locator('dialog[aria-label="Segnala dal bosco"]');
+  const dlg=page.locator('dialog[aria-label="Annota un’osservazione nel taccuino"]');
   await dlg.locator('#report-zone').fill('vallonina'); await dlg.locator('#report-zone-options [role="option"]').click();
   await dlg.locator('#report-species').fill('mazza'); await dlg.locator('#report-species-options [role="option"]').click();
   await dlg.locator('[name="amount"][value="1"]').check(); await dlg.locator('[type="submit"]').click();
   await expect(dlg.locator('[data-status]')).toContainText('conteggi collettivi');
   await dlg.locator('[data-close]').click();
   expect((await api(page,'summary')).data.reports.find(r=>r.speciesId==='procera').sightings).toBe(1);
-  await page.goto('/#/diario'); await expect(page.locator('[data-withdraw-entry]')).toHaveCount(1);
+  await page.goto('/#/diario');await page.locator('.diary-card-link').first().click(); await expect(page.locator('[data-withdraw-entry]')).toHaveCount(1);
   await page.locator('[data-withdraw-entry]').click();
   await expect(page.locator('#journal-list .j-action-status')).toContainText('Segnalazioni ritirate');
   expect((await api(page,'summary')).data.totalReports).toBe(0);
@@ -359,44 +378,35 @@ test('taccuini e community restano accessibili senza dati meteo', async ({ page 
   await expect(page.locator('#editorial')).toBeHidden();
   await page.goto('/#/guide');await expect(page.locator('#editorial a')).toHaveCount(3);
   await page.goto('/');
-  await expect(page.locator('#community-intro')).toContainText('nessuna segnalazione');
-  await page.locator('#community-intro [data-community-account]').click();
+  await expect(page.locator('#community-intro')).toContainText('Ancora nessuna osservazione condivisa.');
+  await page.locator('.appbar [data-community-account]').click();
   await expect(page.locator('[data-register]')).toBeVisible();
 });
 
-test('migrazione esplicita del diario con codice senza pubblicare osservazioni', async ({ page }) => {
-  await setup(page); await register(page,'Test migrazione');
-  await page.route('**/api/diario',r=>{
-    expect(r.request().headers().authorization).toBe('Bearer codice-di-test');
-    return r.fulfill({json:{entries:[{id:'legacy123',date:todayISO(),zoneId:'tancia',finds:{edulis:2},note:'nota del vecchio diario',predicted:{edulis:72},savedAt:new Date().toISOString()}]}});
-  });
-  await page.goto('/#/diario');
-  await page.locator('#notebook-storage-panel > summary').click();await page.locator('#journal-storage details summary').click();
-  await page.locator('[data-legacy-code]').fill('codice-di-test'); await page.locator('[data-import-legacy] [type="submit"]').click();
-  await expect(page.locator('[data-legacy-status]')).toContainText('1 voci importate');
-  expect((await api(page,'entries')).data.entries[0].note).toBe('nota del vecchio diario');
-  expect((await api(page,'summary')).data.totalReports).toBe(0);
-  await api(page,'account','DELETE');
+test('taccuino: gestione profilo senza importazione o esportazione',async({page})=>{
+ const errors=await setup(page);await page.goto('/#/diario');
+ const panel=page.locator('#notebook-storage-panel');await panel.locator(':scope > summary').click();
+ await expect(panel.locator('#journal-export,#journal-import,[data-import-local],[data-import-legacy]')).toHaveCount(0);
+ await expect(panel).not.toContainText(/Importa|Esporta|vecchio taccuino/);await expect(panel.locator('[data-community-account]')).toBeVisible();
+ await register(page,'Profilo senza copie');await expect(panel.locator('[data-community-account]')).toHaveText('Gestisci il profilo');
+ await expect(panel).not.toContainText(/Importa|Esporta|vecchio taccuino/);await expect(panel).toContainText('sincronizzato con la passkey');
+ expect(errors).toEqual([]);await api(page,'account','DELETE');
 });
 
-test('i campi del diario importato vengono visualizzati come testo', async ({ page }) => {
-  // Import while the archive is still opening: this must not reject a valid JSON file.
-  await page.route('**/api/community/session', async route => {
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    await route.continue();
-  });
-  await setup(page); await page.goto('/#/diario');
-  const payload={id:'x123"><img src=x onerror="window.injected=1">',date:todayISO(),zoneId:'tancia',band:'<img src=x onerror="window.injected=1">',note:'<svg onload="window.injected=1">',finds:{},predicted:{},savedAt:new Date().toISOString()};
-  await page.locator('#journal-import').setInputFiles({name:'diario.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify({entries:[payload]}))});
-  await expect(page.locator('#journal-list')).toContainText(payload.note);
-  expect(await page.evaluate(()=>window.injected)).toBeUndefined();
-  expect(await page.locator('#journal-list [onerror], #journal-list [onload]').count()).toBe(0);
+test('i campi del diario locale vengono visualizzati come testo',async({page})=>{
+ const payload={id:'x123"><img src=x onerror="window.injected=1">',date:todayISO(),zoneId:'tancia',band:'<img src=x onerror="window.injected=1">',note:'<svg onload="window.injected=1">',finds:{},predicted:{},savedAt:new Date().toISOString()};
+ await page.addInitScript(payload=>localStorage.setItem('fungaroli:diario:v1',JSON.stringify([payload])),payload);
+ await setup(page);await page.goto('/#/diario');
+ await expect(page.locator('#journal-list')).toContainText(payload.note);
+ expect(await page.evaluate(()=>window.injected)).toBeUndefined();
+ expect(await page.locator('#journal-list [onerror],#journal-list [onload]').count()).toBe(0);
+ expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('fungaroli:diario:v1'))[0].note)).toBe(payload.note);
 });
 
 test('autocomplete dei commestibili, selezione individuale, stagione e persistenza', async ({page})=>{
   await page.setViewportSize({width:390,height:844}); const errors=await setup(page);
   const baseline=await page.locator('#hero .pc').first().textContent();
-  await page.locator('#active-filters [data-more]').click();
+  await page.locator('#appbar-home-filters [data-more]:visible,#home-filter-action [data-more]:visible').first().click();
   const input=page.locator('#species-filter-search'), options=page.locator('#species-filter-options');
   await input.fill('phalloides'); await expect(options.getByRole('option')).toHaveCount(0);
   await input.fill('agrocybe aegerita'); await expect(options.getByRole('option')).toHaveCount(1);
@@ -410,7 +420,7 @@ test('autocomplete dei commestibili, selezione individuale, stagione e persisten
   await page.screenshot({path:'/tmp/fungaroli-species-filter.png',fullPage:true});
   await page.locator('#full-filters [data-close]').first().click();
   await expect(page.locator('#hero')).toContainText('indice di crescita non è ancora disponibile');
-  await expect(page.locator('#hero .ring')).toHaveCount(0);
+  await expect(page.locator('#hero .cover-index')).toHaveCount(0);
   await page.locator('#hero .explore-fallback a').first().click();
   await expect(page.locator('#detail')).toContainText('Indice non ancora disponibile');
   await expect(page.locator('#detail .trails li').first()).toBeVisible();
@@ -418,15 +428,15 @@ test('autocomplete dei commestibili, selezione individuale, stagione e persisten
   await page.goto('/#/specie'); await expect(page.locator('#sp-cards .pill')).toHaveCount(0);
   await page.locator('#sp-cards').getByRole('link',{name:'Pioppino',exact:true}).click();
   await expect(page.locator('#edible-detail')).toContainText('Pioppino');
-  await expect(page.locator('#edible-detail')).toContainText('non è ancora disponibile');
-  await page.goto('/'); await page.locator('#active-filters [data-more]').click();
+  await expect(page.locator('#edible-detail')).toContainText('Indice non ancora disponibile');
+  await page.goto('/'); await page.locator('#appbar-home-filters [data-more]:visible,#home-filter-action [data-more]:visible').first().click();
   await input.fill('Boletus pinophilus'); await input.press('Enter');
   const pref=await page.evaluate(()=>JSON.parse(localStorage.getItem('fungaroli:prefs:v2')));
   expect(pref.speciesIds).toContain('pinophilus'); expect(pref.speciesIds).not.toContain('edulis');
   await page.locator('#full-filters [data-close]').first().click();
   await expect(page.locator('#hero')).toContainText('Porcino rosso');
   await page.goto('/'); await expect(page.locator('#followed-species')).toHaveCount(0);
-  await page.locator('#active-filters [data-more]').click();
+  await page.locator('#appbar-home-filters [data-more]:visible,#home-filter-action [data-more]:visible').first().click();
   await expect(page.locator('#full-filters [data-remove-species]')).toHaveCount(3);
   await expect(page.locator('#full-filters [data-remove-species] .season-badge')).toHaveCount(3);
   await page.locator('#full-filters [data-all]').click();
@@ -438,8 +448,8 @@ test('autocomplete dei commestibili, selezione individuale, stagione e persisten
 test('le nuove specie sono segnalabili e i tossici restano esclusi dal server',async({page})=>{
   const errors=await setup(page);await register(page,'Test nuovo catalogo');
   await page.locator('#community-intro [data-report]').click();
-  const dlg=page.locator('dialog[aria-label="Segnala dal bosco"]');
-  await dlg.locator('#report-species').click();await expect(dlg.locator('#report-species-options [role="option"]')).toHaveCount(46);
+  const dlg=page.locator('dialog[aria-label="Annota un’osservazione nel taccuino"]');
+  await dlg.locator('#report-species').click();await expect(dlg.locator('#report-species-options [role="option"]')).toHaveCount(51);
   await dlg.locator('#report-zone').fill('vallonina');await dlg.locator('#report-zone-options [role="option"]').click();
   await dlg.locator('#report-species').fill('cyclocybe');await dlg.locator('#report-species-options [role="option"]').click();
   await dlg.locator('[name="amount"][value="1"]').check();await dlg.locator('[type="submit"]').click();
@@ -457,7 +467,7 @@ for(const width of [320,1280]) test(`form osservazioni: autocomplete, contesto e
   await page.setViewportSize({width,height:900});await page.emulateMedia({reducedMotion:'reduce'});
   const errors=await setup(page);await register(page,'Form '+width);
   await page.locator('#community-intro [data-report]').click();
-  const dlg=page.locator('dialog[aria-label="Segnala dal bosco"]'),zone=dlg.locator('#report-zone'),species=dlg.locator('#report-species');
+  const dlg=page.locator('dialog[aria-label="Annota un’osservazione nel taccuino"]'),zone=dlg.locator('#report-zone'),species=dlg.locator('#report-species');
   await expect(dlg.locator('[name="zone"]')).toHaveValue('');await expect(dlg.locator('[name="species"]')).toHaveValue('');
   await zone.fill('vallon');await expect(dlg.locator('#report-zone-options [role="option"]')).toHaveCount(1);
   await page.keyboard.press('ArrowDown');await expect(zone).toHaveAttribute('aria-activedescendant',/report-zone-options/);
@@ -529,22 +539,67 @@ for(const width of [390,1280])test(`azioni del taccuino su uscita esistente: con
  await page.setViewportSize({width,height:900});const errors=await setup(page);await register(page,'Azioni');
  const entry={id:'notebook-action-test',kind:'outing',zoneId:'rascino',date:todayISO(),band:null,finds:{'agaricus-campestris':3},searched:['agaricus-campestris'],note:'',predicted:{},savedAt:new Date().toISOString()};
  expect((await api(page,'entries/'+entry.id,'PUT',entry)).status).toBe(200);
- await page.goto('/#/diario');await page.reload();await expect(page.locator('#journal-list')).toContainText('Prataiolo');
+ await page.goto('/#/diario/pagina/'+entry.id);await page.reload();await expect(page.locator('#journal-list')).toContainText('Prataiolo');
  await page.locator('[data-share-entry]').click();await expect(page.locator('[data-journal-id] .j-action-status')).toContainText('Osservazioni condivise');expect((await api(page,'summary')).data.totalReports).toBe(1);
  await page.locator('[data-withdraw-entry]').click();await expect(page.locator('[data-journal-id] .j-action-status')).toContainText('Segnalazioni ritirate');expect((await api(page,'summary')).data.totalReports).toBe(0);
  await page.locator('[data-del]').click();await expect(page.locator('[data-del]')).toContainText('Conferma eliminazione');const refresh=page.waitForResponse(r=>r.url().endsWith('/api/community/entries'));await page.evaluate(()=>document.dispatchEvent(new CustomEvent('fungaroli:refresh-community')));await refresh;await expect(page.locator('[data-del]')).toContainText('Conferma eliminazione');await page.locator('[data-cancel-delete]').click();await expect(page.locator('[data-del]')).toHaveText('Elimina');await page.locator('[data-del]').click();await page.locator('[data-journal-id]').screenshot({path:`/tmp/notebook-actions-confirm-${width}.png`});
- let release,seen;const gate=new Promise(r=>release=r),ready=new Promise(r=>seen=r);await page.route('**/api/community/entries',async route=>{const old=await route.fetch();seen();await gate;await route.fulfill({response:old});});await page.evaluate(()=>document.dispatchEvent(new CustomEvent('fungaroli:refresh-community')));await ready;await page.locator('[data-del]').click();await expect(page.locator('#journal-list .j-item')).toHaveCount(0);release();await page.waitForResponse(r=>r.url().endsWith('/api/community/entries'));await expect(page.locator('#journal-list .j-item')).toHaveCount(0);expect((await api(page,'entries')).data.entries).toHaveLength(0);
+ let release,seen;const gate=new Promise(r=>release=r),ready=new Promise(r=>seen=r);await page.route('**/api/community/entries',async route=>{const old=await route.fetch();seen();await gate;await route.fulfill({response:old});});await page.evaluate(()=>document.dispatchEvent(new CustomEvent('fungaroli:refresh-community')));await ready;await page.locator('[data-del]').click();await expect(page.locator('#journal-list .diary-card')).toHaveCount(0);release();await page.waitForResponse(r=>r.url().endsWith('/api/community/entries'));await expect(page.locator('#journal-list .diary-card')).toHaveCount(0);expect((await api(page,'entries')).data.entries).toHaveLength(0);
  await api(page,'account','DELETE');expect(errors).toEqual([]);
 });
 
 test('azioni del taccuino: timeout, errori accanto alla voce e riprova senza perdita dei dati',async({page})=>{
  const errors=await setup(page);await register(page,'Riprova');const id='notebook-timeout-test';
  expect((await api(page,'entries/'+id,'PUT',{id,kind:'outing',zoneId:'rascino',date:todayISO(),band:null,finds:{'agaricus-campestris':3},searched:['agaricus-campestris'],note:'',predicted:{},savedAt:new Date().toISOString()})).status).toBe(200);
- await page.goto('/#/diario');await page.reload();const row=page.locator('[data-journal-id]');await expect(row).toBeVisible();
+ await page.goto('/#/diario/pagina/'+id);await page.reload();const row=page.locator('[data-journal-id]');await expect(row).toBeVisible();
  let release;const gate=new Promise(r=>release=r);await page.route('**/api/community/reports',async route=>{if(route.request().method()!=='POST')return route.fallback();await gate;try{await route.fulfill({status:503,json:{error:'Non disponibile'}});}catch{/* cancelled by the request timeout */}});
  await page.evaluate(()=>{const timeout=AbortSignal.timeout;globalThis.restoreActionTimeout=()=>AbortSignal.timeout=timeout;AbortSignal.timeout=ms=>timeout.call(AbortSignal,ms===15000?150:ms);});await row.locator('[data-share-entry]').click();await expect(row.locator('.j-action-status')).toContainText('impiega troppo tempo');await expect(row.locator('[data-share-entry]')).toBeEnabled();await expect(row.locator('[role="alert"]')).toBeVisible();release();await page.unroute('**/api/community/reports');await page.evaluate(()=>globalThis.restoreActionTimeout());
  await page.route('**/api/community/reports',route=>route.request().method()==='POST'?route.fulfill({status:200,contentType:'text/html',body:'Servizio temporaneamente indisponibile'}):route.fallback());await row.locator('[data-share-entry]').click();await expect(row.locator('[role="alert"]')).toContainText('risposta non valida');expect((await api(page,'summary')).data.totalReports).toBe(0);await page.unroute('**/api/community/reports');
  await row.locator('[data-share-entry]').click();await expect(row.locator('.j-action-status')).toContainText('Osservazioni condivise');expect((await api(page,'summary')).data.totalReports).toBe(1);
  await page.route('**/api/community/reports',route=>route.request().method()==='DELETE'?route.fulfill({status:503,json:{error:'Ritiro non disponibile: riprova.'}}):route.fallback());await row.locator('[data-withdraw-entry]').click();await expect(row.locator('[role="alert"]')).toContainText('Ritiro non disponibile');expect((await api(page,'summary')).data.totalReports).toBe(1);await page.unroute('**/api/community/reports');await row.locator('[data-withdraw-entry]').click();await expect(row.locator('.j-action-status')).toContainText('Segnalazioni ritirate');
  await page.route('**/api/community/entries/'+id,route=>route.request().method()==='DELETE'?route.fulfill({status:503,json:{error:'Eliminazione non disponibile: riprova.'}}):route.fallback());await row.locator('[data-del]').click();await row.locator('[data-del]').click();await expect(row.locator('[role="alert"]')).toContainText('Eliminazione non disponibile');expect((await api(page,'entries')).data.entries).toHaveLength(1);await page.unroute('**/api/community/entries/'+id);await row.locator('[data-del]').click();await row.locator('[data-del]').click();await expect(row).toHaveCount(0);expect((await api(page,'entries')).data.entries).toHaveLength(0);await api(page,'account','DELETE');expect(errors).toEqual([]);
+});
+
+test('accordion: riepilogo e dettaglio si completano senza duplicare tratto, imbocchi e accesso',async({page})=>{
+ const errors=await setup(page);await page.emulateMedia({reducedMotion:'reduce'});await page.goto('/#/zona/poggio-cantalice/0');
+ const focus=page.locator('#detail .walk-focus'),summary=focus.locator(':scope > summary');
+ await expect(summary.locator('.walk-entrance-list')).toBeVisible();
+ const stats=await summary.locator('.walk-stats').innerText();
+ await summary.focus();await page.keyboard.press('Enter');await expect(focus).toHaveAttribute('open','');
+ await expect(summary.locator('.walk-stats')).toHaveText(stats,{useInnerText:true});await expect(summary.locator('.walk-entrances')).toBeHidden();
+ const body=focus.locator(':scope > .sec-body');await expect(body.locator('.walk-facts dt')).toHaveText(['Itinerario completo']);
+ await expect(body.locator('.th-chip').first()).toBeVisible();
+ await summary.press('Enter');await expect(summary.locator('.walk-entrance-list')).toBeVisible();
+ const access=page.locator('#detail .essential-sections [data-sec="accesso"]');
+ await access.locator(':scope > summary').click({position:{x:5,y:10}});await expect(access.locator(':scope > .sec-body')).toContainText('transitabilità');
+ await expect(access.locator(':scope > .sec-body .badge')).toHaveCount(0);
+ await expect(access.locator('summary .plan-sub .act-pill')).toBeVisible();
+ const species=page.locator('#detail .essential-sections [data-sec="specie"]');
+ await species.locator(':scope > summary').click({position:{x:5,y:10}});
+ await expect(species.locator('summary .ent-chips')).toBeHidden();
+ await expect(species.locator(':scope > .sec-body .zsp')).toBeVisible();
+ // L'avviso sul sosia rimane nel riepilogo anche quando è aperto.
+ if(await species.locator('summary .plan-crit').count())await expect(species.locator('summary .plan-crit')).toBeVisible();
+ expect(errors).toEqual([]);
+});
+
+for(const theme of ['light','dark'])test(`cosa osservare: riepilogo compatto e dettagli distinti in ${theme}`,async({page})=>{
+ await page.setViewportSize({width:390,height:844});await page.emulateMedia({reducedMotion:'reduce'});
+ await page.addInitScript(theme=>{localStorage.setItem('fungaroli:theme',theme);localStorage.setItem('fungaroli:install-later',String(Date.now()));},theme);
+ const errors=await setup(page);await page.goto('/#/zona/tancia/0');
+ const section=page.locator('#detail .essential-sections [data-sec="specie"]'),summary=section.locator(':scope > summary'),body=section.locator(':scope > .sec-body');
+ await expect(summary).toBeVisible();await expect(section).not.toHaveAttribute('open','');
+ await expect(summary.locator('.observation-expand')).toBeVisible();await expect(summary.locator('.plan-where,.ent-chips')).toHaveCount(0);
+ const warning=summary.locator('.plan-crit');await expect(warning).toBeVisible();const warningText=await warning.innerText();
+ await expect(body.locator('.plan-where')).toBeHidden();
+ const closed=(await section.boundingBox()).height;
+ await summary.scrollIntoViewIfNeeded();await section.screenshot({path:`/tmp/fronda-observation-closed-${theme}.png`});
+ await summary.focus();await page.keyboard.press('Enter');await expect(section).toHaveAttribute('open','');
+ await expect(summary.locator('.observation-collapse')).toBeVisible();await expect(summary.locator('.observation-expand')).toBeHidden();
+ await expect(body.locator('.plan-where')).toBeVisible();await expect(body.locator('.zsp')).toBeVisible();
+ await expect(body.locator('.plan-crit')).toBeVisible();await expect(body.locator('.plan-crit')).toContainText('non certifica');
+ await expect(warning).toBeVisible();expect(await warning.innerText()).toBe(warningText);
+ expect((await section.boundingBox()).height).toBeGreaterThan(closed+100);
+ await page.screenshot({path:`/tmp/fronda-observation-open-${theme}.png`});
+ await summary.press('Enter');await expect(body).toBeHidden();await expect(warning).toBeVisible();
+ expect(Math.abs((await section.boundingBox()).height-closed)).toBeLessThan(2);expect(errors).toEqual([]);
 });

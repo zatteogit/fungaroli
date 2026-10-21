@@ -1,0 +1,4392 @@
+{
+  "continue": {
+    "clcontinue": "44504049|Atlas_des_champignons_comestibles_et_vénéneux",
+    "continue": "||imageinfo"
+  },
+  "query": {
+    "pages": {
+      "14884004": {
+        "pageid": 14884004,
+        "ns": 6,
+        "title": "File:2010-05-27 Calocybe gambosa.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1842113,
+            "width": 2000,
+            "height": 1500,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/dc/2010-05-27_Calocybe_gambosa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:2010-05-27_Calocybe_gambosa.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=14884004",
+            "sha1": "ca71ca1a36f17f533b0a76aca206fd52502b9bf6",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-04-11 21:27:29",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "2010-05-27 Calocybe gambosa",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Calocybe gambosa|Self-published work|Photographs by Andreas Kunze|Bavaria photographs taken on 2010-05-27|Agaricales in Bavaria in May|Lyophyllaceae in Landkreis Donau-Ries|Fungi of Mertinger Forst",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "St. George's Mushroom (<i>Calocybe gambosa</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "Taken on 27 May 2010",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Ak_ccm&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Ak ccm (page does not exist)\">Andreas Kunze</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Agaricales in Bavaria in May"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Bavaria photographs taken on 2010-05-27"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Calocybe gambosa"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Mertinger Forst"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lyophyllaceae in Landkreis Donau-Ries"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by Andreas Kunze"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "18926273": {
+        "pageid": 18926273,
+        "ns": 6,
+        "title": "File:Agaricus gambosus — Flora Batava — Volume v19.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 593514,
+            "width": 1756,
+            "height": 2160,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Agaricus_gambosus_%E2%80%94_Flora_Batava_%E2%80%94_Volume_v19.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Agaricus_gambosus_%E2%80%94_Flora_Batava_%E2%80%94_Volume_v19.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=18926273",
+            "sha1": "01f967382933a53266c7528658c80ea4f3669fb1",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2012-04-01 14:17:57",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "<div class=\"fn\">\nFlora Batava. Afbeelding en beschrijving der Nederlandsche Gewassen. (1893)</div>",
+                "source": "commons-desc-page"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Calocybe gambosa|GFDL|Taken with Canon EOS 350D|License migration opt-out|PD-old-100-expired|Jan Kops - Flora Batava, Volume 19|Items with VRTS permission confirmed|CC-PD-Mark|Flora Batava (mushrooms, mosses and seaweeds)|Files uploaded from Flora Batava by FloraUploadR|Lyophyllaceae botanical illustrations",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Artist": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Jan_Kops\" class=\"extiw\" title=\"w:en:Jan Kops\"><span title=\"Dutch botanist (1765-1849)\">Jan Kops</span></a></bdi>",
+                "source": "commons-desc-page"
+              },
+              "ImageDescription": {
+                "value": "Agaricus gambosus",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"http://caliban.mpiz-koeln.mpg.de/batava/band19/high/IMG_8765.html\">www.BioLib.de</a>",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "<table class=\"licensetpl\" style=\"display:none\">\n<tbody><tr>\n<td><span class=\"licensetpl_short\">Public domain</span><span class=\"licensetpl_long\">Public domain</span><span class=\"licensetpl_link_req\">false</span><span class=\"licensetpl_attr_req\">false</span>\n</td></tr></tbody></table>\n<table style=\"width: 100%; clear: both; margin: 0.5em auto; background-color: var(--background-color-progressive-subtle, #f7f8ff); color: var(--color-base, #202122); border: var(--border-subtle, 2px solid #8888aa); border-spacing: 8px; padding: 0px;\" dir=\"ltr\" class=\"layouttemplate\" lang=\"en\">\n<tbody><tr>\n<td><span typeof=\"mw:File\"><span title=\"Public domain\"><img alt=\"Public domain\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/PD-icon.svg/120px-PD-icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"64\" height=\"64\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/PD-icon.svg/250px-PD-icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"196\" data-file-height=\"196\"></span></span>\n</td>\n<td>\n<p>This work is in the <b><a href=\"https://en.wikipedia.org/wiki/public_domain\" class=\"extiw\" title=\"en:public domain\">public domain</a></b> in its country of origin and other countries and areas where the <a href=\"https://en.wikipedia.org/wiki/List_of_countries%27_copyright_lengths\" class=\"extiw\" title=\"w:List of countries' copyright lengths\">copyright term</a> is the author's <b>life plus 100 years or fewer</b>.\n</p>\n<hr>\n<p>This work is in the <b><a href=\"https://en.wikipedia.org/wiki/public_domain\" class=\"extiw\" title=\"en:public domain\">public domain</a></b> in the <a href=\"https://en.wikipedia.org/wiki/United_States\" class=\"extiw\" title=\"en:United States\">United States</a> because it was <a href=\"//commons.wikimedia.org/wiki/Commons:Publication\" title=\"Commons:Publication\">published</a> (or registered with the <a href=\"https://en.wikipedia.org/wiki/United_States_Copyright_Office\" class=\"extiw\" title=\"en:United States Copyright Office\">U.S. Copyright Office</a>) before January 1, 1931.\n</p>\n</td></tr>\n<tr>\n<td colspan=\"2\" style=\"text-align:center;font-size:x-small;line-height:140%;\"><a href=\"https://creativecommons.org/publicdomain/mark/1.0/deed.en\" class=\"extiw\" title=\"ccorg:publicdomain/mark/1.0/deed.en\">This file has been identified as being free of known restrictions under copyright law, including all related and neighboring rights.</a>\n</td></tr></tbody></table><span class=\"licensetpl_link\" style=\"display:none;\">https://creativecommons.org/publicdomain/mark/1.0/</span><span class=\"licensetpl_short\" style=\"display:none;\">PDM</span><span class=\"licensetpl_long\" style=\"display:none;\">Creative Commons Public Domain Mark 1.0</span><span class=\"licensetpl_link_req\" style=\"display:none;\">false</span><span class=\"licensetpl_attr_req\" style=\"display:none;\">false</span>\n<p>In case that 2D reproductions are not in the PD:\n</p>\n<ul><li>© Kurt Stueber, 2007.</li></ul>\n<table style=\"width:100%; clear:both; margin:0.5em auto; background-color: var(--background-color-neutral-subtle, #f9f9f9); color: var(--color-base, #202122); border: var(--border-subtle, 2px solid #e0e0e0); border-spacing: 8px; box-sizing: border-box; padding: 0;\" dir=\"ltr\" lang=\"en\" class=\"layouttemplate licensetpl\">\n<tbody><tr>\n<td><span class=\"noviewer\" typeof=\"mw:File\"><span title=\"GNU head\"><img alt=\"GNU head\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Heckert_GNU_white.svg/120px-Heckert_GNU_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"64\" height=\"63\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Heckert_GNU_white.svg/250px-Heckert_GNU_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"535\" data-file-height=\"523\"></span></span>\n</td>\n<td>Permission is granted to copy, distribute and/or modify this document under the terms of the <b><a href=\"https://en.wikipedia.org/wiki/en:GNU_Free_Documentation_License\" class=\"extiw\" title=\"w:en:GNU Free Documentation License\">GNU Free Documentation License</a></b>, Version 1.2 or any later version published by the <a href=\"https://en.wikipedia.org/wiki/en:Free_Software_Foundation\" class=\"extiw\" title=\"w:en:Free Software Foundation\">Free Software Foundation</a>; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled <i><a href=\"//commons.wikimedia.org/wiki/Commons:GNU_Free_Documentation_License,_version_1.2\" title=\"Commons:GNU Free Documentation License, version 1.2\">GNU Free Documentation License</a></i>.<span class=\"licensetpl_link\" style=\"display:none;\">http://www.gnu.org/copyleft/fdl.html</span><span class=\"licensetpl_short\" style=\"display:none;\">GFDL</span><span class=\"licensetpl_long\" style=\"display:none;\">GNU Free Documentation License</span><span class=\"licensetpl_link_req\" style=\"display:none;\">true</span><span class=\"licensetpl_attr_req\" style=\"display:none;\">true</span>\n</td></tr></tbody></table>\n<p><span class=\"layouttemplateargs\" style=\"display:none;speak:none;\" title=\"template=PermissionTicket 1%3Dhttps%3A%2F%2Fticket.wikimedia.org%2Fotrs%2Findex.pl%3FAction%3DAgentTicketZoom%26TicketNumber%3D2012032910008802 2%3D2012032910008802\"> </span>\n</p>\n<style data-mw-deduplicate=\"TemplateStyles:r1254222110\">.mw-parser-output .messagebox{margin:4px 0;width:auto;border-collapse:collapse;border:2px solid var(--border-color-progressive,#6485d1);background-color:var(--background-color-neutral-subtle,#fbfcff);color:var(--color-base,#202122);box-sizing:border-box;border-inline-start-width:8px}.mw-parser-output .messagebox.mbox-small{font-size:88%;line-height:1.25em}.mw-parser-output .mbox-warning,.mw-parser-output .mbox-speedy{border:2px solid var(--border-color-error,#b22222);background:var(--background-color-error-subtle,#ffdbdb);border-inline-start-width:8px}.mw-parser-output .mbox-serious,.mw-parser-output .mbox-delete,.mw-parser-output .mbox-stop{border:2px solid var(--border-color-error,#b22222);border-inline-start-width:8px}.mw-parser-output .mbox-issue,.mw-parser-output .mbox-content{border:2px solid #f28500;background:var(--background-color-warning-subtle,#ffe);border-inline-start-width:8px}.mw-parser-output .mbox-query,.mw-parser-output .mbox-style{border:2px solid #f4c430;background:var(--background-color-warning-subtle,#ffe);border-inline-start-width:8px}.mw-parser-output .mbox-shit{border:2px solid #960;border-inline-start-width:8px}.mw-parser-output .mbox-license{border:2px solid #88a;border-inline-start-width:initial}.mw-parser-output .mbox-legal{border:2px solid var(--border-color-notice,#666);background:var(--background-color-base,#fff);border-inline-start-width:8px}.mw-parser-output .mbox-honor{border:2px solid #ca3;background:var(--background-color-warning-subtle,#fcf4db);border-inline-start-width:8px}.mw-parser-output .mbox-growth{border:2px solid #8d4;background:var(--background-color-success-subtle,#d5fdf4);border-inline-start-width:8px}.mw-parser-output .mbox-move{border:2px solid #93c;border-inline-start-width:8px}.mw-parser-output .mbox-protection,.mw-parser-output .mbox-message{border:2px solid var(--border-color-base,#aaa);border-inline-start-width:8px}.mw-parser-output .messagebox .mbox-text{border:none;padding:0.25em 0.9em;width:100%}.mw-parser-output .messagebox .mbox-image{border:none;padding-top:2px;padding-bottom:2px;padding-inline-start:0.9em;padding-inline-end:0;text-align:center}.mw-parser-output .messagebox .mbox-imageright{border:none;padding-top:2px;padding-bottom:2px;padding-inline-start:0;padding-inline-end:0.9em;text-align:center}.mw-parser-output .messagebox .mbox-empty-cell{border:none;padding:0;width:1px}.mw-parser-output .messagebox .mbox-invalid-type{text-align:center}@media(min-width:720px){.mw-parser-output .messagebox{margin:4px 10%}.mw-parser-output .messagebox.mbox-small{clear:right;float:right;margin:4px 0 4px 1em;width:238px}}body.skin--responsive .mw-parser-output table.messagebox img{max-width:none!important}</style><table class=\"plainlinks messagebox mbox-notice layouttemplate\" role=\"presentation\" style=\"margin:0.3em 0;width:100%;\"><tbody><tr><td class=\"mbox-image\"><span typeof=\"mw:File\"><span title=\"VRT Wikimedia\"><img alt=\"VRT Wikimedia\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Permission_logo_2021.svg/120px-Permission_logo_2021.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"75\" height=\"48\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Permission_logo_2021.svg/250px-Permission_logo_2021.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"935\" data-file-height=\"600\"></span></span></td><td class=\"mbox-text\">This work is <a href=\"https://freedomdefined.org/Definition\" class=\"extiw\" title=\"freedomdefined:Definition\">free</a> and may be used by anyone for any purpose. If you wish to <b><a href=\"//commons.wikimedia.org/wiki/Commons:Reusing_content_outside_Wikimedia\" title=\"Commons:Reusing content outside Wikimedia\">use this content</a></b>, you do not need to request permission as long as you follow any licensing requirements mentioned on this page.\n<p>The Wikimedia Foundation has received an e-mail confirming that the copyright holder has approved publication under the terms mentioned on this page. This correspondence has been <b><span style=\"background:transparent;color:#0f7f1f;font-weight:400;\" title=\"transparent\">reviewed</span></b> by a <a href=\"//commons.wikimedia.org/wiki/Template:PermissionTicket/Users\" title=\"Template:PermissionTicket/Users\">Volunteer Response Team (VRT) member</a> and stored in our <a href=\"//commons.wikimedia.org/wiki/Commons:Volunteer_Response_Team\" title=\"Commons:Volunteer Response Team\">permission archive</a>. The correspondence is available to trusted volunteers as <b><a href=\"https://ticket.wikimedia.org/otrs/index.pl?Action=AgentTicketZoom&amp;TicketNumber=2012032910008802\" class=\"extiw\" title=\"ticket:2012032910008802\">ticket #2012032910008802</a></b>.\n</p><p><small>If you have questions about the archived correspondence, please use the <a href=\"//commons.wikimedia.org/wiki/Commons:Volunteer_Response_Team/Noticeboard\" title=\"Commons:Volunteer Response Team/Noticeboard\">VRT noticeboard</a>.</small>\n<small>Ticket link: <a class=\"external free\" href=\"https://ticket.wikimedia.org/otrs/index.pl?Action=AgentTicketZoom&amp;TicketNumber=2012032910008802\">https://ticket.wikimedia.org/otrs/index.pl?Action=AgentTicketZoom&amp;TicketNumber=2012032910008802</a></small>\n<br><small>Find other files from the same ticket:</small> <span typeof=\"mw:File\"><a href=\"https://wcqs-beta.wmflabs.org/#%23defaultView%3AImageGrid%09%0ASELECT%20%3Fimage%20%20%20%7B%0A%20%20%3Ffile%20wdt%3AP6305%20%222012032910008802%22%20.%0A%20%20%3Ffile%20schema%3Aurl%20%3Fimage.%0A%7D%20%0A\" title=\"SDC query (SPARQL)\" rel=\"nofollow\"><img alt=\"SDC query (SPARQL)\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Wikimedia_Commons_Query_Service_Logo.svg/20px-Wikimedia_Commons_Query_Service_Logo.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"15\" height=\"20\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Wikimedia_Commons_Query_Service_Logo.svg/40px-Wikimedia_Commons_Query_Service_Logo.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"512\" data-file-height=\"688\"></a></span>\n</p>\n<span id=\"field-otrs\" title=\"https://ticket.wikimedia.org/otrs/index.pl?Action=AgentTicketZoom&amp;TicketNumber=2012032910008802\"></span></td></tr></tbody></table>\n<ul><li>If parts or graphics are used, we request you to mention www.BioLib.de as the source of the data.</li></ul>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-PD-Mark"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Calocybe gambosa"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files uploaded from Flora Batava by FloraUploadR"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flora Batava (mushrooms, mosses and seaweeds)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Items with VRTS permission confirmed"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Jan Kops - Flora Batava, Volume 19"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration opt-out"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lyophyllaceae botanical illustrations"
+          },
+          {
+            "ns": 14,
+            "title": "Category:PD-old-100-expired"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Canon EOS 350D"
+          }
+        ]
+      },
+      "43294331": {
+        "pageid": 43294331,
+        "ns": 6,
+        "title": "File:Atlas des champignons comestibles et vénéneux (Planche 10) (6358015081).jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 400571,
+            "width": 2288,
+            "height": 3254,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Atlas_des_champignons_comestibles_et_v%C3%A9n%C3%A9neux_%28Planche_10%29_%286358015081%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Atlas_des_champignons_comestibles_et_v%C3%A9n%C3%A9neux_(Planche_10)_(6358015081).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=43294331",
+            "sha1": "3bfb7b05fef5c7c7b60962f4e5eef4c98aacf8e6",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-09-16 07:30:01",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Atlas des champignons comestibles et vénéneux (Planche 10) (6358015081)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Calocybe gambosa|Tricholoma equestre|Atlas des champignons comestibles et vénéneux|PD-old-70-expired|Photos uploaded from Flickr by Fæ using a script|PD-scan (PD-old-70-expired)|Flickr images reviewed by FlickreviewR|Files from the Biodiversity Heritage Library|CC-PD-Mark|Biodiversity Heritage Library maintenance missing collection|Agaricales botanical illustrations",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<p>Dufour. Champignons. <br>\nPlanche 10 <br>\nN<sup>o</sup>. 18. Tricholoma equestre. Tricholome équestre. (comestible) <br>\n</p>\nN<sup>o</sup>. 19. Tricholoma Georgii. Tricholome de la Sainte-Georges. (comestible).",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "1891",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.flickr.com/photos/biodivlibrary/6358015081\">https://www.flickr.com/photos/biodivlibrary/6358015081</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Dufour, L.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Agaricales botanical illustrations"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Atlas des champignons comestibles et vénéneux"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Biodiversity Heritage Library maintenance missing collection"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-2.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-PD-Mark"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Calocybe gambosa"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files from the Biodiversity Heritage Library"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images reviewed by FlickreviewR"
+          },
+          {
+            "ns": 14,
+            "title": "Category:PD-old-70-expired"
+          },
+          {
+            "ns": 14,
+            "title": "Category:PD-scan (PD-old-70-expired)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photos uploaded from Flickr by Fæ using a script"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Tricholoma equestre"
+          }
+        ]
+      },
+      "44504049": {
+        "pageid": 44504049,
+        "ns": 6,
+        "title": "File:Atlas des champignons comestibles et vénéneux (Planche 10) BHL3270645.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 320388,
+            "width": 2288,
+            "height": 3254,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Atlas_des_champignons_comestibles_et_v%C3%A9n%C3%A9neux_%28Planche_10%29_BHL3270645.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Atlas_des_champignons_comestibles_et_v%C3%A9n%C3%A9neux_(Planche_10)_BHL3270645.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44504049",
+            "sha1": "bbfcae403954b5eba562a751b8689ef471944cf4",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-10-26 13:01:11",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Atlas des champignons comestibles et vénéneux (Planche 10) BHL3270645",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Calocybe gambosa|Tricholoma equestre|Atlas des champignons comestibles et vénéneux|PD-old-70-expired|Images uploaded by Fæ|PD-scan (PD-old-70-expired)|Files from the Biodiversity Heritage Library|CC-PD-Mark|PD-old missing SDC copyright status|Biodiversity Heritage Library maintenance missing date|Agaricales botanical illustrations",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Atlas des champignons comestibles et vénéneux.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.biodiversitylibrary.org/pageimage/3270645\">https://www.biodiversitylibrary.org/pageimage/3270645</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Dufour, L.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Agaricales botanical illustrations"
+          }
+        ]
+      },
+      "50885640": {
+        "pageid": 50885640,
+        "ns": 6,
+        "title": "File:Atlas des champignons comestibles et vénéneux No19.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 223185,
+            "width": 2288,
+            "height": 1528,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Atlas_des_champignons_comestibles_et_v%C3%A9n%C3%A9neux_No19.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Atlas_des_champignons_comestibles_et_v%C3%A9n%C3%A9neux_No19.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=50885640",
+            "sha1": "6a721605b163be88ff3ae6fc6b330aaec270c55e",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2016-08-25 16:20:08",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Atlas des champignons comestibles et vénéneux No19",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Calocybe gambosa|Atlas des champignons comestibles et vénéneux|PD-old-70-expired|PD-scan (PD-old-70-expired)|CC-PD-Mark|Lyophyllaceae botanical illustrations",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Detail with white background of mushroom 19 (modern name: <i>Calocybe gambosa</i>) on plate 10 of \"Atlas des champignons comestibles et vénéneux\" by L. Dufour.  See source for full details.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "before 1891<div style=\"display: none;\">date QS:P,+1891-00-00T00:00:00Z/7,P1326,+1891-00-00T00:00:00Z/9</div>",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/File:Atlas_des_champignons_comestibles_et_v%C3%A9n%C3%A9neux_(Planche_10)_(6358015081).jpg\" title=\"File:Atlas des champignons comestibles et vénéneux (Planche 10) (6358015081).jpg\">Atlas des champignons comestibles et vénéneux</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Léon Dufour († 1865)",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "69388694": {
+        "pageid": 69388694,
+        "ns": 6,
+        "title": "File:Bresadola - Tricholoma georgii.png",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1612020,
+            "width": 1070,
+            "height": 1522,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/83/Bresadola_-_Tricholoma_georgii.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Bresadola_-_Tricholoma_georgii.png",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=69388694",
+            "sha1": "901f425333449b4322c4ce1e6a324906c65a6fab",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-05-23 10:35:26",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Bresadola - Tricholoma georgii",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Calocybe gambosa|Author died more than 90 years ago public domain images|CC-PD-Mark|Uses PD-old-90|Iconographia Mycologica, vol. I-XXVI|PD-old missing SDC copyright status",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/Giacomo_Bresadola\" class=\"mw-redirect\" title=\"Giacomo Bresadola\">Giacomo Bresadola</a>:  <i>Tricholoma georgii</i> (Carl von Linné|L.]], 1753) <a href=\"//commons.wikimedia.org/w/index.php?title=Lucien_Qu%C3%A9let&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"Lucien Quélet (page does not exist)\">Quél.</a> (1872), heute <i><a href=\"//commons.wikimedia.org/wiki/Calocybe_gambosa\" title=\"Calocybe gambosa\">Calocybe gambosa</a></i> (<a href=\"//commons.wikimedia.org/wiki/Elias_Magnus_Fries\" title=\"Elias Magnus Fries\">Fr.</a>, 1821), <a href=\"//commons.wikimedia.org/w/index.php?title=Marinus_Anton_Donk&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"Marinus Anton Donk (page does not exist)\">Donk</a> (1962)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "1928",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/Giacomo_Bresadola\" class=\"mw-redirect\" title=\"Giacomo Bresadola\">Giacomo Bresadola</a>: „Iconographia Mycologica, vol. III, Editura Società Botanica Italiana, Milano 1928, tab. 103",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/Giacomo_Bresadola\" class=\"mw-redirect\" title=\"Giacomo Bresadola\">Giacomo Bresadola</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "74101739": {
+        "pageid": 74101739,
+        "ns": 6,
+        "title": "File:Calocybe gambosa (27014325317).jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 5559381,
+            "width": 5184,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Calocybe_gambosa_%2827014325317%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Calocybe_gambosa_(27014325317).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=74101739",
+            "sha1": "892af44537a414305f1bd6e98253e4d8544e1765",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-11-03 18:21:02",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Calocybe gambosa (27014325317)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Calocybe gambosa|Flickr images reviewed by FlickreviewR 2|Duisburg photographs taken on 2018-04-30|Lyophyllaceae in Duisburg|Agaricales in Duisburg in April|Files with coordinates missing SDC location of creation (51° N, 6° E)|Photographs by Björn Sothmann",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.411783",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "6.808988",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "St. George's Mushroom - Calocybe gambosa",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2018-04-30 12:08",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/40948266@N04/27014325317/\">St. George's Mushroom - Calocybe gambosa</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/40948266@N04\">Björn S...</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "63574812": {
+        "pageid": 63574812,
+        "ns": 6,
+        "title": "File:Calocybe gambosa (34375878814).jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 6744475,
+            "width": 5184,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Calocybe_gambosa_%2834375878814%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Calocybe_gambosa_(34375878814).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=63574812",
+            "sha1": "bf56983667f5cf2ee7ae2c5054cd8e909be220d7",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-10-24 19:17:24",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Calocybe gambosa (34375878814)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Calocybe gambosa|Flickr images reviewed by FlickreviewR|Lyophyllaceae in Duisburg|Duisburg photographs taken on 2017-05-18|Agaricales in Duisburg in May|Files with coordinates missing SDC location of creation (51° N, 6° E)|Photographs by Björn Sothmann|Fungi of Friedhof Sternbuschweg",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.416513",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "6.782602",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "St. George's Mushroom - Calocybe gambosa",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-05-18 20:55",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/40948266@N04/34375878814/\">St. George's Mushroom - Calocybe gambosa</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/40948266@N04\">Björn S...</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "63574776": {
+        "pageid": 63574776,
+        "ns": 6,
+        "title": "File:Calocybe gambosa (34410861793).jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 6084969,
+            "width": 5184,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/97/Calocybe_gambosa_%2834410861793%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Calocybe_gambosa_(34410861793).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=63574776",
+            "sha1": "4e78f57fe3367217b8a3ce488aca871efdeb5eea",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-10-24 19:16:45",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Calocybe gambosa (34410861793)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Calocybe gambosa|Flickr images reviewed by FlickreviewR|Lyophyllaceae in Duisburg|Duisburg photographs taken on 2017-05-18|Agaricales in Duisburg in May|Files with coordinates missing SDC location of creation (51° N, 6° E)|Photographs by Björn Sothmann|Fungi of Friedhof Sternbuschweg",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.416513",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "6.782602",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "St. George's Mushroom - Calocybe gambosa",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-05-18 20:54",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/40948266@N04/34410861793/\">St. George's Mushroom - Calocybe gambosa</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/40948266@N04\">Björn S...</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "63574784": {
+        "pageid": 63574784,
+        "ns": 6,
+        "title": "File:Calocybe gambosa (34412661523).jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 6864920,
+            "width": 5184,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Calocybe_gambosa_%2834412661523%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Calocybe_gambosa_(34412661523).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=63574784",
+            "sha1": "20266c45cae51cd20d9ada80d95a0acbe7829ecd",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-10-24 19:16:55",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Calocybe gambosa (34412661523)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Calocybe gambosa|Flickr images reviewed by FlickreviewR|Lyophyllaceae in Duisburg|Duisburg photographs taken on 2017-05-18|Agaricales in Duisburg in May|Files with coordinates missing SDC location of creation (51° N, 6° E)|Photographs by Björn Sothmann|Fungi of Friedhof Sternbuschweg",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.416513",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "6.782602",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "St. George's Mushroom - Calocybe gambosa",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-05-18 20:55",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/40948266@N04/34412661523/\">St. George's Mushroom - Calocybe gambosa</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/40948266@N04\">Björn S...</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "97674396": {
+        "pageid": 97674396,
+        "ns": 6,
+        "title": "File:Calocybe gambosa (36064595975).jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 6887631,
+            "width": 4896,
+            "height": 3672,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Calocybe_gambosa_%2836064595975%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Calocybe_gambosa_(36064595975).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=97674396",
+            "sha1": "647881a21c69ad21ba27c3eee8edbdce7a1f5b91",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-12-16 23:15:43",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Calocybe gambosa (36064595975)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Calocybe gambosa|Fungi in July|Flickr images reviewed by FlickreviewR 2|Photographs by Hans-Günter Wagner",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Calocybe gambosa",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-07-03 19:46",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/145400091@N04/36064595975/\">DSC00217</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/145400091@N04\">Dr. Hans-Günter Wagner</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "74101988": {
+        "pageid": 74101988,
+        "ns": 6,
+        "title": "File:Calocybe gambosa (41958651151).jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 7072051,
+            "width": 5184,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Calocybe_gambosa_%2841958651151%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Calocybe_gambosa_(41958651151).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=74101988",
+            "sha1": "9ee0b4f2893646edc6bd3ff1ab24c79f9d46e7d9",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-11-03 18:25:52",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Calocybe gambosa (41958651151)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Calocybe gambosa|Flickr images reviewed by FlickreviewR 2|Duisburg photographs taken on 2018-04-30|Lyophyllaceae in Duisburg|Agaricales in Duisburg in April|Photographs by Björn Sothmann",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Lamella of St. George's Mushroom - Calocybe gambosa",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "Taken on 30 April 2018, 16:59",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/40948266@N04/41958651151/\">Lamella of St. George's Mushroom - Calocybe gambosa</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/40948266@N04\">Björn S...</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "14868526": {
+        "pageid": 14868526,
+        "ns": 6,
+        "title": "File:Calocybe gambosa 080420wa cropped.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2011604,
+            "width": 2500,
+            "height": 1770,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Calocybe_gambosa_080420wa_cropped.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Calocybe_gambosa_080420wa_cropped.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=14868526",
+            "sha1": "505469d4183bf1cdc04add5d0d62a538bdb0c939",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-04-11 03:53:44",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Calocybe gambosa 080420wa cropped",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Calocybe gambosa|GFDL|Retouched pictures|CC-BY-SA-3.0,2.5,2.0,1.0|License migration redundant|Self-published work|Uploaded with derivativeFX",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Calocybe gambosa</i> (= <i>Tricholoma gambosum</i>), St. George's  mushroom, in a park near Massy, France.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2011-04-10 23:50",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<ul><li><a href=\"//commons.wikimedia.org/wiki/File:Calocybe_gambosa_080420wa.jpg\" title=\"File:Calocybe gambosa 080420wa.jpg\">Calocybe_gambosa_080420wa.jpg</a></li></ul>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<ul><li><a href=\"//commons.wikimedia.org/wiki/File:Calocybe_gambosa_080420wa.jpg\" title=\"File:Calocybe gambosa 080420wa.jpg\">Calocybe_gambosa_080420wa.jpg</a>: <a href=\"//commons.wikimedia.org/wiki/User:Strobilomyces\" title=\"User:Strobilomyces\">User:Strobilomyces</a></li>\n<li>derivative work: <a href=\"//commons.wikimedia.org/w/index.php?title=User:Ak_ccm&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Ak ccm (page does not exist)\">Ak ccm</a> (<a href=\"//commons.wikimedia.org/wiki/User_talk:Ak_ccm\" title=\"User talk:Ak ccm\"><span class=\"signature-talk\">talk</span></a>)</li></ul>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0,2.5,2.0,1.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Calocybe gambosa"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Retouched pictures"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded with derivativeFX"
+          }
+        ]
+      },
+      "3920453": {
+        "pageid": 3920453,
+        "ns": 6,
+        "title": "File:Calocybe gambosa 080420wa.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1093514,
+            "width": 3456,
+            "height": 2304,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Calocybe_gambosa_080420wa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Calocybe_gambosa_080420wa.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=3920453",
+            "sha1": "983f3ab398d4f8853408e1a200b9cf4dcd598faa",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2008-04-21 18:59:42",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Calocybe gambosa 080420wa",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Calocybe gambosa|GFDL|Taken with Canon EOS 350D|License migration redundant|CC-BY-SA-4.0,3.0,2.5,2.0,1.0|Self-published work|Files with derivative versions",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Calocybe gambosa</i> (= <i>Tricholoma gambosum</i>), St. George's  mushroom, in a park near Massy, France.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2008-04-20",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Strobilomyces\" title=\"User:Strobilomyces\">User:Strobilomyces</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0,3.0,2.5,2.0,1.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Calocybe gambosa"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with derivative versions"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Canon EOS 350D"
+          }
+        ]
+      },
+      "3920458": {
+        "pageid": 3920458,
+        "ns": 6,
+        "title": "File:Calocybe gambosa 080420wb.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 992318,
+            "width": 3069,
+            "height": 1573,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/93/Calocybe_gambosa_080420wb.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Calocybe_gambosa_080420wb.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=3920458",
+            "sha1": "760154cd695eec47e0500db1f674ffb1d18227c5",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-11-17 10:53:47",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Calocybe gambosa 080420wb",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Fungi of Essonne|Calocybe gambosa|GFDL|License migration redundant|CC-BY-SA-4.0,3.0,2.5,2.0,1.0|Self-published work|France photographs taken on 2008-04-20|Files with coordinates missing SDC location of creation (48° N, 2° E)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "48.724562",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "2.289963",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Calocybe gambosa</i> (= <i>Tricholoma gambosum</i>), St. George's  mushroom, in a park near Massy, France.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2008-04-20",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Strobilomyces\" title=\"User:Strobilomyces\">User:Strobilomyces</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0,3.0,2.5,2.0,1.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Calocybe gambosa"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation (48° N, 2° E)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:France photographs taken on 2008-04-20"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Essonne"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images missing SDC creator"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of Essonne"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of fungi in France"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "10491981": {
+        "pageid": 10491981,
+        "ns": 6,
+        "title": "File:Calocybe gambosa 1.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 11178343,
+            "width": 3872,
+            "height": 2592,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/27/Calocybe_gambosa_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Calocybe_gambosa_1.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=10491981",
+            "sha1": "0e915d2059da88f1b46da7327246981d55b30671",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2010-05-30 07:46:16",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Calocybe gambosa 1",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Calocybe gambosa|GFDL|Taken with Sony DSLR-A100|License migration redundant|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Freshly harvested specimen of the mushroom <i><a href=\"https://en.wikipedia.org/wiki/Calocybe_gambosa\" class=\"extiw\" title=\"w:Calocybe gambosa\">Calocybe gambosa</a></i> lying on a kitchen tabletop. It was harvested in Hoerning near Aarhus, Denmark.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2010-05-29",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Harlekin96&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Harlekin96 (page does not exist)\">Harlekin96</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Calocybe gambosa"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Sony DSLR-A100"
+          }
+        ]
+      },
+      "130269639": {
+        "pageid": 130269639,
+        "ns": 6,
+        "title": "File:Calocybe gambosa 129596742.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2343354,
+            "width": 2048,
+            "height": 1536,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/97/Calocybe_gambosa_129596742.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Calocybe_gambosa_129596742.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=130269639",
+            "sha1": "eae5c236face473b8af693d0a97b1e110a7d5338",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-04-01 19:44:43",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Calocybe gambosa 129596742",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Calocybe gambosa|CC-Zero|Media from iNaturalist|Denmark photographs taken on 2021-05-17|INaturalist images reviewed by iNaturalistReviewBot|Lyophyllaceae in Denmark|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|Fungi of Denmark in May",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "55.801566",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "12.586453",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "St. George's Mushroom (<i>Calocybe gambosa</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-05-17",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/129596742\">https://www.inaturalist.org/photos/129596742</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/2702752\">Morten Rosenvold Villadsen</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "130269641": {
+        "pageid": 130269641,
+        "ns": 6,
+        "title": "File:Calocybe gambosa 129596761.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2100284,
+            "width": 2048,
+            "height": 1536,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/be/Calocybe_gambosa_129596761.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Calocybe_gambosa_129596761.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=130269641",
+            "sha1": "c826cf9693733bf74878dc3e6c5ba2596687fcff",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-04-01 19:44:50",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Calocybe gambosa 129596761",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Calocybe gambosa|CC-Zero|Media from iNaturalist|Denmark photographs taken on 2021-05-17|INaturalist images reviewed by iNaturalistReviewBot|Lyophyllaceae in Denmark|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|Fungi of Denmark in May",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "55.801566",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "12.586453",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "St. George's Mushroom (<i>Calocybe gambosa</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-05-17",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/129596761\">https://www.inaturalist.org/photos/129596761</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/2702752\">Morten Rosenvold Villadsen</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "130269322": {
+        "pageid": 130269322,
+        "ns": 6,
+        "title": "File:Calocybe gambosa 130094795.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1417657,
+            "width": 1536,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/87/Calocybe_gambosa_130094795.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Calocybe_gambosa_130094795.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=130269322",
+            "sha1": "f65cbf1967c4ca6489efea5b3f02fb157542d317",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-04-01 19:29:06",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Calocybe gambosa 130094795",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Lyophyllaceae in Germany|Calocybe gambosa|CC-Zero|Media from iNaturalist|Fungi of Saxony-Anhalt|Fungi in May|INaturalist images reviewed by iNaturalistReviewBot|Uploaded with iNaturalist2Commons|Saxony-Anhalt photographs taken on 2021-05-19|Files with coordinates missing SDC location of creation (51° N, 11° E)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.711396",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "11.240961",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "St. George's Mushroom (<i>Calocybe gambosa</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-05-19",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/130094795\">https://www.inaturalist.org/photos/130094795</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/3738042\">Thomas</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "130269314": {
+        "pageid": 130269314,
+        "ns": 6,
+        "title": "File:Calocybe gambosa 130239171.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 988647,
+            "width": 1536,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Calocybe_gambosa_130239171.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Calocybe_gambosa_130239171.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=130269314",
+            "sha1": "75788d75d4ce5fbfcb69bbb3f4df9e4dd0102007",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-04-01 19:28:45",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Calocybe gambosa 130239171",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Calocybe gambosa|Media from iNaturalist|United Kingdom photographs taken on 2021-05-20|Fungi of South Yorkshire|Fungi in May|INaturalist images reviewed by iNaturalistReviewBot|Lyophyllaceae in the United Kingdom|Uploaded with iNaturalist2Commons|Agaricales in England|Files with coordinates missing SDC location of creation (53° N, 2° W)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "53.390072",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-1.396792",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "St. George's Mushroom (<i>Calocybe gambosa</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-05-20",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/130239171\">https://www.inaturalist.org/photos/130239171</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/1985187\">Ron Pasieczna</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "130269318": {
+        "pageid": 130269318,
+        "ns": 6,
+        "title": "File:Calocybe gambosa 130715977.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1238583,
+            "width": 1536,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/49/Calocybe_gambosa_130715977.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Calocybe_gambosa_130715977.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=130269318",
+            "sha1": "05f1821f4c1094cf763864e64e1fc676542a2020",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-04-01 19:28:56",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Calocybe gambosa 130715977",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Lyophyllaceae in Germany|Calocybe gambosa|CC-Zero|Media from iNaturalist|Fungi in May|INaturalist images reviewed by iNaturalistReviewBot|Agaricales in Hesse|Uploaded with iNaturalist2Commons|Hesse photographs taken on 2021-05-22|Files with coordinates missing SDC location of creation (50° N, 8° E)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "50.599163",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "8.703428",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "St. George's Mushroom (<i>Calocybe gambosa</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-05-22",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/130715977\">https://www.inaturalist.org/photos/130715977</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/1908828\">Pedro Hafermann</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "130269313": {
+        "pageid": 130269313,
+        "ns": 6,
+        "title": "File:Calocybe gambosa 133593349.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1125645,
+            "width": 2048,
+            "height": 1536,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/df/Calocybe_gambosa_133593349.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Calocybe_gambosa_133593349.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=130269313",
+            "sha1": "4fb4d3f0f56a7e07e991987260dd173b9414392a",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-04-01 19:28:37",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Calocybe gambosa 133593349",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Calocybe gambosa|Media from iNaturalist|Fungi in June|INaturalist images reviewed by iNaturalistReviewBot|Lyophyllaceae in the United Kingdom|Uploaded with iNaturalist2Commons|United Kingdom photographs taken on 2021-06-03|Agaricales in Scotland|Files with coordinates missing SDC location of creation (55° N, 4° W)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "55.996468",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-3.477353",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "St. George's Mushroom (<i>Calocybe gambosa</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-06-03",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/133593349\">https://www.inaturalist.org/photos/133593349</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/3006260\">Wilma Harper</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "130269847": {
+        "pageid": 130269847,
+        "ns": 6,
+        "title": "File:Calocybe gambosa 186039147.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2563720,
+            "width": 2048,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/64/Calocybe_gambosa_186039147.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Calocybe_gambosa_186039147.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=130269847",
+            "sha1": "37e57fa88f8dd1925f2421372f215e1f4e80f7f6",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-04-01 19:57:09",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Calocybe gambosa 186039147",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Calocybe gambosa|Fungi of France|Media from iNaturalist|Fungi in April|INaturalist images reviewed by iNaturalistReviewBot|Lyophyllaceae in France|Île-de-France photographs taken on 2022-04-03|Uploaded with iNaturalist2Commons|Files with coordinates missing SDC location of creation (48° N, 2° E)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "48.703611",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "2.212778",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "St. George's Mushroom (<i>Calocybe gambosa</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-04-03",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/186039147\">https://www.inaturalist.org/photos/186039147</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/1794233\">bogsuckers</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "130269324": {
+        "pageid": 130269324,
+        "ns": 6,
+        "title": "File:Calocybe gambosa 194350959.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 986756,
+            "width": 1536,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/61/Calocybe_gambosa_194350959.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Calocybe_gambosa_194350959.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=130269324",
+            "sha1": "f53445a85774cffd0096a36c116420ac2302a3f4",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-04-01 19:29:15",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Calocybe gambosa 194350959",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Lyophyllaceae in Germany|Calocybe gambosa|Germany photographs taken on 2022-05-03|CC-Zero|Media from iNaturalist|Fungi in May|INaturalist images reviewed by iNaturalistReviewBot|Agaricales in Hesse|Uploaded with iNaturalist2Commons|Files with coordinates missing SDC location of creation (50° N, 8° E)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "50.597711",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "8.701108",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "St. George's Mushroom (<i>Calocybe gambosa</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-05-03",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"mw:ExtLink nofollow\" href=\"https://www.inaturalist.org/photos/194350959\" class=\"external free\">https://www.inaturalist.org/photos/194350959</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"mw:ExtLink nofollow\" href=\"https://www.inaturalist.org/users/1908828\" class=\"external text\">Pedro Hafermann</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "130269289": {
+        "pageid": 130269289,
+        "ns": 6,
+        "title": "File:Calocybe gambosa 194405699.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 979330,
+            "width": 1536,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Calocybe_gambosa_194405699.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Calocybe_gambosa_194405699.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=130269289",
+            "sha1": "e8a8d7e93feea6bce8f7f95baa71a9c8c97f7cb3",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-04-01 19:27:52",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Calocybe gambosa 194405699",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Lyophyllaceae in Germany|Calocybe gambosa|Germany photographs taken on 2022-05-03|CC-Zero|Media from iNaturalist|Fungi in May|INaturalist images reviewed by iNaturalistReviewBot|Agaricales in Hesse|Uploaded with iNaturalist2Commons|Files with coordinates missing SDC location of creation (50° N, 8° E)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "50.597696",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "8.701241",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Untypical St. George's Mushroom (<i>Calocybe gambosa</i>) - the gills are somewhat decurrent and the stems are unusually long.  Please see the iNaturalist site for identification information.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-05-03",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/194405699\">https://www.inaturalist.org/photos/194405699</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/1908828\">Pedro Hafermann</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "164125714": {
+        "pageid": 164125714,
+        "ns": 6,
+        "title": "File:Calocybe gambosa 196979169 cropped.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 487920,
+            "width": 1932,
+            "height": 1393,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Calocybe_gambosa_196979169_cropped.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Calocybe_gambosa_196979169_cropped.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=164125714",
+            "sha1": "22dbbf31bb5b0665798c905abe9c398cebc406c0",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2025-04-25 09:03:51",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Calocybe gambosa 196979169 cropped",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Calocybe gambosa|CC-Zero",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Calocybe gambosa",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-05-12",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "cropped from <a class=\"external free\" href=\"https://fr.wikipedia.org/wiki/Fichier:Calocybe_gambosa_196979169.jpg\">https://fr.wikipedia.org/wiki/Fichier:Calocybe_gambosa_196979169.jpg</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Pedro Hafermann",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "130269852": {
+        "pageid": 130269852,
+        "ns": 6,
+        "title": "File:Calocybe gambosa 196979169.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1018715,
+            "width": 1536,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Calocybe_gambosa_196979169.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Calocybe_gambosa_196979169.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=130269852",
+            "sha1": "1e08400119316245d8593fff601605a53d3dcca8",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-04-01 19:57:22",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Calocybe gambosa 196979169",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Lyophyllaceae in Germany|Calocybe gambosa|Germany photographs taken on 2022-05-12|CC-Zero|Media from iNaturalist|Fungi in May|INaturalist images reviewed by iNaturalistReviewBot|Agaricales in Hesse|Uploaded with iNaturalist2Commons|Files with coordinates missing SDC location of creation (50° N, 8° E)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "50.599086",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "8.703459",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "St. George's Mushroom (<i>Calocybe gambosa</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-05-12",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"mw:ExtLink nofollow\" href=\"https://www.inaturalist.org/photos/196979169\" class=\"external free\">https://www.inaturalist.org/photos/196979169</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"mw:ExtLink nofollow\" href=\"https://www.inaturalist.org/users/1908828\" class=\"external text\">Pedro Hafermann</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "130269282": {
+        "pageid": 130269282,
+        "ns": 6,
+        "title": "File:Calocybe gambosa 196998144.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 777358,
+            "width": 2048,
+            "height": 1536,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/36/Calocybe_gambosa_196998144.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Calocybe_gambosa_196998144.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=130269282",
+            "sha1": "2ed66f1b5a2432e2a4ce73d7bfc0b053a71dd410",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-04-01 19:27:27",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Calocybe gambosa 196998144",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Calocybe gambosa|CC-Zero|Media from iNaturalist|Fungi in May|INaturalist images reviewed by iNaturalistReviewBot|Lyophyllaceae in the United Kingdom|Uploaded with iNaturalist2Commons|United Kingdom photographs taken on 2022-05-12|Agaricales in England|Files with coordinates missing SDC location of creation (51° N, 3° W)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.354245",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-2.200133",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "St. George's Mushroom (<i>Calocybe gambosa</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-05-12",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/196998144\">https://www.inaturalist.org/photos/196998144</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/1814745\">alanjohnyoung</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "130269288": {
+        "pageid": 130269288,
+        "ns": 6,
+        "title": "File:Calocybe gambosa 197245406.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2199291,
+            "width": 1536,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Calocybe_gambosa_197245406.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Calocybe_gambosa_197245406.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=130269288",
+            "sha1": "0eec952cc50584eedc7f3c345a550ab597b61bea",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-04-01 19:27:44",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Calocybe gambosa 197245406",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Calocybe gambosa|CC-Zero|Bludenz|Fungi of Austria|May 2022 in Vorarlberg|Media from iNaturalist|Nature of Vorarlberg in May|Austria photographs taken on 2022-05-13|Fungi in May|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "47.145981",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "9.835061",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "St. George's Mushroom (<i>Calocybe gambosa</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-05-13",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/197245406\">https://www.inaturalist.org/photos/197245406</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/1760114\">Tobias Schönberg</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "10492021": {
+        "pageid": 10492021,
+        "ns": 6,
+        "title": "File:Calocybe gambosa 2.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 9282499,
+            "width": 3872,
+            "height": 2592,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Calocybe_gambosa_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Calocybe_gambosa_2.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=10492021",
+            "sha1": "928c1e5eb5ab96aa3343b3128880c56acd7cc518",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2010-05-30 07:53:14",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Calocybe gambosa 2",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Calocybe gambosa|GFDL|Taken with Sony DSLR-A100|License migration redundant|Self-published work|Baskets with handles|Mushroom baskets",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "A basket with some freshly harvested <i><a href=\"https://en.wikipedia.org/wiki/Calocybe_gambosa\" class=\"extiw\" title=\"w:Calocybe gambosa\">Calocybe gambosa</a></i> mushrooms.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2010-05-29",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Harlekin96&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Harlekin96 (page does not exist)\">Harlekin96</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Baskets with handles"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Calocybe gambosa"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mushroom baskets"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Sony DSLR-A100"
+          }
+        ]
+      },
+      "130269299": {
+        "pageid": 130269299,
+        "ns": 6,
+        "title": "File:Calocybe gambosa 200497743.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 976520,
+            "width": 1536,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Calocybe_gambosa_200497743.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Calocybe_gambosa_200497743.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=130269299",
+            "sha1": "6dc15993e3ee3b0093cfed479f919eba74485f86",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-04-01 19:28:01",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Calocybe gambosa 200497743",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Lyophyllaceae in Germany|Calocybe gambosa|Germany photographs taken on 2022-05-25|CC-Zero|Media from iNaturalist|Fungi in May|INaturalist images reviewed by iNaturalistReviewBot|Agaricales in Hesse|Uploaded with iNaturalist2Commons|Files with coordinates missing SDC location of creation (50° N, 8° E)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "50.580859",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "8.709543",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "St. George's Mushroom (<i>Calocybe gambosa</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-05-25",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/200497743\">https://www.inaturalist.org/photos/200497743</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/1908828\">Pedro Hafermann</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "130269284": {
+        "pageid": 130269284,
+        "ns": 6,
+        "title": "File:Calocybe gambosa 200698326.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1684203,
+            "width": 2048,
+            "height": 1536,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Calocybe_gambosa_200698326.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Calocybe_gambosa_200698326.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=130269284",
+            "sha1": "d3aa7f42e136508189427f28fc97ac2438a3ce17",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-04-01 19:27:36",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Calocybe gambosa 200698326",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Calocybe gambosa|CC-Zero|Media from iNaturalist|Lithuania photographs taken on 2022-05-26|Fungi of Lithuania|Fungi in May|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "54.675866",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "25.369507",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "St. George's Mushroom (<i>Calocybe gambosa</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-05-26",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/200698326\">https://www.inaturalist.org/photos/200698326</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/737697\">Tomas Pocius</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "130269306": {
+        "pageid": 130269306,
+        "ns": 6,
+        "title": "File:Calocybe gambosa 206321127.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1732991,
+            "width": 1152,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/70/Calocybe_gambosa_206321127.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Calocybe_gambosa_206321127.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=130269306",
+            "sha1": "412289d0b945f09d7a56f7c01515e31f7e5e3e89",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-04-01 19:28:09",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Calocybe gambosa 206321127",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Calocybe gambosa|Media from iNaturalist|Russia photographs taken on 2022-06-12|Fungi in June|INaturalist images reviewed by iNaturalistReviewBot|Lyophyllaceae in Russia|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "53.931086",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "51.287192",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "St. George's Mushroom (<i>Calocybe gambosa</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-06-12",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/206321127\">https://www.inaturalist.org/photos/206321127</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/3253989\">Анна Митрошенкова</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "130269308": {
+        "pageid": 130269308,
+        "ns": 6,
+        "title": "File:Calocybe gambosa 207410126.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2110675,
+            "width": 2048,
+            "height": 1536,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Calocybe_gambosa_207410126.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Calocybe_gambosa_207410126.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=130269308",
+            "sha1": "ab19307ed24f5d670d270f89b20f78848a0dd708",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-04-01 19:28:17",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Calocybe gambosa 207410126",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Calocybe gambosa|Media from iNaturalist|Fungi in June|INaturalist images reviewed by iNaturalistReviewBot|Lyophyllaceae in Russia|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|Russia photographs taken on 2022-06-19",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "55.686718",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "50.486332",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "St. George's Mushroom (<i>Calocybe gambosa</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-06-19",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/207410126\">https://www.inaturalist.org/photos/207410126</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/1983490\">Anatoliy Ananin</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "10492046": {
+        "pageid": 10492046,
+        "ns": 6,
+        "title": "File:Calocybe gambosa 3.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 8241283,
+            "width": 3872,
+            "height": 2592,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Calocybe_gambosa_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Calocybe_gambosa_3.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=10492046",
+            "sha1": "9eb8bf205fe99b685afa6e7598ea5f147faac784",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2010-05-30 08:15:16",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Calocybe gambosa 3",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Calocybe gambosa|GFDL|Taken with Sony DSLR-A100|License migration redundant|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "A cluster of <i><a href=\"https://en.wikipedia.org/wiki/Calocybe_gambosa\" class=\"extiw\" title=\"w:Calocybe gambosa\">Calocybe gambosa</a></i> mushrooms in the grass immediately before being harvested.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2010-05-29",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Harlekin96&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Harlekin96 (page does not exist)\">Harlekin96</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Calocybe gambosa"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Sony DSLR-A100"
+          }
+        ]
+      },
+      "147296005": {
+        "pageid": 147296005,
+        "ns": 6,
+        "title": "File:Calocybe gambosa 363449044.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 721139,
+            "width": 1536,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Calocybe_gambosa_363449044.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Calocybe_gambosa_363449044.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=147296005",
+            "sha1": "19116b8d813f202d275869677dbb0d6f7a7b2e8d",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2024-04-11 20:38:43",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Calocybe gambosa 363449044",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Fungi of Germany|Calocybe gambosa|CC-Zero|Media from iNaturalist|Fungi in April|INaturalist images reviewed by iNaturalistReviewBot|Uploaded with iNaturalist2Commons|North Rhine-Westphalia photographs taken on 2024-04-05|Files with coordinates missing SDC location of creation (51° N, 7° E)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.923081",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "7.524110",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "St. George's Mushroom (<i>Calocybe gambosa</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2024-04-05",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/363449044\">https://www.inaturalist.org/photos/363449044</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/6164054\">Stuart</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "147296008": {
+        "pageid": 147296008,
+        "ns": 6,
+        "title": "File:Calocybe gambosa 363449045.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 943657,
+            "width": 1536,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Calocybe_gambosa_363449045.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Calocybe_gambosa_363449045.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=147296008",
+            "sha1": "21abb5ab4e913de68bbc5469d19e5e0953be28d6",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2024-04-11 20:38:51",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Calocybe gambosa 363449045",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Fungi of Germany|Calocybe gambosa|CC-Zero|Media from iNaturalist|Fungi in April|INaturalist images reviewed by iNaturalistReviewBot|Uploaded with iNaturalist2Commons|North Rhine-Westphalia photographs taken on 2024-04-05|Files with coordinates missing SDC location of creation (51° N, 7° E)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.923081",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "7.524110",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "St. George's Mushroom (<i>Calocybe gambosa</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2024-04-05",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/363449045\">https://www.inaturalist.org/photos/363449045</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/6164054\">Stuart</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "14869689": {
+        "pageid": 14869689,
+        "ns": 6,
+        "title": "File:Calocybe gambosa 4 cropped.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3068967,
+            "width": 2500,
+            "height": 1800,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Calocybe_gambosa_4_cropped.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Calocybe_gambosa_4_cropped.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=14869689",
+            "sha1": "13c0c171625311e0e549d6c2c9c440ad3c651f49",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-04-11 02:52:43",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Calocybe gambosa 4 cropped",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Calocybe gambosa|GFDL|Retouched pictures|License migration redundant|Self-published work|Uploaded with derivativeFX",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i><a href=\"https://en.wikipedia.org/wiki/Calocybe_gambosa\" class=\"extiw\" title=\"w:Calocybe gambosa\">Calocybe gambosa</a></i> mushrooms as found in the long grass together forming a small crescent.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2011-04-11 02:50",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<ul><li><a href=\"//commons.wikimedia.org/wiki/File:Calocybe_gambosa_4.jpg\" title=\"File:Calocybe gambosa 4.jpg\">Calocybe_gambosa_4.jpg</a></li></ul>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<ul><li><a href=\"//commons.wikimedia.org/wiki/File:Calocybe_gambosa_4.jpg\" title=\"File:Calocybe gambosa 4.jpg\">Calocybe_gambosa_4.jpg</a>: <a href=\"//commons.wikimedia.org/w/index.php?title=User:Harlekin96&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Harlekin96 (page does not exist)\">Harlekin96</a></li>\n<li>derivative work: <a href=\"//commons.wikimedia.org/w/index.php?title=User:Ak_ccm&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Ak ccm (page does not exist)\">Ak ccm</a> (<a href=\"//commons.wikimedia.org/wiki/User_talk:Ak_ccm\" title=\"User talk:Ak ccm\"><span class=\"signature-talk\">talk</span></a>)</li></ul>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Calocybe gambosa"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Retouched pictures"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded with derivativeFX"
+          }
+        ]
+      },
+      "10492391": {
+        "pageid": 10492391,
+        "ns": 6,
+        "title": "File:Calocybe gambosa 4.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 10107948,
+            "width": 3872,
+            "height": 2592,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Calocybe_gambosa_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Calocybe_gambosa_4.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=10492391",
+            "sha1": "2ff77da84098a7b23d9b8faa71167c059ab1b41e",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2010-05-30 08:28:54",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Calocybe gambosa 4",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Calocybe gambosa|GFDL|Taken with Sony DSLR-A100|License migration redundant|Self-published work|Files with derivative versions",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i><a href=\"https://en.wikipedia.org/wiki/Calocybe_gambosa\" class=\"extiw\" title=\"w:Calocybe gambosa\">Calocybe gambosa</a></i> mushrooms as found in the long grass together forming a small crescent.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2010-05-29",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Harlekin96&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Harlekin96 (page does not exist)\">Harlekin96</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Calocybe gambosa"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with derivative versions"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Sony DSLR-A100"
+          }
+        ]
+      },
+      "10492461": {
+        "pageid": 10492461,
+        "ns": 6,
+        "title": "File:Calocybe gambosa 6.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 9336389,
+            "width": 3872,
+            "height": 2592,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/77/Calocybe_gambosa_6.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Calocybe_gambosa_6.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=10492461",
+            "sha1": "73e365b93481db0c8d2f21ff9ade05f8a860b9bf",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2010-05-30 08:34:47",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Calocybe gambosa 6",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Calocybe gambosa|GFDL|Taken with Sony DSLR-A100|License migration redundant|Self-published work|Baskets with handles|Mushroom baskets",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "A basket full of newly harvested <i><a href=\"https://en.wikipedia.org/wiki/Calocybe_gambosa\" class=\"extiw\" title=\"w:Calocybe gambosa\">Calocybe gambosa</a></i> mushrooms (app. 2 kilos) from just one location",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Harlekin96&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Harlekin96 (page does not exist)\">Harlekin96</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Baskets with handles"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Calocybe gambosa"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mushroom baskets"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Sony DSLR-A100"
+          }
+        ]
+      }
+    }
+  }
+}

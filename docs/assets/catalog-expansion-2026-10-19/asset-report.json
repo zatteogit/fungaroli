@@ -1,0 +1,134 @@
+{
+ "report": [
+  {
+   "categoria": "alberi-foto",
+   "richiesti": 39,
+   "mancanti": 0,
+   "da_fare": 0,
+   "eccezioni": 0,
+   "non_elencati": []
+  },
+  {
+   "categoria": "alberi-valori",
+   "richiesti": 49,
+   "mancanti": 0,
+   "da_fare": 0,
+   "eccezioni": 0,
+   "non_elencati": []
+  },
+  {
+   "categoria": "animali-foto",
+   "richiesti": 27,
+   "mancanti": 0,
+   "da_fare": 0,
+   "eccezioni": 0,
+   "non_elencati": []
+  },
+  {
+   "categoria": "citazioni",
+   "richiesti": 437,
+   "mancanti": 371,
+   "da_fare": 371,
+   "eccezioni": 0,
+   "non_elencati": []
+  },
+  {
+   "categoria": "foto-dettagli",
+   "richiesti": 921,
+   "mancanti": 64,
+   "da_fare": 62,
+   "eccezioni": 2,
+   "non_elencati": []
+  },
+  {
+   "categoria": "funghi-base",
+   "richiesti": 300,
+   "mancanti": 36,
+   "da_fare": 36,
+   "eccezioni": 0,
+   "non_elencati": []
+  },
+  {
+   "categoria": "funghi-colore",
+   "richiesti": 140,
+   "mancanti": 0,
+   "da_fare": 0,
+   "eccezioni": 0,
+   "non_elencati": []
+  },
+  {
+   "categoria": "funghi-combinazioni",
+   "richiesti": 201,
+   "mancanti": 0,
+   "da_fare": 0,
+   "eccezioni": 0,
+   "non_elencati": []
+  },
+  {
+   "categoria": "funghi-fasi",
+   "richiesti": 187,
+   "mancanti": 0,
+   "da_fare": 0,
+   "eccezioni": 0,
+   "non_elencati": []
+  },
+  {
+   "categoria": "funghi-forma",
+   "richiesti": 122,
+   "mancanti": 0,
+   "da_fare": 0,
+   "eccezioni": 0,
+   "non_elencati": []
+  },
+  {
+   "categoria": "funghi-foto",
+   "richiesti": 100,
+   "mancanti": 1,
+   "da_fare": 0,
+   "eccezioni": 1,
+   "non_elencati": []
+  },
+  {
+   "categoria": "funghi-sezione-uovo",
+   "richiesti": 4,
+   "mancanti": 0,
+   "da_fare": 0,
+   "eccezioni": 0,
+   "non_elencati": []
+  },
+  {
+   "categoria": "luoghi-copertine",
+   "richiesti": 153,
+   "mancanti": 0,
+   "da_fare": 0,
+   "eccezioni": 0,
+   "non_elencati": []
+  },
+  {
+   "categoria": "luoghi-foto",
+   "richiesti": 15,
+   "mancanti": 6,
+   "da_fare": 0,
+   "eccezioni": 6,
+   "non_elencati": []
+  },
+  {
+   "categoria": "piante-foto",
+   "richiesti": 78,
+   "mancanti": 0,
+   "da_fare": 0,
+   "eccezioni": 0,
+   "non_elencati": []
+  },
+  {
+   "categoria": "piante-valori",
+   "richiesti": 51,
+   "mancanti": 0,
+   "da_fare": 0,
+   "eccezioni": 0,
+   "non_elencati": []
+  }
+ ],
+ "da_rifare": [],
+ "incoerenze": []
+}

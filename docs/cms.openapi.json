@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "Fungaroli CMS",
-    "version": "0.3.0",
+    "version": "0.4.0",
     "description": "API condivise dalla redazione umana e dagli agenti. Le autorizzazioni sono assegnate dal gestore. Il GET pubblico espone soltanto contenuti pubblicati."
   },
   "servers": [
@@ -32,10 +32,17 @@
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "required": ["user", "configured"],
+                  "required": [
+                    "user",
+                    "configured"
+                  ],
                   "properties": {
-                    "user": { "$ref": "#/components/schemas/Principal" },
-                    "configured": { "type": "boolean" }
+                    "user": {
+                      "$ref": "#/components/schemas/Principal"
+                    },
+                    "configured": {
+                      "type": "boolean"
+                    }
                   }
                 }
               }
@@ -210,6 +217,7 @@
               "media-trees",
               "media-glossary",
               "plants",
+              "animals",
               "botanical-models",
               "infografiche",
               "preparation",
@@ -385,6 +393,7 @@
               "media-trees",
               "media-glossary",
               "plants",
+              "animals",
               "botanical-models",
               "infografiche",
               "preparation",
@@ -487,6 +496,7 @@
               "media-trees",
               "media-glossary",
               "plants",
+              "animals",
               "botanical-models",
               "infografiche",
               "preparation",
@@ -580,6 +590,7 @@
               "media-trees",
               "media-glossary",
               "plants",
+              "animals",
               "botanical-models",
               "infografiche",
               "preparation",
@@ -663,6 +674,7 @@
               "media-trees",
               "media-glossary",
               "plants",
+              "animals",
               "botanical-models",
               "infografiche",
               "preparation",
@@ -892,9 +904,10 @@
                             "media",
                             "media-zones",
                             "media-trees",
-              "media-glossary",
-              "plants",
-              "botanical-models",
+                            "media-glossary",
+                            "plants",
+                            "animals",
+                            "botanical-models",
                             "infografiche",
                             "preparation",
                             "legal"
@@ -1074,9 +1087,10 @@
                         "media",
                         "media-zones",
                         "media-trees",
-              "media-glossary",
-              "plants",
-              "botanical-models",
+                        "media-glossary",
+                        "plants",
+                        "animals",
+                        "botanical-models",
                         "infografiche",
                         "preparation",
                         "legal"
@@ -1147,6 +1161,70 @@
               "type": "string",
               "format": "uuid"
             }
+          }
+        ]
+      }
+    },
+    "/api/cms/v1/metrics/weather": {
+      "get": {
+        "summary": "Misure del servizio meteo per giorno: chiamate e quota stimata di Open-Meteo, errori, latenza, uso della cache; amministratore",
+        "responses": {
+          "200": {
+            "description": "Operazione completata"
+          },
+          "401": {
+            "description": "Identità non autenticata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Permesso mancante",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "412": {
+            "description": "Revisione o release cambiata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Documento non valido",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "days",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 180,
+              "default": 30
+            },
+            "description": "Giorni da riassumere (fuso Europe/Rome)."
           }
         ]
       }
@@ -1231,6 +1309,68 @@
         },
         "security": []
       }
+    },
+    "/api/cms/v1/dashboard": {
+      "get": {
+        "summary": "Dashboard aggregata, politica corrente e storico (solo amministratori)",
+        "responses": {
+          "200": {
+            "description": "Conteggi e aggregati, nessun testo privato o contatto"
+          },
+          "403": {
+            "description": "Solo amministratori"
+          }
+        }
+      },
+      "patch": {
+        "summary": "Salva il limite del segnale community con audit atomico (solo amministratori)",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "version",
+                  "maxPercent",
+                  "reason"
+                ],
+                "properties": {
+                  "version": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "maxPercent": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 10
+                  },
+                  "reason": {
+                    "type": "string",
+                    "minLength": 5,
+                    "maxLength": 500
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Politica salvata"
+          },
+          "403": {
+            "description": "Ruolo o origine non autorizzati"
+          },
+          "412": {
+            "description": "Versione obsoleta: rileggere prima di salvare"
+          },
+          "422": {
+            "description": "Parametri non validi"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -1313,17 +1453,56 @@
       },
       "Principal": {
         "type": "object",
-        "required": ["id", "name", "kind", "role", "scopes", "resources"],
+        "required": [
+          "id",
+          "name",
+          "kind",
+          "role",
+          "scopes",
+          "resources"
+        ],
         "properties": {
-          "id": { "type": "string" },
-          "name": { "type": "string" },
-          "kind": { "type": "string", "enum": ["human", "agent"] },
-          "role": { "type": "string", "enum": ["member", "editor", "admin", "agent"] },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "human",
+              "agent"
+            ]
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "member",
+              "editor",
+              "admin",
+              "agent"
+            ]
+          },
           "scopes": {
             "type": "array",
-            "items": { "type": "string", "enum": ["read", "write", "publish", "review", "admin"] }
+            "items": {
+              "type": "string",
+              "enum": [
+                "read",
+                "write",
+                "publish",
+                "review",
+                "admin"
+              ]
+            }
           },
-          "resources": { "type": "array", "items": { "type": "string" } }
+          "resources": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
         }
       },
       "Error": {

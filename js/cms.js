@@ -1,9 +1,17 @@
+import {mountSurveyAdmin} from './survey-admin.js';
+import {mountResearchOverview} from './research-overview.js';
+import {mountAdminDashboard} from './admin-dashboard.js';
+import {mountExternalObservations} from './external-observations-admin.js';
+import {openModal} from './modal-flow.js';
+import './modal-scroll.js';
 import { initCommunity, communityReady, currentUser } from './community.js';
 import './images.js';
 import { CONTENT_RESOURCES, CONTENT_TEMPLATES, FIELD_LABELS, isLockedField } from './content-schema.js';
+import { SURVEY_ID, SURVEY_ENDPOINT } from './survey-schema.js';
 
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let dashboard,externalObservations,surveys,overview,workspaceView;
 let actor,items=[],release='0',doc,published,collection='',record='',dirty=false,opening=0;
 const editor=$('#cms-editor'),status=$('#cms-status');
 const title=k=>FIELD_LABELS[k]||k.replace(/_/g,' ');
@@ -15,20 +23,43 @@ async function api(path,method='GET',data,headers={}) {
   const r=await fetch('/api/cms/v1/'+path,{method,credentials:'same-origin',cache:'no-store',headers:{...(data===undefined?{}:{'content-type':'application/json'}),...headers},body:data===undefined?undefined:JSON.stringify(data)});
   const out=await r.json();if(!r.ok)throw Object.assign(new Error(out.error||'Richiesta non riuscita.'),{status:r.status});return out;
 }
+function openSurveyExports(){openModal($('#cms-survey-dialog'));void surveyCount();}
 function can(scope){return actor?.scopes?.includes(scope);}
 async function access() {
-  const n=++opening;
+  const n=++opening;surveys?.dispose();surveys=null;overview?.dispose();overview=null;dashboard?.dispose();dashboard=null;externalObservations?.dispose();externalObservations=null;
   try {
     const me=await api('me');if(n!==opening)return;actor=me.user;
     const allowed=can('read');$('#cms-access').hidden=allowed;$('#cms-workspace').hidden=!allowed;
     if(!allowed){$('#cms-access-status').textContent=`Il profilo ${actor.name} non ha ancora un ruolo di redazione. Il tuo ID è ${actor.id}.`;return;}
     const role={admin:'Amministratore',editor:'Editor'}[actor.role]||'Redazione';
     $('#cms-identity').textContent=`${actor.name} · ${role} · accesso con passkey`;
-    $('#cms-agents').hidden=!can('admin');
+    dashboard?.dispose();dashboard=null;
+    $('#cms-dashboard-tab').hidden=!can('admin');
+    if(can('admin'))dashboard=mountAdminDashboard($('#cms-dashboard'),{api,openSurvey:openSurveyExports});
+    if(can('admin'))externalObservations=mountExternalObservations($('#cms-external'),{api});
+    if(can('admin')){surveys=mountSurveyAdmin($('#cms-questionnaires'),{api,openExports:openSurveyExports});overview=mountResearchOverview($('#cms-overview'),{api,navigate:setWorkspace,filter:v=>externalObservations.setFilters(v)});}
+    document.querySelectorAll('[data-admin-tab]').forEach(b=>b.hidden=!can('admin'));
+    setWorkspace(can('admin')?'overview':'content');
+    $('#cms-agents').hidden=!can('admin');$('#cms-survey').hidden=!can('admin');
     await refreshItems();
     if(!doc)await openItem(items.find(i=>!i.readonly)?.id);
-  }catch(e){if(n!==opening)return;$('#cms-workspace').hidden=true;$('#cms-access').hidden=false;$('#cms-access-status').textContent=e.status===401?'Accedi con il pulsante in alto.':e.message;}
+  }catch(e){if(n!==opening)return;dashboard?.dispose();dashboard=null;$('#cms-workspace').hidden=true;$('#cms-access').hidden=false;$('#cms-access-status').textContent=e.status===401?'Accedi con il pulsante in alto.':e.message;}
 }
+function setWorkspace(view){
+ if(typeof view==='boolean')view=view?'overview':'content';
+ if(view!=='surveys'&&surveys?.isDirty()){message('Salva o scarta la compilazione del questionario prima di cambiare sezione.',true);return;}
+ if(!['records','sources','impact'].includes(view)&&externalObservations?.isDirty()){message('Salva o annulla la modifica della segnalazione prima di cambiare sezione.',true);return;}
+ if(workspaceView==='content'&&view!=='content'&&dirty){message('Salva le modifiche al contenuto prima di cambiare sezione.',true);return;}
+ workspaceView=view;
+ $('#cms-dashboard').hidden=view!=='policy';$('#cms-content').hidden=view!=='content';$('#cms-overview').hidden=view!=='overview';$('#cms-external').hidden=!['records','sources','impact'].includes(view);$('#cms-questionnaires').hidden=view!=='surveys';
+ document.querySelectorAll('[data-workspace]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.workspace===view)));
+ if(view==='overview')overview?.load();
+ if(view==='policy')dashboard?.ensureLoaded();
+ if(['records','sources','impact'].includes(view)){externalObservations?.setView(view);if(!$('#cms-external [data-external-list]').childElementCount)externalObservations?.load();}
+ if(view==='surveys')surveys?.load();
+ message('');
+}
+document.querySelectorAll('[data-workspace]').forEach(b=>b.onclick=()=>setWorkspace(b.dataset.workspace));
 async function refreshItems(){const r=await api('items');items=r.items;release=r.release;renderResources();}
 function renderResources(){
   const q=$('#cms-resource-search').value.toLowerCase();let group='';
@@ -52,23 +83,23 @@ function recordPath(){return collection&&record!==''?[collection,Array.isArray(d
 function valueAt(path){return path.reduce((v,k)=>v?.[k],doc.data);}
 function writeAt(path,value){let at=doc.data;for(const k of path.slice(0,-1))at=at[k];at[path.at(-1)]=value;dirty=true;}
 function renderEditor(){
-  if(doc.id==='trails')for(const z of Object.values(doc.data.zones||{}))for(const t of z.trails||[])t.editorialNote??='';
+  if(doc.id==='trails')for(const z of Object.values(doc.data.zones||{}))for(const t of z.trails||[]){t.editorialNote??='';t.relatedLinks??=[];for(const l of t.relatedLinks)l.caution??='';}
   const schema=CONTENT_RESOURCES.find(r=>r.id===doc.id),rows=entries();if(record===''&&rows.length)record=rows[0][0];
   const path=recordPath(),value=valueAt(path)||doc.data;
   editor.innerHTML=`<p class="eyebrow">${esc(schema.group)}</p><h2>${esc(schema.title)}</h2><div class="cms-meta"><span>Revisione ${doc.version}</span><span>Pubblicata: ${doc.publishedVersion}</span>${schema.readonly?'<span>Dati generati · consultazione</span>':''}</div>
     <div class="cms-toolbar"><button class="btn primary" type="button" data-save ${!can('write')||schema.readonly?'disabled':''}>Salva bozza</button><button class="btn ghost" type="button" data-preview>Anteprima e controlli</button><button class="btn ghost" type="button" data-publish ${!can('publish')||schema.readonly?'disabled':''}>Pubblica bozza</button><button class="btn ghost" type="button" data-reload>Rileggi</button></div>
     ${actor.role==='editor'?'<p class="small muted">Puoi preparare e salvare bozze. La pubblicazione e la verifica delle fonti sono riservate agli amministratori.</p>':''}
     ${schema.readonly?'<p class="small muted">Questi campioni e percorsi provengono dai processi geografici. La redazione li consulta; l’aggiornamento avviene tramite importazione dei dati.</p>':''}
-    ${schema.collections.length?`<div class="cms-record-picker"><label>Gruppo<select data-collection>${schema.collections.map(k=>`<option value="${esc(k)}" ${k===collection?'selected':''}>${esc(title(k))}</option>`).join('')}<option value="" ${!collection?'selected':''}>Impostazioni del documento</option></select></label><label>Voce<select data-record>${rows.map(([k,v])=>`<option value="${esc(k)}" ${k===record?'selected':''}>${esc(typeof v==='string'?v.slice(0,70):v.name||v.title||v.term||v.latin||v.id||k)}</option>`).join('')}</select></label></div>${!schema.readonly&&collection&&doc.id!=='trails'?'<button class="btn ghost small" type="button" data-new>＋ Nuova voce</button>':''}`:''}
+    ${schema.collections.length?`<div class="cms-record-picker"><label>Gruppo<select data-collection>${schema.collections.map(k=>`<option value="${esc(k)}" ${k===collection?'selected':''}>${esc(title(k))}</option>`).join('')}<option value="" ${!collection?'selected':''}>Impostazioni del documento</option></select></label><label>Voce<select data-record>${rows.map(([k,v])=>`<option value="${esc(k)}" ${k===record?'selected':''}>${esc(typeof v==='string'?v.slice(0,70):v.name||v.title||v.term||v.text||v.latin||v.id||k)}</option>`).join('')}</select></label></div>${!schema.readonly&&collection&&doc.id!=='trails'?'<button class="btn ghost small" type="button" data-new>＋ Nuova voce</button>':''}`:''}
     <fieldset class="cms-fieldset" ${!can('write')||schema.readonly?'disabled':''}><legend>Contenuto</legend><div class="cms-fields">${fields(value,path)}</div></fieldset>
-    ${can('review')&&['species-traits','edible-catalog','legal','glossary','media-glossary','plants','botanical-models'].includes(doc.id)?'<label class="cms-review"><span><input type="checkbox" data-reviewed> Ho verificato le fonti delle modifiche scientifiche o normative, quando richiesto.</span></label><p class="small muted">I controlli automatici verificano struttura e collegamenti; non certificano la correttezza scientifica.</p>':''}
+    ${can('review')&&['species-traits','edible-catalog','legal','glossary','media-glossary','plants','botanical-models','trails'].includes(doc.id)?'<label class="cms-review"><span><input type="checkbox" data-reviewed> Ho verificato le fonti delle modifiche scientifiche o normative, quando richiesto.</span></label><p class="small muted">I controlli automatici verificano struttura e collegamenti; non certificano la correttezza scientifica.</p>':''}
     <p class="small muted">La pubblicazione include tutte le voci modificate in questa sezione.</p>
     <div id="cms-preview" hidden></div><details class="cms-revisions"><summary>Cronologia e ripristino</summary><div id="cms-revisions"></div></details>`;
   loadRevisions();
 }
 function fields(v,path,depth=0){
   if(['phaseMonths','elevationRange'].includes(path.at(-1)))return `<label>${esc(title(path.at(-1)))} <span class="small muted">Un numero per riga; vuoto = sconosciuto</span><textarea data-field="${pathCode(path)}" data-kind="nullable-numbers">${esc((v||[]).join('\n'))}</textarea></label>`;
-  if(doc.id==='glossary'&&path.at(-1)==='contexts')return `<label>Contesti del collegamento <span class="small muted">Un contesto per riga: Funghi, Piante, Alberi, Bosco, Sentiero. Vuoto = significato condiviso.</span><textarea data-field="${pathCode(path)}" data-kind="nullable-contexts">${esc((v||[]).join('\n'))}</textarea></label>`;
+  if(doc.id==='glossary'&&path.at(-1)==='contexts')return `<label>Contesti del collegamento <span class="small muted">Un contesto per riga: Funghi, Piante, Alberi, Animali, Bosco, Sentiero. Vuoto = significato condiviso.</span><textarea data-field="${pathCode(path)}" data-kind="nullable-contexts">${esc((v||[]).join('\n'))}</textarea></label>`;
   if(v===null)return `<label>${esc(title(path.at(-1)||'Valore'))}<input data-field="${pathCode(path)}" data-kind="nullable" placeholder="Non disponibile" value=""></label>`;
   if(typeof v!=='object')return field(v,path);
   if(Array.isArray(v)) {
@@ -78,7 +109,7 @@ function fields(v,path,depth=0){
   }
   return Object.entries(v).map(([k,x])=>{
     const p=[...path,k];
-    if(isLockedField(k)&&!(doc.id==='media-glossary'&&k==='generated'))return `<details class="cms-fieldset"><summary>${esc(title(k))} · dalla fonte</summary><pre class="cms-readonly">${esc(JSON.stringify(x,null,2).slice(0,800))}</pre></details>`;
+    if(isLockedField(k)&&!(doc.id==='media-glossary'&&k==='generated')&&doc.id!=='daily-thoughts')return `<details class="cms-fieldset"><summary>${esc(title(k))} · dalla fonte</summary><pre class="cms-readonly">${esc(JSON.stringify(x,null,2).slice(0,800))}</pre></details>`;
     if(x&&typeof x==='object'&&!Array.isArray(x))return `<details class="cms-fieldset" ${depth<1?'open':''}><summary>${esc(title(k))}</summary><div class="cms-fields">${fields(x,p,depth+1)}</div></details>`;
     return fields(x,p,depth+1);
   }).join('');
@@ -87,8 +118,9 @@ function field(v,path){
   const key=path.at(-1),label=esc(title(key));
   if(typeof v==='boolean')return `<label><span><input type="checkbox" data-field="${pathCode(path)}" data-kind="boolean" ${v?'checked':''}> ${label}</span></label>`;
   if(key==='id')return `<label>${label}<input value="${esc(v)}" readonly></label>`;
+  if(doc.id==='trails'&&path.includes('relatedLinks')&&['relationship','status'].includes(key))return `<label>${label}<select data-field="${pathCode(path)}" data-kind="string">${Object.entries(key==='relationship'?{partly_overlapping:'Itinerario parzialmente sovrapposto',official_context:'Riferimento ufficiale di contesto'}:{pending:'Da verificare (non mostrato)',reviewed:'Pertinenza verificata'}).map(([id,name])=>`<option value="${id}" ${id===v?'selected':''}>${name}</option>`).join('')}</select></label>`;
   if(doc.id==='media-glossary'&&key==='kind')return `<label>${label}<select data-field="${pathCode(path)}" data-kind="string">${[['photo','Fotografia'],['diagram','Schema didattico']].map(([id,name])=>`<option value="${id}" ${id===v?'selected':''}>${name}</option>`).join('')}</select></label>`;
-  if(doc.id==='glossary'&&key==='category')return `<label>${label}<select data-field="${pathCode(path)}" data-kind="string">${['Funghi','Piante','Alberi','Bosco','Sentiero'].map(x=>`<option ${x===v?'selected':''}>${x}</option>`).join('')}</select></label>`;
+  if(doc.id==='glossary'&&key==='category')return `<label>${label}<select data-field="${pathCode(path)}" data-kind="string">${['Funghi','Piante','Alberi','Animali','Bosco','Sentiero'].map(x=>`<option ${x===v?'selected':''}>${x}</option>`).join('')}</select></label>`;
   if(doc.id==='botanical-models'&&['phase','calendarOrigin'].includes(key))return `<label>${label}<select data-field="${pathCode(path)}" data-kind="string">${(key==='phase'?[['young_leaves','Foglie giovani'],['ripe_fruits','Frutti maturi'],['dry_fruits','Frutti aromatici maturi']]:[['hypothesis','Mesi ricavati da una stagione (ipotesi)'],['source_calendar','Mesi riportati dalla fonte']]).map(([id,name])=>`<option value="${id}" ${id===v?'selected':''}>${name}</option>`).join('')}</select></label>`;
   if(key==='toxicity')return `<label>${label}<select data-field="${pathCode(path)}" data-kind="string">${['da verificare','commestibile','commestibile con cautela','non commestibile','tossico','mortale'].map(x=>`<option ${x===v||!v&&x==='da verificare'?'selected':''}>${x}</option>`).join('')}</select></label>`;
   if(doc.id==='plants'&&['category','status'].includes(key))return `<label>${label}<select data-field="${pathCode(path)}" data-kind="string">${(key==='category'?['Erbe','Fiori','Frutti','Arbusti','Pericolose']:['da verificare','da osservare','solo parti e preparazioni indicate','tossico','mortale']).map(x=>`<option ${x===v?'selected':''}>${x}</option>`).join('')}</select></label>`;
@@ -150,7 +182,7 @@ editor.addEventListener('click',async e=>{
       for(const k of ['name','title','latin','excerpt','body','sources'])if(k in template)template[k]=Array.isArray(template[k])?[]:'';
       dirty=true;renderEditor();message('Nuova voce in bozza: completa i campi e le fonti prima di salvare.');
     }
-    if(b.dataset.add){const p=decode(b.dataset.add),v=valueAt(p);v.push(['illustrations','photos'].includes(p.at(-1))?{file:'',alt:'',caption:'',author:'',license:'',licenseUrl:'',page:'',...(p.at(-1)==='illustrations'?{kind:'photo',generated:false}:{sourceImage:''})}:typeof v[0]==='object'?blank(v[0]):'');dirty=true;renderEditor();}
+    if(b.dataset.add){const p=decode(b.dataset.add),v=valueAt(p);v.push(p.at(-1)==='relatedLinks'?{provider:'Wikiloc',url:'',label:'Altro itinerario su Wikiloc',relationship:'partly_overlapping',note:'',caution:'',checkedOn:'',status:'pending'}:['illustrations','photos'].includes(p.at(-1))?{file:'',alt:'',caption:'',author:'',license:'',licenseUrl:'',page:'',...(p.at(-1)==='illustrations'?{kind:'photo',generated:false}:{sourceImage:''})}:typeof v[0]==='object'?blank(v[0]):'');dirty=true;renderEditor();}
     if(b.dataset.remove){const p=decode(b.dataset.remove),v=valueAt(p.slice(0,-1));v.splice(p.at(-1),1);dirty=true;renderEditor();}
   }catch(e){message(e.message,true);}finally{if(b.isConnected)b.disabled=false;}
 });
@@ -158,8 +190,8 @@ $('#cms-resource-search').oninput=renderResources;
 $('#cms-resources').onclick=e=>{const b=e.target.closest('[data-resource]');if(b)openItem(b.dataset.resource);};
 $('#cms-agents').onclick=async()=>{
   const d=$('#cms-token-dialog');$('#cms-token-result').textContent='';
-  $('#cms-token-resources').innerHTML='<legend>Sezioni</legend>'+CONTENT_RESOURCES.filter(r=>!r.readonly).map(r=>`<label><input type="checkbox" name="resource" value="${r.id}" ${r.id===doc?.id?'checked':''}> ${esc(r.title)}</label>`).join('');
-  d.showModal();await tokens();
+  $('#cms-token-resources').innerHTML='<legend>Sezioni</legend><label><input type="checkbox" name="resource" value="survey-responses"> Questionari: risposte, inserimento e revisione</label><label><input type="checkbox" name="resource" value="external-observations"> Segnalazioni esterne e analisi del motore</label>'+CONTENT_RESOURCES.filter(r=>!r.readonly).map(r=>`<label><input type="checkbox" name="resource" value="${r.id}" ${r.id===doc?.id?'checked':''}> ${esc(r.title)}</label>`).join('');
+  openModal(d);await tokens();
 };
 $('#cms-token-dialog [data-close]').onclick=()=>{$('#cms-token-result').textContent='';$('#cms-token-dialog').close();};
 async function tokens(){const r=await api('tokens');$('#cms-token-list').innerHTML='<h3>Credenziali esistenti</h3>'+r.tokens.map(t=>`<div class="cms-token-row"><b>${esc(t.name)}</b> · ${esc(t.scopes.join(', '))}<br><span class="small muted">${t.revokedAt?'Revocata':`Scade il ${new Date(t.expiresAt).toLocaleDateString('it-IT')}`}</span>${!t.revokedAt?` <button type="button" class="btn ghost small" data-revoke="${t.id}">Revoca</button>`:''}</div>`).join('');}
@@ -168,6 +200,56 @@ $('#cms-token-form').onsubmit=async e=>{
   try{const r=await api('tokens','POST',{name:form.elements.name.value,days:Number(form.elements.days.value),scopes:['read',...Array.from(form.querySelectorAll('[name=scope]:checked:not(:disabled)'),el=>el.value)],resources:Array.from(form.querySelectorAll('[name=resource]:checked'),el=>el.value)});$('#cms-token-result').innerHTML='<p>Conserva questa chiave: non sarà mostrata di nuovo.</p>';const code=document.createElement('div');code.className='cms-token-code';code.textContent=r.token;$('#cms-token-result').append(code);await tokens();}catch(err){$('#cms-token-result').textContent=err.message;}finally{b.disabled=false;}
 };
 $('#cms-token-list').onclick=async e=>{const b=e.target.closest('[data-revoke]');if(b){try{await api('tokens/'+b.dataset.revoke,'DELETE');await tokens();}catch(err){$('#cms-token-result').textContent=err.message;}}};
-addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.returnValue='';}});
+// Risposte al questionario (/questionario): conteggio, esportazione e cancellazione su richiesta.
+// Solo amministratori: il server (worker/survey.js) ricontrolla sessione e ruolo a ogni richiesta.
+const surveyUrl=q=>`${SURVEY_ENDPOINT}?survey=${encodeURIComponent(SURVEY_ID)}${q}`;
+async function surveyApi(url,method='GET'){
+  const r=await fetch(url,{method,credentials:'same-origin',cache:'no-store'});
+  if(!r.ok){const out=await r.json().catch(()=>({}));throw Object.assign(new Error(out.error||'Richiesta non riuscita.'),{status:r.status});}
+  return r;
+}
+const surveyWhen=iso=>new Date(iso).toLocaleString('it-IT',{dateStyle:'long',timeStyle:'short'});
+function surveyNote(text,error=false){const el=$('#cms-survey-count');el.textContent=text;el.classList.toggle('error',error);}
+async function surveyCount(){
+  surveyNote('Conto le risposte…');
+  // format=count: solo numero e data dell'ultima, senza scaricare le risposte (né nomi né contatti)
+  try{const r=await(await surveyApi(surveyUrl('&format=count'))).json();
+    surveyNote(r.count?`${r.count===1?'Una risposta':`${r.count} risposte`}. L’ultima è arrivata il ${surveyWhen(r.lastAt)}.`:'Nessuna risposta per ora.');}
+  catch(e){surveyNote(e.message,true);}
+}
+function surveyRow(x){
+  const row=document.createElement('div');row.className='cms-survey-row';
+  const info=document.createElement('p');info.textContent=`Ricevuta ${x.receipt} · arrivata il ${surveyWhen(x.createdAt)} · ${x.name?`nome: ${x.name}`:'senza nome'}${x.contact?' · con contatto':''}.`;
+  const err=document.createElement('p');err.className='small';
+  const del=document.createElement('button');del.type='button';del.className='btn ghost';del.textContent='Cancella questa risposta';
+  del.onclick=async()=>{
+    if(del.dataset.confirm!=='1'){del.dataset.confirm='1';del.textContent='Conferma: cancella per sempre';err.textContent='La cancellazione non si può annullare.';return;}
+    del.disabled=true;
+    try{await surveyApi(`${SURVEY_ENDPOINT}/${encodeURIComponent(x.id)}`,'DELETE');const done=document.createElement('p');done.textContent=`Risposta ${x.receipt} cancellata. Puoi confermarlo a chi l’ha chiesto.`;row.replaceChildren(done);surveyCount();}
+    catch(e){del.disabled=false;err.textContent=e.message;}
+  };
+  row.append(info,del,err);return row;
+}
+$('#cms-survey').onclick=()=>setWorkspace('surveys');
+$('#cms-survey-dialog [data-close]').onclick=()=>$('#cms-survey-dialog').close();
+$('#cms-survey-dialog').addEventListener('click',async e=>{
+  const b=e.target.closest('[data-survey-download]');if(!b)return;
+  // csv-excel: separatore «;» per Excel in italiano (&sep=semicolon); csv: virgola (RFC 4180); json: dati esatti.
+  const kind=b.dataset.surveyDownload,format=kind==='json'?'json':'csv',excel=kind==='csv-excel';b.disabled=true;
+  try{
+    const blob=await(await surveyApi(surveyUrl('&format='+format+(excel?'&sep=semicolon':'')))).blob();
+    const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`questionario-${SURVEY_ID}-${new Date().toISOString().slice(0,10)}${excel?'-excel':''}.${format}`;
+    document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+  }catch(err){surveyNote(err.message,true);}finally{b.disabled=false;}
+});
+$('#cms-survey-find').onsubmit=async e=>{
+  e.preventDefault();const box=$('#cms-survey-result');box.textContent='Cerco la risposta…';
+  try{
+    const r=await(await surveyApi(surveyUrl('&format=json&receipt='+encodeURIComponent(e.currentTarget.elements.receipt.value)))).json();
+    if(!r.responses.length){box.textContent='Nessuna risposta con questo codice: forse è già stata cancellata.';return;}
+    box.replaceChildren(...r.responses.map(surveyRow));
+  }catch(err){box.textContent=err.message;}
+};
+addEventListener('beforeunload',e=>{if(dirty||surveys?.isDirty()||externalObservations?.isDirty()){e.preventDefault();e.returnValue='';}});
 document.addEventListener('fungaroli:community',()=>{if(currentUser()?.id!==actor?.id){doc=null;dirty=false;editor.textContent='';access();}});
 initCommunity({zoneList:[]});await communityReady();await access();

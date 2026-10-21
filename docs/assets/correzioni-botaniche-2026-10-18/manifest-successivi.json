@@ -1,0 +1,102 @@
+[
+  {
+    "species": "finocchietto",
+    "latin": "Anethum foeniculum L.",
+    "key": "flower_shape",
+    "value": "ombrella",
+    "asset": {
+      "file": "incoming/correzioni-piante-2026-10-18/approvati/finocchietto-ombrella.webp",
+      "source": "incoming/correzioni-piante-2026-10-18/originali/finocchietto-ombrella.png",
+      "sourceSha256": "bca5e65ab082c4d3f0561348e07626cda9c3eb27a7b5a62d25e57415b7e1cae7",
+      "sha256": "8ed16ff1b655c5dac1008fecdff6333944126d0ea661461cb824fcd0f64677fa",
+      "bbox": [
+        8,
+        24,
+        120,
+        104
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "alphaThreshold": 16,
+      "reviewedAtSizes": [
+        128,
+        64
+      ]
+    },
+    "source": {
+      "title": "Università di Trieste · Portale della Flora di Roma",
+      "url": "https://dryades.units.it/Roma/index.php?id=3527&procedure=taxon_page"
+    },
+    "photoReference": {
+      "file": "assets/plants/finocchietto-1.webp",
+      "thumb": "assets/plants/finocchietto-1-t.webp",
+      "alt": "Finocchietto selvatico: fotografia della specie",
+      "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+      "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "page": "https://dryades.units.it/Roma/index.php?id=3527&procedure=taxon_page",
+      "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG0376JPG1598000751.jpg",
+      "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di Trieste, Monte Valerio, TS, Friuli Venezia Giulia, Italia · 20/08/2020 · Distributed under CC BY-SA 4.0 license."
+    },
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "model": "image_gen",
+    "method": "raster prima del vettore",
+    "status": "revisione editoriale visiva limitata, non certificazione",
+    "review": "REVISIONE.md",
+    "vectorStatus": "non avviato"
+  },
+  {
+    "species": "rosa-canina",
+    "latin": "Rosa canina L.",
+    "key": "fruit_type",
+    "value": "falso_frutto",
+    "asset": {
+      "file": "incoming/correzioni-piante-2026-10-18/approvati/rosa-canina-cinorrodo.webp",
+      "source": "incoming/correzioni-piante-2026-10-18/originali/rosa-canina-cinorrodo.png",
+      "sourceSha256": "15bf4ba1f5abe321ccc2cfc1cd758ba590df36c4215836f9bd7c925b93158899",
+      "sha256": "bf8271ecee2a54eac15c2280d5ae426b1a5e576a8821036e5a1be4a3d9a8d1ee",
+      "bbox": [
+        41,
+        8,
+        87,
+        120
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "alphaThreshold": 16,
+      "reviewedAtSizes": [
+        128,
+        64
+      ]
+    },
+    "source": {
+      "title": "Università di Trieste · Portale della Flora di Roma",
+      "url": "https://dryades.units.it/Roma/index.php?id=1972&procedure=taxon_page"
+    },
+    "photoReference": {
+      "file": "assets/plants/rosa-canina-1.webp",
+      "thumb": "assets/plants/rosa-canina-1-t.webp",
+      "alt": "Rosa canina: fotografia della specie",
+      "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+      "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "page": "https://dryades.units.it/Roma/index.php?id=1972&procedure=taxon_page",
+      "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB30255jpg1669722706.jpg",
+      "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di San Dorligo della Valle, nei pressi della chiesetta di San Lorenzo, TS, Friuli Venezia Giulia, Italia · 27/09/2005 · Distributed under CC BY-SA 4.0 license."
+    },
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "model": "image_gen",
+    "method": "raster prima del vettore",
+    "status": "revisione editoriale visiva limitata, non certificazione",
+    "review": "REVISIONE.md",
+    "vectorStatus": "non avviato"
+  }
+]

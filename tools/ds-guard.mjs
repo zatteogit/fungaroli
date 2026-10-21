@@ -49,9 +49,9 @@ const CONFIG = {
   },
   entries: [],
   // perimetro Fronda: il livello di componenti condivisi, solo ruoli pubblici
-  entriesDirect: ["css/fronda.css"],
+  entriesDirect: ["css/fronda.css", "css/species-pages.css", "css/map-experience.css", "css/animals.css"],
   aliases: {},
-  exclude: ["node_modules/", "docs/", "assets/", "tests/", "tools/", "worker/", "data/", ".wrangler/", "test-results/", "playwright-report/", "css/tokens.css", "css/fonts.css"],
+  exclude: ["node_modules/", "docs/", "incoming/", "assets/", "tests/", "tools/", "worker/", "data/", ".wrangler/", "test-results/", "playwright-report/", "css/tokens.css", "css/fonts.css"],
   patterns: [
     { id: "inline-hex", label: "literal hex colour", re: /#[0-9a-fA-F]{3,8}\b(?![\w-])/g },
     { id: "css-colour-fn", label: "rgb()/hsl()/oklch() literal", re: /\b(?:rgba?|hsla?|oklch)\([^)]*\)/g },
@@ -60,7 +60,7 @@ const CONFIG = {
   contrast: {
     minRatio: 4.5,
     conventionRoles: [],
-    pairs: [["--bg", "--text"], ["--surface", "--text"], ["--bg", "--text-2"], ["--surface", "--muted"], ["--bg", "--accent"], ["--surface", "--accent"], ["--brand", "--brand-ink"], ["--bg", "--brand"], ["--action", "--action-ink"], ["--action-hover", "--action-ink"], ["--polline-soft", "--polline-ink"], ["--calendula-soft", "--calendula-ink"], ["--fiordaliso-soft", "--fiordaliso-ink"], ["--germoglio-soft", "--germoglio-ink"], ["--warn-bg", "--warn-ink"], ["--ok-bg", "--ok-ink"], ["--crit-bg", "--crit-ink"], ["--scrim", "--on-photo"], ["--surface-2", "--muted"], ["--surface-2", "--text-2"], ["--crit", "--on-crit"], ["--accent", "--accent-ink"], ["--surface-2", "--accent"], ["--bg", "--focus"], ["--surface", "--focus"], ["--surface", "--viz-water", 3], ["--surface", "--viz-heat", 3], ["--surface", "--viz-index", 3], ["--bg", "--viz-water", 3], ["--bg", "--viz-heat", 3], ["--bg", "--viz-index", 3], ["--bg", "--link"], ["--surface", "--link"], ["--surface-2", "--link"], ["--surface-3", "--link"], ["--select", "--select-ink"], ["--bg", "--select-edge", 3], ["--surface", "--select-edge", 3], ["--surface-2", "--select-edge", 3], ["--surface-3", "--select-edge", 3]],
+    pairs: [...["--story-polline", "--story-calendula", "--story-fiordaliso", "--story-germoglio", "--story-ciclamino", "--story-corallo"].map(bg => [bg, "--story-ink"]), ["--scrim", "--thermal-range", 3], ["--scrim", "--thermal-cool", 3], ["--scrim", "--photo-warning"], ...["--bg", "--surface", "--surface-2", "--surface-3"].flatMap(bg => [[bg, "--crit-ink"], [bg, "--control-edge", 3]]), ["--bg", "--text"], ["--surface", "--text"], ["--bg", "--text-2"], ["--surface", "--muted"], ["--bg", "--accent"], ["--surface", "--accent"], ["--brand", "--brand-ink"], ["--bg", "--brand"], ["--ciclamino-soft", "--ciclamino-ink"], ["--corallo-soft", "--corallo-ink"], ["--action", "--action-ink"], ["--action-hover", "--action-ink"], ["--polline-soft", "--polline-ink"], ["--calendula-soft", "--calendula-ink"], ["--fiordaliso-soft", "--fiordaliso-ink"], ["--germoglio-soft", "--germoglio-ink"], ["--warn-bg", "--warn-ink"], ["--ok-bg", "--ok-ink"], ["--crit-bg", "--crit-ink"], ["--scrim", "--on-photo"], ["--surface-2", "--muted"], ["--surface-2", "--text-2"], ["--crit", "--on-crit"], ["--accent", "--accent-ink"], ["--surface-2", "--accent"], ["--bg", "--focus"], ["--surface", "--focus"], ["--surface", "--viz-water", 3], ["--surface", "--viz-heat", 3], ["--surface", "--viz-index", 3], ["--bg", "--viz-water", 3], ["--bg", "--viz-heat", 3], ["--bg", "--viz-index", 3], ["--bg", "--link"], ["--surface", "--link"], ["--surface-2", "--link"], ["--surface-3", "--link"], ["--select", "--select-ink"], ["--bg", "--select-edge", 3], ["--surface", "--select-edge", 3], ["--surface-2", "--select-edge", 3], ["--surface-3", "--select-edge", 3]],
   },
   reserved: {},
   exceptions: {},

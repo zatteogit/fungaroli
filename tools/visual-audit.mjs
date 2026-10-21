@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import {legalNoticeVersion} from '../js/legal-notice.js';
 /**
  * Audit visivo della leggibilità: visita le viste principali dell'app a più larghezze e nei due temi,
  * misura il contrasto di ogni testo visibile e scrive un report JSON e un riepilogo Markdown.
@@ -54,7 +55,7 @@ export function coverPhotos() {
 }
 
 // previsione sintetica (come negli spec): così la home ha proposte, card e copertine
-function forecast(url) {
+export function forecast(url) {
   const q = new URL(url).searchParams, count = q.get('latitude').split(',').length;
   const iso = (d) => new Date(d.getTime() - d.getTimezoneOffset() * 6e4).toISOString().slice(0, 10);
   const days = Array.from({ length: 70 }, (_, i) => iso(new Date(Date.now() + (i - 62) * 864e5)));
@@ -65,7 +66,7 @@ function forecast(url) {
 // Chiave dell'avviso legale accettato, calcolata come in js/app.js (version + verified_on): così non
 // invecchia quando cambiano le regole.
 const LEGAL = JSON.parse(readFileSync(join(ROOT, 'data/legal.json'), 'utf8'));
-const LEGAL_KEY = String(LEGAL.version || 0) + (LEGAL.verified_on || '');
+const LEGAL_KEY = legalNoticeVersion(LEGAL);
 
 export async function preparePage(context, { legal = true, theme = 'light' } = {}) {
   const page = await context.newPage();
@@ -80,7 +81,7 @@ export async function preparePage(context, { legal = true, theme = 'light' } = {
   });
   await page.addInitScript(([legalOk, th, key]) => {
     try {
-      if (legalOk) localStorage.setItem('fungaroli:legal-accepted', key); else localStorage.removeItem('fungaroli:legal-accepted');
+      if (legalOk === true) {localStorage.setItem('fungaroli:legal-accepted',key);localStorage.setItem('fungaroli:legal-acceptance:v1',JSON.stringify({version:key,acceptanceVersion:key,noticeHash:'e'.repeat(64),acceptedAt:null,source:'legacy',platform:'browser'}));} else if (legalOk === false) localStorage.removeItem('fungaroli:legal-accepted');
       localStorage.setItem('fungaroli:theme', th);
     } catch { /* storage non disponibile */ }
   }, [legal, theme, LEGAL_KEY]);
@@ -100,6 +101,7 @@ async function ensureCss(page) {
   await page.evaluate((css) => {
     if (!document.getElementById('la-audit-css')) { const s = document.createElement('style'); s.id = 'la-audit-css'; s.textContent = css; document.head.append(s); }
     document.documentElement.classList.remove('la-hide', 'la-noshadow');
+    getSelection()?.removeAllRanges();
     for (const el of document.querySelectorAll('[data-la-id]')) el.removeAttribute('data-la-id');
     for (const el of document.querySelectorAll('[data-la-host]')) el.removeAttribute('data-la-host');
     document.documentElement.dataset.laNext = '0'; document.documentElement.dataset.laHostNext = '0';
@@ -111,7 +113,9 @@ export async function measureHost(page, host, items, { scroll = true } = {}) {
   const geo = await page.evaluate(([h, ids, sc]) => {
     const el = document.querySelector(`[data-la-host="${h}"]`);
     if (!el) return null;
-    if (sc) el.scrollIntoView({ block: 'center', inline: 'nearest' });
+    // Centra la card fuori dalle frecce della riga prima di misurarne il testo.
+    // Lo scorrimento istantaneo mantiene coerenti geometria e schermate.
+    if (sc) el.scrollIntoView({ block: 'center', inline: 'center', behavior: 'instant' });
     const r = el.getBoundingClientRect();
     return { host: { x: r.left, y: r.top, width: r.width, height: r.height }, vw: innerWidth, vh: innerHeight };
   }, [host, items.map((i) => i.id), scroll]);
@@ -237,8 +241,13 @@ export async function sweepCover(page, { host, img, size = 'hd', photos = coverP
 }
 
 // ------------------------------------------------------------------ viste
-const openAllSections = async (page) => page.evaluate(() => { for (const d of document.querySelectorAll('[data-view]:not([hidden]) details')) { d.removeAttribute('name'); d.open = true; } });
-const VIEWS = [
+const openAllSections = async page => page.evaluate(() => {
+  // Solo per l'audit: leggere insieme anche i contenuti degli accordion esclusivi.
+  document.addEventListener('toggle',e=>{if(e.target.matches('details.sec[data-sec]'))e.stopImmediatePropagation();},true);
+  for(const d of document.querySelectorAll('[data-view]:not([hidden]) details')){d.removeAttribute('name');d.open=true;}
+  document.querySelector('#detail')?._onSecOpen?.('meteo');
+});
+export const VIEWS = [
   { id: 'avvisi', path: '/', legal: false, wait: '#onboarding[open]', root: '#onboarding' },
   { id: 'uscite', path: '/', wait: '#hero .cover-link', sweep: [{ host: '#hero .cover', img: '#hero .cover > img', size: 'hd', tag: 'proposta' }, { host: '#ranking li:first-child .tile', img: '#ranking li:first-child .tile > img', size: 'small', tag: 'altre-uscite' }] },
   { id: 'zona', path: '/#/zona/tancia/0', wait: '.phero', act: openAllSections, sweep: [{ host: '[data-view="zona"] .phero', img: '[data-view="zona"] .phero-img > img', size: 'hd', tag: 'zona' }] },
@@ -252,32 +261,51 @@ const VIEWS = [
   { id: 'impara', path: '/#/impara', wait: '[data-view="impara"] .view-title' },
   { id: 'guide', path: '/#/guide', wait: '[data-view="guide-list"] .view-title' },
   { id: 'guida', path: '/#/guide/leggere-il-bosco', wait: '#guide-body h1' },
-  { id: 'glossario', path: '/#/glossario', wait: '#glossary-q' },
+  { id: 'glossario', path: '/#/glossario', wait: '#glossary .glossary-alphabet' },
   { id: 'termine', path: '/#/guide/leggere-il-bosco', wait: '#guide-body .glossary-link', act: async (page) => { await page.locator('#guide-body .glossary-link').first().click(); await page.waitForSelector('.learning-panel', { state: 'visible' }); }, root: '.learning-panel' },
   { id: 'sfide', path: '/#/sfide', wait: '[data-view="sfide"] .view-title' },
   { id: 'riconosci', path: '/#/riconosci', wait: '[data-view="riconosci"] [data-mode]', act: async (page) => { const b = page.locator('[data-view="riconosci"] .wiz-choice, [data-view="riconosci"] .id-opt').first(); if (await b.count()) await b.click().catch(() => {}); } },
   { id: 'riconosci-filtri', path: '/#/riconosci', wait: '[data-view="riconosci"] [data-mode]', act: async (page) => { await page.locator('[data-view="riconosci"] [data-mode="all"]').click(); } },
   { id: 'taccuino', path: '/#/diario', wait: '[data-view="diario"] .view-title, #journal-h' },
-  { id: 'profilo', path: '/#/diario', wait: '#journal-h', act: async (page) => { await page.locator('.appbar [data-community-account]').first().click(); await page.waitForSelector('dialog[open]'); }, root: 'dialog[open]' },
+  { id: 'profilo', path: '/#/diario', wait: '#journal-h', before: async page => { await page.route('**/api/community/status',r=>r.fulfill({json:{enabled:true}})); await page.route('**/api/community/session',r=>r.fulfill({json:{user:null}})); }, act: async (page) => { await page.evaluate(async()=>await (await import('/js/community.js')).communityReady()); await page.locator('.appbar [data-community-account]').first().click(); await page.waitForSelector('dialog[open]'); }, root: 'dialog[open]' },
+  { id: 'profilo-con-base', path: '/#/diario', wait: '#journal-h', before: async page => {
+      await page.route('**/api/community/status',r=>r.fulfill({json:{enabled:true}}));
+      await page.route('**/api/community/session',r=>r.fulfill({json:{user:{id:'contrast-fixture',handle:'Profilo di prova'}}}));
+      await page.route('**/api/community/entries',r=>r.fulfill({json:{entries:[]}}));
+    }, act: async page => {
+      await page.evaluate(async()=>await (await import('/js/community.js')).communityReady());
+      await page.locator('.appbar [data-community-account]').first().click();
+      await page.locator('.base-settings > summary').click();
+    }, root: 'dialog.community-dialog[open]' },
   { id: 'info', path: '/#/info', wait: '#info-h', act: openAllSections },
+  { id: 'ricerca', path: '/#/glossario', wait: '#glossary .glossary-alphabet', act: async page => { await page.keyboard.press('/'); await page.locator('.search-dlg input').fill('porcino'); }, root: '.search-dlg[open]' },
+  { id: 'filtri-home', path: '/', wait: '#hero .cover-link', act: async page => { await page.locator('#appbar-home-filters [data-more]:visible,#home-filter-action [data-more]:visible').first().click(); }, root: '#full-filters[open]' },
+  { id: 'filtri-caratteri', path: '/#/riconosci', wait: '#identify [data-mode]', act: async page => { await page.locator('#identify [data-mode="all"]').click(); await page.locator('#identify [data-idf-open]').click(); }, root: '#identify-filters[open]' },
+  { id: 'osservazione', path: '/', wait: '#hero .cover-link', act: async page => { await page.locator('#community-intro [data-report]').click(); await page.locator('.report-dialog[open]').waitFor(); }, root: '.report-dialog[open]' },
+  { id: 'appunto', path: '/#/diario', wait: '#journal-h', act: async page => { await page.locator('[data-new-note]').first().click(); await page.locator('.notebook-dialog[open]').waitFor(); }, root: '.notebook-dialog[open]' },
+  { id: 'confronto', path: '/#/riconosci/confronta/edulis/tylopilus-felleus', wait: '.cmp-rows' },
+  { id: 'riconosci-piante', path: '/#/riconosci/piante', wait: '#field-identify .gk-q' },
+  { id: 'riconosci-alberi', path: '/#/riconosci/alberi', wait: '#field-identify .gk-q' },
   { id: 'metodo', path: '/#/metodo', wait: '#metodo-h' },
 ];
 
 async function main() {
   mkdirSync(join(OUT, 'shots'), { recursive: true });
   const browser = await chromium.launch({ executablePath: CHROMIUM, args: ['--no-sandbox'] });
-  const records = [], sweeps = [], errors = [];
+  const saved = arg('resume', '') && existsSync(arg('resume', '')) ? JSON.parse(readFileSync(arg('resume', ''), 'utf8')) : {};
+  const records = saved.records || [], sweeps = saved.sweeps || [], errors = saved.errors || [];
+  const completed = new Set(records.map(r=>`${r.view}|${r.width}|${r.theme}`));
   const t0 = Date.now();
   for (const width of WIDTHS) for (const theme of THEMES) {
     const context = await browser.newContext({ viewport: { width, height: HEIGHT[width] || 900 }, deviceScaleFactor: 1, colorScheme: theme, reducedMotion: 'reduce', locale: 'it-IT', serviceWorkers: 'block' });
     for (const view of VIEWS) {
-      if (ONLY && !ONLY.includes(view.id)) continue;
+      if ((ONLY && !ONLY.includes(view.id)) || completed.has(`${view.id}|${width}|${theme}`)) continue;
       const page = await preparePage(context, { legal: view.legal !== false, theme });
       page.on('pageerror', (e) => errors.push({ view: view.id, width, theme, error: e.message }));
       try {
-        await page.goto(BASE + view.path);
+        if(view.before)await view.before(page);
+        await page.goto(BASE + view.path, {waitUntil: 'domcontentloaded'});
         await page.waitForSelector(view.wait, { timeout: 15000 });
-        await page.waitForLoadState('networkidle').catch(() => {});
         await page.waitForTimeout(400);
         await page.evaluate(() => document.fonts.ready);
         await loadAllImages(page);
@@ -286,6 +314,8 @@ async function main() {
         await page.waitForTimeout(150);
         const recs = await auditState(page, { root: view.root || 'body' });
         for (const r of recs) records.push({ view: view.id, width, theme, ...r });
+        writeFileSync(join(OUT, 'progress.json'), JSON.stringify({records,errors},null,1));
+        console.log(`${view.id} ${width}px ${theme}: ${recs.length} testi, ${recs.filter(r=>!r.disabled&&!r.decorative&&r.ratio<r.threshold).length} sotto soglia`);
         if (view.sweep && SWEEP !== 'none') for (const s of view.sweep) {
           const res = await sweepCover(page, { ...s, shotDir: join(OUT, 'shots'), tag: `${s.tag}-${width}-${theme}` });
           if (!res) continue;
@@ -302,13 +332,14 @@ async function main() {
   }
   // screenshot dei 10 casi peggiori (testo visibile), dalle misure senza variazione di foto
   const worst = distinctWorst(records.filter((r) => !r.decorative), 10);
-  for (const [i, w] of worst.entries()) {
+  for (const [i, w] of (arg('shots','all')==='none'?[]:worst).entries()) {
     if (w.sweep) continue; // la copertina peggiore è già salvata dalla prova delle foto
     const view = VIEWS.find((v) => v.id === w.view);
     const context = await browser.newContext({ viewport: { width: w.width, height: HEIGHT[w.width] || 900 }, deviceScaleFactor: 1, colorScheme: w.theme, reducedMotion: 'reduce', locale: 'it-IT', serviceWorkers: 'block' });
     const page = await preparePage(context, { legal: view.legal !== false, theme: w.theme });
     try {
-      await page.goto(BASE + view.path); await page.waitForSelector(view.wait, { timeout: 15000 }); await loadAllImages(page);
+      if(view.before)await view.before(page);
+      await page.goto(BASE + view.path, {waitUntil: 'domcontentloaded'}); await page.waitForSelector(view.wait, { timeout: 15000 }); await loadAllImages(page);
       if (view.act) await view.act(page);
       await loadAllImages(page);
       const loc = page.locator(view.root || 'body').getByText(w.text.slice(0, 40), { exact: false }).first();
@@ -323,7 +354,7 @@ async function main() {
   writeFileSync(join(OUT, 'report.json'), JSON.stringify(report, null, 1));
   const before = COMPARE && existsSync(join(COMPARE, 'report.json')) ? JSON.parse(readFileSync(join(COMPARE, 'report.json'), 'utf8')) : null;
   writeFileSync(join(OUT, 'riepilogo.md'), summary(report, before));
-  const below = records.filter((r) => r.ratio < r.threshold).length;
+  const below = records.filter((r) => !r.disabled && !r.decorative && r.ratio < r.threshold).length;
   console.log(`\n${records.length} misure, ${below} sotto soglia, ${errors.length} errori. Report: ${OUT}`);
 }
 
@@ -342,7 +373,7 @@ function countTable(records, widths = WIDTHS, themes = THEMES) {
   const views = [...new Set(records.map((r) => r.view))], combos = [];
   for (const w of widths) for (const t of themes) combos.push([w, t]);
   const rows = [`| Vista | ${combos.map(([w, t]) => `${w} ${t === 'light' ? 'chiaro' : 'scuro'}`).join(' | ')} |`, `|---|${combos.map(() => '---:').join('|')}|`];
-  for (const v of views) rows.push(`| ${v} | ${combos.map(([w, t]) => { const rs = records.filter((r) => r.view === v && r.width === w && r.theme === t); return rs.length ? `${rs.filter((r) => r.ratio < r.threshold).length}/${rs.length}` : '—'; }).join(' | ')} |`);
+  for (const v of views) rows.push(`| ${v} | ${combos.map(([w, t]) => { const rs = records.filter((r) => r.view === v && r.width === w && r.theme === t); return rs.length ? `${rs.filter((r) => !r.disabled && !r.decorative && r.ratio < r.threshold).length}/${rs.length}` : '—'; }).join(' | ')} |`);
   return rows.join('\n');
 }
 
@@ -352,13 +383,13 @@ function worstTable(list) {
 }
 
 export function summary(report, before) {
-  const all = report.records, rs = all.filter((r) => !r.decorative), below = rs.filter((r) => r.ratio < r.threshold);
-  const deco = all.filter((r) => r.decorative && r.ratio < r.threshold);
+  const all = report.records, rs = all.filter((r) => !r.decorative), below = rs.filter((r) => !r.disabled && !r.decorative && r.ratio < r.threshold);
+  const deco = all.filter((r) => r.decorative && !r.disabled && !r.decorative && r.ratio < r.threshold);
   const out = [`# Audit di leggibilità — ${report.label}`, '', `${report.date.slice(0, 16).replace('T', ' ')} · server ${report.base} · larghezze ${report.widths.join(', ')} · temi ${report.themes.join(', ')}`, '',
     'Contrasto WCAG; soglia 4,5:1 (testo normale) e 3:1 (testo grande). Testo su foto: 10° percentile pixel per pixel, testo nascosto; il valore principale tiene conto dell’ombra del testo, tra parentesi la misura rigorosa senza ombre. Le copertine sono provate con tutte le foto del catalogo: per ogni testo vale la foto peggiore.', '',
     `**${rs.length} misure, ${below.length} sotto soglia.** Errori durante la visita: ${report.errors.length}.`, ''];
   if (before) {
-    const br = before.records.filter((r) => !r.decorative), bb = br.filter((r) => r.ratio < r.threshold);
+    const br = before.records.filter((r) => !r.decorative), bb = br.filter((r) => !r.disabled && !r.decorative && r.ratio < r.threshold);
     out.push('## Prima e dopo', '', `Sotto soglia: prima ${bb.length} su ${br.length} misure, dopo ${below.length} su ${rs.length}.`, '', '### Prima: testi sotto soglia per vista, larghezza e tema', '', countTable(br, before.widths, before.themes), '', '### I 10 casi peggiori prima', '', worstTable(distinctWorst(br, 10)), '');
   }
   out.push('## Testi sotto soglia per vista, larghezza e tema', '', 'Formato: sotto soglia / misurati (le copertine contano una misura per testo e per foto peggiore).', '', countTable(rs, report.widths, report.themes), '',

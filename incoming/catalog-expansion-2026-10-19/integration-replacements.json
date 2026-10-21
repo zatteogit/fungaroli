@@ -1,0 +1,615 @@
+{
+  "assessment": "docs/assets/catalog-expansion-2026-10-19/assessment-replacements.json",
+  "photos": [
+    {
+      "id": "ce1-replace-satanas-1",
+      "target_group": "lookalikes",
+      "target_key": "Rubroboletus satanas",
+      "latin": "Rubroboletus satanas",
+      "photo_taxon": "Rubroboletus satanas",
+      "source": "Wikimedia Commons",
+      "source_title": "File:Satans-Röhrling Boletus satanas.jpg",
+      "source_description": "Devil's bolete or Satan's mushroom, Boletus satanas , Family: Boletaceae Location: Germany, Erbach, Ringingen. Only area geotagging because rare species.",
+      "source_categories": [
+        "Category:Boletaceae in Germany",
+        "Category:CC-BY-3.0",
+        "Category:Files with coordinates missing SDC location of creation (48° N, 9° E)"
+      ],
+      "page": "https://commons.wikimedia.org/wiki/File:Satans-R%C3%B6hrling_Boletus_satanas.jpg",
+      "author": "Holger Krisp",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Satans-R%C3%B6hrling_Boletus_satanas.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "previewImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Satans-R%C3%B6hrling_Boletus_satanas.jpg/960px-Satans-R%C3%B6hrling_Boletus_satanas.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "commons_sha1": "670828965e6aecc0a707ec34b37897cbd8c2dcc5",
+      "size": 4373895,
+      "attribution_required_text": "",
+      "api_metadata": "incoming/catalog-expansion-2026-10-19/replacements/metadata/satanas.json",
+      "candidate_index": 1,
+      "preview_file": "incoming/catalog-expansion-2026-10-19/replacements/previews/ce1-replace-satanas-1.jpg",
+      "original": "incoming/catalog-expansion-2026-10-19/replacements/originals/ce1-replace-satanas-1.jpg",
+      "sha256_original": "55dcd426d71608af526da2194476635f5d77e4c523b9d09039943cf5fab0438d",
+      "commons_sha1_verified": true,
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/replacements/prepared/ce1-replace-satanas-1.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/replacements/prepared/ce1-replace-satanas-1-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/replacements/prepared/ce1-replace-satanas-1-t.webp"
+      },
+      "source_icc_profile": "IEC 61966-2.1 Default RGB colour space - sRGB",
+      "color_conversion": false,
+      "export_color_space": "sRGB",
+      "caption": "Rubroboletus satanas: esemplare in piedi e secondo esemplare adagiato sul terreno. Il punto di ritaglio privilegia quello in piedi.",
+      "alt": "Rubroboletus satanas: cappello e gambo leggibili.",
+      "photographic_role": "Copertina proposta: cappello e gambo leggibili",
+      "crop_points": {
+        "5:4": [
+          0.0,
+          0.5
+        ],
+        "3:4": [
+          0.264,
+          0.5
+        ],
+        "4:5": [
+          0.21,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.53
+        ],
+        "4:3": [
+          0.0,
+          0.5
+        ],
+        "1:1": [
+          0.153,
+          0.5
+        ]
+      },
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.38,
+          0.51
+        ],
+        "riquadro": [
+          0.1,
+          0.19,
+          0.62,
+          0.86
+        ],
+        "nota": "Originale a dimensione utile e sei ritagli realmente esaminati. Nitidezza, colore e leggibilità approvati. Nei formati larghi la copertina conserva il cappello; la foto complementare di T. felleus isola pori e reticolo. Nessun carattere o fase dedotto dalla fotografia."
+      },
+      "changes": "Orientamento EXIF, eventuale conversione ICC a sRGB, ridimensionamento e compressione WebP; miniatura ritagliata. EXIF, XMP e ICC rimossi dagli export.",
+      "attribution": "Holger Krisp · Wikimedia Commons · CC BY 3.0",
+      "source_metadata": "incoming/catalog-expansion-2026-10-19/replacements/metadata/satanas.json",
+      "source_metadata_sha256": "aad0f24fc20e57b71c2f5da263acb70afdc73f92d5a9a8b352c8965bc132331d",
+      "taxon_evidence": {
+        "page": "https://commons.wikimedia.org/wiki/File:Satans-R%C3%B6hrling_Boletus_satanas.jpg",
+        "locator": "Description / Captions / Structured data depicts / taxon category",
+        "taxon": "Rubroboletus satanas"
+      },
+      "editorial_action": "propose_as_cover",
+      "duplicate_review": {
+        "source_page_absent_from_current_media": true,
+        "source_image_absent_from_current_media": true,
+        "original_sha256_absent_from_current_media": true,
+        "note": "Escluse fonti esistenti e ritagli alternativi della stessa foto proposta; nessuna sostituzione canonica applicata."
+      },
+      "integrated": {
+        "file": "assets/species/ce1-replace-satanas-1.webp",
+        "file_hd": "assets/species/ce1-replace-satanas-1-hd.webp",
+        "thumb": "assets/species/ce1-replace-satanas-1-t.webp",
+        "page": "https://commons.wikimedia.org/wiki/File:Satans-R%C3%B6hrling_Boletus_satanas.jpg",
+        "author": "Holger Krisp",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+        "attribution": "Holger Krisp · Wikimedia Commons · CC BY 3.0",
+        "alt": "Rubroboletus satanas: cappello e gambo leggibili.",
+        "caption": "Rubroboletus satanas: esemplare in piedi e secondo esemplare adagiato sul terreno. Il punto di ritaglio privilegia quello in piedi.",
+        "changes": "Orientamento EXIF, eventuale conversione ICC a sRGB, ridimensionamento e compressione WebP; miniatura ritagliata. EXIF, XMP e ICC rimossi dagli export.",
+        "source": "Wikimedia Commons",
+        "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Satans-R%C3%B6hrling_Boletus_satanas.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "sha256Original": "55dcd426d71608af526da2194476635f5d77e4c523b9d09039943cf5fab0438d",
+        "photo_taxon": "Rubroboletus satanas"
+      },
+      "export_hashes": {
+        "file": "92265447dc89215f6f2cd48d75532b246ce9c048056d2322fc5f4cf875245643",
+        "file_hd": "39043103df9cc70b1b3de7bbd92196a6064a921ef8d7bc1d2b2edf8a5ae83253",
+        "thumb": "47be648a3cbd0ee454d2006cdae6941063a0544c4317600d5938079ba92f3147"
+      }
+    },
+    {
+      "id": "ce1-replace-virescens-2",
+      "target_group": "species",
+      "target_key": "virescens",
+      "latin": "Russula virescens",
+      "photo_taxon": "Russula virescens",
+      "source": "Wikimedia Commons",
+      "source_title": "File:Russula virescens duo.jpg",
+      "source_description": "Russula virescens",
+      "source_categories": [],
+      "page": "https://commons.wikimedia.org/wiki/File:Russula_virescens_duo.jpg",
+      "author": "xulescu_g",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Russula_virescens_duo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "previewImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Russula_virescens_duo.jpg/960px-Russula_virescens_duo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "commons_sha1": "f8d4f62363f128577db5d56a90ba5b37e9ca0968",
+      "size": 211762,
+      "attribution_required_text": "",
+      "api_metadata": "incoming/catalog-expansion-2026-10-19/replacements/metadata/virescens.json",
+      "candidate_index": 7,
+      "preview_file": "incoming/catalog-expansion-2026-10-19/replacements/previews/ce1-replace-virescens-2.jpg",
+      "original": "incoming/catalog-expansion-2026-10-19/replacements/originals/ce1-replace-virescens-2.jpg",
+      "sha256_original": "117bf8ebb3a9063a689967ecaddaa418a70286b32c02ddc0f453bbb3c82eb8cb",
+      "commons_sha1_verified": true,
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/replacements/prepared/ce1-replace-virescens-2.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/replacements/prepared/ce1-replace-virescens-2-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/replacements/prepared/ce1-replace-virescens-2-t.webp"
+      },
+      "source_icc_profile": null,
+      "color_conversion": false,
+      "export_color_space": "Assumed sRGB; source has no ICC profile",
+      "caption": "Russula virescens: due esemplari con cappello e gambo visibili; dettaglio della superficie del cappello.",
+      "alt": "Russula virescens: due esemplari nitidi.",
+      "photographic_role": "Copertina proposta: due esemplari nitidi",
+      "crop_points": {
+        "5:4": [
+          1.0,
+          0.5
+        ],
+        "3:4": [
+          0.774,
+          0.5
+        ],
+        "4:5": [
+          0.875,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.26
+        ],
+        "4:3": [
+          0.5,
+          0.5
+        ],
+        "1:1": [
+          0.98,
+          0.5
+        ]
+      },
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.62,
+          0.4
+        ],
+        "riquadro": [
+          0.37,
+          0.12,
+          0.95,
+          0.69
+        ],
+        "nota": "Originale a dimensione utile e sei ritagli realmente esaminati. Nitidezza, colore e leggibilità approvati. Nei formati larghi la copertina conserva il cappello; la foto complementare di T. felleus isola pori e reticolo. Nessun carattere o fase dedotto dalla fotografia."
+      },
+      "changes": "Orientamento EXIF, eventuale conversione ICC a sRGB, ridimensionamento e compressione WebP; miniatura ritagliata. EXIF, XMP e ICC rimossi dagli export.",
+      "attribution": "xulescu_g · Wikimedia Commons · CC BY-SA 4.0",
+      "source_metadata": "incoming/catalog-expansion-2026-10-19/replacements/metadata/virescens.json",
+      "source_metadata_sha256": "45b84b5fb451a176e6000368482d58f7c6fb12b90f6acae9c315e212ddaa4764",
+      "taxon_evidence": {
+        "page": "https://commons.wikimedia.org/wiki/File:Russula_virescens_duo.jpg",
+        "locator": "Description / Captions / Structured data depicts / taxon category",
+        "taxon": "Russula virescens"
+      },
+      "editorial_action": "propose_as_cover",
+      "duplicate_review": {
+        "source_page_absent_from_current_media": true,
+        "source_image_absent_from_current_media": true,
+        "original_sha256_absent_from_current_media": true,
+        "note": "Escluse fonti esistenti e ritagli alternativi della stessa foto proposta; nessuna sostituzione canonica applicata."
+      },
+      "observationID": 134413554,
+      "quality_grade": "research",
+      "primary_taxon": "Russula virescens",
+      "primary_photo_id": 229109186,
+      "primary_photo_license": "cc-by-sa",
+      "primary_page": "https://www.inaturalist.org/observations/134413554",
+      "primary_place": "Rasnov, Rumänien",
+      "primary_metadata": "incoming/catalog-expansion-2026-10-19/replacements/metadata/virescens-inat-source.json",
+      "integrated": {
+        "file": "assets/species/ce1-replace-virescens-2.webp",
+        "file_hd": "assets/species/ce1-replace-virescens-2-hd.webp",
+        "thumb": "assets/species/ce1-replace-virescens-2-t.webp",
+        "page": "https://commons.wikimedia.org/wiki/File:Russula_virescens_duo.jpg",
+        "author": "xulescu_g",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "attribution": "xulescu_g · Wikimedia Commons · CC BY-SA 4.0",
+        "alt": "Russula virescens: due esemplari nitidi.",
+        "caption": "Russula virescens: due esemplari con cappello e gambo visibili; dettaglio della superficie del cappello.",
+        "changes": "Orientamento EXIF, eventuale conversione ICC a sRGB, ridimensionamento e compressione WebP; miniatura ritagliata. EXIF, XMP e ICC rimossi dagli export.",
+        "source": "Wikimedia Commons",
+        "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Russula_virescens_duo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "sha256Original": "117bf8ebb3a9063a689967ecaddaa418a70286b32c02ddc0f453bbb3c82eb8cb",
+        "photo_taxon": "Russula virescens",
+        "quality_grade": "research",
+        "observation_id": 134413554
+      },
+      "export_hashes": {
+        "file": "da30646cba89214b3cc19e98a999b59e3fbd5d05632dac7dbe532d56d07ed2b5",
+        "file_hd": "67f4e880bf180ac5fa408ac4e11ad65872720cb6eeae43593d9a9ae22ffe8482",
+        "thumb": "bd376a3693679f3b693c65a59df5af73b363b5da275cf7f160b77499dcb96094"
+      }
+    },
+    {
+      "id": "ce1-replace-felleus-extra19",
+      "target_group": "lookalikes",
+      "target_key": "Tylopilus felleus",
+      "latin": "Tylopilus felleus",
+      "photo_taxon": "Tylopilus felleus",
+      "source": "Wikimedia Commons",
+      "source_title": "File:Gemeiner Gallenröhrling Weinheim.jpg",
+      "source_description": "Pilz in einem Wald nahe Weinheim (Bergstr.)",
+      "source_categories": [],
+      "page": "https://commons.wikimedia.org/wiki/File:Gemeiner_Gallenr%C3%B6hrling_Weinheim.jpg",
+      "author": "Pfefferdose",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Gemeiner_Gallenr%C3%B6hrling_Weinheim.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "previewImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Gemeiner_Gallenr%C3%B6hrling_Weinheim.jpg/960px-Gemeiner_Gallenr%C3%B6hrling_Weinheim.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "commons_sha1": "7af01cc73d61427b7edcdb6fee14f7c6b6f1f345",
+      "size": 4839982,
+      "attribution_required_text": "",
+      "api_metadata": "incoming/catalog-expansion-2026-10-19/replacements/metadata/felleus.json",
+      "preview_file": "incoming/catalog-expansion-2026-10-19/replacements/previews/ce1-replace-felleus-extra19.jpg",
+      "original": "incoming/catalog-expansion-2026-10-19/replacements/originals/ce1-replace-felleus-extra19.jpg",
+      "sha256_original": "54432967a240f85eb8cbbf918e276bac87566dfb65df0aab48d761face48c80c",
+      "commons_sha1_verified": true,
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/replacements/prepared/ce1-replace-felleus-extra19.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/replacements/prepared/ce1-replace-felleus-extra19-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/replacements/prepared/ce1-replace-felleus-extra19-t.webp"
+      },
+      "source_icc_profile": null,
+      "color_conversion": false,
+      "export_color_space": "Assumed sRGB; source has no ICC profile",
+      "caption": "Tylopilus felleus nel muschio, con cappello, imenoforo e gambo leggibili. Fotografia presso Weinheim, Germania.",
+      "alt": "Tylopilus felleus: esemplare nel muschio.",
+      "photographic_role": "Copertina proposta: esemplare nel muschio",
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.0
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.0
+        ],
+        "16:7": [
+          0.5,
+          0.173
+        ],
+        "4:3": [
+          0.5,
+          0.0
+        ],
+        "1:1": [
+          0.5,
+          0.0
+        ]
+      },
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.43,
+          0.28
+        ],
+        "riquadro": [
+          0.12,
+          0.12,
+          0.82,
+          0.42
+        ],
+        "nota": "Originale a dimensione utile e sei ritagli realmente esaminati. Nitidezza, colore e leggibilità approvati. Nei formati larghi la copertina conserva il cappello; la foto complementare di T. felleus isola pori e reticolo. Nessun carattere o fase dedotto dalla fotografia."
+      },
+      "changes": "Orientamento EXIF, eventuale conversione ICC a sRGB, ridimensionamento e compressione WebP; miniatura ritagliata. EXIF, XMP e ICC rimossi dagli export.",
+      "attribution": "Pfefferdose · Wikimedia Commons · CC BY-SA 3.0",
+      "source_metadata": "incoming/catalog-expansion-2026-10-19/replacements/metadata/felleus.json",
+      "source_metadata_sha256": "175c06c06f544c35d7423732f0509b84351baf9487a34eb9f0b31ba9ee45001d",
+      "taxon_evidence": {
+        "page": "https://commons.wikimedia.org/wiki/File:Gemeiner_Gallenr%C3%B6hrling_Weinheim.jpg",
+        "locator": "Description / Captions / Structured data depicts / taxon category",
+        "taxon": "Tylopilus felleus"
+      },
+      "editorial_action": "propose_as_cover",
+      "duplicate_review": {
+        "source_page_absent_from_current_media": true,
+        "source_image_absent_from_current_media": true,
+        "original_sha256_absent_from_current_media": true,
+        "note": "Escluse fonti esistenti e ritagli alternativi della stessa foto proposta; nessuna sostituzione canonica applicata."
+      },
+      "integrated": {
+        "file": "assets/species/ce1-replace-felleus-extra19.webp",
+        "file_hd": "assets/species/ce1-replace-felleus-extra19-hd.webp",
+        "thumb": "assets/species/ce1-replace-felleus-extra19-t.webp",
+        "page": "https://commons.wikimedia.org/wiki/File:Gemeiner_Gallenr%C3%B6hrling_Weinheim.jpg",
+        "author": "Pfefferdose",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "attribution": "Pfefferdose · Wikimedia Commons · CC BY-SA 3.0",
+        "alt": "Tylopilus felleus: esemplare nel muschio.",
+        "caption": "Tylopilus felleus nel muschio, con cappello, imenoforo e gambo leggibili. Fotografia presso Weinheim, Germania.",
+        "changes": "Orientamento EXIF, eventuale conversione ICC a sRGB, ridimensionamento e compressione WebP; miniatura ritagliata. EXIF, XMP e ICC rimossi dagli export.",
+        "source": "Wikimedia Commons",
+        "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Gemeiner_Gallenr%C3%B6hrling_Weinheim.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "sha256Original": "54432967a240f85eb8cbbf918e276bac87566dfb65df0aab48d761face48c80c",
+        "photo_taxon": "Tylopilus felleus"
+      },
+      "export_hashes": {
+        "file": "f1f7f4b4dcb5caa5a464b9639412ec7f667c3ee4154cb16e07efb9af5862cb2d",
+        "file_hd": "5fb7588cddd3495fc2f899f13b7ffb4d216108ba28f32026aea3332b2bcce854",
+        "thumb": "2f05ac0bf09ed207146728588882c967aeac0d216749f2d83b539dfd3986c45d"
+      }
+    },
+    {
+      "id": "ce1-replace-felleus-extra20",
+      "target_group": "lookalikes",
+      "target_key": "Tylopilus felleus",
+      "latin": "Tylopilus felleus",
+      "photo_taxon": "Tylopilus felleus",
+      "source": "Wikimedia Commons",
+      "source_title": "File:Tylopilus felleus 11.jpg",
+      "source_description": "Tylopilus felleus",
+      "source_categories": [],
+      "page": "https://commons.wikimedia.org/wiki/File:Tylopilus_felleus_11.jpg",
+      "author": "Annie Weissman (wearethechampignons)",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Tylopilus_felleus_11.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "previewImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Tylopilus_felleus_11.jpg/960px-Tylopilus_felleus_11.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "commons_sha1": "c8efea0466f6cce3904f4e1574c2906ac7176ea9",
+      "size": 397755,
+      "attribution_required_text": "",
+      "api_metadata": "incoming/catalog-expansion-2026-10-19/replacements/metadata/felleus.json",
+      "preview_file": "incoming/catalog-expansion-2026-10-19/replacements/previews/ce1-replace-felleus-extra20.jpg",
+      "original": "incoming/catalog-expansion-2026-10-19/replacements/originals/ce1-replace-felleus-extra20.jpg",
+      "sha256_original": "ff4041edac017c79bb27ed59e39a7354fb2924c76fe27c4706853bc19f51a2bd",
+      "commons_sha1_verified": true,
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/replacements/prepared/ce1-replace-felleus-extra20.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/replacements/prepared/ce1-replace-felleus-extra20-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/replacements/prepared/ce1-replace-felleus-extra20-t.webp"
+      },
+      "source_icc_profile": null,
+      "color_conversion": false,
+      "export_color_space": "Assumed sRGB; source has no ICC profile",
+      "caption": "Tylopilus felleus: vista ravvicinata di cappello, pori e reticolo del gambo; la base del gambo non è compresa nell’inquadratura.",
+      "alt": "Tylopilus felleus: cappello, pori e reticolo.",
+      "photographic_role": "Complementare: cappello, pori e reticolo",
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.54
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.5
+        ],
+        "16:7": [
+          0.5,
+          0.526
+        ],
+        "4:3": [
+          0.5,
+          0.534
+        ],
+        "1:1": [
+          0.5,
+          0.656
+        ]
+      },
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.51
+        ],
+        "riquadro": [
+          0.28,
+          0.36,
+          0.72,
+          0.72
+        ],
+        "nota": "Originale a dimensione utile e sei ritagli realmente esaminati. Nitidezza, colore e leggibilità approvati. Nei formati larghi la copertina conserva il cappello; la foto complementare di T. felleus isola pori e reticolo. Nessun carattere o fase dedotto dalla fotografia."
+      },
+      "changes": "Orientamento EXIF, eventuale conversione ICC a sRGB, ridimensionamento e compressione WebP; miniatura ritagliata. EXIF, XMP e ICC rimossi dagli export.",
+      "attribution": "Annie Weissman (wearethechampignons) · Wikimedia Commons / iNaturalist · CC BY 4.0",
+      "source_metadata": "incoming/catalog-expansion-2026-10-19/replacements/metadata/felleus.json",
+      "source_metadata_sha256": "175c06c06f544c35d7423732f0509b84351baf9487a34eb9f0b31ba9ee45001d",
+      "taxon_evidence": {
+        "page": "https://commons.wikimedia.org/wiki/File:Tylopilus_felleus_11.jpg",
+        "locator": "Description / Captions / Structured data depicts / taxon category",
+        "taxon": "Tylopilus felleus"
+      },
+      "editorial_action": "add_complementary_photo",
+      "duplicate_review": {
+        "source_page_absent_from_current_media": true,
+        "source_image_absent_from_current_media": true,
+        "original_sha256_absent_from_current_media": true,
+        "note": "Escluse fonti esistenti e ritagli alternativi della stessa foto proposta; nessuna sostituzione canonica applicata."
+      },
+      "observationID": 94886653,
+      "quality_grade": "research",
+      "primary_taxon": "Tylopilus felleus",
+      "primary_photo_id": 157455599,
+      "primary_photo_license": "cc-by",
+      "primary_page": "https://www.inaturalist.org/observations/94886653",
+      "primary_place": "Cape Cod National Seashore, Provincetown, MA, US",
+      "primary_metadata": "incoming/catalog-expansion-2026-10-19/replacements/metadata/felleus-inat-source.json",
+      "license_verification_note": "CC BY 4.0 confermata dalla foto primaria e dalla revisione Commons; non adottata la vecchia etichetta CC BY-SA di validità non verificata.",
+      "integrated": {
+        "file": "assets/species/ce1-replace-felleus-extra20.webp",
+        "file_hd": "assets/species/ce1-replace-felleus-extra20-hd.webp",
+        "thumb": "assets/species/ce1-replace-felleus-extra20-t.webp",
+        "page": "https://commons.wikimedia.org/wiki/File:Tylopilus_felleus_11.jpg",
+        "author": "Annie Weissman (wearethechampignons)",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+        "attribution": "Annie Weissman (wearethechampignons) · Wikimedia Commons / iNaturalist · CC BY 4.0",
+        "alt": "Tylopilus felleus: cappello, pori e reticolo.",
+        "caption": "Tylopilus felleus: vista ravvicinata di cappello, pori e reticolo del gambo; la base del gambo non è compresa nell’inquadratura.",
+        "changes": "Orientamento EXIF, eventuale conversione ICC a sRGB, ridimensionamento e compressione WebP; miniatura ritagliata. EXIF, XMP e ICC rimossi dagli export.",
+        "source": "Wikimedia Commons",
+        "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Tylopilus_felleus_11.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "sha256Original": "ff4041edac017c79bb27ed59e39a7354fb2924c76fe27c4706853bc19f51a2bd",
+        "photo_taxon": "Tylopilus felleus",
+        "quality_grade": "research",
+        "observation_id": 94886653
+      },
+      "export_hashes": {
+        "file": "53bcf08a66db0a556ecb00262464f612daf986afc9cdc8d7d9b6eabc2fa09329",
+        "file_hd": "13e968365516595ec40c2df7ef30bced9de182aa66d0d4e79d3d443088d7c141",
+        "thumb": "8b0fd9a0594e23b5bcae5aa3f5a9120a4799591eaadfdbff6dd1e3f58dc2399d"
+      }
+    },
+    {
+      "id": "ce1-replace-aereus-15",
+      "target_group": "species",
+      "target_key": "aereus",
+      "latin": "Boletus aereus",
+      "photo_taxon": "Boletus aereus",
+      "source": "Wikimedia Commons",
+      "source_title": "File:Boletus aereusBG.JPG",
+      "source_description": "Boletus aereus under oak near Sofia, Bulgaria.",
+      "source_categories": [
+        "Category:Boletus aereus",
+        "Category:CC-BY-SA-3.0",
+        "Category:GFDL",
+        "Category:License migration redundant",
+        "Category:Self-published work",
+        "Category:Taken with Olympus X-450 / D-535Z / C-370Z"
+      ],
+      "page": "https://commons.wikimedia.org/wiki/File:Boletus_aereusBG.JPG",
+      "author": "Paffka",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Boletus_aereusBG.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "previewImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Boletus_aereusBG.JPG/960px-Boletus_aereusBG.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "commons_sha1": "2431020b9b16b441e7f06bf6bed283d0cb67ab90",
+      "size": 2153838,
+      "attribution_required_text": "",
+      "api_metadata": "incoming/catalog-expansion-2026-10-19/replacements/metadata/aereus.json",
+      "candidate_index": 7,
+      "preview_file": "incoming/catalog-expansion-2026-10-19/replacements/previews/ce1-replace-aereus-15.jpg",
+      "original": "incoming/catalog-expansion-2026-10-19/replacements/originals/ce1-replace-aereus-15.JPG",
+      "sha256_original": "5ca60b4b34bf3673a2efa73eec776ce1b8ca28503cfec699461bce1f9dcf5d33",
+      "commons_sha1_verified": true,
+      "files": {
+        "file": "incoming/catalog-expansion-2026-10-19/replacements/prepared/ce1-replace-aereus-15.webp",
+        "file_hd": "incoming/catalog-expansion-2026-10-19/replacements/prepared/ce1-replace-aereus-15-hd.webp",
+        "thumb": "incoming/catalog-expansion-2026-10-19/replacements/prepared/ce1-replace-aereus-15-t.webp"
+      },
+      "source_icc_profile": null,
+      "color_conversion": false,
+      "export_color_space": "Assumed sRGB; source has no ICC profile",
+      "caption": "Boletus aereus: cappello e gambo nel sottobosco. La fonte colloca la fotografia presso Sofia, Bulgaria, sotto una quercia.",
+      "alt": "Boletus aereus: esemplare nel sottobosco.",
+      "photographic_role": "Copertina proposta: esemplare nel sottobosco",
+      "crop_points": {
+        "5:4": [
+          0.5,
+          0.425
+        ],
+        "3:4": [
+          0.5,
+          0.5
+        ],
+        "4:5": [
+          0.5,
+          0.02
+        ],
+        "16:7": [
+          0.5,
+          0.455
+        ],
+        "4:3": [
+          0.5,
+          0.431
+        ],
+        "1:1": [
+          0.5,
+          0.38
+        ]
+      },
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.47
+        ],
+        "riquadro": [
+          0.13,
+          0.32,
+          0.87,
+          0.63
+        ],
+        "nota": "Originale a dimensione utile e sei ritagli realmente esaminati. Nitidezza, colore e leggibilità approvati. Nei formati larghi la copertina conserva il cappello; la foto complementare di T. felleus isola pori e reticolo. Nessun carattere o fase dedotto dalla fotografia."
+      },
+      "changes": "Orientamento EXIF, eventuale conversione ICC a sRGB, ridimensionamento e compressione WebP; miniatura ritagliata. EXIF, XMP e ICC rimossi dagli export.",
+      "attribution": "Paffka · Wikimedia Commons · CC BY-SA 3.0",
+      "source_metadata": "incoming/catalog-expansion-2026-10-19/replacements/metadata/aereus.json",
+      "source_metadata_sha256": "f843c6ba9eb3b20e12a926fa907a37c5ad9379af7f3669992e083d4ce972542b",
+      "taxon_evidence": {
+        "page": "https://commons.wikimedia.org/wiki/File:Boletus_aereusBG.JPG",
+        "locator": "Description / Captions / Structured data depicts / taxon category",
+        "taxon": "Boletus aereus"
+      },
+      "editorial_action": "propose_as_cover",
+      "duplicate_review": {
+        "source_page_absent_from_current_media": true,
+        "source_image_absent_from_current_media": true,
+        "original_sha256_absent_from_current_media": true,
+        "note": "Escluse fonti esistenti e ritagli alternativi della stessa foto proposta; nessuna sostituzione canonica applicata."
+      },
+      "integrated": {
+        "file": "assets/species/ce1-replace-aereus-15.webp",
+        "file_hd": "assets/species/ce1-replace-aereus-15-hd.webp",
+        "thumb": "assets/species/ce1-replace-aereus-15-t.webp",
+        "page": "https://commons.wikimedia.org/wiki/File:Boletus_aereusBG.JPG",
+        "author": "Paffka",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "attribution": "Paffka · Wikimedia Commons · CC BY-SA 3.0",
+        "alt": "Boletus aereus: esemplare nel sottobosco.",
+        "caption": "Boletus aereus: cappello e gambo nel sottobosco. La fonte colloca la fotografia presso Sofia, Bulgaria, sotto una quercia.",
+        "changes": "Orientamento EXIF, eventuale conversione ICC a sRGB, ridimensionamento e compressione WebP; miniatura ritagliata. EXIF, XMP e ICC rimossi dagli export.",
+        "source": "Wikimedia Commons",
+        "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Boletus_aereusBG.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "sha256Original": "5ca60b4b34bf3673a2efa73eec776ce1b8ca28503cfec699461bce1f9dcf5d33",
+        "photo_taxon": "Boletus aereus"
+      },
+      "export_hashes": {
+        "file": "b7cf57ea6380ddbb8c316d198b6482c65d9f870d603877d688da88a3bfcc81b6",
+        "file_hd": "48342a9b2ae37b7459e7174a80bddd8ca1e19c844c25435b507b99a12561bd17",
+        "thumb": "6d359cb3c264847ffc37b06e99ed7be71ac73204ae01963122b2e2233610473b"
+      }
+    }
+  ]
+}

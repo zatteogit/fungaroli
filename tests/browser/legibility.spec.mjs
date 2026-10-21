@@ -44,15 +44,16 @@ for (const width of [390, 1280]) for (const theme of ['light', 'dark']) {
     expect(bright).toBeTruthy();
     const hard = [bright, photos.find((p) => p.key === 'tancia · autunno sereno')].filter(Boolean);
 
-    // proposta in home: testi sulla foto (desktop) e testi sul pannello pieno (telefono)
-    const hero = await sweepCover(page, { host: '#hero .cover', img: '#hero .cover > img', size: 'hd', photos: hard });
+    // Proposta e alternative: misurare sia vetro/foto sia i nuovi pannelli pieni.
+    const hero = await sweepCover(page, { host: '#hero .cover', img: '#hero .atmosphere-still', size: 'hd', photos: hard });
     const heroSolid = (await auditState(page, { root: '#hero' })).filter((r) => r.method === 'pieno');
     expect(hero.items.length + heroSolid.length).toBeGreaterThan(8);
     expect(describeBelow([...hero.items, ...heroSolid])).toEqual([]);
     // prima card di «Altre buone uscite»
     const tile = await sweepCover(page, { host: '#ranking li:first-child .tile', img: '#ranking li:first-child .tile > img', size: 'small', photos: hard });
-    expect(tile.items.length).toBeGreaterThan(2);
-    expect(describeBelow(tile.items)).toEqual([]);
+    const tileSolid=(await auditState(page,{root:'#ranking li:first-child .tile'})).filter(r=>r.method==='pieno');
+    expect(tile.items.length+tileSolid.length).toBeGreaterThan(2);
+    expect(describeBelow([...tile.items,...tileSolid])).toEqual([]);
 
     // copertina della scheda del luogo
     await page.goto('/#/zona/tancia/0');
@@ -66,3 +67,80 @@ for (const width of [390, 1280]) for (const theme of ['light', 'dark']) {
     await context.close();
   });
 }
+
+for (const width of [390,1280]) for (const theme of ['light','dark']) {
+  test(`AA: imbocchi, filtri selezionati, ricerca e 112 negli stati interattivi a ${width}px ${theme}`,async({browser})=>{
+    const context=await browser.newContext({viewport:{width,height:900},colorScheme:theme,reducedMotion:'reduce',serviceWorkers:'block'});
+    const page=await preparePage(context,{theme});
+    const readable=async root=>{
+      const items=(await auditState(page,{root})).filter(r=>!r.disabled&&!r.decorative);
+      expect(items.length).toBeGreaterThan(0);expect(describeBelow(items)).toEqual([]);
+    };
+    await page.goto('/#/zona/tancia/0');await page.locator('.walk-focus > summary').click();
+    const head=page.locator('.walk-focus .th-chip').first();await head.hover();await expect(head).toHaveClass(/is-active/);
+    await head.evaluate(el=>el.dataset.contrastTarget='head');await readable('[data-contrast-target="head"]');
+    await head.focus();await readable('[data-contrast-target="head"]');
+    await page.goto('/#/specie');const selected=page.locator('#species-grid .recognize-modes [aria-pressed="true"]');
+    await selected.hover();await selected.evaluate(el=>el.dataset.contrastTarget='filter');await readable('[data-contrast-target="filter"]');
+    await page.goto('/#/glossario');await page.keyboard.press('/');await page.locator('.search-dlg input').fill('porcino');
+    const result=page.locator('.sr-item').filter({has:page.locator('small mark')}).first();await expect(result).toBeVisible();
+    await result.hover();await result.evaluate(el=>el.dataset.contrastTarget='result');await readable('[data-contrast-target="result"]');
+    await page.keyboard.press('Escape');await page.goto('/#/info');
+    const emergency=page.locator('.em-numbers a[href="tel:112"]');await emergency.hover();await readable('.em-numbers a[href="tel:112"]');
+    await emergency.evaluate(el=>el.addEventListener('click',e=>e.preventDefault()));await emergency.hover();await page.mouse.down();
+    await readable('.em-numbers a[href="tel:112"]');await page.mouse.move(0,0);await page.mouse.up();
+    await context.close();
+  });
+}
+
+for(const theme of ['light','dark']) test(`AA: dati dei grafici e previsioni distinguibili in tema ${theme}`,async({browser})=>{
+  const {parseCssColor,contrastRatio,blend}=await import('../../tools/legibility.mjs');
+  const context=await browser.newContext({viewport:{width:1280,height:900},colorScheme:theme,reducedMotion:'reduce',serviceWorkers:'block'});
+  const page=await preparePage(context,{theme});await page.goto('/#/zona/tancia/0');await page.locator('.walk-focus').waitFor();
+  await page.locator('details[data-sec="meteo"]').evaluate(el=>el.open=true);
+  await page.locator('details[data-sec="meteo"] details').evaluateAll(els=>els.forEach(el=>el.open=true));
+  await expect(page.locator('.viz-bar').first()).toBeAttached();
+  // Il meteo asciutto della fixture non genera barre future: prova anche pioggia prevista non nulla.
+  await page.evaluate(async()=>{
+    const {renderViz}=await import('/js/viz.js');const figure=document.createElement('figure');figure.className='viz';figure.dataset.viz='rain';
+    document.querySelector('.view:not([hidden]) .pbody').append(figure);
+    renderViz(figure,{kind:'bars',name:'Pioggia di prova',values:[3,5,2],dates:['2026-10-14','2026-10-15','2026-10-16'],todayIndex:0,selectedIndex:1,format:String,y:{min:0,max:10,ticks:[{v:0,label:'0'},{v:10,label:'10 mm'}]}});
+  });
+  await expect(page.locator('.viz-bar.is-forecast').first()).toBeAttached();
+  const paints=await page.locator('.viz-bar,.viz-line,.viz-dot,.viz-missing,.viz-threshold,.viz-selected').evaluateAll(els=>els.filter(el=>el.checkVisibility({checkVisibilityCSS:true})&&el.getAttribute('d')!=='').map(el=>{
+    const s=getComputedStyle(el),box=getComputedStyle(el.closest('.pbody'));
+    return {kind:el.getAttribute('class'),fill:s.fill,stroke:s.stroke,fillOpacity:Number(s.fillOpacity),strokeOpacity:Number(s.strokeOpacity),background:box.backgroundColor,window:s.getPropertyValue('--surface-2'),heat:s.getPropertyValue('--viz-heat'),dash:s.strokeDasharray};
+  }));
+  expect(paints.length).toBeGreaterThan(10);
+  for(const p of paints){
+    const bg=parseCssColor(p.background),fill=parseCssColor(p.fill),stroke=parseCssColor(p.stroke);
+    const backgrounds=[bg,parseCssColor(p.window),blend([...parseCssColor(p.heat).slice(0,3),.12],bg)];
+    for(const background of backgrounds){
+      const ratios=[];
+      if(fill)ratios.push(contrastRatio(blend([...fill.slice(0,3),fill[3]*p.fillOpacity],background),background));
+      if(stroke)ratios.push(contrastRatio(blend([...stroke.slice(0,3),stroke[3]*p.strokeOpacity],background),background));
+      expect(Math.max(...ratios),p.kind).toBeGreaterThanOrEqual(3);
+    }
+    if(p.kind.includes('viz-bar')&&p.kind.includes('is-forecast'))expect(p.dash).not.toBe('none');
+  }
+  await context.close();
+});
+
+for(const theme of ['light','dark']) test(`AA: pomelli degli interruttori accesi e spenti in tema ${theme}`,async({browser})=>{
+  const {parseCssColor,contrastRatio,blend}=await import('../../tools/legibility.mjs');
+  const context=await browser.newContext({viewport:{width:390,height:844},colorScheme:theme,reducedMotion:'reduce',serviceWorkers:'block'});
+  const page=await preparePage(context,{theme});await page.goto('/',{waitUntil:'domcontentloaded'});
+  await page.locator('#appbar-home-filters [data-more]:visible,#home-filter-action [data-more]:visible').first().click();
+  const paints=await page.locator('#full-filters .switch-input').evaluateAll(els=>els.flatMap(el=>[false,true].map(checked=>{
+    el.checked=checked;
+    const s=getComputedStyle(el),thumb=getComputedStyle(el,'::before'),dialog=getComputedStyle(el.closest('dialog'));
+    return {checked:el.checked,track:s.backgroundColor,thumb:thumb.backgroundColor,edge:thumb.boxShadow.match(/(?:rgba?\([^)]*\)|color\(srgb[^)]*\))/)?.[0],background:dialog.backgroundColor};
+  })));
+  expect(paints.some(p=>p.checked)).toBe(true);expect(paints.some(p=>!p.checked)).toBe(true);
+  for(const p of paints){
+    const bg=blend(parseCssColor(p.track),parseCssColor(p.background));
+    const ratios=[p.thumb,p.edge].filter(Boolean).map(color=>contrastRatio(blend(parseCssColor(color),bg),bg));
+    expect(Math.max(...ratios),`interruttore ${p.checked?'acceso':'spento'}`).toBeGreaterThanOrEqual(3);
+  }
+  await context.close();
+});

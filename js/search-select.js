@@ -3,16 +3,19 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;',
 const norm = s => String(s ?? '').normalize('NFD').replace(/\p{M}/gu,'').toLowerCase().replace(/[^\p{L}\p{N}]+/gu,' ').trim();
 
 export function mountSearchSelect({input, list, options, selectedId = '', onChange, bounds = () => ({top:12,bottom:innerHeight-12}), empty = 'Nessun risultato.'}) {
+  list.classList.add('search-select-options');
   const events = new AbortController(), signal = events.signal;
   let selected = options.find(o=>o.value===selectedId), matches = [], active = -1;
   const close = () => { list.hidden=true; input.setAttribute('aria-expanded','false'); input.removeAttribute('aria-activedescendant'); active=-1; };
   const position = () => {
     if(list.hidden)return;
-    const r=input.getBoundingClientRect(),frame=bounds(),above=r.top-frame.top,below=frame.bottom-r.bottom;
+    const r=input.getBoundingClientRect(),frame=bounds(),viewport=window.visualViewport;
+    const top=Math.max(frame.top,(viewport?.offsetTop||0)+12),bottom=Math.min(frame.bottom,(viewport?.offsetTop||0)+(viewport?.height||innerHeight)-12);
+    const above=r.top-top,below=bottom-r.bottom;
     const flip=below<120&&above>below;
     list.style.top=flip?'auto':`${input.offsetTop+input.offsetHeight+4}px`;
     list.style.bottom=flip?`${input.closest('.search-select').getBoundingClientRect().bottom-r.top+4}px`:'auto';
-    list.style.maxHeight=`${Math.min(224,Math.max(64,(flip?above:below)-8))}px`;
+    list.style.maxHeight=`${Math.min(224,Math.max(0,(flip?above:below)-8))}px`;
   };
   const choose = option => {
     selected=option; input.value=option.label; input.setCustomValidity('');
@@ -21,7 +24,7 @@ export function mountSearchSelect({input, list, options, selectedId = '', onChan
   const highlight = () => {
     [...list.querySelectorAll('[role="option"]')].forEach((el,i)=>el.setAttribute('aria-selected',String(i===active)));
     const option=list.querySelector(`[data-option="${active}"]`);
-    if(option) { input.setAttribute('aria-activedescendant',option.id); option.scrollIntoView({block:'nearest'}); }
+    if(option) { input.setAttribute('aria-activedescendant',option.id); const r=option.getBoundingClientRect(),box=list.getBoundingClientRect();if(r.top<box.top)list.scrollTop+=r.top-box.top;else if(r.bottom>box.bottom)list.scrollTop+=r.bottom-box.bottom; }
     else input.removeAttribute('aria-activedescendant');
   };
   const render = () => {
@@ -56,6 +59,12 @@ export function mountSearchSelect({input, list, options, selectedId = '', onChan
   list.addEventListener('pointerdown',e=>{if(e.target.closest('[data-option]'))e.preventDefault();},{signal});
   list.addEventListener('click',e=>{const b=e.target.closest('[data-option]');if(b)choose(matches[+b.dataset.option]);},{signal});
   addEventListener('resize',position,{signal});
-  input.closest('dialog')?.addEventListener('scroll',position,{signal,passive:true});
-  return { destroy:()=>events.abort() };
+  addEventListener('modalviewportchange',position,{signal});
+  window.visualViewport?.addEventListener('resize',position,{signal,passive:true});
+  window.visualViewport?.addEventListener('scroll',position,{signal,passive:true});
+  input.closest('dialog')?.addEventListener('scroll',position,{signal,passive:true,capture:true});
+  return {
+    clear:()=>{selected=null;input.value='';input.setCustomValidity(input.required?'Scegli un risultato dall’elenco.':'');onChange('');close();},
+    destroy:()=>events.abort()
+  };
 }

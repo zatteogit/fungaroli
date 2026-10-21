@@ -5,12 +5,21 @@ on:
   push:
     branches: [claude/brave-tesla-wu0a2b]
   workflow_dispatch:
+    inputs:
+      browser:
+        description: Verifica completa browser prima del rilascio
+        type: boolean
+        default: false
+      notebook:
+        description: Verifica mirata di foto private e sincronizzazione del taccuino
+        type: boolean
+        default: false
 
 permissions:
   contents: read
 
 concurrency:
-  group: ci-${{ github.ref }}
+  group: ci-${{ github.ref }}-${{ github.event_name == 'workflow_dispatch' && inputs.notebook && 'notebook' || 'default' }}
   cancel-in-progress: true
 
 jobs:
@@ -35,3 +44,51 @@ jobs:
       - name: Spazi e conflitti nel diff
         if: github.event_name == 'pull_request'
         run: git diff --check ${{ github.event.pull_request.base.sha }} ${{ github.sha }}
+
+  browser:
+    if: github.event_name == 'workflow_dispatch' && inputs.browser
+    name: browser (${{ matrix.shard }}/8)
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3, 4, 5, 6, 7, 8]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Tutta la suite sul Worker locale
+        run: CHROMIUM_PATH="$(node -p "require('@playwright/test').chromium.executablePath()")" npx playwright test --reporter=list,github --shard=${{ matrix.shard }}/8
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: browser-failures-${{ matrix.shard }}
+          path: test-results/
+          retention-days: 5
+
+  notebook:
+    if: github.event_name == 'workflow_dispatch' && inputs.notebook
+    name: Taccuino fotografico
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Foto, archivio privato e sincronizzazione sul Worker locale
+        run: CHROMIUM_PATH="$(node -p "require('@playwright/test').chromium.executablePath()")" npx playwright test tests/browser/notebook-photo.spec.mjs tests/browser/notebook-photo-api.spec.mjs --reporter=list,github
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: notebook-photo-failures
+          path: test-results/
+          retention-days: 5

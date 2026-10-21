@@ -1,0 +1,56 @@
+{
+  "species": {
+    "alliaria": {
+      "leaf_type": {
+        "semplice": {
+          "src": "assets/plant-traits/alliaria-leaf_type-semplice.webp",
+          "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/candidates/alliaria-leaf_type-semplice.webp",
+          "status": "pending_independent_review",
+          "source": "https://www.infoflora.ch/it/flora/alliaria-petiolata.html",
+          "referencePhoto": "assets/plants/alliaria-1.webp",
+          "sha256": "846904bb5a8a3c82a10925ddba3b79960e33b4091cf4938b5e365b12758a93b2",
+          "review": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/review.md",
+          "scope": "Foglia basale reniforme-cordata semplice a lungo picciolo, margine sinuato-dentato e nervature palmate; non raffigura le foglie superiori triangolari."
+        }
+      },
+      "leaf_margin": {
+        "dentato": {
+          "src": "assets/plant-traits/alliaria-leaf_margin-dentato.webp",
+          "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/candidates/alliaria-leaf_margin-dentato.webp",
+          "status": "pending_independent_review",
+          "source": "https://www.infoflora.ch/it/flora/alliaria-petiolata.html",
+          "referencePhoto": "assets/plants/alliaria-1.webp",
+          "sha256": "2d46bbeba59090822494214c63c3d347e13225e44cd15df2737a93b3dccbf84e",
+          "review": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/review.md",
+          "scope": "Dettaglio parziale di margine sinuato-dentato della foglia basale; margini rettilinei sinistro/inferiore sono limiti del dettaglio."
+        }
+      }
+    },
+    "borragine": {
+      "leaf_type": {
+        "semplice": {
+          "src": "assets/plant-traits/borragine-leaf_type-semplice.webp",
+          "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/candidates/borragine-leaf_type-semplice.webp",
+          "status": "pending_independent_review",
+          "source": "https://www.infoflora.ch/it/flora/borago-officinalis.html",
+          "referencePhoto": "assets/plants/borragine-2.webp",
+          "sha256": "ebef0c502a81ca0c866335528b97331473f03585e876d04e237ca8693b83791a",
+          "review": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/review.md",
+          "scope": "Lamina singola oblungo-lanceolata, attenuata nel picciolo, bordo ondulato finemente dentato e pochi peli sottili schematici; non spine."
+        }
+      },
+      "leaf_margin": {
+        "dentato": {
+          "src": "assets/plant-traits/borragine-leaf_margin-dentato.webp",
+          "candidatePath": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/candidates/borragine-leaf_margin-dentato.webp",
+          "status": "pending_independent_review",
+          "source": "https://www.infoflora.ch/it/flora/borago-officinalis.html",
+          "referencePhoto": "assets/plants/borragine-2.webp",
+          "sha256": "8a0b293ceed769e12ffe304c71a28970d83c0caeb6c0d69a7e55c4ef782a6122",
+          "review": "docs/assets/botanici-specifici-2026-10-19/lotti/foglie-bosco/review.md",
+          "scope": "Ingrandimento parziale di bordo ondulato debolmente dentato e peli sottili; non aculei. Dentatura/peli schematizzati."
+        }
+      }
+    }
+  }
+}

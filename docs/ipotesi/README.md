@@ -13,8 +13,21 @@ Il ramo di produzione e i documenti in `docs/` fanno fede. Ciò che sta solo in 
 
 ## Registro
 
-| Lavoro | Dove | Stato (16/10/2026) |
-|---|---|---|
+Video di atmosfera richiesti e autorizzati alla pubblicazione da Matteo il 20/10: [valutazione e collocazioni](video-atmosfera-2026-10-20.md). Ramo `codex/nature-video-release`, porting selettivo della prova locale sulla produzione corrente; nessuna sostituzione delle foto informative.
+
+Estensione del pilota a tutto il Lazio richiesta da Matteo il 19/10: [valutazione della raccolta](estensione-lazio-2026-10-19.md). Tre agenti territoriali, 21 nuove zone candidate e 24 itinerari; documentazione e lacune salvate, integrazione applicativa ancora da eseguire.
+
+Ampliamento fotografico tramite tre agenti, richiesto il 18 e proseguito il 19/10: [valutazione, fonti e integrazione](integrazione-fotografie-agenti-2026-10-19.md). Commons, osservazioni iNaturalist e fotografie istituzionali Dryades; selezione per singolo file, senza ripetere il lotto già pubblicato.
+
+Ampliamento autorizzato il 18/10: [integrazione dei materiali](integrazione-materiali-2026-10-18.md), con [fasi fungine](integrazione-fasi-funghi-2026-10-18.md), [raster botanici](integrazione-raster-botanici-2026-10-18.md), [sorgenti vettoriali](revisione-svg-2026-10-18.md) e [schede animali](../animali-arricchimento-2026-10-18.md). I conteggi distinguono copertura visibile e sorgenti editabili; scarti e pendenze restano documentati.
+
+Consegne dei cinque agenti del 18/10: [valutazione e integrazione selettiva](valutazione-consegne-agenti-2026-10-18.md). Raster e correzioni botaniche adottati dopo controllo; SVG come prototipo tecnico; animali come studio e fotografie come pipeline senza nuovi file acquisiti.
+
+Rilascio delle parti verificate su richiesta di Matteo del 17/10: [valutazione dei rami sospesi](valutazione-rilascio-2026-10-17.md). Include le PR #93, #60 e #98 nel candidato di rilascio; non adotta i due modelli micologici di ricerca né i pacchetti grezzi delle immagini.
+
+| Lavoro | Dove | Stato (17/10/2026) |
+|---|---|
+| Questionario per cercatori esperti del Reatino | Recupero dalla sessione Claude, ramo `codex/questionario-esperti` | **Valutato e approvato** da Matteo il 17/10; quattro scelte applicate. [Valutazione](valutazione-questionario-esperti.md) |
 | Pacchetto di ricerca «modello micologico v3» (Codex): covariate, logistica con calibrazione, schema delle uscite, audit delle fonti e dei porcini tedeschi | ramo `codex/fronda-modello-micologico-v3`, commit `4465d2f` | **Valutato**: banco di prova ben costruito, senza modello addestrato né dati. Non si unisce così com'è. Da correggere prima dell'uso (dominio congiunto, meteo previsto, minimi di dati, licenze). [Valutazione](valutazione-modello-v3.md) |
 | Documento «Fronda 3.0»: modello a due stadi, trovabilità in percentuale, penalità del vento, tabella delle specie | ramo `claude/ricerca-modello-micologico`, commit `8c0ba55`, `docs/ricerca-modello-micologico-italia.md` | **Valutato, non adottabile**: citazioni inesistenti o sbagliate, soglie senza fonte, percentuali senza coefficienti. Restano idee da misurare: P−ET₀, pioggia massima, fine stagione guidata dalla temperatura. [Valutazione](valutazione-modello-v3.md), sezione 3.2 |
 | Prima integrazione proposta dalla valutazione: archivio delle previsioni, piano con 60 giorni di ingressi, protocollo d'uscita, etichette separate, prova offline sui porcini tedeschi | — | **Decisa** il 16/10 (D1–D4, sezione 9 della valutazione). Da costruire. L'indice non cambia. |

@@ -1,9 +1,10 @@
+import {openModal} from './modal-flow.js';
 // Modalita' app: installazione (Android/Chrome/Edge con il prompt del browser, iPhone con le istruzioni),
 // service worker per l'uso senza rete e classi sull'<html> per adattare l'interfaccia al dispositivo.
 const ua = navigator.userAgent;
 const isIOS = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
 const isAndroid = /Android/.test(ua);
-const standalone = () => matchMedia('(display-mode: standalone)').matches || matchMedia('(display-mode: fullscreen)').matches || navigator.standalone === true;
+const standalone = () => matchMedia('(display-mode: standalone)').matches || matchMedia('(display-mode: fullscreen)').matches || matchMedia('(display-mode: minimal-ui)').matches || navigator.standalone === true;
 const KEY = 'fungaroli:install-dismissed';
 let deferred = null;
 
@@ -23,6 +24,14 @@ function trackViewport() {
   const o = innerWidth > innerHeight ? 'landscape' : 'portrait';
   tallest[o] = Math.max(tallest[o], h, innerHeight);
   html.style.setProperty('--vvh', `${Math.round(h)}px`);
+  // Il dialog segue l’area realmente visibile, anche con barre aperte o zoom.
+  const invite = document.getElementById('install-invite');
+  if (invite?.open) {
+    invite.style.setProperty('--iv-height', `${h}px`);
+    invite.style.setProperty('--iv-width', `${vv?.width || innerWidth}px`);
+    invite.style.setProperty('--iv-top', `${vv?.offsetTop || 0}px`);
+    invite.style.setProperty('--iv-left', `${vv?.offsetLeft || 0}px`);
+  }
   const kb = isText(document.activeElement) && h < tallest[o] * 0.78;
   if (kb !== html.classList.contains('kb-open')) {
     html.classList.toggle('kb-open', kb);
@@ -41,9 +50,9 @@ trackViewport();
 // Fonti verificate il 12/10/2026 (Apple, Google, sorgenti Chromium e Firefox): vedi docs/installazione.md.
 // Safari 26+ congela la versione di iOS nel user agent a 18_x: la versione vera si legge da "Version/NN".
 const IPAD_DESK = /Macintosh/.test(ua) && navigator.maxTouchPoints > 1;
-const IN_APP = /Instagram|FBAN|FBAV|FBIOS|FB_IAB|FB4A|musical_ly|BytedanceWebview|LinkedInApp|; wv\)/.test(ua)
-  || (isIOS && !standalone() && !/Safari\//.test(ua));
 const IOS_THIRD = /CriOS|FxiOS|EdgiOS|OPiOS/.test(ua);
+const IN_APP = /Instagram|FBAN|FBAV|FBIOS|FB_IAB|FB4A|musical_ly|BytedanceWebview|LinkedInApp|; wv\)/.test(ua)
+  || (isIOS && !IOS_THIRD && !standalone() && !/Safari\//.test(ua));
 function platform() {
   if (IN_APP) return { kind: 'inapp' };
   if (isIOS) {
@@ -80,42 +89,42 @@ const I = {
   open: S('<path d="M14 4h6v6M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>'),
 };
 const step = (ic, html) => `<li><span class="iv-ic">${I[ic]}</span><span>${html}</span></li>`;
-// verso dove indicare la barra del browser: una pagina non puo' sapere dove sta (su iPhone la sceglie l'utente),
-// quindi solo la direzione piu' probabile: 'down' (iPhone, Samsung, Edge) o 'up' (iPad, Chrome e Firefox su Android, app)
+// La posizione delle barre non è rilevabile: descriviamo il controllo senza frecce sulla pagina.
 function guide() {
+  const iosDevice = P.ipad || IPAD_DESK || /iPad/.test(ua) ? 'iPad' : 'iPhone';
   const iosEnd = [step('add', 'Scorri e tocca <b>Aggiungi alla schermata Home</b> <small>(se non c\'è: in fondo, <b>Modifica azioni</b>)</small>')];
   const webApp = step('toggle', 'Lascia attivo <b>Apri come app web</b>, poi tocca <b>Aggiungi</b>');
   switch (P.kind) {
-    case 'ios-27': return { where: P.ipad ? 'up' : 'down', title: `Su iPhone con iOS ${P.v}, in Safari`, steps: [
-      step('pagemenu', 'Tocca <b>Menu della pagina</b>, a sinistra della barra dell\'indirizzo (oppure tieni premuta la barra), poi <b>Condividi</b> <small>(con la barra "In basso" o "In alto": tocca direttamente <b>Condividi</b>)</small>'), ...iosEnd, webApp] };
-    case 'ios-26': return { where: P.ipad ? 'up' : 'down', title: 'Su iPhone con iOS 26, in Safari', steps: [
-      step('more', 'Tocca <b>Altro</b> (•••) a destra della barra dell\'indirizzo, poi <b>Condividi</b> <small>(con la barra "In basso" o "In alto": tocca direttamente <b>Condividi</b>)</small>'), ...iosEnd, webApp] };
-    case 'ios-old': return { where: P.ipad ? 'up' : 'down', title: 'Su iPhone, in Safari', steps: [
+    case 'ios-27': return { title: `Su ${iosDevice}, in Safari`, steps: [
+      step('pagemenu', 'Tocca <b>Menu della pagina</b>, a sinistra della barra dell\'indirizzo <small>Se vedi già l’icona Condividi, passa al punto successivo.</small>'), step('share', 'Tocca <b>Condividi</b>'), ...iosEnd, webApp] };
+    case 'ios-26': return { title: `Su ${iosDevice}, in Safari`, steps: [
+      step('more', 'Tocca <b>Altro</b> (•••) a destra della barra dell\'indirizzo <small>Se vedi già l’icona Condividi, passa al punto successivo.</small>'), step('share', 'Tocca <b>Condividi</b>'), ...iosEnd, webApp] };
+    case 'ios-old': return { title: `Su ${iosDevice}, in Safari`, steps: [
       step('share', 'Tocca <b>Condividi</b> nella barra di Safari'), step('add', 'Scorri e tocca <b>Aggiungi alla schermata Home</b>'), step('ok', 'Tocca <b>Aggiungi</b>')] };
-    case 'ios-chrome': return { where: 'up', title: 'Su iPhone, in Chrome', steps: [
+    case 'ios-chrome': return { title: `Su ${iosDevice}, in Chrome`, steps: [
       step('share', 'Tocca <b>Condividi</b>, a destra della barra dell\'indirizzo'), step('add', 'Tocca <b>Aggiungi alla schermata Home</b>'), step('ok', 'Tocca <b>Aggiungi</b>')] };
-    case 'ios-other': return { where: '', title: 'Su iPhone', steps: [
+    case 'ios-other': return { title: `Su ${iosDevice}, nel browser`, steps: [
       step('share', 'Apri il menu del browser e tocca <b>Condividi</b>'), step('add', 'Tocca <b>Aggiungi alla schermata Home</b>, poi <b>Aggiungi</b>')],
       note: 'Se non trovi la voce, apri la pagina in Safari: lì funziona sempre.' };
-    case 'and-chrome': return { where: 'up', title: 'Su Android, in Chrome', steps: [
+    case 'and-chrome': return { title: 'Su Android, in Chrome', steps: [
       step('kebab', 'Tocca <b>⋮</b> in alto a destra'), step('add', 'Tocca <b>Installa e crea scorciatoia</b> <small>(nelle versioni meno recenti: <b>Installa app</b> o <b>Aggiungi a schermata Home</b>)</small>'), step('install', 'Scegli <b>Installa</b>')] };
-    case 'and-samsung': return { where: 'down', title: 'Su Android, in Samsung Internet', steps: [
+    case 'and-samsung': return { title: 'Su Android, in Samsung Internet', steps: [
       step('burger', 'Tocca <b>≡</b> in basso a destra'), step('add', 'Tocca <b>Aggiungi pagina a</b>, poi <b>Schermata Home</b>'), step('ok', 'Tocca <b>Aggiungi</b>')] };
-    case 'and-firefox': return { where: 'up', title: 'Su Android, in Firefox', steps: [
+    case 'and-firefox': return { title: 'Su Android, in Firefox', steps: [
       step('kebab', 'Tocca <b>⋮</b> (il menu di Firefox)'), step('add', 'Tocca <b>Aggiungi app alla schermata principale</b> <small>(se non la vedi, cercala sotto <b>Altro</b>)</small>'), step('ok', 'Conferma con <b>Aggiungi</b>')] };
-    case 'and-edge': return { where: 'down', title: 'Su Android, in Edge', steps: [
+    case 'and-edge': return { title: 'Su Android, in Edge', steps: [
       step('more', 'Tocca <b>…</b> in basso al centro'), step('add', 'Scorri e tocca <b>Aggiungi al telefono</b>'), step('install', 'Tocca <b>Installa</b>')] };
-    case 'and-other': return { where: '', title: 'Su Android', steps: [
+    case 'and-other': return { title: 'Su Android', steps: [
       step('kebab', 'Apri il menu del browser'), step('add', 'Cerca <b>Installa app</b> o <b>Aggiungi a schermata Home</b>')], note: 'Con Chrome è più semplice: apri lì questa pagina.' };
-    case 'desk-chrome': return { where: '', title: 'Sul computer, in Chrome', steps: [
+    case 'desk-chrome': return { title: 'Sul computer, in Chrome', steps: [
       step('install', 'Clicca l\'icona <b>Installa</b> a destra nella barra dell\'indirizzo'), step('kebab', 'Oppure: <b>⋮</b> → <b>Trasmetti, salva e condividi</b> → <b>Installa pagina come app…</b>')] };
-    case 'desk-edge': return { where: '', title: 'Sul computer, in Edge', steps: [
+    case 'desk-edge': return { title: 'Sul computer, in Edge', steps: [
       step('install', 'Clicca <b>App disponibile</b> nella barra dell\'indirizzo'), step('more', 'Oppure: <b>…</b> → <b>Applicazioni</b> → <b>Installa questo sito come app</b>')] };
-    case 'desk-safari': return { where: '', title: 'Sul Mac, in Safari', steps: [
+    case 'desk-safari': return { title: 'Sul Mac, in Safari', steps: [
       step('share', 'Menu <b>File</b> → <b>Aggiungi al Dock</b> (o <b>Condividi</b> → <b>Aggiungi al Dock</b>)'), step('ok', 'Clicca <b>Aggiungi</b>')] };
-    case 'desk-firefox-win': return { where: '', title: 'Sul computer, in Firefox', steps: [
+    case 'desk-firefox-win': return { title: 'Sul computer, in Firefox', steps: [
       step('add', 'Clicca <b>Aggiungi scheda alla barra delle applicazioni</b> nella barra dell\'indirizzo')] };
-    case 'inapp': return { where: 'up', inapp: true, title: 'Sei nel browser di un\'altra app', steps: [
+    case 'inapp': return { inapp: true, title: 'Sei nel browser di un\'altra app', steps: [
       step('more', 'Tocca <b>⋯</b> o <b>⋮</b> in alto a destra'), step('open', `Scegli <b>Apri ${isIOS ? 'in Safari' : 'nel browser'}</b> <small>(o <b>Apri nel browser esterno</b>)</small>`), step('add', 'Da lì segui le istruzioni per installarla')],
       note: 'Da qui l\'app non si può installare. Se non trovi la voce, copia il link e incollalo nel browser.' };
     default: return null;
@@ -123,6 +132,7 @@ function guide() {
 }
 
 export function initInstall() {
+  addEventListener('fronda:legal-access',render);
   if ('serviceWorker' in navigator && (location.protocol === 'https:' || ['localhost', '127.0.0.1'].includes(location.hostname)) && !globalThis.FUNGAROLI_REVIEW && !globalThis.FUNGAROLI_DATA) {
     const register = () => navigator.serviceWorker.register('sw.js').then((reg) => {
       // l'app installata spesso viene solo ripresa dalla memoria, senza ricaricarsi: si controlla se c'e' una versione nuova
@@ -142,7 +152,7 @@ export function initInstall() {
 const LATER = 'fungaroli:install-later';
 const embedded = () => !globalThis.FUNGAROLI_TEST_INSTALL && !!(globalThis.FUNGAROLI_REVIEW || globalThis.FUNGAROLI_DATA); // nelle copie di revisione niente invito (salvo test)
 const dismissed = () => { try { return Date.now() - (+localStorage.getItem(KEY) || 0) < 30 * 864e5; } catch { return false; } };
-const canOffer = () => !standalone() && !embedded() && (!!deferred || !!guide());
+const canOffer = () => !document.body.hasAttribute('data-legal-pending') && !standalone() && !embedded() && (!!deferred || !!guide());
 
 function render() {
   const banner = document.getElementById('install-banner');
@@ -177,14 +187,15 @@ export function maybeInvite() {
 }
 
 function openInvite(fromButton) {
-  if (!canOffer()) return;
+  if (!canOffer()||document.querySelector('#onboarding[open]')||(!fromButton&&document.querySelector('dialog[open]:modal'))) return;
   let dlg = document.getElementById('install-invite');
-  if (!dlg) { dlg = document.createElement('dialog'); dlg.id = 'install-invite'; dlg.className = 'install-invite'; document.body.append(dlg); }
+  if (!dlg) { dlg = document.createElement('dialog'); dlg.id = 'install-invite'; dlg.className = 'install-invite'; dlg.setAttribute('aria-labelledby', 'iv-title'); document.body.append(dlg); }
   const g = guide();
   const native = !!deferred && !g?.inapp;
-  dlg.innerHTML = `<div class="iv-in">
+  dlg.innerHTML = `<div class="iv-toolbar"><span>Installa Fronda</span><button type="button" class="iv-close" data-later aria-label="Chiudi le istruzioni di installazione">${S('<path d="m6 6 12 12M18 6 6 18"/>')}</button></div>
+    <div class="iv-scroll"><div class="iv-in">
     <img class="iv-icon" src="assets/fronda-icon-192.png" alt="" width="84" height="84">
-    <h2 tabindex="-1" autofocus>${g?.inapp ? 'Aprila nel browser,<br>poi installala' : 'Fronda è meglio<br>come app'}</h2>
+    <h2 id="iv-title" tabindex="-1">${g?.inapp ? 'Aprila nel browser,<br>poi installala' : 'Fronda è meglio<br>come app'}</h2>
     <ul class="iv-why">
       <li>Si apre in un tocco, a tutto schermo</li>
       <li>Nel bosco, senza campo, ti mostra l'ultimo meteo e le zone</li>
@@ -194,8 +205,7 @@ function openInvite(fromButton) {
     ${g ? `<div class="iv-how${native ? ' alt' : ''}">${native ? '<p class="iv-or">Se non parte, a mano:</p>' : ''}<p class="iv-t">${g.title}</p><ol class="iv-steps">${g.steps.join('')}</ol>${g.note ? `<p class="iv-note">${g.note}</p>` : ''}
       ${g.inapp ? '<button type="button" class="btn big iv-copy" data-copy>Copia il link</button>' : ''}</div>` : ''}
     <button type="button" class="iv-later" data-later>${fromButton ? 'Chiudi' : 'Lo faccio dopo, intanto do un\'occhiata…'}</button>
-  </div>
-  ${g?.where && !native ? `<span class="iv-point iv-${g.where}" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4v15M6 13l6 6 6-6"/></svg></span>` : ''}`;
+  </div></div>`;
   dlg.querySelector('[data-native]')?.addEventListener('click', async () => {
     deferred.prompt();
     const r = await deferred.userChoice.catch(() => null);
@@ -205,10 +215,14 @@ function openInvite(fromButton) {
   dlg.querySelector('[data-copy]')?.addEventListener('click', async (e) => {
     try { await navigator.clipboard.writeText(location.href.split('#')[0]); e.target.textContent = 'Link copiato'; } catch { e.target.textContent = location.host; }
   });
-  dlg.querySelector('[data-later]').addEventListener('click', () => {
+  const dismiss = () => {
     try { sessionStorage.setItem(LATER, '1'); localStorage.setItem(LATER, String(Date.now())); } catch { /* ignora */ }
     dlg.close();
-  });
-  dlg.addEventListener('cancel', () => { try { sessionStorage.setItem(LATER, '1'); } catch { /* ignora */ } }, { once: true });
-  if (!dlg.open) dlg.showModal();
+  };
+  dlg.querySelectorAll('[data-later]').forEach(button => button.addEventListener('click', dismiss));
+  dlg.oncancel = event => { event.preventDefault(); dismiss(); };
+  if (!dlg.open) openModal(dlg);
+  trackViewport();
+  dlg.querySelector('.iv-scroll').scrollTop = 0;
+  dlg.querySelector('.iv-close').focus({ preventScroll: true });
 }

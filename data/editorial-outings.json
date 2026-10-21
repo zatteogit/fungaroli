@@ -1,0 +1,152 @@
+{
+  "version": 1,
+  "note": "Giri pubblici di esempio richiesti da Matteo. Racconti simulati, nessuna attività o osservazione reale. Dati del sentiero separati dalla simulazione; geometrie dai tratti già mappati in Fronda.",
+  "outings": [
+    {
+      "id": "tancia-a-passo-lento",
+      "zoneId": "tancia",
+      "trailId": "12252649",
+      "title": "Il Tancia, a passo lento",
+      "eyebrow": "Una mattina fra i faggi",
+      "intro": "Un giro da tenere per quando hai voglia di bosco, pause e un sentiero da leggere con calma.",
+      "routeFacts": {
+        "name": "Cresta di Monte Tancia",
+        "distanceKm": 4.9,
+        "durationMinutes": 140,
+        "difficulty": "E",
+        "sourcePage": 27
+      },
+      "mood": "Con un po’ di fatica",
+      "story": [
+        "Per questo primo giro immagino di partire senza una lista di funghi da portare a casa. Mi interessa osservare: il bordo del cappello, ciò che c’è sotto, la base del gambo. La foto può aspettare un momento; prima provo a descrivere.",
+        "Nel mio taccuino di esempio lascio tre cose: una forma da confrontare, una domanda sul bosco e la voglia di rifare il percorso con qualcuno. Anche una ricerca senza incontri avrebbe una pagina."
+      ],
+      "moments": [
+        {
+          "title": "Prima di partire",
+          "text": "Apro la scheda dell’uscita, scelgo il giorno e ricontrollo meteo, accessi e rientro."
+        },
+        {
+          "title": "Una pausa per guardare",
+          "text": "Mi fermerei per osservare un esemplare intero, senza trasformare una somiglianza in un’identificazione."
+        },
+        {
+          "title": "La pagina del ritorno",
+          "text": "Due nomi proposti da verificare, la fatica che ricordo e un motivo per tornare. Il resto lo compone Fronda."
+        }
+      ],
+      "reading": [
+        "edulis",
+        "cornucopioides"
+      ],
+      "takeaway": "Tornerei per guardare meglio, anche senza aver trovato funghi.",
+      "simulated": true,
+      "author": {
+        "name": "Matteo",
+        "role": "Redattore Fronda"
+      },
+      "routeSource": {
+        "title": "CAI Lazio · rete sentieristica, 13 luglio 2022",
+        "url": "https://cailazio.org/wp-content/uploads/2019/06/Riepilogo-generale-pubblicazione-AREE.pdf",
+        "year": 2022
+      }
+    },
+    {
+      "id": "rascino-bosco-e-spazi-aperti",
+      "zoneId": "rascino",
+      "trailId": "12460968",
+      "title": "Rascino, fra bosco e spazi aperti",
+      "eyebrow": "Una giornata da lasciare larga",
+      "intro": "Un’idea per chi vuole camminare e dare spazio anche alle soste di osservazione.",
+      "routeFacts": {
+        "name": "Ollanette – Monte Vignole – Uscertu",
+        "distanceKm": 7.5,
+        "durationMinutes": 180,
+        "difficulty": "E",
+        "sourcePage": 10
+      },
+      "mood": "Impegnativa, nel racconto",
+      "story": [
+        "Questo giro lo immagino con più tempo del solo cammino. Porterei una lente, terrei pronte le schede e lascerei vuota la casella dei ritrovamenti: i funghi non si prenotano.",
+        "Il ricordo che vorrei conservare non è una prestazione. È il punto in cui abbiamo rallentato per fare una domanda, poi ripreso il sentiero. Se il programma diventasse troppo lungo, cambierei idea prima di trasformare la passeggiata in una corsa."
+      ],
+      "moments": [
+        {
+          "title": "Il giro si prepara",
+          "text": "Controllo l’itinerario completo e organizzo il rientro: il tracciato indicato non è presentato come un anello."
+        },
+        {
+          "title": "Una sosta, una domanda",
+          "text": "Nel racconto mi concedo una pausa per confrontare forme e caratteri, senza affidarmi soltanto al colore."
+        },
+        {
+          "title": "Una cosa da ricordare",
+          "text": "Annoterei quali soste hanno reso bello il giro, oltre alla fatica percepita."
+        }
+      ],
+      "reading": [
+        "edulis",
+        "procera"
+      ],
+      "takeaway": "Una buona uscita può essere piena di osservazioni e vuota di raccolto.",
+      "simulated": true,
+      "author": {
+        "name": "Matteo",
+        "role": "Redattore Fronda"
+      },
+      "routeSource": {
+        "title": "CAI Lazio · rete sentieristica, 13 luglio 2022",
+        "url": "https://cailazio.org/wp-content/uploads/2019/06/Riepilogo-generale-pubblicazione-AREE.pdf",
+        "year": 2022
+      }
+    },
+    {
+      "id": "laga-un-giro-per-imparare",
+      "zoneId": "laga",
+      "trailId": "12315286",
+      "title": "Sulla Laga, un giro per imparare",
+      "eyebrow": "Da Villa San Cipriano a Serreripa",
+      "intro": "Un percorso più breve, da usare come esempio per cominciare a tenere il proprio taccuino.",
+      "routeFacts": {
+        "name": "Villa San Cipriano – Serreripa",
+        "distanceKm": 3.0,
+        "durationMinutes": 90,
+        "difficulty": "T",
+        "sourcePage": 2
+      },
+      "mood": "Tranquilla, nel racconto",
+      "story": [
+        "Per questa uscita di esempio partirei con un obiettivo piccolo: tornare sapendo descrivere un fungo meglio di quando sono uscito. Non serve dargli subito un nome. Una foto d’insieme e qualche dettaglio leggibile valgono più di una risposta affrettata.",
+        "Alla fine sceglierei pochi dettagli nel taccuino: il luogo, il giorno, quanto mi è costato il giro. Se fossimo in compagnia, manderei la pagina in chat per ricordare insieme le domande rimaste aperte."
+      ],
+      "moments": [
+        {
+          "title": "Il punto di partenza",
+          "text": "Verifico accessi e condizioni attuali nella scheda dell’uscita, poi concordo il ritorno con chi viene con me."
+        },
+        {
+          "title": "Guardare senza fretta",
+          "text": "Il mio esercizio sarebbe descrivere cappello, parte inferiore e gambo, lasciando il nome come ipotesi."
+        },
+        {
+          "title": "Il ricordo da mandare",
+          "text": "Una pagina breve da condividere in chat: prima di inviarla scelgo io quali dettagli personali includere."
+        }
+      ],
+      "reading": [
+        "edulis"
+      ],
+      "takeaway": "La prima pagina può cominciare da una domanda, non da un ritrovamento.",
+      "simulated": true,
+      "author": {
+        "name": "Matteo",
+        "role": "Redattore Fronda"
+      },
+      "routeSource": {
+        "title": "CAI Lazio · rete sentieristica, 13 luglio 2022",
+        "url": "https://cailazio.org/wp-content/uploads/2019/06/Riepilogo-generale-pubblicazione-AREE.pdf",
+        "year": 2022
+      }
+    }
+  ]
+}

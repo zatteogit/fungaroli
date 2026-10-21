@@ -1,0 +1,2739 @@
+{
+  "continue": {
+    "clcontinue": "44788287|Martes_foina_skulls_at_Naturalis_from_the_Zoölogisch_Museum_Amsterdam",
+    "continue": "||imageinfo"
+  },
+  "query": {
+    "pages": {
+      "82941666": {
+        "pageid": 82941666,
+        "ns": 6,
+        "title": "File:Kuna belica (Martes foina) Beech marten.jpg",
+        "index": 8,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3586982,
+            "width": 4608,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Kuna_belica_%28Martes_foina%29_Beech_marten.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Kuna_belica_(Martes_foina)_Beech_marten.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=82941666",
+            "sha1": "60e6b4dd8e498b01060729cd9ff3a37d4a33b540",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2019-10-08 19:12:31",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Kuna belica (Martes foina) Beech marten",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Serbia in the 2010s|Self-published work|Martes foina (dead)|Project Viki čuva šume",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Kuna belica (Martes foina) je vrsta sisara koja pripada redu zveri (Carnivora) i porodici kuna (Mustelidae). Ova jedinka je stradala na putu u blizini Specijalnog rezervata prirode ,,Labudovo okno\".",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2019-04-04 16:01:58",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Nikola_Veljkovi%C4%87&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Nikola Veljković (page does not exist)\">Nikola Veljković</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "12769259": {
+        "pageid": 12769259,
+        "ns": 6,
+        "title": "File:Martes foina 1 (Bohuš Číčel).jpg",
+        "index": 7,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 358154,
+            "width": 1024,
+            "height": 682,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Martes_foina_1_%28Bohu%C5%A1_%C4%8C%C3%AD%C4%8Del%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Martes_foina_1_(Bohu%C5%A1_%C4%8C%C3%AD%C4%8Del).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=12769259",
+            "sha1": "dfd6dc5b95fea5096c61e9054709cf56a7574be5",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2019-11-05 20:39:48",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Martes foina 1 (Bohuš Číčel)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Martes foina|Carnivora of the Czech Republic|GFDL|License migration completed|Images with extracted images|Mustelids in snow",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i><a href=\"//commons.wikimedia.org/wiki/Martes_foina\" title=\"Martes foina\">Martes foina</a></i>, Navasrky, Czech Republic",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2009-02-22",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Trachemys/Bohu%C5%A1_%C4%8C%C3%AD%C4%8Del&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Trachemys/Bohuš Číčel (page does not exist)\">Bohuš Číčel</a> (<a rel=\"nofollow\" class=\"external free\" href=\"https://www.flickr.com/photos/bcicel/\">https://www.flickr.com/photos/bcicel/</a>)",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/licenses/by-sa/3.0/",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0-migrated"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Carnivora of the Czech Republic"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images with extracted images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration completed"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Martes foina"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mustelids in snow"
+          }
+        ]
+      },
+      "30616888": {
+        "pageid": 30616888,
+        "ns": 6,
+        "title": "File:Martes foina MHNT ZOO 2010.9.2. Crane.jpg",
+        "index": 2,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3288023,
+            "width": 4882,
+            "height": 2904,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Martes_foina_MHNT_ZOO_2010.9.2._Crane.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Martes_foina_MHNT_ZOO_2010.9.2._Crane.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=30616888",
+            "sha1": "351aeba0875b731b2aeb4533ad59fd585165b419",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2014-01-14 09:12:56",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Martes foina MHNT ZOO 2010.9.2. Crane",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Supported by Wikimedia France|Taken with Nikon D800E|Self-published work|Supported by Projet Phoebus|Media supported by Wikimedia France|Images by Archaeodontosaurus Zoology|Files with coordinates missing SDC location of creation|Mammal bones in the Muséum de Toulouse|Martes foina skulls|Focus stacking images of bones|Mammalia skulls in left lateral aspect",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "valued",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "43.593056",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "1.449167",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Artist": {
+                "value": "<div class=\"fn value\">\n<a href=\"//commons.wikimedia.org/wiki/User:Archaeodontosaurus\" title=\"User:Archaeodontosaurus\">Didier Descouens</a></div>",
+                "source": "commons-desc-page"
+              },
+              "ImageDescription": {
+                "value": "Skull of <a href=\"https://en.wikipedia.org/wiki/Martes_foina\" class=\"extiw\" title=\"en:Martes foina\">Beech marten</a>.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "26 December 2013",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "I, the copyright holder of this work, hereby publish it under the following license:",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Focus stacking images of bones"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images by Archaeodontosaurus Zoology"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mammal bones in the Muséum de Toulouse"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mammalia skulls in left lateral aspect"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Martes foina skulls"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media supported by Wikimedia France"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Supported by Projet Phoebus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Supported by Wikimedia France"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Nikon D800E"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Valued Images by Archaeodontosaurus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Valued images of Mustelidae"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Valued images of Muséum de Toulouse"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Valued images of mammal bones"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Valued images promoted 2014-01"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Valued images sorted by promotion date"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Valued images supported by Wikimedia France"
+          }
+        ]
+      },
+      "30616381": {
+        "pageid": 30616381,
+        "ns": 6,
+        "title": "File:Martes foina MHNT ZOO 2010.9.2 Black.jpg",
+        "index": 3,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3215357,
+            "width": 7118,
+            "height": 3186,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Martes_foina_MHNT_ZOO_2010.9.2_Black.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Martes_foina_MHNT_ZOO_2010.9.2_Black.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=30616381",
+            "sha1": "b19c2e6388c6431224031fb43a24e7757e7276f4",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2014-01-14 07:55:42",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Martes foina MHNT ZOO 2010.9.2 Black",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Supported by Wikimedia France|Taken with Nikon D800E|Self-published work|Supported by Projet Phoebus|Media supported by Wikimedia France|Images by Archaeodontosaurus Zoology|Files with coordinates missing SDC location of creation|Skeletons on black background|Specimen missing SDC depicts|Mammal bones in the Muséum de Toulouse|Focus stacking images of bones|Martes foina bones|Martes skeletons",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "valued",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "43.593056",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "1.449167",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Artist": {
+                "value": "<div class=\"fn value\">\n<a href=\"//commons.wikimedia.org/wiki/User:Archaeodontosaurus\" title=\"User:Archaeodontosaurus\">Didier Descouens</a></div>",
+                "source": "commons-desc-page"
+              },
+              "ImageDescription": {
+                "value": "Skeleton of <a href=\"https://en.wikipedia.org/wiki/Martes_foina\" class=\"extiw\" title=\"en:Martes foina\">Beech marten</a>.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "26 December 2013",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "I, the copyright holder of this work, hereby publish it under the following license:",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Focus stacking images of bones"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images by Archaeodontosaurus Zoology"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mammal bones in the Muséum de Toulouse"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Martes foina bones"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Martes skeletons"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media supported by Wikimedia France"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Skeletons on black background"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Specimen missing SDC depicts"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Supported by Projet Phoebus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Supported by Wikimedia France"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Nikon D800E"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Valued Images by Archaeodontosaurus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Valued images missing SDC depicts"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Valued images of Mustelidae"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Valued images of Muséum de Toulouse"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Valued images of mammals skeletons"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Valued images promoted 2014-02"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Valued images sorted by promotion date"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Valued images supported by Wikimedia France"
+          }
+        ]
+      },
+      "44677008": {
+        "pageid": 44677008,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - RMNH.MAM.43367.a gen - Martes foina foina - skeleton (part).jpeg",
+        "index": 5,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 249843,
+            "width": 1920,
+            "height": 1623,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Naturalis_Biodiversity_Center_-_RMNH.MAM.43367.a_gen_-_Martes_foina_foina_-_skeleton_%28part%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_RMNH.MAM.43367.a_gen_-_Martes_foina_foina_-_skeleton_(part).jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44677008",
+            "sha1": "2d5a9c0af4cb85b4fbe0bc5bc59cb42089c3747e",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-11-01 04:03:00",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - RMNH.MAM.43367.a gen - Martes foina foina - skeleton (part)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Files with no machine-readable author|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Martes foina skulls at Naturalis from the Rijksmuseum van Natuurlijke Historie|Martes foina mandibles",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Martes foina foina",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with no machine-readable author"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GWToolset Batch Upload"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Martes foina mandibles"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Martes foina skulls at Naturalis from the Rijksmuseum van Natuurlijke Historie"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media donated by Naturalis Biodiversity Center"
+          }
+        ]
+      },
+      "44677005": {
+        "pageid": 44677005,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - RMNH.MAM.43367.a reg - Martes foina foina - skeleton (part).jpeg",
+        "index": 6,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 236991,
+            "width": 1920,
+            "height": 1623,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Naturalis_Biodiversity_Center_-_RMNH.MAM.43367.a_reg_-_Martes_foina_foina_-_skeleton_%28part%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_RMNH.MAM.43367.a_reg_-_Martes_foina_foina_-_skeleton_(part).jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44677005",
+            "sha1": "a7624f9197ffd28236f0be8b08fa6998247ba5aa",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-11-01 04:02:59",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - RMNH.MAM.43367.a reg - Martes foina foina - skeleton (part)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Files with no machine-readable author|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Martes foina skulls at Naturalis from the Rijksmuseum van Natuurlijke Historie|Martes foina mandibles",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Martes foina foina",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with no machine-readable author"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GWToolset Batch Upload"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Martes foina mandibles"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Martes foina skulls at Naturalis from the Rijksmuseum van Natuurlijke Historie"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media donated by Naturalis Biodiversity Center"
+          }
+        ]
+      },
+      "44753700": {
+        "pageid": 44753700,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - ZMA.MAM.11099 pal - Martes foina Erxleben - skull.jpeg",
+        "index": 23,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 245511,
+            "width": 1582,
+            "height": 1920,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Naturalis_Biodiversity_Center_-_ZMA.MAM.11099_pal_-_Martes_foina_Erxleben_-_skull.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_ZMA.MAM.11099_pal_-_Martes_foina_Erxleben_-_skull.jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44753700",
+            "sha1": "71e39d8670def4cdf7d11e5cc2ee82e3619dafd2",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-11-03 19:19:20",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - ZMA.MAM.11099 pal - Martes foina Erxleben - skull",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Martes foina skulls at Naturalis from the Zoölogisch Museum Amsterdam",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Martes foina  Erxleben",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Erxleben",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GWToolset Batch Upload"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Martes foina skulls at Naturalis from the Zoölogisch Museum Amsterdam"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media donated by Naturalis Biodiversity Center"
+          }
+        ]
+      },
+      "44766357": {
+        "pageid": 44766357,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - ZMA.MAM.12386.a lat - Martes foina Erxleben - skull.jpeg",
+        "index": 19,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 253315,
+            "width": 1625,
+            "height": 1920,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Naturalis_Biodiversity_Center_-_ZMA.MAM.12386.a_lat_-_Martes_foina_Erxleben_-_skull.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_ZMA.MAM.12386.a_lat_-_Martes_foina_Erxleben_-_skull.jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44766357",
+            "sha1": "db26473260915af77a605e3a4dc0ac0ac8b659e9",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-11-04 08:44:15",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - ZMA.MAM.12386.a lat - Martes foina Erxleben - skull",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Martes foina skulls at Naturalis from the Zoölogisch Museum Amsterdam",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Martes foina  Erxleben",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Erxleben",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GWToolset Batch Upload"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Martes foina skulls at Naturalis from the Zoölogisch Museum Amsterdam"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media donated by Naturalis Biodiversity Center"
+          }
+        ]
+      },
+      "44770007": {
+        "pageid": 44770007,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - ZMA.MAM.12408.a lat - Martes foina Erxleben - skull.jpeg",
+        "index": 21,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 254843,
+            "width": 1613,
+            "height": 1920,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/da/Naturalis_Biodiversity_Center_-_ZMA.MAM.12408.a_lat_-_Martes_foina_Erxleben_-_skull.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_ZMA.MAM.12408.a_lat_-_Martes_foina_Erxleben_-_skull.jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44770007",
+            "sha1": "cfc40b1608b53683cf569631c77701b7fd6834f9",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-11-04 12:17:31",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - ZMA.MAM.12408.a lat - Martes foina Erxleben - skull",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Martes foina skulls at Naturalis from the Zoölogisch Museum Amsterdam",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Martes foina  Erxleben",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Erxleben",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GWToolset Batch Upload"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Martes foina skulls at Naturalis from the Zoölogisch Museum Amsterdam"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media donated by Naturalis Biodiversity Center"
+          }
+        ]
+      },
+      "44770357": {
+        "pageid": 44770357,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - ZMA.MAM.12410.a lat - Martes foina Erxleben - skull.jpeg",
+        "index": 18,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 256994,
+            "width": 1613,
+            "height": 1920,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Naturalis_Biodiversity_Center_-_ZMA.MAM.12410.a_lat_-_Martes_foina_Erxleben_-_skull.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_ZMA.MAM.12410.a_lat_-_Martes_foina_Erxleben_-_skull.jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44770357",
+            "sha1": "77cb5070a0dc277fe832481c5859a16166078f52",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-11-04 12:35:43",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - ZMA.MAM.12410.a lat - Martes foina Erxleben - skull",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Martes foina skulls at Naturalis from the Zoölogisch Museum Amsterdam",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Martes foina  Erxleben",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Erxleben",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GWToolset Batch Upload"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Martes foina skulls at Naturalis from the Zoölogisch Museum Amsterdam"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media donated by Naturalis Biodiversity Center"
+          }
+        ]
+      },
+      "44772241": {
+        "pageid": 44772241,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - ZMA.MAM.12414.a pal - Martes foina Erxleben - skull.jpeg",
+        "index": 13,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 259204,
+            "width": 1613,
+            "height": 1920,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Naturalis_Biodiversity_Center_-_ZMA.MAM.12414.a_pal_-_Martes_foina_Erxleben_-_skull.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_ZMA.MAM.12414.a_pal_-_Martes_foina_Erxleben_-_skull.jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44772241",
+            "sha1": "1fe17816c7d2f41783442ca68cbad4abcb6f6dfc",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-11-04 14:18:58",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - ZMA.MAM.12414.a pal - Martes foina Erxleben - skull",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Martes foina skulls at Naturalis from the Zoölogisch Museum Amsterdam",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Martes foina  Erxleben",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Erxleben",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GWToolset Batch Upload"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Martes foina skulls at Naturalis from the Zoölogisch Museum Amsterdam"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media donated by Naturalis Biodiversity Center"
+          }
+        ]
+      },
+      "44787355": {
+        "pageid": 44787355,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - ZMA.MAM.14571.a pal - Martes foina Erxleben - skull.jpeg",
+        "index": 9,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 248530,
+            "width": 1594,
+            "height": 1920,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Naturalis_Biodiversity_Center_-_ZMA.MAM.14571.a_pal_-_Martes_foina_Erxleben_-_skull.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_ZMA.MAM.14571.a_pal_-_Martes_foina_Erxleben_-_skull.jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44787355",
+            "sha1": "3a231eaba97f0ca90b69112bbb41cf297d730284",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-11-05 03:53:00",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - ZMA.MAM.14571.a pal - Martes foina Erxleben - skull",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Martes foina skulls at Naturalis from the Zoölogisch Museum Amsterdam",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Martes foina  Erxleben",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Erxleben",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GWToolset Batch Upload"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Martes foina skulls at Naturalis from the Zoölogisch Museum Amsterdam"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media donated by Naturalis Biodiversity Center"
+          }
+        ]
+      },
+      "44788287": {
+        "pageid": 44788287,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - ZMA.MAM.14598.a pal - Martes foina Erxleben - skull.jpeg",
+        "index": 22,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 229387,
+            "width": 1658,
+            "height": 1920,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Naturalis_Biodiversity_Center_-_ZMA.MAM.14598.a_pal_-_Martes_foina_Erxleben_-_skull.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_ZMA.MAM.14598.a_pal_-_Martes_foina_Erxleben_-_skull.jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44788287",
+            "sha1": "6844d1333cb85150c797896a89822c8d42a4fc58",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-11-05 05:20:43",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - ZMA.MAM.14598.a pal - Martes foina Erxleben - skull",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Martes foina skulls at Naturalis from the Zoölogisch Museum Amsterdam",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Martes foina  Erxleben",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Erxleben",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GWToolset Batch Upload"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          }
+        ]
+      },
+      "44788301": {
+        "pageid": 44788301,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - ZMA.MAM.14601 pal - Martes foina Erxleben - skull.jpeg",
+        "index": 20,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 272907,
+            "width": 1658,
+            "height": 1920,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Naturalis_Biodiversity_Center_-_ZMA.MAM.14601_pal_-_Martes_foina_Erxleben_-_skull.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_ZMA.MAM.14601_pal_-_Martes_foina_Erxleben_-_skull.jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44788301",
+            "sha1": "1a66e2d20be7b8c733feb1b75bdaf604818df9f2",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-11-05 05:20:46",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - ZMA.MAM.14601 pal - Martes foina Erxleben - skull",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Martes foina skulls at Naturalis from the Zoölogisch Museum Amsterdam",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Martes foina  Erxleben",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Erxleben",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "44788785": {
+        "pageid": 44788785,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - ZMA.MAM.14609.a lat - Martes foina Erxleben - skull.jpeg",
+        "index": 14,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 268989,
+            "width": 1658,
+            "height": 1920,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/50/Naturalis_Biodiversity_Center_-_ZMA.MAM.14609.a_lat_-_Martes_foina_Erxleben_-_skull.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_ZMA.MAM.14609.a_lat_-_Martes_foina_Erxleben_-_skull.jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44788785",
+            "sha1": "ec7e4f5d4c78c052bd4be58a89491bf8e630ce3a",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-11-05 06:10:19",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - ZMA.MAM.14609.a lat - Martes foina Erxleben - skull",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Martes foina skulls at Naturalis from the Zoölogisch Museum Amsterdam",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Martes foina  Erxleben",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Erxleben",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "44789286": {
+        "pageid": 44789286,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - ZMA.MAM.14775.a pal - Martes foina Erxleben - skull.jpeg",
+        "index": 17,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 265413,
+            "width": 1658,
+            "height": 1920,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/20/Naturalis_Biodiversity_Center_-_ZMA.MAM.14775.a_pal_-_Martes_foina_Erxleben_-_skull.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_ZMA.MAM.14775.a_pal_-_Martes_foina_Erxleben_-_skull.jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44789286",
+            "sha1": "7a2d3444a8c056f1e9d218aa743fdfb5de9a9fbf",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-11-05 06:40:38",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - ZMA.MAM.14775.a pal - Martes foina Erxleben - skull",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Martes foina skulls at Naturalis from the Zoölogisch Museum Amsterdam",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Martes foina  Erxleben",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Erxleben",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "44954998": {
+        "pageid": 44954998,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - ZMA.MAM.18794 pal - Martes foina Erxleben - skull.jpeg",
+        "index": 16,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 259654,
+            "width": 1658,
+            "height": 1920,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/63/Naturalis_Biodiversity_Center_-_ZMA.MAM.18794_pal_-_Martes_foina_Erxleben_-_skull.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_ZMA.MAM.18794_pal_-_Martes_foina_Erxleben_-_skull.jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44954998",
+            "sha1": "8fc2e154c745331bf89eee2a4b3bd9afba92a185",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-11-12 07:10:20",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - ZMA.MAM.18794 pal - Martes foina Erxleben - skull",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Martes foina skulls at Naturalis from the Zoölogisch Museum Amsterdam",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Martes foina  Erxleben",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Erxleben",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "44955140": {
+        "pageid": 44955140,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - ZMA.MAM.18803 lat - Martes foina Erxleben - skull.jpeg",
+        "index": 12,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 253268,
+            "width": 1658,
+            "height": 1920,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Naturalis_Biodiversity_Center_-_ZMA.MAM.18803_lat_-_Martes_foina_Erxleben_-_skull.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_ZMA.MAM.18803_lat_-_Martes_foina_Erxleben_-_skull.jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44955140",
+            "sha1": "518f8eedc75cc6aeb83b85d58fa96ed050b44e71",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-11-12 07:25:13",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - ZMA.MAM.18803 lat - Martes foina Erxleben - skull",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Martes foina skulls at Naturalis from the Zoölogisch Museum Amsterdam",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Martes foina  Erxleben",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Erxleben",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "44956299": {
+        "pageid": 44956299,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - ZMA.MAM.18840 pal - Martes foina Erxleben - skull.jpeg",
+        "index": 10,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 250331,
+            "width": 1692,
+            "height": 1920,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Naturalis_Biodiversity_Center_-_ZMA.MAM.18840_pal_-_Martes_foina_Erxleben_-_skull.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_ZMA.MAM.18840_pal_-_Martes_foina_Erxleben_-_skull.jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44956299",
+            "sha1": "ee6881b160ba6ddb6b237b9221ef4cbb1719d49e",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-11-12 08:54:42",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - ZMA.MAM.18840 pal - Martes foina Erxleben - skull",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Martes foina skulls at Naturalis from the Zoölogisch Museum Amsterdam",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Martes foina  Erxleben",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Erxleben",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "44956305": {
+        "pageid": 44956305,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - ZMA.MAM.18841 lat - Martes foina Erxleben - skull.jpeg",
+        "index": 24,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 251639,
+            "width": 1692,
+            "height": 1920,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Naturalis_Biodiversity_Center_-_ZMA.MAM.18841_lat_-_Martes_foina_Erxleben_-_skull.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_ZMA.MAM.18841_lat_-_Martes_foina_Erxleben_-_skull.jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44956305",
+            "sha1": "411ef2706780658d9ad22e611c8336abd57b2ce8",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-11-12 08:54:42",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - ZMA.MAM.18841 lat - Martes foina Erxleben - skull",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Martes foina jaws|Mammals at Naturalis from the Zoölogisch Museum Amsterdam",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Martes foina  Erxleben",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Erxleben",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "44701283": {
+        "pageid": 44701283,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - ZMA.MAM.22784 pal - Martes foina Erxleben - skull.jpeg",
+        "index": 11,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 290243,
+            "width": 1658,
+            "height": 1920,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/df/Naturalis_Biodiversity_Center_-_ZMA.MAM.22784_pal_-_Martes_foina_Erxleben_-_skull.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_ZMA.MAM.22784_pal_-_Martes_foina_Erxleben_-_skull.jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44701283",
+            "sha1": "353e01b486a819e4573e25750b2955e8759e89da",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-11-02 00:17:14",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - ZMA.MAM.22784 pal - Martes foina Erxleben - skull",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Martes foina skulls at Naturalis from the Zoölogisch Museum Amsterdam",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Martes foina  Erxleben",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Erxleben",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GWToolset Batch Upload"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Martes foina skulls at Naturalis from the Zoölogisch Museum Amsterdam"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media donated by Naturalis Biodiversity Center"
+          }
+        ]
+      },
+      "44792781": {
+        "pageid": 44792781,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - ZMA.MAM.5082.a lat - Martes foina Erxleben - skull.jpeg",
+        "index": 15,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 261851,
+            "width": 1396,
+            "height": 1920,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/92/Naturalis_Biodiversity_Center_-_ZMA.MAM.5082.a_lat_-_Martes_foina_Erxleben_-_skull.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_ZMA.MAM.5082.a_lat_-_Martes_foina_Erxleben_-_skull.jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44792781",
+            "sha1": "1b87350063d570e292202964ae47c4a4912ed0a2",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-11-05 09:58:44",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - ZMA.MAM.5082.a lat - Martes foina Erxleben - skull",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Martes foina skulls at Naturalis from the Zoölogisch Museum Amsterdam",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Martes foina  Erxleben",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Erxleben",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "44974505": {
+        "pageid": 44974505,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - ZMA.MAM.8796.a lat - Martes foina Erxleben - skull.jpeg",
+        "index": 25,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 265045,
+            "width": 1625,
+            "height": 1920,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Naturalis_Biodiversity_Center_-_ZMA.MAM.8796.a_lat_-_Martes_foina_Erxleben_-_skull.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_ZMA.MAM.8796.a_lat_-_Martes_foina_Erxleben_-_skull.jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44974505",
+            "sha1": "8466a5d7516efc8ccddafb590f21d1ffb7c3d2e0",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-11-13 05:22:10",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - ZMA.MAM.8796.a lat - Martes foina Erxleben - skull",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Martes foina skulls at Naturalis from the Zoölogisch Museum Amsterdam",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Martes foina  Erxleben",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Erxleben",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "193264602": {
+        "pageid": 193264602,
+        "ns": 6,
+        "title": "File:Stone marten (Martes foina) Drenthe.jpg",
+        "index": 1,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 5064782,
+            "width": 3339,
+            "height": 2226,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/46/Stone_marten_%28Martes_foina%29_Drenthe.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Stone_marten_(Martes_foina)_Drenthe.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=193264602",
+            "sha1": "81f6bd70ea8a1755fce0cb0290c8f8019012aeeb",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2026-06-02 16:07:28",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Stone marten (Martes foina) Drenthe",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Martes foina|Photographs by Charlesjsharp|Self-published work|Animals of Drenthe|Mustelidae of the Netherlands|Files with coordinates missing SDC location of creation (52° N, 6° E)|Focus stacked image",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality|valued",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "52.860000",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "6.180000",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Stone marten (<i>Martes foina</i>), Drenthe, Netherlands",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2026-04-08 23:32:16",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>, from <a rel=\"nofollow\" class=\"external text\" href=\"https://www.sharpphotography.co.uk/\">Sharp Photography, sharpphotography.co.uk</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<bdi><a href=\"https://www.wikidata.org/wiki/Q54800218\" class=\"extiw\" title=\"d:Q54800218\"><span title=\"Scottish wildlife photographer\">Charles J. Sharp</span></a></bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "193264603": {
+        "pageid": 193264603,
+        "ns": 6,
+        "title": "File:Stone marten (Martes foina) Drenthe 2.jpg",
+        "index": 4,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 12013126,
+            "width": 5532,
+            "height": 3688,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/89/Stone_marten_%28Martes_foina%29_Drenthe_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Stone_marten_(Martes_foina)_Drenthe_2.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=193264603",
+            "sha1": "8605d23ef4713ba8376b571a37b0a749bbb031ee",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2026-06-02 16:07:30",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Stone marten (Martes foina) Drenthe 2",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Martes foina|Photographs by Charlesjsharp|Self-published work|Animals of Drenthe|Mustelidae of the Netherlands|Files with coordinates missing SDC location of creation (52° N, 6° E)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "52.860000",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "6.180000",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Stone marten (<i>Martes foina</i>), Drenthe, Netherlands",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2026-04-09 22:47:01",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>, from <a rel=\"nofollow\" class=\"external text\" href=\"https://www.sharpphotography.co.uk/\">Sharp Photography, sharpphotography.co.uk</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<bdi><a href=\"https://www.wikidata.org/wiki/Q54800218\" class=\"extiw\" title=\"d:Q54800218\"><span title=\"Scottish wildlife photographer\">Charles J. Sharp</span></a></bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

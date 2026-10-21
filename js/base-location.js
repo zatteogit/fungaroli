@@ -1,6 +1,10 @@
 import {DEFAULT_BASE,normalizeBase,airDistanceKm,pointKey,drivingDirections} from './travel-model.js';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let fallback=DEFAULT_BASE,base=null,account=null,epoch=0,timer,loading=false,controller;
+const CACHE_KEY='fronda:private-travel:v1',FRESH=6*3600e3,RETAIN=30*86400e3;
+const validRoute=r=>Number.isFinite(r?.minutes)&&r.minutes>=0&&Number.isFinite(r?.km)&&r.km>=0;
+function restoreRoutes(){try{const c=JSON.parse(localStorage.getItem(CACHE_KEY));if(c?.account===account&&c?.base===pointKey(currentBase()))for(const r of c.routes||[])if(validRoute(r)&&Number.isFinite(r.calculatedAt)&&Date.now()-r.calculatedAt<RETAIN)routes.set(r.key,r);}catch{}}
+function persistRoutes(){try{localStorage.setItem(CACHE_KEY,JSON.stringify({account,base:pointKey(currentBase()),routes:[...routes.values()]}));}catch{}}
 const routes=new Map(),queue=new Map(),failed=new Set(),inflight=new Set();
 export const currentBase=()=>base||fallback;
 export const customBase=()=>base!==null;
@@ -9,26 +13,30 @@ const announce=kind=>document.dispatchEvent(new CustomEvent('fungaroli:'+kind));
 export function setBaseUser(user){
   const next=user?.base?normalizeBase(user.base):null,id=user?.id||null;
   if(account===id&&JSON.stringify(next)===JSON.stringify(base))return;
-  account=id;base=next;epoch++;controller?.abort();clearTimeout(timer);loading=false;routes.clear();queue.clear();failed.clear();inflight.clear();announce('base');
+  const changedOwner=account!==id,changedBase=JSON.stringify(next)!==JSON.stringify(base);
+  if(account&&(changedOwner||changedBase))try{localStorage.removeItem(CACHE_KEY);}catch{}
+  account=id;base=next;epoch++;controller?.abort();clearTimeout(timer);loading=false;routes.clear();queue.clear();failed.clear();inflight.clear();if(account&&base)restoreRoutes();announce('base');
 }
-export function retryBaseRoutes(){failed.clear();announce('travel');}
-export function travelTo(target,reference){
+export function retryBaseRoutes(){failed.clear();for(const r of routes.values())r.refresh=true;announce('base');}
+export function travelTo(target,reference,{route=true}={}){
   const airKm=airDistanceKm(currentBase(),target);
   if(!customBase())return{minutes:Number.isFinite(reference?.minutes)?reference.minutes:null,km:Number.isFinite(reference?.km)?reference.km:null,airKm,reference:true};
-  const key=pointKey(target),known=routes.get(key);
-  if(known)return{...known,airKm,reference:false};
-  if(account&&!failed.has(key)&&!inflight.has(key)){queue.set(key,{lat:target.lat,lon:target.lon});if(!loading){clearTimeout(timer);timer=setTimeout(flush,80);}}
-  return{minutes:null,km:null,airKm,reference:false};
+  const key=pointKey(target);let known=routes.get(key);
+  if(known&&Date.now()-known.calculatedAt>RETAIN){routes.delete(key);known=null;}
+  if(known&&!known.refresh&&Date.now()-known.calculatedAt<FRESH)return{...known,airKm,reference:false};
+  if(route&&account&&!failed.has(key)&&!inflight.has(key)){queue.set(key,{lat:target.lat,lon:target.lon});if(!loading){clearTimeout(timer);timer=setTimeout(flush,80);}}
+  return known?{...known,airKm,reference:false,stale:true}:{minutes:null,km:null,airKm,reference:false,pending:route&&!failed.has(key),routeAvailable:route};
 }
 async function flush(){
   if(!queue.size||loading||!base)return;
-  const generation=epoch,selected=base,items=[...queue.entries()].slice(0,50);items.forEach(([k])=>{queue.delete(k);inflight.add(k);});loading=true;controller=new AbortController();
+  const generation=epoch,selected=base,items=[...queue.entries()].slice(0,10);items.forEach(([k])=>{queue.delete(k);inflight.add(k);});loading=true;controller=new AbortController();
   try{
     const res=await fetch('/api/community/travel',{method:'POST',credentials:'same-origin',cache:'no-store',headers:{'content-type':'application/json'},body:JSON.stringify({targets:items.map(([,p])=>p)}),signal:AbortSignal.any([controller.signal,AbortSignal.timeout(23000)])});
     const data=await res.json();if(!res.ok)throw new Error(data.error);
     if(generation!==epoch)return;
     if(pointKey(data.base)!==pointKey(selected)){items.forEach(([key])=>failed.add(key));announce('refresh-account');return;}
-    for(const[key]of items){const r=data.routes?.find(x=>x.key===key);if(r&&Number.isFinite(r.minutes)&&Number.isFinite(r.km)&&r.minutes>=0&&r.km>=0)routes.set(key,r);else failed.add(key);}
+    for(const[key]of items){const r=data.routes?.find(x=>x.key===key);if(validRoute(r)){routes.set(key,{...r,calculatedAt:Number.isFinite(r.calculatedAt)?r.calculatedAt:Date.now()});if(r.stale)failed.add(key);}else failed.add(key);}
+  persistRoutes();
   }catch{if(generation===epoch)items.forEach(([key])=>failed.add(key));}
   finally{if(generation===epoch){items.forEach(([key])=>inflight.delete(key));loading=false;announce('travel');if(queue.size)timer=setTimeout(flush,100);}}
 }

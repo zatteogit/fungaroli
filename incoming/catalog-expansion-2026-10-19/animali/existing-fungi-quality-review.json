@@ -1,0 +1,553 @@
+{
+  "review_date": "2026-10-19",
+  "scope": "59 candidature preliminari con indice >=140; 38 taxa. Esame offline degli HD effettivi e confronto con tutte le alternative della stessa scheda. Le decisioni sono proposte editoriali, non applicate ai cataloghi.",
+  "decisions": [
+    {
+      "index": 142,
+      "file": "assets/species/pe2-sosia-mycena-pura-inat-10951579.webp",
+      "decision": "exclude",
+      "reason": "Dominante blu marcata, solo cappelli senza gambo; 139–141 offrono profili e lamelle più leggibili.",
+      "reviewed_file": "assets/species/pe2-sosia-mycena-pura-inat-10951579-hd.webp",
+      "target": "Mycena pura"
+    },
+    {
+      "index": 143,
+      "file": "assets/species/neoboletus-luridiformis-ref.webp",
+      "decision": "exclude",
+      "reason": "Risoluzione bassa, sole duro e saturazione estrema dei pori; 144 conserva una figura nitida. Servirebbe una nuova vista dei pori fedele.",
+      "reviewed_file": "assets/species/neoboletus-luridiformis-ref-hd.webp",
+      "target": "Neoboletus luridiformis"
+    },
+    {
+      "index": 145,
+      "file": "assets/species/pe2-sosia-neoboletus-luridiformis-845378a.webp",
+      "decision": "exclude",
+      "reason": "Soggetti piccoli e parzialmente danneggiati in sfondo molto dominante; 144 è più leggibile.",
+      "reviewed_file": "assets/species/pe2-sosia-neoboletus-luridiformis-845378a-hd.webp",
+      "target": "Neoboletus luridiformis"
+    },
+    {
+      "index": 151,
+      "file": "assets/species/pe2-sosia-pholiota-squarrosa-inat-335689950.webp",
+      "decision": "retain",
+      "reason": "Le squame dei cappelli inferiori restano nitide in HD: dettaglio ravvicinato utile oltre ai gruppi148/150. Non prima copertina.",
+      "reviewed_file": "assets/species/pe2-sosia-pholiota-squarrosa-inat-335689950-hd.webp",
+      "target": "Pholiota squarrosa"
+    },
+    {
+      "index": 155,
+      "file": "assets/species/pe2-sosia-pseudocraterellus-undulatus-90b1e99.webp",
+      "decision": "retain",
+      "reason": "Profilo dei corpi e margini ondulati ben visibili in HD, complementare alle viste153/154; luce dura ma informazione leggibile.",
+      "reviewed_file": "assets/species/pe2-sosia-pseudocraterellus-undulatus-90b1e99-hd.webp",
+      "target": "Pseudocraterellus undulatus"
+    },
+    {
+      "index": 158,
+      "file": "assets/species/russula-aeruginea-inat1.webp",
+      "decision": "exclude",
+      "reason": "Margine molto eroso e cappello sporco; 159/160 mostrano meglio i caratteri e il colore.",
+      "reviewed_file": "assets/species/russula-aeruginea-inat1-hd.webp",
+      "target": "Russula aeruginea"
+    },
+    {
+      "index": 161,
+      "file": "assets/species/russula-heterophylla-inat1.webp",
+      "decision": "exclude",
+      "reason": "Dominante giallastra e vista dall’alto relativamente distante; 162/163 coprono cappello e lamelle meglio.",
+      "reviewed_file": "assets/species/russula-heterophylla-inat1-hd.webp",
+      "target": "Russula heterophylla"
+    },
+    {
+      "index": 162,
+      "file": "assets/species/pe2-sosia-russula-heterophylla-ccff72b.webp",
+      "decision": "retain",
+      "reason": "Lamelle fitte e attacco al gambo nitidi, accanto al cappello: vista complementare, nonostante terriccio e ombra.",
+      "reviewed_file": "assets/species/pe2-sosia-russula-heterophylla-ccff72b-hd.webp",
+      "target": "Russula heterophylla"
+    },
+    {
+      "index": 164,
+      "file": "assets/species/pe2-sosia-russula-heterophylla-inat-116426430.webp",
+      "decision": "exclude",
+      "reason": "Rametti attraversano il cappello danneggiato, gambo in ombra; 162/163 sono più chiare.",
+      "reviewed_file": "assets/species/pe2-sosia-russula-heterophylla-inat-116426430-hd.webp",
+      "target": "Russula heterophylla"
+    },
+    {
+      "index": 170,
+      "file": "assets/species/pe2-sosia-sarcodon-imbricatus-d03816b.webp",
+      "decision": "exclude",
+      "reason": "Dominante verde/ciano molto marcata e vegetazione sovrapposta; 169 offre cappelli e gambi nitidi.",
+      "reviewed_file": "assets/species/pe2-sosia-sarcodon-imbricatus-d03816b-hd.webp",
+      "target": "Sarcodon imbricatus"
+    },
+    {
+      "index": 171,
+      "file": "assets/species/pe2-sosia-sarcodon-imbricatus-inat-158616705.webp",
+      "decision": "exclude",
+      "reason": "Gruppo appiattito con margini rotti, colore slavato; 168/169 mantengono squame e figura più leggibili.",
+      "reviewed_file": "assets/species/pe2-sosia-sarcodon-imbricatus-inat-158616705-hd.webp",
+      "target": "Sarcodon imbricatus"
+    },
+    {
+      "index": 173,
+      "file": "assets/species/pe2-sosia-sarcodon-scabrosus-inat-52409791.webp",
+      "decision": "retain",
+      "reason": "Unica vista superiore ravvicinata delle squame rispetto alle sezioni172 e agli aculei174. Nitidezza moderata: conservare come dettaglio, da migliorare in futuro.",
+      "reviewed_file": "assets/species/pe2-sosia-sarcodon-scabrosus-inat-52409791-hd.webp",
+      "target": "Sarcodon scabrosus"
+    },
+    {
+      "index": 174,
+      "file": "assets/species/pe2-sosia-sarcodon-scabrosus-inat-553878722.webp",
+      "decision": "retain",
+      "reason": "Aculei e zona basale del gambo sono leggibili: vista inferiore complementare importante, non una semplice foto di funghi rovinati.",
+      "reviewed_file": "assets/species/pe2-sosia-sarcodon-scabrosus-inat-553878722-hd.webp",
+      "target": "Sarcodon scabrosus"
+    },
+    {
+      "index": 175,
+      "file": "assets/species/suillus-bovinus-inat1.webp",
+      "decision": "exclude",
+      "reason": "Soggetto piccolo con gambo in ombra e cappello colpito da luce dura; 176/177 più nitide e leggibili.",
+      "reviewed_file": "assets/species/suillus-bovinus-inat1-hd.webp",
+      "target": "Suillus bovinus"
+    },
+    {
+      "index": 178,
+      "file": "assets/species/pe2-sosia-suillus-bovinus-inat-152741362.webp",
+      "decision": "exclude",
+      "reason": "Un solo cappello piccolo in ampio sfondo di muschio; 176/177 mostrano meglio corpo e superficie.",
+      "reviewed_file": "assets/species/pe2-sosia-suillus-bovinus-inat-152741362-hd.webp",
+      "target": "Suillus bovinus"
+    },
+    {
+      "index": 179,
+      "file": "assets/species/tricholoma-equestre-inat1.webp",
+      "decision": "retain",
+      "reason": "Lamelle gialle ravvicinate e cappello nella stessa scena: dettaglio utile rispetto ai profili180–182, pur con terriccio.",
+      "reviewed_file": "assets/species/tricholoma-equestre-inat1-hd.webp",
+      "target": "Tricholoma equestre"
+    },
+    {
+      "index": 186,
+      "file": "assets/species/pe2-sosia-tricholoma-pardinum-inat-241935355.webp",
+      "decision": "exclude",
+      "reason": "Cappello molto danneggiato e sovraesposto, gambo quasi nascosto; 183/184/185 più informativi.",
+      "reviewed_file": "assets/species/pe2-sosia-tricholoma-pardinum-inat-241935355-hd.webp",
+      "target": "Tricholoma pardinum"
+    },
+    {
+      "index": 188,
+      "file": "assets/species/pe2-sosia-tricholoma-sciodes-4cca704.webp",
+      "decision": "exclude",
+      "reason": "Dominante gialla e disposizione affollata, ripete profili e lamelle già meglio esposti in187/191.",
+      "reviewed_file": "assets/species/pe2-sosia-tricholoma-sciodes-4cca704-hd.webp",
+      "target": "Tricholoma sciodes"
+    },
+    {
+      "index": 190,
+      "file": "assets/species/pe2-sosia-tricholoma-sciodes-inat-238126689.webp",
+      "decision": "exclude",
+      "reason": "Rami e foglie coprono i cappelli; 187/191 mantengono lo stesso carattere con meno ostacoli.",
+      "reviewed_file": "assets/species/pe2-sosia-tricholoma-sciodes-inat-238126689-hd.webp",
+      "target": "Tricholoma sciodes"
+    },
+    {
+      "index": 192,
+      "file": "assets/species/tricholoma-virgatum-inat1.webp",
+      "decision": "exclude",
+      "reason": "Bianchi sovraesposti, lamelle sbiadite e dettaglio basso; 193/194 mostrano meglio cappello e imenoforo.",
+      "reviewed_file": "assets/species/tricholoma-virgatum-inat1-hd.webp",
+      "target": "Tricholoma virgatum"
+    },
+    {
+      "index": 195,
+      "file": "assets/species/pe2-sosia-tricholoma-virgatum-inat-322237302.webp",
+      "decision": "exclude",
+      "reason": "Margine fortemente morso e gambo occultato dalle foglie; 193/194 conservano la forma con minore confusione.",
+      "reviewed_file": "assets/species/pe2-sosia-tricholoma-virgatum-inat-322237302-hd.webp",
+      "target": "Tricholoma virgatum"
+    },
+    {
+      "index": 198,
+      "file": "assets/species/urnula-craterium-inat1.webp",
+      "decision": "retain",
+      "reason": "Pur piccolo nella scena, il calice intero e il peduncolo sono nitidi in HD; complementare al gruppo ravvicinato199. Non dedurre fase.",
+      "reviewed_file": "assets/species/urnula-craterium-inat1-hd.webp",
+      "target": "Urnula craterium"
+    },
+    {
+      "index": 201,
+      "file": "assets/species/agaricus-arvensis-inat1.webp",
+      "decision": "exclude",
+      "reason": "Lamelle quasi nere senza dettaglio e gambo nascosto dall’erba; 200 conserva meglio anello e figura.",
+      "reviewed_file": "assets/species/agaricus-arvensis-inat1-hd.webp",
+      "target": "agaricus-arvensis"
+    },
+    {
+      "index": 202,
+      "file": "assets/species/pe2-main-agaricus-arvensis-01.webp",
+      "decision": "exclude",
+      "reason": "Cappello tagliato ai lati, lamelle e gambo in forte ombra; 200 rende meglio i caratteri, questa macro aggiunge poco.",
+      "reviewed_file": "assets/species/pe2-main-agaricus-arvensis-01-hd.webp",
+      "target": "agaricus-arvensis"
+    },
+    {
+      "index": 205,
+      "file": "assets/species/pe2-main-agaricus-bisporus-q01.webp",
+      "decision": "retain",
+      "reason": "Lamelle rosate e anello molto leggibili in HD: vista complementare ai cappelli bruni203/204; sfondo con tubo non ideale ma non copre i caratteri.",
+      "reviewed_file": "assets/species/pe2-main-agaricus-bisporus-q01-hd.webp",
+      "target": "agaricus-bisporus"
+    },
+    {
+      "index": 211,
+      "file": "assets/species/agaricus-sylvicola-inat1.webp",
+      "decision": "exclude",
+      "reason": "Vista del solo cappello con mano dominante e nitidezza debole; 210/212/213 coprono meglio la figura.",
+      "reviewed_file": "assets/species/agaricus-sylvicola-inat1-hd.webp",
+      "target": "agaricus-sylvicola"
+    },
+    {
+      "index": 212,
+      "file": "assets/species/pe2-main-agaricus-sylvicola-q01.webp",
+      "decision": "retain",
+      "reason": "Figura e lamelle scure strutturate, anello visibile: dettaglio complementare a210/213, anche con morso al margine.",
+      "reviewed_file": "assets/species/pe2-main-agaricus-sylvicola-q01-hd.webp",
+      "target": "agaricus-sylvicola"
+    },
+    {
+      "index": 214,
+      "file": "assets/species/pe2-main-agaricus-sylvicola-inat02.webp",
+      "decision": "exclude",
+      "reason": "Cappello molto eroso, luce rosata e forte erba di disturbo; 210/212/213 più leggibili.",
+      "reviewed_file": "assets/species/pe2-main-agaricus-sylvicola-inat02-hd.webp",
+      "target": "agaricus-sylvicola"
+    },
+    {
+      "index": 215,
+      "file": "assets/species/pe2-main-agaricus-sylvicola-q02.webp",
+      "decision": "retain",
+      "reason": "Dettaglio del velo/anello visibile da sotto, informazione diversa dalle figure aperte210–213. Rumore e morbidezza: conservarla come dettaglio secondario.",
+      "reviewed_file": "assets/species/pe2-main-agaricus-sylvicola-q02-hd.webp",
+      "target": "agaricus-sylvicola"
+    },
+    {
+      "index": 217,
+      "file": "assets/species/amanita-rubescens-inat1.webp",
+      "decision": "exclude",
+      "reason": "Ombra del fotografo sul cappello e luce dura; 216 e macro218 migliori per verruche e colore.",
+      "reviewed_file": "assets/species/amanita-rubescens-inat1-hd.webp",
+      "target": "amanita-rubescens"
+    },
+    {
+      "index": 218,
+      "file": "assets/species/pe2-main-amanita-rubescens-q01.webp",
+      "decision": "retain",
+      "reason": "Superficie e verruche del cappello nitide, vista superiore complementare; pochi fili d’erba non ne impediscono la lettura.",
+      "reviewed_file": "assets/species/pe2-main-amanita-rubescens-q01-hd.webp",
+      "target": "amanita-rubescens"
+    },
+    {
+      "index": 223,
+      "file": "assets/species/caesarea-inat2.webp",
+      "decision": "exclude",
+      "reason": "Morbida, colore slavato e cappello danneggiato; le alternative221/222 sono più leggibili.",
+      "reviewed_file": "assets/species/caesarea-inat2-hd.webp",
+      "target": "caesarea"
+    },
+    {
+      "index": 226,
+      "file": "assets/species/calocybe-gambosa-inat1.webp",
+      "decision": "exclude",
+      "reason": "Esemplari danneggiati, cappelli screpolati e gambo occultato; 225 offre caratteri più chiari.",
+      "reviewed_file": "assets/species/calocybe-gambosa-inat1-hd.webp",
+      "target": "calocybe-gambosa"
+    },
+    {
+      "index": 230,
+      "file": "assets/species/cibarius-inat2.webp",
+      "decision": "exclude",
+      "reason": "Flash duro, esemplari rotti e sporchi, coltello dominante e particolare sfocato; 228/229 sono migliori.",
+      "reviewed_file": "assets/species/cibarius-inat2-hd.webp",
+      "target": "cibarius"
+    },
+    {
+      "index": 233,
+      "file": "assets/species/coprinus-comatus-inat1.webp",
+      "decision": "exclude",
+      "reason": "Stessa scena e stesso esemplare della232, già più pulita; la presenza del secondo fungo non aggiunge un carattere distinto rispetto a234–236.",
+      "reviewed_file": "assets/species/coprinus-comatus-inat1-hd.webp",
+      "target": "coprinus-comatus"
+    },
+    {
+      "index": 238,
+      "file": "assets/species/cornucopioides-inat1.webp",
+      "decision": "exclude",
+      "reason": "Esemplare collassato e scuro su plastica, controluce e riflessi; 237/239 conservano figure più utili.",
+      "reviewed_file": "assets/species/cornucopioides-inat1-hd.webp",
+      "target": "cornucopioides"
+    },
+    {
+      "index": 240,
+      "file": "assets/species/cornucopioides-inat3.webp",
+      "decision": "exclude",
+      "reason": "Mosso evidente in HD e sfondo di foglie/rami invadente; 237/239 mostrano meglio le trombette.",
+      "reviewed_file": "assets/species/cornucopioides-inat3-hd.webp",
+      "target": "cornucopioides"
+    },
+    {
+      "index": 242,
+      "file": "assets/species/craterellus-lutescens-inat1.webp",
+      "decision": "exclude",
+      "reason": "Molti rametti attraversano i gambi e il primo piano è sfocato; 243 offre gli stessi caratteri con maggiore nitidezza e separazione.",
+      "reviewed_file": "assets/species/craterellus-lutescens-inat1-hd.webp",
+      "target": "craterellus-lutescens"
+    },
+    {
+      "index": 254,
+      "file": "assets/species/pe2-main-hygrophorus-latitabundus-q02.webp",
+      "decision": "exclude",
+      "reason": "Bassa risoluzione e dominante fredda, erba attraversa il soggetto; 251/252 mostrano lamelle e figura con più dettaglio.",
+      "reviewed_file": "assets/species/pe2-main-hygrophorus-latitabundus-q02-hd.webp",
+      "target": "hygrophorus-latitabundus"
+    },
+    {
+      "index": 255,
+      "file": "assets/species/hygrophorus-marzuolus-ref.webp",
+      "decision": "retain",
+      "reason": "Figura intera nitida, cappello grigio e gambo chiaro leggibili; foglie non coprono il soggetto. Buona foto naturale.",
+      "reviewed_file": "assets/species/hygrophorus-marzuolus-ref-hd.webp",
+      "target": "hygrophorus-marzuolus"
+    },
+    {
+      "index": 257,
+      "file": "assets/species/pe2-main-hygrophorus-marzuolus-01.webp",
+      "decision": "retain",
+      "reason": "Lamelle distanziate visibili in HD e cappello scuro affiancato: complementare alla255 laterale, pur con base sporca e firma.",
+      "reviewed_file": "assets/species/pe2-main-hygrophorus-marzuolus-01-hd.webp",
+      "target": "hygrophorus-marzuolus"
+    },
+    {
+      "index": 267,
+      "file": "assets/species/marasmius-oreades-inat1.webp",
+      "decision": "exclude",
+      "reason": "Cappelli molto danneggiati/deformati e gambo assente; 266 e268 mostrano i caratteri con figure meno alterate.",
+      "reviewed_file": "assets/species/marasmius-oreades-inat1-hd.webp",
+      "target": "marasmius-oreades"
+    },
+    {
+      "index": 271,
+      "file": "assets/species/mellea-inat1.webp",
+      "decision": "exclude",
+      "reason": "Gruppo relativamente piccolo in groviglio di rami, gambi nascosti; 270/273 più leggibili.",
+      "reviewed_file": "assets/species/mellea-inat1-hd.webp",
+      "target": "mellea"
+    },
+    {
+      "index": 272,
+      "file": "assets/species/mellea-inat2.webp",
+      "decision": "exclude",
+      "reason": "Profondità di campo molto ridotta, gran parte dei cappelli e dei gambi sfocati; 273 offre un gruppo intero più chiaro.",
+      "reviewed_file": "assets/species/mellea-inat2-hd.webp",
+      "target": "mellea"
+    },
+    {
+      "index": 275,
+      "file": "assets/species/morchella-elata-inat1.webp",
+      "decision": "retain",
+      "reason": "Alveoli e creste leggibili su due figure intere in HD; utile dettaglio della forma più slanciata, senza assegnare una fase.",
+      "reviewed_file": "assets/species/morchella-elata-inat1-hd.webp",
+      "target": "morchella-elata"
+    },
+    {
+      "index": 278,
+      "file": "assets/species/morchella-esculenta-inat1.webp",
+      "decision": "exclude",
+      "reason": "Solo la mitra emerge piccola fra piante e rametti, gambo nascosto; 277/279 mostrano meglio l’intera struttura.",
+      "reviewed_file": "assets/species/morchella-esculenta-inat1-hd.webp",
+      "target": "morchella-esculenta"
+    },
+    {
+      "index": 281,
+      "file": "assets/species/nuda-commons109950721.webp",
+      "decision": "exclude",
+      "reason": "Foglie e rami occultano completamente i gambi, dettaglio tenue; 280/283 coprono cappello e lamelle in modo più chiaro.",
+      "reviewed_file": "assets/species/nuda-commons109950721-hd.webp",
+      "target": "nuda"
+    },
+    {
+      "index": 285,
+      "file": "assets/species/pleurotus-cornucopiae-inat1.webp",
+      "decision": "retain",
+      "reason": "Gruppo ravvicinato con corpi piccoli e arrotondati nitidi; complementare ai cappelli aperti284/286/287. Non attribuire età dall’aspetto.",
+      "reviewed_file": "assets/species/pleurotus-cornucopiae-inat1-hd.webp",
+      "target": "pleurotus-cornucopiae"
+    },
+    {
+      "index": 288,
+      "file": "assets/species/pleurotus-eryngii-ref.webp",
+      "decision": "exclude",
+      "reason": "Stoppie sovrapposte e gambo coperto; 291 offre figura e lamelle più chiare,290 completa i caratteri del cappello.",
+      "reviewed_file": "assets/species/pleurotus-eryngii-ref-hd.webp",
+      "target": "pleurotus-eryngii"
+    },
+    {
+      "index": 290,
+      "file": "assets/species/pe2-main-pleurotus-eryngii-inat01.webp",
+      "decision": "retain",
+      "reason": "Lamelle decorrenti, gambo e superficie del cappello ben leggibili in HD. La mano non impedisce il dettaglio; utile oltre alla291.",
+      "reviewed_file": "assets/species/pe2-main-pleurotus-eryngii-inat01-hd.webp",
+      "target": "pleurotus-eryngii"
+    },
+    {
+      "index": 297,
+      "file": "assets/species/procera-inat1.webp",
+      "decision": "exclude",
+      "reason": "Rumore alto e dominante fredda/violacea, margini poco nitidi; 296 conserva una figura intera e cappelli di forme diverse.",
+      "reviewed_file": "assets/species/procera-inat1-hd.webp",
+      "target": "procera"
+    },
+    {
+      "index": 298,
+      "file": "assets/species/procera-inat2.webp",
+      "decision": "retain",
+      "reason": "Macro superiore nitida delle squame e dell’umbone, differente dal profilo296/299. Fili d’erba al bordo non cancellano il dettaglio.",
+      "reviewed_file": "assets/species/procera-inat2-hd.webp",
+      "target": "procera"
+    },
+    {
+      "index": 299,
+      "file": "assets/species/procera-inat3.webp",
+      "decision": "retain",
+      "reason": "Esemplare intero con cappello aperto e gambo leggibile in HD, utile profilo oltre al dettaglio298; non prima copertina per sfondo complesso.",
+      "reviewed_file": "assets/species/procera-inat3-hd.webp",
+      "target": "procera"
+    },
+    {
+      "index": 302,
+      "file": "assets/species/repandum-inat2.webp",
+      "decision": "retain",
+      "reason": "Aculei ben visibili in HD su soggetto in posto, più ravvicinati della300; rametti non impediscono la lettura del dettaglio.",
+      "reviewed_file": "assets/species/repandum-inat2-hd.webp",
+      "target": "repandum"
+    },
+    {
+      "index": 303,
+      "file": "assets/species/repandum-inat3.webp",
+      "decision": "exclude",
+      "reason": "Flash forte su esemplari sporchi/danneggiati nel buio, figure piccole; 300–302 mantengono meglio profilo e aculei.",
+      "reviewed_file": "assets/species/repandum-inat3-hd.webp",
+      "target": "repandum"
+    },
+    {
+      "index": 316,
+      "file": "assets/species/terreum-inat2.webp",
+      "decision": "exclude",
+      "reason": "Sfocatura e dominante rosata/ciano evidenti in HD, funghi piccoli fra erba; 314/317 migliori.",
+      "reviewed_file": "assets/species/terreum-inat2-hd.webp",
+      "target": "terreum"
+    },
+    {
+      "index": 319,
+      "file": "assets/species/tricholoma-portentosum-inat1.webp",
+      "decision": "exclude",
+      "reason": "Soggetto piccolo e gambo coperto da un grosso ramo, inquadratura morbida; 318/320/322 più leggibili.",
+      "reviewed_file": "assets/species/tricholoma-portentosum-inat1-hd.webp",
+      "target": "tricholoma-portentosum"
+    },
+    {
+      "index": 325,
+      "file": "assets/species/virescens-inat2.webp",
+      "decision": "retain",
+      "reason": "Macro della screpolatura fine al margine del cappello leggibile nel piano a fuoco; complementare alla trama più larga della323. Non copertina.",
+      "reviewed_file": "assets/species/virescens-inat2-hd.webp",
+      "target": "virescens"
+    },
+    {
+      "index": 326,
+      "file": "assets/species/virescens-inat3.webp",
+      "decision": "retain",
+      "reason": "Un piccolo esemplare intero con gambo e cappello arrotondato leggibile; offre forma diversa dalle323–325. Non dedurre età, fonte su tavola e figura parziale extra non ideale.",
+      "reviewed_file": "assets/species/virescens-inat3-hd.webp",
+      "target": "virescens"
+    }
+  ],
+  "cover_promotions": [
+    {
+      "index": 144,
+      "file": "assets/species/pe2-sosia-neoboletus-luridiformis-dd1c6b8.webp",
+      "target": "Neoboletus luridiformis",
+      "replaces_index": 143,
+      "reason": "Cappello e gambo leggibili con sfondo sfocato; migliora nettamente risoluzione e luce rispetto alla ref143 saturata.",
+      "reviewed_file": "assets/species/pe2-sosia-neoboletus-luridiformis-dd1c6b8-hd.webp"
+    },
+    {
+      "index": 169,
+      "file": "assets/species/pe2-sosia-sarcodon-imbricatus-4bafdc3.webp",
+      "target": "Sarcodon imbricatus",
+      "replaces_index": 168,
+      "reason": "Due figure nitide con squame e gambi ben visibili, sfondo morbido; composizione più chiara della ref168 dall’alto.",
+      "reviewed_file": "assets/species/pe2-sosia-sarcodon-imbricatus-4bafdc3-hd.webp"
+    },
+    {
+      "index": 176,
+      "file": "assets/species/pe2-sosia-suillus-bovinus-1a2c6d9.webp",
+      "target": "Suillus bovinus",
+      "replaces_index": 175,
+      "reason": "Gruppo nitido e centrale, cappelli e gambi separati; sostituisce ref175 piccola e con ombre dure.",
+      "reviewed_file": "assets/species/pe2-sosia-suillus-bovinus-1a2c6d9-hd.webp"
+    },
+    {
+      "index": 220,
+      "file": "assets/species/pe2-main-amanita-rubescens-q02.webp",
+      "target": "amanita-rubescens",
+      "replaces_index": 216,
+      "reason": "Figura in posto con verruche e anello leggibili, colore e luce più equilibrati della ref216.",
+      "reviewed_file": "assets/species/pe2-main-amanita-rubescens-q02-hd.webp"
+    },
+    {
+      "index": 243,
+      "file": "assets/species/pe2-main-craterellus-lutescens-03.webp",
+      "target": "craterellus-lutescens",
+      "replaces_index": 241,
+      "reason": "Cappelli, gambi e superficie inferiore nitidi nello stesso gruppo; luce più chiara della ref241.",
+      "reviewed_file": "assets/species/pe2-main-craterellus-lutescens-03-hd.webp"
+    },
+    {
+      "index": 279,
+      "file": "assets/species/pe2-main-morchella-esculenta-q01.webp",
+      "target": "morchella-esculenta",
+      "replaces_index": 277,
+      "reason": "Due figure intere con alveoli molto nitidi su sfondo sfocato, più leggibili della ref277 fra la vegetazione.",
+      "reviewed_file": "assets/species/pe2-main-morchella-esculenta-q01-hd.webp"
+    },
+    {
+      "index": 287,
+      "file": "assets/species/pe2-main-pleurotus-cornucopiae-q02.webp",
+      "target": "pleurotus-cornucopiae",
+      "replaces_index": 284,
+      "reason": "Gruppo principale nitido su muschio, minore occlusione di foglie rispetto alla ref284.",
+      "reviewed_file": "assets/species/pe2-main-pleurotus-cornucopiae-q02-hd.webp"
+    },
+    {
+      "index": 291,
+      "file": "assets/species/pe2-main-pleurotus-eryngii-inat02.webp",
+      "target": "pleurotus-eryngii",
+      "replaces_index": 288,
+      "reason": "Cappello e lamelle ben separati su fondo naturale, gambi leggibili; sostituisce ref288 coperta dalle stoppie.",
+      "reviewed_file": "assets/species/pe2-main-pleurotus-eryngii-inat02-hd.webp"
+    }
+  ],
+  "no_canonical_changes": true,
+  "no_tests": true,
+  "counts": {
+    "reviewed": 59,
+    "exclude": 38,
+    "retain": 21,
+    "needs_replacement": 0
+  },
+  "note": "Ogni taxon conserva almeno una fotografia. Nessuna esclusione è motivata soltanto dalla presenza di una mano; i dettagli leggibili di lamelle, anello, aculei e superficie sono conservati anche come foto secondarie. Nessuna nuova fase biologica è inferita dall’aspetto."
+}

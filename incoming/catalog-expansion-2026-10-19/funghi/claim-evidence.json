@@ -1,0 +1,1333 @@
+{
+  "sources": {
+    "campania": {
+      "title": "I funghi della Campania",
+      "authors": [
+        "Emmanuele Roca",
+        "Lello Capano",
+        "Fabrizio Marziano"
+      ],
+      "publisher": "Regione Campania / Università degli Studi di Napoli Federico II",
+      "url": "https://funghietartufi.regione.campania.it/docfunghietartufi/doc/funghi_campania.pdf",
+      "date": null,
+      "reuse": "Nessuna licenza aperta accertata; fatti riformulati in italiano. Non redistribuiti PDF, testi integrali o fotografie.",
+      "sha256": "42efe28aac49d252de0d09ae458a3f8ffd6e91222ba5624decb7cebb267af604",
+      "local_reading_path": "/tmp/fronda-catalog-funghi-20261019/campania-atlante.pdf"
+    },
+    "piemonte": {
+      "title": "Guida ragionata alla commestibilità dei funghi",
+      "authors": [
+        "Nicola Sitta",
+        "Paolo Davoli",
+        "Marco Floriani",
+        "Edoardo Suriano"
+      ],
+      "publisher": "Regione Piemonte",
+      "url": "https://www.regione.piemonte.it/web/media/24510/download",
+      "date": "2021-09-01",
+      "isbn": "979-12-200-9297-5",
+      "reuse": "Diritti riservati espliciti, PDF p.6. Solo localizzatori e parafrasi originali; nessuna riproduzione integrale.",
+      "sha256": "437a1cb683e9331c4dcc1a6ed8c23f7405240bc397bbb67fde38d94cf9c160dc",
+      "local_reading_path": "/tmp/fronda-catalog-funghi-20261019/piemonte-2021.pdf"
+    },
+    "aranzadi": {
+      "title": "Sociedad de Ciencias Aranzadi — Amanita citrina",
+      "url": "https://www.aranzadi.eus/buscador-micologico/ficha/1-1-003.05.01.03.06.00",
+      "locator": "Nombres populares / Sinonímias",
+      "access_checked": "2026-10-19, pagina verificata via web",
+      "reuse": "Usato soltanto il dato nomenclaturale/onomastico; licenza dei testi e delle foto non verificata, nessun testo integrale o foto riprodotto."
+    },
+    "sardegna-digital-library": {
+      "title": "Sardegna Digital Library — Vescia, Ente Foreste della Sardegna",
+      "url": "https://www.sardegnadigitallibrary.it/detail/6499bad0e487374c8f8066c5",
+      "locator": "Titolo della scheda",
+      "access_checked": "2026-10-19, pagina verificata via web",
+      "reuse": "Usato soltanto il dato nomenclaturale/onomastico; licenza dei testi e delle foto non verificata, nessun testo integrale o foto riprodotto."
+    },
+    "sssa-vara": {
+      "title": "Scuola Superiore Sant’Anna — La risorsa FUNGO in Alta Valle del Vara",
+      "url": "https://www.iris.sssup.it/retrieve/dd9e0b31-bbf3-709e-e053-3705fe0a83fd/204_vqr_Funghi.pdf",
+      "locator": "PDF p.3, stampata206, Nomi comuni",
+      "access_checked": "2026-10-19, pagina verificata via web",
+      "reuse": "Usato soltanto il dato nomenclaturale/onomastico; licenza dei testi e delle foto non verificata, nessun testo integrale o foto riprodotto."
+    },
+    "gazzetta-ufficiale": {
+      "title": "Ministero della Sanità — GU n.284 del4dicembre1996",
+      "url": "https://www.gazzettaufficiale.it/atto/vediMenuHTML?atto.codiceRedazionale=096A8078&atto.dataPubblicazioneGazzetta=1996-12-04&tipoSerie=serie_generale&tipoVigenza=originario",
+      "locator": "Regione Umbria, tabella dei nomi volgari",
+      "access_checked": "2026-10-19, pagina verificata via web",
+      "reuse": "Usato soltanto il dato nomenclaturale/onomastico; licenza dei testi e delle foto non verificata, nessun testo integrale o foto riprodotto."
+    }
+  },
+  "claims": [
+    {
+      "taxon": "amanita-citrina",
+      "field": "check_before_picking[0]",
+      "claim": "Cappello chiaro, dal crema al giallo citrino, con placche irregolari del velo.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 101,
+        "printed_page": 100,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "amanita-citrina",
+      "field": "check_before_picking[1]",
+      "claim": "Lamelle fitte e libere, bianche con sfumature citrine.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 101,
+        "printed_page": 100,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "amanita-citrina",
+      "field": "check_before_picking[2]",
+      "claim": "Anello membranoso pendente sul gambo chiaro.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 101,
+        "printed_page": 100,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "amanita-citrina",
+      "field": "check_before_picking[3]",
+      "claim": "Base con bulbo nettamente marginato e volva aderente.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 101,
+        "printed_page": 100,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "amanita-citrina",
+      "field": "habitat",
+      "claim": "Boschi di latifoglie e conifere; esemplari isolati o in gruppi.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 101,
+        "printed_page": 100,
+        "section": "Ambiente"
+      },
+      "evidence_type": "parafrasi originale"
+    },
+    {
+      "taxon": "amanita-citrina",
+      "field": "season_text",
+      "claim": "Estate e autunno, fino al tardo autunno.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 101,
+        "printed_page": 100,
+        "section": "Ambiente"
+      },
+      "evidence_type": "parafrasi originale"
+    },
+    {
+      "taxon": "amanita-citrina",
+      "field": "toxicity/caution",
+      "claim": "La guida Piemonte la esclude dal consumo e segnala il rischio di confusione con Amanita pericolose.",
+      "source": "piemonte",
+      "locator": {
+        "pdf_pages": [
+          25,
+          32,
+          34
+        ],
+        "section": "trattazione del genere e/o tabella di riepilogo"
+      },
+      "mapping": "giudizio esplicito della fonte"
+    },
+    {
+      "taxon": "paxillus-involutus",
+      "field": "check_before_picking[0]",
+      "claim": "Cappello bruno-ocraceo o olivastro, con margine a lungo arrotolato verso il basso.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 225,
+        "printed_page": 224,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "paxillus-involutus",
+      "field": "check_before_picking[1]",
+      "claim": "Lamelle fitte e decorrenti, che imbruniscono alla pressione.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 225,
+        "printed_page": 224,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "paxillus-involutus",
+      "field": "check_before_picking[2]",
+      "claim": "Le lamelle si separano facilmente dalla carne del cappello.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 225,
+        "printed_page": 224,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "paxillus-involutus",
+      "field": "check_before_picking[3]",
+      "claim": "Carne che assume toni bruno-rossastri al taglio.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 225,
+        "printed_page": 224,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "paxillus-involutus",
+      "field": "habitat",
+      "claim": "Boschi di varia composizione, spesso in gruppi.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 225,
+        "printed_page": 224,
+        "section": "Ambiente"
+      },
+      "evidence_type": "parafrasi originale"
+    },
+    {
+      "taxon": "paxillus-involutus",
+      "field": "season_text",
+      "claim": "Dall’estate all’autunno.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 225,
+        "printed_page": 224,
+        "section": "Ambiente"
+      },
+      "evidence_type": "parafrasi originale"
+    },
+    {
+      "taxon": "paxillus-involutus",
+      "field": "toxicity/caution",
+      "claim": "La guida Piemonte documenta reazioni gravi e potenzialmente mortali, anche dopo precedenti consumi senza disturbi.",
+      "source": "piemonte",
+      "locator": {
+        "pdf_pages": [
+          26,
+          114,
+          115
+        ],
+        "section": "trattazione del genere e/o tabella di riepilogo"
+      },
+      "mapping": "giudizio esplicito della fonte"
+    },
+    {
+      "taxon": "coprinopsis-atramentaria",
+      "field": "check_before_picking[0]",
+      "claim": "Cappello grigio, inizialmente ovoidale o campanulato, con solchi radiali.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 148,
+        "printed_page": 147,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "coprinopsis-atramentaria",
+      "field": "check_before_picking[1]",
+      "claim": "Lamelle fitte e libere che diventano scure e infine deliquescenti.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 148,
+        "printed_page": 147,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "coprinopsis-atramentaria",
+      "field": "check_before_picking[2]",
+      "claim": "Gambo bianco e cavo, con residuo anulare fugace.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 148,
+        "printed_page": 147,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "coprinopsis-atramentaria",
+      "field": "check_before_picking[3]",
+      "claim": "Crescita spesso in cespi, anche su legno interrato.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 148,
+        "printed_page": 147,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "coprinopsis-atramentaria",
+      "field": "habitat",
+      "claim": "Legno e residui legnosi, anche interrati.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 148,
+        "printed_page": 147,
+        "section": "Ambiente"
+      },
+      "evidence_type": "parafrasi originale"
+    },
+    {
+      "taxon": "coprinopsis-atramentaria",
+      "field": "season_text",
+      "claim": "Dalla primavera al tardo autunno.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 148,
+        "printed_page": 147,
+        "section": "Ambiente"
+      },
+      "evidence_type": "parafrasi originale"
+    },
+    {
+      "taxon": "coprinopsis-atramentaria",
+      "field": "toxicity/caution",
+      "claim": "Può causare sindrome coprinica quando il consumo è associato ad alcol, assunto prima, durante o dopo. Non proporre tempi o preparazioni che renderebbero sicuro il consumo.",
+      "source": "piemonte",
+      "locator": {
+        "pdf_pages": [
+          47,
+          48
+        ],
+        "section": "trattazione del genere e/o tabella di riepilogo"
+      },
+      "mapping": "giudizio esplicito della fonte"
+    },
+    {
+      "taxon": "clitocybe-nebularis",
+      "field": "check_before_picking[0]",
+      "claim": "Cappello grigio o grigio-ocraceo, da convesso a disteso e depresso.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 140,
+        "printed_page": 139,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "clitocybe-nebularis",
+      "field": "check_before_picking[1]",
+      "claim": "Margine inizialmente involuto, poi più ondulato.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 140,
+        "printed_page": 139,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "clitocybe-nebularis",
+      "field": "check_before_picking[2]",
+      "claim": "Lamelle fitte, da adnate a poco decorrenti, biancastre o giallognole.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 140,
+        "printed_page": 139,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "clitocybe-nebularis",
+      "field": "check_before_picking[3]",
+      "claim": "Gambo robusto, spesso allargato verso la base, con feltro bianco basale.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 140,
+        "printed_page": 139,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "clitocybe-nebularis",
+      "field": "habitat",
+      "claim": "Boschi di latifoglie; gruppi, file o cerchi.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 140,
+        "printed_page": 139,
+        "section": "Ambiente"
+      },
+      "evidence_type": "parafrasi originale"
+    },
+    {
+      "taxon": "clitocybe-nebularis",
+      "field": "season_text",
+      "claim": "Dalla tarda estate all’autunno.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 140,
+        "printed_page": 139,
+        "section": "Ambiente"
+      },
+      "evidence_type": "parafrasi originale"
+    },
+    {
+      "taxon": "clitocybe-nebularis",
+      "field": "toxicity/caution",
+      "claim": "La fonte aggiornata classifica il consumo come sconsigliato; non viene trasformata in specie tossica né ammessa al selettore. Sono documentati disturbi gastrointestinali e confusione con Entoloma sinuatum.",
+      "source": "piemonte",
+      "locator": {
+        "pdf_pages": [
+          24,
+          42,
+          43,
+          44
+        ],
+        "section": "trattazione del genere e/o tabella di riepilogo"
+      },
+      "mapping": "sconsigliato → non commestibile nell’app, significato esplicito in cautela"
+    },
+    {
+      "taxon": "russula-emetica",
+      "field": "check_before_picking[0]",
+      "claim": "Cappello rosso, viscido con tempo umido.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 240,
+        "printed_page": 239,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "russula-emetica",
+      "field": "check_before_picking[1]",
+      "claim": "Lamelle fragili, sottili e quasi libere.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 240,
+        "printed_page": 239,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "russula-emetica",
+      "field": "check_before_picking[2]",
+      "claim": "Gambo bianco, cilindrico, con superficie rugosa.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 240,
+        "printed_page": 239,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "russula-emetica",
+      "field": "check_before_picking[3]",
+      "claim": "Carne bianca e fragile.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 240,
+        "printed_page": 239,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "russula-emetica",
+      "field": "habitat",
+      "claim": "Soprattutto boschi di conifere, con abete rosso, e boschi misti.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 240,
+        "printed_page": 239,
+        "section": "Ambiente"
+      },
+      "evidence_type": "parafrasi originale"
+    },
+    {
+      "taxon": "russula-emetica",
+      "field": "toxicity/caution",
+      "claim": "La tabella Piemonte colloca R. emetica s.l. tra le specie acri non consumate. Il manuale Campania la definisce tossica: si esplicita il dissenso, senza suggerire assaggi o trattamenti.",
+      "source": "piemonte",
+      "locator": {
+        "pdf_pages": [
+          99,
+          100
+        ],
+        "section": "trattazione del genere e/o tabella di riepilogo"
+      },
+      "mapping": "non commestibile (Piemonte); tossico secondo Campania, dissenso dichiarato"
+    },
+    {
+      "taxon": "lycoperdon-perlatum",
+      "field": "check_before_picking[0]",
+      "claim": "Corpo fruttifero con parte superiore globosa e parte basale sterile più stretta.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 208,
+        "printed_page": 207,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "lycoperdon-perlatum",
+      "field": "check_before_picking[1]",
+      "claim": "Superficie inizialmente chiara, poi brunastra.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 208,
+        "printed_page": 207,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "lycoperdon-perlatum",
+      "field": "check_before_picking[2]",
+      "claim": "Aculei conici che si staccano lasciando un disegno sulla superficie.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 208,
+        "printed_page": 207,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "lycoperdon-perlatum",
+      "field": "check_before_picking[3]",
+      "claim": "Interno dapprima compatto e bianco, poi bruno-olivastro e polveroso.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 208,
+        "printed_page": 207,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "lycoperdon-perlatum",
+      "field": "check_before_picking[4]",
+      "claim": "A maturità le spore escono da un’apertura apicale.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 208,
+        "printed_page": 207,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "lycoperdon-perlatum",
+      "field": "habitat",
+      "claim": "In gruppi nei boschi di latifoglie e conifere.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 208,
+        "printed_page": 207,
+        "section": "Ambiente"
+      },
+      "evidence_type": "parafrasi originale"
+    },
+    {
+      "taxon": "lycoperdon-perlatum",
+      "field": "season_text",
+      "claim": "Estate e autunno.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 208,
+        "printed_page": 207,
+        "section": "Ambiente"
+      },
+      "evidence_type": "parafrasi originale"
+    },
+    {
+      "taxon": "lycoperdon-perlatum",
+      "field": "toxicity/caution",
+      "claim": "La guida condiziona il giudizio alla gleba ancora bianca e soda e richiede attenzione alla rapida maturazione; avverte della confusione dei piccoli corpi chiusi con Amanita. È un dato della fonte, non una verifica dell’esemplare.",
+      "source": "piemonte",
+      "locator": {
+        "pdf_pages": [
+          132
+        ],
+        "section": "trattazione del genere e/o tabella di riepilogo"
+      },
+      "mapping": "commestibile con condizione gleba → commestibile con cautela"
+    },
+    {
+      "taxon": "auricularia-auricula-judae",
+      "field": "check_before_picking[0]",
+      "claim": "Corpo fruttifero a orecchio o conchiglia, sessile o con breve attacco.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 118,
+        "printed_page": 117,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "auricularia-auricula-judae",
+      "field": "check_before_picking[1]",
+      "claim": "Consistenza gelatinosa ed elastica.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 118,
+        "printed_page": 117,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "auricularia-auricula-judae",
+      "field": "check_before_picking[2]",
+      "claim": "Tonalità bruno-rossastre, con superficie fertile venata.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 118,
+        "printed_page": 117,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "auricularia-auricula-judae",
+      "field": "check_before_picking[3]",
+      "claim": "Superficie opposta più opaca, grigio-bruna e finemente pruinosa.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 118,
+        "printed_page": 117,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "auricularia-auricula-judae",
+      "field": "habitat",
+      "claim": "Su legno e rami di latifoglie in decomposizione, spesso in gruppi.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 118,
+        "printed_page": 117,
+        "section": "Ambiente"
+      },
+      "evidence_type": "parafrasi originale"
+    },
+    {
+      "taxon": "auricularia-auricula-judae",
+      "field": "season_text",
+      "claim": "Tutto l’anno.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 118,
+        "printed_page": 117,
+        "section": "Ambiente"
+      },
+      "evidence_type": "parafrasi originale"
+    },
+    {
+      "taxon": "auricularia-auricula-judae",
+      "field": "toxicity/caution",
+      "claim": "La guida sconsiglia pasti ripetuti e consumo alle persone che assumono anticoagulanti. Segnala inoltre una sistematica del genere complessa: foto europee con nome esatto, senza assimilare specie asiatiche coltivate.",
+      "source": "piemonte",
+      "locator": {
+        "pdf_pages": [
+          136,
+          137
+        ],
+        "section": "trattazione del genere e/o tabella di riepilogo"
+      },
+      "mapping": "commestibile con cautele per consumo ripetuto/anticoagulanti → commestibile con cautela"
+    },
+    {
+      "taxon": "fomes-fomentarius",
+      "field": "check_before_picking[0]",
+      "claim": "Corpo fruttifero sessile, a zoccolo, duro e legnoso.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 165,
+        "printed_page": 164,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "fomes-fomentarius",
+      "field": "check_before_picking[1]",
+      "claim": "Superficie superiore con solchi e zone concentriche, prevalentemente grigie.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 165,
+        "printed_page": 164,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "fomes-fomentarius",
+      "field": "check_before_picking[2]",
+      "claim": "Superficie inferiore chiara o ocracea, con pori piccoli e rotondi.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 165,
+        "printed_page": 164,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "fomes-fomentarius",
+      "field": "check_before_picking[3]",
+      "claim": "Tubuli disposti in strati sovrapposti nei corpi pluriennali.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 165,
+        "printed_page": 164,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "fomes-fomentarius",
+      "field": "habitat",
+      "claim": "Su tronchi di latifoglie, fra cui faggio, ontano, pioppo, platano e quercia.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 165,
+        "printed_page": 164,
+        "section": "Ambiente"
+      },
+      "evidence_type": "parafrasi originale"
+    },
+    {
+      "taxon": "fomes-fomentarius",
+      "field": "toxicity/caution",
+      "claim": "La guida lo tratta tra i funghi privi di interesse alimentare. Questa etichetta non equivale a tossicità e non autorizza impieghi medicinali o integratori.",
+      "source": "piemonte",
+      "locator": {
+        "pdf_pages": [
+          123,
+          124
+        ],
+        "section": "trattazione del genere e/o tabella di riepilogo"
+      },
+      "mapping": "privo di valore alimentare → non commestibile senza inferire tossicità"
+    },
+    {
+      "taxon": "trametes-versicolor",
+      "field": "check_before_picking[0]",
+      "claim": "Corpi sottili, sessili e sovrapposti, a ventaglio o spatola.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 257,
+        "printed_page": 256,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "trametes-versicolor",
+      "field": "check_before_picking[1]",
+      "claim": "Superficie superiore vellutata, con fasce concentriche di colori diversi.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 257,
+        "printed_page": 256,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "trametes-versicolor",
+      "field": "check_before_picking[2]",
+      "claim": "Margine più chiaro e ondulato.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 257,
+        "printed_page": 256,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "trametes-versicolor",
+      "field": "check_before_picking[3]",
+      "claim": "Superficie inferiore con piccoli pori, bianchi poi ocracei.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 257,
+        "printed_page": 256,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "trametes-versicolor",
+      "field": "check_before_picking[4]",
+      "claim": "Carne bianca, tenace e coriacea.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 257,
+        "printed_page": 256,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "trametes-versicolor",
+      "field": "habitat",
+      "claim": "In gruppi su legno in decomposizione.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 257,
+        "printed_page": 256,
+        "section": "Ambiente"
+      },
+      "evidence_type": "parafrasi originale"
+    },
+    {
+      "taxon": "trametes-versicolor",
+      "field": "season_text",
+      "claim": "Tutto l’anno.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 257,
+        "printed_page": 256,
+        "section": "Ambiente"
+      },
+      "evidence_type": "parafrasi originale"
+    },
+    {
+      "taxon": "trametes-versicolor",
+      "field": "toxicity/caution",
+      "claim": "La guida la include tra i funghi privi di interesse alimentare; non si deducono tossicità o benefici terapeutici.",
+      "source": "piemonte",
+      "locator": {
+        "pdf_pages": [
+          123,
+          124
+        ],
+        "section": "trattazione del genere e/o tabella di riepilogo"
+      },
+      "mapping": "privo di valore alimentare → non commestibile senza inferire tossicità"
+    },
+    {
+      "taxon": "hygrophorus-russula",
+      "field": "check_before_picking[0]",
+      "claim": "Cappello biancastro con macchie e striature vinose, rosate o porporine.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 181,
+        "printed_page": 180,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "hygrophorus-russula",
+      "field": "check_before_picking[1]",
+      "claim": "Lamelle fitte e adnate, chiare e poi macchiate di vinoso.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 181,
+        "printed_page": 180,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "hygrophorus-russula",
+      "field": "check_before_picking[2]",
+      "claim": "Gambo robusto, cilindrico e di colore simile al cappello.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 181,
+        "printed_page": 180,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "hygrophorus-russula",
+      "field": "check_before_picking[3]",
+      "claim": "Carne compatta, bianca con sfumature rosate.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 181,
+        "printed_page": 180,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "hygrophorus-russula",
+      "field": "habitat",
+      "claim": "Boschi di latifoglie, soprattutto querce; spesso in gruppi.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 181,
+        "printed_page": 180,
+        "section": "Ambiente"
+      },
+      "evidence_type": "parafrasi originale"
+    },
+    {
+      "taxon": "hygrophorus-russula",
+      "field": "season_text",
+      "claim": "Fino al tardo autunno; inizio non specificato dalla fonte.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 181,
+        "printed_page": 180,
+        "section": "Ambiente"
+      },
+      "evidence_type": "parafrasi originale"
+    },
+    {
+      "taxon": "hygrophorus-russula",
+      "field": "toxicity/caution",
+      "claim": "Il giudizio alimentare riguarda la specie determinata correttamente e non identifica un esemplare. La guida documenta il consumo tradizionale senza imporre trattamenti specifici oltre la cottura di base.",
+      "source": "piemonte",
+      "locator": {
+        "pdf_pages": [
+          60,
+          61,
+          63
+        ],
+        "section": "trattazione del genere e/o tabella di riepilogo"
+      },
+      "mapping": "giudizio esplicito della fonte"
+    },
+    {
+      "taxon": "lactarius-sanguifluus",
+      "field": "check_before_picking[0]",
+      "claim": "Cappello ocraceo-aranciato, con toni grigi e zonatura poco evidente.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 194,
+        "printed_page": 193,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "lactarius-sanguifluus",
+      "field": "check_before_picking[1]",
+      "claim": "Cappello depresso o imbutiforme.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 194,
+        "printed_page": 193,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "lactarius-sanguifluus",
+      "field": "check_before_picking[2]",
+      "claim": "Lamelle fitte, rosa-vinose o porporine, adnate o poco decorrenti.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 194,
+        "printed_page": 193,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "lactarius-sanguifluus",
+      "field": "check_before_picking[3]",
+      "claim": "Gambo corto, attenuato alla base, con leggere fossette.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 194,
+        "printed_page": 193,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "lactarius-sanguifluus",
+      "field": "check_before_picking[4]",
+      "claim": "Latice scarso, rosso-porpora.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 194,
+        "printed_page": 193,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "lactarius-sanguifluus",
+      "field": "habitat",
+      "claim": "Pinete calde e relativamente asciutte, spesso in gruppi.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 194,
+        "printed_page": 193,
+        "section": "Ambiente"
+      },
+      "evidence_type": "parafrasi originale"
+    },
+    {
+      "taxon": "lactarius-sanguifluus",
+      "field": "season_text",
+      "claim": "Autunno.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 194,
+        "printed_page": 193,
+        "section": "Ambiente"
+      },
+      "evidence_type": "parafrasi originale"
+    },
+    {
+      "taxon": "lactarius-sanguifluus",
+      "field": "toxicity/caution",
+      "claim": "La guida lo include esplicitamente tra i lattari della sezione Deliciosi commestibili. Non estendere questo giudizio ad altri lattari per colore o somiglianza.",
+      "source": "piemonte",
+      "locator": {
+        "pdf_pages": [
+          97,
+          98
+        ],
+        "section": "trattazione del genere e/o tabella di riepilogo"
+      },
+      "mapping": "giudizio esplicito della fonte"
+    },
+    {
+      "taxon": "russula-vesca",
+      "field": "check_before_picking[0]",
+      "claim": "Cappello rosa-lilacino o bruno-vinoso.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 247,
+        "printed_page": 246,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "russula-vesca",
+      "field": "check_before_picking[1]",
+      "claim": "Cuticola che si ritira al margine lasciando scoperte le estremità delle lamelle.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 247,
+        "printed_page": 246,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "russula-vesca",
+      "field": "check_before_picking[2]",
+      "claim": "Lamelle fitte e ramificate, chiare, talora con macchie rugginose.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 247,
+        "printed_page": 246,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "russula-vesca",
+      "field": "check_before_picking[3]",
+      "claim": "Gambo corto, biancastro con sfumature rosate o grigie, a volte macchiato di ruggine alla base.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 247,
+        "printed_page": 246,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "russula-vesca",
+      "field": "check_before_picking[4]",
+      "claim": "Carne bianca, inizialmente soda e poi più friabile.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 247,
+        "printed_page": 246,
+        "section": "Descrizione / Ambiente"
+      },
+      "evidence_type": "parafrasi originale verificata sul profilo, non citazione"
+    },
+    {
+      "taxon": "russula-vesca",
+      "field": "habitat",
+      "claim": "Boschi di latifoglie e conifere.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 247,
+        "printed_page": 246,
+        "section": "Ambiente"
+      },
+      "evidence_type": "parafrasi originale"
+    },
+    {
+      "taxon": "russula-vesca",
+      "field": "season_text",
+      "claim": "Dalla primavera all’autunno.",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 247,
+        "printed_page": 246,
+        "section": "Ambiente"
+      },
+      "evidence_type": "parafrasi originale"
+    },
+    {
+      "taxon": "russula-vesca",
+      "field": "toxicity/caution",
+      "claim": "La guida la include esplicitamente tra le Russula commestibili. L’identità va verificata indipendentemente: nessun assaggio come metodo proposto nell’app.",
+      "source": "piemonte",
+      "locator": {
+        "pdf_pages": [
+          99,
+          101
+        ],
+        "section": "trattazione del genere e/o tabella di riepilogo"
+      },
+      "mapping": "giudizio esplicito della fonte"
+    },
+    {
+      "taxon": "amanita-citrina",
+      "field": "name/common_names",
+      "claim": "Tignosa paglierina",
+      "source": "aranzadi",
+      "locator": {
+        "url": "https://www.aranzadi.eus/buscador-micologico/ficha/1-1-003.05.01.03.06.00",
+        "section": "Nombres populares, Italiano"
+      }
+    },
+    {
+      "taxon": "amanita-citrina",
+      "field": "synonyms",
+      "claim": [
+        "Amanita mappa"
+      ],
+      "source": "aranzadi",
+      "locator": {
+        "url": "https://www.aranzadi.eus/buscador-micologico/ficha/1-1-003.05.01.03.06.00",
+        "section": "Sinonímias, Amanita mappa"
+      },
+      "note": "Crosswalk esplicito nella fonte; nessuna riassegnazione automatica di osservazioni."
+    },
+    {
+      "taxon": "paxillus-involutus",
+      "field": "name/common_names",
+      "claim": "Agarico involuto",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 225,
+        "section": "intestazione della scheda"
+      }
+    },
+    {
+      "taxon": "coprinopsis-atramentaria",
+      "field": "name/common_names",
+      "claim": "Coprino atramentario",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 148,
+        "section": "intestazione della scheda"
+      }
+    },
+    {
+      "taxon": "coprinopsis-atramentaria",
+      "field": "synonyms",
+      "claim": [
+        "Coprinus atramentarius"
+      ],
+      "source": "piemonte",
+      "locator": {
+        "pdf_page": 47,
+        "section": "intestazione / trattazione del taxon"
+      },
+      "note": "Crosswalk esplicito nella fonte; nessuna riassegnazione automatica di osservazioni."
+    },
+    {
+      "taxon": "clitocybe-nebularis",
+      "field": "name/common_names",
+      "claim": "Nebbione",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 140,
+        "section": "intestazione della scheda"
+      }
+    },
+    {
+      "taxon": "clitocybe-nebularis",
+      "field": "synonyms",
+      "claim": [
+        "Lepista nebularis"
+      ],
+      "source": "campania",
+      "locator": {
+        "pdf_page": 140,
+        "section": "intestazione / trattazione del taxon"
+      },
+      "note": "Crosswalk esplicito nella fonte; nessuna riassegnazione automatica di osservazioni."
+    },
+    {
+      "taxon": "russula-emetica",
+      "field": "name/common_names",
+      "claim": "Colombina rossa",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 240,
+        "section": "intestazione della scheda"
+      }
+    },
+    {
+      "taxon": "lycoperdon-perlatum",
+      "field": "name/common_names",
+      "claim": "Vescia",
+      "source": "sardegna-digital-library",
+      "locator": {
+        "url": "https://www.sardegnadigitallibrary.it/detail/6499bad0e487374c8f8066c5",
+        "section": "Titolo della scheda, ente editore Ente Foreste della Sardegna"
+      }
+    },
+    {
+      "taxon": "lycoperdon-perlatum",
+      "field": "synonyms",
+      "claim": [
+        "Lycoperdon gemmatum"
+      ],
+      "source": "campania",
+      "locator": {
+        "pdf_page": 208,
+        "section": "intestazione / trattazione del taxon"
+      },
+      "note": "Crosswalk esplicito nella fonte; nessuna riassegnazione automatica di osservazioni."
+    },
+    {
+      "taxon": "auricularia-auricula-judae",
+      "field": "name/common_names",
+      "claim": "Orecchio di Giuda",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 118,
+        "section": "intestazione della scheda"
+      }
+    },
+    {
+      "taxon": "auricularia-auricula-judae",
+      "field": "synonyms",
+      "claim": [
+        "Hirneola auricula-judae"
+      ],
+      "source": "campania",
+      "locator": {
+        "pdf_page": 118,
+        "section": "intestazione / trattazione del taxon"
+      },
+      "note": "Crosswalk esplicito nella fonte; nessuna riassegnazione automatica di osservazioni."
+    },
+    {
+      "taxon": "fomes-fomentarius",
+      "field": "name/common_names",
+      "claim": "Fungo dell’esca",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 165,
+        "section": "intestazione della scheda"
+      }
+    },
+    {
+      "taxon": "trametes-versicolor",
+      "field": "synonyms",
+      "claim": [
+        "Coriolus versicolor"
+      ],
+      "source": "campania",
+      "locator": {
+        "pdf_page": 257,
+        "section": "intestazione / trattazione del taxon"
+      },
+      "note": "Crosswalk esplicito nella fonte; nessuna riassegnazione automatica di osservazioni."
+    },
+    {
+      "taxon": "hygrophorus-russula",
+      "field": "name/common_names",
+      "claim": "Lardaiolo rosso",
+      "source": "campania",
+      "locator": {
+        "pdf_page": 181,
+        "section": "intestazione della scheda"
+      }
+    },
+    {
+      "taxon": "hygrophorus-russula",
+      "field": "synonyms",
+      "claim": [
+        "Tricholoma russula"
+      ],
+      "source": "campania",
+      "locator": {
+        "pdf_page": 181,
+        "section": "intestazione / trattazione del taxon"
+      },
+      "note": "Crosswalk esplicito nella fonte; nessuna riassegnazione automatica di osservazioni."
+    },
+    {
+      "taxon": "lactarius-sanguifluus",
+      "field": "name/common_names",
+      "claim": "Sanguinello",
+      "source": "gazzetta-ufficiale",
+      "locator": {
+        "url": "https://www.gazzettaufficiale.it/atto/vediMenuHTML?atto.codiceRedazionale=096A8078&atto.dataPubblicazioneGazzetta=1996-12-04&tipoSerie=serie_generale&tipoVigenza=originario",
+        "section": "Tabella Regione Umbria, nome volgare"
+      }
+    },
+    {
+      "taxon": "russula-vesca",
+      "field": "name/common_names",
+      "claim": "Colombina",
+      "source": "sssa-vara",
+      "locator": {
+        "url": "https://www.iris.sssup.it/retrieve/dd9e0b31-bbf3-709e-e053-3705fe0a83fd/204_vqr_Funghi.pdf#page=3",
+        "pdf_page": 3,
+        "printed_page": 206,
+        "section": "Nomi comuni"
+      }
+    }
+  ],
+  "note": "Le prove sono parafrasi con localizzatori, non estrazioni integrali. Testi e foto hanno licenze indipendenti.",
+  "pdf_visual_review": {
+    "status": "consultate le pagine renderizzate dei 12 profili e delle tabelle alimentari pertinenti",
+    "contact_sheets_local_only": "/tmp/fronda-catalog-funghi-20261019/review-*.jpg",
+    "not_redistributed": "PDF integrali, estrazioni integrali e tavole delle pagine non sono nel repo."
+  }
+}

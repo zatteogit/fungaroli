@@ -1,0 +1,1134 @@
+{
+  "package": "lazio-pilot-2026-10-19/roma-est",
+  "consultedAt": "2026-10-19",
+  "scope": "Roma est e Castelli; versante romano Simbruini e Lucretili",
+  "status": "ricerca_non_integrata",
+  "method": "Fonti primarie lette. Nessuna suite, CI, dry-run, deploy, download di immagini o modifica dei dati applicativi. GPX verificati in memoria senza salvarli.",
+  "existingRietiZonesChecked": 15,
+  "duplicatesFound": [],
+  "candidates": [
+    {
+      "id": "tuscolo-nord",
+      "name": "Tuscolo, boschi verso Frascati",
+      "municipalities": [
+        "Frascati",
+        "Monte Porzio Catone"
+      ],
+      "province": "Roma / RM",
+      "administrativeScopeNote": "Comuni di riferimento del giro, non perimetro GIS completo della zona.",
+      "administrativeSourceIds": [
+        "RE-501",
+        "RE-501"
+      ],
+      "description": {
+        "text": "Salire dal margine di Frascati verso il bosco del versante nord e concludere agli scavi e alla croce: un giro che alterna ombra e aperture sul paesaggio vulcanico.",
+        "status": "interpretazione_editoriale",
+        "sourceIds": [
+          "RE-501",
+          "RE-tuscolo-natura"
+        ]
+      },
+      "habitat": {
+        "text": "Boschi caducifogli del versante nord e piccolo castagneto presso gli scavi.",
+        "status": "documentato_con_ambito_esplicito",
+        "sourceIds": [
+          "RE-tuscolo-natura"
+        ]
+      },
+      "coordinates": null,
+      "elevation": {
+        "meters": 677,
+        "meaning": "croce di Tuscolo",
+        "precision": "intero pubblicato; non fascia altimetrica della zona",
+        "sourceIds": [
+          "RE-501"
+        ]
+      },
+      "forestBands": null,
+      "geometry": null,
+      "itineraries": [
+        {
+          "ref": "501",
+          "name": "CAI 501 Frascati - Croce di Tuscolo",
+          "url": "https://www.parchilazio.it/castelliromani-schede-18117-501_frascati_croce_di_tuscolo_cai",
+          "sourceIds": [
+            "RE-501"
+          ],
+          "metrics": {
+            "distanceKm": 3.8,
+            "ascentM": 383,
+            "descentM": 65,
+            "difficulty": "T",
+            "durationMinutes": 140,
+            "sourceIds": [
+              "RE-501"
+            ],
+            "scope": "valori pubblicati; non raddoppiare per ritorno e non combinare versioni"
+          },
+          "gpx": {
+            "url": "https://www.parchilazio.it/documenti/schede/501_frascati_croce_di_tuscolo.gpx",
+            "status": "HTTP_200_XML_GPX",
+            "sourceIds": [
+              "RE-501-gpx"
+            ]
+          },
+          "trailhead": {
+            "name": "Bivio via del Tuscolo / viale Borromini, Frascati",
+            "coordinates": {
+              "lat": 41.805794,
+              "lon": 12.685166,
+              "precision": "decimali pubblicati nel link Google Maps della scheda; accuratezza posizionale non dichiarata; non centroide zona"
+            },
+            "sourceIds": [
+              "RE-501"
+            ]
+          },
+          "elevationRange": null
+        }
+      ],
+      "access": {
+        "text": "Area di sosta presso gli scavi; parcheggio alla partenza non documentato.",
+        "parkingCoordinates": null,
+        "manager": "Ente Parco Castelli Romani",
+        "sourceIds": [
+          "RE-501"
+        ],
+        "parkingManager": null,
+        "roadDrivingTime": null
+      },
+      "collectionRules": null,
+      "collectionRulesResearch": {
+        "status": "lacuna_vigenza_o_completezza",
+        "sourceIds": [
+          "RE-castelli-raccolta"
+        ],
+        "note": "La consultazione non consente di stabilire un permesso di raccolta per ogni fondo o sottozona. Nessuna estensione automatica di norme da altri parchi."
+      },
+      "naturalObservations": [
+        {
+          "subject": "Roverella e cerro",
+          "status": "compatibilita_di_osservazione_non_presenza_certa",
+          "sourceIds": [
+            "RE-tuscolo-natura"
+          ]
+        },
+        {
+          "subject": "Acero campestre",
+          "status": "compatibilita_di_osservazione_non_presenza_certa",
+          "sourceIds": [
+            "RE-tuscolo-natura"
+          ]
+        },
+        {
+          "subject": "Pungitopo nel sottobosco",
+          "status": "compatibilita_di_osservazione_non_presenza_certa",
+          "sourceIds": [
+            "RE-tuscolo-natura"
+          ]
+        }
+      ],
+      "photoCandidates": [],
+      "technicalGaps": [
+        "Geometria della zona, centroide e raggio non definiti.",
+        "Campionamento Carta Forestale sul tracciato e collegamento alle specie fungine da eseguire.",
+        "Regole complete e vigenti di raccolta, diritti dei fondi e divieti temporanei da verificare con il gestore.",
+        "Foto riutilizzabili con autore e licenza non selezionate."
+      ],
+      "sourceConflicts": [],
+      "reviewStatus": "pronto_revisione_con_lacune_esplicite",
+      "integrationApproved": false
+    },
+    {
+      "id": "faete-rocca-papa",
+      "name": "Faete e Monte Cavo",
+      "municipalities": [
+        "Rocca di Papa"
+      ],
+      "province": "Roma / RM",
+      "administrativeScopeNote": "Comuni di riferimento del giro, non perimetro GIS completo della zona.",
+      "administrativeSourceIds": [
+        "RE-509",
+        "RE-509"
+      ],
+      "description": {
+        "text": "Un giro da Rocca di Papa che entra nei castagneti, segue la dorsale delle Faete e tocca il basolato della Via Sacra. La varietà del bosco conta più della sola conquista della cima.",
+        "status": "interpretazione_editoriale",
+        "sourceIds": [
+          "RE-castelli-vegetazione",
+          "RE-509"
+        ]
+      },
+      "habitat": {
+        "text": "Bosco misto e castagneti lungo 509; nuclei residuali di faggio a Monte Cavo.",
+        "status": "documentato_con_ambito_esplicito",
+        "sourceIds": [
+          "RE-509",
+          "RE-castelli-vegetazione"
+        ]
+      },
+      "coordinates": null,
+      "elevation": {
+        "meters": 956,
+        "meaning": "Maschio delle Faete",
+        "precision": "intero pubblicato; non fascia altimetrica della zona",
+        "sourceIds": [
+          "RE-509"
+        ]
+      },
+      "forestBands": null,
+      "geometry": null,
+      "itineraries": [
+        {
+          "ref": "509",
+          "name": "CAI 509 Circuito delle Faete di Rocca di Papa",
+          "url": "https://www.parchilazio.it/castelliromani-schede-17961-509_circuito_delle_faete_di_rocca_di_papa_cai",
+          "sourceIds": [
+            "RE-509"
+          ],
+          "metrics": {
+            "distanceKm": 8.9,
+            "ascentM": 503,
+            "descentM": 506,
+            "difficulty": "E",
+            "durationMinutes": 270,
+            "sourceIds": [
+              "RE-509"
+            ],
+            "scope": "valori pubblicati; non raddoppiare per ritorno e non combinare versioni"
+          },
+          "gpx": {
+            "url": "https://www.parchilazio.it/documenti/schede/509.gpx",
+            "status": "HTTP_200_XML_GPX",
+            "sourceIds": [
+              "RE-509-gpx"
+            ]
+          },
+          "trailhead": {
+            "name": "Piazza Di Vittorio, Rocca di Papa",
+            "coordinates": {
+              "lat": 41.756795,
+              "lon": 12.709967,
+              "precision": "decimali pubblicati nel link Google Maps della scheda; accuratezza posizionale non dichiarata; non centroide zona"
+            },
+            "sourceIds": [
+              "RE-509"
+            ]
+          },
+          "elevationRange": null
+        }
+      ],
+      "access": {
+        "text": "Parcheggio nei pressi della piazza; capienza e gestione non documentate.",
+        "parkingCoordinates": null,
+        "manager": "Ente Parco Castelli Romani",
+        "sourceIds": [
+          "RE-509"
+        ],
+        "parkingManager": null,
+        "roadDrivingTime": null
+      },
+      "collectionRules": null,
+      "collectionRulesResearch": {
+        "status": "lacuna_vigenza_o_completezza",
+        "sourceIds": [
+          "RE-castelli-raccolta"
+        ],
+        "note": "La consultazione non consente di stabilire un permesso di raccolta per ogni fondo o sottozona. Nessuna estensione automatica di norme da altri parchi."
+      },
+      "naturalObservations": [
+        {
+          "subject": "Castagno lungo la discesa",
+          "status": "compatibilita_di_osservazione_non_presenza_certa",
+          "sourceIds": [
+            "RE-509"
+          ]
+        },
+        {
+          "subject": "Faggi residuali di Monte Cavo",
+          "status": "compatibilita_di_osservazione_non_presenza_certa",
+          "sourceIds": [
+            "RE-castelli-vegetazione"
+          ]
+        },
+        {
+          "subject": "Bosco misto della dorsale",
+          "status": "compatibilita_di_osservazione_non_presenza_certa",
+          "sourceIds": [
+            "RE-509"
+          ]
+        }
+      ],
+      "photoCandidates": [],
+      "technicalGaps": [
+        "Geometria della zona, centroide e raggio non definiti.",
+        "Campionamento Carta Forestale sul tracciato e collegamento alle specie fungine da eseguire.",
+        "Regole complete e vigenti di raccolta, diritti dei fondi e divieti temporanei da verificare con il gestore.",
+        "Foto riutilizzabili con autore e licenza non selezionate."
+      ],
+      "sourceConflicts": [],
+      "reviewStatus": "pronto_revisione_con_lacune_esplicite",
+      "integrationApproved": false
+    },
+    {
+      "id": "nemi-fontan-tempesta",
+      "name": "Nemi e Fontan Tempesta",
+      "municipalities": [
+        "Nemi"
+      ],
+      "province": "Roma / RM",
+      "administrativeScopeNote": "Comuni di riferimento del giro, non perimetro GIS completo della zona.",
+      "administrativeSourceIds": [
+        "RE-511b",
+        "RE-511b"
+      ],
+      "description": {
+        "text": "Collegare Fontan Tempesta al borgo di Nemi con un tratto breve sul versante del lago. Il sentiero è una buona base per osservare il cambiamento fra bosco e belvedere, senza aggiungere piste forestali al giro.",
+        "status": "interpretazione_editoriale",
+        "sourceIds": [
+          "RE-castelli-vegetazione",
+          "RE-511b"
+        ]
+      },
+      "habitat": {
+        "text": "Lembi di bosco originario sulle coste del lago; pini domestici al belvedere della fonte Pontecchio.",
+        "status": "documentato_con_ambito_esplicito",
+        "sourceIds": [
+          "RE-castelli-vegetazione",
+          "RE-511b"
+        ]
+      },
+      "coordinates": null,
+      "elevation": {
+        "meters": 606,
+        "meaning": "Fontan Tempesta",
+        "precision": "intero pubblicato; non fascia altimetrica della zona",
+        "sourceIds": [
+          "RE-511b"
+        ]
+      },
+      "forestBands": null,
+      "geometry": null,
+      "itineraries": [
+        {
+          "ref": "511b",
+          "name": "CAI 511B Fontana Tempesta-Nemi",
+          "url": "https://www.parchilazio.it/castelliromani-schede-18037-511b_fontana_tempesta_nemi_cai",
+          "sourceIds": [
+            "RE-511b"
+          ],
+          "metrics": {
+            "distanceKm": 1.8,
+            "ascentM": 65,
+            "descentM": 110,
+            "difficulty": "T",
+            "durationMinutes": 30,
+            "sourceIds": [
+              "RE-511b"
+            ],
+            "scope": "valori pubblicati; non raddoppiare per ritorno e non combinare versioni"
+          },
+          "gpx": {
+            "url": "https://www.parchilazio.it/documenti/schede/511b_fontana_tempesta_nemi.gpx",
+            "status": "HTTP_200_XML_GPX",
+            "sourceIds": [
+              "RE-511b-gpx"
+            ]
+          },
+          "trailhead": {
+            "name": "Fontan Tempesta",
+            "coordinates": {
+              "lat": 41.732446,
+              "lon": 12.709589,
+              "precision": "decimali pubblicati nel link Google Maps della scheda; accuratezza posizionale non dichiarata; non centroide zona"
+            },
+            "sourceIds": [
+              "RE-511b"
+            ]
+          },
+          "elevationRange": null
+        }
+      ],
+      "access": {
+        "text": "Parcheggio non documentato; la fonte indica acqua alla partenza e ristori nel borgo.",
+        "parkingCoordinates": null,
+        "manager": "Ente Parco Castelli Romani",
+        "sourceIds": [
+          "RE-511b"
+        ],
+        "parkingManager": null,
+        "roadDrivingTime": null
+      },
+      "collectionRules": null,
+      "collectionRulesResearch": {
+        "status": "lacuna_vigenza_o_completezza",
+        "sourceIds": [
+          "RE-castelli-raccolta"
+        ],
+        "note": "La consultazione non consente di stabilire un permesso di raccolta per ogni fondo o sottozona. Nessuna estensione automatica di norme da altri parchi."
+      },
+      "naturalObservations": [
+        {
+          "subject": "Pini domestici al belvedere",
+          "status": "compatibilita_di_osservazione_non_presenza_certa",
+          "sourceIds": [
+            "RE-511b"
+          ]
+        },
+        {
+          "subject": "Bosco residuale sulle coste del lago: contesto di zona, non campione continuo del tracciato",
+          "status": "compatibilita_di_osservazione_non_presenza_certa",
+          "sourceIds": [
+            "RE-castelli-vegetazione"
+          ]
+        }
+      ],
+      "photoCandidates": [],
+      "technicalGaps": [
+        "Geometria della zona, centroide e raggio non definiti.",
+        "Campionamento Carta Forestale sul tracciato e collegamento alle specie fungine da eseguire.",
+        "Regole complete e vigenti di raccolta, diritti dei fondi e divieti temporanei da verificare con il gestore.",
+        "Foto riutilizzabili con autore e licenza non selezionate."
+      ],
+      "sourceConflicts": [],
+      "reviewStatus": "pronto_revisione_con_lacune_esplicite",
+      "integrationApproved": false
+    },
+    {
+      "id": "cerquone-doganella",
+      "name": "Cerquone e Doganella",
+      "municipalities": [
+        "Rocca Priora"
+      ],
+      "province": "Roma / RM",
+      "administrativeScopeNote": "Comuni di riferimento del giro, non perimetro GIS completo della zona.",
+      "administrativeSourceIds": [
+        "RE-504",
+        "RE-504"
+      ],
+      "description": {
+        "text": "Scendere da Rocca Priora attraverso i castagneti fino al margine del Cerquone. Qui il giro cambia carattere: il bosco misto e la vicina zona umida invitano a fermarsi e osservare.",
+        "status": "interpretazione_editoriale",
+        "sourceIds": [
+          "RE-504",
+          "RE-cerquone-natura"
+        ]
+      },
+      "habitat": {
+        "text": "Castagneti sul collegamento; al Cerquone foresta decidua mesofila a farnia e carpino bianco, con querce, tigli e aceri.",
+        "status": "documentato_con_ambito_esplicito",
+        "sourceIds": [
+          "RE-504",
+          "RE-cerquone-natura"
+        ]
+      },
+      "coordinates": null,
+      "elevation": {
+        "meters": 663,
+        "meaning": "partenza",
+        "precision": "intero pubblicato; non fascia altimetrica della zona",
+        "sourceIds": [
+          "RE-504"
+        ]
+      },
+      "forestBands": null,
+      "geometry": null,
+      "itineraries": [
+        {
+          "ref": "504",
+          "name": "CAI 504 Rocca Priora - Bosco del Cerquone",
+          "url": "https://www.parchilazio.it/castelliromani-schede-18053-504_rocca_priora_bosco_del_cerquone_cai",
+          "sourceIds": [
+            "RE-504"
+          ],
+          "metrics": {
+            "distanceKm": 5.2,
+            "ascentM": 204,
+            "descentM": 339,
+            "difficulty": "T",
+            "durationMinutes": 145,
+            "sourceIds": [
+              "RE-504"
+            ],
+            "scope": "valori pubblicati; non raddoppiare per ritorno e non combinare versioni"
+          },
+          "gpx": {
+            "url": "https://www.parchilazio.it/documenti/schede/504_rocca_priora_bosco_del_cerquone.gpx",
+            "status": "HTTP_200_XML_GPX",
+            "sourceIds": [
+              "RE-504-gpx"
+            ]
+          },
+          "trailhead": {
+            "name": "Bivio via Arenatura / via Montagna Spaccata, Rocca Priora",
+            "coordinates": {
+              "lat": 41.787609,
+              "lon": 12.767069,
+              "precision": "decimali pubblicati nel link Google Maps della scheda; accuratezza posizionale non dichiarata; non centroide zona"
+            },
+            "sourceIds": [
+              "RE-504"
+            ]
+          },
+          "elevationRange": null
+        }
+      ],
+      "access": {
+        "text": "Area di sosta presso accesso Cerquone; non equivale a parcheggio verificato.",
+        "parkingCoordinates": null,
+        "manager": "Ente Parco Castelli Romani",
+        "sourceIds": [
+          "RE-504"
+        ],
+        "parkingManager": null,
+        "roadDrivingTime": null
+      },
+      "collectionRules": null,
+      "collectionRulesResearch": {
+        "status": "lacuna_vigenza_o_completezza",
+        "sourceIds": [
+          "RE-castelli-raccolta"
+        ],
+        "note": "La consultazione non consente di stabilire un permesso di raccolta per ogni fondo o sottozona. Nessuna estensione automatica di norme da altri parchi."
+      },
+      "naturalObservations": [
+        {
+          "subject": "Farnia e cerro nel Cerquone",
+          "status": "compatibilita_di_osservazione_non_presenza_certa",
+          "sourceIds": [
+            "RE-cerquone-natura"
+          ]
+        },
+        {
+          "subject": "Nocciolo nello strato arbustivo",
+          "status": "compatibilita_di_osservazione_non_presenza_certa",
+          "sourceIds": [
+            "RE-cerquone-natura"
+          ]
+        },
+        {
+          "subject": "Anfibi della Doganella: la scheda cita tritone crestato, rana dalmatina e salamandrina dagli occhiali; nessuna garanzia di avvistamento",
+          "status": "compatibilita_di_osservazione_non_presenza_certa",
+          "sourceIds": [
+            "RE-504"
+          ]
+        }
+      ],
+      "photoCandidates": [],
+      "technicalGaps": [
+        "Geometria della zona, centroide e raggio non definiti.",
+        "Campionamento Carta Forestale sul tracciato e collegamento alle specie fungine da eseguire.",
+        "Regole complete e vigenti di raccolta, diritti dei fondi e divieti temporanei da verificare con il gestore.",
+        "Foto riutilizzabili con autore e licenza non selezionate."
+      ],
+      "sourceConflicts": [],
+      "reviewStatus": "pronto_revisione_con_lacune_esplicite",
+      "integrationApproved": false
+    },
+    {
+      "id": "livata-tufai",
+      "name": "Livata e Valle delle Mele",
+      "municipalities": [
+        "Subiaco"
+      ],
+      "province": "Roma / RM",
+      "administrativeScopeNote": "Comuni di riferimento del giro, non perimetro GIS completo della zona.",
+      "administrativeSourceIds": [
+        "RE-672c",
+        "RE-672c-ente"
+      ],
+      "description": {
+        "text": "Usare Livata come porta del bosco montano e scegliere l’anello dei Tufai e della Valle delle Mele. La proposta resta da raccordare con una partenza e una sosta auto verificate.",
+        "status": "interpretazione_editoriale",
+        "sourceIds": [
+          "RE-simbruini-montano",
+          "RE-672c",
+          "RE-livata-faggete"
+        ]
+      },
+      "habitat": {
+        "text": "Comprensorio di Livata con faggete e radure; compatibilità dell’ambiente montano, non classificazione forestale puntuale del GPX.",
+        "status": "documentato_con_ambito_esplicito",
+        "sourceIds": [
+          "RE-livata-faggete",
+          "RE-simbruini-montano"
+        ]
+      },
+      "coordinates": null,
+      "elevation": null,
+      "forestBands": null,
+      "geometry": null,
+      "itineraries": [
+        {
+          "ref": "672c",
+          "name": "Percorso 672c Livata - I Tufai - Valle delle Mele - Livata",
+          "url": "https://www.parcomontisimbruini.it/itinerari-dettaglio.php?id_iti=370",
+          "sourceIds": [
+            "RE-672c-ente"
+          ],
+          "metrics": {
+            "distanceKm": 5.4,
+            "ascentM": 290,
+            "descentM": 210,
+            "difficulty": "T",
+            "durationMinutes": 120,
+            "sourceIds": [
+              "RE-672c-ente"
+            ],
+            "scope": "valori pubblicati; non raddoppiare per ritorno e non combinare versioni"
+          },
+          "gpx": {
+            "url": "https://www.parcomontisimbruini.it/gpx/672c.gpx",
+            "status": "HTTP_200_XML_GPX",
+            "sourceIds": [
+              "RE-672c-gpx"
+            ]
+          },
+          "trailhead": {
+            "name": "Monte Livata",
+            "coordinates": {
+              "lat": 41.93877,
+              "lon": 13.14898,
+              "precision": "decimali pubblicati nel link Google Maps della scheda; accuratezza posizionale non dichiarata; non centroide zona"
+            },
+            "sourceIds": [
+              "RE-672c"
+            ]
+          },
+          "elevationRange": {
+            "minM": 1331,
+            "maxM": 1446,
+            "sourceIds": [
+              "RE-672c-ente"
+            ]
+          }
+        }
+      ],
+      "access": {
+        "text": "Parcheggio e sue condizioni non documentati dalle pagine lette.",
+        "parkingCoordinates": null,
+        "manager": "Ente Parco Monti Simbruini",
+        "sourceIds": [
+          "RE-672c"
+        ],
+        "parkingManager": null,
+        "roadDrivingTime": null
+      },
+      "collectionRules": null,
+      "collectionRulesResearch": {
+        "status": "lacuna_vigenza_o_completezza",
+        "sourceIds": [
+          "RE-simbruini-regolamenti"
+        ],
+        "note": "La consultazione non consente di stabilire un permesso di raccolta per ogni fondo o sottozona. Nessuna estensione automatica di norme da altri parchi."
+      },
+      "naturalObservations": [
+        {
+          "subject": "Faggio: contesto locale del comprensorio",
+          "status": "compatibilita_di_osservazione_non_presenza_certa",
+          "sourceIds": [
+            "RE-livata-faggete"
+          ]
+        },
+        {
+          "subject": "Agrifoglio: compatibilità con faggete del parco, presenza sul 672c da verificare",
+          "status": "compatibilita_di_osservazione_non_presenza_certa",
+          "sourceIds": [
+            "RE-simbruini-montano"
+          ]
+        }
+      ],
+      "photoCandidates": [],
+      "technicalGaps": [
+        "Geometria della zona, centroide e raggio non definiti.",
+        "Campionamento Carta Forestale sul tracciato e collegamento alle specie fungine da eseguire.",
+        "Regole complete e vigenti di raccolta, diritti dei fondi e divieti temporanei da verificare con il gestore.",
+        "Foto riutilizzabili con autore e licenza non selezionate."
+      ],
+      "sourceConflicts": [
+        "ParchiLazio quick info: E, 1 h, 3,7 km; corpo stessa pagina e sito ente: T, 2 h, 5,4 km. Il candidato conserva come riferimento il sito dell’ente ma richiede riconciliazione prima dell’import.",
+        "Anello dichiarato con +290/-210 m: asimmetria da verificare sul tracciato; non corretta automaticamente."
+      ],
+      "reviewStatus": "pronto_revisione_con_lacune_esplicite",
+      "integrationApproved": false
+    },
+    {
+      "id": "cervara-prataglia",
+      "name": "Cervara e Prataglia",
+      "municipalities": [
+        "Cervara di Roma"
+      ],
+      "province": "Roma / RM",
+      "administrativeScopeNote": "Comuni di riferimento del giro, non perimetro GIS completo della zona.",
+      "administrativeSourceIds": [
+        "RE-661",
+        "RE-661-ente"
+      ],
+      "description": {
+        "text": "Dalla strada di Cervara verso Prataglia, entrare nell’alternanza di faggete e radure. Il rifugio e l’area faunistica sono riferimenti utili per costruire una giornata nel bosco, da definire dopo la riconciliazione delle schede.",
+        "status": "interpretazione_editoriale",
+        "sourceIds": [
+          "RE-prataglia-natura",
+          "RE-661"
+        ]
+      },
+      "habitat": {
+        "text": "Radure e faggete documentate nel settore Prataglia-Cervara; fonte riferita al passaggio della Via dei Lupi.",
+        "status": "documentato_con_ambito_esplicito",
+        "sourceIds": [
+          "RE-prataglia-natura"
+        ]
+      },
+      "coordinates": null,
+      "elevation": {
+        "meters": 1110,
+        "meaning": "Morra Coreara, partenza",
+        "precision": "intero pubblicato; non fascia altimetrica della zona",
+        "sourceIds": [
+          "RE-661-ente"
+        ]
+      },
+      "forestBands": null,
+      "geometry": null,
+      "itineraries": [
+        {
+          "ref": "661",
+          "name": "Percorso 661 Cervara - Prataglia - Cervara",
+          "url": "https://www.parcomontisimbruini.it/itinerari-dettaglio.php?id_iti=174",
+          "sourceIds": [
+            "RE-661-ente"
+          ],
+          "metrics": {
+            "distanceKm": 10.7,
+            "ascentM": 400,
+            "descentM": 390,
+            "difficulty": "E",
+            "durationMinutes": 240,
+            "sourceIds": [
+              "RE-661-ente"
+            ],
+            "scope": "valori pubblicati; non raddoppiare per ritorno e non combinare versioni"
+          },
+          "gpx": {
+            "url": "https://www.parcomontisimbruini.it/gpx/661.gpx",
+            "status": "HTTP_200_XML_GPX",
+            "sourceIds": [
+              "RE-661-gpx"
+            ]
+          },
+          "trailhead": {
+            "name": "Morra Coreara, strada Cervara-Campaegli",
+            "coordinates": {
+              "lat": 41.99008,
+              "lon": 13.07269,
+              "precision": "decimali pubblicati nel link Google Maps della scheda; accuratezza posizionale non dichiarata; non centroide zona"
+            },
+            "sourceIds": [
+              "RE-661"
+            ]
+          },
+          "elevationRange": {
+            "minM": 866,
+            "maxM": 1180,
+            "sourceIds": [
+              "RE-661-ente"
+            ]
+          }
+        }
+      ],
+      "access": {
+        "text": "Accesso alla sterrata verso ostello di Prataglia da un tornante della Cervara-Campaegli; sosta auto non verificata.",
+        "parkingCoordinates": null,
+        "manager": "Ente Parco Monti Simbruini",
+        "sourceIds": [
+          "RE-661"
+        ],
+        "parkingManager": null,
+        "roadDrivingTime": null
+      },
+      "collectionRules": null,
+      "collectionRulesResearch": {
+        "status": "lacuna_vigenza_o_completezza",
+        "sourceIds": [
+          "RE-simbruini-regolamenti"
+        ],
+        "note": "La consultazione non consente di stabilire un permesso di raccolta per ogni fondo o sottozona. Nessuna estensione automatica di norme da altri parchi."
+      },
+      "naturalObservations": [
+        {
+          "subject": "Faggio nelle faggete del settore",
+          "status": "compatibilita_di_osservazione_non_presenza_certa",
+          "sourceIds": [
+            "RE-prataglia-natura"
+          ]
+        },
+        {
+          "subject": "Cervo: area faunistica presso Prataglia, non avvistamento libero garantito",
+          "status": "compatibilita_di_osservazione_non_presenza_certa",
+          "sourceIds": [
+            "RE-prataglia-natura"
+          ]
+        }
+      ],
+      "photoCandidates": [],
+      "technicalGaps": [
+        "Geometria della zona, centroide e raggio non definiti.",
+        "Campionamento Carta Forestale sul tracciato e collegamento alle specie fungine da eseguire.",
+        "Regole complete e vigenti di raccolta, diritti dei fondi e divieti temporanei da verificare con il gestore.",
+        "Foto riutilizzabili con autore e licenza non selezionate."
+      ],
+      "sourceConflicts": [
+        "ParchiLazio quick info: EE, 3 h, 7,8 km; corpo: E, 3 h, 7,753 km, +297 m, min 900 m. Sito ente: E, 4 h, 10,7 km, +400/-390 m, min 866 m. Possibili versioni diverse; non fondere automaticamente."
+      ],
+      "reviewStatus": "pronto_revisione_con_lacune_esplicite",
+      "integrationApproved": false
+    },
+    {
+      "id": "gennaro-roccagiovine",
+      "name": "Monte Gennaro da Roccagiovine",
+      "municipalities": [
+        "Roccagiovine"
+      ],
+      "province": "Roma / RM",
+      "administrativeScopeNote": "Comuni di riferimento del giro, non perimetro GIS completo della zona.",
+      "administrativeSourceIds": [
+        "RE-305",
+        "RE-305"
+      ],
+      "description": {
+        "text": "Partire dal paese e seguire la salita fino a Campitello e al Pratone. Grandi alberi e conche carsiche danno al giro un interesse autonomo anche senza proseguire fino alla cima.",
+        "status": "interpretazione_editoriale",
+        "sourceIds": [
+          "RE-305"
+        ]
+      },
+      "habitat": {
+        "text": "Faggi e aceri di monte tra Campitello e Pratone; prati carsici con doline e inghiottitoi.",
+        "status": "documentato_con_ambito_esplicito",
+        "sourceIds": [
+          "RE-305"
+        ]
+      },
+      "coordinates": null,
+      "elevation": {
+        "meters": 1018,
+        "meaning": "Pratone, punto intermedio",
+        "precision": "intero pubblicato; non fascia altimetrica della zona",
+        "sourceIds": [
+          "RE-305"
+        ]
+      },
+      "forestBands": null,
+      "geometry": null,
+      "itineraries": [
+        {
+          "ref": "305",
+          "name": "CAI 305 Roccagiovine - Monte Gennaro",
+          "url": "https://www.parchilazio.it/montilucretili-schede-18056-305_roccagiovine_monte_gennaro_cai",
+          "sourceIds": [
+            "RE-305"
+          ],
+          "metrics": {
+            "distanceKm": 10,
+            "ascentM": 850,
+            "descentM": 700,
+            "difficulty": "E",
+            "durationMinutes": 210,
+            "sourceIds": [
+              "RE-305"
+            ],
+            "scope": "valori pubblicati; non raddoppiare per ritorno e non combinare versioni"
+          },
+          "gpx": {
+            "url": null,
+            "status": "non_trovato_nella_scheda",
+            "sourceIds": [
+              "RE-305"
+            ]
+          },
+          "trailhead": {
+            "name": "Parcheggio in ingresso a Roccagiovine",
+            "coordinates": {
+              "lat": 42.052437,
+              "lon": 12.894007,
+              "precision": "decimali pubblicati nel link Google Maps della scheda; accuratezza posizionale non dichiarata; non centroide zona"
+            },
+            "sourceIds": [
+              "RE-305"
+            ]
+          },
+          "elevationRange": null
+        }
+      ],
+      "access": {
+        "text": "La scheda indica il parcheggio in ingresso al paese, senza capienza o gestore.",
+        "parkingCoordinates": null,
+        "manager": "Ente Parco Monti Lucretili",
+        "sourceIds": [
+          "RE-305"
+        ],
+        "parkingManager": null,
+        "roadDrivingTime": null
+      },
+      "collectionRules": null,
+      "collectionRulesResearch": {
+        "status": "lacuna_vigenza_o_completezza",
+        "sourceIds": [
+          "RE-lucretili-regolamento"
+        ],
+        "note": "La consultazione non consente di stabilire un permesso di raccolta per ogni fondo o sottozona. Nessuna estensione automatica di norme da altri parchi."
+      },
+      "naturalObservations": [
+        {
+          "subject": "Grandi faggi presso Campitello",
+          "status": "compatibilita_di_osservazione_non_presenza_certa",
+          "sourceIds": [
+            "RE-305"
+          ]
+        },
+        {
+          "subject": "Acero di monte lungo il percorso",
+          "status": "compatibilita_di_osservazione_non_presenza_certa",
+          "sourceIds": [
+            "RE-305"
+          ]
+        },
+        {
+          "subject": "Doline e inghiottitoi al Pratone",
+          "status": "compatibilita_di_osservazione_non_presenza_certa",
+          "sourceIds": [
+            "RE-305"
+          ]
+        }
+      ],
+      "photoCandidates": [],
+      "technicalGaps": [
+        "Geometria della zona, centroide e raggio non definiti.",
+        "Campionamento Carta Forestale sul tracciato e collegamento alle specie fungine da eseguire.",
+        "Regole complete e vigenti di raccolta, diritti dei fondi e divieti temporanei da verificare con il gestore.",
+        "Foto riutilizzabili con autore e licenza non selezionate.",
+        "GPX non presente nella scheda letta; KML disponibile. Nessuna conversione o geometria inventata."
+      ],
+      "sourceConflicts": [],
+      "reviewStatus": "pronto_revisione_con_lacune_esplicite",
+      "integrationApproved": false
+    }
+  ],
+  "sources": [
+    {
+      "id": "RE-501",
+      "url": "https://www.parchilazio.it/castelliromani-schede-18117-501_frascati_croce_di_tuscolo_cai",
+      "title": "CAI 501 Frascati - Croce di Tuscolo",
+      "entity": "Regione Lazio / ParchiLazio",
+      "consultedAt": "2026-10-19",
+      "accessStatus": "letto",
+      "evidence": "Scheda di itinerario letta: partenza, descrizione, dati tecnici e collegamenti. Per 501 i dati tecnici eventualmente conflittuali sono riportati nelle lacune del candidato."
+    },
+    {
+      "id": "RE-509",
+      "url": "https://www.parchilazio.it/castelliromani-schede-17961-509_circuito_delle_faete_di_rocca_di_papa_cai",
+      "title": "CAI 509 Circuito delle Faete di Rocca di Papa",
+      "entity": "Regione Lazio / ParchiLazio",
+      "consultedAt": "2026-10-19",
+      "accessStatus": "letto",
+      "evidence": "Scheda di itinerario letta: partenza, descrizione, dati tecnici e collegamenti. Per 509 i dati tecnici eventualmente conflittuali sono riportati nelle lacune del candidato."
+    },
+    {
+      "id": "RE-511b",
+      "url": "https://www.parchilazio.it/castelliromani-schede-18037-511b_fontana_tempesta_nemi_cai",
+      "title": "CAI 511B Fontana Tempesta-Nemi",
+      "entity": "Regione Lazio / ParchiLazio",
+      "consultedAt": "2026-10-19",
+      "accessStatus": "letto",
+      "evidence": "Scheda di itinerario letta: partenza, descrizione, dati tecnici e collegamenti. Per 511b i dati tecnici eventualmente conflittuali sono riportati nelle lacune del candidato."
+    },
+    {
+      "id": "RE-504",
+      "url": "https://www.parchilazio.it/castelliromani-schede-18053-504_rocca_priora_bosco_del_cerquone_cai",
+      "title": "CAI 504 Rocca Priora - Bosco del Cerquone",
+      "entity": "Regione Lazio / ParchiLazio",
+      "consultedAt": "2026-10-19",
+      "accessStatus": "letto",
+      "evidence": "Scheda di itinerario letta: partenza, descrizione, dati tecnici e collegamenti. Per 504 i dati tecnici eventualmente conflittuali sono riportati nelle lacune del candidato."
+    },
+    {
+      "id": "RE-672c",
+      "url": "https://www.parchilazio.it/parcomontisimbruini-schede-1469-percorso_672c_livata_colle_cernale_tufali_livata",
+      "title": "Percorso 672c Livata - I Tufai - Valle delle Mele - Livata",
+      "entity": "Regione Lazio / ParchiLazio",
+      "consultedAt": "2026-10-19",
+      "accessStatus": "letto",
+      "evidence": "Scheda di itinerario letta: partenza, descrizione, dati tecnici e collegamenti. Per 672c i dati tecnici eventualmente conflittuali sono riportati nelle lacune del candidato."
+    },
+    {
+      "id": "RE-661",
+      "url": "https://www.parchilazio.it/parcomontisimbruini-schede-1458-percorso_661_cervara_prataglia_cervara",
+      "title": "Percorso 661 Cervara - Prataglia - Cervara",
+      "entity": "Regione Lazio / ParchiLazio",
+      "consultedAt": "2026-10-19",
+      "accessStatus": "letto",
+      "evidence": "Scheda di itinerario letta: partenza, descrizione, dati tecnici e collegamenti. Per 661 i dati tecnici eventualmente conflittuali sono riportati nelle lacune del candidato."
+    },
+    {
+      "id": "RE-305",
+      "url": "https://www.parchilazio.it/montilucretili-schede-18056-305_roccagiovine_monte_gennaro_cai",
+      "title": "CAI 305 Roccagiovine - Monte Gennaro",
+      "entity": "Regione Lazio / ParchiLazio",
+      "consultedAt": "2026-10-19",
+      "accessStatus": "letto",
+      "evidence": "Scheda di itinerario letta: partenza, descrizione, dati tecnici e collegamenti. Per 305 i dati tecnici eventualmente conflittuali sono riportati nelle lacune del candidato."
+    },
+    {
+      "id": "RE-672c-ente",
+      "url": "https://www.parcomontisimbruini.it/itinerari-dettaglio.php?id_iti=370",
+      "title": "Percorso 672c",
+      "entity": "Ente Parco Monti Simbruini",
+      "consultedAt": "2026-10-19",
+      "accessStatus": "letto",
+      "evidence": "Anello da Monte Livata, comune Subiaco; 5,4 km, 2 ore, T, salita 290 m, discesa 210 m; quote 1331–1446 m. Collegamento GPX pubblicato."
+    },
+    {
+      "id": "RE-661-ente",
+      "url": "https://www.parcomontisimbruini.it/itinerari-dettaglio.php?id_iti=174",
+      "title": "Percorso 661",
+      "entity": "Ente Parco Monti Simbruini",
+      "consultedAt": "2026-10-19",
+      "accessStatus": "letto",
+      "evidence": "Anello Cervara-Prataglia; 10,7 km, 4 ore, E, +400/-390 m; quote 866–1180 m; partenza Morra Coreara 1110 m. GPX pubblicato."
+    },
+    {
+      "id": "RE-tuscolo-natura",
+      "url": "https://www.tuscolo.org/la-natura/",
+      "title": "La natura",
+      "entity": "Parco archeologico culturale di Tuscolo / Comunità montana Castelli Romani e Prenestini",
+      "consultedAt": "2026-10-19",
+      "accessStatus": "letto",
+      "evidence": "Il versante nord verso Frascati e Monte Porzio ospita roverella, cerro e acero campestre; sottobosco con pungitopo, edera e asparago. Piccolo castagneto presso gli scavi."
+    },
+    {
+      "id": "RE-castelli-vegetazione",
+      "url": "https://www.parcocastelliromani.it/s/content/92003020580/1655729399.8254",
+      "title": "La vegetazione del Parco",
+      "entity": "Ente Parco Castelli Romani",
+      "consultedAt": "2026-10-19",
+      "accessStatus": "letto",
+      "evidence": "Castagneti diffusi; lembi residuali di foresta originaria anche sulle coste di Nemi e sulla sommità di Monte Cavo. A Monte Cavo sopravvivono pochi faggi grandi e vecchi."
+    },
+    {
+      "id": "RE-cerquone-natura",
+      "url": "https://www.parchilazio.it/schede-730-il_bosco_del_cerquone",
+      "title": "Il bosco del Cerquone",
+      "entity": "Regione Lazio / ParchiLazio",
+      "consultedAt": "2026-10-19",
+      "accessStatus": "letto",
+      "evidence": "Rocca Priora: bosco mesofilo residuale a querce, tigli e aceri; farnia, cerro, roverella, acero campestre, nocciolo. Vicina Doganella; il testo cita la designazione ZSC."
+    },
+    {
+      "id": "RE-livata-faggete",
+      "url": "https://www.parcomontisimbruini.it/iniziativa.php?id=113249",
+      "title": "Anello di Campaegli e Campo Buffone",
+      "entity": "Ente Parco Monti Simbruini",
+      "consultedAt": "2026-10-19",
+      "accessStatus": "letto",
+      "evidence": "Evento storico: descrive la partenza da Livata tra boschi, radure e faggete verso Campaegli. Usato solo come contesto locale del bosco, non come scheda di percorso 672c."
+    },
+    {
+      "id": "RE-prataglia-natura",
+      "url": "https://www.parchilazio.it/parcomontisimbruini-schede-29805-via_dei_lupi_tappa_4_riofreddo_cervara_di_roma",
+      "title": "Via dei Lupi, tappa 4 Riofreddo-Cervara",
+      "entity": "Regione Lazio / ParchiLazio",
+      "consultedAt": "2026-10-19",
+      "accessStatus": "letto",
+      "evidence": "La descrizione locale riporta alternanza di radure e faggete e passaggio presso rifugio di Prataglia e area faunistica del cervo. Non utilizzata come itinerario perché attraversa anche Abruzzo."
+    },
+    {
+      "id": "RE-simbruini-montano",
+      "url": "https://www.parcomontisimbruini.it/pagina.php?id=19",
+      "title": "Ambiente Montano – Flora",
+      "entity": "Ente Parco Monti Simbruini",
+      "consultedAt": "2026-10-19",
+      "accessStatus": "letto",
+      "evidence": "Ambiente montano del parco: faggete e comunità miste con acero di monte; nello strato arbustivo agrifoglio e ginepro. Informazione a scala parco, non osservazione puntuale del sentiero."
+    },
+    {
+      "id": "RE-castelli-raccolta",
+      "url": "https://www.parcocastelliromani.it/s/content/92003020580/1662037925.5863",
+      "title": "Raccolta funghi, cosa c’è da sapere",
+      "entity": "Ente Parco Castelli Romani",
+      "consultedAt": "2026-10-19",
+      "accessStatus": "letto",
+      "evidence": "Pagina informativa letta: formazione micologica almeno 14 ore e documenti/contributo richiesti; cita modifica regionale 2020. Non dimostra da sola assenza di divieti, diritti fondiari o deroghe locali nel 2026."
+    },
+    {
+      "id": "RE-simbruini-regolamenti",
+      "url": "https://www.parcomontisimbruini.it/pagina.php?id=35",
+      "title": "Regolamenti",
+      "entity": "Ente Parco Monti Simbruini",
+      "consultedAt": "2026-10-19",
+      "accessStatus": "letto",
+      "evidence": "La pagina dichiara che i regolamenti adottati dall’Ente sono in via di approvazione regionale; elenca delibera CS 58/2015. Vigenza e applicabilità alla raccolta non concluse."
+    },
+    {
+      "id": "RE-lucretili-regolamento",
+      "url": "https://parcolucretili.it/wp-content/uploads/allegati_pdf/regolamento_aree_naturali_protette.pdf",
+      "title": "Regolamento del Parco – PDF",
+      "entity": "Ente Parco Monti Lucretili",
+      "consultedAt": "2026-10-19",
+      "accessStatus": "aperto_PDF_non_estratto_non_usato_per_norme",
+      "evidence": "PDF accessibile, 39 pagine; estrazione web priva di testo. Nessuna regola di raccolta ricavata."
+    },
+    {
+      "id": "RE-501-gpx",
+      "url": "https://www.parchilazio.it/documenti/schede/501_frascati_croce_di_tuscolo.gpx",
+      "title": "CAI 501 Frascati - Croce di Tuscolo – GPX",
+      "entity": "Ente Parco Castelli Romani",
+      "consultedAt": "2026-10-19",
+      "accessStatus": "letto_XML_GPX_HTTP_200",
+      "evidence": "Risposta HTTP 200; documento XML con elemento gpx. Verifica di disponibilità, non validazione geometrica né prova della percorribilità."
+    },
+    {
+      "id": "RE-509-gpx",
+      "url": "https://www.parchilazio.it/documenti/schede/509.gpx",
+      "title": "CAI 509 Circuito delle Faete di Rocca di Papa – GPX",
+      "entity": "Ente Parco Castelli Romani",
+      "consultedAt": "2026-10-19",
+      "accessStatus": "letto_XML_GPX_HTTP_200",
+      "evidence": "Risposta HTTP 200; documento XML con elemento gpx. Verifica di disponibilità, non validazione geometrica né prova della percorribilità."
+    },
+    {
+      "id": "RE-511b-gpx",
+      "url": "https://www.parchilazio.it/documenti/schede/511b_fontana_tempesta_nemi.gpx",
+      "title": "CAI 511B Fontana Tempesta-Nemi – GPX",
+      "entity": "Ente Parco Castelli Romani",
+      "consultedAt": "2026-10-19",
+      "accessStatus": "letto_XML_GPX_HTTP_200",
+      "evidence": "Risposta HTTP 200; documento XML con elemento gpx. Verifica di disponibilità, non validazione geometrica né prova della percorribilità."
+    },
+    {
+      "id": "RE-504-gpx",
+      "url": "https://www.parchilazio.it/documenti/schede/504_rocca_priora_bosco_del_cerquone.gpx",
+      "title": "CAI 504 Rocca Priora - Bosco del Cerquone – GPX",
+      "entity": "Ente Parco Castelli Romani",
+      "consultedAt": "2026-10-19",
+      "accessStatus": "letto_XML_GPX_HTTP_200",
+      "evidence": "Risposta HTTP 200; documento XML con elemento gpx. Verifica di disponibilità, non validazione geometrica né prova della percorribilità."
+    },
+    {
+      "id": "RE-672c-gpx",
+      "url": "https://www.parcomontisimbruini.it/gpx/672c.gpx",
+      "title": "Percorso 672c Livata - I Tufai - Valle delle Mele - Livata – GPX",
+      "entity": "Ente Parco Monti Simbruini",
+      "consultedAt": "2026-10-19",
+      "accessStatus": "letto_XML_GPX_HTTP_200",
+      "evidence": "Risposta HTTP 200; documento XML con elemento gpx. Verifica di disponibilità, non validazione geometrica né prova della percorribilità."
+    },
+    {
+      "id": "RE-661-gpx",
+      "url": "https://www.parcomontisimbruini.it/gpx/661.gpx",
+      "title": "Percorso 661 Cervara - Prataglia - Cervara – GPX",
+      "entity": "Ente Parco Monti Simbruini",
+      "consultedAt": "2026-10-19",
+      "accessStatus": "letto_XML_GPX_HTTP_200",
+      "evidence": "Risposta HTTP 200; documento XML con elemento gpx. Verifica di disponibilità, non validazione geometrica né prova della percorribilità."
+    }
+  ]
+}

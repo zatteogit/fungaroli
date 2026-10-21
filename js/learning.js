@@ -1,3 +1,4 @@
+import {openModal} from './modal-flow.js';
 // Lessico di campo e spiegazioni contestuali: i link restano utilizzabili senza popover.
 import {buildGlossaryIndex,relatedGlossaryTerms,linkableGlossaryTerm,normalizeGlossaryScope,GLOSSARY_CONTEXTS} from './glossary-context.js';
 import { openEntitySheet } from './entity-sheet.js';
@@ -17,7 +18,7 @@ export function difficultyLink(code, label) {
 
 const sourceLinks = sources => (sources || []).filter(s => /^https?:\/\//.test(s?.url || '')).map(s => `<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)}</a>`).join(' · ');
 const imagesFor=id=>(ILLUSTRATIONS[id]?.illustrations||[]).filter(m=>m?.alt&&/^(?:https:\/\/[^\s"'<>]+|\/?assets\/[a-zA-Z0-9_/-]+\.(?:svg|webp|png|jpe?g))$/.test(m.file||''));
-const imageCredit=m=>`${m.generated?'Schema generato':m.kind==='diagram'?'Schema':'Foto'}: ${esc(m.author)} · ${/^https:\/\//.test(m.licenseUrl||'')?`<a href="${esc(m.licenseUrl)}" target="_blank" rel="noopener noreferrer">${esc(m.license)}</a>`:esc(m.license)}${/^https:\/\//.test(m.page||'')?` · <a href="${esc(m.page)}" target="_blank" rel="noopener noreferrer">Originale</a>`:''}`;
+const imageCredit=m=>`${m.generated?'Schema generato':m.kind==='diagram'?'Schema':'Foto'}: ${esc(m.author)} · ${/^https:\/\//.test(m.licenseUrl||'')?`<a href="${esc(m.licenseUrl)}" target="_blank" rel="noopener noreferrer">${esc(m.license)}</a>`:esc(m.license)}${/^https:\/\//.test(m.page||'')?` · <a href="${esc(m.page)}" target="_blank" rel="noopener noreferrer">Originale</a>`:''}${m.note?` · ${esc(m.note)}`:''}`;
 function termImages(id) {
   const images=imagesFor(id);
   if(!images.length)return '';
@@ -25,27 +26,43 @@ function termImages(id) {
     <button type="button" class="learning-image ${m.kind==='diagram'?'learning-diagram':''}" data-learning-image="${esc(id)}" data-image-index="${i}" aria-label="Ingrandisci: ${esc(m.alt)}"><img data-src="${esc(ASSET(m.file))}" alt="${esc(m.alt)}" loading="lazy" decoding="async"><span aria-hidden="true">⤢</span></button>
     <figcaption><span>${esc(m.caption)}</span><small>${imageCredit(m)}</small></figcaption></figure>`).join('')}</div>`;
 }
-function termBody(t, legend = false, context=t.category) {
+function termBody(t, legend = false, context=t.category, categoryShown = false) {
   const related=relatedGlossaryTerms(aliasMap,TERMS,t,context);
   if(legend && t.id.startsWith('difficolta-')) return `<div class="difficulty-legend" aria-label="Legenda delle difficoltà">${Object.values(difficultyIds).map(id => TERMS.find(x => x.id === id)).filter(Boolean).map(x => `<div${x.id === t.id ? ' class="current"' : ''}><b>${esc(x.term)}</b><p>${esc(x.definition)}</p></div>`).join('')}</div><p class="learning-observe">${esc(t.observe)}</p><p class="small muted">Sigla dalla fonte del percorso: verifica stato del sentiero, meteo, tempi e dislivelli prima di partire.</p><p class="learning-sources small muted">Fonte: ${sourceLinks(t.sources)}</p>`;
-  return `<p class="small muted learning-category">${esc(t.category)}</p><p>${esc(t.definition)}</p>${termImages(t.id)}${t.observe ? `<p class="learning-observe">${esc(t.observe)}</p>` : ''}
+  return `${categoryShown?'':`<p class="small muted learning-category">${esc(t.category)}</p>`}<p>${esc(t.definition)}</p>${termImages(t.id)}${t.observe ? `<aside class="content-observe"><b>Sul campo</b><p class="learning-observe">${esc(t.observe)}</p></aside>` : ''}
     ${related.length ? `<div class="learning-related">${related.map(x => `<a class="glossary-link" data-term="${x.id}" href="#/glossario/${x.id}">${esc(x.term)}</a>`).join('')}</div>` : ''}
     <p class="learning-sources small muted">Fonti: ${sourceLinks(t.sources)}</p>`;
 }
 
-export function renderGlossary(box, selected = '', categories = ['Funghi','Piante','Alberi','Bosco','Sentiero']) {
+export function renderGlossary(box, selected = '', categories = GLOSSARY_CONTEXTS) {
   const category = TERMS.find(t => t.id === selected)?.category || '';
-  box.innerHTML = `<label class="search-box"><input id="${box.id}-q" type="search" placeholder="Cerca una parola: volva, dislivello, micorriza…" aria-label="Cerca nel glossario" autocomplete="off"></label>
-    <div class="learning-filters" role="group" aria-label="Argomento del glossario">${['', ...categories].map(c => `<button type="button" class="chip" data-category="${c}" aria-pressed="${c === category}">${c || 'Tutto'}</button>`).join('')}</div>
+  box.innerHTML = `<div class="learning-filters" role="group" aria-label="Argomento del glossario">${['', ...categories].map(c => `<button type="button" class="chip" data-category="${c}" aria-pressed="${c === category}">${c || 'Tutto'}</button>`).join('')}</div>
+    <div class="glossary-index"><nav class="glossary-alphabet filter-rail" aria-label="Indice alfabetico"></nav></div>
     <p id="${box.id}-count" class="small muted" role="status"></p><div id="${box.id}-results" data-no-glossary></div>`;
   let current = category;
+  const initial = t => normalizeLearning(t.term).charAt(0).toUpperCase();
   const paint = () => {
-    const words = normalizeLearning(box.querySelector(`#${box.id}-q`).value).split(/\s+/).filter(Boolean);
-    const hits = TERMS.filter(t => categories.includes(t.category) && (!current || t.category === current) && words.every(w => normalizeLearning([t.term,...t.aliases,t.definition,t.observe].join(' ')).includes(w))).sort((a,b) => a.term.localeCompare(b.term, 'it'));
+    const hits = TERMS.filter(t => categories.includes(t.category) && (!current || t.category === current)).sort((a,b) => a.term.localeCompare(b.term, 'it'));
+    const letters = new Set(hits.map(initial));
+    box.querySelector('.glossary-alphabet').innerHTML = Array.from('ABCDEFGHIJKLMNOPQRSTUVWXYZ', letter => `<button type="button" class="glossary-letter-link" data-letter="${letter}" aria-label="Vai alla lettera ${letter}"${letters.has(letter) ? '' : ' disabled'}>${letter}</button>`).join('');
     box.querySelector(`#${box.id}-count`).textContent = `${hits.length} ${hits.length === 1 ? 'voce' : 'voci'}`;
-    box.querySelector(`#${box.id}-results`).innerHTML = hits.length ? hits.map(t => `<details class="glossary-entry" id="${box.id}-term-${t.id}"${selected === t.id ? ' open' : ''}><summary><span><small>${esc(t.category)}</small><b>${esc(t.term)}</b></span><span aria-hidden="true">+</span></summary><div>${termBody(t, true)}</div></details>`).join('') : '<p class="notice">Nessuna voce corrisponde. Prova una parola più breve o un altro argomento.</p>';
+    let previous = '';
+    box.querySelector(`#${box.id}-results`).innerHTML = hits.length ? hits.map(t => {
+      const letter = initial(t), heading = letter !== previous ? `<h2 class="glossary-letter" id="${box.id}-letter-${letter}" tabindex="-1">${letter}</h2>` : '';
+      previous = letter;
+      return `${heading}<details class="glossary-entry" name="glossary-${box.id}" id="${box.id}-term-${t.id}"${selected === t.id ? ' open' : ''}><summary><span><small>${esc(t.category)}</small><b>${esc(t.term)}</b></span><span aria-hidden="true">+</span></summary><div>${termBody(t, true, t.category, true)}</div></details>`;
+    }).join('') : '<p class="notice">Nessuna voce in questo argomento.</p>';
   };
-  box.querySelector(`#${box.id}-q`).addEventListener('input', paint);
+  box.querySelector('.glossary-alphabet').addEventListener('click', e => {
+    const button = e.target.closest('[data-letter]');
+    if (!button || button.disabled) return;
+    const heading = box.querySelector(`#${box.id}-letter-${button.dataset.letter}`);
+    if (!heading) return;
+    box.querySelectorAll('[data-letter]').forEach(b => b.removeAttribute('aria-current'));
+    button.setAttribute('aria-current', 'location');
+    heading.focus({preventScroll:true});
+    heading.scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'});
+  });
   box.querySelectorAll('[data-category]').forEach(b => b.onclick = () => { current = b.dataset.category; selected = ''; box.querySelectorAll('[data-category]').forEach(x => x.setAttribute('aria-pressed',String(x === b))); paint(); });
   paint();
   // la voce richiesta (#/glossario/<voce>) la porta in vista routeNow, nello stesso passo della transizione: niente scatto dopo
@@ -69,9 +86,9 @@ export function enhanceGlossary(root) {
   const nodes = []; while(walker.nextNode()) nodes.push(walker.currentNode);
   // ogni parola si collega una volta sola nella pagina, e mai due link a ridosso: è un'app, non un ipertesto
   // il testo dentro una sezione chiusa ha il suo conteggio: la prima occorrenza deve essere quella che si vede
-  const linked = new Set([...root.querySelectorAll('a.glossary-link')].filter((a) => !a.closest('details:not([open])')).map((a) => a.dataset.term));
+  const linked = new Set([...root.querySelectorAll('a.glossary-link')].filter((a) => !a.classList.contains('glossary-heading')&&!a.closest('details:not([open])')).map((a) => a.dataset.term));
   const hidden = new Map();
-  const seenFor = (node) => { const d = node.parentElement.closest('details:not([open])'); if (!d) return linked; if (!hidden.has(d)) hidden.set(d, new Set([...d.querySelectorAll('a.glossary-link')].map((a) => a.dataset.term))); return hidden.get(d); };
+  const seenFor = (node) => { const d = node.parentElement.closest('details:not([open])'); if (!d) return linked; if (!hidden.has(d)) hidden.set(d, new Set([...d.querySelectorAll('a.glossary-link:not(.glossary-heading)')].map((a) => a.dataset.term))); return hidden.get(d); };
   for(const node of nodes) {
     const seen = seenFor(node);
     const scope=glossaryScopeOf(node.parentElement.closest('[data-glossary]'));
@@ -95,6 +112,7 @@ export function enhanceGlossary(root) {
 
 function closePanel(restore = true) {
   if (!active) return;
+  if (active.hasAttribute('data-modal-suspended')) return;
   const panel = active; active = null;
   if(panel.tagName === 'DIALOG') panel.close(); else if(panel.matches(':popover-open')) panel.hidePopover();
   opener?.setAttribute('aria-expanded','false');
@@ -111,7 +129,7 @@ function ensurePanel(mobile) {
   panel.addEventListener('click', e => {
     if(e.target.closest('dialog.lb'))return;
     if(e.target.closest('[data-learning-close]')) closePanel();
-    else if(e.target.closest('a:not(.glossary-link)')) closePanel(false);
+    else if(e.target.closest('a:not(.glossary-link):not([data-entity]):not(.species-link):not(.tree-link)')) closePanel(false);
     else if(mobile && e.target === panel) { const r=panel.getBoundingClientRect(); if(e.clientX<r.left || e.clientX>r.right || e.clientY<r.top || e.clientY>r.bottom) closePanel(); }
   });
   const dismissed = () => { if(active === panel) { active=null; opener?.setAttribute('aria-expanded','false'); const focus=document.activeElement; if(opener?.isConnected && (focus===document.body || panel.contains(focus))) opener.focus({preventScroll:true}); } };
@@ -136,7 +154,7 @@ function openPanel(link, title, body, href, label, context) {
   panel.innerHTML = `<header><h2 id="${panel.id}-title">${esc(title)}</h2><button type="button" class="icon-btn" data-learning-close aria-label="Chiudi la spiegazione">×</button></header><div class="learning-panel-body">${body}</div><footer><a class="btn ghost" href="${esc(href)}">${esc(label)} →</a></footer>`;
   panel.scrollTop = 0;
   opener?.setAttribute('aria-expanded','true'); opener?.setAttribute('aria-controls',panel.id);
-  if(mobile) {if(!panel.open)panel.showModal();else panel.querySelector('[data-learning-close]').focus({preventScroll:true});}
+  if(mobile) {if(!panel.open)openModal(panel);else panel.querySelector('[data-learning-close]').focus({preventScroll:true});}
   else {
     if(!panel.matches(':popover-open'))panel.showPopover();
     positionPopover(panel);

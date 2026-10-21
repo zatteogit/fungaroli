@@ -1,0 +1,475 @@
+{
+  "claims": [
+    {
+      "itemId": "martora",
+      "field": "observe",
+      "index": 0,
+      "claim": "Il mantello bruno scuro contrasta con la macchia sulla gola e sul petto, spesso giallastra.",
+      "sourceId": "CE26-PNALM-MARTORA",
+      "locator": "Dimensioni",
+      "evidence": "Il passo descrive mantello bruno e pettorina giallo chiaro o color tuorlo.",
+      "evidenceType": "parafrasi del passo; non citazione letterale"
+    },
+    {
+      "itemId": "martora",
+      "field": "habitat",
+      "index": 0,
+      "claim": "Frequenta boschi di conifere, latifoglie e misti, con preferenza per foreste estese ad alto fusto.",
+      "sourceId": "CE26-PNALM-MARTORA",
+      "locator": "Habitat",
+      "evidence": "La scheda elenca le tre tipologie forestali e la preferenza per boschi ampi.",
+      "evidenceType": "parafrasi del passo; non citazione letterale"
+    },
+    {
+      "itemId": "martora",
+      "field": "behavior",
+      "index": 0,
+      "claim": "Conduce vita solitaria e difende il proprio territorio.",
+      "sourceId": "CE26-PNALM-MARTORA",
+      "locator": "Vita",
+      "evidence": "Sono documentate solitudine e difesa territoriale.",
+      "evidenceType": "parafrasi del passo; non citazione letterale"
+    },
+    {
+      "itemId": "martora",
+      "field": "ecology",
+      "index": 0,
+      "claim": "La dieta comprende piccoli mammiferi, uccelli e uova, rettili, invertebrati e frutta.",
+      "sourceId": "CE26-PNALM-MARTORA",
+      "locator": "Cosa mangia",
+      "evidence": "Il testo descrive una dieta da predatore generalista con integrazione vegetale.",
+      "evidenceType": "parafrasi del passo; non citazione letterale"
+    },
+    {
+      "itemId": "martora",
+      "field": "summary",
+      "claim": "Un piccolo carnivoro legato ai boschi, con una macchia chiara sulla gola.",
+      "sourceId": "CE26-PNALM-MARTORA",
+      "locator": "Sintesi dei passi documentati sotto",
+      "evidence": "Sintesi senza ulteriori caratteri rispetto ai claim del record.",
+      "evidenceType": "sintesi"
+    },
+    {
+      "itemId": "faina",
+      "field": "observe",
+      "index": 0,
+      "claim": "Ha pelo marroncino e una macchia generalmente bianca dal collo verso il ventre.",
+      "sourceId": "CE26-PNALM-FAINA",
+      "locator": "Dimensioni",
+      "evidence": "La fonte descrive mantello marroncino e macchia bianca, più raramente giallognola.",
+      "evidenceType": "parafrasi del passo; non citazione letterale"
+    },
+    {
+      "itemId": "faina",
+      "field": "habitat",
+      "index": 0,
+      "claim": "Vive in boschi, cespuglieti e ambienti rurali, anche presso gli abitati.",
+      "sourceId": "CE26-PNALM-FAINA",
+      "locator": "Habitat",
+      "evidence": "Sono elencate zone forestali, cespugliate, rurali e luoghi abitati.",
+      "evidenceType": "parafrasi del passo; non citazione letterale"
+    },
+    {
+      "itemId": "faina",
+      "field": "behavior",
+      "index": 0,
+      "claim": "È attiva soprattutto di notte; di giorno usa cavità e altri rifugi, comprese cataste di legna.",
+      "sourceId": "CE26-PNALM-FAINA",
+      "locator": "Vita",
+      "evidence": "Il passo indica abitudini notturne e rifugi diurni in cavità o strutture rurali.",
+      "evidenceType": "parafrasi del passo; non citazione letterale"
+    },
+    {
+      "itemId": "faina",
+      "field": "ecology",
+      "index": 0,
+      "claim": "Mangia piccoli vertebrati e insetti, ma anche frutta e bacche.",
+      "sourceId": "CE26-PNALM-FAINA",
+      "locator": "Cosa mangia",
+      "evidence": "La dieta comprende prede animali e risorse vegetali.",
+      "evidenceType": "parafrasi del passo; non citazione letterale"
+    },
+    {
+      "itemId": "faina",
+      "field": "summary",
+      "claim": "Un mustelide notturno che frequenta boschi e ambienti rurali.",
+      "sourceId": "CE26-PNALM-FAINA",
+      "locator": "Sintesi dei passi documentati sotto",
+      "evidence": "Sintesi senza ulteriori caratteri rispetto ai claim del record.",
+      "evidenceType": "sintesi"
+    },
+    {
+      "itemId": "donnola",
+      "field": "observe",
+      "index": 0,
+      "claim": "Il corpo è slanciato, con pelo corto fulvo sul dorso e chiaro sul ventre; la coda è relativamente corta.",
+      "sourceId": "CE26-PNALM-DONNOLA",
+      "locator": "Dimensioni",
+      "evidence": "La scheda descrive corpo snello, pelo raso, dorso fulvo e ventre biancastro.",
+      "evidenceType": "parafrasi del passo; non citazione letterale"
+    },
+    {
+      "itemId": "donnola",
+      "field": "habitat",
+      "index": 0,
+      "claim": "Frequenta boschi, cespuglieti, coltivi e praterie, anche in montagna.",
+      "sourceId": "CE26-PNALM-DONNOLA",
+      "locator": "Habitat",
+      "evidence": "Il passo elenca ambienti boschivi, agricoli e praterie di alta quota.",
+      "evidenceType": "parafrasi del passo; non citazione letterale"
+    },
+    {
+      "itemId": "donnola",
+      "field": "behavior",
+      "index": 0,
+      "claim": "È agile nella corsa e nell’arrampicata e sa nuotare.",
+      "sourceId": "CE26-PNALM-DONNOLA",
+      "locator": "Vita",
+      "evidence": "La fonte documenta tutte e tre le capacità motorie.",
+      "evidenceType": "parafrasi del passo; non citazione letterale"
+    },
+    {
+      "itemId": "donnola",
+      "field": "ecology",
+      "index": 0,
+      "claim": "Preda piccoli mammiferi e uccelli e può integrare la dieta con altri vertebrati e insetti.",
+      "sourceId": "CE26-PNALM-DONNOLA",
+      "locator": "Cosa mangia",
+      "evidence": "È descritta come predatore generalista con dieta animale diversificata.",
+      "evidenceType": "parafrasi del passo; non citazione letterale"
+    },
+    {
+      "itemId": "donnola",
+      "field": "summary",
+      "claim": "Corpo snello e coda corta per un piccolo predatore di ambienti diversi.",
+      "sourceId": "CE26-PNALM-DONNOLA",
+      "locator": "Sintesi dei passi documentati sotto",
+      "evidence": "Sintesi senza ulteriori caratteri rispetto ai claim del record.",
+      "evidenceType": "sintesi"
+    },
+    {
+      "itemId": "moscardino",
+      "field": "observe",
+      "index": 0,
+      "claim": "Il dorso è bruno aranciato, il ventre giallastro e la coda è ricoperta da pelo fitto.",
+      "sourceId": "CE26-PNALM-MOSCARDINO",
+      "locator": "Dimensioni",
+      "evidence": "Sono documentati i colori dorsale e ventrale e la pelliccia della coda.",
+      "evidenceType": "parafrasi del passo; non citazione letterale"
+    },
+    {
+      "itemId": "moscardino",
+      "field": "habitat",
+      "index": 0,
+      "claim": "Frequenta siepi e margini del bosco, ma anche boschi con sottobosco sviluppato.",
+      "sourceId": "CE26-PNALM-MOSCARDINO",
+      "locator": "Habitat",
+      "evidence": "La fonte indica ambienti di transizione ricchi di siepi e aree boscate con sottobosco.",
+      "evidenceType": "parafrasi del passo; non citazione letterale"
+    },
+    {
+      "itemId": "moscardino",
+      "field": "ecology",
+      "index": 0,
+      "claim": "Si nutre soprattutto di fiori e frutti, comprese le nocciole; occasionalmente consuma insetti e uova.",
+      "sourceId": "CE26-PNALM-MOSCARDINO",
+      "locator": "Cosa mangia",
+      "evidence": "La dieta è prevalentemente vegetariana con integrazioni animali.",
+      "evidenceType": "parafrasi del passo; non citazione letterale"
+    },
+    {
+      "itemId": "moscardino",
+      "field": "summary",
+      "claim": "Un piccolo roditore di siepi e margini boschivi, dalla dieta soprattutto vegetale.",
+      "sourceId": "CE26-PNALM-MOSCARDINO",
+      "locator": "Sintesi dei passi documentati sotto",
+      "evidence": "Sintesi senza ulteriori caratteri rispetto ai claim del record.",
+      "evidenceType": "sintesi"
+    },
+    {
+      "itemId": "quercino",
+      "field": "observe",
+      "index": 0,
+      "claim": "Il corpo misura circa 10–17 centimetri, cui si aggiunge una coda di 9–12 centimetri.",
+      "sourceId": "CE26-PNALM-QUERCINO",
+      "locator": "Dimensioni",
+      "evidence": "Il passo riporta separatamente lunghezza corporea e della coda.",
+      "evidenceType": "parafrasi del passo; non citazione letterale"
+    },
+    {
+      "itemId": "quercino",
+      "field": "habitat",
+      "index": 0,
+      "claim": "Occupa ambienti forestali diversi, dalle formazioni mediterranee ai boschi di conifere.",
+      "sourceId": "CE26-PNALM-QUERCINO",
+      "locator": "Habitat",
+      "evidence": "Sono documentate foreste mediterranee, mesofile e di conifere.",
+      "evidenceType": "parafrasi del passo; non citazione letterale"
+    },
+    {
+      "itemId": "quercino",
+      "field": "behavior",
+      "index": 0,
+      "claim": "Tra i ghiri è relativamente più legato al suolo e meno alla vita sugli alberi.",
+      "sourceId": "CE26-PNALM-QUERCINO",
+      "locator": "Habitat",
+      "evidence": "La fonte lo descrive come il gliride più terricolo e meno arboricolo.",
+      "evidenceType": "parafrasi del passo; non citazione letterale"
+    },
+    {
+      "itemId": "quercino",
+      "field": "ecology",
+      "index": 0,
+      "claim": "Mangia insetti adulti e larve, lumache e uova, oltre a frutti e noci.",
+      "sourceId": "CE26-PNALM-QUERCINO",
+      "locator": "Cosa mangia",
+      "evidence": "Il passo elenca la componente animale e quella vegetale della dieta.",
+      "evidenceType": "parafrasi del passo; non citazione letterale"
+    },
+    {
+      "itemId": "quercino",
+      "field": "summary",
+      "claim": "Un ghiro che usa anche il terreno e include molti alimenti animali nella dieta.",
+      "sourceId": "CE26-PNALM-QUERCINO",
+      "locator": "Sintesi dei passi documentati sotto",
+      "evidence": "Sintesi senza ulteriori caratteri rispetto ai claim del record.",
+      "evidenceType": "sintesi"
+    },
+    {
+      "itemId": "gatto-selvatico",
+      "field": "observe",
+      "index": 0,
+      "claim": "La coda folta ha anelli scuri e un apice nero, con estremità tronca.",
+      "sourceId": "CE26-PNALM-GATTO-SELVATICO",
+      "locator": "Dimensioni",
+      "evidence": "La scheda descrive forma della coda, anelli e punta nera.",
+      "evidenceType": "parafrasi del passo; non citazione letterale"
+    },
+    {
+      "itemId": "gatto-selvatico",
+      "field": "habitat",
+      "index": 0,
+      "claim": "È legato agli ambienti forestali, in particolare ai boschi di latifoglie.",
+      "sourceId": "CE26-PNALM-GATTO-SELVATICO",
+      "locator": "Habitat",
+      "evidence": "Il passo indica habitat forestali e protezione fornita dalla vegetazione.",
+      "evidenceType": "parafrasi del passo; non citazione letterale"
+    },
+    {
+      "itemId": "gatto-selvatico",
+      "field": "behavior",
+      "index": 0,
+      "claim": "È soprattutto crepuscolare e notturno; di giorno resta nascosto in cavità, tane o anfratti.",
+      "sourceId": "CE26-PNALM-GATTO-SELVATICO",
+      "locator": "Vita",
+      "evidence": "Sono documentati ritmo di attività e rifugi diurni.",
+      "evidenceType": "parafrasi del passo; non citazione letterale"
+    },
+    {
+      "itemId": "gatto-selvatico",
+      "field": "ecology",
+      "index": 0,
+      "claim": "Caccia soprattutto roditori e altri piccoli mammiferi, integrando la dieta anche con uccelli e invertebrati.",
+      "sourceId": "CE26-PNALM-GATTO-SELVATICO",
+      "locator": "Cosa mangia",
+      "evidence": "La fonte indica piccoli mammiferi come prede preferite e altre prede opportunistiche.",
+      "evidenceType": "parafrasi del passo; non citazione letterale"
+    },
+    {
+      "itemId": "gatto-selvatico",
+      "field": "summary",
+      "claim": "Un felino schivo legato agli habitat forestali, attivo soprattutto al crepuscolo e di notte.",
+      "sourceId": "CE26-PNALM-GATTO-SELVATICO",
+      "locator": "Sintesi dei passi documentati sotto",
+      "evidence": "Sintesi senza ulteriori caratteri rispetto ai claim del record.",
+      "evidenceType": "sintesi"
+    },
+    {
+      "itemId": "lepre-italica",
+      "field": "observe",
+      "index": 0,
+      "claim": "Ha orecchie grandi e zampe posteriori sviluppate; è molto simile alla lepre europea.",
+      "sourceId": "CE26-PNALM-LEPRE-ITALICA",
+      "locator": "Dimensioni",
+      "evidence": "La fonte descrive orecchie, arti posteriori e somiglianza con Lepus europaeus.",
+      "evidenceType": "parafrasi del passo; non citazione letterale"
+    },
+    {
+      "itemId": "lepre-italica",
+      "field": "habitat",
+      "index": 0,
+      "claim": "Frequenta paesaggi con radure, praterie, cespuglieti e boschi di latifoglie alternati.",
+      "sourceId": "CE26-PNALM-LEPRE-ITALICA",
+      "locator": "Habitat",
+      "evidence": "Il passo definisce esplicitamente la vegetazione a mosaico.",
+      "evidenceType": "parafrasi del passo; non citazione letterale"
+    },
+    {
+      "itemId": "lepre-italica",
+      "field": "behavior",
+      "index": 0,
+      "claim": "Ha abitudini notturne e di giorno si ripara nel folto della vegetazione.",
+      "sourceId": "CE26-PNALM-LEPRE-ITALICA",
+      "locator": "Vita",
+      "evidence": "La fonte indica attività dopo il tramonto e covi diurni nella vegetazione.",
+      "evidenceType": "parafrasi del passo; non citazione letterale"
+    },
+    {
+      "itemId": "lepre-italica",
+      "field": "ecology",
+      "index": 0,
+      "claim": "La dieta è erbivora e comprende diverse piante erbacee; in inverno aumenta il consumo di gemme e cortecce.",
+      "sourceId": "CE26-PNALM-LEPRE-ITALICA",
+      "locator": "Cosa mangia",
+      "evidence": "La scheda documenta dieta vegetale e variazione invernale.",
+      "evidenceType": "parafrasi del passo; non citazione letterale"
+    },
+    {
+      "itemId": "lepre-italica",
+      "field": "summary",
+      "claim": "Una lepre di paesaggi a mosaico, tra zone aperte, cespuglieti e boschi.",
+      "sourceId": "CE26-PNALM-LEPRE-ITALICA",
+      "locator": "Sintesi dei passi documentati sotto",
+      "evidence": "Sintesi senza ulteriori caratteri rispetto ai claim del record.",
+      "evidenceType": "sintesi"
+    },
+    {
+      "itemId": "aquila-reale",
+      "field": "observe",
+      "index": 0,
+      "claim": "La femmina è più grande del maschio.",
+      "sourceId": "CE26-PNALM-AQUILA-REALE",
+      "locator": "Dimensioni",
+      "evidence": "La fonte dichiara il dimorfismo nella taglia.",
+      "evidenceType": "parafrasi del passo; non citazione letterale"
+    },
+    {
+      "itemId": "aquila-reale",
+      "field": "habitat",
+      "index": 0,
+      "claim": "È associata alle creste montane elevate e poco accessibili.",
+      "sourceId": "CE26-PNALM-AQUILA-REALE",
+      "locator": "Habitat",
+      "evidence": "La scheda indica creste montane alte e inaccessibili.",
+      "evidenceType": "parafrasi del passo; non citazione letterale"
+    },
+    {
+      "itemId": "aquila-reale",
+      "field": "ecology",
+      "index": 0,
+      "claim": "Cattura piccoli mammiferi e uccelli e consuma anche resti di animali morti.",
+      "sourceId": "CE26-PNALM-AQUILA-REALE",
+      "locator": "Cosa mangia",
+      "evidence": "Sono documentate predazione e integrazione con carcasse.",
+      "evidenceType": "parafrasi del passo; non citazione letterale"
+    },
+    {
+      "itemId": "aquila-reale",
+      "field": "summary",
+      "claim": "Un grande rapace montano che si nutre di prede e anche di carcasse.",
+      "sourceId": "CE26-PNALM-AQUILA-REALE",
+      "locator": "Sintesi dei passi documentati sotto",
+      "evidence": "Sintesi senza ulteriori caratteri rispetto ai claim del record.",
+      "evidenceType": "sintesi"
+    },
+    {
+      "itemId": "ape-legnaiola",
+      "field": "observe",
+      "index": 0,
+      "claim": "Il corpo è nero e peloso, con riflessi violacei particolarmente evidenti sulle ali.",
+      "sourceId": "CE26-FORESTAS-XYLO",
+      "locator": "Identificazione",
+      "evidence": "Il passo descrive colore nero, pelosità e iridescenza alare.",
+      "evidenceType": "parafrasi del passo; non citazione letterale"
+    },
+    {
+      "itemId": "ape-legnaiola",
+      "field": "habitat",
+      "index": 0,
+      "claim": "Visita prati, giardini e cespugli fioriti, anche ai margini dei boschi.",
+      "sourceId": "CE26-FORESTAS-XYLO",
+      "locator": "Habitat",
+      "evidence": "Sono esplicitamente citati ambienti fioriti e margini boschivi.",
+      "evidenceType": "parafrasi del passo; non citazione letterale"
+    },
+    {
+      "itemId": "ape-legnaiola",
+      "field": "behavior",
+      "index": 0,
+      "claim": "Scava nel legno morbido o deperiente gallerie destinate alle cellette del nido.",
+      "sourceId": "CE26-FORESTAS-XYLO",
+      "locator": "Habitat; Riproduzione",
+      "evidence": "La fonte collega lo scavo del legno al nido suddiviso in cellette.",
+      "evidenceType": "parafrasi del passo; non citazione letterale"
+    },
+    {
+      "itemId": "ape-legnaiola",
+      "field": "ecology",
+      "index": 0,
+      "claim": "La femmina lascia polline nelle cellette come riserva alimentare per la prole.",
+      "sourceId": "CE26-FORESTAS-XYLO",
+      "locator": "Riproduzione",
+      "evidence": "Il passo documenta uova deposte singolarmente e riserva di polline.",
+      "evidenceType": "parafrasi del passo; non citazione letterale"
+    },
+    {
+      "itemId": "ape-legnaiola",
+      "field": "summary",
+      "claim": "Una grande ape solitaria che scava il nido nel legno.",
+      "sourceId": "CE26-FORESTAS-XYLO",
+      "locator": "Sintesi dei passi documentati sotto",
+      "evidence": "Sintesi senza ulteriori caratteri rispetto ai claim del record.",
+      "evidenceType": "sintesi"
+    },
+    {
+      "itemId": "macaone",
+      "field": "observe",
+      "index": 0,
+      "claim": "Le ali hanno fondo giallo e disegni neri; quelle posteriori portano macchie rosse e squame blu.",
+      "sourceId": "CE26-BDQ-MACAONE",
+      "locator": "Scheda Macaone, pagina PDF15 (indice14), Descrizione e sistematica",
+      "evidence": "Il passo descrive disegno giallo-nero e macchie delle ali posteriori.",
+      "evidenceType": "parafrasi del passo; non citazione letterale"
+    },
+    {
+      "itemId": "macaone",
+      "field": "habitat",
+      "index": 0,
+      "claim": "Frequenta prati fioriti, radure soleggiate e giardini dove crescono le piante nutrici delle larve.",
+      "sourceId": "CE26-BDQ-MACAONE",
+      "locator": "Scheda Macaone, pagine PDF15–16 (indici14–15), Ecologia ed etologia",
+      "evidence": "La scheda associa habitat aperti fioriti alla presenza delle piante ospiti.",
+      "evidenceType": "parafrasi del passo; non citazione letterale"
+    },
+    {
+      "itemId": "macaone",
+      "field": "behavior",
+      "index": 0,
+      "claim": "I maschi possono contendersi il territorio con inseguimenti e confronti in volo.",
+      "sourceId": "CE26-BDQ-MACAONE",
+      "locator": "Scheda Macaone, pagina PDF16 (indice15), Ecologia ed etologia",
+      "evidence": "Il testo documenta territorialità maschile e combattimenti aerei.",
+      "evidenceType": "parafrasi del passo; non citazione letterale"
+    },
+    {
+      "itemId": "macaone",
+      "field": "ecology",
+      "index": 0,
+      "claim": "Le piante nutrici dei bruchi comprendono carota selvatica, finocchio e altre ombrellifere.",
+      "sourceId": "CE26-BDQ-MACAONE",
+      "locator": "Scheda Macaone, pagine PDF15–16 (indici14–15), Ecologia ed etologia",
+      "evidence": "La fonte elenca Daucus carota, Foeniculum vulgare e altre ombrellifere.",
+      "evidenceType": "parafrasi del passo; non citazione letterale"
+    },
+    {
+      "itemId": "macaone",
+      "field": "summary",
+      "claim": "Una farfalla di prati e radure, con un legame tra bruchi e piante nutrici.",
+      "sourceId": "CE26-BDQ-MACAONE",
+      "locator": "Sintesi dei passi documentati sotto",
+      "evidence": "Sintesi senza ulteriori caratteri rispetto ai claim del record.",
+      "evidenceType": "sintesi"
+    }
+  ],
+  "scope": "Parafrasi originali; nessuna frequenza o calendario locale trasferito al Reatino. Nessuna deduzione dalle fotografie."
+}

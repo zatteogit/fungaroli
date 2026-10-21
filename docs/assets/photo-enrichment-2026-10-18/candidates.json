@@ -1,0 +1,719 @@
+{
+  "version": 1,
+  "date": "2026-10-18",
+  "note": "Candidature con acquisizione e revisione registrate separatamente. Lo stato per foto indica quali sono integrate.",
+  "candidates": [
+    {
+      "id": "aestivalis-commons9",
+      "target_group": "species",
+      "target_key": "aestivalis",
+      "latin": "Boletus aestivalis",
+      "commons_title": "Boletus aestivalis 9.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Boletus_aestivalis_9.jpg",
+      "author": "František ŠARŽÍK",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "attribution": "František ŠARŽÍK · Wikimedia Commons · CC BY 3.0",
+      "source_page": "https://www.biolib.cz/en/imagegalleryuser/id299277/?uid=2823",
+      "original_file_link": "https://commons.wikimedia.org/wiki/Special:FilePath/Boletus%20aestivalis%209.jpg",
+      "source_checked_on": "2026-10-18",
+      "source_check": "Pagina del singolo file letta tramite web; autore, licenza e descrizione controllati.",
+      "status": "integrated",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.55
+        ],
+        "riquadro": [
+          0.04,
+          0.1,
+          0.97,
+          0.94
+        ],
+        "dubbio": false,
+        "nota": "Gruppo in vista laterale: cappelli, pori e gambi; i formati stretti mostrano un sottoinsieme del gruppo.",
+        "reviewed_on": "2026-10-18"
+      },
+      "notes": "Fotografia della specie; revisione visiva da completare.",
+      "integrated_file": "assets/species/aestivalis-commons9.webp"
+    },
+    {
+      "id": "aestivalis-commons-solo",
+      "target_group": "species",
+      "target_key": "aestivalis",
+      "latin": "Boletus aestivalis",
+      "commons_title": "Boletus aestivalis solo.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Boletus_aestivalis_solo.jpg",
+      "author": "Milan Chytrý",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Milan Chytrý · Wikimedia Commons · CC BY 4.0",
+      "source_page": "https://www.gbif.org/fr/occurrence/4892100794",
+      "original_file_link": "https://commons.wikimedia.org/wiki/Special:FilePath/Boletus%20aestivalis%20solo.jpg",
+      "source_checked_on": "2026-10-18",
+      "source_check": "Pagina del singolo file letta tramite web; autore, licenza e descrizione controllati.",
+      "status": "integrated",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.55
+        ],
+        "riquadro": [
+          0.06,
+          0.02,
+          0.97,
+          0.99
+        ],
+        "dubbio": false,
+        "nota": "Vista dal basso con pori e gambo reticolato; base entro la foto.",
+        "reviewed_on": "2026-10-18"
+      },
+      "notes": "Fotografia della specie; fonte dichiara un ritaglio preesistente.",
+      "integrated_file": "assets/species/aestivalis-commons-solo.webp"
+    },
+    {
+      "id": "nuda-commons109950721",
+      "target_group": "species",
+      "target_key": "nuda",
+      "latin": "Lepista nuda",
+      "commons_title": "Lepista nuda 109950721.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Lepista_nuda_109950721.jpg",
+      "author": "Елена Патерикина",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Елена Патерикина · Wikimedia Commons · CC BY 4.0",
+      "source_page": "https://www.inaturalist.org/photos/109950721",
+      "original_file_link": "https://commons.wikimedia.org/wiki/Special:FilePath/Lepista%20nuda%20109950721.jpg",
+      "source_checked_on": "2026-10-18",
+      "source_check": "Pagina del singolo file letta tramite web; autore, licenza e descrizione controllati.",
+      "status": "integrated",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.62,
+          0.58
+        ],
+        "riquadro": [
+          0.04,
+          0.04,
+          0.97,
+          0.96
+        ],
+        "dubbio": false,
+        "nota": "Vista dall’alto dei cappelli; nessuna fase assegnata.",
+        "reviewed_on": "2026-10-18"
+      },
+      "notes": "Fotografia della specie; revisione visiva da completare.",
+      "integrated_file": "assets/species/nuda-commons109950721.webp"
+    },
+    {
+      "id": "nuda-villa-ada",
+      "target_group": "species",
+      "target_key": "nuda",
+      "latin": "Lepista nuda",
+      "commons_title": "Fungo Lepista nuda.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Fungo_Lepista_nuda.jpg",
+      "author": "Albarubescens",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "Albarubescens · Wikimedia Commons · CC BY-SA 4.0",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Fungo_Lepista_nuda.jpg",
+      "original_file_link": "https://commons.wikimedia.org/wiki/Special:FilePath/Fungo%20Lepista%20nuda.jpg",
+      "source_checked_on": "2026-10-18",
+      "source_check": "Pagina del singolo file letta tramite web; autore, licenza e descrizione controllati.",
+      "status": "integrated",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.48,
+          0.48
+        ],
+        "riquadro": [
+          0.2,
+          0.03,
+          0.84,
+          0.96
+        ],
+        "dubbio": false,
+        "nota": "Cappello e parte del gambo; la base non è documentata in questa inquadratura.",
+        "reviewed_on": "2026-10-18"
+      },
+      "notes": "Villa Ada, Roma, come documentato dalla pagina del file.",
+      "integrated_file": "assets/species/nuda-villa-ada.webp"
+    },
+    {
+      "id": "bucaneve-habitat",
+      "target_group": "plants",
+      "target_key": "bucaneve",
+      "latin": "Galanthus nivalis",
+      "commons_title": "Galanthus nivalis sl40.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Galanthus_nivalis_sl40.jpg",
+      "author": "Stefan.lefnaer",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "Stefan.lefnaer · Wikimedia Commons · CC BY-SA 4.0",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Galanthus_nivalis_sl40.jpg",
+      "original_file_link": "https://commons.wikimedia.org/wiki/Special:FilePath/Galanthus%20nivalis%20sl40.jpg",
+      "source_checked_on": "2026-10-18",
+      "source_check": "Pagina del singolo file letta tramite web; autore, licenza e descrizione controllati.",
+      "status": "integrated",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.52,
+          0.68
+        ],
+        "riquadro": [
+          0.04,
+          0.4,
+          0.97,
+          0.99
+        ],
+        "dubbio": false,
+        "nota": "Habitat con fioritura nel bosco; non è una fotografia di dettaglio né del Reatino.",
+        "reviewed_on": "2026-10-18"
+      },
+      "notes": "Ambiente boschivo: la fonte classifica la foto come habitat, non dettaglio del fiore.",
+      "integrated_file": "assets/plants/bucaneve-habitat.webp"
+    },
+    {
+      "id": "phalloides-pruss",
+      "target_group": "lookalikes",
+      "target_key": "Amanita phalloides",
+      "latin": "Amanita phalloides",
+      "commons_title": "Amanita phalloides (3).JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Amanita_phalloides_(3).JPG",
+      "author": "Thomas Pruß",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "attribution": "Thomas Pruß · Wikimedia Commons · CC BY-SA 3.0",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Amanita_phalloides_(3).JPG",
+      "original_file_link": "https://commons.wikimedia.org/wiki/Special:FilePath/Amanita%20phalloides%20%283%29.JPG",
+      "source_checked_on": "2026-10-18",
+      "source_check": "Pagina del singolo file letta tramite web; autore, licenza e descrizione controllati.",
+      "status": "integrated",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.52,
+          0.59
+        ],
+        "riquadro": [
+          0.07,
+          0.23,
+          0.92,
+          0.98
+        ],
+        "dubbio": false,
+        "nota": "Due esemplari: cappello, gambo, anello e base visibili, senza assegnare fasi.",
+        "reviewed_on": "2026-10-18"
+      },
+      "notes": "Fotografia della specie; nessun carattere o stadio assegnato senza controllo visivo.",
+      "integrated_file": "assets/species/phalloides-pruss.webp"
+    },
+    {
+      "id": "virosa-commons10099268",
+      "target_group": "lookalikes",
+      "target_key": "Amanita virosa",
+      "latin": "Amanita virosa",
+      "commons_title": "Amanita virosa 10099268.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Amanita_virosa_10099268.jpg",
+      "author": "Maxim Shashkov",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Maxim Shashkov · Wikimedia Commons · CC BY 4.0",
+      "source_page": "https://www.inaturalist.org/photos/10099268",
+      "original_file_link": "https://commons.wikimedia.org/wiki/Special:FilePath/Amanita%20virosa%2010099268.jpg",
+      "source_checked_on": "2026-10-18",
+      "source_check": "Pagina del singolo file letta tramite web; autore, licenza e descrizione controllati.",
+      "status": "integrated",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.4
+        ],
+        "riquadro": [
+          0.25,
+          0.25,
+          0.75,
+          0.67
+        ],
+        "dubbio": false,
+        "nota": "Esemplare sul suolo del bosco; base parzialmente nascosta, nessuna affermazione sul carattere della volva.",
+        "reviewed_on": "2026-10-18"
+      },
+      "notes": "Fonte documenta la specie europea; nessuna foto nordamericana come sostituto.",
+      "integrated_file": "assets/species/virosa-commons10099268.webp"
+    },
+    {
+      "id": "aristolochia-habitus",
+      "target_group": "plants",
+      "target_key": "aristolochia",
+      "latin": "Aristolochia clematitis",
+      "commons_title": "Aristolochia clematitis sl11.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Aristolochia_clematitis_sl11.jpg",
+      "author": "Stefan.lefnaer",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "Stefan.lefnaer · Wikimedia Commons · CC BY-SA 4.0",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Aristolochia_clematitis_sl11.jpg",
+      "original_file_link": "https://commons.wikimedia.org/wiki/Special:FilePath/Aristolochia%20clematitis%20sl11.jpg",
+      "source_checked_on": "2026-10-18",
+      "source_check": "Pagina del singolo file letta tramite web; autore, licenza e descrizione controllati.",
+      "status": "integrated",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.5
+        ],
+        "riquadro": [
+          0.22,
+          0.02,
+          0.79,
+          0.98
+        ],
+        "dubbio": false,
+        "nota": "Portamento e foglie; non dettaglio del fiore.",
+        "reviewed_on": "2026-10-18"
+      },
+      "notes": "Portamento: classificazione Habitus nella descrizione del file.",
+      "integrated_file": "assets/plants/aristolochia-habitus.webp"
+    },
+    {
+      "id": "hepatica-ledro",
+      "target_group": "plants",
+      "target_key": "erba-trinita",
+      "latin": "Hepatica nobilis",
+      "commons_title": "Hepatica nobilis 2 RF.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Hepatica_nobilis_2_RF.jpg",
+      "author": "Robert Flogaus-Faust",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Robert Flogaus-Faust · Wikimedia Commons · CC BY 4.0",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Hepatica_nobilis_2_RF.jpg",
+      "original_file_link": "https://commons.wikimedia.org/wiki/Special:FilePath/Hepatica%20nobilis%202%20RF.jpg",
+      "source_checked_on": "2026-10-18",
+      "source_check": "Pagina del singolo file letta tramite web; autore, licenza e descrizione controllati.",
+      "status": "integrated",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.52,
+          0.48
+        ],
+        "riquadro": [
+          0.05,
+          0.04,
+          0.97,
+          0.96
+        ],
+        "dubbio": false,
+        "nota": "Fiori nel loro ambiente; provenienza italiana dalla descrizione della fonte.",
+        "reviewed_on": "2026-10-18"
+      },
+      "notes": "Esemplare presso il lago di Ledro, Italia, documentato dalla fonte.",
+      "integrated_file": "assets/plants/hepatica-ledro.webp"
+    },
+    {
+      "id": "tancia-paesaggio",
+      "target_group": "zones",
+      "target_key": "tancia",
+      "latin": null,
+      "commons_title": "View from Monte Tancia, Sabina Hills, Italy.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:View_from_Monte_Tancia,_Sabina_Hills,_Italy.jpg",
+      "author": "Christoph Strässler",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "attribution": "Christoph Strässler · Wikimedia Commons · CC BY-SA 2.0",
+      "source_page": "https://www.flickr.com/photos/78904630@N08/52994345540/",
+      "original_file_link": "https://commons.wikimedia.org/wiki/Special:FilePath/View%20from%20Monte%20Tancia%2C%20Sabina%20Hills%2C%20Italy.jpg",
+      "source_checked_on": "2026-10-18",
+      "source_check": "Pagina del singolo file letta tramite web; autore, licenza e descrizione controllati.",
+      "status": "candidate_not_acquired",
+      "visual_review": {
+        "approved": false,
+        "attribution_approved": true,
+        "reason": "Foto acquisita e osservata; rimane in archivio: la scheda usa una sola copertina e non si sostituisce quella corrente."
+      },
+      "notes": "Veduta dal Monte Tancia, 5 maggio 2023: non prova presenza di specie né stagione corrente."
+    },
+    {
+      "id": "acero-montpellier-fiori",
+      "target_group": "trees",
+      "target_key": "acero di montpellier",
+      "latin": "Acer monspessulanum",
+      "commons_title": "Acer monspessulanum 4 RF.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Acer_monspessulanum_4_RF.jpg",
+      "author": "Robert Flogaus-Faust",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Robert Flogaus-Faust · Wikimedia Commons · CC BY 4.0",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Acer_monspessulanum_4_RF.jpg",
+      "original_file_link": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer%20monspessulanum%204%20RF.jpg",
+      "source_checked_on": "2026-10-18",
+      "source_check": "Pagina del singolo file letta tramite web; autore, licenza e descrizione controllati.",
+      "status": "candidate_not_acquired",
+      "visual_review": {
+        "approved": false,
+        "attribution_approved": true,
+        "punto": [
+          0.48,
+          0.5
+        ],
+        "riquadro": [
+          0.04,
+          0.15,
+          0.96,
+          0.94
+        ],
+        "dubbio": false,
+        "nota": "Fiori e foglie in apertura; fonte alla specie Acer monspessulanum, sottospecie non attestata dalla foto.",
+        "reviewed_on": "2026-10-18",
+        "reason": "Fonte alla sola specie; la scheda corrente è alla sottospecie. In attesa di conferma tassonomica, non integrata."
+      },
+      "notes": "Fiori documentati dalla descrizione; identificazione alla specie, sottospecie non certificata."
+    },
+    {
+      "id": "agrifoglio-fiori",
+      "target_group": "trees",
+      "target_key": "agrifoglio",
+      "latin": "Ilex aquifolium",
+      "commons_title": "Ilex aquifolium (flowers).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Ilex_aquifolium_(flowers).jpg",
+      "author": "Hans Hillewaert",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "© Hans Hillewaert · Wikimedia Commons · CC BY-SA 4.0",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Ilex_aquifolium_(flowers).jpg",
+      "original_file_link": "https://commons.wikimedia.org/wiki/Special:FilePath/Ilex%20aquifolium%20%28flowers%29.jpg",
+      "source_checked_on": "2026-10-18",
+      "source_check": "Pagina del singolo file letta tramite web; autore, licenza e descrizione controllati.",
+      "status": "integrated",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.49,
+          0.53
+        ],
+        "riquadro": [
+          0.15,
+          0.1,
+          0.85,
+          0.93
+        ],
+        "dubbio": false,
+        "nota": "Fiori e foglie; attribuzione © Hans Hillewaert mantenuta.",
+        "reviewed_on": "2026-10-18"
+      },
+      "notes": "Foto sarda; categoria fiori dichiarata su Commons. Attribuzione richiesta: © Hans Hillewaert.",
+      "integrated_file": "assets/trees/agrifoglio-fiori.webp"
+    },
+    {
+      "id": "aestivalis-anro1",
+      "target_group": "species",
+      "target_key": "aestivalis",
+      "latin": "Boletus aestivalis",
+      "commons_title": "20200611Boletus reticulatus1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:20200611Boletus_reticulatus1.jpg",
+      "author": "AnRo0002",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "attribution": "AnRo0002 · Wikimedia Commons · CC0",
+      "source_checked_on": "2026-10-18",
+      "source_check": "API del singolo file: descrizione, autore e licenza letti; revisione visiva separata.",
+      "status": "integrated",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.52
+        ],
+        "riquadro": [
+          0.15,
+          0.07,
+          0.88,
+          0.93
+        ],
+        "dubbio": false,
+        "nota": "Vista dall’alto del cappello; fotografia distinta da quella dal basso dello stesso autore.",
+        "reviewed_on": "2026-10-18"
+      },
+      "notes": "Sommer-Steinpilz (Boletus reticulatus)  im Naturschutzgebiet „Birzberg, Honigsack/Kappelberghang“)",
+      "integrated_file": "assets/species/aestivalis-anro1.webp"
+    },
+    {
+      "id": "aestivalis-anro3",
+      "target_group": "species",
+      "target_key": "aestivalis",
+      "latin": "Boletus aestivalis",
+      "commons_title": "20200611Boletus reticulatus3.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:20200611Boletus_reticulatus3.jpg",
+      "author": "AnRo0002",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "attribution": "AnRo0002 · Wikimedia Commons · CC0",
+      "source_checked_on": "2026-10-18",
+      "source_check": "API del singolo file: descrizione, autore e licenza letti; revisione visiva separata.",
+      "status": "integrated",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.52,
+          0.53
+        ],
+        "riquadro": [
+          0.08,
+          0.04,
+          0.99,
+          0.97
+        ],
+        "dubbio": false,
+        "nota": "Vista dal basso: pori e gambo; complementare alla vista del cappello, nessuno stadio dichiarato.",
+        "reviewed_on": "2026-10-18"
+      },
+      "notes": "Sommer-Steinpilz (Boletus reticulatus)  im Naturschutzgebiet „Birzberg, Honigsack/Kappelberghang“)",
+      "integrated_file": "assets/species/aestivalis-anro3.webp"
+    },
+    {
+      "id": "nuda-wilson",
+      "target_group": "species",
+      "target_key": "nuda",
+      "latin": "Lepista nuda",
+      "commons_title": "2002-12-28 Clitocybe nuda (Fr.) H.E. Bigelow & A.H. Sm 289.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:2002-12-28_Clitocybe_nuda_(Fr.)_H.E._Bigelow_%26_A.H._Sm_289.jpg",
+      "author": "Nathan Wilson (nathan)",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "attribution": "Nathan Wilson (nathan) · Wikimedia Commons · CC BY-SA 3.0",
+      "source_checked_on": "2026-10-18",
+      "source_check": "API del singolo file: descrizione, autore e licenza letti; revisione visiva separata.",
+      "status": "integrated",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.49,
+          0.54
+        ],
+        "riquadro": [
+          0.14,
+          0.07,
+          0.97,
+          0.94
+        ],
+        "dubbio": false,
+        "nota": "Cappello e lamelle dell’esemplare rovesciato visibili; nessuna fase o località italiana attribuita.",
+        "reviewed_on": "2026-10-18"
+      },
+      "notes": "Clitocybe nuda (Fr.) H.E. Bigelow & A.H. Sm.",
+      "integrated_file": "assets/species/nuda-wilson.webp"
+    },
+    {
+      "id": "felleus-226780",
+      "target_group": "lookalikes",
+      "target_key": "Tylopilus felleus",
+      "latin": "Tylopilus felleus",
+      "commons_title": "2012-06-09 Tylopilus felleus (Bull.) P. Karst 226780.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:2012-06-09_Tylopilus_felleus_(Bull.)_P._Karst_226780.jpg",
+      "author": "Christine Braaten (wintersbefore)",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "attribution": "Christine Braaten (wintersbefore) · Wikimedia Commons · CC BY-SA 3.0",
+      "source_checked_on": "2026-10-18",
+      "source_check": "API del singolo file: descrizione, autore e licenza letti; revisione visiva separata.",
+      "status": "integrated",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.5
+        ],
+        "riquadro": [
+          0,
+          0.02,
+          1,
+          0.98
+        ],
+        "dubbio": false,
+        "nota": "Dettaglio ravvicinato dell’imenoforo; non presentato come esemplare intero.",
+        "reviewed_on": "2026-10-18"
+      },
+      "notes": "Tylopilus felleus (Bull.) P. Karst.",
+      "integrated_file": "assets/species/felleus-226780.webp"
+    },
+    {
+      "id": "satanas-223261",
+      "target_group": "lookalikes",
+      "target_key": "Rubroboletus satanas",
+      "latin": "Rubroboletus satanas",
+      "commons_title": "2008-10-19 Boletus satanas Lenz 223261.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:2008-10-19_Boletus_satanas_Lenz_223261.jpg",
+      "author": "Murselin Guney (Beyrek)",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "attribution": "Murselin Guney (Beyrek) · Wikimedia Commons · CC BY-SA 3.0",
+      "source_checked_on": "2026-10-18",
+      "source_check": "API del singolo file: descrizione, autore e licenza letti; revisione visiva separata.",
+      "status": "integrated",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.51,
+          0.56
+        ],
+        "riquadro": [
+          0.08,
+          0.04,
+          0.99,
+          0.98
+        ],
+        "dubbio": false,
+        "nota": "Pori e gambo in vista dal basso; non si deduce una fase dalla fotografia.",
+        "reviewed_on": "2026-10-18"
+      },
+      "notes": "For more information about this, see the observation page at Mushroom Observer.",
+      "integrated_file": "assets/species/satanas-223261.webp"
+    },
+    {
+      "id": "verna-commons3",
+      "target_group": "lookalikes",
+      "target_key": "Amanita verna",
+      "latin": "Amanita verna",
+      "commons_title": "Amanita verna 3.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Amanita_verna_3.jpg",
+      "author": "Sinisa Radic",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution": "Sinisa Radic · Wikimedia Commons · CC BY-SA 4.0",
+      "source_checked_on": "2026-10-18",
+      "source_check": "API del singolo file: descrizione, autore e licenza letti; revisione visiva separata.",
+      "status": "integrated",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.5,
+          0.54
+        ],
+        "riquadro": [
+          0.07,
+          0.04,
+          0.96,
+          0.96
+        ],
+        "dubbio": false,
+        "nota": "Esemplari interi con base; dominante cromatica originale conservata, nessuna correzione del colore.",
+        "reviewed_on": "2026-10-18"
+      },
+      "notes": "Amanita verna",
+      "integrated_file": "assets/species/verna-commons3.webp"
+    },
+    {
+      "id": "virosa-commons03",
+      "target_group": "lookalikes",
+      "target_key": "Amanita virosa",
+      "latin": "Amanita virosa",
+      "commons_title": "Amanita virosa-03.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Amanita_virosa-03.jpg",
+      "author": "Pieria(Uploader and Photographer)",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "attribution": "Pieria(Uploader and Photographer) · Wikimedia Commons · Public domain",
+      "source_checked_on": "2026-10-18",
+      "source_check": "API del singolo file: descrizione, autore e licenza letti; revisione visiva separata.",
+      "status": "rejected_incomplete_license",
+      "visual_review": {
+        "approved": false,
+        "attribution_approved": false,
+        "reason": "API del file senza LicenseUrl: non acquisita e non integrata."
+      },
+      "notes": "Amanita virosa"
+    },
+    {
+      "id": "phalloides-zalas02",
+      "target_group": "lookalikes",
+      "target_key": "Amanita phalloides",
+      "latin": "Amanita phalloides",
+      "commons_title": "02 Amanita phalloides in Zalas, Poland.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:02_Amanita_phalloides_in_Zalas,_Poland.jpg",
+      "author": "Krzysztof Ślusarczyk (upload by Marek Ślusarczyk)",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+      "attribution": "Krzysztof Ślusarczyk (upload by Marek Ślusarczyk) · Wikimedia Commons · CC BY 3.0",
+      "source_checked_on": "2026-10-18",
+      "source_check": "API del singolo file: descrizione, autore e licenza letti; revisione visiva separata.",
+      "status": "integrated",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.52,
+          0.56
+        ],
+        "riquadro": [
+          0.12,
+          0.18,
+          0.86,
+          0.98
+        ],
+        "dubbio": false,
+        "nota": "Esemplare intero con base nel suolo; fonte europea documentata.",
+        "reviewed_on": "2026-10-18"
+      },
+      "notes": "Amanita phalloides (death cap) mushroom in Zalas, Małopolskie, Poland.",
+      "integrated_file": "assets/species/phalloides-zalas02.webp"
+    },
+    {
+      "id": "olearius-212577",
+      "target_group": "lookalikes",
+      "target_key": "Omphalotus olearius",
+      "latin": "Omphalotus olearius",
+      "commons_title": "2011-12-01 Omphalotus olearius (DC.) Singer 212577.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:2011-12-01_Omphalotus_olearius_(DC.)_Singer_212577.jpg",
+      "author": "Souhila Aouali",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "attribution": "Souhila Aouali · Wikimedia Commons · CC BY-SA 3.0",
+      "source_checked_on": "2026-10-18",
+      "source_check": "API del singolo file: descrizione, autore e licenza letti; revisione visiva separata.",
+      "status": "integrated",
+      "visual_review": {
+        "approved": true,
+        "attribution_approved": true,
+        "punto": [
+          0.51,
+          0.52
+        ],
+        "riquadro": [
+          0.07,
+          0.04,
+          0.96,
+          0.96
+        ],
+        "dubbio": false,
+        "nota": "Vista dall’alto del gruppo; non dettaglio delle lamelle.",
+        "reviewed_on": "2026-10-18"
+      },
+      "notes": "For more information about this, see the observation page at Mushroom Observer.",
+      "integrated_file": "assets/species/olearius-212577.webp"
+    }
+  ]
+}

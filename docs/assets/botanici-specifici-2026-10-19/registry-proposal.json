@@ -1,0 +1,46 @@
+{
+  "species": {
+    "corbezzolo": {
+      "leaf_type": {
+        "semplice": {
+          "src": "assets/plant-traits/corbezzolo-leaf_type-semplice.webp",
+          "source": "https://www.sardegnaforeste.it/sites/default/files/3_68_20130916114432.pdf",
+          "referencePhoto": "assets/plants/corbezzolo-3.webp",
+          "sha256": "386e160a507e14c611b99f192355b96cce21a3cec22fd50df8ebe992597344a5",
+          "review": "docs/assets/botanici-specifici-2026-10-19/corbezzolo-revisione.md",
+          "scope": "Foglia semplice ovale-lanceolata con piccolo picciolo e dentatura chiaramente rappresentata; nervatura schematica, non diagnostica."
+        }
+      },
+      "leaf_margin": {
+        "dentato": {
+          "src": "assets/plant-traits/corbezzolo-leaf_margin-dentato.webp",
+          "source": "https://www.sardegnaforeste.it/sites/default/files/3_68_20130916114432.pdf",
+          "referencePhoto": "assets/plants/corbezzolo-3.webp",
+          "sha256": "cec636fe13972b1216ac0f2c6bcda2ae934de4fd53bb23730ea9047d9394fc0b",
+          "review": "docs/assets/botanici-specifici-2026-10-19/corbezzolo-revisione.md",
+          "scope": "Ingrandimento del margine laterale dentato; contorni rettilinei sinistro e inferiore sono limiti del dettaglio, non bordo naturale."
+        }
+      },
+      "fruit_type": {
+        "carnoso": {
+          "src": "assets/plant-traits/corbezzolo-fruit_type-carnoso.webp",
+          "source": "https://www.sardegnaforeste.it/sites/default/files/3_68_20130916114432.pdf",
+          "referencePhoto": "assets/plants/corbezzolo-1.webp",
+          "sha256": "43bc584daf1cb78ef9583be6432cb54c0d3473d234e1d153f899e135d9f8bac6",
+          "review": "docs/assets/botanici-specifici-2026-10-19/corbezzolo-revisione.md",
+          "scope": "Bacca globosa arancio-rossa con superficie tubercolata conica, non polidrupa e non fragola; numero/dimensione dei tubercoli stilizzati."
+        }
+      },
+      "flower_shape": {
+        "campanula": {
+          "src": "assets/plant-traits/corbezzolo-flower_shape-campanula.webp",
+          "source": "https://www.sardegnaforeste.it/sites/default/files/3_68_20130916114432.pdf",
+          "referencePhoto": "https://www.comune.poggio-a-caiano.po.it/moduli/output_immagine.php?id=6176",
+          "review": "docs/assets/botanici-specifici-2026-10-19/corbezzolo-revisione.md",
+          "scope": "Tre corolle bianco-crema urceolate pendule, bocca inferiore stretta e minuscoli denti ricurvi; scelta compositiva, non conteggio dei fiori biologico. Calice verde e asse rossastro; organi interni non rappresentati.",
+          "sha256": "459514c913116ebb143fcaae51c9710dc1fd2202893505eda5c52974767b1889"
+        }
+      }
+    }
+  }
+}

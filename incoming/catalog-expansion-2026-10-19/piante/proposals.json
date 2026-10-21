@@ -1,0 +1,1698 @@
+{
+  "version": 1,
+  "generated": "2026-10-19",
+  "target_group": "plants",
+  "proposals": [
+    {
+      "key": "bugola",
+      "record": {
+        "name": "Bugola strisciante",
+        "latin": "Ajuga reptans L.",
+        "category": "Fiori",
+        "aliases": [],
+        "habitat": "Radure di boschi di latifoglie e prati stabili, anche ambienti disturbati con suoli argillosi freschi e ricchi di nutrienti.",
+        "recognize": [
+          "Fusti a quattro spigoli, originati da una rosetta di foglie.",
+          "Lunghi stoloni superficiali striscianti.",
+          "Foglie opposte, ovali o a spatola, lucide nella pagina superiore.",
+          "Fiori generalmente blu, riuniti in gruppi sovrapposti lungo il fusto."
+        ],
+        "foodUse": {
+          "status": "da osservare",
+          "parts": "",
+          "caution": "Usi alimentari e sicurezza d’impiego non valutati in questa scheda. Nessuna indicazione alimentare o medicinale."
+        },
+        "flowerMonths": [
+          4,
+          5,
+          6
+        ],
+        "phaseNote": "La fonte italiana indica aprile–giugno, con anticipo a gennaio–marzo nelle regioni meridionali; l’anticipo non è esteso a tutto il catalogo.",
+        "lookalikes": [],
+        "presenceNote": "Contesto botanico italiano documentato dalla fonte. Nessuna presenza su un sentiero specifico è attestata da questa scheda.",
+        "protection": null,
+        "sources": [
+          {
+            "title": "Università di Trieste · Portale alla flora delle Foreste Casentinesi",
+            "url": "https://dryades.units.it/casentinesi/index.php?id=4414&procedure=taxon_page"
+          },
+          {
+            "title": "Bundesamt für Naturschutz · FloraWeb",
+            "url": "https://www.floraweb.de/php/artenhome.php?name-use-id=141"
+          }
+        ],
+        "photos": [
+          {
+            "file": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-bugola-9.webp",
+            "file_hd": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-bugola-9-hd.webp",
+            "thumb": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-bugola-9-t.webp",
+            "alt": "Ajuga reptans L.: fusto fiorito e disposizione dei fiori.",
+            "caption": "Portamento del fusto fiorito, con gruppi sovrapposti di corolle blu.",
+            "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "page": "https://dryades.units.it/casentinesi/index.php?id=4414&procedure=taxon_page",
+            "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG3472JPG1684762498.jpg",
+            "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Serle, nei pressi della frazione Cocca, BS, Lombardia, Italia 11/04/2023 Distributed under CC BY-SA 4.0 license.",
+            "attribution": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · CC BY-SA 4.0",
+            "photo_taxon": "Ajuga reptans L."
+          },
+          {
+            "file": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-bugola-13.webp",
+            "file_hd": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-bugola-13-hd.webp",
+            "thumb": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-bugola-13-t.webp",
+            "alt": "Ajuga reptans L.: dettaglio della foglia.",
+            "caption": "Foglia della bugola: superficie e margine in dettaglio.",
+            "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "page": "https://dryades.units.it/casentinesi/index.php?id=4414&procedure=taxon_page",
+            "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG9899JPG1584710466.jpg",
+            "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trieste, Campus Universitario, TS, Friuli Venezia Giulia, Italia 17/03/2020 Distributed under CC BY-SA 4.0 license.",
+            "attribution": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · CC BY-SA 4.0",
+            "photo_taxon": "Ajuga reptans L."
+          },
+          {
+            "file": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-bugola-22.webp",
+            "file_hd": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-bugola-22-hd.webp",
+            "thumb": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-bugola-22-t.webp",
+            "alt": "Ajuga reptans L.: stolone e foglie.",
+            "caption": "Vista ravvicinata del tratto strisciante e delle foglie della bugola.",
+            "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "page": "https://dryades.units.it/casentinesi/index.php?id=4414&procedure=taxon_page",
+            "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG3239JPG1585642955.jpg",
+            "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trieste, Campus Universitario, TS, Friuli Venezia Giulia, Italia 30/03/2020 Distributed under CC BY-SA 4.0 license.",
+            "attribution": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · CC BY-SA 4.0",
+            "photo_taxon": "Ajuga reptans L."
+          }
+        ]
+      },
+      "claim_sources": [
+        {
+          "field": "name/latin",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=4414&procedure=taxon_page",
+          "locator": "Intestazione h2 e Nome italiano",
+          "evidence": "Ajuga reptans L.",
+          "paraphrase": "Scheda dedicata a Ajuga reptans L.; nome comune editoriale coerente con i nomi italiani della fonte.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/bugola-dryades.html",
+          "source_snapshot_sha256": "b9edcba3ac7ea57533d654f2433b35a352b4e327bdccfe4a920c4be0893a9433"
+        },
+        {
+          "field": "habitat",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=4414&procedure=taxon_page",
+          "locator": "div.testo · paragrafo descrittivo, frase Cresce",
+          "evidence": "radure dei boschi mesofili",
+          "paraphrase": "Radure di boschi di latifoglie e prati stabili, anche ambienti disturbati con suoli argillosi freschi e ricchi di nutrienti.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/bugola-dryades.html",
+          "source_snapshot_sha256": "b9edcba3ac7ea57533d654f2433b35a352b4e327bdccfe4a920c4be0893a9433"
+        },
+        {
+          "field": "flowerMonths",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=4414&procedure=taxon_page",
+          "locator": "div.testo · Periodo di fioritura",
+          "evidence": "Periodo di fioritura: aprile-giugno",
+          "paraphrase": "La fonte italiana indica aprile–giugno, con anticipo a gennaio–marzo nelle regioni meridionali; l’anticipo non è esteso a tutto il catalogo.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/bugola-dryades.html",
+          "source_snapshot_sha256": "b9edcba3ac7ea57533d654f2433b35a352b4e327bdccfe4a920c4be0893a9433"
+        },
+        {
+          "field": "recognize[0]",
+          "source": "https://www.floraweb.de/php/artenhome.php?name-use-id=141",
+          "locator": "Wichtige Merkmale > Beschreibung",
+          "evidence": "4-kantig ... aus Rosettenblättern entspringend",
+          "paraphrase": "Fusti a quattro spigoli, originati da una rosetta di foglie.",
+          "scope": "Morfologia della specie; non trasferiti fenologia, tutela o distribuzione di altri paesi.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/bugola-morphology.html",
+          "source_snapshot_sha256": "ba19337db9970e33e5939e901f7b45027b9060f60abf20f8df82008ab3e1747a"
+        },
+        {
+          "field": "recognize[1]",
+          "source": "https://www.floraweb.de/php/artenhome.php?name-use-id=141",
+          "locator": "Wichtige Merkmale > Beschreibung",
+          "evidence": "10-30 cm ... Ausläufern",
+          "paraphrase": "Lunghi stoloni superficiali striscianti.",
+          "scope": "Morfologia della specie; non trasferiti fenologia, tutela o distribuzione di altri paesi.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/bugola-morphology.html",
+          "source_snapshot_sha256": "ba19337db9970e33e5939e901f7b45027b9060f60abf20f8df82008ab3e1747a"
+        },
+        {
+          "field": "recognize[2]",
+          "source": "https://www.floraweb.de/php/artenhome.php?name-use-id=141",
+          "locator": "Wichtige Merkmale > Beschreibung",
+          "evidence": "eifg, spatelig ... glänzend, gegenstdg",
+          "paraphrase": "Foglie opposte, ovali o a spatola, lucide nella pagina superiore.",
+          "scope": "Morfologia della specie; non trasferiti fenologia, tutela o distribuzione di altri paesi.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/bugola-morphology.html",
+          "source_snapshot_sha256": "ba19337db9970e33e5939e901f7b45027b9060f60abf20f8df82008ab3e1747a"
+        },
+        {
+          "field": "recognize[3]",
+          "source": "https://www.floraweb.de/php/artenhome.php?name-use-id=141",
+          "locator": "Wichtige Merkmale > Beschreibung",
+          "evidence": "blau ... Scheinquirlen",
+          "paraphrase": "Fiori generalmente blu, riuniti in gruppi sovrapposti lungo il fusto.",
+          "scope": "Morfologia della specie; non trasferiti fenologia, tutela o distribuzione di altri paesi.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/bugola-morphology.html",
+          "source_snapshot_sha256": "ba19337db9970e33e5939e901f7b45027b9060f60abf20f8df82008ab3e1747a"
+        },
+        {
+          "field": "presenceNote",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=4414&procedure=taxon_page",
+          "locator": "div.testo · Presenza nel Parco e riferimenti floristici",
+          "evidence": "Presenza nel Parco",
+          "paraphrase": "La fonte documenta contesto italiano e citazioni nel Parco delle Foreste Casentinesi; non un sentiero Fronda specifico.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/bugola-dryades.html",
+          "source_snapshot_sha256": "b9edcba3ac7ea57533d654f2433b35a352b4e327bdccfe4a920c4be0893a9433"
+        },
+        {
+          "field": "phaseNote",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=4414&procedure=taxon_page",
+          "locator": "Periodo di fioritura; limiti editoriali",
+          "evidence": "Periodo di fioritura",
+          "paraphrase": "La fonte italiana indica aprile–giugno, con anticipo a gennaio–marzo nelle regioni meridionali; l’anticipo non è esteso a tutto il catalogo.",
+          "editorial_note": "Le frasi sui limiti della scheda sono scelte editoriali esplicite, non nuovi dati biologici.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/bugola-dryades.html",
+          "source_snapshot_sha256": "b9edcba3ac7ea57533d654f2433b35a352b4e327bdccfe4a920c4be0893a9433"
+        }
+      ],
+      "editorial_limits": {
+        "food_use_review": "Non valutato; nessuna destinazione alimentare proposta.",
+        "protection_review": "Non svolta una ricognizione completa della normativa territoriale: protection=null non significa assenza di tutela.",
+        "text_rights": "Parafrasi originali di fatti botanici; nessuna licenza fotografica estesa al testo di Dryades, FloraWeb o Kew."
+      },
+      "source_ids": {
+        "dryades_taxon": 4414,
+        "morphology_id": 141
+      },
+      "review_status": "Proposta documentata e fotografie revisionate; pronta alla valutazione e importazione del coordinatore.",
+      "photo_ids": [
+        "ce1-piante-bugola-9",
+        "ce1-piante-bugola-13",
+        "ce1-piante-bugola-22"
+      ],
+      "photo_claim_sources": [
+        {
+          "id": "ce1-piante-bugola-9",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=4414&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG3472JPG1684762498.jpg",
+          "locator": "Galleria fotografica: IMG3472JPG1684762498.jpg",
+          "taxon": "Ajuga reptans L.",
+          "photographic_role": "Fusto fiorito e disposizione dei fiori",
+          "evidence": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Serle, nei pressi della frazione Cocca, BS, Lombardia, Italia 11/04/2023 Distributed under CC BY-SA 4.0 license.",
+          "scope": "Attribuzione di specie e diritti verificati sulla fonte; didascalia descrittiva della vista fotografata, senza età o stagioni dedotte."
+        },
+        {
+          "id": "ce1-piante-bugola-13",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=4414&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG9899JPG1584710466.jpg",
+          "locator": "Galleria fotografica: IMG9899JPG1584710466.jpg",
+          "taxon": "Ajuga reptans L.",
+          "photographic_role": "Dettaglio della foglia",
+          "evidence": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trieste, Campus Universitario, TS, Friuli Venezia Giulia, Italia 17/03/2020 Distributed under CC BY-SA 4.0 license.",
+          "scope": "Attribuzione di specie e diritti verificati sulla fonte; didascalia descrittiva della vista fotografata, senza età o stagioni dedotte."
+        },
+        {
+          "id": "ce1-piante-bugola-22",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=4414&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG3239JPG1585642955.jpg",
+          "locator": "Galleria fotografica: IMG3239JPG1585642955.jpg",
+          "taxon": "Ajuga reptans L.",
+          "photographic_role": "Stolone e foglie",
+          "evidence": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trieste, Campus Universitario, TS, Friuli Venezia Giulia, Italia 30/03/2020 Distributed under CC BY-SA 4.0 license.",
+          "scope": "Attribuzione di specie e diritti verificati sulla fonte; didascalia descrittiva della vista fotografata, senza età o stagioni dedotte."
+        }
+      ]
+    },
+    {
+      "key": "acetosella",
+      "record": {
+        "name": "Acetosella dei boschi",
+        "latin": "Oxalis acetosella L.",
+        "category": "Fiori",
+        "aliases": [],
+        "habitat": "Faggete, peccete, abetine e prati ombrosi, su suoli acidi ricchi di humus.",
+        "recognize": [
+          "Pianta bassa, alta circa 5–15 cm.",
+          "Foglie e peduncoli fiorali partono dalla base della pianta.",
+          "Ogni foglia comprende tre foglioline a cuore rovesciato.",
+          "Fiori bianchi o appena rosati, percorsi da venature rosso-porpora."
+        ],
+        "foodUse": {
+          "status": "da osservare",
+          "parts": "",
+          "caution": "Usi alimentari e sicurezza d’impiego non valutati in questa scheda. Nessuna indicazione alimentare o medicinale. Dryades segnala che l’elevato contenuto di ossalati può causare disturbi renali."
+        },
+        "flowerMonths": [
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "phaseNote": "I mesi riportano la fioritura aprile–agosto descritta dalla fonte italiana; non indicano una fase vegetativa permanente.",
+        "lookalikes": [],
+        "presenceNote": "Contesto botanico italiano documentato dalla fonte. Nessuna presenza su un sentiero specifico è attestata da questa scheda.",
+        "protection": null,
+        "sources": [
+          {
+            "title": "Università di Trieste · Portale alla flora delle Foreste Casentinesi",
+            "url": "https://dryades.units.it/casentinesi/index.php?id=2799&procedure=taxon_page"
+          },
+          {
+            "title": "Bundesamt für Naturschutz · FloraWeb",
+            "url": "https://www.floraweb.de/php/artenhome.php?name-use-id=4062"
+          }
+        ],
+        "photos": [
+          {
+            "file": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-acetosella-0.webp",
+            "file_hd": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-acetosella-0-hd.webp",
+            "thumb": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-acetosella-0-t.webp",
+            "alt": "Oxalis acetosella L.: dettaglio dei fiori.",
+            "caption": "Fiori di acetosella: venature delle corolle e parte centrale ben visibili.",
+            "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "page": "https://dryades.units.it/casentinesi/index.php?id=2799&procedure=taxon_page",
+            "sourceImage": "https://dryades.units.it/dryades/plants/foto/TS241647.jpg",
+            "sourceCaption": "© Dipartimento di Scienze della Vita, Università di Trieste Andrea Moro Comune di Serle, Cariadeghe, Lombardia, Italia 22/04/2019 Distributed under CC BY-SA 4.0 license.",
+            "attribution": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · CC BY-SA 4.0",
+            "photo_taxon": "Oxalis acetosella L."
+          },
+          {
+            "file": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-acetosella-8.webp",
+            "file_hd": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-acetosella-8-hd.webp",
+            "thumb": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-acetosella-8-t.webp",
+            "alt": "Oxalis acetosella L.: portamento e foglie nel sottobosco.",
+            "caption": "Acetosella nel sottobosco: foglie trifogliate e disposizione della pianta.",
+            "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "page": "https://dryades.units.it/casentinesi/index.php?id=2799&procedure=taxon_page",
+            "sourceImage": "https://dryades.units.it/dryades/plants/foto/TS175193.jpg",
+            "sourceCaption": "© Dipartimento di Scienze della Vita, Università di Trieste Andrea Moro Comune di Serle, località Cariadeghe, Lombardia, Italia 07/04/2015 Distributed under CC BY-SA 4.0 license.",
+            "attribution": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · CC BY-SA 4.0",
+            "photo_taxon": "Oxalis acetosella L."
+          }
+        ]
+      },
+      "claim_sources": [
+        {
+          "field": "name/latin",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=2799&procedure=taxon_page",
+          "locator": "Intestazione h2 e Nome italiano",
+          "evidence": "Oxalis acetosella L.",
+          "paraphrase": "Scheda dedicata a Oxalis acetosella L.; nome comune editoriale coerente con i nomi italiani della fonte.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/acetosella-dryades.html",
+          "source_snapshot_sha256": "eb096e035f9986dbc0908c9ab805f5e6a753e88132889b048e4063893f3269ab"
+        },
+        {
+          "field": "habitat",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=2799&procedure=taxon_page",
+          "locator": "div.testo · paragrafo descrittivo, frase Cresce",
+          "evidence": "suoli acidi ricchi in humus",
+          "paraphrase": "Faggete, peccete, abetine e prati ombrosi, su suoli acidi ricchi di humus.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/acetosella-dryades.html",
+          "source_snapshot_sha256": "eb096e035f9986dbc0908c9ab805f5e6a753e88132889b048e4063893f3269ab"
+        },
+        {
+          "field": "flowerMonths",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=2799&procedure=taxon_page",
+          "locator": "div.testo · Periodo di fioritura",
+          "evidence": "Periodo di fioritura: aprile-agosto",
+          "paraphrase": "I mesi riportano la fioritura aprile–agosto descritta dalla fonte italiana; non indicano una fase vegetativa permanente.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/acetosella-dryades.html",
+          "source_snapshot_sha256": "eb096e035f9986dbc0908c9ab805f5e6a753e88132889b048e4063893f3269ab"
+        },
+        {
+          "field": "recognize[0]",
+          "source": "https://www.floraweb.de/php/artenhome.php?name-use-id=4062",
+          "locator": "Wichtige Merkmale > Beschreibung",
+          "evidence": "5-15 cm",
+          "paraphrase": "Pianta bassa, alta circa 5–15 cm.",
+          "scope": "Morfologia della specie; non trasferiti fenologia, tutela o distribuzione di altri paesi.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/acetosella-morphology.html",
+          "source_snapshot_sha256": "6cb58adb7a480bdf364e22897a2dc687a8f810711ec84b8058e6d2cea1ca24fa"
+        },
+        {
+          "field": "recognize[1]",
+          "source": "https://www.floraweb.de/php/artenhome.php?name-use-id=4062",
+          "locator": "Wichtige Merkmale > Beschreibung",
+          "evidence": "Blätter wie Blütenstandsstiele grundstdg",
+          "paraphrase": "Foglie e peduncoli fiorali partono dalla base della pianta.",
+          "scope": "Morfologia della specie; non trasferiti fenologia, tutela o distribuzione di altri paesi.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/acetosella-morphology.html",
+          "source_snapshot_sha256": "6cb58adb7a480bdf364e22897a2dc687a8f810711ec84b8058e6d2cea1ca24fa"
+        },
+        {
+          "field": "recognize[2]",
+          "source": "https://www.floraweb.de/php/artenhome.php?name-use-id=4062",
+          "locator": "Wichtige Merkmale > Beschreibung",
+          "evidence": "3-zählig ... Teilblätter verkehrt herzfg",
+          "paraphrase": "Ogni foglia comprende tre foglioline a cuore rovesciato.",
+          "scope": "Morfologia della specie; non trasferiti fenologia, tutela o distribuzione di altri paesi.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/acetosella-morphology.html",
+          "source_snapshot_sha256": "6cb58adb7a480bdf364e22897a2dc687a8f810711ec84b8058e6d2cea1ca24fa"
+        },
+        {
+          "field": "recognize[3]",
+          "source": "https://www.floraweb.de/php/artenhome.php?name-use-id=4062",
+          "locator": "Wichtige Merkmale > Beschreibung",
+          "evidence": "weiß bis schwach rosa, purpurrot geadert",
+          "paraphrase": "Fiori bianchi o appena rosati, percorsi da venature rosso-porpora.",
+          "scope": "Morfologia della specie; non trasferiti fenologia, tutela o distribuzione di altri paesi.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/acetosella-morphology.html",
+          "source_snapshot_sha256": "6cb58adb7a480bdf364e22897a2dc687a8f810711ec84b8058e6d2cea1ca24fa"
+        },
+        {
+          "field": "foodUse.caution",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=2799&procedure=taxon_page",
+          "locator": "div.testo · avvertenza sugli ossalati",
+          "evidence": "può provocare disturbi renali",
+          "paraphrase": "La fonte segnala possibili disturbi renali dovuti agli ossalati; nessun impiego alimentare proposto.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/acetosella-dryades.html",
+          "source_snapshot_sha256": "eb096e035f9986dbc0908c9ab805f5e6a753e88132889b048e4063893f3269ab"
+        },
+        {
+          "field": "presenceNote",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=2799&procedure=taxon_page",
+          "locator": "div.testo · Presenza nel Parco e riferimenti floristici",
+          "evidence": "Presenza nel Parco",
+          "paraphrase": "La fonte documenta contesto italiano e citazioni nel Parco delle Foreste Casentinesi; non un sentiero Fronda specifico.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/acetosella-dryades.html",
+          "source_snapshot_sha256": "eb096e035f9986dbc0908c9ab805f5e6a753e88132889b048e4063893f3269ab"
+        },
+        {
+          "field": "phaseNote",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=2799&procedure=taxon_page",
+          "locator": "Periodo di fioritura; limiti editoriali",
+          "evidence": "Periodo di fioritura",
+          "paraphrase": "I mesi riportano la fioritura aprile–agosto descritta dalla fonte italiana; non indicano una fase vegetativa permanente.",
+          "editorial_note": "Le frasi sui limiti della scheda sono scelte editoriali esplicite, non nuovi dati biologici.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/acetosella-dryades.html",
+          "source_snapshot_sha256": "eb096e035f9986dbc0908c9ab805f5e6a753e88132889b048e4063893f3269ab"
+        }
+      ],
+      "editorial_limits": {
+        "food_use_review": "Non valutato; nessuna destinazione alimentare proposta.",
+        "protection_review": "Non svolta una ricognizione completa della normativa territoriale: protection=null non significa assenza di tutela.",
+        "text_rights": "Parafrasi originali di fatti botanici; nessuna licenza fotografica estesa al testo di Dryades, FloraWeb o Kew."
+      },
+      "source_ids": {
+        "dryades_taxon": 2799,
+        "morphology_id": 4062
+      },
+      "review_status": "Proposta documentata e fotografie revisionate; pronta alla valutazione e importazione del coordinatore.",
+      "photo_ids": [
+        "ce1-piante-acetosella-0",
+        "ce1-piante-acetosella-8"
+      ],
+      "photo_claim_sources": [
+        {
+          "id": "ce1-piante-acetosella-0",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=2799&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TS241647.jpg",
+          "locator": "Galleria fotografica: TS241647.jpg",
+          "taxon": "Oxalis acetosella L.",
+          "photographic_role": "Dettaglio dei fiori",
+          "evidence": "© Dipartimento di Scienze della Vita, Università di Trieste Andrea Moro Comune di Serle, Cariadeghe, Lombardia, Italia 22/04/2019 Distributed under CC BY-SA 4.0 license.",
+          "scope": "Attribuzione di specie e diritti verificati sulla fonte; didascalia descrittiva della vista fotografata, senza età o stagioni dedotte."
+        },
+        {
+          "id": "ce1-piante-acetosella-8",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=2799&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TS175193.jpg",
+          "locator": "Galleria fotografica: TS175193.jpg",
+          "taxon": "Oxalis acetosella L.",
+          "photographic_role": "Portamento e foglie nel sottobosco",
+          "evidence": "© Dipartimento di Scienze della Vita, Università di Trieste Andrea Moro Comune di Serle, località Cariadeghe, Lombardia, Italia 07/04/2015 Distributed under CC BY-SA 4.0 license.",
+          "scope": "Attribuzione di specie e diritti verificati sulla fonte; didascalia descrittiva della vista fotografata, senza età o stagioni dedotte."
+        }
+      ]
+    },
+    {
+      "key": "geranio-robertiano",
+      "record": {
+        "name": "Geranio di San Roberto",
+        "latin": "Geranium robertianum L.",
+        "category": "Fiori",
+        "aliases": [],
+        "habitat": "Boschi alluvionali e siti disturbati con terreni argillosi freschi e ricchi di nutrienti, dalla pianura alla fascia montana.",
+        "recognize": [
+          "Foglie opposte, profondamente suddivise in cinque lobi.",
+          "Fusti e foglie possono assumere tonalità rossastre.",
+          "Piccoli peli ghiandolari sulle parti superiori della pianta e sul calice.",
+          "Petali rosa, con sagoma allargata verso l’apice."
+        ],
+        "foodUse": {
+          "status": "da osservare",
+          "parts": "",
+          "caution": "Usi alimentari e sicurezza d’impiego non valutati in questa scheda. Nessuna indicazione alimentare o medicinale."
+        },
+        "flowerMonths": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "phaseNote": "Fioritura maggio–agosto secondo la fonte italiana. La descrizione morfologica di Kew è usata per la specie, senza trasferirne fenologia o distribuzione irachena.",
+        "lookalikes": [],
+        "presenceNote": "Contesto botanico italiano documentato dalla fonte. Nessuna presenza su un sentiero specifico è attestata da questa scheda.",
+        "protection": null,
+        "sources": [
+          {
+            "title": "Università di Trieste · Portale alla flora delle Foreste Casentinesi",
+            "url": "https://dryades.units.it/casentinesi/index.php?id=2831&procedure=taxon_page"
+          },
+          {
+            "title": "Royal Botanic Gardens, Kew · Plants of the World Online · Flora of Iraq",
+            "url": "https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:109269-2/general-information"
+          }
+        ],
+        "photos": [
+          {
+            "file": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-geranio-robertiano-40.webp",
+            "file_hd": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-geranio-robertiano-40-hd.webp",
+            "thumb": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-geranio-robertiano-40-t.webp",
+            "alt": "Geranium robertianum L.: dettaglio del fiore.",
+            "caption": "Fiore di geranio robertiano su sfondo sfocato.",
+            "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "page": "https://dryades.units.it/casentinesi/index.php?id=2831&procedure=taxon_page",
+            "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG4071JPG1686152125.jpg",
+            "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Serle, località Calamor, castagneto, BS, Lombardia, Italia 12/04/2023 Distributed under CC BY-SA 4.0 license.",
+            "attribution": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · CC BY-SA 4.0",
+            "photo_taxon": "Geranium robertianum L."
+          },
+          {
+            "file": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-geranio-robertiano-56.webp",
+            "file_hd": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-geranio-robertiano-56-hd.webp",
+            "thumb": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-geranio-robertiano-56-t.webp",
+            "alt": "Geranium robertianum L.: foglia e sue divisioni.",
+            "caption": "Foglia del geranio robertiano: lobi e divisioni della lamina in dettaglio.",
+            "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "page": "https://dryades.units.it/casentinesi/index.php?id=2831&procedure=taxon_page",
+            "sourceImage": "https://dryades.units.it/dryades/plants/foto/TS188066.jpg",
+            "sourceCaption": "© Dipartimento di Scienze della Vita, Università di Trieste Andrea Moro Comune di Trieste, Civico Orto Botanico, Friuli Venezia Giulia, Italia 16/05/2016 Distributed under CC BY-SA 4.0 license.",
+            "attribution": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · CC BY-SA 4.0",
+            "photo_taxon": "Geranium robertianum L."
+          },
+          {
+            "file": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-geranio-robertiano-80.webp",
+            "file_hd": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-geranio-robertiano-80-hd.webp",
+            "thumb": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-geranio-robertiano-80-t.webp",
+            "alt": "Geranium robertianum L.: peli sul fusto.",
+            "caption": "Macro del fusto del geranio robertiano, con i peli illuminati di lato.",
+            "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "page": "https://dryades.units.it/casentinesi/index.php?id=2831&procedure=taxon_page",
+            "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG0938JPG1584975615.jpg",
+            "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trieste, Campus Universitario, TS, Friuli Venezia Giulia, Italia 20/03/2020 Distributed under CC BY-SA 4.0 license.",
+            "attribution": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · CC BY-SA 4.0",
+            "photo_taxon": "Geranium robertianum L."
+          }
+        ]
+      },
+      "claim_sources": [
+        {
+          "field": "name/latin",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=2831&procedure=taxon_page",
+          "locator": "Intestazione h2 e Nome italiano",
+          "evidence": "Geranium robertianum L.",
+          "paraphrase": "Scheda dedicata a Geranium robertianum L.; nome comune editoriale coerente con i nomi italiani della fonte.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/geranio-robertiano-dryades.html",
+          "source_snapshot_sha256": "6a9a56635a237037a3ce381b7350e2e7648f8d75c1fd8e57f329807db4cae315"
+        },
+        {
+          "field": "habitat",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=2831&procedure=taxon_page",
+          "locator": "div.testo · paragrafo descrittivo, frase Cresce",
+          "evidence": "boschi alluvionali",
+          "paraphrase": "Boschi alluvionali e siti disturbati con terreni argillosi freschi e ricchi di nutrienti, dalla pianura alla fascia montana.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/geranio-robertiano-dryades.html",
+          "source_snapshot_sha256": "6a9a56635a237037a3ce381b7350e2e7648f8d75c1fd8e57f329807db4cae315"
+        },
+        {
+          "field": "flowerMonths",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=2831&procedure=taxon_page",
+          "locator": "div.testo · Periodo di fioritura",
+          "evidence": "Periodo di fioritura: maggio-agosto",
+          "paraphrase": "Fioritura maggio–agosto secondo la fonte italiana. La descrizione morfologica di Kew è usata per la specie, senza trasferirne fenologia o distribuzione irachena.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/geranio-robertiano-dryades.html",
+          "source_snapshot_sha256": "6a9a56635a237037a3ce381b7350e2e7648f8d75c1fd8e57f329807db4cae315"
+        },
+        {
+          "field": "recognize[0]",
+          "source": "https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:109269-2/general-information",
+          "locator": "General information > Descriptions > According to Flora of Iraq",
+          "evidence": "Leaves opposite ... deeply divided into 5 lobes",
+          "paraphrase": "Foglie opposte, profondamente suddivise in cinque lobi.",
+          "scope": "Morfologia della specie; non trasferiti fenologia, tutela o distribuzione di altri paesi.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/geranio-robertiano-morphology-read.json"
+        },
+        {
+          "field": "recognize[1]",
+          "source": "https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:109269-2/general-information",
+          "locator": "General information > Descriptions > According to Flora of Iraq",
+          "evidence": "reddish",
+          "paraphrase": "Fusti e foglie possono assumere tonalità rossastre.",
+          "scope": "Morfologia della specie; non trasferiti fenologia, tutela o distribuzione di altri paesi.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/geranio-robertiano-morphology-read.json"
+        },
+        {
+          "field": "recognize[2]",
+          "source": "https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:109269-2/general-information",
+          "locator": "General information > Descriptions > According to Flora of Iraq",
+          "evidence": "glandular hairs",
+          "paraphrase": "Piccoli peli ghiandolari sulle parti superiori della pianta e sul calice.",
+          "scope": "Morfologia della specie; non trasferiti fenologia, tutela o distribuzione di altri paesi.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/geranio-robertiano-morphology-read.json"
+        },
+        {
+          "field": "recognize[3]",
+          "source": "https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:109269-2/general-information",
+          "locator": "General information > Descriptions > According to Flora of Iraq",
+          "evidence": "Petals pink, obovate",
+          "paraphrase": "Petali rosa, con sagoma allargata verso l’apice.",
+          "scope": "Morfologia della specie; non trasferiti fenologia, tutela o distribuzione di altri paesi.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/geranio-robertiano-morphology-read.json"
+        },
+        {
+          "field": "presenceNote",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=2831&procedure=taxon_page",
+          "locator": "div.testo · Presenza nel Parco e riferimenti floristici",
+          "evidence": "Presenza nel Parco",
+          "paraphrase": "La fonte documenta contesto italiano e citazioni nel Parco delle Foreste Casentinesi; non un sentiero Fronda specifico.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/geranio-robertiano-dryades.html",
+          "source_snapshot_sha256": "6a9a56635a237037a3ce381b7350e2e7648f8d75c1fd8e57f329807db4cae315"
+        },
+        {
+          "field": "phaseNote",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=2831&procedure=taxon_page",
+          "locator": "Periodo di fioritura; limiti editoriali",
+          "evidence": "Periodo di fioritura",
+          "paraphrase": "Fioritura maggio–agosto secondo la fonte italiana. La descrizione morfologica di Kew è usata per la specie, senza trasferirne fenologia o distribuzione irachena.",
+          "editorial_note": "Le frasi sui limiti della scheda sono scelte editoriali esplicite, non nuovi dati biologici.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/geranio-robertiano-dryades.html",
+          "source_snapshot_sha256": "6a9a56635a237037a3ce381b7350e2e7648f8d75c1fd8e57f329807db4cae315"
+        }
+      ],
+      "editorial_limits": {
+        "food_use_review": "Non valutato; nessuna destinazione alimentare proposta.",
+        "protection_review": "Non svolta una ricognizione completa della normativa territoriale: protection=null non significa assenza di tutela.",
+        "text_rights": "Parafrasi originali di fatti botanici; nessuna licenza fotografica estesa al testo di Dryades, FloraWeb o Kew."
+      },
+      "source_ids": {
+        "dryades_taxon": 2831,
+        "morphology_id": 2691
+      },
+      "review_status": "Proposta documentata e fotografie revisionate; pronta alla valutazione e importazione del coordinatore.",
+      "photo_ids": [
+        "ce1-piante-geranio-robertiano-40",
+        "ce1-piante-geranio-robertiano-56",
+        "ce1-piante-geranio-robertiano-80"
+      ],
+      "photo_claim_sources": [
+        {
+          "id": "ce1-piante-geranio-robertiano-40",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=2831&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG4071JPG1686152125.jpg",
+          "locator": "Galleria fotografica: IMG4071JPG1686152125.jpg",
+          "taxon": "Geranium robertianum L.",
+          "photographic_role": "Dettaglio del fiore",
+          "evidence": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Serle, località Calamor, castagneto, BS, Lombardia, Italia 12/04/2023 Distributed under CC BY-SA 4.0 license.",
+          "scope": "Attribuzione di specie e diritti verificati sulla fonte; didascalia descrittiva della vista fotografata, senza età o stagioni dedotte."
+        },
+        {
+          "id": "ce1-piante-geranio-robertiano-56",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=2831&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TS188066.jpg",
+          "locator": "Galleria fotografica: TS188066.jpg",
+          "taxon": "Geranium robertianum L.",
+          "photographic_role": "Foglia e sue divisioni",
+          "evidence": "© Dipartimento di Scienze della Vita, Università di Trieste Andrea Moro Comune di Trieste, Civico Orto Botanico, Friuli Venezia Giulia, Italia 16/05/2016 Distributed under CC BY-SA 4.0 license.",
+          "scope": "Attribuzione di specie e diritti verificati sulla fonte; didascalia descrittiva della vista fotografata, senza età o stagioni dedotte."
+        },
+        {
+          "id": "ce1-piante-geranio-robertiano-80",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=2831&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG0938JPG1584975615.jpg",
+          "locator": "Galleria fotografica: IMG0938JPG1584975615.jpg",
+          "taxon": "Geranium robertianum L.",
+          "photographic_role": "Peli sul fusto",
+          "evidence": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trieste, Campus Universitario, TS, Friuli Venezia Giulia, Italia 20/03/2020 Distributed under CC BY-SA 4.0 license.",
+          "scope": "Attribuzione di specie e diritti verificati sulla fonte; didascalia descrittiva della vista fotografata, senza età o stagioni dedotte."
+        }
+      ]
+    },
+    {
+      "key": "sanicola",
+      "record": {
+        "name": "Sanicola",
+        "latin": "Sanicula europaea L.",
+        "category": "Fiori",
+        "aliases": [],
+        "habitat": "Faggete, abetine e altri boschi freschi e ombrosi; margini boschivi su suoli ricchi di humus, soprattutto in montagna.",
+        "recognize": [
+          "Foglie basali con lungo picciolo e lamina divisa in cinque parti palmate.",
+          "Divisioni della foglia lobate e dentate.",
+          "Piccole ombrellette di forma pressoché emisferica.",
+          "Frutti ricoperti da piccoli aculei ricurvi."
+        ],
+        "foodUse": {
+          "status": "da osservare",
+          "parts": "",
+          "caution": "Usi alimentari e sicurezza d’impiego non valutati in questa scheda. Nessuna indicazione alimentare o medicinale."
+        },
+        "flowerMonths": [
+          5,
+          6,
+          7
+        ],
+        "phaseNote": "I mesi maggio–luglio descrivono la fioritura. La comparsa dei frutti non ha qui un calendario documentato.",
+        "lookalikes": [],
+        "presenceNote": "Contesto botanico italiano documentato dalla fonte. Nessuna presenza su un sentiero specifico è attestata da questa scheda.",
+        "protection": null,
+        "sources": [
+          {
+            "title": "Università di Trieste · Portale alla flora delle Foreste Casentinesi",
+            "url": "https://dryades.units.it/casentinesi/index.php?id=3411&procedure=taxon_page"
+          },
+          {
+            "title": "Bundesamt für Naturschutz · FloraWeb",
+            "url": "https://www.floraweb.de/php/artenhome.php?name-use-id=5236"
+          }
+        ],
+        "photos": [
+          {
+            "file": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-sanicola-5.webp",
+            "file_hd": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-sanicola-5-hd.webp",
+            "thumb": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-sanicola-5-t.webp",
+            "alt": "Sanicula europaea L.: ombrellette fiorali.",
+            "caption": "Ombrellette di sanicola, isolate contro lo sfondo del cielo.",
+            "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "page": "https://dryades.units.it/casentinesi/index.php?id=3411&procedure=taxon_page",
+            "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB35595.jpg",
+            "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trento, pendici boscose del Monte Bondone., Trentino Alto- Adige, Italia 12/06/2006 Distributed under CC BY-SA 4.0 license.",
+            "attribution": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · CC BY-SA 4.0",
+            "photo_taxon": "Sanicula europaea L."
+          },
+          {
+            "file": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-sanicola-3.webp",
+            "file_hd": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-sanicola-3-hd.webp",
+            "thumb": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-sanicola-3-t.webp",
+            "alt": "Sanicula europaea L.: foglia basale.",
+            "caption": "Foglia di sanicola: divisioni palmate, lobi e denti in vista dall’alto.",
+            "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "page": "https://dryades.units.it/casentinesi/index.php?id=3411&procedure=taxon_page",
+            "sourceImage": "https://dryades.units.it/dryades/plants/foto/TS179743.jpg",
+            "sourceCaption": "© Dipartimento di Scienze della Vita, Università di Trieste Andrea Moro Villaco / Villach, Alpengarten Villacher Alpe, Carinzia / Kärnten, Austria / Österreich 18/06/2015 Distributed under CC BY-SA 4.0 license.",
+            "attribution": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · CC BY-SA 4.0",
+            "photo_taxon": "Sanicula europaea L."
+          }
+        ]
+      },
+      "claim_sources": [
+        {
+          "field": "name/latin",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=3411&procedure=taxon_page",
+          "locator": "Intestazione h2 e Nome italiano",
+          "evidence": "Sanicula europaea L.",
+          "paraphrase": "Scheda dedicata a Sanicula europaea L.; nome comune editoriale coerente con i nomi italiani della fonte.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/sanicola-dryades.html",
+          "source_snapshot_sha256": "872214be3b5fe37a5ffb109da17bdf8881ba5cdb74287fc05bebfd25614b748c"
+        },
+        {
+          "field": "habitat",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=3411&procedure=taxon_page",
+          "locator": "div.testo · paragrafo descrittivo, frase Cresce",
+          "evidence": "suoli ricchi di humus",
+          "paraphrase": "Faggete, abetine e altri boschi freschi e ombrosi; margini boschivi su suoli ricchi di humus, soprattutto in montagna.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/sanicola-dryades.html",
+          "source_snapshot_sha256": "872214be3b5fe37a5ffb109da17bdf8881ba5cdb74287fc05bebfd25614b748c"
+        },
+        {
+          "field": "flowerMonths",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=3411&procedure=taxon_page",
+          "locator": "div.testo · Periodo di fioritura",
+          "evidence": "Periodo di fioritura: maggio-luglio",
+          "paraphrase": "I mesi maggio–luglio descrivono la fioritura. La comparsa dei frutti non ha qui un calendario documentato.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/sanicola-dryades.html",
+          "source_snapshot_sha256": "872214be3b5fe37a5ffb109da17bdf8881ba5cdb74287fc05bebfd25614b748c"
+        },
+        {
+          "field": "recognize[0]",
+          "source": "https://www.floraweb.de/php/artenhome.php?name-use-id=5236",
+          "locator": "Wichtige Merkmale > Beschreibung",
+          "evidence": "Grundstdge Blätter lg gestielt ... handfg 5-teilig",
+          "paraphrase": "Foglie basali con lungo picciolo e lamina divisa in cinque parti palmate.",
+          "scope": "Morfologia della specie; non trasferiti fenologia, tutela o distribuzione di altri paesi.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/sanicola-morphology.html",
+          "source_snapshot_sha256": "7177647fd4cc172c2b5cecf9950b41660fce4ea2420520d89a3d9cd527b40080"
+        },
+        {
+          "field": "recognize[1]",
+          "source": "https://www.floraweb.de/php/artenhome.php?name-use-id=5236",
+          "locator": "Wichtige Merkmale > Beschreibung",
+          "evidence": "gelappt u. gezähnt",
+          "paraphrase": "Divisioni della foglia lobate e dentate.",
+          "scope": "Morfologia della specie; non trasferiti fenologia, tutela o distribuzione di altri paesi.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/sanicola-morphology.html",
+          "source_snapshot_sha256": "7177647fd4cc172c2b5cecf9950b41660fce4ea2420520d89a3d9cd527b40080"
+        },
+        {
+          "field": "recognize[2]",
+          "source": "https://www.floraweb.de/php/artenhome.php?name-use-id=5236",
+          "locator": "Wichtige Merkmale > Beschreibung",
+          "evidence": "Döldchen ± halbkugelig",
+          "paraphrase": "Piccole ombrellette di forma pressoché emisferica.",
+          "scope": "Morfologia della specie; non trasferiti fenologia, tutela o distribuzione di altri paesi.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/sanicola-morphology.html",
+          "source_snapshot_sha256": "7177647fd4cc172c2b5cecf9950b41660fce4ea2420520d89a3d9cd527b40080"
+        },
+        {
+          "field": "recognize[3]",
+          "source": "https://www.floraweb.de/php/artenhome.php?name-use-id=5236",
+          "locator": "Wichtige Merkmale > Beschreibung",
+          "evidence": "gekrümmten Stacheln",
+          "paraphrase": "Frutti ricoperti da piccoli aculei ricurvi.",
+          "scope": "Morfologia della specie; non trasferiti fenologia, tutela o distribuzione di altri paesi.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/sanicola-morphology.html",
+          "source_snapshot_sha256": "7177647fd4cc172c2b5cecf9950b41660fce4ea2420520d89a3d9cd527b40080"
+        },
+        {
+          "field": "presenceNote",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=3411&procedure=taxon_page",
+          "locator": "div.testo · Presenza nel Parco e riferimenti floristici",
+          "evidence": "Presenza nel Parco",
+          "paraphrase": "La fonte documenta contesto italiano e citazioni nel Parco delle Foreste Casentinesi; non un sentiero Fronda specifico.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/sanicola-dryades.html",
+          "source_snapshot_sha256": "872214be3b5fe37a5ffb109da17bdf8881ba5cdb74287fc05bebfd25614b748c"
+        },
+        {
+          "field": "phaseNote",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=3411&procedure=taxon_page",
+          "locator": "Periodo di fioritura; limiti editoriali",
+          "evidence": "Periodo di fioritura",
+          "paraphrase": "I mesi maggio–luglio descrivono la fioritura. La comparsa dei frutti non ha qui un calendario documentato.",
+          "editorial_note": "Le frasi sui limiti della scheda sono scelte editoriali esplicite, non nuovi dati biologici.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/sanicola-dryades.html",
+          "source_snapshot_sha256": "872214be3b5fe37a5ffb109da17bdf8881ba5cdb74287fc05bebfd25614b748c"
+        }
+      ],
+      "editorial_limits": {
+        "food_use_review": "Non valutato; nessuna destinazione alimentare proposta.",
+        "protection_review": "Non svolta una ricognizione completa della normativa territoriale: protection=null non significa assenza di tutela.",
+        "text_rights": "Parafrasi originali di fatti botanici; nessuna licenza fotografica estesa al testo di Dryades, FloraWeb o Kew."
+      },
+      "source_ids": {
+        "dryades_taxon": 3411,
+        "morphology_id": 5236
+      },
+      "review_status": "Proposta documentata e fotografie revisionate; pronta alla valutazione e importazione del coordinatore.",
+      "photo_ids": [
+        "ce1-piante-sanicola-5",
+        "ce1-piante-sanicola-3"
+      ],
+      "photo_claim_sources": [
+        {
+          "id": "ce1-piante-sanicola-5",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=3411&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB35595.jpg",
+          "locator": "Galleria fotografica: TSB35595.jpg",
+          "taxon": "Sanicula europaea L.",
+          "photographic_role": "Ombrellette fiorali",
+          "evidence": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trento, pendici boscose del Monte Bondone., Trentino Alto- Adige, Italia 12/06/2006 Distributed under CC BY-SA 4.0 license.",
+          "scope": "Attribuzione di specie e diritti verificati sulla fonte; didascalia descrittiva della vista fotografata, senza età o stagioni dedotte."
+        },
+        {
+          "id": "ce1-piante-sanicola-3",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=3411&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TS179743.jpg",
+          "locator": "Galleria fotografica: TS179743.jpg",
+          "taxon": "Sanicula europaea L.",
+          "photographic_role": "Foglia basale",
+          "evidence": "© Dipartimento di Scienze della Vita, Università di Trieste Andrea Moro Villaco / Villach, Alpengarten Villacher Alpe, Carinzia / Kärnten, Austria / Österreich 18/06/2015 Distributed under CC BY-SA 4.0 license.",
+          "scope": "Attribuzione di specie e diritti verificati sulla fonte; didascalia descrittiva della vista fotografata, senza età o stagioni dedotte."
+        }
+      ]
+    },
+    {
+      "key": "viola-silvestre",
+      "record": {
+        "name": "Viola silvestre",
+        "latin": "Viola reichenbachiana Jord. ex Boreau",
+        "category": "Fiori",
+        "aliases": [],
+        "habitat": "Boschi maturi di latifoglie, soprattutto faggete, e altri luoghi ombrosi su terreni freschi e ricchi di humus.",
+        "recognize": [
+          "Fusto ben sviluppato, alto circa 10–25 cm.",
+          "Foglie basali e sul fusto con base chiaramente a cuore.",
+          "Stipole con lunghe frange.",
+          "Fiori violetto chiaro con sperone arrotondato all’estremità, privo di solchi."
+        ],
+        "foodUse": {
+          "status": "da osservare",
+          "parts": "",
+          "caution": "Usi alimentari e sicurezza d’impiego non valutati in questa scheda. Nessuna indicazione alimentare o medicinale."
+        },
+        "flowerMonths": [
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "phaseNote": "Fioritura marzo–luglio secondo Dryades. I caratteri non bastano da soli a escludere altre viole simili.",
+        "lookalikes": [],
+        "presenceNote": "Contesto botanico italiano documentato dalla fonte. Nessuna presenza su un sentiero specifico è attestata da questa scheda.",
+        "protection": null,
+        "sources": [
+          {
+            "title": "Università di Trieste · Portale alla flora delle Foreste Casentinesi",
+            "url": "https://dryades.units.it/casentinesi/index.php?id=3172&procedure=taxon_page"
+          },
+          {
+            "title": "Bundesamt für Naturschutz · FloraWeb",
+            "url": "https://www.floraweb.de/php/artenhome.php?name-use-id=6390"
+          }
+        ],
+        "photos": [
+          {
+            "file": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-viola-silvestre-17.webp",
+            "file_hd": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-viola-silvestre-17-hd.webp",
+            "thumb": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-viola-silvestre-17-t.webp",
+            "alt": "Viola reichenbachiana Jord. ex Boreau: fiore visto di fronte.",
+            "caption": "Fiore di viola silvestre: corolla e parte centrale viste di fronte.",
+            "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "page": "https://dryades.units.it/casentinesi/index.php?id=3172&procedure=taxon_page",
+            "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG8484JPG1586444513.jpg",
+            "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trieste, Campus Universitario, TS, Friuli Venezia Giulia, Italia 08/04/2020 Distributed under CC BY-SA 4.0 license.",
+            "attribution": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · CC BY-SA 4.0",
+            "photo_taxon": "Viola reichenbachiana Jord. ex Boreau"
+          },
+          {
+            "file": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-viola-silvestre-50.webp",
+            "file_hd": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-viola-silvestre-50-hd.webp",
+            "thumb": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-viola-silvestre-50-t.webp",
+            "alt": "Viola reichenbachiana Jord. ex Boreau: fiore laterale e sperone.",
+            "caption": "Fiore di viola silvestre di lato: lo sperone è visibile dietro la corolla.",
+            "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "page": "https://dryades.units.it/casentinesi/index.php?id=3172&procedure=taxon_page",
+            "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG8578JPG1586444584.jpg",
+            "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trieste, Campus Universitario, TS, Friuli Venezia Giulia, Italia 08/04/2020 Distributed under CC BY-SA 4.0 license.",
+            "attribution": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · CC BY-SA 4.0",
+            "photo_taxon": "Viola reichenbachiana Jord. ex Boreau"
+          },
+          {
+            "file": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-viola-silvestre-44.webp",
+            "file_hd": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-viola-silvestre-44-hd.webp",
+            "thumb": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-viola-silvestre-44-t.webp",
+            "alt": "Viola reichenbachiana Jord. ex Boreau: foglia e base della lamina.",
+            "caption": "Foglia della viola silvestre: forma della lamina, base e nervature in vista ravvicinata.",
+            "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "page": "https://dryades.units.it/casentinesi/index.php?id=3172&procedure=taxon_page",
+            "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG8491JPG1586444521.jpg",
+            "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trieste, Campus Universitario, TS, Friuli Venezia Giulia, Italia 08/04/2020 Distributed under CC BY-SA 4.0 license.",
+            "attribution": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · CC BY-SA 4.0",
+            "photo_taxon": "Viola reichenbachiana Jord. ex Boreau"
+          }
+        ]
+      },
+      "claim_sources": [
+        {
+          "field": "name/latin",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=3172&procedure=taxon_page",
+          "locator": "Intestazione h2 e Nome italiano",
+          "evidence": "Viola reichenbachiana Jord. ex Boreau",
+          "paraphrase": "Scheda dedicata a Viola reichenbachiana Jord. ex Boreau; nome comune editoriale coerente con i nomi italiani della fonte.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/viola-silvestre-dryades.html",
+          "source_snapshot_sha256": "6860258a33c2bbdb9469540c1b2099de4b1abc2ca072fa8a284a0d259b4cfce0"
+        },
+        {
+          "field": "habitat",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=3172&procedure=taxon_page",
+          "locator": "div.testo · paragrafo descrittivo, frase Cresce",
+          "evidence": "boschi maturi di latifoglie decidue",
+          "paraphrase": "Boschi maturi di latifoglie, soprattutto faggete, e altri luoghi ombrosi su terreni freschi e ricchi di humus.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/viola-silvestre-dryades.html",
+          "source_snapshot_sha256": "6860258a33c2bbdb9469540c1b2099de4b1abc2ca072fa8a284a0d259b4cfce0"
+        },
+        {
+          "field": "flowerMonths",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=3172&procedure=taxon_page",
+          "locator": "div.testo · Periodo di fioritura",
+          "evidence": "Periodo di fioritura: marzo-luglio",
+          "paraphrase": "Fioritura marzo–luglio secondo Dryades. I caratteri non bastano da soli a escludere altre viole simili.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/viola-silvestre-dryades.html",
+          "source_snapshot_sha256": "6860258a33c2bbdb9469540c1b2099de4b1abc2ca072fa8a284a0d259b4cfce0"
+        },
+        {
+          "field": "recognize[0]",
+          "source": "https://www.floraweb.de/php/artenhome.php?name-use-id=6390",
+          "locator": "Wichtige Merkmale > Beschreibung",
+          "evidence": "Stg deutl. ausgebildet, 10-25 cm",
+          "paraphrase": "Fusto ben sviluppato, alto circa 10–25 cm.",
+          "scope": "Morfologia della specie; non trasferiti fenologia, tutela o distribuzione di altri paesi.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/viola-silvestre-morphology.html",
+          "source_snapshot_sha256": "4ecc4008ab36d8f9e9295549dc6a18fb68dfcfebe8d623118abff743f0d568bc"
+        },
+        {
+          "field": "recognize[1]",
+          "source": "https://www.floraweb.de/php/artenhome.php?name-use-id=6390",
+          "locator": "Wichtige Merkmale > Beschreibung",
+          "evidence": "Blätter grund- u. stgstdg ... herzfg",
+          "paraphrase": "Foglie basali e sul fusto con base chiaramente a cuore.",
+          "scope": "Morfologia della specie; non trasferiti fenologia, tutela o distribuzione di altri paesi.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/viola-silvestre-morphology.html",
+          "source_snapshot_sha256": "4ecc4008ab36d8f9e9295549dc6a18fb68dfcfebe8d623118abff743f0d568bc"
+        },
+        {
+          "field": "recognize[2]",
+          "source": "https://www.floraweb.de/php/artenhome.php?name-use-id=6390",
+          "locator": "Wichtige Merkmale > Beschreibung",
+          "evidence": "Nebenblätter lg gefranst",
+          "paraphrase": "Stipole con lunghe frange.",
+          "scope": "Morfologia della specie; non trasferiti fenologia, tutela o distribuzione di altri paesi.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/viola-silvestre-morphology.html",
+          "source_snapshot_sha256": "4ecc4008ab36d8f9e9295549dc6a18fb68dfcfebe8d623118abff743f0d568bc"
+        },
+        {
+          "field": "recognize[3]",
+          "source": "https://www.floraweb.de/php/artenhome.php?name-use-id=6390",
+          "locator": "Wichtige Merkmale > Beschreibung",
+          "evidence": "hellviolett ... Sporn ... abgerundet ... ungefurcht",
+          "paraphrase": "Fiori violetto chiaro con sperone arrotondato all’estremità, privo di solchi.",
+          "scope": "Morfologia della specie; non trasferiti fenologia, tutela o distribuzione di altri paesi.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/viola-silvestre-morphology.html",
+          "source_snapshot_sha256": "4ecc4008ab36d8f9e9295549dc6a18fb68dfcfebe8d623118abff743f0d568bc"
+        },
+        {
+          "field": "presenceNote",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=3172&procedure=taxon_page",
+          "locator": "div.testo · Presenza nel Parco e riferimenti floristici",
+          "evidence": "Presenza nel Parco",
+          "paraphrase": "La fonte documenta contesto italiano e citazioni nel Parco delle Foreste Casentinesi; non un sentiero Fronda specifico.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/viola-silvestre-dryades.html",
+          "source_snapshot_sha256": "6860258a33c2bbdb9469540c1b2099de4b1abc2ca072fa8a284a0d259b4cfce0"
+        },
+        {
+          "field": "phaseNote",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=3172&procedure=taxon_page",
+          "locator": "Periodo di fioritura; limiti editoriali",
+          "evidence": "Periodo di fioritura",
+          "paraphrase": "Fioritura marzo–luglio secondo Dryades. I caratteri non bastano da soli a escludere altre viole simili.",
+          "editorial_note": "Le frasi sui limiti della scheda sono scelte editoriali esplicite, non nuovi dati biologici.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/viola-silvestre-dryades.html",
+          "source_snapshot_sha256": "6860258a33c2bbdb9469540c1b2099de4b1abc2ca072fa8a284a0d259b4cfce0"
+        }
+      ],
+      "editorial_limits": {
+        "food_use_review": "Non valutato; nessuna destinazione alimentare proposta.",
+        "protection_review": "Non svolta una ricognizione completa della normativa territoriale: protection=null non significa assenza di tutela.",
+        "text_rights": "Parafrasi originali di fatti botanici; nessuna licenza fotografica estesa al testo di Dryades, FloraWeb o Kew."
+      },
+      "source_ids": {
+        "dryades_taxon": 3172,
+        "morphology_id": 6390
+      },
+      "review_status": "Proposta documentata e fotografie revisionate; pronta alla valutazione e importazione del coordinatore.",
+      "photo_ids": [
+        "ce1-piante-viola-silvestre-17",
+        "ce1-piante-viola-silvestre-50",
+        "ce1-piante-viola-silvestre-44"
+      ],
+      "photo_claim_sources": [
+        {
+          "id": "ce1-piante-viola-silvestre-17",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=3172&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG8484JPG1586444513.jpg",
+          "locator": "Galleria fotografica: IMG8484JPG1586444513.jpg",
+          "taxon": "Viola reichenbachiana Jord. ex Boreau",
+          "photographic_role": "Fiore visto di fronte",
+          "evidence": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trieste, Campus Universitario, TS, Friuli Venezia Giulia, Italia 08/04/2020 Distributed under CC BY-SA 4.0 license.",
+          "scope": "Attribuzione di specie e diritti verificati sulla fonte; didascalia descrittiva della vista fotografata, senza età o stagioni dedotte."
+        },
+        {
+          "id": "ce1-piante-viola-silvestre-50",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=3172&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG8578JPG1586444584.jpg",
+          "locator": "Galleria fotografica: IMG8578JPG1586444584.jpg",
+          "taxon": "Viola reichenbachiana Jord. ex Boreau",
+          "photographic_role": "Fiore laterale e sperone",
+          "evidence": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trieste, Campus Universitario, TS, Friuli Venezia Giulia, Italia 08/04/2020 Distributed under CC BY-SA 4.0 license.",
+          "scope": "Attribuzione di specie e diritti verificati sulla fonte; didascalia descrittiva della vista fotografata, senza età o stagioni dedotte."
+        },
+        {
+          "id": "ce1-piante-viola-silvestre-44",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=3172&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG8491JPG1586444521.jpg",
+          "locator": "Galleria fotografica: IMG8491JPG1586444521.jpg",
+          "taxon": "Viola reichenbachiana Jord. ex Boreau",
+          "photographic_role": "Foglia e base della lamina",
+          "evidence": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trieste, Campus Universitario, TS, Friuli Venezia Giulia, Italia 08/04/2020 Distributed under CC BY-SA 4.0 license.",
+          "scope": "Attribuzione di specie e diritti verificati sulla fonte; didascalia descrittiva della vista fotografata, senza età o stagioni dedotte."
+        }
+      ]
+    },
+    {
+      "key": "pervinca-minore",
+      "record": {
+        "name": "Pervinca minore",
+        "latin": "Vinca minor L.",
+        "category": "Fiori",
+        "aliases": [],
+        "habitat": "Sottobosco e radure di boschi aperti di latifoglie, su terreni freschi, soprattutto limoso-argillosi.",
+        "recognize": [
+          "Fusti striscianti che radicano ai nodi.",
+          "Foglie allungate, lanceolate, coriacee e prive di peli.",
+          "Fiori solitari su lunghi peduncoli.",
+          "Corolla con cinque lobi, generalmente azzurro chiaro."
+        ],
+        "foodUse": {
+          "status": "tossico",
+          "parts": "",
+          "caution": "Specie tossica secondo Dryades. Nessuna indicazione alimentare o medicinale."
+        },
+        "flowerMonths": [
+          2,
+          3,
+          4
+        ],
+        "phaseNote": "Fioritura febbraio–aprile secondo Dryades. La scheda non propone impieghi alimentari o medicinali.",
+        "lookalikes": [],
+        "presenceNote": "Contesto botanico italiano documentato dalla fonte. Nessuna presenza su un sentiero specifico è attestata da questa scheda.",
+        "protection": null,
+        "sources": [
+          {
+            "title": "Università di Trieste · Portale alla flora delle Foreste Casentinesi",
+            "url": "https://dryades.units.it/casentinesi/index.php?id=4069&procedure=taxon_page"
+          },
+          {
+            "title": "Bundesamt für Naturschutz · FloraWeb",
+            "url": "https://www.floraweb.de/php/artenhome.php?name-use-id=6348"
+          }
+        ],
+        "photos": [
+          {
+            "file": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-pervinca-minore-60.webp",
+            "file_hd": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-pervinca-minore-60-hd.webp",
+            "thumb": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-pervinca-minore-60-t.webp",
+            "alt": "Vinca minor L.: dettaglio frontale della corolla.",
+            "caption": "Fiore di pervinca minore visto di fronte, con i cinque lobi della corolla.",
+            "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "page": "https://dryades.units.it/casentinesi/index.php?id=4069&procedure=taxon_page",
+            "sourceImage": "https://dryades.units.it/dryades/plants/foto/TS155855jpg1660230819.jpg",
+            "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trieste, Monte Valerio, TS, Friuli Venezia Giulia, Italia 24/02/2012 Distributed under CC BY-SA 4.0 license.",
+            "attribution": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · CC BY-SA 4.0",
+            "photo_taxon": "Vinca minor L."
+          },
+          {
+            "file": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-pervinca-minore-30.webp",
+            "file_hd": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-pervinca-minore-30-hd.webp",
+            "thumb": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-pervinca-minore-30-t.webp",
+            "alt": "Vinca minor L.: fusto fiorito, di lato.",
+            "caption": "Pervinca minore di lato: fiore, lungo peduncolo e foglie.",
+            "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "page": "https://dryades.units.it/casentinesi/index.php?id=4069&procedure=taxon_page",
+            "sourceImage": "https://dryades.units.it/dryades/plants/foto/TS216102.jpg",
+            "sourceCaption": "© Dipartimento di Scienze della Vita, Università di Trieste Andrea Moro Comune di Trieste, Civico Orto Botanico, Friuli Venezia Giulia, Italia 08/03/2018 Distributed under CC BY-SA 4.0 license.",
+            "attribution": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · CC BY-SA 4.0",
+            "photo_taxon": "Vinca minor L."
+          }
+        ]
+      },
+      "claim_sources": [
+        {
+          "field": "name/latin",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=4069&procedure=taxon_page",
+          "locator": "Intestazione h2 e Nome italiano",
+          "evidence": "Vinca minor L.",
+          "paraphrase": "Scheda dedicata a Vinca minor L.; nome comune editoriale coerente con i nomi italiani della fonte.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/pervinca-minore-dryades.html",
+          "source_snapshot_sha256": "3dafdf9ead2e80ce9b4e3e6be75b240fc6782b19d5d1fe3f1626475c280be2fa"
+        },
+        {
+          "field": "habitat",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=4069&procedure=taxon_page",
+          "locator": "div.testo · paragrafo descrittivo, frase Cresce",
+          "evidence": "sottobosco e nelle radure",
+          "paraphrase": "Sottobosco e radure di boschi aperti di latifoglie, su terreni freschi, soprattutto limoso-argillosi.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/pervinca-minore-dryades.html",
+          "source_snapshot_sha256": "3dafdf9ead2e80ce9b4e3e6be75b240fc6782b19d5d1fe3f1626475c280be2fa"
+        },
+        {
+          "field": "flowerMonths",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=4069&procedure=taxon_page",
+          "locator": "div.testo · Periodo di fioritura",
+          "evidence": "Periodo di fioritura: febbraio-aprile",
+          "paraphrase": "Fioritura febbraio–aprile secondo Dryades. La scheda non propone impieghi alimentari o medicinali.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/pervinca-minore-dryades.html",
+          "source_snapshot_sha256": "3dafdf9ead2e80ce9b4e3e6be75b240fc6782b19d5d1fe3f1626475c280be2fa"
+        },
+        {
+          "field": "recognize[0]",
+          "source": "https://www.floraweb.de/php/artenhome.php?name-use-id=6348",
+          "locator": "Wichtige Merkmale > Beschreibung",
+          "evidence": "kriechend, an den Knoten wurzelnd",
+          "paraphrase": "Fusti striscianti che radicano ai nodi.",
+          "scope": "Morfologia della specie; non trasferiti fenologia, tutela o distribuzione di altri paesi.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/pervinca-minore-morphology.html",
+          "source_snapshot_sha256": "ffedded4f9dfd5b7f089650de92e2e7875fbd0549929d1bfe95c688958514d57"
+        },
+        {
+          "field": "recognize[1]",
+          "source": "https://www.floraweb.de/php/artenhome.php?name-use-id=6348",
+          "locator": "Wichtige Merkmale > Beschreibung",
+          "evidence": "Blätter längl. lanzettl. ... lederartig, kahl",
+          "paraphrase": "Foglie allungate, lanceolate, coriacee e prive di peli.",
+          "scope": "Morfologia della specie; non trasferiti fenologia, tutela o distribuzione di altri paesi.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/pervinca-minore-morphology.html",
+          "source_snapshot_sha256": "ffedded4f9dfd5b7f089650de92e2e7875fbd0549929d1bfe95c688958514d57"
+        },
+        {
+          "field": "recognize[2]",
+          "source": "https://www.floraweb.de/php/artenhome.php?name-use-id=6348",
+          "locator": "Wichtige Merkmale > Beschreibung",
+          "evidence": "Blüten einzeln, lg gestielt",
+          "paraphrase": "Fiori solitari su lunghi peduncoli.",
+          "scope": "Morfologia della specie; non trasferiti fenologia, tutela o distribuzione di altri paesi.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/pervinca-minore-morphology.html",
+          "source_snapshot_sha256": "ffedded4f9dfd5b7f089650de92e2e7875fbd0549929d1bfe95c688958514d57"
+        },
+        {
+          "field": "recognize[3]",
+          "source": "https://www.floraweb.de/php/artenhome.php?name-use-id=6348",
+          "locator": "Wichtige Merkmale > Beschreibung",
+          "evidence": "hellblau ... 5-zipflige",
+          "paraphrase": "Corolla con cinque lobi, generalmente azzurro chiaro.",
+          "scope": "Morfologia della specie; non trasferiti fenologia, tutela o distribuzione di altri paesi.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/pervinca-minore-morphology.html",
+          "source_snapshot_sha256": "ffedded4f9dfd5b7f089650de92e2e7875fbd0549929d1bfe95c688958514d57"
+        },
+        {
+          "field": "foodUse.status/caution",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=4069&procedure=taxon_page",
+          "locator": "div.testo · nota sui principi attivi",
+          "evidence": "la rende tossica",
+          "paraphrase": "Specie tossica secondo Dryades. Nessuna indicazione alimentare o medicinale.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/pervinca-minore-dryades.html",
+          "source_snapshot_sha256": "3dafdf9ead2e80ce9b4e3e6be75b240fc6782b19d5d1fe3f1626475c280be2fa"
+        },
+        {
+          "field": "presenceNote",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=4069&procedure=taxon_page",
+          "locator": "div.testo · Presenza nel Parco e riferimenti floristici",
+          "evidence": "Presenza nel Parco",
+          "paraphrase": "La fonte documenta contesto italiano e citazioni nel Parco delle Foreste Casentinesi; non un sentiero Fronda specifico.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/pervinca-minore-dryades.html",
+          "source_snapshot_sha256": "3dafdf9ead2e80ce9b4e3e6be75b240fc6782b19d5d1fe3f1626475c280be2fa"
+        },
+        {
+          "field": "phaseNote",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=4069&procedure=taxon_page",
+          "locator": "Periodo di fioritura; limiti editoriali",
+          "evidence": "Periodo di fioritura",
+          "paraphrase": "Fioritura febbraio–aprile secondo Dryades. La scheda non propone impieghi alimentari o medicinali.",
+          "editorial_note": "Le frasi sui limiti della scheda sono scelte editoriali esplicite, non nuovi dati biologici.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/pervinca-minore-dryades.html",
+          "source_snapshot_sha256": "3dafdf9ead2e80ce9b4e3e6be75b240fc6782b19d5d1fe3f1626475c280be2fa"
+        }
+      ],
+      "editorial_limits": {
+        "food_use_review": "Tossicità esplicitamente riferita da Dryades; nessun uso proposto.",
+        "protection_review": "Non svolta una ricognizione completa della normativa territoriale: protection=null non significa assenza di tutela.",
+        "text_rights": "Parafrasi originali di fatti botanici; nessuna licenza fotografica estesa al testo di Dryades, FloraWeb o Kew."
+      },
+      "source_ids": {
+        "dryades_taxon": 4069,
+        "morphology_id": 6348
+      },
+      "review_status": "Proposta documentata e fotografie revisionate; pronta alla valutazione e importazione del coordinatore.",
+      "photo_ids": [
+        "ce1-piante-pervinca-minore-60",
+        "ce1-piante-pervinca-minore-30"
+      ],
+      "photo_claim_sources": [
+        {
+          "id": "ce1-piante-pervinca-minore-60",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=4069&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TS155855jpg1660230819.jpg",
+          "locator": "Galleria fotografica: TS155855jpg1660230819.jpg",
+          "taxon": "Vinca minor L.",
+          "photographic_role": "Dettaglio frontale della corolla",
+          "evidence": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trieste, Monte Valerio, TS, Friuli Venezia Giulia, Italia 24/02/2012 Distributed under CC BY-SA 4.0 license.",
+          "scope": "Attribuzione di specie e diritti verificati sulla fonte; didascalia descrittiva della vista fotografata, senza età o stagioni dedotte."
+        },
+        {
+          "id": "ce1-piante-pervinca-minore-30",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=4069&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TS216102.jpg",
+          "locator": "Galleria fotografica: TS216102.jpg",
+          "taxon": "Vinca minor L.",
+          "photographic_role": "Fusto fiorito, di lato",
+          "evidence": "© Dipartimento di Scienze della Vita, Università di Trieste Andrea Moro Comune di Trieste, Civico Orto Botanico, Friuli Venezia Giulia, Italia 08/03/2018 Distributed under CC BY-SA 4.0 license.",
+          "scope": "Attribuzione di specie e diritti verificati sulla fonte; didascalia descrittiva della vista fotografata, senza età o stagioni dedotte."
+        }
+      ]
+    },
+    {
+      "key": "cariofillata",
+      "record": {
+        "name": "Cariofillata comune",
+        "latin": "Geum urbanum L.",
+        "category": "Fiori",
+        "aliases": [],
+        "habitat": "Vegetazioni ruderali e margini di boschi aperti disturbati, su terreni limoso-argillosi freschi in profondità e ricchi di nutrienti.",
+        "recognize": [
+          "Foglie basali in rosetta, divise in segmenti disuguali con segmento terminale più grande.",
+          "Stipole con denti arrotondati sul margine.",
+          "Infiorescenza ramificata e aperta.",
+          "Fiori con cinque petali giallo vivo."
+        ],
+        "foodUse": {
+          "status": "da osservare",
+          "parts": "",
+          "caution": "Usi alimentari e sicurezza d’impiego non valutati in questa scheda. Nessuna indicazione alimentare o medicinale."
+        },
+        "flowerMonths": [
+          5,
+          6,
+          7
+        ],
+        "phaseNote": "I mesi maggio–luglio indicano la fioritura riportata dalla fonte italiana; non un calendario di raccolta.",
+        "lookalikes": [],
+        "presenceNote": "Contesto botanico italiano documentato dalla fonte. Nessuna presenza su un sentiero specifico è attestata da questa scheda.",
+        "protection": null,
+        "sources": [
+          {
+            "title": "Università di Trieste · Portale alla flora delle Foreste Casentinesi",
+            "url": "https://dryades.units.it/casentinesi/index.php?id=2015&procedure=taxon_page"
+          },
+          {
+            "title": "Bundesamt für Naturschutz · FloraWeb",
+            "url": "https://www.floraweb.de/php/artenhome.php?name-use-id=2701"
+          }
+        ],
+        "photos": [
+          {
+            "file": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-cariofillata-11.webp",
+            "file_hd": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-cariofillata-11-hd.webp",
+            "thumb": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-cariofillata-11-t.webp",
+            "alt": "Geum urbanum L.: fiore visto di fronte.",
+            "caption": "Fiore di cariofillata comune: cinque petali gialli e centro in dettaglio.",
+            "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "page": "https://dryades.units.it/casentinesi/index.php?id=2015&procedure=taxon_page",
+            "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG3978JPG1589802445.jpg",
+            "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trieste, giardino di Villa Engelmann, TS, Friuli Venezia Giulia, Italia 05/05/2020 Distributed under CC BY-SA 4.0 license.",
+            "attribution": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · CC BY-SA 4.0",
+            "photo_taxon": "Geum urbanum L."
+          },
+          {
+            "file": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-cariofillata-0.webp",
+            "file_hd": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-cariofillata-0-hd.webp",
+            "thumb": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-cariofillata-0-t.webp",
+            "alt": "Geum urbanum L.: foglia basale e segmento terminale.",
+            "caption": "Foglia di cariofillata comune: segmenti laterali e ampia divisione terminale.",
+            "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "page": "https://dryades.units.it/casentinesi/index.php?id=2015&procedure=taxon_page",
+            "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG4739JPG1588146945.jpg",
+            "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trieste, Roseto di San Giovanni, TS, Friuli Venezia Giulia, Italia 24/04/2020 Distributed under CC BY-SA 4.0 license.",
+            "attribution": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · CC BY-SA 4.0",
+            "photo_taxon": "Geum urbanum L."
+          }
+        ]
+      },
+      "claim_sources": [
+        {
+          "field": "name/latin",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=2015&procedure=taxon_page",
+          "locator": "Intestazione h2 e Nome italiano",
+          "evidence": "Geum urbanum L.",
+          "paraphrase": "Scheda dedicata a Geum urbanum L.; nome comune editoriale coerente con i nomi italiani della fonte.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/cariofillata-dryades.html",
+          "source_snapshot_sha256": "84310489bde1ae6af98f0986f7413587fd6d50d632d5f0d19a80e0d271490842"
+        },
+        {
+          "field": "habitat",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=2015&procedure=taxon_page",
+          "locator": "div.testo · paragrafo descrittivo, frase Cresce",
+          "evidence": "orli di boschi termofili disturbati",
+          "paraphrase": "Vegetazioni ruderali e margini di boschi aperti disturbati, su terreni limoso-argillosi freschi in profondità e ricchi di nutrienti.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/cariofillata-dryades.html",
+          "source_snapshot_sha256": "84310489bde1ae6af98f0986f7413587fd6d50d632d5f0d19a80e0d271490842"
+        },
+        {
+          "field": "flowerMonths",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=2015&procedure=taxon_page",
+          "locator": "div.testo · Periodo di fioritura",
+          "evidence": "Periodo di fioritura: maggio-luglio",
+          "paraphrase": "I mesi maggio–luglio indicano la fioritura riportata dalla fonte italiana; non un calendario di raccolta.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/cariofillata-dryades.html",
+          "source_snapshot_sha256": "84310489bde1ae6af98f0986f7413587fd6d50d632d5f0d19a80e0d271490842"
+        },
+        {
+          "field": "recognize[0]",
+          "source": "https://www.floraweb.de/php/artenhome.php?name-use-id=2701",
+          "locator": "Wichtige Merkmale > Beschreibung",
+          "evidence": "Rosettenblättern ... unregelmäßig gefiedert mit gr Endabschnitt",
+          "paraphrase": "Foglie basali in rosetta, divise in segmenti disuguali con segmento terminale più grande.",
+          "scope": "Morfologia della specie; non trasferiti fenologia, tutela o distribuzione di altri paesi.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/cariofillata-morphology.html",
+          "source_snapshot_sha256": "6e8e7eba817f82c6f103b1117a1d3cb4be39b6d3d0f5158a71ff9b87254f8b09"
+        },
+        {
+          "field": "recognize[1]",
+          "source": "https://www.floraweb.de/php/artenhome.php?name-use-id=2701",
+          "locator": "Wichtige Merkmale > Beschreibung",
+          "evidence": "Nebenblätter kerbzähnig",
+          "paraphrase": "Stipole con denti arrotondati sul margine.",
+          "scope": "Morfologia della specie; non trasferiti fenologia, tutela o distribuzione di altri paesi.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/cariofillata-morphology.html",
+          "source_snapshot_sha256": "6e8e7eba817f82c6f103b1117a1d3cb4be39b6d3d0f5158a71ff9b87254f8b09"
+        },
+        {
+          "field": "recognize[2]",
+          "source": "https://www.floraweb.de/php/artenhome.php?name-use-id=2701",
+          "locator": "Wichtige Merkmale > Beschreibung",
+          "evidence": "sparrig verzweigt",
+          "paraphrase": "Infiorescenza ramificata e aperta.",
+          "scope": "Morfologia della specie; non trasferiti fenologia, tutela o distribuzione di altri paesi.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/cariofillata-morphology.html",
+          "source_snapshot_sha256": "6e8e7eba817f82c6f103b1117a1d3cb4be39b6d3d0f5158a71ff9b87254f8b09"
+        },
+        {
+          "field": "recognize[3]",
+          "source": "https://www.floraweb.de/php/artenhome.php?name-use-id=2701",
+          "locator": "Wichtige Merkmale > Beschreibung",
+          "evidence": "5-zählig, leuchtendgelb",
+          "paraphrase": "Fiori con cinque petali giallo vivo.",
+          "scope": "Morfologia della specie; non trasferiti fenologia, tutela o distribuzione di altri paesi.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/cariofillata-morphology.html",
+          "source_snapshot_sha256": "6e8e7eba817f82c6f103b1117a1d3cb4be39b6d3d0f5158a71ff9b87254f8b09"
+        },
+        {
+          "field": "presenceNote",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=2015&procedure=taxon_page",
+          "locator": "div.testo · Presenza nel Parco e riferimenti floristici",
+          "evidence": "Presenza nel Parco",
+          "paraphrase": "La fonte documenta contesto italiano e citazioni nel Parco delle Foreste Casentinesi; non un sentiero Fronda specifico.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/cariofillata-dryades.html",
+          "source_snapshot_sha256": "84310489bde1ae6af98f0986f7413587fd6d50d632d5f0d19a80e0d271490842"
+        },
+        {
+          "field": "phaseNote",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=2015&procedure=taxon_page",
+          "locator": "Periodo di fioritura; limiti editoriali",
+          "evidence": "Periodo di fioritura",
+          "paraphrase": "I mesi maggio–luglio indicano la fioritura riportata dalla fonte italiana; non un calendario di raccolta.",
+          "editorial_note": "Le frasi sui limiti della scheda sono scelte editoriali esplicite, non nuovi dati biologici.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/cariofillata-dryades.html",
+          "source_snapshot_sha256": "84310489bde1ae6af98f0986f7413587fd6d50d632d5f0d19a80e0d271490842"
+        }
+      ],
+      "editorial_limits": {
+        "food_use_review": "Non valutato; nessuna destinazione alimentare proposta.",
+        "protection_review": "Non svolta una ricognizione completa della normativa territoriale: protection=null non significa assenza di tutela.",
+        "text_rights": "Parafrasi originali di fatti botanici; nessuna licenza fotografica estesa al testo di Dryades, FloraWeb o Kew."
+      },
+      "source_ids": {
+        "dryades_taxon": 2015,
+        "morphology_id": 2701
+      },
+      "review_status": "Proposta documentata e fotografie revisionate; pronta alla valutazione e importazione del coordinatore.",
+      "photo_ids": [
+        "ce1-piante-cariofillata-11",
+        "ce1-piante-cariofillata-0"
+      ],
+      "photo_claim_sources": [
+        {
+          "id": "ce1-piante-cariofillata-11",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=2015&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG3978JPG1589802445.jpg",
+          "locator": "Galleria fotografica: IMG3978JPG1589802445.jpg",
+          "taxon": "Geum urbanum L.",
+          "photographic_role": "Fiore visto di fronte",
+          "evidence": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trieste, giardino di Villa Engelmann, TS, Friuli Venezia Giulia, Italia 05/05/2020 Distributed under CC BY-SA 4.0 license.",
+          "scope": "Attribuzione di specie e diritti verificati sulla fonte; didascalia descrittiva della vista fotografata, senza età o stagioni dedotte."
+        },
+        {
+          "id": "ce1-piante-cariofillata-0",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=2015&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG4739JPG1588146945.jpg",
+          "locator": "Galleria fotografica: IMG4739JPG1588146945.jpg",
+          "taxon": "Geum urbanum L.",
+          "photographic_role": "Foglia basale e segmento terminale",
+          "evidence": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trieste, Roseto di San Giovanni, TS, Friuli Venezia Giulia, Italia 24/04/2020 Distributed under CC BY-SA 4.0 license.",
+          "scope": "Attribuzione di specie e diritti verificati sulla fonte; didascalia descrittiva della vista fotografata, senza età o stagioni dedotte."
+        }
+      ]
+    },
+    {
+      "key": "stellina-odorosa",
+      "record": {
+        "name": "Stellina odorosa",
+        "latin": "Galium odoratum (L.) Scop.",
+        "category": "Fiori",
+        "aliases": [],
+        "habitat": "Sottobosco di faggete e boschi misti di latifoglie, su suoli ricchi di humus, soprattutto nella fascia montana.",
+        "recognize": [
+          "Fusti eretti, non ramificati, a quattro spigoli.",
+          "Foglie disposte in verticilli di sei–otto intorno al fusto.",
+          "Foglie lanceolate o ellittiche, con margine ruvido.",
+          "Piccoli fiori bianchi con corolla a imbuto."
+        ],
+        "foodUse": {
+          "status": "da osservare",
+          "parts": "",
+          "caution": "Usi alimentari e sicurezza d’impiego non valutati in questa scheda. Nessuna indicazione alimentare o medicinale."
+        },
+        "flowerMonths": [
+          5,
+          6,
+          7
+        ],
+        "phaseNote": "Fioritura maggio–luglio secondo Dryades. Gli usi tradizionali citati dalla fonte non sono trasformati in indicazioni d’impiego.",
+        "lookalikes": [],
+        "presenceNote": "Contesto botanico italiano documentato dalla fonte. Nessuna presenza su un sentiero specifico è attestata da questa scheda.",
+        "protection": null,
+        "sources": [
+          {
+            "title": "Università di Trieste · Portale alla flora delle Foreste Casentinesi",
+            "url": "https://dryades.units.it/casentinesi/index.php?id=4119&procedure=taxon_page"
+          },
+          {
+            "title": "Bundesamt für Naturschutz · FloraWeb",
+            "url": "https://www.floraweb.de/php/artenhome.php?name-use-id=2560"
+          }
+        ],
+        "photos": [
+          {
+            "file": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-stellina-odorosa-5.webp",
+            "file_hd": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-stellina-odorosa-5-hd.webp",
+            "thumb": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-stellina-odorosa-5-t.webp",
+            "alt": "Galium odoratum (L.) Scop.: macro dei fiori.",
+            "caption": "Fiori di stellina odorosa: corolle bianche isolate sullo sfondo sfocato.",
+            "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "page": "https://dryades.units.it/casentinesi/index.php?id=4119&procedure=taxon_page",
+            "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB23303.jpg",
+            "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Paularo, area boschiva esposta a Sud-Est ai margini dell'abitato., FVG, Italia 22/5/05 0.00.00 Distributed under CC BY-SA 4.0 license.",
+            "attribution": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · CC BY-SA 4.0",
+            "photo_taxon": "Galium odoratum (L.) Scop."
+          },
+          {
+            "file": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-stellina-odorosa-6.webp",
+            "file_hd": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-stellina-odorosa-6-hd.webp",
+            "thumb": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-stellina-odorosa-6-t.webp",
+            "alt": "Galium odoratum (L.) Scop.: verticillo fogliare.",
+            "caption": "Foglie di stellina odorosa disposte intorno al fusto, viste dall’alto.",
+            "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "page": "https://dryades.units.it/casentinesi/index.php?id=4119&procedure=taxon_page",
+            "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB35554.jpg",
+            "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trento, pendici del Monte Bondone., Trentino Alto- Adige, Italia 12/06/2006 Distributed under CC BY-SA 4.0 license.",
+            "attribution": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · CC BY-SA 4.0",
+            "photo_taxon": "Galium odoratum (L.) Scop."
+          },
+          {
+            "file": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-stellina-odorosa-4.webp",
+            "file_hd": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-stellina-odorosa-4-hd.webp",
+            "thumb": "incoming/catalog-expansion-2026-10-19/piante/prepared/ce1-piante-stellina-odorosa-4-t.webp",
+            "alt": "Galium odoratum (L.) Scop.: portamento del fusto e verticilli.",
+            "caption": "Fusto di stellina odorosa nel sottobosco, con verticilli fogliari e fiori.",
+            "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "page": "https://dryades.units.it/casentinesi/index.php?id=4119&procedure=taxon_page",
+            "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB23301.jpg",
+            "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Paularo, area boschiva esposta a Sud-Est ai margini dell'abitato., FVG, Italia 22/5/05 0.00.00 Distributed under CC BY-SA 4.0 license.",
+            "attribution": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · CC BY-SA 4.0",
+            "photo_taxon": "Galium odoratum (L.) Scop."
+          }
+        ]
+      },
+      "claim_sources": [
+        {
+          "field": "name/latin",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=4119&procedure=taxon_page",
+          "locator": "Intestazione h2 e Nome italiano",
+          "evidence": "Galium odoratum (L.) Scop.",
+          "paraphrase": "Scheda dedicata a Galium odoratum (L.) Scop.; nome comune editoriale coerente con i nomi italiani della fonte.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/stellina-odorosa-dryades.html",
+          "source_snapshot_sha256": "ffab07009b591bd122049487f0289c0cb5f1e5053a10584656c38f29a012a002"
+        },
+        {
+          "field": "habitat",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=4119&procedure=taxon_page",
+          "locator": "div.testo · paragrafo descrittivo, frase Cresce",
+          "evidence": "sottobosco di faggete",
+          "paraphrase": "Sottobosco di faggete e boschi misti di latifoglie, su suoli ricchi di humus, soprattutto nella fascia montana.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/stellina-odorosa-dryades.html",
+          "source_snapshot_sha256": "ffab07009b591bd122049487f0289c0cb5f1e5053a10584656c38f29a012a002"
+        },
+        {
+          "field": "flowerMonths",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=4119&procedure=taxon_page",
+          "locator": "div.testo · Periodo di fioritura",
+          "evidence": "Periodo di fioritura: maggio-luglio",
+          "paraphrase": "Fioritura maggio–luglio secondo Dryades. Gli usi tradizionali citati dalla fonte non sono trasformati in indicazioni d’impiego.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/stellina-odorosa-dryades.html",
+          "source_snapshot_sha256": "ffab07009b591bd122049487f0289c0cb5f1e5053a10584656c38f29a012a002"
+        },
+        {
+          "field": "recognize[0]",
+          "source": "https://www.floraweb.de/php/artenhome.php?name-use-id=2560",
+          "locator": "Wichtige Merkmale > Beschreibung",
+          "evidence": "aufrecht, unverzweigt ... 4-kantig",
+          "paraphrase": "Fusti eretti, non ramificati, a quattro spigoli.",
+          "scope": "Morfologia della specie; non trasferiti fenologia, tutela o distribuzione di altri paesi.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/stellina-odorosa-morphology.html",
+          "source_snapshot_sha256": "a4a4268096ca87eadf0ad97e6511f753bea17e46e049fa98f96d2b82ecd46983"
+        },
+        {
+          "field": "recognize[1]",
+          "source": "https://www.floraweb.de/php/artenhome.php?name-use-id=2560",
+          "locator": "Wichtige Merkmale > Beschreibung",
+          "evidence": "6-8 im Wirtel",
+          "paraphrase": "Foglie disposte in verticilli di sei–otto intorno al fusto.",
+          "scope": "Morfologia della specie; non trasferiti fenologia, tutela o distribuzione di altri paesi.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/stellina-odorosa-morphology.html",
+          "source_snapshot_sha256": "a4a4268096ca87eadf0ad97e6511f753bea17e46e049fa98f96d2b82ecd46983"
+        },
+        {
+          "field": "recognize[2]",
+          "source": "https://www.floraweb.de/php/artenhome.php?name-use-id=2560",
+          "locator": "Wichtige Merkmale > Beschreibung",
+          "evidence": "am Rand rau, lanzettl. elliptisch",
+          "paraphrase": "Foglie lanceolate o ellittiche, con margine ruvido.",
+          "scope": "Morfologia della specie; non trasferiti fenologia, tutela o distribuzione di altri paesi.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/stellina-odorosa-morphology.html",
+          "source_snapshot_sha256": "a4a4268096ca87eadf0ad97e6511f753bea17e46e049fa98f96d2b82ecd46983"
+        },
+        {
+          "field": "recognize[3]",
+          "source": "https://www.floraweb.de/php/artenhome.php?name-use-id=2560",
+          "locator": "Wichtige Merkmale > Beschreibung",
+          "evidence": "trichterfg glockig, weiß",
+          "paraphrase": "Piccoli fiori bianchi con corolla a imbuto.",
+          "scope": "Morfologia della specie; non trasferiti fenologia, tutela o distribuzione di altri paesi.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/stellina-odorosa-morphology.html",
+          "source_snapshot_sha256": "a4a4268096ca87eadf0ad97e6511f753bea17e46e049fa98f96d2b82ecd46983"
+        },
+        {
+          "field": "presenceNote",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=4119&procedure=taxon_page",
+          "locator": "div.testo · Presenza nel Parco e riferimenti floristici",
+          "evidence": "Presenza nel Parco",
+          "paraphrase": "La fonte documenta contesto italiano e citazioni nel Parco delle Foreste Casentinesi; non un sentiero Fronda specifico.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/stellina-odorosa-dryades.html",
+          "source_snapshot_sha256": "ffab07009b591bd122049487f0289c0cb5f1e5053a10584656c38f29a012a002"
+        },
+        {
+          "field": "phaseNote",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=4119&procedure=taxon_page",
+          "locator": "Periodo di fioritura; limiti editoriali",
+          "evidence": "Periodo di fioritura",
+          "paraphrase": "Fioritura maggio–luglio secondo Dryades. Gli usi tradizionali citati dalla fonte non sono trasformati in indicazioni d’impiego.",
+          "editorial_note": "Le frasi sui limiti della scheda sono scelte editoriali esplicite, non nuovi dati biologici.",
+          "source_snapshot": "incoming/catalog-expansion-2026-10-19/piante/sources/stellina-odorosa-dryades.html",
+          "source_snapshot_sha256": "ffab07009b591bd122049487f0289c0cb5f1e5053a10584656c38f29a012a002"
+        }
+      ],
+      "editorial_limits": {
+        "food_use_review": "Non valutato; nessuna destinazione alimentare proposta.",
+        "protection_review": "Non svolta una ricognizione completa della normativa territoriale: protection=null non significa assenza di tutela.",
+        "text_rights": "Parafrasi originali di fatti botanici; nessuna licenza fotografica estesa al testo di Dryades, FloraWeb o Kew."
+      },
+      "source_ids": {
+        "dryades_taxon": 4119,
+        "morphology_id": 2560
+      },
+      "review_status": "Proposta documentata e fotografie revisionate; pronta alla valutazione e importazione del coordinatore.",
+      "photo_ids": [
+        "ce1-piante-stellina-odorosa-5",
+        "ce1-piante-stellina-odorosa-6",
+        "ce1-piante-stellina-odorosa-4"
+      ],
+      "photo_claim_sources": [
+        {
+          "id": "ce1-piante-stellina-odorosa-5",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=4119&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB23303.jpg",
+          "locator": "Galleria fotografica: TSB23303.jpg",
+          "taxon": "Galium odoratum (L.) Scop.",
+          "photographic_role": "Macro dei fiori",
+          "evidence": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Paularo, area boschiva esposta a Sud-Est ai margini dell'abitato., FVG, Italia 22/5/05 0.00.00 Distributed under CC BY-SA 4.0 license.",
+          "scope": "Attribuzione di specie e diritti verificati sulla fonte; didascalia descrittiva della vista fotografata, senza età o stagioni dedotte."
+        },
+        {
+          "id": "ce1-piante-stellina-odorosa-6",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=4119&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB35554.jpg",
+          "locator": "Galleria fotografica: TSB35554.jpg",
+          "taxon": "Galium odoratum (L.) Scop.",
+          "photographic_role": "Verticillo fogliare",
+          "evidence": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Trento, pendici del Monte Bondone., Trentino Alto- Adige, Italia 12/06/2006 Distributed under CC BY-SA 4.0 license.",
+          "scope": "Attribuzione di specie e diritti verificati sulla fonte; didascalia descrittiva della vista fotografata, senza età o stagioni dedotte."
+        },
+        {
+          "id": "ce1-piante-stellina-odorosa-4",
+          "source": "https://dryades.units.it/casentinesi/index.php?id=4119&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB23301.jpg",
+          "locator": "Galleria fotografica: TSB23301.jpg",
+          "taxon": "Galium odoratum (L.) Scop.",
+          "photographic_role": "Portamento del fusto e verticilli",
+          "evidence": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste Andrea Moro Comune di Paularo, area boschiva esposta a Sud-Est ai margini dell'abitato., FVG, Italia 22/5/05 0.00.00 Distributed under CC BY-SA 4.0 license.",
+          "scope": "Attribuzione di specie e diritti verificati sulla fonte; didascalia descrittiva della vista fotografata, senza età o stagioni dedotte."
+        }
+      ]
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+import {notebookGlyph} from './ui-icons.js';
 // Sfide didattiche di Impara: Osserva, Confronta e Di stagione, con timbri come ricompensa.
 // «L'ho visto» è un'annotazione dell'utente: non riconosce e non certifica nulla.
 // I progressi restano in questo browser (localStorage), senza posizione e fuori dai conteggi della community.
@@ -225,7 +226,7 @@ function itemRow(c, it, seen, open) {
     ${e.href ? `<a class="ch-item-main" href="${esc(e.href)}" data-entity>${thumb}<span><small>${it.kind === 'albero' ? 'Albero' : 'Pianta'}</small><b>${name}</b>${it.hint ? `<span class="ch-hint">${esc(cap(it.hint))}</span>` : ''}</span></a>` : `<span class="ch-item-main"><span><b>${name}</b></span></span>`}
     <span class="ch-item-actions">
       <button type="button" class="ch-seen" data-ch-seen="${esc(key)}" aria-pressed="${on}"${open ? '' : ' disabled'}><span class="ch-check" aria-hidden="true"></span>L'ho visto<span class="ch-sr">: ${name}</span></button>
-      <button type="button" class="ch-note-btn" data-note-kind="${it.kind === 'albero' ? 'albero' : 'pianta'}" data-note-id="${esc(it.id)}" data-note-title="${name}">＋ Nota<span class="ch-sr"> nel taccuino: ${name}</span></button>
+      <button type="button" class="ch-note-btn" data-note-kind="${it.kind === 'albero' ? 'albero' : 'pianta'}" data-note-id="${esc(it.id)}" data-note-title="${name}">${notebookGlyph}Nota<span class="ch-sr"> nel taccuino: ${name}</span></button>
     </span></li>`;
 }
 

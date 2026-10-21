@@ -1,9 +1,21 @@
+import {SPECIES} from './species.js';
+import {mountInlineGallery} from './inline-gallery.js';
+import {glossaryHeading} from './content-ui.js';
+import {openModal} from './modal-flow.js';
+import {matchSpecies} from './species-search.js';
+import {initTraitCallouts} from './trait-callouts.js';
+initTraitCallouts();
+import {mountCompareStart,openComparePicker} from './compare-picker.js';
+import {enhanceEntityAccordions} from './entity-accordions.js';
+import {speciesHabitat, speciesSafetyNote} from './species-context.js';
+import { alertTriangleGlyph } from './ui-icons.js';
+import { availableGrowthStages } from './fungus-stages.js';
 // Riconosci: ricerca per caratteristiche (visiva, testuale, guidata) su commestibili E velenose.
 // Non e' un'identificazione: restringe i candidati e dice sempre cosa controllare.
 
 import { openLightbox, captionHtml } from './lightbox.js';
 import { openEntitySheet } from './entity-sheet.js';
-import { soft, tick, canVT } from './motion.js';
+import { soft, tick } from './motion.js';
 import { matchTraits, retainCandidate, traitQuestions, traitSimilarity, attentionGroups } from './identify-model.js';
 const TQ = (key) => traitQuestions().find((q) => q.key === key);
 
@@ -70,6 +82,9 @@ const SHAPE_D = {
   conico: 'M32 8 C36 16 46 26 50 34 H14 C18 26 28 16 32 8 Z', ombrellato: 'M4 32 C14 26 22 22 27 17 Q32 9 37 17 C42 22 50 26 60 32 L60 34 H4 Z',
   imbuto: 'M6 20 Q32 36 58 20 L46 34 H18 Z', trombetta: 'M12 10 Q32 22 52 10 L38 54 H26 Z',
 };
+// Microprofili neutri del solo contorno: riusano le geometrie didattiche,
+// senza colore, gambo o dettagli che possano sembrare un ritratto della specie.
+const shapeHint = v => SHAPE_D[v] ? `<svg class="ts-shape-hint" viewBox="0 0 64 ${v==='trombetta'?60:40}" aria-hidden="true" focusable="false"><path d="${SHAPE_D[v]}"/></svg>` : '';
 const SHAPE = {
   convesso: sh('M8 34 C10 16 54 16 56 34 Z'),
   piano: sh('M6 30 C8 25 56 25 58 30 L58 34 H6 Z'),
@@ -82,6 +97,7 @@ const SHAPE = {
 const SIZE = (k) => `<svg viewBox="0 0 64 64"><g transform="translate(32 58) scale(${k}) translate(-32 -58)">${SST.replace('stroke-width="2"', `stroke-width="${2 / k}"`)}<path d="M8 34 C10 16 54 16 56 34 Z" fill="currentColor" opacity=".25" stroke="currentColor" stroke-width="${2 / k}"/></g><path d="M6 61 H58" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 3"/></svg>`;
 // sporata, attaccatura delle lamelle, velo, lattice, superficie, carne, base del gambo
 const SPORE = { bianco: '#f7f5ef', crema: '#ecdcb8', giallo: '#e2c35a', rosa: '#e3a99c', ocra: '#c99a4e', ruggine: '#a65a2a', bruno: '#6e4a2e', 'bruno-violaceo': '#4f3a46', nero: '#26221f', 'verde-oliva': '#7d7040' };
+const sporeDot = v => SPORE[v] ? `<i class="spore-color-dot" style="--spore-color:${SPORE[v]}" aria-hidden="true"></i>` : '';
 const sporeArt = (v) => `<svg viewBox="0 0 64 64"><rect x="6" y="8" width="52" height="48" rx="5" fill="#fbfaf6" stroke="currentColor" stroke-opacity=".35"/><rect x="32" y="8" width="26" height="48" rx="0" fill="#2b2826" opacity=".9"/><path d="M32 8 H53 a5 5 0 0 1 5 5 V51 a5 5 0 0 1 -5 5 H32 Z" fill="#2b2826"/><g opacity=".92">${Array.from({ length: 18 }, (_, i) => { const a = (i / 18) * Math.PI * 2; return `<path d="M32 32 L${(32 + Math.cos(a) * 19).toFixed(1)} ${(32 + Math.sin(a) * 19).toFixed(1)}" stroke="${SPORE[v]}" stroke-width="2.6" stroke-linecap="round"/>`; }).join('')}</g><circle cx="32" cy="32" r="4" fill="${SPORE[v]}"/></svg>`;
 const GILL_CAP = '<path d="M4 22 Q32 2 60 22 Z" fill="currentColor" opacity=".22" stroke="currentColor" stroke-width="2"/><path d="M28 22 V60 M36 22 V60" stroke="currentColor" stroke-width="2"/>';
 const gillArt = (pts) => `<svg viewBox="0 0 64 64">${GILL_CAP}<g fill="currentColor" opacity=".7"><path d="${pts}"/><path d="${pts}" transform="translate(64 0) scale(-1 1)"/></g></svg>`;
@@ -168,8 +184,135 @@ const TOX_ORDER = { mortale: 0, tossico: 1, 'non commestibile': 2, 'commestibile
 
 // icone disegnate dei caratteri (assets/traits): se mancano restano i disegni SVG
 let ICONS = null;
-fetch('data/trait-icons.json').then((r) => (r.ok ? r.json() : null)).then((d) => { ICONS = d?.taxa || null; }).catch(() => {});
+fetch('data/trait-icons.json').then((r) => (r.ok ? r.json() : null)).then((d) => {
+  ICONS = d?.taxa || null;
+  refreshComparisonParts();
+  // Il catalogo delle immagini è facoltativo: se arriva dopo la scheda aggiorna solo i caratteri.
+  document.querySelectorAll('[data-growth-key]').forEach(root => {
+    const t = TAXA.find(t => t.key === root.dataset.growthKey);
+    if (t) root.innerHTML = growthBody(t);
+  });
+}).catch(() => {});
 const illus = (key, part, colour) => `<img class="ts-ill" src="${esc(ASSET(`assets/traits/${key}-${part}${colour ? `-${colour}` : ''}.webp`))}" alt="" width="64" height="64" loading="lazy" decoding="async" data-ill="${part}">`;
+// Nel confronto la parte illustrata è un esempio della specie, non di ogni variante.
+const CMP_PARTS = {
+  cap_color:'cappello', cap_surface:'cappello', cap_veil:'cappello',
+  hymenophore:'sotto', hymenophore_color:'sotto', gill_attachment:'sotto',
+  stem_ring:'gambo', stem_volva:'gambo', stem_reticulum:'gambo', stem_base:'gambo',
+};
+function comparisonIllustration(key, part, shape) {
+  const record = ICONS?.[key];
+  if (!record) return '';
+  if (shape) {
+    const drawn = record.shapes?.drawn || record.base?.forma;
+    if (shape !== drawn && !record.shapes?.values?.includes(shape)) return '';
+    return illus(key, part, shape === drawn ? '' : shape);
+  }
+  return illus(key, part);
+}
+const comparisonVariants = new Map();
+function comparisonVariantState(key) {
+  if (!comparisonVariants.has(key)) {
+    const record = ICONS?.[key], traits = TAXA.find(t=>t.key===key)?.traits || {};
+    comparisonVariants.set(key, {color:record?.colors?.drawn || record?.base?.colore || [].concat(traits.cap_color || [])[0], shape:record?.shapes?.drawn || record?.base?.forma || [].concat(traits.cap_shape || [])[0], underColor:[].concat(traits.hymenophore_color || [])[0]});
+  }
+  return comparisonVariants.get(key);
+}
+function comparisonControls(t, trait='cap_color') {
+  const chosen = comparisonVariantState(t.key);
+  const [key,label] = {cap_color:['color','Colore del cappello'],cap_shape:['shape','Forma del cappello'],hymenophore_color:['underColor','Colore sotto il cappello']}[trait];
+  const values = [].concat(t.traits?.[trait] || []);
+  if (values.length < 2) return '';
+  if (!values.includes(chosen[key])) chosen[key]=values[0];
+  const fields = `<div class="ts-dots${key==='shape'?' ts-forms':''}" role="group" aria-label="${label}: ${esc(t.name||t.latin)}">${values.map(v=>`<button type="button" class="${key==='shape'?'ts-form':'ts-dot ts-chip'}"${key!=='shape'?` style="--c:${esc(COLORS[v]?.[1] || 'var(--muted)')}"`:''} data-cmp-variant="${key}" data-cmp-variant-key="${esc(t.key)}" value="${esc(v)}" aria-pressed="${chosen[key]===v}">${key==='shape'?shapeHint(v):''}${esc(optLabel(QK(trait),v))}</button>`).join('')}</div>`;
+  return `<div class="cmp-variant-fields">${fields}</div><span class="cmp-variant-status" role="status"></span>`;
+}
+const comparisonArtworkJobs = new WeakMap();
+function revealComparisonArtwork(slot) {
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) slot.animate?.([{opacity:.25},{opacity:1}],{duration:180,easing:'ease-out'});
+}
+function updateComparisonVariant(control, gallery) {
+  const key = control.dataset.cmpVariantKey, record = ICONS?.[key] || {}, t = TAXA.find(t=>t.key===key);
+  if (!t) return;
+  const chosen = comparisonVariantState(key);
+  chosen.userSelected=true;
+  chosen[control.dataset.cmpVariant] = control.value;
+  const c0 = record.colors?.drawn || record.base?.colore, f0 = record.shapes?.drawn || record.base?.forma;
+  const c = chosen.color, f = chosen.shape;
+  let suffix = '', missing = false;
+  if (c && f && c!==c0 && f!==f0) {
+    if (record.combos?.includes(`${c}|${f}`)) suffix = `-${c}-${f}`;
+    else { suffix = `-${f}`; missing = true; }
+  } else if (c && c!==c0) suffix = `-${c}`;
+  else if (f && f!==f0) suffix = `-${f}`;
+  const controls = [...gallery.querySelectorAll('[data-cmp-controls]')].filter(el=>el.dataset.cmpControls===key && el.querySelector('.cmp-variant-status'));
+  for (const group of controls) {
+    group.querySelectorAll('[data-cmp-variant]').forEach(button=>button.setAttribute('aria-pressed',String(button.value===chosen[button.dataset.cmpVariant])));
+    group.querySelector('.cmp-variant-status').textContent = missing?'Forma illustrata nel colore di base: la combinazione selezionata non è ancora disponibile.':'';
+  }
+  gallery.querySelectorAll('[data-cmp-ill-key]').forEach(slot=>{
+    const part = slot.dataset.cmpIllPart;
+    if (slot.dataset.cmpIllKey!==key || slot.dataset.cmpIllValue) return;
+    if (part==='sotto') {
+      if (control.dataset.cmpVariant==='underColor') { slot.dataset.variantWanted='schematic'; slot.innerHTML=hymArt([].concat(t.traits?.hymenophore || [])[0],[chosen.underColor]); revealComparisonArtwork(slot); }
+      return;
+    }
+    if (!['cappello','gambo'].includes(part) || control.dataset.cmpVariant==='underColor') return;
+    const job = Symbol(); comparisonArtworkJobs.set(slot,job);
+    slot.getAnimations().forEach(animation=>animation.cancel());
+    const finish = () => {
+      if (comparisonArtworkJobs.get(slot)!==job) return;
+      slot.classList.remove('is-loading'); slot.removeAttribute('aria-busy');
+      const busy=[...gallery.querySelectorAll('[data-cmp-ill-key][aria-busy="true"]')].some(el=>el.dataset.cmpIllKey===key);
+      controls.forEach(group=>group.setAttribute('aria-busy',String(busy)));
+    };
+    slot.dataset.variantWanted='';
+    const colorAvailable = !c || c===c0 || record.colors?.values?.includes(c);
+    const shapeAvailable = !f || f===f0 || record.shapes?.values?.includes(f);
+    if (!ICONS?.[key] || !colorAvailable || !shapeAvailable) {
+      if (part==='cappello') slot.innerHTML=capArt([f || [].concat(t.traits?.cap_shape || [])[0]],[c || [].concat(t.traits?.cap_color || [])[0]],t.traits?.cap_veil===true);
+      for (const group of controls) group.querySelector('.cmp-variant-status').textContent='Variante mostrata con un disegno schematico.';
+      finish(); revealComparisonArtwork(slot);
+      return;
+    }
+    if (!slot.querySelector('img')) slot.innerHTML=illus(key,part);
+    const image = slot.querySelector('img');
+    if (!image) { finish(); return; }
+    const url = ASSET(`assets/traits/${key}-${part}${suffix}.webp`);
+    slot.dataset.variantWanted = url;
+    if (image.getAttribute('src')===url) { finish(); return; }
+    slot.classList.add('is-loading'); slot.setAttribute('aria-busy','true');
+    controls.forEach(group=>group.setAttribute('aria-busy','true'));
+    const pre = new Image(); pre.src = url;
+    pre.decode().then(()=>{
+      if (!slot.isConnected || comparisonArtworkJobs.get(slot)!==job) return;
+      image.src = url;
+      finish(); revealComparisonArtwork(slot);
+    }).catch(()=>{
+      if (comparisonArtworkJobs.get(slot)!==job) return;
+      finish();
+      for (const group of controls) group.querySelector('.cmp-variant-status').textContent = 'Disegno non disponibile. Resta visibile l’ultima immagine caricata.';
+    });
+  });
+}
+function refreshComparisonParts() {
+  // Se il catalogo arriva dopo il primo disegno, aggiorna le anteprime provvisorie.
+  for(const [key,chosen] of comparisonVariants)if(!chosen.userSelected)comparisonVariants.delete(key);
+  document.querySelectorAll('[data-cmp-controls]').forEach(slot=>{
+    const t = TAXA.find(t=>t.key===slot.dataset.cmpControls);
+    if (t) slot.innerHTML = comparisonControls(t,slot.dataset.cmpTrait);
+  });
+  document.querySelectorAll('[data-cmp-ill-key]').forEach(slot => {
+    if (slot.dataset.variantWanted!==undefined || slot.dataset.cmpIllPart==='sotto'&&slot.querySelector('svg')) return;
+    const shape=slot.dataset.cmpIllValue || (slot.closest('[data-trait]')?.dataset.trait==='cap_shape'?comparisonVariantState(slot.dataset.cmpIllKey).shape:undefined);
+    const image = comparisonIllustration(slot.dataset.cmpIllKey, slot.dataset.cmpIllPart, shape);
+    if (image) slot.innerHTML = image;
+  });
+  for(const [key,chosen] of comparisonVariants)if(chosen.userSelected){
+    const control=[...document.querySelectorAll('[data-cmp-variant-key][aria-pressed="true"]')].find(b=>b.dataset.cmpVariantKey===key&&b.dataset.cmpVariant!=='underColor');
+    if(control)updateComparisonVariant(control,control.closest('.cmp-track'));
+  }
+}
 // varianti del cappello (colori e forme descritti dalle fonti): cambiano insieme le tessere Cappello e Gambo.
 // Colore e forma non si combinano: scegliere un colore riporta la forma a quella del disegno, e viceversa.
 document.addEventListener('click', (e) => {
@@ -199,7 +342,7 @@ document.addEventListener('click', (e) => {
     });
   }
   const li = strip.querySelector('li:has(.ts-dots)'); let note = li?.querySelector('.ts-note');
-  if (li && missing && !note) { note = document.createElement('span'); note.className = 'ts-note'; li.querySelector('.ts-dots').after(note); }
+  if (li && missing && !note) { note = document.createElement('span'); note.className = 'ts-note'; (li.querySelector('.ts-controls') || li).append(note); }
   if (note) { note.hidden = !missing; note.textContent = missing ? 'Colore non ancora disegnato per questa forma' : ''; }
 });
 let CITES = {};
@@ -238,19 +381,14 @@ function matches(t, ans = state.ans) {
   return matchTraits(t, ans, QUESTIONS);
 }
 
-function textHit(t) {
-  if (!state.q) return true;
-  const hay = norm([t.name, t.latin, ...(t.check_before_picking || []), ...Object.values(t.traits || {}).flat()].join(' '));
-  return norm(state.q).split(/\s+/).every((w) => hay.includes(w));
-}
-
 function candidates(ans = state.ans) {
-  return TAXA.filter(textHit).map((t) => {
+  const search=matchSpecies(TAXA,state.q);
+  return search.items.map((t) => {
     const m = matches(t, ans);
     let prior = 1;
     if (state.zone && t.edible_id) prior = 0.4 + 0.6 * (POTENTIAL(t.edible_id, state.zone)?.score ?? 0.5);
     const fit = m.tot ? m.ok / m.tot : 1;
-    return { t, ...m, fit, rank: fit * prior };
+    return { t, ...m, fit, rank: fit * prior, searchReason:search.reasons.get(t) };
   }).filter((c) => retainCandidate(c.t, c))
     .sort((a, b) => b.rank - a.rank || (TOX_ORDER[a.t.toxicity] ?? 9) - (TOX_ORDER[b.t.toxicity] ?? 9));
 }
@@ -341,6 +479,17 @@ function contraText(c) {
   }).join(' ');
 }
 
+function matchedKeys(c) {
+  return Object.entries(state.ans).filter(([key,value])=>{
+    const q=QK(key),tv=q&&traitOf(c.t,q);
+    return value!=null && q && tv!=null && (!Array.isArray(tv)||tv.length) && !c.contra.includes(key);
+  }).map(([key])=>key);
+}
+function matchSummary(c) {
+  if(!c.tot)return Object.values(state.ans).some(v=>v!=null)?'<p class="small id-why">Caratteri non documentati per queste risposte.</p>':'';
+  const names=keys=>keys.length?keys.slice(0,2).map(k=>esc(qShort(QK(k)))).join(', ')+(keys.length>2?` · +${keys.length-2}`:''):'nessuno';
+  return `<dl class="id-match-summary" aria-label="Rispetto alle tue risposte"><div><dt>In comune · ${c.ok}</dt><dd>${names(matchedKeys(c))}</dd></div><div class="id-match-different"><dt>Diversi · ${c.contra.length}</dt><dd>${names(c.contra)}</dd></div></dl>`;
+}
 function resultCard(c) {
   const t = c.t, ph = photoOf(t);
   const tox = esc(t.toxicity || ''), toxL = esc(t.tox_short || t.tox_label || t.toxicity || '');
@@ -351,11 +500,10 @@ function resultCard(c) {
     <div class="id-card-img">
       ${ph ? `<img data-src="${ASSET(ph.file)}" alt="" loading="lazy" decoding="async">` : ''}<span class="tox">${toxL}</span>
       ${ph ? `<button type="button" class="id-zoom" data-photo="${esc(t.key)}" aria-label="${name}: ingrandisci la foto"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="m20 20-5-5M10.5 8v5M8 10.5h5"/></svg></button>` : ''}
-      ${c.tot ? `<span class="id-fit${c.contra.length ? ' warn' : ''}">${c.ok}/${c.tot}</span>` : ''}</div>
+      </div>
     <div class="id-card-body">
-      <button type="button" class="id-link" data-taxon="${esc(t.key)}">${name}</button>${t.name && t.name !== t.latin ? `<i>${esc(t.latin)}</i>` : ''}
-      ${t.caution ? `<span class="small id-why"><b>Cautele della specie:</b> ${esc(t.caution)}</span>` : ''}
-      ${c.contra.length ? `<span class="small id-contra">${contraText(c)}</span>` : ''}
+      <button type="button" class="id-link" data-taxon="${esc(t.key)}">${name}</button>${t.name && t.name !== t.latin ? `<i>${esc(t.latin)}</i>` : ''}${c.searchReason?`<p class="search-feature-reason">Suggerimento per caratteri · ${esc(c.searchReason)}</p>`:''}
+      ${matchSummary(c)}
       <button type="button" class="small id-more" data-taxon="${esc(t.key)}" aria-label="Dettagli di ${name}">Dettagli ›</button>
     </div></li>`;
 }
@@ -370,7 +518,12 @@ function similarity(a, b) {
   return simMemo.get(id);
 }
 // i sosia piu' somiglianti per primi; a pari somiglianza il piu' pericoloso
-const sosiaOf = (ref) => TAXA.filter((t) => t !== ref && ref.edible_id && t.lookalike_of?.includes(ref.edible_id))
+// Entrambe le relazioni documentate, anche per i funghi fuori dal modello dell’indice.
+const sosiaOf = (ref) => TAXA.filter((t) => t !== ref && (
+  (ref.edible_id && t.lookalike_of?.includes(ref.edible_id)) ||
+  (t.edible_id && ref.lookalike_of?.includes(t.edible_id)) ||
+  ref.dangerous_lookalikes?.includes(t.key) || t.dangerous_lookalikes?.includes(ref.key)
+))
   .sort((a, b) => (similarity(ref, b) - similarity(ref, a)) || ((TOX_ORDER[a.toxicity] ?? 9) - (TOX_ORDER[b.toxicity] ?? 9)));
 // per la scheda della specie: lo stesso ordine dei sosia, dato il nome latino
 export const lookalikeRank = (edibleId, latin) => { const ref = refOf(edibleId), k = taxonKeyByLatin(latin), t = k && TAXA.find((x) => x.key === k); return ref && t ? similarity(ref, t) : 0; };
@@ -389,7 +542,8 @@ function diffs(ref, t) {
 export function traitStrip(edibleId, t = refOf(edibleId)) {
   if (!t) return '';
   const tr = t.traits || {};
-  const tile = (art, k, v, sub = '', extra = '') => `<li><span class="ts-art" aria-hidden="true">${art}</span>${extra}<span class="ts-k" data-no-glossary>${esc(k)}</span><span class="ts-v">${esc(v)}</span>${sub ? `<span class="ts-sub">${esc(sub)}</span>` : ''}</li>`;
+  const titleTerms={Cappello:'cappello',Lamelle:'lamelle',Pori:'pori',Aculei:'aculei',Pliche:'pliche','Sotto il cappello':'imenoforo',Gambo:'gambo','Al taglio':'viraggio',Sporata:'sporata'};
+  const tile = (art, k, v, sub = '', extra = '', kind = '', facts = '') => `<li class="ts-card${kind ? ` ts-card-${kind}` : ''}"><span class="ts-k" data-no-glossary>${glossaryHeading(titleTerms[k],k)}</span>${art?`<span class="ts-art" aria-hidden="true">${art}</span>`:''}${v || facts ? `<span class="ts-v">${facts || esc(v)}</span>` : ''}${sub ? `<span class="ts-sub">${esc(sub)}</span>` : ''}${extra ? `<span class="ts-controls">${extra}</span>` : ''}</li>`;
   const out = [];
   const one = (q, v) => optLabel(q, v);
   const Q = (k) => QUESTIONS.find((q) => q.key === k);
@@ -397,20 +551,22 @@ export function traitStrip(edibleId, t = refOf(edibleId)) {
   const pick = (field, q, label, dot) => {
     const g = ic?.[field];
     if (!g || g.values.length < 2) return '';
-    return `<span class="ts-dots${dot ? '' : ' ts-forms'}" role="group" aria-label="${label}">${g.values.map((v) => {
-      const name = esc(one(Q(q), v));
+    return `<span class="ts-variant-group"><span class="ts-control-label">${dot?'Colore':'Forma'}</span><span class="ts-dots${dot ? '' : ' ts-forms'}" role="group" aria-label="${label}">${g.values.map((v) => {
+      const name = esc(one(Q(q), v)), frequency=t.trait_freq?.[q]?.[v];
       // pillola con il colore e il suo nome: su telefono un pallino da solo è un bersaglio troppo piccolo e muto
-      return `<button type="button" class="${dot ? 'ts-dot ts-chip' : 'ts-form'}"${dot ? ` style="--c:${COLORS[v]?.[1] || '#999'}"` : ''} aria-pressed="${v === g.drawn}" data-ill-key="${esc(t.key)}" data-ill-v="${esc(v)}" data-ill-drawn="${esc(g.drawn)}">${name}</button>`;
-    }).join('')}</span>`;
+      return `<button type="button" class="${dot ? 'ts-dot ts-chip' : 'ts-form'}"${dot ? ` style="--c:${COLORS[v]?.[1] || '#999'}"` : ''} aria-pressed="${v === g.drawn}" data-ill-key="${esc(t.key)}" data-ill-v="${esc(v)}" data-ill-drawn="${esc(g.drawn)}">${dot ? `<span class="ts-choice-label">${name}${frequency ? `<small>${esc(frequency)}</small>` : ''}</span>` : shapeHint(v)+name}</button>`;
+    }).join('')}</span></span>`;
   };
   const dots = pick('colors', 'cap_color', 'Colori del cappello descritti dalle fonti', true) + pick('shapes', 'cap_shape', 'Forme del cappello descritte dalle fonti', false);
+  // Un selettore completo espone già valori e frequenze: evita la stessa lista due volte.
+  const covered = (field,key) => ic?.[field]?.values?.length > 1 && [].concat(tr[key] || []).every(v=>ic[field].values.includes(v));
   // cappello: la sua forma, nei suoi colori, con le verruche se ci sono; sotto forma e diametro
   if (tr.cap_color || tr.cap_shape) {
     const shapes = [].concat(tr.cap_shape || ['convesso']), cols = [].concat(tr.cap_color || ['bruno']);
     // con la frequenza dalle fonti: «rosso (di solito), arancio (a volte) o giallo (di rado)»
     const freq = (field, q, v) => { const w = t.trait_freq?.[field]?.[v]; return one(q, v) + (w ? ` (${w})` : ''); };
-    out.push(tile(ic ? illus(t.key, 'cappello') : capArt(shapes, cols, tr.cap_veil === true), 'Cappello', orList([].concat(tr.cap_color || []).map((v) => freq('cap_color', Q('cap_color'), v))) || '',
-      [orList([].concat(tr.cap_shape || []).slice(0, 2).map((v) => optLabel(Q('cap_shape'), v))), sizeTxt(tr.cap_size)].filter(Boolean).join(' · '), dots));
+    out.push(tile(ic ? illus(t.key, 'cappello') : capArt(shapes, cols, tr.cap_veil === true), 'Cappello', covered('colors','cap_color') ? '' : orList([].concat(tr.cap_color || []).map((v) => freq('cap_color', Q('cap_color'), v))) || '',
+      [covered('shapes','cap_shape') ? '' : orList([].concat(tr.cap_shape || []).map((v) => optLabel(Q('cap_shape'), v))), tr.cap_size?.length ? `Diametro ${sizeTxt(tr.cap_size)}` : ''].filter(Boolean).join(' · '), dots, 'cap'));
   }
   // sotto il cappello e il suo colore in una sola tessera: "Lamelle · bianche o crema"
   if (tr.hymenophore || tr.hymenophore_color) {
@@ -419,22 +575,45 @@ export function traitStrip(edibleId, t = refOf(edibleId)) {
     const g = { lamelle: 'fp', pliche: 'fp', pori: 'mp', aculei: 'mp' }[h] || 'ms';
     const cols = [].concat(tr.hymenophore_color || []);
     const art = ic ? illus(t.key, 'sotto') : hymArt(h, cols);
-    out.push(tile(art, k, cols.length ? orList(cols.map((c) => agree(c, g))) : (h === 'liscio' ? 'liscio' : '')));
+    out.push(tile(art, k, cols.length ? orList(cols.map((c) => agree(c, g))) : (h === 'liscio' ? 'liscio' : ''), '', '', 'hymenophore'));
   }
   // gambo: anello, volva, reticolo e base nello stesso disegno
   if (tr.stem_ring != null || tr.stem_volva != null || tr.stem_reticulum != null || tr.stem_base?.length) {
     const base = [].concat(tr.stem_base || ['normale'])[0];
     const bits = [tr.stem_ring === true ? 'con anello' : tr.stem_ring === false ? 'senza anello' : 'anello variabile',
       tr.stem_volva === true ? 'con volva' : tr.stem_volva === false ? 'senza volva' : null, tr.stem_reticulum === true ? 'con reticolo' : null].filter(Boolean);
+    const facts=[['Anello',tr.stem_ring],['Volva',tr.stem_volva],['Reticolo',tr.stem_reticulum]].filter(([,v])=>typeof v==='boolean').map(([label,value])=>`<span class="ts-fact"><span><a class="glossary-link" data-term="${{Anello:'anello',Volva:'volva',Reticolo:'reticolo'}[label]}" href="#/glossario/${{Anello:'anello',Volva:'volva',Reticolo:'reticolo'}[label]}" aria-haspopup="dialog">${label}</a></span><b>${value?'presente':'assente'}</b></span>`).join('');
     out.push(tile(ic ? illus(t.key, 'gambo') : stemArt2(base, tr.stem_ring, tr.stem_volva, tr.stem_reticulum, [].concat(tr.cap_color || [])[0], [].concat(tr.cap_shape || [])[0]), 'Gambo', bits.join(', '),
-      tr.stem_base?.length ? `base ${orList(tr.stem_base.map((v) => optLabel(Q('stem_base'), v)))}` : ''));
+      tr.stem_base?.length ? `Base ${orList(tr.stem_base.map((v) => optLabel(Q('stem_base'), v)))}` : '', '', 'stem', facts ? `<span class="ts-facts">${facts}</span>` : ''));
   }
-  if (tr.flesh_change) { const f = [].concat(tr.flesh_change); out.push(tile(fleshArt(f), 'Al taglio', orList(f.map(fleshSay)))); }
-  if (tr.spore_print?.length) out.push(tile(sporeArt(tr.spore_print[0]), 'Sporata', orList(tr.spore_print.map((v) => Q('spore_print').labels?.[v] || agree(v, 'fs')))));
+  if (tr.flesh_change) { const f = [].concat(tr.flesh_change); out.push(tile(fleshArt(f), 'Al taglio', orList(f.map(fleshSay)), '', '', 'flesh')); }
+  if (tr.spore_print?.length) out.push(tile('', 'Sporata', '', 'Colore del deposito', '', 'spores', `<span class="spore-color-list">${tr.spore_print.map(v=>`<span class="spore-color-row">${sporeDot(v)}<span>${esc(Q('spore_print').labels?.[v]||agree(v,'fs'))}</span></span>`).join('')}</span>`));
   // le tessere di cappello, sotto e gambo sono disegni AI (assets/traits): detto una volta, sotto la fila
   const ai = out.some((h) => h.includes('class="ts-ill"')) ? '<p class="small muted ts-ai">Disegni schematici fatti con AI, non foto: confronta con le foto e con il testo.</p>' : '';
   return `<ul class="trait-strip" aria-label="Caratteri principali">${out.join('')}</ul>${ai}`;
 }
+
+const growthStages = t => availableGrowthStages(t, ICONS?.[t.key]);
+function growthBody(t) {
+  const stages = growthStages(t);
+  return `${stages.length ? `<div class="growth-selector" role="group" aria-label="Fasi di crescita"><button type="button" data-growth-stage="" aria-pressed="true">Panoramica</button>${stages.map(s=>`<button type="button" data-growth-stage="${esc(s.id)}" aria-pressed="false">${esc(s.label)}</button>`).join('')}</div>` : ''}<div data-growth-content>${traitStrip(null,t)}</div>`;
+}
+export function growthTraits(edibleId, t = refOf(edibleId)) {
+  return t ? `<div class="growth-traits" data-growth-key="${esc(t.key)}">${growthBody(t)}</div>` : '';
+}
+document.addEventListener('click', e => {
+  const button = e.target.closest?.('[data-growth-stage]');
+  if (!button) return;
+  const root = button.closest('[data-growth-key]'), t = TAXA.find(t => t.key === root?.dataset.growthKey);
+  if (!t) return;
+  const stage = growthStages(t).find(s => s.id === button.dataset.growthStage);
+  if (button.dataset.growthStage && !stage) return;
+  root.querySelectorAll('[data-growth-stage]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
+  const content = root.querySelector('[data-growth-content]');
+  if (!stage) { content.innerHTML = traitStrip(null,t); return; }
+  const names = {cappello:'Cappello',sotto:'Sotto il cappello',gambo:'Fungo intero',taglio:'Sezione dell’uovo'};
+  content.innerHTML = `<p class="growth-description" role="status">${esc(stage.desc)}</p>${stage.id==='uovo'?'<p class="growth-warning">Nel Lazio è vietato raccogliere ovoli chiusi. Aprirli non conferma la specie e non rende lecita la raccolta.</p>':''}<ul class="trait-strip growth-gallery" aria-label="Disegni della fase: ${esc(stage.label)}">${stage.tiles.map(part=>`<li><span class="ts-art"><img class="ts-ill" src="${esc(ASSET(`assets/traits/${t.key}-${part}-fase-${stage.id}.webp`))}" alt="${esc(names[part])}: ${esc(stage.label)}" width="96" height="96" decoding="async"></span><span class="ts-k" data-no-glossary>${esc(names[part])}</span></li>`).join('')}</ul><p class="small muted ts-ai">Disegni schematici fatti con AI, non foto: confronta con le foto e con il testo.</p><a class="growth-source" href="${esc(stage.source)}" target="_blank" rel="noopener">Fonte della fase</a>`;
+});
 
 // Avvisi: ognuno ha un tipo e un titolo breve (data/species-traits.json, field_rules).
 // Chiuso mostra l'indice tipo · titolo; aperto ogni avviso per intero, con la citazione (Autore, anno).
@@ -443,7 +622,7 @@ const citeOf = (url) => { const c = url && CITES[url]; return c ? `${c.author}, 
 function attItem(r) {
   const k = ATT_KIND[r.kind], c = citeOf(r.source);
   const src = r.source && /^https?:\/\//.test(r.source) ? ` <a class="att-cite" href="${esc(r.source)}" target="_blank" rel="noopener"${CITES[r.source]?.title ? ` title="${esc(CITES[r.source].title)}"` : ''}>${c ? `(${esc(c)})` : 'Fonte'}</a>` : '';
-  return `<li class="att-item${r.severity === 'critico' ? ' crit' : ''}">${k ? `<span class="att-k">${k}</span>` : ''}${r.title ? `<b class="att-t" data-no-glossary>${esc(r.title)}</b>` : ''}<p data-glossary>${esc(r.text)}${src}</p></li>`;
+  return `<li class="att-item${r.severity === 'critico' ? ' crit' : ''}">${k ? `<span class="att-k">${k}</span>` : ''}${r.title && r.text.length > 120 ? `<b class="att-t" data-no-glossary>${esc(r.title)}</b>` : ''}<p data-glossary>${esc(r.text)}${src}</p></li>`;
 }
 // elenco di avvisi senza riquadro (es. «Regole generali di sicurezza»): stesse righe delle schede
 export const warningList = (rules) => rules?.length ? `<ul class="att-list warn-list">${[...rules].sort((a, b) => (a.severity === 'critico' ? 0 : 1) - (b.severity === 'critico' ? 0 : 1)).map(attItem).join('')}</ul>` : '';
@@ -468,29 +647,43 @@ export function sourceRows(sources) {
 // crediti delle foto: «Autore · Licenza», sotto la fonte; la riga apre la pagina originale
 export function photoRows(photos) {
   const list = (photos || []).filter((p) => p && (p.author || p.page));
-  return list.length ? `<ul class="src-rows src-photos">${list.map((p) => {
-    const label = [p.author || 'Autore non indicato', p.license].filter(Boolean).join(' · ');
+  const groups = new Map();
+  list.forEach((p, index) => {
+    // Keep different authors or legally required credit wording in separate groups.
+    const key = JSON.stringify([p.author||'', p.attribution_required_text||'', p.license||'', p.licenseUrl||'',p.author||p.attribution_required_text?'':index]);
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push({photo:p, number:index+1});
+  });
+  return list.length ? `<ul class="src-rows src-photos">${[...groups.values()].map((group) => {
+    const p = group[0].photo;
+    const label = [p.attribution_required_text || p.author || 'Autore non indicato', p.license].filter(Boolean).join(' · ');
     const sub = [p.prefix, p.source || 'Fotografia originale'].filter(Boolean).join(' · ');
     const lic = p.licenseUrl ? `<a class="src-lic" href="${esc(p.licenseUrl)}" target="_blank" rel="noopener" aria-label="Testo della licenza ${esc(p.license || '')}">Licenza</a>` : '';
+    const sharedSource=group.every(({photo})=>photo.source===p.source)?p.source||'Fotografie originali':'';
+    if (group.length > 1) return `<li class="src-row src-photo-group"><div class="src-photo-credit"><span class="src-tx"><b>${esc(label)}</b><small>${group.length} fotografie${sharedSource?' · '+esc(sharedSource):''}</small></span>${lic}</div><div class="src-photo-links">${group.map(({photo,number}) => {
+      const detail=[photo.prefix,photo.source||'Fotografia originale'].filter(Boolean).join(' · ');
+      const caption=[`Foto ${number}`,photo.prefix,!sharedSource?photo.source:''].filter(Boolean).join(' · ');
+      return photo.page?`<a href="${esc(photo.page)}" target="_blank" rel="noopener" title="${esc(detail)}">${esc(caption)}${EXT_IC}</a>`:`<span class="small">${esc(caption)} · ${esc(detail)}</span>`;
+    }).join('')}</div></li>`;
     return p.page ? srcRow(p.page, label, sub, lic) : `<li class="src-row"><span class="src-a"><span class="src-tx"><b>${esc(label)}</b><small>${esc(sub)}</small></span></span>${lic}</li>`;
   }).join('')}</ul>` : '';
 }
 
 // un solo avviso in riga (es. «Cosa osservare» in home): tipo, titolo, testo
-export const attentionLine = (r) => r?.text ? `<span class="plan-crit" role="note"><span class="pc-k">${ATT_KIND[r.kind] || 'Attenzione'}</span>${r.title ? `<b class="pc-t" data-no-glossary>${esc(r.title)}</b>` : ''}<span class="pc-x">${esc(r.text)}</span></span>` : '';
+export const attentionLine = (r) => r?.text ? `<span class="plan-crit${r.text.length<=120?' is-brief':''}" role="note"><span class="pc-k">${ATT_KIND[r.kind] || 'Attenzione'}</span>${r.title && r.text.length>120 ? `<b class="pc-t" data-no-glossary>${esc(r.title)}</b>` : ''}<span class="pc-x">${esc(r.text)}</span></span>` : '';
 export function attentionBox(rules, extra = '') {
   if (!rules?.length) return '';
   const sorted = [...rules].sort((a, b) => (a.severity === 'critico' ? 0 : 1) - (b.severity === 'critico' ? 0 : 1));
   const crit = sorted.filter((r) => r.severity === 'critico').length;
   const n = sorted.length;
   const count = n === 1 ? '' : crit === n ? `${n} avvisi critici` : crit ? `${crit} ${crit === 1 ? 'critico' : 'critici'} su ${n}` : `${n} avvisi`;
-  const head = `<span class="att-h">Attenzione</span>${count ? `<small class="att-n">${count}</small>` : ''}`;
+  const head = `${alertTriangleGlyph}<span class="att-h">Attenzione</span>${count ? `<small class="att-n">${count}</small>` : ''}`;
   const list = `<ul class="att-list">${sorted.map(attItem).join('')}</ul>${extra ? `<p class="att-extra small">${esc(extra)}</p>` : ''}`;
   // uno o due avvisi: sempre aperti, niente da toccare
-  if (sorted.length <= 2) return `<section class="attention att-c att-static" role="note" aria-label="Attenzione"><div class="att-top">${head}</div>${list}</section>`;
+  if (sorted.length <= 2) return `<section class="attention att-c att-static${crit ? '' : ' attention-caution'}" role="note" aria-label="Attenzione"><div class="att-top">${head}</div>${list}</section>`;
   // chiuso: quanti avvisi per tipo, in parole («2 avvisi sui sosia»), i tipi con avvisi critici per primi (identify-model.js)
   const index = `<ul class="att-index att-sum" aria-hidden="true" data-no-glossary>${attentionGroups(sorted).map((g) => `<li class="${g.crit ? 'crit' : ''}"><span class="att-it">${esc(g.text)}</span></li>`).join('')}</ul>`;
-  return `<details class="attention att-c" role="note"><summary><span class="att-top">${head}</span>${index}<span class="att-more"><span class="att-open">Leggi i dettagli e le fonti</span><span class="att-close">Chiudi i dettagli</span></span></summary>${list}</details>`;
+  return `<details class="attention att-c${crit ? '' : ' attention-caution'}" role="note"><summary><span class="att-top">${head}</span>${index}<span class="att-more"><span class="att-open">Leggi i dettagli e le fonti</span><span class="att-close">Chiudi i dettagli</span></span></summary>${list}</details>`;
 }
 
 // disegni composti per le tessere della scheda
@@ -617,6 +810,7 @@ export function renderTaxonPage(box, key) {
 // Le sezioni compaiono solo se c'e' il dato; extra e' HTML aggiuntivo della scheda (stagione testuale, segnalazioni).
 export function renderTaxonView(box, t, { photos = null, habitatText = '', extra = '' } = {}) {
   box.dataset.glossaryContext='Funghi';
+  box.classList.add('fungus-page');
   const ph = photos || photosOf(t), tox = esc(t.toxicity || ''), toxL = esc(t.tox_label || t.toxicity || '');
   // per una specie senza usi alimentari «non confonderlo con» suonerebbe come un invito a raccoglierla
   const lookTitle = /^commestibile/.test(t.toxicity || '') ? 'Non confonderlo con' : 'Specie simili';
@@ -634,8 +828,9 @@ export function renderTaxonView(box, t, { photos = null, habitatText = '', extra
     <div class="pbody">
       ${ph.length > 1 ? `<div class="sp-strip">${ph.slice(1, 6).map((p, k) => `<button type="button" class="zoomable" data-photo="${k + 1}" aria-label="Foto ${k + 2}: ingrandisci"><img data-src="${ASSET(p.file)}" alt="" loading="lazy" decoding="async"></button>`).join('')}</div>` : ''}
       ${t.field_rules?.length ? attentionBox(t.field_rules) + (t.caution ? `<p class="id-why" data-glossary><b>Cautele della specie:</b> ${esc(t.caution)}</p>` : '') : attentionBox(t.caution ? [{ text: t.caution, severity: 'importante' }] : [])}
-      ${t.traits && Object.keys(t.traits).some((k) => k !== 'season') ? `<h3>Caratteri da confrontare</h3>${traitStrip(null, t)}` : '<p class="notice">Caratteri di confronto in preparazione: per ora la scheda riporta ambiente, stagione e cautele dalle fonti.</p>'}
-      ${t.check_before_picking?.length ? `<p class="small muted checks-tip">Caratteri descritti per la specie: confrontarli non identifica un esemplare né ne certifica la commestibilità.</p><ol class="keys" data-glossary>${t.check_before_picking.map((x) => `<li><span class="key-text">${esc(x)}</span></li>`).join('')}</ol>` : ''}
+      ${t.traits && Object.keys(t.traits).some((k) => k !== 'season') ? `<h3>Caratteri da confrontare</h3>${growthTraits(null, t)}` : t.check_before_picking?.length ? '' : '<p class="notice">Caratteri di confronto in preparazione.</p>'}
+      ${compareCta(null, t)}
+      ${t.check_before_picking?.length ? `<details class="sec character-details"><summary>Cosa controllare da vicino</summary><div class="sec-body"><ol class="keys" data-glossary>${t.check_before_picking.map((x) => `<li><span class="key-text">${esc(x)}</span></li>`).join('')}</ol></div></details>` : ''}
       ${look.length ? `<h3>${lookTitle}</h3><ul class="tx-look">${look.map(({ id, o }) => { const op = photoOf(o); return `<li>
         <a class="tx-look-main" data-entity href="#/specie/${esc(id)}">${op ? `<img data-src="${ASSET(op.thumb || op.file)}" alt="" loading="lazy" decoding="async">` : ''}<span><b>${esc(o.name)}</b><i>${esc(o.latin)}</i>${o.toxicity ? `<small class="tx-c tox-${esc(o.toxicity.replace(/\s/g, '-'))}"><span class="tox">${esc(o.tox_label || o.toxicity)}</span></small>` : ''}</span></a>
         <a class="tx-cmp-btn" href="#/riconosci/confronta/${esc(t.key)}/${esc(o.key)}" aria-label="Confronta con ${esc(o.name)}, carattere per carattere">Confronta</a></li>`; }).join('')}</ul>` : ''}
@@ -644,25 +839,22 @@ export function renderTaxonView(box, t, { photos = null, habitatText = '', extra
         const back = TAXA.filter((x) => x !== t && (x.dangerous_lookalikes || []).includes(t.key) && !look.some((l) => l.o === x));
         const ds = [...(t.dangerous_lookalikes || []).map((k) => TAXA.find((x) => x.key === k)).filter(Boolean), ...back.filter((x) => !(t.dangerous_lookalikes || []).includes(x.key))];
         // se la sezione c'è già (sosia del modello), le schede si aggiungono sotto lo stesso titolo
-        return ds.length ? `${look.length ? '' : `<h3>${lookTitle}</h3>`}<ul class="tx-look${look.length ? ' tx-look-more' : ''}">${ds.map((o) => { const op = photoOf(o); return `<li><a class="tx-look-main" data-entity href="#/fungo/${esc(o.key)}">${op ? `<img data-src="${ASSET(op.thumb || op.file)}" alt="" loading="lazy" decoding="async">` : ''}<span><b>${esc(o.name || o.latin)}</b><i>${esc(o.latin)}</i><small class="tx-c tox-${esc((o.toxicity || '').replace(/\s/g, '-'))}"><span class="tox">${esc(o.tox_label || o.toxicity || '')}</span></small></span></a></li>`; }).join('')}</ul>` : '';
+        return ds.length ? `${look.length ? '' : `<h3>${lookTitle}</h3>`}<ul class="tx-look${look.length ? ' tx-look-more' : ''}">${ds.map((o) => { const op = photoOf(o); return `<li><a class="tx-look-main" data-entity href="#/fungo/${esc(o.key)}">${op ? `<img data-src="${ASSET(op.thumb || op.file)}" alt="" loading="lazy" decoding="async">` : ''}<span><b>${esc(o.name || o.latin)}</b><i>${esc(o.latin)}</i><small class="tx-c tox-${esc((o.toxicity || '').replace(/\s/g, '-'))}"><span class="tox">${esc(o.tox_label || o.toxicity || '')}</span></small></span></a><a class="tx-cmp-btn" href="#/riconosci/confronta/${esc(t.key)}/${esc(o.key)}" aria-label="Confronta con ${esc(o.name || o.latin)}, carattere per carattere">Confronta</a></li>`; }).join('')}</ul>` : '';
       })()}
-      <h3>Dove e quando</h3>
-      <dl class="sci-params">
-        ${habitat.length ? `<div><dt>Dove</dt><dd data-glossary>${esc(orList(habitat))}</dd></div>` : habitatText ? `<div><dt>Dove</dt><dd data-glossary>${esc(habitatText)}</dd></div>` : ''}
-        ${t.trees?.length ? `<div><dt>Alberi</dt><dd>${esc(t.trees.join(', '))}</dd></div>` : ''}
-        ${months ? `<div><dt>Quando</dt><dd>${esc(months)}</dd></div>` : ''}
-      </dl>
+      ${speciesHabitat({habitat:habitat.length ? habitat : habitatText || t.habitat || '', trees:t.trees||[], months:t.traits?.season?.length ? t.traits.season : t.season_text || months})}
       ${extra}
-      <p class="small muted">Confrontare questi caratteri non identifica un esemplare: fai controllare tutto il raccolto all'Ispettorato micologico dell'ASL. È gratuito.</p>
+      ${speciesSafetyNote()}
       ${t.sources?.length || ph.length ? `<details class="sec"><summary>Fonti e fotografie</summary><div class="sec-body">${sourceRows(t.sources)}${ph.length ? `<p class="src-h">Fotografie</p>${photoRows(ph)}` : ''}</div></details>` : ''}
     </div>`;
-  const lb = ph.map((p) => ({ src: ASSET(p.file_hd || p.file), alt: t.name, caption: captionHtml({ title: `<span class="tox">${toxL}</span> ${esc(t.name || '')} <i>${esc(t.latin)}</i>`, credit: `Foto: ${esc(p.author || '')}${p.license ? `, ${p.licenseUrl ? `<a href="${esc(p.licenseUrl)}" target="_blank" rel="noopener">${esc(p.license)}</a>` : esc(p.license)}` : ''}${p.page ? ` · <a href="${esc(p.page)}" target="_blank" rel="noopener">${esc(p.source || 'Fotografia originale')}</a>` : ''}` }) }));
-  box.querySelectorAll('[data-photo]').forEach((b) => b.addEventListener('click', () => openLightbox(lb, +b.dataset.photo)));
+  enhanceEntityAccordions(box);
+  const lb = ph.map((p) => ({ src: ASSET(p.file_hd || p.file), alt: p.alt || t.name, caption: captionHtml({ title: `<span class="tox">${toxL}</span> ${esc(t.name || '')} <i>${esc(t.latin)}</i>`, text: esc(p.caption || ''), credit: `Foto: ${esc(p.attribution_required_text || p.author || '')}${p.license ? `, ${p.licenseUrl ? `<a href="${esc(p.licenseUrl)}" target="_blank" rel="noopener">${esc(p.license)}</a>` : esc(p.license)}` : ''}${p.page ? ` · <a href="${esc(p.page)}" target="_blank" rel="noopener">${esc(p.source || 'Fotografia originale')}</a>` : ''}` }) }));
+  mountInlineGallery(box,lb);
 }
-export function compareCta(edibleId) {
-  const t = refOf(edibleId);
+export function compareCta(edibleId, taxon = null) {
+  const t = taxon || refOf(edibleId);
   const list = t ? sosiaOf(t) : [];
-  if (!list.length) return '';
+  if (!t) return '';
+  if (!list.length) return `<a class="cmp-cta" href="#/confronta/${esc(t.key)}"><span class="cc-txt"><b>Confronta con un’altra specie</b><small>Nessun sosia collegato in questa scheda. Scegli una seconda specie dal catalogo per confrontare i caratteri disponibili.</small></span><span class="ts-cta-go" aria-hidden="true">›</span></a>`;
   // fotografico: lui e i sosia in miniatura (oltre 4, un "+N")
   const th = (x, cls = '') => { const ph = photoOf(x); return `<span class="cc-th ${cls} tox-${String(x.toxicity || '').replace(/\s/g, '-')}">${ph ? `<img data-src="${ASSET(ph.thumb || ph.file)}" alt="" loading="lazy" decoding="async">` : ''}</span>`; };
   const shown = list.slice(0, 4), more = list.length - shown.length;
@@ -694,7 +886,7 @@ const CMP = [
     return types.length === 1 && terms[types[0]] ? `Colore ${terms[types[0]]}` : 'Colore sotto il cappello';
   }, art: (a, t) => a.slice(0, 3).map((v) => swatch(hymKind(t.traits?.hymenophore), v)).join(''), say: (v) => v },
   { key: 'flesh_change', k: 'Carne al taglio', art: fleshArt, say: fleshSay },
-  { key: 'cap_color', k: 'Cappello', art: (a) => a.slice(0, 3).map((v) => swatch('cap', v)).join(''), say: (v) => v },
+  { key: 'cap_color', k: 'Colore del cappello', art: (a) => a.slice(0, 3).map((v) => swatch('cap', v)).join(''), say: (v) => v },
   { key: 'stem_ring', k: 'Anello', bool: true, art: (a) => ART[`ring_${a[0]}`] },
   { key: 'stem_volva', k: 'Volva', bool: true, art: (a) => ART[`volva_${a[0]}`] },
   { key: 'stem_reticulum', k: 'Reticolo sul gambo', bool: true, art: (a) => ART[`ret_${a[0]}`] },
@@ -702,9 +894,9 @@ const CMP = [
   { key: 'habitat', k: 'Dove', art: (a) => ART[a[0]], say: (v) => (QUESTIONS.find((q) => q.key === 'habitat').labels[v] || v) },
   { key: 'growth', k: 'Come cresce', art: (a) => ART[a[0]], say: (v) => (QUESTIONS.find((q) => q.key === 'growth').labels[v] || v) },
   { key: 'cap_shape', k: 'Forma del cappello', art: (a) => SHAPE[a[0]], say: (v) => optLabel(QK('cap_shape'), v) },
-  { key: 'cap_size', k: 'Dimensione', say: (v) => optLabel(QK('cap_size'), v) },
+  { key: 'cap_size', k: 'Diametro del cappello', say: (v) => optLabel(QK('cap_size'), v) },
   { key: 'trees', k: 'Alberi', get: (t) => t.trees, say: (v) => v },
-  { key: 'spore_print', k: 'Sporata', art: (a) => sporeArt(a[0]), say: (v) => optLabel(QK('spore_print'), v) },
+  { key: 'spore_print', k: 'Sporata', art: (a) => sporeDot(a[0]), say: (v) => optLabel(QK('spore_print'), v) },
   { key: 'gill_attachment', k: 'Attaccatura delle lamelle', art: (a) => ATTACH[a[0]], say: (v) => optLabel(QK('gill_attachment'), v) },
   { key: 'cap_veil', k: 'Verruche sul cappello', bool: true, art: (a) => VEIL[a[0]] },
   { key: 'cap_surface', k: 'Superficie del cappello', art: (a) => SURF[a[0]], say: (v) => optLabel(QK('cap_surface'), v) },
@@ -723,31 +915,47 @@ function cmpRows(ref, t) {
     const shared = differentStructure ? 0 : B.filter((v) => A.includes(v)).length;
     // info: la stagione aiuta poco a distinguere, quindi non diventa mai "qui li distingui"
     const kind = r.info ? 'same' : !shared ? 'diff' : (shared < B.length || shared < A.length) ? 'part' : 'same';
-    // caratteri atomizzati: un'etichetta per valore, ognuna col suo disegno.
-    // In comune: attenuate e in testa, nello stesso ordine sui due lati. Solo da un lato: in evidenza.
+    // Valori descrittivi con disegno e alternative esplicite, senza sembrare filtri.
+    // I valori comuni precedono gli altri, nello stesso ordine sui due lati.
     const say = (v) => (r.bool ? withOut(r.key, v) : r.say ? r.say(v) : String(v));
-    const chip = (v, who, common, alternative) => `<li class="cmp-option">${alternative ? '<span class="cmp-or">oppure</span>' : ''}<span class="cmp-v ${common ? 'common' : 'own'}">${r.art ? `<span class="cmp-v-art" aria-hidden="true">${r.art([v], who) || ''}</span>` : ''}<span>${esc(say(v))}</span><span class="sr-only">${common ? ', in comune' : ', solo qui'}</span></span></li>`;
+    const value = (v, who, common) => `<li class="cmp-option"><span class="cmp-v ${common ? 'common' : 'own'}"><span class="cmp-relation" aria-hidden="true">${common?'=':'≠'}</span>${CMP_PARTS[r.key] && ['cap_color','hymenophore_color'].includes(r.key) && COLORS[v] ? `<i class="cmp-color-dot" style="--cmp-color:${esc(COLORS[v][1])}" aria-hidden="true"></i>` : ''}${r.art && !CMP_PARTS[r.key] && r.key!=='cap_shape' ? `<span class="cmp-v-art" aria-hidden="true">${r.art([v], who) || ''}</span>` : ''}<span class="cmp-value-text">${esc(say(v))}</span><span class="sr-only">${common ? ', in comune' : ', valore diverso nel confronto'}</span></span></li>`;
+    const illustration = who => r.key==='cap_shape' ? `<span class="cmp-part-art" data-cmp-ill-key="${esc(who.key)}" data-cmp-ill-part="cappello" aria-hidden="true">${comparisonIllustration(who.key,'cappello',comparisonVariantState(who.key).shape) || capArt([comparisonVariantState(who.key).shape],[comparisonVariantState(who.key).color],who.traits?.cap_veil===true)}</span>` : CMP_PARTS[r.key] ? `<span class="cmp-part-art" data-cmp-ill-key="${esc(who.key)}" data-cmp-ill-part="${CMP_PARTS[r.key]}" aria-hidden="true">${r.key==='hymenophore_color' && [].concat(who.traits?.hymenophore_color || []).length>1 ? hymArt([].concat(who.traits?.hymenophore || [])[0],[comparisonVariantState(who.key).underColor]) : ICONS?.[who.key] ? illus(who.key,CMP_PARTS[r.key]) : ''}</span>` : '';
     const cell = (X, Y, who) => r.key === 'season'
-      ? `<div class="cmp-cell"><span>${esc(txt(X))}</span></div>`
-      : `<div class="cmp-cell">${r.label ? `<span class="cmp-k">${esc(r.label(who))}</span>` : ''}<ul class="cmp-vals">${[...A.filter((v) => Y.includes(v) && X.includes(v)), ...X.filter((v) => !Y.includes(v))].map((v, i) => chip(v, who, !differentStructure && Y.includes(v), i > 0 && !['habitat', 'trees'].includes(r.key))).join('')}</ul></div>`;
-    return { kind, k: r.k, html: `<li class="cmp-row ${kind}" data-trait="${r.key}">${r.label ? '' : `<span class="cmp-k">${esc(r.k)}</span>`}${cell(A, B, ref)}${cell(B, A, t)}</li>` };
+      ? `<div class="cmp-cell" role="group" aria-label="${esc(who.name||who.latin)}"><span>${esc(txt(X))}</span></div>`
+      : `<div class="cmp-cell${['hymenophore','stem_ring','stem_volva','stem_reticulum','stem_base','gill_attachment'].includes(r.key)?' cmp-cell-miniature':''}" role="group" aria-label="${esc(who.name||who.latin)}">${r.label ? `<span class="cmp-k">${esc(r.label(who))}</span>` : ''}${illustration(who)}${['cap_color','cap_shape','hymenophore_color'].includes(r.key)?`<div class="cmp-variant-controls" data-cmp-controls="${esc(who.key)}" data-cmp-trait="${r.key}">${comparisonControls(who,r.key)}</div>`:''}<ul class="cmp-vals">${[...A.filter((v) => Y.includes(v) && X.includes(v)), ...X.filter((v) => !Y.includes(v))].map(v => value(v, who, !differentStructure && Y.includes(v))).join('')}</ul></div>`;
+    return { kind, info:!!r.info, k: r.k, html: `<li class="cmp-row ${kind}" data-trait="${r.key}">${r.label ? '' : `<span class="cmp-k">${esc(r.k)}</span>`}${cell(A, B, ref)}${cell(B, A, t)}</li>` };
   }).filter(Boolean);
 }
 
-// i commestibili con cui si confonde un velenoso (o un sosia): per il confronto visto dalla sua parte
-const mimicsOf = (ref) => (ref.lookalike_of || []).map(refOf).filter((o) => o && o !== ref)
-  .sort((a, b) => similarity(b, ref) - similarity(a, ref));
+let disposeCompareHeader = () => {};
+export function renderComparisonStart(box, left='', right='') {
+  disposeCompareHeader();
+  box.classList.remove('fungus-compare');
+  box.dataset.glossaryContext='Funghi';
+  mountCompareStart(box,{taxa:TAXA,photo:photoOf,asset:ASSET,related:sosiaOf,left,right});
+}
 function renderCompare(box, ref, pick) {
-  // fungo fisso a sinistra: un commestibile con i suoi sosia, oppure un velenoso con i commestibili con cui si confonde
+  disposeCompareHeader();
+  comparisonVariants.clear();
+  // Il riferimento resta fermo durante le frecce; i due menu possono cambiare entrambi i lati.
   const fromToxic = !!ref.lookalike_of?.length;
-  const list = fromToxic ? mimicsOf(ref) : sosiaOf(ref);
+  const documented = sosiaOf(ref), documentedKeys = new Set(documented.map(t=>t.key));
+  const selected = TAXA.find(t=>t.key===pick && t.key!==ref.key);
+  const list = selected && !documentedKeys.has(selected.key) ? [...documented,selected] : documented;
+  if (!list.length) { location.hash=`#/confronta/${encodeURIComponent(ref.key)}`; return; }
+  const heading = () => 'Confronta';
   const pic = (t, small = false) => { const ph = photoOf(t); return ph ? `<img data-src="${ASSET(small ? ph.thumb || ph.file : ph.file)}" alt="" loading="lazy" decoding="async">` : '<span class="look-ph">senza foto</span>'; };
   const toxCls = (t) => `tox-${String(t.toxicity || '').replace(/\s/g, '-')}`;
   const nameBtn = (t) => `<button type="button" data-taxon="${esc(t.key)}">${esc(t.name || t.latin)}</button>`; // nel confronto: anteprima, per tutti
   const slide = (t, k) => {
-    const rows = cmpRows(ref, t), diff = rows.filter((r) => r.kind === 'diff'), part = rows.filter((r) => r.kind === 'part');
-    const how = fromToxic ? HOWTO(t.edible_id, ref.latin) : HOWTO(ref.edible_id, t.latin);
-    return `<section class="cmp-slide" id="cmp-${esc(t.key)}" data-i="${k}" aria-label="${esc(ref.name)} e ${esc(t.name || t.latin)}">
+    const missing=CMP.filter(r=>{const a=r.get?r.get(ref):ref.traits?.[r.key],b=r.get?r.get(t):t.traits?.[r.key];return a==null||b==null||Array.isArray(a)&&!a.length||Array.isArray(b)&&!b.length;});
+    const rows = cmpRows(ref, t), groups = [
+      {kind:'diff',label:'Differenti',empty:'Nessun carattere completamente diverso nei dati disponibili. Le somiglianze non confermano l’identità.'},
+      {kind:'part',label:'A volte simili',empty:'Nessuna somiglianza parziale documentata.'},
+      {kind:'same',label:'In comune',empty:'Nessun carattere interamente condiviso nei dati disponibili.'},
+    ], info = rows.filter(r=>r.info);
+    const how = documentedKeys.has(t.key) ? (fromToxic ? HOWTO(t.edible_id, ref.latin) : HOWTO(ref.edible_id, t.latin)) : '';
+    return `<section class="cmp-slide" id="cmp-${esc(t.key)}" data-i="${k}" role="group" aria-roledescription="confronto" aria-label="${esc(ref.name || ref.latin)} e ${esc(t.name || t.latin)}" ${t.key === list[start]?.key ? '' : 'hidden inert'}>
       <div class="cmp-pair">
         ${[ref, t].map((x) => `<div class="cmp-side">
           <figure class="cmp-fig ${toxCls(x)}"><span class="cmp-zoom">${pic(x)}</span><span class="tox">${esc(x.tox_label || x.toxicity)}</span>
@@ -756,80 +964,221 @@ function renderCompare(box, ref, pick) {
         <span class="cmp-vs" aria-hidden="true">vs</span>
       </div>
       ${how ? `<p class="cmp-how" data-glossary="Funghi"><b>Differenze descritte.</b> ${esc(how)}</p>` : ''}
-      <ul class="cmp-legend" aria-label="Come leggere il confronto"><li><span class="cmp-v common" aria-hidden="true"></span><span><b>Fondo colorato: in comune</b><br>Lo stesso valore nelle due specie</span></li><li><span class="cmp-v own" aria-hidden="true"></span><span><b>Solo contorno: differenze</b><br>Valore riportato solo per questa specie</span></li></ul>
-      ${diff.length ? `<h4 class="cmp-h diff">Caratteri differenti nelle fonti</h4><ul class="cmp-rows">${diff.map((r) => r.html).join('')}</ul>`
-        : '<p class="cmp-none"><b>Nessuna domanda di «Impara a riconoscere» li separa con certezza.</b> Contano i dettagli: leggi le differenze descritte e, nel dubbio, fallo vedere all\'Ispettorato micologico.</p>'}
-      ${part.length ? `<h4 class="cmp-h part">A volte simili</h4><ul class="cmp-rows">${part.map((r) => r.html).join('')}</ul>` : ''}
-      ${[ref,t].some(x=>['mortale','tossico'].includes(x.toxicity)) ? '<p class="cmp-verdict">Questo confronto include specie tossiche o mortali. I caratteri descritti possono variare o essere incompleti: somiglianze e differenze non identificano il tuo esemplare.</p>' : ''}
+      <div class="cmp-kind-tabs" role="tablist" aria-label="Caratteri da confrontare">${groups.map(g=>`<button type="button" role="tab" id="cmp-${esc(t.key)}-tab-${g.kind}" data-cmp-group="${g.kind}" aria-controls="cmp-${esc(t.key)}-panel-${g.kind}" aria-selected="${g.kind==='diff'}" tabindex="${g.kind==='diff'?0:-1}">${g.label}</button>`).join('')}</div>
+      <p class="cmp-illustration-note">Disegni schematici generati con AI: mostrano un esempio. Leggi tutte le varianti elencate e confronta con le foto.<span class="cmp-callout-note"> I richiami indicano la zona da osservare, anche quando il carattere è assente.</span></p>
+      <p class="cmp-legend" hidden><span><span class="cmp-relation" aria-hidden="true">=</span> Valore in comune</span><span><span class="cmp-relation" aria-hidden="true">≠</span> Valore diverso</span></p>
+      ${groups.map(g=>{const items=rows.filter(r=>!r.info&&r.kind===g.kind);return `<section class="cmp-panel" id="cmp-${esc(t.key)}-panel-${g.kind}" data-cmp-panel="${g.kind}" role="tabpanel" aria-labelledby="cmp-${esc(t.key)}-tab-${g.kind}" tabindex="0"${g.kind==='diff'?'':' hidden'}>${items.length?`<div class="cmp-column-head" aria-hidden="true"><span>${esc(ref.name||ref.latin)}</span><span>${esc(t.name||t.latin)}</span></div><ul class="cmp-rows">${items.map(r=>r.html).join('')}</ul>`:`<p class="cmp-none">${rows.some(r=>!r.info)?g.empty:'I dati disponibili non permettono ancora un confronto dei caratteri tra queste due specie. Apri le schede per leggere descrizioni e fonti; non è possibile dedurre somiglianze o differenze.'}</p>`}</section>`;}).join('')}
+      ${info.length?`<div class="cmp-season"><ul class="cmp-rows">${info.map(r=>r.html).join('')}</ul></div>`:''}
+      ${missing.length?`<details class="context-note cmp-missing-data"><summary>Dati incompleti · ${missing.length} caratteri</summary><p>Questi caratteri non sono confrontabili perché mancano dati per una o entrambe le specie. Un dato mancante non significa carattere assente.</p><ul>${missing.map(r=>`<li>${esc(r.k)}</li>`).join('')}</ul></details>`:''}
+      <details class="sec cmp-sources"><summary>Fonti del confronto</summary><div class="sec-body">${sourceRows([...(ref.sources || []), ...(t.sources || [])])}</div></details>
+      <p class="cmp-verdict">${[ref,t].some(x=>['mortale','tossico'].includes(x.toxicity)) ? 'Il confronto include specie tossiche o mortali; i caratteri possono variare o essere incompleti. ' : ''}Somiglianze e differenze non identificano il tuo esemplare. Fai controllare il raccolto all’Ispettorato micologico ASL.</p>
     </section>`;
   };
   const start = Math.max(0, list.findIndex((t) => t.key === pick));
   box.innerHTML = `
-    <h2 class="sec-title cmp-title">${fromToxic ? `${esc(ref.name || ref.latin)}: con cosa si confonde` : `${esc(ref.name)} o sosia?`}</h2>
-    <p class="small muted cmp-lede">${fromToxic
-      ? `Si confonde con ${list.length === 1 ? 'un fungo commestibile' : `${list.length} funghi commestibili`}. A sinistra ${esc((ref.name || ref.latin).toLowerCase())}, a destra il fungo con cui si scambia${list.length > 1 ? ': scorri di lato per vederli tutti' : ''}.`
-      : `${list.length} ${list.length === 1 ? 'fungo che gli somiglia' : 'funghi che gli somigliano'}. Scorri di lato per confrontarli uno alla volta: a sinistra ${esc(ref.name.toLowerCase())}, a destra il sosia.`}</p>
-    <div class="cmp-pickbar"><span class="cmp-ref-l ${toxCls(ref)}"><b>${esc(ref.name || ref.latin)}</b> <i aria-hidden="true">vs</i></span>
-    <div class="cmp-pick" role="tablist" aria-label="Scegli il sosia">${list.map((t, k) => `<button type="button" role="tab" class="cmp-chip ${toxCls(t)}" data-go="${k}" aria-selected="${k === start}"><span class="cmp-chip-img">${pic(t, true)}</span><span>${esc(t.name || t.latin)}</span></button>`).join('')}</div></div>
-    <div class="cmp-track">${list.map(slide).join('')}</div>
-    <p><a class="btn" href="#/riconosci">Confronta un altro fungo</a></p>`;
+    <h1 class="sec-title cmp-title">${esc(heading(list[start]))}</h1>
+    <div class="cmp-gallery" role="group" aria-roledescription="carosello" aria-label="Confronti con ${esc(ref.name || ref.latin)}">
+    <div class="cmp-pair-nav" role="group" aria-label="Specie a confronto"><div class="cmp-nav-content"><button type="button" class="cmp-pair-menu" data-change-master aria-haspopup="dialog" aria-label="Scegli il fungo di riferimento: ${esc(ref.name||ref.latin)}"><span>${esc(ref.name||ref.latin)}</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><i class="cmp-nav-vs" aria-hidden="true">vs</i><button type="button" class="cmp-pair-menu" data-change-lookalike aria-haspopup="dialog" aria-label="Confronta con: ${esc(list[start].name||list[start].latin)}"><span class="cmp-sosia-count"${documented.length>1&&documentedKeys.has(list[start].key)?'':' hidden'}>${documented.length} sosia</span><span data-current-lookalike>${esc(list[start].name||list[start].latin)}</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button></div></div>
+    ${documented.length?`<div class="cmp-edge-arrows"${documented.length===1&&documentedKeys.has(list[start].key)?' hidden':''}><button type="button" data-cmp-step="-1" aria-label="Sosia precedente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button><button type="button" data-cmp-step="1" aria-label="Sosia successivo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button></div>`:''}
+    <div class="cmp-track">${list.map(slide).join('')}</div><p class="sr-only" data-cmp-announcement role="status" aria-atomic="true"></p></div>
+    <p><a class="btn primary" href="#/confronta">Scegli un nuovo confronto</a></p>`;
 
-  const track = box.querySelector('.cmp-track'), chips = [...box.querySelectorAll('.cmp-chip[role="tab"]')];
+  const track = box.querySelector('.cmp-track');
+  track.addEventListener('click', event => {
+    const control = event.target.closest('button[data-cmp-variant]');
+    if (control) updateComparisonVariant(control,track);
+  });
   const mark = (i) => {
-    chips.forEach((c, k) => c.setAttribute('aria-selected', k === i));
-    chips[i]?.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+    box.querySelector('.cmp-title').textContent=heading(list[i]);
+    const headerAction=document.querySelector('[data-appbar-action]');
+    if(headerAction) headerAction.href='#/confronta';
+    const arrows=box.querySelector('.cmp-edge-arrows');
+    if(arrows)arrows.hidden=documented.length<2&&documentedKeys.has(list[i].key);
+    box.querySelector('.cmp-sosia-count').hidden=!(documented.length>1&&documentedKeys.has(list[i].key));
+    const currentName = box.querySelector('[data-current-lookalike]');
+    if (currentName) {
+      currentName.textContent = list[i].name || list[i].latin;
+      currentName.closest('button').setAttribute('aria-label', `Scegli il fungo: ${list[i].name || list[i].latin}`);
+    }
+    for (const [k, slide] of [...track.children].entries()) { slide.inert = k !== i; slide.hidden = k !== i; }
     history.replaceState(null, '', `#/riconosci/confronta/${ref.key}/${list[i].key}`);
+    box.querySelector('[data-cmp-announcement]').textContent = `${ref.name||ref.latin} a confronto con ${list[i].name || list[i].latin}${documentedKeys.has(list[i].key)?', sosia documentati':''}`;
   };
   let cur = start;
   const slides = [...track.children];
   // l'altezza segue la slide visibile: niente vuoto sotto i confronti corti
-  const fit = () => { const h = slides[cur]?.offsetHeight; if (h) track.style.height = `${h}px`; };
+  const gallery = box.querySelector('.cmp-gallery'), header = box.querySelector('.cmp-pair-nav');
+  const headerContent = header.querySelector('.cmp-nav-content');
+  let headerWanted=false, headerMotion=null;
+  const setHeaderStuck = stuck => {
+    if (stuck===headerWanted) return;
+    headerWanted=stuck;
+    const wasFixed=header.classList.contains('is-stuck');
+    const opacity=wasFixed?Number.parseFloat(getComputedStyle(headerContent).opacity):0;
+    headerMotion?.cancel();
+    headerMotion=null;
+    if (stuck) header.classList.add('is-stuck');
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches || !headerContent.animate) {
+      header.classList.toggle('is-stuck',stuck);
+      return;
+    }
+    // In uscita resta fisso fino al termine della dissolvenza: la posizione
+    // non torna nel flusso a metà animazione. Le inversioni ripartono dall'opacità corrente.
+    const motion=headerContent.animate([{opacity},{opacity:stuck?1:0}],{
+      duration:stuck?200:160,easing:'cubic-bezier(.2,.8,.2,1)',fill:'both',
+    });
+    headerMotion=motion;
+    motion.onfinish=()=>{
+      if (headerMotion!==motion) return;
+      if (!headerWanted) header.classList.remove('is-stuck');
+      motion.cancel();headerMotion=null;
+    };
+  };
+
+  const syncCompareHeader = () => {
+    if (!gallery.getClientRects().length) return;
+    const appbar = document.querySelector('.appbar');
+    const viewportTop = window.visualViewport?.offsetTop || 0;
+    const top = viewportTop + (appbar?.offsetHeight || 0);
+    const contentTop = top;
+    // Nel confronto il back e le azioni restano visibili: i nomi si fissano
+    // subito sotto, quando le intestazioni delle colonne superano la barra.
+    header.style.setProperty('--cmp-header-top', `${top}px`);
+    const columns = slides[cur]?.querySelector('.cmp-panel:not([hidden]) .cmp-column-head') || slides[cur]?.querySelector('.cmp-kind-tabs');
+    const rect = header.getBoundingClientRect();
+    const pastColumns = columns && columns.getBoundingClientRect().bottom <= contentTop;
+    const onScreen = gallery.getBoundingClientRect().bottom > top + headerContent.offsetHeight;
+    if (!header.classList.contains('is-stuck') && !header.classList.contains('is-single')) {
+      header.style.setProperty('--cmp-nav-height', `${headerContent.offsetHeight}px`);
+    }
+    header.style.setProperty('--cmp-header-left', `${rect.left}px`);
+    header.style.setProperty('--cmp-header-width', `${rect.width}px`);
+    setHeaderStuck(!!pastColumns && onScreen);
+  };
+  addEventListener('scroll', syncCompareHeader, {passive:true});
+  addEventListener('resize', syncCompareHeader, {passive:true});
+  window.visualViewport?.addEventListener('resize', syncCompareHeader, {passive:true});
+  window.visualViewport?.addEventListener('scroll', syncCompareHeader, {passive:true});
+  const headerChanges = new MutationObserver(syncCompareHeader);
+  headerChanges.observe(document.documentElement, {attributes:true, attributeFilter:['class']});
+  const headerSize = new ResizeObserver(syncCompareHeader);
+  headerSize.observe(header);
+  disposeCompareHeader = () => {
+    removeEventListener('scroll', syncCompareHeader);
+    removeEventListener('resize', syncCompareHeader);
+    window.visualViewport?.removeEventListener('resize', syncCompareHeader);
+    window.visualViewport?.removeEventListener('scroll', syncCompareHeader);
+    headerChanges.disconnect(); headerSize.disconnect();
+    headerMotion?.cancel();headerMotion=null;
+    ro.disconnect(); trackSize.disconnect();
+    candidateAnimation?.cancel();
+  };
+  const fit = () => {
+    const photo = slides[cur]?.querySelector('.cmp-zoom');
+    if (photo) {
+      const rect = photo.getBoundingClientRect();
+      gallery.style.setProperty('--cmp-photo-mid', `${rect.top - gallery.getBoundingClientRect().top + rect.height/2}px`);
+    }
+    syncCompareHeader();
+  };
   // l'altezza segue la slide visibile anche quando cresce dopo (foto caricate, sezioni aperte): mai uno scroll dentro lo scroll
   const ro = new ResizeObserver(() => fit());
   slides.forEach((sl) => ro.observe(sl));
-  // si aggiorna solo a scorrimento finito: cambiare altezza o pillole mentre il dito trascina interrompe lo scatto (iOS)
-  // e la slide resta a meta'. Se per qualunque motivo non e' allineata, la si porta sulla piu' vicina.
-  let settleT;
-  const settle = () => {
-    clearTimeout(settleT);
-    const w = track.clientWidth, i = Math.round(track.scrollLeft / w);
-    if (Math.abs(track.scrollLeft - i * w) > 2) { track.scrollTo({ left: i * w, behavior: 'smooth' }); return; }
-    if (i !== cur && list[i]) { cur = i; mark(i); fit(); }
+  const selectGroup = kind => {
+    for(const sl of slides){
+      sl.querySelectorAll('[data-cmp-group]').forEach(b=>{const on=b.dataset.cmpGroup===kind;b.setAttribute('aria-selected',String(on));b.tabIndex=on?0:-1;});
+      sl.querySelectorAll('[data-cmp-panel]').forEach(panel=>panel.hidden=panel.dataset.cmpPanel!==kind);
+      sl.querySelector('.cmp-legend').hidden=kind!=='part';
+    }
+    fit();
   };
-  track.addEventListener('scroll', () => { clearTimeout(settleT); settleT = setTimeout(settle, 160); }, { passive: true });
-  track.addEventListener('scrollend', settle);
-  box.querySelectorAll('.cmp-same').forEach((d) => d.addEventListener('toggle', fit));
-  addEventListener('resize', fit, { passive: true });
-  box.querySelectorAll('.cmp-slide img').forEach((im) => im.addEventListener('load', fit, { once: true }));
-  // tocco su un sosia: il fungo di riferimento resta fermo, cambia solo il sosia (entra dal lato giusto) e sotto la tabella sfuma
-  const names = (i) => slides.forEach((sl, j) => {
-    const on = j === i, sides = sl.querySelectorAll('.cmp-side');
-    sides[0].style.viewTransitionName = on ? 'cmp-ref' : '';
-    sides[1].style.viewTransitionName = on ? 'cmp-pick' : '';
-    const vs = sl.querySelector('.cmp-vs'); if (vs) vs.style.viewTransitionName = on ? 'cmp-vs' : '';
+  box.querySelectorAll('[data-cmp-group]').forEach(button=>{
+    button.addEventListener('click',()=>selectGroup(button.dataset.cmpGroup));
+    button.addEventListener('keydown',e=>{
+      const tabs=[...button.parentElement.querySelectorAll('[data-cmp-group]')],i=tabs.indexOf(button);
+      const next={ArrowRight:(i+1)%tabs.length,ArrowLeft:(i+tabs.length-1)%tabs.length,Home:0,End:tabs.length-1}[e.key];
+      if(next===undefined)return;
+      e.preventDefault();selectGroup(tabs[next].dataset.cmpGroup);tabs[next].focus({preventScroll:true});
+    });
   });
-  const go = (k) => {
-    if (k === cur) return;
-    if (!canVT()) { track.scrollTo({ left: k * track.clientWidth, behavior: 'auto' }); return; }
-    document.documentElement.dataset.cmpDir = k > cur ? 'next' : 'prev';
-    names(cur);
-    const vt = document.startViewTransition(() => { track.scrollTo({ left: k * track.clientWidth, behavior: 'instant' }); cur = k; mark(k); fit(); names(k); });
-    vt.finished.finally(() => { names(-1); delete document.documentElement.dataset.cmpDir; });
+  box.querySelectorAll('.cmp-sources').forEach(d=>d.addEventListener('toggle',fit));
+  const trackSize = new ResizeObserver(fit);
+  trackSize.observe(track);
+  box.querySelectorAll('.cmp-slide img').forEach(im => im.addEventListener('load', fit, {once:true}));
+  // Il riferimento è lo stesso nodo DOM: resta fermo mentre cambia il candidato.
+  // Animazione locale, anche su Safari, senza transizioni dell'intera pagina.
+  let candidateAnimation;
+  const go = k => {
+    if (k === cur || !slides[k]) return;
+    candidateAnimation?.cancel();
+    const reference = slides[cur].querySelector('.cmp-side');
+    const replacement = slides[k].querySelector('.cmp-side');
+    const slot = document.createComment('reference');
+    reference.replaceWith(slot);
+    replacement.replaceWith(reference);
+    slot.replaceWith(replacement);
+    cur = k; mark(k); fit();
+    const candidate = slides[k].querySelectorAll('.cmp-side')[1];
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches && candidate.animate) {
+      candidateAnimation = candidate.animate([
+        {opacity:0, transform:'scale(.985)'},
+        {opacity:1, transform:'scale(1)'},
+      ], {duration:260, easing:'cubic-bezier(.2,.8,.2,1)'});
+    }
   };
-  chips.forEach((c) => c.addEventListener('click', () => go(+c.dataset.go)));
-  requestAnimationFrame(() => { track.scrollLeft = start * track.clientWidth; fit(); });
+  const stepSosia = step => {
+    if (!documented.length) return;
+    const index=documented.findIndex(t=>t.key===list[cur].key);
+    const next=index<0?(step>0?0:documented.length-1):(index+step+documented.length)%documented.length;
+    go(list.findIndex(t=>t.key===documented[next].key));
+  };
+  // Il gesto sceglie il sosia successivo: non trascina la coppia su un binario.
+  let swipe;
+  track.addEventListener('pointerdown', event => {
+    swipe = event.pointerType !== 'mouse' && !event.target.closest('button,a,input,select,textarea,label,summary')
+      ? {id:event.pointerId,x:event.clientX,y:event.clientY} : null;
+  });
+  track.addEventListener('pointercancel', () => { swipe = null; });
+  track.addEventListener('pointerup', event => {
+    const start = swipe; swipe = null;
+    if (!start || start.id !== event.pointerId) return;
+    const dx = event.clientX-start.x, dy = event.clientY-start.y;
+    if (Math.abs(dx)>48 && Math.abs(dx)>Math.abs(dy)*1.5) stepSosia(dx<0?1:-1);
+  });
+  box.querySelectorAll('[data-cmp-step]').forEach(button => button.onclick = () => stepSosia(Number(button.dataset.cmpStep)));
+  box.querySelector('[data-change-lookalike]').onclick = () => {
+    openComparePicker({taxa:TAXA,photo:photoOf,asset:ASSET,title:'Confronta con…',current:list[cur].key,exclude:ref.key,related:documented,onSelect:t=>{
+      const i=list.findIndex(x=>x.key===t.key);
+      if(i>=0)go(i);
+      else location.hash=`#/riconosci/confronta/${encodeURIComponent(ref.key)}/${encodeURIComponent(t.key)}`;
+    }});
+  };
+  box.querySelector('[data-change-master]').onclick = () => {
+    const other=list[cur];
+    openComparePicker({taxa:TAXA,photo:photoOf,asset:ASSET,title:'Scegli il riferimento',current:ref.key,exclude:other.key,related:sosiaOf(other),onSelect:t=>{
+      if(t.key!==ref.key)location.hash=`#/riconosci/confronta/${encodeURIComponent(t.key)}/${encodeURIComponent(other.key)}`;
+    }});
+  };
+  requestAnimationFrame(fit);
   box.querySelectorAll('[data-taxon]').forEach((b) => b.addEventListener('click', () => openTaxon(b.dataset.taxon)));
   const all = [ref, ...list].map((t) => ({ t, ph: photoOf(t) })).filter((y) => y.ph);
-  const lb = all.map(({ t, ph }) => ({ key: t.key, src: ASSET(ph.file_hd || ph.file), alt: t.name, caption: captionHtml({ title: `<span class="tox">${esc(t.tox_label || t.toxicity)}</span> ${esc(t.name || '')} <i>${esc(t.latin)}</i>`, text: '', credit: `Foto: ${esc(ph.author)}, ${esc(ph.license)}` }) }));
+  const lb = all.map(({ t, ph }) => ({ key: t.key, src: ASSET(ph.file_hd || ph.file), alt: t.name, caption: captionHtml({ title: `<span class="tox">${esc(t.tox_label || t.toxicity)}</span> ${esc(t.name || '')} <i>${esc(t.latin)}</i>`, text: '', credit: `Foto: ${esc(ph.attribution_required_text || ph.author)}, ${esc(ph.license)}` }) }));
   box.querySelectorAll('[data-photo]').forEach((b) => b.addEventListener('click', () => { const i = lb.findIndex((y) => y.key === b.dataset.photo); if (i >= 0) openLightbox(lb, i); }));
 }
 
 // scheda breve per le specie senza pagina propria (velenose e sosia)
-export function openTaxon(key) {
+export function openTaxon(key, {answers = false} = {}) {
   const t = TAXA.find(x => x.key === key);
   if (!t) return;
-  const href = t.edible_id && !t.lookalike_of?.length ? `#/specie/${t.edible_id}` : `#/fungo/${t.key}`;
-  if (!openEntitySheet(href)) location.hash = href;
+  const href = t.edible_id && !t.lookalike_of?.length ? `#/${SPECIES.some(s=>s.id===t.edible_id)?'specie':'commestibile'}/${t.edible_id}` : `#/fungo/${t.key}`;
+  const decorate=answers?body=>{
+    const c={t,...matches(t)};
+    if(!c.tot)return;
+    const section=document.createElement('section');section.className='id-answer-details';
+    section.innerHTML=`<h3>Rispetto alle tue risposte</h3><p class="small muted">Confronto con i caratteri documentati: non identifica il fungo e non ne certifica la commestibilità.</p><h4>In comune · ${c.ok}</h4>${c.ok?`<ul>${matchedKeys(c).map(k=>`<li><b>${esc(qShort(QK(k)))}</b>: ${esc(optLabel(QK(k),state.ans[k]))}</li>`).join('')}</ul>`:'<p>Nessun carattere in comune fra quelli confrontabili.</p>'}<h4>Diversi · ${c.contra.length}</h4>${c.contra.length?`<ul>${c.contra.map(k=>`<li>${contraText({...c,contra:[k]})}</li>`).join('')}</ul>`:'<p>Nessuna differenza nei caratteri confrontabili. Non è una conferma dell’identità.</p>'}`;
+    (body.querySelector('.pbody')||body).prepend(section);
+  }:undefined;
+  if (!openEntitySheet(href,document.activeElement,{decorate})) location.hash = href;
 }
 
 // --- Modo "Filtri": i caratteri come filtro avanzato (gruppi per parte del fungo, chip con il conteggio) ---
@@ -885,7 +1234,7 @@ function openFilterSheet(box) {
   };
   idfSheet._paint = paint;
   paint();
-  if (!idfSheet.open) idfSheet.showModal();
+  if (!idfSheet.open) openModal(idfSheet);
 }
 function focusFilter(root, selector) {
   (root.querySelector(selector) || root.querySelector('[data-idf-open],[data-idf-close]'))?.focus({preventScroll:true});
@@ -905,6 +1254,7 @@ export function renderIdentify(box) {
   box.dataset.glossaryContext='Funghi';
   if (!TAXA.length) { box.innerHTML = '<p class="notice">I caratteri delle specie sono in preparazione: la ricerca sarà disponibile a breve.</p>'; return; }
   const ref = state.compare && TAXA.find((t) => t.key === state.compare);
+  box.classList.toggle('fungus-compare', !!ref);
   if (ref) { renderCompare(box, ref, state.pick); return; }
   const list = candidates();
   const nq = state.guided ? nextQuestion(list) : null;
@@ -918,7 +1268,7 @@ export function renderIdentify(box) {
     return head + next;
   };
   box.innerHTML = `
-    <details class="id-warn context-note" name="identify-notices"><summary><b>Non è un'identificazione.</b></summary><p>Restringe i candidati, velenosi compresi. ${BANNER ? esc(BANNER) : "Prima di mangiare qualunque fungo: controllo gratuito all'Ispettorato Micologico ASL."} <a href="#/info">Emergenza</a></p></details>
+    <details class="id-warn context-note" name="identify-notices"><summary><b>Non è un'identificazione.</b></summary><p>${BANNER ? esc(BANNER) : "La ricerca restringe i candidati, velenosi compresi. Prima del consumo: controllo gratuito all’Ispettorato micologico ASL."} <a href="#/info">Emergenza</a></p></details>
     <div class="identify-mode-action"><button type="button" class="link-btn" data-mode="${state.guided ? 'all' : 'guided'}">${state.guided ? 'Mostra tutti i filtri' : '← Torna alle domande'}</button></div>
     ${ZONES.length ? `<div class="filter-rail id-zones" role="group" aria-label="Dove l'hai trovato"><span class="af-label">Zona</span><button type="button" class="chip" data-zone="" aria-pressed="${!state.zone}">Ovunque</button>${ZONES.map((z) => `<button type="button" class="chip" data-zone="${z.id}" aria-pressed="${state.zone === z.id}">${esc(z.title || z.name)}</button>`).join('')}</div>` : ''}
     ${state.guided ? guidedMode() : `<div class="idf-primary" aria-label="Caratteri principali">${facetsHtml([['', PRIMARY_FILTERS]], true)}</div><div class="idf-bar">${activeChips()}<button type="button" class="btn idf-open" data-idf-open aria-haspopup="dialog" aria-controls="identify-filters">Altri${given.filter(q=>!PRIMARY_FILTERS.includes(q.key)).length ? ` <b>${given.filter(q=>!PRIMARY_FILTERS.includes(q.key)).length}</b>` : ''}</button>${given.length ? '<button type="button" class="af-add" data-fall>Azzera</button>' : ''}</div>`}
@@ -960,7 +1310,7 @@ export function renderIdentify(box) {
   box.querySelectorAll('[data-clear]').forEach((b) => b.addEventListener('click', () => { delete state.ans[b.dataset.clear]; if (b.dataset.clear === 'hymenophore') delete state.ans.hymenophore_color; state.editing = ''; rerenderSoft(); }));
   box.querySelectorAll('[data-skip]').forEach((b) => b.addEventListener('click', () => answer(b.dataset.skip, null)));
   const items = list.slice(0, 40).map((c) => ({ c, ph: photoOf(c.t) })).filter((y) => y.ph);
-  const lb = items.map(({ c, ph }) => ({ key: c.t.key, src: ASSET(ph.file_hd || ph.file), alt: c.t.name, caption: captionHtml({ title: `<span class="tox">${esc(c.t.tox_label || c.t.toxicity)}</span> ${esc(c.t.name || '')} <i>${esc(c.t.latin)}</i>`, text: esc((c.t.check_before_picking || []).join(' · ')), credit: `Foto: ${esc(ph.author)}, ${esc(ph.license)}` }) }));
-  box.querySelectorAll('[data-taxon]').forEach((b) => b.addEventListener('click', () => openTaxon(b.dataset.taxon)));
+  const lb = items.map(({ c, ph }) => ({ key: c.t.key, src: ASSET(ph.file_hd || ph.file), alt: c.t.name, caption: captionHtml({ title: `<span class="tox">${esc(c.t.tox_label || c.t.toxicity)}</span> ${esc(c.t.name || '')} <i>${esc(c.t.latin)}</i>`, text: esc((c.t.check_before_picking || []).join(' · ')), credit: `Foto: ${esc(ph.attribution_required_text || ph.author)}, ${esc(ph.license)}` }) }));
+  box.querySelectorAll('[data-taxon]').forEach((b) => b.addEventListener('click', () => openTaxon(b.dataset.taxon,{answers:!!b.closest('.id-card')})));
   box.querySelectorAll('[data-photo]').forEach((b) => b.addEventListener('click', () => { const i = lb.findIndex((y) => y.key === b.dataset.photo); if (i >= 0) openLightbox(lb, i); }));
 }

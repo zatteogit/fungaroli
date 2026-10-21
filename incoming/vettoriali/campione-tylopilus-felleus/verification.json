@@ -1,0 +1,34 @@
+{
+  "raster_independent_species_review": "passed-before-vector",
+  "parts": [
+    "cap",
+    "hymenophore",
+    "stem",
+    "reticulum"
+  ],
+  "paths": 11,
+  "editable_pore_ellipse_primitives": 18,
+  "embedded_rasters": 0,
+  "clips": 0,
+  "renders": [
+    {
+      "width": 64,
+      "raster_silhouette_iou": 0.965132,
+      "raster_composited_rgb_mae_255": 10.806067,
+      "color_edits_confined_to_part": true
+    },
+    {
+      "width": 128,
+      "raster_silhouette_iou": 0.9815,
+      "raster_composited_rgb_mae_255": 9.284767,
+      "color_edits_confined_to_part": true
+    },
+    {
+      "width": 804,
+      "raster_silhouette_iou": 0.983785,
+      "raster_composited_rgb_mae_255": 8.703903,
+      "color_edits_confined_to_part": true
+    }
+  ],
+  "meaning": "Technical checks establish source fidelity and safe programmatic edit boundaries. Anatomical/species correctness relies on the recorded prior independent raster review and subsequent visual SVG review, not on these metrics."
+}

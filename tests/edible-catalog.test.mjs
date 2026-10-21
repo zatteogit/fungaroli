@@ -6,13 +6,13 @@ const traits=JSON.parse(fs.readFileSync(new URL('../data/species-traits.json',im
 const extra=JSON.parse(fs.readFileSync(new URL('../data/edible-catalog.json',import.meta.url)));
 const catalog=buildEdibleCatalog(traits,extra);
 test('catalogo solo commestibili, senza duplicati o parametri inventati',()=>{
- assert.equal(catalog.length,46); assert.equal(new Set(catalog.map(s=>s.id)).size,catalog.length);
+ assert.equal(catalog.length,51); assert.equal(new Set(catalog.map(s=>s.id)).size,catalog.length);
  assert.equal(catalog.filter(s=>s.modelId).length,14);
  assert.ok(catalog.every(s=>['commestibile','commestibile con cautela'].includes(s.toxicity)));
  assert.ok(!catalog.some(s=>s.id==='amanita-phalloides'||s.id==='amanita-crocea'));
  assert.ok(extra.species.every(s=>s.sources.length));
  // le schede del catalogo sono tutte anche taxon completi: senza l'elenco breve il catalogo resta intero
- assert.equal(buildEdibleCatalog(traits,{species:[{id:'tossico',toxicity:'tossico'}]}).length,46);
+ assert.equal(buildEdibleCatalog(traits,{species:[{id:'tossico',toxicity:'tossico'}]}).length,51);
 });
 test('ricerca per sinonimo e nome scientifico; nessun velenoso nei suggerimenti',()=>{
  assert.equal(searchEdibleCatalog(catalog,'agrocybe aegerita')[0].name,'Pioppino');

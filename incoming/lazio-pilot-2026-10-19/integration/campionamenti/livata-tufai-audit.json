@@ -1,0 +1,81 @@
+{
+ "started": "2026-10-19T11:09:48.348392+00:00",
+ "seed": {
+  "id": "livata-tufai",
+  "name": "Livata e Valle delle Mele",
+  "lat": 41.9331844,
+  "lon": 13.1562279,
+  "radius_m": 1500,
+  "radiusNote": "Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso.",
+  "province": [
+   "RM"
+  ],
+  "coordinateProvenance": {
+   "method": "official_trace_bbox_midpoint",
+   "sourceUrl": "https://www.parcomontisimbruini.it/itinerari-dettaglio.php?id_iti=370",
+   "bbox": {
+    "west": 13.147823140025139,
+    "south": 41.927543906494975,
+    "east": 13.164632711559534,
+    "north": 41.938824858516455
+   },
+   "note": "Centro editoriale derivato dal punto medio del riquadro della traccia ufficiale; non parcheggio né centro geografico dell’area protetta."
+  },
+  "collectionStatus": "unknown",
+  "collectionNote": "Raccolta locale da verificare con il gestore prima dell’uscita.",
+  "collectionSourceUrl": "https://www.regione.lazio.it/cittadini/agricoltura/Funghi",
+  "publicationStatus": "active",
+  "manager": "Ente Parco Monti Simbruini",
+  "researchGroup": "roma-est",
+  "officialTrailRefs": [
+   "672c"
+  ],
+  "officialTrailNameMatches": []
+ },
+ "demProvider": "copernicus-glo90-openmeteo",
+ "demResolutionM": 90,
+ "elevation": {
+  "min": 1101,
+  "p25": 1341,
+  "median": 1387,
+  "p75": 1459,
+  "max": 1603
+ },
+ "suggestedBandsM": [
+  1340,
+  1390,
+  1460
+ ],
+ "forestPolygonCount": 20,
+ "habitatSamples": 317,
+ "roadErrors": [],
+ "trails": {
+  "listedRelations": 10,
+  "requestedRefs": [
+   "672c"
+  ],
+  "requestedDistinctiveNames": [],
+  "matchedRelations": [
+   {
+    "relation": 12036002,
+    "ref": "672C",
+    "source": "https://www.openstreetmap.org/relation/12036002",
+    "license": "ODbL-1.0",
+    "officialTagLengthM": 5400.0,
+    "mappedLengthM": 5209,
+    "inZoneLengthM": 3108.7602642547586,
+    "sampleCount": 31,
+    "note": "Reference match with institutional itinerary; geometry independently obtained from OSM via Waymarked Trails. Match does not certify exact geometric identity or current opening."
+   }
+  ],
+  "unmatchedRefs": [],
+  "driveError": null,
+  "coverageLimit": 100,
+  "geometryStatus": "matched_osm_geometry"
+ },
+ "status": "complete",
+ "finished": "2026-10-19T11:10:03.454446+00:00",
+ "habitatStatus": "complete",
+ "grid": 21,
+ "gridStepM": 150.0
+}

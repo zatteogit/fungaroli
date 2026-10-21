@@ -1,0 +1,22 @@
+# Intestazioni dei file statici (Workers Static Assets, assets.directory "." in wrangler.jsonc).
+# Documentazione: https://developers.cloudflare.com/workers/static-assets/headers/
+# Il file non viene servito come asset. Non vale per le risposte generate dal Worker
+# (percorsi in assets.run_worker_first: /api/*, /redazione).
+# Questionario: nessun altro sito può mostrarlo dentro un riquadro (clickjacking).
+# frame-ancestors non funziona nel meta CSP della pagina: serve l'intestazione.
+/questionario
+  Content-Security-Policy: frame-ancestors 'none'
+  X-Frame-Options: DENY
+
+/questionario.html
+  Content-Security-Policy: frame-ancestors 'none'
+  X-Frame-Options: DENY
+
+# Prove pubbliche: aggiornamento immediato e nessuna indicizzazione.
+/dev
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: no-store
+
+/dev/*
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: no-store

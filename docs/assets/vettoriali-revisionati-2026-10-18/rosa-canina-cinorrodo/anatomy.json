@@ -1,0 +1,36 @@
+{
+  "canvas": [
+    276,
+    656
+  ],
+  "description": "Esterno intero schematico del cinorrodo di rosa canina. Residuo calicino secco all’apice, opposto al peduncolo verde. Nessuna sezione o anatomia interna.",
+  "parts": [
+    {
+      "id": "calyx-remnant",
+      "label": "Residuo calicino",
+      "region": "M-2-2H278V108L216 113L192 111L174 117L149 113L119 110L94 108H-2Z",
+      "meaning": "Residuo esterno secco visibile nel raster; non semi o peli interni."
+    },
+    {
+      "id": "hip-body",
+      "label": "Corpo esterno del cinorrodo",
+      "region": "M-2-2H278V464L181 471L155 469L130 468L105 462H-2Z",
+      "meaning": "Superficie esterna rossa/aranciata del falso frutto; riflessi mantenuti come dettaglio grafico."
+    },
+    {
+      "id": "peduncle",
+      "label": "Peduncolo e breve tratto di fusto",
+      "remainder": true,
+      "meaning": "Tratto verde inferiore visibile e cicatrice superficiale già presente nella sorgente; non carattere diagnostico aggiunto."
+    }
+  ],
+  "status": "manually-annotated-from-reviewed-raster",
+  "raster_review_sha256": "b80d7d851c16ddb7768e92d5fe96ee142d2ef0d4a60dcb8d0fdadeb3ce420948",
+  "annotation_method": "Manual anatomical region drawing on exact cropped raster; boolean intersections of visible paints, no automatic taxonomic interpretation.",
+  "limitations": [
+    "Part visibility is inspection only, not a new biological specimen.",
+    "Material tint is a technical illustration demo, not an approved biological color variant.",
+    "No hidden tissue is reconstructed; moving a part can expose a transparent gap."
+  ],
+  "trace_sha256": "8d4c3396d5e0d42e7bd2df76e55cc1d675eeaf319e9d9e541fba7dd390297d13"
+}

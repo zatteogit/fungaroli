@@ -1,0 +1,25 @@
+{
+  "status": "inspected_not_imported",
+  "sourceUrl": "https://www.parcomontisimbruini.it/gpx/693a.gpx",
+  "checkedAt": "2026-10-19",
+  "format": "GPX",
+  "sha256": "056ebd187a90c7509336ec87e9fb6b78e9e462e5cdbf735d9b5d790b64a23b0b",
+  "pointCount": 415,
+  "bbox": [
+    13.284499794244766,
+    41.898640505969524,
+    13.299768939614296,
+    41.914958311244845
+  ],
+  "first": {
+    "lat": 41.898640505969524,
+    "lon": 13.299768939614296
+  },
+  "last": {
+    "lat": 41.914958227425814,
+    "lon": 13.286438779905438
+  },
+  "coordinatesScope": "Valori derivati dall’XML; non centro zona o parcheggio; non verifica integrale del confine Lazio.",
+  "redistributionLicense": null,
+  "licenseStatus": "Non accertata per il file specifico; non ridistribuito."
+}

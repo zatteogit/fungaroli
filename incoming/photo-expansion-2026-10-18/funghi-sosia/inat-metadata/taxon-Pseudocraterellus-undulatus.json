@@ -1,0 +1,58 @@
+{
+  "total_results": 1,
+  "page": 1,
+  "per_page": 10,
+  "results": [
+    {
+      "id": 1137797,
+      "rank": "species",
+      "rank_level": 10,
+      "iconic_taxon_id": 47170,
+      "ancestor_ids": [
+        48460,
+        47170,
+        47169,
+        492000,
+        50814,
+        47350,
+        48423,
+        48611,
+        1137797
+      ],
+      "is_active": true,
+      "name": "Craterellus undulatus",
+      "parent_id": 48611,
+      "ancestry": "48460/47170/47169/492000/50814/47350/48423/48611",
+      "extinct": false,
+      "provisional": false,
+      "default_photo": {
+        "id": 179637889,
+        "license_code": "cc-by-nc",
+        "attribution": "(c) Неруш Владимир, some rights reserved (CC BY-NC), uploaded by Неруш Владимир",
+        "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/179637889/square.jpg",
+        "original_dimensions": {
+          "height": 733,
+          "width": 1100
+        },
+        "flags": [],
+        "attribution_name": "Неруш Владимир",
+        "square_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/179637889/square.jpg",
+        "medium_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/179637889/medium.jpg"
+      },
+      "taxon_changes_count": 2,
+      "taxon_schemes_count": 0,
+      "observations_count": 961,
+      "flag_counts": {
+        "resolved": 0,
+        "unresolved": 0
+      },
+      "current_synonymous_taxon_ids": null,
+      "atlas_id": null,
+      "complete_species_count": null,
+      "wikipedia_url": null,
+      "matched_term": "Pseudocraterellus undulatus",
+      "iconic_taxon_name": "Fungi",
+      "preferred_common_name": "sinuous chanterelle"
+    }
+  ]
+}

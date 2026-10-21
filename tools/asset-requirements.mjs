@@ -23,6 +23,7 @@ export function load() {
     recTrees: read('data/recognize-trees.json'),
     treeIcons: read('data/tree-trait-icons.json'),
     plantIcons: has('data/plant-trait-icons.json') ? read('data/plant-trait-icons.json') : null,
+    animals: has('data/animals.json') ? read('data/animals.json').items : [],
     plants: read('data/plants.json').plants,
     recPlants: read('data/recognize-plants.json'),
     media: read('data/media.json'),
@@ -84,9 +85,9 @@ export function missing(d = load()) {
       const gaps = ['cappello', 'gambo'].filter((p) => !has(traitFile(`${key}-${p}-${c}`)));
       if (gaps.length) add('funghi-colore', `${key}:${c}`);
     }
-    // forme: dove ci sono le fasi di crescita, le fasi sostituiscono le varianti di forma
+    // Il confronto offre tutte le forme, anche per le specie con fasi di crescita.
     const shapes = list(tr.cap_shape);
-    if (!t.stages?.length) {
+    if (shapes.length) {
       if (shapes.length > 1 && !base.forma) { need('funghi-forma'); add('funghi-forma', `${key}`, 'forma del disegno base non dichiarata'); }
       for (const f of shapes) if (f !== base.forma && base.forma) {
         need('funghi-forma');
@@ -131,6 +132,12 @@ export function missing(d = load()) {
   for (const [k, q] of TREE_KEYS(d.recPlants.schema)) for (const v of q.values) {
     need('piante-valori');
     if (!has(`assets/plant-traits/${k}-${v.id}.webp`) || !list(d.plantIcons?.values?.[k]).includes(v.id)) add('piante-valori', `${k}-${v.id}`);
+  }
+  // Solo le schede animali pubblicabili richiedono media; le bozze restano fuori.
+  for (const animal of d.animals || []) if (animal.publicationStatus === 'ready') {
+    need('animali-foto');
+    if (!animal.photos?.length) add('animali-foto', animal.id, 'nessuna foto');
+    for (const ph of animal.photos || []) photo(ph);
   }
   // piante: foto con miniatura, ritaglio e crediti
   for (const [id, p] of Object.entries(d.plants)) {
@@ -246,7 +253,13 @@ export function coherence(d = load()) {
   // piante: indice e file delle icone, quando arrivano
   const askedP = new Set(TREE_KEYS(d.recPlants.schema).flatMap(([k, q]) => q.values.map((v) => `${k}-${v.id}`)));
   for (const [k, vs] of Object.entries(d.plantIcons?.values || {})) for (const v of vs) if (!askedP.has(`${k}-${v}`)) err.push(`plant-trait-icons: ${k}-${v} non è un valore dello schema`);
-  if (has('assets/plant-traits/')) for (const f of readdirSync(new URL('assets/plant-traits/', ROOT))) if (!askedP.has(f.replace(/\.webp$/, ''))) err.push(`assets/plant-traits/${f}: valore non nello schema`);
+  const speciesArtwork = new Set();
+  for (const [id, traits] of Object.entries(d.plantIcons?.species || {})) for (const [k, values] of Object.entries(traits)) for (const [v, art] of Object.entries(values)) {
+    if (!list(d.recPlants?.items?.[id]?.traits?.[k]).includes(v)) err.push(`plant-trait-icons: ${id}/${k}/${v} non documentato per la specie`);
+    if (!art.source || !art.review || !has(art.src)) err.push(`plant-trait-icons: ${id}/${k}/${v} senza fonte, revisione o asset`);
+    speciesArtwork.add(art.src);
+  }
+  if (has('assets/plant-traits/')) for (const f of readdirSync(new URL('assets/plant-traits/', ROOT))) if (!askedP.has(f.replace(/\.webp$/, '')) && !speciesArtwork.has(`assets/plant-traits/${f}`)) err.push(`assets/plant-traits/${f}: valore non nello schema`);
   // citazioni per valore: valori esistenti
   for (const [key, t] of Object.entries(taxa)) for (const [field, m] of Object.entries(t.trait_cites || {})) for (const v of Object.keys(m)) if (!list(t.traits?.[field]).includes(v)) err.push(`species-traits: ${key} citazione per ${field} ${v} non nei dati`);
   // schede di riconoscimento: valori dentro lo schema

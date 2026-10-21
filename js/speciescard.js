@@ -1,7 +1,11 @@
+import {mountInlineGallery} from './inline-gallery.js';
+import {factCards,monthCalendar} from './content-ui.js';
+import {enhanceEntityAccordions} from './entity-accordions.js';
+import {speciesSafetyNote} from './species-context.js';
 // Scheda dettagliata di una specie: foto reali, riconoscimento, sosia pericolosi,
 // calendario delle osservazioni (GBIF) a confronto con il modello, modello 3D.
 
-import { traitStrip, compareCta, taxonKeyByLatin, openTaxon, attentionBox, compareHref, lookalikeRank, sourceRows, photoRows } from './identify.js';
+import { growthTraits, compareCta, taxonKeyByLatin, openTaxon, attentionBox, compareHref, lookalikeRank, sourceRows, photoRows } from './identify.js';
 import { SPECIES } from './species.js';
 import { openLightbox, captionHtml } from './lightbox.js';
 import { linkTrees } from './trees.js';
@@ -16,7 +20,11 @@ let PREP = null, ID = null, MEDIA = null, ASSET = (f) => f, EMBED_3D = true, INF
 
 export function initSpeciesCards({ idData, media, assetUrl, allow3d = true, infographics = {}, whereSection, traits, footer, prep }) {
   PREP = prep || null;
-  ID = idData; MEDIA = media; if (assetUrl) ASSET = assetUrl; EMBED_3D = allow3d; INFO = infographics || {}; if (whereSection) WHERE = whereSection;
+  ID = idData; MEDIA = media; if (assetUrl) ASSET = assetUrl; EMBED_3D = allow3d;
+  // Una tavola grezza non è un'infografica pubblicabile. Richiede revisione
+  // anatomica e nomi visibili anche a schermo intero, non soltanto nell'alt.
+  INFO = Object.fromEntries(Object.entries(infographics || {}).filter(([,m])=>m.publication?.status==='approved'&&m.publication?.visibleLabels===true));
+  if (whereSection) WHERE = whereSection;
   TRAITS = traits?.taxa || {}; FOOTER = footer || '';
   // I richiami contestuali aprono la stessa scheda senza abbandonare la vista.
   document.addEventListener('click', (e) => {
@@ -37,8 +45,10 @@ export function thumb(id, size = 36) {
 export const speciesPhotos = id => [MEDIA?.species?.[id]?.ref,...(MEDIA?.species?.[id]?.inat||[])].filter((p,i,a)=>p&&a.findIndex(x=>x?.file===p.file)===i);
 export const speciesPhoto = (id) => MEDIA?.species?.[id]?.ref || MEDIA?.species?.[id]?.inat?.[0] || null;
 
-const creditText = (m) => m ? `Foto: ${esc(m.author)}${m.license ? `, ${esc(m.license)}` : ''} · <a href="${esc(m.page)}" target="_blank" rel="noopener">${esc(m.source)}</a>` : '';
-const credit = (m) => m ? `<span class="credit">Foto: ${esc(m.author)}${m.license ? `, ${esc(m.license)}` : ''} · <a href="${esc(m.page)}" target="_blank" rel="noopener">${esc(m.source)}</a></span>` : '';
+const creditText = (m) => m ? `Foto: ${esc(m.attribution_required_text || m.author)}${m.license ? `, ${esc(m.license)}` : ''} · <a href="${esc(m.page)}" target="_blank" rel="noopener">${esc(m.source)}</a>` : '';
+// crediti dell'infografica: licenza con il link, segno «da rivedere» se c'è
+const infoCredit = (m) => [esc(m.credit || ''), m.license ? (/^https:\/\//.test(m.licenseUrl || '') ? `<a href="${esc(m.licenseUrl)}" target="_blank" rel="noopener">${esc(m.license)}</a>` : esc(m.license)) : '', m.review ? esc(m.review) : ''].filter(Boolean).join(' · ');
+const credit = (m) => m ? `<span class="credit">Foto: ${esc(m.attribution_required_text || m.author)}${m.license ? `, ${esc(m.license)}` : ''} · <a href="${esc(m.page)}" target="_blank" rel="noopener">${esc(m.source)}</a></span>` : '';
 
 function phenology(id) {
   const sp = SPECIES.find((s) => s.id === id);
@@ -64,7 +74,7 @@ function traitsTable(d) {
     ['Habitat', d.habitat && [d.habitat]],
     ['Stagione', d.season && [d.season]],
   ].filter(([, v]) => v);
-  return `<dl class="traits">${rows.map(([k, v]) => `<dt>${k}</dt><dd${k === 'Stagione' ? '' : ' data-glossary="Funghi"'}>${linkTrees(v.filter(Boolean).join(' · '))}</dd>`).join('')}</dl>`;
+  return factCards(rows.map(([label,values])=>({label,icon:label==='Habitat'?'pin':'eye',html:`<ul class="content-values">${values.filter(Boolean).map(v=>`<li>${linkTrees(v)}</li>`).join('')}</ul>`})),{glossary:'Funghi'});
 }
 
 // etichetta del sosia: quella della sua scheda in Riconosci, se dice il motivo (es. «tossica cruda»); la classe resta per i colori
@@ -99,12 +109,12 @@ function kitchen(id) {
   ].filter(Boolean);
   const srcs = [...(p?.sources || []), ...must.flatMap((x) => x.sources || []), ...(c?.uses || []).flatMap((u) => u.sources || [])].filter((x, i, a) => x?.url && a.findIndex((y) => y.url === x.url) === i);
   return `<section class="kitchen" aria-labelledby="k-h-${id}">
-    <h3 id="k-h-${id}">In cucina</h3><p class="small muted">Indicazioni per la specie, dopo il controllo del raccolto all’Ispettorato micologico. Questa scheda non identifica l’esemplare.</p>
+    <h3 id="k-h-${id}">In cucina</h3><p class="small muted">Solo dopo il controllo del raccolto all’Ispettorato micologico.</p>
     ${p ? `<p class="k-raw"><span class="k-badge${p.raw === 'mai crudo' ? (p.raw_level === 'lieve' ? ' mild' : ' never') : ''}">${p.raw === 'mai crudo' ? (p.raw_level === 'lieve' ? 'Leggermente tossico crudo' : 'Tossico crudo') : 'Solo cotto'}</span>${esc(p.raw_why || '')}</p>` : ''}
     ${must.length ? `<p class="k-h">Obbligatorio</p><ol class="k-steps k-must">${must.map(step).join('')}</ol>` : ''}
     ${p?.discard ? `<p class="k-line"><b>Parti da rimuovere nella preparazione:</b> ${esc(p.discard)}</p>` : ''}
     ${keep.length || tips.length ? `<details class="k-more"><summary>Conservare, quantità e consigli</summary>
-      ${keep.length ? `<dl class="k-keep">${keep.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>` : ''}
+      ${keep.length ? `${factCards(keep.map(([label,value])=>({label,value,icon:'shield'})))}` : ''}
       ${tips.length ? `<ul class="k-steps k-tips">${tips.map(step).join('')}</ul>` : ''}
       <a class="act-row" href="#/info"><span class="ar-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span><span class="ar-b"><span class="ar-t">Regole per tutti i funghi</span><span class="ar-s">Sott'olio, congelamento, chi non deve mangiarli</span></span></a></details>` : ''}
     ${c?.uses?.length ? `<details class="k-food"><summary>I classici in cucina</summary>
@@ -159,13 +169,13 @@ function attention(id, warn) {
 }
 function checks(id) {
   const c = TRAITS[id]?.check_before_picking || [];
-  return c.length ? `<p class="small muted checks-tip">Caratteri descritti per la specie: confrontarli non identifica un esemplare né ne certifica la commestibilità.</p><ol class="keys" data-glossary="Funghi">${c.map((x) => `<li><span class="key-text">${esc(x)}</span></li>`).join('')}</ol>` : '';
+  return c.length ? `<details class="sec character-details"><summary>Cosa controllare da vicino</summary><div class="sec-body"><ol class="keys" data-glossary="Funghi">${c.map((x) => `<li><span class="key-text">${esc(x)}</span></li>`).join('')}</ol></div></details>` : '';
 }
 function whereToLook(id) {
   const w = TRAITS[id]?.where_to_look;
   if (!w) return '';
-  return `<h3>Dove guardare</h3><p data-glossary="Funghi">${linkTrees(w.summary || '')}</p>
-    ${w.tips?.length ? `<ul class="reasons" data-glossary="Funghi">${w.tips.map((t) => `<li>${linkTrees(t)}</li>`).join('')}</ul>` : ''}
+  return `<section class="species-habitat"><h3>Dove e quando</h3>${factCards([{label:'Ambiente',html:linkTrees(w.summary||''),icon:'pin',wide:true}],{glossary:'Funghi'})}${monthCalendar(TRAITS[id]?.traits?.season||[])} </section>
+    ${w.tips?.length ? `<details class="sec"><summary>Indizi nell’ambiente</summary><div class="sec-body"><ul class="content-points" data-glossary="Funghi">${w.tips.map((t) => `<li>${linkTrees(t)}</li>`).join('')}</ul></div></details>` : ''}
     ${w.trees?.length ? `<p class="tree-chips">${w.trees.map((t) => { const h = linkTrees(t); return h.includes('<a') ? h : `<span class="tree-link">${h}</span>`; }).join(' ')}</p>` : ''}`;
 }
 export const whereSummary = (id) => TRAITS[id]?.where_to_look?.summary || '';
@@ -176,6 +186,7 @@ export const criticalRule = (id) => criticalRuleOf(id)?.text || '';
 export const speciesHeroSrc = (id) => { const m = MEDIA?.species?.[id], p = m?.ref || m?.inat?.[0]; return p ? ASSET(p.file_hd || p.file) : ''; };
 export function renderSpeciesDetail(body, id) {
   body.dataset.glossaryContext='Funghi';
+  body.classList.add('fungus-page');
   const sp = SPECIES.find((s) => s.id === id);
   if (!sp) { body.innerHTML = '<p class="muted">Specie non trovata.</p>'; return; }
   const d = ID?.species?.[id] || {};
@@ -209,13 +220,13 @@ export function renderSpeciesDetail(body, id) {
     <div class="pbody">
     ${photos.length > 1 ? `<div class="sp-strip">${photos.slice(1).map((p, k) => `<button type="button" class="zoomable" data-photo="${k + 1}" aria-label="Foto ${k + 2}: ingrandisci"><img data-src="${ASSET(p.file)}" alt="" loading="lazy" decoding="async"></button>`).join('')}</div>` : ''}
     ${attention(id, warn)}
-    ${TRAITS[id]?.check_before_picking?.length ? `<h3>Caratteri da confrontare</h3>${traitStrip(id)}${checks(id)}` : d.key_features?.length ? `<h3>Caratteri da confrontare</h3>${traitStrip(id)}<ol class="keys" data-glossary="Funghi">${d.key_features.map((k) => `<li><span class="key-text">${esc(k)}</span></li>`).join('')}</ol>` : '<p class="notice">Caratteri di confronto in preparazione.</p>'}
+    ${TRAITS[id]?.check_before_picking?.length ? `<h3>Caratteri da confrontare</h3>${growthTraits(id)}${checks(id)}` : d.key_features?.length ? `<h3>Caratteri da confrontare</h3>${growthTraits(id)}<ol class="keys" data-glossary="Funghi">${d.key_features.map((k) => `<li><span class="key-text">${esc(k)}</span></li>`).join('')}</ol>` : '<p class="notice">Caratteri di confronto in preparazione.</p>'}
     ${TRAITS[id] ? '' : (warn.length ? `<div class="notice">${esc(warn.join(' '))}</div>` : '')}
     ${compareCta(id)}
     ${kitchen(id)}
     ${whereToLook(id)}
     ${lookalikes(d, id)}
-    ${INFO[id]?.file ? `<h3>Infografica</h3><button type="button" class="zoomable sp-info" data-info="1" aria-label="Apri l'infografica"><img data-src="${ASSET(INFO[id].file)}" alt="Infografica di riconoscimento: ${esc(sp.name)}" loading="lazy" decoding="async"><span class="zoom-ic" aria-hidden="true">⤢</span></button>` : ''}
+    ${INFO[id]?.file ? `<h3>Infografica</h3>${INFO[id].review ? `<p class="sp-info-review">${esc(INFO[id].review)}</p>` : ''}<button type="button" class="zoomable sp-info" data-info="1" aria-label="Apri l'infografica"><img data-src="${ASSET(INFO[id].file)}" alt="Infografica di riconoscimento: ${esc(sp.name)}" loading="lazy" decoding="async"><span class="zoom-ic" aria-hidden="true">⤢</span></button>` : ''}
     <div class="sp-more">
       ${sec('Dove trovarlo nelle zone', WHERE(id))}
       ${sec('Tutti i caratteri', d.cap ? traitsTable(d) + (d.aka?.length ? `<p class="small"><b>Nomi locali:</b> ${esc(d.aka.join(', '))}</p>` : '') : '')}
@@ -226,8 +237,9 @@ export function renderSpeciesDetail(body, id) {
         : `<p class="small muted">${esc(provenanceText(model))}</p>`}<p class="small muted">${esc(model.name)} · ${esc(model.author)} · ${esc(model.license)}${model.provenance_note ? ` · ${esc(String(model.provenance_note).replace(/\.\s*$/, ''))}` : ''} · <a href="${esc(model.page)}" target="_blank" rel="noopener">apri su Sketchfab</a></p>`) : ''}
       ${sec('Fonti e crediti delle foto', `${sourceRows(d.sources)}${credits.length ? `<p class="src-h">Fotografie</p>${photoRows(credits)}` : ''}`)}
     </div>
-    <p class="small muted sp-foot">${esc(FOOTER || 'Scheda di supporto: non sostituisce il controllo dell\'Ispettorato Micologico ASL. Nel dubbio non si raccoglie e non si mangia.')} <a href="#/info">Emergenza e note legali</a></p>
+    ${speciesSafetyNote(FOOTER)}
     </div>`;
+  enhanceEntityAccordions(body);
   body.querySelector('.sp-3d button')?.addEventListener('click', (e) => {
     const box = e.target.closest('.sp-3d');
     open3d(box, model, sp.name);
@@ -238,9 +250,9 @@ export function renderSpeciesDetail(body, id) {
     }
   });
   // foto della specie: visore con zoom e swipe tra tutte le foto
-  const gallery = photos.map((p) => ({ src: hd(p), alt: sp.name, caption: captionHtml({ title: esc(d.name || sp.name), text: esc([p.place, p.date].filter(Boolean).join(' · ')), credit: creditText(p) }) }));
-  body.querySelectorAll('[data-photo]').forEach((b) => b.addEventListener('click', () => openLightbox(gallery, +b.dataset.photo)));
-  body.querySelectorAll('[data-info]').forEach((b) => b.addEventListener('click', () => openLightbox([{ src: ASSET(INFO[id].file), alt: `Infografica ${sp.name}`, caption: captionHtml({ title: `Infografica · ${esc(sp.name)}`, credit: esc(INFO[id].credit || '') }) }])));
+  const gallery = photos.map((p) => ({ src: hd(p), alt: p.alt || sp.name, caption: captionHtml({ title: esc(d.name || sp.name), text: esc([p.caption, p.place, p.date].filter(Boolean).join(' · ')), credit: creditText(p) }) }));
+  mountInlineGallery(body,gallery);
+  body.querySelectorAll('[data-info]').forEach((b) => b.addEventListener('click', () => openLightbox([{ src: ASSET(INFO[id].file), alt: `Infografica ${sp.name}`, caption: captionHtml({ title: `Infografica · ${esc(sp.name)}`, credit: infoCredit(INFO[id]) }) }])));
   // sosia: foto grande con pericolosita' e differenza da guardare
   const looks = (d.lookalikes || []).map((l) => {
     const key = (l.latin || '').match(/[A-Z][a-z]+ [a-z]+/)?.[0];

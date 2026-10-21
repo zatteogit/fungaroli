@@ -1,0 +1,546 @@
+[
+  {
+    "id": "facebook-group-1",
+    "data": {
+      "name": "Funghi e Natura nell'Italia Centrale - Il gruppo",
+      "url": "https://www.facebook.com/groups/1197371121805138",
+      "kind": "facebook",
+      "territory": "Rieti e Lazio",
+      "access": "Browser autenticato; gruppo pubblico al momento della consultazione",
+      "query": "Rieti, Terminillo, porcini",
+      "lastCheckedOn": "2026-10-20",
+      "resumeUrl": "https://www.facebook.com/groups/1197371121805138",
+      "cursor": null,
+      "coverage": "Post pertinenti al Terminillo datati 2025; altri risultati privi di localizzazione o estranei alla ricerca. Nessuna voce utile recente acquisita.",
+      "notes": "Campione opportunistico. Ricontrollare ordinamento, risposte e data dell’uscita; non dedurre assenze dal mancato risultato. Nessuna acquisizione periodica.",
+      "status": "active"
+    }
+  },
+  {
+    "id": "facebook-group-2",
+    "data": {
+      "name": "Cercatori di funghi nel Lazio",
+      "url": "https://www.facebook.com/groups/121635691300342",
+      "kind": "facebook",
+      "territory": "Rieti e Lazio",
+      "access": "Browser autenticato; gruppo pubblico al momento della consultazione",
+      "query": "Rieti, Terminillo, porcini, Frosinone, Bracciano",
+      "lastCheckedOn": "2026-10-20",
+      "resumeUrl": "https://www.facebook.com/groups/121635691300342",
+      "cursor": null,
+      "coverage": "Principale fonte di resoconti e commenti raccolti; lette cinque discussioni, oltre ai risultati e al feed iniziale.",
+      "notes": "Campione opportunistico. Ricontrollare ordinamento, risposte e data dell’uscita; non dedurre assenze dal mancato risultato. Nessuna acquisizione periodica.",
+      "status": "active"
+    }
+  },
+  {
+    "id": "facebook-group-3",
+    "data": {
+      "name": "Cacciatori di Porcini ed altri Funghi Prelibati del Lazio",
+      "url": "https://www.facebook.com/groups/257246446522493",
+      "kind": "facebook",
+      "territory": "Rieti e Lazio",
+      "access": "Browser autenticato; gruppo pubblico al momento della consultazione",
+      "query": "Rieti, oggi, Manziana",
+      "lastCheckedOn": "2026-10-20",
+      "resumeUrl": "https://www.facebook.com/groups/257246446522493",
+      "cursor": null,
+      "coverage": "Risultati con luogo assente, fuori regione o senza uscita documentata; nessuna voce osservativa acquisita.",
+      "notes": "Campione opportunistico. Ricontrollare ordinamento, risposte e data dell’uscita; non dedurre assenze dal mancato risultato. Nessuna acquisizione periodica.",
+      "status": "active"
+    }
+  },
+  {
+    "id": "facebook-group-4",
+    "data": {
+      "name": "Funghi e Identificazione",
+      "url": "https://www.facebook.com/groups/584160628948288",
+      "kind": "facebook",
+      "territory": "Rieti e Lazio",
+      "access": "Browser autenticato; gruppo pubblico al momento della consultazione",
+      "query": "Rieti",
+      "lastCheckedOn": "2026-10-20",
+      "resumeUrl": "https://www.facebook.com/groups/584160628948288",
+      "cursor": null,
+      "coverage": "Acquisito un post di Poggio Bustone; altra domanda su pseudo tuberi non identificati esclusa.",
+      "notes": "Campione opportunistico. Ricontrollare ordinamento, risposte e data dell’uscita; non dedurre assenze dal mancato risultato. Nessuna acquisizione periodica.",
+      "status": "active"
+    }
+  },
+  {
+    "id": "inaturalist-query-1",
+    "data": {
+      "name": "iNaturalist – funghi provincia di Rieti",
+      "url": "https://api.inaturalist.org/v1/observations?place_id=33138&taxon_id=47170&d1=2026-09-01&d2=2026-10-20&order_by=observed_on&order=desc&per_page=30",
+      "kind": "inaturalist",
+      "territory": "Rieti",
+      "access": "API pubblica iNaturalist",
+      "query": "place_id=33138&taxon_id=47170&d1=2026-09-01&d2=2026-10-20&order_by=observed_on&order=desc&per_page=30",
+      "lastCheckedOn": "2026-10-20",
+      "resumeUrl": "https://api.inaturalist.org/v1/observations?place_id=33138&taxon_id=47170&d1=2026-09-01&d2=2026-10-20&order_by=observed_on&order=desc&per_page=30",
+      "cursor": null,
+      "coverage": "Letti 22 record su 22 risultati nella query del 20 ottobre; intervallo 1 settembre–20 ottobre 2026.",
+      "notes": "Per il nuovo passaggio aggiornare d2, mantenere sovrapposizione con la ricerca precedente e deduplicare per ID e evento. Le nuove identificazioni e correzioni possono riguardare date precedenti. Non è un cursore incrementale completo.",
+      "status": "active"
+    }
+  },
+  {
+    "id": "inaturalist-query-2",
+    "data": {
+      "name": "iNaturalist – funghi Lazio research grade",
+      "url": "https://api.inaturalist.org/v1/observations?place_id=8670&taxon_id=47170&d1=2026-09-01&d2=2026-10-20&quality_grade=research&order_by=observed_on&order=desc&per_page=30",
+      "kind": "inaturalist",
+      "territory": "Lazio",
+      "access": "API pubblica iNaturalist",
+      "query": "place_id=8670&taxon_id=47170&d1=2026-09-01&d2=2026-10-20&quality_grade=research&order_by=observed_on&order=desc&per_page=30",
+      "lastCheckedOn": "2026-10-20",
+      "resumeUrl": "https://api.inaturalist.org/v1/observations?place_id=8670&taxon_id=47170&d1=2026-09-01&d2=2026-10-20&quality_grade=research&order_by=observed_on&order=desc&per_page=30",
+      "cursor": null,
+      "coverage": "Letti 30 record su 107 risultati nella query del 20 ottobre; intervallo 1 settembre–20 ottobre 2026.",
+      "notes": "Per il nuovo passaggio aggiornare d2, mantenere sovrapposizione con la ricerca precedente e deduplicare per ID e evento. Le nuove identificazioni e correzioni possono riguardare date precedenti. Non è un cursore incrementale completo.",
+      "status": "active"
+    }
+  },
+  {
+    "id": "inaturalist-query-3",
+    "data": {
+      "name": "iNaturalist – Basidiomycota Lazio research grade",
+      "url": "https://api.inaturalist.org/v1/observations?place_id=8670&taxon_id=47169&d1=2026-09-01&d2=2026-10-20&quality_grade=research&order_by=observed_on&order=desc&per_page=30",
+      "kind": "inaturalist",
+      "territory": "Lazio",
+      "access": "API pubblica iNaturalist",
+      "query": "place_id=8670&taxon_id=47169&d1=2026-09-01&d2=2026-10-20&quality_grade=research&order_by=observed_on&order=desc&per_page=30",
+      "lastCheckedOn": "2026-10-20",
+      "resumeUrl": "https://api.inaturalist.org/v1/observations?place_id=8670&taxon_id=47169&d1=2026-09-01&d2=2026-10-20&quality_grade=research&order_by=observed_on&order=desc&per_page=30",
+      "cursor": null,
+      "coverage": "Letti 25 record su 25 risultati nella query del 20 ottobre; intervallo 1 settembre–20 ottobre 2026.",
+      "notes": "Per il nuovo passaggio aggiornare d2, mantenere sovrapposizione con la ricerca precedente e deduplicare per ID e evento. Le nuove identificazioni e correzioni possono riguardare date precedenti. Non è un cursore incrementale completo.",
+      "status": "active"
+    }
+  },
+  {
+    "id": "fungocenter-context",
+    "data": {
+      "name": "FungoCenter – bollettini meteo funghi",
+      "url": "https://www.fungocenter.it",
+      "kind": "editorial",
+      "territory": "Lazio e Italia centrale",
+      "access": "Sito pubblico",
+      "query": "Bollettini con riferimenti al Lazio",
+      "lastCheckedOn": "2026-10-20",
+      "resumeUrl": "https://www.fungocenter.it/meteo-funghi-dal-5-all11-ottobre-2026-timidi-segnali-di-ripresa-lazio-in-evidenza",
+      "cursor": null,
+      "coverage": "Letto un articolo del 12 ottobre: alert meteorologici, non osservazioni dirette.",
+      "notes": "Verificare nuovi bollettini dalla fonte principale. Tenere separati previsione, notifiche e ritrovamenti documentati.",
+      "status": "active"
+    }
+  },
+  {
+    "id": "source-gemini-rec-01",
+    "data": {
+      "name": "Funghimagazine – aggiornamento-nascite-funghi-16-10-2026",
+      "url": "https://funghimagazine.it/aggiornamento-nascite-funghi-16-10-2026",
+      "kind": "editorial",
+      "territory": "Lazio",
+      "access": "Fonte proposta dalla ricerca Gemini; verificare accessibilità e contenuto originale",
+      "query": "aggiornamento-nascite-funghi-16-10-2026",
+      "lastCheckedOn": null,
+      "resumeUrl": "https://funghimagazine.it/aggiornamento-nascite-funghi-16-10-2026",
+      "cursor": null,
+      "coverage": "Proposta da Gemini: rec-01. Consultata la ricerca condivisa il 20 ottobre; non equivale a verifica della fonte.",
+      "notes": "Da ricerca Gemini condivisa https://share.gemini.google/z4ReGN7GiwP2. Date, tassonomia e località da verificare nelle fonti originali. La voce non alimenta il motore. Eventuali raccolte storiche restano separate dalle condizioni attuali.",
+      "status": "active"
+    }
+  },
+  {
+    "id": "source-gemini-rec-02",
+    "data": {
+      "name": "Funghimagazine – pioggia-del-mese-di-ottobre-2026",
+      "url": "https://funghimagazine.it/pioggia-del-mese-di-ottobre-2026",
+      "kind": "editorial",
+      "territory": "Italia",
+      "access": "Fonte proposta dalla ricerca Gemini; verificare accessibilità e contenuto originale",
+      "query": "pioggia-del-mese-di-ottobre-2026",
+      "lastCheckedOn": null,
+      "resumeUrl": "https://funghimagazine.it/pioggia-del-mese-di-ottobre-2026",
+      "cursor": null,
+      "coverage": "Proposta da Gemini: rec-02. Consultata la ricerca condivisa il 20 ottobre; non equivale a verifica della fonte.",
+      "notes": "Da ricerca Gemini condivisa https://share.gemini.google/z4ReGN7GiwP2. Date, tassonomia e località da verificare nelle fonti originali. La voce non alimenta il motore. Eventuali raccolte storiche restano separate dalle condizioni attuali.",
+      "status": "active"
+    }
+  },
+  {
+    "id": "source-gemini-rec-03",
+    "data": {
+      "name": "Kraboo Magazine – ottobre-2026/i-funghi-porcini",
+      "url": "https://www.kraboo.it/magazine/ottobre-2026/i-funghi-porcini",
+      "kind": "editorial",
+      "territory": "Terminillo e Monti Reatini (più Simbruini, Castelli Romani, Ciociaria)",
+      "access": "Fonte proposta dalla ricerca Gemini; verificare accessibilità e contenuto originale",
+      "query": "ottobre-2026/i-funghi-porcini",
+      "lastCheckedOn": null,
+      "resumeUrl": "https://www.kraboo.it/magazine/ottobre-2026/i-funghi-porcini",
+      "cursor": null,
+      "coverage": "Proposta da Gemini: rec-03. Consultata la ricerca condivisa il 20 ottobre; non equivale a verifica della fonte.",
+      "notes": "Da ricerca Gemini condivisa https://share.gemini.google/z4ReGN7GiwP2. Date, tassonomia e località da verificare nelle fonti originali. La voce non alimenta il motore. Eventuali raccolte storiche restano separate dalle condizioni attuali.",
+      "status": "active"
+    }
+  },
+  {
+    "id": "source-gemini-rec-04",
+    "data": {
+      "name": "Funghimagazine – aggiornamento-nascite-funghi-12-06-2026",
+      "url": "https://funghimagazine.it/aggiornamento-nascite-funghi-12-06-2026",
+      "kind": "editorial",
+      "territory": "Lazio interno, Provincia di Rieti",
+      "access": "Fonte proposta dalla ricerca Gemini; verificare accessibilità e contenuto originale",
+      "query": "aggiornamento-nascite-funghi-12-06-2026",
+      "lastCheckedOn": null,
+      "resumeUrl": "https://funghimagazine.it/aggiornamento-nascite-funghi-12-06-2026",
+      "cursor": null,
+      "coverage": "Proposta da Gemini: rec-04. Consultata la ricerca condivisa il 20 ottobre; non equivale a verifica della fonte.",
+      "notes": "Da ricerca Gemini condivisa https://share.gemini.google/z4ReGN7GiwP2. Date, tassonomia e località da verificare nelle fonti originali. La voce non alimenta il motore. Eventuali raccolte storiche restano separate dalle condizioni attuali.",
+      "status": "active"
+    }
+  },
+  {
+    "id": "source-gemini-rec-05",
+    "data": {
+      "name": "3BMeteo Funghi – meteo-funghi/terminillo",
+      "url": "https://www.3bmeteo.com/meteo-funghi/terminillo",
+      "kind": "other",
+      "territory": "Terminillo",
+      "access": "Fonte proposta dalla ricerca Gemini; verificare accessibilità e contenuto originale",
+      "query": "meteo-funghi/terminillo",
+      "lastCheckedOn": null,
+      "resumeUrl": "https://www.3bmeteo.com/meteo-funghi/terminillo",
+      "cursor": null,
+      "coverage": "Proposta da Gemini: rec-05. Consultata la ricerca condivisa il 20 ottobre; non equivale a verifica della fonte.",
+      "notes": "Da ricerca Gemini condivisa https://share.gemini.google/z4ReGN7GiwP2. Date, tassonomia e località da verificare nelle fonti originali. La voce non alimenta il motore. Eventuali raccolte storiche restano separate dalle condizioni attuali.",
+      "status": "active"
+    }
+  },
+  {
+    "id": "source-gemini-rec-06",
+    "data": {
+      "name": "FungoCenter – meteo-funghi-lazio",
+      "url": "https://www.fungocenter.it/meteo-funghi-lazio",
+      "kind": "other",
+      "territory": "Monte Terminillo, Monti Simbruini, Monte Fogliano, Monterano",
+      "access": "Fonte proposta dalla ricerca Gemini; verificare accessibilità e contenuto originale",
+      "query": "meteo-funghi-lazio",
+      "lastCheckedOn": null,
+      "resumeUrl": "https://www.fungocenter.it/meteo-funghi-lazio",
+      "cursor": null,
+      "coverage": "Proposta da Gemini: rec-06. Consultata la ricerca condivisa il 20 ottobre; non equivale a verifica della fonte.",
+      "notes": "Da ricerca Gemini condivisa https://share.gemini.google/z4ReGN7GiwP2. Date, tassonomia e località da verificare nelle fonti originali. La voce non alimenta il motore. Eventuali raccolte storiche restano separate dalle condizioni attuali.",
+      "status": "active"
+    }
+  },
+  {
+    "id": "source-gemini-rec-07",
+    "data": {
+      "name": "Riserva Nat. M.te Navegna e M.te Cervia – lista_news.asp?page=1",
+      "url": "https://www.navegnacervia.it/lista_news.asp?tipologia=&page=1&order=Data+Asc&iPageSize=20",
+      "kind": "other",
+      "territory": "Cicolano / Turano, Prov. di Rieti",
+      "access": "Fonte proposta dalla ricerca Gemini; verificare accessibilità e contenuto originale",
+      "query": "lista_news.asp?page=1",
+      "lastCheckedOn": null,
+      "resumeUrl": "https://www.navegnacervia.it/lista_news.asp?tipologia=&page=1&order=Data+Asc&iPageSize=20",
+      "cursor": null,
+      "coverage": "Proposta da Gemini: rec-07. Consultata la ricerca condivisa il 20 ottobre; non equivale a verifica della fonte.",
+      "notes": "Da ricerca Gemini condivisa https://share.gemini.google/z4ReGN7GiwP2. Date, tassonomia e località da verificare nelle fonti originali. La voce non alimenta il motore. Eventuali raccolte storiche restano separate dalle condizioni attuali.",
+      "status": "active"
+    }
+  },
+  {
+    "id": "source-gemini-rec-08",
+    "data": {
+      "name": "EtruriaNews – 2025/09/24/rieti-terminillo-trovato-un-porcino-da-record-quasi-3-chili-di-peso",
+      "url": "https://etrurianews.it/2025/09/24/rieti-terminillo-trovato-un-porcino-da-record-quasi-3-chili-di-peso",
+      "kind": "editorial",
+      "territory": "Foreste del Terminillo",
+      "access": "Fonte proposta dalla ricerca Gemini; verificare accessibilità e contenuto originale",
+      "query": "2025/09/24/rieti-terminillo-trovato-un-porcino-da-record-quasi-3-chili-di-peso",
+      "lastCheckedOn": null,
+      "resumeUrl": "https://etrurianews.it/2025/09/24/rieti-terminillo-trovato-un-porcino-da-record-quasi-3-chili-di-peso",
+      "cursor": null,
+      "coverage": "Proposta da Gemini: rec-08. Consultata la ricerca condivisa il 20 ottobre; non equivale a verifica della fonte.",
+      "notes": "Da ricerca Gemini condivisa https://share.gemini.google/z4ReGN7GiwP2. Date, tassonomia e località da verificare nelle fonti originali. La voce non alimenta il motore. Eventuali raccolte storiche restano separate dalle condizioni attuali.",
+      "status": "active"
+    }
+  },
+  {
+    "id": "source-gemini-rec-09",
+    "data": {
+      "name": "IMA Fungus / PMC – GS10842 (DOI: 10.3897/imafungus.16.144731)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12179652",
+      "kind": "other",
+      "territory": "Via Appia Antica",
+      "access": "Fonte proposta dalla ricerca Gemini; verificare accessibilità e contenuto originale",
+      "query": "GS10842 (DOI: 10.3897/imafungus.16.144731)",
+      "lastCheckedOn": null,
+      "resumeUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12179652",
+      "cursor": null,
+      "coverage": "Proposta da Gemini: rec-09, rec-10. Consultata la ricerca condivisa il 20 ottobre; non equivale a verifica della fonte.",
+      "notes": "Da ricerca Gemini condivisa https://share.gemini.google/z4ReGN7GiwP2. Date, tassonomia e località da verificare nelle fonti originali. La voce non alimenta il motore. Eventuali raccolte storiche restano separate dalle condizioni attuali. Verifica primaria: GS10842 è elencato ad Agordo e non Roma; GS10226 precede la voce Manziana, non ne è il codice. Le attribuzioni di Gemini sono errate; leggere i veri campioni e le date nel paper.",
+      "status": "active"
+    }
+  },
+  {
+    "id": "source-gemini-rec-11",
+    "data": {
+      "name": "AMINT Forum – topic/15202/page/3 (IMG_5040.jpg)",
+      "url": "https://www.funghiitaliani.it/topic/15202-marasmius-oreades-bolton-fr-1836/page/3",
+      "kind": "forum",
+      "territory": "Regione Lazio",
+      "access": "Fonte proposta dalla ricerca Gemini; verificare accessibilità e contenuto originale",
+      "query": "topic/15202/page/3 (IMG_5040.jpg)",
+      "lastCheckedOn": null,
+      "resumeUrl": "https://www.funghiitaliani.it/topic/15202-marasmius-oreades-bolton-fr-1836/page/3",
+      "cursor": null,
+      "coverage": "Proposta da Gemini: rec-11. Consultata la ricerca condivisa il 20 ottobre; non equivale a verifica della fonte.",
+      "notes": "Da ricerca Gemini condivisa https://share.gemini.google/z4ReGN7GiwP2. Date, tassonomia e località da verificare nelle fonti originali. La voce non alimenta il motore. Eventuali raccolte storiche restano separate dalle condizioni attuali.",
+      "status": "active"
+    }
+  },
+  {
+    "id": "source-gemini-rec-12",
+    "data": {
+      "name": "AMINT Forum – topic/102842",
+      "url": "https://www.funghiitaliani.it/topic/102842-hohenbuehelia-mastrucata-fr-fr-singer-1951",
+      "kind": "forum",
+      "territory": "M.te Rufeno (e M.te Amiata), Lazio",
+      "access": "Fonte proposta dalla ricerca Gemini; verificare accessibilità e contenuto originale",
+      "query": "topic/102842",
+      "lastCheckedOn": null,
+      "resumeUrl": "https://www.funghiitaliani.it/topic/102842-hohenbuehelia-mastrucata-fr-fr-singer-1951",
+      "cursor": null,
+      "coverage": "Proposta da Gemini: rec-12. Consultata la ricerca condivisa il 20 ottobre; non equivale a verifica della fonte.",
+      "notes": "Da ricerca Gemini condivisa https://share.gemini.google/z4ReGN7GiwP2. Date, tassonomia e località da verificare nelle fonti originali. La voce non alimenta il motore. Eventuali raccolte storiche restano separate dalle condizioni attuali.",
+      "status": "active"
+    }
+  },
+  {
+    "id": "source-gemini-rec-13",
+    "data": {
+      "name": "AMINT Forum – topic/102520",
+      "url": "https://www.funghiitaliani.it/topic/102520-coprinopsis-ephemeroides-dc-g-moreno",
+      "kind": "forum",
+      "territory": "Bosco d'Ecio",
+      "access": "Fonte proposta dalla ricerca Gemini; verificare accessibilità e contenuto originale",
+      "query": "topic/102520",
+      "lastCheckedOn": null,
+      "resumeUrl": "https://www.funghiitaliani.it/topic/102520-coprinopsis-ephemeroides-dc-g-moreno",
+      "cursor": null,
+      "coverage": "Proposta da Gemini: rec-13. Consultata la ricerca condivisa il 20 ottobre; non equivale a verifica della fonte.",
+      "notes": "Da ricerca Gemini condivisa https://share.gemini.google/z4ReGN7GiwP2. Date, tassonomia e località da verificare nelle fonti originali. La voce non alimenta il motore. Eventuali raccolte storiche restano separate dalle condizioni attuali.",
+      "status": "active"
+    }
+  },
+  {
+    "id": "source-gemini-rec-14",
+    "data": {
+      "name": "AMINT Forum – topic/30336/page/2 (post 2022)",
+      "url": "https://www.funghiitaliani.it/topic/30336-asterophora-lycoperdoides-bull-ditmar-1809/page/2",
+      "kind": "forum",
+      "territory": "Fondi",
+      "access": "Fonte proposta dalla ricerca Gemini; verificare accessibilità e contenuto originale",
+      "query": "topic/30336/page/2 (post 2022)",
+      "lastCheckedOn": null,
+      "resumeUrl": "https://www.funghiitaliani.it/topic/30336-asterophora-lycoperdoides-bull-ditmar-1809/page/2",
+      "cursor": null,
+      "coverage": "Proposta da Gemini: rec-14, rec-15. Consultata la ricerca condivisa il 20 ottobre; non equivale a verifica della fonte.",
+      "notes": "Da ricerca Gemini condivisa https://share.gemini.google/z4ReGN7GiwP2. Date, tassonomia e località da verificare nelle fonti originali. La voce non alimenta il motore. Eventuali raccolte storiche restano separate dalle condizioni attuali.",
+      "status": "active"
+    }
+  },
+  {
+    "id": "source-gemini-rec-16",
+    "data": {
+      "name": "AMINT Forum – topic/24564/page/2 (post 2020)",
+      "url": "https://www.funghiitaliani.it/topic/24564-lepiota-aspera-pers-fr-qu%C3%A9l-1886/page/2",
+      "kind": "forum",
+      "territory": "Regione Lazio",
+      "access": "Fonte proposta dalla ricerca Gemini; verificare accessibilità e contenuto originale",
+      "query": "topic/24564/page/2 (post 2020)",
+      "lastCheckedOn": null,
+      "resumeUrl": "https://www.funghiitaliani.it/topic/24564-lepiota-aspera-pers-fr-qu%C3%A9l-1886/page/2",
+      "cursor": null,
+      "coverage": "Proposta da Gemini: rec-16, rec-17, rec-18. Consultata la ricerca condivisa il 20 ottobre; non equivale a verifica della fonte.",
+      "notes": "Da ricerca Gemini condivisa https://share.gemini.google/z4ReGN7GiwP2. Date, tassonomia e località da verificare nelle fonti originali. La voce non alimenta il motore. Eventuali raccolte storiche restano separate dalle condizioni attuali.",
+      "status": "active"
+    }
+  },
+  {
+    "id": "source-gemini-rec-19",
+    "data": {
+      "name": "Facebook / iNaturalist – FB: 2118849595183169 / iNat: 175728813",
+      "url": "https://www.facebook.com/groups/848976755503799/posts/2118849595183169",
+      "kind": "facebook",
+      "territory": "Lazio",
+      "access": "Fonte proposta dalla ricerca Gemini; verificare accessibilità e contenuto originale",
+      "query": "FB: 2118849595183169 / iNat: 175728813",
+      "lastCheckedOn": null,
+      "resumeUrl": "https://www.facebook.com/groups/848976755503799/posts/2118849595183169",
+      "cursor": null,
+      "coverage": "Proposta da Gemini: rec-19. Consultata la ricerca condivisa il 20 ottobre; non equivale a verifica della fonte.",
+      "notes": "Da ricerca Gemini condivisa https://share.gemini.google/z4ReGN7GiwP2. Date, tassonomia e località da verificare nelle fonti originali. La voce non alimenta il motore. Eventuali raccolte storiche restano separate dalle condizioni attuali.",
+      "status": "active"
+    }
+  },
+  {
+    "id": "source-gemini-rec-20",
+    "data": {
+      "name": "Natura Mediterraneo – TOPIC_ID=127921",
+      "url": "https://www.naturamediterraneo.com/forum/topic.asp?TOPIC_ID=127921",
+      "kind": "forum",
+      "territory": "Non determinata (query Rieti/Lazio)",
+      "access": "Fonte proposta dalla ricerca Gemini; verificare accessibilità e contenuto originale",
+      "query": "TOPIC_ID=127921",
+      "lastCheckedOn": null,
+      "resumeUrl": "https://www.naturamediterraneo.com/forum/topic.asp?TOPIC_ID=127921",
+      "cursor": null,
+      "coverage": "Proposta da Gemini: rec-20. Consultata la ricerca condivisa il 20 ottobre; non equivale a verifica della fonte.",
+      "notes": "Da ricerca Gemini condivisa https://share.gemini.google/z4ReGN7GiwP2. Date, tassonomia e località da verificare nelle fonti originali. La voce non alimenta il motore. Eventuali raccolte storiche restano separate dalle condizioni attuali.",
+      "status": "active"
+    }
+  },
+  {
+    "id": "source-gemini-rec-21",
+    "data": {
+      "name": "AMINT Forum – profile/3093/page/210 (1161071144)",
+      "url": "https://www.funghiitaliani.it/profile/3093-felice-di-palma/content/page/210/?type=forums_topic_post",
+      "kind": "forum",
+      "territory": "Zona Terminillo",
+      "access": "Fonte proposta dalla ricerca Gemini; verificare accessibilità e contenuto originale",
+      "query": "profile/3093/page/210 (1161071144)",
+      "lastCheckedOn": null,
+      "resumeUrl": "https://www.funghiitaliani.it/profile/3093-felice-di-palma/content/page/210/?type=forums_topic_post",
+      "cursor": null,
+      "coverage": "Proposta da Gemini: rec-21. Consultata la ricerca condivisa il 20 ottobre; non equivale a verifica della fonte.",
+      "notes": "Da ricerca Gemini condivisa https://share.gemini.google/z4ReGN7GiwP2. Date, tassonomia e località da verificare nelle fonti originali. La voce non alimenta il motore. Eventuali raccolte storiche restano separate dalle condizioni attuali.",
+      "status": "active"
+    }
+  },
+  {
+    "id": "source-gemini-rec-22",
+    "data": {
+      "name": "Gruppo Micologico Cecinese – FungoScheda.php?id=576",
+      "url": "https://www.gruppomicologicocecinese.it/FungoScheda.php?id=576",
+      "kind": "other",
+      "territory": "Terminillo",
+      "access": "Fonte proposta dalla ricerca Gemini; verificare accessibilità e contenuto originale",
+      "query": "FungoScheda.php?id=576",
+      "lastCheckedOn": null,
+      "resumeUrl": "https://www.gruppomicologicocecinese.it/FungoScheda.php?id=576",
+      "cursor": null,
+      "coverage": "Proposta da Gemini: rec-22. Consultata la ricerca condivisa il 20 ottobre; non equivale a verifica della fonte.",
+      "notes": "Da ricerca Gemini condivisa https://share.gemini.google/z4ReGN7GiwP2. Date, tassonomia e località da verificare nelle fonti originali. La voce non alimenta il motore. Eventuali raccolte storiche restano separate dalle condizioni attuali.",
+      "status": "active"
+    }
+  },
+  {
+    "id": "source-gemini-rec-23",
+    "data": {
+      "name": "MycoBank – MB#360295 / IB 1992/0453",
+      "url": "https://www.mycobank.org/details/708/189507",
+      "kind": "other",
+      "territory": "Monte Terminillo",
+      "access": "Fonte proposta dalla ricerca Gemini; verificare accessibilità e contenuto originale",
+      "query": "MB#360295 / IB 1992/0453",
+      "lastCheckedOn": null,
+      "resumeUrl": "https://www.mycobank.org/details/708/189507",
+      "cursor": null,
+      "coverage": "Proposta da Gemini: rec-23. Consultata la ricerca condivisa il 20 ottobre; non equivale a verifica della fonte.",
+      "notes": "Da ricerca Gemini condivisa https://share.gemini.google/z4ReGN7GiwP2. Date, tassonomia e località da verificare nelle fonti originali. La voce non alimenta il motore. Eventuali raccolte storiche restano separate dalle condizioni attuali.",
+      "status": "active"
+    }
+  },
+  {
+    "id": "source-gemini-rec-24",
+    "data": {
+      "name": "Monografia Genere Russula – scribd-700332050",
+      "url": "https://it.scribd.com/document/700332050/Sarnari-2007-Monografia-Illustrata-Del-Genere-Russula-in-Europa",
+      "kind": "other",
+      "territory": "Monte Terminillo, loc. Pian di Rosce (\"Pian di Rosee\")",
+      "access": "Fonte proposta dalla ricerca Gemini; verificare accessibilità e contenuto originale",
+      "query": "scribd-700332050",
+      "lastCheckedOn": null,
+      "resumeUrl": "https://it.scribd.com/document/700332050/Sarnari-2007-Monografia-Illustrata-Del-Genere-Russula-in-Europa",
+      "cursor": null,
+      "coverage": "Proposta da Gemini: rec-24. Consultata la ricerca condivisa il 20 ottobre; non equivale a verifica della fonte.",
+      "notes": "Da ricerca Gemini condivisa https://share.gemini.google/z4ReGN7GiwP2. Date, tassonomia e località da verificare nelle fonti originali. La voce non alimenta il motore. Eventuali raccolte storiche restano separate dalle condizioni attuali.",
+      "status": "active"
+    }
+  },
+  {
+    "id": "gemini-research-2026-10-20",
+    "data": {
+      "name": "Ricerca Gemini condivisa da Matteo",
+      "url": "https://share.gemini.google/z4ReGN7GiwP2",
+      "kind": "other",
+      "territory": "Rieti e Lazio",
+      "access": "Pagina condivisa Gemini, letta dal browser",
+      "query": "Ricerca di presenze, ricerche a vuoto e fonti micologiche; 24 proposte in due tabelle",
+      "lastCheckedOn": "2026-10-20",
+      "resumeUrl": "https://share.gemini.google/z4ReGN7GiwP2",
+      "cursor": null,
+      "coverage": "24 proposte acquisite; raggruppate per fonte e paper. Nessuna dichiarazione di assenza del rapporto sostituisce i record iNaturalist già verificati.",
+      "notes": "Tutte le proposte in revisione. Due codici di campione di Hortiboletus associati a località errate; consultare il paper primario. La ricerca non è un censimento esaustivo.",
+      "status": "active"
+    }
+  },
+  {
+    "id": "nature-tolfa-354732",
+    "data": {
+      "name": "Natura Mediterraneo – Tolfa, vecchio ritrovamento",
+      "url": "https://www.naturamediterraneo.com/forum/topic.asp?TOPIC_ID=354732&whichpage=1",
+      "kind": "forum",
+      "territory": "Lazio",
+      "access": "Sito pubblico",
+      "query": "Uscite e osservazioni Lazio, autunno 2026",
+      "lastCheckedOn": "2026-10-20",
+      "resumeUrl": "https://www.naturamediterraneo.com/forum/topic.asp?TOPIC_ID=354732&whichpage=1",
+      "cursor": null,
+      "coverage": "Letto il 20 ottobre: post del 17 ottobre 2026, titolo vecchio ritrovamento, data dell’uscita non risolta e identificazione proposta.",
+      "notes": "Non usare la data del post come giorno dell’osservazione. Controllare eventuali chiarimenti successivi.",
+      "status": "active"
+    }
+  },
+  {
+    "id": "amer-reports",
+    "data": {
+      "name": "AMER – report delle uscite e attività",
+      "url": "https://www.ameronlus.it/blog/",
+      "kind": "other",
+      "territory": "Lazio",
+      "access": "Sito pubblico",
+      "query": "Uscite e osservazioni Lazio, autunno 2026",
+      "lastCheckedOn": "2026-10-20",
+      "resumeUrl": "https://www.ameronlus.it/blog/",
+      "cursor": null,
+      "coverage": "Consultato il blog: include report delle uscite e articoli; non è una serie strutturata di presenze recenti.",
+      "notes": "Ricercare i report dopo le uscite; un annuncio futuro non è un ritrovamento.",
+      "status": "active"
+    }
+  },
+  {
+    "id": "amint-lazio-2026",
+    "data": {
+      "name": "AMINT – raccolte Lazio agosto 2026",
+      "url": "https://www.funghiitaliani.it/topic/103500-202608-lazio-tutor-tomaso-lezzi",
+      "kind": "forum",
+      "territory": "Lazio",
+      "access": "Forum pubblico; apertura del topic diretto restituisce 403 nel lettore web",
+      "query": "Lazio, raccolte 2026; controllare nuovi topic mensili",
+      "lastCheckedOn": "2026-10-20",
+      "resumeUrl": "https://www.funghiitaliani.it/topic/103500-202608-lazio-tutor-tomaso-lezzi",
+      "cursor": null,
+      "coverage": "Letta la pagina attività con estratti dei contributi di agosto 2026: Russula insignis, Marasmiellus candidus e Suillellus queletii. Topic originale non leggibile dal lettore web, da ricontrollare.",
+      "notes": "Data solo mensile e scala regionale; fuori dalla finestra attuale. La pagina attività non è una verifica completa del topic o della tassonomia.",
+      "status": "active"
+    }
+  }
+]

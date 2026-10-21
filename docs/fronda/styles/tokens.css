@@ -92,6 +92,20 @@
   --_ref-germoglio-hover: #BEDD7C;
   --_ref-germoglio-soft: #E9F1D6;
   --_ref-germoglio-ink: #36501D;
+  --_ref-cta-green: #18382C;
+  --_ref-cta-green-hover: #214534;
+  --_ref-cta-white: #FFFFFF;
+  --_ref-cta-white-hover: #E9EFE8;
+  --_ref-selection-edge: #806800;
+  --_ref-selection-radius: 12px;
+  --_ref-ciclamino: #C973A5;
+  --_ref-ciclamino-ink: #8A3E6C;
+  --_ref-ciclamino-soft: #F5E3EE;
+  --_ref-ciclamino-dark-ink: #E5A5CD;
+  --_ref-corallo: #F0786C;
+  --_ref-corallo-ink: #9A4437;
+  --_ref-corallo-soft: #FAE6E0;
+  --_ref-corallo-dark-ink: #FFAB96;
   --bg: var(--_ref-ivory);
   --surface: var(--_ref-paper);
   --surface-subtle: var(--_ref-mist);
@@ -186,9 +200,22 @@
   --germoglio-soft: var(--_ref-germoglio-soft);
   --germoglio-ink: var(--_ref-germoglio-ink);
   --on-germoglio: var(--_ref-night);
-  --action-bg: var(--_ref-polline);
-  --action-fg: var(--_ref-night);
-  --action-hover: var(--_ref-polline-hover);
+  --action-bg: var(--_ref-cta-green);
+  --action-fg: var(--_ref-cta-white);
+  --action-hover: var(--_ref-cta-green-hover);
+  --selection-bg: var(--polline);
+  --selection-fg: var(--on-polline);
+  --selection-edge: var(--_ref-selection-edge);
+  --navigation-current-bg: var(--selection-bg);
+  --navigation-current-fg: var(--selection-fg);
+  --navigation-current-indicator: var(--selection-edge);
+  --selection-radius: var(--_ref-selection-radius);
+  --ciclamino: var(--_ref-ciclamino);
+  --ciclamino-ink: var(--_ref-ciclamino-ink);
+  --ciclamino-soft: var(--_ref-ciclamino-soft);
+  --corallo: var(--_ref-corallo);
+  --corallo-ink: var(--_ref-corallo-ink);
+  --corallo-soft: var(--_ref-corallo-soft);
   --button-bg: var(--action-bg);
   --button-fg: var(--action-fg);
   --button-radius: var(--radius-pill);
@@ -214,6 +241,12 @@
   --tone-soft: var(--polline-soft);
   --tone-ink: var(--polline-ink);
   --tone-hover: var(--polline-hover);
+  --button-secondary-bg: var(--bg);
+  --button-secondary-fg: var(--text);
+  --button-secondary-border: var(--brand);
+  --chip-selected-bg: var(--selection-bg);
+  --chip-selected-fg: var(--selection-fg);
+  --chip-selected-border: var(--selection-edge);
 }
 [data-theme="dark"] {
   --bg: var(--_ref-night);
@@ -223,7 +256,7 @@
   --text-muted: var(--_ref-dark-muted);
   --border: var(--_ref-dark-line);
   --control-border: var(--_ref-dark-control);
-  --brand: var(--_ref-light-green);
+  --brand: var(--_ref-cta-white);
   --brand-hover: var(--_ref-ivory);
   --on-brand: var(--_ref-night);
   --accent: var(--_ref-calendula);
@@ -246,4 +279,12 @@
   --fiordaliso-ink: var(--_ref-fiordaliso-hover);
   --germoglio-soft: var(--_ref-dark-raised);
   --germoglio-ink: var(--_ref-germoglio);
+  --action-bg: var(--_ref-cta-white);
+  --action-fg: var(--_ref-night);
+  --action-hover: var(--_ref-cta-white-hover);
+  --ciclamino-ink: var(--_ref-ciclamino-dark-ink);
+  --ciclamino-soft: var(--surface-subtle);
+  --corallo-ink: var(--_ref-corallo-dark-ink);
+  --corallo-soft: var(--surface-subtle);
+  --selection-edge: var(--_ref-polline);
 }

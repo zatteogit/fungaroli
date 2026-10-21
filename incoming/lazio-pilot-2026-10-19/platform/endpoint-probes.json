@@ -1,0 +1,108 @@
+{
+  "purpose": "Read-only reachability probes; coordinates are technical query windows, not approved zone centres or trailheads. No production data modified.",
+  "records": [
+    {
+      "probe": "nord-vico",
+      "url": "https://geoportale.regione.lazio.it/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=geonode%3Atipi_forestali2&outputFormat=application%2Fjson&bbox=12.14%2C42.30%2C12.20%2C42.36%2CEPSG%3A4326&maxFeatures=1&srsName=EPSG%3A4326",
+      "checkedAt": "2026-10-19T10:06:04.499947+00:00",
+      "httpStatus": "200",
+      "curlExit": 0,
+      "error": null,
+      "responseType": "FeatureCollection",
+      "returned": 1,
+      "fields": [
+        "fid",
+        "id",
+        "layer",
+        "cop_collau",
+        "categoria",
+        "tipologia",
+        "cop",
+        "strutt",
+        "area",
+        "perimeter",
+        "hectares",
+        "copertura",
+        "scost"
+      ],
+      "siteName": null,
+      "errorResponse": null
+    },
+    {
+      "probe": "centro-castelli",
+      "url": "https://geoportale.regione.lazio.it/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=geonode%3Atipi_forestali2&outputFormat=application%2Fjson&bbox=12.68%2C41.73%2C12.74%2C41.79%2CEPSG%3A4326&maxFeatures=1&srsName=EPSG%3A4326",
+      "checkedAt": "2026-10-19T10:06:04.460431+00:00",
+      "httpStatus": "200",
+      "curlExit": 0,
+      "error": null,
+      "responseType": "FeatureCollection",
+      "returned": 1,
+      "fields": [
+        "fid",
+        "id",
+        "layer",
+        "cop_collau",
+        "categoria",
+        "tipologia",
+        "cop",
+        "strutt",
+        "area",
+        "perimeter",
+        "hectares",
+        "copertura",
+        "scost"
+      ],
+      "siteName": null,
+      "errorResponse": null
+    },
+    {
+      "probe": "sud-aurunci",
+      "url": "https://geoportale.regione.lazio.it/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=geonode%3Atipi_forestali2&outputFormat=application%2Fjson&bbox=13.31%2C41.35%2C13.37%2C41.41%2CEPSG%3A4326&maxFeatures=1&srsName=EPSG%3A4326",
+      "checkedAt": "2026-10-19T10:06:04.532073+00:00",
+      "httpStatus": "200",
+      "curlExit": 0,
+      "error": null,
+      "responseType": "FeatureCollection",
+      "returned": 1,
+      "fields": [
+        "fid",
+        "id",
+        "layer",
+        "cop_collau",
+        "categoria",
+        "tipologia",
+        "cop",
+        "strutt",
+        "area",
+        "perimeter",
+        "hectares",
+        "copertura",
+        "scost"
+      ],
+      "siteName": null,
+      "errorResponse": null
+    },
+    {
+      "probe": "commons-api",
+      "url": "https://commons.wikimedia.org/w/api.php?action=query&meta=siteinfo&siprop=general&format=json",
+      "checkedAt": "2026-10-19T10:06:04.356768+00:00",
+      "httpStatus": "200",
+      "curlExit": 0,
+      "error": null,
+      "responseType": null,
+      "returned": 0,
+      "fields": [],
+      "siteName": "Wikimedia Commons",
+      "errorResponse": null
+    },
+    {
+      "probe": "upload-domain",
+      "url": "https://upload.wikimedia.org/robots.txt",
+      "checkedAt": "2026-10-19T10:06:04.207940+00:00",
+      "httpStatus": "200",
+      "curlExit": 0,
+      "error": null,
+      "bodyStart": "User-agent: *\nDisallow: /wikipedia/commons/archive/\n\n"
+    }
+  ]
+}

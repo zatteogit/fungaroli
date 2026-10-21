@@ -1,0 +1,713 @@
+{
+  "version": 1,
+  "status": "proposal-only",
+  "taxa": {
+    "amanita-citrina": {
+      "latin": "Amanita citrina",
+      "name": "Tignosa paglierina",
+      "common_names": [
+        "Tignosa paglierina"
+      ],
+      "synonyms": [
+        "Amanita mappa"
+      ],
+      "toxicity": "non commestibile",
+      "traits": null,
+      "check_before_picking": [
+        "Cappello chiaro, dal crema al giallo citrino, con placche irregolari del velo.",
+        "Lamelle fitte e libere, bianche con sfumature citrine.",
+        "Anello membranoso pendente sul gambo chiaro.",
+        "Base con bulbo nettamente marginato e volva aderente."
+      ],
+      "habitat": "Boschi di latifoglie e conifere; esemplari isolati o in gruppi.",
+      "season_text": "Estate e autunno, fino al tardo autunno.",
+      "season_months": [],
+      "stages": [],
+      "caution": "La guida Piemonte la esclude dal consumo e segnala il rischio di confusione con Amanita pericolose.",
+      "sources": [
+        {
+          "title": "I funghi della Campania — PDF p. 101, pagina stampata 100",
+          "url": "https://funghietartufi.regione.campania.it/docfunghietartufi/doc/funghi_campania.pdf#page=101"
+        },
+        {
+          "title": "Guida ragionata alla commestibilità dei funghi — PDF pp. 25,32,34",
+          "url": "https://www.regione.piemonte.it/web/media/24510/download#page=25"
+        },
+        {
+          "title": "Sociedad de Ciencias Aranzadi — Amanita citrina, Nombres populares/Italiano",
+          "url": "https://www.aranzadi.eus/buscador-micologico/ficha/1-1-003.05.01.03.06.00"
+        }
+      ],
+      "missing_data": {
+        "traits": "Non codificati valori del vocabolario: le descrizioni verificabili sono check_before_picking. Nessuna icona o fase inferita.",
+        "stages": "Nessuna fase assegnata a fotografie; sviluppo descritto nel testo dove documentato.",
+        "season_months": "Le fonti usano stagioni, non intervalli mensili univoci; nessuna conversione automatica.",
+        "regional_presence": "Nessuna attestazione puntuale del Lazio proposta.",
+        "model": "Nessun coefficiente o indice assegnato."
+      },
+      "review_status": "proposta documentata; revisione micologica/editoriale e foto da completare",
+      "source_food_status": "non commestibile",
+      "taxonomy_review": {
+        "name_scope": "Nome del profilo istituzionale; non conferma molecolare degli esemplari fotografati.",
+        "authority_source": "https://funghietartufi.regione.campania.it/docfunghietartufi/doc/funghi_campania.pdf#page=101"
+      }
+    },
+    "paxillus-involutus": {
+      "latin": "Paxillus involutus",
+      "name": "Agarico involuto",
+      "common_names": [
+        "Agarico involuto"
+      ],
+      "synonyms": [],
+      "toxicity": "tossico",
+      "traits": null,
+      "check_before_picking": [
+        "Cappello bruno-ocraceo o olivastro, con margine a lungo arrotolato verso il basso.",
+        "Lamelle fitte e decorrenti, che imbruniscono alla pressione.",
+        "Le lamelle si separano facilmente dalla carne del cappello.",
+        "Carne che assume toni bruno-rossastri al taglio."
+      ],
+      "habitat": "Boschi di varia composizione, spesso in gruppi.",
+      "season_text": "Dall’estate all’autunno.",
+      "season_months": [],
+      "stages": [],
+      "caution": "La guida Piemonte documenta reazioni gravi e potenzialmente mortali, anche dopo precedenti consumi senza disturbi.",
+      "sources": [
+        {
+          "title": "I funghi della Campania — PDF p. 225, pagina stampata 224",
+          "url": "https://funghietartufi.regione.campania.it/docfunghietartufi/doc/funghi_campania.pdf#page=225"
+        },
+        {
+          "title": "Guida ragionata alla commestibilità dei funghi — PDF pp. 26,114,115",
+          "url": "https://www.regione.piemonte.it/web/media/24510/download#page=26"
+        }
+      ],
+      "missing_data": {
+        "traits": "Non codificati valori del vocabolario: le descrizioni verificabili sono check_before_picking. Nessuna icona o fase inferita.",
+        "stages": "Nessuna fase assegnata a fotografie; sviluppo descritto nel testo dove documentato.",
+        "season_months": "Le fonti usano stagioni, non intervalli mensili univoci; nessuna conversione automatica.",
+        "regional_presence": "Nessuna attestazione puntuale del Lazio proposta.",
+        "model": "Nessun coefficiente o indice assegnato."
+      },
+      "review_status": "proposta documentata; revisione micologica/editoriale e foto da completare",
+      "source_food_status": "tossico",
+      "taxonomy_review": {
+        "name_scope": "Nome del profilo istituzionale; non conferma molecolare degli esemplari fotografati.",
+        "authority_source": "https://funghietartufi.regione.campania.it/docfunghietartufi/doc/funghi_campania.pdf#page=225",
+        "limit": "La revisione Piemonte discute anche il complesso sensu lato; il nome esatto resta quello della scheda e della pagina della foto. Non attribuire a segregati o trasferire osservazioni fra taxa."
+      }
+    },
+    "coprinopsis-atramentaria": {
+      "latin": "Coprinopsis atramentaria",
+      "name": "Coprino atramentario",
+      "common_names": [
+        "Coprino atramentario"
+      ],
+      "synonyms": [
+        "Coprinus atramentarius"
+      ],
+      "toxicity": "non commestibile",
+      "traits": null,
+      "check_before_picking": [
+        "Cappello grigio, inizialmente ovoidale o campanulato, con solchi radiali.",
+        "Lamelle fitte e libere che diventano scure e infine deliquescenti.",
+        "Gambo bianco e cavo, con residuo anulare fugace.",
+        "Crescita spesso in cespi, anche su legno interrato."
+      ],
+      "habitat": "Legno e residui legnosi, anche interrati.",
+      "season_text": "Dalla primavera al tardo autunno.",
+      "season_months": [],
+      "stages": [],
+      "caution": "Può causare sindrome coprinica quando il consumo è associato ad alcol, assunto prima, durante o dopo. Non proporre tempi o preparazioni che renderebbero sicuro il consumo.",
+      "sources": [
+        {
+          "title": "I funghi della Campania — PDF p. 148, pagina stampata 147",
+          "url": "https://funghietartufi.regione.campania.it/docfunghietartufi/doc/funghi_campania.pdf#page=148"
+        },
+        {
+          "title": "Guida ragionata alla commestibilità dei funghi — PDF pp. 47,48",
+          "url": "https://www.regione.piemonte.it/web/media/24510/download#page=47"
+        }
+      ],
+      "missing_data": {
+        "traits": "Non codificati valori del vocabolario: le descrizioni verificabili sono check_before_picking. Nessuna icona o fase inferita.",
+        "stages": "Nessuna fase assegnata a fotografie; sviluppo descritto nel testo dove documentato.",
+        "season_months": "Le fonti usano stagioni, non intervalli mensili univoci; nessuna conversione automatica.",
+        "regional_presence": "Nessuna attestazione puntuale del Lazio proposta.",
+        "model": "Nessun coefficiente o indice assegnato."
+      },
+      "review_status": "proposta documentata; revisione micologica/editoriale e foto da completare",
+      "source_food_status": "non commestibile",
+      "taxonomy_review": {
+        "name_scope": "Nome del profilo istituzionale; non conferma molecolare degli esemplari fotografati.",
+        "authority_source": "https://www.regione.piemonte.it/web/media/24510/download#page=47"
+      }
+    },
+    "clitocybe-nebularis": {
+      "latin": "Clitocybe nebularis",
+      "name": "Nebbione",
+      "common_names": [
+        "Nebbione"
+      ],
+      "synonyms": [
+        "Lepista nebularis"
+      ],
+      "toxicity": "non commestibile",
+      "traits": null,
+      "check_before_picking": [
+        "Cappello grigio o grigio-ocraceo, da convesso a disteso e depresso.",
+        "Margine inizialmente involuto, poi più ondulato.",
+        "Lamelle fitte, da adnate a poco decorrenti, biancastre o giallognole.",
+        "Gambo robusto, spesso allargato verso la base, con feltro bianco basale."
+      ],
+      "habitat": "Boschi di latifoglie; gruppi, file o cerchi.",
+      "season_text": "Dalla tarda estate all’autunno.",
+      "season_months": [],
+      "stages": [],
+      "caution": "La fonte aggiornata classifica il consumo come sconsigliato; non viene trasformata in specie tossica né ammessa al selettore. Sono documentati disturbi gastrointestinali e confusione con Entoloma sinuatum.",
+      "sources": [
+        {
+          "title": "I funghi della Campania — PDF p. 140, pagina stampata 139",
+          "url": "https://funghietartufi.regione.campania.it/docfunghietartufi/doc/funghi_campania.pdf#page=140"
+        },
+        {
+          "title": "Guida ragionata alla commestibilità dei funghi — PDF pp. 24,42,43,44",
+          "url": "https://www.regione.piemonte.it/web/media/24510/download#page=24"
+        }
+      ],
+      "missing_data": {
+        "traits": "Non codificati valori del vocabolario: le descrizioni verificabili sono check_before_picking. Nessuna icona o fase inferita.",
+        "stages": "Nessuna fase assegnata a fotografie; sviluppo descritto nel testo dove documentato.",
+        "season_months": "Le fonti usano stagioni, non intervalli mensili univoci; nessuna conversione automatica.",
+        "regional_presence": "Nessuna attestazione puntuale del Lazio proposta.",
+        "model": "Nessun coefficiente o indice assegnato."
+      },
+      "review_status": "proposta documentata; revisione micologica/editoriale e foto da completare",
+      "source_food_status": "sconsigliato",
+      "taxonomy_review": {
+        "name_scope": "Nome del profilo istituzionale; non conferma molecolare degli esemplari fotografati.",
+        "authority_source": "https://funghietartufi.regione.campania.it/docfunghietartufi/doc/funghi_campania.pdf#page=140",
+        "limit": "Conservato Clitocybe nebularis secondo le fonti consultate; nessuna nuova combinazione di genere introdotta senza registro."
+      }
+    },
+    "russula-emetica": {
+      "latin": "Russula emetica",
+      "name": "Colombina rossa",
+      "common_names": [
+        "Colombina rossa"
+      ],
+      "synonyms": [],
+      "toxicity": "non commestibile",
+      "traits": null,
+      "check_before_picking": [
+        "Cappello rosso, viscido con tempo umido.",
+        "Lamelle fragili, sottili e quasi libere.",
+        "Gambo bianco, cilindrico, con superficie rugosa.",
+        "Carne bianca e fragile."
+      ],
+      "habitat": "Soprattutto boschi di conifere, con abete rosso, e boschi misti.",
+      "season_text": null,
+      "season_months": [],
+      "stages": [],
+      "caution": "La tabella Piemonte colloca R. emetica s.l. tra le specie acri non consumate. Il manuale Campania la definisce tossica: si esplicita il dissenso, senza suggerire assaggi o trattamenti.",
+      "sources": [
+        {
+          "title": "I funghi della Campania — PDF p. 240, pagina stampata 239",
+          "url": "https://funghietartufi.regione.campania.it/docfunghietartufi/doc/funghi_campania.pdf#page=240"
+        },
+        {
+          "title": "Guida ragionata alla commestibilità dei funghi — PDF pp. 99,100",
+          "url": "https://www.regione.piemonte.it/web/media/24510/download#page=99"
+        }
+      ],
+      "missing_data": {
+        "traits": "Non codificati valori del vocabolario: le descrizioni verificabili sono check_before_picking. Nessuna icona o fase inferita.",
+        "stages": "Nessuna fase assegnata a fotografie; sviluppo descritto nel testo dove documentato.",
+        "season_months": "Le fonti usano stagioni, non intervalli mensili univoci; nessuna conversione automatica.",
+        "regional_presence": "Nessuna attestazione puntuale del Lazio proposta.",
+        "model": "Nessun coefficiente o indice assegnato.",
+        "season": "Nessun calendario documentato nel profilo consultato; persistenza pluriennale non trasformata in mesi di comparsa."
+      },
+      "review_status": "proposta documentata; revisione micologica/editoriale e foto da completare",
+      "source_food_status": "non commestibile; Campania: tossico",
+      "taxonomy_review": {
+        "name_scope": "Nome del profilo istituzionale; non conferma molecolare degli esemplari fotografati.",
+        "authority_source": "https://funghietartufi.regione.campania.it/docfunghietartufi/doc/funghi_campania.pdf#page=240",
+        "limit": "La revisione Piemonte discute anche il complesso sensu lato; il nome esatto resta quello della scheda e della pagina della foto. Non attribuire a segregati o trasferire osservazioni fra taxa."
+      }
+    },
+    "lycoperdon-perlatum": {
+      "latin": "Lycoperdon perlatum",
+      "name": "Vescia",
+      "common_names": [
+        "Vescia"
+      ],
+      "synonyms": [
+        "Lycoperdon gemmatum"
+      ],
+      "toxicity": "commestibile con cautela",
+      "traits": null,
+      "check_before_picking": [
+        "Corpo fruttifero con parte superiore globosa e parte basale sterile più stretta.",
+        "Superficie inizialmente chiara, poi brunastra.",
+        "Aculei conici che si staccano lasciando un disegno sulla superficie.",
+        "Interno dapprima compatto e bianco, poi bruno-olivastro e polveroso.",
+        "A maturità le spore escono da un’apertura apicale."
+      ],
+      "habitat": "In gruppi nei boschi di latifoglie e conifere.",
+      "season_text": "Estate e autunno.",
+      "season_months": [],
+      "stages": [],
+      "caution": "La guida condiziona il giudizio alla gleba ancora bianca e soda e richiede attenzione alla rapida maturazione; avverte della confusione dei piccoli corpi chiusi con Amanita. È un dato della fonte, non una verifica dell’esemplare.",
+      "sources": [
+        {
+          "title": "I funghi della Campania — PDF p. 208, pagina stampata 207",
+          "url": "https://funghietartufi.regione.campania.it/docfunghietartufi/doc/funghi_campania.pdf#page=208"
+        },
+        {
+          "title": "Guida ragionata alla commestibilità dei funghi — PDF pp. 132",
+          "url": "https://www.regione.piemonte.it/web/media/24510/download#page=132"
+        },
+        {
+          "title": "Sardegna Digital Library, Ente Foreste — Vescia / Lycoperdon perlatum",
+          "url": "https://www.sardegnadigitallibrary.it/detail/6499bad0e487374c8f8066c5"
+        }
+      ],
+      "missing_data": {
+        "traits": "Non codificati valori del vocabolario: le descrizioni verificabili sono check_before_picking. Nessuna icona o fase inferita.",
+        "stages": "Nessuna fase assegnata a fotografie; sviluppo descritto nel testo dove documentato.",
+        "season_months": "Le fonti usano stagioni, non intervalli mensili univoci; nessuna conversione automatica.",
+        "regional_presence": "Nessuna attestazione puntuale del Lazio proposta.",
+        "model": "Nessun coefficiente o indice assegnato."
+      },
+      "review_status": "proposta documentata; revisione micologica/editoriale e foto da completare",
+      "source_food_status": "commestibile finché gleba bianca e soda",
+      "taxonomy_review": {
+        "name_scope": "Nome del profilo istituzionale; non conferma molecolare degli esemplari fotografati.",
+        "authority_source": "https://funghietartufi.regione.campania.it/docfunghietartufi/doc/funghi_campania.pdf#page=208"
+      }
+    },
+    "auricularia-auricula-judae": {
+      "latin": "Auricularia auricula-judae",
+      "name": "Orecchio di Giuda",
+      "common_names": [
+        "Orecchio di Giuda"
+      ],
+      "synonyms": [
+        "Hirneola auricula-judae"
+      ],
+      "toxicity": "commestibile con cautela",
+      "traits": null,
+      "check_before_picking": [
+        "Corpo fruttifero a orecchio o conchiglia, sessile o con breve attacco.",
+        "Consistenza gelatinosa ed elastica.",
+        "Tonalità bruno-rossastre, con superficie fertile venata.",
+        "Superficie opposta più opaca, grigio-bruna e finemente pruinosa."
+      ],
+      "habitat": "Su legno e rami di latifoglie in decomposizione, spesso in gruppi.",
+      "season_text": "Tutto l’anno.",
+      "season_months": [],
+      "stages": [],
+      "caution": "La guida sconsiglia pasti ripetuti e consumo alle persone che assumono anticoagulanti. Segnala inoltre una sistematica del genere complessa: foto europee con nome esatto, senza assimilare specie asiatiche coltivate.",
+      "sources": [
+        {
+          "title": "I funghi della Campania — PDF p. 118, pagina stampata 117",
+          "url": "https://funghietartufi.regione.campania.it/docfunghietartufi/doc/funghi_campania.pdf#page=118"
+        },
+        {
+          "title": "Guida ragionata alla commestibilità dei funghi — PDF pp. 136,137",
+          "url": "https://www.regione.piemonte.it/web/media/24510/download#page=136"
+        }
+      ],
+      "missing_data": {
+        "traits": "Non codificati valori del vocabolario: le descrizioni verificabili sono check_before_picking. Nessuna icona o fase inferita.",
+        "stages": "Nessuna fase assegnata a fotografie; sviluppo descritto nel testo dove documentato.",
+        "season_months": "Le fonti usano stagioni, non intervalli mensili univoci; nessuna conversione automatica.",
+        "regional_presence": "Nessuna attestazione puntuale del Lazio proposta.",
+        "model": "Nessun coefficiente o indice assegnato."
+      },
+      "review_status": "proposta documentata; revisione micologica/editoriale e foto da completare",
+      "source_food_status": "commestibile; cautele per pasti ripetuti e anticoagulanti",
+      "taxonomy_review": {
+        "name_scope": "Nome del profilo istituzionale; non conferma molecolare degli esemplari fotografati.",
+        "authority_source": "https://funghietartufi.regione.campania.it/docfunghietartufi/doc/funghi_campania.pdf#page=118"
+      }
+    },
+    "fomes-fomentarius": {
+      "latin": "Fomes fomentarius",
+      "name": "Fungo dell’esca",
+      "common_names": [
+        "Fungo dell’esca"
+      ],
+      "synonyms": [],
+      "toxicity": "non commestibile",
+      "traits": null,
+      "check_before_picking": [
+        "Corpo fruttifero sessile, a zoccolo, duro e legnoso.",
+        "Superficie superiore con solchi e zone concentriche, prevalentemente grigie.",
+        "Superficie inferiore chiara o ocracea, con pori piccoli e rotondi.",
+        "Tubuli disposti in strati sovrapposti nei corpi pluriennali."
+      ],
+      "habitat": "Su tronchi di latifoglie, fra cui faggio, ontano, pioppo, platano e quercia.",
+      "season_text": null,
+      "season_months": [],
+      "stages": [],
+      "caution": "La guida lo tratta tra i funghi privi di interesse alimentare. Questa etichetta non equivale a tossicità e non autorizza impieghi medicinali o integratori.",
+      "sources": [
+        {
+          "title": "I funghi della Campania — PDF p. 165, pagina stampata 164",
+          "url": "https://funghietartufi.regione.campania.it/docfunghietartufi/doc/funghi_campania.pdf#page=165"
+        },
+        {
+          "title": "Guida ragionata alla commestibilità dei funghi — PDF pp. 123,124",
+          "url": "https://www.regione.piemonte.it/web/media/24510/download#page=123"
+        }
+      ],
+      "missing_data": {
+        "traits": "Non codificati valori del vocabolario: le descrizioni verificabili sono check_before_picking. Nessuna icona o fase inferita.",
+        "stages": "Nessuna fase assegnata a fotografie; sviluppo descritto nel testo dove documentato.",
+        "season_months": "Le fonti usano stagioni, non intervalli mensili univoci; nessuna conversione automatica.",
+        "regional_presence": "Nessuna attestazione puntuale del Lazio proposta.",
+        "model": "Nessun coefficiente o indice assegnato.",
+        "season": "Nessun calendario documentato nel profilo consultato; persistenza pluriennale non trasformata in mesi di comparsa."
+      },
+      "review_status": "proposta documentata; revisione micologica/editoriale e foto da completare",
+      "source_food_status": "non commestibile o privo di valore alimentare (poliporoidi)",
+      "taxonomy_review": {
+        "name_scope": "Nome del profilo istituzionale; non conferma molecolare degli esemplari fotografati.",
+        "authority_source": "https://funghietartufi.regione.campania.it/docfunghietartufi/doc/funghi_campania.pdf#page=165"
+      }
+    },
+    "trametes-versicolor": {
+      "latin": "Trametes versicolor",
+      "name": "Trametes versicolor",
+      "common_names": [],
+      "synonyms": [
+        "Coriolus versicolor"
+      ],
+      "toxicity": "non commestibile",
+      "traits": null,
+      "check_before_picking": [
+        "Corpi sottili, sessili e sovrapposti, a ventaglio o spatola.",
+        "Superficie superiore vellutata, con fasce concentriche di colori diversi.",
+        "Margine più chiaro e ondulato.",
+        "Superficie inferiore con piccoli pori, bianchi poi ocracei.",
+        "Carne bianca, tenace e coriacea."
+      ],
+      "habitat": "In gruppi su legno in decomposizione.",
+      "season_text": "Tutto l’anno.",
+      "season_months": [],
+      "stages": [],
+      "caution": "La guida la include tra i funghi privi di interesse alimentare; non si deducono tossicità o benefici terapeutici.",
+      "sources": [
+        {
+          "title": "I funghi della Campania — PDF p. 257, pagina stampata 256",
+          "url": "https://funghietartufi.regione.campania.it/docfunghietartufi/doc/funghi_campania.pdf#page=257"
+        },
+        {
+          "title": "Guida ragionata alla commestibilità dei funghi — PDF pp. 123,124",
+          "url": "https://www.regione.piemonte.it/web/media/24510/download#page=123"
+        }
+      ],
+      "missing_data": {
+        "traits": "Non codificati valori del vocabolario: le descrizioni verificabili sono check_before_picking. Nessuna icona o fase inferita.",
+        "stages": "Nessuna fase assegnata a fotografie; sviluppo descritto nel testo dove documentato.",
+        "season_months": "Le fonti usano stagioni, non intervalli mensili univoci; nessuna conversione automatica.",
+        "regional_presence": "Nessuna attestazione puntuale del Lazio proposta.",
+        "model": "Nessun coefficiente o indice assegnato.",
+        "common_name": "Nome comune italiano non ancora attestato da fonte primaria consultata; si mostra il binomio."
+      },
+      "review_status": "proposta documentata; revisione micologica/editoriale e foto da completare",
+      "source_food_status": "non commestibile o privo di valore alimentare (poliporoidi)",
+      "taxonomy_review": {
+        "name_scope": "Nome del profilo istituzionale; non conferma molecolare degli esemplari fotografati.",
+        "authority_source": "https://funghietartufi.regione.campania.it/docfunghietartufi/doc/funghi_campania.pdf#page=257"
+      }
+    },
+    "hygrophorus-russula": {
+      "latin": "Hygrophorus russula",
+      "name": "Lardaiolo rosso",
+      "common_names": [
+        "Lardaiolo rosso"
+      ],
+      "synonyms": [
+        "Tricholoma russula"
+      ],
+      "toxicity": "commestibile",
+      "traits": null,
+      "check_before_picking": [
+        "Cappello biancastro con macchie e striature vinose, rosate o porporine.",
+        "Lamelle fitte e adnate, chiare e poi macchiate di vinoso.",
+        "Gambo robusto, cilindrico e di colore simile al cappello.",
+        "Carne compatta, bianca con sfumature rosate."
+      ],
+      "habitat": "Boschi di latifoglie, soprattutto querce; spesso in gruppi.",
+      "season_text": "Fino al tardo autunno; inizio non specificato dalla fonte.",
+      "season_months": [],
+      "stages": [],
+      "caution": "Il giudizio alimentare riguarda la specie determinata correttamente e non identifica un esemplare. La guida documenta il consumo tradizionale senza imporre trattamenti specifici oltre la cottura di base.",
+      "sources": [
+        {
+          "title": "I funghi della Campania — PDF p. 181, pagina stampata 180",
+          "url": "https://funghietartufi.regione.campania.it/docfunghietartufi/doc/funghi_campania.pdf#page=181"
+        },
+        {
+          "title": "Guida ragionata alla commestibilità dei funghi — PDF pp. 60,61,63",
+          "url": "https://www.regione.piemonte.it/web/media/24510/download#page=60"
+        }
+      ],
+      "missing_data": {
+        "traits": "Non codificati valori del vocabolario: le descrizioni verificabili sono check_before_picking. Nessuna icona o fase inferita.",
+        "stages": "Nessuna fase assegnata a fotografie; sviluppo descritto nel testo dove documentato.",
+        "season_months": "Le fonti usano stagioni, non intervalli mensili univoci; nessuna conversione automatica.",
+        "regional_presence": "Nessuna attestazione puntuale del Lazio proposta.",
+        "model": "Nessun coefficiente o indice assegnato."
+      },
+      "review_status": "proposta documentata; revisione micologica/editoriale e foto da completare",
+      "source_food_status": "commestibile",
+      "taxonomy_review": {
+        "name_scope": "Nome del profilo istituzionale; non conferma molecolare degli esemplari fotografati.",
+        "authority_source": "https://funghietartufi.regione.campania.it/docfunghietartufi/doc/funghi_campania.pdf#page=181"
+      }
+    },
+    "lactarius-sanguifluus": {
+      "latin": "Lactarius sanguifluus",
+      "name": "Sanguinello",
+      "common_names": [
+        "Sanguinello"
+      ],
+      "synonyms": [],
+      "toxicity": "commestibile",
+      "traits": null,
+      "check_before_picking": [
+        "Cappello ocraceo-aranciato, con toni grigi e zonatura poco evidente.",
+        "Cappello depresso o imbutiforme.",
+        "Lamelle fitte, rosa-vinose o porporine, adnate o poco decorrenti.",
+        "Gambo corto, attenuato alla base, con leggere fossette.",
+        "Latice scarso, rosso-porpora."
+      ],
+      "habitat": "Pinete calde e relativamente asciutte, spesso in gruppi.",
+      "season_text": "Autunno.",
+      "season_months": [],
+      "stages": [],
+      "caution": "La guida lo include esplicitamente tra i lattari della sezione Deliciosi commestibili. Non estendere questo giudizio ad altri lattari per colore o somiglianza.",
+      "sources": [
+        {
+          "title": "I funghi della Campania — PDF p. 194, pagina stampata 193",
+          "url": "https://funghietartufi.regione.campania.it/docfunghietartufi/doc/funghi_campania.pdf#page=194"
+        },
+        {
+          "title": "Guida ragionata alla commestibilità dei funghi — PDF pp. 97,98",
+          "url": "https://www.regione.piemonte.it/web/media/24510/download#page=97"
+        },
+        {
+          "title": "Ministero della Sanità, GU n.284 del 4 dicembre 1996 — tabella Regione Umbria, nome volgare (non fonte attuale del giudizio alimentare)",
+          "url": "https://www.gazzettaufficiale.it/atto/vediMenuHTML?atto.codiceRedazionale=096A8078&atto.dataPubblicazioneGazzetta=1996-12-04&tipoSerie=serie_generale&tipoVigenza=originario"
+        }
+      ],
+      "missing_data": {
+        "traits": "Non codificati valori del vocabolario: le descrizioni verificabili sono check_before_picking. Nessuna icona o fase inferita.",
+        "stages": "Nessuna fase assegnata a fotografie; sviluppo descritto nel testo dove documentato.",
+        "season_months": "Le fonti usano stagioni, non intervalli mensili univoci; nessuna conversione automatica.",
+        "regional_presence": "Nessuna attestazione puntuale del Lazio proposta.",
+        "model": "Nessun coefficiente o indice assegnato."
+      },
+      "review_status": "proposta documentata; revisione micologica/editoriale e foto da completare",
+      "source_food_status": "commestibile",
+      "taxonomy_review": {
+        "name_scope": "Nome del profilo istituzionale; non conferma molecolare degli esemplari fotografati.",
+        "authority_source": "https://funghietartufi.regione.campania.it/docfunghietartufi/doc/funghi_campania.pdf#page=194"
+      }
+    },
+    "russula-vesca": {
+      "latin": "Russula vesca",
+      "name": "Colombina",
+      "common_names": [
+        "Colombina"
+      ],
+      "synonyms": [],
+      "toxicity": "commestibile",
+      "traits": null,
+      "check_before_picking": [
+        "Cappello rosa-lilacino o bruno-vinoso.",
+        "Cuticola che si ritira al margine lasciando scoperte le estremità delle lamelle.",
+        "Lamelle fitte e ramificate, chiare, talora con macchie rugginose.",
+        "Gambo corto, biancastro con sfumature rosate o grigie, a volte macchiato di ruggine alla base.",
+        "Carne bianca, inizialmente soda e poi più friabile."
+      ],
+      "habitat": "Boschi di latifoglie e conifere.",
+      "season_text": "Dalla primavera all’autunno.",
+      "season_months": [],
+      "stages": [],
+      "caution": "La guida la include esplicitamente tra le Russula commestibili. L’identità va verificata indipendentemente: nessun assaggio come metodo proposto nell’app.",
+      "sources": [
+        {
+          "title": "I funghi della Campania — PDF p. 247, pagina stampata 246",
+          "url": "https://funghietartufi.regione.campania.it/docfunghietartufi/doc/funghi_campania.pdf#page=247"
+        },
+        {
+          "title": "Guida ragionata alla commestibilità dei funghi — PDF pp. 99,101",
+          "url": "https://www.regione.piemonte.it/web/media/24510/download#page=99"
+        },
+        {
+          "title": "Scuola Superiore Sant’Anna, La risorsa FUNGO in Alta Valle del Vara — p.206, Nomi comuni",
+          "url": "https://www.iris.sssup.it/retrieve/dd9e0b31-bbf3-709e-e053-3705fe0a83fd/204_vqr_Funghi.pdf#page=3"
+        }
+      ],
+      "missing_data": {
+        "traits": "Non codificati valori del vocabolario: le descrizioni verificabili sono check_before_picking. Nessuna icona o fase inferita.",
+        "stages": "Nessuna fase assegnata a fotografie; sviluppo descritto nel testo dove documentato.",
+        "season_months": "Le fonti usano stagioni, non intervalli mensili univoci; nessuna conversione automatica.",
+        "regional_presence": "Nessuna attestazione puntuale del Lazio proposta.",
+        "model": "Nessun coefficiente o indice assegnato."
+      },
+      "review_status": "proposta documentata; revisione micologica/editoriale e foto da completare",
+      "source_food_status": "commestibile",
+      "taxonomy_review": {
+        "name_scope": "Nome del profilo istituzionale; non conferma molecolare degli esemplari fotografati.",
+        "authority_source": "https://funghietartufi.regione.campania.it/docfunghietartufi/doc/funghi_campania.pdf#page=247"
+      }
+    }
+  },
+  "edible_selector_candidates": [
+    {
+      "id": "lycoperdon-perlatum",
+      "name": "Vescia",
+      "latin": "Lycoperdon perlatum",
+      "common_names": [
+        "Vescia"
+      ],
+      "synonyms": [
+        "Lycoperdon gemmatum"
+      ],
+      "toxicity": "commestibile con cautela",
+      "months": [],
+      "season": "Estate e autunno.",
+      "habitat": "In gruppi nei boschi di latifoglie e conifere.",
+      "caution": "La guida condiziona il giudizio alla gleba ancora bianca e soda e richiede attenzione alla rapida maturazione; avverte della confusione dei piccoli corpi chiusi con Amanita. È un dato della fonte, non una verifica dell’esemplare.",
+      "sources": [
+        {
+          "title": "I funghi della Campania — PDF p. 208, pagina stampata 207",
+          "url": "https://funghietartufi.regione.campania.it/docfunghietartufi/doc/funghi_campania.pdf#page=208"
+        },
+        {
+          "title": "Guida ragionata alla commestibilità dei funghi — PDF pp. 132",
+          "url": "https://www.regione.piemonte.it/web/media/24510/download#page=132"
+        },
+        {
+          "title": "Sardegna Digital Library, Ente Foreste — Vescia / Lycoperdon perlatum",
+          "url": "https://www.sardegnadigitallibrary.it/detail/6499bad0e487374c8f8066c5"
+        }
+      ]
+    },
+    {
+      "id": "auricularia-auricula-judae",
+      "name": "Orecchio di Giuda",
+      "latin": "Auricularia auricula-judae",
+      "common_names": [
+        "Orecchio di Giuda"
+      ],
+      "synonyms": [
+        "Hirneola auricula-judae"
+      ],
+      "toxicity": "commestibile con cautela",
+      "months": [],
+      "season": "Tutto l’anno.",
+      "habitat": "Su legno e rami di latifoglie in decomposizione, spesso in gruppi.",
+      "caution": "La guida sconsiglia pasti ripetuti e consumo alle persone che assumono anticoagulanti. Segnala inoltre una sistematica del genere complessa: foto europee con nome esatto, senza assimilare specie asiatiche coltivate.",
+      "sources": [
+        {
+          "title": "I funghi della Campania — PDF p. 118, pagina stampata 117",
+          "url": "https://funghietartufi.regione.campania.it/docfunghietartufi/doc/funghi_campania.pdf#page=118"
+        },
+        {
+          "title": "Guida ragionata alla commestibilità dei funghi — PDF pp. 136,137",
+          "url": "https://www.regione.piemonte.it/web/media/24510/download#page=136"
+        }
+      ]
+    },
+    {
+      "id": "hygrophorus-russula",
+      "name": "Lardaiolo rosso",
+      "latin": "Hygrophorus russula",
+      "common_names": [
+        "Lardaiolo rosso"
+      ],
+      "synonyms": [
+        "Tricholoma russula"
+      ],
+      "toxicity": "commestibile",
+      "months": [],
+      "season": "Fino al tardo autunno; inizio non specificato dalla fonte.",
+      "habitat": "Boschi di latifoglie, soprattutto querce; spesso in gruppi.",
+      "caution": "Il giudizio alimentare riguarda la specie determinata correttamente e non identifica un esemplare. La guida documenta il consumo tradizionale senza imporre trattamenti specifici oltre la cottura di base.",
+      "sources": [
+        {
+          "title": "I funghi della Campania — PDF p. 181, pagina stampata 180",
+          "url": "https://funghietartufi.regione.campania.it/docfunghietartufi/doc/funghi_campania.pdf#page=181"
+        },
+        {
+          "title": "Guida ragionata alla commestibilità dei funghi — PDF pp. 60,61,63",
+          "url": "https://www.regione.piemonte.it/web/media/24510/download#page=60"
+        }
+      ]
+    },
+    {
+      "id": "lactarius-sanguifluus",
+      "name": "Sanguinello",
+      "latin": "Lactarius sanguifluus",
+      "common_names": [
+        "Sanguinello"
+      ],
+      "synonyms": [],
+      "toxicity": "commestibile",
+      "months": [],
+      "season": "Autunno.",
+      "habitat": "Pinete calde e relativamente asciutte, spesso in gruppi.",
+      "caution": "La guida lo include esplicitamente tra i lattari della sezione Deliciosi commestibili. Non estendere questo giudizio ad altri lattari per colore o somiglianza.",
+      "sources": [
+        {
+          "title": "I funghi della Campania — PDF p. 194, pagina stampata 193",
+          "url": "https://funghietartufi.regione.campania.it/docfunghietartufi/doc/funghi_campania.pdf#page=194"
+        },
+        {
+          "title": "Guida ragionata alla commestibilità dei funghi — PDF pp. 97,98",
+          "url": "https://www.regione.piemonte.it/web/media/24510/download#page=97"
+        },
+        {
+          "title": "Ministero della Sanità, GU n.284 del 4 dicembre 1996 — tabella Regione Umbria, nome volgare (non fonte attuale del giudizio alimentare)",
+          "url": "https://www.gazzettaufficiale.it/atto/vediMenuHTML?atto.codiceRedazionale=096A8078&atto.dataPubblicazioneGazzetta=1996-12-04&tipoSerie=serie_generale&tipoVigenza=originario"
+        }
+      ]
+    },
+    {
+      "id": "russula-vesca",
+      "name": "Colombina",
+      "latin": "Russula vesca",
+      "common_names": [
+        "Colombina"
+      ],
+      "synonyms": [],
+      "toxicity": "commestibile",
+      "months": [],
+      "season": "Dalla primavera all’autunno.",
+      "habitat": "Boschi di latifoglie e conifere.",
+      "caution": "La guida la include esplicitamente tra le Russula commestibili. L’identità va verificata indipendentemente: nessun assaggio come metodo proposto nell’app.",
+      "sources": [
+        {
+          "title": "I funghi della Campania — PDF p. 247, pagina stampata 246",
+          "url": "https://funghietartufi.regione.campania.it/docfunghietartufi/doc/funghi_campania.pdf#page=247"
+        },
+        {
+          "title": "Guida ragionata alla commestibilità dei funghi — PDF pp. 99,101",
+          "url": "https://www.regione.piemonte.it/web/media/24510/download#page=99"
+        },
+        {
+          "title": "Scuola Superiore Sant’Anna, La risorsa FUNGO in Alta Valle del Vara — p.206, Nomi comuni",
+          "url": "https://www.iris.sssup.it/retrieve/dd9e0b31-bbf3-709e-e053-3705fe0a83fd/204_vqr_Funghi.pdf#page=3"
+        }
+      ]
+    }
+  ],
+  "unmodeled": true
+}
