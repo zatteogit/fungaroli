@@ -13,12 +13,10 @@ const F = Object.fromEntries(FIELDS.map((f, i) => [f, i]));
 const SECTORS = ['N', 'NE', 'E', 'SE', 'S', 'SO', 'O', 'NO'];
 const DATE = /^\d{4}-\d{2}-\d{2}$/;
 
-// Le zone aggiunte in produzione dopo l'estrazione (v319: 21 zone con coordinate da verificare, coordinateProvenance)
-// non sono ancora nel file: per loro l'app usa il ripiego su habitat.json. Si coprono rilanciando lo strumento.
-const covered = Object.entries(habitat.zones).filter(([id]) => info.zones[id]);
+// Tutte le zone di habitat.json, comprese le 21 del pilota Lazio (estratte il 21/10/2026).
+const covered = Object.entries(habitat.zones);
 test('stesse zone e stesso numero di campioni di habitat.json, nello stesso ordine', () => {
   assert.deepEqual(Object.keys(info.zones), covered.map(([id]) => id));
-  for (const id of Object.keys(habitat.zones).filter((id) => !info.zones[id])) assert.ok(zones.find((z) => z.id === id)?.coordinateProvenance, `${id}: zona senza informazioni sul bosco`);
   assert.equal(info.habitat.generated, habitat.generated, 'habitat.json è stato rigenerato: rilancia tools/build_habitat_info.py');
   for (const [id, z] of covered) {
     const zi = info.zones[id];
@@ -126,4 +124,23 @@ test('le zone a e b del Gran Sasso-Laga sono escluse dai consigli, con fonte', (
   assert.deepEqual(ex.zone, ['A', 'B']);
   assert.ok(ex.fonti.length && ex.fonti.every((f) => f.url.startsWith('https://')));
   assert.ok(info.aree.pngsl.zonazione.zone.A && info.aree.pngsl.zonazione.zone.B);
+});
+
+test('pilota Lazio: aree protette e zone dei piani dove la Regione le pubblica; altrove «non disponibili», mai zero', () => {
+  // zonazioni del Geoportale aggiunte il 21/10/2026: PNALM (versante laziale), Veio, Monti Simbruini; Lucretili c'era già
+  for (const id of ['pnalm', 'veio', 'simbruini', 'lucretili']) assert.ok(info.aree[id]?.zonazione?.strato, id);
+  // aree senza zonazione digitalizzata: zona sempre null (l'app scrive «zone del piano non disponibili»)
+  for (const id of ['castelli-romani', 'circeo', 'monti-aurunci', 'monti-ausoni-e-lago-di-fondi', 'bracciano-martignano']) {
+    assert.ok(info.aree[id], id);
+    assert.equal(info.aree[id].zonazione, null, id);
+    for (const z of Object.values(info.zones)) for (const r of z.samples) if (r[F.area] === id) assert.equal(r[F.zona], null, id);
+  }
+  // le zone del pilota dentro un parco hanno i loro punti nell'area giusta
+  const share = (zid, area) => info.zones[zid].samples.filter((r, i) => habitat.zones[zid].samples[i][1] >= 0 && r[F.area] === area).length;
+  assert.ok(share('circeo-cerasella-verdesca', 'circeo') > 200);
+  assert.ok(share('faete-rocca-papa', 'castelli-romani') > 150);
+  assert.ok(share('simbruini-filettino-fiumata', 'simbruini') > 300);
+  assert.ok(share('pnalm-settefrati-canneto', 'pnalm') > 100);
+  // nessuna esclusione nuova senza una fonte verificata: resta solo quella del Gran Sasso-Laga
+  assert.deepEqual(info.esclusioni.map((e) => e.area), ['pngsl']);
 });

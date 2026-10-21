@@ -176,25 +176,37 @@ class Dem:
     Stessa lettura di tools/build_habitat_info.py; qui la quota è interpolata (bilineare) tra i centri delle celle."""
 
     def __init__(self, points, folder):
-        need = set()
+        self.folder, self.tiles, self.loaded = folder, [], set()
         for lat, lon in points:
-            x, y = to_utm32(lon, lat)
-            need.add(f"w{int(y // 50_000) * 5:03d}{int(x // 50_000) * 5:02d}")
-        self.tiles = []
-        for t in sorted(need):
-            z = folder / f"{t}_s10.zip"
-            if not z.exists():
-                print(f"  scarico TINITALY {t}", file=sys.stderr)
-                z.parent.mkdir(parents=True, exist_ok=True)
-                part = Path(str(z) + ".part")
-                subprocess.run(["curl", "-sS", "-L", "-f", "-m", "1800", "-A", UA, "-o", str(part), TINITALY.format(t=t)], check=True)
-                part.replace(z)
-            with rasterio.open(f"zip://{z}!{t}_s10/{t}_s10.tif") as src:
-                assert src.crs.to_epsg() == 32632 and src.res == (10.0, 10.0), (t, src.crs, src.res)
-                self.tiles.append((src.bounds, src.transform, src.nodata, src.read(1)))
-        self.names = sorted(need)
+            self.load(self.name(lat, lon))
+
+    @staticmethod
+    def name(lat, lon):
+        x, y = to_utm32(lon, lat)
+        return f"w{int(y // 50_000) * 5:03d}{int(x // 50_000) * 5:02d}"
+
+    def load(self, t):
+        if t in self.loaded:
+            return
+        self.loaded.add(t)
+        z = self.folder / f"{t}_s10.zip"
+        if not z.exists():
+            print(f"  scarico TINITALY {t}", file=sys.stderr)
+            z.parent.mkdir(parents=True, exist_ok=True)
+            part = Path(str(z) + ".part")
+            subprocess.run(["curl", "-sS", "-L", "-f", "-m", "1800", "-A", UA, "-o", str(part), TINITALY.format(t=t)], check=True)
+            part.replace(z)
+        with rasterio.open(f"zip://{z}!{t}_s10/{t}_s10.tif") as src:
+            assert src.crs.to_epsg() == 32632 and src.res == (10.0, 10.0), (t, src.crs, src.res)
+            self.tiles.append((src.bounds, src.transform, src.nodata, src.read(1)))
+
+    @property
+    def names(self):
+        return sorted(self.loaded)
 
     def height(self, lat, lon):
+        # un punto strada o un tratto del percorso può cadere nel tassello accanto a quello dei campioni: si carica
+        self.load(self.name(lat, lon))
         x, y = to_utm32(lon, lat)
         for b, tr, nodata, arr in self.tiles:
             if b.left + 20 <= x <= b.right - 20 and b.bottom + 20 <= y <= b.top - 20:
@@ -449,6 +461,7 @@ def header(today, habitat, srv, tiles):
         "about": ("Accesso in auto e ultimo tratto a piedi per i campioni di bosco di data/habitat.json, da mostrare: "
                   "non entrano nell'indice biologico e non dicono dove crescono funghi. Il campione i di zones.<id>.samples "
                   "descrive il campione i della stessa zona in habitat.json; null = campione fuori bosco. "
+                  "In «estrazioni», per zona, la data e il grafo di Valhalla da cui viene il dato. "
                   "Generato da tools/build_access_info.py."),
         "habitat": {"file": "data/habitat.json", "generated": habitat.get("generated"),
                     "check": "per zona: n campioni e somma di round(lat*1e5) e round(lon*1e5) dei campioni di habitat.json"},
@@ -569,18 +582,30 @@ def main():
     order = [z["id"] for z in json.loads((ROOT / "data" / "zones.json").read_text())["zones"] if z["id"] in habitat["zones"]]
     only = [z for z in a.zones.split(",") if z]
     todo = [z for z in order if not only or z in only]
-    prev = json.loads(a.out.read_text())["zones"] if a.out.exists() and not a.solo_strade else {}
+    prev_doc = json.loads(a.out.read_text()) if a.out.exists() and not a.solo_strade else {}
+    prev = prev_doc.get("zones", {})
+    # Con --zones le zone non ricalcolate restano quelle del file: per ognuna si conserva quando e su quale grafo è
+    # stata estratta (file precedenti senza «estrazioni»: la versione e la data della fonte valhalla del file).
+    pv = next((s for s in prev_doc.get("sources", []) if s.get("id") == "valhalla"), {})
+    prev_ex = prev_doc.get("estrazioni") or {zid: {"estratto": pv.get("estratto"), "valhalla": pv.get("versione")} for zid in prev}
     pts = [(s[2], s[3]) for z in todo for s in habitat["zones"][z]["samples"] if s[1] >= 0]
     dem = Dem(pts, a.dem_dir)
     srv = status()
     today = time.strftime("%Y-%m-%d")
-    out = header(today, habitat, srv, dem.names)
+    # tasselli di tutte le zone del file, anche di quelle non ricalcolate (stesso nome che usa Dem)
+    tiles = {Dem.name(s[2], s[3]) for z in order for s in habitat["zones"][z]["samples"] if s[1] >= 0}
+    out = header(today, habitat, srv, sorted(tiles))
     out["zones"] = {}
+    out["estrazioni"] = {}
+    this_run = {"estratto": today, "valhalla": next(s for s in out["sources"] if s["id"] == "valhalla")["versione"]}
     total = Counter()
     for zid in order:
         if zid not in todo:
             out["zones"][zid] = prev.get(zid) or {"n": len(habitat["zones"][zid]["samples"]), "samples": None}
+            if prev.get(zid) and prev_ex.get(zid):
+                out["estrazioni"][zid] = prev_ex[zid]
             continue
+        out["estrazioni"][zid] = this_run
         print(zid, file=sys.stderr)
         z, info = zone_rows(zid, habitat["zones"][zid], dem, a.solo_strade)
         total.update(info)
@@ -590,6 +615,9 @@ def main():
             missing = [k for k, v in out["zones"].items() if v.get("samples") is None] + [k for k in order if k not in out["zones"]]
             out["mancanti"] = missing
             a.out.write_text(dump(out))  # dopo ogni zona: un'interruzione lascia le zone già complete
+    # tasselli caricati per i punti strada e i percorsi, oltre a quelli dei campioni
+    tin = next(s for s in out["sources"] if s["id"] == "tinitaly")
+    tin["versione"] = "1.1 (2023); tasselli " + ", ".join(sorted(tiles | set(dem.names)))
     if not a.solo_strade and not out["mancanti"]:
         del out["mancanti"]
         a.out.write_text(dump(out))

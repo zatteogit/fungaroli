@@ -119,9 +119,9 @@ test('frasi del punto d’accesso: percorso mappato, fuori sentiero (con i due n
 
 test('righe di access-info: campi per nome, null per i campioni fuori bosco', () => {
   assert.ok(idx);
-  // tutte le zone del file; mancano solo le zone aggiunte in produzione dopo l'estrazione (coordinateProvenance)
-  assert.equal(aligned.size, Object.keys(ai.zones).length);
-  for (const id of Object.keys(habitat.zones).filter((id) => !aligned.has(id))) assert.ok(zones.find((z) => z.id === id)?.coordinateProvenance, id);
+  // tutte le zone di habitat.json, comprese le 21 del pilota Lazio
+  assert.equal(aligned.size, Object.keys(habitat.zones).length);
+  assert.deepEqual([...aligned].sort(), Object.keys(habitat.zones).sort());
   const laga = ai.zones.laga;
   assert.equal(accessRow(laga.samples[0], idx, laga.strade), null);
   const r = accessRow(laga.samples[1], idx, laga.strade);

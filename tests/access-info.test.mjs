@@ -24,12 +24,13 @@ const each = (fn) => {
   for (const [id, z] of Object.entries(info.zones)) z.samples.forEach((r, i) => fn(r, `${id}#${i}`, habitat.zones[id].samples[i], id));
 };
 
-// Le zone aggiunte in produzione dopo l'estrazione (v319: 21 zone con coordinate da verificare, coordinateProvenance)
-// non sono ancora nel file: per loro l'app usa il ripiego su habitat.json. Si coprono rilanciando lo strumento.
-const covered = Object.keys(habitat.zones).filter((id) => info.zones[id]);
+// Tutte le zone di habitat.json, comprese le 21 del pilota Lazio (estratte il 21/10/2026).
+const covered = Object.keys(habitat.zones);
 test('stesse zone e stessi campioni di habitat.json, nello stesso ordine; null solo fuori bosco', () => {
   assert.deepEqual(Object.keys(info.zones), covered);
-  for (const id of Object.keys(habitat.zones).filter((id) => !info.zones[id])) assert.ok(zones[id]?.coordinateProvenance, `${id}: zona senza dati di accesso`);
+  // per ogni zona la data e il grafo di Valhalla da cui viene il dato (estrazioni in date diverse)
+  assert.deepEqual(Object.keys(info.estrazioni || {}).sort(), [...covered].sort());
+  for (const [id, e] of Object.entries(info.estrazioni)) { assert.match(e.estratto, DATE, id); assert.match(e.valhalla, /Valhalla/, id); }
   assert.equal(info.mancanti, undefined, `zone non calcolate: ${info.mancanti}`);
   assert.equal(info.habitat.generated, habitat.generated, 'habitat.json è stato rigenerato: rilancia tools/build_access_info.py');
   for (const id of covered) {
@@ -104,7 +105,8 @@ test('valori numerici plausibili e coerenti tra loro', () => {
     if (![0, 1, 2, null].includes(v.fondo)) bad.push(`${at} fondo ${v.fondo}`);
     const names = info.zones[id].strade;
     if (!(v.strada === -1 || (int(v.strada) && v.strada >= 0 && v.strada < names.length))) bad.push(`${at} strada ${v.strada}`);
-    if (!(int(v.quota_strada) && v.quota_strada >= 100 && v.quota_strada <= 2500)) bad.push(`${at} quota_strada ${v.quota_strada}`);
+    // dal livello del mare (Selva del Circeo, pilota Lazio) ai 2500 m
+    if (!(int(v.quota_strada) && v.quota_strada >= 0 && v.quota_strada <= 2500)) bad.push(`${at} quota_strada ${v.quota_strada}`);
     if (!(int(v.dislivello) && Math.abs(v.dislivello) <= 1500)) bad.push(`${at} dislivello ${v.dislivello}`);
     // quota del campione (TINITALY 10 m) contro quella di habitat.json (Copernicus 90 m): stesso ordine di grandezza
     if (Math.abs(v.quota_strada + v.dislivello - s[0]) > 250) bad.push(`${at} quota del campione ${v.quota_strada + v.dislivello} contro ${s[0]}`);

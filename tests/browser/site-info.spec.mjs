@@ -2,7 +2,7 @@
 // Decisioni del 16/10/2026: nessun punto proposto per la raccolta in zona A o B del Gran Sasso-Laga, avviso nella
 // scheda, livello «Aree protette» sulla mappa, informazioni sul bosco fuori dall'indice, piste mai proposte in auto.
 // Adattato il 21/10/2026 alla produzione v319 (scheda della zona riscritta, nessun pulsante «Salva» del piano)
-// senza eseguirlo (la suite gira altrove): da lanciare con
+// e alla riga d'accesso sotto l'imbocco del sentiero. Da lanciare con
 //   npx playwright test tests/browser/site-info.spec.mjs
 import { test, expect } from '@playwright/test';
 import { readFileSync } from 'node:fs';
@@ -48,6 +48,9 @@ async function setup(page, { species = ['pinophilus'], target = 'funghi', width 
     return r.fulfill({ json: out });
   });
   await page.addInitScript(({ ids, target }) => {
+    // solo nella pagina: la mini mappa dell'accesso è un iframe (OpenStreetMap, qui bloccato) e la pagina d'errore
+    // del browser non ha localStorage
+    if (window.top !== window) return;
     localStorage.setItem('fungaroli:legal-accepted', '62026-10-20');
     localStorage.setItem('fungaroli:prefs:v2', JSON.stringify({ target, speciesIds: ids }));
     // niente geolocalizzazione continua: si contano le richieste di posizione
@@ -84,8 +87,25 @@ test('Laga, porcino rosso a 1600 m: nessun punto proposto in zona B, avviso e pu
   await expect(acc.locator('.access-reserve')).toContainText(RESERVE_BAND_TEXT);
   // mai «in auto su sentiero o pista»: il punto è su una strada; la pista, se c'è, è un'avvertenza
   await expect(acc).not.toContainText('In auto su sentiero o pista');
-  // Produzione: con un imbocco del sentiero la scheda non elenca il punto vicino al bosco (resta sulla mappa)
-  if (await acc.getByText('Punto consentito più comodo').count()) {
+  // Con un imbocco del sentiero (decisione del 21/10/2026): resta l'imbocco e, sotto, una riga breve con il bosco
+  // adatto consentito, il cammino e la salita dal punto sulla strada (data/access-info.json)
+  const line = acc.locator('[data-access-forest]');
+  if (await line.count()) {
+    await expect(line).toHaveCount(1);
+    await expect(line).toContainText('Punto consentito più comodo');
+    await expect(line).toContainText(`a ${allowed.e} m`);
+    await expect(line).toContainText('fuori dalla fascia dell’indice');
+    await expect(line).toContainText(/a piedi, [+−]?\d+ m dal punto sulla strada|a bordo strada|fuori sentiero da verificare/);
+    const dest = new URL(await line.locator('a', { hasText: 'punto sulla strada' }).getAttribute('href')).searchParams.get('destination');
+    expect(dest).toBe(`${allowed.rlat},${allowed.rlon}`);
+    expect(dest).not.toBe(`${forbidden.rlat},${forbidden.rlon}`);
+    // l'imbocco resta, prima della riga; l'avviso della riserva rimanda alle avvertenze
+    const items = acc.locator('.access-notes li');
+    await expect(items.filter({ hasText: /Accesso da|Imbocco/ }).first()).toBeAttached();
+    expect(await items.evaluateAll((li) => li.findIndex((x) => x.querySelector('[data-access-forest]')) > li.findIndex((x) => /Accesso da|Imbocco/.test(x.textContent)))).toBe(true);
+    await expect(acc.locator('.access-reserve')).toContainText('Nelle avvertenze, il punto consentito più comodo');
+    await expect(acc).toContainText('DIN 33466');
+  } else if (await acc.getByText('Punto consentito più comodo').count()) {
     await expect(acc).toContainText(`a ${allowed.e} m`);
     await expect(acc).toContainText('fuori dalla fascia dell’indice');
     const href = await acc.locator('a', { hasText: 'punto sulla strada' }).getAttribute('href');
@@ -100,6 +120,30 @@ test('Laga, porcino rosso a 1600 m: nessun punto proposto in zona B, avviso e pu
   await page.goto('/#/');
   const laga = page.locator('[data-walk-zone="laga"]');
   if (await laga.count()) await expect(laga.first().locator('xpath=ancestor-or-self::*[self::li or contains(@class,"cover")][1]')).toContainText(/in zona di riserva del Parco|Fascia in zona di riserva del Parco/);
+  expect(errors).toEqual([]);
+});
+
+test('scheda con imbocco del sentiero: sotto l’imbocco una riga breve con il bosco adatto, il cammino e la salita', async ({ page }) => {
+  const errors = await setup(page, { species: ['edulis'] });
+  let shown = 0;
+  for (const zid of ['vallonina', 'tancia', 'terminillo-ovest', 'leonessa', 'domo']) {
+    await page.goto(`/#/zona/${zid}/1`);
+    await ready(page);
+    const acc = await openSec(page, 'accesso');
+    const items = acc.locator('.access-notes li');
+    if (!await items.filter({ hasText: /Accesso da|Imbocco/ }).count()) continue;
+    shown++;
+    const line = acc.locator('[data-access-forest]');
+    await expect(line).toHaveCount(1);
+    await expect(line).toContainText(/^Bosco adatto per porcino/);
+    await expect(line).toContainText(/a \d{3,4} m/);
+    await expect(line).toContainText(/\d+(,\d)? k?m a piedi, [+−]?\d+ m dal punto sulla strada|a bordo strada|fuori sentiero da verificare/);
+    // una riga: niente paragrafi o elenchi dentro, stesso stile delle righe vicine
+    await expect(line.locator('p, ul, div')).toHaveCount(0);
+    expect(await line.evaluate((el) => getComputedStyle(el.closest('li')).fontSize)).toBe(await items.first().evaluate((el) => getComputedStyle(el).fontSize));
+    await expect(acc.locator('.access-src')).toContainText('OpenStreetMap');
+  }
+  expect(shown).toBeGreaterThan(0);
   expect(errors).toEqual([]);
 });
 
@@ -126,7 +170,8 @@ test('informazioni sul bosco della fascia: struttura, esposizione, disturbi, are
   const errors = await setup(page);
   await page.goto('/#/zona/laga/1');
   await ready(page);
-  const ring = await page.locator('#detail .hero-indicators .ring b').textContent();
+  const indexRing = page.locator('#detail .hero-indicators').getByRole('button', { name: /^Condizioni per l’uscita/ }).locator('b');
+  const ring = await indexRing.textContent();
   const bosco = await openSec(page, 'bosco');
   const info = bosco.locator('[data-site-info="band"]');
   await expect(info).toContainText('Informazioni sul bosco, fuori dall’indice');
@@ -140,7 +185,7 @@ test('informazioni sul bosco della fascia: struttura, esposizione, disturbi, are
   const zona = await openSec(page, 'zona');
   await expect(zona.locator('[data-site-info="zone"]')).toContainText('fuori dal Lazio');
   // l'indice non cambia aprendo le informazioni
-  expect(await page.locator('#detail .hero-indicators .ring b').textContent()).toBe(ring);
+  expect(await indexRing.textContent()).toBe(ring);
   // una zona fuori dai parchi: niente righe sulle aree protette
   await page.goto('/#/zona/vallonina/1');
   const v = await openSec(page, 'bosco');
@@ -162,6 +207,8 @@ for (const variant of ['mancanti', 'non allineati']) test(`file statici ${varian
   const acc = await openSec(page, 'accesso');
   await expect(acc.locator('.access-reserve')).toHaveCount(0);
   await expect(acc).not.toContainText('Punto consentito');
+  // senza access-info allineato niente riga sotto l'imbocco: niente cammino e salita inventati
+  await expect(acc.locator('[data-access-forest]')).toHaveCount(0);
   // con un imbocco del sentiero la scheda non elenca il punto: se c'è, è quello di habitat.json, in linea d'aria
   if (await acc.getByText('Punto più comodo').count()) await expect(acc).toContainText('in linea d’aria');
   const bosco = await openSec(page, 'bosco');

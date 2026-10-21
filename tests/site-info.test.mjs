@@ -14,13 +14,11 @@ const sp = (id) => SPECIES.find((s) => s.id === id);
 
 test('il file vale solo se descrive gli stessi campioni di habitat.json', () => {
   assert.ok(si, 'file allineato');
-  // tutte le zone del file; le zone aggiunte dopo l'estrazione (coordinateProvenance) restano fuori, senza errori
-  assert.equal(si.zones.size, Object.keys(info.zones).length);
-  const zj = json('zones.json').zones;
-  for (const id of Object.keys(habitat.zones).filter((id) => !si.zones.has(id))) {
-    assert.ok(zj.find((z) => z.id === id)?.coordinateProvenance, id);
-    assert.equal(excludedFn(si, id)(0), null);
-  }
+  // tutte le zone di habitat.json, comprese le 21 del pilota Lazio
+  assert.equal(si.zones.size, Object.keys(habitat.zones).length);
+  assert.deepEqual([...si.zones].sort(), Object.keys(habitat.zones).sort());
+  // una zona che il file non descrive: nessuna esclusione, senza errori
+  assert.equal(excludedFn(si, 'zona-inesistente')(0), null);
   // data di generazione diversa (habitat dallo snapshot del CMS): nessuna zona
   assert.equal(alignedZones(info, { ...habitat, generated: '2026-01-01' }).size, 0);
   assert.equal(prepareSiteInfo(info, { ...habitat, generated: undefined }), null);

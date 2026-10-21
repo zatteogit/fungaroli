@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-12",
+ "generated": "2026-10-21",
  "source": "OpenStreetMap via Valhalla (trace_attributes, height): punti dove il sentiero incontra una strada carrozzabile o una sterrata",
  "zones": {
   "vallonina": {
@@ -2979,7 +2979,302 @@
      "ele": 979
     }
    ]
-  }
+  },
+  "vico-monte-venere": {},
+  "monte-rufeno-felceto": {},
+  "oriolo-monte-raschio": {
+   "11353673": [
+    {
+     "lat": 42.15908,
+     "lon": 12.13826,
+     "kind": "strada",
+     "road": null,
+     "ele": 426
+    },
+    {
+     "lat": 42.16108,
+     "lon": 12.14489,
+     "kind": "strada",
+     "road": "Strada del Ponte",
+     "ele": 391
+    },
+    {
+     "lat": 42.16038,
+     "lon": 12.1491,
+     "kind": "sterrata",
+     "road": "Strada per Vicarello",
+     "ele": 425
+    },
+    {
+     "lat": 42.16366,
+     "lon": 12.15838,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 470
+    },
+    {
+     "lat": 42.16646,
+     "lon": 12.15796,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 478
+    },
+    {
+     "lat": 42.16983,
+     "lon": 12.15551,
+     "kind": "sterrata",
+     "road": "Strada Monte Raschio",
+     "ele": 461
+    },
+    {
+     "lat": 42.16494,
+     "lon": 12.1513,
+     "kind": "sterrata",
+     "road": "Strada del Comunaletto",
+     "ele": 419
+    }
+   ]
+  },
+  "allumiere-faggeto": {},
+  "monterano-bicione": {
+   "10240055": [
+    {
+     "lat": 42.14153,
+     "lon": 12.06422,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 287
+    },
+    {
+     "lat": 42.132,
+     "lon": 12.06508,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 171
+    },
+    {
+     "lat": 42.15204,
+     "lon": 12.06368,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 303
+    }
+   ]
+  },
+  "veio-monte-musino": {},
+  "tuscolo-nord": {
+   "3327083": [
+    {
+     "lat": 41.80727,
+     "lon": 12.698,
+     "kind": "strada",
+     "road": null,
+     "ele": 454
+    },
+    {
+     "lat": 41.80346,
+     "lon": 12.70693,
+     "kind": "strada",
+     "road": null,
+     "ele": 518
+    },
+    {
+     "lat": 41.80579,
+     "lon": 12.68515,
+     "kind": "strada",
+     "road": "Viale Francesco Borromini",
+     "ele": 365
+    },
+    {
+     "lat": 41.80569,
+     "lon": 12.69379,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 417
+    }
+   ]
+  },
+  "faete-rocca-papa": {
+   "3328048": [
+    {
+     "lat": 41.74972,
+     "lon": 12.70853,
+     "kind": "strada",
+     "road": null,
+     "ele": 899
+    },
+    {
+     "lat": 41.74865,
+     "lon": 12.71507,
+     "kind": "strada",
+     "road": "Via Scalette (Strada per Monte Cavo)",
+     "ele": 860
+    },
+    {
+     "lat": 41.74518,
+     "lon": 12.72939,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 932
+    },
+    {
+     "lat": 41.75695,
+     "lon": 12.70994,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 794
+    }
+   ]
+  },
+  "nemi-fontan-tempesta": {},
+  "cerquone-doganella": {
+   "3327154": [
+    {
+     "lat": 41.78455,
+     "lon": 12.78791,
+     "kind": "strada",
+     "road": null,
+     "ele": 725
+    },
+    {
+     "lat": 41.77783,
+     "lon": 12.79342,
+     "kind": "strada",
+     "road": "Via delle Riguardate",
+     "ele": 607
+    },
+    {
+     "lat": 41.78744,
+     "lon": 12.7689,
+     "kind": "strada",
+     "road": "Via Montagna Spaccata",
+     "ele": 670
+    }
+   ]
+  },
+  "livata-tufai": {
+   "12036002": [
+    {
+     "lat": 41.93065,
+     "lon": 13.15196,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1399
+    }
+   ]
+  },
+  "cervara-prataglia": {
+   "2071204": [
+    {
+     "lat": 42.00564,
+     "lon": 13.07585,
+     "kind": "strada",
+     "road": null,
+     "ele": 1153
+    }
+   ]
+  },
+  "gennaro-roccagiovine": {
+   "2068875": [
+    {
+     "lat": 42.05952,
+     "lon": 12.86936,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 862
+    },
+    {
+     "lat": 42.05108,
+     "lon": 12.87978,
+     "kind": "sterrata",
+     "road": "Strada Comunale delle Canepine",
+     "ele": 753
+    }
+   ]
+  },
+  "lepini-bassiano-santangelo": {
+   "11632035": [
+    {
+     "lat": 41.56667,
+     "lon": 13.06813,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1044
+    }
+   ]
+  },
+  "ausoni-san-vito": {},
+  "aurunci-itri-campello": {
+   "12358634": [
+    {
+     "lat": 41.3221,
+     "lon": 13.56895,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 832
+    },
+    {
+     "lat": 41.3294,
+     "lon": 13.58768,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 906
+    }
+   ]
+  },
+  "circeo-cerasella-verdesca": {},
+  "ernici-prato-campoli": {
+   "12402883": [
+    {
+     "lat": 41.77475,
+     "lon": 13.49298,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1140
+    }
+   ]
+  },
+  "lepini-supino-santaserena": {},
+  "simbruini-filettino-fiumata": {},
+  "pnalm-settefrati-canneto": {}
+ },
+ "estrazioni": {
+  "vallonina": "2026-10-12",
+  "poggio-cantalice": "2026-10-12",
+  "antrodoco": "2026-10-12",
+  "cicolano": "2026-10-12",
+  "rascino": "2026-10-12",
+  "tancia": "2026-10-12",
+  "laga": "2026-10-12",
+  "terminillo-ovest": "2026-10-12",
+  "terminillo-est": "2026-10-12",
+  "cittareale": "2026-10-12",
+  "pescorocchiano": "2026-10-12",
+  "malito": "2026-10-12",
+  "sangiovanni": "2026-10-12",
+  "leonessa": "2026-10-12",
+  "domo": "2026-10-12",
+  "vico-monte-venere": "2026-10-21",
+  "monte-rufeno-felceto": "2026-10-21",
+  "oriolo-monte-raschio": "2026-10-21",
+  "allumiere-faggeto": "2026-10-21",
+  "monterano-bicione": "2026-10-21",
+  "veio-monte-musino": "2026-10-21",
+  "tuscolo-nord": "2026-10-21",
+  "faete-rocca-papa": "2026-10-21",
+  "nemi-fontan-tempesta": "2026-10-21",
+  "cerquone-doganella": "2026-10-21",
+  "livata-tufai": "2026-10-21",
+  "cervara-prataglia": "2026-10-21",
+  "gennaro-roccagiovine": "2026-10-21",
+  "lepini-bassiano-santangelo": "2026-10-21",
+  "ausoni-san-vito": "2026-10-21",
+  "aurunci-itri-campello": "2026-10-21",
+  "circeo-cerasella-verdesca": "2026-10-21",
+  "ernici-prato-campoli": "2026-10-21",
+  "lepini-supino-santaserena": "2026-10-21",
+  "simbruini-filettino-fiumata": "2026-10-21",
+  "pnalm-settefrati-canneto": "2026-10-21"
  },
  "corrections": [
   {

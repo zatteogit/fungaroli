@@ -47,14 +47,25 @@ to_laea = Transformer.from_crs("EPSG:4326", "EPSG:3035", always_xy=True).transfo
 
 # Aree protette: id brevi per codice EUAP; zonazioni dei piani pubblicate dal Geoportale Lazio.
 AREA_IDS = {"EUAP0007": "pngsl", "EUAP0272": "navegna-cervia", "EUAP0267": "duchessa",
-            "EUAP0266": "laghi-lungo-ripasottile", "EUAP0190": "lucretili", "EUAP0269": "tevere-farfa"}
+            "EUAP0266": "laghi-lungo-ripasottile", "EUAP0190": "lucretili", "EUAP0269": "tevere-farfa",
+            "EUAP0001": "pnalm", "EUAP1034": "veio", "EUAP0186": "simbruini"}
 ZONINGS = {  # area -> (strato WFS, campo del codice, campo della descrizione)
     "pngsl": ("geonode:zoning_pngsl", "zona_piano", "tipo_zona"),
     "duchessa": ("geonode:zoning_montagne_duchessa0", "Zona", "Descr_1"),
     "laghi-lungo-ripasottile": ("geonode:zoning_laghi_lungo_ripasottile", "zona_piano", "Descriz"),
     "lucretili": ("geonode:zone_lucretili", "Sottozona", "Denominaz"),
     "tevere-farfa": ("geonode:zoning_nazzano_tevere_farfa", "ZONA_", None),
+    # Aggiunte il 21/10/2026 per le zone del pilota Lazio (ricerca «zon» nel catalogo del Geoportale): le altre aree
+    # protette delle zone nuove non hanno una zonazione pubblicata sul Geoportale.
+    "pnalm": ("geonode:zonizzazione_pnalm", "tipologia", None),
+    "veio": ("geonode:zoning_veio1", "zona", "descrizion"),
+    "simbruini": ("geonode:zoning_simbruini", "ZONA", "TIPOLOGIA"),
 }
+# Codice della zona quando il campo dello strato non è già un codice. PNALM: «Zona A» … «Zona D», con le sottozone
+# D1-D3 in un campo a parte; le descrizioni dello strato (campo denominazi) sono brani lunghi delle norme: non si usano.
+ZONE_CODE = {"pnalm": (("tipologia", "sottozona"),
+                       lambda p: ((p.get("sottozona") or "").strip() or (p.get("tipologia") or "").strip().removeprefix("Zona ").strip()))}
+ZONING_GEOM = {"pnalm": "geom"}  # campo della geometria quando non è the_geom
 # Se un punto cade in più aree (riserva e area contigua, monumento dentro una riserva) vince la prima categoria.
 AREA_PRIORITY = ["Parco nazionale", "Riserva", "Parco naturale regionale", "Monumento naturale", "Area contigua"]
 # Decisione del proprietario (16/10/2026): niente consigli d'accesso e di raccolta nelle zone a e b del PNGSL.
@@ -354,7 +365,8 @@ def main():
         parks = build_index(wfs("geonode:aree_naturali_protette1", z,
                                 ["nome", "categoria", "vincolo", "ente_gest", "cod_euap"], geom="geom"))
         comuni = build_index(wfs("geonode:limiti_comunali", z, ["comune_nom"]))
-        zonings = {a: build_index(wfs(lay, z, [f for f in (code, desc) if f]))
+        zonings = {a: build_index(wfs(lay, z, list(ZONE_CODE[a][0]) if a in ZONE_CODE else [f for f in (code, desc) if f],
+                                      geom=ZONING_GEOM.get(a, "the_geom")))
                    for a, (lay, code, desc) in ZONINGS.items()}
         cats = h["sample_categories"]
         rows, outside = [], 0
@@ -416,7 +428,7 @@ def main():
                 if not hit:
                     continue
                 lay, code_f, desc_f = ZONINGS[aid]
-                code = (hit[0][1].get(code_f) or "").strip() or None
+                code = (ZONE_CODE[aid][1](hit[0][1]) if aid in ZONE_CODE else (hit[0][1].get(code_f) or "").strip()) or None
                 if area is None:
                     stats["zona_senza_area"] += 1
                     continue
@@ -531,7 +543,10 @@ def header(today, habitat, rec, meta, tiles):
              "licenza": f"{lic('geonode:zoning_pngsl')} sul Geoportale (licenza non indicata): si pubblica solo il codice della zona per punto, non le geometrie",
              "versione": "; ".join(f"{v[0].split(':')[1]} pubblicata il {str(meta[v[0]].get('date'))[:10]}" for v in ZONINGS.values()),
              "estratto": today, "attribuzione": "© Regione Lazio",
-             "limiti": "Zonazione del Gran Sasso-Laga solo per il versante laziale. Digitalizzazione regionale: può differire di poco dalla tavola del piano."},
+             "limiti": ("Zonazioni del Gran Sasso-Laga e del Parco d'Abruzzo, Lazio e Molise solo per il versante laziale. "
+                        "Digitalizzazione regionale: può differire di poco dalla tavola del piano. Le altre aree protette delle zone "
+                        "(per esempio Castelli Romani, Monti Aurunci, Monti Ausoni, Circeo, Bracciano-Martignano) non hanno una "
+                        "zonazione sul Geoportale: zona sempre null, «zone del piano non disponibili».")},
             {"id": "limiti-comunali", "nome": "DBGT 2014, classe Comune", "editore": "Regione Lazio",
              "url": WFS + " (WFS geonode:limiti_comunali)", "scheda": gp("geonode:limiti_comunali"),
              "licenza": f"{lic('geonode:limiti_comunali')} (senza versione) sul Geoportale", "estratto": today,

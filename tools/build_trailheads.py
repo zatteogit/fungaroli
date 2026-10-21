@@ -241,12 +241,21 @@ def main():
         return
     trails = json.loads((ROOT / "data/trails.json").read_text())["zones"]
     src = ROOT / "data/trailheads.json"
-    prev = json.loads(src.read_text())["zones"] if src.exists() else {}
+    prev_doc = json.loads(src.read_text()) if src.exists() else {}
+    prev = prev_doc.get("zones", {})
+    # Con un elenco di zone le altre restano come nel file: si conservano le correzioni e, per zona, la data di
+    # estrazione (file precedenti senza «estrazioni»: la data «generated» del file).
+    prev_ex = prev_doc.get("estrazioni") or {zid: prev_doc.get("generated") for zid in prev}
     only = set(a.zones)
-    res = {}
+    today = time.strftime("%Y-%m-%d")
+    res, ex = {}, {}
     for zid, z in trails.items():
         if only and zid not in only:
-            res[zid] = prev.get(zid, {}); continue
+            res[zid] = prev.get(zid, {})
+            if zid in prev and prev_ex.get(zid):
+                ex[zid] = prev_ex[zid]
+            continue
+        ex[zid] = today
         print(zid, file=sys.stderr)
         zt = {}
         for t in z["trails"]:
@@ -262,11 +271,16 @@ def main():
                 zt[str(t["id"])] = pts
             print(f"  {t.get('ref') or t.get('name')}: {len(pts)} imbocchi", file=sys.stderr)
         res[zid] = zt
-    out_path.write_text(json.dumps({
-        "generated": time.strftime("%Y-%m-%d"),
+    doc = {
+        "generated": today,
         "source": "OpenStreetMap via Valhalla (trace_attributes, height): punti dove il sentiero incontra una strada carrozzabile o una sterrata",
         "zones": res,
-    }, ensure_ascii=False, indent=1))
+        "estrazioni": ex,
+    }
+    if prev_doc.get("corrections") and only:
+        # le correzioni valgono per le zone non ricalcolate (quelle ricalcolate usano già il criterio scelto)
+        doc["corrections"] = prev_doc["corrections"]
+    out_path.write_text(json.dumps(doc, ensure_ascii=False, indent=1))
 
 
 if __name__ == "__main__":
