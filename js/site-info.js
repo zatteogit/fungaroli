@@ -2,7 +2,8 @@
 // struttura del bosco, esposizione, ultimo disturbo visto da satellite, aree protette e zone dei piani.
 // Dati: data/habitat-info.json (statico, fuori dal CMS, da tools/build_habitat_info.py), allineato per indice
 // ai campioni di data/habitat.json. Nessuna di queste informazioni pesa sull'indice: servono a descrivere il
-// bosco e a non proporre per la raccolta i punti dove il piano di un parco la esclude.
+// bosco, a non proporre per la raccolta i punti dove il piano di un parco la esclude e ad avvisare dove la raccolta
+// dipende dal regolamento dell'ente.
 // Funzioni pure, senza DOM: tests/site-info.test.mjs.
 import { PARAMS } from './model.js';
 import { sampleFits } from './walks.js';
@@ -40,7 +41,7 @@ export function fieldIndex(info, names = INFO_FIELDS) {
 }
 
 // Il file pronto per l'app: null se manca, è illeggibile o non descrive gli stessi campioni di habitat.json.
-// In quel caso l'app non mostra informazioni sul bosco e non esclude punti: alla Laga resta l'avviso di zona.
+// In quel caso l'app non mostra informazioni sul bosco, non esclude punti e non avvisa: alla Laga resta l'avviso di zona.
 export function prepareSiteInfo(info, habitatDoc) {
   const idx = fieldIndex(info);
   const zones = idx ? alignedZones(info, habitatDoc) : new Set();
@@ -57,37 +58,73 @@ export function infoRow(si, zid, i) {
     anno: r[x.disturbo_anno], causa: r[x.disturbo_causa], area: r[x.area], zona: r[x.zona], lazio: r[x.lazio] };
 }
 
-// ---- Esclusioni (regola scritta nel file: «esclusioni») ----
-// Oggi una sola: Parco Nazionale del Gran Sasso e Monti della Laga, zone A e B. Il Piano esclude il prelievo
-// (Normativa di attuazione, art. 7, c. 7 e art. 8, c. 7), salvi usi civici e diritti reali che l'app non conosce.
-// Un campione escluso non si propone per la raccolta; resta nell'indice biologico.
-export function exclusionOf(si, row) {
-  if (!row?.area || !row.zona) return null;
-  return (si?.info?.esclusioni || []).find((e) => e.area === row.area && (e.zone || []).includes(row.zona)) || null;
-}
-// (i) => regola o null, per i campioni di una zona. Senza file allineato non esclude nulla.
-export function excludedFn(si, zid) {
-  if (!si?.zones.has(zid)) return () => null;
-  return (i) => exclusionOf(si, infoRow(si, zid, i));
-}
+// ---- Esclusioni e avvisi (regole scritte nel file: «esclusioni» e «avvisi», da tools/build_habitat_info.py) ----
+// Ogni regola: area, zone del piano, effetto, motivo, fonti, certezza, eccezioni. Esclusioni (decisioni del 16 e del
+// 21/10/2026): zone A e B del Gran Sasso-Laga e del Parco d'Abruzzo (versante laziale), R1, R2 e R4 dei Simbruini,
+// A e A1 dei Lucretili. Un campione escluso non si propone per la raccolta; resta nell'indice biologico.
+// Avvisi (21/10/2026): zone B e B1 dei Lucretili, B1 e B2 di Veio. Il campione resta proponibile, la scheda avvisa
+// di verificare il regolamento dell'ente. Salvi in ogni caso usi civici e diritti reali, che l'app non conosce.
+const ruleOf = (list, row) => (!row?.area || !row.zona ? null
+  : (list || []).find((e) => e.area === row.area && (e.zone || []).includes(row.zona)) || null);
+export const exclusionOf = (si, row) => ruleOf(si?.info?.esclusioni, row);
+export const warningOf = (si, row) => ruleOf(si?.info?.avvisi, row);
+// (i) => regola o null, per i campioni di una zona. Senza file allineato non esclude e non avvisa.
+const rowFn = (of) => (si, zid) => (!si?.zones.has(zid) ? () => null : (i) => of(si, infoRow(si, zid, i)));
+export const excludedFn = rowFn(exclusionOf);
+export const warnedFn = rowFn(warningOf);
 
-// Quanti campioni adatti alla specie nella fascia sono in una zona esclusa (stesso criterio del punto d'accesso:
-// affinità del bosco ≥ 0,6, quota della specie ±50 m, ±150 m dalla fascia). all = tutti esclusi.
-export function bandReserve({ hab, sp, band, excluded = () => null, half = PARAMS.bandHalfWidth }) {
+// Quanti campioni adatti alla specie nella fascia sono in una zona esclusa o con avviso (stesso criterio del punto
+// d'accesso: affinità del bosco ≥ 0,6, quota della specie ±50 m, ±150 m dalla fascia). all = tutti esclusi.
+// at: indice del punto proposto (chooseAccess); point = regola d'avviso del suo campione, anche fuori fascia.
+export function bandReserve({ hab, sp, band, excluded = () => null, warned = () => null, at = null, half = PARAMS.bandHalfWidth }) {
   if (!hab?.samples || !sp?.forest || sp.kind === 'plant') return null;
-  let suitable = 0, out = 0, rule = null;
+  let suitable = 0, out = 0, warn = 0, rule = null, warning = null;
   hab.samples.forEach(([e, c], i) => {
     const cat = c >= 0 ? hab.sample_categories[c] : 'non bosco';
     if ((sp.forest[cat] || 0) < 0.6 || !Number.isFinite(e) || Math.abs(e - band) > half) return;
     if (sp.elev && (e < sp.elev[0] - 50 || e > sp.elev[1] + 50)) return;
     suitable++;
     const r = excluded(i);
-    if (r) { out++; rule ||= r; }
+    if (r) { out++; rule ||= r; return; }
+    const w = warned(i);
+    if (w) { warn++; warning ||= w; }
   });
-  return { suitable, excluded: out, all: suitable > 0 && out === suitable, rule };
+  const point = Number.isInteger(at) ? warned(at) || null : null;
+  return { suitable, excluded: out, warned: warn, all: suitable > 0 && out === suitable, rule, warning, point };
 }
-// La frase decisa dal proprietario per la fascia tutta esclusa.
+// La frase decisa dal proprietario per la fascia tutta esclusa (vale per tutte le esclusioni).
 export const RESERVE_BAND_TEXT = 'In questa fascia il bosco adatto è in zona di riserva del Parco: la raccolta è esclusa.';
+// L'avviso deciso dal proprietario (21/10/2026) per le zone di riserva senza esclusione.
+export const WARNING_TEXT = 'Zona di riserva del Parco: verifica il regolamento dell’ente prima di raccogliere.';
+// Frase d'apertura per la scheda e il punto della mappa: fascia tutta esclusa e/o punto proposto in zona con avviso.
+// after si aggiunge solo se c'è una frase (per esempio uno spazio prima del testo che segue).
+export function reserveLead(r, after = '') {
+  const t = [r?.all && RESERVE_BAND_TEXT, r?.point && WARNING_TEXT].filter(Boolean).join(' ');
+  return t ? t + after : '';
+}
+// Riga della riserva sotto l'accesso, oltre alla frase della fascia tutta esclusa: quanti punti esclusi o con avviso.
+export function reserveAccessText(r) {
+  if (!r) return '';
+  const parts = [];
+  if (r.excluded && !r.all) parts.push(`${r.excluded} punti su ${r.suitable} del bosco adatto della fascia sono in zona di riserva del Parco: il Piano esclude la raccolta, quindi non si propongono.`);
+  // con punti esclusi nella stessa frase: «Altri 27 sono…», senza ripetere il totale
+  const who = r.excluded && !r.all ? `${r.warned === 1 ? 'Un altro' : `Altri ${r.warned}`}`
+    : r.warned === r.suitable ? `Tutti i ${r.suitable} punti del bosco adatto della fascia`
+    : `${r.warned} ${r.warned === 1 ? 'punto' : 'punti'} su ${r.suitable} del bosco adatto della fascia`;
+  if (r.warned) parts.push(`${who} ${r.warned === 1 ? 'è' : 'sono'} in zona di riserva del Parco dove la raccolta dipende dal regolamento dell’ente: verificalo prima di raccogliere.`);
+  if (r.point && !r.warned) parts.push(`Il punto proposto è in zona di riserva del Parco: verifica il regolamento dell’ente prima di raccogliere.`);
+  return parts.join(' ');
+}
+// Legenda della mappa: le zone escluse e quelle con avviso, dal file. Senza file resta la frase sul Gran Sasso-Laga.
+export function reserveLegendText(si) {
+  const name = (r) => si?.info?.aree?.[r.area]?.nome || r.area;
+  // i nomi hanno virgole («Abruzzo, Lazio e Molise»): le aree si separano con il punto e virgola
+  const list = (rules) => rules.map((r) => `${name(r)}, zone ${join(r.zone)}`).join('; ');
+  const ex = si?.info?.esclusioni || [], wa = si?.info?.avvisi || [];
+  if (!ex.length) return 'Nel Gran Sasso-Laga il Piano del Parco esclude in zona A e B il prelievo di funghi e piante, salvi usi civici: l’app non propone lì punti per la raccolta.';
+  return `Il piano dell’area protetta esclude la raccolta, salvi usi civici, in queste zone di riserva (l’app non propone lì punti per la raccolta): ${list(ex)}.`
+    + (wa.length ? ` Qui la raccolta dipende dal regolamento dell’ente, da verificare: ${list(wa)}.` : '');
+}
 
 // ---- Informazioni sul bosco della fascia ----
 export const ASPECT_WORD = { N: 'nord', NE: 'nord-est', E: 'est', SE: 'sud-est', S: 'sud', SO: 'sud-ovest', O: 'ovest', NO: 'nord-ovest' };
@@ -121,7 +158,7 @@ export function bandForestInfo({ hab, si, zid, sp, band, half = PARAMS.bandHalfW
       if (!areas.has(r.area)) areas.set(r.area, { area: r.area, n: 0, zones: new Map() });
       const a = areas.get(r.area), k = r.zona ?? '';
       a.n++;
-      if (!a.zones.has(k)) a.zones.set(k, { zona: r.zona ?? null, n: 0, excluded: !!exclusionOf(si, r) });
+      if (!a.zones.has(k)) a.zones.set(k, { zona: r.zona ?? null, n: 0, excluded: !!exclusionOf(si, r), warned: !!warningOf(si, r) });
       a.zones.get(k).n++;
     }
   }
@@ -197,6 +234,8 @@ export function bandForestLines(f, si) {
     lines.push({ k: 'area', text: `${a.n === f.n ? `Tutti i ${punti(f.n)} sono` : `${punti(a.n)} su ${f.n} sono`} ${inArea(si, a.area)}${tail}.` });
     const excl = a.zones.filter((x) => x.excluded).map((x) => x.zona);
     if (excl.length) lines.push({ k: 'riserva', excluded: true, text: `In zona ${join(excl)} il Piano del Parco esclude la raccolta, salvi usi civici: questi punti non si propongono per la raccolta. La cartografia della Regione è indicativa.` });
+    const warn = a.zones.filter((x) => x.warned).map((x) => x.zona);
+    if (warn.length) lines.push({ k: 'avviso', warned: true, text: `In zona ${join(warn)}, di riserva del Parco, le regole sulla raccolta rinviano a un regolamento dell’ente: verificalo prima di raccogliere. La cartografia della Regione è indicativa.` });
   }
   return lines;
 }

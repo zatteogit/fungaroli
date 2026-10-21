@@ -2,7 +2,8 @@
 // Decisioni del 16/10/2026: nessun punto proposto per la raccolta in zona A o B del Gran Sasso-Laga, avviso nella
 // scheda, livello «Aree protette» sulla mappa, informazioni sul bosco fuori dall'indice, piste mai proposte in auto.
 // Adattato il 21/10/2026 alla produzione v319 (scheda della zona riscritta, nessun pulsante «Salva» del piano)
-// e alla riga d'accesso sotto l'imbocco del sentiero. Da lanciare con
+// e alla riga d'accesso sotto l'imbocco del sentiero. Il 21/10/2026 (v322) le esclusioni si estendono a Parco d'Abruzzo,
+// Simbruini e Lucretili, con avvisi per Lucretili B e B1 e Veio B1 e B2 (tests/site-info.test.mjs). Da lanciare con
 //   npx playwright test tests/browser/site-info.spec.mjs
 import { test, expect } from '@playwright/test';
 import { readFileSync } from 'node:fs';
@@ -272,7 +273,10 @@ test('mappa, intento passeggiata: il livello «Aree protette» ha la sua legenda
   await page.locator('.mapctl [data-act="layers"]').first().click();
   await page.locator('.mapctl [data-act="protected"]').click();
   await expect(page.locator('#legend .wms-pa')).toBeVisible();
-  await expect(page.locator('#legend .wms-pa')).toContainText('prelievo di funghi e piante');
+  // dal 21/10/2026 la legenda elenca tutte le zone escluse e quelle con avviso, dal file (js/site-info.js, reserveLegendText)
+  await expect(page.locator('html')).toHaveAttribute('data-site-info', 'ok');
+  for (const t of ['esclude la raccolta, salvi usi civici', 'Gran Sasso e Monti della Laga, zone A e B', 'Monti Simbruini, zone R1, R2 e R4', 'Veio, zone B1 e B2'])
+    await expect(page.locator('#legend .wms-pa')).toContainText(t);
   expect(errors).toEqual([]);
 });
 

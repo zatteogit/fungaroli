@@ -81,6 +81,89 @@ EXCLUSIONS = [{
     ],
     "eccezioni": "Diritti reali e usi civici (per esempio residenti titolari): l'app non li conosce.",
 }]
+# Decisione del proprietario (21/10/2026), dopo la lettura dei testi primari: escluse come la Laga anche le zone di
+# riserva del PNALM (versante laziale), dei Monti Simbruini e dei Monti Lucretili; solo avviso per le zone B dei
+# Lucretili e di Veio. Dubbio comune: se i funghi siano «flora» o «specie vegetali». La L.R. 29/1997, art. 8, c. 3,
+# lett. a (misure di salvaguardia) fa salvi «la raccolta di funghi, tartufi ed altri prodotti del bosco»: indizio che
+# il legislatore li distingua dalla flora. Interpretazione non verificata in giurisprudenza. Dettagli in docs/legale.md.
+LR = "https://www.consiglio.regione.lazio.it/consiglio-regionale/?vw=leggiregionalidettaglio&id={}&sv=vigente"
+FLORA_DUBBIO = ("Se i funghi rientrino nella «flora» o nelle «specie vegetali» non è deciso: la L.R. 29/1997, art. 8, c. 3, "
+                "lett. a, fa salvi «la raccolta di funghi, tartufi ed altri prodotti del bosco», indizio che il legislatore li "
+                "distingua. Interpretazione non verificata in giurisprudenza.")
+USI_CIVICI = "Usi civici e diritti reali: l'app non li conosce."
+EXCLUSIONS += [{
+    "area": "pnalm", "zone": ["A", "B"],
+    "effetto": "Esclusi dai consigli di accesso e di raccolta, con avviso. Restano nell'indice biologico.",
+    "motivo": ("Zona A (riserva integrale): le Norme del Piano vietano «qualsiasi manomissione o prelievo di specie vegetali» e "
+               "«qualsiasi utilizzazione delle risorse a scopo economico» (art. 8, c. 2, lett. b e d). Zona B (riserva generale "
+               "orientata): raccolta solo «nei limiti previsti dal Regolamento», che non è approvato, e visitatori lungo i "
+               "sentieri (art. 9, c. 2, lett. f e h); fuori sentiero vietato in A e B per disposizione del Direttore. Nei parchi "
+               "nazionali la legge regionale vieta la raccolta salvo diverse disposizioni dell'ente. " + FLORA_DUBBIO),
+    "fonti": [
+        {"titolo": "Ente PNALM, Piano del Parco, Norme tecniche di attuazione, art. 8, c. 2, lett. b e d (zona A) e art. 9, c. 2, lett. f e h (zona B); versione 2023, testo finale approvato non verificato",
+         "url": "https://static.parcoabruzzo.it/pdf/NORME-TECNICHE-ATTUAZIONE-PIANOPARCO.pdf"},
+        {"titolo": "Piano approvato per il Lazio con DGR 30 luglio 2026, n. 661 (BURL 4 agosto 2026, n. 62); avviso nella G.U. parte II n. 100 dell'1 settembre 2026",
+         "url": "https://www.gazzettaufficiale.it/eli/id/2026/09/01/TX26ADM8217/P2"},
+        {"titolo": "Ente PNALM, disposizione del Direttore prot. 8838 del 13 agosto 2020: divieto di uscire dai sentieri nelle zone A e B",
+         "url": "https://www.parcoabruzzo.it/pdfuff/PNALMdocumento-618-3.pdf"},
+        {"titolo": "L.R. Lazio 5 agosto 1998, n. 32, art. 10, c. 1, lett. d (parchi nazionali: raccolta vietata salvo diverse disposizioni dell'ente)",
+         "url": LR.format(8275)},
+    ],
+    "certezza": {"A": "alta", "B": "medio-alta"},
+    "eccezioni": USI_CIVICI,
+}, {
+    "area": "simbruini", "zone": ["R1", "R2", "R4"],
+    "effetto": "Esclusi dai consigli di accesso e di raccolta, con avviso. Restano nell'indice biologico.",
+    "motivo": ("Nelle zone di riserva «gli usi ammessi sono esclusivamente quelli ritenuti compatibili» (Norme del Piano di "
+               "assetto, art. 27) e nessuna zona R elenca la raccolta (artt. 28, 29 e 31), che compare invece tra gli usi della "
+               "zona L («raccolta dei prodotti del sottobosco», art. 32). Interpretazione a contrario. " + FLORA_DUBBIO),
+    "fonti": [
+        {"titolo": "Parco naturale regionale dei Monti Simbruini, Piano di assetto approvato con DCR 27 ottobre 1999, n. 587, Norme tecniche di attuazione, artt. 27, 28, 29, 31 e 32",
+         "url": "https://www.parcomontisimbruini.it/pdf/Piano.Assetto.pdf"},
+    ],
+    "certezza": {"R1": "medio-alta", "R2": "medio-alta", "R4": "media"},
+    "eccezioni": USI_CIVICI,
+}, {
+    "area": "lucretili", "zone": ["A", "A1"],
+    "effetto": "Esclusi dai consigli di accesso e di raccolta, con avviso. Restano nell'indice biologico.",
+    "motivo": ("Nelle zone A e A1 le Norme del Piano dispongono che «è vietata la raccolta o manomissione della flora e "
+               "vegetazione» (art. 46, c. 5 e art. 47, c. 4). Che la «flora» comprenda i funghi è un'interpretazione. " + FLORA_DUBBIO),
+    "fonti": [
+        {"titolo": "Parco naturale regionale dei Monti Lucretili, aggiornamento del Piano approvato con DCR 28 ottobre 2022, n. 10 (BURL 27 dicembre 2022, n. 106, S.O. n. 1), Norme tecniche di attuazione, art. 46, c. 5 e art. 47, c. 4",
+         "url": "https://parcolucretili.it/wp-content/uploads/2025/05/NORME-TECNICHE-ATTUAZIONE-BURL-2022.pdf"},
+    ],
+    "certezza": {"A": "media", "A1": "media"},
+    "eccezioni": USI_CIVICI,
+}]
+# Stessa forma delle esclusioni: i campioni restano proponibili, la scheda avvisa (testo: js/site-info.js, WARNING_TEXT).
+WARNINGS = [{
+    "area": "lucretili", "zone": ["B", "B1"],
+    "effetto": "Solo avviso: «Zona di riserva del Parco: verifica il regolamento dell'ente prima di raccogliere.» Restano proponibili e nell'indice biologico.",
+    "motivo": ("Le Norme del Piano non pongono un divieto di zona (artt. 48 e 49); la legge istitutiva vieta la raccolta di "
+               "specie vegetali spontanee salvo quanto previsto dal regolamento (L.R. 41/1989, art. 11, lett. h), che non è "
+               "stato trovato. " + FLORA_DUBBIO),
+    "fonti": [
+        {"titolo": "Parco naturale regionale dei Monti Lucretili, Norme tecniche di attuazione del Piano (DCR 28 ottobre 2022, n. 10), artt. 48 e 49",
+         "url": "https://parcolucretili.it/wp-content/uploads/2025/05/NORME-TECNICHE-ATTUAZIONE-BURL-2022.pdf"},
+        {"titolo": "L.R. Lazio 26 giugno 1989, n. 41, istitutiva del Parco, art. 11, lett. h", "url": LR.format(8468)},
+    ],
+    "certezza": {"B": "media", "B1": "media"},
+    "eccezioni": USI_CIVICI,
+}, {
+    "area": "veio", "zone": ["B1", "B2"],
+    "effetto": "Solo avviso: «Zona di riserva del Parco: verifica il regolamento dell'ente prima di raccogliere.» Restano proponibili e nell'indice biologico.",
+    "motivo": ("Nelle zone B sono consentite «unicamente» le attività compatibili «secondo le specifiche indicazioni e "
+               "prescrizioni dettate dal Regolamento» (Norme del Piano, art. 22, c. 12), che non è approvato; la raccolta dei "
+               "prodotti naturali è permessa esplicitamente solo in zona C (art. 25, c. 5, lett. c). " + FLORA_DUBBIO),
+    "fonti": [
+        {"titolo": "Parco naturale regionale di Veio, Piano del Parco approvato con DCR 19 febbraio 2025, n. 2, Norme tecniche attuative, art. 22, c. 12 e art. 25, c. 5, lett. c (BURL 20 marzo 2025, n. 23, S.O. n. 1; indirizzo web della copia letta non registrato)",
+         "url": None},
+        {"titolo": "Zonazione del Parco di Veio sul Geoportale della Regione Lazio (strato geonode:zoning_veio1)",
+         "url": "https://geoportale.regione.lazio.it/catalogue/#/dataset/1385"},
+    ],
+    "certezza": {"B1": "media", "B2": "media"},
+    "eccezioni": USI_CIVICI,
+}]
 
 CACHE = ROOT / ".cache" / "habitat-info"
 
@@ -509,6 +592,7 @@ def header(today, habitat, rec, meta, tiles):
             "lazio": {"fonte": "limiti-comunali", "valori": {"1": "nel Lazio: dentro un comune del Lazio, o dentro un poligono della Carta Forestale a ridosso del confine (i due strati non tracciano il confine allo stesso modo)", "0": "fuori dal Lazio, non coperto: Carta Forestale, perimetri e zonazioni regionali non arrivano. strutt, copertura, area e zona sono null anche se il punto fosse in un bosco o in un parco; in habitat.json il punto risulta non bosco per costruzione"}},
         },
         "esclusioni": EXCLUSIONS,
+        "avvisi": WARNINGS,
         "sources": [
             {"id": "carta-forestale", "nome": "Carta forestale su base tipologica", "editore": "Regione Lazio",
              "url": WFS + " (WFS geonode:tipi_forestali2)", "scheda": gp("geonode:tipi_forestali2"),

@@ -57,7 +57,7 @@ import { applyCrop } from './images.js';
 import { FOREST_LEGEND } from './forest-legend.js';
 import { initTrees, renderTreeGrid, renderTreePage, linkTrees, treeChips, treeForCategory, treeThumb, treePhotoSrc, treeHeroSrc } from './trees.js';
 import { crowding, comfortScore, timingAdvice, sunTimes, fmtTime, fmtRough, intornoA, chooseAccess, accessFieldIndex, accessRow, walkPhrase, trackNote, fmtDist, fmtRise } from './human.js';
-import { prepareSiteInfo, alignedZones, excludedFn, bandReserve, RESERVE_BAND_TEXT, bandForestInfo, bandForestLines, zoneSiteInfo, zoneSiteLines, siteSources } from './site-info.js';
+import { prepareSiteInfo, alignedZones, excludedFn, warnedFn, bandReserve, RESERVE_BAND_TEXT, reserveLead, reserveAccessText, reserveLegendText, bandForestInfo, bandForestLines, zoneSiteInfo, zoneSiteLines, siteSources } from './site-info.js';
 import { predictScores, captureForecastData, FORECAST_INPUTS } from './forecast-capture.js';
 import { initCommunity, communityStatus, communityOverview,communityHasAccess,communityForEntity, communityRank, communityHasZone, communityDataAvailable, currentUser, reportBadge } from './community.js';
 import { guideTitle, renderGuideCards, renderGuide, initGuideContent, guideCount } from './guides.js';
@@ -1505,7 +1505,7 @@ function compute(changed=null) {
     days.forEach((d, k) => {
       if (!d.best && state.target==='funghi') return;
       d.access = d.best ? accessFor(z, d.best.species, d.best.band) : null;
-      d.reserve = d.best ? reserveFor(z, d.best.species, d.best.band) : null;
+      d.reserve = d.best ? reserveFor(z, d.best.species, d.best.band, d.access) : null;
       const comfortKnown=!z.coordinateProvenance || (Number.isFinite(acc0?.minutes)&&Number.isFinite(d.access?.walkM)&&Number.isFinite(d.access?.surface)&&Number.isFinite(acc0?.unpaved_tail_km)&&Number.isFinite(acc0?.unpaved_other_km));
       const referenceComfort = comfortKnown ? comfortScore({
         driveMin: acc0?.minutes ?? z.drive_min,
@@ -1578,12 +1578,12 @@ function accessFor(z, sp, band) {
   if (a?.source === 'habitat') { const surf = hab.samples[a.i][5]; a.surface = Number.isFinite(surf) ? surf : null; }
   return a;
 }
-// Bosco adatto della fascia in zona di riserva del Parco (null se nessun punto è escluso). all: tutto escluso.
-// Solo informazione e scelta del punto: l'indice biologico non cambia.
-function reserveFor(z, sp, band) {
+// Bosco adatto della fascia in zona di riserva del Parco (null se nessun punto è escluso o con avviso). all: tutto
+// escluso; point: il punto proposto è in una zona con avviso. Solo informazione e scelta del punto: l'indice non cambia.
+function reserveFor(z, sp, band, ax) {
   if (!siteInfo) return null;
-  const r = bandReserve({ hab: habitat[z.id], sp, band, excluded: excludedFn(siteInfo, z.id) });
-  return r?.excluded ? r : null;
+  const r = bandReserve({ hab: habitat[z.id], sp, band, excluded: excludedFn(siteInfo, z.id), warned: warnedFn(siteInfo, z.id), at: ax?.i });
+  return r?.excluded || r?.warned || r?.point ? r : null;
 }
 
 // Sentieri della zona ordinati per km in bosco adatto alla specie, alla quota dell'indice (±150 m per i funghi,
@@ -2230,11 +2230,11 @@ function openPoint(zid, pt) {
       // strada che non è una pista (data/access-info.json): l'ultimo tratto è a piedi, con percorso e salita
       eyebrow = 'Qui lasci l\'auto e prosegui a piedi'; title = ax.road || 'Punto sulla strada più vicino al bosco adatto';
       const note = trackNote(ax);
-      text = `${d.reserve?.all ? `${esc(RESERVE_BAND_TEXT)} ` : ''}${axDrive(ax).replace(/^in/, 'In')} fino a qui${Number.isFinite(ax.roadEle) ? ` (${ax.roadEle} m)` : ''}. ${esc(walkPhrase(ax, axDest(ax)).long)} Adatto a ${speciesLink(d.best.species, d.best.species.name.toLowerCase())}.${esc(axBand(ax, d))}${note ? ` ${esc(note)}` : ''} Verifica sul posto transito e possibilità di sosta.`;
+      text = `${esc(reserveLead(d.reserve, ' '))}${axDrive(ax).replace(/^in/, 'In')} fino a qui${Number.isFinite(ax.roadEle) ? ` (${ax.roadEle} m)` : ''}. ${esc(walkPhrase(ax, axDest(ax)).long)} Adatto a ${speciesLink(d.best.species, d.best.species.name.toLowerCase())}.${esc(axBand(ax, d))}${note ? ` ${esc(note)}` : ''} Verifica sul posto transito e possibilità di sosta.`;
     } else {
     // ripiego senza access-info: un sentiero o una pista non si propone come strada da fare in auto; lo stato di una pista forestale si verifica sul posto
     eyebrow = ax.surface == null ? 'Punto mappato · accesso da verificare' : ax.surface === 2 ? 'Punto d’accesso su sentiero o pista' : 'Qui lasci l\'auto e prosegui a piedi'; title = ax.road || 'Punto più vicino al bosco adatto';
-    text = `${d.reserve?.all ? `${esc(RESERVE_BAND_TEXT)} ` : ''}${ax.surface == null ? 'Fondo, transito e possibilità di sosta non verificati. Da questo punto' : ax.surface === 2 ? 'Questo punto è su un sentiero o una pista: non è detto che ci si arrivi in auto. Da qui' : `In auto ${ax.surface ? `su ${SURF_LABEL[ax.surface]}` : 'su asfalto'} fino a qui, poi`} ${ax.walkM < 50 ? `il bosco adatto è ${ax.surface === 2 ? 'subito accanto' : 'a bordo strada'}:${esc((SHORT[ax.cat] || ax.cat || 'paesaggio non classificato').toLowerCase())} a ${ax.e} m` : `${walkTxt(ax.walkM)} fino a ${esc((SHORT[ax.cat] || ax.cat || 'paesaggio non classificato').toLowerCase())} a ${ax.e} m`}, adatto a ${speciesLink(d.best.species, d.best.species.name.toLowerCase())}. ${ACCESS_CHECK}`;
+    text = `${esc(reserveLead(d.reserve, ' '))}${ax.surface == null ? 'Fondo, transito e possibilità di sosta non verificati. Da questo punto' : ax.surface === 2 ? 'Questo punto è su un sentiero o una pista: non è detto che ci si arrivi in auto. Da qui' : `In auto ${ax.surface ? `su ${SURF_LABEL[ax.surface]}` : 'su asfalto'} fino a qui, poi`} ${ax.walkM < 50 ? `il bosco adatto è ${ax.surface === 2 ? 'subito accanto' : 'a bordo strada'}:${esc((SHORT[ax.cat] || ax.cat || 'paesaggio non classificato').toLowerCase())} a ${ax.e} m` : `${walkTxt(ax.walkM)} fino a ${esc((SHORT[ax.cat] || ax.cat || 'paesaggio non classificato').toLowerCase())} a ${ax.e} m`}, adatto a ${speciesLink(d.best.species, d.best.species.name.toLowerCase())}. ${ACCESS_CHECK}`;
     }
     actions = `<a class="btn primary" href="${gmaps(ax.rlat, ax.rlon)}" target="_blank" rel="noopener" aria-label="Indicazioni stradali fin qui">${IC.car} Indicazioni</a>${copyBtn(ax.rlat, ax.rlon)}`;
   } else if (pt.kind === 'trailhead') {
@@ -2887,7 +2887,7 @@ function protectedLegend() {
     <figure>${paLegendImg('geonode:zoning_montagne_duchessa0', 'Colori delle zone della Riserva')}<figcaption>Montagne della Duchessa</figcaption></figure>
     <figure>${paLegendImg('geonode:aree_naturali_protette1', 'Contorno dei parchi e delle riserve')}<figcaption>Contorno di parchi e riserve</figcaption></figure></div>
     <dl class="pa-zones">${Object.entries(words).map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>
-    <p class="small">Nel Gran Sasso-Laga il Piano del Parco esclude in zona A e B il prelievo di funghi e piante, salvi usi civici: l’app non propone lì punti per la raccolta.</p>
+    <p class="small">${esc(reserveLegendText(siteInfo))}</p>
     <p class="fl-src">© Regione Lazio; indicativo: fa fede la cartografia dell’ente. Zone del Parco solo sul versante laziale.</p>`;
 }
 // nel riquadro della zona, con le aree protette accese: quanta parte dei punti campione è in un'area protetta
@@ -3013,7 +3013,7 @@ function essentialSections(z, d, walk) {
   // Un solo avviso: la sintesi si estende nello stesso punto quando si apre.
   const rows = [];
   rows.push({ sec: 'specie', icon: 'find', thumb: best.species.id, k: 'Cosa osservare', v: `<span class="primary-species"><button type="button" class="sp-inline" data-species="${best.species.id}">${esc(best.species.name)}</button>${best.kind!=='plant'&&Number.isFinite(best.score)?idxDot(best.score):''}</span> <span class="observation-altitude">${intornoA(best.band)} <b>${best.band} m s.l.m.</b>${bandNote ? ' nella zona' : ''}</span>`,
-    sub: [d.reserve?.all && `<span class="plan-reserve">${esc(RESERVE_BAND_TEXT)}</span>`,
+    sub: [reserveLead(d.reserve) && `<span class="plan-reserve">${esc(reserveLead(d.reserve))}</span>`,
       bandNote && `<span class="plan-where plan-band-off">${esc(bandNote)}</span>`,
       attentionLine(observationRule)].filter(Boolean).join('') });
   if (d.crowd &&state.target==='funghi') {
@@ -3432,10 +3432,12 @@ function renderAccess(z, d, {summarized=false,walk=null} = {}) {
     lines.push(`<b>${d.reserve?.all ? 'Punto consentito più comodo' : 'Punto più comodo'} per ${speciesLink(d.best.species, d.best.species.name.toLowerCase())}</b>: ${driveTo(ax)}${ax.road ? ` lungo ${esc(ax.road)}` : ''} fino al <a href="${gmaps(ax.rlat, ax.rlon)}" target="_blank" rel="noopener">${ax.surface === 2 ? 'punto d’accesso' : 'punto sulla strada'}</a>, poi ${ax.walkM < 50 ? (ax.surface === 2 ? 'subito, lì accanto,' : 'subito, a bordo strada,') :`<b>${fmtM(ax.walkM)} in linea d’aria</b> fino a`} ${esc((SHORT[ax.cat] || ax.cat || 'paesaggio non classificato').toLowerCase())} a ${ax.e} m.${ax.surface !== 0 ? ` ${ACCESS_CHECK}` : ''}`);
   }
   const stops=!trails[z.id]?.publicPlaces?.length?(z.parking?.length?z.parking:acc):[];
-  // bosco adatto della fascia in zona A o B del Gran Sasso-Laga: il Piano esclude ogni prelievo, quindi nessun punto lì
+  // bosco adatto della fascia in una zona esclusa (data/habitat-info.json, «esclusioni»): nessun punto proposto lì;
+  // e punti in zona con avviso (Lucretili B e B1, Veio B1 e B2): testi in js/site-info.js
+  const more = reserveAccessText(d?.reserve);
   const reserve = !d?.reserve ? '' : d.reserve.all
-    ? `<p class="small access-reserve"><b>${esc(RESERVE_BAND_TEXT)}</b>${ax || axLine ? ' Nelle avvertenze, il punto consentito più comodo con la sua quota.' : d.access ? ' Il punto consentito più comodo, con la sua quota, è sulla mappa della zona.' : ' Nella zona non c’è un altro bosco adatto da proporre.'}</p>`
-    : `<p class="small access-reserve">${d.reserve.excluded} punti su ${d.reserve.suitable} del bosco adatto della fascia sono in zona di riserva del Parco: il Piano esclude la raccolta, quindi non si propongono.</p>`;
+    ? `<p class="small access-reserve"><b>${esc(RESERVE_BAND_TEXT)}</b>${ax || axLine ? ' Nelle avvertenze, il punto consentito più comodo con la sua quota.' : d.access ? ' Il punto consentito più comodo, con la sua quota, è sulla mappa della zona.' : ' Nella zona non c’è un altro bosco adatto da proporre.'}${more ? ` ${esc(more)}` : ''}</p>`
+    : `<p class="small access-reserve">${esc(more)}</p>`;
   return `${accessOverview(z,d,walk)}
     ${stops.length?`<div class="access-stops"><h3>Soste indicate</h3><div class="act-pills">${stops.map(p=>actPill(gmaps(p.lat,p.lon),'pin',esc(p.name||p.parking),true)).join('')}</div></div>`:''}
     ${renderMappedPlaces(trails[z.id]?.publicPlaces)}

@@ -4,6 +4,8 @@
 
 > Aggiornamento del 21 ottobre 2026 (seconda tornata, modello 2.1.0): nel Parco Gran Sasso-Laga l'app non propone punti in zona A e B (§2.3); nuove fonti di dati con le loro licenze (§7); livello «Aree protette» della mappa e nuovi servizi chiamati dal browser (§6.2); punti aperti (§8, punti 15–17). Le 21 zone del pilota Lazio non sono coperte dalla verifica delle aree protette di §2.0.
 
+> Aggiornamento del 21 ottobre 2026 (sera, app v322): dopo la lettura dei testi primari, Matteo ha deciso di escludere come la Laga anche le zone di riserva del Parco d'Abruzzo, Lazio e Molise, dei Monti Simbruini e dei Monti Lucretili, e di mettere solo un avviso nelle zone B dei Lucretili e di Veio (§2.5; §8, punti 16 e 18).
+
 # Note legali e di sicurezza
 
 Documento di riferimento per i testi legali di Fungaroli Rieti (`data/legal.json`). Raccoglie le norme vigenti, le fonti consultate, i punti che non è stato possibile verificare e i rischi che l'app presenta oggi.
@@ -145,7 +147,7 @@ Due controlli indipendenti hanno incrociato i cerchi delle 15 zone e i circa 315
 
 **Limiti del controllo.** I confini del Geoportale «non hanno valenza giuridica e/o probatoria» (nota del dataset): fa fede la cartografia dell'ente. Licenze: perimetri «creativecommons» senza versione, zonazioni «not_specified». Per questo l'app non ridistribuisce queste geometrie e scrive solo frasi nei testi delle zone. Gli strati si fermano al confine del Lazio: fuori regione cadono 20 punti della Laga (quasi certamente nel Parco, versante abruzzese e marchigiano; non verificato), 35 di Rascino, 4 di Cittareale e 3 di Antrodoco. Per la Laga le quote di Parco e di zona «a» sono quindi limiti inferiori.
 
-**Dato per punto nell'app (16/10/2026).** Da questa verifica nasce `data/habitat-info.json` (`tools/build_habitat_info.py`): per ogni punto campione delle 15 zone, area protetta e zona del piano dagli stessi strati del Geoportale. Nella Laga risultano 23 punti in zona A (tutti fuori bosco) e 146 in zona B (74 di bosco), su 313. Le 21 zone del pilota Lazio (19/10/2026) non sono state incrociate così: molte toccano parchi e riserve regionali e nazionali (per esempio Castelli Romani, Monti Simbruini, Veio, Circeo, Abruzzo-Lazio-Molise), e le loro zone di riserva **non sono verificate**.
+**Dato per punto nell'app (16/10/2026).** Da questa verifica nasce `data/habitat-info.json` (`tools/build_habitat_info.py`): per ogni punto campione delle 15 zone, area protetta e zona del piano dagli stessi strati del Geoportale. Nella Laga risultano 23 punti in zona A (tutti fuori bosco) e 146 in zona B (74 di bosco), su 313. Le 21 zone del pilota Lazio (19/10/2026) non sono state incrociate così: molte toccano parchi e riserve regionali e nazionali (per esempio Castelli Romani, Monti Simbruini, Veio, Circeo, Abruzzo-Lazio-Molise), e le loro zone di riserva **non sono verificate**. Aggiornamento del 21/10/2026: le zone di riserva di Parco d'Abruzzo, Simbruini, Lucretili e Veio sono trattate in §2.5; le altre aree protette del pilota (Castelli Romani, Monti Aurunci, Monti Ausoni, Circeo, Bracciano-Martignano) non hanno una zonazione sul Geoportale e restano non verificate.
 
 ### 2.1 Riserva naturale Monte Navegna e Monte Cervia (zona Cicolano)
 
@@ -181,6 +183,48 @@ Aggiornamento del 15/10/2026 (vedi 2.0). Le 12 zone senza campo `protection` non
 **Rete Natura 2000.** La ZPS Monti Reatini copre quasi tutta la Vallonina (99,9%), l'88% di Terminillo est e l'85% di Leonessa; la ZSC Tancia-Pizzuto il 56% del Tancia. Le misure di conservazione delle ZSC reatine (DGR 161/2016, all. 1) e quelle generali delle ZPS e ZSC (DGR 612/2011) non contengono la parola «fung»: nessuna regola sulla raccolta dei funghi.
 
 **Usi civici e regole locali.** Ricerche mirate su Leonessa, Amatrice, Accumoli, Cittareale, Borgorose, Fiamignano e sulle ASBUC non hanno trovato regolamenti comunali o di usi civici sui funghi. L'assenza di risultati non prova che non esistano: albi pretori e regolamenti delle ASBUC sono poco indicizzati. La base regionale per le aree tabellate a raccolta riservata (art. 6 originario della L.R. 32/1998) è stata abrogata nel 2017 (L.R. 9/2017, art. 17, c. 22, lett. d); restano solo due richiami senza oggetto nell'art. 16. Sui domini collettivi la L. 168/2017 (art. 1) riconosce una «capacità di autonormazione»: se ne derivi il potere di riservare la raccolta ai titolari non è verificato. Per i prodotti diversi dai funghi vale la L.R. 39/2002, art. 42, c. 3. **In app:** una riga generica nelle regole di ogni zona («Rispetta cartelli e divieti di accesso: comuni, amministrazioni di usi civici (ASBUC) e aree protette possono avere regole proprie»), appoggiata alla L.R. 39/2002, art. 43, c. 1. Nessuna regola locale specifica finché non è verificata.
+
+### 2.5 Zone di riserva dei parchi del pilota Lazio (decisione di Matteo del 21/10/2026)
+
+Ricerca sui testi primari del 21/10/2026: Norme dei piani, leggi istitutive, L.R. 29/1997 e L.R. 32/1998. Le zone e i punti vengono dalle zonazioni del Geoportale della Regione (§7), che sono indicative: fa fede la cartografia dell'ente.
+
+**Escluse come la Laga.** I punti non si propongono come punto d'accesso o destinazione; restano nell'indice biologico. Frasi uguali a quelle della Laga (§2.3).
+
+| Area (zona dell'app) | Zone | Base | Certezza |
+|---|---|---|---|
+| Parco nazionale d'Abruzzo, Lazio e Molise, versante laziale (Settefrati-Canneto) | A (6 punti, 5 di bosco), B (122 punti, 117 di bosco) | Norme tecniche del Piano del Parco, art. 8, c. 2, lett. b e d: in zona A vietati «qualsiasi manomissione o prelievo di specie vegetali» e «qualsiasi utilizzazione delle risorse a scopo economico». Art. 9, c. 2, lett. f e h: in zona B raccolta solo «nei limiti previsti dal Regolamento», che non è approvato, e visitatori lungo i sentieri. Disposizione del Direttore prot. 8838 del 13/08/2020: fuori sentiero vietato in A e B. Parco nazionale: per la L.R. 32/1998, art. 10, c. 1, lett. d la raccolta è vietata salvo diverse disposizioni dell'ente. | alta (A), medio-alta (B) |
+| Parco naturale regionale dei Monti Simbruini (Filettino-Fiumata) | R1 (7 punti), R2 (174), R4 (136), tutti di bosco | Piano di assetto (DCR 27/10/1999, n. 587), Norme, art. 27: nelle zone di riserva «gli usi ammessi sono esclusivamente quelli ritenuti compatibili». Gli artt. 28, 29 e 31 (zone R) non elencano la raccolta; l'art. 32 (zona L) sì: «raccolta dei prodotti del sottobosco». **Interpretazione a contrario.** | medio-alta (R1, R2), media (R4) |
+| Parco naturale regionale dei Monti Lucretili (Gennaro-Roccagiovine) | A (29 punti), A1 (33), tutti di bosco | Aggiornamento del Piano (DCR 28/10/2022, n. 10, BURL 27/12/2022, n. 106, S.O. n. 1), Norme, art. 46, c. 5 e art. 47, c. 4: «è vietata la raccolta o manomissione della flora e vegetazione». **Interpretazione:** che la «flora» comprenda i funghi. | media |
+
+**Solo avviso, nessuna esclusione.** I punti restano proponibili. La scheda, la riga d'accesso e il punto della mappa dicono: «Zona di riserva del Parco: verifica il regolamento dell'ente prima di raccogliere.»
+
+| Area (zona dell'app) | Zone | Base | Certezza |
+|---|---|---|---|
+| Monti Lucretili (Gennaro-Roccagiovine) | B (147 punti, 145 di bosco), B1 (4 punti, 1 di bosco) | Norme del Piano, artt. 48 e 49: nessun divieto di zona. La legge istitutiva (L.R. 41/1989, art. 11, lett. h) vieta la raccolta di specie vegetali spontanee salvo quanto previsto dal regolamento, che non ho trovato. | media |
+| Parco naturale regionale di Veio (Monte Musino) | B1 (112 punti, 110 di bosco), B2 (11 punti, 10 di bosco) | Piano del Parco (DCR 19/02/2025, n. 2, BURL 20/03/2025, n. 23, S.O. n. 1), Norme, art. 22, c. 12: nelle zone B «unicamente» le attività compatibili «secondo le specifiche indicazioni e prescrizioni dettate dal Regolamento», non approvato. Art. 25, c. 5, lett. c: la raccolta dei prodotti naturali è permessa esplicitamente solo in zona C. | media |
+
+**Fatto da segnalare.** Nella zona Simbruini, Filettino-Fiumata, tutti i 317 punti campione sono in zona R1, R2 o R4: l'app non propone nessun punto per la raccolta in quella zona e la scheda lo dice («Nella zona non c'è un altro bosco adatto da proporre»).
+
+**Dubbio comune: i funghi sono «flora» o «specie vegetali»?** Le norme dei Lucretili, del Parco d'Abruzzo (zona A) e della L.R. 41/1989 parlano di flora o di specie vegetali, non di funghi. La L.R. 29/1997, art. 8, c. 3, lett. a (misure di salvaguardia) vieta la raccolta della flora spontanea ma fa salvi «la raccolta di funghi, tartufi ed altri prodotti del bosco»: è un indizio che il legislatore regionale tenga distinti i funghi dalla flora. **Interpretazione non verificata in giurisprudenza.** Matteo ha scelto la lettura prudente: escludere dove la norma vieta il prelievo della flora in riserva integrale.
+
+**Eccezioni.** Usi civici e diritti reali: l'app non li conosce e lo dice («salvi usi civici»).
+
+**Fonti lette il 21/10/2026.**
+
+- PNALM, [Norme tecniche di attuazione del Piano del Parco](https://static.parcoabruzzo.it/pdf/NORME-TECNICHE-ATTUAZIONE-PIANOPARCO.pdf), versione 2023: il testo finale approvato non è verificato. Piano approvato per il Lazio con DGR 30/07/2026, n. 661 (BURL 4/08/2026, n. 62); [avviso nella G.U. parte II n. 100 dell'1/09/2026](https://www.gazzettaufficiale.it/eli/id/2026/09/01/TX26ADM8217/P2). [Disposizione del Direttore prot. 8838 del 13/08/2020](https://www.parcoabruzzo.it/pdfuff/PNALMdocumento-618-3.pdf).
+- Monti Simbruini, [Piano di assetto](https://www.parcomontisimbruini.it/pdf/Piano.Assetto.pdf) (DCR 27/10/1999, n. 587), Norme, artt. 27–32.
+- Monti Lucretili, [Norme tecniche di attuazione dell'aggiornamento del Piano](https://parcolucretili.it/wp-content/uploads/2025/05/NORME-TECNICHE-ATTUAZIONE-BURL-2022.pdf) (BURL 27/12/2022, n. 106, S.O. n. 1), artt. 46–49; [L.R. 26 giugno 1989, n. 41](https://www.consiglio.regione.lazio.it/consiglio-regionale/?vw=leggiregionalidettaglio&id=8468&sv=vigente), art. 11, lett. h.
+- Veio, Piano del Parco, Norme tecniche attuative (BURL 20/03/2025, n. 23, S.O. n. 1), artt. 22 e 25: testo letto nel BURL; l'indirizzo web della copia letta non è stato registrato.
+- [L.R. 6 ottobre 1997, n. 29](https://www.consiglio.regione.lazio.it/consiglio-regionale/?vw=leggiregionalidettaglio&id=9334&sv=vigente), art. 8, c. 3, lett. a; [L.R. 5 agosto 1998, n. 32](https://www.consiglio.regione.lazio.it/consiglio-regionale/?vw=leggiregionalidettaglio&id=8275&sv=vigente), art. 10, c. 1, lett. d.
+
+**In app (v322).** Le regole sono scritte nel dato: `esclusioni` e `avvisi` di `data/habitat-info.json`, generate da `tools/build_habitat_info.py` (`EXCLUSIONS`, `WARNINGS`), ciascuna con area, zone, effetto, motivo, fonti, certezza per zona ed eccezioni. `js/site-info.js` le applica: `excludedFn` toglie i punti dalla scelta del punto d'accesso, `warnedFn` conta i punti con avviso e segnala il punto proposto. La legenda del livello «Aree protette» elenca tutte le zone escluse e quelle con avviso. L'indice biologico non legge il file. Se il file non è allineato a `habitat.json`, l'app non esclude e non avvisa.
+
+**Domande da fare per iscritto agli enti.** Le risposte vanno registrate qui.
+
+- **Ente Parco nazionale d'Abruzzo, Lazio e Molise:** il testo approvato delle Norme (DGR 661/2026) conferma gli artt. 8 e 9 della versione 2023? Il Regolamento del Parco è approvato? In zona B la raccolta dei funghi è consentita, e a quali condizioni? La disposizione del 2020 sui sentieri è in vigore? Nelle zone C e D esiste una «diversa disposizione» ai sensi della L.R. 32/1998, art. 10, c. 1, lett. d? Valgono usi civici per i residenti di Settefrati?
+- **Ente Parco dei Monti Simbruini:** nelle zone R1, R2 e R4 la raccolta dei funghi è ammessa? Esiste un regolamento del Parco che la disciplini?
+- **Ente Parco dei Monti Lucretili:** il divieto sulla «flora e vegetazione» delle zone A e A1 comprende i funghi? Esiste il regolamento previsto dalla L.R. 41/1989, art. 11, lett. h? Nelle zone B e B1 la raccolta dei funghi è consentita?
+- **Ente Parco di Veio:** il Regolamento previsto dall'art. 22, c. 12 delle Norme è adottato o approvato? Nelle zone B1 e B2 la raccolta dei funghi è consentita?
 
 ---
 
@@ -386,8 +430,9 @@ Conteggio: CC-BY-NC 56, CC-BY 14, CC BY-SA 3.0 6, CC BY-SA 4.0 3, CC0 3, CC BY 3
 13. **Tempo d'attesa del 118** e instradamento delle chiamate al 112 nel Reatino: non verificati su una fonte primaria aggiornata.
 14. **L.R. 29/1987** sulla circolazione fuoristrada: letta nel testo coordinato il 15/10/2026 (vedi 1.6). Resta da verificare caso per caso quali piste sono vietate da comuni, aree protette o proprietari.
 15. **Licenza delle zonazioni dei piani** sul Geoportale (`not_specified`) e versione della licenza «creativecommons» dei perimetri: da chiedere alla Regione insieme alla Carta Forestale. Oggi si pubblica solo il codice della zona per punto.
-16. **Zone di riserva delle altre aree protette.** L'esclusione dei punti vale solo per le zone A e B del Gran Sasso-Laga. Riserva Monte Navegna e Monte Cervia: zone A e B previste dalla legge istitutiva ma non digitalizzate (vedi 2.1). Le aree protette delle 21 zone del pilota Lazio non sono state verificate punto per punto.
-17. **Usi civici nelle zone A e B della Laga:** l'app esclude i punti per tutti e lo dice («salvi usi civici»), senza sapere chi ne ha diritto.
+16. **Zone di riserva delle altre aree protette.** Dal 21/10/2026 l'esclusione dei punti vale per le zone A e B del Gran Sasso-Laga e del Parco d'Abruzzo (versante laziale), R1, R2 e R4 dei Simbruini, A e A1 dei Lucretili; avviso senza esclusione nelle zone B e B1 dei Lucretili e B1 e B2 di Veio (§2.5). Mancano le risposte degli enti e il testo finale approvato delle Norme del Parco d'Abruzzo. Riserva Monte Navegna e Monte Cervia: zone A e B previste dalla legge istitutiva ma non digitalizzate (vedi 2.1). Le aree protette delle 21 zone del pilota Lazio non sono state verificate punto per punto.
+17. **Usi civici nelle zone A e B della Laga:** l'app esclude i punti per tutti e lo dice («salvi usi civici»), senza sapere chi ne ha diritto. Lo stesso vale dal 21/10/2026 per le zone escluse di §2.5.
+18. **Funghi come «flora» o «specie vegetali»:** nessuna sentenza trovata. La L.R. 29/1997, art. 8, c. 3, lett. a li distingue nelle misure di salvaguardia; le esclusioni dei Lucretili (A, A1) dipendono da questa lettura, quella della zona A del Parco d'Abruzzo in parte (§2.5). Banche dati di giurisprudenza non consultate.
 
 ---
 

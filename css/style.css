@@ -315,7 +315,7 @@ label.btn { display: inline-flex; }
 .plan-host, .zsp-host { display: block; margin-top: 4px; color: var(--warn-ink); }
 /* il sentiero mostrato non passa dalla fascia dell'indice (audit OUT-11): detto subito, sotto la specie */
 .plan-band-off { display: block; margin-bottom: 4px; color: var(--text); }
-/* fascia dell'indice tutta in zona di riserva del Parco (data/habitat-info.json, esclusioni): detto per primo, sotto la specie */
+/* fascia dell'indice tutta in zona di riserva del Parco (esclusioni) o punto proposto in zona con avviso (avvisi): detto per primo, sotto la specie */
 .plan-reserve { display: block; margin: 0 0 4px; color: var(--warn-ink); font-weight: 600; }
 /* informazioni sul bosco della fascia e della zona: da leggere, fuori dall'indice */
 .site-info { margin: 14px 0 0; padding: 12px 14px; border-radius: var(--r-sm); background: var(--surface-2); }
@@ -323,6 +323,8 @@ label.btn { display: inline-flex; }
 .site-info-list { margin: 0 0 6px; padding-left: 18px; display: grid; gap: 4px; font-size: 14px; color: var(--text-2); }
 .site-info-list.small { font-size: 13px; margin-top: 10px; }
 .site-info-list .si-riserva { color: var(--warn-ink); font-weight: 600; }
+/* zona di riserva con avviso (data/habitat-info.json, avvisi): stessa cautela, senza grassetto */
+.site-info-list .si-avviso { color: var(--warn-ink); }
 .access-src { margin-top: 8px; }
 /* età del meteo nella scheda della zona, subito sotto i giorni */
 .wx-age { margin: -4px 0 12px; }

@@ -141,6 +141,9 @@ test('pilota Lazio: aree protette e zone dei piani dove la Regione le pubblica; 
   assert.ok(share('faete-rocca-papa', 'castelli-romani') > 150);
   assert.ok(share('simbruini-filettino-fiumata', 'simbruini') > 300);
   assert.ok(share('pnalm-settefrati-canneto', 'pnalm') > 100);
-  // nessuna esclusione nuova senza una fonte verificata: resta solo quella del Gran Sasso-Laga
-  assert.deepEqual(info.esclusioni.map((e) => e.area), ['pngsl']);
+  // nessuna esclusione nuova senza una fonte verificata: dal 21/10/2026 (decisione dopo la lettura dei testi primari)
+  // anche PNALM, Simbruini e Lucretili; avvisi senza esclusione per Lucretili e Veio. Ogni regola ha fonti e certezza.
+  assert.deepEqual(info.esclusioni.map((e) => e.area), ['pngsl', 'pnalm', 'simbruini', 'lucretili']);
+  assert.deepEqual(info.avvisi.map((e) => e.area), ['lucretili', 'veio']);
+  for (const r of [...info.esclusioni.slice(1), ...info.avvisi]) assert.ok(r.fonti.length && r.fonti.every((f) => f.titolo) && r.certezza, r.area);
 });
