@@ -8,6 +8,11 @@ L’indice è `dev/index.html`; la prima prova è `dev/preferiti.html`, con lo
 studio in [ux-preferiti.md](ux-preferiti.md). La pubblicazione dello studio
 non implementa persistenza o sincronizzazione dei Preferiti nell’app.
 
+`dev/home-stati.html` contiene la demo della composizione della home e del ciclo
+di vita di «Come funziona»: 18 scenari sintetici e stati della visita, con lo
+studio in [ux-home-condizioni.md](ux-home-condizioni.md). La pubblicazione della
+demo non modifica il comportamento della home principale.
+
 Per aggiungere una prova, inserire un HTML in `dev/` e collegarlo dall’indice,
 indicando stato e limiti. Usare percorsi assoluti per CSS, moduli e immagini
 condivisi. Non duplicare i file in `docs/`, che resta esclusa dalla pubblicazione.
