@@ -12,7 +12,7 @@ Il box «Come funziona» è utile, ma non deve separare il calendario dai conten
 
 1. Intestazione, interessi, filtri e calendario.
 2. **Contenuti del giorno scelto:** proposta principale e altre proposte effettivamente idonee, oppure piccolo stato vuoto. Nessuna spiegazione introduttiva fra selettore e risultati.
-3. Eventuale occasione futura, compatta e con data diversa dichiarata. «Valuta domani» cambia il giorno solo dopo il tocco; non sostituisce in silenzio il giorno scelto.
+3. Eventuale occasione futura, compatta e con data diversa dichiarata. Dal 21/10/2026 sta dentro il riquadro come card unica («Vedi domani →»); con oggi ormai tardi la home passa da sola a quel giorno, con la riga «Torna a oggi» (vedi ux-navigazione.md).
 4. «Come funziona», completo o compatto secondo lo stato della visita. È una spiegazione del prodotto, non un risultato del calendario.
 5. **Luoghi da conoscere**, presentazione editoriale senza indice del giorno: foto, luogo, accesso alla scheda. Non è una proposta per partire oggi.
 6. **Guide e schede da leggere**. Ordine e soggetto possono essere pertinenti al contesto (per esempio pioggia), ma non spariscono se l’indice è basso.
@@ -85,7 +85,7 @@ Il box illustrato della demo mantiene i tre concetti; testo dei riepiloghi, sogl
 
 ## Integrazione nella home · shell v317
 
-La home usa `js/home-composition.js` per distinguere proposte consigliabili, proposte da valutare e assenza di proposte. Il punteggio arriva già corretto per il meteo: la composizione non lo moltiplica nuovamente. Le proposte favorevoli passano insieme i filtri esistenti, il controllo dell’orario e il meteo verificabile; la prossima occasione applica gli stessi criteri. Il giorno della home resta oggi fino a una selezione esplicita, anche quando non ci sono proposte; la mappa conserva la propria gestione della data.
+La home usa `js/home-composition.js` per distinguere proposte consigliabili, proposte da valutare e assenza di proposte. Il punteggio arriva già corretto per il meteo: la composizione non lo moltiplica nuovamente. Le proposte favorevoli passano insieme i filtri esistenti, il controllo dell’orario e il meteo verificabile; la prossima occasione applica gli stessi criteri. ~~Il giorno della home resta oggi fino a una selezione esplicita, anche quando non ci sono proposte~~ (superata il 21/10/2026: quando per oggi è tardi la home passa da sola al prossimo giorno utile, vedi [ux-navigazione.md](ux-navigazione.md#home-quando-per-oggi-è-tardi--decisione-del-21-ottobre-2026)); la mappa conserva la propria gestione della data.
 
 Le proposte discrete sono righe compatte aperte su richiesta; le card in evidenza e le alternative contengono solo proposte favorevoli. Nei casi vuoti non si popolano le scoperte «Durante il giro» con una località arbitraria. La sezione conoscitiva delle specie usa il catalogo e i periodi documentati, senza indici del giorno o dichiarazioni locali; la guida può contestualizzare la pioggia. Esplorazione regionale, giri editoriali, Taccuino e regole restano accessibili. Vincoli di accesso e raccolta restano quelli effettivamente documentati nei dati e nelle schede: non si inventa uno stato di chiusura da un punteggio basso.
 
