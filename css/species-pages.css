@@ -641,7 +641,7 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 @media(max-width:600px) { .plant-cmp-pair { gap:12px; } .plant-cmp-species .btn { padding-inline:8px; font-size:14px; } .plant-cmp-row .trait-strip > li { padding-inline:8px; } }
 
 /* Stationary photo controls: changing photographs never shifts the page. */
-.inline-gallery-controls { position:absolute; z-index:5; top:16px; right:16px; display:flex; align-items:center; gap:4px; padding:3px; border:1px solid var(--control-edge); border-radius:999px; background:var(--surface); color:var(--text); }
+.inline-gallery-controls { position:absolute; z-index:5; top:16px; right:76px; display:flex; align-items:center; gap:4px; padding:3px; border:1px solid var(--control-edge); border-radius:999px; background:var(--surface); color:var(--text); }
 .inline-gallery-controls button { display:grid; place-items:center; width:44px; height:44px; padding:0; border:0; border-radius:50%; color:inherit; background:none; cursor:pointer; }
 .inline-gallery-controls button:hover { background:var(--surface-2); }
 .inline-gallery-controls button:focus-visible { outline:3px solid var(--focus); outline-offset:1px; }
