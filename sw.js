@@ -4,7 +4,7 @@
 // - meteo Open-Meteo: gestito dall'app con data di acquisizione e limite d'età
 // - mappe: dalla cache se gia' viste, con un limite di tessere
 // - diario (/api/): mai in cache
-const SHELL = 'fungaroli-shell-v313';
+const SHELL = 'fungaroli-shell-v314';
 const RUNTIME = 'fungaroli-runtime-v1';
 const TILES = 'fungaroli-tiles-v1';
 const CONTENT = 'fungaroli-content-v1';
@@ -93,6 +93,8 @@ self.addEventListener('fetch', (e) => {
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
   if (url.origin === location.origin) {
+    // Le prove pubblicate restano indipendenti dalla cache e dal ripiego dell’app.
+    if(url.pathname==='/dev'||url.pathname.startsWith('/dev/'))return;
     // Streaming e richieste Range: gestiti dal browser, mai copiati nella cache PWA.
     if (url.pathname.startsWith('/assets/video/') && url.pathname.endsWith('.mp4')) return;
     if(url.pathname==='/api/content/v1/snapshot'){e.respondWith(networkFirst(req,RUNTIME));return;}

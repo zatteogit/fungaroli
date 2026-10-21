@@ -11,3 +11,12 @@
 /questionario.html
   Content-Security-Policy: frame-ancestors 'none'
   X-Frame-Options: DENY
+
+# Prove pubbliche: aggiornamento immediato e nessuna indicizzazione.
+/dev
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: no-store
+
+/dev/*
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: no-store
