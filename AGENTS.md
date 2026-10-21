@@ -28,8 +28,8 @@ La suite browser avvia un solo Wrangler sulla porta 8788: non lanciarne due insi
 
 **Quando lanciare la suite browser** (dura circa 8–10 minuti):
 - a ogni modifica, solo gli spec delle parti toccate (`npx playwright test tests/browser/<spec> -g "<titolo>"`);
-- la suite completa una volta per rilascio, in background, quando più modifiche sono pronte; nel frattempo si lavora in una copia separata (git worktree), mai sui file del repository mentre la suite gira;
-- si pubblica solo con la suite completa verde. Un test noto per problemi di tempi (es. «vetrina varia») va rilanciato da solo prima di considerarlo instabile.
+- la suite completa è facoltativa e non è un requisito per pubblicare. Quando viene eseguita, usare una copia separata (git worktree), senza modificarne i file durante i test;
+- un test noto per problemi di tempi (es. «vetrina varia») va rilanciato da solo prima di considerarlo instabile. Riportare gli errori e i limiti delle verifiche nella PR.
 
 ## Regole che non si vedono dal codice
 
