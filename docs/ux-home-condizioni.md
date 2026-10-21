@@ -1,6 +1,6 @@
 # Home composta secondo il contesto · demo del 21 ottobre 2026
 
-Stato: **proposta da validare, non integrazione nella home pubblica**. [Demo interattiva](../dev/home-stati.html).
+Stato: **regole approvate da Matteo e integrate nella home, shell v317**. La demo resta disponibile come studio delle casistiche. [Demo interattiva](../dev/home-stati.html).
 
 ## Richieste di Matteo
 
@@ -83,15 +83,15 @@ La chiusura esplicita va ricordata in modo separato dalla prima visita e dai seg
 
 Il box illustrato della demo mantiene i tre concetti; testo dei riepiloghi, soglie community e privacy rimangono accessibili in «Dimmi di più». La demo non aggiunge contributi dimostrativi e non promette che il servizio di condivisione sia già attivo per chiunque.
 
-## Integrazione ancora da fare
+## Integrazione nella home · shell v317
 
-Il codice pubblico attuale (`renderHome`, `renderOutdoorHome`, `renderDiscoveryBreak`) usa ancora la prima proposta della graduatoria come card principale. `selectOutingWeather` ripiega sulla lista intera se non trova alternative meno critiche. Cambiare soltanto le intestazioni lascia quindi la contraddizione visibile.
+La home usa `js/home-composition.js` per distinguere proposte consigliabili, proposte da valutare e assenza di proposte. Il punteggio arriva già corretto per il meteo: la composizione non lo moltiplica nuovamente. Le proposte favorevoli passano insieme i filtri esistenti, il controllo dell’orario e il meteo verificabile; la prossima occasione applica gli stessi criteri. Il giorno della home resta oggi fino a una selezione esplicita, anche quando non ci sono proposte; la mappa conserva la propria gestione della data.
 
-L’integrazione dovrà calcolare prima lo stato della pagina e le liste effettivamente proponibili, poi rendere i blocchi. Non mescolare indisponibilità, filtri e condizioni basse in un solo «nessun risultato». Durante gli aggiornamenti non mantenere una vecchia hero solo per stabilità grafica se non è più idonea; invece conservare focus e posizione per le proposte ancora valide. Mappa e dettaglio possono restare consultabili con i relativi dati e avvisi: l’assenza di una raccomandazione in home non cancella le schede.
+Le proposte discrete sono righe compatte aperte su richiesta; le card in evidenza e le alternative contengono solo proposte favorevoli. Nei casi vuoti non si popolano le scoperte «Durante il giro» con una località arbitraria. La sezione conoscitiva delle specie usa il catalogo e i periodi documentati, senza indici del giorno o dichiarazioni locali; la guida può contestualizzare la pioggia. Esplorazione regionale, giri editoriali, Taccuino e regole restano accessibili. Vincoli di accesso e raccolta restano quelli effettivamente documentati nei dati e nelle schede: non si inventa uno stato di chiusura da un punteggio basso.
 
-`renderSeason` va separato dal ranking del giorno per i contenuti indipendenti: una specie in catalogo o nel suo calendario non va presentata come presenza odierna in una zona. «Durante il giro» è contestuale a una proposta selezionata: senza quella proposta non va popolato con un luogo arbitrario. Conservare community, guide, esplorazione, regole e Taccuino anche nei rami di errore, senza ritorni anticipati che li nascondano.
+`js/home-intro.js` gestisce presentazione, sessione, chiusura esplicita e uso effettivo del Taccuino per proprietario del browser. La chiusura precedente `fronda:community-card-dismissed:v1` viene rispettata per l’ospite, senza attribuirla a un nuovo profilo. Il box è dopo i risultati; il suo link di aiuto è sempre raggiungibile. Un’annotazione o un ricordo salvato riduce la spiegazione all’ingresso successivo, non mentre la si sta leggendo. Un cambio di account aggiorna il contenuto e non riutilizza riepiloghi del precedente proprietario.
 
-L’intro pubblica oggi usa `fronda:community-card-dismissed:v1` come chiusura nel browser. Il nuovo ciclo di vita richiede uno stato esplicito per presentazione/chiusura/versione/proprietario, con migrazione prudente della chiusura esistente. Questo documento non autorizza a reinterpretare lo stato attuale come una conoscenza dimostrata dell’utente.
+La pubblicazione della home non implementa i Preferiti: quel prototipo rimane separato, con la sua specifica di persistenza e sincronizzazione.
 
 ## Limiti e verifica della demo
 
