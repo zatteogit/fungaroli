@@ -1742,12 +1742,16 @@ function dayChips(box, selected, onPick, { withAll = false } = {}) {
       }
 
       b.setAttribute('aria-label', `Tutta la settimana, ${fmtDate(d0, { day: 'numeric', month: 'long' })} - ${fmtDate(d1, { day: 'numeric', month: 'long' })}${same ? '' : ''}: mostra le uscite migliori del periodo${areaDescription}`);
+    }else{
+      mk('Settimana',`${fmtDate(outdoorDate(0),{day:'numeric'})}–${fmtDate(outdoorDate(AHEAD_DAYS),{day:'numeric'})}`,null,null);
+      box.lastChild.classList.add('day-all');box.lastChild.setAttribute('aria-label','Tutta la settimana: condizioni da verificare');
     }
   }
   for (let o = 0; o <= AHEAD_DAYS; o++) {
     const best = bestOfDay(o);
-    if (best) { mk(o === 0 ? 'Oggi' : o === 1 ? 'Domani' : fmtDate(best.d.date, { weekday: 'long' }).replace('.', ''), fmtDate(best.d.date, { day: 'numeric' }), o, best.s);
-    box.lastChild.insertAdjacentHTML('beforeend',calendarWeather(best.z,best.d)); }
+    const date=best?.d.date||outdoorDate(o);
+    mk(o===0?'Oggi':o===1?'Domani':fmtDate(date,{weekday:'long'}).replace('.',''),fmtDate(date,{day:'numeric'}),o,best?.s??null);
+    if(best)box.lastChild.insertAdjacentHTML('beforeend',calendarWeather(best.z,best.d));
   }
   // Conserva nodi, focus e posizione del binario mentre cambia la selezione.
   reconcileChildren(previous,box);
