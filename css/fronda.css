@@ -1645,7 +1645,7 @@ button.cover-index > b { font-size:21px; line-height:1.2; }
 /* La data selezionata e le proposte restano contigue; il resto è esplorazione. */
 .home-empty { display:flex; align-items:flex-start; gap:16px; padding:22px; border:1px solid var(--hair); border-radius:20px; background:var(--surface-2); }
 .home-empty-icon { display:grid; place-items:center; flex:none; width:40px; height:40px; padding:8px; border-radius:12px; background:var(--story-fiordaliso); color:var(--story-ink); }
-.home-empty-icon svg { width:24px; height:24px; }
+.home-empty-icon svg { width:24px; height:24px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
 .home-empty h2 { margin:0; font:700 18px/1.35 var(--font-body); }
 .home-empty p { margin:6px 0 0; max-width:65ch; color:var(--text-2); font-size:14px; line-height:1.6; }
 .home-empty .link-btn { margin-top:10px; min-height:44px; }
