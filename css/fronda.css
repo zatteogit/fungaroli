@@ -1613,3 +1613,31 @@ button.cover-index > b { font-size:21px; line-height:1.2; }
 .story-invite.catalog-invite-trees { background:var(--story-germoglio); }
 .story-invite.catalog-invite-plants { background:var(--story-ciclamino); }
 .story-invite.animal-construction { background:var(--story-corallo); }
+
+/* Cataloghi: ritmo condiviso, foto svincolate dalle proporzioni originali. */
+.catalog-view > .view-head { margin-bottom:var(--sp-6); }
+.catalog-view > .seg-nav { margin-bottom:var(--sp-4); }
+.catalog-view > .seg-nav:last-of-type { margin-bottom:var(--sp-6); }
+.catalog-view > .sub-nav.recognize-entry { margin:0 0 var(--sp-6); }
+.catalog-view .catalog-invite { display:grid; grid-template-columns:minmax(0,7fr) minmax(0,3fr); align-items:stretch; gap:0; min-height:240px; padding:0; margin:0 0 var(--sp-6); }
+.catalog-view .catalog-invite > div { display:flex; flex-direction:column; align-items:flex-start; justify-content:center; min-width:0; padding:28px; }
+.catalog-view .catalog-invite h2 { margin:0 0 12px; }
+.catalog-view .catalog-invite p { max-width:60ch; }
+.catalog-view .catalog-invite .story-photo { position:relative; width:auto; max-width:none; min-width:0; min-height:0; margin:0; align-self:stretch; }
+.catalog-view .catalog-invite .story-photo img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.catalog-view :is(#tree-grid > .catalog-filters,.botanical-tools > .recognize-modes,.animal-paths) { margin:0 0 var(--sp-4); gap:var(--sp-2); }
+.catalog-view :is(.catalog-filters,.animal-paths) > button { min-height:44px; }
+.catalog-view :is([data-tree-count],[data-plant-count],[data-animal-count]) { margin:var(--sp-4) 0; }
+.catalog-view .animal-intro { margin:0 0 var(--sp-4); }
+@media(max-width:760px) {
+ .catalog-view .catalog-invite > div { padding:24px; }
+}
+@media(max-width:599px) {
+ .catalog-view .catalog-invite { grid-template-columns:minmax(0,1fr); grid-template-rows:160px auto; }
+ .catalog-view .catalog-invite .story-photo { grid-row:1; }
+ .catalog-view .catalog-invite > div { min-height:260px; padding:24px; }
+}
+@media(max-width:360px) {
+ .catalog-view .catalog-invite > div { padding:20px; }
+}
+.catalog-view .animal-construction .story-photo img { object-position:0 50%; }
