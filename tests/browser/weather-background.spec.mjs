@@ -10,6 +10,8 @@ for(const width of [390,1280])test(`cache immediata, aggiornamento discreto e co
  await page.route('https://**/*',r=>r.abort());
  await page.route('**/api/weather/v1/forecast?**',async r=>{if(paused)await new Promise(resolve=>pending.push(resolve));await r.fulfill(fail?{status:429,json:{error:'Limite'}}:{json:forecast(r.request(),rain)});});
  await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','62026-10-20'));
+ // Mattina di oggi: la proposta di oggi è ancora utile, a qualunque ora giri la prova (il caso tardi è in home-states.spec.mjs).
+ await page.clock.install({time:new Date(`${todayISO()}T06:30:00+02:00`)});
  await page.goto('/');await expect(page.locator('#hero .cover-link')).toBeVisible();await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');
  await expect(page.locator('#season li').first()).toBeVisible();await expect(page.locator('#season-h')).toBeVisible();
  await page.evaluate(()=>{for(const k of ['fungaroli:weather:zones:v3','fungaroli:outing:zones:v3']){const c=JSON.parse(localStorage.getItem(k));for(const r of Object.values(c))r.t=Date.now()-7200000;localStorage.setItem(k,JSON.stringify(c));}});
@@ -20,8 +22,9 @@ for(const width of [390,1280])test(`cache immediata, aggiornamento discreto e co
  expect(await page.evaluate(()=>savedHero===document.querySelector('#hero .cover-link')&&savedPhoto===document.querySelector('#hero .cover-img'))).toBe(true);
  const placed=await page.locator('#hero [data-walk-zone],#ranking [data-walk-zone]').evaluateAll(n=>n.map(a=>a.dataset.walkZone));expect(new Set(placed).size).toBe(placed.length);await expect(page.locator('#season li').first()).toBeVisible();
  await expect(page.locator('#updated')).toContainText('Meteo aggiornato');await expect(page.locator('#app-toast.on')).toHaveCount(0);await page.evaluate(()=>document.dispatchEvent(new Event('fungaroli:community')));await expect(page.locator('#hero .cover-link')).toHaveAttribute('href',href);expect(await page.locator('#hero .cover-index').innerText()).not.toBe(score);
- fail=true;await page.locator('#refresh').click();await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');await expect(page.locator('#hero .cover-link')).toHaveAttribute('href',href);await expect(page.locator('#weather-work')).toBeHidden();await expect(page.locator('#updated')).toContainText('Meteo salvato');
- await expect(page.locator('#stale')).toBeVisible();await expect(page.locator('#stale')).toContainText('meteo salvato');await expect(page.locator('#refresh')).toBeVisible();await expect(page.locator('#app-toast.on')).toHaveCount(0);await page.screenshot({path:`/tmp/weather-partial-${width}.png`});
+ fail=true;await page.locator('#refresh').click();await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');await expect(page.locator('#hero .cover-link')).toHaveAttribute('href',href);await expect(page.locator('#weather-work')).toBeHidden();await expect(page.locator('#updated')).toContainText('da aggiornare');
+ // Una sola riga del meteo: il dettaglio è su richiesta e l'unico comando resta «Aggiorna».
+ await expect(page.locator('.home-weather-details')).toBeVisible();await expect(page.locator('#stale')).toBeHidden();await page.locator('.home-weather-details > summary').click();await expect(page.locator('#stale')).toBeVisible();await expect(page.locator('#stale')).toContainText('meteo salvato');await expect(page.locator('#stale .link-btn')).toBeHidden();await expect(page.locator('#refresh')).toBeVisible();await expect(page.locator('#refresh')).toContainText('Aggiorna');await expect(page.locator('#app-toast.on')).toHaveCount(0);await page.screenshot({path:`/tmp/weather-partial-${width}.png`});
  await page.locator('#refresh').click();await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');await expect(page.locator('#weather-work')).toBeHidden();await expect(page.locator('#app-toast.on')).toHaveCount(0);
  await page.screenshot({path:`/tmp/weather-cached-${width}.png`});expect(errors).toEqual([]);
 });
