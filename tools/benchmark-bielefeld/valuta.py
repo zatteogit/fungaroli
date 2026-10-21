@@ -14,8 +14,9 @@ hash dei moduli congelati; stime di σ per (2b); fattori dell'indice con `node f
 js/species.js); allineamento fra JavaScript e Python; controllo di sigma_brejon.py; solo dopo, validazione a stagione
 esclusa, metriche, bootstrap per stagione, jackknife e sensibilità. Si ferma al primo controllo che non torna.
 
-Scrive in dati/ (esclusa da git): serie.json, sigma.json, fattori.json (da fattori.mjs), esiti.json.
-Stampa una tabella leggibile. Solo libreria standard e numpy.
+Scrive in dati/ (esclusa da git): serie.json, sigma.json, fattori.json (da fattori.mjs), esiti.json ed
+esiti-riepilogo.json (solo valori aggregati; la copia versionata sta accanto a questo file). Stampa una tabella
+leggibile e lo SHA-256 di esiti.json senza `meta`, che è quello riproducibile. Solo libreria standard e numpy.
 
 L'indice di Fronda è sperimentale (0–10) e non è una probabilità. Qui si misura solo come ordina i giorni.
 """
@@ -63,6 +64,7 @@ IDX_1AGO = 34         # nella serie che parte dal 28/6
 LUNG_SERIE = 156      # 28/6 … 30/11
 GIORNI_STAGIONE = 122  # 1/8 … 30/11
 TOPT = 13.0
+DECIMALI_PARI_MERITO = 12  # punteggi arrotondati a 10⁻¹² prima di cercare i pari merito (README, «Deviazioni»)
 
 # Insiemi di giorni: scostamenti dal 1/8 (sezioni 4.2 e 5)
 PERIODI = {
@@ -320,8 +322,12 @@ def ap_caso(n, r):
 
 
 def metriche_insieme(s, y, c=None, rc=None):
-    """AP attesa sulle rotture dei pari merito, ROC-AUC (Mann–Whitney, pari merito ½), Spearman sui conteggi."""
-    s = np.asarray(s, dtype=float)
+    """AP attesa sulle rotture dei pari merito, ROC-AUC (Mann–Whitney, pari merito ½), Spearman sui conteggi.
+
+    Pari merito: punteggi arrotondati a 10⁻¹² prima di cercarli, così due valori uguali in aritmetica esatta ma
+    diversi nell'ultima cifra binaria (per esempio `seasonWeight` interpolato) contano come pari merito.
+    """
+    s = np.round(np.asarray(s, dtype=float), DECIMALI_PARI_MERITO)
     y = np.asarray(y, dtype=np.int64)
     n = len(s)
     R = int(y.sum())
@@ -721,15 +727,36 @@ def valuta_analisi(modelli, etichette, conteggi, differenze, B):
             d['complesso'][c] = {'stima': punti_c[a][c] - punti_c[b][c], 'boot': percentili(vc[okc]),
                                  'boot_scartate': int((~okc).sum())}
         risultati['differenze'][nome] = d
+    risultati['insieme'] = insieme_di(etichette)
+    return risultati, loso
+
+
+def insieme_di(etichette):
+    """Unità, positivi e riferimenti dell'AP a caso (sezione 3.6): dipendono solo dall'esito."""
     n_tot = int(sum(len(e) for e in etichette))
     r_tot = int(sum(int(e.sum()) for e in etichette))
-    risultati['insieme'] = {
+    return {
         'unita': n_tot, 'positivi': r_tot, 'prevalenza': r_tot / n_tot, 'ap_caso_complesso': ap_caso(n_tot, r_tot),
         'positivi_per_stagione': {str(ANNI[k]): int(etichette[k].sum()) for k in TUTTE},
         'ap_caso_stratificata': stratifica([metriche_insieme(np.zeros(len(etichette[k])), etichette[k])
                                             for k in TUTTE], TUTTE)['ap'],
     }
-    return risultati, loso
+
+
+def controlla_riferimenti(insiemi):
+    """Riferimenti della sezione 3.6 (solo esito), prima di qualsiasi metrica dei modelli."""
+    rif = {'principale': (1090, 155, 0.1422, 0.1474, 0.2111), 'S1': (1220, 155, 0.1270, 0.1318, 0.1900),
+           'S2': (830, 135, 0.1627, 0.1690, None), 'S3': (150, 65, 0.4333, 0.4508, None)}
+    for nome, (n_, r_, pi_, apc, aps) in rif.items():
+        ins = insiemi[nome]
+        if ins['unita'] != n_ or ins['positivi'] != r_ or abs(ins['prevalenza'] - pi_) > 5e-5 or \
+                abs(ins['ap_caso_complesso'] - apc) > 5e-5 or (aps is not None and
+                                                              abs(ins['ap_caso_stratificata'] - aps) > 5e-5):
+            ferma(f'riferimenti di 3.6 diversi per {nome}: {ins}')
+    pos_attesi = {'2015': 12, '2016': 1, '2017': 16, '2018': 4, '2019': 16, '2020': 27, '2021': 18, '2022': 15,
+                  '2023': 25, '2024': 21}
+    if insiemi['principale']['positivi_per_stagione'] != pos_attesi:
+        ferma('positivi per stagione diversi dalla sezione 3.6')
 
 
 # ----------------------------------------------------------------------------------------------------------------------
@@ -1102,8 +1129,19 @@ def main():
     def etichette_di(an):
         return [giorni.Y[an.righe[k]] for k in TUTTE], [giorni.Mnb[an.righe[k]] for k in TUTTE]
 
-    # Analisi principale, con le sensibilità S4–S7 sugli stessi giorni
+    # S3: settimane fisse dal 05/08 (15 per stagione); esito = almeno un giorno positivo nella settimana
     an = analisi['principale']
+    et_w = [giorni.Y[an.righe[k]][:105].reshape(15, 7).max(axis=1) for k in TUTTE]
+    co_w = [giorni.Mnb[an.righe[k]][:105].reshape(15, 7).sum(axis=1) for k in TUTTE]
+
+    # Controllo dei riferimenti della sezione 3.6 (solo esito), prima di calcolare qualsiasi metrica dei modelli
+    insiemi = {n: insieme_di(etichette_di(analisi[n])[0]) for n in PERIODI}
+    insiemi['S3'] = insieme_di(et_w)
+    controlla_riferimenti(insiemi)
+    print('[—] Riferimenti della sezione 3.6 (solo esito): π e AP a caso di principale, S1, S2, settimane; '
+          'positivi per stagione: ok')
+
+    # Analisi principale, con le sensibilità S4–S7 sugli stessi giorni
     mod = modelli_base(an)
     mod['(0) h=3'] = modello_c0(giorni, an, 3)
     mod['(0) h=14'] = modello_c0(giorni, an, 14)
@@ -1144,7 +1182,7 @@ def main():
         print(f'Valutazione: {nome} …', flush=True)
         esiti['analisi'][nome], _ = valuta_analisi(modelli_base(an_s), et_s, co_s, diff_base, B)
 
-    # S3: settimane fisse dal 05/08 (15 per stagione), punteggi = media dei punteggi giornalieri fuori campione
+    # S3: punteggi della settimana = media dei punteggi giornalieri fuori campione
     def settimanale(f_giorno, probabilita=False):
         def f(train, test):
             s = f_giorno(train, test)
@@ -1153,24 +1191,8 @@ def main():
             return s[:105].reshape(15, 7).mean(axis=1)
         return memo(f)
     mod_w = {m: settimanale(mod[m], probabilita=(m == '(3)')) for m in ('(0)', '(1)', '(2)', '(2b)', '(3)')}
-    et_w = [giorni.Y[an.righe[k]][:105].reshape(15, 7).max(axis=1) for k in TUTTE]
-    co_w = [giorni.Mnb[an.righe[k]][:105].reshape(15, 7).sum(axis=1) for k in TUTTE]
     print('Valutazione: S3 (settimane) …', flush=True)
     esiti['analisi']['S3'], _ = valuta_analisi(mod_w, et_w, co_w, diff_base, B)
-
-    # Controllo dei riferimenti della sezione 3.6 (solo esito)
-    rif = {'principale': (1090, 155, 0.1422, 0.1474, 0.2111), 'S1': (1220, 155, 0.1270, 0.1318, 0.1900),
-           'S2': (830, 135, 0.1627, 0.1690, None), 'S3': (150, 65, 0.4333, 0.4508, None)}
-    for nome, (n_, r_, pi_, apc, aps) in rif.items():
-        ins = esiti['analisi'][nome]['insieme']
-        if ins['unita'] != n_ or ins['positivi'] != r_ or abs(ins['prevalenza'] - pi_) > 5e-5 or \
-                abs(ins['ap_caso_complesso'] - apc) > 5e-5 or (aps is not None and
-                                                              abs(ins['ap_caso_stratificata'] - aps) > 5e-5):
-            ferma(f'riferimenti di 3.6 diversi per {nome}: {ins}')
-    pos_attesi = {'2015': 12, '2016': 1, '2017': 16, '2018': 4, '2019': 16, '2020': 27, '2021': 18, '2022': 15,
-                  '2023': 25, '2024': 21}
-    if esiti['analisi']['principale']['insieme']['positivi_per_stagione'] != pos_attesi:
-        ferma('positivi per stagione diversi dalla sezione 3.6')
 
     # Lettura preregistrata (9.2–9.5, 10)
     dp = ris_pr['differenze']
@@ -1237,16 +1259,61 @@ def main():
     }
     esiti['controlli'] = controlli
 
-    testo = json.dumps(pulisci(esiti), sort_keys=True, ensure_ascii=False, indent=1, allow_nan=False)
+    # Hash riproducibile: esiti senza `meta` (che registra sistema, versioni e commit)
+    senza_meta = {k: v for k, v in esiti.items() if k != 'meta'}
+    sha_senza_meta = hashlib.sha256(testo_json(senza_meta).encode('utf-8')).hexdigest()
+    esiti['meta']['sha256_esiti_senza_meta'] = sha_senza_meta
+    esiti['meta']['git'] = stato_git()
+
     dest = os.path.join(dati, 'esiti.json')
-    with open(dest + '.tmp', 'w', encoding='utf-8') as f:
-        f.write(testo + '\n')
-    os.replace(dest + '.tmp', dest)
+    scrivi(dest, testo_json(esiti))
+
+    # Riepilogo da versionare: niente valori giornalieri E-OBS, niente controlli sui dati, niente sistema né commit
+    riepilogo = {
+        'nota': ('Riepilogo di esiti.json di tools/benchmark-bielefeld/valuta.py. Contiene solo valori aggregati: '
+                 'nessun valore meteo giornaliero E-OBS. I controlli sui dati sono nel README.'),
+        'sha256_esiti_senza_meta': sha_senza_meta,
+        'analisi': esiti['analisi'],
+        'lettura': esiti['lettura'],
+        'fra_stagioni': esiti['fra_stagioni'],
+        'parametri_per_giro': esiti['parametri_per_giro'],
+        'versioni': {k: v for k, v in esiti['meta'].items() if k not in ('sistema', 'git', 'avvertenze')},
+        'avvertenze': esiti['meta']['avvertenze'],
+    }
+    dest_r = os.path.join(dati, 'esiti-riepilogo.json')
+    scrivi(dest_r, testo_json(riepilogo))
 
     stampa(esiti)
     print('=' * 78)
     print(f'Scritto {dest}')
     print(f'SHA-256 di esiti.json: {sha256_file(dest)}')
+    print(f'SHA-256 di esiti.json senza meta (riproducibile): {sha_senza_meta}')
+    print(f'Scritto {dest_r} (SHA-256 {sha256_file(dest_r)})')
+
+
+def testo_json(x):
+    return json.dumps(pulisci(x), sort_keys=True, ensure_ascii=False, indent=1, allow_nan=False) + '\n'
+
+
+def scrivi(dest, testo):
+    with open(dest + '.tmp', 'w', encoding='utf-8') as f:
+        f.write(testo)
+    os.replace(dest + '.tmp', dest)
+
+
+def stato_git():
+    """Commit del repository e file tracciati modificati, se git è disponibile (solo informazione, in `meta`)."""
+    try:
+        commit = subprocess.run(['git', '-C', RADICE, 'rev-parse', 'HEAD'], capture_output=True, text=True,
+                                timeout=10)
+        stato = subprocess.run(['git', '-C', RADICE, 'status', '--porcelain', '--untracked-files=no'],
+                               capture_output=True, text=True, timeout=10)
+    except (OSError, subprocess.SubprocessError):
+        return None
+    if commit.returncode != 0:
+        return None
+    modificati = sorted(r[3:] for r in stato.stdout.splitlines()) if stato.returncode == 0 else None
+    return {'commit': commit.stdout.strip(), 'file_tracciati_modificati': modificati}
 
 
 def stampa(esiti):

@@ -2,6 +2,8 @@
 
 Eseguita il 16 ottobre 2026 sul ramo `lavoro-benchmark`, seguendo la preregistrazione
 [`preregistrazione.md`](preregistrazione.md) (commit `450a8ba`, scritta e rivista prima di qualsiasi risultato).
+Rieseguita il 21 ottobre 2026 dopo la verifica indipendente (sezione «Verifica indipendente»): l'analisi principale e
+le etichette non cambiano.
 Riferimento: `docs/ipotesi/valutazione-modello-v3.md`, sezione 4.5.
 
 **Nessun esito cambia l'app.** `js/model.js` e `js/species.js` non sono stati toccati: `fattori.mjs` li importa. Un
@@ -18,7 +20,14 @@ ritrovamenti, sui dati che l'indice stesso cita?
 
 Metrica che decide: AP stratificata (PR-AUC dentro la stagione), periodo 05/08–21/11, 1090 giorni, 155 con
 ritrovamento. Un ordinamento a caso vale 0,211. Intervalli al 95%: **B** = bootstrap per stagione, **J** = jackknife
-per stagione dell'intera procedura. Per un verdetto servono entrambi dalla stessa parte di 0.
+per stagione dell'intera procedura. Regola preregistrata (sezione 9.2), con θ̂ la differenza stimata e δ = 0,02:
+
+- B e J tutti sopra 0 e θ̂ ≥ δ: «**ordina meglio**, su questi dati»;
+- B e J tutti sopra 0 e θ̂ < δ: «**meglio, ma trascurabile** (sotto δ)»;
+- B e J tutti sotto 0 e θ̂ ≤ −δ: «**ordina peggio**, su questi dati»;
+- B e J tutti sotto 0 e θ̂ > −δ: «**peggio, ma trascurabile** (sotto δ)»;
+- in ogni altro caso: «**non distinguibile** su questi dati». Se B e J stanno dentro (−δ; +δ) si aggiunge «la
+  differenza resta sotto δ in tutto l'intervallo».
 
 | Domanda | Differenza di AP stratificata | B | J | Esito preregistrato |
 |---|---:|---|---|---|
@@ -27,8 +36,7 @@ per stagione dell'intera procedura. Per un verdetto servono entrambi dalla stess
 | (b′) σ stimato fuori campione (2b) contro (1) | −0,041 | [−0,112; 0,013] | [−0,123; 0,042] | **non distinguibile** su questi dati |
 
 - **Lettura congiunta di (b) e (b′), per D5** (sezione 9.4): «Nessun vantaggio dimostrato per la curva più
-  stretta.» Le stime puntuali vanno nel senso opposto: la curva più stretta ordina un po' peggio, ma gli intervalli
-  comprendono lo 0.
+  stretta.» Nella stima puntuale la curva più stretta ordina un po' peggio, ma gli intervalli comprendono lo 0.
 - **Nessuna sensibilità contraddice il principale** (sezione 10).
 - «Non distinguibile» non vuol dire «uguali»: gli intervalli sono larghi. Con 10 stagioni era l'esito più probabile
   per (a) e (b′) (preregistrazione, 9.3).
@@ -56,6 +64,9 @@ per stagione dell'intera procedura. Per un verdetto servono entrambi dalla stess
 - **Studio:** preprint bioRxiv v2 (8/6/2026), licenza **CC BY-NC 4.0**. Non se ne riproducono testo né figure.
 - **Fuori dal repository** (`dati/`, esclusa da `.gitignore` di questa cartella): archivio, CSV, serie giornaliere,
   fattori per giorno, `esiti.json`. `tools/` è già escluso dalla pubblicazione del sito (`.assetsignore`).
+- **Nel repository:** `esiti-riepilogo.json`, solo valori aggregati (metriche, intervalli, lettura, parametri per giro,
+  medie per stagione). Fatto verificato il 21/10/2026: nessuna lista più lunga di 10 valori e nessun numero uguale a
+  uno dei 26 070 valori meteo del CSV (`Temp`, `Precip`, medie mobili).
 
 ## File
 
@@ -64,7 +75,8 @@ per stagione dell'intera procedura. Per un verdetto servono entrambi dalla stess
 | `preregistrazione.md` | Protocollo, scritto prima dei risultati. Non si modifica. |
 | `scarica.py` | Scarica l'archivio da Zenodo (oppure usa `--zip FILE`), controlla dimensione, MD5 e SHA-256, estrae solo il CSV in `dati/` e ne controlla lo SHA-256. Solo libreria standard. |
 | `fattori.mjs` | Importa `../../js/model.js` e `../../js/species.js` senza modificarli. Calcola `weatherFactors` e `seasonWeight` di edulis per ogni giorno, con `tsd` 3,5, 2,0 e i σ di (2b). Scrive `dati/fattori.json`. Lo lancia `valuta.py`. |
-| `valuta.py` | Controlli bloccanti, ricostruzione, chiamata a Node, stime, validazione a stagione esclusa, metriche, bootstrap, jackknife, sensibilità, lettura preregistrata. Scrive `dati/esiti.json` e una tabella su stdout. Solo libreria standard e numpy. |
+| `valuta.py` | Controlli bloccanti, ricostruzione, chiamata a Node, stime, validazione a stagione esclusa, metriche, bootstrap, jackknife, sensibilità, lettura preregistrata. Scrive `dati/esiti.json`, `dati/esiti-riepilogo.json` e una tabella su stdout. Solo libreria standard e numpy. |
+| `esiti-riepilogo.json` | Copia versionata di `dati/esiti-riepilogo.json` dell'esecuzione del 21/10/2026: analisi, lettura, parametri per giro, ρ per stagione, metriche delle sensibilità, stagioni escluse dallo Spearman. Niente meteo giornaliero, niente sistema né commit. |
 
 ## Come si ripete
 
@@ -77,7 +89,8 @@ python3 -m venv /tmp/venv-bielefeld
 /tmp/venv-bielefeld/bin/python -I tools/benchmark-bielefeld/scarica.py
 #   senza rete: … scarica.py --zip /percorso/Boletus_fruiting_triggers-V1.2.zip
 /tmp/venv-bielefeld/bin/python -I tools/benchmark-bielefeld/valuta.py
-sha256sum tools/benchmark-bielefeld/dati/esiti.json
+#   stampa alla fine lo SHA-256 di esiti.json senza meta: è quello riproducibile
+cmp tools/benchmark-bielefeld/dati/esiti-riepilogo.json tools/benchmark-bielefeld/esiti-riepilogo.json
 ```
 
 - Lo scaricamento da Zenodo è stato provato il 16/10/2026 e ha funzionato. Anche `--zip` con l'archivio locale dà
@@ -85,10 +98,15 @@ sha256sum tools/benchmark-bielefeld/dati/esiti.json
 - `valuta.py` si ferma al primo controllo che non torna, compreso un cambio dei moduli congelati (per esempio dopo
   l'unione della 2.1.0).
 - `--repliche N` serve solo per prove rapide. L'esito preregistrato usa 5000 repliche.
-- **Determinismo (Fatto verificato).** Due esecuzioni consecutive hanno dato `esiti.json` identico byte per byte:
-  SHA-256 `36da7739f24e454d904bdebebe5146f6c30484547101b6cfaa909a4c3f019e3c` in entrambe (anche lo stdout era
-  identico). `esiti.json` registra versioni, sistema e SHA-256 degli script: su un'altra macchina l'hash può cambiare
-  per questi campi. Con numpy 2.5.3 tutte le sezioni tranne `meta` sono risultate identiche.
+- **Hash riproducibile.** `meta` registra versioni, sistema, SHA-256 degli script, commit Git e file tracciati
+  modificati: l'hash del file intero cambia con questi campi. Quello riproducibile è lo SHA-256 di `esiti.json`
+  **senza `meta`**, scritto come lo scrive `valuta.py` (chiavi ordinate, `indent=1`, UTF-8, a capo finale). Sta in
+  `meta.sha256_esiti_senza_meta` e in `esiti-riepilogo.json`. Per ricalcolarlo:
+  `python3 -I -c "import json,hashlib,sys; e=json.load(open(sys.argv[1])); e.pop('meta'); print(hashlib.sha256((json.dumps(e,sort_keys=True,ensure_ascii=False,indent=1)+'\n').encode()).hexdigest())" tools/benchmark-bielefeld/dati/esiti.json`.
+- **Determinismo (Fatto verificato il 21/10/2026).** Due esecuzioni consecutive hanno dato `esiti.json` e
+  `esiti-riepilogo.json` identici byte per byte; lo stdout differiva solo per la cartella dei dati. SHA-256 senza
+  `meta`: `c88b8f870b07eb879b2ebd87af7eed857c5aa5f318f30dab0c342e89f5ea2f19`. Il 16/10 due esecuzioni avevano dato lo
+  stesso file intero (`36da7739…9e3c`); con numpy 2.5.3 tutte le sezioni tranne `meta` erano identiche.
 
 ## Controlli bloccanti (Fatto verificato)
 
@@ -103,7 +121,7 @@ Tutti superati prima di calcolare qualsiasi metrica (preregistrazione, sezione 1
 | 5 | Allineamento JavaScript–Python, 1220 giorni | Scarti massimi: t20 7,1·10⁻¹⁵, r30 2,8·10⁻¹⁴, effRain 2,8·10⁻¹⁴, rain 2,2·10⁻¹⁶, temp 1,7·10⁻¹⁵, maxEvent identico. Legame con le righe del CSV per data: t20 contro `rollT_20` del giorno prima 9,9·10⁻¹⁴, P26 contro `rollP_26` del giorno prima 8,9·10⁻¹⁵. `seasonWeight` uguale ai 7 valori attesi nel 2015 e nel 2020. `inputQuality.missing` = suolo, Tmin, Tmax in ogni giorno. 156 valori di σ di (2b), nessuno infinito |
 | 6 | Serie dei soli valori grezzi | 920 giorni (31/8–30/11, comprende i giorni di S2) con fattori identici a quelli della serie con ricostruzione |
 | 7 | `sigma_brejon.py` eseguito senza modifiche | Il porting riproduce le cifre stampate in entrambi i periodi; σ non arrotondato dello script (05/08–21/11) uguale al porting entro 1,1·10⁻¹¹ |
-| — | Riferimenti della sezione 3.6 (solo esito) | π e AP a caso uguali ai valori preregistrati per principale, S1, S2 e settimane; positivi per stagione uguali |
+| — | Riferimenti della sezione 3.6 (solo esito) | π e AP a caso uguali ai valori preregistrati per principale, S1, S2 e settimane; positivi per stagione uguali. Dal 21/10 il controllo viene prima delle metriche; nell'esecuzione del 16/10 veniva dopo (Deviazione 6) |
 
 **Da quale periodo viene σ = 2,0 (Fatto verificato, controllo 7).** `sigma_brejon.py` stima σ su tutte e 10 le
 stagioni:
@@ -135,7 +153,9 @@ logistica su P26, T20, T20² stimata sul training. Riferimento a caso: AP strati
 | (2b) | 0,371 | [0,297; 0,481] | [0,261; 0,482] | 0,746 | [0,675; 0,821] | [0,659; 0,833] | 0,307 | [0,220; 0,401] | [0,201; 0,413] | 1090 |
 | (3) | 0,451 | [0,348; 0,551] | [0,310; 0,591] | 0,764 | [0,701; 0,833] | [0,680; 0,847] | 0,334 | [0,256; 0,417] | [0,221; 0,447] | 1090 |
 
-Nessuna replica bootstrap scartata; nessuna stagione esclusa dallo Spearman.
+Nessuna replica bootstrap scartata; nessuna stagione esclusa dallo Spearman. Nelle sensibilità nessuna replica
+scartata; in S2 il 2016 (nessun ritrovamento fra 31/08 e 21/11) è escluso dallo Spearman dentro la stagione per tutti
+i modelli, 1 stagione su 10, e non pesa nell'AP stratificata.
 
 ### Differenze
 
@@ -166,7 +186,7 @@ Decide solo la colonna dell'AP stratificata; ROC-AUC e Spearman si riportano sen
 
 **Fatto verificato** (dalla tabella): (1) sta sopra l'AP a caso in tutte le 10 stagioni, (0) in 7. (1) supera (0)
 in 9 stagioni su 10 (non nel 2019). (2) supera (1) in 3 stagioni (2018, 2022, 2024) e perde nelle altre 7; la
-perdita più grande è nel 2021 (0,372 contro 0,692). Lo Spearman per stagione è in `esiti.json`.
+perdita più grande è nel 2021 (0,372 contro 0,692). Lo Spearman per stagione è in `esiti-riepilogo.json`.
 
 ### Metriche sul complesso (secondarie, senza verdetto)
 
@@ -234,7 +254,7 @@ convergenti, nessun σ_k infinito.
   in S1, fra 1,695 e 2,641 in S2. Nessuna stima non convergente.
 
 **(3): logistica.** Tutte le stime convergono senza penalità (7–9 iterazioni), anche nelle 45 del jackknife: il
-ripiego L2 non è mai servito. I coefficienti per giro sono in `esiti.json` (`parametri_per_giro`).
+ripiego L2 non è mai servito. I coefficienti per giro sono in `esiti-riepilogo.json` (`parametri_per_giro`).
 
 ## Sensibilità (descrittive, senza etichetta)
 
@@ -245,15 +265,18 @@ sezione 10 (entrambi gli intervalli dalla parte di 0 opposta alla stima del prin
 
 | Differenza | S1 | B | J | S2 | B | J | S3 | B | J |
 |---|---:|---|---|---:|---|---|---:|---|---|
-| (a) (1)−(0) | 0,099 | [0,012; 0,222] | [−0,042; 0,240] | 0,085 | [−0,030; 0,227] | [−0,100; 0,269] | 0,120 | [0,063; 0,185] | [−0,102; 0,342] |
+| (a) (1)−(0) | 0,099 | [0,012; 0,222] | [−0,042; 0,240] | 0,085 | [−0,030; 0,227] | [−0,100; 0,269] | 0,120 | [0,063; 0,186] | [−0,100; 0,341] |
 | (b) (2)−(1) | −0,047 | [−0,126; 0,012] | [−0,135; 0,042] | −0,043 | [−0,135; 0,021] | [−0,146; 0,060] | −0,039 | [−0,073; −0,008] | [−0,077; −0,001] |
 | (b′) (2b)−(1) | −0,043 | [−0,119; 0,013] | [−0,129; 0,043] | −0,033 | [−0,108; 0,021] | [−0,115; 0,049] | −0,043 | [−0,079; −0,008] | [−0,088; 0,002] |
-| (c) (3)−(0) | 0,133 | [0,047; 0,234] | [−0,004; 0,271] | 0,082 | [−0,030; 0,209] | [−0,071; 0,236] | 0,101 | [0,043; 0,169] | [−0,135; 0,337] |
+| (c) (3)−(0) | 0,133 | [0,047; 0,234] | [−0,004; 0,271] | 0,082 | [−0,030; 0,209] | [−0,071; 0,236] | 0,102 | [0,043; 0,169] | [−0,132; 0,335] |
 | (c) (3)−(1) | 0,034 | [−0,009; 0,089] | [−0,075; 0,144] | −0,003 | [−0,030; 0,024] | [−0,090; 0,084] | −0,019 | [−0,038; 0,001] | [−0,061; 0,024] |
 
 AP stratificata dei modelli: S1 (0) 0,312, (1) 0,411, (2) 0,365, (2b) 0,368, (3) 0,446, a caso 0,190. S2 (0) 0,338,
-(1) 0,422, (2) 0,379, (2b) 0,389, (3) 0,420, a caso 0,249. S3 (0) 0,776, (1) 0,896, (2) 0,857, (2b) 0,853,
+(1) 0,422, (2) 0,379, (2b) 0,389, (3) 0,420, a caso 0,249. S3 (0) 0,775, (1) 0,896, (2) 0,857, (2b) 0,853,
 (3) 0,877, a caso 0,594. Le AP di insiemi diversi non si confrontano fra loro (8.2).
+
+In S3 i numeri di (0) e delle differenze con (0) sono quelli con i pari merito arrotondati a 10⁻¹² (Deviazione 8).
+Prima: (0) 0,776; (a) B [0,063; 0,185], J [−0,102; 0,342]; (c) (3)−(0) 0,101, J [−0,135; 0,337].
 
 **S4–S7 (giorni del principale).**
 
@@ -275,7 +298,7 @@ AP stratificata dei modelli: S1 (0) 0,312, (1) 0,411, (2) 0,365, (2b) 0,368, (3)
 
 AP stratificata dei componenti: solo stagione 0,292; solo pioggia 0,307; solo temperatura 0,343; pioggia ×
 temperatura 0,392; (1) arrotondato 0,410 (93 valori distinti). Climatologia con h = 3: 0,274; con h = 14: 0,315.
-(3′): 0,440. Tutte le altre metriche delle sensibilità sono in `esiti.json`.
+(3′): 0,440. Tutte le altre metriche delle sensibilità sono in `esiti-riepilogo.json`.
 
 ## Lettura secondo i criteri preregistrati
 
@@ -287,14 +310,14 @@ temperatura 0,392; (1) arrotondato 0,410 (93 valori distinti). Climatologia con 
   jackknife no ([−0,044; 0,245]). La regola chiede entrambi: l'etichetta è «non distinguibile».
 - ROC-AUC e Spearman dentro la stagione vanno nella stessa direzione dell'AP, con entrambi gli intervalli sopra 0
   (+0,152 e +0,204). Per la preregistrazione non decidono; non vanno in senso opposto.
-- Interpretazione: il jackknife è largo soprattutto per la climatologia. Per (0), che si ristima a ogni giro, è
-  largo 2,5 volte il bootstrap ([0,121; 0,501] contro [0,238; 0,390]); per (1), che non stima nulla, 1,3 volte
-  ([0,279; 0,546] contro [0,312; 0,524]). L'incertezza in più riguarda quanto ordinerebbe una climatologia stimata su
-  poche stagioni, più che l'indice.
+- Interpretazione: il «non distinguibile» viene dalla variabilità fra le 10 stagioni, non dalla ristima della
+  climatologia nel jackknife. Fatto verificato con un'analisi esplorativa, aggiunta dopo i risultati (Deviazione 4):
+  con (0) non ristimata nel jackknife, J di (1)−(0) resta [−0,035; 0,236] (preregistrato [−0,044; 0,245]) e
+  comprende ancora lo 0. La ristima allarga J per la sola (0): [0,121; 0,501] contro [0,215; 0,408] con (0) fissa.
 - Interpretazione: il centro termico 13 °C e la finestra di 20 giorni dell'indice vengono da questo studio, stimati su
   tutte le stagioni. Un esito favorevole a (1) va letto come ottimistico (limite 13 della preregistrazione).
-- Descrittivo: l'AP stratificata di (1) è 0,412 contro 0,211 di un ordinamento a caso, con entrambi gli intervalli
-  sopra 0,211.
+- Descrittivo, calcolato dopo i risultati (Deviazione 5): l'AP stratificata di (1) è 0,412 contro 0,211 di un
+  ordinamento a caso. Differenza appaiata (1) − caso: +0,201, B [0,099; 0,321], J [0,056; 0,346].
 
 **(b) σ 2,0 contro `tsd` 3,5: non distinguibile su questi dati.** Stima −0,047, B [−0,127; 0,012],
 J [−0,135; 0,042]. La curva più stretta ordina un po' peggio nella stima puntuale. ROC-AUC (−0,035) e Spearman
@@ -305,8 +328,8 @@ J [−0,135; 0,042]. La curva più stretta ordina un po' peggio nella stima punt
 B [−0,112; 0,013], J [−0,123; 0,042]. σ_k fra 1,760 e 2,209 nei 10 giri. ROC-AUC e Spearman nella stessa direzione.
 
 **(b) e (b′) insieme, per D5 (9.4): «Nessun vantaggio dimostrato per la curva più stretta.»** Nessuna delle due è
-«ordina peggio» (servirebbero entrambi gli intervalli sotto 0). La frase «per l'ordinamento la scelta fra 3,5 e
-2,0 conta poco» non si può scrivere: gli intervalli escono da (−δ; +δ), fino a −0,135.
+«ordina peggio» (servirebbero entrambi gli intervalli sotto 0). Gli intervalli vanno da −0,135 a +0,042 per (b) e da
+−0,123 a +0,042 per (b′): non escludono uno svantaggio né un vantaggio della curva stretta maggiore di δ.
 
 **(c) Riferimento, senza verdetto.** (3) − (0): +0,139, B [0,054; 0,238], J [0,002; 0,277]. (3) − (1): +0,038,
 B [−0,005; 0,091], J [−0,044; 0,121]. Fra (3) e (1) la ROC-AUC stratificata va in senso opposto all'AP (−0,016,
@@ -319,9 +342,12 @@ differenze dall'indice con intervalli che comprendono lo 0.
 - S1 dà quasi gli stessi numeri del principale. È l'unico insieme che non dipende dall'esito.
 - In S3 (settimane) entrambi gli intervalli di (b) stanno sotto 0 (−0,039, B [−0,073; −0,008], J [−0,077; −0,001]):
   stesso segno del principale. Per la preregistrazione è una sensibilità, quindi senza verdetto.
-- S6: nessun componente da solo arriva a (1). La stagione aggiunge poco al prodotto pioggia × temperatura (0,020).
-  La sola stagione dell'indice sta poco sotto la climatologia stimata (0,292 contro 0,311), con intervalli larghi
-  intorno a 0.
+- In S4 l'esito di (a) dipende da h: con h = 3 entrambi gli intervalli stanno sopra 0 (+0,138, B [0,054; 0,257],
+  J [0,010; 0,266]); con h = 14 J comprende lo 0 (+0,098, J [−0,048; 0,243]). Anche questa è una sensibilità,
+  senza verdetto.
+- S6: nessun componente da solo arriva a (1). Pioggia × temperatura senza stagione − (1): −0,020,
+  B [−0,041; −0,0003], J [−0,047; 0,007]. La sola stagione dell'indice sta poco sotto la climatologia stimata (0,292
+  contro 0,311), con intervalli larghi intorno a 0.
 - S7: l'arrotondamento dell'app cambia l'AP di −0,002.
 - S5: le colonne che includono il giorno d non aiutano la logistica (−0,011).
 
@@ -333,9 +359,11 @@ Non è una raccomandazione: D5 resta di Matteo, e nulla vale per le faggete del 
    stagioni (2,0046 °C). Sul periodo 05/08–21/11 lo stesso script dà 2,0622 °C.
 2. **Fatto verificato.** Stimato fuori dalla stagione di prova, σ_k sta fra 1,76 e 2,21 °C (principale) e il centro
    fra 13,59 e 14,04 °C, sempre sopra il `topt` 13 dell'indice.
-3. **Fatto verificato.** Sull'ordinamento dei giorni dentro la stagione, né σ 2,0 né σ_k ordinano meglio di
-   `tsd` 3,5. Le stime puntuali vanno nell'altro senso (−0,047 e −0,041 di AP stratificata), ma gli intervalli
-   comprendono lo 0: «non distinguibile», «nessun vantaggio dimostrato per la curva più stretta».
+3. **Fatto verificato.** Sull'ordinamento dei giorni dentro la stagione non è dimostrato che σ 2,0 o σ_k ordinino
+   meglio di `tsd` 3,5: «non distinguibile» in entrambi i casi. Le stime puntuali vanno nell'altro senso (−0,047 e
+   −0,041 di AP stratificata). Gli intervalli vanno da −0,135 a +0,042 per (b) e da −0,123 a +0,042 per (b′): il
+   limite superiore di J non esclude un vantaggio della curva stretta maggiore di δ (0,02). Lettura congiunta (9.4):
+   «Nessun vantaggio dimostrato per la curva più stretta».
 4. **Interpretazione.** Il GLM descrive la forma del legame fra conteggi e T20, a parità di anno. La prova misura
    un'altra cosa: l'ordinamento del prodotto con pioggia e stagione, con il centro fermo a 13 °C. I due risultati non
    si contraddicono.
@@ -365,29 +393,106 @@ Non è una raccomandazione: D5 resta di Matteo, e nulla vale per le faggete del 
 - Nessuna soglia, nessuna calibrazione, nessuna probabilità. AP e ROC-AUC misurano l'ordinamento, non l'affidabilità
   di un valore.
 
+## Verifica indipendente (21/10/2026)
+
+Tre verificatori indipendenti hanno ricontrollato la prova, ognuno da zero. **Esito: nessun numero dell'analisi
+principale cambia, nessun rilievo bloccante.**
+
+| Controllo | Che cosa | Esito |
+|---|---|---|
+| Fattori | Fattori dell'indice ricalcolati in modo indipendente su 1220 giorni | Scarto massimo da `fattori.json` 3,8·10⁻¹³ |
+| Protocollo | Fughe d'informazione dalla stagione di prova | Nessuna fuga: alterando esiti e conteggi della stagione di prova, le sue previsioni fuori campione non cambiano |
+| Statistica | Ricalcolo da zero con scikit-learn e scipy, senza importare `valuta.py` | Tutti i numeri degli esiti del 16/10 riprodotti entro 3·10⁻¹⁵; due esecuzioni identiche byte per byte, salvo `meta.sistema` |
+
+**Rilievi accolti** (tutti; nessuno respinto):
+
+1. Lettura di (a): la larghezza di J per (1)−(0) non dipende dalla ristima della climatologia (Deviazione 4).
+2. D5: tolto «Fatto verificato: né σ 2,0 né σ_k ordinano meglio»; ora «non è dimostrato», con gli intervalli.
+3. «In breve»: regola completa della sezione 9.2, con la condizione su δ e le quattro etichette.
+4. (1) contro un ordinamento a caso: differenza appaiata con B e J (Deviazione 5).
+5. S6: tolto «aggiunge poco»; ora la differenza con i due intervalli.
+6. Sensibilità: aggiunta S4, in cui l'esito di (a) dipende da h.
+7. Deviazione 2: «nessuno script è cambiato» non è verificabile; data e momento alla Deviazione 3.
+8. σ_k confrontati con il massimo di verosimiglianza, non con un GLM «entro 10⁻⁴».
+9. Questa sezione.
+10. Controllo dei riferimenti della sezione 3.6 prima delle metriche (Deviazione 6).
+11. Commit Git in `meta` e SHA-256 degli esiti senza `meta` (Deviazione 7).
+12. Pari merito con punteggi arrotondati a 10⁻¹² (Deviazione 8).
+13. Riepilogo versionato senza meteo giornaliero, `esiti-riepilogo.json` (Deviazione 7).
+14. `__pycache__` tolto dalla cartella e ignorato anche dal `.gitignore` di questa cartella.
+
+**Regola della prima versione.** Con la regola della prima versione della preregistrazione (commit `fc2e574`: solo
+intervallo bootstrap, AP sul complesso) (a) sarebbe risultata «ordina meglio»: il bootstrap della differenza sta
+sopra 0 sia sul complesso ([0,076; 0,256]) sia dentro la stagione ([0,013; 0,226]). La revisione `450a8ba` ha
+aggiunto J. Secondo le date di file e commit è stata fatta prima dei risultati: commit alle 08:45:16 del 16/10,
+`valuta.py` modificato l'ultima volta alle 12:14:04, `esiti.json` alle 12:21:11 (UTC).
+
+**Verifiche fatte qui sulle correzioni (21/10/2026).**
+
+- Due esecuzioni di `valuta.py` in cartelle separate: `esiti.json` ed `esiti-riepilogo.json` identici byte per byte.
+- Confronto con `esiti.json` del 16/10, sezione per sezione, senza `meta`: cambiano solo i valori della Deviazione 8.
+  `serie.json`, `sigma.json` e `fattori.json` identici byte per byte.
+- Numeri delle Deviazioni 4 e 5 ricalcolati con le funzioni di `valuta.py`, in uno script fuori dal repository.
+- σ_k: in tutte le 165 stime di (2b) (validazione e jackknife di principale, S1, S2) lo scarto dal massimo di
+  verosimiglianza senza il termine 10⁻⁸·I è al più 2,8·10⁻⁷. Nei 10 giri del principale l'ordine dei giorni della
+  stagione di prova è identico.
+
 ## Deviazioni
 
-Elenco chiuso al 16/10/2026. Formato della sezione 12: data, che cosa, perché, prima o dopo i risultati, effetto.
+Elenco aggiornato al 21/10/2026: le voci 1–3 sono del 16/10, le voci 4–8 vengono dalla verifica indipendente.
+Formato della sezione 12: data, che cosa, perché, prima o dopo i risultati, effetto.
 
 1. **δ non confermato da Matteo.** 16/10/2026, prima dell'esecuzione. La preregistrazione (9.2 e 15) lascia
    δ = 0,02 alla conferma di Matteo prima di `valuta.py`. La conferma non c'è stata: questa sessione non poteva
    chiederla. Si è usato il valore preregistrato. **Effetto: nessuno sulle etichette.** (a), (b) e (b′) sono «non
    distinguibile» perché il jackknife comprende lo 0, e lì δ non entra: le etichette restano le stesse con qualsiasi
    δ. Cambierebbe solo la nota «la differenza resta sotto δ in tutto l'intervallo»: per (b′) con δ sopra 0,123, per
-   (b) e per la lettura congiunta («conta poco») con δ sopra 0,135, per (a) con δ sopra 0,245.
-2. **Esecuzione di prova.** 16/10/2026. Prima dell'esecuzione preregistrata, `valuta.py` è stato lanciato una volta
+   (b) e per la frase aggiuntiva della lettura congiunta (9.4) con δ sopra 0,135, per (a) con δ sopra 0,245.
+2. **Esecuzione di prova.** 16/10/2026, prima dell'esecuzione preregistrata. `valuta.py` è stato lanciato una volta
    con `--repliche 200` per provare il codice, e i risultati di quella prova sono stati visti. Poi si sono fatti i
-   controlli indipendenti (sotto) e le due esecuzioni con 5000 repliche. **Dopo la prova nessuno script è
-   cambiato**: gli SHA-256 in `esiti.json` sono quelli dei file del commit. Effetto: nessuno su stime puntuali e
-   jackknife; gli intervalli bootstrap della prova differivano solo per il numero di repliche.
-3. **Controllo 6 su più giorni.** La preregistrazione lo chiede per i giorni di S2 (830). È fatto su tutti i giorni
-   dal 31/8 al 30/11 (920), che li comprendono. Controllo più stretto, nessun effetto.
+   controlli dei revisori (sotto) e le due esecuzioni con 5000 repliche. **Non è verificabile che dopo la prova
+   nessuno script sia cambiato:** gli script sono entrati in Git insieme agli esiti (commit `2c3c5ed`, 12:29:14 UTC).
+   Si sa questo: `valuta.py` ha data di modifica 12:14:04; un `__pycache__` di `valuta.py` è delle 12:16:52;
+   `esiti.json` è delle 12:21:11. Gli SHA-256 in `esiti.json` sono quelli dei file del commit: legano gli esiti a
+   quegli script, non dicono se prima della prova gli script erano diversi. Un ricalcolo indipendente da zero
+   (scikit-learn, scipy, senza importare `valuta.py`) ha riprodotto tutti i numeri entro 3·10⁻¹⁵ (sezione «Verifica
+   indipendente»). Effetto noto della prova: gli intervalli bootstrap differivano per il numero di repliche.
+3. **Controllo 6 su più giorni.** 16/10/2026, scrivendo `valuta.py`, prima dei risultati (il controllo usa solo i
+   predittori). La preregistrazione lo chiede per i giorni di S2 (830). È fatto su tutti i giorni dal 31/8 al 30/11
+   (920), che li comprendono. Controllo più stretto, nessun effetto.
+4. **Analisi esplorativa: (0) fissa nel jackknife.** 21/10/2026, dopo i risultati. Che cosa: J di (1)−(0) e di (0)
+   con le previsioni di (0) della validazione principale (training di 9 stagioni), senza ristimarla su 8. Perché:
+   capire da dove viene la larghezza di J per (a). Risultato: (1)−(0) J [−0,035; 0,236] (preregistrato
+   [−0,044; 0,245]); (0) J [0,215; 0,408] (preregistrato [0,121; 0,501]). Effetto sull'esito preregistrato: nessuno.
+5. **Analisi esplorativa: (1) contro un ordinamento a caso.** 21/10/2026, dopo i risultati. Differenza appaiata fra
+   l'AP stratificata di (1) e quella attesa a caso (3.6), con le stesse estrazioni bootstrap e lo stesso jackknife:
+   +0,201, B [0,099; 0,321], J [0,056; 0,346]. Descrittiva, senza etichetta. Effetto sull'esito: nessuno.
+6. **Controllo dei riferimenti della sezione 3.6 prima delle metriche.** 21/10/2026, dopo i risultati. Il 16/10 il
+   controllo (solo esito) veniva dopo il calcolo delle metriche, mentre questo README diceva «tutti superati prima di
+   calcolare qualsiasi metrica». Ora viene prima, con le stesse soglie, calcolato dalle sole etichette. **Dopo i
+   risultati, nessun numero cambia** (verificato con il confronto sopra).
+7. **Commit Git, hash senza `meta`, riepilogo versionato.** 21/10/2026, dopo i risultati. `meta` registra
+   `git rev-parse HEAD` e i file tracciati modificati; `valuta.py` calcola lo SHA-256 degli esiti senza `meta` e
+   scrive `esiti-riepilogo.json`. **Dopo i risultati, nessun numero cambia**; cambia l'hash del file intero.
+8. **Pari merito con punteggi arrotondati a 10⁻¹².** 21/10/2026, dopo i risultati. Che cosa: `metriche_insieme`
+   arrotonda i punteggi a 10⁻¹² prima di cercare i pari merito. Perché: valori uguali in aritmetica esatta ma diversi
+   nell'ultima cifra binaria contavano come diversi (`seasonWeight` interpolato in S6, medie settimanali della
+   climatologia in S3). Verifica: in tutte le chiamate di un'esecuzione di prova i valori fusi distano fra loro al più
+   7,8·10⁻¹⁶, due valori arrotondati diversi distano almeno 7,4·10⁻¹¹, e i gruppi coincidono con quelli dei valori a
+   meno di 10⁻¹² l'uno dall'altro. **Effetto:** analisi principale di (0)–(3), S1, S2, etichette, lettura congiunta e
+   contraddizioni invariate. Cambiano:
+   - S6 «solo stagione»: AP stratificata 0,29202 → 0,29196, ROC-AUC 0,63453 → 0,63439; valori distinti 72 → 66.
+     Nessuna cifra mostrata in questo README cambia. «Solo pioggia»: Spearman entro 2·10⁻⁶, valori distinti 961 → 959.
+   - S3, (0) e differenze con (0) (sensibilità, senza etichetta): AP di (0) 0,776 → 0,775; (a) B [0,063; 0,185] →
+     [0,063; 0,186], J [−0,102; 0,342] → [−0,100; 0,341]; (c) (3)−(0) 0,101 → 0,102, J [−0,135; 0,337] →
+     [−0,132; 0,335]. Valori distinti di (0) 92 → 81. Il README mostra i valori nuovi.
 
 **Precisazioni d'implementazione** (la preregistrazione non le fissa; decise scrivendo il codice, prima dei
-risultati; nessuna cambia un esito):
+risultati, salvo i pari merito; nessuna cambia un'etichetta):
 
 - Penalità del ripiego di (3): −(λ/2)·(β1² + β2² + β3²) con λ = 1. Non è mai servita.
-- Pari merito: valori del punteggio esattamente uguali in virgola mobile.
+- Pari merito: fino al 16/10 valori del punteggio esattamente uguali in virgola mobile; dal 21/10 punteggi arrotondati
+  a 10⁻¹² (Deviazione 8).
 - Metriche sul complesso: solo intervallo bootstrap. Il jackknife di 8.4 riguarda le metriche stratificate.
 - «ROC-AUC in senso opposto all'AP» (9.5): segno opposto delle stime puntuali. Non è successo per (a), (b), (b′).
 - Regola di contraddizione (10) applicata dove c'è un corrispettivo nel principale: S1, S2, S3 per (a), (b), (b′),
@@ -395,15 +500,16 @@ risultati; nessuna cambia un esito):
 - (2b) in S3 usa i σ_k del principale, perché le settimane usano le predizioni giornaliere del principale (4.4).
 - Ricostruzione: mediana delle stime con `numpy.median`.
 
-**Controlli indipendenti dei revisori** (fuori dagli script consegnati, nello scratchpad della sessione, con
-scikit-learn, scipy e pandas): AP, ROC-AUC e Spearman per stagione di (1) e (2) uguali a `average_precision_score`,
-`roc_auc_score` e `spearmanr` entro 10⁻¹²; ROC-AUC stratificata uguale al conteggio diretto delle coppie; AP con i
-pari merito uguale alla media esatta su tutte le permutazioni in 300 casi piccoli e alla media di 100 000 rotture
-casuali per la climatologia del 2015 (0,23636 contro 0,23635 ± 0,00002); logistica (3) uguale a
-`LogisticRegression` senza penalità; σ_k di (2b) uguali entro 10⁻⁴ a un GLM di Poisson stimato con scipy;
-bootstrap e jackknife di (1) e metriche sul complesso ricalcolati da zero, uguali; jackknife di (0) e della
-differenza (a), con la climatologia ristimata su 8 stagioni, ricalcolato in modo indipendente: uguale entro 10⁻¹⁴.
-Tutti questi controlli sono stati rifatti sugli esiti finali con 5000 repliche.
+**Controlli indipendenti dei revisori** (16/10/2026, fuori dagli script consegnati, nello scratchpad della sessione,
+con scikit-learn, scipy e pandas): AP, ROC-AUC e Spearman per stagione di (1) e (2) uguali a
+`average_precision_score`, `roc_auc_score` e `spearmanr` entro 10⁻¹²; ROC-AUC stratificata uguale al conteggio
+diretto delle coppie; AP con i pari merito uguale alla media esatta su tutte le permutazioni in 300 casi piccoli e
+alla media di 100 000 rotture casuali per la climatologia del 2015 (0,23636 contro 0,23635 ± 0,00002); logistica (3)
+uguale a `LogisticRegression` senza penalità; σ_k di (2b) uguali entro 3·10⁻⁷ al massimo di verosimiglianza: lo
+scarto viene dal termine 10⁻⁸·I dell'IRLS, uguale a `sigma_brejon.py`, e non cambia l'ordine dei giorni; bootstrap e
+jackknife di (1) e metriche sul complesso ricalcolati da zero, uguali; jackknife di (0) e della differenza (a), con
+la climatologia ristimata su 8 stagioni, ricalcolato in modo indipendente: uguale entro 10⁻¹⁴. Tutti questi
+controlli sono stati rifatti sugli esiti finali del 16/10 con 5000 repliche.
 
 ## Versioni e hash
 
@@ -415,9 +521,14 @@ Tutti questi controlli sono stati rifatti sugli esiti finali con 5000 repliche.
 - Archivio Zenodo `ee19dfc414676cbcd4993eca75ea77a9fd1607d18bc4e0bdb7094a4ab07ee07a` (MD5
   `a5299db56022af2620635a36274e811f`); CSV `63148586ad0cd2533fb741070e95f900e53343f54a4ccdfe0944f3a8f0000e4c`.
 - Script: `scarica.py` `54a70915cabf0040718b09d71eee88fec9913cde6aa50ae687bca6c04da84f73`; `fattori.mjs`
-  `a74199018b16689b1dd07a04bb6a8760465905eb4f67d8735af839e48f927434`; `valuta.py`
-  `8c2ba557bcf8fb20a1f770752b37133d8ab908f85ad07d6596fcf5657182d194`; `preregistrazione.md`
+  `a74199018b16689b1dd07a04bb6a8760465905eb4f67d8735af839e48f927434`; `valuta.py` del 21/10
+  `7e1d4b0c99ca5dcc6ecaaf0507b442e3d858945c995dac375500191810ffe797` (del 16/10:
+  `8c2ba557bcf8fb20a1f770752b37133d8ab908f85ad07d6596fcf5657182d194`); `preregistrazione.md`
   `bdcfb75c461c5a25a790ff249ec2ce4bcf6cc51310fdff85c011d8dfa7851a80`.
-- `esiti.json` `36da7739f24e454d904bdebebe5146f6c30484547101b6cfaa909a4c3f019e3c` (due esecuzioni);
-  `fattori.json` `15d57a76014778588b8d1e6eee30f86ec3ee3fac437a0eb53df16c711dc55cfe`.
+- 21/10/2026: `esiti.json` senza `meta` `c88b8f870b07eb879b2ebd87af7eed857c5aa5f318f30dab0c342e89f5ea2f19` (due
+  esecuzioni, riproducibile); `esiti-riepilogo.json`
+  `12a157251b8a0d22a36c5a7cc3b572dca53d1b390f3ccafda363de32902dc5ad`; `fattori.json`
+  `15d57a76014778588b8d1e6eee30f86ec3ee3fac437a0eb53df16c711dc55cfe` (uguale al 16/10).
+- 16/10/2026: `esiti.json` intero `36da7739f24e454d904bdebebe5146f6c30484547101b6cfaa909a4c3f019e3c` (due
+  esecuzioni).
 - Bootstrap: 5000 repliche, `numpy.random.default_rng(20261016)`; jackknife con t = 2,262.
