@@ -1,0 +1,5 @@
+# Osservazioni scaricate, coordinate, identificativi, serie meteo e valori per unità: fuori dal repository
+# (preregistrazione.md, sezione 2.6).
+dati/
+# Bytecode di Python.
+__pycache__/
