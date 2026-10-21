@@ -2044,7 +2044,6 @@ function renderCommunityIntro() {
   const howIcon=path=>`<svg viewBox="0 0 24 24" aria-hidden="true"><g>${path}</g></svg>`;
   const infoIcon=howIcon('<circle cx="12" cy="12" r="9"/><path d="M12 10v6m0-9h.01"/>');
   const lockIcon=howIcon('<rect x="5" y="10" width="14" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/>');
-  const calendarIcon=howIcon('<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 10h18m-13 5 3 3 5-5"/>');
   const choiceIcon=howIcon('<path d="M3 7h4m4 0h10M3 17h10m4 0h4"/><circle cx="9" cy="7" r="2"/><circle cx="15" cy="17" r="2"/>');
   box.innerHTML = `<div class="community-heading"><h2>Come funziona</h2><button class="community-dismiss" type="button" aria-label="Chiudi la card della community" title="Chiudi"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
     <div class="community-vignettes" aria-label="Condividi e scopri">
@@ -2056,7 +2055,7 @@ function renderCommunityIntro() {
       <div class="community-explainer">
         <p class="small community-current-status"><span class="community-info-icon">${infoIcon}</span><span>${esc(communityStatus())}</span></p>
         <div class="community-explainer-grid">
-          <section class="community-how-access"><h3><span class="community-info-icon">${IC.people}</span>Condividi e scopri</h3><p>Condividi un’osservazione per accedere ai riepiloghi degli altri, per zona ampia e specie.</p><ul class="community-thresholds" aria-label="Quando pubblichiamo un riepilogo"><li>${IC.clock}<span><small>Ultimi</small> <strong>7 giorni</strong></span></li><li>${IC.people}<span><small>Almeno</small> <strong>3 persone</strong></span></li><li>${calendarIcon}<span><small>Almeno</small> <strong>2 giorni diversi</strong></span></li></ul></section>
+          <section class="community-how-access"><h3><span class="community-info-icon">${IC.people}</span>Condividi e scopri</h3><p>Condividi un’osservazione per accedere ai riepiloghi degli altri, per zona ampia e specie.</p></section>
           <section><h3><span class="community-info-icon">${lockIcon}</span>I posti restano tuoi</h3><p>Nei riepiloghi non mostriamo punti GPS, nomi o giorni precisi. La tua fungaia resta riservata.</p></section>
           <section><h3><span class="community-info-icon">${infoIcon}</span>Un segnale, non tutto il bosco</h3><p>Le osservazioni sono dichiarate e non raccontano tutte le uscite. Poche segnalazioni non significano pochi funghi.</p></section>
           <section><h3><span class="community-info-icon">${choiceIcon}</span>Scegli tu</h3><p>Condividere è facoltativo. Puoi ritirare le tue osservazioni dal Taccuino: se le ritiri tutte, perdi l’accesso ai riepiloghi condivisi. Il resto di Fronda resta disponibile.</p></section>
