@@ -7,7 +7,7 @@ import './modal-scroll.js';
 import { initCommunity, communityReady, currentUser } from './community.js';
 import './images.js';
 import { CONTENT_RESOURCES, CONTENT_TEMPLATES, FIELD_LABELS, isLockedField } from './content-schema.js';
-import { SURVEY_ID, SURVEY_ENDPOINT } from './survey-schema.js';
+import { SURVEY_ID, SURVEY_ENDPOINT, SURVEY_VERSION } from './survey-schema.js';
 
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -214,12 +214,14 @@ async function surveyCount(){
   surveyNote('Conto le risposte…');
   // format=count: solo numero e data dell'ultima, senza scaricare le risposte (né nomi né contatti)
   try{const r=await(await surveyApi(surveyUrl('&format=count'))).json();
-    surveyNote(r.count?`${r.count===1?'Una risposta':`${r.count} risposte`}. L’ultima è arrivata il ${surveyWhen(r.lastAt)}.`:'Nessuna risposta per ora.');}
+    // per versione: la 1 (lunga) è archiviata; la corrente è la corta
+    const parts=Object.entries(r.byVersion||{}).filter(([,n])=>n).sort(([a],[b])=>b-a).map(([v,n])=>`versione ${v}${Number(v)===SURVEY_VERSION?'':' (archiviata)'}: ${n}`);
+    surveyNote(r.count?`${r.count===1?'Una risposta':`${r.count} risposte`}${parts.length?` (${parts.join('; ')})`:''}. L’ultima è arrivata il ${surveyWhen(r.lastAt)}.`:'Nessuna risposta per ora.');}
   catch(e){surveyNote(e.message,true);}
 }
 function surveyRow(x){
   const row=document.createElement('div');row.className='cms-survey-row';
-  const info=document.createElement('p');info.textContent=`Ricevuta ${x.receipt} · arrivata il ${surveyWhen(x.createdAt)} · ${x.name?`nome: ${x.name}`:'senza nome'}${x.contact?' · con contatto':''}.`;
+  const info=document.createElement('p');info.textContent=`Ricevuta ${x.receipt} · versione ${x.version} · arrivata il ${surveyWhen(x.createdAt)} · ${x.name?`nome: ${x.name}`:'senza nome'}${x.contact?' · con contatto':''}.`;
   const err=document.createElement('p');err.className='small';
   const del=document.createElement('button');del.type='button';del.className='btn ghost';del.textContent='Cancella questa risposta';
   del.onclick=async()=>{
@@ -235,10 +237,11 @@ $('#cms-survey-dialog [data-close]').onclick=()=>$('#cms-survey-dialog').close()
 $('#cms-survey-dialog').addEventListener('click',async e=>{
   const b=e.target.closest('[data-survey-download]');if(!b)return;
   // csv-excel: separatore «;» per Excel in italiano (&sep=semicolon); csv: virgola (RFC 4180); json: dati esatti.
-  const kind=b.dataset.surveyDownload,format=kind==='json'?'json':'csv',excel=kind==='csv-excel';b.disabled=true;
+  // Una versione per file (&version): le colonne della versione 1 (lunga, archiviata) e della 2 (corta) sono diverse.
+  const kind=b.dataset.surveyDownload,format=kind==='json'?'json':'csv',excel=kind==='csv-excel',version=$('#cms-survey-version')?.value||String(SURVEY_VERSION);b.disabled=true;
   try{
-    const blob=await(await surveyApi(surveyUrl('&format='+format+(excel?'&sep=semicolon':'')))).blob();
-    const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`questionario-${SURVEY_ID}-${new Date().toISOString().slice(0,10)}${excel?'-excel':''}.${format}`;
+    const blob=await(await surveyApi(surveyUrl('&format='+format+'&version='+encodeURIComponent(version)+(excel?'&sep=semicolon':'')))).blob();
+    const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`questionario-${SURVEY_ID}-v${version}-${new Date().toISOString().slice(0,10)}${excel?'-excel':''}.${format}`;
     document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1000);
   }catch(err){surveyNote(err.message,true);}finally{b.disabled=false;}
 });

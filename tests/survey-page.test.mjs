@@ -3,57 +3,41 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { QUICK_ANSWERS, RESPONDENT_LIMITS, RISK_GATES, SURVEY_ENDPOINT, SURVEY_ID, fieldSpec, validateSurvey } from '../js/survey-schema.js';
+import { ANSWERS_SPEC, RESPONDENT_LIMITS, SURVEY_ENDPOINT, SURVEY_ID, SURVEY_VERSION, fieldSpec, validateSurvey } from '../js/survey-schema.js';
 
 const read = (p) => readFileSync(new URL('../' + p, import.meta.url), 'utf8');
 const page = read('js/questionario.js');
 
-// Campi definiti fuori dagli elenchi e richiamati per nome (zoneField, KNOWS_FIELD…).
-const FIELD = /\bt: '(\w+)'(?:, of: '(\w+)')?, k: '(\w+)'/;
-const shared = Object.fromEntries([...page.matchAll(/^const (\w+) = (\{ t: '\w+'.*\});$/gm)].filter(([, , def]) => FIELD.test(def)).map(([, name, def]) => [name, def]));
+// Le domande della pagina: elenchi «const X_FIELDS = [ … ];», una definizione per riga con il suo percorso nello schema.
 const block = (name) => {
   const m = page.match(new RegExp(`^const ${name} = \\[\\n([\\s\\S]*?)^\\];`, 'm'));
   assert.ok(m, `manca l'elenco ${name}`);
   return m[1];
 };
-// Le definizioni di un elenco: una per riga, oppure il nome di un campo condiviso.
-function definitions(name) {
-  return block(name).split('\n').flatMap((line) => {
-    if (FIELD.test(line)) return [line];
-    return line.split(/[\s,[\]]+/).filter((w) => shared[w]).map((w) => shared[w]);
-  });
-}
-const GROUPS = { A_FIELDS: 'profile', SPECIES_FIELDS: 'species', C_FIELDS: 'rain', EVENT_FIELDS: 'weatherEvents', FLUSH_FIELDS: 'flushes',
-  EMPTY_FIELDS: 'emptyTrips', F_FIELDS: 'forest', G_FIELDS: 'access', H_FIELDS: 'risks', I_FIELDS: 'followUp' };
+const GROUPS = ['A_FIELDS', 'SPECIES_FIELDS', 'C_FIELDS', 'D_FIELDS'];
+const paths = (name) => [...block(name).matchAll(/\{ t: '(\w+)', path: '([\w.]+)'/g)].map((m) => ({ t: m[1], path: m[2] }));
 
-test('ogni domanda della pagina ha il suo campo nello schema, con il percorso giusto', () => {
-  let n = 0;
-  for (const [name, prefix] of Object.entries(GROUPS)) {
-    for (const def of definitions(name)) {
-      const [, t, of, k] = def.match(FIELD);
-      if (of === 'consent' || /send: false/.test(def)) continue;
-      n++;
-      if (of === 'respondent') { assert.ok(Number.isInteger(RESPONDENT_LIMITS[k]), `respondent.${k}`); continue; }
-      const path = `${of || prefix}.${k}`;
-      const spec = fieldSpec(path);
-      assert.ok(spec, `la pagina chiede ${path}, che lo schema non conosce`);
-      if (t === 'open') {
-        assert.equal(spec.t, 'open', path);
-        const declared = def.match(/path: '([\w.]+)'/)?.[1];
-        assert.equal(declared, path, `risposte rapide di ${path}`);
-        assert.equal(spec.key, path);
-      }
-      if (t === 'num') assert.ok(['int', 'dec'].includes(spec.t), path);
-    }
+test('ogni domanda della pagina ha il suo campo nello schema v2, e ogni campo dello schema ha la sua domanda', () => {
+  const asked = GROUPS.flatMap(paths);
+  assert.equal(asked.length, 14, JSON.stringify(asked));
+  for (const { t, path } of asked) {
+    if (path === 'consent.recontact') continue;
+    if (path.startsWith('respondent.')) { assert.ok(Number.isInteger(RESPONDENT_LIMITS[path.split('.')[1]]), path); continue; }
+    const spec = fieldSpec(path);
+    assert.ok(spec, `la pagina chiede ${path}, che lo schema non conosce`);
+    const expected = { choice: 'enum', multi: 'set', months: 'set', texts: 'list', area: 'text', text: 'text' }[t];
+    assert.equal(spec.t, expected, `${path}: controllo «${t}» per un campo «${spec.t}»`);
   }
-  assert.ok(n >= 60, `domande trovate: ${n}`);
-  // ogni chiave delle risposte rapide è usata da una domanda della pagina
-  for (const key of Object.keys(QUICK_ANSWERS)) assert.ok(page.includes(`path: '${key}'`), `risposte rapide non usate: ${key}`);
+  // nessun campo dello schema resta senza domanda (le schede: id e nome vengono dalla domanda 2)
+  const leaves = [];
+  const walk = (spec, prefix) => { for (const [k, f] of Object.entries(spec.fields)) { const p = prefix ? `${prefix}.${k}` : k; if (f.t === 'obj') walk(f, p); else if (f.t === 'list' && f.item.t === 'obj') walk(f.item, p); else leaves.push(p); } };
+  walk(ANSWERS_SPEC, '');
+  const askedPaths = new Set(asked.map((x) => x.path));
+  for (const p of leaves) if (!['species.id', 'species.name'].includes(p)) assert.ok(askedPaths.has(p), `nessuna domanda per ${p}`);
 });
 
 test('limiti, indirizzo e nome del questionario vengono dallo schema, non dalla pagina', () => {
-  for (const name of Object.keys(GROUPS)) assert.doesNotMatch(block(name), /\b(?:max|min): \d/, `${name}: limiti scritti a mano`);
-  for (const def of Object.values(shared)) assert.doesNotMatch(def, /\b(?:max|min): \d/);
+  for (const name of GROUPS) assert.doesNotMatch(block(name), /\b(?:max|min|count): \d/, `${name}: limiti scritti a mano`);
   assert.ok(!page.includes(SURVEY_ENDPOINT) && !page.includes(`'${SURVEY_ID}'`), 'indirizzo o nome ripetuti nella pagina');
   assert.match(page, /import\('\.\/survey-schema\.js'\)/);
   assert.match(page, /S\.fieldSpec\(/);
@@ -61,7 +45,45 @@ test('limiti, indirizzo e nome del questionario vengono dallo schema, non dalla 
   assert.match(page, /S\.validateSurvey\(\{ \.\.\.body, website: '' \}\)/);
   assert.equal(SURVEY_ENDPOINT, '/api/survey/v1/responses');
   assert.match(read('worker/index.js'), /startsWith\('\/api\/survey\/v1\/'\)\) return handleSurvey/);
-  assert.equal(validateSurvey({ survey: SURVEY_ID, version: 1, consent: { anonymousUse: true }, respondent: { name: 'x'.repeat(RESPONDENT_LIMITS.name + 1) }, answers: {} }).errors[0].field, 'respondent.name');
+  assert.equal(validateSurvey({ survey: SURVEY_ID, version: SURVEY_VERSION, consent: { anonymousUse: true }, respondent: { name: 'x'.repeat(RESPONDENT_LIMITS.name + 1) }, answers: {} }).errors[0].field, 'respondent.name');
+});
+
+test('bozza per versione: chiave …:v2, le bozze v1 non si riaprono; ricevute leggibili anche dalla versione 1', () => {
+  assert.match(page, /KEY = `fronda:questionario:\$\{SURVEY_ID\}:v\$\{SURVEY_VERSION\}`;/);
+  assert.match(page, /return d\?\.state\?\.format === 2 \? d : null;/);
+  assert.match(page, /OLD_KEYS = Array\.from\(\{ length: SURVEY_VERSION - 1 \}/);
+  assert.match(page, /'Cancella la vecchia bozza'/);
+  // le ricevute non dipendono dalla versione; quelle salvate dalla versione 1 restano visibili
+  assert.match(page, /RECEIPTS_KEY = `fronda:questionario:\$\{SURVEY_ID\}:ricevute`;/);
+  assert.match(page, /OLD_KEYS\.flatMap\(\(k\) => read\(`\$\{k\}:ricevute`\)\)/);
+  // una pagina vecchia rimasta aperta: il server chiede di ricaricare, la pagina mostra il suo messaggio
+  assert.match(page, /\(data\.fields \|\| \[\]\)\.includes\('version'\)/);
+});
+
+test('versione corta: titolo e introduzione dicono poche domande su ciò che sai per abitudine, «Non so» va benissimo', () => {
+  const html = read('questionario.html');
+  assert.match(html, /<title>Funghi nel Reatino: poche domande su quello che sai<\/title>/);
+  assert.match(html, /<h1>Funghi nel Reatino: poche domande su quello che sai<\/h1>/);
+  assert.match(page, /Sono poche domande, 3 o 4 minuti, su quello che sai per abitudine/);
+  assert.match(page, /'«Non so» va benissimo\.'/);
+  // nessuna domanda su episodi, numeri, stagioni passate, uscite a vuoto, quantità, classifiche
+  const questions = GROUPS.map(block).join('\n');
+  assert.doesNotMatch(questions, /quanti (?!anni)|quante |giorni dopo|buttat|uscit[ae] a vuoto|classific|stagione è cambiata|in che anno|ore di ricerca|ricordi/i);
+  // dopo l'invio: invito a usare l'app sul campo, con «Annota» e la durata, e il link alla home
+  assert.match(page, /tocca «Annota»: segna subito cosa hai trovato, oppure che non hai trovato niente, e quanto hai cercato\./);
+  assert.match(page, /h\('a', \{ href: '\/', class: 'q-btn q-btn-primary' \}, 'Apri Fronda'\)/);
+});
+
+test('nome e contatto solo dopo «sì» o «forse» e la richiesta di ricontatto', () => {
+  const d = block('D_FIELDS');
+  assert.match(d, /path: 'consent\.recontact'[^\n]*when: reachableAnswer \}/);
+  assert.match(d, /path: 'respondent\.name'[^\n]*when: wantsContact \}/);
+  assert.match(d, /path: 'respondent\.contact'[^\n]*when: wantsContact \}/);
+  assert.match(page, /const name = contact \? clean\(state\.respondent\.name/);
+  // nessuna risposta già scelta: lo stato iniziale è vuoto
+  assert.match(page, /years: null, zones: \[\], speciesSought: \[\], speciesOther: \[\]/);
+  assert.match(page, /willReport: null/);
+  assert.match(page, /consent: \{ anonymousUse: false, recontact: null \}/);
 });
 
 test('redazione: pannello delle risposte per gli amministratori, con l’API dello schema', () => {
@@ -74,7 +96,11 @@ test('redazione: pannello delle risposte per gli amministratori, con l’API del
   assert.match(html, /data-survey-download="json">/);
   assert.match(cms, /excel\?'&sep=semicolon':''/);
   assert.match(cms, /\$\{excel\?'-excel':''\}\.\$\{format\}/);
-  assert.match(cms, /import \{ SURVEY_ID, SURVEY_ENDPOINT \} from '\.\/survey-schema\.js';/);
+  assert.match(cms, /import \{ SURVEY_ID, SURVEY_ENDPOINT, SURVEY_VERSION \} from '\.\/survey-schema\.js';/);
+  // una versione per file: scelta nella finestra, &version nella richiesta e nel nome del file
+  assert.match(html, /<select id="cms-survey-version"><option value="2">[^<]*<\/option><option value="1">[^<]*archiviata[^<]*<\/option><\/select>/);
+  assert.match(cms, /'&version='\+encodeURIComponent\(version\)/);
+  assert.match(cms, /questionario-\$\{SURVEY_ID\}-v\$\{version\}-/);
   assert.match(cms, /\$\('#cms-survey'\)\.hidden=!can\('admin'\)/);
   assert.doesNotMatch(cms.slice(cms.indexOf('function surveyRow')), /innerHTML/, 'le risposte si mostrano come testo');
 });
@@ -111,26 +137,6 @@ test('campo trappola: nome che browser e gestori di password non riempiono; nel 
   assert.doesNotMatch(page + html, /q-website/);
 });
 
-test('rischi: intossicazioni e specie evitate si raccontano solo dopo «Sì» al loro cancello', () => {
-  const defs = block('H_FIELDS');
-  for (const [gate, key] of RISK_GATES) {
-    const g = defs.match(new RegExp(`\\{ t: 'choice', k: '${gate}'[^\\n]*`))?.[0];
-    assert.ok(g, `manca il cancello ${gate}`);
-    assert.match(g, /options: \(\) => RISK_GATE/);
-    const open = defs.match(new RegExp(`\\{ t: 'open', k: '${key}'[^\\n]*`))?.[0];
-    assert.ok(open, key);
-    assert.match(open, new RegExp(`when: \\(o\\) => o\\.${gate} === 'sì'`), `${key} solo dopo «Sì»`);
-    assert.ok(defs.indexOf(g) < defs.indexOf(open), 'prima il cancello, poi il testo');
-    assert.doesNotMatch(open, /omitQuick|detail/);
-    assert.equal(QUICK_ANSWERS[`risks.${key}`], undefined, 'nessuna risposta rapida di contenuto');
-  }
-  // bozza: i cancelli partono vuoti (nessuna scelta preimpostata)
-  assert.match(page, /knowsPoisonings: null, avoidsSpecies: null/);
-  // il riepilogo mostra il cancello con la sua etichetta e il testo solo se parte (stessa regola di payload)
-  assert.match(page, /function summarizeFields[\s\S]*?if \(f\.when && !f\.when\(owner\)\) continue;/);
-  assert.match(page, /function collectFields[\s\S]*?if \(f\.when && !f\.when\(o\)\) continue;/);
-});
-
 test('clickjacking: /questionario non si può mostrare in un riquadro di un altro sito (_headers di Workers Static Assets)', () => {
   // https://developers.cloudflare.com/workers/static-assets/headers/: «_headers» nella cartella degli asset,
   // non servito come asset; non vale per le risposte del Worker (run_worker_first).
@@ -158,22 +164,4 @@ test('clickjacking: /questionario non si può mostrare in un riquadro di un altr
   // limiti del servizio: al massimo 100 regole, righe sotto i 2.000 caratteri
   assert.ok(Object.keys(rules).length <= 100);
   assert.ok(headers.split('\n').every((l) => l.length < 2000));
-});
-
-test('cancelli della stagione e degli episodi: si inviano come quelli dei rischi; le bozze vecchie si convertono una volta sola', () => {
-  // schede specie: il cancello è un campo dello schema (species.seasonChanged), il dettaglio solo dopo «Sì»
-  const species = block('SPECIES_FIELDS');
-  assert.match(species, /\{ t: 'choice', k: 'seasonChanged'[^\n]*options: \(\) => SEASON_GATE \}/);
-  assert.match(species, /\{ t: 'open', k: 'changed'[^\n]*when: \(o\) => o\.seasonChanged === 'sì'/);
-  assert.doesNotMatch(page, /send: false|derive/, 'nessuna risposta che si vede e non parte');
-  // parte D: anche il «No» parte (answers.weatherRemembers) e compare nel riepilogo
-  assert.ok(fieldSpec('weatherRemembers'));
-  assert.match(page, /const WEATHER_FIELD = \{ t: 'choice', k: 'remembers'[^\n]*options: \(\) => WEATHER_GATE \};/);
-  assert.match(page, /if \(gate !== undefined\) answers\.weatherRemembers = gate;/);
-  assert.match(page, /function weatherSummary\(\) \{[\s\S]*?\[WEATHER_FIELD\.short, fmtValue\(WEATHER_FIELD, gate\)\]/);
-  // bozze: un cancello vuoto dopo «Cancella la scelta» resta vuoto; solo una bozza senza la chiave del cancello si converte
-  assert.match(page, /upgradeDraft\(draft\.state\)/);
-  assert.match(page, /if \(Object\.hasOwn\(risks, gate\)\) continue;/);
-  const draft = { survey: SURVEY_ID, version: 1, consent: { anonymousUse: true }, answers: { species: [{ id: 'edulis', seasonChanged: 'sì' }], weatherRemembers: 'no' } };
-  assert.equal(validateSurvey(draft).ok, true);
 });

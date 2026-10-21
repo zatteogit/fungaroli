@@ -1,19 +1,20 @@
-// Questionario per cercatori esperti del Reatino (pagina /questionario).
-// Compilazione a parti, con bozza salvata nel browser: al server arriva qualcosa solo dopo «Invia».
-// Elenchi chiusi, risposte rapide e validazione vengono da survey-schema.js, lo stesso modulo del Worker.
-// Regola della pagina: nessuna risposta preimpostata. Numeri vuoti finché la persona non scrive,
-// nessuna opzione già scelta, nessun esempio numerico; «Non so» sempre possibile.
+// Questionario per cercatori esperti del Reatino (pagina /questionario), versione 2: corta (3–4 minuti).
+// Chiede solo ciò che si sa per abitudine (zone, specie, mesi, boschi e quote di solito, errori e pericoli),
+// mai episodi, numeri, quantità o classifiche da ricordare: un dato inventato che sembra vero è dannoso.
+// Le osservazioni vere si raccolgono poi dal bosco con l'app («Annota»): la ricevuta invita a farlo.
+// Bozza salvata nel browser: al server arriva qualcosa solo dopo «Invia», dal riepilogo.
+// Elenchi chiusi, limiti e validazione vengono da survey-schema.js, lo stesso modulo del Worker.
+// Regola della pagina: nessuna risposta preimpostata; «Non so» dove serve.
 
 // Tutto ciò che riguarda il contratto con il server (nome e versione del questionario, indirizzo,
-// elenchi, limiti dei campi, risposte rapide) arriva da survey-schema.js in main(): qui non si ripete.
+// elenchi, limiti dei campi) arriva da survey-schema.js in main(): qui non si ripete.
 let S = {};
 let SURVEY_ID = '', SURVEY_VERSION = 0, ENDPOINT = '', MAX_BYTES = 0;
-let KEY = '', RECEIPTS_KEY = '';
-let YEAR_MIN = 0, LAST_YEAR = 0;
-let LIMITS = {}, SHORT = {}, RESPONDENT = {};
+let KEY = '', RECEIPTS_KEY = '', OLD_KEYS = [];
+let LIMITS = {}, RESPONDENT = {};
 let DONT_KNOW = 'non so';
 let MONTHS = [], MONTHS_SHORT = [];
-let ZONES = [], SPECIES = [], FORESTS = [], FACTORS = [];
+let SPECIES = [], FORESTS = [], YEARS = [], ELEVATION = [], REPORT = [], REACHABLE = [];
 
 // ---------------------------------------------------------------------------------------------
 // Strumenti: DOM senza innerHTML (i testi delle persone restano testo), memoria locale prudente.
@@ -46,100 +47,35 @@ function announce(msg) {
   announceTimer = setTimeout(() => { el.textContent = msg; }, 80);
 }
 const opt = (value, label = String(value)) => ({ value, label });
-function asOptions(x) {
-  if (Array.isArray(x)) return x.map((e) => (typeof e === 'string' ? opt(e)
-    : opt(e?.id ?? e?.value ?? e?.key, e?.label ?? e?.name ?? e?.nome ?? String(e?.id ?? e?.value ?? e?.key))));
-  if (x && typeof x === 'object') return Object.entries(x).map(([value, v]) => opt(value, typeof v === 'string' ? v : (v?.label ?? v?.name ?? v?.nome ?? value)));
-  return [];
-}
-const optionsOf = (f) => (typeof f.options === 'function' ? f.options() : f.options) || [];
-const labelOf = (opts, v) => opts.find((o) => o.value === v)?.label ?? String(v);
-const isNum = (v) => typeof v === 'number' && Number.isFinite(v);
-const fmtNum = (n) => String(n).replace('.', ',');
 const cap = (s) => (s ? s.charAt(0).toUpperCase() + s.slice(1) : s);
+const labelOf = (opts, v) => (v === DONT_KNOW ? 'Non so' : opts.find((o) => o.value === v)?.label ?? String(v));
+const optionsOf = (f) => (typeof f.options === 'function' ? f.options() : f.options) || [];
 // Stessa pulizia del server (S.cleanText) e stesso modo di contare i caratteri (unità UTF-16, come maxlength).
 function clean(s, max) {
   let t = S.cleanText(String(s ?? '')).replace(/[ \t]+/g, ' ').replace(/\n{3,}/g, '\n\n');
-  if (t.length > max) t = t.slice(0, /[\uD800-\uDBFF]/.test(t[max - 1]) ? max - 1 : max);
+  if (max && t.length > max) t = t.slice(0, /[\uD800-\uDBFF]/.test(t[max - 1]) ? max - 1 : max);
   return t.trim();
 }
-function shuffle(list) {
-  const a = [...list];
-  for (let i = a.length - 1; i > 0; i -= 1) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
-  return a;
-}
+const newKey = () => `${Date.now().toString(36)}${(seq += 1).toString(36)}`;
 
 // ---------------------------------------------------------------------------------------------
-// Opzioni chiuse (valori del contratto API) ed etichette
+// Stato e bozza (chiave con la versione: le bozze della versione 1 restano nel browser ma non si riaprono)
 // ---------------------------------------------------------------------------------------------
-// I valori ammessi vengono dallo schema (una sola fonte); qui solo le etichette mostrate.
 const YES_NO = [opt('sì', 'Sì'), opt('no', 'No')];
-const LABELS = {
-  'non dico': 'Preferisco non dirlo', quaderno: 'Su un quaderno', 'foto con data': 'Con foto datate', telefono: 'Sul telefono', niente: 'No, niente',
-  'foto o appunti': 'Da foto o appunti', memoria: 'A memoria',
-};
+const LABELS = { 'preferisco non dirlo': 'Preferisco non dirlo', sì: 'Sì', forse: 'Forse', no: 'No' };
 const fromSchema = (values) => (Array.isArray(values) ? values : []).map((v) => opt(v, LABELS[v] || cap(v)));
-let ATTESTATO = [], ASL_CHECK = [], NOTES = [], MONTH_PARTS = [], KINDS = [], SEEN = [], QUANTITY = [], DATE_FROM = [], RISK_GATE = [], SEASON_GATE = [], WEATHER_GATE = [];
-const WEEKS = [opt(1, 'Prima'), opt(2, 'Seconda'), opt(3, 'Terza'), opt(4, 'Quarta'), opt(5, 'Quinta')];
-const CONFIDENCE = [opt(1, '1'), opt(2, '2'), opt(3, '3'), opt(4, '4'), opt(5, '5')];
-// Vero se lo schema ha dato tutti gli elenchi chiusi che la pagina mostra.
-function loadOptions() {
-  ATTESTATO = fromSchema(S.ATTESTATO);
-  ASL_CHECK = fromSchema(S.ASL_CHECK);
-  NOTES = fromSchema(S.NOTE_KINDS);
-  MONTH_PARTS = fromSchema(S.MONTH_PARTS);
-  KINDS = fromSchema(S.EVENT_KINDS);
-  SEEN = fromSchema(S.SEEN);
-  QUANTITY = fromSchema(S.QUANTITIES);
-  DATE_FROM = fromSchema(S.DATE_FROM);
-  RISK_GATE = fromSchema(S.RISK_GATE);
-  SEASON_GATE = fromSchema(S.SEASON_GATE);
-  WEATHER_GATE = fromSchema(S.WEATHER_GATE);
-  // L'ordine dei fattori si mescola una volta per bozza: nessun fattore parte «in testa».
-  FACTORS = asOptions(S.RANKING_FACTORS);
-  MONTHS = Array.isArray(S.MONTHS) ? [...S.MONTHS] : [];
-  MONTHS_SHORT = MONTHS.map((m) => m.slice(0, 3));
-  return [ATTESTATO, ASL_CHECK, NOTES, MONTH_PARTS, KINDS, SEEN, QUANTITY, DATE_FROM, RISK_GATE, SEASON_GATE, WEATHER_GATE, FACTORS].every((l) => l.length) && MONTHS.length === 12;
-}
-const UNITS = { anni: ['anno', 'anni'], uscite: ['uscita', 'uscite'], giorni: ['giorno', 'giorni'], ore: ['ora', 'ore'], m: ['m', 'm'] };
-const UNIT_SR = { m: 'in metri', giorni: 'in giorni', ore: 'in ore', anni: 'in anni' };
-const unitText = (u, n) => (UNITS[u] ? UNITS[u][n === 1 ? 0 : 1] : u);
 
-// Risposte rapide della domanda (QUICK_ANSWERS dello schema: options, exclusive, single).
-// «Non so» è sempre ammesso e non si combina con altre scelte; «Altro…» apre il testo libero.
-function quickFor(path, omit = []) {
-  const q = path ? S.QUICK_ANSWERS?.[path] : null;
-  if (!q) return null;
-  const values = (Array.isArray(q) ? q : q.options || []).filter((v) => typeof v === 'string' && v !== DONT_KNOW && !omit.includes(v));
-  return { options: values.map((v) => opt(v, cap(v))), exclusive: new Set([...(q.exclusive || []), DONT_KNOW]), single: !!q.single };
-}
-
-// ---------------------------------------------------------------------------------------------
-// Stato e bozza
-// ---------------------------------------------------------------------------------------------
-const open0 = () => ({ quick: [], text: '' });
-const opens = (...keys) => Object.fromEntries(keys.map((k) => [k, open0()]));
 function blank() {
   return {
-    format: 1, mode: null, step: 'intro', startedAt: null, skipped: {},
-    profile: { years: null, mentor: open0(), zones: [], zonesOther: '', tripsGoodYear: null, tripsBadYear: null, speciesSought: [], attestato: null, aslCheck: null, notes: [], notesSince: null },
-    speciesChosen: [], speciesData: {},
-    rain: opens('goodRain', 'drySummer', 'flushEnd', 'lowRainSpecies'),
-    weather: { remembers: null }, weatherEvents: [],
-    flushes: [], emptyTrips: [],
-    forest: { ...opens('aspect', 'cutAge', 'microsites', 'soil', 'reliableSpots', 'indicators'), ranking: [], order: shuffle(FACTORS.map((f) => f.value)) },
-    access: opens('gates', 'navigators', 'localRules', 'parks', 'crowding', 'parking'),
-    risks: { ...opens('confusions', 'poisonings', 'beginnerErrors', 'avoided', 'mountainDangers'), knowsPoisonings: null, avoidsSpecies: null },
-    followUp: opens('knowsOthers'),
-    consent: { anonymousUse: false, recontact: null, diary: null },
+    format: 2, step: 'intro', startedAt: null,
+    // forma delle risposte; zone e altre specie sono righe con una chiave stabile (le schede vi si legano)
+    a: { profile: { years: null, zones: [], speciesSought: [], speciesOther: [] }, barrenZones: { where: '', opinion: '' }, warning: '', willReport: null },
+    cards: {}, cardPick: [],
+    consent: { anonymousUse: false, recontact: null },
     respondent: { name: '', contact: '' },
   };
 }
-const speciesItem = (id) => ({ id, name: '', start: null, peak: null, end: null, seasonChanged: null, changed: open0(), elevMin: null, elevMax: null, elevMode: null,
-  forests: [], forestsNever: [], lagMin: null, lagTyp: null, lagMax: null, flushDays: null, confidence: null });
-const eventItem = () => ({ year: null, month: null, zone: '', kind: null, effect: open0(), daysAfter: null, seen: null });
-const flushItem = () => ({ year: null, month: null, week: null, zone: '', elev: null, forest: null, species: null, speciesOther: '', quantity: null, hours: null, weatherBefore: open0(), dateFrom: null });
-const emptyItem = () => ({ year: null, month: null, week: null, zone: '', elev: null, forest: null, speciesSought: [], hours: null, why: open0(), dateFrom: null });
+const cardItem = () => ({ months: [], forests: [], elevation: [] });
 
 function merge(base, saved) {
   if (!saved || typeof saved !== 'object' || Array.isArray(saved)) return base;
@@ -153,9 +89,8 @@ function merge(base, saved) {
 
 let state = blank();
 let resumeAt = null; // data della bozza trovata all'apertura: finché non si sceglie, si chiede se riprenderla
-let savedStep = 'A'; // la parte in cui era la bozza
+let savedStep = 'A';
 let sent = null; // ricevuta dell'invio appena riuscito
-let storageOk = true;
 let saveTimer = 0;
 
 function loadDraft() {
@@ -163,7 +98,7 @@ function loadDraft() {
     const raw = store.get(KEY);
     if (!raw) return null;
     const d = JSON.parse(raw);
-    return d?.state?.format === 1 && d.state.mode ? d : null;
+    return d?.state?.format === 2 ? d : null;
   } catch { return null; }
 }
 function save(now = false) {
@@ -171,16 +106,16 @@ function save(now = false) {
   if (now) writeDraft(); else saveTimer = setTimeout(writeDraft, 250);
 }
 function writeDraft() {
-  if (!state.mode || sent) return;
+  if (!state.startedAt || sent) return;
   const savedAt = new Date().toISOString();
-  storageOk = store.set(KEY, JSON.stringify({ savedAt, state }));
+  const ok = store.set(KEY, JSON.stringify({ savedAt, state }));
   const el = $('#q-saved');
-  if (el) el.textContent = storageOk ? `Bozza salvata su questo dispositivo alle ${clock(savedAt)}.` : 'Questo browser non salva la bozza: non chiudere la pagina prima di inviare.';
+  if (el) el.textContent = ok ? `Bozza salvata su questo dispositivo alle ${clock(savedAt)}.` : 'Questo browser non salva la bozza: non chiudere la pagina prima di inviare.';
 }
 const clock = (iso) => { const d = new Date(iso); return `${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`; };
 const dayText = (iso) => { const d = new Date(iso); return `il ${d.getDate()} ${MONTHS[d.getMonth()]} alle ${clock(iso)}`; };
 
-const PART_KEYS = 'ABCDEFGHI'.split('');
+const PART_KEYS = ['A', 'B', 'C', 'D'];
 const isPart = (step) => PART_KEYS.includes(step);
 function changed() {
   if (!state.startedAt && isPart(state.step)) state.startedAt = new Date().toISOString();
@@ -198,255 +133,68 @@ function refresh() {
 }
 
 // ---------------------------------------------------------------------------------------------
-// Domande. t = tipo; brief = anche nella versione breve; when = solo dopo una certa risposta.
+// Domande. path = percorso nello schema (fieldSpec); il valore sta nello stato con la stessa forma.
 // ---------------------------------------------------------------------------------------------
-const contactOn = () => state.consent.recontact === 'sì' || state.consent.diary === 'sì';
-// «Non è cambiata» resta tra le risposte rapide dello schema (risposte già valide), ma nella pagina lo dice il «No» del cancello.
-const NOT_CHANGED = 'non è cambiata';
-const elevCheck = (o) => {
-  const [a, m, b] = [o.elevMin, o.elevMode, o.elevMax];
-  if (isNum(a) && isNum(b) && a > b) return 'La quota più bassa è sopra la più alta: controlla.';
-  if (isNum(m) && ((isNum(a) && m < a) || (isNum(b) && m > b))) return 'La quota più frequente è fuori da quelle che hai scritto: controlla.';
-  return '';
-};
-const lagCheck = (o) => {
-  const [a, m, b] = [o.lagMin, o.lagTyp, o.lagMax];
-  if (isNum(a) && isNum(b) && a > b) return 'Il minimo è sopra il massimo: controlla.';
-  if (isNum(m) && ((isNum(a) && m < a) || (isNum(b) && m > b))) return 'Il «di solito» è fuori da minimo e massimo: controlla.';
-  return '';
-};
+const reachableAnswer = () => REACHABLE.includes(state.a.willReport);
+const wantsContact = () => reachableAnswer() && state.consent.recontact === 'sì';
 
 const A_FIELDS = [
-  { t: 'num', k: 'years', short: 'Anni di esperienza', label: 'Da quanti anni vai per funghi?', unit: 'anni', brief: true },
-  { t: 'open', k: 'mentor', path: 'profile.mentor', short: 'Chi ti ha insegnato', label: 'Chi ti ha insegnato?' },
-  { t: 'order', k: 'zones', short: 'Zone più frequentate', label: 'In quali zone vai più spesso?', hint: 'Tocca le zone in ordine, dalla più frequentata. Tocca di nuovo una zona per toglierla.', options: () => ZONES, brief: true },
-  { t: 'text', k: 'zonesOther', short: 'Altre zone', label: 'Altre zone o località', hint: 'Facoltativo. Basta il nome del comune o della località.', list: 'zone', brief: true },
-  { t: 'num', k: 'tripsGoodYear', short: 'Uscite in un anno buono', label: 'Quante uscite fai in un anno buono?', unit: 'uscite' },
-  { t: 'num', k: 'tripsBadYear', short: 'Uscite in un anno scarso', label: 'E in un anno scarso?', unit: 'uscite' },
-  { t: 'multi', k: 'speciesSought', short: 'Funghi che cerchi', label: 'Quali funghi cerchi davvero?', hint: 'Quelli per cui esci apposta. Puoi sceglierne più di uno.', options: () => SPECIES, brief: true },
-  { t: 'choice', k: 'attestato', short: 'Attestato micologico', label: 'Hai l’attestato micologico (il tesserino)?', hint: 'Facoltativo.', options: () => ATTESTATO },
-  { t: 'choice', k: 'aslCheck', short: 'Controllo ASL', label: 'Fai controllare i funghi all’Ispettorato micologico della ASL?', hint: 'Facoltativo.', options: () => ASL_CHECK },
-  { t: 'multi', k: 'notes', short: 'Annoti le uscite', label: 'Annoti le tue uscite?', hint: 'Puoi scegliere più risposte.', options: () => NOTES, exclusive: 'niente' },
-  { t: 'num', k: 'notesSince', short: 'Annoti dal', label: 'Da che anno le annoti?', when: (o) => o.notes.some((n) => n !== 'niente') },
+  { t: 'choice', path: 'profile.years', short: 'Da quanti anni cerchi funghi', label: 'Da quanti anni cerchi funghi?', options: () => YEARS },
+  { t: 'texts', path: 'profile.zones', short: 'Zone', label: 'In quali zone vai, a grandi linee?', hint: 'Basta il comune o la località, anche più di uno. Niente posti precisi.', list: 'zone', item: 'Zona', add: 'Aggiungi un’altra zona' },
+  { t: 'multi', path: 'profile.speciesSought', short: 'Funghi che cerchi', label: 'Quali funghi cerchi?', hint: 'Quelli per cui esci apposta. Puoi sceglierne più di uno.', options: () => SPECIES },
+  { t: 'texts', path: 'profile.speciesOther', short: 'Altre specie che cerchi', label: 'Cerchi anche altre specie?', hint: 'Facoltativo. Scrivi il nome italiano o scientifico.', list: 'species', item: 'Altra specie', add: 'Aggiungi una specie', empty: true },
 ];
 const SPECIES_FIELDS = [
-  { t: 'group', label: 'Quando esce?', hint: 'Mese e parte del mese. Se non lo sai, lascia vuoto.', brief: true, fields: [
-    { t: 'month', k: 'start', short: 'Comincia', label: 'Quando comincia', part: true, brief: true },
-    { t: 'month', k: 'peak', short: 'Picco', label: 'Quando c’è il picco', part: true, brief: true },
-    { t: 'month', k: 'end', short: 'Finisce', label: 'Quando finisce', part: true, brief: true },
-  ] },
-  // Il cancello si invia (sì, no, non so), come quelli dei rischi; il dettaglio si chiede solo dopo un «Sì».
-  { t: 'choice', k: 'seasonChanged', short: 'La stagione è cambiata', label: 'La stagione è cambiata negli anni?', options: () => SEASON_GATE },
-  { t: 'open', k: 'changed', path: 'species.changed', short: 'Come è cambiata la stagione', label: 'Come è cambiata?', when: (o) => o.seasonChanged === 'sì', omitQuick: [NOT_CHANGED] },
-  { t: 'group', label: 'A che quota la trovi?', hint: 'In metri, anche a occhio.', brief: true, check: elevCheck, fields: [
-    { t: 'num', k: 'elevMin', short: 'Quota più bassa', label: 'Quota più bassa', unit: 'm', brief: true },
-    { t: 'num', k: 'elevMax', short: 'Quota più alta', label: 'Quota più alta', unit: 'm', brief: true },
-    { t: 'num', k: 'elevMode', short: 'Quota più frequente', label: 'Quota dove la trovi più spesso', unit: 'm', brief: true },
-  ] },
-  { t: 'multi', k: 'forests', short: 'Boschi dove la trovi', label: 'In quali boschi la trovi?', options: () => FORESTS, pairWith: 'forestsNever' },
-  { t: 'multi', k: 'forestsNever', short: 'Boschi dove non l’hai mai trovata', label: 'In quali boschi non l’hai mai trovata?', options: () => FORESTS, pairWith: 'forests' },
-  { t: 'group', label: 'Dopo una pioggia buona, quanti giorni passano prima che esca?', check: lagCheck, fields: [
-    { t: 'num', k: 'lagMin', short: 'Giorni dopo la pioggia, al più presto', label: 'Al più presto', unit: 'giorni' },
-    { t: 'num', k: 'lagTyp', short: 'Giorni dopo la pioggia, di solito', label: 'Di solito', unit: 'giorni' },
-    { t: 'num', k: 'lagMax', short: 'Giorni dopo la pioggia, al più tardi', label: 'Al più tardi', unit: 'giorni' },
-  ] },
-  { t: 'num', k: 'flushDays', short: 'Durata di una buttata', label: 'Quanto dura una buttata?', unit: 'giorni' },
-  { t: 'confidence', k: 'confidence', short: 'Quanto sei sicuro', label: 'Quanto sei sicuro di queste risposte?', hint: '1 vuol dire poco sicuro, 5 molto sicuro.', options: CONFIDENCE },
+  { t: 'months', path: 'species.months', short: 'Mesi in cui la trovi di solito', label: 'In che mesi la trovi di solito?', hint: 'Tocca tutti i mesi in cui la trovi, anno dopo anno.' },
+  { t: 'multi', path: 'species.forests', short: 'Boschi', label: 'In che boschi la trovi?', hint: 'Puoi sceglierne più di uno.', options: () => FORESTS, dontKnow: true },
+  { t: 'multi', path: 'species.elevation', short: 'Quota di solito', label: 'A che quota la trovi, di solito?', hint: 'Anche più di una fascia.', options: () => ELEVATION, dontKnow: true },
 ];
 const C_FIELDS = [
-  { t: 'open', k: 'goodRain', path: 'rain.goodRain', short: 'Pioggia buona', label: 'Per te, cos’è una pioggia buona per i funghi?' },
-  { t: 'open', k: 'drySummer', path: 'rain.drySummer', short: 'Dopo un’estate secca', label: 'Dopo un’estate secca, cosa succede?' },
-  { t: 'open', k: 'flushEnd', path: 'rain.flushEnd', short: 'Cosa fa finire una buttata', label: 'Cosa fa finire una buttata?' },
-  { t: 'open', k: 'lowRainSpecies', path: 'rain.lowRainSpecies', short: 'Specie con poca pioggia', label: 'Ci sono specie che escono anche con poca pioggia? Quali?' },
+  { t: 'area', path: 'barrenZones.where', short: 'Zone che non danno mai niente', label: 'Ci sono zone che sembrano adatte, ma non danno mai niente?', hint: 'Facoltativo. Basta la zona a grandi linee.' },
+  { t: 'area', path: 'barrenZones.opinion', short: 'Perché, secondo te (parere)', label: 'Secondo te, perché?', hint: 'È un tuo parere, e va bene così. Se non lo sai, lascia vuoto.', when: () => !!clean(state.a.barrenZones.where) },
+  { t: 'area', path: 'warning', short: 'Un errore o un pericolo', label: 'Un errore da principiante che vedi spesso, oppure un pericolo in montagna', hint: 'Facoltativo. Non scrivere nomi di persone né dati sulla salute.' },
 ];
-const zoneField = { t: 'text', k: 'zone', short: 'Zona', label: 'In che zona?', hint: 'Basta la zona o il comune.', list: 'zone', mine: true };
-const yearField = { t: 'year', k: 'year', short: 'Anno', label: 'In che anno?' };
-const monthField = { t: 'month', k: 'month', short: 'Mese', label: 'In che mese?' };
-const weekField = { t: 'choice', k: 'week', short: 'Settimana', label: 'In che settimana del mese?', options: WEEKS };
-const elevField = { t: 'num', k: 'elev', short: 'Quota', label: 'A che quota, più o meno?', unit: 'm' };
-const forestField = { t: 'choice', k: 'forest', short: 'Bosco', label: 'In che bosco?', options: () => FORESTS };
-const hoursField = { t: 'num', k: 'hours', short: 'Ore di ricerca', label: 'Quante ore hai cercato?', unit: 'ore' };
-const dateFromField = { t: 'choice', k: 'dateFrom', short: 'La data viene da', label: 'La data la ricordi da foto o appunti, o a memoria?', options: () => DATE_FROM };
-const EVENT_FIELDS = [
-  yearField, monthField, zoneField,
-  { t: 'choice', k: 'kind', short: 'Che cosa', label: 'Che cosa è successo?', options: () => KINDS },
-  { t: 'open', k: 'effect', path: 'weatherEvents.effect', short: 'Effetto sui funghi', label: 'Che effetto ha avuto sui funghi?' },
-  { t: 'num', k: 'daysAfter', short: 'Dopo quanti giorni', label: 'Dopo quanti giorni hai visto l’effetto?', unit: 'giorni' },
-  { t: 'choice', k: 'seen', short: 'Fonte', label: 'L’hai visto di persona o te l’hanno raccontato?', options: () => SEEN },
-];
-const FLUSH_FIELDS = [
-  yearField, monthField, weekField, zoneField, elevField, forestField,
-  { t: 'species1', k: 'species', short: 'Specie', label: 'Quale specie?' },
-  { t: 'choice', k: 'quantity', short: 'Quanti', label: 'Quanti ne hai trovati?', options: () => QUANTITY },
-  hoursField,
-  { t: 'open', k: 'weatherBefore', path: 'flushes.weatherBefore', short: 'Tempo nei giorni prima', label: 'Che tempo aveva fatto prima?' },
-  dateFromField,
-];
-const EMPTY_FIELDS = [
-  yearField, monthField, weekField, zoneField, elevField, forestField,
-  { t: 'multi', k: 'speciesSought', short: 'Cosa cercavi', label: 'Cosa cercavi?', options: () => SPECIES, shortlist: true },
-  hoursField,
-  { t: 'open', k: 'why', path: 'emptyTrips.why', short: 'Perché niente', label: 'Secondo te perché non c’era niente?' },
-  dateFromField,
-];
-const F_FIELDS = [
-  { t: 'open', k: 'aspect', path: 'forest.aspect', short: 'Versante', label: 'Quale versante guardi a inizio stagione? E a fine stagione?' },
-  { t: 'open', k: 'cutAge', path: 'forest.cutAge', short: 'Età del bosco', label: 'Dove trovi di più: bosco tagliato da poco, ceduo vecchio o alto fusto?' },
-  { t: 'open', k: 'microsites', path: 'forest.microsites', short: 'Dove guardi prima', label: 'Dentro il bosco, dove guardi per primo?' },
-  { t: 'open', k: 'soil', path: 'forest.soil', short: 'Terreno', label: 'Che terreno preferiscono i funghi che cerchi?' },
-  { t: 'open', k: 'reliableSpots', path: 'forest.reliableSpots', short: 'Posti che rendono ogni anno', label: 'Ci sono posti che rendono quasi ogni anno?', hint: 'Non serve dire dove sono.', detail: { value: 'sì, alcuni posti rendono quasi ogni anno', label: 'Che cosa hanno in comune? (facoltativo)' } },
-  { t: 'open', k: 'indicators', path: 'forest.indicators', short: 'Segni che fanno pensare al porcino', label: 'Ci sono segni che ti fanno pensare che sia il momento del porcino?', hint: 'Indica anche quanto spesso hanno funzionato. Se non l’hai contato, va bene dirlo.' },
-  { t: 'order', k: 'ranking', short: 'Fattori in ordine di importanza', label: 'Che cosa conta di più perché escano i funghi?', hint: 'Tocca i fattori in ordine di importanza: il numero si mette da solo. Puoi fermarti prima della fine.', options: () => FACTORS, shuffled: 'order', asRanking: true, undo: true },
-];
-const G_FIELDS = [
-  { t: 'open', k: 'gates', path: 'access.gates', short: 'Sbarre e divieti', label: 'Ci sono sbarre, strade chiuse o divieti di transito da sapere?' },
-  { t: 'open', k: 'navigators', path: 'access.navigators', short: 'Navigatori', label: 'Ci sono posti dove il navigatore porta fuori strada?' },
-  { t: 'open', k: 'localRules', path: 'access.localRules', short: 'Permessi e regole locali', label: 'Ci sono permessi o regole locali da sapere?' },
-  { t: 'open', k: 'parks', path: 'access.parks', short: 'Parchi e riserve', label: 'Parchi e riserve: cosa bisogna sapere?' },
-  { t: 'open', k: 'crowding', path: 'access.crowding', short: 'Affollamento', label: 'Quanta gente c’è nelle tue zone, e quando?' },
-  { t: 'open', k: 'parking', path: 'access.parking', short: 'Parcheggio', label: 'Com’è il parcheggio?' },
-];
-const H_FIELDS = [
-  { t: 'open', k: 'confusions', path: 'risks.confusions', short: 'Scambi pericolosi', label: 'Quali scambi pericolosi vedi in zona?' },
-  // Intossicazioni e specie evitate: prima un sì o no, poi il testo solo dopo «Sì». Nessuna risposta rapida sul contenuto.
-  { t: 'choice', k: 'knowsPoisonings', short: 'Conosci casi di intossicazione', label: 'Conosci casi di intossicazione da funghi?', options: () => RISK_GATE },
-  { t: 'open', k: 'poisonings', path: 'risks.poisonings', short: 'Cosa era successo', label: 'Cosa era successo?', hint: 'Racconta specie, anno e zona. Non scrivere chi era e non dare dettagli sulla salute di persone riconoscibili, nemmeno tua.', when: (o) => o.knowsPoisonings === 'sì' },
-  { t: 'open', k: 'beginnerErrors', path: 'risks.beginnerErrors', short: 'Errori dei principianti', label: 'Quali errori fanno i principianti?' },
-  { t: 'choice', k: 'avoidsSpecies', short: 'Specie che eviti', label: 'Ci sono specie che eviti di raccogliere?', options: () => RISK_GATE },
-  { t: 'open', k: 'avoided', path: 'risks.avoided', short: 'Quali e perché', label: 'Quali, e perché?', when: (o) => o.avoidsSpecies === 'sì' },
-  { t: 'open', k: 'mountainDangers', path: 'risks.mountainDangers', short: 'Pericoli in montagna', label: 'Quali pericoli ci sono in montagna?' },
-];
-const KNOWS_FIELD = { t: 'open', of: 'followUp', k: 'knowsOthers', path: 'followUp.knowsOthers', short: 'Altri amici', label: 'Conosci qualcuno a cui potrebbe far piacere rispondere?', hint: 'Non scrivere nomi o contatti di altre persone: gira loro il link.' };
-const I_FIELDS = [
-  { t: 'choice', of: 'consent', k: 'diary', short: 'Taccuino delle uscite', label: 'Nella prossima stagione ti va di annotare le tue uscite e mandarmele?', hint: 'Data, zona, cosa hai trovato o non trovato. Ti spiego io come.', options: YES_NO },
-  KNOWS_FIELD,
-  { t: 'choice', of: 'consent', k: 'recontact', short: 'Ricontatto', label: 'Posso ricontattarti per qualche domanda in più?', options: YES_NO },
-  { t: 'text', of: 'respondent', k: 'name', short: 'Nome', label: 'Il tuo nome', hint: 'Facoltativo. Anche solo un soprannome: serve a collegare le risposte alla tua testimonianza durante lo studio. Non comparirà nei risultati.', autocomplete: 'name' },
-  { t: 'text', of: 'respondent', k: 'contact', short: 'Contatto', label: 'Come posso ricontattarti?', hint: 'Facoltativo. Telefono o email.', when: contactOn },
-  { t: 'consent' },
+const D_FIELDS = [
+  { t: 'choice', path: 'willReport', short: 'Segnaleresti con l’app', label: 'Segnaleresti con l’app i tuoi ritrovamenti, anche quando non trovi niente?', hint: 'Con «Annota» bastano pochi tocchi, nel bosco: cosa hai trovato, o che non hai trovato niente, e quanto hai cercato.', options: () => REPORT },
+  { t: 'choice', path: 'consent.recontact', short: 'Ricontatto', label: 'Vuoi che ti ricontatti?', hint: 'Per spiegarti come si segnala con l’app, o per qualche domanda in più.', options: YES_NO, when: reachableAnswer },
+  { t: 'text', path: 'respondent.name', short: 'Nome', label: 'Il tuo nome', hint: 'Facoltativo. Anche solo un soprannome. Non comparirà nei risultati.', autocomplete: 'name', when: wantsContact },
+  { t: 'text', path: 'respondent.contact', short: 'Contatto', label: 'Come posso ricontattarti?', hint: 'Telefono o email.', when: wantsContact },
 ];
 
-// Limiti dei campi (lunghezze, minimi, massimi, decimali) dallo schema condiviso: fieldSpec(percorso).
-// Un campo che lo schema non conosce ferma l'avvio: meglio un errore subito che un 400 all'invio.
-const FIELD_GROUPS = [[A_FIELDS, 'profile'], [SPECIES_FIELDS, 'species'], [C_FIELDS, 'rain'], [EVENT_FIELDS, 'weatherEvents'], [FLUSH_FIELDS, 'flushes'],
-  [EMPTY_FIELDS, 'emptyTrips'], [F_FIELDS, 'forest'], [G_FIELDS, 'access'], [H_FIELDS, 'risks'], [I_FIELDS, 'followUp']];
-function setLimit(f, key, value) {
-  if (f[key] !== undefined && f[key] !== value) throw new Error(`Limiti diversi per lo stesso campo: ${f.k}.${key}`);
-  f[key] = value;
+// Dove sta il valore di un campo: [oggetto, chiave]. Le schede delle specie passano la loro scheda.
+function ref(f, card) {
+  const [head, ...rest] = f.path.split('.');
+  if (head === 'respondent') return [state.respondent, rest[0]];
+  if (head === 'consent') return [state.consent, rest[0]];
+  if (head === 'species') return [card, rest[0]];
+  if (!rest.length) return [state.a, head];
+  return [state.a[head], rest[0]];
 }
-const QUESTION_GUIDANCE = Object.freeze({
-  "profile.years": "Conta da quando hai iniziato ad andare a funghi, anche se non ci sei andato tutti gli anni.",
-  "profile.mentor": "Come hai imparato a cercare e conoscere i funghi? Puoi indicare più persone o modi, oppure raccontarlo con parole tue.",
-  "profile.zones": "Indica le aree che frequenti davvero, non quelle di cui hai solo sentito parlare. Per zone fuori elenco usa «Altre zone o località» oppure «Altro / specifica».",
-  "profile.zonesOther": "Puoi scrivere anche zone fuori dal Reatino. Non servono coordinate, sentieri precisi o punti di raccolta.",
-  "profile.tripsGoodYear": "Pensa a un anno in cui per te la stagione è andata bene: quante volte sei uscito apposta a cercare funghi? Una stima va bene.",
-  "profile.tripsBadYear": "Pensa a un anno in cui hai trovato pochi funghi: quante volte sei comunque uscito a cercarli?",
-  "profile.speciesSought": "Indica le specie che vai apposta a cercare, non tutte quelle che riconosci. Puoi aggiungere nomi non presenti con «Altro / specifica».",
-  "profile.attestato": "Mi riferisco all’attestato o titolo richiesto per la raccolta nella zona dove vai. Se la tua situazione è diversa, descrivila in «Altro / specifica».",
-  "profile.aslCheck": "Pensa al controllo del raccolto da parte di un micologo dell’ASL, non alla verifica fatta da amici o parenti.",
-  "profile.notes": "Segni quando esci, dove vai o che cosa trovi? Puoi indicare più strumenti o descriverne uno diverso.",
-  "profile.notesSince": "Indica l’anno in cui hai cominciato a conservare appunti, foto o altre registrazioni delle uscite.",
-  "species.start": "In quale mese inizi di solito a trovare questa specie nelle zone che frequenti? Se ricordi, indica anche inizio, metà o fine mese.",
-  "species.peak": "In quale mese la trovi più spesso o in maggiore quantità? È il periodo migliore della stagione, secondo la tua esperienza.",
-  "species.end": "In quale mese smetti di solito di trovare questa specie, nelle zone che frequenti?",
-  "species.seasonChanged": "Rispetto a quando hai cominciato a cercare questa specie, il periodo in cui la trovi è cambiato? Rispondi in base ai tuoi ricordi.",
-  "species.changed": "Che differenza hai osservato: nel periodo dell’anno, nella durata della stagione o nelle quote? Puoi scegliere più voci o descriverla.",
-  "species.elevMin": "La minore altezza sul livello del mare a cui l’hai trovata personalmente, nelle tue zone. Non chiedo il limite assoluto della specie.",
-  "species.elevMax": "La maggiore altezza sul livello del mare a cui l’hai trovata personalmente, nelle tue zone.",
-  "species.elevMode": "L’altezza sul livello del mare dove, di solito, ne trovi di più. Una quota approssimativa va bene.",
-  "species.forests": "In quali tipi di bosco hai trovato personalmente questa specie? Scegli tutte le voci che descrivono la tua esperienza.",
-  "species.forestsNever": "Indica solo tipi di bosco in cui l’hai cercata senza trovarla. Non includere boschi che non frequenti.",
-  "species.lagMin": "Dopo una pioggia che ritieni favorevole, qual è il minor numero di giorni che ricordi di aver aspettato prima di trovarla?",
-  "species.lagTyp": "Dopo una pioggia favorevole, quanti giorni aspetti normalmente prima di iniziare a trovare questa specie?",
-  "species.lagMax": "Dopo una pioggia favorevole, qual è l’attesa più lunga che ricordi prima di iniziare a trovarla?",
-  "species.flushDays": "Per «buttata» intendo un periodo in cui compaiono molti funghi della stessa specie. Per quanti giorni continui a trovarne di nuovi?",
-  "species.confidence": "Pensa a quanto queste risposte vengono da osservazioni ripetute oppure da ricordi incerti. Non è un voto alla tua competenza.",
-  "rain.goodRain": "Descrivi che tipo di pioggia, secondo la tua esperienza, precede le uscite migliori: intensità, durata o ripetizione nel tempo, se li ricordi.",
-  "rain.drySummer": "Pensa alle stagioni che sono venute dopo estati molto secche: come sono andate le uscite rispetto al solito?",
-  "rain.flushEnd": "Quando smetti di trovare funghi dopo un periodo abbondante, quali cambiamenti hai notato? Puoi anche dire che non hai osservato una causa.",
-  "rain.lowRainSpecies": "Indica le specie che hai trovato anche quando aveva piovuto poco. Non sto chiedendo quali specie dovrebbero farlo in teoria.",
-  "weatherEvents.year": "L’anno in cui è successo l’episodio che stai raccontando.",
-  "weatherEvents.month": "Il mese dell’episodio, se lo ricordi.",
-  "weatherEvents.zone": "La zona dell’episodio: basta un’area o un comune, senza punti di raccolta precisi.",
-  "weatherEvents.kind": "Il cambiamento del tempo che hai osservato in quell’occasione. Se non rientra nell’elenco, descrivilo in «Altro / specifica».",
-  "weatherEvents.effect": "Dopo quel cambiamento, che cosa hai osservato nei funghi che trovavi? Descrivi anche se non hai notato effetti.",
-  "weatherEvents.daysAfter": "Quanti giorni sono passati tra l’episodio meteorologico e il cambiamento nei ritrovamenti?",
-  "weatherEvents.seen": "Serve a distinguere ciò che hai visto tu dai racconti ricevuti da altre persone.",
-  "flushes.year": "L’anno dell’uscita o del periodo abbondante che stai raccontando.",
-  "flushes.month": "Il mese in cui hai fatto quell’uscita.",
-  "flushes.week": "La parte del mese in cui è avvenuta l’uscita. Se non la ricordi, puoi lasciare vuoto.",
-  "flushes.zone": "La zona o il comune dell’uscita, senza indicare i tuoi posti precisi.",
-  "flushes.elev": "L’altezza approssimativa sul livello del mare del bosco in cui cercavi.",
-  "flushes.forest": "Il tipo di bosco in cui si è svolta quell’uscita. Se era misto o diverso dalle voci proposte, descrivilo.",
-  "flushes.species": "La specie di cui ricordi il ritrovamento abbondante. Per un nome fuori elenco usa «Un’altra specie».",
-  "flushes.quantity": "Quanti funghi di quella specie hai trovato in quell’uscita, circa? Non occorre che tu li abbia raccolti.",
-  "flushes.hours": "Il tempo passato effettivamente a cercare durante quell’uscita, senza il viaggio in auto.",
-  "flushes.weatherBefore": "Che tempo ricordi nei giorni precedenti all’uscita? Usa i tuoi ricordi, senza dover ricostruire dati che non hai.",
-  "flushes.dateFrom": "La data è documentata da foto o appunti, oppure la stai ricostruendo a memoria?",
-  "emptyTrips.year": "L’anno dell’uscita in cui non hai trovato ciò che cercavi.",
-  "emptyTrips.month": "Il mese di quell’uscita andata a vuoto.",
-  "emptyTrips.week": "Se lo ricordi, indica in quale parte del mese sei uscito.",
-  "emptyTrips.zone": "La zona o il comune dell’uscita andata a vuoto, senza punti precisi.",
-  "emptyTrips.elev": "L’altezza approssimativa sul livello del mare dove hai cercato.",
-  "emptyTrips.forest": "Il tipo di bosco in cui hai cercato senza trovare i funghi desiderati.",
-  "emptyTrips.speciesSought": "Quali specie speravi di trovare in quell’uscita? Puoi indicarne più di una o specificarne altre.",
-  "emptyTrips.hours": "Quanto tempo hai passato a cercare durante quell’uscita, escluso il viaggio?",
-  "emptyTrips.why": "È la tua interpretazione di quell’uscita: va bene anche non conoscere il motivo.",
-  "emptyTrips.dateFrom": "Distingui una data verificabile su foto o appunti da una data che ricordi a memoria.",
-  "forest.aspect": "Per versante intendo la direzione verso cui guarda il pendio: nord, sud, est o ovest. Indica se cambia la tua scelta tra inizio e fine stagione.",
-  "forest.cutAge": "Pensa al tipo di gestione dei boschi dove trovi i funghi. Nel ceduo i fusti ricrescono dalla base dopo il taglio. Se non conosci questi termini, descrivi il bosco con parole tue.",
-  "forest.microsites": "Pensa ai punti del bosco in cui cerchi per primi. Non servono nomi di luoghi: descrivi solo come sono fatti.",
-  "forest.soil": "Descrivi il terreno dove hai osservato più ritrovamenti. Va bene una descrizione comune, senza classificazioni tecniche.",
-  "forest.reliableSpots": "Ci sono ambienti che, nella tua esperienza, continuano a dare funghi in anni diversi? Non chiedo l’indirizzo del posto.",
-  "forest.indicators": "Racconta che cosa ti fa decidere di uscire a cercare porcini e quante volte ricordi che quel segnale abbia funzionato.",
-  "forest.ranking": "Metti prima i fattori che ritieni più importanti per i ritrovamenti nelle tue zone. Puoi indicarne solo alcuni o aggiungere un fattore diverso.",
-  "access.gates": "Quali problemi di accesso hai incontrato sulle strade usate per le uscite? Descrivi il tipo di impedimento, senza indicazioni precise se non vuoi.",
-  "access.navigators": "Hai avuto indicazioni del navigatore sbagliate o poco praticabili durante un’uscita? Racconta che cosa non tornava.",
-  "access.localRules": "Quali regole o autorizzazioni sai che si applicano alle zone che frequenti? Le tue risposte saranno da verificare, non sostituiscono le regole ufficiali.",
-  "access.parks": "Se frequenti parchi o riserve, quali attenzioni o regole di accesso e raccolta hai incontrato? Se non li frequenti, puoi scegliere «Non pertinente».",
-  "access.crowding": "In quali periodi o giorni noti più o meno cercatori nelle zone che frequenti?",
-  "access.parking": "Racconta se, quando e perché è difficile trovare un posto dove lasciare l’auto per le tue uscite.",
-  "risks.confusions": "Pensa alle specie che hai visto scambiare tra loro o a dubbi ricorrenti sui nomi. Non ti sto chiedendo di identificare un fungo.",
-  "risks.knowsPoisonings": "Sai di episodi legati al consumo di funghi? Non servono nomi né dettagli sanitari: il racconto successivo riguarda solo specie, periodo e zona.",
-  "risks.poisonings": "Se conosci un episodio, descrivi soltanto gli aspetti utili a capire il rischio legato ai funghi.",
-  "risks.beginnerErrors": "Quali errori di raccolta, prudenza o comportamento hai osservato in chi è alle prime uscite?",
-  "risks.avoidsSpecies": "Ci sono funghi che scegli di non raccogliere, per qualsiasi ragione? Dopo «Sì» puoi spiegare quali e perché.",
-  "risks.avoided": "Puoi indicare nomi comuni o scientifici e spiegare la tua scelta, senza dover giustificarla.",
-  "risks.mountainDangers": "Pensa ai pericoli pratici incontrati durante le uscite: descrivi quelli che conosci dalla tua esperienza.",
-  "followUp.knowsOthers": "Se pensi che qualcun altro possa contribuire con la propria esperienza, puoi inoltrargli tu il link."
-});
-function applySpec(fields, prefix) {
+const getV = (f, card) => { const [o, k] = ref(f, card); return o[k]; };
+const setV = (f, card, v) => { const [o, k] = ref(f, card); o[k] = v; };
+
+// Limiti dei campi (lunghezze, numero di voci) dallo schema condiviso: fieldSpec(percorso).
+// Un campo che lo schema non conosce ferma l'avvio: meglio un errore subito che un 400 all'invio.
+function applySpec(fields) {
   for (const f of fields) {
-    if (f.t === 'group') { applySpec(f.fields, prefix); continue; }
-    if (!f.k || f.of === 'consent' || f.send === false) continue;
-    if (f.of === 'respondent') { setLimit(f, 'max', RESPONDENT[f.k]); continue; }
-    const path = `${f.of || prefix}.${f.k}`;
-    const guidance = QUESTION_GUIDANCE[path];
-    if(guidance && !f.hint?.includes(guidance)) f.hint = [f.hint,guidance].filter(Boolean).join(' ');
-    const spec = S.fieldSpec(path);
-    if (!spec) throw new Error(`Campo assente dallo schema: ${path}`);
-    if (spec.t === 'int' || spec.t === 'dec') { setLimit(f, 'min', spec.min); setLimit(f, 'max', spec.max); setLimit(f, 'decimal', spec.t === 'dec'); }
-    else if (Number.isInteger(spec.max)) setLimit(f, 'max', spec.max);
-    if ((f.t === 'num' || f.t === 'text' || f.t === 'open' || f.t === 'species1') && !Number.isInteger(f.max)) throw new Error(`Manca il limite di ${path}`);
+    if (f.path.startsWith('consent.')) continue;
+    if (f.path.startsWith('respondent.')) { f.max = RESPONDENT[f.path.split('.')[1]]; continue; }
+    const spec = S.fieldSpec(f.path);
+    if (!spec) throw new Error(`Campo assente dallo schema: ${f.path}`);
+    if (f.t === 'texts') { f.max = spec.item?.max; f.count = spec.max; }
+    else if (spec.t === 'text') f.max = spec.max;
+    if (['text', 'area', 'texts'].includes(f.t) && !Number.isInteger(f.max)) throw new Error(`Manca il limite di ${f.path}`);
+    if (f.t === 'texts' && !Number.isInteger(f.count)) throw new Error(`Manca il numero di voci di ${f.path}`);
   }
 }
-let SPECIES_NAME_MAX = 0;
-const briefLimit = () => (state.mode === 'breve' ? SHORT.species : LIMITS.species);
+
 const PARTS = [
-  { key: 'A', id: 'profile', title: 'Chi sei', brief: true, intro: 'Qualche domanda su di te e su come vai per funghi. Se non vuoi rispondere a una domanda, lasciala vuota.', fields: A_FIELDS, owner: () => state.profile },
-  { key: 'B', title: 'Le specie che conosci bene', brief: true, intro: 'Scegli le specie che conosci bene: per ognuna si apre una scheda. Bastano mese e quota indicativa, anche a occhio.', render: renderSpeciesPart, summary: speciesSummary, collect: collectSpecies },
-  { key: 'C', id: 'rain', title: 'Pioggia', intro: 'Come la pioggia cambia le uscite, secondo la tua esperienza.', fields: C_FIELDS, owner: () => state.rain },
-  { key: 'D', title: 'Temperatura, vento e secco', intro: 'Mi interessano episodi che ricordi, anche vecchi: un freddo improvviso, una gelata, un vento secco, un caldo fuori stagione.', render: renderWeatherPart, summary: weatherSummary, collect: collectWeather },
-  { key: 'E', title: 'Gli ultimi anni', brief: true, briefAll: true, intro: ['Pensa agli ultimi anni: raccontami le uscite in cui hai trovato tanti funghi e anche quelle andate a vuoto.', 'Niente posti precisi: basta la zona e la quota indicativa.'], render: renderRecentPart, summary: recentSummary, collect: collectRecent },
-  { key: 'F', id: 'forest', title: 'Bosco, versante e terreno', intro: 'Dove guardi e perché. Non servono posti precisi.', fields: F_FIELDS, owner: () => state.forest },
-  { key: 'G', id: 'access', title: 'Accessi e regole locali', intro: 'Cosa deve sapere chi va in quelle zone: strade, permessi, parcheggi. Non servono posti precisi.', fields: G_FIELDS, owner: () => state.access },
-  { key: 'H', id: 'risks', title: 'Rischi', intro: 'I rischi che vedi in zona, per chi cerca funghi.', fields: H_FIELDS, owner: () => state.risks },
-  { key: 'I', title: 'Per finire', brief: true, briefAll: true, intro: 'Ancora poche domande. Poi controlli tutto prima di inviare.', fields: I_FIELDS, owner: () => state.followUp, collect: collectFinal },
+  { key: 'A', title: 'Tu e i funghi', intro: 'Dove vai e che cosa cerchi. Basta quello che fai di solito.', fields: A_FIELDS },
+  { key: 'B', title: 'Le tue specie', intro: 'Per ogni specie, quello che vedi di solito, anno dopo anno. «Non so» va benissimo.', render: renderSpeciesPart, summary: speciesSummary },
+  { key: 'C', title: 'Quello che hai notato', intro: 'Due domande aperte, se ti va. Scrivi con parole tue.', fields: C_FIELDS },
+  { key: 'D', title: 'Con l’app', intro: 'Le osservazioni vere si raccolgono nel bosco, sul momento.', fields: D_FIELDS },
 ];
 const partBy = (key) => PARTS.find((p) => p.key === key);
-const activeParts = () => PARTS.filter((p) => state.mode === 'completa' || p.brief);
-const fieldOn = (f, briefAll) => state.mode !== 'breve' || briefAll || f.brief;
-const ownerOf = (f, o) => (f.of ? state[f.of] : o);
 
 // ---------------------------------------------------------------------------------------------
 // Controlli
@@ -466,312 +214,125 @@ function chip(type, name, label, checked, onchange, extra = {}) {
 }
 function linkButton(text, onclick, extra = {}) { return h('button', { type: 'button', class: 'q-link', onclick, ...extra }, text); }
 
-function renderFields(parent, fields, o, briefAll) {
+function renderFields(parent, fields, card) {
   for (const f of fields) {
-    if (!fieldOn(f, briefAll)) continue;
-    const owner = ownerOf(f, o);
-    const el = control(f, owner, briefAll);
-    if (f.when) when(el, () => f.when(owner));
+    const el = control(f, card);
+    if (f.when) when(el, () => f.when(card));
     parent.append(el);
   }
 }
-function control(f, o, briefAll) {
-  const node = baseControl(f, o, briefAll);
-  if (!f.k || f.t === 'group' || f.of === 'respondent' || f.of === 'consent') return node;
-  o._clarifications ||= {};
-  o._clarificationIds ||= {};
-  const id = o._clarificationIds[f.k] ||= uid('qual');
-  const note = o._clarifications[f.k];
-  const prompt = node.querySelector('legend,label');
-  if(prompt && !prompt.id)prompt.id=uid('question');
-  const notApplicable = note?.kind === 'not_applicable';
-  const body = h('fieldset', {class:'q-answer-body', disabled:notApplicable}, node);
-  const option = chip('checkbox', null, 'Non pertinente per me', notApplicable, (input) => {
-    if (input.checked) {
-      o._previousAnswers ||= {};
-      o._previousAnswers[f.k] = o[f.k];
-      o[f.k] = ['multi','order'].includes(f.t) ? [] : f.t === 'open' ? open0() : f.t === 'text' ? '' : null;
-      o._clarifications[f.k] = {kind:'not_applicable', text:''};
-    } else {
-      if (o._previousAnswers && Object.hasOwn(o._previousAnswers,f.k)) o[f.k] = o._previousAnswers[f.k];
-      delete o._clarifications[f.k];
-    }
-    changed();
-    render();
-    document.getElementById(id)?.focus({preventScroll:true});
-  }, {id,'aria-describedby':prompt?.id});
-  const extras = h('div', {class:'q-clarifications'}, option.el);
-  // Testo libero e domande aperte hanno già uno spazio per specificare una risposta diversa.
-  if (notApplicable || !['open','text','species1'].includes(f.t)) {
-    const textId = uid('detail');
-    const details = h('details', {class:'q-specify', open:!!note?.text});
-    const area = h('textarea', {id:textId, class:'q-input q-area', rows:2, maxlength:600,'aria-describedby':prompt?.id});
-    area.value = note?.text || '';
-    area.addEventListener('input', () => {
-      const text = area.value;
-      if (notApplicable || text.trim()) o._clarifications[f.k] = {kind:notApplicable?'not_applicable':'other',text};
-      else delete o._clarifications[f.k];
-      changed();
-    });
-    details.append(h('summary', {}, notApplicable?'Vuoi spiegare perché?':'Altro / specifica'),
-      h('label', {for:textId,class:'q-sub-q'}, notApplicable?'Perché non è pertinente?':'Specifica una risposta diversa'),
-      h('p',{class:'q-hint'},'Facoltativo. Scrivi con parole tue, senza nomi o dati di altre persone.'),area);
-    extras.append(details);
-  }
-  return h('div',{class:'q-question','data-question':f.k},body,extras);
-}
-function baseControl(f, o, briefAll) {
+function control(f, card) {
   switch (f.t) {
-    case 'num': return numControl(f, o);
-    case 'choice': return choiceControl(f, o);
-    case 'confidence': return choiceControl(f, o, 'q-dots');
-    case 'multi': return multiControl(f, o);
-    case 'order': return orderControl(f, o);
-    case 'month': return monthControl(f, o);
-    case 'year': return yearControl(f, o);
-    case 'open': return openControl(f, o);
-    case 'text': return textControl(f, o);
-    case 'species1': return speciesOneControl(f, o);
-    case 'group': return groupControl(f, o, briefAll);
-    case 'consent': return consentControl();
+    case 'choice': return choiceControl(f, card);
+    case 'multi': return multiControl(f, card);
+    case 'months': return monthsControl(f, card);
+    case 'texts': return textsControl(f);
+    case 'area': return areaControl(f);
+    case 'text': return textControl(f);
     default: return h('div');
   }
 }
 
-function parseNum(raw, f) {
-  const s = String(raw).trim().replace(/\s/g, '').replace(',', '.');
-  if (!s) return { ok: true, value: null };
-  if (!(f.decimal ? /^\d+(\.\d+)?$/ : /^\d+$/).test(s)) return { ok: false, message: f.decimal ? 'Scrivi solo cifre; per i decimali usa la virgola.' : 'Scrivi solo cifre, senza decimali.' };
-  const n = Number(s);
-  if (n < f.min || n > f.max) return { ok: false, message: `Scrivi un numero tra ${f.min} e ${f.max}.` };
-  return { ok: true, value: n };
-}
-function numControl(f, o) {
-  o._u ||= {};
-  const id = uid('n'), hid = f.hint ? uid('h') : null, eid = uid('e');
-  const input = h('input', { id, type: 'text', inputmode: f.decimal ? 'decimal' : 'numeric', autocomplete: 'off', enterkeyhint: 'next', class: 'q-input q-num', 'aria-describedby': [hid, eid].filter(Boolean).join(' '), 'aria-invalid': 'false' });
-  input.value = isNum(o[f.k]) ? fmtNum(o[f.k]) : '';
-  const err = h('p', { id: eid, class: 'q-error', hidden: true });
-  // «Non so» dice anche a quale domanda risponde, per chi naviga con il lettore di schermo
-  const unknown = h('button', { type: 'button', class: 'q-chip-btn q-unknown', 'aria-pressed': String(!!o._u[f.k]) }, 'Non so', h('span', { class: 'q-sr' }, ` (${f.label})`));
-  const setErr = (m) => { err.textContent = m; err.hidden = !m; input.setAttribute('aria-invalid', m ? 'true' : 'false'); };
-  input.addEventListener('input', () => {
-    const r = parseNum(input.value, f);
-    o[f.k] = r.ok ? r.value : null;
-    if (r.ok) setErr('');
-    if (input.value.trim() && o._u[f.k]) { o._u[f.k] = false; unknown.setAttribute('aria-pressed', 'false'); }
-    changed();
-  });
-  // l'errore compare quando si lascia il campo: si annuncia, perché il focus è già altrove
-  input.addEventListener('blur', () => {
-    const r = parseNum(input.value, f), before = err.textContent;
-    setErr(r.ok ? '' : r.message);
-    if (!r.ok && r.message !== before) announce(`${f.label}: ${r.message}`);
-  });
-  unknown.addEventListener('click', () => {
-    const on = unknown.getAttribute('aria-pressed') !== 'true';
-    o._u[f.k] = on;
-    unknown.setAttribute('aria-pressed', String(on));
-    if (on) { input.value = ''; o[f.k] = null; setErr(''); }
-    changed();
-  });
-  return h('div', { class: 'q-field' },
-    h('label', { for: id, class: 'q-q' }, f.label, UNIT_SR[f.unit] ? h('span', { class: 'q-sr' }, ` (${UNIT_SR[f.unit]})`) : null),
-    f.hint ? h('p', { id: hid, class: 'q-hint' }, f.hint) : null,
-    h('div', { class: 'q-num-row' }, input, f.unit ? h('span', { class: 'q-unit', 'aria-hidden': 'true' }, unitText(f.unit, 2)) : null, unknown),
-    err);
-}
-
-function choiceControl(f, o, extra = '') {
+function choiceControl(f, card) {
   const opts = optionsOf(f), name = uid('r');
-  const fs = fieldset(f, extra);
-  const chips = h('div', { class: 'q-chips' });
-  const inputs = opts.map((x) => {
-    const c = chip('radio', name, x.label, o[f.k] === x.value, (input) => { if (input.checked) { o[f.k] = x.value; f.onPick?.(x.value); changed(); } }, { value: String(x.value) });
-    chips.append(c.el);
-    return c.input;
-  });
+  const fs = fieldset(f);
+  const inputs = opts.map((x) => chip('radio', name, x.label, getV(f, card) === x.value, (input) => { if (input.checked) { setV(f, card, x.value); changed(); } }, { value: String(x.value) }));
   const clear = linkButton('Cancella la scelta', () => {
-    o[f.k] = null;
-    inputs.forEach((i) => { i.checked = false; });
+    setV(f, card, null);
+    inputs.forEach((c) => { c.input.checked = false; });
     changed();
-    inputs[0]?.focus();
+    inputs[0]?.input.focus();
     announce('Scelta cancellata.');
   });
-  watch(clear, (e) => { e.hidden = o[f.k] == null; });
-  fs.append(chips, clear);
+  watch(clear, (e) => { e.hidden = getV(f, card) == null; });
+  watch(fs, () => { inputs.forEach((c, i) => { c.input.checked = getV(f, card) === opts[i].value; }); });
+  fs.append(h('div', { class: 'q-chips' }, inputs.map((c) => c.el)), clear);
   return fs;
 }
 
-// Le specie scelte nelle parti «Chi sei» e «Le specie che conosci bene» vengono mostrate per prime negli elenchi delle uscite.
-function speciesShortlist() {
-  const s = new Set(state.profile.speciesSought);
-  for (const k of state.speciesChosen) if (!String(k).startsWith('altra')) s.add(k);
-  return s;
+// Scelta multipla; con dontKnow anche «Non so», che non si combina con le altre scelte.
+function toggle(list, value, on) {
+  const a = list.filter((x) => x !== value);
+  if (!on) return a;
+  if (value === DONT_KNOW) return [DONT_KNOW];
+  return [...a.filter((x) => x !== DONT_KNOW), value];
 }
-function splitShort(opts) {
-  const s = speciesShortlist();
-  if (!s.size) return [opts, []];
-  return [opts.filter((x) => s.has(x.value)), opts.filter((x) => !s.has(x.value))];
-}
-function extraToggle(box, open) {
-  box.id = uid('x');
-  const btn = linkButton('', () => set(box.hidden), { 'aria-controls': box.id });
-  const set = (on) => { box.hidden = !on; btn.setAttribute('aria-expanded', String(on)); btn.textContent = on ? 'Mostra meno specie' : 'Mostra tutte le specie'; };
-  set(open);
-  return btn;
-}
-
-function multiControl(f, o) {
-  o[f.k] ||= [];
-  const opts = optionsOf(f);
-  const [main, extra] = f.shortlist ? splitShort(opts) : [opts, []];
-  const fs = fieldset(f);
-  const inputs = [];
-  const mk = (x) => {
-    const c = chip('checkbox', null, x.label, o[f.k].includes(x.value), (input) => {
-      const a = o[f.k];
-      if (input.checked) {
-        if (f.exclusive === x.value) a.splice(0, a.length);
-        else if (f.exclusive && a.includes(f.exclusive)) a.splice(a.indexOf(f.exclusive), 1);
-        if (!a.includes(x.value)) a.push(x.value);
-        if (f.pairWith) {
-          const other = (o[f.pairWith] ||= []);
-          const i = other.indexOf(x.value);
-          if (i >= 0) { other.splice(i, 1); announce(`«${x.label}» tolto dall’altro elenco.`); }
-        }
-      } else if (a.includes(x.value)) a.splice(a.indexOf(x.value), 1);
-      changed();
-    }, { value: String(x.value) });
-    inputs.push([x, c.input]);
-    return c.el;
-  };
-  const chips = h('div', { class: 'q-chips' }, main.map(mk));
-  fs.append(chips);
-  if (extra.length) {
-    const box = h('div', { class: 'q-chips q-extra' }, extra.map(mk));
-    fs.append(extraToggle(box, extra.some((x) => o[f.k].includes(x.value))), box);
-  }
-  watch(fs, () => { for (const [x, input] of inputs) input.checked = o[f.k].includes(x.value); });
+function multiControl(f, card, extra = '') {
+  if (!Array.isArray(getV(f, card))) setV(f, card, []);
+  const opts = [...optionsOf(f), ...(f.dontKnow ? [opt(DONT_KNOW, 'Non so')] : [])];
+  const fs = fieldset(f, extra);
+  const boxes = opts.map((x) => chip('checkbox', null, x.label, getV(f, card).includes(x.value), (input) => {
+    setV(f, card, toggle(getV(f, card), x.value, input.checked));
+    changed();
+  }, { value: String(x.value) }));
+  watch(fs, () => { boxes.forEach((c, i) => { c.input.checked = getV(f, card).includes(opts[i].value); }); });
+  fs.append(h('div', { class: 'q-chips' }, boxes.map((c) => c.el)));
   return fs;
 }
 
-function orderControl(f, o) {
-  o[f.k] ||= [];
-  let opts = optionsOf(f);
-  if (f.shuffled) {
-    const order = o[f.shuffled];
-    if (Array.isArray(order) && order.length === opts.length && opts.every((x) => order.includes(x.value))) opts = order.map((v) => opts.find((x) => x.value === v));
-  }
-  const fs = fieldset(f, 'q-order');
-  const label = (v) => labelOf(opts, v);
-  const buttons = opts.map((x) => {
-    const badge = h('span', { class: 'q-badge', 'aria-hidden': 'true' });
-    const sr = h('span', { class: 'q-sr' });
-    const b = h('button', { type: 'button', class: 'q-chip-btn q-rank', 'aria-pressed': 'false' }, badge, h('span', {}, x.label), sr);
-    b.addEventListener('click', () => {
-      const a = o[f.k], i = a.indexOf(x.value);
-      if (i >= 0) a.splice(i, 1); else a.push(x.value);
-      changed();
-      announce(i >= 0 ? `${x.label}: tolto. Gli altri scalano.` : `${x.label}: posto ${a.length}.`);
-    });
-    return [x, b, badge, sr];
-  });
-  const tools = h('div', { class: 'q-row' },
-    f.undo ? linkButton('Annulla l’ultimo', () => { const v = o[f.k].pop(); changed(); if (v) announce(`${label(v)}: tolto.`); }) : null,
-    linkButton('Ricomincia da capo', () => { o[f.k] = []; changed(); announce('Ordine cancellato.'); buttons[0]?.[1].focus(); }));
-  fs.append(h('div', { class: 'q-chips' }, buttons.map((b) => b[1])), tools);
-  watch(fs, () => {
-    for (const [x, b, badge, sr] of buttons) {
-      const pos = o[f.k].indexOf(x.value);
-      b.setAttribute('aria-pressed', String(pos >= 0));
-      badge.textContent = pos >= 0 ? String(pos + 1) : '';
-      sr.textContent = pos >= 0 ? `, posto ${pos + 1}` : '';
-    }
-    tools.hidden = !o[f.k].length;
-  });
-  return fs;
-}
-
-function monthControl(f, o) {
-  o._u ||= {};
+// Mesi: griglia di 12 (si possono toccare più mesi), più «Non so». Nessuna parte del mese.
+function monthsControl(f, card) {
+  if (!Array.isArray(getV(f, card))) setV(f, card, []);
   const fs = fieldset(f, 'q-month-field');
-  const name = uid('m');
-  const month = () => (f.part ? o[f.k]?.month ?? null : o[f.k] ?? null);
-  const unknown = h('button', { type: 'button', class: 'q-chip-btn q-unknown', 'aria-pressed': String(!!o._u[f.k]) }, 'Non so');
-  const monthInputs = MONTHS.map((m, i) => chip('radio', name, [h('span', { 'aria-hidden': 'true' }, MONTHS_SHORT[i]), h('span', { class: 'q-sr' }, m)], month() === i + 1, (input) => {
-    if (!input.checked) return;
-    o[f.k] = f.part ? { month: i + 1, part: o[f.k]?.part ?? null } : i + 1;
-    o._u[f.k] = false;
+  // i mesi restano in ordine di calendario, qualunque sia l'ordine dei tocchi
+  const pick = (value, on) => {
+    const next = toggle(getV(f, card), value, on);
+    setV(f, card, [...MONTHS.filter((m) => next.includes(m)), ...(next.includes(DONT_KNOW) ? [DONT_KNOW] : [])]);
     changed();
-  }, { value: String(i + 1) }));
-  fs.append(h('div', { class: 'q-chips q-months' }, monthInputs.map((c) => c.el)));
-  let partInputs = [];
-  if (f.part) {
-    const pname = uid('p');
-    partInputs = MONTH_PARTS.map((x) => chip('radio', pname, x.label, o[f.k]?.part === x.value, (input) => {
-      if (input.checked && o[f.k]?.month) { o[f.k].part = x.value; changed(); }
-    }, { value: x.value }));
-    const sub = h('fieldset', { class: 'q-sub' }, h('legend', { class: 'q-sub-q' }, 'In che parte del mese?'), h('div', { class: 'q-chips' }, partInputs.map((c) => c.el)));
-    when(sub, () => !!o[f.k]?.month);
-    fs.append(sub);
-  }
-  unknown.addEventListener('click', () => {
-    const on = unknown.getAttribute('aria-pressed') !== 'true';
-    o._u[f.k] = on;
-    if (on) o[f.k] = null;
-    changed();
-  });
-  fs.append(h('div', { class: 'q-row' }, unknown));
+  };
+  const months = MONTHS.map((m, i) => chip('checkbox', null, [h('span', { 'aria-hidden': 'true' }, MONTHS_SHORT[i]), h('span', { class: 'q-sr' }, m)], getV(f, card).includes(m), (input) => pick(m, input.checked), { value: m }));
+  const unknown = chip('checkbox', null, 'Non so', getV(f, card).includes(DONT_KNOW), (input) => pick(DONT_KNOW, input.checked), { value: DONT_KNOW });
   watch(fs, () => {
-    monthInputs.forEach((c, i) => { c.input.checked = month() === i + 1; });
-    partInputs.forEach((c, i) => { c.input.checked = o[f.k]?.part === MONTH_PARTS[i].value; });
-    unknown.setAttribute('aria-pressed', String(!!o._u[f.k]));
+    months.forEach((c, i) => { c.input.checked = getV(f, card).includes(MONTHS[i]); });
+    unknown.input.checked = getV(f, card).includes(DONT_KNOW);
   });
+  fs.append(h('div', { class: 'q-chips q-months' }, months.map((c) => c.el)), h('div', { class: 'q-chips' }, unknown.el));
   return fs;
 }
 
-function yearControl(f, o) {
-  o._p ||= {};
-  const years = Array.from({ length: 6 }, (_, i) => LAST_YEAR - i);
-  const first = years[years.length - 1];
-  const fs = fieldset(f);
-  const name = uid('y');
-  const before = () => !!o._p[f.k] || (Number.isInteger(o[f.k]) && o[f.k] < first);
-  const yearInputs = years.map((y) => chip('radio', name, String(y), o[f.k] === y, (input) => { if (input.checked) { o[f.k] = y; o._p[f.k] = false; changed(); } }, { value: String(y) }));
-  const iid = uid('n'), eid = uid('e');
-  const older = h('input', { id: iid, type: 'text', inputmode: 'numeric', autocomplete: 'off', class: 'q-input q-num', 'aria-describedby': eid, 'aria-invalid': 'false' });
-  older.value = Number.isInteger(o[f.k]) && o[f.k] < first ? String(o[f.k]) : '';
-  const err = h('p', { id: eid, class: 'q-error', hidden: true });
-  const range = { min: YEAR_MIN, max: first - 1 };
-  // «Prima del …» e non solo «Prima»: nella stessa scheda c'è la «Prima» settimana del mese
-  const prima = chip('radio', name, `Prima del ${first}`, before(), (input) => {
-    if (!input.checked) return;
-    o._p[f.k] = true;
-    const r = parseNum(older.value, range);
-    o[f.k] = r.ok ? r.value : null;
+// Più righe di testo libero con suggerimenti (datalist nativi): zone, altre specie.
+function textsControl(f) {
+  const fs = fieldset(f, 'q-texts');
+  const rows = h('div', { class: 'q-text-rows' });
+  const add = h('button', { type: 'button', class: 'q-btn q-btn-small q-add-row' }, f.add);
+  const draw = (focusIndex) => {
+    const items = getV(f);
+    if (!f.empty && !items.length) items.push({ key: newKey(), value: '' });
+    rows.replaceChildren(...items.map((item, i) => {
+      const id = uid('x');
+      const input = h('input', { id, type: 'text', class: 'q-input', maxlength: f.max, list: `q-${f.list}-list`, autocomplete: 'off', enterkeyhint: 'next' });
+      input.value = item.value || '';
+      input.addEventListener('input', () => { item.value = input.value; changed(); });
+      const remove = h('button', { type: 'button', class: 'q-btn q-btn-small', 'aria-label': `Togli: ${f.item} ${i + 1}` }, 'Togli');
+      remove.addEventListener('click', () => {
+        items.splice(i, 1);
+        changed();
+        draw(Math.min(i, items.length - 1));
+        announce(`${f.item} ${i + 1}: tolta.`);
+        if (!items.length) add.focus();
+      });
+      return h('div', { class: 'q-text-row' }, h('label', { for: id, class: 'q-sr' }, `${f.item} ${i + 1}`), input, items.length > 1 || f.empty ? remove : null);
+    }));
+    add.hidden = items.length >= f.count;
+    if (focusIndex != null && focusIndex >= 0) rows.querySelectorAll('input')[focusIndex]?.focus();
+  };
+  add.addEventListener('click', () => {
+    const items = getV(f);
+    if (items.length >= f.count) return;
+    items.push({ key: newKey(), value: '' });
     changed();
-    setTimeout(() => older.focus(), 0);
-  }, { value: 'prima' });
-  older.addEventListener('input', () => { const r = parseNum(older.value, range); o[f.k] = r.ok ? r.value : null; if (r.ok) { err.hidden = true; older.setAttribute('aria-invalid', 'false'); } changed(); });
-  older.addEventListener('blur', () => {
-    const r = parseNum(older.value, range), before = err.textContent;
-    err.textContent = r.ok ? '' : r.message; err.hidden = r.ok; older.setAttribute('aria-invalid', String(!r.ok));
-    if (!r.ok && r.message !== before) announce(`${f.label} ${r.message}`);
+    draw(items.length - 1);
   });
-  const olderWrap = h('div', { class: 'q-other' }, h('label', { for: iid, class: 'q-sub-q' }, 'Che anno?'), older, err);
-  when(olderWrap, before);
-  const clear = linkButton('Cancella la scelta', () => { o[f.k] = null; o._p[f.k] = false; older.value = ''; changed(); yearInputs[0].input.focus(); announce('Scelta cancellata.'); });
-  watch(clear, (e) => { e.hidden = o[f.k] == null && !o._p[f.k]; });
-  watch(fs, () => { yearInputs.forEach((c, i) => { c.input.checked = !before() && o[f.k] === years[i]; }); prima.input.checked = before(); });
-  fs.append(h('div', { class: 'q-chips q-years' }, yearInputs.map((c) => c.el), prima.el), olderWrap, clear);
+  draw();
+  fs.append(rows, add, h('p', { class: 'q-hint q-count-note' }, `Fino a ${f.count}.`));
   return fs;
 }
 
 const growable = typeof CSS !== 'undefined' && CSS.supports?.('field-sizing', 'content');
-function textarea(id, f, value, oninput) {
-  const t = h('textarea', { id, class: 'q-input q-area', rows: 3, maxlength: f.max, spellcheck: 'true', autocapitalize: 'sentences' });
-  t.value = value || '';
+function areaControl(f) {
+  const id = uid('t'), hid = f.hint ? uid('h') : null;
+  const t = h('textarea', { id, class: 'q-input q-area', rows: 3, maxlength: f.max, spellcheck: 'true', autocapitalize: 'sentences', 'aria-describedby': hid });
+  t.value = getV(f) || '';
   const counter = h('p', { class: 'q-count-chars', hidden: true });
   const grow = () => {
     if (!growable) { t.style.height = 'auto'; t.style.height = `${t.scrollHeight + 2}px`; }
@@ -779,142 +340,19 @@ function textarea(id, f, value, oninput) {
     counter.hidden = left > 60;
     counter.textContent = left > 0 ? `Puoi scrivere ancora ${left} caratteri.` : 'Hai raggiunto il limite di questa risposta.';
   };
-  t.addEventListener('input', () => { grow(); oninput(t.value); });
+  t.addEventListener('input', () => { grow(); setV(f, null, t.value); changed(); });
   t.addEventListener('focus', grow);
   requestAnimationFrame(grow);
-  return [t, counter];
-}
-const dictation = () => h('p', { class: 'q-dict' }, 'Puoi dettare con il microfono della tastiera.');
-
-function openControl(f, o) {
-  o._o ||= {};
-  let v = o[f.k];
-  if (!v || typeof v !== 'object') v = o[f.k] = { quick: [], text: typeof v === 'string' ? v : '' };
-  if (!Array.isArray(v.quick)) v.quick = [];
-  const q = quickFor(f.path, f.omitQuick);
-  const tid = uid('t');
-  const [area, counter] = textarea(tid, f, v.text, (val) => { v.text = val; changed(); });
-  if (!q) {
-    // domanda solo a testo: un elenco di nomi suggerirebbe la risposta
-    const hid = f.hint ? uid('h') : null;
-    if (hid) area.setAttribute('aria-describedby', hid);
-    return h('div', { class: 'q-field' }, h('label', { for: tid, class: 'q-q' }, f.label), f.hint ? h('p', { id: hid, class: 'q-hint' }, f.hint) : null, dictation(), area, counter);
-  }
-  if (v.text.trim() && o._o[f.k] == null && !(f.detail && v.quick.includes(f.detail.value))) o._o[f.k] = true;
-  const fs = fieldset(f, 'q-open');
-  const name = q.single ? uid('r') : null;
-  const choices = [...q.options, opt(DONT_KNOW, 'Non so')];
-  const pick = (value, on) => {
-    let list = v.quick.filter((x) => x !== value);
-    if (on) {
-      list = q.single || q.exclusive.has(value) ? [] : list.filter((x) => !S.quickChoicesConflict(f.path, x, value));
-      list.push(value);
-      if (value === DONT_KNOW) o._o[f.k] = false;
-    }
-    v.quick = list;
-    changed();
-  };
-  const boxes = choices.map((x) => [x, chip(q.single ? 'radio' : 'checkbox', name, x.label, v.quick.includes(x.value), (input) => pick(x.value, input.checked), { value: x.value })]);
-  const other = chip('checkbox', null, 'Altro…', !!o._o[f.k], (input) => {
-    o._o[f.k] = input.checked;
-    if (input.checked) { v.quick = v.quick.filter((x) => x !== DONT_KNOW); setTimeout(() => area.focus(), 0); }
-    changed();
-  });
-  // domanda di approfondimento solo dopo il «sì» (f.detail): il testo si apre con la sua domanda
-  const detailOn = () => !!f.detail && v.quick.includes(f.detail.value);
-  const areaLabel = h('label', { for: tid, class: 'q-sub-q' }, 'Scrivi con parole tue');
-  const otherWrap = h('div', { class: 'q-other' }, areaLabel, dictation(), area, counter);
-  watch(otherWrap, (e) => {
-    e.hidden = !(o._o[f.k] || detailOn());
-    const text = detailOn() && !o._o[f.k] ? f.detail.label : 'Scrivi con parole tue';
-    if (areaLabel.textContent !== text) areaLabel.textContent = text;
-  });
-  fs.append(h('div', { class: 'q-chips' }, boxes.map(([, c]) => c.el), other.el), otherWrap);
-  if (q.single) {
-    const clear = linkButton('Cancella la scelta', () => { v.quick = []; changed(); boxes[0]?.[1].input.focus(); announce('Scelta cancellata.'); });
-    watch(clear, (e) => { e.hidden = !v.quick.length; });
-    fs.append(clear);
-  }
-  watch(fs, () => {
-    for (const [x, c] of boxes) c.input.checked = v.quick.includes(x.value);
-    other.input.checked = !!o._o[f.k];
-  });
-  return fs;
+  return h('div', { class: 'q-field' }, h('label', { for: id, class: 'q-q' }, f.label), f.hint ? h('p', { id: hid, class: 'q-hint' }, f.hint) : null,
+    h('p', { class: 'q-dict' }, 'Puoi dettare con il microfono della tastiera.'), t, counter);
 }
 
-function textControl(f, o) {
+function textControl(f) {
   const id = uid('x'), hid = f.hint ? uid('h') : null;
-  const input = h('input', { id, type: 'text', class: 'q-input', maxlength: f.max, list: f.list ? `q-${f.list}-list` : null, autocomplete: f.autocomplete || 'off', enterkeyhint: 'next', 'aria-describedby': hid });
-  input.value = o[f.k] || '';
-  input.addEventListener('input', () => { o[f.k] = input.value; changed(); });
-  const wrap = h('div', { class: 'q-field' }, h('label', { for: id, class: 'q-q' }, f.label), f.hint ? h('p', { id: hid, class: 'q-hint' }, f.hint) : null, input);
-  if (f.mine) {
-    // le zone già indicate in «Chi sei», a un tocco
-    const mine = h('div', { class: 'q-mine' });
-    watch(mine, () => {
-      const zs = state.profile.zones;
-      mine.hidden = !zs.length;
-      if (mine.childElementCount === zs.length + 1 && zs.every((z, i) => mine.children[i + 1]?.dataset.zone === z)) return;
-      mine.replaceChildren(h('span', { class: 'q-hint' }, 'Le tue zone:'), ...zs.map((z) => {
-        const b = h('button', { type: 'button', class: 'q-chip-btn q-small', onclick: () => { input.value = labelOf(ZONES, z); o[f.k] = input.value; changed(); announce(`Zona: ${input.value}.`); } }, labelOf(ZONES, z));
-        b.dataset.zone = z;
-        return b;
-      }));
-    });
-    wrap.append(mine);
-  }
-  return wrap;
-}
-
-function speciesOneControl(f, o) {
-  const fs = fieldset(f);
-  const name = uid('s');
-  const inputs = [];
-  const mk = (value, label) => {
-    const c = chip('radio', name, label, o.species === value, (input) => {
-      if (!input.checked) return;
-      o.species = value;
-      changed();
-      if (value === 'altra') setTimeout(() => other.focus(), 0);
-    }, { value: String(value) });
-    inputs.push([value, c.input]);
-    return c.el;
-  };
-  const [main, extra] = splitShort(SPECIES);
-  const chips = h('div', { class: 'q-chips' }, main.map((x) => mk(x.value, x.label)), mk('altra', 'Un’altra specie'));
-  const oid = uid('o');
-  const other = h('input', { id: oid, type: 'text', class: 'q-input', maxlength: f.max, list: 'q-species-list', autocomplete: 'off' });
-  other.value = o.speciesOther || '';
-  other.addEventListener('input', () => { o.speciesOther = other.value; changed(); });
-  const otherWrap = h('div', { class: 'q-other' }, h('label', { for: oid, class: 'q-sub-q' }, 'Quale? Scrivi il nome'), other);
-  when(otherWrap, () => o.species === 'altra');
-  fs.append(chips);
-  if (extra.length) {
-    const box = h('div', { class: 'q-chips q-extra' }, extra.map((x) => mk(x.value, x.label)));
-    fs.append(extraToggle(box, extra.some((x) => x.value === o.species)), box);
-  }
-  const clear = linkButton('Cancella la scelta', () => { o.species = null; changed(); inputs[0]?.[1].focus(); announce('Scelta cancellata.'); });
-  watch(clear, (e) => { e.hidden = !o.species; });
-  watch(fs, () => { for (const [v, input] of inputs) input.checked = o.species === v; });
-  fs.append(otherWrap, clear);
-  return fs;
-}
-
-function groupControl(f, o, briefAll) {
-  const fs = fieldset(f, 'q-group');
-  renderFields(fs, f.fields, o, briefAll);
-  if (f.check) {
-    // regione annunciata sempre presente: l'avviso si aggiunge e si toglie al suo interno
-    // (un elemento nascosto che compare insieme al testo spesso non viene letto)
-    const live = h('div', { role: 'status' });
-    watch(live, (e) => {
-      const m = f.check(o);
-      if ((e.firstChild?.textContent || '') === m) return;
-      e.replaceChildren(...(m ? [h('p', { class: 'q-warn' }, m)] : []));
-    });
-    fs.append(live);
-  }
-  return fs;
+  const input = h('input', { id, type: 'text', class: 'q-input', maxlength: f.max, autocomplete: f.autocomplete || 'off', enterkeyhint: 'next', 'aria-describedby': hid });
+  input.value = getV(f) || '';
+  input.addEventListener('input', () => { setV(f, null, input.value); changed(); });
+  return h('div', { class: 'q-field' }, h('label', { for: id, class: 'q-q' }, f.label), f.hint ? h('p', { id: hid, class: 'q-hint' }, f.hint) : null, input);
 }
 
 function consentControl() {
@@ -938,264 +376,102 @@ function consentControl() {
 }
 
 // ---------------------------------------------------------------------------------------------
-// Parti con elenchi: specie (B), episodi (D), buttate e uscite a vuoto (E)
+// Schede delle specie (B): una per specie scelta, al massimo LIMITS.species
 // ---------------------------------------------------------------------------------------------
-function speciesTitle(key) {
-  const s = state.speciesData[key];
-  if (!s) return '';
-  if (s.id === 'altra') return s.name.trim() ? `${s.name.trim()} (altra specie)` : 'Altra specie';
-  return labelOf(SPECIES, s.id);
+// Specie candidate, nell'ordine della scelta: quelle dell'elenco, poi le altre con un nome.
+function candidates() {
+  return [
+    ...state.a.profile.speciesSought.map((id) => ({ key: id, id, title: labelOf(SPECIES, id) })),
+    ...state.a.profile.speciesOther.map((x) => ({ key: `altra:${x.key}`, id: S.OTHER_SPECIES, name: clean(x.value, LIMITS.speciesName), title: clean(x.value, LIMITS.speciesName) })).filter((x) => x.name),
+  ];
 }
-let removedSpecies = null;
+// Con più specie del massimo, si scelgono le schede da compilare: nessuna scelta fatta al posto della persona.
+const overflow = () => candidates().length > LIMITS.species;
+function cardSpecies() {
+  const all = candidates();
+  if (all.length <= LIMITS.species) return all;
+  return state.cardPick.map((k) => all.find((x) => x.key === k)).filter(Boolean).slice(0, LIMITS.species);
+}
 function renderSpeciesPart(body) {
-  const lim = briefLimit();
-  if (state.mode === 'breve') body.append(h('p', { class: 'q-box' }, `Nella versione breve: al massimo ${lim} specie, solo calendario e quote.`));
-  const fs = fieldset({ label: 'Quali specie conosci bene?', hint: `Puoi sceglierne fino a ${lim}. Se manca una specie, aggiungila con «Un’altra specie».` });
-  const boxes = SPECIES.map((x) => [x, chip('checkbox', null, x.label, state.speciesChosen.includes(x.value), (input) => {
-    if (input.checked) {
-      if (!state.speciesChosen.includes(x.value)) state.speciesChosen.push(x.value);
-      state.speciesData[x.value] ||= speciesItem(x.value);
-      announce(`Aggiunta la scheda: ${x.label}.`);
-    } else {
-      state.speciesChosen = state.speciesChosen.filter((k) => k !== x.value);
-      announce(`Tolta la scheda: ${x.label}. Le risposte restano nella bozza.`);
-    }
-    changed();
-    drawCards();
-  }, { value: x.value })]);
-  const addOther = h('button', { type: 'button', class: 'q-btn q-btn-small', onclick: () => {
-    const key = `altra:${Date.now().toString(36)}${seq += 1}`;
-    state.speciesChosen.push(key);
-    state.speciesData[key] = speciesItem('altra');
-    changed();
-    drawCards();
-    $(`[data-card="${key}"] input`)?.focus();
-  } }, 'Un’altra specie');
-  const limitNote = h('p', { class: 'q-hint', role: 'status' });
-  fs.append(h('div', { class: 'q-chips' }, boxes.map(([, c]) => c.el)), h('div', { class: 'q-row' }, addOther), limitNote);
-  watch(fs, () => {
-    const full = state.speciesChosen.length >= lim;
-    for (const [x, c] of boxes) { c.input.checked = state.speciesChosen.includes(x.value); c.input.disabled = full && !c.input.checked; }
-    addOther.disabled = full;
-    const msg = full ? (state.mode === 'breve' ? `Hai scelto ${lim} specie: è il massimo della versione breve.` : `Hai scelto ${lim} specie: è il massimo.`) : '';
-    if (limitNote.textContent !== msg) limitNote.textContent = msg;
-  });
-  const cards = h('div', { class: 'q-cards' });
-  body.append(fs, cards);
-
-  function drawCards() {
-    cards.replaceChildren();
-    const keys = state.speciesChosen.slice(0, lim);
-    if (removedSpecies) {
-      const r = removedSpecies;
-      cards.append(h('p', { class: 'q-box q-row' }, `Hai tolto «${speciesTitle(r.key)}».`, linkButton('Rimettila', () => {
-        state.speciesChosen.splice(Math.min(r.index, state.speciesChosen.length), 0, r.key);
-        removedSpecies = null;
-        changed();
-        drawCards();
-        $(`[data-card="${r.key}"] summary`)?.focus();
-      })));
-    }
-    if (!keys.length) cards.append(h('p', { class: 'q-muted' }, 'Quando scegli una specie, qui compare la sua scheda.'));
-    for (const key of keys) cards.append(speciesCard(key));
-    if (state.speciesChosen.length > lim) cards.append(h('p', { class: 'q-box' }, `Nella versione breve compili al massimo ${lim} specie. Le altre che hai scelto restano nella bozza: le ritrovi passando alla versione completa.`));
+  const all = candidates();
+  if (!all.length) {
+    body.append(h('p', { class: 'q-box' }, 'Non hai scelto nessuna specie. Puoi tornare indietro e sceglierle, oppure andare avanti.'));
+    return;
   }
-  function speciesCard(key) {
-    const s = state.speciesData[key] ||= speciesItem(key.startsWith('altra') ? 'altra' : key);
-    const title = h('span', { class: 'q-card-title' }, speciesTitle(key));
-    const content = h('div', { class: 'q-card-body' });
-    if (s.id === 'altra') {
-      const nid = uid('x'), wid = uid('h');
-      const input = h('input', { id: nid, type: 'text', class: 'q-input', maxlength: SPECIES_NAME_MAX, list: 'q-species-list', autocomplete: 'off', 'aria-describedby': wid });
-      input.value = s.name;
-      const warn = h('p', { id: wid, class: 'q-hint' }, 'Nome italiano o scientifico. Senza nome la scheda non viene inviata.');
-      input.addEventListener('input', () => { s.name = input.value; title.textContent = speciesTitle(key); changed(); });
-      content.append(h('div', { class: 'q-field' }, h('label', { for: nid, class: 'q-q' }, 'Nome della specie'), warn, input));
-    }
-    renderFields(content, SPECIES_FIELDS, s, false);
-    content.append(h('div', { class: 'q-row' }, h('button', { type: 'button', class: 'q-btn q-btn-small', onclick: () => {
-      const index = state.speciesChosen.indexOf(key);
-      state.speciesChosen.splice(index, 1);
-      removedSpecies = { key, index };
+  if (all.length > LIMITS.species) {
+    const f = { label: `Hai scelto ${all.length} specie: per quali compili la scheda?`, hint: `Fino a ${LIMITS.species}. Scegli quelle che conosci meglio.` };
+    const fs = fieldset(f);
+    const note = h('p', { class: 'q-hint', role: 'status' });
+    const boxes = all.map((x) => chip('checkbox', null, x.title, state.cardPick.includes(x.key), (input) => {
+      state.cardPick = input.checked ? [...state.cardPick.filter((k) => k !== x.key), x.key] : state.cardPick.filter((k) => k !== x.key);
       changed();
       drawCards();
-      announce(`Tolta la scheda: ${speciesTitle(key)}.`);
-      cards.querySelector('.q-link')?.focus();
-    } }, 'Togli questa specie')));
-    return h('details', { class: 'q-card q-species', open: true, 'data-card': key }, h('summary', {}, title), content);
+    }, { value: x.key }));
+    watch(fs, () => {
+      const picked = cardSpecies().map((x) => x.key), full = picked.length >= LIMITS.species;
+      boxes.forEach((c, i) => { c.input.checked = picked.includes(all[i].key); c.input.disabled = full && !c.input.checked; });
+      const msg = full ? `Hai scelto ${LIMITS.species} schede: è il massimo.` : '';
+      if (note.textContent !== msg) note.textContent = msg;
+    });
+    fs.append(h('div', { class: 'q-chips' }, boxes.map((c) => c.el)), note);
+    body.append(fs);
+  }
+  const cards = h('div', { class: 'q-cards' });
+  body.append(cards);
+  function drawCards() {
+    const list = cardSpecies();
+    cards.replaceChildren(...(list.length ? list.map((x) => {
+      const card = (state.cards[x.key] ||= cardItem());
+      const content = h('div', { class: 'q-card-body' });
+      renderFields(content, SPECIES_FIELDS, card);
+      return h('details', { class: 'q-card q-species', open: true, 'data-card': x.key }, h('summary', {}, h('span', { class: 'q-card-title' }, x.title)), content);
+    }) : [h('p', { class: 'q-muted' }, 'Quando scegli una specie, qui compare la sua scheda.')]));
   }
   drawCards();
 }
 
-function listBlock(cfg) {
-  const box = h('div', { class: 'q-list' });
-  let removed = null;
-  const titleOf = (i) => `${cfg.itemName} ${i + 1}`;
-  const [gone, back] = cfg.male ? ['tolto', 'Rimettilo'] : ['tolta', 'Rimettila'];
-  const draw = (focus) => {
-    const arr = cfg.items(), lim = cfg.limit();
-    box.replaceChildren();
-    arr.slice(0, lim).forEach((item, i) => {
-      const hid = uid('c');
-      const tools = h('div', { class: 'q-row q-card-tools' });
-      if (i > 0 && cfg.copy) tools.append(h('button', { type: 'button', class: 'q-btn q-btn-small', onclick: () => {
-        const prev = cfg.items()[i - 1];
-        for (const k of cfg.copy.keys) item[k] = prev[k] == null ? null : JSON.parse(JSON.stringify(prev[k]));
-        changed();
-        draw(() => box.querySelectorAll('.q-card-title')[i]?.focus());
-        announce(`Copiato da ${titleOf(i - 1).toLowerCase()}: ${cfg.copy.what}.`);
-      } }, `Come il precedente: ${cfg.copy.what}`));
-      tools.append(h('button', { type: 'button', class: 'q-btn q-btn-small', onclick: () => {
-        cfg.items().splice(i, 1);
-        removed = { item, i };
-        changed();
-        draw(() => box.querySelector('.q-undo button')?.focus());
-        announce(`${titleOf(i)}: ${gone}.`);
-      } }, 'Togli'));
-      const card = h('div', { class: 'q-card', role: 'group', 'aria-labelledby': hid }, h('h3', { id: hid, class: 'q-card-title', tabindex: '-1' }, titleOf(i)), tools);
-      renderFields(card, cfg.fields, item, true);
-      box.append(card);
-    });
-    if (removed) {
-      const r = removed;
-      box.append(h('p', { class: 'q-box q-row q-undo' }, `Hai tolto: ${titleOf(r.i).toLowerCase()}.`, linkButton(back, () => {
-        const a = cfg.items();
-        a.splice(Math.min(r.i, a.length), 0, r.item);
-        removed = null;
-        changed();
-        draw(() => box.querySelectorAll('.q-card-title')[Math.min(r.i, a.length - 1)]?.focus());
-      })));
-    }
-    if (arr.length > lim) box.append(h('p', { class: 'q-box' }, `Nella versione breve ne contano ${lim}. Le altre restano nella bozza.`));
-    if (arr.length < lim) {
-      box.append(h('button', { type: 'button', class: 'q-btn q-add', onclick: () => {
-        const a = cfg.items();
-        a.push(cfg.make());
-        removed = null;
-        changed();
-        draw(() => box.querySelectorAll('.q-card-title')[a.length - 1]?.focus());
-      } }, arr.length ? cfg.addMore : cfg.addFirst));
-    } else box.append(h('p', { class: 'q-hint' }, 'Hai raggiunto il numero massimo.'));
-    if (focus) focus();
-  };
-  draw();
-  return box;
-}
-
-// Cancello della parte D: si invia anche il «No» (answers.weatherRemembers), gli episodi solo dopo «Sì».
-const WEATHER_FIELD = { t: 'choice', k: 'remembers', short: 'Ricordi episodi di freddo, gelata, vento o caldo', label: 'Ricordi un episodio di freddo, gelata, vento o caldo che ha cambiato le uscite?', options: () => WEATHER_GATE };
-function renderWeatherPart(body) {
-  const gate = { ...WEATHER_FIELD,
-    onPick: (v) => { if (v === 'sì' && !state.weatherEvents.length) { state.weatherEvents.push(eventItem()); redraw(); } } };
-  const wrap = h('div');
-  const redraw = () => wrap.replaceChildren(listBlock({ items: () => state.weatherEvents, limit: () => LIMITS.weatherEvents, fields: EVENT_FIELDS, make: eventItem, itemName: 'Episodio', male: true,
-    addFirst: 'Aggiungi un episodio', addMore: 'Aggiungi un altro episodio', copy: { keys: ['zone'], what: 'zona' } }));
-  body.append(control(gate, state.weather, true), wrap);
-  redraw();
-  when(wrap, () => state.weather.remembers === 'sì');
-}
-function renderRecentPart(body) {
-  const brief = state.mode === 'breve';
-  const copy = { keys: ['zone', 'elev', 'forest'], what: 'zona, quota e bosco' };
-  body.append(
-    h('h3', { class: 'q-sub-title' }, 'Buttate che ricordi bene'),
-    h('p', { class: 'q-hint' }, brief ? `Fino a ${SHORT.flushes}.` : 'Se ci riesci, da 3 a 5.'),
-    listBlock({ items: () => state.flushes, limit: () => (brief ? SHORT.flushes : LIMITS.flushes), fields: FLUSH_FIELDS, make: flushItem, itemName: 'Buttata', addFirst: 'Aggiungi una buttata', addMore: 'Aggiungi un’altra buttata', copy }),
-    h('h3', { class: 'q-sub-title' }, 'Uscite andate a vuoto pur cercando bene'),
-    h('p', { class: 'q-hint' }, 'Contano quanto le buttate: dicono quando i funghi non c’erano, e senza questo non si capisce cosa li fa uscire.'),
-    h('p', { class: 'q-hint' }, brief ? 'Ne basta una.' : 'Se ci riesci, 2 o 3.'),
-    listBlock({ items: () => state.emptyTrips, limit: () => (brief ? SHORT.emptyTrips : LIMITS.emptyTrips), fields: EMPTY_FIELDS, make: emptyItem, itemName: 'Uscita a vuoto', addFirst: 'Aggiungi un’uscita a vuoto', addMore: 'Aggiungi un’altra uscita a vuoto', copy }));
-}
-
 // ---------------------------------------------------------------------------------------------
-// Dalle risposte al corpo dell'invio (solo parti attive, non saltate, e domande visibili)
+// Dalle risposte al corpo dell'invio (solo domande visibili e non vuote)
 // ---------------------------------------------------------------------------------------------
-function openOut(f, o) {
-  const v = o[f.k];
-  if (!v) return undefined;
-  const raw = typeof v === 'string' ? { quick: [], text: v } : v;
-  const q = quickFor(f.path, f.omitQuick);
-  const allowed = new Set([...(q ? q.options.map((x) => x.value) : []), ...(q ? [DONT_KNOW] : [])]);
-  const quick = (raw.quick || []).filter((x) => allowed.has(x));
-  const text = !q || o._o?.[f.k] || (f.detail && quick.includes(f.detail.value)) ? clean(raw.text, f.max) : '';
-  return quick.length || text ? { quick, text } : undefined;
-}
-function valueOut(f, o) {
-  if (o._clarifications?.[f.k]?.kind === 'not_applicable') return undefined;
-  const v = o[f.k];
+function valueOut(f, card) {
+  if (f.when && !f.when(card)) return undefined;
+  const v = getV(f, card);
   switch (f.t) {
-    case 'num': return isNum(v) ? v : undefined;
-    case 'choice': case 'confidence': return v == null || v === '' ? undefined : v;
-    case 'multi': case 'order': return Array.isArray(v) && v.length ? [...v] : undefined;
-    case 'month': return f.part ? (Number.isInteger(v?.month) ? { month: v.month, part: v.part ?? null } : undefined) : (Number.isInteger(v) ? v : undefined);
-    case 'year': return Number.isInteger(v) ? v : undefined;
-    case 'text': return clean(v, f.max) || undefined;
-    case 'open': return openOut(f, o);
-    case 'species1': return o.species === 'altra' ? (clean(o.speciesOther, f.max) || undefined) : (o.species || undefined);
+    case 'choice': return v == null || v === '' ? undefined : v;
+    case 'multi': case 'months': return Array.isArray(v) && v.length ? [...v] : undefined;
+    case 'texts': { const out = [...new Set((v || []).map((x) => clean(x.value, f.max)).filter(Boolean))]; return out.length ? out : undefined; }
+    case 'area': case 'text': return clean(v, f.max) || undefined;
     default: return undefined;
   }
 }
-function clarificationOut(f,o,field=f.k) {
-  const note = o._clarifications?.[f.k];
-  if (!note || !['other','not_applicable'].includes(note.kind)) return null;
-  const text = clean(note.text,600);
-  return note.kind==='not_applicable' || text ? {field,kind:note.kind,text} : null;
-}
-const toRanking = (list) => Object.fromEntries(list.map((k, i) => [k, i + 1]));
-function collectFields(fields, o, briefAll, out = {}) {
-  for (const f of fields) {
-    if (!fieldOn(f, briefAll) || f.of || f.t === 'consent') continue;
-    if (f.when && !f.when(o)) continue;
-    if (f.send === false) continue;
-    if (f.t === 'group') { collectFields(f.fields, o, briefAll, out); continue; }
-    const v = valueOut(f, o);
-    if (v !== undefined) out[f.k] = f.asRanking ? toRanking(v) : v;
-    const note = clarificationOut(f,o);
-    if (note) (out.clarifications ||= []).push(note);
-  }
-  return out;
-}
-const filled = (x) => x && Object.keys(x).length > 0;
-function collectInto(answers, key, fields, o, briefAll) { const v = collectFields(fields, o, briefAll); if (filled(v)) answers[key] = v; }
 function speciesEntries() {
-  return state.speciesChosen.slice(0, briefLimit()).map((key) => {
-    const s = state.speciesData[key];
-    if (!s) return null;
-    if (s.id === 'altra') { const name = clean(s.name, SPECIES_NAME_MAX); return name ? { key, value: { id: 'altra', name, ...collectFields(SPECIES_FIELDS, s, false) } } : null; }
-    return { key, value: { id: s.id, ...collectFields(SPECIES_FIELDS, s, false) } };
-  }).filter(Boolean);
+  return cardSpecies().map((x) => {
+    const card = state.cards[x.key] || cardItem();
+    const value = { id: x.id, ...(x.id === S.OTHER_SPECIES ? { name: x.name } : {}) };
+    for (const f of SPECIES_FIELDS) { const v = valueOut(f, card); if (v !== undefined) value[f.path.split('.')[1]] = v; }
+    return { ...x, value };
+  });
 }
-function collectSpecies(answers) { const list = speciesEntries().map((e) => e.value); if (list.length) answers.species = list; }
-const listOut = (arr, fields, lim) => arr.slice(0, lim).map((item) => collectFields(fields, item, true)).filter(filled);
-function collectWeather(answers) {
-  const gate = valueOut(WEATHER_FIELD, state.weather);
-  if (gate !== undefined) answers.weatherRemembers = gate;
-  const note = clarificationOut(WEATHER_FIELD,state.weather,'weatherRemembers');
-  if (note) (answers.clarifications ||= []).push(note);
-  if (gate !== 'sì') return;
-  const list = listOut(state.weatherEvents, EVENT_FIELDS, LIMITS.weatherEvents);
-  if (list.length) answers.weatherEvents = list;
+function answersOut() {
+  const answers = {}, profile = {};
+  for (const f of A_FIELDS) { const v = valueOut(f); if (v !== undefined) profile[f.path.split('.')[1]] = v; }
+  if (Object.keys(profile).length) answers.profile = profile;
+  const species = speciesEntries().map((e) => e.value);
+  if (species.length) answers.species = species;
+  const where = valueOut(C_FIELDS[0]), opinion = valueOut(C_FIELDS[1]);
+  if (where) answers.barrenZones = { where, ...(opinion ? { opinion } : {}) };
+  const warning = valueOut(C_FIELDS[2]);
+  if (warning) answers.warning = warning;
+  const report = valueOut(D_FIELDS[0]);
+  if (report) answers.willReport = report;
+  return answers;
 }
-function collectRecent(answers) {
-  const brief = state.mode === 'breve';
-  const fl = listOut(state.flushes, FLUSH_FIELDS, brief ? SHORT.flushes : LIMITS.flushes), em = listOut(state.emptyTrips, EMPTY_FIELDS, brief ? SHORT.emptyTrips : LIMITS.emptyTrips);
-  if (fl.length) answers.flushes = fl;
-  if (em.length) answers.emptyTrips = em;
-}
-function collectFinal(answers) { const v = collectFields([{...KNOWS_FIELD,of:null}],state.followUp,true); if (filled(v)) answers.followUp = v; }
-for (const p of PARTS) if (!p.collect) p.collect = (answers) => collectInto(answers, p.id, p.fields, p.owner(), !!p.briefAll);
-
 function payload() {
-  const answers = {};
-  for (const p of activeParts()) if (!state.skipped[p.key]) p.collect(answers);
-  const notApplicable = activeParts().filter((p) => state.skipped[p.key] && state.notApplicableParts?.[p.key]).map((p)=>p.key);
-  if (notApplicable.length) answers.notApplicableParts = notApplicable;
-  const final = !state.skipped.I;
-  const name = final ? clean(state.respondent.name, RESPONDENT.name) : '';
-  const contact = final && contactOn() ? clean(state.respondent.contact, RESPONDENT.contact) : '';
+  const contact = wantsContact();
   const respondent = {};
+  const name = contact ? clean(state.respondent.name, RESPONDENT.name) : '', reach = contact ? clean(state.respondent.contact, RESPONDENT.contact) : '';
   if (name) respondent.name = name;
-  if (contact) respondent.contact = contact;
+  if (reach) respondent.contact = reach;
   return {
     survey: SURVEY_ID,
     version: SURVEY_VERSION,
@@ -1203,8 +479,8 @@ function payload() {
     // Campo trappola: nella pagina ha un nome neutro (q-lascia-vuoto), nel corpo la chiave resta «website».
     website: $('#q-lascia-vuoto')?.value || '',
     respondent,
-    consent: { anonymousUse: state.consent.anonymousUse === true, recontact: final && state.consent.recontact === 'sì', diary: final && state.consent.diary === 'sì' },
-    answers,
+    consent: { anonymousUse: state.consent.anonymousUse === true, recontact: contact },
+    answers: answersOut(),
   };
 }
 
@@ -1213,44 +489,20 @@ function payload() {
 // ---------------------------------------------------------------------------------------------
 function fmtValue(f, v) {
   switch (f.t) {
-    case 'num': return `${fmtNum(v)}${f.unit ? ` ${unitText(f.unit, v)}` : ''}`;
-    case 'confidence': return `${v} su 5`;
     case 'choice': return labelOf(optionsOf(f), v);
     case 'multi': return v.map((x) => labelOf(optionsOf(f), x)).join(', ');
-    case 'order': return v.map((x, i) => `${i + 1}. ${labelOf(optionsOf(f), x)}`).join('; ');
-    case 'month': return typeof v === 'object' ? `${v.part ? `${v.part} ` : ''}${MONTHS[v.month - 1]}` : MONTHS[v - 1];
-    case 'open': return typeof v === 'string' ? v : [...v.quick.map((x) => (x === DONT_KNOW ? 'Non so' : cap(x))), v.text].filter(Boolean).join(' · ');
-    case 'species1': return labelOf(SPECIES, v);
+    case 'months': return v.map((x) => (x === DONT_KNOW ? 'Non so' : cap(x))).join(', ');
+    case 'texts': return v.join(', ');
     default: return String(v);
   }
 }
-function summarizeFields(fields, o, briefAll, rows = []) {
-  for (const f of fields) {
-    const owner = ownerOf(f, o);
-    if (!fieldOn(f, briefAll) || f.t === 'consent') continue;
-    if (f.when && !f.when(owner)) continue;
-    if (f.send === false) continue;
-    if (f.t === 'group') { summarizeFields(f.fields, owner, briefAll, rows); continue; }
-    const v = valueOut(f, owner);
-    if (v !== undefined) rows.push([f.short || f.label, fmtValue(f, v)]);
-    const note = clarificationOut(f,owner);
-    if (note) rows.push([`${f.short || f.label} — ${note.kind==='not_applicable'?'Non pertinente':'Altro'}`,note.text || 'Non pertinente per me.']);
-  }
+function summarize(fields, card) {
+  const rows = [];
+  for (const f of fields) { const v = valueOut(f, card); if (v !== undefined) rows.push([f.short || f.label, fmtValue(f, v)]); }
   return rows;
 }
 function speciesSummary() {
-  return speciesEntries().map((e) => ({ label: speciesTitle(e.key), rows: summarizeFields(SPECIES_FIELDS, state.speciesData[e.key], false), empty: 'Solo indicata come specie che conosci.' }));
-}
-const listSummary = (arr, fields, lim, name) => arr.slice(0, lim).map((item, i) => ({ label: `${name} ${i + 1}`, rows: summarizeFields(fields, item, true) })).filter((r) => r.rows.length);
-function weatherSummary() {
-  const gate = valueOut(WEATHER_FIELD, state.weather);
-  const note = clarificationOut(WEATHER_FIELD,state.weather);
-  if (gate === undefined) return note ? [[WEATHER_FIELD.short, note.kind==='not_applicable'?'Non pertinente per me.':note.text]] : [];
-  return [[WEATHER_FIELD.short, fmtValue(WEATHER_FIELD, gate)], ...(note?.text ? [['Precisazione',note.text]] : []), ...(gate === 'sì' ? listSummary(state.weatherEvents, EVENT_FIELDS, LIMITS.weatherEvents, 'Episodio') : [])];
-}
-function recentSummary() {
-  const brief = state.mode === 'breve';
-  return [...listSummary(state.flushes, FLUSH_FIELDS, brief ? SHORT.flushes : LIMITS.flushes, 'Buttata'), ...listSummary(state.emptyTrips, EMPTY_FIELDS, brief ? SHORT.emptyTrips : LIMITS.emptyTrips, 'Uscita a vuoto')];
+  return speciesEntries().map((e) => ({ label: e.title, rows: summarize(SPECIES_FIELDS, state.cards[e.key] || cardItem()), empty: 'Scheda vuota: parte solo il nome della specie.' }));
 }
 function rowsEl(rows) {
   const dl = h('dl', { class: 'q-dl' });
@@ -1266,10 +518,11 @@ function rowsEl(rows) {
 // ---------------------------------------------------------------------------------------------
 const HASH = { intro: 'inizio', riepilogo: 'riepilogo', inviato: 'inviato', ...Object.fromEntries(PART_KEYS.map((k) => [k, `parte-${k.toLowerCase()}`])) };
 const fromHash = (hash) => { const x = hash.replace(/^#/, ''); if (!x) return 'intro'; return Object.keys(HASH).find((k) => HASH[k] === x) || null; };
-const stepAllowed = (step) => step === 'intro' || step === 'riepilogo' || activeParts().some((p) => p.key === step);
+const stepAllowed = (step) => step === 'intro' || step === 'riepilogo' || isPart(step);
 
 function go(step, { push = true } = {}) {
   state.step = step;
+  if (isPart(step) && !state.startedAt) state.startedAt = new Date().toISOString();
   save();
   render();
   if (push) { try { history.pushState({ q: step }, '', `#${HASH[step]}`); } catch { /* cronologia non disponibile */ } }
@@ -1282,40 +535,20 @@ function focusTitle() {
   // ogni passo comincia dall'alto (l'avanzamento resta incollato in cima mentre si scorre)
   window.scrollTo(0, Math.max(0, ($('#q-form')?.offsetTop || 0) - 8));
 }
-function nextAfter(key) {
-  const i = PARTS.findIndex((p) => p.key === key);
-  return PARTS.slice(i + 1).find((p) => activeParts().includes(p))?.key || 'riepilogo';
-}
-function prevBefore(key) {
-  const i = PARTS.findIndex((p) => p.key === key);
-  return PARTS.slice(0, i).reverse().find((p) => activeParts().includes(p))?.key || 'intro';
-}
-function switchMode() {
-  state.mode = state.mode === 'breve' ? 'completa' : 'breve';
-  let step = state.step;
-  if (isPart(step) && !stepAllowed(step)) step = nextAfter(step);
-  const n = activeParts().length;
-  go(step, { push: step !== state.step });
-  announce(state.mode === 'breve' ? `Versione breve: ${n} parti. Le altre risposte restano nella bozza.` : `Versione completa: ${n} parti.`);
-}
+const nextAfter = (key) => PART_KEYS[PART_KEYS.indexOf(key) + 1] || 'riepilogo';
+const prevBefore = (key) => PART_KEYS[PART_KEYS.indexOf(key) - 1] || 'intro';
 
 function renderProgress() {
   const box = $('#q-progress');
-  // la scelta breve/completa sta fuori dalla parte incollata in cima: sul telefono, con la tastiera aperta, resta più spazio
-  const modeLine = $('#q-mode-line');
   box.replaceChildren();
-  modeLine?.replaceChildren();
-  const list = activeParts();
-  const i = list.findIndex((p) => p.key === state.step);
+  const i = PART_KEYS.indexOf(state.step);
   if (i < 0 && state.step !== 'riepilogo') { box.hidden = true; return; }
   box.hidden = false;
   const fill = h('span', { class: 'q-bar-fill' });
-  fill.style.width = `${Math.round(((i < 0 ? list.length + 1 : i + 1) / (list.length + 1)) * 100)}%`;
+  fill.style.width = `${Math.round(((i < 0 ? PART_KEYS.length + 1 : i + 1) / (PART_KEYS.length + 1)) * 100)}%`;
   box.append(
-    h('p', { class: 'q-count' }, i < 0 ? 'Riepilogo' : `Parte ${i + 1} di ${list.length}`),
+    h('p', { class: 'q-count' }, i < 0 ? 'Riepilogo' : `Parte ${i + 1} di ${PART_KEYS.length}`),
     h('div', { class: 'q-bar', 'aria-hidden': 'true' }, fill));
-  (modeLine || box).append(h('p', { class: 'q-mode' }, state.mode === 'breve' ? 'Versione breve · ' : 'Versione completa · ',
-    linkButton(state.mode === 'breve' ? 'passa alla completa' : 'passa alla breve', switchMode)));
 }
 
 function stepSection(title, prefix) {
@@ -1334,38 +567,43 @@ function render() {
   else renderPart(host, partBy(state.step) || PARTS[0]);
 }
 
-function readReceipts() { try { const r = JSON.parse(store.get(RECEIPTS_KEY) || '[]'); return Array.isArray(r) ? r : []; } catch { return []; } }
+// Ricevute: la chiave non dipende dalla versione; si leggono anche quelle salvate dalla versione 1.
+function readReceipts() {
+  const read = (k) => { try { const r = JSON.parse(store.get(k) || '[]'); return Array.isArray(r) ? r : []; } catch { return []; } };
+  return [...OLD_KEYS.flatMap((k) => read(`${k}:ricevute`)), ...read(RECEIPTS_KEY)].filter((r) => r && typeof r.receipt === 'string' && r.sentAt)
+    .sort((a, b) => String(a.sentAt).localeCompare(String(b.sentAt)));
+}
 
 function renderIntro(host) {
   const sec = stepSection('Mi dai una mano?');
   sec.append(
-    h('p', {}, 'Stiamo preparando un’app che, speriamo, possa aiutare te e gli altri a organizzare le uscite a funghi e conoscere meglio il bosco. Per questo ti chiedo di raccontarmi la tua esperienza nel Reatino: le risposte ci aiuteranno a capire che cosa può essere utile e che cosa dobbiamo approfondire.'),
-    h('p', {}, 'Non serve essere esperti: raccontami quello che conosci, anche se vai a funghi solo ogni tanto. Puoi rispondere solo alle domande che vuoi.'),
+    h('p', {}, 'Sono poche domande, 3 o 4 minuti, su quello che sai per abitudine: dove vai, che cosa cerchi, in che mesi, in che boschi e a che quota lo trovi di solito.'),
+    h('p', {}, 'Non ti chiedo date, giorni dopo la pioggia, quantità o uscite di anni fa: nessuno le ricorda con precisione, e una risposta data a caso fa più danni di una domanda saltata.'),
+    h('p', { class: 'q-box' }, h('strong', {}, '«Non so» va benissimo.'), ' Ogni domanda si può anche lasciare vuota.'),
+    h('p', {}, 'Stiamo preparando un’app per le uscite a funghi nel Reatino: le tue risposte ci dicono da dove partire. Le osservazioni vere, poi, si raccolgono nel bosco, con l’app.'),
     h('ul', { class: 'q-points' },
-      h('li', {}, 'I tuoi posti restano tuoi: bastano la zona e la quota indicativa.'),
-      h('li', {}, 'Puoi usare «Altro / specifica» per aggiungere una risposta diversa, oppure «Non pertinente per me» se la domanda non riguarda la tua esperienza. Se non ricordi, usa «Non so» o lascia vuoto.'),
-      h('li', {}, 'Non serve registrarsi. Il nome è facoltativo.'),
-      h('li', {}, 'Puoi fermarti e riprendere quando vuoi da questo dispositivo. Ricevo le risposte solo quando premi «Invia», alla fine.')));
+      h('li', {}, 'I tuoi posti restano tuoi: basta la zona a grandi linee.'),
+      h('li', {}, 'Non serve registrarsi.'),
+      h('li', {}, 'Puoi fermarti e riprendere da questo dispositivo. Ricevo le risposte solo quando premi «Invia», alla fine.')));
   const receipts = readReceipts();
   if (receipts.length) {
     const last = receipts[receipts.length - 1];
     sec.append(h('p', { class: 'q-box' }, `Da questo dispositivo è già stato inviato un questionario ${dayText(last.sentAt)}. Codice ricevuta: `, h('strong', { class: 'q-code' }, last.receipt), '.'));
   }
-  if (resumeAt) sec.append(resumeBox());
-  else {
-    const vid = uid('v');
-    const big = (mode, title, text) => h('button', { type: 'button', class: `q-big${state.mode === mode ? ' q-current' : ''}`, onclick: () => {
-      state.mode = mode;
-      go('A');
-      announce(`${title}: ${activeParts().length} parti.`);
-    } }, h('span', { class: 'q-big-title' }, title), h('span', { class: 'q-big-text' }, text),
-      state.mode === mode ? h('span', { class: 'q-big-text' }, 'È quella che stai usando.') : null);
-    sec.append(h('div', { class: 'q-versions', role: 'group', 'aria-labelledby': vid },
-      h('h3', { id: vid }, 'Come preferisci rispondere?'),
-      big('breve', 'Versione breve', 'La tua esperienza, fino a 3 specie che conosci e qualche uscita da raccontare.'),
-      big('completa', 'Versione completa', 'Tutte le domande: anche pioggia, freddo e vento, bosco, accessi e rischi.'),
-      h('p', { class: 'q-hint' }, 'Puoi passare dall’una all’altra quando vuoi, senza perdere niente.')));
+  // Bozze della versione 1 (lunga): restano nel browser, ma le domande sono cambiate e non si riaprono.
+  const old = OLD_KEYS.filter((k) => store.get(k));
+  if (old.length) {
+    const box = h('div', { class: 'q-box q-old-draft' },
+      h('p', {}, 'Su questo dispositivo c’è una bozza della versione lunga del questionario. Le domande sono cambiate: quella bozza non si riapre.'),
+      h('div', { class: 'q-row' }, h('button', { type: 'button', class: 'q-btn q-btn-small', onclick: () => {
+        old.forEach((k) => store.del(k));
+        box.replaceChildren(h('p', { tabindex: '-1' }, 'Vecchia bozza cancellata.'));
+        box.firstChild.focus();
+      } }, 'Cancella la vecchia bozza')));
+    sec.append(box);
   }
+  if (resumeAt) sec.append(resumeBox());
+  else sec.append(h('div', { class: 'q-nav' }, h('button', { type: 'button', class: 'q-btn q-btn-primary', onclick: () => go('A') }, 'Comincia')));
   host.append(sec);
 }
 function resumeBox() {
@@ -1396,63 +634,43 @@ function resumeBox() {
 }
 
 function renderPart(host, part) {
-  const list = activeParts();
-  const n = list.indexOf(part) + 1;
-  const sec = stepSection(part.title, `Parte ${n} di ${list.length}`);
+  const n = PART_KEYS.indexOf(part.key) + 1;
+  const sec = stepSection(part.title, `Parte ${n} di ${PART_KEYS.length}`);
   for (const t of [].concat(part.intro || [])) sec.append(h('p', { class: 'q-intro' }, t));
-  if (state.skipped[part.key]) {
-    sec.append(h('div', { class: 'q-box' }, h('p', {}, state.notApplicableParts?.[part.key] ? 'Hai indicato che questa parte non è pertinente per te. Puoi cambiare idea e compilarla.' : 'Hai saltato questa parte: queste risposte non vengono inviate.'),
-      h('button', { type: 'button', class: 'q-btn', onclick: () => { delete state.skipped[part.key]; if(state.notApplicableParts)delete state.notApplicableParts[part.key]; save(); render(); focusTitle(); } }, 'Compila questa parte')));
-  } else {
-    const body = h('div', { class: 'q-body' });
-    if (part.render) part.render(body, part); else renderFields(body, part.fields, part.owner(), !!part.briefAll);
-    sec.append(body);
-  }
+  const body = h('div', { class: 'q-body' });
+  if (part.render) part.render(body, part); else renderFields(body, part.fields);
+  sec.append(body);
   const next = nextAfter(part.key), prev = prevBefore(part.key);
   sec.append(h('div', { class: 'q-nav' },
     h('button', { type: 'button', class: 'q-btn', onclick: () => go(prev) }, 'Indietro'),
-    h('button', { type: 'button', class: 'q-btn q-btn-primary', onclick: () => go(next) }, next === 'riepilogo' ? 'Vai al riepilogo' : 'Avanti')),
-  state.skipped[part.key] ? null : h('p', { class: 'q-skip-part' }, linkButton('Salta questa parte', () => {
-    state.skipped[part.key] = true;
-    if(state.notApplicableParts)delete state.notApplicableParts[part.key];
-    go(next);
-    announce(`Hai saltato «${part.title}». Puoi tornarci dal riepilogo.`);
-  })));
-  if(part.key!=='I' && !state.skipped[part.key]) sec.append(h('p',{class:'q-skip-part'},
-    linkButton('Questa parte non è pertinente per me',()=>{
-      state.notApplicableParts ||= {};
-      state.notApplicableParts[part.key]=true;
-      state.skipped[part.key]=true;
-      go(next);
-    })));
+    h('button', { type: 'button', class: 'q-btn q-btn-primary', onclick: () => go(next) }, next === 'riepilogo' ? 'Vai al riepilogo' : 'Avanti')));
   host.append(sec);
 }
 
 function renderSummary(host) {
   const sec = stepSection('Riepilogo e invio');
   sec.append(h('p', { class: 'q-intro' }, 'Controlla le risposte. Con «Modifica» torni a quella parte e cambi quello che vuoi.'));
-  for (const part of activeParts()) {
+  for (const part of PARTS) {
     const id = uid('s');
-    const skipped = !!state.skipped[part.key];
-    const rows = skipped ? [] : part.summary ? part.summary() : summarizeFields(part.fields, part.owner(), !!part.briefAll);
+    const rows = part.summary ? part.summary() : summarize(part.fields);
     sec.append(h('section', { class: 'q-sum', 'aria-labelledby': id },
       h('div', { class: 'q-sum-head' }, h('h3', { id }, part.title),
         h('button', { type: 'button', class: 'q-btn q-btn-small', 'aria-label': `Modifica: ${part.title}`, onclick: () => go(part.key) }, 'Modifica')),
-      skipped ? h('p', { class: 'q-muted' }, state.notApplicableParts?.[part.key] ? 'Non pertinente per me: questa scelta viene inviata.' : 'Parte saltata: non viene inviata.') : rows.length ? rowsEl(rows) : h('p', { class: 'q-muted' }, 'Nessuna risposta.')));
+      rows.length ? rowsEl(rows) : h('p', { class: 'q-muted' }, 'Nessuna risposta.')));
   }
   const p = payload();
   const who = [p.respondent.name, p.respondent.contact].filter(Boolean);
   sec.append(h('div', { class: 'q-box q-send-what' }, h('h3', {}, 'Cosa inviamo'), h('ul', {},
-    h('li', {}, 'Le risposte qui sopra, comprese le precisazioni e le scelte «Non pertinente». Le domande lasciate vuote non partono.'),
+    h('li', {}, 'Le risposte qui sopra. Le domande lasciate vuote non partono.'),
     h('li', {}, who.length ? `Nome e contatto: ${who.join(', ')}.` : 'Nessun nome e nessun contatto.'),
-    h('li', {}, `Ricontatto: ${p.consent.recontact ? 'sì' : 'no'}. Taccuino delle uscite: ${p.consent.diary ? 'sì' : 'no'}.`),
+    h('li', {}, `Ricontatto: ${p.consent.recontact ? 'sì' : 'no'}.${p.consent.recontact && !p.respondent.contact ? ' Senza un contatto non posso ricontattarti: se vuoi, aggiungilo in «Con l’app».' : ''}`),
     h('li', {}, 'I dati tecnici dell’invio descritti nell’informativa.'),
     h('li', {}, 'Non inviamo la tua posizione. L’indirizzo IP non viene salvato.'))));
   sec.append(consentControl());
   const error = h('div', { id: 'q-send-error', class: 'q-box q-box-crit', role: 'alert', hidden: true });
   const status = h('p', { class: 'q-status', role: 'status' });
   const sendBtn = h('button', { type: 'button', class: 'q-btn q-btn-primary q-send', onclick: () => send(sendBtn, error, status) }, 'Invia');
-  sec.append(error, h('div', { class: 'q-nav' }, h('button', { type: 'button', class: 'q-btn', onclick: () => go(activeParts().at(-1).key) }, 'Indietro'), sendBtn), status);
+  sec.append(error, h('div', { class: 'q-nav' }, h('button', { type: 'button', class: 'q-btn', onclick: () => go(PART_KEYS.at(-1)) }, 'Indietro'), sendBtn), status);
   host.append(sec);
 }
 
@@ -1476,6 +694,11 @@ function renderSent(host) {
       h('div', { class: 'q-row' }, copy),
       h('p', {}, 'Conservalo. Se un giorno vuoi cancellare le risposte, scrivimi e mandami questo codice: ', ...contactLink(), '.')));
   }
+  // Invito al campo: le segnalazioni fatte sul momento valgono più di qualsiasi ricordo.
+  sec.append(h('div', { class: 'q-box q-app-invite' },
+    h('h3', {}, 'E adesso, nel bosco'),
+    h('p', {}, 'Quello che annoti sul momento vale più di qualsiasi ricordo. Quando sei nel bosco, apri Fronda e tocca «Annota»: segna subito cosa hai trovato, oppure che non hai trovato niente, e quanto hai cercato.'),
+    h('p', { class: 'q-row' }, h('a', { href: '/', class: 'q-btn q-btn-primary' }, 'Apri Fronda'))));
   sec.append(h('p', { class: 'q-muted' }, 'La bozza su questo dispositivo è stata cancellata.'),
     h('div', { class: 'q-row' }, h('button', { type: 'button', class: 'q-btn', onclick: () => { sent = null; state = blank(); go('intro'); } }, 'Compila un altro questionario')));
   host.append(sec);
@@ -1484,7 +707,7 @@ function renderSent(host) {
 // ---------------------------------------------------------------------------------------------
 // Invio
 // ---------------------------------------------------------------------------------------------
-const PART_OF_PATH = { profile: 'A', species: 'B', rain: 'C', weatherEvents: 'D', flushes: 'E', emptyTrips: 'E', forest: 'F', access: 'G', risks: 'H', followUp: 'I', respondent: 'I', consent: 'I' };
+const PART_OF_PATH = { profile: 'A', species: 'B', barrenZones: 'C', warning: 'C', willReport: 'D', respondent: 'D', consent: 'D' };
 function partsOf(errors) {
   const keys = new Set();
   for (const e of errors || []) {
@@ -1492,7 +715,7 @@ function partsOf(errors) {
     const m = String(path).replace(/^answers\./, '').match(/^([A-Za-z]+)/);
     if (m && PART_OF_PATH[m[1]]) keys.add(PART_OF_PATH[m[1]]);
   }
-  return [...keys].map(partBy).filter((p) => p && activeParts().includes(p));
+  return [...keys].map(partBy).filter(Boolean);
 }
 function showError(box, message, { parts = [], details = [], kind = 'send' } = {}) {
   box.dataset.kind = kind;
@@ -1529,15 +752,13 @@ async function send(btn, error, status) {
     showError(error, 'Per inviare, rispondi ad almeno una domanda. Puoi anche scegliere «Non so».');
     return;
   }
-  if (typeof S.validateSurvey === 'function') {
-    let check;
-    // Il campo trappola lo giudica solo il server (201 finto): qui un errore su un campo invisibile
-    // bloccherebbe la persona senza rimedio e mostrerebbe la trappola a chi esegue la pagina.
-    try { check = S.validateSurvey({ ...body, website: '' }); } catch { check = { ok: true }; }
-    if (check && check.ok === false) {
-      showError(error, 'Alcune risposte non vanno bene.', { details: check.errors || [], parts: partsOf(check.errors) });
-      return;
-    }
+  let check;
+  // Il campo trappola lo giudica solo il server (201 finto): qui un errore su un campo invisibile
+  // bloccherebbe la persona senza rimedio e mostrerebbe la trappola a chi esegue la pagina.
+  try { check = S.validateSurvey({ ...body, website: '' }); } catch { check = { ok: true }; }
+  if (check && check.ok === false) {
+    showError(error, 'Alcune risposte non vanno bene.', { details: check.errors || [], parts: partsOf(check.errors) });
+    return;
   }
   const json = JSON.stringify(body);
   if (new TextEncoder().encode(json).length > MAX_BYTES) { showError(error, 'Le risposte sono troppo lunghe per un solo invio. Accorcia i testi più lunghi e riprova.'); return; }
@@ -1576,6 +797,8 @@ async function send(btn, error, status) {
   }
   const msg = typeof data.error === 'string' && data.error ? data.error : '';
   if (res.status === 400) {
+    // pagina rimasta aperta con una versione vecchia del questionario: il server chiede di ricaricare
+    if ((data.fields || []).includes('version')) { showError(error, msg || 'Il questionario è cambiato: ricarica la pagina.'); return; }
     // un solo errore: il messaggio del server basta; più errori: l'elenco, senza ripetere il titolo
     const details = Array.isArray(data.errors) && data.errors.length > 1 ? data.errors : [];
     showError(error, msg && !details.length ? `Alcune risposte non vanno bene: ${msg}` : 'Alcune risposte non vanno bene.', { details, parts: partsOf(data.errors || data.fields) });
@@ -1596,65 +819,43 @@ function fillList(id, names) {
   if (!list) return;
   list.replaceChildren(...[...new Set(names)].filter((n) => typeof n === 'string' && n.trim()).map((n) => h('option', { value: n })));
 }
-// Zone: macro-zone, località e comuni della provincia (elenco ISTAT nello schema). Il campo accetta anche testo libero.
-function placeNames() {
-  if (Array.isArray(S.ZONE_SUGGESTIONS) && S.ZONE_SUGGESTIONS.length) return S.ZONE_SUGGESTIONS;
-  return [...ZONES.map((z) => z.label), ...(S.PLACES || []).map((p) => p?.name), ...(S.MUNICIPALITIES || []).map((m) => m?.name)];
-}
 // Specie «altra»: nomi italiani e latini del catalogo, in un file statico generato (tools/build_survey_lists.mjs).
 async function loadSpeciesNames() {
   let names = SPECIES.map((x) => x.label);
   try {
     const m = await import('./survey-species-names.js');
     if (Array.isArray(m.SPECIES_NAME_OPTIONS)) names = [...names, ...m.SPECIES_NAME_OPTIONS];
-    else if (Array.isArray(m.SPECIES_NAMES)) names = [...names, ...m.SPECIES_NAMES.flatMap((x) => [x?.name, ...(x?.latin || []), ...(x?.aliases || [])])];
   } catch { /* elenco facoltativo: restano le specie principali */ }
-  fillList('q-species-list', names.filter((n) => typeof n === 'string' && n.length <= SPECIES_NAME_MAX));
+  fillList('q-species-list', names.filter((n) => typeof n === 'string' && n.length <= LIMITS.speciesName));
 }
 
 // ---------------------------------------------------------------------------------------------
 // Avvio
 // ---------------------------------------------------------------------------------------------
-// Bozze salvate prima dei cancelli (16/10/2026). Si guarda la bozza com'era salvata, prima di unirla a blank():
-// una bozza nuova ha sempre la chiave del cancello, anche vuota (null) dopo «Cancella la scelta».
-function upgradeDraft(raw) {
-  // Rischi: un testo già scritto, senza cancello nella bozza, vale come «Sì», così non si perde.
-  const risks = raw?.risks && typeof raw.risks === 'object' ? raw.risks : {};
-  for (const [gate, key] of S.RISK_GATES || []) {
-    if (Object.hasOwn(risks, gate)) continue;
-    const v = state.risks[key];
-    if (v && (String(v.text ?? v).trim() || v.quick?.length)) state.risks[gate] = 'sì';
-  }
-  // Schede specie: il vecchio cancello della stagione (changedYes, non inviato) diventa seasonChanged.
-  for (const item of Object.values(state.speciesData || {})) {
-    if (!item || typeof item !== 'object' || !Object.hasOwn(item, 'changedYes')) continue;
-    if (item.seasonChanged == null) item.seasonChanged = item.changedYes ?? null;
-    delete item.changedYes;
-  }
-}
 function failed() {
   $('#q-loading')?.setAttribute('hidden', '');
   $('#q-fail')?.removeAttribute('hidden');
 }
 async function main() {
   try { S = await import('./survey-schema.js'); } catch { failed(); return; }
-  ({ SURVEY_ID, SURVEY_VERSION, SURVEY_ENDPOINT: ENDPOINT, MAX_BODY_BYTES: MAX_BYTES, YEAR_MIN, DONT_KNOW } = S);
+  ({ SURVEY_ID, SURVEY_VERSION, SURVEY_ENDPOINT: ENDPOINT, MAX_BODY_BYTES: MAX_BYTES, DONT_KNOW } = S);
   KEY = `fronda:questionario:${SURVEY_ID}:v${SURVEY_VERSION}`;
-  RECEIPTS_KEY = `${KEY}:ricevute`;
-  ZONES = asOptions(S.ZONES);
-  SPECIES = asOptions(S.SPECIES).filter((x) => x.value !== S.OTHER_SPECIES);
-  FORESTS = asOptions(S.FORESTS).map((x) => opt(x.value, cap(x.label)));
-  // Gli ultimi 6 anni a un tocco, fino all'ultimo anno ammesso dallo schema (YEAR_MAX).
-  LAST_YEAR = Math.min(Math.max(new Date().getFullYear(), YEAR_MIN + 6), S.YEAR_MAX);
-  LIMITS = { ...S.LIST_LIMITS };
-  SHORT = { ...S.SHORT_LIMITS };
+  RECEIPTS_KEY = `fronda:questionario:${SURVEY_ID}:ricevute`;
+  OLD_KEYS = Array.from({ length: SURVEY_VERSION - 1 }, (_, i) => `fronda:questionario:${SURVEY_ID}:v${i + 1}`);
+  SPECIES = (S.SPECIES || []).map((x) => opt(x.id, x.label));
+  FORESTS = (S.FORESTS || []).map((x) => opt(x, cap(x)));
+  YEARS = fromSchema(S.EXPERIENCE_YEARS);
+  ELEVATION = fromSchema(S.ELEVATION_BANDS);
+  REPORT = fromSchema(S.REPORT_INTENT);
+  REACHABLE = [...(S.REPORT_REACHABLE || [])];
+  MONTHS = Array.isArray(S.MONTHS) ? [...S.MONTHS] : [];
+  MONTHS_SHORT = MONTHS.map((m) => m.slice(0, 3));
   RESPONDENT = { ...S.RESPONDENT_LIMITS };
-  SPECIES_NAME_MAX = S.fieldSpec('species.name')?.max;
+  LIMITS = { ...S.LIST_LIMITS, speciesName: S.fieldSpec('species.name')?.max };
   try {
-    if (!loadOptions() || !ZONES.length || !SPECIES.length || !FORESTS.length || !ENDPOINT || !Number.isInteger(SPECIES_NAME_MAX)) throw new Error('Schema incompleto');
-    // Anno, zona e altri campi condivisi hanno indicazioni diverse per episodio e uscita.
-    for (const fields of [EVENT_FIELDS,FLUSH_FIELDS,EMPTY_FIELDS]) fields.forEach((f,i) => {fields[i]={...f};});
-    for (const [fields, prefix] of FIELD_GROUPS) applySpec(fields, prefix);
+    if (!SPECIES.length || !FORESTS.length || !YEARS.length || !ELEVATION.length || !REPORT.length || !REACHABLE.length || MONTHS.length !== 12
+      || !ENDPOINT || !Number.isInteger(LIMITS.species) || !Number.isInteger(LIMITS.speciesName)) throw new Error('Schema incompleto');
+    for (const fields of [A_FIELDS, SPECIES_FIELDS, C_FIELDS, D_FIELDS]) applySpec(fields);
   } catch (e) { console.error(e); failed(); return; }
 
   const openPrivacy = () => {
@@ -1664,16 +865,14 @@ async function main() {
   document.addEventListener('click', (event) => {
     if (event.target.closest('a[href="#informativa"]')) openPrivacy();
   });
-  if(location.hash==='#informativa')openPrivacy();
+  if (location.hash === '#informativa') openPrivacy();
   const draft = loadDraft();
-  if (draft) { state = merge(blank(), draft.state); resumeAt = draft.savedAt || new Date().toISOString(); upgradeDraft(draft.state); }
-  const order = state.forest.order;
-  if (!Array.isArray(order) || order.length !== FACTORS.length || !FACTORS.every((f) => order.includes(f.value))) state.forest.order = shuffle(FACTORS.map((f) => f.value));
+  if (draft) { state = merge(blank(), draft.state); resumeAt = draft.savedAt || new Date().toISOString(); }
   if (location.hash && fromHash(location.hash)) { try { history.replaceState(null, '', location.pathname + location.search); } catch { /* cronologia non disponibile */ } }
   // si apre sempre dall'inizio: con una bozza, l'inizio chiede se riprenderla e «Riprendi» torna alla parte salvata
   savedStep = state.step;
   state.step = 'intro';
-  fillList('q-zone-list', placeNames());
+  fillList('q-zone-list', S.ZONE_SUGGESTIONS || []);
   loadSpeciesNames();
 
   const form = $('#q-form');
@@ -1681,8 +880,7 @@ async function main() {
   addEventListener('popstate', () => {
     if (state.step === 'inviato' || resumeAt) return;
     const target = fromHash(location.hash);
-    if (!target || target === state.step) return;
-    if (target !== 'intro' && (!state.mode || !stepAllowed(target))) return;
+    if (!target || target === state.step || !stepAllowed(target)) return;
     go(target, { push: false });
   });
   addEventListener('pagehide', () => save(true));

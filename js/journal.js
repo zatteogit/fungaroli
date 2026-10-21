@@ -19,6 +19,7 @@ import {sharedObservation} from './community-observation.js';
 import {createNotebookComposer} from './notebook-composer.js';
 import {createQuickNotebookComposer} from './notebook-quick-composer.js';
 import {notebookLocalStore} from './notebook-photo-store.js';
+import {shouldCapture,autoPlanEntry,autoSaveMode,localPlansToDrop,outingStart,linkedForecast} from './forecast-autosave.js';
 
 const KEY = 'fungaroli:diario:v1';
 export const LEVELS = ['', 'Pochi', 'Discreti', 'Tanti'];
@@ -225,6 +226,14 @@ export function initJournal({ resolveTrip=()=>null,onEntries=()=>{},zones, speci
       experience:outingMemory(draft,outingSpecies()),savedAt:existing?.savedAt||now,
       predicted:sameContext?existing.predicted||{}:{},
       forecast:sameContext?existing.forecast:{mode:'retrospective',capturedAt:now}};
+    // Ricordo nuovo (o con luogo e giorno cambiati): si collega alla previsione salvata della stessa zona e dello
+    // stesso giorno, se precede l'inizio dell'uscita (js/forecast-autosave.js, stessa regola del server). Senza ora
+    // d'inizio vale l'inizio del giorno, scritto solo quando c'è una previsione da collegare.
+    if(!sameContext){
+      const start=outingStart(entry),candidate=start&&{...entry,effort:{...(entry.effort||{}),startedAt:start.startedAt,...(start.bound?{startedAtBound:start.bound}:{})}};
+      const link=candidate&&linkedForecast(candidate,entries);
+      if(link)Object.assign(entry,{effort:candidate.effort,forecast:link.forecast,predicted:link.predicted});
+    }
     await owner.put(entry);if(!currentStore(owner))throw new Error('Profilo cambiato: riapri il taccuino.');
     entries=[entry,...entries.filter(e=>e.id!==entry.id)];sortEntries();entriesRevision++;renderList('Uscita salvata nel taccuino.');return entry;
   },onDone:entry=>{location.hash='#/diario/pagina/'+encodeURIComponent(entry.id);}});
@@ -249,6 +258,7 @@ export function initJournal({ resolveTrip=()=>null,onEntries=()=>{},zones, speci
       const saved=normalizeNotebookNote({id:crypto.randomUUID(),kind:'note',category:'percorso',title:(source?editorialTripTitle(source):route?.name)?.slice(0,120),date,zoneId,note:'',reference,savedAt:new Date().toISOString()},{zoneIds:new Set(zones.map(z=>z.id))});
       await owner.put(saved);if(!currentStore(owner))return;
       entries=[saved,...entries];sortEntries();entriesRevision++;renderList('Giro salvato. Dopo l’uscita, tocca “Ci sono stato”.');location.hash='#/diario/pagina/'+encodeURIComponent(saved.id);
+      if(zoneId)autoCapture(zoneId,date);
     }catch(error){
       clearTimeout(noticeTimer);document.body.append(savedNotice);savedNotice.textContent='Giro non salvato. '+error.message;savedNotice.classList.add('on');noticeTimer=setTimeout(()=>savedNotice.classList.remove('on'),7000);
     }finally{button.disabled=false;}
@@ -340,6 +350,32 @@ export function initJournal({ resolveTrip=()=>null,onEntries=()=>{},zones, speci
     }
   });
 
+  // Previsione datata salvata in silenzio (decisione del 21/10/2026): una volta per zona e giorno, solo per oggi o
+  // per i giorni futuri. Senza profilo resta nella memoria del diario locale, con limite di spazio e pulizia; con un
+  // profilo va nel diario come i piani di prima (il server la data e la rende immutabile). Non compare nell'elenco.
+  const autoPending=new Set();
+  async function autoCapture(zoneId,date,band=null){
+    const key=`${zoneId}|${date}`;if(autoPending.has(key))return null;
+    autoPending.add(key);
+    try{
+      await storageReady;const owner=store,today=iso(new Date());
+      const mode=owner&&autoSaveMode(owner.kind,entries);
+      if(!mode||!shouldCapture({entries,zoneId,date,today}))return null;
+      const entry=autoPlanEntry({id:crypto.randomUUID(),zoneId,date,band,forecast:captureForecast?.(zoneId,date,band)});
+      if(!entry)return null;
+      if(mode==='local'){
+        const drop=localPlansToDrop([...entries,entry],{today});
+        for(const id of drop.filter(id=>id!==entry.id))await owner.remove(id);
+        if(drop.includes(entry.id))return null;
+        entries=entries.filter(e=>!drop.includes(e.id));
+      }
+      await owner.put(entry);if(!currentStore(owner))return null;
+      entries=[...entries.filter(e=>e.id!==entry.id),entry];sortEntries();entriesRevision++;
+      return entry;
+    }catch{return null;/* Previsione non salvata: l'app resta utilizzabile, si riprova alla prossima apertura. */}
+    finally{autoPending.delete(key);}
+  }
+
   function renderList(msg) {
     if (msg !== undefined) listMessage = msg;
     const route=notebookRoute(),inNotebook=location.hash.startsWith('#/diario');
@@ -351,7 +387,7 @@ export function initJournal({ resolveTrip=()=>null,onEntries=()=>{},zones, speci
       const a=agreement(e),top=Object.entries(e.predicted||{}).filter(([,v])=>Number.isFinite(v)).sort((x,y)=>y[1]-x[1])[0];
       return `<details class="notebook-analysis"><summary>Condizioni ${e.kind==='plan'?'salvate':'dell’uscita'}</summary>${top?`<p>Condizioni salvate <span class="growth-value">${fungusGlyph}${formatIndex(top[1])}</span> · ${esc(speciesCatalog.find(x=>x.id===top[0])?.name||top[0])}</p><p class="small muted">Valore storico: non descrive le condizioni attuali.</p>`:''}${e.kind==='plan'?'<p>Previsione salvata prima dell’uscita.</p>':a?a.species.map(x=>`<p>${esc(speciesCatalog.find(s=>s.id===x.id)?.name||x.id)}: ${x.ok?'concordante':x.said?'indice alto, zero osservato':'trovata con indice basso'}</p>`).join(''):'<p>Osservazione senza confronto prospettico.</p>'}</details>`;
     };
-    const result=renderNotebook({entries:route.demo?getDemoEntries():entries,zones,species:outingSpecies(),zoneImage,referenceImage,route,filter:listFilter,query:listQuery,layout:listLayout,density:listDensity,canPreview:['admin','editor'].includes(currentUser()?.role),actions:rowActions,analysis,shared:e=>store?.kind==='community'&&e.shared});
+    const result=renderNotebook({entries:route.demo?getDemoEntries():entries.filter(e=>!(e.kind==='plan'&&e.auto)),zones,species:outingSpecies(),zoneImage,referenceImage,route,filter:listFilter,query:listQuery,layout:listLayout,density:listDensity,canPreview:['admin','editor'].includes(currentUser()?.role),actions:rowActions,analysis,shared:e=>store?.kind==='community'&&e.shared});
     const heading=document.querySelector('.notebook-heading');
     heading.querySelector('h1').textContent=result.title;
     heading.querySelector('.kicker').textContent=result.kicker;
@@ -509,7 +545,7 @@ export function initJournal({ resolveTrip=()=>null,onEntries=()=>{},zones, speci
     const loading = store;
     try { const fresh = await loading.list(); if (loading !== store) return; entries = fresh; sortEntries(); renderStorage('none'); renderList(); } catch { if (loading === store) renderList('Taccuino non disponibile. Riprova.'); }
   });
-  return { observationsFor:context=>entityEntries(entries,context).map(e=>({...e})), notesFor:href=>entries.filter(e=>e.kind==='note'&&e.reference?.href===href).map(e=>({...e})), refresh: renderList, entryTitle:(id,demo=false)=>{const e=(demo?getDemoEntries():entries).find(e=>String(e.id)===id);return e?notebookTitle(e,zones):'Pagina del taccuino';}, async savePlan(zoneId, date, band) {
+  return { observationsFor:context=>entityEntries(entries,context).map(e=>({...e})), notesFor:href=>entries.filter(e=>e.kind==='note'&&e.reference?.href===href).map(e=>({...e})), refresh: renderList, entryTitle:(id,demo=false)=>{const e=(demo?getDemoEntries():entries).find(e=>String(e.id)===id);return e?notebookTitle(e,zones):'Pagina del taccuino';}, autoCapture, async savePlan(zoneId, date, band) {
     if (!store) throw new Error('Il taccuino sta ancora caricando. Riprova tra poco.');
     const forecast = captureForecast?.(zoneId, date, band);
     if (!forecast) throw new Error('Non ci sono dati completi e aggiornati per salvare questa previsione.');

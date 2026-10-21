@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="utf-8">
-  <meta name="app-version" content="fungaroli-shell-v319">
+  <meta name="app-version" content="fungaroli-shell-v323">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
   <link rel="preload" href="data/crop-points.json" as="fetch" crossorigin>
   <meta name="theme-color" content="#f7f4ea" media="(prefers-color-scheme: light)">
@@ -114,15 +114,15 @@
       <h1 id="home-h" class="sr-only">Dove andare</h1>
       <div id="active-filters" class="active-filters" role="group" aria-label="Cosa cerchi e preferenze"></div>
       <div id="days" class="days" role="tablist" aria-label="Giorno di uscita"></div>
+      <p id="home-day-note" class="home-day-note" hidden></p>
       <div id="hero" aria-live="polite"><div class="loader" aria-hidden="true"><span class="sr-only">Preparazione di Fronda</span></div><noscript><div class="boot-fail">
         <h2>Fronda ha bisogno di JavaScript</h2>
         <p>Fronda aiuta a scegliere dove e quando uscire per funghi nei boschi del Lazio e a conoscere il bosco durante la passeggiata. Per mostrare zone, meteo e schede serve JavaScript: attivalo nel browser e ricarica la pagina.</p>
         <p><strong>Regola essenziale.</strong> Nel Lazio si raccoglie con attestato micologico, ricevuta del contributo regionale annuale e documento d'identità (L.R. 32/1998). In caso di dubbio non raccogliere e non mangiare: fai controllare i funghi all'Ispettorato micologico della ASL, gratuito per i privati.</p>
       </div></noscript></div>
-      <div class="home-weather-status"><button type="button" class="link-btn home-how-link" data-home-how-open>Come funziona</button><button type="button" id="refresh" class="upd-btn" title="Tocca per ricaricare il meteo"><span id="updated" aria-live="polite"></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.34-5.66"/><path d="M20 4v4.5h-4.5"/></svg></button></div>
+      <div class="home-weather-status"><button type="button" class="link-btn home-how-link" data-home-how-open>Come funziona</button><span class="home-weather-line"><span id="updated" aria-live="polite"></span><button type="button" id="refresh" class="upd-btn" title="Tocca per ricaricare il meteo"><span class="upd-label">Aggiorna</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.34-5.66"/><path d="M20 4v4.5h-4.5"/></svg></button></span><details class="home-weather-details" hidden><summary>Dettagli</summary></details></div>
       <div id="install-banner" class="install-banner" hidden></div>
       <div class="home-bands">
-      <aside id="home-discovery-break" class="home-band home-next" aria-label="Un altro giorno da valutare" hidden></aside>
       <section class="home-band home-alternatives" aria-labelledby="others-h">
       <h2 class="sec-title" id="others-h">Altre buone uscite</h2>
       <ol id="ranking" class="rail" aria-labelledby="others-h"></ol>
@@ -281,7 +281,7 @@
   </div></details>
   <footer class="foot muted small">
     Strumento di supporto, non di identificazione. Nessun fungo va consumato senza certezza: in caso di dubbio, Ispettorato Micologico ASL.
-    Mappe © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">contributori OpenStreetMap</a> (ODbL), stile <a href="https://opentopomap.org/about" target="_blank" rel="noopener">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA</a>). Meteo: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo.com</a> (<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>). Carta Forestale su base tipologica: Regione Lazio. Dettagli in "Fonti dei dati, licenze e crediti".
+    Mappe © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">contributori OpenStreetMap</a> (ODbL), stile <a href="https://opentopomap.org/about" target="_blank" rel="noopener">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA</a>). Meteo: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo.com</a> (<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>). Carta Forestale su base tipologica, aree protette e zone dei piani: Regione Lazio. Pendenza, esposizione e quote dei percorsi: <a href="https://doi.org/10.13127/tinitaly/1.1" target="_blank" rel="noopener">TINITALY 1.1</a>, INGV (Tarquini et al. 2023, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>). Disturbi forestali: <a href="https://doi.org/10.5281/zenodo.21722408" target="_blank" rel="noopener">European Forest Disturbance Atlas v3.0</a> (Viana-Soto et al., CC BY 4.0). Punti d’accesso e percorsi a piedi: Valhalla su dati OpenStreetMap. Dettagli in "Fonti dei dati, licenze e crediti".
   </footer>
     </section>
   </main>

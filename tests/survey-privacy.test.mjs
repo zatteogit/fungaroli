@@ -45,9 +45,9 @@ function setup() {
   return { sql, env: { COMMUNITY_DB: d1(sql), APP_ORIGIN: ORIGIN, CMS_ADMIN_IDS: '', CMS_EDITOR_IDS: '' } };
 }
 const valid = (extra = {}) => ({
-  survey: 'esperti-reatino', version: 1, startedAt: new Date(NOW - 600_000).toISOString(), website: '',
-  respondent: { name: 'Mario', contact: '333 0000000' }, consent: { anonymousUse: true, recontact: true, diary: false },
-  answers: { profile: { years: 30, zones: ['Terminillo'] } }, ...extra,
+  survey: 'esperti-reatino', version: 2, startedAt: new Date(NOW - 600_000).toISOString(), website: '',
+  respondent: { name: 'Mario', contact: '333 0000000' }, consent: { anonymousUse: true, recontact: true },
+  answers: { profile: { years: '30 anni o più', zones: ['Terminillo'] }, willReport: 'sì' }, ...extra,
 });
 const post = (env, body, ip = '203.0.113.7') => handleSurvey(new Request(URL_RESPONSES, {
   method: 'POST', headers: { origin: ORIGIN, 'content-type': 'application/json', 'cf-connecting-ip': ip }, body: JSON.stringify(body),
@@ -151,14 +151,14 @@ test('CSV: nessuna cella diventa formula, né con la virgola né con il punto e 
   const answers = { profile: { zonesOther: nasty, mentor: { quick: [], text: nasty } }, risks: { confusions: { quick: [], text: nasty } },
     species: [{ id: 'altra', name: 'x;=1' }] };
   const csv = toCsv([{ id: '00000000-0000-4000-8000-000000000000', created_at: NOW, survey: 'esperti-reatino', version: 1, receipt: 'ABCDEFGH',
-    duration_s: 1, name: '@nome;=2', contact: '+39;-3', consent_recontact: 1, consent_diary: 0, answers: JSON.stringify(answers) }]);
+    duration_s: 1, name: '@nome;=2', contact: '+39;-3', consent_recontact: 1, consent_diary: 0, answers: JSON.stringify(answers) }], ',', 1);
   assert.deepEqual(italianExcelCells(csv).filter(formula), []);
   // con la virgola (RFC 4180) ogni cella inizia con l'apostrofo, e il testo resta leggibile
   assert.ok(csv.includes(`"'@nome;'=2"`));
   assert.ok(csv.includes(`"'+39;'-3"`));
   // «CSV per Excel» (separatore «;»): nessuna formula né in Excel italiano né in Excel inglese (che separa sulla virgola)
   const forExcel = toCsv([{ id: '00000000-0000-4000-8000-000000000000', created_at: NOW, survey: 'esperti-reatino', version: 1, receipt: 'ABCDEFGH',
-    duration_s: 1, name: '@nome,=2', contact: '+39;-3', consent_recontact: 1, consent_diary: 0, answers: JSON.stringify({ ...answers, profile: { ...answers.profile, zonesOther: nasty + ', -4,+5' } }) }], ';');
+    duration_s: 1, name: '@nome,=2', contact: '+39;-3', consent_recontact: 1, consent_diary: 0, answers: JSON.stringify({ ...answers, profile: { ...answers.profile, zonesOther: nasty + ', -4,+5' } }) }], ';', 1);
   assert.deepEqual(excelCells(forExcel, ';').filter(formula), []);
   assert.deepEqual(excelCells(forExcel, ',').filter(formula), []);
   assert.ok(forExcel.includes(`;"'@nome,'=2";"'+39;'-3";`));
@@ -166,6 +166,14 @@ test('CSV: nessuna cella diventa formula, né con la virgola né con il punto e 
   assert.equal(csvCell('a, -1'), '"a, -1"', 'con la virgola come separatore la virgola dentro le virgolette basta');
   // la versione con la virgola resta sicura in Excel italiano (sopra); in Excel inglese le virgolette aprono il campo
   assert.deepEqual(parseCsvLine(csv.split('\r\n')[1], ',').filter(formula), []);
+  // stesse regole per le risposte della versione 2 (testi liberi, zone, nomi di specie)
+  const v2 = { id: '00000000-0000-4000-8000-000000000001', created_at: NOW, survey: 'esperti-reatino', version: 2, receipt: 'ABCDEFGJ', duration_s: 1, name: '=n', contact: '-c',
+    consent_recontact: 1, consent_diary: 0, answers: JSON.stringify({ profile: { zones: [nasty], speciesOther: ['x;=1'] }, barrenZones: { where: nasty, opinion: nasty }, warning: nasty }) };
+  for (const sep of [',', ';']) {
+    const file = toCsv([v2], sep);
+    assert.deepEqual(excelCells(file, ';').filter(formula), [], `versione 2, file «${sep}»`);
+    assert.deepEqual(lenientCells(file.replace(/^\uFEFF/, ''), sep).filter(formula), [], `versione 2, file «${sep}», lettore tollerante`);
+  }
 });
 
 test('CSV: le virgolette subito dopo un separatore o un a capo non aprono una formula, con i due file e i due separatori', () => {
@@ -180,7 +188,7 @@ test('CSV: le virgolette subito dopo un separatore o un a capo non aprono una fo
     answers: JSON.stringify({ profile: { zonesOther: text }, risks: { confusions: { quick: [], text }, knowsPoisonings: 'sì', poisonings: { quick: [], text } } }) });
   const rows = QUOTE_ATTACKS.map((t, i) => row(i, t));
   for (const sep of [',', ';']) {
-    const file = toCsv(rows, sep);
+    const file = toCsv(rows, sep, 1);
     for (const read of [',', ';']) {
       assert.deepEqual(lenientCells(file.replace(/^\uFEFF/, ''), read).filter(formula), [], `file «${sep}» letto con «${read}»`);
       // il controllo prudente (a ogni separatore, anche tra virgolette) vale dove il file mette l'apostrofo
@@ -208,19 +216,18 @@ function parseCsvLine(line, sep) {
   return out;
 }
 
-test('contatto salvato solo con il «sì» al ricontatto o al taccuino', async () => {
-  const body = (consent) => valid({ consent: { anonymousUse: true, ...consent } });
-  assert.equal(validateSurvey(body({ recontact: false, diary: false })).value.respondent.contact, null);
-  assert.equal(validateSurvey(body({})).value.respondent.contact, null);
-  assert.equal(validateSurvey(body({ recontact: true })).value.respondent.contact, '333 0000000');
-  assert.equal(validateSurvey(body({ diary: true })).value.respondent.contact, '333 0000000');
-  assert.equal(validateSurvey(body({})).value.respondent.name, 'Mario', 'il nome resta facoltativo e indipendente');
+test('nome e contatto salvati solo con «sì» o «forse» alle segnalazioni con l’app e con il ricontatto', async () => {
+  const body = (willReport, recontact) => valid({ consent: { anonymousUse: true, recontact }, answers: { profile: { years: '30 anni o più' }, ...(willReport ? { willReport } : {}) } });
+  assert.deepEqual(validateSurvey(body('sì', true)).value.respondent, { name: 'Mario', contact: '333 0000000' });
+  assert.deepEqual(validateSurvey(body('forse', true)).value.respondent, { name: 'Mario', contact: '333 0000000' });
+  for (const [w, r] of [['sì', false], ['forse', false], ['no', true], ['no', false], [null, true]])
+    assert.deepEqual(validateSurvey(body(w, r)).value.respondent, { name: null, contact: null }, `${w}, ricontatto ${r}: nemmeno il nome`);
   // un contatto troppo lungo è comunque un errore, anche senza consenso
   assert.equal(validateSurvey(valid({ respondent: { contact: 'x'.repeat(121) }, consent: { anonymousUse: true } })).ok, false);
   const { sql, env } = setup();
-  const out = await (await post(env, body({ recontact: false, diary: false }))).json();
+  const out = await (await post(env, body('no', true))).json();
   const row = sql.prepare('SELECT name,contact,consent_recontact,consent_diary FROM survey_responses WHERE id=?').get(out.id);
-  assert.deepEqual({ ...row }, { name: 'Mario', contact: null, consent_recontact: 0, consent_diary: 0 });
+  assert.deepEqual({ ...row }, { name: null, contact: null, consent_recontact: 0, consent_diary: 0 });
 });
 
 // Indirizzo del titolare: unica fonte data/legal.json, sezione «Privacy e dati» (link mailto).
@@ -254,10 +261,10 @@ test('testi della pagina: consenso senza «anonimo», niente dati di salute né 
   assert.match(page, /'Per inviare serve il tuo consenso: spunta la casella qui sopra\.'/);
   for (const text of [page, schema]) assert.doesNotMatch(text.replace(/^\s*\/\/.*$/gm, ''), /anonim/i);
   assert.equal(validateSurvey(valid({ consent: { anonymousUse: false } })).errors[0].message, 'Per inviare serve il tuo consenso: spunta la casella qui sopra.');
-  // intossicazioni: niente dati sulla salute di persone riconoscibili, nemmeno di chi risponde
-  assert.match(page, /k: 'poisonings'[^\n]*hint: 'Racconta specie, anno e zona\. Non scrivere chi era e non dare dettagli sulla salute di persone riconoscibili, nemmeno tua\.'/);
-  // altri esperti: nessun nome o contatto di terzi, come dice l'informativa
-  assert.match(page, /k: 'knowsOthers'[^\n]*hint: 'Non scrivere nomi o contatti di altre persone: gira loro il link\.'/);
+  // errori e pericoli: niente nomi di persone né dati sulla salute, come dice l'informativa
+  assert.match(page, /path: 'warning'[^\n]*hint: 'Facoltativo\. Non scrivere nomi di persone né dati sulla salute\.'/);
+  // zone: niente posti precisi
+  assert.match(page, /path: 'profile\.zones'[^\n]*Niente posti precisi\./);
   assert.doesNotMatch(page, /senza il loro permesso/);
 });
 
@@ -277,7 +284,7 @@ test('informativa (art. 13 GDPR): elementi obbligatori e coerenza con il codice'
   for (const [what, re] of [
     ['titolare', /Matteo Sgambato, titolare del trattamento/],
     ['finalità', /studiare le stagioni e le condizioni dei funghi nel Reatino/],
-    ['uso del contatto', /contatto serve solo a ricontattarti o per il taccuino/],
+    ['uso del contatto', /si chiedono solo se segnaleresti con l’app e vuoi essere ricontattato: il contatto serve solo a ricontattarti/],
     ['natura facoltativa', /ogni domanda è facoltativa/],
     ['base giuridica', /consenso \(art\. 6, par\. 1, lett\. a\)/],
     ['revoca del consenso', /Puoi ritirarlo quando vuoi/],
@@ -286,7 +293,7 @@ test('informativa (art. 13 GDPR): elementi obbligatori e coerenza con il codice'
     ['trasferimenti extra UE', /fuori dall’Unione europea[\s\S]*Data Privacy Framework[\s\S]*clausole contrattuali standard/],
     ['conservazione', /risposte e il nome[\s\S]*31\/12\/2028[\s\S]*contatto[\s\S]*31\/12\/2027/],
     ['diritti', /vedere le tue risposte, averne una copia \(anche in un formato leggibile da computer\), correggerle, limitarne l’uso o cancellarle/],
-    ['dati di salute', /Nelle domande sui rischi non scrivere dati sulla salute, tuoi o di altri/],
+    ['dati di salute', /Nella domanda su errori e pericoli non scrivere dati sulla salute, tuoi o di altri/],
     ['contatto del titolare', /titolare del trattamento\. [^.]*\. Per scrivergli: \S+@\S+ \./],
     ['contatto per i diritti', /codice ricevuta a Matteo Sgambato: scrivi a \S+@\S+ \./],
     ['reclamo', /reclamo al Garante per la protezione dei dati personali/],

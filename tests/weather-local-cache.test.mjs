@@ -47,6 +47,33 @@ test('legacy whole-catalogue copies migrate once, expired ones are dropped, othe
  delete global.localStorage;
 });
 
+// ---- Strato 9–27 cm: le copie locali precedenti restano valide, la richiesta nuova è quella accettata dal Worker ----
+test('una copia locale senza lo strato 9–27 cm resta valida e non viene riscaricata prima del tempo',async()=>{
+ storage();const original=global.fetch;global.document={};let calls=0;
+ saveZoneWeather(zones[0],'growth',{t:Date.now()-60000,raw:raw()});
+ global.fetch=async()=>{calls++;return Response.json(raw());};
+ try{const w=await loadWeather([zones[0]]);
+  assert.equal(calls,0);assert.deepEqual(w.series.a[0].soilm9to27,[null]);assert.deepEqual(w.series.a[0].et0,[null]);assert.equal(w.series.a[0].soilm[0],.3);assert.equal(w.series.a[0].soilt[0],13);
+ }finally{global.fetch=original;delete global.document;delete global.localStorage;}
+});
+test('la richiesta del browser include lo strato 9–27 cm, è accettata dal Worker e la media viene salvata',async()=>{
+ const data=storage();const original=global.fetch;global.document={};let url;
+ const deep=()=>raw().map(r=>({...r,daily:{...r.daily,soil_moisture_9_to_27cm_mean:[.28]}}));
+ global.fetch=async u=>{url=u;return Response.json(deep());};
+ try{const w=await loadWeather([zones[0]]);
+  assert.deepEqual(w.series.a[0].soilm9to27,[.28]);
+  assert.deepEqual(w.series.a[0].et0,[null]); // la risposta simulata non ha ET₀: serie di null, non zero
+  assert.match(data.get('fungaroli:weather:zones:v3'),/soil_moisture_9_to_27cm_mean/);
+  const q=new URL(url,'https://local').searchParams;assert.ok(q.get('hourly').split(',').includes('soil_moisture_9_to_27cm'));
+  const {cachedForecast}=await import('../worker/weather-provider.js');
+  const today=todayISO(),hourly={time:Array.from({length:24},(_,h)=>`${today}T${String(h).padStart(2,'0')}:00`)};
+  for(const f of q.get('hourly').split(','))hourly[f]=Array(24).fill(.3);
+  assert.ok(q.get('daily').split(',').includes('et0_fao_evapotranspiration'));
+  const daily={...raw()[0].daily,et0_fao_evapotranspiration:[2.2]};
+  const res=await cachedForecast(q,{zones:[zones[0]],now:Date.now(),fetcher:async()=>Response.json([{daily,hourly}])});
+  assert.equal(res.status,200);assert.ok(Math.abs((await res.json())[0].daily.soil_moisture_9_to_27cm_mean[0]-.3)<1e-12);
+ }finally{global.fetch=original;delete global.document;delete global.localStorage;}
+});
 test('fresh outing forecasts are reused on reopening without a network call',async()=>{
  storage();const {loadOuting}=await import('../js/outing.js');const original=global.fetch;global.document={};let calls=0;
  const hourly={time:[todayISO()+'T12:00'],precipitation:[0],precipitation_probability:[0],weather_code:[1],wind_gusts_10m:[8],temperature_2m:[13]};

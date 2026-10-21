@@ -4,7 +4,7 @@ Aggiornamento del 14 ottobre 2026. L'interfaccia non attende tutte le zone prima
 
 ## Due profili indipendenti
 
-- **Crescita**: 62 giorni passati e 8 di previsione; pioggia, temperature e medie giornaliere del suolo per ogni fascia di quota.
+- **Crescita**: 62 giorni passati e 8 di previsione per ogni fascia di quota. Giornalieri: pioggia, temperatura media, minima e massima, ET₀ FAO-56. Orari, ridotti a medie giornaliere: umidità del suolo a 3–9 e a 9–27 cm, temperatura del suolo a 6 cm. L'umidità a 9–27 cm e l'ET₀ si aggiungono dal modello 2.1.0 (seconda tornata): si salvano nelle previsioni datate, non entrano nell'indice.
 - **Uscita**: previsione oraria alla fascia centrale; pioggia, probabilità, codici WMO, raffiche e temperatura. Il suo ritardo non impedisce di mostrare i dati di crescita.
 
 Entrambi si aggiornano dopo un'ora. La data mostrata è quella di acquisizione originale, mai quella di rilettura della cache. L'indicazione globale usa la data più vecchia tra le zone disponibili; ciascuna serie conserva il proprio timestamp.
@@ -16,6 +16,19 @@ Entrambi si aggiornano dopo un'ora. La data mostrata è quella di acquisizione o
 Una copia entro un'ora viene restituita subito. Una copia più vecchia, conservata fino a sei giorni anche se non copre più oggi, viene restituita subito e aggiornata con `ctx.waitUntil`. Le richieste concomitanti sullo stesso isolate condividono il download. L'header `x-weather-refreshing: 1` fa richiedere al browser il risultato con `x-weather-refresh: 1`; il follow-up attende lo stesso lavoro. In caso di errore rimane la copia datata. Non è un lock distribuito tra isolate o regioni Cloudflare.
 
 Timeout upstream 15 secondi. I grandi batch delle pagine precedenti restano un percorso di compatibilità in streaming, senza cache: aggiornare l'app per usare il nuovo flusso per zona. Le medie del suolo richiedono almeno 24 ore valide; dati mancanti non diventano zero.
+
+### Profilo di transizione per le pagine aperte
+
+La query di crescita è cambiata con il modello 2.1.0 (due variabili in più). Il Worker accetta solo le query che conosce, quindi tiene due profili:
+
+- `growth`: la query nuova, con `et0_fao_evapotranspiration` e `soil_moisture_9_to_27cm` (`GROWTH_DAILY` e `GROWTH_HOURLY` in `js/weather-data.js`, condivisi da browser e Worker);
+- `growthLegacy`: la query della versione precedente (fino alla v319), con gli stessi luoghi. Una scheda rimasta aperta durante il rilascio continua a ricevere il meteo invece di un errore 422, finché non si ricarica.
+
+La chiave KV dipende dalla query, quindi la query nuova parte senza copia. Se trova la copia salvata con la query precedente (stessi luoghi e quote), la restituisce subito come copia datata, ma mai come `hit`: l'aggiornamento parte sempre e porta i campi nuovi. La copia vecchia si valida con la propria query: le medie del suolo richieste sono quelle degli strati orari di quella query. Nel browser le copie salvate prima del cambio restano valide con la stessa chiave: i campi nuovi sono facoltativi e valgono una serie di `null`, cioè dato mancante. Si rinnovano alla scadenza normale.
+
+L'umidità del suolo è una frazione di volume: vale solo tra 0 e 1. Un valore fuori intervallo è un dato non valido e vale `null`, sia ora per ora sia nelle medie giornaliere compatte del Worker, del KV e del browser (`soilFraction` in `js/weather-data.js`). Prima della seconda tornata il controllo c'era solo nella via oraria.
+
+**Interpretazione**: finché restano aperte pagine della versione precedente, lo stesso luogo può essere rinnovato con due query diverse, quindi pesare il doppio sulla quota di Open-Meteo. Dura fino a quando quelle pagine si ricaricano.
 
 ## Dispositivo
 
@@ -54,12 +67,14 @@ Le righe orarie complete sono nel campo `rows`. In alternativa, dal pannello Clo
 
 **Quota di Open-Meteo.** Il piano gratuito, per uso non commerciale, ha questi limiti: 600 chiamate al minuto, 5.000 all'ora, 10.000 al giorno, 300.000 al mese. Una richiesta conta come più chiamate se supera 10 variabili o 2 settimane di dati per punto, in modo frazionario (Open-Meteo, pagina prezzi, letta il 14/10/2026: https://open-meteo.com/en/pricing). La documentazione non dice come vengano contati i punti di una richiesta multipla. *Ipotesi prudente* usata nelle metriche: ogni punto conta come una chiamata, moltiplicata per `max(1, variabili/10) × max(1, giorni/14)`.
 
-Con le zone attuali (15 zone, 45 fasce di quota) un aggiornamento completo pesa circa:
+Con 15 zone (45 fasce di quota) un aggiornamento completo pesava circa:
 - **crescita:** 45 punti × 5 = **225**, perché 6 variabili su 70 giorni (62 passati e 8 di previsione) valgono 5 chiamate per punto;
 - **uscita:** 15 punti × 1 = **15**;
 - **totale:** circa **240** chiamate stimate.
 
-Il server rinnova ogni zona al massimo una volta l'ora, quindi il tetto teorico con visite continue è circa **5.800 al giorno** e 240 all'ora. *Interpretazione*: il margine sul limite giornaliero è meno ampio di quanto sembri, per due motivi:
+Il server rinnova ogni zona al massimo una volta l'ora, quindi il tetto teorico con visite continue era circa **5.800 al giorno** e 240 all'ora.
+
+**Aggiornamento del 21/10/2026.** Con il modello 2.1.0 la crescita chiede 8 variabili invece di 6: restano sotto 10, quindi il peso per punto non cambia (5). Le zone però sono 36 dal 19/10 (108 fasce di quota). Con la stessa ipotesi prudente un aggiornamento completo pesa circa 108 × 5 = **540** per la crescita più **36** per l'uscita, cioè **576**. *Interpretazione*: il tetto teorico con visite continue diventa circa **13.800 al giorno**, sopra il limite giornaliero di 10.000. Non vuol dire che oggi lo si superi: dipende dalle visite, e le misure dicono quanto davvero si consuma. È un motivo in più per guardarle prima di aggiungere zone o variabili. *Interpretazione*: il margine sul limite giornaliero è meno ampio di quanto sembri, per due motivi:
 - un doppio download tra isolate diversi (limite noto, vedi «Server») può avvicinare o superare le 10.000 chiamate;
 - il grosso del peso viene dai 62 giorni passati, riscaricati a ogni rinnovo anche se cambiano poco.
 

@@ -20,7 +20,7 @@ export function externalFieldEvidence(dataset,zoneId,taxonId,day,{windowDays=7,n
     coverage:records.length?'observations_available':'no_usable_observations',rankingEffect:'none'};
 }
 
-export const MODEL_VERSION = '2.0.0'; // indice sperimentale; nessuna calibrazione locale
+export const MODEL_VERSION = '2.1.0'; // indice sperimentale; nessuna calibrazione locale. 2.1.0: shock sul suolo, solo porcino e porcino rosso
 export const PARAMS = {
   r30Days: 30,          // finestra pioggia cumulata (Salerni et al. 2002: correlazione piu' forte a 30 gg)
   tDays: 20,            // finestra T media (preprint 2025: ~13 °C media dei 20 gg precedenti per B. edulis)
@@ -29,7 +29,15 @@ export const PARAMS = {
   moistWet: 0.26,       // sopra = pienamente umido
   frostC: -1,           // T minima che blocca/danneggia i carpofori
   heatC: 30,            // T massima che secca lettiera e carpofori
-  shockDropC: 4,        // calo della T media (3 gg vs 3 gg) che conta come shock termico
+  // Calo della temperatura del suolo (solo specie con soilShock: B. edulis e B. pinophilus).
+  // Fonte: Olivier J.-M., Guinberteau J., Rondet J., Mamoun M. 1997, Revue forestière française XLIX
+  // n° sp.: 222-234, doi:10.4267/2042/5671, testo su HAL https://hal.science/hal-03443958 (letto il 16/10/2026).
+  // Osservazione preliminare su parcelle della Francia sud-occidentale, senza statistica («une base qu'il faut affiner»).
+  shockSoilDropC: 5,      // «un écart de 5 °C environ par rapport à la température moyenne initiale»
+  shockLagDays: [6, 15],  // «6 à 10 jours après le choc thermique si la température est supérieure à 15 °C, 8 à 15 jours si elle est inférieure»
+  shockRefDays: 3,        // giorni della media di riferimento («température moyenne initiale»): numero euristico, la fonte non lo dice
+  shockOnsetDays: 5,      // il calo può distribuirsi su più giorni: «20 heures pouvant se répartir sur 3 à 5 nuits»
+  shockBonus: 1.15,       // moltiplicatore del giorno con evento: euristica senza fonte
   bandHalfWidth: 150,   // metri attorno alla quota della fascia per leggere la composizione forestale
 };
 
@@ -115,15 +123,62 @@ export function weatherFactors(species, s, i) {
   for (let k = Math.max(0, i - 3); k <= i - 1; k++) maxT = Math.max(maxT, s.tmax?.[k] ?? -Infinity);
   if (maxT > PARAMS.heatC) heat = 0.65;
 
-  // shock termico: calo di T media tra 4 e 14 giorni prima (euristica da pratica micologica)
-  let drop = 0;
-  for (let j = Math.max(3, i - 14); j <= i - 4; j++) {
-    const before = mean(s.tmean, j - 3, j - 1), after = mean(s.tmean, j + 1, j + 3);
-    if (before != null && after != null) drop = Math.max(drop, before - after);
-  }
-  const shock = drop >= PARAMS.shockDropC ? 1 + 0.075 * (species.shockWeight ?? 2) : 1;
+  return { effRain, maxEvent, r30, triggered, rain, t20, temp, sm, moist, minT, frost, maxT, heat, ...soilTemperatureShock(species, s, i) };
+}
 
-  return { effRain, maxEvent, r30, triggered, rain, t20, temp, sm, moist, minT, frost, maxT, heat, drop, shock };
+// ---- Shock termico sul suolo (Olivier et al. 1997, vedi PARAMS) ----
+// Dato: media giornaliera della temperatura del suolo a 6 cm (`soilt`, Open-Meteo `soil_temperature_6cm`).
+// La fonte misura a −10 cm («Température dans le sol (– 10 cm)»; «refroidissement du sol dans les
+// 10 premiers centimètres»): 6 cm è lo strato del modello più vicino (gli altri sono 0, 18 e 54 cm).
+// Approssimazioni dichiarate:
+// - la fonte conta le ore «fredde» («le nombre d'heures pendant lequel cet écart se manifeste doit être,
+//   en cumulé, de 20 heures pouvant se répartir sur 3 à 5 nuits»); qui ci sono solo medie giornaliere.
+//   Un giorno con media più bassa di 5 °C vale circa 24 ore di scarto; ore fredde sparse su più notti
+//   con una media del giorno meno bassa non vengono viste (meno eventi, mai di più);
+// - la temperatura del suolo è un'uscita del modello meteo, non una misura nel bosco.
+
+// Calo nel giorno k rispetto alla «température moyenne initiale»: la media di shockRefDays giorni più
+// calda tra quelle che finiscono da 1 a shockOnsetDays giorni prima di k, cioè il livello prima che il
+// raffreddamento cominci («une chute des températures, air et sol, entraîne un refroidissement du sol»).
+// null se manca anche un solo dato: niente valori inventati.
+export function soilDrop(soilt, k) {
+  if (!Number.isFinite(soilt?.[k])) return null;
+  let ref = -Infinity;
+  for (let e = k - PARAMS.shockOnsetDays; e <= k - 1; e++) {
+    let tot = 0;
+    for (let j = e - PARAMS.shockRefDays + 1; j <= e; j++) {
+      if (!Number.isFinite(soilt?.[j])) return null;
+      tot += soilt[j];
+    }
+    ref = Math.max(ref, tot / PARAMS.shockRefDays);
+  }
+  return { drop: ref - soilt[k], from: ref, to: soilt[k] };
+}
+
+// Evento: primo giorno in cui il calo raggiunge shockSoilDropC (il giorno prima non lo raggiungeva).
+// Il giorno i riceve il bonus se un evento cade tra i − 15 e i − 6 (shockLagDays).
+// Stati: 'non previsto' (specie senza soilShock), 'calo', 'nessun calo', 'dati incompleti'.
+// Dati incompleti: un evento dimostrato da dati completi vale comunque; se nessun evento è dimostrato
+// e manca un dato, il bonus non si applica (fattore 1) e inputQuality lo segnala in bonusUnavailable.
+// Lo shock è un bonus: trattarlo come assente non gonfia mai l'indice, mentre renderlo un dato
+// obbligatorio toglierebbe l'indice intero per un'informazione accessoria.
+// Non implementato: «un nouvel abaissement de la température du sol d'au moins 3 °C pendant la période
+// de fructification arrête le processus» e la condizione sulla pioggia («le choc thermique a lieu
+// pendant ou après la période de pluie»).
+export function soilTemperatureShock(species, s, i) {
+  const none = { shock: 1, drop: null, shockDate: null, shockDaysBefore: null, shockFrom: null, shockTo: null };
+  if (!species?.soilShock) return { ...none, shockStatus: 'non previsto' };
+  const [lagMin, lagMax] = PARAMS.shockLagDays, x = PARAMS.shockSoilDropC;
+  let complete = true, event = null, maxDrop = null;
+  for (let k = i - lagMax; k <= i - lagMin; k++) {
+    const d = soilDrop(s.soilt, k), prev = soilDrop(s.soilt, k - 1);
+    if (!d || !prev) { complete = false; continue; }
+    maxDrop = Math.max(maxDrop ?? -Infinity, d.drop);
+    if (d.drop >= x && prev.drop < x) event = { k, ...d }; // tiene il più recente
+  }
+  if (event) return { shock: PARAMS.shockBonus, shockStatus: 'calo', drop: event.drop, shockDate: s.dates?.[event.k] ?? null,
+    shockDaysBefore: i - event.k, shockFrom: event.from, shockTo: event.to };
+  return { ...none, drop: maxDrop, shockStatus: complete ? 'nessun calo' : 'dati incompleti' };
 }
 
 // Completezza degli input, distinta dall'accuratezza (non misurata) del modello.
@@ -137,6 +192,9 @@ export function inputQuality(species, s, i) {
     ['tmax', 'temperature massime', i - 3, i - 1],
   ];
   const missing = [], futureDays = new Set();
+  // Lo shock è un bonus: la temperatura del suolo incompleta non rende l'indice non calcolabile,
+  // ma il bonus non si applica e viene dichiarato qui (vedi soilTemperatureShock).
+  const bonusUnavailable = soilTemperatureShock(species, s, i).shockStatus === 'dati incompleti' ? ['temperatura del suolo'] : [];
   const issuedIndex = Number.isInteger(s.issuedIndex) ? s.issuedIndex : s.todayIndex;
   for (const [key, label, from, to] of windows) {
     let n = 0;
@@ -147,7 +205,7 @@ export function inputQuality(species, s, i) {
     if (n !== to - from + 1) missing.push(label);
   }
   if (!s.dates?.[i]) missing.push('data');
-  return { complete: missing.length === 0, missing, usesForecast: futureDays.size > 0,
+  return { complete: missing.length === 0, missing, bonusUnavailable, usesForecast: futureDays.size > 0,
     forecastDays: futureDays.size, fetchedAt: s.source?.fetchedAt || null, validation: 'non validato localmente' };
 }
 
@@ -220,7 +278,7 @@ export function explain(r) {
   if (r.sm != null) out.push(`suolo ${r.moist >= 0.8 ? 'umido' : r.moist >= 0.5 ? 'discreto' : 'secco'} (${r.sm.toFixed(2)} m³/m³)`);
   if (r.frost < 1) out.push(`gelate recenti (min ${r.minT.toFixed(1)}\u00a0°C)`);
   if (r.heat < 1) out.push(`caldo eccessivo (max ${r.maxT.toFixed(1)}\u00a0°C)`);
-  if (r.shock > 1) out.push(`shock termico (−${r.drop.toFixed(1)}\u00a0°C)`);
+  if (r.shock > 1) out.push(`calo della temperatura del suolo (−${r.drop.toFixed(1)}\u00a0°C, ${r.shockDaysBefore} giorni prima)`);
   return out;
 }
 

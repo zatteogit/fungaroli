@@ -74,6 +74,14 @@ export function validDay(day, now = Date.now(), maxDays = 365) {
   return day <= today && (new Date(today + 'T12:00:00Z') - date) / 864e5 <= maxDays;
 }
 
+// Campi di un'uscita che finiscono nella segnalazione condivisa: se cambiano, la segnalazione va ritirata.
+// Lo sforzo (minuti, cercatori, inizio) è nel contesto della segnalazione come gli altri campi.
+const effortOf = (e) => ({ minutes: e?.effort?.minutes ?? null, people: e?.effort?.people ?? null, startedAt: e?.effort?.startedAt ?? null });
+export function sharedFieldsChanged(old, entry) {
+  return old.zoneId !== entry.zoneId || old.date !== entry.date || JSON.stringify(old.finds) !== JSON.stringify(entry.finds)
+    || JSON.stringify(old.searched) !== JSON.stringify(entry.searched) || JSON.stringify(effortOf(old)) !== JSON.stringify(effortOf(entry));
+}
+
 export function validateReport(data, now = Date.now(), ids = {speciesIds,zoneIds}) {
   if (!data || !ids.zoneIds.has(data.zoneId) || !ids.speciesIds.has(data.speciesId) || !validDay(data.day, now)
       || !Number.isInteger(data.amount) || data.amount < 0 || data.amount > 3
@@ -298,11 +306,11 @@ export async function handleCommunity(request, env, now = Date.now()) {
       const writes = [db.prepare('INSERT INTO diary_entries(account_id,id,payload,saved_at) VALUES(?,?,?,?) ON CONFLICT(account_id,id) DO UPDATE SET payload=excluded.payload,saved_at=excluded.saved_at')
         .bind(user.id, id, JSON.stringify(entry), now)];
       if(previous)writes.push(db.prepare('DELETE FROM shared_observations WHERE account_id=? AND entry_id=?').bind(user.id,id));
-      if (previous) {
-        const old = JSON.parse(previous);
-        if (old.zoneId !== entry.zoneId || old.date !== entry.date || JSON.stringify(old.finds) !== JSON.stringify(entry.finds) || JSON.stringify(old.searched) !== JSON.stringify(entry.searched))
-          writes.push(db.prepare('DELETE FROM reports WHERE account_id=? AND entry_id=?').bind(user.id, id));
-      }
+      // Una segnalazione condivisa porta con sé zona, giorno, ritrovamenti, specie cercate e sforzo dell'uscita
+      // (validation_context.effort). Se uno di questi cambia, la segnalazione si ritira: la community non conta
+      // dati che l'uscita non dice più. L'utente può condividerla di nuovo.
+      if (previous && sharedFieldsChanged(JSON.parse(previous), entry))
+        writes.push(db.prepare('DELETE FROM reports WHERE account_id=? AND entry_id=?').bind(user.id, id));
       await db.batch(writes);
       const shared = !!(await db.prepare('SELECT 1 AS x FROM reports WHERE account_id=? AND entry_id=? UNION ALL SELECT 1 AS x FROM shared_observations WHERE account_id=? AND entry_id=? LIMIT 1').bind(user.id,id,user.id,id).first('x'));
       return result({ ok: true, entry: { ...entry, shared } });

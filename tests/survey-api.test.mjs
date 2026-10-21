@@ -55,16 +55,26 @@ function setup() {
   return { sql, env };
 }
 const cookie = (id) => ({ cookie: `__Host-fungaroli_session=token-${id}` });
+// Corpo della versione 2 (corta): sapere abituale, nome e contatto perché segnalerebbe con l'app e vuole il ricontatto.
 const valid = (extra = {}) => ({
-  survey: 'esperti-reatino', version: 1, startedAt: new Date(NOW - 600_000).toISOString(), website: '',
-  respondent: { name: 'Mario', contact: '333 0000000' }, consent: { anonymousUse: true, recontact: true, diary: false },
+  survey: 'esperti-reatino', version: 2, startedAt: new Date(NOW - 600_000).toISOString(), website: '',
+  respondent: { name: 'Mario', contact: '333 0000000' }, consent: { anonymousUse: true, recontact: true },
   answers: {
-    profile: { years: 30, zones: ['Terminillo'], mentor: { quick: ['un familiare'], text: 'Mio padre' } },
-    species: [{ id: 'edulis', start: { month: 6, part: 'fine' }, elevMin: 900, elevMax: 1600, forests: ['faggeta'] }],
-    flushes: [{ year: 2024, month: 9, zone: 'Campoforogna (Rieti)', quantity: 'tanti (oltre 20)', hours: 2.5 }],
+    profile: { years: '30 anni o più', zones: ['Terminillo'], speciesSought: ['edulis'] },
+    species: [{ id: 'edulis', months: ['settembre', 'giugno'], forests: ['faggeta'], elevation: ['tra 1000 e 1400 m'] }],
+    willReport: 'sì',
   },
   ...extra,
 });
+// Una risposta della versione 1 com'era salvata prima del 21/10/2026 (schema congelato in js/survey-schema-v1.js).
+const V1_ANSWERS = {
+  profile: { years: 30, zones: ['Terminillo'], mentor: { quick: ['un familiare'], text: 'Mio padre' }, clarifications: [{ field: 'notesSince', kind: 'not_applicable', text: null }] },
+  species: [{ id: 'edulis', start: { month: 6, part: 'fine' }, elevMin: 900, elevMax: 1600, forests: ['faggeta'], lagTyp: 12 }],
+  flushes: [{ year: 2024, month: 9, zone: 'Campoforogna (Rieti)', quantity: 'tanti (oltre 20)', hours: 2.5 }],
+  risks: { knowsPoisonings: 'no' }, notApplicableParts: ['G'],
+};
+const v1Body = (extra = {}) => ({ survey: 'esperti-reatino', version: 1, website: '', respondent: { name: 'Lucia', contact: '06 000' },
+  consent: { anonymousUse: true, recontact: false, diary: true }, answers: V1_ANSWERS, ...extra });
 const post = (env, body, { headers = {}, ip = '203.0.113.7', now = NOW, raw } = {}) => handleSurvey(new Request(URL_RESPONSES, {
   method: 'POST', headers: { origin: ORIGIN, 'content-type': 'application/json', 'cf-connecting-ip': ip, ...headers },
   body: raw ?? JSON.stringify(body),
@@ -89,7 +99,7 @@ test('un invio valido risponde 201 con id e ricevuta e salva la riga', async () 
   assert.deepEqual(Object.keys(out).sort(), ['id', 'receipt']);
   const row = sql.prepare('SELECT * FROM survey_responses WHERE id=?').get(out.id);
   assert.equal(row.survey, 'esperti-reatino');
-  assert.equal(row.version, 1);
+  assert.equal(row.version, 2);
   assert.equal(row.receipt, out.receipt);
   assert.equal(row.created_at, NOW);
   assert.equal(row.duration_s, 600);
@@ -98,9 +108,9 @@ test('un invio valido risponde 201 con id e ricevuta e salva la riga', async () 
   assert.equal(row.consent_recontact, 1);
   assert.equal(row.consent_diary, 0);
   const answers = JSON.parse(row.answers);
-  assert.equal(answers.profile.years, 30);
-  assert.equal(answers.flushes[0].hours, 2.5);
-  assert.deepEqual(answers.species[0].start, { month: 6, part: 'fine' });
+  assert.equal(answers.profile.years, '30 anni o più');
+  assert.deepEqual(answers.species[0].months, ['giugno', 'settembre'], 'mesi in ordine di calendario');
+  assert.equal(answers.willReport, 'sì');
   // l'IP non è salvato da nessuna parte: solo un hash nella tabella dei contatori
   for (const { name } of sql.prepare("SELECT name FROM sqlite_master WHERE type='table'").all())
     for (const r of sql.prepare(`SELECT * FROM ${name}`).all()) assert.ok(!JSON.stringify(r).includes('203.0.113.7'), name);
@@ -152,7 +162,7 @@ test('campo trappola compilato: 201 finto e nulla salvato', async () => {
 
 test('consenso mancante o chiave sconosciuta: 400 con messaggio e campi', async () => {
   const { sql, env } = setup();
-  let r = await post(env, valid({ consent: { anonymousUse: false, recontact: false, diary: false } }));
+  let r = await post(env, valid({ consent: { anonymousUse: false, recontact: false } }));
   assert.equal(r.status, 400);
   let out = await r.json();
   assert.match(out.error, /consenso/);
@@ -174,16 +184,17 @@ test('consenso mancante o chiave sconosciuta: 400 con messaggio e campi', async 
 test('limiti numerici e lunghezze dei testi: 400 con il percorso del campo', async () => {
   const { sql, env } = setup();
   const cases = [
-    [(b) => { b.answers.profile.years = 81; }, 'answers.profile.years'],
-    [(b) => { b.answers.species[0].elevMax = 3001; }, 'answers.species[0].elevMax'],
-    [(b) => { b.answers.species[0].confidence = 6; }, 'answers.species[0].confidence'],
-    [(b) => { b.answers.flushes[0].hours = 25; }, 'answers.flushes[0].hours'],
-    [(b) => { b.answers.flushes[0].year = 1999; }, 'answers.flushes[0].year'],
+    [(b) => { b.answers.profile.years = 30; }, 'answers.profile.years'],
+    [(b) => { b.answers.species[0].months = ['tredicembre']; }, 'answers.species[0].months'],
+    [(b) => { b.answers.species[0].elevation = ['non so', 'sopra i 1400 m']; }, 'answers.species[0].elevation'],
+    [(b) => { b.answers.species[0].elevMax = 1600; }, 'answers.species[0].elevMax'],
+    [(b) => { b.answers.flushes = [{ year: 2024 }]; }, 'answers.flushes'],
     [(b) => { b.respondent.name = 'x'.repeat(81); }, 'respondent.name'],
     [(b) => { b.respondent.contact = 'x'.repeat(121); }, 'respondent.contact'],
-    [(b) => { b.answers.profile.mentor = 'x'.repeat(301); }, 'answers.profile.mentor.text'],
-    [(b) => { b.answers.risks = { confusions: 'x'.repeat(801) }; }, 'answers.risks.confusions.text'],
-    [(b) => { b.answers.species = Array.from({ length: 16 }, (_, i) => ({ id: 'altra', name: 'S' + i })); }, 'answers.species'],
+    [(b) => { b.answers.warning = 'x'.repeat(801); }, 'answers.warning'],
+    [(b) => { b.answers.barrenZones = { where: 'x'.repeat(601) }; }, 'answers.barrenZones.where'],
+    [(b) => { b.answers.profile.zones = Array.from({ length: 6 }, (_, i) => 'Zona ' + i); }, 'answers.profile.zones'],
+    [(b) => { b.answers.profile.speciesOther = Array.from({ length: 6 }, (_, i) => 'S' + i); b.answers.species = b.answers.profile.speciesOther.map((name) => ({ id: 'altra', name })); }, 'answers.species'],
   ];
   for (const [edit, field] of cases) {
     const b = valid(); edit(b);
@@ -196,7 +207,7 @@ test('limiti numerici e lunghezze dei testi: 400 con il percorso del campo', asy
 
 test('corpo oltre 64 KB: 413; tipo sbagliato: 415; JSON rotto: 400', async () => {
   const { sql, env } = setup();
-  const big = valid(); big.answers.risks = { confusions: 'x'.repeat(70_000) };
+  const big = valid(); big.answers.warning = 'x'.repeat(70_000);
   assert.equal((await post(env, big)).status, 413);
   assert.equal((await post(env, null, { raw: '{"a":"' + 'x'.repeat(65_536) + '"}', headers: { 'content-length': '65545' } })).status, 413);
   assert.equal((await post(env, valid(), { headers: { 'content-type': 'text/plain' } })).status, 415);
@@ -315,7 +326,8 @@ test('esportazione JSON solo per gli amministratori', async () => {
   assert.equal(out.responses[0].receipt, sent.receipt);
   assert.equal(out.responses[0].createdAt, '2026-10-16T10:00:00.000Z');
   assert.deepEqual(out.responses[0].consent, { anonymousUse: true, recontact: true, diary: false });
-  assert.equal(out.responses[0].answers.profile.years, 30);
+  assert.equal(out.responses[0].version, 2);
+  assert.equal(out.responses[0].answers.profile.years, '30 anni o più');
   assert.equal((await get(env, '?survey=altro&format=json', cookie(ADMIN))).status, 400);
   assert.equal((await get(env, '?survey=esperti-reatino&format=xml', cookie(ADMIN))).status, 400);
   // un editor CMS con sessione valida resta senza accesso anche con altri parametri
@@ -327,14 +339,14 @@ test('conteggio per la redazione (format=count): numero e data dell’ultima, se
   assert.equal((await get(env, '?survey=esperti-reatino&format=count')).status, 401);
   assert.equal((await get(env, '?survey=esperti-reatino&format=count', cookie(EDITOR))).status, 403);
   // nessuna risposta (le tabelle nascono qui)
-  assert.deepEqual(await (await get(env, '?survey=esperti-reatino&format=count', cookie(ADMIN))).json(), { survey: 'esperti-reatino', count: 0, lastAt: null });
+  assert.deepEqual(await (await get(env, '?survey=esperti-reatino&format=count', cookie(ADMIN))).json(), { survey: 'esperti-reatino', count: 0, lastAt: null, byVersion: { 1: 0, 2: 0 } });
   await post(env, valid());
   const second = await (await post(env, valid(), { now: NOW + 60_000 })).json();
   const r = await get(env, '?survey=esperti-reatino&format=count', cookie(ADMIN));
   assert.equal(r.status, 200);
   assert.equal(r.headers.get('cache-control'), 'no-store');
   const text = await r.text();
-  assert.deepEqual(JSON.parse(text), { survey: 'esperti-reatino', count: 2, lastAt: '2026-10-16T10:01:00.000Z' });
+  assert.deepEqual(JSON.parse(text), { survey: 'esperti-reatino', count: 2, lastAt: '2026-10-16T10:01:00.000Z', byVersion: { 1: 0, 2: 2 } });
   assert.doesNotMatch(text, /Mario|333/, 'né nomi né contatti');
   assert.equal((await (await get(env, `?format=count&receipt=${second.receipt}`, cookie(ADMIN))).json()).count, 1);
 });
@@ -345,8 +357,9 @@ test('esportazione a pagine: tutte le righe, in ordine, senza un massimo; un err
   const insert = sql.prepare('INSERT INTO survey_responses(id,survey,version,receipt,created_at,duration_s,name,contact,consent_recontact,consent_diary,answers) VALUES(?,?,?,?,?,?,?,?,?,?,?)');
   const n = 2 * EXPORT_PAGE + 49;
   // molte righe con la stessa data: il cursore usa anche l'id
-  for (let i = 0; i < n; i++) insert.run(`00000000-0000-4000-8000-${String(i).padStart(12, '0')}`, 'esperti-reatino', 1, `X${String(i).padStart(7, '0')}`,
-    NOW - 1000 + Math.floor(i / 7), null, null, null, 0, 0, JSON.stringify({ profile: { years: i % 80 } }));
+  const YEARS = ['meno di 5 anni', 'da 5 a 14 anni', 'da 15 a 29 anni', '30 anni o più', 'preferisco non dirlo'];
+  for (let i = 0; i < n; i++) insert.run(`00000000-0000-4000-8000-${String(i).padStart(12, '0')}`, 'esperti-reatino', 2, `X${String(i).padStart(7, '0')}`,
+    NOW - 1000 + Math.floor(i / 7), null, null, null, 0, 0, JSON.stringify({ profile: { years: YEARS[i % 5] } }));
   const total = n + 1;
   const pages = [];
   const spied = { ...env, COMMUNITY_DB: { ...env.COMMUNITY_DB, prepare: (q) => { if (/FROM survey_responses .*LIMIT/.test(q)) pages.push(q); return env.COMMUNITY_DB.prepare(q); } } };
@@ -381,15 +394,15 @@ test('esportazione a pagine: tutte le righe, in ordine, senza un massimo; un err
 test('esportazione CSV: colonne piatte, liste in JSON, formule neutralizzate', async () => {
   const { env } = setup();
   const b = valid({ respondent: { name: '=HYPERLINK("http://x","clic")', contact: '+39 333' } });
-  b.answers.risks = { confusions: '@SUM(A1)', avoided: '-1 e "virgolette", a capo\nseconda riga' };
-  b.answers.profile.zonesOther = '<script>alert(1)</script>';
+  b.answers.warning = '@SUM(A1)';
+  b.answers.barrenZones = { where: '-1 e "virgolette", a capo\nseconda riga', opinion: '<script>alert(1)</script>' };
   await post(env, b);
   assert.equal((await get(env, '?survey=esperti-reatino&format=csv')).status, 401);
   assert.equal((await get(env, '?survey=esperti-reatino&format=csv', cookie(EDITOR))).status, 403);
   const r = await get(env, '?survey=esperti-reatino&format=csv', cookie(ADMIN));
   assert.equal(r.status, 200);
   assert.match(r.headers.get('content-type'), /^text\/csv; charset=utf-8/);
-  assert.match(r.headers.get('content-disposition'), /^attachment; filename="questionario-esperti-reatino-2026-10-16\.csv"$/);
+  assert.match(r.headers.get('content-disposition'), /^attachment; filename="questionario-esperti-reatino-v2-2026-10-16\.csv"$/);
   const bytes = new Uint8Array(await r.arrayBuffer());
   assert.deepEqual([...bytes.slice(0, 3)], [0xEF, 0xBB, 0xBF], 'BOM UTF-8: Excel legge bene gli accenti');
   const text = new TextDecoder().decode(bytes); // il decoder toglie il BOM
@@ -397,15 +410,15 @@ test('esportazione CSV: colonne piatte, liste in JSON, formule neutralizzate', a
   const [header, ...rest] = text.split('\r\n');
   const columns = header.split(',');
   assert.deepEqual(columns.slice(0, 10), ['id', 'created_at', 'survey', 'version', 'receipt', 'duration_s', 'name', 'contact', 'consent_recontact', 'consent_diary']);
-  for (const c of ['profile.years', 'profile.zones', 'profile.mentor.quick', 'profile.mentor.text', 'species', 'rain.goodRain.quick', 'weatherEvents', 'flushes',
-    'emptyTrips', 'forest.ranking.rain', 'forest.ranking.crowd', 'access.parking.text', 'risks.mountainDangers.text', 'followUp.knowsOthers.quick'])
-    assert.ok(columns.includes(c), c);
+  assert.deepEqual(columns.slice(10), ['profile.years', 'profile.zones', 'profile.speciesSought', 'profile.speciesOther', 'species', 'barrenZones.where', 'barrenZones.opinion', 'warning', 'willReport']);
   assert.deepEqual(columns.slice(10), answerColumns());
+  assert.deepEqual(columns.slice(10), answerColumns(2));
   const row = rest.join('\r\n');
   assert.ok(row.includes(`"'=HYPERLINK(""http://x"",""clic"")"`), 'formula neutralizzata e virgolette raddoppiate');
   assert.ok(row.includes(",'+39 333,"));
-  assert.ok(row.includes(",'@SUM(A1),"));
+  assert.ok(row.includes(",'@SUM(A1),sì"));
   assert.ok(row.includes(`"'-1 e ""virgolette"", a capo\nseconda riga"`));
+  assert.ok(row.split(',')[3] === '2', 'la versione in ogni riga');
   assert.ok(row.includes('<script>alert(1)</script>'), 'testo salvato così com’è, mai reso come HTML');
   assert.ok(row.includes('"[""Terminillo""]"'), 'le liste sono in JSON');
   assert.ok(row.includes('"[{""id"":""edulis""'));
@@ -438,13 +451,13 @@ function parseCsv(text, sep) {
 test('esportazione «CSV per Excel»: separatore punto e virgola con &sep=semicolon, stesse colonne e stesse celle', async () => {
   const { env } = setup();
   const b = valid({ respondent: { name: 'Rossi; Mario', contact: '=1+1' } });
-  b.answers.risks = { confusions: 'porcino, boleto di fiele, -1 volta; =2', knowsPoisonings: 'no' };
+  b.answers.warning = 'porcino, boleto di fiele, -1 volta; =2';
   await post(env, b);
   const commaRows = parseCsv(new TextDecoder().decode(await (await get(env, '?survey=esperti-reatino&format=csv', cookie(ADMIN))).arrayBuffer()), ',');
   const semi = await get(env, '?survey=esperti-reatino&format=csv&sep=semicolon', cookie(ADMIN));
   assert.equal(semi.status, 200);
   assert.match(semi.headers.get('content-type'), /^text\/csv; charset=utf-8/);
-  assert.match(semi.headers.get('content-disposition'), /^attachment; filename="questionario-esperti-reatino-2026-10-16-excel\.csv"$/);
+  assert.match(semi.headers.get('content-disposition'), /^attachment; filename="questionario-esperti-reatino-v2-2026-10-16-excel\.csv"$/);
   const bytes = new Uint8Array(await semi.arrayBuffer());
   assert.deepEqual([...bytes.slice(0, 3)], [0xEF, 0xBB, 0xBF], 'BOM UTF-8 anche qui');
   const text = new TextDecoder().decode(bytes);
@@ -455,13 +468,14 @@ test('esportazione «CSV per Excel»: separatore punto e virgola con &sep=semico
   assert.equal(cell('name'), 'Rossi; Mario');
   assert.equal(cell('contact'), "'=1+1");
   // apostrofo dopo il punto e virgola e, solo nella versione per Excel, anche dopo la virgola
-  assert.equal(cell('risks.confusions.text'), "porcino, boleto di fiele,' -1 volta;' =2");
-  assert.equal(commaRows[1][header.indexOf('risks.confusions.text')], "porcino, boleto di fiele, -1 volta;' =2");
-  assert.equal(cell('risks.knowsPoisonings'), 'no');
-  assert.equal(cell('profile.years'), '30');
+  assert.equal(cell('warning'), "porcino, boleto di fiele,' -1 volta;' =2");
+  assert.equal(commaRows[1][header.indexOf('warning')], "porcino, boleto di fiele, -1 volta;' =2");
+  assert.equal(cell('willReport'), 'sì');
+  assert.equal(cell('version'), '2');
+  assert.equal(cell('profile.years'), '30 anni o più');
   // la versione con la virgola resta quella predefinita, anche scritta per esteso
   assert.equal((await get(env, '?survey=esperti-reatino&format=csv&sep=comma', cookie(ADMIN))).headers.get('content-disposition'),
-    'attachment; filename="questionario-esperti-reatino-2026-10-16.csv"');
+    'attachment; filename="questionario-esperti-reatino-v2-2026-10-16.csv"');
   const wrong = await get(env, '?survey=esperti-reatino&format=csv&sep=tab', cookie(ADMIN));
   assert.equal(wrong.status, 400);
   assert.match((await wrong.json()).error, /Separatore non valido/);
@@ -523,14 +537,14 @@ test('metodi e percorsi non previsti, servizio non configurato', async () => {
 
 test('invii vuoti o con soli contenitori non consumano né tetto né limite della connessione', async () => {
   const {env, sql} = setup();
-  for (const answers of [{}, {profile: {}}, {profile: {mentor: {quick: [], text: '  '}}}, {forest: {ranking: {rain: null}}}, {species: [], weatherEvents: []}]) {
+  for (const answers of [{}, {profile: {}}, {profile: {zones: ['  ', '']}}, {barrenZones: {where: ' ', opinion: null}}, {species: [], warning: ''}]) {
     assert.equal((await post(env, valid({answers}))).status, 400);
     assert.equal(count(sql), 0);
     assert.equal(dailyTotal(sql), 0);
     assert.equal(count(sql, 'survey_rate'), 0);
   }
-  // Zero e «no» sono risposte, non caselle vuote; anche una specie conosciuta è informazione.
-  for (const answers of [{profile: {years: 0}}, {weatherRemembers: 'no'}, {species: [{id: 'edulis'}]}])
+  // «No» e «Preferisco non dirlo» sono risposte, non caselle vuote; anche una specie conosciuta è informazione.
+  for (const answers of [{profile: {years: 'preferisco non dirlo'}}, {willReport: 'no'}, {profile: {speciesSought: ['edulis']}, species: [{id: 'edulis'}]}])
     assert.equal((await post(env, valid({answers}))).status, 201);
   assert.equal(dailyTotal(sql), 3);
 });
@@ -560,19 +574,101 @@ test('dal 2028 non si raccolgono nuovi recapiti, neanche da una pagina vecchia',
 });
 
 
-test('precisazioni e non pertinenza sono salvate in D1 ed esportate in JSON e CSV', async () => {
-  const {env,sql}=setup();
-  const answers={profile:{clarifications:[{field:'years',kind:'not_applicable',text:'Non vado a funghi personalmente.'}]},
-    flushes:[{zone:'Terminillo',clarifications:[{field:'forest',kind:'other',text:'Un bosco misto.'}]}],notApplicableParts:['B']};
-  const response=await post(env,valid({answers}));
-  assert.equal(response.status,201);
-  const stored=JSON.parse(sql.prepare('SELECT answers FROM survey_responses').get().answers);
-  assert.deepEqual(stored,answers);
-  const result=await get(env,'?format=json',cookie(ADMIN));
-  assert.deepEqual((await result.json()).responses[0].answers,answers);
-  const csv=await (await get(env,'?format=csv',cookie(ADMIN))).text();
-  assert.match(csv,/profile.clarifications/);
-  assert.match(csv,/Non vado a funghi personalmente/);
-  assert.match(csv,/Un bosco misto/);
-  assert.match(csv,/notApplicableParts/);
+// Risposte della versione 1: restano archiviate così come sono, si leggono ed esportano con lo schema congelato.
+function insertV1(sql, i = 0, created = NOW - 864e5) {
+  const { validateSurveyV1 } = v1Schema;
+  const v = validateSurveyV1(v1Body()).value;
+  sql.prepare('INSERT INTO survey_responses(id,survey,version,receipt,created_at,duration_s,name,contact,consent_recontact,consent_diary,answers) VALUES(?,?,?,?,?,?,?,?,?,?,?)')
+    .run(`10000000-0000-4000-8000-${String(i).padStart(12, '0')}`, 'esperti-reatino', 1, `V222222${'ABCDEFGHJK'[i]}`, created, 900, v.respondent.name, v.respondent.contact, 0, 1, JSON.stringify(v.answers));
+  return v;
+}
+const v1Schema = await import('../js/survey-schema-v1.js');
+
+test('una pagina vecchia (versione 1) riceve 400 «ricarica la pagina», senza salvare né consumare i limiti', async () => {
+  const { sql, env } = setup();
+  const r = await post(env, v1Body());
+  assert.equal(r.status, 400);
+  const out = await r.json();
+  // un solo errore, chiaro: le risposte non si giudicano con lo schema di un'altra versione
+  assert.deepEqual(out.fields, ['version']);
+  assert.match(out.error, /ricarica la pagina/);
+  assert.equal(count(sql), 0);
+  assert.equal(count(sql, 'survey_rate'), 0);
 });
+
+test('versione 1 archiviata: JSON con tutte le versioni, CSV per versione (&version=1|2, predefinita la 2), conteggio per versione', async () => {
+  const { sql, env } = setup();
+  const sent = await (await post(env, valid())).json(); // crea le tabelle e una risposta v2
+  const old = insertV1(sql);
+  // JSON: tutte le versioni, ciascuna con la sua «version»; le risposte v1 restano com'erano salvate
+  const all = await (await get(env, '?format=json', cookie(ADMIN))).json();
+  assert.equal(all.count, 2);
+  assert.deepEqual(all.responses.map((x) => x.version), [1, 2]);
+  assert.deepEqual(all.responses[0].answers, old.answers);
+  assert.deepEqual(all.responses[0].consent, { anonymousUse: true, recontact: false, diary: true });
+  assert.equal(all.version, undefined);
+  const onlyV1 = await (await get(env, '?format=json&version=1', cookie(ADMIN))).json();
+  assert.equal(onlyV1.version, 1);
+  assert.deepEqual(onlyV1.responses.map((x) => x.receipt), ['V222222A']);
+  // ricerca per ricevuta: trova anche le risposte v1 (richieste di cancellazione)
+  assert.equal((await (await get(env, '?format=json&receipt=v222-222a', cookie(ADMIN))).json()).count, 1);
+  // conteggio per versione
+  assert.deepEqual((await (await get(env, '?format=count', cookie(ADMIN))).json()).byVersion, { 1: 1, 2: 1 });
+  assert.deepEqual(await (await get(env, '?format=count&version=1', cookie(ADMIN))).json(), { survey: 'esperti-reatino', count: 1, lastAt: new Date(NOW - 864e5).toISOString(), byVersion: { 1: 1 } });
+  // CSV predefinito: solo la versione corrente, con le sue colonne
+  const csv2 = parseCsvText(await (await get(env, '?format=csv', cookie(ADMIN))).text(), ',');
+  assert.deepEqual(csv2[0].slice(10), answerColumns(2));
+  assert.deepEqual(csv2.slice(1).map((row) => row[csv2[0].indexOf('receipt')]), [sent.receipt]);
+  // CSV della versione 1: colonne dello schema congelato, la versione in ogni riga
+  const res1 = await get(env, '?format=csv&version=1&sep=semicolon', cookie(ADMIN));
+  assert.match(res1.headers.get('content-disposition'), /filename="questionario-esperti-reatino-v1-2026-10-16-excel\.csv"/);
+  const csv1 = parseCsvText(await res1.text(), ';');
+  assert.deepEqual(csv1[0].slice(10), answerColumns(1));
+  assert.ok(csv1[0].includes('profile.mentor.quick') && csv1[0].includes('flushes') && csv1[0].includes('notApplicableParts') && csv1[0].includes('profile.clarifications'));
+  assert.equal(csv1.length, 2);
+  const cell = (c) => csv1[1][csv1[0].indexOf(c)];
+  assert.equal(cell('version'), '1');
+  assert.equal(cell('profile.years'), '30');
+  assert.equal(cell('profile.mentor.text'), 'Mio padre');
+  assert.equal(cell('consent_diary'), '1');
+  // le liste restano in JSON (nel file con la virgola si rileggono così come sono)
+  const comma1 = parseCsvText(await (await get(env, '?format=csv&version=1', cookie(ADMIN))).text(), ',');
+  assert.deepEqual(JSON.parse(comma1[1][comma1[0].indexOf('flushes')]), V1_ANSWERS.flushes);
+  // versioni non previste: 400
+  for (const v of ['3', '0', 'due', '']) assert.equal((await get(env, `?format=csv&version=${v}`, cookie(ADMIN))).status, 400, v);
+  // un CSV contiene una sola versione: righe miste rifiutate
+  const rows = sql.prepare('SELECT * FROM survey_responses ORDER BY created_at').all();
+  assert.throws(() => toCsv(rows, ','), /una sola/);
+  assert.equal(toCsv(rows.filter((r) => r.version === 1), ',', 1).split('\r\n')[0].replace(/^﻿/, '').split(',').slice(10).join(','), answerColumns(1).join(','));
+});
+
+test('redazione: una risposta v1 si rivede con lo schema v1; le nuove compilazioni solo con la versione corrente', async () => {
+  const { sql, env } = setup();
+  await post(env, valid());
+  insertV1(sql);
+  const { saveSurveyAdmin, readSurveyAdmin, surveyAdminSchema } = await import('../worker/survey-admin.js');
+  const id = '10000000-0000-4000-8000-000000000000';
+  const row = await readSurveyAdmin(env.COMMUNITY_DB, id);
+  assert.equal(row.version, 1);
+  const patch = (data) => saveSurveyAdmin(env.COMMUNITY_DB, id, { data, reason: 'Correzione su richiesta', revision: 0, mode: 'transcription' }, ADMIN, NOW);
+  // la revisione resta nella versione 1 (schema congelato), anche con i campi che la versione 2 non chiede più
+  const fixed = await patch({ ...v1Body(), answers: { ...V1_ANSWERS, profile: { ...V1_ANSWERS.profile, years: 31 } } });
+  assert.equal(fixed.version, 1);
+  assert.equal(fixed.answers.profile.years, 31);
+  assert.equal(fixed.revision, 1);
+  await assert.rejects(saveSurveyAdmin(env.COMMUNITY_DB, id, { data: valid(), reason: 'Prova di conversione', revision: 1, mode: 'transcription' }, ADMIN, NOW), /versione 1/);
+  // nuova compilazione: solo la versione corrente
+  const add = (data) => saveSurveyAdmin(env.COMMUNITY_DB, null, { data, reason: 'Intervista di prova', mode: 'interview', collectedOn: null }, ADMIN, NOW);
+  await assert.rejects(add(v1Body()), /versione 2/);
+  const created = await add(valid());
+  assert.equal(created.version, 2);
+  assert.equal(created.respondent.name, 'Mario');
+  // lo schema per la redazione descrive entrambe le versioni
+  const schema = surveyAdminSchema();
+  assert.equal(schema.version, 2);
+  assert.ok(schema.versions[1].answersSpec.fields.flushes && schema.versions[2].answersSpec.fields.willReport);
+  assert.equal(schema.versions[1].newResponses, false);
+});
+
+// Lettore CSV con le regole di RFC 4180 per un file intero (anche con il BOM).
+function parseCsvText(text, sep) { return parseCsv(text.replace(/^﻿/, ''), sep); }

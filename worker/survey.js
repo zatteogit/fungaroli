@@ -1,11 +1,14 @@
 // API del questionario per i cercatori esperti (/questionario): invio anonimo senza login,
 // lettura, esportazione e cancellazione solo per gli amministratori CMS (CMS_ADMIN_IDS).
-// Schema delle risposte: js/survey-schema.js (unica fonte, condivisa con la pagina).
+// Schema delle risposte: js/survey-schema.js (versione corrente, unica fonte condivisa con la pagina).
+// Le risposte della versione 1 restano salvate così come sono: si leggono ed esportano con lo schema congelato
+// js/survey-schema-v1.js. Un invio nuovo con la versione 1 (pagina vecchia rimasta aperta) riceve 400.
 //   POST   /api/survey/v1/responses                      → 201 {id, receipt} | 400 | 403 | 413 | 415 | 429
-//   GET    /api/survey/v1/responses?survey=…&format=json|csv|count[&sep=comma|semicolon][&receipt=XXXXXXXX]   (amministratori)
+//   GET    /api/survey/v1/responses?survey=…&format=json|csv|count[&version=1|2][&sep=comma|semicolon][&receipt=XXXXXXXX]   (amministratori)
 //   DELETE /api/survey/v1/responses/<id o ricevuta>                               (amministratori)
 import schema from '../migrations/0004_survey.sql';
-import { ANSWERS_SPEC, MAX_BODY_BYTES, SURVEY_ID, SURVEY_RETENTION, hasSurveyAnswers, validateSurvey } from '../js/survey-schema.js';
+import { ANSWERS_SPEC, MAX_BODY_BYTES, SURVEY_ID, SURVEY_RETENTION, SURVEY_VERSION, SURVEY_VERSIONS, hasSurveyAnswers, validateSurvey } from '../js/survey-schema.js';
+import { ANSWERS_SPEC_V1 } from '../js/survey-schema-v1.js';
 import { readCommunityUser } from './community.js';
 
 // SURVEY_DAILY_LIMIT: invii al giorno (UTC) per connessione; SURVEY_DAILY_TOTAL: tetto complessivo al giorno
@@ -164,9 +167,12 @@ const view = (r) => ({
   consent: { anonymousUse: true, recontact: !!r.consent_recontact, diary: !!r.consent_diary }, answers: JSON.parse(r.answers),
 });
 
-// Colonne del CSV ricavate dallo schema: campi semplici in colonne piatte, liste in JSON.
-// Le domande aperte hanno due colonne: «.quick» (risposte rapide, JSON) e «.text».
+// Colonne del CSV ricavate dallo schema della versione: campi semplici in colonne piatte, liste in JSON.
+// Le domande aperte (solo versione 1) hanno due colonne: «.quick» (risposte rapide, JSON) e «.text».
+// Ogni versione ha le sue colonne: un file CSV contiene una sola versione (&version=1|2), con la versione in ogni riga.
+export const SPECS = Object.freeze({ 1: ANSWERS_SPEC_V1, [SURVEY_VERSION]: ANSWERS_SPEC });
 export function answerColumns(spec = ANSWERS_SPEC, prefix = '') {
+  if (typeof spec === 'number') spec = SPECS[spec];
   return Object.entries(spec.fields).flatMap(([key, field]) => {
     const path = prefix ? `${prefix}.${key}` : key;
     if (field.t === 'obj') return answerColumns(field, path);
@@ -209,9 +215,11 @@ function csvRow(r, columns, sep) {
   const base = [r.id, new Date(r.created_at).toISOString(), r.survey, r.version, r.receipt, r.duration_s, r.name, r.contact, r.consent_recontact, r.consent_diary];
   return csvLine([...base, ...columns.map((c) => pick(answers, c))], sep);
 }
-export function toCsv(rows, sep = ',') {
+export function toCsv(rows, sep = ',', version = SURVEY_VERSION) {
   if (!FORMULA_AFTER[sep]) throw new Error('Separatore non previsto: ' + sep);
-  const columns = answerColumns();
+  if (!SPECS[version]) throw new Error('Versione non prevista: ' + version);
+  if (rows.some((r) => r.version !== version)) throw new Error('Righe di un’altra versione: il CSV ne contiene una sola.');
+  const columns = answerColumns(version);
   return csvHeader(columns, sep) + rows.map((r) => csvRow(r, columns, sep)).join('');
 }
 
@@ -219,26 +227,28 @@ export function toCsv(rows, sep = ',') {
 // il Worker non tiene mai in memoria tutte le risposte, e non c'è un numero massimo di righe.
 export const EXPORT_PAGE = 100;
 const COLUMNS = 'id,survey,version,receipt,created_at,duration_s,name,contact,consent_recontact,consent_diary,answers';
-async function* responsePages(db, survey, receipt) {
-  if (receipt) { yield (await db.prepare(`SELECT ${COLUMNS} FROM survey_responses WHERE survey=? AND receipt=?`).bind(survey, receipt).all()).results; return; }
+// version null: tutte le versioni (JSON e ricerca per ricevuta); altrimenti solo quella (CSV, o JSON con &version).
+async function* responsePages(db, survey, receipt, version = null) {
+  const only = version == null ? '' : ' AND version=?', v = version == null ? [] : [version];
+  if (receipt) { yield (await db.prepare(`SELECT ${COLUMNS} FROM survey_responses WHERE survey=? AND receipt=?${only}`).bind(survey, receipt, ...v).all()).results; return; }
   for (let last = null; ;) {
     const rows = (await (last
-      ? db.prepare(`SELECT ${COLUMNS} FROM survey_responses WHERE survey=? AND (created_at>? OR (created_at=? AND id>?)) ORDER BY created_at, id LIMIT ?`)
-        .bind(survey, last.created_at, last.created_at, last.id, EXPORT_PAGE)
-      : db.prepare(`SELECT ${COLUMNS} FROM survey_responses WHERE survey=? ORDER BY created_at, id LIMIT ?`).bind(survey, EXPORT_PAGE)).all()).results;
+      ? db.prepare(`SELECT ${COLUMNS} FROM survey_responses WHERE survey=?${only} AND (created_at>? OR (created_at=? AND id>?)) ORDER BY created_at, id LIMIT ?`)
+        .bind(survey, ...v, last.created_at, last.created_at, last.id, EXPORT_PAGE)
+      : db.prepare(`SELECT ${COLUMNS} FROM survey_responses WHERE survey=?${only} ORDER BY created_at, id LIMIT ?`).bind(survey, ...v, EXPORT_PAGE)).all()).results;
     if (rows.length) yield rows;
     if (rows.length < EXPORT_PAGE) return;
     last = rows.at(-1);
   }
 }
-async function* csvParts(pages, sep) {
-  const columns = answerColumns();
+async function* csvParts(pages, sep, version) {
+  const columns = answerColumns(version);
   yield csvHeader(columns, sep);
   for await (const rows of pages) yield rows.map((r) => csvRow(r, columns, sep)).join('');
 }
 // «count» alla fine: è il numero delle risposte scritte nel file.
-async function* jsonParts(pages, survey, now) {
-  yield `{"survey":${JSON.stringify(survey)},"exportedAt":${JSON.stringify(new Date(now).toISOString())},"responses":[`;
+async function* jsonParts(pages, survey, now, version) {
+  yield `{"survey":${JSON.stringify(survey)},${version == null ? '' : `"version":${version},`}"exportedAt":${JSON.stringify(new Date(now).toISOString())},"responses":[`;
   let n = 0;
   for await (const rows of pages) { yield rows.map((r) => (n++ ? ',' : '') + JSON.stringify(view(r))).join(''); }
   yield `],"count":${n}}`;
@@ -265,6 +275,13 @@ async function list(request, env, url, now) {
   if (!['json', 'csv', 'count'].includes(format)) fail('Formato non valido: usa json, csv o count.');
   const sepName = url.searchParams.get('sep') || 'comma';
   if (!Object.hasOwn(CSV_SEPARATORS, sepName)) fail('Separatore non valido: usa comma o semicolon.');
+  // Versione: il CSV ne contiene sempre una sola (predefinita la corrente), perché le colonne cambiano;
+  // JSON, conteggio e ricerca per ricevuta comprendono tutte le versioni, se non se ne chiede una.
+  let version = null;
+  if (url.searchParams.has('version')) {
+    version = Number(url.searchParams.get('version'));
+    if (!SURVEY_VERSIONS.includes(version)) fail(`Versione non valida: usa ${SURVEY_VERSIONS.join(' o ')}.`);
+  } else if (format === 'csv') version = SURVEY_VERSION;
   let receipt = null;
   if (url.searchParams.has('receipt')) {
     receipt = normalizeReceipt(url.searchParams.get('receipt'));
@@ -272,16 +289,20 @@ async function list(request, env, url, now) {
   }
   // Conteggio per la redazione: numero e data dell'ultima, senza leggere né mandare le risposte.
   if (format === 'count') {
-    const r = await db.prepare(`SELECT COUNT(*) AS n, MAX(created_at) AS last FROM survey_responses WHERE survey=?${receipt ? ' AND receipt=?' : ''}`)
-      .bind(...(receipt ? [survey, receipt] : [survey])).first();
-    return result({ survey, count: r?.n ?? 0, lastAt: r?.last == null ? null : new Date(r.last).toISOString() });
+    const filters = [receipt ? ' AND receipt=?' : '', version == null ? '' : ' AND version=?'].join('');
+    const params = [survey, ...(receipt ? [receipt] : []), ...(version == null ? [] : [version])];
+    const rows = (await db.prepare(`SELECT version, COUNT(*) AS n, MAX(created_at) AS last FROM survey_responses WHERE survey=?${filters} GROUP BY version`)
+      .bind(...params).all()).results;
+    const last = rows.reduce((m, r) => (r.last != null && (m == null || r.last > m) ? r.last : m), null);
+    const byVersion = Object.fromEntries(SURVEY_VERSIONS.filter((v) => version == null || v === version).map((v) => [v, rows.find((r) => r.version === v)?.n ?? 0]));
+    return result({ survey, count: rows.reduce((n, r) => n + r.n, 0), lastAt: last == null ? null : new Date(last).toISOString(), byVersion });
   }
   // La prima pagina si legge prima di rispondere: se il database non risponde, 503 come le altre richieste.
-  const pages = responsePages(db, survey, receipt), first = await pages.next();
+  const pages = responsePages(db, survey, receipt, version), first = await pages.next();
   const rows = (async function* () { if (first.done) return; yield first.value; yield* pages; })();
-  if (format === 'csv') return new Response(streamOf(csvParts(rows, CSV_SEPARATORS[sepName])), { status: 200, headers: { ...HEADERS, 'content-type': 'text/csv; charset=utf-8',
-    'content-disposition': `attachment; filename="questionario-${survey}-${utcDay(now)}${sepName === 'semicolon' ? '-excel' : ''}.csv"` } });
-  return new Response(streamOf(jsonParts(rows, survey, now)), { status: 200, headers: { 'content-type': 'application/json; charset=utf-8', ...HEADERS } });
+  if (format === 'csv') return new Response(streamOf(csvParts(rows, CSV_SEPARATORS[sepName], version)), { status: 200, headers: { ...HEADERS, 'content-type': 'text/csv; charset=utf-8',
+    'content-disposition': `attachment; filename="questionario-${survey}-v${version}-${utcDay(now)}${sepName === 'semicolon' ? '-excel' : ''}.csv"` } });
+  return new Response(streamOf(jsonParts(rows, survey, now, version)), { status: 200, headers: { 'content-type': 'application/json; charset=utf-8', ...HEADERS } });
 }
 
 async function remove(request, env, ref, now) {

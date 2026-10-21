@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-12",
+ "generated": "2026-10-21",
  "source": "OpenStreetMap via Valhalla (trace_attributes, height): punti dove il sentiero incontra una strada carrozzabile o una sterrata",
  "zones": {
   "vallonina": {
@@ -51,14 +51,14 @@
     {
      "lat": 42.4969,
      "lon": 13.00769,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1832
     },
     {
      "lat": 42.47231,
      "lon": 13.01418,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1816
     },
@@ -97,7 +97,7 @@
     {
      "lat": 42.49918,
      "lon": 13.01698,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1801
     },
@@ -122,7 +122,7 @@
     {
      "lat": 42.49926,
      "lon": 13.01697,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1802
     }
@@ -131,14 +131,14 @@
     {
      "lat": 42.50316,
      "lon": 12.9804,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1439
     },
     {
      "lat": 42.49783,
      "lon": 12.97866,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1555
     },
@@ -154,7 +154,7 @@
     {
      "lat": 42.49698,
      "lon": 13.01301,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1797
     },
@@ -170,7 +170,7 @@
     {
      "lat": 42.46019,
      "lon": 12.99531,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1673
     },
@@ -227,7 +227,7 @@
     {
      "lat": 42.4907,
      "lon": 12.88832,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 589
     },
@@ -262,7 +262,7 @@
     {
      "lat": 42.51622,
      "lon": 12.91873,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1485
     },
@@ -313,7 +313,7 @@
     {
      "lat": 42.4907,
      "lon": 12.88832,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 589
     },
@@ -357,7 +357,7 @@
     {
      "lat": 42.4907,
      "lon": 12.88832,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 589
     },
@@ -422,7 +422,7 @@
     {
      "lat": 42.4907,
      "lon": 12.88832,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 589
     },
@@ -466,7 +466,7 @@
     {
      "lat": 42.4907,
      "lon": 12.88832,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 589
     },
@@ -517,7 +517,7 @@
     {
      "lat": 42.4907,
      "lon": 12.88832,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 589
     },
@@ -575,7 +575,7 @@
     {
      "lat": 42.4907,
      "lon": 12.88832,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 589
     },
@@ -642,7 +642,7 @@
     {
      "lat": 42.51622,
      "lon": 12.91873,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1485
     }
@@ -701,7 +701,7 @@
     {
      "lat": 42.40223,
      "lon": 13.07496,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 712
     },
@@ -773,7 +773,7 @@
     {
      "lat": 42.40223,
      "lon": 13.07496,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 712
     },
@@ -801,7 +801,7 @@
     {
      "lat": 42.44305,
      "lon": 13.07707,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 518
     },
@@ -847,21 +847,21 @@
     {
      "lat": 42.39981,
      "lon": 13.08869,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 742
     },
     {
      "lat": 42.39653,
      "lon": 13.09031,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 786
     },
     {
      "lat": 42.38834,
      "lon": 13.07727,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 981
     },
@@ -877,14 +877,14 @@
     {
      "lat": 42.42291,
      "lon": 13.04834,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 884
     },
     {
      "lat": 42.42279,
      "lon": 13.06304,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 735
     }
@@ -893,7 +893,7 @@
     {
      "lat": 42.44305,
      "lon": 13.07707,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 518
     },
@@ -916,21 +916,21 @@
     {
      "lat": 42.40956,
      "lon": 13.05132,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 574
     },
     {
      "lat": 42.41226,
      "lon": 13.04608,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 735
     },
     {
      "lat": 42.42224,
      "lon": 13.04895,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 862
     },
@@ -1010,7 +1010,7 @@
     {
      "lat": 42.21509,
      "lon": 13.00913,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1145
     }
@@ -1019,14 +1019,14 @@
     {
      "lat": 42.16432,
      "lon": 13.03522,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1053
     },
     {
      "lat": 42.16271,
      "lon": 13.02184,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 900
     },
@@ -1054,7 +1054,7 @@
     {
      "lat": 42.21529,
      "lon": 13.00991,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1152
     },
@@ -1091,14 +1091,14 @@
     {
      "lat": 42.22308,
      "lon": 13.01702,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 950
     },
     {
      "lat": 42.22055,
      "lon": 13.04025,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 987
     },
@@ -1112,7 +1112,7 @@
     {
      "lat": 42.22501,
      "lon": 13.05832,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 743
     },
@@ -1270,7 +1270,7 @@
     {
      "lat": 42.16353,
      "lon": 13.01975,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 864
     },
@@ -1286,7 +1286,7 @@
     {
      "lat": 42.16246,
      "lon": 13.03874,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 909
     },
@@ -1327,7 +1327,7 @@
     {
      "lat": 42.3235,
      "lon": 13.18564,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1317
     },
@@ -1389,7 +1389,7 @@
     {
      "lat": 42.3235,
      "lon": 13.18564,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1317
     },
@@ -1412,14 +1412,14 @@
     {
      "lat": 42.34273,
      "lon": 13.13902,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1152
     },
     {
      "lat": 42.34638,
      "lon": 13.13204,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1214
     },
@@ -1442,14 +1442,14 @@
     {
      "lat": 42.34061,
      "lon": 13.11835,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1322
     },
     {
      "lat": 42.34305,
      "lon": 13.11059,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1486
     },
@@ -1497,21 +1497,21 @@
     {
      "lat": 42.30641,
      "lon": 12.74865,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 815
     },
     {
      "lat": 42.29734,
      "lon": 12.75741,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 779
     },
     {
      "lat": 42.29625,
      "lon": 12.77102,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 609
     },
@@ -1548,7 +1548,7 @@
     {
      "lat": 42.33507,
      "lon": 12.73507,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1080
     }
@@ -1557,7 +1557,7 @@
     {
      "lat": 42.29734,
      "lon": 12.75741,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 779
     },
@@ -1571,14 +1571,14 @@
     {
      "lat": 42.30697,
      "lon": 12.72152,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 654
     },
     {
      "lat": 42.31296,
      "lon": 12.71005,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 566
     },
@@ -1601,7 +1601,7 @@
     {
      "lat": 42.30697,
      "lon": 12.72152,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 654
     },
@@ -1645,7 +1645,7 @@
     {
      "lat": 42.30926,
      "lon": 12.74514,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 878
     }
@@ -1654,7 +1654,7 @@
     {
      "lat": 42.3406,
      "lon": 12.73685,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1127
     },
@@ -1670,7 +1670,7 @@
     {
      "lat": 42.30202,
      "lon": 12.75196,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 808
     },
@@ -1723,7 +1723,7 @@
     {
      "lat": 42.62183,
      "lon": 13.3277,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1052
     },
@@ -1737,7 +1737,7 @@
     {
      "lat": 42.62583,
      "lon": 13.30222,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 963
     },
@@ -1774,7 +1774,7 @@
     {
      "lat": 42.62935,
      "lon": 13.29757,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 888
     },
@@ -1788,7 +1788,7 @@
     {
      "lat": 42.63408,
      "lon": 13.30778,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 961
     },
@@ -1880,14 +1880,14 @@
     {
      "lat": 42.60348,
      "lon": 13.34081,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1277
     },
     {
      "lat": 42.60046,
      "lon": 13.34777,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1366
     },
@@ -2019,7 +2019,7 @@
     {
      "lat": 42.45935,
      "lon": 12.94269,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": "Via Terminillese",
      "ele": 1212
     },
@@ -2042,14 +2042,14 @@
     {
      "lat": 42.43976,
      "lon": 12.95656,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1040
     },
     {
      "lat": 42.44904,
      "lon": 12.97823,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1534
     }
@@ -2058,7 +2058,7 @@
     {
      "lat": 42.44469,
      "lon": 12.96103,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1222
     }
@@ -2170,7 +2170,7 @@
     {
      "lat": 42.46019,
      "lon": 12.99531,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1673
     },
@@ -2207,7 +2207,7 @@
     {
      "lat": 42.44269,
      "lon": 13.00642,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1533
     }
@@ -2271,7 +2271,7 @@
     {
      "lat": 42.44904,
      "lon": 12.97823,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1534
     }
@@ -2291,14 +2291,14 @@
     {
      "lat": 42.61362,
      "lon": 13.1991,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1332
     },
     {
      "lat": 42.60725,
      "lon": 13.15284,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1094
     },
@@ -2349,28 +2349,28 @@
     {
      "lat": 42.60219,
      "lon": 13.12434,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1581
     },
     {
      "lat": 42.61336,
      "lon": 13.13535,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1274
     },
     {
      "lat": 42.62036,
      "lon": 13.14213,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1228
     },
     {
      "lat": 42.61493,
      "lon": 13.20821,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1163
     },
@@ -2414,14 +2414,14 @@
     {
      "lat": 42.59626,
      "lon": 13.15824,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 858
     },
     {
      "lat": 42.61146,
      "lon": 13.1519,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1060
     },
@@ -2442,7 +2442,7 @@
     {
      "lat": 42.62667,
      "lon": 13.18507,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1393
     },
@@ -2479,7 +2479,7 @@
     {
      "lat": 42.61362,
      "lon": 13.1991,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1332
     },
@@ -2516,7 +2516,7 @@
     {
      "lat": 42.62667,
      "lon": 13.18507,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1393
     },
@@ -2532,21 +2532,21 @@
     {
      "lat": 42.60219,
      "lon": 13.12434,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1581
     },
     {
      "lat": 42.61336,
      "lon": 13.13535,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1274
     },
     {
      "lat": 42.62036,
      "lon": 13.14213,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1228
     },
@@ -2779,7 +2779,7 @@
     {
      "lat": 42.18653,
      "lon": 13.09908,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 917
     },
@@ -2901,7 +2901,7 @@
     {
      "lat": 42.51609,
      "lon": 13.01487,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1776
     },
@@ -2954,7 +2954,7 @@
     {
      "lat": 42.51784,
      "lon": 12.9804,
-     "kind": "strada",
+     "kind": "sterrata",
      "road": null,
      "ele": 1158
     }
@@ -2979,6 +2979,316 @@
      "ele": 979
     }
    ]
+  },
+  "vico-monte-venere": {},
+  "monte-rufeno-felceto": {},
+  "oriolo-monte-raschio": {
+   "11353673": [
+    {
+     "lat": 42.15908,
+     "lon": 12.13826,
+     "kind": "strada",
+     "road": null,
+     "ele": 426
+    },
+    {
+     "lat": 42.16108,
+     "lon": 12.14489,
+     "kind": "strada",
+     "road": "Strada del Ponte",
+     "ele": 391
+    },
+    {
+     "lat": 42.16038,
+     "lon": 12.1491,
+     "kind": "sterrata",
+     "road": "Strada per Vicarello",
+     "ele": 425
+    },
+    {
+     "lat": 42.16366,
+     "lon": 12.15838,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 470
+    },
+    {
+     "lat": 42.16646,
+     "lon": 12.15796,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 478
+    },
+    {
+     "lat": 42.16983,
+     "lon": 12.15551,
+     "kind": "sterrata",
+     "road": "Strada Monte Raschio",
+     "ele": 461
+    },
+    {
+     "lat": 42.16494,
+     "lon": 12.1513,
+     "kind": "sterrata",
+     "road": "Strada del Comunaletto",
+     "ele": 419
+    }
+   ]
+  },
+  "allumiere-faggeto": {},
+  "monterano-bicione": {
+   "10240055": [
+    {
+     "lat": 42.14153,
+     "lon": 12.06422,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 287
+    },
+    {
+     "lat": 42.132,
+     "lon": 12.06508,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 171
+    },
+    {
+     "lat": 42.15204,
+     "lon": 12.06368,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 303
+    }
+   ]
+  },
+  "veio-monte-musino": {},
+  "tuscolo-nord": {
+   "3327083": [
+    {
+     "lat": 41.80727,
+     "lon": 12.698,
+     "kind": "strada",
+     "road": null,
+     "ele": 454
+    },
+    {
+     "lat": 41.80346,
+     "lon": 12.70693,
+     "kind": "strada",
+     "road": null,
+     "ele": 518
+    },
+    {
+     "lat": 41.80579,
+     "lon": 12.68515,
+     "kind": "strada",
+     "road": "Viale Francesco Borromini",
+     "ele": 365
+    },
+    {
+     "lat": 41.80569,
+     "lon": 12.69379,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 417
+    }
+   ]
+  },
+  "faete-rocca-papa": {
+   "3328048": [
+    {
+     "lat": 41.74972,
+     "lon": 12.70853,
+     "kind": "strada",
+     "road": null,
+     "ele": 899
+    },
+    {
+     "lat": 41.74865,
+     "lon": 12.71507,
+     "kind": "strada",
+     "road": "Via Scalette (Strada per Monte Cavo)",
+     "ele": 860
+    },
+    {
+     "lat": 41.74518,
+     "lon": 12.72939,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 932
+    },
+    {
+     "lat": 41.75695,
+     "lon": 12.70994,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 794
+    }
+   ]
+  },
+  "nemi-fontan-tempesta": {},
+  "cerquone-doganella": {
+   "3327154": [
+    {
+     "lat": 41.78455,
+     "lon": 12.78791,
+     "kind": "strada",
+     "road": null,
+     "ele": 725
+    },
+    {
+     "lat": 41.77783,
+     "lon": 12.79342,
+     "kind": "strada",
+     "road": "Via delle Riguardate",
+     "ele": 607
+    },
+    {
+     "lat": 41.78744,
+     "lon": 12.7689,
+     "kind": "strada",
+     "road": "Via Montagna Spaccata",
+     "ele": 670
+    }
+   ]
+  },
+  "livata-tufai": {
+   "12036002": [
+    {
+     "lat": 41.93065,
+     "lon": 13.15196,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1399
+    }
+   ]
+  },
+  "cervara-prataglia": {
+   "2071204": [
+    {
+     "lat": 42.00564,
+     "lon": 13.07585,
+     "kind": "strada",
+     "road": null,
+     "ele": 1153
+    }
+   ]
+  },
+  "gennaro-roccagiovine": {
+   "2068875": [
+    {
+     "lat": 42.05952,
+     "lon": 12.86936,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 862
+    },
+    {
+     "lat": 42.05108,
+     "lon": 12.87978,
+     "kind": "sterrata",
+     "road": "Strada Comunale delle Canepine",
+     "ele": 753
+    }
+   ]
+  },
+  "lepini-bassiano-santangelo": {
+   "11632035": [
+    {
+     "lat": 41.56667,
+     "lon": 13.06813,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1044
+    }
+   ]
+  },
+  "ausoni-san-vito": {},
+  "aurunci-itri-campello": {
+   "12358634": [
+    {
+     "lat": 41.3221,
+     "lon": 13.56895,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 832
+    },
+    {
+     "lat": 41.3294,
+     "lon": 13.58768,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 906
+    }
+   ]
+  },
+  "circeo-cerasella-verdesca": {},
+  "ernici-prato-campoli": {
+   "12402883": [
+    {
+     "lat": 41.77475,
+     "lon": 13.49298,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1140
+    }
+   ]
+  },
+  "lepini-supino-santaserena": {},
+  "simbruini-filettino-fiumata": {},
+  "pnalm-settefrati-canneto": {}
+ },
+ "estrazioni": {
+  "vallonina": "2026-10-12",
+  "poggio-cantalice": "2026-10-12",
+  "antrodoco": "2026-10-12",
+  "cicolano": "2026-10-12",
+  "rascino": "2026-10-12",
+  "tancia": "2026-10-12",
+  "laga": "2026-10-12",
+  "terminillo-ovest": "2026-10-12",
+  "terminillo-est": "2026-10-12",
+  "cittareale": "2026-10-12",
+  "pescorocchiano": "2026-10-12",
+  "malito": "2026-10-12",
+  "sangiovanni": "2026-10-12",
+  "leonessa": "2026-10-12",
+  "domo": "2026-10-12",
+  "vico-monte-venere": "2026-10-21",
+  "monte-rufeno-felceto": "2026-10-21",
+  "oriolo-monte-raschio": "2026-10-21",
+  "allumiere-faggeto": "2026-10-21",
+  "monterano-bicione": "2026-10-21",
+  "veio-monte-musino": "2026-10-21",
+  "tuscolo-nord": "2026-10-21",
+  "faete-rocca-papa": "2026-10-21",
+  "nemi-fontan-tempesta": "2026-10-21",
+  "cerquone-doganella": "2026-10-21",
+  "livata-tufai": "2026-10-21",
+  "cervara-prataglia": "2026-10-21",
+  "gennaro-roccagiovine": "2026-10-21",
+  "lepini-bassiano-santangelo": "2026-10-21",
+  "ausoni-san-vito": "2026-10-21",
+  "aurunci-itri-campello": "2026-10-21",
+  "circeo-cerasella-verdesca": "2026-10-21",
+  "ernici-prato-campoli": "2026-10-21",
+  "lepini-supino-santaserena": "2026-10-21",
+  "simbruini-filettino-fiumata": "2026-10-21",
+  "pnalm-settefrati-canneto": "2026-10-21"
+ },
+ "corrections": [
+  {
+   "date": "2026-10-16",
+   "field": "kind",
+   "rule": "«strada» solo dove si innesta un arco percorribile in auto che non è una pista (highway=track); dove ci sono solo piste l'imbocco diventa «sterrata». Posizioni, quote e nomi non cambiano.",
+   "method": "Valhalla /locate (profilo auto, verbose, minimum_reachability 0) nel punto dell'imbocco, archi entro 5 m (aggancio al nodo); dove non ne trova, gli archi che si innestano nel punto secondo il map matching del sentiero (trace_attributes, profilo pedestrian). Server valhalla1.openstreetmap.de, dati OpenStreetMap (ODbL)",
+   "stats": {
+    "strada_prima": 216,
+    "sterrata_ora": 85,
+    "deciso_dal_map_matching": 4,
+    "non_deciso": 0,
+    "su_strada_riservata": 9
+   }
   }
- }
+ ]
 }

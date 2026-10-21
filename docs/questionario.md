@@ -1,75 +1,94 @@
 # Questionario per i cercatori esperti del Reatino
 
-Aggiornato al 16/10/2026. Versione dello schema: **1**.
+Aggiornato al 21/10/2026. Versione dello schema: **2** (corta). La versione 1 (lunga) è archiviata: le sue risposte restano salvate e si leggono con lo schema congelato.
+
+## Perché la versione 2 (decisione di Matteo, 21/10/2026)
+
+Matteo ha fatto provare la versione 1 a un cercatore esperto, che si è «sentito preso in giro». Le domande chiedevano di ricordare **episodi** (giorni dopo la pioggia, buttate e stagioni di anni passati, uscite a vuoto, gelate o caldo, quantità, ore di ricerca) e di mettere in **classifica** dei fattori. Nessuno li ricorda con certezza: si risponde a caso, e un dato inventato che sembra vero è dannoso, perché nell'analisi non si distingue da uno vero.
+
+La versione 2 è **corta (3–4 minuti)** e chiede solo **sapere abituale e ripetuto**: dove vai, che cosa cerchi, in che mesi, in che boschi e a che quota lo trovi *di solito*. Le osservazioni vere si raccolgono poi **dal bosco, con l'app** («Annota»: cosa hai trovato, o che non hai trovato niente, e quanto hai cercato). La ricevuta dopo l'invio lo dice.
+
+Fatto verificato: la reazione del cercatore (riferita da Matteo). Interpretazione: la memoria episodica è inaffidabile per date, intervalli e quantità; il sapere abituale ripetuto ogni anno lo è molto di più.
 
 ## Scopo
 
-Raccogliere le esperienze degli amici che vanno a funghi nel Reatino, anche occasionalmente: quando e a che quota escono le specie, che cosa fanno pioggia, freddo, vento e secco, quali boschi e versanti contano, accessi, regole locali e rischi. Servono a confrontare il modello con l'esperienza sul campo.
+Raccogliere il sapere abituale degli amici che vanno a funghi nel Reatino, anche occasionalmente: zone, specie cercate, mesi, boschi e quote abituali, zone che non danno mai nulla, errori e pericoli; e sapere chi segnalerebbe con l'app. Servono a confrontare il modello con l'esperienza sul campo e a capire da dove partire.
 
-Tono personale, da Matteo agli amici: titolo «La tua esperienza a funghi nel Reatino», apertura «Mi dai una mano?», nessun requisito di essere esperti. L’esperienza si descrive con le risposte, non si presume. Decisione di Matteo del 17/10/2026.
+Tono semplice, «tu», nessun tono da esame. Titolo «Funghi nel Reatino: poche domande su quello che sai»; l'introduzione dice che sono poche domande su ciò che si sa per abitudine, che non si chiedono date, giorni dopo la pioggia, quantità o uscite di anni fa, e che **«Non so» va benissimo**. Si compila da soli, anche da telefono, senza login. Le risposte restano a noi, nel database D1 del sito.
 
-L’introduzione spiega lo scopo richiesto da Matteo il 17/10/2026: stiamo preparando un’app che speriamo possa aiutare nelle uscite e nella conoscenza del bosco. Le domande raccolgono l’esperienza personale; non chiedono di provare l’app. Si compila da soli, anche da telefono, senza login. Il nome è facoltativo. Le risposte restano a noi, nel database D1 del sito.
+Le risposte sono dichiarazioni, non misure: nell'analisi vanno tenute distinte da dati verificati. Il motivo per cui una zona «non dà mai nulla» è salvato a parte (`barrenZones.opinion`) ed è un **parere**.
 
-Le risposte sono dichiarazioni di persone esperte, non misure. Nell'analisi vanno tenute distinte da dati verificati. Ogni scheda specie ha un grado di sicurezza (1–5); episodi e buttate dicono se la data viene da foto o appunti o dalla memoria, e se un episodio è stato visto di persona o sentito dire.
+## Risposte della versione 1: che cosa si usa e che cosa no
+
+Le risposte v1 (raccolte fino al 21/10/2026) **restano archiviate così come sono**: non si riscrivono, si esportano a parte (`&version=1`) e si rivedono in redazione con lo schema v1. Nelle analisi si usano **solo i campi di sapere abituale**:
+
+| Affidabili (si usano) | Campi v1 |
+|---|---|
+| anni di esperienza | `profile.years` (numero dichiarato; confrontabile con le classi v2 solo raggruppandolo) |
+| zone | `profile.zones`, `profile.zonesOther` |
+| specie cercate | `profile.speciesSought`, `species[].id` / `name` |
+| mesi abituali | `species[].start`, `peak`, `end` (solo il mese: la parte del mese no) |
+| boschi abituali | `species[].forests` (`forestsNever` solo come indicazione debole) |
+| quote abituali | `species[].elevMin`, `elevMax`, `elevMode`, solo raggruppati nelle fasce della v2 |
+| errori e pericoli | `risks.beginnerErrors`, `risks.mountainDangers` |
+
+**Non si usano** (episodici o numerici, ricordati male): giorni dopo la pioggia (`lagMin`, `lagTyp`, `lagMax`), durata della buttata (`flushDays`), «la stagione è cambiata?» (`seasonChanged`, `changed`), uscite in un anno buono o scarso, tutta la parte «Pioggia» (`rain`), gli episodi di freddo, gelo, vento o caldo (`weatherRemembers`, `weatherEvents`), le buttate e le uscite a vuoto (`flushes`, `emptyTrips`, con anni, settimane, quantità e ore), la classifica dei fattori (`forest.ranking`), i segni creduti (`forest.indicators`), il grado di sicurezza (`confidence`). Restano nei file per completezza e per i diritti delle persone (accesso, copia, cancellazione), non per i risultati. Gli altri campi v1 (versanti, terreno, accessi, regole locali, scambi pericolosi, intossicazioni, specie evitate) sono pareri o racconti: si leggono come testimonianze, non come dati.
+
+L'analisi confronta le due versioni solo sui campi con lo stesso significato (zone, specie, mesi, boschi, fasce di quota, errori e pericoli).
 
 ## Indirizzo e file
 
 - Pagina: https://fungaroli.zatteo.workers.dev/questionario. È il file statico `questionario.html`, servito da Workers Assets (gestione HTML predefinita: `/questionario.html` porta a `/questionario`). Non serve una regola in `wrangler.jsonc`. La pagina ha `noindex` e non è collegata dall'app: si diffonde con il link.
 - `_headers` (nella cartella degli asset, cioè la radice del repository): per `/questionario` e `/questionario.html` aggiunge `Content-Security-Policy: frame-ancestors 'none'` e `X-Frame-Options: DENY`, così nessun altro sito può mostrare la pagina in un riquadro (clickjacking). `frame-ancestors` nel meta CSP della pagina non vale: serve l'intestazione. Vedi «Intestazioni» più sotto.
 - `js/questionario.js` e `css/questionario.css`: compilazione a parti, bozza nel browser, riepilogo e invio.
-- `js/survey-schema.js`: **unica fonte dello schema**, importata dalla pagina, dal Worker e dalla redazione.
+- `js/survey-schema.js`: **unica fonte dello schema corrente (v2)**, importata dalla pagina, dal Worker e dalla redazione.
+- `js/survey-schema-v1.js`: schema della versione 1, **congelato il 21/10/2026**: non si modifica. Serve a leggere, rivedere ed esportare le risposte v1; da qui la v2 importa gli elenchi condivisi (specie, boschi, mesi, comuni, località).
 - `js/survey-species-names.js`: nomi italiani e latini per l'autocomplete delle specie, generato da `node tools/build_survey_lists.mjs` (con `--check` controlla che sia aggiornato; lo controlla anche un test).
 - `worker/survey.js`: API. `migrations/0004_survey.sql`: tabelle.
-- Test: `tests/survey-schema.test.mjs`, `tests/survey-api.test.mjs`, `tests/survey-privacy.test.mjs`, `tests/survey-page.test.mjs` (in `npm test`), `tests/browser/questionario.spec.mjs` e il pannello della redazione in `tests/browser/cms.spec.mjs` (suite browser). Nel browser, sul Worker e sul D1 locali: invio e ricevuta, bozza, consenso, nessuna risposta preimpostata, versanti e cancelli (rischi, stagione delle specie, episodi della parte D) fino al dato salvato, bozza con un cancello cancellato e bozza di prima dei cancelli, indirizzo del titolare uguale a `data/legal.json` (informativa e pagina Info), campo trappola, tetto del giorno, intestazioni, 320 px, rete giù; in redazione il conteggio leggero, i due CSV (stesse colonne, apostrofo contro le formule), ricerca e cancellazione per ricevuta. Le prove leggono e scrivono il D1 locale con `sqlite3` (cartella `FUNGAROLI_BROWSER_PERSIST`).
+- Test: `tests/survey-schema.test.mjs` (v2), `tests/survey-schema-v1.test.mjs` (v1 congelata), `tests/survey-api.test.mjs` (anche invio v1 rifiutato, esportazione per versione, revisione v1 in redazione), `tests/survey-privacy.test.mjs`, `tests/survey-page.test.mjs` (in `npm test`), `tests/browser/questionario.spec.mjs` e il pannello della redazione in `tests/browser/cms.spec.mjs` (suite browser). Nel browser, sul Worker e sul D1 locali: invio e ricevuta con l'invito ad «Annota», bozza e ripresa, consenso, nessuna risposta preimpostata né domanda da ricordare, «Non so» esclusivo, scelta delle schede oltre 5 specie, nome e contatto solo dopo «Sì/Forse» e ricontatto, zone senza funghi con il parere, bozza e ricevute della v1, corpo v1 rifiutato con «ricarica la pagina», indirizzo del titolare uguale a `data/legal.json`, campo trappola, tetto del giorno, intestazioni, 320 px, rete giù, invio vuoto. Le prove leggono e scrivono il D1 locale con `sqlite3` (cartella `FUNGAROLI_BROWSER_PERSIST`).
 - Service worker: le navigazioni verso `/questionario` escono dalla gestione di `sw.js`. Senza rete la pagina non deve aprire l'app al suo posto.
 
-## Come si compila
+## Come si compila (versione 2)
 
-- All'inizio si sceglie la **versione breve** (circa 10 minuti) o la **completa** (circa 30–40 minuti). Si passa dall'una all'altra in qualsiasi momento senza perdere niente. La breve chiede: chi sei (essenziale), calendario e quote di al massimo 3 specie, al massimo 3 buttate e 1 uscita a vuoto, la parte finale.
-- Ogni parte ha «Salta questa parte». L'avanzamento conta solo le parti attive. Le domande di approfondimento compaiono dopo un «sì».
-- Mentre si compila, la bozza resta nel browser (`localStorage`, chiave `fronda:questionario:esperti-reatino:v1`). Al server arriva qualcosa solo con «Invia», dopo il riepilogo. Si invia solo ciò che è visibile nella versione scelta e non saltato.
-- **Nessuna risposta suggerita che condizioni una stima.** I numeri (quote, giorni, ore, anni) restano vuoti finché la persona non scrive, e hanno sempre «Non so». Nessuna opzione preselezionata, nessun esempio numerico, nessuna scala con un valore già marcato. L'ordine dei 7 fattori della classifica cambia da una bozza all'altra. Le risposte rapide (`QUICK_ANSWERS`) sono categorie neutre che coprono le due direzioni, sempre con «Non so» e «Altro…» con testo libero. Scambi pericolosi, intossicazioni e specie evitate restano solo testo: un elenco di nomi suggerirebbe la risposta. Intossicazioni e specie evitate hanno prima un cancello «Sì / No / Preferisco non dirlo» (`RISK_GATE`): il campo di testo compare solo dopo «Sì». Il cancello dice se c'è qualcosa da raccontare, non che cosa. Allo stesso modo «La stagione è cambiata negli anni?» (`SEASON_GATE`: Sì / No / Non so) apre «Come è cambiata?» e «Ricordi un episodio…?» della parte D (`WEATHER_GATE`: Sì / No) apre gli episodi. Tutti i cancelli si inviano, anche con «No»: il riepilogo mostra il cancello e, solo dopo «Sì», il dettaglio.
-- L'indicazione della domanda sulle intossicazioni chiede specie, anno e zona, e di non dare dettagli sulla salute di persone riconoscibili, nemmeno propria. «Altri esperti» chiede di non scrivere nomi o contatti di altre persone e di girare loro il link.
-- Autocomplete con `datalist` nativi, sempre con testo libero ammesso: per le zone le 8 macro-zone, le località principali e i 73 comuni della provincia di Rieti; per le specie i nomi del catalogo.
-- La pagina chiede solo zona e quota indicativa, mai posti precisi.
+- Quattro parti brevi, poi il riepilogo: **Tu e i funghi** (anni, zone, specie cercate), **Le tue specie** (una scheda per specie), **Quello che hai notato** (zone che non danno nulla, errori e pericoli), **Con l'app** (segnaleresti? ricontatto, nome e contatto). Niente versione breve o completa, niente «Salta questa parte» né «Non pertinente»: ogni domanda si lascia vuota.
+- Bozza nel browser (`localStorage`, chiave `fronda:questionario:esperti-reatino:v2`). Al server arriva qualcosa solo con «Invia», dopo il riepilogo, che mostra esattamente ciò che parte. Le bozze della versione 1 (`…:v1`) restano nel browser ma **non si riaprono**: l'inizio lo dice e offre «Cancella la vecchia bozza». Le ricevute stanno in `fronda:questionario:esperti-reatino:ricevute`; si mostrano anche quelle salvate dalla v1 (`…:v1:ricevute`).
+- **Nessun valore preimpostato**: nessuna scelta già fatta, nessun numero, nessun esempio. «Non so» è una scelta esplicita per mesi, boschi e quote, e non si combina con le altre; per gli anni c'è «Preferisco non dirlo».
+- Oltre 5 specie scelte, la pagina chiede per quali compilare la scheda (fino a 5): nessuna scheda è scelta al posto della persona.
+- Autocomplete con `datalist` nativi, sempre con testo libero: per le zone le 8 macro-zone, le località principali e i 73 comuni della provincia; per le altre specie i nomi del catalogo. Si chiede solo la zona a grandi linee, mai posti precisi.
+- Dopo l'invio: codice ricevuta e un riquadro «E adesso, nel bosco» che invita ad aprire Fronda (link alla home) e a usare «Annota» sul momento, anche quando non si trova niente, con quanto si è cercato.
 
-## Schema v1
+## Schema v2
 
 Corpo dell'invio:
 
 ```json
-{"survey":"esperti-reatino","version":1,"startedAt":"<ISO>","website":"",
+{"survey":"esperti-reatino","version":2,"startedAt":"<ISO>","website":"",
  "respondent":{"name":"…","contact":"…"},
- "consent":{"anonymousUse":true,"recontact":false,"diary":false},
+ "consent":{"anonymousUse":true,"recontact":false},
  "answers":{…}}
 ```
 
-- `website` è un campo trappola: deve restare vuoto. Nella pagina l'input ha un nome neutro (`id="q-lascia-vuoto"`, `name="lascia_vuoto"`), con `autocomplete="off"`, `tabindex="-1"`, il contenitore `aria-hidden` e gli attributi con cui 1Password, LastPass e Bitwarden ignorano un campo: con «website» o «url» il browser o il gestore di password potrebbe riempirlo, e il server risponderebbe con un 201 finto (risposta persa in silenzio). La chiave nel corpo resta `website`. La pagina non controlla il campo trappola prima dell'invio (lo toglie dal controllo con `validateSurvey`): lo giudica solo il server, con il 201 finto. Un errore su un campo invisibile bloccherebbe la persona senza rimedio e mostrerebbe la trappola a chi esegue la pagina.
+- `version` deve essere 2. Un'altra versione (una pagina vecchia rimasta aperta) riceve **400 con un solo errore** sul campo `version`: «Il questionario è cambiato: ricarica la pagina. Le risposte già scritte restano su questo dispositivo.» Le risposte non si giudicano con lo schema di un'altra versione; la pagina mostra il messaggio così com'è e conserva la bozza.
+- `website` è un campo trappola: deve restare vuoto. Nella pagina l'input ha un nome neutro (`id="q-lascia-vuoto"`, `name="lascia_vuoto"`), con `autocomplete="off"`, `tabindex="-1"`, il contenitore `aria-hidden` e gli attributi con cui 1Password, LastPass e Bitwarden ignorano un campo: con «website» o «url» il browser o il gestore di password potrebbe riempirlo, e il server risponderebbe con un 201 finto (risposta persa in silenzio). La chiave nel corpo resta `website`. La pagina non controlla il campo trappola prima dell'invio: lo giudica solo il server, con il 201 finto.
 - `startedAt` serve solo a calcolare la durata. Se non è valido si ignora.
-- `consent.anonymousUse` deve essere `true`. Il nome della chiave resta per contratto, ma i testi non dicono «anonimo»: le risposte restano legate alla ricevuta e, se dati, a nome e contatto, quindi sono dati personali. La casella dice «Acconsento all’uso delle mie risposte per studiare stagioni e condizioni dei funghi nel Reatino, come spiegato nell’informativa. Nei risultati non compariranno il mio nome né il mio contatto.» Nome e contatto sono facoltativi (al massimo 80 e 120 caratteri, `RESPONDENT_LIMITS`). Il contatto si salva solo se `recontact` o `diary` è `true`: senza uno dei due «sì» `validateSurvey` lo porta a `null` (serve solo a ricontattare; la pagina lo chiede solo dopo un «sì»).
-- Ogni campo di `answers` è facoltativo, ma per inviare serve almeno una risposta non vuota. Le chiavi sconosciute vengono rifiutate a ogni livello.
+- `consent.anonymousUse` deve essere `true` (nome della chiave per contratto; i testi non dicono «anonimo»). `consent.recontact` è facoltativo. `consent.diary` (il taccuino della v1) si accetta solo assente o `false`; nelle righe salvate resta 0.
+- **Nome e contatto** (al massimo 80 e 120 caratteri, `RESPONDENT_LIMITS`) si salvano solo se `willReport` è «sì» o «forse» **e** `recontact` è `true`. Altrimenti `validateSurvey` li porta a `null`, **nome compreso**, e `recontact` a `false` (decisione di Matteo, 21/10/2026; la v1 salvava sempre il nome). La pagina chiede ricontatto, nome e contatto solo dopo «Sì» o «Forse».
+- Ogni campo di `answers` è facoltativo, ma per inviare serve almeno una risposta non vuota. Le chiavi sconosciute vengono rifiutate a ogni livello (anche quelle della v1).
 
-| Parte | Chiave | Contenuto |
+| Domanda | Chiave | Contenuto |
 |---|---|---|
-| A. Chi sei | `profile` | anni di esperienza, chi ti ha insegnato, zone in ordine di frequenza (`ZONES`) e altre zone, uscite in un anno buono e in uno scarso, specie cercate (`SPECIES`), attestato, controllo ASL, se e da che anno annoti le uscite |
-| B. Specie | `species` (≤ 15) | per specie (`SPECIES` o «altra» con nome): inizio, picco e fine (mese + inizio/metà/fine), `seasonChanged` (sì, no, non so) e, solo dopo «sì», come è cambiata (`changed`), quota minima, massima e più frequente, boschi dove la trovi e dove mai (`FORESTS`), giorni dopo la pioggia (minimo, di solito, massimo), durata della buttata, sicurezza 1–5 |
-| C. Pioggia | `rain` | pioggia buona, estate secca, cosa fa finire una buttata, specie con poca pioggia |
-| D. Temperatura, vento e secco | `weatherRemembers`, `weatherEvents` (≤ 10) | se ricordi un episodio (sì, no) e, solo dopo «sì», gli episodi: anno, mese, zona, tipo, effetto, dopo quanti giorni, visto o sentito dire |
-| E. Ultimi anni | `flushes`, `emptyTrips` (≤ 10 ciascuno) | buttate e uscite a vuoto: anno, mese, settimana, zona, quota, bosco, specie, quantità, ore di ricerca, tempo prima o motivo, data da foto o memoria |
-| F. Bosco | `forest` | versante (nord, sud, est e ovest, a inizio e a fine stagione), età del bosco, dove guardi prima, terreno, posti che rendono ogni anno, segni creduti (con quante volte hanno funzionato), classifica dei 7 fattori (posti 1–7 distinti, anche solo i primi) |
-| G. Accessi | `access` | sbarre e divieti, navigatori, regole locali, parchi e riserve, affollamento, parcheggio |
-| H. Rischi | `risks` | scambi pericolosi; `knowsPoisonings` (sì, no, non dico) e, solo dopo «sì», `poisonings`; errori dei principianti; `avoidsSpecies` (sì, no, non dico) e, solo dopo «sì», `avoided`; pericoli in montagna |
-| I. Dopo | `followUp` + `consent` + `respondent` | altri esperti, taccuino delle uscite, ricontatto, nome e contatto |
+| 1. Esperienza e zone | `profile.years`, `profile.zones` | classe di anni (`EXPERIENCE_YEARS`: meno di 5, 5–14, 15–29, 30 o più, preferisco non dirlo); fino a 5 zone a grandi linee, testo libero (≤ 80) con suggerimenti, senza doppioni |
+| 2. Specie cercate | `profile.speciesSought`, `profile.speciesOther` | specie dell'elenco (`SPECIES`) e fino a 5 altre per nome (≤ 60) |
+| 3. Schede | `species` (≤ 5) | per specie scelta: `id` (o `altra` + `name`, uguale a un nome di `speciesOther`), `months` (mesi di `MONTHS` o «non so»), `forests` (`FORESTS` o «non so»), `elevation` (`ELEVATION_BANDS`: sotto i 600 m, 600–1000, 1000–1400, sopra i 1400, più fasce o «non so») |
+| 4. Zone che non danno nulla | `barrenZones.where`, `barrenZones.opinion` | testo libero (≤ 600); `opinion` è il motivo, **un parere**, chiesto solo dopo la zona |
+| 5. Errore o pericolo | `warning` | un errore da principiante o un pericolo in montagna, testo libero (≤ 800) |
+| 6. Segnalazioni con l'app | `willReport` | «sì», «forse», «no» (`REPORT_INTENT`) |
 
-Regole comuni:
+Regole: «non so» non si combina con altre scelte; i mesi tornano in ordine di calendario; una scheda solo per una specie scelta alla domanda 2 (400 altrimenti), una per specie, «altra» con il nome. Nessun campo numerico, nessuna data, nessun episodio, quantità o classifica. Testi in forma NFC senza caratteri di controllo; l'HTML resta testo (`textContent`, mai `innerHTML`).
 
-- **Domande aperte**: `{quick: [...], text: "..."}`. `quick` contiene valori di `QUICK_ANSWERS[percorso].options` oppure `"non so"`, che non si combina con altre scelte (come i valori in `exclusive`; con `single` se ne sceglie uno solo). Il server accetta anche una semplice stringa e la normalizza.
-- **Numeri**: `null` o assenti vogliono dire «non so». Limiti in `ANSWERS_SPEC`; `fieldSpec('species.elevMin')` li dà alla pagina (maxlength, minimo, massimo). Le ore ammettono i decimali.
-- **Coerenza** nelle schede specie: quota minima ≤ più frequente ≤ massima; giorni minimo ≤ di solito ≤ massimo; un bosco non sta sia tra «la trovi» sia tra «mai»; una sola scheda per specie dell'elenco. Nei rischi, con `knowsPoisonings` o `avoidsSpecies` a «no» o «non dico» il testo corrispondente deve mancare (400 altrimenti). Lo stesso per `changed` con `seasonChanged` a «no» o «non so», e per `weatherEvents` con `weatherRemembers` a «no».
-- **Aggiunte del 16/10/2026 nella stessa versione 1**: i cancelli `risks.knowsPoisonings`, `risks.avoidsSpecies`, `species[].seasonChanged` e `weatherRemembers` (tutti facoltativi), i versanti est e ovest in `forest.aspect` e «i funghi escono prima» in `rain.drySummer` (accanto a «più tardi»). Tutte le risposte già valide restano valide: una risposta con il solo testo, senza cancello, si accetta come prima; «non è cambiata» resta ammesso in `species.changed` (la pagina non lo mostra più: lo dice il «No» del cancello).
-- **Bozze di prima dei cancelli**: la pagina le converte una volta sola, guardando la bozza com'era salvata (`upgradeDraft`). Un racconto dei rischi scritto in una bozza senza la chiave del cancello riceve «Sì», così non si perde. Una bozza nuova ha sempre la chiave, anche vuota dopo «Cancella la scelta»: in quel caso il cancello resta vuoto e il testo non parte. Il vecchio cancello della stagione delle schede (`changedYes`, che non si inviava) diventa `seasonChanged`.
-- **Testi**: forma NFC, senza caratteri di controllo. L'HTML resta testo: chi mostra le risposte usa `textContent`, mai `innerHTML`.
-- **Anni**: dal 2000 al 2026 (`YEAR_MIN`, `YEAR_MAX`). Dal 2027 serve una versione nuova dello schema.
+## Schema v1 (archiviato)
+
+Lo schema v1 è in `js/survey-schema-v1.js`, congelato. In sintesi: parti A–I (chi sei, schede specie con mesi di inizio/picco/fine e parte del mese, quote in metri, giorni dopo la pioggia e sicurezza 1–5; pioggia; episodi di temperatura, vento e secco; buttate e uscite a vuoto con anno, settimana, quantità e ore; bosco con versanti e classifica dei 7 fattori; accessi; rischi con cancelli; per finire con taccuino e ricontatto), risposte rapide (`QUICK_ANSWERS`) con «Altro…», precisazioni `clarifications` e parti `notApplicableParts` (aggiunte del 16–17/10/2026). Il dettaglio storico è nella cronologia di questo documento (versione del 17/10/2026) e nei test `tests/survey-schema-v1.test.mjs`.
 
 Fonti degli elenchi per l'autocomplete: comuni da ISTAT, «Elenco dei comuni italiani» (file del 26/01/2024, consultato il 16/10/2026, 73 comuni con codice 057, licenza CC BY 4.0); località con il comune verificato su OpenStreetMap/Nominatim (ODbL). Fonte, data e licenza sono anche in `js/survey-schema.js`.
 
@@ -77,8 +96,8 @@ Fonti degli elenchi per l'autocomplete: comuni da ISTAT, «Elenco dei comuni ita
 
 | Richiesta | Chi | Risposte |
 |---|---|---|
-| `POST /api/survey/v1/responses` (JSON, ≤ 64 KB) | chiunque, dalla pagina del sito | `201 {id, receipt}`; `400 {error, fields, errors}`; `403` origine diversa dal sito; `413` troppo grande; `415` tipo sbagliato; `429 {error, code}` troppi invii, con `Retry-After` fino alla mezzanotte UTC: `code` è `connection-limit` (limite per connessione) o `daily-limit` (tetto complessivo del giorno) |
-| `GET /api/survey/v1/responses?survey=esperti-reatino&format=json\|csv\|count` | amministratori | elenco completo (`json`, `csv`) o solo `{survey, count, lastAt}` (`count`, per la redazione: non legge né manda le risposte); `&receipt=XXXXXXXX` cerca un codice ricevuta (maiuscole o minuscole, con o senza trattino); con `format=csv`, `&sep=semicolon` dà il «CSV per Excel» (punto e virgola), `&sep=comma` o niente la versione con la virgola; altri valori: 400 |
+| `POST /api/survey/v1/responses` (JSON, ≤ 64 KB) | chiunque, dalla pagina del sito | `201 {id, receipt}`; `400 {error, fields, errors}` (anche per una versione diversa dalla corrente: solo `version`, «ricarica la pagina»); `403` origine diversa dal sito; `413` troppo grande; `415` tipo sbagliato; `429 {error, code}` troppi invii, con `Retry-After` fino alla mezzanotte UTC: `code` è `connection-limit` (limite per connessione) o `daily-limit` (tetto complessivo del giorno) |
+| `GET /api/survey/v1/responses?survey=esperti-reatino&format=json\|csv\|count[&version=1\|2]` | amministratori | elenco completo (`json`, `csv`) o solo `{survey, count, lastAt, byVersion}` (`count`, per la redazione: non legge né manda le risposte). **Versione:** il CSV ne contiene sempre una sola (predefinita la 2, colonne della sua versione); JSON e conteggio comprendono tutte le versioni se `version` manca; altri valori: 400; `&receipt=XXXXXXXX` cerca un codice ricevuta (maiuscole o minuscole, con o senza trattino); con `format=csv`, `&sep=semicolon` dà il «CSV per Excel» (punto e virgola), `&sep=comma` o niente la versione con la virgola; altri valori: 400 |
 | `DELETE /api/survey/v1/responses/<id o ricevuta>` | amministratori | `200 {ok, id, receipt}`; `404` se non c'è |
 
 Gli amministratori sono gli stessi del CMS: sessione con passkey e ID in `CMS_ADMIN_IDS`. Senza sessione la risposta è 401, con un altro ruolo 403. Le credenziali degli agenti del CMS non danno accesso alle risposte. POST e DELETE controllano l'origine come la community. Gli errori 503 non mostrano dettagli interni.
@@ -107,9 +126,10 @@ Database `COMMUNITY_DB` (lo stesso di profili e diario). La migrazione idempoten
 - L'informativa (art. 13 GDPR) sta in fondo alla pagina, prima dell'invio. Testi del 16/10/2026 dopo la revisione: niente «anonimo» nella casella del consenso; niente dati sulla salute nei rischi; copia «anche in un formato leggibile da computer»; impronta dell'IP «circa 2 giorni». Titolare Matteo Sgambato, progetto personale e gratuito; finalità (studio delle stagioni; contatto solo per ricontatto o taccuino; nei risultati niente nome né contatto; nessuna decisione automatica); domande facoltative; base il consenso, revocabile; nessuna cessione a terzi; dati su Cloudflare D1 senza garanzia di sola collocazione europea (come in [community.md](community.md)); conservazione fino alla fine del progetto o alla richiesta di cancellazione (da decidere, più sotto); diritti di accesso, copia (anche leggibile da computer), rettifica, limitazione e cancellazione; reclamo al Garante.
 - Trasferimenti fuori dall'UE: secondo l'informativa di Cloudflare (in vigore dal 4/11/2025, letta il 16/10/2026, sezione 7) i trasferimenti verso gli Stati Uniti si basano sulla certificazione EU-U.S. Data Privacy Framework e, se viene meno, sulle clausole contrattuali standard. Da ricontrollare se l'informativa di Cloudflare cambia.
 - L'IP non viene salvato. Resta solo l'hash giornaliero con sale, cancellato entro il terzo giorno (circa 2 giorni, come dice l'informativa).
-- Nella parte «Rischi» l'informativa chiede di non scrivere dati sulla salute, propri o di altri: bastano specie, periodo e zona. Il consenso chiesto non è un consenso esplicito per dati sanitari (art. 9).
+- **Aggiornamento del 21/10/2026 (v2):** la finalità del nome e del contatto ora dice che si chiedono solo a chi segnalerebbe con l'app e vuole essere ricontattato (il contatto serve solo a ricontattare, il nome a riconoscere la persona quando le si scrive); la conservazione del contatto non nomina più il taccuino; l'avviso sui dati sanitari riguarda la domanda su errori e pericoli. Le persone che hanno risposto alla v1 lo hanno fatto con l'informativa di allora (nome sempre facoltativo, taccuino).
+- La domanda su errori e pericoli (e, per la v1, la parte «Rischi») chiede di non scrivere dati sulla salute, propri o di altri, né nomi di persone. Il consenso chiesto non è un consenso esplicito per dati sanitari (art. 9).
 - Dopo l'invio la persona riceve un **codice ricevuta** di 8 caratteri (senza 0/O e 1/I). Il dispositivo ricorda le ultime 5 ricevute; la bozza si cancella.
-- **Richiesta di cancellazione:** redazione → «Risposte al questionario» → codice ricevuta → «Cerca la risposta» → «Cancella questa risposta» e conferma. In alternativa `DELETE /api/survey/v1/responses/<codice>` con la sessione di un amministratore. Le copie di recupero di D1 (Time Travel) seguono i tempi del piano Cloudflare.
+- **Richiesta di cancellazione** (risposte di tutte le versioni): redazione → «Questionari» → «CSV per Excel» → codice ricevuta → «Cerca la risposta» → «Cancella questa risposta» e conferma. In alternativa `DELETE /api/survey/v1/responses/<codice>` con la sessione di un amministratore. Le copie di recupero di D1 (Time Travel) seguono i tempi del piano Cloudflare.
 - **Altri diritti (art. 15–20), procedura breve.** Prima di tutto si verifica chi chiede: il codice ricevuta resta visibile nella pagina iniziale del dispositivo da cui si è inviato, quindi da solo non basta se la risposta contiene nome o contatto.
   - *Accesso e copia (anche portabilità, art. 20, perché la base è il consenso):* con la sessione di un amministratore `GET /api/survey/v1/responses?survey=esperti-reatino&format=json&receipt=XXXXXXXX`, e si manda il JSON (formato leggibile da computer). Se la risposta contiene nome o contatto, si risponde solo al contatto salvato, oppure si chiede una conferma (per esempio un dettaglio delle risposte).
   - *Rettifica:* cancellazione e nuovo invio dalla pagina, oppure una correzione puntuale con `npx wrangler d1 execute fungaroli-community --remote --command "UPDATE survey_responses SET name='Nome corretto' WHERE receipt='XXXXXXXX'"` (lo stesso per `contact`; le risposte in `answers` vanno corrette solo con un JSON che passa `validateSurvey`).
@@ -118,17 +138,25 @@ Database `COMMUNITY_DB` (lo stesso di profili e diario). La migrazione idempoten
 
 ## Esportazione
 
-- Dalla redazione, pulsante **Risposte al questionario** (solo amministratori): conteggio (con `format=count`: numero e data dell'ultima, senza scaricare le risposte), «CSV per Excel», «CSV con la virgola», «Scarica il JSON», ricerca per ricevuta e cancellazione.
+- Dalla redazione, sezione **Questionari** → «CSV per Excel» (solo amministratori): conteggio per versione (con `format=count`), scelta della **versione** (2 corta, predefinita; 1 lunga, archiviata), «CSV per Excel», «CSV con la virgola», «Scarica il JSON» della versione scelta, ricerca per ricevuta (tutte le versioni) e cancellazione. Nomi dei file: `questionario-esperti-reatino-v2-AAAA-MM-GG[-excel].csv`.
+- **Una versione per file, la versione in ogni riga** (colonna `version`). Le colonne vengono dallo schema di quella versione (`answerColumns(1|2)`); `toCsv` rifiuta righe di versioni miste.
+- Nella sezione **Questionari** della redazione ogni risposta mostra la versione. Una nuova compilazione (intervista o trascrizione) usa sempre la v2; una risposta già salvata si rivede **con lo schema della sua versione** (`worker/survey-admin.js`, `js/survey-admin-form.js`): le risposte v1 si correggono ma non si convertono.
 - Le esportazioni si leggono a pagine di 100 righe (`EXPORT_PAGE`, cursore su `created_at` e `id`) e si scrivono mentre si leggono: il Worker non tiene in memoria tutte le risposte e non c'è un numero massimo di righe. Se il database non risponde alla prima pagina: 503. Se si ferma a metà, il download finisce con un errore, non con un file troncato in silenzio.
-- In alternativa, con la sessione di un amministratore nello stesso browser: `/api/survey/v1/responses?survey=esperti-reatino&format=csv&sep=semicolon` (CSV per Excel), `…&format=csv` (virgola) o `…&format=json`.
-- **JSON**: `{survey, exportedAt, responses: [{id, survey, version, receipt, createdAt, durationS, name, contact, consent, answers}], count}`. Contiene sempre tutto; `count` sta in fondo ed è il numero delle risposte nel file.
+- In alternativa, con la sessione di un amministratore nello stesso browser: `/api/survey/v1/responses?survey=esperti-reatino&format=csv&version=2&sep=semicolon` (CSV per Excel), `…&format=csv&version=1` (virgola, risposte v1) o `…&format=json`.
+- **JSON**: `{survey, [version,] exportedAt, responses: [{id, survey, version, receipt, createdAt, durationS, name, contact, consent, answers}], count}` (`version` in testa solo se richiesta con `&version`). Contiene sempre tutto; `count` sta in fondo ed è il numero delle risposte nel file.
 - **CSV per Excel** (`&sep=semicolon`, file `…-excel.csv`): come il CSV con la virgola ma con il punto e virgola, il separatore di Excel in italiano: si apre con un doppio clic, con accenti e colonne al posto giusto. Stesse colonne, stesse celle. I numeri con decimali avrebbero la virgola (oggi le colonne piatte hanno solo numeri interi; i decimali stanno dentro il JSON delle liste). L'apostrofo contro le formule si mette anche dopo ogni virgola: Excel con impostazioni inglesi separerebbe lì le colonne.
 - **CSV con la virgola**: UTF-8 con BOM, separatore virgola, righe CRLF (RFC 4180). Una riga per risposta: prima i campi fissi, poi una colonna per campo semplice ricavata dallo schema. Le domande aperte hanno due colonne (`….quick` in JSON e `….text`); le liste (specie, episodi, buttate, uscite a vuoto) sono in JSON. Le celle che inizierebbero con `=`, `+`, `-`, `@`, tabulazione o a capo ricevono un apostrofo davanti, per non diventare formule. Lo stesso vale dopo ogni `;` e ogni a capo dentro una cella: Excel in italiano, aperto con un doppio clic, separa le colonne con il punto e virgola e lì farebbe cominciare una cella nuova. Dopo un separatore o un a capo l'apostrofo va anche davanti alle virgolette: lì le virgolette aprono un campo, e un lettore tollerante attacca al campo chiuso il testo che segue («""=1+1» diventa «=1+1»). Per questo nel CSV una riga di testo che inizia con «- » diventa «'- »: i dati esatti sono nel JSON. Per Excel in italiano conviene il «CSV per Excel»; questo si apre con Dati › Da testo/CSV.
 - **Cosa provano i test (e cosa no).** `tests/survey-privacy.test.mjs` legge i due file con i due separatori in due modi: un lettore tollerante del file intero, come Python `csv` con `strict=False` (le virgolette aprono un campo solo come primo carattere, il testo dopo la chiusura si attacca), e un controllo prudente che taglia a ogni separatore e a ogni a capo, anche tra virgolette, e legge come campo tra virgolette i pezzi che cominciano con le virgolette. Con i testi ostili dei revisori nessuna cella comincia con una formula; con la regola di prima sì (la prova non è vuota). Non è verificato con Excel vero: che Excel attacchi il testo dopo le virgolette di chiusura e lo valuti come formula è un'interpretazione dei revisori. LibreOffice 7 lascia «""=1+1» come testo.
 
-## Decisioni di Matteo — 17 ottobre 2026
+## Decisioni di Matteo — 21 ottobre 2026
 
-1. **Nome sempre facoltativo**, anche senza ricontatto. Serve a collegare le risposte alla testimonianza durante il confronto e la revisione delle conoscenze raccolte; non compare nei risultati. Scopo esplicito nell'informativa e accanto al campo. Non autorizza a ricontattare.
+1. **Versione corta (v2)** con solo sapere abituale; nessuna domanda su episodi, numeri, stagioni passate, uscite a vuoto, quantità, classifiche, «la stagione è cambiata?». Le risposte v1 restano archiviate e i loro campi non affidabili non si usano (vedi sopra).
+2. **Nome e contatto** solo con «sì» o «forse» alle segnalazioni con l'app e la richiesta di ricontatto; altrimenti non si salvano, nemmeno il nome. Supera il punto 1 del 17/10 per gli invii nuovi.
+3. Dopo l'invio, invito a usare l'app sul campo («Annota», anche quando non si trova niente, con la durata) e link alla home.
+
+## Decisioni di Matteo — 17 ottobre 2026 (versione 1)
+
+1. **Nome sempre facoltativo**, anche senza ricontatto (superato per la v2 dal punto 2 del 21/10). Serve a collegare le risposte alla testimonianza durante il confronto e la revisione delle conoscenze raccolte; non compare nei risultati. Scopo esplicito nell'informativa e accanto al campo. Non autorizza a ricontattare.
 2. **Conservazione:** risposte e nome fino al **31/12/2028**; contatto finché serve per il ricontatto/taccuino, comunque entro il **31/12/2027**. Il cron già presente azzera recapiti e consensi relativi dal 1/1/2028 ed elimina le risposte dal 1/1/2029; la raccolta si chiude allora con 410. Il titolare azzera il recapito anche prima se lo scopo si esaurisce: `UPDATE survey_responses SET contact=NULL,consent_recontact=0,consent_diary=0 WHERE receipt='XXXXXXXX'`. Restano i limiti dichiarati delle copie di sicurezza del fornitore.
 3. **Invii vuoti:** 400 prima dei contatori; anche contenitori, elenchi e testi vuoti normalizzati sono vuoti. Zero, «No», «Non so» e una specie conosciuta sono risposte valide. Nome e consenso da soli non bastano. La pagina spiega come proseguire e conserva la bozza.
 4. **Versante per fase:** «inizio stagione: il versante non conta» e «fine stagione: il versante non conta», esclusive solo con le direzioni della propria fase. Pagina e server condividono la regola. L'opzione globale resta ammessa per compatibilità.
@@ -151,19 +179,24 @@ Le risposte salvate non si riscrivono mai: ogni riga conserva `version` e il JSO
   4. Esportazione: il JSON non cambia. Il CSV oggi ricava le colonne dallo schema corrente: prima di avere righe di due versioni, generare le colonne per versione (per esempio con `&version=1`) o l'unione delle colonne, con la versione in ogni riga.
   5. Aggiungere test con un corpo v1 salvato, che deve restare leggibile ed esportabile.
 - L'analisi confronta le versioni solo sui campi con lo stesso significato.
+- **Applicata il 21/10/2026 per la v2**: schema v1 congelato in `js/survey-schema-v1.js`; `validateSurvey` accetta solo la v2 (una pagina vecchia riceve 400 «ricarica la pagina»); bozza `…:v2` (le bozze v1 non si riaprono, la pagina offre di cancellarle); esportazione CSV per versione (`&version=1|2`, predefinita la 2) con la versione in ogni riga; test con un corpo v1 salvato, leggibile ed esportabile (`tests/survey-api.test.mjs`) e con la v1 congelata (`tests/survey-schema-v1.test.mjs`).
 
 ## Verifiche
 
 ```bash
 npm test                                    # schema e API su D1 finto
 node tools/build_survey_lists.mjs --check   # elenco dei nomi delle specie aggiornato
+node tools/ds-guard.mjs                     # nessuna regressione del design system
 npx wrangler deploy --dry-run
 npx playwright test tests/browser/questionario.spec.mjs
 npx playwright test tests/browser/cms.spec.mjs -g "redazione"
 ```
 
 
-## Chiarezza, risposte diverse e non pertinenza — 17 ottobre 2026
+## Chiarezza, risposte diverse e non pertinenza — 17 ottobre 2026 (solo versione 1)
+
+Le regole di questa sezione riguardano la versione 1 e le sue risposte archiviate; la versione 2 non ha «Altro / specifica», «Non pertinente», versione breve o completa.
+
 
 - Nessuna durata di compilazione né domanda sul tempo disponibile. Restano versione breve e completa come livelli di approfondimento.
 - Ogni domanda ha indicazioni per rispondere; sono spiegati quota, picco, attesa dopo la pioggia, buttata, versante e provenienza dei ricordi.

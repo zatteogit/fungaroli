@@ -18,6 +18,11 @@
 // lag: [min, max] giorni tra pioggia efficace e nascita.
 // eref: mm di pioggia efficace che portano il fattore pioggia a ~63%.
 // minCap: diametro minimo cappello per legge (L.R. Lazio 32/98, art. 3), cm; 0 = nessuna taglia minima (art. 3 c. 2 bis).
+// soilShock: true = la specie riceve il bonus per calo della temperatura del suolo (js/model.js, soilTemperatureShock).
+//   Solo B. edulis e B. pinophilus (decisione del 16/10/2026). Appoggio: osservazione preliminare di
+//   Olivier et al. 1997 sui cèpes della Francia sud-occidentale (B. edulis, aereus, aestivalis);
+//   B. pinophilus non era tra le specie seguite ed e' assimilato a B. edulis (euristica).
+//   Tutte le altre specie: nessun bonus (fattore 1).
 
 export const FOREST = {
   FAG: 'Faggeta',
@@ -43,15 +48,15 @@ export const SPECIES = [
     id: 'edulis', group: 'porcini', name: 'Porcino', latin: 'Boletus edulis',
     forest: { [F.FAG]: 1, [F.CAS]: 0.7, [F.CER]: 0.6, [F.CON]: 0.6, [F.ROV]: 0.4, [F.OST]: 0.2, [F.FOR]: 0.4 },
     months: m(0, 0, 0, 0, 0.1, 0.4, 0.6, 0.8, 1, 1, 0.4, 0),
-    elev: [700, 1800], topt: 13, tsd: 3.5, lag: [7, 21], eref: 30, minCap: 4,
-    evidence: 'Centro termico e finestre antecedenti informati dalla letteratura in faggeta; curve, latenza, innesco e coefficienti euristici, non calibrati nel Reatino.',
+    elev: [700, 1800], topt: 13, tsd: 3.5, lag: [7, 21], eref: 30, minCap: 4, soilShock: true,
+    evidence: 'Centro termico e finestre antecedenti informati dalla letteratura in faggeta; curve, latenza, innesco e coefficienti euristici, non calibrati nel Reatino. Calo della temperatura del suolo: osservazione preliminare (Olivier et al. 1997); il bonus è euristico.',
   },
   {
     id: 'pinophilus', group: 'porcini', name: 'Porcino rosso', latin: 'Boletus pinophilus',
     forest: { [F.CON]: 1, [F.FAG]: 0.8, [F.CAS]: 0.5, [F.CER]: 0.3 },
     months: m(0, 0, 0, 0, 0.1, 0.4, 0.6, 0.9, 1, 0.8, 0.2, 0),
-    elev: [900, 1800], topt: 13, tsd: 3.5, lag: [7, 21], eref: 30, minCap: 4,
-    evidence: 'Parametri assimilati a B. edulis (euristica).',
+    elev: [900, 1800], topt: 13, tsd: 3.5, lag: [7, 21], eref: 30, minCap: 4, soilShock: true,
+    evidence: 'Parametri assimilati a B. edulis (euristica), compreso il calo della temperatura del suolo.',
   },
   {
     id: 'aereus', group: 'porcini', name: 'Porcino nero', latin: 'Boletus aereus',
@@ -109,9 +114,9 @@ export const SPECIES = [
     id: 'mellea', group: 'chiodino', name: 'Chiodino', latin: 'Armillaria mellea',
     forest: { [F.CAS]: 1, [F.CER]: 0.9, [F.ROV]: 0.9, [F.OST]: 0.8, [F.FAG]: 0.8, [F.RIP]: 0.6, [F.LEC]: 0.5 },
     months: m(0, 0, 0, 0, 0, 0, 0, 0.1, 0.5, 1, 0.9, 0.2),
-    elev: [200, 1500], topt: 11, tsd: 3.5, lag: [5, 15], eref: 25, minCap: 0, shockWeight: 3,
+    elev: [200, 1500], topt: 11, tsd: 3.5, lag: [5, 15], eref: 25, minCap: 0,
     warning: 'Tossico crudo o poco cotto: sbollentare e scartare l\'acqua prima della cottura.',
-    evidence: 'Euristica; buttate legate al primo freddo.',
+    evidence: 'Euristica. Il calo di temperatura non dà bonus: la fonte trovata riguarda solo i porcini.',
   },
   {
     id: 'virescens', group: 'colombina', name: 'Colombina / verdone', latin: 'Russula virescens, R. cyanoxantha',

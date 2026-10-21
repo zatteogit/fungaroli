@@ -27,16 +27,16 @@ function setup(){
 }
 const req=(env,path='',method='GET',body,actor='admin',origin=ORIGIN)=>handleCms(new Request(ORIGIN+'/api/cms/v1/survey-responses'+path,{method,headers:{...(actor?{cookie:'__Host-fungaroli_session='+actor}:{}),origin,'content-type':'application/json'},...(body?{body:JSON.stringify(body)}:{})}),env,NOW);
 const {SURVEY_ID,SURVEY_VERSION}=await import('../js/survey-schema.js');
-const input={mode:'interview',collectedOn:'2026-10-19',reason:'Intervista locale di verifica',data:{survey:SURVEY_ID,version:SURVEY_VERSION,respondent:{name:null,contact:null},consent:{anonymousUse:true,recontact:false,diary:false},answers:{profile:{years:12}}}};
+const input={mode:'interview',collectedOn:'2026-10-19',reason:'Intervista locale di verifica',data:{survey:SURVEY_ID,version:SURVEY_VERSION,respondent:{name:null,contact:null},consent:{anonymousUse:true,recontact:false,diary:false},answers:{profile:{years:'da 5 a 14 anni'}}}};
 test('questionari: permessi, consenso, inserimento, revisione, conflitto, export e cancellazione',async()=>{
  const {env,sql}=setup();
  for(const actor of [null,'editor','member'])assert.equal((await req(env,'','GET',undefined,actor)).status,actor?403:401);
  assert.equal((await req(env,'','POST',input,'admin','https://foreign.test')).status,403);
  assert.equal((await req(env,'','POST',{...input,data:{...input.data,consent:{anonymousUse:false}}})).status,422);
- let r=await req(env,'','POST',input);assert.equal(r.status,201,await r.clone().text());let row=await r.json();assert.equal(row.answers.profile.years,12);assert.equal(row.history.length,1);
- r=await req(env,'/'+row.id,'PATCH',{...input,revision:0,data:{...input.data,answers:{profile:{years:13}}}});assert.equal(r.status,200,await r.clone().text());row=await r.json();assert.equal(row.revision,1);assert.equal(row.history.length,2);
+ let r=await req(env,'','POST',input);assert.equal(r.status,201,await r.clone().text());let row=await r.json();assert.equal(row.answers.profile.years,'da 5 a 14 anni');assert.equal(row.history.length,1);
+ r=await req(env,'/'+row.id,'PATCH',{...input,revision:0,data:{...input.data,answers:{profile:{years:'da 15 a 29 anni'}}}});assert.equal(r.status,200,await r.clone().text());row=await r.json();assert.equal(row.revision,1);assert.equal(row.history.length,2);
  assert.equal((await req(env,'/'+row.id,'PATCH',{...input,revision:0})).status,412);
- const list=await(await req(env,'?mode=interview&includeAnswers=true')).json();assert.equal(list.total,1);assert.equal(list.items[0].answers.profile.years,13);
+ const list=await(await req(env,'?mode=interview&includeAnswers=true')).json();assert.equal(list.total,1);assert.equal(list.items[0].answers.profile.years,'da 15 a 29 anni');
  assert.ok((await(await req(env,'/schema')).json()).answersSpec);
  assert.equal((await req(env,'/'+row.id,'DELETE')).status,200);assert.equal((await req(env,'/'+row.id)).status,404);assert.equal(sql.prepare('SELECT count(*) AS n FROM survey_response_history').get().n,0);
 });

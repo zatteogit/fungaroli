@@ -4,7 +4,7 @@
 
 import {fetchForecast} from './weather-request.js';
 import {cachedZoneWeather,saveZoneWeather,migrateGrowthCache,validWeatherRows,WEATHER_FRESH_MS} from './weather-cache.js';
-import {compactGrowth} from './weather-data.js';
+import {compactGrowth,GROWTH_DAILY,GROWTH_HOURLY,soilFraction} from './weather-data.js';
 export const PAST_DAYS = 62;
 export const FORECAST_DAYS = 8;
 const CACHE_TTL_MS = 60 * 60 * 1000;
@@ -17,11 +17,13 @@ export function toDaily(loc, todayStr, source = {}) {
   const byDay = {};
   (h.time || []).forEach((t, k) => {
     const day = t.slice(0, 10);
-    const b = (byDay[day] ||= { m: 0, n: 0, st: 0, ns: 0 });
+    const b = (byDay[day] ||= { m: 0, n: 0, st: 0, ns: 0, md: 0, nd: 0 });
     const sm = h.soil_moisture_3_to_9cm?.[k];
     const st = h.soil_temperature_6cm?.[k];
-    if (Number.isFinite(sm) && sm >= 0 && sm <= 1) { b.m += sm; b.n++; }
+    const sd = h.soil_moisture_9_to_27cm?.[k];
+    if (soilFraction(sm) !== null) { b.m += sm; b.n++; }
     if (Number.isFinite(st)) { b.st += st; b.ns++; }
+    if (soilFraction(sd) !== null) { b.md += sd; b.nd++; }
   });
   const dates = d.time;
   return {
@@ -30,8 +32,15 @@ export function toDaily(loc, todayStr, source = {}) {
     tmean: dates.map((_, k) => finite(d.temperature_2m_mean?.[k])),
     tmin: dates.map((_, k) => finite(d.temperature_2m_min?.[k])),
     tmax: dates.map((_, k) => finite(d.temperature_2m_max?.[k])),
-    soilm: dates.map((x,k) => (byDay[x]?.n >= 24 ? byDay[x].m / byDay[x].n : finite(d.soil_moisture_3_to_9cm_mean?.[k]))),
+    // la media compatta (Worker, copie locali) ha lo stesso controllo 0–1 della via oraria: fuori intervallo vale null
+    soilm: dates.map((x,k) => (byDay[x]?.n >= 24 ? byDay[x].m / byDay[x].n : soilFraction(d.soil_moisture_3_to_9cm_mean?.[k]))),
     soilt: dates.map((x,k) => (byDay[x]?.ns >= 24 ? byDay[x].st / byDay[x].ns : finite(d.soil_temperature_6cm_mean?.[k]))),
+    // Umidità del suolo tra 9 e 27 cm: solo registrata (grafici futuri, previsioni datate), non entra nell'indice.
+    // Le copie salvate prima di questo campo non lo hanno: la serie resta di null, cioè dato mancante.
+    soilm9to27: dates.map((x,k) => (byDay[x]?.nd >= 24 ? byDay[x].md / byDay[x].nd : soilFraction(d.soil_moisture_9_to_27cm_mean?.[k]))),
+    // ET₀ di riferimento FAO-56 (Open-Meteo et0_fao_evapotranspiration, mm/giorno, CC BY 4.0): solo registrata
+    // (previsioni datate del Taccuino), non entra nell'indice. Le copie senza il campo danno una serie di null.
+    et0: dates.map((_, k) => d.et0_fao_evapotranspiration?.[k] >= 0 ? finite(d.et0_fao_evapotranspiration[k]) : null),
     todayIndex: dates.indexOf(todayStr),
     issuedIndex: dates.indexOf(source.fetchedAt ? todayISO(new Date(source.fetchedAt)) : todayStr),
     source: { ...source, latitude: loc.latitude, longitude: loc.longitude, elevation: loc.elevation,
@@ -57,6 +66,8 @@ export async function loadWeather(zones, { force = false,onProgress,onUpdate,sig
       for (const s of snap.series[zid]) {
         const i = s.dates.indexOf(today);
         s.todayIndex = i;
+        // istantanee costruite prima di questi strati: serie di null (dato mancante), mai assenti
+        for (const k of ['soilt', 'soilm9to27', 'et0']) if (!Array.isArray(s[k])) s[k] = s.dates.map(() => null);
         if (i < 0) stale = true;
         s.issuedIndex ??= Number.isFinite(age) ? s.dates.indexOf(todayISO(fetchedAt)) : -1;
         s.source = { ...s.source, fetchedAt: snap.fetchedAt,
@@ -84,7 +95,7 @@ export async function loadWeather(zones, { force = false,onProgress,onUpdate,sig
   const locs=waiting.flatMap(z=>z.bands.map((band,bi)=>({z,bi,band})));
   const params=new URLSearchParams({
     latitude:locs.map(l=>l.z.lat).join(','),longitude:locs.map(l=>l.z.lon).join(','),elevation:locs.map(l=>l.band).join(','),
-    daily:'precipitation_sum,temperature_2m_mean,temperature_2m_min,temperature_2m_max',hourly:'soil_moisture_3_to_9cm,soil_temperature_6cm',past_days:PAST_DAYS,forecast_days:FORECAST_DAYS,timezone:'Europe/Rome',
+    daily:GROWTH_DAILY,hourly:GROWTH_HOURLY,past_days:PAST_DAYS,forecast_days:FORECAST_DAYS,timezone:'Europe/Rome',
   });
   let failure;
   try{

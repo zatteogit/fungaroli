@@ -24,7 +24,7 @@ test('avvio unico: il consenso continua a bloccare le viste e poi lascia il cont
  await page.goto('/');await expect(page.locator('#onboarding')).toBeVisible();await expect(page.locator('#views')).toHaveAttribute('inert','');
  await expect(page.locator('#legal-loading')).toContainText('Anche una ricerca a vuoto');await expect(page.locator('#hero .loader')).toHaveAttribute('aria-hidden','true');
  await page.getByRole('button',{name:'Ho letto, continua',exact:true}).click();await expect(page.locator('#hero .cover-link')).toBeVisible();await expect(page.locator('#legal-loading')).toBeHidden();
- await expect(page.locator('#days .d-area')).toContainText(/km da/);await expect(page.locator('#hero .cover-trace')).toHaveCount(1);await expect(page.locator('.regional-route-preview').first()).toBeVisible();
+ await expect(page.locator('#days .day-all')).not.toContainText('Raggio');await expect(page.locator('#days .d-area')).toHaveCount(0);await expect(page.locator('#hero .cover-trace')).toHaveCount(1);await expect(page.locator('.regional-route-preview').first()).toBeVisible();
  await context.close();
 });
 for(const [width,theme]of [[320,'light'],[390,'dark'],[1280,'light']])test(`324: andata, ritorno e raccordo distinti a ${width}px ${theme}`,async({browser})=>{

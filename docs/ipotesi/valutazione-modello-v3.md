@@ -1,6 +1,8 @@
 # Valutazione del modello «v3»: pacchetto Codex (A) e documento «Fronda 3.0» (B)
 
 > **Stato: ipotesi valutate.** Né A né B sono adottati. Ciò che entra nell'app passa da una PR verso produzione con le decisioni della sezione 9. Registro: [README.md](README.md).
+>
+> **Aggiornamento del 21/10/2026:** stato delle decisioni e della prima integrazione nella sezione 10. D5 è chiusa: `tsd` del porcino resta 3,5.
 
 16 ottobre 2026. Sintesi per Matteo di tre analisi indipendenti (codice e test, fonti, impianto scientifico) e di alcune verifiche fatte per questa sintesi. Nessun file dell'app né del pacchetto A è stato modificato per questa valutazione.
 
@@ -636,3 +638,29 @@ Ho verificato oggi su Crossref i metadati di tutte le voci con DOI elencate qui 
 - **D3:** sforzo come durata effettiva in classi, ricerca conclusa e motivo di fine; durata obbligatoria solo con specie cercate senza ritrovamento; durata prevista facoltativa nel piano.
 - **D4:** consenso alla ricerca con una casella separata, spenta di default e revocabile, con testo nuovo in `docs/legale.md`.
 - **D5:** non chiesta; resta `tsd` 3,5 finché la prova offline (4.5) non dice altro.
+
+## 10. Stato al 21 ottobre 2026
+
+Controllato sul ramo locale `lavoro-fase-b` (commit `a23cea0`, seconda tornata unita alla produzione v319) e sulla produzione `71608ba`. Nessuna di queste voci cambia l'indice, salvo lo shock termico, deciso a parte il 16/10 (vedi sotto).
+
+| Voce | Stato | Dove |
+|---|---|---|
+| 4.0.1 Indice su 100 nella lista «dove cercarla» | **Corretto** in produzione: usa `formatIndex` | `js/app.js`, riga «indice oggi» |
+| 4.0.2 Controllo 0–1 dell'umidità giornaliera compatta | **Corretto** nella seconda tornata (in PR): `soilFraction` per strato 3–9 e 9–27 cm, nel Worker, nel KV e nel browser | `js/weather-data.js`, `js/weather.js`, `worker/weather-provider.js` |
+| 4.0.3 Segnalazione condivisa con lo sforzo vecchio | **Corretto** nella seconda tornata (in PR): la segnalazione si ritira anche quando cambiano minuti, cercatori o inizio | `sharedFieldsChanged` in `worker/community.js` |
+| D1 / 4.1 Archivio quotidiano delle previsioni | **Deciso, non costruito.** Non ci sono `worker/forecast-archive.js` né la migrazione `0005` | — |
+| D2 / 4.2 Previsione salvata con 9–27 cm ed ET₀ | **Costruito** nella seconda tornata (in PR): profilo `growth` con le due variabili, profilo di transizione `growthLegacy`; la previsione salvata ha 31 giorni (non 60) di ingressi, l'indice con e senza shock e i fattori dello shock. **In corso**: salvataggio automatico una volta per zona e giorno | `js/forecast-capture.js`, [meteo-cache.md](../meteo-cache.md) |
+| D3, D4 / 4.3 Sforzo e consenso alla ricerca | **Decisi, da costruire** | — |
+| 4.4 «Bosco adatto» e «condizioni meteo» | Non riverificato in questo aggiornamento. I dati statici della seconda tornata compaiono come fatti descrittivi, con la fonte, e non cambiano l'indice | `js/site-info.js` |
+| D5 / 4.5 Prova offline e curva termica | **Prova eseguita** (16/10, verificata il 21/10) e in PR con la seconda tornata. **D5 chiusa: `tsd` resta 3,5** | `tools/benchmark-bielefeld/README.md`, [metodo-scientifico.md](../metodo-scientifico.md#una-prova-offline-i-porcini-di-bielefeld) |
+
+**Esiti della prova offline** (Fatto verificato sul README della prova, commit `ff52daf`). AP stratificata dentro la stagione, 1.090 giorni, 155 positivi, a caso 0,211; intervalli bootstrap (B) e jackknife (J) per stagione.
+
+- (a) indice contro climatologia: +0,101, B [0,013; 0,226], J [−0,044; 0,245]: **non distinguibile** su questi dati.
+- (b) σ 2,0 contro `tsd` 3,5: −0,047, B [−0,127; 0,012], J [−0,135; 0,042]: **non distinguibile**.
+- (b′) σ stimato fuori campione contro 3,5: −0,041, B [−0,112; 0,013], J [−0,123; 0,042]: **non distinguibile**. Lettura congiunta preregistrata: «Nessun vantaggio dimostrato per la curva più stretta».
+- Deviazione dichiarata dal README: δ = 0,02 non è stato confermato da Matteo prima dell'esecuzione; le etichette non dipendono da δ.
+
+**Shock termico (decisione del 16/10/2026, modello 2.1.0).** Solo porcino e porcino rosso, calo di 5 °C della temperatura del suolo a 6 cm, bonus ×1,15 da 6 a 15 giorni dopo, mai cumulato, etichetta Euristica. È coerente con la riga «Shock» della tabella 7.2 («Olivier 1997 per lo shock, solo porcini»). Le previsioni salvate conservano l'indice con e senza shock: a fine della prossima stagione, con uscite che abbiano zeri espliciti, si confrontano; se la versione con shock non fa meglio, si toglie. Dettagli e limiti in [metodo-scientifico.md](../metodo-scientifico.md), sezione 6.
+
+**Avvertenza per chi ripete la prova.** `valuta.py` controlla l'impronta dei moduli congelati (`js/model.js` 2.0.0) e con la 2.1.0 si ferma. La parte misurata (stagione × pioggia × temperatura) non cambia con la 2.1.0, ma il controllo va aggiornato dichiarandolo come deviazione.

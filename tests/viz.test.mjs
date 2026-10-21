@@ -2,8 +2,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { scaleLinear, niceStep, niceTicks, overlaps, placeLabels, dayTicks, nearestIndex, textWidth } from '../js/viz.js';
-import { soilLevel, dayStory } from '../js/science.js';
-import { PARAMS } from '../js/model.js';
+import { soilLevel, dayStory, renderWhy } from '../js/science.js';
+import { PARAMS, scoreSpecies } from '../js/model.js';
+import { SPECIES } from '../js/species.js';
 
 test('scala lineare e dominio degenere', () => {
   const y = scaleLinear(0, 10, 100, 0);
@@ -106,4 +107,47 @@ test('senza evento di innesco, con fattori mancanti, fuori fascia', () => {
   assert.match(m.rain, /Mancano dati di pioggia/);
   assert.match(m.temp, /Mancano dati di temperatura/);
   assert.match(m.next, /non è calcolabile/);
+});
+
+// ---- Ragioni dell'indice: il calo è della temperatura del suolo, non dell'aria ----
+function shockSeries(drop) {
+  const n = 40, dates = Array.from({ length: n }, (_, k) => new Date(Date.UTC(2026, 9, 10 - (n - 1 - k))).toISOString().slice(0, 10));
+  const p = Array(n).fill(0); p[27] = 25; p[28] = 15;
+  const soilt = Array(n).fill(15); for (const k of [20, 21, 22]) soilt[k] = 15 - drop;
+  return { dates, p, tmean: Array(n).fill(13), tmin: Array(n).fill(6), tmax: Array(n).fill(18), soilm: Array(n).fill(0.3), soilt, todayIndex: n - 1 };
+}
+const beech = { sample_categories: ['Faggeta'], samples: Array.from({ length: 50 }, () => [1300, 0]) };
+const why = (id, s, i) => { const sp = SPECIES.find((x) => x.id === id), r = scoreSpecies(sp, s, i, beech, 1300); return renderWhy({ r, s, i, sp, band: 1300, dateStr: s.dates[i], shown: r.score }); };
+const plain = (html) => html.replace(/<[^>]+>/g, ' ').replace(/&#?\w+;/g, ' ');
+
+test('le ragioni parlano di calo della temperatura del suolo, con fonte ed etichetta euristica', () => {
+  const s = shockSeries(6), html = plain(why('edulis', s, 30));
+  assert.match(html, /Calo della temperatura del suolo di 6,0\u00a0°C 10 giorni prima/);
+  assert.match(html, /stimata a 6 cm/);
+  assert.match(html, /osservazione preliminare/); assert.match(html, /Olivier et al\. 1997/);
+  assert.match(html, /Bonus ipotizzato/);
+  assert.doesNotMatch(html, /Shock termico|dell’aria|dell'aria|nella media tra 4 e 14/);
+  assert.match(plain(why('edulis', shockSeries(4), 30)), /Nessun calo della temperatura del suolo: nessun bonus/);
+  const missing = shockSeries(6); missing.soilt[20] = null;
+  const m = plain(why('edulis', missing, 30));
+  assert.match(m, /Temperatura del suolo incompleta: nessun bonus/); assert.match(m, /bonus per il suo calo non è stato valutato/);
+  assert.match(plain(why('mellea', s, 30)), /Non usato per questa specie/);
+});
+
+// Peso giusto per un'evidenza debole (decisione del 16/10/2026): il calo del suolo compare per ultimo,
+// come «possibile innesco, osservazione preliminare», con l'etichetta Euristica e mai Letteratura.
+test('il calo del suolo è l’ultima ragione, «possibile innesco», euristica e mai letteratura', () => {
+  const s = shockSeries(6), sp = SPECIES.find((x) => x.id === 'edulis'), r = scoreSpecies(sp, s, 30, beech, 1300);
+  const html = renderWhy({ r, s, i: 30, sp, band: 1300, dateStr: s.dates[30], shown: r.score });
+  assert.match(plain(html), /possibile innesco, osservazione preliminare \(Olivier et al\. 1997\)/);
+  const checks = html.match(/<ul class="sci-checks"[\s\S]*?<\/ul>/)[0];
+  const lastCheck = checks.match(/<li>[\s\S]*?<\/li>/g).at(-1);
+  assert.match(lastCheck, /Calo di temperatura del suolo/);
+  assert.doesNotMatch(html.match(/<ul class="sci-signals"[\s\S]*?<\/ul>/)[0], /Calo di temperatura del suolo/);
+  const factors = html.match(/<ol class="sci-factors">[\s\S]*?<\/ol>/)[0].match(/<li>[\s\S]*?<\/li>/g);
+  const last = factors.at(-1);
+  assert.match(last, /Calo di temperatura del suolo/);
+  assert.match(last, /ev-eur/);
+  assert.doesNotMatch(last, /ev-lett|Letteratura/);
+  assert.match(plain(why('edulis', shockSeries(4), 30)), /Nessun calo della temperatura del suolo: nessun bonus \(possibile innesco/);
 });

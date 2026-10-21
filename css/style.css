@@ -313,6 +313,19 @@ label.btn { display: inline-flex; }
 .plan-where { color: var(--text-2); }
 /* albero ospite non confermato dalla Carta Forestale (pinarolo, moretta): accanto al consiglio, senza cambiare l'indice */
 .plan-host, .zsp-host { display: block; margin-top: 4px; color: var(--warn-ink); }
+/* il sentiero mostrato non passa dalla fascia dell'indice (audit OUT-11): detto subito, sotto la specie */
+.plan-band-off { display: block; margin-bottom: 4px; color: var(--text); }
+/* fascia dell'indice tutta in zona di riserva del Parco (esclusioni) o punto proposto in zona con avviso (avvisi): detto per primo, sotto la specie */
+.plan-reserve { display: block; margin: 0 0 4px; color: var(--warn-ink); font-weight: 600; }
+/* informazioni sul bosco della fascia e della zona: da leggere, fuori dall'indice */
+.site-info { margin: 14px 0 0; padding: 12px 14px; border-radius: var(--r-sm); background: var(--surface-2); }
+.site-info-h { margin: 0 0 6px; font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+.site-info-list { margin: 0 0 6px; padding-left: 18px; display: grid; gap: 4px; font-size: 14px; color: var(--text-2); }
+.site-info-list.small { font-size: 13px; margin-top: 10px; }
+.site-info-list .si-riserva { color: var(--warn-ink); font-weight: 600; }
+/* zona di riserva con avviso (data/habitat-info.json, avvisi): stessa cautela, senza grassetto */
+.site-info-list .si-avviso { color: var(--warn-ink); }
+.access-src { margin-top: 8px; }
 /* età del meteo nella scheda della zona, subito sotto i giorni */
 .wx-age { margin: -4px 0 12px; }
 .plan-crit { display: block; margin: 6px 0 2px; padding: 8px 10px; border-radius: 10px; background: var(--crit-bg); color: var(--crit-ink, var(--crit)); font-size: 13px; font-weight: 500; line-height: 1.45; }
@@ -848,8 +861,9 @@ html.is-offline #updated { color: var(--warn-ink); font-weight: 600; }
 .plan-alt { color: var(--text); font-weight: 500; }
 .plan-alt a { font-weight: 700; }
 
-/* mappa: un pannello alla volta */
-.view-map:has(#map-sheet:not([hidden])) .legend-box { display: none; }
+/* mappa: un pannello alla volta. La legenda dentro il pannello «Livelli» (o nell'elenco) resta: è lì che il
+   pannello rimanda («vedi Legenda») anche con il riquadro della zona aperto. */
+.view-map:has(#map-sheet:not([hidden])) .legend-box:not(:is(.mapctl-panel, .map-results-body) .legend-box) { display: none; }
 .zone-label-min { padding: 3px 8px 3px 6px; font-size: 11.5px; opacity: .82; }
 .zone-label-sel { box-shadow: 0 0 0 2px var(--text), 0 2px 8px rgb(0 0 0 / .2); }
 .map-p { width: 28px; height: 28px; border-radius: 8px; display: grid; place-items: center; background: var(--accent); color: var(--accent-ink); font-weight: 800; font-size: 15px; border: 2.5px solid var(--surface); box-shadow: 0 2px 8px rgb(0 0 0 / .3); }
@@ -1251,6 +1265,20 @@ html.is-offline #updated { color: var(--warn-ink); font-weight: 600; }
 .fl-more .fl li { color: var(--text-2); }
 .fl-src { margin: 8px 0 0; font-size: 11px; color: var(--muted); }
 .fl-sheet { padding: 10px 12px; border-radius: 12px; background: var(--surface-2); }
+/* livello «Aree protette»: i colori sono le immagini di legenda del servizio (GetLegendGraphic), su carta chiara come la mappa */
+.fl-sheet + .fl-sheet { margin-top: 8px; }
+.pa-sheet li { display: block; }
+.mapctl-ic { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 14px; background: var(--surface-2); box-shadow: 0 0 0 1px var(--hair); color: var(--text-2); transition: box-shadow .15s; }
+.mapctl-ic svg { width: 30px; height: 30px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.mapctl-tile[aria-pressed="true"] .mapctl-ic { box-shadow: 0 0 0 3px var(--accent); color: var(--accent); }
+.pa-leg { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: flex-start; }
+.pa-leg figure { margin: 0; display: grid; gap: 4px; justify-items: start; }
+.pa-leg figcaption { font-size: 11px; color: var(--text-2); max-width: 110px; line-height: 1.3; }
+.pa-leg-img { display: block; max-width: 110px; height: auto; padding: 4px; border-radius: 8px; background: var(--on-photo); box-shadow: inset 0 0 0 1px var(--hair); }
+.pa-zones { display: grid; gap: 3px; margin: 8px 0 6px; font-size: 12px; }
+.pa-zones div { display: grid; grid-template-columns: 22px 1fr; gap: 6px; }
+.pa-zones dt { font-weight: 700; color: var(--text); }
+.pa-zones dd { margin: 0; color: var(--text-2); }
 
 /* ricerca generale */
 /* Un layer opaco sopra l’intera pagina, anche nelle zone scoperte dalle barre
@@ -1797,15 +1825,16 @@ html.theme-swap, html.theme-swap *, html.theme-swap *::before, html.theme-swap *
   .cover .fact { padding: 6px 10px; font-size: 12.5px; }
   .cover-sp small { font-size: 12.5px; }
 }
-/* barra stretta (fitFacts): via le parole meno utili, una alla volta */
-.cover .facts.t1 .fk, .cover .facts.t2 .fk, .cover .facts.t3 .fk { display: none; }
-.cover .facts.t2 .fk2, .cover .facts.t3 .fk2 { display: none; }
-.cover .facts.t3 .fact.wx-ok .fx { display: none; }
-/* ultimo passo: la gente resta come icona (con il testo nel titolo), il meteo che avvisa resta scritto per intero */
-.cover .facts.t4 .fc { display: none; }
+/* barra stretta (fitFacts): «min» diventa ′, poi via il testo del meteo quando è bello, poi il testo della gente
+   (resta l'icona, con il testo nel titolo), infine due righe.
+   «entro le» / «fino alle» (.fk) non si tolgono mai: un orario senza contesto non si capisce (audit OUT-03). */
+.cover .facts:is(.t1, .t2, .t3, .t4) .fk2 { display: none; }
+.cover .facts:is(.t2, .t3, .t4) .fact.wx-ok .fx { display: none; }
+.cover .facts:is(.t3, .t4) .fc { display: none; }
+.cover .facts.t4 { flex-wrap: wrap; border-radius: 16px; }
 @media (max-width: 760px) { .cover .sp-also + .sp-also { display: none; } }
 .cover .fk3 { display: none; }
-.cover .facts.t2 .fk3, .cover .facts.t3 .fk3 { display: inline; }
+.cover .facts:is(.t1, .t2, .t3, .t4) .fk3 { display: inline; }
 /* ===== Loader iniziale: la sagoma della copertina, un fungo che spunta, i passi veri del caricamento ===== */
 #hero:has(.loader) ~ * { display: none !important; }
 #hero ~ :empty, #hero ~ .rail-host:has(> .rail:empty) { display: none; }
