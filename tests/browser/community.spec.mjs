@@ -418,7 +418,8 @@ test('elimina profilo: nessuna copia locale del taccuino o delle sue foto',async
  const note={id:crypto.randomUUID(),kind:'note',category:'appunto',title:'Foto privata',date:todayISO(),zoneId:null,note:'nota da cancellare',reference:null,photo};
  expect((await api(page,'entries/'+note.id,'PUT',note)).status).toBe(200);
  await page.evaluate(()=>localStorage.setItem('fungaroli:diario:v1',JSON.stringify([{id:'anonima',kind:'note',note:'resta'}])));
- await page.goto('/#/diario');await expect(page.locator('#journal-list')).toContainText('Foto privata');
+ // La voce è stata scritta direttamente con l'API: come in «appunti privati», il ricaricamento la scarica dal profilo.
+ await page.goto('/#/diario');await page.reload();await expect(page.locator('#journal-list')).toContainText('Foto privata');
  const local=()=>page.evaluate(async scope=>{
   const db=await new Promise((ok,ko)=>{const r=indexedDB.open('fronda-notebook-photos',1);r.onupgradeneeded=()=>r.result.createObjectStore('photos');r.onsuccess=()=>ok(r.result);r.onerror=()=>ko(r.error);});
   const keys=await new Promise((ok,ko)=>{const r=db.transaction('photos').objectStore('photos').getAllKeys();r.onsuccess=()=>ok(r.result);r.onerror=()=>ko(r.error);});db.close();
