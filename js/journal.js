@@ -50,6 +50,15 @@ export function agreement(entry) {
     falseAlarm: species.filter((s) => s.said && !s.found).length };
 }
 
+// Confronto personale (decisione di Matteo, 22/10/2026): per ogni specie cercata in un'uscita con la previsione
+// salvata prima di partire, il valore dell'indice e l'esito dichiarato. Nessun verdetto: FOUND_THRESHOLD non è tarata.
+export function personalComparison(entries) {
+  return entries.filter((e) => !['plan','note'].includes(e.kind)).flatMap((e) => speciesAgreement(e).map((a) => ({
+    entryId: e.id, date: e.date, zoneId: e.zoneId, speciesId: a.id, predicted: a.predicted, amount: e.finds[a.id],
+  }))).sort((a, b) => String(b.date).localeCompare(String(a.date)) || String(a.speciesId).localeCompare(String(b.speciesId)));
+}
+export const outcomeText = (amount) => amount > 0 ? `trovato · ${LEVELS[amount] || amount}` : 'cercato, zero';
+
 export function summary(entries) {
   const outings = entries.filter((e) => !['plan','note'].includes(e.kind));
   const judged = outings.flatMap(speciesAgreement);
@@ -385,9 +394,12 @@ export function initJournal({ resolveTrip=()=>null,onEntries=()=>{},zones, speci
     if(store&&notifiedEntries!==entries){notifiedEntries=entries;onEntries(entries);}
     const analysis=e=>{
       const a=agreement(e),top=Object.entries(e.predicted||{}).filter(([,v])=>Number.isFinite(v)).sort((x,y)=>y[1]-x[1])[0];
-      return `<details class="notebook-analysis"><summary>Condizioni ${e.kind==='plan'?'salvate':'dell’uscita'}</summary>${top?`<p>Condizioni salvate <span class="growth-value">${fungusGlyph}${formatIndex(top[1])}</span> · ${esc(speciesCatalog.find(x=>x.id===top[0])?.name||top[0])}</p><p class="small muted">Valore storico: non descrive le condizioni attuali.</p>`:''}${e.kind==='plan'?'<p>Previsione salvata prima dell’uscita.</p>':a?a.species.map(x=>`<p>${esc(speciesCatalog.find(s=>s.id===x.id)?.name||x.id)}: ${x.ok?'concordante':x.said?'indice alto, zero osservato':'trovata con indice basso'}</p>`).join(''):'<p>Osservazione senza confronto prospettico.</p>'}</details>`;
+      return `<details class="notebook-analysis"><summary>Condizioni ${e.kind==='plan'?'salvate':'dell’uscita'}</summary>${top?`<p>Condizioni salvate <span class="growth-value">${fungusGlyph}${formatIndex(top[1])}</span> · ${esc(speciesCatalog.find(x=>x.id===top[0])?.name||top[0])}</p><p class="small muted">Valore storico: non descrive le condizioni attuali.</p>`:''}${e.kind==='plan'?'<p>Previsione salvata prima dell’uscita.</p>':a?a.species.map(x=>`<p>${esc(speciesCatalog.find(s=>s.id===x.id)?.name||x.id)}: quel giorno l’indice diceva <span class="growth-value">${fungusGlyph}${formatIndex(x.predicted)}</span> · tu: ${outcomeText(e.finds[x.id])}</p>`).join('')+'<p class="small muted">Un’uscita sola non dice se l’indice funziona.</p>':'<p>Nessuna previsione salvata prima di partire: qui non c’è un confronto.</p>'}</details>`;
     };
-    const result=renderNotebook({entries:route.demo?getDemoEntries():entries.filter(e=>!(e.kind==='plan'&&e.auto)),zones,species:outingSpecies(),zoneImage,referenceImage,route,filter:listFilter,query:listQuery,layout:listLayout,density:listDensity,canPreview:['admin','editor'].includes(currentUser()?.role),actions:rowActions,analysis,shared:e=>store?.kind==='community'&&e.shared});
+    const comparison=personalComparison(entries),zoneName=id=>zones.find(z=>z.id===id)?.title||zones.find(z=>z.id===id)?.name||'';
+    const outingsCount=entries.filter(e=>!['plan','note'].includes(e.kind)).length,compared=new Set(comparison.map(c=>c.entryId)).size;
+    const insight=comparison.length?`<section class="notebook-comparison" aria-labelledby="notebook-comparison-title"><h2 id="notebook-comparison-title">Le tue uscite e l’indice</h2><p class="small muted">Contano solo le uscite con la previsione salvata prima di partire: ${compared} su ${outingsCount}. Sono i tuoi dati: da soli non dicono se l’indice funziona.</p><ul>${comparison.slice(0,8).map(c=>`<li><a href="#/diario/pagina/${encodeURIComponent(c.entryId)}"><span class="notebook-comparison-when">${esc(new Date(c.date+'T12:00:00').toLocaleDateString('it-IT',{day:'numeric',month:'short'}))}${zoneName(c.zoneId)?` · ${esc(zoneName(c.zoneId))}`:''}</span><b>${esc(speciesCatalog.find(s=>s.id===c.speciesId)?.name||c.speciesId)}</b><span class="notebook-comparison-values"><span class="growth-value">${fungusGlyph}${formatIndex(c.predicted)}</span> · ${outcomeText(c.amount)}</span></a></li>`).join('')}</ul>${comparison.length>8?`<p class="small muted">E altri ${comparison.length-8} nelle pagine delle uscite.</p>`:''}</section>`:'';
+    const result=renderNotebook({entries:route.demo?getDemoEntries():entries.filter(e=>!(e.kind==='plan'&&e.auto)),zones,species:outingSpecies(),zoneImage,referenceImage,route,filter:listFilter,query:listQuery,layout:listLayout,density:listDensity,canPreview:['admin','editor'].includes(currentUser()?.role),actions:rowActions,analysis,insight,shared:e=>store?.kind==='community'&&e.shared});
     const heading=document.querySelector('.notebook-heading');
     heading.querySelector('h1').textContent=result.title;
     heading.querySelector('.kicker').textContent=result.kicker;

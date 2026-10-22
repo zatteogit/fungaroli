@@ -410,3 +410,15 @@
 .diary-detail-photo.is-personal .diary-photo-print { padding:12px; }
 
 @media(max-width:359px) { .quick-note-types { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); } .quick-note-types .chip { justify-content:center; } }
+
+/* Confronto personale (22/10/2026): valore dell'indice ed esito dichiarato, senza verdetto. */
+.notebook-comparison { margin:0 0 28px; padding:16px 18px; border:1px solid var(--hair); border-radius:12px; background:var(--surface); }
+.notebook-comparison h2 { margin:0 0 4px; font:500 18px/1.4 var(--font-display); color:var(--text); }
+.notebook-comparison > p { margin:0 0 12px; font:400 13px/1.6 var(--font-body); color:var(--text-2); max-width:65ch; }
+.notebook-comparison ul { list-style:none; margin:0; padding:0; max-width:720px; }
+.notebook-comparison li + li { border-top:1px solid var(--hair); }
+.notebook-comparison li a { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:2px 12px; padding:10px 0; min-height:44px; color:var(--text); text-decoration:none; font:400 14px/1.5 var(--font-body); }
+.notebook-comparison li a:focus-visible { outline:2px solid var(--focus); outline-offset:2px; }
+.notebook-comparison-when { grid-column:1 / -1; font-size:13px; color:var(--text-2); }
+.notebook-comparison b { font-weight:600; }
+.notebook-comparison-values { white-space:nowrap; color:var(--text-2); }
