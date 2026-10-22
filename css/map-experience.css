@@ -32,6 +32,10 @@ body[data-page="mappa"] #views { padding:0; }
 .map-date[aria-expanded="true"] > .map-date-chevron { transform:rotate(180deg); }
 @media(prefers-reduced-motion:reduce) { .map-date > .map-date-chevron { transition:none; } }
 .map-top.days-open #map-filters { border:0; }
+.map-cell-hint { display:flex; align-items:center; gap:10px; margin:4px 8px 2px; font-size:13px; line-height:1.4; color:var(--text-2); }
+.map-cell-hint[hidden] { display:none; }
+.map-cell-scale { display:inline-flex; flex:none; align-items:center; gap:2px; }
+.map-cell-scale i { width:12px; height:12px; border-radius:2px; opacity:.75; }
 .map-weather-status { font-size:12px; line-height:1.5; margin:0 6px; }
 .map-weather-status > summary { cursor:pointer; padding:6px; min-height:32px; color:var(--warn-ink); }
 .map-weather-status #stale { margin:0 0 6px; padding:12px; font-size:13px; }

@@ -1265,10 +1265,23 @@ function renderOutdoorMap() {
     const {z,walk,found}=it,g=L.layerGroup().addTo(map);zoneLayers[z.id]=g;
     L.circle([z.lat,z.lon],{radius:z.radius_m,color:cssVar('--link'),weight:it.selected?3:1,fillOpacity:.06,dashArray:'5 5'}).addTo(g).on('click',()=>chooseMapZone(z.id));
     L.marker([z.lat,z.lon],{icon:L.divIcon({className:'',html:`<span class="zone-label">${mapPlantBadge(z,outdoorDay(z,state.dayOffset),walk)}<span class="zone-name">${esc(shortName(z))}</span></span>`,iconSize:null}),pane:'zoneLabels',title:[z.name,...found.filter(i=>i.kind==='pianta').map(i=>'Da osservare: '+i.name)].join(' · ')}).addTo(g).on('click',()=>chooseMapZone(z.id));
-    if(!it.selected&&map.getZoom()<11.5)continue;
+    if(!mapLayerPrefs.trails||(!it.selected&&map.getZoom()<11.5))continue;
+    const heads=[];
     for(const t of (trails[z.id]?.trails||[]).filter(t=>matchesWalk(t,state)&&matchesInterests(z,outdoorDay(z,state.dayOffset),walkContext(z,t,headsOf(z,t))))){
-      for(const line of t.lines||[])L.polyline(line,{color:cssVar('--link'),weight:walk?.t.id===t.id?5:3,opacity:.8}).addTo(g).on('click',()=>{state.trailId=t.id;openOutdoorSheet(z.id);renderMap();}).bindTooltip(esc(trailName(t)));
-      for(const h of headsOf(z,t))L.marker([h.lat,h.lon],{icon:L.divIcon({className:'',html:'<span class="map-p">↗</span>',iconSize:[28,28]}),title:`Imbocco: ${trailName(t)}`}).addTo(g).on('click',()=>{location.hash=walkHref(z,state.dayOffset,t);});
+      for(const line of t.lines||[])trailLine(g,line,{color:cssVar('--link'),weight:walk?.t.id===t.id?5:3}).on('click',e=>{L.DomEvent.stop(e);state.trailId=t.id;openOutdoorSheet(z.id);renderMap();}).bindTooltip(esc(trailName(t)));
+      for(const h of headsOf(z,t)){const same=heads.find(q=>Math.abs(q.h.lat-h.lat)<0.0015&&Math.abs(q.h.lon-h.lon)<0.002);if(same)same.ts.includes(t)||same.ts.push(t);else heads.push({h,ts:[t]});}
+    }
+    // Stessa regola della mappa dei funghi: imbocchi a meno di 26 px diventano un segnavia con il conteggio.
+    const groups=[];
+    for(const hd of heads){const pt=map.latLngToContainerPoint([hd.h.lat,hd.h.lon]),gr=groups.find(q=>Math.abs(q.pt.x-pt.x)<26&&Math.abs(q.pt.y-pt.y)<26);if(gr)gr.items.push(hd);else groups.push({pt,items:[hd]});}
+    for(const gr of groups){
+      const [first]=gr.items,n=gr.items.length,t=first.ts[0],names=[...new Set(gr.items.flatMap(x=>x.ts.map(trailName)))];
+      const stripes=`<span class="map-th${first.h.kind==='strada'?'':' unpaved'}" aria-hidden="true"><i></i><i></i><i></i></span>`;
+      const html=n>1?`<span class="map-th-group" aria-hidden="true">${stripes}<b>${t.ref?`${esc(t.ref)} `:''}+${n-1}</b></span>`:stripes;
+      L.marker([first.h.lat,first.h.lon],{icon:L.divIcon({className:'',html,iconSize:n>1?null:[18,22],iconAnchor:n>1?null:[9,11]}),keyboard:true,title:n>1?`${n} imbocchi vicini: ${names.join(', ')}. Avvicina la carta per separarli`:`Imbocco: ${names.join(', ')}`}).addTo(g).on('click',()=>{
+        if(n>1&&map.getZoom()<map.getMaxZoom())map.fitBounds(L.latLngBounds(gr.items.map(x=>[x.h.lat,x.h.lon])).pad(0.5),mapCameraOptions({maxZoom:Math.min(map.getMaxZoom(),map.getZoom()+2)}));
+        else location.hash=walkHref(z,state.dayOffset,t);
+      });
     }
   }
 }
@@ -2515,6 +2528,16 @@ function initMap() {
 const PA_WMS = 'https://geoportale.regione.lazio.it/geoserver/ows';
 const PA_LAYERS = ['geonode:zoning_pngsl', 'geonode:zoning_montagne_duchessa0', 'geonode:aree_naturali_protette1'];
 let protectedOn = false;
+// Riquadri dell'habitat e sentieri si possono spegnere da Livelli: la scelta resta nel browser.
+const MAP_LAYERS_KEY = 'fungaroli:map-layers:v1';
+const mapLayerPrefs = (() => { try { return { cells: true, trails: true, ...JSON.parse(localStorage.getItem(MAP_LAYERS_KEY) || '{}') }; } catch { return { cells: true, trails: true }; } })();
+const saveMapLayers = () => { try { localStorage.setItem(MAP_LAYERS_KEY, JSON.stringify(mapLayerPrefs)); } catch { /* storage non disponibile */ } };
+// Sentieri in un livello sopra i riquadri, con un bordo chiaro che li stacca da colori e carta.
+function trailLine(g, line, { color, weight, opacity = 0.95 }) {
+  if (!map.getPane('trails')) map.createPane('trails').style.zIndex = 430;
+  L.polyline(line, { pane: 'trails', color: cssVar('--story-avorio'), weight: weight + 3, opacity: 0.85 * Math.min(1, opacity / 0.9), interactive: false }).addTo(g);
+  return L.polyline(line, { pane: 'trails', color, weight, opacity }).addTo(g);
+}
 function mapControls({ bases = null, forest, protectedAreas = null }) {
   let base = bases?.[0]?.[2] || null, me = null;
   const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
@@ -2531,6 +2554,8 @@ function mapControls({ bases = null, forest, protectedAreas = null }) {
           ${bases ? `<p class="eyebrow">Tipo di mappa</p><div class="mapctl-tiles">${bases.map(([n, img], k) => `<button type="button" class="mapctl-tile" data-base="${k}" aria-pressed="${k === 0}"><img data-src="${img}" alt="" width="64" height="64"><span>${n}</span></button>`).join('')}</div>` : ''}
           <p class="eyebrow">Dettagli della mappa</p>
           <div class="mapctl-tiles"><button type="button" class="mapctl-tile" data-act="forest" aria-pressed="false"><img data-src="assets/map-thumb-forest.jpg" alt="" width="64" height="64"><span>Carta Forestale</span></button>${protectedAreas ? `<button type="button" class="mapctl-tile" data-act="protected" aria-pressed="false"><span class="mapctl-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.5 3 8 7 10 4-2 7-5.5 7-10V6z"/><path d="M9 12.5 11 14.5 15 10"/></svg></span><span>Aree protette</span></button>` : ''}</div>
+          <p class="eyebrow">Sulla carta</p>
+          <div class="mapctl-tiles"><button type="button" class="mapctl-tile" data-act="cells" aria-pressed="${mapLayerPrefs.cells}"><span class="mapctl-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/></svg></span><span>Riquadri dell’habitat</span></button><button type="button" class="mapctl-tile" data-act="trails" aria-pressed="${mapLayerPrefs.trails}"><span class="mapctl-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 20c2-5 7-3 8-8s4-6 6-8"/><circle cx="5" cy="20" r="1.5" fill="currentColor"/></svg></span><span>Sentieri</span></button></div>
           <p class="small muted mapctl-note" hidden>Colori dei tipi di bosco: vedi Legenda in basso.</p>
           <p class="small muted mapctl-note-pa" hidden>Aree protette e zone dei piani: vedi Legenda. Indicative, fa fede la cartografia dell’ente.</p>
         </div>`;
@@ -2568,6 +2593,11 @@ function mapControls({ bases = null, forest, protectedAreas = null }) {
           if (w) { w.hidden = !on; w.innerHTML = protectedLegend(); }
           if (sheetZone && !$('#map-sheet').hidden && !sheetPoint) openSheet(sheetZone);
           if (on) $('.legend-box').open = true;
+        }
+        if (act === 'cells' || act === 'trails') {
+          mapLayerPrefs[act] = !mapLayerPrefs[act]; saveMapLayers();
+          b.setAttribute('aria-pressed', String(mapLayerPrefs[act]));
+          if (results) renderMap();
         }
         if (b.dataset.base != null) {
           const nb = bases[+b.dataset.base][2];
@@ -2659,6 +2689,16 @@ function syncCellBackdrop() {
   const el=$('#map'),bounds=map.getBounds();
   const visible=(el.classList.contains('cells-on')&&cellHits.some(({c,dLat,dLon})=>bounds.intersects([[c.lat-dLat,c.lon-dLon],[c.lat+dLat,c.lon+dLon]])))||(el.classList.contains('cells-peek')&&peekCellBounds.some(b=>bounds.intersects(b)));
   el.classList.toggle('cells-visible',visible);
+  syncCellHint(visible&&el.classList.contains('cells-on'));
+}
+// Chiave dei riquadri e gesto per aprirli, solo quando sono in vista: al tocco non c'è anteprima.
+function syncCellHint(show){
+  const hint=$('#map-cell-hint');if(!hint)return;
+  hint.hidden=!show;if(!show)return;
+  const scale=[...CLASSES].reverse().map(c=>`<i style="background:var(${mapVar(c.min)})"></i>`).join('');
+  const verb=canHover?'clicca':'tocca',action=state.zoneId?`${verb} un riquadro`:`${verb} una zona, poi un riquadro`;
+  const html=`<span class="map-cell-scale" aria-hidden="true" title="Da basso ad alto">${scale}</span><span>Habitat potenziale, non presenza · ${action}</span>`;
+  if(hint.innerHTML!==html)hint.innerHTML=html;
 }
 // popover della mappa: titolo e percentuale grande, una riga per fungo con la barretta nella scala dell'indice, l'azione in fondo
 function mapCard({ title, sub, pct, rows = [], more = 0, foot = '', interactive = false }) {
@@ -2765,7 +2805,7 @@ function cellsLayer(z, d, interactive = true) {
   const dLat = size / 2 / 111320, dLon = size / 2 / (111320 * Math.cos(z.lat * Math.PI / 180));
   for (const c of zoneCells(z, d)) {
     L.rectangle([[c.lat - dLat, c.lon - dLon], [c.lat + dLat, c.lon + dLon]], {
-      renderer: cellRenderer, interactive: false, stroke: false, zoneId:z.id, fillColor: cssVar(mapVar(c.v)), fillOpacity: 0.5 + 0.4 * Math.min(1, c.v / 80),
+      renderer: cellRenderer, interactive: false, stroke: false, zoneId:z.id, fillColor: cssVar(mapVar(c.v)), fillOpacity: 0.28 + 0.2 * Math.min(1, c.v / 80),
     }).addTo(lg);
     if (interactive) cellHits.push({ z, c, dLat, dLon });
   }
@@ -2838,7 +2878,7 @@ function renderMap(changed=null) {
   // passaggio cerchi pieni <-> riquadri: prima si anima (carta, cerchi, riquadri in dissolvenza), poi si ridisegna
   const mapEl = $('#map');
   const revision=++mapRenderRevision;
-  const want = map.getZoom() >= 11.5 || !!state.zoneId;
+  const want = mapLayerPrefs.cells && (map.getZoom() >= 11.5 || !!state.zoneId);
   const displayedCell = cellTip?._fz;
   if (cellPeek) hideCellPeek(); // l'etichetta torna al prossimo movimento del mouse
   if (!want) closeCellCard();
@@ -2881,15 +2921,15 @@ function renderMap(changed=null) {
     const showCells = near || selected;
     const circle = L.circle([z.lat, z.lon], {
       radius: z.radius_m, pane:selected?'zoneFocus':'overlayPane', color: selected ? cssVar('--text') : color, weight: selected ? 2.5 : 2,
-      dashArray: showCells ? '6 6' : null, fillColor: color, fillOpacity: showCells?0:0.28, zoneId:z.id,className: `zone-c${showCells ? ' has-cells' : ''}${selected?' is-selected':''}`,
+      dashArray: showCells ? '6 6' : null, fillColor: color, fillOpacity: showCells?0:0.28, zoneId:z.id,className: `zone-c${showCells ? ' has-cells' : ''}${showCells && !mapLayerPrefs.cells ? ' no-cells' : ''}${selected?' is-selected':''}`,
     }).addTo(g).on('click', e => {
       if(z.id===state.zoneId&&pinCellCard(e))return;
       // Lo stesso clic non deve selezionare il cerchio e aprire anche il campione nel bubbling.
       if(e.originalEvent)e.originalEvent._frondaCellHandled=true;
       chooseMapZone(z.id,{anchor:e.latlng});
     });
-    if (showCells && d) cellsLayer(z, d).addTo(g);
-    else if (d && canHover) {
+    if (showCells && d && mapLayerPrefs.cells) cellsLayer(z, d).addTo(g);
+    else if (d && canHover && mapLayerPrefs.cells && !showCells) {
       // a volo d'uccello: passandoci sopra la zona si accende e mostra in anteprima i suoi riquadri
       let prev = null;
       circle.on('mouseover', () => { circle.setStyle({ weight: 3.5, dashArray: '6 6' }); circle.getElement()?.classList.add('peek'); prev ||= cellsLayer(z, d, false); prev.addTo(g);peekCellBounds=prev.getLayers().map(layer=>layer.getBounds());mapEl.classList.add('cells-peek');requestAnimationFrame(syncCellBackdrop); });
@@ -2906,17 +2946,21 @@ function renderMap(changed=null) {
       icon: L.divIcon({ className: '', html: `<span class="zone-label${state.zoneId && !selected ? ' zone-label-min' : ''}${selected ? ' zone-label-sel' : ''}">${mapPlantBadge(z,d,walkFor(z,d))}${Number.isFinite(s)?`<span class="growth-value">${indexGlyph(s)}<b class="pc">${formatIndex(s)}</b></span>`:''}${state.zoneId && !selected ? '' : ` <span class="zone-name">${esc(shortName(z))}</span>`}</span>`, iconSize: null }),
       interactive:true,pane:'zoneLabels',title:z.name,
     }).addTo(g).on('click',()=>chooseMapZone(z.id));
-    if (selected && d?.best) {
-      const tl = trailsFor(z, d.best.species, d.best.band);
-      const topId = tl[0]?.id;
+    // Da vicino tutti i tratti delle zone in vista; con la zona scelta, quelli adatti alla specie in evidenza.
+    const tl = selected && d?.best ? trailsFor(z, d.best.species, d.best.band) : [];
+    const topId = tl[0]?.id;
+    if (mapLayerPrefs.trails && (near || selected)) {
       for (const t of trails[z.id]?.trails || []) {
-        const good = tl.find((x) => x.id === t.id);
+        const good = tl.find((x) => x.id === t.id), top = t.id === topId;
+        const label = `${t.ref ? 'CAI ' + esc(t.ref) + ' · ' : ''}${esc(t.name || t.itinerary.join(' – ') || 'Sentiero')}`;
         for (const line of t.lines) {
-          L.polyline(line, { color: cssVar(t.id === topId ? '--accent' : '--text-2'), weight: t.id === topId ? 5 : good ? 3 : 2, opacity: good ? 0.95 : 0.5, dashArray: good ? null : '4 4' })
-            .addTo(g).on('click', (e) => { L.DomEvent.stop(e); openPoint(z.id, { kind: 'trail', t: good || t, top: t.id === topId }); })
-            .bindTooltip(`${t.ref ? 'CAI ' + esc(t.ref) + ' · ' : ''}${esc(t.name || t.itinerary.join(' – ') || 'Sentiero')}`, { sticky: true });
+          trailLine(g, line, { color: cssVar(top ? '--accent' : '--text-2'), weight: top ? 5 : good ? 3.5 : 2.5, opacity: top || good ? 0.95 : selected ? 0.75 : state.zoneId ? 0.45 : 0.9 })
+            .on('click', (e) => { L.DomEvent.stop(e); if (selected && d?.best) openPoint(z.id, { kind: 'trail', t: good || t, top }); else chooseMapZone(z.id, { anchor: e.latlng }); })
+            .bindTooltip(label, { sticky: true });
         }
       }
+    }
+    if (selected && d?.best) {
       // imbocchi dei sentieri adatti: un segnavia piccolo dove si lascia l'auto (uno per punto, anche se ci passano piu' sentieri)
       const seenTh = [];
       for (const t of tl) for (const h of headsOf(z, t)) {
