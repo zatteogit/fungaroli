@@ -27,10 +27,33 @@ Pacchetto «Buono». Con Funghi i sentieri compaiono da zoom 11,5 come con Senti
 
 Indice, soglie, dati e testi delle schede non cambiano.
 
+## Pacchetto «Ideale» (decisione di Matteo, 22/10)
+
+Approvato dopo il pacchetto «Buono».
+
+**Scheda a tre altezze (fino a 760 px).** Zona, punto, sentiero e riquadro usano la stessa scheda dal basso:
+
+| Altezza | Contenuto | Come ci si arriva |
+| --- | --- | --- |
+| Striscia (circa 84 px) | Giorno e nome, oppure navigazione e titolo del punto | Trascinare la carta, o la maniglia verso il basso |
+| Metà (fino al 48% dello schermo) | Scheda completa come prima | Apertura di un contenuto nuovo; tocco sulla maniglia dalla striscia |
+| Intera | Fino sotto la barra dei filtri | Maniglia verso l’alto o secondo tocco |
+
+- La zona resta scelta in striscia: sentieri, imbocchi e riquadri restano sulla carta. Solo la X chiude e deseleziona.
+- Lo stesso contenuto ridisegnato (meteo, livelli) conserva l’altezza scelta; un contenuto nuovo si apre a metà.
+- Sopra i 760 px resta il pannello laterale di prima, senza maniglia.
+
+**Riquadro nella scheda (fino a 760 px).** Toccando un riquadro della zona scelta il dettaglio entra nella scheda, con «‹ zona» per tornare indietro. Non c’è più un pannello sopra la carta, e il riquadro resta evidenziato. Un tocco fuori dai riquadri riporta alla scheda della zona. Sopra i 760 px resta il pannello sulla carta.
+
+**Etichette raggruppate.** Le etichette si dispongono in ordine: prima la zona scelta, poi le condizioni migliori.
+- Ognuna prova prima con il nome, poi con il solo indice.
+- Se non trova posto, entra nel gruppo dell’etichetta che la copre («8,5  4 zone»: valore migliore del gruppo e numero di zone).
+- Toccare il gruppo avvicina la carta almeno di un livello.
+- Le etichette restano dentro lo schermo e si ridisegnano tutte insieme a ogni aggiornamento, anche quando il meteo arriva per parti.
+- Vale anche per Piante e Sentieri, con il solo conteggio.
+
 ## Restano aperti
 
-- La scheda della zona occupa circa il 45% dello schermo a 390 px. Una scheda dal basso con altezze diverse fa parte del pacchetto «Ideale», non deciso.
-- All’apertura (zoom 7,5) le etichette delle 36 zone si sovrappongono. Serve un raggruppamento a zoom basso, anch’esso nel pacchetto «Ideale».
 - In Sentieri toccare un imbocco cambia pagina, con Funghi apre una scheda sulla carta. Comportamento lasciato com’era.
 
 ## Verifiche
