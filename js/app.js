@@ -1236,10 +1236,10 @@ function renderOutdoorDetail() {
   bindDetailSections(box);
 }
 function openOutdoorSheet(zid) {
-  sheetPoint=null;sheetZone=zid;const z=(weatherZones||zones).find(z=>z.id===zid);if(!z)return;
+  closeCellCard({force:true});sheetPoint=null;sheetZone=zid;const z=(weatherZones||zones).find(z=>z.id===zid);if(!z)return;
   const d=outdoorDay(z,state.dayOffset),walk=walkFor(z,d,state.trailId),items=walk?outdoorDiscoveries(z,d,walk):[],sh=$('#map-sheet');
   sh.innerHTML=`<button type="button" class="sheet-close" aria-label="Chiudi">✕</button><h2>${esc(splitName(z)[0])}</h2><p>${esc(walkBrief(walk))}</p><p>${esc(wxOf(z,d)?.text||'Meteo non disponibile')}</p>${hasInterest('piante')?discoveriesHtml(z,d,walk,mapPlants(z,d,walk),{compact:true}):''}${forestOn?forestHere(zid):''}${protectedOn?protectedHere(zid):''}${zoneCollectionNotice(z)}<a class="btn primary" href="${walkHref(z,state.dayOffset,walk?.t)}">Esplora l’uscita</a>`;
-  sh.hidden=false;sh.querySelector('.sheet-close').onclick=()=>{sh.hidden=true;sheetZone=null;state.zoneId=null;renderMap();};
+  showMapSheet(sh,`zone:${zid}`);sh.querySelector('.sheet-close').onclick=closeMapSheet;
   if(state.zoneId!==zid){state.zoneId=zid;renderMap();}
 }
 function mapPlants(z,d,walk) {
@@ -1261,14 +1261,30 @@ function renderOutdoorMap() {
   ++mapRenderRevision;closeCellCard();hideCellPeek();cellHits=[];peekCellBounds=[];$('#map').classList.remove('cells-on','cells-visible','cells-peek');syncCellBackdrop();
   for(const g of Object.values(zoneLayers))g.remove();zoneLayers={};
   if(!map.getPane('zoneLabels'))map.createPane('zoneLabels').style.zIndex=640;
+  zoneLabelLayer?.clearLayers();
+  const {pos:labelPos,groupOf}=layoutZoneLabels(items.map(it=>({z:it.z,s:null,w:40+shortName(it.z).length*7+(hasInterest('piante')?22:0)})));
   for(const it of items){
     const {z,walk,found}=it,g=L.layerGroup().addTo(map);zoneLayers[z.id]=g;
     L.circle([z.lat,z.lon],{radius:z.radius_m,color:cssVar('--link'),weight:it.selected?3:1,fillOpacity:.06,dashArray:'5 5'}).addTo(g).on('click',()=>chooseMapZone(z.id));
-    L.marker([z.lat,z.lon],{icon:L.divIcon({className:'',html:`<span class="zone-label">${mapPlantBadge(z,outdoorDay(z,state.dayOffset),walk)}<span class="zone-name">${esc(shortName(z))}</span></span>`,iconSize:null}),pane:'zoneLabels',title:[z.name,...found.filter(i=>i.kind==='pianta').map(i=>'Da osservare: '+i.name)].join(' · ')}).addTo(g).on('click',()=>chooseMapZone(z.id));
-    if(!it.selected&&map.getZoom()<11.5)continue;
+    if(groupOf[z.id]){if(groupOf[z.id].ids[0]===z.id)zoneClusterMarker(groupOf[z.id],g);}
+    else L.marker(labelPos[z.id],{icon:L.divIcon({className:'',html:`<span class="zone-label${it.selected?' zone-label-sel':''}">${mapPlantBadge(z,outdoorDay(z,state.dayOffset),walk)}<span class="zone-name">${esc(shortName(z))}</span></span>`,iconSize:null}),pane:'zoneLabels',title:[z.name,...found.filter(i=>i.kind==='pianta').map(i=>'Da osservare: '+i.name)].join(' · ')}).addTo(g).on('click',()=>chooseMapZone(z.id));
+    if(!mapLayerPrefs.trails||(!it.selected&&map.getZoom()<11.5))continue;
+    const heads=[];
     for(const t of (trails[z.id]?.trails||[]).filter(t=>matchesWalk(t,state)&&matchesInterests(z,outdoorDay(z,state.dayOffset),walkContext(z,t,headsOf(z,t))))){
-      for(const line of t.lines||[])L.polyline(line,{color:cssVar('--link'),weight:walk?.t.id===t.id?5:3,opacity:.8}).addTo(g).on('click',()=>{state.trailId=t.id;openOutdoorSheet(z.id);renderMap();}).bindTooltip(esc(trailName(t)));
-      for(const h of headsOf(z,t))L.marker([h.lat,h.lon],{icon:L.divIcon({className:'',html:'<span class="map-p">↗</span>',iconSize:[28,28]}),title:`Imbocco: ${trailName(t)}`}).addTo(g).on('click',()=>{location.hash=walkHref(z,state.dayOffset,t);});
+      for(const line of t.lines||[])trailLine(g,line,{color:cssVar('--link'),weight:walk?.t.id===t.id?5:3}).on('click',e=>{L.DomEvent.stop(e);state.trailId=t.id;openOutdoorSheet(z.id);renderMap();}).bindTooltip(esc(trailName(t)));
+      for(const h of headsOf(z,t)){const same=heads.find(q=>Math.abs(q.h.lat-h.lat)<0.0015&&Math.abs(q.h.lon-h.lon)<0.002);if(same)same.ts.includes(t)||same.ts.push(t);else heads.push({h,ts:[t]});}
+    }
+    // Stessa regola della mappa dei funghi: imbocchi a meno di 26 px diventano un segnavia con il conteggio.
+    const groups=[];
+    for(const hd of heads){const pt=map.latLngToContainerPoint([hd.h.lat,hd.h.lon]),gr=groups.find(q=>Math.abs(q.pt.x-pt.x)<26&&Math.abs(q.pt.y-pt.y)<26);if(gr)gr.items.push(hd);else groups.push({pt,items:[hd]});}
+    for(const gr of groups){
+      const [first]=gr.items,n=gr.items.length,t=first.ts[0],names=[...new Set(gr.items.flatMap(x=>x.ts.map(trailName)))];
+      const stripes=`<span class="map-th${first.h.kind==='strada'?'':' unpaved'}" aria-hidden="true"><i></i><i></i><i></i></span>`;
+      const html=n>1?`<span class="map-th-group" aria-hidden="true">${stripes}<b>${t.ref?`${esc(t.ref)} `:''}+${n-1}</b></span>`:stripes;
+      L.marker([first.h.lat,first.h.lon],{icon:L.divIcon({className:'',html,iconSize:n>1?null:[18,22],iconAnchor:n>1?null:[9,11]}),keyboard:true,title:n>1?`${n} imbocchi vicini: ${names.join(', ')}. Avvicina la carta per separarli`:`Imbocco: ${names.join(', ')}`}).addTo(g).on('click',()=>{
+        if(n>1&&map.getZoom()<map.getMaxZoom())map.fitBounds(L.latLngBounds(gr.items.map(x=>[x.h.lat,x.h.lon])).pad(0.5),mapCameraOptions({maxZoom:Math.min(map.getMaxZoom(),map.getZoom()+2)}));
+        else location.hash=walkHref(z,state.dayOffset,t);
+      });
     }
   }
 }
@@ -2279,6 +2295,66 @@ new MutationObserver(() => document.documentElement.classList.toggle('map-sheet-
 
 // Riquadro dal basso sulla mappa: riassunto della zona e accesso alla scheda
 let sheetZone = null, sheetPoint = null;
+// Su telefono la scheda ha tre altezze: striscia, metà, intera. Trascinare la carta la riduce a striscia
+// e la zona resta scelta; solo la X la chiude. Sopra i 760 px resta il pannello di sempre.
+const mapSheetMobile = () => matchMedia('(max-width:760px)').matches;
+const SHEET_SNAPS = ['peek', 'half', 'full'];
+function setSheetSnap(snap) {
+  const sh = $('#map-sheet');
+  sh.dataset.snap = snap;
+  const grip = sh.querySelector('.map-sheet-grip');
+  grip?.setAttribute('aria-expanded', String(snap !== 'peek'));
+  grip?.setAttribute('aria-label', snap === 'full' ? 'Riduci la scheda' : 'Espandi la scheda');
+  if (snap === 'peek') sh.scrollTop = 0;
+}
+// Un contenuto nuovo si apre a metà; lo stesso contenuto ridisegnato (meteo, livelli) conserva l'altezza scelta.
+function showMapSheet(sh, key) {
+  const grip = document.createElement('button');
+  grip.type = 'button'; grip.className = 'map-sheet-grip'; grip.innerHTML = '<span aria-hidden="true"></span>';
+  sh.prepend(grip);
+  const same = !sh.hidden && sh.dataset.key === key;
+  sh.dataset.key = key; sh.hidden = false;
+  setSheetSnap(same && sh.dataset.snap ? sh.dataset.snap : 'half');
+}
+function closeMapSheet() {
+  const sh = $('#map-sheet');
+  sh.hidden = true; sh.replaceChildren(); delete sh.dataset.key; sheetZone = null; sheetPoint = null; state.zoneId = null;
+  closeCellCard({ force: true }); renderMap();
+}
+function initMapSheetGestures() {
+  const sh = $('#map-sheet');
+  let drag = null, dragged = false;
+  sh.addEventListener('pointerdown', (e) => {
+    if (!mapSheetMobile() || !e.target.closest('.map-sheet-grip')) return;
+    drag = { y: e.clientY, h: sh.getBoundingClientRect().height, moved: false };
+    sh.setPointerCapture(e.pointerId);
+  });
+  sh.addEventListener('pointermove', (e) => {
+    if (!drag) return;
+    const dy = e.clientY - drag.y;
+    if (!drag.moved && Math.abs(dy) < 6) return;
+    drag.moved = true; sh.classList.add('dragging');
+    sh.style.height = `${Math.max(72, Math.min(sh.parentElement.clientHeight - 16, drag.h - dy))}px`;
+  });
+  const end = (e) => {
+    if (!drag) return;
+    const dy = e.clientY - drag.y, moved = drag.moved; drag = null;
+    sh.classList.remove('dragging'); sh.style.height = '';
+    if (!moved) return;
+    dragged = true;
+    const i = SHEET_SNAPS.indexOf(sh.dataset.snap);
+    setSheetSnap(SHEET_SNAPS[Math.max(0, Math.min(2, i + (dy < -40 ? 1 : dy > 40 ? -1 : 0)))]);
+  };
+  sh.addEventListener('pointerup', end); sh.addEventListener('pointercancel', end);
+  sh.addEventListener('click', (e) => {
+    if (!e.target.closest('.map-sheet-grip')) return;
+    if (dragged) { dragged = false; return; }
+    const snap = sh.dataset.snap;
+    setSheetSnap(snap === 'peek' ? 'half' : snap === 'half' ? 'full' : 'half');
+  });
+  // Chi sposta la carta vuole vederla: la scheda scende a striscia senza perdere la zona.
+  map.on('dragstart', () => { if (mapSheetMobile() && !sh.hidden && sh.dataset.snap !== 'peek') setSheetSnap('peek'); });
+}
 function currentSheetPoint(){
  const pt=sheetPoint;if(!pt?.t)return pt;
  const z=zones.find(z=>z.id===sheetZone),d=dayEntry(sheetZone,state.dayOffset);
@@ -2286,7 +2362,7 @@ function currentSheetPoint(){
  return {...pt,t:t||trails[sheetZone]?.trails.find(t=>String(t.id)===String(pt.t.id))||pt.t};
 }
 function openSheet(zid) {
-  closeCellCard();
+  closeCellCard({ force: true });
   if(state.target!=='funghi'){openOutdoorSheet(zid);return;}
   sheetPoint=null;sheetZone = zid;
   if (!results) { openOutdoorSheet(zid); return; }
@@ -2310,13 +2386,13 @@ function openSheet(zid) {
     ${forestOn ? forestHere(zid) : ''}${protectedOn ? protectedHere(zid) : ''}
     <p class="sheet-key small"><span class="sheet-key-item"><span class="key-p">P</span> sosta</span><span class="sheet-key-item"><span class="key-walk">${IC.walk}</span> qui lasci l'auto</span><span class="sheet-key-item"><span class="key-trail"></span> sentiero consigliato</span><span class="muted">· tocca un segno</span></p>
     <a class="btn primary big" href="#/zona/${zid}/${state.dayOffset}">Apri il piano dell'uscita</a>`;
-  sh.hidden = false;
-  sh.querySelector('.sheet-close').addEventListener('click', () => { sh.hidden = true; sheetZone = null; state.zoneId = null; renderMap(); });
+  showMapSheet(sh, `zone:${zid}`);
+  sh.querySelector('.sheet-close').addEventListener('click', closeMapSheet);
   if (state.zoneId !== zid) { state.zoneId = zid; renderMap(); }
 }
 
 function openPoint(zid, pt) {
-  closeCellCard();
+  closeCellCard({ force: true });
   sheetZone=zid;sheetPoint=pt;
   const z = (weatherZones||zones).find((x) => x.id === zid);
   const d = dayEntry(zid, state.dayOffset);
@@ -2360,9 +2436,9 @@ function openPoint(zid, pt) {
     ${ic ? `<div class="pt-head">${ic}<div><span class="eyebrow">${eyebrow}</span><b class="sheet-title">${esc(title)}</b></div></div>
     <p class="small pt-text">${text}</p>` : `<span class="eyebrow">${eyebrow}</span>${text}`}
     ${preview}<div class="pt-actions">${actions}</div><p class="small muted pt-copy-status" role="status" data-copy-status></p>`;
-  sh.hidden = false;
+  showMapSheet(sh, `point:${zid}:${pt.kind}:${pt.t?.id ?? pt.p?.name ?? pt.h?.lat ?? ''}`);
   sh.querySelector('.sheet-back').addEventListener('click', () => openSheet(zid));
-  sh.querySelector('.sheet-close').addEventListener('click', () => { sh.hidden = true; sheetZone = null; state.zoneId = null; renderMap(); });
+  sh.querySelector('.sheet-close').addEventListener('click', closeMapSheet);
   sh.querySelector('[data-trail]')?.addEventListener('click', () => openPoint(zid, { kind: 'trail', t: pt.t, top: false }));
   sh.querySelector('[data-copy]')?.addEventListener('click', async (e) => {
     const b = e.currentTarget, status = sh.querySelector('[data-copy-status]');
@@ -2506,6 +2582,7 @@ function initMap() {
   // la carta cambia misura (barra in alto che sparisce, rotazione): Leaflet va avvisato
   new ResizeObserver(() => map.invalidateSize({pan:false})).observe($('#map'));
   initCellInteractions();
+  initMapSheetGestures();
 }
 
 // Controlli della mappa come nelle app di mappe: una colonna in alto a destra (livelli, posizione;
@@ -2515,6 +2592,16 @@ function initMap() {
 const PA_WMS = 'https://geoportale.regione.lazio.it/geoserver/ows';
 const PA_LAYERS = ['geonode:zoning_pngsl', 'geonode:zoning_montagne_duchessa0', 'geonode:aree_naturali_protette1'];
 let protectedOn = false;
+// Riquadri dell'habitat e sentieri si possono spegnere da Livelli: la scelta resta nel browser.
+const MAP_LAYERS_KEY = 'fungaroli:map-layers:v1';
+const mapLayerPrefs = (() => { try { return { cells: true, trails: true, ...JSON.parse(localStorage.getItem(MAP_LAYERS_KEY) || '{}') }; } catch { return { cells: true, trails: true }; } })();
+const saveMapLayers = () => { try { localStorage.setItem(MAP_LAYERS_KEY, JSON.stringify(mapLayerPrefs)); } catch { /* storage non disponibile */ } };
+// Sentieri in un livello sopra i riquadri, con un bordo chiaro che li stacca da colori e carta.
+function trailLine(g, line, { color, weight, opacity = 0.95 }) {
+  if (!map.getPane('trails')) map.createPane('trails').style.zIndex = 430;
+  L.polyline(line, { pane: 'trails', color: cssVar('--story-avorio'), weight: weight + 3, opacity: 0.85 * Math.min(1, opacity / 0.9), interactive: false }).addTo(g);
+  return L.polyline(line, { pane: 'trails', color, weight, opacity }).addTo(g);
+}
 function mapControls({ bases = null, forest, protectedAreas = null }) {
   let base = bases?.[0]?.[2] || null, me = null;
   const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
@@ -2531,6 +2618,8 @@ function mapControls({ bases = null, forest, protectedAreas = null }) {
           ${bases ? `<p class="eyebrow">Tipo di mappa</p><div class="mapctl-tiles">${bases.map(([n, img], k) => `<button type="button" class="mapctl-tile" data-base="${k}" aria-pressed="${k === 0}"><img data-src="${img}" alt="" width="64" height="64"><span>${n}</span></button>`).join('')}</div>` : ''}
           <p class="eyebrow">Dettagli della mappa</p>
           <div class="mapctl-tiles"><button type="button" class="mapctl-tile" data-act="forest" aria-pressed="false"><img data-src="assets/map-thumb-forest.jpg" alt="" width="64" height="64"><span>Carta Forestale</span></button>${protectedAreas ? `<button type="button" class="mapctl-tile" data-act="protected" aria-pressed="false"><span class="mapctl-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.5 3 8 7 10 4-2 7-5.5 7-10V6z"/><path d="M9 12.5 11 14.5 15 10"/></svg></span><span>Aree protette</span></button>` : ''}</div>
+          <p class="eyebrow">Sulla carta</p>
+          <div class="mapctl-tiles"><button type="button" class="mapctl-tile" data-act="cells" aria-pressed="${mapLayerPrefs.cells}"><span class="mapctl-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/></svg></span><span>Riquadri dell’habitat</span></button><button type="button" class="mapctl-tile" data-act="trails" aria-pressed="${mapLayerPrefs.trails}"><span class="mapctl-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 20c2-5 7-3 8-8s4-6 6-8"/><circle cx="5" cy="20" r="1.5" fill="currentColor"/></svg></span><span>Sentieri</span></button></div>
           <p class="small muted mapctl-note" hidden>Colori dei tipi di bosco: vedi Legenda in basso.</p>
           <p class="small muted mapctl-note-pa" hidden>Aree protette e zone dei piani: vedi Legenda. Indicative, fa fede la cartografia dell’ente.</p>
         </div>`;
@@ -2568,6 +2657,11 @@ function mapControls({ bases = null, forest, protectedAreas = null }) {
           if (w) { w.hidden = !on; w.innerHTML = protectedLegend(); }
           if (sheetZone && !$('#map-sheet').hidden && !sheetPoint) openSheet(sheetZone);
           if (on) $('.legend-box').open = true;
+        }
+        if (act === 'cells' || act === 'trails') {
+          mapLayerPrefs[act] = !mapLayerPrefs[act]; saveMapLayers();
+          b.setAttribute('aria-pressed', String(mapLayerPrefs[act]));
+          if (results) renderMap();
         }
         if (b.dataset.base != null) {
           const nb = bases[+b.dataset.base][2];
@@ -2613,6 +2707,7 @@ function initEmbeddedMap(bm) {
   // la carta cambia misura (barra in alto che sparisce, rotazione): Leaflet va avvisato
   new ResizeObserver(() => map.invalidateSize({pan:false})).observe($('#map'));
   initCellInteractions();
+  initMapSheetGestures();
 }
 
 const shortName = (z) => z.title || z.name.split(/[/–(]/)[0].trim();
@@ -2659,6 +2754,16 @@ function syncCellBackdrop() {
   const el=$('#map'),bounds=map.getBounds();
   const visible=(el.classList.contains('cells-on')&&cellHits.some(({c,dLat,dLon})=>bounds.intersects([[c.lat-dLat,c.lon-dLon],[c.lat+dLat,c.lon+dLon]])))||(el.classList.contains('cells-peek')&&peekCellBounds.some(b=>bounds.intersects(b)));
   el.classList.toggle('cells-visible',visible);
+  syncCellHint(visible&&el.classList.contains('cells-on'));
+}
+// Chiave dei riquadri e gesto per aprirli, solo quando sono in vista: al tocco non c'è anteprima.
+function syncCellHint(show){
+  const hint=$('#map-cell-hint');if(!hint)return;
+  hint.hidden=!show;if(!show)return;
+  const scale=[...CLASSES].reverse().map(c=>`<i style="background:var(${mapVar(c.min)})"></i>`).join('');
+  const verb=canHover?'clicca':'tocca',action=state.zoneId?`${verb} un riquadro`:`${verb} una zona, poi un riquadro`;
+  const html=`<span class="map-cell-scale" aria-hidden="true" title="Da basso ad alto">${scale}</span><span>Habitat potenziale, non presenza · ${action}</span>`;
+  if(hint.innerHTML!==html)hint.innerHTML=html;
 }
 // popover della mappa: titolo e percentuale grande, una riga per fungo con la barretta nella scala dell'indice, l'azione in fondo
 function mapCard({ title, sub, pct, rows = [], more = 0, foot = '', interactive = false }) {
@@ -2691,12 +2796,13 @@ function showCellPeek(h) {
   else cellPeek.setLatLng(position).setContent(html);
   cellPeek._fz = c; map.getContainer().classList.add('cell-pointer');
 }
-function closeCellCard() {
+function closeCellCard({ force = false } = {}) {
   cancelCellCardTimer(); cellPinned = false; hideCellPeek();
   const restoreFocus = cellTip?.getElement()?.contains(document.activeElement);
   const card = cellTip?.getElement();
   if (card) { card.inert = true; card.style.pointerEvents = 'none'; }
-  cellHi?.remove(); cellHi = null;
+  // Il riquadro aperto nella scheda resta evidenziato finché la scheda lo mostra.
+  if (force || sheetPoint?.kind !== 'cell') { cellHi?.remove(); cellHi = null; }
   const leaving=cellTip;cellTip=null;
   if(card&&!reduceMotion()){card.classList.add('is-leaving');setTimeout(()=>leaving?.remove(),120);}else leaving?.remove();
   // Restore after the current click has finished bubbling. Leaflet synthesises
@@ -2713,7 +2819,7 @@ function initCellInteractions() {
     map.on('mousemove', hoverCell);
     map.getContainer().addEventListener('mouseleave', hideCellPeek);
   }
-  map.on('click', e => { if (!pinCellCard(e)) {closeCellCard();} });
+  map.on('click', e => { if (!pinCellCard(e)) { if (sheetPoint?.kind === 'cell' && !$('#map-sheet').hidden) openSheet(sheetZone); else closeCellCard(); } });
   map.on('dragstart zoomstart', closeCellCard); map.on('dragstart zoomstart', hideCellPeek);
   map.getContainer().setAttribute('aria-keyshortcuts', 'Enter');
   map.getContainer().setAttribute('aria-label', 'Mappa delle zone. Premi Invio per selezionare la zona più vicina al centro; con una zona selezionata, premi Invio per aprire un’area al suo interno.');
@@ -2739,6 +2845,13 @@ function initCellInteractions() {
 function selectCell(h,{keyboard=false}={}){
   // Il campione approfondisce una zona già scelta; non seleziona una zona implicitamente.
   if(!h||h.z.id!==state.zoneId)return;
+  if(mapSheetMobile()){
+    const current=cellHits.find(x=>x.z.id===h.z.id&&x.c.lat===h.c.lat&&x.c.lon===h.c.lon);
+    if(!current)return;
+    map.stop();openCellSheet(current);
+    if(keyboard)$('#map-sheet [data-cell-close]')?.focus({preventScroll:true});
+    return;
+  }
   map.stop();closeCellCard();
   sheetZone=null;sheetPoint=null;
   const toolbar=$('.map-top');toolbar.classList.remove('days-open');toolbar.querySelector('[data-days]')?.setAttribute('aria-expanded','false');
@@ -2750,6 +2863,22 @@ function selectCell(h,{keyboard=false}={}){
   if(keyboard)cellTip?.getElement()?.querySelector('[data-cell-close]')?.focus({preventScroll:true});
 }
 
+// Su telefono il dettaglio del riquadro entra nella scheda, come zone e punti: niente pannello sopra la carta.
+function cellCardHtml({ c, z }) {
+  return mapCard({ title: c.cat, sub: `${esc(shortName(z))} · ${c.e} m s.l.m. · area ${c.size} × ${c.size} m`, pct: c.v, interactive: true,
+    rows: c.parts.slice(0, 3).map((x) => ({ name: x.sp.name.split(' / ')[0], v: x.v })), more: Math.max(0, c.parts.length - 3),
+    foot: 'Campione di habitat: verifica alberi ospiti, divieti e condizioni sul posto.' });
+}
+function openCellSheet(h) {
+  const { c, z } = h, sh = $('#map-sheet');
+  closeCellCard({ force: true });
+  sheetZone = z.id; sheetPoint = { kind: 'cell', c };
+  sh.innerHTML = `<div class="cell-card cell-sheet" role="group" aria-label="${esc(`${c.cat}, ${c.e} metri: area di ${c.size} per ${c.size} metri`)}"><div class="sheet-nav"><button type="button" class="sheet-back">‹ ${esc(splitName(z)[0])}</button><button type="button" class="sheet-close" data-cell-close aria-label="Chiudi">✕</button></div>${cellCardHtml(h)}</div>`;
+  showMapSheet(sh, `cell:${z.id}:${c.lat},${c.lon}`);
+  highlightCell(h);
+  sh.querySelector('.sheet-back').addEventListener('click', () => openSheet(z.id));
+  sh.querySelector('[data-cell-close]').addEventListener('click', closeMapSheet);
+}
 function pinCellCard(e) {
   if(e.originalEvent?._frondaCellHandled)return true;
   const h = $('#map').classList.contains('cells-on') && cellAt(e.latlng,e.target?.options?.zoneId);
@@ -2765,7 +2894,7 @@ function cellsLayer(z, d, interactive = true) {
   const dLat = size / 2 / 111320, dLon = size / 2 / (111320 * Math.cos(z.lat * Math.PI / 180));
   for (const c of zoneCells(z, d)) {
     L.rectangle([[c.lat - dLat, c.lon - dLon], [c.lat + dLat, c.lon + dLon]], {
-      renderer: cellRenderer, interactive: false, stroke: false, zoneId:z.id, fillColor: cssVar(mapVar(c.v)), fillOpacity: 0.5 + 0.4 * Math.min(1, c.v / 80),
+      renderer: cellRenderer, interactive: false, stroke: false, zoneId:z.id, fillColor: cssVar(mapVar(c.v)), fillOpacity: 0.28 + 0.2 * Math.min(1, c.v / 80),
     }).addTo(lg);
     if (interactive) cellHits.push({ z, c, dLat, dLon });
   }
@@ -2786,9 +2915,7 @@ function showCellCard(h, preserveTimer = false) {
   if (!preserveTimer) cancelCellCardTimer();
   const { c } = h;
   highlightCell(h);
-  const html = mapCard({ title: c.cat, sub: `${esc(shortName(h.z))} · ${c.e} m s.l.m. · area ${c.size} × ${c.size} m`, pct: c.v, interactive: true,
-    rows: c.parts.slice(0, 3).map((x) => ({ name: x.sp.name.split(' / ')[0], v: x.v })), more: Math.max(0, c.parts.length - 3),
-    foot: 'Campione di habitat: verifica alberi ospiti, divieti e condizioni sul posto.' });
+  const html = cellCardHtml(h);
   const content = `${html}<button type="button" class="cell-card-close" data-cell-close aria-label="Chiudi la scheda dell’area">×</button>`;
   const position = [c.lat, c.lon];
   if (!cellTip) {
@@ -2814,6 +2941,47 @@ function showCellCard(h, preserveTimer = false) {
   cellTip._fz = c; cellTip._zoneId=h.z.id; cellTip._fhtml = content;
 }
 
+// Etichette delle zone senza sovrapposizioni. Prima la zona scelta, poi le condizioni migliori; un'etichetta
+// che non trova posto entra nel gruppo di quella che la copre («8,5 · 4 zone»). Il gruppo avvicina la carta.
+let zoneLabelLayer = null;
+function layoutZoneLabels(items) {
+  zoneLabelLayer ||= L.layerGroup().addTo(map);
+  const placed = [], pos = {}, groupOf = {}, miniLabel = new Set();
+  const order = [...items].sort((a, b) => (b.z.id === state.zoneId) - (a.z.id === state.zoneId) || (Number.isFinite(b.s) ? b.s : -1) - (Number.isFinite(a.s) ? a.s : -1));
+  for (const it of order) {
+    // Prima con il nome, poi con il solo indice; le etichette restano dentro la carta anche vicino al bordo.
+    const fit = (w) => {
+      const pt = map.latLngToContainerPoint([it.z.lat, it.z.lon]), size = map.getSize();
+      pt.x = Math.max(w / 2 + 8, Math.min(size.x - w / 2 - 8, pt.x));
+      const hits = (y) => placed.filter((b) => Math.abs(b.x - pt.x) < (b.w + w) / 2 + 4 && Math.abs(b.y - y) < 30);
+      let y = pt.y;
+      for (let k = 1; hits(y).length && k < 5; k++) y = pt.y + (k % 2 ? 1 : -1) * Math.ceil(k / 2) * 30;
+      return { x: pt.x, y, w, host: hits(y).find((b) => !b.locked) };
+    };
+    const selected = it.z.id === state.zoneId;
+    let spot = fit(it.w), mini = false;
+    if (spot.host && !selected && it.w > 54 && Number.isFinite(it.s)) { const short = fit(54); if (!short.host) { spot = short; mini = true; } }
+    if (spot.host && !selected) { spot.host.ids.push(it.z.id); spot.host.items.push(it); spot.host.w = Math.max(spot.host.w, 104); continue; }
+    placed.push({ x: spot.x, y: spot.y, w: spot.w, ids: [it.z.id], items: [it], locked: selected });
+    if (mini) miniLabel.add(it.z.id);
+    pos[it.z.id] = map.containerPointToLatLng([spot.x, spot.y]);
+  }
+  for (const b of placed) if (b.ids.length > 1) { b.latlng = pos[b.ids[0]]; for (const id of b.ids) groupOf[id] = b; }
+  return { placed, pos, groupOf, miniLabel };
+}
+function zoneClusterMarker(box, g) {
+  const best = Math.max(...box.items.map((x) => (Number.isFinite(x.s) ? x.s : -Infinity)));
+  const names = box.items.map((x) => shortName(x.z));
+  L.marker(box.latlng, {
+    icon: L.divIcon({ className: '', html: `<span class="zone-label zone-cluster">${Number.isFinite(best) ? `<span class="growth-value">${indexGlyph(best)}<b class="pc">${formatIndex(best)}</b></span>` : ''}<span class="zone-name">${box.ids.length} zone</span></span>`, iconSize: null }),
+    interactive: true, keyboard: true, pane: 'zoneLabels', title: `${box.ids.length} zone vicine: ${names.join(', ')}. Avvicina la carta per separarle`,
+  }).addTo(g).on('click', () => {
+    // Sempre almeno un passo più vicino: zone vicinissime non devono lasciare la carta ferma.
+    const bounds = L.latLngBounds(box.items.map((x) => [x.z.lat, x.z.lon])).pad(0.3);
+    const zoom = Math.min(map.getMaxZoom(), Math.max(map.getZoom() + 1, map.getBoundsZoom(bounds)));
+    map.setView(bounds.getCenter(), zoom, { animate: !reduceMotion() });
+  });
+}
 function renderMap(changed=null) {
   scheduleMapResults();
   const mapZones=weatherZones||zones;
@@ -2838,7 +3006,7 @@ function renderMap(changed=null) {
   // passaggio cerchi pieni <-> riquadri: prima si anima (carta, cerchi, riquadri in dissolvenza), poi si ridisegna
   const mapEl = $('#map');
   const revision=++mapRenderRevision;
-  const want = map.getZoom() >= 11.5 || !!state.zoneId;
+  const want = mapLayerPrefs.cells && (map.getZoom() >= 11.5 || !!state.zoneId);
   const displayedCell = cellTip?._fz;
   if (cellPeek) hideCellPeek(); // l'etichetta torna al prossimo movimento del mouse
   if (!want) closeCellCard();
@@ -2856,18 +3024,11 @@ function renderMap(changed=null) {
   // etichette delle zone in un livello sopra i segnavia e i pin: nome e indice restano sempre leggibili
   if (!map.getPane('zoneLabels')) map.createPane('zoneLabels').style.zIndex = 640;
   if (!map.getPane('zoneFocus')) map.createPane('zoneFocus').style.zIndex = 420;
-  // etichette con nome: spostamento verticale greedy (in pixel) per evitare sovrapposizioni
-  const placed = [];
-  const labelPos = {};
-  for (const z of mapZones) {
-    const pt = map.latLngToContainerPoint([z.lat, z.lon]);
-    const w = 40 + shortName(z).length * 7 + (hasInterest('piante')?22:0);
-    let y = pt.y;
-    const hit = (yy) => placed.some((b) => Math.abs(b.x - pt.x) < (b.w + w) / 2 + 4 && Math.abs(b.y - yy) < 26);
-    for (let k = 1; hit(y) && k < 8; k++) y = pt.y + (k % 2 ? 1 : -1) * Math.ceil(k / 2) * 26;
-    placed.push({ x: pt.x, y, w });
-    labelPos[z.id] = map.containerPointToLatLng([pt.x, y]);
-  }
+  // etichette con nome: spostamento verticale greedy (in pixel); chi non trova posto entra in un gruppo
+  const { placed, pos: labelPos, groupOf, miniLabel } = layoutZoneLabels(mapZones.filter(z => matchesInterests(z, dayEntry(z.id, state.dayOffset), walkFor(z, dayEntry(z.id, state.dayOffset)))).map(z => {
+    const d = dayEntry(z.id, state.dayOffset), s = adjusted(z, d?.score ?? null, d);
+    return { z, s, w: state.zoneId && z.id !== state.zoneId ? 54 : 40 + shortName(z).length * 7 + (hasInterest('piante') ? 22 : 0) };
+  }));
   for (const z of mapZones) {
     if(changed&&zoneLayers[z.id])continue;
     const d = dayEntry(z.id, state.dayOffset);
@@ -2881,15 +3042,15 @@ function renderMap(changed=null) {
     const showCells = near || selected;
     const circle = L.circle([z.lat, z.lon], {
       radius: z.radius_m, pane:selected?'zoneFocus':'overlayPane', color: selected ? cssVar('--text') : color, weight: selected ? 2.5 : 2,
-      dashArray: showCells ? '6 6' : null, fillColor: color, fillOpacity: showCells?0:0.28, zoneId:z.id,className: `zone-c${showCells ? ' has-cells' : ''}${selected?' is-selected':''}`,
+      dashArray: showCells ? '6 6' : null, fillColor: color, fillOpacity: showCells?0:0.28, zoneId:z.id,className: `zone-c${showCells ? ' has-cells' : ''}${showCells && !mapLayerPrefs.cells ? ' no-cells' : ''}${selected?' is-selected':''}`,
     }).addTo(g).on('click', e => {
       if(z.id===state.zoneId&&pinCellCard(e))return;
       // Lo stesso clic non deve selezionare il cerchio e aprire anche il campione nel bubbling.
       if(e.originalEvent)e.originalEvent._frondaCellHandled=true;
       chooseMapZone(z.id,{anchor:e.latlng});
     });
-    if (showCells && d) cellsLayer(z, d).addTo(g);
-    else if (d && canHover) {
+    if (showCells && d && mapLayerPrefs.cells) cellsLayer(z, d).addTo(g);
+    else if (d && canHover && mapLayerPrefs.cells && !showCells) {
       // a volo d'uccello: passandoci sopra la zona si accende e mostra in anteprima i suoi riquadri
       let prev = null;
       circle.on('mouseover', () => { circle.setStyle({ weight: 3.5, dashArray: '6 6' }); circle.getElement()?.classList.add('peek'); prev ||= cellsLayer(z, d, false); prev.addTo(g);peekCellBounds=prev.getLayers().map(layer=>layer.getBounds());mapEl.classList.add('cells-peek');requestAnimationFrame(syncCellBackdrop); });
@@ -2902,21 +3063,21 @@ function renderMap(changed=null) {
         more: Math.max(0, (d?.perSpecies?.filter((p) => spScore(z, d, p) >= 10).length || 0) - 3),
         foot: 'Tocca per aprire la zona' }), { className: 'zone-tt', sticky: true, direction: 'top', offset: [0, -14], opacity: 1 });
     }
-    L.marker(labelPos[z.id], {
-      icon: L.divIcon({ className: '', html: `<span class="zone-label${state.zoneId && !selected ? ' zone-label-min' : ''}${selected ? ' zone-label-sel' : ''}">${mapPlantBadge(z,d,walkFor(z,d))}${Number.isFinite(s)?`<span class="growth-value">${indexGlyph(s)}<b class="pc">${formatIndex(s)}</b></span>`:''}${state.zoneId && !selected ? '' : ` <span class="zone-name">${esc(shortName(z))}</span>`}</span>`, iconSize: null }),
-      interactive:true,pane:'zoneLabels',title:z.name,
-    }).addTo(g).on('click',()=>chooseMapZone(z.id));
-    if (selected && d?.best) {
-      const tl = trailsFor(z, d.best.species, d.best.band);
-      const topId = tl[0]?.id;
+    // Da vicino tutti i tratti delle zone in vista; con la zona scelta, quelli adatti alla specie in evidenza.
+    const tl = selected && d?.best ? trailsFor(z, d.best.species, d.best.band) : [];
+    const topId = tl[0]?.id;
+    if (mapLayerPrefs.trails && (near || selected)) {
       for (const t of trails[z.id]?.trails || []) {
-        const good = tl.find((x) => x.id === t.id);
+        const good = tl.find((x) => x.id === t.id), top = t.id === topId;
+        const label = `${t.ref ? 'CAI ' + esc(t.ref) + ' · ' : ''}${esc(t.name || t.itinerary.join(' – ') || 'Sentiero')}`;
         for (const line of t.lines) {
-          L.polyline(line, { color: cssVar(t.id === topId ? '--accent' : '--text-2'), weight: t.id === topId ? 5 : good ? 3 : 2, opacity: good ? 0.95 : 0.5, dashArray: good ? null : '4 4' })
-            .addTo(g).on('click', (e) => { L.DomEvent.stop(e); openPoint(z.id, { kind: 'trail', t: good || t, top: t.id === topId }); })
-            .bindTooltip(`${t.ref ? 'CAI ' + esc(t.ref) + ' · ' : ''}${esc(t.name || t.itinerary.join(' – ') || 'Sentiero')}`, { sticky: true });
+          trailLine(g, line, { color: cssVar(top ? '--accent' : '--text-2'), weight: top ? 5 : good ? 3.5 : 2.5, opacity: top || good ? 0.95 : selected ? 0.75 : state.zoneId ? 0.45 : 0.9 })
+            .on('click', (e) => { L.DomEvent.stop(e); if (selected && d?.best) openPoint(z.id, { kind: 'trail', t: good || t, top }); else chooseMapZone(z.id, { anchor: e.latlng }); })
+            .bindTooltip(label, { sticky: true });
         }
       }
+    }
+    if (selected && d?.best) {
       // imbocchi dei sentieri adatti: un segnavia piccolo dove si lascia l'auto (uno per punto, anche se ci passano piu' sentieri)
       const seenTh = [];
       for (const t of tl) for (const h of headsOf(z, t)) {
@@ -2960,6 +3121,19 @@ function renderMap(changed=null) {
       }
     }
     zoneLayers[z.id] = g;
+  }
+  // Etichette sempre ridisegnate tutte insieme: anche quando il meteo aggiorna solo alcune zone,
+  // la disposizione e i gruppi restano coerenti.
+  zoneLabelLayer.clearLayers();
+  for (const z of mapZones) {
+    const d = dayEntry(z.id, state.dayOffset);
+    if (!matchesInterests(z, d, walkFor(z, d))) continue;
+    const s = adjusted(z, d?.score ?? null, d), selected = z.id === state.zoneId;
+    if (groupOf[z.id]) { if (groupOf[z.id].ids[0] === z.id) zoneClusterMarker(groupOf[z.id], zoneLabelLayer); continue; }
+    L.marker(labelPos[z.id], {
+      icon: L.divIcon({ className: '', html: `<span class="zone-label${(state.zoneId && !selected) || miniLabel.has(z.id) ? ' zone-label-min' : ''}${selected ? ' zone-label-sel' : ''}">${mapPlantBadge(z,d,walkFor(z,d))}${Number.isFinite(s)?`<span class="growth-value">${indexGlyph(s)}<b class="pc">${formatIndex(s)}</b></span>`:''}${(state.zoneId && !selected) || (miniLabel.has(z.id) && Number.isFinite(s)) ? '' : ` <span class="zone-name">${esc(shortName(z))}</span>`}</span>`, iconSize: null }),
+      interactive:true,pane:'zoneLabels',title:z.name,
+    }).addTo(zoneLabelLayer).on('click',()=>chooseMapZone(z.id));
   }
   if (displayedCell && cellTip) {
     const hit = cellHits.find(h => h.z.id===cellTip._zoneId && h.c.lat === displayedCell.lat && h.c.lon === displayedCell.lon);

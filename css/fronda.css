@@ -32,6 +32,7 @@
 .share-choice label:has(input:checked) { border-color: var(--select-edge); box-shadow: inset 0 0 0 1px var(--select-edge); }
 .mapctl-tile[aria-pressed="true"] { color: var(--text); }
 .mapctl-tile[aria-pressed="true"] img { box-shadow: 0 0 0 3px var(--select-edge); }
+.mapctl-tile[aria-pressed="true"] .mapctl-ic { box-shadow: 0 0 0 3px var(--select-edge); color: var(--text); }
 /* Il giorno scelto è una selezione; il pallino conserva il colore dell’indice. */
 .day[aria-selected="true"] { background: var(--select); color: var(--select-ink); border-color: var(--select-edge); box-shadow: var(--shadow-1); }
 .day[aria-selected="true"] :is(.d1, .d3) { color: var(--select-ink); }

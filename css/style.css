@@ -1973,15 +1973,15 @@ html.theme-swap, html.theme-swap *, html.theme-swap *::before, html.theme-swap *
 #map .leaflet-tile-pane, #map .basemap { transition: filter .55s cubic-bezier(.4, 0, .2, 1); }
 /* cerchi e riquadri: il riempimento lo decide il CSS, cosi' i passaggi si animano insieme alla carta */
 #map .zone-c { fill-opacity: .28; transition: fill-opacity .5s cubic-bezier(.4, 0, .2, 1), stroke-width .2s; }
-#map.cells-on .zone-c.has-cells { fill-opacity: .04; }
+#map.cells-on .zone-c.has-cells, #map .zone-c.no-cells { fill-opacity: .04; }
 #map .zone-c.peek { fill-opacity: .1; }
 #map .leaflet-cells-pane { opacity: 0; transition: opacity .5s cubic-bezier(.4, 0, .2, 1); }
 #map.cells-on .leaflet-cells-pane, #map.cells-peek .leaflet-cells-pane { opacity: 1; }
 #map.cells-peek .leaflet-cells-pane { transition-duration: .25s; }
 @media (prefers-reduced-motion: reduce) { #map .leaflet-tile-pane, #map .basemap, #map .zone-c, #map .leaflet-cells-pane { transition: none; } }
-#map.cells-visible .leaflet-tile-pane, #map.cells-visible .basemap { filter: saturate(.4) contrast(.92) brightness(1.04); }
-:root[data-theme="dark"] #map.cells-visible .leaflet-tile-pane, :root[data-theme="dark"] #map.cells-visible .basemap { filter: saturate(.3) brightness(.62) contrast(1.05); }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) #map.cells-visible .leaflet-tile-pane, :root:not([data-theme="light"]) #map.cells-visible .basemap { filter: saturate(.3) brightness(.62) contrast(1.05); } }
+#map.cells-visible .leaflet-tile-pane, #map.cells-visible .basemap { filter: saturate(.7) contrast(.96); }
+:root[data-theme="dark"] #map.cells-visible .leaflet-tile-pane, :root[data-theme="dark"] #map.cells-visible .basemap { filter: saturate(.55) brightness(.75) contrast(1.05); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) #map.cells-visible .leaflet-tile-pane, :root:not([data-theme="light"]) #map.cells-visible .basemap { filter: saturate(.55) brightness(.75) contrast(1.05); } }
 @media (max-width: 760px) { .view-map .leaflet-top, .view-map .leaflet-top.leaflet-right { top: 150px; } }
 .leaflet-tooltip.zone-tt { padding: 0; border-radius: 16px; border: 1px solid var(--border); background: var(--surface); color: var(--text); box-shadow: var(--shadow-2); white-space: normal; }
 .leaflet-tooltip.zone-tt::before { display: none; }
