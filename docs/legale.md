@@ -471,7 +471,7 @@ Verificato sulla copia di lavoro del rilascio, prima del merge (16/10/2026). Se 
 
 | Dove | Testo attuale | Norma o fatto |
 |---|---|---|
-| `data/species-traits.json`, «esemplare dubbio in un contenitore separato» | Presuppone la raccolta di esemplari non riconosciuti | Art. 3, c. 5: i non commestibili si raccolgono solo con l'autorizzazione dell'art. 8 bis. Va riformulato, non tolto (l'art. 13 affida agli Ispettorati il controllo dei funghi dei privati). |
+| `data/species-traits.json`, «esemplare dubbio in un contenitore separato» | Presuppone la raccolta di esemplari non riconosciuti | Art. 3, c. 5: i non commestibili si raccolgono solo con l'autorizzazione dell'art. 8 bis. Va riformulato, non tolto (l'art. 13 affida agli Ispettorati il controllo dei funghi dei privati). **22/10/2026:** riformulato nel rilascio in preparazione («Se un esemplare raccolto ti lascia dubbi, tienilo intero e separato dal resto e portalo all’Ispettorato micologico… I funghi che sai non commestibili si osservano sul posto (L.R. 32/1998, art. 3, c. 5)»). La riga passa in 9.2 quando lo snapshot del CMS pubblicato mostra il nuovo testo: `species-traits` si aggiorna dal repository solo se nessun autore lo ha modificato. |
 | Catalogo dei commestibili | Nessuna taglia minima indicata | Art. 3, cc. 2 e 2 bis (per esempio prataiolo 4 cm; pioppino e gambesecca senza minimo). |
 | `js/identify.js`, chiave guidata | Base, taglio e sporata presuppongono la raccolta | Art. 3, c. 5 (vedi sopra): basta una nota di legge, senza dire «scarta». |
 | `docs/fronda/content.json`, `docs/fronda/product.html` | Fonte https://faolex.fao.org/docs/pdf/ita21952.pdf | Come sopra: testo del 2000 circa. Kit di studio, non pubblicato (`.assetsignore`). |

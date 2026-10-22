@@ -1298,7 +1298,7 @@
           ]
         },
         {
-          "text": "Il risotto ai porcini è il piatto d'autunno per eccellenza. Con i porcini secchi si usa anche l'acqua dell'ammollo, filtrata, al posto di parte del brodo.",
+          "text": "Il risotto ai porcini è un classico piatto d'autunno. Con i porcini secchi si usa anche l'acqua dell'ammollo, filtrata, al posto di parte del brodo.",
           "sources": [
             {
               "title": "Boletus edulis – Wikipedia (en)",
@@ -1311,7 +1311,7 @@
           ]
         },
         {
-          "text": "Essiccato a fette il profumo si concentra. Dopo l'ammollo in acqua tiepida è perfetto per il sugo delle tagliatelle, anche con un filo di pomodoro.",
+          "text": "Essiccato a fette il profumo si concentra. Dopo l'ammollo in acqua tiepida si usa per il sugo delle tagliatelle, anche con un filo di pomodoro.",
           "sources": [
             {
               "title": "Boletus edulis – Wikipedia (en)",
@@ -1341,7 +1341,7 @@
       "notes": "Le fonti (Wikipedia it/en, Gambero Rosso, Cucchiaio) citano anche l'uso crudo (insalata, carpaccio): è una tradizione, ma qui è esclusa. Le sagre reatine parlano genericamente di 'porcinì, senza distinguere la specie."
     },
     "pinophilus": {
-      "taste": "Carne bianca, più tenera negli adulti, sapore dolce di nocciola e odore di muschio. Un po' meno aromatico degli altri porcini, ma in alcune zone è il preferito.",
+      "taste": "Carne bianca, più tenera negli adulti, sapore dolce di nocciola e odore di muschio. Un po' meno aromatico degli altri porcini.",
       "uses": [
         {
           "text": "Si usa come gli altri porcini: fresco, essiccato o conservato.",
@@ -1388,10 +1388,10 @@
       "notes": "Le ricette (Cucchiaio d'Argento) si riferiscono ai porcini in generale, non a questa specie. Wikipedia en conferma che si cucina come gli altri porcini. Gli usi a crudo sono esclusi."
     },
     "aereus": {
-      "taste": "Carne dura, compatta e bianca, con ottima resa in cucina. Profumo intenso di nocciola, soprattutto da cotto: per molti è il migliore dei porcini.",
+      "taste": "Carne dura, compatta e bianca. Profumo intenso di nocciola, soprattutto da cotto.",
       "uses": [
         {
-          "text": "Trifolato è il modo che lo esalta di più. Gli esemplari grandi sono ottimi alla brace.",
+          "text": "Trifolato oppure, per gli esemplari grandi, alla brace.",
           "sources": [
             {
               "title": "Boletus aereus – scheda AMEP",
@@ -1400,7 +1400,7 @@
           ]
         },
         {
-          "text": "Impanato e fritto: c'è chi lo mangia solo così.",
+          "text": "Impanato e fritto.",
           "sources": [
             {
               "title": "Boletus aereus – scheda AMEP",
@@ -1498,7 +1498,7 @@
           ]
         },
         {
-          "text": "In padella insieme ai porcini, come contorno o per condire pasta e riso. È buono anche sulla carne ai ferri o come ripieno di omelette.",
+          "text": "In padella insieme ai porcini, come contorno o per condire pasta e riso. Si usa anche sulla carne ai ferri o come ripieno di omelette.",
           "sources": [
             {
               "title": "Ovoli e porcini in padella – blog GialloZafferano (In cucina si può cambiare il mondo)",
@@ -1536,7 +1536,7 @@
           ]
         },
         {
-          "text": "Il classico con la selvaggina e la cacciagione. Ottimo anche nelle tagliatelle.",
+          "text": "Il classico con la selvaggina e la cacciagione. Si usa anche nelle tagliatelle.",
           "sources": [
             {
               "title": "Champignon, finferli, chiodini: tutti i funghi buoni da mangiare – Cucchiaio d'Argento",
@@ -1731,7 +1731,7 @@
       "taste": "Sapore dolce-acidulo con un leggero retrogusto amarognolo. Il cappello è tenero e il gambo fibroso. In cottura scurisce fino quasi al nero.",
       "uses": [
         {
-          "text": "Dopo la prebollitura (acqua buttata), è ottimo in umido: è il modo più tradizionale.",
+          "text": "Dopo la prebollitura (acqua buttata), in umido: è il modo più tradizionale.",
           "sources": [
             {
               "title": "Armillaria mellea – Wikipedia",
@@ -1863,7 +1863,7 @@
           ]
         },
         {
-          "text": "I giovani, senza cuticola, sono molto apprezzati sott'olio, seguendo le regole per le conserve: bollitura in acqua e aceto, poi vasetto e pastorizzazione (vedi le regole per tutti i funghi).",
+          "text": "I giovani, senza cuticola, si conservano sott'olio, seguendo le regole per le conserve: bollitura in acqua e aceto, poi vasetto e pastorizzazione (vedi le regole per tutti i funghi).",
           "sources": [
             {
               "title": "G. Segneri, Il genere Suillus – Rivista Micologica Romana (AMER), n. 105, 2018",
@@ -1893,7 +1893,7 @@
           ]
         }
       ],
-      "local": "Nel Lazio il S. granulatus è forse il pinarolo più diffuso, soprattutto nei giovani impianti di pino nero. Secondo la Rivista Micologica Romana i giovani esemplari, privati della cuticola, sono molto apprezzati per la conservazione sott'olio.",
+      "local": "Nel Lazio il S. granulatus è forse il pinarolo più diffuso, soprattutto nei giovani impianti di pino nero. Secondo la Rivista Micologica Romana i giovani esemplari, privati della cuticola, si usano per la conservazione sott'olio.",
       "notes": "La cuticola viscosa va tolta perché è lassativa (Wikipedia it). Alcuni autori consigliano di togliere anche i tubuli. Sconsigliato frullarlo in vellutata: secondo Wikipedia en diventa una colla. In Russia lo si mette in salamoia con tutta la cuticola: uso escluso perché contraddice la regola."
     },
     "terreum": {
