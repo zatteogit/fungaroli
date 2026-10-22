@@ -1338,6 +1338,7 @@ function openFullFilters() {
       <div class="fp-body">
       <h3 class="fp-h">Dove vuoi andare?</h3><label class="species-search-label" for="province-filter">Provincia</label><select id="province-filter" class="wiz-input"><option value="">Tutto il Lazio</option>${Object.entries(PROVINCES).map(([id,name])=>`<option value="${id}"${state.province===id?' selected':''}>${name}</option>`).join('')}</select><p class="small muted">Zone selezionate nelle cinque province. Accessi e sentieri hanno una copertura parziale.</p>
       ${state.seasonSuspended?'<p class="notice">Una scelta salvata è sospesa. <button type="button" class="link-btn" data-filter-season-restore>Ripristina la scelta</button></p>':''}<h3 class="fp-h">Alla ricerca di…</h3><div class="intent-row filter-panel-groups" role="group" aria-label="Alla ricerca di">${intentButtons()}</div>
+      ${hasInterest('funghi')?'<p class="small muted fp-safety">Scegli cosa cercare, non cosa mangiare: fai controllare il raccolto all’Ispettorato micologico ASL.</p>':''}
       <p class="small muted">${hasInterest('funghi')&&hasInterest('piante')?'Scegli funghi e piante da cercare. L’indice riguarda solo i funghi.':state.target==='funghi'?'Scegli i funghi da cercare. L’indice resta sperimentale.':state.target==='piante'?'Cerca piante con fase e calendario documentati. Le altre sono consultabili in Scopri.':'Scegli il giro per sentieri, accesso e meteo, senza indice fungino.'}</p>
       ${state.target!=='passeggiata'?`<label class="species-search-label sr-only" for="species-filter-search">Aggiungi una specie</label>
       <input id="species-filter-search" class="wiz-input" type="search" placeholder="${hasInterest('funghi')&&hasInterest('piante')?'Cerca funghi o piante…':state.target==='piante'?'Cerca e aggiungi: ortica, more, Arbutus…':'Cerca e aggiungi: pioppino, spugnola, Boletus…'}" role="combobox" aria-autocomplete="list" aria-controls="species-filter-options" aria-expanded="false" autocomplete="off">
@@ -1345,7 +1346,7 @@ function openFullFilters() {
       ${activeIds() !== null ? `<h3 class="fp-h">Scelte</h3><div class="filter-panel-groups selected-species" aria-label="Specie selezionate">${explicitSelected.map(s=>`<button type="button" class="chip" data-remove-species="${s.id}" aria-label="Rimuovi ${esc(s.name)}"><span>${esc(s.name)}</span>${season(s)}<span aria-hidden="true">×</span></button>`).join('')}</div>` : ''}
       <h3 class="fp-h">${hasInterest('piante')?'Nel calendario indicativo':'Nel periodo tipico'} <small>${fmtDate(date,{day:'numeric',month:'long'})}</small></h3>
       <div class="filter-panel-groups" role="group" aria-label="Gruppi di specie">
-        <button type="button" class="chip" data-all aria-pressed="${activeIds() === null}">${hasInterest('funghi')&&hasInterest('piante')?'Tutte le specie':state.target==='piante'?'Tutte le piante':'Tutti i commestibili'}</button>
+        <button type="button" class="chip" data-all aria-pressed="${activeIds() === null}">${hasInterest('funghi')&&hasInterest('piante')?'Tutte le specie':state.target==='piante'?'Tutte le piante':'Tutte le specie del catalogo'}</button>
         ${inSeason.map(groupChip).join('')}
       </div>
       ${outSeason.length ? `<details class="fp-more"><summary>${state.target==='piante'?'Fuori stagione':'Fuori periodo tipico'} <small>${outSeason.length}</small></summary><div class="filter-panel-groups" role="group" aria-label="${state.target==='piante'?'Gruppi fuori stagione':'Gruppi fuori periodo tipico'}">${outSeason.map(groupChip).join('')}</div></details>` : ''}
@@ -1707,7 +1708,7 @@ function renderSpeciesGrid() {
   if (!box) return;
   box.dataset.glossaryContext='Funghi';
   if (!box.querySelector('#sp-cards')) {
-    box.innerHTML = `      <div class="recognize-modes" role="group" aria-label="Quali funghi mostrare">${[['', 'Tutti'], ['edible', 'Commestibili'], ['other', 'Velenosi e sosia']].map(([v, l]) => `<button type="button" class="btn ghost small" data-fungi-group="${v}" aria-pressed="${(state.fungiGroup || '') === v}">${l}</button>`).join('')}</div>
+    box.innerHTML = `      <div class="recognize-modes" role="group" aria-label="Quali funghi mostrare">${[['', 'Tutti'], ['edible', 'Con usi alimentari documentati'], ['other', 'Velenosi e sosia']].map(([v, l]) => `<button type="button" class="btn ghost small" data-fungi-group="${v}" aria-pressed="${(state.fungiGroup || '') === v}">${l}</button>`).join('')}</div>
       <p class="small muted" data-fungi-count role="status"></p><div class="card-grid" id="sp-cards"></div>`;
     box.querySelectorAll('[data-fungi-group]').forEach((b) => b.addEventListener('click', () => {
       state.fungiGroup = b.dataset.fungiGroup;

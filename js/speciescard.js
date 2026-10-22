@@ -14,7 +14,7 @@ import { openEntitySheet } from './entity-sheet.js';
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const MONTHS = ['G', 'F', 'M', 'A', 'M', 'G', 'L', 'A', 'S', 'O', 'N', 'D'];
 const MONTHS_LONG = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'];
-const TOX = { mortale: 'tox-deadly', tossico: 'tox-toxic', 'non commestibile': 'tox-no', commestibile: 'tox-ok' };
+const TOX = { mortale: 'tox-deadly', tossico: 'tox-toxic', 'non commestibile': 'tox-no', commestibile: 'tox-ok', 'commestibile con cautela': 'tox-commestibile-con-cautela' };
 
 let PREP = null, ID = null, MEDIA = null, ASSET = (f) => f, EMBED_3D = true, INFO = {}, WHERE = () => '', TRAITS = {}, FOOTER = '';
 
@@ -77,20 +77,23 @@ function traitsTable(d) {
   return factCards(rows.map(([label,values])=>({label,icon:label==='Habitat'?'pin':'eye',html:`<ul class="content-values">${values.filter(Boolean).map(v=>`<li>${linkTrees(v)}</li>`).join('')}</ul>`})),{glossary:'Funghi'});
 }
 
-// etichetta del sosia: quella della sua scheda in Riconosci, se dice il motivo (es. «tossica cruda»); la classe resta per i colori
-const toxOf = (l) => TRAITS[taxonKeyByLatin(l.latin)]?.tox_label || l.toxicity;
+// classificazione ed etichetta del sosia dalla stessa fonte: la sua scheda in Riconosci (species-traits),
+// se il nome scientifico la trova; altrimenti il valore della scheda modellata. Etichetta e colore non possono divergere.
+const toxKeyOf = (l) => TRAITS[taxonKeyByLatin(l.latin)]?.toxicity || l.toxicity;
+// l'etichetta dice il motivo quando c'è (es. «tossica cruda»)
+const toxOf = (l) => TRAITS[taxonKeyByLatin(l.latin)]?.tox_label || toxKeyOf(l);
 
 function lookalikes(d, sid) {
   if (!d.lookalikes?.length) return '';
-  const order = { mortale: 0, tossico: 1, 'non commestibile': 2, commestibile: 3 };
+  const order = { mortale: 0, tossico: 1, 'non commestibile': 2, 'commestibile con cautela': 3, commestibile: 3 };
   // i piu' somiglianti per primi (stesso ordine del confronto), a pari merito i piu' pericolosi
-  const list = [...d.lookalikes].sort((a, b) => (lookalikeRank(sid, b.latin) - lookalikeRank(sid, a.latin)) || ((order[a.toxicity] ?? 9) - (order[b.toxicity] ?? 9)));
+  const list = [...d.lookalikes].sort((a, b) => (lookalikeRank(sid, b.latin) - lookalikeRank(sid, a.latin)) || ((order[toxKeyOf(a)] ?? 9) - (order[toxKeyOf(b)] ?? 9)));
   return `<h3>Non confonderlo con</h3><ul class="look">${list.map((l) => {
     const key = (l.latin || '').match(/[A-Z][a-z]+ [a-z]+/)?.[0];
     const m = MEDIA?.lookalikes?.[key]?.ref || MEDIA?.lookalikes?.[key]?.inat?.[0];
     // tutta la riga apre la scheda del sosia; la lente ingrandisce la foto
     const tk = taxonKeyByLatin(l.latin);
-    return `<li class="${TOX[l.toxicity] || ''}${tk ? ' look-link' : ''}">
+    return `<li class="${TOX[toxKeyOf(l)] || ''}${tk ? ' look-link' : ''}">
       <span class="look-btn">${m ? `<img data-src="${ASSET(m.file)}" alt="" loading="lazy" decoding="async">` : '<span class="look-ph">senza foto</span>'}
         ${m ? `<button type="button" class="id-zoom" data-look="${esc(key || '')}" aria-label="${esc(l.name || l.latin)}: ingrandisci la foto"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="m20 20-5-5M10.5 8v5M8 10.5h5"/></svg></button>` : ''}</span>
       <div><div class="look-name"><span class="tox">${esc(toxOf(l))}</span> ${tk && compareHref(sid, tk) ? `<a class="look-open" href="${compareHref(sid, tk)}">${esc(l.name || '')} <i>${esc(l.latin)}</i><span aria-hidden="true"> ›</span></a>` : tk ? `<button type="button" class="look-open" data-taxon="${esc(tk)}">${esc(l.name || '')} <i>${esc(l.latin)}</i><span aria-hidden="true"> ›</span></button>` : `${esc(l.name || '')} <i>${esc(l.latin)}</i>`}</div>
@@ -211,7 +214,10 @@ export function renderSpeciesDetail(body, id) {
           // "con cautela" non dice cosa fare: l'etichetta dice la condizione e porta alla sezione In cucina
           const lab = PREP?.species?.[id]?.label;
           if (lab) return `<button type="button" class="pill caution" data-jump-k="k-h-${id}"><i aria-hidden="true">!</i>${esc(lab)}</button>`;
-          return d.edibility ? `<span class="pill glass">${esc(d.edibility)}</span>` : '';
+          // altrimenti l'etichetta a vocabolario chiuso della specie (species-traits), come nelle altre schede:
+          // nessun giudizio gastronomico («ottimo», «buono») nella testata
+          const tx = TRAITS[id];
+          return tx?.toxicity ? `<span class="pill glass tx-pill tox-${esc(tx.toxicity.replace(/\s/g, '-'))}">${esc(tx.tox_label || tx.toxicity)}</span>` : '';
         })()}${sp.minCap ? `<span class="pill glass">cappello ≥ ${sp.minCap} cm</span>` : sp.minCap === 0 ? '<span class="pill glass">nessuna taglia minima</span>' : ''}</p>
         <h1 class="phero-title">${esc(d.name || sp.name)}</h1>
         <p class="phero-sub"><i>${esc(d.latin || sp.latin)}</i></p>
@@ -261,7 +267,7 @@ export function renderSpeciesDetail(body, id) {
   }).filter((x) => x.ph.length);
   const lookItems = looks.flatMap((x) => x.ph.map((p) => ({
     key: x.key, src: hd(p), alt: x.l.name || x.l.latin,
-    caption: captionHtml({ title: `<span class="tox tox-${esc(x.l.toxicity).replace(/\s/g, '-')}">${esc(toxOf(x.l))}</span> ${esc(x.l.name || '')} <i>${esc(x.l.latin)}</i>`, text: `Differenza: ${esc(x.l.how_to_tell)}`,
+    caption: captionHtml({ title: `<span class="tox tox-${esc(toxKeyOf(x.l)).replace(/\s/g, '-')}">${esc(toxOf(x.l))}</span> ${esc(x.l.name || '')} <i>${esc(x.l.latin)}</i>`, text: `Differenza: ${esc(x.l.how_to_tell)}`,
       credit: `${creditText(p)} · <a href="https://www.inaturalist.org/taxa/search?q=${encodeURIComponent(x.key)}" target="_blank" rel="noopener">altre foto</a> · <a href="https://it.wikipedia.org/w/index.php?search=${encodeURIComponent(x.key)}" target="_blank" rel="noopener">Wikipedia</a>` }),
   })));
   body.querySelector('[data-jump-k]')?.addEventListener('click', (e) => body.querySelector(`#${CSS.escape(e.currentTarget.dataset.jumpK)}`)?.closest('.kitchen')?.scrollIntoView({ behavior: 'smooth', block: 'start' }));
