@@ -6,6 +6,7 @@ import { todayISO } from './weather.js';
 import { mountSearchSelect } from './search-select.js';
 import { startRegistration, startAuthentication, browserSupportsWebAuthn } from './vendor/webauthn.js';
 import { communityMultiplier } from './community-signal.js';
+import { PROVINCES, zoneProvince } from './community-aggregate.js';
 import {setBaseUser,mountBaseEditor} from './base-location.js';
 
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -57,10 +58,13 @@ export function communityStatus() {
   if (!summary) return 'Le osservazioni condivise non sono disponibili in questo momento. Riprova più tardi.';
   if (summary.access!=='granted') return 'Hai fatto un giro nel bosco? Condividi cosa hai osservato, anche se non hai trovato nulla, per leggere i riepiloghi degli altri.';
   const count=(summary.totalReports||0)+(summary.observations||[]).reduce((n,r)=>n+r.observations,0);
+  const wide=(summary.provinceReports||[]).length+(summary.provinceObservations||[]).length;
   return count ? `${count} osservazioni condivise negli ultimi 7 giorni. Scopri dove e cosa è stato segnalato.`
+    : wide ? 'Nelle singole zone le osservazioni degli ultimi 7 giorni sono ancora poche: trovi un riepilogo per provincia.'
     : 'Le osservazioni degli ultimi 7 giorni sono ancora poche per un riepilogo. Anche la tua uscita può essere utile.';
 }
-const outcomes = r => `${r.sightings} ritrovamenti dichiarati · ${r.zeros} ricerche a vuoto`;
+const plural=(n,one,many)=>`${n} ${n===1?one:many}`;
+const outcomes = r => `${plural(r.sightings,'ritrovamento dichiarato','ritrovamenti dichiarati')} · ${plural(r.zeros,'ricerca a vuoto','ricerche a vuoto')}`;
 export function communityOverview() {
   if(summary?.access!=='granted')return '';
   const zoneName=id=>zones.find(z=>z.id===id)?.title||zones.find(z=>z.id===id)?.name||id;
@@ -68,12 +72,20 @@ export function communityOverview() {
   const rows=(summary.reports||[]).map(r=>({...r,name:taxonName(r.speciesId)}));
   // Notes may describe the same outing: keep the series distinct, never sum them as independent outings.
   const notes=summary.observations||[];
-  const list=(records,note=false)=>records.length?`<ul class="community-totals">${records.map(r=>`<li><b>${esc(zoneName(r.zoneId))} · ${esc(note?taxonName(r.taxonId):r.name)}</b><span>${note?`${r.sightings} osservazioni dichiarate · ${r.zeros} ricerche a vuoto`:outcomes(r)}</span></li>`).join('')}</ul>`:'';
-  return list(rows)+(notes.length?`<h3>Osservazioni strutturate</h3><p class="small">Serie separata: può comprendere note della stessa uscita, su funghi, piante, alberi e animali.</p>${list(notes,true)}`:'');
+  const list=(records,note=false)=>records.length?`<ul class="community-totals">${records.map(r=>`<li><b>${esc(zoneName(r.zoneId))} · ${esc(note?taxonName(r.taxonId):r.name)}</b><span>${note?`${plural(r.sightings,'osservazione dichiarata','osservazioni dichiarate')} · ${plural(r.zeros,'ricerca a vuoto','ricerche a vuoto')}`:outcomes(r)}</span></li>`).join('')}</ul>`:'';
+  // Per provincia: compare anche quando le zone non bastano. I totali comprendono le zone già mostrate sopra.
+  const wide=[...(summary.provinceReports||[]).map(r=>({...r,name:taxonName(r.speciesId)})),...(summary.provinceObservations||[]).map(r=>({...r,name:taxonName(r.taxonId),note:true}))];
+  const provinces=wide.length?`<h3>Per provincia</h3><p class="small">Ultimi 7 giorni, quando le singole zone non bastano.${rows.length||notes.length?' I totali comprendono anche le zone elencate sopra.':''} Uscite e osservazioni restano separate.</p><ul class="community-totals">${wide.map(r=>`<li><b>Provincia di ${esc(PROVINCES[r.province]||r.province)} · ${esc(r.name)}</b><span>${r.note?`${plural(r.sightings,'osservazione dichiarata','osservazioni dichiarate')} · ${plural(r.zeros,'ricerca a vuoto','ricerche a vuoto')}`:outcomes(r)}${r.note?' · dal Taccuino':''}</span></li>`).join('')}</ul>`:'';
+  return list(rows)+(notes.length?`<h3>Osservazioni strutturate</h3><p class="small">Serie separata: può comprendere note della stessa uscita, su funghi, piante, alberi e animali.</p>${list(notes,true)}`:'')+provinces;
 }
+const provinceOf=zoneId=>zoneProvince(zones.find(z=>z.id===zoneId));
 export function reportBadge(zoneId, speciesId) {
   const records = (summary?.reports || []).filter(r => (!zoneId || r.zoneId === zoneId) && r.speciesId === speciesId);
-  if (!records.length) return '';
+  if (!records.length) {
+    // Ripiego sulla provincia della zona, dichiarato nel testo: non è un dato della zona.
+    const wide = zoneId && (summary?.provinceReports || []).find(r => r.province === provinceOf(zoneId) && r.speciesId === speciesId);
+    return wide ? `<span class="community-badge" title="Ultimi 7 giorni, provincia di ${esc(PROVINCES[wide.province]||wide.province)}: dichiarazioni, non un dato di questa zona né una conferma di presenza attuale.">In provincia: ${outcomes(wide)}</span>` : '';
+  }
   const r = records.reduce((a,r) => ({sightings:a.sightings+r.sightings,zeros:a.zeros+r.zeros}), {sightings:0,zeros:0});
   return `<span class="community-badge" title="Ultimi 7 giorni: dichiarazioni, non un campione rappresentativo né una conferma di presenza attuale.">${outcomes(r)}</span>`;
 }
