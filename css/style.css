@@ -2236,7 +2236,8 @@ html.theme-swap, html.theme-swap *, html.theme-swap *::before, html.theme-swap *
 .profile-editorial p { margin: 8px 0 0; }
 .profile-actions { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
 .profile-actions .btn { min-height: 44px; margin: 0; }
-.profile-data { margin-top: 20px; padding-top: 12px; border-top: 1px solid var(--hair); }
+.profile-data { margin-top: 20px; padding-top: 12px; border-top: 1px solid var(--hair); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; }
+.profile-data .btn { min-height: 44px; margin: 0; }
 .profile-data .link-btn { color: var(--crit-ink); min-height: 44px; max-width: 100%; font-size: 13px; text-align: left; white-space: normal; }
 .profile-status { margin: 8px 0 0; font-size: 13px; }
 .profile-status:empty { display: none; }
@@ -2581,6 +2582,8 @@ html.entity-open { overflow: hidden; }
 .notebook-storage-body { padding:6px 0 12px; }
 .notebook-storage .btn { font-size:12px; min-height:40px; }
 .notebook-storage #journal-storage { margin-top:0; }
+.notebook-download { margin-top:12px; }
+.notebook-download [role="status"]:empty { display:none; }
 .notebook-dialog .notebook-paper { padding:14px 16px; border-radius:5px; line-height:28px; min-height:168px; }
 @media(max-width:899px) {
   .notebook-heading { flex-direction:column; align-items:flex-start; gap:16px; margin:10px 0 20px; }

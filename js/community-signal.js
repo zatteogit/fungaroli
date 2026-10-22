@@ -2,7 +2,9 @@
 // Le quantità dichiarate dagli utenti non sono misure di produttività o probabilità.
 export function communityMultiplier(records, maxPercent = 10) {
   if(!Number.isInteger(maxPercent)||maxPercent<0||maxPercent>10)return 1;
-  const usable = records.filter((r) => r.establishedContributors >= 3 && r.days >= 2);
+  // Il riepilogo pubblico della community non espone più i giorni (22/10/2026): la guardia dei 2 giorni diversi
+  // la applica il server prima di pubblicare. Le altre fonti (segnali esterni, cruscotto) passano ancora days.
+  const usable = records.filter((r) => r.establishedContributors >= 3 && (r.days === undefined || r.days >= 2));
   if (!usable.length) return 1;
   const signals = usable.map((r) => {
     const n = r.sightings + r.zeros;
