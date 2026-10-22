@@ -19,6 +19,7 @@ import traits from '../data/species-traits.json';
 import edibleCatalog from '../data/edible-catalog.json';
 import zones from '../data/zones.json';
 import { publishedResources } from './cms.js';
+import { provinceGroups } from '../js/community-aggregate.js';
 
 const SESSION = '__Host-fungaroli_session', CHALLENGE = '__Host-fungaroli_challenge';
 const SESSION_SECONDS = 30 * 86400, MAX_BYTES = 250_000;
@@ -210,8 +211,16 @@ export async function handleCommunity(request, env, now = Date.now()) {
       // Project only broad catalogue zones and window totals: no person, note, day or GPS.
       const { results } = await db.prepare('SELECT r.zone_id AS zoneId,r.species_id AS speciesId,COUNT(*) AS reports,SUM(r.amount>0) AS sightings,SUM(r.amount=0) AS zeros,COUNT(DISTINCT r.account_id) AS contributors,COUNT(DISTINCT CASE WHEN a.created_at<? THEN r.account_id END) AS establishedContributors,COUNT(DISTINCT day) AS days FROM reports r JOIN accounts a ON a.id=r.account_id WHERE day>=? GROUP BY zone_id,species_id HAVING COUNT(DISTINCT r.account_id)>=3 AND COUNT(DISTINCT day)>=2').bind(now - 864e5, since).all();
       const {results:observations}=await db.prepare("SELECT zone_id AS zoneId,category,taxon_id AS taxonId,COUNT(*) AS observations,SUM(json_extract(payload,'$.presence')='observed') AS sightings,SUM(json_extract(payload,'$.presence')='searched_absent') AS zeros FROM shared_observations WHERE day>=? GROUP BY zone_id,category,taxon_id HAVING COUNT(DISTINCT account_id)>=3 AND COUNT(DISTINCT day)>=2").bind(since).all();
+      // Aggregato più largo per provincia (decisione del 22/10): stessa guardia, solo dove la parte non già
+      // pubblicata per zona la supera anch'essa (js/community-aggregate.js). Righe per account lette qui e mai restituite.
+      const content=await publishedResources(env,url.origin,['zones']).catch(()=>null);
+      const zoneList=content?.zones?.zones||zones.zones;
+      const {results:reportRows}=await db.prepare('SELECT zone_id AS zoneId,species_id AS speciesId,account_id AS accountId,day,CASE WHEN amount>0 THEN \'sighting\' ELSE \'zero\' END AS outcome FROM reports WHERE day>=?').bind(since).all();
+      const {results:observationRows}=await db.prepare("SELECT zone_id AS zoneId,category,taxon_id AS taxonId,account_id AS accountId,day,CASE json_extract(payload,'$.presence') WHEN 'observed' THEN 'sighting' WHEN 'searched_absent' THEN 'zero' ELSE 'other' END AS outcome FROM shared_observations WHERE day>=?").bind(since).all();
+      const provinceReports=provinceGroups(reportRows,{zones:zoneList,keyOf:r=>r.speciesId,fields:r=>({speciesId:r.speciesId}),published:new Set(results.map(r=>`${r.zoneId}|${r.speciesId}`))});
+      const provinceObservations=provinceGroups(observationRows,{zones:zoneList,keyOf:r=>`${r.category}|${r.taxonId}`,fields:r=>({category:r.category,taxonId:r.taxonId}),published:new Set(observations.map(r=>`${r.zoneId}|${r.category}|${r.taxonId}`))});
       const policy=await rankingPolicy(db);
-      return result({...base,access:'granted',policy:{maxPercent:policy.maxPercent,version:policy.version},observations,reports:results,totalReports:results.reduce((n,r)=>n+r.reports,0)});
+      return result({...base,access:'granted',policy:{maxPercent:policy.maxPercent,version:policy.version},observations,reports:results,totalReports:results.reduce((n,r)=>n+r.reports,0),provinceReports,provinceObservations});
     }
 
     if (path === 'session' && request.method === 'GET') {

@@ -28,3 +28,25 @@ Quando il browser sarà disponibile, conservare soltanto fonte, data dell’osse
 ## Verifica
 
 Controlli mirati di sintassi JavaScript, diff e compilazione delle query della nuova proiezione su schema SQLite locale. Nessuna suite unitaria/browser, nessun dry-run o consultazione della D1 di produzione. Versione shell v244. La verifica sul dispositivo iOS e la raccolta Facebook restano da effettuare.
+
+## Aggiornamento del 22/10/2026: partenza della reciprocità
+
+Decisioni di Matteo del 22/10, per evitare che chi condivide per primo veda solo «dati insufficienti».
+
+- **Confronto personale nel Taccuino.** Per ogni uscita con la previsione salvata prima di partire, la pagina
+  dell'uscita mostra il valore dell'indice di quel giorno e l'esito dichiarato («cercato, zero» o «trovato ·
+  Discreti»). Il Taccuino mostra in testa «Le tue uscite e l'indice» con gli ultimi confronti. **Nessun verdetto**:
+  tolti «concordante», «indice alto, zero osservato» e «trovata con indice basso», perché dipendevano dalla soglia
+  esplorativa 3,0 (`FOUND_THRESHOLD`), mai tarata. Le funzioni `agreement` e `summary` restano per le analisi.
+- **Aggregato per provincia.** `/api/community/summary` restituisce anche `provinceReports` e
+  `provinceObservations`: provincia, taxon e totali (segnalazioni, ritrovamenti, zeri) negli stessi 7 giorni, con la
+  stessa guardia (3 contributori distinti, 2 giorni diversi). **Protezione per sottrazione:** un gruppo di provincia
+  si pubblica solo se anche la parte non già pubblicata per zona supera la guardia; altrimenti «provincia meno zone
+  mostrate» rivelerebbe un gruppo piccolo. Le zone senza provincia nei dati contano come Reatino, come nell'app.
+  Codice e prove: `js/community-aggregate.js`, `tests/community-aggregate.test.mjs`. Gli aggregati di provincia **non**
+  entrano nell'ordine delle uscite (`communityRank` usa solo i gruppi per zona) e nel badge della card si leggono come
+  «In provincia: …», mai come dato della zona.
+- **Gruppo pilota.** Solo inviti e guida, senza codice: [pilota-esperti.md](pilota-esperti.md).
+
+Limite che resta: la soppressione dei piccoli gruppi riduce le deduzioni, non le esclude (confronti fra finestre di
+giorni diversi, account collusivi). Non è una garanzia di anonimato.
