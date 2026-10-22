@@ -1724,7 +1724,7 @@ const catalogPhoto = s=>speciesPhoto(s.modelId||s.id)||searchTaxa().find(t=>t.ke
 function fillCatalogCounts() {
   const n = (k, one, many) => `${k} ${k === 1 ? one : many}`;
   const counts = {
-    specie: `${catalog.length} commestibili · ${otherFungi().length} velenosi e sosia`,
+    specie: `${catalog.length} con usi alimentari documentati · ${otherFungi().length} velenosi e sosia`,
     alberi: n(Object.keys(treesData?.trees || {}).length, 'albero in catalogo', 'alberi in catalogo'),
     animali: n(animals().length, 'scheda in catalogo', 'schede in catalogo'),
     piante: n(plants().length, 'pianta in catalogo', 'piante in catalogo'),

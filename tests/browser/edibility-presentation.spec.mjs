@@ -37,6 +37,19 @@ for(const theme of ['light','dark'])test(`commestibilità neutra, senza giudizi 
  expect(await style(caution,'boxShadow')).toContain(await tokenColor(page,'--warn-ink'));
  expect(await caution.evaluate(e=>getComputedStyle(e,'::before').content)).toMatch(/!/);
  await expect(page.locator('.view:not([hidden]) .sp-badges .pill.caution i')).toHaveText('!');
+ // la didascalia della foto ingrandita del sosia ha anello e «!» nell'ambra chiaro delle foto (fondo sempre scuro)
+ await laccaria.locator('.id-zoom').click();
+ const lbTox=page.locator('.lb-cap .tox-commestibile-con-cautela');await expect(lbTox).toBeVisible();
+ expect(await style(lbTox,'boxShadow')).toContain(await tokenColor(page,'--photo-warning'));
+ expect(await lbTox.evaluate(e=>getComputedStyle(e,'::before').content)).toMatch(/!/);
+ await page.keyboard.press('Escape');await expect(page.locator('.lb-cap')).toBeHidden();
+
+ // nel confronto la regola di species-pages.css non toglie l'anello ambra a «con cautela»
+ await page.goto('/#/riconosci/confronta/mellea');
+ const ref=page.locator('.view:not([hidden]) .cmp-slide:not([hidden]) .cmp-fig.tox-commestibile-con-cautela .tox').first();
+ await expect(ref).toHaveText('commestibile solo prebollito');
+ expect(await style(ref,'boxShadow')).toContain(await tokenColor(page,'--warn-ink'));
+ expect(await ref.evaluate(e=>getComputedStyle(e,'::before').content)).toMatch(/!/);
 
  // F2: nel confronto «commestibile» ha lo stesso fondo di «non commestibile»
  await page.goto('/#/riconosci/confronta/edulis/tylopilus-felleus');
@@ -57,6 +70,7 @@ for(const theme of ['light','dark'])test(`commestibilità neutra, senza giudizi 
  // F6: Scopri e filtri dell'uscita con etichette neutre e la riga di cautela
  await page.goto('/#/specie');
  await expect(page.locator('.view:not([hidden]) [data-fungi-group="edible"]')).toHaveText('Con usi alimentari documentati');
+ await expect(page.locator('.view:not([hidden]) [data-catalog-count="specie"]')).toHaveText(/^\d+ con usi alimentari documentati · \d+ velenosi e sosia$/i);
  await page.goto('/');
  await page.locator('#appbar-home-filters [data-more]:visible,#home-filter-action [data-more]:visible').first().click();
  await expect(page.locator('#full-filters [data-all]')).toHaveText('Tutte le specie del catalogo');

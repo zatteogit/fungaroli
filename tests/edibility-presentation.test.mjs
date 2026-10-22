@@ -17,9 +17,11 @@ const traits = read('species-traits.json'), speciesId = read('species-id.json'),
 const cssRules = (src) => [...src.replace(/\/\*[\s\S]*?\*\//g, '').matchAll(/([^{}]+)\{([^{}]*)\}/g)].map(([, sel, body]) => ({ sel: sel.trim(), body }));
 const cssFiles = fs.readdirSync(new URL('css/', root)).filter((f) => f.endsWith('.css')).map((f) => `css/${f}`);
 const allRules = cssFiles.flatMap((f) => cssRules(text(f)).map((r) => ({ ...r, file: f })));
-// ruoli positivi o verdi (esito favorevole, germoglio, bosco, rampe dell'indice) e colori scritti a mano;
-// ammesse solo le ombre nere
-const GREEN = /var\(--(?:ok-|germoglio|forest|viz-index|p?s[0-5]\b)|#[0-9a-f]{3,8}\b|rgba?\((?!0[ ,]+0[ ,]+0\b)/i;
+// elenco dei ruoli ammessi, non dei vietati: superfici e testi neutri, cautela, rischio, l'ambra chiaro sulle foto e i font.
+// Così restano fuori anche i ruoli pubblici verdi nel tema chiaro (--brand, --link, --action, --focus, --line…)
+const ALLOWED_VAR = /^--(?:surface(?:-[23])?|text(?:-2)?|muted|warn-(?:bg|ink)|caution(?:-bg|-ink)?|crit(?:-bg|-ink)?|on-crit|photo-warning|font-(?:body|display))$/;
+// colori scritti a mano: ammesse solo le ombre nere
+const LITERAL_COLOR = /#[0-9a-f]{3,8}\b|rgba?\((?!0[ ,]+0[ ,]+0\b)/i;
 // fonte di una funzione nel sorgente: dalla dichiarazione alla successiva dichiarazione di primo livello
 const fnSource = (src, decl) => {
   const at = src.indexOf(decl);
@@ -31,7 +33,11 @@ const fnSource = (src, decl) => {
 test('le etichette «commestibile» e il fungo di riferimento non usano colori positivi o verdi', () => {
   const edible = allRules.filter((r) => /tox-commestibile|tox-ok\b|\.cc-th\.ref|chip-ref|\.pill\.caution/.test(r.sel));
   assert.ok(edible.length >= 3, 'regole trovate');
-  for (const r of edible) assert.doesNotMatch(r.body, GREEN, `${r.file}: ${r.sel}`);
+  for (const r of edible) {
+    assert.doesNotMatch(r.body, LITERAL_COLOR, `${r.file}: ${r.sel}`);
+    for (const [, v] of r.body.matchAll(/var\((--[\w-]+)/g)) assert.match(v, ALLOWED_VAR, `${r.file}: ${r.sel} usa ${v}`);
+  }
+  for (const v of ['--ok-bg', '--ok-ink', '--brand', '--link', '--action', '--focus', '--forest', '--line', '--germoglio', '--s4']) assert.doesNotMatch(v, ALLOWED_VAR, v);
   // la base di .tox (usata da «commestibile» e «non commestibile») resta neutra
   const base = allRules.find((r) => r.file === 'css/style.css' && r.sel === '.tox');
   assert.match(base.body, /background:\s*var\(--surface-2\)/);
@@ -51,6 +57,32 @@ test('«commestibile con cautela»: fondo neutro, anello e «!» ambra, solo tok
   // il simbolo accompagna il colore: «!» sulle etichette con cautela e nella pillola della scheda
   assert.match(css, /tox-commestibile-con-cautela[^{]*::before\s*\{[^}]*content:\s*"!"/);
   assert.match(text('js/speciescard.js'), /class="pill caution"[^`]*<i aria-hidden="true">!<\/i>/);
+  // didascalia della foto ingrandita dei sosia: fondo sempre scuro, anello e «!» nell'ambra chiaro delle foto in entrambi i temi
+  const lb = allRules.filter((r) => r.file === 'css/style.css' && r.sel.startsWith('.lb-cap .tox-commestibile-con-cautela'));
+  assert.match(lb.find((r) => !r.sel.includes('::before'))?.body || '', /box-shadow:\s*inset 0 0 0 1\.5px var\(--photo-warning\)/);
+  assert.match(lb.find((r) => r.sel.endsWith('::before'))?.body || '', /content:\s*"!"[^}]*color:\s*var\(--photo-warning\)/);
+});
+
+test('«con cautela»: i fogli caricati dopo style.css non tolgono l’anello ambra alle etichette', () => {
+  const order = [...text('index.html').matchAll(/<link rel="stylesheet" href="(css\/[^"]+)">/g)].map((m) => m[1]);
+  const later = order.slice(order.indexOf('css/style.css') + 1);
+  assert.ok(later.includes('css/species-pages.css'), later.join(' '));
+  const sels = (r) => r.sel.split(',').map((x) => x.trim());
+  let resets = 0;
+  for (const f of later) {
+    const rules = cssRules(text(f));
+    rules.forEach((r, i) => {
+      if (!/box-shadow:\s*none/.test(r.body)) return;
+      for (const sel of sels(r).filter((x) => /\.tox$/.test(x))) {
+        resets++;
+        // stesso selettore con in più la classe della cautela, quindi più specifico: l'anello torna
+        const back = rules.slice(i + 1).some((x) => sels(x).some((y) => y.includes('.tox-commestibile-con-cautela') && y.replace('.tox-commestibile-con-cautela', '') === sel)
+          && /box-shadow:\s*inset 0 0 0 1\.5px var\(--caution\)/.test(x.body));
+        assert.ok(back, `${f}: «${sel}» toglie l'anello a «con cautela»`);
+      }
+    });
+  }
+  assert.ok(resets >= 1, 'regola del confronto trovata');
 });
 
 test('la testata della scheda non mostra giudizi gastronomici: nessun renderer legge «edibility»', () => {
@@ -155,4 +187,13 @@ test('la cautela del controllo micologico accompagna ogni vista con la commestib
   assert.match(fnSource(card, 'function kitchen('), /Solo dopo il controllo del raccolto all’Ispettorato micologico\./);
   assert.match(app, /hasInterest\('funghi'\)\?'<p class="small muted fp-safety">Scegli cosa cercare, non cosa mangiare: fai controllare il raccolto all’Ispettorato micologico ASL\.<\/p>'/);
   assert.doesNotMatch(app, /Tutti i commestibili|\['edible', 'Commestibili'\]/);
+  // il contatore di Scopri → Funghi usa lo stesso vocabolario del filtro
+  assert.match(app, /specie: `\$\{catalog\.length\} con usi alimentari documentati · \$\{otherFungi\(\)\.length\} velenosi e sosia`/);
+  assert.doesNotMatch(app, /\} commestibili ·/);
+  // Riconosci: l'avviso dell'Ispettorato (legal.identify_banner, o il testo di ripiego) sta sopra le card dei candidati
+  const idf = fnSource(identify, 'export function renderIdentify(');
+  const warn = idf.search(/<details class="id-warn context-note"[^\n]*\$\{BANNER \? esc\(BANNER\) : "[^"]*Ispettorato micologico ASL[^"]*"\}/);
+  assert.ok(warn >= 0, 'avviso con il banner');
+  assert.ok(idf.indexOf('<ul class="id-cards">') > warn, 'avviso prima delle card');
+  assert.match(app, /banner: legal\?\.identify_banner/);
 });

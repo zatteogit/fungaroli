@@ -1507,6 +1507,9 @@ html.modal-viewport-constrained :is(.wiz,.sheet-dlg,.community-dialog,.cmp-choos
 :is(.id-card.tox-commestibile-con-cautela .tox, .cmp-fig.tox-commestibile-con-cautela .tox, .tx-body.tox-commestibile-con-cautela .tox, .tx-c.tox-commestibile-con-cautela .tox, .look .tox-commestibile-con-cautela .tox, .tx-pill.tox-commestibile-con-cautela, .sr-badge.tox-commestibile-con-cautela)::before {
   content: "!"; content: "!" / ""; margin-right: 4px; font-weight: 800; color: var(--caution);
 }
+/* didascalia della foto ingrandita: fondo sempre scuro in entrambi i temi, quindi l'ambra chiaro stabile del testo sulle foto */
+.lb-cap .tox-commestibile-con-cautela { box-shadow: inset 0 0 0 1.5px var(--photo-warning); }
+.lb-cap .tox-commestibile-con-cautela::before { content: "!"; content: "!" / ""; margin-right: 4px; font-weight: 800; color: var(--photo-warning); }
 .pill.caution { display: inline-flex; align-items: center; gap: 7px; border: 0; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; padding: 6px 12px 6px 6px; border-radius: 999px; background: var(--caution-bg); color: var(--caution-ink); box-shadow: inset 0 0 0 1.5px var(--caution), 0 2px 8px rgb(0 0 0 / .25); }
 .pill.caution i { width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; background: var(--caution); color: var(--warn-bg); font: 800 12px/1 var(--font-body); font-style: normal; }
 .pill.caution::after { content: '↓'; font-weight: 700; opacity: .7; }

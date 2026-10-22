@@ -75,6 +75,8 @@
 .fungus-compare .cmp-zoom { display:block; aspect-ratio:1; background:var(--surface-3); border-radius:23px 23px 0 0; box-shadow:none; }
 .fungus-compare .cmp-zoom img { object-fit:cover; }
 .fungus-compare .cmp-fig .tox { position:static; display:block; margin:16px 16px 0; width:fit-content; max-width:calc(100% - 32px); box-shadow:none; font-size:12px; padding:4px 8px; border:0; }
+/* la regola sopra toglie l'ombra a tutte le etichette: «con cautela» riprende l'anello ambra (css/style.css) */
+.fungus-compare .cmp-fig.tox-commestibile-con-cautela .tox { box-shadow:inset 0 0 0 1.5px var(--caution); }
 .fungus-compare .cmp-name { gap:8px; padding:12px 16px 20px; }
 .fungus-compare .cmp-vs { top:0; margin-top:calc(25% - 23px); z-index:3; width:40px; height:40px; border:1px solid var(--hair); pointer-events:none; }
 .fungus-compare .cmp-name :is(a,button) { font:600 24px/1.3 var(--font-display); }
