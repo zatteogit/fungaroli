@@ -139,7 +139,8 @@ function remoteStore(token) {
         try { await local.replace(entries); } catch { /* copia locale facoltativa */ }
         return entries;
       } catch (e) {
-        if (e.status === 401) throw e;
+        // 410: il vecchio diario con codice è stato dismesso (functions/api/diario): non è una rete assente.
+        if (e.status === 401 || e.status === 410) throw e;
         this.offline = true;
         return local.list(); // offline: mostra l'ultima copia scaricata
       }
@@ -457,7 +458,7 @@ export function initJournal({ resolveTrip=()=>null,onEntries=()=>{},zones, speci
       renderList(`Taccuino collegato: ${entries.length} voci sincronizzate.`);
       return true;
     } catch (e) {
-      if (msg) msg.textContent = e.status === 401 ? 'Codice non valido: controlla di averlo copiato tutto.' : 'Collegamento non riuscito, riprova tra poco.';
+      if (msg) msg.textContent = e.status === 410 ? 'Il vecchio taccuino con codice è stato dismesso. Le voci restano su questo dispositivo.' : e.status === 401 ? 'Codice non valido: controlla di averlo copiato tutto.' : 'Collegamento non riuscito, riprova tra poco.';
       return false;
     }
   }
@@ -549,7 +550,7 @@ export function initJournal({ resolveTrip=()=>null,onEntries=()=>{},zones, speci
       const token = getToken();
       if (token) {
         const rs = remoteStore(token);
-        try { await rs.list(); st = rs; } catch (e) { if (e.status === 401) setToken(''); }
+        try { await rs.list(); st = rs; } catch (e) { if (e.status === 401 || e.status === 410) setToken(''); }
       }
       if (st.kind === 'local') remote = await probeRemote();
     }
