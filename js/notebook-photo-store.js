@@ -11,6 +11,20 @@ function database(){return opening||=(new Promise((resolve,reject)=>{
 async function photoIO(method,key,value){const db=await database();return new Promise((resolve,reject)=>{
  const tx=db.transaction('photos',method==='get'?'readonly':'readwrite'),r=tx.objectStore('photos')[method](...(method==='put'?[value,key]:[key]));let result;r.onsuccess=()=>result=r.result;tx.oncomplete=()=>resolve(result);tx.onerror=()=>reject(Error('Spazio per le fotografie non disponibile. La nota non è stata salvata.'));tx.onabort=tx.onerror;
 });}
+// Copia locale del taccuino di un profilo: chiave di localStorage e prefisso delle sue foto in IndexedDB.
+export const accountNotebookScope=id=>'fungaroli:diario:account:'+id;
+// Toglie dal dispositivo una copia del taccuino (decisione del 22/10/2026): voci in localStorage e foto con il
+// prefisso dell'archivio. Usata dopo «Elimina profilo e dati»; aspetta le scritture già in coda su quell'archivio.
+export function clearNotebookStore(scope){
+ return serial(scope,async()=>{
+  try{localStorage.removeItem(scope);}catch{/* memoria non disponibile: restano solo le foto da togliere */}
+  const db=await database();
+  await new Promise((resolve,reject)=>{
+   const tx=db.transaction('photos','readwrite');tx.objectStore('photos').delete(IDBKeyRange.bound(scope+':',scope+':\uffff'));
+   tx.oncomplete=()=>resolve();tx.onerror=()=>reject(Error('Non riesco a togliere le foto da questo dispositivo.'));tx.onabort=tx.onerror;
+  });
+ });
+}
 export function notebookLocalStore(scope='fungaroli:diario:v1'){
  const metadata=()=>{try{return JSON.parse(localStorage.getItem(scope)||'[]');}catch{return [];}};
  const hydrate=async entry=>{

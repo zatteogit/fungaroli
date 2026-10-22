@@ -11,7 +11,7 @@ const CONTENT = 'fungaroli-content-v1';
 const MAX_TILES = 1500;
 const PRECACHE = [
   'js/home-composition.js', 'js/home-intro.js',
-  'js/notebook-photo.js', 'js/notebook-photo-store.js', 'js/notebook-quick-composer.js',
+  'js/notebook-photo.js', 'js/notebook-photo-store.js', 'js/notebook-quick-composer.js', 'js/data-export.js',
   'js/home-cover-media.js', 'assets/video/places/canneto-verde-sereno-poster-small.webp', 'assets/video/places/tancia-autunno-asciutto-poster-small.webp',
   'js/atmosphere.js', 'js/atmosphere-video.js', 'css/atmosphere.css',
   'assets/video/nature/autunno-poster-small.webp', 'assets/video/nature/luce-tra-le-foglie-poster-small.webp',

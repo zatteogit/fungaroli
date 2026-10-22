@@ -18,7 +18,8 @@ import {normalizeNotebookNote,PHENO_PHASES} from './notebook-entry.js';
 import {sharedObservation} from './community-observation.js';
 import {createNotebookComposer} from './notebook-composer.js';
 import {createQuickNotebookComposer} from './notebook-quick-composer.js';
-import {notebookLocalStore} from './notebook-photo-store.js';
+import {notebookLocalStore,accountNotebookScope} from './notebook-photo-store.js';
+import {downloadDeviceNotebook} from './data-export.js';
 import {shouldCapture,autoPlanEntry,autoSaveMode,localPlansToDrop,outingStart,linkedForecast} from './forecast-autosave.js';
 
 const KEY = 'fungaroli:diario:v1';
@@ -77,7 +78,7 @@ const localStore=(key=KEY)=>notebookLocalStore(key);
 
 function collectiveStore() {
   const account = currentUser();
-  const local = localStore('fungaroli:diario:account:' + account.id);
+  const local = localStore(accountNotebookScope(account.id));
   return { kind: 'community', ownerId: account.id,
     async list({isCurrent=()=>true}={}) {
       try {
@@ -465,11 +466,27 @@ export function initJournal({ resolveTrip=()=>null,onEntries=()=>{},zones, speci
   let qrLib = null;
   const loadQr = () => qrLib || (qrLib = new Promise((ok, ko) => { if (globalThis.qrcode) return ok(); const sc = document.createElement('script'); sc.src = 'https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js'; sc.onload = ok; sc.onerror = ko; document.head.append(sc); }));
 
+  // Senza profilo il taccuino sta solo qui: «Scarica il taccuino» ne dà una copia con le foto (decisione del 22/10/2026).
+  const deviceDownload = '<div class="notebook-download"><button type="button" class="btn ghost" data-download-notebook>Scarica il taccuino</button><p class="small" role="status" data-download-status></p></div>';
+  storageBox.addEventListener('click', async (event) => {
+    const button = event.target.closest('[data-download-notebook]');
+    if (!button || button.disabled || store?.kind !== 'local') return;
+    const status = storageBox.querySelector('[data-download-status]'), source = store;
+    button.disabled = true; status.textContent = 'Preparo il file…';
+    try {
+      // Import al clic: legal-access.js registra i suoi ascoltatori del documento al caricamento.
+      const {RECEIPT_KEY} = await import('./legal-access.js');
+      let legalAcceptance = null; try { legalAcceptance = JSON.parse(localStorage.getItem(RECEIPT_KEY) || 'null'); } catch { /* ricevuta non leggibile: il file resta valido */ }
+      const count = await downloadDeviceNotebook(source, { legalAcceptance });
+      if (status.isConnected) status.textContent = count === 1 ? 'File pronto: 1 voce.' : `File pronto: ${count} voci.`;
+    } catch { if (status.isConnected) status.textContent = 'Non sono riuscito a preparare il file. Riprova.'; }
+    finally { button.disabled = false; }
+  });
   function renderStorage(remote) {
     if (store.kind === 'community') {
       storageBox.innerHTML = `<p>Taccuino privato di <b>${esc(currentUser()?.handle || 'questo profilo')}</b>, sincronizzato con la passkey. Le condivisioni sono facoltative.</p><button type="button" class="btn ghost" data-community-account>Gestisci il profilo</button>`;
     } else if (communityEnabled() && store.kind === 'local') {
-      storageBox.innerHTML = '<p>Il taccuino resta su questo dispositivo. Con una passkey puoi tenerlo privato online e scegliere quali osservazioni condividere.</p><button type="button" class="btn primary" data-community-account>Crea profilo o accedi</button>';
+      storageBox.innerHTML = '<p>Il taccuino resta su questo dispositivo. Con una passkey puoi tenerlo privato online e scegliere quali osservazioni condividere.</p><button type="button" class="btn primary" data-community-account>Crea profilo o accedi</button>' + deviceDownload;
     } else if (store.kind === 'db') {
       storageBox.innerHTML = 'Il taccuino è salvato nel tuo spazio privato di questa pagina: lo ritrovi da qualsiasi dispositivo.';
     } else if (store.kind === 'remote') {
@@ -509,7 +526,7 @@ export function initJournal({ resolveTrip=()=>null,onEntries=()=>{},zones, speci
         await connect(inp.value.trim(), storageBox.querySelector('.j-connect-msg'));
       });
     } else {
-      storageBox.innerHTML = 'Il taccuino resta solo in questo browser.';
+      storageBox.innerHTML = '<p>Il taccuino resta solo in questo browser.</p>' + (store.kind === 'local' ? deviceDownload : '');
     }
   }
 

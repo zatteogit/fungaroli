@@ -105,6 +105,47 @@ test('summary: provincia pubblicata per due zone piccole del Reatino, Roma tratt
   assert.ok(!JSON.stringify(out.provinceReports).match(/p\d|me|vallonina|tancia|2026-10-2/));
 });
 
+// Decisione di Matteo del 22/10/2026: alla soglia di pubblicazione contano solo i profili attivi da almeno 24 ore,
+// per zona e per provincia, e l'uscita pubblica non dice quante persone o quanti giorni ci sono dietro un conteggio.
+test('summary: contano solo i profili attivi da almeno 24 ore; in uscita niente persone né giorni', async () => {
+  const sql = new DatabaseSync(':memory:');
+  for (const f of ['0001_community.sql', '0003_account_preferences.sql', '0007_shared_observations.sql']) sql.exec(readFileSync(new URL('../migrations/' + f, import.meta.url), 'utf8'));
+  const old = ['me', 'o1', 'o2', 'o3', ...Array.from({ length: 12 }, (_, i) => 'm' + i)];
+  for (const id of old) sql.prepare('INSERT INTO accounts VALUES(?,?,?)').run(id, id, NOW - 30 * 864e5);
+  sql.prepare('INSERT INTO accounts VALUES(?,?,?)').run('nuovo', 'nuovo', NOW - 2 * 3600e3);
+  sql.prepare('INSERT INTO accounts VALUES(?,?,?)').run('appena24', 'appena24', NOW - 864e5);
+  sql.prepare('INSERT INTO sessions VALUES(?,?,?)').run(createHash('sha256').update('me').digest('hex'), 'me', NOW + 864e5);
+  let n = 0;
+  const entry = (account) => { const id = 'e' + (++n); sql.prepare('INSERT INTO diary_entries(account_id,id,payload,saved_at) VALUES(?,?,?,?)').run(account, id, '{}', NOW); return id; };
+  const report = (account, day, zone, species, amount = 1) => sql.prepare('INSERT INTO reports(id,account_id,entry_id,day,zone_id,species_id,amount,searched,created_at) VALUES(?,?,?,?,?,?,?,?,?)')
+    .run('r' + (++n), account, entry(account), day, zone, species, amount, amount ? 0 : 1, NOW);
+  const observe = (account, day, taxon) => { const id = entry(account); sql.prepare('INSERT INTO shared_observations VALUES(?,?,?,?,?,?,?,?,?)').run(account, id, day, 'rascino', 'fungo', taxon, JSON.stringify({ presence: 'observed' }), 'fronda-community-v1', NOW); };
+  report('me', '2026-10-20', 'tuscolo-nord', 'pinophilus');
+  // Due profili attivi e uno creato da due ore: né la zona né la provincia raggiungono la soglia.
+  report('o1', '2026-10-20', 'vallonina', 'edulis'); report('o2', '2026-10-21', 'vallonina', 'edulis'); report('nuovo', '2026-10-21', 'vallonina', 'edulis', 3);
+  // Tre profili attivi (uno da 24 ore esatte): pubblicata, senza la segnalazione del profilo nuovo nei totali.
+  report('o1', '2026-10-20', 'tancia', 'caesarea'); report('o2', '2026-10-21', 'tancia', 'caesarea'); report('appena24', '2026-10-21', 'tancia', 'caesarea', 0); report('nuovo', '2026-10-21', 'tancia', 'caesarea', 3);
+  // Dodici profili attivi: il numero usato da communityMultiplier si ferma a 10.
+  old.slice(4).forEach((id, i) => report(id, i % 2 ? '2026-10-20' : '2026-10-21', 'cicolano', 'aereus'));
+  observe('o1', '2026-10-20', 'edulis'); observe('o2', '2026-10-21', 'edulis'); observe('nuovo', '2026-10-21', 'edulis');
+  observe('o1', '2026-10-20', 'caesarea'); observe('o2', '2026-10-21', 'caesarea'); observe('o3', '2026-10-21', 'caesarea'); observe('nuovo', '2026-10-21', 'caesarea');
+  const env = { COMMUNITY_DB: d1(sql), APP_ORIGIN: ORIGIN };
+  const out = await (await handleCommunity(new Request(ORIGIN + '/api/community/summary', { headers: { cookie: '__Host-fungaroli_session=me' } }), env, NOW)).json();
+  assert.equal(out.access, 'granted');
+  assert.deepEqual(out.reports.map((r) => [r.zoneId, r.speciesId, r.reports, r.sightings, r.zeros, r.establishedContributors]).sort(),
+    [['cicolano', 'aereus', 12, 12, 0, 10], ['tancia', 'caesarea', 3, 2, 1, 3]]);
+  for (const r of out.reports) assert.deepEqual(Object.keys(r).sort(), ['establishedContributors', 'reports', 'sightings', 'speciesId', 'zeros', 'zoneId']);
+  assert.deepEqual(out.observations, [{ zoneId: 'rascino', category: 'fungo', taxonId: 'caesarea', observations: 3, sightings: 3, zeros: 0 }]);
+  assert.deepEqual(out.provinceReports, []);
+  assert.deepEqual(out.provinceObservations, []);
+  assert.equal(out.totalReports, 15);
+  assert.doesNotMatch(JSON.stringify(out), /"(contributors|days)"|nuovo|appena24|"2026-10-2[01]"/);
+  // Il segnale per l'ordine dei consigli resta quello di prima, anche senza i giorni nel riepilogo.
+  const { communityMultiplier } = await import('../js/community-signal.js');
+  assert.equal(communityMultiplier(out.reports.filter((r) => r.zoneId === 'cicolano')), 1.1);
+  sql.close();
+});
+
 // --- confronto personale nel Taccuino ----------------------------------------------------------------------
 const outing = (data) => ({ kind: 'outing', searched: ['edulis'], forecast: { mode: 'prospective', capturedAt: '2026-10-12T05:00:00Z' },
   effort: { startedAt: '2026-10-12T08:00:00Z' }, ...data });

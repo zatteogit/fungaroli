@@ -41,7 +41,8 @@ async function api(page, path, method='GET', data) {
 }
 test('base privata del profilo: salvataggio, distanze, navigatori, isolamento e ripristino',async({page,browser})=>{
   await page.addInitScript(()=>{globalThis.baseGpsCalls=0;Object.defineProperty(navigator,'geolocation',{value:{getCurrentPosition(success){globalThis.baseGpsCalls++;success({coords:{latitude:42.5678,longitude:12.9648}});}}});});
-  const errors=await setup(page),rome={name:'Roma',lat:41.9028,lon:12.4964};
+  // La base personale si salva arrotondata a 2 decimali, circa 1 km (decisione di Matteo del 22/10/2026).
+  const errors=await setup(page),rome={name:'Roma',lat:41.9028,lon:12.4964},savedRome={name:'Roma',lat:41.9,lon:12.5};
   let unavailable=false;
   await page.route('**/api/community/places?*',r=>r.fulfill({json:{places:[rome]}}));
   await page.route('**/api/community/travel',async r=>{
@@ -56,13 +57,13 @@ test('base privata del profilo: salvataggio, distanze, navigatori, isolamento e 
   await profile.locator('.base-settings summary').click();expect(await page.evaluate(()=>globalThis.baseGpsCalls)).toBe(0);await profile.locator('[data-base-gps]').click();expect(await page.evaluate(()=>globalThis.baseGpsCalls)).toBe(1);expect((await api(page,'session')).data.user.base).toBe(null);
   await profile.locator('[data-base-query]').fill('Roma');await profile.locator('[data-base-search]').click();
   await profile.locator('[data-place]').click();await profile.locator('[data-base-save]').click();await expect(profile.locator('[data-base-status]')).toContainText('Base salvata');
-  expect((await api(page,'session')).data.user.base).toEqual(rome);
+  expect((await api(page,'session')).data.user.base).toEqual(savedRome);
   for(const width of[320,390,1280]){await page.setViewportSize({width,height:900});expect(await profile.evaluate(el=>el.scrollWidth<=el.clientWidth)).toBe(true);if(width===390)await profile.screenshot({path:'/tmp/fungaroli-profile-base-mobile.png'});}
   await profile.locator('.profile-actions [data-close]').click();await expect(page.locator('#hero .facts')).toContainText('111 min');
   expect(await page.locator('#hero .cover-index b').textContent()).toBe(score);
   await page.locator('#hero .cover-link').click();await page.locator('#detail [data-sec="accesso"] summary').click({position:{x:5,y:10}});
   await expect(page.locator('#detail [data-sec="accesso"] > summary')).toContainText('111 min · 77 km da Roma');
-  const href=await page.locator('#detail a[href*="google.com/maps/dir"]').first().getAttribute('href');expect(new URL(href).searchParams.get('origin')).toBe('41.9028,12.4964');
+  const href=await page.locator('#detail a[href*="google.com/maps/dir"]').first().getAttribute('href');expect(new URL(href).searchParams.get('origin')).toBe('41.9,12.5');
   await page.reload();await expect(page.locator('#detail [data-sec="accesso"] > summary')).toContainText('da Roma');
   expect((await api(page,'profile','PUT',{accountId:owner,base:{name:'Errata',lat:91,lon:0}})).status).toBe(422);
   expect((await page.request.post('/api/community/travel',{headers:{origin:new URL(page.url()).origin},data:{targets:[]}})).status()).toBe(422);
@@ -383,14 +384,53 @@ test('taccuini e community restano accessibili senza dati meteo', async ({ page 
   await expect(page.locator('[data-register]')).toBeVisible();
 });
 
-test('taccuino: gestione profilo senza importazione o esportazione',async({page})=>{
+// Decisione di Matteo del 22/10/2026: copia dei dati senza profilo («Scarica il taccuino») e con il profilo
+// («Scarica i miei dati»). Nessuna importazione.
+test('taccuino: scarica i dati senza profilo e dal profilo, senza importazione',async({page})=>{
  const errors=await setup(page);await page.goto('/#/diario');
  const panel=page.locator('#notebook-storage-panel');await panel.locator(':scope > summary').click();
  await expect(panel.locator('#journal-export,#journal-import,[data-import-local],[data-import-legacy]')).toHaveCount(0);
- await expect(panel).not.toContainText(/Importa|Esporta|vecchio taccuino/);await expect(panel.locator('[data-community-account]')).toBeVisible();
+ await expect(panel).not.toContainText(/Importa|vecchio taccuino/);await expect(panel.locator('[data-community-account]')).toBeVisible();
+ const readDownload=async download=>{const file=await download.path();const {readFile}=await import('node:fs/promises');return JSON.parse(await readFile(file,'utf8'));};
+ let download=page.waitForEvent('download');await panel.locator('[data-download-notebook]').click();
+ const device=await readDownload(await download);expect((await download).suggestedFilename()).toMatch(/^fronda-taccuino-\d{4}-\d{2}-\d{2}\.json$/);
+ expect(device).toMatchObject({format:'fronda-export-v1',scope:'device',account:null,complete:true});expect(Array.isArray(device.entries)).toBe(true);
+ await expect(panel.locator('[data-download-status]')).toContainText('File pronto');
  await register(page,'Profilo senza copie');await expect(panel.locator('[data-community-account]')).toHaveText('Gestisci il profilo');
- await expect(panel).not.toContainText(/Importa|Esporta|vecchio taccuino/);await expect(panel).toContainText('sincronizzato con la passkey');
+ await expect(panel).not.toContainText(/Importa|vecchio taccuino/);await expect(panel).toContainText('sincronizzato con la passkey');await expect(panel.locator('[data-download-notebook]')).toHaveCount(0);
+ await panel.locator('[data-community-account]').click();const profile=page.locator('dialog.profile-dialog[open]');
+ download=page.waitForEvent('download');await profile.locator('[data-export-account]').click();
+ const data=await readDownload(await download);expect((await download).suggestedFilename()).toMatch(/^fronda-dati-\d{4}-\d{2}-\d{2}\.json$/);
+ expect(data).toMatchObject({format:'fronda-export-v1',account:{handle:'Profilo senza copie'},complete:true});
+ for(const key of ['passkeys','entries','reports','sharedObservations','legalAcceptances'])expect(Array.isArray(data[key])).toBe(true);
+ expect(JSON.stringify(data)).not.toMatch(/token_hash|public_key|ip_salt/);
+ await expect(profile.locator('[data-status]')).toContainText('File pronto');
+ await profile.locator('[data-delete-account]').click();await expect(profile.locator('[data-status]')).toContainText('prima scarica i tuoi dati');
+ await profile.locator('.profile-actions [data-close]').click();
  expect(errors).toEqual([]);await api(page,'account','DELETE');
+});
+
+// Decisione del 22/10/2026: «Elimina profilo e dati» toglie anche la copia del taccuino da questo dispositivo.
+test('elimina profilo: nessuna copia locale del taccuino o delle sue foto',async({page})=>{
+ const errors=await setup(page);await register(page,'Profilo da eliminare');
+ const id=(await api(page,'session')).data.user.id,scope='fungaroli:diario:account:'+id;
+ const photo=await page.evaluate(()=>{const c=document.createElement('canvas');c.width=c.height=16;const g=c.getContext('2d');g.fillStyle='#4a7';g.fillRect(0,0,16,16);return {data:c.toDataURL('image/jpeg',.8),width:16,height:16};});
+ const note={id:crypto.randomUUID(),kind:'note',category:'appunto',title:'Foto privata',date:todayISO(),zoneId:null,note:'nota da cancellare',reference:null,photo};
+ expect((await api(page,'entries/'+note.id,'PUT',note)).status).toBe(200);
+ await page.evaluate(()=>localStorage.setItem('fungaroli:diario:v1',JSON.stringify([{id:'anonima',kind:'note',note:'resta'}])));
+ await page.goto('/#/diario');await expect(page.locator('#journal-list')).toContainText('Foto privata');
+ const local=()=>page.evaluate(async scope=>{
+  const db=await new Promise((ok,ko)=>{const r=indexedDB.open('fronda-notebook-photos',1);r.onupgradeneeded=()=>r.result.createObjectStore('photos');r.onsuccess=()=>ok(r.result);r.onerror=()=>ko(r.error);});
+  const keys=await new Promise((ok,ko)=>{const r=db.transaction('photos').objectStore('photos').getAllKeys();r.onsuccess=()=>ok(r.result);r.onerror=()=>ko(r.error);});db.close();
+  return {entries:localStorage.getItem(scope),photos:keys.filter(k=>String(k).startsWith(scope+':')).length,anonymous:localStorage.getItem('fungaroli:diario:v1')};
+ },scope);
+ await expect.poll(async()=>(await local()).photos).toBe(1);expect((await local()).entries).toContain('nota da cancellare');
+ await page.locator('.appbar [data-community-account]').click();const profile=page.locator('dialog.profile-dialog[open]');
+ await profile.locator('[data-delete-account]').click();await profile.locator('[data-delete-account]').click();
+ await expect(page.locator('dialog.profile-dialog[open]')).toHaveCount(0);
+ expect((await api(page,'session')).status).toBe(401);
+ const after=await local();expect(after.entries).toBeNull();expect(after.photos).toBe(0);expect(after.anonymous).toContain('resta');
+ expect(errors).toEqual([]);
 });
 
 test('i campi del diario locale vengono visualizzati come testo',async({page})=>{

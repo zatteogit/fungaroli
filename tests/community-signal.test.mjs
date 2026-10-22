@@ -11,3 +11,9 @@ test('segnalazioni e zeri hanno influenza limitata e non si sommano tra taxa', (
   assert.equal(communityMultiplier([r]), 1.1); assert.equal(communityMultiplier([r, r, r]), 1.1);
   assert.equal(communityMultiplier([{ ...r, sightings: 0, zeros: 20 }]), 0.9);
 });
+test('riepilogo pubblico senza giorni (22/10/2026): la guardia dei 2 giorni è già del server, il peso resta lo stesso', () => {
+  const published = { establishedContributors: 10, sightings: 20, zeros: 0 };
+  assert.equal(communityMultiplier([published]), 1.1);
+  assert.equal(communityMultiplier([{ ...published, establishedContributors: 2 }]), 1);
+  assert.equal(communityMultiplier([{ ...published, days: 1 }]), 1, 'chi passa ancora i giorni li vede controllati');
+});
