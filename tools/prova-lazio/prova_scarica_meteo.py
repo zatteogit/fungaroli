@@ -12,6 +12,7 @@ Uso: python3 -I prova_scarica_meteo.py
 import datetime as dt
 import json
 import os
+import shutil
 import signal
 import subprocess
 import sys
@@ -212,6 +213,38 @@ def prove_nuove(porta, verifica):
             capture_output=True, text=True).stdout)]
         verifica([k for k in o1 if k.startswith('prova25')] != sorted(k for k in o1 if k.startswith('prova25'))
                  and len(o1) == len(el), 'ordine P1 mescolato con seme fisso (non per chiave)')
+        # D18: seconda macchina con --al-contrario
+        o2 = [q['chiave'] for q in json.loads(subprocess.run(
+            [sys.executable, '-I', '-c', 'import sys,json; sys.path.insert(0, sys.argv[1]); import scarica_meteo as M; '
+             'import argparse; a=argparse.Namespace(richieste=sys.argv[2], priorita="1,2,3,4,5", al_contrario=True); '
+             'print(json.dumps(M.carica_richieste(a)))', QUI, os.path.join(dati, 'richieste.json')],
+            capture_output=True, text=True).stdout)]
+        p1 = [k for k in o1 if not k.startswith('prova-q') and k != 'prova261bm']
+        verifica(sorted(o2) == sorted(o1) and [k for k in o2 if k in p1] == p1[::-1]
+                 and o2.index('prova261bm') == o2.index('prova261') + 1 and o2[-2:] == ['prova-q3', 'prova-q5'],
+                 f'--al-contrario: P1 dal fondo, gemella subito dopo la sua P1, priorità in ordine ({o2[:3]}…)')
+        # unisci_meteo.py: copia le mancanti, confronta le doppie, scarta quelle che non tornano
+        with tempfile.TemporaryDirectory() as qui:
+            shutil.copy(os.path.join(dati, 'richieste.json'), qui)
+            os.makedirs(os.path.join(qui, 'meteo'))
+            shutil.copy(os.path.join(dati, 'meteo', 'prova260.json'), os.path.join(qui, 'meteo'))
+            with open(os.path.join(dati, 'meteo', 'prova251.json'), encoding='utf-8') as f:
+                d = json.load(f)
+            d['risposta']['generationtime_ms'] = 99.0
+            with open(os.path.join(qui, 'meteo', 'prova251.json'), 'w', encoding='utf-8') as f:
+                json.dump(d, f)
+            d['risposta']['elevation'] = 1.0
+            with open(os.path.join(qui, 'meteo', 'prova252.json'), 'w', encoding='utf-8') as f:
+                json.dump(d, f)  # qui c'è già una prova252 diversa: si confronta e non si tocca
+            with open(os.path.join(dati, 'meteo', 'prova999.json'), 'w', encoding='utf-8') as f:
+                json.dump(dict(d, chiave='prova999'), f)  # non è in richieste.json: va scartata
+            r = subprocess.run([sys.executable, '-I', os.path.join(QUI, 'unisci_meteo.py'), '--da', dati, '--dati', qui,
+                                '--nome', 'prova'], capture_output=True, text=True)
+            n = len([x for x in os.listdir(os.path.join(qui, 'meteo')) if x.endswith('.json')])
+            verifica(r.returncode == 0 and f'copiate {len(seq) - 3}' in r.stdout and 'identiche 2, diverse 1' in r.stdout
+                     and 'scartate 1' in r.stdout
+                     and n == len(seq) and os.path.exists(os.path.join(qui, 'meteo-prova.log')),
+                     f'unisci_meteo: mancanti copiate, doppie confrontate, log a parte ({r.stdout.strip().splitlines()[0]})')
 
 
 def main():

@@ -35,10 +35,10 @@ Regole:
 Uso:
   nohup python3 -I scarica_meteo.py >> dati/meteo.out 2>&1 &
   python3 -I scarica_meteo.py --stato
+  seconda macchina (D18): python3 -I scarica_meteo.py --al-contrario --max-giorno 8000 --max-ora 1500 --intervallo 3
 """
 import argparse
 import datetime as dt
-import fcntl
 import json
 import os
 import random
@@ -47,6 +47,12 @@ import sys
 import threading
 import time
 import urllib.parse
+
+try:
+    import fcntl
+except ImportError:  # Windows
+    fcntl = None
+    import msvcrt
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import comune as C  # noqa: E402
@@ -62,6 +68,22 @@ SOGLIA_SUOLO = 0.05
 PRIME_CONTROLLO = 20
 NOMI_PRIORITA = {1: 'meteo P1/P2', 2: 'C-BM (best match)', 3: 'quote dei casi', 4: 'quote dei controlli',
                  5: 'quote 2015–2025 (descrittiva)'}
+
+
+def blocca(fd):
+    """Lucchetto non bloccante su dati/meteo.lock (fcntl su Linux e macOS, msvcrt su Windows). OSError se è già preso."""
+    if fcntl:
+        fcntl.flock(fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    else:
+        msvcrt.locking(fd, msvcrt.LK_NBLCK, 1)
+
+
+def sblocca(fd):
+    if fcntl:
+        fcntl.flock(fd, fcntl.LOCK_UN)
+    else:
+        os.lseek(fd, 0, os.SEEK_SET)
+        msvcrt.locking(fd, msvcrt.LK_UNLCK, 1)
 
 
 class Stato:
@@ -301,7 +323,7 @@ def ciclo(a, st, richieste, ferma):
         return False
 
     st.registra('avvio', nota=f'richieste={len(richieste)} max_ora={a.max_ora} max_giorno={a.max_giorno} intervallo={a.intervallo} '
-                               f'priorita={a.priorita} pid={os.getpid()}')
+                               f'priorita={a.priorita} pid={os.getpid()}' + (' al_contrario' if a.al_contrario else ''))
     if a.riprova_sospese:
         for k in sorted(st.sospese):
             q0 = next((q for q in richieste if q['chiave'] == k), {'chiave': k})
@@ -430,6 +452,20 @@ def carica_richieste(a):
         out.extend(gemelle[k])
     for p in sorted(per_p):
         out.extend(mescola(per_p[p]))
+    if getattr(a, 'al_contrario', False):
+        # D18: seconda macchina. Stesso elenco percorso dal fondo dentro ogni priorità, gemelle C-BM sempre subito
+        # dopo la loro P1: le due macchine si incontrano a metà invece di scaricare le stesse richieste.
+        gruppi = []
+        for q in out:
+            if q.get('gemella') and gruppi and gruppi[-1][0]['chiave'] == q['gemella']:
+                gruppi[-1].append(q)
+            else:
+                gruppi.append([q])
+        gruppi.sort(key=lambda g: g[0]['priorita'])  # stabile: l'ordine dentro la priorità resta
+        per_prio = {}
+        for g in gruppi:
+            per_prio.setdefault(g[0]['priorita'], []).append(g)
+        out = [q for p in sorted(per_prio) for g in reversed(per_prio[p]) for q in g]
     return out
 
 
@@ -456,9 +492,9 @@ def stato(a):
                      f'peso mancante {wm:.0f}')
     try:
         fd = os.open(os.path.join(a.dati, 'meteo.lock'), os.O_RDWR | os.O_CREAT)
-        fcntl.flock(fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        blocca(fd)
         attivo = 'no'
-        fcntl.flock(fd, fcntl.LOCK_UN)
+        sblocca(fd)
     except OSError:
         attivo = 'sì'
     w_oggi = sum(w for t, w in st.inviati if t >= inizio_oggi)
@@ -529,6 +565,8 @@ def main():
     ap.add_argument('--timeout', type=float, default=120)
     ap.add_argument('--url-meteo', default=URL_METEO)
     ap.add_argument('--url-quota', default=URL_QUOTA)
+    ap.add_argument('--al-contrario', action='store_true',
+                    help='seconda macchina (D18): percorre l\'elenco dal fondo dentro ogni priorità')
     ap.add_argument('--scala-tempo', type=float, default=1.0, help='solo per le prove con il server finto')
     a = ap.parse_args()
     a.richieste = a.richieste or os.path.join(a.dati, 'richieste.json')
@@ -539,7 +577,7 @@ def main():
     os.makedirs(a.dati, exist_ok=True)
     fd = os.open(os.path.join(a.dati, 'meteo.lock'), os.O_RDWR | os.O_CREAT)
     try:
-        fcntl.flock(fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        blocca(fd)
     except OSError:
         raise SystemExit('un altro scarica_meteo.py è già in corso su questa cartella')
     ferma = threading.Event()

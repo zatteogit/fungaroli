@@ -303,6 +303,35 @@ scaricano **in coda, dopo tutto il resto** (priorità 5), con lo stesso ritmo le
 - Se le quote non arrivano tutte, la descrittiva per fascia si fa sulle unità con quota e il README dice quante
   mancano.
 
+## D18. Seconda macchina per lo scaricamento (decisione di Matteo, 22/10/2026)
+
+**Perché.** Qui lo scaricamento va avanti solo mentre la sessione è viva: il 22/10 il processo si è fermato due volte
+in 40 minuti (riavvio del container e del worker). Al ritmo di 1500 chiamate pesate al giorno la prova principale
+chiederebbe circa 8 giorni di funzionamento continuo, che qui non sono garantiti. Matteo ha deciso di far girare lo
+stesso script anche dal suo computer; il piano Standard di Open-Meteo (29 €) non include la Historical Forecast API
+(pagina Pricing letta il 22/10/2026), il Professional non è stato scelto.
+
+**Come.**
+- Stesso `scarica_meteo.py`, stesso `richieste.json`, stessa API, stesso modello, stessi controlli (5.3, ripiego,
+  pause). La seconda macchina usa la propria connessione e quindi il limite gratuito di quell'indirizzo; tetti
+  `--max-giorno 8000 --max-ora 1500 --intervallo 3`, sotto i limiti pubblicati (10 000 al giorno, 5000 all'ora,
+  600 al minuto).
+- `--al-contrario`: la seconda macchina percorre lo stesso elenco dal fondo dentro ogni priorità, con le gemelle C-BM
+  sempre subito dopo la loro P1 sulla stessa macchina. Le due macchine si incontrano a metà invece di ripetere le
+  stesse richieste. L'ordine resta casuale (lo stesso mescolamento, letto al contrario), quindi una fermata a metà
+  lascia ancora un campione a caso di celle mancanti (D16).
+- `unisci_meteo.py` porta qui le risposte dell'altra macchina: copia solo quelle che mancano, dopo aver controllato
+  che la richiesta salvata sia identica a quella dell'elenco; se una richiesta è stata scaricata da entrambe, tiene
+  quella di qui e confronta le due risposte (senza `generationtime_ms`). Il README riporterà quante coppie ci sono e
+  quante sono identiche: è anche una piccola prova di riproducibilità del servizio. Il log dell'altra macchina si
+  conserva a parte (`meteo-<nome>.log`) e non entra nei tetti di qui.
+- Il lucchetto del processo usa `msvcrt` su Windows e `fcntl` altrove. Il percorso Windows non è provato qui (nessun
+  Windows disponibile): è un **dato non verificato** finché non gira sul computer di Matteo.
+- Lo scarto orario delle risposte dipende dal momento della richiesta, non dalla macchina: la regola di D11 (confronto
+  C-BM solo fra risposte con lo stesso scarto) resta valida così com'è.
+
+Scritta prima di qualunque risultato: nessuna analisi è stata eseguita.
+
 ## Che cosa non cambia
 
 Domanda principale, disegno P1, unità, celle, finestre, δ, punteggi (0), (1), (1b), seme del bootstrap, completezza,
