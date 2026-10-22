@@ -208,8 +208,67 @@ def punto_in_geojson(lat, lon, geom):
 
 # --- record e unità ---------------------------------------------------------------------------------------
 
+MARCATORI_RANGO = {'var.', 'var', 'subsp.', 'subsp', 'ssp.', 'ssp', 'f.', 'f', 'fo.', 'forma', 'subvar.', 'subf.'}
+AMBIGUO = '?'
+# Nomi verbatim di aggregati o incerti: non sono la specie (deviazioni.md, 22/10/2026).
+QUALIFICATORI = {'agg.', 'agg', 's.l.', 's.lat.', 'sensu', 'cf.', 'cf', 'aff.', 'aff', 'group', 'gr.', 'complex', 'coll.', 'sp.', 'spec.', 'indet.'}
+# Taxa esclusi sia dai casi sia dai controlli (deviazioni.md, 22/10/2026): nome canonico senza autore e marcatori.
+ESCLUSI = {'cantharellus cibarius pallidus'}
+RANGHI_INTERMEDI = {'genus', 'genushybrid', 'subgenus', 'section', 'subsection', 'series', 'complex'}
+
+
+def nome_canonico(nome):
+    """Nome scientifico ridotto a genere, epiteto ed eventuale epiteto infraspecifico, in minuscolo, senza autore
+    né marcatori di rango: «Boletus edulis f. reticulatus (Schaeff.) Vassilkov» -> «boletus edulis reticulatus».
+    È la forma di `canonicalName` del GBIF Backbone. Nessun troncamento: un trinomio resta un trinomio."""
+    t = [x for x in str(nome or '').replace('(', ' (').replace('×', ' ').split() if x]
+    if not t or not t[0][:1].isalpha():
+        return ''
+    out = [t[0].lower()]
+    k = 1
+    if k < len(t) and t[k].isalpha() and t[k].islower():
+        out.append(t[k])
+        k += 1
+        # un marcatore di rango può seguire l'autore della specie («Boletus edulis Bull. var. ...»)
+        m = next((j for j in range(k, len(t)) if t[j].lower() in MARCATORI_RANGO), None)
+        if m is not None:
+            if m + 1 < len(t) and t[m + 1].isalpha() and t[m + 1].islower():
+                out.append(t[m + 1])
+        elif k < len(t) and t[k].isalpha() and t[k].islower():
+            out.append(t[k])
+    return ' '.join(out)
+
+
+def tabella_sinonimi(fp):
+    """Nome canonico completo -> specie dell'app, dai nomi accettati e dai sinonimi del Backbone in dati/taxa.json,
+    più «Collybia nuda». Un nome che compare sotto due specie vale AMBIGUO (il record non è un caso).
+    Corregge la tabella del 22/10 mattina, che troncava a due parole e sovrascriveva (deviazioni.md)."""
+    out = {}
+    if os.path.exists(fp):
+        with open(fp) as f:
+            tx = json.load(f)
+        for nome, v in tx.get('specie', {}).items():
+            for s in v.get('sinonimi', []) + [nome]:
+                c = nome_canonico(s)
+                if not c:
+                    continue
+                if out.get(c, v['specie_app']) != v['specie_app']:
+                    out[c] = AMBIGUO
+                else:
+                    out[c] = v['specie_app']
+    out['collybia nuda'] = 'nuda'
+    return out
+
+
+def escluso(rec):
+    """Record da togliere sia dai casi sia dai controlli (ESCLUSI), sul nome interpretato o su quello verbatim."""
+    return any(nome_canonico(rec.get(k)) in ESCLUSI for k in ('nome', 'nome_verbatim'))
+
+
 def specie_del_caso(rec, sinonimi_gbif=None):
     """Specie dell'app se il record è un caso possibile (prima dei filtri di data e precisione), altrimenti None."""
+    if escluso(rec):
+        return None
     if rec['fonte'] == 'inat':
         if rec.get('qualita') != 'research':
             return None
@@ -223,10 +282,31 @@ def specie_del_caso(rec, sinonimi_gbif=None):
         if chiavi & set(v['gbif']):
             return sp
     # 2.2 del documento del Lazio: nome verbatim sinonimo, record assegnato solo al genere.
-    if sinonimi_gbif and rec.get('rango') == 'GENUS':
-        nome = ' '.join((rec.get('nome_verbatim') or '').split()[:2]).lower()
-        return sinonimi_gbif.get(nome)
+    if sinonimi_gbif and (rec.get('rango') or '').upper() == 'GENUS':
+        verbatim = str(rec.get('nome_verbatim') or '')
+        if any(x.lower() in QUALIFICATORI for x in verbatim.split()):
+            return None
+        sp = sinonimi_gbif.get(nome_canonico(verbatim))
+        return None if sp == AMBIGUO else sp
     return None
+
+
+def escluso_dai_controlli(rec, sinonimi_gbif=None):
+    """2.2 del documento del Lazio: le specie in prova (con i discendenti), i record fra genere e specie degli 11
+    generi in prova e i taxa ESCLUSI non sono controlli."""
+    if escluso(rec) or specie_del_caso(dict(rec, qualita='research'), sinonimi_gbif):
+        return True
+    if rec['fonte'] == 'inat':
+        ids = set(rec.get('antenati') or []) | {rec.get('taxon')}
+        return (rec.get('rango') or '').lower() in RANGHI_INTERMEDI and bool(ids & set(GENERI_INAT.values()))
+    genere = (rec.get('nome') or '').split(' ')[0]
+    return (rec.get('rango') or '').upper() == 'GENUS' and genere in GENERI_INAT
+
+
+def genere_in_prova_gbif(rec):
+    """Record GBIF assegnato solo a uno dei generi in prova: serve il nome verbatim (2.2 del documento del Lazio)."""
+    return rec['fonte'] == 'gbif' and (rec.get('rango') or '').upper() == 'GENUS' and \
+        (rec.get('nome') or '').split(' ')[0] in GENERI_INAT
 
 
 def e_p2(rec):

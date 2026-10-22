@@ -6,13 +6,16 @@
 - GBIF occurrence API: Agaricomycetes (186), country=IT, incertezza 0–1000 m, osservazioni e campioni, presenti,
   senza problemi geospaziali, un anno alla volta, pagine da 300.
 - Taxa: GBIF Backbone (species/match, sinonimi) per le specie in prova e per il gruppo P2.
+- Nomi verbatim GBIF (deviazioni.md, D10): per i record assegnati solo a uno dei generi in prova che passano i filtri
+  di base, /occurrence/{key}/verbatim, una richiesta al secondo. `--solo-verbatim` li aggiunge a un gbif.jsonl già
+  scaricato.
 - Geometria del luogo iNaturalist 6973 con SHA-256.
 
 Cache su disco per pagina (file per URL, scrittura atomica): una pagina già salvata non si richiede. Si conserva solo
 ciò che elenca 2.6 del documento del Lazio: niente nomi, login, foto, descrizioni o commenti; l'osservatore è
 un'impronta con sale. Ritmo: iNaturalist una richiesta ogni 1,1 s, GBIF una ogni 0,6 s.
 
-Uso: python3 -I scarica_osservazioni.py [--anni 2015-2025] [--fonti inat,gbif] [--dati CARTELLA]
+Uso: python3 -I scarica_osservazioni.py [--anni 2015-2025] [--fonti inat,gbif] [--dati CARTELLA] [--solo-verbatim]
 """
 import argparse
 import hashlib
@@ -169,12 +172,52 @@ def scarica_gbif(anni, cache, sale, chiavi_p2):
     return righe
 
 
+def nomi_verbatim(righe, cache, geometria):
+    """Per i record GBIF assegnati solo a uno dei generi in prova che passano i filtri di base, legge il
+    `dwc:scientificName` verbatim da /occurrence/{key}/verbatim (la ricerca non lo restituisce) e lo salva in
+    `nome_verbatim` (2.2 del documento del Lazio; deviazioni.md). Una richiesta per record, lenta, con cache.
+    Restituisce il conteggio dei record letti e di quelli senza nome verbatim."""
+    letti = senza = 0
+    for r in righe:
+        if not (C.genere_in_prova_gbif(r) and C.passa_filtri_base(r, geometria)):
+            continue
+        v = C.ottieni_con_cache(cache, f'{GBIF}occurrence/{int(r["id"])}/verbatim',
+                                lambda b: {'scientificName': b.get('http://rs.tdwg.org/dwc/terms/scientificName')},
+                                pausa=1.1, log=log)
+        r['nome_verbatim'] = v.get('scientificName')
+        letti += 1
+        senza += not r['nome_verbatim']
+    log(f'GBIF, nomi verbatim dei record al genere nei generi in prova: {letti} letti, {senza} senza nome')
+    return {'letti': letti, 'senza_nome': senza}
+
+
+def solo_verbatim(a):
+    """Aggiunge i nomi verbatim a un gbif.jsonl già scaricato, senza ripetere il resto; aggiorna scaricamento.json
+    conservando le date originali."""
+    oss = os.path.join(a.dati, 'osservazioni')
+    fp = os.path.join(oss, 'gbif.jsonl')
+    righe = C.leggi_jsonl(fp)
+    geometria = json.load(open(os.path.join(a.dati, 'geometria-italia.json')))
+    conti = nomi_verbatim(righe, os.path.join(a.dati, 'cache-gbif'), geometria)
+    testo = ''.join(json.dumps(r, ensure_ascii=False, sort_keys=True) + '\n' for r in righe)
+    C.scrivi_atomico(fp, testo)
+    fm = os.path.join(oss, 'scaricamento.json')
+    meta = json.load(open(fm))
+    meta['gbif_verbatim'] = dict(conti, scaricato=C.adesso_iso())
+    meta['sha256_gbif.jsonl'] = hashlib.sha256(testo.encode()).hexdigest()
+    C.scrivi_atomico(fm, json.dumps(meta, ensure_ascii=False, indent=1, sort_keys=True))
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--anni', default='2015-2025')
     ap.add_argument('--fonti', default='inat,gbif')
     ap.add_argument('--dati', default=C.DATI)
+    ap.add_argument('--solo-verbatim', action='store_true',
+                    help='aggiunge solo i nomi verbatim GBIF a un gbif.jsonl esistente')
     a = ap.parse_args()
+    if a.solo_verbatim:
+        return solo_verbatim(a)
     lo, hi = (int(x) for x in a.anni.split('-'))
     anni = list(range(lo, hi + 1))
     fonti = set(a.fonti.split(','))
@@ -201,6 +244,7 @@ def main():
     if 'gbif' in fonti:
         righe = scarica_gbif(anni, cache_g, sale, p2_chiavi(tx))
         righe.sort(key=lambda r: r['id'])
+        meta['gbif_verbatim'] = dict(nomi_verbatim(righe, cache_g, g['geometry_geojson']), scaricato=C.adesso_iso())
         C.scrivi_atomico(os.path.join(oss, 'gbif.jsonl'), ''.join(json.dumps(r, ensure_ascii=False, sort_keys=True) + '\n' for r in righe))
         meta['gbif_record'] = len(righe)
     for nome in ('inat.jsonl', 'gbif.jsonl'):

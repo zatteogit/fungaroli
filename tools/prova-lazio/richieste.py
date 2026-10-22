@@ -12,6 +12,10 @@ calcola nessun punteggio: usa solo date e celle delle unità caso e, per le quot
   `models=best_match`.
 - Priorità 3, quote dei punti delle unità caso; priorità 4, quote dei punti delle unità controllo delle celle dei casi,
   stesso anno e a non più di 30 giorni da un caso. API Elevation, fino a 100 coordinate per richiesta.
+- Priorità 5, in coda (deviazioni.md, D17): quote di tutti gli altri punti delle unità 2015–2025 (casi di ogni specie
+  in prova e controlli P1, tutta l'Italia) per l'analisi descrittiva per fascia di quota.
+
+Sinonimi ed esclusioni da comune.py (deviazioni.md, D10). L'ordine di scaricamento lo decide scarica_meteo.py.
 
 Uso: python3 -I richieste.py [--dati CARTELLA] [--lotto-quote 100]
 """
@@ -29,7 +33,6 @@ import comune as C  # noqa: E402
 
 DAILY = ['precipitation_sum', 'temperature_2m_mean', 'temperature_2m_min', 'temperature_2m_max']
 HOURLY = ['soil_moisture_3_to_9cm', 'soil_temperature_6cm']
-RANGHI_INTERMEDI = {'genus', 'genushybrid', 'subgenus', 'section', 'subsection', 'series', 'complex'}
 
 
 def chiave(d):
@@ -39,29 +42,6 @@ def chiave(d):
 def peso_meteo(giorni, variabili=len(DAILY) + len(HOURLY)):
     """Regola di Open-Meteo (pagina Pricing): max(1, variabili/10) × max(1, giorni/14) per punto."""
     return round(max(1.0, variabili / 10) * max(1.0, giorni / 14), 4)
-
-
-def sinonimi(fp):
-    out = {}
-    if not os.path.exists(fp):
-        return out
-    with open(fp) as f:
-        tx = json.load(f)
-    for nome, v in tx.get('specie', {}).items():
-        for s in v.get('sinonimi', []) + [nome]:
-            out[' '.join(s.split()[:2]).lower()] = v['specie_app']
-    out['collybia nuda'] = 'nuda'
-    return out
-
-
-def escluso_dai_controlli(r, sin):
-    if C.specie_del_caso(dict(r, qualita='research'), sin):
-        return True
-    if r['fonte'] == 'inat':
-        ids = set(r.get('antenati') or []) | {r.get('taxon')}
-        return (r.get('rango') or '').lower() in RANGHI_INTERMEDI and bool(ids & set(C.GENERI_INAT.values()))
-    genere = (r.get('nome') or '').split(' ')[0]
-    return (r.get('rango') or '').upper() == 'GENUS' and genere in C.GENERI_INAT
 
 
 def intervalli(date_casi):
@@ -89,9 +69,12 @@ def costruisci(records, geometria, sin, lotto_quote=100):
         d = C.data_singola(r)
         r = dict(r, data=d.isoformat(), cella=C.cella(r['lat'], r['lon']))
         validi.append(r)
-    casi = [r for r in validi if C.specie_del_caso(r, sin) and C.PERIODO[0] <= dt.date.fromisoformat(r['data']) <= C.PERIODO[1]]
-    controlli = [r for r in validi if not escluso_dai_controlli(r, sin) and (r['fonte'] == 'gbif' or r.get('qualita') in ('research', 'needs_id'))
-                 and C.PERIODO[0] <= dt.date.fromisoformat(r['data']) <= C.PERIODO[1]]
+    nel_periodo = lambda r: C.PERIODO[0] <= dt.date.fromisoformat(r['data']) <= C.PERIODO[1]
+    casi_tutti = [r for r in validi if C.specie_del_caso(r, sin)]
+    controlli_tutti = [r for r in validi if not C.escluso_dai_controlli(r, sin)
+                       and (r['fonte'] == 'gbif' or r.get('qualita') in ('research', 'needs_id'))]
+    casi = [r for r in casi_tutti if nel_periodo(r)]
+    controlli = [r for r in controlli_tutti if nel_periodo(r)]
     # unità caso: uscite per specie (un'uscita con due specie è un'unità per ciascuna)
     unita_casi = []
     for sp in C.ORDINE_SPECIE:
@@ -141,8 +124,15 @@ def costruisci(records, geometria, sin, lotto_quote=100):
                   if any(abs((dt.date.fromisoformat(u['data']) - d).days) <= C.FINESTRA_ABBINAMENTO and d.year == int(u['data'][:4])
                          for d in finestre[u['cella']])]
     punti_ctrl = sorted({(round(float(u['punto'][0]), 5), round(float(u['punto'][1]), 5)) for u in unita_ctrl} - set(punti_casi))
+    # priorità 5: tutti gli altri punti delle unità 2015–2025 (D17 di deviazioni.md)
+    unita_tutte = []
+    for sp in C.ORDINE_SPECIE:
+        unita_tutte.extend(C.uscite([r for r in casi_tutti if C.specie_del_caso(r, sin) == sp]))
+    unita_tutte.extend(C.uscite(controlli_tutti))
+    punti_desc = sorted({(round(float(u['punto'][0]), 5), round(float(u['punto'][1]), 5)) for u in unita_tutte}
+                        - set(punti_casi) - set(punti_ctrl))
     quote = []
-    for prio, punti in ((3, punti_casi), (4, punti_ctrl)):
+    for prio, punti in ((3, punti_casi), (4, punti_ctrl), (5, punti_desc)):
         for k in range(0, len(punti), lotto_quote):
             coord = [list(p) for p in punti[k:k + lotto_quote]]
             base = {'tipo': 'quota', 'coordinate': coord}
@@ -154,6 +144,7 @@ def costruisci(records, geometria, sin, lotto_quote=100):
         'giorni_punto': sum(q['giorni'] for q in richieste), 'richieste_cbm': len(cbm), 'peso_cbm': round(sum(q['peso'] for q in cbm), 1),
         'richieste_quota_casi': sum(1 for q in quote if q['priorita'] == 3), 'coordinate_quota_casi': len(punti_casi),
         'richieste_quota_controlli': sum(1 for q in quote if q['priorita'] == 4), 'coordinate_quota_controlli': len(punti_ctrl),
+        'richieste_quota_descrittiva': sum(1 for q in quote if q['priorita'] == 5), 'coordinate_quota_descrittiva': len(punti_desc),
         'unita_caso_per_specie': {sp: sum(1 for u in unita_casi if u['specie'] == sp) for sp in C.ORDINE_SPECIE},
         'celle_per_specie': {sp: len({u['cella'] for u in unita_casi if u['specie'] == sp}) for sp in C.ORDINE_SPECIE},
     }
@@ -175,7 +166,7 @@ def main():
         raise SystemExit(f'nessuna osservazione in {oss}: lancia prima scarica_osservazioni.py')
     fg = os.path.join(a.dati, 'geometria-italia.json')
     geometria = json.load(open(fg)) if os.path.exists(fg) else None
-    elenco, riepilogo = costruisci(records, geometria, sinonimi(os.path.join(a.dati, 'taxa.json')), a.lotto_quote)
+    elenco, riepilogo = costruisci(records, geometria, C.tabella_sinonimi(os.path.join(a.dati, 'taxa.json')), a.lotto_quote)
     out = {'creato': C.adesso_iso(), 'riepilogo': riepilogo, 'richieste': elenco}
     C.scrivi_atomico(os.path.join(a.dati, 'richieste.json'), json.dumps(out, ensure_ascii=False, indent=0, sort_keys=True))
     print(json.dumps(riepilogo, ensure_ascii=False, indent=1))
