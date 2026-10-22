@@ -6,12 +6,14 @@ const paths = {
   calendar:'<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 3v4m10-4v4M3 11h18"/>',
   eye:'<path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/>',
   shield:'<path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Z"/><path d="m8 12 3 3 5-6"/>',
+  // cautele: scudo con «!»; la spunta resta solo dove non si parla di consumo o preparazione
+  caution:'<path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Z"/><path d="M12 8v5M12 16h.01"/>',
 };
 export const contentIcon = (name='leaf') => `<svg class="content-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths[name]||paths.leaf}</svg>`;
 
 export function factCards(facts, {glossary=''}={}) {
   const valid = facts.filter(f=>f && (f.value || f.html || f.items?.length));
-  return valid.length ? `<dl class="content-facts">${valid.map(f=>`<div class="content-fact${f.wide?' content-fact-wide':''}${f.tone==='caution'?' content-fact-caution':''}"><dt>${contentIcon(f.icon)}<span>${esc(f.label)}</span></dt><dd${glossary?` data-glossary="${esc(glossary)}"`:''}>${f.items?`<ul class="content-values">${f.items.filter(Boolean).map(v=>`<li>${esc(v)}</li>`).join('')}</ul>`:f.html||esc(f.value)}</dd></div>`).join('')}</dl>` : '';
+  return valid.length ? `<dl class="content-facts">${valid.map(f=>`<div class="content-fact${f.wide?' content-fact-wide':''}${f.tone==='caution'?' content-fact-caution':''}"><dt>${contentIcon(f.tone==='caution'?'caution':f.icon)}<span>${esc(f.label)}</span></dt><dd${glossary?` data-glossary="${esc(glossary)}"`:''}>${f.items?`<ul class="content-values">${f.items.filter(Boolean).map(v=>`<li>${esc(v)}</li>`).join('')}</ul>`:f.html||esc(f.value)}</dd></div>`).join('')}</dl>` : '';
 }
 const monthsShort = ['gen','feb','mar','apr','mag','giu','lug','ago','set','ott','nov','dic'];
 const monthsLong = ['gennaio','febbraio','marzo','aprile','maggio','giugno','luglio','agosto','settembre','ottobre','novembre','dicembre'];

@@ -436,7 +436,6 @@ li.crit { font-weight: 600; }
 .tox-deadly { box-shadow: inset 4px 0 0 var(--crit); }
 .tox-deadly .tox, .tox-mortale .tox { background: var(--crit); color: #fff; }
 .tox-toxic .tox, .tox-tossico .tox { background: var(--warn-bg); color: var(--warn-ink); }
-.tox-ok .tox, .tox-commestibile .tox { background: var(--ok-bg); color: var(--ok-ink); }
 .tox-inline { color: var(--crit-ink); }
 .phen-row { display: grid; gap: 4px; margin-bottom: 12px; }
 .phen-title { font-size: 13px; color: var(--text-2); }
@@ -519,7 +518,6 @@ li.crit { font-weight: 600; }
 .id-card-img .tox { position: absolute; left: 8px; top: 8px; margin: 0; box-shadow: 0 1px 4px rgb(0 0 0 / .25); }
 .id-card.tox-mortale .tox { background: var(--crit); color: #fff; }
 .id-card.tox-tossico .tox { background: var(--warn-bg); color: var(--warn-ink); }
-.id-card.tox-commestibile .tox, .id-card.tox-commestibile-con-cautela .tox { background: var(--ok-bg); color: var(--ok-ink); }
 .id-fit { position: absolute; right: 8px; bottom: 8px; padding: 2px 8px; border-radius: 999px; background: rgb(16 15 12 / .7); color: #fff; font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums; }
 .id-fit.warn { background: var(--warn-ink); color: var(--warn-bg); }
 .id-card-body { display: flex; flex-direction: column; gap: 2px; padding: 10px 12px 12px; font-size: 13.5px; min-width: 0; }
@@ -1033,7 +1031,6 @@ html.is-offline #updated { color: var(--warn-ink); font-weight: 600; }
 .cmp-fig .tox { position: absolute; left: 8px; top: 8px; margin: 0; box-shadow: 0 1px 4px rgb(0 0 0 / .25); }
 .cmp-fig.tox-mortale .tox { background: var(--crit); color: #fff; }
 .cmp-fig.tox-tossico .tox { background: var(--warn-bg); color: var(--warn-ink); }
-.cmp-fig.tox-commestibile .tox, .cmp-fig.tox-commestibile-con-cautela .tox { background: var(--ok-bg); color: var(--ok-ink); }
 .cmp-fig.tox-mortale .cmp-zoom { box-shadow: 0 0 0 2px var(--crit); }
 .cmp-vs { position: absolute; left: 50%; top: 0; margin-top: calc(25% - 22px); transform: translateX(-50%); width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: var(--surface); color: var(--text); font-family: var(--font-display); font-weight: 700; font-style: italic; font-size: 15px; box-shadow: 0 2px 10px rgb(0 0 0 / .18); }
 .cmp-name { display: grid; min-width: 0; }
@@ -1500,16 +1497,21 @@ html.modal-viewport-constrained :is(.wiz,.sheet-dlg,.community-dialog,.cmp-choos
 .tx-look-main small { display: block; margin-top: 4px; }
 .tx-sheet { font-size: 13px; color: var(--text-2); text-decoration: none; padding-left: 76px; }
 
-/* commestibile a condizione (solo cotto, solo prebollito, senza cuticola): base verde dei commestibili + anello e "!" ambra.
-   Non neutro, ma nemmeno coi colori dei velenosi */
-:root { --caution: #b26b00; --caution-bg: #eef3dc; --caution-ink: #3a4a12; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --caution: #f0b04a; --caution-bg: #26301a; --caution-ink: #dfe9c4; } }
-:root[data-theme="dark"] { --caution: #f0b04a; --caution-bg: #26301a; --caution-ink: #dfe9c4; }
-.id-card.tox-commestibile-con-cautela .tox, .cmp-fig.tox-commestibile-con-cautela .tox, .tx-body.tox-commestibile-con-cautela .tox, .tx-pill.tox-commestibile-con-cautela, .sr-badge.tox-commestibile-con-cautela {
+/* commestibile a condizione (solo cotto, solo prebollito, senza cuticola): fondo neutro come ogni dato, anello e "!" ambra
+   della cautela. Nessun verde: «commestibile» non è un via libera; diverso anche da «tossico», che ha il fondo ambra pieno.
+   Solo token pubblici, che cambiano da soli fra tema chiaro e scuro (contrasti controllati da tools/ds-guard.mjs). */
+:root { --caution: var(--warn-ink); --caution-bg: var(--surface-2); --caution-ink: var(--text); }
+.id-card.tox-commestibile-con-cautela .tox, .cmp-fig.tox-commestibile-con-cautela .tox, .tx-body.tox-commestibile-con-cautela .tox, .tx-c.tox-commestibile-con-cautela .tox, .look .tox-commestibile-con-cautela .tox, .tx-pill.tox-commestibile-con-cautela, .sr-badge.tox-commestibile-con-cautela {
   background: var(--caution-bg); color: var(--caution-ink); box-shadow: inset 0 0 0 1.5px var(--caution);
 }
+:is(.id-card.tox-commestibile-con-cautela .tox, .cmp-fig.tox-commestibile-con-cautela .tox, .tx-body.tox-commestibile-con-cautela .tox, .tx-c.tox-commestibile-con-cautela .tox, .look .tox-commestibile-con-cautela .tox, .tx-pill.tox-commestibile-con-cautela, .sr-badge.tox-commestibile-con-cautela)::before {
+  content: "!"; content: "!" / ""; margin-right: 4px; font-weight: 800; color: var(--caution);
+}
+/* didascalia della foto ingrandita: fondo sempre scuro in entrambi i temi, quindi l'ambra chiaro stabile del testo sulle foto */
+.lb-cap .tox-commestibile-con-cautela { box-shadow: inset 0 0 0 1.5px var(--photo-warning); }
+.lb-cap .tox-commestibile-con-cautela::before { content: "!"; content: "!" / ""; margin-right: 4px; font-weight: 800; color: var(--photo-warning); }
 .pill.caution { display: inline-flex; align-items: center; gap: 7px; border: 0; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; padding: 6px 12px 6px 6px; border-radius: 999px; background: var(--caution-bg); color: var(--caution-ink); box-shadow: inset 0 0 0 1.5px var(--caution), 0 2px 8px rgb(0 0 0 / .25); }
-.pill.caution i { width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; background: var(--caution); color: #fff; font: 800 12px/1 var(--font-body); font-style: normal; }
+.pill.caution i { width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; background: var(--caution); color: var(--warn-bg); font: 800 12px/1 var(--font-body); font-style: normal; }
 .pill.caution::after { content: '↓'; font-weight: 700; opacity: .7; }
 .phero-body .pill.caution, .sp-badges .pill.caution { pointer-events: auto; position: relative; z-index: 3; }
 .kitchen { scroll-margin-top: calc(var(--appbar-h) + env(safe-area-inset-top, 0px) + 12px); }
@@ -1574,7 +1576,8 @@ html.modal-viewport-constrained :is(.wiz,.sheet-dlg,.community-dialog,.cmp-choos
 .cc-row { grid-column: 1 / -1; display: flex; align-items: center; gap: 8px; }
 .cc-th { width: 46px; height: 46px; border-radius: 50%; overflow: hidden; flex: none; background: var(--surface-3); box-shadow: 0 0 0 2.5px var(--surface); }
 .cc-th img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.cc-th.ref { width: 58px; height: 58px; box-shadow: 0 0 0 2.5px var(--surface), 0 0 0 4.5px var(--ok-ink); }
+/* il riferimento si riconosce da misura e posizione: anello neutro, nessun colore che dica «commestibile» */
+.cc-th.ref { width: 58px; height: 58px; box-shadow: 0 0 0 2.5px var(--surface), 0 0 0 4.5px var(--text-2); }
 .cc-stack { display: flex; }
 .cc-stack .cc-th + .cc-th { margin-left: -12px; }
 .cc-th.tox-mortale:not(.ref) { box-shadow: 0 0 0 2.5px var(--surface), 0 0 0 4px var(--crit); }
@@ -1712,19 +1715,13 @@ html.modal-viewport-constrained :is(.wiz,.sheet-dlg,.community-dialog,.cmp-choos
 .cmp-pickbar { display: flex; align-items: center; gap: 8px; margin-right: calc(var(--gutter, 16px) * -1); padding-bottom: 10px; }
 .cmp-pickbar .cmp-pick { flex: 1; min-width: 0; margin: 0; padding: 2px var(--gutter, 16px) 0 2px; scroll-padding-inline: 2px var(--gutter, 16px);
   -webkit-mask: linear-gradient(90deg, transparent, #000 10px); mask: linear-gradient(90deg, transparent, #000 10px); }
-/* non si sceglie: un'etichetta, non un chip (niente fondo ne' bordo); l'anello verde dice solo "commestibile", come quelli rossi dei sosia */
-.cmp-chip-ref { cursor: default; background: none; border-color: transparent; padding-left: 0; padding-right: 2px; color: var(--text); font-weight: 700; }
-.cmp-chip-ref:active { transform: none; }
-.cmp-chip-ref .cmp-chip-img { box-shadow: 0 0 0 2px var(--bg), 0 0 0 3.5px var(--ok-ink); }
 .cmp-pvs { flex: none; font-family: var(--font-display); font-style: italic; font-weight: 700; font-size: 15px; color: var(--muted); }
-@media (max-width: 420px) { .cmp-chip-ref > span:last-child { max-width: 9ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; } }
 
 /* ===== Hover: cursore e stato per tutto quello che si tocca ===== */
 /* cursore: ovunque ci sia un'azione, non solo dove qualcuno se n'e' ricordato */
 :where(a[href], button, summary, select, label:has(> input), [role="tab"], [role="checkbox"], [role="button"], [data-species], [data-go-zone], [data-taxon], [data-photo], [data-jump-k], .zoomable, .look-link) { cursor: pointer; }
 :is(.id-zoom, .zoomable, .cmp-zoom, [data-photo]) { cursor: zoom-in; }
 :is(button, [role="button"]):disabled, [aria-disabled="true"] { cursor: not-allowed; }
-.cmp-chip-ref { cursor: default; }
 /* stato hover solo con il mouse: sui touch resterebbe "appiccicato" dopo il tocco */
 @media (hover: hover) and (pointer: fine) {
   :is(.chip, .cmp-chip, .th-chip, .tl-btn, .day, .af-add, .tx-vs, .zsp-row, .j-item, .sheet-row, .tile, .sp-card, .portrait, .cover, .id-card, .cmp-cta, .ts-cta, .look-link, .tx-look-main, .appbar-back, .id-zoom, .fab, .wiz-close, .sheet-close, .ib-close, .mapctl-btn, .mapctl-x, .pw-eye, .sp-link, .sp-inline, .id-opt, .btn) {
@@ -2100,9 +2097,6 @@ html.theme-swap, html.theme-swap *, html.theme-swap *::before, html.theme-swap *
   .idf-sheet .tx-handle { display: none; }
   .idf-sh-h { padding-top: 16px; }
 }
-.cmp-chip-ref.tox-mortale .cmp-chip-img { box-shadow: 0 0 0 2px var(--bg), 0 0 0 3.5px var(--crit); }
-.cmp-chip-ref.tox-tossico .cmp-chip-img { box-shadow: 0 0 0 2px var(--bg), 0 0 0 3.5px var(--warn-ink); }
-.cmp-chip-ref:is(.tox-non-commestibile) .cmp-chip-img { box-shadow: 0 0 0 2px var(--bg), 0 0 0 3.5px var(--border); }
 /* le pillole dei sosia si agganciano sotto la barra in alto solo quando ci arrivano scorrendo */
 .cmp-pickbar { position: sticky; top: calc(var(--appbar-h) + env(safe-area-inset-top, 0px)); z-index: 20; margin-left: calc(var(--gutter, 16px) * -1); padding: 8px 0 10px var(--gutter, 16px);
   background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }

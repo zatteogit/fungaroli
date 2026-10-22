@@ -16,7 +16,7 @@ Non è un catalogo esaustivo dei funghi italiani e non si confondono nomi, speci
 
 `js/edible-catalog.js` riunisce i cataloghi ed esclude i taxa non classificati esattamente come `commestibile` o `commestibile con cautela`. Non deduce la commestibilità dal nome, da un riconoscimento automatico o dalla presenza su GBIF.
 
-La ricerca con autocomplete usa nome comune, nome scientifico e sinonimi. Consente singole specie, compresi i singoli porcini. I gruppi restano scorciatoie; “Tutti i commestibili” include il catalogo completo. Le preferenze precedenti per gruppi vengono migrate senza perdere la selezione. Tastiera, touch, rimozione e persistenza sono supportati.
+La ricerca con autocomplete usa nome comune, nome scientifico e sinonimi. Consente singole specie, compresi i singoli porcini. I gruppi restano scorciatoie; “Tutte le specie del catalogo” (fino al 22/10 “Tutti i commestibili”) include il catalogo completo. Sotto «Alla ricerca di…», con Funghi attivo, il pannello ricorda: «Scegli cosa cercare, non cosa mangiare: fai controllare il raccolto all’Ispettorato micologico ASL.» Le preferenze precedenti per gruppi vengono migrate senza perdere la selezione. Tastiera, touch, rimozione e persistenza sono supportati.
 
 “Fuori stagione” si riferisce al calendario indicativo della specie e alla data scelta, non a una certezza di assenza. Un calendario mancante è mostrato come “Stagione n.d.”; non viene sostituito da un intervallo inventato. Clima, quota e coltivazione possono cambiare i periodi reali.
 
