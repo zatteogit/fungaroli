@@ -124,6 +124,11 @@ export function validateContent(id, data, previous) {
     }
     needsReview=!previous||!same(value,previous);
   }
+  // Schede delle specie modellate: il vecchio campo libero «edibility» («ottimo», «buono») non fa più parte dello schema.
+  // La classificazione sta in «Specie e sosia» (toxicity, vocabolario chiuso). Il campo si toglie a ogni salvataggio,
+  // così sparisce anche da un documento già modificato da un autore, senza bloccarne il lavoro.
+  if (id === 'species-id' && value.species && typeof value.species === 'object')
+    for (const s of Object.values(value.species)) if (s && typeof s === 'object' && !Array.isArray(s)) delete s.edibility;
   if (id === 'species-traits' || id === 'edible-catalog') {
     const key=id==='species-traits'?'taxa':'species';
     if (id === 'species-traits' ? !value.taxa || Array.isArray(value.taxa) : !Array.isArray(value.species)) err('Elenco delle specie non valido.');
