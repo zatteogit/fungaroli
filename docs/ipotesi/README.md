@@ -13,6 +13,8 @@ Il ramo di produzione e i documenti in `docs/` fanno fede. Ciò che sta solo in 
 
 ## Registro
 
+Report editoriale esterno del 22/10 su Fronda e sui mercati dei funghi: [versione pubblica](report-editoriale-2026-10-22.md), senza le parti economiche e commerciali (il PDF completo sta nel repository privato `basecamp`). Ne sono uscite due revisioni decise da Matteo il 22/10: linguaggio sulla commestibilità e privacy (esportazione dei dati, informativa, posizione approssimata, diario KV dismesso, soglia degli aggregati). Il resto resta ipotesi: MycoTrace e MycoGrow sono concept separati da Fronda, non lavori in corso.
+
 Seconda tornata e prova offline sui porcini, in PR il 21/10: [handoff](../handoff-seconda-tornata-2026-10-21.md). Modello 2.1.0 (shock solo sui porcini, con la temperatura del suolo), dati registrati e non usati, informazioni sul bosco, Parco Gran Sasso-Laga, accessi e sentieri. La prova offline chiude la decisione D5.
 
 Video di atmosfera richiesti e autorizzati alla pubblicazione da Matteo il 20/10: [valutazione e collocazioni](video-atmosfera-2026-10-20.md). Ramo `codex/nature-video-release`, porting selettivo della prova locale sulla produzione corrente; nessuna sostituzione delle foto informative.
@@ -29,6 +31,7 @@ Rilascio delle parti verificate su richiesta di Matteo del 17/10: [valutazione d
 
 | Lavoro | Dove | Stato (21/10/2026) |
 |---|---|---|
+| Report editoriale esterno «Fronda e le opportunità digitali nel mondo dei funghi» (35 pagine) | [report-editoriale-2026-10-22.md](report-editoriale-2026-10-22.md), PDF in `basecamp/ricerca/report-2026/` | **Valutato in parte il 22/10.** Adottate le correzioni su commestibilità e privacy, in PR. Non adottate: sessioni protette e conservazione a 24 mesi. Mercati, MycoTrace e MycoGrow restano ipotesi. |
 | Seconda tornata: modello 2.1.0, umidità 9–27 cm ed ET₀ registrate, informazioni sul bosco, zone A e B del Gran Sasso-Laga, accessi a piedi, fascia e tempi dei sentieri, ritiro della segnalazione quando cambia lo sforzo | ramo locale `lavoro-fase-b`, commit `a23cea0` (unito alla produzione v319, cache v320) | **In PR.** Decisioni di Matteo del 16/10. Salvataggio automatico delle previsioni in corso. [Handoff](../handoff-seconda-tornata-2026-10-21.md) |
 | Prova offline dell'indice sui porcini di Bielefeld | ramo locale `lavoro-benchmark`, commit `ff52daf`, `tools/benchmark-bielefeld/` | **In PR**, nella stessa della seconda tornata. Esiti preregistrati: «non distinguibile» sia per indice contro calendario sia per σ 2,0 contro 3,5. [Sintesi](../metodo-scientifico.md#una-prova-offline-i-porcini-di-bielefeld) |
 | Pacchetto di ricerca «modello micologico v3» (Codex): covariate, logistica con calibrazione, schema delle uscite, audit delle fonti e dei porcini tedeschi | ramo `codex/fronda-modello-micologico-v3`, commit `4465d2f` | **Valutato**: banco di prova ben costruito, senza modello addestrato né dati. Non si unisce così com'è. [Valutazione](valutazione-modello-v3.md), decisioni D1–D5 nella sezione 9 |
