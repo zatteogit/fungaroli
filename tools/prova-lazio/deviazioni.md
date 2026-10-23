@@ -332,6 +332,132 @@ stesso script anche dal suo computer; il piano Standard di Open-Meteo (29 €) n
 
 Scritta prima di qualunque risultato: nessuna analisi è stata eseguita.
 
+## D19. Pioggia diversa fra due giorni di scaricamento (decisione di Matteo, 23/10/2026)
+
+**Fatto verificato.** Riunendo le risposte del Mac (D18), 46 richieste risultano scaricate da entrambe le macchine. 18
+sono identiche: sono le risposte che il Mac ha ricevuto già pronte nello zip. Le altre 28 sono state scaricate davvero
+due volte: qui il 22/10 fra le 07:55 e le 10:34 UTC, sul Mac il 23/10 fra le 12:09 e le 12:11 UTC. **Tutte e 28
+differiscono, e solo nella pioggia giornaliera** (`precipitation_sum`):
+- giorni diversi in media il 18,7%, scarto massimo 49,6 mm;
+- temperature, umidità e temperatura del suolo identiche;
+- in 19 coppie su 28 cambiano anche le coordinate della cella restituita: il 22/10 su una griglia regolare a 0,02°,
+  il 23/10 su coordinate diverse;
+- la differenza c'è anche nelle gemelle C-BM (`best_match`), con le coordinate uguali.
+
+**Interpretazione, non verificata.** Fra il 22/10 pomeriggio e il 23/10 mezzogiorno il servizio ha cambiato la fonte
+o l'elaborazione della pioggia storica. Non c'è un annuncio pubblico (ricerca del 23/10/2026). Non si può dire quale
+delle due versioni sia «giusta»: entrambe sono pioggia di modello, non misurata. Non sappiamo se il cambio è
+definitivo: da qui il limite giornaliero dell'indirizzo condiviso era esaurito e la verifica non si è potuta rifare.
+
+**Quante risposte ne sono toccate.** Delle 880 risposte meteo usate nella prova, 869 sono state scaricate il 22/10
+e 11 il 23/10 (10 P1 `icon_seamless` e 1 gemella C-BM `best_match`):
+`2b43f63ab9e7b74b0fca3c39`, `2bb454859585af820946cd55`, `3bb78fd55a0edce56b81c9dd`, `57e442127fb23a439bcf204d`,
+`6113eb3df9e4ff34f1425cb2`, `7b9f09f695095e2af781cb26`, `90fafa8a52e33fb34b37aa83`, `9745feff8e14f121e1b0e368`,
+`b9f8340303812e93a40229d9`, `cf1bfe9cca1884e2d86c57ab` (P1) e `8d646499d69718a7ee71945b` (C-BM). Per le 28 doppie
+resta la copia del 22/10 (regola di `unisci_meteo.py`): così la versione del 22/10 copre 869 risposte su 880.
+
+**Decisione di Matteo.** Si tengono tutti i dati, come da preregistrazione, e si aggiunge una prova di sensibilità:
+- **S-D19:** si ripete l'analisi principale togliendo le unità (casi e controlli) il cui meteo viene dalle 10
+  richieste P1 del 23/10. Il controllo C-BM si ripete senza la gemella `8d646499d69718a7ee71945b` e la sua P1.
+- Il README riporta entrambe, accanto. Se il verdetto di una specie cambia fra le due, il README lo dice e quella
+  specie non ha un verdetto netto.
+
+**Osservazione a margine (D17).** Sul Mac l'Elevation API ha risposto 4 volte «Minutely API request limit exceeded»
+con richieste da 100 coordinate ogni 3 secondi. È compatibile con un peso per coordinata, ma 4 casi non bastano a
+misurarlo: il peso prudente di D17 resta.
+
+Scritta il 23/10/2026, prima di qualunque risultato: nessuna analisi è stata eseguita.
+
+## D20. Scelte d'implementazione dove il protocollo lascia margine (23/10/2026)
+
+Scritte dopo una prova dello script con B = 200 di cui si sono guardati **solo i numeri di struttura** (unità, celle,
+completezza, controlli), **prima di leggere qualunque stima, intervallo o verdetto**. La struttura coincide con quella
+di D2: 975 unità caso P1 con controlli in 435 celle, 2882 controlli abbinati, cluster effettivi 183,2 (cella), 172,1
+(osservatore), 22,2 (regione × anno). Meteo completo per tutte le unità e le coppie (0% mancante); controllo 5
+superato su 14 754 voci (scarto massimo 1,7 · 10⁻¹³); nessuna richiesta con il punto di ripiego; 880 risposte con
+scarto orario 7200.
+
+1. **Climatologia di un controllo.** c_k(t) si legge nella macro-area dell'unità stessa (regione del suo record con
+   l'identificativo più basso), non in quella del caso; regione ignota → Italia. Casi e controlli stanno nella stessa
+   cella, quindi quasi sempre coincidono.
+2. **Climatologia delle secondarie.** P2 usa il denominatore P2 (D5). S-GEN usa come denominatore i controlli P1 senza
+   quelli identificati solo sopra il genere. S-PREC e S-LIC ricalcolano la climatologia sulle loro unità. Le altre
+   secondarie (S-FIN, S-CELLA, S-QUOTA, S-CC, S-SPEC, S-MACRO, Lazio, S-D19) usano quella del principale.
+3. **Blocco al 20%** (5.5 del Lazio, D1): si conta sulle unità caso con controlli e sulle coppie caso–controllo
+   (un controllo vale per la specie del caso), non sulle unità controllo in astratto.
+4. **S-CC** usa tutte le unità caso 2023–2025 con una serie (1226), non solo quelle con controlli P1: il
+   case-crossover non ha bisogno di controlli. I giorni d ± 14 e d ± 28 fuori dall'anno si tolgono (D8).
+5. **Soglie nelle secondarie.** «Incluse nella complessiva» (≥ 5 unità) si ricalcola sull'insieme dei casi di ogni
+   analisi (4.5 del Lazio: «con i loro insiemi»). Per questo P2 ha 165 casi nella complessiva su 175 con controlli
+   P2: le specie con meno di 5 casi P2 restano fuori.
+6. **Q4** (edulis e porcini insieme) usa le soglie della complessiva, compresi i 15 cluster effettivi di D3.
+7. **Holm.** Una delle dieci specie «non valutabile» resta nella famiglia con p = 1 (D3: la famiglia ha sempre 10
+   membri).
+8. **«Eterogeneo fra anni»** (D4) si controlla sui verdetti «meglio/peggio» della complessiva e delle specie che
+   passano Holm, con l'intervallo B-cella dentro ogni anno (stesso seme, ripartito per ogni anno).
+9. **S-SPEC:** in ogni replica la media delle AUC delle specie presenti nella replica.
+10. **S-COMP e S-ARR:** AUC di ogni componente e di (1) arrotondato contro 0,5, con i tre intervalli, senza etichetta.
+11. **S-CELLA:** il bootstrap B-cella estrae le celle di 0,2°.
+12. **Quote:** quella del punto dell'unità dall'API Elevation (priorità 3 e 4, tutte presenti per casi e controlli
+    abbinati). S-QUOTA e le fasce di S-MACRO usano queste.
+13. **P1 sugli stessi casi di P2** (D1): le unità caso, per specie, con almeno un controllo P2.
+14. **Analisi descrittiva** (11 del Lazio, D17): le quote 2015–2025 della priorità 5 non sono ancora scaricate (1 su
+    353 richieste). Si riporta la tabella sulle unità con quota (5137 su 41 520) e la si rifà quando le quote
+    arrivano. Nessun verdetto dipende da questa analisi.
+
+## D21. Correzioni dopo le tre verifiche indipendenti (23/10/2026, **dopo aver visto i risultati**)
+
+Tre verifiche indipendenti sugli esiti del 23/10 (commit `c0877363`): una reimplementazione da zero, una revisione del
+codice contro questo protocollo, una serie di controlli avversari sui dati. La reimplementazione ha ritrovato tutti i
+numeri del principale entro 10⁻¹²; la prova nulla (casi e controlli scambiati a caso) dà AUC 0,500; nessuna fuga
+d'informazione dal futuro. Nessun rilievo cambiava un verdetto. Le correzioni qui sotto sono state fatte **dopo** aver
+visto stime e verdetti: servono a stare al protocollo, non a cambiare un esito. Il README riporta i numeri prima e
+dopo dove cambiano.
+
+**Correzioni che cambiano un numero**
+1. **Geometria anche per iNaturalist** (2.1 dell'Italia: «per entrambe le fonti»; controllo 4). `comune.py` la
+   applicava solo a GBIF. 213 record iNaturalist validi cadevano fuori dalla geometria salvata, quasi tutti sui
+   confini con Svizzera e Slovenia (la geometria dell'API è semplificata: 26 poligoni, 422 vertici). Ora la geometria
+   vale per tutti, in `valuta.py`; `comune.py` e `richieste.json` non cambiano. P1: da 975 a 973 casi, da 435 a 433
+   celle (cambiano procera e mellea).
+2. **C-BM:** ogni giorno di ogni richiesta conta una volta, solo i giorni di casi e controlli del principale (prima
+   un giorno valutato per più specie o per più secondarie pesava più volte).
+3. **Analisi descrittiva:** il denominatore conta le uscite distinte (un'uscita con due specie una volta sola);
+   tabelle per tutta l'Italia e per macro-area (4.9 dell'Italia), con i pesi `months` accanto (11 del Lazio).
+4. **Cluster effettivi:** la soglia di 15 (D3) si applica al valore non arrotondato.
+5. **Blocco al 20%:** al numeratore anche i casi che perdono tutti i controlli per meteo mancante.
+
+**Parti preregistrate che mancavano**
+6. **S-D19** ora ha gli stessi verdetti e la stessa correzione di Holm del principale (D19 chiede se un verdetto
+   cambia).
+7. **Q4:** controllo «eterogeneo fra anni» anche qui; le specie non rifiutate da Holm riportano anche «la differenza
+   resta sotto δ in tutto l'intervallo» quando vale (9 del Lazio).
+8. **Secondarie di P2** (4.9 dell'Italia: «per P1 e per P2»): S-FIN, S-CELLA, S-QUOTA, S-PREC, S-LIC, S-SPEC,
+   S-COMP, S-MACRO; S-CC è comune ai due disegni. Descrittive, senza etichetta e senza «contraddice».
+9. **S-ARR** con il controllo «contraddice» su Q1; **valori distinti** di ogni punteggio per specie (8.1 del Lazio).
+10. **Controlli bloccanti più forti.** 2: istantanea congelata `dati/istantanea.json` con lo SHA-256 di ogni file,
+    creata il 23/10 (dopo i risultati; da qui in avanti un file cambiato ferma l'esecuzione; le quote della priorità
+    5 che arrivano dopo sono ammesse). 3: taxa del codice confrontati con la tabella 2.2 e la lista P2; nessun record
+    dei controlli con un taxon escluso. 7: cerca anche id di record in ogni posizione, chiavi delle richieste, celle e
+    serie meteo; il riepilogo `esiti-riepilogo.json` si scrive accanto allo script.
+
+**Scelte non coperte, ora scritte**
+11. La regione di un'uscita è quella del suo record con l'identificativo più basso: vale per la climatologia (D20.1),
+    per il cluster regione × anno, per S-MACRO e per il Lazio. 63 uscite hanno record in regioni diverse.
+12. «Contraddice» (D13) si valuta sulla complessiva delle secondarie, non per specie.
+13. `fattori.mjs` chiede, oltre a `inputQuality`, che la finestra più lunga stia dentro la serie: nessuna unità
+    esclusa per questo.
+14. **Fatti da sapere, nessuna modifica:** il gelo (`frost`) usa anche la minima del giorno stesso, come l'app
+    (togliendola l'AUC(1) cambia di −0,0015); 14 record iNaturalist di *Hydnum rufescens* e *H. pallidum* restano fra
+    i controlli (specie distinte in iNaturalist, sinonimi di *H. repandum* nel Backbone); in 739 coppie su 5533 il
+    controllo è un'uscita in cui lo stesso osservatore ha trovato anche una specie in prova (voluto dal disegno, spinge
+    verso 0,5).
+
+**Analisi esplorativa nuova (dopo i risultati, senza etichetta)**
+15. **E-STESSO-OSS / E-ALTRI-OSS:** il principale con i soli controlli dello stesso osservatore del caso (in altri
+    giorni) oppure con i soli controlli di altri osservatori. Nasce da un rilievo della verifica avversaria: contro le
+    uscite dello stesso osservatore il vantaggio dell'indice sembrava più piccolo. Serve a leggere Q1, non la cambia.
+
 ## Che cosa non cambia
 
 Domanda principale, disegno P1, unità, celle, finestre, δ, punteggi (0), (1), (1b), seme del bootstrap, completezza,
