@@ -332,6 +332,42 @@ stesso script anche dal suo computer; il piano Standard di Open-Meteo (29 €) n
 
 Scritta prima di qualunque risultato: nessuna analisi è stata eseguita.
 
+## D19. Pioggia diversa fra due giorni di scaricamento (decisione di Matteo, 23/10/2026)
+
+**Fatto verificato.** Riunendo le risposte del Mac (D18), 46 richieste risultano scaricate da entrambe le macchine. 18
+sono identiche: sono le risposte che il Mac ha ricevuto già pronte nello zip. Le altre 28 sono state scaricate davvero
+due volte: qui il 22/10 fra le 07:55 e le 10:34 UTC, sul Mac il 23/10 fra le 12:09 e le 12:11 UTC. **Tutte e 28
+differiscono, e solo nella pioggia giornaliera** (`precipitation_sum`):
+- giorni diversi in media il 18,7%, scarto massimo 49,6 mm;
+- temperature, umidità e temperatura del suolo identiche;
+- in 19 coppie su 28 cambiano anche le coordinate della cella restituita: il 22/10 su una griglia regolare a 0,02°,
+  il 23/10 su coordinate diverse;
+- la differenza c'è anche nelle gemelle C-BM (`best_match`), con le coordinate uguali.
+
+**Interpretazione, non verificata.** Fra il 22/10 pomeriggio e il 23/10 mezzogiorno il servizio ha cambiato la fonte
+o l'elaborazione della pioggia storica. Non c'è un annuncio pubblico (ricerca del 23/10/2026). Non si può dire quale
+delle due versioni sia «giusta»: entrambe sono pioggia di modello, non misurata. Non sappiamo se il cambio è
+definitivo: da qui il limite giornaliero dell'indirizzo condiviso era esaurito e la verifica non si è potuta rifare.
+
+**Quante risposte ne sono toccate.** Delle 880 risposte meteo usate nella prova, 869 sono state scaricate il 22/10
+e 11 il 23/10 (10 P1 `icon_seamless` e 1 gemella C-BM `best_match`):
+`2b43f63ab9e7b74b0fca3c39`, `2bb454859585af820946cd55`, `3bb78fd55a0edce56b81c9dd`, `57e442127fb23a439bcf204d`,
+`6113eb3df9e4ff34f1425cb2`, `7b9f09f695095e2af781cb26`, `90fafa8a52e33fb34b37aa83`, `9745feff8e14f121e1b0e368`,
+`b9f8340303812e93a40229d9`, `cf1bfe9cca1884e2d86c57ab` (P1) e `8d646499d69718a7ee71945b` (C-BM). Per le 28 doppie
+resta la copia del 22/10 (regola di `unisci_meteo.py`): così la versione del 22/10 copre 869 risposte su 880.
+
+**Decisione di Matteo.** Si tengono tutti i dati, come da preregistrazione, e si aggiunge una prova di sensibilità:
+- **S-D19:** si ripete l'analisi principale togliendo le unità (casi e controlli) il cui meteo viene dalle 10
+  richieste P1 del 23/10. Il controllo C-BM si ripete senza la gemella `8d646499d69718a7ee71945b` e la sua P1.
+- Il README riporta entrambe, accanto. Se il verdetto di una specie cambia fra le due, il README lo dice e quella
+  specie non ha un verdetto netto.
+
+**Osservazione a margine (D17).** Sul Mac l'Elevation API ha risposto 4 volte «Minutely API request limit exceeded»
+con richieste da 100 coordinate ogni 3 secondi. È compatibile con un peso per coordinata, ma 4 casi non bastano a
+misurarlo: il peso prudente di D17 resta.
+
+Scritta il 23/10/2026, prima di qualunque risultato: nessuna analisi è stata eseguita.
+
 ## Che cosa non cambia
 
 Domanda principale, disegno P1, unità, celle, finestre, δ, punteggi (0), (1), (1b), seme del bootstrap, completezza,
