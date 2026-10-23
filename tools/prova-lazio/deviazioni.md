@@ -368,6 +368,43 @@ misurarlo: il peso prudente di D17 resta.
 
 Scritta il 23/10/2026, prima di qualunque risultato: nessuna analisi è stata eseguita.
 
+## D20. Scelte d'implementazione dove il protocollo lascia margine (23/10/2026)
+
+Scritte dopo una prova dello script con B = 200 di cui si sono guardati **solo i numeri di struttura** (unità, celle,
+completezza, controlli), **prima di leggere qualunque stima, intervallo o verdetto**. La struttura coincide con quella
+di D2: 975 unità caso P1 con controlli in 435 celle, 2882 controlli abbinati, cluster effettivi 183,2 (cella), 172,1
+(osservatore), 22,2 (regione × anno). Meteo completo per tutte le unità e le coppie (0% mancante); controllo 5
+superato su 14 754 voci (scarto massimo 1,7 · 10⁻¹³); nessuna richiesta con il punto di ripiego; 880 risposte con
+scarto orario 7200.
+
+1. **Climatologia di un controllo.** c_k(t) si legge nella macro-area dell'unità stessa (regione del suo record con
+   l'identificativo più basso), non in quella del caso; regione ignota → Italia. Casi e controlli stanno nella stessa
+   cella, quindi quasi sempre coincidono.
+2. **Climatologia delle secondarie.** P2 usa il denominatore P2 (D5). S-GEN usa come denominatore i controlli P1 senza
+   quelli identificati solo sopra il genere. S-PREC e S-LIC ricalcolano la climatologia sulle loro unità. Le altre
+   secondarie (S-FIN, S-CELLA, S-QUOTA, S-CC, S-SPEC, S-MACRO, Lazio, S-D19) usano quella del principale.
+3. **Blocco al 20%** (5.5 del Lazio, D1): si conta sulle unità caso con controlli e sulle coppie caso–controllo
+   (un controllo vale per la specie del caso), non sulle unità controllo in astratto.
+4. **S-CC** usa tutte le unità caso 2023–2025 con una serie (1226), non solo quelle con controlli P1: il
+   case-crossover non ha bisogno di controlli. I giorni d ± 14 e d ± 28 fuori dall'anno si tolgono (D8).
+5. **Soglie nelle secondarie.** «Incluse nella complessiva» (≥ 5 unità) si ricalcola sull'insieme dei casi di ogni
+   analisi (4.5 del Lazio: «con i loro insiemi»). Per questo P2 ha 165 casi nella complessiva su 175 con controlli
+   P2: le specie con meno di 5 casi P2 restano fuori.
+6. **Q4** (edulis e porcini insieme) usa le soglie della complessiva, compresi i 15 cluster effettivi di D3.
+7. **Holm.** Una delle dieci specie «non valutabile» resta nella famiglia con p = 1 (D3: la famiglia ha sempre 10
+   membri).
+8. **«Eterogeneo fra anni»** (D4) si controlla sui verdetti «meglio/peggio» della complessiva e delle specie che
+   passano Holm, con l'intervallo B-cella dentro ogni anno (stesso seme, ripartito per ogni anno).
+9. **S-SPEC:** in ogni replica la media delle AUC delle specie presenti nella replica.
+10. **S-COMP e S-ARR:** AUC di ogni componente e di (1) arrotondato contro 0,5, con i tre intervalli, senza etichetta.
+11. **S-CELLA:** il bootstrap B-cella estrae le celle di 0,2°.
+12. **Quote:** quella del punto dell'unità dall'API Elevation (priorità 3 e 4, tutte presenti per casi e controlli
+    abbinati). S-QUOTA e le fasce di S-MACRO usano queste.
+13. **P1 sugli stessi casi di P2** (D1): le unità caso, per specie, con almeno un controllo P2.
+14. **Analisi descrittiva** (11 del Lazio, D17): le quote 2015–2025 della priorità 5 non sono ancora scaricate (1 su
+    353 richieste). Si riporta la tabella sulle unità con quota (5137 su 41 520) e la si rifà quando le quote
+    arrivano. Nessun verdetto dipende da questa analisi.
+
 ## Che cosa non cambia
 
 Domanda principale, disegno P1, unità, celle, finestre, δ, punteggi (0), (1), (1b), seme del bootstrap, completezza,
