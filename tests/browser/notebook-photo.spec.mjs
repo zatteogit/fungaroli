@@ -5,12 +5,12 @@ for(const width of [320,390,768,1280])for(const theme of ['light','dark'])test(`
  const context=await browser.newContext({viewport:{width,height:1000},reducedMotion:'reduce',serviceWorkers:'block'}),page=await preparePage(context,{theme});
  const errors=[];page.on('pageerror',e=>errors.push(e.message));await page.route('**/api/content/v1/snapshot',r=>r.fulfill({status:503,json:{error:'fixture'}}));
  await page.goto('/');await page.locator('.tabbar [data-annotate]').click();const dialog=page.locator('.notebook-dialog[open]');
- await expect(dialog.getByRole('heading',{name:'Cosa hai incontrato?'})).toBeVisible();await expect(page.locator('.tabbar [data-open-search]')).toHaveCount(0);await expect(page.locator('.tabbar [data-annotate] .notebook-glyph')).toHaveCount(1);
+ await expect(dialog.getByRole('heading',{name:'Annota un ritrovamento'})).toBeVisible();await expect(page.locator('.tabbar [data-open-search]')).toHaveCount(0);await expect(page.locator('.tabbar [data-annotate] .notebook-glyph')).toHaveCount(1);
  await dialog.locator('[data-quick-photo]').setInputFiles(photoPath);await expect(dialog.locator('.quick-photo img')).toBeVisible();
  await expect(dialog.locator('[data-quick-status]')).not.toContainText('Preparo');await page.screenshot({path:`output/playwright/annota-composer-${width}-${theme}.png`});
  expect(await dialog.evaluate(e=>e.scrollWidth<=e.clientWidth)).toBe(true);
  if(width===390){const readings=await auditState(page,{root:'.notebook-dialog[open]'});expect(readings.filter(r=>!r.decorative&&!r.disabled&&r.ratio<r.threshold).map(r=>r.text)).toEqual([]);}
- await dialog.getByRole('button',{name:'Conserva nel taccuino'}).click();await expect(page).toHaveURL(/#\/diario\/pagina\//);
+ await dialog.getByRole('button',{name:'Salva nel taccuino'}).click();await expect(page).toHaveURL(/#\/diario\/pagina\//);
  await expect(page.locator('.diary-detail-photo.is-personal img')).toBeVisible();await expect(page.locator('.diary-detail')).toContainText('Un fungo da conoscere');await expect(page.locator('.diary-detail')).toContainText('La tua fotografia · privata');
  await expect(page.locator('.diary-detail-photo a')).toHaveCount(0);await page.screenshot({path:`output/playwright/annota-pagina-${width}-${theme}.png`});
  expect(await page.locator('.diary-detail-photo img').evaluate(i=>i.naturalWidth>0&&Math.max(i.naturalWidth,i.naturalHeight)<=1280)).toBe(true);
@@ -22,8 +22,8 @@ for(const width of [320,390,768,1280])for(const theme of ['light','dark'])test(`
 });
 test('salvataggio rapido senza foto, contesto della scheda e ricerca ancora accessibile',async({browser})=>{
  const context=await browser.newContext({viewport:{width:390,height:950},serviceWorkers:'block'}),page=await preparePage(context);await page.goto('/');await page.locator('.tabbar [data-annotate]').click();const dialog=page.locator('.notebook-dialog[open]');
- await dialog.getByRole('button',{name:'Conserva nel taccuino'}).click();await expect(dialog.locator('[data-quick-status]')).toContainText('Aggiungi una foto');
- await dialog.locator('summary').click();await dialog.locator('[name="note"]').fill('Il bosco profuma di pioggia.');await dialog.getByRole('button',{name:'Conserva nel taccuino'}).click();await expect(page.locator('.diary-prose')).toHaveText('Il bosco profuma di pioggia.');
+ await dialog.getByRole('button',{name:'Salva nel taccuino'}).click();await expect(dialog.locator('[data-quick-status]')).toContainText('Aggiungi una foto');
+ await dialog.locator('summary').click();await dialog.locator('[name="note"]').fill('Il bosco profuma di pioggia.');await dialog.getByRole('button',{name:'Salva nel taccuino'}).click();await expect(page.locator('.diary-prose')).toHaveText('Il bosco profuma di pioggia.');
  await page.goto('/#/fungo/agaricus-campestris');await page.locator('.tabbar [data-annotate]').click();await expect(dialog.locator('[data-quick-species]')).toHaveValue('Prataiolo');await dialog.locator('[data-quick-close]').click();
  await page.goto('/');await page.evaluate(()=>scrollTo(0,0));await page.locator('.appbar [data-open-search]').click();await expect(page.locator('.search-dlg[open]')).toBeVisible();await context.close();
 });
@@ -46,7 +46,7 @@ test('CTA con penna d’oca e ricerca in testata a 320px',async({browser})=>{
  await page.goto('/#/diario');await expect(page.locator('.diary-empty')).toBeVisible();await expect(page.locator('.diary-capture-invite')).toHaveCount(0);
  await expect(page.locator('[data-annotate]:visible')).toHaveCount(1);
  await expect(page.locator('.diary-header-actions [data-new-outing]')).toBeVisible();await expect(page.locator('.diary-header-actions [data-new-note]')).toBeVisible();
- await page.locator('.tabbar [data-annotate]').click();await expect(page.locator('.notebook-dialog[open] h2')).toHaveText('Cosa hai incontrato?');await context.close();
+ await page.locator('.tabbar [data-annotate]').click();await expect(page.locator('.notebook-dialog[open] h2')).toHaveText('Annota un ritrovamento');await context.close();
 });
 
 test('Annota mantiene accessibili gli altri appunti e il racconto dell’uscita',async({browser})=>{

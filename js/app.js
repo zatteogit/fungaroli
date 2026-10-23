@@ -1187,7 +1187,7 @@ function outdoorCover(c) {
 const outdoorBackdrop=()=>`<span class="outdoor-backdrop" aria-hidden="true">${IC.map}</span>`;
 function plantCoverHint(c) {
   if(!hasInterest('piante'))return '';
-  const plant=(c.items||outdoorDiscoveries(c.z,c.d,c.walk)).find(i=>i.kind==='pianta');
+  const plant=(c.items?.length?c.items:outdoorDiscoveries(c.z,c.d,c.walk)).find(i=>i.kind==='pianta');
   return plant?`<span class="cover-sp cover-plant">${plantThumb(plant.id,44)}<span><small>Da osservare</small><span class="cover-sp-name"><b>${esc(plant.name)}</b></span><small>${esc(plant.phase)} · presenza da verificare</small></span></span>`:'';
 }
 function outdoorTile(c,hero=false) {
