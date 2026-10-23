@@ -5,9 +5,11 @@
   "compatibility_date": "2026-09-01",
   "compatibility_flags": ["nodejs_compat"],
   "vars": { "APP_ORIGIN": "https://fungaroli.zatteo.workers.dev", "CMS_ADMIN_IDS": "2ce3edfd-514c-4ef7-a8f3-9140396360c5", "CMS_EDITOR_IDS": "" },
+  // ID dei database D1 scritti qui (23/10/2026): le build delle anteprime (wrangler versions upload) non
+  // creano né collegano da sole i database senza ID, a differenza di wrangler deploy in produzione.
   "d1_databases": [
-    { "binding": "COMMUNITY_DB", "database_name": "fungaroli-community", "migrations_dir": "migrations" },
-    { "binding": "CMS_DB", "database_name": "fungaroli-content", "migrations_dir": "migrations" }
+    { "binding": "COMMUNITY_DB", "database_name": "fungaroli-community", "database_id": "7db69395-ce5c-4325-bae6-dac142ab1c44", "migrations_dir": "migrations" },
+    { "binding": "CMS_DB", "database_name": "fungaroli-content", "database_id": "62bc80b8-5501-4fab-89aa-8cf1d6ba0718", "migrations_dir": "migrations" }
   ],
   "rules": [{ "type": "Text", "globs": ["**/*.sql"], "fallthrough": true }],
   "triggers": { "crons": ["17 3 * * *"] },
