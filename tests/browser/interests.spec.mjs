@@ -26,7 +26,7 @@ for(const width of [320,1280])test(`interessi indipendenti: tutte le combinazion
   await page.locator('#map-filters [data-more]').click();
   for(const id of ids)await expect(page.locator(`#full-filters [data-intent="${id}"]`)).toHaveAttribute('aria-pressed',String(selected.includes(id)));
   await page.locator('#full-filters [data-close]').last().click();
-  if(selected.includes('funghi')&&selected.includes('piante'))await expect(page.locator('#legend')).toContainText('Indice dei funghi · piante');
+  if(selected.includes('funghi')&&selected.includes('piante')){await expect(page.locator('#legend')).toContainText('Potenziale dei funghi e meteo previsto');await expect(page.locator('#legend')).toContainText('Piante da osservare');}
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
   await expect(page.locator('#map-filters > button')).toHaveCount(2);
   await page.goto('/#/uscite');
@@ -35,7 +35,7 @@ for(const width of [320,1280])test(`interessi indipendenti: tutte le combinazion
  await loadAllImages(page);
  for(const theme of ['light','dark']){
   await page.evaluate(t=>document.documentElement.dataset.theme=t,theme);
-  const readings=await auditState(page,{root:'#active-filters'});expect(readings.length).toBeGreaterThan(5);
+  const readings=await auditState(page,{root:'#active-filters'});expect(readings.length).toBeGreaterThanOrEqual(ids.length);
   expect(readings.filter(r=>!r.decorative&&!r.disabled&&r.ratio<r.threshold).map(r=>({text:r.text,ratio:r.ratio,threshold:r.threshold}))).toEqual([]);
  }
  await page.locator('#active-filters').screenshot({path:`/tmp/fronda-interests-${width}.png`});

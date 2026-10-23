@@ -8,6 +8,8 @@ import { startRegistration, startAuthentication, browserSupportsWebAuthn } from 
 import { communityMultiplier } from './community-signal.js';
 import { PROVINCES, zoneProvince } from './community-aggregate.js';
 import {setBaseUser,mountBaseEditor} from './base-location.js';
+import {downloadAccountData} from './data-export.js';
+import {clearNotebookStore,accountNotebookScope} from './notebook-photo-store.js';
 
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 let enabled = false, user = null, summary = null, zones = [], ready = Promise.resolve(), reportDialog, authDialog, speciesCatalog = SPECIES;
@@ -139,7 +141,7 @@ export async function openAccount() {
       <div data-profile-base></div>
       <div class="profile-editorial" data-cms-link hidden></div>
       <div class="profile-actions" role="group" aria-label="Azioni del profilo"><button type="button" class="btn ghost" data-logout>Esci dal profilo</button><button type="button" class="btn primary" data-close autofocus>Chiudi</button></div>
-      <div class="profile-data"><button type="button" class="link-btn" data-delete-account>Elimina profilo e dati</button></div><p class="profile-status" role="status" data-status></p>`
+      <div class="profile-data"><button type="button" class="btn ghost" data-export-account>Scarica i miei dati</button><button type="button" class="link-btn" data-delete-account>Elimina profilo e dati</button></div><p class="profile-status" role="status" data-status></p>`
       : `<header class="account-header"><h2>Unisciti a Fronda</h2><button type="button" class="profile-close" data-close aria-label="Chiudi l’accesso" autofocus>×</button></header><div class="auth-content"><p class="auth-intro">Accedi con la passkey del dispositivo, senza password o email.</p>
       <label>Nome facoltativo <input class="wiz-input" maxlength="32" autocomplete="nickname" data-handle placeholder="Un nome, anche inventato"></label>
       <div class="auth-actions"><button type="button" class="btn primary" data-register>Crea profilo con passkey</button><button type="button" class="btn ghost" data-login>Ho già una passkey</button></div>
@@ -185,10 +187,27 @@ export async function openAccount() {
     authDialog.querySelector('[data-logout]')?.addEventListener('click', async () => {
       try { await communityRequest('auth/logout', 'POST', {}); user = null; clearSummary(); changed(); authDialog.close(); } catch (e) { status.textContent = e.message; }
     });
+    // Copia completa dei propri dati, con le foto: art. 15 e 20 GDPR (decisione del 22/10/2026).
+    authDialog.querySelector('[data-export-account]')?.addEventListener('click', async (e) => {
+      const button = e.currentTarget, accountId = user?.id;
+      button.disabled = true; status.textContent = 'Preparo il file con i tuoi dati…';
+      try { await downloadAccountData(); if (user?.id === accountId) status.textContent = 'File pronto: profilo, taccuino con le foto e segnalazioni.'; }
+      catch (err) { if (user?.id === accountId) status.textContent = err.message; }
+      finally { button.disabled = false; }
+    });
     authDialog.querySelector('[data-delete-account]')?.addEventListener('click', async (e) => {
-      if (!e.currentTarget.dataset.confirm) { e.currentTarget.dataset.confirm = '1'; e.currentTarget.textContent = 'Conferma eliminazione'; status.textContent = 'Elimina il tuo profilo, il taccuino e le tue segnalazioni. Premi ancora per confermare.'; return; }
-      try { await communityRequest('account', 'DELETE'); user = null; clearSummary(); changed(); await refreshCommunity(); authDialog.close(); }
-      catch (err) { status.textContent = err.message; }
+      if (!e.currentTarget.dataset.confirm) { e.currentTarget.dataset.confirm = '1'; e.currentTarget.textContent = 'Conferma eliminazione'; status.textContent = 'Elimina il tuo profilo, il taccuino e le tue segnalazioni. Se vuoi conservarli, prima scarica i tuoi dati. Premi ancora per confermare.'; return; }
+      const accountId = user.id;
+      try { await communityRequest('account', 'DELETE'); }
+      catch (err) { status.textContent = err.message; return; }
+      user = null; clearSummary(); changed();
+      // Anche la copia di questo dispositivo: voci in localStorage e foto in IndexedDB del profilo eliminato.
+      let local = true;
+      try { await clearNotebookStore(accountNotebookScope(accountId)); } catch { local = false; }
+      await refreshCommunity();
+      if (local) { authDialog.close(); return; }
+      authDialog.querySelectorAll('[data-export-account],[data-delete-account],[data-logout]').forEach((b) => b.remove());
+      status.textContent = 'Profilo eliminato. Non sono riuscito a togliere la copia del taccuino da questo dispositivo: cancella i dati del sito dalle impostazioni del browser.';
     });
     openModal(authDialog);
   });

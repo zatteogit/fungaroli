@@ -26,7 +26,7 @@ test('tre intenti: home, filtri, mappa, dettaglio e memoria coerenti',async({pag
  await page.locator('#hero .outdoor-hero').click();await expect(page.locator('#detail h1')).toBeVisible();await expect(page.locator('#detail .hero-indicators > .ring')).toHaveCount(0);await expect(page.locator('#detail .weather-ring')).toHaveCount(1);
  await page.goto('/#/mappa');await expect(page.locator('#map .pc')).toHaveCount(0);
  await mapToggle(page,'piante');await mapToggle(page,'passeggiata');await expect(page.locator('#legend .map-plant-note')).toHaveCount(1);await expect(page.locator('#legend .map-plant-note')).not.toHaveAttribute('open','');
- await page.goto('/#/uscite');await expect(page.locator('#season .outdoor-plant').first()).toBeVisible();
+ await page.goto('/#/uscite');await expect(page.locator('#season-h')).toHaveText('Piante da conoscere');await expect(page.locator('#season a.portrait[href^="#/pianta/"]').first()).toBeVisible();
  expect(await page.evaluate(()=>!!(document.querySelector('#hero').compareDocumentPosition(document.querySelector('#season'))&Node.DOCUMENT_POSITION_FOLLOWING))).toBe(true);
  await page.locator('#appbar-home-filters [data-more]:visible,#home-filter-action [data-more]:visible').first().click();await expect(page.locator('#species-filter-search')).toBeVisible();await page.keyboard.press('Escape');
  for(const theme of ['light','dark'])for(const width of [320,390,768,1280]){

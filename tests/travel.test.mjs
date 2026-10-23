@@ -6,9 +6,20 @@ test('base coordinates are finite, bounded and normalized; distance is geodesic'
   assert.equal(normalizeBase(null),null);
   assert.throws(()=>normalizeBase({name:'Roma',lat:91,lon:12}),/validi/);
   assert.throws(()=>normalizeBase({name:'Roma',lat:'41',lon:12}),/validi/);
-  const rome=normalizeBase({name:' Roma ',lat:41.902800001,lon:12.4964});assert.deepEqual(rome,{name:'Roma',lat:41.9028,lon:12.4964});
+  // Base personale arrotondata a 2 decimali, circa 1 km (decisione di Matteo del 22/10/2026).
+  const rome=normalizeBase({name:' Roma ',lat:41.902800001,lon:12.4964});assert.deepEqual(rome,{name:'Roma',lat:41.9,lon:12.5});
   assert.equal(airDistanceKm(rome,rome),0);assert.ok(airDistanceKm(rome,{lat:42.404,lon:12.8623})>60);
-  const url=new URL(drivingDirections(rome,{lat:42.404,lon:12.8623}));assert.equal(url.searchParams.get('origin'),'41.9028,12.4964');
+  const url=new URL(drivingDirections(rome,{lat:42.404,lon:12.8623}));assert.equal(url.searchParams.get('origin'),'41.9,12.5');
+  // L'origine di riferimento del catalogo non è un dato personale: resta precisa quando lo si chiede.
+  assert.deepEqual(normalizeBase({name:'Rieti',lat:42.404,lon:12.8623},{decimals:6}),{name:'Rieti',lat:42.404,lon:12.8623});
+});
+test('base personale: niente più di 2 decimali, anche dalla posizione GPS del dispositivo',()=>{
+  const gps=normalizeBase({name:'Posizione attuale',lat:42.567812,lon:12.964834});
+  assert.deepEqual(gps,{name:'Posizione attuale',lat:42.57,lon:12.96});
+  for(const v of [gps.lat,gps.lon])assert.ok((String(v).split('.')[1]||'').length<=2);
+  // Lo scarto resta entro circa mezzo chilometro: basta per distanze e tempi verso zone larghe 1,5–5 km.
+  assert.ok(airDistanceKm(gps,{lat:42.567812,lon:12.964834})<0.6);
+  assert.deepEqual(normalizeBase(gps),gps);
 });
 test('road routing preserves zero and unavailable routes without substituting air distances',async()=>{
   const base={lat:41.9,lon:12.5},targets=[{lat:42.4,lon:12.8},{lat:42.5,lon:12.9},{lat:42.6,lon:13}];

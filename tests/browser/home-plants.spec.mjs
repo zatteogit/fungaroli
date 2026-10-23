@@ -17,7 +17,7 @@ for(const width of [390,1280]) test(`hero comune e filtro piante persistente a $
  expect(await page.locator('#hero .cover').evaluate(e=>[...e.children].filter(c=>!c.classList.contains('outdoor-backdrop')).map(c=>c.className))).toEqual(structure);
  await expect(page.locator('#hero .ring')).toHaveCount(0);
  expect(await sectionOrder()).toEqual(order);
- await expect(page.locator('#season .outdoor-plant').first()).toHaveClass('portrait outdoor-plant');
+ await expect(page.locator('#season-h')).toHaveText('Piante da conoscere');await expect(page.locator('#season a.portrait[href^="#/pianta/"]').first()).toBeVisible();
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
  await loadAllImages(page);
  for(const theme of ['light','dark'])for(const root of ['#hero .cover','#season']){await page.evaluate(t=>document.documentElement.dataset.theme=t,theme);const readings=await auditState(page,{root});expect(readings.length).toBeGreaterThan(5);expect(readings.filter(r=>!r.disabled&&!r.decorative&&r.ratio<r.threshold).map(r=>({text:r.text,ratio:r.ratio,threshold:r.threshold}))).toEqual([]);}

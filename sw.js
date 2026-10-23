@@ -4,14 +4,14 @@
 // - meteo Open-Meteo: gestito dall'app con data di acquisizione e limite d'età
 // - mappe: dalla cache se gia' viste, con un limite di tessere
 // - diario (/api/): mai in cache
-const SHELL = 'fungaroli-shell-v324';
+const SHELL = 'fungaroli-shell-v326';
 const RUNTIME = 'fungaroli-runtime-v1';
 const TILES = 'fungaroli-tiles-v1';
 const CONTENT = 'fungaroli-content-v1';
 const MAX_TILES = 1500;
 const PRECACHE = [
   'js/home-composition.js', 'js/home-intro.js',
-  'js/notebook-photo.js', 'js/notebook-photo-store.js', 'js/notebook-quick-composer.js',
+  'js/notebook-photo.js', 'js/notebook-photo-store.js', 'js/notebook-quick-composer.js', 'js/data-export.js',
   'js/home-cover-media.js', 'assets/video/places/canneto-verde-sereno-poster-small.webp', 'assets/video/places/tancia-autunno-asciutto-poster-small.webp',
   'js/atmosphere.js', 'js/atmosphere-video.js', 'css/atmosphere.css',
   'assets/video/nature/autunno-poster-small.webp', 'assets/video/nature/luce-tra-le-foglie-poster-small.webp',

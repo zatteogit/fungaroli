@@ -18,7 +18,8 @@ async function setup(page,{gust=8}={}) {
     const out = Array.from({ length: count }, () => ({ daily: { time: dates, precipitation_sum: dates.map((_, i) => i % 4 ? 3 : 12), temperature_2m_mean: Array(70).fill(13), temperature_2m_min: Array(70).fill(8), temperature_2m_max: Array(70).fill(18) }, hourly: { time, soil_moisture_3_to_9cm: fill(.3), soil_temperature_6cm: fill(13), precipitation: fill(0), precipitation_probability: fill(0), weather_code: fill(1), wind_gusts_10m: fill(gust), temperature_2m: fill(13) } }));
     return route.fulfill({ json: out });
   });
-  await page.addInitScript(() => localStorage.setItem('fungaroli:legal-accepted', '62026-10-20'));
+  // Solo nel documento principale: i frame esterni bloccati (mini-mappa OSM) hanno origine opaca e niente localStorage.
+  await page.addInitScript(() => { if (window === window.top) localStorage.setItem('fungaroli:legal-accepted', '62026-10-20'); });
   const errors=[]; page.on('pageerror', (e) => errors.push(e.message));
   await page.goto('/');await expect(page.locator('body')).not.toHaveAttribute('data-legal-pending','');
   await expect(page.locator('#editorial')).toBeHidden();
@@ -41,28 +42,31 @@ async function api(page, path, method='GET', data) {
 }
 test('base privata del profilo: salvataggio, distanze, navigatori, isolamento e ripristino',async({page,browser})=>{
   await page.addInitScript(()=>{globalThis.baseGpsCalls=0;Object.defineProperty(navigator,'geolocation',{value:{getCurrentPosition(success){globalThis.baseGpsCalls++;success({coords:{latitude:42.5678,longitude:12.9648}});}}});});
-  const errors=await setup(page),rome={name:'Roma',lat:41.9028,lon:12.4964};
+  // La base personale si salva arrotondata a 2 decimali, circa 1 km (decisione di Matteo del 22/10/2026).
+  const errors=await setup(page),rome={name:'Roma',lat:41.9028,lon:12.4964},savedRome={name:'Roma',lat:41.9,lon:12.5};
   let unavailable=false;
   await page.route('**/api/community/places?*',r=>r.fulfill({json:{places:[rome]}}));
   await page.route('**/api/community/travel',async r=>{
     if(unavailable)return r.fulfill({status:503,json:{error:'Servizio temporaneamente non disponibile'}});
-    const session=await page.request.get('/api/community/session'),data=await session.json();
+    // La base è quella appena salvata: niente lettura della sessione a ogni lotto di percorsi precalcolati.
     const targets=r.request().postDataJSON().targets;
-    await r.fulfill({json:{base:data.user.base,routes:targets.map(p=>({key:`${p.lat.toFixed(5)},${p.lon.toFixed(5)}`,minutes:111,km:77})),source:'OSRM / OpenStreetMap',traffic:false}});
+    await r.fulfill({json:{base:savedRome,routes:targets.map(p=>({key:`${p.lat.toFixed(5)},${p.lon.toFixed(5)}`,minutes:111,km:77})),source:'OSRM / OpenStreetMap',traffic:false}});
   });
   await register(page,'Base');const owner=(await api(page,'session')).data.user.id;
-  const score=await page.locator('#hero .cover-index b').textContent();
+  await page.goto('/#/zona/terminillo-est/0');const score=await page.locator('#detail .hero-indicators > .ring b').first().textContent();await page.goto('/');
   await page.locator('[data-community-account]').first().click();const profile=page.locator('dialog.profile-dialog[open]');
   await profile.locator('.base-settings summary').click();expect(await page.evaluate(()=>globalThis.baseGpsCalls)).toBe(0);await profile.locator('[data-base-gps]').click();expect(await page.evaluate(()=>globalThis.baseGpsCalls)).toBe(1);expect((await api(page,'session')).data.user.base).toBe(null);
   await profile.locator('[data-base-query]').fill('Roma');await profile.locator('[data-base-search]').click();
   await profile.locator('[data-place]').click();await profile.locator('[data-base-save]').click();await expect(profile.locator('[data-base-status]')).toContainText('Base salvata');
-  expect((await api(page,'session')).data.user.base).toEqual(rome);
+  expect((await api(page,'session')).data.user.base).toEqual(savedRome);
   for(const width of[320,390,1280]){await page.setViewportSize({width,height:900});expect(await profile.evaluate(el=>el.scrollWidth<=el.clientWidth)).toBe(true);if(width===390)await profile.screenshot({path:'/tmp/fungaroli-profile-base-mobile.png'});}
-  await profile.locator('.profile-actions [data-close]').click();await expect(page.locator('#hero .facts')).toContainText('111 min');
-  expect(await page.locator('#hero .cover-index b').textContent()).toBe(score);
-  await page.locator('#hero .cover-link').click();await page.locator('#detail [data-sec="accesso"] summary').click({position:{x:5,y:10}});
+  // Con la base a Roma la copertina può passare a una zona più vicina senza accesso documentato (niente tempo d'auto):
+  // il percorso si controlla sulla zona di partenza, che ha un accesso, e il suo indice non dipende dalla base.
+  await profile.locator('.profile-actions [data-close]').click();
+  await page.goto('/#/zona/terminillo-est/0');await expect(page.locator('#detail .hero-indicators > .ring b').first()).toHaveText(score);
+  await page.locator('#detail [data-sec="accesso"] > summary').click({position:{x:5,y:10}});
   await expect(page.locator('#detail [data-sec="accesso"] > summary')).toContainText('111 min · 77 km da Roma');
-  const href=await page.locator('#detail a[href*="google.com/maps/dir"]').first().getAttribute('href');expect(new URL(href).searchParams.get('origin')).toBe('41.9028,12.4964');
+  const href=await page.locator('#detail a[href*="google.com/maps/dir"]').first().getAttribute('href');expect(new URL(href).searchParams.get('origin')).toBe('41.9,12.5');
   await page.reload();await expect(page.locator('#detail [data-sec="accesso"] > summary')).toContainText('da Roma');
   expect((await api(page,'profile','PUT',{accountId:owner,base:{name:'Errata',lat:91,lon:0}})).status).toBe(422);
   expect((await page.request.post('/api/community/travel',{headers:{origin:new URL(page.url()).origin},data:{targets:[]}})).status()).toBe(422);
@@ -74,7 +78,7 @@ test('base privata del profilo: salvataggio, distanze, navigatori, isolamento e 
   expect(JSON.stringify((await api(page,'summary')).data)).not.toContain('Roma');
   unavailable=true;
   expect((await api(page,'profile','PUT',{accountId:owner,base:{name:'Leonessa',lat:42.5678,lon:12.9648}})).status).toBe(200);
-  await page.reload();await page.locator('#detail [data-sec="accesso"] summary').click({position:{x:5,y:10}});
+  await page.reload();await page.locator('#detail [data-sec="accesso"] > summary').click({position:{x:5,y:10}});
   await expect(page.locator('#detail [data-sec="accesso"]')).toContainText('in linea d’aria');await expect(page.locator('#detail [data-sec="accesso"]')).not.toContainText('111 min');
   await page.locator('[data-community-account]').first().click();await profile.locator('.base-settings summary').click();await profile.locator('[data-base-reset]').click();await expect(profile.locator('[data-base-status]')).toContainText('Base salvata');
   expect((await api(page,'session')).data.user.base).toBe(null);await profile.locator('.profile-actions [data-close]').click();
@@ -274,7 +278,7 @@ test('riepiloghi essenziali negli accordion sul posto, senza voci duplicate o sa
 
 test('editoriale, filtri completi, passkey, isolamento e condivisione revocabile', async ({ browser, page }) => {
   const errors = await setup(page);
-  await expect(page.locator('#community-intro')).toContainText('Ancora nessuna osservazione condivisa.');
+  await expect(page.locator('#community-intro')).toContainText('Accedi e condividi un’osservazione');
   await page.locator('#appbar-home-filters [data-more]:visible,#home-filter-action [data-more]:visible').first().click();
   await expect(page.locator('#full-filters [data-group]')).toHaveCount(11);
   // «Azzera» compare solo quando qualcosa è cambiato e riporta ai valori di partenza
@@ -293,14 +297,17 @@ test('editoriale, filtri completi, passkey, isolamento e condivisione revocabile
   await expect(page.locator('.editorial-article h1')).toBeVisible();
   await expect(page.locator('[data-tab="specie"]')).toHaveAttribute('aria-current','page');
   await page.goto('/');
-  await expect(page.locator('#hero .pc').first()).toHaveText(/^\d{1,2},\d$/);
+  await expect(page.locator('#hero .cover-index b')).toHaveText(/^\d{1,2},\d$/);
   await register(page, 'Test privato A');
   const e={id:crypto.randomUUID(),kind:'outing',zoneId:'vallonina',date:todayISO(),finds:{edulis:2},searched:['edulis'],note:'nota privata da non pubblicare'};
   expect((await api(page, 'entries/'+e.id,'PUT',e)).status).toBe(200);
   expect((await api(page, 'reports','POST',{entryId:e.id,zoneId:e.zoneId,day:e.date,speciesId:'edulis',amount:2,searched:true})).status).toBe(200);
   expect((await api(page, 'reports','POST',{entryId:e.id,zoneId:e.zoneId,day:e.date,speciesId:'edulis',amount:2,searched:true})).status).toBe(200);
-  const pub=await api(page,'summary');
-  expect(pub.data.reports.find(r=>r.zoneId==='vallonina'&&r.speciesId==='edulis').sightings).toBe(1);
+  // La segnalazione ripetuta resta una sola riga del profilo. Negli aggregati non compare: dal 22/10 servono
+  // 3 contributori distinti, 2 giorni e profili attivi da almeno 24 ore (soppressione dei piccoli gruppi).
+  expect((await api(page,'reports')).data.reports.filter(r=>r.zoneId==='vallonina'&&r.speciesId==='edulis')).toHaveLength(1);
+  const pub=await api(page,'summary');expect(pub.data.access).toBe('granted');
+  expect(pub.data.reports.find(r=>r.zoneId==='vallonina'&&r.speciesId==='edulis')).toBeUndefined();
   expect(JSON.stringify(pub.data)).not.toContain(e.note); expect(JSON.stringify(pub.data)).not.toContain('Test privato A');
   const otherContext=await browser.newContext({serviceWorkers:'block'}); const other=await otherContext.newPage(); await setup(other); await register(other,'Test privato B');
   expect((await api(other,'entries')).data.entries).toEqual([]);
@@ -310,7 +317,7 @@ test('editoriale, filtri completi, passkey, isolamento e condivisione revocabile
   const csrf=await page.request.post('/api/community/reports',{headers:{origin:'https://evil.example'},data:{}}); expect(csrf.status()).toBe(403);
   expect((await api(page,'reports','POST',{zoneId:e.zoneId,day:e.date,speciesId:'edulis',amount:0})).status).toBe(400);
   await api(page,'reports','DELETE',{entryId:e.id});
-  expect((await api(page,'summary')).data.totalReports).toBe(0); expect((await api(page,'entries')).data.entries).toHaveLength(1);
+  expect((await api(page,'reports')).data.reports).toEqual([]); expect((await api(page,'entries')).data.entries).toHaveLength(1);
   await api(page,'auth/logout','POST',{}); expect((await api(page,'entries')).status).toBe(401);
   await page.goto('/');
   await page.locator('.appbar [data-community-account]').click(); await page.locator('[data-login]').click();
@@ -333,14 +340,16 @@ test('segnalazione rapida su telefono, conteggi e ritiro dal diario', async ({ p
   await dlg.locator('[name="amount"][value="1"]').check(); await dlg.locator('[type="submit"]').click();
   await expect(dlg.locator('[data-status]')).toContainText('conteggi collettivi');
   await dlg.locator('[data-close]').click();
-  expect((await api(page,'summary')).data.reports.find(r=>r.speciesId==='procera').sightings).toBe(1);
+  // Conteggio del profilo; negli aggregati un solo profilo nuovo resta sotto la soglia di pubblicazione.
+  expect((await api(page,'reports')).data.reports.filter(r=>r.speciesId==='procera'&&r.amount===1)).toHaveLength(1);
+  expect((await api(page,'summary')).data.reports.find(r=>r.speciesId==='procera')).toBeUndefined();
   await page.goto('/#/diario');await page.locator('.diary-card-link').first().click(); await expect(page.locator('[data-withdraw-entry]')).toHaveCount(1);
   await page.locator('[data-withdraw-entry]').click();
   await expect(page.locator('#journal-list .j-action-status')).toContainText('Segnalazioni ritirate');
-  expect((await api(page,'summary')).data.totalReports).toBe(0);
+  expect((await api(page,'reports')).data.reports).toEqual([]);
   await page.locator('[data-share-entry]').click();
   await expect(page.locator('#journal-list .j-action-status')).toContainText('Osservazioni condivise');
-  expect((await api(page,'summary')).data.totalReports).toBe(1);
+  expect((await api(page,'reports')).data.reports).toHaveLength(1);
   await api(page,'account','DELETE'); expect((await api(page,'summary')).data.totalReports).toBe(0);
   expect(errors).toEqual([]);
 });
@@ -360,9 +369,9 @@ test('previsioni datate dal server, immutabili e mutazioni che ritirano dati obs
   const e=(await api(page,'entries/'+outing.id,'PUT',outing)).data.entry;
   expect(e.forecast.mode).toBe('retrospective');
   await api(page,'reports','POST',{entryId:e.id,day:e.date,zoneId:e.zoneId,speciesId:'edulis',amount:2});
-  expect((await api(page,'summary')).data.totalReports).toBe(1);
+  expect((await api(page,'reports')).data.reports).toHaveLength(1);
   e.finds.edulis=0; await api(page,'entries/'+e.id,'PUT',e);
-  expect((await api(page,'summary')).data.totalReports).toBe(0);
+  expect((await api(page,'reports')).data.reports).toEqual([]);
   expect((await api(page,'entries')).data.entries).toHaveLength(2);
   await api(page,'account','DELETE');
 });
@@ -378,19 +387,59 @@ test('taccuini e community restano accessibili senza dati meteo', async ({ page 
   await expect(page.locator('#editorial')).toBeHidden();
   await page.goto('/#/guide');await expect(page.locator('#editorial a')).toHaveCount(3);
   await page.goto('/');
-  await expect(page.locator('#community-intro')).toContainText('Ancora nessuna osservazione condivisa.');
+  await expect(page.locator('#community-intro')).toContainText('Accedi e condividi un’osservazione');
   await page.locator('.appbar [data-community-account]').click();
   await expect(page.locator('[data-register]')).toBeVisible();
 });
 
-test('taccuino: gestione profilo senza importazione o esportazione',async({page})=>{
+// Decisione di Matteo del 22/10/2026: copia dei dati senza profilo («Scarica il taccuino») e con il profilo
+// («Scarica i miei dati»). Nessuna importazione.
+test('taccuino: scarica i dati senza profilo e dal profilo, senza importazione',async({page})=>{
  const errors=await setup(page);await page.goto('/#/diario');
  const panel=page.locator('#notebook-storage-panel');await panel.locator(':scope > summary').click();
  await expect(panel.locator('#journal-export,#journal-import,[data-import-local],[data-import-legacy]')).toHaveCount(0);
- await expect(panel).not.toContainText(/Importa|Esporta|vecchio taccuino/);await expect(panel.locator('[data-community-account]')).toBeVisible();
+ await expect(panel).not.toContainText(/Importa|vecchio taccuino/);await expect(panel.locator('[data-community-account]')).toBeVisible();
+ const readDownload=async download=>{const file=await download.path();const {readFile}=await import('node:fs/promises');return JSON.parse(await readFile(file,'utf8'));};
+ let download=page.waitForEvent('download');await panel.locator('[data-download-notebook]').click();
+ const device=await readDownload(await download);expect((await download).suggestedFilename()).toMatch(/^fronda-taccuino-\d{4}-\d{2}-\d{2}\.json$/);
+ expect(device).toMatchObject({format:'fronda-export-v1',scope:'device',account:null,complete:true});expect(Array.isArray(device.entries)).toBe(true);
+ await expect(panel.locator('[data-download-status]')).toContainText('File pronto');
  await register(page,'Profilo senza copie');await expect(panel.locator('[data-community-account]')).toHaveText('Gestisci il profilo');
- await expect(panel).not.toContainText(/Importa|Esporta|vecchio taccuino/);await expect(panel).toContainText('sincronizzato con la passkey');
+ await expect(panel).not.toContainText(/Importa|vecchio taccuino/);await expect(panel).toContainText('sincronizzato con la passkey');await expect(panel.locator('[data-download-notebook]')).toHaveCount(0);
+ await panel.locator('[data-community-account]').click();const profile=page.locator('dialog.profile-dialog[open]');
+ download=page.waitForEvent('download');await profile.locator('[data-export-account]').click();
+ const data=await readDownload(await download);expect((await download).suggestedFilename()).toMatch(/^fronda-dati-\d{4}-\d{2}-\d{2}\.json$/);
+ expect(data).toMatchObject({format:'fronda-export-v1',account:{handle:'Profilo senza copie'},complete:true});
+ for(const key of ['passkeys','entries','reports','sharedObservations','legalAcceptances'])expect(Array.isArray(data[key])).toBe(true);
+ expect(JSON.stringify(data)).not.toMatch(/token_hash|public_key|ip_salt/);
+ await expect(profile.locator('[data-status]')).toContainText('File pronto');
+ await profile.locator('[data-delete-account]').click();await expect(profile.locator('[data-status]')).toContainText('prima scarica i tuoi dati');
+ await profile.locator('.profile-actions [data-close]').click();
  expect(errors).toEqual([]);await api(page,'account','DELETE');
+});
+
+// Decisione del 22/10/2026: «Elimina profilo e dati» toglie anche la copia del taccuino da questo dispositivo.
+test('elimina profilo: nessuna copia locale del taccuino o delle sue foto',async({page})=>{
+ const errors=await setup(page);await register(page,'Profilo da eliminare');
+ const id=(await api(page,'session')).data.user.id,scope='fungaroli:diario:account:'+id;
+ const photo=await page.evaluate(()=>{const c=document.createElement('canvas');c.width=c.height=16;const g=c.getContext('2d');g.fillStyle='#4a7';g.fillRect(0,0,16,16);return {data:c.toDataURL('image/jpeg',.8),width:16,height:16};});
+ const note={id:crypto.randomUUID(),kind:'note',category:'appunto',title:'Foto privata',date:todayISO(),zoneId:null,note:'nota da cancellare',reference:null,photo};
+ expect((await api(page,'entries/'+note.id,'PUT',note)).status).toBe(200);
+ await page.evaluate(()=>localStorage.setItem('fungaroli:diario:v1',JSON.stringify([{id:'anonima',kind:'note',note:'resta'}])));
+ // La voce è stata scritta direttamente con l'API: come in «appunti privati», il ricaricamento la scarica dal profilo.
+ await page.goto('/#/diario');await page.reload();await expect(page.locator('#journal-list')).toContainText('Foto privata');
+ const local=()=>page.evaluate(async scope=>{
+  const db=await new Promise((ok,ko)=>{const r=indexedDB.open('fronda-notebook-photos',1);r.onupgradeneeded=()=>r.result.createObjectStore('photos');r.onsuccess=()=>ok(r.result);r.onerror=()=>ko(r.error);});
+  const keys=await new Promise((ok,ko)=>{const r=db.transaction('photos').objectStore('photos').getAllKeys();r.onsuccess=()=>ok(r.result);r.onerror=()=>ko(r.error);});db.close();
+  return {entries:localStorage.getItem(scope),photos:keys.filter(k=>String(k).startsWith(scope+':')).length,anonymous:localStorage.getItem('fungaroli:diario:v1')};
+ },scope);
+ await expect.poll(async()=>(await local()).photos).toBe(1);expect((await local()).entries).toContain('nota da cancellare');
+ await page.locator('.appbar [data-community-account]').click();const profile=page.locator('dialog.profile-dialog[open]');
+ await profile.locator('[data-delete-account]').click();await profile.locator('[data-delete-account]').click();
+ await expect(page.locator('dialog.profile-dialog[open]')).toHaveCount(0);
+ expect((await api(page,'session')).status).toBe(401);
+ const after=await local();expect(after.entries).toBeNull();expect(after.photos).toBe(0);expect(after.anonymous).toContain('resta');
+ expect(errors).toEqual([]);
 });
 
 test('i campi del diario locale vengono visualizzati come testo',async({page})=>{

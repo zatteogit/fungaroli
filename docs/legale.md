@@ -330,7 +330,7 @@ Ho cercato in `index.html`, `js/`, `css/`, `worker/` e `functions/` i termini an
 | Codice diario (`fungaroli:diario-token`) | `localStorage`, in chiaro | Solo il dispositivo |
 | Previsioni conservate in automatico (**in corso** il 21/10/2026): zona, giorno, indici e meteo della zona, senza posizione dell'utente | Senza profilo nel diario locale, con un limite di spazio e di giorni; con un profilo nel diario del profilo, come i piani salvati a mano | Come il diario. Il testo per `legal.json` lo sta scrivendo un altro agente: va ricontrollato qui a lavoro finito |
 | Conferma dell'avviso iniziale (`fungaroli:legal-accepted`) | `localStorage` | Solo il dispositivo |
-| Diario sincronizzato | Cloudflare Workers KV, namespace `fungaroli-diario`, account Cloudflare di Matteo Sgambato | Chiunque abbia il codice diario: legge, modifica e cancella **tutte** le uscite. Non c'è separazione tra persone. |
+| Diario sincronizzato | Cloudflare Workers KV, namespace `fungaroli-diario`, account Cloudflare di Matteo Sgambato | Chiunque abbia il codice diario: legge, modifica e cancella **tutte** le uscite. Non c'è separazione tra persone. **Dismesso il 22/10/2026**: l'API risponde 410; esportazione e cancellazione delle voci al §6.5. |
 | Contatori orari del servizio meteo (esito e durata delle chiamate a Open-Meteo, uso della cache), aggiornamento del 14/10/2026 | Cloudflare D1, tabella `weather_metrics`, conservati 180 giorni | Amministratori. Nessun IP, account o identificativo: solo giorno, ora, profilo ed esito. |
 | Dati tecnici delle richieste (IP, user agent, URL) | Infrastruttura Cloudflare | Cloudflare. `wrangler.jsonc` non attiva i Workers Logs; va controllato nel pannello che non siano attivi. |
 
@@ -372,10 +372,44 @@ Nell'interfaccia del sito non ci sono richieste dirette a GBIF, Wikidata, iNatur
 - In Italia non ho trovato provvedimenti del Garante specifici su Google Fonts.
 - **Alternativa:** ospitare i font sul proprio dominio (self-hosting), cioè copiare i file `.woff2` in `assets/` e dichiararli con `@font-face` nel CSS. Elimina la trasmissione a Google senza cambiare l'aspetto dell'app. Lo stesso ragionamento vale, in misura minore, per Leaflet da cdnjs: Cloudflare ospita già il sito, quindi il rischio aggiuntivo è basso. Questa è una raccomandazione per chi gestisce il codice; i testi legali non la presuppongono.
 
-### 6.5 Sicurezza del diario sincronizzato
+### 6.5 Vecchio diario sincronizzato (KV): dismesso il 22/10/2026
 
-- Il codice diario è condiviso, lungo almeno 12 caratteri e confrontato a tempo costante. L'API non ha però un limite ai tentativi. Le uscite sono salvate in KV in chiaro, senza cifratura lato app.
-- Chi ha il codice può cancellare tutto: va detto agli utenti. L'esportazione periodica serve da copia di sicurezza.
+**Perché (fatti verificati nel codice prima della dismissione).** Il codice diario era un unico segreto condiviso (`DIARIO_TOKEN`): chi lo aveva leggeva, modificava e cancellava tutte le voci, senza separazione fra persone e senza limite ai tentativi. Le voci stavano in KV in chiaro, non legate a un profilo. Con la community attiva l'interfaccia non usava più questo archivio, quindi nessuno poteva esportare o cancellare da solo le proprie voci.
+
+**Cosa fa il codice ora (decisione di Matteo del 22/10/2026).** `/api/diario` risponde **410 «servizio dismesso»** a ogni richiesta, anche con il codice giusto, senza leggere, scrivere o cancellare (`functions/api/diario/[[path]].js`, test `tests/diario-api.test.mjs`). Il binding KV `DIARIO` resta in `wrangler.jsonc`, perché lo stesso namespace contiene la cache meteo condivisa (chiavi `weather:…`, `worker/index.js`). **Il codice non cancella nulla:** le voci `entry:…` restano finché il gestore non esegue la procedura qui sotto. Il client che aveva ancora un codice salvato lo dimentica alla risposta 410 e resta sul taccuino locale.
+
+**Procedura per il gestore, in quest'ordine.** Va eseguita dalla cartella del repository, con Wrangler già autenticato sull'account Cloudflare del progetto. Nessun token, codice o valore segreto va scritto nei comandi, nei documenti o nei log. La cartella `~/fronda-diario-kv` sta fuori dal repository: contiene dati personali e non va mai aggiunta a un commit.
+
+1. **Prima esporta.** Elenco delle chiavi, nomi in un file, valori in un secondo file, poi il controllo dei conteggi:
+
+   ```bash
+   mkdir -p ~/fronda-diario-kv
+   npx wrangler kv key list --binding DIARIO --remote --prefix entry: > ~/fronda-diario-kv/chiavi.json
+   node -e 'const fs=require("fs");const k=JSON.parse(fs.readFileSync(process.argv[1],"utf8")).map(x=>x.name);fs.writeFileSync(process.argv[2],JSON.stringify(k));console.log(k.length+" chiavi")' ~/fronda-diario-kv/chiavi.json ~/fronda-diario-kv/nomi.json
+   npx wrangler kv bulk get ~/fronda-diario-kv/nomi.json --binding DIARIO --remote > ~/fronda-diario-kv/voci.json
+   node -e 'const v=require(process.argv[1]);console.log(Object.keys(v).length+" voci esportate")' ~/fronda-diario-kv/voci.json
+   ```
+
+   I due numeri devono coincidere. Se un comando `node` segnala JSON non valido, Wrangler ha scritto anche altro testo nel file: va rimosso prima di proseguire. `kv bulk get` è in beta aperta; in alternativa si legge una chiave alla volta con `npx wrangler kv key get "entry:<id>" --binding DIARIO --remote`. La sequenza è stata provata il 22/10/2026 solo su un namespace locale (`--local`), non sul namespace di produzione.
+
+2. **Poi cancella**, solo dopo aver controllato e messo al sicuro `voci.json`. Il comando chiede conferma; il secondo deve restituire `[]`:
+
+   ```bash
+   npx wrangler kv bulk delete ~/fronda-diario-kv/nomi.json --binding DIARIO --remote
+   npx wrangler kv key list --binding DIARIO --remote --prefix entry:
+   ```
+
+   Il filtro `--prefix entry:` lascia intatte le chiavi `weather:…` della cache meteo.
+
+3. **Dopo.** Aggiornare in `data/legal.json` la frase segnaposto sul vecchio taccuino con la data effettiva, o toglierla. Facoltativo: rimuovere il segreto non più usato con `npx wrangler secret delete DIARIO_TOKEN`. Decidere quanto conservare `voci.json` per rispondere a eventuali richieste di copia (scelta del titolare, non stabilita qui).
+
+### 6.6 Revisione dell'informativa del 22/10/2026
+
+Dopo l'audit privacy del 22/10/2026 la sezione «Privacy e dati» di `data/legal.json` (versione editoriale 8) è stata allineata al codice. Fatti corretti: soglia reale di pubblicazione (3 profili attivi da almeno 24 ore, 2 giorni; anche per provincia) al posto di «anche una sola osservazione»; foto, titoli, riferimenti e osservazioni strutturate fra i dati del taccuino; servizi davvero contattati dal browser (niente Google Fonts, font locali; Open-Meteo chiamato dal Worker); vecchio diario dismesso; base arrotondata a circa 1 km; «Scarica i miei dati» e «Scarica il taccuino». Aggiunti, sul modello dell'informativa del questionario (`questionario.html`): dove stanno i dati e trasferimenti extra-UE di Cloudflare, elenco dei diritti (accesso, copia/portabilità, rettifica, cancellazione, limitazione, opposizione), come esercitarli nell'app e via email, reclamo al Garante.
+
+Restano due **segnaposto** evidenti, `[DA RIVEDERE DAL TITOLARE: …]`, perché richiedono una scelta del titolare: la base giuridica di ciascun trattamento (la proposta scritta è esecuzione del servizio richiesto, consenso per la condivisione, legittimo interesse per i contatori anti-abuso) e la data entro cui le voci del vecchio diario vengono cancellate. Vanno completati prima della pubblicazione e, come il resto, fatti rivedere secondo il §12. Il periodo di conservazione resta «fino all'eliminazione»: un limite temporale non è stato deciso.
+
+`acceptance_version` resta 1: è un cambiamento dell'informativa, non delle CGS, e non chiede una nuova conferma (vedi [accettazione-condizioni.md](accettazione-condizioni.md)). Se un autore ha già modificato `legal` nella redazione, l'aggiornamento dal repository non lo sostituisce (`REPOSITORY_REFRESHED` in `worker/cms.js`): dopo il deploy va controllato `/api/content/v1/snapshot` e, se serve, il testo va riportato in redazione.
 
 ---
 
@@ -471,7 +505,7 @@ Verificato sulla copia di lavoro del rilascio, prima del merge (16/10/2026). Se 
 
 | Dove | Testo attuale | Norma o fatto |
 |---|---|---|
-| `data/species-traits.json`, «esemplare dubbio in un contenitore separato» | Presuppone la raccolta di esemplari non riconosciuti | Art. 3, c. 5: i non commestibili si raccolgono solo con l'autorizzazione dell'art. 8 bis. Va riformulato, non tolto (l'art. 13 affida agli Ispettorati il controllo dei funghi dei privati). |
+| `data/species-traits.json`, «esemplare dubbio in un contenitore separato» | Presuppone la raccolta di esemplari non riconosciuti | Art. 3, c. 5: i non commestibili si raccolgono solo con l'autorizzazione dell'art. 8 bis. Va riformulato, non tolto (l'art. 13 affida agli Ispettorati il controllo dei funghi dei privati). **22/10/2026:** riformulato nel rilascio in preparazione («Se un esemplare raccolto ti lascia dubbi, tienilo intero e separato dal resto e portalo all’Ispettorato micologico… I funghi che sai non commestibili si osservano sul posto (L.R. 32/1998, art. 3, c. 5)»). La riga passa in 9.2 quando lo snapshot del CMS pubblicato mostra il nuovo testo: `species-traits` si aggiorna dal repository solo se nessun autore lo ha modificato. |
 | Catalogo dei commestibili | Nessuna taglia minima indicata | Art. 3, cc. 2 e 2 bis (per esempio prataiolo 4 cm; pioppino e gambesecca senza minimo). |
 | `js/identify.js`, chiave guidata | Base, taglio e sporata presuppongono la raccolta | Art. 3, c. 5 (vedi sopra): basta una nota di legge, senza dire «scarta». |
 | `docs/fronda/content.json`, `docs/fronda/product.html` | Fonte https://faolex.fao.org/docs/pdf/ita21952.pdf | Come sopra: testo del 2000 circa. Kit di studio, non pubblicato (`.assetsignore`). |
@@ -572,4 +606,4 @@ Tutte consultate il 12 ottobre 2026.
 
 ## 12. Revisione legale
 
-Questo documento e i testi di `data/legal.json` sono stati preparati con cura su fonti primarie, ma **non sostituiscono il parere di un avvocato**. L'app è nata per uso personale e familiare. Prima di diffonderla pubblicamente (pubblicazione del link, social, forum, associazioni, stampa), o prima di qualunque uso con anche un minimo carattere commerciale, va fatta rivedere da un avvocato esperto di responsabilità civile e protezione dei dati. Andrebbero rivisti in particolare la formula di responsabilità, l'informativa privacy (il recapito del titolare, un'email personale, c'è dal 16/10/2026), l'uso di Google Fonts e degli altri servizi terzi, le licenze NC e le indicazioni sulle aree protette. Le norme sulla raccolta cambiano spesso: i testi vanno ricontrollati a ogni stagione, sul testo coordinato del Consiglio regionale e sulla pagina *Funghi* della Regione Lazio, aggiornando `verified_on` in `legal.json`. Attenzione: la chiave dell'avviso iniziale è `version` + `verified_on` e il CMS rifiuta una modifica di `legal` senza un aumento di `version`. Ogni modifica fa quindi ricomparire l'avviso a tutti: conviene raccogliere le correzioni in un solo rilascio.
+Questo documento e i testi di `data/legal.json` sono stati preparati con cura su fonti primarie, ma **non sostituiscono il parere di un avvocato**. L'app è nata per uso personale e familiare. Prima di diffonderla pubblicamente (pubblicazione del link, social, forum, associazioni, stampa), o prima di qualunque uso con anche un minimo carattere commerciale, va fatta rivedere da un avvocato esperto di responsabilità civile e protezione dei dati. Andrebbero rivisti in particolare la formula di responsabilità, l'informativa privacy (il recapito del titolare, un'email personale, c'è dal 16/10/2026), l'uso di Google Fonts e degli altri servizi terzi, le licenze NC e le indicazioni sulle aree protette. Le norme sulla raccolta cambiano spesso: i testi vanno ricontrollati a ogni stagione, sul testo coordinato del Consiglio regionale e sulla pagina *Funghi* della Regione Lazio, aggiornando `verified_on` in `legal.json`. Attenzione: il CMS rifiuta una modifica di `legal` senza un aumento di `version`. Dal 20/10/2026 l'avviso iniziale ricompare a tutti solo se aumenta `acceptance_version` (revisione sostanziale delle CGS); `version` e `verified_on` restano editoriali (vedi [accettazione-condizioni.md](accettazione-condizioni.md)).

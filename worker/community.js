@@ -4,12 +4,14 @@ import legalAcceptancesSchema from '../migrations/0009_legal_acceptances.sql';
 import preferencesSchema from '../migrations/0003_account_preferences.sql';
 import observationsSchema from '../migrations/0007_shared_observations.sql';
 import animalObservationsSchema from '../migrations/0013_animal_observations.sql';
+import basePrecisionSchema from '../migrations/0014_base_precision.sql';
 import animalCatalog from '../data/animals.json';
 import {rankingPolicy} from './admin-dashboard.js';
 import {initExternalObservations} from './external-observations.js';
 import {sharedObservation} from '../js/community-observation.js';
 import treeCatalog from '../data/trees.json';
 import {normalizeNotebookNote} from '../js/notebook-entry.js';
+import {normalizeNotebookPhoto} from '../js/notebook-photo.js';
 import plantCatalog from '../data/plants.json';
 import {normalizeBase,validPoint} from '../js/travel-model.js';
 import {searchPlaces} from './travel-provider.js';
@@ -42,7 +44,7 @@ const fail = (message, status = 400) => { const e = new Error(message); e.status
 async function init(db) {
   if (!initialized.has(db)) initialized.set(db, (async () => {
     // D1 exec treats individual lines as statements; use complete SQL statements.
-    await db.batch((schema+';'+preferencesSchema+';'+observationsSchema+';'+legalAcceptancesSchema).split(';').map((s) => s.trim()).filter((s) => s && !s.startsWith('PRAGMA')).map((s) => db.prepare(s)));
+    await db.batch((schema+';'+preferencesSchema+';'+observationsSchema+';'+legalAcceptancesSchema+';'+basePrecisionSchema).split(';').map((s) => s.replace(/^\s*--.*$/gm, '').trim()).filter((s) => s && !s.startsWith('PRAGMA')).map((s) => db.prepare(s)));
     const observationTable=await db.prepare("SELECT sql FROM sqlite_master WHERE type='table' AND name='shared_observations'").first('sql');
     if(!observationTable?.includes("'animale'"))await db.batch(animalObservationsSchema.split(';').map(s=>s.trim()).filter(Boolean).map(s=>db.prepare(s)));
     await db.prepare("INSERT INTO community_meta(key,value) VALUES('ip_salt',?) ON CONFLICT(key) DO NOTHING").bind(token()).run();
@@ -114,7 +116,8 @@ async function signedIn(req, db, now) {
   const user = await db.prepare('SELECT a.id,a.handle,a.created_at,p.base FROM sessions s JOIN accounts a ON a.id=s.account_id LEFT JOIN account_preferences p ON p.account_id=a.id WHERE s.token_hash=? AND s.expires_at>?')
     .bind(await hash(raw), now).first();
   if (!user) fail('Sessione scaduta. Accedi di nuovo.', 401);
-  user.base=user.base?JSON.parse(user.base):null;
+  // Arrotondata anche in lettura (migrazione 0014): nessuna risposta espone una base più precisa di circa 1 km.
+  try{user.base=user.base?normalizeBase(JSON.parse(user.base)):null;}catch{user.base=null;}
   return user;
 }
 
@@ -206,17 +209,20 @@ export async function handleCommunity(request, env, now = Date.now()) {
       const base = {windowDays:7,validation:'unvalidated',updatedAt:new Date(now).toISOString()};
       if (!contributes) return result({...base,access:'contribution_required',reports:[],observations:[],totalReports:0});
       const since = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Rome', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(now - 6 * 864e5));
-      // Reuse the existing 3 contributors / 2 days guard for publication too.
-      // This is small-group suppression, not a scientific validation or anonymity guarantee.
-      // Project only broad catalogue zones and window totals: no person, note, day or GPS.
-      const { results } = await db.prepare('SELECT r.zone_id AS zoneId,r.species_id AS speciesId,COUNT(*) AS reports,SUM(r.amount>0) AS sightings,SUM(r.amount=0) AS zeros,COUNT(DISTINCT r.account_id) AS contributors,COUNT(DISTINCT CASE WHEN a.created_at<? THEN r.account_id END) AS establishedContributors,COUNT(DISTINCT day) AS days FROM reports r JOIN accounts a ON a.id=r.account_id WHERE day>=? GROUP BY zone_id,species_id HAVING COUNT(DISTINCT r.account_id)>=3 AND COUNT(DISTINCT day)>=2').bind(now - 864e5, since).all();
-      const {results:observations}=await db.prepare("SELECT zone_id AS zoneId,category,taxon_id AS taxonId,COUNT(*) AS observations,SUM(json_extract(payload,'$.presence')='observed') AS sightings,SUM(json_extract(payload,'$.presence')='searched_absent') AS zeros FROM shared_observations WHERE day>=? GROUP BY zone_id,category,taxon_id HAVING COUNT(DISTINCT account_id)>=3 AND COUNT(DISTINCT day)>=2").bind(since).all();
+      // Guardia di pubblicazione: 3 contributori distinti e 2 giorni diversi. Dal 22/10/2026 (decisione di Matteo)
+      // contano solo i profili attivi da almeno 24 ore: le righe dei profili più recenti restano fuori dagli aggregati,
+      // per zona e per provincia. È soppressione dei piccoli gruppi, non una validazione né una garanzia di anonimato.
+      // In uscita solo zone del catalogo e totali della finestra: niente persone, note, giorni o GPS. Il numero di
+      // contributori serve solo a communityMultiplier ed è troncato a 10, oltre cui il suo peso non cresce.
+      const established = now - 864e5;
+      const { results } = await db.prepare('SELECT r.zone_id AS zoneId,r.species_id AS speciesId,COUNT(*) AS reports,SUM(r.amount>0) AS sightings,SUM(r.amount=0) AS zeros,MIN(COUNT(DISTINCT r.account_id),10) AS establishedContributors FROM reports r JOIN accounts a ON a.id=r.account_id WHERE r.day>=? AND a.created_at<=? GROUP BY r.zone_id,r.species_id HAVING COUNT(DISTINCT r.account_id)>=3 AND COUNT(DISTINCT r.day)>=2').bind(since, established).all();
+      const {results:observations}=await db.prepare("SELECT o.zone_id AS zoneId,o.category AS category,o.taxon_id AS taxonId,COUNT(*) AS observations,SUM(json_extract(o.payload,'$.presence')='observed') AS sightings,SUM(json_extract(o.payload,'$.presence')='searched_absent') AS zeros FROM shared_observations o JOIN accounts a ON a.id=o.account_id WHERE o.day>=? AND a.created_at<=? GROUP BY o.zone_id,o.category,o.taxon_id HAVING COUNT(DISTINCT o.account_id)>=3 AND COUNT(DISTINCT o.day)>=2").bind(since, established).all();
       // Aggregato più largo per provincia (decisione del 22/10): stessa guardia, solo dove la parte non già
       // pubblicata per zona la supera anch'essa (js/community-aggregate.js). Righe per account lette qui e mai restituite.
       const content=await publishedResources(env,url.origin,['zones']).catch(()=>null);
       const zoneList=content?.zones?.zones||zones.zones;
-      const {results:reportRows}=await db.prepare('SELECT zone_id AS zoneId,species_id AS speciesId,account_id AS accountId,day,CASE WHEN amount>0 THEN \'sighting\' ELSE \'zero\' END AS outcome FROM reports WHERE day>=?').bind(since).all();
-      const {results:observationRows}=await db.prepare("SELECT zone_id AS zoneId,category,taxon_id AS taxonId,account_id AS accountId,day,CASE json_extract(payload,'$.presence') WHEN 'observed' THEN 'sighting' WHEN 'searched_absent' THEN 'zero' ELSE 'other' END AS outcome FROM shared_observations WHERE day>=?").bind(since).all();
+      const {results:reportRows}=await db.prepare('SELECT r.zone_id AS zoneId,r.species_id AS speciesId,r.account_id AS accountId,r.day AS day,CASE WHEN r.amount>0 THEN \'sighting\' ELSE \'zero\' END AS outcome FROM reports r JOIN accounts a ON a.id=r.account_id WHERE r.day>=? AND a.created_at<=?').bind(since, established).all();
+      const {results:observationRows}=await db.prepare("SELECT o.zone_id AS zoneId,o.category AS category,o.taxon_id AS taxonId,o.account_id AS accountId,o.day AS day,CASE json_extract(o.payload,'$.presence') WHEN 'observed' THEN 'sighting' WHEN 'searched_absent' THEN 'zero' ELSE 'other' END AS outcome FROM shared_observations o JOIN accounts a ON a.id=o.account_id WHERE o.day>=? AND a.created_at<=?").bind(since, established).all();
       const provinceReports=provinceGroups(reportRows,{zones:zoneList,keyOf:r=>r.speciesId,fields:r=>({speciesId:r.speciesId}),published:new Set(results.map(r=>`${r.zoneId}|${r.speciesId}`))});
       const provinceObservations=provinceGroups(observationRows,{zones:zoneList,keyOf:r=>`${r.category}|${r.taxonId}`,fields:r=>({category:r.category,taxonId:r.taxonId}),published:new Set(observations.map(r=>`${r.zoneId}|${r.category}|${r.taxonId}`))});
       const policy=await rankingPolicy(db);
@@ -265,8 +271,19 @@ export async function handleCommunity(request, env, now = Date.now()) {
       return result({ ok: true }, 200, [cookie(SESSION, '', 0)]);
     }
     if (path === 'account' && request.method === 'DELETE') {
-      await db.prepare('DELETE FROM accounts WHERE id=?').bind(user.id).run();
+      // Cancellazioni esplicite per tabella, dai dati che dipendono dalle voci fino al profilo: non si affidano
+      // soltanto a ON DELETE CASCADE. Anche i contatori legati all'ID del profilo spariscono subito.
+      await db.batch([
+        ...['shared_observations', 'reports', 'legal_acceptances', 'account_preferences', 'diary_entries', 'sessions', 'passkeys', 'challenges']
+          .map((t) => db.prepare(`DELETE FROM ${t} WHERE account_id=?`).bind(user.id)),
+        db.prepare(`DELETE FROM rate_limits WHERE key IN (${ACCOUNT_RATE_KEYS.map(() => '?').join(',')})`).bind(...ACCOUNT_RATE_KEYS.map((k) => k + user.id)),
+        db.prepare('DELETE FROM accounts WHERE id=?').bind(user.id),
+      ]);
       return result({ ok: true }, 200, [cookie(SESSION, '', 0)]);
+    }
+    if (path === 'export' && request.method === 'GET') {
+      await rate(db, 'export:' + user.id, EXPORT_PER_DAY, 86400, now);
+      return accountExport(db, user, now);
     }
 
     if (path === 'entries' && request.method === 'GET') {
@@ -280,6 +297,8 @@ export async function handleCommunity(request, env, now = Date.now()) {
       if (entry && typeof entry === 'object') delete entry.shared;
       const liveIds=await currentCatalogIds(env,url.origin);
       if(entry.kind==='note'){try{entry=normalizeNotebookNote(entry,liveIds);}catch(e){fail(e.message);}}
+      // Le foto passano sempre dalla stessa validazione, che toglie i metadati EXIF/XMP anche dalle chiamate dirette.
+      else if(entry?.photo!=null){try{entry.photo=normalizeNotebookPhoto(entry.photo);}catch(e){fail(e.message);}}
       if(entry.kind!=null&&!['outing','plan','note'].includes(entry.kind))fail('Tipo di voce non valido.');
       if (entry.id !== id || (entry.kind==='note'?entry.zoneId!=null&&!liveIds.zoneIds.has(entry.zoneId):!liveIds.zoneIds.has(entry.zoneId)) || typeof entry.date !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(entry.date)
           || (entry.note != null && (typeof entry.note !== 'string' || entry.note.length > 2000))) fail('Voce del taccuino non valida.');
@@ -298,7 +317,7 @@ export async function handleCommunity(request, env, now = Date.now()) {
       if (previous && JSON.parse(previous).kind === 'plan') return result({ ok: true, entry: JSON.parse(previous) });
       if (!previous) {
         const count = await db.prepare('SELECT COUNT(*) AS n FROM diary_entries WHERE account_id=?').bind(user.id).first('n');
-        if (count >= 1000) fail('Il taccuino ha raggiunto 1000 voci. Esporta e archivia le uscite prima di aggiungerne altre.', 409);
+        if (count >= 1000) fail('Il taccuino ha raggiunto 1000 voci. Scarica i tuoi dati dal profilo ed elimina le voci che non ti servono prima di aggiungerne altre.', 409);
       }
       if(entry.kind==='note')entry.savedAt=new Date(now).toISOString();
       if (entry.kind === 'plan') {
@@ -350,7 +369,7 @@ export async function handleCommunity(request, env, now = Date.now()) {
       if (data.entryId && !entry) fail('Questa uscita non appartiene al tuo taccuino.', 404);
       if (!entry) {
         const count = await db.prepare('SELECT COUNT(*) AS n FROM diary_entries WHERE account_id=?').bind(user.id).first('n');
-        if (count >= 1000) fail('Il taccuino ha raggiunto 1000 voci. Esporta e archivia le uscite prima di aggiungerne altre.', 409);
+        if (count >= 1000) fail('Il taccuino ha raggiunto 1000 voci. Scarica i tuoi dati dal profilo ed elimina le voci che non ti servono prima di aggiungerne altre.', 409);
         entry = JSON.stringify({ id: entryId, kind: 'outing', date: data.day, zoneId: data.zoneId, band: null,
         finds: { [data.speciesId]: data.amount }, searched: data.searched ? [data.speciesId] : [],
         note: '', predicted: {}, forecast: { mode: 'none' }, savedAt: new Date(now).toISOString() });
@@ -382,6 +401,52 @@ export async function handleCommunity(request, env, now = Date.now()) {
     // Nessun dettaglio di chiavi, cookie o query negli errori pubblici.
     return result({ error: e.status ? e.message : 'Servizio temporaneamente non disponibile. Riprova.' }, e.status || 503);
   }
+}
+
+// Copia dei propri dati (art. 15 e 20 GDPR, decisione di Matteo del 22/10/2026): un file JSON leggibile anche da
+// altri programmi. Le voci del taccuino, con le foto, arrivano a pagine in streaming per non tenerle tutte in memoria.
+// Esclusi hash delle sessioni, sfide, sale degli IP, contatori e chiavi delle passkey: non sono dati da consultare
+// e servirebbero solo a un attacco. L'ultimo campo, complete:true, permette al client di riconoscere un file troncato.
+export const EXPORT_FORMAT = 'fronda-export-v1', EXPORT_PAGE = 50, EXPORT_PER_DAY = 5;
+const ACCOUNT_RATE_KEYS = ['user:', 'reports:', 'observations:', 'travel:', 'export:'];
+const isoTime = (ms) => Number.isFinite(ms) ? new Date(ms).toISOString() : null;
+const jsonOrNull = (text) => { try { return text == null ? null : JSON.parse(text); } catch { return null; } };
+async function accountExport(db, user, now) {
+  const all = async (sql) => (await db.prepare(sql).bind(user.id).all()).results;
+  const preferences = await db.prepare('SELECT updated_at FROM account_preferences WHERE account_id=?').bind(user.id).first();
+  const head = {
+    format: EXPORT_FORMAT, exportedAt: isoTime(now),
+    description: 'Copia dei tuoi dati in Fronda: profilo, taccuino con le foto (JPEG in base64), segnalazioni, osservazioni condivise e conferme degli avvisi.',
+    account: { id: user.id, handle: user.handle, createdAt: isoTime(user.created_at) },
+    passkeys: (await all('SELECT created_at,transports,backed_up FROM passkeys WHERE account_id=? ORDER BY created_at'))
+      .map((p) => ({ createdAt: isoTime(p.created_at), transports: jsonOrNull(p.transports) || [], backedUp: !!p.backed_up })),
+    preferences: { base: user.base, updatedAt: isoTime(preferences?.updated_at) },
+    reports: (await all('SELECT id,entry_id,day,zone_id,species_id,amount,searched,identification_checked,validation_context,created_at FROM reports WHERE account_id=? ORDER BY created_at,id'))
+      .map((r) => ({ id: r.id, entryId: r.entry_id, day: r.day, zoneId: r.zone_id, speciesId: r.species_id, amount: r.amount, searched: !!r.searched,
+        identificationChecked: !!r.identification_checked, validationContext: jsonOrNull(r.validation_context), createdAt: isoTime(r.created_at) })),
+    sharedObservations: (await all('SELECT entry_id,day,zone_id,category,taxon_id,payload,consent_version,consented_at FROM shared_observations WHERE account_id=? ORDER BY consented_at,entry_id'))
+      .map((o) => ({ entryId: o.entry_id, day: o.day, zoneId: o.zone_id, category: o.category, taxonId: o.taxon_id, payload: jsonOrNull(o.payload),
+        consentVersion: o.consent_version, consentedAt: isoTime(o.consented_at) })),
+    legalAcceptances: (await all('SELECT version,notice_hash,accepted_at,recorded_at,source,platform FROM legal_acceptances WHERE account_id=? ORDER BY recorded_at'))
+      .map((a) => ({ version: a.version, noticeHash: a.notice_hash, acceptedAt: a.accepted_at, recordedAt: isoTime(a.recorded_at), source: a.source, platform: a.platform })),
+  };
+  let after = '', count = 0, done = false;
+  const body = new ReadableStream({
+    start(controller) { controller.enqueue(enc.encode(JSON.stringify(head).slice(0, -1) + ',"entries":[')); },
+    async pull(controller) {
+      if (done) return;
+      // Paginazione sull'ID, che non cambia con le modifiche: una voce salvata durante il download non si ripete.
+      const { results } = await db.prepare('SELECT id,payload,saved_at FROM diary_entries WHERE account_id=? AND id>? ORDER BY id LIMIT ?').bind(user.id, after, EXPORT_PAGE).all();
+      let chunk = results.map((r) => (count++ ? ',' : '') + JSON.stringify({ ...jsonOrNull(r.payload), serverSavedAt: isoTime(r.saved_at) })).join('');
+      if (results.length < EXPORT_PAGE) { chunk += '],"complete":true}'; done = true; }
+      else after = results.at(-1).id;
+      controller.enqueue(enc.encode(chunk));
+      if (done) controller.close();
+    },
+  });
+  const day = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Rome', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(now));
+  return new Response(body, { status: 200, headers: { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store', 'x-content-type-options': 'nosniff',
+    'content-disposition': `attachment; filename="fronda-dati-${day}.json"` } });
 }
 
 export async function cleanupCommunity(env, now = Date.now()) {

@@ -408,15 +408,18 @@ for(const width of [390,1280]) test(`Scopri: tre cataloghi più Impara e ricerca
   for(const [route,section,mode] of places){
     await page.goto(route);const view=page.locator('.view:not([hidden])');
     await expect(view.locator('.seg-nav [aria-current="page"]')).toHaveText(section);
-    await expect(view.locator('.sub-nav a')).toHaveCount(route==='/#/specie'?1:0);
-    if(route==='/#/specie')await expect(view.locator('.sub-nav a')).toHaveAttribute('href','#/confronta');
+    // Funghi: «Impara a riconoscere» e «Confronta» stanno negli strumenti del catalogo, la riga delle modalità è vuota.
+    // Piante: la riga delle modalità porta il collegamento al confronto. Alberi e Impara a riconoscere: nessun collegamento.
+    await expect(view.locator('.sub-nav a')).toHaveCount(route==='/#/piante'?1:0);
+    if(route==='/#/piante')await expect(view.locator('.sub-nav a')).toHaveAttribute('href','#/confronta/piante');
+    if(route==='/#/specie')await expect(view.locator('.catalog-tools a[href="#/confronta"]')).toHaveCount(1);
     if(mode==='Sfoglia'){
       const trigger=view.locator('[data-open-recognition]');await expect(trigger).toBeVisible();const before=page.url();
       await trigger.click();const panel=page.locator('.recognition-sheet[open]');await expect(panel).toBeVisible();
       await expect(panel.locator('.id-q').first()).toBeVisible();expect(page.url()).toBe(before);
       await page.keyboard.press('Escape');await expect(panel).toHaveCount(0);await expect(trigger).toBeFocused();expect(page.url()).toBe(before);
     }
-    await expect(view.locator('.seg-nav a')).toHaveText(['Funghi','Piante e fiori','Alberi','Guide']);
+    await expect(view.locator('.seg-nav a')).toHaveText(['Funghi','Piante e fiori','Alberi','Animali','Guide']);
   }
   // Impara: quarta sezione di Scopri. La pagina indice ha la riga delle sezioni (Impara scelta); le pagine interne
   // hanno solo le sotto-schede e «indietro» (niente terzo livello)
@@ -424,7 +427,7 @@ for(const width of [390,1280]) test(`Scopri: tre cataloghi più Impara e ricerca
   for(const [route,title] of [['/#/glossario','Glossario'],['/#/guide','Approfondimenti'],['/#/riconosci/bosco','Bosco e sentiero'],['/#/sfide','Sfide']]){
     await page.goto('/#/impara');await expect(page.locator('#learn-hub')).toBeVisible();
     const hub=page.locator('.view:not([hidden])');
-    await expect(hub.locator('.seg-nav a')).toHaveText(['Funghi','Piante e fiori','Alberi','Guide']);await expect(hub.locator('.seg-nav [data-section="impara"]')).toHaveAttribute('aria-current','page');
+    await expect(hub.locator('.seg-nav a')).toHaveText(['Funghi','Piante e fiori','Alberi','Animali','Guide']);await expect(hub.locator('.seg-nav [data-section="impara"]')).toHaveAttribute('aria-current','page');
     await page.goto(route);const view=page.locator('.view:not([hidden])');
     await expect(view.locator('.seg-nav')).toBeHidden();await expect(view.locator('.seg-nav a')).toHaveCount(0);
     await expect(view.locator('.sub-nav a')).toHaveCount(4);await expect(view.locator('.sub-nav [aria-current="page"]')).toHaveText(title);
@@ -433,7 +436,7 @@ for(const width of [390,1280]) test(`Scopri: tre cataloghi più Impara e ricerca
   }
   // Nei Funghi si usa la ricerca generale, senza un secondo campo nel catalogo.
   await page.goto('/#/specie');await expect(page.locator('#species-grid [data-catalog-search]')).toHaveCount(0);
-  await expect(page.locator('.tab-search')).toBeVisible();
+  await expect(page.locator('.appbar [data-open-search]')).toBeVisible();
   await page.keyboard.press('/');await expect(page.locator('dialog.search-dlg[open] input')).toBeFocused();
   await page.locator('dialog.search-dlg[open] input').fill('porcino');
   await expect(page.locator('dialog.search-dlg[open]')).toContainText('Porcino');
@@ -442,7 +445,7 @@ for(const width of [390,1280]) test(`Scopri: tre cataloghi più Impara e ricerca
   await page.locator('[data-tree-group="conifere"]').click();await expect(page.locator('[data-tree-results] .sp-card').first()).toBeVisible();
   await page.locator('[data-tree-group=""]').click();await expect(page.locator('[data-tree-results] .sp-card')).toHaveCount(39);
   // fuori dai cataloghi la ricerca generale resta disponibile
-  await page.goto('/#/glossario');await expect(page.locator('.tab-search')).toBeVisible();
+  await page.goto('/#/glossario');await expect(page.locator('.appbar [data-open-search]')).toBeVisible();
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
   expect(errors).toEqual([]);
 });
