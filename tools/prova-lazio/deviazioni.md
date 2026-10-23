@@ -405,6 +405,59 @@ scarto orario 7200.
     353 richieste). Si riporta la tabella sulle unità con quota (5137 su 41 520) e la si rifà quando le quote
     arrivano. Nessun verdetto dipende da questa analisi.
 
+## D21. Correzioni dopo le tre verifiche indipendenti (23/10/2026, **dopo aver visto i risultati**)
+
+Tre verifiche indipendenti sugli esiti del 23/10 (commit `c0877363`): una reimplementazione da zero, una revisione del
+codice contro questo protocollo, una serie di controlli avversari sui dati. La reimplementazione ha ritrovato tutti i
+numeri del principale entro 10⁻¹²; la prova nulla (casi e controlli scambiati a caso) dà AUC 0,500; nessuna fuga
+d'informazione dal futuro. Nessun rilievo cambiava un verdetto. Le correzioni qui sotto sono state fatte **dopo** aver
+visto stime e verdetti: servono a stare al protocollo, non a cambiare un esito. Il README riporta i numeri prima e
+dopo dove cambiano.
+
+**Correzioni che cambiano un numero**
+1. **Geometria anche per iNaturalist** (2.1 dell'Italia: «per entrambe le fonti»; controllo 4). `comune.py` la
+   applicava solo a GBIF. 213 record iNaturalist validi cadevano fuori dalla geometria salvata, quasi tutti sui
+   confini con Svizzera e Slovenia (la geometria dell'API è semplificata: 26 poligoni, 422 vertici). Ora la geometria
+   vale per tutti, in `valuta.py`; `comune.py` e `richieste.json` non cambiano. P1: da 975 a 973 casi, da 435 a 433
+   celle (cambiano procera e mellea).
+2. **C-BM:** ogni giorno di ogni richiesta conta una volta, solo i giorni di casi e controlli del principale (prima
+   un giorno valutato per più specie o per più secondarie pesava più volte).
+3. **Analisi descrittiva:** il denominatore conta le uscite distinte (un'uscita con due specie una volta sola);
+   tabelle per tutta l'Italia e per macro-area (4.9 dell'Italia), con i pesi `months` accanto (11 del Lazio).
+4. **Cluster effettivi:** la soglia di 15 (D3) si applica al valore non arrotondato.
+5. **Blocco al 20%:** al numeratore anche i casi che perdono tutti i controlli per meteo mancante.
+
+**Parti preregistrate che mancavano**
+6. **S-D19** ora ha gli stessi verdetti e la stessa correzione di Holm del principale (D19 chiede se un verdetto
+   cambia).
+7. **Q4:** controllo «eterogeneo fra anni» anche qui; le specie non rifiutate da Holm riportano anche «la differenza
+   resta sotto δ in tutto l'intervallo» quando vale (9 del Lazio).
+8. **Secondarie di P2** (4.9 dell'Italia: «per P1 e per P2»): S-FIN, S-CELLA, S-QUOTA, S-PREC, S-LIC, S-SPEC,
+   S-COMP, S-MACRO; S-CC è comune ai due disegni. Descrittive, senza etichetta e senza «contraddice».
+9. **S-ARR** con il controllo «contraddice» su Q1; **valori distinti** di ogni punteggio per specie (8.1 del Lazio).
+10. **Controlli bloccanti più forti.** 2: istantanea congelata `dati/istantanea.json` con lo SHA-256 di ogni file,
+    creata il 23/10 (dopo i risultati; da qui in avanti un file cambiato ferma l'esecuzione; le quote della priorità
+    5 che arrivano dopo sono ammesse). 3: taxa del codice confrontati con la tabella 2.2 e la lista P2; nessun record
+    dei controlli con un taxon escluso. 7: cerca anche id di record in ogni posizione, chiavi delle richieste, celle e
+    serie meteo; il riepilogo `esiti-riepilogo.json` si scrive accanto allo script.
+
+**Scelte non coperte, ora scritte**
+11. La regione di un'uscita è quella del suo record con l'identificativo più basso: vale per la climatologia (D20.1),
+    per il cluster regione × anno, per S-MACRO e per il Lazio. 63 uscite hanno record in regioni diverse.
+12. «Contraddice» (D13) si valuta sulla complessiva delle secondarie, non per specie.
+13. `fattori.mjs` chiede, oltre a `inputQuality`, che la finestra più lunga stia dentro la serie: nessuna unità
+    esclusa per questo.
+14. **Fatti da sapere, nessuna modifica:** il gelo (`frost`) usa anche la minima del giorno stesso, come l'app
+    (togliendola l'AUC(1) cambia di −0,0015); 14 record iNaturalist di *Hydnum rufescens* e *H. pallidum* restano fra
+    i controlli (specie distinte in iNaturalist, sinonimi di *H. repandum* nel Backbone); in 739 coppie su 5533 il
+    controllo è un'uscita in cui lo stesso osservatore ha trovato anche una specie in prova (voluto dal disegno, spinge
+    verso 0,5).
+
+**Analisi esplorativa nuova (dopo i risultati, senza etichetta)**
+15. **E-STESSO-OSS / E-ALTRI-OSS:** il principale con i soli controlli dello stesso osservatore del caso (in altri
+    giorni) oppure con i soli controlli di altri osservatori. Nasce da un rilievo della verifica avversaria: contro le
+    uscite dello stesso osservatore il vantaggio dell'indice sembrava più piccolo. Serve a leggere Q1, non la cambia.
+
 ## Che cosa non cambia
 
 Domanda principale, disegno P1, unità, celle, finestre, δ, punteggi (0), (1), (1b), seme del bootstrap, completezza,

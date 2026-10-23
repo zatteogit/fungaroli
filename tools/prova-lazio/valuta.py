@@ -134,6 +134,25 @@ def istantanea(dati):
         hm.update(f'{n} {sha256_file(os.path.join(dati, "meteo", n))}\n'.encode())
     out['meteo/'] = {'file': len(nomi), 'sha256_elenco': hm.hexdigest()}
     out['scaricamento_osservazioni'] = sc['scaricato']
+    # istantanea congelata: alla prima esecuzione si scrive dati/istantanea.json; poi ogni file deve coincidere
+    manifesto = {'osservazioni/inat.jsonl': out['inat.jsonl'], 'osservazioni/gbif.jsonl': out['gbif.jsonl'],
+                 'geometria-italia.json': g, 'richieste.json': out['richieste.json'],
+                 'taxa.json': sha256_file(os.path.join(dati, 'taxa.json'))}
+    for n in nomi:
+        manifesto['meteo/' + n] = sha256_file(os.path.join(dati, 'meteo', n))
+    fp = os.path.join(dati, 'istantanea.json')
+    if os.path.exists(fp):
+        salvato = json.load(open(fp))['file']
+        diversi = sorted(k for k in set(salvato) | set(manifesto) if salvato.get(k) != manifesto.get(k))
+        # le quote della priorità 5 possono arrivare dopo: un file meteo nuovo di tipo quota non blocca
+        nuovi_quota = [k for k in diversi if k not in salvato and json.load(open(os.path.join(dati, k)))['richiesta']['tipo'] == 'quota']
+        diversi = [k for k in diversi if k not in nuovi_quota]
+        if diversi:
+            raise Blocco(f'controllo 2: istantanea cambiata in {len(diversi)} file (per esempio {diversi[0]})')
+        out['istantanea_quote_aggiunte'] = len(nuovi_quota)
+    else:
+        C.scrivi_atomico(fp, json.dumps({'creata': C.adesso_iso(), 'file': manifesto}, sort_keys=True, indent=0))
+    out['istantanea.json'] = sha256_file(fp)
     return out
 
 
@@ -141,8 +160,13 @@ def carica_record(dati, sin, geo):
     recs = C.leggi_jsonl(os.path.join(dati, 'osservazioni', 'inat.jsonl')) + \
         C.leggi_jsonl(os.path.join(dati, 'osservazioni', 'gbif.jsonl'))
     validi = []
+    fuori_inat = 0
     for r in recs:
         if not C.passa_filtri_base(r, geo):
+            continue
+        # 2.1 dell'Italia: la geometria vale per entrambe le fonti (comune.py la applica solo a GBIF; D21)
+        if r['fonte'] == 'inat' and not C.punto_in_geojson(r['lat'], r['lon'], geo):
+            fuori_inat += 1
             continue
         d = C.data_singola(r)
         if not (dt.date(2015, 1, 1) <= d <= dt.date(2025, 12, 31)):
@@ -195,12 +219,15 @@ def carica_record(dati, sin, geo):
     for r in validi:
         if r['fonte'] == 'gbif' and any(dist_m(r, x) < 1000 for x in inat_per.get((r['taxon_chiave'], r['data']), [])):
             raise Blocco('controllo D9: resta una coppia GBIF–iNaturalist entro 1000 m')
-    return validi, {'record_letti': len(recs), 'record_validi': len(validi), 'deduplica_2': tolti2, 'deduplica_3': tolti3}
+    return validi, {'record_letti': len(recs), 'record_validi': len(validi), 'deduplica_2': tolti2, 'deduplica_3': tolti3,
+                    'inat_fuori_geometria': fuori_inat}
 
 
-def controllo_record(validi, sin):
-    """Controllo 4 di 12 del Lazio e 3 sui taxa."""
+def controllo_record(validi, sin, geo):
+    """Controllo 4 di 12 del Lazio."""
     for r in validi:
+        if not C.punto_in_geojson(r['lat'], r['lon'], geo):
+            raise Blocco('controllo 4: record fuori dalla geometria dell\'Italia')
         if r.get('incertezza') is None or r['incertezza'] > 1000:
             raise Blocco('controllo 4: record con incertezza assente o > 1000 m')
         if r['fonte'] == 'inat' and (r.get('oscurato') or r.get('qualita') == 'casual'):
@@ -209,9 +236,51 @@ def controllo_record(validi, sin):
             raise Blocco('controllo 4: record del dataset iNaturalist dentro GBIF')
         if r['data'] > '2025-12-31' or r['data'] < '2015-01-01':
             raise Blocco('controllo 4: record fuori periodo')
-        sp = C.specie_del_caso(r, sin)
-        if sp and sp not in C.SPECIE:
-            raise Blocco('controllo 3: caso con un taxon fuori tabella')
+
+
+# Tabella 2.2 del Lazio (id iNaturalist e chiavi del Backbone) e lista P2 di 4.2 dell'Italia, trascritte dai documenti.
+TABELLA_22 = {'edulis': ([48701], [5954958]), 'pinophilus': ([335942], [5954949]), 'aereus': ([333772], [8733688]),
+              'aestivalis': ([350216], [5954691]), 'caesarea': ([204588], [5240269]), 'cibarius': ([47347], [5249504]),
+              'cornucopioides': ([48607], [2554662]), 'repandum': ([48641], [2554716]), 'procera': ([63401], [8914748]),
+              'mellea': ([55950], [2536891]), 'virescens': ([125720, 194437], [2551423, 2551542]),
+              'suillus': ([53488, 179065, 363592], [7777157, 8146046, 9104622]), 'terreum': ([341797], [5241808]),
+              'nuda': ([1525548], [5242048])}
+LISTA_P2 = {127511, 118087, 352247, 328266, 118086, 1098280, 48473, 63509, 781305}
+
+
+def controllo_taxa():
+    """Controllo 3 di 12 del Lazio: taxa del codice uguali a quelli dei documenti."""
+    for sp, (inat, gbif) in TABELLA_22.items():
+        v = C.SPECIE.get(sp)
+        if not v or sorted(v['inat']) != sorted(inat) or sorted(v['gbif']) != sorted(gbif):
+            raise Blocco(f'controllo 3: {sp} diverso dalla tabella 2.2')
+    if set(C.SPECIE) != set(TABELLA_22) or set(C.P2_INAT.values()) != LISTA_P2:
+        raise Blocco('controllo 3: elenco delle specie o lista P2 diversi dai documenti')
+    return {'specie': len(TABELLA_22), 'taxa_P2': len(LISTA_P2)}
+
+
+def controllo_controlli(validi, sin, unita):
+    """Controllo 3: nessun record di un'unità controllo è un caso possibile o un taxon escluso (2.2 del Lazio)."""
+    per_id = {(r['fonte'], r['id']): r for r in validi}
+    n = 0
+    for u in unita:
+        for i in u['record']:
+            r = per_id[(u['fonte'], i)]
+            if C.escluso_dai_controlli(r, sin) or C.specie_del_caso(dict(r, qualita='research'), sin):
+                n += 1
+    if n:
+        raise Blocco(f'controllo 3: {n} record di controlli con un taxon escluso')
+    return n
+
+
+def unita_regioni_diverse(validi, sin):
+    """Uscite (casi e controlli, 2015–2025) con record in regioni diverse: la regione è quella del primo record (D21)."""
+    g = collections.defaultdict(set)
+    for r in validi:
+        oss = r.get('osservatore')
+        if oss:
+            g[(r['fonte'], oss, r['data'], r['cella'])].add(C.regione(r.get('regione')) or 'ignota')
+    return sum(1 for v in g.values() if len(v) > 1)
 
 
 # --- 2. unità ----------------------------------------------------------------------------------------------------
@@ -491,7 +560,7 @@ def punteggi(riga, f2):
             'c_fh': riga['frost'] * riga['heat'], 'c_rtm': riga['rain'] * riga['temp'] * riga['moist']}
 
 
-def costruisci_casi(V, casi_unita, controlli, abbinati, clima, p1, chiave_serie=None, cc=False):
+def costruisci_casi(V, casi_unita, controlli, abbinati, clima, p1, chiave_serie=None, cc=False, distinti=None):
     """Casi pronti per le metriche: U per punteggio, quote di pari, cluster; più i conteggi di esclusione.
     `abbinati[i]` = indici dei controlli del caso i; con cc=True i «controlli» sono i giorni del case-crossover."""
     pronti, conto = [], collections.Counter()
@@ -529,6 +598,10 @@ def costruisci_casi(V, casi_unita, controlli, abbinati, clima, p1, chiave_serie=
         if not ctrl_sc:
             conto['caso_senza_controlli_con_meteo'] += 1
             continue
+        if distinti is not None:
+            for x in [sc] + ctrl_sc:
+                for k in ('f0', 'f1', 'f1b', 'f2'):
+                    distinti[(c['specie'], k)].add(x[k])
         U = {k: u_caso(sc[k], [x[k] for x in ctrl_sc]) for k in PUNTEGGI}
         T = {k: pari(sc[k], [x[k] for x in ctrl_sc]) for k in PUNTEGGI}
         pronti.append({'specie': c['specie'], 'cella': c['cella'], 'anno': c['anno'], 'macro': c['macro'],
@@ -547,9 +620,9 @@ def riassunto_casi(casi):
     return {'n': n, 'celle': len({c['cluster']['cella'] for c in casi}), 'anni': sorted({c['anno'] for c in casi}),
             'm_mediana': float(np.median([c['m'] for c in casi])),
             'controlli_unici': len({x for c in casi for x in c['controlli_id']}),
-            'eff_cella': round(eff([c['cluster']['cella'] for c in casi]), 1),
-            'eff_oss': round(eff([c['cluster']['oss'] for c in casi]), 1),
-            'eff_regione_anno': round(eff([c['cluster']['regione_anno'] for c in casi]), 1),
+            'eff_cella': eff([c['cluster']['cella'] for c in casi]),
+            'eff_oss': eff([c['cluster']['oss'] for c in casi]),
+            'eff_regione_anno': eff([c['cluster']['regione_anno'] for c in casi]),
             'pari': {k: round(float(np.mean([c['pari'][k] for c in casi])), 4) for k in ('f0', 'f1', 'f1b', 'f2', 'arr')}}
 
 
@@ -619,14 +692,88 @@ def contraddice(principale, secondaria, nome):
     return None
 
 
+def verdetti_completi(pronti_x, B):
+    """Verdetti della complessiva e delle dieci specie (9 del Lazio, D3, D4, D20.8) e Q4 (famiglia di due).
+    Usata per il principale e, con gli stessi criteri, per S-D19 (D19)."""
+    dom3 = {k: v for k, v in DOMANDE.items() if k != 'Q4'}
+    out = {'specie': {}}
+    n_sp = collections.Counter(c['specie'] for c in pronti_x)
+    incluse = [sp for sp in C.ORDINE_SPECIE if n_sp[sp] >= 5]
+    out['incluse'] = incluse
+    tot = [c for c in pronti_x if c['specie'] in incluse]
+    out['complessiva'] = analizza(tot, B, dom3, PUNTEGGI)
+    for sp in C.ORDINE_SPECIE:
+        sub = [c for c in pronti_x if c['specie'] == sp]
+        out['specie'][sp] = analizza(sub, B, dom3) if len(sub) >= 5 else {'casi': riassunto_casi(sub)}
+    out['anni_complessiva'] = per_anni(tot, B, dom3)
+    valut = soglia_complessiva(out['complessiva'])
+    out['complessiva']['valutabile'] = valut
+    out['complessiva']['verdetti'] = {}
+    for nome, d in out['complessiva']['domande'].items():
+        v = verdetto(d, nome) if valut else 'non valutabile'
+        note = applica_anni(d, out['anni_complessiva'], nome) if valut else []
+        if any(n[0] == 'eterogeneo' for n in note) and not v.startswith('non '):
+            v = 'eterogeneo fra anni'
+        out['complessiva']['verdetti'][nome] = {'verdetto': v, 'note_anni': note}
+    out['holm'] = {}
+    for nome in ('Q1', 'Q2', 'Q3'):
+        pv = {sp: (out['specie'][sp]['domande'][nome]['p'] if 'domande' in out['specie'][sp] and soglia_specie(out['specie'][sp]) else 1.0)
+              for sp in ETICHETTATE}
+        corr = holm(pv)
+        out['holm'][nome] = {'p': pv, 'p_holm': corr}
+        for sp in ETICHETTATE:
+            r = out['specie'][sp]
+            r.setdefault('verdetti', {})
+            if 'domande' not in r or not soglia_specie(r):
+                r['verdetti'][nome] = 'non valutabile'
+                continue
+            v = verdetto(r['domande'][nome], nome)
+            if corr[sp] <= 0.05:
+                if not v.startswith('non '):
+                    anni = per_anni([c for c in pronti_x if c['specie'] == sp], B, {nome: DOMANDE[nome]})
+                    note = applica_anni(r['domande'][nome], anni, nome)
+                    if any(n[0] == 'eterogeneo' for n in note):
+                        v = 'eterogeneo fra anni'
+                    r.setdefault('note_anni', {})[nome] = note
+                r['verdetti'][nome] = v
+            else:
+                nota = '; la differenza resta sotto δ in tutto l\'intervallo' if 'sotto δ in tutto' in v else ''
+                r['verdetti'][nome] = 'non distinguibile (dopo la correzione di Holm)' + nota
+    q4 = {'Q4': DOMANDE['Q4']}
+    gruppi = {'edulis': [c for c in pronti_x if c['specie'] == 'edulis'],
+              'porcini_insieme': [c for c in pronti_x if c['specie'] in ('edulis', 'pinophilus')]}
+    ris = {k: analizza(v, B, q4) for k, v in gruppi.items()}
+    pv = {k: (r['domande']['Q4']['p'] if soglia_complessiva(r) else 1.0) for k, r in ris.items()}
+    corr = holm(pv)
+    for k, r in ris.items():
+        if not soglia_complessiva(r):
+            r['verdetto'] = 'non valutabile'
+        else:
+            v = verdetto(r['domande']['Q4'], 'Q4')
+            if corr[k] <= 0.05:
+                if not v.startswith('non '):
+                    note = applica_anni(r['domande']['Q4'], per_anni(gruppi[k], B, q4), 'Q4')
+                    if any(n[0] == 'eterogeneo' for n in note):
+                        v = 'eterogeneo fra anni'
+                    r['note_anni'] = note
+                r['verdetto'] = v
+            else:
+                nota = '; la differenza resta sotto δ in tutto l\'intervallo' if 'sotto δ in tutto' in v else ''
+                r['verdetto'] = 'non distinguibile (dopo la correzione di Holm)' + nota
+        r['p_holm'] = corr[k]
+    out['Q4'] = ris
+    return out, tot
+
+
 def esegui(a):
     esiti = {'versioni': {'python': platform.python_version(), 'numpy': np.__version__, 'sistema': platform.platform()}}
     esiti['controllo_1_moduli'] = controlli_moduli()
     esiti['controllo_2_istantanea'] = istantanea(a.dati)
+    esiti['controllo_3_taxa'] = controllo_taxa()
     sin = C.tabella_sinonimi(os.path.join(a.dati, 'taxa.json'))
     geo = json.load(open(os.path.join(a.dati, 'geometria-italia.json')))
     validi, info = carica_record(a.dati, sin, geo)
-    controllo_record(validi, sin)
+    controllo_record(validi, sin, geo)
     esiti['record'] = info
     esiti['licenze'] = dict(collections.Counter((r['fonte'], r.get('licenza') or 'nessuna') for r in validi
                                                 if C.specie_del_caso(r, sin)).most_common())
@@ -646,34 +793,39 @@ def esegui(a):
     casi = [u for u in casi_t if nel_periodo(u)]
     ctrl = [u for u in ctrl_t if nel_periodo(u)]
     p2 = [u for u in p2_t if nel_periodo(u)]
-    idx_c, idx_p2 = indice(ctrl), indice(p2)
-    idx_c2 = indice(ctrl, 'cella2')
+    esiti['controllo_3_taxa']['controlli_esclusi_trovati'] = controllo_controlli(validi, sin, ctrl_t + p2_t)
 
-    disegni = {}
-    disegni['P1'] = [abbina(c, ctrl, idx_c) for c in casi]
-    disegni['P2'] = [abbina(c, p2, idx_p2) for c in casi]
-    disegni['S-FIN'] = [abbina(c, ctrl, idx_c, finestra=15) for c in casi]
-    disegni['S-CELLA'] = [abbina(c, ctrl, idx_c2, campo='cella2') for c in casi]
-    disegni['S-GEN'] = [[k for k in m if not ctrl[k]['solo_sopra_genere']] for m in disegni['P1']]
-    disegni['S-QUOTA'] = [[k for k in m if c['quota'] is not None and ctrl[k]['quota'] is not None
-                           and abs(ctrl[k]['quota'] - c['quota']) <= 300] for c, m in zip(casi, disegni['P1'])]
+    def disegni_per(controlli):
+        idx, idx2 = indice(controlli), indice(controlli, 'cella2')
+        d = {'base': [abbina(c, controlli, idx) for c in casi]}
+        d['S-FIN'] = [abbina(c, controlli, idx, finestra=15) for c in casi]
+        d['S-CELLA'] = [abbina(c, controlli, idx2, campo='cella2') for c in casi]
+        d['S-QUOTA'] = [[k for k in m if c['quota'] is not None and controlli[k]['quota'] is not None
+                         and abs(controlli[k]['quota'] - c['quota']) <= 300] for c, m in zip(casi, d['base'])]
+        return d
+
+    dis = {'P1': disegni_per(ctrl), 'P2': disegni_per(p2)}
+    dis['P1']['S-GEN'] = [[k for k in m if not ctrl[k]['solo_sopra_genere']] for m in dis['P1']['base']]
+    # esplorative (D21): controlli dello stesso osservatore del caso, oppure di altri osservatori
+    dis['P1']['E-STESSO-OSS'] = [[k for k in m if ctrl[k]['osservatore'] == c['osservatore']] for c, m in zip(casi, dis['P1']['base'])]
+    dis['P1']['E-ALTRI-OSS'] = [[k for k in m if ctrl[k]['osservatore'] != c['osservatore']] for c, m in zip(casi, dis['P1']['base'])]
     cc = []
     for c in casi:
         giorni = [c['d'] + dt.timedelta(k) for k in (-28, -14, 14, 28)]
         cc.append([g for g in giorni if g.year == c['anno']])
-    disegni['S-CC'] = cc
 
-    # varianti sui record
+    # varianti sui record: (unità caso 2015–2025, controlli P1, controlli P2, casi nel periodo, ab. P1, ab. P2)
     varianti = {}
     for nome, filtro in (('S-PREC', lambda r: r['incertezza'] <= 250),
                          ('S-LIC', lambda r: not (r['fonte'] == 'inat' and not r.get('licenza')))):
-        ct, kt, _ = prepara(filtro)
+        ct, kt, pt = prepara(filtro)
         cv = [u for u in ct if nel_periodo(u)]
         kv = [u for u in kt if nel_periodo(u)]
-        iv = indice(kv)
-        varianti[nome] = (ct, kt, cv, kv, [abbina(c, kv, iv) for c in cv])
+        pv = [u for u in pt if nel_periodo(u)]
+        ik, ip = indice(kv), indice(pv)
+        varianti[nome] = {'ct': ct, 'kt': kt, 'pt': pt, 'cv': cv, 'kv': kv, 'pv': pv,
+                          'ab1': [abbina(c, kv, ik) for c in cv], 'ab2': [abbina(c, pv, ip) for c in cv]}
 
-    # voci da calcolare
     def registra(casi_u, controlli, abbinati, cc_=False):
         for i, c in enumerate(casi_u):
             key = richiesta_di(p1, c['cella'], c['d'])
@@ -683,12 +835,14 @@ def esegui(a):
             for m in abbinati[i]:
                 V.voce(key, m if cc_ else controlli[m]['d'], c['specie'])
 
-    for nome in ('P1', 'P2', 'S-FIN', 'S-CELLA', 'S-GEN', 'S-QUOTA'):
-        registra(casi, p2 if nome == 'P2' else ctrl, disegni[nome])
-    registra(casi, None, disegni['S-CC'], cc_=True)
-    for nome, (ct, kt, cv, kv, ab) in varianti.items():
-        registra(cv, kv, ab)
-    # C-BM: le gemelle sugli stessi giorni della P1 (solo predittori)
+    for k, v in dis['P1'].items():
+        registra(casi, ctrl, v)
+    for k, v in dis['P2'].items():
+        registra(casi, p2, v)
+    registra(casi, None, cc, cc_=True)
+    for v in varianti.values():
+        registra(v['cv'], v['kv'], v['ab1'])
+        registra(v['cv'], v['pv'], v['ab2'])
     principali = list(V.lista_voci)
     for key, d, sp in principali:
         if key in gemelle:
@@ -696,21 +850,17 @@ def esegui(a):
     esiti['fattori'] = V.calcola_fattori()
     esiti['model_version'] = V.fattori['model_version']
     esiti['versioni']['node'] = V.fattori['node']
-
-    # controllo 5: allineamento JS–Python
     esiti['controllo_5'] = controllo_5(V, a.dati)
 
-    # climatologie
     clima_p1 = Climatologia(casi_t, ctrl_t)
     clima_p2 = Climatologia(casi_t, p2_t)
-    gen_t = [u for u in ctrl_t if not u['solo_sopra_genere']]
-    clima_gen = Climatologia(casi_t, gen_t)
+    clima_gen = Climatologia(casi_t, [u for u in ctrl_t if not u['solo_sopra_genere']])
 
-    # principale e completezza
-    pronti, conto, per_anno = costruisci_casi(V, casi, ctrl, disegni['P1'], clima_p1, p1)
+    distinti = collections.defaultdict(set)
+    pronti, conto, per_anno = costruisci_casi(V, casi, ctrl, dis['P1']['base'], clima_p1, p1, distinti=distinti)
     esiti['completezza_P1'] = dict(conto)
-    abbinati_tot = sum(1 for m in disegni['P1'] if m)
-    quota_casi = conto['caso_senza_meteo'] / max(1, abbinati_tot)
+    abbinati_tot = sum(1 for m in dis['P1']['base'] if m)
+    quota_casi = (conto['caso_senza_meteo'] + conto['caso_senza_controlli_con_meteo']) / max(1, abbinati_tot)
     coppie = conto['coppie_valide'] + conto['coppie_senza_meteo']
     quota_coppie = conto['coppie_senza_meteo'] / max(1, coppie)
     esiti['completezza_P1']['quota_casi_senza_meteo'] = quota_casi
@@ -721,124 +871,56 @@ def esegui(a):
 
     B = a.b
     risultati = {}
-
-    def blocco_analisi(nome, pronti_x, domande=None, con_specie=True, colonne=('f0', 'f1', 'f1b', 'f2')):
-        domande = domande or {k: v for k, v in DOMANDE.items() if k != 'Q4'}
-        out = {'specie': {}}
-        n_sp = collections.Counter(c['specie'] for c in pronti_x)
-        incluse = [sp for sp in C.ORDINE_SPECIE if n_sp[sp] >= 5]
-        out['incluse'] = incluse
-        tot = [c for c in pronti_x if c['specie'] in incluse]
-        out['complessiva'] = analizza(tot, B, domande, colonne)
-        if con_specie:
-            for sp in C.ORDINE_SPECIE:
-                sub = [c for c in pronti_x if c['specie'] == sp]
-                out['specie'][sp] = analizza(sub, B, domande, colonne) if len(sub) >= 5 else {'casi': riassunto_casi(sub)}
-        return out, tot
-
-    # --- principale
-    princ, tot = blocco_analisi('P1', pronti, colonne=PUNTEGGI)
-    princ['anni_complessiva'] = per_anni(tot, B, {k: v for k, v in DOMANDE.items() if k != 'Q4'})
-    # verdetti complessiva
-    valut = soglia_complessiva(princ['complessiva'])
-    princ['complessiva']['valutabile'] = valut
-    princ['complessiva']['verdetti'] = {}
-    for nome, d in princ['complessiva']['domande'].items():
-        v = verdetto(d, nome) if valut else 'non valutabile'
-        note = applica_anni(d, princ['anni_complessiva'], nome) if valut else []
-        if any(n[0] == 'eterogeneo' for n in note) and not v.startswith('non '):
-            v = 'eterogeneo fra anni'
-        princ['complessiva']['verdetti'][nome] = {'verdetto': v, 'note_anni': note}
-    # verdetti per specie con Holm (D3)
-    princ['holm'] = {}
-    for nome in ('Q1', 'Q2', 'Q3'):
-        pv = {}
-        for sp in ETICHETTATE:
-            r = princ['specie'][sp]
-            pv[sp] = r['domande'][nome]['p'] if 'domande' in r and soglia_specie(r) else 1.0
-        corr = holm(pv)
-        princ['holm'][nome] = {'p': pv, 'p_holm': corr}
-        for sp in ETICHETTATE:
-            r = princ['specie'][sp]
-            r.setdefault('verdetti', {})
-            if 'domande' not in r or not soglia_specie(r):
-                r['verdetti'][nome] = 'non valutabile'
-            elif corr[sp] <= 0.05:
-                v = verdetto(r['domande'][nome], nome)
-                if not v.startswith('non '):
-                    anni = per_anni([c for c in pronti if c['specie'] == sp], B, {nome: DOMANDE[nome]})
-                    note = applica_anni(r['domande'][nome], anni, nome)
-                    if any(n[0] == 'eterogeneo' for n in note):
-                        v = 'eterogeneo fra anni'
-                    r.setdefault('note_anni', {})[nome] = note
-                r['verdetti'][nome] = v
-            else:
-                r['verdetti'][nome] = 'non distinguibile (dopo la correzione di Holm)'
-    # Q4: edulis e porcini insieme (famiglia di due)
-    q4 = {'Q4': DOMANDE['Q4']}
-    edu = [c for c in pronti if c['specie'] == 'edulis']
-    porc = [c for c in pronti if c['specie'] in ('edulis', 'pinophilus')]
-    r_edu, r_porc = analizza(edu, B, q4), analizza(porc, B, q4)
-    pv = {'edulis': r_edu['domande']['Q4']['p'] if soglia_complessiva(r_edu) else 1.0,
-          'porcini': r_porc['domande']['Q4']['p'] if soglia_complessiva(r_porc) else 1.0}
-    corr = holm(pv)
-    for k, r in (('edulis', r_edu), ('porcini', r_porc)):
-        if not soglia_complessiva(r):
-            r['verdetto'] = 'non valutabile'
-        elif corr[k] <= 0.05:
-            r['verdetto'] = verdetto(r['domande']['Q4'], 'Q4')
-        else:
-            r['verdetto'] = 'non distinguibile (dopo la correzione di Holm)'
-        r['p_holm'] = corr[k]
-    princ['Q4'] = {'edulis': r_edu, 'porcini_insieme': r_porc}
-    # S-ARR e S-COMP sulla complessiva (colonne già calcolate)
+    princ, tot = verdetti_completi(pronti, B)
     risultati['P1'] = princ
-
-    # --- secondarie
-    sec = {}
     dom3 = {k: v for k, v in DOMANDE.items() if k != 'Q4'}
 
-    def secondaria(nome, pronti_x, conto_x=None, colonne=('f0', 'f1', 'f1b', 'f2'), domande=dom3):
-        r, _ = blocco_analisi(nome, pronti_x, domande, colonne=colonne)
+    def blocco(pronti_x, conto_x=None, colonne=('f0', 'f1', 'f1b', 'f2'), domande=dom3, rif=None):
+        n_sp = collections.Counter(c['specie'] for c in pronti_x)
+        incluse = [sp for sp in C.ORDINE_SPECIE if n_sp[sp] >= 5]
+        sub = [c for c in pronti_x if c['specie'] in incluse]
+        r = {'incluse': incluse, 'complessiva': analizza(sub, B, domande, colonne), 'specie': {}}
+        for sp in C.ORDINE_SPECIE:
+            ss = [c for c in pronti_x if c['specie'] == sp]
+            r['specie'][sp] = analizza(ss, B, domande, colonne) if len(ss) >= 5 else {'casi': riassunto_casi(ss)}
         if conto_x is not None:
             r['completezza'] = dict(conto_x)
-        r['contraddice'] = {q: contraddice(princ['complessiva'], r['complessiva'], q) for q in domande}
-        return r
+        if rif is not None:
+            r['contraddice'] = {q: contraddice(rif, r['complessiva'], q) for q in domande}
+        return r, sub
 
-    pr, cn, _ = costruisci_casi(V, casi, p2, disegni['P2'], clima_p2, p1)
-    sec['P2'] = secondaria('P2', pr, cn)
-    usciti_p2 = {c['uscita'] + (c['specie'],) for c in pr}
-    sec['P1_sui_casi_P2'] = secondaria('P1_sui_casi_P2', [c for c in pronti if c['uscita'] + (c['specie'],) in usciti_p2])
-    for nome in ('S-FIN', 'S-GEN', 'S-QUOTA'):
-        cl = clima_gen if nome == 'S-GEN' else clima_p1
-        pr, cn, _ = costruisci_casi(V, casi, ctrl, disegni[nome], cl, p1)
-        sec[nome] = secondaria(nome, pr, cn)
-    for c in casi:
-        c['cluster_cella'] = cella2(c['lat'], c['lon'])
-    pr, cn, _ = costruisci_casi(V, casi, ctrl, disegni['S-CELLA'], clima_p1, p1)
-    sec['S-CELLA'] = secondaria('S-CELLA', pr, cn)
-    for c in casi:
-        c.pop('cluster_cella', None)
-    pr, cn, _ = costruisci_casi(V, casi, None, disegni['S-CC'], None, p1, cc=True)
-    sec['S-CC'] = secondaria('S-CC', pr, cn, colonne=('f0', 'f1', 'f1b'),
-                             domande={'Q1': DOMANDE['Q1'], 'Q2': DOMANDE['Q2']})
-    for nome, (ct, kt, cv, kv, ab) in varianti.items():
-        pr, cn, _ = costruisci_casi(V, cv, kv, ab, Climatologia(ct, kt), p1)
-        sec[nome] = secondaria(nome, pr, cn)
-    # S-SPEC: media delle AUC delle specie, ogni specie con peso 1
-    incl = risultati['P1']['incluse']
+    def famiglia(nome_d, controlli, d, clima, rif, variante=None):
+        """Secondarie di un disegno (P1 o P2): 10 del Lazio e 4.9 dell'Italia."""
+        out = {}
+        for nome in ('S-FIN', 'S-QUOTA') + (('S-GEN',) if nome_d == 'P1' else ()):
+            pr, cn, _ = costruisci_casi(V, casi, controlli, d[nome], clima_gen if nome == 'S-GEN' else clima, p1)
+            out[nome] = blocco(pr, cn, rif=rif)[0]
+        for c in casi:
+            c['cluster_cella'] = cella2(c['lat'], c['lon'])
+        pr, cn, _ = costruisci_casi(V, casi, controlli, d['S-CELLA'], clima, p1)
+        out['S-CELLA'] = blocco(pr, cn, rif=rif)[0]
+        for c in casi:
+            c.pop('cluster_cella', None)
+        for nome, v in varianti.items():
+            ctr, ab = (v['kv'], v['ab1']) if nome_d == 'P1' else (v['pv'], v['ab2'])
+            pr, cn, _ = costruisci_casi(V, v['cv'], ctr, ab, Climatologia(v['ct'], v['kt'] if nome_d == 'P1' else v['pt']), p1)
+            out[nome] = blocco(pr, cn, rif=rif)[0]
+        return out
+
+    sec = {}
+    # S-CC (uguale per P1 e P2: non usa controlli)
+    pr, cn, _ = costruisci_casi(V, casi, None, cc, None, p1, cc=True)
+    sec['S-CC'] = blocco(pr, cn, colonne=('f0', 'f1', 'f1b'), domande={'Q1': DOMANDE['Q1'], 'Q2': DOMANDE['Q2']}, rif=princ['complessiva'])[0]
+    sec.update(famiglia('P1', ctrl, dis['P1'], clima_p1, princ['complessiva']))
+    incl = princ['incluse']
     spec = analizza([c for c in pronti if c['specie'] in incl], B, dom3, per_specie=True)
     sec['S-SPEC'] = {'complessiva': spec, 'contraddice': {q: contraddice(princ['complessiva'], spec, q) for q in dom3}}
-    # S-ARR e S-COMP: AUC delle colonne sulla complessiva principale
-    sec['S-ARR'] = {'auc_arrotondato': princ['complessiva']['auc']['arr'], 'auc_continuo': princ['complessiva']['auc']['f1'],
-                    'pari_arrotondato': princ['complessiva']['casi']['pari']['arr']}
-    comp = analizza(tot, B, {f'{k}': (k, None, DELTA_Q1) for k in ('c_S', 'c_rain', 'c_temp', 'c_moist', 'c_fh', 'c_rtm', 'arr')},
-                    colonne=('c_S', 'c_rain', 'c_temp', 'c_moist', 'c_fh', 'c_rtm', 'arr'))
+    comp_cols = ('c_S', 'c_rain', 'c_temp', 'c_moist', 'c_fh', 'c_rtm', 'arr')
+    comp = analizza(tot, B, {k: (k, None, DELTA_Q1) for k in comp_cols}, colonne=comp_cols)
     sec['S-COMP'] = comp
-    # S-D19: senza le unità il cui meteo viene dalle 10 richieste P1 del 23/10
-    sec['S-D19'] = secondaria('S-D19', [c for c in pronti if c['chiave'] not in D19_P1])
-    sec['S-D19']['casi_tolti'] = sum(1 for c in pronti if c['chiave'] in D19_P1)
-    # S-MACRO e quote (descrittive, senza etichetta)
+    sec['S-ARR'] = {'auc_arrotondato': princ['complessiva']['auc']['arr'], 'auc_continuo': princ['complessiva']['auc']['f1'],
+                    'pari_arrotondato': princ['complessiva']['casi']['pari']['arr'], 'Q1_arrotondato': comp['domande']['arr'],
+                    'contraddice': contraddice(princ['complessiva'], {'domande': {'Q1': comp['domande']['arr']}}, 'Q1')}
     strati = {}
     for m in ('Nord', 'Centro', 'Sud e isole'):
         strati['macro:' + m] = analizza([c for c in tot if c['macro'] == m], B, dom3)
@@ -847,29 +929,55 @@ def esegui(a):
     strati['quota:ignota'] = {'casi': {'n': sum(1 for c in tot if c['quota'] is None)}}
     sec['S-MACRO'] = strati
     sec['Lazio'] = analizza([c for c in tot if c['regione'] == 'Lazio'], B, dom3)
+    # S-D19 con gli stessi verdetti del principale
+    d19, _ = verdetti_completi([c for c in pronti if c['chiave'] not in D19_P1], B)
+    d19['casi_tolti'] = sum(1 for c in pronti if c['chiave'] in D19_P1)
+    d19['contraddice'] = {q: contraddice(princ['complessiva'], d19['complessiva'], q) for q in dom3}
+    sec['S-D19'] = d19
     risultati['secondarie'] = sec
 
-    # struttura per specie (8.1 del Lazio, D6, D8, D12)
+    # P2 (D1): descrittiva, con le sue secondarie (4.9 dell'Italia)
+    pr2, cn2, _ = costruisci_casi(V, casi, p2, dis['P2']['base'], clima_p2, p1)
+    p2r, tot2 = blocco(pr2, cn2, rif=princ['complessiva'])
+    chiavi_p2 = {c['uscita'] + (c['specie'],) for c in pr2}
+    p2r['P1_sugli_stessi_casi'] = blocco([c for c in pronti if c['uscita'] + (c['specie'],) in chiavi_p2])[0]
+    p2r['secondarie'] = famiglia('P2', p2, dis['P2'], clima_p2, None)
+    p2r['secondarie']['S-SPEC'] = {'complessiva': analizza([c for c in pr2 if c['specie'] in p2r['incluse']], B, dom3, per_specie=True)}
+    p2r['secondarie']['S-COMP'] = analizza(tot2, B, {k: (k, None, DELTA_Q1) for k in comp_cols}, colonne=comp_cols)
+    p2r['secondarie']['S-MACRO'] = {'macro:' + m: analizza([c for c in tot2 if c['macro'] == m], B, dom3) for m in ('Nord', 'Centro', 'Sud e isole')}
+    p2r['secondarie']['S-MACRO'].update({'quota:' + f: analizza([c for c in tot2 if fascia(c['quota']) == f], B, dom3) for _, _, f in FASCE})
+    risultati['P2'] = p2r
+
+    # esplorative, dopo aver visto i risultati (D21): stesso osservatore contro altri osservatori
+    esp = {}
+    for nome in ('E-STESSO-OSS', 'E-ALTRI-OSS'):
+        pr, cn, _ = costruisci_casi(V, casi, ctrl, dis['P1'][nome], clima_p1, p1)
+        esp[nome] = blocco(pr, cn)[0]
+    risultati['esplorative'] = esp
+
     struttura = {}
     for sp in C.ORDINE_SPECIE:
         cs = [c for c in casi if c['specie'] == sp]
-        ab = [m for c, m in zip(casi, disegni['P1']) if c['specie'] == sp]
+        ab = [m for c, m in zip(casi, dis['P1']['base']) if c['specie'] == sp]
         struttura[sp] = {'unita_caso_2023_2025': len(cs), 'con_controlli': sum(1 for m in ab if m),
                          'senza_controlli': sum(1 for m in ab if not m),
                          'bordo_anno': sum(1 for c, m in zip(cs, ab) if m and ((c['d'] - dt.date(c['anno'], 1, 1)).days < 30
-                                                                             or (dt.date(c['anno'], 12, 31) - c['d']).days < 30))}
+                                                                             or (dt.date(c['anno'], 12, 31) - c['d']).days < 30)),
+                         'valori_distinti': {k: len(distinti[(sp, k)]) for k in ('f0', 'f1', 'f1b', 'f2')}}
     usc = collections.Counter(c['uscita'] for c in pronti)
     struttura['uscite_con_piu_specie'] = {'uscite': sum(1 for v in usc.values() if v > 1), 'unita_in_piu': sum(v - 1 for v in usc.values() if v > 1)}
     struttura['controlli_P1_nel_periodo'] = len(ctrl)
-    struttura['controlli_P1_abbinati'] = len({k for m in disegni['P1'] for k in m})
+    struttura['controlli_P1_abbinati'] = len({k for m in dis['P1']['base'] for k in m})
     struttura['climatologia_ripieghi_italia'] = {f'{k[0]}|{k[1]}': v for k, v in sorted(clima_p1.ripieghi.items())}
     struttura['punti_ripiego'] = conta_ripieghi(a.dati, {c['chiave'] for c in pronti})
     struttura['scarto_orario'] = scarti(V)
     struttura['quote_mancanti'] = {'casi': sum(1 for c in casi if c['quota'] is None),
-                                   'controlli_abbinati': sum(1 for k in {k for m in disegni['P1'] for k in m} if ctrl[k]['quota'] is None)}
+                                   'controlli_abbinati': sum(1 for k in {k for m in dis['P1']['base'] for k in m} if ctrl[k]['quota'] is None)}
+    struttura['unita_con_regioni_diverse'] = unita_regioni_diverse(validi, sin)
     risultati['struttura'] = struttura
-    risultati['C-BM'] = cbm(V, gemelle, pronti, ctrl, disegni['P1'], casi)
+    risultati['C-BM'] = cbm(V, gemelle, pronti, ctrl)
     risultati['descrittiva'] = descrittiva(casi_t, ctrl_t)
+    risultati['descrittiva']['pesi_months'] = {sp: V.fattori['profili'][sp]['months'] for sp in C.ORDINE_SPECIE}
     esiti['risultati'] = risultati
     esiti['parametri'] = {'B': B, 'seme': SEME, 'delta_Q1': DELTA_Q1, 'delta': DELTA, 'etichettate': ETICHETTATE}
     return esiti
@@ -939,32 +1047,32 @@ def controllo_5(V, dati):
     return {'voci_controllate': n, 'serie': len(serie), 'differenza_massima': maxdiff}
 
 
-def cbm(V, gemelle, pronti, ctrl, abbinati, casi):
-    """C-BM (4.3 dell'Italia, D11, D19): differenze best match − icon_seamless sui predittori dei giorni valutati."""
+def cbm(V, gemelle, pronti, ctrl):
+    """C-BM (4.3 dell'Italia, D11, D19): differenze best match − icon_seamless sui predittori (r30, t20, umidità media a
+    3 giorni) dei giorni valutati nel principale (casi e controlli P1), un giorno per richiesta contato una volta."""
     serie = json.load(open(os.path.join(V.dati, 'serie-giornaliere.json')))
-    macro_cella = {}
-    for c in casi:
-        macro_cella.setdefault(c['cella'], c['macro'])
     cella_di = {q['chiave']: q.get('cella') for q in json.load(open(os.path.join(V.dati, 'richieste.json')))['richieste']}
+    giorni = {}
+    for c in pronti:
+        for d in [c['d']] + [ctrl[k]['d'] for k in c['controlli_id']]:
+            giorni.setdefault((c['chiave'], d.isoformat()), (c['specie'], c['macro']))
     righe = collections.defaultdict(list)
     escluse = 0
-    for (key, g, sp), j in V.voci.items():
+    for (key, g), (sp, macro) in sorted(giorni.items()):
         if key not in gemelle:
             continue
         kg = gemelle[key]
         if serie.get(key, {}).get('utc') != serie.get(kg, {}).get('utc'):
             escluse += 1
             continue
-        a, b = V.fattori['righe'][j], V.riga((kg, g, sp))
+        a, b = V.riga((key, g, sp)), V.riga((kg, g, sp))
         if not (a['complete'] and b['complete']):
             continue
-        cel = cella_di[key]
-        for con_d19 in (True, False):
-            if not con_d19 and (key in D19_P1 or kg == D19_CBM):
+        for tag in ('tutte', 'senza_D19'):
+            if tag == 'senza_D19' and (key in D19_P1 or kg == D19_CBM):
                 continue
-            tag = 'tutte' if con_d19 else 'senza_D19'
-            righe[(tag, g[:4], macro_cella.get(cel, 'ignota'))].append((b['r30'] - a['r30'], b['t20'] - a['t20'], b['sm'] - a['sm']))
-    out = {'coppie_escluse_scarto_diverso': escluse, 'gruppi': {}}
+            righe[(tag, g[:4], macro)].append((b['r30'] - a['r30'], b['t20'] - a['t20'], b['sm'] - a['sm']))
+    out = {'coppie_escluse_scarto_diverso': escluse, 'richieste_con_gemella': len({k for k, _ in giorni if k in gemelle}), 'gruppi': {}}
     for k in sorted(righe):
         v = np.array(righe[k])
         q = lambda x: [float(np.percentile(x, p, method='linear')) for p in (25, 50, 75)]
@@ -973,42 +1081,59 @@ def cbm(V, gemelle, pronti, ctrl, abbinati, casi):
 
 
 def descrittiva(casi_t, ctrl_t):
-    """11 del Lazio (D17): mese × fascia di quota, 2015–2025, sulle unità con quota."""
+    """11 del Lazio, 4.9 dell'Italia, D17: mese × fascia di quota, per tutta l'Italia e per macro-area, 2015–2025,
+    sulle unità con quota. q(m) = unità caso di X / tutte le unità (uscite distinte: caso di qualsiasi specie in prova
+    o controllo P1). Celle con meno di 10 unità: «pochi dati», senza q. Accanto i pesi mensili `months` dell'app."""
     out = {'unita_con_quota': 0, 'unita_senza_quota': 0, 'tabelle': {}}
-    tutte = casi_t + ctrl_t
-    out['unita_con_quota'] = sum(1 for u in tutte if u.get('quota') is not None)
-    out['unita_senza_quota'] = sum(1 for u in tutte if u.get('quota') is None)
-    den = collections.Counter((u['d'].month, fascia(u['quota'])) for u in ctrl_t if u.get('quota') is not None)
-    den_c = collections.Counter((u['d'].month, fascia(u['quota'])) for u in casi_t if u.get('quota') is not None)
-    for sp in C.ORDINE_SPECIE:
-        num = collections.Counter((u['d'].month, fascia(u['quota'])) for u in casi_t if u['specie'] == sp and u.get('quota') is not None)
-        tab = {}
-        for _, _, f in FASCE:
-            riga = []
-            for m in range(1, 13):
-                tot = den[(m, f)] + den_c[(m, f)]
-                riga.append({'casi': num[(m, f)], 'totale': tot, 'q': (num[(m, f)] / tot) if tot >= 10 else None})
-            qmax = max((x['q'] for x in riga if x['q'] is not None), default=None)
-            for x in riga:
-                x['q_rel'] = (x['q'] / qmax) if x['q'] is not None and qmax else None
-            tab[f] = riga
-        out['tabelle'][sp] = tab
+    uscite = {}
+    for u in ctrl_t + casi_t:
+        uscite.setdefault(u['chiave'], u)
+    out['unita_con_quota'] = sum(1 for u in uscite.values() if u.get('quota') is not None)
+    out['unita_senza_quota'] = sum(1 for u in uscite.values() if u.get('quota') is None)
+    for area in ('Italia', 'Nord', 'Centro', 'Sud e isole'):
+        dentro = lambda u: area == 'Italia' or u['macro'] == area
+        den = collections.Counter((u['d'].month, fascia(u['quota'])) for u in uscite.values() if u.get('quota') is not None and dentro(u))
+        tab_area = {}
+        for sp in C.ORDINE_SPECIE:
+            num = collections.Counter((u['d'].month, fascia(u['quota'])) for u in casi_t
+                                      if u['specie'] == sp and u.get('quota') is not None and dentro(u))
+            tab = {}
+            for _, _, f in FASCE:
+                riga = []
+                for m in range(1, 13):
+                    tot = den[(m, f)]
+                    riga.append({'casi': num[(m, f)], 'totale': tot, 'q': (num[(m, f)] / tot) if tot >= 10 else None})
+                qmax = max((x['q'] for x in riga if x['q'] is not None), default=None)
+                for x in riga:
+                    x['q_rel'] = (x['q'] / qmax) if x['q'] is not None and qmax else None
+                tab[f] = riga
+            tab_area[sp] = tab
+        out['tabelle'][area] = tab_area
     return out
 
 
 def riepilogo_versionabile(esiti):
-    """Solo aggregati: niente identificativi di record, osservatori, chiavi di uscita o valori meteo giornalieri."""
-    r = json.loads(json.dumps(esiti, default=str))
-    return r
+    """Solo aggregati. Oggi esiti.json contiene già solo aggregati: il riepilogo è la sua copia, e il controllo 7 lo
+    verifica su tutte le forme di identificativo che potrebbero entrarci per errore."""
+    return json.loads(json.dumps(esiti, default=str))
 
 
-def controllo_7(testo, validi_ids, osservatori):
-    for o in osservatori:
-        if o and o in testo:
-            raise Blocco('controllo 7: un identificativo di osservatore compare nel riepilogo')
-    for i in validi_ids:
-        if f'"{i}"' in testo or f' {i},' in testo:
-            raise Blocco('controllo 7: un identificativo di record compare nel riepilogo')
+def controllo_7(testo, dati, validi_ids, osservatori):
+    """Nessun identificativo di osservatore, record, richiesta meteo o cella, né serie meteo giornaliere."""
+    import re
+    if any(o and o in testo for o in osservatori):
+        raise Blocco('controllo 7: un identificativo di osservatore compare nel riepilogo')
+    numeri = set(re.findall(r'(?<![\d.])\d{6,}(?![\d.])', testo))
+    if numeri & validi_ids:
+        raise Blocco('controllo 7: un identificativo di record compare nel riepilogo')
+    el = json.load(open(os.path.join(dati, 'richieste.json')))['richieste']
+    if any(q['chiave'] in testo for q in el):
+        raise Blocco('controllo 7: una chiave di richiesta meteo compare nel riepilogo')
+    if any(f'"{q["cella"]}"' in testo for q in el if q.get('cella')):
+        raise Blocco('controllo 7: un identificativo di cella compare nel riepilogo')
+    for campo in ('"dates"', '"tmean"', '"soilm"', '"soilt"', '"precipitation_sum"'):
+        if campo in testo:
+            raise Blocco('controllo 7: una serie meteo compare nel riepilogo')
 
 
 def main():
@@ -1028,7 +1153,7 @@ def main():
     rie = riepilogo_versionabile(esiti)
     t2 = json.dumps(rie, ensure_ascii=False, sort_keys=True, indent=1, default=str)
     recs = C.leggi_jsonl(os.path.join(a.dati, 'osservazioni', 'inat.jsonl')) + C.leggi_jsonl(os.path.join(a.dati, 'osservazioni', 'gbif.jsonl'))
-    controllo_7(t2, {str(r['id']) for r in recs if len(str(r['id'])) >= 6}, {r.get('osservatore') for r in recs})
+    controllo_7(t2, a.dati, {str(r['id']) for r in recs if len(str(r['id'])) >= 6}, {r.get('osservatore') for r in recs})
     C.scrivi_atomico(a.uscita, t2 + '\n')
     print('esiti scritti; SHA-256 riepilogo', hashlib.sha256((t2 + '\n').encode()).hexdigest())
     return 0
