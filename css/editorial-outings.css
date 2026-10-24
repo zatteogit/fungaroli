@@ -1,6 +1,6 @@
 /* Giri pubblici d'autore: un invito al giro, con racconto simulato dichiarato. */
 body[data-page="giri"] #views { max-width:1160px; padding-inline:var(--gutter); }
-.editorial-outings-home { margin:44px 0; padding:28px 0; border-block:1px solid var(--hair); }
+.editorial-outings-home { margin:44px 0; padding:var(--home-band-gap, 28px) 0; border-block:1px solid var(--hair); }
 .editorial-index-heading { display:flex; justify-content:space-between; align-items:end; gap:24px; margin:0 0 16px; }
 .editorial-kicker { margin:0 0 10px; color:var(--accent); font:700 11px/1.5 var(--font-body); letter-spacing:.1em; text-transform:uppercase; }
 .editorial-index-heading :is(h1,h2) { margin:0 0 12px; color:var(--text); font:600 clamp(30px,4vw,46px)/1.12 var(--font-display); letter-spacing:-.025em; }

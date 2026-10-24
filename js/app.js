@@ -1029,8 +1029,9 @@ function discoveryWindow(after=state.homeDay??0){
 }
 const seasonNoteHtml=()=>state.seasonSuspended?`<p class="notice">${state.target==='funghi'?'Filtro sulle specie sospeso fuori dal calendario indicativo.':'Una scelta salvata è stata sospesa fuori dal calendario indicativo.'} <button type="button" class="link-btn" data-season-restore>Ripristina la scelta</button></p>`:'';
 const horizonNote=o=>o>=4?`Previsione a ${o} giorni`:'';
-// Oltre i tre giorni la previsione è meno stabile: lo diciamo sotto la proposta.
-const horizonHtml=o=>o>=4?`<p class="small muted home-horizon">${horizonNote(o)}: da ricontrollare prima di partire.</p>`:'';
+// Oltre i tre giorni la previsione è meno stabile: niente riga sotto la proposta, solo un suggerimento sull'etichetta
+// del giorno (decisione di Matteo del 24/10).
+const horizonTip=o=>o>=4?` title="${horizonNote(o)}: da ricontrollare prima di partire"`:'';
 // Cambio di giorno esplicito dalla home (prossima occasione, «Torna a oggi»).
 function chooseHomeDay(o){
  homeDateManual=true;if(state.homeDay===o)return;state.homeDay=o;checkSavedSeason();renderAll();
@@ -1043,7 +1044,7 @@ function homeNextHtml(m){
  if(c){
   const day=fmtDate(c.d.date,{weekday:'long',day:'numeric'}),cv=state.target==='funghi'?coverOf(c.z,c.d.best?.species?.id,c.d):outdoorCover(c);
   const w=c.weather,arrive=practicalTiming(c.z,c.d,c.walk).arrive,label=c.o===1?'domani':fmtDate(c.d.date,{weekday:'long'});
-  const facts=[Number.isFinite(c.s)?ring(c.s,false):'',w?.available?`<span class="home-next-wx">${wxi(w)}<span>${esc(w.level==='ok'?w.main:w.short||w.main)}</span></span>`:'',`<span>arrivo entro le ${fmtRough(arrive,15,'floor')}</span>`,horizonNote(c.o)?`<span>${horizonNote(c.o)}</span>`:''].filter(Boolean).join('');
+  const facts=[Number.isFinite(c.s)?ring(c.s,false):'',w?.available?`<span class="home-next-wx">${wxi(w)}<span>${esc(w.level==='ok'?w.main:w.short||w.main)}</span></span>`:'',`<span>arrivo entro le ${fmtRough(arrive,15,'floor')}</span>`].filter(Boolean).join('');
   return `<div class="home-next"><span class="home-next-media">${cv?`<img src="${esc(cv.small)}" alt="" loading="lazy" decoding="async">`:outdoorBackdrop()}</span><div class="home-next-copy"><small>${c.o===1?'Domani · ':''}${esc(day)}</small><h3>${esc(splitName(c.z)[0])}</h3><p class="home-next-facts">${facts}</p><button class="btn primary" type="button" data-home-next="${c.o}">Vedi ${esc(label)} <span aria-hidden="true">→</span></button></div></div>`;
  }
  // Senza meteo la riga del meteo non ha comandi: l'unico «Riprova» sta nel riquadro.
@@ -1180,7 +1181,7 @@ function homeCover({c,body,heading='',score=null,extraClass=''}) {
   return `<div class="cover cover-editorial vtn ${extraClass}" style="--vtn:cover" data-weather-key="${c.z.id}|${c.o}">
     ${homeCoverVisual(c)}<span class="shade"></span>
     <a class="cover-link" data-walk-zone="${c.z.id}" href="${walkHref(c.z,c.o,c.walk?.t)}" aria-label="${esc(title)}, ${esc(dayLabel(c.o,c.d.date,true))}: i dettagli della passeggiata"></a>
-    <div class="cover-panel"><span class="cover-top"><span class="pill glass">${esc(dayLabel(c.o,c.d.date,true))}</span><span class="cover-heading">${heading}</span>${score===null?'':`<button type="button" class="cover-index" data-index-tip aria-expanded="false" aria-label="Condizioni per l’uscita ${formatIndex(score)} su 10: come leggerle"><span>Condizioni</span><b>${fungusGlyph}<span>${formatIndex(score)}</span></b></button>`}</span>
+    <div class="cover-panel"><span class="cover-top"><span class="pill glass"${horizonTip(c.o)}>${esc(dayLabel(c.o,c.d.date,true))}</span><span class="cover-heading">${heading}</span>${score===null?'':`<button type="button" class="cover-index" data-index-tip aria-expanded="false" aria-label="Condizioni per l’uscita ${formatIndex(score)} su 10: come leggerle"><span>Condizioni</span><b>${fungusGlyph}<span>${formatIndex(score)}</span></b></button>`}</span>
     <span class="cover-body">${body}</span></div></div>`;
 }
 function outdoorCover(c) {
@@ -1230,7 +1231,7 @@ function renderOutdoorHome() {
   if(state.homeDay!=null){renderHomeDay(list,(c,badge)=>outdoorTile(c,false,badge));return;}
   const hero=list[0],box=$('#hero');
   const status=seasonNoteHtml();
-  updateWeatherHTML(box,status+(hero?outdoorTile(hero,true)+horizonHtml(hero.o):`<p class="notice">Nessun sentiero mappato corrisponde ai filtri. Puoi ampliarli o consultare le schede.</p><button class="btn ghost" type="button" data-outdoor-filters>Rivedi i filtri</button>`));
+  updateWeatherHTML(box,status+(hero?outdoorTile(hero,true):`<p class="notice">Nessun sentiero mappato corrisponde ai filtri. Puoi ampliarli o consultare le schede.</p><button class="btn ghost" type="button" data-outdoor-filters>Rivedi i filtri</button>`));
   box.querySelector('[data-outdoor-filters]')?.addEventListener('click',openFullFilters);box.querySelector('[data-season-restore]')?.addEventListener('click',restoreSeason);
   updateWeatherHTML($('#ranking'),list.slice(1,8).map(c=>`<li data-weather-key="${c.z.id}|${c.o}">${outdoorTile(c)}</li>`).join(''));finishAlternativeList();
   if(hero)renderDiscoveries($('#during-walk'),hero.z,hero.d,hero.walk);else {$('#during-walk').hidden=true;$('#during-walk').innerHTML='';}
@@ -2155,7 +2156,7 @@ function weekBestId(){
 function renderHomeDay(list,tile){
  const o=state.homeDay,box=$('#hero'),label=o===0?'Oggi':dayLabel(o,outdoorDate(o),true),best=weekBestId();
  const n=Math.min(list.length,8);
- updateWeatherHTML(box,`${seasonNoteHtml()}<section class="home-day-head" data-home-day="${o}"><h2>${esc(label)}</h2><p>${n===1?'Una uscita':n+' uscite'} per questo giorno, dalla migliore.${o>=4?' '+esc(horizonNote(o))+': da ricontrollare prima di partire.':''}</p><button type="button" class="link-btn" data-home-week>Torna alla settimana</button></section>`);
+ updateWeatherHTML(box,`${seasonNoteHtml()}<section class="home-day-head" data-home-day="${o}"><h2>${esc(label)}</h2><p>${n===1?'Una uscita':n+' uscite'} per questo giorno, dalla migliore.</p><button type="button" class="link-btn" data-home-week>Torna alla settimana</button></section>`);
  box.querySelector('[data-home-week]').addEventListener('click',()=>chooseHomeDay(null));
  box.querySelector('[data-season-restore]')?.addEventListener('click',restoreSeason);
  updateWeatherHTML($('#ranking'),list.slice(0,8).map((c,i)=>{const html=tile(c,i===0&&c.z.id===best?'La migliore della settimana':'');return html.startsWith('<li')?html:`<li data-weather-key="${c.z.id}|${c.o}">${html}</li>`;}).join(''));
@@ -2232,7 +2233,7 @@ function renderHomeContent() {
         <span class="cover-practical"><span class="facts" aria-label="L'uscita in breve">${t ? fact('clock', practicalTiming(hero.z,hero.d,hero.walk).available ? `<span class="fk">entro le </span><b>${fmtRough(t.arrive,15,'floor')}</b>` : `<b>${timingLateLabel(hero.z,hero.d,true)}</b>`) : ''}${travelFact(zoneTrip(hero.z,hero.walk))}${walkTimeFact(hero.walk)}${state.target==='funghi'&&hero.d.crowd ? `<span class="fact" title="${esc(crowdText(hero.d.crowd))}">${IC.people}<span class="fc">${crowdText(hero.d.crowd)}</span></span>` : ''}${w0 ? `<span class="fact wx-${w0.level}" title="${esc(w0.text)}">${wxi(w0)}<span class="fx">${esc(w0.level === 'ok' ? w0.main : (w0.short || w0.main))}</span></span>` : ''}</span>
         ${hero.z.collectionStatus==='observation_only'?'<span class="cover-local-rule">Uscita di osservazione · verifica le regole del Parco</span>':hero.z.collectionStatus==='restricted'?'<span class="cover-local-rule">Raccolta con limitazioni locali</span>':''}
         <span class="cover-cta" aria-hidden="true">Dai uno sguardo <span>→</span></span></span>
-        ${note}`})}${horizonHtml(hero.o)}`;
+        ${note}`})}`;
   if(weatherPainting)updateWeatherHTML(box,heroHTML);else box.innerHTML=heroHTML;
   box.querySelector('[data-season-restore]')?.addEventListener('click',restoreSeason);
   renderDiscoveries($('#during-walk'),hero.z,hero.d,hero.walk);
