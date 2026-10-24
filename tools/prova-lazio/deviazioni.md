@@ -490,6 +490,14 @@ sulle richieste o sulle analisi della prova principale (P1–P4 complete su entr
 
 Scritta mentre la P5 è ancora in corso; l'analisi descrittiva non è stata rifatta.
 
+**Aggiornamento del 24/10, sera.** Unito lo zip del Mac con `unisci_meteo.py`: 107 risposte copiate, 896 identiche,
+28 diverse (le stesse coppie di D19, solo pioggia), nessuna scartata; `richieste.json` identico sulle due macchine.
+P5 a 109 richieste su 353. `valuta.py` rifatto: cambiano solo l'istantanea (108 quote aggiunte, ammesse) e la
+descrittiva (15 231 uscite con quota); verdetti, AUC e intervalli identici. La descrittiva parziale non è
+rappresentativa per area (vedi README) e non si commenta finché la P5 non è completa. Qui lo scaricamento si era
+fermato (nessun processo dopo le 16:11 UTC, probabilmente per un riavvio del contenitore) ed è stato rilanciato con gli
+stessi parametri.
+
 
 ## Che cosa non cambia
 
