@@ -39,6 +39,6 @@ test('un solo ingresso: annotazione privata, ricerca a vuoto e scelta di condivi
  await page.goto('/#/zona/cicolano/0/sentiero/11098449');const actions=page.locator('.zone-actions');
  await expect(actions.locator('button')).toHaveCount(1);await expect(actions).toContainText('Anche una ricerca a vuoto conta. Scegli tu se condividere.');await actions.getByRole('button',{name:'Com’è andata?'}).click();
  const dialog=page.locator('.notebook-dialog[open]');await expect(dialog).toContainText('Quello che hai osservato');await expect(dialog.getByRole('switch',{name:/Condividi con Fronda/})).not.toBeChecked();await expect(dialog.locator('[name="presence"]')).toHaveValue('unknown');
- await dialog.locator('[name="presence"]').selectOption('searched_absent');await expect(dialog.locator('[name="amount"]')).toBeDisabled();await dialog.getByRole('button',{name:'Salva nel taccuino',exact:true}).click();await expect(dialog).toBeHidden();
+ await dialog.locator('[name="presence"]').selectOption('searched_absent');await expect(dialog.locator('[name="amount"]')).toBeDisabled();if(await dialog.locator('[name="effortClass"]').count())await dialog.locator('[name="effortClass"]').selectOption('lt30');await dialog.getByRole('button',{name:'Salva nel taccuino',exact:true}).click();await expect(dialog).toBeHidden();
  await page.goto('/#/diario');await page.locator('[href^="#/diario/pagina/"]').first().click();await expect(page.locator('.j-privacy').first()).toContainText('Solo per te');expect(writes).toEqual([]);await context.close();
 });

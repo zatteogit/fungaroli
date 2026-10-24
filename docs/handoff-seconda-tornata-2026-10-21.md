@@ -69,9 +69,12 @@ Interpretazione: su questa serie quasi tutto il cambiamento viene dal bonus tolt
 7. **Licenza delle zonazioni** sul Geoportale non indicata (`not_specified`): si pubblica solo il codice della zona per punto ([legale.md](legale.md), §8, punto 15).
 8. **Prova offline e 2.1.0.** `valuta.py` controlla l'impronta di `js/model.js` 2.0.0 e con la 2.1.0 si ferma. La parte misurata non cambia; il controllo va aggiornato come deviazione dichiarata, se si vuole ripetere la prova dopo l'unione.
 9. **Meteo storico vuoto.** Il 21/10/2026 la copia del servizio meteo aveva i primi 22 dei 62 giorni passati vuoti in tutte le 36 zone (il 15/10 erano 4). L'indice è calcolabile solo dall'11/10; le previsioni salvate hanno comunque 31 giorni. Da capire se è un limite di Open-Meteo o un problema temporaneo.
+   **Aggiornamento del 24/10 (fatto verificato).** Era un buco di Open-Meteo, non della cache: la copia del Worker è la risposta di Open-Meteo così com'è. La copia della Tancia salvata il 23/10 alle 21:07 UTC aveva vuoti i giorni fino al 10/09, come quella del 21/10 (22 giorni a partire dal 20/08). Il 24/10 una copia nuova, dalla produzione e chiedendo direttamente a Open-Meteo, ha tutti i 62 giorni. *Interpretazione:* Open-Meteo ha colmato il buco; le copie vecchie si rinnovano entro un'ora dalla visita. L'indice non ne risentiva: usa al massimo 30 giorni passati.
 10. **Quota di Open-Meteo.** Con 36 zone il tetto teorico con visite continue è circa 13.800 chiamate stimate al giorno, sopra il limite gratuito di 10.000 ([meteo-cache.md](meteo-cache.md#misure)). Durante il passaggio dalla v319 lo stesso luogo può essere rinnovato con due query.
-11. **Da costruire:** archivio quotidiano delle previsioni (D1), sforzo (D3), consenso alla ricerca (D4).
-12. Il `README.md` del repository descrive ancora lo shock come «pratica micologica, non verificata»: va allineato alla 2.1.0.
+    **24/10:** ancora aperto. Le misure vere sono nella dashboard admin (`weatherMetrics`, dietro login): servono chiamate pesate e picco orario di almeno due settimane, letti da Matteo.
+11. **Da costruire:** archivio quotidiano delle previsioni (D1), consenso alla ricerca (D4). Lo sforzo (D3) è costruito dal 24/10 nell'appunto sul fungo ([ux-taccuino.md](ux-taccuino.md)).
+12. ~~Il `README.md` del repository descrive ancora lo shock come «pratica micologica, non verificata»~~: allineato alla 2.1.0 il 24/10.
+13. **Sentieri e tramonto (24/10, decisione di Matteo).** Piante e Sentieri restano sulla regola della mattina finché il tratto dal parcheggio all'imbocco non è verificato. Fatto verificato: su 202 sentieri solo uno ha andata e ritorno verificati e nessuno ha il raccordo dal parcheggio (`parkingStatus` mai `verified`). Una stima DIN 33466 senza raccordo sottostimerebbe il tempo e farebbe sembrare possibile una partenza tarda.
 
 ## Verifiche
 

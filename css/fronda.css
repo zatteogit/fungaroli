@@ -745,6 +745,11 @@ body:has(#ranking .ring) #ranking-index-legend,body:has(#season .ring) #season-i
 .composer-effort[open] > summary { margin-bottom:12px; }
 .composer-numbers { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; }
 .composer-numbers label { min-width:0; }
+.composer-search { border:0; margin:0; padding:0; min-width:0; display:grid; gap:8px; }
+.composer-search > legend { padding:0; margin-bottom:4px; font-weight:600; }
+.composer-search-fields { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; }
+.composer-search-fields label { min-width:0; }
+.composer-search[hidden] { display:none; }
 .composer-sharing { padding:18px; border:1px solid var(--control-edge); border-radius:18px; background:var(--surface-2); }
 .composer-sharing > .composer-share-switch { display:flex; align-items:center; justify-content:space-between; gap:16px; }
 .composer-share-switch span { display:grid; gap:8px; }
