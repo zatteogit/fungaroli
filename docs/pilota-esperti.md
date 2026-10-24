@@ -36,11 +36,11 @@ dirlo chiaro nell'invito: è un impegno breve.
 > quanto hai cercato. I tuoi posti restano tuoi: Fronda non registra il GPS e negli aggregati mostra solo zone
 > ampie, senza nomi e senza giorni precisi. In cambio vedi cosa hanno trovato gli altri.
 >
-> Qui la guida di una pagina: [link]. L'app: https://fungaroli.zatteo.workers.dev
+> Qui sotto trovi una guida breve. L'app: https://fungaroli.zatteo.workers.dev
 >
 > Se non ti va, nessun problema.
 
-## Guida di una pagina (da inviare con l'invito)
+## Guida di una pagina (da incollare sotto l'invito)
 
 **Prima di partire**
 - Apri in Fronda la scheda dell'uscita: la zona e il giorno in cui vai. L'app salva da sola la previsione di quel
