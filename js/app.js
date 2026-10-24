@@ -16,7 +16,7 @@ import {speciesFeatures} from './species-search.js';
 import './modal-scroll.js';
 import {factCards,enhanceContentReading} from './content-ui.js';
 import {enhanceEntityAccordions,keepSummary} from './entity-accordions.js';
-import {plannedDeparture, recommendedStartAvailable, calendarDate} from './planning-time.js';
+import {plannedDeparture, recommendedStartAvailable, calendarDate, lateLabel} from './planning-time.js';
 import {speciesObservationContext} from './species-context.js';
 import { mapQuery, mountMapResults, compactMapFilters } from './map-experience.js';
 import './index-tip.js';
@@ -56,7 +56,7 @@ import { navigate, soft, setCoverResolver } from './motion.js';
 import { applyCrop } from './images.js';
 import { FOREST_LEGEND } from './forest-legend.js';
 import { initTrees, renderTreeGrid, renderTreePage, linkTrees, treeChips, treeForCategory, treeThumb, treePhotoSrc, treeHeroSrc } from './trees.js';
-import { crowding, comfortScore, timingAdvice, sunTimes, fmtTime, fmtRough, roundTime, intornoA, chooseAccess, accessFieldIndex, accessRow, walkPhrase, trackNote, fmtDist, fmtRise } from './human.js';
+import { crowding, comfortScore, timingAdvice, collectWindow, sunTimes, fmtTime, fmtRough, roundTime, intornoA, chooseAccess, accessFieldIndex, accessRow, walkPhrase, trackNote, fmtDist, fmtRise } from './human.js';
 import { prepareSiteInfo, alignedZones, excludedFn, warnedFn, bandReserve, RESERVE_BAND_TEXT, reserveLead, reserveAccessText, reserveLegendText, bandForestInfo, bandForestLines, zoneSiteInfo, zoneSiteLines, siteSources } from './site-info.js';
 import { predictScores, captureForecastData, FORECAST_INPUTS } from './forecast-capture.js';
 import { initCommunity, communityStatus, communityOverview,communityHasAccess,communityForEntity, communityRank, communityHasZone, communityDataAvailable, currentUser, reportBadge } from './community.js';
@@ -238,6 +238,10 @@ function practicalTiming(z, d, walk = null) {
   }
   const departure = plannedDeparture(arrive, trip.minutes);
   return {arrive, departure, rule, available:recommendedStartAvailable({date:d.date, today:todayISO(), arrive, travelMinutes:trip.minutes})};
+}
+// Scritta quando l'orario consigliato è passato: «Raccolta chiusa» dopo la fine della raccolta consentita (OUT-03).
+function timingLateLabel(z, d, short = false) {
+  return lateLabel({date:d.date, today:todayISO(), end:collectWindow(d.date, z.lat, z.lon).end, mushrooms:state.interests.includes('funghi'), short});
 }
 // Oggi è tardi quando ogni proposta di oggi ha superato l'ultima partenza utile.
 function homeTodayLate(){
@@ -2146,7 +2150,7 @@ function renderHomeContent() {
         <span class="cover-sp">${thumb(hero.d.best.species.id, 44)}<span><small>${hero.d.best.kind==='plant'?'Da osservare':'Da conoscere in questi boschi'}</small><span class="cover-sp-name"><b>${esc(hero.d.best.species.name)}</b> ${reportBadge(hero.z.id, hero.d.best.species.id)}</span>
           <small>${hero.d.best.kind==='plant'?`Periodo indicativo: ${esc(hero.d.best.phaseLabel.toLowerCase())}`:`${intornoA(hero.d.best.band)} ${bandShort(hero.z, hero.walk, hero.d.best, hero.d)}`}${hero.d.best.kind!=='plant' && pineHostUnsure(hero.z, hero.d.best.species, hero.d.best.band) ? ' · la carta non conferma i pini' : ''}</small></span></span>
         ${plantCoverHint(hero)}</span>
-        <span class="cover-practical"><span class="facts" aria-label="L'uscita in breve">${t ? fact('clock', practicalTiming(hero.z,hero.d,hero.walk).available ? `<span class="fk">entro le </span><b>${fmtRough(t.arrive,15,'floor')}</b>` : '<b>Orario superato</b>') : ''}${travelFact(zoneTrip(hero.z,hero.walk))}${walkTimeFact(hero.walk)}${state.target==='funghi'&&hero.d.crowd ? `<span class="fact" title="${esc(crowdText(hero.d.crowd))}">${IC.people}<span class="fc">${crowdText(hero.d.crowd)}</span></span>` : ''}${w0 ? `<span class="fact wx-${w0.level}" title="${esc(w0.text)}">${wxi(w0)}<span class="fx">${esc(w0.level === 'ok' ? w0.main : (w0.short || w0.main))}</span></span>` : ''}</span>
+        <span class="cover-practical"><span class="facts" aria-label="L'uscita in breve">${t ? fact('clock', practicalTiming(hero.z,hero.d,hero.walk).available ? `<span class="fk">entro le </span><b>${fmtRough(t.arrive,15,'floor')}</b>` : `<b>${timingLateLabel(hero.z,hero.d,true)}</b>`) : ''}${travelFact(zoneTrip(hero.z,hero.walk))}${walkTimeFact(hero.walk)}${state.target==='funghi'&&hero.d.crowd ? `<span class="fact" title="${esc(crowdText(hero.d.crowd))}">${IC.people}<span class="fc">${crowdText(hero.d.crowd)}</span></span>` : ''}${w0 ? `<span class="fact wx-${w0.level}" title="${esc(w0.text)}">${wxi(w0)}<span class="fx">${esc(w0.level === 'ok' ? w0.main : (w0.short || w0.main))}</span></span>` : ''}</span>
         ${hero.z.collectionStatus==='observation_only'?'<span class="cover-local-rule">Uscita di osservazione · verifica le regole del Parco</span>':hero.z.collectionStatus==='restricted'?'<span class="cover-local-rule">Raccolta con limitazioni locali</span>':''}
         <span class="cover-cta" aria-hidden="true">Dai uno sguardo <span>→</span></span></span>
         ${note}`})}${horizonHtml(hero.o)}`;
@@ -3124,7 +3128,7 @@ function essentialSections(z, d, walk) {
       attentionLine(observationRule)].filter(Boolean).join('') });
   if (d.crowd &&state.target==='funghi') {
     const t = timingAdvice({ dateStr: d.date, lat: z.lat, lon: z.lon, crowd: d.crowd });
-    rows.push({ sec: 'quando', icon: 'when', k: 'Quando', v: `<span>${practicalTiming(z,d,walk).available?`Arriva <b>entro le ${fmtRough(t.arrive,15,'floor')}</b>`:'<b>Orario consigliato superato</b>'}</span><span class="badge crowd-${d.crowd.level}">${crowdText(d.crowd)}</span>` });
+    rows.push({ sec: 'quando', icon: 'when', k: 'Quando', v: `<span>${practicalTiming(z,d,walk).available?`Arriva <b>entro le ${fmtRough(t.arrive,15,'floor')}</b>`:`<b>${timingLateLabel(z,d)}</b>`}</span><span class="badge crowd-${d.crowd.level}">${crowdText(d.crowd)}</span>` });
   }
   const w=wxOf(z,d);
   if(w){
