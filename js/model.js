@@ -20,7 +20,7 @@ export function externalFieldEvidence(dataset,zoneId,taxonId,day,{windowDays=7,n
     coverage:records.length?'observations_available':'no_usable_observations',rankingEffect:'none'};
 }
 
-export const MODEL_VERSION = '2.1.0'; // indice sperimentale; nessuna calibrazione locale. 2.1.0: shock sul suolo, solo porcino e porcino rosso
+export const MODEL_VERSION = '2.2.0'; // indice sperimentale; nessuna calibrazione locale. 2.1.0: shock sul suolo, solo porcino e porcino rosso. 2.2.0: shock tolto (prova 2023–2025, Q4 nullo)
 export const PARAMS = {
   r30Days: 30,          // finestra pioggia cumulata (Salerni et al. 2002: correlazione piu' forte a 30 gg)
   tDays: 20,            // finestra T media (preprint 2025: ~13 °C media dei 20 gg precedenti per B. edulis)

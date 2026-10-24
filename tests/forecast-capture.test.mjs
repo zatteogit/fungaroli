@@ -17,7 +17,9 @@ function band(drop = 6, extra = {}) {
 const zone = { id: 'prova', bands: [1100, 1350, 1600] };
 const hab = { sample_categories: ['Faggeta'], samples: Array.from({ length: 60 }, (_, k) => [1100 + (k % 3) * 250, 0]) };
 // il porcino al massimo resterebbe a 10/10 con e senza bonus: un mese a metà stagione abbassa il prodotto sotto 1
-const edulis = { ...SPECIES.find((s) => s.id === 'edulis'), months: Array(12).fill(0.5) };
+// Dal modello 2.2.0 nessuna specie dell'app ha soilShock: la cattura con e senza bonus si prova su un porcino con il
+// campo rimesso, come nel 2.1.0.
+const edulis = { ...SPECIES.find((s) => s.id === 'edulis'), months: Array(12).fill(0.5), soilShock: true };
 const species = [edulis, ...SPECIES.filter((s) => s.id !== 'edulis')];
 
 test('la previsione datata salva l’indice con e senza il bonus del calo del suolo', () => {
@@ -30,7 +32,7 @@ test('la previsione datata salva l’indice con e senza il bonus del calo del su
   assert.ok(f.scores.edulis <= Math.round(f.scoresNoShock.edulis * PARAMS.shockBonus) + 1);
   assert.equal(f.scores.pinophilus >= f.scoresNoShock.pinophilus, true);
   // le specie senza soilShock hanno lo stesso valore
-  for (const s of SPECIES.filter((x) => !x.soilShock)) assert.equal(f.scores[s.id], f.scoresNoShock[s.id], s.id);
+  for (const s of species.filter((x) => !x.soilShock)) assert.equal(f.scores[s.id], f.scoresNoShock[s.id], s.id);
   for (const b of zone.bands) assert.deepEqual(Object.keys(f.scoresByBandNoShock[b]).sort(), Object.keys(f.scoresByBand[b]).sort());
   // i fattori dello shock per fascia: stato, data e calo
   assert.equal(f.shock.bonus, PARAMS.shockBonus);

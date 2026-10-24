@@ -1,5 +1,5 @@
 // Punteggi della prova retrospettiva (preregistrazione.md, sezione 6; preregistrazione-italia.md, 4.3–4.6),
-// calcolati con js/model.js, js/species.js e js/weather.js importati senza modifiche.
+// calcolati con la copia congelata del modello 2.1.0 (modello-2.1.0/, stessi SHA-256 preregistrati di js/model.js, js/species.js e js/weather.js; D23).
 //
 // Uso: node tools/prova-lazio/fattori.mjs [cartella-dati]
 // Di solito lo lancia valuta.py. Legge dalla cartella dei dati (predefinita: dati/ accanto a questo file):
@@ -14,9 +14,9 @@ import { readFileSync, writeFileSync, renameSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { MODEL_VERSION, PARAMS, weatherFactors, seasonWeight, inputQuality } from '../../js/model.js';
-import { SPECIES } from '../../js/species.js';
-import { toDaily } from '../../js/weather.js';
+import { MODEL_VERSION, PARAMS, weatherFactors, seasonWeight, inputQuality } from './modello-2.1.0/model.js';
+import { SPECIES } from './modello-2.1.0/species.js';
+import { toDaily } from './modello-2.1.0/weather.js';
 
 const QUI = dirname(fileURLToPath(import.meta.url));
 const DATI = resolve(process.argv[2] || join(QUI, 'dati'));

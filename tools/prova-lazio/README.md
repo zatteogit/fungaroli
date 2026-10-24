@@ -8,7 +8,7 @@ pubblicate prima di leggere qualunque stima; D21 raccoglie le correzioni venute 
 **dopo** aver visto i risultati (nessun verdetto è cambiato).
 
 **Nessun esito cambia l'app.** `js/model.js`, `js/species.js` e `js/weather.js` non sono stati toccati:
-`fattori.mjs` li importa (SHA-256 uguali a quelli preregistrati, modello 2.1.0). L'indice di Fronda è sperimentale
+`fattori.mjs` importa una copia congelata del modello 2.1.0 in `modello-2.1.0/` (SHA-256 uguali a quelli preregistrati, D23): l'app è passata al 2.2.0 il 24/10, che si giudica sul 2026 (`preregistrazione-2026.md`). L'indice di Fronda è sperimentale
 (0–10) e **non è una probabilità**: qui si misura solo come ordina i giorni. Ogni cambiamento dell'app resta una
 decisione di Matteo.
 
@@ -224,7 +224,9 @@ Tre verifiche indipendenti, il 23/10, sugli esiti prima di D21:
   `esiti-riepilogo.json`, ma **non va letta**: le richieste seguono l'ordine dei punti e il Mac le scarica dal fondo
   dell'elenco, quindi oggi il Nord pesa 10 708 uscite, il Centro 2983, il Sud e isole 1507. Si rifà quando le quote
   sono complete (D17, D20.14, D22). Nessun verdetto dipende da lei.
-- **Conferma sul 2026**, con questo stesso protocollo, non prima del 31/03/2027 (2.3 del Lazio), se Matteo lo decide.
+- **Conferma sul 2026** del modello 2.2.0 (senza shock termico), preregistrata il 24/10/2026 in
+  `preregistrazione-2026.md`: non prima del 31/03/2027. Prima di scaricare i dati 2026 vanno registrati in D23 gli
+  SHA-256 di `js/model.js` e `js/species.js` 2.2.0.
 
 ## File
 
@@ -234,7 +236,8 @@ Tre verifiche indipendenti, il 23/10, sugli esiti prima di D21:
 | `deviazioni.md` | D1–D21: cambiamenti datati, con il momento (prima o dopo i risultati). |
 | `scarica_osservazioni.py`, `richieste.py`, `scarica_meteo.py`, `unisci_meteo.py`, `comune.py` | Scaricamento lento e con cache di osservazioni, richieste, meteo e quote; unione delle risposte di un secondo computer. Solo libreria standard. |
 | `prova_scarica_meteo.py` | Prova dello scaricamento con un server finto. |
-| `fattori.mjs` | Importa `js/model.js`, `js/species.js`, `js/weather.js` senza modificarli e calcola i punteggi. Lo lancia `valuta.py`. |
+| `fattori.mjs` | Importa il modello 2.1.0 congelato in `modello-2.1.0/` (copia senza modifiche dei moduli dell'app, D23) e calcola i punteggi. Lo lancia `valuta.py`. |
+| `preregistrazione-2026.md` | Conferma sul 2026 del modello 2.2.0 (senza shock termico), scritta prima della modifica. |
 | `valuta.py` | Controlli bloccanti, unità, abbinamento, climatologia, AUC, tre bootstrap, Holm, verdetti, secondarie, C-BM, descrittiva. Scrive `dati/esiti.json` ed `esiti-riepilogo.json`. Libreria standard e numpy. |
 | `esiti-riepilogo.json` | Solo aggregati dell'esecuzione del 23/10/2026. |
 

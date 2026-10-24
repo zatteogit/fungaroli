@@ -1,5 +1,31 @@
 # Il metodo e la validazione locale
 
+## Quanto funziona: la prova sull'Italia 2023–2025
+
+Ad ottobre 2026 abbiamo messo alla prova la parte meteo dell'indice su 973 ritrovamenti delle 14 specie in tutta Italia, tra il 2023 e il 2025 (iNaturalist e GBIF). Il protocollo è stato scritto prima di guardare i risultati. Per ogni ritrovamento abbiamo confrontato il giorno in cui la specie è stata trovata con le uscite di altri cercatori nella stessa zona e nello stesso periodo, in cui si sono trovati altri funghi.
+
+**Fatto verificato.**
+
+| Che cosa | Risultato |
+|---|---|
+| L'indice mette più in alto il giorno del ritrovamento? | Sì, ma di poco: il giorno del ritrovamento vince 57 confronti su 100, contro i 50 del caso. Vale in tutti e tre gli anni. |
+| Il meteo aggiunge qualcosa alla sola stagione? | Non si può dire: la sola stagione vince 55 confronti su 100, il meteo ne aggiunge meno di 2 e la differenza non si distingue dal caso. |
+| Per quali specie funziona meglio? | Porcino (63 su 100) e chiodino (68 su 100). Per le altre specie i dati non bastano a dirlo. |
+| Lo shock termico del porcino aiuta? | No: con o senza, l'ordine dei giorni resta lo stesso. Dal modello 2.2.0 non c'è più. |
+| Pioggia, temperatura, umidità del suolo | Pioggia e temperatura contano; l'umidità del suolo, da sola, non distingue i giorni di ritrovamento. |
+
+**Che cosa vuol dire (Interpretazione).** L'indice è una buona guida di stagione: dice bene *in che periodo* e *in che bosco* cercare. Sul *giorno preciso* dentro il periodo il meteo aiuta poco, e non è ancora dimostrato. Una parte del vantaggio può dipendere da chi esce e quando: confrontando la stessa persona in giorni diversi, il vantaggio si dimezza.
+
+**Limiti.** Sono dati di chi pubblica su iNaturalist e GBIF, non di cercatori tipici. Mancano le uscite a vuoto. Prevale il Nord: il Lazio ha 57 ritrovamenti, troppo pochi per un verdetto. I numeri valgono per le stagioni 2023–2025.
+
+**Il passo successivo.** La conferma sul 2026, con il modello 2.2.0, è scritta prima di vedere i dati e si farà non prima di aprile 2027. Le uscite a vuoto che annoti nel Taccuino («La tua ricerca») sono il dato che oggi manca di più.
+
+Dettagli, numeri e codice: `tools/prova-lazio/` nel repository (README, preregistrazioni, deviazioni).
+
+## Modello 2.2.0 · 24 ottobre 2026
+
+Il modello 2.2.0 toglie lo shock termico del porcino e del porcino rosso (sezione 6): nella prova sull'Italia non cambiava l'ordine dei giorni. Tutti gli altri fattori e parametri restano quelli del 2.1.0.
+
 ## Modello 2.1.0 · ottobre 2026
 
 Il modello 2.1.0 cambia un solo fattore dell'indice: lo shock termico. Ora vale solo per porcino e porcino rosso e guarda la temperatura del suolo, non quella dell'aria (sezione 6). L'evidenza è debole e lo diciamo: è un'osservazione preliminare in Francia. Le previsioni salvate conservano l'indice con e senza shock, per decidere a fine stagione se tenerlo.
@@ -27,7 +53,7 @@ Fonti, richieste, limiti e verifiche sono registrati in `incoming/lazio-pilot-20
 
 Fungaroli invita a passeggiare, scoprire sentieri e imparare. L’app ha lo scopo di diventare più accurata grazie alle osservazioni degli utenti. La validazione della trovabilità è ancora iniziale e nessuna percentuale di accuratezza è disponibile.
 
-Questa pagina spiega come Fungaroli Rieti calcola l’indice pubblico 0–10 con un decimale (modello 2.1.0; internamente 0–100 per conservare i dati storici) e che cosa c'è dietro ogni numero. I valori citati sono quelli in uso nell'app al momento della stesura.
+Questa pagina spiega come Fungaroli Rieti calcola l’indice pubblico 0–10 con un decimale (modello 2.2.0; internamente 0–100 per conservare i dati storici) e che cosa c'è dietro ogni numero. I valori citati sono quelli in uso nell'app al momento della stesura.
 
 ## Come leggere le etichette
 
@@ -58,10 +84,10 @@ Le preferenze di distanza, comodità e folla cambiano solo l’ordine dei consig
 ### La formula
 
 ```
-indice pubblico = 10 × stagione × habitat × quota × pioggia × temperatura × suolo × gelo × caldo × shock
+indice pubblico = 10 × stagione × habitat × quota × pioggia × temperatura × suolo × gelo × caldo
 ```
 
-Il prodotto è limitato tra 0 e 1. Internamente l'app conserva un intero 0–100; l’interfaccia lo divide per 10 e mostra un decimale italiano, per esempio 72 → 7,2. Lo shock termico è l'unico fattore che può superare 1: vale 1,15, solo per porcino e porcino rosso, e non si somma mai. Per le altre specie vale sempre 1. Nessuno di questi coefficienti è stato calibrato nel Reatino.
+Il prodotto è limitato tra 0 e 1. Internamente l'app conserva un intero 0–100; l’interfaccia lo divide per 10 e mostra un decimale italiano, per esempio 72 → 7,2. Fino al modello 2.1.0 c'era anche lo shock termico, l'unico fattore che poteva superare 1 (×1,15, solo porcino e porcino rosso): dal 2.2.0 non c'è più (sezione 6). Nessuno di questi coefficienti è stato calibrato nel Reatino.
 
 Una conseguenza del prodotto, da tenere a mente: basta un fattore vicino a zero per azzerare l'indice. È voluto (senza bosco adatto o fuori stagione non ha senso andare), ma rende il modello severo. Un fattore a 0,5 dimezza tutto, anche se gli altri sono perfetti.
 
@@ -76,11 +102,11 @@ Una conseguenza del prodotto, da tenere a mente: basta un fattore vicino a zero 
 | Sopra questo valore il suolo è pienamente umido | 0,26 m³/m³ | Euristica |
 | Minima che blocca o danneggia i carpofori | −1 °C | Euristica |
 | Massima che secca lettiera e carpofori | 30 °C | Euristica |
-| Calo della temperatura del suolo che conta come shock (solo porcino e porcino rosso) | 5 °C | Euristica, con il valore di un'osservazione preliminare (Olivier et al. 1997) |
+| Calo della temperatura del suolo che conta come shock (solo porcino e porcino rosso) | 5 °C (non usato dal 2.2.0) | Euristica, con il valore di un'osservazione preliminare (Olivier et al. 1997) |
 | Giorni tra il calo e il bonus | da 6 a 15 | Euristica, con i tempi della stessa osservazione |
 | Giorni della media di riferimento prima del calo | 3 | Euristica (la fonte non lo dice) |
 | Giorni su cui il calo può distribuirsi | 5 | Interpretazione delle «3–5 notti» della fonte |
-| Bonus del giorno con shock | ×1,15 | Euristica, senza fonte |
+| Bonus del giorno con shock | ×1,15 (non usato dal 2.2.0) | Euristica, senza fonte |
 | Semiampiezza della fascia di quota per leggere il bosco | 150 m | Euristica |
 
 ## I fattori, uno per uno
@@ -198,7 +224,9 @@ Se la massima di uno dei 3 giorni precedenti (da *d − 3* a *d − 1*) supera 3
 
 **Etichetta: Euristica**, con un appoggio parziale. Salerni, Paoli e Perini (2023) hanno osservato in abetine artificiali di *Abies alba* che picchi improvvisi della temperatura massima sembrano deprimere la produttività di *B. edulis* dove il bosco non è diradato o lo è poco, mentre nei siti molto diradati le alte temperature sembrano favorirla a partire da circa 20 giorni dopo l'evento. **Interpretazione**: lo studio conferma che i picchi di caldo contano, ma dice anche che l'effetto dipende dalla gestione del bosco, che il modello non conosce. La penalità fissa è una semplificazione.
 
-### 6. Shock termico: calo della temperatura del suolo
+### 6. Shock termico: calo della temperatura del suolo (tolto dal modello 2.2.0)
+
+**Dal modello 2.2.0 (24/10/2026) lo shock non entra più nell'indice.** Nella prova sull'Italia 2023–2025 (in apertura) l'ordine dei giorni era lo stesso con e senza bonus, entro ±0,01 su 110 ritrovamenti di porcino. La descrizione qui sotto resta come storia del modello 2.1.0.
 
 Dal modello 2.1.0 lo shock vale **solo per porcino e porcino rosso** e guarda la temperatura del suolo a 6 cm, una media giornaliera di Open-Meteo. Per le altre 12 specie il fattore vale sempre 1.
 
@@ -238,7 +266,7 @@ Gli autori presentano questi dati come una base da affinare. Il preprint di Brej
 
 **Che cosa cambia rispetto al modello 2.0.0.** Prima lo shock usava la temperatura dell'aria (calo di 4 °C tra 14 e 4 giorni prima) e valeva per tutte le 14 specie, ×1,225 per il chiodino. **Fatto verificato** il 21/10/2026 sul meteo reale delle 36 zone, dall'11 al 28 ottobre 2026 (10 giorni passati e 8 di previsione, copia del servizio meteo dell'app): su 9.072 combinazioni zona × giorno × specie l'indice cambia in 635 (7,0%). Ne scendono 632 e ne salgono 3. Il nuovo calo del suolo scatta in 5 combinazioni di porcino o porcino rosso su 1.296 (Domo e Cittareale, calo di circa 5,8 °C il 27 settembre); il vecchio calo dell'aria in 118. L'indice mostrato per la zona cambia in 63 zone-giorno su 648 (9,7%), la classe in 24. Dove cambia, la differenza media è di 0,4 punti su 10, al massimo 1,6 (chiodino). **Interpretazione**: su questa serie quasi tutta la differenza viene dal bonus tolto, non da quello nuovo. Sono 18 giorni di un solo autunno: non dicono quanto spesso il calo scatti in una stagione intera.
 
-**Il punto di decisione.** Le previsioni salvate conservano due indici: con e senza shock, oltre alla temperatura del suolo che lo ha deciso. A fine della prossima stagione, con uscite del Taccuino che abbiano zeri espliciti, si confrontano le due versioni sulle stesse uscite. Se la versione con shock non fa meglio, lo shock si toglie.
+**Il punto di decisione.** Le previsioni salvate conservano due indici: con e senza shock, oltre alla temperatura del suolo che lo ha deciso. A fine della prossima stagione, con uscite del Taccuino che abbiano zeri espliciti, si confrontano le due versioni sulle stesse uscite. Se la versione con shock non fa meglio, lo shock si toglie. **Esito** (24/10/2026): la prova sull'Italia ha anticipato la decisione e lo shock è stato tolto nel 2.2.0.
 
 ### 7. Habitat: la Carta Forestale campionata per fascia di quota
 
@@ -438,7 +466,7 @@ L'indice resta a metà scala nonostante tutto sia favorevole: 40 mm sono una pio
 
 Messi in ordine di importanza, secondo me.
 
-1. **Nessuna validazione locale.** Nessun parametro è stato confrontato con raccolte reali nel Reatino. Gli unici numeri presi da uno studio sul porcino vengono da un preprint su una faggeta tedesca.
+1. **Nessuna validazione locale.** Nessun parametro è stato confrontato con raccolte reali nel Reatino; la prova sull'Italia (in apertura) misura come l'indice ordina i giorni, non tara i parametri. Gli unici numeri presi da uno studio sul porcino vengono da un preprint su una faggeta tedesca.
 2. **Meteo da modello, non da stazione.** Open-Meteo fornisce dati di modelli meteorologici con correzione statistica per la quota. In montagna i temporali estivi molto locali possono essere sbagliati di decine di millimetri, e il fattore pioggia ne risente subito.
 3. **Pochi punti meteo per zona, scelti dal servizio.** La richiesta usa il centro della zona con le tre quote delle fasce. Open-Meteo sceglie la cella del modello anche in base alla quota: le tre fasce possono ricevere celle diverse, a qualche chilometro dal centro e anche fuori dal cerchio della zona. Il 15 ottobre 2026 a Vallonina la fascia dei 1200 m aveva una cella e quelle dei 1450 e 1650 m un'altra, entrambe a circa 5 km dal centro; per l'8 ottobre davano 19,2 e 6,3 mm di pioggia. Le fasce possono quindi avere pioggia e suolo diversi, ma non per questo rappresentano i versanti: un versante esposto alla pioggia e uno in ombra pluviometrica nello stesso cerchio non vengono distinti.
 4. **Cosa il modello non vede.** Esposizione e pendenza, età e struttura del bosco (l'app mostra ceduo o fustaia, esposizione e disturbi visti da satellite, ma l'indice non li usa; il rilievo della Carta è del 2005–2007), diradamenti, substrato e suolo reale, microclima di valle, singole fungaie, pressione di raccolta reale. Salerni et al. (2023) mostrano che la gestione forestale cambia la risposta al caldo: è un esempio concreto di variabile che manca. Per l'esposizione ci sono studi su pinete di pino silvestre dei Pirenei: Bonet et al. (2008) trovano più funghi con quota maggiore e versanti a nord e meno con pendenze forti; Bonet et al. (2010) indicano pendenza, quota ed esposizione tra i fattori importanti. I loro coefficienti non sono trasferibili alle faggete e ai querceti dell'Appennino.
@@ -459,7 +487,7 @@ Un segnale entra nell’ordine delle passeggiate con almeno tre contributori i c
 
 Prima della passeggiata si possono salvare indice, parametri, versione del modello, input meteo e habitat. Nel servizio collettivo la previsione è immutabile e datata dal server.
 
-Dal modello 2.1.0 la previsione salvata contiene, per ogni fascia, 31 giorni di pioggia, temperature, umidità del suolo a 3–9 e a 9–27 cm, temperatura del suolo ed ET₀. Contiene l'indice di ogni specie **con e senza shock** e, per porcino e porcino rosso, il calo che ha deciso il bonus. Così a fine stagione si possono confrontare le due versioni sulle stesse uscite (sezione 6). **In corso** (21/10/2026): il salvataggio automatico. È previsto una volta per zona e giorno, quando si apre l'uscita o si crea un ricordo, solo per oggi e i giorni futuri. Senza account la previsione resta sul dispositivo. Dopo l’uscita si annotano specie effettivamente cercate, inizio, durata, numero di cercatori e quantità. Per una specie cercata senza ritrovamenti lo zero è esplicito; per una specie non cercata il dato è mancante. La verifica dipende da orari e osservazioni dichiarati dall’utente, non certificati.
+Dal modello 2.1.0 la previsione salvata contiene, per ogni fascia, 31 giorni di pioggia, temperature, umidità del suolo a 3–9 e a 9–27 cm, temperatura del suolo ed ET₀. Contiene l'indice di ogni specie **con e senza shock** e, per porcino e porcino rosso, il calo che ha deciso il bonus; dal modello 2.2.0 nessuna specie ha lo shock e i due indici coincidono. Così a fine stagione si possono confrontare le due versioni sulle stesse uscite (sezione 6). **In corso** (21/10/2026): il salvataggio automatico. È previsto una volta per zona e giorno, quando si apre l'uscita o si crea un ricordo, solo per oggi e i giorni futuri. Senza account la previsione resta sul dispositivo. Dopo l’uscita si annotano specie effettivamente cercate, inizio, durata, numero di cercatori e quantità. Per una specie cercata senza ritrovamenti lo zero è esplicito; per una specie non cercata il dato è mancante. La verifica dipende da orari e osservazioni dichiarati dall’utente, non certificati.
 
 Il confronto automatico è per specie e richiede una previsione salvata prima dell’inizio dichiarato. Una ricostruzione a posteriori o una vecchia voce senza provenance non viene chiamata previsione corretta. La soglia esplorativa è 3,0/10 (30 nella scala interna), non calibrata. I conteggi di concordanza non misurano accuratezza scientifica e non trattano uscite della stessa buttata come indipendenti.
 
@@ -549,7 +577,7 @@ Questa sezione non compare nella pagina «Come funziona l'indice» dell'app: il 
 - I valori citati sono quelli di `js/model.js`, `js/species.js`, `js/human.js`, `js/outing.js` e `js/app.js`. Se cambiate un parametro nel codice, questo documento va aggiornato.
 - Fasce di quota delle zone: `data/zones.json`, campo `bands`. Notorietà: campo `popularity` nello stesso file. Zone proposte solo dai dati: `proposed_by: "dati"`.
 - Parametri globali: `PARAMS` in `js/model.js` — `r30Days` (30 giorni), `tDays` (20), `triggerMm` (8 mm), `moistDry` (0,10), `moistWet` (0,26), `frostC` (−1 °C), `heatC` (30 °C), `bandHalfWidth` (150 m); per lo shock `shockSoilDropC` (5 °C), `shockLagDays` ([6, 15]), `shockRefDays` (3), `shockOnsetDays` (5), `shockBonus` (1,15). `MODEL_VERSION` è `2.1.0`.
-- Specie che tollerano il gelo: flag `frostTolerant`. Shock termico: flag `soilShock`, solo `edulis` e `pinophilus`; `shockWeight` non esiste più (fino alla 2.0.0: predefinito 2, chiodino 3). Calcolo in `soilDrop()` e `soilTemperatureShock()` di `js/model.js`; stati `calo`, `nessun calo`, `dati incompleti`, `non previsto`; `inputQuality().bonusUnavailable` segnala la temperatura del suolo incompleta. Quote della specie: `elev`. Affinità per categoria forestale: `js/species.js`. La vecchia percentuale rimossa si chiamava `confidence`.
+- Specie che tollerano il gelo: flag `frostTolerant`. Shock termico: flag `soilShock`, nessuna specie dal 2.2.0 (fino al 2.1.0 `edulis` e `pinophilus`; il calcolo resta e i test lo provano su copie con il flag); `shockWeight` non esiste più (fino alla 2.0.0: predefinito 2, chiodino 3). Calcolo in `soilDrop()` e `soilTemperatureShock()` di `js/model.js`; stati `calo`, `nessun calo`, `dati incompleti`, `non previsto`; `inputQuality().bonusUnavailable` segnala la temperatura del suolo incompleta. Quote della specie: `elev`. Affinità per categoria forestale: `js/species.js`. La vecchia percentuale rimossa si chiamava `confidence`.
 - Il README descrive lo shock termico come "pratica micologica, non verificata": va allineato alla 2.1.0.
 - Habitat: script `tools/build_habitat.py`, servizio WFS `geonode:tipi_forestali2`, raggio della zona `radius_m`. Accessi: `data/access.json`.
 - Scelta delle zone: `inbox/zone-candidate.md` (testate locali) e `tools/scan_province.py` (scanner).
