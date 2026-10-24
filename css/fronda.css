@@ -1728,3 +1728,10 @@ button.cover-index > b { font-size:21px; line-height:1.2; }
 }
 
 #community-intro { scroll-margin-top:calc(var(--appbar-h) + env(safe-area-inset-top,0px) + 70px); }
+
+/* Vista del singolo giorno (decisione di Matteo del 24/10): niente copertina, un'intestazione compatta e la classifica. */
+.home-day-head { display:grid; gap:6px; padding:18px 20px; border:1px solid var(--hair); border-radius:20px; background:var(--surface-2); }
+.home-day-head h2 { margin:0; font-size:clamp(22px, 5vw, 28px); line-height:1.2; }
+.home-day-head p { margin:0; color:var(--text-2); font-size:15px; line-height:1.5; }
+.home-day-head .link-btn { justify-self:start; min-height:44px; }
+.tile-badge { justify-self:start; align-self:start; width:max-content; max-width:100%; padding:2px 8px; border-radius:999px; background:var(--calendula-soft); color:var(--calendula-ink); font-size:12px; font-weight:600; text-shadow:none !important; }

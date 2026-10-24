@@ -164,7 +164,7 @@ const state = {
   distancePenalty: false,
   avoidCrowd: false,
   preferComfort: false,
-  homeDay: 0,   // null = settimana, quando scelta esplicitamente
+  homeDay: null,   // null = «Questa settimana», la vista iniziale (decisione del 24/10)
   view: 'uscite',
 };
 try {
@@ -261,9 +261,8 @@ function syncAutomaticDates({reconsider=false}={}) {
   const key = homeChoiceKey();
   if (key !== homeAutoKey) { homeAutoKey = key; reconsider = true; }
   if (!homeDateManual && (reconsider || !homeAutoLocked)) {
-    const today=homeTodayLate(),next=today.late?discoveryWindow(0).next:null;
-    const plan=automaticHomeDay({todayLate:today.late,next});
-    homeAutoLate=plan.auto?{day:plan.day,deadline:today.deadline}:null;
+    const plan=automaticHomeDay({manual:false});
+    homeAutoLate=null;
     if (state.homeDay !== plan.day) { state.homeDay = plan.day; homeProposalKeys = []; changed = true; }
     // Con il meteo ancora in arrivo la scelta resta aperta, finché non emerge un giorno utile.
     if (!weatherBusy || plan.auto) homeAutoLocked = true;
@@ -1194,7 +1193,7 @@ function plantCoverHint(c) {
   const plant=(c.items?.length?c.items:outdoorDiscoveries(c.z,c.d,c.walk)).find(i=>i.kind==='pianta');
   return plant?`<span class="cover-sp cover-plant">${plantThumb(plant.id,44)}<span><small>Da osservare</small><span class="cover-sp-name"><b>${esc(plant.name)}</b></span><small>${esc(plant.phase)} · presenza da verificare</small></span></span>`:'';
 }
-function outdoorTile(c,hero=false) {
+function outdoorTile(c,hero=false,badge='') {
   const cv=outdoorCover(c),w=wxOf(c.z,c.d);
   if(hero){
     const [title,sub]=splitName(c.z);
@@ -1206,7 +1205,7 @@ function outdoorTile(c,hero=false) {
     return homeCover({c,body,heading,extraClass:'outdoor-hero'});
   }
   const brief=`${c.walk.t.difficulty||'Difficoltà n.d.'} · ${fmtKm(c.walk.t.in_zone_km)} km nel tratto`;
-  return `<a class="tile outdoor-tile" data-walk-zone="${c.z.id}" href="${walkHref(c.z,c.o,c.walk.t)}">${outdoorBackdrop()}${cv?`<img data-src="${cv.small}" alt="" loading="lazy">`:''}<span class="shade"></span>${w&&w.level!=='ok'?`<span class="tile-wx wx-${w.level}" title="${esc(OUTING_LABEL[w.level]+' · '+w.text)}" aria-label="${esc(OUTING_LABEL[w.level]+' · '+w.text)}">${wxi(w)}<span class="tile-wx-label">${esc(w.level==='non_disponibile'?'Da verificare':({storm:'Temporali',rain:'Pioggia',snow:'Neve',wind:'Vento forte',fog:'Nebbia'}[wxIcon(w)]||'Meteo incerto'))}</span></span>`:''}<span class="tile-body"><span class="tile-day">${esc(dayLabel(c.o,c.d.date,true))}</span><b>${esc(splitName(c.z)[0])}</b>${c.z.collectionStatus==='observation_only'?'<small>Uscita di osservazione</small>':''}<small>${esc(brief)}</small></span></a>`;
+  return `<a class="tile outdoor-tile" data-walk-zone="${c.z.id}" href="${walkHref(c.z,c.o,c.walk.t)}">${outdoorBackdrop()}${cv?`<img data-src="${cv.small}" alt="" loading="lazy">`:''}<span class="shade"></span>${w&&w.level!=='ok'?`<span class="tile-wx wx-${w.level}" title="${esc(OUTING_LABEL[w.level]+' · '+w.text)}" aria-label="${esc(OUTING_LABEL[w.level]+' · '+w.text)}">${wxi(w)}<span class="tile-wx-label">${esc(w.level==='non_disponibile'?'Da verificare':({storm:'Temporali',rain:'Pioggia',snow:'Neve',wind:'Vento forte',fog:'Nebbia'}[wxIcon(w)]||'Meteo incerto'))}</span></span>`:''}<span class="tile-body">${badge?`<small class="tile-badge">${esc(badge)}</small>`:''}<span class="tile-day">${esc(dayLabel(c.o,c.d.date,true))}</span><b>${esc(splitName(c.z)[0])}</b>${c.z.collectionStatus==='observation_only'?'<small>Uscita di osservazione</small>':''}<small>${esc(brief)}</small></span></a>`;
 }
 function plantRailItems(list) {
   const seen=new Set();return list.flatMap(c=>c.items||outdoorDiscoveries(c.z,c.d,c.walk)).filter(i=>i.kind==='pianta'&&!seen.has(i.id)&&seen.add(i.id)).slice(0,8);
@@ -1220,6 +1219,7 @@ function renderOutdoorHome() {
   const list=homePresentation.ready;
   homeProposalKeys=list.slice(0,8).map(c=>({id:c.z.id,o:c.o,trail:c.walk?.t.id}));
   if(!list.length){renderHomeEmpty();return;}
+  if(state.homeDay!=null){renderHomeDay(list,(c,badge)=>outdoorTile(c,false,badge));return;}
   const hero=list[0],box=$('#hero');
   const status=seasonNoteHtml();
   updateWeatherHTML(box,status+(hero?outdoorTile(hero,true)+horizonHtml(hero.o):`<p class="notice">Nessun sentiero mappato corrisponde ai filtri. Puoi ampliarli o consultare le schede.</p><button class="btn ghost" type="button" data-outdoor-filters>Rivedi i filtri</button>`));
@@ -2126,6 +2126,33 @@ document.addEventListener('click',e=>{
 },true);
 
 let homeProposalKeys=[];
+// Card di una proposta fungina nella classifica; badge facoltativo (vista del giorno, decisione del 24/10).
+function fungiTile(c, badge='') {
+    const cv = coverOf(c.z, c.d.best.species.id, c.d);
+    const trail = c.walk?.t;
+    const brief = trail ? `${trail.difficulty || 'Difficoltà n.d.'} · ${fmtKm(trail.in_zone_km)} km nel tratto` : '';
+    return `<li data-weather-key="${c.z.id}|${c.o}" class="vtn" style="--vtn:t-${c.z.id}-${c.o}"><a class="tile" data-walk-zone="${c.z.id}" href="${walkHref(c.z, c.o, c.walk?.t)}">
+      ${cv ? `<img data-src="${cv.small}" alt="" loading="lazy" decoding="async">` : ''}<span class="shade"></span>${ring(c.s, false)}${(() => { const w = wxOf(c.z, c.d); return w && w.level !== 'ok' ? `<span class="tile-wx wx-${w.level}" title="${esc(OUTING_LABEL[w.level]+' · '+w.text)}" aria-label="${esc(OUTING_LABEL[w.level]+' · '+w.text)}">${wxi(w)}<span class="tile-wx-label">${esc(w.level==='non_disponibile'?'Da verificare':({storm:'Temporali',rain:'Pioggia',snow:'Neve',wind:'Vento forte',fog:'Nebbia'}[wxIcon(w)]||'Meteo incerto'))}</span></span>` : ''; })()}
+      <span class="tile-body">${badge?`<small class="tile-badge">${esc(badge)}</small>`:''}<span class="tile-day">${esc(dayLabel(c.o, c.d.date, true))}</span><b>${esc(splitName(c.z)[0])}</b>${c.z.collectionStatus==='observation_only'?'<small>Uscita di osservazione</small>':''}${c.d.reserve?.all?'<small>Fascia in zona di riserva del Parco</small>':''}${brief ? `<small>${esc(brief)}</small>` : ''}</span>
+    </a></li>`;
+}
+// Vista del singolo giorno (decisione di Matteo del 24/10): niente copertina, che resta su «Questa settimana».
+// Un'intestazione compatta e la classifica completa; la prima card dice se è anche la migliore della settimana.
+function weekBestId(){
+ const fungi=state.target==='funghi',m=composeHome(homeCandidates(null),{fungi,modeled:!fungi||selectedSpecies().length>0});
+ return uniqueHomeCandidates(m.ready)[0]?.z.id||null;
+}
+function renderHomeDay(list,tile){
+ const o=state.homeDay,box=$('#hero'),label=o===0?'Oggi':dayLabel(o,outdoorDate(o),true),best=weekBestId();
+ const n=Math.min(list.length,8);
+ updateWeatherHTML(box,`${seasonNoteHtml()}<section class="home-day-head" data-home-day="${o}"><h2>${esc(label)}</h2><p>${n===1?'Una uscita':n+' uscite'} per questo giorno, dalla migliore.${o>=4?' '+esc(horizonNote(o))+': da ricontrollare prima di partire.':''}</p><button type="button" class="link-btn" data-home-week>Torna alla settimana</button></section>`);
+ box.querySelector('[data-home-week]').addEventListener('click',()=>chooseHomeDay(null));
+ box.querySelector('[data-season-restore]')?.addEventListener('click',restoreSeason);
+ updateWeatherHTML($('#ranking'),list.slice(0,8).map((c,i)=>{const html=tile(c,i===0&&c.z.id===best?'La migliore della settimana':'');return html.startsWith('<li')?html:`<li data-weather-key="${c.z.id}|${c.o}">${html}</li>`;}).join(''));
+ $('#others-h').hidden=true;
+ renderDiscoveries($('#during-walk'),list[0].z,list[0].d,list[0].walk);
+ renderSeason();renderCommunityIntro();
+}
 function renderHome(){renderHomeContent();finishHomeChrome();}
 function renderHomeContent() {
   arrangeHome();prepareHome();setOutingHeadings(homePresentation.ready);orderHomeBands();
@@ -2136,6 +2163,7 @@ function renderHomeContent() {
   const list=homePresentation.ready,hero=list[0],box=$('#hero');
   homeProposalKeys=list.slice(0,8).map(c=>({id:c.z.id,o:c.o,trail:c.walk?.t.id}));
   if(!hero){renderHomeEmpty();return;}
+  if(state.homeDay!=null){renderHomeDay(list,fungiTile);return;}
   $('#others-h').hidden = false;
   const t = state.target==='funghi'&&hero.d.crowd ? timingAdvice({ dateStr: hero.d.date, lat: hero.z.lat, lon: hero.z.lon, crowd: hero.d.crowd }) : null;
   const a0 = access[hero.z.id]?.[0];
@@ -2159,15 +2187,7 @@ function renderHomeContent() {
   box.querySelector('[data-season-restore]')?.addEventListener('click',restoreSeason);
   renderDiscoveries($('#during-walk'),hero.z,hero.d,hero.walk);
   const ol = $('#ranking');
-  const rankingHTML = list.slice(1, 8).map((c) => {
-    const cv = coverOf(c.z, c.d.best.species.id, c.d);
-    const trail = c.walk?.t;
-    const brief = trail ? `${trail.difficulty || 'Difficoltà n.d.'} · ${fmtKm(trail.in_zone_km)} km nel tratto` : '';
-    return `<li data-weather-key="${c.z.id}|${c.o}" class="vtn" style="--vtn:t-${c.z.id}-${c.o}"><a class="tile" data-walk-zone="${c.z.id}" href="${walkHref(c.z, c.o, c.walk?.t)}">
-      ${cv ? `<img data-src="${cv.small}" alt="" loading="lazy" decoding="async">` : ''}<span class="shade"></span>${ring(c.s, false)}${(() => { const w = wxOf(c.z, c.d); return w && w.level !== 'ok' ? `<span class="tile-wx wx-${w.level}" title="${esc(OUTING_LABEL[w.level]+' · '+w.text)}" aria-label="${esc(OUTING_LABEL[w.level]+' · '+w.text)}">${wxi(w)}<span class="tile-wx-label">${esc(w.level==='non_disponibile'?'Da verificare':({storm:'Temporali',rain:'Pioggia',snow:'Neve',wind:'Vento forte',fog:'Nebbia'}[wxIcon(w)]||'Meteo incerto'))}</span></span>` : ''; })()}
-      <span class="tile-body"><span class="tile-day">${esc(dayLabel(c.o, c.d.date, true))}</span><b>${esc(splitName(c.z)[0])}</b>${c.z.collectionStatus==='observation_only'?'<small>Uscita di osservazione</small>':''}${c.d.reserve?.all?'<small>Fascia in zona di riserva del Parco</small>':''}${brief ? `<small>${esc(brief)}</small>` : ''}</span>
-    </a></li>`;
-  }).join('');
+  const rankingHTML = list.slice(1, 8).map(c=>fungiTile(c)).join('');
   if(weatherPainting)updateWeatherHTML(ol,rankingHTML);else ol.innerHTML=rankingHTML;
   finishAlternativeList();
   fitFacts($('#hero .facts'));

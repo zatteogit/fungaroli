@@ -44,19 +44,16 @@ test('late departure uses the latest deadline among today proposals',()=>{
  assert.equal(latestDeadline([a,null,b,new Date('x')]),b);
  assert.equal(latestDeadline([null]),null);
 });
-test('automatic day moves past a late today only without a manual choice',()=>{
- const next={o:1};
- assert.deepEqual(automaticHomeDay({todayLate:true,next}),{day:1,auto:true});
- assert.deepEqual(automaticHomeDay({todayLate:true,next:{o:3}}),{day:3,auto:true});
- assert.deepEqual(automaticHomeDay({todayLate:true,next:null}),{day:0,auto:false});
- assert.deepEqual(automaticHomeDay({todayLate:false,next}),{day:0,auto:false});
- assert.deepEqual(automaticHomeDay({manual:true,current:0,todayLate:true,next}),{day:0,auto:false});
- assert.deepEqual(automaticHomeDay({manual:true,current:null,todayLate:true,next}),{day:null,auto:false});
+test('senza una scelta la home apre «Questa settimana»; una scelta manuale resta (24/10)',()=>{
+ assert.deepEqual(automaticHomeDay(),{day:null,auto:false});
+ assert.deepEqual(automaticHomeDay({manual:false,current:2}),{day:null,auto:false});
+ assert.deepEqual(automaticHomeDay({manual:true,current:0}),{day:0,auto:false});
+ assert.deepEqual(automaticHomeDay({manual:true,current:null}),{day:null,auto:false});
 });
 test('midnight keeps the chosen calendar date',()=>{
  assert.deepEqual(shiftChosenDay(1,1),{day:0,manual:true});
  assert.deepEqual(shiftChosenDay(3,2),{day:1,manual:true});
- assert.deepEqual(shiftChosenDay(0,1),{day:0,manual:false});
+ assert.deepEqual(shiftChosenDay(0,1),{day:null,manual:false},'un giorno ormai passato torna alla settimana');
  assert.deepEqual(shiftChosenDay(null,1),{day:null,manual:true});
  assert.deepEqual(shiftChosenDay(2,0),{day:2,manual:true});
 });
