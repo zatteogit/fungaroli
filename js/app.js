@@ -2211,7 +2211,8 @@ function renderCommunityIntro() {
   const mode=homeIntro.mode(homeIntroOwner(),!!homePresentation?.ready.length,{pending:homePresentation?.state==='loading'});
   box.hidden=mode==='hidden';box.classList.toggle('is-compact',mode==='compact');
   if(mode==='hidden'){introObserver?.disconnect();box.replaceChildren();return;}
-  if(mode==='compact'){box.innerHTML=`<span>${IC.people}<b>Un bosco, tante esperienze.</b></span><button class="link-btn" type="button" data-home-how-open>Come funziona la condivisione <span aria-hidden="true">→</span></button>`;observeHomeIntro(box);return;}
+  // Vignette compatte (decisione di Matteo del 24/10): le tre cose che si fanno, in una fascia bassa.
+  if(mode==='compact'){box.innerHTML=`<p class="community-mini-title">Un bosco, tante esperienze</p><ul class="community-mini"><li><span class="community-mini-icon">${IC.people}</span><span><b>Vedi</b><small>cosa si trova in giro</small></span></li><li><span class="community-mini-icon">${notebookGlyph}</span><span><b>Racconta</b><small>le tue uscite</small></span></li><li><span class="community-mini-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></span><span><b>Condividi</b><small>e scopri gli altri</small></span></li></ul><button class="link-btn" type="button" data-home-how-open>Come funziona la condivisione <span aria-hidden="true">→</span></button>`;observeHomeIntro(box);return;}
   // Do not replace an explanation currently being read on a date/weather refresh.
   const stamp=homeIntroOwner()+'|'+communityStatus()+'|'+communityOverview();
   if(box.querySelector('.community-vignettes')&&box._introStamp===stamp)return;
