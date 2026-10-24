@@ -1,9 +1,11 @@
 // Valutazione documentale: una linea in mappa non prova accesso, raccordo o apertura.
-import {distanceMeters} from './walks.js';
+import {distanceMeters,sourceTimeIssue} from './walks.js';
 export function geometrySignature(lines){const s=JSON.stringify(lines||[]);let h=2166136261;for(let i=0;i<s.length;i++)h=Math.imul(h^s.charCodeAt(i),16777619);return(h>>>0).toString(16).padStart(8,'0');}
 export function assessWalkingRoute(t){
  const lines=(t.lines||[]).filter(l=>l.length>1),sameLength=Number.isFinite(t.total_km)&&Number.isFinite(t.in_zone_km)&&Math.abs(t.total_km-t.in_zone_km)<.05;
- const e=t.wholeTrailEvidence,verified=!!e&&e.geometrySignature===geometrySignature(t.lines)&&sameLength&&lines.length===1&&e.scope==='whole_trail_one_way'&&Number.isFinite(e.minutes)&&e.minutes>0;
+ const e=t.wholeTrailEvidence,verified=!!e&&e.geometrySignature===geometrySignature(t.lines)&&sameLength&&lines.length===1&&e.scope==='whole_trail_one_way'&&Number.isFinite(e.minutes)&&e.minutes>0
+  // OUT-03, punto 4: un tempo della fonte giudicato non plausibile (sourceTimeIssue) non diventa mai un numero mostrato.
+  &&!sourceTimeIssue(t);
  const v=t.routeValidation,network=verified&&v?.status==='network_correspondence_checked'&&v.geometrySignature===geometrySignature(t.lines)&&v.connectedSimpleChain&&!(v.cautions||[]).length;
  const sourceReturn=v?.sourceDurations?.['duration:backward'],parts=typeof sourceReturn==='string'&&/^(\d+):([0-5]\d)$/.exec(sourceReturn),sourceReturnMinutes=parts?Number(parts[1])*60+Number(parts[2]):null;
  const back=network&&v.return?.status==='same_trail_reversed'&&v.return.geometrySignature===v.geometrySignature&&v.return.sourceTag==='duration:backward'&&Number.isFinite(v.return.minutes)&&v.return.minutes>0&&v.return.minutes===sourceReturnMinutes?v.return.minutes:null;

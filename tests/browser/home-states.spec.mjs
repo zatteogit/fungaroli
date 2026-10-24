@@ -113,3 +113,13 @@ test('riga unica del meteo: copia delle 12:10 da aggiornare, dettagli su richies
  await expect(page.locator('.home-weather-status')).not.toContainText('in parte ·');
  expect(errors).toEqual([]);
 });
+// OUT-03, punto 1 (24/10/2026): dopo la fine della raccolta consentita (un'ora dopo il tramonto) la scheda non dice
+// «orario superato» ma «Raccolta chiusa». Il 21/10 a Rieti il tramonto è verso le 18:15: la raccolta chiude verso le 19:15.
+test('scheda di oggi: orario superato nel pomeriggio, raccolta chiusa la sera',async({page})=>{
+ const errors=await openHome(page,{time:T('16:30')});
+ await page.goto('/#/zona/tancia/0');const when=page.locator('.view:not([hidden])').getByText(/Orario consigliato superato|Raccolta chiusa/).first();
+ await expect(when).toHaveText('Orario consigliato superato');
+ await page.clock.setSystemTime(T('19:30'));await page.goto('/#/');await page.goto('/#/zona/tancia/0');
+ await expect(page.locator('.view:not([hidden])').getByText(/Orario consigliato superato|Raccolta chiusa/).first()).toHaveText('Raccolta chiusa');
+ expect(errors).toEqual([]);
+});

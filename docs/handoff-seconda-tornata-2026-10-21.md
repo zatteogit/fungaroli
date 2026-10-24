@@ -57,10 +57,10 @@ Interpretazione: su questa serie quasi tutto il cambiamento viene dal bonus tolt
 
 **OUT-03, lacune della v319 viste leggendo il codice** (non provate nel browser):
 
-1. Dopo la fine della raccolta consentita (un'ora dopo il tramonto) la scheda dice solo «Orario consigliato superato» (in copertina «Orario superato»): non distingue «tardi» da «raccolta chiusa».
+1. ~~Dopo la fine della raccolta consentita la scheda dice solo «Orario consigliato superato»~~. **Corretto il 24/10:** per chi cerca funghi, oggi, dopo un'ora dal tramonto la scheda e la copertina dicono «Raccolta chiusa» (`lateLabel` in `js/planning-time.js`).
 2. Il meteo dell'uscita è sempre la finestra della mattina (dall'apertura della raccolta alle 13, `outingFor` in `js/outing.js`): la sera si vede ancora il meteo della mattina di oggi.
-3. `syncAutomaticDates()` riporta la home su oggi a ogni controllo dell'orologio, se il giorno non è stato scelto a mano; solo la mappa passa a domani quando l'orario consigliato è superato.
-4. `walkTimeText()` in `js/app.js` mostra il tempo a piedi dei sentieri (da `assessWalkingRoute`) senza passare da `sourceTimeIssue()`: un tempo della fonte giudicato non plausibile nei dettagli può comparire come numero nella copertina e nelle card.
+3. ~~`syncAutomaticDates()` riporta la home su oggi~~. Superato dalla PR zatteogit/fungaroli#232: dopo l'ultima partenza utile la home passa da sola al giorno utile.
+4. ~~`walkTimeText()` mostra il tempo a piedi senza passare da `sourceTimeIssue()`~~. **Corretto il 24/10** in `assessWalkingRoute`: un tempo della fonte non plausibile non diventa mai un numero dell'uscita. Fatto verificato: oggi nessun sentiero era colpito (l'unico con un tempo mostrato passa il controllo).
 5. In `js/human.js` restano gli aiuti OUT-03 della seconda tornata (`todayGone`, `timingState`, `departureAdvice` e altri) con i loro test in `tests/human.test.mjs`, ma l'app non li usa. Da decidere: toglierli o usarli per i punti 1–3.
 
 **Altro.**
