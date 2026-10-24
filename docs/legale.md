@@ -427,6 +427,19 @@ Decisioni di Matteo del 16 e del 24/10/2026. Fatto verificato nel codice del 24/
 - **Esportazione per lo studio.** `researchRows` in `js/research-export.js` (24/10) usa solo le osservazioni dei profili con consenso attivo al momento dell'esportazione, senza testo, foto, titoli o posizione, con un pseudonimo al posto dell'ID del profilo. Oggi nessun endpoint del server la espone: quando servirà, andrà riservata agli amministratori e documentata qui.
 - *Da rivedere dal titolare:* la formula della base giuridica, come il resto della sezione «Su che base».
 
+### 6.8 Database della community nell'Unione europea (24/10/2026)
+
+Decisione di Matteo del 24/10/2026. Fatto verificato con l'API di Cloudflare lo stesso giorno.
+
+- **Prima.** `fungaroli-community` girava in Nord America orientale (ENAM), senza giurisdizione. L'informativa diceva che il database non era vincolato a una collocazione europea.
+- **Ora.** `COMMUNITY_DB` punta a `fungaroli-community-eu`, creato con giurisdizione `eu`.
+  - Secondo la documentazione di Cloudflare, la giurisdizione stabilisce dove il database gira e conserva i dati, comprese le eventuali repliche. Il Worker invece può accedervi da qualunque luogo: le richieste passano dalla rete globale.
+  - KV e `fungaroli-content` (contenuti pubblici) restano senza giurisdizione.
+  - Procedura e verifica in [migrazione-d1-ue-2026-10-24.md](migrazione-d1-ue-2026-10-24.md).
+- **Informativa.** Versione editoriale 10 di `data/legal.json`, `acceptance_version` sempre 1: nessuna nuova conferma degli avvisi. Cambia solo la parte «Dove stanno i dati». Indica il vincolo UE del database, ciò che resta fuori dal vincolo e la copia precedente negli Stati Uniti, conservata fino al 23/11/2026.
+
+---
+
 ## 7. Licenze e attribuzioni
 
 | Fonte | Licenza | Obblighi | Stato nell'app |
