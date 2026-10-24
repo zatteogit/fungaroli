@@ -499,6 +499,20 @@ fermato (nessun processo dopo le 16:11 UTC, probabilmente per un riavvio del con
 stessi parametri.
 
 
+## D23. Modello 2.1.0 congelato per la prova; conferma 2026 preregistrata (24/10/2026, **dopo i risultati**)
+
+Decisione di Matteo del 24/10/2026: togliere dall'app lo shock termico (modello 2.2.0) e giudicare il modello nuovo
+sul 2026, con `preregistrazione-2026.md` scritta prima della modifica.
+
+- **Copia congelata.** Cambiare `js/model.js` e `js/species.js` farebbe fallire il controllo 1 e cambierebbe i
+  punteggi della prova 2023–2025, che va rifatta quando la priorità 5 è completa. Gli otto moduli che la prova usa
+  (i sei controllati più `weather-request.js` e `weather-cache.js`, importati da `weather.js`) sono copiati senza
+  modifiche in `modello-2.1.0/`. `fattori.mjs` importa da lì e il controllo 1 confronta i file della copia con gli
+  stessi SHA-256 preregistrati. **Fatto verificato:** `valuta.py` sulla copia dà un riepilogo identico al
+  precedente, salvo i percorsi del controllo 1.
+- **SHA-256 del modello 2.2.0** (per il controllo 1 della conferma 2026): si aggiungono qui dopo l'unione nel ramo di
+  produzione, prima di scaricare dati del 2026.
+
 ## Che cosa non cambia
 
 Domanda principale, disegno P1, unità, celle, finestre, δ, punteggi (0), (1), (1b), seme del bootstrap, completezza,

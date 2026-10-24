@@ -40,12 +40,12 @@ DELTA_Q1, DELTA = 0.05, 0.03
 ETICHETTATE = ['edulis', 'aereus', 'aestivalis', 'caesarea', 'cibarius', 'cornucopioides', 'procera', 'mellea',
                'virescens', 'suillus']  # D3
 HASH_MODULI = {  # 12 del Lazio, controllo 1
-    'js/model.js': '2f9a8a540eca4a4bbc248231f8dd97ac963de6c2ede8d21c28874addc5458bcc',
-    'js/species.js': '10f451b8867f7ed1f156a2a1073d699bd5925896335b8c13a8922cfbb1817907',
-    'js/botanical-model.js': '75466dcd22524be0472443bb1f54559c4401d8b88dbc3de0075cf5ff5e558a64',
-    'js/external-observation.js': 'ef04cf5202df0dda514f4ee26c6d38cab0a8698ad5a1991b3dca1cd6798fb954',
-    'js/weather.js': '73dd78c53a742fe0bdaeed7dfea082b86b782c48a1ce1477fb051b6c4b17869d',
-    'js/weather-data.js': '13c30d25462a44d5a77bff14047bf6751a99e101c8e2b4b12fdef65196eaf0e4',
+    'tools/prova-lazio/modello-2.1.0/model.js': '2f9a8a540eca4a4bbc248231f8dd97ac963de6c2ede8d21c28874addc5458bcc',
+    'tools/prova-lazio/modello-2.1.0/species.js': '10f451b8867f7ed1f156a2a1073d699bd5925896335b8c13a8922cfbb1817907',
+    'tools/prova-lazio/modello-2.1.0/botanical-model.js': '75466dcd22524be0472443bb1f54559c4401d8b88dbc3de0075cf5ff5e558a64',
+    'tools/prova-lazio/modello-2.1.0/external-observation.js': 'ef04cf5202df0dda514f4ee26c6d38cab0a8698ad5a1991b3dca1cd6798fb954',
+    'tools/prova-lazio/modello-2.1.0/weather.js': '73dd78c53a742fe0bdaeed7dfea082b86b782c48a1ce1477fb051b6c4b17869d',
+    'tools/prova-lazio/modello-2.1.0/weather-data.js': '13c30d25462a44d5a77bff14047bf6751a99e101c8e2b4b12fdef65196eaf0e4',
 }
 # D19: risposte scaricate il 23/10/2026 (pioggia di un'altra versione del servizio)
 D19_P1 = {'2b43f63ab9e7b74b0fca3c39', '2bb454859585af820946cd55', '3bb78fd55a0edce56b81c9dd', '57e442127fb23a439bcf204d',
