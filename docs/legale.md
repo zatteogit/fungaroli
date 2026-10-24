@@ -424,7 +424,7 @@ Decisioni di Matteo del 16 e del 24/10/2026. Fatto verificato nel codice del 24/
   - La storia delle scelte è nella copia dei propri dati. «Elimina profilo e dati» la cancella.
 - **Pregresso.** La migrazione 0015 toglie `researchConsent` dalle fotografie già salvate. Le osservazioni condivise prima del 24/10 entrano nello studio solo se il profilo dà il consenso nuovo (decisione di Matteo).
 - **Informativa.** Versione editoriale 9 di `data/legal.json`, `acceptance_version` sempre 1: nessuna nuova conferma degli avvisi. Cambiati la frase su previsione e sforzo, la base giuridica (consenso separato, art. 6, par. 1, lett. a) e la sezione «Condivisione e dati collettivi».
-- **Da fare quando ci sarà un'analisi.** Ogni esportazione per lo studio deve unire le osservazioni con l'ultima scelta del profilo e usare solo quelle con consenso attivo al momento dell'esportazione. Oggi non esiste ancora un'esportazione per lo studio.
+- **Esportazione per lo studio.** `researchRows` in `js/research-export.js` (24/10) usa solo le osservazioni dei profili con consenso attivo al momento dell'esportazione, senza testo, foto, titoli o posizione, con un pseudonimo al posto dell'ID del profilo. Oggi nessun endpoint del server la espone: quando servirà, andrà riservata agli amministratori e documentata qui.
 - *Da rivedere dal titolare:* la formula della base giuridica, come il resto della sezione «Su che base».
 
 ## 7. Licenze e attribuzioni
