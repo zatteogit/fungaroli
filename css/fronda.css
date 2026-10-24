@@ -416,14 +416,16 @@ a.src-a:active { opacity: 1; text-decoration-style: solid; }
 button.cover-index { position:relative; pointer-events:auto; min-height:44px; min-width:44px; padding:8px; margin:-8px; border:0; border-radius:12px; background:none; color:inherit; font:inherit; font-size:18px; cursor:help; }
 button.cover-index:focus-visible { outline:3px solid var(--focus); outline-offset:3px; }
 #hero .cover-editorial:has(button.cover-index:active,button.cover-index[aria-expanded="true"]) { transform:none; transition:none; }
+/* Hover sulla copertina della home (24/10): niente sollevamento e niente zoom della foto. La foto occupa solo la sua
+   colonna: ingrandita del 3% sconfinava nel riquadro giallo e la card sembrava scivolare. Resta il CTA che si riempie. */
+#hero .cover-editorial:hover, #hero .cover-editorial:hover > img.cover-img { transform:none; }
 .index-tip { position:fixed; inset:auto; z-index:9999; margin:0; width:min(320px,calc(100vw - 24px)); padding:16px; border:1px solid var(--control-edge); border-radius:16px; background:var(--surface); color:var(--text); font:400 14px/1.6 var(--font-body); box-shadow:var(--shadow-2); }
 .index-legend { display:inline-flex; align-items:center; gap:9px; max-width:100%; min-height:44px; padding:8px 0; border:0; background:none; color:var(--text-2); text-align:left; font:400 13px/1.5 var(--font-body); cursor:pointer; }
 .index-legend > span { display:flex; align-items:baseline; flex-wrap:wrap; gap:2px 10px; }
 .index-legend b { color:var(--text); font-weight:600; text-decoration:underline dotted; text-underline-offset:3px; }
 .index-legend .fungus-glyph { width:17px; height:17px; }
 .index-legend-slot { display:none; margin:4px 0 22px; }
-body:has(#ranking .ring) #ranking-index-legend,body:has(#season .ring) #season-index-legend { display:block; }
-.legend > .index-legend { flex-basis:100%; }
+body:has(#season .ring) #season-index-legend { display:block; }
 .where-index { display:inline-flex; align-items:center; gap:5px; }
 .where-index .fungus-glyph { width:13px; height:13px; }
 
@@ -1604,7 +1606,6 @@ button.cover-index > b { font-size:21px; line-height:1.2; }
 #ranking > li:only-child .tile:not(:has(> img:not([data-image-state="error"]),> .outdoor-backdrop)) .tile-body { grid-column:1; }
 #ranking > li:only-child .tile:not(:has(> img:not([data-image-state="error"]),> .outdoor-backdrop)) .ring { grid-column:2; }
 #ranking > li:only-child .tile:not(:has(> img:not([data-image-state="error"]),> .outdoor-backdrop)) > .tile-wx { grid-column:1/3; }
-.home-alternatives:has(#ranking > li:only-child) .index-legend { margin-top:6px; }
 @media(max-width:599px) {
  #ranking > li:only-child .tile { grid-template-columns:84px minmax(0,1fr) 72px; min-height:112px; }
  #ranking > li:only-child .tile > img, #ranking > li:only-child .outdoor-backdrop { min-height:112px; }
