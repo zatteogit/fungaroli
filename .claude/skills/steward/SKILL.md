@@ -29,7 +29,7 @@ Le regole complete sono in `AGENTS.md` e in `docs/handoff-2026-10-14.md`. Qui c'
 |---|---|
 | `test` | Fa fede. Deve essere verde prima del merge. |
 | `browser (n/8)`, `Taccuino fotografico` | Saltati sulle PR: partono solo a mano con `workflow_dispatch`. Saltati non vuol dire rossi. |
-| `Workers Builds: fungaroli` | Rosso su ogni ramo diverso da quello di produzione, finché Matteo non spegne «Enable Preview Builds». Non dipende dalla PR. Se serve, spiegalo una sola volta per PR, senza commenti ripetuti. |
+| `Workers Builds: fungaroli` | Dal 24/10/2026 non gira più sui rami delle PR (anteprime spente). Per riaccenderle servono risorse separate e un blocco `previews` in `wrangler.jsonc`, mai i database di produzione: vedi `AGENTS.md`. |
 
 ## Test browser instabili o vecchi
 
