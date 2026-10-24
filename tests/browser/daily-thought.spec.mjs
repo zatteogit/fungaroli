@@ -2,7 +2,7 @@ import {test, expect} from '@playwright/test';
 import {readFileSync} from 'node:fs';
 import {preparePage, auditState} from '../../tools/visual-audit.mjs';
 
-test('frase compatta nei due temi: non sposta hero e proposte, resta stabile al reload', async ({browser}) => {
+test('frase del giorno contenuta nei due temi: non sposta hero e proposte, resta stabile al reload', async ({browser}) => {
   const context = await browser.newContext({viewport:{width:390,height:900},serviceWorkers:'block'});
   const page = await preparePage(context);
   await page.goto('/');
@@ -18,7 +18,8 @@ test('frase compatta nei due temi: non sposta hero e proposte, resta stabile al 
   for (const theme of ['light','dark']) for (const width of [320,390,768,1280]) {
     await page.setViewportSize({width,height:900});
     await page.evaluate(t => document.documentElement.dataset.theme = t, theme);
-    expect(await card.evaluate(e => e.getBoundingClientRect().height)).toBeLessThan(145);
+    // Citazione editoriale (decisione di Matteo del 24/10): più ariosa della vecchia riga, ma sempre contenuta.
+    expect(await card.evaluate(e => e.getBoundingClientRect().height)).toBeLessThan(200);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     const readings = await auditState(page,{root:'#daily-thought'});
     expect(readings.length).toBeGreaterThan(0);

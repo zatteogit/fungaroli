@@ -129,3 +129,24 @@ test('scheda di oggi: orario superato nel pomeriggio, raccolta chiusa la sera',a
  await expect(page.locator('.view:not([hidden]) .when-weather').first()).toContainText('Mattina di oggi già passata');
  expect(errors).toEqual([]);
 });
+
+// Stabilità (decisione di Matteo del 24/10): a pagina già letta, il meteo che cambierebbe tutta la proposta non
+// ridisegna da solo. La copertina resta, le card che peggiorano lo dicono subito e «Aggiorna» applica il nuovo stato.
+test('il meteo nuovo che cambia tutto aspetta «Aggiorna»; il peggioramento si vede subito',async({page})=>{
+ let storm=false;const errors=[];page.on('pageerror',e=>errors.push(e.message));const time=T('09:30');
+ await page.setViewportSize({width:390,height:844});
+ await page.route('https://**/*',r=>r.abort());
+ await page.route('**/api/weather/v1/forecast?**',r=>r.fulfill({json:forecast(r.request().url(),time,storm?WX.storm:WX.good)}));
+ await page.addInitScript(()=>{localStorage.setItem('fungaroli:legal-accepted','62026-10-20');localStorage.setItem('fungaroli:install-later',String(Date.now()));});
+ await page.clock.install({time});await page.goto('/');
+ const cover=page.locator('#hero .cover-link');await expect(cover).toBeVisible();await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');
+ const href=await cover.getAttribute('href');
+ await page.clock.runFor(3000);await page.mouse.wheel(0,400);await page.evaluate(()=>scrollTo(0,0));
+ storm=true;await page.locator('#refresh').click();await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');
+ const bar=page.locator('#home-update');await expect(bar).toBeVisible();await expect(bar).toContainText('Meteo aggiornato: cambiano le proposte.');
+ await expect(cover).toHaveAttribute('href',href);
+ await expect(page.locator('#hero .weather-alert')).toHaveText('Meteo peggiorato');
+ await bar.getByRole('button',{name:'Aggiorna'}).click();
+ await expect(bar).toBeHidden();await expect(page.locator('#hero [data-home-state="weather"]')).toBeVisible();
+ expect(errors).toEqual([]);
+});

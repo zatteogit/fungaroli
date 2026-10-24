@@ -1201,13 +1201,13 @@ button.cover-index > span { font-size:11px; }
 .cover-index > b > .fungus-glyph, .ring.model-index > b > .fungus-glyph { width:18px; height:18px; flex:none; color:currentColor; }
 
 /* Una pausa dopo le proposte: nessuna copertina o azione primaria si sposta. */
-.daily-thought { position:relative; display:grid; justify-items:center; gap:10px; padding:28px 24px 24px; border-radius:24px; background:var(--calendula-soft); color:var(--text); text-align:center; }
+.daily-thought { position:relative; display:grid; justify-items:center; gap:8px; padding:20px 44px 18px; border-radius:24px; background:var(--calendula-soft); color:var(--text); text-align:center; }
 .daily-thought[hidden] { display:none; }
 .daily-thought-label { font:600 12px/1.4 var(--font-body); letter-spacing:.06em; text-transform:uppercase; color:var(--calendula-ink); }
-.daily-thought > div { display:grid; justify-items:center; gap:10px; min-width:0; max-width:34ch; }
-/* Citazione editoriale (decisione di Matteo del 24/10): virgolette grandi, serif più ampio, senza riquadro bianco. */
-.daily-thought > div::before { content:"\201C"; display:block; height:.5em; margin-bottom:6px; font:600 64px/1 var(--font-display); color:var(--calendula-ink); opacity:.55; }
-.daily-thought-text { display:block; margin:0; font:500 clamp(21px,3.4vw,26px)/1.35 var(--font-display); overflow-wrap:anywhere; text-wrap:balance; }
+.daily-thought > div { display:grid; justify-items:center; gap:6px; min-width:0; max-width:34ch; }
+/* Citazione editoriale (decisione di Matteo del 24/10): virgolette grandi come decoro, serif più ampio, senza riquadro bianco. */
+.daily-thought::before { content:"\201C"; position:absolute; top:6px; left:14px; font:600 64px/1 var(--font-display); color:var(--calendula-ink); opacity:.35; pointer-events:none; }
+.daily-thought-text { display:block; margin:0; font:500 clamp(20px,3.2vw,24px)/1.32 var(--font-display); overflow-wrap:anywhere; text-wrap:balance; }
 .daily-thought-credit { display:block; width:fit-content; font:500 13px/1.4 var(--font-body); color:var(--text-2); }
 a.daily-thought-credit { color:var(--link); text-underline-offset:3px; }
 /* Provenienza dei sentieri e servizi mappati: non dichiarano apertura o accesso. */
@@ -1744,3 +1744,19 @@ button.cover-index > b { font-size:21px; line-height:1.2; }
 /* Spiegazione dell'etichetta «Condizioni … 0–10» nel flusso, sotto l'etichetta: non copre ciò che spiega (24/10). */
 .index-tip.is-inline { display:block; position:static; inset:auto; z-index:auto; flex:1 0 100%; width:auto; max-width:min(100%,65ch); margin:8px 0 12px; box-shadow:none; }
 @media(max-width:640px){ #community-intro.is-compact { grid-template-columns:1fr; padding:16px; } #community-intro.is-compact .community-mini { gap:8px; } #community-intro.is-compact .community-mini li { flex-direction:column; align-items:flex-start; gap:6px; } #community-intro.is-compact .link-btn { justify-self:start; } }
+
+/* Stabilità della pagina mentre arrivano i dati (decisione di Matteo del 24/10). */
+.home-update { display:flex; align-items:center; gap:10px; margin:0 0 12px; padding:10px 12px 10px 16px; border:1px solid var(--select-edge); border-radius:16px; background:var(--surface-2); color:var(--text); font-size:15px; }
+.home-update[hidden] { display:none; }
+.home-update svg { flex:none; width:20px; height:20px; }
+.home-update span { flex:1; min-width:0; }
+.home-update .btn { flex:none; min-height:44px; }
+.weather-alert { position:absolute; z-index:3; top:10px; left:10px; padding:3px 9px; border-radius:999px; background:var(--crit-bg); color:var(--crit-ink); font-size:12px; font-weight:600; }
+.cover-skeleton, .tile-skeleton { background:var(--surface-2); }
+.tile-skeleton { display:block; }
+@media (prefers-reduced-motion:no-preference) {
+ .cover-skeleton, .tile-skeleton { animation:skeleton-pulse 1.4s ease-in-out infinite; }
+ body.weather-refreshing :is(#hero, #ranking) :is(.ring, .tile-wx, .fact[class*="wx-"]) { animation:skeleton-pulse 1.4s ease-in-out infinite; }
+}
+body.weather-refreshing :is(#hero, #ranking) :is(.ring, .tile-wx, .fact[class*="wx-"]) { opacity:.72; }
+@keyframes skeleton-pulse { 50% { opacity:.55; } }
