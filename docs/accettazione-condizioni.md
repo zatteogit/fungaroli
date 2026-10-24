@@ -10,6 +10,8 @@ Il 22/10/2026 l’informativa «Privacy e dati» è stata allineata al codice e 
 
 Il 24/10/2026 la versione editoriale passa a **9** per il consenso separato alla ricerca ([legale.md](legale.md), §6.7). `acceptance_version` resta 1: nessuna nuova conferma.
 
+Lo stesso giorno passa a **10** per il database della community nell'Unione europea ([legale.md](legale.md), §6.8). `acceptance_version` resta 1: nessuna nuova conferma.
+
 Release, data editoriale e modifiche di copy non fanno decadere una conferma valida della stessa revisione delle CGS. Solo un cambiamento sostanziale delle condizioni richiede l’aumento esplicito di `acceptance_version` e una nuova conferma. La versione editoriale continua ad aumentare a ogni modifica del documento; la revisione delle CGS è positiva e non può diminuire o essere rimossa.
 
 La cookie policy descrive i due cookie effettivi di `worker/community.js`: sfida passkey, 5 minuti; sessione, 30 giorni; entrambi Secure/HttpOnly/SameSite=Strict. Descrive anche localStorage, cache, copie locali, rimozione dei dati e servizi esterni. La conferma iniziale è una presa visione degli avvisi: non autorizza pubblicità, profilazione o condivisione automatica delle osservazioni.

@@ -48,6 +48,17 @@ Fuori dalle finestre dei cron: 03:17 UTC e ogni 5 minuti fra le 04:00 e le 05:59
    - Se l'origine è cambiata fra la copia e la pubblicazione, le righe nuove si copiano nel database UE con la stessa procedura, solo per le tabelle interessate.
 5. **Informativa.** È una decisione a parte di Matteo, perché un testo nuovo cambia l'impronta dell'avviso. Con il nuovo database la frase «il database non è vincolato a una collocazione europea» non è più vera per i dati della community: va aggiornata.
 
+## Esito del passaggio (24/10/2026)
+
+- 08:20 UTC: confronto prima del merge, righe e impronte identiche in tutte le 23 tabelle. Merge di #245.
+- 08:21:28 UTC: Workers Builds pubblica il Worker. L'API Cloudflare conferma `COMMUNITY_DB → fungaroli-community-eu`.
+- Produzione: `/api/community/status` risponde `enabled: true`.
+- Confronto dopo il merge:
+  - il database di origine è identico alla copia, quindi nessuna scrittura è andata persa nel passaggio;
+  - il database UE ha una riga in più in `rate_limits`, scritta dal Worker dopo il passaggio.
+- La prova con passkey e nota non è stata fatta da un agente, perché richiede il dispositivo di Matteo. La scrittura in `rate_limits` mostra comunque che il Worker scrive nel database UE.
+- Informativa aggiornata nella versione editoriale 10 di `data/legal.json` (vedi `docs/legale.md`, §6.8).
+
 ## Ritorno indietro
 
 - Fino alla cancellazione del vecchio database basta ripristinare `"database_name": "fungaroli-community"` in `wrangler.jsonc` e pubblicare.
