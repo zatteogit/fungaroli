@@ -1,0 +1,26 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/session-start.sh"
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "allow": [
+      "Bash(npm test)",
+      "Bash(npm test:*)",
+      "Bash(node --test:*)",
+      "Bash(node docs/fronda/scripts/check.mjs)",
+      "Bash(node docs/fronda/scripts/guard-test.mjs)",
+      "Bash(node tools/asset-report.mjs:*)",
+      "Bash(npx wrangler deploy --dry-run:*)",
+      "Bash(git diff --check:*)"
+    ]
+  }
+}
