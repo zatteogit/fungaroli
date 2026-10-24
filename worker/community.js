@@ -5,6 +5,8 @@ import preferencesSchema from '../migrations/0003_account_preferences.sql';
 import observationsSchema from '../migrations/0007_shared_observations.sql';
 import animalObservationsSchema from '../migrations/0013_animal_observations.sql';
 import basePrecisionSchema from '../migrations/0014_base_precision.sql';
+import researchConsentSchema from '../migrations/0015_research_consent.sql';
+import {RESEARCH_CONSENT_VERSION,researchState} from '../js/research-consent.js';
 import animalCatalog from '../data/animals.json';
 import {rankingPolicy} from './admin-dashboard.js';
 import {initExternalObservations} from './external-observations.js';
@@ -44,7 +46,7 @@ const fail = (message, status = 400) => { const e = new Error(message); e.status
 async function init(db) {
   if (!initialized.has(db)) initialized.set(db, (async () => {
     // D1 exec treats individual lines as statements; use complete SQL statements.
-    await db.batch((schema+';'+preferencesSchema+';'+observationsSchema+';'+legalAcceptancesSchema+';'+basePrecisionSchema).split(';').map((s) => s.replace(/^\s*--.*$/gm, '').trim()).filter((s) => s && !s.startsWith('PRAGMA')).map((s) => db.prepare(s)));
+    await db.batch((schema+';'+preferencesSchema+';'+observationsSchema+';'+legalAcceptancesSchema+';'+basePrecisionSchema+';'+researchConsentSchema).split(';').map((s) => s.replace(/^\s*--.*$/gm, '').trim()).filter((s) => s && !s.startsWith('PRAGMA')).map((s) => db.prepare(s)));
     const observationTable=await db.prepare("SELECT sql FROM sqlite_master WHERE type='table' AND name='shared_observations'").first('sql');
     if(!observationTable?.includes("'animale'"))await db.batch(animalObservationsSchema.split(';').map(s=>s.trim()).filter(Boolean).map(s=>db.prepare(s)));
     await db.prepare("INSERT INTO community_meta(key,value) VALUES('ip_salt',?) ON CONFLICT(key) DO NOTHING").bind(token()).run();
@@ -232,7 +234,7 @@ export async function handleCommunity(request, env, now = Date.now()) {
     if (path === 'session' && request.method === 'GET') {
       const assigned=key=>(env[key]||'').split(',').map(s=>s.trim()).filter(Boolean).includes(user.id);
       const role=assigned('CMS_ADMIN_IDS')?'admin':assigned('CMS_EDITOR_IDS')?'editor':'member';
-      return result({ user: { id:user.id, handle:user.handle, base:user.base, role } });
+      return result({ user: { id:user.id, handle:user.handle, base:user.base, role, research:await researchConsent(db,user.id) } });
     }
     await rate(db, 'user:' + user.id, 120, 3600, now);
     if(path==='legal-acceptance'&&request.method==='POST') {
@@ -250,6 +252,15 @@ export async function handleCommunity(request, env, now = Date.now()) {
       if(base===null)await db.prepare('DELETE FROM account_preferences WHERE account_id=?').bind(user.id).run();
       else await db.prepare('INSERT INTO account_preferences(account_id,base,updated_at) VALUES(?,?,?) ON CONFLICT(account_id) DO UPDATE SET base=excluded.base,updated_at=excluded.updated_at').bind(user.id,JSON.stringify(base),now).run();
       return result({base});
+    }
+    if(path==='research-consent'&&request.method==='PUT') {
+      const data=await body(request);
+      if(data.accountId!==user.id)fail('Il profilo è cambiato. Riaprilo prima di salvare.',409);
+      if(typeof data.granted!=='boolean'||data.version!==RESEARCH_CONSENT_VERSION)fail('Scelta non valida. Ricarica la pagina e riprova.',422);
+      const current=await researchConsent(db,user.id);
+      // Una riga per ogni cambiamento reale: ripetere la stessa scelta non riscrive la data.
+      if(current.granted!==data.granted||data.granted&&current.version!==data.version)await db.prepare('INSERT INTO research_consents(account_id,version,granted,recorded_at) VALUES(?,?,?,?)').bind(user.id,data.version,data.granted?1:0,now).run();
+      return result({research:await researchConsent(db,user.id)});
     }
     if(path==='places'&&request.method==='GET'){
       const q=url.searchParams.get('q');if(!q||q.trim().length<2||q.length>120)fail('Scrivi da 2 a 120 caratteri per cercare una località.',422);
@@ -274,7 +285,7 @@ export async function handleCommunity(request, env, now = Date.now()) {
       // Cancellazioni esplicite per tabella, dai dati che dipendono dalle voci fino al profilo: non si affidano
       // soltanto a ON DELETE CASCADE. Anche i contatori legati all'ID del profilo spariscono subito.
       await db.batch([
-        ...['shared_observations', 'reports', 'legal_acceptances', 'account_preferences', 'diary_entries', 'sessions', 'passkeys', 'challenges']
+        ...['shared_observations', 'reports', 'research_consents', 'legal_acceptances', 'account_preferences', 'diary_entries', 'sessions', 'passkeys', 'challenges']
           .map((t) => db.prepare(`DELETE FROM ${t} WHERE account_id=?`).bind(user.id)),
         db.prepare(`DELETE FROM rate_limits WHERE key IN (${ACCOUNT_RATE_KEYS.map(() => '?').join(',')})`).bind(...ACCOUNT_RATE_KEYS.map((k) => k + user.id)),
         db.prepare('DELETE FROM accounts WHERE id=?').bind(user.id),
@@ -356,7 +367,7 @@ export async function handleCommunity(request, env, now = Date.now()) {
       const data=await body(request);if(data.consent!==true)fail('Serve il consenso esplicito alla condivisione.');
       await rate(db,'observations:'+user.id,30,86400,now);
       const ids=await currentCatalogIds(env,url.origin);let snapshot;
-      try{snapshot={...sharedObservation(normalizeNotebookNote(JSON.parse(raw),ids),{...ids,now}),researchConsent:true};}catch(error){fail(error.message);}
+      try{snapshot=sharedObservation(normalizeNotebookNote(JSON.parse(raw),ids),{...ids,now});}catch(error){fail(error.message);}
       await db.prepare('INSERT INTO shared_observations(account_id,entry_id,day,zone_id,category,taxon_id,payload,consent_version,consented_at) VALUES(?,?,?,?,?,?,?,?,?) ON CONFLICT(account_id,entry_id) DO UPDATE SET day=excluded.day,zone_id=excluded.zone_id,category=excluded.category,taxon_id=excluded.taxon_id,payload=excluded.payload,consent_version=excluded.consent_version,consented_at=excluded.consented_at').bind(user.id,id,snapshot.day,snapshot.zoneId,snapshot.category,snapshot.taxonId,JSON.stringify(snapshot),'fronda-community-v1',now).run();
       return result({ok:true});
     }
@@ -411,12 +422,15 @@ export const EXPORT_FORMAT = 'fronda-export-v1', EXPORT_PAGE = 50, EXPORT_PER_DA
 const ACCOUNT_RATE_KEYS = ['user:', 'reports:', 'observations:', 'travel:', 'export:'];
 const isoTime = (ms) => Number.isFinite(ms) ? new Date(ms).toISOString() : null;
 const jsonOrNull = (text) => { try { return text == null ? null : JSON.parse(text); } catch { return null; } };
+async function researchConsent(db,accountId){
+  return researchState(await db.prepare('SELECT version,granted,recorded_at FROM research_consents WHERE account_id=? ORDER BY id DESC LIMIT 1').bind(accountId).first());
+}
 async function accountExport(db, user, now) {
   const all = async (sql) => (await db.prepare(sql).bind(user.id).all()).results;
   const preferences = await db.prepare('SELECT updated_at FROM account_preferences WHERE account_id=?').bind(user.id).first();
   const head = {
     format: EXPORT_FORMAT, exportedAt: isoTime(now),
-    description: 'Copia dei tuoi dati in Fronda: profilo, taccuino con le foto (JPEG in base64), segnalazioni, osservazioni condivise e conferme degli avvisi.',
+    description: 'Copia dei tuoi dati in Fronda: profilo, taccuino con le foto (JPEG in base64), segnalazioni, osservazioni condivise, scelte sul consenso alla ricerca e conferme degli avvisi.',
     account: { id: user.id, handle: user.handle, createdAt: isoTime(user.created_at) },
     passkeys: (await all('SELECT created_at,transports,backed_up FROM passkeys WHERE account_id=? ORDER BY created_at'))
       .map((p) => ({ createdAt: isoTime(p.created_at), transports: jsonOrNull(p.transports) || [], backedUp: !!p.backed_up })),
@@ -427,6 +441,8 @@ async function accountExport(db, user, now) {
     sharedObservations: (await all('SELECT entry_id,day,zone_id,category,taxon_id,payload,consent_version,consented_at FROM shared_observations WHERE account_id=? ORDER BY consented_at,entry_id'))
       .map((o) => ({ entryId: o.entry_id, day: o.day, zoneId: o.zone_id, category: o.category, taxonId: o.taxon_id, payload: jsonOrNull(o.payload),
         consentVersion: o.consent_version, consentedAt: isoTime(o.consented_at) })),
+    researchConsents: (await all('SELECT version,granted,recorded_at FROM research_consents WHERE account_id=? ORDER BY id'))
+      .map((c) => ({ version: c.version, granted: !!c.granted, recordedAt: isoTime(c.recorded_at) })),
     legalAcceptances: (await all('SELECT version,notice_hash,accepted_at,recorded_at,source,platform FROM legal_acceptances WHERE account_id=? ORDER BY recorded_at'))
       .map((a) => ({ version: a.version, noticeHash: a.notice_hash, acceptedAt: a.accepted_at, recordedAt: isoTime(a.recorded_at), source: a.source, platform: a.platform })),
   };

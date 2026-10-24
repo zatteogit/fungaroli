@@ -756,6 +756,9 @@ body:has(#ranking .ring) #ranking-index-legend,body:has(#season .ring) #season-i
 .composer-share-switch small { font-size:13px; font-weight:400; line-height:1.5; color:var(--text-2); }
 .composer-sharing > p { margin:12px 0 0; }
 .composer-sharing .switch-input { flex:none; width:48px; min-height:28px; padding:0; }
+.profile-research { margin-block:16px; }
+.community-dialog .profile-research > label { display:flex; margin:0; }
+.profile-research > p { margin:12px 0 0; }
 .composer-field-summary { color:var(--text-2); font-size:14px; }
 @media(max-width:359px) { .note-type-grid { grid-template-columns:1fr; } .composer-numbers { grid-template-columns:1fr; } }
 

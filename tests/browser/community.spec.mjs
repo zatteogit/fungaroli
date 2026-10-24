@@ -407,10 +407,14 @@ test('taccuino: scarica i dati senza profilo e dal profilo, senza importazione',
  await register(page,'Profilo senza copie');await expect(panel.locator('[data-community-account]')).toHaveText('Gestisci il profilo');
  await expect(panel).not.toContainText(/Importa|vecchio taccuino/);await expect(panel).toContainText('sincronizzato con la passkey');await expect(panel.locator('[data-download-notebook]')).toHaveCount(0);
  await panel.locator('[data-community-account]').click();const profile=page.locator('dialog.profile-dialog[open]');
+ // Consenso alla ricerca (D4, 24/10): spento all'inizio, separato dalla condivisione, si dà e si toglie dal profilo.
+ const research=profile.getByRole('switch',{name:/Studio dell’indice/});await expect(research).not.toBeChecked();await expect(profile.locator('[data-research-status]')).toContainText('solo alla community');
+ await research.check();await expect(profile.locator('[data-research-status]')).toContainText('Consenso dato il');expect((await api(page,'session')).data.user.research.granted).toBe(true);
+ await research.uncheck();await expect(profile.locator('[data-research-status]')).toContainText('solo alla community');expect((await api(page,'session')).data.user.research.granted).toBe(false);
  download=page.waitForEvent('download');await profile.locator('[data-export-account]').click();
  const data=await readDownload(await download);expect((await download).suggestedFilename()).toMatch(/^fronda-dati-\d{4}-\d{2}-\d{2}\.json$/);
  expect(data).toMatchObject({format:'fronda-export-v1',account:{handle:'Profilo senza copie'},complete:true});
- for(const key of ['passkeys','entries','reports','sharedObservations','legalAcceptances'])expect(Array.isArray(data[key])).toBe(true);
+ for(const key of ['passkeys','entries','reports','sharedObservations','researchConsents','legalAcceptances'])expect(Array.isArray(data[key])).toBe(true);expect(data.researchConsents.map(c=>c.granted)).toEqual([true,false]);
  expect(JSON.stringify(data)).not.toMatch(/token_hash|public_key|ip_salt/);
  await expect(profile.locator('[data-status]')).toContainText('File pronto');
  await profile.locator('[data-delete-account]').click();await expect(profile.locator('[data-status]')).toContainText('prima scarica i tuoi dati');

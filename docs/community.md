@@ -22,6 +22,10 @@ Ritiro, cancellazione della voce ed eliminazione account rimuovono le segnalazio
 
 Limiti per IP pseudonimizzato e account, corpi JSON fino a 250 KB, diario fino a 1000 voci, segnalazioni fino a 30 al giorno. IP trasformato con un sale privato e data quotidiana; non archiviato in chiaro nelle tabelle applicative. Non è una garanzia contro utenti con più dispositivi o identificazioni errate. Cloudflare può trattare log di connessione secondo le proprie impostazioni.
 
+## Consenso alla ricerca
+
+Condividere serve alla community. Lo studio dell'indice richiede un consenso separato, «Studio dell'indice» nel profilo (D4, decisioni di Matteo del 16 e del 24/10/2026). È spento all'inizio, vale solo per le osservazioni condivise ed è revocabile. `PUT /api/community/research-consent` con `{accountId, granted, version:'fronda-research-v1'}` registra la scelta in `research_consents` (migrazione 0015). La sessione restituisce lo stato in `user.research`. Le osservazioni condivise prima del 24/10 non contano per lo studio senza il consenso nuovo. Dettagli in [legale.md](legale.md), §6.7.
+
 ## Valore scientifico
 
 Quantità ordinali 0–3, non conteggi di esemplari o biomassa. Zero soltanto con ricerca esplicita. Deduplicazione per account/giorno/zona/specie. I conteggi sono dichiarati e non certificati. Un account non equivale a un contributore indipendente.
