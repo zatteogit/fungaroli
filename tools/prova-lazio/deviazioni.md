@@ -510,8 +510,13 @@ sul 2026, con `preregistrazione-2026.md` scritta prima della modifica.
   modifiche in `modello-2.1.0/`. `fattori.mjs` importa da lì e il controllo 1 confronta i file della copia con gli
   stessi SHA-256 preregistrati. **Fatto verificato:** `valuta.py` sulla copia dà un riepilogo identico al
   precedente, salvo i percorsi del controllo 1.
-- **SHA-256 del modello 2.2.0** (per il controllo 1 della conferma 2026): si aggiungono qui dopo l'unione nel ramo di
-  produzione, prima di scaricare dati del 2026.
+- **SHA-256 del modello 2.2.0** (per il controllo 1 della conferma 2026), registrati il 24/10/2026 sul ramo di
+  produzione al commit `adc7ddd1` (unione di #254), prima di scaricare qualunque dato del 2026. Fatto verificato:
+  - `js/model.js` `e3bbeb858b83eef410af82f8576b2d2a8bacb7573146b3d0801ddf693577a2be`
+  - `js/species.js` `e4b5a0aadbe62f4eb78cb17264e5889519917f62ac63bab6fabf81ddae631ca6`
+  - invariati dal 2.1.0: `js/botanical-model.js`, `js/external-observation.js`, `js/weather.js`, `js/weather-data.js`
+    (stessi SHA-256 della tabella `HASH_MODULI` di `valuta.py`).
+  Se prima della conferma uno di questi file cambia, la modifica va registrata qui con il nuovo SHA-256 e il motivo.
 
 ## Che cosa non cambia
 
