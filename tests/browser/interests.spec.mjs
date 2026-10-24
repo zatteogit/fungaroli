@@ -13,6 +13,8 @@ async function chooseVisibleBotanical(page){
 }
 
 for(const width of [320,1280])test(`interessi indipendenti: tutte le combinazioni, home e mappa a ${width}px`,async({browser})=>{
+ // Otto combinazioni, ognuna fra home e mappa: in locale supera da sola il minuto predefinito.
+ test.setTimeout(180000);
  const context=await browser.newContext({viewport:{width,height:900},reducedMotion:'reduce',serviceWorkers:'block'});
  const page=await preparePage(context,{theme:'dark'}),errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('/');
  for(let mask=0;mask<8;mask++){
@@ -71,11 +73,20 @@ test('mappa botanica: spunti concreti e spiegazione progressiva',async({browser}
  await page.locator('#map-sheet .sheet-close').click();await mapLegend(page);await note.locator('summary').click();await expect(note).toHaveAttribute('open','');await expect(note).toContainText('Non sono avvistamenti confermati');
  await context.close();
 });
+// Dal 18/10 la home mostra solo le preferenze attive: si accendono in Filtri e si tolgono con un tocco.
 test('Poca gente mantiene testo, icona e selezione',async({browser})=>{
+ // Col Wrangler locale a freddo la home disegna i filtri anche dopo 20 s, a ogni caricamento.
+ test.setTimeout(120000);const ready={timeout:45000};
  const context=await browser.newContext({viewport:{width:320,height:800},serviceWorkers:'block'}),page=await preparePage(context,{theme:'dark'});await page.goto('/');
- const button=page.locator('#active-filters [data-p="avoidCrowd"]');await expect(button).toContainText('Poca gente');await expect(button.locator('.pref-icon')).toBeVisible();
- await button.click();await expect(button).toContainText('Poca gente');await expect(button).toHaveAttribute('aria-pressed','true');await expect(button.locator('.pref-icon')).toBeHidden();
- await page.reload();await expect(button).toHaveAttribute('aria-pressed','true');await expect(button).toContainText('Poca gente');await context.close();
+ const button=page.locator('#active-filters [data-p="avoidCrowd"]');await expect(page.locator('#active-filters [data-intent="funghi"]')).toBeVisible(ready);await expect(button).toHaveCount(0);
+ await page.locator('#appbar-home-filters [data-more]:visible,#home-filter-action [data-more]:visible').first().click();
+ const pref=page.locator('#full-filters [data-pref="avoidCrowd"]');await expect(pref).toContainText('Poca gente');await expect(pref).toHaveAttribute('aria-pressed','false');
+ await pref.click();await expect(pref).toContainText('Poca gente');await expect(pref).toHaveAttribute('aria-pressed','true');
+ await page.locator('#full-filters [data-close]').first().click();
+ await expect(button).toContainText('Poca gente');await expect(button).toHaveAttribute('aria-pressed','true');await expect(button.locator('.pref-icon')).toBeHidden();
+ await page.reload();await expect(button).toHaveAttribute('aria-pressed','true',ready);await expect(button).toContainText('Poca gente');
+ await button.click();await expect(button).toHaveCount(0);expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('fungaroli:prefs:v2')).avoidCrowd)).toBe(false);
+ await context.close();
 });
 
 test('mappa con copertura botanica vuota: conserva i sentieri senza falsi zeri',async({browser})=>{
