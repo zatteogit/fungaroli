@@ -413,6 +413,20 @@ Restano due **segnaposto** evidenti, `[DA RIVEDERE DAL TITOLARE: …]`, perché 
 
 ---
 
+### 6.7 Consenso alla ricerca (D4, 24/10/2026)
+
+Decisioni di Matteo del 16 e del 24/10/2026. Fatto verificato nel codice del 24/10.
+
+- **Prima.** L'uso per lo studio dell'indice era compreso nella condivisione. L'interruttore diceva «per la community e lo studio dei modelli», l'informativa «per studiare il modello», e il server salvava ogni osservazione condivisa con `researchConsent: true`.
+- **Ora.** «Studio dell'indice» è una casella del profilo, separata dalla condivisione, spenta all'inizio e revocabile (`js/research-consent.js`, versione `fronda-research-v1`).
+  - Copre solo ciò che il profilo condivide: segnalazioni e appunti condivisi (specie, zona, giorno, esito e sforzo). Mai testo, foto, posizione o appunti privati.
+  - Ogni scelta è una riga della tabella `research_consents` (migrazione 0015): versione, sì/no, data del server. Lo stato attuale è l'ultima riga. Ripetere la stessa scelta non riscrive la data.
+  - La storia delle scelte è nella copia dei propri dati. «Elimina profilo e dati» la cancella.
+- **Pregresso.** La migrazione 0015 toglie `researchConsent` dalle fotografie già salvate. Le osservazioni condivise prima del 24/10 entrano nello studio solo se il profilo dà il consenso nuovo (decisione di Matteo).
+- **Informativa.** Versione editoriale 9 di `data/legal.json`, `acceptance_version` sempre 1: nessuna nuova conferma degli avvisi. Cambiati la frase su previsione e sforzo, la base giuridica (consenso separato, art. 6, par. 1, lett. a) e la sezione «Condivisione e dati collettivi».
+- **Da fare quando ci sarà un'analisi.** Ogni esportazione per lo studio deve unire le osservazioni con l'ultima scelta del profilo e usare solo quelle con consenso attivo al momento dell'esportazione. Oggi non esiste ancora un'esportazione per lo studio.
+- *Da rivedere dal titolare:* la formula della base giuridica, come il resto della sezione «Su che base».
+
 ## 7. Licenze e attribuzioni
 
 | Fonte | Licenza | Obblighi | Stato nell'app |

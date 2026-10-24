@@ -56,7 +56,8 @@ test('privacy: soglia reale, foto, provincia, base arrotondata, copia dei dati e
 });
 test('revisione del testo: nuova versione editoriale, stessa revisione delle CGS e nessuna nuova conferma',()=>{
  const notice=currentLegalNotice(seed);
- assert.equal(seed.version,8);assert.equal(seed.acceptance_version,1);
+ assert.equal(seed.version,9);assert.equal(seed.acceptance_version,1);
+ assert.match(seed.info_sections.find(s=>s.id==='privacy').html,/Studio dell’indice/);assert.doesNotMatch(seed.info_sections.find(s=>s.id==='privacy').html,/per studiare il modello/);
  assert.equal(legalNoticeVersion(notice),'cgs-1');
  assert.equal(notice.info_sections.find(s=>s.id==='privacy').html,seed.info_sections.find(s=>s.id==='privacy').html,'la sezione del repository passa invariata');
 });

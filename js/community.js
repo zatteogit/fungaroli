@@ -10,6 +10,7 @@ import { PROVINCES, zoneProvince } from './community-aggregate.js';
 import {setBaseUser,mountBaseEditor} from './base-location.js';
 import {downloadAccountData} from './data-export.js';
 import {clearNotebookStore,accountNotebookScope} from './notebook-photo-store.js';
+import {RESEARCH_CONSENT_VERSION,RESEARCH_CONSENT_TEXT} from './research-consent.js';
 
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 let enabled = false, user = null, summary = null, zones = [], ready = Promise.resolve(), reportDialog, authDialog, speciesCatalog = SPECIES;
@@ -126,6 +127,23 @@ export async function ensureAccount() {
   return openAccount();
 }
 
+// Consenso alla ricerca (D4): separato dalla condivisione, spento all'inizio, revocabile in ogni momento.
+function mountResearchConsent(slot,accountId){
+  const since=r=>r?.granted&&r.since?`Consenso dato il ${new Date(r.since).toLocaleDateString('it-IT',{day:'numeric',month:'long',year:'numeric'})}.`:'Spento: le tue osservazioni condivise servono solo alla community.';
+  slot.innerHTML=`<label class="composer-share-switch"><span><b>Studio dell’indice</b><small>${esc(RESEARCH_CONSENT_TEXT)}</small></span><input class="switch-input" type="checkbox" role="switch" data-research-switch${user?.research?.granted?' checked':''}></label><p class="small muted" role="status" data-research-status>${esc(since(user?.research))}</p>`;
+  const input=slot.querySelector('[data-research-switch]'),status=slot.querySelector('[data-research-status]');
+  input.addEventListener('change',async()=>{
+    const granted=input.checked;input.disabled=true;status.textContent='Salvo la scelta…';
+    try{
+      if(user?.id!==accountId)throw new Error('Il profilo è cambiato. Riaprilo prima di salvare.');
+      const r=await communityRequest('research-consent','PUT',{accountId,granted,version:RESEARCH_CONSENT_VERSION});
+      if(user?.id===accountId)user={...user,research:r.research};
+      input.checked=!!r.research.granted;status.textContent=since(r.research);
+    }catch(e){input.checked=!granted;status.textContent=e.message||'Scelta non salvata. Riprova.';}
+    finally{input.disabled=false;}
+  });
+}
+
 export async function openAccount() {
   await ready;
   if (!authDialog) { authDialog = document.createElement('dialog'); authDialog.className = 'community-dialog'; document.body.appendChild(authDialog); }
@@ -138,6 +156,7 @@ export async function openAccount() {
   return new Promise((resolve) => {
     authDialog.innerHTML = user ? `<div class="profile-header"><div><h2>${esc(user.handle || 'Il tuo profilo')}</h2><p class="small muted profile-role" data-account-role>Profilo personale</p></div><button type="button" class="profile-close" data-close aria-label="Chiudi il profilo">×</button></div>
       <p>Il taccuino è privato. Condividendo un’osservazione puoi consultare gli aggregati della community. Anche una ricerca a vuoto conta. Ritirando tutte le condivisioni perdi questo accesso. Nessuna condivisione è automatica. La tua fungaia non viene mostrata agli altri: solo conteggi per zona ampia e specie, su 7 giorni, con almeno 3 contributori e 2 giorni diversi.</p>
+      <section class="composer-sharing profile-research" data-research-consent></section>
       <div data-profile-base></div>
       <div class="profile-editorial" data-cms-link hidden></div>
       <div class="profile-actions" role="group" aria-label="Azioni del profilo"><button type="button" class="btn ghost" data-logout>Esci dal profilo</button><button type="button" class="btn primary" data-close autofocus>Chiudi</button></div>
@@ -152,6 +171,7 @@ export async function openAccount() {
     const status = authDialog.querySelector('[data-status]');
     if(user){
       const accountId=user.id;
+      mountResearchConsent(authDialog.querySelector('[data-research-consent]'),accountId);
       const baseSlot=authDialog.querySelector('[data-profile-base]');
       mountBaseEditor(baseSlot,{value:user.base,save:async base=>{
         if(user?.id!==accountId)throw new Error('Il profilo è cambiato. Riaprilo prima di salvare.');
