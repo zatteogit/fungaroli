@@ -6,7 +6,7 @@
   "compatibility_flags": ["nodejs_compat"],
   "vars": { "APP_ORIGIN": "https://fungaroli.zatteo.workers.dev", "CMS_ADMIN_IDS": "2ce3edfd-514c-4ef7-a8f3-9140396360c5", "CMS_EDITOR_IDS": "" },
   "d1_databases": [
-    { "binding": "COMMUNITY_DB", "database_name": "fungaroli-community", "migrations_dir": "migrations" },
+    { "binding": "COMMUNITY_DB", "database_name": "fungaroli-community-eu", "migrations_dir": "migrations" },
     { "binding": "CMS_DB", "database_name": "fungaroli-content", "migrations_dir": "migrations" }
   ],
   "rules": [{ "type": "Text", "globs": ["**/*.sql"], "fallthrough": true }],
