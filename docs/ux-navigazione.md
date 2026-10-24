@@ -39,6 +39,8 @@ Supera, dove contrasta, la sezione del 21/10 qui sotto (passaggio automatico a d
   - Mappa: con l'elenco aperto vale la stessa regola («Meteo aggiornato: cambia l'ordine · Aggiorna»); i segnaposto sulla carta si aggiornano al loro posto.
 - **Spiegazione dell'indice.** Dalle etichette «Condizioni … 0–10» la spiegazione si apre nel flusso, sotto l'etichetta, e sposta il contenuto invece di coprirlo. Gli anelli dei numeri usano ancora la bolla.
 - **Fasce.** «Un bosco, tante esperienze» compatta diventa tre vignette in riga (Vedi, Racconta, Condividi) con «Come funziona la condivisione». La frase del giorno è una citazione editoriale: fondo calendula leggero, virgolette come decoro, serif più ampio, senza riquadro bianco.
+- **Distanza fra le fasce.** Un solo passo continuo per tutte le larghezze: `--home-band-gap: clamp(24px, calc(2.2vw + 16px), 40px)` (24 px a 320–390, 33 a 768, 39 a 1024, 40 da 1280). La fascia «Dalla redazione», delimitata da filetti, usa lo stesso passo come spazio interno: il filetto sta a metà fra due passi uguali.
+- **Orizzonte della previsione.** Niente più riga «Previsione a N giorni: da ricontrollare prima di partire» sotto la proposta: dal quarto giorno la stessa frase è un suggerimento (`title`) sull'etichetta del giorno nella copertina.
 
 ### Home quando per oggi è tardi — decisione del 21 ottobre 2026
 
