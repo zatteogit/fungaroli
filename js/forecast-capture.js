@@ -13,6 +13,7 @@ const bandIndex = (zone, band) => Math.max(0, zone.bands.indexOf(band));
 // noShock: lo stesso calcolo senza il bonus del calo della temperatura del suolo (specie con soilShock trattate
 // come le altre). Serve a confrontare sulle uscite reali l'indice con e senza bonus (decisione del 16/10/2026:
 // l'evidenza è una sola osservazione preliminare, Olivier et al. 1997).
+// Dal modello 2.2.0 nessuna specie ha soilShock: i due indici coincidono finché il campo non torna.
 export function predictScores({ zone, seriesByBand, hab, i, band = null, species = SPECIES, noShock = false }) {
   const bands = band == null ? zone.bands : [band];
   const out = {};

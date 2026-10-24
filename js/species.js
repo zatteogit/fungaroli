@@ -22,6 +22,9 @@
 //   Solo B. edulis e B. pinophilus (decisione del 16/10/2026). Appoggio: osservazione preliminare di
 //   Olivier et al. 1997 sui cèpes della Francia sud-occidentale (B. edulis, aereus, aestivalis);
 //   B. pinophilus non era tra le specie seguite ed e' assimilato a B. edulis (euristica).
+//   Dal modello 2.2.0 (24/10/2026) nessuna specie ha soilShock: nella prova retrospettiva 2023–2025 il bonus non
+//   cambiava l'ordine dei giorni (Q4 ±0,01, tools/prova-lazio/README.md). Il calcolo resta in js/model.js e torna
+//   attivo solo rimettendo il campo; la conferma sul 2026 è preregistrata in tools/prova-lazio/preregistrazione-2026.md.
 //   Tutte le altre specie: nessun bonus (fattore 1).
 
 export const FOREST = {
@@ -48,14 +51,14 @@ export const SPECIES = [
     id: 'edulis', group: 'porcini', name: 'Porcino', latin: 'Boletus edulis',
     forest: { [F.FAG]: 1, [F.CAS]: 0.7, [F.CER]: 0.6, [F.CON]: 0.6, [F.ROV]: 0.4, [F.OST]: 0.2, [F.FOR]: 0.4 },
     months: m(0, 0, 0, 0, 0.1, 0.4, 0.6, 0.8, 1, 1, 0.4, 0),
-    elev: [700, 1800], topt: 13, tsd: 3.5, lag: [7, 21], eref: 30, minCap: 4, soilShock: true,
+    elev: [700, 1800], topt: 13, tsd: 3.5, lag: [7, 21], eref: 30, minCap: 4,
     evidence: 'Centro termico e finestre antecedenti informati dalla letteratura in faggeta; curve, latenza, innesco e coefficienti euristici, non calibrati nel Reatino. Calo della temperatura del suolo: osservazione preliminare (Olivier et al. 1997); il bonus è euristico.',
   },
   {
     id: 'pinophilus', group: 'porcini', name: 'Porcino rosso', latin: 'Boletus pinophilus',
     forest: { [F.CON]: 1, [F.FAG]: 0.8, [F.CAS]: 0.5, [F.CER]: 0.3 },
     months: m(0, 0, 0, 0, 0.1, 0.4, 0.6, 0.9, 1, 0.8, 0.2, 0),
-    elev: [900, 1800], topt: 13, tsd: 3.5, lag: [7, 21], eref: 30, minCap: 4, soilShock: true,
+    elev: [900, 1800], topt: 13, tsd: 3.5, lag: [7, 21], eref: 30, minCap: 4,
     evidence: 'Parametri assimilati a B. edulis (euristica), compreso il calo della temperatura del suolo.',
   },
   {

@@ -117,7 +117,9 @@ function shockSeries(drop) {
   return { dates, p, tmean: Array(n).fill(13), tmin: Array(n).fill(6), tmax: Array(n).fill(18), soilm: Array(n).fill(0.3), soilt, todayIndex: n - 1 };
 }
 const beech = { sample_categories: ['Faggeta'], samples: Array.from({ length: 50 }, () => [1300, 0]) };
-const why = (id, s, i) => { const sp = SPECIES.find((x) => x.id === id), r = scoreSpecies(sp, s, i, beech, 1300); return renderWhy({ r, s, i, sp, band: 1300, dateStr: s.dates[i], shown: r.score }); };
+// Dal 2.2.0 nessuna specie ha soilShock: le ragioni sul calo del suolo si provano sulle copie con il campo rimesso.
+const withShock = (id) => { const sp = SPECIES.find((x) => x.id === id); return ['edulis', 'pinophilus'].includes(id) ? { ...sp, soilShock: true } : sp; };
+const why = (id, s, i) => { const sp = withShock(id), r = scoreSpecies(sp, s, i, beech, 1300); return renderWhy({ r, s, i, sp, band: 1300, dateStr: s.dates[i], shown: r.score }); };
 const plain = (html) => html.replace(/<[^>]+>/g, ' ').replace(/&#?\w+;/g, ' ');
 
 test('le ragioni parlano di calo della temperatura del suolo, con fonte ed etichetta euristica', () => {
@@ -137,7 +139,7 @@ test('le ragioni parlano di calo della temperatura del suolo, con fonte ed etich
 // Peso giusto per un'evidenza debole (decisione del 16/10/2026): il calo del suolo compare per ultimo,
 // come «possibile innesco, osservazione preliminare», con l'etichetta Euristica e mai Letteratura.
 test('il calo del suolo è l’ultima ragione, «possibile innesco», euristica e mai letteratura', () => {
-  const s = shockSeries(6), sp = SPECIES.find((x) => x.id === 'edulis'), r = scoreSpecies(sp, s, 30, beech, 1300);
+  const s = shockSeries(6), sp = withShock('edulis'), r = scoreSpecies(sp, s, 30, beech, 1300);
   const html = renderWhy({ r, s, i: 30, sp, band: 1300, dateStr: s.dates[30], shown: r.score });
   assert.match(plain(html), /possibile innesco, osservazione preliminare \(Olivier et al\. 1997\)/);
   const checks = html.match(/<ul class="sci-checks"[\s\S]*?<\/ul>/)[0];

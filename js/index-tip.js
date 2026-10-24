@@ -16,7 +16,7 @@ function open(button, pin = false) {
     tip.setAttribute('role','tooltip'); tip.setAttribute('popover','manual');
     document.body.append(tip);
   }
-  tip.textContent=button.dataset.indexKind==='growth'?'Quanto ambiente e meteo dei giorni precedenti favoriscono la crescita dei funghi. Non descrive il tempo dell’uscita e non garantisce ritrovamenti.':'Le condizioni dell’uscita uniscono il potenziale di crescita dei funghi al meteo previsto. Il maltempo abbassa il valore; senza meteo verificabile non mostriamo un numero. È una stima, non una garanzia di ritrovamento o sicurezza.';
+  tip.textContent=button.dataset.indexKind==='growth'?'Quanto ambiente e meteo dei giorni precedenti favoriscono la crescita dei funghi. Non descrive il tempo dell’uscita e non garantisce ritrovamenti.':'Le condizioni dell’uscita uniscono il potenziale di crescita dei funghi al meteo previsto. Indicano bene periodo e bosco; sul giorno preciso il meteo aiuta poco, e non è ancora dimostrato (prova sul 2023–2025, in «Come calcoliamo»). Il maltempo abbassa il valore; senza meteo verificabile non mostriamo un numero. È una stima, non una garanzia di ritrovamento o sicurezza.';
   opener = button; pinned ||= pin;
   button.setAttribute('aria-expanded','true'); button.setAttribute('aria-describedby',tip.id);
   tip.hidden = false;

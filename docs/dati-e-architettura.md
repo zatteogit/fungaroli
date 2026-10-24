@@ -359,7 +359,7 @@ Dove stanno i numeri:
 |---|---|
 | Finestre, soglie meteo, fascia di quota | `PARAMS` in `js/model.js` |
 | Curva della pioggia (pesi 0,6/0,4, innesco 15 mm), soglia habitat 0,45, decadimento quota 200 m, minimo del suolo 0,15, penalità di gelo e caldo | dentro le funzioni di `js/model.js` |
-| Shock termico (calo di 5 °C del suolo, da 6 a 15 giorni, bonus 1,15) | `PARAMS.shock*` in `js/model.js`; specie con `soilShock` in `js/species.js` |
+| Shock termico (calo di 5 °C del suolo, da 6 a 15 giorni, bonus 1,15): **nessuna specie dal modello 2.2.0** (prova 2023–2025) | `PARAMS.shock*` in `js/model.js`; specie con `soilShock` in `js/species.js` |
 | Classi dell'indice | `CLASSES` in `js/model.js` |
 | Parametri di specie | `SPECIES` in `js/species.js` |
 | Completezza degli input e provenienza | `inputQuality()` in `js/model.js`, timestamp in `js/weather.js`; accuratezza non validata |

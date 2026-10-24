@@ -224,7 +224,9 @@ Tre verifiche indipendenti, il 23/10, sugli esiti prima di D21:
   `esiti-riepilogo.json`, ma **non va letta**: le richieste seguono l'ordine dei punti e il Mac le scarica dal fondo
   dell'elenco, quindi oggi il Nord pesa 10 708 uscite, il Centro 2983, il Sud e isole 1507. Si rifà quando le quote
   sono complete (D17, D20.14, D22). Nessun verdetto dipende da lei.
-- **Conferma sul 2026**, con questo stesso protocollo, non prima del 31/03/2027 (2.3 del Lazio), se Matteo lo decide.
+- **Conferma sul 2026** del modello 2.2.0 (senza shock termico), preregistrata il 24/10/2026 in
+  `preregistrazione-2026.md`: non prima del 31/03/2027. Prima di scaricare i dati 2026 vanno registrati in D23 gli
+  SHA-256 di `js/model.js` e `js/species.js` 2.2.0.
 
 ## File
 
