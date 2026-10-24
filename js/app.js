@@ -391,7 +391,9 @@ async function init() {
   initPlants(plantData,embedded?(f)=>embedded.assets?.[f]||'':(f)=>f,id=>plantModels.find(m=>m.plantId===id));
   initEditorialOutings(embedded?.editorialOutings||await load('editorial-outings'),{zones,trails,photos:zoneMedia,species:catalog});
   renderEditorialIndex($('#editorial-outings-home'),{home:true});
-  for(const id of ['ranking-index-legend','season-index-legend'])$('#'+id).innerHTML=indexLegend(id==='season-index-legend'?'growth':'outing');
+  // La riga «Condizioni per l’uscita · 0–10» è stata tolta ovunque (decisione di Matteo del 24/10): la spiegazione
+  // si apre dall’anello o dal bottone «Condizioni». Resta la riga sul potenziale di crescita.
+  $('#season-index-legend').innerHTML=indexLegend('growth');
   initLearning({ glossary: embedded?.glossary || await load('glossary'), trees: trj,media:embedded?.glossaryMedia||await load('media-glossary'),assetUrl:embedded?(f)=>embedded.assets?.[f]||'':(f)=>f });
   if (embedded) challengeAsset = (f) => embedded.assets?.[f] || '';
   initChallenges({ data: embedded?.challenges || await load('challenges'), assetUrl: challengeAsset, entity: challengeEntity });
@@ -1083,7 +1085,6 @@ function renderHomeEmpty(){
  $('#ranking').innerHTML=homeReviewOpen?homePresentation.review.slice(0,8).map(c=>`<li class="home-review-item"><a href="${walkHref(c.z,c.o,c.walk?.t)}"><span><small>Da valutare · ${esc(dayLabel(c.o,c.d.date,true))}</small><b>${esc(splitName(c.z)[0])}</b><small>${esc(c.weather.text)}</small></span><span>${Number.isFinite(c.s)?formatIndex(c.s):'Dettagli'} →</span></a></li>`).join(''):'';
  $('#others-h').textContent='Proposte da valutare';$('#others-h').hidden=!homeReviewOpen||!homePresentation.review.length;
  $('#during-walk').hidden=true;$('#during-walk').replaceChildren();
- $('#ranking-index-legend').hidden=!homeReviewOpen||state.target!=='funghi';
  renderSeason();renderCommunityIntro();
 }
 // Riga sopra la proposta quando la home è passata da sola a un altro giorno perché per oggi è tardi.
@@ -2208,7 +2209,6 @@ function renderHomeContent() {
   }
   setOutingHeadings(homePresentation.ready);orderHomeBands();
   $('#home-h').textContent=contentCopy.homeTitle||'Dove andare';
-  $('#ranking-index-legend').hidden=state.target!=='funghi';
   renderHomeDayNote();renderHomeReading();
   if(state.target!=='funghi'){renderOutdoorHome();return;}
   const list=homePresentation.ready,hero=list[0],box=$('#hero');
@@ -2382,7 +2382,6 @@ function openSheet(zid) {
       <span class="sheet-txt"><span class="eyebrow">${esc(dayLabel(state.dayOffset, d.date, true))}</span><b class="sheet-title">${esc(splitName(z)[0])}</b>
         ${ring(sc, false)}<span class="small">${esc(d.best.species.name)} · ${d.best.band} m s.l.m.</span><span class="small">${esc(travelText(zoneTrip(z)))}${d.crowd ? ` · ${crowdText(d.crowd)}` : ''}</span>${wxOf(z, d) ? `<span class="small wx-line wx-${wxOf(z, d).level}">${wxi(wxOf(z, d))}${esc(wxOf(z, d).text)}</span>` : ''}</span>
     </a>
-    ${indexLegend()}
     ${zoneCollectionNotice(z)}
     ${hasInterest('piante')?discoveriesHtml(z,d,walk,mapPlants(z,d,walk),{compact:true}):''}
     ${forestOn ? forestHere(zid) : ''}${protectedOn ? protectedHere(zid) : ''}
@@ -2565,7 +2564,7 @@ function chooseMapZone(id,{animate=true,anchor=null}={}){
 }
 function initMapExperience(){
   if(mapExperience)return;
-  mapExperience=mountMapResults($('.view-map'),{choose:chooseMapZone,fit:fitMapResults,filters:openFullFilters,indexLegend:indexLegend()});
+  mapExperience=mountMapResults($('.view-map'),{choose:chooseMapZone,fit:fitMapResults,filters:openFullFilters});
   if(!hasLeaflet())$('#map-results .map-results-body').append($('.legend-box'));
   const status=$('#map-weather-status');
   const sync=()=>{if(state.view!=='mappa')return;status.hidden=$('#stale').hidden&&!$('#weather-work').classList.contains('busy');status.querySelector('summary').textContent=!$('#stale').hidden?'Meteo da verificare':'Aggiornamento meteo…';scheduleMapResults();};
@@ -3069,7 +3068,7 @@ function renderMap(changed=null) {
 function renderLegend() {
   if(state.target!=='funghi'){$('#legend').innerHTML=`<span>${hasInterest('piante')?'Ambienti e piante da osservare.':'Zone e sentieri mappati.'}</span><span>Le linee mostrano i tratti nella zona, non giri completi.</span>${mapPlantNote()}<div class="wms"${forestOn?'':' hidden'}>${forestLegend()}</div><div class="wms wms-pa"${protectedOn?'':' hidden'}>${protectedLegend()}</div>`;return;}
   const items = [...CLASSES].reverse().map((c) => `<span><span class="sw" style="background:var(${mapVar(c.min)})"></span>${c.label}${c.min ? ' ≥' + formatIndex(c.min) : ''}</span>`);
-  $('#legend').innerHTML = indexLegend() + (hasInterest('piante')?'<span>Piante da osservare</span>':'') + items.join('') +
+  $('#legend').innerHTML = (hasInterest('piante')?'<span>Piante da osservare</span>':'') + items.join('') +
     (hasLeaflet() || !globalThis.FUNGAROLI_DATA ? '' : `<span class="muted">Schema: cerchi = zone, anelli = distanza in linea d’aria da ${esc(currentBase().name)}</span>`) +
     (hasLeaflet() &&state.target==='funghi' ? '<span class="lg-cells"><span class="sw sw-cell"></span>Riquadri campionati da 300–500 m: habitat potenziale, senza verifica di presenza o permesso di raccolta. Avvicinati o apri una zona per vederli.</span>' : '') +
     mapPlantNote()+`<div class="wms"${forestOn ? '' : ' hidden'}>${forestLegend()}</div>` +
@@ -3444,7 +3443,6 @@ function renderDetail() {
     </header>
     <div class="pbody">
     <div id="zone-days" class="days compact" role="tablist" aria-label="Giorno">${zoneDays}</div>
-    ${best.kind==='plant'?'':indexLegend()}
     ${weatherAgeHtml(z, best.band)}
     ${zoneCollectionNotice(z)}
     ${renderWalkFocus(z, d, walk)}

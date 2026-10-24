@@ -41,6 +41,8 @@ Supera, dove contrasta, la sezione del 21/10 qui sotto (passaggio automatico a d
 - **Fasce.** «Un bosco, tante esperienze» compatta diventa tre vignette in riga (Vedi, Racconta, Condividi) con «Come funziona la condivisione». La frase del giorno è una citazione editoriale: fondo calendula leggero, virgolette come decoro, serif più ampio, senza riquadro bianco.
 - **Distanza fra le fasce.** Un solo passo continuo per tutte le larghezze: `--home-band-gap: clamp(24px, calc(2.2vw + 16px), 40px)` (24 px a 320–390, 33 a 768, 39 a 1024, 40 da 1280). La fascia «Dalla redazione», delimitata da filetti, usa lo stesso passo come spazio interno: il filetto sta a metà fra due passi uguali.
 - **Orizzonte della previsione.** Niente più riga «Previsione a N giorni: da ricontrollare prima di partire» sotto la proposta: dal quarto giorno la stessa frase è un suggerimento (`title`) sull'etichetta del giorno nella copertina.
+- **Niente riga «Condizioni per l’uscita · 0–10».** Tolta ovunque: home, scheda zona, mappa (elenco, legenda, foglio della zona). La spiegazione si apre dal bottone «Condizioni» della copertina e dall’anello nella scheda zona; nelle righe che sono link (altre uscite, elenco della mappa) il numero porta alla zona. Resta la riga «Potenziale di crescita · 0–10» sulle specie del periodo.
+- **Hover sulla copertina della home.** Niente sollevamento e niente zoom della foto: la foto occupa una colonna sola e ingrandendosi sconfinava nel riquadro colorato. Il segnale resta il CTA che si riempie.
 
 ### Home quando per oggi è tardi — decisione del 21 ottobre 2026
 

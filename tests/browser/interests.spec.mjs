@@ -26,7 +26,7 @@ for(const width of [320,1280])test(`interessi indipendenti: tutte le combinazion
   await page.locator('#map-filters [data-more]').click();
   for(const id of ids)await expect(page.locator(`#full-filters [data-intent="${id}"]`)).toHaveAttribute('aria-pressed',String(selected.includes(id)));
   await page.locator('#full-filters [data-close]').last().click();
-  if(selected.includes('funghi')&&selected.includes('piante')){await expect(page.locator('#legend')).toContainText('Potenziale dei funghi e meteo previsto');await expect(page.locator('#legend')).toContainText('Piante da osservare');}
+  if(selected.includes('funghi')&&selected.includes('piante')){await expect(page.locator('#legend')).not.toContainText('Potenziale dei funghi e meteo previsto');await expect(page.locator('#legend')).toContainText('Piante da osservare');}
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
   await expect(page.locator('#map-filters > button')).toHaveCount(2);
   await page.goto('/#/uscite');
