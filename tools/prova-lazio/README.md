@@ -219,9 +219,11 @@ Tre verifiche indipendenti, il 23/10, sugli esiti prima di D21:
 
 ## Che cosa resta da fare
 
-- **Analisi descrittiva** (mesi × fasce di quota, 11 del Lazio): le quote 2015–2025 della priorità 5 non sono ancora
-  scaricate (4379 uscite con quota su 39 946). La tabella parziale è in `esiti-riepilogo.json`; si rifà quando arrivano
-  le quote (D17, D20.14). Nessun verdetto dipende da lei.
+- **Analisi descrittiva** (mesi × fasce di quota, 11 del Lazio): quote 2015–2025 della priorità 5 scaricate per 109
+  richieste su 353 (24/10, dopo l'unione dei dati del Mac): 15 231 uscite con quota su 39 946. La tabella parziale è in
+  `esiti-riepilogo.json`, ma **non va letta**: le richieste seguono l'ordine dei punti e il Mac le scarica dal fondo
+  dell'elenco, quindi oggi il Nord pesa 10 708 uscite, il Centro 2983, il Sud e isole 1507. Si rifà quando le quote
+  sono complete (D17, D20.14, D22). Nessun verdetto dipende da lei.
 - **Conferma sul 2026**, con questo stesso protocollo, non prima del 31/03/2027 (2.3 del Lazio), se Matteo lo decide.
 
 ## File
