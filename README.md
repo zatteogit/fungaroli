@@ -83,7 +83,7 @@ indice pubblico = 10 × stagione × habitat × quota × pioggia × temperatura �
 | Temperatura | media aria dei 20 gg precedenti vs ottimo specie (porcino ≈ 13 °C, gaussiana) | preprint 2025 per *B. edulis*; **euristica** per le altre specie |
 | Suolo | umidità 3–9 cm degli ultimi 3 gg (modello Open-Meteo) | euristica |
 | Gelo / caldo | min < −1 °C negli ultimi 5 gg → ×0,35; max > 30 °C → ×0,65 | euristica |
-| Shock termico | calo ≥ 4 °C della media 3 gg, 4–14 gg prima → bonus | pratica micologica, non verificata |
+| Shock termico | solo porcino e porcino rosso: calo di almeno 5 °C della temperatura del suolo a 6 cm, ×1,15 da 6 a 15 gg dopo, mai cumulato | Olivier et al. 1997 (soglia e finestra); moltiplicatore e media di 3 gg **euristici**; evidenza debole |
 | Habitat | frazione di bosco idoneo nella fascia ±150 m (punti campione Carta Forestale × affinità specie) | dato ufficiale + affinità da manualistica |
 | Stagione, quota | pesi mensili e range altimetrico per specie | documento di partenza, manualistica |
 

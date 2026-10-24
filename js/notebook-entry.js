@@ -25,5 +25,5 @@ export function normalizeNotebookNote(e,{zoneIds,plantIds,now=Date.now()}={}){
   let weather=null;
   if(e.weather!=null){const w=e.weather;if(w.zoneId!==zoneId||w.date!==e.date||!['sun','cloud','wind','fog','rain','storm','snow'].includes(w.icon)||![w.tmin,w.tmax].every(v=>Number.isFinite(v)&&v>=-70&&v<=60)||w.tmin>w.tmax||!Number.isFinite(Date.parse(w.capturedAt)))invalid();weather={zoneId,date:e.date,icon:w.icon,tmin:w.tmin,tmax:w.tmax,capturedAt:w.capturedAt};}
   if(!reference&&!e.note.trim()&&!photo)invalid();
-  return {...(e.record!=null?{record:normalizeFieldRecord(e.record)}:{}),...(photo?{photo}:{}),...(weather?{weather}:{}),id:e.id,kind:'note',title:e.title.trim(),category:e.category,date:e.date,zoneId,note:e.note,reference,observation,savedAt:typeof e.savedAt==='string'&&Number.isFinite(Date.parse(e.savedAt))?e.savedAt:new Date().toISOString()};
+  return {...(e.record!=null?{record:normalizeFieldRecord(e.record,e.category)}:{}),...(photo?{photo}:{}),...(weather?{weather}:{}),id:e.id,kind:'note',title:e.title.trim(),category:e.category,date:e.date,zoneId,note:e.note,reference,observation,savedAt:typeof e.savedAt==='string'&&Number.isFinite(Date.parse(e.savedAt))?e.savedAt:new Date().toISOString()};
 }
