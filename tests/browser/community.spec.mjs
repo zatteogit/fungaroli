@@ -3,7 +3,8 @@ import { todayISO } from '../../js/weather.js';
 import {randomBytes} from 'node:crypto';
 test.use({locale:'it-IT'});
 
-async function setup(page,{gust=8}={}) {
+// cover:false quando il meteo simulato sconsiglia ogni uscita: la home non ha copertina e dice che sono da valutare (dal 21/10).
+async function setup(page,{gust=8,cover=true}={}) {
   // Un client locale distinto per ogni contesto mantiene separati i limiti delle
   // passkey senza scrivere nel file SQLite mentre il Worker lo sta usando.
   const ip='fd00:'+randomBytes(14).toString('hex').match(/.{4}/g).join(':');
@@ -24,7 +25,9 @@ async function setup(page,{gust=8}={}) {
   await page.goto('/');await expect(page.locator('body')).not.toHaveAttribute('data-legal-pending','');
   await expect(page.locator('#editorial')).toBeHidden();
   await page.goto('/#/guide');await expect(page.locator('#editorial a')).toHaveCount(3);
-  await page.goto('/');await expect(page.locator('#hero .cover-link')).toBeVisible();
+  await page.goto('/');
+  if(cover)await expect(page.locator('#hero .cover-link')).toBeVisible();
+  else{await expect(page.locator('#hero .home-empty')).toHaveAttribute('data-home-state',/^(review|weather)$/);await expect(page.locator('#hero .cover-link')).toHaveCount(0);}
   return errors;
 }
 async function register(page, name) {
@@ -89,6 +92,10 @@ test('vetrina varia e sentiero stabile passando dalla proposta ai giorni del tac
   await page.setViewportSize({width:390,height:844});
   const errors = await setup(page);
   const proposals = page.locator('#hero [data-walk-zone], #ranking [data-walk-zone]');
+  // Dal 24/10 (#249) i lotti meteo arrivati dopo i primi 2 s non ridisegnano la home: restano in attesa di «Aggiorna».
+  // Con il Wrangler a freddo il primo disegno è parziale; si aspetta la fine dello scarico e si applica come farebbe chi legge.
+  await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');
+  const apply=page.locator('#home-update:not([hidden]) [data-home-apply]');if(await apply.count())await apply.click();
   // la classifica arriva dopo la proposta principale: si aspetta che sia disegnata prima di leggerla
   await expect.poll(() => proposals.count()).toBeGreaterThan(3);
   const places = await proposals.evaluateAll(nodes => nodes.map(n => n.dataset.walkZone));
@@ -106,7 +113,8 @@ test('vetrina varia e sentiero stabile passando dalla proposta ai giorni del tac
   await expect(focus).toBeVisible();
   const trailId = href.split('/sentiero/')[1];
   await expect(focus).toHaveAttribute('data-walk-trail',trailId);
-  await expect(focus).toContainText('Itinerario completo');
+  // Dal 20/10 (v253) i dati dell'itinerario intero stanno in «Dati del sentiero e fonti», distinti dalle tratte.
+  await expect(focus.locator('.walk-facts dt')).toHaveText(['Relazione OSM intera · dati della fonte']);
   await expect(focus).toContainText('non questo singolo sentiero');
   await page.locator('#zone-days [aria-selected="false"]').first().click();
   await expect(page).toHaveURL(new RegExp('/sentiero/'+trailId+'$'));
@@ -251,7 +259,7 @@ for(const width of [320,1280]) test(`tracciato e profilo nello stesso riquadro a
 test('Quando ha una sola testata, mantiene gli avvisi meteo e aggiunge solo dettagli',async({page})=>{
  await page.clock.setFixedTime(new Date(new Date().setUTCHours(0,0,0,0)));
  await page.setViewportSize({width:390,height:900});await page.emulateMedia({reducedMotion:'reduce'});
- const errors=await setup(page,{gust:46});await page.goto('/#/zona/tancia/0');
+ const errors=await setup(page,{gust:46,cover:false});await page.goto('/#/zona/tancia/0');
  const section=page.locator('#detail details[data-sec="quando"]'),summary=section.locator(':scope > summary');
  await expect(summary.locator('.essential-summary')).toHaveCount(1);await expect(summary.locator('.plan-k')).toHaveText('Quando');
  await expect(summary).toContainText('Arriva');await expect(summary).toContainText('46 km/h');await expect(summary).not.toContainText("Meteo dell'uscita");
@@ -615,17 +623,21 @@ test('azioni del taccuino: timeout, errori accanto alla voce e riprova senza per
 test('accordion: riepilogo e dettaglio si completano senza duplicare tratto, imbocchi e accesso',async({page})=>{
  const errors=await setup(page);await page.emulateMedia({reducedMotion:'reduce'});await page.goto('/#/zona/poggio-cantalice/0');
  const focus=page.locator('#detail .walk-focus'),summary=focus.locator(':scope > summary');
- await expect(summary.locator('.walk-entrance-list')).toBeVisible();
+ // Dal 20/10 (v253) il riepilogo ha solo distanza e difficoltà; le intersezioni con strade stanno nel dettaglio.
+ await expect(summary.locator('.walk-stats')).toBeVisible();await expect(summary.locator('.walk-entrances,.th-chip')).toHaveCount(0);
  const stats=await summary.locator('.walk-stats').innerText();
  await summary.focus();await page.keyboard.press('Enter');await expect(focus).toHaveAttribute('open','');
- await expect(summary.locator('.walk-stats')).toHaveText(stats,{useInnerText:true});await expect(summary.locator('.walk-entrances')).toBeHidden();
- const body=focus.locator(':scope > .sec-body');await expect(body.locator('.walk-facts dt')).toHaveText(['Itinerario completo']);
- await expect(body.locator('.th-chip').first()).toBeVisible();
- await summary.press('Enter');await expect(summary.locator('.walk-entrance-list')).toBeVisible();
+ // Aperto, il riepilogo lascia il posto alle tratte del dettaglio: distanza e tempi non compaiono due volte.
+ await expect(summary.locator('.walk-glance')).toBeHidden();
+ const body=focus.locator(':scope > .sec-body');await expect(body.locator('.outing-leg').first()).toBeVisible();await expect(body.locator('.walk-facts dt')).toHaveText(['Relazione OSM intera · dati della fonte']);
+ await expect(body.locator('.th-chip').first()).toBeVisible();await expect(body.locator('.walk-stats')).toHaveCount(0);
+ await summary.press('Enter');await expect(body).toBeHidden();await expect(summary.locator('.walk-stats')).toHaveText(stats,{useInnerText:true});
  const access=page.locator('#detail .essential-sections [data-sec="accesso"]');
  await access.locator(':scope > summary').click({position:{x:5,y:10}});await expect(access.locator(':scope > .sec-body')).toContainText('transitabilità');
  await expect(access.locator(':scope > .sec-body .badge')).toHaveCount(0);
- await expect(access.locator('summary .plan-sub .act-pill')).toBeVisible();
+ // Dal 20/10 (#160) il riepilogo dice arrivo e tempo dalla base; il navigatore sta nel dettaglio, una volta sola.
+ await expect(access.locator('summary .plan-travel')).toBeVisible();await expect(access.locator('summary a')).toHaveCount(0);
+ await expect(access.locator(':scope > .sec-body .access-overview-actions a.btn.primary')).toContainText('Apri il navigatore');
  const species=page.locator('#detail .essential-sections [data-sec="specie"]');
  await species.locator(':scope > summary').click({position:{x:5,y:10}});
  await expect(species.locator('summary .ent-chips')).toBeHidden();
