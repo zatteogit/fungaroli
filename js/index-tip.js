@@ -4,7 +4,7 @@ const observer = new MutationObserver(() => { if (opener && !opener.isConnected)
 function close() {
   clearTimeout(timer); observer.disconnect();
   if (tip?.showPopover && tip.matches(':popover-open')) tip.hidePopover();
-  if (tip) tip.hidden = true;
+  if (tip) { tip.hidden = true; tip.classList.remove('is-inline'); if (tip.parentElement !== document.body) document.body.append(tip); }
   opener?.setAttribute('aria-expanded','false'); opener?.removeAttribute('aria-describedby');
   opener = null; pinned = false;
 }
@@ -20,11 +20,23 @@ function open(button, pin = false) {
   opener = button; pinned ||= pin;
   button.setAttribute('aria-expanded','true'); button.setAttribute('aria-describedby',tip.id);
   tip.hidden = false;
-  if (tip.showPopover && !tip.matches(':popover-open')) tip.showPopover();
-  position();
+  // Le etichette «Condizioni … 0–10» aprono la spiegazione nel flusso, sotto l'etichetta: sposta il contenuto invece
+  // di coprirlo (nel riquadro della mappa la bolla flottante copriva le card che spiega). Gli anelli restano flottanti.
+  if (button.classList.contains('index-legend')) {
+    if (tip.matches?.(':popover-open')) tip.hidePopover();
+    tip.classList.add('is-inline'); tip.style.left = tip.style.top = '';
+    button.after(tip);
+    tip.scrollIntoView({block:'nearest',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+  } else {
+    tip.classList.remove('is-inline');
+    if (tip.parentElement !== document.body) document.body.append(tip);
+    if (tip.showPopover && !tip.matches(':popover-open')) tip.showPopover();
+    position();
+  }
   observer.observe(button.closest('#detail, #hero') || document.body,{childList:true,subtree:true});
 }
 function position() {
+  if (tip.classList.contains('is-inline')) return;
   const r = opener.getBoundingClientRect(), p = tip.getBoundingClientRect();
   tip.style.left = `${Math.max(12,Math.min(innerWidth-p.width-12,r.right-p.width))}px`;
   tip.style.top = `${r.bottom+p.height+8<=innerHeight-12?r.bottom+8:Math.max(12,r.top-p.height-8)}px`;
