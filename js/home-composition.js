@@ -33,14 +33,13 @@ export function nextHomeOpportunity(candidates,{after=0,fungi=true,horizon=7}={}
 export function latestDeadline(deadlines){
  return deadlines.filter(d=>d instanceof Date&&Number.isFinite(d.getTime())).reduce((a,b)=>!a||b>a?b:a,null);
 }
-// Giorno della home senza una scelta esplicita: oggi, oppure il prossimo giorno utile quando per oggi è tardi.
-// Una scelta manuale resta quella dell'utente.
-export function automaticHomeDay({manual=false,current=0,todayLate=false,next=null}={}){
- if(manual)return {day:current,auto:false};
- return todayLate&&next?{day:next.o,auto:true}:{day:0,auto:false};
+// Giorno della home senza una scelta esplicita: «Questa settimana» (null), con la copertina (decisione di Matteo
+// del 24/10, supera il passaggio automatico a domani del 21/10). Una scelta manuale resta quella dell'utente.
+export function automaticHomeDay({manual=false,current=null}={}){
+ return manual?{day:current,auto:false}:{day:null,auto:false};
 }
 // A mezzanotte il giorno scelto resta la stessa data: l'offset scende dei giorni trascorsi.
 export function shiftChosenDay(day,elapsed){
  if(day==null||!(elapsed>0))return {day,manual:true};
- return day-elapsed>=0?{day:day-elapsed,manual:true}:{day:0,manual:false};
+ return day-elapsed>=0?{day:day-elapsed,manual:true}:{day:null,manual:false};
 }

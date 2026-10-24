@@ -25,17 +25,18 @@ async function openHome(page,{time,weather='good',fail=false,width=390}){
 const selectedDay=page=>page.locator('#days [aria-selected="true"]').getAttribute('data-day-offset');
 const noOverflow=async page=>expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
 
-test('alle 16:30 la home passa a domani; «Torna a oggi» mostra la card unica con foto e azione',async({page})=>{
+// Decisione di Matteo del 24/10: la home apre «Questa settimana» con la copertina; il singolo giorno non ha copertina.
+// Supera il passaggio automatico a domani del 21/10: il caso «tardi» resta su Oggi, scelto dall'utente.
+const weekSelected=page=>expect(page.locator('#days .day-all')).toHaveAttribute('aria-selected','true');
+const pickToday=async page=>{await page.locator('#days [data-day-offset="0"]').click();expect(await selectedDay(page)).toBe('0');};
+
+test('alle 16:30 la home apre la settimana; su Oggi la card «tardi» porta a domani senza copertina',async({page})=>{
  const errors=await openHome(page,{time:T('16:30')});
- expect(await selectedDay(page)).toBe('1');
- const note=page.locator('#home-day-note');
- await expect(note).toBeVisible();await expect(note).toContainText(/Oggi è tardi per partire: l’ultima partenza utile era alle \d{1,2}:\d{2}/);
- await expect(note).not.toHaveAttribute('aria-live',/.*/);
- await expect(page.locator('#hero .cover-link')).toHaveAttribute('href',/\/1(\/|$)/);
+ await weekSelected(page);await expect(page.locator('#home-day-note')).toBeHidden();
+ await expect(page.locator('#hero .cover-link')).not.toHaveAttribute('href',/\/0(\/|$)/);
  await expect(page.locator('#days [data-day-offset="0"]')).toContainText('tardi');
  await expect(page.locator('#days .day-all')).not.toContainText('Raggio');
- await note.getByRole('button',{name:'Torna a oggi'}).click();
- expect(await selectedDay(page)).toBe('0');await expect(note).toBeHidden();
+ await pickToday(page);
  const card=page.locator('#hero [data-home-state="late"]');
  await expect(card).toContainText('Oggi è tardi per partire.');await expect(card).toContainText(/L’ultima partenza utile era alle \d{1,2}:\d{2}/);
  await expect(card).not.toContainText('finestra');await expect(card.locator('.home-next img')).toHaveCount(1);
@@ -43,42 +44,45 @@ test('alle 16:30 la home passa a domani; «Torna a oggi» mostra la card unica c
  const cta=card.getByRole('button',{name:/Vedi domani/});await expect(cta).toBeVisible();
  // Un aggiornamento del meteo non sposta la scelta manuale.
  await page.locator('#refresh').click();await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');expect(await selectedDay(page)).toBe('0');
- await cta.click();expect(await selectedDay(page)).toBe('1');await expect(page.locator('#hero .cover-link')).toBeVisible();await expect(note).toBeHidden();
+ await cta.click();expect(await selectedDay(page)).toBe('1');
+ // Giorno singolo: intestazione compatta, nessuna copertina, classifica dalla prima.
+ await expect(page.locator('#hero .home-day-head')).toContainText('Domani');await expect(page.locator('#hero .cover-link')).toHaveCount(0);
+ await expect(page.locator('#ranking li').first()).toBeVisible();
+ await page.locator('#hero [data-home-week]').click();await weekSelected(page);await expect(page.locator('#hero .cover-link')).toBeVisible();
  expect(errors).toEqual([]);
 });
 
-test('alle 8:45 la proposta resta su oggi',async({page})=>{
+test('alle 8:45 la settimana propone anche oggi',async({page})=>{
  const errors=await openHome(page,{time:T('08:45')});
- expect(await selectedDay(page)).toBe('0');await expect(page.locator('#home-day-note')).toBeHidden();
- await expect(page.locator('#hero .cover-link')).toHaveAttribute('href',/\/0(\/|$)/);await expect(page.locator('#days [data-day-offset="0"]')).not.toContainText('tardi');
+ await weekSelected(page);await expect(page.locator('#hero .cover-link')).toBeVisible();
+ await expect(page.locator('#days [data-day-offset="0"]')).not.toContainText('tardi');
  expect(errors).toEqual([]);
 });
 
-test('a mezzanotte il giorno automatico torna a oggi',async({page})=>{
- await openHome(page,{time:T('16:30')});expect(await selectedDay(page)).toBe('1');
+test('a mezzanotte un giorno scelto e ormai passato torna alla settimana',async({page})=>{
+ await openHome(page,{time:T('16:30')});await pickToday(page);
  await page.clock.setSystemTime(T('07:00','2026-10-22'));await page.clock.runFor(61000);
- await expect.poll(()=>selectedDay(page)).toBe('0');await expect(page.locator('#home-day-note')).toBeHidden();
+ await expect(page.locator('#days .day-all')).toHaveAttribute('aria-selected','true');
 });
 
 for(const width of [320,390,1760])test(`stato tardi senza overflow a ${width}px, azione nel primo schermo`,async({page})=>{
  const errors=await openHome(page,{time:T('16:30'),width});await noOverflow(page);
  const height=page.viewportSize().height;
  if(width===390){const cta=await page.locator('#hero .cover-cta').boundingBox();expect(cta.y+cta.height).toBeLessThanOrEqual(height);}
- await page.locator('#home-day-note [data-home-today]').click();await expect(page.locator('#hero [data-home-next]')).toBeVisible();await noOverflow(page);
+ await pickToday(page);await expect(page.locator('#hero [data-home-next]')).toBeVisible();await noOverflow(page);
  if(width===390){const cta=await page.locator('#hero [data-home-next]').boundingBox();expect(cta.y+cta.height).toBeLessThanOrEqual(height);}
  expect(errors).toEqual([]);
 });
 
 test('nessuna data favorevole e dati insufficienti hanno testi distinti',async({page})=>{
- // Temporali ogni giorno: i dati ci sono, nessuna data favorevole. La home resta su oggi.
- await openHome(page,{time:T('16:30'),weather:'storm'});
- expect(await selectedDay(page)).toBe('0');
+ // Temporali ogni giorno: i dati ci sono, nessuna data favorevole. Su Oggi la card lo dice.
+ await openHome(page,{time:T('16:30'),weather:'storm'});await pickToday(page);
  const card=page.locator('#hero [data-home-state="late"]');
  await expect(card).toContainText('Nei prossimi 7 giorni non emerge un’altra data favorevole');await expect(card).not.toContainText('Senza meteo aggiornato');
 });
 
 test('senza meteo il riquadro lo dice una volta sola, con un solo «Riprova»',async({page})=>{
- await openHome(page,{time:T('16:30'),fail:true});
+ await openHome(page,{time:T('16:30'),fail:true});await pickToday(page);
  const card=page.locator('#hero [data-home-state="late"]');
  await expect(card).toContainText('Senza meteo aggiornato non possiamo indicare un altro giorno');await expect(card).not.toContainText('non emerge');
  await expect(page.getByRole('button',{name:'Riprova'}).filter({visible:true})).toHaveCount(1);await expect(page.locator('#refresh')).toBeHidden();
@@ -123,5 +127,26 @@ test('scheda di oggi: orario superato nel pomeriggio, raccolta chiusa la sera',a
  await expect(page.locator('.view:not([hidden])').getByText(/Orario consigliato superato|Raccolta chiusa/).first()).toHaveText('Raccolta chiusa');
  // OUT-03, punto 2: dalle 14 il meteo dell'uscita di oggi non è più una previsione.
  await expect(page.locator('.view:not([hidden]) .when-weather').first()).toContainText('Mattina di oggi già passata');
+ expect(errors).toEqual([]);
+});
+
+// Stabilità (decisione di Matteo del 24/10): a pagina già letta, il meteo che cambierebbe tutta la proposta non
+// ridisegna da solo. La copertina resta, le card che peggiorano lo dicono subito e «Aggiorna» applica il nuovo stato.
+test('il meteo nuovo che cambia tutto aspetta «Aggiorna»; il peggioramento si vede subito',async({page})=>{
+ let storm=false;const errors=[];page.on('pageerror',e=>errors.push(e.message));const time=T('09:30');
+ await page.setViewportSize({width:390,height:844});
+ await page.route('https://**/*',r=>r.abort());
+ await page.route('**/api/weather/v1/forecast?**',r=>r.fulfill({json:forecast(r.request().url(),time,storm?WX.storm:WX.good)}));
+ await page.addInitScript(()=>{localStorage.setItem('fungaroli:legal-accepted','62026-10-20');localStorage.setItem('fungaroli:install-later',String(Date.now()));});
+ await page.clock.install({time});await page.goto('/');
+ const cover=page.locator('#hero .cover-link');await expect(cover).toBeVisible();await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');
+ const href=await cover.getAttribute('href');
+ await page.clock.runFor(3000);await page.mouse.wheel(0,400);await page.evaluate(()=>scrollTo(0,0));
+ storm=true;await page.locator('#refresh').click();await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');
+ const bar=page.locator('#home-update');await expect(bar).toBeVisible();await expect(bar).toContainText('Meteo aggiornato: cambiano le proposte.');
+ await expect(cover).toHaveAttribute('href',href);
+ await expect(page.locator('#hero .weather-alert')).toHaveText('Meteo peggiorato');
+ await bar.getByRole('button',{name:'Aggiorna'}).click();
+ await expect(bar).toBeHidden();await expect(page.locator('#hero [data-home-state="weather"]')).toBeVisible();
  expect(errors).toEqual([]);
 });

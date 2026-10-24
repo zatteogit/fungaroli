@@ -1,4 +1,5 @@
 import {composeHome,nextHomeOpportunity,latestDeadline,automaticHomeDay,shiftChosenDay} from './home-composition.js';
+import {freshness,viewSignature,compareViews,updatePolicy} from './view-stability.js';
 import {createHomeIntro} from './home-intro.js';
 import {entityIdentity,connectionsHtml} from './fronda-connections.js';
 import {renderPlantComparison} from './plant-comparison.js';
@@ -164,7 +165,7 @@ const state = {
   distancePenalty: false,
   avoidCrowd: false,
   preferComfort: false,
-  homeDay: 0,   // null = settimana, quando scelta esplicitamente
+  homeDay: null,   // null = «Questa settimana», la vista iniziale (decisione del 24/10)
   view: 'uscite',
 };
 try {
@@ -261,9 +262,8 @@ function syncAutomaticDates({reconsider=false}={}) {
   const key = homeChoiceKey();
   if (key !== homeAutoKey) { homeAutoKey = key; reconsider = true; }
   if (!homeDateManual && (reconsider || !homeAutoLocked)) {
-    const today=homeTodayLate(),next=today.late?discoveryWindow(0).next:null;
-    const plan=automaticHomeDay({todayLate:today.late,next});
-    homeAutoLate=plan.auto?{day:plan.day,deadline:today.deadline}:null;
+    const plan=automaticHomeDay({manual:false});
+    homeAutoLate=null;
     if (state.homeDay !== plan.day) { state.homeDay = plan.day; homeProposalKeys = []; changed = true; }
     // Con il meteo ancora in arrivo la scelta resta aperta, finché non emerge un giorno utile.
     if (!weatherBusy || plan.auto) homeAutoLocked = true;
@@ -1065,6 +1065,13 @@ function homeEmptyHtml(){
  return `${seasonNoteHtml()}<section class="home-empty${next?' has-next':''}" data-home-state="${m.state}"><div class="home-empty-why"><span class="home-empty-icon" aria-hidden="true">${m.state==='weather'?IC.rain:m.state==='late'||m.state==='loading'?IC.clock:leafGlyph}</span><div><h2>${esc(title)}</h2><p>${esc(text)}</p>${action}</div></div>${next}</section>`;
 }
 function renderHomeEmpty(){
+ // Dati assenti o scaduti: scheletro della stessa misura di copertina e card, così l'arrivo non sposta la pagina.
+ if(homePresentation.state==='loading'){
+  $('#hero').innerHTML=`${seasonNoteHtml()}<div class="cover cover-skeleton" aria-busy="true"><span class="sr-only">Stiamo valutando le uscite</span></div>`;homeProposalKeys=[];
+  $('#ranking').innerHTML=Array.from({length:3},()=>'<li aria-hidden="true"><span class="tile tile-skeleton"></span></li>').join('');
+  $('#others-h').hidden=true;$('#during-walk').hidden=true;$('#during-walk').replaceChildren();
+  renderSeason();renderCommunityIntro();return;
+ }
  $('#hero').innerHTML=homeEmptyHtml();homeProposalKeys=[];
  $('#hero [data-home-review]')?.addEventListener('click',()=>{homeReviewOpen=!homeReviewOpen;renderHome();$('#hero [data-home-review]')?.focus({preventScroll:true});});
  $('#hero [data-home-filters]')?.addEventListener('click',openFullFilters);
@@ -1170,7 +1177,7 @@ function homeCoverVisual(c) {
 }
 function homeCover({c,body,heading='',score=null,extraClass=''}) {
   const title=splitName(c.z)[0];
-  return `<div class="cover cover-editorial vtn ${extraClass}" style="--vtn:cover">
+  return `<div class="cover cover-editorial vtn ${extraClass}" style="--vtn:cover" data-weather-key="${c.z.id}|${c.o}">
     ${homeCoverVisual(c)}<span class="shade"></span>
     <a class="cover-link" data-walk-zone="${c.z.id}" href="${walkHref(c.z,c.o,c.walk?.t)}" aria-label="${esc(title)}, ${esc(dayLabel(c.o,c.d.date,true))}: i dettagli della passeggiata"></a>
     <div class="cover-panel"><span class="cover-top"><span class="pill glass">${esc(dayLabel(c.o,c.d.date,true))}</span><span class="cover-heading">${heading}</span>${score===null?'':`<button type="button" class="cover-index" data-index-tip aria-expanded="false" aria-label="Condizioni per l’uscita ${formatIndex(score)} su 10: come leggerle"><span>Condizioni</span><b>${fungusGlyph}<span>${formatIndex(score)}</span></b></button>`}</span>
@@ -1194,7 +1201,7 @@ function plantCoverHint(c) {
   const plant=(c.items?.length?c.items:outdoorDiscoveries(c.z,c.d,c.walk)).find(i=>i.kind==='pianta');
   return plant?`<span class="cover-sp cover-plant">${plantThumb(plant.id,44)}<span><small>Da osservare</small><span class="cover-sp-name"><b>${esc(plant.name)}</b></span><small>${esc(plant.phase)} · presenza da verificare</small></span></span>`:'';
 }
-function outdoorTile(c,hero=false) {
+function outdoorTile(c,hero=false,badge='') {
   const cv=outdoorCover(c),w=wxOf(c.z,c.d);
   if(hero){
     const [title,sub]=splitName(c.z);
@@ -1206,7 +1213,7 @@ function outdoorTile(c,hero=false) {
     return homeCover({c,body,heading,extraClass:'outdoor-hero'});
   }
   const brief=`${c.walk.t.difficulty||'Difficoltà n.d.'} · ${fmtKm(c.walk.t.in_zone_km)} km nel tratto`;
-  return `<a class="tile outdoor-tile" data-walk-zone="${c.z.id}" href="${walkHref(c.z,c.o,c.walk.t)}">${outdoorBackdrop()}${cv?`<img data-src="${cv.small}" alt="" loading="lazy">`:''}<span class="shade"></span>${w&&w.level!=='ok'?`<span class="tile-wx wx-${w.level}" title="${esc(OUTING_LABEL[w.level]+' · '+w.text)}" aria-label="${esc(OUTING_LABEL[w.level]+' · '+w.text)}">${wxi(w)}<span class="tile-wx-label">${esc(w.level==='non_disponibile'?'Da verificare':({storm:'Temporali',rain:'Pioggia',snow:'Neve',wind:'Vento forte',fog:'Nebbia'}[wxIcon(w)]||'Meteo incerto'))}</span></span>`:''}<span class="tile-body"><span class="tile-day">${esc(dayLabel(c.o,c.d.date,true))}</span><b>${esc(splitName(c.z)[0])}</b>${c.z.collectionStatus==='observation_only'?'<small>Uscita di osservazione</small>':''}<small>${esc(brief)}</small></span></a>`;
+  return `<a class="tile outdoor-tile" data-walk-zone="${c.z.id}" href="${walkHref(c.z,c.o,c.walk.t)}">${outdoorBackdrop()}${cv?`<img data-src="${cv.small}" alt="" loading="lazy">`:''}<span class="shade"></span>${w&&w.level!=='ok'?`<span class="tile-wx wx-${w.level}" title="${esc(OUTING_LABEL[w.level]+' · '+w.text)}" aria-label="${esc(OUTING_LABEL[w.level]+' · '+w.text)}">${wxi(w)}<span class="tile-wx-label">${esc(w.level==='non_disponibile'?'Da verificare':({storm:'Temporali',rain:'Pioggia',snow:'Neve',wind:'Vento forte',fog:'Nebbia'}[wxIcon(w)]||'Meteo incerto'))}</span></span>`:''}<span class="tile-body">${badge?`<small class="tile-badge">${esc(badge)}</small>`:''}<span class="tile-day">${esc(dayLabel(c.o,c.d.date,true))}</span><b>${esc(splitName(c.z)[0])}</b>${c.z.collectionStatus==='observation_only'?'<small>Uscita di osservazione</small>':''}<small>${esc(brief)}</small></span></a>`;
 }
 function plantRailItems(list) {
   const seen=new Set();return list.flatMap(c=>c.items||outdoorDiscoveries(c.z,c.d,c.walk)).filter(i=>i.kind==='pianta'&&!seen.has(i.id)&&seen.add(i.id)).slice(0,8);
@@ -1220,6 +1227,7 @@ function renderOutdoorHome() {
   const list=homePresentation.ready;
   homeProposalKeys=list.slice(0,8).map(c=>({id:c.z.id,o:c.o,trail:c.walk?.t.id}));
   if(!list.length){renderHomeEmpty();return;}
+  if(state.homeDay!=null){renderHomeDay(list,(c,badge)=>outdoorTile(c,false,badge));return;}
   const hero=list[0],box=$('#hero');
   const status=seasonNoteHtml();
   updateWeatherHTML(box,status+(hero?outdoorTile(hero,true)+horizonHtml(hero.o):`<p class="notice">Nessun sentiero mappato corrisponde ai filtri. Puoi ampliarli o consultare le schede.</p><button class="btn ghost" type="button" data-outdoor-filters>Rivedi i filtri</button>`));
@@ -1449,6 +1457,8 @@ function weatherStamp(w,busy=weatherBusy,done=false){
   $('#updated').textContent=busy?WX_BUSY:done?`Meteo aggiornato · ${when}`:`Meteo ${sameDay?'delle '+time:'del '+when}${issue?' · da aggiornare':''}`;
   $('#refresh').classList.toggle('is-done',!!done);
   $('#refresh').setAttribute('aria-busy',String(busy));
+  // Meteo datato (oltre 1 h) mentre arriva quello nuovo: un segno discreto sui soli valori che ne dipendono.
+  document.body.classList.toggle('weather-refreshing',!!busy&&freshness(w.fetchedAt)!=='fresh');
   $('#refresh').title='Meteo acquisito '+w.fetchedAt.toLocaleString('it-IT')+'. Tocca per aggiornarlo.';
   const stale=$('#stale');
   stale.hidden=!issue;
@@ -2126,9 +2136,76 @@ document.addEventListener('click',e=>{
 },true);
 
 let homeProposalKeys=[];
-function renderHome(){renderHomeContent();finishHomeChrome();}
+// Card di una proposta fungina nella classifica; badge facoltativo (vista del giorno, decisione del 24/10).
+function fungiTile(c, badge='') {
+    const cv = coverOf(c.z, c.d.best.species.id, c.d);
+    const trail = c.walk?.t;
+    const brief = trail ? `${trail.difficulty || 'Difficoltà n.d.'} · ${fmtKm(trail.in_zone_km)} km nel tratto` : '';
+    return `<li data-weather-key="${c.z.id}|${c.o}" class="vtn" style="--vtn:t-${c.z.id}-${c.o}"><a class="tile" data-walk-zone="${c.z.id}" href="${walkHref(c.z, c.o, c.walk?.t)}">
+      ${cv ? `<img data-src="${cv.small}" alt="" loading="lazy" decoding="async">` : ''}<span class="shade"></span>${ring(c.s, false)}${(() => { const w = wxOf(c.z, c.d); return w && w.level !== 'ok' ? `<span class="tile-wx wx-${w.level}" title="${esc(OUTING_LABEL[w.level]+' · '+w.text)}" aria-label="${esc(OUTING_LABEL[w.level]+' · '+w.text)}">${wxi(w)}<span class="tile-wx-label">${esc(w.level==='non_disponibile'?'Da verificare':({storm:'Temporali',rain:'Pioggia',snow:'Neve',wind:'Vento forte',fog:'Nebbia'}[wxIcon(w)]||'Meteo incerto'))}</span></span>` : ''; })()}
+      <span class="tile-body">${badge?`<small class="tile-badge">${esc(badge)}</small>`:''}<span class="tile-day">${esc(dayLabel(c.o, c.d.date, true))}</span><b>${esc(splitName(c.z)[0])}</b>${c.z.collectionStatus==='observation_only'?'<small>Uscita di osservazione</small>':''}${c.d.reserve?.all?'<small>Fascia in zona di riserva del Parco</small>':''}${brief ? `<small>${esc(brief)}</small>` : ''}</span>
+    </a></li>`;
+}
+// Vista del singolo giorno (decisione di Matteo del 24/10): niente copertina, che resta su «Questa settimana».
+// Un'intestazione compatta e la classifica completa; la prima card dice se è anche la migliore della settimana.
+function weekBestId(){
+ const fungi=state.target==='funghi',m=composeHome(homeCandidates(null),{fungi,modeled:!fungi||selectedSpecies().length>0});
+ return uniqueHomeCandidates(m.ready)[0]?.z.id||null;
+}
+function renderHomeDay(list,tile){
+ const o=state.homeDay,box=$('#hero'),label=o===0?'Oggi':dayLabel(o,outdoorDate(o),true),best=weekBestId();
+ const n=Math.min(list.length,8);
+ updateWeatherHTML(box,`${seasonNoteHtml()}<section class="home-day-head" data-home-day="${o}"><h2>${esc(label)}</h2><p>${n===1?'Una uscita':n+' uscite'} per questo giorno, dalla migliore.${o>=4?' '+esc(horizonNote(o))+': da ricontrollare prima di partire.':''}</p><button type="button" class="link-btn" data-home-week>Torna alla settimana</button></section>`);
+ box.querySelector('[data-home-week]').addEventListener('click',()=>chooseHomeDay(null));
+ box.querySelector('[data-season-restore]')?.addEventListener('click',restoreSeason);
+ updateWeatherHTML($('#ranking'),list.slice(0,8).map((c,i)=>{const html=tile(c,i===0&&c.z.id===best?'La migliore della settimana':'');return html.startsWith('<li')?html:`<li data-weather-key="${c.z.id}|${c.o}">${html}</li>`;}).join(''));
+ $('#others-h').hidden=true;
+ renderDiscoveries($('#during-walk'),list[0].z,list[0].d,list[0].walk);
+ renderSeason();renderCommunityIntro();
+}
+// Stabilità della home (decisione di Matteo del 24/10): un ridisegno dovuto al meteo che cambierebbe copertina o
+// ordine delle prime tre resta in attesa di «Aggiorna», salvo la pagina appena aperta; i numeri si aggiornano al posto.
+let homeShown=null,homeScrolled=false,homePending=null;
+addEventListener('scroll',()=>{if(state.view==='uscite'&&homeShown)homeScrolled=true;},{passive:true});
+function homeViewChoice(){return JSON.stringify([state.homeDay,homeChoiceKey()]);}
+function homeUpdateBar(show){
+ let bar=$('#home-update');
+ if(!show){if(bar)bar.hidden=true;return;}
+ if(!bar){bar=document.createElement('div');bar.id='home-update';bar.className='home-update';bar.setAttribute('role','status');
+  bar.innerHTML=`${IC.clock}<span>Meteo aggiornato: cambiano le proposte.</span><button type="button" class="btn small" data-home-apply>Aggiorna</button>`;
+  bar.querySelector('[data-home-apply]').addEventListener('click',()=>{homePending=null;homeShown=null;renderHome();$('#hero')?.scrollIntoView({block:'nearest'});});
+  $('#hero').before(bar);}
+ bar.hidden=false;
+}
+// Segno immediato sulle card visibili che peggiorano (sconsigliata o temporali), senza spostarle.
+function markWeatherAlerts(keys){
+ for(const k of keys)document.querySelectorAll(`#hero [data-weather-key="${CSS.escape(k)}"], #ranking [data-weather-key="${CSS.escape(k)}"]`).forEach(el=>{
+  if(el.querySelector('.weather-alert'))return;
+  el.insertAdjacentHTML('afterbegin','<span class="weather-alert">Meteo peggiorato</span>');
+ });
+}
+function renderHome(){
+ if(renderHomeContent()==='deferred'){finishHomeChrome();return;}
+ const choice=homeViewChoice();
+ if(!homeShown||homeShown.choice!==choice){homeScrolled=false;homeShown={choice,at:Date.now()};}
+ Object.assign(homeShown,{sig:viewSignature(homePresentation?.ready||[]),state:homePresentation?.state,presentation:homePresentation});
+ homePending=null;homeUpdateBar(false);
+ finishHomeChrome();
+}
 function renderHomeContent() {
-  arrangeHome();prepareHome();setOutingHeadings(homePresentation.ready);orderHomeBands();
+  arrangeHome();prepareHome();
+  if(weatherPainting&&homeShown?.choice===homeViewChoice()&&homeShown.state==='ready'){
+   // Una proposta che sparisce (per esempio temporali ovunque) è il cambio più grande: anche questo resta in attesa,
+   // con il segno immediato sulle card che peggiorano.
+   const next=homePresentation.state==='ready'?viewSignature(homePresentation.ready):viewSignature([]);
+   const alerts=homeShown.sig.top.filter(k=>homePresentation.raw.some(c=>`${c.z.id}|${c.o}`===k&&c.weather&&(c.weather.level==='sconsigliata'||c.weather.thunder))&&!homeShown.sig.severe.has(k));
+   const kind=homePresentation.state==='ready'?compareViews(homeShown.sig,next).kind:'major';
+   if(updatePolicy({kind,shownAt:homeShown.at,scrolled:homeScrolled})==='defer'){
+    homePending=homePresentation;homePresentation=homeShown.presentation;
+    markWeatherAlerts(alerts);homeUpdateBar(true);return 'deferred';
+   }
+  }
+  setOutingHeadings(homePresentation.ready);orderHomeBands();
   $('#home-h').textContent=contentCopy.homeTitle||'Dove andare';
   $('#ranking-index-legend').hidden=state.target!=='funghi';
   renderHomeDayNote();renderHomeReading();
@@ -2136,6 +2213,7 @@ function renderHomeContent() {
   const list=homePresentation.ready,hero=list[0],box=$('#hero');
   homeProposalKeys=list.slice(0,8).map(c=>({id:c.z.id,o:c.o,trail:c.walk?.t.id}));
   if(!hero){renderHomeEmpty();return;}
+  if(state.homeDay!=null){renderHomeDay(list,fungiTile);return;}
   $('#others-h').hidden = false;
   const t = state.target==='funghi'&&hero.d.crowd ? timingAdvice({ dateStr: hero.d.date, lat: hero.z.lat, lon: hero.z.lon, crowd: hero.d.crowd }) : null;
   const a0 = access[hero.z.id]?.[0];
@@ -2159,15 +2237,7 @@ function renderHomeContent() {
   box.querySelector('[data-season-restore]')?.addEventListener('click',restoreSeason);
   renderDiscoveries($('#during-walk'),hero.z,hero.d,hero.walk);
   const ol = $('#ranking');
-  const rankingHTML = list.slice(1, 8).map((c) => {
-    const cv = coverOf(c.z, c.d.best.species.id, c.d);
-    const trail = c.walk?.t;
-    const brief = trail ? `${trail.difficulty || 'Difficoltà n.d.'} · ${fmtKm(trail.in_zone_km)} km nel tratto` : '';
-    return `<li data-weather-key="${c.z.id}|${c.o}" class="vtn" style="--vtn:t-${c.z.id}-${c.o}"><a class="tile" data-walk-zone="${c.z.id}" href="${walkHref(c.z, c.o, c.walk?.t)}">
-      ${cv ? `<img data-src="${cv.small}" alt="" loading="lazy" decoding="async">` : ''}<span class="shade"></span>${ring(c.s, false)}${(() => { const w = wxOf(c.z, c.d); return w && w.level !== 'ok' ? `<span class="tile-wx wx-${w.level}" title="${esc(OUTING_LABEL[w.level]+' · '+w.text)}" aria-label="${esc(OUTING_LABEL[w.level]+' · '+w.text)}">${wxi(w)}<span class="tile-wx-label">${esc(w.level==='non_disponibile'?'Da verificare':({storm:'Temporali',rain:'Pioggia',snow:'Neve',wind:'Vento forte',fog:'Nebbia'}[wxIcon(w)]||'Meteo incerto'))}</span></span>` : ''; })()}
-      <span class="tile-body"><span class="tile-day">${esc(dayLabel(c.o, c.d.date, true))}</span><b>${esc(splitName(c.z)[0])}</b>${c.z.collectionStatus==='observation_only'?'<small>Uscita di osservazione</small>':''}${c.d.reserve?.all?'<small>Fascia in zona di riserva del Parco</small>':''}${brief ? `<small>${esc(brief)}</small>` : ''}</span>
-    </a></li>`;
-  }).join('');
+  const rankingHTML = list.slice(1, 8).map(c=>fungiTile(c)).join('');
   if(weatherPainting)updateWeatherHTML(ol,rankingHTML);else ol.innerHTML=rankingHTML;
   finishAlternativeList();
   fitFacts($('#hero .facts'));
@@ -2191,7 +2261,8 @@ function renderCommunityIntro() {
   const mode=homeIntro.mode(homeIntroOwner(),!!homePresentation?.ready.length,{pending:homePresentation?.state==='loading'});
   box.hidden=mode==='hidden';box.classList.toggle('is-compact',mode==='compact');
   if(mode==='hidden'){introObserver?.disconnect();box.replaceChildren();return;}
-  if(mode==='compact'){box.innerHTML=`<span>${IC.people}<b>Un bosco, tante esperienze.</b></span><button class="link-btn" type="button" data-home-how-open>Come funziona la condivisione <span aria-hidden="true">→</span></button>`;observeHomeIntro(box);return;}
+  // Vignette compatte (decisione di Matteo del 24/10): le tre cose che si fanno, in una fascia bassa.
+  if(mode==='compact'){box.innerHTML=`<p class="community-mini-title">Un bosco, tante esperienze</p><ul class="community-mini"><li><span class="community-mini-icon">${IC.people}</span><span><b>Vedi</b><small>cosa si trova in giro</small></span></li><li><span class="community-mini-icon">${notebookGlyph}</span><span><b>Racconta</b><small>le tue uscite</small></span></li><li><span class="community-mini-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></span><span><b>Condividi</b><small>e scopri gli altri</small></span></li></ul><button class="link-btn" type="button" data-home-how-open>Come funziona la condivisione <span aria-hidden="true">→</span></button>`;observeHomeIntro(box);return;}
   // Do not replace an explanation currently being read on a date/weather refresh.
   const stamp=homeIntroOwner()+'|'+communityStatus()+'|'+communityOverview();
   if(box.querySelector('.community-vignettes')&&box._introStamp===stamp)return;
@@ -2402,6 +2473,16 @@ function scheduleMapResults(){
   if(mapResultsQueued)return;mapResultsQueued=true;
   requestAnimationFrame(()=>{mapResultsQueued=false;renderMapResults();});
 }
+// Stessa regola della home (24/10): con l'elenco aperto, il meteo che cambia l'ordine delle prime tre resta in attesa.
+let mapShownSig=null;
+function mapUpdateBar(show){
+ const body=mapExperience.host.querySelector('.map-results-body');let bar=body.querySelector('[data-map-update]');
+ if(!show){if(bar)bar.hidden=true;return;}
+ if(!bar){bar=document.createElement('div');bar.className='home-update';bar.dataset.mapUpdate='';bar.setAttribute('role','status');
+  bar.innerHTML=`${IC.clock}<span>Meteo aggiornato: cambia l’ordine.</span><button type="button" class="btn small">Aggiorna</button>`;
+  bar.querySelector('button').addEventListener('click',()=>{mapShownSig=null;renderMapResults();});body.prepend(bar);}
+ bar.hidden=false;
+}
 function renderMapResults(){
   if(!mapExperience||state.view!=='mappa')return;
   const status=$('#map-weather-status');status.hidden=$('#stale').hidden&&!$('#weather-work').classList.contains('busy');status.querySelector('summary').textContent=!$('#stale').hidden?'Meteo da verificare':'Aggiornamento meteo…';
@@ -2410,6 +2491,14 @@ function renderMapResults(){
   // i risultati appena disponibili, senza ricentrare le visite successive.
   if(map&&!mapInitialFrameDone&&all.length){map.invalidateSize({pan:false});mapInitialFrameDone=frameMapZones(all.map(r=>r.z),{overview:true,animate:false});}
   const visible=map?all.filter(r=>map.getBounds().contains([r.z.lat,r.z.lon])):all;
+  const sig=viewSignature(visible.map(r=>({z:r.z,o:r.o,weather:wxOf(r.z,r.d||{date:outdoorDate(r.o)})})));
+  if(!mapExperience.host.open)mapShownSig=null;
+  else if(weatherPainting&&mapShownSig){
+   const {kind}=compareViews(mapShownSig,sig);
+   if(updatePolicy({kind,shownAt:NaN,scrolled:true})==='defer'){mapUpdateBar(true);return;}
+  }
+  if(mapExperience.host.open)mapShownSig=sig;
+  mapUpdateBar(false);
   const prefs=PREFS.filter(([key])=>state[key]).map(([,name])=>name.toLowerCase());
   const order=prefs.length?`Ordinate anche per ${prefs.join(', ')}. L’indice dei funghi non cambia.`:hasInterest('funghi')?'Condizioni di crescita e meteo dell’uscita. Le zone senza indice restano esplorabili.':hasInterest('piante')?'Ambienti e spunti botanici, senza un indice delle piante.':'Zone con i tratti mappati, accessi e condizioni dell’uscita.';
   mapExperience.render({total:all.length,order:(state.communityOnly?'Dati community Fronda · In sviluppo. Osservazioni dichiarate degli ultimi 7 giorni. ':'')+order,rows:visible.map(r=>({id:r.z.id,name:shortName(r.z),selected:r.z.id===state.zoneId,index:Number.isFinite(r.score)?idxDot(r.score):'',meta:[Number.isFinite(r.trip.minutes)?`${r.trip.minutes} min in auto`:'',r.walk?`${r.walk.t.difficulty||'Sentiero'} · ${fmtKm(r.walk.t.in_zone_km)} km nel tratto`:'Scheda della zona',hasInterest('funghi')&&!Number.isFinite(r.score)?'Indice non disponibile':'',state.avoidCrowd&&r.d?.crowd?crowdText(r.d.crowd):''].filter(Boolean).join(' · ')}))});

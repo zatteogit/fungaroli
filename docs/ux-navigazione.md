@@ -25,6 +25,21 @@ Con Funghi attivo l’indice e l’ordine biologico restano esclusivamente fungi
 | Piante | Stesso ordine dei funghi: proposta, alternative, scoperte e specie; hero e card fotografiche condivise, con nome e fase indicativa | Spunti botanici associati agli ambienti campionati; nessuna densità, probabilità o posizione di presenza attribuita alle piante |
 | Sentieri | Sentiero, difficoltà, tratto mappato, accesso e meteo; scoperte dopo la proposta, poi alternative | Zone, tracciati e imbocchi senza indice fungino |
 
+### Home a settimana, giorni senza copertina, pagina stabile — decisioni del 24 ottobre 2026
+
+Supera, dove contrasta, la sezione del 21/10 qui sotto (passaggio automatico a domani).
+
+- **Avvio su «Questa settimana».** La home si apre sulla settimana, con la copertina: la migliore uscita del periodo. Le proposte di oggi già fuori orario non entrano. Il giorno non passa più da solo a domani: il caso «tardi» resta su Oggi, quando l'utente lo sceglie. A mezzanotte un giorno scelto e ormai passato torna alla settimana.
+- **Giorni singoli senza copertina.** Oggi, Domani e gli altri giorni mostrano un'intestazione compatta (giorno, numero di uscite, «Torna alla settimana») e la classifica completa a card. Se la prima è anche la copertina della settimana, la card lo dice: «La migliore della settimana». Così cambiare giorno non ripete la stessa foto grande.
+- **Stabilità mentre arrivano i dati** (`js/view-stability.js`). Ogni dato ha una freschezza: fresco sotto 1 ora; datato ma valido fino a 3 ore per il meteo dell'uscita e 24 ore per l'indice di crescita; poi scaduto.
+  - Dato fresco: card normale. Dato datato mentre arriva il nuovo: un segno discreto «in aggiornamento» sui soli valori che dipendono dal meteo (anello, meteo). Dato assente o scaduto: copertina e card in caricamento, con la stessa misura di quelle vere.
+  - Dati nuovi che cambiano solo i numeri (stessa copertina, stesso ordine delle prime tre): si aggiornano al loro posto.
+  - Dati nuovi che cambierebbero la proposta (copertina, ordine delle prime tre, o la proposta che sparisce): la pagina non si ridisegna. Compare «Meteo aggiornato: cambiano le proposte · Aggiorna». Eccezione di sicurezza: le card visibili che passano a «sconsigliata» o a temporali sono segnate subito («Meteo peggiorato»), senza spostarle.
+  - Pagina appena aperta (meno di 2 secondi e nessuno scorrimento): i dati nuovi si applicano direttamente.
+  - Mappa: con l'elenco aperto vale la stessa regola («Meteo aggiornato: cambia l'ordine · Aggiorna»); i segnaposto sulla carta si aggiornano al loro posto.
+- **Spiegazione dell'indice.** Dalle etichette «Condizioni … 0–10» la spiegazione si apre nel flusso, sotto l'etichetta, e sposta il contenuto invece di coprirlo. Gli anelli dei numeri usano ancora la bolla.
+- **Fasce.** «Un bosco, tante esperienze» compatta diventa tre vignette in riga (Vedi, Racconta, Condividi) con «Come funziona la condivisione». La frase del giorno è una citazione editoriale: fondo calendula leggero, virgolette come decoro, serif più ampio, senza riquadro bianco.
+
 ### Home quando per oggi è tardi — decisione del 21 ottobre 2026
 
 Decisione di Matteo: si applicano insieme le varianti A e B della revisione degli stati della home. **Supera** la regola precedente «il giorno della home resta oggi fino a una selezione esplicita» ([ux-home-condizioni.md](ux-home-condizioni.md), § Integrazione).
