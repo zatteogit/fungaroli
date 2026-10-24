@@ -458,6 +458,39 @@ dopo dove cambiano.
     giorni) oppure con i soli controlli di altri osservatori. Nasce da un rilievo della verifica avversaria: contro le
     uscite dello stesso osservatore il vantaggio dell'indice sembrava più piccolo. Serve a leggere Q1, non la cambia.
 
+## D22. Priorità 5 da due parti, attese sull'orologio di sistema, virgole in chiaro (24/10/2026)
+
+Riguarda solo la priorità 5 (quote 2015–2025 per la descrittiva, D17) e il modo di scaricare: nessun effetto sui dati,
+sulle richieste o sulle analisi della prova principale (P1–P4 complete su entrambe le macchine).
+
+**Fatti verificati** (log del Mac riferiti dalla sessione che lo segue, 24/10, 12:25 UTC; log di qui):
+- **Mac.** P1–P4 complete; P5: 108 fatte su 353. Il 24/10, per decisione di Matteo, il Mac è passato alla rete di
+  casa (un altro indirizzo IP) e dalle 06:49 alle 12:11 UTC ha girato una volta sola con `--max-giorno 16000
+  --max-richieste 80`, perché il tetto dello script contava anche le chiamate del 23/10 fatte dall'altro indirizzo.
+  Risultato: 80 richieste salvate e 5 rifiutate con 429, circa 8500 chiamate pesate su quell'indirizzo, sotto le
+  10 000 pubblicate. Poi il Mac è tornato ai parametri di D18 e continua dal fondo dell'elenco (`--al-contrario`).
+  Testo completo sul Mac, in `~/fronda-meteo/DEVIAZIONE-MAC-24-10.txt`.
+- **429 sul Mac.** 11 in tutto, tutti «Minutely API request limit exceeded» su quote da 100 coordinate dopo 6–7
+  richieste: il peso di 1 per coordinata (D17) è realistico.
+- **Cloud.** Per richiesta di Matteo anche qui si scarica la P5, **dall'inizio** dell'elenco e senza `--al-contrario`,
+  con i parametri di sempre (`--max-ora 150 --max-giorno 1500 --intervallo 20`): circa 15 richieste da 100 quote al
+  giorno. Le due macchine si incontrano a metà; `unisci_meteo.py` unisce come per le altre priorità.
+
+**Correzioni allo script** (`scarica_meteo.py`, nessun effetto sulle richieste né sulle risposte):
+- **Attese sull'orologio di sistema.** Le attese usavano `threading.Event.wait`, che si appoggia all'orologio monotono:
+  su macOS si ferma quando il Mac dorme. Il 23/10 il processo del Mac è rimasto fermo per ore, due volte, ad attesa
+  già scaduta (rimedio usato allora: `kill -TERM` e rilancio). Ora `aspetta()` attende a pezzi di al massimo 60 s e
+  ricontrolla `time.time()`: al risveglio l'attesa finisce entro un minuto.
+- **Virgole in chiaro nell'URL.** Dal proxy di uscita del cloud una richiesta con le virgole codificate (`%2C`) resta
+  appesa finché la connessione cade dopo circa 30 s (`SSLEOFError`); la stessa richiesta con le virgole in chiaro
+  risponde in meno di un secondo (provato il 24/10 su quote da 1 e da 100 coordinate, e sul meteo). Per Open-Meteo
+  le due forme sono la stessa richiesta. L'URL è salvato solo come annotazione: `unisci_meteo.py` confronta chiave,
+  richiesta e risposta, non l'URL. *Interpretazione*: spiega anche gli `SSLEOFError` intermittenti del 22/10.
+- `prova_scarica_meteo.py`: 31/31 controlli superati con le due correzioni.
+
+Scritta mentre la P5 è ancora in corso; l'analisi descrittiva non è stata rifatta.
+
+
 ## Che cosa non cambia
 
 Domanda principale, disegno P1, unità, celle, finestre, δ, punteggi (0), (1), (1b), seme del bootstrap, completezza,

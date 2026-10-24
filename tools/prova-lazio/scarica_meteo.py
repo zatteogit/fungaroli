@@ -191,11 +191,13 @@ def url_di(q, a, ripiego=False):
     if q['tipo'] == 'quota':
         lat = ','.join(f'{c[0]:.5f}' for c in q['coordinate'])
         lon = ','.join(f'{c[1]:.5f}' for c in q['coordinate'])
-        return a.url_quota + '?' + urllib.parse.urlencode({'latitude': lat, 'longitude': lon})
+        return a.url_quota + '?' + urllib.parse.urlencode({'latitude': lat, 'longitude': lon}, safe=',')
     lat, lon = (q['ripiego'] if ripiego else (q['lat'], q['lon']))
     p = {'latitude': f'{lat:.4f}', 'longitude': f'{lon:.4f}', 'daily': ','.join(q['daily']), 'hourly': ','.join(q['hourly']),
          'timezone': 'Europe/Rome', 'start_date': q['inizio'], 'end_date': q['fine'], 'models': q['modello']}
-    return a.url_meteo + '?' + urllib.parse.urlencode(p)
+    # Virgole in chiaro (D22): per Open-Meteo è la stessa richiesta, ma dal proxy del cloud una richiesta con %2C resta
+    # appesa finché la connessione cade dopo 30 s (SSLEOFError); con le virgole risponde in meno di un secondo.
+    return a.url_meteo + '?' + urllib.parse.urlencode(p, safe=',')
 
 
 def attesa_tetto(inviati, w, tetto, finestra, adesso):
@@ -284,6 +286,18 @@ def prossima(richieste, st):
     return None, in_attesa
 
 
+def aspetta(ferma, secondi):
+    """Attesa sull'orologio di sistema, a pezzi di al massimo 60 s (D22). Su macOS l'attesa di threading.Event usa
+    l'orologio monotono, che si ferma quando il Mac dorme: il 23/10 il processo è rimasto fermo per ore ad attesa già
+    scaduta. Così, al risveglio, l'attesa finisce entro un minuto."""
+    fine = time.time() + secondi
+    while not ferma.is_set():
+        resto = fine - time.time()
+        if resto <= 0:
+            return
+        ferma.wait(min(resto, 60))
+
+
 def ciclo(a, st, richieste, ferma):
     s = a.scala_tempo
     passi = [float(x) * 60 for x in a.backoff.split(',')]
@@ -296,13 +310,13 @@ def ciclo(a, st, richieste, ferma):
             return
         if secondi >= 60:
             st.registra('attesa', q, nota=f'{motivo}: {secondi / 60:.1f} min')
-        ferma.wait(secondi * s)
+        aspetta(ferma, secondi * s)
 
     def pausa(q, motivo):
         attesa = passi[min(st.livello, len(passi) - 1)]
         livello = min(st.livello + 1, len(passi) - 1)
         st.registra('pausa', q, nota=f'livello={livello} fino={time.time() + attesa * s:.3f} motivo={motivo} minuti={attesa / 60:g}')
-        ferma.wait(attesa * s)
+        aspetta(ferma, attesa * s)
 
     def troppi_rifiuti():
         if di_fila >= a.max_rifiuti_di_fila:
