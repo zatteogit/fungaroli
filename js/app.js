@@ -56,7 +56,7 @@ import { navigate, soft, setCoverResolver } from './motion.js';
 import { applyCrop } from './images.js';
 import { FOREST_LEGEND } from './forest-legend.js';
 import { initTrees, renderTreeGrid, renderTreePage, linkTrees, treeChips, treeForCategory, treeThumb, treePhotoSrc, treeHeroSrc } from './trees.js';
-import { crowding, comfortScore, timingAdvice, collectWindow, sunTimes, fmtTime, fmtRough, roundTime, intornoA, chooseAccess, accessFieldIndex, accessRow, walkPhrase, trackNote, fmtDist, fmtRise } from './human.js';
+import { crowding, comfortScore, timingAdvice, collectWindow, todayGone, sunTimes, fmtTime, fmtRough, roundTime, intornoA, chooseAccess, accessFieldIndex, accessRow, walkPhrase, trackNote, fmtDist, fmtRise } from './human.js';
 import { prepareSiteInfo, alignedZones, excludedFn, warnedFn, bandReserve, RESERVE_BAND_TEXT, reserveLead, reserveAccessText, reserveLegendText, bandForestInfo, bandForestLines, zoneSiteInfo, zoneSiteLines, siteSources } from './site-info.js';
 import { predictScores, captureForecastData, FORECAST_INPUTS } from './forecast-capture.js';
 import { initCommunity, communityStatus, communityOverview,communityHasAccess,communityForEntity, communityRank, communityHasZone, communityDataAvailable, currentUser, reportBadge } from './community.js';
@@ -1563,7 +1563,8 @@ const selectedSpecies = () => { const ids = new Set(selectedCatalog().map(s=>s.m
 const outCache = new Map();
 function wxOf(z, d) {
   if (!d) return null;
-  const k = z.id + '|' + d.date;
+  // La soglia delle 14 entra nella chiave: alle 14 il meteo di oggi diventa «mattina già passata» senza ricaricare.
+  const k = z.id + '|' + d.date + '|' + todayGone();
   if (!outCache.has(k)) outCache.set(k, outingFor(outing?.[z.id], z, d.date));
   return outCache.get(k);
 }
