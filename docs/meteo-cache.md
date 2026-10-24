@@ -83,6 +83,17 @@ Prima di scegliere prefetch, lock distribuito, piano a pagamento o una finestra 
 - `rateLimited`;
 - `servedWithoutWaiting`.
 
+## Archivio quotidiano delle previsioni · dal 24 ottobre 2026
+
+Decisione D1 di Matteo (16/10/2026): l'unico archivio prospettico dello stesso prodotto meteo usato dall'app, indipendente dalle previsioni salvate dagli utenti. Non cambia indice né interfaccia.
+
+- **Cosa salva.** Per ogni zona e fascia di quota, una volta al giorno: valori giornalieri del profilo di crescita dal giorno prima (D−1) a D+7, con le medie del suolo e l'ET₀, nulli conservati come nulli. Più giorno di emissione (Europe/Rome), ora del download, fornitore, modello (`best_match`), versione del profilo (`growth-v2`) e cella restituita da Open-Meteo (latitudine, longitudine, quota).
+- **Dove.** Tabella `forecast_archive` in `COMMUNITY_DB` (migrazione 0016, creata anche a runtime), chiave unica zona + fascia + giorno di emissione. Nessun dato personale.
+- **Quando.** Cron `*/5 4,5 * * *`: un passaggio ogni 5 minuti fra le 4 e le 5:55 UTC, due zone per volta (`worker/forecast-archive.js`). Un passaggio solo con tutte le zone rischierebbe il limite di CPU del Worker, com'è già successo al meteo globale. Un passaggio fallito lascia le zone mancanti al successivo; a lavoro finito il cron non chiama più Open-Meteo. Le pulizie restano sul cron delle 3:17.
+- **Costo.** *Interpretazione* con la regola di peso di `requestWeight`: 108 punti, 8 variabili e 9 giorni, cioè circa **108 chiamate al giorno**, l'1% del limite gratuito. Le chiamate finiscono nelle misure con il profilo `archive`.
+- **Da verificare dopo il rilascio.** Per 7 giorni: `SELECT issued_on, COUNT(*) FROM forecast_archive GROUP BY issued_on` deve dare 108 righe al giorno. Annotare qui la dimensione reale di una riga.
+- **Fonte.** Open-Meteo, CC BY 4.0 (https://open-meteo.com/en/licence).
+
 ## Verifiche riproducibili
 
 `npm test`; `npx playwright test tests/browser/weather.spec.mjs tests/browser/weather-background.spec.mjs tests/browser/map-popover.spec.mjs`.

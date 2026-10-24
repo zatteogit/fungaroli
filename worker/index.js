@@ -7,6 +7,7 @@ import { handleSurvey, cleanupSurvey } from './survey.js';
 import { handleCms, handleContent, publishedResources } from './cms.js';
 import { cachedForecast } from './weather-provider.js';
 import { recordWeatherMetric, cleanupWeatherMetrics } from './weather-metrics.js';
+import { ARCHIVE_CRON, archiveForecasts } from './forecast-archive.js';
 
 export default {
   async fetch(request, env, ctx) {
@@ -36,6 +37,20 @@ export default {
     if (m) return handleDiario(request, env, m[1] ? m[1].split('/').filter(Boolean) : []);
     return env.ASSETS.fetch(request);
   },
-  // Pulizie indipendenti: community, questionario e contatori meteo.
-  async scheduled(event, env, ctx) { ctx.waitUntil(cleanupCommunity(env)); ctx.waitUntil(cleanupSurvey(env)); ctx.waitUntil(cleanupWeatherMetrics(env.CMS_DB)); },
+  // Alle 3:17 UTC pulizie indipendenti: community, questionario e contatori meteo. Archivio delle previsioni (D1):
+  // passaggi brevi ogni 5 minuti fra le 4 e le 5:55 UTC, poche zone per volta.
+  async scheduled(event, env, ctx) {
+    if (event.cron === ARCHIVE_CRON) { ctx.waitUntil(archiveRun(env)); return; }
+    ctx.waitUntil(cleanupCommunity(env)); ctx.waitUntil(cleanupSurvey(env)); ctx.waitUntil(cleanupWeatherMetrics(env.CMS_DB));
+  },
 };
+
+// Zone pubblicate dal CMS, con ripiego sul file del repository, come per il meteo dell'app.
+async function archiveRun(env) {
+  const origin = env.APP_ORIGIN || 'https://fungaroli.zatteo.workers.dev';
+  let content;
+  try { content = await publishedResources(env, origin, ['zones'], { initialize: false }); } catch { /* ripiego sotto */ }
+  const zones = content?.zones?.zones || (await (await env.ASSETS.fetch(new Request(new URL('/data/zones.json', origin)))).json()).zones;
+  const metrics = env.CMS_DB ? (m) => recordWeatherMetric(env.CMS_DB, m) : undefined;
+  try { return await archiveForecasts(env, { zones, metrics }); } catch { /* il passaggio successivo riprova le zone mancanti */ }
+}
