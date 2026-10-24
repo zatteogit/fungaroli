@@ -120,43 +120,13 @@ export function timingAdvice({ dateStr, lat, lon, crowd }) {
 
 // ---- Orologio dell'uscita (audit OUT-03) ----
 // Dalle 14, ora italiana, l'uscita del mattino di oggi è andata: la finestra meteo dell'uscita finisce alle 13
-// (js/outing.js). È la soglia che la mappa usava già per il suo giorno: non è una soglia nuova.
+// (js/outing.js). È la soglia che la mappa usava già per il suo giorno: non è una soglia nuova. La usa outingFor
+// per dire «mattina già passata» (decisione di Matteo del 24/10).
 export const TODAY_CUTOFF_H = 14;
 const romeParts = (now) => Object.fromEntries(new Intl.DateTimeFormat('en-GB', { hour: 'numeric', minute: 'numeric', second: 'numeric', hourCycle: 'h23', timeZone: 'Europe/Rome' })
   .formatToParts(now).filter((p) => p.type !== 'literal').map((p) => [p.type, +p.value]));
 export const romeHour = (now = new Date()) => romeParts(now).hour;
 export const todayGone = (now = new Date()) => romeHour(now) >= TODAY_CUTOFF_H;
-// Giorno proposto quando non è indicato (mappa, link senza giorno, settimana in home): oggi o domani.
-export const defaultDayOffset = (now = new Date()) => (todayGone(now) ? 1 : 0);
-// Millisecondi alla prossima soglia del giorno (le 14 o la mezzanotte, ora italiana). Nei giorni del cambio
-// d'ora può sbagliare di un'ora: chi lo usa ricontrolla lo stato quando scatta.
-export function msToNextDayChange(now = new Date()) {
-  const { hour, minute, second } = romeParts(now);
-  const target = hour < TODAY_CUTOFF_H ? TODAY_CUTOFF_H : 24;
-  return ((target - hour) * 3600 - minute * 60 - second) * 1000 - (now.getTime() % 1000);
-}
-export const addDays = (dateStr, n) => new Date(Date.parse(dateStr + 'T12:00:00Z') + n * 864e5).toISOString().slice(0, 10);
-
-// Gli orari si mostrano arrotondati per difetto (arrivo al quarto d'ora, fine della raccolta ai 5 minuti):
-// lo stato si decide sugli stessi valori, così l'orario mostrato non è mai già passato.
-export const shownArrive = (t) => roundTime(t.arrive, 15, 'floor');
-export const shownEnd = (t) => roundTime(t.end, 5, 'floor');
-// 'ok' prima dell'arrivo consigliato; 'tardi' fino alla fine della raccolta consentita; poi 'chiuso'.
-// Per i giorni futuri è sempre 'ok'.
-export function timingState(t, now = new Date()) {
-  return now < shownArrive(t) ? 'ok' : now < shownEnd(t) ? 'tardi' : 'chiuso';
-}
-// Partenza dalla base per arrivare entro l'orario consigliato (minuti d'auto più 10 di margine, come prima).
-// 'at': partenza futura (at = orario arrotondato per difetto, mai già passato); 'now': parti adesso;
-// 'late': non si arriva più entro l'orario consigliato.
-export function departureAdvice(t, minutes, now = new Date()) {
-  if (!Number.isFinite(minutes)) return null;
-  const dep = new Date(shownArrive(t).getTime() - (minutes + 10) * 6e4);
-  if (dep <= now) return { kind: 'late', dep };
-  const at = roundTime(dep, 15, 'floor');
-  return at <= now ? { kind: 'now', dep } : { kind: 'at', dep, at };
-}
-
 // "intorno ai 1100 m" ma "intorno agli 800 m": l'articolo segue la pronuncia del numero
 // (otto-, ottanta, ottocento, ottomila e undici iniziano per vocale).
 export const intornoA = (m) => `intorno ${/^8/.test(String(Math.round(m))) || Math.round(m) === 11 ? 'agli' : 'ai'}`;

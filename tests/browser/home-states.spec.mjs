@@ -121,5 +121,7 @@ test('scheda di oggi: orario superato nel pomeriggio, raccolta chiusa la sera',a
  await expect(when).toHaveText('Orario consigliato superato');
  await page.clock.setSystemTime(T('19:30'));await page.goto('/#/');await page.goto('/#/zona/tancia/0');
  await expect(page.locator('.view:not([hidden])').getByText(/Orario consigliato superato|Raccolta chiusa/).first()).toHaveText('Raccolta chiusa');
+ // OUT-03, punto 2: dalle 14 il meteo dell'uscita di oggi non è più una previsione.
+ await expect(page.locator('.view:not([hidden]) .when-weather').first()).toContainText('Mattina di oggi già passata');
  expect(errors).toEqual([]);
 });

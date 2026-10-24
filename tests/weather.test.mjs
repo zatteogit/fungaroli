@@ -61,3 +61,19 @@ test('ET₀ giornaliera (Open-Meteo et0_fao_evapotranspiration, mm/giorno): seri
   try { const w = await loadWeather([]); assert.deepEqual(w.series.test[0].et0, [null]); }
   finally { delete globalThis.FUNGAROLI_DATA; }
 });
+
+// OUT-03, punto 2 (decisione di Matteo del 24/10): dalle 14 di oggi il meteo della mattina non è più una previsione.
+test('dalle 14 di oggi: «mattina già passata», senza giudizio né numero delle condizioni', async () => {
+  const { conditionsScore, OUTING_LABEL, OUTING_RANK } = await import('../js/outing.js');
+  const z = { lat: 42.4, lon: 12.86 }, series = { fetchedAt: '2026-10-24T11:00:00Z', time: [], p: [], pp: [], wc: [], g: [], t: [] };
+  const at = (hm) => Date.parse(`2026-10-24T${hm}:00+02:00`);
+  assert.equal(outingFor(series, z, '2026-10-24', at('13:59')).level, 'non_disponibile', 'prima delle 14 resta la valutazione normale');
+  const past = outingFor(series, z, '2026-10-24', at('14:00'));
+  assert.deepEqual([past.level, past.available, past.short], ['passata', false, 'mattina passata']);
+  assert.match(past.text, /già passata/);
+  assert.equal(outingFor(null, z, '2026-10-24', at('19:30')).level, 'passata', 'anche senza previsioni non chiede di riprovare');
+  assert.equal(outingFor(null, z, '2026-10-25', at('19:30')).level, 'non_disponibile', 'domani resta una previsione');
+  assert.equal(conditionsScore(80, past), null);
+  assert.equal(OUTING_LABEL.passata, 'mattina già passata');
+  assert.equal(OUTING_RANK.passata, OUTING_RANK.non_disponibile);
+});

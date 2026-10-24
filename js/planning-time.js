@@ -23,7 +23,7 @@ export function calendarDate(today, offset) {
 
 // OUT-03, punto 1: dopo la fine della raccolta consentita (un'ora dopo il tramonto, L.R. Lazio 32/1998, art. 9,
 // c. 1) non è «tardi», la raccolta è chiusa. Solo per chi cerca funghi: il divieto riguarda la raccolta, non il cammino.
-// Il confronto usa la fine arrotondata per difetto ai 5 minuti, come shownEnd in human.js.
+// Il confronto usa la fine arrotondata per difetto ai 5 minuti: l'orario mostrato non è mai già passato.
 export function lateLabel({date, today, end, mushrooms, now = new Date(), short = false}) {
   if (mushrooms && date === today && now.getTime() >= roundTime(end, 5, 'floor').getTime()) return 'Raccolta chiusa';
   return short ? 'Orario superato' : 'Orario consigliato superato';

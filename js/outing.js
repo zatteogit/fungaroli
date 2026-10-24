@@ -1,6 +1,6 @@
 // Meteo dell'uscita: le previsioni orarie nella finestra della raccolta (da un'ora prima dell'alba alle 13),
 // separate dal meteo passato che fa nascere i funghi. Servono a dire "oggi lì piove, puoi andare altrove".
-import { sunTimes } from './human.js';
+import { sunTimes, todayGone } from './human.js';
 import {fetchForecast} from './weather-request.js';
 import {cachedZoneWeather,saveZoneWeather,migrateOutingCache,validWeatherRows,WEATHER_FRESH_MS} from './weather-cache.js';
 
@@ -37,8 +37,15 @@ export async function loadOuting(zones, { force = false,onUpdate,signal } = {}) 
 }
 
 // Valuta la mattina dell'uscita: livello ok / attenzione / sconsigliata, con le ragioni in parole.
+const romeDay = (now) => new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Rome', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(now));
 export function outingFor(series, z, dateStr, now = Date.now()) {
   const unavailable = (text) => ({ level: 'non_disponibile', text, main: text, short: 'meteo non verificabile', available: false });
+  // OUT-03, punto 2 (decisione di Matteo del 24/10): dalle 14 di oggi la mattina dell'uscita è passata. Niente
+  // giudizio come se fosse una previsione e niente «Riprova»: il meteo è quello di una mattina già trascorsa.
+  if (dateStr === romeDay(now) && todayGone(new Date(now))) {
+    const text = 'Mattina di oggi già passata: il meteo dell’uscita riguarda la mattina.';
+    return { level: 'passata', text, main: 'mattina già passata', short: 'mattina passata', available: false };
+  }
   if (!series) return unavailable('Previsioni della mattina non disponibili: controlla il meteo aggiornato prima di uscire.');
   const fetched = Date.parse(series.fetchedAt);
   if (!Number.isFinite(fetched) || now - fetched > MAX_OUTING_AGE_MS) return unavailable('Previsioni della mattina scadute o senza data di acquisizione.');
@@ -90,9 +97,10 @@ export function outingFor(series, z, dateStr, now = Date.now()) {
     available: !stale, fetchedAt: series.fetchedAt, rain, prob, thunder, snow, fog, gust, tmin, tmax, from };
 }
 
-export const OUTING_LABEL = { ok: 'meteo senza criticità segnalate', attenzione: 'tempo incerto', sconsigliata: 'uscita sconsigliata', non_disponibile: 'meteo non verificabile' };
-export const OUTING_SHORT = { ok: 'senza criticità segnalate', attenzione: 'incerto', sconsigliata: 'sconsigliata', non_disponibile: 'non verificabile' };
-export const OUTING_RANK = { ok: 1, attenzione: 0.85, sconsigliata: 0.55, non_disponibile: 0.75 };
+export const OUTING_LABEL = { ok: 'meteo senza criticità segnalate', attenzione: 'tempo incerto', sconsigliata: 'uscita sconsigliata', non_disponibile: 'meteo non verificabile', passata: 'mattina già passata' };
+export const OUTING_SHORT = { ok: 'senza criticità segnalate', attenzione: 'incerto', sconsigliata: 'sconsigliata', non_disponibile: 'non verificabile', passata: 'mattina passata' };
+// passata: stesso peso del meteo non verificabile; dalle 14 la home propone già il giorno dopo.
+export const OUTING_RANK = { ok: 1, attenzione: 0.85, sconsigliata: 0.55, non_disponibile: 0.75, passata: 0.75 };
 
 // Decisione di prodotto 20/10: le condizioni dell’uscita includono anche il meteo attuale.
 // I pesi sono quelli già usati per ordinare le uscite; il modello biologico resta separato.
