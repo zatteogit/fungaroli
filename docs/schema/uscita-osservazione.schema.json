@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fungaroli.zatteo.workers.dev/schema/uscita-osservazione.schema.json",
+  "title": "Osservazione per lo studio dell'indice (fronda-observation-v1)",
+  "description": "Una riga per specie osservata o cercata, solo da profili con il consenso alla ricerca attivo. Nessun campo d'analisi (covariate, split, provenienza del meteo): si aggiungono a valle. Prodotta da js/research-export.js.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "source", "observer", "day", "zone_id", "category", "taxon_id", "outcome", "amount", "effort", "identification", "habitat", "elevation", "protocol_version", "consent_version"],
+  "properties": {
+    "schema": { "const": "fronda-observation-v1" },
+    "source": { "enum": ["shared_observation", "report"] },
+    "observer": { "type": "string", "minLength": 8, "description": "Pseudonimo stabile scelto da chi esporta, mai l'ID del profilo." },
+    "day": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "zone_id": { "type": "string" },
+    "category": { "enum": ["fungo", "botanica", "albero", "animale"] },
+    "taxon_id": { "type": "string" },
+    "outcome": { "enum": ["detected", "not_detected", "unknown"], "description": "not_detected solo con ricerca conclusa e durata dichiarata." },
+    "amount": { "type": ["integer", "null"], "minimum": 0, "maximum": 3, "description": "Quantità ordinale 1–3; 0 per una ricerca a vuoto; null se non indicata." },
+    "effort": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["basis", "class", "minutes", "people", "completed", "stop_reason"],
+      "properties": {
+        "basis": { "enum": ["actual_with_stop_reason", "actual", "none"], "description": "planned_protocol è riservato a una durata decisa prima dell'uscita, oggi non raccolta (rimandata il 24/10/2026)." },
+        "class": { "enum": ["lt30", "30-60", "60-120", "gt120", null] },
+        "minutes": { "type": ["integer", "null"], "minimum": 1, "maximum": 1440 },
+        "people": { "type": ["integer", "null"], "minimum": 1, "maximum": 100 },
+        "completed": { "type": ["boolean", "null"] },
+        "stop_reason": { "enum": ["planned_time", "found_target", "weather", "other", null] }
+      }
+    },
+    "identification": { "enum": ["unreviewed", "declared_checked"], "description": "Dichiarazione dell'utente: l'app non identifica e non certifica." },
+    "habitat": { "type": "string" },
+    "elevation": { "type": ["integer", "null"], "minimum": 0, "maximum": 4500 },
+    "protocol_version": { "type": ["string", "null"] },
+    "consent_version": { "type": "string" },
+    "forecast": {
+      "type": ["object", "null"],
+      "description": "Solo per le segnalazioni con previsione salvata prima della partenza.",
+      "additionalProperties": false,
+      "properties": {
+        "mode": { "const": "prospective" },
+        "predicted": { "type": "number" },
+        "model_version": { "type": ["string", "null"] },
+        "captured_at": { "type": ["string", "null"] }
+      }
+    }
+  }
+}
