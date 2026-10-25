@@ -2488,7 +2488,298 @@
     600,
     441
    ],
-   "modified": "Ritaglio e conversione WebP"
+   "modified": "Ritaglio e conversione WebP",
+   "variants": [
+    {
+     "season": "autunno",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Venere,_Riserva_naturale_Lago_di_Vico.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/vico-monte-venere-autunno-nebbia.webp",
+     "file_hd": "assets/zones/var/vico-monte-venere-autunno-nebbia-hd.webp",
+     "size": [
+      1462,
+      1076
+     ]
+    },
+    {
+     "season": "autunno",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Venere,_Riserva_naturale_Lago_di_Vico.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/vico-monte-venere-autunno-nuvoloso.webp",
+     "file_hd": "assets/zones/var/vico-monte-venere-autunno-nuvoloso-hd.webp",
+     "size": [
+      1462,
+      1076
+     ]
+    },
+    {
+     "season": "autunno",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Venere,_Riserva_naturale_Lago_di_Vico.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/vico-monte-venere-autunno-pioggia.webp",
+     "file_hd": "assets/zones/var/vico-monte-venere-autunno-pioggia-hd.webp",
+     "size": [
+      1462,
+      1076
+     ]
+    },
+    {
+     "season": "autunno",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Venere,_Riserva_naturale_Lago_di_Vico.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/vico-monte-venere-autunno-sereno.webp",
+     "file_hd": "assets/zones/var/vico-monte-venere-autunno-sereno-hd.webp",
+     "size": [
+      1462,
+      1076
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Venere,_Riserva_naturale_Lago_di_Vico.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/vico-monte-venere-estate-nebbia.webp",
+     "file_hd": "assets/zones/var/vico-monte-venere-estate-nebbia-hd.webp",
+     "size": [
+      1462,
+      1076
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Venere,_Riserva_naturale_Lago_di_Vico.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/vico-monte-venere-estate-nuvoloso.webp",
+     "file_hd": "assets/zones/var/vico-monte-venere-estate-nuvoloso-hd.webp",
+     "size": [
+      1462,
+      1076
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Venere,_Riserva_naturale_Lago_di_Vico.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/vico-monte-venere-estate-pioggia.webp",
+     "file_hd": "assets/zones/var/vico-monte-venere-estate-pioggia-hd.webp",
+     "size": [
+      1462,
+      1076
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Venere,_Riserva_naturale_Lago_di_Vico.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/vico-monte-venere-estate-sereno.webp",
+     "file_hd": "assets/zones/var/vico-monte-venere-estate-sereno-hd.webp",
+     "size": [
+      1462,
+      1076
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Venere,_Riserva_naturale_Lago_di_Vico.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/vico-monte-venere-inverno-nebbia.webp",
+     "file_hd": "assets/zones/var/vico-monte-venere-inverno-nebbia-hd.webp",
+     "size": [
+      1462,
+      1076
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "neve",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Venere,_Riserva_naturale_Lago_di_Vico.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/vico-monte-venere-inverno-neve.webp",
+     "file_hd": "assets/zones/var/vico-monte-venere-inverno-neve-hd.webp",
+     "size": [
+      1462,
+      1076
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Venere,_Riserva_naturale_Lago_di_Vico.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/vico-monte-venere-inverno-nuvoloso.webp",
+     "file_hd": "assets/zones/var/vico-monte-venere-inverno-nuvoloso-hd.webp",
+     "size": [
+      1462,
+      1076
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Venere,_Riserva_naturale_Lago_di_Vico.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/vico-monte-venere-inverno-pioggia.webp",
+     "file_hd": "assets/zones/var/vico-monte-venere-inverno-pioggia-hd.webp",
+     "size": [
+      1462,
+      1076
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Venere,_Riserva_naturale_Lago_di_Vico.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/vico-monte-venere-inverno-sereno.webp",
+     "file_hd": "assets/zones/var/vico-monte-venere-inverno-sereno-hd.webp",
+     "size": [
+      1462,
+      1076
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Venere,_Riserva_naturale_Lago_di_Vico.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/vico-monte-venere-primavera-nebbia.webp",
+     "file_hd": "assets/zones/var/vico-monte-venere-primavera-nebbia-hd.webp",
+     "size": [
+      1462,
+      1076
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Venere,_Riserva_naturale_Lago_di_Vico.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/vico-monte-venere-primavera-nuvoloso.webp",
+     "file_hd": "assets/zones/var/vico-monte-venere-primavera-nuvoloso-hd.webp",
+     "size": [
+      1462,
+      1076
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Venere,_Riserva_naturale_Lago_di_Vico.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/vico-monte-venere-primavera-pioggia.webp",
+     "file_hd": "assets/zones/var/vico-monte-venere-primavera-pioggia-hd.webp",
+     "size": [
+      1462,
+      1076
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Venere,_Riserva_naturale_Lago_di_Vico.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/vico-monte-venere-primavera-sereno.webp",
+     "file_hd": "assets/zones/var/vico-monte-venere-primavera-sereno-hd.webp",
+     "size": [
+      1462,
+      1076
+     ]
+    }
+   ]
   },
   "oriolo-monte-raschio": {
    "file": "assets/zones/oriolo-monte-raschio.webp",
@@ -2503,7 +2794,298 @@
     600,
     338
    ],
-   "modified": "Ritaglio e conversione WebP"
+   "modified": "Ritaglio e conversione WebP",
+   "variants": [
+    {
+     "season": "autunno",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Dino Michelini",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Fonte_Petrella.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/oriolo-monte-raschio-autunno-nebbia.webp",
+     "file_hd": "assets/zones/var/oriolo-monte-raschio-autunno-nebbia-hd.webp",
+     "size": [
+      1600,
+      900
+     ]
+    },
+    {
+     "season": "autunno",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Dino Michelini",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Fonte_Petrella.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/oriolo-monte-raschio-autunno-nuvoloso.webp",
+     "file_hd": "assets/zones/var/oriolo-monte-raschio-autunno-nuvoloso-hd.webp",
+     "size": [
+      1600,
+      901
+     ]
+    },
+    {
+     "season": "autunno",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Dino Michelini",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Fonte_Petrella.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/oriolo-monte-raschio-autunno-pioggia.webp",
+     "file_hd": "assets/zones/var/oriolo-monte-raschio-autunno-pioggia-hd.webp",
+     "size": [
+      1600,
+      900
+     ]
+    },
+    {
+     "season": "autunno",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Dino Michelini",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Fonte_Petrella.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/oriolo-monte-raschio-autunno-sereno.webp",
+     "file_hd": "assets/zones/var/oriolo-monte-raschio-autunno-sereno-hd.webp",
+     "size": [
+      1600,
+      900
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Dino Michelini",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Fonte_Petrella.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/oriolo-monte-raschio-estate-nebbia.webp",
+     "file_hd": "assets/zones/var/oriolo-monte-raschio-estate-nebbia-hd.webp",
+     "size": [
+      1600,
+      900
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Dino Michelini",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Fonte_Petrella.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/oriolo-monte-raschio-estate-nuvoloso.webp",
+     "file_hd": "assets/zones/var/oriolo-monte-raschio-estate-nuvoloso-hd.webp",
+     "size": [
+      1600,
+      901
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Dino Michelini",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Fonte_Petrella.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/oriolo-monte-raschio-estate-pioggia.webp",
+     "file_hd": "assets/zones/var/oriolo-monte-raschio-estate-pioggia-hd.webp",
+     "size": [
+      1600,
+      901
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Dino Michelini",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Fonte_Petrella.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/oriolo-monte-raschio-estate-sereno.webp",
+     "file_hd": "assets/zones/var/oriolo-monte-raschio-estate-sereno-hd.webp",
+     "size": [
+      1600,
+      900
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Dino Michelini",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Fonte_Petrella.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/oriolo-monte-raschio-inverno-nebbia.webp",
+     "file_hd": "assets/zones/var/oriolo-monte-raschio-inverno-nebbia-hd.webp",
+     "size": [
+      1600,
+      900
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "neve",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Dino Michelini",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Fonte_Petrella.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/oriolo-monte-raschio-inverno-neve.webp",
+     "file_hd": "assets/zones/var/oriolo-monte-raschio-inverno-neve-hd.webp",
+     "size": [
+      1600,
+      900
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Dino Michelini",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Fonte_Petrella.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/oriolo-monte-raschio-inverno-nuvoloso.webp",
+     "file_hd": "assets/zones/var/oriolo-monte-raschio-inverno-nuvoloso-hd.webp",
+     "size": [
+      1600,
+      900
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Dino Michelini",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Fonte_Petrella.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/oriolo-monte-raschio-inverno-pioggia.webp",
+     "file_hd": "assets/zones/var/oriolo-monte-raschio-inverno-pioggia-hd.webp",
+     "size": [
+      1600,
+      900
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Dino Michelini",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Fonte_Petrella.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/oriolo-monte-raschio-inverno-sereno.webp",
+     "file_hd": "assets/zones/var/oriolo-monte-raschio-inverno-sereno-hd.webp",
+     "size": [
+      1600,
+      901
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Dino Michelini",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Fonte_Petrella.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/oriolo-monte-raschio-primavera-nebbia.webp",
+     "file_hd": "assets/zones/var/oriolo-monte-raschio-primavera-nebbia-hd.webp",
+     "size": [
+      1600,
+      900
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Dino Michelini",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Fonte_Petrella.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/oriolo-monte-raschio-primavera-nuvoloso.webp",
+     "file_hd": "assets/zones/var/oriolo-monte-raschio-primavera-nuvoloso-hd.webp",
+     "size": [
+      1600,
+      900
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Dino Michelini",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Fonte_Petrella.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/oriolo-monte-raschio-primavera-pioggia.webp",
+     "file_hd": "assets/zones/var/oriolo-monte-raschio-primavera-pioggia-hd.webp",
+     "size": [
+      1600,
+      900
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Dino Michelini",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Fonte_Petrella.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/oriolo-monte-raschio-primavera-sereno.webp",
+     "file_hd": "assets/zones/var/oriolo-monte-raschio-primavera-sereno-hd.webp",
+     "size": [
+      1600,
+      901
+     ]
+    }
+   ]
   },
   "allumiere-faggeto": {
    "file": "assets/zones/allumiere-faggeto.webp",
@@ -2518,7 +3100,298 @@
     600,
     450
    ],
-   "modified": "Ritaglio e conversione WebP"
+   "modified": "Ritaglio e conversione WebP",
+   "variants": [
+    {
+     "season": "autunno",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Faggeta_e_Cava_di_Alunite.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/allumiere-faggeto-autunno-nebbia.webp",
+     "file_hd": "assets/zones/var/allumiere-faggeto-autunno-nebbia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "autunno",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Faggeta_e_Cava_di_Alunite.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/allumiere-faggeto-autunno-nuvoloso.webp",
+     "file_hd": "assets/zones/var/allumiere-faggeto-autunno-nuvoloso-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "autunno",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Faggeta_e_Cava_di_Alunite.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/allumiere-faggeto-autunno-pioggia.webp",
+     "file_hd": "assets/zones/var/allumiere-faggeto-autunno-pioggia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "autunno",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Faggeta_e_Cava_di_Alunite.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/allumiere-faggeto-autunno-sereno.webp",
+     "file_hd": "assets/zones/var/allumiere-faggeto-autunno-sereno-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Faggeta_e_Cava_di_Alunite.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/allumiere-faggeto-estate-nebbia.webp",
+     "file_hd": "assets/zones/var/allumiere-faggeto-estate-nebbia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Faggeta_e_Cava_di_Alunite.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/allumiere-faggeto-estate-nuvoloso.webp",
+     "file_hd": "assets/zones/var/allumiere-faggeto-estate-nuvoloso-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Faggeta_e_Cava_di_Alunite.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/allumiere-faggeto-estate-pioggia.webp",
+     "file_hd": "assets/zones/var/allumiere-faggeto-estate-pioggia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Faggeta_e_Cava_di_Alunite.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/allumiere-faggeto-estate-sereno.webp",
+     "file_hd": "assets/zones/var/allumiere-faggeto-estate-sereno-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Faggeta_e_Cava_di_Alunite.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/allumiere-faggeto-inverno-nebbia.webp",
+     "file_hd": "assets/zones/var/allumiere-faggeto-inverno-nebbia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "neve",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Faggeta_e_Cava_di_Alunite.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/allumiere-faggeto-inverno-neve.webp",
+     "file_hd": "assets/zones/var/allumiere-faggeto-inverno-neve-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Faggeta_e_Cava_di_Alunite.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/allumiere-faggeto-inverno-nuvoloso.webp",
+     "file_hd": "assets/zones/var/allumiere-faggeto-inverno-nuvoloso-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Faggeta_e_Cava_di_Alunite.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/allumiere-faggeto-inverno-pioggia.webp",
+     "file_hd": "assets/zones/var/allumiere-faggeto-inverno-pioggia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Faggeta_e_Cava_di_Alunite.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/allumiere-faggeto-inverno-sereno.webp",
+     "file_hd": "assets/zones/var/allumiere-faggeto-inverno-sereno-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Faggeta_e_Cava_di_Alunite.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/allumiere-faggeto-primavera-nebbia.webp",
+     "file_hd": "assets/zones/var/allumiere-faggeto-primavera-nebbia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Faggeta_e_Cava_di_Alunite.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/allumiere-faggeto-primavera-nuvoloso.webp",
+     "file_hd": "assets/zones/var/allumiere-faggeto-primavera-nuvoloso-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Faggeta_e_Cava_di_Alunite.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/allumiere-faggeto-primavera-pioggia.webp",
+     "file_hd": "assets/zones/var/allumiere-faggeto-primavera-pioggia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Faggeta_e_Cava_di_Alunite.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/allumiere-faggeto-primavera-sereno.webp",
+     "file_hd": "assets/zones/var/allumiere-faggeto-primavera-sereno-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    }
+   ]
   },
   "monterano-bicione": {
    "file": "assets/zones/monterano-bicione.webp",
@@ -2533,7 +3406,298 @@
     600,
     449
    ],
-   "modified": "Ritaglio e conversione WebP"
+   "modified": "Ritaglio e conversione WebP",
+   "variants": [
+    {
+     "season": "autunno",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Patafisik",
+     "license": "Public domain",
+     "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Public_domain",
+     "page": "https://commons.wikimedia.org/wiki/File:Cascate_di_Diosilla.JPG",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/monterano-bicione-autunno-nebbia.webp",
+     "file_hd": "assets/zones/var/monterano-bicione-autunno-nebbia-hd.webp",
+     "size": [
+      1450,
+      1085
+     ]
+    },
+    {
+     "season": "autunno",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Patafisik",
+     "license": "Public domain",
+     "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Public_domain",
+     "page": "https://commons.wikimedia.org/wiki/File:Cascate_di_Diosilla.JPG",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/monterano-bicione-autunno-nuvoloso.webp",
+     "file_hd": "assets/zones/var/monterano-bicione-autunno-nuvoloso-hd.webp",
+     "size": [
+      1450,
+      1085
+     ]
+    },
+    {
+     "season": "autunno",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Patafisik",
+     "license": "Public domain",
+     "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Public_domain",
+     "page": "https://commons.wikimedia.org/wiki/File:Cascate_di_Diosilla.JPG",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/monterano-bicione-autunno-pioggia.webp",
+     "file_hd": "assets/zones/var/monterano-bicione-autunno-pioggia-hd.webp",
+     "size": [
+      1450,
+      1085
+     ]
+    },
+    {
+     "season": "autunno",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Patafisik",
+     "license": "Public domain",
+     "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Public_domain",
+     "page": "https://commons.wikimedia.org/wiki/File:Cascate_di_Diosilla.JPG",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/monterano-bicione-autunno-sereno.webp",
+     "file_hd": "assets/zones/var/monterano-bicione-autunno-sereno-hd.webp",
+     "size": [
+      1450,
+      1085
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Patafisik",
+     "license": "Public domain",
+     "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Public_domain",
+     "page": "https://commons.wikimedia.org/wiki/File:Cascate_di_Diosilla.JPG",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/monterano-bicione-estate-nebbia.webp",
+     "file_hd": "assets/zones/var/monterano-bicione-estate-nebbia-hd.webp",
+     "size": [
+      1450,
+      1085
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Patafisik",
+     "license": "Public domain",
+     "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Public_domain",
+     "page": "https://commons.wikimedia.org/wiki/File:Cascate_di_Diosilla.JPG",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/monterano-bicione-estate-nuvoloso.webp",
+     "file_hd": "assets/zones/var/monterano-bicione-estate-nuvoloso-hd.webp",
+     "size": [
+      1450,
+      1085
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Patafisik",
+     "license": "Public domain",
+     "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Public_domain",
+     "page": "https://commons.wikimedia.org/wiki/File:Cascate_di_Diosilla.JPG",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/monterano-bicione-estate-pioggia.webp",
+     "file_hd": "assets/zones/var/monterano-bicione-estate-pioggia-hd.webp",
+     "size": [
+      1450,
+      1085
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Patafisik",
+     "license": "Public domain",
+     "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Public_domain",
+     "page": "https://commons.wikimedia.org/wiki/File:Cascate_di_Diosilla.JPG",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/monterano-bicione-estate-sereno.webp",
+     "file_hd": "assets/zones/var/monterano-bicione-estate-sereno-hd.webp",
+     "size": [
+      1450,
+      1085
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Patafisik",
+     "license": "Public domain",
+     "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Public_domain",
+     "page": "https://commons.wikimedia.org/wiki/File:Cascate_di_Diosilla.JPG",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/monterano-bicione-inverno-nebbia.webp",
+     "file_hd": "assets/zones/var/monterano-bicione-inverno-nebbia-hd.webp",
+     "size": [
+      1450,
+      1085
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "neve",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Patafisik",
+     "license": "Public domain",
+     "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Public_domain",
+     "page": "https://commons.wikimedia.org/wiki/File:Cascate_di_Diosilla.JPG",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/monterano-bicione-inverno-neve.webp",
+     "file_hd": "assets/zones/var/monterano-bicione-inverno-neve-hd.webp",
+     "size": [
+      1450,
+      1085
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Patafisik",
+     "license": "Public domain",
+     "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Public_domain",
+     "page": "https://commons.wikimedia.org/wiki/File:Cascate_di_Diosilla.JPG",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/monterano-bicione-inverno-nuvoloso.webp",
+     "file_hd": "assets/zones/var/monterano-bicione-inverno-nuvoloso-hd.webp",
+     "size": [
+      1451,
+      1084
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Patafisik",
+     "license": "Public domain",
+     "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Public_domain",
+     "page": "https://commons.wikimedia.org/wiki/File:Cascate_di_Diosilla.JPG",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/monterano-bicione-inverno-pioggia.webp",
+     "file_hd": "assets/zones/var/monterano-bicione-inverno-pioggia-hd.webp",
+     "size": [
+      1450,
+      1085
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Patafisik",
+     "license": "Public domain",
+     "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Public_domain",
+     "page": "https://commons.wikimedia.org/wiki/File:Cascate_di_Diosilla.JPG",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/monterano-bicione-inverno-sereno.webp",
+     "file_hd": "assets/zones/var/monterano-bicione-inverno-sereno-hd.webp",
+     "size": [
+      1450,
+      1085
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Patafisik",
+     "license": "Public domain",
+     "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Public_domain",
+     "page": "https://commons.wikimedia.org/wiki/File:Cascate_di_Diosilla.JPG",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/monterano-bicione-primavera-nebbia.webp",
+     "file_hd": "assets/zones/var/monterano-bicione-primavera-nebbia-hd.webp",
+     "size": [
+      1450,
+      1085
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Patafisik",
+     "license": "Public domain",
+     "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Public_domain",
+     "page": "https://commons.wikimedia.org/wiki/File:Cascate_di_Diosilla.JPG",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/monterano-bicione-primavera-nuvoloso.webp",
+     "file_hd": "assets/zones/var/monterano-bicione-primavera-nuvoloso-hd.webp",
+     "size": [
+      1450,
+      1085
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Patafisik",
+     "license": "Public domain",
+     "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Public_domain",
+     "page": "https://commons.wikimedia.org/wiki/File:Cascate_di_Diosilla.JPG",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/monterano-bicione-primavera-pioggia.webp",
+     "file_hd": "assets/zones/var/monterano-bicione-primavera-pioggia-hd.webp",
+     "size": [
+      1450,
+      1085
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Patafisik",
+     "license": "Public domain",
+     "licenseUrl": "https://commons.wikimedia.org/wiki/Commons:Public_domain",
+     "page": "https://commons.wikimedia.org/wiki/File:Cascate_di_Diosilla.JPG",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/monterano-bicione-primavera-sereno.webp",
+     "file_hd": "assets/zones/var/monterano-bicione-primavera-sereno-hd.webp",
+     "size": [
+      1450,
+      1085
+     ]
+    }
+   ]
   },
   "veio-monte-musino": {
    "file": "assets/zones/veio-monte-musino.webp",
@@ -2548,7 +3712,298 @@
     600,
     450
    ],
-   "modified": "Ritaglio e conversione WebP"
+   "modified": "Ritaglio e conversione WebP",
+   "variants": [
+    {
+     "season": "autunno",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Percorso_a_Monte_Musino.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/veio-monte-musino-autunno-nebbia.webp",
+     "file_hd": "assets/zones/var/veio-monte-musino-autunno-nebbia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "autunno",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Percorso_a_Monte_Musino.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/veio-monte-musino-autunno-nuvoloso.webp",
+     "file_hd": "assets/zones/var/veio-monte-musino-autunno-nuvoloso-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "autunno",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Percorso_a_Monte_Musino.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/veio-monte-musino-autunno-pioggia.webp",
+     "file_hd": "assets/zones/var/veio-monte-musino-autunno-pioggia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "autunno",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Percorso_a_Monte_Musino.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/veio-monte-musino-autunno-sereno.webp",
+     "file_hd": "assets/zones/var/veio-monte-musino-autunno-sereno-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Percorso_a_Monte_Musino.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/veio-monte-musino-estate-nebbia.webp",
+     "file_hd": "assets/zones/var/veio-monte-musino-estate-nebbia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Percorso_a_Monte_Musino.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/veio-monte-musino-estate-nuvoloso.webp",
+     "file_hd": "assets/zones/var/veio-monte-musino-estate-nuvoloso-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Percorso_a_Monte_Musino.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/veio-monte-musino-estate-pioggia.webp",
+     "file_hd": "assets/zones/var/veio-monte-musino-estate-pioggia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Percorso_a_Monte_Musino.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/veio-monte-musino-estate-sereno.webp",
+     "file_hd": "assets/zones/var/veio-monte-musino-estate-sereno-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Percorso_a_Monte_Musino.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/veio-monte-musino-inverno-nebbia.webp",
+     "file_hd": "assets/zones/var/veio-monte-musino-inverno-nebbia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "neve",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Percorso_a_Monte_Musino.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/veio-monte-musino-inverno-neve.webp",
+     "file_hd": "assets/zones/var/veio-monte-musino-inverno-neve-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Percorso_a_Monte_Musino.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/veio-monte-musino-inverno-nuvoloso.webp",
+     "file_hd": "assets/zones/var/veio-monte-musino-inverno-nuvoloso-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Percorso_a_Monte_Musino.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/veio-monte-musino-inverno-pioggia.webp",
+     "file_hd": "assets/zones/var/veio-monte-musino-inverno-pioggia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Percorso_a_Monte_Musino.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/veio-monte-musino-inverno-sereno.webp",
+     "file_hd": "assets/zones/var/veio-monte-musino-inverno-sereno-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Percorso_a_Monte_Musino.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/veio-monte-musino-primavera-nebbia.webp",
+     "file_hd": "assets/zones/var/veio-monte-musino-primavera-nebbia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Percorso_a_Monte_Musino.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/veio-monte-musino-primavera-nuvoloso.webp",
+     "file_hd": "assets/zones/var/veio-monte-musino-primavera-nuvoloso-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Percorso_a_Monte_Musino.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/veio-monte-musino-primavera-pioggia.webp",
+     "file_hd": "assets/zones/var/veio-monte-musino-primavera-pioggia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Percorso_a_Monte_Musino.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/veio-monte-musino-primavera-sereno.webp",
+     "file_hd": "assets/zones/var/veio-monte-musino-primavera-sereno-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    }
+   ]
   },
   "faete-rocca-papa": {
    "file": "assets/zones/faete-rocca-papa.webp",
@@ -2563,7 +4018,283 @@
     600,
     413
    ],
-   "modified": "Ritaglio e conversione WebP"
+   "modified": "Ritaglio e conversione WebP",
+   "variants": [
+    {
+     "season": "autunno",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "NikonZ7II",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Cavo_Visto_da_castel_gandolfo.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/faete-rocca-papa-autunno-nebbia.webp",
+     "file_hd": "assets/zones/var/faete-rocca-papa-autunno-nebbia-hd.webp",
+     "size": [
+      1511,
+      1041
+     ]
+    },
+    {
+     "season": "autunno",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "NikonZ7II",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Cavo_Visto_da_castel_gandolfo.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/faete-rocca-papa-autunno-nuvoloso.webp",
+     "file_hd": "assets/zones/var/faete-rocca-papa-autunno-nuvoloso-hd.webp",
+     "size": [
+      1510,
+      1041
+     ]
+    },
+    {
+     "season": "autunno",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "NikonZ7II",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Cavo_Visto_da_castel_gandolfo.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/faete-rocca-papa-autunno-pioggia.webp",
+     "file_hd": "assets/zones/var/faete-rocca-papa-autunno-pioggia-hd.webp",
+     "size": [
+      1510,
+      1042
+     ]
+    },
+    {
+     "season": "autunno",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "NikonZ7II",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Cavo_Visto_da_castel_gandolfo.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/faete-rocca-papa-autunno-sereno.webp",
+     "file_hd": "assets/zones/var/faete-rocca-papa-autunno-sereno-hd.webp",
+     "size": [
+      1510,
+      1041
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "NikonZ7II",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Cavo_Visto_da_castel_gandolfo.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/faete-rocca-papa-estate-nebbia.webp",
+     "file_hd": "assets/zones/var/faete-rocca-papa-estate-nebbia-hd.webp",
+     "size": [
+      1511,
+      1041
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "NikonZ7II",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Cavo_Visto_da_castel_gandolfo.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/faete-rocca-papa-estate-nuvoloso.webp",
+     "file_hd": "assets/zones/var/faete-rocca-papa-estate-nuvoloso-hd.webp",
+     "size": [
+      1510,
+      1042
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "NikonZ7II",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Cavo_Visto_da_castel_gandolfo.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/faete-rocca-papa-estate-pioggia.webp",
+     "file_hd": "assets/zones/var/faete-rocca-papa-estate-pioggia-hd.webp",
+     "size": [
+      1510,
+      1041
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "NikonZ7II",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Cavo_Visto_da_castel_gandolfo.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/faete-rocca-papa-estate-sereno.webp",
+     "file_hd": "assets/zones/var/faete-rocca-papa-estate-sereno-hd.webp",
+     "size": [
+      1510,
+      1042
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "NikonZ7II",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Cavo_Visto_da_castel_gandolfo.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/faete-rocca-papa-inverno-nebbia.webp",
+     "file_hd": "assets/zones/var/faete-rocca-papa-inverno-nebbia-hd.webp",
+     "size": [
+      1510,
+      1041
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "neve",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "NikonZ7II",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Cavo_Visto_da_castel_gandolfo.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/faete-rocca-papa-inverno-neve.webp",
+     "file_hd": "assets/zones/var/faete-rocca-papa-inverno-neve-hd.webp",
+     "size": [
+      1511,
+      1041
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "NikonZ7II",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Cavo_Visto_da_castel_gandolfo.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/faete-rocca-papa-inverno-nuvoloso.webp",
+     "file_hd": "assets/zones/var/faete-rocca-papa-inverno-nuvoloso-hd.webp",
+     "size": [
+      1511,
+      1041
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "NikonZ7II",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Cavo_Visto_da_castel_gandolfo.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/faete-rocca-papa-inverno-pioggia.webp",
+     "file_hd": "assets/zones/var/faete-rocca-papa-inverno-pioggia-hd.webp",
+     "size": [
+      1510,
+      1041
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "NikonZ7II",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Cavo_Visto_da_castel_gandolfo.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/faete-rocca-papa-inverno-sereno.webp",
+     "file_hd": "assets/zones/var/faete-rocca-papa-inverno-sereno-hd.webp",
+     "size": [
+      1511,
+      1041
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "NikonZ7II",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Cavo_Visto_da_castel_gandolfo.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/faete-rocca-papa-primavera-nebbia.webp",
+     "file_hd": "assets/zones/var/faete-rocca-papa-primavera-nebbia-hd.webp",
+     "size": [
+      1511,
+      1041
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "NikonZ7II",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Cavo_Visto_da_castel_gandolfo.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/faete-rocca-papa-primavera-nuvoloso.webp",
+     "file_hd": "assets/zones/var/faete-rocca-papa-primavera-nuvoloso-hd.webp",
+     "size": [
+      1510,
+      1041
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "NikonZ7II",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Cavo_Visto_da_castel_gandolfo.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/faete-rocca-papa-primavera-pioggia.webp",
+     "file_hd": "assets/zones/var/faete-rocca-papa-primavera-pioggia-hd.webp",
+     "size": [
+      1510,
+      1041
+     ]
+    }
+   ],
+   "season": "primavera",
+   "weather": "sereno"
   },
   "cerquone-doganella": {
    "file": "assets/zones/cerquone-doganella.webp",
@@ -2578,7 +4309,298 @@
     600,
     425
    ],
-   "modified": "Ritaglio e conversione WebP"
+   "modified": "Ritaglio e conversione WebP",
+   "variants": [
+    {
+     "season": "autunno",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Pozzi_di_Doganella.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/cerquone-doganella-autunno-nebbia.webp",
+     "file_hd": "assets/zones/var/cerquone-doganella-autunno-nebbia-hd.webp",
+     "size": [
+      1491,
+      1055
+     ]
+    },
+    {
+     "season": "autunno",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Pozzi_di_Doganella.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/cerquone-doganella-autunno-nuvoloso.webp",
+     "file_hd": "assets/zones/var/cerquone-doganella-autunno-nuvoloso-hd.webp",
+     "size": [
+      1491,
+      1055
+     ]
+    },
+    {
+     "season": "autunno",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Pozzi_di_Doganella.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/cerquone-doganella-autunno-pioggia.webp",
+     "file_hd": "assets/zones/var/cerquone-doganella-autunno-pioggia-hd.webp",
+     "size": [
+      1491,
+      1055
+     ]
+    },
+    {
+     "season": "autunno",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Pozzi_di_Doganella.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/cerquone-doganella-autunno-sereno.webp",
+     "file_hd": "assets/zones/var/cerquone-doganella-autunno-sereno-hd.webp",
+     "size": [
+      1491,
+      1055
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Pozzi_di_Doganella.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/cerquone-doganella-estate-nebbia.webp",
+     "file_hd": "assets/zones/var/cerquone-doganella-estate-nebbia-hd.webp",
+     "size": [
+      1491,
+      1055
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Pozzi_di_Doganella.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/cerquone-doganella-estate-nuvoloso.webp",
+     "file_hd": "assets/zones/var/cerquone-doganella-estate-nuvoloso-hd.webp",
+     "size": [
+      1491,
+      1055
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Pozzi_di_Doganella.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/cerquone-doganella-estate-pioggia.webp",
+     "file_hd": "assets/zones/var/cerquone-doganella-estate-pioggia-hd.webp",
+     "size": [
+      1491,
+      1055
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Pozzi_di_Doganella.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/cerquone-doganella-estate-sereno.webp",
+     "file_hd": "assets/zones/var/cerquone-doganella-estate-sereno-hd.webp",
+     "size": [
+      1491,
+      1055
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Pozzi_di_Doganella.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/cerquone-doganella-inverno-nebbia.webp",
+     "file_hd": "assets/zones/var/cerquone-doganella-inverno-nebbia-hd.webp",
+     "size": [
+      1491,
+      1055
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "neve",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Pozzi_di_Doganella.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/cerquone-doganella-inverno-neve.webp",
+     "file_hd": "assets/zones/var/cerquone-doganella-inverno-neve-hd.webp",
+     "size": [
+      1491,
+      1055
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Pozzi_di_Doganella.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/cerquone-doganella-inverno-nuvoloso.webp",
+     "file_hd": "assets/zones/var/cerquone-doganella-inverno-nuvoloso-hd.webp",
+     "size": [
+      1491,
+      1055
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Pozzi_di_Doganella.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/cerquone-doganella-inverno-pioggia.webp",
+     "file_hd": "assets/zones/var/cerquone-doganella-inverno-pioggia-hd.webp",
+     "size": [
+      1491,
+      1055
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Pozzi_di_Doganella.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/cerquone-doganella-inverno-sereno.webp",
+     "file_hd": "assets/zones/var/cerquone-doganella-inverno-sereno-hd.webp",
+     "size": [
+      1491,
+      1055
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Pozzi_di_Doganella.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/cerquone-doganella-primavera-nebbia.webp",
+     "file_hd": "assets/zones/var/cerquone-doganella-primavera-nebbia-hd.webp",
+     "size": [
+      1491,
+      1055
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Pozzi_di_Doganella.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/cerquone-doganella-primavera-nuvoloso.webp",
+     "file_hd": "assets/zones/var/cerquone-doganella-primavera-nuvoloso-hd.webp",
+     "size": [
+      1491,
+      1055
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Pozzi_di_Doganella.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/cerquone-doganella-primavera-pioggia.webp",
+     "file_hd": "assets/zones/var/cerquone-doganella-primavera-pioggia-hd.webp",
+     "size": [
+      1491,
+      1055
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Albarubescens",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Pozzi_di_Doganella.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/cerquone-doganella-primavera-sereno.webp",
+     "file_hd": "assets/zones/var/cerquone-doganella-primavera-sereno-hd.webp",
+     "size": [
+      1491,
+      1055
+     ]
+    }
+   ]
   },
   "circeo-cerasella-verdesca": {
    "file": "assets/zones/circeo-cerasella-verdesca.webp",
@@ -2593,7 +4615,298 @@
     600,
     400
    ],
-   "modified": "Ritaglio e conversione WebP"
+   "modified": "Ritaglio e conversione WebP",
+   "variants": [
+    {
+     "season": "autunno",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "MasPro57",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Parco_del_Circeo_foresta.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/circeo-cerasella-verdesca-autunno-nebbia.webp",
+     "file_hd": "assets/zones/var/circeo-cerasella-verdesca-autunno-nebbia-hd.webp",
+     "size": [
+      1536,
+      1024
+     ]
+    },
+    {
+     "season": "autunno",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "MasPro57",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Parco_del_Circeo_foresta.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/circeo-cerasella-verdesca-autunno-nuvoloso.webp",
+     "file_hd": "assets/zones/var/circeo-cerasella-verdesca-autunno-nuvoloso-hd.webp",
+     "size": [
+      1536,
+      1024
+     ]
+    },
+    {
+     "season": "autunno",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "MasPro57",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Parco_del_Circeo_foresta.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/circeo-cerasella-verdesca-autunno-pioggia.webp",
+     "file_hd": "assets/zones/var/circeo-cerasella-verdesca-autunno-pioggia-hd.webp",
+     "size": [
+      1536,
+      1024
+     ]
+    },
+    {
+     "season": "autunno",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "MasPro57",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Parco_del_Circeo_foresta.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/circeo-cerasella-verdesca-autunno-sereno.webp",
+     "file_hd": "assets/zones/var/circeo-cerasella-verdesca-autunno-sereno-hd.webp",
+     "size": [
+      1536,
+      1024
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "MasPro57",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Parco_del_Circeo_foresta.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/circeo-cerasella-verdesca-estate-nebbia.webp",
+     "file_hd": "assets/zones/var/circeo-cerasella-verdesca-estate-nebbia-hd.webp",
+     "size": [
+      1536,
+      1024
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "MasPro57",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Parco_del_Circeo_foresta.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/circeo-cerasella-verdesca-estate-nuvoloso.webp",
+     "file_hd": "assets/zones/var/circeo-cerasella-verdesca-estate-nuvoloso-hd.webp",
+     "size": [
+      1536,
+      1024
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "MasPro57",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Parco_del_Circeo_foresta.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/circeo-cerasella-verdesca-estate-pioggia.webp",
+     "file_hd": "assets/zones/var/circeo-cerasella-verdesca-estate-pioggia-hd.webp",
+     "size": [
+      1536,
+      1024
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "MasPro57",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Parco_del_Circeo_foresta.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/circeo-cerasella-verdesca-estate-sereno.webp",
+     "file_hd": "assets/zones/var/circeo-cerasella-verdesca-estate-sereno-hd.webp",
+     "size": [
+      1536,
+      1024
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "MasPro57",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Parco_del_Circeo_foresta.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/circeo-cerasella-verdesca-inverno-nebbia.webp",
+     "file_hd": "assets/zones/var/circeo-cerasella-verdesca-inverno-nebbia-hd.webp",
+     "size": [
+      1536,
+      1024
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "neve",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "MasPro57",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Parco_del_Circeo_foresta.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/circeo-cerasella-verdesca-inverno-neve.webp",
+     "file_hd": "assets/zones/var/circeo-cerasella-verdesca-inverno-neve-hd.webp",
+     "size": [
+      1536,
+      1024
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "MasPro57",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Parco_del_Circeo_foresta.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/circeo-cerasella-verdesca-inverno-nuvoloso.webp",
+     "file_hd": "assets/zones/var/circeo-cerasella-verdesca-inverno-nuvoloso-hd.webp",
+     "size": [
+      1536,
+      1024
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "MasPro57",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Parco_del_Circeo_foresta.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/circeo-cerasella-verdesca-inverno-pioggia.webp",
+     "file_hd": "assets/zones/var/circeo-cerasella-verdesca-inverno-pioggia-hd.webp",
+     "size": [
+      1536,
+      1024
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "MasPro57",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Parco_del_Circeo_foresta.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/circeo-cerasella-verdesca-inverno-sereno.webp",
+     "file_hd": "assets/zones/var/circeo-cerasella-verdesca-inverno-sereno-hd.webp",
+     "size": [
+      1536,
+      1024
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "MasPro57",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Parco_del_Circeo_foresta.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/circeo-cerasella-verdesca-primavera-nebbia.webp",
+     "file_hd": "assets/zones/var/circeo-cerasella-verdesca-primavera-nebbia-hd.webp",
+     "size": [
+      1536,
+      1024
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "MasPro57",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Parco_del_Circeo_foresta.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/circeo-cerasella-verdesca-primavera-nuvoloso.webp",
+     "file_hd": "assets/zones/var/circeo-cerasella-verdesca-primavera-nuvoloso-hd.webp",
+     "size": [
+      1536,
+      1024
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "MasPro57",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Parco_del_Circeo_foresta.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/circeo-cerasella-verdesca-primavera-pioggia.webp",
+     "file_hd": "assets/zones/var/circeo-cerasella-verdesca-primavera-pioggia-hd.webp",
+     "size": [
+      1536,
+      1024
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "MasPro57",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Parco_del_Circeo_foresta.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/circeo-cerasella-verdesca-primavera-sereno.webp",
+     "file_hd": "assets/zones/var/circeo-cerasella-verdesca-primavera-sereno-hd.webp",
+     "size": [
+      1536,
+      1024
+     ]
+    }
+   ]
   },
   "ernici-prato-campoli": {
    "file": "assets/zones/ernici-prato-campoli.webp",
@@ -2608,7 +4921,298 @@
     600,
     450
    ],
-   "modified": "Ritaglio e conversione WebP"
+   "modified": "Ritaglio e conversione WebP",
+   "variants": [
+    {
+     "season": "autunno",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Giuseppe Pinto",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Wild_Horses_(224754759).jpeg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/ernici-prato-campoli-autunno-nebbia.webp",
+     "file_hd": "assets/zones/var/ernici-prato-campoli-autunno-nebbia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "autunno",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Giuseppe Pinto",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Wild_Horses_(224754759).jpeg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/ernici-prato-campoli-autunno-nuvoloso.webp",
+     "file_hd": "assets/zones/var/ernici-prato-campoli-autunno-nuvoloso-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "autunno",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Giuseppe Pinto",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Wild_Horses_(224754759).jpeg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/ernici-prato-campoli-autunno-pioggia.webp",
+     "file_hd": "assets/zones/var/ernici-prato-campoli-autunno-pioggia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "autunno",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Giuseppe Pinto",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Wild_Horses_(224754759).jpeg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/ernici-prato-campoli-autunno-sereno.webp",
+     "file_hd": "assets/zones/var/ernici-prato-campoli-autunno-sereno-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Giuseppe Pinto",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Wild_Horses_(224754759).jpeg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/ernici-prato-campoli-estate-nebbia.webp",
+     "file_hd": "assets/zones/var/ernici-prato-campoli-estate-nebbia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Giuseppe Pinto",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Wild_Horses_(224754759).jpeg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/ernici-prato-campoli-estate-nuvoloso.webp",
+     "file_hd": "assets/zones/var/ernici-prato-campoli-estate-nuvoloso-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Giuseppe Pinto",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Wild_Horses_(224754759).jpeg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/ernici-prato-campoli-estate-pioggia.webp",
+     "file_hd": "assets/zones/var/ernici-prato-campoli-estate-pioggia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Giuseppe Pinto",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Wild_Horses_(224754759).jpeg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/ernici-prato-campoli-estate-sereno.webp",
+     "file_hd": "assets/zones/var/ernici-prato-campoli-estate-sereno-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Giuseppe Pinto",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Wild_Horses_(224754759).jpeg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/ernici-prato-campoli-inverno-nebbia.webp",
+     "file_hd": "assets/zones/var/ernici-prato-campoli-inverno-nebbia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "neve",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Giuseppe Pinto",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Wild_Horses_(224754759).jpeg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/ernici-prato-campoli-inverno-neve.webp",
+     "file_hd": "assets/zones/var/ernici-prato-campoli-inverno-neve-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Giuseppe Pinto",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Wild_Horses_(224754759).jpeg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/ernici-prato-campoli-inverno-nuvoloso.webp",
+     "file_hd": "assets/zones/var/ernici-prato-campoli-inverno-nuvoloso-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Giuseppe Pinto",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Wild_Horses_(224754759).jpeg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/ernici-prato-campoli-inverno-pioggia.webp",
+     "file_hd": "assets/zones/var/ernici-prato-campoli-inverno-pioggia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Giuseppe Pinto",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Wild_Horses_(224754759).jpeg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/ernici-prato-campoli-inverno-sereno.webp",
+     "file_hd": "assets/zones/var/ernici-prato-campoli-inverno-sereno-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Giuseppe Pinto",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Wild_Horses_(224754759).jpeg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/ernici-prato-campoli-primavera-nebbia.webp",
+     "file_hd": "assets/zones/var/ernici-prato-campoli-primavera-nebbia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Giuseppe Pinto",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Wild_Horses_(224754759).jpeg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/ernici-prato-campoli-primavera-nuvoloso.webp",
+     "file_hd": "assets/zones/var/ernici-prato-campoli-primavera-nuvoloso-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Giuseppe Pinto",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Wild_Horses_(224754759).jpeg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/ernici-prato-campoli-primavera-pioggia.webp",
+     "file_hd": "assets/zones/var/ernici-prato-campoli-primavera-pioggia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Giuseppe Pinto",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Wild_Horses_(224754759).jpeg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/ernici-prato-campoli-primavera-sereno.webp",
+     "file_hd": "assets/zones/var/ernici-prato-campoli-primavera-sereno-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    }
+   ]
   },
   "pnalm-settefrati-canneto": {
    "file": "assets/zones/pnalm-settefrati-canneto.webp",
@@ -2623,7 +5227,298 @@
     600,
     389
    ],
-   "modified": "Ritaglio e conversione WebP"
+   "modified": "Ritaglio e conversione WebP",
+   "variants": [
+    {
+     "season": "autunno",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Spatuzzi Bruno",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:La_sorgente_del_Melfa.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/pnalm-settefrati-canneto-autunno-nebbia.webp",
+     "file_hd": "assets/zones/var/pnalm-settefrati-canneto-autunno-nebbia-hd.webp",
+     "size": [
+      1558,
+      1010
+     ]
+    },
+    {
+     "season": "autunno",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Spatuzzi Bruno",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:La_sorgente_del_Melfa.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/pnalm-settefrati-canneto-autunno-nuvoloso.webp",
+     "file_hd": "assets/zones/var/pnalm-settefrati-canneto-autunno-nuvoloso-hd.webp",
+     "size": [
+      1557,
+      1010
+     ]
+    },
+    {
+     "season": "autunno",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Spatuzzi Bruno",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:La_sorgente_del_Melfa.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/pnalm-settefrati-canneto-autunno-pioggia.webp",
+     "file_hd": "assets/zones/var/pnalm-settefrati-canneto-autunno-pioggia-hd.webp",
+     "size": [
+      1558,
+      1010
+     ]
+    },
+    {
+     "season": "autunno",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Spatuzzi Bruno",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:La_sorgente_del_Melfa.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/pnalm-settefrati-canneto-autunno-sereno.webp",
+     "file_hd": "assets/zones/var/pnalm-settefrati-canneto-autunno-sereno-hd.webp",
+     "size": [
+      1558,
+      1010
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Spatuzzi Bruno",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:La_sorgente_del_Melfa.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/pnalm-settefrati-canneto-estate-nebbia.webp",
+     "file_hd": "assets/zones/var/pnalm-settefrati-canneto-estate-nebbia-hd.webp",
+     "size": [
+      1558,
+      1010
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Spatuzzi Bruno",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:La_sorgente_del_Melfa.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/pnalm-settefrati-canneto-estate-nuvoloso.webp",
+     "file_hd": "assets/zones/var/pnalm-settefrati-canneto-estate-nuvoloso-hd.webp",
+     "size": [
+      1558,
+      1010
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Spatuzzi Bruno",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:La_sorgente_del_Melfa.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/pnalm-settefrati-canneto-estate-pioggia.webp",
+     "file_hd": "assets/zones/var/pnalm-settefrati-canneto-estate-pioggia-hd.webp",
+     "size": [
+      1558,
+      1010
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Spatuzzi Bruno",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:La_sorgente_del_Melfa.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/pnalm-settefrati-canneto-estate-sereno.webp",
+     "file_hd": "assets/zones/var/pnalm-settefrati-canneto-estate-sereno-hd.webp",
+     "size": [
+      1557,
+      1010
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Spatuzzi Bruno",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:La_sorgente_del_Melfa.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/pnalm-settefrati-canneto-inverno-nebbia.webp",
+     "file_hd": "assets/zones/var/pnalm-settefrati-canneto-inverno-nebbia-hd.webp",
+     "size": [
+      1558,
+      1010
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "neve",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Spatuzzi Bruno",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:La_sorgente_del_Melfa.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/pnalm-settefrati-canneto-inverno-neve.webp",
+     "file_hd": "assets/zones/var/pnalm-settefrati-canneto-inverno-neve-hd.webp",
+     "size": [
+      1558,
+      1010
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Spatuzzi Bruno",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:La_sorgente_del_Melfa.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/pnalm-settefrati-canneto-inverno-nuvoloso.webp",
+     "file_hd": "assets/zones/var/pnalm-settefrati-canneto-inverno-nuvoloso-hd.webp",
+     "size": [
+      1558,
+      1010
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Spatuzzi Bruno",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:La_sorgente_del_Melfa.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/pnalm-settefrati-canneto-inverno-pioggia.webp",
+     "file_hd": "assets/zones/var/pnalm-settefrati-canneto-inverno-pioggia-hd.webp",
+     "size": [
+      1558,
+      1010
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Spatuzzi Bruno",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:La_sorgente_del_Melfa.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/pnalm-settefrati-canneto-inverno-sereno.webp",
+     "file_hd": "assets/zones/var/pnalm-settefrati-canneto-inverno-sereno-hd.webp",
+     "size": [
+      1557,
+      1010
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Spatuzzi Bruno",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:La_sorgente_del_Melfa.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/pnalm-settefrati-canneto-primavera-nebbia.webp",
+     "file_hd": "assets/zones/var/pnalm-settefrati-canneto-primavera-nebbia-hd.webp",
+     "size": [
+      1558,
+      1010
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Spatuzzi Bruno",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:La_sorgente_del_Melfa.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/pnalm-settefrati-canneto-primavera-nuvoloso.webp",
+     "file_hd": "assets/zones/var/pnalm-settefrati-canneto-primavera-nuvoloso-hd.webp",
+     "size": [
+      1558,
+      1010
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Spatuzzi Bruno",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:La_sorgente_del_Melfa.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/pnalm-settefrati-canneto-primavera-pioggia.webp",
+     "file_hd": "assets/zones/var/pnalm-settefrati-canneto-primavera-pioggia-hd.webp",
+     "size": [
+      1558,
+      1010
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Spatuzzi Bruno",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:La_sorgente_del_Melfa.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/pnalm-settefrati-canneto-primavera-sereno.webp",
+     "file_hd": "assets/zones/var/pnalm-settefrati-canneto-primavera-sereno-hd.webp",
+     "size": [
+      1557,
+      1010
+     ]
+    }
+   ]
   },
   "nemi-fontan-tempesta": {
    "file": "assets/zones/nemi-fontan-tempesta.webp",
@@ -2638,7 +5533,298 @@
     600,
     450
    ],
-   "modified": "Ritaglio e conversione WebP"
+   "modified": "Ritaglio e conversione WebP",
+   "variants": [
+    {
+     "season": "autunno",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Emanuele Petriglia",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Castagni_con_radici_esposte.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/nemi-fontan-tempesta-autunno-nebbia.webp",
+     "file_hd": "assets/zones/var/nemi-fontan-tempesta-autunno-nebbia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "autunno",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Emanuele Petriglia",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Castagni_con_radici_esposte.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/nemi-fontan-tempesta-autunno-nuvoloso.webp",
+     "file_hd": "assets/zones/var/nemi-fontan-tempesta-autunno-nuvoloso-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "autunno",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Emanuele Petriglia",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Castagni_con_radici_esposte.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/nemi-fontan-tempesta-autunno-pioggia.webp",
+     "file_hd": "assets/zones/var/nemi-fontan-tempesta-autunno-pioggia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "autunno",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Emanuele Petriglia",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Castagni_con_radici_esposte.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/nemi-fontan-tempesta-autunno-sereno.webp",
+     "file_hd": "assets/zones/var/nemi-fontan-tempesta-autunno-sereno-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Emanuele Petriglia",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Castagni_con_radici_esposte.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/nemi-fontan-tempesta-estate-nebbia.webp",
+     "file_hd": "assets/zones/var/nemi-fontan-tempesta-estate-nebbia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Emanuele Petriglia",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Castagni_con_radici_esposte.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/nemi-fontan-tempesta-estate-nuvoloso.webp",
+     "file_hd": "assets/zones/var/nemi-fontan-tempesta-estate-nuvoloso-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Emanuele Petriglia",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Castagni_con_radici_esposte.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/nemi-fontan-tempesta-estate-pioggia.webp",
+     "file_hd": "assets/zones/var/nemi-fontan-tempesta-estate-pioggia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Emanuele Petriglia",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Castagni_con_radici_esposte.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/nemi-fontan-tempesta-estate-sereno.webp",
+     "file_hd": "assets/zones/var/nemi-fontan-tempesta-estate-sereno-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Emanuele Petriglia",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Castagni_con_radici_esposte.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/nemi-fontan-tempesta-inverno-nebbia.webp",
+     "file_hd": "assets/zones/var/nemi-fontan-tempesta-inverno-nebbia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "neve",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Emanuele Petriglia",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Castagni_con_radici_esposte.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/nemi-fontan-tempesta-inverno-neve.webp",
+     "file_hd": "assets/zones/var/nemi-fontan-tempesta-inverno-neve-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Emanuele Petriglia",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Castagni_con_radici_esposte.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/nemi-fontan-tempesta-inverno-nuvoloso.webp",
+     "file_hd": "assets/zones/var/nemi-fontan-tempesta-inverno-nuvoloso-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Emanuele Petriglia",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Castagni_con_radici_esposte.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/nemi-fontan-tempesta-inverno-pioggia.webp",
+     "file_hd": "assets/zones/var/nemi-fontan-tempesta-inverno-pioggia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Emanuele Petriglia",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Castagni_con_radici_esposte.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/nemi-fontan-tempesta-inverno-sereno.webp",
+     "file_hd": "assets/zones/var/nemi-fontan-tempesta-inverno-sereno-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Emanuele Petriglia",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Castagni_con_radici_esposte.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/nemi-fontan-tempesta-primavera-nebbia.webp",
+     "file_hd": "assets/zones/var/nemi-fontan-tempesta-primavera-nebbia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Emanuele Petriglia",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Castagni_con_radici_esposte.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/nemi-fontan-tempesta-primavera-nuvoloso.webp",
+     "file_hd": "assets/zones/var/nemi-fontan-tempesta-primavera-nuvoloso-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Emanuele Petriglia",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Castagni_con_radici_esposte.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/nemi-fontan-tempesta-primavera-pioggia.webp",
+     "file_hd": "assets/zones/var/nemi-fontan-tempesta-primavera-pioggia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Emanuele Petriglia",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Castagni_con_radici_esposte.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/nemi-fontan-tempesta-primavera-sereno.webp",
+     "file_hd": "assets/zones/var/nemi-fontan-tempesta-primavera-sereno-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    }
+   ]
   },
   "livata-tufai": {
    "file": "assets/zones/livata-tufai.webp",
@@ -2653,7 +5839,298 @@
     600,
     450
    ],
-   "modified": "Ritaglio e conversione WebP"
+   "modified": "Ritaglio e conversione WebP",
+   "variants": [
+    {
+     "season": "autunno",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Filippo Bussi",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Osservatorio_Le_Vedute,_Monte_Livata_02.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/livata-tufai-autunno-nebbia.webp",
+     "file_hd": "assets/zones/var/livata-tufai-autunno-nebbia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "autunno",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Filippo Bussi",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Osservatorio_Le_Vedute,_Monte_Livata_02.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/livata-tufai-autunno-nuvoloso.webp",
+     "file_hd": "assets/zones/var/livata-tufai-autunno-nuvoloso-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "autunno",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Filippo Bussi",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Osservatorio_Le_Vedute,_Monte_Livata_02.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/livata-tufai-autunno-pioggia.webp",
+     "file_hd": "assets/zones/var/livata-tufai-autunno-pioggia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "autunno",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Filippo Bussi",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Osservatorio_Le_Vedute,_Monte_Livata_02.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/livata-tufai-autunno-sereno.webp",
+     "file_hd": "assets/zones/var/livata-tufai-autunno-sereno-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Filippo Bussi",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Osservatorio_Le_Vedute,_Monte_Livata_02.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/livata-tufai-estate-nebbia.webp",
+     "file_hd": "assets/zones/var/livata-tufai-estate-nebbia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Filippo Bussi",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Osservatorio_Le_Vedute,_Monte_Livata_02.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/livata-tufai-estate-nuvoloso.webp",
+     "file_hd": "assets/zones/var/livata-tufai-estate-nuvoloso-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Filippo Bussi",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Osservatorio_Le_Vedute,_Monte_Livata_02.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/livata-tufai-estate-pioggia.webp",
+     "file_hd": "assets/zones/var/livata-tufai-estate-pioggia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Filippo Bussi",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Osservatorio_Le_Vedute,_Monte_Livata_02.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/livata-tufai-estate-sereno.webp",
+     "file_hd": "assets/zones/var/livata-tufai-estate-sereno-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Filippo Bussi",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Osservatorio_Le_Vedute,_Monte_Livata_02.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/livata-tufai-inverno-nebbia.webp",
+     "file_hd": "assets/zones/var/livata-tufai-inverno-nebbia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "neve",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Filippo Bussi",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Osservatorio_Le_Vedute,_Monte_Livata_02.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/livata-tufai-inverno-neve.webp",
+     "file_hd": "assets/zones/var/livata-tufai-inverno-neve-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Filippo Bussi",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Osservatorio_Le_Vedute,_Monte_Livata_02.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/livata-tufai-inverno-nuvoloso.webp",
+     "file_hd": "assets/zones/var/livata-tufai-inverno-nuvoloso-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Filippo Bussi",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Osservatorio_Le_Vedute,_Monte_Livata_02.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/livata-tufai-inverno-pioggia.webp",
+     "file_hd": "assets/zones/var/livata-tufai-inverno-pioggia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Filippo Bussi",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Osservatorio_Le_Vedute,_Monte_Livata_02.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/livata-tufai-inverno-sereno.webp",
+     "file_hd": "assets/zones/var/livata-tufai-inverno-sereno-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Filippo Bussi",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Osservatorio_Le_Vedute,_Monte_Livata_02.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/livata-tufai-primavera-nebbia.webp",
+     "file_hd": "assets/zones/var/livata-tufai-primavera-nebbia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Filippo Bussi",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Osservatorio_Le_Vedute,_Monte_Livata_02.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/livata-tufai-primavera-nuvoloso.webp",
+     "file_hd": "assets/zones/var/livata-tufai-primavera-nuvoloso-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Filippo Bussi",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Osservatorio_Le_Vedute,_Monte_Livata_02.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/livata-tufai-primavera-pioggia.webp",
+     "file_hd": "assets/zones/var/livata-tufai-primavera-pioggia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Filippo Bussi",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Osservatorio_Le_Vedute,_Monte_Livata_02.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/livata-tufai-primavera-sereno.webp",
+     "file_hd": "assets/zones/var/livata-tufai-primavera-sereno-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    }
+   ]
   },
   "gennaro-roccagiovine": {
    "file": "assets/zones/gennaro-roccagiovine.webp",
@@ -2668,7 +6145,298 @@
     600,
     450
    ],
-   "modified": "Ritaglio e conversione WebP"
+   "modified": "Ritaglio e conversione WebP",
+   "variants": [
+    {
+     "season": "autunno",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "V.lattanzi",
+     "license": "CC BY 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Parco_dei_Monti_Lucretili_il_Pratone_di_M._Gennaro.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/gennaro-roccagiovine-autunno-nebbia.webp",
+     "file_hd": "assets/zones/var/gennaro-roccagiovine-autunno-nebbia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "autunno",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "V.lattanzi",
+     "license": "CC BY 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Parco_dei_Monti_Lucretili_il_Pratone_di_M._Gennaro.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/gennaro-roccagiovine-autunno-nuvoloso.webp",
+     "file_hd": "assets/zones/var/gennaro-roccagiovine-autunno-nuvoloso-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "autunno",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "V.lattanzi",
+     "license": "CC BY 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Parco_dei_Monti_Lucretili_il_Pratone_di_M._Gennaro.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/gennaro-roccagiovine-autunno-pioggia.webp",
+     "file_hd": "assets/zones/var/gennaro-roccagiovine-autunno-pioggia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "autunno",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "V.lattanzi",
+     "license": "CC BY 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Parco_dei_Monti_Lucretili_il_Pratone_di_M._Gennaro.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/gennaro-roccagiovine-autunno-sereno.webp",
+     "file_hd": "assets/zones/var/gennaro-roccagiovine-autunno-sereno-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "V.lattanzi",
+     "license": "CC BY 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Parco_dei_Monti_Lucretili_il_Pratone_di_M._Gennaro.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/gennaro-roccagiovine-estate-nebbia.webp",
+     "file_hd": "assets/zones/var/gennaro-roccagiovine-estate-nebbia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "V.lattanzi",
+     "license": "CC BY 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Parco_dei_Monti_Lucretili_il_Pratone_di_M._Gennaro.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/gennaro-roccagiovine-estate-nuvoloso.webp",
+     "file_hd": "assets/zones/var/gennaro-roccagiovine-estate-nuvoloso-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "V.lattanzi",
+     "license": "CC BY 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Parco_dei_Monti_Lucretili_il_Pratone_di_M._Gennaro.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/gennaro-roccagiovine-estate-pioggia.webp",
+     "file_hd": "assets/zones/var/gennaro-roccagiovine-estate-pioggia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "estate",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "V.lattanzi",
+     "license": "CC BY 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Parco_dei_Monti_Lucretili_il_Pratone_di_M._Gennaro.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/gennaro-roccagiovine-estate-sereno.webp",
+     "file_hd": "assets/zones/var/gennaro-roccagiovine-estate-sereno-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "V.lattanzi",
+     "license": "CC BY 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Parco_dei_Monti_Lucretili_il_Pratone_di_M._Gennaro.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/gennaro-roccagiovine-inverno-nebbia.webp",
+     "file_hd": "assets/zones/var/gennaro-roccagiovine-inverno-nebbia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "neve",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "V.lattanzi",
+     "license": "CC BY 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Parco_dei_Monti_Lucretili_il_Pratone_di_M._Gennaro.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/gennaro-roccagiovine-inverno-neve.webp",
+     "file_hd": "assets/zones/var/gennaro-roccagiovine-inverno-neve-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "V.lattanzi",
+     "license": "CC BY 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Parco_dei_Monti_Lucretili_il_Pratone_di_M._Gennaro.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/gennaro-roccagiovine-inverno-nuvoloso.webp",
+     "file_hd": "assets/zones/var/gennaro-roccagiovine-inverno-nuvoloso-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "V.lattanzi",
+     "license": "CC BY 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Parco_dei_Monti_Lucretili_il_Pratone_di_M._Gennaro.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/gennaro-roccagiovine-inverno-pioggia.webp",
+     "file_hd": "assets/zones/var/gennaro-roccagiovine-inverno-pioggia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "inverno",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "V.lattanzi",
+     "license": "CC BY 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Parco_dei_Monti_Lucretili_il_Pratone_di_M._Gennaro.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/gennaro-roccagiovine-inverno-sereno.webp",
+     "file_hd": "assets/zones/var/gennaro-roccagiovine-inverno-sereno-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "nebbia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "V.lattanzi",
+     "license": "CC BY 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Parco_dei_Monti_Lucretili_il_Pratone_di_M._Gennaro.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/gennaro-roccagiovine-primavera-nebbia.webp",
+     "file_hd": "assets/zones/var/gennaro-roccagiovine-primavera-nebbia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "nuvoloso",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "V.lattanzi",
+     "license": "CC BY 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Parco_dei_Monti_Lucretili_il_Pratone_di_M._Gennaro.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/gennaro-roccagiovine-primavera-nuvoloso.webp",
+     "file_hd": "assets/zones/var/gennaro-roccagiovine-primavera-nuvoloso-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "pioggia",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "V.lattanzi",
+     "license": "CC BY 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Parco_dei_Monti_Lucretili_il_Pratone_di_M._Gennaro.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/gennaro-roccagiovine-primavera-pioggia.webp",
+     "file_hd": "assets/zones/var/gennaro-roccagiovine-primavera-pioggia-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    },
+    {
+     "season": "primavera",
+     "weather": "sereno",
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "V.lattanzi",
+     "license": "CC BY 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+     "page": "https://commons.wikimedia.org/wiki/File:Parco_dei_Monti_Lucretili_il_Pratone_di_M._Gennaro.jpg",
+     "modified": "Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP",
+     "file": "assets/zones/var/gennaro-roccagiovine-primavera-sereno.webp",
+     "file_hd": "assets/zones/var/gennaro-roccagiovine-primavera-sereno-hd.webp",
+     "size": [
+      1448,
+      1086
+     ]
+    }
+   ]
   }
  }
 }
