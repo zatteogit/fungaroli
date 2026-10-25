@@ -260,3 +260,19 @@ Altezza e posizione seguono il visual viewport con tastiera, barre del browser e
 il fondo copre la pagina sottostante anche fuori dall’area del dialog. Su desktop
 il layer occupa lo schermo e i contenuti mantengono una misura di lettura limitata.
 L’apertura da una scheda usa lo stesso coordinatore: Indietro torna alla scheda.
+
+## Apertura degli approfondimenti · 25 ottobre 2026
+
+Il titolo toccato è l’ancora visiva. Apertura e chiusura durano 280 ms e lo scroll
+compensa durante lo stesso movimento la chiusura di una sezione precedente.
+Se titolo e inizio del contenuto sono leggibili, il titolo resta dov’è. Se il titolo
+è coperto dalla testata o manca spazio sotto, si porta progressivamente sotto la
+testata. Non si scorre fino alla fine del contenuto. Le sezioni principali restano
+mutuamente esclusive; i dettagli annidati si espandono nel loro contesto.
+
+Rotella, gesto touch o tasti di scorrimento interrompono la compensazione automatica;
+un nuovo click conclude il movimento precedente e avvia la nuova apertura. Nessun
+ritorno tardivo dopo un gesto manuale. Nei dialog si sposta solo il contenitore interno.
+Con «Riduci movimento» l’aggiornamento è immediato, con il titolo ancora visibile.
+Il controller disattiva le transizioni CSS native durante il movimento per evitare
+due animazioni sovrapposte; mantiene la semantica nativa di `details` e `summary`.

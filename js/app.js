@@ -1,3 +1,4 @@
+import {selectOutingMushrooms} from './outing-mushrooms.js';
 import {composeHome,nextHomeOpportunity,latestDeadline,automaticHomeDay,shiftChosenDay} from './home-composition.js';
 import {freshness,viewSignature,compareViews,updatePolicy} from './view-stability.js';
 import {createHomeIntro} from './home-intro.js';
@@ -1239,6 +1240,9 @@ function renderOutdoorHome() {
   renderSeason();
   renderCommunityIntro();fitFacts($('#hero .facts'));fitCover();
 }
+function outdoorDayTabs(z) {
+  return `<div id="zone-days" class="days compact" role="tablist" aria-label="Giorno">${Array.from({length:AHEAD_DAYS+1},(_,o)=>{const d=outdoorDay(z,o);return `<button type="button" class="day" role="tab" data-day-offset="${o}" aria-selected="${o===state.dayOffset}"><span class="d1">${o===0?'Oggi':o===1?'Domani':fmtDate(d.date,{weekday:'long'})}</span><span class="d2">${fmtDate(d.date,{day:'numeric'})}</span>${calendarWeather(z,d)}</button>`;}).join('')}</div>`;
+}
 function renderOutdoorDetail() {
   const z=(weatherZones||zones).find(z=>z.id===state.zoneId);if(!z)return;
   const d=outdoorDay(z,state.dayOffset),walk=walkFor(z,d,state.trailId),box=$('#detail'),w=wxOf(z,d);
@@ -1246,7 +1250,7 @@ function renderOutdoorDetail() {
   delete box.dataset.zone;detailCtx=null;lastDetailHtml='';box.dataset.glossaryContext=state.target==='piante'?'Piante':state.target==='funghi'?'Funghi':'Sentieri';
   const discoveries=walk?outdoorDiscoveries(z,d,walk):[];
   const photo=outdoorCover({z,d,walk,items:discoveries});
-  box.innerHTML=`<header class="phero outing-hero${photo?'':' no-local-photo'}">${photo?`<div class="phero-img outdoor-cover-img"><img data-src="${esc(photo.hd)}" alt="${esc(photo.alt||'')}"></div>`:''}<div class="phero-body"><span class="pill glass">${esc(fmtDate(d.date,{weekday:'long',day:'numeric',month:'long'}))}</span><h1 class="phero-title">${esc(z.title||z.name)}</h1></div>${heroIndicators(z,d)}</header><div class="pbody">${photo?.credit?`<p class="small muted zone-photo-credit">${creditLine(photo.credit)}</p>`:''}${zoneCollectionNotice(z)}${!habitat[z.id]?'<p class="notice zone-data-pending"><b>Indice funghi non ancora disponibile</b><br>Questa zona è da esplorare: il campionamento del bosco è in attesa. Non è un’indicazione di assenza di funghi.</p>':''}${!w?.available?'<p class="notice">Meteo da verificare prima di partire.</p>':''}<p>${esc(travelText(zoneTrip(z,walk)))}</p>${state.target==='piante'?discoveriesHtml(z,d,walk,discoveries):''}${walk?renderWalkFocus(z,{...d,best:null},walk):'<p class="notice">Nessun sentiero corrisponde ai filtri attivi.</p>'}${z.protection?`<p class="notice">${esc(z.protection)}</p>`:''}<p>${linkTrees(z.description)}</p>${zoneSourceLinks(z)}${state.target==='passeggiata'?discoverySection(z,d,walk):''}${section('accesso','Accessi e soste',renderAccess(z,{access:null}))}${section('sentieri','Sentieri della zona',renderTrails(z,null),true)}${zoneInfoSection(z)}<p><a href="#/mappa/${z.id}">Vedi sulla mappa</a></p></div>`;
+  box.innerHTML=`<header class="phero outing-hero${photo?'':' no-local-photo'}">${photo?`<div class="phero-img outdoor-cover-img"><img data-src="${esc(photo.hd)}" alt="${esc(photo.alt||'')}"></div>`:''}<div class="phero-body"><span class="pill glass">${esc(fmtDate(d.date,{weekday:'long',day:'numeric',month:'long'}))}</span><h1 class="phero-title">${esc(z.title||z.name)}</h1></div>${outingSearchContext(d)}${heroIndicators(z,d)}</header><div class="pbody">${outdoorDayTabs(z)}${photo?.credit?`<p class="small muted zone-photo-credit">${creditLine(photo.credit)}</p>`:''}${zoneCollectionNotice(z)}${!habitat[z.id]?'<p class="notice zone-data-pending"><b>Indice funghi non ancora disponibile</b><br>Questa zona è da esplorare: il campionamento del bosco è in attesa. Non è un’indicazione di assenza di funghi.</p>':''}${!w?.available?'<p class="notice">Meteo da verificare prima di partire.</p>':''}<p>${esc(travelText(zoneTrip(z,walk)))}</p>${state.target==='piante'?discoveriesHtml(z,d,walk,discoveries):''}${walk?renderWalkFocus(z,{...d,best:null},walk):'<p class="notice">Nessun sentiero corrisponde ai filtri attivi.</p>'}${z.protection?`<p class="notice">${esc(z.protection)}</p>`:''}<p>${linkTrees(z.description)}</p>${zoneSourceLinks(z)}${state.target==='passeggiata'?discoverySection(z,d,walk):''}${section('accesso','Accessi e soste',renderAccess(z,{access:null}))}${section('sentieri','Sentieri della zona',renderTrails(z,null),true)}${zoneInfoSection(z)}<p><a href="#/mappa/${z.id}">Vedi sulla mappa</a></p></div>`;
   bindDetailSections(box);
 }
 function openOutdoorSheet(zid) {
@@ -1330,6 +1334,7 @@ function renderFilterBox(box, onMap = false) {
 
 // Il pannello si riconfigura per attività, conservando le altre selezioni.
 function openFullFilters() {
+  const outingMode = state.view === 'zona';
   let dlg = $('#full-filters');
   if (!dlg) {
     dlg = document.createElement('dialog'); dlg.id = 'full-filters'; dlg.className = 'full-filters';
@@ -1347,10 +1352,11 @@ function openFullFilters() {
     const groupChip = (g) => `<button type="button" class="chip" data-group="${g.id}" aria-pressed="${groupSelection(g.id)!=='none'}">${thumb(g.rep,32)}<span>${esc(g.label)}${g.id==='porcini'?' (4 specie)':''}</span>${outOfSeason(g.id)?`<small class="season-badge season-out">${state.target==='piante'?'Fuori calendario':'Fuori periodo tipico'}</small>`:''}</button>`;
     const inSeason = activeGroups().filter((g) => !outOfSeason(g.id)), outSeason = activeGroups().filter((g) => outOfSeason(g.id));
     const sw = (on) => `<span class="switch" aria-hidden="true" data-on="${on}"><i></i></span>`;
-    const dirty = state.province || state.communityOnly || state.easyTrails || state.shortTrails || activeIds() !== null || PREFS.some(([k]) => state[k]) || !state.showDiscoveries;
-    dlg.innerHTML = `<div class="filter-panel-head"><h2 id="full-filters-title">Filtri avanzati</h2><div class="fp-head-actions">${dirty ? '<button type="button" class="fp-reset" data-reset>Azzera</button>' : ''}<button type="button" class="btn ghost" data-close>Chiudi</button></div></div>
+    const dirty = state.easyTrails || state.shortTrails || activeIds() !== null || (!outingMode && (state.province || state.communityOnly || PREFS.some(([k]) => state[k]) || !state.showDiscoveries));
+    dlg.innerHTML = `<div class="filter-panel-head"><h2 id="full-filters-title">${outingMode?'Cosa cerchi in questa uscita':'Filtri avanzati'}</h2><div class="fp-head-actions">${dirty ? '<button type="button" class="fp-reset" data-reset>Azzera</button>' : ''}<button type="button" class="btn ghost" data-close>Chiudi</button></div></div>
       <div class="fp-body">
-      <h3 class="fp-h">Dove vuoi andare?</h3><label class="species-search-label" for="province-filter">Provincia</label><select id="province-filter" class="wiz-input"><option value="">Tutto il Lazio</option>${Object.entries(PROVINCES).map(([id,name])=>`<option value="${id}"${state.province===id?' selected':''}>${name}</option>`).join('')}</select><p class="small muted">Zone selezionate nelle cinque province. Accessi e sentieri hanno una copertura parziale.</p>
+      ${outingMode?'<p class="small muted">Le modifiche si applicano anche a Uscite e Mappa. Il luogo e il giorno restano quelli aperti.</p>':`<h3 class="fp-h">Dove vuoi andare?</h3><label class="species-search-label" for="province-filter">Provincia</label><select id="province-filter" class="wiz-input"><option value="">Tutto il Lazio</option>${Object.entries(PROVINCES).map(([id,name])=>`<option value="${id}"${state.province===id?' selected':''}>${name}</option>`).join('')}</select><p class="small muted">Zone selezionate nelle cinque province. Accessi e sentieri hanno una copertura parziale.</p>`}
+
       ${state.seasonSuspended?'<p class="notice">Una scelta salvata è sospesa. <button type="button" class="link-btn" data-filter-season-restore>Ripristina la scelta</button></p>':''}<h3 class="fp-h">Alla ricerca di…</h3><div class="intent-row filter-panel-groups" role="group" aria-label="Alla ricerca di">${intentButtons()}</div>
       ${hasInterest('funghi')?'<p class="small muted fp-safety">Scegli cosa cercare, non cosa mangiare: fai controllare il raccolto all’Ispettorato micologico ASL.</p>':''}
       <p class="small muted">${hasInterest('funghi')&&hasInterest('piante')?'Scegli funghi e piante da cercare. L’indice riguarda solo i funghi.':state.target==='funghi'?'Scegli i funghi da cercare. L’indice resta sperimentale.':state.target==='piante'?'Cerca piante con fase e calendario documentati. Le altre sono consultabili in Scopri.':'Scegli il giro per sentieri, accesso e meteo, senza indice fungino.'}</p>
@@ -1367,14 +1373,15 @@ function openFullFilters() {
       <details class="fp-more catalog-all"><summary>Tutte le specie <small>${activeCatalog().length}</small></summary><div class="filter-panel-groups">${[...activeCatalog()].sort((a,b)=>a.name.localeCompare(b.name,'it')).map(chip).join('')}</div></details>
       `:''}
       <h3 class="fp-h">Sentieri</h3><ul class="fp-switches">${[['easyTrails','Solo difficoltà T · turistica'],['shortTrails','Tratto nella zona entro 5 km']].map(([k,label])=>`<li><button type="button" class="fp-switch" data-pref="${k}" aria-pressed="${!!state[k]}">${label}${sw(!!state[k])}</button></li>`).join('')}</ul><p class="small muted">La lunghezza riguarda il tratto mappato nella zona, non un giro completo. Dati mancanti esclusi quando il relativo filtro è attivo.</p>
-      <h3 class="fp-h">Uscita</h3>
+      ${outingMode?'':`<h3 class="fp-h">Uscita</h3>
       <ul class="fp-switches">
         ${PREFS.map(([k,label])=>`<li><button type="button" class="fp-switch" data-pref="${k}" aria-pressed="${!!state[k]}">${esc(label)}${sw(!!state[k])}</button></li>`).join('')}
         <li><label class="fp-switch"><span>Dati community Fronda <small>Aggregati degli ultimi 7 giorni, consultabili da chi contribuisce. Copertura parziale; nessuna posizione precisa.</small></span><input type="checkbox" class="switch-input" data-community-filter ${state.communityOnly?'checked':''}></label></li><li><label class="fp-switch"><span>Scoperte secondarie lungo il giro<small>Mostra anche piante e alberi come spunti da osservare.</small></span><input type="checkbox" class="switch-input" data-discoveries-toggle ${state.showDiscoveries?'checked':''}></label></li>
       </ul>
+      `}
       <p class="small muted fp-note">${state.target==='piante'?'Stagione indicativa: cambia con clima e quota.':'Mesi indicativi da manuali europei, non verificati nelle singole zone: clima e quota li spostano.'} Il catalogo non comprende ogni specie.</p>
       </div>
-      <div class="fp-foot"><span class="small muted" aria-live="polite">${state.target==='passeggiata'?'Sentieri e accessi':hasInterest('funghi')&&hasInterest('piante')?selected.filter(s=>!botanicalById(s.id)).length+' funghi · '+selected.filter(s=>botanicalById(s.id)).length+' piante':state.target==='piante'?selected.length+' piante · calendario indicativo':selected.length+' specie · '+selected.filter(s=>s.modelId).length+' con indice'}</span><button type="button" class="btn primary big" data-close>Mostra i risultati</button></div>`;
+      <div class="fp-foot"><span class="small muted" aria-live="polite">${state.target==='passeggiata'?'Sentieri e accessi':hasInterest('funghi')&&hasInterest('piante')?selected.filter(s=>!botanicalById(s.id)).length+' funghi · '+selected.filter(s=>botanicalById(s.id)).length+' piante':state.target==='piante'?selected.length+' piante · calendario indicativo':selected.length+' specie · '+selected.filter(s=>s.modelId).length+' con indice'}</span><button type="button" class="btn primary big" data-close>${outingMode?'Vedi l’uscita':'Mostra i risultati'}</button></div>`;
     if (mapMode) { compactMapFilters(dlg); for (const d of dlg.querySelectorAll('.map-filter-section')) d.open=expanded.includes(d.querySelector('summary').textContent); dlg.querySelector('.fp-body').scrollTop=filterScroll; }
     dlg.querySelector('[data-filter-season-restore]')?.addEventListener('click',()=>{restoreSeason();paint();});
     dlg.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>dlg.close()));
@@ -1382,19 +1389,19 @@ function openFullFilters() {
     dlg.querySelectorAll('[data-intent]').forEach(b=>b.onclick=()=>{changeIntent(b.dataset.intent);paint();dlg.querySelector(`[data-intent="${b.dataset.intent}"]`)?.focus();});
     if(state.target!=='passeggiata')mountSpeciesAutocomplete({ input: dlg.querySelector('#species-filter-search'), list: dlg.querySelector('#species-filter-options'), catalog:activeCatalog(), date,
       onSelect: s => { addSpecies(s.id); changed('#species-filter-search'); } });
-    dlg.querySelector('#province-filter').onchange=e=>{state.province=e.target.value;mapInitialFrameDone=false;if(state.view==='mappa'){state.zoneId=null;state.trailId=null;sheetZone=null;sheetPoint=null;$('#map-sheet').hidden=true;}changed('#province-filter');};
+    if(!outingMode)dlg.querySelector('#province-filter').onchange=e=>{state.province=e.target.value;mapInitialFrameDone=false;if(state.view==='mappa'){state.zoneId=null;state.trailId=null;sheetZone=null;sheetPoint=null;$('#map-sheet').hidden=true;}changed('#province-filter');};
     dlg.querySelector('[data-community-filter]')?.addEventListener('change',ev=>{state.communityOnly=ev.target.checked;changed('[data-community-filter]');});
     dlg.querySelector('[data-discoveries-toggle]')?.addEventListener('change',ev=>{state.showDiscoveries=ev.target.checked;changed('[data-discoveries-toggle]');});
     if(dlg.querySelector('[data-all]'))dlg.querySelector('[data-all]').onclick = () => { setActiveIds(null); changed('[data-all]'); };
     // azzera: tutte le specie, nessuna preferenza, scoperte visibili (i valori di partenza)
-    dlg.querySelector('[data-reset]')?.addEventListener('click', () => { if(state.target!=='passeggiata')setActiveIds(null);state.easyTrails=false;state.shortTrails=false; for (const [k] of PREFS) state[k] = false; state.showDiscoveries = true;state.communityOnly=false;state.province='';mapInitialFrameDone=false; changed('[data-close]'); });
+    dlg.querySelector('[data-reset]')?.addEventListener('click', () => { if(state.target!=='passeggiata')setActiveIds(null);state.easyTrails=false;state.shortTrails=false; if(!outingMode)for (const [k] of PREFS) state[k] = false; if(!outingMode){state.showDiscoveries = true;state.communityOnly=false;state.province='';}mapInitialFrameDone=false; changed('[data-close]'); });
     dlg.querySelectorAll('[data-group]').forEach(b=>b.onclick=()=>{toggleGroup(b.dataset.group); changed(`[data-group="${b.dataset.group}"]`);});
     dlg.querySelectorAll('[data-remove-species]').forEach(b=>b.onclick=()=>{removeSpecies(b.dataset.removeSpecies); changed('#species-filter-search');});
     dlg.querySelectorAll('[data-catalog-id]').forEach(b=>b.onclick=()=>{const id=b.dataset.catalogId; if(selectionFor(id)?.has(id))removeSpecies(id);else addSpecies(id);changed('#species-filter-search');});
     dlg.querySelectorAll('[data-pref]').forEach(b=>b.onclick=()=>{const k=b.dataset.pref;state[k]=!state[k];changed(`[data-pref="${k}"]`);});
   };
   dlg.onclose = () => {
-    const selector=state.view==='mappa'?'#map-filters [data-more]':mobileHeader.matches && document.documentElement.classList.contains('title-in-bar')?'#appbar-home-filters [data-more]':'#home-filter-action [data-more]';
+    const selector=state.view==='zona'?'#detail [data-outing-filters]':state.view==='mappa'?'#map-filters [data-more]':mobileHeader.matches && document.documentElement.classList.contains('title-in-bar')?'#appbar-home-filters [data-more]':'#home-filter-action [data-more]';
     $(selector)?.focus({preventScroll:true});
   };
   paint(); openModal(dlg);
@@ -1564,6 +1571,16 @@ function weatherIndicator(w,key) {
   const label={sun:'Asciutto',cloud:'Nuvoloso',rain:'Pioggia',snow:'Neve',storm:'Temporali',wind:'Vento',fog:'Nebbia'}[wxIcon(w)]||'Meteo';
   return `<span class="weather-indicator" data-weather-key="weather-indicator"><span class="ring weather-ring" aria-label="Massima della mattina ${w.tmax} gradi; minima ${w.tmin}. Anello termico da meno 10 a 40 gradi."><svg class="indicator-ring" viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="thermal-${esc(key)}"><stop class="thermal-cool" offset="0"/><stop class="thermal-warm" offset="1"/></linearGradient></defs><path class="indicator-track" d="${arc(-10,40)}"/><path class="thermal-range" stroke="url(#thermal-${esc(key)})" d="${arc(w.tmin,w.tmax)}"/><circle class="thermal-marker" cx="${mark[0]}" cy="${mark[1]}" r="3.5"/></svg>${wxi(w)}<b class="temperature">${negative?'<span class="temperature-sign">−</span>':''}${temp}<span class="temperature-unit">°</span></b></span><span class="weather-caption">${label}<small>${w.tmin}–${w.tmax} °C · mattina</small>${w.gust>=40?'<strong>Vento forte</strong>':''}</span></span>`;
 }
+function outingSearchContext(d=null) {
+  const names=selectedCatalog().map(s=>s.name);
+  const selected=activeIds()===null?'Tutte le specie del catalogo':names.length?names.slice(0,3).join(' · ')+(names.length>3?` · +${names.length-3}`:''):'Nessuna specie selezionata';
+  const missing=selectedCatalog().filter(s=>!botanicalById(s.id)&&!s.modelId);
+  const driver=d?.best?.species;
+  const interests=INTENTS.filter(i=>hasInterest(i.id)).map(i=>i.label).join(' · ')||'Esplora il luogo';
+  return `<section class="outing-search" aria-label="Scelte dell’uscita"><div><b>Alla ricerca di… ${esc(interests)}</b>${state.target!=='passeggiata'?`<p>${esc(selected)}</p>`:''}<p class="small muted">${hasInterest('funghi')?'Condizioni per i funghi scelti e il meteo del giorno.':'Contenuti per gli interessi scelti e il giorno selezionato.'}</p>${hasInterest('funghi')&&driver?`<p class="small muted">Il valore parte da ${esc(driver.name)}, il miglior indice tra i funghi scelti con dati disponibili.</p>`:''}${hasInterest('funghi')&&missing.length?`<p class="small muted">Indice non disponibile per ${missing.length} ${missing.length===1?'specie scelta':'specie scelte'}.</p>`:''}${state.easyTrails||state.shortTrails?`<p class="small">${[state.easyTrails?'Solo difficoltà T':'',state.shortTrails?'Tratto nella zona entro 5 km':''].filter(Boolean).join(' · ')}</p>`:''}</div><button type="button" class="btn ghost" data-outing-filters aria-haspopup="dialog">Modifica</button></section>`;
+}
+document.addEventListener('click',e=>{if(e.target.closest('[data-outing-filters]'))openFullFilters();});
+
 function heroIndicators(z,d,score=null) {
   const weather=weatherIndicator(wxOf(z,d),z.id);
   return weather||Number.isFinite(score)?`<div class="hero-indicators">${weather}${Number.isFinite(score)?ring(score,true,true):''}</div>`:'';
@@ -1939,6 +1956,7 @@ function combosList() {
 const walkHref = (z, o, t) => `#/zona/${z.id}/${o}${t ? '/sentiero/' + t.id : ''}`;
 function walkFor(z, d, trailId = null, excluded = new Set()) {
   const all = (trails[z.id]?.trails || []).filter(t => !excluded.has(String(t.id)) && matchesWalk(t,state)&&matchesInterests(z,d,walkContext(z,t,headsOf(z,t))));
+  if(trailId&&!all.some(t=>String(t.id)===String(trailId)))return null;
   const compatible = state.target==='funghi' && d?.best ? trailsFor(z, d.best.species, d.best.band).filter(t=>all.some(a=>String(a.id)===String(t.id))) : [];
   if(state.target==='piante')all.sort((a,b)=>{const rank=t=>Math.max(0,...outdoorDiscoveries(z,{date:d?.date||filterDate()},walkContext(z,t,headsOf(z,t))).filter(i=>i.kind==='pianta').map(i=>i.rank||0));return rank(b)-rank(a);});
   const selected = trailId && all.find(t => String(t.id) === String(trailId));
@@ -2254,7 +2272,19 @@ function observeHomeIntro(box){
  introObserver?.disconnect();const owner=homeIntroOwner();
  introObserver=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)&&!document.hidden){homeIntro.seen(owner);introObserver.disconnect();}},{threshold:.15});introObserver.observe(box);
 }
-document.addEventListener('click',event=>{if(!event.target.closest('[data-home-how-open]'))return;homeIntro.open(homeIntroOwner());renderCommunityIntro();$('#community-intro').scrollIntoView({block:'start'});$('#community-intro h2')?.focus({preventScroll:true});});
+let communityHelpDialog;
+document.addEventListener('click',event=>{
+  const trigger=event.target.closest('[data-home-how-open]');if(!trigger)return;
+  if(!communityHelpDialog){
+    communityHelpDialog=document.createElement('dialog');communityHelpDialog.id='community-help';
+    communityHelpDialog.className='wiz community-help';communityHelpDialog.setAttribute('aria-labelledby','community-help-title');document.body.append(communityHelpDialog);
+    addEventListener('hashchange',()=>communityHelpDialog.close());
+  }
+  communityHelpDialog.innerHTML=`<header class="report-header"><h2 id="community-help-title">Come funziona la condivisione</h2><button type="button" class="profile-close" aria-label="Chiudi">×</button></header><div class="content-reading"><p>${esc(communityStatus())}</p><h3>Condividi e scopri</h3><p>Condividi un’osservazione per accedere ai riepiloghi degli altri, per zona ampia e specie.</p><h3>I posti restano tuoi</h3><p>Nei riepiloghi non mostriamo punti GPS, nomi o giorni precisi. La tua fungaia resta riservata.</p><h3>Un segnale, non tutto il bosco</h3><p>Le osservazioni sono dichiarate e non raccontano tutte le uscite. Poche segnalazioni non significano pochi funghi.</p><h3>Scegli tu</h3><p>Condividere è facoltativo. Puoi ritirare le tue osservazioni dal Taccuino: se le ritiri tutte, perdi l’accesso ai riepiloghi condivisi. Il resto di Fronda resta disponibile.</p>${communityOverview()}</div>`;
+  communityHelpDialog.querySelector('.profile-close').onclick=()=>communityHelpDialog.close();
+  communityHelpDialog.onclose=()=>{if(trigger.isConnected)trigger.focus({preventScroll:true});};
+  openModal(communityHelpDialog);
+});
 function renderCommunityIntro() {
   const box = $('#community-intro');
   if (!box) return;
@@ -3184,7 +3214,7 @@ function outingTiming(z,t,walk){
 }
 
 function renderWalkFocus(z, d, walk) {
-  if (!walk) return `<p class="small muted">Non abbiamo ancora un sentiero documentato per questa zona.</p>`;
+  if (!walk) return `<p class="small muted">${trails[z.id]?.trails?.length?'Nessun sentiero corrisponde alle scelte attive. Modifica i filtri per esplorare gli altri tratti della zona.':'Non abbiamo ancora un sentiero documentato per questa zona.'}</p>`;
   const { t } = walk;
   return `<details class="sec walk-focus" data-glossary-context="Sentiero" name="zone-details" data-sec="passeggiata" data-walk-trail="${t.id}"${openSecs.has('passeggiata') ? ' open' : ''}>
     <summary><span class="walk-summary">
@@ -3300,6 +3330,11 @@ function bindDetailSections(box, onOpen = () => {}) {
       });
     });
   });
+  box.onclick=event=>{
+    const summary=event.target.closest('summary'),detail=summary?.parentElement;
+    if(!detail?.matches('details')||event.defaultPrevented||event.target.closest('a,button,input,select,textarea')||sections.includes(detail))return;
+    event.preventDefault();keepSummary(summary,()=>{detail.open=!detail.open;});
+  };
   const current = sections.find(el => el.open);
   if (current) sync(current); else openSecs.clear();
 }
@@ -3312,9 +3347,10 @@ let detailCtx = null, detailAnimate = false;
 $('#detail')?.addEventListener('click', (e) => {
   const day = e.target.closest('#zone-days [data-day-offset]');
   if (day) {
-    const o = +day.dataset.dayOffset, c = detailCtx;
-    if (!c || o === state.dayOffset) return;
-    history.replaceState(null, '', walkHref(c.z, o, state.trailId ? c.walk?.t : null));
+    const o = +day.dataset.dayOffset;
+    const z=(weatherZones||zones).find(z=>z.id===state.zoneId);
+    if (!z || o === state.dayOffset) return;
+    history.replaceState(null, '', walkHref(z, o, state.trailId ? {id:state.trailId} : null));
     mapDateManual = true; state.dayOffset = o; detailAnimate = true;
     try { renderDetail(); dateChangeFeedback('#zone-days [aria-selected="true"]'); } finally { detailAnimate = false; }
     return;
@@ -3397,7 +3433,7 @@ function renderDetail() {
   if (!d?.best) {
     const missing = [...new Set((d?.perSpecies || []).flatMap((p) => p.quality?.missing || []))];
     delete box.dataset.zone;detailCtx=null;lastDetailHtml='';
-    box.innerHTML = `<h1>${esc(z.title || z.name)}</h1>${zoneCollectionNotice(z)}${!series?.[z.id]?'<p class="notice">Meteo non disponibile per questa zona. <button type="button" class="link-btn" data-zone-weather-retry>Riprova</button></p>':''}<p class="notice">${selectedSpecies().length?'Indice non calcolabile':'Indice non ancora disponibile per le specie selezionate'}${missing.length ? ': mancano ' + esc(missing.join(', ')) : ' per questo giorno'}. Un dato mancante non indica assenza di ${state.target==='piante'?'piante':'funghi'}.</p><p><a href="#/mappa/${z.id}">Apri la mappa</a> · <a href="#/metodo">Metodo e limiti</a></p>${renderWalkFocus(z, d, walk)}${discoverySection(z,d,walk)}${z.protection ? `<p class="notice">${esc(z.protection)}</p>` : ''}<p>${linkTrees(z.description)}</p>${zoneSourceLinks(z)}${section('accesso','Accessi e soste',renderAccess(z,{access:null}))}${section('sentieri','Sentieri della zona',renderTrails(z,null),true)}${zoneInfoSection(z)}`;
+    box.innerHTML = `<h1>${esc(z.title || z.name)}</h1>${outingSearchContext(d)}${outdoorDayTabs(z)}${zoneCollectionNotice(z)}${!series?.[z.id]?'<p class="notice">Meteo non disponibile per questa zona. <button type="button" class="link-btn" data-zone-weather-retry>Riprova</button></p>':''}<p class="notice">${selectedSpecies().length?'Indice non calcolabile':'Indice non ancora disponibile per le specie selezionate'}${missing.length ? ': mancano ' + esc(missing.join(', ')) : ' per questo giorno'}. Un dato mancante non indica assenza di ${state.target==='piante'?'piante':'funghi'}.</p><p><a href="#/mappa/${z.id}">Apri la mappa</a> · <a href="#/metodo">Metodo e limiti</a></p>${renderWalkFocus(z, d, walk)}${discoverySection(z,d,walk)}${z.protection ? `<p class="notice">${esc(z.protection)}</p>` : ''}<p>${linkTrees(z.description)}</p>${zoneSourceLinks(z)}${section('accesso','Accessi e soste',renderAccess(z,{access:null}))}${section('sentieri','Sentieri della zona',renderTrails(z,null),true)}${zoneInfoSection(z)}`;
     bindDetailSections(box); return;
   }
   const best = d.best;
@@ -3439,7 +3475,7 @@ function renderDetail() {
       <span class="shade"></span>
       <div class="phero-bar"><a class="fab" href="#/mappa/${z.id}" aria-label="Mappa della zona">${IC.map}</a></div>
       <div class="phero-body"><span class="pill glass">${esc(dayLabel)}</span><h1 class="phero-title">${esc(title)}</h1>${sub ? `<p class="phero-sub">${esc(sub)}</p>` : ''}</div>
-      ${heroIndicators(z,d,s)}
+      ${outingSearchContext(d)}${heroIndicators(z,d,s)}
     </header>
     <div class="pbody">
     <div id="zone-days" class="days compact" role="tablist" aria-label="Giorno">${zoneDays}</div>
@@ -3963,11 +3999,17 @@ function zoneSpecies(z, d) {
     const p = scores[sp.id] || { score: combine(z.bands.map((b, bi) => scoreSpecies(sp, sb[bi], d.i, habitat[z.id], b).score)) };
     return { sp, pot, score: p.score, band: p.band, host: pineHostNote(z, sp) };
   }).filter((r) => r.pot.level !== 'scarsa').sort((a, b) => b.score - a.score || b.pot.score - a.pot.score);
-  return `<h3 class="observation-heading">Funghi nel bosco</h3><p class="small muted observation-caption">Potenziale di crescita · habitat e segnalazioni degli ultimi 7 giorni</p><ul class="zsp">${rows.map(({ sp, pot, score, host }) => `
+  const chosenIds=new Set(selectedSpecies().map(sp=>sp.id));
+  const selection=selectOutingMushrooms(rows.map(r=>({...r,chosen:chosenIds.has(r.sp.id)})));
+  const renderRows = items => `<ul class="zsp">${items.map(({ sp, pot, score, host }) => `
     <li><a href="#/specie/${sp.id}" class="zsp-row">${thumb(sp.id, 40)}
-      <span class="zsp-body"><b>${esc(sp.name)}</b>${reportBadge(z.id, sp.id)}<span class="small muted">${POT_LABEL[pot.level]}${pot.ha ? ` · ~${pot.ha.toLocaleString('it-IT')} ha` : ''}</span>${host ? `<span class="small zsp-host">${esc(host)}</span>` : ''}</span>
-      <span class="score-pill" style="--index-color:var(${scoreVar(score).replace('--s','--ps')})" aria-label="Condizioni di crescita ${formatIndex(score)} su 10">${fungusGlyph}<b class="pc">${formatIndex(score)}</b></span></a></li>`).join('')}</ul>${indexLegend('growth')}
-    `;
+      <span class="zsp-body"><b>${esc(sp.name)}</b>${reportBadge(z.id, sp.id)}<span class="small muted">${POT_LABEL[pot.level]}${pot.ha ? ` · ~${pot.ha.toLocaleString('it-IT')} ha` : ''}</span>${Number.isFinite(score)&&score<60?'<span class="small">Condizioni meno favorevoli</span>':''}${host ? `<span class="small zsp-host">${esc(host)}</span>` : ''}</span>
+      ${Number.isFinite(score)?`<span class="score-pill" style="--index-color:var(${scoreVar(score).replace('--s','--ps')})" aria-label="Condizioni di crescita ${formatIndex(score)} su 10">${fungusGlyph}<b class="pc">${formatIndex(score)}</b></span>`:'<span class="small muted">Indice non disponibile</span>'}</a></li>`).join('')}</ul>`;
+  const chosen=selection.shown.filter(r=>r.chosen),other=selection.shown.filter(r=>!r.chosen);
+  return `<div class="outing-mushrooms"><h3 class="observation-heading">Funghi che cerchi</h3><p class="small muted observation-caption">Potenziale di crescita dei funghi scelti, prima del fattore meteo dell’uscita. Non è una probabilità di ritrovamento.</p>
+    ${chosen.length?renderRows(chosen):'<p class="small muted">Le specie scelte non rientrano nei suggerimenti principali di questo giorno. Consulta l’elenco completo per i valori disponibili.</p>'}
+    ${other.length?`<h3>Altri funghi da osservare</h3><p class="small muted">Fuori dalla tua selezione; non determinano l’indice dell’uscita.</p>${renderRows(other)}`:''}
+    ${selection.remaining.length?`<details class="outing-all-species"><summary>Vedi tutte le specie compatibili (${rows.length})</summary>${renderRows(selection.remaining.filter(r=>r.chosen))}${selection.remaining.some(r=>!r.chosen)?'<h4>Altre specie</h4>':''}${renderRows(selection.remaining.filter(r=>!r.chosen))}</details>`:''}${indexLegend('growth')}</div>`;
 }
 
 // Indice previsto per tutte le specie in una zona/data (per il diario).
