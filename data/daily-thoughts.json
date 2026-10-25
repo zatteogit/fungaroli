@@ -1,777 +1,372 @@
 {
   "schemaVersion": 1,
-  "updatedOn": "2026-10-20",
-  "description": "Archivio editoriale Fronda: testi originali e citazioni con fonte verificata. Tag editoriali, non dati scientifici.",
+  "updatedOn": "2026-10-25",
+  "description": "Citazioni letterarie documentate su funghi, piante del catalogo e montagna. Riferimenti poetici, non dati scientifici.",
   "items": [
     {
-      "id": "fronda-001",
-      "type": "aforisma",
-      "text": "La meta può aspettare un minuto. Quel dettaglio, forse no.",
-      "author": "Fronda",
-      "rights": "originale-fronda",
-      "status": "published",
-      "language": "it",
-      "tags": [
-        "cammino",
-        "attenzione"
-      ],
-      "tones": [
-        "curioso"
-      ],
-      "contexts": [
-        "home"
-      ],
-      "moments": [
-        "pausa",
-        "prima-di-uscire"
-      ],
-      "seasons": [
-        "tutte"
-      ],
-      "source": null
-    },
-    {
-      "id": "fronda-002",
-      "type": "aforisma",
-      "text": "Una passeggiata comincia quando smetti di guardare soltanto l’orologio.",
-      "author": "Fronda",
-      "rights": "originale-fronda",
-      "status": "published",
-      "language": "it",
-      "tags": [
-        "lentezza",
-        "cammino"
-      ],
-      "tones": [
-        "riflessivo"
-      ],
-      "contexts": [
-        "home"
-      ],
-      "moments": [
-        "pausa",
-        "prima-di-uscire"
-      ],
-      "seasons": [
-        "tutte"
-      ],
-      "source": null
-    },
-    {
-      "id": "fronda-003",
-      "type": "aforisma",
-      "text": "Anche tornare con una domanda è una bella scoperta.",
-      "author": "Fronda",
-      "rights": "originale-fronda",
-      "status": "published",
-      "language": "it",
-      "tags": [
-        "scoperta",
-        "curiosita"
-      ],
-      "tones": [
-        "curioso"
-      ],
-      "contexts": [
-        "home"
-      ],
-      "moments": [
-        "pausa",
-        "prima-di-uscire"
-      ],
-      "seasons": [
-        "tutte"
-      ],
-      "source": null
-    },
-    {
-      "id": "fronda-004",
-      "type": "aforisma",
-      "text": "Il bello di cercare è tutto quello che incontri nel frattempo.",
-      "author": "Fronda",
-      "rights": "originale-fronda",
-      "status": "published",
-      "language": "it",
-      "tags": [
-        "ricerca",
-        "scoperta"
-      ],
-      "tones": [
-        "riflessivo"
-      ],
-      "contexts": [
-        "home"
-      ],
-      "moments": [
-        "pausa",
-        "prima-di-uscire"
-      ],
-      "seasons": [
-        "tutte"
-      ],
-      "source": null
-    },
-    {
-      "id": "fronda-005",
-      "type": "aforisma",
-      "text": "Una nota oggi. Un ricordo che ritrovi domani.",
-      "author": "Fronda",
-      "rights": "originale-fronda",
-      "status": "published",
-      "language": "it",
-      "tags": [
-        "taccuino",
-        "ricordi"
-      ],
-      "tones": [
-        "caldo"
-      ],
-      "contexts": [
-        "home",
-        "taccuino"
-      ],
-      "moments": [
-        "rientro"
-      ],
-      "seasons": [
-        "tutte"
-      ],
-      "source": null
-    },
-    {
-      "id": "fronda-006",
-      "type": "aforisma",
-      "text": "Certe giornate hanno bisogno di meno programmi e più foglie.",
-      "author": "Fronda",
-      "rights": "originale-fronda",
-      "status": "published",
-      "language": "it",
-      "tags": [
-        "bosco",
-        "lentezza"
-      ],
-      "tones": [
-        "leggero"
-      ],
-      "contexts": [
-        "home"
-      ],
-      "moments": [
-        "pausa",
-        "prima-di-uscire"
-      ],
-      "seasons": [
-        "tutte"
-      ],
-      "source": null
-    },
-    {
-      "id": "fronda-007",
-      "type": "aforisma",
-      "text": "Un sentiero conosciuto può ancora sorprenderti.",
-      "author": "Fronda",
-      "rights": "originale-fronda",
-      "status": "published",
-      "language": "it",
-      "tags": [
-        "sentieri",
-        "scoperta"
-      ],
-      "tones": [
-        "curioso"
-      ],
-      "contexts": [
-        "home"
-      ],
-      "moments": [
-        "pausa",
-        "prima-di-uscire"
-      ],
-      "seasons": [
-        "tutte"
-      ],
-      "source": null
-    },
-    {
-      "id": "fronda-008",
-      "type": "aforisma",
-      "text": "Il tempo passato a osservare non è tempo perso.",
-      "author": "Fronda",
-      "rights": "originale-fronda",
-      "status": "published",
-      "language": "it",
-      "tags": [
-        "attenzione",
-        "lentezza"
-      ],
-      "tones": [
-        "riflessivo"
-      ],
-      "contexts": [
-        "home"
-      ],
-      "moments": [
-        "pausa",
-        "prima-di-uscire"
-      ],
-      "seasons": [
-        "tutte"
-      ],
-      "source": null
-    },
-    {
-      "id": "fronda-009",
-      "type": "aforisma",
-      "text": "Ci sono dettagli che si vedono solo facendo una pausa.",
-      "author": "Fronda",
-      "rights": "originale-fronda",
-      "status": "published",
-      "language": "it",
-      "tags": [
-        "attenzione",
-        "pausa"
-      ],
-      "tones": [
-        "riflessivo"
-      ],
-      "contexts": [
-        "home"
-      ],
-      "moments": [
-        "pausa",
-        "prima-di-uscire"
-      ],
-      "seasons": [
-        "tutte"
-      ],
-      "source": null
-    },
-    {
-      "id": "fronda-010",
-      "type": "aforisma",
-      "text": "Non serve dare un nome a tutto per cominciare a meravigliarsi.",
-      "author": "Fronda",
-      "rights": "originale-fronda",
-      "status": "published",
-      "language": "it",
-      "tags": [
-        "curiosita",
-        "meraviglia"
-      ],
-      "tones": [
-        "curioso"
-      ],
-      "contexts": [
-        "home"
-      ],
-      "moments": [
-        "pausa",
-        "prima-di-uscire"
-      ],
-      "seasons": [
-        "tutte"
-      ],
-      "source": null
-    },
-    {
-      "id": "fronda-011",
-      "type": "aforisma",
-      "text": "Il bosco non finisce al bordo della fotografia.",
-      "author": "Fronda",
-      "rights": "originale-fronda",
-      "status": "published",
-      "language": "it",
-      "tags": [
-        "bosco",
-        "fotografia"
-      ],
-      "tones": [
-        "riflessivo"
-      ],
-      "contexts": [
-        "home"
-      ],
-      "moments": [
-        "pausa",
-        "prima-di-uscire"
-      ],
-      "seasons": [
-        "tutte"
-      ],
-      "source": null
-    },
-    {
-      "id": "fronda-012",
-      "type": "aforisma",
-      "text": "Porta a casa una domanda. C’è posto anche nel taccuino.",
-      "author": "Fronda",
-      "rights": "originale-fronda",
-      "status": "published",
-      "language": "it",
-      "tags": [
-        "taccuino",
-        "curiosita"
-      ],
-      "tones": [
-        "curioso"
-      ],
-      "contexts": [
-        "home",
-        "taccuino"
-      ],
-      "moments": [
-        "pausa",
-        "prima-di-uscire"
-      ],
-      "seasons": [
-        "tutte"
-      ],
-      "source": null
-    },
-    {
-      "id": "fronda-013",
-      "type": "aforisma",
-      "text": "Una bella uscita può stare anche in pochi passi.",
-      "author": "Fronda",
-      "rights": "originale-fronda",
-      "status": "published",
-      "language": "it",
-      "tags": [
-        "cammino",
-        "pausa"
-      ],
-      "tones": [
-        "caldo"
-      ],
-      "contexts": [
-        "home"
-      ],
-      "moments": [
-        "pausa",
-        "prima-di-uscire"
-      ],
-      "seasons": [
-        "tutte"
-      ],
-      "source": null
-    },
-    {
-      "id": "fronda-014",
-      "type": "aforisma",
-      "text": "I ricordi migliori non hanno sempre una posizione precisa.",
-      "author": "Fronda",
-      "rights": "originale-fronda",
-      "status": "published",
-      "language": "it",
-      "tags": [
-        "ricordi",
-        "cammino"
-      ],
-      "tones": [
-        "caldo"
-      ],
-      "contexts": [
-        "home"
-      ],
-      "moments": [
-        "rientro"
-      ],
-      "seasons": [
-        "tutte"
-      ],
-      "source": null
-    },
-    {
-      "id": "fronda-015",
-      "type": "aforisma",
-      "text": "A volte la scoperta è accorgersi di essere stati bene.",
-      "author": "Fronda",
-      "rights": "originale-fronda",
-      "status": "published",
-      "language": "it",
-      "tags": [
-        "benessere",
-        "scoperta"
-      ],
-      "tones": [
-        "caldo"
-      ],
-      "contexts": [
-        "home"
-      ],
-      "moments": [
-        "pausa",
-        "prima-di-uscire"
-      ],
-      "seasons": [
-        "tutte"
-      ],
-      "source": null
-    },
-    {
-      "id": "fronda-016",
-      "type": "aforisma",
-      "text": "Una foglia cambia colore. Tu puoi cambiare ritmo.",
-      "author": "Fronda",
-      "rights": "originale-fronda",
-      "status": "published",
-      "language": "it",
-      "tags": [
-        "foglie",
-        "lentezza"
-      ],
-      "tones": [
-        "riflessivo"
-      ],
-      "contexts": [
-        "home"
-      ],
-      "moments": [
-        "pausa",
-        "prima-di-uscire"
-      ],
-      "seasons": [
-        "tutte"
-      ],
-      "source": null
-    },
-    {
-      "id": "fronda-017",
-      "type": "battuta",
-      "text": "Sono uscito per schiarirmi le idee. Sono tornato con altre tre domande.",
-      "author": "Fronda",
-      "rights": "originale-fronda",
-      "status": "published",
-      "language": "it",
-      "tags": [
-        "curiosita",
-        "cammino"
-      ],
-      "tones": [
-        "ironico"
-      ],
-      "contexts": [
-        "home"
-      ],
-      "moments": [
-        "pausa",
-        "prima-di-uscire"
-      ],
-      "seasons": [
-        "tutte"
-      ],
-      "source": null
-    },
-    {
-      "id": "fronda-018",
-      "type": "battuta",
-      "text": "Avevo un programma preciso. Poi ho visto un albero interessante.",
-      "author": "Fronda",
-      "rights": "originale-fronda",
-      "status": "published",
-      "language": "it",
-      "tags": [
-        "alberi",
-        "scoperta"
-      ],
-      "tones": [
-        "ironico"
-      ],
-      "contexts": [
-        "home"
-      ],
-      "moments": [
-        "pausa",
-        "prima-di-uscire"
-      ],
-      "seasons": [
-        "tutte"
-      ],
-      "source": null
-    },
-    {
-      "id": "fronda-019",
-      "type": "battuta",
-      "text": "Il mio passo è contemplativo. Soprattutto in salita.",
-      "author": "Fronda",
-      "rights": "originale-fronda",
-      "status": "published",
-      "language": "it",
-      "tags": [
-        "cammino",
-        "salita"
-      ],
-      "tones": [
-        "ironico"
-      ],
-      "contexts": [
-        "home"
-      ],
-      "moments": [
-        "pausa",
-        "prima-di-uscire"
-      ],
-      "seasons": [
-        "tutte"
-      ],
-      "source": null
-    },
-    {
-      "id": "fronda-020",
-      "type": "battuta",
-      "text": "Ho fatto una passeggiata breve. Con moltissime parentesi.",
-      "author": "Fronda",
-      "rights": "originale-fronda",
-      "status": "published",
-      "language": "it",
-      "tags": [
-        "cammino",
-        "attenzione"
-      ],
-      "tones": [
-        "ironico"
-      ],
-      "contexts": [
-        "home"
-      ],
-      "moments": [
-        "pausa",
-        "prima-di-uscire"
-      ],
-      "seasons": [
-        "tutte"
-      ],
-      "source": null
-    },
-    {
-      "id": "fronda-021",
-      "type": "battuta",
-      "text": "Il taccuino è piccolo. Le digressioni no.",
-      "author": "Fronda",
-      "rights": "originale-fronda",
-      "status": "published",
-      "language": "it",
-      "tags": [
-        "taccuino",
-        "curiosita"
-      ],
-      "tones": [
-        "ironico"
-      ],
-      "contexts": [
-        "home",
-        "taccuino"
-      ],
-      "moments": [
-        "pausa",
-        "prima-di-uscire"
-      ],
-      "seasons": [
-        "tutte"
-      ],
-      "source": null
-    },
-    {
-      "id": "fronda-022",
-      "type": "battuta",
-      "text": "La foto era per ricordare il posto. Ora ho venti foto dello stesso muschio.",
-      "author": "Fronda",
-      "rights": "originale-fronda",
-      "status": "published",
-      "language": "it",
-      "tags": [
-        "fotografia",
-        "bosco"
-      ],
-      "tones": [
-        "ironico"
-      ],
-      "contexts": [
-        "home"
-      ],
-      "moments": [
-        "pausa",
-        "prima-di-uscire"
-      ],
-      "seasons": [
-        "tutte"
-      ],
-      "source": null
-    },
-    {
-      "id": "fronda-023",
-      "type": "barzelletta",
-      "text": "«Quanto manca?» «Dipende.» «Da cosa?» «Da quanti alberi vuoi salutare.»",
-      "author": "Fronda",
-      "rights": "originale-fronda",
-      "status": "published",
-      "language": "it",
-      "tags": [
-        "cammino",
-        "alberi"
-      ],
-      "tones": [
-        "ironico"
-      ],
-      "contexts": [
-        "home"
-      ],
-      "moments": [
-        "pausa",
-        "prima-di-uscire"
-      ],
-      "seasons": [
-        "tutte"
-      ],
-      "source": null
-    },
-    {
-      "id": "fronda-024",
-      "type": "barzelletta",
-      "text": "«Hai trovato qualcosa?» «Sì: un ottimo motivo per tornare.»",
-      "author": "Fronda",
-      "rights": "originale-fronda",
-      "status": "published",
-      "language": "it",
-      "tags": [
-        "ricerca",
-        "ritorno"
-      ],
-      "tones": [
-        "ironico"
-      ],
-      "contexts": [
-        "home"
-      ],
-      "moments": [
-        "rientro"
-      ],
-      "seasons": [
-        "tutte"
-      ],
-      "source": null
-    },
-    {
-      "id": "fronda-025",
-      "type": "barzelletta",
-      "text": "«Perché ti sei fermato?» «Sto facendo il pieno.» «Di cosa?» «Di bosco.»",
-      "author": "Fronda",
-      "rights": "originale-fronda",
-      "status": "published",
-      "language": "it",
-      "tags": [
-        "bosco",
-        "pausa"
-      ],
-      "tones": [
-        "ironico"
-      ],
-      "contexts": [
-        "home"
-      ],
-      "moments": [
-        "pausa",
-        "prima-di-uscire"
-      ],
-      "seasons": [
-        "tutte"
-      ],
-      "source": null
-    },
-    {
-      "id": "fronda-026",
-      "type": "barzelletta",
-      "text": "«Andiamo a passo svelto?» «Certo. Appena finisco di guardare questa foglia.»",
-      "author": "Fronda",
-      "rights": "originale-fronda",
-      "status": "published",
-      "language": "it",
-      "tags": [
-        "foglie",
-        "cammino"
-      ],
-      "tones": [
-        "ironico"
-      ],
-      "contexts": [
-        "home"
-      ],
-      "moments": [
-        "pausa",
-        "prima-di-uscire"
-      ],
-      "seasons": [
-        "tutte"
-      ],
-      "source": null
-    },
-    {
-      "id": "citazione-dante-stelle",
+      "id": "citazione-pascoli-bosco",
       "type": "citazione",
-      "text": "E quindi uscimmo a riveder le stelle.",
-      "author": "Dante Alighieri",
-      "rights": "pubblico-dominio",
-      "status": "published",
-      "language": "it",
-      "tags": [
-        "cammino",
-        "cielo",
-        "meraviglia"
-      ],
-      "tones": [
-        "poetico"
-      ],
-      "contexts": [
-        "home",
-        "taccuino"
-      ],
-      "moments": [
-        "rientro",
-        "sera"
-      ],
-      "seasons": [
-        "tutte"
-      ],
-      "source": {
-        "title": "Divina Commedia, Inferno, XXXIV, v. 139",
-        "url": "https://it.wikisource.org/wiki/Divina_Commedia/Inferno/Canto_XXXIV",
-        "verified": true,
-        "verifiedOn": "2026-10-20",
-        "note": "Testo originale in pubblico dominio; fonte di consultazione Wikisource."
-      }
-    },
-    {
-      "id": "citazione-pascoli-sole",
-      "type": "citazione",
-      "text": "C’è qualcosa di nuovo oggi nel sole,",
+      "text": "O vecchio bosco pieno d’albatrelli,\nche sai di funghi e spiri la malìa,",
       "author": "Giovanni Pascoli",
       "rights": "pubblico-dominio",
       "status": "published",
       "language": "it",
       "tags": [
-        "luce",
-        "meraviglia",
-        "primavera"
+        "funghi",
+        "bosco"
       ],
       "tones": [
         "poetico"
       ],
       "contexts": [
-        "home"
+        "home",
+        "uscita",
+        "taccuino"
       ],
       "moments": [
-        "mattina",
-        "prima-di-uscire"
+        "pausa",
+        "prima-di-uscire",
+        "rientro"
       ],
       "seasons": [
-        "primavera"
+        "tutte"
       ],
       "source": {
-        "title": "Primi poemetti, L’aquilone, v. 1",
-        "url": "https://it.wikisource.org/wiki/Primi_poemetti/L%27aquilone",
+        "title": "Myricae, Il bosco, vv. 1–2",
+        "url": "https://it.wikisource.org/wiki/Myricae/Ricordi/Il_bosco",
         "verified": true,
-        "verifiedOn": "2026-10-20",
-        "note": "Estratto: primo verso, punteggiatura originale. Testo originale in pubblico dominio; fonte di consultazione Wikisource."
+        "verifiedOn": "2026-10-25",
+        "note": "Estratto letterario da opera originale in pubblico dominio; a capo conservati. Non è un dato botanico, micologico o previsionale."
+      }
+    },
+    {
+      "id": "citazione-pascoli-funghi",
+      "type": "citazione",
+      "text": "È tacito, è grigio il mattino;\nla terra ha un odore di funghi;\ndi gocciole è pieno il giardino.",
+      "author": "Giovanni Pascoli",
+      "rights": "pubblico-dominio",
+      "status": "published",
+      "language": "it",
+      "tags": [
+        "funghi",
+        "bosco"
+      ],
+      "tones": [
+        "poetico"
+      ],
+      "contexts": [
+        "home",
+        "uscita",
+        "taccuino"
+      ],
+      "moments": [
+        "pausa",
+        "prima-di-uscire",
+        "rientro"
+      ],
+      "seasons": [
+        "tutte"
+      ],
+      "source": {
+        "title": "Myricae, Il bacio del morto, vv. 1–3",
+        "url": "https://it.wikisource.org/wiki/Myricae/Il_bacio_del_morto",
+        "verified": true,
+        "verifiedOn": "2026-10-25",
+        "note": "Estratto letterario da opera originale in pubblico dominio; a capo conservati. Non è un dato botanico, micologico o previsionale."
+      }
+    },
+    {
+      "id": "citazione-dickinson-fungo",
+      "type": "citazione",
+      "text": "Il fungo è il folletto delle piante,",
+      "author": "Emily Dickinson",
+      "rights": "pubblico-dominio",
+      "status": "published",
+      "language": "it",
+      "tags": [
+        "funghi",
+        "meraviglia"
+      ],
+      "tones": [
+        "poetico"
+      ],
+      "contexts": [
+        "home",
+        "uscita",
+        "taccuino"
+      ],
+      "moments": [
+        "pausa",
+        "prima-di-uscire",
+        "rientro"
+      ],
+      "seasons": [
+        "tutte"
+      ],
+      "source": {
+        "title": "The Complete Poems of Emily Dickinson, The mushroom is the elf of plants, v. 1",
+        "url": "https://en.wikisource.org/wiki/The_Complete_Poems_of_Emily_Dickinson/The_mushroom_is_the_elf_of_plants",
+        "verified": true,
+        "verifiedOn": "2026-10-25",
+        "note": "Estratto letterario da opera originale in pubblico dominio; a capo conservati. Non è un dato botanico, micologico o previsionale. Traduzione preparata per Fronda dall’originale inglese, senza riutilizzare traduzioni moderne.",
+        "originalText": "The mushroom is the elf of plants,",
+        "translationCredit": "Traduzione italiana Fronda"
+      }
+    },
+    {
+      "id": "citazione-pascoli-corbezzolo",
+      "type": "citazione",
+      "text": "i bianchi fiori metti quando rosse\nhai già le bacche, e ricominci eterno,",
+      "author": "Giovanni Pascoli",
+      "rights": "pubblico-dominio",
+      "status": "published",
+      "language": "it",
+      "tags": [
+        "piante",
+        "corbezzolo"
+      ],
+      "tones": [
+        "poetico"
+      ],
+      "contexts": [
+        "home",
+        "uscita",
+        "taccuino"
+      ],
+      "moments": [
+        "pausa",
+        "prima-di-uscire",
+        "rientro"
+      ],
+      "seasons": [
+        "tutte"
+      ],
+      "source": {
+        "title": "Odi e inni, Al corbezzolo, vv. 9–10",
+        "url": "https://it.wikisource.org/wiki/Odi_e_inni/Odi/Al_corbezzolo",
+        "verified": true,
+        "verifiedOn": "2026-10-25",
+        "note": "Estratto letterario da opera originale in pubblico dominio; a capo conservati. Non è un dato botanico, micologico o previsionale."
+      }
+    },
+    {
+      "id": "citazione-leopardi-ginestra",
+      "type": "citazione",
+      "text": "tuoi cespi solitari intorno spargi,\nodorata ginestra,\ncontenta dei deserti.",
+      "author": "Giacomo Leopardi",
+      "rights": "pubblico-dominio",
+      "status": "published",
+      "language": "it",
+      "tags": [
+        "piante",
+        "ginestra-odorosa"
+      ],
+      "tones": [
+        "poetico"
+      ],
+      "contexts": [
+        "home",
+        "uscita",
+        "taccuino"
+      ],
+      "moments": [
+        "pausa",
+        "prima-di-uscire",
+        "rientro"
+      ],
+      "seasons": [
+        "tutte"
+      ],
+      "source": {
+        "title": "Canti, La ginestra, vv. 5–7 (edizione Ginzburg, 1938)",
+        "url": "https://it.wikisource.org/wiki/Canti_(Leopardi_-_Ginzburg)/La_ginestra",
+        "verified": true,
+        "verifiedOn": "2026-10-25",
+        "note": "Estratto letterario da opera originale in pubblico dominio; a capo conservati. Non è un dato botanico, micologico o previsionale."
+      }
+    },
+    {
+      "id": "citazione-dannunzio-ginepro",
+      "type": "citazione",
+      "text": "su le ginestre fulgenti\ndi fiori accolti,\nsu i ginepri folti\ndi coccole aulenti,",
+      "author": "Gabriele D’Annunzio",
+      "rights": "pubblico-dominio",
+      "status": "published",
+      "language": "it",
+      "tags": [
+        "piante",
+        "ginepro",
+        "ginestre"
+      ],
+      "tones": [
+        "poetico"
+      ],
+      "contexts": [
+        "home",
+        "uscita",
+        "taccuino"
+      ],
+      "moments": [
+        "pausa",
+        "prima-di-uscire",
+        "rientro"
+      ],
+      "seasons": [
+        "tutte"
+      ],
+      "source": {
+        "title": "Alcyone, La pioggia nel pineto, vv. 16–19",
+        "url": "https://it.wikisource.org/wiki/Alcyone/La_pioggia_nel_pineto",
+        "verified": true,
+        "verifiedOn": "2026-10-25",
+        "note": "Estratto letterario da opera originale in pubblico dominio; a capo conservati. Non è un dato botanico, micologico o previsionale."
+      }
+    },
+    {
+      "id": "citazione-pascoli-prunalbo",
+      "type": "citazione",
+      "text": "e del prunalbo l’odorino amaro\nsenti nel cuore...",
+      "author": "Giovanni Pascoli",
+      "rights": "pubblico-dominio",
+      "status": "published",
+      "language": "it",
+      "tags": [
+        "piante",
+        "biancospino"
+      ],
+      "tones": [
+        "poetico"
+      ],
+      "contexts": [
+        "home",
+        "uscita",
+        "taccuino"
+      ],
+      "moments": [
+        "pausa",
+        "prima-di-uscire",
+        "rientro"
+      ],
+      "seasons": [
+        "tutte"
+      ],
+      "source": {
+        "title": "Myricae, Novembre, vv. 3–4",
+        "url": "https://it.wikisource.org/wiki/Myricae/In_campagna/Novembre",
+        "verified": true,
+        "verifiedOn": "2026-10-25",
+        "note": "Estratto letterario da opera originale in pubblico dominio; a capo conservati. Non è un dato botanico, micologico o previsionale."
+      }
+    },
+    {
+      "id": "citazione-carducci-mezzogiorno",
+      "type": "citazione",
+      "text": "Regna sereno intenso ed infinito\nNel suo grande silenzio il mezzodì.",
+      "author": "Giosue Carducci",
+      "rights": "pubblico-dominio",
+      "status": "published",
+      "language": "it",
+      "tags": [
+        "montagna",
+        "silenzio"
+      ],
+      "tones": [
+        "poetico"
+      ],
+      "contexts": [
+        "home",
+        "uscita",
+        "taccuino"
+      ],
+      "moments": [
+        "pausa",
+        "prima-di-uscire",
+        "rientro"
+      ],
+      "seasons": [
+        "tutte"
+      ],
+      "source": {
+        "title": "Rime e ritmi, Mezzogiorno alpino, vv. 3–4 (Poesie, 1904)",
+        "url": "https://site.unibo.it/carduccionline/it/su-mezzogiorno-alpino",
+        "verified": true,
+        "verifiedOn": "2026-10-25",
+        "note": "Estratto letterario da opera originale in pubblico dominio; a capo conservati. Non è un dato botanico, micologico o previsionale."
+      }
+    },
+    {
+      "id": "citazione-dante-montagna",
+      "type": "citazione",
+      "text": "A seder ci ponemmo ivi ambedui\nvòlti a levante ond’eravam saliti,\nche suole a riguardar giovare altrui.",
+      "author": "Dante Alighieri",
+      "rights": "pubblico-dominio",
+      "status": "published",
+      "language": "it",
+      "tags": [
+        "montagna",
+        "cammino",
+        "pausa"
+      ],
+      "tones": [
+        "poetico"
+      ],
+      "contexts": [
+        "home",
+        "uscita",
+        "taccuino"
+      ],
+      "moments": [
+        "pausa",
+        "prima-di-uscire",
+        "rientro"
+      ],
+      "seasons": [
+        "tutte"
+      ],
+      "source": {
+        "title": "Divina Commedia, Purgatorio IV, vv. 52–54",
+        "url": "https://it.wikisource.org/wiki/Divina_Commedia/Purgatorio/Canto_IV",
+        "verified": true,
+        "verifiedOn": "2026-10-25",
+        "note": "Estratto letterario da opera originale in pubblico dominio; a capo conservati. Non è un dato botanico, micologico o previsionale."
+      }
+    },
+    {
+      "id": "citazione-muir-montagne",
+      "type": "citazione",
+      "text": "Le montagne chiamano e io devo andare",
+      "author": "John Muir",
+      "rights": "pubblico-dominio",
+      "status": "published",
+      "language": "it",
+      "tags": [
+        "montagna",
+        "cammino"
+      ],
+      "tones": [
+        "poetico"
+      ],
+      "contexts": [
+        "home",
+        "uscita",
+        "taccuino"
+      ],
+      "moments": [
+        "pausa",
+        "prima-di-uscire",
+        "rientro"
+      ],
+      "seasons": [
+        "tutte"
+      ],
+      "source": {
+        "title": "The Life and Letters of John Muir (1924), vol. I, cap. X, lettera del 3 settembre 1873 (estratto)",
+        "url": "https://www.yosemite.ca.us/john_muir_writings/the_life_and_letters_of_john_muir/the_life_and_letters_of_john_muir.pdf",
+        "verified": true,
+        "verifiedOn": "2026-10-25",
+        "note": "Estratto letterario da opera originale in pubblico dominio; a capo conservati. Non è un dato botanico, micologico o previsionale. Traduzione preparata per Fronda dall’originale inglese, senza riutilizzare traduzioni moderne.",
+        "originalText": "The mountains are calling and I must go",
+        "translationCredit": "Traduzione italiana Fronda"
       }
     }
   ]

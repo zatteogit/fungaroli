@@ -89,12 +89,13 @@ export async function initDailyThought({ root = document.querySelector('#daily-t
       text.textContent = item.text;
       const credit = document.createElement(item.type === 'citazione' ? 'a' : 'span');
       credit.className = 'daily-thought-credit';
-      credit.textContent = item.author || 'Fronda';
+      credit.textContent = (item.author || 'Fronda') + (item.source?.translationCredit ? ' · traduzione Fronda' : '');
       if (item.type === 'citazione') {
         credit.href = item.source.url;
         credit.target = '_blank';
         credit.rel = 'noopener noreferrer';
         credit.title = `${item.source.title} · fonte della citazione`;
+        credit.setAttribute('aria-label', `${credit.textContent}. Fonte: ${item.source.title}`);
       }
       copy.append(text, credit);
       root.append(label, copy);

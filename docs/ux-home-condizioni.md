@@ -73,7 +73,7 @@ Date assolute nel modello e fuso Europe/Rome; «domani» solo come etichetta der
 | Ha già salvato una prima annotazione o raccontato un’uscita | Richiamo compatto nelle visite successive |
 | Ha condiviso un’osservazione valida | Compatto; regole di accesso e privacy sempre raggiungibili |
 | Ha premuto la X | Box nascosto; rimane il link di aiuto |
-| Ha riaperto volontariamente il box | Rimane aperto finché lo chiude o lascia la pagina |
+| Ha premuto «Come funziona la condivisione» | Pannello contestuale; la card in home mantiene il suo stato |
 
 **Riduzione automatica, non cancellazione della spiegazione:** avviene all’ingresso successivo nella home dopo un’azione riuscita o un ritorno effettivo. Nessun timer e nessuna riduzione al solo scroll: leggere metà box non prova comprensione. La scelta del giorno, i filtri, un aggiornamento meteo, il login e la registrazione non devono chiudere un contenuto già aperto mentre l’utente lo legge. Se il box inizialmente compatto viene aperto, rimane aperto anche cambiando data.
 
@@ -100,3 +100,11 @@ I 18 scenari sono sintetici, con data di esempio 21 ottobre 2026. La demo riusa 
 Il box completo su mobile usa una disposizione di studio: l’impaginazione definitiva delle tile va confrontata con quella già approvata; qui si valutano soprattutto posizione e ciclo di vita. L’integrazione finale deve usare i controlli e le geometrie effettivi dell’app, non sostituirli automaticamente con quelli del prototipo.
 
 Verificare: nessuna hero con indice basso; nessuna proposta vietata/non verificabile; una sola proposta senza alternative vuote; discreti solo su richiesta; separazione fra dati mancanti e sfavorevoli; prossimo giorno con stessi filtri e criteri; nessun indice fungino in Sentieri/Piante; contenuti indipendenti costanti; primo uso/ritorno/profilo/chiusura/riapertura; calendario senza salto di scroll e senza riduzione del box aperto; 320/390/1280 px, light/dark, focus e assenza di overflow.
+
+## Correzione approvata del 25 ottobre 2026
+
+«Come funziona la condivisione» apre un dialog attraverso `openModal`, senza riaprire
+la card, cambiare la preferenza di chiusura o scorrere la home. Alla chiusura il focus
+torna al collegamento e la posizione della pagina rimane la stessa. La spiegazione
+include accesso ai riepiloghi, privacy, limiti delle osservazioni e scelta di ritirarle.
+Questa regola supera le precedenti indicazioni di riapertura della card dal link.

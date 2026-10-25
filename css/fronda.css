@@ -1760,3 +1760,11 @@ button.cover-index > b { font-size:21px; line-height:1.2; }
 }
 body.weather-refreshing :is(#hero, #ranking) :is(.ring, .tile-wx, .fact[class*="wx-"]) { opacity:.72; }
 @keyframes skeleton-pulse { 50% { opacity:.55; } }
+
+/* Scelte condivise della ricerca, leggibili anche senza indice disponibile. */
+.outing-search{position:relative;display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding:1rem 1.5rem;background:var(--surface);color:var(--text);border-block:1px solid var(--line)}
+.outing-search>div{min-width:0;overflow-wrap:anywhere}
+.outing-search p{margin:.35rem 0 0}
+.outing-search>.btn{flex-shrink:0}
+.outing-all-species{margin-block:1rem}
+@media(max-width:480px){.outing-search{padding:1rem;flex-wrap:wrap}}
