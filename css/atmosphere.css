@@ -31,3 +31,7 @@
 .home-weather-illustration { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:20px; color:var(--text); background:var(--surface-2); }
 .home-weather-illustration > span svg { width:96px; height:96px; }
 .home-weather-illustration small { font:500 14px/1.5 var(--font-body); }
+
+/* Le foto dei luoghi usano gli stessi punti focali delle schede. */
+.atmosphere[data-cover-kind="place-photo"] .atmosphere-still { object-position:var(--op-34,50% 50%); }
+@media(max-width:760px){.atmosphere[data-cover-kind="place-photo"] .atmosphere-still { object-position:var(--op-167,50% 50%); }}

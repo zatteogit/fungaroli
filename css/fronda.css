@@ -552,7 +552,8 @@ body:has(#season .ring) #season-index-legend { display:block; }
 @media(prefers-reduced-transparency:reduce) { .ring { backdrop-filter:none; -webkit-backdrop-filter:none; background:var(--scrim); } }
 
 /* The outing hero grows with its title. Only present metrics occupy the shared glass footer. */
-.phero.outing-hero { display:flex; flex-direction:column; justify-content:flex-end; height:auto; min-height:520px; max-height:none; padding-top:240px; }
+.phero.outing-hero { display:flex; flex-direction:column; height:auto; min-height:0; max-height:none; padding-top:0; }
+.outing-visual { position:relative; display:flex; flex-direction:column; justify-content:flex-end; min-height:380px; padding-top:200px; isolation:isolate; overflow:hidden; }
 .outing-hero .phero-body { position:relative; inset:auto; gap:12px; padding:32px 32px 24px; }
 .outing-hero .phero-body::before { --scrim-lead:100px; --scrim-x:32px; --scrim-b:0px; }
 .outing-hero .phero-body .pill { background:none; border:0; padding:0; font-size:15px; font-weight:600; text-transform:none; line-height:1.5; letter-spacing:0; box-shadow:none; backdrop-filter:none; }
@@ -580,7 +581,7 @@ body:has(#season .ring) #season-index-legend { display:block; }
 .weather-caption strong { font-size:13px; color:var(--photo-warning); }
 .hero-indicators > .ring .ring-caption { top:calc(100% + 8px); font-size:14px; }
 @media(max-width:760px) {
-  .phero.outing-hero { padding-top:190px; min-height:440px; }
+  .outing-visual { min-height:340px; padding-top:160px; }
   .outing-hero .phero-body { padding:24px 24px 20px; }
   .hero-indicators { padding:20px 24px 80px; }
 }
@@ -1154,7 +1155,8 @@ body:has(#season .ring) #season-index-legend { display:block; }
 .zone-data-pending { background:var(--surface-2); color:var(--text-2); }
 .zone-photo-credit { font-size:12px; line-height:1.5; overflow-wrap:anywhere; }
 
-.phero.outing-hero.no-local-photo { min-height:240px; padding-top:48px; background:var(--surface-2); }
+.phero.outing-hero.no-local-photo { background:var(--surface-2); }
+.no-local-photo .outing-visual { min-height:180px; padding-top:32px; }
 .no-local-photo .phero-body { color:var(--text); }
 .no-local-photo .phero-body::before { display:none; }
 .no-local-photo :is(.phero-title,.phero-sub,.pill) { color:var(--text); text-shadow:none; }
