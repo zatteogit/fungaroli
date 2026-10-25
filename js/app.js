@@ -1,3 +1,4 @@
+import {mergeGrowth,mergeOuting,rebaseGrowth} from './weather-state.js';
 import {selectOutingMushrooms} from './outing-mushrooms.js';
 import {composeHome,nextHomeOpportunity,latestDeadline,automaticHomeDay,shiftChosenDay} from './home-composition.js';
 import {freshness,viewSignature,compareViews,updatePolicy} from './view-stability.js';
@@ -1250,7 +1251,8 @@ function renderOutdoorDetail() {
   delete box.dataset.zone;detailCtx=null;lastDetailHtml='';box.dataset.glossaryContext=state.target==='piante'?'Piante':state.target==='funghi'?'Funghi':'Sentieri';
   const discoveries=walk?outdoorDiscoveries(z,d,walk):[];
   const photo=outdoorCover({z,d,walk,items:discoveries});
-  box.innerHTML=`<header class="phero outing-hero${photo?'':' no-local-photo'}"><div class="outing-visual">${photo?`<div class="phero-img outdoor-cover-img"><img data-src="${esc(photo.hd)}" alt="${esc(photo.alt||'')}"></div>`:''}<div class="phero-body"><span class="pill glass">${esc(fmtDate(d.date,{weekday:'long',day:'numeric',month:'long'}))}</span><h1 class="phero-title">${esc(z.title||z.name)}</h1></div></div>${outingSearchContext(d)}${heroIndicators(z,d)}</header><div class="pbody">${outdoorDayTabs(z)}${photo?.credit?`<p class="small muted zone-photo-credit">${creditLine(photo.credit)}</p>`:''}${zoneCollectionNotice(z)}${!habitat[z.id]?'<p class="notice zone-data-pending"><b>Indice funghi non ancora disponibile</b><br>Questa zona è da esplorare: il campionamento del bosco è in attesa. Non è un’indicazione di assenza di funghi.</p>':''}${!w?.available?'<p class="notice">Meteo da verificare prima di partire.</p>':''}<p>${esc(travelText(zoneTrip(z,walk)))}</p>${state.target==='piante'?discoveriesHtml(z,d,walk,discoveries):''}${walk?renderWalkFocus(z,{...d,best:null},walk):'<p class="notice">Nessun sentiero corrisponde ai filtri attivi.</p>'}${z.protection?`<p class="notice">${esc(z.protection)}</p>`:''}<p>${linkTrees(z.description)}</p>${zoneSourceLinks(z)}${state.target==='passeggiata'?discoverySection(z,d,walk):''}${outingCommunity(z)}${section('accesso','Accessi e soste',renderAccess(z,{access:null}))}${section('sentieri','Sentieri della zona',renderTrails(z,null),true)}${zoneInfoSection(z)}<p><a href="#/mappa/${z.id}">Vedi sulla mappa</a></p></div>`;
+  const html=`<header class="phero outing-hero${photo?'':' no-local-photo'}"><div class="outing-visual">${photo?`<div class="phero-img outdoor-cover-img"><img data-src="${esc(photo.hd)}" alt="${esc(photo.alt||'')}"></div>`:''}<div class="phero-body"><span class="pill glass">${esc(fmtDate(d.date,{weekday:'long',day:'numeric',month:'long'}))}</span><h1 class="phero-title">${esc(z.title||z.name)}</h1></div></div>${outingSearchContext(d)}${heroIndicators(z,d)}</header><div class="pbody">${outdoorDayTabs(z)}${photo?.credit?`<p class="small muted zone-photo-credit">${creditLine(photo.credit)}</p>`:''}${zoneCollectionNotice(z)}${!habitat[z.id]?'<p class="notice zone-data-pending"><b>Indice funghi non ancora disponibile</b><br>Questa zona è da esplorare: il campionamento del bosco è in attesa. Non è un’indicazione di assenza di funghi.</p>':''}${!w?.available?'<p class="notice">Meteo da verificare prima di partire.</p>':''}<p>${esc(travelText(zoneTrip(z,walk)))}</p>${state.target==='piante'?discoveriesHtml(z,d,walk,discoveries):''}${walk?renderWalkFocus(z,{...d,best:null},walk):'<p class="notice">Nessun sentiero corrisponde ai filtri attivi.</p>'}${z.protection?`<p class="notice">${esc(z.protection)}</p>`:''}<p>${linkTrees(z.description)}</p>${zoneSourceLinks(z)}${state.target==='passeggiata'?discoverySection(z,d,walk):''}${outingCommunity(z)}${section('accesso','Accessi e soste',renderAccess(z,{access:null}))}${section('sentieri','Sentieri della zona',renderTrails(z,null),true)}${zoneInfoSection(z)}<p><a href="#/mappa/${z.id}">Vedi sulla mappa</a></p></div>`;
+  if(weatherPainting)updateWeatherHTML(box,html);else box.innerHTML=html;
   bindDetailSections(box);
 }
 function openOutdoorSheet(zid) {
@@ -1518,6 +1520,7 @@ function queueWeatherPaint(changed){
   weatherPaintTimer={handle,changed:pending};
 }
 function receiveWeather(w,meta={}){
+  w={...w,series:rebaseGrowth(mergeGrowth(series,w.series),todayISO())};
   const changed=new Set();
   for(const [id,ss] of Object.entries(w.series))if(JSON.stringify(series?.[id])!==JSON.stringify(ss))changed.add(id);
   const first=!results;
@@ -1526,25 +1529,40 @@ function receiveWeather(w,meta={}){
   weatherStamp(w);$('#today-kicker').textContent=new Date().toLocaleDateString('it-IT',{weekday:'long',day:'numeric',month:'long'});
   if(changed.size){compute(first?null:changed);if(first&&(meta.phase!=='network'||!['uscite','zona'].includes(state.view)))paintWeatherView(changed);else queueWeatherPaint(changed);}
 }
+let lastWeatherSync=0;
 async function refreshWeather(force){
+  lastWeatherSync=Date.now();
   const revision=++weatherRevision;weatherController?.abort();weatherController=new AbortController();const signal=weatherController.signal;
   weatherZones??=zones;weatherBusy=true;$('#refresh').setAttribute('aria-busy','true');
   if(lastWeatherSnapshot)weatherStamp(lastWeatherSnapshot,true);else $('#updated').textContent=WX_BUSY;
   weatherWork(WX_BUSY,true);loadStep(1);
   // il messaggio "Meteo aggiornato" serve se l'hai chiesto o se cambia dati gia' sullo schermo, non al primo avvio
   let announce=force||!!lastWeatherSnapshot;
-  let received=false,mainFailure=null,latest=null,outingPartial=false;
+  let received=false,mainFailure=null,latest=null,outingPartial=false,nextOuting=null,cachedGrowth=null;
+  // Both loaders read local copies synchronously. Paint after both have supplied
+  // their cache, before any network response or timeout is needed.
+  const paintCached=()=>queueMicrotask(()=>{if(revision===weatherRevision&&cachedGrowth)receiveWeather(cachedGrowth,{phase:'cache'});});
   const growth=loadWeather(weatherZones.filter(z=>habitat[z.id]),{force,signal,onProgress:(done,total)=>{
     if(revision!==weatherRevision)return;
-  },onUpdate:(w,meta)=>{if(revision!==weatherRevision)return;received||=meta.phase==='network';if(meta.phase!=='network')announce=true;receiveWeather(w,meta);}}).then(w=>{if(revision===weatherRevision){latest=w;receiveWeather(w);}}).catch(err=>{mainFailure=err;});
+  },onUpdate:(w,meta)=>{if(revision!==weatherRevision)return;received||=meta.phase==='network';if(meta.phase!=='network'){announce=true;cachedGrowth=w;paintCached();}}}).then(w=>{if(revision===weatherRevision){latest=w;if(!results)receiveWeather(w,{phase:'initial'});}}).catch(err=>{mainFailure=err;});
   const practical=loadOuting(weatherZones,{force,signal,onUpdate:(data,meta)=>{
     if(revision!==weatherRevision)return;
+    received||=meta.phase==='network';
+    if(meta.phase==='network')return;
     const changed=new Set(Object.keys(data).filter(id=>JSON.stringify(outing?.[id])!==JSON.stringify(data[id])));
-    received||=meta.phase==='network';outing=data;
+    outing=mergeOuting(outing,data);
     for(const id of changed)for(const k of outCache.keys())if(k.startsWith(id+'|'))outCache.delete(k);
     if(results)queueWeatherPaint(changed);
-  }}).then(data=>{if(revision!==weatherRevision)return;const changed=new Set(Object.keys(data||{}).filter(id=>JSON.stringify(outing?.[id])!==JSON.stringify(data[id])));outing=data;for(const id of changed)for(const k of outCache.keys())if(k.startsWith(id+'|'))outCache.delete(k);if(results)queueWeatherPaint(changed);outingPartial=weatherZones.some(z=>!data?.[z.id]||Date.now()-Date.parse(data[z.id].fetchedAt)>=3600000);});
+  }}).then(data=>{if(revision!==weatherRevision)return;nextOuting=data;outingPartial=weatherZones.some(z=>!data?.[z.id]||Date.now()-Date.parse(data[z.id].fetchedAt)>=3600000);});
   await Promise.allSettled([growth,practical]);if(revision!==weatherRevision)return;
+  // Commit both profiles together. Failures and older replies cannot erase live data.
+  const mergedOuting=mergeOuting(outing,nextOuting);
+  const changedOuting=new Set(Object.keys(mergedOuting).filter(id=>JSON.stringify(outing?.[id])!==JSON.stringify(mergedOuting[id])));
+  outing=mergedOuting;
+  for(const id of changedOuting)for(const k of outCache.keys())if(k.startsWith(id+'|'))outCache.delete(k);
+  if(latest)receiveWeather(latest);
+  else if(lastWeatherSnapshot)receiveWeather({...lastWeatherSnapshot,offline:true});
+  if(results)queueWeatherPaint(changedOuting);
   weatherBusy=false;$('#refresh').setAttribute('aria-busy','false');loadStep(2);
   if(weatherPaintTimer){clearTimeout(weatherPaintTimer.handle);const changed=weatherPaintTimer.changed;weatherPaintTimer=null;paintWeatherView(changed);}
   if(latest||lastWeatherSnapshot){
@@ -1554,11 +1572,22 @@ async function refreshWeather(force){
     weatherStamp(latest||lastWeatherSnapshot,false,done);
     if(!deferredWeatherView)weatherWork(done?WX_DONE:'',false,done);
   }else{
-    weatherWork('');$('#updated').textContent='';weatherUnavailable=true;prepareCalendarFallback();
-    compute();renderAll();
-    if(state.view==='zona')renderDetail();
+    weatherWork('');$('#updated').textContent='';
+    if(!weatherUnavailable){
+      weatherUnavailable=true;prepareCalendarFallback();compute();renderAll();
+      if(state.view==='zona')renderDetail();
+    }
   }
 }
+// Reconcile public copies after reconnect/resume and while the app is visible.
+// No provider calls, overlapping refreshes or work in hidden tabs.
+function syncSavedWeather(){
+  if(document.visibilityState==='hidden'||weatherBusy||!weatherZones||Date.now()-lastWeatherSync<5*60000)return;
+  void refreshWeather(false);
+}
+setInterval(syncSavedWeather,60000);
+document.addEventListener('visibilitychange',syncSavedWeather);
+addEventListener('online',syncSavedWeather);
 document.addEventListener('close',()=>{if(deferredWeatherView&&!weatherPanelOpen()){deferredWeatherView=false;paintWeatherView();weatherWork(weatherBusy?WX_BUSY:'',weatherBusy);}},{capture:true});
 document.addEventListener('toggle',e=>{if(e.newState==='closed'&&deferredWeatherView&&!weatherPanelOpen()){deferredWeatherView=false;paintWeatherView();weatherWork(weatherBusy?WX_BUSY:'',weatherBusy);}},{capture:true});
 
@@ -2227,7 +2256,7 @@ function renderHomeContent() {
    const next=homePresentation.state==='ready'?viewSignature(homePresentation.ready):viewSignature([]);
    const alerts=homeShown.sig.top.filter(k=>homePresentation.raw.some(c=>`${c.z.id}|${c.o}`===k&&c.weather&&(c.weather.level==='sconsigliata'||c.weather.thunder))&&!homeShown.sig.severe.has(k));
    const kind=homePresentation.state==='ready'?compareViews(homeShown.sig,next).kind:'major';
-   if(updatePolicy({kind,shownAt:homeShown.at,scrolled:homeScrolled})==='defer'){
+   if(kind==='major'||updatePolicy({kind,shownAt:homeShown.at,scrolled:homeScrolled})==='defer'){
     homePending=homePresentation;homePresentation=homeShown.presentation;
     markWeatherAlerts(alerts);homeUpdateBar(true);return 'deferred';
    }
@@ -3528,7 +3557,7 @@ function renderDetail() {
   else { box.innerHTML = html; box.dataset.zone = z.id; }
   const zd = $('#zone-days'), sel = zd.querySelector('[aria-selected="true"]');
   // solo in orizzontale, dentro la barra dei giorni: la pagina non si muove
-  if (sel) { const zr = zd.getBoundingClientRect(), br = sel.getBoundingClientRect(); zd.scrollTo({ left: zd.scrollLeft + br.left - zr.left - (zr.width - br.width) / 2, behavior: inPlace && !reduceMotion() ? 'smooth' : 'instant' }); }
+  if (sel && !weatherPainting) { const zr = zd.getBoundingClientRect(), br = sel.getBoundingClientRect(); zd.scrollTo({ left: zd.scrollLeft + br.left - zr.left - (zr.width - br.width) / 2, behavior: inPlace && !reduceMotion() ? 'smooth' : 'instant' }); }
   const drawCharts = () => drawWhyCharts(box.querySelector('[data-sec="meteo"]'), { s: sb, sp: best.species, days: whyDays, todayIndex: r.todayIndex, i: d.i });
   bindDetailSections(box, id => { if (id === 'meteo') drawCharts(); });
 }

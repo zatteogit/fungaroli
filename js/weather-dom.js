@@ -1,7 +1,7 @@
 // Background updates retain matching links, decoded photos and focused nodes.
 // Use for display-only fragments whose actions are delegated, not chart widgets
 // or controls with handlers that close over a particular forecast.
-const identity=n=>n.nodeType===1?(n.getAttribute('data-weather-key')||n.id||n.getAttribute('data-day-offset')||''):'';
+const identity=n=>n.nodeType===1?(n.getAttribute('data-weather-key')||n.id||n.getAttribute('data-sec')||n.getAttribute('data-day-offset')||''):'';
 function compatible(a,b){return a.nodeType===b.nodeType&&(a.nodeType!==1||a.tagName===b.tagName)&&identity(a)===identity(b);}
 // Elementi il cui testo cambia davvero durante un aggiornamento (per una breve dissolvenza): si annota il testo di
 // prima del genitore alla prima modifica e alla fine si tengono solo quelli diversi (una parola del glossario

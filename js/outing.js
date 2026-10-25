@@ -2,7 +2,7 @@
 // separate dal meteo passato che fa nascere i funghi. Servono a dire "oggi lì piove, puoi andare altrove".
 import { sunTimes, todayGone } from './human.js';
 import {fetchForecast} from './weather-request.js';
-import {cachedZoneWeather,saveZoneWeather,migrateOutingCache,validWeatherRows,WEATHER_FRESH_MS} from './weather-cache.js';
+import {cachedZoneWeather,saveZoneWeather,migrateOutingCache,validWeatherRows,WEATHER_SYNC_MS} from './weather-cache.js';
 
 const TTL = 60 * 60 * 1000;
 export const MAX_OUTING_AGE_MS = 3 * TTL;
@@ -22,7 +22,7 @@ export async function loadOuting(zones, { force = false,onUpdate,signal } = {}) 
     const r=records.get(z.id),h=r?.raw?.[0]?.hourly;if(!h)return [];
     return [[z.id,{time:h.time,p:h.precipitation,pp:h.precipitation_probability,wc:h.weather_code,g:h.wind_gusts_10m,t:h.temperature_2m,fetchedAt:new Date(r.t).toISOString(),elevation:z.bands[Math.floor(z.bands.length/2)]}]];
   }));
-  const waiting=zones.filter(z=>{const r=records.get(z.id);return force||!r||r.stale||Date.now()-r.t>=WEATHER_FRESH_MS;});
+  const waiting=zones.filter(z=>{const r=records.get(z.id);return force||!r||r.stale||Date.now()-r.t>=WEATHER_SYNC_MS;});
   if(records.size)onUpdate?.(snapshot(),{phase:'cache'});
   if(!waiting.length)return snapshot();
   const q=new URLSearchParams({latitude:waiting.map(z=>z.lat).join(','),longitude:waiting.map(z=>z.lon).join(','),elevation:waiting.map(z=>z.bands[Math.floor(z.bands.length/2)]).join(','),hourly:HOURLY,forecast_days:8,timezone:'Europe/Rome'});
