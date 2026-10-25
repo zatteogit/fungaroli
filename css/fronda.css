@@ -1357,36 +1357,36 @@ a.daily-thought-credit { color:var(--link); text-underline-offset:3px; }
 button.cover-index > span { white-space:normal; text-wrap:balance; }
 
 /* Tre ruoli distinti: scheda piegata, fumetto, azione. */
-#community-intro .community-vignettes { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin:16px 0 12px; padding-bottom:10px; }
-#community-intro .community-vignette { --bubble:var(--surface); position:relative; display:flex; flex-direction:column; align-items:flex-start; justify-content:flex-start; gap:7px; min-width:0; margin:0; padding:18px; border:1px solid var(--hair); background:var(--bubble); color:var(--text); text-align:left; }
-#community-intro .community-vignette-read { border-radius:3px; clip-path:polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,0 100%); }
-#community-intro .community-vignette-read::before { content:''; position:absolute; top:-1px; right:-1px; width:20px; height:20px; background:var(--hair); clip-path:polygon(0 0,100% 100%,0 100%); }
-#community-intro .community-vignette-story { border-radius:28px 28px 28px 4px; }
-#community-intro .community-vignette-story::after { content:''; position:absolute; left:24px; bottom:-9px; width:16px; height:16px; background:var(--bubble); border-right:1px solid var(--hair); border-bottom:1px solid var(--hair); transform:rotate(45deg); }
-#community-intro .community-vignette-icon { position:static; display:grid; place-items:center; flex:none; width:24px; height:24px; }
-#community-intro .community-vignette-icon svg { width:24px; height:24px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
-#community-intro .community-vignette :is(h3,strong) { margin:2px 0 0; font:700 15px/1.3 var(--font-body); }
-#community-intro .community-vignette :is(p,.community-vignette-copy) { margin:0; font:400 13px/1.45 var(--font-body); overflow-wrap:normal; }
-#community-intro .community-vignette-cta { --bubble:var(--action); border-radius:38px; color:var(--action-ink); border-color:var(--bubble); cursor:pointer; transition:background .18s ease; }
-#community-intro .community-vignette-cta:hover { --bubble:var(--action-hover); }
-#community-intro .community-vignette-cta:focus-visible { outline:3px solid var(--focus); outline-offset:4px; }
-#community-intro .community-vignette-cta strong { text-decoration:none; }
+:is(#community-intro,.community-help) .community-vignettes { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin:16px 0 12px; padding-bottom:10px; }
+:is(#community-intro,.community-help) .community-vignette { --bubble:var(--surface); position:relative; display:flex; flex-direction:column; align-items:flex-start; justify-content:flex-start; gap:7px; min-width:0; margin:0; padding:18px; border:1px solid var(--hair); background:var(--bubble); color:var(--text); text-align:left; }
+:is(#community-intro,.community-help) .community-vignette-read { border-radius:3px; clip-path:polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,0 100%); }
+:is(#community-intro,.community-help) .community-vignette-read::before { content:''; position:absolute; top:-1px; right:-1px; width:20px; height:20px; background:var(--hair); clip-path:polygon(0 0,100% 100%,0 100%); }
+:is(#community-intro,.community-help) .community-vignette-story { border-radius:28px 28px 28px 4px; }
+:is(#community-intro,.community-help) .community-vignette-story::after { content:''; position:absolute; left:24px; bottom:-9px; width:16px; height:16px; background:var(--bubble); border-right:1px solid var(--hair); border-bottom:1px solid var(--hair); transform:rotate(45deg); }
+:is(#community-intro,.community-help) .community-vignette-icon { position:static; display:grid; place-items:center; flex:none; width:24px; height:24px; }
+:is(#community-intro,.community-help) .community-vignette-icon svg { width:24px; height:24px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+:is(#community-intro,.community-help) .community-vignette :is(h3,strong) { margin:2px 0 0; font:700 15px/1.3 var(--font-body); }
+:is(#community-intro,.community-help) .community-vignette :is(p,.community-vignette-copy) { margin:0; font:400 13px/1.45 var(--font-body); overflow-wrap:normal; }
+:is(#community-intro,.community-help) .community-vignette-cta { --bubble:var(--action); border-radius:38px; color:var(--action-ink); border-color:var(--bubble); cursor:pointer; transition:background .18s ease; }
+:is(#community-intro,.community-help) .community-vignette-cta:hover { --bubble:var(--action-hover); }
+:is(#community-intro,.community-help) .community-vignette-cta:focus-visible { outline:3px solid var(--focus); outline-offset:4px; }
+:is(#community-intro,.community-help) .community-vignette-cta strong { text-decoration:none; }
 #community-intro .community-footer { display:block; }
 @media(max-width:480px) {
- #community-intro .community-vignettes { gap:8px; margin-top:12px; }
- #community-intro .community-vignette { gap:6px; padding:14px 10px; }
- #community-intro .community-vignette-story { border-radius:24px 24px 24px 4px; }
- #community-intro .community-vignette-cta { border-radius:30px; }
- #community-intro .community-vignette :is(h3,strong) { font-size:13px; }
- #community-intro .community-vignette :is(p,.community-vignette-copy) { font-size:12px; line-height:1.4; }
+ :is(#community-intro,.community-help) .community-vignettes { gap:8px; margin-top:12px; }
+ :is(#community-intro,.community-help) .community-vignette { gap:6px; padding:14px 10px; }
+ :is(#community-intro,.community-help) .community-vignette-story { border-radius:24px 24px 24px 4px; }
+ :is(#community-intro,.community-help) .community-vignette-cta { border-radius:30px; }
+ :is(#community-intro,.community-help) .community-vignette :is(h3,strong) { font-size:13px; }
+ :is(#community-intro,.community-help) .community-vignette :is(p,.community-vignette-copy) { font-size:12px; line-height:1.4; }
 }
 @media(max-width:359px) {
- #community-intro .community-vignettes { grid-template-columns:repeat(2,minmax(0,1fr)); }
- #community-intro .community-vignette-cta { grid-column:1/-1; display:grid; grid-template-columns:24px minmax(0,1fr); align-items:start; gap:3px 10px; border-radius:24px; }
- #community-intro .community-vignette-cta .community-vignette-icon { grid-row:1/3; }
- #community-intro .community-vignette-cta .community-vignette-copy { grid-column:2; }
+ :is(#community-intro,.community-help) .community-vignettes { grid-template-columns:repeat(2,minmax(0,1fr)); }
+ :is(#community-intro,.community-help) .community-vignette-cta { grid-column:1/-1; display:grid; grid-template-columns:24px minmax(0,1fr); align-items:start; gap:3px 10px; border-radius:24px; }
+ :is(#community-intro,.community-help) .community-vignette-cta .community-vignette-icon { grid-row:1/3; }
+ :is(#community-intro,.community-help) .community-vignette-cta .community-vignette-copy { grid-column:2; }
 }
-@media(prefers-reduced-motion:reduce) { #community-intro .community-vignette-cta { transition:none; } }
+@media(prefers-reduced-motion:reduce) { :is(#community-intro,.community-help) .community-vignette-cta { transition:none; } }
 
 /* Il punteggio secondario non deve sottrarre spazio all’avviso meteo. */
 #ranking .tile .ring.model-index.ring-sm { width:88px; min-width:0; max-width:88px; min-height:0; padding:7px 8px; gap:2px; border-radius:12px; }
@@ -1412,26 +1412,26 @@ button.cover-index > b { font-size:21px; line-height:1.2; }
 #ranking .tile:not(:has(> img:not([data-image-state="error"]),> .outdoor-backdrop)) > .tile-wx { max-width:calc(100% - 112px); }
 /* Un approfondimento compatto, con spiegazioni brevi e distinte. */
 #community-intro { margin:24px 0 28px; padding:20px; background:var(--story-germoglio); color:var(--story-ink); }
-#community-intro .community-vignettes { margin:18px 0 8px; }
+:is(#community-intro,.community-help) .community-vignettes { margin:18px 0 8px; }
 #community-intro .community-footer { margin-top:0; padding-top:0; border-top:0; }
 #community-intro .community-footer summary { min-height:32px; gap:8px; padding:0; font-size:13px; font-weight:500; color:inherit; }
 #community-intro .community-footer summary::before { content:none; }
 #community-intro .community-footer summary::after { content:''; width:6px; height:6px; margin-left:1px; border-right:1px solid currentColor; border-bottom:1px solid currentColor; transform:translateY(-2px) rotate(45deg); }
 #community-intro .community-footer details[open] > summary::after { content:''; transform:translateY(2px) rotate(225deg); }
-#community-intro .community-explainer { padding:14px 0 4px; }
-#community-intro .community-explainer .community-current-status { display:flex; align-items:flex-start; gap:8px; margin:0 0 22px; color:inherit; font-size:12px; }
-#community-intro .community-info-icon { display:inline-flex; flex:none; width:21px; height:21px; }
-#community-intro .community-info-icon svg { width:100%; height:100%; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
-#community-intro .community-current-status .community-info-icon { width:16px; height:16px; margin-top:2px; }
-#community-intro .community-explainer-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; }
-#community-intro .community-explainer-grid section { min-width:0; }
-#community-intro .community-how-access { grid-column:1/-1; padding-bottom:22px; border-bottom:1px solid color-mix(in srgb,var(--story-ink) 18%,transparent); }
-#community-intro .community-explainer h3 { display:flex; align-items:flex-start; gap:8px; margin:0 0 10px; font:600 14px/1.5 var(--font-body); }
-#community-intro .community-explainer p { max-width:65ch; margin:0; font-size:14px; line-height:1.6; }
-#community-intro .community-explainer > h3 { margin-top:24px; }
+:is(#community-intro,.community-help) .community-explainer { padding:14px 0 4px; }
+:is(#community-intro,.community-help) .community-explainer .community-current-status { display:flex; align-items:flex-start; gap:8px; margin:0 0 22px; color:inherit; font-size:12px; }
+:is(#community-intro,.community-help) .community-info-icon { display:inline-flex; flex:none; width:21px; height:21px; }
+:is(#community-intro,.community-help) .community-info-icon svg { width:100%; height:100%; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+:is(#community-intro,.community-help) .community-current-status .community-info-icon { width:16px; height:16px; margin-top:2px; }
+:is(#community-intro,.community-help) .community-explainer-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; }
+:is(#community-intro,.community-help) .community-explainer-grid section { min-width:0; }
+:is(#community-intro,.community-help) .community-how-access { grid-column:1/-1; padding-bottom:22px; border-bottom:1px solid color-mix(in srgb,var(--story-ink) 18%,transparent); }
+:is(#community-intro,.community-help) .community-explainer h3 { display:flex; align-items:flex-start; gap:8px; margin:0 0 10px; font:600 14px/1.5 var(--font-body); }
+:is(#community-intro,.community-help) .community-explainer p { max-width:65ch; margin:0; font-size:14px; line-height:1.6; }
+:is(#community-intro,.community-help) .community-explainer > h3 { margin-top:24px; }
 @media(max-width:599px) {
  #community-intro { margin:20px 0 24px; padding:16px; }
- #community-intro .community-explainer-grid { grid-template-columns:minmax(0,1fr); gap:22px; }
+ :is(#community-intro,.community-help) .community-explainer-grid { grid-template-columns:minmax(0,1fr); gap:22px; }
 }
 
 /* La larghezza del pannello, non quella dello schermo, decide la distribuzione. */

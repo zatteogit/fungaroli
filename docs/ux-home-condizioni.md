@@ -108,3 +108,10 @@ la card, cambiare la preferenza di chiusura o scorrere la home. Alla chiusura il
 torna al collegamento e la posizione della pagina rimane la stessa. La spiegazione
 include accesso ai riepiloghi, privacy, limiti delle osservazioni e scelta di ritirarle.
 Questa regola supera le precedenti indicazioni di riapertura della card dal link.
+
+La spiegazione nel pannello riusa il fondo verde germoglio, le tre vignette con
+icone e i contenuti della card chiudibile. I due inserimenti condividono lo stesso
+renderer; la home conserva la propria gestione di apertura e chiusura. Sul telefono
+le prime due vignette sono affiancate e l’azione occupa la riga successiva; i dettagli
+restano in una colonna. L’altezza del dialog segue il contenuto, con limite al viewport
+e testata di chiusura sempre raggiungibile, senza una grande superficie vuota sotto.
