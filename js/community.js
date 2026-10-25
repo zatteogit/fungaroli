@@ -1,4 +1,5 @@
 import {entityCommunity} from './fronda-connections.js';
+import {zoneCommunityHtml} from './zone-community.js';
 import {notebookGlyph} from './ui-icons.js';
 import {openModal} from './modal-flow.js';
 import { SPECIES } from './species.js';
@@ -19,6 +20,7 @@ const clearSummary = () => { summaryRevision++; summary = null; };
 export const communityEnabled = () => enabled;
 export const communityHasAccess = () => summary?.access==='granted';
 export const currentUser = () => user;
+export const zoneCommunity = (zone,resolve) => zoneCommunityHtml({zone,resolve,summary,status:communityStatus(),enabled,authenticated:!!user});
 export const communityReady = () => ready;
 export const communityForEntity = context => ({...entityCommunity(summary,context),status:communityStatus()});
 export const animalCommunity = id => ({access:summary?.access||'unavailable',status:communityStatus(),records:summary?.access==='granted'?(summary.observations||[]).filter(r=>r.category==='animale'&&r.taxonId===id):[]});
