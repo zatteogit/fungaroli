@@ -3,11 +3,11 @@
 // Il parametro `elevation` applica la correzione di quota (gradiente termico).
 
 import {fetchForecast} from './weather-request.js';
-import {cachedZoneWeather,saveZoneWeather,migrateGrowthCache,validWeatherRows,WEATHER_FRESH_MS} from './weather-cache.js';
+import {cachedZoneWeather,saveZoneWeather,migrateGrowthCache,validWeatherRows,GROWTH_FRESH_MS,WEATHER_SYNC_MS} from './weather-cache.js';
 import {compactGrowth,GROWTH_DAILY,GROWTH_HOURLY,soilFraction} from './weather-data.js';
 export const PAST_DAYS = 62;
 export const FORECAST_DAYS = 8;
-const CACHE_TTL_MS = 60 * 60 * 1000;
+const CACHE_TTL_MS = GROWTH_FRESH_MS;
 export const MAX_FORECAST_AGE_MS = 24 * 60 * 60 * 1000;
 const finite = (v) => Number.isFinite(v) ? v : null;
 
@@ -87,9 +87,9 @@ export async function loadWeather(zones, { force = false,onProgress,onUpdate,sig
       out[z.id]=r.raw.map((raw,bi)=>toDaily(raw,today,{fetchedAt:new Date(r.t).toISOString(),expired,cached:!!r.local||!!r.stale,requested:{latitude:z.lat,longitude:z.lon,elevation:z.bands[bi]}}));times.push(r.t);
     }
     const missingZones=zones.filter(z=>!out[z.id]).map(z=>z.id);
-    return {series:out,fetchedAt:new Date(Math.min(...times)),cached:[...records.values()].some(r=>r.local||r.stale),stale:[...records.values()].some(r=>r.stale||Date.now()-r.t>=WEATHER_FRESH_MS)||Object.values(out).some(ss=>ss.some(s=>s.todayIndex<0||s.source.expired)),missingZones};
+    return {series:out,fetchedAt:new Date(Math.min(...times)),cached:[...records.values()].some(r=>r.local||r.stale),stale:[...records.values()].some(r=>r.stale||Date.now()-r.t>=GROWTH_FRESH_MS)||Object.values(out).some(ss=>ss.some(s=>s.todayIndex<0||s.source.expired)),missingZones};
   };
-  const waiting=zones.filter(z=>{const r=records.get(z.id);return force||!r||r.stale||Date.now()-r.t>=WEATHER_FRESH_MS||!r.raw.every(row=>row.daily.time.includes(today));});
+  const waiting=zones.filter(z=>{const r=records.get(z.id);return force||!r||r.stale||Date.now()-r.t>=WEATHER_SYNC_MS||!r.raw.every(row=>row.daily.time.includes(today));});
   if(records.size)onUpdate?.(snapshot(),{phase:'cache',pending:waiting.map(z=>z.id)});
   if(!waiting.length)return snapshot();
   const locs=waiting.flatMap(z=>z.bands.map((band,bi)=>({z,bi,band})));

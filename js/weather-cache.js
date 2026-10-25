@@ -1,6 +1,8 @@
 import {compactGrowth} from './weather-data.js';
 
 export const WEATHER_FRESH_MS=3600000;
+export const GROWTH_FRESH_MS=4*WEATHER_FRESH_MS;
+export const WEATHER_SYNC_MS=5*60000;
 export const WEATHER_LOCAL_RETENTION_MS=6*86400000;
 const key=kind=>`fungaroli:${kind==='growth'?'weather':'outing'}:zones:v3`;
 export const zoneWeatherSignature=(z,kind='growth')=>`${z.id}|${z.lat},${z.lon}|${(kind==='growth'?z.bands:[z.bands[Math.floor(z.bands.length/2)]]).join(',')}`;

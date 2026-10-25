@@ -10,7 +10,7 @@
     { "binding": "CMS_DB", "database_name": "fungaroli-content", "migrations_dir": "migrations" }
   ],
   "rules": [{ "type": "Text", "globs": ["**/*.sql"], "fallthrough": true }],
-  "triggers": { "crons": ["17 3 * * *", "*/5 4,5 * * *"] },
+  "triggers": { "crons": ["* * * * *", "17 3 * * *", "*/5 4,5 * * *"] },
   "assets": {
     "directory": ".",
     "binding": "ASSETS",

@@ -58,7 +58,7 @@ test('the provider reports what it served and every upstream call',async()=>{
   assert.deepEqual(events.map(e=>e.event),['upstream:ok','served:miss','served:hit']);
   assert.equal(events[0].profile,'growth');assert.equal(events[0].weighted,10);assert.ok(Number.isFinite(events[0].ms));
   events.length=0;
-  await cachedForecast(params,{zones,cache,now:now+2*3600000,metrics,fetcher:async()=>Response.json({},{status:429})});
+  await cachedForecast(params,{zones,cache,now:now+5*3600000,metrics,fetcher:async()=>Response.json({},{status:429})});
   assert.deepEqual(events.map(e=>e.event),['upstream:429','served:stale-fallback']);
   events.length=0;store.clear();
   await assert.rejects(cachedForecast(params,{zones,cache,now,metrics,fetcher:async()=>Response.json({},{status:503})}));

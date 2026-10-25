@@ -87,6 +87,6 @@ test('cron: l’archivio gira solo nel suo orario, le pulizie restano sull’alt
   assert.equal(ARCHIVE_CRON, '*/5 4,5 * * *');
   const waits = [], ctx = { waitUntil: (p) => waits.push(p) };
   await worker.scheduled({ cron: '17 3 * * *' }, {}, ctx);
-  assert.equal(waits.length, 3, 'community, questionario e contatori meteo');
+  assert.equal(waits.length, 4, 'community, questionario, contatori e cache meteo');
   await Promise.allSettled(waits);
 });

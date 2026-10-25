@@ -18,7 +18,7 @@ export async function fetchForecast(params,{onProgress,onChunk,signal:parentSign
         let received;
         try {received=await requestForecast(query,signal);}catch(e){
           // Una risposta transitoria non deve cancellare tutte le altre zone.
-          if(!signal.aborted&&e.status>=500)received=await requestForecast(query,signal);else throw e;
+          if(!signal.aborted&&e.status>=500&&e.code!=='cache-warming')received=await requestForecast(query,signal);else throw e;
         }
         if(received.raw.length!==count)throw new Error('Serie meteo incompleta');
         onChunk?.({...received,start,count});
@@ -45,7 +45,7 @@ async function requestForecast(params,signal=AbortSignal.timeout(20000),waitForF
     try {detail=await response.json();} catch { /* risposta non JSON */ }
     throw Object.assign(new Error(detail?.error || (response.status===429
       ? 'Il servizio meteo ha raggiunto il limite di richieste. Riprova tra poco.'
-      : 'Il servizio meteo non è disponibile. Riprova tra poco.')), {status:response.status});
+      : 'Il servizio meteo non è disponibile. Riprova tra poco.')), {status:response.status,code:detail?.code});
   }
   const raw=await response.json(), stamp=response.headers?.get('x-weather-fetched-at');
   const stamped=stamp ? new Date(stamp) : new Date();
