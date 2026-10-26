@@ -48,12 +48,26 @@ test('memoria bloccata: conferma per questa apertura, nuova richiesta al riavvio
  await page.reload();await expect(page.locator('#onboarding')).toBeVisible();await expect(page.locator('#views')).toHaveAttribute('inert','');await context.close();
 });
 
-for(const standalone of [false,true])test(`condizioni e installazione fullscreen: ${standalone?'app installata':'Safari'}`,async({browser})=>{
+for(const standalone of [false,true])test(`installazione facoltativa dal terzo utilizzo: ${standalone?'app installata':'Safari'}`,async({browser})=>{
  const context=await browser.newContext({viewport:{width:390,height:660},userAgent:'Mozilla/5.0 (iPhone; CPU iPhone OS 18_6 like Mac OS X) AppleWebKit/605.1.15 Version/27.0 Mobile/15E148 Safari/604.1',hasTouch:true,reducedMotion:'reduce',serviceWorkers:'block'}),page=await preparePage(context,{legal:null});
  await page.addInitScript(value=>Object.defineProperty(navigator,'standalone',{value}),standalone);await page.goto('/');const onboarding=page.locator('#onboarding');await expect(onboarding).toBeVisible();await expect(page.locator('#install-invite[open]')).toHaveCount(0);
  await page.locator('#ob-accept').tap();await expect(onboarding).toBeHidden();const receipt=await page.evaluate(()=>JSON.parse(localStorage.getItem('fungaroli:legal-acceptance:v1')));expect(receipt.platform).toBe(standalone?'standalone':'browser');
- if(!standalone){const install=page.locator('#install-invite');await expect(install).toBeVisible();await expect(page.locator('dialog[open]:modal')).toHaveCount(1);await install.locator('.iv-close').tap();await expect(install).toBeHidden();}else{await expect(page.locator('#install-invite[open]')).toHaveCount(0);}
- await expect(page.locator('#views')).not.toHaveAttribute('inert','');await page.reload();await expect(page.locator('#hero .cover-link')).toBeVisible();await expect(onboarding).toBeHidden();await expect(page.locator('#install-invite[open]')).toHaveCount(0);await context.close();
+ await expect(page.locator('#install-invite[open]')).toHaveCount(0);await expect(page.locator('#install-banner')).toBeHidden();
+ await expect(page.locator('#views')).not.toHaveAttribute('inert','');await page.reload();await expect(page.locator('#hero .cover-link')).toBeVisible();await expect(onboarding).toBeHidden();await expect(page.locator('#install-invite[open]')).toHaveCount(0);
+ if(!standalone){
+  const uses=()=>page.evaluate(()=>JSON.parse(localStorage.getItem('fungaroli:install-uses:v1')));
+  expect((await uses()).count).toBe(1);
+  await page.addInitScript(()=>{const key='fungaroli:install-uses:v1',state=JSON.parse(localStorage.getItem(key));if(state){state.lastSeen=Date.now()-31*60e3;localStorage.setItem(key,JSON.stringify(state));}});
+  for(const count of [2,3]){
+   await page.reload();await expect(page.locator('#hero .cover-link')).toBeVisible();expect((await uses()).count).toBe(count);
+   await expect(page.locator('#install-invite[open]')).toHaveCount(0);
+   await expect(page.locator('#install-banner'))[count===3?'toBeVisible':'toBeHidden']();
+  }
+  await page.locator('#install-banner [data-install]').tap();await expect(page.locator('#install-invite')).toBeVisible();await page.locator('#install-invite .iv-close').tap();
+  await page.locator('#install-banner .ib-close').tap();await page.reload();await expect(page.locator('#hero .cover-link')).toBeVisible();await expect(page.locator('#install-banner')).toBeHidden();
+ }
+ await page.goto('/#/info');await expect(page.locator('#install-info'))[standalone?'toBeHidden':'toBeVisible']();
+ await context.close();
 });
 
 test('testi aggiornati conservano la ricevuta; una revisione delle CGS richiede una nuova conferma',async({browser})=>{
