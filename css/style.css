@@ -1505,7 +1505,7 @@ html.modal-viewport-constrained :is(.wiz,.sheet-dlg,.community-dialog,.cmp-choos
   background: var(--caution-bg); color: var(--caution-ink); box-shadow: inset 0 0 0 1.5px var(--caution);
 }
 :is(.id-card.tox-commestibile-con-cautela .tox, .cmp-fig.tox-commestibile-con-cautela .tox, .tx-body.tox-commestibile-con-cautela .tox, .tx-c.tox-commestibile-con-cautela .tox, .look .tox-commestibile-con-cautela .tox, .tx-pill.tox-commestibile-con-cautela, .sr-badge.tox-commestibile-con-cautela)::before {
-  content: "!"; content: "!" / ""; margin-right: 4px; font-weight: 800; color: var(--caution);
+  content: "!"; content: "!" / ""; display:inline-grid; place-items:center; width:1.1em; height:1.1em; margin-right:5px; border-radius:50%; font-weight:800; line-height:1; background:var(--caution); color:var(--warn-bg);
 }
 /* didascalia della foto ingrandita: fondo sempre scuro in entrambi i temi, quindi l'ambra chiaro stabile del testo sulle foto */
 .lb-cap .tox-commestibile-con-cautela { box-shadow: inset 0 0 0 1.5px var(--photo-warning); }
