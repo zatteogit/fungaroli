@@ -12,6 +12,7 @@ import {setBaseUser,mountBaseEditor} from './base-location.js';
 import {downloadAccountData} from './data-export.js';
 import {clearNotebookStore,accountNotebookScope} from './notebook-photo-store.js';
 import {RESEARCH_CONSENT_VERSION,RESEARCH_CONSENT_TEXT} from './research-consent.js';
+import {initResearchConsentInvite} from './research-consent-invite.js';
 
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 let enabled = false, user = null, summary = null, zones = [], ready = Promise.resolve(), reportDialog, authDialog, speciesCatalog = SPECIES;
@@ -113,6 +114,7 @@ async function session() {
 
 export function initCommunity({ zoneList, speciesList = SPECIES }) {
   zones = zoneList; speciesCatalog = speciesList;
+  initResearchConsentInvite({getUser:()=>user,save:saveResearchConsent});
   document.addEventListener('fungaroli:refresh-community', refreshCommunity);
   document.addEventListener('fungaroli:refresh-account',async()=>{if(enabled){clearSummary();changed();await session();await refreshCommunity();}});
   ready = (async () => {
@@ -138,6 +140,12 @@ export async function ensureAccount() {
 }
 
 // Consenso alla ricerca (D4): separato dalla condivisione, spento all'inizio, revocabile in ogni momento.
+async function saveResearchConsent(accountId,granted){
+ if(user?.id!==accountId)throw new Error('Il profilo è cambiato. Riaprilo prima di salvare.');
+ const r=await communityRequest('research-consent','PUT',{accountId,granted,version:RESEARCH_CONSENT_VERSION});
+ if(user?.id!==accountId)throw new Error('Il profilo è cambiato. Riaprilo prima di salvare.');
+ user={...user,research:r.research};return r;
+}
 function mountResearchConsent(slot,accountId){
   const since=r=>r?.granted&&r.since?`Consenso dato il ${new Date(r.since).toLocaleDateString('it-IT',{day:'numeric',month:'long',year:'numeric'})}.`:'Spento: le tue osservazioni condivise servono solo alla community.';
   slot.innerHTML=`<label class="composer-share-switch"><span><b>Studio dell’indice</b><small>${esc(RESEARCH_CONSENT_TEXT)}</small></span><input class="switch-input" type="checkbox" role="switch" data-research-switch${user?.research?.granted?' checked':''}></label><p class="small muted" role="status" data-research-status>${esc(since(user?.research))}</p>`;
@@ -145,9 +153,7 @@ function mountResearchConsent(slot,accountId){
   input.addEventListener('change',async()=>{
     const granted=input.checked;input.disabled=true;status.textContent='Salvo la scelta…';
     try{
-      if(user?.id!==accountId)throw new Error('Il profilo è cambiato. Riaprilo prima di salvare.');
-      const r=await communityRequest('research-consent','PUT',{accountId,granted,version:RESEARCH_CONSENT_VERSION});
-      if(user?.id===accountId)user={...user,research:r.research};
+      const r=await saveResearchConsent(accountId,granted);
       input.checked=!!r.research.granted;status.textContent=since(r.research);
     }catch(e){input.checked=!granted;status.textContent=e.message||'Scelta non salvata. Riprova.';}
     finally{input.disabled=false;}

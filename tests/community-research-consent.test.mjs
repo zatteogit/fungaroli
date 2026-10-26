@@ -56,6 +56,16 @@ async function setup() {
 }
 const choose = (granted, accountId = 'acc-a', version = RESEARCH_CONSENT_VERSION) => ({ accountId, granted, version });
 
+test('il primo rifiuto è una scelta esplicita persistita, distinta dal non aver ancora risposto', async () => {
+ const {sql,call,json}=await setup();
+ const declined=await json(await call('a','PUT','research-consent',choose(false)));
+ assert.equal(declined.status,200);assert.deepEqual(declined.data.research,{granted:false,version:RESEARCH_CONSENT_VERSION,since:new Date(NOW).toISOString()});
+ await call('a','PUT','research-consent',choose(false),NOW+6e4);
+ assert.equal(sql.prepare("SELECT count(*) AS n FROM research_consents WHERE account_id='acc-a'").get().n,1);
+ assert.deepEqual((await json(await call('a','GET','session'))).data.user.research,declined.data.research);
+ sql.close();
+});
+
 test('consenso alla ricerca: spento all’inizio, dato e tolto dal profilo, una riga per ogni cambiamento', async () => {
   const { sql, call, json } = await setup();
   assert.deepEqual((await json(await call('a', 'GET', 'session'))).data.user.research, { granted: false, version: null, since: null });
