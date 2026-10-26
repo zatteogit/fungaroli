@@ -1,0 +1,948 @@
+{
+ "verifiedOn": "2026-10-26",
+ "baseline": "bc82f3c8",
+ "layoutProbe": [
+  {
+   "label": "before",
+   "rect": 30,
+   "height": 30,
+   "style": 30,
+   "steps": 30
+  },
+  {
+   "label": "after",
+   "rect": 0,
+   "height": 0,
+   "style": 0,
+   "steps": 30
+  }
+ ],
+ "browsers": {
+  "Chrome": {
+   "cases": [
+    {
+     "theme": "light",
+     "width": 320,
+     "height": 844,
+     "expanded": {
+      "width": 296,
+      "height": 64
+     },
+     "compact": {
+      "width": 296,
+      "height": 56,
+      "progress": 1
+     },
+     "revealedProgress": 0,
+     "minimumTargetWidth": 54,
+     "minimumTargetHeight": 46,
+     "allTargetsReachable": true,
+     "allIconsOpaque": true,
+     "overflow": false,
+     "indicatorError": 0,
+     "searchVisible": true
+    },
+    {
+     "theme": "light",
+     "width": 390,
+     "height": 844,
+     "expanded": {
+      "width": 366,
+      "height": 64
+     },
+     "compact": {
+      "width": 304,
+      "height": 56,
+      "progress": 1
+     },
+     "revealedProgress": 0,
+     "minimumTargetWidth": 56,
+     "minimumTargetHeight": 46,
+     "allTargetsReachable": true,
+     "allIconsOpaque": true,
+     "overflow": false,
+     "indicatorError": 0,
+     "searchVisible": true
+    },
+    {
+     "theme": "light",
+     "width": 430,
+     "height": 932,
+     "expanded": {
+      "width": 406,
+      "height": 64
+     },
+     "compact": {
+      "width": 304,
+      "height": 56,
+      "progress": 1
+     },
+     "revealedProgress": 0,
+     "minimumTargetWidth": 56,
+     "minimumTargetHeight": 46,
+     "allTargetsReachable": true,
+     "allIconsOpaque": true,
+     "overflow": false,
+     "indicatorError": 0,
+     "searchVisible": true
+    },
+    {
+     "theme": "light",
+     "width": 768,
+     "height": 1024,
+     "expanded": {
+      "width": 520,
+      "height": 64
+     },
+     "compact": {
+      "width": 304,
+      "height": 56,
+      "progress": 1
+     },
+     "revealedProgress": 0,
+     "minimumTargetWidth": 56,
+     "minimumTargetHeight": 46,
+     "allTargetsReachable": true,
+     "allIconsOpaque": true,
+     "overflow": false,
+     "indicatorError": 0,
+     "searchVisible": true
+    },
+    {
+     "theme": "light",
+     "width": 844,
+     "height": 390,
+     "expanded": {
+      "width": 520,
+      "height": 56
+     },
+     "compact": {
+      "width": 304,
+      "height": 56,
+      "progress": 1
+     },
+     "revealedProgress": 0,
+     "minimumTargetWidth": 56,
+     "minimumTargetHeight": 46,
+     "allTargetsReachable": true,
+     "allIconsOpaque": true,
+     "overflow": false,
+     "indicatorError": 0,
+     "searchVisible": true
+    },
+    {
+     "theme": "light",
+     "width": 1280,
+     "height": 900,
+     "expanded": {
+      "width": 573.765625,
+      "height": 56
+     },
+     "compact": {
+      "width": 573.765625,
+      "height": 56,
+      "progress": 0
+     },
+     "revealedProgress": 0,
+     "minimumTargetWidth": 105.765625,
+     "minimumTargetHeight": 44,
+     "allTargetsReachable": true,
+     "allIconsOpaque": true,
+     "overflow": false,
+     "indicatorError": 0,
+     "searchVisible": true
+    },
+    {
+     "theme": "dark",
+     "width": 320,
+     "height": 844,
+     "expanded": {
+      "width": 296,
+      "height": 64
+     },
+     "compact": {
+      "width": 296,
+      "height": 56,
+      "progress": 1
+     },
+     "revealedProgress": 0,
+     "minimumTargetWidth": 54,
+     "minimumTargetHeight": 46,
+     "allTargetsReachable": true,
+     "allIconsOpaque": true,
+     "overflow": false,
+     "indicatorError": 0,
+     "searchVisible": true
+    },
+    {
+     "theme": "dark",
+     "width": 390,
+     "height": 844,
+     "expanded": {
+      "width": 366,
+      "height": 64
+     },
+     "compact": {
+      "width": 304,
+      "height": 56,
+      "progress": 1
+     },
+     "revealedProgress": 0,
+     "minimumTargetWidth": 56,
+     "minimumTargetHeight": 46,
+     "allTargetsReachable": true,
+     "allIconsOpaque": true,
+     "overflow": false,
+     "indicatorError": 0,
+     "searchVisible": true
+    },
+    {
+     "theme": "dark",
+     "width": 430,
+     "height": 932,
+     "expanded": {
+      "width": 406,
+      "height": 64
+     },
+     "compact": {
+      "width": 304,
+      "height": 56,
+      "progress": 1
+     },
+     "revealedProgress": 0,
+     "minimumTargetWidth": 56,
+     "minimumTargetHeight": 46,
+     "allTargetsReachable": true,
+     "allIconsOpaque": true,
+     "overflow": false,
+     "indicatorError": 0,
+     "searchVisible": true
+    },
+    {
+     "theme": "dark",
+     "width": 768,
+     "height": 1024,
+     "expanded": {
+      "width": 520,
+      "height": 64
+     },
+     "compact": {
+      "width": 304,
+      "height": 56,
+      "progress": 1
+     },
+     "revealedProgress": 0,
+     "minimumTargetWidth": 56,
+     "minimumTargetHeight": 46,
+     "allTargetsReachable": true,
+     "allIconsOpaque": true,
+     "overflow": false,
+     "indicatorError": 0,
+     "searchVisible": true
+    },
+    {
+     "theme": "dark",
+     "width": 844,
+     "height": 390,
+     "expanded": {
+      "width": 520,
+      "height": 56
+     },
+     "compact": {
+      "width": 304,
+      "height": 56,
+      "progress": 1
+     },
+     "revealedProgress": 0,
+     "minimumTargetWidth": 56,
+     "minimumTargetHeight": 46,
+     "allTargetsReachable": true,
+     "allIconsOpaque": true,
+     "overflow": false,
+     "indicatorError": 0,
+     "searchVisible": true
+    },
+    {
+     "theme": "dark",
+     "width": 1280,
+     "height": 900,
+     "expanded": {
+      "width": 573.765625,
+      "height": 56
+     },
+     "compact": {
+      "width": 573.765625,
+      "height": 56,
+      "progress": 0
+     },
+     "revealedProgress": 0,
+     "minimumTargetWidth": 105.765625,
+     "minimumTargetHeight": 44,
+     "allTargetsReachable": true,
+     "allIconsOpaque": true,
+     "overflow": false,
+     "indicatorError": 0,
+     "searchVisible": true
+    }
+   ],
+   "pointerHeld": true,
+   "pressedNavigation": "page",
+   "reducedMotion": true,
+   "keyboardFocus": true,
+   "reversalTrace": {
+    "samples": [
+     {
+      "ms": 4.8,
+      "progress": 0
+     },
+     {
+      "ms": 21.5,
+      "progress": 0
+     },
+     {
+      "ms": 38.2,
+      "progress": 0.090503
+     },
+     {
+      "ms": 54.9,
+      "progress": 0.226079
+     },
+     {
+      "ms": 71.5,
+      "progress": 0.368812
+     },
+     {
+      "ms": 88.2,
+      "progress": 0.497712
+     },
+     {
+      "ms": 104.9,
+      "progress": 0.609375
+     },
+     {
+      "ms": 121.5,
+      "progress": 0.622502
+     },
+     {
+      "ms": 138.1,
+      "progress": 0.555395
+     },
+     {
+      "ms": 154.8,
+      "progress": 0.465491
+     },
+     {
+      "ms": 171.5,
+      "progress": 0.375764
+     },
+     {
+      "ms": 188.1,
+      "progress": 0.295957
+     },
+     {
+      "ms": 204.8,
+      "progress": 0.320333
+     },
+     {
+      "ms": 221.5,
+      "progress": 0.401592
+     },
+     {
+      "ms": 238.2,
+      "progress": 0.501595
+     },
+     {
+      "ms": 254.8,
+      "progress": 0.599094
+     },
+     {
+      "ms": 271.5,
+      "progress": 0.683634
+     },
+     {
+      "ms": 288.1,
+      "progress": 0.755525
+     },
+     {
+      "ms": 304.8,
+      "progress": 0.811928
+     },
+     {
+      "ms": 321.5,
+      "progress": 0.857526
+     },
+     {
+      "ms": 338.1,
+      "progress": 0.892874
+     },
+     {
+      "ms": 354.8,
+      "progress": 0.919089
+     },
+     {
+      "ms": 371.5,
+      "progress": 0.939614
+     },
+     {
+      "ms": 388.1,
+      "progress": 0.955122
+     },
+     {
+      "ms": 404.9,
+      "progress": 0.966377
+     },
+     {
+      "ms": 421.5,
+      "progress": 0.975117
+     },
+     {
+      "ms": 438.2,
+      "progress": 0.98139
+     },
+     {
+      "ms": 454.8,
+      "progress": 0.986224
+     },
+     {
+      "ms": 471.5,
+      "progress": 0.989707
+     },
+     {
+      "ms": 488.2,
+      "progress": 0.992387
+     },
+     {
+      "ms": 504.8,
+      "progress": 0.994383
+     },
+     {
+      "ms": 521.5,
+      "progress": 0.995813
+     },
+     {
+      "ms": 538.1,
+      "progress": 0.99691
+     },
+     {
+      "ms": 554.8,
+      "progress": 0.997696
+     },
+     {
+      "ms": 571.5,
+      "progress": 0.998299
+     },
+     {
+      "ms": 588.1,
+      "progress": 0.998746
+     },
+     {
+      "ms": 604.8,
+      "progress": 0.999067
+     },
+     {
+      "ms": 621.5,
+      "progress": 0.999312
+     },
+     {
+      "ms": 638.1,
+      "progress": 0.999493
+     },
+     {
+      "ms": 654.8,
+      "progress": 1
+     },
+     {
+      "ms": 671.5,
+      "progress": 1
+     },
+     {
+      "ms": 688.2,
+      "progress": 1
+     },
+     {
+      "ms": 704.9,
+      "progress": 1
+     },
+     {
+      "ms": 721.5,
+      "progress": 1
+     },
+     {
+      "ms": 738.1,
+      "progress": 1
+     },
+     {
+      "ms": 754.8,
+      "progress": 1
+     },
+     {
+      "ms": 771.4,
+      "progress": 1
+     },
+     {
+      "ms": 788.1,
+      "progress": 1
+     },
+     {
+      "ms": 804.8,
+      "progress": 1
+     },
+     {
+      "ms": 821.5,
+      "progress": 1
+     },
+     {
+      "ms": 838.1,
+      "progress": 1
+     },
+     {
+      "ms": 854.8,
+      "progress": 1
+     },
+     {
+      "ms": 871.5,
+      "progress": 1
+     },
+     {
+      "ms": 888.1,
+      "progress": 1
+     },
+     {
+      "ms": 904.9,
+      "progress": 1
+     },
+     {
+      "ms": 921.5,
+      "progress": 1
+     },
+     {
+      "ms": 938.1,
+      "progress": 1
+     },
+     {
+      "ms": 954.8,
+      "progress": 1
+     },
+     {
+      "ms": 971.5,
+      "progress": 1
+     },
+     {
+      "ms": 988.2,
+      "progress": 1
+     },
+     {
+      "ms": 1004.8,
+      "progress": 1
+     }
+    ],
+    "longTasks": []
+   }
+  },
+  "WebKit iPhone 15 emulation": {
+   "cases": [
+    {
+     "theme": "light",
+     "width": 320,
+     "height": 844,
+     "expanded": {
+      "width": 296,
+      "height": 64
+     },
+     "compact": {
+      "width": 296,
+      "height": 56,
+      "progress": 1
+     },
+     "revealedProgress": 0,
+     "minimumTargetWidth": 54,
+     "minimumTargetHeight": 46,
+     "allTargetsReachable": true,
+     "allIconsOpaque": true,
+     "overflow": false,
+     "indicatorError": 0.015625,
+     "searchVisible": true
+    },
+    {
+     "theme": "light",
+     "width": 390,
+     "height": 844,
+     "expanded": {
+      "width": 366,
+      "height": 64
+     },
+     "compact": {
+      "width": 304,
+      "height": 56,
+      "progress": 1
+     },
+     "revealedProgress": 0,
+     "minimumTargetWidth": 56,
+     "minimumTargetHeight": 46,
+     "allTargetsReachable": true,
+     "allIconsOpaque": true,
+     "overflow": false,
+     "indicatorError": 0.015625,
+     "searchVisible": true
+    },
+    {
+     "theme": "light",
+     "width": 430,
+     "height": 932,
+     "expanded": {
+      "width": 406,
+      "height": 64
+     },
+     "compact": {
+      "width": 304,
+      "height": 56,
+      "progress": 1
+     },
+     "revealedProgress": 0,
+     "minimumTargetWidth": 56,
+     "minimumTargetHeight": 46,
+     "allTargetsReachable": true,
+     "allIconsOpaque": true,
+     "overflow": false,
+     "indicatorError": 0.015625,
+     "searchVisible": true
+    },
+    {
+     "theme": "light",
+     "width": 768,
+     "height": 1024,
+     "expanded": {
+      "width": 520,
+      "height": 64
+     },
+     "compact": {
+      "width": 304,
+      "height": 56,
+      "progress": 1
+     },
+     "revealedProgress": 0,
+     "minimumTargetWidth": 56,
+     "minimumTargetHeight": 46,
+     "allTargetsReachable": true,
+     "allIconsOpaque": true,
+     "overflow": false,
+     "indicatorError": 0.015625,
+     "searchVisible": true
+    },
+    {
+     "theme": "light",
+     "width": 844,
+     "height": 390,
+     "expanded": {
+      "width": 520,
+      "height": 56
+     },
+     "compact": {
+      "width": 304,
+      "height": 56,
+      "progress": 1
+     },
+     "revealedProgress": 0,
+     "minimumTargetWidth": 56,
+     "minimumTargetHeight": 46,
+     "allTargetsReachable": true,
+     "allIconsOpaque": true,
+     "overflow": false,
+     "indicatorError": 0.015625,
+     "searchVisible": true
+    },
+    {
+     "theme": "light",
+     "width": 1280,
+     "height": 900,
+     "expanded": {
+      "width": 573.765625,
+      "height": 56
+     },
+     "compact": {
+      "width": 573.765625,
+      "height": 56,
+      "progress": 0
+     },
+     "revealedProgress": 0,
+     "minimumTargetWidth": 105.765625,
+     "minimumTargetHeight": 44,
+     "allTargetsReachable": true,
+     "allIconsOpaque": true,
+     "overflow": false,
+     "indicatorError": 0,
+     "searchVisible": true
+    },
+    {
+     "theme": "dark",
+     "width": 320,
+     "height": 844,
+     "expanded": {
+      "width": 296,
+      "height": 64
+     },
+     "compact": {
+      "width": 296,
+      "height": 56,
+      "progress": 1
+     },
+     "revealedProgress": 0,
+     "minimumTargetWidth": 54,
+     "minimumTargetHeight": 46,
+     "allTargetsReachable": true,
+     "allIconsOpaque": true,
+     "overflow": false,
+     "indicatorError": 0.015625,
+     "searchVisible": true
+    },
+    {
+     "theme": "dark",
+     "width": 390,
+     "height": 844,
+     "expanded": {
+      "width": 366,
+      "height": 64
+     },
+     "compact": {
+      "width": 304,
+      "height": 56,
+      "progress": 1
+     },
+     "revealedProgress": 0,
+     "minimumTargetWidth": 56,
+     "minimumTargetHeight": 46,
+     "allTargetsReachable": true,
+     "allIconsOpaque": true,
+     "overflow": false,
+     "indicatorError": 0.015625,
+     "searchVisible": true
+    },
+    {
+     "theme": "dark",
+     "width": 430,
+     "height": 932,
+     "expanded": {
+      "width": 406,
+      "height": 64
+     },
+     "compact": {
+      "width": 304,
+      "height": 56,
+      "progress": 1
+     },
+     "revealedProgress": 0,
+     "minimumTargetWidth": 56,
+     "minimumTargetHeight": 46,
+     "allTargetsReachable": true,
+     "allIconsOpaque": true,
+     "overflow": false,
+     "indicatorError": 0.015625,
+     "searchVisible": true
+    },
+    {
+     "theme": "dark",
+     "width": 768,
+     "height": 1024,
+     "expanded": {
+      "width": 520,
+      "height": 64
+     },
+     "compact": {
+      "width": 304,
+      "height": 56,
+      "progress": 1
+     },
+     "revealedProgress": 0,
+     "minimumTargetWidth": 56,
+     "minimumTargetHeight": 46,
+     "allTargetsReachable": true,
+     "allIconsOpaque": true,
+     "overflow": false,
+     "indicatorError": 0.015625,
+     "searchVisible": true
+    },
+    {
+     "theme": "dark",
+     "width": 844,
+     "height": 390,
+     "expanded": {
+      "width": 520,
+      "height": 56
+     },
+     "compact": {
+      "width": 304,
+      "height": 56,
+      "progress": 1
+     },
+     "revealedProgress": 0,
+     "minimumTargetWidth": 56,
+     "minimumTargetHeight": 46,
+     "allTargetsReachable": true,
+     "allIconsOpaque": true,
+     "overflow": false,
+     "indicatorError": 0.015625,
+     "searchVisible": true
+    },
+    {
+     "theme": "dark",
+     "width": 1280,
+     "height": 900,
+     "expanded": {
+      "width": 573.765625,
+      "height": 56
+     },
+     "compact": {
+      "width": 573.765625,
+      "height": 56,
+      "progress": 0
+     },
+     "revealedProgress": 0,
+     "minimumTargetWidth": 105.765625,
+     "minimumTargetHeight": 44,
+     "allTargetsReachable": true,
+     "allIconsOpaque": true,
+     "overflow": false,
+     "indicatorError": 0,
+     "searchVisible": true
+    }
+   ],
+   "pointerHeld": true,
+   "pressedNavigation": "page",
+   "reducedMotion": true,
+   "keyboardFocus": true,
+   "reversalTrace": {
+    "samples": [
+     {
+      "ms": 6,
+      "progress": 0
+     },
+     {
+      "ms": 40,
+      "progress": 0
+     },
+     {
+      "ms": 73,
+      "progress": 0.090503
+     },
+     {
+      "ms": 107,
+      "progress": 0.371562
+     },
+     {
+      "ms": 141,
+      "progress": 0.616803
+     },
+     {
+      "ms": 173,
+      "progress": 0.553308
+     },
+     {
+      "ms": 204,
+      "progress": 0.380478
+     },
+     {
+      "ms": 236,
+      "progress": 0.447794
+     },
+     {
+      "ms": 268,
+      "progress": 0.619219
+     },
+     {
+      "ms": 303,
+      "progress": 0.760941
+     },
+     {
+      "ms": 336,
+      "progress": 0.863834
+     },
+     {
+      "ms": 369,
+      "progress": 0.921314
+     },
+     {
+      "ms": 398,
+      "progress": 0.954968
+     },
+     {
+      "ms": 431,
+      "progress": 0.972719
+     },
+     {
+      "ms": 465,
+      "progress": 0.984548
+     },
+     {
+      "ms": 498,
+      "progress": 0.991502
+     },
+     {
+      "ms": 532,
+      "progress": 0.995212
+     },
+     {
+      "ms": 565,
+      "progress": 0.997376
+     },
+     {
+      "ms": 598,
+      "progress": 0.998524
+     },
+     {
+      "ms": 631,
+      "progress": 0.999167
+     },
+     {
+      "ms": 666,
+      "progress": 0.99953
+     },
+     {
+      "ms": 698,
+      "progress": 1
+     },
+     {
+      "ms": 733,
+      "progress": 1
+     },
+     {
+      "ms": 765,
+      "progress": 1
+     },
+     {
+      "ms": 797,
+      "progress": 1
+     },
+     {
+      "ms": 832,
+      "progress": 1
+     },
+     {
+      "ms": 865,
+      "progress": 1
+     },
+     {
+      "ms": 898,
+      "progress": 1
+     },
+     {
+      "ms": 933,
+      "progress": 1
+     },
+     {
+      "ms": 965,
+      "progress": 1
+     },
+     {
+      "ms": 998,
+      "progress": 1
+     },
+     {
+      "ms": 1032,
+      "progress": 1
+     }
+    ],
+    "longTasks": null
+   }
+  }
+ }
+}
