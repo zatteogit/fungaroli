@@ -1,5 +1,46 @@
 import {test,expect} from '@playwright/test';
 import {preparePage} from '../../tools/visual-audit.mjs';
+test('studio dell’indice: ospite escluso e rinvio separato per profilo',async({browser})=>{
+ const context=await browser.newContext({viewport:{width:320,height:740},reducedMotion:'reduce',serviceWorkers:'block'}),page=await preparePage(context);
+ let account=null,writes=0;
+ await page.route('**/api/community/status',r=>r.fulfill({json:{enabled:true}}));
+ await page.route('**/api/community/session',r=>r.fulfill(account?{json:{user:{id:account,handle:'Prova',role:'member',research:{granted:false,version:null,since:null}}}}:{status:401,json:{error:'Accedi'}}));
+ await page.route('**/api/community/summary',r=>r.fulfill({json:{access:'locked',reports:[],observations:[]}}));
+ await page.route('**/api/community/research-consent',r=>{writes++;return r.fulfill({status:500,json:{error:'Non deve essere salvato nulla'}});});
+ await page.goto('/#/diario');await expect(page.locator('#journal-list .diary-empty')).toBeVisible();await page.waitForTimeout(900);await expect(page.locator('#research-consent-invite')).toBeHidden();
+ account='first-account';await page.reload();const invite=page.locator('#research-consent-invite');await expect(invite).toBeVisible();
+ expect(await invite.evaluate(el=>el.scrollWidth>el.clientWidth)).toBe(false);await page.keyboard.press('Escape');await expect(invite).toBeHidden();
+ await page.reload();await expect(page.locator('#journal-list .diary-empty')).toBeVisible();await page.waitForTimeout(900);await expect(invite).toBeHidden();
+ account='second-account';await page.reload();await expect(invite).toBeVisible();await invite.locator('[data-later]').click();expect(writes).toBe(0);
+ await context.close();
+});
+for(const granted of [false,true])test(`studio dell’indice alla prima occasione libera: ${granted?'consenso':'rifiuto'}`,async({browser})=>{
+ const context=await browser.newContext({viewport:{width:390,height:844},reducedMotion:'reduce',serviceWorkers:'block'}),page=await preparePage(context);
+ let research={granted:false,version:null,since:null},writes=0,finish;
+ await page.route('**/api/community/status',r=>r.fulfill({json:{enabled:true}}));
+ await page.route('**/api/community/session',r=>r.fulfill({json:{user:{id:'research-user',handle:'Prova',role:'member',research}}}));
+ await page.route('**/api/community/summary',r=>r.fulfill({json:{access:'locked',reports:[],observations:[]}}));
+ await page.route('**/api/community/research-consent',async r=>{
+  writes++;await new Promise(resolve=>finish=resolve);
+  if(writes===1)return r.fulfill({status:503,json:{error:'Scelta non salvata. Riprova.'}});
+  research={granted:r.request().postDataJSON().granted,version:'fronda-research-v1',since:new Date().toISOString()};await r.fulfill({json:{research}});
+ });
+ await page.addInitScript(async()=>{
+  // Un percorso già aperto deve finire prima dell'invito.
+  addEventListener('fronda:boot-ready',async()=>{const dialog=document.createElement('dialog');dialog.id='research-blocker';dialog.innerHTML='<button>Chiudi percorso</button>';document.body.append(dialog);(await import('/js/modal-flow.js')).openModal(dialog);dialog.querySelector('button').onclick=()=>dialog.close();},{once:true});
+ });
+ await page.goto('/#/diario');const invite=page.locator('#research-consent-invite');
+ await expect(page.locator('#research-blocker')).toBeVisible();await expect(invite).toBeHidden();expect(writes).toBe(0);
+ await page.getByRole('button',{name:'Chiudi percorso'}).click();await expect(invite).toBeVisible();
+ await expect(invite).toContainText('Gli appunti privati restano fuori');await expect(invite.locator('[data-choice]')).toHaveCount(2);
+ const choice=invite.locator(`[data-choice="${granted}"]`);await choice.click();await expect(invite).toHaveAttribute('aria-busy','true');await expect(choice).toBeDisabled();await expect.poll(()=>writes).toBe(1);finish();
+ await expect(invite.locator('[data-status]')).toHaveText('Scelta non salvata. Riprova.');await expect(choice).toBeEnabled();
+ await choice.click();await expect.poll(()=>writes).toBe(2);finish();await expect(invite).toBeHidden();
+ await page.reload();await expect(page.locator('#research-blocker')).toBeVisible();await page.getByRole('button',{name:'Chiudi percorso'}).click();
+ await page.locator('.profile-entry[data-community-account]').click();if(granted)await expect(page.locator('[data-research-switch]')).toBeChecked();else await expect(page.locator('[data-research-switch]')).not.toBeChecked();
+ await page.locator('.profile-dialog [data-close]').first().click();await page.waitForTimeout(900);await expect(invite).toBeHidden();expect(writes).toBe(2);
+ await context.close();
+});
 for(const width of [320,390])test(`avviso prototipo e cookie con una sola conferma a ${width}px`,async({browser})=>{
  const context=await browser.newContext({viewport:{width,height:844},hasTouch:true,reducedMotion:'reduce',serviceWorkers:'block'}),page=await preparePage(context,{legal:null}),errors=[];
  page.on('pageerror',error=>errors.push(error.message));

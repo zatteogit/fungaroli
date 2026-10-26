@@ -259,7 +259,7 @@ export async function handleCommunity(request, env, now = Date.now()) {
       if(typeof data.granted!=='boolean'||data.version!==RESEARCH_CONSENT_VERSION)fail('Scelta non valida. Ricarica la pagina e riprova.',422);
       const current=await researchConsent(db,user.id);
       // Una riga per ogni cambiamento reale: ripetere la stessa scelta non riscrive la data.
-      if(current.granted!==data.granted||data.granted&&current.version!==data.version)await db.prepare('INSERT INTO research_consents(account_id,version,granted,recorded_at) VALUES(?,?,?,?)').bind(user.id,data.version,data.granted?1:0,now).run();
+      if(current.granted!==data.granted||current.version!==data.version)await db.prepare('INSERT INTO research_consents(account_id,version,granted,recorded_at) VALUES(?,?,?,?)').bind(user.id,data.version,data.granted?1:0,now).run();
       return result({research:await researchConsent(db,user.id)});
     }
     if(path==='places'&&request.method==='GET'){
