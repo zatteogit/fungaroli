@@ -16,6 +16,14 @@ import {RESEARCH_CONSENT_VERSION,RESEARCH_CONSENT_TEXT} from './research-consent
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 let enabled = false, user = null, summary = null, zones = [], ready = Promise.resolve(), reportDialog, authDialog, speciesCatalog = SPECIES;
 let summaryRevision = 0;
+let logoutPending = false;
+function syncLogoutFeedback(){
+ const button=authDialog?.querySelector('[data-logout]');if(!button)return;
+ button.disabled=logoutPending;
+ button.textContent=logoutPending?'Uscita in corso…':'Esci dal profilo';
+ if(logoutPending){button.setAttribute('aria-busy','true');authDialog.querySelector('[data-status]').textContent='Sto chiudendo il profilo…';}
+ else button.removeAttribute('aria-busy');
+}
 const clearSummary = () => { summaryRevision++; summary = null; };
 export const communityEnabled = () => enabled;
 export const communityHasAccess = () => summary?.access==='granted';
@@ -147,6 +155,7 @@ function mountResearchConsent(slot,accountId){
 }
 
 export async function openAccount() {
+  const {toast} = await import('./refresh.js');
   await ready;
   if (!authDialog) { authDialog = document.createElement('dialog'); authDialog.className = 'community-dialog'; document.body.appendChild(authDialog); }
   authDialog.classList.toggle('profile-dialog', !!user);
@@ -207,7 +216,17 @@ export async function openAccount() {
     authDialog.querySelector('[data-register]')?.addEventListener('click', () => auth(true));
     authDialog.querySelector('[data-login]')?.addEventListener('click', () => auth(false));
     authDialog.querySelector('[data-logout]')?.addEventListener('click', async () => {
-      try { await communityRequest('auth/logout', 'POST', {}); user = null; clearSummary(); changed(); authDialog.close(); } catch (e) { status.textContent = e.message; }
+      if(logoutPending)return;
+      logoutPending=true;syncLogoutFeedback();
+      try {
+        await communityRequest('auth/logout', 'POST', {});
+        user = null; clearSummary(); changed(); authDialog.close();
+        toast('Sei uscito dal profilo.',5000,'top');
+      } catch (e) {
+        const message=e.message||'Non riesco a completare l’uscita. Riprova.';
+        if(authDialog.open)authDialog.querySelector('[data-status]').textContent=message;
+        else toast(esc(message),5000,'top');
+      } finally { logoutPending=false;syncLogoutFeedback(); }
     });
     // Copia completa dei propri dati, con le foto: art. 15 e 20 GDPR (decisione del 22/10/2026).
     authDialog.querySelector('[data-export-account]')?.addEventListener('click', async (e) => {
@@ -231,7 +250,7 @@ export async function openAccount() {
       authDialog.querySelectorAll('[data-export-account],[data-delete-account],[data-logout]').forEach((b) => b.remove());
       status.textContent = 'Profilo eliminato. Non sono riuscito a togliere la copia del taccuino da questo dispositivo: cancella i dati del sito dalle impostazioni del browser.';
     });
-    openModal(authDialog);
+    syncLogoutFeedback();openModal(authDialog);
   });
 }
 
