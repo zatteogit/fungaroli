@@ -1051,7 +1051,7 @@ body:has(#season .ring) #season-index-legend { display:block; }
 @media(max-width:899px) {
   :root.title-in-bar body .appbar[data-context="home"] :is(.brand,.brand-place) { opacity:0; visibility:hidden; pointer-events:none; transition:opacity .24s ease,visibility 0s .24s; }
   :root.title-in-bar body .appbar[data-context="home"] .appbar-title { display:block; left:var(--gutter); right:145px; max-width:none; text-align:left; transform:none; }
-  :root.title-in-bar body .appbar[data-context="home"] .appbar-actions > :not(#appbar-home-filters) { display:none; }
+  :root.title-in-bar body .appbar[data-context="home"] .appbar-actions > :not(#appbar-home-filters):not([data-open-search]) { display:none; }
   :root.title-in-bar body .appbar[data-context="home"] #appbar-home-filters { display:flex; }
   .appbar[data-context="home"] .home-filter-button { font-size:14px; }
 }

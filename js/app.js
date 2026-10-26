@@ -1,5 +1,6 @@
 import {mergeGrowth,mergeOuting,rebaseGrowth} from './weather-state.js';
 import {selectOutingMushrooms} from './outing-mushrooms.js';
+import {initNavigationDock} from './navigation-dock.js';
 import {composeHome,nextHomeOpportunity,latestDeadline,automaticHomeDay,shiftChosenDay} from './home-composition.js';
 import {freshness,viewSignature,compareViews,updatePolicy} from './view-stability.js';
 import {createHomeIntro} from './home-intro.js';
@@ -630,6 +631,8 @@ function navKind(a, b) {
 
 // La barra mobile lascia spazio scendendo e torna dopo un breve movimento verso l'alto.
 const mobileHeader = matchMedia('(max-width:899px)');
+const appHeader=$('.appbar');
+const navigationDock=initNavigationDock($('.tabbar'));
 let headerScrollAnchor = 0;
 let headerScrollDirection = 0;
 let headerLastY = 0;
@@ -640,8 +643,8 @@ function revealHeader() {
   headerLastY = headerScrollAnchor;
 }
 function updateHeaderScroll() {
-  const y = Math.max(0, scrollY);
-  if (!mobileHeader.matches || watchedTitle?.isConnected || y < 64 || ['mappa','uscite'].includes(document.body.dataset.page) || document.querySelector('.appbar[data-context="comparison"]') || document.querySelector('.appbar :focus-visible')) {
+  const y = Math.min(Math.max(0, scrollY),headerMetrics.max);
+  if (!mobileHeader.matches || watchedTitle?.isConnected || y < 64 || ['mappa','uscite'].includes(document.body.dataset.page) || appHeader.dataset.context==='comparison' || appHeader.querySelector(':focus-visible')) {
     revealHeader();
     return;
   }
@@ -658,21 +661,23 @@ function updateHeaderScroll() {
     headerScrollAnchor = y;
   }
 }
-$('.appbar').addEventListener('focusin', revealHeader);
+appHeader.addEventListener('focusin', revealHeader);
 addEventListener('hashchange', revealHeader);
 mobileHeader.addEventListener('change', revealHeader);
 // Sulle pagine con la foto in testata la barra diventa piena solo dopo la foto.
 function onScrollBar() {
+  measureHeader();
+  navigationDock.update();
   updateCompactTitle();
   updateHeaderScroll();
-  const h = document.querySelector('.view:not([hidden]) .phero');
-  document.documentElement.classList.toggle('scrolled', !h || scrollY > h.offsetHeight - 70);
+  document.documentElement.classList.toggle('scrolled', scrollY > headerMetrics.photoEdge);
 }
 let headerFrame=0;
 function scheduleHeader(){if(!headerFrame)headerFrame=requestAnimationFrame(()=>{headerFrame=0;onScrollBar();});}
+function resizeHeader(){headerMetrics.dirty=true;revealHeader();scheduleHeader();}
 addEventListener('scroll',scheduleHeader,{passive:true});
-addEventListener('resize',scheduleHeader,{passive:true});
-globalThis.visualViewport?.addEventListener('resize',scheduleHeader,{passive:true});
+addEventListener('resize',resizeHeader,{passive:true});
+globalThis.visualViewport?.addEventListener('resize',resizeHeader,{passive:true});
 
 // tasto indietro in alto a sinistra: freccia + nome della pagina a cui torni
 const TITLES = { animali:'Animali', piante:'Piante e fiori', uscite: 'Uscite', mappa: 'Mappa', specie: 'Funghi', alberi: 'Alberi', riconosci: 'Riconosci', impara: 'Guide', glossario: 'Glossario', 'guide-list': 'Approfondimenti', sfide: 'Sfide', diario: 'Taccuino', info: 'Regole e metodo', metodo: 'Come funziona' };
@@ -716,14 +721,28 @@ function parentOf(r) {
 const PARENT_TITLE = (r) => ({ '#/giri':'I giri di Matteo', '#/diario':'Taccuino', '#/diario/esempio':'Diario di prova', '#/scopri': 'Scopri', '#/specie': 'Funghi', '#/alberi': 'Alberi', '#/animali':'Animali', '#/piante':'Piante e fiori', '#/riconosci': 'Impara a riconoscere', '#/confronta':'Confronta', '#/confronta/piante':'Confronta', '#/guide': 'Approfondimenti', '#/sfide': 'Sfide', '#/impara': 'Guide', '#/': 'Uscite' }[parentOf(r)]);
 // Quando il titolo della pagina passa sotto la barra, lo mostriamo compatto al centro su telefono e tablet.
 let watchedTitle = null, compactTitle = false;
+const headerMetrics={dirty:true,edge:0,titleBottom:0,titleHeight:0,photoEdge:-1,max:0};
+let headerPhoto=null;
+const headerSizeObserver=new ResizeObserver(()=>{headerMetrics.dirty=true;scheduleHeader();});
+const headerContentObserver=new MutationObserver(()=>{if(state.view!=='mappa'&&!watchedTitle?.isConnected)watchTitle();});
+const documentTop=el=>{let top=0;for(let node=el;node;node=node.offsetParent)top+=node.offsetTop;return top;};
+function measureHeader(){
+ if(!headerMetrics.dirty)return;headerMetrics.dirty=false;
+ const bar=appHeader;
+ headerMetrics.edge=bar.offsetHeight+(parseFloat(getComputedStyle(bar).top)||0);
+ headerMetrics.titleHeight=watchedTitle?.offsetHeight||0;
+ headerMetrics.titleBottom=watchedTitle?.isConnected?documentTop(watchedTitle)+headerMetrics.titleHeight:0;
+ headerMetrics.photoEdge=headerPhoto?.isConnected?documentTop(headerPhoto)+headerPhoto.offsetHeight-70:-1;
+ headerMetrics.max=Math.max(0,document.documentElement.scrollHeight-innerHeight);
+}
 function updateCompactTitle(initial=false) {
-  const h=watchedTitle,bar=$('.appbar');
+  const h=watchedTitle,bar=appHeader;
   if(!h?.isConnected||!bar)return;
+  measureHeader();
   // Altezza di layout: non cambia se un’animazione trasla visivamente la barra.
-  const edge=bar.offsetHeight+(parseFloat(getComputedStyle(bar).top)||0);
-  const rect=h.getBoundingClientRect();
+  const edge=headerMetrics.edge,bottom=headerMetrics.titleBottom-scrollY;
   // Isteresi spaziale: il titolo deve rientrare davvero prima di togliere il compatto.
-  const next=rect.height>0&&scrollY>0&&(initial?rect.bottom<=edge:compactTitle?rect.bottom<edge+16:rect.bottom<=edge-4);
+  const next=headerMetrics.titleHeight>0&&scrollY>0&&(initial?bottom<=edge:compactTitle?bottom<edge+16:bottom<=edge-4);
   if(next!==compactTitle||initial){compactTitle=next;document.documentElement.classList.toggle('title-in-bar',next);}
 }
 function watchTitle() {
@@ -731,6 +750,10 @@ function watchTitle() {
   const v=$('.view:not([hidden])');
   const h=(state.view==='uscite'?v?.querySelector('#active-filters'):null)||v?.querySelector('.cmp-title')||v?.querySelector('.phero-title')||v?.querySelector('.view-title');
   const changed=h!==watchedTitle;watchedTitle=h||null;
+  headerPhoto=v?.querySelector('.phero')||null;headerMetrics.dirty=true;
+  headerSizeObserver.disconnect();headerContentObserver.disconnect();
+  for(const el of new Set([appHeader,v,h,headerPhoto,document.body].filter(Boolean)))headerSizeObserver.observe(el);
+  if(v)headerContentObserver.observe(v,{childList:true,subtree:true});
   if(!h){compactTitle=false;document.documentElement.classList.remove('title-in-bar');return;}
   bar.textContent=state.view==='uscite'?'Dove andare':h.textContent.trim();
   updateCompactTitle(changed);
@@ -815,6 +838,7 @@ function focusPage(nav, back, user) {
 function syncNavIndicator(){
   const bar=$('.tabbar'),tab=bar?.querySelector('a[aria-current="page"]');
   if(!bar||!tab){bar?.removeAttribute('data-indicator-ready');return;}
+  if(mobileHeader.matches){bar.dataset.indicatorReady='';return;}
   for(const [key,value] of Object.entries({x:tab.offsetLeft,y:tab.offsetTop,w:tab.offsetWidth,h:tab.offsetHeight}))bar.style.setProperty('--tab-'+key,value+'px');
   bar.dataset.indicatorReady='';
 }
@@ -894,6 +918,7 @@ function routeNow(r, nav) {
     scrollTo({ top: keep ? (restoredNavigationScroll() ?? scrollMem.get(r.hash) ?? 0) : 0, behavior: 'instant' });
     if (r.view === 'glossario' && r.termId) document.getElementById(`glossary-term-${r.termId}`)?.scrollIntoView({ block: 'center', behavior: 'instant' });
   }
+  navigationDock.resync();
 }
 
 // copertina della pagina di destinazione, per prepararla al tocco (motion.js): la stessa scelta dei renderer

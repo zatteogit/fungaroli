@@ -25,7 +25,7 @@ test('navigazione ripristinata dopo tastiera: viewport ridotto e ripristinato',a
   window.__visualHeight=844;const viewport=new EventTarget();Object.defineProperties(viewport,{height:{get:()=>window.__visualHeight},width:{get:()=>innerWidth},offsetTop:{value:0},offsetLeft:{value:0},scale:{value:1}});Object.defineProperty(window,'visualViewport',{value:viewport,configurable:true});
  });
  await page.goto('/');await expect(page.locator('#hero .cover-link')).toBeVisible();await anchored(page);await page.evaluate(()=>scrollTo(0,650));
- await page.locator('.tab-search').click();await expect(page.locator('.search-dlg input')).toBeFocused();
+ await page.locator('.appbar [data-open-search]').click();await expect(page.locator('.search-dlg input')).toBeFocused();
  await page.evaluate(()=>{window.__visualHeight=360;visualViewport.dispatchEvent(new Event('resize'));});await expect(page.locator('html')).toHaveClass(/kb-open/);await expect(page.locator('.tabbar')).toBeHidden();
  await page.locator('.search-cancel').click();await page.evaluate(()=>{window.__visualHeight=844;visualViewport.dispatchEvent(new Event('resize'));});await expect(page.locator('html')).not.toHaveClass(/kb-open/);await anchored(page);await page.evaluate(()=>scrollTo(0,1100));await anchored(page);await context.close();
 });

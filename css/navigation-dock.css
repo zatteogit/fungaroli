@@ -1,0 +1,49 @@
+/* One animated scalar owns the dock. Page padding keeps the expanded height,
+   so density changes never resize content or move the reading position. */
+.appbar[data-context="comparison"] .appbar-actions > [data-open-search] { display:grid; }
+@media(min-width:900px) {
+ .tabbar .tab-destinations a { min-height:44px; }
+}
+@media(max-width:899px) {
+ :root body .appbar[data-context="comparison"] .appbar-title { right:calc(var(--gutter) + 126px); }
+ :root body .appbar[data-context="comparison"] .appbar-back { max-width:calc(100% - 144px); }
+ :root.title-in-bar body .appbar[data-context="default"] .appbar-actions { display:flex; }
+ :root.title-in-bar body .appbar[data-context="default"] .appbar-actions > :not([data-open-search]) { display:none; }
+ .tabbar:has(.tab-annotate) {
+  --nav-collapse:0;
+  --nav-expanded-height:64px;
+  --nav-room:calc(100vw - max(12px,env(safe-area-inset-left,0px)) - max(12px,env(safe-area-inset-right,0px)));
+  --nav-wide:min(520px,var(--nav-room));
+  --nav-narrow:min(304px,var(--nav-room));
+  --nav-height:calc(var(--nav-expanded-height) - (var(--nav-expanded-height) - 56px)*var(--nav-collapse));
+  --nav-tab-gap:calc(4px - 2px*var(--nav-collapse));
+  --tbp:calc(6px - 2px*var(--nav-collapse));
+  --sbw:var(--nav-height);
+  width:calc(var(--nav-wide) - (var(--nav-wide) - var(--nav-narrow))*var(--nav-collapse));
+  height:var(--nav-height);max-width:none;
+  left:max(12px,env(safe-area-inset-left,0px));right:max(12px,env(safe-area-inset-right,0px));
+  gap:calc(10px - 2px*var(--nav-collapse));contain:layout style;
+ }
+ .tabbar .tab-destinations { gap:var(--nav-tab-gap); }
+ .tabbar .tab-destinations a,.tabbar .tab-annotate { gap:calc(3px*(1 - var(--nav-collapse)));min-height:44px;touch-action:manipulation; }
+ .tabbar .tab-destinations a > span,.tabbar .tab-annotate-label {
+  display:block;overflow:hidden;max-height:calc(14px*(1 - var(--nav-collapse)));
+  opacity:max(0,calc(1 - var(--nav-collapse)*1.7));
+  white-space:nowrap;line-height:14px;transition:none;
+ }
+ .tabbar .tab-destinations .tab-pill {
+  top:var(--tbp);left:var(--tbp);bottom:auto;
+  width:calc((100% - 2*var(--tbp) - 3*var(--nav-tab-gap))/4);
+  height:calc(100% - 2*var(--tbp));
+  transform:translate3d(calc(var(--ti,0)*(100% + var(--nav-tab-gap))),0,0);
+  transition:transform .26s var(--ease-out);
+ }
+ .tabbar[data-morphing] .tab-pill { transition:none; }
+ .tabbar .tab-destinations a:active { transform:none; }
+}
+@media(orientation:landscape) and (max-height:520px) and (max-width:899px) {
+ .tabbar:has(.tab-annotate) { --nav-expanded-height:56px; --tbp:4px; }
+}
+@media(prefers-reduced-motion:reduce) {
+ .tabbar .tab-destinations .tab-pill { transition:none; }
+}
