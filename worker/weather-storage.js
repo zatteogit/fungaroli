@@ -14,6 +14,15 @@ async function init(db){
 export function weatherStorage(env){
   const db=env.CMS_DB;
   return {
+    async getMany(keys){
+      if(!db)throw new Error('Archivio meteo non disponibile.');
+      await init(db);const records=new Map();
+      for(let i=0;i<keys.length;i+=80){const batch=keys.slice(i,i+80);
+        const {results}=await db.prepare(`SELECT cache_key,payload FROM weather_live_cache WHERE expires_at>? AND cache_key IN (${batch.map(()=>'?').join(',')})`).bind(Date.now(),...batch).all();
+        for(const row of results)records.set(row.cache_key,row.payload);
+      }
+      return records;
+    },
     async get(key){
       if(db)try{
         await init(db);

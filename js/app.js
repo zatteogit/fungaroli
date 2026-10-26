@@ -42,6 +42,7 @@ import {updateWeatherHTML,updateHTMLTracked,reconcileChildren,keepWeatherReading
 import { SPECIES, GROUPS, FOREST } from './species.js';
 import { scoreZoneDay, scoreSpecies, habitatAtBand, habitatPotential, elevationFit, combine, classOf, scoreLabel, scoreShortLabel, formatIndex, PARAMS, CLASSES } from './model.js';
 import { todayISO, loadWeather } from './weather.js';
+import {loadContentSnapshot} from './content-snapshot.js';
 import { initJournal } from './journal.js';
 import { renderSvgMap } from './svgmap.js';
 import { initSpeciesCards, thumb as fungusThumb, renderSpeciesDetail, speciesHeroSrc, whereSummary, criticalRule as fungusCriticalRule, criticalRuleOf as fungusCriticalRuleOf, speciesPhoto as fungusPhoto, speciesPhotos as fungusPhotos } from './speciescard.js';
@@ -323,17 +324,14 @@ async function init() {
   // versione Artifact: dati incorporati nella pagina (niente fetch esterni)
   const embedded = globalThis.FUNGAROLI_DATA;
   const review = !!globalThis.FUNGAROLI_REVIEW; // copia di revisione: niente API esterne
-  let snapshot=null;
-  const complete=s=>s?.schemaVersion===1&&s.resources?.legal?.version>=5&&['zones','habitat','species-traits','edible-catalog','guides','legal'].every(id=>s.resources[id]);
+  let snapshot=null,updatedContent=null,catalogReady=false;
+  const refreshLegal=async()=>{
+    if(!catalogReady||!updatedContent)return;
+    const next=currentLegalNotice(updatedContent.resources.legal);
+    if(legalNoticeVersion(next)!==legalNoticeVersion(legal)){legal=next;await applyLegal();}
+  };
   if(!embedded&&!review){
-    // Il catalogo regionale supera la quota di localStorage: la copia pubblica usa Cache API.
-    // Questo nome resta nella lista conservata durante l'attivazione del service worker.
-    const snapshotUrl='/api/content/v1/snapshot',snapshotCache='fungaroli-content-v1',legacyKey='fungaroli:content:v1';
-    const saveSnapshot=async s=>{try{const cache=await caches.open(snapshotCache);await cache.put(snapshotUrl,new Response(JSON.stringify(s),{headers:{'content-type':'application/json'}}));}catch{/* cache facoltativa: i dati ricevuti restano disponibili */}};
-    try{const res=await fetch(snapshotUrl,{cache:'no-cache',signal:AbortSignal.timeout(7000)});if(res.ok){const s=await res.json();if(complete(s)){snapshot=s;await saveSnapshot(s);try{localStorage.removeItem(legacyKey);}catch{/* storage non disponibile */}}}}catch{/* recupera l'ultima copia pubblica */}
-    if(!snapshot)try{const cached=await (await caches.open(snapshotCache)).match(snapshotUrl);if(cached){const s=await cached.json();if(complete(s))snapshot=s;}}catch{/* cache non disponibile o non valida */}
-    // Migrazione in sola lettura della vecchia chiave, soltanto senza una copia nella nuova cache.
-    if(!snapshot)try{const s=JSON.parse(localStorage.getItem(legacyKey)||'null');if(complete(s)){snapshot=s;await saveSnapshot(s);}}catch{/* usa i dati inclusi nella release */}
+    snapshot=await loadContentSnapshot({onUpdate:value=>{updatedContent=value;void refreshLegal();}});
   }
   const load = (f) => snapshot?.resources?.[f] ? Promise.resolve(structuredClone(snapshot.resources[f])) : fetch(`data/${f}.json`,{signal:AbortSignal.timeout(7000)}).then((r) => (r.ok ? r.json() : null)).catch(() => null);
   void initDailyThought({ embedded: embedded?.dailyThoughts || snapshot?.resources?.['daily-thoughts'] });
@@ -444,6 +442,7 @@ async function init() {
   if (botanicalToggle) { botanicalToggle.checked = state.useBotanicalNotes; botanicalToggle.addEventListener('change', () => { state.useBotanicalNotes = botanicalToggle.checked; savePrefs(); if (series) { compute(); outCache.clear(); renderAll(); } }); }
 
   route(); // le pagine che non dipendono dal meteo (specie, diario, info) compaiono subito
+  catalogReady=true;await refreshLegal();
   const fresh = consumeFresh(); // ricarica pulita dal logo: anche il meteo da capo
   if(!['uscite','zona'].includes(state.view))dispatchEvent(new Event('fronda:boot-ready'));
   await refreshWeather(fresh);
@@ -1563,17 +1562,22 @@ async function refreshWeather(force){
   weatherWork(WX_BUSY,true);loadStep(1);
   // il messaggio "Meteo aggiornato" serve se l'hai chiesto o se cambia dati gia' sullo schermo, non al primo avvio
   let announce=force||!!lastWeatherSnapshot;
-  let received=false,mainFailure=null,latest=null,outingPartial=false,nextOuting=null,cachedGrowth=null;
+  let received=false,mainFailure=null,latest=null,outingPartial=false,nextOuting=null,cachedGrowth=null,cachedPractical=null;
   // Both loaders read local copies synchronously. Paint after both have supplied
   // their cache, before any network response or timeout is needed.
-  const paintCached=()=>queueMicrotask(()=>{if(revision===weatherRevision&&cachedGrowth)receiveWeather(cachedGrowth,{phase:'cache'});});
+  const paintCached=()=>queueMicrotask(()=>{
+    if(revision!==weatherRevision||!cachedGrowth||!cachedPractical)return;
+    // Non pubblicare una classifica incompleta e chiedere subito dopo di riordinarla.
+    if(weatherZones.filter(z=>habitat[z.id]).every(z=>cachedGrowth.series[z.id]&&cachedPractical[z.id]))receiveWeather(cachedGrowth,{phase:'cache'});
+  });
   const growth=loadWeather(weatherZones.filter(z=>habitat[z.id]),{force,signal,onProgress:(done,total)=>{
     if(revision!==weatherRevision)return;
-  },onUpdate:(w,meta)=>{if(revision!==weatherRevision)return;received||=meta.phase==='network';if(meta.phase!=='network'){announce=true;cachedGrowth=w;paintCached();}}}).then(w=>{if(revision===weatherRevision){latest=w;if(!results)receiveWeather(w,{phase:'initial'});}}).catch(err=>{mainFailure=err;});
+  },onUpdate:(w,meta)=>{if(revision!==weatherRevision)return;received||=meta.phase==='network';if(meta.phase!=='network'){announce=true;cachedGrowth=w;paintCached();}}}).then(w=>{if(revision===weatherRevision)latest=w;}).catch(err=>{mainFailure=err;});
   const practical=loadOuting(weatherZones,{force,signal,onUpdate:(data,meta)=>{
     if(revision!==weatherRevision)return;
     received||=meta.phase==='network';
     if(meta.phase==='network')return;
+    cachedPractical=data;paintCached();
     const changed=new Set(Object.keys(data).filter(id=>JSON.stringify(outing?.[id])!==JSON.stringify(data[id])));
     outing=mergeOuting(outing,data);
     for(const id of changed)for(const k of outCache.keys())if(k.startsWith(id+'|'))outCache.delete(k);
@@ -2246,14 +2250,14 @@ function renderHomeDay(list,tile){
 }
 // Stabilità della home (decisione di Matteo del 24/10): un ridisegno dovuto al meteo che cambierebbe copertina o
 // ordine delle prime tre resta in attesa di «Aggiorna», salvo la pagina appena aperta; i numeri si aggiornano al posto.
-let homeShown=null,homeScrolled=false,homePending=null;
+let homeShown=null,homeScrolled=false,homePending=null,homeAlerts=[];
 addEventListener('scroll',()=>{if(state.view==='uscite'&&homeShown)homeScrolled=true;},{passive:true});
 function homeViewChoice(){return JSON.stringify([state.homeDay,homeChoiceKey()]);}
 function homeUpdateBar(show){
  let bar=$('#home-update');
  if(!show){if(bar)bar.hidden=true;return;}
  if(!bar){bar=document.createElement('div');bar.id='home-update';bar.className='home-update';bar.setAttribute('role','status');
-  bar.innerHTML=`${IC.clock}<span>Meteo aggiornato: cambiano le proposte.</span><button type="button" class="btn small" data-home-apply>Aggiorna</button>`;
+  bar.innerHTML=`${IC.clock}<span>Nuove proposte in base al meteo.</span><button type="button" class="btn small" data-home-apply>Mostra proposte</button>`;
   bar.querySelector('[data-home-apply]').addEventListener('click',()=>{homePending=null;homeShown=null;renderHome();$('#hero')?.scrollIntoView({block:'nearest'});});
   $('#hero').before(bar);}
  bar.hidden=false;
@@ -2266,7 +2270,9 @@ function markWeatherAlerts(keys){
  });
 }
 function renderHome(){
- if(renderHomeContent()==='deferred'){finishHomeChrome();return;}
+ homePending=null;homeAlerts=[];
+ renderHomeContent();
+ if(homePending){homeShown.presentation=homePresentation;markWeatherAlerts(homeAlerts);homeUpdateBar(true);finishHomeChrome();return;}
  const choice=homeViewChoice();
  if(!homeShown||homeShown.choice!==choice){homeScrolled=false;homeShown={choice,at:Date.now()};}
  Object.assign(homeShown,{sig:viewSignature(homePresentation?.ready||[]),state:homePresentation?.state,presentation:homePresentation});
@@ -2281,9 +2287,12 @@ function renderHomeContent() {
    const next=homePresentation.state==='ready'?viewSignature(homePresentation.ready):viewSignature([]);
    const alerts=homeShown.sig.top.filter(k=>homePresentation.raw.some(c=>`${c.z.id}|${c.o}`===k&&c.weather&&(c.weather.level==='sconsigliata'||c.weather.thunder))&&!homeShown.sig.severe.has(k));
    const kind=homePresentation.state==='ready'?compareViews(homeShown.sig,next).kind:'major';
-   if(kind==='major'||updatePolicy({kind,shownAt:homeShown.at,scrolled:homeScrolled})==='defer'){
-    homePending=homePresentation;homePresentation=homeShown.presentation;
-    markWeatherAlerts(alerts);homeUpdateBar(true);return 'deferred';
+   if(updatePolicy({kind,shownAt:homeShown.at,scrolled:homeScrolled})==='defer'){
+    homePending=homePresentation;homeAlerts=alerts;
+    // Aggiorna meteo e numeri degli stessi luoghi, conservando copertina e ordine.
+    // Il pulsante riguarda soltanto le nuove proposte, mai il download dei dati.
+    const previous=homeShown.presentation;
+    homePresentation={...previous,ready:previous.ready.map(old=>homePending.raw.find(c=>c.z.id===old.z.id&&c.o===old.o)||old)};
    }
   }
   setOutingHeadings(homePresentation.ready);orderHomeBands();

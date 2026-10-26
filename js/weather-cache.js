@@ -6,7 +6,8 @@ export const WEATHER_SYNC_MS=5*60000;
 export const WEATHER_LOCAL_RETENTION_MS=6*86400000;
 const key=kind=>`fungaroli:${kind==='growth'?'weather':'outing'}:zones:v3`;
 export const zoneWeatherSignature=(z,kind='growth')=>`${z.id}|${z.lat},${z.lon}|${(kind==='growth'?z.bands:[z.bands[Math.floor(z.bands.length/2)]]).join(',')}`;
-const read=kind=>{try{return JSON.parse(localStorage.getItem(key(kind))||'{}');}catch{return {};}};
+const parsed=new Map();
+const read=kind=>{try{const raw=localStorage.getItem(key(kind))||'{}',previous=parsed.get(kind);if(previous?.raw===raw)return previous.data;const data=JSON.parse(raw);parsed.set(kind,{raw,data});return data;}catch{return {};}};
 // I campi obbligatori sono quelli che servono all'indice. Le medie del suolo, compresa quella
 // tra 9 e 27 cm aggiunta dopo la v78, sono facoltative: le copie salvate prima restano valide
 // con la stessa chiave e si rinnovano alla scadenza normale, senza essere scartate.
@@ -28,7 +29,7 @@ export function saveZoneWeather(z,kind,record,now=Date.now()){
     if(data[zoneWeatherSignature(z,kind)]?.t>record.t)return;
     for(const id of Object.keys(data))if(!Number.isFinite(data[id]?.t)||now-data[id].t>WEATHER_LOCAL_RETENTION_MS)delete data[id];
     data[zoneWeatherSignature(z,kind)]={t:record.t,raw:kind==='growth'?compactGrowth(record.raw):record.raw,stale:!!record.stale};
-    localStorage.setItem(key(kind),JSON.stringify(data));
+    const raw=JSON.stringify(data);localStorage.setItem(key(kind),raw);parsed.set(kind,{raw,data});
   }catch{/* Storage can be unavailable or full; never discard live data. */}
 }
 

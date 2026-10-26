@@ -1,5 +1,34 @@
 import {test,expect} from '@playwright/test';
 import {todayISO} from '../../js/weather.js';
+import {readFileSync} from 'node:fs';
+import {preparePage} from '../../tools/visual-audit.mjs';
+import {forecastParams} from '../../worker/weather-provider.js';
+import {compactGrowth} from '../../js/weather-data.js';
+import {CONTENT_RESOURCES} from '../../js/content-schema.js';
+const resources=Object.fromEntries(CONTENT_RESOURCES.map(r=>[r.id,JSON.parse(readFileSync(new URL(`../../data/${r.id}.json`,import.meta.url),'utf8'))]));
+function snapshotLines(kind){return resources.zones.zones.filter(z=>z.bands?.length&&z.publicationStatus!=='draft').map(z=>{
+ const q=forecastParams([z],kind),raw=forecast({url:()=>`https://test/?${q}`});
+ if(kind==='outing')for(const row of raw){delete row.daily;for(const key of Object.keys(row.hourly))row.hourly[key]=row.hourly[key].slice(-192);}
+ return JSON.stringify({coordinates:['latitude','longitude','elevation'].map(k=>q.get(k)).join('|'),record:{t:Date.now(),raw:kind==='growth'?compactGrowth(raw):raw}});
+}).join('\n')+'\n';}
+for(const width of [390,1280])test(`avvio coerente con due snapshot e catalogo immediato a ${width}px`,async({browser})=>{
+ const context=await browser.newContext({viewport:{width,height:900},serviceWorkers:'block',reducedMotion:'reduce'}),page=await preparePage(context);
+ let finishOuting,finishContent,calls=0,legacy=0;
+ await page.addInitScript(async snapshot=>{
+  const cache=await caches.open('fungaroli-content-v1');await cache.put('/api/content/v1/snapshot',new Response(JSON.stringify(snapshot),{headers:{'content-type':'application/json'}}));
+ },{schemaVersion:1,resources});
+ await page.route('**/api/content/v1/snapshot',async r=>{await new Promise(resolve=>finishContent=resolve);await r.fulfill({json:{schemaVersion:1,resources}});});
+ await page.route('**/api/weather/v1/forecast?**',r=>{legacy++;return r.abort();});
+ await page.route('**/api/weather/v1/snapshot?**',async r=>{calls++;const kind=new URL(r.request().url()).searchParams.get('profile');if(kind==='outing')await new Promise(resolve=>finishOuting=resolve);await r.fulfill({contentType:'application/x-ndjson',body:snapshotLines(kind)});});
+ await page.goto('/');await expect.poll(()=>calls).toBe(2);expect(legacy).toBe(0);
+ // Il catalogo arriva dalla copia locale, il server è ancora fermo.
+ await expect(page.locator('#active-filters button').first()).toBeVisible();
+ await expect(page.locator('#hero .cover-link')).toHaveCount(0);await expect(page.locator('#home-update')).toBeHidden();
+ finishOuting();await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');await expect(page.locator('#hero .cover-link')).toBeVisible();await expect(page.locator('#home-update')).toBeHidden();
+ finishContent();
+ await page.reload();await expect(page.locator('#hero .cover-link')).toBeVisible();await expect(page.locator('#home-update')).toBeHidden();expect(calls).toBe(2);expect(legacy).toBe(0);
+ finishContent?.();await context.close();
+});
 function forecast(request,rain=7){
  const q=new URL(request.url()).searchParams,count=q.get('latitude').split(',').length;
  const days=Array.from({length:70},(_,i)=>todayISO(new Date(Date.now()+(i-62)*864e5))),time=days.flatMap(d=>Array.from({length:24},(_,h)=>`${d}T${String(h).padStart(2,'0')}:00`)),fill=v=>Array(time.length).fill(v);

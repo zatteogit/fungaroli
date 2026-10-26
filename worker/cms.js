@@ -36,6 +36,11 @@ async function init(env,origin) {
   if(!db) failure('La redazione non è configurata.',503);
   if(!initialized.has(db)) initialized.set(db,(async()=>{
     await db.batch(schema.split(';').map(s=>s.trim()).filter(Boolean).map(s=>db.prepare(s)));
+    // La revisione delle copie seed serve una volta per release, non a ogni
+    // nuovo isolate che legge lo snapshot pubblico.
+    let shell;
+    try{const asset=await env.ASSETS.fetch(new Request(new URL('/index.html',origin)));if(asset.ok&&asset.headers.get('content-type')?.includes('text/html'))shell=(await asset.text()).match(/fungaroli-shell-v\d+/)?.[0];}catch{/* ambienti senza shell: verifica completa */}
+    if(shell&&(await db.prepare("SELECT value FROM cms_meta WHERE key='repository-shell'").first())?.value===shell)return;
     const known=new Set((await db.prepare('SELECT id FROM cms_documents').all()).results.map(r=>r.id));
     const missing=CONTENT_RESOURCES.filter(r=>!known.has(r.id));
     const seeds=await Promise.all(missing.map(async r=>{
@@ -65,6 +70,7 @@ async function init(env,origin) {
     }));
     for(const {previous,payload} of sources)if(previous.published!==payload)
       await db.batch(repositorySeedUpdate(db,previous.id,previous,payload,Date.now(),crypto.randomUUID(),crypto.randomUUID()));
+    if(shell)await db.prepare("INSERT INTO cms_meta(key,value) VALUES('repository-shell',?) ON CONFLICT(key) DO UPDATE SET value=excluded.value").bind(shell).run();
   })().catch(e=>{initialized.delete(db);throw e;}));
   return initialized.get(db);
 }

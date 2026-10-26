@@ -4,12 +4,13 @@
 // - meteo Open-Meteo: gestito dall'app con data di acquisizione e limite d'età
 // - mappe: dalla cache se gia' viste, con un limite di tessere
 // - diario (/api/): mai in cache
-const SHELL = 'fungaroli-shell-v351';
+const SHELL = 'fungaroli-shell-v352';
 const RUNTIME = 'fungaroli-runtime-v1';
 const TILES = 'fungaroli-tiles-v1';
 const CONTENT = 'fungaroli-content-v1';
 const MAX_TILES = 1500;
 const PRECACHE = [
+  'js/content-snapshot.js',
   'js/research-consent-invite.js',
   'js/navigation-dock.js', 'css/navigation-dock.css',
   'js/zone-community.js',

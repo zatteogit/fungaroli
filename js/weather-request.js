@@ -1,5 +1,6 @@
 // Il browser usa la cache condivisa del Worker; gli strumenti di esportazione
 // possono interrogare direttamente il provider senza dipendere dal sito.
+import {WEATHER_LOCAL_RETENTION_MS} from './weather-cache.js';
 const API = 'https://api.open-meteo.com/v1/forecast';
 export async function fetchForecast(params,{onProgress,onChunk,signal:parentSignal}={}) {
   if(typeof document!=='undefined') {
@@ -10,6 +11,10 @@ export async function fetchForecast(params,{onProgress,onChunk,signal:parentSign
       const query=new URLSearchParams(params);['latitude','longitude','elevation'].forEach((name,i)=>query.set(name,coords[i].slice(start,end).join(',')));
       groups.push({query,start});start=end;
     }
+    // Una lettura per profilo dal deposito del server, al posto di un viaggio
+    // HTTP per ogni zona. Le vecchie installazioni/server restano compatibili.
+    const bulk=typeof window==='undefined'?null:await requestSnapshot(params,groups,{onChunk,onProgress,signal:parentSignal});
+    if(bulk)return bulk;
     const results=[],deadline=AbortSignal.timeout(45000);let next=0,finished=0,firstError;
     await Promise.all(Array.from({length:Math.min(3,groups.length)},async()=>{while(next<groups.length){
       const i=next++,{query,start}=groups[i],count=query.get('latitude').split(',').length;
@@ -36,6 +41,29 @@ export async function fetchForecast(params,{onProgress,onChunk,signal:parentSign
     return {raw:results.flatMap(r=>r.raw),fetchedAt:new Date(Math.min(...valid.map(r=>r.fetchedAt.getTime()))),stale:valid.some(r=>r.stale),partial:valid.length!==results.length};
   }
   return requestForecast(params);
+}
+async function requestSnapshot(params,groups,{onChunk,onProgress,signal:parentSignal}){
+ const signal=AbortSignal.any([AbortSignal.timeout(20000),...(parentSignal?[parentSignal]:[])]);
+ const response=await fetch(`/api/weather/v1/snapshot?profile=${params.has('daily')?'growth':'outing'}`,{cache:'no-store',signal});
+ if([404,405].includes(response.status))return null;
+ if(!response.ok)throw Object.assign(new Error('La copia meteo non è disponibile.'),{status:response.status});
+ if(response.headers.get('x-weather-format')!=='ndjson-v1'&&!response.headers.get('content-type')?.includes('application/x-ndjson')){await response.body?.cancel();return null;}
+ const targets=new Map(groups.map(g=>[['latitude','longitude','elevation'].map(k=>g.query.get(k)).join('|'),g]));
+ const records=new Map(),reader=response.body.getReader(),decoder=new TextDecoder();let pending='';
+ const accept=line=>{
+  if(!line.trim())return;
+  let row;try{row=JSON.parse(line);}catch{return;}
+  const group=targets.get(row.coordinates),record=row.record;
+  if(!group||!Number.isFinite(record?.t)||Date.now()-record.t>WEATHER_LOCAL_RETENTION_MS||!Array.isArray(record.raw)||record.raw.length!==group.query.get('latitude').split(',').length)return;
+  const chunk={raw:record.raw,fetchedAt:new Date(Math.min(record.t,Date.now())),stale:!!record.stale,start:group.start,count:record.raw.length};
+  records.set(group.start,chunk);onChunk?.(chunk);onProgress?.(records.size,groups.length);
+ };
+ try{while(true){const {done,value}=await reader.read();pending+=decoder.decode(value||new Uint8Array(),{stream:!done});let end;while((end=pending.indexOf('\n'))>=0){accept(pending.slice(0,end));pending=pending.slice(end+1);}if(done){accept(pending);break;}}}
+ catch(error){if(signal.aborted||!records.size)throw error;}
+ finally{reader.releaseLock();}
+ if(!records.size)throw new Error('Copia meteo incompleta.');
+ const values=[...records.values()];
+ return {raw:groups.flatMap(g=>records.get(g.start)?.raw||Array(g.query.get('latitude').split(',').length).fill(null)),fetchedAt:new Date(Math.min(...values.map(r=>r.fetchedAt.getTime()))),stale:values.some(r=>r.stale),partial:records.size!==groups.length};
 }
 async function requestForecast(params,signal=AbortSignal.timeout(20000),waitForFresh=false) {
   const endpoint = typeof document === 'undefined' ? API : '/api/weather/v1/forecast';
