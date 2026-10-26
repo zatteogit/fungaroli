@@ -1,8 +1,16 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import { matchTraits, retainCandidate, deadlyWarnings, traitSimilarity, traitSpread } from '../js/identify-model.js';
+import { matchTraits, retainCandidate, deadlyWarnings, traitSimilarity, traitSpread,comparisonTraitState } from '../js/identify-model.js';
 const taxa = Object.entries(JSON.parse(fs.readFileSync(new URL('../data/species-traits.json', import.meta.url))).taxa).map(([key, t]) => ({ key, ...t }));
+test('attaccatura: non applicabile ai porcini, distinta dai dati mancanti',()=>{
+ for(const key of ['edulis','pinophilus','aereus','aestivalis'])assert.equal(comparisonTraitState(taxa.find(t=>t.key===key),'gill_attachment'),'not-applicable');
+ for(const hymenophore of [['lamelle'],['pliche'],['lamelle','pori'],null,[]])assert.equal(comparisonTraitState({traits:{hymenophore,gill_attachment:null}},'gill_attachment'),'missing');
+ for(const hymenophore of [['pori'],['aculei'],['liscio']])assert.equal(comparisonTraitState({traits:{hymenophore,gill_attachment:null}},'gill_attachment'),'not-applicable');
+ assert.equal(comparisonTraitState({traits:{hymenophore:['lamelle'],gill_attachment:['libere']}},'gill_attachment'),'known');
+ assert.equal(comparisonTraitState({traits:{stem_ring:false}},'stem_ring'),'known');
+ assert.equal(comparisonTraitState({traits:{cap_color:null}},'cap_color'),'missing');
+});
 test('due risposte errate non eliminano Amanita phalloides', () => {
   const t = taxa.find((t) => t.latin === 'Amanita phalloides');
   const answers = { hymenophore: 'lamelle', hymenophore_color: 'bianco', cap_color: 'verde', stem_ring: false, stem_volva: false };
