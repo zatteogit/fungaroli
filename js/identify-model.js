@@ -1,4 +1,14 @@
 // Confronto di caratteri dichiarati dall'utente, non identificazione né probabilità.
+// Stessa applicabilità del percorso guidato: l'attaccatura riguarda lamelle
+// e pliche. Un imenoforo ignoto non autorizza a dichiararla non applicabile.
+export function comparisonTraitState(taxon,key,value=taxon.traits?.[key]) {
+ if(key==='gill_attachment'){
+  const types=[].concat(taxon.traits?.hymenophore??[]);
+  if(types.length&&types.every(type=>['pori','aculei','liscio'].includes(type)))return 'not-applicable';
+ }
+ return value==null||Array.isArray(value)&&!value.length?'missing':'known';
+}
+
 export function matchTraits(taxon, answers, questions) {
   let ok = 0, tot = 0;
   const contra = [];

@@ -16,7 +16,7 @@ import { availableGrowthStages } from './fungus-stages.js';
 import { openLightbox, captionHtml } from './lightbox.js';
 import { openEntitySheet } from './entity-sheet.js';
 import { soft, tick } from './motion.js';
-import { matchTraits, retainCandidate, traitQuestions, traitSimilarity, attentionGroups } from './identify-model.js';
+import { matchTraits, retainCandidate, traitQuestions, traitSimilarity, attentionGroups,comparisonTraitState } from './identify-model.js';
 const TQ = (key) => traitQuestions().find((q) => q.key === key);
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -908,7 +908,7 @@ const CMP = [
 function cmpRows(ref, t) {
   return CMP.map((r) => {
     const a = r.get ? r.get(ref) : ref.traits?.[r.key], b = r.get ? r.get(t) : t.traits?.[r.key];
-    if (a == null || b == null || (Array.isArray(a) && !a.length) || (Array.isArray(b) && !b.length)) return null;
+    if (comparisonTraitState(ref,r.key,a)!=='known'||comparisonTraitState(t,r.key,b)!=='known') return null;
     const A = [].concat(a), B = [].concat(b);
     const txt = (X) => (r.key === 'season' ? monthsTxt(X) : r.bool ? withOut(r.key, X[0]) : orList(X.map(r.say)));
     const differentStructure = r.key === 'hymenophore_color' && JSON.stringify([].concat(ref.traits?.hymenophore ?? []).sort()) !== JSON.stringify([].concat(t.traits?.hymenophore ?? []).sort());
@@ -948,7 +948,7 @@ function renderCompare(box, ref, pick) {
   const toxCls = (t) => `tox-${String(t.toxicity || '').replace(/\s/g, '-')}`;
   const nameBtn = (t) => `<button type="button" data-taxon="${esc(t.key)}">${esc(t.name || t.latin)}</button>`; // nel confronto: anteprima, per tutti
   const slide = (t, k) => {
-    const missing=CMP.filter(r=>{const a=r.get?r.get(ref):ref.traits?.[r.key],b=r.get?r.get(t):t.traits?.[r.key];return a==null||b==null||Array.isArray(a)&&!a.length||Array.isArray(b)&&!b.length;});
+    const missing=CMP.filter(r=>{const a=r.get?r.get(ref):ref.traits?.[r.key],b=r.get?r.get(t):t.traits?.[r.key];return comparisonTraitState(ref,r.key,a)==='missing'||comparisonTraitState(t,r.key,b)==='missing';});
     const rows = cmpRows(ref, t), groups = [
       {kind:'diff',label:'Differenti',empty:'Nessun carattere completamente diverso nei dati disponibili. Le somiglianze non confermano l’identità.'},
       {kind:'part',label:'A volte simili',empty:'Nessuna somiglianza parziale documentata.'},
@@ -969,7 +969,7 @@ function renderCompare(box, ref, pick) {
       <p class="cmp-legend" hidden><span><span class="cmp-relation" aria-hidden="true">=</span> Valore in comune</span><span><span class="cmp-relation" aria-hidden="true">≠</span> Valore diverso</span></p>
       ${groups.map(g=>{const items=rows.filter(r=>!r.info&&r.kind===g.kind);return `<section class="cmp-panel" id="cmp-${esc(t.key)}-panel-${g.kind}" data-cmp-panel="${g.kind}" role="tabpanel" aria-labelledby="cmp-${esc(t.key)}-tab-${g.kind}" tabindex="0"${g.kind==='diff'?'':' hidden'}>${items.length?`<div class="cmp-column-head" aria-hidden="true"><span>${esc(ref.name||ref.latin)}</span><span>${esc(t.name||t.latin)}</span></div><ul class="cmp-rows">${items.map(r=>r.html).join('')}</ul>`:`<p class="cmp-none">${rows.some(r=>!r.info)?g.empty:'I dati disponibili non permettono ancora un confronto dei caratteri tra queste due specie. Apri le schede per leggere descrizioni e fonti; non è possibile dedurre somiglianze o differenze.'}</p>`}</section>`;}).join('')}
       ${info.length?`<div class="cmp-season"><ul class="cmp-rows">${info.map(r=>r.html).join('')}</ul></div>`:''}
-      ${missing.length?`<details class="context-note cmp-missing-data"><summary>Dati incompleti · ${missing.length} caratteri</summary><p>Questi caratteri non sono confrontabili perché mancano dati per una o entrambe le specie. Un dato mancante non significa carattere assente.</p><ul>${missing.map(r=>`<li>${esc(r.k)}</li>`).join('')}</ul></details>`:''}
+      ${missing.length?`<details class="context-note cmp-missing-data"><summary>Dati incompleti · ${missing.length} ${missing.length===1?'carattere':'caratteri'}</summary><p>Questi caratteri non sono confrontabili perché mancano dati per una o entrambe le specie. Un dato mancante non significa carattere assente.</p><ul>${missing.map(r=>`<li>${esc(r.k)}</li>`).join('')}</ul></details>`:''}
       <details class="sec cmp-sources"><summary>Fonti del confronto</summary><div class="sec-body">${sourceRows([...(ref.sources || []), ...(t.sources || [])])}</div></details>
       <p class="cmp-verdict">${[ref,t].some(x=>['mortale','tossico'].includes(x.toxicity)) ? 'Il confronto include specie tossiche o mortali; i caratteri possono variare o essere incompleti. ' : ''}Somiglianze e differenze non identificano il tuo esemplare. Fai controllare il raccolto all’Ispettorato micologico ASL.</p>
     </section>`;
