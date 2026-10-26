@@ -26,7 +26,7 @@ Verificato il 12/10/2026. Il codice è in `js/install.js` (`platform()` e `guide
 | Firefox Windows | Aggiungi scheda alla barra delle applicazioni (143+) | firefox-source-docs taskbartabs |
 
 ## Quando compare l'invito
-A tutto schermo sul telefono (finestra su desktop) dopo l'avviso iniziale, a ogni nuova sessione finché l'app non è installata, al massimo una volta ogni 20 ore dopo "Lo faccio dopo". Il banner in home e la sezione in Info restano.
+Dal terzo utilizzo compare un banner chiudibile in home su telefono e tablet. Un ritorno dopo almeno 30 minuti conta come nuovo utilizzo; ricaricamenti immediati e navigazione interna non aumentano il conteggio. Il conteggio resta soltanto nel browser e non viene inviato al server. Nessuna istruzione di installazione si apre automaticamente, nemmeno dopo l’avviso iniziale. La chiusura del banner lo nasconde per 30 giorni; un precedente rinvio delle istruzioni resta rispettato per 20 ore. Le istruzioni per piattaforma si aprono dal pulsante «Installa» e restano sempre disponibili in Info. Nessun invito nell’app già installata o nelle copie di revisione.
 
 ## Da ricontrollare a ogni nuova versione di iOS/Chrome
 Nomi e disponibilità dei controlli, varianti della barra, default di "Apri come app web".
