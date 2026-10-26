@@ -8,6 +8,7 @@ import { handleCms, handleContent, publishedResources } from './cms.js';
 import {weatherStorage,cleanupWeatherStorage} from './weather-storage.js';
 import {WEATHER_REFRESH_CRON,refreshSavedWeather} from './weather-refresh.js';
 import { cachedForecast } from './weather-provider.js';
+import {weatherSnapshot} from './weather-snapshot.js';
 import { recordWeatherMetric, cleanupWeatherMetrics } from './weather-metrics.js';
 import { ARCHIVE_CRON, archiveForecasts } from './forecast-archive.js';
 
@@ -19,13 +20,14 @@ export default {
       try{await publishedResources(env,url.origin,['zones','species-traits']);return Response.json(await publicExternalSignals(env),{headers:{'cache-control':'no-store','x-content-type-options':'nosniff'}});}
       catch{return Response.json({error:'Segnalazioni temporaneamente non disponibili.'},{status:503,headers:{'cache-control':'no-store'}});}
     }
-    if(url.pathname==='/api/weather/v1/forecast') {
+    if(['/api/weather/v1/forecast','/api/weather/v1/snapshot'].includes(url.pathname)) {
       if(request.method!=='GET')return new Response('Metodo non consentito.',{status:405});
       try {
         // A CMS outage must not prevent reading the independent weather cache.
         let content;
         try { content=await publishedResources(env,url.origin,['zones'],{initialize:false}); } catch { /* fall back to the published bundled zones */ }
         const zones=content?.zones?.zones||(await (await env.ASSETS.fetch(new Request(new URL('/data/zones.json',url)))).json()).zones;
+        if(url.pathname.endsWith('/snapshot'))return await weatherSnapshot(url.searchParams.get('profile'),zones,env);
         const metrics=env.CMS_DB&&ctx?.waitUntil?m=>ctx.waitUntil(recordWeatherMetric(env.CMS_DB,m)):undefined;
         return await cachedForecast(url.searchParams,{zones,cache:weatherStorage(env),waitUntil:ctx?.waitUntil?.bind(ctx),cacheOnly:true,metrics});
       } catch(e) {return Response.json({error:e?.status?e.message:'Il servizio meteo non è disponibile. Riprova tra poco.',...(e?.code?{code:e.code}:{})},{status:e?.status||503,headers:{'cache-control':'no-store'}});}

@@ -6,11 +6,38 @@ import {WEATHER_REFRESH_SCHEMA,weatherRefreshPlan,refreshSavedWeather} from '../
 import {weatherStorage,WEATHER_STORAGE_SCHEMA} from '../worker/weather-storage.js';
 import {cachedForecast,forecastParams} from '../worker/weather-provider.js';
 import {todayISO} from '../js/weather.js';
+import {weatherSnapshot} from '../worker/weather-snapshot.js';
 const zones=Array.from({length:36},(_,i)=>({id:`zone-${String(i).padStart(2,'0')}`,lat:42+i/100,lon:12,bands:[800,1000,1200]}));
 const now=Date.parse(todayISO()+'T10:00:00Z');
 function cache(){const data=new Map();return {get:async k=>JSON.parse(data.get(k)||'null'),put:async(k,v)=>data.set(k,v)};}
 function d1(){const db=new DatabaseSync(':memory:');const stmt=(sql,args=[])=>({bind:(...v)=>stmt(sql,v),first:async()=>db.prepare(sql).get(...args),all:async()=>({results:db.prepare(sql).all(...args)}),run:async()=>db.prepare(sql).run(...args)});return {prepare:sql=>stmt(sql),db};}
 function response(url){const q=new URL(url).searchParams;return Response.json(q.get('latitude').split(',').map(()=>Object.fromEntries(['daily','hourly'].filter(g=>q.has(g)).map(g=>[g,{time:[todayISO(new Date(now))+(g==='hourly'?'T12:00':'')],...Object.fromEntries(q.get(g).split(',').map(f=>[f,[0]]))}]))));}
+test('snapshot pubblico: un’unica lettura D1 per profilo, date per zona e nessuna acquisizione',async()=>{
+ const env={CMS_DB:d1()},subset=zones.slice(0,4);let upstream=0;
+ for(const kind of ['growth','outing'])for(const zone of subset)await cachedForecast(forecastParams([zone],kind),{zones:subset,cache:weatherStorage(env),now,fetcher:async url=>{upstream++;return response(url);}});
+ const prepare=env.CMS_DB.prepare;let reads=0;
+ env.CMS_DB.prepare=sql=>{if(sql.startsWith('SELECT cache_key,payload'))reads++;return prepare(sql);};
+ for(const kind of ['growth','outing']){
+  const result=await weatherSnapshot(kind,subset,env);assert.equal(result.status,200);
+  const lines=(await result.text()).trim().split('\n').map(JSON.parse);assert.equal(lines.length,4);
+  assert.ok(lines.every(line=>line.record.t===now&&line.record.raw.length===(kind==='growth'?3:1)));
+ }
+ assert.equal(reads,2);assert.equal(upstream,8);
+ assert.equal((await weatherSnapshot('unknown',subset,env)).status,422);
+ assert.equal((await weatherSnapshot('outing',zones.slice(5,6),env)).status,503);
+});
+
+test('il browser legge lo stream a blocchi e conserva le righe acquisite se lo stream si interrompe',async()=>{
+ const previous={document:globalThis.document,window:globalThis.window,fetch:globalThis.fetch};
+ globalThis.document={};globalThis.window={};
+ try{
+  const {fetchForecast}=await import('../js/weather-request.js');
+  const q=forecastParams(zones.slice(0,2),'outing'),coordinates=['latitude','longitude','elevation'].map(k=>forecastParams([zones[0]],'outing').get(k)).join('|');
+  let reads=0;const updates=[];
+  globalThis.fetch=async url=>{reads++;assert.match(url,/snapshot\?profile=outing/);let first=true;return new Response(new ReadableStream({pull(controller){if(first){first=false;controller.enqueue(new TextEncoder().encode(JSON.stringify({coordinates,record:{t:Date.now(),raw:[{hourly:{time:['example']}}]}})+'\n'));}else controller.error(new Error('rete interrotta'));}}),{headers:{'content-type':'application/x-ndjson'}});};
+  const result=await fetchForecast(q,{onChunk:row=>updates.push(row)});assert.equal(reads,1);assert.equal(updates.length,1);assert.equal(result.partial,true);assert.equal(result.raw[1],null);
+ }finally{for(const [key,value] of Object.entries(previous)){if(value===undefined)delete globalThis[key];else globalThis[key]=value;}}
+});
 test('all 36 zones get 8 outing and 1 growth refresh per four hours, with bounded invocations',()=>{
   const counts=new Map();let max=0;
   for(let minute=0;minute<240;minute++){

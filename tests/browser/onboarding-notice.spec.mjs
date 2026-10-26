@@ -1,5 +1,7 @@
 import {test,expect} from '@playwright/test';
 import {preparePage} from '../../tools/visual-audit.mjs';
+import {readFileSync} from 'node:fs';
+import {CONTENT_RESOURCES} from '../../js/content-schema.js';
 test('studio dell’indice: ospite escluso e rinvio separato per profilo',async({browser})=>{
  const context=await browser.newContext({viewport:{width:320,height:740},reducedMotion:'reduce',serviceWorkers:'block'}),page=await preparePage(context);
  let account=null,writes=0;
@@ -114,7 +116,7 @@ for(const standalone of [false,true])test(`installazione facoltativa dal terzo u
 test('testi aggiornati conservano la ricevuta; una revisione delle CGS richiede una nuova conferma',async({browser})=>{
  const context=await browser.newContext({viewport:{width:390,height:844},reducedMotion:'reduce',serviceWorkers:'block'}),page=await preparePage(context,{legal:null});let changed=false,revision=false;
  await page.addInitScript(()=>localStorage.setItem('fungaroli:install-later',String(Date.now())));
- await page.route('**/api/content/v1/snapshot',async route=>{const response=await route.fetch(),snapshot=await response.json();if(changed)snapshot.resources.legal.onboarding.prototype_notice+=' Testo aggiornato per la prova.';if(revision)snapshot.resources.legal.acceptance_version=2;await route.fulfill({json:snapshot});});
+ await page.route('**/api/content/v1/snapshot',async route=>{const response=await route.fetch(),snapshot=response.ok()?await response.json():{schemaVersion:1,resources:Object.fromEntries(CONTENT_RESOURCES.map(r=>[r.id,JSON.parse(readFileSync(new URL(`../../data/${r.id}.json`,import.meta.url),'utf8'))]))};if(changed)snapshot.resources.legal.onboarding.prototype_notice+=' Testo aggiornato per la prova.';if(revision)snapshot.resources.legal.acceptance_version=2;await route.fulfill({json:snapshot});});
  await page.goto('/');await expect(page.locator('#onboarding')).toBeVisible();await page.locator('#ob-accept').click();await expect(page.locator('#onboarding')).toBeHidden();const before=await page.evaluate(()=>JSON.parse(localStorage.getItem('fungaroli:legal-acceptance:v1')));
  changed=true;await page.reload();await expect(page.locator('#onboarding')).toBeHidden();expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('fungaroli:legal-acceptance:v1')))).toEqual(before);
  revision=true;await page.reload();await expect(page.locator('#onboarding')).toBeVisible();await expect(page.locator('#views')).toHaveAttribute('inert','');expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('fungaroli:legal-acceptance:v1')))).toEqual(before);
