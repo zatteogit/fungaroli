@@ -445,9 +445,7 @@ async function init() {
   catalogReady=true;await refreshLegal();
   const fresh = consumeFresh(); // ricarica pulita dal logo: anche il meteo da capo
   if(!['uscite','zona'].includes(state.view))dispatchEvent(new Event('fronda:boot-ready'));
-  await refreshWeather(fresh);
-  dispatchEvent(new Event('fronda:boot-ready'));
-  if (fresh) freshDone();
+  const initialWeather=refreshWeather(fresh);
   // ricaricare il meteo e' raro (si aggiorna da solo dopo un'ora): sta sulla scritta dell'aggiornamento, non nella barra
   if (embedded || review) $('#refresh').disabled = true;
   else $('#refresh').addEventListener('click', () => { $('#refresh').classList.add('spin'); refreshWeather(true).finally(() => $('#refresh').classList.remove('spin')); });
@@ -457,6 +455,9 @@ async function init() {
   // la scheda della zona dipende solo dalla larghezza: la barra degli indirizzi che compare o sparisce (cambia l'altezza) non deve ridisegnarla
   let lastW = innerWidth;
   addEventListener('resize', () => { if (innerWidth === lastW) return; lastW = innerWidth; clearTimeout(rt); rt = setTimeout(() => results && state.view === 'zona' && renderDetail(), 200); });
+  await initialWeather;
+  if(results||weatherUnavailable)dispatchEvent(new Event('fronda:boot-ready'));
+  if(fresh)freshDone();
 }
 
 // File statici fuori dal CMS, come data/crop-points.json: informazioni sul bosco e aree protette
@@ -1552,6 +1553,9 @@ function receiveWeather(w,meta={}){
   document.documentElement.classList.toggle('is-offline',!!w.offline);
   weatherStamp(w);$('#today-kicker').textContent=new Date().toLocaleDateString('it-IT',{weekday:'long',day:'numeric',month:'long'});
   if(changed.size){compute(first?null:changed);if(first&&(meta.phase!=='network'||!['uscite','zona'].includes(state.view)))paintWeatherView(changed);else queueWeatherPaint(changed);}
+  // La home coerente è già consultabile: non tenerla dietro l'overlay mentre
+  // viene verificata in rete una copia locale completa e ancora utilizzabile.
+  if(first&&results)dispatchEvent(new Event('fronda:boot-ready'));
 }
 let lastWeatherSync=0;
 async function refreshWeather(force){

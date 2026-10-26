@@ -20,3 +20,9 @@ Il catalogo veniva sempre atteso dalla rete prima di usare la copia pubblica. Og
 580 test unitari; 12 casi browser mirati a 390/1280 px su primo avvio con i due flussi separati, catalogo lento con copia locale, apertura successiva, calendario e card conservati, cache assente, richiesta bloccata, recupero parziale e nuova versione delle CGS. Verificato inoltre che la card originale resti connessa al DOM e mostri il meteo peggiorato prima di applicare le nuove proposte. Dry-run Worker e controllo diff.
 
 Il runtime Wrangler locale continua a fallire con `spawn EBADF`: le verifiche browser locali usano un server statico e API controllate; le letture D1 sono coperte dai test SQLite. La consegna e i tempi vengono ricontrollati sul Worker online dopo il deploy, senza modificare dati privati o consensi degli utenti.
+
+## Controllo sul Worker pubblicato e completamento v353
+
+La pubblicazione automatica della PR #272 non è partita; il commit unito `7b4fccd1` è stato pubblicato da un archivio Git pulito con la configurazione versionata. Worker `4329bab7-3f1c-4510-845c-db98a3812a23`. I due endpoint hanno restituito HTTP 200, 36 zone ciascuno e compressione Brotli. Prima apertura misurata: 6.356 ms al boot pronto; ripetizione senza copie applicative: 4.294 ms (2 richieste, catalogo 1.486 ms). Nessun invito a riordinare all’avvio.
+
+La verifica della riapertura ha trovato un ultimo blocco: i dati coerenti della cache erano già renderizzati, ma l’overlay globale attendeva ancora il controllo di rete (2.943 ms al boot). La v353 segnala la disponibilità appena appare la prima generazione coerente, installando prima i controlli di aggiornamento/tema/viewport. Il nuovo test trattiene sia il catalogo remoto sia il meteo dell’uscita durante la riapertura e verifica che la home salvata sia effettivamente accessibile, non soltanto presente sotto l’overlay.

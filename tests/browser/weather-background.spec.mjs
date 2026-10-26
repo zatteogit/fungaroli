@@ -27,6 +27,12 @@ for(const width of [390,1280])test(`avvio coerente con due snapshot e catalogo i
  finishOuting();await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');await expect(page.locator('#hero .cover-link')).toBeVisible();await expect(page.locator('#home-update')).toBeHidden();
  finishContent();
  await page.reload();await expect(page.locator('#hero .cover-link')).toBeVisible();await expect(page.locator('#home-update')).toBeHidden();expect(calls).toBe(2);expect(legacy).toBe(0);
+ // Una copia ancora utilizzabile sblocca anche l'overlay globale, senza aspettare
+ // la riconciliazione di rete. Simula una riapertura dopo sei minuti.
+ finishContent?.();await page.evaluate(()=>{for(const kind of ['weather','outing']){const key=`fungaroli:${kind}:zones:v3`,data=JSON.parse(localStorage.getItem(key));for(const record of Object.values(data))record.t-=6*60000;localStorage.setItem(key,JSON.stringify(data));}});
+ await page.reload();await expect.poll(()=>calls).toBe(4);await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','true');
+ await expect(page.locator('#hero .cover-link')).toBeVisible();await expect(page.locator('#legal-loading')).toBeHidden();await expect(page.locator('#home-update')).toBeHidden();
+ finishOuting();await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');
  finishContent?.();await context.close();
 });
 function forecast(request,rain=7){
