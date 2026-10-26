@@ -1,7 +1,16 @@
 // Il browser usa la cache condivisa del Worker; gli strumenti di esportazione
 // possono interrogare direttamente il provider senza dipendere dal sito.
-import {WEATHER_LOCAL_RETENTION_MS} from './weather-cache.js';
+import {WEATHER_LOCAL_RETENTION_MS,weatherCacheNeedsSync} from './weather-cache.js';
 const API = 'https://api.open-meteo.com/v1/forecast';
+const prefetched=new Map();
+export function prefetchWeatherSnapshots(){
+ if(typeof window==='undefined')return;
+ for(const profile of ['growth','outing'])if(weatherCacheNeedsSync(profile)&&!prefetched.has(profile)){
+  const controller=new AbortController(),signal=AbortSignal.any([controller.signal,AbortSignal.timeout(20000)]);
+  const promise=fetch(`/api/weather/v1/snapshot?profile=${profile}`,{cache:'no-store',signal});
+  prefetched.set(profile,{promise,controller,startedAt:Date.now()});void promise.catch(()=>{});
+ }
+}
 export async function fetchForecast(params,{onProgress,onChunk,signal:parentSignal}={}) {
   if(typeof document!=='undefined') {
     const coords=['latitude','longitude','elevation'].map(name=>params.get(name).split(','));
@@ -43,8 +52,14 @@ export async function fetchForecast(params,{onProgress,onChunk,signal:parentSign
   return requestForecast(params);
 }
 async function requestSnapshot(params,groups,{onChunk,onProgress,signal:parentSignal}){
+ const profile=params.has('daily')?'growth':'outing';let early=prefetched.get(profile);prefetched.delete(profile);
+ if(early&&Date.now()-early.startedAt>=20000){early.controller.abort();early=null;}
  const signal=AbortSignal.any([AbortSignal.timeout(20000),...(parentSignal?[parentSignal]:[])]);
- const response=await fetch(`/api/weather/v1/snapshot?profile=${params.has('daily')?'growth':'outing'}`,{cache:'no-store',signal});
+ if(signal.aborted)throw signal.reason;
+ const abort=()=>early?.controller.abort(signal.reason);signal.addEventListener('abort',abort,{once:true});
+ let response;
+ try{response=await(early?.promise||fetch(`/api/weather/v1/snapshot?profile=${profile}`,{cache:'no-store',signal}));}
+ finally{signal.removeEventListener('abort',abort);}
  if([404,405].includes(response.status))return null;
  if(!response.ok)throw Object.assign(new Error('La copia meteo non è disponibile.'),{status:response.status});
  if(response.headers.get('x-weather-format')!=='ndjson-v1'&&!response.headers.get('content-type')?.includes('application/x-ndjson')){await response.body?.cancel();return null;}
@@ -58,9 +73,10 @@ async function requestSnapshot(params,groups,{onChunk,onProgress,signal:parentSi
   const chunk={raw:record.raw,fetchedAt:new Date(Math.min(record.t,Date.now())),stale:!!record.stale,start:group.start,count:record.raw.length};
   records.set(group.start,chunk);onChunk?.(chunk);onProgress?.(records.size,groups.length);
  };
- try{while(true){const {done,value}=await reader.read();pending+=decoder.decode(value||new Uint8Array(),{stream:!done});let end;while((end=pending.indexOf('\n'))>=0){accept(pending.slice(0,end));pending=pending.slice(end+1);}if(done){accept(pending);break;}}}
+ const cancel=()=>{void reader.cancel(signal.reason).catch(()=>{});};signal.addEventListener('abort',cancel,{once:true});
+ try{while(true){if(signal.aborted)throw signal.reason;const {done,value}=await reader.read();if(signal.aborted)throw signal.reason;pending+=decoder.decode(value||new Uint8Array(),{stream:!done});let end;while((end=pending.indexOf('\n'))>=0){accept(pending.slice(0,end));pending=pending.slice(end+1);}if(done){accept(pending);break;}}}
  catch(error){if(signal.aborted||!records.size)throw error;}
- finally{reader.releaseLock();}
+ finally{signal.removeEventListener('abort',cancel);reader.releaseLock();}
  if(!records.size)throw new Error('Copia meteo incompleta.');
  const values=[...records.values()];
  return {raw:groups.flatMap(g=>records.get(g.start)?.raw||Array(g.query.get('latitude').split(',').length).fill(null)),fetchedAt:new Date(Math.min(...values.map(r=>r.fetchedAt.getTime()))),stale:values.some(r=>r.stale),partial:records.size!==groups.length};

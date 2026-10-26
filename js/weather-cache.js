@@ -8,6 +8,10 @@ const key=kind=>`fungaroli:${kind==='growth'?'weather':'outing'}:zones:v3`;
 export const zoneWeatherSignature=(z,kind='growth')=>`${z.id}|${z.lat},${z.lon}|${(kind==='growth'?z.bands:[z.bands[Math.floor(z.bands.length/2)]]).join(',')}`;
 const parsed=new Map();
 const read=kind=>{try{const raw=localStorage.getItem(key(kind))||'{}',previous=parsed.get(kind);if(previous?.raw===raw)return previous.data;const data=JSON.parse(raw);parsed.set(kind,{raw,data});return data;}catch{return {};}};
+export function weatherCacheNeedsSync(kind,now=Date.now()){
+ const records=Object.values(read(kind)||{});
+ return !records.length||records.some(r=>!Number.isFinite(r?.t)||r.t>now||now-r.t>=WEATHER_SYNC_MS||r.stale);
+}
 // I campi obbligatori sono quelli che servono all'indice. Le medie del suolo, compresa quella
 // tra 9 e 27 cm aggiunta dopo la v78, sono facoltative: le copie salvate prima restano valide
 // con la stessa chiave e si rinnovano alla scadenza normale, senza essere scartate.

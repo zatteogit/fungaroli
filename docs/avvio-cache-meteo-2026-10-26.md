@@ -26,3 +26,9 @@ Il runtime Wrangler locale continua a fallire con `spawn EBADF`: le verifiche br
 La pubblicazione automatica della PR #272 non è partita; il commit unito `7b4fccd1` è stato pubblicato da un archivio Git pulito con la configurazione versionata. Worker `4329bab7-3f1c-4510-845c-db98a3812a23`. I due endpoint hanno restituito HTTP 200, 36 zone ciascuno e compressione Brotli. Prima apertura misurata: 6.356 ms al boot pronto; ripetizione senza copie applicative: 4.294 ms (2 richieste, catalogo 1.486 ms). Nessun invito a riordinare all’avvio.
 
 La verifica della riapertura ha trovato un ultimo blocco: i dati coerenti della cache erano già renderizzati, ma l’overlay globale attendeva ancora il controllo di rete (2.943 ms al boot). La v353 segnala la disponibilità appena appare la prima generazione coerente, installando prima i controlli di aggiornamento/tema/viewport. Il nuovo test trattiene sia il catalogo remoto sia il meteo dell’uscita durante la riapertura e verifica che la home salvata sia effettivamente accessibile, non soltanto presente sotto l’overlay.
+
+## Avvio in parallelo v354
+
+La v353 pubblicata ha confermato una riapertura consultabile a 1.252 ms, con il controllo di rete completato a 2.776 ms e nessun invito a riordinare. Un primo accesso immediatamente dopo il deploy, comprendente la revisione iniziale dei seed CMS, ha richiesto 7.698 ms.
+
+La v354 anticipa le due letture meteo in parallelo al catalogo, riutilizzando le stesse risposte quando le zone sono inizializzate: non raddoppia i download. Non precarica se le copie locali sono state acquisite da meno di cinque minuti. Il controllo del marker CMS precede anche la creazione idempotente dello schema, evitando quel viaggio D1 quando la release è già pronta. Il test trattiene completamente il catalogo assente e verifica che entrambe le letture meteo siano già partite.
