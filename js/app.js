@@ -43,6 +43,7 @@ import { SPECIES, GROUPS, FOREST } from './species.js';
 import { scoreZoneDay, scoreSpecies, habitatAtBand, habitatPotential, elevationFit, combine, classOf, scoreLabel, scoreShortLabel, formatIndex, PARAMS, CLASSES } from './model.js';
 import { todayISO, loadWeather } from './weather.js';
 import {loadContentSnapshot} from './content-snapshot.js';
+import {prefetchWeatherSnapshots} from './weather-request.js';
 import { initJournal } from './journal.js';
 import { renderSvgMap } from './svgmap.js';
 import { initSpeciesCards, thumb as fungusThumb, renderSpeciesDetail, speciesHeroSrc, whereSummary, criticalRule as fungusCriticalRule, criticalRuleOf as fungusCriticalRuleOf, speciesPhoto as fungusPhoto, speciesPhotos as fungusPhotos } from './speciescard.js';
@@ -331,6 +332,7 @@ async function init() {
     if(legalNoticeVersion(next)!==legalNoticeVersion(legal)){legal=next;await applyLegal();}
   };
   if(!embedded&&!review){
+    prefetchWeatherSnapshots();
     snapshot=await loadContentSnapshot({onUpdate:value=>{updatedContent=value;void refreshLegal();}});
   }
   const load = (f) => snapshot?.resources?.[f] ? Promise.resolve(structuredClone(snapshot.resources[f])) : fetch(`data/${f}.json`,{signal:AbortSignal.timeout(7000)}).then((r) => (r.ok ? r.json() : null)).catch(() => null);

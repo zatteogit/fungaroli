@@ -35,12 +35,12 @@ async function init(env,origin) {
   const db=env.CMS_DB;
   if(!db) failure('La redazione non è configurata.',503);
   if(!initialized.has(db)) initialized.set(db,(async()=>{
-    await db.batch(schema.split(';').map(s=>s.trim()).filter(Boolean).map(s=>db.prepare(s)));
     // La revisione delle copie seed serve una volta per release, non a ogni
     // nuovo isolate che legge lo snapshot pubblico.
     let shell;
     try{const asset=await env.ASSETS.fetch(new Request(new URL('/index.html',origin)));if(asset.ok&&asset.headers.get('content-type')?.includes('text/html'))shell=(await asset.text()).match(/fungaroli-shell-v\d+/)?.[0];}catch{/* ambienti senza shell: verifica completa */}
-    if(shell&&(await db.prepare("SELECT value FROM cms_meta WHERE key='repository-shell'").first())?.value===shell)return;
+    if(shell)try{if((await db.prepare("SELECT value FROM cms_meta WHERE key='repository-shell'").first())?.value===shell)return;}catch{/* primo avvio: crea lo schema */}
+    await db.batch(schema.split(';').map(s=>s.trim()).filter(Boolean).map(s=>db.prepare(s)));
     const known=new Set((await db.prepare('SELECT id FROM cms_documents').all()).results.map(r=>r.id));
     const missing=CONTENT_RESOURCES.filter(r=>!known.has(r.id));
     const seeds=await Promise.all(missing.map(async r=>{
