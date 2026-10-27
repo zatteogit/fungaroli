@@ -89,6 +89,17 @@ Queste sono ipotesi editoriali basate su un solo scenario, non revisioni
 complete, né test con persone. Restano da provare altri stati, i percorsi da
 tastiera e il caso in cui la specie scelta non compaia nell’elenco compatibile.
 
+### Caso limite: specie scelta esclusa dall’elenco
+
+Con meteo simulato e selezione del Porcino rosso ad Allumiere, l’habitat
+calcolato per la specie risulta «quasi assente». La testata mostra 0,0; aperta
+«Cosa osservare», il testo invita a cercare i valori nell’elenco completo, ma
+il Porcino rosso non è tra le specie in quell’elenco. Il percorso è documentato
+nell’[istantanea](../evidence/002-uscita/allumiere-porcino-rosso-quasi-assente.yml).
+La frase è fuorviante in questo stato; la correzione deve descrivere soltanto
+l’assenza dall’elenco, senza trasformarla in assenza certa nel bosco né cambiare
+il modello o i criteri di selezione.
+
 ## Ancora da fare prima di chiudere la pagina
 
 - Completare l’inventario delle sezioni espanse, dei filtri, degli stati del

@@ -1,0 +1,331 @@
+- generic [ref=f1e1]:
+  - banner [ref=f1e2]:
+    - link "Fronda, home" [ref=f1e3] [cursor=pointer]:
+      - /url: "#/"
+    - 'link "pilota · Lazio : versione pilota, che cosa copre" [ref=f1e9] [cursor=pointer]':
+      - /url: "#/info"
+      - generic [ref=f1e10]: pilota ·
+      - text: Lazio
+      - generic [ref=f1e11]: ": versione pilota, che cosa copre"
+    - button "Cerca in tutta l’app" [ref=f1e13] [cursor=pointer]
+  - navigation "Sezioni" [ref=f1e17]:
+    - generic [ref=f1e18]:
+      - link "Uscite" [ref=f1e19] [cursor=pointer]:
+        - /url: "#/"
+      - link "Mappa" [ref=f1e23] [cursor=pointer]:
+        - /url: "#/mappa"
+      - link "Scopri" [ref=f1e27] [cursor=pointer]:
+        - /url: "#/scopri"
+      - link "Taccuino" [ref=f1e32] [cursor=pointer]:
+        - /url: "#/diario"
+    - button "Annota un ritrovamento" [ref=f1e37] [cursor=pointer]:
+      - generic [ref=f1e41]: Annota
+  - main [ref=f1e42]:
+    - 'button "Indietro: Uscite" [ref=f1e43] [cursor=pointer]':
+      - generic [ref=f1e46]: Uscite
+    - text: “
+    - generic [ref=f1e48]:
+      - generic [ref=f1e49]:
+        - generic [ref=f1e50]:
+          - button "Apri foto e crediti" [ref=f1e51]:
+            - img "Faggeto di Allumiere" [ref=f1e52]
+          - link "Mappa della zona" [ref=f1e53] [cursor=pointer]:
+            - /url: "#/mappa/allumiere-faggeto"
+          - generic:
+            - generic: giovedì 29 ottobre
+            - heading "Faggeto di Allumiere" [level=1]
+            - paragraph: Area romana
+        - region "Scelte dell’uscita" [ref=f1e57]:
+          - group [ref=f1e58]:
+            - 'generic "Funghi · Piante: scelte e significato delle condizioni" [ref=f1e59] [cursor=pointer]':
+              - generic [ref=f1e60]:
+                - strong [ref=f1e61]: Funghi · Piante
+                - generic [ref=f1e62]: Porcino rosso · Ortica · +9 · T · turistica
+          - button "Modifica" [ref=f1e66] [cursor=pointer]
+        - generic [ref=f1e68]:
+          - tablist "Giorno" [ref=f1e69]:
+            - 'tab "Oggi 28 0,0 Meteo Faggeto di Allumiere: asciutto · 13 °C" [ref=f1e70] [cursor=pointer]':
+              - generic [ref=f1e71]: Oggi
+              - generic [ref=f1e72]: "28"
+              - generic [ref=f1e73]: 0,0
+              - 'generic "Meteo Faggeto di Allumiere: asciutto · 13 °C" [ref=f1e77]': 13°
+            - 'tab "Domani 29 0,0 Meteo Faggeto di Allumiere: asciutto · 13 °C" [selected] [ref=f1e83] [cursor=pointer]':
+              - generic [ref=f1e84]: Domani
+              - generic [ref=f1e85]: "29"
+              - generic [ref=f1e86]: 0,0
+              - 'generic "Meteo Faggeto di Allumiere: asciutto · 13 °C" [ref=f1e90]': 13°
+            - 'tab "venerdì 30 0,0 Meteo Faggeto di Allumiere: asciutto · 13 °C" [ref=f1e96] [cursor=pointer]':
+              - generic [ref=f1e97]: venerdì
+              - generic [ref=f1e98]: "30"
+              - generic [ref=f1e99]: 0,0
+              - 'generic "Meteo Faggeto di Allumiere: asciutto · 13 °C" [ref=f1e103]': 13°
+            - 'tab "sabato 31 0,0 Meteo Faggeto di Allumiere: asciutto · 13 °C" [ref=f1e109] [cursor=pointer]':
+              - generic [ref=f1e110]: sabato
+              - generic [ref=f1e111]: "31"
+              - generic [ref=f1e112]: 0,0
+              - 'generic "Meteo Faggeto di Allumiere: asciutto · 13 °C" [ref=f1e116]': 13°
+            - 'tab "domenica 1 0,0 Meteo Faggeto di Allumiere: asciutto · 13 °C" [ref=f1e122] [cursor=pointer]':
+              - generic [ref=f1e123]: domenica
+              - generic [ref=f1e124]: "1"
+              - generic [ref=f1e125]: 0,0
+              - 'generic "Meteo Faggeto di Allumiere: asciutto · 13 °C" [ref=f1e129]': 13°
+            - 'tab "lunedì 2 0,0 Meteo Faggeto di Allumiere: asciutto · 13 °C" [ref=f1e135] [cursor=pointer]':
+              - generic [ref=f1e136]: lunedì
+              - generic [ref=f1e137]: "2"
+              - generic [ref=f1e138]: 0,0
+              - 'generic "Meteo Faggeto di Allumiere: asciutto · 13 °C" [ref=f1e142]': 13°
+            - 'tab "martedì 3 0,0 Meteo Faggeto di Allumiere: asciutto · 13 °C" [ref=f1e148] [cursor=pointer]':
+              - generic [ref=f1e149]: martedì
+              - generic [ref=f1e150]: "3"
+              - generic [ref=f1e151]: 0,0
+              - 'generic "Meteo Faggeto di Allumiere: asciutto · 13 °C" [ref=f1e155]': 13°
+            - 'tab "mercoledì 4 0,0 Meteo Faggeto di Allumiere: asciutto · 13 °C" [ref=f1e161] [cursor=pointer]':
+              - generic [ref=f1e162]: mercoledì
+              - generic [ref=f1e163]: "4"
+              - generic [ref=f1e164]: 0,0
+              - 'generic "Meteo Faggeto di Allumiere: asciutto · 13 °C" [ref=f1e168]': 13°
+          - button "Scorri avanti" [ref=f1e174] [cursor=pointer]
+        - generic [ref=f1e177]:
+          - generic [ref=f1e178]:
+            - generic "Massima della mattina 13 gradi; minima 13. Anello termico da meno 10 a 40 gradi." [ref=f1e179]:
+              - generic [ref=f1e187]:
+                - text: "13"
+                - generic [ref=f1e188]: °
+            - generic [ref=f1e189]:
+              - text: Asciutto
+              - generic [ref=f1e190]: 13–13 °C · mattina
+          - 'button "Condizioni per l’uscita 0,0 su 10: come leggerle" [ref=f1e191]':
+            - generic [ref=f1e192]: Condizioni
+            - generic [ref=f1e193]: 0,0
+      - generic [ref=f1e195]:
+        - paragraph [ref=f1e196]: Meteo · alle 00:24
+        - group [ref=f1e197]:
+          - generic "Raccolta da verificare con il gestore" [ref=f1e198] [cursor=pointer]
+        - group [ref=f1e203]:
+          - generic "Percorso e accessi Sentiero e accesso non documentati" [ref=f1e204] [cursor=pointer]:
+            - generic [ref=f1e208]:
+              - generic [ref=f1e209]: Percorso e accessi
+              - generic [ref=f1e210]: Sentiero e accesso non documentati
+        - heading "Il piano in breve" [level=2] [ref=f1e211]
+        - paragraph [ref=f1e212]: Non abbiamo ancora un sentiero documentato per questa zona.
+        - generic [ref=f1e213]:
+          - group [ref=f1e214]:
+            - generic "Cosa osservare Porcino rosso 0,0 intorno ai 450 m s.l.m." [ref=f1e215] [cursor=pointer]:
+              - generic [ref=f1e218]:
+                - generic [ref=f1e219]: Cosa osservare
+                - generic [ref=f1e220]:
+                  - generic [ref=f1e221]:
+                    - button "Porcino rosso" [ref=f1e222]
+                    - generic "Condizioni di crescita 0,0/10" [ref=f1e223]: 0,0
+                  - generic [ref=f1e227]: intorno ai 450 m s.l.m.
+                - note [ref=f1e229]:
+                  - text: "!"
+                  - generic [ref=f1e230]: Sosia
+                  - generic [ref=f1e329]: Pori rosa, rossi o arancio e carne che vira al blu sono caratteri di altri boleti, anche tossici; il confronto non certifica l’identità di un porcino.
+            - generic [ref=f1e330]:
+              - paragraph [ref=f1e332]:
+                - text: Nelle
+                - link "faggete" [ref=f1e333] [cursor=pointer]:
+                  - /url: "#/albero/faggio"
+                - text: alte e nei boschi misti con pini e abete, su suoli acidi, con una prima buttata a fine primavera.
+              - generic [ref=f1e334]:
+                - heading "Funghi che cerchi" [level=3] [ref=f1e335]
+                - paragraph [ref=f1e336]: Potenziale di crescita dei funghi scelti, prima del fattore meteo dell’uscita. Non è una probabilità di ritrovamento.
+                - paragraph [ref=f1e337]: Le specie scelte non rientrano nei suggerimenti principali di questo giorno. Consulta l’elenco completo per i valori disponibili.
+                - heading "Altri funghi da osservare" [level=3] [ref=f1e338]
+                - paragraph [ref=f1e339]: Fuori dalla tua selezione; non determinano l’indice dell’uscita.
+                - list [ref=f1e340]:
+                  - listitem [ref=f1e341]:
+                    - link "Trombetta dei morti habitat molto adatto · ~338 ha Condizioni di crescita 8,2 su 10" [ref=f1e342] [cursor=pointer]:
+                      - /url: "#/specie/cornucopioides"
+                      - generic [ref=f1e343]:
+                        - generic [ref=f1e344]: Trombetta dei morti
+                        - generic [ref=f1e345]: habitat molto adatto · ~338 ha
+                      - generic "Condizioni di crescita 8,2 su 10" [ref=f1e346]: 8,2
+                  - listitem [ref=f1e350]:
+                    - link "Chiodino habitat molto adatto · ~382 ha Condizioni di crescita 7,5 su 10" [ref=f1e351] [cursor=pointer]:
+                      - /url: "#/specie/mellea"
+                      - generic [ref=f1e352]:
+                        - generic [ref=f1e353]: Chiodino
+                        - generic [ref=f1e354]: habitat molto adatto · ~382 ha
+                      - generic "Condizioni di crescita 7,5 su 10" [ref=f1e355]: 7,5
+                  - listitem [ref=f1e359]:
+                    - link "Steccherino dorato habitat molto adatto · ~365 ha Condizioni di crescita 7,5 su 10" [ref=f1e360] [cursor=pointer]:
+                      - /url: "#/specie/repandum"
+                      - generic [ref=f1e361]:
+                        - generic [ref=f1e362]: Steccherino dorato
+                        - generic [ref=f1e363]: habitat molto adatto · ~365 ha
+                      - generic "Condizioni di crescita 7,5 su 10" [ref=f1e364]: 7,5
+                  - listitem [ref=f1e368]:
+                    - link "Mazza di tamburo habitat molto adatto · ~433 ha Condizioni di crescita 6,0 su 10" [ref=f1e369] [cursor=pointer]:
+                      - /url: "#/specie/procera"
+                      - generic [ref=f1e370]:
+                        - generic [ref=f1e371]: Mazza di tamburo
+                        - generic [ref=f1e372]: habitat molto adatto · ~433 ha
+                      - generic "Condizioni di crescita 6,0 su 10" [ref=f1e373]: 6,0
+                - group [ref=f1e377]:
+                  - generic "Vedi tutte le specie compatibili (11)" [active] [ref=f1e378] [cursor=pointer]
+                  - list
+                  - heading "Altre specie" [level=4] [ref=f1e416]
+                  - list [ref=f1e417]:
+                    - listitem [ref=f1e418]:
+                      - link "Finferlo habitat molto adatto · ~351 ha Condizioni meno favorevoli Condizioni di crescita 3,5 su 10" [ref=f1e419] [cursor=pointer]:
+                        - /url: "#/specie/cibarius"
+                        - generic [ref=f1e420]:
+                          - generic [ref=f1e421]: Finferlo
+                          - generic [ref=f1e422]: habitat molto adatto · ~351 ha
+                          - generic [ref=f1e423]: Condizioni meno favorevoli
+                        - generic "Condizioni di crescita 3,5 su 10" [ref=f1e424]: 3,5
+                    - listitem [ref=f1e428]:
+                      - link "Agarico violetto habitat molto adatto · ~341 ha Condizioni meno favorevoli Condizioni di crescita 3,0 su 10" [ref=f1e429] [cursor=pointer]:
+                        - /url: "#/specie/nuda"
+                        - generic [ref=f1e430]:
+                          - generic [ref=f1e431]: Agarico violetto
+                          - generic [ref=f1e432]: habitat molto adatto · ~341 ha
+                          - generic [ref=f1e433]: Condizioni meno favorevoli
+                        - generic "Condizioni di crescita 3,0 su 10" [ref=f1e434]: 3,0
+                    - listitem [ref=f1e438]:
+                      - link "Colombina verde habitat molto adatto · ~411 ha Condizioni meno favorevoli Condizioni di crescita 2,0 su 10" [ref=f1e439] [cursor=pointer]:
+                        - /url: "#/specie/virescens"
+                        - generic [ref=f1e440]:
+                          - generic [ref=f1e441]: Colombina verde
+                          - generic [ref=f1e442]: habitat molto adatto · ~411 ha
+                          - generic [ref=f1e443]: Condizioni meno favorevoli
+                        - generic "Condizioni di crescita 2,0 su 10" [ref=f1e444]: 2,0
+                    - listitem [ref=f1e448]:
+                      - link "Porcino nero habitat molto adatto · ~344 ha Condizioni meno favorevoli Condizioni di crescita 1,9 su 10" [ref=f1e449] [cursor=pointer]:
+                        - /url: "#/specie/aereus"
+                        - generic [ref=f1e450]:
+                          - generic [ref=f1e451]: Porcino nero
+                          - generic [ref=f1e452]: habitat molto adatto · ~344 ha
+                          - generic [ref=f1e453]: Condizioni meno favorevoli
+                        - generic "Condizioni di crescita 1,9 su 10" [ref=f1e454]: 1,9
+                    - listitem [ref=f1e458]:
+                      - link "Porcino estivo habitat molto adatto · ~365 ha Condizioni meno favorevoli Condizioni di crescita 1,5 su 10" [ref=f1e459] [cursor=pointer]:
+                        - /url: "#/specie/aestivalis"
+                        - generic [ref=f1e460]:
+                          - generic [ref=f1e461]: Porcino estivo
+                          - generic [ref=f1e462]: habitat molto adatto · ~365 ha
+                          - generic [ref=f1e463]: Condizioni meno favorevoli
+                        - generic "Condizioni di crescita 1,5 su 10" [ref=f1e464]: 1,5
+                    - listitem [ref=f1e468]:
+                      - link "Porcino habitat scarso · ~49 ha Condizioni meno favorevoli Condizioni di crescita 1,3 su 10" [ref=f1e469] [cursor=pointer]:
+                        - /url: "#/specie/edulis"
+                        - generic [ref=f1e470]:
+                          - generic [ref=f1e471]: Porcino
+                          - generic [ref=f1e472]: habitat scarso · ~49 ha
+                          - generic [ref=f1e473]: Condizioni meno favorevoli
+                        - generic "Condizioni di crescita 1,3 su 10" [ref=f1e474]: 1,3
+                    - listitem [ref=f1e478]:
+                      - link "Ovolo buono habitat molto adatto · ~354 ha Condizioni meno favorevoli Condizioni di crescita 0,8 su 10" [ref=f1e479] [cursor=pointer]:
+                        - /url: "#/specie/caesarea"
+                        - generic [ref=f1e480]:
+                          - generic [ref=f1e481]: Ovolo buono
+                          - generic [ref=f1e482]: habitat molto adatto · ~354 ha
+                          - generic [ref=f1e483]: Condizioni meno favorevoli
+                        - generic "Condizioni di crescita 0,8 su 10" [ref=f1e484]: 0,8
+                - 'button "Potenziale di crescita da 0 a 10: come leggerle" [ref=f1e379] [cursor=pointer]':
+                  - generic [ref=f1e380]:
+                    - generic [ref=f1e381]: Potenziale di crescita · 0–10
+                    - generic [ref=f1e382]: Ambiente e meteo dei giorni precedenti
+              - generic [ref=f1e383]:
+                - heading "Piante e alberi lungo il giro" [level=3] [ref=f1e384]
+                - paragraph [ref=f1e385]: "Potresti incontrare anche queste specie. Compatibilità con gli ambienti della zona: presenza da verificare."
+                - list [ref=f1e386]:
+                  - listitem [ref=f1e387]:
+                    - 'link "Frutti Prugnolo Periodo indicativo: frutti maturi" [ref=f1e388] [cursor=pointer]':
+                      - /url: "#/pianta/prugnolo"
+                      - generic [ref=f1e389]:
+                        - generic [ref=f1e390]: Frutti
+                        - generic [ref=f1e391]: Prugnolo
+                        - generic [ref=f1e392]: "Periodo indicativo: frutti maturi"
+                      - generic [aria-hidden] [ref=f1e393]: ›
+                  - listitem [ref=f1e394]:
+                    - 'link "Frutti Rosa canina Periodo indicativo: frutti maturi" [ref=f1e395] [cursor=pointer]':
+                      - /url: "#/pianta/rosa-canina"
+                      - generic [ref=f1e396]:
+                        - generic [ref=f1e397]: Frutti
+                        - generic [ref=f1e398]: Rosa canina
+                        - generic [ref=f1e399]: "Periodo indicativo: frutti maturi"
+                      - generic [aria-hidden] [ref=f1e400]: ›
+                  - listitem [ref=f1e401]:
+                    - link "Albero Cerro Cerreta nei campioni della zona" [ref=f1e402] [cursor=pointer]:
+                      - /url: "#/albero/cerro"
+                      - generic [ref=f1e403]:
+                        - generic [ref=f1e404]: Albero
+                        - generic [ref=f1e405]: Cerro
+                        - generic [ref=f1e406]: Cerreta nei campioni della zona
+                      - generic [aria-hidden] [ref=f1e407]: ›
+                - link "Scopri altre piante Erbe, fiori, frutti e arbusti" [ref=f1e408] [cursor=pointer]:
+                  - /url: "#/piante"
+                  - generic [ref=f1e413]:
+                    - generic [ref=f1e414]: Scopri altre piante
+                    - generic [ref=f1e415]: Erbe, fiori, frutti e arbusti
+          - group [ref=f1e232]:
+            - generic "Quando Asciutto · 13 °C" [ref=f1e233] [cursor=pointer]:
+              - generic [ref=f1e240]:
+                - generic [ref=f1e241]: Quando
+                - generic [ref=f1e242]: Asciutto · 13 °C
+          - group [ref=f1e243]:
+            - generic "Come arrivare Accesso auto da verificare" [ref=f1e244] [cursor=pointer]:
+              - generic [ref=f1e251]:
+                - generic [ref=f1e252]: Come arrivare
+                - generic [ref=f1e253]: Accesso auto da verificare
+        - region "Strumenti per il bosco" [ref=f1e254]:
+          - generic [ref=f1e255]:
+            - generic [ref=f1e258]:
+              - heading "Per il bosco" [level=2] [ref=f1e259]
+              - paragraph [ref=f1e260]: Anche senza rete
+            - button "Salva offline" [ref=f1e261] [cursor=pointer]
+          - group [ref=f1e263]:
+            - generic "Altri strumenti" [ref=f1e264] [cursor=pointer]
+        - region [ref=f1e265]:
+          - generic [ref=f1e266]:
+            - text: Dal Taccuino condiviso
+            - heading "Cosa dicono gli altri su Faggeto di Allumiere" [level=2] [ref=f1e267]
+            - paragraph [ref=f1e268]: Ultimi 7 giorni · tutte le specie della zona
+          - paragraph [ref=f1e269]: Condivisione delle osservazioni non ancora attiva.
+          - link "Apri il tuo Taccuino →" [ref=f1e271] [cursor=pointer]:
+            - /url: "#/diario"
+          - paragraph [ref=f1e272]: "Osservazioni dichiarate: non confermano la presenza attuale. I tuoi punti GPS restano privati."
+          - group [ref=f1e273]:
+            - generic "Dati e privacy" [ref=f1e274] [cursor=pointer]
+        - region "Il tuo taccuino" [ref=f1e279]:
+          - button "Com’è andata?" [ref=f1e280] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f1e285]: →
+          - paragraph [ref=f1e286]: Anche una ricerca a vuoto conta. Scegli tu se condividere.
+          - generic [ref=f1e295]:
+            - heading "I tuoi posti restano tuoi" [level=3] [ref=f1e296]
+            - paragraph [ref=f1e297]: Agli altri non mostriamo il tuo punto. Se condividi, vedono solo un riepilogo per zona.
+            - link "Come proteggiamo i tuoi dati ↗" [ref=f1e298] [cursor=pointer]:
+              - /url: "#/info"
+        - generic [ref=f1e299]: Comune di Allumiere; recapito diretto non acquisito
+        - region "Approfondimenti sulla zona" [ref=f1e300]:
+          - heading "Approfondimenti" [level=2] [ref=f1e301]
+          - group [ref=f1e302]:
+            - generic "Regole di raccolta Quantità · orari · documenti · contributo e divieti" [ref=f1e303] [cursor=pointer]:
+              - generic [ref=f1e304]:
+                - generic [ref=f1e305]: Regole di raccolta
+                - generic [ref=f1e306]: Quantità · orari · documenti · contributo e divieti
+          - group [ref=f1e307]:
+            - generic "Da cosa dipendono le condizioni Potenziale dei funghi e meteo dell’uscita" [ref=f1e308] [cursor=pointer]:
+              - generic [ref=f1e309]:
+                - generic [ref=f1e310]: Da cosa dipendono le condizioni
+                - generic [ref=f1e311]: Potenziale dei funghi e meteo dell’uscita
+          - group [ref=f1e312]:
+            - generic "Sentieri della zona 0 tratti mappati · difficoltà e profili" [ref=f1e313] [cursor=pointer]:
+              - generic [ref=f1e314]:
+                - generic [ref=f1e315]: Sentieri della zona
+                - generic [ref=f1e316]: 0 tratti mappati · difficoltà e profili
+          - group [ref=f1e319]:
+            - generic "Bosco della zona intorno a 450 m Cerro · Faggio · Castagno" [ref=f1e320] [cursor=pointer]:
+              - generic [ref=f1e321]:
+                - generic [ref=f1e322]: Bosco della zona intorno a 450 m
+                - generic [ref=f1e323]: Cerro · Faggio · Castagno
+          - group [ref=f1e324]:
+            - generic "Paesaggio e alberi Faggio" [ref=f1e325] [cursor=pointer]:
+              - generic [ref=f1e326]:
+                - generic [ref=f1e327]: Paesaggio e alberi
+                - generic [ref=f1e328]: Faggio
+    - text: ✓ ▶ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋
+  - status
