@@ -17,6 +17,8 @@ le modifiche presenti negli altri checkout e i file sincronizzati del progetto n
 | Dry-run configurazione produzione | Superato; configurazione produttiva non modificata |
 | Demo nel browser Chrome | Caricamento, dati sintetici e selezione Academy verificati; temi chiaro/scuro e nessun overflow a 320/390 px |
 | Suite browser dell’app completa | **Non completata**: il runtime locale termina con `spawn EBADF` prima dei test |
+| CI principale della PR | [Superata sul codice iniziale](https://github.com/zatteogit/fungaroli/actions/runs/40575478305) |
+| Taccuino su GitHub, primo passaggio | [11 scenari superati, 2 aspettative dei test da riallineare](https://github.com/zatteogit/fungaroli/actions/runs/40575502684) |
 | `git diff --check` | Superato |
 
 ## Limiti osservati
@@ -37,6 +39,17 @@ forzato dei pacchetti durante il refactoring.
 Non sono stati verificati Safari/WebKit, dispositivi fisici, lettori di schermo, piattaforme
 native o accessi remoti. I valori di contrasto controllati staticamente non equivalgono a una
 certificazione di accessibilità. Non è stata rieseguita una validazione scientifica dei contenuti.
+
+## Riallineamento delle verifiche browser
+
+Il primo passaggio su GitHub ha avviato correttamente il nuovo ambiente isolato. Undici scenari
+sono passati; due si fermavano su aspettative già presenti nella base: accesso al profilo dalla
+home, mentre il CSS corrente lo mostra nel Taccuino, e presenza di una copertina meteo in un
+controllo dedicato a ricerca/annotazione. Le schermate mostravano invece correttamente lo stato
+senza meteo. I test ora usano i comandi del Taccuino e verificano i controlli anche senza previsione.
+Non sono stati modificati visibilità del profilo, comportamento del meteo o UI per farli passare.
+Il secondo passaggio remoto viene registrato con il relativo esito prima di considerare completato
+il collaudo mirato.
 
 ## Prima di integrare
 

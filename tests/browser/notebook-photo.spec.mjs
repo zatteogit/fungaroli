@@ -50,8 +50,9 @@ test('archivio foto isolato per profilo, cancellazione e nessuna copia falsa dop
  });expect(result).toEqual({isolated:true,failed:true,intact:true});await context.close();
 });
 
+// Questo controllo riguarda navigazione e comandi anche senza una previsione meteo disponibile.
 test('CTA con penna d’oca e ricerca in testata a 320px',async({browser})=>{
- const context=await browser.newContext({viewport:{width:320,height:850},serviceWorkers:'block'}),page=await preparePage(context);await page.goto('/');await expect(page.locator('#hero .cover-link')).toBeVisible();await expect(page.locator('#legal-loading')).toBeHidden();
+ const context=await browser.newContext({viewport:{width:320,height:850},serviceWorkers:'block'}),page=await preparePage(context);await page.goto('/');await expect(page.locator('body')).toHaveAttribute('data-page','uscite');await expect(page.locator('#legal-loading')).toBeHidden();
  await page.evaluate(()=>scrollTo(0,0));await expect(page.locator('.appbar [data-open-search]')).toBeVisible();expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
  await page.screenshot({path:'output/playwright/annota-home-320.png'});await page.locator('.appbar [data-open-search]').click();await expect(page.locator('.search-dlg[open]')).toBeVisible();
  await page.goto('/#/diario');await expect(page.locator('.diary-empty')).toBeVisible();await expect(page.locator('.diary-capture-invite')).toHaveCount(0);
