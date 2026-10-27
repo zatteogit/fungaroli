@@ -585,6 +585,14 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 .fungus-page .ts-card .ts-controls .ts-form[aria-pressed="true"] { box-shadow:inset 0 -2px var(--select); }
 .fungus-page .ts-card .ts-controls .ts-chip[aria-pressed="true"]::before { box-shadow:0 0 0 2px var(--surface),0 0 0 3px var(--text); }
 .fungus-page .ts-card .ts-controls button:focus-visible { outline:2px solid var(--focus); outline-offset:3px; border-radius:4px; }
+@media(hover:hover) and (pointer:fine) {
+ .fungus-page .ts-card .ts-controls :is(.ts-chip,.ts-form):hover { background:var(--surface-2); color:var(--text); }
+ .growth-selector button[aria-pressed="true"]:hover { box-shadow:inset 0 0 0 1px var(--select-ink); }
+ .attention > summary:hover .att-more { text-decoration:underline; text-decoration-thickness:1.5px; text-underline-offset:3px; }
+ .cmp-pair-menu:hover { background:var(--surface-2); }
+ .trail-view-tabs button:not([aria-selected="true"]):hover { background:var(--surface-2); color:var(--text); }
+}
+.fungus-page .ts-card .ts-controls :is(.ts-chip,.ts-form):active { background:var(--surface-3); }
 .ts-choice-label { display:grid; gap:1px; text-align:left; }
 .ts-form { display:inline-flex; align-items:center; justify-content:center; gap:5px; }
 .ts-form .ts-shape-hint { width:24px; height:20px; flex:none; fill:none; stroke:currentColor; stroke-width:3; stroke-linecap:round; stroke-linejoin:round; }
@@ -661,11 +669,24 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 @media(max-width:600px) { .plant-cmp-pair { gap:12px; } .plant-cmp-species .btn { padding-inline:8px; font-size:14px; } .plant-cmp-row .trait-strip > li { padding-inline:8px; } }
 
 /* Stationary photo controls: changing photographs never shifts the page. */
-.phero:has(.inline-gallery-controls) { --gallery-controls-top:calc(env(safe-area-inset-top, 0px) + 16px); --gallery-controls-height:52px; }
-.phero:has(.inline-gallery-controls) .phero-bar { top:var(--gallery-controls-top); min-height:var(--gallery-controls-height); align-items:center; }
-.inline-gallery-controls { position:absolute; z-index:5; top:var(--gallery-controls-top); right:76px; display:flex; align-items:center; gap:4px; padding:3px; border:1px solid var(--control-edge); border-radius:999px; background:var(--surface); color:var(--text); }
+.phero { --gallery-controls-top:calc(env(safe-area-inset-top, 0px) + 16px); --gallery-controls-height:44px; }
+body .phero .phero-bar { top:var(--gallery-controls-top); min-height:var(--gallery-controls-height); align-items:center; }
+.inline-gallery-controls { position:absolute; z-index:5; top:var(--gallery-controls-top); right:68px; display:flex; height:var(--gallery-controls-height); align-items:center; gap:0; padding:0; border:1px solid var(--control-edge); border-radius:999px; background:var(--surface); color:var(--text); }
 .inline-gallery-controls button { display:grid; place-items:center; width:44px; height:44px; padding:0; border:0; border-radius:50%; color:inherit; background:none; cursor:pointer; }
-.inline-gallery-controls button:hover { background:var(--surface-2); }
+@media(hover:hover) and (pointer:fine) {
+ .inline-gallery-controls button:hover { background:var(--surface-2); }
+ :is(button.phero-img,.sp-strip button):not(:disabled):hover::after { opacity:1; }
+}
+.inline-gallery-controls button:active { background:var(--surface-3); }
+:is(button.phero-img,.sp-strip button)::after { content:''; position:absolute; inset:4px; z-index:1; border:2px solid var(--on-photo); box-shadow:0 0 0 2px var(--scrim); pointer-events:none; opacity:0; }
+.sp-strip button { position:relative; }
+.sp-strip button::after { inset:6px; }
+.phero button.phero-img:focus-visible { outline:none; box-shadow:none; }
+:is(button.phero-img,.sp-strip button):focus-visible::after,:is(button.phero-img,.sp-strip button):active::after { opacity:1; }
+:is(button.phero-img,.sp-strip button):active::after { border-width:3px; }
+@media(max-width:899px) {
+ body:is([data-page="zona"],[data-page="specie-dettaglio"],[data-page="albero"],[data-page="fungo"]) .view:not([hidden]) .phero { --gallery-controls-top:calc(env(safe-area-inset-top, 0px) + (var(--appbar-h) - var(--gallery-controls-height))/2); }
+}
 .inline-gallery-controls button:focus-visible { outline:3px solid var(--focus); outline-offset:1px; }
 .inline-gallery-controls svg { width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
 .inline-gallery-controls [data-gallery-counter] { min-width:42px; font:600 13px/1.5 var(--font-body); text-align:center; font-variant-numeric:tabular-nums; }
