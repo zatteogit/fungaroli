@@ -4,7 +4,7 @@
 // - meteo Open-Meteo: gestito dall'app con data di acquisizione e limite d'età
 // - mappe: dalla cache se gia' viste, con un limite di tessere
 // - diario (/api/): mai in cache
-const SHELL = 'fungaroli-shell-v367';
+const SHELL = 'fungaroli-shell-v368';
 const RUNTIME = 'fungaroli-runtime-v1';
 const TILES = 'fungaroli-tiles-v1';
 const CONTENT = 'fungaroli-content-v1';
@@ -101,11 +101,14 @@ self.addEventListener('fetch', (e) => {
   if (url.origin === location.origin) {
     // Streaming and range responses belong to the browser, including offline-pack lookups.
     if(req.headers.has('range')||url.pathname.startsWith('/assets/video/')&&url.pathname.endsWith('.mp4'))return;
-    if(url.pathname.endsWith('/offline.html')||url.pathname.startsWith('/assets/')||url.pathname.startsWith('/js/field-')||url.pathname==='/css/field.css'||url.pathname==='/css/tokens.css'){
+    const reader=['/offline','/offline/','/offline.html'].includes(url.pathname);
+    if(reader||url.pathname.startsWith('/assets/')||url.pathname.startsWith('/js/field-')||url.pathname==='/css/field.css'||url.pathname==='/css/tokens.css'){
       e.respondWith((async()=>{
         const documentAsset=!url.pathname.startsWith('/assets/');
-        if(documentAsset){const current=await(await caches.open(SHELL)).match(req,{ignoreSearch:true});if(current)return current;}
-        for(const key of (await caches.keys()).filter(k=>k.startsWith('fronda-field-pack-'))){const hit=await(await caches.open(key)).match(req,{ignoreSearch:url.pathname.endsWith('/offline.html')});if(hit)return hit;}
+        const savedRequest=reader?new URL('/offline.html',url):req;
+        const clean=response=>reader?new Response(response.body,{status:response.status,statusText:response.statusText,headers:response.headers}):response;
+        if(documentAsset){const current=await(await caches.open(SHELL)).match(savedRequest,{ignoreSearch:true});if(current)return clean(current);}
+        for(const key of (await caches.keys()).filter(k=>k.startsWith('fronda-field-pack-'))){const hit=await(await caches.open(key)).match(savedRequest,{ignoreSearch:reader});if(hit)return clean(hit);}
         return documentAsset?networkFirstFast(req,SHELL):staleWhileRevalidate(req,RUNTIME);
       })());return;
     }
