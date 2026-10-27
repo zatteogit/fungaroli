@@ -26,3 +26,31 @@ test('testata: ricerca, annotazione e profilo restano separati anche cambiando b
   await expect(page.locator('.appbar [data-open-search]')).toBeVisible();await expect(page.locator('.appbar [data-appbar-action]')).toBeVisible();await expect(page.locator('.appbar [data-open-feedback]')).toBeHidden();
  }finally{await context.close();}
 });
+
+test('desktop: i nomi restano visibili quando entrano, anche sotto 1100px',async({browser})=>{
+ const context=await browser.newContext({viewport:{width:900,height:900},serviceWorkers:'block',reducedMotion:'reduce'}),page=await preparePage(context);
+ try{
+  await page.goto('/');await expect(page.locator('#hero .cover-link')).toBeVisible();await page.evaluate(()=>document.fonts.ready);
+  for(const width of [900,950,1024,1099,1280]){
+   await page.setViewportSize({width,height:900});
+   for(const [route,ready] of [['/','#hero .cover-link'],['/#/diario','.diary-header-actions'],['/#/specie/nuda','.view:not([hidden]) .phero-title'],['/#/confronta/edulis/pinophilus','.cmp-pair-nav']]){
+    await page.goto(route);await expect(page.locator(ready)).toBeVisible();
+    if(route.includes('/specie/nuda')){await page.evaluate(()=>scrollTo(0,document.documentElement.scrollHeight));await expect(page.locator('.tab-action-slot')).toHaveAttribute('aria-hidden','false');}
+    await expect(page.locator('.tabbar')).toHaveAttribute('data-labels','full');
+    const layout=await page.evaluate(()=>{
+     const controls=[...document.querySelectorAll('.brand,.brand-place,.appbar-actions button,.appbar-actions a,.tabbar a,.tabbar button')].filter(e=>{const r=e.getBoundingClientRect();return r.width>0&&r.height>0&&getComputedStyle(e).visibility!=='hidden'&&!e.closest('[inert],[aria-hidden="true"]');});
+     const overlaps=[];for(let i=0;i<controls.length;i++)for(let j=i+1;j<controls.length;j++){const a=controls[i].getBoundingClientRect(),b=controls[j].getBoundingClientRect();if(Math.min(a.right,b.right)-Math.max(a.left,b.left)>1&&Math.min(a.bottom,b.bottom)-Math.max(a.top,b.top)>1)overlaps.push([controls[i].getAttribute('aria-label'),controls[j].getAttribute('aria-label')]);}
+     return {widths:[...document.querySelectorAll('.tab-destinations a>span')].map(e=>e.getBoundingClientRect().width),overlaps};
+    });
+    expect(layout.widths.every(w=>w>20),`${width}px ${route}: etichette leggibili`).toBe(true);expect(layout.overlaps,`${width}px ${route}`).toEqual([]);
+   }
+  }
+  // A large text preference can really exhaust the interval; resizing restores
+  // labels without changing destinations or their accessible names.
+  await page.goto('/');await expect(page.locator('#hero .cover-link')).toBeVisible();await page.setViewportSize({width:900,height:900});
+  const large=await page.addStyleTag({content:'@media(min-width:900px){.tabbar .tab-destinations a{font-size:28px;}}'});
+  await page.evaluate(()=>window.dispatchEvent(new Event('resize')));await expect(page.locator('.tabbar')).toHaveAttribute('data-labels','compact');
+  await expect(page.locator('.tabbar a')).toHaveCount(4);await expect(page.locator('.tabbar a').first()).toHaveAccessibleName('Uscite');
+  await page.setViewportSize({width:1440,height:900});await expect(page.locator('.tabbar')).toHaveAttribute('data-labels','full');await large.evaluate(e=>e.remove());
+ }finally{await context.close();}
+});

@@ -33,5 +33,9 @@ Se nel frattempo cambia la rotta, la pressione non può annotare un altro contes
 resta nella stessa chiave locale e si sceglie esplicitamente nel Taccuino.
 
 Telefono e desktop condividono gerarchia e contesto: cambiano disposizione e
-spazio disponibile. Da 1100 px le destinazioni tornano testuali; la modalità
-compatta continua a offrire gli stessi quattro accessi e i loro nomi accessibili.
+spazio disponibile. Su desktop le etichette restano visibili finché entrano
+nello spazio effettivamente libero tra marchio e azioni della pagina, anche
+tra 900 e 1099 px. La barra si centra in questo intervallo, evitando collisioni.
+Solo se le voci e l’eventuale «Annota» non entrano si usano le icone, con gli
+stessi quattro accessi e i loro nomi accessibili. Il calcolo si aggiorna con
+dimensioni, font e contesto, senza misurazioni durante lo scroll.
