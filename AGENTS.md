@@ -15,6 +15,12 @@ Per identità visiva e design system Fronda leggi anche [docs/handoff-fronda-202
 
 ## Verifiche
 
+**TypeScript (migrazione graduale):** i moduli `js/field-*.js` sono generati da
+`src/field/*.ts`. Modificare i sorgenti, eseguire `npm run build:typescript` e
+includere nel commit anche il JavaScript generato. `npm test` controlla tipi e
+coerenza degli output. Non aggiungere codice manuale nei file generati.
+Perimetro e comandi in [docs/typescript.md](docs/typescript.md).
+
 ```bash
 npm ci
 npm test                                  # test unitari (Node ≥ 22)

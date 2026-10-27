@@ -34,6 +34,10 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - name: TypeScript — tipi e JavaScript generato
+        run: |
+          npm run check:typescript
+          git diff --exit-code -- js/field-*.js
       - run: npm test
       - name: Studio Fronda — token, risorse e contratti
         run: node docs/fronda/scripts/check.mjs
