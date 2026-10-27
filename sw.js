@@ -4,12 +4,13 @@
 // - meteo Open-Meteo: gestito dall'app con data di acquisizione e limite d'età
 // - mappe: dalla cache se gia' viste, con un limite di tessere
 // - diario (/api/): mai in cache
-const SHELL = 'fungaroli-shell-v365';
+const SHELL = 'fungaroli-shell-v366';
 const RUNTIME = 'fungaroli-runtime-v1';
 const TILES = 'fungaroli-tiles-v1';
 const CONTENT = 'fungaroli-content-v1';
 const MAX_TILES = 1500;
 const PRECACHE = [
+  'offline.html','js/field-mode.js','js/field-device.js','js/field-store.js','js/field-reader.js','js/field-render.js','js/field-alerts.js','css/field.css',
   'js/content-snapshot.js',
   'js/research-consent-invite.js',
   'js/navigation-dock.js', 'css/navigation-dock.css',
@@ -47,7 +48,7 @@ self.addEventListener('install', (e) => {
 });
 self.addEventListener('activate', (e) => {
   const keep = [SHELL, RUNTIME, TILES, CONTENT];
-  e.waitUntil(caches.keys().then((ks) => Promise.all(ks.filter((k) => !keep.includes(k)).map((k) => caches.delete(k)))).then(() => self.clients.claim()));
+  e.waitUntil(caches.keys().then((ks) => Promise.all(ks.filter((k) => !keep.includes(k)&&!k.startsWith('fronda-field-pack-')).map((k) => caches.delete(k)))).then(() => self.clients.claim()));
 });
 
 async function staleWhileRevalidate(req, cacheName) {
@@ -98,6 +99,16 @@ self.addEventListener('fetch', (e) => {
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
   if (url.origin === location.origin) {
+    // Streaming and range responses belong to the browser, including offline-pack lookups.
+    if(req.headers.has('range')||url.pathname.startsWith('/assets/video/')&&url.pathname.endsWith('.mp4'))return;
+    if(url.pathname.endsWith('/offline.html')||url.pathname.startsWith('/assets/')||url.pathname.startsWith('/js/field-')||url.pathname==='/css/field.css'||url.pathname==='/css/tokens.css'){
+      e.respondWith((async()=>{
+        const documentAsset=!url.pathname.startsWith('/assets/');
+        if(documentAsset){const current=await(await caches.open(SHELL)).match(req,{ignoreSearch:true});if(current)return current;}
+        for(const key of (await caches.keys()).filter(k=>k.startsWith('fronda-field-pack-'))){const hit=await(await caches.open(key)).match(req,{ignoreSearch:url.pathname.endsWith('/offline.html')});if(hit)return hit;}
+        return documentAsset?networkFirstFast(req,SHELL):staleWhileRevalidate(req,RUNTIME);
+      })());return;
+    }
     // Le prove pubblicate restano indipendenti dalla cache e dal ripiego dell’app.
     if(url.pathname==='/dev'||url.pathname.startsWith('/dev/'))return;
     // Streaming e richieste Range: gestiti dal browser, mai copiati nella cache PWA.
@@ -118,3 +129,11 @@ self.addEventListener('fetch', (e) => {
     e.respondWith(staleWhileRevalidate(req, RUNTIME));
   }
 });
+
+// Every received push produces a visible, same-origin notification, even with malformed data.
+self.addEventListener('push',event=>{event.waitUntil((async()=>{
+ let data={},target=location.origin+'/';try{const value=event.data?.json();if(value&&typeof value==='object')data=value;}catch{}
+ try{const url=new URL(typeof data.url==='string'?data.url:'/',location.origin);if(url.origin===location.origin&&/^\/#\/zona\/[a-z0-9-]+\/[0-7]$/.test(url.pathname+url.hash))target=url.href;}catch{}
+ await self.registration.showNotification(typeof data.title==='string'?data.title.slice(0,120):'Novità per la tua uscita',{body:typeof data.body==='string'?data.body.slice(0,400):'Apri Fronda per ricontrollare il meteo.',icon:'/assets/fronda-icon-192.png',badge:'/assets/fronda-icon-192.png',tag:typeof data.tag==='string'?data.tag.slice(0,120):'fronda-outing',data:{url:target}});
+})());});
+self.addEventListener('notificationclick',event=>{event.notification.close();event.waitUntil((async()=>{let target=location.origin+'/';try{const url=new URL(event.notification.data?.url,location.origin);if(url.origin===location.origin)target=url.href;}catch{}await self.clients.openWindow(target);})());});

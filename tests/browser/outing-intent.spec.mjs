@@ -1,3 +1,4 @@
+import {preparePage} from '../../tools/visual-audit.mjs';
 import {mapToggle,mapLegend} from './map-helpers.mjs';
 import {test,expect} from '@playwright/test';
 import {todayISO} from '../../js/weather.js';
@@ -81,4 +82,12 @@ for(const intent of ['piante','passeggiata'])test(`copertine ${intent}: ripiego 
  expect(Math.abs(await failedCard.evaluate(e=>e.getBoundingClientRect().height)-height)).toBeLessThan(1);
  await page.setViewportSize({width:390,height:844});
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+});
+
+// Un link diretto deve aprirsi prima del meteo, anche con interessi combinati salvati.
+test('uscita diretta con Funghi e Piante: avvio senza meteo e strumenti per il bosco',async({browser})=>{
+ const context=await browser.newContext({viewport:{width:390,height:900},serviceWorkers:'block'}),page=await preparePage(context);
+ await page.addInitScript(()=>localStorage.setItem('fungaroli:prefs:v2',JSON.stringify({interests:['funghi','piante'],target:'funghi',speciesIds:['edulis'],plantIds:null})));
+ await page.route('**/api/weather/v1/forecast?**',r=>r.fulfill({status:503,json:{error:'fixture offline'}}));
+ await page.goto('/#/zona/vallonina/1');await expect(page.locator('#legal-loading')).toBeHidden();await expect(page.locator('.view:not([hidden]) [data-field-tools]')).toBeVisible();await expect(page.locator('.view:not([hidden]) h1')).toHaveText('Vallonina');await context.close();
 });

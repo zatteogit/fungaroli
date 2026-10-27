@@ -1,3 +1,4 @@
+import {normalizePosition} from './field-device.js';
 import {normalizeNotebookPhoto} from './notebook-photo.js';
 import {normalizeFieldRecord} from './community-observation.js';
 // Internal phase status absent means searched, not observed; it does not prove absence.
@@ -20,10 +21,10 @@ export function normalizeNotebookNote(e,{zoneIds,plantIds,now=Date.now()}={}){
     if(!['unknown','none','few','many'].includes(o.availability)||o.minutes!=null&&(!Number.isInteger(o.minutes)||o.minutes<1||o.minutes>1440)||typeof o.patchLabel!=='string'||o.patchLabel.length>120)invalid();
     observation={protocolVersion:'fungaroli-phenology-notes-v1',taxonId:o.taxonId,identification:'unreviewed',phases:o.phases.map(p=>({code:p.code,status:p.status})),availability:o.availability,minutes:o.minutes??null,patchLabel:o.patchLabel,locationPrecision:zoneId?'zone':'unspecified',researchConsent:false};
   }
-  const photo=normalizeNotebookPhoto(e.photo);
+  const photo=normalizeNotebookPhoto(e.photo),position=normalizePosition(e.position);
   if(photo&&e.date>new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Rome',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(now)))invalid();
   let weather=null;
   if(e.weather!=null){const w=e.weather;if(w.zoneId!==zoneId||w.date!==e.date||!['sun','cloud','wind','fog','rain','storm','snow'].includes(w.icon)||![w.tmin,w.tmax].every(v=>Number.isFinite(v)&&v>=-70&&v<=60)||w.tmin>w.tmax||!Number.isFinite(Date.parse(w.capturedAt)))invalid();weather={zoneId,date:e.date,icon:w.icon,tmin:w.tmin,tmax:w.tmax,capturedAt:w.capturedAt};}
   if(!reference&&!e.note.trim()&&!photo)invalid();
-  return {...(e.record!=null?{record:normalizeFieldRecord(e.record,e.category)}:{}),...(photo?{photo}:{}),...(weather?{weather}:{}),id:e.id,kind:'note',title:e.title.trim(),category:e.category,date:e.date,zoneId,note:e.note,reference,observation,savedAt:typeof e.savedAt==='string'&&Number.isFinite(Date.parse(e.savedAt))?e.savedAt:new Date().toISOString()};
+  return {...(e.record!=null?{record:normalizeFieldRecord(e.record,e.category)}:{}),...(photo?{photo}:{}),...(position?{position}:{}),...(weather?{weather}:{}),id:e.id,kind:'note',title:e.title.trim(),category:e.category,date:e.date,zoneId,note:e.note,reference,observation,savedAt:typeof e.savedAt==='string'&&Number.isFinite(Date.parse(e.savedAt))?e.savedAt:new Date().toISOString()};
 }

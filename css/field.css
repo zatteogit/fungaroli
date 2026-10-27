@@ -1,0 +1,212 @@
+.field-tools,
+.field-location {
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--surface-2);
+  color: var(--text);
+  margin-block: 20px;
+}
+.field-tools h2,
+.field-location p {
+  margin: 0 0 12px;
+}
+.field-tools h2 {
+  font: 600 22px/1.3 var(--font-display);
+}
+.field-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+.field-tools .small,
+.field-location .small {
+  color: var(--text-2);
+}
+.quick-camera {
+  position: relative;
+  margin: 12px;
+}
+.quick-camera input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+.quick-camera:focus-within {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+.field-reader {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font:
+    16px/1.65 system-ui,
+    sans-serif;
+}
+.field-reader nav,
+.field-reader main {
+  max-width: 760px;
+  margin: auto;
+  padding: 20px;
+}
+.field-reader nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+.field-reader a {
+  color: var(--link);
+  text-underline-offset: 3px;
+}
+.field-reader a:hover {
+  text-decoration-thickness: 3px;
+}
+.field-reader :focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 4px;
+}
+.field-reader h1 {
+  font-size: clamp(28px, 6vw, 42px);
+  line-height: 1.2;
+}
+.field-reader h2 {
+  line-height: 1.3;
+}
+.field-reader section {
+  padding-block: 16px;
+  border-bottom: 1px solid var(--border);
+}
+.field-reader .small {
+  font-size: 14px;
+  color: var(--text-2);
+}
+.field-cover {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.field-route {
+  width: 100%;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+.field-route g {
+  fill: none;
+  stroke: var(--link);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.field-route text {
+  fill: var(--text);
+  font:
+    16px system-ui,
+    sans-serif;
+}
+.field-route .field-you {
+  fill: var(--select);
+  stroke: var(--text);
+  stroke-width: 3;
+}
+.field-species {
+  margin-block: 20px;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+}
+.field-species img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+}
+.field-caution {
+  padding: 16px;
+  background: var(--surface-2);
+  border-left: 3px solid var(--text);
+}
+.field-reader .btn {
+  font: inherit;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  min-height: 44px;
+  padding: 8px 18px;
+  cursor: pointer;
+}
+.field-reader .btn:hover {
+  background: var(--surface-3);
+}
+.field-reader .btn:active {
+  background: var(--select);
+  color: var(--select-ink);
+}
+.field-reader .btn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+.field-pack-list {
+  list-style: none;
+  padding: 0;
+}
+.field-pack-list li {
+  padding-block: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid var(--border);
+}
+.field-pack-list a {
+  display: grid;
+}
+.field-tools .field-link {
+  display: inline-block;
+  margin-top: 12px;
+}
+.field-notifications {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+@media (max-width: 480px) {
+  .field-actions {
+    align-items: stretch;
+  }
+  .field-tools .field-actions > .btn {
+    flex: 1 1 160px;
+  }
+  .field-reader main {
+    padding: 16px;
+  }
+}
+
+.mapctl-wake-status {
+  position: absolute;
+  right: 54px;
+  top: 0;
+  width: min(240px, calc(100vw - 92px));
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.5;
+  box-shadow: var(--shadow-1);
+}
+.mapctl-wake-status:empty,
+.mapctl-wake-status[hidden] {
+  display: none;
+}
+@media (hover: hover) and (pointer: fine) {
+  .quick-camera {
+    display: none;
+  }
+}
