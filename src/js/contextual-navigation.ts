@@ -38,7 +38,7 @@ function desktopNavigationFit(bar: HTMLElement): (reserveAction: boolean) => voi
       else left = Math.max(left, r.right + 16);
     }
     bar.style.setProperty("--nav-left", `${left}px`);
-    bar.style.setProperty("--nav-right", `${Math.max(0, innerWidth - right)}px`);
+    bar.style.setProperty("--nav-right", `${Math.max(0, document.documentElement.clientWidth - right)}px`);
     bar.dataset.fitReady = "";
     // Full labels are the default. Read their natural size before choosing a
     // fallback in this same frame, so no hidden measuring copy enters the DOM.
@@ -47,6 +47,7 @@ function desktopNavigationFit(bar: HTMLElement): (reserveAction: boolean) => voi
     const needed = destinations.getBoundingClientRect().width +
       (reserveAction ? parseFloat(css.getPropertyValue("--nav-action-size")) + 8 : 0);
     if (needed > right - left) bar.dataset.labels = "compact";
+    bar.style.setProperty("--nav-destinations-width", `${destinations.getBoundingClientRect().width}px`);
   };
   const schedule = () => {
     if (!queued) queued = requestAnimationFrame(() => { queued = 0; fit(actionNeeded); });

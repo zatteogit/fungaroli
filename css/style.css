@@ -1324,7 +1324,8 @@ html.is-offline #updated { color: var(--warn-ink); font-weight: 600; }
 .search-fake span { flex: 1; }
 .search-scopes { padding: 8px var(--gutter) 0; margin: 0; border-bottom: 1px solid var(--hair); padding-bottom: 10px; background: var(--bg); }
 .search-dlg[open] { grid-template-rows:auto auto minmax(0, 1fr); }
-.search-dlg > :is(.search-top,.search-scopes,.search-res) { width:100%; max-width:900px; min-width:0; box-sizing:border-box; margin-inline:auto; }
+/* Mouse scrolling adds a rail host: keep that wrapper in the same column too. */
+.search-dlg > :is(.search-top,.search-scopes,.search-res,.rail-host:has(> .search-scopes)) { width:100%; max-width:900px; min-width:0; box-sizing:border-box; margin-inline:auto; }
 
 /* Safari nel browser sovrappone la barra indirizzi e gli accessori della tastiera.
    Spazio di scorrimento finale: anche l’ultima voce può salire sopra quei comandi. */
