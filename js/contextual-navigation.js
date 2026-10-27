@@ -14,6 +14,56 @@ const notePages = new Set([
 export function contextCanAnnotate(page) {
     return notePages.has(page);
 }
+// Header occupancy changes with the page, profile and font. A viewport breakpoint
+// cannot tell us whether labels actually fit. Never measure on the scroll path.
+function desktopNavigationFit(bar) {
+    const desktop = matchMedia("(min-width:900px)");
+    const header = document.querySelector(".appbar");
+    const destinations = bar.querySelector(".tab-destinations");
+    let queued = 0, actionNeeded = false;
+    const fit = (reserveAction) => {
+        actionNeeded = reserveAction;
+        if (!desktop.matches || !header || !destinations) {
+            delete bar.dataset.fitReady;
+            delete bar.dataset.labels;
+            return;
+        }
+        const head = header.getBoundingClientRect();
+        let left = head.left, right = head.right;
+        for (const item of header.querySelectorAll(".brand,.brand-place,.appbar-actions")) {
+            const r = item.getBoundingClientRect();
+            if (!r.width || getComputedStyle(item).visibility === "hidden")
+                continue;
+            if (item.classList.contains("appbar-actions"))
+                right = Math.min(right, r.left - 16);
+            else
+                left = Math.max(left, r.right + 16);
+        }
+        bar.style.setProperty("--nav-left", `${left}px`);
+        bar.style.setProperty("--nav-right", `${Math.max(0, innerWidth - right)}px`);
+        bar.dataset.fitReady = "";
+        // Full labels are the default. Read their natural size before choosing a
+        // fallback in this same frame, so no hidden measuring copy enters the DOM.
+        bar.dataset.labels = "full";
+        const css = getComputedStyle(bar);
+        const needed = destinations.getBoundingClientRect().width +
+            (reserveAction ? parseFloat(css.getPropertyValue("--nav-action-size")) + 8 : 0);
+        if (needed > right - left)
+            bar.dataset.labels = "compact";
+    };
+    const schedule = () => {
+        if (!queued)
+            queued = requestAnimationFrame(() => { queued = 0; fit(actionNeeded); });
+    };
+    const observer = new ResizeObserver(schedule);
+    for (const item of header?.querySelectorAll(".brand,.brand-place,.appbar-actions") || [])
+        observer.observe(item);
+    addEventListener("resize", schedule, { passive: true });
+    desktop.addEventListener("change", schedule);
+    document.fonts.ready.then(schedule);
+    document.fonts.addEventListener("loadingdone", schedule);
+    return fit;
+}
 export function initContextualNavigation() {
     const bar = document.querySelector(".tabbar");
     const slot = document.querySelector(".tab-action-slot");
@@ -21,6 +71,7 @@ export function initContextualNavigation() {
     const views = document.getElementById("views");
     if (!bar || !slot || !action || !views)
         return;
+    const fitDesktop = desktopNavigationFit(bar);
     const reduced = matchMedia("(prefers-reduced-motion:reduce)");
     const seen = new Set();
     let value = 0, velocity = 0, target = 0, frame = 0, previous = 0, queued = 0;
@@ -45,6 +96,7 @@ export function initContextualNavigation() {
             value = target;
             velocity = 0;
             paint();
+            fitDesktop(target === 1);
             return;
         }
         const next = stepDockSpring(value, velocity, target, previous ? (time - previous) / 1000 : 1 / 60);
@@ -54,8 +106,10 @@ export function initContextualNavigation() {
         paint();
         if (!next.settled)
             frame = requestAnimationFrame(tick);
-        else
+        else {
             previous = 0;
+            fitDesktop(target === 1);
+        }
     };
     const animate = () => {
         if (held())
@@ -67,6 +121,7 @@ export function initContextualNavigation() {
             velocity = 0;
             previous = 0;
             paint();
+            fitDesktop(target === 1);
         }
         else if (!frame && (value !== target || velocity)) {
             previous = 0;
@@ -78,6 +133,7 @@ export function initContextualNavigation() {
             return;
         const wanted = contextCanAnnotate(document.body.dataset.page || "") && seen.size === 0;
         target = wanted ? 1 : 0;
+        fitDesktop(target === 1 || value > 0.0005);
         animate();
         paint();
     };
