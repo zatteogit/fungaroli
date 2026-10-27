@@ -140,7 +140,7 @@ export async function ensureAccount() {
 }
 
 // Consenso alla ricerca (D4): separato dalla condivisione, spento all'inizio, revocabile in ogni momento.
-async function saveResearchConsent(accountId,granted){
+export async function saveResearchConsent(accountId,granted){
  if(user?.id!==accountId)throw new Error('Il profilo è cambiato. Riaprilo prima di salvare.');
  const r=await communityRequest('research-consent','PUT',{accountId,granted,version:RESEARCH_CONSENT_VERSION});
  if(user?.id!==accountId)throw new Error('Il profilo è cambiato. Riaprilo prima di salvare.');
@@ -163,6 +163,7 @@ function mountResearchConsent(slot,accountId){
 export async function openAccount() {
   const {toast} = await import('./refresh.js');
   await ready;
+  document.dispatchEvent(new Event('fronda:pilot-profile-opened'));
   if (!authDialog) { authDialog = document.createElement('dialog'); authDialog.className = 'community-dialog'; document.body.appendChild(authDialog); }
   authDialog.classList.toggle('profile-dialog', !!user);
   authDialog.classList.toggle('auth-dialog', !user && enabled);
@@ -178,12 +179,12 @@ export async function openAccount() {
       <div class="profile-editorial" data-cms-link hidden></div>
       <div class="profile-actions" role="group" aria-label="Azioni del profilo"><button type="button" class="btn ghost" data-logout>Esci dal profilo</button><button type="button" class="btn primary" data-close autofocus>Chiudi</button></div>
       <div class="profile-data"><button type="button" class="btn ghost" data-export-account>Scarica i miei dati</button><button type="button" class="link-btn" data-delete-account>Elimina profilo e dati</button></div><p class="profile-status" role="status" data-status></p>`
-      : `<header class="account-header"><h2>Unisciti a Fronda</h2><button type="button" class="profile-close" data-close aria-label="Chiudi l’accesso" autofocus>×</button></header><div class="auth-content"><p class="auth-intro">Accedi con la passkey del dispositivo, senza password o email.</p>
+      : `<header class="account-header"><h2>Un profilo, se vuoi</h2><button type="button" class="profile-close" data-close aria-label="Chiudi l’accesso" autofocus>×</button></header><div class="auth-content"><p class="auth-intro">Il profilo è facoltativo e consigliato per conservare online il Taccuino e condividere osservazioni. Puoi già usare Fronda e annotare su questo dispositivo. Per accedere basta una passkey, senza password o email.</p>
       <label>Nome facoltativo <input class="wiz-input" maxlength="32" autocomplete="nickname" data-handle placeholder="Un nome, anche inventato"></label>
-      <div class="auth-actions"><button type="button" class="btn primary" data-register>Crea profilo con passkey</button><button type="button" class="btn ghost" data-login>Ho già una passkey</button></div>
+      <div class="auth-actions"><button type="button" class="btn ghost" data-close>Continua senza profilo</button><button type="button" class="btn primary" data-register>Crea profilo con passkey</button><button type="button" class="btn ghost" data-login>Ho già una passkey</button></div>
       <p class="small muted auth-privacy">Il taccuino rimane tuo. Scegli tu se condividere: chi contribuisce può consultare gli aggregati. Agli altri non mostriamo la posizione della tua fungaia, nomi o note: solo conteggi per zona ampia e specie su 7 giorni, se ci sono almeno 3 contributori e 2 giorni diversi. <a href="#/info">Privacy e condizioni</a></p>
       <details class="context-note"><summary>Come ritrovare il profilo</summary><p>Usa la stessa passkey, anche sincronizzata fra i tuoi dispositivi. Se la perdi, non possiamo recuperarla tramite email. Il nome non appare nelle segnalazioni.</p></details>
-      <p role="status" data-status></p><button type="button" class="link-btn auth-dismiss" data-close>Continua senza profilo</button></div>`;
+      <p role="status" data-status></p></div>`;
     authDialog.setAttribute('aria-label', user ? 'Il tuo profilo' : 'Accedi o crea un profilo');
     const status = authDialog.querySelector('[data-status]');
     if(user){

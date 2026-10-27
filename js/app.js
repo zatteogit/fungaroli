@@ -1,4 +1,4 @@
-import {setPilotChoices} from './pilot-choice-state.js';
+import {setPilotChoices,clearPilotChoices} from './pilot-choice-state.js';
 import {pilotWelcomeHtml,pilotChoicesHtml,feedbackGlyph} from './pilot-onboarding.js';
 import {initFeedback,openFeedback} from './feedback.js';
 import {mergeGrowth,mergeOuting,rebaseGrowth} from './weather-state.js';
@@ -70,7 +70,7 @@ import { initTrees, renderTreeGrid, renderTreePage, linkTrees, treeChips, treeFo
 import { crowding, comfortScore, timingAdvice, collectWindow, todayGone, sunTimes, fmtTime, fmtRough, roundTime, intornoA, chooseAccess, accessFieldIndex, accessRow, walkPhrase, trackNote, fmtDist, fmtRise } from './human.js';
 import { prepareSiteInfo, alignedZones, excludedFn, warnedFn, bandReserve, RESERVE_BAND_TEXT, reserveLead, reserveAccessText, reserveLegendText, bandForestInfo, bandForestLines, zoneSiteInfo, zoneSiteLines, siteSources } from './site-info.js';
 import { predictScores, captureForecastData, FORECAST_INPUTS } from './forecast-capture.js';
-import { openAccount, initCommunity, communityStatus, communityOverview,communityHasAccess,communityForEntity, communityRank, communityHasZone, communityDataAvailable, currentUser, reportBadge,zoneCommunity } from './community.js';
+import { openAccount, initCommunity, communityStatus, communityOverview,communityHasAccess,communityForEntity, communityRank, communityHasZone, communityDataAvailable, currentUser, saveResearchConsent, reportBadge,zoneCommunity } from './community.js';
 import { guideTitle, renderGuideCards, renderGuide, initGuideContent, guideCount } from './guides.js';
 import { buildEdibleCatalog, seasonStatus, seasonLabel } from './edible-catalog.js';
 import { mountSpeciesAutocomplete } from './species-autocomplete.js';
@@ -4010,7 +4010,11 @@ async function applyLegal() {
     dlg.querySelector('h2').textContent = L.onboarding?.title || 'Prima di usare l\'app';
     const sub = $('#ob-sub'); if (sub) { sub.textContent = L.onboarding?.subtitle || ''; sub.hidden = !sub.textContent; }
     $('#ob-welcome').innerHTML=pilotWelcomeHtml(L.onboarding);
-    $('#ob-participation').innerHTML=pilotChoicesHtml();
+    let choiceOwner=currentUser()?.id||null,choicesTouched=false,researchTouched=false;
+    const participation=$('#ob-participation');participation.innerHTML=pilotChoicesHtml(currentUser());
+    participation.onchange=event=>{choicesTouched=true;if(event.target.id==='ob-research')researchTouched=true;};
+    const syncWelcomeProfile=()=>{const user=currentUser();if(dlg.open&&!choicesTouched&&(user?.id||null)!==choiceOwner){choiceOwner=user?.id||null;participation.innerHTML=pilotChoicesHtml(user);}};
+    document.addEventListener('fungaroli:community',syncWelcomeProfile);
     $('#ob-cookie-summary').textContent=L.onboarding.cookie_summary;
     $('#ob-cookie-policy').innerHTML=(L.info_sections||[]).find(section=>section.id==='cookie')?.html||'';
     dlg.querySelector('.ob-points').innerHTML = (L.onboarding?.points || [
@@ -4019,15 +4023,22 @@ async function applyLegal() {
       'Nel Lazio si raccoglie con attestato micologico, documento e ricevuta del contributo annuale (esenti i residenti dai 65 anni); sotto i 14 anni solo se accompagnati. Massimo 3 kg di funghi commestibili a persona al giorno (L.R. 32/1998).',
       'In montagna la sicurezza e il rispetto delle regole di parchi e riserve sono tua responsabilità.',
     ]).map((x) => `<li>${esc(x)}</li>`).join('');
-    const updateAcceptanceLabel=()=>{$('#ob-accept').textContent=$('#ob-share').checked||$('#ob-research').checked?'Continua e conferma sul profilo':L.onboarding?.accept||'Ho letto, continua';};
-    updateAcceptanceLabel();$('#ob-participation').onchange=updateAcceptanceLabel;
+    $('#ob-accept').textContent=L.onboarding?.accept||'Ho letto, continua';
     $('#ob-legal-details').innerHTML=(L.info_sections||[]).filter(section=>section.id!=='cookie').map(section=>`<section><h3>${esc(section.title)}</h3>${section.id==='privacy'?privacyHtml(section.html):section.html}</section>`).join('');
     $('#ob-accept').onclick=async()=>{
       const button=$('#ob-accept');button.disabled=true;
-      try{const choices={share:$('#ob-share').checked,research:$('#ob-research').checked};const {persisted}=await acceptLegalNotice();setPilotChoices(choices,currentUser()?.id||null);dlg.close();if(choices.share||choices.research){document.dispatchEvent(new Event('fronda:pilot-choices'));if(!currentUser())void openAccount();}else document.dispatchEvent(new Event('fronda:pilot-choice-deferred'));if(!persisted){const note=document.createElement('div');note.className='app-toast on';note.setAttribute('role','status');note.textContent='Conferma valida per questa apertura. Il browser non permette di conservarla.';document.body.append(note);setTimeout(()=>note.remove(),7000);}}catch{$('#ob-status').textContent='Non riesco a registrare la conferma. Riprova.';}finally{button.disabled=false;}
+      try{choicesTouched=true;const consentOwner=choiceOwner;const choices={share:$('#ob-share').checked,research:$('#ob-research').checked};const {persisted}=await acceptLegalNotice();
+       if(!consentOwner&&!currentUser())setPilotChoices(choices);else clearPilotChoices();
+       document.dispatchEvent(new Event('fronda:pilot-choice-deferred'));dlg.close();
+       if(researchTouched&&consentOwner&&currentUser()?.id===consentOwner){
+        try{await saveResearchConsent(consentOwner,choices.research);const {toast}=await import('./refresh.js');toast('Scelta per lo Studio salvata. Puoi cambiarla dal profilo.',5000,'top');}
+        catch{const {toast}=await import('./refresh.js');toast('Puoi usare Fronda. La scelta per lo Studio non è stata salvata: puoi riprovare dal profilo.',7000,'top');}
+       }
+       if(researchTouched&&consentOwner&&currentUser()?.id!==consentOwner){const {toast}=await import('./refresh.js');toast('Il profilo è cambiato. Puoi scegliere lo Studio dal profilo che stai usando.',7000,'top');}
+       if(!persisted){const note=document.createElement('div');note.className='app-toast on';note.setAttribute('role','status');note.textContent='Conferma valida per questa apertura. Il browser non permette di conservarla.';document.body.append(note);setTimeout(()=>note.remove(),7000);}}catch{$('#ob-status').textContent='Non riesco a registrare la conferma. Riprova.';}finally{button.disabled=false;}
     };
     dlg.addEventListener('cancel', (e) => e.preventDefault());
-    dlg.onclose=()=>{if(hasLegalAcceptance())maybeInvite();else queueMicrotask(()=>{if(!dlg.open&&!hasLegalAcceptance())openModal(dlg);});};
+    dlg.onclose=()=>{document.removeEventListener('fungaroli:community',syncWelcomeProfile);if(hasLegalAcceptance())maybeInvite();else queueMicrotask(()=>{if(!dlg.open&&!hasLegalAcceptance())openModal(dlg);});};
     openModal(dlg);dlg.scrollTop=0;dlg.querySelector('h2').focus({preventScroll:true});
   } else maybeInvite();
 }

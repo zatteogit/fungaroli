@@ -2,6 +2,77 @@ import {test,expect} from '@playwright/test';
 import {preparePage} from '../../tools/visual-audit.mjs';
 import {readFileSync} from 'node:fs';
 import {CONTENT_RESOURCES} from '../../js/content-schema.js';
+
+for(const [share,research] of [[false,false],[true,false],[false,true],[true,true]])test(`benvenuto: ospite entra senza profilo con scelte ${share}/${research}`,async({browser})=>{
+ const context=await browser.newContext({viewport:{width:320,height:844},serviceWorkers:'block',reducedMotion:'reduce'}),page=await preparePage(context,{legal:null});let writes=0;
+ await page.route('**/api/community/status',r=>r.fulfill({json:{enabled:true}}));
+ await page.route('**/api/community/session',r=>r.fulfill({status:401,json:{error:'Accedi'}}));
+ await page.route('**/api/community/summary',r=>r.fulfill({json:{access:'locked',reports:[],observations:[]}}));
+ await page.route('**/api/community/research-consent',r=>{writes++;return r.fulfill({status:500,json:{error:'Nessun consenso ospite'}});});
+ await page.addInitScript(()=>localStorage.setItem('fungaroli:install-later',String(Date.now())));
+ await page.goto('/#/diario');const welcome=page.locator('#onboarding');await expect(welcome).toBeVisible();
+ await expect(welcome.locator('#ob-participation')).toContainText('Puoi usare Fronda senza registrarti');
+ await welcome.locator('#ob-share').setChecked(share);await welcome.locator('#ob-research').setChecked(research);
+ await expect(welcome.locator('#ob-accept')).toHaveText('Ho letto, continua');await welcome.locator('#ob-accept').click();
+ await expect(welcome).toBeHidden();await expect(page.locator('#views')).not.toHaveAttribute('inert','');await page.waitForTimeout(900);
+ await expect(page.locator('dialog[open]')).toHaveCount(0);expect(writes).toBe(0);
+ await page.locator('.profile-entry[data-community-account]').click();const auth=page.locator('.auth-dialog[open]');await expect(auth).toContainText('facoltativo e consigliato');
+ const skip=auth.locator('.auth-actions [data-close]');await expect(skip).toHaveText('Continua senza profilo');await skip.click();await expect(auth).toBeHidden();expect(writes).toBe(0);await context.close();
+});
+
+for(const fail of [false,true])test(`benvenuto: consenso sul profilo noto senza riconferma, errore ${fail}`,async({browser})=>{
+ const context=await browser.newContext({viewport:{width:390,height:844},serviceWorkers:'block',reducedMotion:'reduce'}),page=await preparePage(context,{legal:null});let research={granted:false,version:null,since:null};const writes=[];
+ await page.route('**/api/community/status',r=>r.fulfill({json:{enabled:true}}));
+ await page.route('**/api/community/session',r=>r.fulfill({json:{user:{id:'known',handle:'Prova',role:'member',research}}}));
+ await page.route('**/api/community/summary',r=>r.fulfill({json:{access:'locked',reports:[],observations:[]}}));
+ await page.route('**/api/community/legal-acceptance',r=>r.fulfill({json:{receipt:{}}}));
+ await page.route('**/api/community/research-consent',r=>{writes.push(r.request().postDataJSON());if(fail)return r.fulfill({status:503,json:{error:'Riprova'}});research={granted:true,version:'fronda-research-v1',since:new Date().toISOString()};return r.fulfill({json:{research}});});
+ await page.addInitScript(()=>localStorage.setItem('fungaroli:install-later',String(Date.now())));
+ await page.goto('/#/diario');const welcome=page.locator('#onboarding');await expect(welcome.locator('#ob-participation')).toContainText('profilo Prova');
+ await welcome.locator('#ob-research').check();await welcome.locator('#ob-accept').click();await expect(welcome).toBeHidden();
+ await expect.poll(()=>writes.length).toBe(1);expect(writes[0]).toEqual({accountId:'known',granted:true,version:'fronda-research-v1'});
+ await expect(page.locator('.app-toast.on')).toContainText(fail?'non è stata salvata':'Scelta per lo Studio salvata');await page.waitForTimeout(900);await expect(page.locator('dialog[open]')).toHaveCount(0);await expect(page.locator('#views')).not.toHaveAttribute('inert','');
+ await context.close();
+});
+
+test('benvenuto: un cambio di profilo non trasferisce il consenso',async({browser})=>{
+ const context=await browser.newContext({serviceWorkers:'block',reducedMotion:'reduce'}),page=await preparePage(context,{legal:null});let account='first',writes=0;
+ await page.route('**/api/community/status',r=>r.fulfill({json:{enabled:true}}));
+ await page.route('**/api/community/session',r=>r.fulfill({json:{user:{id:account,handle:account,role:'member',research:{granted:false,version:null,since:null}}}}));
+ await page.route('**/api/community/summary',r=>r.fulfill({json:{access:'locked',reports:[],observations:[]}}));
+ await page.route('**/api/community/legal-acceptance',r=>r.fulfill({json:{receipt:{}}}));
+ await page.route('**/api/community/research-consent',r=>{writes++;return r.fulfill({status:500,json:{error:'Nessun trasferimento'}});});
+ await page.goto('/#/diario');const welcome=page.locator('#onboarding');await expect(welcome.locator('#ob-participation')).toContainText('profilo first');await welcome.locator('#ob-research').check();
+ account='second';await page.evaluate(()=>document.dispatchEvent(new Event('fungaroli:refresh-account')));await expect.poll(()=>page.evaluate(async()=>(await import('/js/community.js')).currentUser()?.id)).toBe('second');
+ await expect(welcome.locator('#ob-participation')).toContainText('profilo first');await welcome.locator('#ob-accept').click();await expect(welcome).toBeHidden();await expect(page.locator('.app-toast.on')).toContainText('Il profilo è cambiato');expect(writes).toBe(0);await context.close();
+});
+test('benvenuto: una sessione tardiva non apre conferme automatiche',async({browser})=>{
+ const context=await browser.newContext({serviceWorkers:'block',reducedMotion:'reduce'}),page=await preparePage(context,{legal:null});let finish,writes=0;
+ await page.route('**/api/community/status',r=>r.fulfill({json:{enabled:true}}));await page.route('**/api/community/session',async r=>{await new Promise(resolve=>finish=resolve);return r.fulfill({json:{user:{id:'late',handle:'Profilo tardivo',role:'member',research:{granted:false,version:null,since:null}}}});});
+ await page.route('**/api/community/summary',r=>r.fulfill({json:{access:'locked',reports:[],observations:[]}}));await page.route('**/api/community/legal-acceptance',r=>r.fulfill({json:{receipt:{}}}));await page.route('**/api/community/research-consent',r=>{writes++;return r.fulfill({status:500,json:{error:'Nessuna applicazione automatica'}});});
+ await page.goto('/#/diario');await page.locator('#ob-research').check();await page.locator('#ob-accept').click();await expect(page.locator('#onboarding')).toBeHidden();await expect.poll(()=>typeof finish).toBe('function');finish();await expect.poll(()=>page.evaluate(async()=>(await import('/js/community.js')).currentUser()?.id)).toBe('late');await page.waitForTimeout(900);await expect(page.locator('dialog[open]')).toHaveCount(0);expect(writes).toBe(0);await context.close();
+});
+
+test('benvenuto: interesse ospite completato dopo accesso volontario, senza schermata finale',async({browser})=>{
+ const context=await browser.newContext({viewport:{width:390,height:844},serviceWorkers:'block',reducedMotion:'reduce'}),page=await preparePage(context,{legal:null});let account=null,fail=true;const writes=[];
+ await page.route('**/api/community/status',r=>r.fulfill({json:{enabled:true}}));
+ await page.route('**/api/community/session',r=>r.fulfill(account?{json:{user:{id:account,handle:'Profilo scelto',role:'member',research:{granted:false,version:null,since:null}}}}:{status:401,json:{error:'Accedi'}}));
+ await page.route('**/api/community/summary',r=>r.fulfill({json:{access:'locked',reports:[],observations:[]}}));
+ await page.route('**/api/community/legal-acceptance',r=>r.fulfill({json:{receipt:{}}}));
+ await page.route('**/api/community/research-consent',r=>{writes.push(r.request().postDataJSON());return r.fulfill(fail?{status:503,json:{error:'Scelta non salvata. Riprova.'}}:{json:{research:{granted:true,version:'fronda-research-v1',since:new Date().toISOString()}}});});
+ await page.goto('/#/diario');await page.locator('#ob-research').check();await page.locator('#ob-accept').click();await expect(page.locator('#onboarding')).toBeHidden();await page.waitForTimeout(900);await expect(page.locator('dialog[open]')).toHaveCount(0);expect(writes).toHaveLength(0);
+ await page.locator('.profile-entry[data-community-account]').click();const auth=page.locator('.auth-dialog[open]');await expect(auth).toBeVisible();account='chosen';await page.evaluate(()=>document.dispatchEvent(new Event('fungaroli:refresh-account')));await expect.poll(()=>page.evaluate(async()=>(await import('/js/community.js')).currentUser()?.id)).toBe('chosen');await auth.locator('.auth-actions [data-close]').click();
+ const invite=page.locator('#research-consent-invite[open]');await expect(invite).toContainText('Profilo scelto');await expect(invite.locator('input')).toHaveCount(1);await invite.locator('[data-confirm-pilot]').click();await expect(invite.locator('[data-status]')).toContainText('Riprova');
+ fail=false;await invite.locator('[data-confirm-pilot]').click();await expect(invite).toBeHidden();await expect(page.locator('[data-pilot-done]')).toHaveCount(0);await expect(page.locator('dialog[open]')).toHaveCount(0);expect(writes).toHaveLength(2);expect(writes.every(w=>w.accountId==='chosen'&&w.granted===true)).toBe(true);await context.close();
+});
+
+test('benvenuto: un consenso già attivo resta visibile e non viene riscritto',async({browser})=>{
+ const context=await browser.newContext({serviceWorkers:'block',reducedMotion:'reduce'}),page=await preparePage(context,{legal:null});let writes=0;
+ await page.route('**/api/community/status',r=>r.fulfill({json:{enabled:true}}));await page.route('**/api/community/session',r=>r.fulfill({json:{user:{id:'existing',handle:'Profilo esistente',role:'member',research:{granted:true,version:'fronda-research-v1',since:'2026-10-26T10:00:00Z'}}}}));
+ await page.route('**/api/community/summary',r=>r.fulfill({json:{access:'locked',reports:[],observations:[]}}));await page.route('**/api/community/legal-acceptance',r=>r.fulfill({json:{receipt:{}}}));await page.route('**/api/community/research-consent',r=>{writes++;return r.fulfill({status:500,json:{error:'Nessuna riscrittura'}});});
+ await page.goto('/#/diario');await expect(page.locator('#ob-participation')).toContainText('Profilo esistente');await expect(page.locator('#ob-research')).toBeChecked();await page.locator('#ob-accept').click();await expect(page.locator('#onboarding')).toBeHidden();await page.waitForTimeout(900);expect(writes).toBe(0);await expect(page.locator('dialog[open]')).toHaveCount(0);await context.close();
+});
+
 test('studio dell’indice: ospite escluso e rinvio separato per profilo',async({browser})=>{
  const context=await browser.newContext({viewport:{width:320,height:740},reducedMotion:'reduce',serviceWorkers:'block'}),page=await preparePage(context);
  let account=null,writes=0;
@@ -64,7 +135,7 @@ for(const width of [320,390])test(`avviso prototipo e cookie con una sola confer
 
 test('uno snapshot CMS precedente non nasconde le nuove informative',async({browser})=>{
  const context=await browser.newContext({viewport:{width:390,height:844},reducedMotion:'reduce',serviceWorkers:'block'}),page=await preparePage(context,{legal:null});
- await page.route('**/api/content/v1/snapshot',async route=>{const response=await route.fetch(),snapshot=await response.json(),legal=snapshot.resources.legal;legal.version=3;delete legal.onboarding.prototype_notice;delete legal.onboarding.cookie_summary;legal.info_sections=legal.info_sections.filter(section=>section.id!=='cookie');await route.fulfill({json:snapshot});});
+ await page.route('**/api/content/v1/snapshot',async route=>{const response=await route.fetch(),snapshot=response.ok()&&response.headers()['content-type']?.includes('application/json')?await response.json():{schemaVersion:1,resources:Object.fromEntries(CONTENT_RESOURCES.map(r=>[r.id,JSON.parse(readFileSync(new URL(`../../data/${r.id}.json`,import.meta.url),'utf8'))]))},legal=snapshot.resources.legal;legal.version=3;delete legal.onboarding.prototype_notice;delete legal.onboarding.cookie_summary;legal.info_sections=legal.info_sections.filter(section=>section.id!=='cookie');await route.fulfill({json:snapshot});});
  await page.goto('/');const dialog=page.locator('#onboarding');await expect(dialog).toBeVisible();await expect(dialog.locator('#ob-prototype')).toContainText('esperimento personale');await dialog.locator('.ob-data summary').click();await expect(dialog.locator('#ob-cookie-policy')).toContainText('__Host-fungaroli_session');await dialog.locator('#ob-accept').click();expect(await page.evaluate(()=>localStorage.getItem('fungaroli:legal-accepted'))).toBe('cgs-1');await context.close();
 });
 
