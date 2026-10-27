@@ -4,6 +4,7 @@ La migrazione è incrementale. I sorgenti migrati stanno in `src/js/`, con JavaS
 percorsi pubblici `js/`. Sono coperti:
 
 - dispositivo, copie offline e avvisi;
+- navigazione contestuale e adattamento degli effetti alle prestazioni osservate;
 - acquisizione, cache per zona, aggregazione, scadenza, stato e aggiornamenti DOM del meteo;
 - meteo delle uscite e ordinamento con i pesi esistenti;
 - modello degli appunti, osservazioni condivise, foto e archivio locale del taccuino.

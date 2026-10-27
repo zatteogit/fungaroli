@@ -1,0 +1,24 @@
+/* Only decoration changes. Layout, focus, state, gestures and nav springs stay. */
+:root[data-effects="reduced"] .ambi { --ambi-f:blur(28px) saturate(1.05); --ambi-o:.18; transition:none; }
+:root[data-effects="minimal"] .ambi { display:none; }
+:root[data-effects="reduced"] :where(.hero-indicators,.ring:not(.model-index)) {
+ backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
+}
+@media(max-width:899px) {
+ :root[data-effects="reduced"] .tab-destinations { backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); }
+ :root[data-effects="minimal"] .tab-destinations { background:var(--surface); backdrop-filter:none; -webkit-backdrop-filter:none; }
+}
+:root[data-effects="minimal"] :is(.hero-indicators,.ring,.ring::before,.pill.glass,.fab,.lb-btn,.lb-nav,.phero-body .notebook-hero-action) {
+ background:var(--scrim); backdrop-filter:none; -webkit-backdrop-filter:none;
+}
+:root[data-effects="minimal"] dialog::backdrop { backdrop-filter:none; -webkit-backdrop-filter:none; }
+:root[data-effects]:not([data-effects="full"]).fresh .ring,
+:root[data-effects]:not([data-effects="full"]).fresh .view:not([hidden]) :is(#ranking,.card-grid,.id-cards,.trails,.trait-strip,.checks,.keys) > * {
+ animation:none;
+}
+/* Accessibility preferences always win, including after a quality recovery. */
+@media(prefers-reduced-transparency:reduce) {
+ :root[data-effects] .ambi { display:none; }
+ :root[data-effects] .tab-destinations { background:var(--surface); backdrop-filter:none; -webkit-backdrop-filter:none; }
+ :root[data-effects] :is(.hero-indicators,.ring,.ring::before) { background:var(--scrim); backdrop-filter:none; -webkit-backdrop-filter:none; }
+}

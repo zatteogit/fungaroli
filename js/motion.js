@@ -2,6 +2,7 @@
 // riordino animato delle liste, fogli trascinabili, conteggi. Con prefers-reduced-motion tutto si spegne.
 
 import { loadNow, markKnown } from './images.js';
+import {effectsQuality,EFFECTS_CHANGE} from './adaptive-effects.js';
 
 const reduce = matchMedia('(prefers-reduced-motion: reduce)');
 const root = document.documentElement;
@@ -9,8 +10,11 @@ const root = document.documentElement;
 // durante lo scroll o il ridimensionamento del viewport. Restano le microanimazioni CSS.
 const iosSnapshots = /iPad|iPhone|iPod/.test(navigator.userAgent)
   || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-export const canVT = () => typeof document.startViewTransition === 'function' && !reduce.matches && !iosSnapshots;
-if (canVT()) root.classList.add('vt');
+export const canVT = () => typeof document.startViewTransition === 'function' && !reduce.matches && !iosSnapshots && effectsQuality()==='full';
+const syncSnapshots=()=>root.classList.toggle('vt',canVT());
+syncSnapshots();
+reduce.addEventListener('change',syncSnapshots);
+document.addEventListener(EFFECTS_CHANGE,()=>{syncSnapshots();if(!canVT())transition?.skipTransition();});
 
 // Durate e curve stanno nei token CSS (--nav-*, css/style.css «movimento»). Qui solo il tetto di attesa:
 // la pagina che entra aspetta la sua copertina al massimo READY_CAP ms, poi entra con lo scheletro della foto.
@@ -87,7 +91,7 @@ async function ready(img) {
 // Tornando indietro no: la pagina è quella che hai lasciato, ferma dove l'avevi lasciata.
 let freshT;
 function fresh(nav) {
-  if (reduce.matches || nav === 'pop') return;
+  if (reduce.matches || effectsQuality()!=='full' || nav === 'pop') return;
   root.classList.add('fresh');
   clearTimeout(freshT);
   freshT = setTimeout(() => root.classList.remove('fresh'), 900);
@@ -141,7 +145,7 @@ export function soft(update) {
 
 // numeri degli anelli: contano da 0 al valore quando la vista e' appena entrata
 function countUp() {
-  if (reduce.matches || !root.classList.contains('fresh')) return;
+  if (reduce.matches || effectsQuality()!=='full' || !root.classList.contains('fresh')) return;
   document.querySelectorAll('.view:not([hidden]) .ring b').forEach((b) => {
     const final=b.textContent,to = Number(final.replace(',','.'));
     if (!Number.isFinite(to) || to <= 0 || b.dataset.counted) return;
@@ -150,6 +154,7 @@ function countUp() {
     const step = (t) => {
       const k = Math.min(1, (t - t0) / dur);
       if(!b.isConnected)return;
+      if(reduce.matches||effectsQuality()!=='full'){b.textContent=final;return;}
       b.textContent = k===1?final:(to * (1 - (1 - k) ** 3)).toLocaleString('it-IT',{minimumFractionDigits:1,maximumFractionDigits:1});
       if (k < 1) requestAnimationFrame(step);
     };
