@@ -87,7 +87,9 @@ export function initNavigationDock(bar){
  mobile.addEventListener('change',()=>{resize();resync();});reduced.addEventListener('change',animate);
  document.addEventListener('toggle',updateLock,{capture:true});document.addEventListener('close',updateLock,{capture:true});
  document.addEventListener('visibilitychange',()=>{if(document.hidden){cancelAnimationFrame(frame);frame=0;lastTime=0;}else{measure();resync();animate();}});
- for(const link of bar.querySelectorAll('a'))link.setAttribute('aria-label',link.textContent.trim());
+ for(const link of bar.querySelectorAll('a')){
+  const label=link.textContent.trim();link.setAttribute('aria-label',label);link.title=label;
+ }
  bar.dataset.compact='false';measure();write();updateLock();
  return {
   resync,

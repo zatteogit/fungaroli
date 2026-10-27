@@ -1,4 +1,4 @@
-// Generated from src/field/field-reader.ts. Run npm run build:typescript; do not edit.
+// Generated from src/js/field-reader.ts. Run npm run build:typescript; do not edit.
 import { errorMessage } from "./field-contracts.js";
 import { listFieldPacks, getFieldPack, removeFieldPack, } from "./field-store.js";
 import { esc, packHtml, routeSvg, routeGpx } from "./field-render.js";

@@ -4,7 +4,7 @@
 // - meteo Open-Meteo: gestito dall'app con data di acquisizione e limite d'età
 // - mappe: dalla cache se gia' viste, con un limite di tessere
 // - diario (/api/): mai in cache
-const SHELL = 'fungaroli-shell-v369';
+const SHELL = 'fungaroli-shell-v370';
 const RUNTIME = 'fungaroli-runtime-v1';
 const TILES = 'fungaroli-tiles-v1';
 const CONTENT = 'fungaroli-content-v1';
@@ -30,7 +30,7 @@ const PRECACHE = [
   'js/feedback.js', 'js/feedback-schema.js', 'js/feedback-admin.js', 'js/pilot-onboarding.js', 'js/pilot-choice-state.js', 'js/legal-access.js', 'js/legal-notice.js', 'js/navigation-context.js', 'js/focus.js', 'js/modal-scroll.js', 'js/modal-flow.js', 'js/compare-picker.js', 'js/entity-sheet.js', 'js/entity-accordions.js', 'js/content-ui.js', 'js/ambilight.js', 'js/ui-icons.js', 'js/map-experience.js',
   'assets/ui/chevron-right.svg', 'assets/ui/alert-triangle.svg', 'assets/ui/map.svg', 'assets/ui/leaf.svg', 'assets/ui/notebook.svg',
   'js/search-select.js', 'js/species-search.js', 'js/site-info.js', 'js/forecast-capture.js', 'js/forecast-autosave.js',
-  'js/weather-request.js', 'js/weather-cache.js', 'js/weather-data.js', 'js/weather-dom.js',
+  'js/weather-request.js', 'js/weather-cache.js', 'js/weather-data.js','js/data-guards.js', 'js/weather-dom.js',
   'js/images.js','js/inline-gallery.js', 'js/fronda-connections.js', 'js/plants.js','js/plant-comparison.js','js/botanical-model.js','js/outing-discoveries.js','js/botanical-explanation.js','data/botanical-models.json', 'js/plant-catalog.js', 'js/catalog-search.js', 'js/guided-key.js', 'data/recognize-trees.json', 'data/recognize-plants.json', 'js/notebook-entry.js', 'data/plants.json', 'js/challenges.js', 'data/challenges.json',
   'data/media-glossary.json', 'data/crop-points.json', 'data/habitat-info.json', 'data/access-info.json', 'data/trait-icons.json', 'data/trait-callouts.json', 'data/tree-trait-icons.json', 'data/plant-trait-icons.json',
   './', 'index.html', 'manifest.webmanifest', 'css/tokens.css', 'css/style.css', 'css/fronda.css', 'css/species-pages.css', 'css/content-ui.css', 'css/map-experience.css', 'css/pilot-test.css', 'css/fonts.css',

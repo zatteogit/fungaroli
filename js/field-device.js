@@ -1,4 +1,4 @@
-// Generated from src/field/field-device.ts. Run npm run build:typescript; do not edit.
+// Generated from src/js/field-device.ts. Run npm run build:typescript; do not edit.
 import { errorMessage } from "./field-contracts.js";
 // Device features are offered when available, never inferred from the OS name.
 export function normalizePosition(value) {

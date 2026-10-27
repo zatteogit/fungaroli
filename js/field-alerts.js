@@ -1,4 +1,4 @@
-// Generated from src/field/field-alerts.ts. Run npm run build:typescript; do not edit.
+// Generated from src/js/field-alerts.ts. Run npm run build:typescript; do not edit.
 import { record } from "./field-contracts.js";
 const KEY = "fronda:outing-alerts:v1";
 const read = () => {
