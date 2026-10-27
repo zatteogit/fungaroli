@@ -14,7 +14,6 @@ body[data-page="giri"] #views { max-width:1160px; padding-inline:var(--gutter); 
 .editorial-trip-photo img { width:100%; height:100%; object-fit:cover; display:block; }
 .editorial-trip-photo > span { position:absolute; top:12px; left:12px; }
 .editorial-simulation { display:inline-block; border:1px solid var(--hair); padding:5px 9px; border-radius:20px; background:var(--surface); color:var(--text); font:600 11px/1.4 var(--font-body); }
-.editorial-trip-photo > small { position:absolute; bottom:0; inset-inline:0; padding:6px 12px; color:var(--text-2); background:var(--surface); font:400 10px/1.5 var(--font-body); }
 .editorial-trip-card-body { display:flex; flex-direction:column; flex:1; position:relative; padding:22px; }
 .editorial-trip-number { position:absolute; top:18px; right:16px; color:var(--text-2); font:italic 500 20px/1 var(--font-display); }
 .editorial-trip-card-body > .editorial-kicker { padding-right:24px; font-size:10px; }
