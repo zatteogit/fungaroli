@@ -1,0 +1,11 @@
+import {RESEARCH_CONSENT_TEXT} from './research-consent.js';
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const icon=path=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${path}</svg>`;
+export const feedbackGlyph=icon('<path d="M21 11a8 8 0 0 1-8 8H7l-4 3V11a9 9 0 0 1 18 0Z"/><path d="M8 10h8M8 14h5"/>');
+const notebook=icon('<path d="M6 3h13v18H6a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3ZM6 3v18M10 8h5M10 12h5"/>');
+export function pilotWelcomeHtml(onboarding){
+ const {pilot}=onboarding;
+ return `<p id="ob-prototype" class="ob-prototype">${esc(onboarding.prototype_notice)}</p><div class="ob-test-chapters"><section><span class="ob-chapter-icon">${feedbackGlyph}</span><div><h3>Proviamola insieme</h3><p>${esc(pilot.feedback)}</p></div></section><section><span class="ob-chapter-icon">${notebook}</span><div><h3>Costruiamo i primi dati</h3><p>${esc(pilot.data)}</p></div></section><section><span class="ob-chapter-icon">${notebook}</span><div><h3>Esempi dimostrativi</h3><p>${esc(pilot.examples)}</p></div></section></div>`;
+}
+
+export function pilotChoicesHtml(){return `<section class="ob-choices" aria-labelledby="ob-choices-title"><h3 id="ob-choices-title">Come vuoi partecipare?</h3><p>Puoi scegliere ora e confermare con un profilo facoltativo. Le caselle sono facoltative: puoi continuare anche senza selezionarle.</p><label><input type="checkbox" id="ob-share"><span><b>Voglio contribuire con osservazioni condivise</b><small>Sceglierò dal Taccuino quali osservazioni condividere, comprese le ricerche a vuoto. Questa preferenza non pubblica automaticamente i miei appunti.</small></span></label><label><input type="checkbox" id="ob-research"><span><b>Voglio partecipare allo Studio dell’indice</b><small>${esc(RESEARCH_CONSENT_TEXT)}</small></span></label><p class="small muted">Prima di attivare lo Studio ti chiederemo di confermare la scelta per il tuo profilo. Puoi cambiarla o revocarla quando vuoi.</p></section>`;}

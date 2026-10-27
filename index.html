@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="utf-8">
-  <meta name="app-version" content="fungaroli-shell-v355">
+  <meta name="app-version" content="fungaroli-shell-v356">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
   <link rel="preload" href="data/crop-points.json" as="fetch" crossorigin>
   <meta name="theme-color" content="#f7f4ea" media="(prefers-color-scheme: light)">
@@ -28,6 +28,7 @@
   <link rel="stylesheet" href="css/content-ui.css">
   <link rel="stylesheet" href="css/animals.css">
   <link rel="stylesheet" href="css/map-experience.css">
+  <link rel="stylesheet" href="css/pilot-test.css">
   <link rel="stylesheet" href="css/notebook.css">
   <link rel="stylesheet" href="css/atmosphere.css">
   <link rel="stylesheet" href="css/editorial-outings.css">
@@ -75,6 +76,7 @@
       <span id="appbar-home-filters"></span>
       <a class="appbar-context-action" data-appbar-action hidden></a>
       <button type="button" class="profile-entry" data-community-account><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><span data-profile-label>Accedi</span></button>
+      <button type="button" class="icon-btn" data-open-feedback aria-label="Invia feedback" title="Invia feedback"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11a8 8 0 0 1-8 8H7l-4 3V11a9 9 0 0 1 18 0Z"/><path d="M8 10h8M8 14h5"/></svg></button>
       <button type="button" class="icon-btn theme-btn" id="theme-btn" aria-label="Cambia tema"></button>
       <a class="icon-btn" href="#/info" aria-label="Regole e sicurezza" title="Regole e sicurezza"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg></a>
     </div>
@@ -140,6 +142,7 @@
       </section>
       <aside class="story-invite story-blue home-band" aria-labelledby="home-guide-title"><div><h2 id="home-guide-title">Guarda più vicino.</h2><p>Le parole del bosco, quando ti servono.</p><a class="btn primary" href="#/impara">Scopri le nostre guide <span aria-hidden="true">→</span></a></div><figure class="story-photo"><a href="#/pianta/ginestra-odorosa" aria-label="Ginestra odorosa: apri la scheda"><img src="assets/plants/ginestra-odorosa-1.webp" alt="" loading="lazy" decoding="async"></a></figure></aside>
       <a class="act-row home-band home-notebook-link" href="#/diario"><span class="ar-b"><span class="ar-t">Hai qualcosa da ricordare?</span><span class="ar-s">Foto, appunti e ricordi delle tue uscite, nel Taccuino.</span></span></a>
+      <aside class="pilot-feedback-invite home-band"><div><h2>Fronda cresce con le tue prove</h2><p>Stai partecipando al test: raccontami cosa funziona e cosa possiamo migliorare.</p></div><button type="button" class="btn ghost" data-open-feedback>Invia feedback</button></aside>
       <a class="act-row legal-strip home-band" id="home-legal" href="#/info"><span class="ar-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span><span class="ar-b"><span class="ar-t">Regole di raccolta</span><span class="ar-s">Nel Lazio si raccoglie con attestato micologico, ricevuta del contributo regionale annuale e documento d'identità (L.R. 32/1998).</span></span></a>
       </div>
     </section>
@@ -271,6 +274,7 @@
       <div id="install-info" class="install-info" hidden></div>
 
 
+  <section class="pilot-feedback-invite"><div><h2>Aiutami a migliorare Fronda</h2><p>Il test serve a raccogliere feedback e le prime osservazioni, con le tue scelte di condivisione.</p></div><button type="button" class="btn primary" data-open-feedback>Invia feedback</button></section>
   <div id="legal-sections"></div>
   <details class="sec"><summary>Fotografie e illustrazioni</summary><div class="sec-body">
   <p class="small muted" id="zone-credits"></p>
@@ -287,11 +291,13 @@
   </main>
 
   <dialog id="onboarding" class="sheet-dlg onboarding" aria-labelledby="ob-h">
+    <p class="eyebrow ob-eyebrow">Test con utenti invitati</p>
     <h2 id="ob-h" tabindex="-1" autofocus>Prima di usare l'app</h2>
     <p class="ob-sub" id="ob-sub" hidden></p>
-    <p id="ob-prototype" class="ob-prototype"></p>
-    <ul class="ob-points"></ul>
-    <section class="ob-data" aria-label="Privacy e cookie"><p id="ob-cookie-summary"></p><details><summary>Leggi la cookie policy</summary><div id="ob-cookie-policy"></div></details><p class="small muted">Proseguendo confermi di aver letto gli avvisi e le informative. La condivisione di osservazioni resta facoltativa.</p></section>
+    <div id="ob-welcome"></div>
+    <div id="ob-participation"></div>
+    <section class="ob-safety"><h3 class="ob-safety-title">Prima di usare Fronda nel bosco</h3><ul class="ob-points"></ul></section>
+    <section class="ob-data" aria-label="Privacy e cookie"><p id="ob-cookie-summary"></p><details><summary>Leggi la cookie policy</summary><div id="ob-cookie-policy"></div></details><p class="small muted">Proseguendo confermi di aver letto gli avvisi e le informative. Le scelte facoltative si confermano con il profilo; la condivisione di ogni osservazione resta sotto il tuo controllo.</p></section>
     <details class="ob-more"><summary id="ob-more">Regole, privacy e note legali</summary><div id="ob-legal-details"></div></details>
     <div class="ob-acceptance"><button type="button" class="btn primary big" id="ob-accept">Ho capito</button><p id="ob-status" class="small muted" role="status"></p></div>
   </dialog>
