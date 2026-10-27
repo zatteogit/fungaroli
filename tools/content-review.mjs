@@ -51,6 +51,11 @@ export function validateReview(entry,review){
  for(const f of entry.fields){const d=decisions.get(f.id);if(!d||!['core','useful','reference'].includes(d.importance)||!['now','on-demand','inline'].includes(d.disclosure)||!Number.isInteger(d.actions)||d.actions<0||!d.reason||!d.format)throw Error(`Manca la valutazione completa di ${f.id}`);}
  return true;
 }
+// One line per unit: a later batch changes only its own checkpoint in Git.
+export function serializePipeline(data){
+ const {entries,...header}=data;
+ return JSON.stringify(header,null,2).slice(0,-2)+',\n  "entries": [\n'+entries.map(e=>'    '+JSON.stringify(e)).join(',\n')+'\n  ]\n}\n';
+}
 const escape=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function report(data){
  const rows=data.entries.map(e=>`<tr data-kind="${e.kind}"><td><b>${escape(e.label)}</b>${(e.workNotes||[]).map(n=>`<small><a href="${escape(n.file.replace('docs/content-review/',''))}">${escape(n.label)}</a></small>`).join('')}<small>${escape(e.id)} · ${e.fields.length} campi</small></td><td>${escape(e.href)}</td>${PERSONAS.map(p=>`<td>${escape(e.personas[p.id].state)}</td>`).join('')}<td><details><summary>Contenuti e ipotesi di priorità</summary><p>Ipotesi da verificare: non giudizi conclusi.</p><ul>${e.fields.map(f=>`<li><code>${escape(f.id)}</code> · ${f.role} · ${f.characters} caratteri</li>`).join('')}</ul></details></td></tr>`).join('');
@@ -70,6 +75,6 @@ if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)){
   for(const f of review.evidence)if(!existsSync(resolve(ROOT,f)))throw Error(`Evidenza non trovata: ${f}`);
   e.personas[review.persona]={state:'verified',review:reviewPath};
  }
- mkdirSync(dirname(path),{recursive:true});writeFileSync(path,JSON.stringify(data,null,2)+'\n');writeFileSync(resolve(ROOT,'docs/content-review/index.html'),report(data));
+ mkdirSync(dirname(path),{recursive:true});writeFileSync(path,serializePipeline(data));writeFileSync(resolve(ROOT,'docs/content-review/index.html'),report(data));
  console.log(JSON.stringify({units:data.entries.length,fields:data.entries.reduce((n,e)=>n+e.fields.length,0),personas:PERSONAS.length,queued:data.entries.reduce((n,e)=>n+Object.values(e.personas).filter(p=>p.state==='queued').length,0)}));
 }

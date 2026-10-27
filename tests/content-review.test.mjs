@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {inventory,validateReview,PERSONAS} from '../tools/content-review.mjs';
+import {inventory,validateReview,PERSONAS,serializePipeline} from '../tools/content-review.mjs';
 const data=inventory();
 test('content pipeline inventories individual records and every persona without claiming reviews',()=>{
  assert.equal(data.entries.filter(e=>e.kind==='fungo').length,100);
@@ -19,3 +19,5 @@ test('pipeline accepts a complete explicit assessment but does not mutate progre
 });
 
 test('a route placeholder cannot be marked as reviewed',()=>{assert.throws(()=>validateReview({...entry,inventoryKind:'route-seed'},valid()),/Inventariare/);});
+
+test('compact checkpoints preserve every source field and review state',()=>{assert.deepEqual(JSON.parse(serializePipeline(data)),data);});
