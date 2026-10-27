@@ -1,0 +1,192 @@
+- generic [active] [ref=f1e1]:
+  - banner [ref=f1e2]:
+    - link "Fronda, home" [ref=f1e3] [cursor=pointer]:
+      - /url: "#/"
+    - 'link "pilota · Lazio : versione pilota, che cosa copre" [ref=f1e9] [cursor=pointer]':
+      - /url: "#/info"
+      - generic [ref=f1e10]: pilota ·
+      - text: Lazio
+      - generic [ref=f1e11]: ": versione pilota, che cosa copre"
+    - button "Cerca in tutta l’app" [ref=f1e13] [cursor=pointer]
+  - navigation "Sezioni" [ref=f1e17]:
+    - generic [ref=f1e18]:
+      - link "Uscite" [ref=f1e19] [cursor=pointer]:
+        - /url: "#/"
+      - link "Mappa" [ref=f1e23] [cursor=pointer]:
+        - /url: "#/mappa"
+      - link "Scopri" [ref=f1e27] [cursor=pointer]:
+        - /url: "#/scopri"
+      - link "Taccuino" [ref=f1e32] [cursor=pointer]:
+        - /url: "#/diario"
+    - button "Annota un ritrovamento" [ref=f1e37] [cursor=pointer]:
+      - generic [ref=f1e41]: Annota
+  - main [ref=f1e42]:
+    - 'button "Indietro: Uscite" [ref=f1e43] [cursor=pointer]':
+      - generic [ref=f1e46]: Uscite
+    - text: “
+    - generic [ref=f1e48]:
+      - generic [ref=f1e49]:
+        - generic [ref=f1e50]:
+          - button "Apri foto e crediti" [ref=f1e51]:
+            - img "Faggeto di Allumiere" [ref=f1e52]
+          - link "Mappa della zona" [ref=f1e53] [cursor=pointer]:
+            - /url: "#/mappa/allumiere-faggeto"
+          - generic:
+            - generic: mercoledì 28 ottobre
+            - heading "Faggeto di Allumiere" [level=1]
+            - paragraph: Area romana
+        - region "Scelte dell’uscita" [ref=f1e57]:
+          - group [ref=f1e58]:
+            - 'generic "Funghi · Piante: scelte e significato delle condizioni" [ref=f1e59] [cursor=pointer]':
+              - generic [ref=f1e60]:
+                - strong [ref=f1e61]: Funghi · Piante
+                - generic [ref=f1e62]: Porcino · Ortica · +9 · T · turistica
+          - button "Modifica" [ref=f1e66] [cursor=pointer]
+        - generic [ref=f1e68]:
+          - tablist "Giorno" [ref=f1e69]:
+            - tab "Oggi 27 –" [ref=f1e70] [cursor=pointer]:
+              - generic [ref=f1e71]: Oggi
+              - generic [ref=f1e72]: "27"
+              - generic [ref=f1e73]: –
+            - 'tab "Domani 28 1,3 Meteo Faggeto di Allumiere: asciutto · 13 °C" [selected] [ref=f1e77] [cursor=pointer]':
+              - generic [ref=f1e78]: Domani
+              - generic [ref=f1e79]: "28"
+              - generic [ref=f1e80]: 1,3
+              - 'generic "Meteo Faggeto di Allumiere: asciutto · 13 °C" [ref=f1e84]': 13°
+            - 'tab "giovedì 29 1,3 Meteo Faggeto di Allumiere: asciutto · 13 °C" [ref=f1e90] [cursor=pointer]':
+              - generic [ref=f1e91]: giovedì
+              - generic [ref=f1e92]: "29"
+              - generic [ref=f1e93]: 1,3
+              - 'generic "Meteo Faggeto di Allumiere: asciutto · 13 °C" [ref=f1e97]': 13°
+            - 'tab "venerdì 30 1,3 Meteo Faggeto di Allumiere: asciutto · 13 °C" [ref=f1e103] [cursor=pointer]':
+              - generic [ref=f1e104]: venerdì
+              - generic [ref=f1e105]: "30"
+              - generic [ref=f1e106]: 1,3
+              - 'generic "Meteo Faggeto di Allumiere: asciutto · 13 °C" [ref=f1e110]': 13°
+            - 'tab "sabato 31 1,2 Meteo Faggeto di Allumiere: asciutto · 13 °C" [ref=f1e116] [cursor=pointer]':
+              - generic [ref=f1e117]: sabato
+              - generic [ref=f1e118]: "31"
+              - generic [ref=f1e119]: 1,2
+              - 'generic "Meteo Faggeto di Allumiere: asciutto · 13 °C" [ref=f1e123]': 13°
+            - 'tab "domenica 1 1,2 Meteo Faggeto di Allumiere: asciutto · 13 °C" [ref=f1e129] [cursor=pointer]':
+              - generic [ref=f1e130]: domenica
+              - generic [ref=f1e131]: "1"
+              - generic [ref=f1e132]: 1,2
+              - 'generic "Meteo Faggeto di Allumiere: asciutto · 13 °C" [ref=f1e136]': 13°
+            - 'tab "lunedì 2 1,2 Meteo Faggeto di Allumiere: asciutto · 13 °C" [ref=f1e142] [cursor=pointer]':
+              - generic [ref=f1e143]: lunedì
+              - generic [ref=f1e144]: "2"
+              - generic [ref=f1e145]: 1,2
+              - 'generic "Meteo Faggeto di Allumiere: asciutto · 13 °C" [ref=f1e149]': 13°
+            - 'tab "martedì 3 1,1 Meteo Faggeto di Allumiere: asciutto · 13 °C" [ref=f1e155] [cursor=pointer]':
+              - generic [ref=f1e156]: martedì
+              - generic [ref=f1e157]: "3"
+              - generic [ref=f1e158]: 1,1
+              - 'generic "Meteo Faggeto di Allumiere: asciutto · 13 °C" [ref=f1e162]': 13°
+          - button "Scorri avanti" [ref=f1e168] [cursor=pointer]
+        - generic [ref=f1e171]:
+          - generic [ref=f1e172]:
+            - generic "Massima della mattina 13 gradi; minima 13. Anello termico da meno 10 a 40 gradi." [ref=f1e173]:
+              - generic [ref=f1e181]:
+                - text: "13"
+                - generic [ref=f1e182]: °
+            - generic [ref=f1e183]:
+              - text: Asciutto
+              - generic [ref=f1e184]: 13–13 °C · mattina
+          - 'button "Condizioni per l’uscita 1,3 su 10: come leggerle" [ref=f1e185]':
+            - generic [ref=f1e186]: Condizioni
+            - generic [ref=f1e187]: 1,3
+      - generic [ref=f1e189]:
+        - paragraph [ref=f1e190]: Meteo · alle 23:24
+        - group [ref=f1e191]:
+          - generic "Raccolta da verificare con il gestore" [ref=f1e192] [cursor=pointer]
+        - group [ref=f1e197]:
+          - generic "Percorso e accessi Sentiero e accesso non documentati" [ref=f1e198] [cursor=pointer]:
+            - generic [ref=f1e202]:
+              - generic [ref=f1e203]: Percorso e accessi
+              - generic [ref=f1e204]: Sentiero e accesso non documentati
+        - heading "Il piano in breve" [level=2] [ref=f1e205]
+        - paragraph [ref=f1e206]: Non abbiamo ancora un sentiero documentato per questa zona.
+        - generic [ref=f1e207]:
+          - group [ref=f1e208]:
+            - generic "Cosa osservare Porcino 1,3 intorno ai 540 m s.l.m." [ref=f1e209] [cursor=pointer]:
+              - generic [ref=f1e212]:
+                - generic [ref=f1e213]: Cosa osservare
+                - generic [ref=f1e214]:
+                  - generic [ref=f1e215]:
+                    - button "Porcino" [ref=f1e216]
+                    - generic "Condizioni di crescita 1,3/10" [ref=f1e217]: 1,3
+                  - generic [ref=f1e221]: intorno ai 540 m s.l.m.
+                - note [ref=f1e223]:
+                  - text: "!"
+                  - generic [ref=f1e224]: Sosia
+                  - generic [ref=f1e225]: Boleti con pori rossi o viraggio blu
+          - group [ref=f1e226]:
+            - generic "Quando Asciutto · 13 °C" [ref=f1e227] [cursor=pointer]:
+              - generic [ref=f1e234]:
+                - generic [ref=f1e235]: Quando
+                - generic [ref=f1e236]: Asciutto · 13 °C
+          - group [ref=f1e237]:
+            - generic "Come arrivare Accesso auto da verificare" [ref=f1e238] [cursor=pointer]:
+              - generic [ref=f1e245]:
+                - generic [ref=f1e246]: Come arrivare
+                - generic [ref=f1e247]: Accesso auto da verificare
+        - region "Strumenti per il bosco" [ref=f1e248]:
+          - generic [ref=f1e249]:
+            - generic [ref=f1e252]:
+              - heading "Per il bosco" [level=2] [ref=f1e253]
+              - paragraph [ref=f1e254]: Anche senza rete
+            - button "Salva offline" [ref=f1e255] [cursor=pointer]
+          - group [ref=f1e257]:
+            - generic "Altri strumenti" [ref=f1e258] [cursor=pointer]
+        - region [ref=f1e259]:
+          - generic [ref=f1e260]:
+            - text: Dal Taccuino condiviso
+            - heading "Cosa dicono gli altri su Faggeto di Allumiere" [level=2] [ref=f1e261]
+            - paragraph [ref=f1e262]: Ultimi 7 giorni · tutte le specie della zona
+          - paragraph [ref=f1e263]: Condivisione delle osservazioni non ancora attiva.
+          - link "Apri il tuo Taccuino →" [ref=f1e265] [cursor=pointer]:
+            - /url: "#/diario"
+          - paragraph [ref=f1e266]: "Osservazioni dichiarate: non confermano la presenza attuale. I tuoi punti GPS restano privati."
+          - group [ref=f1e267]:
+            - generic "Dati e privacy" [ref=f1e268] [cursor=pointer]
+        - region "Il tuo taccuino" [ref=f1e273]:
+          - button "Com’è andata?" [ref=f1e274] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f1e279]: →
+          - paragraph [ref=f1e280]: Anche una ricerca a vuoto conta. Scegli tu se condividere.
+          - generic [ref=f1e289]:
+            - heading "I tuoi posti restano tuoi" [level=3] [ref=f1e290]
+            - paragraph [ref=f1e291]: Agli altri non mostriamo il tuo punto. Se condividi, vedono solo un riepilogo per zona.
+            - link "Come proteggiamo i tuoi dati ↗" [ref=f1e292] [cursor=pointer]:
+              - /url: "#/info"
+        - generic [ref=f1e293]: Comune di Allumiere; recapito diretto non acquisito
+        - region "Approfondimenti sulla zona" [ref=f1e294]:
+          - heading "Approfondimenti" [level=2] [ref=f1e295]
+          - group [ref=f1e296]:
+            - generic "Regole di raccolta Quantità · orari · documenti · contributo e divieti" [ref=f1e297] [cursor=pointer]:
+              - generic [ref=f1e298]:
+                - generic [ref=f1e299]: Regole di raccolta
+                - generic [ref=f1e300]: Quantità · orari · documenti · contributo e divieti
+          - group [ref=f1e301]:
+            - generic "Da cosa dipendono le condizioni Potenziale dei funghi e meteo dell’uscita" [ref=f1e302] [cursor=pointer]:
+              - generic [ref=f1e303]:
+                - generic [ref=f1e304]: Da cosa dipendono le condizioni
+                - generic [ref=f1e305]: Potenziale dei funghi e meteo dell’uscita
+          - group [ref=f1e306]:
+            - generic "Sentieri della zona 0 tratti mappati · difficoltà e profili" [ref=f1e307] [cursor=pointer]:
+              - generic [ref=f1e308]:
+                - generic [ref=f1e309]: Sentieri della zona
+                - generic [ref=f1e310]: 0 tratti mappati · difficoltà e profili
+            - paragraph [ref=f1e312]: "Non risultano sentieri compatibili in questi dati: verifica tracciati, accessibilità e segnaletica sul posto."
+          - group [ref=f1e313]:
+            - generic "Bosco della zona intorno a 540 m Cerro · Faggio · Castagno" [ref=f1e314] [cursor=pointer]:
+              - generic [ref=f1e315]:
+                - generic [ref=f1e316]: Bosco della zona intorno a 540 m
+                - generic [ref=f1e317]: Cerro · Faggio · Castagno
+          - group [ref=f1e318]:
+            - generic "Paesaggio e alberi Faggio" [ref=f1e319] [cursor=pointer]:
+              - generic [ref=f1e320]:
+                - generic [ref=f1e321]: Paesaggio e alberi
+                - generic [ref=f1e322]: Faggio
+    - text: ✓ ▶ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋
+  - status

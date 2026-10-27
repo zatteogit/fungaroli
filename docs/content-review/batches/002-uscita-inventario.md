@@ -32,10 +32,33 @@ Lo snapshot CMS pubblico acquisito nella stessa sessione dichiara release
 coincidono con `data/zones.json` alla base indicata. Questo confronto non copre
 gli altri documenti CMS, i dati calcolati o tutte le varianti del DOM.
 
+### Secondo passaggio: meteo simulato e filtri
+
+Con la stessa base, in una nuova sessione isolata e senza profilo, il browser
+ha ricevuto una previsione sintetica con lo stesso formato del generatore
+`forecast` in `tools/visual-audit.mjs`. La fixture è una prova ripetibile, non
+meteo reale. Preferenze simulate: Funghi e Piante, Porcino, difficoltà T;
+giorno successivo. La conferma iniziale è stata registrata solo nella sessione.
+
+Le nuove istantanee documentano lo stato chiuso, il percorso e l’osservazione
+aperti, il dialogo dei filtri e il viewport 390 × 844 in tema scuro. Una sola
+apertura mostra il dettaglio su sentiero e accesso mancanti, la frase sui limiti
+del percorso e i contenuti del piano; «Modifica» apre i filtri, Escape li chiude.
+Nel viewport provato non è stato rilevato overflow orizzontale. Questa verifica
+non misura contrasto, accessibilità completa o comportamento sugli altri device.
+
+Nel caso simulato l’intestazione «Cosa osservare» mostra il Porcino scelto e un
+valore basso; nel dettaglio, «Funghi che cerchi» dice che le specie scelte non
+rientrano nei suggerimenti principali e propone altre specie. **Da valutare:**
+questa sequenza può confondere sul rapporto tra specie guida e suggerimenti.
+Non è ancora una conclusione sull’algoritmo o una richiesta di modificare soglie.
+Il testo sui sosia e il chiarimento che l’indice non è una probabilità restano
+visibili nello stato aperto.
+
 ## Ancora da fare prima di chiudere la pagina
 
-- Inventariare anche meteo disponibile, dati pratici, filtri e tutte le sezioni
-  espanse, gli stati del taccuino e le varianti di interessi e zone.
+- Completare l’inventario delle sezioni espanse, dei filtri, degli stati del
+  taccuino e delle varianti di meteo, interessi e zone.
 - Confrontare i blocchi con tutti i documenti CMS e JSON che li alimentano;
   identificare differenze, fonti, azioni e contenuti mancanti.
 - Verificare l’ordine e l’accesso per le cinque personas, con tastiera, temi,
