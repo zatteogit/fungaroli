@@ -37,8 +37,8 @@ for(const theme of ['light','dark'])test(`risposta dei controlli nelle schede e 
  }
  const selected=page.locator('.view:not([hidden]) .ts-controls .ts-form[aria-pressed="true"]').first(),marker=await selected.evaluate(e=>getComputedStyle(e).boxShadow);await selected.hover();expect(await selected.evaluate(e=>getComputedStyle(e).boxShadow)).toBe(marker);await expect(selected).toHaveAttribute('aria-pressed','true');
  await page.goto('/');await expect(page.locator('#lazio-explore')).toBeVisible();
- for(const selector of ['.profile-entry','.tabbar a[href="#/mappa"]','a.daily-thought-credit','.editorial-trip-link','.home-notebook-link'])await hoverChanges(page,page.locator(selector).first());
- await page.locator('.appbar [data-open-feedback]').click();const close=page.locator('.feedback-dialog[open] .profile-close');await hoverChanges(page,close);await focusVisible(page,close);await close.click();
+ for(const selector of ['.tabbar a[href="#/mappa"]','a.daily-thought-credit','.editorial-trip-link','.home-notebook-link'])await hoverChanges(page,page.locator(selector).first());
+ await page.goto('/#/diario');await hoverChanges(page,page.locator('.profile-entry'));await page.locator('.notebook-storage > summary').click();await page.locator('.notebook-preferences-body [data-open-feedback]').click();const close=page.locator('.feedback-dialog[open] .profile-close');await hoverChanges(page,close);await focusVisible(page,close);await close.click();
  await page.goto('/#/riconosci/confronta/edulis/caloboletus-calopus');for(const selector of ['.appbar-context-action','.cmp-pair-menu'])await hoverChanges(page,page.locator(selector).first());
  await page.goto('/#/zona/vallonina/0');const trail=page.locator('.walk-focus');await trail.locator(':scope > summary').click();await hoverChanges(page,trail.locator('.trail-view-tabs button[aria-selected="false"]').first());
  await page.goto('/#/diario');await hoverChanges(page,page.locator('.notebook-storage > summary'));await context.close();
