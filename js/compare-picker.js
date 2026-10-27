@@ -15,7 +15,7 @@ export function openComparePicker({taxa,photo,asset,title='Scegli un fungo',curr
   dialog.innerHTML=`<header class="cmp-chooser-head"><h2>${esc(heading)}</h2><button type="button" data-finder-close aria-label="Chiudi">×</button></header>
     <label class="cmp-finder-search"><span>Cerca nel catalogo</span><input type="search" placeholder="Nome o carattere, es. verde" autocomplete="off"></label>
     ${related.length?`<div class="cmp-finder-scopes" role="group" aria-label="Specie da mostrare"><button type="button" data-scope="related" aria-pressed="true">Sosia documentati · ${related.length}</button><button type="button" data-scope="all" aria-pressed="false">${esc(allLabel)}</button></div>`:''}
-    <p class="small muted" data-finder-search-help hidden>Ricerca testuale: le parole possono trovarsi in caratteri diversi. Per scegliere i caratteri usa le domande sui funghi in Scopri.</p><p class="cmp-finder-count" role="status"></p><div class="cmp-finder-results"></div>`;
+    <p class="small muted" data-finder-search-help hidden>Ricerca testuale: le parole possono trovarsi in caratteri diversi. Per scegliere i caratteri usa «Impara a riconoscere» nella sezione di Scopri.</p><p class="cmp-finder-count" role="status"></p><div class="cmp-finder-results"></div>`;
   document.body.append(dialog);
   const relatedKeys=new Set(related.map(t=>t.key));
   let scope=related.length?'related':'all';
