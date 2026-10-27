@@ -1,0 +1,170 @@
+- generic [ref=e1]:
+  - banner [ref=e8]:
+    - link "Fronda, home" [ref=e9] [cursor=pointer]:
+      - /url: "#/"
+    - 'link "pilota · Lazio : versione pilota, che cosa copre" [ref=e15] [cursor=pointer]':
+      - /url: "#/info"
+      - generic [ref=e16]: pilota ·
+      - text: Lazio
+      - generic [ref=e17]: ": versione pilota, che cosa copre"
+    - button "Cerca in tutta l’app" [ref=e19] [cursor=pointer]
+  - navigation "Sezioni" [ref=e23]:
+    - generic [ref=e24]:
+      - link "Uscite" [ref=e25] [cursor=pointer]:
+        - /url: "#/"
+      - link "Mappa" [ref=e29] [cursor=pointer]:
+        - /url: "#/mappa"
+      - link "Scopri" [ref=e33] [cursor=pointer]:
+        - /url: "#/scopri"
+      - link "Taccuino" [ref=e38] [cursor=pointer]:
+        - /url: "#/diario"
+    - button "Annota un ritrovamento" [ref=e55] [cursor=pointer]:
+      - generic [ref=e46]: Annota
+  - paragraph [ref=e56]:
+    - text: Non riesco ad aggiornare il meteo e non ho una copia salvata. Zone, sentieri e schede restano consultabili.
+    - button "Riprova" [ref=e57] [cursor=pointer]
+  - main [ref=e47]:
+    - 'button "Indietro: Uscite" [ref=e58] [cursor=pointer]':
+      - generic [ref=e61]: Uscite
+    - text: “
+    - generic [ref=e63]:
+      - heading "Faggeto di Allumiere" [level=1] [ref=e64]
+      - region "Scelte dell’uscita" [ref=e65]:
+        - group [ref=e66]:
+          - 'generic "Funghi: scelte e significato delle condizioni" [ref=e67] [cursor=pointer]':
+            - strong [ref=e69]: Funghi
+          - generic [ref=e229]:
+            - paragraph [ref=e230]: Tutte le specie del catalogo
+            - paragraph [ref=e231]: Condizioni per i funghi scelti e il meteo del giorno.
+            - paragraph [ref=e232]: "L’indice è sperimentale: non è una probabilità di trovare funghi."
+            - paragraph [ref=e233]: Indice non disponibile per 37 specie scelte.
+        - button "Modifica" [ref=e73] [cursor=pointer]
+      - generic [ref=e75]:
+        - tablist "Giorno" [ref=e76]:
+          - tab "Oggi 27" [ref=e77] [cursor=pointer]:
+            - generic [ref=e78]: Oggi
+            - generic [ref=e79]: "27"
+          - tab "Domani 28" [selected] [ref=e80] [cursor=pointer]:
+            - generic [ref=e81]: Domani
+            - generic [ref=e82]: "28"
+          - tab "giovedì 29" [ref=e83] [cursor=pointer]:
+            - generic [ref=e84]: giovedì
+            - generic [ref=e85]: "29"
+          - tab "venerdì 30" [ref=e86] [cursor=pointer]:
+            - generic [ref=e87]: venerdì
+            - generic [ref=e88]: "30"
+          - tab "sabato 31" [ref=e89] [cursor=pointer]:
+            - generic [ref=e90]: sabato
+            - generic [ref=e91]: "31"
+          - tab "domenica 1" [ref=e92] [cursor=pointer]:
+            - generic [ref=e93]: domenica
+            - generic [ref=e94]: "1"
+          - tab "lunedì 2" [ref=e95] [cursor=pointer]:
+            - generic [ref=e96]: lunedì
+            - generic [ref=e97]: "2"
+          - tab "martedì 3" [ref=e98] [cursor=pointer]:
+            - generic [ref=e99]: martedì
+            - generic [ref=e100]: "3"
+        - button "Scorri avanti" [ref=e101] [cursor=pointer]
+      - group [ref=e104]:
+        - generic "Raccolta da verificare con il gestore" [ref=e105] [cursor=pointer]
+        - generic [ref=e234]:
+          - paragraph [ref=e235]: "Raccolta locale da verificare con il gestore prima dell’uscita. Referente: Comune di Allumiere; recapito diretto non acquisito."
+          - link "Regole e fonte ufficiale ↗" [ref=e236] [cursor=pointer]:
+            - /url: https://comune.allumiere.rm.it/it/vivere/monumento-naturale-il-faggeto
+      - paragraph [ref=e110]: "Indice non calcolabile: mancano pioggia, temperatura media, umidità del suolo, temperature minime, temperature massime, meteo aggiornato. Un dato mancante non indica assenza di funghi."
+      - paragraph [ref=e111]:
+        - link "Apri la mappa" [ref=e112] [cursor=pointer]:
+          - /url: "#/mappa/allumiere-faggeto"
+        - text: ·
+        - link "Metodo e limiti" [ref=e113] [cursor=pointer]:
+          - /url: "#/metodo"
+      - heading "Il piano in breve" [level=2] [ref=e114]
+      - paragraph [ref=e115]: Non abbiamo ancora un sentiero documentato per questa zona.
+      - group [ref=e116]:
+        - generic "Durante il giro Prugnolo · Rosa canina · Cerro" [active] [ref=e117] [cursor=pointer]:
+          - generic [ref=e118]:
+            - generic [ref=e119]: Durante il giro
+            - generic [ref=e120]: Prugnolo · Rosa canina · Cerro
+        - generic [ref=e237]:
+          - paragraph [ref=e238]: "Potresti incontrare anche queste specie. Compatibilità con gli ambienti della zona: presenza da verificare."
+          - list [ref=e239]:
+            - listitem [ref=e240]:
+              - 'link "Frutti Prugnolo Periodo indicativo: frutti maturi" [ref=e241] [cursor=pointer]':
+                - /url: "#/pianta/prugnolo"
+                - generic [ref=e242]:
+                  - generic [ref=e243]: Frutti
+                  - generic [ref=e244]: Prugnolo
+                  - generic [ref=e245]: "Periodo indicativo: frutti maturi"
+                - generic [aria-hidden] [ref=e246]: ›
+            - listitem [ref=e247]:
+              - 'link "Frutti Rosa canina Periodo indicativo: frutti maturi" [ref=e248] [cursor=pointer]':
+                - /url: "#/pianta/rosa-canina"
+                - generic [ref=e249]:
+                  - generic [ref=e250]: Frutti
+                  - generic [ref=e251]: Rosa canina
+                  - generic [ref=e252]: "Periodo indicativo: frutti maturi"
+                - generic [aria-hidden] [ref=e253]: ›
+            - listitem [ref=e254]:
+              - link "Albero Cerro Cerreta nei campioni della zona" [ref=e255] [cursor=pointer]:
+                - /url: "#/albero/cerro"
+                - generic [ref=e256]:
+                  - generic [ref=e257]: Albero
+                  - generic [ref=e258]: Cerro
+                  - generic [ref=e259]: Cerreta nei campioni della zona
+                - generic [aria-hidden] [ref=e260]: ›
+          - link "Scopri altre piante Erbe, fiori, frutti e arbusti" [ref=e261] [cursor=pointer]:
+            - /url: "#/piante"
+            - generic [ref=e266]:
+              - generic [ref=e267]: Scopri altre piante
+              - generic [ref=e268]: Erbe, fiori, frutti e arbusti
+      - paragraph [ref=e121]: Comune di Allumiere; recapito diretto non acquisito
+      - paragraph [ref=e122]:
+        - text: Da Via del Faggeto si esplora una rete segnata fra
+        - link "faggi" [ref=e123] [cursor=pointer]:
+          - /url: "#/albero/faggio"
+        - text: e tracce della storia mineraria. È una proposta per conoscere un bosco a bassa quota; il regime di raccolta nel monumento naturale va accertato.
+      - generic [ref=e124]:
+        - heading "Fonti del luogo" [level=3] [ref=e125]
+        - list [ref=e126]:
+          - listitem [ref=e127]:
+            - link "Sistema museale RESINA / musei naturalistici del Lazio" [ref=e128] [cursor=pointer]:
+              - /url: https://www.museiresina.it/itinerari/la-faggeta-di-allumiere-2/
+          - listitem [ref=e129]:
+            - link "Regione Lazio / ParchiLazio" [ref=e130] [cursor=pointer]:
+              - /url: https://www.parchilazio.it/faggeto_di_allumiere
+          - listitem [ref=e131]:
+            - link "Regione Lazio" [ref=e132] [cursor=pointer]:
+              - /url: https://www.regione.lazio.it/cittadini/agricoltura/Funghi
+          - listitem [ref=e133]:
+            - link "Fonte cartografica citata nella provenienza" [ref=e134] [cursor=pointer]:
+              - /url: https://comune.allumiere.rm.it/it/vivere/monumento-naturale-il-faggeto
+        - paragraph [ref=e135]: "Il centro della zona serve al meteo e al campionamento: non indica un parcheggio. Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso."
+      - region "Strumenti per il bosco" [ref=e136]:
+        - generic [ref=e137]:
+          - generic [ref=e140]:
+            - heading "Per il bosco" [level=2] [ref=e141]
+            - paragraph [ref=e142]: Anche senza rete
+          - button "Salva offline" [ref=e143] [cursor=pointer]
+        - group [ref=e145]:
+          - generic "Altri strumenti" [ref=e146] [cursor=pointer]
+      - region [ref=e147]:
+        - generic [ref=e148]:
+          - text: Dal Taccuino condiviso
+          - heading "Cosa dicono gli altri su Faggeto di Allumiere" [level=2] [ref=e149]
+          - paragraph [ref=e150]: Ultimi 7 giorni · tutte le specie della zona
+        - paragraph [ref=e151]: Condivisione delle osservazioni non ancora attiva.
+        - link "Apri il tuo Taccuino →" [ref=e153] [cursor=pointer]:
+          - /url: "#/diario"
+        - paragraph [ref=e154]: "Osservazioni dichiarate: non confermano la presenza attuale. I tuoi punti GPS restano privati."
+        - group [ref=e155]:
+          - generic "Dati e privacy" [ref=e156] [cursor=pointer]
+      - heading "Approfondimenti" [level=2] [ref=e161]
+      - group [ref=e162]:
+        - generic "Accessi e soste" [ref=e163] [cursor=pointer]
+      - group [ref=e164]:
+        - generic "Sentieri della zona" [ref=e165] [cursor=pointer]
+      - group [ref=e168]:
+        - generic "Bosco e aree protette" [ref=e169] [cursor=pointer]
+    - text: ✓ ▶ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋
+  - status
