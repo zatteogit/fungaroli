@@ -13,7 +13,15 @@ import {
   toggleOutingAlerts,
 } from "./field-alerts.js";
 export function fieldTools(zone: { id: string }, date: string) {
-  return `<section class="field-tools" data-field-tools="${esc(zone.id)}" data-field-date="${esc(date)}"><h2>Pronta per il bosco</h2><p>Porta con te il tratto mappato, le schede e una copia datata del meteo. Nessun profilo necessario.</p><div class="field-actions"><button type="button" class="btn ghost" data-field-prepare>Prepara per il bosco</button>${wakeButton()}</div><p class="small" data-field-progress role="status"></p><a class="field-link" href="offline.html">Le mie uscite offline →</a><div class="field-notifications"><button type="button" class="btn ghost" data-field-alert aria-pressed="${alertsEnabled(zone.id, date)}">${alertsEnabled(zone.id, date) ? "Avvisi attivi · Disattiva" : "Avvisami se il meteo peggiora"}</button><p class="small">Solo per questa zona e questo giorno, se aumenta il livello di cautela del meteo. Non sono allerte ufficiali né un servizio di sicurezza. Puoi disattivarli qui.</p><p class="small" data-alert-status role="status"></p></div></section>`;
+  return `<section class="field-tools" data-weather-key="field-tools:${esc(zone.id)}|${esc(date)}" data-field-tools="${esc(zone.id)}" data-field-date="${esc(date)}" aria-label="Strumenti per il bosco">
+    <div class="field-tools-main"><svg class="field-tools-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M5 15v5h14v-5"/></svg><div><h2>Per il bosco</h2><p class="small">Anche senza rete</p></div><button type="button" class="btn ghost" data-field-prepare>Salva offline</button></div>
+    <p class="small" data-field-progress role="status"></p>
+    <div class="field-tools-links"><details class="field-options" data-weather-preserve-open><summary>Altri strumenti<span class="field-active-status" data-field-active>${alertsEnabled(zone.id, date) ? "Avvisi attivi" : ""}</span></summary><div class="field-options-body">
+      <p class="small">La copia offline include il tratto mappato, le schede e una copia datata del meteo. Non serve un profilo.</p>
+      <a class="field-archive" href="offline.html">Le mie uscite offline →</a>
+      <div class="field-actions">${wakeButton()}</div>
+      <div class="field-notifications"><p class="small">Solo per questa zona e questo giorno, se aumenta il livello di cautela del meteo. Non sono allerte ufficiali né un servizio di sicurezza. Puoi disattivarli qui.</p><button type="button" class="btn ghost" data-field-alert aria-pressed="${alertsEnabled(zone.id, date)}">${alertsEnabled(zone.id, date) ? "Avvisi attivi · Disattiva" : "Avvisami se il meteo peggiora"}</button><p class="small" data-alert-status role="status"></p></div>
+    </div></details><a class="field-link" href="offline.html" hidden>Apri la copia offline →</a></div></section>`;
 }
 const jobs = new Map<string, FieldJob>(),
   alertJobs = new Map<string, FieldJob>();
@@ -27,6 +35,12 @@ function paintJobs() {
     if (!zoneId || !date) continue;
     const key = zoneId + "|" + date,
       alert = alertJobs.get(key);
+    const active = root.querySelector<HTMLElement>("[data-field-active]");
+    const activeText = [
+      root.querySelector('[data-keep-awake][aria-pressed="true"]') ? "Schermo acceso" : "",
+      alertsEnabled(zoneId,date) ? "Avvisi attivi" : "",
+    ].filter(Boolean).join(" · ");
+    if (active && active.textContent !== activeText) active.textContent = activeText;
     if (alert) {
       const b = root.querySelector<HTMLButtonElement>("[data-field-alert]")!,
         m = root.querySelector<HTMLElement>("[data-alert-status]")!,
@@ -50,12 +64,13 @@ function paintJobs() {
       message.textContent = state.message;
     if (state.url) {
       const link = root.querySelector<HTMLAnchorElement>(".field-link")!;
+      link.hidden = false;
       if (link.getAttribute("href") !== state.url)
         link.setAttribute("href", state.url);
       if (link.textContent !== "Apri la copia offline →")
         link.textContent = "Apri la copia offline →";
-      if (button.textContent !== "Aggiorna la copia offline")
-        button.textContent = "Aggiorna la copia offline";
+      if (button.textContent !== "Aggiorna copia")
+        button.textContent = "Aggiorna copia";
     }
   }
 }

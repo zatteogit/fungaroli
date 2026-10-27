@@ -38,6 +38,8 @@ function patch(first: ChildNode, second: ChildNode) {
     return;
   }
   if (a.nodeType !== 1) return;
+  const preserveOpen = a.tagName === "DETAILS" &&
+    a.hasAttribute("data-weather-preserve-open") && b.hasAttribute("data-weather-preserve-open");
   if (a.tagName === "IMG") {
     const src = b.getAttribute("data-src") || b.getAttribute("src");
     if (
@@ -52,6 +54,7 @@ function patch(first: ChildNode, second: ChildNode) {
   for (const attr of [...a.attributes])
     if (
       !b.hasAttribute(attr.name) &&
+      !(preserveOpen && attr.name === "open") &&
       !["data-counted", "data-image-state"].includes(attr.name) &&
       !(
         a.matches("a.glossary-link,a[data-entity]") &&
@@ -60,7 +63,7 @@ function patch(first: ChildNode, second: ChildNode) {
     )
       a.removeAttribute(attr.name);
   for (const attr of b.attributes)
-    if (a.getAttribute(attr.name) !== attr.value)
+    if (!(preserveOpen && attr.name === "open") && a.getAttribute(attr.name) !== attr.value)
       a.setAttribute(attr.name, attr.value);
   reconcileChildren(a, b);
 }

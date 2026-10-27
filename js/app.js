@@ -1285,7 +1285,7 @@ function renderOutdoorHome() {
   renderCommunityIntro();fitFacts($('#hero .facts'));fitCover();
 }
 function outdoorDayTabs(z) {
-  return `<div id="zone-days" class="days compact" role="tablist" aria-label="Giorno">${Array.from({length:AHEAD_DAYS+1},(_,o)=>{const d=outdoorDay(z,o);return `<button type="button" class="day" role="tab" data-day-offset="${o}" aria-selected="${o===state.dayOffset}"><span class="d1">${o===0?'Oggi':o===1?'Domani':fmtDate(d.date,{weekday:'long'})}</span><span class="d2">${fmtDate(d.date,{day:'numeric'})}</span>${calendarWeather(z,d)}</button>`;}).join('')}</div>`;
+  return `<div class="outing-days"><div id="zone-days" class="days compact" role="tablist" aria-label="Giorno">${Array.from({length:AHEAD_DAYS+1},(_,o)=>{const d=outdoorDay(z,o);return `<button type="button" class="day" role="tab" data-day-offset="${o}" aria-selected="${o===state.dayOffset}"><span class="d1">${o===0?'Oggi':o===1?'Domani':fmtDate(d.date,{weekday:'long'})}</span><span class="d2">${fmtDate(d.date,{day:'numeric'})}</span>${calendarWeather(z,d)}</button>`;}).join('')}</div></div>`;
 }
 function renderOutdoorDetail() {
   const z=(weatherZones||zones).find(z=>z.id===state.zoneId);if(!z)return;
@@ -1294,7 +1294,7 @@ function renderOutdoorDetail() {
   delete box.dataset.zone;detailCtx=null;lastDetailHtml='';box.dataset.glossaryContext=state.target==='piante'?'Piante':state.target==='funghi'?'Funghi':'Sentieri';
   const discoveries=walk?outdoorDiscoveries(z,d,walk):[];
   const photo=outdoorCover({z,d,walk,items:discoveries});
-  const html=`<header class="phero outing-hero${photo?'':' no-local-photo'}"><div class="outing-visual">${photo?`<div class="phero-img outdoor-cover-img"><img data-src="${esc(photo.hd)}" alt="${esc(photo.alt||'')}"></div>`:''}<div class="phero-body"><span class="pill glass">${esc(fmtDate(d.date,{weekday:'long',day:'numeric',month:'long'}))}</span><h1 class="phero-title">${esc(z.title||z.name)}</h1></div></div>${outingSearchContext(d)}${heroIndicators(z,d)}</header><div class="pbody">${outdoorDayTabs(z)}${photo?.credit?`<p class="small muted zone-photo-credit">${creditLine(photo.credit)}</p>`:''}${zoneCollectionNotice(z)}${practicalDetails(z,walk)}${fieldTools(z,d.date)}${!habitat[z.id]?'<p class="notice zone-data-pending"><b>Indice funghi non ancora disponibile</b><br>Questa zona è da esplorare: il campionamento del bosco è in attesa. Non è un’indicazione di assenza di funghi.</p>':''}${!w?.available?'<p class="notice">Meteo da verificare prima di partire.</p>':''}<p>${esc(travelText(zoneTrip(z,walk)))}</p>${state.target==='piante'?discoveriesHtml(z,d,walk,discoveries):''}${walk?renderWalkFocus(z,{...d,best:null},walk):'<p class="notice">Nessun sentiero corrisponde ai filtri attivi.</p>'}${z.protection?`<p class="notice">${esc(z.protection)}</p>`:''}<p>${linkTrees(z.description)}</p>${zoneSourceLinks(z)}${state.target==='passeggiata'?discoverySection(z,d,walk):''}${outingCommunity(z)}${section('accesso','Accessi e soste',renderAccess(z,{access:null}))}${section('sentieri','Sentieri della zona',renderTrails(z,null),true)}${zoneInfoSection(z)}<p><a href="#/mappa/${z.id}">Vedi sulla mappa</a></p></div>`;
+  const html=`<header class="phero outing-hero${photo?'':' no-local-photo'}"><div class="outing-visual">${photo?`<div class="phero-img outdoor-cover-img"><img data-src="${esc(photo.hd)}" alt="${esc(photo.alt||'')}"></div>`:''}<div class="phero-body"><span class="pill glass">${esc(fmtDate(d.date,{weekday:'long',day:'numeric',month:'long'}))}</span><h1 class="phero-title">${esc(z.title||z.name)}</h1></div></div>${outingSearchContext(d)}${outdoorDayTabs(z)}${heroIndicators(z,d)}</header><div class="pbody">${photo?.credit?`<p class="small muted zone-photo-credit">${creditLine(photo.credit)}</p>`:''}${zoneCollectionNotice(z)}${practicalDetails(z,walk)}${!habitat[z.id]?'<p class="notice zone-data-pending"><b>Indice funghi non ancora disponibile</b><br>Questa zona è da esplorare: il campionamento del bosco è in attesa. Non è un’indicazione di assenza di funghi.</p>':''}${!w?.available?'<p class="notice">Meteo da verificare prima di partire.</p>':''}<h2 class="outing-section-title">Il piano in breve</h2>${walk?renderWalkFocus(z,{...d,best:null},walk):'<p class="notice">Nessun sentiero corrisponde ai filtri attivi.</p>'}${state.target==='piante'?discoveriesHtml(z,d,walk,discoveries):''}<p>${esc(travelText(zoneTrip(z,walk)))}</p>${z.protection?`<p class="notice">${esc(z.protection)}</p>`:''}<p>${linkTrees(z.description)}</p>${zoneSourceLinks(z)}${state.target==='passeggiata'?discoverySection(z,d,walk):''}${fieldTools(z,d.date)}${outingCommunity(z)}<h2 class="outing-section-title">Approfondimenti</h2>${section('accesso','Accessi e soste',renderAccess(z,{access:null}))}${section('sentieri','Sentieri della zona',renderTrails(z,null),true)}${zoneInfoSection(z)}<p><a href="#/mappa/${z.id}">Vedi sulla mappa</a></p></div>`;
   if(weatherPainting)updateWeatherHTML(box,html);else box.innerHTML=html;
   bindDetailSections(box);
 }
@@ -1691,7 +1691,12 @@ function outingSearchContext(d=null) {
   const missing=selectedCatalog().filter(s=>!botanicalById(s.id)&&!s.modelId);
   const driver=d?.best?.species;
   const interests=INTENTS.filter(i=>hasInterest(i.id)).map(i=>i.label).join(' · ')||'Esplora il luogo';
-  return `<section class="outing-search" aria-label="Scelte dell’uscita"><div><b>Alla ricerca di… ${esc(interests)}</b>${state.target!=='passeggiata'?`<p>${esc(selected)}</p>`:''}<p class="small muted">${hasInterest('funghi')?'Condizioni per i funghi scelti e il meteo del giorno.':'Contenuti per gli interessi scelti e il giorno selezionato.'}</p>${hasInterest('funghi')&&driver?`<p class="small muted">Il valore parte da ${esc(driver.name)}, il miglior indice tra i funghi scelti con dati disponibili.</p>`:''}${hasInterest('funghi')&&missing.length?`<p class="small muted">Indice non disponibile per ${missing.length} ${missing.length===1?'specie scelta':'specie scelte'}.</p>`:''}${state.easyTrails||state.shortTrails?`<p class="small">${[state.easyTrails?'Solo difficoltà T · turistica':'',state.shortTrails?'Tratto nella zona entro 5 km':''].filter(Boolean).join(' · ')}</p>`:''}</div><button type="button" class="btn ghost" data-outing-filters aria-haspopup="dialog">Modifica</button></section>`;
+  const constraints=[state.easyTrails?'Solo difficoltà T · turistica':'',state.shortTrails?'Tratto nella zona entro 5 km':''].filter(Boolean);
+  return `<section class="outing-search" aria-label="Scelte dell’uscita"><div class="outing-search-head"><b>Alla ricerca di…</b><button type="button" class="btn ghost" data-outing-filters aria-haspopup="dialog">Modifica</button></div><div class="outing-search-content"><div class="outing-search-tags">${interests.split(' · ').map(label=>`<span>${esc(label)}</span>`).join('')}${constraints.map(label=>`<span class="outing-practical-tag">${esc(label)}</span>`).join('')}</div>${state.target!=='passeggiata'?`<p class="outing-selected">${esc(selected)}</p>`:''}
+    <p class="small muted">${hasInterest('funghi')?'Condizioni per i funghi scelti e il meteo del giorno.':'Contenuti per gli interessi scelti e il giorno selezionato.'}</p>
+    ${hasInterest('funghi')?`<details class="outing-context-help" data-weather-preserve-open><summary>${driver?`Indice basato su ${esc(driver.name)}`:'Come leggere le condizioni'}</summary>${driver?`<p>Il valore parte dal miglior indice tra i funghi scelti con dati disponibili: ${esc(driver.name)}.</p>`:''}<p>L’indice è sperimentale: non è una probabilità di trovare funghi.</p>${missing.length?`<p>Indice non disponibile per ${missing.length} ${missing.length===1?'specie scelta':'specie scelte'}.</p>`:''}</details>`:''}
+    ${hasInterest('funghi')&&missing.length?`<p class="outing-index-missing small muted">${missing.length} ${missing.length===1?'specie scelta senza indice disponibile':'specie scelte senza indice disponibile'}.</p>`:''}
+    </div></section>`;
 }
 document.addEventListener('click',e=>{if(e.target.closest('[data-outing-filters]'))openFullFilters();});
 
@@ -3403,7 +3408,7 @@ function essentialSections(z, d, walk) {
   }
   const observationContext = [whereSummary(best.species.id) && `<p class="plan-where">${linkTrees(whereSummary(best.species.id))}</p>`, hostNote && `<p class="plan-host">${esc(hostNote)}</p>`].filter(Boolean).join('');
   const bodies={specie:()=>`<div class="observation-context">${observationContext}</div>`+zoneSpecies(z,d)+discoverySection(z,d,walk,true),quando:()=>renderHuman(z,d)||renderWhenWeather(z,d),accesso:()=>renderAccess(z,d,{summarized:true,walk})};
-  return `<div class="essential-sections"><h2 class="outing-section-title">Il piano in breve</h2>${Object.keys(bodies).map(id=>{
+  return `<div class="essential-sections">${Object.keys(bodies).map(id=>{
     const group=rows.filter(r=>r.sec===id);if(!group.length)return '';
     const summary=group.map(r=>`<span class="essential-summary"><span class="plan-ic${r.thumb?' has-thumb':''}">${r.thumb?thumb(r.thumb,48):r.svg||ICON[r.icon]}</span><span class="plan-body"><span class="plan-k">${r.k}${r.badge?' '+r.badge:''}</span><span class="plan-v">${r.v}</span>${r.sub?`<span class="plan-sub">${r.sub}</span>`:''}</span></span>`).join('');
     return section(id,summary,bodies[id]()||'<p class="small muted">Verifica le previsioni aggiornate e le condizioni del percorso prima di partire.</p>');
@@ -3573,7 +3578,7 @@ function renderDetail() {
   if (!d?.best) {
     const missing = [...new Set((d?.perSpecies || []).flatMap((p) => p.quality?.missing || []))];
     delete box.dataset.zone;detailCtx=null;lastDetailHtml='';
-    box.innerHTML = `<h1>${esc(z.title || z.name)}</h1>${outingSearchContext(d)}${outdoorDayTabs(z)}${zoneCollectionNotice(z)}${!series?.[z.id]?'<p class="notice">Meteo non disponibile per questa zona. <button type="button" class="link-btn" data-zone-weather-retry>Riprova</button></p>':''}<p class="notice">${selectedSpecies().length?'Indice non calcolabile':'Indice non ancora disponibile per le specie selezionate'}${missing.length ? ': mancano ' + esc(missing.join(', ')) : ' per questo giorno'}. Un dato mancante non indica assenza di ${state.target==='piante'?'piante':'funghi'}.</p><p><a href="#/mappa/${z.id}">Apri la mappa</a> · <a href="#/metodo">Metodo e limiti</a></p>${fieldTools(z,d?.date||outdoorDate(state.dayOffset))}${renderWalkFocus(z, d, walk)}${discoverySection(z,d,walk)}${z.protection ? `<p class="notice">${esc(z.protection)}</p>` : ''}<p>${linkTrees(z.description)}</p>${zoneSourceLinks(z)}${outingCommunity(z)}${section('accesso','Accessi e soste',renderAccess(z,{access:null}))}${section('sentieri','Sentieri della zona',renderTrails(z,null),true)}${zoneInfoSection(z)}`;
+    box.innerHTML = `<h1>${esc(z.title || z.name)}</h1>${outingSearchContext(d)}${outdoorDayTabs(z)}${zoneCollectionNotice(z)}${!series?.[z.id]?'<p class="notice">Meteo non disponibile per questa zona. <button type="button" class="link-btn" data-zone-weather-retry>Riprova</button></p>':''}<p class="notice">${selectedSpecies().length?'Indice non calcolabile':'Indice non ancora disponibile per le specie selezionate'}${missing.length ? ': mancano ' + esc(missing.join(', ')) : ' per questo giorno'}. Un dato mancante non indica assenza di ${state.target==='piante'?'piante':'funghi'}.</p><p><a href="#/mappa/${z.id}">Apri la mappa</a> · <a href="#/metodo">Metodo e limiti</a></p><h2 class="outing-section-title">Il piano in breve</h2>${renderWalkFocus(z, d, walk)}${discoverySection(z,d,walk)}${z.protection ? `<p class="notice">${esc(z.protection)}</p>` : ''}<p>${linkTrees(z.description)}</p>${zoneSourceLinks(z)}${fieldTools(z,d?.date||outdoorDate(state.dayOffset))}${outingCommunity(z)}<h2 class="outing-section-title">Approfondimenti</h2>${section('accesso','Accessi e soste',renderAccess(z,{access:null}))}${section('sentieri','Sentieri della zona',renderTrails(z,null),true)}${zoneInfoSection(z)}`;
     bindDetailSections(box); return;
   }
   const best = d.best;
@@ -3617,17 +3622,17 @@ function renderDetail() {
       <div class="phero-bar"><a class="fab" href="#/mappa/${z.id}" aria-label="Mappa della zona">${IC.map}</a></div>
       <div class="phero-body"><span class="pill glass">${esc(dayLabel)}</span><h1 class="phero-title">${esc(title)}</h1>${sub ? `<p class="phero-sub">${esc(sub)}</p>` : ''}</div>
       </div>
-      ${outingSearchContext(d)}${heroIndicators(z,d,s)}
+      ${outingSearchContext(d)}<div class="outing-days"><div id="zone-days" class="days compact" role="tablist" aria-label="Giorno">${zoneDays}</div></div>${heroIndicators(z,d,s)}
     </header>
     <div class="pbody">
-    <div id="zone-days" class="days compact" role="tablist" aria-label="Giorno">${zoneDays}</div>
     ${weatherAgeHtml(z, best.band)}
     ${zoneCollectionNotice(z)}
     ${practicalDetails(z,walk)}
-    ${fieldTools(z,d?.date||outdoorDate(state.dayOffset))}${renderWalkFocus(z, d, walk)}
+    <h2 class="outing-section-title">Il piano in breve</h2>
+    ${renderWalkFocus(z, d, walk)}
     ${essentialSections(z, d, walk)}
     ${best.kind==='plant'?`<p class="small muted">Indice di contesto sperimentale · fattori disponibili ${best.factors.filter(f=>f.value!=null).length}/${best.factors.length}${best.quality.climateUnavailable?' · meteo non disponibile':''}</p><div class="notice">${esc(best.species.parts)} ${esc(best.species.caution)}</div>`:''}
-    ${outingCommunity(z)}
+    ${fieldTools(z,d?.date||outdoorDate(state.dayOffset))}${outingCommunity(z)}
     <section class="zone-actions" aria-label="Il tuo taccuino">
       <button type="button" class="btn primary zone-note-action" data-note-kind="${best.kind==='plant'?'pianta':'fungo'}" data-note-id="${best.kind==='plant'?best.species.plantId:best.species.id}" data-note-zone="${z.id}" data-note-title="${esc(best.species.name)}">${notebookGlyph}<span>Com’è andata?</span><span aria-hidden="true">→</span></button>
       <p class="zone-note-caption">Anche una ricerca a vuoto conta. Scegli tu se condividere.</p>

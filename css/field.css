@@ -12,8 +12,32 @@
   margin: 0 0 12px;
 }
 .field-tools h2 {
-  font: 600 22px/1.3 var(--font-display);
+  font: 700 16px/1.35 var(--font-body); margin:0;
 }
+.field-tools { padding:14px 16px; border-radius:16px; margin-block:20px; }
+.field-tools-main { display:grid; grid-template-columns:28px minmax(0,1fr) auto; align-items:center; gap:10px; }
+.field-tools-icon { width:24px; height:24px; fill:none; stroke:var(--link); stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+.field-tools-main p { margin:2px 0 0; font-size:13px; }
+.field-tools .btn { min-height:44px; font-size:14px; padding:8px 12px; }
+.field-tools [role="status"]:empty { display:none; }
+.field-tools [data-field-progress] { margin:10px 0 0; }
+.field-tools-links { display:flex; flex-wrap:wrap; align-items:baseline; gap:2px 16px; margin-top:6px; font-size:13px; }
+.field-tools .field-link { min-height:44px; display:inline-flex; align-items:center; margin:0; }
+.field-tools .field-link[hidden] { display:none; }
+.field-archive { display:inline-flex; align-items:center; min-height:44px; margin-bottom:8px; }
+.field-options { flex:1; min-width:0; }
+.field-options > summary { display:flex; flex-wrap:wrap; align-items:center; gap:6px; min-height:44px; width:fit-content; cursor:pointer; color:var(--link); list-style:none; }
+.field-options > summary::-webkit-details-marker { display:none; }
+.field-options > summary::after { content:''; width:6px; height:6px; border-right:1.5px solid currentColor; border-bottom:1.5px solid currentColor; transform:rotate(45deg); margin:0 4px 3px; }
+.field-options[open] > summary::after { transform:rotate(225deg); margin-bottom:0; }
+.field-options > summary:focus-visible { outline:2px solid var(--focus); outline-offset:3px; border-radius:6px; }
+@media(hover:hover) { .field-options > summary:hover,.field-tools a:hover { text-decoration:underline; text-underline-offset:3px; } }
+.field-active-status { color:var(--text-2); font-size:12px; }
+.field-active-status:not(:empty)::before { content:'· '; }
+.field-options[open] { flex-basis:100%; }
+.field-options-body { border-top:1px solid var(--border); padding-top:10px; }
+.field-options-body > p { margin:0 0 10px; }
+.field-options-body .field-notifications p { margin:0 0 10px; }
 .field-actions {
   display: flex;
   flex-wrap: wrap;
@@ -165,10 +189,6 @@
 }
 .field-pack-list a {
   display: grid;
-}
-.field-tools .field-link {
-  display: inline-block;
-  margin-top: 12px;
 }
 .field-notifications {
   margin-top: 16px;

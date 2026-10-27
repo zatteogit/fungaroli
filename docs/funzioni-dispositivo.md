@@ -4,7 +4,7 @@ Decisione di Matteo, 27 ottobre 2026: sfruttare le capacità della web app con p
 
 ## Preparazione offline
 
-Dalla pagina dell’uscita, **Prepara per il bosco** conserva sul dispositivo una copia pubblica del luogo, della traccia selezionata, delle regole regionali e dei vincoli del luogo, delle schede selezionate con foto, cautele, sosia e crediti, e del meteo disponibile con acquisizione originale. L’archivio usa IndexedDB; ogni copia ha una cache dedicata, esclusa dalla pulizia delle nuove shell. Non include note private o dati della community.
+Dalla pagina dell’uscita, **Salva offline** nel pannello compatto «Per il bosco» conserva sul dispositivo una copia pubblica del luogo, della traccia selezionata, delle regole regionali e dei vincoli del luogo, delle schede selezionate con foto, cautele, sosia e crediti, e del meteo disponibile con acquisizione originale. L’archivio usa IndexedDB; ogni copia ha una cache dedicata, esclusa dalla pulizia delle nuove shell. Non include note private o dati della community.
 
 La copia diventa pronta solo dopo aver conservato tutti i file necessari. Un download fallito elimina la cache temporanea e mantiene la copia precedente. La protezione dalla liberazione automatica dello spazio è richiesta al browser; un diniego non diventa una falsa conferma. La pagina `offline.html` ha un lettore indipendente, raggiungibile anche dal Taccuino, senza avviare meteo e community. Le copie si eliminano dall’elenco offline.
 
@@ -18,11 +18,11 @@ Nel compositore rapido, la raccolta fotografica resta distinta dalla cattura con
 
 ## Schermo acceso
 
-Il comando compare nell’uscita, nella mappa e nel lettore offline. Il wake lock viene richiesto al clic, rilasciato al cambio di rotta o uscita dalla pagina, e richiesto nuovamente al ritorno in primo piano solo se l’utente lo aveva attivato. Il sistema può negarlo o revocarlo. Stato, messaggi e controlli restano sincronizzati anche dopo i ridisegni del meteo. Non è un GPS in background.
+Il comando compare sotto «Altri strumenti» nell’uscita, nella mappa e nel lettore offline. Il wake lock viene richiesto al clic, rilasciato al cambio di rotta o uscita dalla pagina, e richiesto nuovamente al ritorno in primo piano solo se l’utente lo aveva attivato. Il sistema può negarlo o revocarlo. Stato, messaggi e controlli restano sincronizzati anche dopo i ridisegni del meteo. Non è un GPS in background.
 
 ## Avvisi per l’uscita
 
-Opt-in indipendente per zona e giorno: nessun profilo, consenso alla ricerca o richiesta automatica del permesso. iPhone richiede l’apertura dalla schermata Home. Gli avvisi seguono l’aumento del livello meteo esistente in `outingFor`, solo con dati freschi e disponibili; non introducono soglie scientifiche e non sono allerte ufficiali o un servizio di sicurezza.
+Il comando si trova sotto «Altri strumenti» nell’uscita. Opt-in indipendente per zona e giorno: nessun profilo, consenso alla ricerca o richiesta automatica del permesso. iPhone richiede l’apertura dalla schermata Home. Gli avvisi seguono l’aumento del livello meteo esistente in `outingFor`, solo con dati freschi e disponibili; non introducono soglie scientifiche e non sono allerte ufficiali o un servizio di sicurezza.
 
 Il server conserva la sottoscrizione tecnica del dispositivo, il token di gestione in forma hash, la zona e il giorno, senza GPS, profilo o testo delle note. Dieci uscite al massimo per dispositivo; limitazione delle richieste senza conservare l’IP in chiaro. Revoca protetta dal token del dispositivo. I giorni trascorsi vengono eliminati; le iscrizioni tecniche scadono entro 30 giorni, anche prima se non hanno più uscite.
 
