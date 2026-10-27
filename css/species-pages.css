@@ -675,17 +675,17 @@ body .phero .phero-bar { top:var(--gallery-controls-top); min-height:var(--galle
 .inline-gallery-controls button { display:grid; place-items:center; width:44px; height:44px; padding:0; border:0; border-radius:50%; color:inherit; background:none; cursor:pointer; }
 @media(hover:hover) and (pointer:fine) {
  .inline-gallery-controls button:hover { background:var(--surface-2); }
- .sp-strip button:not(:disabled):hover::after { opacity:1; }
+ .sp-strip button:not(:disabled):hover::after { opacity:.14; }
  .phero:has(> button.phero-img:hover) .fab { background:var(--on-photo); color:var(--scrim); border-color:var(--on-photo); }
 }
 .inline-gallery-controls button:active { background:var(--surface-3); }
-:is(button.phero-img,.sp-strip button)::after { content:''; position:absolute; inset:4px; z-index:1; border:2px solid var(--on-photo); box-shadow:0 0 0 2px var(--scrim); pointer-events:none; opacity:0; }
+button.phero-img::after { content:''; position:absolute; inset:4px; z-index:1; border:2px solid var(--on-photo); box-shadow:0 0 0 2px var(--scrim); pointer-events:none; opacity:0; }
 .sp-strip button { position:relative; }
-.sp-strip button::after { inset:6px; }
+.sp-strip button::after { content:''; position:absolute; inset:0; z-index:1; border-radius:inherit; background:var(--scrim); pointer-events:none; opacity:0; }
 .phero button.phero-img::after { border-radius:20px; }
 .phero button.phero-img:focus-visible { outline:none; box-shadow:none; }
-:is(button.phero-img,.sp-strip button):focus-visible::after,.sp-strip button:active::after { opacity:1; }
-.sp-strip button:active::after { border-width:3px; }
+button.phero-img:focus-visible::after { opacity:1; }
+.sp-strip button:active::after { opacity:.24; }
 @media(max-width:899px) {
  body:is([data-page="zona"],[data-page="specie-dettaglio"],[data-page="albero"],[data-page="fungo"]) .view:not([hidden]) .phero { --gallery-controls-top:calc(env(safe-area-inset-top, 0px) + (var(--appbar-h) - var(--gallery-controls-height))/2); }
 }
