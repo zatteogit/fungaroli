@@ -29,10 +29,11 @@ for(const [name,prefs,offline] of [
   const fit=await page.locator('#detail').evaluate(root=>{
    const rect=s=>root.querySelector(s)?.getBoundingClientRect(),search=rect('.outing-search'),days=rect('.outing-days'),indicators=rect('.hero-indicators'),body=rect('.pbody'),tools=rect('.field-tools');
    const captions=[...root.querySelectorAll('.hero-indicators .weather-caption,.hero-indicators .ring-caption')].map(e=>e.getBoundingClientRect().bottom);
-   const last=root.querySelector('.outing-search-content').lastElementChild.getBoundingClientRect();
-   return {overflow:document.documentElement.scrollWidth>innerWidth,toolsOverflow:root.querySelector('.field-tools').scrollWidth>tools.width+1,toolsHeight:tools.height,searchEnd:search.bottom,searchTextEnd:last.bottom,daysStart:days.top,daysEnd:days.bottom,indicatorsStart:indicators?.top,indicatorsEnd:indicators?.bottom,bodyStart:body?.top,captionEnd:Math.max(0,...captions)};
+   const last=root.querySelector('.outing-context-help > summary').getBoundingClientRect();
+   return {overflow:document.documentElement.scrollWidth>innerWidth,toolsOverflow:root.querySelector('.field-tools').scrollWidth>tools.width+1,toolsHeight:tools.height,searchHeight:search.height,daysHeight:days.height,indicatorHeight:indicators?.height,searchEnd:search.bottom,searchTextEnd:last.bottom,daysStart:days.top,daysEnd:days.bottom,indicatorsStart:indicators?.top,indicatorsEnd:indicators?.bottom,bodyStart:body?.top,captionEnd:Math.max(0,...captions)};
   });
   expect(fit.overflow,`${name} ${width} ${theme}`).toBe(false);expect(fit.toolsOverflow).toBe(false);expect(fit.toolsHeight).toBeLessThan(160);
+  expect(fit.searchHeight).toBeLessThanOrEqual(104);expect(fit.daysHeight).toBeLessThanOrEqual(76);if(fit.indicatorHeight)expect(fit.indicatorHeight).toBeLessThanOrEqual(116);
   expect(fit.searchTextEnd).toBeLessThanOrEqual(fit.searchEnd+1);expect(fit.searchEnd).toBeLessThanOrEqual(fit.daysStart+1);
   if(fit.indicatorsStart!==undefined){expect(fit.daysEnd).toBeLessThanOrEqual(fit.indicatorsStart+1);expect(fit.captionEnd).toBeLessThanOrEqual(fit.indicatorsEnd+1);}
   if(fit.bodyStart!==undefined)expect(fit.indicatorsEnd??fit.daysEnd).toBeLessThanOrEqual(fit.bodyStart+1);
@@ -74,5 +75,20 @@ test('strumenti compatti: stato attivo visibile, wake lock facoltativo e copia o
  await tools.locator('[data-field-prepare]').click();await expect(tools.locator('[data-field-progress]')).toContainText('Pronta su questo dispositivo');await expect(tools.locator('[data-field-prepare]')).toHaveText('Aggiorna copia');
  await expect(tools.locator('.field-link')).toBeVisible();await expect(tools.locator('.field-options')).not.toHaveAttribute('open','');
  const packs=await page.evaluate(async()=>{const {listFieldPacks}=await import('/js/field-store.js');return listFieldPacks();});expect(packs).toHaveLength(1);expect(packs[0].zone.id).toBe('vallonina');expect(packs[0].species.length).toBeGreaterThan(0);
+ }finally{await context.close();}
+});
+
+
+test('Allumiere: piano vicino, spiegazioni a richiesta e nessuna informazione persa',async({browser})=>{
+ const {context,page}=await outing(browser,{interests:['funghi','piante'],target:'funghi',easyTrails:true});
+ try{
+ await page.goto('/#/zona/allumiere-faggeto/1');const root=page.locator('#detail');await expect(root.locator('.outing-search')).toBeVisible();
+ const info=root.locator('.outing-context-help');await expect(info.locator('.outing-search-content')).toBeHidden();
+ expect(await root.locator('.outing-search').evaluate(e=>e.getBoundingClientRect().height)).toBeLessThanOrEqual(104);
+ await info.locator('summary').click();await expect(info.locator('.outing-search-content')).toBeVisible();await expect(info).toContainText('Tutte le specie del catalogo');await expect(info).toContainText('non è una probabilità');await info.locator('summary').click();
+ const collection=root.locator('.zone-collection-brief');await expect(collection.locator('summary')).toContainText('Raccolta da verificare');await collection.locator('summary').click();await expect(collection).toContainText('Comune di Allumiere');await expect(collection.locator('a')).toBeVisible();await collection.locator('summary').click();
+ const practical=root.locator('.outing-documentation');await expect(practical.locator('summary')).toContainText('non documentati');await expect(practical.locator('.outing-documentation-body')).toBeHidden();await practical.locator('summary').click();await expect(practical.locator('dl')).toBeVisible();await expect(practical).toContainText('Nessun tratto mappato');await expect(practical).toContainText('Non attestano un itinerario completo');await practical.locator('summary').click();
+ const distance=await root.evaluate(e=>[...e.querySelectorAll('.outing-section-title')].find(e=>e.textContent==='Il piano in breve').getBoundingClientRect().top-e.querySelector('.outing-visual').getBoundingClientRect().bottom);expect(distance).toBeLessThan(520);
+ await page.goto('/#/zona/pnalm-settefrati-canneto/1');await expect(root.locator('.zone-collection')).toHaveJSProperty('tagName','ASIDE');await expect(root.locator('.zone-collection p')).toBeVisible();
  }finally{await context.close();}
 });

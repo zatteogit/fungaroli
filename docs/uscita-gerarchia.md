@@ -1,6 +1,6 @@
 # Gerarchia della scheda uscita
 
-Revisione del 27 ottobre 2026, shell v376.
+Revisione del 27 ottobre 2026, shell v378. I paragrafi sulle v377 conservano lo storico della prima rifinitura.
 
 La scheda segue il percorso di lettura: luogo → scelte → giorno e condizioni →
 piano dell’uscita → preparazione → osservazioni condivise e approfondimenti.
@@ -8,10 +8,10 @@ piano dell’uscita → preparazione → osservazioni condivise e approfondiment
 ## Prima della partenza
 
 - La copertina identifica luogo e data.
-- «Alla ricerca di…» riassume interessi, specie e vincoli pratici; «Modifica» apre
-  gli stessi filtri della home. La spiegazione del fungo che guida l’indice è
-  espandibile nello stesso punto. Le specie scelte senza indice restano segnalate
-  anche a spiegazione chiusa.
+- Il riepilogo chiuso mostra interessi e vincoli in una riga. «Modifica» apre
+  gli stessi filtri della home. L’icona info apre selezione completa, significato
+  del numero, fungo guida e conteggi delle specie senza indice. Un conteggio
+  diagnostico non occupa più un paragrafo prima del piano.
 - Il calendario precede gli indicatori: cambia il giorno dei dati mostrati subito
   sotto. Restano distinti condizioni generali, meteo e potenziale delle specie.
 - Nel percorso con indice disponibile, «Il piano in breve» introduce sentiero,
@@ -68,3 +68,16 @@ le osservazioni sono dichiarate, non confermano la presenza attuale e i punti GP
 restano privati. «Dati e privacy» raccoglie senza eliminarli periodo, indipendenza
 dai filtri dell’uscita, soglie, separazione dei conteggi e spiegazione completa.
 Accesso, campi degli aggregati, soglie e calcoli restano invariati.
+
+## Revisione v378 · priorità del contenuto
+
+La pipeline è in [content-review/README.md](content-review/README.md). Il primo
+lotto riduce il preambolo: foto di contesto più breve, riepilogo in 61 px nel caso
+Allumiere, calendario compatto, meteo e condizioni affiancati. «Percorso e accessi»
+mostra subito lo stato della documentazione e apre i dettagli nello stesso punto.
+L’incertezza sulla raccolta ha un richiamo breve; divieti e limitazioni esplicite
+rimangono completi. I testi di fonte, le selezioni e gli avvisi non sono eliminati.
+
+Il conteggio diagnostico delle specie senza indice è ora sotto info: questa
+scelta supera la precedente esposizione in chiaro del conteggio. L’indice assente
+non diventa zero e gli avvisi sull’impossibilità di calcolare restano distinti.

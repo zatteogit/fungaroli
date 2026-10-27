@@ -92,3 +92,14 @@ Per `kipi init`, `scan`, `process`, `update` o `status`, usa la [skill locale](.
 - **Revisione dei controlli di Matteo, 21/10 (supera la prima prova del 20/10):** CTA verdi e tondeggianti in light; lo stesso verde diventa bianco in dark, con testo bosco notte. Selezioni gialle in entrambi i temi, rettangoli smussati con bordino e spunta quando prevista. Giallo, ciclamino e corallo sono accenti editoriali; il corallo riprende il tono indicato da Matteo nel badge «Mortale», ma i token di rischio restano separati da quelli decorativi. La distinzione usa insieme ruolo, forma e colore. Non ripristinare la prima prova con CTA gialle e selezioni verdi.
 
 - **Forme e bordi, successiva correzione di Matteo il 21/10:** conservare i colori della revisione (CTA verdi light/bianche dark e selezioni gialle), ripristinando forme e bordi precedenti: chip e destinazioni della barra tornano alle proprie geometrie, senza una nuova regola globale che li renda tutti rettangolari. I pulsanti degli strumenti conservano il raggio precedente e i contorni secondari non vanno rinforzati indiscriminatamente. La frase del giorno mantiene la cornice discreta e migliora attraverso disposizione e tipografia.
+
+## Priorità e disclosure dei contenuti (Matteo, 27 ottobre 2026)
+
+Per ogni contenuto valutare importanza per le diverse personas, facilità di accesso,
+progressive disclosure, formato, organizzazione e ordine nel percorso. Arrivare
+subito alle informazioni utili. La revisione è una pipeline pagina per pagina e
+scheda per scheda: `docs/content-review/README.md`. Registrare evidenze e lasciare
+in coda i casi non esaminati; non dichiarare rivisto un intero catalogo solo perché
+il suo template è cambiato. Cautele, divieti, fonti e dati restano conservati.
+
+Prima di una fase per cui consiglieresti un diverso modello o effort, comunica a Matteo modello, effort e motivo del cambio prima di eseguirla. La regola vale anche nei lotti automatici; non dichiarare cambi di impostazioni che non sono avvenuti.
