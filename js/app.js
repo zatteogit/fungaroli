@@ -1,3 +1,6 @@
+import {setPilotChoices} from './pilot-choice-state.js';
+import {pilotWelcomeHtml,pilotChoicesHtml,feedbackGlyph} from './pilot-onboarding.js';
+import {initFeedback,openFeedback} from './feedback.js';
 import {mergeGrowth,mergeOuting,rebaseGrowth} from './weather-state.js';
 import {layoutMapLabels} from './map-label-layout.js';
 import {outingDocumentation} from './outing-documentation.js';
@@ -67,7 +70,7 @@ import { initTrees, renderTreeGrid, renderTreePage, linkTrees, treeChips, treeFo
 import { crowding, comfortScore, timingAdvice, collectWindow, todayGone, sunTimes, fmtTime, fmtRough, roundTime, intornoA, chooseAccess, accessFieldIndex, accessRow, walkPhrase, trackNote, fmtDist, fmtRise } from './human.js';
 import { prepareSiteInfo, alignedZones, excludedFn, warnedFn, bandReserve, RESERVE_BAND_TEXT, reserveLead, reserveAccessText, reserveLegendText, bandForestInfo, bandForestLines, zoneSiteInfo, zoneSiteLines, siteSources } from './site-info.js';
 import { predictScores, captureForecastData, FORECAST_INPUTS } from './forecast-capture.js';
-import { initCommunity, communityStatus, communityOverview,communityHasAccess,communityForEntity, communityRank, communityHasZone, communityDataAvailable, currentUser, reportBadge,zoneCommunity } from './community.js';
+import { openAccount, initCommunity, communityStatus, communityOverview,communityHasAccess,communityForEntity, communityRank, communityHasZone, communityDataAvailable, currentUser, reportBadge,zoneCommunity } from './community.js';
 import { guideTitle, renderGuideCards, renderGuide, initGuideContent, guideCount } from './guides.js';
 import { buildEdibleCatalog, seasonStatus, seasonLabel } from './edible-catalog.js';
 import { mountSpeciesAutocomplete } from './species-autocomplete.js';
@@ -426,7 +429,7 @@ async function init() {
   renderFilterSummary(); // ora che c'e' il pregio delle specie, riordina i filtri
   buildSearch(idj, trj, embedded);
   initMap();
-  initShell();
+  initShell();initFeedback();
   const notebookReferenceImage=href=>{
     if(typeof href!=='string')return null;
     const [,kind,encoded]=href.split('/');let id;try{id=decodeURIComponent(encoded||'');}catch{return null;}
@@ -2774,6 +2777,7 @@ function mapControls({ bases = null, forest, protectedAreas = null }) {
           <button type="button" class="mapctl-btn" data-act="layers" aria-label="Livelli della mappa" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></svg></button>
           <button type="button" class="mapctl-btn" data-act="locate" aria-label="La mia posizione"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><circle cx="12" cy="12" r="6.5"/><circle cx="12" cy="12" r="2.2" fill="currentColor"/></svg></button>
           ${fine ? '<button type="button" class="mapctl-btn" data-act="in" aria-label="Ingrandisci">+</button><button type="button" class="mapctl-btn" data-act="out" aria-label="Riduci">−</button>' : ''}
+          <button type="button" class="mapctl-btn" data-act="feedback" aria-label="Invia feedback" title="Invia feedback">${feedbackGlyph}</button>
         </div>
         <div class="mapctl-panel" hidden>
           <div class="mapctl-head"><b>Livelli</b><button type="button" class="mapctl-x" data-act="layers" aria-label="Chiudi">✕</button></div>
@@ -2791,6 +2795,7 @@ function mapControls({ bases = null, forest, protectedAreas = null }) {
         const b = e.target.closest('button');
         if (!b) return;
         const act = b.dataset.act;
+        if(act==='feedback'){openFeedback();return;}
         if (act === 'layers') { panel.hidden = !panel.hidden; lbtn.setAttribute('aria-expanded', String(!panel.hidden)); box.classList.toggle('open', !panel.hidden); }
         if (act === 'in') map.zoomIn();
         if (act === 'out') map.zoomOut();
@@ -4005,7 +4010,8 @@ async function applyLegal() {
     const dlg = $('#onboarding');
     dlg.querySelector('h2').textContent = L.onboarding?.title || 'Prima di usare l\'app';
     const sub = $('#ob-sub'); if (sub) { sub.textContent = L.onboarding?.subtitle || ''; sub.hidden = !sub.textContent; }
-    $('#ob-prototype').textContent=[L.onboarding.prototype_notice,L.onboarding.community_notice].filter(Boolean).join(' ');
+    $('#ob-welcome').innerHTML=pilotWelcomeHtml(L.onboarding);
+    $('#ob-participation').innerHTML=pilotChoicesHtml();
     $('#ob-cookie-summary').textContent=L.onboarding.cookie_summary;
     $('#ob-cookie-policy').innerHTML=(L.info_sections||[]).find(section=>section.id==='cookie')?.html||'';
     dlg.querySelector('.ob-points').innerHTML = (L.onboarding?.points || [
@@ -4014,11 +4020,12 @@ async function applyLegal() {
       'Nel Lazio si raccoglie con attestato micologico, documento e ricevuta del contributo annuale (esenti i residenti dai 65 anni); sotto i 14 anni solo se accompagnati. Massimo 3 kg di funghi commestibili a persona al giorno (L.R. 32/1998).',
       'In montagna la sicurezza e il rispetto delle regole di parchi e riserve sono tua responsabilità.',
     ]).map((x) => `<li>${esc(x)}</li>`).join('');
-    $('#ob-accept').textContent = L.onboarding?.accept || 'Ho capito';
+    const updateAcceptanceLabel=()=>{$('#ob-accept').textContent=$('#ob-share').checked||$('#ob-research').checked?'Continua e conferma sul profilo':L.onboarding?.accept||'Ho letto, continua';};
+    updateAcceptanceLabel();$('#ob-participation').onchange=updateAcceptanceLabel;
     $('#ob-legal-details').innerHTML=(L.info_sections||[]).filter(section=>section.id!=='cookie').map(section=>`<section><h3>${esc(section.title)}</h3>${section.id==='privacy'?privacyHtml(section.html):section.html}</section>`).join('');
     $('#ob-accept').onclick=async()=>{
       const button=$('#ob-accept');button.disabled=true;
-      try{const {persisted}=await acceptLegalNotice();dlg.close();if(!persisted){const note=document.createElement('div');note.className='app-toast on';note.setAttribute('role','status');note.textContent='Conferma valida per questa apertura. Il browser non permette di conservarla.';document.body.append(note);setTimeout(()=>note.remove(),7000);}}catch{$('#ob-status').textContent='Non riesco a registrare la conferma. Riprova.';}finally{button.disabled=false;}
+      try{const choices={share:$('#ob-share').checked,research:$('#ob-research').checked};const {persisted}=await acceptLegalNotice();setPilotChoices(choices,currentUser()?.id||null);dlg.close();if(choices.share||choices.research){document.dispatchEvent(new Event('fronda:pilot-choices'));if(!currentUser())void openAccount();}else document.dispatchEvent(new Event('fronda:pilot-choice-deferred'));if(!persisted){const note=document.createElement('div');note.className='app-toast on';note.setAttribute('role','status');note.textContent='Conferma valida per questa apertura. Il browser non permette di conservarla.';document.body.append(note);setTimeout(()=>note.remove(),7000);}}catch{$('#ob-status').textContent='Non riesco a registrare la conferma. Riprova.';}finally{button.disabled=false;}
     };
     dlg.addEventListener('cancel', (e) => e.preventDefault());
     dlg.onclose=()=>{if(hasLegalAcceptance())maybeInvite();else queueMicrotask(()=>{if(!dlg.open&&!hasLegalAcceptance())openModal(dlg);});};

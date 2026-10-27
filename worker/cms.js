@@ -1,3 +1,4 @@
+import {listFeedback,manageFeedback} from './feedback.js';
 import {cleanupSurvey} from './survey.js';
 import {researchOverview} from './research-overview.js';
 import {surveyAdminSchema,listSurveyAdmin,readSurveyAdmin,saveSurveyAdmin,deleteSurveyAdmin} from './survey-admin.js';
@@ -179,6 +180,12 @@ export async function handleCms(req,env,now=Date.now()) {
         if(req.method==='PATCH'){const input=await reviewedInput();if(actor.kind==='agent'){const previous=await readExternalObservation(env.COMMUNITY_DB,suffix);if(previous.data.reviewStatus!=='pending')permit(actor,'review','external-observations');}return response(await saveExternalObservation(env.COMMUNITY_DB,suffix,input,actor.id,now,db));}
       }
       failure('Percorso o metodo non consentito.',405);
+    }
+    if(path==='feedback'||path.startsWith('feedback/')){
+      permit(actor,'admin');
+      if(path==='feedback'&&req.method==='GET')return response(await listFeedback(env.COMMUNITY_DB,{before:url.searchParams.get('before')},now));
+      if(path.startsWith('feedback/')&&['PATCH','DELETE'].includes(req.method))return response(await manageFeedback(env.COMMUNITY_DB,path.slice(9),req.method,now));
+      failure('Metodo non consentito.',405);
     }
     if(path==='dashboard'){
       permit(actor,'admin');

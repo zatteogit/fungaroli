@@ -1,3 +1,4 @@
+import {handleFeedback,cleanupFeedback} from './feedback.js';
 // Worker di Fronda: i file statici sono serviti da Workers Assets (wrangler.jsonc);
 // qui arrivano solo le richieste che non corrispondono a un file, cioe' l'API del diario.
 import {publicExternalSignals} from './external-engine.js';
@@ -36,6 +37,7 @@ export default {
     if(url.pathname.startsWith('/api/cms/v1/'))return handleCms(request,env);
     if(url.pathname==='/api/content/v1/snapshot')return handleContent(request,env);
     if (url.pathname.startsWith('/api/community/')) return handleCommunity(request, env);
+    if (url.pathname.startsWith('/api/feedback/')) return handleFeedback(request,env);
     if (url.pathname.startsWith('/api/survey/v1/')) return handleSurvey(request, env);
     const m = url.pathname.match(/^\/api\/diario\/?(.*)$/);
     if (m) return handleDiario(request, env, m[1] ? m[1].split('/').filter(Boolean) : []);
@@ -46,7 +48,7 @@ export default {
   async scheduled(event, env, ctx) {
     if(event.cron===WEATHER_REFRESH_CRON){ctx.waitUntil(weatherRefreshRun(env,event.scheduledTime));return;}
     if (event.cron === ARCHIVE_CRON) { ctx.waitUntil(archiveRun(env)); return; }
-    ctx.waitUntil(cleanupWeatherStorage(env)); ctx.waitUntil(cleanupCommunity(env)); ctx.waitUntil(cleanupSurvey(env)); ctx.waitUntil(cleanupWeatherMetrics(env.CMS_DB));
+    ctx.waitUntil(cleanupFeedback(env)); ctx.waitUntil(cleanupWeatherStorage(env)); ctx.waitUntil(cleanupCommunity(env)); ctx.waitUntil(cleanupSurvey(env)); ctx.waitUntil(cleanupWeatherMetrics(env.CMS_DB));
   },
 };
 
