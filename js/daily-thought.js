@@ -86,10 +86,10 @@ export async function initDailyThought({ root = document.querySelector('#daily-t
       const copy = document.createElement('div');
       const text = document.createElement('p');
       text.className = 'daily-thought-text';
-      text.textContent = item.text;
+      text.textContent = item.text.replace(/,\s*$/u, '');
       const credit = document.createElement(item.type === 'citazione' ? 'a' : 'span');
       credit.className = 'daily-thought-credit';
-      credit.textContent = (item.author || 'Fronda') + (item.source?.translationCredit ? ' · traduzione Fronda' : '');
+      credit.textContent = item.author || 'Fronda';
       if (item.type === 'citazione') {
         credit.href = item.source.url;
         credit.target = '_blank';

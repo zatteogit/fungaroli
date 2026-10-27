@@ -5,15 +5,17 @@ Sostituiti tutti i precedenti testi con **10 citazioni documentate**: 3 sui fung
 opera, posizione del passo, URL e verifica del 25/10/2026. I tag botanici indicano
 un tema letterario: non trasformano un nome poetico in un’identificazione tassonomica.
 
-La home mostra autore con link alla fonte. Per Dickinson e Muir il credito visibile
-specifica «traduzione Fronda»: la traduzione italiana è stata preparata dall’originale,
-conservato in `source.originalText`, senza copiare traduzioni moderne. I passi originali
+La home mostra soltanto l’autore con link alla fonte. Per Dickinson e Muir la
+traduzione italiana è stata preparata dall’originale, conservato in `source.originalText`,
+senza copiare traduzioni moderne. Il credito resta in `source.translationCredit`. I passi originali
 sono in pubblico dominio; per Muir si usa la raccolta pubblicata nel 1924, non le
 immagini di manoscritti soggette alle condizioni dell’archivio.
 
 Nessun testo editoriale privo di fonte rimane nella rotazione. Gli estratti sono brevi
-(massimo 160 caratteri), mantengono la punteggiatura del passo e non aggiungono promesse
+(massimo 160 caratteri), mantengono nell’archivio la punteggiatura del passo e non aggiungono promesse
 di raccolta, istruzioni alimentari o probabilità di trovare funghi.
+Nella card si omette soltanto la virgola finale dell’estratto; restano le virgole
+interne, gli altri segni di punteggiatura e il testo originale nell’archivio.
 
 ## Fonti
 
