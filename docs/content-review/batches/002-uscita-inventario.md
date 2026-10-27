@@ -55,6 +55,40 @@ Non è ancora una conclusione sull’algoritmo o una richiesta di modificare sog
 Il testo sui sosia e il chiarimento che l’indice non è una probabilità restano
 visibili nello stato aperto.
 
+### Terzo passaggio: specie scelta e lista completa
+
+Ripetendo lo stesso scenario in una nuova sessione isolata, il Porcino compare
+nella lista completa con valore simulato 1,3 e «Condizioni meno favorevoli»:
+si raggiunge con due aperture, prima «Cosa osservare» e poi «Vedi tutte le
+specie compatibili». L’[istantanea](../evidence/002-uscita/allumiere-specie-complete.yml)
+documenta il percorso. Il valore numerico accanto al titolo è già visibile a
+zero aperture; l’habitat scarso e la descrizione delle condizioni meno
+favorevoli sono invece nella lista completa.
+
+Il codice `js/outing-mushrooms.js` mostra prima i funghi con indice almeno 6,
+mettendo quelli scelti davanti agli altri; quelli sotto 6 riempiono solo fino a
+tre risultati. Nel caso osservato ci sono già quattro specie sopra 6, quindi
+il Porcino resta nella lista completa. È il comportamento della regola attuale,
+non una verifica della bontà scientifica del numero. La riga è costruita da
+`zoneSpecies` in `js/app.js`, che esclude i casi di habitat quasi assente prima
+di costruire anche l’elenco completo: la frase «Consulta l’elenco completo per
+i valori disponibili» richiede quindi una verifica nei casi con habitat quasi
+assente o indice mancante, prima di suggerire una correzione.
+
+Valutazione preliminare **limitata a questo blocco**, con personas simulate:
+
+| Persona | Priorità e percorso | Aspetto ancora da verificare |
+| --- | --- | --- |
+| Neofita | Alta: cautela sosia e valore subito; significato e lista con una o due aperture | Comprensione del valore basso e del messaggio sulle specie scelte |
+| Appassionato | Alta: specie cercata subito; alternative a una apertura | Se riesce a confrontare rapidamente la specie scelta con le alternative |
+| Esperto | Utile: valore subito, metodo e habitat nei dettagli | Fonti, dati assenti e distinzione tra stima biologica e condizioni |
+| Escursionista | Contestuale: il piano pratico resta separato | Che il blocco non ostacoli meteo, accesso e limiti del percorso |
+| Naturalista | Utile: specie e piante nello stesso approfondimento | Che la compatibilità non sia letta come presenza confermata |
+
+Queste sono ipotesi editoriali basate su un solo scenario, non revisioni
+complete, né test con persone. Restano da provare altri stati, i percorsi da
+tastiera e il caso in cui la specie scelta non compaia nell’elenco compatibile.
+
 ## Ancora da fare prima di chiudere la pagina
 
 - Completare l’inventario delle sezioni espanse, dei filtri, degli stati del
