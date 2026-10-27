@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="utf-8">
-  <meta name="app-version" content="fungaroli-shell-v370">
+  <meta name="app-version" content="fungaroli-shell-v371">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
   <link rel="preload" href="data/crop-points.json" as="fetch" crossorigin>
   <meta name="theme-color" content="#f7f4ea" media="(prefers-color-scheme: light)">
@@ -77,12 +77,10 @@
       <span id="appbar-home-filters"></span>
       <a class="appbar-context-action" data-appbar-action hidden></a>
       <button type="button" class="profile-entry" data-community-account><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><span data-profile-label>Accedi</span></button>
-      <button type="button" class="icon-btn" data-open-feedback aria-label="Invia feedback" title="Invia feedback"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11a8 8 0 0 1-8 8H7l-4 3V11a9 9 0 0 1 18 0Z"/><path d="M8 10h8M8 14h5"/></svg></button>
-      <button type="button" class="icon-btn theme-btn" id="theme-btn" aria-label="Cambia tema"></button>
-      <a class="icon-btn" href="#/info" aria-label="Regole e sicurezza" title="Regole e sicurezza"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg></a>
+
     </div>
   </header>
-  <nav class="tabbar" inert aria-label="Sezioni">
+  <nav class="tabbar" style="--nav-action:0" inert aria-label="Sezioni">
     <div class="tab-destinations">
       <span class="tab-pill" aria-hidden="true"></span>
       <a href="#/" data-tab="uscite"><svg class="fungus-glyph" aria-hidden="true"
@@ -105,7 +103,7 @@
 </svg><span>Scopri</span></a>
       <a href="#/diario" data-tab="diario"><svg class="nav-glyph" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h14v18H5zM9 3v18m3-13h4m-4 4h4"/></svg><span>Taccuino</span></a>
     </div>
-      <button type="button" class="tab-annotate" data-annotate aria-label="Annota un ritrovamento" title="Annota un ritrovamento"><svg class="notebook-glyph" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M20.5 3.5C17 1 12 3 9 6.5C6 10 5 14 5.5 18.5L10 18C13.5 16.5 16.5 13 18.5 9.5C20 7 20.5 5 20.5 3.5Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 22 16.5 7.5M7.5 16.5H12M10.5 13H15M10.5 9V13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="tab-annotate-label">Annota</span></button>
+      <div class="tab-action-slot" inert aria-hidden="true"><button type="button" class="tab-annotate" data-annotate aria-label="Annota un ritrovamento" title="Annota un ritrovamento"><svg class="notebook-glyph" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M20.5 3.5C17 1 12 3 9 6.5C6 10 5 14 5.5 18.5L10 18C13.5 16.5 16.5 13 18.5 9.5C20 7 20.5 5 20.5 3.5Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 22 16.5 7.5M7.5 16.5H12M10.5 13H15M10.5 9V13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="tab-annotate-label">Annota</span></button></div>
     </nav>
 
   <p id="stale" class="notice stale" hidden>Questi dati meteo non coprono più la data di oggi: l'indice si riferisce al giorno della pubblicazione.</p>
@@ -246,13 +244,15 @@
     <section class="view notebook-view" data-view="diario" hidden aria-labelledby="journal-h">
       <header class="notebook-heading"><div><p class="kicker">Appunti di campo</p><h1 id="journal-h" class="view-title">Il mio taccuino</h1>
         <p class="view-sub">Luoghi, scoperte e pensieri da ritrovare.</p></div>
-        <div class="diary-header-actions"><button class="btn ghost" type="button" data-new-outing>Racconta un’uscita</button><button class="link-btn" type="button" data-new-note>Un appunto libero</button><a class="diary-demo-link" hidden href="#/diario/esempio">Diario di prova →</a></div>
+        <div class="diary-header-actions"><button class="btn primary" type="button" data-annotate>Annota</button><button class="link-btn" type="button" data-new-outing>Racconta un’uscita</button><a class="diary-demo-link" hidden href="#/diario/esempio">Diario di prova →</a></div>
       </header>
       <div class="notebook-cover"><div id="journal-list" class="notebook-pages" aria-live="off"></div></div>
+
       <p class="field-notebook-link"><a href="offline.html">Uscite preparate per il bosco →</a></p>
-      <details class="notebook-storage" id="notebook-storage-panel"><summary>Profilo e sincronizzazione</summary><div class="notebook-storage-body">
+      <details class="notebook-storage" id="notebook-storage-panel"><summary>Profilo e preferenze</summary><div class="notebook-storage-body">
         <ul class="fp-switches notebook-prefs"><li><label class="fp-switch"><span>Usa le fasi dei miei appunti botanici<small>Privati. Aiutano a scegliere cosa osservare; non modificano l’indice.</small></span><input type="checkbox" class="switch-input" data-botanical-personalize></label></li></ul>
         <div class="muted small" id="journal-storage"></div>
+        <div class="notebook-preferences-body"><label for="theme-select">Aspetto <span class="notebook-theme-control"><select id="theme-select"><option value="auto">Automatico</option><option value="light">Chiaro</option><option value="dark">Scuro</option></select></span></label><button type="button" class="link-btn" data-open-feedback>Invia feedback sul test</button><a href="#/info">Informazioni, regole e privacy</a></div>
       </div></details>
     </section>
 

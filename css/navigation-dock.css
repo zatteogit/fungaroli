@@ -9,7 +9,7 @@
 }
 /* Intermediate desktop widths reserve space for global actions before labels.
    Keep the accessible text; never squeeze a profile name into a circular button. */
-@media(min-width:900px) and (max-width:1279px) {
+@media(min-width:900px) and (max-width:1099px) {
  .tabbar .tab-destinations a { width:44px; min-width:44px; padding:8px; gap:0; }
  .tabbar .tab-destinations a > span { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
  .appbar .profile-entry.is-user { width:44px; min-width:44px; padding:0; justify-content:center; }
@@ -63,3 +63,34 @@
 
 /* Keep search, profile, feedback and theme reachable on the narrowest phones. */
 @media(max-width:359px){:root body .appbar-actions > a[href="#/info"] { display:none; }}
+
+/* The four destinations stay mounted. A second spring morphs only the action slot. */
+.tabbar:has(.tab-action-slot) { --nav-action:0; --nav-action-size:106px; column-gap:calc(8px * var(--nav-action)); }
+.tab-action-slot { flex:none; width:calc(var(--nav-action-size) * var(--nav-action)); border-radius:999px; overflow:clip; opacity:var(--nav-action); }
+.tabbar[data-action-collapsed="true"] .tab-action-slot { visibility:hidden; }
+.tabbar .tab-action-slot .tab-annotate { width:var(--nav-action-size); min-width:var(--nav-action-size); margin:0; }
+:root body .appbar .appbar-actions > .profile-entry { display:none; }
+:root:not(.title-in-bar) body[data-page="diario"] .appbar .appbar-actions > .profile-entry { display:inline-flex; }
+.notebook-preferences-body { display:grid; gap:12px; padding:12px 0; font-size:14px; }
+.notebook-preferences-body > :is(a,button,label) { min-height:44px; text-align:left; justify-content:flex-start; }
+.notebook-preferences-body label { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; }
+.notebook-preferences-body select { min-height:44px; max-width:100%; padding:8px 12px; border:1px solid var(--border); border-radius:12px; background:var(--surface); color:var(--text); font:inherit; }
+@media(max-width:899px) {
+ .tabbar:has(.tab-action-slot) {
+  --nav-action-size:var(--nav-height);
+  --nav-full-gap:calc(10px - 2px * var(--nav-collapse));
+  --context-wide:calc(var(--nav-wide) - (1 - var(--nav-action)) * (var(--nav-expanded-height) + 10px));
+  --context-narrow:min(var(--context-wide),calc(var(--nav-narrow) - (1 - var(--nav-action)) * 64px));
+  width:calc(var(--context-wide) - (var(--context-wide) - var(--context-narrow)) * var(--nav-collapse));
+  grid-template-columns:minmax(0,1fr) calc(var(--nav-action-size) * var(--nav-action));
+  column-gap:calc(var(--nav-full-gap) * var(--nav-action));
+ }
+ .tab-action-slot { height:100%; }
+ .tabbar .tab-action-slot .tab-annotate { height:100%; }
+}
+
+@media(min-width:1100px) { .tabbar .tab-destinations a { width:auto; padding-inline:14px; white-space:nowrap; } }
+
+.notebook-theme-control { position:relative; display:block; min-width:144px; max-width:100%; }
+.notebook-theme-control select { display:block; width:100%; height:44px; font-size:16px; appearance:none; -webkit-appearance:none; padding-right:32px; }
+.notebook-theme-control::after { content:''; position:absolute; right:14px; top:17px; width:7px; height:7px; border-right:2px solid currentColor; border-bottom:2px solid currentColor; transform:rotate(45deg); pointer-events:none; }

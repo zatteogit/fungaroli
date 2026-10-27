@@ -1,4 +1,5 @@
 import {fieldTools,initFieldMode} from './field-mode.js';
+import {initContextualNavigation} from './contextual-navigation.js';
 import {setPilotChoices,clearPilotChoices} from './pilot-choice-state.js';
 import {pilotWelcomeHtml,pilotChoicesHtml,feedbackGlyph} from './pilot-onboarding.js';
 import {initFeedback,openFeedback} from './feedback.js';
@@ -499,6 +500,7 @@ try { history.scrollRestoration = 'manual'; } catch { /* non supportato */ }
 // navigazione partita da un tocco o da un tasto dentro l'app: solo allora il focus segue la pagina nuova
 let userNavAt = -1e9, userNavTo = '';
 function initShell() {
+  initContextualNavigation();
   addEventListener('hashchange', () => { navDepth++; route(); });
   // la riga dell'età del meteo nella scheda della zona segue la rete
   ['online', 'offline'].forEach((ev) => addEventListener(ev, () => { if (state.view === 'zona' && results) keepWeatherReadingPosition(renderDetail); }));

@@ -37,13 +37,6 @@
 .ob-choices label small,.pilot-permission-choice small { display:block; font-size:14px; font-weight:400; margin-top:6px; color:var(--text-2); }
 .ob-choices label b { font-size:16px; }
 
-.appbar[data-context="comparison"] .appbar-actions > [data-open-feedback] { display:inline-flex; }
-@media(max-width:599px){
- :root body .appbar[data-context="comparison"] .appbar-title { right:148px; }
- :root body .appbar[data-context="comparison"] .appbar-back { max-width:calc(100% - 140px); }
- :root.title-in-bar body .appbar[data-context="default"] .appbar-actions { display:flex; }
- :root.title-in-bar body .appbar[data-context="default"] .appbar-actions > :not([data-open-feedback]) { display:none; }
-}
 /* Il feedback è una conversazione breve, con altezza proporzionata al contenuto. */
 .feedback-dialog.wiz { height:auto; max-height:calc(var(--vvh,100dvh) - 24px); margin:auto; border-radius:24px; }
 .feedback-dialog .report-header { padding:20px 24px; border-bottom:1px solid var(--hair); }
