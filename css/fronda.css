@@ -1,5 +1,26 @@
 /* Fronda: componenti condivisi sopra lo stile esistente. Perimetro a tolleranza zero di tools/ds-guard.mjs: solo ruoli pubblici dei token. */
 .appbar-back { min-width:0; }
+/* Il ritorno usa gli stessi stati anche sopra una foto: cambia la superficie,
+   non la posizione della barra. Le variabili evitano override fra hover e scroll. */
+:root body .appbar .appbar-back { --return-bg:transparent; --return-hover:var(--surface-2); --return-press:var(--surface-3); background:var(--return-bg); border-radius:999px; }
+@media(max-width:899px) {
+ :root:not(.scrolled):not(.title-in-bar) body:is([data-page="zona"],[data-page="specie-dettaglio"],[data-page="albero"],[data-page="fungo"]) .appbar-back { --return-bg:color-mix(in srgb,var(--scrim) 70%,transparent); --return-hover:color-mix(in srgb,var(--scrim) 88%,transparent); --return-press:var(--scrim); color:var(--on-photo); }
+ :root:not(.scrolled):not(.title-in-bar) body:is([data-page="zona"],[data-page="specie-dettaglio"],[data-page="albero"],[data-page="fungo"]):has(.view:not([hidden]) .inline-gallery-controls) .appbar-back { max-width:min(150px,calc(100vw - 218px)); }
+ :root:not(.scrolled):not(.title-in-bar) body:is([data-page="zona"],[data-page="specie-dettaglio"],[data-page="albero"],[data-page="fungo"]) .appbar-back:focus-visible { outline:2px solid var(--on-photo); outline-offset:2px; box-shadow:0 0 0 4px var(--scrim); }
+}
+@media(hover:hover) and (pointer:fine) {
+ :root body .appbar .appbar-back:hover { background:var(--return-hover); }
+ :is(.profile-entry,.appbar-context-action):not(:disabled):not([aria-disabled="true"]):hover { background:var(--surface-3); }
+ .profile-close:not(:disabled):hover { background:var(--surface-3); }
+ .tabbar .tab-destinations a:not([aria-current="page"]):hover { background:var(--surface-2); }
+ .act-row.home-notebook-link:hover { background:var(--surface-3); }
+ .notebook-storage > summary:hover { text-decoration:underline; text-decoration-thickness:1.5px; text-underline-offset:4px; }
+ :is(.back,a.daily-thought-credit,.editorial-all,.editorial-back):hover { text-decoration:underline; text-decoration-thickness:1.5px; text-underline-offset:4px; }
+ .editorial-trip-link:hover h3 { text-decoration:underline; text-decoration-thickness:1.5px; text-underline-offset:4px; }
+}
+:root body .appbar .appbar-back:active { background:var(--return-press); }
+:is(.profile-entry,.profile-close,.appbar-context-action,.page-back):not(:disabled):not([aria-disabled="true"]):active { background:var(--surface-3); }
+.tabbar .tab-destinations a:active { box-shadow:inset 0 0 0 1px var(--control-edge); }
 /* ------------------------------------------------------------------ Fronda: componenti
    Gerarchia aggiornata da Matteo: CTA verdi in light, bianche in dark; selezioni gialle.
    Forme e bordi precedenti, come richiesto nella successiva revisione. Accenti editoriali polline,
@@ -1057,7 +1078,7 @@ body:has(#season .ring) #season-index-legend { display:block; }
 }
 
 /* Titolo compatto: dissolvenza stabile, senza ricampionare le lettere in verticale. */
-:root body .appbar .appbar-title { transform:translateX(-50%); transition:opacity .24s ease; }
+:root body .appbar .appbar-title { transform:translateX(-50%); transition:opacity .24s ease; pointer-events:none; }
 @media(max-width:899px) {
   :root body .appbar[data-context="home"] .appbar-title { display:block; left:var(--gutter); right:145px; max-width:none; text-align:left; transform:none; }
   .appbar[data-context="home"] :is(.brand,.brand-place) { transition:opacity .24s ease,visibility 0s; }
@@ -1111,6 +1132,9 @@ body:has(#season .ring) #season-index-legend { display:block; }
 .glossary-link.glossary-heading { display:inline-flex; align-items:center; gap:6px; min-height:44px; max-width:100%; color:inherit; text-decoration:none; box-shadow:none; border:0; }
 .glossary-heading-mark { display:inline-grid; place-items:center; width:13px; height:13px; flex:0 0 13px; border:1px solid var(--muted); border-radius:50%; color:var(--muted); font:600 9px/1 var(--font-body); }
 .glossary-link:not(.glossary-heading),.trait-strip .ts-v .glossary-link:not(.glossary-heading) { text-decoration:underline dotted; text-decoration-thickness:1px; text-underline-offset:.2em; box-shadow:none; }
+@media(hover:hover) and (pointer:fine) {
+ .glossary-link:not(.glossary-heading):hover,.trait-strip .ts-v .glossary-link:not(.glossary-heading):hover { text-decoration-style:solid; text-decoration-thickness:2px; }
+}
 @media(hover:hover) { .glossary-heading:hover .glossary-heading-mark { color:var(--link); border-color:var(--link); } }
 
 /* Scopri: sfumatura soltanto sul lato con altri elementi da scorrere. */
