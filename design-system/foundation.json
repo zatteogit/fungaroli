@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "primitive": {
+    "space-1": {
+      "type": "dimension",
+      "value": 4,
+      "unit": "px"
+    },
+    "space-2": {
+      "type": "dimension",
+      "value": 8,
+      "unit": "px"
+    },
+    "space-3": {
+      "type": "dimension",
+      "value": 12,
+      "unit": "px"
+    },
+    "space-4": {
+      "type": "dimension",
+      "value": 16,
+      "unit": "px"
+    },
+    "space-6": {
+      "type": "dimension",
+      "value": 24,
+      "unit": "px"
+    },
+    "space-8": {
+      "type": "dimension",
+      "value": 32,
+      "unit": "px"
+    },
+    "body-size": {
+      "type": "dimension",
+      "value": 16,
+      "unit": "px"
+    },
+    "note-size": {
+      "type": "dimension",
+      "value": 14,
+      "unit": "px"
+    },
+    "title-size": {
+      "type": "dimension",
+      "value": 32,
+      "unit": "px"
+    },
+    "control-size": {
+      "type": "dimension",
+      "value": 44,
+      "unit": "px"
+    },
+    "reading-width": {
+      "type": "dimension",
+      "value": 720,
+      "unit": "px"
+    },
+    "radius-card": {
+      "type": "dimension",
+      "value": 16,
+      "unit": "px"
+    },
+    "radius-control": {
+      "type": "dimension",
+      "value": 12,
+      "unit": "px"
+    },
+    "line-width": {
+      "type": "dimension",
+      "value": 1,
+      "unit": "px"
+    },
+    "focus-width": {
+      "type": "dimension",
+      "value": 2,
+      "unit": "px"
+    },
+    "body-leading": {
+      "type": "number",
+      "value": 1.65
+    },
+    "heading-leading": {
+      "type": "number",
+      "value": 1.15
+    },
+    "duration-feedback": {
+      "type": "duration",
+      "value": 120,
+      "unit": "ms"
+    },
+    "duration-content": {
+      "type": "duration",
+      "value": 180,
+      "unit": "ms"
+    }
+  },
+  "semantic": {
+    "space-inline": "{primitive.space-2}",
+    "space-stack": "{primitive.space-4}",
+    "space-panel": "{primitive.space-6}",
+    "space-page": "{primitive.space-6}",
+    "space-section": "{primitive.space-8}",
+    "body-size": "{primitive.body-size}",
+    "note-size": "{primitive.note-size}",
+    "title-size": "{primitive.title-size}",
+    "body-leading": "{primitive.body-leading}",
+    "heading-leading": "{primitive.heading-leading}",
+    "control-min-size": "{primitive.control-size}",
+    "layout-reading": "{primitive.reading-width}",
+    "radius-card": "{primitive.radius-card}",
+    "radius-control": "{primitive.radius-control}",
+    "line-width": "{primitive.line-width}",
+    "focus-width": "{primitive.focus-width}",
+    "duration-feedback": "{primitive.duration-feedback}",
+    "duration-content": "{primitive.duration-content}",
+    "space-1": "{primitive.space-1}",
+    "space-3": "{primitive.space-3}"
+  },
+  "component": {
+    "card-padding": "{semantic.space-panel}",
+    "card-radius": "{semantic.radius-card}",
+    "control-padding": "{semantic.space-inline}",
+    "control-radius": "{semantic.radius-control}",
+    "control-min-size": "{semantic.control-min-size}"
+  }
+}

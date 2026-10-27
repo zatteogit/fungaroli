@@ -37,7 +37,7 @@ jobs:
       - name: TypeScript — tipi e JavaScript generato
         run: |
           npm run check:typescript
-          git diff --exit-code -- js/
+          git diff --exit-code -- js/ css/foundation-tokens.css design-system/tokens.resolved.json
       - run: npm test
       - name: Studio Fronda — token, risorse e contratti
         run: node docs/fronda/scripts/check.mjs
@@ -45,6 +45,12 @@ jobs:
         run: node docs/fronda/scripts/guard-test.mjs
       - name: Configurazione del Worker
         run: npx wrangler deploy --dry-run
+      - name: Ambienti isolati — compilazione senza pubblicazione
+        run: |
+          npm run env:dry-run -- local
+          npm run env:dry-run -- test
+          npm run env:dry-run -- staging
+          npm run env:dry-run -- demo
       - name: Spazi e conflitti nel diff
         if: github.event_name == 'pull_request'
         run: git diff --check ${{ github.event.pull_request.base.sha }} ${{ github.sha }}

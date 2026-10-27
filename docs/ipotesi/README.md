@@ -13,6 +13,8 @@ Il ramo di produzione e i documenti in `docs/` fanno fede. Ciò che sta solo in 
 
 ## Registro
 
+Fondazione comune richiesta da Matteo il 27/10/2026: [architettura, branch, ambienti e verifiche](../architecture/README.md), [experience/design/language system](../../design-system/README.md). Autorizzata la preparazione, con primo refactoring compatibile; nessuna decisione di merge, pubblicazione o attivazione commerciale.
+
 Report editoriale esterno del 22/10 su Fronda e sui mercati dei funghi: [versione pubblica](report-editoriale-2026-10-22.md), senza le parti economiche e commerciali (il PDF completo sta nel repository privato `basecamp`). Ne sono uscite due revisioni decise da Matteo il 22/10: linguaggio sulla commestibilità e privacy (esportazione dei dati, informativa, posizione approssimata, diario KV dismesso, soglia degli aggregati). Il resto resta ipotesi: MycoTrace e MycoGrow sono concept separati da Fronda, non lavori in corso.
 
 Seconda tornata e prova offline sui porcini, in PR il 21/10: [handoff](../handoff-seconda-tornata-2026-10-21.md). Modello 2.1.0 (shock solo sui porcini, con la temperatura del suolo), dati registrati e non usati, informazioni sul bosco, Parco Gran Sasso-Laga, accessi e sentieri. La prova offline chiude la decisione D5.

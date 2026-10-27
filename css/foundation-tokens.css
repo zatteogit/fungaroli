@@ -1,0 +1,47 @@
+/* Generated from design-system/foundation.json. Run npm run design:build. */
+:root {
+  --_ds-space-1: 4px;
+  --_ds-space-2: 8px;
+  --_ds-space-3: 12px;
+  --_ds-space-4: 16px;
+  --_ds-space-6: 24px;
+  --_ds-space-8: 32px;
+  --_ds-body-size: 16px;
+  --_ds-note-size: 14px;
+  --_ds-title-size: 32px;
+  --_ds-control-size: 44px;
+  --_ds-reading-width: 720px;
+  --_ds-radius-card: 16px;
+  --_ds-radius-control: 12px;
+  --_ds-line-width: 1px;
+  --_ds-focus-width: 2px;
+  --_ds-body-leading: 1.65;
+  --_ds-heading-leading: 1.15;
+  --_ds-duration-feedback: 120ms;
+  --_ds-duration-content: 180ms;
+  --ds-space-inline: var(--_ds-space-2);
+  --ds-space-stack: var(--_ds-space-4);
+  --ds-space-panel: var(--_ds-space-6);
+  --ds-space-page: var(--_ds-space-6);
+  --ds-space-section: var(--_ds-space-8);
+  --ds-body-size: var(--_ds-body-size);
+  --ds-note-size: var(--_ds-note-size);
+  --ds-title-size: var(--_ds-title-size);
+  --ds-body-leading: var(--_ds-body-leading);
+  --ds-heading-leading: var(--_ds-heading-leading);
+  --ds-control-min-size: var(--_ds-control-size);
+  --ds-layout-reading: var(--_ds-reading-width);
+  --ds-radius-card: var(--_ds-radius-card);
+  --ds-radius-control: var(--_ds-radius-control);
+  --ds-line-width: var(--_ds-line-width);
+  --ds-focus-width: var(--_ds-focus-width);
+  --ds-duration-feedback: var(--_ds-duration-feedback);
+  --ds-duration-content: var(--_ds-duration-content);
+  --ds-space-1: var(--_ds-space-1);
+  --ds-space-3: var(--_ds-space-3);
+  --ds-component-card-padding: var(--ds-space-panel);
+  --ds-component-card-radius: var(--ds-radius-card);
+  --ds-component-control-padding: var(--ds-space-inline);
+  --ds-component-control-radius: var(--ds-radius-control);
+  --ds-component-control-min-size: var(--ds-control-min-size);
+}

@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "environments": {
+    "local": { "worker": "fronda-local", "port": 8787, "data": "synthetic", "remote": false },
+    "test": { "worker": "fronda-test", "port": 8788, "data": "synthetic", "remote": false },
+    "staging": { "worker": "fronda-staging", "port": 8789, "data": "synthetic", "remote": false },
+    "demo": { "worker": "fronda-demo", "port": 8790, "data": "synthetic", "remote": false }
+  }
+}

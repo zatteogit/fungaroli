@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "default": "free",
+  "locked": [
+    "risk-semantics",
+    "privacy-consent",
+    "scientific-uncertainty",
+    "essential-safety",
+    "accessibility",
+    "source-attribution",
+    "shared-components"
+  ],
+  "allowedExtensions": [
+    "editorial-accent",
+    "partner-credit",
+    "learning-path",
+    "territory-content",
+    "secondary-navigation"
+  ],
+  "profiles": {
+    "free": {
+      "label": "Fronda Free",
+      "accent": "--story-polline",
+      "task": "Imparare, preparare un’uscita, annotare."
+    },
+    "plus": {
+      "label": "Fronda Plus",
+      "accent": "--story-polline",
+      "task": "Approfondire e conservare i progressi."
+    },
+    "academy": {
+      "label": "Fronda Academy",
+      "accent": "--story-fiordaliso",
+      "task": "Studiare in gruppo e seguire contenuti revisionati."
+    },
+    "territory": {
+      "label": "Fronda Territorio",
+      "accent": "--story-germoglio",
+      "task": "Esplorare un territorio con contenuti locali documentati."
+    },
+    "partners": {
+      "label": "Fronda Partners",
+      "accent": "--story-ciclamino",
+      "task": "Consultare iniziative educative con contributi dichiarati."
+    }
+  },
+  "note": "Accenti iniziali per la demo. Non cambiano CTA, selezioni o colori di rischio. Nessuna funzione commerciale è attivata."
+}

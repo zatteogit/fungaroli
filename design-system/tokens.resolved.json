@@ -1,0 +1,922 @@
+{
+  "schemaVersion": 1,
+  "source": "css/tokens.css",
+  "modes": {
+    "light": {
+      "--botanical-red": {
+        "value": "#cb2735",
+        "requiresPlatformAdapter": false
+      },
+      "--botanical-orange": {
+        "value": "#e58c32",
+        "requiresPlatformAdapter": false
+      },
+      "--botanical-pink": {
+        "value": "#d88d9f",
+        "requiresPlatformAdapter": false
+      },
+      "--botanical-black": {
+        "value": "#252d38",
+        "requiresPlatformAdapter": false
+      },
+      "--botanical-blue": {
+        "value": "#467692",
+        "requiresPlatformAdapter": false
+      },
+      "--botanical-brown": {
+        "value": "#886344",
+        "requiresPlatformAdapter": false
+      },
+      "--botanical-white": {
+        "value": "#f4efda",
+        "requiresPlatformAdapter": false
+      },
+      "--botanical-yellow": {
+        "value": "#edcc35",
+        "requiresPlatformAdapter": false
+      },
+      "--botanical-violet": {
+        "value": "#955f9e",
+        "requiresPlatformAdapter": false
+      },
+      "--botanical-lilac": {
+        "value": "#baa0c9",
+        "requiresPlatformAdapter": false
+      },
+      "--botanical-sky": {
+        "value": "#81abd0",
+        "requiresPlatformAdapter": false
+      },
+      "--botanical-green": {
+        "value": "#899267",
+        "requiresPlatformAdapter": false
+      },
+      "--thermal-cool": {
+        "value": "#7aa5ef",
+        "requiresPlatformAdapter": false
+      },
+      "--thermal-range": {
+        "value": "#ffa15b",
+        "requiresPlatformAdapter": false
+      },
+      "--photo-warning": {
+        "value": "#e8b18c",
+        "requiresPlatformAdapter": false
+      },
+      "--story-ink": {
+        "value": "#10271f",
+        "requiresPlatformAdapter": false
+      },
+      "--story-avorio": {
+        "value": "#f7f4ea",
+        "requiresPlatformAdapter": false
+      },
+      "--story-polline": {
+        "value": "#f5d21f",
+        "requiresPlatformAdapter": false
+      },
+      "--story-calendula": {
+        "value": "#f5822a",
+        "requiresPlatformAdapter": false
+      },
+      "--story-fiordaliso": {
+        "value": "#7aa5ef",
+        "requiresPlatformAdapter": false
+      },
+      "--story-germoglio": {
+        "value": "#a7c957",
+        "requiresPlatformAdapter": false
+      },
+      "--story-ciclamino": {
+        "value": "#c973a5",
+        "requiresPlatformAdapter": false
+      },
+      "--story-corallo": {
+        "value": "#f0786c",
+        "requiresPlatformAdapter": false
+      },
+      "--map-warning-ink": {
+        "value": "#785513",
+        "requiresPlatformAdapter": false
+      },
+      "--map-warning-bg": {
+        "value": "#faeecf",
+        "requiresPlatformAdapter": false
+      },
+      "--map-error-ink": {
+        "value": "#6a1c15",
+        "requiresPlatformAdapter": false
+      },
+      "--map-error-bg": {
+        "value": "#f8e7e5",
+        "requiresPlatformAdapter": false
+      },
+      "--map-selected-edge": {
+        "value": "#806800",
+        "requiresPlatformAdapter": false
+      },
+      "--font-display": {
+        "value": "Fraunces, Georgia, 'Times New Roman', serif",
+        "requiresPlatformAdapter": true
+      },
+      "--font-body": {
+        "value": "Manrope, system-ui, -apple-system, 'Segoe UI', sans-serif",
+        "requiresPlatformAdapter": true
+      },
+      "--bg": {
+        "value": "#f7f4ea",
+        "requiresPlatformAdapter": false
+      },
+      "--surface": {
+        "value": "#fffef9",
+        "requiresPlatformAdapter": false
+      },
+      "--surface-2": {
+        "value": "#ebeee4",
+        "requiresPlatformAdapter": false
+      },
+      "--surface-3": {
+        "value": "#dde3d5",
+        "requiresPlatformAdapter": false
+      },
+      "--border": {
+        "value": "#cdd3c6",
+        "requiresPlatformAdapter": false
+      },
+      "--hair": {
+        "value": "#e2e6da",
+        "requiresPlatformAdapter": false
+      },
+      "--text": {
+        "value": "#18382c",
+        "requiresPlatformAdapter": false
+      },
+      "--text-2": {
+        "value": "#526459",
+        "requiresPlatformAdapter": false
+      },
+      "--muted": {
+        "value": "#5a695e",
+        "requiresPlatformAdapter": false
+      },
+      "--control-edge": {
+        "value": "#5a695e",
+        "requiresPlatformAdapter": false
+      },
+      "--accent": {
+        "value": "#934211",
+        "requiresPlatformAdapter": false
+      },
+      "--accent-ink": {
+        "value": "#fff",
+        "requiresPlatformAdapter": false
+      },
+      "--accent-soft": {
+        "value": "#ffead8",
+        "requiresPlatformAdapter": false
+      },
+      "--forest": {
+        "value": "#24513d",
+        "requiresPlatformAdapter": false
+      },
+      "--brand": {
+        "value": "#24513d",
+        "requiresPlatformAdapter": false
+      },
+      "--brand-ink": {
+        "value": "#f7f4ea",
+        "requiresPlatformAdapter": false
+      },
+      "--brand-deep": {
+        "value": "#163d2d",
+        "requiresPlatformAdapter": false
+      },
+      "--action": {
+        "value": "#18382c",
+        "requiresPlatformAdapter": false
+      },
+      "--action-hover": {
+        "value": "#214534",
+        "requiresPlatformAdapter": false
+      },
+      "--action-ink": {
+        "value": "#fff",
+        "requiresPlatformAdapter": false
+      },
+      "--polline": {
+        "value": "#f5d21f",
+        "requiresPlatformAdapter": false
+      },
+      "--polline-soft": {
+        "value": "#fff6c7",
+        "requiresPlatformAdapter": false
+      },
+      "--polline-ink": {
+        "value": "#6b5500",
+        "requiresPlatformAdapter": false
+      },
+      "--calendula": {
+        "value": "#f5822a",
+        "requiresPlatformAdapter": false
+      },
+      "--calendula-soft": {
+        "value": "#ffead8",
+        "requiresPlatformAdapter": false
+      },
+      "--calendula-ink": {
+        "value": "#934211",
+        "requiresPlatformAdapter": false
+      },
+      "--fiordaliso": {
+        "value": "#7aa5ef",
+        "requiresPlatformAdapter": false
+      },
+      "--fiordaliso-soft": {
+        "value": "#e7eeff",
+        "requiresPlatformAdapter": false
+      },
+      "--fiordaliso-ink": {
+        "value": "#284f85",
+        "requiresPlatformAdapter": false
+      },
+      "--germoglio": {
+        "value": "#a7c957",
+        "requiresPlatformAdapter": false
+      },
+      "--germoglio-soft": {
+        "value": "#e9f1d6",
+        "requiresPlatformAdapter": false
+      },
+      "--germoglio-ink": {
+        "value": "#36501d",
+        "requiresPlatformAdapter": false
+      },
+      "--focus": {
+        "value": "#24513d",
+        "requiresPlatformAdapter": false
+      },
+      "--link": {
+        "value": "#24513d",
+        "requiresPlatformAdapter": false
+      },
+      "--select": {
+        "value": "#f5d21f",
+        "requiresPlatformAdapter": false
+      },
+      "--select-ink": {
+        "value": "#10271f",
+        "requiresPlatformAdapter": false
+      },
+      "--select-edge": {
+        "value": "#806800",
+        "requiresPlatformAdapter": false
+      },
+      "--ciclamino": {
+        "value": "#c973a5",
+        "requiresPlatformAdapter": false
+      },
+      "--ciclamino-ink": {
+        "value": "#8a3e6c",
+        "requiresPlatformAdapter": false
+      },
+      "--ciclamino-soft": {
+        "value": "#f5e3ee",
+        "requiresPlatformAdapter": false
+      },
+      "--corallo": {
+        "value": "#f0786c",
+        "requiresPlatformAdapter": false
+      },
+      "--corallo-ink": {
+        "value": "#9a4437",
+        "requiresPlatformAdapter": false
+      },
+      "--corallo-soft": {
+        "value": "#fae6e0",
+        "requiresPlatformAdapter": false
+      },
+      "--on-photo": {
+        "value": "#fff",
+        "requiresPlatformAdapter": false
+      },
+      "--scrim": {
+        "value": "#10271f",
+        "requiresPlatformAdapter": false
+      },
+      "--on-crit": {
+        "value": "#fff",
+        "requiresPlatformAdapter": false
+      },
+      "--rain": {
+        "value": "#2a78d6",
+        "requiresPlatformAdapter": false
+      },
+      "--viz-water": {
+        "value": "#628cd4",
+        "requiresPlatformAdapter": false
+      },
+      "--viz-heat": {
+        "value": "#d66a03",
+        "requiresPlatformAdapter": false
+      },
+      "--viz-index": {
+        "value": "#24513d",
+        "requiresPlatformAdapter": false
+      },
+      "--line": {
+        "value": "#326820",
+        "requiresPlatformAdapter": false
+      },
+      "--grid": {
+        "value": "#e6dfd3",
+        "requiresPlatformAdapter": false
+      },
+      "--s0": {
+        "value": "#cfcabf",
+        "requiresPlatformAdapter": false
+      },
+      "--s1": {
+        "value": "#e0d5c5",
+        "requiresPlatformAdapter": false
+      },
+      "--s2": {
+        "value": "#dec18a",
+        "requiresPlatformAdapter": false
+      },
+      "--s3": {
+        "value": "#c7a445",
+        "requiresPlatformAdapter": false
+      },
+      "--s4": {
+        "value": "#5a9c37",
+        "requiresPlatformAdapter": false
+      },
+      "--s5": {
+        "value": "#3f8424",
+        "requiresPlatformAdapter": false
+      },
+      "--ps0": {
+        "value": "#8d8a82",
+        "requiresPlatformAdapter": false
+      },
+      "--ps1": {
+        "value": "#bba68c",
+        "requiresPlatformAdapter": false
+      },
+      "--ps2": {
+        "value": "#d6aa6c",
+        "requiresPlatformAdapter": false
+      },
+      "--ps3": {
+        "value": "#e6c35a",
+        "requiresPlatformAdapter": false
+      },
+      "--ps4": {
+        "value": "#98dc43",
+        "requiresPlatformAdapter": false
+      },
+      "--ps5": {
+        "value": "#a2ec33",
+        "requiresPlatformAdapter": false
+      },
+      "--warn-bg": {
+        "value": "#faeecf",
+        "requiresPlatformAdapter": false
+      },
+      "--warn-ink": {
+        "value": "#785513",
+        "requiresPlatformAdapter": false
+      },
+      "--ok-bg": {
+        "value": "#e6f0e7",
+        "requiresPlatformAdapter": false
+      },
+      "--ok-ink": {
+        "value": "#276146",
+        "requiresPlatformAdapter": false
+      },
+      "--crit": {
+        "value": "#a33335",
+        "requiresPlatformAdapter": false
+      },
+      "--crit-bg": {
+        "value": "#f8e7e5",
+        "requiresPlatformAdapter": false
+      },
+      "--crit-ink": {
+        "value": "#6a1c15",
+        "requiresPlatformAdapter": false
+      },
+      "--r-xl": {
+        "value": "28px",
+        "requiresPlatformAdapter": true
+      },
+      "--r-lg": {
+        "value": "22px",
+        "requiresPlatformAdapter": true
+      },
+      "--r-md": {
+        "value": "16px",
+        "requiresPlatformAdapter": true
+      },
+      "--r-sm": {
+        "value": "12px",
+        "requiresPlatformAdapter": true
+      },
+      "--shadow-1": {
+        "value": "0 1px 2px rgb(16 39 31 / .05), 0 3px 10px rgb(16 39 31 / .05)",
+        "requiresPlatformAdapter": true
+      },
+      "--shadow-2": {
+        "value": "0 2px 6px rgb(16 39 31 / .08), 0 18px 44px rgb(16 39 31 / .14)",
+        "requiresPlatformAdapter": true
+      },
+      "--glass": {
+        "value": "rgb(16 39 31 / .34)",
+        "requiresPlatformAdapter": true
+      },
+      "--appbar-h": {
+        "value": "56px",
+        "requiresPlatformAdapter": true
+      },
+      "--tabbar-h": {
+        "value": "64px",
+        "requiresPlatformAdapter": true
+      },
+      "--tabbar-bottom": {
+        "value": "max(10px, calc(env(safe-area-inset-bottom, 0px) - 4px))",
+        "requiresPlatformAdapter": true
+      },
+      "--tabbar-space": {
+        "value": "calc(var(--tabbar-h) + var(--tabbar-bottom))",
+        "requiresPlatformAdapter": true
+      },
+      "--col": {
+        "value": "720px",
+        "requiresPlatformAdapter": true
+      },
+      "--gutter": {
+        "value": "16px",
+        "requiresPlatformAdapter": true
+      }
+    },
+    "dark": {
+      "--botanical-red": {
+        "value": "#cb2735",
+        "requiresPlatformAdapter": false
+      },
+      "--botanical-orange": {
+        "value": "#e58c32",
+        "requiresPlatformAdapter": false
+      },
+      "--botanical-pink": {
+        "value": "#d88d9f",
+        "requiresPlatformAdapter": false
+      },
+      "--botanical-black": {
+        "value": "#252d38",
+        "requiresPlatformAdapter": false
+      },
+      "--botanical-blue": {
+        "value": "#467692",
+        "requiresPlatformAdapter": false
+      },
+      "--botanical-brown": {
+        "value": "#886344",
+        "requiresPlatformAdapter": false
+      },
+      "--botanical-white": {
+        "value": "#f4efda",
+        "requiresPlatformAdapter": false
+      },
+      "--botanical-yellow": {
+        "value": "#edcc35",
+        "requiresPlatformAdapter": false
+      },
+      "--botanical-violet": {
+        "value": "#955f9e",
+        "requiresPlatformAdapter": false
+      },
+      "--botanical-lilac": {
+        "value": "#baa0c9",
+        "requiresPlatformAdapter": false
+      },
+      "--botanical-sky": {
+        "value": "#81abd0",
+        "requiresPlatformAdapter": false
+      },
+      "--botanical-green": {
+        "value": "#899267",
+        "requiresPlatformAdapter": false
+      },
+      "--thermal-cool": {
+        "value": "#7aa5ef",
+        "requiresPlatformAdapter": false
+      },
+      "--thermal-range": {
+        "value": "#ffa15b",
+        "requiresPlatformAdapter": false
+      },
+      "--photo-warning": {
+        "value": "#e8b18c",
+        "requiresPlatformAdapter": false
+      },
+      "--story-ink": {
+        "value": "#10271f",
+        "requiresPlatformAdapter": false
+      },
+      "--story-avorio": {
+        "value": "#f7f4ea",
+        "requiresPlatformAdapter": false
+      },
+      "--story-polline": {
+        "value": "#f5d21f",
+        "requiresPlatformAdapter": false
+      },
+      "--story-calendula": {
+        "value": "#f5822a",
+        "requiresPlatformAdapter": false
+      },
+      "--story-fiordaliso": {
+        "value": "#7aa5ef",
+        "requiresPlatformAdapter": false
+      },
+      "--story-germoglio": {
+        "value": "#a7c957",
+        "requiresPlatformAdapter": false
+      },
+      "--story-ciclamino": {
+        "value": "#c973a5",
+        "requiresPlatformAdapter": false
+      },
+      "--story-corallo": {
+        "value": "#f0786c",
+        "requiresPlatformAdapter": false
+      },
+      "--map-warning-ink": {
+        "value": "#785513",
+        "requiresPlatformAdapter": false
+      },
+      "--map-warning-bg": {
+        "value": "#faeecf",
+        "requiresPlatformAdapter": false
+      },
+      "--map-error-ink": {
+        "value": "#6a1c15",
+        "requiresPlatformAdapter": false
+      },
+      "--map-error-bg": {
+        "value": "#f8e7e5",
+        "requiresPlatformAdapter": false
+      },
+      "--map-selected-edge": {
+        "value": "#806800",
+        "requiresPlatformAdapter": false
+      },
+      "--font-display": {
+        "value": "Fraunces, Georgia, 'Times New Roman', serif",
+        "requiresPlatformAdapter": true
+      },
+      "--font-body": {
+        "value": "Manrope, system-ui, -apple-system, 'Segoe UI', sans-serif",
+        "requiresPlatformAdapter": true
+      },
+      "--bg": {
+        "value": "#10271f",
+        "requiresPlatformAdapter": false
+      },
+      "--surface": {
+        "value": "#213f33",
+        "requiresPlatformAdapter": false
+      },
+      "--surface-2": {
+        "value": "#284a3c",
+        "requiresPlatformAdapter": false
+      },
+      "--surface-3": {
+        "value": "#315747",
+        "requiresPlatformAdapter": false
+      },
+      "--border": {
+        "value": "#4b6a59",
+        "requiresPlatformAdapter": false
+      },
+      "--hair": {
+        "value": "#36584a",
+        "requiresPlatformAdapter": false
+      },
+      "--text": {
+        "value": "#f4f3e9",
+        "requiresPlatformAdapter": false
+      },
+      "--text-2": {
+        "value": "#b5c5b8",
+        "requiresPlatformAdapter": false
+      },
+      "--muted": {
+        "value": "#a3b5a5",
+        "requiresPlatformAdapter": false
+      },
+      "--control-edge": {
+        "value": "#a3b5a5",
+        "requiresPlatformAdapter": false
+      },
+      "--accent": {
+        "value": "#ffa15b",
+        "requiresPlatformAdapter": false
+      },
+      "--accent-ink": {
+        "value": "#10271f",
+        "requiresPlatformAdapter": false
+      },
+      "--accent-soft": {
+        "value": "#3a3324",
+        "requiresPlatformAdapter": false
+      },
+      "--forest": {
+        "value": "#163d2d",
+        "requiresPlatformAdapter": false
+      },
+      "--brand": {
+        "value": "#fff",
+        "requiresPlatformAdapter": false
+      },
+      "--brand-ink": {
+        "value": "#10271f",
+        "requiresPlatformAdapter": false
+      },
+      "--brand-deep": {
+        "value": "#163d2d",
+        "requiresPlatformAdapter": false
+      },
+      "--action": {
+        "value": "#fff",
+        "requiresPlatformAdapter": false
+      },
+      "--action-hover": {
+        "value": "#e9efe8",
+        "requiresPlatformAdapter": false
+      },
+      "--action-ink": {
+        "value": "#10271f",
+        "requiresPlatformAdapter": false
+      },
+      "--polline": {
+        "value": "#f5d21f",
+        "requiresPlatformAdapter": false
+      },
+      "--polline-soft": {
+        "value": "#284a3c",
+        "requiresPlatformAdapter": false
+      },
+      "--polline-ink": {
+        "value": "#f5d21f",
+        "requiresPlatformAdapter": false
+      },
+      "--calendula": {
+        "value": "#f5822a",
+        "requiresPlatformAdapter": false
+      },
+      "--calendula-soft": {
+        "value": "#284a3c",
+        "requiresPlatformAdapter": false
+      },
+      "--calendula-ink": {
+        "value": "#ffa15b",
+        "requiresPlatformAdapter": false
+      },
+      "--fiordaliso": {
+        "value": "#7aa5ef",
+        "requiresPlatformAdapter": false
+      },
+      "--fiordaliso-soft": {
+        "value": "#284a3c",
+        "requiresPlatformAdapter": false
+      },
+      "--fiordaliso-ink": {
+        "value": "#a0bffa",
+        "requiresPlatformAdapter": false
+      },
+      "--germoglio": {
+        "value": "#a7c957",
+        "requiresPlatformAdapter": false
+      },
+      "--germoglio-soft": {
+        "value": "#284a3c",
+        "requiresPlatformAdapter": false
+      },
+      "--germoglio-ink": {
+        "value": "#a7c957",
+        "requiresPlatformAdapter": false
+      },
+      "--focus": {
+        "value": "#fff",
+        "requiresPlatformAdapter": false
+      },
+      "--link": {
+        "value": "#fff",
+        "requiresPlatformAdapter": false
+      },
+      "--select": {
+        "value": "#f5d21f",
+        "requiresPlatformAdapter": false
+      },
+      "--select-ink": {
+        "value": "#10271f",
+        "requiresPlatformAdapter": false
+      },
+      "--select-edge": {
+        "value": "#f5d21f",
+        "requiresPlatformAdapter": false
+      },
+      "--ciclamino": {
+        "value": "#c973a5",
+        "requiresPlatformAdapter": false
+      },
+      "--ciclamino-ink": {
+        "value": "#e5a5cd",
+        "requiresPlatformAdapter": false
+      },
+      "--ciclamino-soft": {
+        "value": "#284a3c",
+        "requiresPlatformAdapter": false
+      },
+      "--corallo": {
+        "value": "#f0786c",
+        "requiresPlatformAdapter": false
+      },
+      "--corallo-ink": {
+        "value": "#ffab96",
+        "requiresPlatformAdapter": false
+      },
+      "--corallo-soft": {
+        "value": "#284a3c",
+        "requiresPlatformAdapter": false
+      },
+      "--on-photo": {
+        "value": "#fff",
+        "requiresPlatformAdapter": false
+      },
+      "--scrim": {
+        "value": "#10271f",
+        "requiresPlatformAdapter": false
+      },
+      "--on-crit": {
+        "value": "#10271f",
+        "requiresPlatformAdapter": false
+      },
+      "--rain": {
+        "value": "#4a93e8",
+        "requiresPlatformAdapter": false
+      },
+      "--viz-water": {
+        "value": "#628cd4",
+        "requiresPlatformAdapter": false
+      },
+      "--viz-heat": {
+        "value": "#d66a03",
+        "requiresPlatformAdapter": false
+      },
+      "--viz-index": {
+        "value": "#b7d0a6",
+        "requiresPlatformAdapter": false
+      },
+      "--line": {
+        "value": "#9fd07a",
+        "requiresPlatformAdapter": false
+      },
+      "--grid": {
+        "value": "#1e3128",
+        "requiresPlatformAdapter": false
+      },
+      "--s0": {
+        "value": "#3c4a42",
+        "requiresPlatformAdapter": false
+      },
+      "--s1": {
+        "value": "#6b5b49",
+        "requiresPlatformAdapter": false
+      },
+      "--s2": {
+        "value": "#94723f",
+        "requiresPlatformAdapter": false
+      },
+      "--s3": {
+        "value": "#b69a44",
+        "requiresPlatformAdapter": false
+      },
+      "--s4": {
+        "value": "#7fc84e",
+        "requiresPlatformAdapter": false
+      },
+      "--s5": {
+        "value": "#9be34c",
+        "requiresPlatformAdapter": false
+      },
+      "--ps0": {
+        "value": "#8d8a82",
+        "requiresPlatformAdapter": false
+      },
+      "--ps1": {
+        "value": "#bba68c",
+        "requiresPlatformAdapter": false
+      },
+      "--ps2": {
+        "value": "#d6aa6c",
+        "requiresPlatformAdapter": false
+      },
+      "--ps3": {
+        "value": "#e6c35a",
+        "requiresPlatformAdapter": false
+      },
+      "--ps4": {
+        "value": "#98dc43",
+        "requiresPlatformAdapter": false
+      },
+      "--ps5": {
+        "value": "#a2ec33",
+        "requiresPlatformAdapter": false
+      },
+      "--warn-bg": {
+        "value": "#3a3214",
+        "requiresPlatformAdapter": false
+      },
+      "--warn-ink": {
+        "value": "#e8b18c",
+        "requiresPlatformAdapter": false
+      },
+      "--ok-bg": {
+        "value": "#1d3d2c",
+        "requiresPlatformAdapter": false
+      },
+      "--ok-ink": {
+        "value": "#b7d0a6",
+        "requiresPlatformAdapter": false
+      },
+      "--crit": {
+        "value": "#f0786c",
+        "requiresPlatformAdapter": false
+      },
+      "--crit-bg": {
+        "value": "#33130f",
+        "requiresPlatformAdapter": false
+      },
+      "--crit-ink": {
+        "value": "#f8d0ca",
+        "requiresPlatformAdapter": false
+      },
+      "--r-xl": {
+        "value": "28px",
+        "requiresPlatformAdapter": true
+      },
+      "--r-lg": {
+        "value": "22px",
+        "requiresPlatformAdapter": true
+      },
+      "--r-md": {
+        "value": "16px",
+        "requiresPlatformAdapter": true
+      },
+      "--r-sm": {
+        "value": "12px",
+        "requiresPlatformAdapter": true
+      },
+      "--shadow-1": {
+        "value": "0 1px 2px rgb(0 0 0 / .45)",
+        "requiresPlatformAdapter": true
+      },
+      "--shadow-2": {
+        "value": "0 18px 44px rgb(0 0 0 / .55)",
+        "requiresPlatformAdapter": true
+      },
+      "--glass": {
+        "value": "rgb(16 39 31 / .34)",
+        "requiresPlatformAdapter": true
+      },
+      "--appbar-h": {
+        "value": "56px",
+        "requiresPlatformAdapter": true
+      },
+      "--tabbar-h": {
+        "value": "64px",
+        "requiresPlatformAdapter": true
+      },
+      "--tabbar-bottom": {
+        "value": "max(10px, calc(env(safe-area-inset-bottom, 0px) - 4px))",
+        "requiresPlatformAdapter": true
+      },
+      "--tabbar-space": {
+        "value": "calc(var(--tabbar-h) + var(--tabbar-bottom))",
+        "requiresPlatformAdapter": true
+      },
+      "--col": {
+        "value": "720px",
+        "requiresPlatformAdapter": true
+      },
+      "--gutter": {
+        "value": "16px",
+        "requiresPlatformAdapter": true
+      }
+    }
+  }
+}

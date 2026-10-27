@@ -57,6 +57,9 @@ Il nucleo originario di 15 zone è riportato sotto. L’estensione del 19 ottobr
 
 ## Documentazione
 
+- [Fondazione comune, ambienti e sviluppo delle offerte](docs/architecture/README.md).
+- [Experience, design e language system condiviso](design-system/README.md).
+
 - [Handoff completo della ripresa del progetto, 14 ottobre 2026](docs/handoff-2026-10-14.md).
 - [Fronda — studio completo di identità e design system](docs/fronda/README.md): manuale PDF, master SVG, template e prototipo separato dall’app.
 - [Handoff Fronda, 15 ottobre 2026](docs/handoff-fronda-2026-10-15.md): decisioni approvate, fonti, verifiche e piano di integrazione.

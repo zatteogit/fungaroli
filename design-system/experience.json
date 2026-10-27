@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "status": "fondazione iniziale; migrazione progressiva",
+  "principles": [
+    {
+      "id": "observe",
+      "rule": "Descrivere caratteri, ambienti e rischi; mantenere incertezza e fonti visibili."
+    },
+    {
+      "id": "learn",
+      "rule": "Accompagnare osservazione, confronto, spiegazione e verifica della comprensione."
+    },
+    {
+      "id": "prepare",
+      "rule": "Distinguere condizioni dell’uscita, potenziale biologico e segnalazioni."
+    },
+    {
+      "id": "private",
+      "rule": "Conservare gli appunti privati; condividere soltanto campi esplicitamente autorizzati."
+    },
+    {
+      "id": "continuity",
+      "rule": "Conservare contesto, selezione, scroll e focus nei percorsi annidati."
+    }
+  ],
+  "navigation": [
+    "Uscite",
+    "Mappa",
+    "Scopri",
+    "Taccuino"
+  ],
+  "requiredStates": [
+    "loading",
+    "ready",
+    "empty",
+    "partial",
+    "stale",
+    "offline",
+    "error",
+    "forbidden"
+  ],
+  "componentContracts": {
+    "action": {
+      "states": [
+        "default",
+        "hover",
+        "focus",
+        "pressed",
+        "disabled",
+        "busy"
+      ],
+      "rule": "Un verbo concreto; etichetta durante l’attesa; evitare invii duplicati."
+    },
+    "selection": {
+      "states": [
+        "default",
+        "selected",
+        "focus",
+        "disabled"
+      ],
+      "rule": "Scelta persistente; forma del componente esistente, polline e indicazione accessibile."
+    },
+    "entity-card": {
+      "states": [
+        "loading",
+        "ready",
+        "missing-media",
+        "error"
+      ],
+      "rule": "Dati e rischio leggibili; approfondimento, fonte e annotazione pertinenti."
+    },
+    "notice": {
+      "states": [
+        "info",
+        "caution",
+        "critical"
+      ],
+      "rule": "Icona ed etichetta oltre al colore; gravità dai dati, mai dedotta dal tono."
+    },
+    "dialog": {
+      "states": [
+        "open",
+        "nested",
+        "return",
+        "closed"
+      ],
+      "rule": "Un dialog modale, percorso reale, focus restituito al chiamante."
+    },
+    "observation": {
+      "states": [
+        "private",
+        "sharing",
+        "shared",
+        "withdrawn",
+        "error"
+      ],
+      "rule": "Condivisione esplicita; nessun GPS preciso nel payload pubblico."
+    }
+  },
+  "accessibility": {
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "viewports": [
+      320,
+      390,
+      768,
+      1280
+    ],
+    "interaction": [
+      "keyboard",
+      "touch",
+      "screen-reader",
+      "reduced-motion"
+    ],
+    "rule": "Verificare focus, contenuti lunghi, zoom e stati asincroni. Il contrasto statico non certifica l’accessibilità completa."
+  }
+}

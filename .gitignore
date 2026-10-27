@@ -17,3 +17,6 @@ incoming/lazio-pilot-2026-10-19/integration/campionamenti/responses/
 .playwright-cli/
 
 output/playwright/
+
+# Generated configs and isolated runtime state.
+.fronda/

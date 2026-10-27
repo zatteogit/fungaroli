@@ -73,3 +73,11 @@ senza mescolare le API DOM del browser con quelle del server.
 
 Riferimenti: [migrazione ufficiale](https://www.typescriptlang.org/docs/handbook/migrating-from-javascript.html),
 [controlli strict](https://www.typescriptlang.org/tsconfig/strict.html).
+
+## Nucleo indipendente (27/10/2026)
+
+`src/js/core/` contiene la prima estrazione comune delle regole delle osservazioni e i profili
+di composizione previsti. `tsconfig.core.json` verifica questo perimetro con solo ES2022.
+La compilazione ordinaria ora percorre le sottocartelle e versiona `js/core/`.
+`npm run build:core` esporta anche le dichiarazioni in `dist/core/`.
+Vedi [architettura modulare](architecture/modularity.md) per confini e limiti di portabilità.

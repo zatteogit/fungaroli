@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "locale": "it-IT",
+  "timeZone": "Europe/Rome",
+  "tone": [
+    "chiaro",
+    "calmo",
+    "concreto",
+    "rispettoso"
+  ],
+  "format": {
+    "decimalExample": "7,2",
+    "missing": "Dato non disponibile",
+    "zero": "0",
+    "acquiredAt": "Data di acquisizione originale; mai aggiornata leggendo una cache."
+  },
+  "vocabulary": {
+    "outings": "Uscite",
+    "map": "Mappa",
+    "discover": "Scopri",
+    "notebook": "Taccuino",
+    "observed": "Osservato",
+    "searchedAbsent": "Cercato, non osservato",
+    "unknown": "Non indicato",
+    "unreviewed": "Non revisionato"
+  },
+  "messages": {
+    "loading": "Caricamento…",
+    "emptyNotebook": "Conserva qui il tuo primo appunto.",
+    "offline": "Sei offline. Mostriamo la copia disponibile.",
+    "stale": "Questi dati non sono aggiornati.",
+    "error": "Non siamo riusciti a caricare i dati. Riprova.",
+    "partial": "Alcuni dati non sono disponibili.",
+    "forbidden": "Questo contenuto richiede un accesso autorizzato.",
+    "demo": "Dati sintetici · nessun account · nessun salvataggio"
+  },
+  "avoid": [
+    "certezza di ritrovamento",
+    "commestibilità certificata dall’app",
+    "accuratezza scientifica non dimostrata",
+    "consenso implicito",
+    "colpevolizzare chi usa l’app"
+  ],
+  "patterns": {
+    "error": "Che cosa è successo, cosa è conservato, azione possibile.",
+    "permission": "Funzione richiesta, motivo concreto, alternativa manuale.",
+    "scientific": "Dato, provenienza, limite, revisione; nessun verdetto sull’esemplare.",
+    "sponsor": "Sponsorizzato da {partner}; natura del contributo e autonomia editoriale."
+  },
+  "modules": {
+    "safety": "Sicurezza essenziale",
+    "catalog": "Atlante e confronti",
+    "learning": "Apprendimento",
+    "notebook": "Taccuino privato",
+    "outings": "Preparazione delle uscite",
+    "advanced-learning": "Approfondimenti",
+    "sync": "Sincronizzazione",
+    "academy": "Percorsi per i gruppi",
+    "territory": "Contenuti del territorio",
+    "partners": "Iniziative e contributi"
+  }
+}

@@ -4,6 +4,14 @@ Prima di modificare qualcosa leggi [docs/handoff-2026-10-14.md](docs/handoff-202
 
 Per identità visiva e design system Fronda leggi anche [docs/handoff-fronda-2026-10-15.md](docs/handoff-fronda-2026-10-15.md). Il kit in `docs/fronda/` è uno studio approvato: la sua presenza non implica che il rebranding sia già integrato nell’app.
 
+## Fondazione modulare (27/10/2026)
+
+Leggere anche [docs/architecture/README.md](docs/architecture/README.md) e
+[design-system/README.md](design-system/README.md). Il nucleo `src/js/core/` non dipende
+da browser o server. I branch delle offerte condividono il nucleo e i contratti; non duplicarli.
+Per le prove usare le configurazioni isolate, mai le risorse di produzione. I profili commerciali
+sono composizioni previste, non permessi o funzioni già attive.
+
 ## Rami e pubblicazione
 
 - Il ramo di produzione è **`claude/brave-tesla-wu0a2b`**, non `main` (che non esiste). Le PR vanno aperte verso quel ramo.
@@ -31,7 +39,7 @@ git diff --check
 
 Leggibilità: `node tools/visual-audit.mjs --base http://127.0.0.1:<porta> --out <cartella> --label <nome>` misura il contrasto di tutti i testi visibili (viste principali, 320/390/768/1280, chiaro e scuro; copertine provate con tutte le foto del catalogo) su un server già avviato. Dura circa 45 minuti; `--views`, `--widths`, `--themes`, `--sweep none` lo restringono. `tests/browser/legibility.spec.mjs` ne controlla le copertine con la foto più chiara.
 
-La suite browser avvia un solo Wrangler sulla porta 8788: non lanciarne due insieme. La CI (`.github/workflows/ci.yml`) esegue test unitari e dry-run su ogni PR.
+La suite browser avvia un solo Wrangler sulla porta 8788: non lanciarne due insieme. Se occupata da altri lavori, usare `FRONDA_TEST_PORT` con una porta libera; non arrestare servizi altrui. La CI (`.github/workflows/ci.yml`) esegue test unitari e dry-run su ogni PR.
 
 **Quando lanciare la suite browser** (dura circa 8–10 minuti):
 - a ogni modifica, solo gli spec delle parti toccate (`npx playwright test tests/browser/<spec> -g "<titolo>"`);

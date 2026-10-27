@@ -1,4 +1,5 @@
-/* Fronda — token dell'app. Fonte dei valori: docs/fronda/tokens.json e lo studio approvato.
+/* Fronda — token dell'app. Fonte corrente dei valori: questo file, con le revisioni approvate sull’app.
+   docs/fronda/tokens.json conserva lo studio storico; non sovrascrivere le revisioni correnti.
    Tre livelli: primitive private (--_ref-*, solo qui), ruoli pubblici (--bg, --brand, --action…) e componenti in style.css/fronda.css.
    Nei fogli di stile si usano solo i ruoli pubblici: lo controlla tools/ds-guard.mjs. */
 :root {
