@@ -53,3 +53,18 @@ filtri, giorno, disclosure e salvataggio restino utilizzabili.
 Wake lock e prontezza del service worker usano fixture esplicite nel test degli
 strumenti; archivio IndexedDB e Cache API sono reali. Nessun invio di notifiche o
 richiesta di permesso a utenti reali viene eseguito da queste verifiche.
+
+## Rifinitura v377
+
+Calendario e corpo della scheda condividono un bordo continuo, senza due angoli
+arrotondati a contatto. «Dati per partire» è un breve passaggio documentale prima
+del piano: valori in due colonne quando c’è spazio, righe etichettate sul telefono,
+nessuna seconda card in evidenza. I dati mancanti e il limite sull’apertura degli
+accessi restano visibili integralmente. Il link sul fungo guida usa l’icona info.
+
+Il taccuino condiviso usa una superficie verde tenue e un accento discreto. Prima
+stato o riepiloghi effettivamente disponibili, poi azioni e una cautela visibile:
+le osservazioni sono dichiarate, non confermano la presenza attuale e i punti GPS
+restano privati. «Dati e privacy» raccoglie senza eliminarli periodo, indipendenza
+dai filtri dell’uscita, soglie, separazione dei conteggi e spiegazione completa.
+Accesso, campi degli aggregati, soglie e calcoli restano invariati.

@@ -32,7 +32,7 @@ import {plannedDeparture, recommendedStartAvailable, calendarDate, lateLabel} fr
 import {speciesObservationContext} from './species-context.js';
 import { mapQuery, mountMapResults, compactMapFilters } from './map-experience.js';
 import './index-tip.js';
-import { leafGlyph, notebookGlyph, carGlyph } from './ui-icons.js';
+import { leafGlyph, notebookGlyph, carGlyph, infoGlyph } from './ui-icons.js';
 import {fungusGlyph, progressCircle, weatherGlyphs} from './indicators.js';
 import { INTENTS, validIntent, normalizeInterests, primaryInterest, toggleInterest, seasonalSelection, matchesWalk, compareOutdoor } from './outing-intent.js';
 import './rails.js';
@@ -1694,7 +1694,7 @@ function outingSearchContext(d=null) {
   const constraints=[state.easyTrails?'Solo difficoltà T · turistica':'',state.shortTrails?'Tratto nella zona entro 5 km':''].filter(Boolean);
   return `<section class="outing-search" aria-label="Scelte dell’uscita"><div class="outing-search-head"><b>Alla ricerca di…</b><button type="button" class="btn ghost" data-outing-filters aria-haspopup="dialog">Modifica</button></div><div class="outing-search-content"><div class="outing-search-tags">${interests.split(' · ').map(label=>`<span>${esc(label)}</span>`).join('')}${constraints.map(label=>`<span class="outing-practical-tag">${esc(label)}</span>`).join('')}</div>${state.target!=='passeggiata'?`<p class="outing-selected">${esc(selected)}</p>`:''}
     <p class="small muted">${hasInterest('funghi')?'Condizioni per i funghi scelti e il meteo del giorno.':'Contenuti per gli interessi scelti e il giorno selezionato.'}</p>
-    ${hasInterest('funghi')?`<details class="outing-context-help" data-weather-preserve-open><summary>${driver?`Indice basato su ${esc(driver.name)}`:'Come leggere le condizioni'}</summary>${driver?`<p>Il valore parte dal miglior indice tra i funghi scelti con dati disponibili: ${esc(driver.name)}.</p>`:''}<p>L’indice è sperimentale: non è una probabilità di trovare funghi.</p>${missing.length?`<p>Indice non disponibile per ${missing.length} ${missing.length===1?'specie scelta':'specie scelte'}.</p>`:''}</details>`:''}
+    ${hasInterest('funghi')?`<details class="outing-context-help" data-weather-preserve-open><summary><span>${driver?`Indice basato su ${esc(driver.name)}`:'Come leggere le condizioni'}</span>${infoGlyph}</summary>${driver?`<p>Il valore parte dal miglior indice tra i funghi scelti con dati disponibili: ${esc(driver.name)}.</p>`:''}<p>L’indice è sperimentale: non è una probabilità di trovare funghi.</p>${missing.length?`<p>Indice non disponibile per ${missing.length} ${missing.length===1?'specie scelta':'specie scelte'}.</p>`:''}</details>`:''}
     ${hasInterest('funghi')&&missing.length?`<p class="outing-index-missing small muted">${missing.length} ${missing.length===1?'specie scelta senza indice disponibile':'specie scelte senza indice disponibile'}.</p>`:''}
     </div></section>`;
 }

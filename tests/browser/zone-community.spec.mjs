@@ -24,7 +24,7 @@ for(const variant of ['guest','locked','empty','province','granted','granted-dar
   summary={access:'locked',reports:[],observations:[]};await page.evaluate(()=>document.dispatchEvent(new CustomEvent('fungaroli:refresh-community')));
   await expect(box.locator('.zone-community-list')).toHaveCount(0);await expect(box).not.toContainText('4 ritrovamenti');
  }
- await box.locator('[data-home-how-open]').click();await expect(page.locator('#community-help')).toBeVisible();
+ await box.locator('.zone-community-method > summary').click();await expect(box.locator('.zone-community-limits')).toBeVisible();await box.locator('[data-home-how-open]').click();await expect(page.locator('#community-help')).toBeVisible();
  expect(errors).toEqual([]);
  await context.close();
 });
