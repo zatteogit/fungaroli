@@ -1,3 +1,4 @@
+import {layoutMapLabels} from './map-label-layout.js';
 import {fungusGlyph} from './indicators.js';
 import { formatIndex } from './model.js';
 // Mappa schematica in SVG (usata quando le tile esterne non sono disponibili, es. Artifact).
@@ -50,36 +51,25 @@ export function renderSvgMap(container, { zones, origin, items, onSelect }) {
     el('text', { x: x + 5, y: y + 4, class: 'town-label' }, svg).textContent = t.name;
   }
 
-  // etichette: posizionamento greedy per evitare sovrapposizioni
-  const placed = [];
-  for (const it of items) {
-    const z = it.z;
-    const [x, y0] = P(z.lat, z.lon);
-    const name0 = z.name.split(/[/–(]/)[0].trim();
-    const w0 = 14 + (`${it.label||formatIndex(it.score)}  ${name0}`).length * 6.4;
-    let y = y0;
-    const hit = (yy) => placed.some((b) => Math.abs(b.x - x) < (b.w + w0) / 2 + 4 && Math.abs(b.y - yy) < 26);
-    for (let k = 1; hit(y) && k < 8; k++) y = y0 + (k % 2 ? 1 : -1) * Math.ceil(k / 2) * 26;
-    placed.push({ x, y, w: w0 });
-    it.labelY = y;
-  }
-
+  const labels=[];
   for (const it of items) {
     const z = it.z;
     const [x, yc] = P(z.lat, z.lon);
-    const y = it.labelY;
+    const y = yc;
     const g = el('g', { class: 'zone' + (it.selected ? ' sel' : ''), tabindex: 0, role: 'button', 'aria-label': `${z.name}, ${it.label||"indice "+formatIndex(it.score)}` }, svg);
     el('circle', {
       cx: x, cy: yc, r: (z.radius_m / 1000) * s, fill: it.color, 'fill-opacity': 0.55,
       stroke: it.selected ? 'var(--text)' : it.color, 'stroke-width': it.selected ? 3 : 1.5,
     }, g);
-    const label = el('g', { transform: `translate(${x},${y})` }, g);
+    const label = el('g', { 'data-zone-label':z.id, transform: `translate(${x},${y})` }, g);
     const name = z.name.split(/[/–(]/)[0].trim();
     const text = `${it.label||formatIndex(it.score)}  ${name}`;
     const w = 14 + text.length * 6.4;
-    el('rect', { x: -w / 2, y: -11, width: w, height: 22, rx: 7, fill: 'var(--surface)', stroke: 'var(--border)' }, label);
-    if(Number.isFinite(it.score)){const icon=el('g',{transform:`translate(${-w/2+2},-8)`,color:it.color},label);icon.innerHTML=fungusGlyph;icon.firstElementChild.setAttribute('width','15');icon.firstElementChild.setAttribute('height','15');}else el('circle',{cx:-w/2+10,cy:0,r:4.5,fill:it.color},label);
-    el('text', { x: -w / 2 + 19, y: 4.5, class: 'zone-text' }, label).textContent = text;
+    const rect=el('rect', { x: -w / 2, y: -11, width: w, height: 22, rx: 7, fill: 'var(--surface)', stroke: 'var(--border)' }, label);
+    let glyph;
+    if(Number.isFinite(it.score)){const icon=el('g',{transform:`translate(${-w/2+2},-8)`,color:it.color},label);glyph=icon;icon.innerHTML=fungusGlyph;icon.firstElementChild.setAttribute('width','15');icon.firstElementChild.setAttribute('height','15');}else glyph=el('circle',{cx:-w/2+10,cy:0,r:4.5,fill:it.color},label);
+    const caption=el('text', { x: -w / 2 + 19, y: 4.5, class: 'zone-text' }, label);caption.textContent=text;
+    labels.push({it,label,rect,caption,glyph,x,y,text,compactText:Number.isFinite(it.score)?formatIndex(it.score):''});
     const title = el('title', {}, g);
     title.textContent = it.tooltip;
     g.addEventListener('click', () => onSelect(z.id));
@@ -89,4 +79,14 @@ export function renderSvgMap(container, { zones, origin, items, onSelect }) {
   // Rieti
   el('circle', { cx: ox, cy: oy, r: 6, fill: 'var(--accent)', stroke: 'var(--surface)', 'stroke-width': 2 }, svg);
   el('text', { x: ox + 9, y: oy + 5, class: 'origin-label' }, svg).textContent = origin.name;
+  const layout=()=>{
+    if(!svg.isConnected)return;
+    labels.forEach(l=>{l.label.style.display='';l.caption.textContent=l.text;});
+    const full=labels.map(l=>l.caption.getBBox().width+26);
+    labels.forEach(l=>l.caption.textContent=l.compactText);
+    const measured=labels.map((l,i)=>({id:l.it.z.id,x:l.x,y:l.y,full:[full[i],24],compact:[Math.max(24,l.caption.getBBox().width+26),24],selected:l.it.selected,priority:l.it.score||0}));
+    const positions=layoutMapLabels(measured,{width:W,height:H,maxNames:container.clientWidth<600?5:12});
+    for(const l of labels){const p=positions.get(l.it.z.id);l.label.style.display=p?'':'none';if(!p)continue;l.label.setAttribute('transform',`translate(${p.cx},${p.cy})`);l.caption.textContent=p.compact?l.compactText:l.text;l.rect.setAttribute('x',-p.w/2);l.rect.setAttribute('width',p.w);l.caption.setAttribute('x',-p.w/2+19);if(Number.isFinite(l.it.score))l.glyph.setAttribute('transform',`translate(${-p.w/2+2},-8)`);else l.glyph.setAttribute('cx',-p.w/2+10);}
+  };
+  layout();document.fonts?.ready.then(layout);
 }
