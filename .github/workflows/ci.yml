@@ -37,7 +37,7 @@ jobs:
       - name: TypeScript — tipi e JavaScript generato
         run: |
           npm run check:typescript
-          git diff --exit-code -- js/field-*.js
+          git diff --exit-code -- js/
       - run: npm test
       - name: Studio Fronda — token, risorse e contratti
         run: node docs/fronda/scripts/check.mjs

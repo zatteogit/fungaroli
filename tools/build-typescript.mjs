@@ -12,11 +12,13 @@ const check = process.argv.includes('--check');
 try {
   execFileSync(process.execPath, [path.join(root, 'node_modules/typescript/bin/tsc'),
     '--project', path.join(root, 'tsconfig.json'), '--outDir', output], { cwd: root, stdio: 'inherit' });
+  execFileSync(process.execPath, [path.join(root, 'node_modules/typescript/bin/tsc'),
+    '--project', path.join(root, 'tsconfig.contracts.json')], { cwd: root, stdio: 'inherit' });
   let stale = false;
   for (const name of (await readdir(output)).sort()) {
     if (!name.endsWith('.js')) throw Error(`Unexpected compiler output: ${name}`);
     const target = path.join(root, 'js', name);
-    const content = `// Generated from src/field/${name.replace(/\.js$/, '.ts')}. Run npm run build:typescript; do not edit.\n`
+    const content = `// Generated from src/js/${name.replace(/\.js$/, '.ts')}. Run npm run build:typescript; do not edit.\n`
       + await readFile(path.join(output, name), 'utf8');
     if (check) {
       const existing = await readFile(target, 'utf8').catch(() => null);

@@ -13,7 +13,7 @@
     "test:browser": "playwright test",
     "build": "npm run build:typescript && npm run build:vendor",
     "build:typescript": "node tools/build-typescript.mjs",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "tsc --noEmit && tsc --project tsconfig.contracts.json",
     "check:typescript": "node tools/build-typescript.mjs --check",
     "pretest": "npm run check:typescript",
     "prestart": "npm run build:typescript"

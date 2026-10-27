@@ -1,8 +1,21 @@
 /* One animated scalar owns the dock. Page padding keeps the expanded height,
    so density changes never resize content or move the reading position. */
+.tabbar { transition:none; }
 .appbar[data-context="comparison"] .appbar-actions > [data-open-search] { display:grid; }
+:root body .appbar[data-context="comparison"] .appbar-actions { gap:8px; }
+:root body .appbar[data-context="comparison"] .appbar-actions > :not([data-open-search]):not([data-appbar-action]) { display:none; }
 @media(min-width:900px) {
  .tabbar .tab-destinations a { min-height:44px; }
+}
+/* Intermediate desktop widths reserve space for global actions before labels.
+   Keep the accessible text; never squeeze a profile name into a circular button. */
+@media(min-width:900px) and (max-width:1279px) {
+ .tabbar .tab-destinations a { width:44px; min-width:44px; padding:8px; gap:0; }
+ .tabbar .tab-destinations a > span { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+ .appbar .profile-entry.is-user { width:44px; min-width:44px; padding:0; justify-content:center; }
+}
+@media(max-width:1279px) {
+ .appbar .profile-entry.is-user [data-profile-label] { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
 }
 @media(max-width:899px) {
  :root body .appbar[data-context="comparison"] .appbar-title { right:calc(var(--gutter) + 126px); }

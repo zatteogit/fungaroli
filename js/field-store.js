@@ -1,4 +1,4 @@
-// Generated from src/field/field-store.ts. Run npm run build:typescript; do not edit.
+// Generated from src/js/field-store.ts. Run npm run build:typescript; do not edit.
 import { parseFieldPack, parseStoredFieldPack } from "./field-contracts.js";
 // Public outing packs only; private notebook data stays in its own scoped archive.
 export const PACK_PREFIX = "fronda-field-pack-";

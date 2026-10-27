@@ -1,9 +1,17 @@
 # TypeScript in Fronda
 
-La migrazione è incrementale. La prima parte comprende i moduli dispositivo,
-copie offline e avvisi: sorgenti in `src/field/`, tipi condivisi in
-`src/field/types.d.ts`. Il resto del frontend e il Worker restano JavaScript;
-non sono coperti dal controllo dei tipi in questa fase.
+La migrazione è incrementale. I sorgenti migrati stanno in `src/js/`, con JavaScript generato negli stessi
+percorsi pubblici `js/`. Sono coperti:
+
+- dispositivo, copie offline e avvisi;
+- acquisizione, cache per zona, aggregazione, scadenza, stato e aggiornamenti DOM del meteo;
+- meteo delle uscite e ordinamento con i pesi esistenti;
+- modello degli appunti, osservazioni condivise, foto e archivio locale del taccuino.
+
+I moduli UI dei composer e delle pagine del taccuino, `community.js`, il resto
+di `app.js` e il Worker rimangono JavaScript. La dichiarazione `human.d.ts`
+descrive solo la porta dei due helper astronomici usati dal meteo; la loro
+implementazione non è ancora migrata.
 
 ## Sorgenti e compilazione
 
@@ -17,7 +25,10 @@ npx wrangler deploy --dry-run
 
 Il compilatore TypeScript è fissato nel lockfile. `strict`,
 `noUncheckedIndexedAccess` e `noImplicitReturns` sono attivi: nessun `any`
-esplicito o esclusione del controllo nei moduli migrati.
+esplicito o esclusione del controllo nei moduli migrati. Le aspettative di errore
+in `tests/types/` sono prove negative dei contratti, compilate senza emettere JS:
+coordinate testuali, meteo senza data, GPS nel payload condiviso e consenso
+implicito devono essere rifiutati dal compilatore.
 
 I `.js` generati in `js/` sono versionati e contrassegnati da un commento:
 non modificarli a mano. Gli import conservano l’estensione `.js`, risolta dal
@@ -51,8 +62,11 @@ la versione della shell e la meta `app-version` insieme.
 
 ## Prossime parti
 
-Estendere prima ai moduli meteo e ai modelli del taccuino, con contratti per
-disponibilità, provenienza e consenso; poi separare progressivamente `app.js`.
+Proseguire con i composer e le pagine del taccuino, la sincronizzazione di
+`community.js` e la separazione progressiva di `app.js`. Le cache meteo v3, le
+migrazioni dalle v2, gli archivi fotografici per profilo e i protocolli delle
+osservazioni v1/v2 mantengono nomi e semantica. Le date restano quelle di
+acquisizione: rileggere una cache non la rende nuova e `null` non diventa zero.
 Il Worker avrà una configurazione TypeScript distinta con i tipi Cloudflare,
 senza mescolare le API DOM del browser con quelle del server.
 

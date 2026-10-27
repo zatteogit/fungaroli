@@ -1,4 +1,4 @@
-// Generated from src/field/field-mode.ts. Run npm run build:typescript; do not edit.
+// Generated from src/js/field-mode.ts. Run npm run build:typescript; do not edit.
 import { errorMessage } from "./field-contracts.js";
 import { saveFieldPack } from "./field-store.js";
 import { esc } from "./field-render.js";

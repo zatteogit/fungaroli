@@ -5,7 +5,7 @@
     "moduleResolution": "NodeNext",
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "types": [],
-    "rootDir": "src/field",
+    "rootDir": "src/js",
     "outDir": "js",
     "strict": true,
     "noUncheckedIndexedAccess": true,
@@ -18,5 +18,5 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true
   },
-  "include": ["src/field/**/*.ts"]
+  "include": ["src/js/**/*.ts"]
 }

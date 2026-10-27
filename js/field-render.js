@@ -1,4 +1,4 @@
-// Generated from src/field/field-render.ts. Run npm run build:typescript; do not edit.
+// Generated from src/js/field-render.ts. Run npm run build:typescript; do not edit.
 export const esc = (value) => String(value ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 export function routeSvg(lines = [], position = null) {
     const points = lines

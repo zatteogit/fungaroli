@@ -1,4 +1,4 @@
-// Generated from src/field/field-contracts.ts. Run npm run build:typescript; do not edit.
+// Generated from src/js/field-contracts.ts. Run npm run build:typescript; do not edit.
 // TypeScript cannot validate JSON, IndexedDB or the remaining JavaScript app.
 export function record(value) {
     if (!value || typeof value !== "object" || Array.isArray(value))

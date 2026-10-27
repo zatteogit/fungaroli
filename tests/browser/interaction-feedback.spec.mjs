@@ -31,7 +31,8 @@ for(const theme of ['light','dark'])test(`ritorno e galleria allineati, hover e 
 for(const theme of ['light','dark'])test(`risposta dei controlli nelle schede e nelle sezioni principali: ${theme}`,async({browser})=>{
  const context=await browser.newContext({viewport:{width:1280,height:900},serviceWorkers:'block',reducedMotion:'reduce'}),page=await preparePage(context,{theme});
  await page.goto('/#/specie/pinophilus');await expect(page.locator('.view:not([hidden]) .phero')).toBeVisible();
- for(const selector of ['.phero-img','.sp-strip button[aria-pressed="true"]','.sp-strip button[aria-pressed="false"]','.ts-controls .ts-form[aria-pressed="true"]','.ts-controls .ts-form[aria-pressed="false"]','.attention > summary','.trait-strip .ts-v .glossary-link']){
+ // The main photo highlights its zoom control; dedicated tests below cover that feedback.
+ for(const selector of ['.sp-strip button[aria-pressed="true"]','.sp-strip button[aria-pressed="false"]','.ts-controls .ts-form[aria-pressed="true"]','.ts-controls .ts-form[aria-pressed="false"]','.attention > summary','.trait-strip .ts-v .glossary-link']){
   const control=page.locator('.view:not([hidden])').locator(selector).first();await hoverChanges(page,control);await focusVisible(page,control);
  }
  const selected=page.locator('.view:not([hidden]) .ts-controls .ts-form[aria-pressed="true"]').first(),marker=await selected.evaluate(e=>getComputedStyle(e).boxShadow);await selected.hover();expect(await selected.evaluate(e=>getComputedStyle(e).boxShadow)).toBe(marker);await expect(selected).toHaveAttribute('aria-pressed','true');
@@ -45,4 +46,14 @@ for(const theme of ['light','dark'])test(`risposta dei controlli nelle schede e 
 
 test('galleria touch: controlli raggiungibili e nessun hover persistente',async({browser})=>{
  const context=await browser.newContext({viewport:{width:320,height:740},hasTouch:true,isMobile:true,serviceWorkers:'block',reducedMotion:'reduce'}),page=await preparePage(context);await page.goto('/#/specie/pinophilus');const next=page.locator('.view:not([hidden]) [data-gallery-next]');await expect(next).toBeVisible();const before=await next.evaluate(e=>getComputedStyle(e).backgroundColor);await next.tap();await expect(page.locator('.view:not([hidden]) [data-gallery-counter]')).toHaveText('2 / 5');await expect.poll(()=>next.evaluate(e=>getComputedStyle(e).backgroundColor)).toBe(before);await context.close();
+});
+
+for(const theme of ['light','dark'])test(`foto: hover sul comando zoom, senza cornice sulla copertina, focus tastiera visibile (${theme})`,async({browser})=>{
+ const context=await browser.newContext({viewport:{width:1280,height:1000},serviceWorkers:'block',reducedMotion:'reduce'}),page=await preparePage(context,{theme});
+ try{
+  await page.goto('/#/specie/nuda');const frame=page.locator('.view:not([hidden]) .phero-img'),zoom=page.locator('.view:not([hidden]) .phero .fab');await expect(frame).toBeVisible();
+  await page.mouse.move(0,0);const before=await zoom.evaluate(e=>getComputedStyle(e).backgroundColor);
+  await frame.hover({position:{x:100,y:100}});await expect.poll(()=>frame.evaluate(e=>getComputedStyle(e,'::after').opacity)).toBe('0');await expect.poll(()=>zoom.evaluate(e=>getComputedStyle(e).backgroundColor)).not.toBe(before);
+  await focusVisible(page,frame);
+ }finally{await context.close();}
 });
