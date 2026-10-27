@@ -230,3 +230,46 @@ test("crediti fotografici: copertina e schede conservano autore, fonte e collega
   assert.match(html, /href="https:\/\/example.org\/photo"/);
   assert.match(html, /creativecommons.org/);
 });
+
+test("lettore offline: risposte HTML reindirizzate ripulite e URL canonici risolti dalla stessa cache", async () => {
+  const { readFileSync } = await import("node:fs"),
+    vm = await import("node:vm"),
+    source = readFileSync(new URL("../sw.js", import.meta.url), "utf8");
+  for (const path of [
+    "/offline.html?outing=test",
+    "/offline?outing=test",
+    "/offline/?outing=test",
+  ]) {
+    const listeners = {},
+      cached = new Response("<h1>Reader</h1>", {
+        headers: { "content-type": "text/html" },
+      });
+    Object.defineProperty(cached, "redirected", { value: true });
+    let matched;
+    vm.runInNewContext(source, {
+      self: { addEventListener: (name, fn) => (listeners[name] = fn) },
+      URL,
+      Response,
+      location: { origin: "https://fronda.test" },
+      caches: {
+        open: async () => ({
+          match: async (req) => {
+            matched = String(req);
+            return cached;
+          },
+        }),
+      },
+    });
+    let result;
+    listeners.fetch({
+      request: new Request("https://fronda.test" + path, {
+        redirect: "manual",
+      }),
+      respondWith: (p) => (result = p),
+    });
+    const response = await result;
+    assert.equal(matched, "https://fronda.test/offline.html");
+    assert.equal(response.redirected, false);
+    assert.equal(await response.text(), "<h1>Reader</h1>");
+  }
+});
