@@ -1808,13 +1808,24 @@ body.weather-refreshing :is(#hero, #ranking) :is(.ring, .tile-wx, .fact[class*="
 .outing-search-tags>.outing-practical-tag{background:var(--surface-2);border-color:var(--border);color:var(--text-2)}
 .outing-context-help{font-size:13px;color:var(--text-2)}
 .outing-context-help>summary{min-height:44px;display:flex;align-items:center;gap:8px;width:fit-content;cursor:pointer;color:var(--link);text-decoration:underline dotted;text-underline-offset:3px}
-.outing-context-help>summary::after{content:'⌄';text-decoration:none}
-.outing-context-help[open]>summary::after{content:'⌃'}
+.outing-context-help>summary .info-glyph{width:16px;height:16px;flex:none}
 .outing-context-help p{max-width:65ch}
 .outing-days{padding:10px 24px;background:var(--surface);color:var(--text)}
 .outing-days .days{margin:0;padding:2px 0;scroll-padding-inline:0}
 /* A paper overlap may cover a photo; it must never cover filters or conditions. */
-#views .outing-hero + .pbody{margin-top:0}
+#views .outing-hero{border-bottom-left-radius:0;border-bottom-right-radius:0}
+#views .outing-hero + .pbody{margin-top:0;border-top-left-radius:0;border-top-right-radius:0;padding-top:14px}
 .outing-hero .hero-indicators{padding-bottom:64px}
+#detail .wx-age{font-size:12px;margin:0 0 10px}
+/* A brief about the evidence, then the plan: no second prominent card. */
+#detail .outing-documentation{margin:0 0 20px;padding:0 0 14px;background:none;border:0;border-bottom:1px solid var(--border);border-radius:0}
+#detail .outing-documentation h2{font:700 14px/1.4 var(--font-body);margin:0 0 8px}
+#detail .outing-documentation dl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:6px 20px}
+#detail .outing-documentation dl>div{min-width:0}
+#detail .outing-documentation dt{font-size:12px;line-height:1.5}
+#detail .outing-documentation dd{font-size:14px;line-height:1.5;margin:2px 0 0}
+#detail .outing-documentation p{font-size:13px;line-height:1.5;margin:8px 0 0}
+#detail .outing-documentation + .outing-section-title{border-top:0;padding-top:0}
+@media(max-width:480px){#detail .outing-documentation dl{grid-template-columns:minmax(0,1fr)}#detail .outing-documentation dl>div{display:flex;align-items:baseline;gap:8px}#detail .outing-documentation dt{flex:none;min-width:85px}#detail .outing-documentation dd{margin:0}}
 .outing-all-species{margin-block:1rem}
 @media(max-width:480px){.outing-search{padding:10px 16px}.outing-days{padding:10px 16px}}

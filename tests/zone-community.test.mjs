@@ -11,12 +11,12 @@ test('locked and unavailable summaries never expose aggregate records',()=>{
  }
 });
 test('zone recap separates outings and notes, excludes other zones and province totals',()=>{
- const html=render({summary:{access:'granted',reports:[report,{...report,zoneId:'elsewhere',speciesId:'hidden'}],observations:[{zoneId:'tancia',category:'botanica',taxonId:'corbezzolo',sightings:3,zeros:0}],provinceReports:[{province:'RI',speciesId:'wide',sightings:12}]},resolve:(category,id)=>({name:id,href:`#/${category}/${id}`})});
- assert.ok(html.includes('4 ritrovamenti dichiarati'));assert.ok(html.includes('3 presenze dichiarate'));assert.ok(html.includes('Uscite condivise'));assert.ok(html.includes('Osservazioni dal Taccuino'));assert.ok(!html.includes('hidden'));assert.ok(!html.includes('12 ritrovamenti'));assert.ok(html.includes('indipendentemente dal giorno e dai filtri'));
+ const html=render({summary:{access:'granted',reports:[report,{...report,zoneId:'elsewhere',speciesId:'altra-zona-esclusa'}],observations:[{zoneId:'tancia',category:'botanica',taxonId:'corbezzolo',sightings:3,zeros:0}],provinceReports:[{province:'RI',speciesId:'wide',sightings:12}]},resolve:(category,id)=>({name:id,href:`#/${category}/${id}`})});
+ assert.ok(html.includes('4 ritrovamenti dichiarati'));assert.ok(html.includes('3 presenze dichiarate'));assert.ok(html.includes('Uscite condivise'));assert.ok(html.includes('Osservazioni dal Taccuino'));assert.ok(!html.includes('altra-zona-esclusa'));assert.ok(!html.includes('12 ritrovamenti'));assert.ok(html.includes('indipendentemente dal giorno e dai filtri'));
 });
 test('no local aggregates: province fallback is explicitly separate and only for matching province',()=>{
- const html=render({summary:{access:'granted',provinceReports:[{province:'RI',speciesId:'edulis',sightings:8,zeros:1},{province:'RM',speciesId:'hidden'}]}});
- assert.ok(html.includes('Non ci sono ancora osservazioni sufficienti'));assert.ok(html.includes('In provincia di Rieti'));assert.ok(html.includes('non un dato di Monte Tancia'));assert.ok(html.includes('8 ritrovamenti'));assert.ok(!html.includes('hidden'));
+ const html=render({summary:{access:'granted',provinceReports:[{province:'RI',speciesId:'edulis',sightings:8,zeros:1},{province:'RM',speciesId:'altra-zona-esclusa'}]}});
+ assert.ok(html.includes('Non ci sono ancora osservazioni sufficienti'));assert.ok(html.includes('In provincia di Rieti'));assert.ok(html.includes('non un dato di Monte Tancia'));assert.ok(html.includes('8 ritrovamenti'));assert.ok(!html.includes('altra-zona-esclusa'));
 });
 test('empty and guest states preserve contribution and notebook access without inventing reports',()=>{
  const empty=render({summary:{access:'granted'}});assert.ok(empty.includes('Non significa che non ci siano'));assert.ok(empty.includes('Racconta la tua uscita'));

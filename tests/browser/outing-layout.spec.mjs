@@ -24,6 +24,8 @@ for(const [name,prefs,offline] of [
  try{
  for(const width of [320,390,768,1280])for(const theme of ['light','dark']){
   await page.setViewportSize({width,height:900});await page.evaluate(t=>document.documentElement.dataset.theme=t,theme);
+  // Decorative halo geometry follows ResizeObserver; measure after that frame settles.
+  await expect.poll(()=>page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
   const fit=await page.locator('#detail').evaluate(root=>{
    const rect=s=>root.querySelector(s)?.getBoundingClientRect(),search=rect('.outing-search'),days=rect('.outing-days'),indicators=rect('.hero-indicators'),body=rect('.pbody'),tools=rect('.field-tools');
    const captions=[...root.querySelectorAll('.hero-indicators .weather-caption,.hero-indicators .ring-caption')].map(e=>e.getBoundingClientRect().bottom);
