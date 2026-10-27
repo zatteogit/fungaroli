@@ -100,6 +100,21 @@ La frase è fuorviante in questo stato; la correzione deve descrivere soltanto
 l’assenza dall’elenco, senza trasformarla in assenza certa nel bosco né cambiare
 il modello o i criteri di selezione.
 
+**Corretto e pubblicato:** [PR 301](https://github.com/zatteogit/fungaroli/pull/301),
+versione `fungaroli-shell-v380`. Se la specie non compare nell’elenco, il testo
+lo dice esplicitamente; se è presente nei dettagli, resta l’invito a consultarli.
+Le [prove](../evidence/002-uscita/) usano una fixture meteo: Porcino rosso
+assente dalla lista e Porcino presente sono stati verificati separatamente. Il
+messaggio è stato misurato a 320, 390, 768 e 1280 px, con entrambi i temi, senza
+overflow orizzontale nel caso provato. Superati 622 test e dry-run Worker;
+versione e testo sono stati controllati sul sito pubblicato. Questo non verifica
+il primo caricamento online a cache vuota, né conclude la revisione della pagina.
+
+Durante la verifica, due test preesistenti dei segnali esterni fallivano anche
+sulla base di produzione perché il giorno predefinito usava l’orologio reale
+anziché quello passato al calcolo. La stessa PR allinea il giorno all’orologio
+fornito; la suite completa passa. Soglie, indice e criteri restano invariati.
+
 ## Ancora da fare prima di chiudere la pagina
 
 - Completare l’inventario delle sezioni espanse, dei filtri, degli stati del
