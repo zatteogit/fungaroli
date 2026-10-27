@@ -1144,7 +1144,7 @@ body:has(#season .ring) #season-index-legend { display:block; }
 .regional-heading h2 { margin-block:4px 8px; }
 .regional-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; }
 .regional-zone { display:flex; flex-direction:column; overflow:hidden; border:1px solid var(--border); border-radius:24px; background:var(--surface); color:var(--text); text-decoration:none; }
-.regional-zone > :is(img,.regional-no-photo) { width:100%; height:160px; object-fit:cover; background:var(--surface-2); }
+.regional-zone > :is(img,.regional-no-photo,.regional-route-preview) { flex:none; width:100%; height:160px; object-fit:cover; background:var(--surface-2); }
 .regional-no-photo { display:grid; place-items:center; color:var(--muted); }
 .regional-no-photo svg { width:48px; height:48px; }
 .regional-zone > span:last-child { display:grid; gap:8px; padding:20px; }
@@ -1263,7 +1263,7 @@ a.daily-thought-credit { color:var(--link); text-underline-offset:3px; }
 .cover-trace { position:absolute; right:2%; bottom:3%; width:46%; height:75%; color:var(--text); opacity:.085; z-index:1; pointer-events:none; }
 .cover-trace polyline, .route-thumbnail polyline { fill:none; stroke:currentColor; stroke-width:3; stroke-linecap:round; stroke-linejoin:round; }
 #hero .cover-editorial :is(.cover-top,.cover-body) { z-index:2; }
-.regional-route-preview { position:relative; display:block; height:180px; overflow:hidden; padding:14px; background:var(--surface-2); color:var(--link); }
+.regional-route-preview { position:relative; display:block; overflow:hidden; padding:14px; background:var(--surface-2); color:var(--link); }
 .regional-route-preview .route-thumbnail { position:absolute; inset:12px 14px 32px; width:calc(100% - 28px); height:calc(100% - 44px); }
 .route-preview-meta { position:relative; display:flex; align-items:center; justify-content:space-between; gap:8px; z-index:1; font-size:12px; }
 .route-preview-meta>* { padding:3px 7px; border-radius:6px; background:var(--surface); }
