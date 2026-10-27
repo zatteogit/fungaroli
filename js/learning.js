@@ -10,10 +10,15 @@ let ILLUSTRATIONS={},ASSET=f=>f;
 export const glossaryTerms = () => TERMS;
 export const glossaryTitle = id => TERMS.find(t => t.id === id)?.term || 'Glossario';
 const difficultyIds = {T:'difficolta-t', E:'difficolta-e', EE:'difficolta-ee', EEA:'difficolta-eea'};
+const difficultyNames = {T:'turistico', E:'escursionistico', EE:'escursionisti esperti', EEA:'escursionisti esperti con attrezzatura'};
+
+export function difficultyLabel(code) {
+  return TERMS.find(t=>t.id===difficultyIds[code])?.term || (difficultyNames[code] ? `${code} · ${difficultyNames[code]}` : code || 'Difficoltà n.d.');
+}
 
 export function difficultyLink(code, label) {
   const id = difficultyIds[code];
-  return id ? `<a class="glossary-link" data-term="${id}" href="#/glossario/${id}" aria-haspopup="dialog">${esc(label || code)}</a>` : esc(label || code);
+  return id ? `<a class="glossary-link" data-term="${id}" href="#/glossario/${id}" aria-haspopup="dialog">${esc(label || difficultyLabel(code))}</a>` : esc(label || difficultyLabel(code));
 }
 
 const sourceLinks = sources => (sources || []).filter(s => /^https?:\/\//.test(s?.url || '')).map(s => `<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)}</a>`).join(' · ');

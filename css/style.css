@@ -2718,9 +2718,10 @@ html.entity-open { overflow: hidden; }
 /* Scheda uscita: il giro a colpo d'occhio (dati in riga, profilo, boschi), visibile anche a sezione chiusa */
 .walk-glance { display: grid; gap: var(--sp-3); margin-top: var(--sp-1); }
 
-.walk-stats { list-style: none; margin: 0; padding: var(--sp-2) 0; display: flex; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; border-block: 1px solid var(--hair); }
+.walk-stats { list-style: none; margin: 0; padding: var(--sp-2) 0; display: flex; flex-wrap: wrap; row-gap:8px; overflow-x: auto; scrollbar-width: none; border-block: 1px solid var(--hair); }
 .walk-stats::-webkit-scrollbar { display: none; }
 .walk-stats li { display: grid; gap: 1px; padding: 0 var(--sp-3); flex: none; white-space: nowrap; }
+.walk-stats li:last-child { flex:0 1 auto; min-width:0; white-space:normal; }
 @media (max-width: 420px) { .walk-stats li { padding: 0 10px; } .ws-v { font-size: 14px; } .ws-k { font-size: 10px; } }
 .walk-stats li:first-child { padding-left: 0; }
 .walk-stats li + li { border-left: 1px solid var(--hair); }
