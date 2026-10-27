@@ -694,6 +694,11 @@ body .phero .phero-bar { top:var(--gallery-controls-top); min-height:var(--galle
 .inline-gallery-error { position:absolute; z-index:5; top:76px; right:16px; max-width:calc(100% - 32px); padding:8px 12px; border-radius:10px; background:var(--surface); color:var(--text); font-size:13px; }
 .inline-gallery-error[hidden] { display:none; }
 .sp-strip button[aria-pressed="true"] { outline:3px solid var(--focus); outline-offset:-3px; }
+/* Photo arrows stay available on touch and at either end of the thumbnail strip. */
+.rail-host > .sp-strip[data-inline-gallery] { margin-inline:0; padding-inline:52px; scroll-padding-inline:52px; mask-image:none; -webkit-mask-image:none; }
+.rail-host:has(> .sp-strip[data-inline-gallery]) > .rail-arrow:not([hidden]) { display:grid !important; width:44px; height:44px; margin-top:-22px; }
+.rail-host:has(> .sp-strip[data-inline-gallery]) > .rail-prev { left:0; }
+.rail-host:has(> .sp-strip[data-inline-gallery]) > .rail-next { right:0; }
 
 /* Ogni scheda si collega al Taccuino e alle segnalazioni effettivamente disponibili. */
 .fronda-connections { margin:24px 0; padding:20px; border:1px solid var(--border); border-radius:18px; background:var(--surface-2); color:var(--text); }
