@@ -3503,3 +3503,21 @@ details.context-note { margin: 12px 0 16px; padding: 0; border: 0; border-radius
 .onboarding .ob-more { margin:16px 0; font-size:14px; line-height:1.6; }
 .onboarding .ob-more > summary { min-height:44px; display:flex; align-items:center; color:var(--link); text-decoration:underline dotted; text-underline-offset:3px; cursor:pointer; }
 .onboarding .ob-more h3 { margin-top:20px; }
+
+/* Disponibilità pratica: non entra nel colore o nel valore delle condizioni. */
+.outing-documentation-brief { display:block; font-size:13px; line-height:1.5; }
+.cover-body > .outing-documentation-brief { border-top:1px solid currentColor; padding-top:10px; margin-top:12px; }
+.tile .outing-documentation-brief { margin-top:6px; }
+.outing-documentation { margin:20px 0; padding:16px; border:1px solid var(--line); border-radius:16px; background:var(--surface-2); }
+.outing-documentation h2 { font-size:18px; margin:0 0 12px; }
+.outing-documentation dl { display:flex; flex-wrap:wrap; gap:12px 28px; margin:0; }
+.outing-documentation dt { font-size:13px; color:var(--text-2); }
+.outing-documentation dd { margin:3px 0 0; }
+.outing-documentation p { margin:12px 0 0; }
+
+.zone-label-compact .zone-name { display:none; }
+.zone-label-compact { min-width:24px; min-height:24px; justify-content:center; padding:3px 6px; }
+.zone-label-compact:not(:has(.growth-value,.map-plant-badge)) { padding:0; min-width:16px; min-height:16px; border:2px solid var(--link); }
+
+.zone-label .zone-name { min-width:0; overflow:hidden; text-overflow:ellipsis; }
+.zone-label .growth-value,.zone-label .map-plant-badge { flex-shrink:0; }
