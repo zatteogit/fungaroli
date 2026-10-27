@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="utf-8">
-  <meta name="app-version" content="fungaroli-shell-v365">
+  <meta name="app-version" content="fungaroli-shell-v366">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
   <link rel="preload" href="data/crop-points.json" as="fetch" crossorigin>
   <meta name="theme-color" content="#f7f4ea" media="(prefers-color-scheme: light)">
@@ -30,6 +30,7 @@
   <link rel="stylesheet" href="css/map-experience.css">
   <link rel="stylesheet" href="css/pilot-test.css">
   <link rel="stylesheet" href="css/notebook.css">
+  <link rel="stylesheet" href="css/field.css">
   <link rel="stylesheet" href="css/atmosphere.css">
   <link rel="stylesheet" href="css/editorial-outings.css">
   <script>try{var t=localStorage.getItem('fungaroli:theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
@@ -248,6 +249,7 @@
         <div class="diary-header-actions"><button class="btn ghost" type="button" data-new-outing>Racconta un’uscita</button><button class="link-btn" type="button" data-new-note>Un appunto libero</button><a class="diary-demo-link" hidden href="#/diario/esempio">Diario di prova →</a></div>
       </header>
       <div class="notebook-cover"><div id="journal-list" class="notebook-pages" aria-live="off"></div></div>
+      <p class="field-notebook-link"><a href="offline.html">Uscite preparate per il bosco →</a></p>
       <details class="notebook-storage" id="notebook-storage-panel"><summary>Profilo e sincronizzazione</summary><div class="notebook-storage-body">
         <ul class="fp-switches notebook-prefs"><li><label class="fp-switch"><span>Usa le fasi dei miei appunti botanici<small>Privati. Aiutano a scegliere cosa osservare; non modificano l’indice.</small></span><input type="checkbox" class="switch-input" data-botanical-personalize></label></li></ul>
         <div class="muted small" id="journal-storage"></div>

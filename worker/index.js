@@ -1,3 +1,4 @@
+import {handleOutingAlerts,sendOutingAlerts} from './outing-alerts.js';
 import {handleFeedback,cleanupFeedback} from './feedback.js';
 // Worker di Fronda: i file statici sono serviti da Workers Assets (wrangler.jsonc);
 // qui arrivano solo le richieste che non corrispondono a un file, cioe' l'API del diario.
@@ -32,6 +33,10 @@ export default {
         const metrics=env.CMS_DB&&ctx?.waitUntil?m=>ctx.waitUntil(recordWeatherMetric(env.CMS_DB,m)):undefined;
         return await cachedForecast(url.searchParams,{zones,cache:weatherStorage(env),waitUntil:ctx?.waitUntil?.bind(ctx),cacheOnly:true,metrics});
       } catch(e) {return Response.json({error:e?.status?e.message:'Il servizio meteo non è disponibile. Riprova tra poco.',...(e?.code?{code:e.code}:{})},{status:e?.status||503,headers:{'cache-control':'no-store'}});}
+    }
+    if(url.pathname.startsWith('/api/alerts/v1/')){
+      let zones=[];if(request.method==='POST'){let content;try{content=await publishedResources(env,url.origin,['zones'],{initialize:false});}catch{}zones=content?.zones?.zones||(await(await env.ASSETS.fetch(new Request(new URL('/data/zones.json',url)))).json()).zones;}
+      return handleOutingAlerts(request,env,{zones});
     }
     if(url.pathname==='/redazione'||url.pathname==='/redazione/')return env.ASSETS.fetch(request);
     if(url.pathname.startsWith('/api/cms/v1/'))return handleCms(request,env);
@@ -69,5 +74,6 @@ async function weatherRefreshRun(env,scheduledTime){
   const zones=content?.zones?.zones||(await (await env.ASSETS.fetch(new Request(new URL('/data/zones.json',origin)))).json()).zones;
   const metrics=env.CMS_DB?m=>recordWeatherMetric(env.CMS_DB,m):undefined;
   const outcomes=await refreshSavedWeather(env,{zones,scheduledTime,metrics});
+  try{await sendOutingAlerts(env,{zones});}catch{console.warn('outing-alerts-incomplete');}
   if(outcomes.some(r=>!r.ok))console.warn(JSON.stringify({event:'weather-refresh-incomplete',outcomes}));
 }

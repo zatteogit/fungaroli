@@ -47,3 +47,6 @@
 @media(prefers-reduced-motion:reduce) {
  .tabbar .tab-destinations .tab-pill { transition:none; }
 }
+
+/* Keep search, profile, feedback and theme reachable on the narrowest phones. */
+@media(max-width:359px){:root body .appbar-actions > a[href="#/info"] { display:none; }}
