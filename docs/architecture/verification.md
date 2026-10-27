@@ -16,9 +16,10 @@ le modifiche presenti negli altri checkout e i file sincronizzati del progetto n
 | Dry-run local, test, staging, demo | Superati; risorse separate, nessuna pubblicazione |
 | Dry-run configurazione produzione | Superato; configurazione produttiva non modificata |
 | Demo nel browser Chrome | Caricamento, dati sintetici e selezione Academy verificati; temi chiaro/scuro e nessun overflow a 320/390 px |
-| Suite browser dell’app completa | **Non completata**: il runtime locale termina con `spawn EBADF` prima dei test |
+| Suite browser locale dell’app | Avvio impedito da `spawn EBADF`; verifica mirata completata su GitHub |
 | CI principale della PR | [Superata sul codice iniziale](https://github.com/zatteogit/fungaroli/actions/runs/40575478305) |
 | Taccuino su GitHub, primo passaggio | [11 scenari superati, 2 aspettative dei test da riallineare](https://github.com/zatteogit/fungaroli/actions/runs/40575502684) |
+| Taccuino su GitHub, passaggio finale | [Tutti i 13 scenari superati](https://github.com/zatteogit/fungaroli/actions/runs/40585047003), con ambiente isolato, foto private e sincronizzazione |
 | `git diff --check` | Superato |
 
 ## Limiti osservati
@@ -48,11 +49,20 @@ home, mentre il CSS corrente lo mostra nel Taccuino, e presenza di una copertina
 controllo dedicato a ricerca/annotazione. Le schermate mostravano invece correttamente lo stato
 senza meteo. I test ora usano i comandi del Taccuino e verificano i controlli anche senza previsione.
 Non sono stati modificati visibilità del profilo, comportamento del meteo o UI per farli passare.
-Il secondo passaggio remoto viene registrato con il relativo esito prima di considerare completato
-il collaudo mirato.
+Il secondo passaggio remoto sul commit `dc10f84c` ha superato tutti i 13 scenari. Anche i test
+unitari, i controlli del design e i quattro dry-run dello stesso passaggio sono superati.
+Il collaudo mirato è quindi completato su GitHub; il limite del runtime locale resta documentato.
+Non è stata eseguita l’intera suite browser del repository, facoltativa secondo AGENTS.
 
 ## Prima di integrare
 
-Completare le verifiche browser pertinenti in un ambiente dove workerd si avvia correttamente,
-controllare la CI del commit candidato e ottenere la decisione di integrazione. Non pubblicare
+Controllare la CI del commit candidato e ottenere la decisione di integrazione. Se cambia altro
+codice, ripetere le verifiche pertinenti; i 13 scenari mirati risultano già completati. Non pubblicare
 gli ambienti online da questi file locali e non considerare attive le funzioni previste dei profili.
+
+## Rami predisposti
+
+`codex/fronda-foundation`, `codex/fronda-consumer`, `codex/fronda-academy`,
+`codex/fronda-territory` e `codex/fronda-partners` sono creati localmente e su GitHub.
+I rami delle offerte sono allineati alla stessa fondazione, incluse le correzioni dei test.
+La proposta di integrazione rimane in [PR #298 in bozza](https://github.com/zatteogit/fungaroli/pull/298).

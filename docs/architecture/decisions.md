@@ -45,3 +45,12 @@ Scelta: profili e roadmap senza prezzi, checkout, paywall o cambi ai diritti deg
 Sicurezza essenziale sempre parte della composizione. MycoTrace rimane distinto.
 Conseguenza: si può lavorare sulle offerte senza trasformare un’ipotesi economica in comportamento
 pubblicato o presumere disponibilità di partner, diritti commerciali e contenuti revisionati.
+
+## Riferimenti tecnici consultati
+
+- [TypeScript: librerie del compilatore](https://www.typescriptlang.org/tsconfig/lib.html).
+- [Wrangler: comandi](https://developers.cloudflare.com/workers/wrangler/commands/).
+- [Cloudflare Workers: buone pratiche](https://developers.cloudflare.com/workers/best-practices/workers-best-practices/).
+
+Configurazione verificata contro lo schema della versione Wrangler fissata nel lockfile.
+Le API dello scanner sono quelle della versione TypeScript fissata nel repository.
