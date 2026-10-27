@@ -5,10 +5,12 @@
 // allineata a lei, senza eventi e nascosta ai lettori di schermo. In home (copertina .cover, card) niente alone.
 // Compare solo con la foto (dissolvenza in css/fronda.css), la segue quando cambia (cambio di giorno: stessa
 // dissolvenza della copertina) ed è spenta con «riduci trasparenza».
+import {effectsQuality,EFFECTS_CHANGE} from './adaptive-effects.js';
 const SMALL = (src) => src.replace(/-hd(\.(?:webp|jpe?g|png|avif))(?=$|[?#])/i, '$1');
 const abs = (src) => new URL(src, location.href).href;
-const off = () => matchMedia('(prefers-reduced-transparency: reduce)').matches;
-const still = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
+const transparency = matchMedia('(prefers-reduced-transparency: reduce)');
+const off = () => transparency.matches || effectsQuality()==='minimal';
+const still = () => matchMedia('(prefers-reduced-motion: reduce)').matches || effectsQuality()!=='full';
 let sizes;
 
 // la copia segue posizione e misura della testata (barra degli indirizzi, rotazione, larghezza della colonna)
@@ -41,7 +43,7 @@ export function ambiFollow(phero, src) {
   pic.alt = ''; pic.decoding = 'async'; pic.draggable = false;
   if (cover) pic.style.objectPosition = getComputedStyle(cover).objectPosition;
   const show = (expected) => {
-    if (a.dataset.want !== expected || !a.isConnected) return;
+    if (a.dataset.want !== expected || !a.isConnected || off()) return;
     const old = [...a.children];
     a.append(pic);
     if (!old.length || still()) { old.forEach((n) => n.remove()); a.classList.add('on'); return; }
@@ -57,6 +59,23 @@ export function ambiFollow(phero, src) {
   });
 }
 export function initAmbilight() {
+  const sync=()=>{
+    if(off()){
+      for(const a of document.querySelectorAll('#views .ambi')){
+        const hero=a.nextElementSibling;
+        if(hero?.matches('.phero'))sizes?.unobserve(hero);
+        a.remove();
+      }
+      return;
+    }
+    for(const hero of document.querySelectorAll('.view:not([hidden]) .phero')){
+      const img=hero.querySelector('.phero-img > img:not(.phero-xfade)');
+      if(img?.complete&&img.naturalWidth)ambiFollow(hero,img.currentSrc||img.src);
+    }
+  };
+  document.addEventListener(EFFECTS_CHANGE,sync);
+  transparency.addEventListener('change',sync);
+  new MutationObserver(()=>requestAnimationFrame(sync)).observe(document.body,{attributes:true,attributeFilter:['data-page']});
   // la copertina pronta (anche dopo un cambio di sorgente) porta con sé l'alone
   document.addEventListener('load', (e) => {
     const img = e.target;

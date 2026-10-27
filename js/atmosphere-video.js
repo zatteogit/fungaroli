@@ -1,7 +1,8 @@
+import {effectsQuality,EFFECTS_CHANGE} from './adaptive-effects.js';
 // Un solo video decorativo attivo: still prima, video soltanto con buffer e frame pronto.
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');
 const mounted=new Map();let active,preferred,manualPaused=false,scheduled=false;
-const allowed=()=>!reduced.matches&&!navigator.connection?.saveData;
+const allowed=()=>!reduced.matches&&!navigator.connection?.saveData&&effectsQuality()==='full';
 const visible=c=>c.ratio>0&&c.root.isConnected&&!c.root.closest('[hidden],[inert]');
 function schedule(){if(!scheduled){scheduled=true;requestAnimationFrame(sync);}}
 function sync(){
@@ -61,6 +62,7 @@ function mount(root,video){
   }
   const toggle=()=>{manualPaused=!video.paused;preferred=manualPaused?null:c;schedule();};
   const hover=event=>{
+    if(!allowed()||!visible(c)||event.pointerType==='touch')return;
     const rect=root.getBoundingClientRect();
     root.classList.toggle('is-hovered',event.pointerType!=='touch'&&event.clientX>=rect.left&&event.clientX<rect.right&&event.clientY>=rect.top&&event.clientY<rect.bottom);
   };
@@ -77,5 +79,6 @@ function mount(root,video){
   return c;
 }
 reduced.addEventListener('change',schedule);navigator.connection?.addEventListener('change',schedule);document.addEventListener('visibilitychange',schedule);
+document.addEventListener(EFFECTS_CHANGE,schedule);
 new MutationObserver(schedule).observe(document.body,{childList:true,subtree:true,attributes:true,attributeFilter:['hidden','inert','open']});
 schedule();
