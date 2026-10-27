@@ -207,6 +207,7 @@ export function validateContent(id, data, previous) {
     for(const z of value.zones) if(!z.name||!Number.isFinite(z.lat)||Math.abs(z.lat)>90||!Number.isFinite(z.lon)||Math.abs(z.lon)>180||!Array.isArray(z.bands)||!Array.isArray(z.parking)||!(z.radius_m>0)) err(`Dati geografici non validi per ${z.id}.`);
   }
   if(id==='zones')for(const z of value.zones){
+    if(z.cardSubtitle!==undefined&&(typeof z.cardSubtitle!=='string'||!z.cardSubtitle.trim()||z.cardSubtitle.length>110))err(`Sottotitolo della scheda non valido per ${z.id} (massimo 110 caratteri).`);
     if(z.province!==undefined&&(!Array.isArray(z.province)||!z.province.length||z.province.some(p=>!['RI','RM','VT','LT','FR'].includes(p))))err(`Province non valide per ${z.id}.`);
     if(z.collectionStatus!==undefined&&!['unknown','restricted','observation_only'].includes(z.collectionStatus))err(`Stato di raccolta non valido per ${z.id}.`);
     if(z.accessStatus!==undefined&&!['mapped_start','unverified','suspended'].includes(z.accessStatus))err(`Stato di accesso non valido per ${z.id}.`);

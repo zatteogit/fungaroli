@@ -6,6 +6,12 @@ Il CMS essenziale gestisce tutte le sezioni dei contenuti tramite moduli per le 
 
 La sezione **Frasi del giorno** gestisce citazioni, aforismi, battute e barzellette con tag per tema, tono, contesto, momento e stagione. Il documento `daily-thoughts` usa il database e lo snapshot esistenti. Regole editoriali, fonti e selezione in [frasi-del-giorno.md](frasi-del-giorno.md).
 
+## Sottotitoli dei luoghi
+
+Il campo facoltativo `zones[].cardSubtitle`, etichettato «Sottotitolo della scheda», descrive in breve il paesaggio nelle card regionali (massimo 110 caratteri). I 36 testi del catalogo derivano dalle descrizioni già documentate: niente promesse di ritrovamenti o nuove garanzie sul percorso. Se manca, le card usano il sottotitolo geografico esistente; l’eventuale indice non disponibile resta segnalato separatamente.
+
+Lo snapshot conserva il campo insieme al documento `zones`. Il renderer, la validazione e le etichette della redazione lo supportano; l’aggiornamento del seed segue la consueta protezione dei contenuti modificati da un autore.
+
 ## Usare la redazione
 
 Dalla home, il pulsante in alto mostra **Accedi** oppure il nome del profilo, per esempio **Matteo**. Il profilo mostra il ruolo verificato dal server; **Apri la redazione** compare per editor e amministratori. È possibile aprire direttamente [la redazione](https://fungaroli.zatteo.workers.dev/redazione).
