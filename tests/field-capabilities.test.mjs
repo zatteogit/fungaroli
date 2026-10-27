@@ -207,3 +207,26 @@ test("push ricevuti: anche dati malformati producono una notifica, senza aprire 
   assert.equal(shown.length, 5);
   assert.equal(shown.at(-1).options.data.url, origin + "/#/zona/tancia/1");
 });
+
+test("crediti fotografici: copertina e schede conservano autore, fonte e collegamento alla licenza", () => {
+  const html = packHtml({
+    zone: { title: "Bosco" },
+    date: "2026-10-27",
+    preparedAt: position.capturedAt,
+    cover: "assets/cover.webp",
+    coverCredit: "Autore · CC BY",
+    coverCreditUrl: "https://example.org/cover",
+    species: [
+      {
+        name: "Specie",
+        credit: "Fotografo · CC BY",
+        creditUrl: "https://example.org/photo",
+        licenseUrl: "https://creativecommons.org/licenses/by/4.0/",
+      },
+    ],
+  });
+  assert.match(html, /Autore · CC BY/);
+  assert.match(html, /href="https:\/\/example.org\/cover"/);
+  assert.match(html, /href="https:\/\/example.org\/photo"/);
+  assert.match(html, /creativecommons.org/);
+});
