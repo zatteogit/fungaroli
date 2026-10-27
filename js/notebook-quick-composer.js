@@ -28,7 +28,13 @@ export function createQuickNotebookComposer({dialog,zones,catalogs,onSave,onDone
   dialog.querySelector('[data-remove-photo]')?.addEventListener('click',()=>{if(busy)return;capture();value.photo=null;render();});
   dialog.querySelectorAll('[data-quick-type]').forEach(b=>b.onclick=()=>{if(busy||value.category===b.dataset.quickType)return;capture();value.category=b.dataset.quickType;value.share=false;value.reference=null;value.observation=null;value.record=undefined;render();});
   const bounds=()=>{const r=dialog.getBoundingClientRect();return {top:dialog.querySelector('.report-header').getBoundingClientRect().bottom+8,bottom:r.bottom-16};};
-  const species=dialog.querySelector('[data-quick-species]');if(species)controls.push(mountSearchSelect({input:species,list:dialog.querySelector('#quick-species-options'),options:(catalogs()[value.category]||[]).map(t=>({value:t.href,label:t.name,detail:t.latin})),selectedId:value.reference?.href,bounds,onChange:href=>{if((href||null)!==(value.reference?.href||null)){value.observation=null;value.share=false;}const t=(catalogs()[value.category]||[]).find(t=>t.href===href);value.reference=t?{href,title:t.name}:null;}}));
+  const species=dialog.querySelector('[data-quick-species]');
+  if(species){
+   const options=(catalogs()[value.category]||[]).map(t=>({value:t.href,label:t.name,detail:t.latin}));
+   // Le note storiche possono usare una rotta diversa da quella corrente del catalogo.
+   if(value.reference&&!options.some(t=>t.value===value.reference.href))options.unshift({value:value.reference.href,label:value.reference.title,detail:'Collegamento salvato'});
+   controls.push(mountSearchSelect({input:species,list:dialog.querySelector('#quick-species-options'),options,selectedId:value.reference?.href,bounds,onChange:href=>{if((href||null)!==(value.reference?.href||null)){value.observation=null;value.share=false;}const t=options.find(t=>t.value===href);value.reference=t?{href,title:t.label}:null;}}));
+  }
   if(species){species.setCustomValidity('');species.addEventListener('input',()=>{if(!species.value.trim())species.setCustomValidity('');});}
   const zone=dialog.querySelector('[data-quick-zone]'),zoneControl=mountSearchSelect({input:zone,list:dialog.querySelector('#quick-zone-options'),options:zones.map(z=>({value:z.id,label:z.title||z.name,detail:z.subtitle})),selectedId:value.zoneId,bounds,onChange:id=>value.zoneId=id||null});controls.push(zoneControl);zone.setCustomValidity('');zone.addEventListener('input',()=>{if(!zone.value.trim())zone.setCustomValidity('');});dialog.querySelector('[data-quick-clear-zone]').onclick=()=>zoneControl.clear();
   dialog.querySelector('[data-quick-details]')?.addEventListener('click',()=>{if(busy)return;capture();cleanup();onDetails({...value},original);});
