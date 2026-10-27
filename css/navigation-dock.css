@@ -7,8 +7,13 @@
 @media(min-width:900px) {
  .tabbar .tab-destinations { flex:none; }
  .tabbar .tab-destinations a { width:auto; min-height:44px; padding-inline:14px; white-space:nowrap; }
- /* Use the free interval between brand and utilities, not the viewport centre. */
- .tabbar[data-fit-ready] { left:var(--nav-left); right:var(--nav-right); width:auto; transform:none; justify-content:center; }
+ /* Centre on the viewport; clamp only when brand or utilities need clearance.
+    The action spring owns total width, so the clamp also follows the morph. */
+ .tabbar[data-fit-ready] {
+  --nav-total-width:calc(var(--nav-destinations-width) + (var(--nav-action-size) + 8px) * var(--nav-action));
+  left:clamp(var(--nav-left),calc((100% - var(--nav-total-width)) / 2),calc(100% - var(--nav-right) - var(--nav-total-width)));
+  right:auto; width:var(--nav-total-width); transform:none; justify-content:center;
+ }
  .tabbar[data-labels="compact"] .tab-destinations a { width:44px; min-width:44px; padding:8px; gap:0; }
  .tabbar[data-labels="compact"] .tab-destinations a > span { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
 }

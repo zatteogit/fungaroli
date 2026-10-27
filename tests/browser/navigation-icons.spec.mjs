@@ -27,11 +27,11 @@ test('testata: ricerca, annotazione e profilo restano separati anche cambiando b
  }finally{await context.close();}
 });
 
-test('desktop: i nomi restano visibili quando entrano, anche sotto 1100px',async({browser})=>{
+test('desktop: nomi visibili, gruppo centrato e nessuna collisione',async({browser})=>{
  const context=await browser.newContext({viewport:{width:900,height:900},serviceWorkers:'block',reducedMotion:'reduce'}),page=await preparePage(context);
  try{
   await page.goto('/');await expect(page.locator('#hero .cover-link')).toBeVisible();await page.evaluate(()=>document.fonts.ready);
-  for(const width of [900,950,1024,1099,1280]){
+  for(const width of [900,950,1024,1099,1280,1720]){
    await page.setViewportSize({width,height:900});
    for(const [route,ready] of [['/','#hero .cover-link'],['/#/diario','.diary-header-actions'],['/#/specie/nuda','.view:not([hidden]) .phero-title'],['/#/confronta/edulis/pinophilus','.cmp-pair-nav']]){
     await page.goto(route);await expect(page.locator(ready)).toBeVisible();
@@ -40,9 +40,16 @@ test('desktop: i nomi restano visibili quando entrano, anche sotto 1100px',async
     const layout=await page.evaluate(()=>{
      const controls=[...document.querySelectorAll('.brand,.brand-place,.appbar-actions button,.appbar-actions a,.tabbar a,.tabbar button')].filter(e=>{const r=e.getBoundingClientRect();return r.width>0&&r.height>0&&getComputedStyle(e).visibility!=='hidden'&&!e.closest('[inert],[aria-hidden="true"]');});
      const overlaps=[];for(let i=0;i<controls.length;i++)for(let j=i+1;j<controls.length;j++){const a=controls[i].getBoundingClientRect(),b=controls[j].getBoundingClientRect();if(Math.min(a.right,b.right)-Math.max(a.left,b.left)>1&&Math.min(a.bottom,b.bottom)-Math.max(a.top,b.top)>1)overlaps.push([controls[i].getAttribute('aria-label'),controls[j].getAttribute('aria-label')]);}
-     return {widths:[...document.querySelectorAll('.tab-destinations a>span')].map(e=>e.getBoundingClientRect().width),overlaps};
+     const nav=document.querySelector('.tabbar').getBoundingClientRect(),viewport=document.documentElement.clientWidth;
+     const brandRight=Math.max(...[...document.querySelectorAll('.brand,.brand-place')].map(e=>e.getBoundingClientRect().right));
+     const actionsLeft=document.querySelector('.appbar-actions').getBoundingClientRect().left;
+     const ideal=(viewport-nav.width)/2;
+     // Exact viewport centre whenever it fits; otherwise the nearest clear edge.
+     const expected=Math.max(brandRight+16,Math.min(ideal,actionsLeft-16-nav.width));
+     return {widths:[...document.querySelectorAll('.tab-destinations a>span')].map(e=>e.getBoundingClientRect().width),overlaps,centeringError:Math.abs(nav.left-expected)};
     });
     expect(layout.widths.every(w=>w>20),`${width}px ${route}: etichette leggibili`).toBe(true);expect(layout.overlaps,`${width}px ${route}`).toEqual([]);
+    expect(layout.centeringError,`${width}px ${route}: centro della finestra o minimo spostamento`).toBeLessThan(1);
    }
   }
   // A large text preference can really exhaust the interval; resizing restores
