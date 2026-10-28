@@ -34,8 +34,11 @@ test('il browser legge lo stream a blocchi e conserva le righe acquisite se lo s
   const {fetchForecast}=await import('../js/weather-request.js');
   const q=forecastParams(zones.slice(0,2),'outing'),coordinates=['latitude','longitude','elevation'].map(k=>forecastParams([zones[0]],'outing').get(k)).join('|');
   let reads=0;const updates=[];
-  globalThis.fetch=async url=>{reads++;assert.match(url,/snapshot\?profile=outing/);let first=true;return new Response(new ReadableStream({pull(controller){if(first){first=false;controller.enqueue(new TextEncoder().encode(JSON.stringify({coordinates,record:{t:Date.now(),raw:[{hourly:{time:['example']}}]}})+'\n'));}else controller.error(new Error('rete interrotta'));}}),{headers:{'content-type':'application/x-ndjson'}});};
+  const zoneCalls=[];
+  globalThis.fetch=async url=>{if(!url.includes('snapshot')){zoneCalls.push(new URL(url,'https://t.local').searchParams.get('latitude'));return Response.json({error:'non disponibile'},{status:503});}reads++;let first=true;return new Response(new ReadableStream({pull(controller){if(first){first=false;controller.enqueue(new TextEncoder().encode(JSON.stringify({coordinates,record:{t:Date.now(),raw:[{hourly:{time:['example']}}]}})+'\n'));}else controller.error(new Error('rete interrotta'));}}),{headers:{'content-type':'application/x-ndjson'}});};
   const result=await fetchForecast(q,{onChunk:row=>updates.push(row)});assert.equal(reads,1);assert.equal(updates.length,1);assert.equal(result.partial,true);assert.equal(result.raw[1],null);
+  // La zona mancante si chiede da sola (due tentativi sul 5xx); la riga già ricevuta resta.
+  assert.deepEqual(zoneCalls,Array(2).fill(String(zones[1].lat)));assert.ok(result.raw[0]);
  }finally{for(const [key,value] of Object.entries(previous)){if(value===undefined)delete globalThis[key];else globalThis[key]=value;}}
 });
 test('all 36 zones get 8 outing and 1 growth refresh per four hours, with bounded invocations',()=>{
