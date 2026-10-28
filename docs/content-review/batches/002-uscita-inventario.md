@@ -208,6 +208,35 @@ Il controllo obbligatorio GitHub `test` è passato e la PR è stata fusa in
 verificata online tramite versione di pagina e service worker e testo del
 riepilogo. Il primo avvio online e le condizioni reali non sono stati provati.
 
+### Sesto passaggio: riepilogo condiviso del luogo
+
+Con codice di `main` al commit `4c9021cb`, una sessione browser isolata e
+risposte sintetiche per meteo, profilo e community, sono stati osservati tre
+stati del Tancia: dati locali disponibili, dati locali insufficienti con
+riepilogo provinciale, accesso non ancora sbloccato. Le richieste community
+diverse da GET erano bloccate: nessuna osservazione o modifica è stata inviata.
+Le [istantanee](../evidence/002-uscita/) sono dati di prova, non contributi reali.
+
+Nel primo stato i riepiloghi per uscite e appunti sono separati e i numeri sono
+qualificati come dichiarati; il record fittizio di un’altra zona non compare.
+Nel secondo, l’assenza di dati sufficienti per la zona è esplicita e il dato
+provinciale è distinto; il record di un’altra provincia non compare. Nel terzo
+non viene mostrato il conteggio fittizio presente nella risposta bloccata.
+«Dati e privacy» a una apertura spiega ambito, soglie e limiti; l’indicazione
+che le osservazioni non confermano la presenza attuale resta visibile subito.
+Questa prova riguarda il rendering della fixture, non verifica il controllo
+d’accesso del server o l’effettiva anonimizzazione di dati reali.
+
+| Persona simulata | Valutazione preliminare del blocco |
+| --- | --- |
+| Neofita | Utile l’avvertenza subito; da verificare la comprensione delle differenze tra dati locali e provinciali |
+| Appassionato | Riepilogo e specie accessibili senza aperture; le ricerche a vuoto accompagnano le presenze |
+| Esperto | Ambito, soglie e limiti a una apertura; servono ulteriori prove sull’interpretazione delle evidenze |
+| Escursionista | Blocco secondario rispetto a percorso e meteo, non un’indicazione di sicurezza |
+| Naturalista | Le osservazioni botaniche sono separate dalle uscite fungine; da provare gli altri gruppi |
+
+Non è stato valutato l’intero Taccuino né testato il percorso con persone reali.
+
 ## Ancora da fare prima di chiudere la pagina
 
 - Completare l’inventario delle sezioni espanse, dei filtri, degli stati del
