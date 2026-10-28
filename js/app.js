@@ -589,10 +589,15 @@ document.addEventListener('click', e => {
   openModal(recognitionDialog);document.documentElement.classList.add('recognition-open');enhanceGlossary(box);
 });
 
+// Il giorno della zona è uno scarto da oggi oppure una data (link delle notifiche, che restano valide nei giorni dopo).
+function routeDayOffset(value) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(value || '')) return +value || 0;
+  return Math.round((Date.parse(value + 'T12:00:00Z') - Date.parse(todayISO() + 'T12:00:00Z')) / 864e5) || 0;
+}
 function parseRoute(hash = location.hash) {
   const parts = hash.replace(/^#\/?/, '').split('/').filter(Boolean).map((x) => { try { return decodeURIComponent(x); } catch { return x; } });
   const [a, b, c] = parts;
-  if (a === 'zona' && (weatherZones||zones).some((z) => z.id === b)) return { view: 'zona', zoneId: b, offset: Math.max(0, Math.min(AHEAD_DAYS, +c || 0)), trailId: parts[3] === 'sentiero' && (trails[b]?.trails || []).some(t => String(t.id) === parts[4]) ? parts[4] : null };
+  if (a === 'zona' && (weatherZones||zones).some((z) => z.id === b)) return { view: 'zona', zoneId: b, offset: Math.max(0, Math.min(AHEAD_DAYS, routeDayOffset(c))), trailId: parts[3] === 'sentiero' && (trails[b]?.trails || []).some(t => String(t.id) === parts[4]) ? parts[4] : null };
   if (a === 'giri') return {view:'giri',outingId:b||''};
   if (a === 'mappa') return { view: 'mappa', zoneId: b };
   if (a === 'specie' && b) return { view: 'specie-dettaglio', speciesId: b };
@@ -1302,7 +1307,7 @@ function renderOutdoorDetail() {
   delete box.dataset.zone;detailCtx=null;lastDetailHtml='';box.dataset.glossaryContext=state.target==='piante'?'Piante':state.target==='funghi'?'Funghi':'Sentieri';
   const discoveries=walk?outdoorDiscoveries(z,d,walk):[];
   const photo=outdoorCover({z,d,walk,items:discoveries});
-  const html=`<header class="phero outing-hero${photo?'':' no-local-photo'}"><div class="outing-visual">${photo?`<div class="phero-img outdoor-cover-img"><img data-src="${esc(photo.hd)}" alt="${esc(photo.alt||'')}"></div>`:''}<div class="phero-body"><span class="pill glass">${esc(fmtDate(d.date,{weekday:'long',day:'numeric',month:'long'}))}</span><h1 class="phero-title">${esc(z.title||z.name)}</h1></div></div>${outingSearchContext(d)}${outdoorDayTabs(z)}${heroIndicators(z,d)}</header><div class="pbody">${photo?.credit?`<p class="small muted zone-photo-credit">${creditLine(photo.credit)}</p>`:''}${zoneCollectionNotice(z,{compact:true})}${practicalDetails(z,walk)}${!habitat[z.id]?'<p class="notice zone-data-pending"><b>Indice funghi non ancora disponibile</b><br>Questa zona è da esplorare: il campionamento del bosco è in attesa. Non è un’indicazione di assenza di funghi.</p>':''}${!w?.available?'<p class="notice">Meteo da verificare prima di partire.</p>':''}<h2 class="outing-section-title">Il piano in breve</h2>${walk?renderWalkFocus(z,{...d,best:null},walk):'<p class="notice">Nessun sentiero corrisponde ai filtri attivi.</p>'}${state.target==='piante'?discoveriesHtml(z,d,walk,discoveries):''}<p>${esc(travelText(zoneTrip(z,walk)))}</p>${z.protection?`<p class="notice">${esc(z.protection)}</p>`:''}<p>${linkTrees(z.description)}</p>${zoneSourceLinks(z)}${state.target==='passeggiata'?discoverySection(z,d,walk):''}${fieldTools(z,d.date)}${outingCommunity(z)}<h2 class="outing-section-title">Approfondimenti</h2>${section('accesso','Accessi e soste',renderAccess(z,{access:null}))}${section('sentieri','Sentieri della zona',renderTrails(z,null),true)}${zoneInfoSection(z)}<p><a href="#/mappa/${z.id}">Vedi sulla mappa</a></p></div>`;
+  const html=`<header class="phero outing-hero${photo?'':' no-local-photo'}"><div class="outing-visual">${photo?`<div class="phero-img outdoor-cover-img"><img data-src="${esc(photo.hd)}" alt="${esc(photo.alt||'')}"></div>`:''}<div class="phero-body"><span class="pill glass">${esc(fmtDate(d.date,{weekday:'long',day:'numeric',month:'long'}))}</span><h1 class="phero-title">${esc(z.title||z.name)}</h1></div></div>${outingSearchContext(d)}${outdoorDayTabs(z)}${heroIndicators(z,d)}</header><div class="pbody">${photo?.credit?`<p class="small muted zone-photo-credit">${creditLine(photo.credit)}</p>`:''}${zoneCollectionNotice(z,{compact:true})}${practicalDetails(z,walk)}${!habitat[z.id]?'<p class="notice zone-data-pending"><b>Indice funghi non ancora disponibile</b><br>Questa zona è da esplorare: il campionamento del bosco è in attesa. Non è un’indicazione di assenza di funghi.</p>':''}${!w?.available?'<p class="notice">Meteo da verificare prima di partire.</p>':''}<h2 class="outing-section-title">Il piano in breve</h2>${renderWalkFocus(z,{...d,best:null},walk)}${state.target==='piante'?discoveriesHtml(z,d,walk,discoveries):''}<p>${esc(travelText(zoneTrip(z,walk)))}</p>${z.protection?`<p class="notice">${esc(z.protection)}</p>`:''}<p>${linkTrees(z.description)}</p>${zoneSourceLinks(z)}${state.target==='passeggiata'?discoverySection(z,d,walk):''}${fieldTools(z,d.date)}${outingCommunity(z)}<h2 class="outing-section-title">Approfondimenti</h2>${section('accesso','Accessi e soste',renderAccess(z,{access:null}))}${section('sentieri','Sentieri della zona',renderTrails(z,null),true)}${zoneInfoSection(z)}<p><a href="#/mappa/${z.id}">Vedi sulla mappa</a></p></div>`;
   if(weatherPainting)updateWeatherHTML(box,html);else box.innerHTML=html;
   bindDetailSections(box);
 }
@@ -1700,7 +1705,7 @@ function outingSearchContext(d=null) {
   const interests=INTENTS.filter(i=>hasInterest(i.id)).map(i=>i.label).join(' · ')||'Esplora il luogo';
   const constraints=[state.easyTrails?'T · turistica':'',state.shortTrails?'Tratto entro 5 km':''].filter(Boolean);
   const brief=[...(!all&&state.target!=='passeggiata'?[names.length?names.slice(0,2).join(' · ')+(names.length>2?` · +${names.length-2}`:''):'Nessuna specie selezionata']:[]),...constraints];
-  return `<section class="outing-search" aria-label="Scelte dell’uscita"><details class="outing-context-help" data-weather-preserve-open><summary aria-label="${esc(interests)}: scelte e significato delle condizioni"><span class="outing-search-choice"><strong>${esc(interests)}</strong>${brief.length?`<span class="outing-search-brief">${esc(brief.join(' · '))}</span>`:''}</span>${infoGlyph}</summary><div class="outing-search-content"><p class="outing-selected">${esc(selected)}</p>${constraints.length?`<p>${state.easyTrails?'Solo difficoltà T · turistica. ':''}${state.shortTrails?'Tratto nella zona entro 5 km.':''}</p>`:''}<p>${hasInterest('funghi')?'Condizioni per i funghi scelti e il meteo del giorno.':'Contenuti per gli interessi scelti e il giorno selezionato.'}</p>${hasInterest('funghi')?`${driver?`<p>Indice basato su ${esc(driver.name)}: il miglior indice tra i funghi scelti con dati disponibili.</p>`:''}<p>L’indice è sperimentale: non è una probabilità di trovare funghi.</p>${missing.length?`<p class="outing-index-missing">Indice non disponibile per ${missing.length} ${missing.length===1?'specie scelta':'specie scelte'}.</p>`:''}`:''}</div></details><button type="button" class="btn ghost" data-outing-filters aria-haspopup="dialog">Modifica</button></section>`;
+  return `<section class="outing-search" aria-label="Scelte dell’uscita"><details class="outing-context-help" data-weather-preserve-open><summary><span class="outing-search-choice"><strong>${esc(interests)}</strong>${brief.length?`<span class="outing-search-brief">${esc(brief.join(' · '))}</span>`:''}</span>${infoGlyph}</summary><div class="outing-search-content"><p class="outing-selected">${esc(selected)}</p>${constraints.length?`<p>${state.easyTrails?'Solo difficoltà T · turistica. ':''}${state.shortTrails?'Tratto nella zona entro 5 km.':''}</p>`:''}<p>${hasInterest('funghi')?'Condizioni per i funghi scelti e il meteo del giorno.':'Contenuti per gli interessi scelti e il giorno selezionato.'}</p>${hasInterest('funghi')?`${driver?`<p>Indice basato su ${esc(driver.name)}: il miglior indice tra i funghi scelti con dati disponibili.</p>`:''}<p>L’indice è sperimentale: non è una probabilità di trovare funghi.</p>${missing.length?`<p class="outing-index-missing">Indice non disponibile per ${missing.length} ${missing.length===1?'specie scelta':'specie scelte'}.</p>`:''}`:''}</div></details><button type="button" class="btn ghost" data-outing-filters aria-haspopup="dialog">Modifica</button></section>`;
 }
 document.addEventListener('click',e=>{if(e.target.closest('[data-outing-filters]'))openFullFilters();});
 
@@ -4016,6 +4021,7 @@ function privacyHtml(html) {
   return end < 0 ? `${out}<p>${esc(BASE_PRIVACY_TEXT)}</p>` : `${out.slice(0, end)}<li>${esc(BASE_PRIVACY_TEXT)}</li>${out.slice(end)}`;
 }
 
+let onboardingListeners=null;
 async function applyLegal() {
   const L = legal || {};
   if (L.home_strip) $('#home-legal .ar-s').textContent = L.home_strip;
@@ -4037,6 +4043,9 @@ async function applyLegal() {
   const ver=legalNoticeVersion(L),accepted=await configureLegalAccess(ver,legalNoticeFingerprint(L),{compatibleVersions:compatibleLegalVersions(L)});
   if (!accepted) {
     const dlg = $('#onboarding');
+    // applyLegal() può ripartire con il dialog aperto (nuova versione dal CMS o da un'altra scheda):
+    // i listener del giro precedente si tolgono tutti, così non riscrivono le scelte già fatte.
+    onboardingListeners?.abort();onboardingListeners=new AbortController();const listening={signal:onboardingListeners.signal};
     dlg.querySelector('h2').textContent = L.onboarding?.title || 'Prima di usare l\'app';
     const sub = $('#ob-sub'); if (sub) { sub.textContent = L.onboarding?.subtitle || ''; sub.hidden = !sub.textContent; }
     $('#ob-welcome').innerHTML=pilotWelcomeHtml(L.onboarding);
@@ -4044,7 +4053,7 @@ async function applyLegal() {
     const participation=$('#ob-participation');participation.innerHTML=pilotChoicesHtml(currentUser());
     participation.onchange=event=>{choicesTouched=true;if(event.target.id==='ob-research')researchTouched=true;};
     const syncWelcomeProfile=()=>{const user=currentUser();if(dlg.open&&!choicesTouched&&(user?.id||null)!==choiceOwner){choiceOwner=user?.id||null;participation.innerHTML=pilotChoicesHtml(user);}};
-    document.addEventListener('fungaroli:community',syncWelcomeProfile);
+    document.addEventListener('fungaroli:community',syncWelcomeProfile,listening);
     $('#ob-cookie-summary').textContent=L.onboarding.cookie_summary;
     $('#ob-cookie-policy').innerHTML=(L.info_sections||[]).find(section=>section.id==='cookie')?.html||'';
     dlg.querySelector('.ob-points').innerHTML = (L.onboarding?.points || [
@@ -4067,7 +4076,7 @@ async function applyLegal() {
        if(researchTouched&&consentOwner&&currentUser()?.id!==consentOwner){const {toast}=await import('./refresh.js');toast('Il profilo è cambiato. Puoi scegliere lo Studio dal profilo che stai usando.',7000,'top');}
        if(!persisted){const note=document.createElement('div');note.className='app-toast on';note.setAttribute('role','status');note.textContent='Conferma valida per questa apertura. Il browser non permette di conservarla.';document.body.append(note);setTimeout(()=>note.remove(),7000);}}catch{$('#ob-status').textContent='Non riesco a registrare la conferma. Riprova.';}finally{button.disabled=false;}
     };
-    dlg.addEventListener('cancel', (e) => e.preventDefault());
+    dlg.addEventListener('cancel', (e) => e.preventDefault(), listening);
     dlg.onclose=()=>{document.removeEventListener('fungaroli:community',syncWelcomeProfile);if(hasLegalAcceptance())maybeInvite();else queueMicrotask(()=>{if(!dlg.open&&!hasLegalAcceptance())openModal(dlg);});};
     openModal(dlg);dlg.scrollTop=0;dlg.querySelector('h2').focus({preventScroll:true});
   } else maybeInvite();

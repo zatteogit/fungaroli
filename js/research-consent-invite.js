@@ -66,7 +66,6 @@ export function initResearchConsentInvite({getUser,save}){
   };
   openModal(dialog);dialog.querySelector('[data-pilot-later]').focus({preventScroll:true});
  }
- document.addEventListener('fronda:pilot-choices',schedule);
  document.addEventListener('fronda:pilot-profile-opened',()=>{pilotProfileOpened=true;schedule();});
  document.addEventListener('fronda:pilot-choice-deferred',()=>{sessionDeferred=true;pilotProfileOpened=false;const current=getUser();if(current){skipped.add(current.id);try{sessionStorage.setItem(key(current.id),'1');}catch{}}});
  addEventListener('fronda:boot-ready',()=>{bootReady=true;schedule();});

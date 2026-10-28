@@ -80,8 +80,8 @@ try {
         }
       };
   } else {
-    const packs = await listFieldPacks();
-    root.innerHTML = `<h1>Pronte per il bosco</h1><p>Copie conservate solo su questo dispositivo. Preparale con «Prepara per il bosco» nella pagina dell’uscita.</p>${id ? "<p>Questa copia non è più disponibile sul dispositivo.</p>" : ""}<ul class="field-pack-list">${packs.map((p) => `<li><a href="offline.html?outing=${encodeURIComponent(p.id)}"><b>${esc(p.zone.title)}</b><span>${esc(p.date)} · ${(p.bytes / 1048576).toLocaleString("it-IT", { maximumFractionDigits: 1 })} MB</span></a><button class="btn ghost" data-remove="${esc(p.id)}">Rimuovi</button></li>`).join("")}</ul>${packs.length ? "" : "<p>Non hai ancora preparato un’uscita.</p>"}<p role="status" data-field-status></p>`;
+    const { packs, unreadable } = await listFieldPacks();
+    root.innerHTML = `<h1>Pronte per il bosco</h1><p>Copie conservate solo su questo dispositivo. Preparale con «Prepara per il bosco» nella pagina dell’uscita.</p>${id ? "<p>Questa copia non è più disponibile sul dispositivo.</p>" : ""}<ul class="field-pack-list">${packs.map((p) => `<li><a href="offline.html?outing=${encodeURIComponent(p.id)}"><b>${esc(p.zone.title)}</b><span>${esc(p.date)} · ${(p.bytes / 1048576).toLocaleString("it-IT", { maximumFractionDigits: 1 })} MB</span></a><button class="btn ghost" data-remove="${esc(p.id)}">Rimuovi</button></li>`).join("")}${unreadable.map((p) => `<li><span><b>Copia non leggibile</b><span>Preparala di nuovo dalla pagina dell’uscita.</span></span><button class="btn ghost" data-remove="${esc(p.id)}">Rimuovi</button></li>`).join("")}</ul>${packs.length || unreadable.length ? "" : "<p>Non hai ancora preparato un’uscita.</p>"}<p role="status" data-field-status></p>`;
     root.querySelectorAll<HTMLButtonElement>("[data-remove]").forEach(
       (b) =>
         (b.onclick = async () => {
