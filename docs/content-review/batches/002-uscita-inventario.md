@@ -181,6 +181,20 @@ valutare altri luoghi, meteo avverso, filtri, tastiera per l’intero percorso e
 stati di condivisione. Nessuna modifica di contenuto o disposizione è stata
 apportata in questo passaggio.
 
+### Quinto passaggio: filtri senza sentiero compatibile
+
+Con meteo simulato, Porcino e filtro di difficoltà T, a Vallonina il piano
+mostra «Nessun sentiero corrisponde alle scelte attive», mentre «Percorso e
+accessi» dice «Tratto mappato · giro da verificare». Nel dettaglio appaiono
+20 tratti e un punto d’arrivo documentato, seguiti da raccordo, ritorno e
+tempo da completare. La [prova](../evidence/002-uscita/vallonina-filtri-nessun-tratto.yml)
+mostra entrambe le informazioni nello stesso stato.
+
+Il codice di `outingDocumentation` usa il primo tratto mappato come ripiego
+quando il piano non ha un sentiero selezionato. Il conteggio riguarda quindi
+la zona, ma la formulazione può farlo attribuire al piano filtrato. Da correggere
+la distinzione comunicativa; restano invariati selezione, dati e cautele.
+
 ## Ancora da fare prima di chiudere la pagina
 
 - Completare l’inventario delle sezioni espanse, dei filtri, degli stati del
