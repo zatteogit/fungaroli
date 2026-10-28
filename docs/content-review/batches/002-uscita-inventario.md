@@ -134,6 +134,12 @@ occorre riconciliare il contenuto effettivo online con il ramo di produzione,
 per evitare di sovrascrivere modifiche già distribuite. L’analisi della pagina
 può continuare localmente.
 
+Un confronto mirato ha inoltre mostrato che `js/app.js` online importa e applica
+`edition.js` nella selezione delle zone, mentre il file del ramo di produzione
+non contiene queste modifiche. Non è soltanto una differenza nel numero della
+cache. L’origine e l’eventuale presenza del lavoro in un altro checkout non sono
+state stabilite; non distribuire una copia precedente mentre si chiarisce.
+
 ## Ancora da fare prima di chiudere la pagina
 
 - Completare l’inventario delle sezioni espanse, dei filtri, degli stati del
