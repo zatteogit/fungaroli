@@ -281,6 +281,15 @@ quando è già attiva la condizione `thunder`, senza cambiare classificazione,
 soglie o dati meteo. Alba e orari legali devono restare consultabili come dati,
 senza presentare un orario di partenza consigliato per quel caso.
 
+La [PR 316](https://github.com/zatteogit/fungaroli/pull/316) propone la
+correzione: la cautela è nel riepilogo, la partenza consigliata e l’alternativa
+per l’affollamento non sono proposte durante il temporale; alba e finestra
+legale restano nel dettaglio. Con fixture di temporale e sereno si sono provati
+i due comportamenti; nel temporale anche quattro larghezze, entrambi i temi e
+tastiera. Superati localmente 643 test e dry-run Worker. La PR è in attesa dei
+controlli GitHub e non è ancora pubblicata. Le prove non usano meteo reale e
+non certificano il primo avvio online.
+
 ## Ancora da fare prima di chiudere la pagina
 
 - Completare l’inventario delle sezioni espanse, dei filtri, degli stati del
