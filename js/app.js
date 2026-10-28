@@ -4021,6 +4021,7 @@ function privacyHtml(html) {
   return end < 0 ? `${out}<p>${esc(BASE_PRIVACY_TEXT)}</p>` : `${out.slice(0, end)}<li>${esc(BASE_PRIVACY_TEXT)}</li>${out.slice(end)}`;
 }
 
+let onboardingListeners=null;
 async function applyLegal() {
   const L = legal || {};
   if (L.home_strip) $('#home-legal .ar-s').textContent = L.home_strip;
@@ -4042,6 +4043,9 @@ async function applyLegal() {
   const ver=legalNoticeVersion(L),accepted=await configureLegalAccess(ver,legalNoticeFingerprint(L),{compatibleVersions:compatibleLegalVersions(L)});
   if (!accepted) {
     const dlg = $('#onboarding');
+    // applyLegal() può ripartire con il dialog aperto (nuova versione dal CMS o da un'altra scheda):
+    // i listener del giro precedente si tolgono tutti, così non riscrivono le scelte già fatte.
+    onboardingListeners?.abort();onboardingListeners=new AbortController();const listening={signal:onboardingListeners.signal};
     dlg.querySelector('h2').textContent = L.onboarding?.title || 'Prima di usare l\'app';
     const sub = $('#ob-sub'); if (sub) { sub.textContent = L.onboarding?.subtitle || ''; sub.hidden = !sub.textContent; }
     $('#ob-welcome').innerHTML=pilotWelcomeHtml(L.onboarding);
@@ -4049,7 +4053,7 @@ async function applyLegal() {
     const participation=$('#ob-participation');participation.innerHTML=pilotChoicesHtml(currentUser());
     participation.onchange=event=>{choicesTouched=true;if(event.target.id==='ob-research')researchTouched=true;};
     const syncWelcomeProfile=()=>{const user=currentUser();if(dlg.open&&!choicesTouched&&(user?.id||null)!==choiceOwner){choiceOwner=user?.id||null;participation.innerHTML=pilotChoicesHtml(user);}};
-    document.addEventListener('fungaroli:community',syncWelcomeProfile);
+    document.addEventListener('fungaroli:community',syncWelcomeProfile,listening);
     $('#ob-cookie-summary').textContent=L.onboarding.cookie_summary;
     $('#ob-cookie-policy').innerHTML=(L.info_sections||[]).find(section=>section.id==='cookie')?.html||'';
     dlg.querySelector('.ob-points').innerHTML = (L.onboarding?.points || [
@@ -4072,7 +4076,7 @@ async function applyLegal() {
        if(researchTouched&&consentOwner&&currentUser()?.id!==consentOwner){const {toast}=await import('./refresh.js');toast('Il profilo è cambiato. Puoi scegliere lo Studio dal profilo che stai usando.',7000,'top');}
        if(!persisted){const note=document.createElement('div');note.className='app-toast on';note.setAttribute('role','status');note.textContent='Conferma valida per questa apertura. Il browser non permette di conservarla.';document.body.append(note);setTimeout(()=>note.remove(),7000);}}catch{$('#ob-status').textContent='Non riesco a registrare la conferma. Riprova.';}finally{button.disabled=false;}
     };
-    dlg.addEventListener('cancel', (e) => e.preventDefault());
+    dlg.addEventListener('cancel', (e) => e.preventDefault(), listening);
     dlg.onclose=()=>{document.removeEventListener('fungaroli:community',syncWelcomeProfile);if(hasLegalAcceptance())maybeInvite();else queueMicrotask(()=>{if(!dlg.open&&!hasLegalAcceptance())openModal(dlg);});};
     openModal(dlg);dlg.scrollTop=0;dlg.querySelector('h2').focus({preventScroll:true});
   } else maybeInvite();
