@@ -1,7 +1,3 @@
 // Generated from src/js/data-guards.ts. Run npm run build:typescript; do not edit.
-export function isRecord(value) {
-    return value !== null && typeof value === "object" && !Array.isArray(value);
-}
-export function isFiniteNumber(value) {
-    return typeof value === "number" && Number.isFinite(value);
-}
+// Ingresso di compatibilità: l'implementazione sta nel nucleo portatile.
+export { isRecord, isFiniteNumber } from "./core/guards.js";

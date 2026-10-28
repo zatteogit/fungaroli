@@ -18,6 +18,16 @@ helper astronomici usati dal meteo, `navigation-dock.d.ts` la molla
 `npm run build:typescript -- --check` segnala anche un `js/*.js` «Generated from»
 il cui `.ts` è stato cancellato.
 
+## Nucleo portatile
+
+`src/js/core/` contiene le regole delle osservazioni (`normalizeFieldRecord`) e
+i guard di base, recuperati dalla PR #298 il 28/10/2026 ([valutazione](ipotesi/fondazione-modulare-pr298-2026-10-28.md)).
+Il nucleo si compila da solo con `tsconfig.core.json` (solo ES2022, niente DOM,
+Node o provider) e diventa `js/core/*.js`. `community-observation.js` e
+`data-guards.js` restano gli ingressi pubblici e riesportano dal nucleo.
+`npm run check:architecture` (anche prima di `npm test`) rifiuta nel nucleo
+dipendenze esterne o fuori cartella, import dinamici, `any` e `@ts-nocheck`.
+
 ## Sorgenti e compilazione
 
 Modificare i `.ts`, poi eseguire:

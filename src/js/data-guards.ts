@@ -1,6 +1,2 @@
-export function isRecord(value: unknown): value is Record<string, unknown> {
-  return value !== null && typeof value === "object" && !Array.isArray(value);
-}
-export function isFiniteNumber(value: unknown): value is number {
-  return typeof value === "number" && Number.isFinite(value);
-}
+// Ingresso di compatibilità: l'implementazione sta nel nucleo portatile.
+export { isRecord, isFiniteNumber } from "./core/guards.js";
