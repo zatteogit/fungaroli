@@ -26,5 +26,5 @@ accessibili i crediti delle foto.
 la cache HTTP delle prove. Il service worker lascia questi percorsi alla rete:
 non li memorizza e non restituisce l’app come ripiego offline.
 
-La cartella viene pubblicata insieme al ramo `claude/brave-tesla-wu0a2b`;
+La cartella viene pubblicata insieme al ramo di produzione `main`;
 non richiede nuovi binding né modifiche manuali in Cloudflare.

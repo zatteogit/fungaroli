@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="utf-8">
-  <meta name="app-version" content="fungaroli-shell-v337">
+  <meta name="app-version" content="fungaroli-shell-v382">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
   <link rel="preload" href="data/crop-points.json" as="fetch" crossorigin>
   <meta name="theme-color" content="#f7f4ea" media="(prefers-color-scheme: light)">
@@ -24,17 +24,21 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/fronda.css">
   <link rel="stylesheet" href="css/species-pages.css">
+  <link rel="stylesheet" href="css/navigation-dock.css">
   <link rel="stylesheet" href="css/content-ui.css">
   <link rel="stylesheet" href="css/animals.css">
   <link rel="stylesheet" href="css/map-experience.css">
+  <link rel="stylesheet" href="css/pilot-test.css">
   <link rel="stylesheet" href="css/notebook.css">
+  <link rel="stylesheet" href="css/field.css">
   <link rel="stylesheet" href="css/atmosphere.css">
   <link rel="stylesheet" href="css/editorial-outings.css">
+  <link rel="stylesheet" href="css/adaptive-effects.css">
   <script>try{var t=localStorage.getItem('fungaroli:theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
   <noscript><style>#hero .loader { display: none; }</style></noscript>
 </head>
 <body data-legal-pending>
-  <div id="legal-loading" role="status"><span class="legal-loading-spinner" aria-hidden="true"></span><p class="boot-tip">Anche una ricerca a vuoto racconta il bosco.<small>Annotala nel tuo taccuino.</small></p></div>
+  <div id="legal-loading" role="status"><svg class="trail-loader" viewBox="0 0 160 56" aria-hidden="true" focusable="false"><path class="trail-loader-track" d="M8 34C24 8 38 8 54 28S84 52 104 22S132 10 152 30"/><path class="trail-loader-walk" pathLength="100" d="M8 34C24 8 38 8 54 28S84 52 104 22S132 10 152 30"/></svg><p class="boot-tip">Anche una ricerca a vuoto racconta il bosco.<small>Annotala nel tuo taccuino.</small></p></div>
   <script>
     // Sceglie subito la frase, senza attendere dati o moduli dell’app.
     (() => {
@@ -74,11 +78,10 @@
       <span id="appbar-home-filters"></span>
       <a class="appbar-context-action" data-appbar-action hidden></a>
       <button type="button" class="profile-entry" data-community-account><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><span data-profile-label>Accedi</span></button>
-      <button type="button" class="icon-btn theme-btn" id="theme-btn" aria-label="Cambia tema"></button>
-      <a class="icon-btn" href="#/info" aria-label="Regole e sicurezza" title="Regole e sicurezza"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg></a>
+
     </div>
   </header>
-  <nav class="tabbar" inert aria-label="Sezioni">
+  <nav class="tabbar" style="--nav-action:0" inert aria-label="Sezioni">
     <div class="tab-destinations">
       <span class="tab-pill" aria-hidden="true"></span>
       <a href="#/" data-tab="uscite"><svg class="fungus-glyph" aria-hidden="true"
@@ -101,7 +104,7 @@
 </svg><span>Scopri</span></a>
       <a href="#/diario" data-tab="diario"><svg class="nav-glyph" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h14v18H5zM9 3v18m3-13h4m-4 4h4"/></svg><span>Taccuino</span></a>
     </div>
-      <button type="button" class="tab-annotate" data-annotate aria-label="Annota un ritrovamento" title="Annota un ritrovamento"><svg class="notebook-glyph" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M20.5 3.5C17 1 12 3 9 6.5C6 10 5 14 5.5 18.5L10 18C13.5 16.5 16.5 13 18.5 9.5C20 7 20.5 5 20.5 3.5Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 22 16.5 7.5M7.5 16.5H12M10.5 13H15M10.5 9V13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="tab-annotate-label">Annota</span></button>
+      <div class="tab-action-slot" inert aria-hidden="true"><button type="button" class="tab-annotate" data-annotate aria-label="Annota un ritrovamento" title="Annota un ritrovamento"><svg class="notebook-glyph" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M20.5 3.5C17 1 12 3 9 6.5C6 10 5 14 5.5 18.5L10 18C13.5 16.5 16.5 13 18.5 9.5C20 7 20.5 5 20.5 3.5Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 22 16.5 7.5M7.5 16.5H12M10.5 13H15M10.5 9V13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="tab-annotate-label">Annota</span></button></div>
     </nav>
 
   <p id="stale" class="notice stale" hidden>Questi dati meteo non coprono più la data di oggi: l'indice si riferisce al giorno della pubblicazione.</p>
@@ -120,7 +123,7 @@
         <p>Fronda aiuta a scegliere dove e quando uscire per funghi nei boschi del Lazio e a conoscere il bosco durante la passeggiata. Per mostrare zone, meteo e schede serve JavaScript: attivalo nel browser e ricarica la pagina.</p>
         <p><strong>Regola essenziale.</strong> Nel Lazio si raccoglie con attestato micologico, ricevuta del contributo regionale annuale e documento d'identità (L.R. 32/1998). In caso di dubbio non raccogliere e non mangiare: fai controllare i funghi all'Ispettorato micologico della ASL, gratuito per i privati.</p>
       </div></noscript></div>
-      <div class="home-weather-status"><button type="button" class="link-btn home-how-link" data-home-how-open>Come funziona</button><span class="home-weather-line"><span id="updated" aria-live="polite"></span><button type="button" id="refresh" class="upd-btn" title="Tocca per ricaricare il meteo"><span class="upd-label">Aggiorna</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.34-5.66"/><path d="M20 4v4.5h-4.5"/></svg></button></span><details class="home-weather-details" hidden><summary>Dettagli</summary></details></div>
+      <div class="home-weather-status"><button type="button" class="link-btn home-how-link" data-home-how-open>Come funziona la condivisione</button><span class="home-weather-line"><span id="updated" aria-live="polite"></span><button type="button" id="refresh" class="upd-btn" title="Tocca per ricaricare il meteo"><span class="upd-label">Aggiorna</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.34-5.66"/><path d="M20 4v4.5h-4.5"/></svg></button></span><details class="home-weather-details" hidden><summary>Dettagli</summary></details></div>
       <div id="install-banner" class="install-banner" hidden></div>
       <div class="home-bands">
       <section class="home-band home-alternatives" aria-labelledby="others-h">
@@ -139,6 +142,7 @@
       </section>
       <aside class="story-invite story-blue home-band" aria-labelledby="home-guide-title"><div><h2 id="home-guide-title">Guarda più vicino.</h2><p>Le parole del bosco, quando ti servono.</p><a class="btn primary" href="#/impara">Scopri le nostre guide <span aria-hidden="true">→</span></a></div><figure class="story-photo"><a href="#/pianta/ginestra-odorosa" aria-label="Ginestra odorosa: apri la scheda"><img src="assets/plants/ginestra-odorosa-1.webp" alt="" loading="lazy" decoding="async"></a></figure></aside>
       <a class="act-row home-band home-notebook-link" href="#/diario"><span class="ar-b"><span class="ar-t">Hai qualcosa da ricordare?</span><span class="ar-s">Foto, appunti e ricordi delle tue uscite, nel Taccuino.</span></span></a>
+      <aside class="pilot-feedback-invite home-band"><div><h2>Fronda cresce con le tue prove</h2><p>Stai partecipando al test: raccontami cosa funziona e cosa possiamo migliorare.</p></div><button type="button" class="btn ghost" data-open-feedback>Invia feedback</button></aside>
       <a class="act-row legal-strip home-band" id="home-legal" href="#/info"><span class="ar-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span><span class="ar-b"><span class="ar-t">Regole di raccolta</span><span class="ar-s">Nel Lazio si raccoglie con attestato micologico, ricevuta del contributo regionale annuale e documento d'identità (L.R. 32/1998).</span></span></a>
       </div>
     </section>
@@ -241,12 +245,15 @@
     <section class="view notebook-view" data-view="diario" hidden aria-labelledby="journal-h">
       <header class="notebook-heading"><div><p class="kicker">Appunti di campo</p><h1 id="journal-h" class="view-title">Il mio taccuino</h1>
         <p class="view-sub">Luoghi, scoperte e pensieri da ritrovare.</p></div>
-        <div class="diary-header-actions"><button class="btn ghost" type="button" data-new-outing>Racconta un’uscita</button><button class="link-btn" type="button" data-new-note>Un appunto libero</button><a class="diary-demo-link" hidden href="#/diario/esempio">Diario di prova →</a></div>
+        <div class="diary-header-actions"><button class="btn primary" type="button" data-annotate>Annota</button><button class="link-btn" type="button" data-new-outing>Racconta un’uscita</button><a class="diary-demo-link" hidden href="#/diario/esempio">Diario di prova →</a></div>
       </header>
       <div class="notebook-cover"><div id="journal-list" class="notebook-pages" aria-live="off"></div></div>
-      <details class="notebook-storage" id="notebook-storage-panel"><summary>Profilo e sincronizzazione</summary><div class="notebook-storage-body">
+
+      <p class="field-notebook-link"><a href="offline.html">Uscite preparate per il bosco →</a></p>
+      <details class="notebook-storage" id="notebook-storage-panel"><summary>Profilo e preferenze</summary><div class="notebook-storage-body">
         <ul class="fp-switches notebook-prefs"><li><label class="fp-switch"><span>Usa le fasi dei miei appunti botanici<small>Privati. Aiutano a scegliere cosa osservare; non modificano l’indice.</small></span><input type="checkbox" class="switch-input" data-botanical-personalize></label></li></ul>
         <div class="muted small" id="journal-storage"></div>
+        <div class="notebook-preferences-body"><label for="theme-select">Aspetto <span class="notebook-theme-control"><select id="theme-select"><option value="auto">Automatico</option><option value="light">Chiaro</option><option value="dark">Scuro</option></select></span></label><button type="button" class="link-btn" data-open-feedback>Invia feedback sul test</button><a href="#/info">Informazioni, regole e privacy</a></div>
       </div></details>
     </section>
 
@@ -270,6 +277,7 @@
       <div id="install-info" class="install-info" hidden></div>
 
 
+  <section class="pilot-feedback-invite"><div><h2>Aiutami a migliorare Fronda</h2><p>Il test serve a raccogliere feedback e le prime osservazioni, con le tue scelte di condivisione.</p></div><button type="button" class="btn primary" data-open-feedback>Invia feedback</button></section>
   <div id="legal-sections"></div>
   <details class="sec"><summary>Fotografie e illustrazioni</summary><div class="sec-body">
   <p class="small muted" id="zone-credits"></p>
@@ -286,11 +294,13 @@
   </main>
 
   <dialog id="onboarding" class="sheet-dlg onboarding" aria-labelledby="ob-h">
+    <p class="eyebrow ob-eyebrow">Test con utenti invitati</p>
     <h2 id="ob-h" tabindex="-1" autofocus>Prima di usare l'app</h2>
     <p class="ob-sub" id="ob-sub" hidden></p>
-    <p id="ob-prototype" class="ob-prototype"></p>
-    <ul class="ob-points"></ul>
-    <section class="ob-data" aria-label="Privacy e cookie"><p id="ob-cookie-summary"></p><details><summary>Leggi la cookie policy</summary><div id="ob-cookie-policy"></div></details><p class="small muted">Proseguendo confermi di aver letto gli avvisi e le informative. La condivisione di osservazioni resta facoltativa.</p></section>
+    <div id="ob-welcome"></div>
+    <div id="ob-participation"></div>
+    <section class="ob-safety"><h3 class="ob-safety-title">Prima di usare Fronda nel bosco</h3><ul class="ob-points"></ul></section>
+    <section class="ob-data" aria-label="Privacy e cookie"><p id="ob-cookie-summary"></p><details><summary>Leggi la cookie policy</summary><div id="ob-cookie-policy"></div></details><p class="small muted">Proseguendo confermi di aver letto gli avvisi e le informative. Puoi continuare senza registrarti. La condivisione di ogni osservazione resta sotto il tuo controllo.</p></section>
     <details class="ob-more"><summary id="ob-more">Regole, privacy e note legali</summary><div id="ob-legal-details"></div></details>
     <div class="ob-acceptance"><button type="button" class="btn primary big" id="ob-accept">Ho capito</button><p id="ob-status" class="small muted" role="status"></p></div>
   </dialog>

@@ -1,3 +1,4 @@
+import {listFeedback,manageFeedback} from './feedback.js';
 import {cleanupSurvey} from './survey.js';
 import {researchOverview} from './research-overview.js';
 import {surveyAdminSchema,listSurveyAdmin,readSurveyAdmin,saveSurveyAdmin,deleteSurveyAdmin} from './survey-admin.js';
@@ -35,6 +36,11 @@ async function init(env,origin) {
   const db=env.CMS_DB;
   if(!db) failure('La redazione non è configurata.',503);
   if(!initialized.has(db)) initialized.set(db,(async()=>{
+    // La revisione delle copie seed serve una volta per release, non a ogni
+    // nuovo isolate che legge lo snapshot pubblico.
+    let shell;
+    try{const asset=await env.ASSETS.fetch(new Request(new URL('/index.html',origin)));if(asset.ok&&asset.headers.get('content-type')?.includes('text/html'))shell=(await asset.text()).match(/fungaroli-shell-v\d+/)?.[0];}catch{/* ambienti senza shell: verifica completa */}
+    if(shell)try{if((await db.prepare("SELECT value FROM cms_meta WHERE key='repository-shell'").first())?.value===shell)return;}catch{/* primo avvio: crea lo schema */}
     await db.batch(schema.split(';').map(s=>s.trim()).filter(Boolean).map(s=>db.prepare(s)));
     const known=new Set((await db.prepare('SELECT id FROM cms_documents').all()).results.map(r=>r.id));
     const missing=CONTENT_RESOURCES.filter(r=>!known.has(r.id));
@@ -65,6 +71,7 @@ async function init(env,origin) {
     }));
     for(const {previous,payload} of sources)if(previous.published!==payload)
       await db.batch(repositorySeedUpdate(db,previous.id,previous,payload,Date.now(),crypto.randomUUID(),crypto.randomUUID()));
+    if(shell)await db.prepare("INSERT INTO cms_meta(key,value) VALUES('repository-shell',?) ON CONFLICT(key) DO UPDATE SET value=excluded.value").bind(shell).run();
   })().catch(e=>{initialized.delete(db);throw e;}));
   return initialized.get(db);
 }
@@ -173,6 +180,12 @@ export async function handleCms(req,env,now=Date.now()) {
         if(req.method==='PATCH'){const input=await reviewedInput();if(actor.kind==='agent'){const previous=await readExternalObservation(env.COMMUNITY_DB,suffix);if(previous.data.reviewStatus!=='pending')permit(actor,'review','external-observations');}return response(await saveExternalObservation(env.COMMUNITY_DB,suffix,input,actor.id,now,db));}
       }
       failure('Percorso o metodo non consentito.',405);
+    }
+    if(path==='feedback'||path.startsWith('feedback/')){
+      permit(actor,'admin');
+      if(path==='feedback'&&req.method==='GET')return response(await listFeedback(env.COMMUNITY_DB,{before:url.searchParams.get('before')},now));
+      if(path.startsWith('feedback/')&&['PATCH','DELETE'].includes(req.method))return response(await manageFeedback(env.COMMUNITY_DB,path.slice(9),req.method,now));
+      failure('Metodo non consentito.',405);
     }
     if(path==='dashboard'){
       permit(actor,'admin');

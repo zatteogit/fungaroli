@@ -1,10 +1,16 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {saveZoneWeather,cachedZoneWeather,validWeatherRows,migrateGrowthCache} from '../js/weather-cache.js';
+import {saveZoneWeather,cachedZoneWeather,validWeatherRows,migrateGrowthCache,weatherCacheNeedsSync,WEATHER_SYNC_MS} from '../js/weather-cache.js';
 import {loadWeather,todayISO} from '../js/weather.js';
 const zones=[{id:'a',lat:42,lon:12,bands:[800]},{id:'b',lat:43,lon:13,bands:[900]}];
 const raw=()=>[{daily:{time:[todayISO()],precipitation_sum:[7],temperature_2m_mean:[13],temperature_2m_min:[8],temperature_2m_max:[18],soil_moisture_3_to_9cm_mean:[.3],soil_temperature_6cm_mean:[13]}}];
 function storage(){const data=new Map();global.localStorage={getItem:k=>data.get(k)||null,setItem:(k,v)=>data.set(k,v),removeItem:k=>data.delete(k)};return data;}
+test('precaricamento: copia recente non genera richieste; assenza, età e stato datato richiedono la sincronizzazione',()=>{
+ const saved=storage();saved.set('fungaroli:weather:zones:v3','null');const now=Date.now();assert.equal(weatherCacheNeedsSync('growth',now),true);saved.clear();
+ saveZoneWeather(zones[0],'growth',{t:now,raw:raw()},now);assert.equal(weatherCacheNeedsSync('growth',now),false);
+ assert.equal(weatherCacheNeedsSync('growth',now+WEATHER_SYNC_MS),true);
+ saveZoneWeather(zones[0],'growth',{t:now,raw:raw(),stale:true},now);assert.equal(weatherCacheNeedsSync('growth',now),true);
+});
 test('cache rejects invalid dimensions, future dates and older replacements',()=>{
  storage();const t=Date.now();saveZoneWeather(zones[0],'growth',{t,raw:raw()});saveZoneWeather(zones[0],'growth',{t:t-1000,raw:raw()});
  assert.equal(cachedZoneWeather(zones[0]).t,t);assert.equal(cachedZoneWeather({...zones[0],bands:[900]}),null);

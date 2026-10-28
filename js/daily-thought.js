@@ -86,7 +86,7 @@ export async function initDailyThought({ root = document.querySelector('#daily-t
       const copy = document.createElement('div');
       const text = document.createElement('p');
       text.className = 'daily-thought-text';
-      text.textContent = item.text;
+      text.textContent = item.text.replace(/,\s*$/u, '');
       const credit = document.createElement(item.type === 'citazione' ? 'a' : 'span');
       credit.className = 'daily-thought-credit';
       credit.textContent = item.author || 'Fronda';
@@ -95,6 +95,7 @@ export async function initDailyThought({ root = document.querySelector('#daily-t
         credit.target = '_blank';
         credit.rel = 'noopener noreferrer';
         credit.title = `${item.source.title} · fonte della citazione`;
+        credit.setAttribute('aria-label', `${credit.textContent}. Fonte: ${item.source.title}`);
       }
       copy.append(text, credit);
       root.append(label, copy);

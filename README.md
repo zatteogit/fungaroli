@@ -21,7 +21,7 @@ python3 -m http.server 8000   # oppure: npm start
 
 Nessuna build, nessuna chiave API. Serve un server HTTP (i moduli ES e i JSON non si caricano da `file://`).
 
-Controlli: il workflow `.github/workflows/ci.yml` esegue test unitari e `wrangler deploy --dry-run` su ogni pull request e su ogni push nel ramo di produzione `claude/brave-tesla-wu0a2b`. Pubblica Cloudflare, non GitHub.
+Controlli: il workflow `.github/workflows/ci.yml` esegue test unitari e `wrangler deploy --dry-run` su ogni pull request e su ogni push nel ramo di produzione `main` (fino al 28/10/2026 era `claude/brave-tesla-wu0a2b`). Ambienti ed edizioni: [docs/ambienti-ed-edizioni.md](docs/ambienti-ed-edizioni.md). Pubblica Cloudflare, non GitHub.
 
 Test del modello: `npm test` (Node ≥ 22). Per il servizio completo: `npm ci` e `npx wrangler dev`; verifiche passkey e isolamento con `npm run test:browser`.
 

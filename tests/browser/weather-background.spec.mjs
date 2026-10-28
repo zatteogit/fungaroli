@@ -1,5 +1,41 @@
 import {test,expect} from '@playwright/test';
 import {todayISO} from '../../js/weather.js';
+import {readFileSync} from 'node:fs';
+import {preparePage} from '../../tools/visual-audit.mjs';
+import {forecastParams} from '../../worker/weather-provider.js';
+import {compactGrowth} from '../../js/weather-data.js';
+import {CONTENT_RESOURCES} from '../../js/content-schema.js';
+const resources=Object.fromEntries(CONTENT_RESOURCES.map(r=>[r.id,JSON.parse(readFileSync(new URL(`../../data/${r.id}.json`,import.meta.url),'utf8'))]));
+function snapshotLines(kind){return resources.zones.zones.filter(z=>z.bands?.length&&z.publicationStatus!=='draft').map(z=>{
+ const q=forecastParams([z],kind),raw=forecast({url:()=>`https://test/?${q}`});
+ if(kind==='outing')for(const row of raw){delete row.daily;for(const key of Object.keys(row.hourly))row.hourly[key]=row.hourly[key].slice(-192);}
+ return JSON.stringify({coordinates:['latitude','longitude','elevation'].map(k=>q.get(k)).join('|'),record:{t:Date.now(),raw:kind==='growth'?compactGrowth(raw):raw}});
+}).join('\n')+'\n';}
+for(const width of [390,1280])for(const savedCatalog of [false,true])test(`avvio coerente con due snapshot e catalogo ${savedCatalog?'salvato':'assente'} a ${width}px`,async({browser})=>{
+ const context=await browser.newContext({viewport:{width,height:900},serviceWorkers:'block',reducedMotion:'reduce'}),page=await preparePage(context);
+ let finishOuting,finishContent,calls=0,legacy=0;
+ if(savedCatalog)await page.addInitScript(async snapshot=>{
+  const cache=await caches.open('fungaroli-content-v1');await cache.put('/api/content/v1/snapshot',new Response(JSON.stringify(snapshot),{headers:{'content-type':'application/json'}}));
+ },{schemaVersion:1,resources});
+ await page.route('**/api/content/v1/snapshot',async r=>{await new Promise(resolve=>finishContent=resolve);await r.fulfill({json:{schemaVersion:1,resources}});});
+ await page.route('**/api/weather/v1/forecast?**',r=>{legacy++;return r.abort();});
+ await page.route('**/api/weather/v1/snapshot?**',async r=>{calls++;const kind=new URL(r.request().url()).searchParams.get('profile');if(kind==='outing')await new Promise(resolve=>finishOuting=resolve);await r.fulfill({contentType:'application/x-ndjson',body:snapshotLines(kind)});});
+ await page.goto('/');await expect.poll(()=>calls).toBe(2);expect(legacy).toBe(0);
+ if(!savedCatalog){await expect.poll(()=>typeof finishContent).toBe('function');finishContent();}
+ // Il catalogo arriva dalla copia locale, il server è ancora fermo.
+ await expect(page.locator('#active-filters button').first()).toBeVisible();
+ await expect(page.locator('#hero .cover-link')).toHaveCount(0);await expect(page.locator('#home-update')).toBeHidden();
+ finishOuting();await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');await expect(page.locator('#hero .cover-link')).toBeVisible();await expect(page.locator('#home-update')).toBeHidden();
+ finishContent();
+ await page.reload();await expect(page.locator('#hero .cover-link')).toBeVisible();await expect(page.locator('#home-update')).toBeHidden();expect(calls).toBe(2);expect(legacy).toBe(0);
+ // Una copia ancora utilizzabile sblocca anche l'overlay globale, senza aspettare
+ // la riconciliazione di rete. Simula una riapertura dopo sei minuti.
+ finishContent?.();await page.evaluate(()=>{for(const kind of ['weather','outing']){const key=`fungaroli:${kind}:zones:v3`,data=JSON.parse(localStorage.getItem(key));for(const record of Object.values(data))record.t-=6*60000;localStorage.setItem(key,JSON.stringify(data));}});
+ await page.reload();await expect.poll(()=>calls).toBe(4);await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','true');
+ await expect(page.locator('#hero .cover-link')).toBeVisible();await expect(page.locator('#legal-loading')).toBeHidden();await expect(page.locator('#home-update')).toBeHidden();
+ finishOuting();await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');
+ finishContent?.();await context.close();
+});
 function forecast(request,rain=7){
  const q=new URL(request.url()).searchParams,count=q.get('latitude').split(',').length;
  const days=Array.from({length:70},(_,i)=>todayISO(new Date(Date.now()+(i-62)*864e5))),time=days.flatMap(d=>Array.from({length:24},(_,h)=>`${d}T${String(h).padStart(2,'0')}:00`)),fill=v=>Array(time.length).fill(v);
@@ -14,11 +50,11 @@ for(const width of [390,1280])test(`cache immediata, aggiornamento discreto e co
  await page.clock.install({time:new Date(`${todayISO()}T06:30:00+02:00`)});
  await page.goto('/');await expect(page.locator('#hero .cover-link')).toBeVisible();await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');
  await expect(page.locator('#season li').first()).toBeVisible();await expect(page.locator('#season-h')).toBeVisible();
- await page.evaluate(()=>{for(const k of ['fungaroli:weather:zones:v3','fungaroli:outing:zones:v3']){const c=JSON.parse(localStorage.getItem(k));for(const r of Object.values(c))r.t=Date.now()-7200000;localStorage.setItem(k,JSON.stringify(c));}});
+ await page.evaluate(()=>{for(const k of ['fungaroli:weather:zones:v3','fungaroli:outing:zones:v3']){const c=JSON.parse(localStorage.getItem(k));for(const r of Object.values(c))r.t=Date.now()-1200000;localStorage.setItem(k,JSON.stringify(c));}});
  paused=true;await page.reload();await expect(page.locator('#hero .cover-link')).toBeVisible();await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','true');await expect(page.locator('#updated')).toContainText('Sto aggiornando il meteo');await expect(page.locator('#weather-work')).toBeHidden();
  const score=await page.locator('#hero .ring .ring-num').count()?await page.locator('#hero .ring .ring-num').innerText():await page.locator('#hero .cover-index').innerText();
  const href=await page.locator('#hero .cover-link').getAttribute('href');await page.evaluate(()=>{window.savedHero=document.querySelector('#hero .cover-link');window.savedPhoto=document.querySelector('#hero .cover-img');});
- rain=1;paused=false;pending.splice(0).forEach(r=>r());await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');await expect(page.locator('#hero .cover-link')).toHaveAttribute('href',href);
+ rain=6;paused=false;pending.splice(0).forEach(r=>r());await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');await expect(page.locator('#hero .cover-link')).toHaveAttribute('href',href);
  expect(await page.evaluate(()=>savedHero===document.querySelector('#hero .cover-link')&&savedPhoto===document.querySelector('#hero .cover-img'))).toBe(true);
  const placed=await page.locator('#hero [data-walk-zone],#ranking [data-walk-zone]').evaluateAll(n=>n.map(a=>a.dataset.walkZone));expect(new Set(placed).size).toBe(placed.length);await expect(page.locator('#season li').first()).toBeVisible();
  await expect(page.locator('#updated')).toContainText('Meteo aggiornato');await expect(page.locator('#app-toast.on')).toHaveCount(0);await page.evaluate(()=>document.dispatchEvent(new Event('fungaroli:community')));await expect(page.locator('#hero .cover-link')).toHaveAttribute('href',href);expect(await page.locator('#hero .cover-index').innerText()).not.toBe(score);
@@ -39,23 +75,57 @@ test('aggiornamento della scheda conserva accordion aperto e pannello contestual
  await expect(page.locator('#learning-popover')).toBeVisible();expect(await opener.evaluate(e=>e.isConnected)).toBe(true);await page.locator('[data-learning-close]').click();await expect(section).toHaveAttribute('open','');expect(errors).toEqual([]);
 });
 
-for(const width of [390,1280])test(`calendario fermo mentre arriva il meteo e cache al riavvio a ${width}px`,async({page})=>{
- await page.setViewportSize({width,height:900});let release;const gate=new Promise(r=>release=r);let outingCalls=0;
+for(const width of [390,1280])test(`sincronizzazione unica e calendario fermo a ${width}px`,async({page})=>{
+ await page.setViewportSize({width,height:900});let outingCalls=0;
  await page.emulateMedia({reducedMotion:'reduce'});
  await page.route('https://**/*',r=>r.abort());
  await page.route('**/api/weather/v1/forecast?**',async r=>{
-  if(!new URL(r.request().url()).searchParams.has('daily')){outingCalls++;await gate;}
+  if(!new URL(r.request().url()).searchParams.has('daily'))outingCalls++;
   await r.fulfill({json:forecast(r.request())});
  });
  await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','62026-10-20'));
  const geometry=()=>page.locator('#days .day').evaluateAll(buttons=>buttons.map(b=>{
   const box=b.getBoundingClientRect();return {day:b.dataset.dayOffset,width:box.width,height:box.height,rows:[...b.querySelectorAll('.d1,.d2,.d3')].map(e=>e.getBoundingClientRect().top-box.top)};
  }));
- try{
-  await page.goto('/');await expect(page.locator('#hero .cover-link')).toBeVisible();await expect(page.locator('#days .day')).toHaveCount(9);await expect(page.locator('#days .d-weather')).toHaveCount(0);
-  const before=await geometry();release();await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');await expect(page.locator('#days .d-weather')).toHaveCount(8);
-  expect(await geometry()).toEqual(before);
-  const calls=outingCalls;await page.reload();await expect(page.locator('#days .d-weather')).toHaveCount(8);await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');await expect(page.locator('#days .day').first()).toBeVisible();
-  expect(outingCalls).toBe(calls);await expect.poll(geometry).toEqual(before);
- }finally{release();}
+ // The first usable generation includes both profiles. A following generation
+ // keeps every visible node and number until the practical weather also arrives.
+ await page.goto('/');await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');
+ await expect(page.locator('#days .day')).toHaveCount(9);
+ const before=await geometry(),text=await page.locator('#days').innerText();
+ await page.evaluate(()=>{window.savedDays=document.querySelector('#days .day');});
+ const pending=[];
+ await page.unroute('**/api/weather/v1/forecast?**');
+ await page.route('**/api/weather/v1/forecast?**',async r=>{
+  if(!new URL(r.request().url()).searchParams.has('daily')){outingCalls++;await new Promise(resolve=>pending.push(resolve));}
+  await r.fulfill({json:forecast(r.request(),1)});
+ });
+ await page.locator('#refresh').click();await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','true');
+ await expect.poll(()=>pending.length).toBeGreaterThan(0);
+ expect(await page.locator('#days').innerText()).toBe(text);expect(await geometry()).toEqual(before);
+ // Release each of the bounded request waves, without blocking later waves.
+ await page.unroute('**/api/weather/v1/forecast?**');
+ await page.route('**/api/weather/v1/forecast?**',r=>{if(!new URL(r.request().url()).searchParams.has('daily'))outingCalls++;return r.fulfill({json:forecast(r.request(),1)});});
+ pending.splice(0).forEach(r=>r());
+ await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');
+ expect(await geometry()).toEqual(before);
+ expect(await page.evaluate(()=>savedDays===document.querySelector('#days .day'))).toBe(true);
+ const calls=outingCalls;await page.reload();await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');
+ expect(outingCalls).toBe(calls);expect(await geometry()).toEqual(before);
+});
+
+for(const interest of ['Piante','Sentieri'])test(`la scheda ${interest} conserva nodi e sezioni durante la sincronizzazione`,async({page})=>{
+ let paused=false;const pending=[];
+ await page.route('https://**/*',r=>r.abort());
+ await page.route('**/api/weather/v1/forecast?**',async r=>{if(paused)await new Promise(resolve=>pending.push(resolve));await r.fulfill({json:forecast(r.request())});});
+ await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','62026-10-20'));
+ await page.goto('/');await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');
+ await page.getByRole('button',{name:interest,exact:true}).click();await page.getByRole('button',{name:'Funghi',exact:true}).click();
+ await page.goto('/#/zona/tancia/0');await expect(page.locator('#detail .phero-title')).toBeVisible();
+ const section=page.locator('#detail details[data-sec="sentieri"]');
+ if(!await section.evaluate(el=>el.open))await section.locator(':scope > summary').click();
+ const original=await section.elementHandle(),title=await page.locator('#detail .phero-title').elementHandle();
+ paused=true;await page.evaluate(()=>document.querySelector('#refresh').click());await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','true');
+ paused=false;pending.splice(0).forEach(resolve=>resolve());await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');
+ expect(await original.evaluate(el=>el.isConnected)).toBe(true);expect(await title.evaluate(el=>el.isConnected)).toBe(true);
+ await expect(section).toHaveAttribute('open','');
 });

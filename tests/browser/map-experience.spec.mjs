@@ -51,7 +51,7 @@ test('spostarsi fuori copertura distingue area vuota da filtri senza risultati',
 });
 test('senza meteo la mappa resta esplorabile, senza indici inventati',async({browser})=>{
  const {c,p,errors}=await start(browser,390,'light',true);
- await expect(p.locator('#map .zone-label').first()).toBeVisible();await expect(p.locator('#map .pc')).toHaveCount(0);await expect(p.locator('#map-results .pc')).toHaveCount(0);
+ await expect(p.locator('#map .zone-label:visible').first()).toBeVisible();await expect(p.locator('#map .pc')).toHaveCount(0);await expect(p.locator('#map-results .pc')).toHaveCount(0);
  await p.locator('#map-results > summary').click();await p.locator('[data-map-zone]').first().click();await expect(p.locator('#map-sheet')).toBeVisible();
  expect(await p.evaluate(()=>document.documentElement.scrollHeight<=innerHeight+1)).toBe(true);expect(errors).toEqual([]);await c.close();
 });

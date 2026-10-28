@@ -15,7 +15,7 @@ export function openComparePicker({taxa,photo,asset,title='Scegli un fungo',curr
   dialog.innerHTML=`<header class="cmp-chooser-head"><h2>${esc(heading)}</h2><button type="button" data-finder-close aria-label="Chiudi">×</button></header>
     <label class="cmp-finder-search"><span>Cerca nel catalogo</span><input type="search" placeholder="Nome o carattere, es. verde" autocomplete="off"></label>
     ${related.length?`<div class="cmp-finder-scopes" role="group" aria-label="Specie da mostrare"><button type="button" data-scope="related" aria-pressed="true">Sosia documentati · ${related.length}</button><button type="button" data-scope="all" aria-pressed="false">${esc(allLabel)}</button></div>`:''}
-    <p class="cmp-finder-count" role="status"></p><div class="cmp-finder-results"></div>`;
+    <p class="small muted" data-finder-search-help hidden>Ricerca testuale: le parole possono trovarsi in caratteri diversi. Per scegliere i caratteri usa «Impara a riconoscere» nella sezione di Scopri.</p><p class="cmp-finder-count" role="status"></p><div class="cmp-finder-results"></div>`;
   document.body.append(dialog);
   const relatedKeys=new Set(related.map(t=>t.key));
   let scope=related.length?'related':'all';
@@ -24,6 +24,7 @@ export function openComparePicker({taxa,photo,asset,title='Scegli un fungo',curr
     const q=input.value.trim();
     const pool=taxa.filter(t=>t.key!==exclude && (scope==='all'||relatedKeys.has(t.key)));
     const result=matchSpecies(pool,q),items=result.items;
+    dialog.querySelector('[data-finder-search-help]').hidden=!result.byTraits;
     dialog.querySelector('.cmp-finder-count').textContent=`${items.length} specie${result.byTraits?' · suggerimenti per caratteri':scope==='related'?' · dalle relazioni documentate':' · intero catalogo'}`;
     dialog.querySelector('.cmp-finder-results').innerHTML=items.length?items.map(t=>`<button type="button" class="cmp-finder-item" data-choose="${esc(t.key)}" aria-pressed="${t.key===current}">${image(t,photo,asset)}<span><b>${esc(name(t))}</b><i>${esc(t.latin||'')}</i>${result.byTraits?`<small class="search-feature-reason">${esc(result.reasons.get(t))}</small>`:''}<small${['mortale','tossico'].includes(t.toxicity)?' class="cmp-finder-risk"':''}>${esc(t.tox_label||t.toxicity||'')}${relatedKeys.has(t.key)?' · sosia documentato':''}</small></span>${t.key===current?'<span aria-hidden="true">✓</span>':''}</button>`).join(''):'<p class="cmp-picker-empty">Nessuna specie corrisponde. Prova un altro nome o passa al catalogo completo.</p>';
   };

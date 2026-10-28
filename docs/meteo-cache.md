@@ -1,5 +1,41 @@
 # Meteo: cache e aggiornamento in background
 
+## Revisione del 25 ottobre 2026 · frequenze approvate
+
+Questa sezione descrive il ramo `codex/weather-sync-stable` e supera il flusso su richiesta descritto nella cronologia sotto. **Matteo ha confermato il rilascio e le frequenze: uscita ogni 30 minuti, crescita ogni 4 ore.** Le verifiche di produzione sono registrate nella sezione di rilascio.
+
+### Responsabilità e dati
+
+- Cloudflare acquisisce tutte le zone pubblicate anche senza visite. Il cron `* * * * *` distribuisce le zone: uscita ogni 30 minuti, crescita ogni 240 minuti, in slot UTC. Con 36 zone, un passaggio normale tratta al massimo tre profili/zona, senza scaricare ed elaborare tutto il catalogo insieme.
+- Le copie compatte correnti stanno in `CMS_DB.weather_live_cache`, con chiave della query, acquisizione originale, scadenza e payload. D1 è già configurato: non si creano nuovi binding. Una scrittura meno recente non sostituisce una più nuova. La pulizia giornaliera elimina i record scaduti.
+- KV `DIARIO` resta un ripiego di **sola lettura** per le copie anteriori al rilascio, incluse le migrazioni dei profili. Non riceve i rinnovi programmati: 36 zone ogni 30 minuti più la crescita supererebbero le 1.000 scritture giornaliere del piano KV gratuito. Non si presume quale piano abbia l’account.
+- D1 `weather_refresh_jobs` assegna ogni lavoro con una scrittura condizionata atomica. Eventi duplicati o isolate diversi non avviano lo stesso slot due volte. Errori: due nuovi tentativi, dopo 2 e 10 minuti, massimo tre tentativi per slot; anche un lavoro interrotto è recuperabile alla scadenza della concessione. Un errore conserva l’ultima copia acquisita. Log `weather-refresh-incomplete` e metriche esistenti rendono visibili i fallimenti.
+- `/api/weather/v1/forecast` distribuisce esclusivamente copie salvate, una zona alla volta. Non chiama Open-Meteo, neppure per una cache mancante, un vecchio client o l’header di aggiornamento forzato. Le vecchie richieste globali ricevono 409 e l’invito a ricaricare; non aprono una via alternativa al fornitore. Le copie mancanti ricevono 503 con codice riconoscibile, senza un secondo tentativo immediato del browser.
+
+### Sincronizzazione nel dispositivo
+
+Le copie locali di entrambi i profili vengono lette subito e mostrate nello stesso passaggio. Le risposte di rete aggiornano la cache locale per zona, ma la vista riceve insieme crescita e uscita al termine del tentativo, anche se parziale. Una risposta più vecchia, un errore o lo storage del dispositivo non disponibile non eliminano i dati già in memoria. Il controllo della revisione ignora i tentativi annullati.
+
+Al primo avvio senza copie, i dati di crescita già ricevuti consentono di consultare la mappa mentre il meteo pratico è ancora in arrivo; non si inventano condizioni favorevoli. Gli aggiornamenti successivi conservano la vista disponibile fino alla ricezione congiunta.
+
+La pagina visibile ricontrolla le copie ogni cinque minuti, al ritorno nell’app e dopo la riconnessione, senza sovrapporre sincronizzazioni. «Aggiorna» rilegge le copie del server: non provoca acquisizioni dal fornitore. La consegna resta suddivisa per zona, con concorrenza limitata; non rappresenta un’emissione simultanea di tutte le zone. Ogni serie conserva la propria data.
+
+Le schede Funghi, Piante e Sentieri vengono aggiornate sul posto. Le sezioni hanno un’identità stabile anche quando una nota entra o esce dall’HTML. La barra dei giorni non viene ricentrata durante un aggiornamento. I cambiamenti che sostituirebbero le proposte della home attendono sempre «Aggiorna» nella barra delle nuove proposte, anche subito dopo l’apertura; gli avvisi di peggioramento restano immediati. Il pannello contestuale aperto rinvia l’aggiornamento della scheda fino alla chiusura.
+
+### Freschezza, quota e avvio
+
+La crescita è da rinnovare dopo quattro ore e resta inutilizzabile per gli indici correnti oltre 24 ore. Il meteo pratico mantiene le cautele già decise: da aggiornare oltre un’ora, inutilizzabile oltre tre. La conservazione di sei giorni non prolunga queste validità; nessun timestamp viene rinnovato dalla lettura.
+
+Con 36 zone e 108 fasce: stima prudente già usata dalle metriche, crescita 540 × 6 = 3.240, uscita 36 × 48 = 1.728, archivio quotidiano 108: **5.076 chiamate ponderate al giorno**, prima degli errori e dei tentativi aggiuntivi. È una stima, non una misura o garanzia di quota. I tentativi sono limitati per lavoro; un guasto prolungato va controllato nelle metriche. Nessun piano a pagamento è attivato.
+
+Per il rilascio: applicare la migrazione 0017 a `CMS_DB` (le tabelle hanno anche inizializzazione idempotente), verificare trigger e acquisizioni reali. Il riempimento iniziale distribuito richiede fino a quattro ore per la crescita e 30 minuti per l’uscita: prima di dichiarare il passaggio concluso verificare 72 copie correnti per le geometrie pubblicate e la loro età, oltre a home, zona e mappa. Le copie KV esistenti attenuano la transizione, ma non garantiscono che tutte le zone siano già coperte. I test locali non provano l’esecuzione dei cron di produzione.
+
+**Verifiche locali del ramo (25/10).** 571 test unitari superati, compreso il percorso HTTP pubblico senza chiamate al fornitore. Dry-run Wrangler superato con `ESBUILD_WORKER_THREADS=0`; `git diff --check` pulito. 32 scenari browser pertinenti esercitati con esito positivo su server statico e API simulate: stati home, cache, errore e recupero, applicazione congiunta, calendario, pannelli mappa, schede Funghi/Piante/Sentieri. Il primo scenario home è passato al rilancio singolo dopo un errore di caricamento iniziale nel gruppo. I due vecchi casi di navigazione che cercano `.tab-search` (assente nell’HTML corrente) restano esclusi dal gruppo mirato; nessuna modifica alla navigazione per farli passare. Il server Workers locale non si avvia in questo ambiente (`spawn EBADF` di esbuild/workerd): i browser non validano i binding Cloudflare reali e non è stata eseguita la suite completa. Il cron e la copertura del server di produzione restano da verificare dopo l’approvazione e il rilascio.
+
+Fonti tecniche verificate il 25/10/2026: [KV, limiti](https://developers.cloudflare.com/kv/platform/limits/), [KV, consistenza](https://developers.cloudflare.com/kv/concepts/how-kv-works/), [D1, limiti](https://developers.cloudflare.com/d1/platform/limits/), [Cron Triggers](https://developers.cloudflare.com/workers/configuration/cron-triggers/), [Open-Meteo, quota e pesi](https://open-meteo.com/en/pricing).
+
+## Cronologia precedente al 25 ottobre
+
 Aggiornamento del 14 ottobre 2026. L'interfaccia non attende tutte le zone prima di mostrare i dati disponibili. La copia locale viene letta subito; il servizio aggiorna soltanto le zone mancanti o da aggiornare. Le risposte riuscite vengono salvate anche quando altre zone falliscono.
 
 ## Due profili indipendenti

@@ -206,10 +206,10 @@ export function initJournal({ resolveTrip=()=>null,onEntries=()=>{},zones, speci
     document.dispatchEvent(new CustomEvent('fungaroli:note-saved',{detail:{title:entry.title}}));
   };
   const composer=createNotebookComposer({dialog:noteDialog,zones,catalogs:noteCatalogs,canShare:()=>store?.kind==='community'&&!!currentUser(),onOuting:()=>open(),onSave:saveNote});
-  const quickComposer=createQuickNotebookComposer({dialog:noteDialog,zones,catalogs:noteCatalogs,onSave:saveNote,noteWeather,onMore:()=>openNote(),onDone:entry=>location.hash='#/diario/pagina/'+encodeURIComponent(entry.id)});
+  const quickComposer=createQuickNotebookComposer({dialog:noteDialog,zones,catalogs:noteCatalogs,onSave:saveNote,noteWeather,onMore:()=>openNote(),onDetails:(draft,original)=>composer.open({draft,onQuick:value=>quickComposer.open({draft:value},original)},original),onDone:entry=>location.hash='#/diario/pagina/'+encodeURIComponent(entry.id)});
   async function openNote(context={},existing=null){
     await storageReady;if(!store){renderList('Il taccuino sta ancora caricando.');return;}
-    noteOwner=store;noteOrigin=document.activeElement;(context.quick||existing?.photo?quickComposer:composer).open(context,existing);
+    noteOwner=store;noteOrigin=document.activeElement;(context.quick||existing?quickComposer:composer).open(context,existing);
   }
   document.addEventListener('click',e=>{
     const b=e.target.closest('[data-new-note],[data-note-kind],[data-annotate]');if(!b)return;

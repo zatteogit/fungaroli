@@ -1,0 +1,13 @@
+{
+  "id": "fronda",
+  "kind": "generalista",
+  "name": "Fronda",
+  "place": {
+    "pre": "pilota",
+    "label": "Lazio",
+    "title": "Pilota Lazio: zone selezionate nelle cinque province, con copertura parziale di accessi e sentieri",
+    "srText": "versione pilota, che cosa copre"
+  },
+  "zones": { "provinces": null, "ids": null },
+  "demo": null
+}

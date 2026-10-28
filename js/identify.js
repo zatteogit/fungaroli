@@ -16,7 +16,7 @@ import { availableGrowthStages } from './fungus-stages.js';
 import { openLightbox, captionHtml } from './lightbox.js';
 import { openEntitySheet } from './entity-sheet.js';
 import { soft, tick } from './motion.js';
-import { matchTraits, retainCandidate, traitQuestions, traitSimilarity, attentionGroups } from './identify-model.js';
+import { matchTraits, retainCandidate, traitQuestions, traitSimilarity, attentionGroups,comparisonTraitState } from './identify-model.js';
 const TQ = (key) => traitQuestions().find((q) => q.key === key);
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -908,7 +908,7 @@ const CMP = [
 function cmpRows(ref, t) {
   return CMP.map((r) => {
     const a = r.get ? r.get(ref) : ref.traits?.[r.key], b = r.get ? r.get(t) : t.traits?.[r.key];
-    if (a == null || b == null || (Array.isArray(a) && !a.length) || (Array.isArray(b) && !b.length)) return null;
+    if (comparisonTraitState(ref,r.key,a)!=='known'||comparisonTraitState(t,r.key,b)!=='known') return null;
     const A = [].concat(a), B = [].concat(b);
     const txt = (X) => (r.key === 'season' ? monthsTxt(X) : r.bool ? withOut(r.key, X[0]) : orList(X.map(r.say)));
     const differentStructure = r.key === 'hymenophore_color' && JSON.stringify([].concat(ref.traits?.hymenophore ?? []).sort()) !== JSON.stringify([].concat(t.traits?.hymenophore ?? []).sort());
@@ -948,7 +948,7 @@ function renderCompare(box, ref, pick) {
   const toxCls = (t) => `tox-${String(t.toxicity || '').replace(/\s/g, '-')}`;
   const nameBtn = (t) => `<button type="button" data-taxon="${esc(t.key)}">${esc(t.name || t.latin)}</button>`; // nel confronto: anteprima, per tutti
   const slide = (t, k) => {
-    const missing=CMP.filter(r=>{const a=r.get?r.get(ref):ref.traits?.[r.key],b=r.get?r.get(t):t.traits?.[r.key];return a==null||b==null||Array.isArray(a)&&!a.length||Array.isArray(b)&&!b.length;});
+    const missing=CMP.filter(r=>{const a=r.get?r.get(ref):ref.traits?.[r.key],b=r.get?r.get(t):t.traits?.[r.key];return comparisonTraitState(ref,r.key,a)==='missing'||comparisonTraitState(t,r.key,b)==='missing';});
     const rows = cmpRows(ref, t), groups = [
       {kind:'diff',label:'Differenti',empty:'Nessun carattere completamente diverso nei dati disponibili. Le somiglianze non confermano l’identità.'},
       {kind:'part',label:'A volte simili',empty:'Nessuna somiglianza parziale documentata.'},
@@ -969,7 +969,7 @@ function renderCompare(box, ref, pick) {
       <p class="cmp-legend" hidden><span><span class="cmp-relation" aria-hidden="true">=</span> Valore in comune</span><span><span class="cmp-relation" aria-hidden="true">≠</span> Valore diverso</span></p>
       ${groups.map(g=>{const items=rows.filter(r=>!r.info&&r.kind===g.kind);return `<section class="cmp-panel" id="cmp-${esc(t.key)}-panel-${g.kind}" data-cmp-panel="${g.kind}" role="tabpanel" aria-labelledby="cmp-${esc(t.key)}-tab-${g.kind}" tabindex="0"${g.kind==='diff'?'':' hidden'}>${items.length?`<div class="cmp-column-head" aria-hidden="true"><span>${esc(ref.name||ref.latin)}</span><span>${esc(t.name||t.latin)}</span></div><ul class="cmp-rows">${items.map(r=>r.html).join('')}</ul>`:`<p class="cmp-none">${rows.some(r=>!r.info)?g.empty:'I dati disponibili non permettono ancora un confronto dei caratteri tra queste due specie. Apri le schede per leggere descrizioni e fonti; non è possibile dedurre somiglianze o differenze.'}</p>`}</section>`;}).join('')}
       ${info.length?`<div class="cmp-season"><ul class="cmp-rows">${info.map(r=>r.html).join('')}</ul></div>`:''}
-      ${missing.length?`<details class="context-note cmp-missing-data"><summary>Dati incompleti · ${missing.length} caratteri</summary><p>Questi caratteri non sono confrontabili perché mancano dati per una o entrambe le specie. Un dato mancante non significa carattere assente.</p><ul>${missing.map(r=>`<li>${esc(r.k)}</li>`).join('')}</ul></details>`:''}
+      ${missing.length?`<details class="context-note cmp-missing-data"><summary>Dati incompleti · ${missing.length} ${missing.length===1?'carattere':'caratteri'}</summary><p>Questi caratteri non sono confrontabili perché mancano dati per una o entrambe le specie. Un dato mancante non significa carattere assente.</p><ul>${missing.map(r=>`<li>${esc(r.k)}</li>`).join('')}</ul></details>`:''}
       <details class="sec cmp-sources"><summary>Fonti del confronto</summary><div class="sec-body">${sourceRows([...(ref.sources || []), ...(t.sources || [])])}</div></details>
       <p class="cmp-verdict">${[ref,t].some(x=>['mortale','tossico'].includes(x.toxicity)) ? 'Il confronto include specie tossiche o mortali; i caratteri possono variare o essere incompleti. ' : ''}Somiglianze e differenze non identificano il tuo esemplare. Fai controllare il raccolto all’Ispettorato micologico ASL.</p>
     </section>`;
@@ -1263,7 +1263,7 @@ export function renderIdentify(box) {
   const guidedMode = () => {
     const rows = answered.map((q) => (state.editing === q.key ? `</ul>${questionCard(q, { big: true })}<ul class="id-answers">` : answerRow(q))).join('');
     const head = answered.length ? `<div class="id-answers-head"><span>${answered.length === 1 ? 'La tua risposta' : `Le tue ${answered.length} risposte`}</span><button type="button" class="af-add" id="id-reset">Ricomincia</button></div><ul class="id-answers">${rows}</ul>`.replaceAll('<ul class="id-answers"></ul>', '') : '';
-    const next = state.editing ? '' : nq ? questionCard(nq, { big: true, n: given.length + 1 })
+    const next = state.editing ? '' : nq ? questionCard(nq, { big: true, n: answered.length + 1 })
       : '<section class="id-q id-q-big"><h3>Non ci sono altre domande utili</h3><p class="small muted">Confronta i candidati qui sotto e, nel dubbio, non raccogliere.</p></section>';
     return head + next;
   };
@@ -1273,7 +1273,7 @@ export function renderIdentify(box) {
     ${ZONES.length ? `<div class="filter-rail id-zones" role="group" aria-label="Dove l'hai trovato"><span class="af-label">Zona</span><button type="button" class="chip" data-zone="" aria-pressed="${!state.zone}">Ovunque</button>${ZONES.map((z) => `<button type="button" class="chip" data-zone="${z.id}" aria-pressed="${state.zone === z.id}">${esc(z.title || z.name)}</button>`).join('')}</div>` : ''}
     ${state.guided ? guidedMode() : `<div class="idf-primary" aria-label="Caratteri principali">${facetsHtml([['', PRIMARY_FILTERS]], true)}</div><div class="idf-bar">${activeChips()}<button type="button" class="btn idf-open" data-idf-open aria-haspopup="dialog" aria-controls="identify-filters">Altri${given.filter(q=>!PRIMARY_FILTERS.includes(q.key)).length ? ` <b>${given.filter(q=>!PRIMARY_FILTERS.includes(q.key)).length}</b>` : ''}</button>${given.length ? '<button type="button" class="af-add" data-fall>Azzera</button>' : ''}</div>`}
     ${state.guided && !given.length && !state.q && !state.zone ? '' : `<div class="id-head"><h2 class="sec-title">${list.length} ${list.length === 1 ? 'candidato' : 'candidati'}</h2></div>`}
-    <label class="search-box id-search id-filter"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg><input id="id-q" type="search" placeholder="Filtra i candidati: anello, blu, castagno…" value="${esc(state.q)}" autocomplete="off" aria-label="Filtra i candidati per parola"></label>
+    <label class="search-box id-search id-filter"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg><input id="id-q" type="search" placeholder="Filtra i candidati: anello, blu, castagno…" value="${esc(state.q)}" autocomplete="off" aria-label="Filtra i candidati per parola" aria-describedby="id-search-help"></label><p id="id-search-help" class="small muted">Cerca parole nei nomi e nelle descrizioni. Le parole possono trovarsi in caratteri diversi: «volva assente» non imposta il filtro Volva = assente. Per scegliere un carattere usa le domande o «Mostra tutti i filtri».</p>
     <details class="id-deadly context-note" name="identify-notices"><summary><b>Le risposte e i filtri non escludono i funghi mortali.</b></summary><p>Anello e volva possono essere nascosti o danneggiati. Il catalogo è incompleto: anche un solo candidato o nessun mortale nei risultati non conferma la specie né la commestibilità.</p></details>
     ${state.guided && !given.length && !state.q && !state.zone
       ? `<p class="small muted gk-start">${list.length} funghi nel catalogo, velenosi compresi. Rispondi alla prima domanda o filtra per parola: i candidati compaiono man mano che restringi.</p>`

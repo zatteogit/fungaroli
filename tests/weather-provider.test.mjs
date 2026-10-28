@@ -93,7 +93,7 @@ test('stale shared cache is immediate, refresh is coalesced and failures preserv
  const storage=cache(),params=forecastParams(zones,'growth');
  await cachedForecast(params,{zones,cache:storage,now,fetcher:async()=>Response.json(raw())});
  let finish,calls=0;const work=[];
- const options={zones,cache:storage,now:now+3600001,waitUntil:p=>work.push(p),fetcher:()=>{calls++;return new Promise(r=>finish=r);}};
+ const options={zones,cache:storage,now:now+14400001,waitUntil:p=>work.push(p),fetcher:()=>{calls++;return new Promise(r=>finish=r);}};
  const saved=await cachedForecast(params,options);
  assert.equal(saved.headers.get('x-weather-refreshing'),'1');assert.equal(saved.headers.get('x-weather-fetched-at'),new Date(now).toISOString());
  // Il follower calcola lo SHA-256 in modo asincrono: il download si sblocca
@@ -103,9 +103,9 @@ test('stale shared cache is immediate, refresh is coalesced and failures preserv
  const follower=cachedForecast(params,{...options,waitForFresh:true});
  await hasRead;storage.get=read;await new Promise(r=>setTimeout(r,0));assert.equal(calls,1);
  finish(Response.json(raw()));const fresh=await follower;await Promise.all(work);
- assert.equal(fresh.headers.get('x-weather-cache'),'miss');assert.equal(fresh.headers.get('x-weather-fetched-at'),new Date(now+3600001).toISOString());
- const bad=await cachedForecast(params,{...options,now:now+7200002,fetcher:async()=>Response.json({},{status:429})});
- await Promise.all(work);assert.equal(bad.headers.get('x-weather-fetched-at'),new Date(now+3600001).toISOString());
+ assert.equal(fresh.headers.get('x-weather-cache'),'miss');assert.equal(fresh.headers.get('x-weather-fetched-at'),new Date(now+14400001).toISOString());
+ const bad=await cachedForecast(params,{...options,now:now+28800002,fetcher:async()=>Response.json({},{status:429})});
+ await Promise.all(work);assert.equal(bad.headers.get('x-weather-fetched-at'),new Date(now+14400001).toISOString());
 });
 test('shared cache survives midnight when its forecast covers the new day',async()=>{
  const storage=cache(),params=forecastParams(zones,'growth'),before=Date.parse(todayISO()+'T21:59:00Z');let calls=0;

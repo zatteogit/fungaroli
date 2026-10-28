@@ -6,14 +6,21 @@ Per identità visiva e design system Fronda leggi anche [docs/handoff-fronda-202
 
 ## Rami e pubblicazione
 
-- Il ramo di produzione è **`claude/brave-tesla-wu0a2b`**, non `main` (che non esiste). Le PR vanno aperte verso quel ramo.
-- Il merge nel ramo di produzione pubblica il sito su Cloudflare Workers (https://fungaroli.zatteo.workers.dev). Configurazione versionata in `wrangler.jsonc`: non aggiungere binding o variabili dalla dashboard.
+- **Dal 28/10/2026 il ramo di produzione è `main`** (decisione di Matteo). Le PR vanno aperte verso `main`. `claude/brave-tesla-wu0a2b` è il vecchio ramo di produzione: resta come storia, non va usato come base né come destinazione.
+- Il merge su `main` pubblica il sito su Cloudflare Workers (https://fungaroli.zatteo.workers.dev). Configurazione versionata in `wrangler.jsonc`: non aggiungere binding o variabili dalla dashboard.
+- **Ambienti ed edizioni:** locale (`npm run dev`), staging (ramo `staging`, Worker `fungaroli-staging`, database propri) e produzione. Versione generalista e versioni dedicate o demo sono configurazioni in `editions/`, mai rami o copie del codice. Procedura in [docs/ambienti-ed-edizioni.md](docs/ambienti-ed-edizioni.md).
 - Prima di iniziare aggiorna il ramo da produzione; lavora su un ramo dedicato.
 - `docs/handoff-cloudflare.md` descrive il bootstrap del 12/10: è storia, non la procedura attuale.
 - Mai segreti in commit, documenti o log.
-- **Anteprime Cloudflare spente (24/10/2026):** i rami delle PR non hanno più il controllo «Workers Builds» (Settings → Build → Branch control). Per riaccenderle servono risorse separate e un blocco `previews` in `wrangler.jsonc` (`npx wrangler preview`); mai i database di produzione.
+- **Anteprime Cloudflare spente (24/10/2026):** i rami delle PR non hanno build proprie. Per provare una PR prima del merge si pubblica sul ramo `staging` (`git push --force origin <ramo>:staging`), che usa database separati; mai i database di produzione.
 
 ## Verifiche
+
+**TypeScript (migrazione graduale):** i moduli con intestazione «Generated from» in `js/`
+sono generati da `src/js/*.ts` (dispositivo, meteo e modelli/archivi del taccuino). Modificare i sorgenti, eseguire `npm run build:typescript` e
+includere nel commit anche il JavaScript generato. `npm test` controlla tipi e
+coerenza degli output. Non aggiungere codice manuale nei file generati.
+Perimetro e comandi in [docs/typescript.md](docs/typescript.md).
 
 ```bash
 npm ci
@@ -86,3 +93,14 @@ Per `kipi init`, `scan`, `process`, `update` o `status`, usa la [skill locale](.
 - **Revisione dei controlli di Matteo, 21/10 (supera la prima prova del 20/10):** CTA verdi e tondeggianti in light; lo stesso verde diventa bianco in dark, con testo bosco notte. Selezioni gialle in entrambi i temi, rettangoli smussati con bordino e spunta quando prevista. Giallo, ciclamino e corallo sono accenti editoriali; il corallo riprende il tono indicato da Matteo nel badge «Mortale», ma i token di rischio restano separati da quelli decorativi. La distinzione usa insieme ruolo, forma e colore. Non ripristinare la prima prova con CTA gialle e selezioni verdi.
 
 - **Forme e bordi, successiva correzione di Matteo il 21/10:** conservare i colori della revisione (CTA verdi light/bianche dark e selezioni gialle), ripristinando forme e bordi precedenti: chip e destinazioni della barra tornano alle proprie geometrie, senza una nuova regola globale che li renda tutti rettangolari. I pulsanti degli strumenti conservano il raggio precedente e i contorni secondari non vanno rinforzati indiscriminatamente. La frase del giorno mantiene la cornice discreta e migliora attraverso disposizione e tipografia.
+
+## Priorità e disclosure dei contenuti (Matteo, 27 ottobre 2026)
+
+Per ogni contenuto valutare importanza per le diverse personas, facilità di accesso,
+progressive disclosure, formato, organizzazione e ordine nel percorso. Arrivare
+subito alle informazioni utili. La revisione è una pipeline pagina per pagina e
+scheda per scheda: `docs/content-review/README.md`. Registrare evidenze e lasciare
+in coda i casi non esaminati; non dichiarare rivisto un intero catalogo solo perché
+il suo template è cambiato. Cautele, divieti, fonti e dati restano conservati.
+
+Prima di una fase per cui consiglieresti un diverso modello o effort, comunica a Matteo modello, effort e motivo del cambio prima di eseguirla. La regola vale anche nei lotti automatici; non dichiarare cambi di impostazioni che non sono avvenuti.

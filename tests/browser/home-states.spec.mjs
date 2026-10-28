@@ -141,12 +141,15 @@ test('il meteo nuovo che cambia tutto aspetta «Aggiorna»; il peggioramento si 
  await page.clock.install({time});await page.goto('/');
  const cover=page.locator('#hero .cover-link');await expect(cover).toBeVisible();await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');
  const href=await cover.getAttribute('href');
+ const originalCover=await cover.elementHandle();
  await page.clock.runFor(3000);await page.mouse.wheel(0,400);await page.evaluate(()=>scrollTo(0,0));
  storm=true;await page.locator('#refresh').click();await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');
- const bar=page.locator('#home-update');await expect(bar).toBeVisible();await expect(bar).toContainText('Meteo aggiornato: cambiano le proposte.');
+ const bar=page.locator('#home-update');await expect(bar).toBeVisible();await expect(bar).toContainText('Nuove proposte in base al meteo.');
  await expect(cover).toHaveAttribute('href',href);
+ expect(await originalCover.evaluate(el=>el.isConnected)).toBe(true);
+ await expect(page.locator('#hero .fact.wx-sconsigliata')).toBeVisible();
  await expect(page.locator('#hero .weather-alert')).toHaveText('Meteo peggiorato');
- await bar.getByRole('button',{name:'Aggiorna'}).click();
+ await bar.getByRole('button',{name:'Mostra proposte'}).click();
  await expect(bar).toBeHidden();await expect(page.locator('#hero [data-home-state="weather"]')).toBeVisible();
  expect(errors).toEqual([]);
 });

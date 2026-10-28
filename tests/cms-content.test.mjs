@@ -55,6 +55,13 @@ const env = (sql, files = {}) => ({ CMS_DB: d1(sql), ASSETS: { fetch: async req 
   try { return new Response(files[id] ?? read(id)); } catch { return new Response('', { status: 404 }); }
 } } });
 const ORIGIN = 'https://fungaroli.test';
+test('isolate nuovi della stessa shell riusano i seed; una nuova release li verifica di nuovo',async()=>{
+ const sql=new DatabaseSync(':memory:');let shell='fungaroli-shell-v1000',reads=0;
+ const create=()=>{const value=env(sql),fetch=value.ASSETS.fetch;value.ASSETS.fetch=async req=>new URL(req.url).pathname==='/index.html'?new Response(shell,{headers:{'content-type':'text/html'}}):(reads++,fetch(req));return value;};
+ await publishedContent(create(),ORIGIN);const first=reads;assert.ok(first>0);
+ await publishedContent(create(),ORIGIN);assert.equal(reads,first);
+ shell='fungaroli-shell-v1001';await publishedContent(create(),ORIGIN);assert.ok(reads>first);sql.close();
+});
 const row = (sql, id) => sql.prepare('SELECT version,published_version,updated_by,published FROM cms_documents WHERE id=?').get(id);
 
 test('ogni documento aggiornato dal repository passa la validazione del CMS e ne esce invariato', () => {

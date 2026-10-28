@@ -156,7 +156,7 @@ function render(q) {
   const groups = ORDER.map((k) => [k, hits.filter((h) => h.it.kind === k).sort((a, b) => b.s - a.s).slice(0, scope ? 30 : k === 'velenoso' || k === 'sentiero' ? 5 : 6)]).filter(([, l]) => l.length);
   // il gruppo col risultato migliore va in cima
   groups.sort((a, b) => Number(prio.includes(b[0])) - Number(prio.includes(a[0])) || b[1][0].s - a[1][0].s);
-  box.innerHTML = groups.map(([k, l]) => `<section class="sr-group"><p class="sr-h">${KINDS[k]}${l.every(h=>h.byTraits)?' · suggerimenti per caratteri':''}</p><ul>${l.map(({ it, i, reason }) => `
+  box.innerHTML = (hits.some(h=>h.byTraits)?'<p class="small muted sr-hint">Corrispondenze testuali nelle descrizioni: le parole possono trovarsi in caratteri diversi. «Volva assente» non imposta il filtro Volva = assente. Per scegliere i caratteri usa <a href="#/riconosci">le domande sui funghi</a>.</p>':'') + groups.map(([k, l]) => `<section class="sr-group"><p class="sr-h">${KINDS[k]}${l.every(h=>h.byTraits)?' · suggerimenti per caratteri':''}</p><ul>${l.map(({ it, i, reason }) => `
     <li><button type="button" class="sr-item" role="option" data-i="${i}" aria-selected="false">
       <span class="sr-img">${it.img || ''}</span>
       <span class="sr-txt"><b>${mark(it.title, words)}</b>${it.sub ? `<small>${mark(it.sub, words)}</small>` : ''}${reason?`<small class="search-feature-reason">${mark(reason,words)}</small>`:''}</span>

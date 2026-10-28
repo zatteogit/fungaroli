@@ -10,7 +10,7 @@ export function mapQuery({ interests, day, count }) {
 export function mountMapResults(root, { choose, fit, filters }) {
   const host = document.createElement('details');
   host.id = 'map-results'; host.className = 'map-results';
-  host.innerHTML = `<summary><span data-map-count aria-live="polite"></span><b>Elenco <span aria-hidden="true">⌃</span></b></summary><div class="map-results-body"><p class="map-results-order" data-map-order></p><ol data-map-rows></ol><p data-map-empty hidden></p><button type="button" class="btn ghost" data-map-fit>Mostra tutte le zone</button></div>`;
+  host.innerHTML = `<summary><span data-map-count aria-live="polite"></span><b>Elenco <span aria-hidden="true">⌃</span></b></summary><div class="map-results-body"><p class="map-results-order" data-map-order></p><p class="small muted">Avvicina la mappa o usa questo elenco per vedere tutti i nomi delle zone.</p><ol data-map-rows></ol><p data-map-empty hidden></p><button type="button" class="btn ghost" data-map-fit>Mostra tutte le zone</button></div>`;
   root.append(host);
   host.addEventListener('click', e => {
     const row = e.target.closest('[data-map-zone]');

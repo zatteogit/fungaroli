@@ -5,7 +5,7 @@ import {validExternalDay} from './external-observation.js';
 export const EXTERNAL_RULE = {version:1,windowDays:7,minEvents:3,minDays:2,fullStrengthEvents:10,validation:'experimental-unvalidated',effect:'outing_priority_only'};
 export const romeDay=(now=Date.now())=>new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Rome',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(now));
 const shift=(day,n)=>new Date(Date.parse(day+'T12:00:00Z')+n*864e5).toISOString().slice(0,10);
-export function externalImpact(dataset,{day=romeDay(),now=Date.now(),maxPercent=10,modelTaxonIds=[],zoneIds=[]}={}){
+export function externalImpact(dataset,{now=Date.now(),day=romeDay(now),maxPercent=10,modelTaxonIds=[],zoneIds=[]}={}){
  const today=romeDay(now);
  if(!validExternalDay(day,now+7*864e5)||day<shift(today,-365)||day>shift(today,7))throw Object.assign(new Error('Scegli un giorno da un anno fa ai prossimi 7 giorni.'),{status:422});
  const cap=Number.isInteger(maxPercent)&&maxPercent>=0&&maxPercent<=10?maxPercent:0;

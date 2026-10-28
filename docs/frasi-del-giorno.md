@@ -1,40 +1,52 @@
-# La frase del giorno — Fronda
+# Citazione del giorno · aggiornamento del 25 ottobre 2026
 
-Decisione di Matteo, 20 ottobre 2026: una card discreta nella home e un archivio di citazioni, aforismi e umorismo, taggato per recuperare il testo adatto al contesto.
+Sostituiti tutti i precedenti testi con **10 citazioni documentate**: 3 sui funghi,
+4 sulle piante presenti nel catalogo e 3 sulla montagna. Ogni voce contiene autore,
+opera, posizione del passo, URL e verifica del 25/10/2026. I tag botanici indicano
+un tema letterario: non trasformano un nome poetico in un’identificazione tassonomica.
 
-## Collocazione e comportamento
+La home mostra soltanto l’autore con link alla fonte. Per Dickinson e Muir la
+traduzione italiana è stata preparata dall’originale, conservato in `source.originalText`,
+senza copiare traduzioni moderne. Il credito resta in `source.translationCredit`. I passi originali
+sono in pubblico dominio; per Muir si usa la raccolta pubblicata nel 1924, non le
+immagini di manoscritti soggette alle condizioni dell’archivio.
 
-La card viene dopo **Altre buone uscite**, prima delle zone del Lazio. Non precede la proposta principale, i filtri o le alternative.
+Nessun testo editoriale privo di fonte rimane nella rotazione. Gli estratti sono brevi
+(massimo 160 caratteri), mantengono nell’archivio la punteggiatura del passo e non aggiungono promesse
+di raccolta, istruzioni alimentari o probabilità di trovare funghi.
+Nella card si omette soltanto la virgola finale dell’estratto; restano le virgole
+interne, gli altri segni di punteggiatura e il testo originale nell’archivio.
 
-**Deroga del 21 ottobre 2026 (Matteo).** Negli stati senza proposta (tardi, condizioni basse, meteo sfavorevole, da valutare, dati mancanti, filtri) la card scende dopo Luoghi del Lazio, la guida pertinente e il «Come funziona» compatto. Con una proposta resta dopo le alternative. Fondo neutro, testi piccoli ma leggibili, nessuna immagine, carosello o pulsante aggiuntivo. Il testo resta integrale; l’autore delle citazioni è un link alla fonte.
+## Fonti
 
-Una frase per giorno civile di **Europe/Rome**, stabile al ricaricamento e senza dati personali. Il selettore esclude bozze, testi archiviati e stagioni incompatibili. Scorre l’elenco compatibile con una rotazione deterministica senza ripetizioni nello stesso ciclo, finché il catalogo resta invariato. Le stagioni sono editoriali: marzo–maggio, giugno–agosto, settembre–novembre, dicembre–febbraio. Il cambio giorno viene controllato anche al ritorno dalla sospensione. Nessuna rotazione durante la lettura nello stesso giorno.
+- **Giovanni Pascoli** — [Myricae, Il bosco, vv. 1–2](https://it.wikisource.org/wiki/Myricae/Ricordi/Il_bosco).
+- **Giovanni Pascoli** — [Myricae, Il bacio del morto, vv. 1–3](https://it.wikisource.org/wiki/Myricae/Il_bacio_del_morto).
+- **Emily Dickinson** — [The Complete Poems of Emily Dickinson, The mushroom is the elf of plants, v. 1](https://en.wikisource.org/wiki/The_Complete_Poems_of_Emily_Dickinson/The_mushroom_is_the_elf_of_plants) · traduzione italiana Fronda, originale conservato nel database.
+- **Giovanni Pascoli** — [Odi e inni, Al corbezzolo, vv. 9–10](https://it.wikisource.org/wiki/Odi_e_inni/Odi/Al_corbezzolo).
+- **Giacomo Leopardi** — [Canti, La ginestra, vv. 5–7 (edizione Ginzburg, 1938)](https://it.wikisource.org/wiki/Canti_(Leopardi_-_Ginzburg)/La_ginestra).
+- **Gabriele D’Annunzio** — [Alcyone, La pioggia nel pineto, vv. 16–19](https://it.wikisource.org/wiki/Alcyone/La_pioggia_nel_pineto).
+- **Giovanni Pascoli** — [Myricae, Novembre, vv. 3–4](https://it.wikisource.org/wiki/Myricae/In_campagna/Novembre).
+- **Giosue Carducci** — [Rime e ritmi, Mezzogiorno alpino, vv. 3–4 (Poesie, 1904)](https://site.unibo.it/carduccionline/it/su-mezzogiorno-alpino).
+- **Dante Alighieri** — [Divina Commedia, Purgatorio IV, vv. 52–54](https://it.wikisource.org/wiki/Divina_Commedia/Purgatorio/Canto_IV).
+- **John Muir** — [The Life and Letters of John Muir (1924), vol. I, cap. X, lettera del 3 settembre 1873 (estratto)](https://www.yosemite.ca.us/john_muir_writings/the_life_and_letters_of_john_muir/the_life_and_letters_of_john_muir.pdf) · traduzione italiana Fronda, originale conservato nel database.
 
-Se l’archivio non risponde, è vuoto o non offre contenuti compatibili, la card rimane nascosta. Non interrompe il caricamento delle uscite e non mostra errori tecnici all’utente.
+## Archivio e funzionamento
 
-## Archivio e manutenzione
+`data/daily-thoughts.json`, schema 1. Campi obbligatori e validazione CMS restano invariati;
+`source.originalText` e `source.translationCredit` documentano le traduzioni. Tutte le
+citazioni sono disponibili durante l’intero anno: i tag non attestano una stagione biologica.
+La rotazione è deterministica sul giorno di Roma e rimane stabile durante la lettura;
+si aggiorna a mezzanotte o al ritorno dalla sospensione. Il payoff resta separato.
 
-- Seed versionato: `data/daily-thoughts.json`, schema 1, **28 testi**: 16 aforismi, 6 battute, 4 barzellette originali Fronda e 2 citazioni letterarie.
-- Database: documento `daily-thoughts` nel CMS D1 esistente, inizializzato dal seed. Compare in **Redazione → Frasi del giorno**, con bozze, pubblicazione e cronologia. Il deploy aggiorna il seed solo finché nessun autore lo ha modificato. La home legge lo snapshot pubblicato; il JSON è il ripiego quando la risorsa non è disponibile.
-- Stati delle singole voci: `draft`, `published`, `archived`. Pubblicare il documento non rende visibili le voci ancora in bozza.
-- `type`: `citazione`, `aforisma`, `battuta`, `barzelletta`.
-- `tags`: argomenti liberi ma coerenti, per esempio `cammino`, `bosco`, `curiosita`, `taccuino`.
-- `tones`: `curioso`, `riflessivo`, `caldo`, `leggero`, `ironico`, `poetico`.
-- `contexts`: `home`, `taccuino`, `uscita`.
-- `moments`: `pausa`, `prima-di-uscire`, `rientro`, `mattina`, `sera`.
-- `seasons`: `tutte`, oppure una o più fra `primavera`, `estate`, `autunno`, `inverno`.
-- Ogni voce mantiene anche ID stabile, lingua, autore, diritti e fonte. Limite di 160 caratteri, ID e testi unici. Per le citazioni: opera e posizione, URL HTTPS, data e conferma della verifica. Gli originali sono dichiarati Fronda, senza attribuzioni a persone esterne.
+Il documento CMS è `daily-thoughts`, tra le risorse aggiornate dal repository finché
+nessun autore le ha modificate. Il seed non sovrascrive una bozza o pubblicazione
+redazionale indipendente. L’implementazione locale non costituisce un aggiornamento
+del CMS di produzione. Se la fonte dati non risponde o non offre frasi valide, la
+card resta nascosta senza bloccare la home.
 
-Il recupero `findThoughts(database, filters)` accetta tipo, tag, toni, contesti, momenti e stagioni: OR entro ciascun filtro, AND fra filtri. In questa prima applicazione la home usa **giorno, stagione e contesto home**. I tag di momento e tono sono già disponibili per altri inserimenti; non si deducono umore, meteo o attività dell’utente.
-
-Il payoff permanente **«Chi cerca, si ritrova.»** rimane distinto dalla frase del giorno. I testi umoristici non danno consigli sulla commestibilità, sulla sicurezza o sulla raccolta. Le citazioni si controllano nel testo originale, mantenendo parole e punteggiatura; non si aggiungono aforismi di attribuzione incerta.
-
-## Fonti delle citazioni iniziali
-
-- [Dante Alighieri, Inferno XXXIV, verso 139](https://it.wikisource.org/wiki/Divina_Commedia/Inferno/Canto_XXXIV): «E quindi uscimmo a riveder le stelle.»
-- [Giovanni Pascoli, L’aquilone, verso 1](https://it.wikisource.org/wiki/Primi_poemetti/L%27aquilone): «C’è qualcosa di nuovo oggi nel sole,» (estratto, virgola originale). Selezione editoriale per la primavera.
-
-Sono estratti di opere originali in pubblico dominio, verificati il 20/10/2026. Wikisource è la fonte di consultazione; nessuna traduzione moderna è stata riutilizzata.
+Il recupero `findThoughts` supporta contesto, tono, tipo, tag, momento e stagione;
+le citazioni rimangono disponibili anche per Taccuino e Uscita. Lo schema generale
+continua a consentire i tipi storici, ma questo catalogo contiene soltanto citazioni.
 
 ## Verifica del 20 ottobre 2026
 

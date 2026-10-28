@@ -1,3 +1,4 @@
+import {plantPairContext} from './plant-pair-context.js';
 import {plants,plantHeroSrc} from './plants.js';
 import {loadKeyData,loadPlantArtwork,traitTilesHtml} from './guided-key.js';
 import {mountCompareStart,openComparePicker} from './compare-picker.js';
@@ -26,8 +27,8 @@ export async function renderPlantComparison(box,left='',right=''){
  if(box._plantComparison!==token||location.hash!==initialHash)return;
  if(!data){box.innerHTML='<p class="notice">Caratteri non disponibili. <a href="#/piante">Apri le schede delle piante</a>.</p>';return;}
  const rows=plantComparisonRows(data,data.items[a.key],data.items[b.key]);
- const relation=(data.confusables||[]).find(c=>c.ids.includes(a.key)&&c.ids.includes(b.key));
- const documented=(a.lookalikes||[]).includes(b.key)||(b.lookalikes||[]).includes(a.key)||!!relation;
+ const context=plantPairContext(data,a.key,b.key);
+ const documented=(a.lookalikes||[]).includes(b.key)||(b.lookalikes||[]).includes(a.key)||context.documented;
  const value=(p,row)=>{
   const traits=data.items[p.key]?.traits||{},values=[].concat(traits[row.key]??[]);
   if(!values.length)return '<p class="plant-cmp-unknown">Non documentato</p>';
@@ -39,7 +40,8 @@ export async function renderPlantComparison(box,left='',right=''){
  <div class="recognize-modes plant-cmp-filters" role="group" aria-label="Caratteri da mostrare"><button type="button" class="btn ghost small" data-cmp-filter="all" aria-pressed="true">Tutti</button><button type="button" class="btn ghost small" data-cmp-filter="different" aria-pressed="false">Differenze</button><button type="button" class="btn ghost small" data-cmp-filter="same" aria-pressed="false">In comune</button><button type="button" class="btn ghost small" data-cmp-filter="unknown" aria-pressed="false">Dati incompleti</button></div>
  <p class="small muted">I valori parzialmente sovrapposti mostrano varianti in comune e differenti. «Non documentato» indica un dato mancante. I disegni sono schematici; le forme che richiedono una revisione per specie restano testuali finché non è disponibile un disegno approvato.</p>
  <div class="plant-cmp-rows">${rows.map(row=>`<section class="plant-cmp-row" data-comparison-kind="${row.kind}"><h3>${esc(row.schema.short)} <small>${{same:'In comune',different:'Differenti',overlap:'In parte in comune',unknown:'Dati incompleti'}[row.kind]}</small></h3><div class="plant-cmp-pair"><div aria-label="${esc(a.name)}">${value(a,row)}</div><div aria-label="${esc(b.name)}">${value(b,row)}</div></div></section>`).join('')}</div><p class="small" data-comparison-empty hidden>Nessun carattere in questo gruppo.</p>
- ${relation?`<aside class="notice" data-glossary="Piante"><h3>Da controllare insieme</h3><ul>${relation.differences.map(([,text])=>`<li>${esc(text)}</li>`).join('')}</ul><p>${esc(relation.caution||'')}</p></aside>`:''}
+ ${context.differences.length||context.cautions.length?`<aside class="notice plant-pair-notes" data-glossary="Piante"><h3>Da controllare: ${esc(a.name)} e ${esc(b.name)}</h3><ul>${context.differences.map(([,text])=>`<li>${esc(text)}</li>`).join('')}</ul>${context.cautions.map(text=>`<p>${esc(text)}</p>`).join('')}</aside>`:''}
+ ${context.others.length?`<nav class="plant-other-comparisons" aria-label="Altri confronti del gruppo"><h3>Altri confronti del gruppo</h3><ul>${context.others.map(([a,b])=>`<li><a href="${route(a,b)}">${esc(taxa.find(t=>t.key===a)?.name||a)} e ${esc(taxa.find(t=>t.key===b)?.name||b)} →</a></li>`).join('')}</ul></nav>`:''}
  <details class="sec"><summary>Fonti del confronto</summary><div class="sec-body">${sourceRows([...a.sources,...b.sources,...(data.items[a.key]?.sources||[]),...(data.items[b.key]?.sources||[])])}</div></details><p class="notice">Non assaggiare una pianta per riconoscerla. Consulta cautele, specie simili e fonti nelle schede.</p><a class="btn ghost" href="#/confronta/piante">Scegli un nuovo confronto</a></div>`;
  box.querySelectorAll('[data-change-plant]').forEach(button=>button.onclick=()=>{
   const master=button.dataset.changePlant===a.key,current=master?a:b,other=master?b:a;

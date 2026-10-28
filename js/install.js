@@ -133,6 +133,11 @@ function guide() {
 
 export function initInstall() {
   addEventListener('fronda:legal-access',render);
+  // Anche riprendere una scheda conta come ritorno; ricaricare subito non conta.
+  document.addEventListener('visibilitychange', () => {
+    if(document.hidden) rememberUse(); else maybeInvite();
+  });
+  addEventListener('pagehide',rememberUse);
   if ('serviceWorker' in navigator && (location.protocol === 'https:' || ['localhost', '127.0.0.1'].includes(location.hostname)) && !globalThis.FUNGAROLI_REVIEW && !globalThis.FUNGAROLI_DATA) {
     const register = () => navigator.serviceWorker.register('sw.js').then((reg) => {
       // l'app installata spesso viene solo ripresa dalla memoria, senza ricaricarsi: si controlla se c'e' una versione nuova
@@ -150,6 +155,23 @@ export function initInstall() {
 }
 
 const LATER = 'fungaroli:install-later';
+const USES = 'fungaroli:install-uses:v1';
+const USE_GAP = 30 * 60e3;
+let useCount = 0;
+function rememberUse(){
+  if(!useCount)return;
+  try{localStorage.setItem(USES,JSON.stringify({count:useCount,lastSeen:Date.now()}));}catch{/* invito automatico facoltativo */}
+}
+function recordUse(){
+  try{
+    const saved=JSON.parse(localStorage.getItem(USES)||'null'),now=Date.now();
+    const count=Number.isSafeInteger(saved?.count)&&saved.count>0?Math.min(saved.count,3):0;
+    const sameUse=Number.isFinite(saved?.lastSeen)&&now-saved.lastSeen>=0&&now-saved.lastSeen<USE_GAP;
+    useCount=sameUse?count:Math.min(count+1,3);
+    rememberUse();
+  }catch{useCount=0;}
+}
+const postponed = () => {try{return Date.now()-(+localStorage.getItem(LATER)||0)<20*3600e3;}catch{return true;}};
 const embedded = () => !globalThis.FUNGAROLI_TEST_INSTALL && !!(globalThis.FUNGAROLI_REVIEW || globalThis.FUNGAROLI_DATA); // nelle copie di revisione niente invito (salvo test)
 const dismissed = () => { try { return Date.now() - (+localStorage.getItem(KEY) || 0) < 30 * 864e5; } catch { return false; } };
 const canOffer = () => !document.body.hasAttribute('data-legal-pending') && !standalone() && !embedded() && (!!deferred || !!guide());
@@ -164,7 +186,7 @@ function render() {
   }
   if (banner) {
     // banner solo su telefono e tablet: sul computer l'installazione resta in Info
-    banner.hidden = !canOffer() || dismissed() || !(isIOS || isAndroid);
+    banner.hidden = !canOffer() || useCount < 3 || dismissed() || postponed() || !(isIOS || isAndroid);
     banner.innerHTML = `<img src="assets/fronda-icon-192.png" alt="" width="44" height="44">
       <div><b>Fronda come app</b><span>A tutto schermo e anche senza campo</span></div>
       <button type="button" class="btn primary" data-install>Installa</button>
@@ -174,16 +196,10 @@ function render() {
   document.querySelectorAll('[data-install]').forEach((b) => { b.onclick = () => openInvite(true); });
 }
 
-// Invito a tutto schermo: a ogni nuova sessione finche' non e' installata, ma non piu' di una volta al giorno
+// Dal terzo utilizzo solo un banner in home: le istruzioni si aprono su richiesta.
 export function maybeInvite() {
-  // solo su telefono e tablet: sul computer si propone dal banner e da Info, senza interrompere
-  if (!canOffer() || !(isIOS || isAndroid)) return;
-  try {
-    if (sessionStorage.getItem(LATER)) return;
-    if (Date.now() - (+localStorage.getItem(LATER) || 0) < 20 * 3600e3) return;
-  } catch { /* storage non disponibile: si mostra */ }
-  // Chrome/Edge su Android annunciano l'installabilita' un attimo dopo: si aspetta un po' prima di decidere
-  setTimeout(() => openInvite(false), deferred || !isAndroid ? 600 : 2500);
+  if(document.body.hasAttribute('data-legal-pending') || standalone() || embedded())return;
+  recordUse();render();
 }
 
 function openInvite(fromButton) {

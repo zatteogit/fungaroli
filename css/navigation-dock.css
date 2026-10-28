@@ -1,0 +1,100 @@
+/* One animated scalar owns the dock. Page padding keeps the expanded height,
+   so density changes never resize content or move the reading position. */
+.tabbar { transition:none; }
+.appbar[data-context="comparison"] .appbar-actions > [data-open-search] { display:grid; }
+:root body .appbar[data-context="comparison"] .appbar-actions { gap:8px; }
+:root body .appbar[data-context="comparison"] .appbar-actions > :not([data-open-search]):not([data-appbar-action]) { display:none; }
+@media(min-width:900px) {
+ .tabbar .tab-destinations { flex:none; }
+ .tabbar .tab-destinations a { width:auto; min-height:44px; padding-inline:14px; white-space:nowrap; }
+ /* Centre on the viewport; clamp only when brand or utilities need clearance.
+    The action spring owns total width, so the clamp also follows the morph. */
+ .tabbar[data-fit-ready] {
+  --nav-total-width:calc(var(--nav-destinations-width) + (var(--nav-action-size) + 8px) * var(--nav-action));
+  left:clamp(var(--nav-left),calc((100% - var(--nav-total-width)) / 2),calc(100% - var(--nav-right) - var(--nav-total-width)));
+  right:auto; width:var(--nav-total-width); transform:none; justify-content:center;
+ }
+ .tabbar[data-labels="compact"] .tab-destinations a { width:44px; min-width:44px; padding:8px; gap:0; }
+ .tabbar[data-labels="compact"] .tab-destinations a > span { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+}
+@media(min-width:900px) and (max-width:1099px) {
+ .appbar .profile-entry.is-user { width:44px; min-width:44px; padding:0; justify-content:center; }
+}
+@media(max-width:1279px) {
+ .appbar .profile-entry.is-user [data-profile-label] { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+}
+@media(max-width:899px) {
+ :root body .appbar[data-context="comparison"] .appbar-title { right:calc(var(--gutter) + 126px); }
+ :root body .appbar[data-context="comparison"] .appbar-back { max-width:calc(100% - 144px); }
+ :root.title-in-bar body .appbar[data-context="default"] .appbar-actions { display:flex; }
+ :root.title-in-bar body .appbar[data-context="default"] .appbar-actions > :not([data-open-search]) { display:none; }
+ .tabbar:has(.tab-annotate) {
+  --nav-collapse:0;
+  --nav-expanded-height:64px;
+  --nav-room:calc(100vw - max(12px,env(safe-area-inset-left,0px)) - max(12px,env(safe-area-inset-right,0px)));
+  --nav-wide:min(520px,var(--nav-room));
+  --nav-narrow:min(304px,var(--nav-room));
+  --nav-height:calc(var(--nav-expanded-height) - (var(--nav-expanded-height) - 56px)*var(--nav-collapse));
+  --nav-tab-gap:calc(4px - 2px*var(--nav-collapse));
+  --tbp:calc(6px - 2px*var(--nav-collapse));
+  --sbw:var(--nav-height);
+  width:calc(var(--nav-wide) - (var(--nav-wide) - var(--nav-narrow))*var(--nav-collapse));
+  height:var(--nav-height);max-width:none;
+  left:max(12px,env(safe-area-inset-left,0px));right:max(12px,env(safe-area-inset-right,0px));
+  gap:calc(10px - 2px*var(--nav-collapse));contain:layout style;
+ }
+ .tabbar .tab-destinations { gap:var(--nav-tab-gap); }
+ .tabbar .tab-destinations a,.tabbar .tab-annotate { gap:calc(3px*(1 - var(--nav-collapse)));min-height:44px;touch-action:manipulation; }
+ .tabbar .tab-destinations a > span,.tabbar .tab-annotate-label {
+  display:block;overflow:hidden;max-height:calc(14px*(1 - var(--nav-collapse)));
+  opacity:max(0,calc(1 - var(--nav-collapse)*1.7));
+  white-space:nowrap;line-height:14px;transition:none;
+ }
+ .tabbar .tab-destinations .tab-pill {
+  top:var(--tbp);left:var(--tbp);bottom:auto;
+  width:calc((100% - 2*var(--tbp) - 3*var(--nav-tab-gap))/4);
+  height:calc(100% - 2*var(--tbp));
+  transform:translate3d(calc(var(--ti,0)*(100% + var(--nav-tab-gap))),0,0);
+  transition:transform .26s var(--ease-out);
+ }
+ .tabbar[data-morphing] .tab-pill { transition:none; }
+ .tabbar .tab-destinations a:active { transform:none; }
+}
+@media(orientation:landscape) and (max-height:520px) and (max-width:899px) {
+ .tabbar:has(.tab-annotate) { --nav-expanded-height:56px; --tbp:4px; }
+}
+@media(prefers-reduced-motion:reduce) {
+ .tabbar .tab-destinations .tab-pill { transition:none; }
+}
+
+/* Keep search, profile, feedback and theme reachable on the narrowest phones. */
+@media(max-width:359px){:root body .appbar-actions > a[href="#/info"] { display:none; }}
+
+/* The four destinations stay mounted. A second spring morphs only the action slot. */
+.tabbar:has(.tab-action-slot) { --nav-action:0; --nav-action-size:106px; column-gap:calc(8px * var(--nav-action)); }
+.tab-action-slot { flex:none; width:calc(var(--nav-action-size) * var(--nav-action)); border-radius:999px; overflow:clip; opacity:var(--nav-action); }
+.tabbar[data-action-collapsed="true"] .tab-action-slot { visibility:hidden; }
+.tabbar .tab-action-slot .tab-annotate { width:var(--nav-action-size); min-width:var(--nav-action-size); margin:0; }
+:root body .appbar .appbar-actions > .profile-entry { display:none; }
+:root:not(.title-in-bar) body[data-page="diario"] .appbar .appbar-actions > .profile-entry { display:inline-flex; }
+.notebook-preferences-body { display:grid; gap:12px; padding:12px 0; font-size:14px; }
+.notebook-preferences-body > :is(a,button,label) { min-height:44px; text-align:left; justify-content:flex-start; }
+.notebook-preferences-body label { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; }
+.notebook-preferences-body select { min-height:44px; max-width:100%; padding:8px 12px; border:1px solid var(--border); border-radius:12px; background:var(--surface); color:var(--text); font:inherit; }
+@media(max-width:899px) {
+ .tabbar:has(.tab-action-slot) {
+  --nav-action-size:var(--nav-height);
+  --nav-full-gap:calc(10px - 2px * var(--nav-collapse));
+  --context-wide:calc(var(--nav-wide) - (1 - var(--nav-action)) * (var(--nav-expanded-height) + 10px));
+  --context-narrow:min(var(--context-wide),calc(var(--nav-narrow) - (1 - var(--nav-action)) * 64px));
+  width:calc(var(--context-wide) - (var(--context-wide) - var(--context-narrow)) * var(--nav-collapse));
+  grid-template-columns:minmax(0,1fr) calc(var(--nav-action-size) * var(--nav-action));
+  column-gap:calc(var(--nav-full-gap) * var(--nav-action));
+ }
+ .tab-action-slot { height:100%; }
+ .tabbar .tab-action-slot .tab-annotate { height:100%; }
+}
+
+.notebook-theme-control { position:relative; display:block; min-width:144px; max-width:100%; }
+.notebook-theme-control select { display:block; width:100%; height:44px; font-size:16px; appearance:none; -webkit-appearance:none; padding-right:32px; }
+.notebook-theme-control::after { content:''; position:absolute; right:14px; top:17px; width:7px; height:7px; border-right:2px solid currentColor; border-bottom:2px solid currentColor; transform:rotate(45deg); pointer-events:none; }

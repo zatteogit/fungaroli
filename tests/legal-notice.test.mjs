@@ -56,9 +56,14 @@ test('privacy: soglia reale, foto, provincia, base arrotondata, copia dei dati e
 });
 test('revisione del testo: nuova versione editoriale, stessa revisione delle CGS e nessuna nuova conferma',()=>{
  const notice=currentLegalNotice(seed);
- assert.equal(seed.version,10);assert.equal(seed.acceptance_version,1);
+ assert.equal(seed.version,11);assert.equal(seed.acceptance_version,1);
  assert.match(seed.info_sections.find(s=>s.id==='privacy').html,/vincolato all’Unione europea/);assert.doesNotMatch(seed.info_sections.find(s=>s.id==='privacy').html,/non è vincolato a una collocazione europea/);
  assert.match(seed.info_sections.find(s=>s.id==='privacy').html,/Studio dell’indice/);assert.doesNotMatch(seed.info_sections.find(s=>s.id==='privacy').html,/per studiare il modello/);
  assert.equal(legalNoticeVersion(notice),'cgs-1');
  assert.equal(notice.info_sections.find(s=>s.id==='privacy').html,seed.info_sections.find(s=>s.id==='privacy').html,'la sezione del repository passa invariata');
+});
+
+test('test su invito: scopo, dati e feedback disponibili anche con snapshot precedente',()=>{
+ const notice=currentLegalNotice({...seed,version:10,onboarding:{title:'Vecchio avviso',points:seed.onboarding.points}});
+ assert.match(notice.onboarding.title,/test di Fronda/);assert.match(notice.onboarding.prototype_notice,/piccolo gruppo di persone invitate/);assert.match(notice.onboarding.pilot.feedback,/anche senza profilo/);assert.match(notice.onboarding.pilot.data,/facoltative e revocabili/);assert.match(notice.info_sections.find(s=>s.id==='privacy').html,/Feedback sul test/);
 });

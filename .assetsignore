@@ -51,3 +51,8 @@ incoming
 # Ricevute di verifica e navigazione locali, mai pubblicate come asset.
 output
 .playwright-cli
+
+# TypeScript sources and compiler configuration are repository-only.
+src
+tsconfig*.json
+editions

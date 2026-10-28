@@ -1,0 +1,16 @@
+{
+  "id": "demo-esempio",
+  "kind": "demo",
+  "name": "Fronda",
+  "place": {
+    "pre": "demo",
+    "label": "Reatino",
+    "title": "Demo dimostrativa: solo le zone della provincia di Rieti",
+    "srText": "demo dimostrativa, che cosa copre"
+  },
+  "zones": { "provinces": ["RI"], "ids": null },
+  "demo": {
+    "partner": "Ente di esempio",
+    "note": "Modello da copiare per una demo dedicata. Non pubblicarlo così com’è."
+  }
+}

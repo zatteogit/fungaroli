@@ -1,0 +1,43 @@
+.onboarding { max-width:680px; }
+.onboarding .ob-eyebrow { margin:0 0 8px; color:var(--link); }
+.onboarding #ob-h { font-family:var(--font-display); font-size:clamp(26px,5vw,36px); line-height:1.15; margin:0 0 12px; }
+.onboarding .ob-sub { line-height:1.6; }
+.onboarding .ob-prototype { border:0; border-radius:16px; padding:16px; font-size:16px; line-height:1.65; }
+.ob-test-chapters { display:grid; gap:20px; margin:24px 0; }
+.ob-test-chapters section { display:grid; grid-template-columns:36px minmax(0,1fr); gap:12px; }
+.ob-chapter-icon { color:var(--link); background:var(--surface-2); border-radius:12px; width:36px; height:36px; display:grid; place-items:center; }
+.ob-chapter-icon svg { width:23px; height:23px; }
+.ob-test-chapters h3,.ob-safety-title { font:700 18px/1.4 var(--font-body); margin:0 0 6px; }
+.ob-test-chapters p { margin:0; font-size:16px; line-height:1.65; }
+.ob-safety { border-top:1px solid var(--border); padding-top:20px; }
+.onboarding .ob-points { line-height:1.65; gap:12px; margin-bottom:20px; }
+.feedback-dialog { width:min(600px,calc(100vw - 24px)); }
+.feedback-dialog .feedback-form,.feedback-success { padding:20px 24px 24px; }
+.feedback-form > p:first-child { margin-top:0; font-size:16px; line-height:1.65; }
+.feedback-form textarea { resize:vertical; min-height:130px; }
+.feedback-form .feedback-context { display:flex; align-items:flex-start; gap:10px; font-weight:600; line-height:1.5; }
+.feedback-context input { width:20px; height:20px; margin:2px 0 0; flex-shrink:0; accent-color:var(--link); }
+.feedback-context small { display:block; font-size:13px; color:var(--text-2); font-weight:400; margin-top:4px; }
+.feedback-privacy { font-size:14px; line-height:1.65; }
+.feedback-privacy summary { min-height:44px; cursor:pointer; color:var(--link); }
+.feedback-form [data-feedback-send] { width:100%; min-height:48px; }
+.feedback-check { display:grid; place-items:center; width:48px; height:48px; background:var(--surface-2); color:var(--link); border-radius:50%; font-size:26px; }
+.feedback-success { font-size:16px; line-height:1.65; }
+.pilot-feedback-invite { display:flex; flex-wrap:wrap; gap:12px 20px; align-items:center; justify-content:space-between; padding:20px; margin:24px 0; border-radius:20px; background:var(--surface-2); }
+.pilot-feedback-invite > div { flex:1 1 220px; }
+.pilot-feedback-invite h2 { font-size:21px; margin:0 0 6px; }
+.pilot-feedback-invite p { margin:0; font-size:15px; line-height:1.6; }
+@media(max-width:359px){.feedback-dialog .feedback-form,.feedback-success { padding:16px; }.ob-test-chapters section { grid-template-columns:28px minmax(0,1fr); gap:8px; }.ob-chapter-icon { width:28px;height:28px; }.ob-chapter-icon svg { width:20px;height:20px; }}
+
+.ob-choices { margin:24px 0; border:1px solid var(--border); border-radius:16px; padding:16px; }
+.ob-choices h3 { font-size:18px; margin:0 0 10px; }
+.ob-choices > p { font-size:15px; line-height:1.65; }
+.ob-choices label,.pilot-permission-choice { display:flex; align-items:flex-start; gap:10px; margin:18px 0; line-height:1.65; }
+.ob-choices input,.pilot-permission-choice input { width:20px;height:20px;flex-shrink:0;margin:4px 0 0;accent-color:var(--link); }
+.ob-choices label small,.pilot-permission-choice small { display:block; font-size:14px; font-weight:400; margin-top:6px; color:var(--text-2); }
+.ob-choices label b { font-size:16px; }
+
+/* Il feedback è una conversazione breve, con altezza proporzionata al contenuto. */
+.feedback-dialog.wiz { height:auto; max-height:calc(var(--vvh,100dvh) - 24px); margin:auto; border-radius:24px; }
+.feedback-dialog .report-header { padding:20px 24px; border-bottom:1px solid var(--hair); }
+@media(max-width:359px){.feedback-dialog .report-header { padding:16px; }.feedback-dialog .report-header h2 { font-size:25px; }}

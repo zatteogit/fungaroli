@@ -267,6 +267,34 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 #detail .observation-altitude { display:inline-block; white-space:nowrap; }
 #detail .observation-discoveries { margin-top:24px; padding-top:20px; }
 #detail .observation-discoveries > h3:first-child { margin:0 0 12px; padding:0; border:0; }
+#detail > .zone-community, #detail .pbody > .zone-community { display:block; margin:24px 0; padding:20px; border:1px solid var(--border); border-top:3px solid var(--story-germoglio); border-radius:18px; background:var(--surface-2); color:var(--text); }
+#detail .zone-community h2 { margin:6px 0; font:600 clamp(22px,2.5vw,28px)/1.2 var(--font-display); }
+#detail .zone-community h3 { margin:24px 0 10px; font:600 17px/1.4 var(--font-body); }
+#detail .zone-community p { max-width:65ch; font-size:15px; line-height:1.6; }
+#detail .zone-community .eyebrow { color:var(--text-2); font:600 11px/1.4 var(--font-body); letter-spacing:.06em; text-transform:uppercase; }
+#detail .zone-community-list { padding:0; margin:0; list-style:none; }
+#detail .zone-community-list li { display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px 20px; padding:12px 0; border-bottom:1px solid var(--border); }
+#detail .zone-community-list li > span { display:grid; gap:4px; font-size:15px; }
+#detail .zone-community a, #detail .zone-community .link-btn { color:inherit; }
+#detail .zone-community-list a { font-weight:600; }
+#detail .zone-community-list small { font-size:13px; line-height:1.5; }
+#detail .zone-community-actions { display:flex; flex-wrap:wrap; align-items:center; gap:8px 14px; margin:14px 0 10px; }
+#detail .zone-community-actions .btn { min-height:44px; font-size:14px; padding:8px 12px; }
+#detail .zone-community-actions .btn.primary { color:var(--action-ink); }
+#detail .zone-community-actions .btn.ghost { color:var(--text); border-color:var(--border); }
+#detail .zone-community-actions .btn.ghost:hover { background:var(--surface-3); }
+#detail .zone-community .zone-community-limits { font-size:13px; }
+#detail .zone-community .zone-community-scope{font-size:13px;color:var(--text-2);margin:0}
+#detail .zone-community .zone-community-status{font-size:14px;line-height:1.55;margin:12px 0 0}
+#detail .zone-community-actions>a{display:inline-flex;align-items:center;min-height:44px;font-size:13px}
+#detail .zone-community .zone-community-caution{font-size:13px;line-height:1.5;color:var(--text-2);margin:10px 0 0;padding-top:10px;border-top:1px solid var(--border)}
+#detail .zone-community-method>summary{display:flex;align-items:center;gap:6px;min-height:44px;width:fit-content;list-style:none;cursor:pointer;font-size:13px;color:var(--link)}
+#detail .zone-community-method>summary::-webkit-details-marker{display:none}
+#detail .zone-community-method .info-glyph{width:16px;height:16px;flex:none}
+#detail .zone-community-method p{font-size:13px;line-height:1.5;margin:8px 0}
+#detail .zone-community-method .link-btn{min-height:44px;font-size:13px}
+@media(hover:hover){#detail .zone-community-method>summary:hover{text-decoration:underline;text-underline-offset:3px}}
+#detail .zone-community-province { padding-top:4px; }
 #detail .zone-actions { display:grid; gap:12px; margin:28px 0; padding:20px; border:1px solid var(--hair); border-radius:20px; background:var(--surface-2); }
 #detail .zone-actions > .outing-section-title { margin:0 0 2px; font-size:21px; }
 #detail .zone-actions .zone-community { display:grid; gap:8px; margin:0; }
@@ -567,6 +595,14 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 .fungus-page .ts-card .ts-controls .ts-form[aria-pressed="true"] { box-shadow:inset 0 -2px var(--select); }
 .fungus-page .ts-card .ts-controls .ts-chip[aria-pressed="true"]::before { box-shadow:0 0 0 2px var(--surface),0 0 0 3px var(--text); }
 .fungus-page .ts-card .ts-controls button:focus-visible { outline:2px solid var(--focus); outline-offset:3px; border-radius:4px; }
+@media(hover:hover) and (pointer:fine) {
+ .fungus-page .ts-card .ts-controls :is(.ts-chip,.ts-form):hover { background:var(--surface-2); color:var(--text); }
+ .growth-selector button[aria-pressed="true"]:hover { box-shadow:inset 0 0 0 1px var(--select-ink); }
+ .attention > summary:hover .att-more { text-decoration:underline; text-decoration-thickness:1.5px; text-underline-offset:3px; }
+ .cmp-pair-menu:hover { background:var(--surface-2); }
+ .trail-view-tabs button:not([aria-selected="true"]):hover { background:var(--surface-2); color:var(--text); }
+}
+.fungus-page .ts-card .ts-controls :is(.ts-chip,.ts-form):active { background:var(--surface-3); }
 .ts-choice-label { display:grid; gap:1px; text-align:left; }
 .ts-form { display:inline-flex; align-items:center; justify-content:center; gap:5px; }
 .ts-form .ts-shape-hint { width:24px; height:20px; flex:none; fill:none; stroke:currentColor; stroke-width:3; stroke-linecap:round; stroke-linejoin:round; }
@@ -643,9 +679,26 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 @media(max-width:600px) { .plant-cmp-pair { gap:12px; } .plant-cmp-species .btn { padding-inline:8px; font-size:14px; } .plant-cmp-row .trait-strip > li { padding-inline:8px; } }
 
 /* Stationary photo controls: changing photographs never shifts the page. */
-.inline-gallery-controls { position:absolute; z-index:5; top:16px; right:76px; display:flex; align-items:center; gap:4px; padding:3px; border:1px solid var(--control-edge); border-radius:999px; background:var(--surface); color:var(--text); }
+.phero { --gallery-controls-top:calc(env(safe-area-inset-top, 0px) + 16px); --gallery-controls-height:44px; }
+body .phero .phero-bar { top:var(--gallery-controls-top); min-height:var(--gallery-controls-height); align-items:center; }
+.inline-gallery-controls { position:absolute; z-index:5; top:var(--gallery-controls-top); right:68px; display:flex; height:var(--gallery-controls-height); align-items:center; gap:0; padding:0; border:1px solid var(--control-edge); border-radius:999px; background:var(--surface); color:var(--text); }
 .inline-gallery-controls button { display:grid; place-items:center; width:44px; height:44px; padding:0; border:0; border-radius:50%; color:inherit; background:none; cursor:pointer; }
-.inline-gallery-controls button:hover { background:var(--surface-2); }
+@media(hover:hover) and (pointer:fine) {
+ .inline-gallery-controls button:hover { background:var(--surface-2); }
+ .sp-strip button:not(:disabled):hover::after { opacity:.14; }
+ .phero:has(> button.phero-img:hover) .fab { background:var(--on-photo); color:var(--scrim); border-color:var(--on-photo); }
+}
+.inline-gallery-controls button:active { background:var(--surface-3); }
+button.phero-img::after { content:''; position:absolute; inset:4px; z-index:1; border:2px solid var(--on-photo); box-shadow:0 0 0 2px var(--scrim); pointer-events:none; opacity:0; }
+.sp-strip button { position:relative; }
+.sp-strip button::after { content:''; position:absolute; inset:0; z-index:1; border-radius:inherit; background:var(--scrim); pointer-events:none; opacity:0; }
+.phero button.phero-img::after { border-radius:20px; }
+.phero button.phero-img:focus-visible { outline:none; box-shadow:none; }
+button.phero-img:focus-visible::after { opacity:1; }
+.sp-strip button:active::after { opacity:.24; }
+@media(max-width:899px) {
+ body:is([data-page="zona"],[data-page="specie-dettaglio"],[data-page="albero"],[data-page="fungo"]) .view:not([hidden]) .phero { --gallery-controls-top:calc(env(safe-area-inset-top, 0px) + (var(--appbar-h) - var(--gallery-controls-height))/2); }
+}
 .inline-gallery-controls button:focus-visible { outline:3px solid var(--focus); outline-offset:1px; }
 .inline-gallery-controls svg { width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
 .inline-gallery-controls [data-gallery-counter] { min-width:42px; font:600 13px/1.5 var(--font-body); text-align:center; font-variant-numeric:tabular-nums; }
@@ -653,6 +706,11 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 .inline-gallery-error { position:absolute; z-index:5; top:76px; right:16px; max-width:calc(100% - 32px); padding:8px 12px; border-radius:10px; background:var(--surface); color:var(--text); font-size:13px; }
 .inline-gallery-error[hidden] { display:none; }
 .sp-strip button[aria-pressed="true"] { outline:3px solid var(--focus); outline-offset:-3px; }
+/* Photo arrows stay available on touch and at either end of the thumbnail strip. */
+.rail-host > .sp-strip[data-inline-gallery] { margin-inline:0; padding-inline:52px; scroll-padding-inline:52px; mask-image:none; -webkit-mask-image:none; }
+.rail-host:has(> .sp-strip[data-inline-gallery]) > .rail-arrow:not([hidden]) { display:grid !important; width:44px; height:44px; margin-top:-22px; }
+.rail-host:has(> .sp-strip[data-inline-gallery]) > .rail-prev { left:0; }
+.rail-host:has(> .sp-strip[data-inline-gallery]) > .rail-next { right:0; }
 
 /* Ogni scheda si collega al Taccuino e alle segnalazioni effettivamente disponibili. */
 .fronda-connections { margin:24px 0; padding:20px; border:1px solid var(--border); border-radius:18px; background:var(--surface-2); color:var(--text); }

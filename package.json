@@ -8,17 +8,28 @@
     "test": "node --test tests/*.test.mjs",
     "build:artifact": "node tools/build_artifact.mjs",
     "build:vendor": "node tools/build_vendor.mjs",
-    "prepare": "node tools/build_vendor.mjs",
-    "deploy": "npm test && wrangler deploy",
-    "test:browser": "playwright test"
+    "prepare": "npm run build",
+    "deploy": "npm test && wrangler deploy --env=\"\"",
+    "test:browser": "playwright test",
+    "build": "npm run build:typescript && npm run build:vendor",
+    "build:typescript": "node tools/build-typescript.mjs",
+    "typecheck": "tsc --noEmit && tsc --project tsconfig.contracts.json",
+    "check:typescript": "node tools/build-typescript.mjs --check",
+    "pretest": "npm run check:typescript",
+    "prestart": "npm run build:typescript",
+    "dev": "node tools/dev.mjs",
+    "dev:edition": "node tools/dev.mjs",
+    "deploy:staging": "npm test && wrangler deploy --env staging"
   },
   "devDependencies": {
     "@playwright/test": "1.64.0",
     "esbuild": "0.27.3",
     "leaflet": "1.9.4",
+    "typescript": "7.0.2",
     "wrangler": "4.149.0"
   },
   "dependencies": {
+    "@block65/webcrypto-web-push": "^2.0.0",
     "@simplewebauthn/browser": "14.0.0",
     "@simplewebauthn/server": "14.0.3",
     "sanitize-html": "2.17.0"

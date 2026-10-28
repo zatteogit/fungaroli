@@ -1,3 +1,4 @@
+import {mountFeedbackAdmin} from './feedback-admin.js';
 import {mountSurveyAdmin} from './survey-admin.js';
 import {mountResearchOverview} from './research-overview.js';
 import {mountAdminDashboard} from './admin-dashboard.js';
@@ -11,7 +12,7 @@ import { SURVEY_ID, SURVEY_ENDPOINT, SURVEY_VERSION } from './survey-schema.js';
 
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-let dashboard,externalObservations,surveys,overview,workspaceView;
+let dashboard,externalObservations,surveys,overview,workspaceView,feedback;
 let actor,items=[],release='0',doc,published,collection='',record='',dirty=false,opening=0;
 const editor=$('#cms-editor'),status=$('#cms-status');
 const title=k=>FIELD_LABELS[k]||k.replace(/_/g,' ');
@@ -26,7 +27,7 @@ async function api(path,method='GET',data,headers={}) {
 function openSurveyExports(){openModal($('#cms-survey-dialog'));void surveyCount();}
 function can(scope){return actor?.scopes?.includes(scope);}
 async function access() {
-  const n=++opening;surveys?.dispose();surveys=null;overview?.dispose();overview=null;dashboard?.dispose();dashboard=null;externalObservations?.dispose();externalObservations=null;
+  const n=++opening;feedback?.dispose();feedback=null;surveys?.dispose();surveys=null;overview?.dispose();overview=null;dashboard?.dispose();dashboard=null;externalObservations?.dispose();externalObservations=null;
   try {
     const me=await api('me');if(n!==opening)return;actor=me.user;
     const allowed=can('read');$('#cms-access').hidden=allowed;$('#cms-workspace').hidden=!allowed;
@@ -37,6 +38,7 @@ async function access() {
     $('#cms-dashboard-tab').hidden=!can('admin');
     if(can('admin'))dashboard=mountAdminDashboard($('#cms-dashboard'),{api,openSurvey:openSurveyExports});
     if(can('admin'))externalObservations=mountExternalObservations($('#cms-external'),{api});
+    if(can('admin'))feedback=mountFeedbackAdmin($('#cms-feedback'),{api});
     if(can('admin')){surveys=mountSurveyAdmin($('#cms-questionnaires'),{api,openExports:openSurveyExports});overview=mountResearchOverview($('#cms-overview'),{api,navigate:setWorkspace,filter:v=>externalObservations.setFilters(v)});}
     document.querySelectorAll('[data-admin-tab]').forEach(b=>b.hidden=!can('admin'));
     setWorkspace(can('admin')?'overview':'content');
@@ -51,10 +53,11 @@ function setWorkspace(view){
  if(!['records','sources','impact'].includes(view)&&externalObservations?.isDirty()){message('Salva o annulla la modifica della segnalazione prima di cambiare sezione.',true);return;}
  if(workspaceView==='content'&&view!=='content'&&dirty){message('Salva le modifiche al contenuto prima di cambiare sezione.',true);return;}
  workspaceView=view;
- $('#cms-dashboard').hidden=view!=='policy';$('#cms-content').hidden=view!=='content';$('#cms-overview').hidden=view!=='overview';$('#cms-external').hidden=!['records','sources','impact'].includes(view);$('#cms-questionnaires').hidden=view!=='surveys';
+ $('#cms-feedback').hidden=view!=='feedback';$('#cms-dashboard').hidden=view!=='policy';$('#cms-content').hidden=view!=='content';$('#cms-overview').hidden=view!=='overview';$('#cms-external').hidden=!['records','sources','impact'].includes(view);$('#cms-questionnaires').hidden=view!=='surveys';
  document.querySelectorAll('[data-workspace]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.workspace===view)));
  if(view==='overview')overview?.load();
  if(view==='policy')dashboard?.ensureLoaded();
+ if(view==='feedback')feedback?.ensureLoaded();
  if(['records','sources','impact'].includes(view)){externalObservations?.setView(view);if(!$('#cms-external [data-external-list]').childElementCount)externalObservations?.load();}
  if(view==='surveys')surveys?.load();
  message('');

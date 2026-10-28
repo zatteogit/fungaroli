@@ -1,4 +1,5 @@
 import {entityCommunity} from './fronda-connections.js';
+import {zoneCommunityHtml} from './zone-community.js';
 import {notebookGlyph} from './ui-icons.js';
 import {openModal} from './modal-flow.js';
 import { SPECIES } from './species.js';
@@ -11,14 +12,24 @@ import {setBaseUser,mountBaseEditor} from './base-location.js';
 import {downloadAccountData} from './data-export.js';
 import {clearNotebookStore,accountNotebookScope} from './notebook-photo-store.js';
 import {RESEARCH_CONSENT_VERSION,RESEARCH_CONSENT_TEXT} from './research-consent.js';
+import {initResearchConsentInvite} from './research-consent-invite.js';
 
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 let enabled = false, user = null, summary = null, zones = [], ready = Promise.resolve(), reportDialog, authDialog, speciesCatalog = SPECIES;
 let summaryRevision = 0;
+let logoutPending = false;
+function syncLogoutFeedback(){
+ const button=authDialog?.querySelector('[data-logout]');if(!button)return;
+ button.disabled=logoutPending;
+ button.textContent=logoutPending?'Uscita in corso…':'Esci dal profilo';
+ if(logoutPending){button.setAttribute('aria-busy','true');authDialog.querySelector('[data-status]').textContent='Sto chiudendo il profilo…';}
+ else button.removeAttribute('aria-busy');
+}
 const clearSummary = () => { summaryRevision++; summary = null; };
 export const communityEnabled = () => enabled;
 export const communityHasAccess = () => summary?.access==='granted';
 export const currentUser = () => user;
+export const zoneCommunity = (zone,resolve) => zoneCommunityHtml({zone,resolve,summary,status:communityStatus(),enabled,authenticated:!!user});
 export const communityReady = () => ready;
 export const communityForEntity = context => ({...entityCommunity(summary,context),status:communityStatus()});
 export const animalCommunity = id => ({access:summary?.access||'unavailable',status:communityStatus(),records:summary?.access==='granted'?(summary.observations||[]).filter(r=>r.category==='animale'&&r.taxonId===id):[]});
@@ -103,6 +114,7 @@ async function session() {
 
 export function initCommunity({ zoneList, speciesList = SPECIES }) {
   zones = zoneList; speciesCatalog = speciesList;
+  initResearchConsentInvite({getUser:()=>user,save:saveResearchConsent});
   document.addEventListener('fungaroli:refresh-community', refreshCommunity);
   document.addEventListener('fungaroli:refresh-account',async()=>{if(enabled){clearSummary();changed();await session();await refreshCommunity();}});
   ready = (async () => {
@@ -128,6 +140,12 @@ export async function ensureAccount() {
 }
 
 // Consenso alla ricerca (D4): separato dalla condivisione, spento all'inizio, revocabile in ogni momento.
+export async function saveResearchConsent(accountId,granted){
+ if(user?.id!==accountId)throw new Error('Il profilo è cambiato. Riaprilo prima di salvare.');
+ const r=await communityRequest('research-consent','PUT',{accountId,granted,version:RESEARCH_CONSENT_VERSION});
+ if(user?.id!==accountId)throw new Error('Il profilo è cambiato. Riaprilo prima di salvare.');
+ user={...user,research:r.research};return r;
+}
 function mountResearchConsent(slot,accountId){
   const since=r=>r?.granted&&r.since?`Consenso dato il ${new Date(r.since).toLocaleDateString('it-IT',{day:'numeric',month:'long',year:'numeric'})}.`:'Spento: le tue osservazioni condivise servono solo alla community.';
   slot.innerHTML=`<label class="composer-share-switch"><span><b>Studio dell’indice</b><small>${esc(RESEARCH_CONSENT_TEXT)}</small></span><input class="switch-input" type="checkbox" role="switch" data-research-switch${user?.research?.granted?' checked':''}></label><p class="small muted" role="status" data-research-status>${esc(since(user?.research))}</p>`;
@@ -135,9 +153,7 @@ function mountResearchConsent(slot,accountId){
   input.addEventListener('change',async()=>{
     const granted=input.checked;input.disabled=true;status.textContent='Salvo la scelta…';
     try{
-      if(user?.id!==accountId)throw new Error('Il profilo è cambiato. Riaprilo prima di salvare.');
-      const r=await communityRequest('research-consent','PUT',{accountId,granted,version:RESEARCH_CONSENT_VERSION});
-      if(user?.id===accountId)user={...user,research:r.research};
+      const r=await saveResearchConsent(accountId,granted);
       input.checked=!!r.research.granted;status.textContent=since(r.research);
     }catch(e){input.checked=!granted;status.textContent=e.message||'Scelta non salvata. Riprova.';}
     finally{input.disabled=false;}
@@ -145,7 +161,9 @@ function mountResearchConsent(slot,accountId){
 }
 
 export async function openAccount() {
+  const {toast} = await import('./refresh.js');
   await ready;
+  document.dispatchEvent(new Event('fronda:pilot-profile-opened'));
   if (!authDialog) { authDialog = document.createElement('dialog'); authDialog.className = 'community-dialog'; document.body.appendChild(authDialog); }
   authDialog.classList.toggle('profile-dialog', !!user);
   authDialog.classList.toggle('auth-dialog', !user && enabled);
@@ -161,12 +179,12 @@ export async function openAccount() {
       <div class="profile-editorial" data-cms-link hidden></div>
       <div class="profile-actions" role="group" aria-label="Azioni del profilo"><button type="button" class="btn ghost" data-logout>Esci dal profilo</button><button type="button" class="btn primary" data-close autofocus>Chiudi</button></div>
       <div class="profile-data"><button type="button" class="btn ghost" data-export-account>Scarica i miei dati</button><button type="button" class="link-btn" data-delete-account>Elimina profilo e dati</button></div><p class="profile-status" role="status" data-status></p>`
-      : `<header class="account-header"><h2>Unisciti a Fronda</h2><button type="button" class="profile-close" data-close aria-label="Chiudi l’accesso" autofocus>×</button></header><div class="auth-content"><p class="auth-intro">Accedi con la passkey del dispositivo, senza password o email.</p>
+      : `<header class="account-header"><h2>Un profilo, se vuoi</h2><button type="button" class="profile-close" data-close aria-label="Chiudi l’accesso" autofocus>×</button></header><div class="auth-content"><p class="auth-intro">Il profilo è facoltativo e consigliato per conservare online il Taccuino e condividere osservazioni. Puoi già usare Fronda e annotare su questo dispositivo. Per accedere basta una passkey, senza password o email.</p>
       <label>Nome facoltativo <input class="wiz-input" maxlength="32" autocomplete="nickname" data-handle placeholder="Un nome, anche inventato"></label>
-      <div class="auth-actions"><button type="button" class="btn primary" data-register>Crea profilo con passkey</button><button type="button" class="btn ghost" data-login>Ho già una passkey</button></div>
+      <div class="auth-actions"><button type="button" class="btn ghost" data-close>Continua senza profilo</button><button type="button" class="btn primary" data-register>Crea profilo con passkey</button><button type="button" class="btn ghost" data-login>Ho già una passkey</button></div>
       <p class="small muted auth-privacy">Il taccuino rimane tuo. Scegli tu se condividere: chi contribuisce può consultare gli aggregati. Agli altri non mostriamo la posizione della tua fungaia, nomi o note: solo conteggi per zona ampia e specie su 7 giorni, se ci sono almeno 3 contributori e 2 giorni diversi. <a href="#/info">Privacy e condizioni</a></p>
       <details class="context-note"><summary>Come ritrovare il profilo</summary><p>Usa la stessa passkey, anche sincronizzata fra i tuoi dispositivi. Se la perdi, non possiamo recuperarla tramite email. Il nome non appare nelle segnalazioni.</p></details>
-      <p role="status" data-status></p><button type="button" class="link-btn auth-dismiss" data-close>Continua senza profilo</button></div>`;
+      <p role="status" data-status></p></div>`;
     authDialog.setAttribute('aria-label', user ? 'Il tuo profilo' : 'Accedi o crea un profilo');
     const status = authDialog.querySelector('[data-status]');
     if(user){
@@ -205,7 +223,17 @@ export async function openAccount() {
     authDialog.querySelector('[data-register]')?.addEventListener('click', () => auth(true));
     authDialog.querySelector('[data-login]')?.addEventListener('click', () => auth(false));
     authDialog.querySelector('[data-logout]')?.addEventListener('click', async () => {
-      try { await communityRequest('auth/logout', 'POST', {}); user = null; clearSummary(); changed(); authDialog.close(); } catch (e) { status.textContent = e.message; }
+      if(logoutPending)return;
+      logoutPending=true;syncLogoutFeedback();
+      try {
+        await communityRequest('auth/logout', 'POST', {});
+        user = null; clearSummary(); changed(); authDialog.close();
+        toast('Sei uscito dal profilo.',5000,'top');
+      } catch (e) {
+        const message=e.message||'Non riesco a completare l’uscita. Riprova.';
+        if(authDialog.open)authDialog.querySelector('[data-status]').textContent=message;
+        else toast(esc(message),5000,'top');
+      } finally { logoutPending=false;syncLogoutFeedback(); }
     });
     // Copia completa dei propri dati, con le foto: art. 15 e 20 GDPR (decisione del 22/10/2026).
     authDialog.querySelector('[data-export-account]')?.addEventListener('click', async (e) => {
@@ -229,7 +257,7 @@ export async function openAccount() {
       authDialog.querySelectorAll('[data-export-account],[data-delete-account],[data-logout]').forEach((b) => b.remove());
       status.textContent = 'Profilo eliminato. Non sono riuscito a togliere la copia del taccuino da questo dispositivo: cancella i dati del sito dalle impostazioni del browser.';
     });
-    openModal(authDialog);
+    syncLogoutFeedback();openModal(authDialog);
   });
 }
 

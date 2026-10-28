@@ -36,7 +36,8 @@
       "protection": null,
       "popularity": 1.0,
       "title": "Vallonina",
-      "subtitle": "Terminillo, versante nord"
+      "subtitle": "Terminillo, versante nord",
+      "cardSubtitle": "Faggete fresche sul versante nord del Terminillo"
     },
     {
       "id": "poggio-cantalice",
@@ -64,7 +65,8 @@
       "protection": null,
       "popularity": 0.7,
       "title": "Poggio Bustone e Cantalice",
-      "subtitle": "Monti Reatini, versante ovest"
+      "subtitle": "Monti Reatini, versante ovest",
+      "cardSubtitle": "Dai querceti ai faggi, ai piedi del Terminillo"
     },
     {
       "id": "antrodoco",
@@ -97,7 +99,8 @@
       "protection": null,
       "popularity": 0.6,
       "title": "Antrodoco",
-      "subtitle": "Media Valle del Velino"
+      "subtitle": "Media Valle del Velino",
+      "cardSubtitle": "Castagneti secolari nella valle del Velino"
     },
     {
       "id": "cicolano",
@@ -130,7 +133,8 @@
       "protection": "Parte dell'area è nella Riserva Naturale Monte Navegna e Monte Cervia. La legge istitutiva (L.R. 56/1988, art. 11) consente la raccolta secondo la L.R. 32/1998 finché la riserva non ha un regolamento: verifica con l'ente gestore eventuali divieti locali.",
       "popularity": 0.6,
       "title": "Cicolano",
-      "subtitle": "Marcetelli, Ascrea, Collalto"
+      "subtitle": "Marcetelli, Ascrea, Collalto",
+      "cardSubtitle": "Castagneti fra i laghi del Salto e del Turano"
     },
     {
       "id": "rascino",
@@ -158,7 +162,8 @@
       "protection": null,
       "popularity": 0.4,
       "title": "Altopiano di Rascino",
-      "subtitle": "Cicolano, sopra Fiamignano"
+      "subtitle": "Cicolano, sopra Fiamignano",
+      "cardSubtitle": "Paesaggio carsico, faggete e nuclei di pino nero"
     },
     {
       "id": "tancia",
@@ -186,7 +191,8 @@
       "protection": null,
       "popularity": 0.8,
       "title": "Monte Tancia",
-      "subtitle": "Monti Sabini"
+      "subtitle": "Monti Sabini",
+      "cardSubtitle": "Cerrete, lecci e una faggeta verso la cima"
     },
     {
       "id": "laga",
@@ -214,7 +220,8 @@
       "protection": "Area nel Parco Nazionale del Gran Sasso e Monti della Laga. Per la legge regionale qui la raccolta è vietata, salvo diverse disposizioni dell'Ente Parco. Il Piano del Parco (2020) esclude il prelievo nelle zone «a» e «b», salvi gli usi civici; il regolamento sui funghi è ancora in bozza. Secondo la cartografia della Regione, che è indicativa, la zona «b» comprende gran parte del bosco di quest'area alle quote di 1.350 e 1.600 m. Chiedi all'Ente Parco prima dell'uscita.",
       "popularity": 0.5,
       "title": "Monti della Laga",
-      "subtitle": "Amatrice"
+      "subtitle": "Amatrice",
+      "cardSubtitle": "Tra fossi perenni, cerrete e grandi faggete"
     },
     {
       "id": "terminillo-ovest",
@@ -246,7 +253,8 @@
       ],
       "proposed_by": "fonti+dati",
       "title": "Pian de' Rosce",
-      "subtitle": "Terminillo, versante di Rieti"
+      "subtitle": "Terminillo, versante di Rieti",
+      "cardSubtitle": "Faggete sopra Rieti, da Pian de’ Rosce a Campoforogna"
     },
     {
       "id": "terminillo-est",
@@ -273,7 +281,8 @@
       ],
       "proposed_by": "fonti+dati",
       "title": "Cinque Confini e Monte Bove",
-      "subtitle": "Terminillo, versante sud-est"
+      "subtitle": "Terminillo, versante sud-est",
+      "cardSubtitle": "Faggete d’alta quota sul versante di Micigliano"
     },
     {
       "id": "cittareale",
@@ -300,7 +309,8 @@
       ],
       "proposed_by": "fonti+dati",
       "title": "Cittareale",
-      "subtitle": "Alto Velino"
+      "subtitle": "Alto Velino",
+      "cardSubtitle": "Faggi e cerri nell’Alto Velino, al confine con l’Umbria"
     },
     {
       "id": "pescorocchiano",
@@ -332,7 +342,8 @@
       ],
       "proposed_by": "fonti+dati",
       "title": "Pescorocchiano",
-      "subtitle": "Cicolano orientale"
+      "subtitle": "Cicolano orientale",
+      "cardSubtitle": "Castagneti e cerrete tra le frazioni del Cicolano"
     },
     {
       "id": "malito",
@@ -364,7 +375,8 @@
       ],
       "proposed_by": "fonti+dati",
       "title": "Valle di Malito",
-      "subtitle": "Corvaro di Borgorose"
+      "subtitle": "Corvaro di Borgorose",
+      "cardSubtitle": "Boschi misti sopra Corvaro, con i faggi più in alto"
     },
     {
       "id": "sangiovanni",
@@ -391,7 +403,8 @@
       ],
       "proposed_by": "fonti+dati",
       "title": "Monte San Giovanni in Sabina",
-      "subtitle": "Monti Sabini, versante di Rieti"
+      "subtitle": "Monti Sabini, versante di Rieti",
+      "cardSubtitle": "Cerrete e carpini sul versante reatino dei Sabini"
     },
     {
       "id": "leonessa",
@@ -418,7 +431,8 @@
       ],
       "proposed_by": "dati",
       "title": "Leonessa",
-      "subtitle": "faggete dei Monti Reatini"
+      "subtitle": "faggete dei Monti Reatini",
+      "cardSubtitle": "Faggete estese a nord dei Monti Reatini"
     },
     {
       "id": "domo",
@@ -445,7 +459,8 @@
       ],
       "proposed_by": "dati",
       "title": "Domo",
-      "subtitle": "valle del Tronto, Amatrice"
+      "subtitle": "valle del Tronto, Amatrice",
+      "cardSubtitle": "Cerri e castagni nella valle del Tronto"
     },
     {
       "id": "vico-monte-venere",
@@ -529,7 +544,8 @@
         "resolutionM": 90,
         "forestSource": "Carta Forestale tipologica Regione Lazio, geonode:tipi_forestali2",
         "note": "Fasce p25/mediana/p75 arrotondate a 10 m, rappresentative del cerchio editoriale; carta forestale storica, non rilevazione attuale."
-      }
+      },
+      "cardSubtitle": "Dal bosco di Monte Venere al Pozzo del Diavolo"
     },
     {
       "id": "monte-rufeno-felceto",
@@ -619,7 +635,8 @@
         "resolutionM": 90,
         "forestSource": "Carta Forestale tipologica Regione Lazio, geonode:tipi_forestali2",
         "note": "Fasce p25/mediana/p75 arrotondate a 10 m, rappresentative del cerchio editoriale; carta forestale storica, non rilevazione attuale."
-      }
+      },
+      "cardSubtitle": "Un anello breve nel bosco del Felceto"
     },
     {
       "id": "oriolo-monte-raschio",
@@ -715,7 +732,8 @@
         "resolutionM": 90,
         "forestSource": "Carta Forestale tipologica Regione Lazio, geonode:tipi_forestali2",
         "note": "Fasce p25/mediana/p75 arrotondate a 10 m, rappresentative del cerchio editoriale; carta forestale storica, non rilevazione attuale."
-      }
+      },
+      "cardSubtitle": "Pineta, cerri e faggi lungo il giro da Oriolo"
     },
     {
       "id": "allumiere-faggeto",
@@ -787,7 +805,8 @@
         "resolutionM": 90,
         "forestSource": "Carta Forestale tipologica Regione Lazio, geonode:tipi_forestali2",
         "note": "Fasce p25/mediana/p75 arrotondate a 10 m, rappresentative del cerchio editoriale; carta forestale storica, non rilevazione attuale."
-      }
+      },
+      "cardSubtitle": "Faggi a bassa quota e tracce della storia mineraria"
     },
     {
       "id": "monterano-bicione",
@@ -877,7 +896,8 @@
         "resolutionM": 90,
         "forestSource": "Carta Forestale tipologica Regione Lazio, geonode:tipi_forestali2",
         "note": "Fasce p25/mediana/p75 arrotondate a 10 m, rappresentative del cerchio editoriale; carta forestale storica, non rilevazione attuale."
-      }
+      },
+      "cardSubtitle": "Acqua, boschi e pascoli nella valle del Bicione"
     },
     {
       "id": "veio-monte-musino",
@@ -967,7 +987,8 @@
         "resolutionM": 90,
         "forestSource": "Carta Forestale tipologica Regione Lazio, geonode:tipi_forestali2",
         "note": "Fasce p25/mediana/p75 arrotondate a 10 m, rappresentative del cerchio editoriale; carta forestale storica, non rilevazione attuale."
-      }
+      },
+      "cardSubtitle": "Fra cerrete e forre, sui sentieri del Veio"
     },
     {
       "id": "tuscolo-nord",
@@ -1051,7 +1072,8 @@
         "resolutionM": 90,
         "forestSource": "Carta Forestale tipologica Regione Lazio, geonode:tipi_forestali2",
         "note": "Fasce p25/mediana/p75 arrotondate a 10 m, rappresentative del cerchio editoriale; carta forestale storica, non rilevazione attuale."
-      }
+      },
+      "cardSubtitle": "Ombra nel bosco e aperture sul paesaggio vulcanico"
     },
     {
       "id": "faete-rocca-papa",
@@ -1135,7 +1157,8 @@
         "resolutionM": 90,
         "forestSource": "Carta Forestale tipologica Regione Lazio, geonode:tipi_forestali2",
         "note": "Fasce p25/mediana/p75 arrotondate a 10 m, rappresentative del cerchio editoriale; carta forestale storica, non rilevazione attuale."
-      }
+      },
+      "cardSubtitle": "Castagneti e basolato antico lungo la Via Sacra"
     },
     {
       "id": "nemi-fontan-tempesta",
@@ -1219,7 +1242,8 @@
         "resolutionM": 90,
         "forestSource": "Carta Forestale tipologica Regione Lazio, geonode:tipi_forestali2",
         "note": "Fasce p25/mediana/p75 arrotondate a 10 m, rappresentative del cerchio editoriale; carta forestale storica, non rilevazione attuale."
-      }
+      },
+      "cardSubtitle": "Tra il bosco e il belvedere sul lago di Nemi"
     },
     {
       "id": "cerquone-doganella",
@@ -1303,7 +1327,8 @@
         "resolutionM": 90,
         "forestSource": "Carta Forestale tipologica Regione Lazio, geonode:tipi_forestali2",
         "note": "Fasce p25/mediana/p75 arrotondate a 10 m, rappresentative del cerchio editoriale; carta forestale storica, non rilevazione attuale."
-      }
+      },
+      "cardSubtitle": "Castagneti, bosco misto e una vicina zona umida"
     },
     {
       "id": "livata-tufai",
@@ -1399,7 +1424,8 @@
         "resolutionM": 90,
         "forestSource": "Carta Forestale tipologica Regione Lazio, geonode:tipi_forestali2",
         "note": "Fasce p25/mediana/p75 arrotondate a 10 m, rappresentative del cerchio editoriale; carta forestale storica, non rilevazione attuale."
-      }
+      },
+      "cardSubtitle": "Il bosco montano fra i Tufai e la Valle delle Mele"
     },
     {
       "id": "cervara-prataglia",
@@ -1489,7 +1515,8 @@
         "resolutionM": 90,
         "forestSource": "Carta Forestale tipologica Regione Lazio, geonode:tipi_forestali2",
         "note": "Fasce p25/mediana/p75 arrotondate a 10 m, rappresentative del cerchio editoriale; carta forestale storica, non rilevazione attuale."
-      }
+      },
+      "cardSubtitle": "Faggete e radure lungo la strada di Prataglia"
     },
     {
       "id": "gennaro-roccagiovine",
@@ -1567,7 +1594,8 @@
         "resolutionM": 90,
         "forestSource": "Carta Forestale tipologica Regione Lazio, geonode:tipi_forestali2",
         "note": "Fasce p25/mediana/p75 arrotondate a 10 m, rappresentative del cerchio editoriale; carta forestale storica, non rilevazione attuale."
-      }
+      },
+      "cardSubtitle": "Grandi alberi e conche carsiche verso il Pratone"
     },
     {
       "id": "lepini-bassiano-santangelo",
@@ -1639,7 +1667,8 @@
         "resolutionM": 90,
         "forestSource": "Carta Forestale tipologica Regione Lazio, geonode:tipi_forestali2",
         "note": "Fasce p25/mediana/p75 arrotondate a 10 m, rappresentative del cerchio editoriale; carta forestale storica, non rilevazione attuale."
-      }
+      },
+      "cardSubtitle": "La valle dei lecci, sui sentieri verso Sant’Angelo"
     },
     {
       "id": "ausoni-san-vito",
@@ -1723,7 +1752,8 @@
         "resolutionM": 90,
         "forestSource": "Carta Forestale tipologica Regione Lazio, geonode:tipi_forestali2",
         "note": "Fasce p25/mediana/p75 arrotondate a 10 m, rappresentative del cerchio editoriale; carta forestale storica, non rilevazione attuale."
-      }
+      },
+      "cardSubtitle": "Sughere e lecci nel territorio di Monte San Biagio"
     },
     {
       "id": "aurunci-itri-campello",
@@ -1813,7 +1843,8 @@
         "resolutionM": 90,
         "forestSource": "Carta Forestale tipologica Regione Lazio, geonode:tipi_forestali2",
         "note": "Fasce p25/mediana/p75 arrotondate a 10 m, rappresentative del cerchio editoriale; carta forestale storica, non rilevazione attuale."
-      }
+      },
+      "cardSubtitle": "Dai lecci della Valle alle conche carsiche di Campello"
     },
     {
       "id": "circeo-cerasella-verdesca",
@@ -1897,7 +1928,8 @@
         "resolutionM": 90,
         "forestSource": "Carta Forestale tipologica Regione Lazio, geonode:tipi_forestali2",
         "note": "Fasce p25/mediana/p75 arrotondate a 10 m, rappresentative del cerchio editoriale; carta forestale storica, non rilevazione attuale."
-      }
+      },
+      "cardSubtitle": "Querce di pianura e depressioni allagate in stagione"
     },
     {
       "id": "ernici-prato-campoli",
@@ -1981,7 +2013,8 @@
         "resolutionM": 90,
         "forestSource": "Carta Forestale tipologica Regione Lazio, geonode:tipi_forestali2",
         "note": "Fasce p25/mediana/p75 arrotondate a 10 m, rappresentative del cerchio editoriale; carta forestale storica, non rilevazione attuale."
-      }
+      },
+      "cardSubtitle": "I boschi degli Ernici, lungo la direttrice al Pizzo Deta"
     },
     {
       "id": "lepini-supino-santaserena",
@@ -2059,7 +2092,8 @@
         "resolutionM": 90,
         "forestSource": "Carta Forestale tipologica Regione Lazio, geonode:tipi_forestali2",
         "note": "Fasce p25/mediana/p75 arrotondate a 10 m, rappresentative del cerchio editoriale; carta forestale storica, non rilevazione attuale."
-      }
+      },
+      "cardSubtitle": "Bosco e creste dei Lepini, partendo da Santa Serena"
     },
     {
       "id": "simbruini-filettino-fiumata",
@@ -2155,7 +2189,8 @@
         "resolutionM": 90,
         "forestSource": "Carta Forestale tipologica Regione Lazio, geonode:tipi_forestali2",
         "note": "Fasce p25/mediana/p75 arrotondate a 10 m, rappresentative del cerchio editoriale; carta forestale storica, non rilevazione attuale."
-      }
+      },
+      "cardSubtitle": "Acqua e faggeta nel paesaggio di Fiumata"
     },
     {
       "id": "pnalm-settefrati-canneto",
@@ -2245,7 +2280,8 @@
         "resolutionM": 90,
         "forestSource": "Carta Forestale tipologica Regione Lazio, geonode:tipi_forestali2",
         "note": "Fasce p25/mediana/p75 arrotondate a 10 m, rappresentative del cerchio editoriale; carta forestale storica, non rilevazione attuale."
-      }
+      },
+      "cardSubtitle": "Il paesaggio di faggeta della valle di Canneto"
     }
   ],
   "popularity_note": "Notorieta' della zona 0-1 (euristica locale: Terminillo e Tancia piu' frequentati per vicinanza a Rieti e Roma). Alle 21 nuove zone Lazio del 19/10 non è assegnata una notorietà: valore null, nessuna stima di affollamento."

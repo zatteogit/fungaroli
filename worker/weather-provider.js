@@ -1,5 +1,5 @@
 import {compactGrowth,GROWTH_DAILY,GROWTH_HOURLY,LEGACY_GROWTH_DAILY,LEGACY_GROWTH_HOURLY} from '../js/weather-data.js';
-import {WEATHER_LOCAL_RETENTION_MS} from '../js/weather-cache.js';
+import {WEATHER_LOCAL_RETENTION_MS,GROWTH_FRESH_MS} from '../js/weather-cache.js';
 export {compactGrowth} from '../js/weather-data.js';
 import {todayISO,PAST_DAYS,FORECAST_DAYS} from '../js/weather.js';
 const API='https://api.open-meteo.com/v1/forecast', TTL=3600000;
@@ -45,7 +45,7 @@ function validate(raw,params,now,compact=false,requireToday=true) {
 // evita di trasferire e serializzare oltre due MB di ore ad ogni apertura.
 // Query soltanto per le zone pubblicate e i due profili dell'app: nessun proxy
 // arbitrario, né possibilità di moltiplicare le richieste variando i parametri.
-export async function cachedForecast(query,{zones,cache,fetcher=fetch,now=Date.now(),waitUntil,waitForFresh=false,metrics}) {
+export async function cachedForecast(query,{zones,cache,fetcher=fetch,now=Date.now(),waitUntil,waitForFresh=false,cacheOnly=false,refresh=false,strictCache=false,metrics}) {
   const lat=query.get('latitude')?.split(',')[0],lon=query.get('longitude')?.split(',')[0];
   const local=zones.find(z=>String(z.lat)===lat&&String(z.lon)===lon);
   const kind=Object.keys(profiles).find(k=>{
@@ -55,7 +55,7 @@ export async function cachedForecast(query,{zones,cache,fetcher=fetch,now=Date.n
     });
   });
   if(!kind)throw fail('Richiesta meteo non valida per le zone pubblicate.',422);
-  const growth=kind!=='outing';
+  const growth=kind!=='outing',freshMs=growth?GROWTH_FRESH_MS:TTL;
   const note=(event,extra={})=>{try{metrics?.({profile:kind,event,...extra});}catch{/* metriche facoltative */}};
   // Una chiamata a Open-Meteo, misurata fino ai dati letti: esito, durata e peso stimato.
   const upstream=async(url,sent,read)=>{
@@ -72,6 +72,7 @@ export async function cachedForecast(query,{zones,cache,fetcher=fetch,now=Date.n
   // come stream, senza elaborare il grande JSON nel Worker. Le nuove pagine
   // chiedono e mettono in cache una zona alla volta, entro il budget di CPU.
   if(params.get('latitude').split(',').length>Math.max(...zones.map(z=>z.bands.length))) {
+    if(cacheOnly)throw fail('Ricarica l’app per ricevere il meteo salvato per zona.',409);
     const legacy=Object.assign(r=>r,{signal:AbortSignal.timeout(15000)});
     let r;try{r=await upstream(`${API}?${params}`,params,legacy);}catch(e){note('served:error');throw e.status===429?e:fail('Il servizio meteo non è disponibile. Riprova tra poco.',503);}
     note('served:legacy');
@@ -89,17 +90,27 @@ export async function cachedForecast(query,{zones,cache,fetcher=fetch,now=Date.n
   // query precedente, stesso luogo e stesse quote, resta usabile come copia datata: viene restituita
   // subito ma mai come «hit», così l'aggiornamento parte e porta i campi nuovi (nel browser: serie di null).
   let legacyParams=null;
-  if(kind==='growth'){legacyParams=new URLSearchParams(params);legacyParams.set('daily',LEGACY_GROWTH_DAILY);legacyParams.set('hourly',LEGACY_GROWTH_HOURLY);}
+  if(kind==='growth'||kind==='growthLegacy'){
+    legacyParams=new URLSearchParams(params);
+    legacyParams.set('daily',kind==='growth'?LEGACY_GROWTH_DAILY:GROWTH_DAILY);
+    legacyParams.set('hourly',kind==='growth'?LEGACY_GROWTH_HOURLY:GROWTH_HOURLY);
+  }
   let saved=null,savedParams=params,legacy=false;
   try {
     saved=cache?await cache.get(key,'json'):null;
     if(!saved&&cache)saved=await cache.get(`weather:v2:${todayISO(new Date(now))}:${digest}`,'json');
-    if(!saved&&cache&&legacyParams){saved=await cache.get(`weather:v3:${await sha(legacyParams)}`,'json');if(saved){legacy=true;savedParams=legacyParams;}}
+    if(!saved&&cache&&legacyParams){saved=await cache.get(`weather:v3:${await sha(legacyParams)}`,'json');if(saved){legacy=kind==='growth';savedParams=legacyParams;}}
   } catch { /* cache opzionale */ }
   if(saved&&(!Number.isFinite(saved.t)||now-saved.t<0||now-saved.t>maxAge))saved=null;
   if(saved)try {validate(saved.raw,savedParams,now,growth,false);} catch {saved=null;}
-  const response=(data,mode,refreshing=false)=>(note('served:'+(mode==='stale'&&!refreshing?'stale-fallback':mode)),new Response(JSON.stringify(data.raw),{headers:{'content-type':'application/json; charset=utf-8','cache-control':'no-store','x-weather-fetched-at':new Date(data.t).toISOString(),'x-weather-cache':mode,'x-weather-refreshing':refreshing?'1':'0','x-content-type-options':'nosniff'}}));
-  if(saved&&!legacy&&now-saved.t<TTL)return response(saved,'hit');
+  const response=(data,mode,refreshing=false)=>(note('served:'+(mode==='stale'&&!refreshing&&!cacheOnly?'stale-fallback':mode)),new Response(JSON.stringify(data.raw),{headers:{'content-type':'application/json; charset=utf-8','cache-control':'no-store','x-weather-fetched-at':new Date(data.t).toISOString(),'x-weather-cache':mode,'x-weather-refreshing':refreshing?'1':'0','x-content-type-options':'nosniff'}}));
+  // Public delivery never starts provider work, including requests from old tabs.
+  if(cacheOnly){
+    if(saved)return response(saved,!legacy&&now-saved.t<freshMs?'hit':'stale');
+    note('served:error');
+    throw Object.assign(fail('Non è disponibile una copia meteo per questa zona. Riprova tra poco.',503),{code:'cache-warming'});
+  }
+  if(!refresh&&saved&&!legacy&&now-saved.t<freshMs)return response(saved,'hit');
   if(!pending.has(key))pending.set(key,(async()=>{
     const coords=['latitude','longitude','elevation'].map(name=>params.get(name).split(','));
     const step=growth?5:15,parts=Array.from({length:Math.ceil(coords[0].length/step)},(_,i)=>i*step),results=[];
@@ -115,7 +126,7 @@ export async function cachedForecast(query,{zones,cache,fetcher=fetch,now=Date.n
     };
     try {await Promise.all(Array.from({length:Math.min(3,parts.length)},download));}catch(e){controller.abort();throw e;}
     const value={t:now,raw:results.flat()};
-    try {if(cache)await cache.put(key,JSON.stringify(value),{expirationTtl:maxAge/1000});} catch { /* dati validi anche senza cache */ }
+    try {if(cache)await cache.put(key,JSON.stringify(value),{expirationTtl:maxAge/1000});} catch(e) { if(strictCache)throw e; /* dati validi anche senza cache */ }
     return value;
   })().finally(()=>pending.delete(key)));
   if(saved&&waitUntil&&!waitForFresh){
