@@ -4,7 +4,7 @@
 // - meteo Open-Meteo: gestito dall'app con data di acquisizione e limite d'età
 // - mappe: dalla cache se gia' viste, con un limite di tessere
 // - diario (/api/): mai in cache
-const SHELL = 'fungaroli-shell-v382';
+const SHELL = 'fungaroli-shell-v387';
 const RUNTIME = 'fungaroli-runtime-v1';
 const TILES = 'fungaroli-tiles-v1';
 const CONTENT = 'fungaroli-content-v1';
@@ -136,7 +136,7 @@ self.addEventListener('fetch', (e) => {
 // Every received push produces a visible, same-origin notification, even with malformed data.
 self.addEventListener('push',event=>{event.waitUntil((async()=>{
  let data={},target=location.origin+'/';try{const value=event.data?.json();if(value&&typeof value==='object')data=value;}catch{}
- try{const url=new URL(typeof data.url==='string'?data.url:'/',location.origin);if(url.origin===location.origin&&/^\/#\/zona\/[a-z0-9-]+\/([0-7]|\d{4}-\d{2}-\d{2})$/.test(url.pathname+url.hash))target=url.href;}catch{}
+ try{const url=new URL(typeof data.url==='string'?data.url:'/',location.origin);if(url.origin===location.origin&&/^\/#\/zona\/[a-z0-9-]+\/[0-7]$/.test(url.pathname+url.hash))target=url.href;}catch{}
  await self.registration.showNotification(typeof data.title==='string'?data.title.slice(0,120):'Novità per la tua uscita',{body:typeof data.body==='string'?data.body.slice(0,400):'Apri Fronda per ricontrollare il meteo.',icon:'/assets/fronda-icon-192.png',badge:'/assets/fronda-icon-192.png',tag:typeof data.tag==='string'?data.tag.slice(0,120):'fronda-outing',data:{url:target}});
 })());});
 self.addEventListener('notificationclick',event=>{event.notification.close();event.waitUntil((async()=>{let target=location.origin+'/';try{const url=new URL(event.notification.data?.url,location.origin);if(url.origin===location.origin)target=url.href;}catch{}await self.clients.openWindow(target);})());});
