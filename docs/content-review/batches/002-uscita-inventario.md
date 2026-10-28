@@ -148,6 +148,39 @@ in `AGENTS.md`, la produzione è sul ramo `main`; il ramo `claude/brave-tesla-wu
 questa revisione è stato riallineato a `main`. I controlli non confrontano ogni
 singolo file pubblicato, ma la discrepanza segnalata è spiegata dal cambio ramo.
 
+### Quarto passaggio: meteo, accessi e regole
+
+Con il codice di `main` al commit `a78198efd69f381ec0020745d8a4aff43df8dd44`,
+sessione isolata e meteo simulato, sono stati aperti «Quando», «Come arrivare»
+e «Regole di raccolta». Le [istantanee](../evidence/002-uscita/) documentano
+anche il dettaglio «Accesso e avvertenze» e la scheda «Area protetta».
+
+Nel caso Allumiere la sintesi meteo è visibile nel piano; a una apertura
+compaiono fascia oraria, quota e invito a verificare il rientro. Il piano dice
+subito che l’accesso auto va verificato; una apertura offre la mappa e una
+seconda mostra il riferimento a Via del Faggeto. Questo riferimento è presente
+in `zones.access`: non prova disponibilità del parcheggio o transitabilità.
+L’avviso locale di raccolta è visibile sopra il piano; a un’apertura contiene
+testo e fonte del gestore. Le regole regionali si raggiungono in fondo con una
+apertura e il testo completo della singola regola con una seconda. Escape ha
+chiuso il dettaglio «Area protetta» restituendo il focus al suo pulsante.
+
+Valutazione preliminare dei tre blocchi, limitata allo scenario simulato:
+
+| Persona | Meteo e accesso | Regole e approfondimenti |
+| --- | --- | --- |
+| Neofita | Meteo e necessità di verifica subito; dettaglio pratico in due aperture | Avviso locale subito, quadro regionale a una apertura |
+| Appassionato | Meteo subito e fascia a una apertura; arrivo specifico a due | Regola completa a due aperture; verificare se è facile ritrovarla prima della raccolta |
+| Esperto | Limiti subito, dettaglio su richiesta | Testo completo e fonti raggiungibili; confronto normativo indipendente ancora da svolgere |
+| Escursionista | Informazioni essenziali subito; l’indicazione concreta richiede due aperture | Accessibilità del dettaglio pratico da verificare anche per percorsi documentati |
+| Naturalista | Meteo e cautele pratiche subito | Area protetta e fonti rilevanti anche senza raccolta; verificare visibilità nei filtri solo piante |
+
+Le priorità sono giudizi simulati, non test con utenti. Non sono state
+confermate sul terreno le informazioni sull’accesso né la normativa. Restano da
+valutare altri luoghi, meteo avverso, filtri, tastiera per l’intero percorso e
+stati di condivisione. Nessuna modifica di contenuto o disposizione è stata
+apportata in questo passaggio.
+
 ## Ancora da fare prima di chiudere la pagina
 
 - Completare l’inventario delle sezioni espanse, dei filtri, degli stati del
