@@ -320,7 +320,7 @@ per questa correzione. Non sono stati effettuati test con utenti o validazioni
 scientifiche; il primo avvio online a cache vuota resta non certificato.
 
 La correzione è ora nella [PR 317](https://github.com/zatteogit/fungaroli/pull/317),
-ancora in attesa del controllo GitHub e del rilascio. Una matrice di sessioni
+fusa in `main` al commit `72a19a031e655ce5bc9227613f1089da2491ae02` dopo il controllo GitHub. Il deploy è ancora da verificare. Una matrice di sessioni
 isolate con [fixture riproducibile](../evidence/002-uscita/meteo-sconsigliato-matrice.cjs)
 e [risultati](../evidence/002-uscita/meteo-sconsigliato-risultati.json) ha
 provato neve, pioggia intensa, raffiche forti, temporale, sereno e vento
