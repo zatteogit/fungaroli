@@ -383,8 +383,8 @@ isolate coprono temporale, vento forte, neve, sereno e meteo non disponibile;
 i casi con previsione sono stati provati a quattro larghezze e nei due temi.
 Sono passati 643 test unitari e il dry-run. Il test browser integrato resta non
 eseguito per il problema di avvio Wrangler `spawn EBADF`; non sono state svolte
-prove con utenti o validazioni scientifiche. PR in attesa del controllo GitHub
-e del rilascio; il primo avvio online a cache vuota resta non certificato.
+prove con utenti o validazioni scientifiche. Il controllo GitHub è passato e la PR è stata fusa in `main` al commit
+`0f6d7b9783ef5314c73482f257eccf1d95a6fc51`; il deploy è da verificare; il primo avvio online a cache vuota resta non certificato.
 
 ## Ancora da fare prima di chiudere la pagina
 
