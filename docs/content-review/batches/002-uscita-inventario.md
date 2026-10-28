@@ -237,6 +237,22 @@ d’accesso del server o l’effettiva anonimizzazione di dati reali.
 
 Non è stato valutato l’intero Taccuino né testato il percorso con persone reali.
 
+### Settimo passaggio: uscita con sole piante
+
+Con il codice `main` al commit `4c9021cb`, meteo simulato e solo interesse
+Piante, la [prova](../evidence/002-uscita/allumiere-piante-meteo-fixture.yml)
+mostra correttamente il meteo senza indice fungino. Ad Allumiere il piano dice
+«Nessun sentiero corrisponde ai filtri attivi», sebbene la zona non abbia
+tratti documentati e non sia stato attivato un filtro sul sentiero. Il messaggio
+non permette di distinguere dati assenti e selezione troppo restrittiva.
+Il renderer per i soli interessi non fungini usa una frase fissa; quello fungino
+distingue già i due casi. Correzione proposta: riutilizzare tale distinzione,
+senza cambiare il catalogo dei sentieri, le scelte o l’ordinamento.
+
+In questo stato non compaiono suggerimenti botanici, perché il renderer li
+calcola quando è disponibile un sentiero. È un punto da valutare separatamente:
+non si è dedotta presenza di piante né modificato l’algoritmo.
+
 ## Ancora da fare prima di chiudere la pagina
 
 - Completare l’inventario delle sezioni espanse, dei filtri, degli stati del
