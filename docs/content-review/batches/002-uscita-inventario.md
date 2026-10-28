@@ -354,7 +354,7 @@ in quattro larghezze e due temi. Con la [fixture meteo non disponibile](../evide
 [fixture](../evidence/002-uscita/meteo-outdoor-dopo.cjs) e alberi accessibili
 sono documentati. Passati 643 test unitari e dry-run. Il test browser con
 Wrangler locale rimane non eseguito: anche con Node 24 l'avvio termina con
-`spawn EBADF`. Il controllo GitHub e la pubblicazione sono da verificare.
+`spawn EBADF`. Il controllo GitHub è passato e la PR è stata fusa in `main` al commit `87ae97b30285ac10677a4b862258270f1ec5b2b6`; il deploy è da verificare.
 Non sono prove con utenti, dati meteo reali o validazione scientifica.
 
 ## Ancora da fare prima di chiudere la pagina
