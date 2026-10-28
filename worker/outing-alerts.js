@@ -1,6 +1,7 @@
 import { buildPushPayload } from "@block65/webcrypto-web-push";
 import { forecastParams } from "./weather-provider.js";
 import { weatherStorage } from "./weather-storage.js";
+import { weatherCacheKey } from "./weather-key.js";
 import { outingFor } from "../js/outing.js";
 import { todayISO } from "../js/weather.js";
 const response = (data, status = 200) =>
@@ -114,7 +115,7 @@ async function body(request) {
 }
 async function weather(env, zone, day, now) {
   const r = await weatherStorage(env).get(
-      forecastParams([zone], "outing").toString(),
+      await weatherCacheKey(forecastParams([zone], "outing")),
     ),
     h = r?.raw?.[0]?.hourly;
   if (!h) return null;
@@ -255,8 +256,10 @@ export async function handleOutingAlerts(
     )
       fail("Troppe richieste. Riprova più tardi.", 429);
     const count = await db
-      .prepare("SELECT COUNT(*) AS n FROM outing_alerts WHERE device_id=?")
-      .bind(id)
+      .prepare(
+        "SELECT COUNT(*) AS n FROM outing_alerts WHERE device_id=? AND day>=?",
+      )
+      .bind(id, today)
       .first();
     if (
       count.n >= 10 &&
@@ -310,17 +313,12 @@ export async function handleOutingAlerts(
     );
   }
 }
-export async function sendOutingAlerts(
-  env,
-  { zones, now = Date.now(), fetcher = fetch } = {},
-) {
-  if (!env.COMMUNITY_DB || !env.PUSH_PUBLIC_KEY || !env.PUSH_PRIVATE_KEY)
-    return;
+export async function cleanupOutingAlerts(env, now = Date.now()) {
+  if (!env.COMMUNITY_DB) return;
   const db = env.COMMUNITY_DB;
   await init(db);
-  const today = todayISO(new Date(now));
   await db.batch([
-    db.prepare("DELETE FROM outing_alerts WHERE day<?").bind(today),
+    db.prepare("DELETE FROM outing_alerts WHERE day<?").bind(todayISO(new Date(now))),
     db
       .prepare(
         "DELETE FROM outing_alert_devices WHERE expires_at<? OR id NOT IN (SELECT device_id FROM outing_alerts)",
@@ -331,11 +329,22 @@ export async function sendOutingAlerts(
     ),
     db.prepare("DELETE FROM outing_alert_rate WHERE expires_at<?").bind(now),
   ]);
+}
+export async function sendOutingAlerts(
+  env,
+  { zones, now = Date.now(), fetcher = fetch } = {},
+) {
+  if (!env.COMMUNITY_DB || !env.PUSH_PUBLIC_KEY || !env.PUSH_PRIVATE_KEY)
+    return;
+  const db = env.COMMUNITY_DB;
+  await init(db);
+  const today = todayISO(new Date(now));
+  // Le pulizie girano nel cron notturno: qui si saltano soltanto i giorni passati.
   const { results: rows } = await db
     .prepare(
-      "SELECT a.*,d.subscription FROM outing_alerts a JOIN outing_alert_devices d ON d.id=a.device_id WHERE a.lease_until<=? ORDER BY a.lease_until LIMIT 10",
+      "SELECT a.*,d.subscription FROM outing_alerts a JOIN outing_alert_devices d ON d.id=a.device_id WHERE a.lease_until<=? AND a.day>=? AND d.expires_at>=? ORDER BY a.lease_until LIMIT 10",
     )
-    .bind(now)
+    .bind(now, today, now)
     .all();
   const cached = new Map();
   for (const row of rows) {
