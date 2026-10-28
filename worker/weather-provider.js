@@ -2,6 +2,7 @@ import {compactGrowth,GROWTH_DAILY,GROWTH_HOURLY,LEGACY_GROWTH_DAILY,LEGACY_GROW
 import {WEATHER_LOCAL_RETENTION_MS,GROWTH_FRESH_MS} from '../js/weather-cache.js';
 export {compactGrowth} from '../js/weather-data.js';
 import {todayISO,PAST_DAYS,FORECAST_DAYS} from '../js/weather.js';
+import {weatherCacheKey,weatherDigest} from './weather-key.js';
 const API='https://api.open-meteo.com/v1/forecast', TTL=3600000;
 const growthProfile=(daily,hourly)=>({daily,hourly,past_days:String(PAST_DAYS),forecast_days:String(FORECAST_DAYS),timezone:'Europe/Rome'});
 const profiles={
@@ -78,11 +79,10 @@ export async function cachedForecast(query,{zones,cache,fetcher=fetch,now=Date.n
     note('served:legacy');
     return new Response(r.body,{headers:{'content-type':'application/json','cache-control':'no-store','x-weather-fetched-at':new Date(now).toISOString(),'x-weather-cache':'legacy-stream'}});
   }
-  const sha=async p=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(p.toString()))),b=>b.toString(16).padStart(2,'0')).join('');
-  const digest=await sha(params);
+  const digest=await weatherDigest(params);
   // The query identifies the place and altitude. Midnight must not discard a
   // still-valid forecast that already covers the new day.
-  const key=`weather:v3:${digest}`;
+  const key=await weatherCacheKey(params);
   // Retention is not forecast validity: return dated data for consultation even
   // after its scientific age limit; clients independently suppress current scores.
   const maxAge=WEATHER_LOCAL_RETENTION_MS;
@@ -99,7 +99,7 @@ export async function cachedForecast(query,{zones,cache,fetcher=fetch,now=Date.n
   try {
     saved=cache?await cache.get(key,'json'):null;
     if(!saved&&cache)saved=await cache.get(`weather:v2:${todayISO(new Date(now))}:${digest}`,'json');
-    if(!saved&&cache&&legacyParams){saved=await cache.get(`weather:v3:${await sha(legacyParams)}`,'json');if(saved){legacy=kind==='growth';savedParams=legacyParams;}}
+    if(!saved&&cache&&legacyParams){saved=await cache.get(await weatherCacheKey(legacyParams),'json');if(saved){legacy=kind==='growth';savedParams=legacyParams;}}
   } catch { /* cache opzionale */ }
   if(saved&&(!Number.isFinite(saved.t)||now-saved.t<0||now-saved.t>maxAge))saved=null;
   if(saved)try {validate(saved.raw,savedParams,now,growth,false);} catch {saved=null;}

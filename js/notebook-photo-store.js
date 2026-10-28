@@ -50,6 +50,7 @@ export function clearNotebookStore(scope) {
     return serial(scope, async () => {
         try {
             localStorage.removeItem(scope);
+            localStorage.removeItem(scope + ":non-leggibili");
         }
         catch {
             /* memoria non disponibile: restano solo le foto da togliere */
@@ -65,7 +66,9 @@ export function clearNotebookStore(scope) {
     });
 }
 export function notebookLocalStore(scope = "fungaroli:diario:v1") {
-    const metadata = () => {
+    // Righe non leggibili: si mettono da parte invece di bloccare tutto il taccuino.
+    const asideKey = scope + ":non-leggibili";
+    const stored = () => {
         let value;
         try {
             value = JSON.parse(localStorage.getItem(scope) || "[]");
@@ -73,9 +76,29 @@ export function notebookLocalStore(scope = "fungaroli:diario:v1") {
         catch {
             throw Error("Non riesco a leggere il taccuino salvato. Gli appunti restano conservati sul dispositivo.");
         }
-        if (!Array.isArray(value) || !value.every(isEntry))
+        if (!Array.isArray(value))
             throw Error("Il taccuino salvato contiene dati non leggibili. Gli appunti restano conservati sul dispositivo.");
-        return value;
+        return {
+            entries: value.filter(isEntry),
+            unreadable: value.filter((x) => !isEntry(x)),
+        };
+    };
+    const metadata = () => stored().entries;
+    const setAside = (rows) => {
+        if (!rows.length)
+            return;
+        let previous = [];
+        try {
+            previous = JSON.parse(localStorage.getItem(asideKey) || "[]");
+        }
+        catch {
+            /* copia precedente illeggibile: si conserva soltanto la nuova */
+        }
+        const seen = new Set((Array.isArray(previous) ? previous : []).map((x) => JSON.stringify(x)));
+        localStorage.setItem(asideKey, JSON.stringify([
+            ...(Array.isArray(previous) ? previous : []),
+            ...rows.filter((x) => !seen.has(JSON.stringify(x))),
+        ]));
     };
     const hydrate = async (entry) => {
         if (!entry.photo || !("key" in entry.photo))
@@ -94,7 +117,9 @@ export function notebookLocalStore(scope = "fungaroli:diario:v1") {
         };
     };
     async function write(entries) {
-        const before = metadata(), oldKeys = new Set(before.map(photoKey).filter((k) => !!k)), written = [];
+        if (!entries.every(isEntry))
+            throw Error("La nota contiene una foto non valida. Rifai la foto e riprova.");
+        const { entries: before, unreadable } = stored(), oldKeys = new Set(before.map(photoKey).filter((k) => !!k)), written = [];
         try {
             const rows = [];
             for (const e of entries) {
@@ -112,6 +137,7 @@ export function notebookLocalStore(scope = "fungaroli:diario:v1") {
                     photo: { key, width: e.photo.width, height: e.photo.height },
                 });
             }
+            setAside(unreadable);
             localStorage.setItem(scope, JSON.stringify(rows));
             const keep = new Set(rows.map(photoKey).filter((k) => !!k));
             await Promise.all([...oldKeys]

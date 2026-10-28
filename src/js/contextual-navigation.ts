@@ -11,6 +11,9 @@ const notePages = new Set([
   "animale",
   "guide",
 ]);
+// Pulsanti «Annota» nella pagina: se uno è visibile, la barra non ripete l'azione.
+const PAGE_NOTE_ACTIONS =
+  ".notebook-context-action,.zone-note-action,.animal-note-action,.plant-note-action";
 export function contextCanAnnotate(page: string): boolean {
   return notePages.has(page);
 }
@@ -68,6 +71,11 @@ export function initContextualNavigation(): void {
   const views = document.getElementById("views");
   if (!bar || !slot || !action || !views) return;
   const fitDesktop = desktopNavigationFit(bar);
+  let reserved: boolean | null = null;
+  const fit = (reserve: boolean) => {
+    reserved = reserve;
+    fitDesktop(reserve);
+  };
   const reduced = matchMedia("(prefers-reduced-motion:reduce)");
   const seen = new Set<Element>();
   let value = 0,
@@ -101,7 +109,7 @@ export function initContextualNavigation(): void {
       value = target;
       velocity = 0;
       paint();
-      fitDesktop(target === 1);
+      fit(target === 1);
       return;
     }
     const next = stepDockSpring(
@@ -115,7 +123,7 @@ export function initContextualNavigation(): void {
     velocity = next.velocity;
     paint();
     if (!next.settled) frame = requestAnimationFrame(tick);
-    else { previous = 0; fitDesktop(target === 1); }
+    else { previous = 0; fit(target === 1); }
   };
   const animate = () => {
     if (held()) return;
@@ -126,7 +134,7 @@ export function initContextualNavigation(): void {
       velocity = 0;
       previous = 0;
       paint();
-      fitDesktop(target === 1);
+      fit(target === 1);
     } else if (!frame && (value !== target || velocity)) {
       previous = 0;
       frame = requestAnimationFrame(tick);
@@ -137,7 +145,10 @@ export function initContextualNavigation(): void {
     const wanted =
       contextCanAnnotate(document.body.dataset.page || "") && seen.size === 0;
     target = wanted ? 1 : 0;
-    fitDesktop(target === 1 || value > 0.0005);
+    // choose() gira anche nelle callback dell'IntersectionObserver, cioè durante lo scroll:
+    // si misura solo quando cambia lo spazio da riservare all'azione.
+    const reserve = target === 1 || value > 0.0005;
+    if (reserve !== reserved) fit(reserve);
     animate();
     paint();
   };
@@ -158,9 +169,7 @@ export function initContextualNavigation(): void {
     seen.clear();
     const page = views.querySelector<HTMLElement>(".view:not([hidden])");
     if (!pressing) {
-      const inline = page?.querySelector<HTMLElement>(
-        ".notebook-context-action",
-      );
+      const inline = page?.querySelector<HTMLElement>(PAGE_NOTE_ACTIONS);
       for (const key of [
         "noteKind",
         "noteId",
@@ -175,7 +184,7 @@ export function initContextualNavigation(): void {
     }
 
     for (const button of page?.querySelectorAll<HTMLElement>(
-      "[data-annotate],.notebook-context-action",
+      "[data-annotate]," + PAGE_NOTE_ACTIONS,
     ) || []) {
       const r = button.getBoundingClientRect();
       if (
