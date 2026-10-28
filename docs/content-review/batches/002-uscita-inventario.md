@@ -140,6 +140,14 @@ non contiene queste modifiche. Non è soltanto una differenza nel numero della
 cache. L’origine e l’eventuale presenza del lavoro in un altro checkout non sono
 state stabilite; non distribuire una copia precedente mentre si chiarisce.
 
+**Chiarimento successivo:** dal 28 ottobre, per decisione di Matteo riportata
+in `AGENTS.md`, la produzione è sul ramo `main`; il ramo `claude/brave-tesla-wu0a2b`
+è storico. Il confronto precedente usava una base superata. Al commit
+`a78198efd69f381ec0020745d8a4aff43df8dd44`, `main` e il sito servono entrambi
+`v381` e hanno `js/app.js` identico (SHA-256 `640df5842b0f…`). Il worktree di
+questa revisione è stato riallineato a `main`. I controlli non confrontano ogni
+singolo file pubblicato, ma la discrepanza segnalata è spiegata dal cambio ramo.
+
 ## Ancora da fare prima di chiudere la pagina
 
 - Completare l’inventario delle sezioni espanse, dei filtri, degli stati del
