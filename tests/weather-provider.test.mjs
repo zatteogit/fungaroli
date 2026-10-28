@@ -212,3 +212,49 @@ test('fresh shared outing cache serves another client without calling the provid
  const rows=await response.json(),series=toDaily(rows[0],todayISO(new Date(now+2*86400000)),{expired:true});
  assert.equal(series.todayIndex,-1);assert.equal(series.source.expired,true);
  });
+
+// Pacchetto meteo nel browser: se fallisce o arriva incompleto, si chiedono solo le zone mancanti.
+const browserZones=[{lat:42,lon:13,bands:[800,1000]},{lat:43,lon:13,bands:[900]}];
+const zoneRows=q=>q.get('elevation').split(',').map(e=>({elevation:Number(e),latitude:Number(q.get('latitude').split(',')[0])}));
+async function inBrowser(snapshot,run){
+  const original=global.fetch,document=global.document,window=global.window;global.document={};global.window={};
+  const calls={snapshot:0,zones:[]};
+  global.fetch=async(url,opts)=>{
+    if(url.startsWith('/api/weather/v1/snapshot')){calls.snapshot++;return snapshot(opts);}
+    const q=new URL(url,'https://test.local').searchParams;calls.zones.push(q.get('latitude').split(',')[0]);
+    return Response.json(zoneRows(q),{headers:{'x-weather-fetched-at':new Date().toISOString()}});
+  };
+  try{return await run(calls);}finally{global.fetch=original;for(const [k,v] of [['document',document],['window',window]])if(v===undefined)delete global[k];else global[k]=v;}
+}
+test('pacchetto meteo con 5xx: ripiego sulle zone, risultato completo',async()=>{
+  await inBrowser(async()=>Response.json({error:'x'},{status:503}),async calls=>{
+    const result=await fetchForecast(forecastParams(browserZones,'growth'));
+    assert.equal(calls.snapshot,1);assert.deepEqual(calls.zones.sort(),['42','43']);
+    assert.equal(result.partial,false);assert.deepEqual(result.raw.map(r=>r.elevation),[800,1000,900]);
+  });
+});
+test('pacchetto meteo scaduto per timeout: ripiego sulle zone',async()=>{
+  await inBrowser(async()=>{throw new DOMException('Timeout','TimeoutError');},async calls=>{
+    const result=await fetchForecast(forecastParams(browserZones,'growth'));
+    assert.deepEqual(calls.zones.sort(),['42','43']);assert.equal(result.partial,false);
+  });
+});
+test('pacchetto meteo parziale: si chiede solo la zona mancante',async()=>{
+  const params=forecastParams(browserZones,'growth'),first=new URLSearchParams({latitude:'42,42',longitude:'13,13',elevation:'800,1000'});
+  const line=JSON.stringify({coordinates:'42,42|13,13|800,1000',record:{t:Date.now(),raw:zoneRows(first)}})+'\n';
+  await inBrowser(async()=>new Response(line,{headers:{'x-weather-format':'ndjson-v1'}}),async calls=>{
+    const result=await fetchForecast(params);
+    assert.deepEqual(calls.zones,['43']);assert.equal(result.partial,false);assert.deepEqual(result.raw.map(r=>r.elevation),[800,1000,900]);
+  });
+});
+test('una sola zona non scarica il pacchetto; annullare non avvia il ripiego',async()=>{
+  await inBrowser(async()=>{throw new Error('non deve servire');},async calls=>{
+    await fetchForecast(forecastParams([browserZones[1]],'growth'));
+    assert.equal(calls.snapshot,0);assert.deepEqual(calls.zones,['43']);
+  });
+  const controller=new AbortController();
+  await inBrowser(async()=>{controller.abort();throw new DOMException('Annullato','AbortError');},async calls=>{
+    await assert.rejects(fetchForecast(forecastParams(browserZones,'growth'),{signal:controller.signal}));
+    assert.deepEqual(calls.zones,[]);
+  });
+});

@@ -1,6 +1,7 @@
 import {openModal} from './modal-flow.js';
 import {FEEDBACK_TYPES,FEEDBACK_PRIVACY,feedbackContext} from './feedback-schema.js';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const notifyClosed=async text=>{const {toast}=await import('./refresh.js');toast(esc(text),6000,'top');};
 let dialog,busy=false,draft={type:'commento',message:'',includeContext:true},context,lastBody,requestId;
 function build(){
  dialog=document.createElement('dialog');dialog.className='wiz feedback-dialog';dialog.setAttribute('aria-labelledby','feedback-title');document.body.append(dialog);
@@ -30,8 +31,11 @@ function render(){
    const result=await response.json().catch(()=>null);if(!response.ok||result?.ok!==true||result.id!==requestId)throw Error(result?.error||'Non riesco a confermare l’invio. Il testo è ancora qui: riprova.');
    draft={type:'commento',message:'',includeContext:true};lastBody=null;requestId=null;
    dialog.innerHTML='<header class="report-header"><h2 id="feedback-title">Grazie del tuo aiuto</h2><button type="button" class="profile-close" aria-label="Chiudi">×</button></header><div class="feedback-success"><span class="feedback-check" aria-hidden="true">✓</span><p role="status">Il tuo feedback è arrivato a Fronda.</p><p>Matteo potrà leggerlo privatamente. I tuoi commenti aiutano a scegliere cosa migliorare nel test.</p><button type="button" class="btn primary">Torna all’app</button></div>';
-   dialog.querySelectorAll('button').forEach(button=>button.onclick=()=>dialog.close());dialog.querySelector('.feedback-success button').focus({preventScroll:true});
-  }catch(error){status.textContent=controller.signal.aborted?'L’invio sta impiegando troppo tempo. Il testo è ancora qui: riprova.':navigator.onLine===false?'Sei offline. Il testo è ancora qui: riprova quando torna la connessione.':error instanceof TypeError?'Connessione non riuscita. Il testo è ancora qui: riprova.':error.message;send.textContent='Riprova a inviare';}
+   dialog.querySelectorAll('button').forEach(button=>button.onclick=()=>dialog.close());
+   // La navigazione può aver chiuso il dialog durante l'invio (modal-flow): l'esito non deve finire nascosto.
+   if(dialog.open)dialog.querySelector('.feedback-success button').focus({preventScroll:true});else notifyClosed('Il tuo feedback è arrivato a Fronda. Grazie del tuo aiuto.');
+  }catch(error){status.textContent=controller.signal.aborted?'L’invio sta impiegando troppo tempo. Il testo è ancora qui: riprova.':navigator.onLine===false?'Sei offline. Il testo è ancora qui: riprova quando torna la connessione.':error instanceof TypeError?'Connessione non riuscita. Il testo è ancora qui: riprova.':error.message;send.textContent='Riprova a inviare';
+   if(!dialog.open)notifyClosed('Feedback non inviato. Il testo è conservato: riapri «Invia feedback» per riprovare.');}
   finally{clearTimeout(timer);busy=false;send.disabled=false;close.disabled=false;form.querySelectorAll('input,textarea,select').forEach(field=>field.disabled=false);form.removeAttribute('aria-busy');}
  };
 }

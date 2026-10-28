@@ -85,7 +85,8 @@ function collectiveStore() {
         if (currentUser()?.id !== account.id) throw Object.assign(new Error('Profilo cambiato.'), { status: 401 });
         const entries = (await communityRequest('entries')).entries;
         if (currentUser()?.id !== account.id) throw Object.assign(new Error('Profilo cambiato.'), { status: 401 });
-        if(isCurrent())await local.replace(entries); return entries;
+        if(isCurrent())try { await local.replace(entries); } catch { /* copia locale facoltativa */ }
+        return entries;
       }
       catch (e) { if (e.status === 401) throw e; return local.list(); }
     },
