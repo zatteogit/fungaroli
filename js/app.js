@@ -2310,7 +2310,7 @@ function weekBestId(){
 function renderHomeDay(list,tile){
  const o=state.homeDay,box=$('#hero'),label=o===0?'Oggi':dayLabel(o,outdoorDate(o),true),best=weekBestId();
  const n=Math.min(list.length,8);
- updateWeatherHTML(box,`${seasonNoteHtml()}<section class="home-day-head" data-home-day="${o}"><h2>${esc(label)}</h2><p>${n===1?'Una uscita':n+' uscite'} per questo giorno, dalla migliore.</p><button type="button" class="link-btn" data-home-week>Torna alla settimana</button></section>`);
+ updateWeatherHTML(box,`${seasonNoteHtml()}<section class="home-day-head" data-home-day="${o}"><h2 class="sr-only">${esc(label)}</h2><p>${n===1?'Una uscita':n+' uscite'}, dalla migliore</p><button type="button" class="link-btn" data-home-week><span aria-hidden="true">←</span> Settimana</button></section>`);
  box.querySelector('[data-home-week]').addEventListener('click',()=>chooseHomeDay(null));
  box.querySelector('[data-season-restore]')?.addEventListener('click',restoreSeason);
  updateWeatherHTML($('#ranking'),list.slice(0,8).map((c,i)=>{const html=tile(c,i===0&&c.z.id===best?'La migliore della settimana':'');return html.startsWith('<li')?html:`<li data-weather-key="${c.z.id}|${c.o}">${html}</li>`;}).join(''));
@@ -3408,12 +3408,13 @@ function essentialSections(z, d, walk) {
   if(w){
     const weatherText=esc(w.text.replace(/^./,c=>c.toUpperCase())),when=rows.find(r=>r.sec==='quando');
     if(when)when.sub=`<span class="when-weather wx-${w.level}">${wxi(w)}<span>${weatherText}</span></span>`;
-    else rows.push({sec:'quando',svg:wxi(w),k:'Quando',v:weatherText});
+    else rows.push({sec:'quando',svg:wxi(w),k:'Meteo',v:weatherText}); // senza orario consigliato la riga dice solo il tempo (24/10)
   }
 
   const drive=drivePoint(z,walk);
   if(drive||walk?.h||z.access||z.parking?.length){
-    rows.push({sec:'accesso',icon:'car',k:'Come arrivare',v:drive?`Arrivo in auto · ${esc(drive.name)}`:'Accesso auto da verificare',sub:drive?`<span class="plan-travel">${esc(travelText(zoneTrip(z,walk)))} da ${esc(currentBase().name)}</span>`:'',badge:''});
+    rows.push({sec:'accesso',icon:'car',k:'Come arrivare',v:drive?`Arrivo in auto · ${esc(drive.name)}`:'Accesso auto da verificare',sub:drive?`<span class="plan-travel">${esc(travelText(zoneTrip(z,walk)))} da ${esc(currentBase().name)}</span>`:`<a class="plan-map-link" href="#/mappa/${z.id}">Apri la mappa →</a>`,badge:''});
+    // senza punto d'arrivo l'unica azione è la mappa: sta nella riga, non dentro l'accordion (24/10)
   }
   const observationContext = [whereSummary(best.species.id) && `<p class="plan-where">${linkTrees(whereSummary(best.species.id))}</p>`, hostNote && `<p class="plan-host">${esc(hostNote)}</p>`].filter(Boolean).join('');
   const bodies={specie:()=>`<div class="observation-context">${observationContext}</div>`+zoneSpecies(z,d)+discoverySection(z,d,walk,true),quando:()=>renderHuman(z,d)||renderWhenWeather(z,d),accesso:()=>renderAccess(z,d,{summarized:true,walk})};
@@ -3654,7 +3655,7 @@ function renderDetail() {
       <p class="small muted">${esc(best.kind==='plant'?'Indice sperimentale del contesto e della fase: non è una probabilità di raccolta.':contentCopy.indexExplanation || 'Condizioni di crescita: indice sperimentale 0–10.')}</p>
       ${best.kind==='plant'?'':'<p class="small muted">Le segnalazioni esterne (iNaturalist, gruppi, bollettini) non cambiano l’ordine delle uscite né le condizioni di crescita: servono a verificare l’indice.</p>'}
       ${legal?.forecast_note ? `<p class="small muted">${esc(legal.forecast_note)}</p>` : ''}`)}
-    ${section('sentieri', preview('Sentieri della zona',(trails[z.id]?.trails?.length||0)+' tratti mappati · difficoltà e profili'), renderTrails(z, d))}
+    ${trails[z.id]?.trails?.length?section('sentieri', preview('Sentieri della zona',trails[z.id].trails.length+' tratti mappati · difficoltà e profili'), renderTrails(z, d)):''}
     ${section('bosco', preview(`Bosco della zona intorno a ${best.band} m`,forestNames||'Composizione indicativa sulla carta'), forestBar(hab.frac) + factCards([{label:'Carta Forestale',value:`${hab.n} punti della zona`,icon:'leaf'},{label:'Fascia osservata',value:`${best.band-PARAMS.bandHalfWidth}–${best.band+PARAMS.bandHalfWidth} m`,icon:'pin'}]) + `<p class="small muted">Le percentuali descrivono i punti della zona sulla carta, non il numero degli alberi né il solo sentiero. Punti vicini possono descrivere lo stesso bosco: la composizione è indicativa.</p>` + forestInfoHtml(z, best))}
     ${section('zona', preview('Paesaggio e alberi',zonePreview||`${habitat[z.id].elevation.min}–${habitat[z.id].elevation.max} m`), `${factCards([{label:'Paesaggio',value:z.description,icon:'leaf',wide:true},{label:'Quote della zona',value:`${habitat[z.id].elevation.min}–${habitat[z.id].elevation.max} m`,icon:'pin'}],{glossary:'Bosco'})}${zoneTrees}${zoneInfoHtml(z)}${zoneSourceLinks(z)}`)}
     </section>
@@ -3831,7 +3832,8 @@ function renderAccess(z, d, {summarized=false,walk=null} = {}) {
   const reserve = !d?.reserve ? '' : d.reserve.all
     ? `<p class="small access-reserve"><b>${esc(RESERVE_BAND_TEXT)}</b>${ax || axLine ? ' Nelle avvertenze, il punto consentito più comodo con la sua quota.' : d.access ? ' Il punto consentito più comodo, con la sua quota, è sulla mappa della zona.' : ' Nella zona non c’è un altro bosco adatto da proporre.'}${more ? ` ${esc(more)}` : ''}</p>`
     : `<p class="small access-reserve">${esc(more)}</p>`;
-  return `${accessOverview(z,d,walk)}
+  const overview=summarized&&!Number.isFinite(drivePoint(z,walk)?.target?.lat)?'':accessOverview(z,d,walk);
+  return `${overview}
     ${stops.length?`<div class="access-stops"><h3>Soste indicate</h3><div class="act-pills">${stops.map(p=>actPill(gmaps(p.lat,p.lon),'pin',esc(p.name||p.parking),true)).join('')}</div></div>`:''}
     ${renderMappedPlaces(trails[z.id]?.publicPlaces)}
     ${reserve}<details class="access-notes"><summary>Accesso e avvertenze</summary><ul class="reasons access">${lines.map(x=>`<li>${x}</li>`).join('')}</ul>${customBase()?'<p class="small muted">Percorsi OSRM/OpenStreetMap, senza traffico. Se il percorso manca, la distanza è indicata in linea d’aria.</p>':''}${ax?.source === 'access-info' || axLine ? `<p class="small muted access-src">${esc(ACCESS_SOURCE)}</p>` : ''}</details>`;
