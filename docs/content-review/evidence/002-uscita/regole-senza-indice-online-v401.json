@@ -1,0 +1,42 @@
+[
+ {
+  "case": "funghi:cyclocybe-aegerita",
+  "version": "fungaroli-shell-v401",
+  "noIndex": true,
+  "sections": [
+   "passeggiata",
+   "scoperte",
+   "regole",
+   "accesso",
+   "sentieri",
+   "zona"
+  ]
+ },
+ {
+  "case": "funghi:edulis",
+  "version": "fungaroli-shell-v401",
+  "noIndex": false,
+  "sections": [
+   "passeggiata",
+   "specie",
+   "quando",
+   "accesso",
+   "regole",
+   "meteo",
+   "sentieri",
+   "bosco",
+   "zona"
+  ]
+ },
+ {
+  "case": "piante:-",
+  "version": "fungaroli-shell-v401",
+  "noIndex": false,
+  "sections": [
+   "passeggiata",
+   "accesso",
+   "sentieri",
+   "zona"
+  ]
+ }
+]

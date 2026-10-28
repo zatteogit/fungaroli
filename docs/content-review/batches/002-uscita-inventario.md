@@ -440,6 +440,16 @@ casi, sezione e dialogo da tastiera con ritorno del focus, quattro larghezze e
 due temi senza overflow. 643 test unitari, controlli Studio Fronda e dry-run
 passati. Il nuovo test browser non è stato eseguito in locale (`spawn EBADF`).
 
+Su richiesta di Matteo la PR è stata fusa in `main` (commit
+`5bb2ecc89748d344dec436bb1c0adbb1250741dc`) prima della fine della suite
+browser. Il run manuale sulla PR aveva 93 fallimenti in 7 shard su 8, in 29 file
+non toccati dalla modifica; lo shard con il nuovo test non era terminato. Il run
+di confronto su `main` è stato annullato dal merge: i fallimenti **non sono
+attribuiti** né alla PR né a `main`, e il nuovo test resta **non verificato**.
+La v401 è online; con meteo reale e profilo pulito, a Vallonina le regole
+compaiono per Pioppino senza indice e per Porcino, non per Piante
+([risultati](../evidence/002-uscita/regole-senza-indice-online-v401.json)).
+
 **Da valutare**, senza correzioni:
 
 | Osservazione | Persone più toccate |
