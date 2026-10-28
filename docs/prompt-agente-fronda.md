@@ -8,7 +8,7 @@ Lavora sul repository `zatteogit/fungaroli` per applicare all’app l’identit�
 2. Studia `docs/fronda/Fronda-Identita-Design-System.pdf` e apri `docs/fronda/index.html` e `docs/fronda/product.html` nel browser.
 3. Usa come fonti di produzione `docs/fronda/tokens.json`, gli SVG in `docs/fronda/assets/`, i font locali e le licenze. Consulta `FONTI-PROGETTO.md` e `VERIFICA.md` per distinguere dati, esempi e limiti.
 4. Se lo studio non è ancora unito in produzione, recuperalo dal ramo `codex/fronda-brand-identity` e crea da lì il ramo di implementazione, aggiornandolo con produzione. Non fare merge della PR dello studio senza mandato.
-5. Aggiornati dal ramo di produzione `claude/brave-tesla-wu0a2b` e crea un ramo dedicato. Lavora sull’ultima versione dell’app, non sullo snapshot del prototipo.
+5. Aggiornati dal ramo di produzione `main` e crea un ramo dedicato. Lavora sull’ultima versione dell’app, non sullo snapshot del prototipo.
 
 ## Direzione da rispettare
 
@@ -32,4 +32,4 @@ Verifica nel browser ogni gruppo completato a 320, 390, 768 e almeno 1280 px, te
 
 Quando cambi file pubblicati, aggiorna insieme SHELL, meta app-version e PRECACHE secondo AGENTS. Esegui test browser mirati durante il lavoro e la suite completa prima di qualsiasi rilascio, con un solo server su 8788.
 
-Consegna una PR verso `claude/brave-tesla-wu0a2b`, con screenshot desktop/mobile nei due temi, verifiche eseguite, limiti residui e handoff aggiornato. Non fare merge o deploy senza un mandato esplicito: il merge attiva la pubblicazione. Per scelte ordinarie usa il sistema approvato; se emerge una decisione che cambia prodotto, dati o direzione visiva, presenta alternative concrete al proprietario senza riaprire quelle già approvate.
+Consegna una PR verso `main`, con screenshot desktop/mobile nei due temi, verifiche eseguite, limiti residui e handoff aggiornato. Non fare merge o deploy senza un mandato esplicito: il merge attiva la pubblicazione. Per scelte ordinarie usa il sistema approvato; se emerge una decisione che cambia prodotto, dati o direzione visiva, presenta alternative concrete al proprietario senza riaprire quelle già approvate.

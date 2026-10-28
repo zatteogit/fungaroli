@@ -1,6 +1,7 @@
 import {fieldTools,initFieldMode} from './field-mode.js';
 import {initContextualNavigation} from './contextual-navigation.js';
 import {initAdaptiveEffects} from './adaptive-effects.js';
+import {loadEdition,applyEdition,editionZones} from './edition.js';
 import {setPilotChoices,clearPilotChoices} from './pilot-choice-state.js';
 import {pilotWelcomeHtml,pilotChoicesHtml,feedbackGlyph} from './pilot-onboarding.js';
 import {initFeedback,openFeedback} from './feedback.js';
@@ -332,6 +333,7 @@ async function init() {
   initInstall(); // prima di tutto: non dipende dai dati
   // versione Artifact: dati incorporati nella pagina (niente fetch esterni)
   const embedded = globalThis.FUNGAROLI_DATA;
+  const editionReady = embedded||globalThis.FUNGAROLI_REVIEW ? null : loadEdition();
   const review = !!globalThis.FUNGAROLI_REVIEW; // copia di revisione: niente API esterne
   let snapshot=null,updatedContent=null,catalogReady=false;
   const refreshLegal=async()=>{
@@ -372,7 +374,9 @@ async function init() {
   renderSpeciesGrid();
   access = aj?.zones || {};
   trails = tj?.zones || {};
-  weatherZones = zj.zones.filter(z=>z.publicationStatus!=='draft'&&z.bands?.length);
+  const edition = await editionReady;
+  if(edition)applyEdition(edition);
+  weatherZones = editionZones(edition, zj.zones.filter(z=>z.publicationStatus!=='draft'&&z.bands?.length)); // edizioni dedicate: solo le loro zone
   zones = weatherZones.filter(z=>hj.zones[z.id]); // una zona senza dati di bosco non e' ancora pronta
   initBaseLocation(zj.origin);origin = currentBase();
   const prepareTravel=()=>{for(const z of zones){zoneTrip(z);for(const t of trails[z.id]?.trails||[])zoneTrip(z,{t,h:documentedTrailStart(t)});}};

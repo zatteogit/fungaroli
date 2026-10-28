@@ -9,14 +9,17 @@
     "build:artifact": "node tools/build_artifact.mjs",
     "build:vendor": "node tools/build_vendor.mjs",
     "prepare": "npm run build",
-    "deploy": "npm test && wrangler deploy",
+    "deploy": "npm test && wrangler deploy --env=\"\"",
     "test:browser": "playwright test",
     "build": "npm run build:typescript && npm run build:vendor",
     "build:typescript": "node tools/build-typescript.mjs",
     "typecheck": "tsc --noEmit && tsc --project tsconfig.contracts.json",
     "check:typescript": "node tools/build-typescript.mjs --check",
     "pretest": "npm run check:typescript",
-    "prestart": "npm run build:typescript"
+    "prestart": "npm run build:typescript",
+    "dev": "node tools/dev.mjs",
+    "dev:edition": "node tools/dev.mjs",
+    "deploy:staging": "npm test && wrangler deploy --env staging"
   },
   "devDependencies": {
     "@playwright/test": "1.64.0",
