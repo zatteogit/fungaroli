@@ -13,10 +13,13 @@ import { cachedForecast } from './weather-provider.js';
 import {weatherSnapshot} from './weather-snapshot.js';
 import { recordWeatherMetric, cleanupWeatherMetrics } from './weather-metrics.js';
 import { ARCHIVE_CRON, archiveForecasts } from './forecast-archive.js';
+import { currentEdition, handleEdition } from './editions.js';
+import { editionZones } from '../js/edition-core.js';
 
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
+    if(url.pathname==='/edition.json')return handleEdition(request,env);
     if(url.pathname==='/api/forecast/v1/external-signals'){
       if(request.method!=='GET')return Response.json({error:'Metodo non consentito.'},{status:405});
       try{await publishedResources(env,url.origin,['zones','species-traits']);return Response.json(await publicExternalSignals(env),{headers:{'cache-control':'no-store','x-content-type-options':'nosniff'}});}
@@ -73,7 +76,9 @@ async function weatherRefreshRun(env,scheduledTime){
   try{content=await publishedResources(env,origin,['zones'],{initialize:false});}catch{/* catalogue bundled below */}
   const zones=content?.zones?.zones||(await (await env.ASSETS.fetch(new Request(new URL('/data/zones.json',origin)))).json()).zones;
   const metrics=env.CMS_DB?m=>recordWeatherMetric(env.CMS_DB,m):undefined;
-  const outcomes=await refreshSavedWeather(env,{zones,scheduledTime,metrics});
-  try{await sendOutingAlerts(env,{zones});}catch{console.warn('outing-alerts-incomplete');}
+  // Un'edizione dedicata aggiorna soltanto il meteo delle proprie zone.
+  const own=editionZones(currentEdition(env),zones);
+  const outcomes=await refreshSavedWeather(env,{zones:own,scheduledTime,metrics});
+  try{await sendOutingAlerts(env,{zones:own});}catch{console.warn('outing-alerts-incomplete');}
   if(outcomes.some(r=>!r.ok))console.warn(JSON.stringify({event:'weather-refresh-incomplete',outcomes}));
 }

@@ -299,7 +299,7 @@ I test controllano il comportamento qualitativo, non i valori dei parametri: si 
 
 ### Controlli automatici (GitHub Actions)
 
-Il workflow `.github/workflows/ci.yml` parte su ogni pull request, su ogni push nel ramo di produzione `claude/brave-tesla-wu0a2b` e a mano (`workflow_dispatch`). Installa Node 22, esegue `npm ci`, `npm test`, `npx wrangler deploy --dry-run` e, sulle PR, `git diff --check`. Non pubblica nulla: la pubblicazione è di Cloudflare. La suite browser (`npx playwright test`) resta da lanciare in locale.
+Il workflow `.github/workflows/ci.yml` parte su ogni pull request, su ogni push nel ramo di produzione `main` e a mano (`workflow_dispatch`). Installa Node 22, esegue `npm ci`, `npm test`, `npx wrangler deploy --dry-run` e, sulle PR, `git diff --check`. Non pubblica nulla: la pubblicazione è di Cloudflare. La suite browser (`npx playwright test`) resta da lanciare in locale.
 
 Il vecchio workflow GitHub Pages è stato rimosso: partiva solo su `main`, ramo che non esiste, e Pages non può eseguire il Worker (community, CMS, meteo condiviso).
 

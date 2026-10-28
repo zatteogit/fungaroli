@@ -3,7 +3,7 @@ name: CI
 on:
   pull_request:
   push:
-    branches: [claude/brave-tesla-wu0a2b]
+    branches: [main, staging]
   workflow_dispatch:
     inputs:
       browser:
@@ -44,7 +44,9 @@ jobs:
       - name: Studio Fronda — regressioni del guard
         run: node docs/fronda/scripts/guard-test.mjs
       - name: Configurazione del Worker
-        run: npx wrangler deploy --dry-run
+        run: |
+          npx wrangler deploy --dry-run --env=""
+          npx wrangler deploy --dry-run --env staging
       - name: Spazi e conflitti nel diff
         if: github.event_name == 'pull_request'
         run: git diff --check ${{ github.event.pull_request.base.sha }} ${{ github.sha }}
