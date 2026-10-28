@@ -211,11 +211,12 @@ function comparisonIllustration(key, part, shape) {
   return illus(key, part);
 }
 const comparisonVariants = new Map();
+function comparisonVariantDefaults(key) {
+  const record = ICONS?.[key], traits = TAXA.find(t=>t.key===key)?.traits || {};
+  return {color:record?.colors?.drawn || record?.base?.colore || [].concat(traits.cap_color || [])[0], shape:record?.shapes?.drawn || record?.base?.forma || [].concat(traits.cap_shape || [])[0], underColor:[].concat(traits.hymenophore_color || [])[0]};
+}
 function comparisonVariantState(key) {
-  if (!comparisonVariants.has(key)) {
-    const record = ICONS?.[key], traits = TAXA.find(t=>t.key===key)?.traits || {};
-    comparisonVariants.set(key, {color:record?.colors?.drawn || record?.base?.colore || [].concat(traits.cap_color || [])[0], shape:record?.shapes?.drawn || record?.base?.forma || [].concat(traits.cap_shape || [])[0], underColor:[].concat(traits.hymenophore_color || [])[0]});
-  }
+  if (!comparisonVariants.has(key)) comparisonVariants.set(key, comparisonVariantDefaults(key));
   return comparisonVariants.get(key);
 }
 function comparisonControls(t, trait='cap_color') {
@@ -905,6 +906,27 @@ const CMP = [
   { key: 'stem_base', k: 'Base del gambo', art: (a) => BASE[a[0]], say: (v) => optLabel(QK('stem_base'), v) },
   { key: 'season', k: 'Stagione', info: true },
 ];
+// Un carattere con più varianti, in parte comuni e in parte no («part»), compare in tutte e tre le schede: è anche una
+// differenza e anche un valore in comune (decisione di Matteo del 24/10).
+const inGroup = (rowKind, group) => rowKind === group || (rowKind === 'part' && group !== 'part');
+// Selettori dei disegni (colore, forma, colore sotto il cappello) impostati sulla scheda scelta: in «A volte simili» e
+// «In comune» una variante condivisa; in «Differenti» il disegno di base, l'unico con i richiami revisionati.
+const VARIANT_TRAITS = { cap_color: 'color', cap_shape: 'shape', hymenophore_color: 'underColor' };
+function presetComparisonVariants(slide, ref, t, kind, track) {
+  for (const [trait, field] of Object.entries(VARIANT_TRAITS)) {
+    const A = [].concat(ref.traits?.[trait] || []), B = [].concat(t.traits?.[trait] || []);
+    if (!A.length || !B.length) continue;
+    const shared = A.filter((v) => B.includes(v));
+    for (const [who, X, Y] of [[ref, A, B], [t, B, A]]) {
+      const now = comparisonVariantState(who.key)[field];
+      if (kind !== 'diff' && shared.includes(now)) continue;
+      const v = kind === 'diff' ? comparisonVariantDefaults(who.key)[field] : shared[0];
+      if (!v || now === v) continue;
+      const button = [...slide.querySelectorAll(`button[data-cmp-variant="${field}"]`)].find((b) => b.dataset.cmpVariantKey === who.key && b.value === v);
+      if (button) updateComparisonVariant(button, track);
+    }
+  }
+}
 function cmpRows(ref, t) {
   return CMP.map((r) => {
     const a = r.get ? r.get(ref) : ref.traits?.[r.key], b = r.get ? r.get(t) : t.traits?.[r.key];
@@ -923,7 +945,7 @@ function cmpRows(ref, t) {
     const cell = (X, Y, who) => r.key === 'season'
       ? `<div class="cmp-cell" role="group" aria-label="${esc(who.name||who.latin)}"><span>${esc(txt(X))}</span></div>`
       : `<div class="cmp-cell${['hymenophore','stem_ring','stem_volva','stem_reticulum','stem_base','gill_attachment'].includes(r.key)?' cmp-cell-miniature':''}" role="group" aria-label="${esc(who.name||who.latin)}">${r.label ? `<span class="cmp-k">${esc(r.label(who))}</span>` : ''}${illustration(who)}${['cap_color','cap_shape','hymenophore_color'].includes(r.key)?`<div class="cmp-variant-controls" data-cmp-controls="${esc(who.key)}" data-cmp-trait="${r.key}">${comparisonControls(who,r.key)}</div>`:''}<ul class="cmp-vals">${[...A.filter((v) => Y.includes(v) && X.includes(v)), ...X.filter((v) => !Y.includes(v))].map(v => value(v, who, !differentStructure && Y.includes(v))).join('')}</ul></div>`;
-    return { kind, info:!!r.info, k: r.k, html: `<li class="cmp-row ${kind}" data-trait="${r.key}">${r.label ? '' : `<span class="cmp-k">${esc(r.k)}</span>`}${cell(A, B, ref)}${cell(B, A, t)}</li>` };
+    return { kind, info:!!r.info, k: r.k, html: `<li class="cmp-row ${kind}" data-trait="${r.key}" data-cmp-order="${CMP.indexOf(r)}">${r.label ? '' : `<span class="cmp-k">${esc(r.k)}</span>`}${cell(A, B, ref)}${cell(B, A, t)}</li>` };
   }).filter(Boolean);
 }
 
@@ -950,9 +972,9 @@ function renderCompare(box, ref, pick) {
   const slide = (t, k) => {
     const missing=CMP.filter(r=>{const a=r.get?r.get(ref):ref.traits?.[r.key],b=r.get?r.get(t):t.traits?.[r.key];return comparisonTraitState(ref,r.key,a)==='missing'||comparisonTraitState(t,r.key,b)==='missing';});
     const rows = cmpRows(ref, t), groups = [
-      {kind:'diff',label:'Differenti',empty:'Nessun carattere completamente diverso nei dati disponibili. Le somiglianze non confermano l’identità.'},
+      {kind:'diff',label:'Differenti',empty:'Nessun carattere diverso nei dati disponibili. Le somiglianze non confermano l’identità.'},
       {kind:'part',label:'A volte simili',empty:'Nessuna somiglianza parziale documentata.'},
-      {kind:'same',label:'In comune',empty:'Nessun carattere interamente condiviso nei dati disponibili.'},
+      {kind:'same',label:'In comune',empty:'Nessun carattere in comune nei dati disponibili.'},
     ], info = rows.filter(r=>r.info);
     const how = documentedKeys.has(t.key) ? (fromToxic ? HOWTO(t.edible_id, ref.latin) : HOWTO(ref.edible_id, t.latin)) : '';
     return `<section class="cmp-slide" id="cmp-${esc(t.key)}" data-i="${k}" role="group" aria-roledescription="confronto" aria-label="${esc(ref.name || ref.latin)} e ${esc(t.name || t.latin)}" ${t.key === list[start]?.key ? '' : 'hidden inert'}>
@@ -966,8 +988,8 @@ function renderCompare(box, ref, pick) {
       ${how ? `<p class="cmp-how" data-glossary="Funghi"><b>Differenze descritte.</b> ${esc(how)}</p>` : ''}
       <div class="cmp-kind-tabs" role="tablist" aria-label="Caratteri da confrontare">${groups.map(g=>`<button type="button" role="tab" id="cmp-${esc(t.key)}-tab-${g.kind}" data-cmp-group="${g.kind}" aria-controls="cmp-${esc(t.key)}-panel-${g.kind}" aria-selected="${g.kind==='diff'}" tabindex="${g.kind==='diff'?0:-1}">${g.label}</button>`).join('')}</div>
       <p class="cmp-illustration-note">Disegni schematici generati con AI: mostrano un esempio. Leggi tutte le varianti elencate e confronta con le foto.<span class="cmp-callout-note"> I richiami indicano la zona da osservare, anche quando il carattere è assente.</span></p>
-      <p class="cmp-legend" hidden><span><span class="cmp-relation" aria-hidden="true">=</span> Valore in comune</span><span><span class="cmp-relation" aria-hidden="true">≠</span> Valore diverso</span></p>
-      ${groups.map(g=>{const items=rows.filter(r=>!r.info&&r.kind===g.kind);return `<section class="cmp-panel" id="cmp-${esc(t.key)}-panel-${g.kind}" data-cmp-panel="${g.kind}" role="tabpanel" aria-labelledby="cmp-${esc(t.key)}-tab-${g.kind}" tabindex="0"${g.kind==='diff'?'':' hidden'}>${items.length?`<div class="cmp-column-head" aria-hidden="true"><span>${esc(ref.name||ref.latin)}</span><span>${esc(t.name||t.latin)}</span></div><ul class="cmp-rows">${items.map(r=>r.html).join('')}</ul>`:`<p class="cmp-none">${rows.some(r=>!r.info)?g.empty:'I dati disponibili non permettono ancora un confronto dei caratteri tra queste due specie. Apri le schede per leggere descrizioni e fonti; non è possibile dedurre somiglianze o differenze.'}</p>`}</section>`;}).join('')}
+      <p class="cmp-legend"${rows.some(r=>!r.info&&r.kind==='part')?'':' hidden'}><span><span class="cmp-relation" aria-hidden="true">=</span> Valore in comune</span><span><span class="cmp-relation" aria-hidden="true">≠</span> Valore diverso</span></p>
+      ${groups.map(g=>{const items=rows.filter(r=>!r.info&&inGroup(r.kind,g.kind)),own=items.filter(r=>r.kind==='part'?g.kind==='diff':r.kind===g.kind);return `<section class="cmp-panel" id="cmp-${esc(t.key)}-panel-${g.kind}" data-cmp-panel="${g.kind}" role="tabpanel" aria-labelledby="cmp-${esc(t.key)}-tab-${g.kind}" tabindex="0"${g.kind==='diff'?'':' hidden'}>${items.length?`<div class="cmp-column-head" aria-hidden="true"><span>${esc(ref.name||ref.latin)}</span><span>${esc(t.name||t.latin)}</span></div><ul class="cmp-rows">${own.map(r=>r.html).join('')}</ul>`:`<p class="cmp-none">${rows.some(r=>!r.info)?g.empty:'I dati disponibili non permettono ancora un confronto dei caratteri tra queste due specie. Apri le schede per leggere descrizioni e fonti; non è possibile dedurre somiglianze o differenze.'}</p>`}</section>`;}).join('')}
       ${info.length?`<div class="cmp-season"><ul class="cmp-rows">${info.map(r=>r.html).join('')}</ul></div>`:''}
       ${missing.length?`<details class="context-note cmp-missing-data"><summary>Dati incompleti · ${missing.length} ${missing.length===1?'carattere':'caratteri'}</summary><p>Questi caratteri non sono confrontabili perché mancano dati per una o entrambe le specie. Un dato mancante non significa carattere assente.</p><ul>${missing.map(r=>`<li>${esc(r.k)}</li>`).join('')}</ul></details>`:''}
       <details class="sec cmp-sources"><summary>Fonti del confronto</summary><div class="sec-body">${sourceRows([...(ref.sources || []), ...(t.sources || [])])}</div></details>
@@ -1003,9 +1025,12 @@ function renderCompare(box, ref, pick) {
     for (const [k, slide] of [...track.children].entries()) { slide.inert = k !== i; slide.hidden = k !== i; }
     history.replaceState(null, '', `#/riconosci/confronta/${ref.key}/${list[i].key}`);
     box.querySelector('[data-cmp-announcement]').textContent = `${ref.name||ref.latin} a confronto con ${list[i].name || list[i].latin}${documentedKeys.has(list[i].key)?', sosia documentati':''}`;
+    presetVariants(track.children[i], currentGroup);
   };
-  let cur = start;
+  let cur = start, currentGroup = 'diff';
   const slides = [...track.children];
+  const presetVariants = (slide, kind) => { if (slide) presetComparisonVariants(slide, ref, list[+slide.dataset.i], kind, track); };
+  presetVariants(slides[start], currentGroup);
   // l'altezza segue la slide visibile: niente vuoto sotto i confronti corti
   const gallery = box.querySelector('.cmp-gallery'), header = box.querySelector('.cmp-pair-nav');
   const headerContent = header.querySelector('.cmp-nav-content');
@@ -1088,8 +1113,16 @@ function renderCompare(box, ref, pick) {
     for(const sl of slides){
       sl.querySelectorAll('[data-cmp-group]').forEach(b=>{const on=b.dataset.cmpGroup===kind;b.setAttribute('aria-selected',String(on));b.tabIndex=on?0:-1;});
       sl.querySelectorAll('[data-cmp-panel]').forEach(panel=>panel.hidden=panel.dataset.cmpPanel!==kind);
-      sl.querySelector('.cmp-legend').hidden=kind!=='part';
+      // Le righe «part» esistono una volta sola e si spostano nella scheda aperta, nell'ordine dei caratteri.
+      const list=sl.querySelector(`[data-cmp-panel="${kind}"] .cmp-rows`);
+      if(list)sl.querySelectorAll('.cmp-panel .cmp-row.part').forEach(row=>{
+        if(row.parentElement===list)return;
+        const next=[...list.children].find(other=>+other.dataset.cmpOrder>+row.dataset.cmpOrder);
+        list.insertBefore(row,next||null);
+      });
+      sl.querySelector('.cmp-legend').hidden=!sl.querySelector(`[data-cmp-panel="${kind}"] .cmp-row.part`);
     }
+    currentGroup=kind;presetVariants(slides[cur],kind);
     fit();
   };
   box.querySelectorAll('[data-cmp-group]').forEach(button=>{
