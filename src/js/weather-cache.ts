@@ -151,7 +151,8 @@ export function saveZoneWeather(
   )
     return;
   try {
-    const data = read(kind),
+    // Copia: se lo spazio è esaurito, la memoria non deve tenere dati mai salvati.
+    const data = { ...read(kind) },
       id = zoneWeatherSignature(z, kind),
       previous = data[id];
     if (

@@ -81,7 +81,8 @@ export function saveZoneWeather(z, kind, record, now = Date.now()) {
         !validWeatherRows(record.raw, kind === "growth" ? z.bands.length : 1, kind))
         return;
     try {
-        const data = read(kind), id = zoneWeatherSignature(z, kind), previous = data[id];
+        // Copia: se lo spazio è esaurito, la memoria non deve tenere dati mai salvati.
+        const data = { ...read(kind) }, id = zoneWeatherSignature(z, kind), previous = data[id];
         if (isRecord(previous) &&
             isFiniteNumber(previous.t) &&
             previous.t > record.t)
