@@ -303,6 +303,19 @@ test('Mostra il meteo anche quando la specie scelta non ha indice',async({page})
  expect(errors).toEqual([]);
 });
 
+test('Regole di raccolta anche quando la specie scelta non ha indice',async({page})=>{
+ await page.clock.setFixedTime(new Date(new Date().setUTCHours(0,0,0,0)));await page.setViewportSize({width:390,height:900});
+ const errors=await setup(page,{cover:false});
+ await page.evaluate(()=>localStorage.setItem('fungaroli:prefs:v2',JSON.stringify({interests:['funghi'],target:'funghi',speciesIds:['cyclocybe-aegerita']})));
+ await page.goto('/#/zona/vallonina/1');await page.reload();const detail=page.locator('#detail');
+ await expect(detail).toContainText('Indice non ancora disponibile');
+ const rules=detail.locator('details.sec[data-sec="regole"]');await expect(rules).toHaveCount(1);
+ await rules.locator(':scope > summary').click();await expect(rules.locator('.legal-fact').first()).toContainText('3 kg');
+ await page.evaluate(()=>localStorage.setItem('fungaroli:prefs:v2',JSON.stringify({interests:['piante'],target:'piante'})));
+ await page.reload();await expect(detail.locator('details.sec[data-sec="accesso"]')).toHaveCount(1);await expect(detail.locator('details.sec[data-sec="regole"]')).toHaveCount(0);
+ expect(errors).toEqual([]);
+});
+
 test('riepiloghi essenziali negli accordion sul posto, senza voci duplicate o salti',async({page})=>{
   await page.emulateMedia({reducedMotion:'reduce'});
   const errors=await setup(page);await page.goto('/#/zona/tancia/0');await expect(page.locator('#detail details[data-sec="specie"]')).toBeVisible();
