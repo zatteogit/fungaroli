@@ -56,7 +56,7 @@ test('privacy: soglia reale, foto, provincia, base arrotondata, copia dei dati e
 });
 test('revisione del testo: nuova versione editoriale, stessa revisione delle CGS e nessuna nuova conferma',()=>{
  const notice=currentLegalNotice(seed);
- assert.equal(seed.version,11);assert.equal(seed.acceptance_version,1);
+ assert.equal(seed.version,12);assert.equal(seed.acceptance_version,1);
  assert.match(seed.info_sections.find(s=>s.id==='privacy').html,/vincolato all’Unione europea/);assert.doesNotMatch(seed.info_sections.find(s=>s.id==='privacy').html,/non è vincolato a una collocazione europea/);
  assert.match(seed.info_sections.find(s=>s.id==='privacy').html,/Studio dell’indice/);assert.doesNotMatch(seed.info_sections.find(s=>s.id==='privacy').html,/per studiare il modello/);
  assert.equal(legalNoticeVersion(notice),'cgs-1');
@@ -66,4 +66,15 @@ test('revisione del testo: nuova versione editoriale, stessa revisione delle CGS
 test('test su invito: scopo, dati e feedback disponibili anche con snapshot precedente',()=>{
  const notice=currentLegalNotice({...seed,version:10,onboarding:{title:'Vecchio avviso',points:seed.onboarding.points}});
  assert.match(notice.onboarding.title,/test di Fronda/);assert.match(notice.onboarding.prototype_notice,/piccolo gruppo di persone invitate/);assert.match(notice.onboarding.pilot.feedback,/anche senza profilo/);assert.match(notice.onboarding.pilot.data,/facoltative e revocabili/);assert.match(notice.info_sections.find(s=>s.id==='privacy').html,/Feedback sul test/);
+});
+test('versione 12: posizione delle note, avvisi dell’uscita e feedback anche nelle copie già modificate in redazione',async()=>{
+ const {NOTE_POSITION_PRIVACY_HTML,OUTING_ALERTS_PRIVACY_HTML}=await import('../js/legal-notice.js');
+ const edited={version:11,acceptance_version:1,onboarding:{pilot:{feedback:'Trovi «Invia feedback» nella barra dell’app e in Info, anche senza profilo.'}},info_sections:[{id:'privacy',title:'Privacy',html:'<ul><li>Testo della redazione</li></ul>'}]};
+ const result=currentLegalNotice(edited),html=result.info_sections.find(s=>s.id==='privacy').html;
+ assert.ok(html.includes(NOTE_POSITION_PRIVACY_HTML));assert.ok(html.includes(OUTING_ALERTS_PRIVACY_HTML));assert.ok(html.includes('Testo della redazione'));
+ assert.doesNotMatch(result.onboarding.pilot.feedback,/barra dell’app/);assert.match(result.onboarding.pilot.feedback,/in home, in Info/);
+ assert.equal(legalNoticeVersion(result),'cgs-1','nessuna nuova conferma: cambia il testo, non le condizioni');
+ const seeded=seed.info_sections.find(s=>s.id==='privacy').html;
+ assert.equal(seeded.split('<strong>Posizione delle note:</strong>').length,2);assert.equal(seeded.split('<strong>Avvisi dell’uscita:</strong>').length,2);
+ assert.equal(currentLegalNotice(seed).info_sections.find(s=>s.id==='privacy').html,seeded,'il seed non viene duplicato');
 });

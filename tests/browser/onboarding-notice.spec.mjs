@@ -3,7 +3,7 @@ import {preparePage} from '../../tools/visual-audit.mjs';
 import {readFileSync} from 'node:fs';
 import {CONTENT_RESOURCES} from '../../js/content-schema.js';
 
-for(const [share,research] of [[false,false],[true,false],[false,true],[true,true]])test(`benvenuto: ospite entra senza profilo con scelte ${share}/${research}`,async({browser})=>{
+for(const research of [false,true])test(`benvenuto: ospite entra senza profilo con Studio ${research}`,async({browser})=>{
  const context=await browser.newContext({viewport:{width:320,height:844},serviceWorkers:'block',reducedMotion:'reduce'}),page=await preparePage(context,{legal:null});let writes=0;
  await page.route('**/api/community/status',r=>r.fulfill({json:{enabled:true}}));
  await page.route('**/api/community/session',r=>r.fulfill({status:401,json:{error:'Accedi'}}));
@@ -12,7 +12,7 @@ for(const [share,research] of [[false,false],[true,false],[false,true],[true,tru
  await page.addInitScript(()=>localStorage.setItem('fungaroli:install-later',String(Date.now())));
  await page.goto('/#/diario');const welcome=page.locator('#onboarding');await expect(welcome).toBeVisible();
  await expect(welcome.locator('#ob-participation')).toContainText('Puoi usare Fronda senza registrarti');
- await welcome.locator('#ob-share').setChecked(share);await welcome.locator('#ob-research').setChecked(research);
+ await expect(welcome.locator('#ob-share')).toHaveCount(0);await welcome.locator('#ob-research').setChecked(research);
  await expect(welcome.locator('#ob-accept')).toHaveText('Ho letto, continua');await welcome.locator('#ob-accept').click();
  await expect(welcome).toBeHidden();await expect(page.locator('#views')).not.toHaveAttribute('inert','');await page.waitForTimeout(900);
  await expect(page.locator('dialog[open]')).toHaveCount(0);expect(writes).toBe(0);
@@ -124,7 +124,7 @@ for(const width of [320,390])test(`avviso prototipo e cookie con una sola confer
  await page.evaluate(()=>document.querySelector('#onboarding').close());await expect(dialog).toBeVisible();await expect(page.locator('body')).toHaveAttribute('data-legal-pending','');
  await dialog.locator('#ob-more').tap();await expect(dialog.locator('#ob-legal-details')).toContainText('Privacy e dati');await expect(page.locator('#views')).toHaveAttribute('inert','');await dialog.locator('#ob-more').tap();
  await expect(dialog.locator('#ob-prototype')).toContainText('esperimento personale di Matteo Sgambato');await expect(dialog.locator('#ob-prototype')).toContainText('piccolo gruppo di persone invitate');
- await expect(dialog.locator('#ob-cookie-summary')).toContainText('cookie tecnici');await expect(dialog.locator('button')).toHaveCount(1);await expect(dialog.locator('input[type="checkbox"]')).toHaveCount(2);await expect(dialog.locator('#ob-share')).not.toBeChecked();await expect(dialog.locator('#ob-research')).not.toBeChecked();
+ await expect(dialog.locator('#ob-cookie-summary')).toContainText('cookie tecnici');await expect(dialog.locator('button')).toHaveCount(1);await expect(dialog.locator('input[type="checkbox"]')).toHaveCount(1);await expect(dialog.locator('#ob-share')).toHaveCount(0);await expect(dialog.locator('#ob-research')).not.toBeChecked();
  await dialog.locator('.ob-data summary').tap();await expect(dialog.locator('#ob-cookie-policy')).toContainText('__Host-fungaroli_challenge');await expect(dialog.locator('#ob-cookie-policy')).toContainText('5 minuti');await expect(dialog.locator('#ob-cookie-policy')).toContainText('30 giorni');await expect(page.locator('dialog[open]:modal')).toHaveCount(1);
  expect(await page.evaluate(()=>localStorage.getItem('fungaroli:legal-accepted'))).toBe('32026-10-16');
  await dialog.locator('.ob-data summary').tap();await dialog.locator('#ob-accept').tap();await expect(dialog).toBeHidden();expect(await page.evaluate(()=>localStorage.getItem('fungaroli:legal-accepted'))).toBe('cgs-1');

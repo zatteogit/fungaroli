@@ -68,7 +68,6 @@
 }
 
 /* Keep search, profile, feedback and theme reachable on the narrowest phones. */
-@media(max-width:359px){:root body .appbar-actions > a[href="#/info"] { display:none; }}
 
 /* The four destinations stay mounted. A second spring morphs only the action slot. */
 .tabbar:has(.tab-action-slot) { --nav-action:0; --nav-action-size:106px; column-gap:calc(8px * var(--nav-action)); }
