@@ -195,6 +195,17 @@ quando il piano non ha un sentiero selezionato. Il conteggio riguarda quindi
 la zona, ma la formulazione può farlo attribuire al piano filtrato. Da correggere
 la distinzione comunicativa; restano invariati selezione, dati e cautele.
 
+La correzione è proposta nella [PR 309](https://github.com/zatteogit/fungaroli/pull/309)
+verso `main`, commit `9b436ae51f231047f0e0586b88c7fe777793d1f6`.
+Il riepilogo distingue il sentiero non selezionato dai tratti nella zona;
+non attribuisce a un percorso inesistente i dettagli del primo tratto di
+ripiego. Con meteo simulato sono stati provati il caso senza sentieri coerenti
+con i filtri, il caso con sentiero selezionato e una zona senza tratti; 627
+test unitari e dry-run sono passati. Su Chrome la sintesi è stata controllata
+a 320, 390, 768 e 1280 px nei due temi e con apertura/chiusura da tastiera.
+La PR attende il controllo obbligatorio GitHub `test`: non è ancora fusa né
+pubblicata. Il primo avvio online e le condizioni reali non sono stati provati.
+
 ## Ancora da fare prima di chiudere la pagina
 
 - Completare l’inventario delle sezioni espanse, dei filtri, degli stati del
