@@ -1,0 +1,194 @@
+- generic [active] [ref=f4e1]:
+  - banner [ref=f4e2]:
+    - link "Fronda, home" [ref=f4e3] [cursor=pointer]:
+      - /url: "#/"
+    - 'link "pilota · Lazio : versione pilota, che cosa copre" [ref=f4e9] [cursor=pointer]':
+      - /url: "#/info"
+      - generic [ref=f4e10]: pilota ·
+      - text: Lazio
+      - generic [ref=f4e11]: ": versione pilota, che cosa copre"
+    - button "Cerca in tutta l’app" [ref=f4e13] [cursor=pointer]
+  - navigation "Sezioni" [ref=f4e17]:
+    - generic [ref=f4e18]:
+      - link "Uscite" [ref=f4e19] [cursor=pointer]:
+        - /url: "#/"
+      - link "Mappa" [ref=f4e23] [cursor=pointer]:
+        - /url: "#/mappa"
+      - link "Scopri" [ref=f4e27] [cursor=pointer]:
+        - /url: "#/scopri"
+      - link "Taccuino" [ref=f4e32] [cursor=pointer]:
+        - /url: "#/diario"
+    - button "Annota un ritrovamento" [ref=f4e37] [cursor=pointer]:
+      - generic [ref=f4e41]: Annota
+  - main [ref=f4e42]:
+    - 'button "Indietro: Uscite" [ref=f4e43] [cursor=pointer]':
+      - generic [ref=f4e46]: Uscite
+    - text: “
+    - generic [ref=f4e48]:
+      - generic [ref=f4e49]:
+        - generic [ref=f4e50]:
+          - button "Apri foto e crediti" [ref=f4e51]:
+            - img "Vallonina / Terminillo" [ref=f4e52]
+          - link "Mappa della zona" [ref=f4e53] [cursor=pointer]:
+            - /url: "#/mappa/vallonina"
+          - generic:
+            - generic: giovedì 29 ottobre
+            - heading "Vallonina" [level=1]
+            - paragraph: Terminillo, versante nord
+        - region "Scelte dell’uscita" [ref=f4e57]:
+          - group [ref=f4e58]:
+            - generic "Funghi · Piante Porcino · Ortica · +9 · T · turistica" [ref=f4e59] [cursor=pointer]:
+              - generic [ref=f4e60]:
+                - strong [ref=f4e61]: Funghi · Piante
+                - generic [ref=f4e62]: Porcino · Ortica · +9 · T · turistica
+          - button "Modifica" [ref=f4e66] [cursor=pointer]
+        - generic [ref=f4e68]:
+          - tablist "Giorno" [ref=f4e69]:
+            - 'tab "Oggi 28 3,8 Meteo Vallonina: neve · 13 °C" [ref=f4e70] [cursor=pointer]':
+              - generic [ref=f4e71]: Oggi
+              - generic [ref=f4e72]: "28"
+              - generic [ref=f4e73]: 3,8
+              - 'generic "Meteo Vallonina: neve · 13 °C" [ref=f4e77]': 13°
+            - 'tab "Domani 29 3,7 Meteo Vallonina: neve · 13 °C" [selected] [ref=f4e83] [cursor=pointer]':
+              - generic [ref=f4e84]: Domani
+              - generic [ref=f4e85]: "29"
+              - generic [ref=f4e86]: 3,7
+              - 'generic "Meteo Vallonina: neve · 13 °C" [ref=f4e90]': 13°
+            - 'tab "venerdì 30 3,6 Meteo Vallonina: neve · 13 °C" [ref=f4e96] [cursor=pointer]':
+              - generic [ref=f4e97]: venerdì
+              - generic [ref=f4e98]: "30"
+              - generic [ref=f4e99]: 3,6
+              - 'generic "Meteo Vallonina: neve · 13 °C" [ref=f4e103]': 13°
+            - 'tab "sabato 31 3,5 Meteo Vallonina: neve · 13 °C" [ref=f4e109] [cursor=pointer]':
+              - generic [ref=f4e110]: sabato
+              - generic [ref=f4e111]: "31"
+              - generic [ref=f4e112]: 3,5
+              - 'generic "Meteo Vallonina: neve · 13 °C" [ref=f4e116]': 13°
+            - 'tab "domenica 1 3,4 Meteo Vallonina: neve · 13 °C" [ref=f4e122] [cursor=pointer]':
+              - generic [ref=f4e123]: domenica
+              - generic [ref=f4e124]: "1"
+              - generic [ref=f4e125]: 3,4
+              - 'generic "Meteo Vallonina: neve · 13 °C" [ref=f4e129]': 13°
+            - 'tab "lunedì 2 3,3 Meteo Vallonina: neve · 13 °C" [ref=f4e135] [cursor=pointer]':
+              - generic [ref=f4e136]: lunedì
+              - generic [ref=f4e137]: "2"
+              - generic [ref=f4e138]: 3,3
+              - 'generic "Meteo Vallonina: neve · 13 °C" [ref=f4e142]': 13°
+            - 'tab "martedì 3 3,2 Meteo Vallonina: neve · 13 °C" [ref=f4e148] [cursor=pointer]':
+              - generic [ref=f4e149]: martedì
+              - generic [ref=f4e150]: "3"
+              - generic [ref=f4e151]: 3,2
+              - 'generic "Meteo Vallonina: neve · 13 °C" [ref=f4e155]': 13°
+            - 'tab "mercoledì 4 3,1 Meteo Vallonina: neve · 13 °C" [ref=f4e161] [cursor=pointer]':
+              - generic [ref=f4e162]: mercoledì
+              - generic [ref=f4e163]: "4"
+              - generic [ref=f4e164]: 3,1
+              - 'generic "Meteo Vallonina: neve · 13 °C" [ref=f4e168]': 13°
+          - button "Scorri avanti" [ref=f4e174] [cursor=pointer]
+        - generic [ref=f4e177]:
+          - generic [ref=f4e178]:
+            - generic "Massima della mattina 13 gradi; minima 13. Anello termico da meno 10 a 40 gradi." [ref=f4e179]:
+              - generic [ref=f4e187]:
+                - text: "13"
+                - generic [ref=f4e188]: °
+            - generic [ref=f4e189]:
+              - text: Neve
+              - generic [ref=f4e190]: 13–13 °C · mattina
+          - 'button "Condizioni per l’uscita 3,7 su 10: come leggerle" [ref=f4e191]':
+            - generic [ref=f4e192]: Condizioni
+            - generic [ref=f4e193]: 3,7
+      - generic [ref=f4e195]:
+        - paragraph [ref=f4e196]: Meteo · alle 13:24
+        - group [ref=f4e197]:
+          - generic "Percorso e accessi Nessun sentiero selezionato" [ref=f4e198] [cursor=pointer]:
+            - generic [ref=f4e202]:
+              - generic [ref=f4e203]: Percorso e accessi
+              - generic [ref=f4e204]: Nessun sentiero selezionato
+        - heading "Il piano in breve" [level=2] [ref=f4e205]
+        - paragraph [ref=f4e206]: Nessun sentiero corrisponde alle scelte attive. Modifica i filtri per esplorare gli altri tratti della zona.
+        - generic [ref=f4e207]:
+          - group [ref=f4e208]:
+            - generic "Cosa osservare Porcino 6,8 intorno ai 1200 m s.l.m." [ref=f4e209] [cursor=pointer]:
+              - generic [ref=f4e212]:
+                - generic [ref=f4e213]: Cosa osservare
+                - generic [ref=f4e214]:
+                  - generic [ref=f4e215]:
+                    - button "Porcino" [ref=f4e216]
+                    - generic "Condizioni di crescita 6,8/10" [ref=f4e217]: 6,8
+                  - generic [ref=f4e221]: intorno ai 1200 m s.l.m.
+                - note [ref=f4e223]:
+                  - text: "!"
+                  - generic [ref=f4e224]: Sosia
+                  - generic [ref=f4e225]: Boleti con pori rossi o viraggio blu
+          - group [ref=f4e226]:
+            - generic "Quando Arriva entro le 6:30 un po' di gente Neve · 13 °C" [ref=f4e227] [cursor=pointer]:
+              - generic [ref=f4e233]:
+                - generic [ref=f4e234]: Quando
+                - generic [ref=f4e235]:
+                  - generic [ref=f4e236]: Arriva entro le 6:30
+                  - generic [ref=f4e237]: un po' di gente
+                - generic [ref=f4e238]: Neve · 13 °C
+          - group [ref=f4e245]:
+            - generic "Come arrivare Arrivo in auto · Parcheggio mappato presso Sella di Leonessa 14,1 km in linea d’aria da Rieti" [ref=f4e246] [cursor=pointer]:
+              - generic [ref=f4e253]:
+                - generic [ref=f4e254]: Come arrivare
+                - generic [ref=f4e255]: Arrivo in auto · Parcheggio mappato presso Sella di Leonessa
+                - generic [ref=f4e256]: 14,1 km in linea d’aria da Rieti
+        - region "Strumenti per il bosco" [ref=f4e258]:
+          - generic [ref=f4e259]:
+            - generic [ref=f4e262]:
+              - heading "Per il bosco" [level=2] [ref=f4e263]
+              - paragraph [ref=f4e264]: Anche senza rete
+            - button "Salva offline" [ref=f4e265] [cursor=pointer]
+          - group [ref=f4e267]:
+            - generic "Altri strumenti" [ref=f4e268] [cursor=pointer]
+        - region [ref=f4e269]:
+          - generic [ref=f4e270]:
+            - text: Dal Taccuino condiviso
+            - heading "Cosa dicono gli altri su Vallonina" [level=2] [ref=f4e271]
+            - paragraph [ref=f4e272]: Ultimi 7 giorni · tutte le specie della zona
+          - paragraph [ref=f4e273]: Condivisione delle osservazioni non ancora attiva.
+          - link "Apri il tuo Taccuino →" [ref=f4e275] [cursor=pointer]:
+            - /url: "#/diario"
+          - paragraph [ref=f4e276]: "Osservazioni dichiarate: non confermano la presenza attuale. I tuoi punti GPS restano privati."
+          - group [ref=f4e277]:
+            - generic "Dati e privacy" [ref=f4e278] [cursor=pointer]
+        - region "Il tuo taccuino" [ref=f4e283]:
+          - button "Com’è andata?" [ref=f4e284] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f4e289]: →
+          - paragraph [ref=f4e290]: Anche una ricerca a vuoto conta. Scegli tu se condividere.
+          - generic [ref=f4e299]:
+            - heading "I tuoi posti restano tuoi" [level=3] [ref=f4e300]
+            - paragraph [ref=f4e301]: Agli altri non mostriamo il tuo punto. Se condividi, vedono solo un riepilogo per zona.
+            - link "Come proteggiamo i tuoi dati ↗" [ref=f4e302] [cursor=pointer]:
+              - /url: "#/info"
+        - region "Approfondimenti sulla zona" [ref=f4e303]:
+          - heading "Approfondimenti" [level=2] [ref=f4e304]
+          - group [ref=f4e305]:
+            - generic "Regole di raccolta Quantità · orari · documenti · contributo e divieti" [ref=f4e306] [cursor=pointer]:
+              - generic [ref=f4e307]:
+                - generic [ref=f4e308]: Regole di raccolta
+                - generic [ref=f4e309]: Quantità · orari · documenti · contributo e divieti
+          - group [ref=f4e310]:
+            - generic "Da cosa dipendono le condizioni Potenziale dei funghi e meteo dell’uscita" [ref=f4e311] [cursor=pointer]:
+              - generic [ref=f4e312]:
+                - generic [ref=f4e313]: Da cosa dipendono le condizioni
+                - generic [ref=f4e314]: Potenziale dei funghi e meteo dell’uscita
+          - group [ref=f4e315]:
+            - generic "Sentieri della zona 20 tratti mappati · difficoltà e profili" [ref=f4e316] [cursor=pointer]:
+              - generic [ref=f4e317]:
+                - generic [ref=f4e318]: Sentieri della zona
+                - generic [ref=f4e319]: 20 tratti mappati · difficoltà e profili
+            - paragraph [ref=f4e321]: "Non risultano sentieri compatibili in questi dati: verifica tracciati, accessibilità e segnaletica sul posto."
+          - group [ref=f4e322]:
+            - generic "Bosco della zona intorno a 1200 m Faggio" [ref=f4e323] [cursor=pointer]:
+              - generic [ref=f4e324]:
+                - generic [ref=f4e325]: Bosco della zona intorno a 1200 m
+                - generic [ref=f4e326]: Faggio
+          - group [ref=f4e327]:
+            - generic "Paesaggio e alberi Faggio" [ref=f4e328] [cursor=pointer]:
+              - generic [ref=f4e329]:
+                - generic [ref=f4e330]: Paesaggio e alberi
+                - generic [ref=f4e331]: Faggio
+    - text: ✓ ▶ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋
+  - status

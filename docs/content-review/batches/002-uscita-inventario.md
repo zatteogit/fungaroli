@@ -292,6 +292,33 @@ passato e la PR è stata fusa in `main` al commit
 sono stati verificati online. Le prove non usano meteo reale e non certificano
 il primo avvio online.
 
+### Nono passaggio: neve e classificazioni meteo sfavorevoli
+
+Con meteo interamente sintetico, il codice di produzione `26852083` classifica
+la neve come «uscita sconsigliata», ma nella scheda di Vallonina mostra comunque
+«Arriva entro le 6:30». La [prova](../evidence/002-uscita/vallonina-neve-fixture.yml)
+è una simulazione tecnica, non una previsione reale. Lo stesso modello classifica
+come sconsigliate anche le proprie condizioni di pioggia e raffiche più intense.
+
+| Persona simulata | Giudizio preliminare |
+| --- | --- |
+| Neofita | La cautela è essenziale prima di ogni suggerimento di partenza |
+| Appassionato | Un orario suggerito può contraddire il giudizio meteo |
+| Esperto | Serve mantenere visibili ragioni e dati, senza alterare soglie |
+| Escursionista | Priorità alla condizione sfavorevole per decidere se partire |
+| Naturalista | Stessa cautela meteo, indipendentemente dall’interesse di raccolta |
+
+La correzione locale è nel worktree `/tmp/fronda-outing-severe-weather`, commit
+`ac5cbc6e`: riusa il livello già calcolato e mostra la cautela nel riepilogo,
+lasciando alba e orari consultabili. Le istantanee della prova su neve
+[chiusa](../evidence/002-uscita/vallonina-neve-proposta-chiusa.yml) e
+[aperta](../evidence/002-uscita/vallonina-neve-proposta-aperta.yml) documentano
+il risultato locale; 643 test unitari e dry-run Worker superati. Il test browser
+con Wrangler locale non è partito (`spawn EBADF`); va riprovato e vanno ancora
+verificati gli altri stati, i breakpoint e la tastiera. Nessuna PR o pubblicazione
+per questa correzione. Non sono stati effettuati test con utenti o validazioni
+scientifiche; il primo avvio online a cache vuota resta non certificato.
+
 ## Ancora da fare prima di chiudere la pagina
 
 - Completare l’inventario delle sezioni espanse, dei filtri, degli stati del
