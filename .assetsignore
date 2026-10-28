@@ -55,3 +55,4 @@ output
 # TypeScript sources and compiler configuration are repository-only.
 src
 tsconfig*.json
+editions

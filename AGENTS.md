@@ -6,12 +6,13 @@ Per identità visiva e design system Fronda leggi anche [docs/handoff-fronda-202
 
 ## Rami e pubblicazione
 
-- Il ramo di produzione è **`claude/brave-tesla-wu0a2b`**, non `main` (che non esiste). Le PR vanno aperte verso quel ramo.
-- Il merge nel ramo di produzione pubblica il sito su Cloudflare Workers (https://fungaroli.zatteo.workers.dev). Configurazione versionata in `wrangler.jsonc`: non aggiungere binding o variabili dalla dashboard.
+- **Dal 28/10/2026 il ramo di produzione è `main`** (decisione di Matteo). Le PR vanno aperte verso `main`. `claude/brave-tesla-wu0a2b` è il vecchio ramo di produzione: resta come storia, non va usato come base né come destinazione.
+- Il merge su `main` pubblica il sito su Cloudflare Workers (https://fungaroli.zatteo.workers.dev). Configurazione versionata in `wrangler.jsonc`: non aggiungere binding o variabili dalla dashboard.
+- **Ambienti ed edizioni:** locale (`npm run dev`), staging (ramo `staging`, Worker `fungaroli-staging`, database propri) e produzione. Versione generalista e versioni dedicate o demo sono configurazioni in `editions/`, mai rami o copie del codice. Procedura in [docs/ambienti-ed-edizioni.md](docs/ambienti-ed-edizioni.md).
 - Prima di iniziare aggiorna il ramo da produzione; lavora su un ramo dedicato.
 - `docs/handoff-cloudflare.md` descrive il bootstrap del 12/10: è storia, non la procedura attuale.
 - Mai segreti in commit, documenti o log.
-- **Anteprime Cloudflare spente (24/10/2026):** i rami delle PR non hanno più il controllo «Workers Builds» (Settings → Build → Branch control). Per riaccenderle servono risorse separate e un blocco `previews` in `wrangler.jsonc` (`npx wrangler preview`); mai i database di produzione.
+- **Anteprime Cloudflare spente (24/10/2026):** i rami delle PR non hanno build proprie. Per provare una PR prima del merge si pubblica sul ramo `staging` (`git push --force origin <ramo>:staging`), che usa database separati; mai i database di produzione.
 
 ## Verifiche
 

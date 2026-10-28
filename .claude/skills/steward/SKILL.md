@@ -9,12 +9,12 @@ Le regole complete sono in `AGENTS.md` e in `docs/handoff-2026-10-14.md`. Qui c'
 
 ## Prima di aprire la PR
 
-1. Parti dal ramo di produzione `claude/brave-tesla-wu0a2b` aggiornato. Le PR vanno verso quel ramo: `main` non esiste.
+1. Parti da `main` aggiornato (ramo di produzione dal 28/10/2026). Le PR vanno verso `main`; `claude/brave-tesla-wu0a2b` è solo storia. Per provare la PR su Cloudflare prima del merge: `git push --force origin <ramo>:staging` (vedi `docs/ambienti-ed-edizioni.md`).
 2. Lancia le verifiche rapide, le stesse della CI:
    - `npm test`
    - `node docs/fronda/scripts/check.mjs`
    - `node docs/fronda/scripts/guard-test.mjs`
-   - `npx wrangler deploy --dry-run`
+   - `npx wrangler deploy --dry-run --env=""` e `npx wrangler deploy --dry-run --env staging`
    - `git diff --check`
 3. Se tocchi un file dell'app pubblicata, aumenta `SHELL` in `sw.js` e `<meta name="app-version">` in `index.html` con lo stesso valore. Se aggiungi moduli, aggiorna `PRECACHE`.
 4. Se aggiungi dati, lancia `node tools/asset-report.mjs` e metti il rapporto nella descrizione.
