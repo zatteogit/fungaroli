@@ -1,0 +1,44 @@
+[
+  {
+    "scenario": "snow",
+    "summary": "METEO Uscita sconsigliata Neve · 13 °C",
+    "keyboard": true,
+    "body": true,
+    "views": 8
+  },
+  {
+    "scenario": "rain",
+    "summary": "METEO Uscita sconsigliata Pioggia 9,0 mm · 13 °C",
+    "keyboard": true,
+    "body": true,
+    "views": 8
+  },
+  {
+    "scenario": "wind",
+    "summary": "METEO Uscita sconsigliata Raffiche fino a 65 km/h · 13 °C",
+    "keyboard": true,
+    "body": true,
+    "views": 8
+  },
+  {
+    "scenario": "storm",
+    "summary": "METEO Uscita sconsigliata Temporali possibili · piovaschi possibili (90%) · 13 °C",
+    "keyboard": true,
+    "body": true,
+    "views": 8
+  },
+  {
+    "scenario": "clear",
+    "summary": "QUANDO Arriva entro le 6:30 un po' di gente Asciutto · 13 °C",
+    "keyboard": true,
+    "body": true,
+    "views": 8
+  },
+  {
+    "scenario": "wind-moderate",
+    "summary": "QUANDO Arriva entro le 6:30 un po' di gente Raffiche fino a 46 km/h · 13 °C",
+    "keyboard": true,
+    "body": true,
+    "views": 8
+  }
+]

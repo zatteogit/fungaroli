@@ -319,6 +319,17 @@ verificati gli altri stati, i breakpoint e la tastiera. Nessuna PR o pubblicazio
 per questa correzione. Non sono stati effettuati test con utenti o validazioni
 scientifiche; il primo avvio online a cache vuota resta non certificato.
 
+La correzione è ora nella [PR 317](https://github.com/zatteogit/fungaroli/pull/317),
+ancora in attesa del controllo GitHub e del rilascio. Una matrice di sessioni
+isolate con [fixture riproducibile](../evidence/002-uscita/meteo-sconsigliato-matrice.cjs)
+e [risultati](../evidence/002-uscita/meteo-sconsigliato-risultati.json) ha
+provato neve, pioggia intensa, raffiche forti, temporale, sereno e vento
+moderato, quattro larghezze (320–1280), temi chiaro/scuro e apertura da
+tastiera. I casi severi presentano prima la cautela e non suggeriscono la
+partenza; negli altri il suggerimento rimane. Non è meteo reale. La regressione
+browser aggiunta alla suite resta non eseguita perché il Wrangler locale non
+parte (`spawn EBADF`); le prove sopra usano un server statico.
+
 ## Ancora da fare prima di chiudere la pagina
 
 - Completare l’inventario delle sezioni espanse, dei filtri, degli stati del
