@@ -253,6 +253,15 @@ In questo stato non compaiono suggerimenti botanici, perché il renderer li
 calcola quando è disponibile un sentiero. È un punto da valutare separatamente:
 non si è dedotta presenza di piante né modificato l’algoritmo.
 
+La correzione è nella [PR 315](https://github.com/zatteogit/fungaroli/pull/315)
+verso `main`: riutilizza il messaggio contestuale dell’uscita per funghi. Sono
+stati provati Allumiere senza tratti con meteo simulato e senza meteo, e
+Vallonina con tratti esistenti esclusi dal filtro T; il primo caso è stato
+controllato a 320, 390, 768 e 1280 px nei due temi. La suite locale dopo
+l’integrazione con `main` ha superato 629 test e il dry-run Worker. Il controllo
+GitHub del commit candidato è in corso; la PR non è ancora fusa o pubblicata.
+Il primo avvio online e le condizioni reali non sono stati provati.
+
 ## Ancora da fare prima di chiudere la pagina
 
 - Completare l’inventario delle sezioni espanse, dei filtri, degli stati del

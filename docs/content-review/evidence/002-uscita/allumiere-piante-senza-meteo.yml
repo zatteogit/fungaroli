@@ -1,0 +1,141 @@
+- generic [active] [ref=f1e1]:
+  - banner [ref=f1e2]:
+    - link "Fronda, home" [ref=f1e3] [cursor=pointer]:
+      - /url: "#/"
+    - 'link "pilota · Lazio : versione pilota, che cosa copre" [ref=f1e9] [cursor=pointer]':
+      - /url: "#/info"
+      - generic [ref=f1e10]: pilota ·
+      - text: Lazio
+      - generic [ref=f1e11]: ": versione pilota, che cosa copre"
+    - button "Cerca in tutta l’app" [ref=f1e13] [cursor=pointer]
+  - navigation "Sezioni" [ref=f1e17]:
+    - generic [ref=f1e18]:
+      - link "Uscite" [ref=f1e19] [cursor=pointer]:
+        - /url: "#/"
+      - link "Mappa" [ref=f1e23] [cursor=pointer]:
+        - /url: "#/mappa"
+      - link "Scopri" [ref=f1e27] [cursor=pointer]:
+        - /url: "#/scopri"
+      - link "Taccuino" [ref=f1e32] [cursor=pointer]:
+        - /url: "#/diario"
+    - button "Annota un ritrovamento" [ref=f1e37] [cursor=pointer]:
+      - generic [ref=f1e41]: Annota
+  - paragraph [ref=f1e42]:
+    - text: Non riesco ad aggiornare il meteo e non ho una copia salvata. Zone, sentieri e schede restano consultabili.
+    - button "Riprova" [ref=f1e43] [cursor=pointer]
+  - main [ref=f1e44]:
+    - 'button "Indietro: Uscite" [ref=f1e45] [cursor=pointer]':
+      - generic [ref=f1e48]: Uscite
+    - text: “
+    - generic [ref=f1e50]:
+      - generic [ref=f1e51]:
+        - generic [ref=f1e52]:
+          - img "Faggeto di Allumiere" [ref=f1e54]
+          - generic:
+            - generic: giovedì 29 ottobre
+            - heading "Faggeto di Allumiere" [level=1]
+        - region "Scelte dell’uscita" [ref=f1e55]:
+          - group [ref=f1e56]:
+            - 'generic "Piante: scelte e significato delle condizioni" [ref=f1e57] [cursor=pointer]':
+              - strong [ref=f1e59]: Piante
+          - button "Modifica" [ref=f1e63] [cursor=pointer]
+        - generic [ref=f1e65]:
+          - tablist "Giorno" [ref=f1e66]:
+            - tab "Oggi 28" [ref=f1e67] [cursor=pointer]:
+              - generic [ref=f1e68]: Oggi
+              - generic [ref=f1e69]: "28"
+            - tab "Domani 29" [selected] [ref=f1e70] [cursor=pointer]:
+              - generic [ref=f1e71]: Domani
+              - generic [ref=f1e72]: "29"
+            - tab "venerdì 30" [ref=f1e73] [cursor=pointer]:
+              - generic [ref=f1e74]: venerdì
+              - generic [ref=f1e75]: "30"
+            - tab "sabato 31" [ref=f1e76] [cursor=pointer]:
+              - generic [ref=f1e77]: sabato
+              - generic [ref=f1e78]: "31"
+            - tab "domenica 1" [ref=f1e79] [cursor=pointer]:
+              - generic [ref=f1e80]: domenica
+              - generic [ref=f1e81]: "1"
+            - tab "lunedì 2" [ref=f1e82] [cursor=pointer]:
+              - generic [ref=f1e83]: lunedì
+              - generic [ref=f1e84]: "2"
+            - tab "martedì 3" [ref=f1e85] [cursor=pointer]:
+              - generic [ref=f1e86]: martedì
+              - generic [ref=f1e87]: "3"
+            - tab "mercoledì 4" [ref=f1e88] [cursor=pointer]:
+              - generic [ref=f1e89]: mercoledì
+              - generic [ref=f1e90]: "4"
+          - button "Scorri avanti" [ref=f1e91] [cursor=pointer]
+      - generic [ref=f1e94]:
+        - paragraph [ref=f1e95]:
+          - text: Stagione elaborata con AI dalla foto di Albarubescens,
+          - link "CC BY-SA 4.0" [ref=f1e96] [cursor=pointer]:
+            - /url: https://creativecommons.org/licenses/by-sa/4.0
+          - text: · Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP ·
+          - link "Wikimedia Commons" [ref=f1e97] [cursor=pointer]:
+            - /url: https://commons.wikimedia.org/wiki/File:Faggeta_e_Cava_di_Alunite.jpg
+        - group [ref=f1e98]:
+          - generic "Raccolta da verificare con il gestore" [ref=f1e99] [cursor=pointer]
+        - group [ref=f1e104]:
+          - generic "Percorso e accessi Sentiero e accesso non documentati" [ref=f1e105] [cursor=pointer]:
+            - generic [ref=f1e109]:
+              - generic [ref=f1e110]: Percorso e accessi
+              - generic [ref=f1e111]: Sentiero e accesso non documentati
+        - paragraph [ref=f1e112]: Meteo da verificare prima di partire.
+        - heading "Il piano in breve" [level=2] [ref=f1e113]
+        - paragraph [ref=f1e114]: Non abbiamo ancora un sentiero documentato per questa zona.
+        - paragraph [ref=f1e115]: 83,3 km in linea d’aria
+        - paragraph [ref=f1e116]: Comune di Allumiere; recapito diretto non acquisito
+        - paragraph [ref=f1e117]:
+          - text: Da Via del Faggeto si esplora una rete segnata fra
+          - link "faggi" [ref=f1e118] [cursor=pointer]:
+            - /url: "#/albero/faggio"
+          - text: e tracce della storia mineraria. È una proposta per conoscere un bosco a bassa quota; il regime di raccolta nel monumento naturale va accertato.
+        - generic [ref=f1e119]:
+          - heading "Fonti del luogo" [level=3] [ref=f1e120]
+          - list [ref=f1e121]:
+            - listitem [ref=f1e122]:
+              - link "Sistema museale RESINA / musei naturalistici del Lazio" [ref=f1e123] [cursor=pointer]:
+                - /url: https://www.museiresina.it/itinerari/la-faggeta-di-allumiere-2/
+            - listitem [ref=f1e124]:
+              - link "Regione Lazio / ParchiLazio" [ref=f1e125] [cursor=pointer]:
+                - /url: https://www.parchilazio.it/faggeto_di_allumiere
+            - listitem [ref=f1e126]:
+              - link "Regione Lazio" [ref=f1e127] [cursor=pointer]:
+                - /url: https://www.regione.lazio.it/cittadini/agricoltura/Funghi
+            - listitem [ref=f1e128]:
+              - link "Fonte cartografica citata nella provenienza" [ref=f1e129] [cursor=pointer]:
+                - /url: https://comune.allumiere.rm.it/it/vivere/monumento-naturale-il-faggeto
+          - paragraph [ref=f1e130]: "Il centro della zona serve al meteo e al campionamento: non indica un parcheggio. Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso."
+        - region "Strumenti per il bosco" [ref=f1e131]:
+          - generic [ref=f1e132]:
+            - generic [ref=f1e135]:
+              - heading "Per il bosco" [level=2] [ref=f1e136]
+              - paragraph [ref=f1e137]: Anche senza rete
+            - button "Salva offline" [ref=f1e138] [cursor=pointer]
+          - group [ref=f1e140]:
+            - generic "Altri strumenti" [ref=f1e141] [cursor=pointer]
+        - region [ref=f1e142]:
+          - generic [ref=f1e143]:
+            - text: Dal Taccuino condiviso
+            - heading "Cosa dicono gli altri su Faggeto di Allumiere" [level=2] [ref=f1e144]
+            - paragraph [ref=f1e145]: Ultimi 7 giorni · tutte le specie della zona
+          - paragraph [ref=f1e146]: Condivisione delle osservazioni non ancora attiva.
+          - link "Apri il tuo Taccuino →" [ref=f1e148] [cursor=pointer]:
+            - /url: "#/diario"
+          - paragraph [ref=f1e149]: "Osservazioni dichiarate: non confermano la presenza attuale. I tuoi punti GPS restano privati."
+          - group [ref=f1e150]:
+            - generic "Dati e privacy" [ref=f1e151] [cursor=pointer]
+        - heading "Approfondimenti" [level=2] [ref=f1e156]
+        - group [ref=f1e157]:
+          - generic "Accessi e soste" [ref=f1e158] [cursor=pointer]
+        - group [ref=f1e159]:
+          - generic "Sentieri della zona" [ref=f1e160] [cursor=pointer]
+          - paragraph [ref=f1e162]: "Non risultano sentieri compatibili in questi dati: verifica tracciati, accessibilità e segnaletica sul posto."
+        - group [ref=f1e163]:
+          - generic "Bosco e aree protette" [ref=f1e164] [cursor=pointer]
+        - paragraph [ref=f1e165]:
+          - link "Vedi sulla mappa" [ref=f1e166] [cursor=pointer]:
+            - /url: "#/mappa/allumiere-faggeto"
+    - text: ✓ ▶ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋
+  - status

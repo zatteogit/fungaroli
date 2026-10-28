@@ -1,0 +1,151 @@
+- generic [active] [ref=f2e1]:
+  - banner [ref=f2e8]:
+    - link "Fronda, home" [ref=f2e9] [cursor=pointer]:
+      - /url: "#/"
+    - 'link "pilota · Lazio : versione pilota, che cosa copre" [ref=f2e15] [cursor=pointer]':
+      - /url: "#/info"
+      - generic [ref=f2e54]: pilota ·
+      - text: Lazio
+      - generic [ref=f2e55]: ": versione pilota, che cosa copre"
+    - button "Cerca in tutta l’app" [ref=f2e19] [cursor=pointer]
+  - navigation "Sezioni" [ref=f2e23]:
+    - generic [ref=f2e24]:
+      - link "Uscite" [ref=f2e25] [cursor=pointer]:
+        - /url: "#/"
+      - link "Mappa" [ref=f2e29] [cursor=pointer]:
+        - /url: "#/mappa"
+      - link "Scopri" [ref=f2e33] [cursor=pointer]:
+        - /url: "#/scopri"
+      - link "Taccuino" [ref=f2e38] [cursor=pointer]:
+        - /url: "#/diario"
+    - button [disabled] [ref=f2e42] [cursor=pointer]:
+      - generic [ref=f2e46]: Annota
+  - main [ref=f2e47]:
+    - 'button "Indietro: Uscite" [ref=f2e57] [cursor=pointer]':
+      - generic [ref=f2e60]: Uscite
+    - text: “
+    - generic [ref=f2e62]:
+      - generic [ref=f2e63]:
+        - generic [ref=f2e64]:
+          - img "Faggeto di Allumiere" [ref=f2e66]
+          - generic:
+            - generic: giovedì 29 ottobre
+            - heading "Faggeto di Allumiere" [level=1]
+        - region "Scelte dell’uscita" [ref=f2e67]:
+          - group [ref=f2e68]:
+            - 'generic "Piante: scelte e significato delle condizioni" [ref=f2e69] [cursor=pointer]':
+              - strong [ref=f2e71]: Piante
+          - button "Modifica" [ref=f2e75] [cursor=pointer]
+        - tablist "Giorno" [ref=f2e77]:
+          - 'tab "Oggi 28 Meteo Faggeto di Allumiere: asciutto · 13 °C" [ref=f2e78] [cursor=pointer]':
+            - generic [ref=f2e79]: Oggi
+            - generic [ref=f2e80]: "28"
+            - 'generic "Meteo Faggeto di Allumiere: asciutto · 13 °C" [ref=f2e81]': 13°
+          - 'tab "Domani 29 Meteo Faggeto di Allumiere: asciutto · 13 °C" [selected] [ref=f2e87] [cursor=pointer]':
+            - generic [ref=f2e88]: Domani
+            - generic [ref=f2e89]: "29"
+            - 'generic "Meteo Faggeto di Allumiere: asciutto · 13 °C" [ref=f2e90]': 13°
+          - 'tab "venerdì 30 Meteo Faggeto di Allumiere: asciutto · 13 °C" [ref=f2e96] [cursor=pointer]':
+            - generic [ref=f2e97]: venerdì
+            - generic [ref=f2e98]: "30"
+            - 'generic "Meteo Faggeto di Allumiere: asciutto · 13 °C" [ref=f2e99]': 13°
+          - 'tab "sabato 31 Meteo Faggeto di Allumiere: asciutto · 13 °C" [ref=f2e105] [cursor=pointer]':
+            - generic [ref=f2e106]: sabato
+            - generic [ref=f2e107]: "31"
+            - 'generic "Meteo Faggeto di Allumiere: asciutto · 13 °C" [ref=f2e108]': 13°
+          - 'tab "domenica 1 Meteo Faggeto di Allumiere: asciutto · 13 °C" [ref=f2e114] [cursor=pointer]':
+            - generic [ref=f2e115]: domenica
+            - generic [ref=f2e116]: "1"
+            - 'generic "Meteo Faggeto di Allumiere: asciutto · 13 °C" [ref=f2e117]': 13°
+          - 'tab "lunedì 2 Meteo Faggeto di Allumiere: asciutto · 13 °C" [ref=f2e123] [cursor=pointer]':
+            - generic [ref=f2e124]: lunedì
+            - generic [ref=f2e125]: "2"
+            - 'generic "Meteo Faggeto di Allumiere: asciutto · 13 °C" [ref=f2e126]': 13°
+          - 'tab "martedì 3 Meteo Faggeto di Allumiere: asciutto · 13 °C" [ref=f2e132] [cursor=pointer]':
+            - generic [ref=f2e133]: martedì
+            - generic [ref=f2e134]: "3"
+            - 'generic "Meteo Faggeto di Allumiere: asciutto · 13 °C" [ref=f2e135]': 13°
+          - 'tab "mercoledì 4 Meteo Faggeto di Allumiere: asciutto · 13 °C" [ref=f2e141] [cursor=pointer]':
+            - generic [ref=f2e142]: mercoledì
+            - generic [ref=f2e143]: "4"
+            - 'generic "Meteo Faggeto di Allumiere: asciutto · 13 °C" [ref=f2e144]': 13°
+        - generic [ref=f2e151]:
+          - generic "Massima della mattina 13 gradi; minima 13. Anello termico da meno 10 a 40 gradi." [ref=f2e152]:
+            - generic [ref=f2e160]:
+              - text: "13"
+              - generic [ref=f2e161]: °
+          - generic [ref=f2e162]:
+            - text: Asciutto
+            - generic [ref=f2e163]: 13–13 °C · mattina
+      - generic [ref=f2e164]:
+        - paragraph [ref=f2e165]:
+          - text: Stagione elaborata con AI dalla foto di Albarubescens,
+          - link "CC BY-SA 4.0" [ref=f2e166] [cursor=pointer]:
+            - /url: https://creativecommons.org/licenses/by-sa/4.0
+          - text: · Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversione WebP ·
+          - link "Wikimedia Commons" [ref=f2e167] [cursor=pointer]:
+            - /url: https://commons.wikimedia.org/wiki/File:Faggeta_e_Cava_di_Alunite.jpg
+        - group [ref=f2e168]:
+          - generic "Raccolta da verificare con il gestore" [ref=f2e169] [cursor=pointer]
+        - group [ref=f2e174]:
+          - generic "Percorso e accessi Sentiero e accesso non documentati" [ref=f2e175] [cursor=pointer]:
+            - generic [ref=f2e179]:
+              - generic [ref=f2e180]: Percorso e accessi
+              - generic [ref=f2e181]: Sentiero e accesso non documentati
+        - heading "Il piano in breve" [level=2] [ref=f2e182]
+        - paragraph [ref=f2e183]: Non abbiamo ancora un sentiero documentato per questa zona.
+        - paragraph [ref=f2e184]: 83,3 km in linea d’aria
+        - paragraph [ref=f2e185]: Comune di Allumiere; recapito diretto non acquisito
+        - paragraph [ref=f2e186]:
+          - text: Da Via del Faggeto si esplora una rete segnata fra
+          - link "faggi" [ref=f2e187] [cursor=pointer]:
+            - /url: "#/albero/faggio"
+          - text: e tracce della storia mineraria. È una proposta per conoscere un bosco a bassa quota; il regime di raccolta nel monumento naturale va accertato.
+        - generic [ref=f2e188]:
+          - heading "Fonti del luogo" [level=3] [ref=f2e189]
+          - list [ref=f2e190]:
+            - listitem [ref=f2e191]:
+              - link "Sistema museale RESINA / musei naturalistici del Lazio" [ref=f2e192] [cursor=pointer]:
+                - /url: https://www.museiresina.it/itinerari/la-faggeta-di-allumiere-2/
+            - listitem [ref=f2e193]:
+              - link "Regione Lazio / ParchiLazio" [ref=f2e194] [cursor=pointer]:
+                - /url: https://www.parchilazio.it/faggeto_di_allumiere
+            - listitem [ref=f2e195]:
+              - link "Regione Lazio" [ref=f2e196] [cursor=pointer]:
+                - /url: https://www.regione.lazio.it/cittadini/agricoltura/Funghi
+            - listitem [ref=f2e197]:
+              - link "Fonte cartografica citata nella provenienza" [ref=f2e198] [cursor=pointer]:
+                - /url: https://comune.allumiere.rm.it/it/vivere/monumento-naturale-il-faggeto
+          - paragraph [ref=f2e199]: "Il centro della zona serve al meteo e al campionamento: non indica un parcheggio. Raggio editoriale per campionamento e meteo; non perimetro del parco o autorizzazione di accesso."
+        - region "Strumenti per il bosco" [ref=f2e200]:
+          - generic [ref=f2e201]:
+            - generic [ref=f2e204]:
+              - heading "Per il bosco" [level=2] [ref=f2e205]
+              - paragraph [ref=f2e206]: Anche senza rete
+            - button "Salva offline" [ref=f2e207] [cursor=pointer]
+          - group [ref=f2e209]:
+            - generic "Altri strumenti" [ref=f2e210] [cursor=pointer]
+        - region [ref=f2e211]:
+          - generic [ref=f2e212]:
+            - text: Dal Taccuino condiviso
+            - heading "Cosa dicono gli altri su Faggeto di Allumiere" [level=2] [ref=f2e213]
+            - paragraph [ref=f2e214]: Ultimi 7 giorni · tutte le specie della zona
+          - paragraph [ref=f2e215]: Condivisione delle osservazioni non ancora attiva.
+          - link "Apri il tuo Taccuino →" [ref=f2e217] [cursor=pointer]:
+            - /url: "#/diario"
+          - paragraph [ref=f2e218]: "Osservazioni dichiarate: non confermano la presenza attuale. I tuoi punti GPS restano privati."
+          - group [ref=f2e219]:
+            - generic "Dati e privacy" [ref=f2e220] [cursor=pointer]
+        - heading "Approfondimenti" [level=2] [ref=f2e225]
+        - group [ref=f2e226]:
+          - generic "Accessi e soste" [ref=f2e227] [cursor=pointer]
+        - group [ref=f2e228]:
+          - generic "Sentieri della zona" [ref=f2e229] [cursor=pointer]
+          - paragraph [ref=f2e231]: "Non risultano sentieri compatibili in questi dati: verifica tracciati, accessibilità e segnaletica sul posto."
+        - group [ref=f2e232]:
+          - generic "Bosco e aree protette" [ref=f2e233] [cursor=pointer]
+        - paragraph [ref=f2e234]:
+          - link "Vedi sulla mappa" [ref=f2e235] [cursor=pointer]:
+            - /url: "#/mappa/allumiere-faggeto"
+    - text: ✓ ▶ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋
+  - status

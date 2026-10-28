@@ -1,0 +1,135 @@
+- generic [ref=f2e1]:
+  - banner [ref=f2e8]:
+    - link "Fronda, home" [ref=f2e9] [cursor=pointer]:
+      - /url: "#/"
+    - 'link "pilota · Lazio : versione pilota, che cosa copre" [ref=f2e15] [cursor=pointer]':
+      - /url: "#/info"
+      - generic [ref=f2e54]: pilota ·
+      - text: Lazio
+      - generic [ref=f2e55]: ": versione pilota, che cosa copre"
+    - button "Cerca in tutta l’app" [ref=f2e19] [cursor=pointer]
+  - navigation "Sezioni" [ref=f2e23]:
+    - generic [ref=f2e24]:
+      - link "Uscite" [ref=f2e25] [cursor=pointer]:
+        - /url: "#/"
+      - link "Mappa" [ref=f2e29] [cursor=pointer]:
+        - /url: "#/mappa"
+      - link "Scopri" [ref=f2e33] [cursor=pointer]:
+        - /url: "#/scopri"
+      - link "Taccuino" [ref=f2e38] [cursor=pointer]:
+        - /url: "#/diario"
+    - button "Annota un ritrovamento" [ref=f2e236] [cursor=pointer]:
+      - generic [ref=f2e46]: Annota
+  - main [ref=f2e47]:
+    - 'button "Indietro: Faggeto di Allumiere" [ref=f2e237] [cursor=pointer]':
+      - generic [ref=f2e60]: Faggeto di Allumiere
+    - text: “
+    - generic [ref=f2e62]:
+      - generic [ref=f2e876]:
+        - generic [ref=f2e877]:
+          - img "Vallonina / Terminillo" [ref=f2e879]
+          - generic:
+            - generic: giovedì 29 ottobre
+            - heading "Vallonina" [level=1]
+        - region "Scelte dell’uscita" [ref=f2e880]:
+          - group [ref=f2e881]:
+            - 'generic "Piante: scelte e significato delle condizioni" [ref=f2e882] [cursor=pointer]':
+              - generic [ref=f2e883]:
+                - strong [ref=f2e884]: Piante
+                - generic [ref=f2e885]: T · turistica
+          - button "Modifica" [active] [ref=f2e889] [cursor=pointer]
+        - generic [ref=f2e891]:
+          - tablist "Giorno" [ref=f2e892]:
+            - 'tab "Oggi 28 Meteo Vallonina: asciutto · 13 °C" [ref=f2e893] [cursor=pointer]':
+              - generic [ref=f2e894]: Oggi
+              - generic [ref=f2e895]: "28"
+              - 'generic "Meteo Vallonina: asciutto · 13 °C" [ref=f2e896]': 13°
+            - 'tab "Domani 29 Meteo Vallonina: asciutto · 13 °C" [selected] [ref=f2e902] [cursor=pointer]':
+              - generic [ref=f2e903]: Domani
+              - generic [ref=f2e904]: "29"
+              - 'generic "Meteo Vallonina: asciutto · 13 °C" [ref=f2e905]': 13°
+            - 'tab "venerdì 30 Meteo Vallonina: asciutto · 13 °C" [ref=f2e911] [cursor=pointer]':
+              - generic [ref=f2e912]: venerdì
+              - generic [ref=f2e913]: "30"
+              - 'generic "Meteo Vallonina: asciutto · 13 °C" [ref=f2e914]': 13°
+            - 'tab "sabato 31 Meteo Vallonina: asciutto · 13 °C" [ref=f2e920] [cursor=pointer]':
+              - generic [ref=f2e921]: sabato
+              - generic [ref=f2e922]: "31"
+              - 'generic "Meteo Vallonina: asciutto · 13 °C" [ref=f2e923]': 13°
+            - 'tab "domenica 1 Meteo Vallonina: asciutto · 13 °C" [ref=f2e929] [cursor=pointer]':
+              - generic [ref=f2e930]: domenica
+              - generic [ref=f2e931]: "1"
+              - 'generic "Meteo Vallonina: asciutto · 13 °C" [ref=f2e932]': 13°
+            - 'tab "lunedì 2 Meteo Vallonina: asciutto · 13 °C" [ref=f2e938] [cursor=pointer]':
+              - generic [ref=f2e939]: lunedì
+              - generic [ref=f2e940]: "2"
+              - 'generic "Meteo Vallonina: asciutto · 13 °C" [ref=f2e941]': 13°
+            - 'tab "martedì 3 Meteo Vallonina: asciutto · 13 °C" [ref=f2e947] [cursor=pointer]':
+              - generic [ref=f2e948]: martedì
+              - generic [ref=f2e949]: "3"
+              - 'generic "Meteo Vallonina: asciutto · 13 °C" [ref=f2e950]': 13°
+            - 'tab "mercoledì 4 Meteo Vallonina: asciutto · 13 °C" [ref=f2e956] [cursor=pointer]':
+              - generic [ref=f2e957]: mercoledì
+              - generic [ref=f2e958]: "4"
+              - 'generic "Meteo Vallonina: asciutto · 13 °C" [ref=f2e959]': 13°
+          - button "Scorri avanti" [ref=f2e965] [cursor=pointer]
+        - generic [ref=f2e969]:
+          - generic "Massima della mattina 13 gradi; minima 13. Anello termico da meno 10 a 40 gradi." [ref=f2e970]:
+            - generic [ref=f2e978]:
+              - text: "13"
+              - generic [ref=f2e979]: °
+          - generic [ref=f2e980]:
+            - text: Asciutto
+            - generic [ref=f2e981]: 13–13 °C · mattina
+      - generic [ref=f2e982]:
+        - paragraph [ref=f2e983]:
+          - text: Stagione elaborata con AI dalla foto di Idéfix,
+          - link "CC BY-SA 3.0" [ref=f2e984] [cursor=pointer]:
+            - /url: https://creativecommons.org/licenses/by-sa/3.0/
+          - text: ·
+          - link "Wikimedia Commons" [ref=f2e985] [cursor=pointer]:
+            - /url: https://commons.wikimedia.org/wiki/File:SelladiLeonessa001.jpg
+        - group [ref=f2e986]:
+          - generic "Percorso e accessi Nessun sentiero selezionato" [ref=f2e987] [cursor=pointer]:
+            - generic [ref=f2e991]:
+              - generic [ref=f2e992]: Percorso e accessi
+              - generic [ref=f2e993]: Nessun sentiero selezionato
+        - heading "Il piano in breve" [level=2] [ref=f2e994]
+        - paragraph [ref=f2e995]: Nessun sentiero corrisponde alle scelte attive. Modifica i filtri per esplorare gli altri tratti della zona.
+        - paragraph [ref=f2e996]: 14,1 km in linea d’aria
+        - paragraph [ref=f2e997]:
+          - link "Faggeta" [ref=f2e998] [cursor=pointer]:
+            - /url: "#/albero/faggio"
+          - text: d'alto fusto continua sul versante nord del Terminillo verso Leonessa. Microclima umido e fresco, nebbie di condensazione e piogge orografiche anche d'estate.
+        - region "Strumenti per il bosco" [ref=f2e999]:
+          - generic [ref=f2e1000]:
+            - generic [ref=f2e1003]:
+              - heading "Per il bosco" [level=2] [ref=f2e1004]
+              - paragraph [ref=f2e1005]: Anche senza rete
+            - button "Salva offline" [ref=f2e1006] [cursor=pointer]
+          - group [ref=f2e1008]:
+            - generic "Altri strumenti" [ref=f2e1009] [cursor=pointer]
+        - region [ref=f2e1010]:
+          - generic [ref=f2e1011]:
+            - text: Dal Taccuino condiviso
+            - heading "Cosa dicono gli altri su Vallonina" [level=2] [ref=f2e1012]
+            - paragraph [ref=f2e1013]: Ultimi 7 giorni · tutte le specie della zona
+          - paragraph [ref=f2e1014]: Condivisione delle osservazioni non ancora attiva.
+          - link "Apri il tuo Taccuino →" [ref=f2e1016] [cursor=pointer]:
+            - /url: "#/diario"
+          - paragraph [ref=f2e1017]: "Osservazioni dichiarate: non confermano la presenza attuale. I tuoi punti GPS restano privati."
+          - group [ref=f2e1018]:
+            - generic "Dati e privacy" [ref=f2e1019] [cursor=pointer]
+        - heading "Approfondimenti" [level=2] [ref=f2e1024]
+        - group [ref=f2e1025]:
+          - generic "Accessi e soste" [ref=f2e1026] [cursor=pointer]
+        - group [ref=f2e1027]:
+          - generic "Sentieri della zona" [ref=f2e1028] [cursor=pointer]
+          - paragraph [ref=f2e1030]: "Non risultano sentieri compatibili in questi dati: verifica tracciati, accessibilità e segnaletica sul posto."
+        - group [ref=f2e1031]:
+          - generic "Bosco e aree protette" [ref=f2e1032] [cursor=pointer]
+        - paragraph [ref=f2e1033]:
+          - link "Vedi sulla mappa" [ref=f2e1034] [cursor=pointer]:
+            - /url: "#/mappa/vallonina"
+    - text: ✓ ▶ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋
+  - status
