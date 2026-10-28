@@ -131,15 +131,12 @@ test("notifiche: niente geolocalizzazione, origine e proprietà del dispositivo 
       .status,
     201,
   );
-  assert.equal(
-    (
-      await handleOutingAlerts(req("POST", data, "b".repeat(43)), env, {
-        zones: [zone],
-        now,
-      })
-    ).status,
-    409,
-  );
+  const lost = await handleOutingAlerts(req("POST", data, "b".repeat(43)), env, {
+    zones: [zone],
+    now,
+  });
+  assert.equal(lost.status, 409);
+  assert.equal((await lost.json()).code, "device-token", "il client riconosce il token perso e rifà l'iscrizione");
   assert.equal(
     env.COMMUNITY_DB.sql.prepare("SELECT COUNT(*) n FROM outing_alerts").get()
       .n,

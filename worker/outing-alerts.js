@@ -12,8 +12,8 @@ const response = (data, status = 200) =>
       "x-content-type-options": "nosniff",
     },
   });
-const fail = (message, status = 422) => {
-  throw Object.assign(Error(message), { status });
+const fail = (message, status = 422, code) => {
+  throw Object.assign(Error(message), { status, code });
 };
 export const ALERT_SCHEMA = [
   "CREATE TABLE IF NOT EXISTS outing_alert_devices (id TEXT PRIMARY KEY, token_hash TEXT NOT NULL, subscription TEXT NOT NULL, expires_at INTEGER NOT NULL)",
@@ -232,6 +232,7 @@ export async function handleOutingAlerts(
       fail(
         "Rimuovi e riattiva il permesso alle notifiche per questo sito.",
         409,
+        "device-token",
       );
     const rateId = await hash(
       env.PUSH_PRIVATE_KEY +
@@ -291,6 +292,7 @@ export async function handleOutingAlerts(
       fail(
         "Rimuovi e riattiva il permesso alle notifiche per questo sito.",
         409,
+        "device-token",
       );
     if (
       !(await db
@@ -308,6 +310,7 @@ export async function handleOutingAlerts(
         error: e.status
           ? e.message
           : "Notifiche temporaneamente non disponibili. Riprova.",
+        ...(e.code && { code: e.code }),
       },
       e.status || 503,
     );
@@ -385,15 +388,10 @@ export async function sendOutingAlerts(
     const message = {
       title: "Meteo cambiato per la tua uscita",
       body: `${zone.title || zone.name} · ${row.day}: ${w.main || w.text}. Apri Fronda e ricontrolla prima di partire.`,
-      url: `/#/zona/${zone.id}/0`,
+      // Data, non scarto in giorni: la notifica aperta il giorno dopo porta ancora all'uscita seguita.
+      url: `/#/zona/${zone.id}/${row.day}`,
       tag: "outing-" + key,
     };
-    // Link keeps the originally followed calendar day, rather than always opening today.
-    const offset = Math.round(
-      (Date.parse(row.day + "T12:00:00Z") - Date.parse(today + "T12:00:00Z")) /
-        864e5,
-    );
-    message.url = `/#/zona/${zone.id}/${offset}`;
     try {
       const payload = await buildPushPayload(
         { data: JSON.stringify(message), options: { ttl: 3600 } },

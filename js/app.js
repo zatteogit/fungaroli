@@ -589,10 +589,15 @@ document.addEventListener('click', e => {
   openModal(recognitionDialog);document.documentElement.classList.add('recognition-open');enhanceGlossary(box);
 });
 
+// Il giorno della zona è uno scarto da oggi oppure una data (link delle notifiche, che restano valide nei giorni dopo).
+function routeDayOffset(value) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(value || '')) return +value || 0;
+  return Math.round((Date.parse(value + 'T12:00:00Z') - Date.parse(todayISO() + 'T12:00:00Z')) / 864e5) || 0;
+}
 function parseRoute(hash = location.hash) {
   const parts = hash.replace(/^#\/?/, '').split('/').filter(Boolean).map((x) => { try { return decodeURIComponent(x); } catch { return x; } });
   const [a, b, c] = parts;
-  if (a === 'zona' && (weatherZones||zones).some((z) => z.id === b)) return { view: 'zona', zoneId: b, offset: Math.max(0, Math.min(AHEAD_DAYS, +c || 0)), trailId: parts[3] === 'sentiero' && (trails[b]?.trails || []).some(t => String(t.id) === parts[4]) ? parts[4] : null };
+  if (a === 'zona' && (weatherZones||zones).some((z) => z.id === b)) return { view: 'zona', zoneId: b, offset: Math.max(0, Math.min(AHEAD_DAYS, routeDayOffset(c))), trailId: parts[3] === 'sentiero' && (trails[b]?.trails || []).some(t => String(t.id) === parts[4]) ? parts[4] : null };
   if (a === 'giri') return {view:'giri',outingId:b||''};
   if (a === 'mappa') return { view: 'mappa', zoneId: b };
   if (a === 'specie' && b) return { view: 'specie-dettaglio', speciesId: b };
