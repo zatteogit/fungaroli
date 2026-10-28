@@ -269,6 +269,18 @@ test('Quando ha una sola testata, mantiene gli avvisi meteo e aggiunge solo dett
  await section.screenshot({path:'/tmp/fronda-when-accordion.png'});expect(errors).toEqual([]);
 });
 
+test('Quando dà priorità al meteo sconsigliato anche senza temporale',async({page})=>{
+ await page.clock.setFixedTime(new Date(new Date().setUTCHours(0,0,0,0)));
+ await page.setViewportSize({width:390,height:900});
+ const errors=await setup(page,{gust:65,cover:false});await page.goto('/#/zona/tancia/0');
+ const section=page.locator('#detail details[data-sec="quando"]'),summary=section.locator(':scope > summary');
+ await expect(summary).toContainText('Uscita sconsigliata');await expect(summary).toContainText('65 km/h');await expect(summary).not.toContainText('Arriva');
+ await summary.click();const body=section.locator(':scope > .sec-body');
+ await expect(body).toContainText('Alba');await expect(body).toContainText('Orario consentito di raccolta');
+ await expect(body).not.toContainText('Partenza ·');await expect(body).not.toContainText('Preferisci meno gente?');
+ expect(errors).toEqual([]);
+});
+
 test('riepiloghi essenziali negli accordion sul posto, senza voci duplicate o salti',async({page})=>{
   await page.emulateMedia({reducedMotion:'reduce'});
   const errors=await setup(page);await page.goto('/#/zona/tancia/0');await expect(page.locator('#detail details[data-sec="specie"]')).toBeVisible();
