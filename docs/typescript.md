@@ -10,9 +10,13 @@ percorsi pubblici `js/`. Sono coperti:
 - modello degli appunti, osservazioni condivise, foto e archivio locale del taccuino.
 
 I moduli UI dei composer e delle pagine del taccuino, `community.js`, il resto
-di `app.js` e il Worker rimangono JavaScript. La dichiarazione `human.d.ts`
-descrive solo la porta dei due helper astronomici usati dal meteo; la loro
-implementazione non è ancora migrata.
+di `app.js` e il Worker rimangono JavaScript. Le dichiarazioni scritte a mano
+descrivono moduli JavaScript non ancora migrati: `human.d.ts` la porta dei due
+helper astronomici usati dal meteo, `navigation-dock.d.ts` la molla
+`stepDockSpring` di `js/navigation-dock.js`, usata dalla navigazione contestuale.
+
+`npm run build:typescript -- --check` segnala anche un `js/*.js` «Generated from»
+il cui `.ts` è stato cancellato.
 
 ## Sorgenti e compilazione
 

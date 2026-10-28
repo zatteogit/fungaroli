@@ -15,7 +15,13 @@ try {
   execFileSync(process.execPath, [path.join(root, 'node_modules/typescript/bin/tsc'),
     '--project', path.join(root, 'tsconfig.contracts.json')], { cwd: root, stdio: 'inherit' });
   let stale = false;
-  for (const name of (await readdir(output)).sort()) {
+  const compiled = new Set(await readdir(output));
+  // Un JS generato il cui .ts è stato cancellato resterebbe pubblicato senza sorgente.
+  for (const name of (await readdir(path.join(root, 'js'))).filter(n => n.endsWith('.js') && !compiled.has(n))) {
+    const head = (await readFile(path.join(root, 'js', name), 'utf8')).slice(0, 200);
+    if (head.startsWith('// Generated from src/js/')) { console.error(`JavaScript generato senza sorgente: js/${name}. Cancellalo o ripristina il suo .ts.`); process.exitCode = 1; }
+  }
+  for (const name of [...compiled].sort()) {
     if (!name.endsWith('.js')) throw Error(`Unexpected compiler output: ${name}`);
     const target = path.join(root, 'js', name);
     const content = `// Generated from src/js/${name.replace(/\.js$/, '.ts')}. Run npm run build:typescript; do not edit.\n`
@@ -26,5 +32,5 @@ try {
     } else await writeFile(target, content);
   }
   if (stale) { console.error('Esegui npm run build:typescript e includi il risultato nel commit.'); process.exitCode = 1; }
-  else console.log(check ? 'TypeScript e JavaScript pubblicati coerenti.' : 'Moduli TypeScript compilati in js/.');
+  else if (!process.exitCode) console.log(check ? 'TypeScript e JavaScript pubblicati coerenti.' : 'Moduli TypeScript compilati in js/.');
 } finally { await rm(output, { recursive: true, force: true }); }
