@@ -1,0 +1,185 @@
+[
+ {
+  "id": "pioppino-sereno",
+  "rulesSection": 1,
+  "version": "fungaroli-shell-v401",
+  "order": [
+   "passeggiata",
+   "scoperte",
+   "regole",
+   "accesso",
+   "sentieri",
+   "zona"
+  ],
+  "cards": [
+   "3 kg al giorno",
+   "Non commestibili",
+   "Orario di raccolta",
+   "Documenti con te",
+   "25 € / 40 €",
+   "Divieti locali"
+  ],
+  "dialogTitle": "3 kg al giorno",
+  "focusReturned": true,
+  "views": [
+   "320-light",
+   "320-dark",
+   "390-light",
+   "390-dark",
+   "768-light",
+   "768-dark",
+   "1280-light",
+   "1280-dark"
+  ],
+  "aria": "- group:\n  - text: Regole di raccolta Quantità · orari · documenti · contributo e divieti\n  - paragraph: \"Quadro regionale: valgono prima i divieti e le disposizioni locali.\"\n  - list:\n    - listitem:\n      - button \"3 kg al giorno Commestibili · a persona · salvo eccezioni Dettagli\"\n    - listitem:\n      - button \"Non commestibili Solo studio autorizzato Dettagli\"\n    - listitem:\n      - button \"Orario di raccolta Alba −1 h → tramonto +1 h Dettagli\"\n    - listitem:\n      - button \"Documenti con te Attestato, ricevuta e documento Dettagli\"\n    - listitem:\n      - button \"25 € / 40 € Residenti Lazio / altri · previste esenzioni Dettagli\"\n    - listitem:\n      - button \"Divieti locali Verifica prima di raccogliere Dettagli\"\n  - link \"Regole complete e fonti\":\n    - /url: \"#/info\""
+ },
+ {
+  "id": "pioppino-temporale",
+  "rulesSection": 1,
+  "version": "fungaroli-shell-v401",
+  "order": [
+   "passeggiata",
+   "scoperte",
+   "regole",
+   "accesso",
+   "sentieri",
+   "zona"
+  ],
+  "cards": [
+   "3 kg al giorno",
+   "Non commestibili",
+   "Orario di raccolta",
+   "Documenti con te",
+   "25 € / 40 €",
+   "Divieti locali"
+  ],
+  "dialogTitle": "3 kg al giorno",
+  "focusReturned": true,
+  "views": [
+   "320-light",
+   "320-dark",
+   "390-light",
+   "390-dark",
+   "768-light",
+   "768-dark",
+   "1280-light",
+   "1280-dark"
+  ],
+  "aria": "- group:\n  - text: Regole di raccolta Quantità · orari · documenti · contributo e divieti\n  - paragraph: \"Quadro regionale: valgono prima i divieti e le disposizioni locali.\"\n  - list:\n    - listitem:\n      - button \"3 kg al giorno Commestibili · a persona · salvo eccezioni Dettagli\"\n    - listitem:\n      - button \"Non commestibili Solo studio autorizzato Dettagli\"\n    - listitem:\n      - button \"Orario di raccolta Alba −1 h → tramonto +1 h Dettagli\"\n    - listitem:\n      - button \"Documenti con te Attestato, ricevuta e documento Dettagli\"\n    - listitem:\n      - button \"25 € / 40 € Residenti Lazio / altri · previste esenzioni Dettagli\"\n    - listitem:\n      - button \"Divieti locali Verifica prima di raccogliere Dettagli\"\n  - link \"Regole complete e fonti\":\n    - /url: \"#/info\""
+ },
+ {
+  "id": "porcino-meteo-assente",
+  "rulesSection": 1,
+  "version": "fungaroli-shell-v401",
+  "order": [
+   "scoperte",
+   "regole",
+   "accesso",
+   "sentieri",
+   "zona"
+  ],
+  "cards": [
+   "3 kg al giorno",
+   "Non commestibili",
+   "Orario di raccolta",
+   "Documenti con te",
+   "25 € / 40 €",
+   "Divieti locali",
+   "Area protetta"
+  ],
+  "dialogTitle": "3 kg al giorno",
+  "focusReturned": true,
+  "views": [
+   "320-light",
+   "320-dark",
+   "390-light",
+   "390-dark",
+   "768-light",
+   "768-dark",
+   "1280-light",
+   "1280-dark"
+  ],
+  "aria": "- group:\n  - text: Regole di raccolta Quantità · orari · documenti · contributo e divieti\n  - paragraph: \"Quadro regionale: valgono prima i divieti e le disposizioni locali.\"\n  - list:\n    - listitem:\n      - button \"3 kg al giorno Commestibili · a persona · salvo eccezioni Dettagli\"\n    - listitem:\n      - button \"Non commestibili Solo studio autorizzato Dettagli\"\n    - listitem:\n      - button \"Orario di raccolta Alba −1 h → tramonto +1 h Dettagli\"\n    - listitem:\n      - button \"Documenti con te Attestato, ricevuta e documento Dettagli\"\n    - listitem:\n      - button \"25 € / 40 € Residenti Lazio / altri · previste esenzioni Dettagli\"\n    - listitem:\n      - button \"Divieti locali Verifica prima di raccogliere Dettagli\"\n    - listitem:\n      - button \"Area protetta Verifica le regole dell’ente Dettagli\"\n  - link \"Regole complete e fonti\":\n    - /url: \"#/info\""
+ },
+ {
+  "id": "porcino-sereno",
+  "rulesSection": 1,
+  "version": "fungaroli-shell-v401",
+  "order": [
+   "passeggiata",
+   "specie",
+   "quando",
+   "accesso",
+   "regole",
+   "meteo",
+   "sentieri",
+   "bosco",
+   "zona"
+  ],
+  "cards": [
+   "3 kg al giorno",
+   "Non commestibili",
+   "Orario di raccolta",
+   "Documenti con te",
+   "25 € / 40 €",
+   "Divieti locali"
+  ],
+  "dialogTitle": "3 kg al giorno",
+  "focusReturned": true,
+  "views": [
+   "320-light",
+   "320-dark",
+   "390-light",
+   "390-dark",
+   "768-light",
+   "768-dark",
+   "1280-light",
+   "1280-dark"
+  ],
+  "aria": "- group:\n  - text: Regole di raccolta Quantità · orari · documenti · contributo e divieti\n  - paragraph: \"Quadro regionale: valgono prima i divieti e le disposizioni locali.\"\n  - list:\n    - listitem:\n      - button \"3 kg al giorno Commestibili · a persona · salvo eccezioni Dettagli\"\n    - listitem:\n      - button \"Non commestibili Solo studio autorizzato Dettagli\"\n    - listitem:\n      - button \"Orario di raccolta Alba −1 h → tramonto +1 h Dettagli\"\n    - listitem:\n      - button \"Documenti con te Attestato, ricevuta e documento Dettagli\"\n    - listitem:\n      - button \"25 € / 40 € Residenti Lazio / altri · previste esenzioni Dettagli\"\n    - listitem:\n      - button \"Divieti locali Verifica prima di raccogliere Dettagli\"\n  - link \"Regole complete e fonti\":\n    - /url: \"#/info\""
+ },
+ {
+  "id": "piante-sereno",
+  "rulesSection": 0,
+  "version": "fungaroli-shell-v401",
+  "order": [
+   "passeggiata",
+   "accesso",
+   "sentieri",
+   "zona"
+  ],
+  "views": [
+   "320-light",
+   "320-dark",
+   "390-light",
+   "390-dark",
+   "768-light",
+   "768-dark",
+   "1280-light",
+   "1280-dark"
+  ],
+  "aria": null
+ },
+ {
+  "id": "sentieri-meteo-assente",
+  "rulesSection": 0,
+  "version": "fungaroli-shell-v401",
+  "order": [
+   "scoperte",
+   "accesso",
+   "sentieri",
+   "zona"
+  ],
+  "views": [
+   "320-light",
+   "320-dark",
+   "390-light",
+   "390-dark",
+   "768-light",
+   "768-dark",
+   "1280-light",
+   "1280-dark"
+  ],
+  "aria": null
+ }
+]

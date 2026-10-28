@@ -1,0 +1,2574 @@
+[
+ {
+  "scenario": {
+   "id": "vallonina-funghi-porcino-sereno",
+   "zone": "vallonina",
+   "target": "funghi",
+   "species": [
+    "edulis"
+   ],
+   "weather": "sereno"
+  },
+  "blocks": [
+   {
+    "key": "ambi",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 10,
+    "excerpt": "(immagine)",
+    "tag": "span"
+   },
+   {
+    "key": "phero-img",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 19,
+    "excerpt": "Apri foto e crediti",
+    "tag": "button"
+   },
+   {
+    "key": "span-giovedì-ottobre",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 18,
+    "excerpt": "giovedì 29 ottobre",
+    "tag": "span"
+   },
+   {
+    "key": "titolo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 9,
+    "excerpt": "Vallonina",
+    "tag": "h1"
+   },
+   {
+    "key": "phero-sub",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 25,
+    "excerpt": "Terminillo, versante nord",
+    "tag": "p"
+   },
+   {
+    "key": "scelte.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 14,
+    "excerpt": "Funghi Porcino",
+    "tag": "section"
+   },
+   {
+    "key": "scelte.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 210,
+    "excerpt": "PorcinoCondizioni per i funghi scelti e il meteo del giorno.Indice basato su Porcino: il miglior indice tra i funghi scelti con dati disponibili.L’indice è sper",
+    "tag": "section"
+   },
+   {
+    "key": "scelte.modifica",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 8,
+    "excerpt": "Modifica",
+    "tag": "section"
+   },
+   {
+    "key": "rail-host",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 138,
+    "excerpt": "Oggi 28 – Domani 29 6,8 13° Venerdì 30 6,6 13° Sabato 31 6,4 13° Domenica 1 6,2 13° Lunedì 2 6,0 13° Martedì 3 5,9 13° Mercoledì 4 5,7 13°",
+    "tag": "div"
+   },
+   {
+    "key": "hero-indicators",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 47,
+    "excerpt": "13 ° Asciutto 13–13 °C · mattina Condizioni 6,8",
+    "tag": "div"
+   },
+   {
+    "key": "wx-age",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 18,
+    "excerpt": "Meteo · alle 15:31",
+    "tag": "p"
+   },
+   {
+    "key": "outing-documentation.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 54,
+    "excerpt": "Percorso e accessi Tratto mappato · giro da verificare",
+    "tag": "details"
+   },
+   {
+    "key": "outing-documentation.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 301,
+    "excerpt": "Sentieri20 tratti mappati nella zonaArrivo in autoPunto di arrivo documentato · sosta e transito da verificareDa completare: Raccordo dalla sosta al sentiero · ",
+    "tag": "details"
+   },
+   {
+    "key": "titolo-il-piano-in-breve",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 17,
+    "excerpt": "Il piano in breve",
+    "tag": "h2"
+   },
+   {
+    "key": "sec-passeggiata.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 116,
+    "excerpt": "LA PASSEGGIATA, PIÙ DA VICINO 405 Sigillo – Rif.A. Sebastiani 6 km tratto sulla mappa E · escursionistico difficoltà",
+    "tag": "details"
+   },
+   {
+    "key": "sec-passeggiata.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 1366,
+    "excerpt": "Dal viaggio al ritorno Sosta e raccordo da confermare In auto · andata Rieti → Parcheggio mappato presso Sella di Leonessa tempo da definire Arrivo auto · parch",
+    "tag": "details"
+   },
+   {
+    "key": "sec-specie.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 94,
+    "excerpt": "COSA OSSERVARE Porcino 6,8 intorno ai 1200 m s.l.m. SOSIA Boleti con pori rossi o viraggio blu",
+    "tag": "details"
+   },
+   {
+    "key": "sec-specie.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 973,
+    "excerpt": "Nelle faggete montane tra circa 1000 e 1700 m e nei castagneti e cerreti più freschi, a terra vicino agli alberi simbionti. Funghi che cerchi Potenziale di cres",
+    "tag": "details"
+   },
+   {
+    "key": "sec-quando.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 60,
+    "excerpt": "QUANDO Arriva entro le 6:30 un po' di gente Asciutto · 13 °C",
+    "tag": "details"
+   },
+   {
+    "key": "sec-quando.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 385,
+    "excerpt": "Partenza · Rieti Verifica nel navigatore Alba verso le 6:35 Orario consentito di raccolta 5:40–18:05 Meteo 5:00–13:00 · quota centrale. Verifica anche il rientr",
+    "tag": "details"
+   },
+   {
+    "key": "sec-accesso.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 107,
+    "excerpt": "COME ARRIVARE Arrivo in auto · Parcheggio mappato presso Sella di Leonessa 14,1 km in linea d’aria da Rieti",
+    "tag": "details"
+   },
+   {
+    "key": "sec-accesso.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 374,
+    "excerpt": "Anteprima del tratto · N ↑ Sosta mappata Apri il navigatore Esplora la mappa Transito e sosta da verificare Punti utili Accesso e apertura da verificare Parcheg",
+    "tag": "details"
+   },
+   {
+    "key": "field-tools",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 59,
+    "excerpt": "Per il bosco Anche senza rete Salva offline Altri strumenti",
+    "tag": "section"
+   },
+   {
+    "key": "zone-community",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 286,
+    "excerpt": "DAL TACCUINO CONDIVISO Cosa dicono gli altri su Vallonina Ultimi 7 giorni · tutte le specie della zona Condivisione delle osservazioni non ancora attiva. Apri i",
+    "tag": "section"
+   },
+   {
+    "key": "zone-actions",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 219,
+    "excerpt": "Com’è andata? → Anche una ricerca a vuoto conta. Scegli tu se condividere. I tuoi posti restano tuoi Agli altri non mostriamo il tuo punto. Se condividi, vedono",
+    "tag": "section"
+   },
+   {
+    "key": "titolo-approfondimenti",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 15,
+    "excerpt": "Approfondimenti",
+    "tag": "h2"
+   },
+   {
+    "key": "sec-regole.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 70,
+    "excerpt": "Regole di raccolta Quantità · orari · documenti · contributo e divieti",
+    "tag": "details"
+   },
+   {
+    "key": "sec-regole.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 452,
+    "excerpt": "Quadro regionale: valgono prima i divieti e le disposizioni locali. 3 kg al giorno Commestibili · a persona · salvo eccezioni Dettagli ↗ Non commestibili Solo s",
+    "tag": "details"
+   },
+   {
+    "key": "sec-meteo.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 73,
+    "excerpt": "Da cosa dipendono le condizioni Potenziale dei funghi e meteo dell’uscita",
+    "tag": "details"
+   },
+   {
+    "key": "sec-meteo.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 2826,
+    "excerpt": "Condizioni per l’uscita: 6,8. Potenziale di crescita: 6,8. Il meteo dell’uscita applica il fattore 1. Condizioni di crescita 6,8/10 per porcino a 1200 m. Descri",
+    "tag": "details"
+   },
+   {
+    "key": "sec-meteo.consultazione",
+    "disclosure": "on-demand",
+    "actions": 2,
+    "characters": 2639,
+    "excerpt": " I fattori si moltiplicano: ×1 non riduce l’indice, un valore inferiore lo abbassa. Il calo della temperatura del suolo può aggiungere un bonus ipotizzato, solo",
+    "tag": "details"
+   },
+   {
+    "key": "sec-sentieri.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 60,
+    "excerpt": "Sentieri della zona 20 tratti mappati · difficoltà e profili",
+    "tag": "details"
+   },
+   {
+    "key": "sec-sentieri.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 840,
+    "excerpt": "405 Sigillo – Rif.A. Sebastiani Le Casette (820m) · Malopasso · Fonte Capo Scura (1400m) · Pian di Scura · Sella di Pratorecchia (1875m) CAI Antrodoco In eviden",
+    "tag": "details"
+   },
+   {
+    "key": "sec-bosco.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 40,
+    "excerpt": "Bosco della zona intorno a 1200 m Faggio",
+    "tag": "details"
+   },
+   {
+    "key": "sec-bosco.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 1083,
+    "excerpt": "Faggeta 94% non bosco 6% Carta Forestale 18 punti della zona Fascia osservata 1050–1350 m Le percentuali descrivono i punti della zona sulla carta, non il numer",
+    "tag": "details"
+   },
+   {
+    "key": "sec-zona.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 25,
+    "excerpt": "Paesaggio e alberi Faggio",
+    "tag": "details"
+   },
+   {
+    "key": "sec-zona.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 302,
+    "excerpt": "Paesaggio Faggeta d'alto fusto continua sul versante nord del Terminillo verso Leonessa. Microclima umido e fresco, nebbie di condensazione e piogge orografiche",
+    "tag": "details"
+   }
+  ],
+  "open": []
+ },
+ {
+  "scenario": {
+   "id": "vallonina-funghi-porcino-temporale",
+   "zone": "vallonina",
+   "target": "funghi",
+   "species": [
+    "edulis"
+   ],
+   "weather": "temporale"
+  },
+  "blocks": [
+   {
+    "key": "ambi",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 10,
+    "excerpt": "(immagine)",
+    "tag": "span"
+   },
+   {
+    "key": "phero-img",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 19,
+    "excerpt": "Apri foto e crediti",
+    "tag": "button"
+   },
+   {
+    "key": "span-giovedì-ottobre",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 18,
+    "excerpt": "giovedì 29 ottobre",
+    "tag": "span"
+   },
+   {
+    "key": "titolo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 9,
+    "excerpt": "Vallonina",
+    "tag": "h1"
+   },
+   {
+    "key": "phero-sub",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 25,
+    "excerpt": "Terminillo, versante nord",
+    "tag": "p"
+   },
+   {
+    "key": "scelte.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 14,
+    "excerpt": "Funghi Porcino",
+    "tag": "section"
+   },
+   {
+    "key": "scelte.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 210,
+    "excerpt": "PorcinoCondizioni per i funghi scelti e il meteo del giorno.Indice basato su Porcino: il miglior indice tra i funghi scelti con dati disponibili.L’indice è sper",
+    "tag": "section"
+   },
+   {
+    "key": "scelte.modifica",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 8,
+    "excerpt": "Modifica",
+    "tag": "section"
+   },
+   {
+    "key": "rail-host",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 138,
+    "excerpt": "Oggi 28 – Domani 29 3,7 13° Venerdì 30 3,6 13° Sabato 31 3,5 13° Domenica 1 3,4 13° Lunedì 2 3,3 13° Martedì 3 3,2 13° Mercoledì 4 3,1 13°",
+    "tag": "div"
+   },
+   {
+    "key": "hero-indicators",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 48,
+    "excerpt": "13 ° Temporali 13–13 °C · mattina Condizioni 3,7",
+    "tag": "div"
+   },
+   {
+    "key": "wx-age",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 18,
+    "excerpt": "Meteo · alle 15:31",
+    "tag": "p"
+   },
+   {
+    "key": "outing-documentation.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 54,
+    "excerpt": "Percorso e accessi Tratto mappato · giro da verificare",
+    "tag": "details"
+   },
+   {
+    "key": "outing-documentation.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 301,
+    "excerpt": "Sentieri20 tratti mappati nella zonaArrivo in autoPunto di arrivo documentato · sosta e transito da verificareDa completare: Raccordo dalla sosta al sentiero · ",
+    "tag": "details"
+   },
+   {
+    "key": "titolo-il-piano-in-breve",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 17,
+    "excerpt": "Il piano in breve",
+    "tag": "h2"
+   },
+   {
+    "key": "sec-passeggiata.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 116,
+    "excerpt": "LA PASSEGGIATA, PIÙ DA VICINO 405 Sigillo – Rif.A. Sebastiani 6 km tratto sulla mappa E · escursionistico difficoltà",
+    "tag": "details"
+   },
+   {
+    "key": "sec-passeggiata.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 1366,
+    "excerpt": "Dal viaggio al ritorno Sosta e raccordo da confermare In auto · andata Rieti → Parcheggio mappato presso Sella di Leonessa tempo da definire Arrivo auto · parch",
+    "tag": "details"
+   },
+   {
+    "key": "sec-specie.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 94,
+    "excerpt": "COSA OSSERVARE Porcino 6,8 intorno ai 1200 m s.l.m. SOSIA Boleti con pori rossi o viraggio blu",
+    "tag": "details"
+   },
+   {
+    "key": "sec-specie.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 973,
+    "excerpt": "Nelle faggete montane tra circa 1000 e 1700 m e nei castagneti e cerreti più freschi, a terra vicino agli alberi simbionti. Funghi che cerchi Potenziale di cres",
+    "tag": "details"
+   },
+   {
+    "key": "sec-quando.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 81,
+    "excerpt": "METEO Uscita sconsigliata Temporali possibili · piovaschi possibili (90%) · 13 °C",
+    "tag": "details"
+   },
+   {
+    "key": "sec-quando.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 361,
+    "excerpt": "Alba verso le 6:35 Orario consentito di raccolta 5:40–18:05 Meteo 5:00–13:00 · quota centrale. Verifica anche il rientro. Uscita sconsigliata: controlla il mete",
+    "tag": "details"
+   },
+   {
+    "key": "sec-accesso.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 107,
+    "excerpt": "COME ARRIVARE Arrivo in auto · Parcheggio mappato presso Sella di Leonessa 14,1 km in linea d’aria da Rieti",
+    "tag": "details"
+   },
+   {
+    "key": "sec-accesso.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 374,
+    "excerpt": "Anteprima del tratto · N ↑ Sosta mappata Apri il navigatore Esplora la mappa Transito e sosta da verificare Punti utili Accesso e apertura da verificare Parcheg",
+    "tag": "details"
+   },
+   {
+    "key": "field-tools",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 59,
+    "excerpt": "Per il bosco Anche senza rete Salva offline Altri strumenti",
+    "tag": "section"
+   },
+   {
+    "key": "zone-community",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 286,
+    "excerpt": "DAL TACCUINO CONDIVISO Cosa dicono gli altri su Vallonina Ultimi 7 giorni · tutte le specie della zona Condivisione delle osservazioni non ancora attiva. Apri i",
+    "tag": "section"
+   },
+   {
+    "key": "zone-actions",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 219,
+    "excerpt": "Com’è andata? → Anche una ricerca a vuoto conta. Scegli tu se condividere. I tuoi posti restano tuoi Agli altri non mostriamo il tuo punto. Se condividi, vedono",
+    "tag": "section"
+   },
+   {
+    "key": "titolo-approfondimenti",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 15,
+    "excerpt": "Approfondimenti",
+    "tag": "h2"
+   },
+   {
+    "key": "sec-regole.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 70,
+    "excerpt": "Regole di raccolta Quantità · orari · documenti · contributo e divieti",
+    "tag": "details"
+   },
+   {
+    "key": "sec-regole.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 452,
+    "excerpt": "Quadro regionale: valgono prima i divieti e le disposizioni locali. 3 kg al giorno Commestibili · a persona · salvo eccezioni Dettagli ↗ Non commestibili Solo s",
+    "tag": "details"
+   },
+   {
+    "key": "sec-meteo.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 73,
+    "excerpt": "Da cosa dipendono le condizioni Potenziale dei funghi e meteo dell’uscita",
+    "tag": "details"
+   },
+   {
+    "key": "sec-meteo.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 2829,
+    "excerpt": "Condizioni per l’uscita: 3,7. Potenziale di crescita: 6,8. Il meteo dell’uscita applica il fattore 0,55. Condizioni di crescita 6,8/10 per porcino a 1200 m. Des",
+    "tag": "details"
+   },
+   {
+    "key": "sec-meteo.consultazione",
+    "disclosure": "on-demand",
+    "actions": 2,
+    "characters": 2822,
+    "excerpt": " I fattori si moltiplicano: ×1 non riduce l’indice, un valore inferiore lo abbassa. Il calo della temperatura del suolo può aggiungere un bonus ipotizzato, solo",
+    "tag": "details"
+   },
+   {
+    "key": "sec-sentieri.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 60,
+    "excerpt": "Sentieri della zona 20 tratti mappati · difficoltà e profili",
+    "tag": "details"
+   },
+   {
+    "key": "sec-sentieri.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 840,
+    "excerpt": "405 Sigillo – Rif.A. Sebastiani Le Casette (820m) · Malopasso · Fonte Capo Scura (1400m) · Pian di Scura · Sella di Pratorecchia (1875m) CAI Antrodoco In eviden",
+    "tag": "details"
+   },
+   {
+    "key": "sec-bosco.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 40,
+    "excerpt": "Bosco della zona intorno a 1200 m Faggio",
+    "tag": "details"
+   },
+   {
+    "key": "sec-bosco.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 1083,
+    "excerpt": "Faggeta 94% non bosco 6% Carta Forestale 18 punti della zona Fascia osservata 1050–1350 m Le percentuali descrivono i punti della zona sulla carta, non il numer",
+    "tag": "details"
+   },
+   {
+    "key": "sec-zona.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 25,
+    "excerpt": "Paesaggio e alberi Faggio",
+    "tag": "details"
+   },
+   {
+    "key": "sec-zona.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 302,
+    "excerpt": "Paesaggio Faggeta d'alto fusto continua sul versante nord del Terminillo verso Leonessa. Microclima umido e fresco, nebbie di condensazione e piogge orografiche",
+    "tag": "details"
+   }
+  ],
+  "open": []
+ },
+ {
+  "scenario": {
+   "id": "vallonina-funghi-pioppino-sereno",
+   "zone": "vallonina",
+   "target": "funghi",
+   "species": [
+    "cyclocybe-aegerita"
+   ],
+   "weather": "sereno"
+  },
+  "blocks": [
+   {
+    "key": "titolo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 9,
+    "excerpt": "Vallonina",
+    "tag": "h1"
+   },
+   {
+    "key": "scelte.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 15,
+    "excerpt": "Funghi Pioppino",
+    "tag": "section"
+   },
+   {
+    "key": "scelte.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 169,
+    "excerpt": "PioppinoCondizioni per i funghi scelti e il meteo del giorno.L’indice è sperimentale: non è una probabilità di trovare funghi.Indice non disponibile per 1 speci",
+    "tag": "section"
+   },
+   {
+    "key": "scelte.modifica",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 8,
+    "excerpt": "Modifica",
+    "tag": "section"
+   },
+   {
+    "key": "rail-host",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 108,
+    "excerpt": "Oggi 28 Domani 29 13° Venerdì 30 13° Sabato 31 13° Domenica 1 13° Lunedì 2 13° Martedì 3 13° Mercoledì 4 13°",
+    "tag": "div"
+   },
+   {
+    "key": "p-meteo-della-mattina-asci",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 38,
+    "excerpt": "Meteo della mattina · asciutto · 13 °C",
+    "tag": "p"
+   },
+   {
+    "key": "avviso-indice-non-ancora-dispon",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 121,
+    "excerpt": "Indice non ancora disponibile per le specie selezionate per questo giorno. Un dato mancante non indica assenza di funghi.",
+    "tag": "p"
+   },
+   {
+    "key": "p-apri-la-mappa-metodo-e-l",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 31,
+    "excerpt": "Apri la mappa · Metodo e limiti",
+    "tag": "p"
+   },
+   {
+    "key": "titolo-il-piano-in-breve",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 17,
+    "excerpt": "Il piano in breve",
+    "tag": "h2"
+   },
+   {
+    "key": "sec-passeggiata.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 119,
+    "excerpt": "LA PASSEGGIATA, PIÙ DA VICINO 429 Fontenuova - Monte di Cambio 3,5 km tratto sulla mappa E · escursionistico difficoltà",
+    "tag": "details"
+   },
+   {
+    "key": "sec-passeggiata.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 1149,
+    "excerpt": "Dal viaggio al ritorno Sosta e raccordo da confermare In auto · andata Rieti → Parcheggio mappato presso Sella di Leonessa tempo da definire Arrivo auto · parch",
+    "tag": "details"
+   },
+   {
+    "key": "sec-scoperte.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 52,
+    "excerpt": "Durante il giro Ortica · Fragolina di bosco · Faggio",
+    "tag": "details"
+   },
+   {
+    "key": "sec-scoperte.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 294,
+    "excerpt": "Potresti incontrare anche queste specie. Ambienti campionati sul tratto del sentiero: presenza da verificare. Erbe Ortica Ambiente compatibile › Frutti Fragolin",
+    "tag": "details"
+   },
+   {
+    "key": "p-faggeta-d-alto-fusto-con",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 166,
+    "excerpt": "Faggeta d'alto fusto continua sul versante nord del Terminillo verso Leonessa. Microclima umido e fresco, nebbie di condensazione e piogge orografiche anche d'e",
+    "tag": "p"
+   },
+   {
+    "key": "field-tools",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 59,
+    "excerpt": "Per il bosco Anche senza rete Salva offline Altri strumenti",
+    "tag": "section"
+   },
+   {
+    "key": "zone-community",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 286,
+    "excerpt": "DAL TACCUINO CONDIVISO Cosa dicono gli altri su Vallonina Ultimi 7 giorni · tutte le specie della zona Condivisione delle osservazioni non ancora attiva. Apri i",
+    "tag": "section"
+   },
+   {
+    "key": "titolo-approfondimenti",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 15,
+    "excerpt": "Approfondimenti",
+    "tag": "h2"
+   },
+   {
+    "key": "sec-accesso.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 15,
+    "excerpt": "Accessi e soste",
+    "tag": "details"
+   },
+   {
+    "key": "sec-accesso.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 374,
+    "excerpt": "Anteprima del tratto · N ↑ Sosta mappata Apri il navigatore Esplora la mappa Transito e sosta da verificare Punti utili Accesso e apertura da verificare Parcheg",
+    "tag": "details"
+   },
+   {
+    "key": "sec-sentieri.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 19,
+    "excerpt": "Sentieri della zona",
+    "tag": "details"
+   },
+   {
+    "key": "sec-sentieri.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 1988,
+    "excerpt": "429 Fontenuova - Monte di Cambio CAI Leonessa In evidenza Difficoltà E · escursionistico Intero 3,6 km · 1 h 20 · +450 m Nella zona 3,5 km Profilo Tracciato 1 1",
+    "tag": "details"
+   },
+   {
+    "key": "sec-zona.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 21,
+    "excerpt": "Bosco e aree protette",
+    "tag": "details"
+   },
+   {
+    "key": "sec-zona.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 463,
+    "excerpt": "Bosco della zona: fustaia 99% dei 139 punti di bosco (Carta Forestale, rilievo 2005–2007). Dati da leggere, fuori da ogni indice. Fonti: Carta Forestale © Regio",
+    "tag": "details"
+   }
+  ],
+  "open": []
+ },
+ {
+  "scenario": {
+   "id": "vallonina-piante-sereno",
+   "zone": "vallonina",
+   "target": "piante",
+   "species": [],
+   "weather": "sereno"
+  },
+  "blocks": [
+   {
+    "key": "ambi",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 10,
+    "excerpt": "(immagine)",
+    "tag": "span"
+   },
+   {
+    "key": "phero-img",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 22,
+    "excerpt": "Vallonina / Terminillo",
+    "tag": "div"
+   },
+   {
+    "key": "span-giovedì-ottobre",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 18,
+    "excerpt": "giovedì 29 ottobre",
+    "tag": "span"
+   },
+   {
+    "key": "titolo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 9,
+    "excerpt": "Vallonina",
+    "tag": "h1"
+   },
+   {
+    "key": "scelte.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 6,
+    "excerpt": "Piante",
+    "tag": "section"
+   },
+   {
+    "key": "scelte.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 87,
+    "excerpt": "Tutte le specie del catalogoContenuti per gli interessi scelti e il giorno selezionato.",
+    "tag": "section"
+   },
+   {
+    "key": "scelte.modifica",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 8,
+    "excerpt": "Modifica",
+    "tag": "section"
+   },
+   {
+    "key": "rail-host",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 108,
+    "excerpt": "Oggi 28 Domani 29 13° Venerdì 30 13° Sabato 31 13° Domenica 1 13° Lunedì 2 13° Martedì 3 13° Mercoledì 4 13°",
+    "tag": "div"
+   },
+   {
+    "key": "hero-indicators",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 32,
+    "excerpt": "13 ° Asciutto 13–13 °C · mattina",
+    "tag": "div"
+   },
+   {
+    "key": "zone-photo-credit",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 80,
+    "excerpt": "Stagione elaborata con AI dalla foto di Idéfix, CC BY-SA 3.0 · Wikimedia Commons",
+    "tag": "p"
+   },
+   {
+    "key": "outing-documentation.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 54,
+    "excerpt": "Percorso e accessi Tratto mappato · giro da verificare",
+    "tag": "details"
+   },
+   {
+    "key": "outing-documentation.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 301,
+    "excerpt": "Sentieri20 tratti mappati nella zonaArrivo in autoPunto di arrivo documentato · sosta e transito da verificareDa completare: Raccordo dalla sosta al sentiero · ",
+    "tag": "details"
+   },
+   {
+    "key": "titolo-il-piano-in-breve",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 17,
+    "excerpt": "Il piano in breve",
+    "tag": "h2"
+   },
+   {
+    "key": "sec-passeggiata.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 90,
+    "excerpt": "LA PASSEGGIATA, PIÙ DA VICINO SI Sentiero Italia 9,5 km tratto sulla mappa n.d. difficoltà",
+    "tag": "details"
+   },
+   {
+    "key": "sec-passeggiata.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 1129,
+    "excerpt": "Dal viaggio al ritorno Sosta e raccordo da confermare In auto · andata Rieti → Parcheggio mappato presso Sella di Leonessa tempo da definire Arrivo auto · parch",
+    "tag": "details"
+   },
+   {
+    "key": "discovery-intro",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 109,
+    "excerpt": "Potresti incontrare anche queste specie. Ambienti campionati sul tratto del sentiero: presenza da verificare.",
+    "tag": "p"
+   },
+   {
+    "key": "discovery-grid",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 134,
+    "excerpt": "Erbe Ortica Ambiente compatibile › Frutti Fragolina di bosco Ambiente compatibile › Albero Faggio Faggeta nei campioni del tracciato ›",
+    "tag": "ul"
+   },
+   {
+    "key": "act-row",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 49,
+    "excerpt": "Scopri altre piante Erbe, fiori, frutti e arbusti",
+    "tag": "a"
+   },
+   {
+    "key": "p--km-in-linea-d-aria",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 23,
+    "excerpt": "14,1 km in linea d’aria",
+    "tag": "p"
+   },
+   {
+    "key": "p-faggeta-d-alto-fusto-con",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 166,
+    "excerpt": "Faggeta d'alto fusto continua sul versante nord del Terminillo verso Leonessa. Microclima umido e fresco, nebbie di condensazione e piogge orografiche anche d'e",
+    "tag": "p"
+   },
+   {
+    "key": "field-tools",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 59,
+    "excerpt": "Per il bosco Anche senza rete Salva offline Altri strumenti",
+    "tag": "section"
+   },
+   {
+    "key": "zone-community",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 286,
+    "excerpt": "DAL TACCUINO CONDIVISO Cosa dicono gli altri su Vallonina Ultimi 7 giorni · tutte le specie della zona Condivisione delle osservazioni non ancora attiva. Apri i",
+    "tag": "section"
+   },
+   {
+    "key": "titolo-approfondimenti",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 15,
+    "excerpt": "Approfondimenti",
+    "tag": "h2"
+   },
+   {
+    "key": "sec-accesso.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 15,
+    "excerpt": "Accessi e soste",
+    "tag": "details"
+   },
+   {
+    "key": "sec-accesso.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 374,
+    "excerpt": "Anteprima del tratto · N ↑ Sosta mappata Apri il navigatore Esplora la mappa Transito e sosta da verificare Punti utili Accesso e apertura da verificare Parcheg",
+    "tag": "details"
+   },
+   {
+    "key": "sec-sentieri.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 19,
+    "excerpt": "Sentieri della zona",
+    "tag": "details"
+   },
+   {
+    "key": "sec-sentieri.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 2045,
+    "excerpt": "SI Sentiero Italia Club Alpino Italiano In evidenza Nella zona 9,5 km Profilo Tracciato 1 2 3 1570 m Quote del tratto locale 1744 m Intersezioni con strade 1 17",
+    "tag": "details"
+   },
+   {
+    "key": "sec-zona.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 21,
+    "excerpt": "Bosco e aree protette",
+    "tag": "details"
+   },
+   {
+    "key": "sec-zona.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 463,
+    "excerpt": "Bosco della zona: fustaia 99% dei 139 punti di bosco (Carta Forestale, rilievo 2005–2007). Dati da leggere, fuori da ogni indice. Fonti: Carta Forestale © Regio",
+    "tag": "details"
+   },
+   {
+    "key": "p-vedi-sulla-mappa",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 16,
+    "excerpt": "Vedi sulla mappa",
+    "tag": "p"
+   }
+  ],
+  "open": []
+ },
+ {
+  "scenario": {
+   "id": "vallonina-sentieri-sereno",
+   "zone": "vallonina",
+   "target": "passeggiata",
+   "species": [],
+   "weather": "sereno"
+  },
+  "blocks": [
+   {
+    "key": "ambi",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 10,
+    "excerpt": "(immagine)",
+    "tag": "span"
+   },
+   {
+    "key": "phero-img",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 22,
+    "excerpt": "Vallonina / Terminillo",
+    "tag": "div"
+   },
+   {
+    "key": "span-giovedì-ottobre",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 18,
+    "excerpt": "giovedì 29 ottobre",
+    "tag": "span"
+   },
+   {
+    "key": "titolo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 9,
+    "excerpt": "Vallonina",
+    "tag": "h1"
+   },
+   {
+    "key": "scelte.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 8,
+    "excerpt": "Sentieri",
+    "tag": "section"
+   },
+   {
+    "key": "scelte.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 87,
+    "excerpt": "Tutte le specie del catalogoContenuti per gli interessi scelti e il giorno selezionato.",
+    "tag": "section"
+   },
+   {
+    "key": "scelte.modifica",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 8,
+    "excerpt": "Modifica",
+    "tag": "section"
+   },
+   {
+    "key": "rail-host",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 108,
+    "excerpt": "Oggi 28 Domani 29 13° Venerdì 30 13° Sabato 31 13° Domenica 1 13° Lunedì 2 13° Martedì 3 13° Mercoledì 4 13°",
+    "tag": "div"
+   },
+   {
+    "key": "hero-indicators",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 32,
+    "excerpt": "13 ° Asciutto 13–13 °C · mattina",
+    "tag": "div"
+   },
+   {
+    "key": "zone-photo-credit",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 80,
+    "excerpt": "Stagione elaborata con AI dalla foto di Idéfix, CC BY-SA 3.0 · Wikimedia Commons",
+    "tag": "p"
+   },
+   {
+    "key": "outing-documentation.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 54,
+    "excerpt": "Percorso e accessi Tratto mappato · giro da verificare",
+    "tag": "details"
+   },
+   {
+    "key": "outing-documentation.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 301,
+    "excerpt": "Sentieri20 tratti mappati nella zonaArrivo in autoPunto di arrivo documentato · sosta e transito da verificareDa completare: Raccordo dalla sosta al sentiero · ",
+    "tag": "details"
+   },
+   {
+    "key": "titolo-il-piano-in-breve",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 17,
+    "excerpt": "Il piano in breve",
+    "tag": "h2"
+   },
+   {
+    "key": "sec-passeggiata.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 119,
+    "excerpt": "LA PASSEGGIATA, PIÙ DA VICINO 429 Fontenuova - Monte di Cambio 3,5 km tratto sulla mappa E · escursionistico difficoltà",
+    "tag": "details"
+   },
+   {
+    "key": "sec-passeggiata.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 1073,
+    "excerpt": "Dal viaggio al ritorno Sosta e raccordo da confermare In auto · andata Rieti → Parcheggio mappato presso Sella di Leonessa tempo da definire Arrivo auto · parch",
+    "tag": "details"
+   },
+   {
+    "key": "p--km-in-linea-d-aria",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 23,
+    "excerpt": "14,1 km in linea d’aria",
+    "tag": "p"
+   },
+   {
+    "key": "p-faggeta-d-alto-fusto-con",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 166,
+    "excerpt": "Faggeta d'alto fusto continua sul versante nord del Terminillo verso Leonessa. Microclima umido e fresco, nebbie di condensazione e piogge orografiche anche d'e",
+    "tag": "p"
+   },
+   {
+    "key": "sec-scoperte.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 52,
+    "excerpt": "Durante il giro Ortica · Fragolina di bosco · Faggio",
+    "tag": "details"
+   },
+   {
+    "key": "sec-scoperte.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 294,
+    "excerpt": "Potresti incontrare anche queste specie. Ambienti campionati sul tratto del sentiero: presenza da verificare. Erbe Ortica Ambiente compatibile › Frutti Fragolin",
+    "tag": "details"
+   },
+   {
+    "key": "field-tools",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 59,
+    "excerpt": "Per il bosco Anche senza rete Salva offline Altri strumenti",
+    "tag": "section"
+   },
+   {
+    "key": "zone-community",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 286,
+    "excerpt": "DAL TACCUINO CONDIVISO Cosa dicono gli altri su Vallonina Ultimi 7 giorni · tutte le specie della zona Condivisione delle osservazioni non ancora attiva. Apri i",
+    "tag": "section"
+   },
+   {
+    "key": "titolo-approfondimenti",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 15,
+    "excerpt": "Approfondimenti",
+    "tag": "h2"
+   },
+   {
+    "key": "sec-accesso.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 15,
+    "excerpt": "Accessi e soste",
+    "tag": "details"
+   },
+   {
+    "key": "sec-accesso.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 374,
+    "excerpt": "Anteprima del tratto · N ↑ Sosta mappata Apri il navigatore Esplora la mappa Transito e sosta da verificare Punti utili Accesso e apertura da verificare Parcheg",
+    "tag": "details"
+   },
+   {
+    "key": "sec-sentieri.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 19,
+    "excerpt": "Sentieri della zona",
+    "tag": "details"
+   },
+   {
+    "key": "sec-sentieri.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 1988,
+    "excerpt": "429 Fontenuova - Monte di Cambio CAI Leonessa In evidenza Difficoltà E · escursionistico Intero 3,6 km · 1 h 20 · +450 m Nella zona 3,5 km Profilo Tracciato 1 1",
+    "tag": "details"
+   },
+   {
+    "key": "sec-zona.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 21,
+    "excerpt": "Bosco e aree protette",
+    "tag": "details"
+   },
+   {
+    "key": "sec-zona.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 463,
+    "excerpt": "Bosco della zona: fustaia 99% dei 139 punti di bosco (Carta Forestale, rilievo 2005–2007). Dati da leggere, fuori da ogni indice. Fonti: Carta Forestale © Regio",
+    "tag": "details"
+   },
+   {
+    "key": "p-vedi-sulla-mappa",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 16,
+    "excerpt": "Vedi sulla mappa",
+    "tag": "p"
+   }
+  ],
+  "open": []
+ },
+ {
+  "scenario": {
+   "id": "allumiere-funghi-porcino-sereno",
+   "zone": "allumiere-faggeto",
+   "target": "funghi",
+   "species": [
+    "edulis"
+   ],
+   "weather": "sereno"
+  },
+  "blocks": [
+   {
+    "key": "ambi",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 10,
+    "excerpt": "(immagine)",
+    "tag": "span"
+   },
+   {
+    "key": "phero-img",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 19,
+    "excerpt": "Apri foto e crediti",
+    "tag": "button"
+   },
+   {
+    "key": "span-giovedì-ottobre",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 18,
+    "excerpt": "giovedì 29 ottobre",
+    "tag": "span"
+   },
+   {
+    "key": "titolo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 20,
+    "excerpt": "Faggeto di Allumiere",
+    "tag": "h1"
+   },
+   {
+    "key": "phero-sub",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 11,
+    "excerpt": "Area romana",
+    "tag": "p"
+   },
+   {
+    "key": "scelte.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 14,
+    "excerpt": "Funghi Porcino",
+    "tag": "section"
+   },
+   {
+    "key": "scelte.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 210,
+    "excerpt": "PorcinoCondizioni per i funghi scelti e il meteo del giorno.Indice basato su Porcino: il miglior indice tra i funghi scelti con dati disponibili.L’indice è sper",
+    "tag": "section"
+   },
+   {
+    "key": "scelte.modifica",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 8,
+    "excerpt": "Modifica",
+    "tag": "section"
+   },
+   {
+    "key": "rail-host",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 138,
+    "excerpt": "Oggi 28 – Domani 29 1,3 13° Venerdì 30 1,3 13° Sabato 31 1,2 13° Domenica 1 1,2 13° Lunedì 2 1,2 13° Martedì 3 1,1 13° Mercoledì 4 1,1 13°",
+    "tag": "div"
+   },
+   {
+    "key": "hero-indicators",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 47,
+    "excerpt": "13 ° Asciutto 13–13 °C · mattina Condizioni 1,3",
+    "tag": "div"
+   },
+   {
+    "key": "wx-age",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 18,
+    "excerpt": "Meteo · alle 15:31",
+    "tag": "p"
+   },
+   {
+    "key": "zone-collection.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 37,
+    "excerpt": "Raccolta da verificare con il gestore",
+    "tag": "details"
+   },
+   {
+    "key": "zone-collection.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 158,
+    "excerpt": "Raccolta locale da verificare con il gestore prima dell’uscita. Referente: Comune di Allumiere (recapito diretto ancora da trovare).Regole e fonte ufficiale ↗",
+    "tag": "details"
+   },
+   {
+    "key": "outing-documentation.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 53,
+    "excerpt": "Percorso e accessi Sentiero e accesso non documentati",
+    "tag": "details"
+   },
+   {
+    "key": "outing-documentation.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 209,
+    "excerpt": "SentieriNessun tratto mappatoArrivo in autoNon documentatoDa completare: Sentiero · Arrivo in auto.Le condizioni descrivono la zona e il meteo. Non attestano un",
+    "tag": "details"
+   },
+   {
+    "key": "titolo-il-piano-in-breve",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 17,
+    "excerpt": "Il piano in breve",
+    "tag": "h2"
+   },
+   {
+    "key": "p-non-abbiamo-ancora-un-se",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 59,
+    "excerpt": "Non abbiamo ancora un sentiero documentato per questa zona.",
+    "tag": "p"
+   },
+   {
+    "key": "sec-specie.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 93,
+    "excerpt": "COSA OSSERVARE Porcino 1,3 intorno ai 540 m s.l.m. SOSIA Boleti con pori rossi o viraggio blu",
+    "tag": "details"
+   },
+   {
+    "key": "sec-specie.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 1134,
+    "excerpt": "Nelle faggete montane tra circa 1000 e 1700 m e nei castagneti e cerreti più freschi, a terra vicino agli alberi simbionti. Funghi che cerchi Potenziale di cres",
+    "tag": "details"
+   },
+   {
+    "key": "sec-quando.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 22,
+    "excerpt": "METEO Asciutto · 13 °C",
+    "tag": "details"
+   },
+   {
+    "key": "sec-quando.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 61,
+    "excerpt": "Meteo 5:00–13:00 · quota centrale. Verifica anche il rientro.",
+    "tag": "details"
+   },
+   {
+    "key": "sec-accesso.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 56,
+    "excerpt": "COME ARRIVARE Accesso auto da verificare Apri la mappa →",
+    "tag": "details"
+   },
+   {
+    "key": "sec-accesso.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 20,
+    "excerpt": "Accesso e avvertenze",
+    "tag": "details"
+   },
+   {
+    "key": "field-tools",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 59,
+    "excerpt": "Per il bosco Anche senza rete Salva offline Altri strumenti",
+    "tag": "section"
+   },
+   {
+    "key": "zone-community",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 297,
+    "excerpt": "DAL TACCUINO CONDIVISO Cosa dicono gli altri su Faggeto di Allumiere Ultimi 7 giorni · tutte le specie della zona Condivisione delle osservazioni non ancora att",
+    "tag": "section"
+   },
+   {
+    "key": "zone-actions",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 219,
+    "excerpt": "Com’è andata? → Anche una ricerca a vuoto conta. Scegli tu se condividere. I tuoi posti restano tuoi Agli altri non mostriamo il tuo punto. Se condividi, vedono",
+    "tag": "section"
+   },
+   {
+    "key": "avviso-per-le-regole-locali-di-",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 103,
+    "excerpt": "Per le regole locali di raccolta chiedi al Comune di Allumiere: non abbiamo ancora un recapito diretto.",
+    "tag": "div"
+   },
+   {
+    "key": "titolo-approfondimenti",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 15,
+    "excerpt": "Approfondimenti",
+    "tag": "h2"
+   },
+   {
+    "key": "sec-regole.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 70,
+    "excerpt": "Regole di raccolta Quantità · orari · documenti · contributo e divieti",
+    "tag": "details"
+   },
+   {
+    "key": "sec-regole.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 506,
+    "excerpt": "Quadro regionale: valgono prima i divieti e le disposizioni locali. 3 kg al giorno Commestibili · a persona · salvo eccezioni Dettagli ↗ Non commestibili Solo s",
+    "tag": "details"
+   },
+   {
+    "key": "sec-meteo.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 73,
+    "excerpt": "Da cosa dipendono le condizioni Potenziale dei funghi e meteo dell’uscita",
+    "tag": "details"
+   },
+   {
+    "key": "sec-meteo.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 2819,
+    "excerpt": "Condizioni per l’uscita: 1,3. Potenziale di crescita: 1,3. Il meteo dell’uscita applica il fattore 1. Condizioni di crescita 1,3/10 per porcino a 540 m. Descriv",
+    "tag": "details"
+   },
+   {
+    "key": "sec-meteo.consultazione",
+    "disclosure": "on-demand",
+    "actions": 2,
+    "characters": 2661,
+    "excerpt": " I fattori si moltiplicano: ×1 non riduce l’indice, un valore inferiore lo abbassa. Il calo della temperatura del suolo può aggiungere un bonus ipotizzato, solo",
+    "tag": "details"
+   },
+   {
+    "key": "sec-bosco.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 58,
+    "excerpt": "Bosco della zona intorno a 540 m Cerro · Faggio · Castagno",
+    "tag": "details"
+   },
+   {
+    "key": "sec-bosco.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 1451,
+    "excerpt": "Cerreta 41% Faggeta 11% Castagneto 10% Altro bosco/arbusteto 6% non bosco 30% Carta Forestale 289 punti della zona Fascia osservata 390–690 m Le percentuali des",
+    "tag": "details"
+   },
+   {
+    "key": "sec-zona.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 25,
+    "excerpt": "Paesaggio e alberi Faggio",
+    "tag": "details"
+   },
+   {
+    "key": "sec-zona.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 784,
+    "excerpt": "Paesaggio Da Via del Faggeto si esplora una rete segnata fra faggi e tracce della storia mineraria. È una proposta per conoscere un bosco a bassa quota; il regi",
+    "tag": "details"
+   }
+  ],
+  "open": []
+ },
+ {
+  "scenario": {
+   "id": "vallonina-piante-temporale",
+   "zone": "vallonina",
+   "target": "piante",
+   "species": [],
+   "weather": "temporale"
+  },
+  "blocks": [
+   {
+    "key": "ambi",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 10,
+    "excerpt": "(immagine)",
+    "tag": "span"
+   },
+   {
+    "key": "phero-img",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 22,
+    "excerpt": "Vallonina / Terminillo",
+    "tag": "div"
+   },
+   {
+    "key": "span-giovedì-ottobre",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 18,
+    "excerpt": "giovedì 29 ottobre",
+    "tag": "span"
+   },
+   {
+    "key": "titolo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 9,
+    "excerpt": "Vallonina",
+    "tag": "h1"
+   },
+   {
+    "key": "scelte.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 6,
+    "excerpt": "Piante",
+    "tag": "section"
+   },
+   {
+    "key": "scelte.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 87,
+    "excerpt": "Tutte le specie del catalogoContenuti per gli interessi scelti e il giorno selezionato.",
+    "tag": "section"
+   },
+   {
+    "key": "scelte.modifica",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 8,
+    "excerpt": "Modifica",
+    "tag": "section"
+   },
+   {
+    "key": "rail-host",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 108,
+    "excerpt": "Oggi 28 Domani 29 13° Venerdì 30 13° Sabato 31 13° Domenica 1 13° Lunedì 2 13° Martedì 3 13° Mercoledì 4 13°",
+    "tag": "div"
+   },
+   {
+    "key": "hero-indicators",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 33,
+    "excerpt": "13 ° Temporali 13–13 °C · mattina",
+    "tag": "div"
+   },
+   {
+    "key": "avviso-uscita-sconsigliata-temp",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 77,
+    "excerpt": "Uscita sconsigliata · temporali possibili · piovaschi possibili (90%) · 13 °C",
+    "tag": "p"
+   },
+   {
+    "key": "zone-photo-credit",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 80,
+    "excerpt": "Stagione elaborata con AI dalla foto di Idéfix, CC BY-SA 3.0 · Wikimedia Commons",
+    "tag": "p"
+   },
+   {
+    "key": "outing-documentation.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 54,
+    "excerpt": "Percorso e accessi Tratto mappato · giro da verificare",
+    "tag": "details"
+   },
+   {
+    "key": "outing-documentation.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 301,
+    "excerpt": "Sentieri20 tratti mappati nella zonaArrivo in autoPunto di arrivo documentato · sosta e transito da verificareDa completare: Raccordo dalla sosta al sentiero · ",
+    "tag": "details"
+   },
+   {
+    "key": "titolo-il-piano-in-breve",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 17,
+    "excerpt": "Il piano in breve",
+    "tag": "h2"
+   },
+   {
+    "key": "sec-passeggiata.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 90,
+    "excerpt": "LA PASSEGGIATA, PIÙ DA VICINO SI Sentiero Italia 9,5 km tratto sulla mappa n.d. difficoltà",
+    "tag": "details"
+   },
+   {
+    "key": "sec-passeggiata.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 1129,
+    "excerpt": "Dal viaggio al ritorno Sosta e raccordo da confermare In auto · andata Rieti → Parcheggio mappato presso Sella di Leonessa tempo da definire Arrivo auto · parch",
+    "tag": "details"
+   },
+   {
+    "key": "discovery-intro",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 109,
+    "excerpt": "Potresti incontrare anche queste specie. Ambienti campionati sul tratto del sentiero: presenza da verificare.",
+    "tag": "p"
+   },
+   {
+    "key": "discovery-grid",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 134,
+    "excerpt": "Erbe Ortica Ambiente compatibile › Frutti Fragolina di bosco Ambiente compatibile › Albero Faggio Faggeta nei campioni del tracciato ›",
+    "tag": "ul"
+   },
+   {
+    "key": "act-row",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 49,
+    "excerpt": "Scopri altre piante Erbe, fiori, frutti e arbusti",
+    "tag": "a"
+   },
+   {
+    "key": "p--km-in-linea-d-aria",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 23,
+    "excerpt": "14,1 km in linea d’aria",
+    "tag": "p"
+   },
+   {
+    "key": "p-faggeta-d-alto-fusto-con",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 166,
+    "excerpt": "Faggeta d'alto fusto continua sul versante nord del Terminillo verso Leonessa. Microclima umido e fresco, nebbie di condensazione e piogge orografiche anche d'e",
+    "tag": "p"
+   },
+   {
+    "key": "field-tools",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 59,
+    "excerpt": "Per il bosco Anche senza rete Salva offline Altri strumenti",
+    "tag": "section"
+   },
+   {
+    "key": "zone-community",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 286,
+    "excerpt": "DAL TACCUINO CONDIVISO Cosa dicono gli altri su Vallonina Ultimi 7 giorni · tutte le specie della zona Condivisione delle osservazioni non ancora attiva. Apri i",
+    "tag": "section"
+   },
+   {
+    "key": "titolo-approfondimenti",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 15,
+    "excerpt": "Approfondimenti",
+    "tag": "h2"
+   },
+   {
+    "key": "sec-accesso.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 15,
+    "excerpt": "Accessi e soste",
+    "tag": "details"
+   },
+   {
+    "key": "sec-accesso.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 374,
+    "excerpt": "Anteprima del tratto · N ↑ Sosta mappata Apri il navigatore Esplora la mappa Transito e sosta da verificare Punti utili Accesso e apertura da verificare Parcheg",
+    "tag": "details"
+   },
+   {
+    "key": "sec-sentieri.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 19,
+    "excerpt": "Sentieri della zona",
+    "tag": "details"
+   },
+   {
+    "key": "sec-sentieri.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 2045,
+    "excerpt": "SI Sentiero Italia Club Alpino Italiano In evidenza Nella zona 9,5 km Profilo Tracciato 1 2 3 1570 m Quote del tratto locale 1744 m Intersezioni con strade 1 17",
+    "tag": "details"
+   },
+   {
+    "key": "sec-zona.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 21,
+    "excerpt": "Bosco e aree protette",
+    "tag": "details"
+   },
+   {
+    "key": "sec-zona.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 463,
+    "excerpt": "Bosco della zona: fustaia 99% dei 139 punti di bosco (Carta Forestale, rilievo 2005–2007). Dati da leggere, fuori da ogni indice. Fonti: Carta Forestale © Regio",
+    "tag": "details"
+   },
+   {
+    "key": "p-vedi-sulla-mappa",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 16,
+    "excerpt": "Vedi sulla mappa",
+    "tag": "p"
+   }
+  ],
+  "open": []
+ },
+ {
+  "scenario": {
+   "id": "vallonina-funghi-pioppino-temporale",
+   "zone": "vallonina",
+   "target": "funghi",
+   "species": [
+    "cyclocybe-aegerita"
+   ],
+   "weather": "temporale"
+  },
+  "blocks": [
+   {
+    "key": "titolo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 9,
+    "excerpt": "Vallonina",
+    "tag": "h1"
+   },
+   {
+    "key": "scelte.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 15,
+    "excerpt": "Funghi Pioppino",
+    "tag": "section"
+   },
+   {
+    "key": "scelte.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 169,
+    "excerpt": "PioppinoCondizioni per i funghi scelti e il meteo del giorno.L’indice è sperimentale: non è una probabilità di trovare funghi.Indice non disponibile per 1 speci",
+    "tag": "section"
+   },
+   {
+    "key": "scelte.modifica",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 8,
+    "excerpt": "Modifica",
+    "tag": "section"
+   },
+   {
+    "key": "rail-host",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 108,
+    "excerpt": "Oggi 28 Domani 29 13° Venerdì 30 13° Sabato 31 13° Domenica 1 13° Lunedì 2 13° Martedì 3 13° Mercoledì 4 13°",
+    "tag": "div"
+   },
+   {
+    "key": "avviso-uscita-sconsigliata-temp",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 77,
+    "excerpt": "Uscita sconsigliata · temporali possibili · piovaschi possibili (90%) · 13 °C",
+    "tag": "p"
+   },
+   {
+    "key": "avviso-indice-non-ancora-dispon",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 121,
+    "excerpt": "Indice non ancora disponibile per le specie selezionate per questo giorno. Un dato mancante non indica assenza di funghi.",
+    "tag": "p"
+   },
+   {
+    "key": "p-apri-la-mappa-metodo-e-l",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 31,
+    "excerpt": "Apri la mappa · Metodo e limiti",
+    "tag": "p"
+   },
+   {
+    "key": "titolo-il-piano-in-breve",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 17,
+    "excerpt": "Il piano in breve",
+    "tag": "h2"
+   },
+   {
+    "key": "sec-passeggiata.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 119,
+    "excerpt": "LA PASSEGGIATA, PIÙ DA VICINO 429 Fontenuova - Monte di Cambio 3,5 km tratto sulla mappa E · escursionistico difficoltà",
+    "tag": "details"
+   },
+   {
+    "key": "sec-passeggiata.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 1149,
+    "excerpt": "Dal viaggio al ritorno Sosta e raccordo da confermare In auto · andata Rieti → Parcheggio mappato presso Sella di Leonessa tempo da definire Arrivo auto · parch",
+    "tag": "details"
+   },
+   {
+    "key": "sec-scoperte.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 52,
+    "excerpt": "Durante il giro Ortica · Fragolina di bosco · Faggio",
+    "tag": "details"
+   },
+   {
+    "key": "sec-scoperte.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 294,
+    "excerpt": "Potresti incontrare anche queste specie. Ambienti campionati sul tratto del sentiero: presenza da verificare. Erbe Ortica Ambiente compatibile › Frutti Fragolin",
+    "tag": "details"
+   },
+   {
+    "key": "p-faggeta-d-alto-fusto-con",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 166,
+    "excerpt": "Faggeta d'alto fusto continua sul versante nord del Terminillo verso Leonessa. Microclima umido e fresco, nebbie di condensazione e piogge orografiche anche d'e",
+    "tag": "p"
+   },
+   {
+    "key": "field-tools",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 59,
+    "excerpt": "Per il bosco Anche senza rete Salva offline Altri strumenti",
+    "tag": "section"
+   },
+   {
+    "key": "zone-community",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 286,
+    "excerpt": "DAL TACCUINO CONDIVISO Cosa dicono gli altri su Vallonina Ultimi 7 giorni · tutte le specie della zona Condivisione delle osservazioni non ancora attiva. Apri i",
+    "tag": "section"
+   },
+   {
+    "key": "titolo-approfondimenti",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 15,
+    "excerpt": "Approfondimenti",
+    "tag": "h2"
+   },
+   {
+    "key": "sec-accesso.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 15,
+    "excerpt": "Accessi e soste",
+    "tag": "details"
+   },
+   {
+    "key": "sec-accesso.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 374,
+    "excerpt": "Anteprima del tratto · N ↑ Sosta mappata Apri il navigatore Esplora la mappa Transito e sosta da verificare Punti utili Accesso e apertura da verificare Parcheg",
+    "tag": "details"
+   },
+   {
+    "key": "sec-sentieri.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 19,
+    "excerpt": "Sentieri della zona",
+    "tag": "details"
+   },
+   {
+    "key": "sec-sentieri.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 1988,
+    "excerpt": "429 Fontenuova - Monte di Cambio CAI Leonessa In evidenza Difficoltà E · escursionistico Intero 3,6 km · 1 h 20 · +450 m Nella zona 3,5 km Profilo Tracciato 1 1",
+    "tag": "details"
+   },
+   {
+    "key": "sec-zona.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 21,
+    "excerpt": "Bosco e aree protette",
+    "tag": "details"
+   },
+   {
+    "key": "sec-zona.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 463,
+    "excerpt": "Bosco della zona: fustaia 99% dei 139 punti di bosco (Carta Forestale, rilievo 2005–2007). Dati da leggere, fuori da ogni indice. Fonti: Carta Forestale © Regio",
+    "tag": "details"
+   }
+  ],
+  "open": []
+ },
+ {
+  "scenario": {
+   "id": "allumiere-sentieri-meteo-assente",
+   "zone": "allumiere-faggeto",
+   "target": "passeggiata",
+   "species": [],
+   "weather": null
+  },
+  "blocks": [
+   {
+    "key": "ambi",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 10,
+    "excerpt": "(immagine)",
+    "tag": "span"
+   },
+   {
+    "key": "phero-img",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 20,
+    "excerpt": "Faggeto di Allumiere",
+    "tag": "div"
+   },
+   {
+    "key": "span-giovedì-ottobre",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 18,
+    "excerpt": "giovedì 29 ottobre",
+    "tag": "span"
+   },
+   {
+    "key": "titolo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 20,
+    "excerpt": "Faggeto di Allumiere",
+    "tag": "h1"
+   },
+   {
+    "key": "scelte.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 8,
+    "excerpt": "Sentieri",
+    "tag": "section"
+   },
+   {
+    "key": "scelte.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 87,
+    "excerpt": "Tutte le specie del catalogoContenuti per gli interessi scelti e il giorno selezionato.",
+    "tag": "section"
+   },
+   {
+    "key": "scelte.modifica",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 8,
+    "excerpt": "Modifica",
+    "tag": "section"
+   },
+   {
+    "key": "rail-host",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 80,
+    "excerpt": "Oggi 28 Domani 29 Venerdì 30 Sabato 31 Domenica 1 Lunedì 2 Martedì 3 Mercoledì 4",
+    "tag": "div"
+   },
+   {
+    "key": "zone-photo-credit",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 187,
+    "excerpt": "Stagione elaborata con AI dalla foto di Albarubescens, CC BY-SA 4.0 · Variante illustrativa di stagione e meteo elaborata con IA dalla foto originale; conversio",
+    "tag": "p"
+   },
+   {
+    "key": "zone-collection.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 37,
+    "excerpt": "Raccolta da verificare con il gestore",
+    "tag": "details"
+   },
+   {
+    "key": "zone-collection.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 158,
+    "excerpt": "Raccolta locale da verificare con il gestore prima dell’uscita. Referente: Comune di Allumiere (recapito diretto ancora da trovare).Regole e fonte ufficiale ↗",
+    "tag": "details"
+   },
+   {
+    "key": "outing-documentation.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 53,
+    "excerpt": "Percorso e accessi Sentiero e accesso non documentati",
+    "tag": "details"
+   },
+   {
+    "key": "outing-documentation.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 209,
+    "excerpt": "SentieriNessun tratto mappatoArrivo in autoNon documentatoDa completare: Sentiero · Arrivo in auto.Le condizioni descrivono la zona e il meteo. Non attestano un",
+    "tag": "details"
+   },
+   {
+    "key": "avviso-meteo-da-verificare-prim",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 37,
+    "excerpt": "Meteo da verificare prima di partire.",
+    "tag": "p"
+   },
+   {
+    "key": "titolo-il-piano-in-breve",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 17,
+    "excerpt": "Il piano in breve",
+    "tag": "h2"
+   },
+   {
+    "key": "p-non-abbiamo-ancora-un-se",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 59,
+    "excerpt": "Non abbiamo ancora un sentiero documentato per questa zona.",
+    "tag": "p"
+   },
+   {
+    "key": "p--km-in-linea-d-aria",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 23,
+    "excerpt": "83,3 km in linea d’aria",
+    "tag": "p"
+   },
+   {
+    "key": "avviso-per-le-regole-locali-di-",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 103,
+    "excerpt": "Per le regole locali di raccolta chiedi al Comune di Allumiere: non abbiamo ancora un recapito diretto.",
+    "tag": "p"
+   },
+   {
+    "key": "p-da-via-del-faggeto-si-es",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 201,
+    "excerpt": "Da Via del Faggeto si esplora una rete segnata fra faggi e tracce della storia mineraria. È una proposta per conoscere un bosco a bassa quota; il regime di racc",
+    "tag": "p"
+   },
+   {
+    "key": "zone-sources",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 336,
+    "excerpt": "Fonti del luogo Sistema museale RESINA / musei naturalistici del Lazio Regione Lazio / ParchiLazio Regione Lazio Fonte cartografica citata nella provenienza Il ",
+    "tag": "div"
+   },
+   {
+    "key": "sec-scoperte.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 46,
+    "excerpt": "Durante il giro Prugnolo · Rosa canina · Cerro",
+    "tag": "details"
+   },
+   {
+    "key": "sec-scoperte.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 311,
+    "excerpt": "Potresti incontrare anche queste specie. Compatibilità con gli ambienti della zona: presenza da verificare. Frutti Prugnolo Periodo indicativo: frutti maturi › ",
+    "tag": "details"
+   },
+   {
+    "key": "field-tools",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 59,
+    "excerpt": "Per il bosco Anche senza rete Salva offline Altri strumenti",
+    "tag": "section"
+   },
+   {
+    "key": "zone-community",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 297,
+    "excerpt": "DAL TACCUINO CONDIVISO Cosa dicono gli altri su Faggeto di Allumiere Ultimi 7 giorni · tutte le specie della zona Condivisione delle osservazioni non ancora att",
+    "tag": "section"
+   },
+   {
+    "key": "titolo-approfondimenti",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 15,
+    "excerpt": "Approfondimenti",
+    "tag": "h2"
+   },
+   {
+    "key": "sec-accesso.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 15,
+    "excerpt": "Accessi e soste",
+    "tag": "details"
+   },
+   {
+    "key": "sec-accesso.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 34,
+    "excerpt": "Apri la mappa Accesso e avvertenze",
+    "tag": "details"
+   },
+   {
+    "key": "sec-sentieri.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 19,
+    "excerpt": "Sentieri della zona",
+    "tag": "details"
+   },
+   {
+    "key": "sec-sentieri.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 109,
+    "excerpt": "Non risultano sentieri compatibili in questi dati: verifica tracciati, accessibilità e segnaletica sul posto.",
+    "tag": "details"
+   },
+   {
+    "key": "sec-zona.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 21,
+    "excerpt": "Bosco e aree protette",
+    "tag": "details"
+   },
+   {
+    "key": "sec-zona.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 574,
+    "excerpt": "Bosco della zona: ceduo 56%, struttura composita 21%, fustaia 15% dei 218 punti di bosco (Carta Forestale, rilievo 2005–2007). 44 punti campione su 317 sono nel",
+    "tag": "details"
+   },
+   {
+    "key": "p-vedi-sulla-mappa",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 16,
+    "excerpt": "Vedi sulla mappa",
+    "tag": "p"
+   }
+  ],
+  "open": []
+ },
+ {
+  "scenario": {
+   "id": "allumiere-funghi-porcino-meteo-assente",
+   "zone": "allumiere-faggeto",
+   "target": "funghi",
+   "species": [
+    "edulis"
+   ],
+   "weather": null
+  },
+  "blocks": [
+   {
+    "key": "titolo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 20,
+    "excerpt": "Faggeto di Allumiere",
+    "tag": "h1"
+   },
+   {
+    "key": "scelte.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 14,
+    "excerpt": "Funghi Porcino",
+    "tag": "section"
+   },
+   {
+    "key": "scelte.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 125,
+    "excerpt": "PorcinoCondizioni per i funghi scelti e il meteo del giorno.L’indice è sperimentale: non è una probabilità di trovare funghi.",
+    "tag": "section"
+   },
+   {
+    "key": "scelte.modifica",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 8,
+    "excerpt": "Modifica",
+    "tag": "section"
+   },
+   {
+    "key": "rail-host",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 80,
+    "excerpt": "Oggi 28 Domani 29 Venerdì 30 Sabato 31 Domenica 1 Lunedì 2 Martedì 3 Mercoledì 4",
+    "tag": "div"
+   },
+   {
+    "key": "avviso-meteo-non-disponibile-pe",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 46,
+    "excerpt": "Meteo non disponibile per questa zona. Riprova",
+    "tag": "p"
+   },
+   {
+    "key": "zone-collection.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 37,
+    "excerpt": "Raccolta da verificare con il gestore",
+    "tag": "details"
+   },
+   {
+    "key": "zone-collection.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 158,
+    "excerpt": "Raccolta locale da verificare con il gestore prima dell’uscita. Referente: Comune di Allumiere (recapito diretto ancora da trovare).Regole e fonte ufficiale ↗",
+    "tag": "details"
+   },
+   {
+    "key": "avviso-indice-non-calcolabile-m",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 184,
+    "excerpt": "Indice non calcolabile: mancano pioggia, temperatura media, umidità del suolo, temperature minime, temperature massime, meteo aggiornato. Un dato mancante non i",
+    "tag": "p"
+   },
+   {
+    "key": "p-apri-la-mappa-metodo-e-l",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 31,
+    "excerpt": "Apri la mappa · Metodo e limiti",
+    "tag": "p"
+   },
+   {
+    "key": "titolo-il-piano-in-breve",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 17,
+    "excerpt": "Il piano in breve",
+    "tag": "h2"
+   },
+   {
+    "key": "p-non-abbiamo-ancora-un-se",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 59,
+    "excerpt": "Non abbiamo ancora un sentiero documentato per questa zona.",
+    "tag": "p"
+   },
+   {
+    "key": "sec-scoperte.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 46,
+    "excerpt": "Durante il giro Prugnolo · Rosa canina · Cerro",
+    "tag": "details"
+   },
+   {
+    "key": "sec-scoperte.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 311,
+    "excerpt": "Potresti incontrare anche queste specie. Compatibilità con gli ambienti della zona: presenza da verificare. Frutti Prugnolo Periodo indicativo: frutti maturi › ",
+    "tag": "details"
+   },
+   {
+    "key": "avviso-per-le-regole-locali-di-",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 103,
+    "excerpt": "Per le regole locali di raccolta chiedi al Comune di Allumiere: non abbiamo ancora un recapito diretto.",
+    "tag": "p"
+   },
+   {
+    "key": "p-da-via-del-faggeto-si-es",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 201,
+    "excerpt": "Da Via del Faggeto si esplora una rete segnata fra faggi e tracce della storia mineraria. È una proposta per conoscere un bosco a bassa quota; il regime di racc",
+    "tag": "p"
+   },
+   {
+    "key": "zone-sources",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 336,
+    "excerpt": "Fonti del luogo Sistema museale RESINA / musei naturalistici del Lazio Regione Lazio / ParchiLazio Regione Lazio Fonte cartografica citata nella provenienza Il ",
+    "tag": "div"
+   },
+   {
+    "key": "field-tools",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 59,
+    "excerpt": "Per il bosco Anche senza rete Salva offline Altri strumenti",
+    "tag": "section"
+   },
+   {
+    "key": "zone-community",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 297,
+    "excerpt": "DAL TACCUINO CONDIVISO Cosa dicono gli altri su Faggeto di Allumiere Ultimi 7 giorni · tutte le specie della zona Condivisione delle osservazioni non ancora att",
+    "tag": "section"
+   },
+   {
+    "key": "titolo-approfondimenti",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 15,
+    "excerpt": "Approfondimenti",
+    "tag": "h2"
+   },
+   {
+    "key": "sec-accesso.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 15,
+    "excerpt": "Accessi e soste",
+    "tag": "details"
+   },
+   {
+    "key": "sec-accesso.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 34,
+    "excerpt": "Apri la mappa Accesso e avvertenze",
+    "tag": "details"
+   },
+   {
+    "key": "sec-sentieri.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 19,
+    "excerpt": "Sentieri della zona",
+    "tag": "details"
+   },
+   {
+    "key": "sec-sentieri.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 109,
+    "excerpt": "Non risultano sentieri compatibili in questi dati: verifica tracciati, accessibilità e segnaletica sul posto.",
+    "tag": "details"
+   },
+   {
+    "key": "sec-zona.riepilogo",
+    "disclosure": "now",
+    "actions": 0,
+    "characters": 21,
+    "excerpt": "Bosco e aree protette",
+    "tag": "details"
+   },
+   {
+    "key": "sec-zona.dettaglio",
+    "disclosure": "on-demand",
+    "actions": 1,
+    "characters": 574,
+    "excerpt": "Bosco della zona: ceduo 56%, struttura composita 21%, fustaia 15% dei 218 punti di bosco (Carta Forestale, rilievo 2005–2007). 44 punti campione su 317 sono nel",
+    "tag": "details"
+   }
+  ],
+  "open": []
+ }
+]

@@ -409,10 +409,53 @@ sandbox, in un terminale interattivo, con `ESBUILD_WORKER_THREADS=0` e con un
 limite di file aperti ridotto. Il binario esbuild, lanciato da solo, funziona.
 I test risultano passati soltanto nel controllo GitHub.
 
+### Tredicesimo passaggio: inventario dei blocchi renderizzati
+
+Con `main` `0f6d7b97` (v400), su server statico e in sessioni isolate a
+390 px, la pagina è stata aperta in dieci stati. Coprono Vallonina e il Faggeto
+di Allumiere, gli interessi Funghi (Porcino con indice, Pioppino senza),
+Piante e Sentieri, e il meteo sintetico sereno, con temporale o assente. Lo
+[script](../evidence/002-uscita/uscita-blocchi-renderizzati.mjs) separa
+riepilogo e dettaglio di ogni sezione espandibile e conta i caratteri. I
+[risultati](../evidence/002-uscita/uscita-blocchi-renderizzati.json) danno
+57 blocchi distinti, ora registrati in `renderedFields`: la riga
+`pagina:uscita` passa da `route-seed` a `rendered-fields`. È un inventario,
+non una valutazione per persona. Non copre le altre zone, i filtri combinati,
+gli stati del taccuino e della community con account, né larghezze diverse.
+
+I rami sono tre e non mostrano gli stessi blocchi: funghi con indice
+(37 blocchi), funghi senza indice o senza meteo (23–26), piante e sentieri
+(29–32). Le cautele presenti (raccolta locale, area protetta, uscita
+sconsigliata, meteo e indice mancanti) sono visibili senza azioni; i
+contenuti di metodo superano i 2.800 caratteri e restano a una o due aperture.
+
+**Corretto:** con la specie scelta senza indice (Pioppino) o senza meteo, la
+sezione «Regole di raccolta» spariva. Proprio lì chi raccoglie ha meno
+informazioni. La [PR 320](https://github.com/zatteogit/fungaroli/pull/320),
+commit `ea9b0abe7cbea3b6e8ff4f406b05f01ae45fcda9`, la lega all’interesse per i
+funghi tramite un solo helper; per piante e sentieri resta assente.
+[Fixture](../evidence/002-uscita/regole-senza-indice.mjs) e
+[risultati](../evidence/002-uscita/regole-senza-indice-risultati.json): sei
+casi, sezione e dialogo da tastiera con ritorno del focus, quattro larghezze e
+due temi senza overflow. 643 test unitari, controlli Studio Fronda e dry-run
+passati. Il nuovo test browser non è stato eseguito in locale (`spawn EBADF`).
+
+**Da valutare**, senza correzioni:
+
+| Osservazione | Persone più toccate |
+| --- | --- |
+| «Com’è andata?» e la nota sulla privacy compaiono solo nel ramo con indice; senza indice manca l’invito ad annotare anche una ricerca a vuoto | Neofita, appassionato |
+| Nel ramo senza indice o meteo e in piante/sentieri, «Fonti del luogo» (336 caratteri) è nel piano, mentre con l’indice sta in «Paesaggio e alberi» a una apertura | Tutti; esperto per le fonti |
+| Con Piante o Sentieri la distanza compare come frase isolata («14,1 km in linea d’aria»), senza la base di partenza indicata nel ramo funghi | Escursionista |
+| Ad Allumiere con interesse Sentieri restano l’avviso sulla raccolta locale e il rinvio al Comune: da decidere se sono pertinenti o solo ripetuti | Escursionista, naturalista |
+| Ad Allumiere funghi, avviso sulla raccolta locale in alto e avviso sull’area protetta più sotto rinviano entrambi al Comune | Neofita |
+
 ## Ancora da fare prima di chiudere la pagina
 
-- Completare l’inventario delle sezioni espanse, dei filtri, degli stati del
-  taccuino e delle varianti di meteo, interessi e zone.
+- Completare l’inventario oltre i dieci stati del tredicesimo passaggio: altre
+  zone, filtri combinati, taccuino e community con account, larghezze diverse.
+- Valutare i 57 campi di `renderedFields` per ciascuna persona e decidere le
+  osservazioni «da valutare» del tredicesimo passaggio.
 - Confrontare i blocchi con tutti i documenti CMS e JSON che li alimentano;
   identificare differenze, fonti, azioni e contenuti mancanti.
 - Verificare l’ordine e l’accesso per le cinque personas, con tastiera, temi,
