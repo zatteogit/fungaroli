@@ -115,6 +115,25 @@ sulla base di produzione perché il giorno predefinito usava l’orologio reale
 anziché quello passato al calcolo. La stessa PR allinea il giorno all’orologio
 fornito; la suite completa passa. Soglie, indice e criteri restano invariati.
 
+### Confronto delle fonti e stato della pubblicazione
+
+Il 28 ottobre lo snapshot CMS pubblico dichiara ancora release
+`cb88450d-ee9d-4b7d-a5a4-f1b924f61ebd`. Nel confronto JSON con la base
+`7c1d2eb6`, `zones`, `trails`, `trailheads`, `access`, `habitat`,
+`species-traits`, `ui-copy`, `plants`, `trees` e `media-zones` coincidono
+integralmente. Il documento `legal` differisce in `info_sections`: per le
+quattro sezioni diverse, testo visibile e destinazioni dei link coincidono,
+mentre l’HTML non è identico. `zone_legal`, `protected_area_note`, onboarding
+e versione coincidono. Questa è una verifica delle sole risorse elencate,
+non un confronto di tutti i contenuti renderizzati o delle loro fonti esterne.
+
+Al controllo del 28 ottobre la versione online di `index.html` e `sw.js` è
+`v381`, mentre il ramo GitHub di produzione consultato è al commit `7c1d2eb6`
+con `v380`. La causa non è stata accertata. Prima di pubblicare un nuovo lotto
+occorre riconciliare il contenuto effettivo online con il ramo di produzione,
+per evitare di sovrascrivere modifiche già distribuite. L’analisi della pagina
+può continuare localmente.
+
 ## Ancora da fare prima di chiudere la pagina
 
 - Completare l’inventario delle sezioni espanse, dei filtri, degli stati del
