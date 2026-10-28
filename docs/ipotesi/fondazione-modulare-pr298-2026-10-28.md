@@ -26,4 +26,4 @@ Il 28/10 la base della PR è passata da `claude/brave-tesla-wu0a2b` a `main`. Ne
 
 ## Decisione
 
-In attesa di Matteo: chiudere la #298 così com'è, oppure chiuderla e aprire una PR piccola da `main` con le parti recuperabili (punti 1–2, eventualmente 3). In entrambi i casi la #298 non si unisce.
+Matteo, 28/10/2026: chiudere la #298 senza unirla e recuperare in una PR piccola da `main` l'estrazione di `normalizeFieldRecord` nel nucleo, con il suo test e il guard sugli import (punti 1–2). Il resto resta qui come ipotesi.
