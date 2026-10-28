@@ -264,6 +264,23 @@ la PR è stata fusa in `main` al commit `d5c0541b2a3a5385d4e6707bb6bfea54615e4de
 La v389 e il renderer corretto sono stati verificati online. Il primo avvio
 online e le condizioni reali non sono stati provati.
 
+### Ottavo passaggio: temporale simulato
+
+Con codice `main` al commit `8f47fb19`, sessione isolata e previsione sintetica
+con temporale, pioggia e vento forte, la testata mostra «Temporali» e «Vento
+forte». Nel piano, però, il riepilogo «Quando» apre con «Arriva entro le 6:30»;
+solo aprendo compare «Uscita sconsigliata con temporali», insieme a orari di
+partenza e a un suggerimento per trovare meno gente. Le [prove](../evidence/002-uscita/)
+documentano i due stati. La home, nella stessa fixture in cui tutte le zone
+sono temporalesche, mostra che il meteo sconsiglia l’uscita.
+
+Il messaggio di cautela esiste già: la gerarchia nel dettaglio rischia però di
+presentare un invito a partire prima della cautela stessa. Va corretta la
+presentazione facendo emergere l’avviso e sospendendo i suggerimenti di partenza
+quando è già attiva la condizione `thunder`, senza cambiare classificazione,
+soglie o dati meteo. Alba e orari legali devono restare consultabili come dati,
+senza presentare un orario di partenza consigliato per quel caso.
+
 ## Ancora da fare prima di chiudere la pagina
 
 - Completare l’inventario delle sezioni espanse, dei filtri, degli stati del

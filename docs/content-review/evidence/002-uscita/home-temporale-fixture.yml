@@ -1,0 +1,322 @@
+- generic [ref=f4e1]:
+  - banner [ref=f4e2]:
+    - link "Fronda, home" [ref=f4e3] [cursor=pointer]:
+      - /url: "#/"
+    - 'link "pilota · Lazio : versione pilota, che cosa copre" [ref=f4e9] [cursor=pointer]':
+      - /url: "#/info"
+      - generic [ref=f4e10]: pilota ·
+      - text: Lazio
+      - generic [ref=f4e11]: ": versione pilota, che cosa copre"
+    - button "Cerca in tutta l’app" [ref=f4e13] [cursor=pointer]
+  - navigation "Sezioni" [ref=f4e17]:
+    - generic [ref=f4e18]:
+      - link "Uscite" [ref=f4e19] [cursor=pointer]:
+        - /url: "#/"
+      - link "Mappa" [ref=f4e23] [cursor=pointer]:
+        - /url: "#/mappa"
+      - link "Scopri" [ref=f4e27] [cursor=pointer]:
+        - /url: "#/scopri"
+      - link "Taccuino" [ref=f4e32] [cursor=pointer]:
+        - /url: "#/diario"
+  - main [ref=f4e42]:
+    - region [ref=f4e358]:
+      - paragraph [ref=f4e359]: mercoledì 28 ottobre
+      - heading "Dove andare" [active] [level=1] [ref=f4e360]
+      - group "Cosa cerchi e preferenze" [ref=f4e362]:
+        - group "Cosa cerchi" [ref=f4e363]:
+          - button "Funghi" [pressed] [ref=f4e364] [cursor=pointer]
+          - button "Piante" [pressed] [ref=f4e365] [cursor=pointer]
+          - button "Sentieri" [ref=f4e366] [cursor=pointer]
+        - button "Filtri avanzati, 2 attivi" [ref=f4e368] [cursor=pointer]:
+          - generic [ref=f4e373]: Filtri
+          - generic [aria-hidden] [ref=f4e374]: "2"
+      - generic [ref=f4e375]:
+        - tablist "Giorno di uscita" [ref=f4e376]:
+          - 'tab "Tutta la settimana, 29 ottobre - 4 novembre: mostra le uscite migliori del periodo" [selected] [ref=f4e377] [cursor=pointer]':
+            - generic [ref=f4e378]: Settimana
+            - generic [ref=f4e379]: 29–4
+          - tab "Oggi 28 tardi" [ref=f4e380] [cursor=pointer]:
+            - generic [ref=f4e381]: Oggi
+            - generic [ref=f4e382]: "28"
+            - generic [ref=f4e383]: tardi
+          - 'tab "Domani 29 Meteo Cicolano: temporali possibili · pioggia 27 mm · raffiche fino a 55 km/h · 13 °C" [ref=f4e388] [cursor=pointer]':
+            - generic [ref=f4e389]: Domani
+            - generic [ref=f4e390]: "29"
+            - 'generic "Meteo Cicolano: temporali possibili · pioggia 27 mm · raffiche fino a 55 km/h · 13 °C" [ref=f4e391]': 13°
+          - 'tab "venerdì 30 Meteo Cicolano: temporali possibili · pioggia 27 mm · raffiche fino a 55 km/h · 13 °C" [ref=f4e397] [cursor=pointer]':
+            - generic [ref=f4e398]: venerdì
+            - generic [ref=f4e399]: "30"
+            - 'generic "Meteo Cicolano: temporali possibili · pioggia 27 mm · raffiche fino a 55 km/h · 13 °C" [ref=f4e400]': 13°
+          - 'tab "sabato 31 Meteo Cicolano: temporali possibili · pioggia 27 mm · raffiche fino a 55 km/h · 13 °C" [ref=f4e406] [cursor=pointer]':
+            - generic [ref=f4e407]: sabato
+            - generic [ref=f4e408]: "31"
+            - 'generic "Meteo Cicolano: temporali possibili · pioggia 27 mm · raffiche fino a 55 km/h · 13 °C" [ref=f4e409]': 13°
+          - 'tab "domenica 1 Meteo Cicolano: temporali possibili · pioggia 27 mm · raffiche fino a 55 km/h · 13 °C" [ref=f4e415] [cursor=pointer]':
+            - generic [ref=f4e416]: domenica
+            - generic [ref=f4e417]: "1"
+            - 'generic "Meteo Cicolano: temporali possibili · pioggia 27 mm · raffiche fino a 55 km/h · 13 °C" [ref=f4e418]': 13°
+          - 'tab "lunedì 2 Meteo Cicolano: temporali possibili · pioggia 27 mm · raffiche fino a 55 km/h · 13 °C" [ref=f4e424] [cursor=pointer]':
+            - generic [ref=f4e425]: lunedì
+            - generic [ref=f4e426]: "2"
+            - 'generic "Meteo Cicolano: temporali possibili · pioggia 27 mm · raffiche fino a 55 km/h · 13 °C" [ref=f4e427]': 13°
+          - 'tab "martedì 3 Meteo Cicolano: temporali possibili · pioggia 27 mm · raffiche fino a 55 km/h · 13 °C" [ref=f4e433] [cursor=pointer]':
+            - generic [ref=f4e434]: martedì
+            - generic [ref=f4e435]: "3"
+            - 'generic "Meteo Cicolano: temporali possibili · pioggia 27 mm · raffiche fino a 55 km/h · 13 °C" [ref=f4e436]': 13°
+          - 'tab "mercoledì 4 Meteo Cicolano: temporali possibili · pioggia 27 mm · raffiche fino a 55 km/h · 13 °C" [ref=f4e442] [cursor=pointer]':
+            - generic [ref=f4e443]: mercoledì
+            - generic [ref=f4e444]: "4"
+            - 'generic "Meteo Cicolano: temporali possibili · pioggia 27 mm · raffiche fino a 55 km/h · 13 °C" [ref=f4e445]': 13°
+        - button "Scorri avanti" [ref=f4e451] [cursor=pointer]
+      - generic [ref=f4e455]:
+        - generic [ref=f4e461]:
+          - heading "Con questo meteo, meglio aspettare." [level=2] [ref=f4e462]
+          - paragraph [ref=f4e463]: Nelle zone selezionate il meteo sconsiglia l’uscita. Qui sotto trovi comunque luoghi, letture e idee per il prossimo giro.
+        - paragraph [ref=f4e464]: Nei prossimi 7 giorni non emerge un’altra data favorevole.
+      - generic [ref=f4e466]:
+        - generic [ref=f4e467]: Meteo delle 12:54
+        - button "Aggiorna" [ref=f4e468] [cursor=pointer]
+      - generic [ref=f4e473]:
+        - complementary [ref=f4e474]:
+          - generic [ref=f4e475]:
+            - heading "Fronda cresce con le tue prove" [level=2] [ref=f4e476]
+            - paragraph [ref=f4e477]: "Stai partecipando al test: raccontami cosa funziona e cosa possiamo migliorare."
+          - button "Invia feedback" [ref=f4e478] [cursor=pointer]
+        - region "Boschi e sentieri del Lazio" [ref=f4e479]:
+          - generic [ref=f4e480]:
+            - generic [ref=f4e481]:
+              - heading "Boschi e sentieri del Lazio" [level=2] [ref=f4e482]
+              - paragraph [ref=f4e483]: Scegli il prossimo giro tra 36 zone nelle cinque province.
+            - link "Vedi sulla mappa →" [ref=f4e484] [cursor=pointer]:
+              - /url: "#/mappa"
+          - generic [ref=f4e485]:
+            - link "Rieti Vallonina Faggete fresche sul versante nord del Terminillo" [ref=f4e486] [cursor=pointer]:
+              - /url: "#/zona/vallonina/0"
+              - generic [ref=f4e487]:
+                - generic [ref=f4e488]: Rieti
+                - generic [ref=f4e489]: Vallonina
+                - generic [ref=f4e490]: Faggete fresche sul versante nord del Terminillo
+            - link "Roma Faggeto di Allumiere Faggi a bassa quota e tracce della storia mineraria" [ref=f4e491] [cursor=pointer]:
+              - /url: "#/zona/allumiere-faggeto/0"
+              - generic [ref=f4e492]:
+                - generic [ref=f4e493]: Roma
+                - generic [ref=f4e494]: Faggeto di Allumiere
+                - generic [ref=f4e495]: Faggi a bassa quota e tracce della storia mineraria
+            - link "Viterbo Monte Venere e lago di Vico Dal bosco di Monte Venere al Pozzo del Diavolo" [ref=f4e496] [cursor=pointer]:
+              - /url: "#/zona/vico-monte-venere/0"
+              - generic [ref=f4e497]:
+                - generic [ref=f4e498]: Viterbo
+                - generic [ref=f4e499]: Monte Venere e lago di Vico
+                - generic [ref=f4e500]: Dal bosco di Monte Venere al Pozzo del Diavolo
+            - link "Anteprima del tratto mappato 710, orientata a nord 710 3,3 km · E · escursionistico Tratto mappato · OSM Latina Valle Sant’Angelo e lecci del Semprevisa La valle dei lecci, sui sentieri verso Sant’Angelo" [ref=f4e501] [cursor=pointer]:
+              - /url: "#/zona/lepini-bassiano-santangelo/0"
+              - generic [ref=f4e502]:
+                - img "Anteprima del tratto mappato 710, orientata a nord" [ref=f4e503]
+                - generic [ref=f4e505]:
+                  - generic [ref=f4e506]: "710"
+                  - generic [ref=f4e507]: 3,3 km · E · escursionistico
+                - generic [ref=f4e508]: Tratto mappato · OSM
+              - generic [ref=f4e509]:
+                - generic [ref=f4e510]: Latina
+                - generic [ref=f4e511]: Valle Sant’Angelo e lecci del Semprevisa
+                - generic [ref=f4e512]: La valle dei lecci, sui sentieri verso Sant’Angelo
+            - link "Frosinone Prato di Campoli e boschi verso Pizzo Deta I boschi degli Ernici, lungo la direttrice al Pizzo Deta" [ref=f4e513] [cursor=pointer]:
+              - /url: "#/zona/ernici-prato-campoli/0"
+              - generic [ref=f4e514]:
+                - generic [ref=f4e515]: Frosinone
+                - generic [ref=f4e516]: Prato di Campoli e boschi verso Pizzo Deta
+                - generic [ref=f4e517]: I boschi degli Ernici, lungo la direttrice al Pizzo Deta
+        - complementary [ref=f4e518]:
+          - generic [ref=f4e519]:
+            - heading "Goccia dopo goccia." [level=2] [ref=f4e520]
+            - paragraph [ref=f4e521]: "L’acqua di oggi è una parte della storia. Contano anche le piogge precedenti, la temperatura e l’habitat: nessun conto alla rovescia uguale per tutti i funghi."
+            - link "Pioggia e condizioni" [ref=f4e522] [cursor=pointer]:
+              - /url: "#/guide/pioggia-e-crescita"
+              - text: Pioggia e condizioni
+              - generic [aria-hidden] [ref=f4e523]: →
+          - figure [ref=f4e524]:
+            - img "Gocce su un ramo" [ref=f4e525]
+        - region "La community di Fronda" [ref=f4e526]:
+          - heading "Un bosco, tante esperienze" [level=2] [ref=f4e527]
+          - list [ref=f4e528]:
+            - listitem [ref=f4e529]:
+              - generic [ref=f4e536]:
+                - generic [ref=f4e537]: Vedi
+                - generic [ref=f4e538]: cosa si trova in giro
+            - listitem [ref=f4e539]:
+              - generic [ref=f4e544]:
+                - generic [ref=f4e545]: Racconta
+                - generic [ref=f4e546]: le tue uscite
+            - listitem [ref=f4e547]:
+              - generic [ref=f4e551]:
+                - generic [ref=f4e552]: Condividi
+                - generic [ref=f4e553]: e scopri gli altri
+          - button "Come funziona la condivisione" [ref=f4e554] [cursor=pointer]: Come funziona la condivisione →
+        - complementary "La frase del giorno" [ref=f4e555]:
+          - text: “
+          - generic [ref=f4e557]:
+            - paragraph [ref=f4e558]: tuoi cespi solitari intorno spargi, odorata ginestra, contenta dei deserti.
+            - 'link "Giacomo Leopardi. Fonte: Canti, La ginestra, vv. 5–7 (edizione Ginzburg, 1938)" [ref=f4e559] [cursor=pointer]':
+              - /url: https://it.wikisource.org/wiki/Canti_(Leopardi_-_Ginzburg)/La_ginestra
+              - text: Giacomo Leopardi
+        - region "Giri dalla redazione" [ref=f4e560]:
+          - generic [ref=f4e561]:
+            - generic [ref=f4e562]:
+              - paragraph [ref=f4e563]: Dalla redazione
+              - heading "Un giro da passarsi." [level=2] [ref=f4e564]
+              - paragraph [ref=f4e565]: Idee da salvare, condividere e trasformare nella tua prossima uscita.
+            - link "Tutti i giri ↗" [ref=f4e566] [cursor=pointer]:
+              - /url: "#/giri"
+          - list [ref=f4e567]:
+            - listitem [ref=f4e568]:
+              - link "Una mattina fra i faggi Il Tancia, a passo lento Un giro da tenere per quando hai voglia di bosco, pause e un sentiero da leggere con calma. 4,9 km itinerario CAI 2 h 20 min tempo indicativo E escursionistico Matteo Redattore Fronda Sfoglia il giro" [ref=f4e569] [cursor=pointer]:
+                - /url: "#/giri/tancia-a-passo-lento"
+                - generic [ref=f4e571]:
+                  - generic [aria-hidden] [ref=f4e572]: "01"
+                  - paragraph [ref=f4e573]: Una mattina fra i faggi
+                  - heading "Il Tancia, a passo lento" [level=3] [ref=f4e574]
+                  - paragraph [ref=f4e575]: Un giro da tenere per quando hai voglia di bosco, pause e un sentiero da leggere con calma.
+                  - list [ref=f4e576]:
+                    - listitem [ref=f4e577]:
+                      - generic [ref=f4e578]: 4,9 km
+                      - generic [ref=f4e579]: itinerario CAI
+                    - listitem [ref=f4e580]:
+                      - generic [ref=f4e581]: 2 h 20 min
+                      - generic [ref=f4e582]: tempo indicativo
+                    - listitem [ref=f4e583]:
+                      - generic [ref=f4e584]: E
+                      - generic [ref=f4e585]: escursionistico
+                  - generic [ref=f4e586]:
+                    - generic [ref=f4e587]:
+                      - generic [aria-hidden] [ref=f4e588]: M
+                      - generic [ref=f4e589]:
+                        - text: Matteo
+                        - generic [ref=f4e590]: Redattore Fronda
+                    - generic [ref=f4e591]: Sfoglia il giro ↗
+            - listitem [ref=f4e592]:
+              - link "Una giornata da lasciare larga Rascino, fra bosco e spazi aperti Un’idea per chi vuole camminare e dare spazio anche alle soste di osservazione. 7,5 km itinerario CAI 3 h tempo indicativo E escursionistico Matteo Redattore Fronda Sfoglia il giro" [ref=f4e593] [cursor=pointer]:
+                - /url: "#/giri/rascino-bosco-e-spazi-aperti"
+                - generic [ref=f4e595]:
+                  - generic [aria-hidden] [ref=f4e596]: "02"
+                  - paragraph [ref=f4e597]: Una giornata da lasciare larga
+                  - heading "Rascino, fra bosco e spazi aperti" [level=3] [ref=f4e598]
+                  - paragraph [ref=f4e599]: Un’idea per chi vuole camminare e dare spazio anche alle soste di osservazione.
+                  - list [ref=f4e600]:
+                    - listitem [ref=f4e601]:
+                      - generic [ref=f4e602]: 7,5 km
+                      - generic [ref=f4e603]: itinerario CAI
+                    - listitem [ref=f4e604]:
+                      - generic [ref=f4e605]: 3 h
+                      - generic [ref=f4e606]: tempo indicativo
+                    - listitem [ref=f4e607]:
+                      - generic [ref=f4e608]: E
+                      - generic [ref=f4e609]: escursionistico
+                  - generic [ref=f4e610]:
+                    - generic [ref=f4e611]:
+                      - generic [aria-hidden] [ref=f4e612]: M
+                      - generic [ref=f4e613]:
+                        - text: Matteo
+                        - generic [ref=f4e614]: Redattore Fronda
+                    - generic [ref=f4e615]: Sfoglia il giro ↗
+            - listitem [ref=f4e616]:
+              - link "Da Villa San Cipriano a Serreripa Sulla Laga, un giro per imparare Un percorso più breve, da usare come esempio per cominciare a tenere il proprio taccuino. 3 km itinerario CAI 1 h 30 min tempo indicativo T turistico Matteo Redattore Fronda Sfoglia il giro" [ref=f4e617] [cursor=pointer]:
+                - /url: "#/giri/laga-un-giro-per-imparare"
+                - generic [ref=f4e619]:
+                  - generic [aria-hidden] [ref=f4e620]: "03"
+                  - paragraph [ref=f4e621]: Da Villa San Cipriano a Serreripa
+                  - heading "Sulla Laga, un giro per imparare" [level=3] [ref=f4e622]
+                  - paragraph [ref=f4e623]: Un percorso più breve, da usare come esempio per cominciare a tenere il proprio taccuino.
+                  - list [ref=f4e624]:
+                    - listitem [ref=f4e625]:
+                      - generic [ref=f4e626]: 3 km
+                      - generic [ref=f4e627]: itinerario CAI
+                    - listitem [ref=f4e628]:
+                      - generic [ref=f4e629]: 1 h 30 min
+                      - generic [ref=f4e630]: tempo indicativo
+                    - listitem [ref=f4e631]:
+                      - generic [ref=f4e632]: T
+                      - generic [ref=f4e633]: turistico
+                  - generic [ref=f4e634]:
+                    - generic [ref=f4e635]:
+                      - generic [aria-hidden] [ref=f4e636]: M
+                      - generic [ref=f4e637]:
+                        - text: Matteo
+                        - generic [ref=f4e638]: Redattore Fronda
+                    - generic [ref=f4e639]: Sfoglia il giro ↗
+        - region [ref=f4e640]:
+          - heading "Funghi da conoscere in questo periodo" [level=2] [ref=f4e641]
+          - generic [ref=f4e642]:
+            - list "Funghi da conoscere in questo periodo" [ref=f4e643]:
+              - listitem [ref=f4e644]:
+                - link "Porcino Scheda di catalogo" [ref=f4e645] [cursor=pointer]:
+                  - /url: "#/specie/edulis"
+                  - generic [ref=f4e646]:
+                    - generic [ref=f4e647]: Porcino
+                    - generic [ref=f4e648]: Scheda di catalogo
+              - listitem [ref=f4e649]:
+                - link "Porcino rosso Scheda di catalogo" [ref=f4e650] [cursor=pointer]:
+                  - /url: "#/specie/pinophilus"
+                  - generic [ref=f4e651]:
+                    - generic [ref=f4e652]: Porcino rosso
+                    - generic [ref=f4e653]: Scheda di catalogo
+              - listitem [ref=f4e654]:
+                - link "Porcino nero Scheda di catalogo" [ref=f4e655] [cursor=pointer]:
+                  - /url: "#/specie/aereus"
+                  - generic [ref=f4e656]:
+                    - generic [ref=f4e657]: Porcino nero
+                    - generic [ref=f4e658]: Scheda di catalogo
+              - listitem [ref=f4e659]:
+                - link "Porcino estivo Scheda di catalogo" [ref=f4e660] [cursor=pointer]:
+                  - /url: "#/specie/aestivalis"
+                  - generic [ref=f4e661]:
+                    - generic [ref=f4e662]: Porcino estivo
+                    - generic [ref=f4e663]: Scheda di catalogo
+              - listitem [ref=f4e664]:
+                - link "Ovolo buono Scheda di catalogo" [ref=f4e665] [cursor=pointer]:
+                  - /url: "#/specie/caesarea"
+                  - generic [ref=f4e666]:
+                    - generic [ref=f4e667]: Ovolo buono
+                    - generic [ref=f4e668]: Scheda di catalogo
+              - listitem [ref=f4e669]:
+                - link "Finferlo Scheda di catalogo" [ref=f4e670] [cursor=pointer]:
+                  - /url: "#/specie/cibarius"
+                  - generic [ref=f4e671]:
+                    - generic [ref=f4e672]: Finferlo
+                    - generic [ref=f4e673]: Scheda di catalogo
+              - listitem [ref=f4e674]:
+                - link "Trombetta dei morti Scheda di catalogo" [ref=f4e675] [cursor=pointer]:
+                  - /url: "#/specie/cornucopioides"
+                  - generic [ref=f4e676]:
+                    - generic [ref=f4e677]: Trombetta dei morti
+                    - generic [ref=f4e678]: Scheda di catalogo
+              - listitem [ref=f4e679]:
+                - link "Steccherino dorato Scheda di catalogo" [ref=f4e680] [cursor=pointer]:
+                  - /url: "#/specie/repandum"
+                  - generic [ref=f4e681]:
+                    - generic [ref=f4e682]: Steccherino dorato
+                    - generic [ref=f4e683]: Scheda di catalogo
+              - listitem [ref=f4e684]:
+                - link "Mazza di tamburo Scheda di catalogo" [ref=f4e685] [cursor=pointer]:
+                  - /url: "#/specie/procera"
+                  - generic [ref=f4e686]:
+                    - generic [ref=f4e687]: Mazza di tamburo
+                    - generic [ref=f4e688]: Scheda di catalogo
+              - listitem [ref=f4e689]:
+                - link "Chiodino Scheda di catalogo" [ref=f4e690] [cursor=pointer]:
+                  - /url: "#/specie/mellea"
+                  - generic [ref=f4e691]:
+                    - generic [ref=f4e692]: Chiodino
+                    - generic [ref=f4e693]: Scheda di catalogo
+            - button "Scorri avanti" [ref=f4e694] [cursor=pointer]
+        - link "Hai qualcosa da ricordare? Foto, appunti e ricordi delle tue uscite, nel Taccuino." [ref=f4e697] [cursor=pointer]:
+          - /url: "#/diario"
+          - generic [ref=f4e698]:
+            - generic [ref=f4e699]: Hai qualcosa da ricordare?
+            - generic [ref=f4e700]: Foto, appunti e ricordi delle tue uscite, nel Taccuino.
+        - link "Regole di raccolta Nel Lazio si raccoglie con attestato micologico, ricevuta del contributo regionale annuale e documento d'identità (L.R. 32/1998)." [ref=f4e701] [cursor=pointer]:
+          - /url: "#/info"
+          - generic [ref=f4e706]:
+            - generic [ref=f4e707]: Regole di raccolta
+            - generic [ref=f4e708]: Nel Lazio si raccoglie con attestato micologico, ricevuta del contributo regionale annuale e documento d'identità (L.R. 32/1998).
+    - text: "! ✓ ▶ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋ ＋"
+  - status
