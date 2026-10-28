@@ -1,5 +1,6 @@
 import type { AlertConfig, AlertCredentials, OutingKey } from "./types.js";
 import { record } from "./field-contracts.js";
+import { todayISO } from "./weather.js";
 const KEY = "fronda:outing-alerts:v1";
 const read = (): AlertCredentials | null => {
   try {
@@ -13,7 +14,12 @@ const read = (): AlertCredentials | null => {
       !data.outings.every((x): x is string => typeof x === "string")
     )
       return null;
-    return { token: data.token, outings: data.outings };
+    // Il server cancella i giorni passati: l'elenco locale li toglie allo stesso modo.
+    const today = todayISO();
+    return {
+      token: data.token,
+      outings: data.outings.filter((x) => (x.split("|")[1] || "") >= today),
+    };
   } catch {
     return null;
   }
@@ -97,10 +103,13 @@ async function request(
     throw Error("Risposta non valida. Riprova.");
   }
   if (!r.ok || result.ok !== true)
-    throw Error(
-      typeof result.error === "string"
-        ? result.error
-        : "Non riesco a modificare gli avvisi.",
+    throw Object.assign(
+      Error(
+        typeof result.error === "string"
+          ? result.error
+          : "Non riesco a modificare gli avvisi.",
+      ),
+      { code: typeof result.code === "string" ? result.code : "" },
     );
 }
 export async function toggleOutingAlerts({ zoneId, date }: OutingKey) {
@@ -129,24 +138,32 @@ export async function toggleOutingAlerts({ zoneId, date }: OutingKey) {
       setTimeout(() => reject(Error("Apri di nuovo Fronda e riprova.")), 10000),
     ),
   ]);
-  let subscription = await reg.pushManager.getSubscription();
-  const created = !subscription;
-  if (!subscription) {
-    const key = Uint8Array.from(
-      atob(current.publicKey.replace(/-/g, "+").replace(/_/g, "/")),
-      (c) => c.charCodeAt(0),
-    );
-    subscription = await reg.pushManager.subscribe({
+  const key = Uint8Array.from(
+    atob(current.publicKey.replace(/-/g, "+").replace(/_/g, "/")),
+    (c) => c.charCodeAt(0),
+  );
+  const subscribe = () =>
+    reg.pushManager.subscribe({
       userVisibleOnly: true,
       applicationServerKey: key,
     });
-  }
+  let subscription = await reg.pushManager.getSubscription();
+  let created = !subscription;
+  if (!subscription) subscription = await subscribe();
+  const post = (s: PushSubscription) =>
+    request("POST", { zoneId, date, subscription: s.toJSON() }, own.token);
   try {
-    await request(
-      "POST",
-      { zoneId, date, subscription: subscription.toJSON() },
-      own.token,
-    );
+    try {
+      await post(subscription);
+    } catch (e) {
+      // Dati locali cancellati: l'iscrizione push appartiene a un token perso.
+      // Una nuova iscrizione ha un altro endpoint, quindi un dispositivo nuovo sul server.
+      if (created || (e as { code?: string }).code !== "device-token") throw e;
+      await subscription.unsubscribe();
+      subscription = await subscribe();
+      created = true;
+      await post(subscription);
+    }
   } catch (e) {
     if (created)
       try {

@@ -1,6 +1,7 @@
 import { buildPushPayload } from "@block65/webcrypto-web-push";
 import { forecastParams } from "./weather-provider.js";
 import { weatherStorage } from "./weather-storage.js";
+import { weatherCacheKey } from "./weather-key.js";
 import { outingFor } from "../js/outing.js";
 import { todayISO } from "../js/weather.js";
 const response = (data, status = 200) =>
@@ -11,8 +12,8 @@ const response = (data, status = 200) =>
       "x-content-type-options": "nosniff",
     },
   });
-const fail = (message, status = 422) => {
-  throw Object.assign(Error(message), { status });
+const fail = (message, status = 422, code) => {
+  throw Object.assign(Error(message), { status, code });
 };
 export const ALERT_SCHEMA = [
   "CREATE TABLE IF NOT EXISTS outing_alert_devices (id TEXT PRIMARY KEY, token_hash TEXT NOT NULL, subscription TEXT NOT NULL, expires_at INTEGER NOT NULL)",
@@ -114,7 +115,7 @@ async function body(request) {
 }
 async function weather(env, zone, day, now) {
   const r = await weatherStorage(env).get(
-      forecastParams([zone], "outing").toString(),
+      await weatherCacheKey(forecastParams([zone], "outing")),
     ),
     h = r?.raw?.[0]?.hourly;
   if (!h) return null;
@@ -231,6 +232,7 @@ export async function handleOutingAlerts(
       fail(
         "Rimuovi e riattiva il permesso alle notifiche per questo sito.",
         409,
+        "device-token",
       );
     const rateId = await hash(
       env.PUSH_PRIVATE_KEY +
@@ -255,8 +257,10 @@ export async function handleOutingAlerts(
     )
       fail("Troppe richieste. Riprova più tardi.", 429);
     const count = await db
-      .prepare("SELECT COUNT(*) AS n FROM outing_alerts WHERE device_id=?")
-      .bind(id)
+      .prepare(
+        "SELECT COUNT(*) AS n FROM outing_alerts WHERE device_id=? AND day>=?",
+      )
+      .bind(id, today)
       .first();
     if (
       count.n >= 10 &&
@@ -288,6 +292,7 @@ export async function handleOutingAlerts(
       fail(
         "Rimuovi e riattiva il permesso alle notifiche per questo sito.",
         409,
+        "device-token",
       );
     if (
       !(await db
@@ -305,22 +310,18 @@ export async function handleOutingAlerts(
         error: e.status
           ? e.message
           : "Notifiche temporaneamente non disponibili. Riprova.",
+        ...(e.code && { code: e.code }),
       },
       e.status || 503,
     );
   }
 }
-export async function sendOutingAlerts(
-  env,
-  { zones, now = Date.now(), fetcher = fetch } = {},
-) {
-  if (!env.COMMUNITY_DB || !env.PUSH_PUBLIC_KEY || !env.PUSH_PRIVATE_KEY)
-    return;
+export async function cleanupOutingAlerts(env, now = Date.now()) {
+  if (!env.COMMUNITY_DB) return;
   const db = env.COMMUNITY_DB;
   await init(db);
-  const today = todayISO(new Date(now));
   await db.batch([
-    db.prepare("DELETE FROM outing_alerts WHERE day<?").bind(today),
+    db.prepare("DELETE FROM outing_alerts WHERE day<?").bind(todayISO(new Date(now))),
     db
       .prepare(
         "DELETE FROM outing_alert_devices WHERE expires_at<? OR id NOT IN (SELECT device_id FROM outing_alerts)",
@@ -331,11 +332,22 @@ export async function sendOutingAlerts(
     ),
     db.prepare("DELETE FROM outing_alert_rate WHERE expires_at<?").bind(now),
   ]);
+}
+export async function sendOutingAlerts(
+  env,
+  { zones, now = Date.now(), fetcher = fetch } = {},
+) {
+  if (!env.COMMUNITY_DB || !env.PUSH_PUBLIC_KEY || !env.PUSH_PRIVATE_KEY)
+    return;
+  const db = env.COMMUNITY_DB;
+  await init(db);
+  const today = todayISO(new Date(now));
+  // Le pulizie girano nel cron notturno: qui si saltano soltanto i giorni passati.
   const { results: rows } = await db
     .prepare(
-      "SELECT a.*,d.subscription FROM outing_alerts a JOIN outing_alert_devices d ON d.id=a.device_id WHERE a.lease_until<=? ORDER BY a.lease_until LIMIT 10",
+      "SELECT a.*,d.subscription FROM outing_alerts a JOIN outing_alert_devices d ON d.id=a.device_id WHERE a.lease_until<=? AND a.day>=? AND d.expires_at>=? ORDER BY a.lease_until LIMIT 10",
     )
-    .bind(now)
+    .bind(now, today, now)
     .all();
   const cached = new Map();
   for (const row of rows) {
@@ -376,15 +388,10 @@ export async function sendOutingAlerts(
     const message = {
       title: "Meteo cambiato per la tua uscita",
       body: `${zone.title || zone.name} · ${row.day}: ${w.main || w.text}. Apri Fronda e ricontrolla prima di partire.`,
-      url: `/#/zona/${zone.id}/0`,
+      // Data, non scarto in giorni: la notifica aperta il giorno dopo porta ancora all'uscita seguita.
+      url: `/#/zona/${zone.id}/${row.day}`,
       tag: "outing-" + key,
     };
-    // Link keeps the originally followed calendar day, rather than always opening today.
-    const offset = Math.round(
-      (Date.parse(row.day + "T12:00:00Z") - Date.parse(today + "T12:00:00Z")) /
-        864e5,
-    );
-    message.url = `/#/zona/${zone.id}/${offset}`;
     try {
       const payload = await buildPushPayload(
         { data: JSON.stringify(message), options: { ttl: 3600 } },

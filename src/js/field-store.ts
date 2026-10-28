@@ -49,23 +49,63 @@ async function io(operation: StoreOperation): Promise<unknown> {
     tx.onabort = tx.onerror;
   });
 }
-export const listFieldPacks = async (): Promise<StoredFieldPack[]> => {
+// Una copia non leggibile (versione vecchia, dati rovinati) non deve bloccare l'elenco:
+// si salta, ma resta rimovibile con il suo id.
+export interface UnreadableFieldPack {
+  id: string;
+}
+const parsed = (value: unknown) => {
+  try {
+    return parseStoredFieldPack(value);
+  } catch {
+    return null;
+  }
+};
+const rawId = (value: unknown) =>
+  typeof value === "object" &&
+  value &&
+  "id" in value &&
+  typeof value.id === "string"
+    ? value.id
+    : null;
+const rawCache = (value: unknown) =>
+  typeof value === "object" &&
+  value &&
+  "cache" in value &&
+  typeof value.cache === "string" &&
+  value.cache.startsWith(PACK_PREFIX)
+    ? value.cache
+    : null;
+export const listFieldPacks = async (): Promise<{
+  packs: StoredFieldPack[];
+  unreadable: UnreadableFieldPack[];
+}> => {
   const values = await io({ method: "getAll" });
   if (!Array.isArray(values)) throw Error("Archivio offline non valido.");
-  return values
-    .map(parseStoredFieldPack)
-    .sort((a, b) => b.savedAt.localeCompare(a.savedAt));
+  const packs: StoredFieldPack[] = [],
+    unreadable: UnreadableFieldPack[] = [];
+  for (const value of values) {
+    const pack = parsed(value),
+      id = rawId(value);
+    if (pack) packs.push(pack);
+    else if (id) unreadable.push({ id });
+  }
+  return {
+    packs: packs.sort((a, b) => b.savedAt.localeCompare(a.savedAt)),
+    unreadable,
+  };
 };
 export const getFieldPack = async (
   id: string,
 ): Promise<StoredFieldPack | undefined> => {
   const value = await io({ method: "get", value: id });
-  return value == null ? undefined : parseStoredFieldPack(value);
+  return value == null ? undefined : (parsed(value) ?? undefined);
 };
+// Cancella senza interpretare la copia: funziona anche se non è più leggibile.
 export async function removeFieldPack(id: string) {
-  const old = await getFieldPack(id);
+  const cache = rawCache(await io({ method: "get", value: id }));
   await io({ method: "delete", value: id });
-  if (old?.cache) await caches.delete(old.cache);
+  if (cache) await caches.delete(cache);
 }
 export function packageAssets(pack: Pick<FieldPack, "cover" | "species">) {
   const paths = [
@@ -112,7 +152,7 @@ export async function saveFieldPack(
     ),
   ]);
   const pack = parseFieldPack(input);
-  const previous = await getFieldPack(pack.id),
+  const previousCache = rawCache(await io({ method: "get", value: pack.id })),
     name = PACK_PREFIX + crypto.randomUUID(),
     cache = await caches.open(name),
     assets = packageAssets(pack);
@@ -158,8 +198,8 @@ export async function saveFieldPack(
       savedAt: new Date().toISOString(),
     };
     await io({ method: "put", value: saved });
-    if (previous?.cache && previous.cache !== name)
-      await caches.delete(previous.cache);
+    if (previousCache && previousCache !== name)
+      await caches.delete(previousCache);
     let persistent = false;
     try {
       persistent = (await navigator.storage?.persist?.()) || false;

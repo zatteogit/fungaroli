@@ -39,20 +39,35 @@ export async function fetchForecast(params, { onProgress, onChunk, signal: paren
         }
         // Una lettura per profilo dal deposito del server, al posto di un viaggio
         // HTTP per ogni zona. Le vecchie installazioni/server restano compatibili.
-        const bulk = typeof window === "undefined"
-            ? null
-            : await requestSnapshot(params, groups, {
-                onChunk,
-                onProgress,
-                signal: parentSignal,
-            });
-        if (bulk)
-            return bulk;
-        const results = [], deadline = AbortSignal.timeout(45000);
-        let next = 0, finished = 0, firstError;
-        await Promise.all(Array.from({ length: Math.min(3, groups.length) }, async () => {
-            while (next < groups.length) {
-                const i = next++, { query, start } = groups[i], count = query.get("latitude").split(",").length;
+        // Una sola zona da aggiornare non scarica il pacchetto di tutte.
+        let saved = new Map();
+        if (typeof window !== "undefined" && groups.length > 1)
+            try {
+                const bulk = await requestSnapshot(params, groups, {
+                    onChunk,
+                    onProgress,
+                    signal: parentSignal,
+                });
+                if (bulk && !bulk.partial) {
+                    const { chunks: _chunks, ...complete } = bulk;
+                    return complete;
+                }
+                if (bulk)
+                    saved = bulk.chunks;
+            }
+            catch (e) {
+                // Pacchetto fallito (5xx, timeout, prefetch rotto): si passa alle zone,
+                // a meno che sia stato l'utente ad annullare.
+                if (parentSignal?.aborted)
+                    throw e;
+            }
+        // Solo le zone che il pacchetto non ha portato.
+        const todo = groups.filter((g) => !saved.has(g.start));
+        const results = new Map(), deadline = AbortSignal.timeout(45000);
+        let next = 0, finished = saved.size, firstError;
+        await Promise.all(Array.from({ length: Math.min(3, todo.length) }, async () => {
+            while (next < todo.length) {
+                const { query, start } = todo[next++], count = query.get("latitude").split(",").length;
                 const signal = AbortSignal.any([
                     deadline,
                     AbortSignal.timeout(20000),
@@ -91,23 +106,24 @@ export async function fetchForecast(params, { onProgress, onChunk, signal: paren
                             /* the saved response remains usable within its age limit */
                         }
                     }
-                    results[i] = received;
+                    results.set(start, received);
                 }
                 catch (e) {
                     firstError ??= e;
-                    results[i] = { raw: Array(count).fill(null) };
+                    results.set(start, { raw: Array(count).fill(null) });
                 }
                 onProgress?.(++finished, groups.length);
             }
         }));
-        const valid = results.filter((r) => !!r.fetchedAt);
+        const ordered = groups.map((g) => saved.get(g.start) || results.get(g.start));
+        const valid = ordered.filter((r) => !!r.fetchedAt);
         if (!valid.length)
             throw firstError;
         return {
-            raw: results.flatMap((r) => r.raw),
+            raw: ordered.flatMap((r) => r.raw),
             fetchedAt: new Date(Math.min(...valid.map((r) => r.fetchedAt.getTime()))),
             stale: valid.some((r) => r.stale),
-            partial: valid.length !== results.length,
+            partial: valid.length !== ordered.length,
         };
     }
     return requestForecast(params);
@@ -232,6 +248,7 @@ async function requestSnapshot(params, groups, { onChunk, onProgress, signal: pa
         fetchedAt: new Date(Math.min(...values.map((r) => r.fetchedAt.getTime()))),
         stale: values.some((r) => r.stale),
         partial: records.size !== groups.length,
+        chunks: records,
     };
 }
 async function requestForecast(params, signal = AbortSignal.timeout(20000), waitForFresh = false) {

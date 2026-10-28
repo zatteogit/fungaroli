@@ -30,7 +30,7 @@ const PRECACHE = [
   'js/feedback.js', 'js/feedback-schema.js', 'js/feedback-admin.js', 'js/pilot-onboarding.js', 'js/pilot-choice-state.js', 'js/legal-access.js', 'js/legal-notice.js', 'js/navigation-context.js', 'js/focus.js', 'js/modal-scroll.js', 'js/modal-flow.js', 'js/compare-picker.js', 'js/entity-sheet.js', 'js/entity-accordions.js', 'js/content-ui.js', 'js/ambilight.js', 'js/ui-icons.js', 'js/map-experience.js',
   'assets/ui/chevron-right.svg', 'assets/ui/alert-triangle.svg', 'assets/ui/map.svg', 'assets/ui/leaf.svg', 'assets/ui/notebook.svg',
   'js/search-select.js', 'js/species-search.js', 'js/site-info.js', 'js/forecast-capture.js', 'js/forecast-autosave.js',
-  'js/weather-request.js', 'js/weather-cache.js', 'js/weather-data.js','js/data-guards.js', 'js/weather-dom.js',
+  'js/weather-request.js', 'js/weather-cache.js', 'js/weather-data.js','js/data-guards.js', 'js/core/index.js', 'js/core/guards.js', 'js/core/field-record-types.js', 'js/core/field-record.js', 'js/weather-dom.js',
   'js/images.js','js/inline-gallery.js', 'js/fronda-connections.js', 'js/plants.js','js/plant-comparison.js','js/botanical-model.js','js/outing-discoveries.js','js/botanical-explanation.js','data/botanical-models.json', 'js/plant-catalog.js', 'js/catalog-search.js', 'js/guided-key.js', 'data/recognize-trees.json', 'data/recognize-plants.json', 'js/notebook-entry.js', 'data/plants.json', 'js/challenges.js', 'data/challenges.json',
   'data/media-glossary.json', 'data/crop-points.json', 'data/habitat-info.json', 'data/access-info.json', 'data/trait-icons.json', 'data/trait-callouts.json', 'data/tree-trait-icons.json', 'data/plant-trait-icons.json',
   './', 'index.html', 'manifest.webmanifest', 'css/tokens.css', 'css/style.css', 'css/fronda.css', 'css/species-pages.css', 'css/content-ui.css', 'css/map-experience.css', 'css/pilot-test.css', 'css/fonts.css',
@@ -108,8 +108,11 @@ self.addEventListener('fetch', (e) => {
         const savedRequest=reader?new URL('/offline.html',url):req;
         const clean=response=>reader?new Response(response.body,{status:response.status,statusText:response.statusText,headers:response.headers}):response;
         if(documentAsset){const current=await(await caches.open(SHELL)).match(savedRequest,{ignoreSearch:true});if(current)return clean(current);}
+        // Foto e immagini: prima la copia normale, che si rinnova; le uscite preparate per il bosco sono
+        // solo il ripiego offline, altrimenti una foto sostituita allo stesso percorso resterebbe vecchia per sempre.
+        let normal=null;if(!documentAsset){normal=await staleWhileRevalidate(req,RUNTIME);if(normal.type!=='error')return normal;}
         for(const key of (await caches.keys()).filter(k=>k.startsWith('fronda-field-pack-'))){const hit=await(await caches.open(key)).match(savedRequest,{ignoreSearch:reader});if(hit)return clean(hit);}
-        return documentAsset?networkFirstFast(req,SHELL):staleWhileRevalidate(req,RUNTIME);
+        return documentAsset?networkFirstFast(req,SHELL):normal;
       })());return;
     }
     // Le prove pubblicate restano indipendenti dalla cache e dal ripiego dell’app.
@@ -136,7 +139,11 @@ self.addEventListener('fetch', (e) => {
 // Every received push produces a visible, same-origin notification, even with malformed data.
 self.addEventListener('push',event=>{event.waitUntil((async()=>{
  let data={},target=location.origin+'/';try{const value=event.data?.json();if(value&&typeof value==='object')data=value;}catch{}
- try{const url=new URL(typeof data.url==='string'?data.url:'/',location.origin);if(url.origin===location.origin&&/^\/#\/zona\/[a-z0-9-]+\/[0-7]$/.test(url.pathname+url.hash))target=url.href;}catch{}
+ try{const url=new URL(typeof data.url==='string'?data.url:'/',location.origin);if(url.origin===location.origin&&/^\/#\/zona\/[a-z0-9-]+\/([0-7]|\d{4}-\d{2}-\d{2})$/.test(url.pathname+url.hash))target=url.href;}catch{}
  await self.registration.showNotification(typeof data.title==='string'?data.title.slice(0,120):'Novità per la tua uscita',{body:typeof data.body==='string'?data.body.slice(0,400):'Apri Fronda per ricontrollare il meteo.',icon:'/assets/fronda-icon-192.png',badge:'/assets/fronda-icon-192.png',tag:typeof data.tag==='string'?data.tag.slice(0,120):'fronda-outing',data:{url:target}});
 })());});
-self.addEventListener('notificationclick',event=>{event.notification.close();event.waitUntil((async()=>{let target=location.origin+'/';try{const url=new URL(event.notification.data?.url,location.origin);if(url.origin===location.origin)target=url.href;}catch{}await self.clients.openWindow(target);})());});
+// Una finestra di Fronda già aperta si riusa: niente schede doppie a ogni notifica.
+self.addEventListener('notificationclick',event=>{event.notification.close();event.waitUntil((async()=>{let target=location.origin+'/';try{const url=new URL(event.notification.data?.url,location.origin);if(url.origin===location.origin)target=url.href;}catch{}
+ const open=(await self.clients.matchAll({type:'window',includeUncontrolled:true})).find(client=>new URL(client.url).origin===location.origin);
+ if(open){try{const client=await open.navigate(target)||open;await client.focus();return;}catch{/* finestra non controllata: se ne apre una nuova */}}
+ await self.clients.openWindow(target);})());});
