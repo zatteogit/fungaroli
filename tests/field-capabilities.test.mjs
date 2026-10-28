@@ -194,6 +194,7 @@ test("push ricevuti: anche dati malformati producono una notifica, senza aprire 
     "bad",
     { url: "https://evil.test/" },
     { url: "http://[" },
+    { url: "/#/zona/tancia/2026-10-29" },
     { url: "/#/zona/tancia/1" },
   ]) {
     let done;
@@ -204,7 +205,9 @@ test("push ricevuti: anche dati malformati producono una notifica, senza aprire 
     await done;
     assert.ok(shown.at(-1).options.data.url.startsWith(origin + "/"));
   }
-  assert.equal(shown.length, 5);
+  // Il link per data (avvisi dell'uscita) passa il filtro come quello per scarto.
+  assert.equal(shown.at(-2).options.data.url, origin + "/#/zona/tancia/2026-10-29");
+  assert.equal(shown.length, 6);
   assert.equal(shown.at(-1).options.data.url, origin + "/#/zona/tancia/1");
 });
 

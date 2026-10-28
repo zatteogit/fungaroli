@@ -32,23 +32,54 @@ async function io(operation) {
         tx.onabort = tx.onerror;
     });
 }
+const parsed = (value) => {
+    try {
+        return parseStoredFieldPack(value);
+    }
+    catch {
+        return null;
+    }
+};
+const rawId = (value) => typeof value === "object" &&
+    value &&
+    "id" in value &&
+    typeof value.id === "string"
+    ? value.id
+    : null;
+const rawCache = (value) => typeof value === "object" &&
+    value &&
+    "cache" in value &&
+    typeof value.cache === "string" &&
+    value.cache.startsWith(PACK_PREFIX)
+    ? value.cache
+    : null;
 export const listFieldPacks = async () => {
     const values = await io({ method: "getAll" });
     if (!Array.isArray(values))
         throw Error("Archivio offline non valido.");
-    return values
-        .map(parseStoredFieldPack)
-        .sort((a, b) => b.savedAt.localeCompare(a.savedAt));
+    const packs = [], unreadable = [];
+    for (const value of values) {
+        const pack = parsed(value), id = rawId(value);
+        if (pack)
+            packs.push(pack);
+        else if (id)
+            unreadable.push({ id });
+    }
+    return {
+        packs: packs.sort((a, b) => b.savedAt.localeCompare(a.savedAt)),
+        unreadable,
+    };
 };
 export const getFieldPack = async (id) => {
     const value = await io({ method: "get", value: id });
-    return value == null ? undefined : parseStoredFieldPack(value);
+    return value == null ? undefined : (parsed(value) ?? undefined);
 };
+// Cancella senza interpretare la copia: funziona anche se non è più leggibile.
 export async function removeFieldPack(id) {
-    const old = await getFieldPack(id);
+    const cache = rawCache(await io({ method: "get", value: id }));
     await io({ method: "delete", value: id });
-    if (old?.cache)
-        await caches.delete(old.cache);
+    if (cache)
+        await caches.delete(cache);
 }
 export function packageAssets(pack) {
     const paths = [
@@ -78,7 +109,7 @@ export async function saveFieldPack(input, onProgress = () => { }) {
         new Promise((_, reject) => setTimeout(() => reject(Error("L’app si sta preparando. Attendi qualche secondo e riprova.")), 15000)),
     ]);
     const pack = parseFieldPack(input);
-    const previous = await getFieldPack(pack.id), name = PACK_PREFIX + crypto.randomUUID(), cache = await caches.open(name), assets = packageAssets(pack);
+    const previousCache = rawCache(await io({ method: "get", value: pack.id })), name = PACK_PREFIX + crypto.randomUUID(), cache = await caches.open(name), assets = packageAssets(pack);
     let bytes = 0;
     try {
         for (let i = 0; i < assets.length; i++) {
@@ -107,8 +138,8 @@ export async function saveFieldPack(input, onProgress = () => { }) {
             savedAt: new Date().toISOString(),
         };
         await io({ method: "put", value: saved });
-        if (previous?.cache && previous.cache !== name)
-            await caches.delete(previous.cache);
+        if (previousCache && previousCache !== name)
+            await caches.delete(previousCache);
         let persistent = false;
         try {
             persistent = (await navigator.storage?.persist?.()) || false;

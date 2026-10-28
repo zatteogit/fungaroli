@@ -1,14 +1,14 @@
 import {forecastParams} from './weather-provider.js';
 import {weatherStorage} from './weather-storage.js';
+import {weatherCacheKey} from './weather-key.js';
 
-const digest=async params=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(params.toString()))),b=>b.toString(16).padStart(2,'0')).join('');
 // Lettura pubblica in blocco: niente provider, nessuna ricostruzione del grande JSON
 // nel Worker. Ogni riga conserva la data di acquisizione della propria zona.
 export async function weatherSnapshot(profile,zones,env){
  if(!['growth','outing'].includes(profile))return Response.json({error:'Profilo meteo non valido.'},{status:422});
  const entries=await Promise.all(zones.filter(z=>z.publicationStatus!=='draft'&&z.bands?.length).map(async z=>{
   const params=forecastParams([z],profile);
-  return {key:`weather:v3:${await digest(params)}`,coordinates:['latitude','longitude','elevation'].map(k=>params.get(k)).join('|')};
+  return {key:await weatherCacheKey(params),coordinates:['latitude','longitude','elevation'].map(k=>params.get(k)).join('|')};
  }));
  const records=await weatherStorage(env).getMany(entries.map(e=>e.key));
  if(!records.size)return Response.json({error:'Copia meteo in preparazione.',code:'cache-warming'},{status:503,headers:{'cache-control':'no-store'}});
