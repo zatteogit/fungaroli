@@ -281,6 +281,19 @@ test('Quando dà priorità al meteo sconsigliato anche senza temporale',async({p
  expect(errors).toEqual([]);
 });
 
+test('Meteo sconsigliato visibile anche nelle uscite per piante e sentieri',async({page})=>{
+ await page.clock.setFixedTime(new Date(new Date().setUTCHours(0,0,0,0)));
+ await page.setViewportSize({width:390,height:900});const errors=await setup(page,{gust:65,cover:false});
+ for(const interest of ['piante','passeggiata']){
+  await page.evaluate(target=>localStorage.setItem('fungaroli:prefs:v2',JSON.stringify({interests:[target],target})),interest);
+  await page.goto('/#/zona/vallonina/1');await page.reload();
+  const detail=page.locator('#detail'),warning=detail.locator('.pbody > .notice').filter({hasText:'Uscita sconsigliata'});
+  await expect(warning).toBeVisible();await expect(warning).toContainText('65 km/h');
+  await expect(detail.locator('.outing-section-title').first()).toContainText('Il piano in breve');
+ }
+ expect(errors).toEqual([]);
+});
+
 test('riepiloghi essenziali negli accordion sul posto, senza voci duplicate o salti',async({page})=>{
   await page.emulateMedia({reducedMotion:'reduce'});
   const errors=await setup(page);await page.goto('/#/zona/tancia/0');await expect(page.locator('#detail details[data-sec="specie"]')).toBeVisible();
