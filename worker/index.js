@@ -1,4 +1,4 @@
-import {handleOutingAlerts,sendOutingAlerts} from './outing-alerts.js';
+import {handleOutingAlerts,sendOutingAlerts,cleanupOutingAlerts} from './outing-alerts.js';
 import {handleFeedback,cleanupFeedback} from './feedback.js';
 // Worker di Fronda: i file statici sono serviti da Workers Assets (wrangler.jsonc);
 // qui arrivano solo le richieste che non corrispondono a un file, cioe' l'API del diario.
@@ -54,9 +54,14 @@ export default {
   // Alle 3:17 UTC pulizie indipendenti: community, questionario e contatori meteo. Archivio delle previsioni (D1):
   // passaggi brevi ogni 5 minuti fra le 4 e le 5:55 UTC, poche zone per volta.
   async scheduled(event, env, ctx) {
-    if(event.cron===WEATHER_REFRESH_CRON){ctx.waitUntil(weatherRefreshRun(env,event.scheduledTime));return;}
+    if(event.cron===WEATHER_REFRESH_CRON){
+      // Gli avvisi leggono il meteo già salvato: un aggiornamento fallito non deve fermarli.
+      ctx.waitUntil(weatherRefreshRun(env,event.scheduledTime));
+      ctx.waitUntil(outingAlertsRun(env).catch(()=>console.warn('outing-alerts-incomplete')));
+      return;
+    }
     if (event.cron === ARCHIVE_CRON) { ctx.waitUntil(archiveRun(env)); return; }
-    ctx.waitUntil(cleanupFeedback(env)); ctx.waitUntil(cleanupWeatherStorage(env)); ctx.waitUntil(cleanupCommunity(env)); ctx.waitUntil(cleanupSurvey(env)); ctx.waitUntil(cleanupWeatherMetrics(env.CMS_DB));
+    ctx.waitUntil(cleanupFeedback(env)); ctx.waitUntil(cleanupWeatherStorage(env)); ctx.waitUntil(cleanupCommunity(env)); ctx.waitUntil(cleanupSurvey(env)); ctx.waitUntil(cleanupWeatherMetrics(env.CMS_DB)); ctx.waitUntil(cleanupOutingAlerts(env));
   },
 };
 
@@ -70,15 +75,22 @@ async function archiveRun(env) {
   try { return await archiveForecasts(env, { zones, metrics }); } catch { /* il passaggio successivo riprova le zone mancanti */ }
 }
 
-async function weatherRefreshRun(env,scheduledTime){
+async function editionZonesRun(env){
   const origin=env.APP_ORIGIN||'https://fungaroli.zatteo.workers.dev';
   let content;
   try{content=await publishedResources(env,origin,['zones'],{initialize:false});}catch{/* catalogue bundled below */}
   const zones=content?.zones?.zones||(await (await env.ASSETS.fetch(new Request(new URL('/data/zones.json',origin)))).json()).zones;
+  return editionZones(currentEdition(env),zones);
+}
+
+async function outingAlertsRun(env){
+  await sendOutingAlerts(env,{zones:await editionZonesRun(env)});
+}
+
+async function weatherRefreshRun(env,scheduledTime){
   const metrics=env.CMS_DB?m=>recordWeatherMetric(env.CMS_DB,m):undefined;
   // Un'edizione dedicata aggiorna soltanto il meteo delle proprie zone.
-  const own=editionZones(currentEdition(env),zones);
+  const own=await editionZonesRun(env);
   const outcomes=await refreshSavedWeather(env,{zones:own,scheduledTime,metrics});
-  try{await sendOutingAlerts(env,{zones:own});}catch{console.warn('outing-alerts-incomplete');}
   if(outcomes.some(r=>!r.ok))console.warn(JSON.stringify({event:'weather-refresh-incomplete',outcomes}));
 }

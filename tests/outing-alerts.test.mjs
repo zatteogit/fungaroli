@@ -7,9 +7,11 @@ import {
   validateSubscription,
   alertChange,
   alertSeverity,
+  cleanupOutingAlerts,
 } from "../worker/outing-alerts.js";
 import { weatherStorage } from "../worker/weather-storage.js";
-import { forecastParams } from "../worker/weather-provider.js";
+import { forecastParams, cachedForecast } from "../worker/weather-provider.js";
+import { weatherCacheKey } from "../worker/weather-key.js";
 const origin = "https://fronda.test",
   zone = {
     id: "tancia",
@@ -95,7 +97,7 @@ async function wx(env, code = 0, at = now) {
     temperature_2m: Array(24).fill(15),
   };
   await weatherStorage(env).put(
-    forecastParams([zone], "outing").toString(),
+    await weatherCacheKey(forecastParams([zone], "outing")),
     JSON.stringify({ t: at, raw: [{ hourly: h }] }),
     { expirationTtl: 86400 * 5 },
   );
@@ -240,4 +242,49 @@ test("endpoint arbitrari, credenziali, porte, date e corpi non validi sono rifiu
     { zones: [zone], now },
   );
   assert.equal(result.status, 422);
+});
+test("avvisi: leggono il meteo salvato dal Worker con la stessa chiave del provider", async () => {
+  const { env, subscription } = await setup();
+  const params = forecastParams([zone], "outing");
+  const time = ["2026-10-27", day].flatMap((d) =>
+    Array.from({ length: 24 }, (_, i) => d + "T" + String(i).padStart(2, "0") + ":00"),
+  );
+  const hourly = { time };
+  for (const field of params.get("hourly").split(","))
+    hourly[field] = time.map(() => 0);
+  const daily = params.get("daily")
+    ? Object.fromEntries([["time", ["2026-10-27", day]], ...params.get("daily").split(",").map((f) => [f, [0, 0]])])
+    : undefined;
+  await cachedForecast(params, {
+    zones: [zone],
+    cache: weatherStorage(env),
+    now,
+    refresh: true,
+    strictCache: true,
+    fetcher: async () => Response.json([{ hourly, ...(daily && { daily }) }]),
+  });
+  const res = await handleOutingAlerts(
+    req("POST", { zoneId: zone.id, date: day, subscription }),
+    env,
+    { zones: [zone], now },
+  );
+  assert.equal(res.status, 201, await res.clone().text());
+});
+test("avvisi: le pulizie notturne tolgono giorni passati e dispositivi scaduti, l'invio salta i giorni passati", async () => {
+  const { env, subscription } = await setup();
+  await wx(env);
+  await handleOutingAlerts(
+    req("POST", { zoneId: zone.id, date: day, subscription }),
+    env,
+    { zones: [zone], now },
+  );
+  const later = Date.parse("2026-10-30T08:00:00Z");
+  let calls = 0;
+  await sendOutingAlerts(env, { zones: [zone], now: later, fetcher: async () => (calls++, new Response(null, { status: 201 })) });
+  assert.equal(calls, 0);
+  const n = (t) => env.COMMUNITY_DB.sql.prepare(`SELECT COUNT(*) n FROM ${t}`).get().n;
+  assert.equal(n("outing_alerts"), 1, "l'invio non cancella più a ogni minuto");
+  await cleanupOutingAlerts(env, later);
+  assert.equal(n("outing_alerts"), 0);
+  assert.equal(n("outing_alert_devices"), 0);
 });
