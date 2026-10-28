@@ -1224,7 +1224,11 @@ function practicalDocumentation(z,walk=null){return outingDocumentation(z,{trail
 function practicalBrief(z,walk=null){return `<span class="outing-documentation-brief">${esc(practicalDocumentation(z,walk).label)}</span>`;}
 function practicalDetails(z,walk=null){
  const info=practicalDocumentation(z,walk);
- return `<details class="outing-documentation" data-weather-preserve-open><summary>${infoGlyph}<span><b>Percorso e accessi</b><span>${esc(info.label)}</span></span></summary><div class="outing-documentation-body"><dl><div><dt>Sentieri</dt><dd>${info.trailCount?(info.trailCount===1?'1 tratto mappato':info.trailCount+' tratti mappati'):'Nessun tratto mappato'}</dd></div><div><dt>Arrivo in auto</dt><dd>${info.hasAccess?'Punto di arrivo documentato · sosta e transito da verificare':'Non documentato'}</dd></div></dl>${info.missing.length?`<p><b>Da completare:</b> ${esc(info.missing.join(' · '))}.</p>`:''}<p class="small muted">Le condizioni descrivono la zona e il meteo. Non attestano un itinerario completo né l’apertura degli accessi.</p></div></details>`;
+ const noSelectedTrail=info.trailCount>0&&!walk?.t;
+ const label=noSelectedTrail?'Nessun sentiero selezionato':info.label;
+ const arrival=info.hasAccess?(noSelectedTrail?'Punto nella zona · collegamento, sosta e transito da verificare':'Punto di arrivo documentato · sosta e transito da verificare'):'Non documentato';
+ const missing=noSelectedTrail?['Sentiero per questa uscita',...(!info.hasAccess?['Arrivo in auto']:[])]:info.missing;
+ return `<details class="outing-documentation" data-weather-preserve-open><summary>${infoGlyph}<span><b>Percorso e accessi</b><span>${esc(label)}</span></span></summary><div class="outing-documentation-body"><dl><div><dt>Sentieri</dt><dd>${info.trailCount?(info.trailCount===1?'1 tratto mappato nella zona':info.trailCount+' tratti mappati nella zona'):'Nessun tratto mappato'}</dd></div><div><dt>Arrivo in auto</dt><dd>${arrival}</dd></div></dl>${missing.length?`<p><b>Da completare:</b> ${esc(missing.join(' · '))}.</p>`:''}<p class="small muted">Le condizioni descrivono la zona e il meteo. Non attestano un itinerario completo né l’apertura degli accessi.</p></div></details>`;
 }
 function homeCover({c,body,heading='',score=null,extraClass=''}) {
   const title=splitName(c.z)[0];
