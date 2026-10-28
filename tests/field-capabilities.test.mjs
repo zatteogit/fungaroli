@@ -273,3 +273,74 @@ test("lettore offline: risposte HTML reindirizzate ripulite e URL canonici risol
     assert.equal(await response.text(), "<h1>Reader</h1>");
   }
 });
+
+test("service worker: le foto vengono dalla copia normale; i pacchetti offline solo senza rete", async () => {
+  const { readFileSync } = await import("node:fs"),
+    vm = await import("node:vm"),
+    source = readFileSync(new URL("../sw.js", import.meta.url), "utf8");
+  const run = async (online) => {
+    const listeners = {},
+      store = (name) => ({
+        match: async () =>
+          name.startsWith("fronda-field-pack-") ? new Response("pacchetto") : undefined,
+        put: async () => {},
+      });
+    vm.runInNewContext(source, {
+      self: { addEventListener: (name, fn) => (listeners[name] = fn) },
+      URL,
+      Response,
+      location: { origin: "https://fronda.test" },
+      fetch: async () => {
+        if (!online) throw new TypeError("offline");
+        return new Response("rete");
+      },
+      caches: { open: async (name) => store(name), keys: async () => ["fronda-field-pack-1"] },
+    });
+    let response;
+    listeners.fetch({
+      request: new Request("https://fronda.test/assets/species/edulis.webp"),
+      respondWith: (p) => (response = p),
+    });
+    return (await response).text();
+  };
+  assert.equal(await run(true), "rete", "una foto sostituita allo stesso percorso si aggiorna");
+  assert.equal(await run(false), "pacchetto");
+});
+
+test("clic sulla notifica: riusa la finestra di Fronda già aperta", async () => {
+  const { readFileSync } = await import("node:fs"),
+    vm = await import("node:vm");
+  const listeners = {},
+    opened = [],
+    navigated = [],
+    origin = "https://fronda.test";
+  const client = {
+    url: origin + "/#/",
+    navigate: async (url) => (navigated.push(url), client),
+    focus: async () => client,
+  };
+  let windows = [client];
+  vm.runInNewContext(readFileSync(new URL("../sw.js", import.meta.url), "utf8"), {
+    self: {
+      addEventListener: (name, fn) => (listeners[name] = fn),
+      clients: { matchAll: async () => windows, openWindow: async (url) => opened.push(url) },
+    },
+    URL,
+    location: { origin },
+    Response,
+  });
+  const click = async () => {
+    let done;
+    listeners.notificationclick({
+      notification: { close() {}, data: { url: "/#/zona/tancia/1" } },
+      waitUntil: (p) => (done = p),
+    });
+    await done;
+  };
+  await click();
+  assert.deepEqual(navigated, [origin + "/#/zona/tancia/1"]);
+  assert.deepEqual(opened, []);
+  windows = [];
+  await click();
+  assert.deepEqual(opened, [origin + "/#/zona/tancia/1"]);
+});

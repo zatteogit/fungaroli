@@ -4,7 +4,7 @@
 // - meteo Open-Meteo: gestito dall'app con data di acquisizione e limite d'età
 // - mappe: dalla cache se gia' viste, con un limite di tessere
 // - diario (/api/): mai in cache
-const SHELL = 'fungaroli-shell-v381';
+const SHELL = 'fungaroli-shell-v386';
 const RUNTIME = 'fungaroli-runtime-v1';
 const TILES = 'fungaroli-tiles-v1';
 const CONTENT = 'fungaroli-content-v1';
@@ -108,8 +108,11 @@ self.addEventListener('fetch', (e) => {
         const savedRequest=reader?new URL('/offline.html',url):req;
         const clean=response=>reader?new Response(response.body,{status:response.status,statusText:response.statusText,headers:response.headers}):response;
         if(documentAsset){const current=await(await caches.open(SHELL)).match(savedRequest,{ignoreSearch:true});if(current)return clean(current);}
+        // Foto e immagini: prima la copia normale, che si rinnova; le uscite preparate per il bosco sono
+        // solo il ripiego offline, altrimenti una foto sostituita allo stesso percorso resterebbe vecchia per sempre.
+        let normal=null;if(!documentAsset){normal=await staleWhileRevalidate(req,RUNTIME);if(normal.type!=='error')return normal;}
         for(const key of (await caches.keys()).filter(k=>k.startsWith('fronda-field-pack-'))){const hit=await(await caches.open(key)).match(savedRequest,{ignoreSearch:reader});if(hit)return clean(hit);}
-        return documentAsset?networkFirstFast(req,SHELL):staleWhileRevalidate(req,RUNTIME);
+        return documentAsset?networkFirstFast(req,SHELL):normal;
       })());return;
     }
     // Le prove pubblicate restano indipendenti dalla cache e dal ripiego dell’app.
@@ -139,4 +142,8 @@ self.addEventListener('push',event=>{event.waitUntil((async()=>{
  try{const url=new URL(typeof data.url==='string'?data.url:'/',location.origin);if(url.origin===location.origin&&/^\/#\/zona\/[a-z0-9-]+\/[0-7]$/.test(url.pathname+url.hash))target=url.href;}catch{}
  await self.registration.showNotification(typeof data.title==='string'?data.title.slice(0,120):'Novità per la tua uscita',{body:typeof data.body==='string'?data.body.slice(0,400):'Apri Fronda per ricontrollare il meteo.',icon:'/assets/fronda-icon-192.png',badge:'/assets/fronda-icon-192.png',tag:typeof data.tag==='string'?data.tag.slice(0,120):'fronda-outing',data:{url:target}});
 })());});
-self.addEventListener('notificationclick',event=>{event.notification.close();event.waitUntil((async()=>{let target=location.origin+'/';try{const url=new URL(event.notification.data?.url,location.origin);if(url.origin===location.origin)target=url.href;}catch{}await self.clients.openWindow(target);})());});
+// Una finestra di Fronda già aperta si riusa: niente schede doppie a ogni notifica.
+self.addEventListener('notificationclick',event=>{event.notification.close();event.waitUntil((async()=>{let target=location.origin+'/';try{const url=new URL(event.notification.data?.url,location.origin);if(url.origin===location.origin)target=url.href;}catch{}
+ const open=(await self.clients.matchAll({type:'window',includeUncontrolled:true})).find(client=>new URL(client.url).origin===location.origin);
+ if(open){try{const client=await open.navigate(target)||open;await client.focus();return;}catch{/* finestra non controllata: se ne apre una nuova */}}
+ await self.clients.openWindow(target);})());});

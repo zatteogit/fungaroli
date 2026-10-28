@@ -89,3 +89,9 @@ test('fresh outing forecasts are reused on reopening without a network call',asy
   const second=await loadOuting([zones[0]]);assert.deepEqual(second,first);assert.equal(calls,1);
  }finally{global.fetch=original;delete global.document;delete global.localStorage;}
 });
+test('spazio esaurito: la copia in memoria non tiene un meteo mai salvato',()=>{
+ const data=storage(),t=Date.now();saveZoneWeather(zones[0],'growth',{t,raw:raw()},t);
+ const setItem=global.localStorage.setItem;global.localStorage.setItem=()=>{throw new DOMException('Pieno','QuotaExceededError');};
+ try{saveZoneWeather(zones[1],'growth',{t,raw:raw()},t);}finally{global.localStorage.setItem=setItem;}
+ assert.equal(cachedZoneWeather(zones[1],'growth',t),null);assert.equal(cachedZoneWeather(zones[0],'growth',t).t,t);assert.ok(data.size);
+});
