@@ -203,8 +203,10 @@ ripiego. Con meteo simulato sono stati provati il caso senza sentieri coerenti
 con i filtri, il caso con sentiero selezionato e una zona senza tratti; 627
 test unitari e dry-run sono passati. Su Chrome la sintesi è stata controllata
 a 320, 390, 768 e 1280 px nei due temi e con apertura/chiusura da tastiera.
-La PR attende il controllo obbligatorio GitHub `test`: non è ancora fusa né
-pubblicata. Il primo avvio online e le condizioni reali non sono stati provati.
+Il controllo obbligatorio GitHub `test` è passato e la PR è stata fusa in
+`main` al commit `134ea06d97732c86c13b256141585a6aa8140b48`. La v382 è stata
+verificata online tramite versione di pagina e service worker e testo del
+riepilogo. Il primo avvio online e le condizioni reali non sono stati provati.
 
 ## Ancora da fare prima di chiudere la pagina
 
