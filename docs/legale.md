@@ -438,6 +438,21 @@ Decisione di Matteo del 24/10/2026. Fatto verificato con l'API di Cloudflare lo 
   - Procedura e verifica in [migrazione-d1-ue-2026-10-24.md](migrazione-d1-ue-2026-10-24.md).
 - **Informativa.** Versione editoriale 10 di `data/legal.json`, `acceptance_version` sempre 1: nessuna nuova conferma degli avvisi. Cambia solo la parte «Dove stanno i dati». Indica il vincolo UE del database, ciò che resta fuori dal vincolo e la copia precedente negli Stati Uniti, conservata fino al 23/11/2026.
 
+### 6.9 Posizione delle note e avvisi dell'uscita (28/10/2026)
+
+Decisione di Matteo del 28/10/2026, dalla revisione delle PR del 26–28/10 ([handoff](handoff-revisione-2026-10-28.md), punto 13).
+
+- **Prima.** «Usa la mia posizione» in una nota salvava latitudine, longitudine e accuratezza a piena precisione; con un profilo il punto finiva in `diary_entries` così com'era. L'informativa non lo diceva, e non parlava delle iscrizioni push salvate dal server per gli avvisi dell'uscita.
+- **Ora.**
+  - Il server arrotonda il punto della nota a 2 decimali, circa 1 km, come la base (`worker/community.js`); la precisione dichiarata sale ad almeno 1000 m. La migrazione `0019_note_position_precision.sql`, applicata a runtime, riscrive le note già salvate. Il client riceve la versione arrotondata e la copia del dispositivo si allinea.
+  - Senza profilo il punto resta preciso e solo nel browser.
+  - Il punto non entra mai nei dati condivisi né nello Studio dell'indice (invariato).
+- **Informativa.** Versione editoriale 12 di `data/legal.json`, `acceptance_version` sempre 1: nessuna nuova conferma degli avvisi.
+  - Nuove voci «Posizione delle note» e «Avvisi dell'uscita» (iscrizione tecnica, codice di gestione cifrato, zona e giorno; cancellazione dei giorni passati ogni notte; scadenza entro 30 giorni; servizio di notifica del browser).
+  - «Posizione del dispositivo» e «Taccuino privato» citano il punto della nota.
+  - `js/legal-notice.js` aggiunge le due voci nuove anche a un'informativa già modificata in redazione. Le altre due frasi cambiano solo se la redazione non ha toccato `legal`: dopo il deploy va controllato `/api/content/v1/snapshot` (vedi 6.6).
+- Nello stesso aggiornamento: il benvenuto non indica più «Invia feedback» nella barra dell'app (pulsante tolto con il commit `eebcf96`), ma home, Info, preferenze del Taccuino e controlli della mappa; tolta la casella «Mi interessa contribuire con osservazioni», salvata ma mai letta.
+
 ---
 
 ## 7. Licenze e attribuzioni

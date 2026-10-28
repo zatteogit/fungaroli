@@ -14,7 +14,7 @@ La traccia è schematica, con nord in alto, segmenti separati e attribuzione OSM
 
 Nel compositore rapido, la raccolta fotografica resta distinta dalla cattura con fotocamera posteriore sui dispositivi touch. Preparazione e rimozione dei metadati delle fotografie mantengono il percorso esistente.
 
-**Usa la mia posizione** registra un punto facoltativo nell’appunto, con precisione e acquisizione. È privato nel taccuino, sincronizzato nel proprio archivio se si usa un profilo; i payload della community e della ricerca non lo contengono. Si può rimuovere modificando la nota. Le richieste tardive non si applicano a una nota nuova o già chiusa. Il comando nel lettore offline usa il punto soltanto nella vista e non lo salva.
+**Usa la mia posizione** registra un punto facoltativo nell’appunto, con precisione e acquisizione. È privato nel taccuino. Con un profilo si sincronizza nel proprio archivio arrotondato a 2 decimali, circa 1 km, con precisione dichiarata di almeno 1000 m (decisione del 28/10/2026, migrazione 0019); senza profilo resta preciso e solo nel browser. I payload della community e della ricerca non lo contengono. Si può rimuovere modificando la nota. Le richieste tardive non si applicano a una nota nuova o già chiusa. Il comando nel lettore offline usa il punto soltanto nella vista e non lo salva.
 
 ## Schermo acceso
 

@@ -66,7 +66,7 @@ test('paginazione senza perdite su date uguali, conservazione e pulizia giornali
 });
 
 test('scelte nel benvenuto: intenzioni separate dal consenso, copia isolata e rinvio',()=>{
- setPilotChoices();assert.equal(getPilotChoices(),null);setPilotChoices({share:true,research:true});const copy=getPilotChoices();copy.research=false;assert.equal(getPilotChoices().research,true);assert.equal(getPilotChoices().accountId,null);clearPilotChoices();assert.equal(getPilotChoices(),null);setPilotChoices({research:true},'profilo-a');assert.equal(getPilotChoices().accountId,'profilo-a');clearPilotChoices();
+ setPilotChoices();assert.equal(getPilotChoices(),null);setPilotChoices({research:true});const copy=getPilotChoices();copy.research=false;assert.equal(getPilotChoices().research,true);assert.equal(getPilotChoices().accountId,null);clearPilotChoices();assert.equal(getPilotChoices(),null);setPilotChoices({research:true},'profilo-a');assert.equal(getPilotChoices().accountId,'profilo-a');clearPilotChoices();
 });
 
 test('tetto comune: 200 invii reali, retry già salvato ammesso anche a limite raggiunto',async()=>{
