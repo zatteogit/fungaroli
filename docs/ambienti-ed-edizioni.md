@@ -33,7 +33,7 @@ Lo staging mostra «staging · …» nella testata, così non si confonde con l�
 | Community (D1) | simulata in `~/.fronda-dev/<edizione>` | `fungaroli-staging-community` (UE) | `fungaroli-community-eu` |
 | Contenuti CMS (D1) | simulato in `~/.fronda-dev/<edizione>` | `fungaroli-staging-content` | `fungaroli-content` |
 | Diario (KV) | simulato in `~/.fronda-dev/<edizione>` | `fungaroli-staging-diario` | `fungaroli-diario` |
-| Cron meteo | no (si avviano a mano) | sì, stessi orari | sì |
+| Cron | no (si avviano a mano) | meteo e pulizie | meteo, pulizie e archivio delle previsioni |
 
 Regole:
 
@@ -52,7 +52,11 @@ Regole:
   `CMS_ADMIN_IDS` in `env.staging`.
 - I segreti (es. `PUSH_PRIVATE_KEY`, `DIARIO_TOKEN`) sono per ambiente e si impostano
   dalla dashboard o con `wrangler secret put --env staging`, mai nel repository.
-- Lo staging chiama Open-Meteo con gli stessi cron della produzione: le chiamate
+- **Limite dei cron:** il piano Workers Free ammette 5 cron per account. La produzione
+  ne usa 3, lo staging 2 (meteo e pulizie, senza archivio delle previsioni): l'account è
+  al limite. Ogni edizione dedicata con un Worker proprio richiede il piano Workers Paid
+  (minimo 5 USD al mese, Cloudflare). Un test controlla il totale.
+- Lo staging aggiorna il meteo come la produzione: le chiamate a Open-Meteo
   raddoppiano (circa 4.000 al giorno, sotto il limite gratuito di 10.000). Il piano gratuito
   vale solo per uso non commerciale: con abbonamenti o pubblicità serve un piano a pagamento.
 
@@ -87,7 +91,8 @@ controlla contro `index.html`). `demo-esempio` è un modello da copiare.
 1. Copia `editions/demo-esempio.json` in `editions/<id>.json` e compila i campi.
 2. Registrala in `worker/editions.js`.
 3. Provala in locale: `npm run dev:edition -- <id>`.
-4. Aggiungi in `wrangler.jsonc` un ambiente `env.<id>` con `EDITION` e risorse proprie
+4. Verifica il piano: con Workers Free non restano cron liberi (vedi sopra).
+   Aggiungi in `wrangler.jsonc` un ambiente `env.<id>` con `EDITION` e risorse proprie
    (D1 community nell’UE, D1 contenuti, KV), come `env.staging`.
 5. Crea un Worker con build collegata al ramo `main` e comando di pubblicazione
    `npx wrangler deploy --env <id>`.

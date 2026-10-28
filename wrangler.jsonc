@@ -34,8 +34,11 @@
         { "binding": "COMMUNITY_DB", "database_name": "fungaroli-staging-community", "database_id": "00969971-e203-40aa-92ea-c0e305c9fa89", "migrations_dir": "migrations" },
         { "binding": "CMS_DB", "database_name": "fungaroli-staging-content", "database_id": "e9f389e8-17d2-4738-a3da-272c43ef3154", "migrations_dir": "migrations" }
       ],
-      // Stessi cron della produzione: il Worker li riconosce dalla stringa esatta.
-      "triggers": { "crons": ["* * * * *", "17 3 * * *", "*/5 4,5 * * *"] },
+      // Il Worker riconosce i cron dalla stringa esatta. Piano Workers Free: massimo 5 cron
+      // per account, 3 sono della produzione. Qui meteo e pulizie; niente archivio delle
+      // previsioni, che serve solo alla ricerca in produzione.
+      "triggers": { "crons": ["* * * * *", "17 3 * * *"] },
+      "preview_urls": false,
       "kv_namespaces": [
         { "binding": "DIARIO", "id": "43cc727eb9d44f809ed8c0a0789651ef" }
       ]

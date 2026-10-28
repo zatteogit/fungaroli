@@ -56,7 +56,7 @@ test('/edition.json: edizione e ambiente dalle variabili, ripiego sulla generali
   assert.equal(handleEdition(new Request('https://x/edition.json', { method: 'POST' }), {}).status, 405);
 });
 
-test('wrangler.jsonc: staging con database propri e stessa edizione della produzione', () => {
+test('wrangler.jsonc: staging con database propri, stessa edizione e cron entro il piano', () => {
   const config = JSON.parse(readFileSync(new URL('../wrangler.jsonc', import.meta.url), 'utf8').replace(/^\s*\/\/.*$/gm, ''));
   const prod = config, staging = config.env.staging;
   assert.equal(prod.vars.ENVIRONMENT, 'production');
@@ -64,6 +64,9 @@ test('wrangler.jsonc: staging con database propri e stessa edizione della produz
   for (const v of [prod.vars.EDITION, staging.vars.EDITION]) assert.ok(EDITIONS[v]);
   const names = c => [...c.d1_databases.map(d => d.database_name), ...c.kv_namespaces.map(k => k.id)];
   for (const n of names(staging)) assert.ok(!names(prod).includes(n), `staging condivide ${n} con la produzione`);
-  assert.deepEqual(staging.triggers.crons, prod.triggers.crons);
+  // Il Worker riconosce i cron dalla stringa esatta; il piano Free ne ammette 5 per account.
+  assert.ok(staging.triggers.crons.every(c => prod.triggers.crons.includes(c)));
+  assert.ok(staging.triggers.crons.includes('* * * * *'), 'senza aggiornamento meteo lo staging non ha previsioni');
+  assert.ok(prod.triggers.crons.length + staging.triggers.crons.length <= 5, 'oltre il limite di cron del piano Workers Free');
   assert.ok(prod.assets.run_worker_first.includes('/edition.json'));
 });
