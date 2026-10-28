@@ -357,6 +357,35 @@ Wrangler locale rimane non eseguito: anche con Node 24 l'avvio termina con
 `spawn EBADF`. Il controllo GitHub è passato e la PR è stata fusa in `main` al commit `87ae97b30285ac10677a4b862258270f1ec5b2b6`; la versione v399 e il renderer aggiornato sono stati verificati online.
 Non sono prove con utenti, dati meteo reali o validazione scientifica.
 
+### Undicesimo passaggio: specie senza indice e meteo
+
+Con la versione `main` `87ae97b3`, Pioppino come sola specie selezionata,
+Vallonina e meteo sintetico, la scheda comunica correttamente che l’indice
+manca ma non riporta il giudizio meteo, anche con temporale classificato come
+«uscita sconsigliata». È visibile unicamente un’icona nei giorni; il piano
+è comunque proposto. Gli [alberi accessibili](../evidence/002-uscita/)
+documentano temporale e sereno, non sono previsioni reali.
+
+| Persona simulata | Valutazione preliminare |
+| --- | --- |
+| Neofita | La mancanza di indice non deve nascondere la cautela meteo |
+| Appassionato | La specie scelta e il meteo sono entrambi utili alla decisione |
+| Esperto | Ragione e dato mancante sono distinti, senza alterare il modello |
+| Escursionista | Il meteo deve precedere il piano anche senza indice fungino |
+| Naturalista | Può consultare i dati del luogo e la condizione meteo separatamente |
+
+La [PR 319](https://github.com/zatteogit/fungaroli/pull/319), commit
+`d0e5378dd6031a57dcb5aa3b69d074e16f6fd21e`, rende visibile la cautela e la
+ragione quando il modello sconsiglia l’uscita, una sintesi con meteo sereno e
+un invito a riprovare se la previsione manca. Restano visibili l’indice non
+disponibile e la precisazione che ciò non indica assenza. Le fixture browser
+isolate coprono temporale, vento forte, neve, sereno e meteo non disponibile;
+i casi con previsione sono stati provati a quattro larghezze e nei due temi.
+Sono passati 643 test unitari e il dry-run. Il test browser integrato resta non
+eseguito per il problema di avvio Wrangler `spawn EBADF`; non sono state svolte
+prove con utenti o validazioni scientifiche. PR in attesa del controllo GitHub
+e del rilascio; il primo avvio online a cache vuota resta non certificato.
+
 ## Ancora da fare prima di chiudere la pagina
 
 - Completare l’inventario delle sezioni espanse, dei filtri, degli stati del
