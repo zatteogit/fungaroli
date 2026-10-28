@@ -4057,7 +4057,7 @@ async function applyLegal() {
     $('#ob-legal-details').innerHTML=(L.info_sections||[]).filter(section=>section.id!=='cookie').map(section=>`<section><h3>${esc(section.title)}</h3>${section.id==='privacy'?privacyHtml(section.html):section.html}</section>`).join('');
     $('#ob-accept').onclick=async()=>{
       const button=$('#ob-accept');button.disabled=true;
-      try{choicesTouched=true;const consentOwner=choiceOwner;const choices={share:$('#ob-share').checked,research:$('#ob-research').checked};const {persisted}=await acceptLegalNotice();
+      try{choicesTouched=true;const consentOwner=choiceOwner;const choices={research:$('#ob-research').checked};const {persisted}=await acceptLegalNotice();
        if(!consentOwner&&!currentUser())setPilotChoices(choices);else clearPilotChoices();
        document.dispatchEvent(new Event('fronda:pilot-choice-deferred'));dlg.close();
        if(researchTouched&&consentOwner&&currentUser()?.id===consentOwner){

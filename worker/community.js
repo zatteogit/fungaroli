@@ -6,6 +6,7 @@ import observationsSchema from '../migrations/0007_shared_observations.sql';
 import animalObservationsSchema from '../migrations/0013_animal_observations.sql';
 import basePrecisionSchema from '../migrations/0014_base_precision.sql';
 import researchConsentSchema from '../migrations/0015_research_consent.sql';
+import notePositionSchema from '../migrations/0019_note_position_precision.sql';
 import {RESEARCH_CONSENT_VERSION,researchState} from '../js/research-consent.js';
 import animalCatalog from '../data/animals.json';
 import {rankingPolicy} from './admin-dashboard.js';
@@ -15,7 +16,7 @@ import treeCatalog from '../data/trees.json';
 import {normalizeNotebookNote} from '../js/notebook-entry.js';
 import {normalizeNotebookPhoto} from '../js/notebook-photo.js';
 import plantCatalog from '../data/plants.json';
-import {normalizeBase,validPoint} from '../js/travel-model.js';
+import {normalizeBase,validPoint,BASE_DECIMALS} from '../js/travel-model.js';
 import {searchPlaces} from './travel-provider.js';
 import {cachedRoutes} from './travel-cache.js';
 import { buildEdibleCatalog } from '../js/edible-catalog.js';
@@ -46,7 +47,7 @@ const fail = (message, status = 400) => { const e = new Error(message); e.status
 async function init(db) {
   if (!initialized.has(db)) initialized.set(db, (async () => {
     // D1 exec treats individual lines as statements; use complete SQL statements.
-    await db.batch((schema+';'+preferencesSchema+';'+observationsSchema+';'+legalAcceptancesSchema+';'+basePrecisionSchema+';'+researchConsentSchema).split(';').map((s) => s.replace(/^\s*--.*$/gm, '').trim()).filter((s) => s && !s.startsWith('PRAGMA')).map((s) => db.prepare(s)));
+    await db.batch((schema+';'+preferencesSchema+';'+observationsSchema+';'+legalAcceptancesSchema+';'+basePrecisionSchema+';'+researchConsentSchema+';'+notePositionSchema).split(';').map((s) => s.replace(/^\s*--.*$/gm, '').trim()).filter((s) => s && !s.startsWith('PRAGMA')).map((s) => db.prepare(s)));
     const observationTable=await db.prepare("SELECT sql FROM sqlite_master WHERE type='table' AND name='shared_observations'").first('sql');
     if(!observationTable?.includes("'animale'"))await db.batch(animalObservationsSchema.split(';').map(s=>s.trim()).filter(Boolean).map(s=>db.prepare(s)));
     await db.prepare("INSERT INTO community_meta(key,value) VALUES('ip_salt',?) ON CONFLICT(key) DO NOTHING").bind(token()).run();
@@ -307,7 +308,9 @@ export async function handleCommunity(request, env, now = Date.now()) {
       let entry = await body(request); const id = entryMatch[1];
       if (entry && typeof entry === 'object') delete entry.shared;
       const liveIds=await currentCatalogIds(env,url.origin);
-      if(entry.kind==='note'){try{entry=normalizeNotebookNote(entry,liveIds);}catch(e){fail(e.message);}}
+      if(entry.kind==='note'){try{entry=normalizeNotebookNote(entry,liveIds);}catch(e){fail(e.message);}
+        // Il punto della nota si conserva arrotondato a circa 1 km, come la base (decisione di Matteo del 28/10/2026, migrazione 0019).
+        if(entry.position)entry.position={...entry.position,latitude:+entry.position.latitude.toFixed(BASE_DECIMALS),longitude:+entry.position.longitude.toFixed(BASE_DECIMALS),accuracy:Math.max(entry.position.accuracy,1000)};}
       // Le foto passano sempre dalla stessa validazione, che toglie i metadati EXIF/XMP anche dalle chiamate dirette.
       else if(entry?.photo!=null){try{entry.photo=normalizeNotebookPhoto(entry.photo);}catch(e){fail(e.message);}}
       if(entry.kind!=null&&!['outing','plan','note'].includes(entry.kind))fail('Tipo di voce non valido.');

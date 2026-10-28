@@ -203,3 +203,34 @@ test('foto lato server: Exif tolto da note e uscite inviate direttamente all’A
   assert.equal(sql.prepare("SELECT count(*) AS n FROM diary_entries WHERE id='uscita-rotta'").get().n, 0);
   sql.close();
 });
+
+test('posizione della nota: salvata arrotondata a circa 1 km, con precisione dichiarata di almeno 1000 m', async () => {
+  const ctx = await setup(), { sql, call } = ctx;
+  await person(ctx, 'a');
+  const note = { id: 'nota-punto', kind: 'note', category: 'fungo', title: 'Punto', date: '2026-10-18', zoneId: 'tancia', note: 'qui',
+    position: { latitude: 42.345678, longitude: 12.876543, accuracy: 8, capturedAt: new Date(NOW - 6e4).toISOString() } };
+  const saved = await call('a', 'PUT', 'entries/' + note.id, note);
+  assert.equal(saved.status, 200, await saved.clone().text());
+  const expected = { latitude: 42.35, longitude: 12.88, accuracy: 1000, capturedAt: note.position.capturedAt };
+  assert.deepEqual((await saved.json()).entry.position, expected, 'il client riceve la versione arrotondata');
+  assert.deepEqual(JSON.parse(sql.prepare("SELECT payload FROM diary_entries WHERE id='nota-punto'").get().payload).position, expected);
+  sql.close();
+});
+
+test('migrazione 0019: le note già salvate con il punto preciso vengono arrotondate, una volta sola', async () => {
+  const sql = new DatabaseSync(':memory:');
+  sql.exec(readFileSync(new URL('../migrations/0001_community.sql', import.meta.url), 'utf8'));
+  sql.prepare('INSERT INTO accounts VALUES(?,?,?)').run('vecchio', 'Vecchio', NOW - 864e6);
+  const old = { id: 'nota-vecchia', kind: 'note', date: '2026-10-18', note: 'x', position: { latitude: 41.902812, longitude: 12.496398, accuracy: 12, capturedAt: '2026-10-18T08:00:00.000Z' } };
+  sql.prepare('INSERT INTO diary_entries(account_id,id,payload,saved_at) VALUES(?,?,?,?)').run('vecchio', old.id, JSON.stringify(old), NOW - 864e6);
+  sql.prepare('INSERT INTO diary_entries(account_id,id,payload,saved_at) VALUES(?,?,?,?)').run('vecchio', 'senza-punto', JSON.stringify({ id: 'senza-punto', kind: 'outing', date: '2026-10-18' }), NOW - 864e6);
+  const env = { COMMUNITY_DB: d1(sql), APP_ORIGIN: ORIGIN };
+  assert.equal((await handleCommunity(new Request(ORIGIN + '/api/community/status'), env, NOW)).status, 200);
+  const payload = JSON.parse(sql.prepare("SELECT payload FROM diary_entries WHERE id='nota-vecchia'").get().payload);
+  assert.deepEqual(payload.position, { latitude: 41.9, longitude: 12.5, accuracy: 1000, capturedAt: '2026-10-18T08:00:00.000Z' });
+  assert.equal(payload.note, 'x');
+  assert.deepEqual(JSON.parse(sql.prepare("SELECT payload FROM diary_entries WHERE id='senza-punto'").get().payload), { id: 'senza-punto', kind: 'outing', date: '2026-10-18' });
+  const migration = readFileSync(new URL('../migrations/0019_note_position_precision.sql', import.meta.url), 'utf8').replace(/^\s*--.*$/gm, '').trim().replace(/;$/, '');
+  assert.equal(sql.prepare(migration).run().changes, 0, 'idempotente');
+  sql.close();
+});

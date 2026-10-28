@@ -64,7 +64,7 @@ export function locate(): Promise<PrivatePosition> {
   });
 }
 export function locationFields(position?: PrivatePosition | null) {
-  return `<section class="field-location"><b>Punto privato</b><p class="small">${position ? "Posizione registrata · precisione circa " + Math.round(position.accuracy) + " m." : "Se vuoi, conserva la posizione del ritrovamento nel tuo appunto. Non viene inclusa nei riepiloghi condivisi o nello Studio dell’indice."}</p><div class="field-actions"><button type="button" class="btn ghost" data-note-locate>${position ? "Rileva di nuovo" : "Usa la mia posizione"}</button>${position ? '<button type="button" class="link-btn" data-note-unlocate>Togli il punto</button>' : ""}</div><p class="small" data-location-status role="status"></p></section>`;
+  return `<section class="field-location"><b>Punto privato</b><p class="small">${position ? "Posizione registrata · precisione circa " + Math.round(position.accuracy) + " m." : "Se vuoi, conserva la posizione del ritrovamento nel tuo appunto. Con un profilo si salva arrotondata a circa 1 km. Non viene inclusa nei riepiloghi condivisi o nello Studio dell’indice."}</p><div class="field-actions"><button type="button" class="btn ghost" data-note-locate>${position ? "Rileva di nuovo" : "Usa la mia posizione"}</button>${position ? '<button type="button" class="link-btn" data-note-unlocate>Togli il punto</button>' : ""}</div><p class="small" data-location-status role="status"></p></section>`;
 }
 export function mountNoteLocation(
   root: ParentNode,
