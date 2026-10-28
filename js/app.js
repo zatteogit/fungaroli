@@ -3400,15 +3400,15 @@ function essentialSections(z, d, walk) {
     sub: [reserveLead(d.reserve) && `<span class="plan-reserve">${esc(reserveLead(d.reserve))}</span>`,
       bandNote && `<span class="plan-where plan-band-off">${esc(bandNote)}</span>`,
       attentionLine(observationRule)].filter(Boolean).join('') });
-  if (d.crowd &&state.target==='funghi') {
+  const w=wxOf(z,d);
+  if (d.crowd &&state.target==='funghi' && !w?.thunder) {
     const t = timingAdvice({ dateStr: d.date, lat: z.lat, lon: z.lon, crowd: d.crowd });
     rows.push({ sec: 'quando', icon: 'when', k: 'Quando', v: `<span>${practicalTiming(z,d,walk).available?`Arriva <b>entro le ${fmtRough(t.arrive,15,'floor')}</b>`:`<b>${timingLateLabel(z,d)}</b>`}</span><span class="badge crowd-${d.crowd.level}">${crowdText(d.crowd)}</span>` });
   }
-  const w=wxOf(z,d);
   if(w){
     const weatherText=esc(w.text.replace(/^./,c=>c.toUpperCase())),when=rows.find(r=>r.sec==='quando');
     if(when)when.sub=`<span class="when-weather wx-${w.level}">${wxi(w)}<span>${weatherText}</span></span>`;
-    else rows.push({sec:'quando',svg:wxi(w),k:'Meteo',v:weatherText}); // senza orario consigliato la riga dice solo il tempo (24/10)
+    else rows.push({sec:'quando',svg:wxi(w),k:'Meteo',v:w.thunder?'Uscita sconsigliata con temporali':weatherText,sub:w.thunder?`<span class="when-weather wx-${w.level}">${weatherText}</span>`:''});
   }
 
   const drive=drivePoint(z,walk);
@@ -3748,6 +3748,7 @@ function renderWhenWeather(z,d) {
 
 function renderHuman(z, d) {
   if (!d.crowd) return '';
+  const storm=!!wxOf(z,d)?.thunder;
   const t = timingAdvice({ dateStr: d.date, lat: z.lat, lon: z.lon, crowd: d.crowd });
   // alternativa: un giorno con meno gente e indice simile
   let alt = null;
@@ -3764,15 +3765,15 @@ function renderHuman(z, d) {
   const planned=plannedDeparture(t.arrive,minutes), available=practicalTiming(z,d,walkFor(z,d,state.trailId)).available;
   const departure=planned?fmtTime(planned):null;
   return `<div class="human timing-layout">
-    ${!available?`<p class="notice">L’orario consigliato è passato. Puoi consultare le condizioni di oggi oppure <a href="${walkHref(z,1,state.trailId)}">vedere domani</a>.</p>`:''}
+    ${!storm&&!available?`<p class="notice">L’orario consigliato è passato. Puoi consultare le condizioni di oggi oppure <a href="${walkHref(z,1,state.trailId)}">vedere domani</a>.</p>`:''}
     <dl class="timing-facts">
-      <div><dt>Partenza · ${esc(currentBase().name)}</dt><dd>${departure?`${available?'verso le':'era verso le'} <b>${departure}</b>`:'Verifica nel navigatore'}</dd></div>
+      ${!storm?`<div><dt>Partenza · ${esc(currentBase().name)}</dt><dd>${departure?`${available?'verso le':'era verso le'} <b>${departure}</b>`:'Verifica nel navigatore'}</dd></div>`:''}
       <div><dt>Alba</dt><dd>verso le <b>${fmtRough(t.sunrise,5)}</b></dd></div>
       <div><dt>Orario consentito di raccolta</dt><dd><b>${fmtRough(t.legal,5,'ceil')}–${fmtRough(t.end,5,'floor')}</b></dd></div>
     </dl>
-    ${t.arrive<t.sunrise?'<p class="timing-light">Arrivo prima dell’alba: porta una luce.</p>':''}
+    ${!storm&&t.arrive<t.sunrise?'<p class="timing-light">Arrivo prima dell’alba: porta una luce.</p>':''}
     ${renderWhenWeather(z,d)}
-    ${alt?`<p class="timing-alternative"><b>Preferisci meno gente?</b> ${fmtDate(alt.date,{weekday:'long',day:'numeric'})} · ${idxDot(alt.score)} · ${crowdText(alt.crowd)}.</p>`:''}
+    ${!storm&&alt?`<p class="timing-alternative"><b>Preferisci meno gente?</b> ${fmtDate(alt.date,{weekday:'long',day:'numeric'})} · ${idxDot(alt.score)} · ${crowdText(alt.crowd)}.</p>`:''}
     <div class="timing-method"><p class="small muted"><b>Affollamento stimato.</b> Calendario, notorietà, accessi, pioggia e indice; presenze e passaparola non misurati.</p>${tips.length?`<ul class="timing-signals">${tips.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''}</div>
   </div>`;
 }
