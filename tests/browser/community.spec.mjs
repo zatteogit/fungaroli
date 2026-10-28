@@ -294,6 +294,15 @@ test('Meteo sconsigliato visibile anche nelle uscite per piante e sentieri',asyn
  expect(errors).toEqual([]);
 });
 
+test('Mostra il meteo anche quando la specie scelta non ha indice',async({page})=>{
+ await page.clock.setFixedTime(new Date(new Date().setUTCHours(0,0,0,0)));await page.setViewportSize({width:390,height:900});
+ const errors=await setup(page,{gust:65,cover:false});
+ await page.evaluate(()=>localStorage.setItem('fungaroli:prefs:v2',JSON.stringify({interests:['funghi'],target:'funghi',speciesIds:['cyclocybe-aegerita']})));
+ await page.goto('/#/zona/vallonina/1');await page.reload();const detail=page.locator('#detail');
+ await expect(detail).toContainText('Indice non ancora disponibile');await expect(detail).toContainText('Uscita sconsigliata');await expect(detail).toContainText('65 km/h');
+ expect(errors).toEqual([]);
+});
+
 test('riepiloghi essenziali negli accordion sul posto, senza voci duplicate o salti',async({page})=>{
   await page.emulateMedia({reducedMotion:'reduce'});
   const errors=await setup(page);await page.goto('/#/zona/tancia/0');await expect(page.locator('#detail details[data-sec="specie"]')).toBeVisible();
