@@ -1,0 +1,36 @@
+{
+  "status": 200,
+  "loadMs": 1197,
+  "appVersion": "fungaroli-shell-v400",
+  "swCacheBefore": [
+    "fungaroli-content-v1"
+  ],
+  "sw": {
+    "scope": "https://fungaroli.zatteo.workers.dev/",
+    "active": "activating",
+    "script": "https://fungaroli.zatteo.workers.dev/sw.js"
+  },
+  "caches": {
+    "fungaroli-content-v1": 1,
+    "fungaroli-shell-v400": 209
+  },
+  "controlledBeforeReload": true,
+  "controlledAfterReload": true,
+  "bodyTextStart": "I posti segreti restano tuoi.\nNel Taccuino, foto e appunti sono privati.\n\nLazio\n: versione pilota, che cosa copre\nUscite\nMappa\nScopri\nTaccuino\nAnnota\n\nDove andare\nPreparazione di Fronda\n\nTEST CON UTENTI INVITATI\n\nBenvenuto nel test di Fronda\n\nPilota Lazio: zone selezionate nelle cinque province. La ",
+  "onlineErrors": [
+    "Failed to load resource: the server responded with a status of 401 ()"
+  ],
+  "onlineFailed": [],
+  "offlineVersion": "fungaroli-shell-v400",
+  "offlineText": "Una foto, una foglia, una domanda.\nIl prossimo appunto può cominciare così.\n\nLazio\n: versione pilota, che cosa copre\nUscite\nMappa\nScopri\nTaccuino\nAnnota\n\nDove andare\nPreparazione di Fronda\n\nTEST CON UTENTI INVITATI\n\nBenvenuto nel test di Fronda\n\nPilota Lazio: zone selezionate nelle cinque province. ",
+  "offlineErrorCount": 76,
+  "offlineUniqueErrors": [
+    "Failed to load resource: net::ERR_FAILED"
+  ],
+  "offlineFailedNonApi": [
+    "https://fungaroli.zatteo.workers.dev/assets/zones/var/pnalm-settefrati-canneto-autunno-nuvoloso.webp net::ERR_FAILED",
+    "https://fungaroli.zatteo.workers.dev/assets/species/nuda-ref-t.webp net::ERR_FAILED",
+    "https://fungaroli.zatteo.workers.dev/assets/zones/var/pnalm-settefrati-canneto-autunno-nuvoloso.webp net::ERR_FAILED",
+    "https://fungaroli.zatteo.workers.dev/assets/zones/var/faete-rocca-papa-autunno-sereno.webp net::ERR_FAILED"
+  ]
+}

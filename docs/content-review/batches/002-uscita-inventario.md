@@ -386,6 +386,29 @@ eseguito per il problema di avvio Wrangler `spawn EBADF`; non sono state svolte
 prove con utenti o validazioni scientifiche. Il controllo GitHub è passato e la PR è stata fusa in `main` al commit
 `0f6d7b9783ef5314c73482f257eccf1d95a6fc51`; la versione v400 e il renderer aggiornato sono stati verificati online; il primo avvio online a cache vuota resta non certificato.
 
+### Dodicesimo passaggio: avvio a cache vuota e test browser locali
+
+Il 28 ottobre, dal Mac, il sito online è stato aperto in un profilo Chromium
+nuovo, senza dati né service worker, a 390 × 844. La pagina risponde 200 in
+circa 1,2 s con la shell `fungaroli-shell-v400`; il service worker controlla già
+la pagina prima della ricarica e la cache della shell contiene 209 voci. Dopo
+la ricarica, una nuova apertura offline mostra ancora v400 e l’avviso del test
+con utenti invitati. Offline mancano soltanto le API e quattro immagini non
+precaricate (due varianti di zona e un riferimento di specie). Online la
+console registra una sola risposta 401, di origine non identificata. Le chiamate
+pubbliche controllate rispondono 200 e il diario 410; non risultano richieste
+fallite. [Risultati](../evidence/002-uscita/avvio-online-cache-vuota-v400.json)
+e [script](../evidence/002-uscita/avvio-online-cache-vuota.mjs) sono archiviati.
+La prova riguarda un solo browser senza interfaccia e una sola larghezza;
+non sostituisce prove su dispositivi reali o reti lente.
+
+I tre test browser delle PR 317, 318 e 319 in `tests/browser/community.spec.mjs`
+**non sono stati eseguiti in locale**. Con Node 23.10 su macOS 27, Wrangler
+termina con `spawn EBADF` all’avvio di esbuild. L’errore si ripete fuori dalla
+sandbox, in un terminale interattivo, con `ESBUILD_WORKER_THREADS=0` e con un
+limite di file aperti ridotto. Il binario esbuild, lanciato da solo, funziona.
+I test risultano passati soltanto nel controllo GitHub.
+
 ## Ancora da fare prima di chiudere la pagina
 
 - Completare l’inventario delle sezioni espanse, dei filtri, degli stati del
@@ -396,4 +419,6 @@ prove con utenti o validazioni scientifiche. Il controllo GitHub è passato e la
   contenuti lunghi e breakpoint. Registrare ogni campo e le prove per persona.
 - Mantenere `route-seed` e le cinque personas in coda fino a inventario e
   revisioni completi. Nessuna validazione con utenti reali o scientifica è stata
-  svolta. Il caricamento a cache vuota del sito online non è certificato.
+  svolta. Il primo avvio online a cache vuota è stato provato in un solo
+  browser senza interfaccia; mancano prove su dispositivi reali.
+- Eseguire in locale i test browser meteo quando Wrangler si avvia sul Mac.
