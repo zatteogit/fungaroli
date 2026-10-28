@@ -1,0 +1,273 @@
+- img "Vallonina / Terminillo"
+- text: giovedì 29 ottobre
+- heading "Vallonina" [level=1]
+- region "Scelte dell’uscita":
+  - group:
+    - strong: Piante
+  - button "Modifica"
+- tablist "Giorno":
+  - tab "Oggi 28"
+  - 'tab "Domani 29 Meteo Vallonina: temporali possibili · piovaschi possibili (90%) · 13 °C" [selected]':
+    - text: Domani 29
+    - img
+    - text: 13°
+  - 'tab "venerdì 30 Meteo Vallonina: temporali possibili · piovaschi possibili (90%) · 13 °C"':
+    - text: venerdì 30
+    - img
+    - text: 13°
+  - 'tab "sabato 31 Meteo Vallonina: temporali possibili · piovaschi possibili (90%) · 13 °C"':
+    - text: sabato 31
+    - img
+    - text: 13°
+  - 'tab "domenica 1 Meteo Vallonina: temporali possibili · piovaschi possibili (90%) · 13 °C"':
+    - text: domenica 1
+    - img
+    - text: 13°
+  - 'tab "lunedì 2 Meteo Vallonina: temporali possibili · piovaschi possibili (90%) · 13 °C"':
+    - text: lunedì 2
+    - img
+    - text: 13°
+  - 'tab "martedì 3 Meteo Vallonina: temporali possibili · piovaschi possibili (90%) · 13 °C"':
+    - text: martedì 3
+    - img
+    - text: 13°
+  - 'tab "mercoledì 4 Meteo Vallonina: temporali possibili · piovaschi possibili (90%) · 13 °C"':
+    - text: mercoledì 4
+    - img
+    - text: 13°
+- button "Scorri avanti"
+- img
+- text: 13 ° Temporali 13–13 °C · mattina
+- paragraph: Uscita sconsigliata · temporali possibili · piovaschi possibili (90%) · 13 °C
+- paragraph:
+  - text: Stagione elaborata con AI dalla foto di Idéfix,
+  - link "CC BY-SA 3.0":
+    - /url: https://creativecommons.org/licenses/by-sa/3.0/
+  - text: ·
+  - link "Wikimedia Commons":
+    - /url: https://commons.wikimedia.org/wiki/File:SelladiLeonessa001.jpg
+- group: Percorso e accessi Tratto mappato · giro da verificare
+- heading "Il piano in breve" [level=2]
+- group:
+  - text: La passeggiata, più da vicino
+  - img "Segnavia SI": SI
+  - text: Sentiero Italia
+  - list:
+    - listitem: 9,5 km tratto sulla mappa
+    - listitem: n.d. difficoltà
+- paragraph: "Potresti incontrare anche queste specie. Ambienti campionati sul tratto del sentiero: presenza da verificare."
+- list:
+  - listitem:
+    - link "Erbe Ortica Ambiente compatibile":
+      - /url: "#/pianta/ortica"
+  - listitem:
+    - link "Frutti Fragolina di bosco Ambiente compatibile":
+      - /url: "#/pianta/fragolina"
+  - listitem:
+    - link "Albero Faggio Faggeta nei campioni del tracciato":
+      - /url: "#/albero/faggio"
+- link "Scopri altre piante Erbe, fiori, frutti e arbusti":
+  - /url: "#/piante"
+- paragraph: 14,1 km in linea d’aria
+- paragraph:
+  - link "Faggeta":
+    - /url: "#/albero/faggio"
+  - text: d'alto fusto continua sul versante nord del Terminillo verso Leonessa. Microclima umido e fresco, nebbie di condensazione e piogge orografiche anche d'estate.
+- region "Strumenti per il bosco":
+  - heading "Per il bosco" [level=2]
+  - paragraph: Anche senza rete
+  - button "Salva offline"
+  - group: Altri strumenti
+- region "Cosa dicono gli altri su Vallonina":
+  - text: Dal Taccuino condiviso
+  - heading "Cosa dicono gli altri su Vallonina" [level=2]
+  - paragraph: Ultimi 7 giorni · tutte le specie della zona
+  - paragraph: Condivisione delle osservazioni non ancora attiva.
+  - link "Apri il tuo Taccuino →":
+    - /url: "#/diario"
+  - paragraph: "Osservazioni dichiarate: non confermano la presenza attuale. I tuoi punti GPS restano privati."
+  - group: Dati e privacy
+- heading "Approfondimenti" [level=2]
+- group: Accessi e soste
+- group:
+  - text: Sentieri della zona
+  - list:
+    - listitem:
+      - img "Segnavia SI": SI
+      - text: Sentiero Italia Club Alpino Italiano In evidenza
+      - term: Nella zona
+      - definition: 9,5 km
+      - tablist "Vista del tratto di Sentiero Italia":
+        - tab "Profilo" [selected]
+        - tab "Tracciato"
+      - tabpanel "Profilo":
+        - figure "1570 m Quote del tratto locale 1744 m":
+          - 'img "Profilo del tratto nella zona: da 1570 a 1744 m, tra 1566 e 1874 m"'
+          - button "Mostra intersezione 1, a 1760 metri": "1"
+          - button "Mostra intersezione 2, a 1799 metri": "2"
+          - button "Mostra intersezione 3, a 1832 metri": "3"
+          - text: 1570 m Quote del tratto locale 1744 m
+      - text: Intersezioni con strade
+      - link "Intersezione 1 sulla mappa, a 1760 metri":
+        - /url: https://www.openstreetmap.org/?mlat=42.46847&mlon=13.01093#map=17/42.46847/13.01093
+        - text: 1 1760 m su strada
+      - link "Intersezione 2 sulla mappa, a 1799 metri":
+        - /url: https://www.openstreetmap.org/?mlat=42.48473&mlon=13.013#map=17/42.48473/13.013
+        - text: 2 1799 m su sterrata
+      - link "Intersezione 3 sulla mappa, a 1832 metri":
+        - /url: https://www.openstreetmap.org/?mlat=42.4969&mlon=13.00769#map=17/42.4969/13.00769
+        - text: 3 1832 m su sterrata
+      - link "Microzona e dettagli del sentiero":
+        - /url: "#/zona/vallonina/1/sentiero/1021025"
+      - link "Arrivo in auto":
+        - /url: https://www.google.com/maps/dir/?api=1&origin=42.404,12.8623&destination=42.473514,13.006334&travelmode=driving
+      - link "Mappa del sentiero":
+        - /url: https://hiking.waymarkedtrails.org/#route?id=1021025&map=12/42.48445/13.00788
+      - link "GPX del tratto locale":
+        - /url: data:application/gpx+xml;charset=utf-8,…
+      - link "OpenStreetMap":
+        - /url: https://www.openstreetmap.org/relation/1021025
+    - listitem:
+      - img "Segnavia 404": "404"
+      - text: Leonessa – Rifugio Angelo Sebastiani Vallonina CAI Leonessa
+      - term: Difficoltà
+      - definition:
+        - link "E · escursionistico":
+          - /url: "#/glossario/difficolta-e"
+      - term: Intero
+      - definition: 16,3 km · 5 h 30 · +1120 m
+      - term: Nella zona
+      - definition: 6,2 km
+      - tablist "Vista del tratto di Leonessa – Rifugio Angelo Sebastiani":
+        - tab "Profilo" [selected]
+        - tab "Tracciato"
+      - tabpanel "Profilo":
+        - figure "1744 m Quote del tratto locale 1838 m":
+          - 'img "Profilo del tratto nella zona: da 1744 a 1838 m, tra 1698 e 1874 m"'
+          - button "Mostra intersezione 1, a 1775 metri": "1"
+          - button "Mostra intersezione 2, a 1832 metri": "2"
+          - button "Mostra intersezione 3, a 1816 metri": "3"
+          - text: 1744 m Quote del tratto locale 1838 m
+      - text: Intersezioni con strade
+      - link "Intersezione 1 sulla mappa, a 1775 metri":
+        - /url: https://www.openstreetmap.org/?mlat=42.48587&mlon=13.01145#map=17/42.48587/13.01145
+        - text: 1 1775 m su sterrata
+      - link "Intersezione 2 sulla mappa, a 1832 metri":
+        - /url: https://www.openstreetmap.org/?mlat=42.4969&mlon=13.00769#map=17/42.4969/13.00769
+        - text: 2 1832 m su sterrata
+      - link "Intersezione 3 sulla mappa, a 1816 metri":
+        - /url: https://www.openstreetmap.org/?mlat=42.47231&mlon=13.01418#map=17/42.47231/13.01418
+        - text: 3 1816 m su sterrata
+      - link "Microzona e dettagli del sentiero":
+        - /url: "#/zona/vallonina/1/sentiero/10645640"
+      - link "Arrivo in auto":
+        - /url: https://www.google.com/maps/dir/?api=1&origin=42.404,12.8623&destination=42.473514,13.006334&travelmode=driving
+      - link "Mappa del sentiero":
+        - /url: https://hiking.waymarkedtrails.org/#route?id=10645640&map=12/42.49018/13.01175
+      - link "GPX del tratto locale":
+        - /url: data:application/gpx+xml;charset=utf-8,…
+      - link "OpenStreetMap":
+        - /url: https://www.openstreetmap.org/relation/10645640
+      - text: Tracciato
+      - link "© OpenStreetMap":
+        - /url: https://www.openstreetmap.org/relation/10645640
+      - link "ODbL":
+        - /url: https://opendatacommons.org/licenses/odbl/1-0/
+      - heading "Altri itinerari" [level=4]
+      - list:
+        - listitem:
+          - link "Tappa collegata sul sito del CAI":
+            - /url: https://sentieroitalia.cai.it/track/si-o15/
+            - text: CAI Tappa collegata
+        - listitem:
+          - link "Altro itinerario su Wikiloc":
+            - /url: https://it.wikiloc.com/percorsi-escursionismo/sella-jacci-e-selletta-di-pratorecchia-da-rifugio-sebastiani-211730293
+            - text: Wikiloc Tratti in comune
+          - text: Include passaggi fuori sentiero
+      - group: Fonti e dettagli
+    - listitem:
+      - img "Segnavia 405": "405"
+      - text: Sigillo – Rif.A. Sebastiani Le Casette (820m) · Malopasso · Fonte Capo Scura (1400m) · Pian di Scura · Sella di Pratorecchia (1875m) CAI Antrodoco
+      - term: Difficoltà
+      - definition:
+        - link "E · escursionistico":
+          - /url: "#/glossario/difficolta-e"
+      - term: Intero
+      - definition: 10 km · 5 h · +1290 m
+      - term: Nella zona
+      - definition: 6 km
+      - tablist "Vista del tratto di Sigillo – Rif.A. Sebastiani":
+        - tab "Profilo" [selected]
+        - tab "Tracciato"
+      - tabpanel "Profilo":
+        - figure "938 m Quote del tratto locale 1838 m":
+          - 'img "Profilo del tratto nella zona: da 938 a 1838 m, tra 938 e 1874 m"'
+          - button "Mostra intersezione 1, a 1385 metri": "1"
+          - button "Mostra intersezione 2, a 1089 metri": "2"
+          - button "Mostra intersezione 3, a 934 metri": "3"
+          - text: 938 m Quote del tratto locale 1838 m
+      - text: Intersezioni con strade
+      - link "Intersezione 1 sulla mappa, a 1385 metri":
+        - /url: https://www.openstreetmap.org/?mlat=42.47888&mlon=13.02323#map=17/42.47888/13.02323
+        - text: 1 1385 m su sterrata
+      - link "Intersezione 2 sulla mappa, a 1089 metri":
+        - /url: https://www.openstreetmap.org/?mlat=42.48628&mlon=13.02912#map=17/42.48628/13.02912
+        - text: 2 1089 m su sterrata
+      - link "Intersezione 3 sulla mappa, a 934 metri":
+        - /url: https://www.openstreetmap.org/?mlat=42.49046&mlon=13.04074#map=17/42.49046/13.04074
+        - text: 3 934 m su sterrata
+      - link "Microzona e dettagli del sentiero":
+        - /url: "#/zona/vallonina/1/sentiero/10645560"
+      - link "Arrivo in auto":
+        - /url: https://www.google.com/maps/dir/?api=1&origin=42.404,12.8623&destination=42.473514,13.006334&travelmode=driving
+      - link "Mappa del sentiero":
+        - /url: https://hiking.waymarkedtrails.org/#route?id=10645560&map=13/42.48016/13.02626
+      - link "GPX del tratto locale":
+        - /url: data:application/gpx+xml;charset=utf-8,…
+      - link "OpenStreetMap":
+        - /url: https://www.openstreetmap.org/relation/10645560
+      - text: Tracciato
+      - link "© OpenStreetMap":
+        - /url: https://www.openstreetmap.org/relation/10645560
+      - link "ODbL":
+        - /url: https://opendatacommons.org/licenses/odbl/1-0/
+      - group: Fonti e dettagli
+    - listitem:
+      - img "Segnavia 403": "403"
+      - text: Micigliano (RI) Rifugio Sebastiani – Micigliano (RI) Monte Terminillo Sezione CAI di Rieti
+      - term: Difficoltà
+      - definition:
+        - link "EE · escursionisti esperti":
+          - /url: "#/glossario/difficolta-ee"
+      - term: Intero
+      - definition: 5,6 km · 2 h 15 · +580 m
+      - term: Nella zona
+      - definition: 5,3 km
+      - tablist "Vista del tratto di Micigliano (RI) Rifugio Sebastiani – Micigliano (RI) Monte Terminillo":
+        - tab "Profilo" [selected]
+        - tab "Tracciato"
+      - tabpanel "Profilo":
+        - figure "1815 m Quote del tratto locale 2185 m":
+          - 'img "Profilo del tratto nella zona: da 1815 a 2185 m, tra 1815 e 2185 m"'
+          - text: 1815 m Quote del tratto locale 2185 m
+      - link "Microzona e dettagli del sentiero":
+        - /url: "#/zona/vallonina/1/sentiero/10645472"
+      - link "Arrivo in auto":
+        - /url: https://www.google.com/maps/dir/?api=1&origin=42.404,12.8623&destination=42.473514,13.006334&travelmode=driving
+      - link "Mappa del sentiero":
+        - /url: https://hiking.waymarkedtrails.org/#route?id=10645472&map=13/42.47640/12.99672
+      - link "GPX del tratto locale":
+        - /url: data:application/gpx+xml;charset=utf-8,…
+      - link "OpenStreetMap":
+        - /url: https://www.openstreetmap.org/relation/10645472
+      - text: Tracciato
+      - link "© OpenStreetMap":
+        - /url: https://www.openstreetmap.org/relation/10645472
+      - link "ODbL":
+        - /url: https://opendatacommons.org/licenses/odbl/1-0/
+      - group: Fonti e dettagli
+  - paragraph: "Sentieri OpenStreetMap (rete CAI). Questi percorsi sono elencati senza una valutazione di idoneità per la specie selezionata. Google Maps di norma non mostra i sentieri CAI: sul posto usa un'app con mappe OpenStreetMap (OsmAnd, Organic Maps, Komoot, Locus) e il GPX."
+- group: Bosco e aree protette
+- paragraph:
+  - link "Vedi sulla mappa":
+    - /url: "#/mappa/vallonina"

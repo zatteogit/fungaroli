@@ -1,0 +1,27 @@
+[
+  {
+    "scenario": "snow-plants",
+    "notice": "Uscita sconsigliata · neve · 13 °C",
+    "views": 8
+  },
+  {
+    "scenario": "wind-trails",
+    "notice": "Uscita sconsigliata · raffiche fino a 65 km/h · 13 °C",
+    "views": 8
+  },
+  {
+    "scenario": "clear-trails",
+    "notice": null,
+    "views": 8
+  },
+  {
+    "scenario": "storm-plants",
+    "notice": "Uscita sconsigliata · temporali possibili · piovaschi possibili (90%) · 13 °C",
+    "views": 8
+  },
+  {
+    "scenario": "rain-trails",
+    "notice": "Uscita sconsigliata · pioggia 9,0 mm · 13 °C",
+    "views": 8
+  }
+]

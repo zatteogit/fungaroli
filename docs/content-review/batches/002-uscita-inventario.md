@@ -308,15 +308,14 @@ come sconsigliate anche le proprie condizioni di pioggia e raffiche più intense
 | Escursionista | Priorità alla condizione sfavorevole per decidere se partire |
 | Naturalista | Stessa cautela meteo, indipendentemente dall’interesse di raccolta |
 
-La correzione locale è nel worktree `/tmp/fronda-outing-severe-weather`, commit
+La correzione locale era nel worktree dedicato, commit
 `ac5cbc6e`: riusa il livello già calcolato e mostra la cautela nel riepilogo,
 lasciando alba e orari consultabili. Le istantanee della prova su neve
 [chiusa](../evidence/002-uscita/vallonina-neve-proposta-chiusa.yml) e
 [aperta](../evidence/002-uscita/vallonina-neve-proposta-aperta.yml) documentano
 il risultato locale; 643 test unitari e dry-run Worker superati. Il test browser
 con Wrangler locale non è partito (`spawn EBADF`); va riprovato e vanno ancora
-verificati gli altri stati, i breakpoint e la tastiera. Nessuna PR o pubblicazione
-per questa correzione. Non sono stati effettuati test con utenti o validazioni
+verificati gli altri stati, i breakpoint e la tastiera. A quel punto non c’erano PR o pubblicazione. Non sono stati effettuati test con utenti o validazioni
 scientifiche; il primo avvio online a cache vuota resta non certificato.
 
 La correzione è ora nella [PR 317](https://github.com/zatteogit/fungaroli/pull/317),
@@ -329,6 +328,34 @@ tastiera. I casi severi presentano prima la cautela e non suggeriscono la
 partenza; negli altri il suggerimento rimane. Non è meteo reale. La regressione
 browser aggiunta alla suite resta non eseguita perché il Wrangler locale non
 parte (`spawn EBADF`); le prove sopra usano un server statico.
+
+### Decimo passaggio: meteo sfavorevole per piante e sentieri
+
+Con la versione `main` `72a19a03` e previsioni simulate, la scheda di
+Vallonina filtrata per Piante mostra «Neve», mentre la stessa zona con Sentieri
+mostra «Vento forte». In entrambi i casi il modello classifica già il meteo come
+«uscita sconsigliata», ma il giudizio non compare nel dettaglio. Il caso sereno
+non presenta avvisi. Le istantanee nell'[evidenza](../evidence/002-uscita/)
+sono raccolte da sessioni isolate, non descrivono il meteo reale.
+
+| Persona simulata | Valutazione preliminare |
+| --- | --- |
+| Neofita | Il solo nome del fenomeno non comunica il giudizio già disponibile |
+| Appassionato | Il piano deve seguire la cautela, indipendentemente dall’interesse scelto |
+| Esperto | La ragione dettagliata deve restare leggibile, senza nuove soglie |
+| Escursionista | La cautela è prioritaria rispetto al percorso proposto |
+| Naturalista | Il filtro Piante richiede la stessa informazione meteo |
+
+La [PR 318](https://github.com/zatteogit/fungaroli/pull/318), commit
+`92d1b53f4f643fa71570b9aba04a7493234b870b`, mette la cautela e la ragione
+prima del piano nei due interessi, riutilizzando il livello esistente. Fixture
+isolate verificano neve, temporale, pioggia intensa, raffiche forti e sereno
+in quattro larghezze e due temi; [risultati](../evidence/002-uscita/meteo-outdoor-risultati.json),
+[fixture](../evidence/002-uscita/meteo-outdoor-dopo.cjs) e alberi accessibili
+sono documentati. Passati 643 test unitari e dry-run. Il test browser con
+Wrangler locale rimane non eseguito: anche con Node 24 l'avvio termina con
+`spawn EBADF`. Il controllo GitHub e la pubblicazione sono da verificare.
+Non sono prove con utenti, dati meteo reali o validazione scientifica.
 
 ## Ancora da fare prima di chiudere la pagina
 
