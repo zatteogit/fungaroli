@@ -350,7 +350,7 @@ La [PR 318](https://github.com/zatteogit/fungaroli/pull/318), commit
 `92d1b53f4f643fa71570b9aba04a7493234b870b`, mette la cautela e la ragione
 prima del piano nei due interessi, riutilizzando il livello esistente. Fixture
 isolate verificano neve, temporale, pioggia intensa, raffiche forti e sereno
-in quattro larghezze e due temi; [risultati](../evidence/002-uscita/meteo-outdoor-risultati.json),
+in quattro larghezze e due temi. Con la [fixture meteo non disponibile](../evidence/002-uscita/meteo-outdoor-non-disponibile.cjs) entrambi gli interessi mostrano la richiesta di verifica, senza una falsa cautela severa; [risultati](../evidence/002-uscita/meteo-outdoor-risultati.json),
 [fixture](../evidence/002-uscita/meteo-outdoor-dopo.cjs) e alberi accessibili
 sono documentati. Passati 643 test unitari e dry-run. Il test browser con
 Wrangler locale rimane non eseguito: anche con Node 24 l'avvio termina con
