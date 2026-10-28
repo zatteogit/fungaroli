@@ -261,8 +261,8 @@ controllato a 320, 390, 768 e 1280 px nei due temi. Dopo l’integrazione con
 `main`, la suite locale ha superato 633 test e il dry-run Worker; la prova senza
 meteo è stata ripetuta sul codice integrato. Il controllo GitHub è passato e
 la PR è stata fusa in `main` al commit `d5c0541b2a3a5385d4e6707bb6bfea54615e4de0`.
-La pubblicazione della v389 è da verificare. Il primo avvio online e le
-condizioni reali non sono stati provati.
+La v389 e il renderer corretto sono stati verificati online. Il primo avvio
+online e le condizioni reali non sono stati provati.
 
 ## Ancora da fare prima di chiudere la pagina
 
