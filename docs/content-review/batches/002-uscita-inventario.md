@@ -286,9 +286,11 @@ correzione: la cautela è nel riepilogo, la partenza consigliata e l’alternati
 per l’affollamento non sono proposte durante il temporale; alba e finestra
 legale restano nel dettaglio. Con fixture di temporale e sereno si sono provati
 i due comportamenti; nel temporale anche quattro larghezze, entrambi i temi e
-tastiera. Superati localmente 643 test e dry-run Worker. La PR è in attesa dei
-controlli GitHub e non è ancora pubblicata. Le prove non usano meteo reale e
-non certificano il primo avvio online.
+tastiera. Superati localmente 643 test e dry-run Worker; il controllo GitHub è
+passato e la PR è stata fusa in `main` al commit
+`26852083037eddd9621183e9b006bede0d43c963`. La v397 e il renderer corretto
+sono stati verificati online. Le prove non usano meteo reale e non certificano
+il primo avvio online.
 
 ## Ancora da fare prima di chiudere la pagina
 
