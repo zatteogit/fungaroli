@@ -9,6 +9,7 @@ import {mergeGrowth,mergeOuting,rebaseGrowth} from './weather-state.js';
 import {layoutMapLabels} from './map-label-layout.js';
 import {outingDocumentation} from './outing-documentation.js';
 import {selectOutingMushrooms} from './outing-mushrooms.js';
+import {limitingReason} from './limiting-factor.js';
 import {initNavigationDock} from './navigation-dock.js';
 import {composeHome,nextHomeOpportunity,latestDeadline,automaticHomeDay,shiftChosenDay} from './home-composition.js';
 import {freshness,viewSignature,compareViews,updatePolicy} from './view-stability.js';
@@ -2193,7 +2194,7 @@ function coverOf(z, spId, d) {
   return p ? { hd: p.file_hd || p.file, small: p.file, credit: p, alt: '' } : null;
 }
 const ring = (s, big = true, interactive = false) => `<${interactive?'button type="button" data-index-tip aria-expanded="false"':'span'} data-weather-key="fungi-indicator" class="ring model-index${big ? '' : ' ring-sm'}" aria-label="Condizioni per l’uscita ${formatIndex(s)} su 10${interactive?': come leggerle':''}"><span>Condizioni</span><b>${fungusGlyph}<span>${scoreText(s)}</span></b></${interactive?'button':'span'}>`;
-function indexLegend(kind='outing'){const growth=kind==='growth';return `<button type="button" class="index-legend" data-index-tip data-index-kind="${kind}" aria-expanded="false" aria-label="${growth?'Potenziale di crescita':'Condizioni per l’uscita'} da 0 a 10: come leggerle"><span><b>${growth?'Potenziale di crescita':'Condizioni per l’uscita'} · 0–10</b><span>${growth?'Ambiente e meteo dei giorni precedenti':'Potenziale dei funghi e meteo previsto'}</span></span></button>`;}
+function indexLegend(kind='outing'){const growth=kind==='growth';return `<button type="button" class="index-legend" data-index-tip data-index-kind="${kind}" aria-expanded="false" aria-label="${growth?'Potenziale di crescita':'Condizioni per l’uscita'} da 0 a 10: come leggerle"><span><b>${growth?'Potenziale di crescita':'Condizioni per l’uscita'} · 0–10</b><span>${growth?'Ambiente e meteo dei giorni precedenti':'Potenziale dei funghi e meteo previsto'}</span></span></button><a class="index-proof" href="#/metodo">Quanto funziona l’indice</a>`;}
 const IC = {
   home: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h5v-7h4v7h5V9"/></svg>',
   book: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v15M12 5C8 3 5 3 3 4v14c3-1 6-1 9 2 3-3 6-3 9-2V4c-2-1-5-1-9 1Z"/></svg>',
@@ -4181,13 +4182,13 @@ function zoneSpecies(z, d) {
   const rows = SPECIES.map((sp) => {
     const pot = potentialOf(sp, z);
     const p = scores[sp.id] || { score: combine(z.bands.map((b, bi) => scoreSpecies(sp, sb[bi], d.i, habitat[z.id], b).score)) };
-    return { sp, pot, score: p.score, band: p.band, host: pineHostNote(z, sp) };
+    return { sp, pot, score: p.score, band: p.band, host: pineHostNote(z, sp), reason: limitingReason(p) };
   }).filter((r) => r.pot.level !== 'scarsa').sort((a, b) => b.score - a.score || b.pot.score - a.pot.score);
   const chosenIds=new Set(selectedSpecies().map(sp=>sp.id));
   const selection=selectOutingMushrooms(rows.map(r=>({...r,chosen:chosenIds.has(r.sp.id)})));
-  const renderRows = items => `<ul class="zsp">${items.map(({ sp, pot, score, host }) => `
+  const renderRows = items => `<ul class="zsp">${items.map(({ sp, pot, score, host, reason }) => `
     <li><a href="#/specie/${sp.id}" class="zsp-row">${thumb(sp.id, 40)}
-      <span class="zsp-body"><b>${esc(sp.name)}</b>${reportBadge(z.id, sp.id)}<span class="small muted">${POT_LABEL[pot.level]}${pot.ha ? ` · ~${pot.ha.toLocaleString('it-IT')} ha` : ''}</span>${Number.isFinite(score)&&score<60?'<span class="small">Condizioni meno favorevoli</span>':''}${host ? `<span class="small zsp-host">${esc(host)}</span>` : ''}</span>
+      <span class="zsp-body"><b>${esc(sp.name)}</b>${reportBadge(z.id, sp.id)}<span class="small muted">${POT_LABEL[pot.level]}${pot.ha ? ` · ~${pot.ha.toLocaleString('it-IT')} ha` : ''}</span>${Number.isFinite(score)&&score<60?`<span class="small">Condizioni meno favorevoli${reason?`: ${esc(reason)}`:''}</span>`:''}${host ? `<span class="small zsp-host">${esc(host)}</span>` : ''}</span>
       ${Number.isFinite(score)?`<span class="score-pill" style="--index-color:var(${scoreVar(score).replace('--s','--ps')})" aria-label="Condizioni di crescita ${formatIndex(score)} su 10">${fungusGlyph}<b class="pc">${formatIndex(score)}</b></span>`:'<span class="small muted">Indice non disponibile</span>'}</a></li>`).join('')}</ul>`;
   const chosen=selection.shown.filter(r=>r.chosen),other=selection.shown.filter(r=>!r.chosen);
   return `<div class="outing-mushrooms"><h3 class="observation-heading">Funghi che cerchi</h3><p class="small muted observation-caption">Potenziale di crescita dei funghi scelti, prima del fattore meteo dell’uscita. Non è una probabilità di ritrovamento.</p>

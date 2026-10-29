@@ -19,3 +19,11 @@ for(const width of [320,390])test(`indice: tap, chiusura esterna e tip nel viewp
  await p.touchscreen.tap(4,300);await expect(tip).toBeHidden();await button.tap();await expect(tip).toBeVisible();await button.tap();await expect(tip).toBeHidden();
  await p.locator('#hero .cover-link').click();await expect(p).toHaveURL(/#\/zona\//);await expect(tip).toBeHidden();await c.close();
 });
+test('zona: rimando a «Quanto funziona l’indice» e motivo delle condizioni basse',async({browser})=>{
+ const c=await browser.newContext({viewport:{width:390,height:844},serviceWorkers:'block',reducedMotion:'reduce'}),p=await preparePage(c);
+ await p.goto('/#/zona/livata-tufai');const list=p.locator('.outing-mushrooms').first();await expect(list).toBeAttached();
+ await expect(list.locator('.index-proof')).toHaveAttribute('href','#/metodo');await expect(list.locator('.index-proof')).toHaveText('Quanto funziona l’indice');
+ const low=list.locator('.zsp-body .small',{hasText:'Condizioni meno favorevoli'});
+ for(const text of await low.allTextContents())expect(text).toMatch(/^Condizioni meno favorevoli: \S/);
+ await c.close();
+});
