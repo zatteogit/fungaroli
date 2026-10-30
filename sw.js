@@ -4,7 +4,7 @@
 // - meteo Open-Meteo: gestito dall'app con data di acquisizione e limite d'età
 // - mappe: dalla cache se gia' viste, con un limite di tessere
 // - diario (/api/): mai in cache
-const SHELL = 'fungaroli-shell-v401';
+const SHELL = 'fungaroli-shell-v402';
 const RUNTIME = 'fungaroli-runtime-v1';
 const TILES = 'fungaroli-tiles-v1';
 const CONTENT = 'fungaroli-content-v1';
@@ -26,7 +26,7 @@ const PRECACHE = [
   'js/external-observation.js', 'js/external-signal.js', 'js/external-signals-client.js',
   'js/editorial-outings.js', 'css/editorial-outings.css', 'data/editorial-outings.json',
   'js/animals.js', 'css/animals.css', 'data/animals.json',
-  'js/outing-mushrooms.js', 'js/outing-intent.js', 'js/planning-time.js', 'js/base-location.js', 'js/travel-model.js',
+  'js/outing-mushrooms.js', 'js/limiting-factor.js', 'js/outing-intent.js', 'js/planning-time.js', 'js/base-location.js', 'js/travel-model.js',
   'js/feedback.js', 'js/feedback-schema.js', 'js/feedback-admin.js', 'js/pilot-onboarding.js', 'js/pilot-choice-state.js', 'js/legal-access.js', 'js/legal-notice.js', 'js/navigation-context.js', 'js/focus.js', 'js/modal-scroll.js', 'js/modal-flow.js', 'js/compare-picker.js', 'js/entity-sheet.js', 'js/entity-accordions.js', 'js/content-ui.js', 'js/ambilight.js', 'js/ui-icons.js', 'js/map-experience.js',
   'assets/ui/chevron-right.svg', 'assets/ui/alert-triangle.svg', 'assets/ui/map.svg', 'assets/ui/leaf.svg', 'assets/ui/notebook.svg',
   'js/search-select.js', 'js/species-search.js', 'js/site-info.js', 'js/forecast-capture.js', 'js/forecast-autosave.js',
