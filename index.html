@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="utf-8">
-  <meta name="app-version" content="fungaroli-shell-v402">
+  <meta name="app-version" content="fungaroli-shell-v403">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
   <link rel="preload" href="data/crop-points.json" as="fetch" crossorigin>
   <meta name="theme-color" content="#f7f4ea" media="(prefers-color-scheme: light)">
@@ -271,13 +271,16 @@
     <section class="view info" data-view="info" hidden aria-labelledby="info-h">
       <h1 id="info-h" class="view-title">Regole e sicurezza</h1>
       <p class="info-pilot" id="info-pilot" hidden></p>
-      <a class="ts-cta method-cta" href="#/metodo"><span class="ts-cta-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19h16M6 16V9M10 16V5M14 16v-6M18 16V7"/></svg></span><span><b>Come funziona l'indice</b><small>Formule, parametri, fonti e limiti, per chi vuole approfondire</small></span><span class="ts-cta-go" aria-hidden="true">›</span></a>
       <div id="emergency" class="emergency"></div>
+      <div id="rule-sections"></div>
       <div id="prep-general"></div>
-      <div id="install-info" class="install-info" hidden></div>
 
-
+  <!-- Sotto le regole, ciò che riguarda l'app (decisione di Matteo, 30/10): metodo, feedback, installazione, documenti e crediti. -->
+  <section class="info-about" aria-labelledby="info-about-h">
+  <h2 id="info-about-h" class="info-about-title">Su Fronda</h2>
+  <a class="ts-cta method-cta" href="#/metodo"><span class="ts-cta-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19h16M6 16V9M10 16V5M14 16v-6M18 16V7"/></svg></span><span><b>Come funziona l'indice</b><small>Formule, parametri, fonti e limiti, per chi vuole approfondire</small></span><span class="ts-cta-go" aria-hidden="true">›</span></a>
   <section class="pilot-feedback-invite"><div><h2>Aiutami a migliorare Fronda</h2><p>Il test serve a raccogliere feedback e le prime osservazioni, con le tue scelte di condivisione.</p></div><button type="button" class="btn primary" data-open-feedback>Invia feedback</button></section>
+  <div id="install-info" class="install-info" hidden></div>
   <div id="legal-sections"></div>
   <details class="sec"><summary>Fotografie e illustrazioni</summary><div class="sec-body">
   <p class="small muted" id="zone-credits"></p>
@@ -286,6 +289,7 @@
   <p class="small muted">Le <b>icone dei caratteri</b> nelle schede dei funghi (il cappello, la parte sotto il cappello vista dal basso, il fungo intero con il gambo) sono disegni schematici fatti con AI a partire dai caratteri descritti dalle fonti, rivisti dal gestore del progetto e non da un micologo. Mostrano una forma tipica: non sono foto e non servono a identificare. Confrontale sempre con le foto e con il testo della scheda.</p>
   <p class="small muted">Le <b>icone dei caratteri degli alberi</b> (foglia, aghi, corteccia, frutto), nelle schede e nel percorso guidato, sono disegni schematici fatti con AI a partire dallo schema dei caratteri, rivisti dal gestore del progetto. Ce n'è uno per ogni valore, uguale per tutti gli alberi che lo hanno: non sono foto e non servono a identificare. Confrontali con le foto e con il testo della scheda.</p>
   </div></details>
+  </section>
   <footer class="foot muted small">
     Strumento di supporto, non di identificazione. Nessun fungo va consumato senza certezza: in caso di dubbio, Ispettorato Micologico ASL.
     Mappe © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">contributori OpenStreetMap</a> (ODbL), stile <a href="https://opentopomap.org/about" target="_blank" rel="noopener">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA</a>). Meteo: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo.com</a> (<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>). Carta Forestale su base tipologica, aree protette e zone dei piani: Regione Lazio. Pendenza, esposizione e quote dei percorsi: <a href="https://doi.org/10.13127/tinitaly/1.1" target="_blank" rel="noopener">TINITALY 1.1</a>, INGV (Tarquini et al. 2023, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>). Disturbi forestali: <a href="https://doi.org/10.5281/zenodo.21722408" target="_blank" rel="noopener">European Forest Disturbance Atlas v3.0</a> (Viana-Soto et al., CC BY 4.0). Punti d’accesso e percorsi a piedi: Valhalla su dati OpenStreetMap. Dettagli in "Fonti dei dati, licenze e crediti".
