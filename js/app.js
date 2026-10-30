@@ -4042,9 +4042,15 @@ async function applyLegal() {
   if (prep?.general?.length && $('#prep-general')) $('#prep-general').innerHTML = prepGeneralHtml(prep.general);
   // versione pilota: la stessa frase dell'avviso iniziale, in cima a Regole e metodo (ci porta l'etichetta «Rieti» della testata)
   const pilot = $('#info-pilot'); if (pilot) { pilot.textContent = [L.onboarding?.prototype_notice,L.onboarding?.subtitle].filter(Boolean).join(' '); pilot.hidden = !pilot.textContent; }
-  $('#legal-sections').innerHTML = (L.info_sections || []).map((x) => `<details><summary><h2>${esc(x.title)}</h2></summary><div class="method">${x.id==='normativa'?zoneLegal({}):''}${x.id==='privacy'?privacyHtml(x.html):x.html}</div></details>`).join('');
-  $('#legal-sections').querySelectorAll('.method').forEach(enhanceContentReading);
-  enhanceEntityAccordions($('#legal-sections'));
+  // Regole di raccolta e responsabilità restano tra le regole; privacy, cookie, licenze e pilota vanno in «Su Fronda».
+  const section = (x) => `<details><summary><h2>${esc(x.title)}</h2></summary><div class="method">${x.id==='normativa'?zoneLegal({}):''}${x.id==='privacy'?privacyHtml(x.html):x.html}</div></details>`;
+  const ruleIds = new Set(['normativa', 'responsabilita']), sections = L.info_sections || [];
+  for (const [box, list] of [[$('#rule-sections'), sections.filter((x) => ruleIds.has(x.id))], [$('#legal-sections'), sections.filter((x) => !ruleIds.has(x.id))]]) {
+    if (!box) continue;
+    box.innerHTML = list.map(section).join('');
+    box.querySelectorAll('.method').forEach(enhanceContentReading);
+    enhanceEntityAccordions(box);
+  }
   // primo avvio: avviso da confermare (si ripresenta se cambia la versione dei testi)
   const ver=legalNoticeVersion(L),accepted=await configureLegalAccess(ver,legalNoticeFingerprint(L),{compatibleVersions:compatibleLegalVersions(L)});
   if (!accepted) {

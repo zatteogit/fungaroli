@@ -555,6 +555,9 @@ li.crit { font-weight: 600; }
 .subbar { margin: 0 0 6px; }
 .back { font: inherit; font-size: 15px; font-weight: 600; color: var(--link); background: none; border: 0; padding: 8px 4px 8px 0; cursor: pointer; }
 .info .view-title { margin-bottom: 12px; }
+/* «Su Fronda»: metodo, feedback, installazione, documenti e crediti, staccati dalle regole (30/10). */
+.info-about { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--hair); }
+.info-about-title { font-family: var(--font-display); font-size: 22px; margin: 0 0 14px; }
 .info details { background: var(--surface); border: 1px solid var(--hair); border-radius: var(--r-md); padding: 16px; margin-top: 10px; }
 .info summary { cursor: pointer; list-style: none; }
 .info summary::-webkit-details-marker { display: none; }
